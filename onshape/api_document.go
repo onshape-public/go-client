@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5616-564f6a8676f1
+API version: 1.150.5633-5ed6b38daa6b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -14,6 +14,7 @@ package onshape
 import (
 	"bytes"
 	"context"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -113,6 +114,7 @@ func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*B
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -221,6 +223,7 @@ func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -340,6 +343,7 @@ func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*B
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -456,6 +460,7 @@ func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -573,6 +578,7 @@ func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -685,6 +691,7 @@ func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -806,6 +813,7 @@ func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -937,6 +945,7 @@ func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[st
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1053,6 +1062,7 @@ func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicrov
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1161,6 +1171,7 @@ func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDoc
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1262,6 +1273,7 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1378,6 +1390,7 @@ func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1486,6 +1499,7 @@ func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1605,6 +1619,7 @@ func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1713,6 +1728,7 @@ func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorksp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1916,6 +1932,7 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2061,6 +2078,7 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2412,6 +2430,7 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2542,6 +2561,7 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2658,6 +2678,7 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2781,6 +2802,7 @@ func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2911,6 +2933,7 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3031,6 +3054,7 @@ func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchan
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3146,6 +3170,7 @@ func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]inter
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3265,6 +3290,7 @@ func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*B
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3388,6 +3414,7 @@ func (a *DocumentApiService) SyncApplicationElementsExecute(r ApiSyncApplication
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3509,6 +3536,7 @@ func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3628,6 +3656,7 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3752,6 +3781,7 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
