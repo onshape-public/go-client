@@ -2,7 +2,7 @@ name: Generate Bindings
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
     paths:
       - 'openapi.json'
   workflow_dispatch:
