@@ -7,9 +7,12 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentVersionId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**ElementLibraryId** | Pointer to [**ObjectId**](ObjectId.md) |  | [optional] 
+**ElementLibraryVersion** | Pointer to [**ObjectId**](ObjectId.md) |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 **UniqueVersionId** | Pointer to **string** |  | [optional] 
+**ValidElementLibraryReference** | Pointer to **bool** |  | [optional] 
 **ValidRevisionReference** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -106,6 +109,56 @@ SetElementId sets ElementId field to given value.
 
 HasElementId returns a boolean if a field has been set.
 
+### GetElementLibraryId
+
+`func (o *BTDocumentWithVersionAndElementId) GetElementLibraryId() ObjectId`
+
+GetElementLibraryId returns the ElementLibraryId field if non-nil, zero value otherwise.
+
+### GetElementLibraryIdOk
+
+`func (o *BTDocumentWithVersionAndElementId) GetElementLibraryIdOk() (*ObjectId, bool)`
+
+GetElementLibraryIdOk returns a tuple with the ElementLibraryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementLibraryId
+
+`func (o *BTDocumentWithVersionAndElementId) SetElementLibraryId(v ObjectId)`
+
+SetElementLibraryId sets ElementLibraryId field to given value.
+
+### HasElementLibraryId
+
+`func (o *BTDocumentWithVersionAndElementId) HasElementLibraryId() bool`
+
+HasElementLibraryId returns a boolean if a field has been set.
+
+### GetElementLibraryVersion
+
+`func (o *BTDocumentWithVersionAndElementId) GetElementLibraryVersion() ObjectId`
+
+GetElementLibraryVersion returns the ElementLibraryVersion field if non-nil, zero value otherwise.
+
+### GetElementLibraryVersionOk
+
+`func (o *BTDocumentWithVersionAndElementId) GetElementLibraryVersionOk() (*ObjectId, bool)`
+
+GetElementLibraryVersionOk returns a tuple with the ElementLibraryVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementLibraryVersion
+
+`func (o *BTDocumentWithVersionAndElementId) SetElementLibraryVersion(v ObjectId)`
+
+SetElementLibraryVersion sets ElementLibraryVersion field to given value.
+
+### HasElementLibraryVersion
+
+`func (o *BTDocumentWithVersionAndElementId) HasElementLibraryVersion() bool`
+
+HasElementLibraryVersion returns a boolean if a field has been set.
+
 ### GetPartNumber
 
 `func (o *BTDocumentWithVersionAndElementId) GetPartNumber() string`
@@ -180,6 +233,31 @@ SetUniqueVersionId sets UniqueVersionId field to given value.
 `func (o *BTDocumentWithVersionAndElementId) HasUniqueVersionId() bool`
 
 HasUniqueVersionId returns a boolean if a field has been set.
+
+### GetValidElementLibraryReference
+
+`func (o *BTDocumentWithVersionAndElementId) GetValidElementLibraryReference() bool`
+
+GetValidElementLibraryReference returns the ValidElementLibraryReference field if non-nil, zero value otherwise.
+
+### GetValidElementLibraryReferenceOk
+
+`func (o *BTDocumentWithVersionAndElementId) GetValidElementLibraryReferenceOk() (*bool, bool)`
+
+GetValidElementLibraryReferenceOk returns a tuple with the ValidElementLibraryReference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidElementLibraryReference
+
+`func (o *BTDocumentWithVersionAndElementId) SetValidElementLibraryReference(v bool)`
+
+SetValidElementLibraryReference sets ValidElementLibraryReference field to given value.
+
+### HasValidElementLibraryReference
+
+`func (o *BTDocumentWithVersionAndElementId) HasValidElementLibraryReference() bool`
+
+HasValidElementLibraryReference returns a boolean if a field has been set.
 
 ### GetValidRevisionReference
 

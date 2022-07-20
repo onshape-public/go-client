@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BodyType** | Pointer to **string** |  | [optional] 
 **ClassType** | Pointer to **int32** |  | [optional] 
-**ConfigurationId** | Pointer to **string** |  | [optional] 
+**Configuration** | Pointer to **string** |  | [optional] 
 **ConfigurationParameterValues** | Pointer to **[]string** |  | [optional] 
 **ConfigurationParameters** | Pointer to **[]string** |  | [optional] 
 **DataType** | Pointer to **string** |  | [optional] 
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **FeatureName** | Pointer to **string** |  | [optional] 
 **FeatureSpec** | Pointer to **[]string** |  | [optional] 
 **FeatureType** | Pointer to **string** |  | [optional] 
+**FsComputedPartPropertySpec** | Pointer to **[]string** |  | [optional] 
 **FsTableSpec** | Pointer to **[]string** |  | [optional] 
 **HasFaults** | Pointer to **bool** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
@@ -26,16 +27,22 @@ Name | Type | Description | Notes
 **InsertableQuery** | Pointer to **string** |  | [optional] 
 **IsFlattenedBody** | Pointer to **bool** |  | [optional] 
 **IsMesh** | Pointer to **bool** |  | [optional] 
+**MeshState** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to **string** |  | [optional] 
 **PartName** | Pointer to **string** |  | [optional] 
-**PredictableId** | Pointer to **string** |  | [optional] 
+**PredictableThumbnailId** | Pointer to **string** |  | [optional] 
+**SourceFileExtension** | Pointer to **string** |  | [optional] 
 **ThumbnailUri** | Pointer to **string** |  | [optional] 
 **UnflattenedPartDeterministicId** | Pointer to **string** |  | [optional] 
+**VariableName** | Pointer to **string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **VersionName** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
+**WorkspaceId** | Pointer to **string** |  | [optional] 
+**WorkspaceName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -106,30 +113,30 @@ SetClassType sets ClassType field to given value.
 
 HasClassType returns a boolean if a field has been set.
 
-### GetConfigurationId
+### GetConfiguration
 
-`func (o *BTInsertableInfo) GetConfigurationId() string`
+`func (o *BTInsertableInfo) GetConfiguration() string`
 
-GetConfigurationId returns the ConfigurationId field if non-nil, zero value otherwise.
+GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
-### GetConfigurationIdOk
+### GetConfigurationOk
 
-`func (o *BTInsertableInfo) GetConfigurationIdOk() (*string, bool)`
+`func (o *BTInsertableInfo) GetConfigurationOk() (*string, bool)`
 
-GetConfigurationIdOk returns a tuple with the ConfigurationId field if it's non-nil, zero value otherwise
+GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetConfigurationId
+### SetConfiguration
 
-`func (o *BTInsertableInfo) SetConfigurationId(v string)`
+`func (o *BTInsertableInfo) SetConfiguration(v string)`
 
-SetConfigurationId sets ConfigurationId field to given value.
+SetConfiguration sets Configuration field to given value.
 
-### HasConfigurationId
+### HasConfiguration
 
-`func (o *BTInsertableInfo) HasConfigurationId() bool`
+`func (o *BTInsertableInfo) HasConfiguration() bool`
 
-HasConfigurationId returns a boolean if a field has been set.
+HasConfiguration returns a boolean if a field has been set.
 
 ### GetConfigurationParameterValues
 
@@ -431,6 +438,31 @@ SetFeatureType sets FeatureType field to given value.
 
 HasFeatureType returns a boolean if a field has been set.
 
+### GetFsComputedPartPropertySpec
+
+`func (o *BTInsertableInfo) GetFsComputedPartPropertySpec() []string`
+
+GetFsComputedPartPropertySpec returns the FsComputedPartPropertySpec field if non-nil, zero value otherwise.
+
+### GetFsComputedPartPropertySpecOk
+
+`func (o *BTInsertableInfo) GetFsComputedPartPropertySpecOk() (*[]string, bool)`
+
+GetFsComputedPartPropertySpecOk returns a tuple with the FsComputedPartPropertySpec field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFsComputedPartPropertySpec
+
+`func (o *BTInsertableInfo) SetFsComputedPartPropertySpec(v []string)`
+
+SetFsComputedPartPropertySpec sets FsComputedPartPropertySpec field to given value.
+
+### HasFsComputedPartPropertySpec
+
+`func (o *BTInsertableInfo) HasFsComputedPartPropertySpec() bool`
+
+HasFsComputedPartPropertySpec returns a boolean if a field has been set.
+
 ### GetFsTableSpec
 
 `func (o *BTInsertableInfo) GetFsTableSpec() []string`
@@ -606,6 +638,31 @@ SetIsMesh sets IsMesh field to given value.
 
 HasIsMesh returns a boolean if a field has been set.
 
+### GetMeshState
+
+`func (o *BTInsertableInfo) GetMeshState() string`
+
+GetMeshState returns the MeshState field if non-nil, zero value otherwise.
+
+### GetMeshStateOk
+
+`func (o *BTInsertableInfo) GetMeshStateOk() (*string, bool)`
+
+GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeshState
+
+`func (o *BTInsertableInfo) SetMeshState(v string)`
+
+SetMeshState sets MeshState field to given value.
+
+### HasMeshState
+
+`func (o *BTInsertableInfo) HasMeshState() bool`
+
+HasMeshState returns a boolean if a field has been set.
+
 ### GetMicroversionId
 
 `func (o *BTInsertableInfo) GetMicroversionId() string`
@@ -681,6 +738,31 @@ SetParentId sets ParentId field to given value.
 
 HasParentId returns a boolean if a field has been set.
 
+### GetPartIdentity
+
+`func (o *BTInsertableInfo) GetPartIdentity() string`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTInsertableInfo) GetPartIdentityOk() (*string, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTInsertableInfo) SetPartIdentity(v string)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTInsertableInfo) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
+
 ### GetPartName
 
 `func (o *BTInsertableInfo) GetPartName() string`
@@ -706,30 +788,55 @@ SetPartName sets PartName field to given value.
 
 HasPartName returns a boolean if a field has been set.
 
-### GetPredictableId
+### GetPredictableThumbnailId
 
-`func (o *BTInsertableInfo) GetPredictableId() string`
+`func (o *BTInsertableInfo) GetPredictableThumbnailId() string`
 
-GetPredictableId returns the PredictableId field if non-nil, zero value otherwise.
+GetPredictableThumbnailId returns the PredictableThumbnailId field if non-nil, zero value otherwise.
 
-### GetPredictableIdOk
+### GetPredictableThumbnailIdOk
 
-`func (o *BTInsertableInfo) GetPredictableIdOk() (*string, bool)`
+`func (o *BTInsertableInfo) GetPredictableThumbnailIdOk() (*string, bool)`
 
-GetPredictableIdOk returns a tuple with the PredictableId field if it's non-nil, zero value otherwise
+GetPredictableThumbnailIdOk returns a tuple with the PredictableThumbnailId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPredictableId
+### SetPredictableThumbnailId
 
-`func (o *BTInsertableInfo) SetPredictableId(v string)`
+`func (o *BTInsertableInfo) SetPredictableThumbnailId(v string)`
 
-SetPredictableId sets PredictableId field to given value.
+SetPredictableThumbnailId sets PredictableThumbnailId field to given value.
 
-### HasPredictableId
+### HasPredictableThumbnailId
 
-`func (o *BTInsertableInfo) HasPredictableId() bool`
+`func (o *BTInsertableInfo) HasPredictableThumbnailId() bool`
 
-HasPredictableId returns a boolean if a field has been set.
+HasPredictableThumbnailId returns a boolean if a field has been set.
+
+### GetSourceFileExtension
+
+`func (o *BTInsertableInfo) GetSourceFileExtension() string`
+
+GetSourceFileExtension returns the SourceFileExtension field if non-nil, zero value otherwise.
+
+### GetSourceFileExtensionOk
+
+`func (o *BTInsertableInfo) GetSourceFileExtensionOk() (*string, bool)`
+
+GetSourceFileExtensionOk returns a tuple with the SourceFileExtension field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceFileExtension
+
+`func (o *BTInsertableInfo) SetSourceFileExtension(v string)`
+
+SetSourceFileExtension sets SourceFileExtension field to given value.
+
+### HasSourceFileExtension
+
+`func (o *BTInsertableInfo) HasSourceFileExtension() bool`
+
+HasSourceFileExtension returns a boolean if a field has been set.
 
 ### GetThumbnailUri
 
@@ -780,6 +887,31 @@ SetUnflattenedPartDeterministicId sets UnflattenedPartDeterministicId field to g
 `func (o *BTInsertableInfo) HasUnflattenedPartDeterministicId() bool`
 
 HasUnflattenedPartDeterministicId returns a boolean if a field has been set.
+
+### GetVariableName
+
+`func (o *BTInsertableInfo) GetVariableName() string`
+
+GetVariableName returns the VariableName field if non-nil, zero value otherwise.
+
+### GetVariableNameOk
+
+`func (o *BTInsertableInfo) GetVariableNameOk() (*string, bool)`
+
+GetVariableNameOk returns a tuple with the VariableName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVariableName
+
+`func (o *BTInsertableInfo) SetVariableName(v string)`
+
+SetVariableName sets VariableName field to given value.
+
+### HasVariableName
+
+`func (o *BTInsertableInfo) HasVariableName() bool`
+
+HasVariableName returns a boolean if a field has been set.
 
 ### GetVersionId
 
@@ -855,6 +987,56 @@ SetViewRef sets ViewRef field to given value.
 `func (o *BTInsertableInfo) HasViewRef() bool`
 
 HasViewRef returns a boolean if a field has been set.
+
+### GetWorkspaceId
+
+`func (o *BTInsertableInfo) GetWorkspaceId() string`
+
+GetWorkspaceId returns the WorkspaceId field if non-nil, zero value otherwise.
+
+### GetWorkspaceIdOk
+
+`func (o *BTInsertableInfo) GetWorkspaceIdOk() (*string, bool)`
+
+GetWorkspaceIdOk returns a tuple with the WorkspaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkspaceId
+
+`func (o *BTInsertableInfo) SetWorkspaceId(v string)`
+
+SetWorkspaceId sets WorkspaceId field to given value.
+
+### HasWorkspaceId
+
+`func (o *BTInsertableInfo) HasWorkspaceId() bool`
+
+HasWorkspaceId returns a boolean if a field has been set.
+
+### GetWorkspaceName
+
+`func (o *BTInsertableInfo) GetWorkspaceName() string`
+
+GetWorkspaceName returns the WorkspaceName field if non-nil, zero value otherwise.
+
+### GetWorkspaceNameOk
+
+`func (o *BTInsertableInfo) GetWorkspaceNameOk() (*string, bool)`
+
+GetWorkspaceNameOk returns a tuple with the WorkspaceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkspaceName
+
+`func (o *BTInsertableInfo) SetWorkspaceName(v string)`
+
+SetWorkspaceName sets WorkspaceName field to given value.
+
+### HasWorkspaceName
+
+`func (o *BTInsertableInfo) HasWorkspaceName() bool`
+
+HasWorkspaceName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

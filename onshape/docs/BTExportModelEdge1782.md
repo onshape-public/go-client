@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Curve** | Pointer to [**BTCurveDescription1583**](BTCurveDescription-1583.md) |  | [optional] 
-**Geometry** | Pointer to [**BTExportModelEdgeGeometry1125**](BTExportModelEdgeGeometry-1125.md) |  | [optional] 
+**Curve** | Pointer to [**BTCurveDescription1583**](BTCurveDescription1583.md) |  | [optional] 
+**Geometry** | Pointer to [**BTExportModelEdgeGeometry1125**](BTExportModelEdgeGeometry1125.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Vertices** | Pointer to **[]string** |  | [optional] 
 

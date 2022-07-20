@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **Index** | Pointer to **int32** |  | [optional] 
 **OuterParameterId** | Pointer to **string** |  | [optional] 
@@ -27,31 +26,6 @@ will change when the set of required properties is changed
 NewBTInnerArrayParameterLocation2368WithDefaults instantiates a new BTInnerArrayParameterLocation2368 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetType
-
-`func (o *BTInnerArrayParameterLocation2368) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *BTInnerArrayParameterLocation2368) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *BTInnerArrayParameterLocation2368) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *BTInnerArrayParameterLocation2368) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetBtType
 

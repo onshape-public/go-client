@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
 **MicroversionSkew** | Pointer to **bool** |  | [optional] 
-**Queries** | Pointer to [**map[string][]string**](array.md) |  | [optional] 
+**Queries** | Pointer to **map[string][]string** |  | [optional] 
 **RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 
 **Script** | Pointer to **string** |  | [optional] 
 **SerializationVersion** | Pointer to **string** |  | [optional] 

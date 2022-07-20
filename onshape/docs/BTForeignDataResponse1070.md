@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Region** | Pointer to **string** |  | [optional] 
 **Size** | Pointer to **int32** |  | [optional] 
+**StorageType** | Pointer to **string** |  | [optional] 
 **UseLocalStorage** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetSize sets Size field to given value.
 `func (o *BTForeignDataResponse1070) HasSize() bool`
 
 HasSize returns a boolean if a field has been set.
+
+### GetStorageType
+
+`func (o *BTForeignDataResponse1070) GetStorageType() string`
+
+GetStorageType returns the StorageType field if non-nil, zero value otherwise.
+
+### GetStorageTypeOk
+
+`func (o *BTForeignDataResponse1070) GetStorageTypeOk() (*string, bool)`
+
+GetStorageTypeOk returns a tuple with the StorageType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageType
+
+`func (o *BTForeignDataResponse1070) SetStorageType(v string)`
+
+SetStorageType sets StorageType field to given value.
+
+### HasStorageType
+
+`func (o *BTForeignDataResponse1070) HasStorageType() bool`
+
+HasStorageType returns a boolean if a field has been set.
 
 ### GetUseLocalStorage
 

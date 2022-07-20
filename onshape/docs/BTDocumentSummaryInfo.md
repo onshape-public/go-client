@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**JsonType** | Pointer to **string** |  | [optional] 
 **AnonymousAccessAllowed** | Pointer to **bool** |  | [optional] 
 **AnonymousAllowsExport** | Pointer to **bool** |  | [optional] 
 **CanUnshare** | Pointer to **bool** |  | [optional] 
@@ -12,6 +11,7 @@ Name | Type | Description | Notes
 **DefaultElementId** | Pointer to **string** |  | [optional] 
 **DefaultWorkspace** | Pointer to [**BTWorkspaceInfo**](BTWorkspaceInfo.md) |  | [optional] 
 **DocumentLabels** | Pointer to [**[]BTDocumentLabelInfo**](BTDocumentLabelInfo.md) |  | [optional] 
+**DocumentType** | Pointer to **int32** |  | [optional] 
 **HasReleaseRevisionableObjects** | Pointer to **bool** |  | [optional] 
 **HasRelevantInsertables** | Pointer to **bool** |  | [optional] 
 **IsOrphaned** | Pointer to **bool** |  | [optional] 
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **LikedByCurrentUser** | Pointer to **bool** |  | [optional] 
 **Likes** | Pointer to **int64** |  | [optional] 
 **NotRevisionManaged** | Pointer to **bool** |  | [optional] 
+**Notes** | Pointer to **string** |  | [optional] 
 **NumberOfTimesCopied** | Pointer to **int64** |  | [optional] 
 **NumberOfTimesReferenced** | Pointer to **int64** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
@@ -26,13 +27,14 @@ Name | Type | Description | Notes
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
 **RecentVersion** | Pointer to [**BTBaseInfo**](BTBaseInfo.md) |  | [optional] 
+**Sequence** | Pointer to **string** |  | [optional] 
 **SupportTeamUserAndShared** | Pointer to **bool** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **TotalWorkspacesScheduledForUpdate** | Pointer to **int32** |  | [optional] 
 **TotalWorkspacesUpdating** | Pointer to **int32** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
-**TrashedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 **UserAccountLimitsBreached** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -53,31 +55,6 @@ will change when the set of required properties is changed
 NewBTDocumentSummaryInfoWithDefaults instantiates a new BTDocumentSummaryInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetJsonType
-
-`func (o *BTDocumentSummaryInfo) GetJsonType() string`
-
-GetJsonType returns the JsonType field if non-nil, zero value otherwise.
-
-### GetJsonTypeOk
-
-`func (o *BTDocumentSummaryInfo) GetJsonTypeOk() (*string, bool)`
-
-GetJsonTypeOk returns a tuple with the JsonType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJsonType
-
-`func (o *BTDocumentSummaryInfo) SetJsonType(v string)`
-
-SetJsonType sets JsonType field to given value.
-
-### HasJsonType
-
-`func (o *BTDocumentSummaryInfo) HasJsonType() bool`
-
-HasJsonType returns a boolean if a field has been set.
 
 ### GetAnonymousAccessAllowed
 
@@ -254,6 +231,31 @@ SetDocumentLabels sets DocumentLabels field to given value.
 
 HasDocumentLabels returns a boolean if a field has been set.
 
+### GetDocumentType
+
+`func (o *BTDocumentSummaryInfo) GetDocumentType() int32`
+
+GetDocumentType returns the DocumentType field if non-nil, zero value otherwise.
+
+### GetDocumentTypeOk
+
+`func (o *BTDocumentSummaryInfo) GetDocumentTypeOk() (*int32, bool)`
+
+GetDocumentTypeOk returns a tuple with the DocumentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentType
+
+`func (o *BTDocumentSummaryInfo) SetDocumentType(v int32)`
+
+SetDocumentType sets DocumentType field to given value.
+
+### HasDocumentType
+
+`func (o *BTDocumentSummaryInfo) HasDocumentType() bool`
+
+HasDocumentType returns a boolean if a field has been set.
+
 ### GetHasReleaseRevisionableObjects
 
 `func (o *BTDocumentSummaryInfo) GetHasReleaseRevisionableObjects() bool`
@@ -429,6 +431,31 @@ SetNotRevisionManaged sets NotRevisionManaged field to given value.
 
 HasNotRevisionManaged returns a boolean if a field has been set.
 
+### GetNotes
+
+`func (o *BTDocumentSummaryInfo) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *BTDocumentSummaryInfo) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *BTDocumentSummaryInfo) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
+
+### HasNotes
+
+`func (o *BTDocumentSummaryInfo) HasNotes() bool`
+
+HasNotes returns a boolean if a field has been set.
+
 ### GetNumberOfTimesCopied
 
 `func (o *BTDocumentSummaryInfo) GetNumberOfTimesCopied() int64`
@@ -603,6 +630,31 @@ SetRecentVersion sets RecentVersion field to given value.
 `func (o *BTDocumentSummaryInfo) HasRecentVersion() bool`
 
 HasRecentVersion returns a boolean if a field has been set.
+
+### GetSequence
+
+`func (o *BTDocumentSummaryInfo) GetSequence() string`
+
+GetSequence returns the Sequence field if non-nil, zero value otherwise.
+
+### GetSequenceOk
+
+`func (o *BTDocumentSummaryInfo) GetSequenceOk() (*string, bool)`
+
+GetSequenceOk returns a tuple with the Sequence field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSequence
+
+`func (o *BTDocumentSummaryInfo) SetSequence(v string)`
+
+SetSequence sets Sequence field to given value.
+
+### HasSequence
+
+`func (o *BTDocumentSummaryInfo) HasSequence() bool`
+
+HasSequence returns a boolean if a field has been set.
 
 ### GetSupportTeamUserAndShared
 

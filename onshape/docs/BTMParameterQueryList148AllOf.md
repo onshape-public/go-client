@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Queries** | Pointer to [**[]BTMIndividualQueryBase139**](BTMIndividualQueryBase-139.md) |  | [optional] 
+**Queries** | Pointer to [**[]BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 
 ## Methods
 

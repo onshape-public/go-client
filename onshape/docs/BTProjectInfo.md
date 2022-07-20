@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CanMove** | Pointer to **bool** |  | [optional] 
-**CreatedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **IsContainer** | Pointer to **bool** |  | [optional] 
 **IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
 **IsMutable** | Pointer to **bool** |  | [optional] 
-**ModifiedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Owner** | Pointer to [**BTOwnerInfo**](BTOwnerInfo.md) |  | [optional] 

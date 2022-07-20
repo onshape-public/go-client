@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Expression** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**Expression** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 
 ## Methods
 

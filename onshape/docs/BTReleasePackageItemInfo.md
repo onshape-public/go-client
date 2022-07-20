@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CanExport** | Pointer to **bool** |  | [optional] 
+**ChangeDetectionStatus** | Pointer to **int32** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
 **ConfigurationKey** | Pointer to **string** |  | [optional] 
@@ -12,18 +13,22 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementType** | Pointer to **int32** |  | [optional] 
-**Errors** | Pointer to [**[]BTReleasePackageItemError**](BTReleasePackageItemError.md) |  | [optional] 
+**Errors** | Pointer to [**[]BTReleaseItemErrorInfo**](BTReleaseItemErrorInfo.md) |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**IsIncludedEditable** | Pointer to **bool** |  | [optional] 
 **IsRevisionManaged** | Pointer to **bool** |  | [optional] 
+**IsRootItem** | Pointer to **bool** |  | [optional] 
 **IsTranslatable** | Pointer to **bool** |  | [optional] 
+**MeshState** | Pointer to **int32** |  | [optional] 
 **MimeType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ObsoletionRevisionId** | Pointer to **string** |  | [optional] 
+**OriginalWorkspaceId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **PartType** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**[]BTMetadataPropertyInfo**](BTMetadataPropertyInfo.md) |  | [optional] 
+**ReferenceIds** | Pointer to **[]string** |  | [optional] 
+**ReferenceIdsFromOriginalWorkspace** | Pointer to **[]string** |  | [optional] 
 **Rpid** | Pointer to **string** |  | [optional] 
 **SmallThumbnailHref** | Pointer to **string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -73,6 +78,31 @@ SetCanExport sets CanExport field to given value.
 `func (o *BTReleasePackageItemInfo) HasCanExport() bool`
 
 HasCanExport returns a boolean if a field has been set.
+
+### GetChangeDetectionStatus
+
+`func (o *BTReleasePackageItemInfo) GetChangeDetectionStatus() int32`
+
+GetChangeDetectionStatus returns the ChangeDetectionStatus field if non-nil, zero value otherwise.
+
+### GetChangeDetectionStatusOk
+
+`func (o *BTReleasePackageItemInfo) GetChangeDetectionStatusOk() (*int32, bool)`
+
+GetChangeDetectionStatusOk returns a tuple with the ChangeDetectionStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChangeDetectionStatus
+
+`func (o *BTReleasePackageItemInfo) SetChangeDetectionStatus(v int32)`
+
+SetChangeDetectionStatus sets ChangeDetectionStatus field to given value.
+
+### HasChangeDetectionStatus
+
+`func (o *BTReleasePackageItemInfo) HasChangeDetectionStatus() bool`
+
+HasChangeDetectionStatus returns a boolean if a field has been set.
 
 ### GetCompanyId
 
@@ -251,20 +281,20 @@ HasElementType returns a boolean if a field has been set.
 
 ### GetErrors
 
-`func (o *BTReleasePackageItemInfo) GetErrors() []BTReleasePackageItemError`
+`func (o *BTReleasePackageItemInfo) GetErrors() []BTReleaseItemErrorInfo`
 
 GetErrors returns the Errors field if non-nil, zero value otherwise.
 
 ### GetErrorsOk
 
-`func (o *BTReleasePackageItemInfo) GetErrorsOk() (*[]BTReleasePackageItemError, bool)`
+`func (o *BTReleasePackageItemInfo) GetErrorsOk() (*[]BTReleaseItemErrorInfo, bool)`
 
 GetErrorsOk returns a tuple with the Errors field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrors
 
-`func (o *BTReleasePackageItemInfo) SetErrors(v []BTReleasePackageItemError)`
+`func (o *BTReleasePackageItemInfo) SetErrors(v []BTReleaseItemErrorInfo)`
 
 SetErrors sets Errors field to given value.
 
@@ -324,31 +354,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetIsIncludedEditable
-
-`func (o *BTReleasePackageItemInfo) GetIsIncludedEditable() bool`
-
-GetIsIncludedEditable returns the IsIncludedEditable field if non-nil, zero value otherwise.
-
-### GetIsIncludedEditableOk
-
-`func (o *BTReleasePackageItemInfo) GetIsIncludedEditableOk() (*bool, bool)`
-
-GetIsIncludedEditableOk returns a tuple with the IsIncludedEditable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsIncludedEditable
-
-`func (o *BTReleasePackageItemInfo) SetIsIncludedEditable(v bool)`
-
-SetIsIncludedEditable sets IsIncludedEditable field to given value.
-
-### HasIsIncludedEditable
-
-`func (o *BTReleasePackageItemInfo) HasIsIncludedEditable() bool`
-
-HasIsIncludedEditable returns a boolean if a field has been set.
-
 ### GetIsRevisionManaged
 
 `func (o *BTReleasePackageItemInfo) GetIsRevisionManaged() bool`
@@ -374,6 +379,31 @@ SetIsRevisionManaged sets IsRevisionManaged field to given value.
 
 HasIsRevisionManaged returns a boolean if a field has been set.
 
+### GetIsRootItem
+
+`func (o *BTReleasePackageItemInfo) GetIsRootItem() bool`
+
+GetIsRootItem returns the IsRootItem field if non-nil, zero value otherwise.
+
+### GetIsRootItemOk
+
+`func (o *BTReleasePackageItemInfo) GetIsRootItemOk() (*bool, bool)`
+
+GetIsRootItemOk returns a tuple with the IsRootItem field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsRootItem
+
+`func (o *BTReleasePackageItemInfo) SetIsRootItem(v bool)`
+
+SetIsRootItem sets IsRootItem field to given value.
+
+### HasIsRootItem
+
+`func (o *BTReleasePackageItemInfo) HasIsRootItem() bool`
+
+HasIsRootItem returns a boolean if a field has been set.
+
 ### GetIsTranslatable
 
 `func (o *BTReleasePackageItemInfo) GetIsTranslatable() bool`
@@ -398,6 +428,31 @@ SetIsTranslatable sets IsTranslatable field to given value.
 `func (o *BTReleasePackageItemInfo) HasIsTranslatable() bool`
 
 HasIsTranslatable returns a boolean if a field has been set.
+
+### GetMeshState
+
+`func (o *BTReleasePackageItemInfo) GetMeshState() int32`
+
+GetMeshState returns the MeshState field if non-nil, zero value otherwise.
+
+### GetMeshStateOk
+
+`func (o *BTReleasePackageItemInfo) GetMeshStateOk() (*int32, bool)`
+
+GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeshState
+
+`func (o *BTReleasePackageItemInfo) SetMeshState(v int32)`
+
+SetMeshState sets MeshState field to given value.
+
+### HasMeshState
+
+`func (o *BTReleasePackageItemInfo) HasMeshState() bool`
+
+HasMeshState returns a boolean if a field has been set.
 
 ### GetMimeType
 
@@ -474,6 +529,31 @@ SetObsoletionRevisionId sets ObsoletionRevisionId field to given value.
 
 HasObsoletionRevisionId returns a boolean if a field has been set.
 
+### GetOriginalWorkspaceId
+
+`func (o *BTReleasePackageItemInfo) GetOriginalWorkspaceId() string`
+
+GetOriginalWorkspaceId returns the OriginalWorkspaceId field if non-nil, zero value otherwise.
+
+### GetOriginalWorkspaceIdOk
+
+`func (o *BTReleasePackageItemInfo) GetOriginalWorkspaceIdOk() (*string, bool)`
+
+GetOriginalWorkspaceIdOk returns a tuple with the OriginalWorkspaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginalWorkspaceId
+
+`func (o *BTReleasePackageItemInfo) SetOriginalWorkspaceId(v string)`
+
+SetOriginalWorkspaceId sets OriginalWorkspaceId field to given value.
+
+### HasOriginalWorkspaceId
+
+`func (o *BTReleasePackageItemInfo) HasOriginalWorkspaceId() bool`
+
+HasOriginalWorkspaceId returns a boolean if a field has been set.
+
 ### GetPartId
 
 `func (o *BTReleasePackageItemInfo) GetPartId() string`
@@ -548,6 +628,56 @@ SetProperties sets Properties field to given value.
 `func (o *BTReleasePackageItemInfo) HasProperties() bool`
 
 HasProperties returns a boolean if a field has been set.
+
+### GetReferenceIds
+
+`func (o *BTReleasePackageItemInfo) GetReferenceIds() []string`
+
+GetReferenceIds returns the ReferenceIds field if non-nil, zero value otherwise.
+
+### GetReferenceIdsOk
+
+`func (o *BTReleasePackageItemInfo) GetReferenceIdsOk() (*[]string, bool)`
+
+GetReferenceIdsOk returns a tuple with the ReferenceIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferenceIds
+
+`func (o *BTReleasePackageItemInfo) SetReferenceIds(v []string)`
+
+SetReferenceIds sets ReferenceIds field to given value.
+
+### HasReferenceIds
+
+`func (o *BTReleasePackageItemInfo) HasReferenceIds() bool`
+
+HasReferenceIds returns a boolean if a field has been set.
+
+### GetReferenceIdsFromOriginalWorkspace
+
+`func (o *BTReleasePackageItemInfo) GetReferenceIdsFromOriginalWorkspace() []string`
+
+GetReferenceIdsFromOriginalWorkspace returns the ReferenceIdsFromOriginalWorkspace field if non-nil, zero value otherwise.
+
+### GetReferenceIdsFromOriginalWorkspaceOk
+
+`func (o *BTReleasePackageItemInfo) GetReferenceIdsFromOriginalWorkspaceOk() (*[]string, bool)`
+
+GetReferenceIdsFromOriginalWorkspaceOk returns a tuple with the ReferenceIdsFromOriginalWorkspace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferenceIdsFromOriginalWorkspace
+
+`func (o *BTReleasePackageItemInfo) SetReferenceIdsFromOriginalWorkspace(v []string)`
+
+SetReferenceIdsFromOriginalWorkspace sets ReferenceIdsFromOriginalWorkspace field to given value.
+
+### HasReferenceIdsFromOriginalWorkspace
+
+`func (o *BTReleasePackageItemInfo) HasReferenceIdsFromOriginalWorkspace() bool`
+
+HasReferenceIdsFromOriginalWorkspace returns a boolean if a field has been set.
 
 ### GetRpid
 

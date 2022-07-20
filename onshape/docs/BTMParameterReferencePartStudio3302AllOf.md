@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BlockBuildFunctionAccess** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**PartQuery** | Pointer to [**BTMParameterQueryList148**](BTMParameterQueryList-148.md) |  | [optional] 
+**PartIdentity** | Pointer to [**BTPSOIdentity2741**](BTPSOIdentity2741.md) |  | [optional] 
+**PartQuery** | Pointer to [**BTMParameterQueryList148**](BTMParameterQueryList148.md) |  | [optional] 
 **StandardContentParametersId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -77,6 +78,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMParameterReferencePartStudio3302AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTMParameterReferencePartStudio3302AllOf) GetPartIdentity() BTPSOIdentity2741`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTMParameterReferencePartStudio3302AllOf) GetPartIdentityOk() (*BTPSOIdentity2741, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTMParameterReferencePartStudio3302AllOf) SetPartIdentity(v BTPSOIdentity2741)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTMParameterReferencePartStudio3302AllOf) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetPartQuery
 

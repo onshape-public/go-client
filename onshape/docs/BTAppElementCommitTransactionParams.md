@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllowMerge** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ReturnError** | Pointer to **bool** |  | [optional] 
-**TransactionId** | Pointer to **string** |  | [optional] 
+**TransactionIds** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewBTAppElementCommitTransactionParamsWithDefaults instantiates a new BTAppElementCommitTransactionParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllowMerge
+
+`func (o *BTAppElementCommitTransactionParams) GetAllowMerge() bool`
+
+GetAllowMerge returns the AllowMerge field if non-nil, zero value otherwise.
+
+### GetAllowMergeOk
+
+`func (o *BTAppElementCommitTransactionParams) GetAllowMergeOk() (*bool, bool)`
+
+GetAllowMergeOk returns a tuple with the AllowMerge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowMerge
+
+`func (o *BTAppElementCommitTransactionParams) SetAllowMerge(v bool)`
+
+SetAllowMerge sets AllowMerge field to given value.
+
+### HasAllowMerge
+
+`func (o *BTAppElementCommitTransactionParams) HasAllowMerge() bool`
+
+HasAllowMerge returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -77,30 +103,30 @@ SetReturnError sets ReturnError field to given value.
 
 HasReturnError returns a boolean if a field has been set.
 
-### GetTransactionId
+### GetTransactionIds
 
-`func (o *BTAppElementCommitTransactionParams) GetTransactionId() string`
+`func (o *BTAppElementCommitTransactionParams) GetTransactionIds() []string`
 
-GetTransactionId returns the TransactionId field if non-nil, zero value otherwise.
+GetTransactionIds returns the TransactionIds field if non-nil, zero value otherwise.
 
-### GetTransactionIdOk
+### GetTransactionIdsOk
 
-`func (o *BTAppElementCommitTransactionParams) GetTransactionIdOk() (*string, bool)`
+`func (o *BTAppElementCommitTransactionParams) GetTransactionIdsOk() (*[]string, bool)`
 
-GetTransactionIdOk returns a tuple with the TransactionId field if it's non-nil, zero value otherwise
+GetTransactionIdsOk returns a tuple with the TransactionIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTransactionId
+### SetTransactionIds
 
-`func (o *BTAppElementCommitTransactionParams) SetTransactionId(v string)`
+`func (o *BTAppElementCommitTransactionParams) SetTransactionIds(v []string)`
 
-SetTransactionId sets TransactionId field to given value.
+SetTransactionIds sets TransactionIds field to given value.
 
-### HasTransactionId
+### HasTransactionIds
 
-`func (o *BTAppElementCommitTransactionParams) HasTransactionId() bool`
+`func (o *BTAppElementCommitTransactionParams) HasTransactionIds() bool`
 
-HasTransactionId returns a boolean if a field has been set.
+HasTransactionIds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

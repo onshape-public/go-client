@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**Derivatives** | Pointer to **map[string][]float64** |  | [optional] 
 **EndDerivativeX** | Pointer to **float64** |  | [optional] 
 **EndDerivativeY** | Pointer to **float64** |  | [optional] 
 **EndHandleX** | Pointer to **float64** |  | [optional] 
@@ -59,6 +60,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTCurveGeometryInterpolatedSpline116AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetDerivatives
+
+`func (o *BTCurveGeometryInterpolatedSpline116AllOf) GetDerivatives() map[string][]float64`
+
+GetDerivatives returns the Derivatives field if non-nil, zero value otherwise.
+
+### GetDerivativesOk
+
+`func (o *BTCurveGeometryInterpolatedSpline116AllOf) GetDerivativesOk() (*map[string][]float64, bool)`
+
+GetDerivativesOk returns a tuple with the Derivatives field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDerivatives
+
+`func (o *BTCurveGeometryInterpolatedSpline116AllOf) SetDerivatives(v map[string][]float64)`
+
+SetDerivatives sets Derivatives field to given value.
+
+### HasDerivatives
+
+`func (o *BTCurveGeometryInterpolatedSpline116AllOf) HasDerivatives() bool`
+
+HasDerivatives returns a boolean if a field has been set.
 
 ### GetEndDerivativeX
 

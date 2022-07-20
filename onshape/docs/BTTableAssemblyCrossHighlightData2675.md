@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AssemblyCrossHighlightItems** | Pointer to [**[]BTTableAssemblyCrossHighlightDataItem2659**](BTTableAssemblyCrossHighlightDataItem-2659.md) |  | [optional] 
+**AssemblyCrossHighlightItems** | Pointer to [**[]BTTableAssemblyCrossHighlightDataItem2659**](BTTableAssemblyCrossHighlightDataItem2659.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods

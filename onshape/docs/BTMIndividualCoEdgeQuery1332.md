@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**EdgeQuery** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery-138.md) |  | [optional] 
-**FaceQuery** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery-138.md) |  | [optional] 
+**EdgeQuery** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 
+**FaceQuery** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 
 
 ## Methods
 

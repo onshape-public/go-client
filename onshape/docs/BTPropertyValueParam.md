@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PropertyId** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to [**map[string]interface{}**](.md) |  | [optional] 
+**Value** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 

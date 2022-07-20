@@ -4,9 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody-3398.md) |  | [optional] 
+**Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody3398.md) |  | [optional] 
+**DocumentId** | Pointer to **string** |  | [optional] 
+**ElementId** | Pointer to **string** |  | [optional] 
 **ErrorEnum** | Pointer to **string** |  | [optional] 
-**FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d-389.md) |  | [optional] 
+**FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
+**OutputSeparateFaceNodes** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -51,6 +55,56 @@ SetBodies sets Bodies field to given value.
 `func (o *BTExportTessellatedFacesResponse898) HasBodies() bool`
 
 HasBodies returns a boolean if a field has been set.
+
+### GetDocumentId
+
+`func (o *BTExportTessellatedFacesResponse898) GetDocumentId() string`
+
+GetDocumentId returns the DocumentId field if non-nil, zero value otherwise.
+
+### GetDocumentIdOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetDocumentIdOk() (*string, bool)`
+
+GetDocumentIdOk returns a tuple with the DocumentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentId
+
+`func (o *BTExportTessellatedFacesResponse898) SetDocumentId(v string)`
+
+SetDocumentId sets DocumentId field to given value.
+
+### HasDocumentId
+
+`func (o *BTExportTessellatedFacesResponse898) HasDocumentId() bool`
+
+HasDocumentId returns a boolean if a field has been set.
+
+### GetElementId
+
+`func (o *BTExportTessellatedFacesResponse898) GetElementId() string`
+
+GetElementId returns the ElementId field if non-nil, zero value otherwise.
+
+### GetElementIdOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetElementIdOk() (*string, bool)`
+
+GetElementIdOk returns a tuple with the ElementId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementId
+
+`func (o *BTExportTessellatedFacesResponse898) SetElementId(v string)`
+
+SetElementId sets ElementId field to given value.
+
+### HasElementId
+
+`func (o *BTExportTessellatedFacesResponse898) HasElementId() bool`
+
+HasElementId returns a boolean if a field has been set.
 
 ### GetErrorEnum
 
@@ -101,6 +155,56 @@ SetFacetPoints sets FacetPoints field to given value.
 `func (o *BTExportTessellatedFacesResponse898) HasFacetPoints() bool`
 
 HasFacetPoints returns a boolean if a field has been set.
+
+### GetFullElementId
+
+`func (o *BTExportTessellatedFacesResponse898) GetFullElementId() BTFullElementId756`
+
+GetFullElementId returns the FullElementId field if non-nil, zero value otherwise.
+
+### GetFullElementIdOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetFullElementIdOk() (*BTFullElementId756, bool)`
+
+GetFullElementIdOk returns a tuple with the FullElementId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullElementId
+
+`func (o *BTExportTessellatedFacesResponse898) SetFullElementId(v BTFullElementId756)`
+
+SetFullElementId sets FullElementId field to given value.
+
+### HasFullElementId
+
+`func (o *BTExportTessellatedFacesResponse898) HasFullElementId() bool`
+
+HasFullElementId returns a boolean if a field has been set.
+
+### GetOutputSeparateFaceNodes
+
+`func (o *BTExportTessellatedFacesResponse898) GetOutputSeparateFaceNodes() bool`
+
+GetOutputSeparateFaceNodes returns the OutputSeparateFaceNodes field if non-nil, zero value otherwise.
+
+### GetOutputSeparateFaceNodesOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetOutputSeparateFaceNodesOk() (*bool, bool)`
+
+GetOutputSeparateFaceNodesOk returns a tuple with the OutputSeparateFaceNodes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputSeparateFaceNodes
+
+`func (o *BTExportTessellatedFacesResponse898) SetOutputSeparateFaceNodes(v bool)`
+
+SetOutputSeparateFaceNodes sets OutputSeparateFaceNodes field to given value.
+
+### HasOutputSeparateFaceNodes
+
+`func (o *BTExportTessellatedFacesResponse898) HasOutputSeparateFaceNodes() bool`
+
+HasOutputSeparateFaceNodes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

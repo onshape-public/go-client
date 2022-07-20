@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **ExternalDocumentWithVersion** | Pointer to [**BTDocumentWithVersionId**](BTDocumentWithVersionId.md) |  | [optional] 
 **ExternalDocumentWithVersionAndElementId** | Pointer to [**BTDocumentWithVersionAndElementId**](BTDocumentWithVersionAndElementId.md) |  | [optional] 
 **ExternalReference** | Pointer to **bool** |  | [optional] 
-**FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId-756.md) |  | [optional] 
-**MicroversionIdAndConfiguration** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration-2338.md) |  | [optional] 
+**FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
+**MicroversionIdAndConfiguration** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 
 ## Methods

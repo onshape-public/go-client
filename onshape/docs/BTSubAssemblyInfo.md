@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Features** | Pointer to [**[]BTAssemblyFeatureInfo**](BTAssemblyFeatureInfo.md) |  | [optional] 
 **FullConfiguration** | Pointer to **string** |  | [optional] 
 **Instances** | Pointer to [**[]BTAssemblyInstanceInfo**](BTAssemblyInstanceInfo.md) |  | [optional] 
+**PartNumber** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetInstances sets Instances field to given value.
 `func (o *BTSubAssemblyInfo) HasInstances() bool`
 
 HasInstances returns a boolean if a field has been set.
+
+### GetPartNumber
+
+`func (o *BTSubAssemblyInfo) GetPartNumber() string`
+
+GetPartNumber returns the PartNumber field if non-nil, zero value otherwise.
+
+### GetPartNumberOk
+
+`func (o *BTSubAssemblyInfo) GetPartNumberOk() (*string, bool)`
+
+GetPartNumberOk returns a tuple with the PartNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartNumber
+
+`func (o *BTSubAssemblyInfo) SetPartNumber(v string)`
+
+SetPartNumber sets PartNumber field to given value.
+
+### HasPartNumber
+
+`func (o *BTSubAssemblyInfo) HasPartNumber() bool`
+
+HasPartNumber returns a boolean if a field has been set.
 
 ### GetRevision
 

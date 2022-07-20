@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **Configuration** | Pointer to **string** |  | [optional] 
 **ConnectionId** | Pointer to **string** |  | [optional] 
 **CustomProperties** | Pointer to [**[]BTNameValuePair**](BTNameValuePair.md) |  | [optional] 
-**CustomPropertyDefinitions** | Pointer to [**[]BTCustomPropertyDefinitionParams**](BTCustomPropertyDefinitionParams.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **Material** | Pointer to [**BTMaterialParams**](BTMaterialParams.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to [**BTPSOIdentity2741**](BTPSOIdentity2741.md) |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **ProductLine** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
@@ -168,31 +168,6 @@ SetCustomProperties sets CustomProperties field to given value.
 
 HasCustomProperties returns a boolean if a field has been set.
 
-### GetCustomPropertyDefinitions
-
-`func (o *BTWorkspacePartParams) GetCustomPropertyDefinitions() []BTCustomPropertyDefinitionParams`
-
-GetCustomPropertyDefinitions returns the CustomPropertyDefinitions field if non-nil, zero value otherwise.
-
-### GetCustomPropertyDefinitionsOk
-
-`func (o *BTWorkspacePartParams) GetCustomPropertyDefinitionsOk() (*[]BTCustomPropertyDefinitionParams, bool)`
-
-GetCustomPropertyDefinitionsOk returns a tuple with the CustomPropertyDefinitions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomPropertyDefinitions
-
-`func (o *BTWorkspacePartParams) SetCustomPropertyDefinitions(v []BTCustomPropertyDefinitionParams)`
-
-SetCustomPropertyDefinitions sets CustomPropertyDefinitions field to given value.
-
-### HasCustomPropertyDefinitions
-
-`func (o *BTWorkspacePartParams) HasCustomPropertyDefinitions() bool`
-
-HasCustomPropertyDefinitions returns a boolean if a field has been set.
-
 ### GetDescription
 
 `func (o *BTWorkspacePartParams) GetDescription() string`
@@ -317,6 +292,31 @@ SetPartId sets PartId field to given value.
 `func (o *BTWorkspacePartParams) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTWorkspacePartParams) GetPartIdentity() BTPSOIdentity2741`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTWorkspacePartParams) GetPartIdentityOk() (*BTPSOIdentity2741, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTWorkspacePartParams) SetPartIdentity(v BTPSOIdentity2741)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTWorkspacePartParams) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetPartNumber
 

@@ -5,13 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
+**DocumentationName** | Pointer to **string** |  | [optional] 
+**DocumentationNameOverride** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **FirstName** | Pointer to **string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**GlobalPermissionInfo**](GlobalPermissionInfo.md) |  | [optional] 
 **IsGuest** | Pointer to **bool** |  | [optional] 
 **IsLight** | Pointer to **bool** |  | [optional] 
-**LastLoginTime** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**LastLoginTime** | Pointer to **JSONTime** |  | [optional] 
 **LastName** | Pointer to **string** |  | [optional] 
+**PersonalMessageAllowed** | Pointer to **bool** |  | [optional] 
 **Source** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -57,6 +60,56 @@ SetCompany sets Company field to given value.
 `func (o *BTUserSummaryInfoAllOf) HasCompany() bool`
 
 HasCompany returns a boolean if a field has been set.
+
+### GetDocumentationName
+
+`func (o *BTUserSummaryInfoAllOf) GetDocumentationName() string`
+
+GetDocumentationName returns the DocumentationName field if non-nil, zero value otherwise.
+
+### GetDocumentationNameOk
+
+`func (o *BTUserSummaryInfoAllOf) GetDocumentationNameOk() (*string, bool)`
+
+GetDocumentationNameOk returns a tuple with the DocumentationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentationName
+
+`func (o *BTUserSummaryInfoAllOf) SetDocumentationName(v string)`
+
+SetDocumentationName sets DocumentationName field to given value.
+
+### HasDocumentationName
+
+`func (o *BTUserSummaryInfoAllOf) HasDocumentationName() bool`
+
+HasDocumentationName returns a boolean if a field has been set.
+
+### GetDocumentationNameOverride
+
+`func (o *BTUserSummaryInfoAllOf) GetDocumentationNameOverride() string`
+
+GetDocumentationNameOverride returns the DocumentationNameOverride field if non-nil, zero value otherwise.
+
+### GetDocumentationNameOverrideOk
+
+`func (o *BTUserSummaryInfoAllOf) GetDocumentationNameOverrideOk() (*string, bool)`
+
+GetDocumentationNameOverrideOk returns a tuple with the DocumentationNameOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentationNameOverride
+
+`func (o *BTUserSummaryInfoAllOf) SetDocumentationNameOverride(v string)`
+
+SetDocumentationNameOverride sets DocumentationNameOverride field to given value.
+
+### HasDocumentationNameOverride
+
+`func (o *BTUserSummaryInfoAllOf) HasDocumentationNameOverride() bool`
+
+HasDocumentationNameOverride returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -232,6 +285,31 @@ SetLastName sets LastName field to given value.
 `func (o *BTUserSummaryInfoAllOf) HasLastName() bool`
 
 HasLastName returns a boolean if a field has been set.
+
+### GetPersonalMessageAllowed
+
+`func (o *BTUserSummaryInfoAllOf) GetPersonalMessageAllowed() bool`
+
+GetPersonalMessageAllowed returns the PersonalMessageAllowed field if non-nil, zero value otherwise.
+
+### GetPersonalMessageAllowedOk
+
+`func (o *BTUserSummaryInfoAllOf) GetPersonalMessageAllowedOk() (*bool, bool)`
+
+GetPersonalMessageAllowedOk returns a tuple with the PersonalMessageAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersonalMessageAllowed
+
+`func (o *BTUserSummaryInfoAllOf) SetPersonalMessageAllowed(v bool)`
+
+SetPersonalMessageAllowed sets PersonalMessageAllowed field to given value.
+
+### HasPersonalMessageAllowed
+
+`func (o *BTUserSummaryInfoAllOf) HasPersonalMessageAllowed() bool`
+
+HasPersonalMessageAllowed returns a boolean if a field has been set.
 
 ### GetSource
 

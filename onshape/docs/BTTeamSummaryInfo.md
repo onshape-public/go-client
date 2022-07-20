@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** |  | [optional] 
 **CanMove** | Pointer to **bool** |  | [optional] 
-**CreatedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
@@ -14,12 +14,12 @@ Name | Type | Description | Notes
 **IsContainer** | Pointer to **bool** |  | [optional] 
 **IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
 **IsMutable** | Pointer to **bool** |  | [optional] 
-**JsonType** | Pointer to **string** |  | [optional] 
-**ModifiedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Owner** | Pointer to [**BTOwnerInfo**](BTOwnerInfo.md) |  | [optional] 
 **PredefinedTeam** | Pointer to **int32** |  | [optional] 
+**PredefinedTeamMutable** | Pointer to **bool** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
@@ -294,31 +294,6 @@ SetIsMutable sets IsMutable field to given value.
 
 HasIsMutable returns a boolean if a field has been set.
 
-### GetJsonType
-
-`func (o *BTTeamSummaryInfo) GetJsonType() string`
-
-GetJsonType returns the JsonType field if non-nil, zero value otherwise.
-
-### GetJsonTypeOk
-
-`func (o *BTTeamSummaryInfo) GetJsonTypeOk() (*string, bool)`
-
-GetJsonTypeOk returns a tuple with the JsonType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJsonType
-
-`func (o *BTTeamSummaryInfo) SetJsonType(v string)`
-
-SetJsonType sets JsonType field to given value.
-
-### HasJsonType
-
-`func (o *BTTeamSummaryInfo) HasJsonType() bool`
-
-HasJsonType returns a boolean if a field has been set.
-
 ### GetModifiedAt
 
 `func (o *BTTeamSummaryInfo) GetModifiedAt() JSONTime`
@@ -443,6 +418,31 @@ SetPredefinedTeam sets PredefinedTeam field to given value.
 `func (o *BTTeamSummaryInfo) HasPredefinedTeam() bool`
 
 HasPredefinedTeam returns a boolean if a field has been set.
+
+### GetPredefinedTeamMutable
+
+`func (o *BTTeamSummaryInfo) GetPredefinedTeamMutable() bool`
+
+GetPredefinedTeamMutable returns the PredefinedTeamMutable field if non-nil, zero value otherwise.
+
+### GetPredefinedTeamMutableOk
+
+`func (o *BTTeamSummaryInfo) GetPredefinedTeamMutableOk() (*bool, bool)`
+
+GetPredefinedTeamMutableOk returns a tuple with the PredefinedTeamMutable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPredefinedTeamMutable
+
+`func (o *BTTeamSummaryInfo) SetPredefinedTeamMutable(v bool)`
+
+SetPredefinedTeamMutable sets PredefinedTeamMutable field to given value.
+
+### HasPredefinedTeamMutable
+
+`func (o *BTTeamSummaryInfo) HasPredefinedTeamMutable() bool`
+
+HasPredefinedTeamMutable returns a boolean if a field has been set.
 
 ### GetProjectId
 

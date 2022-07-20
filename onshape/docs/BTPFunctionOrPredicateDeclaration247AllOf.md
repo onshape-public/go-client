@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 
 ## Methods
 

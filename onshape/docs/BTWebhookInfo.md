@@ -5,16 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CompanyId** | Pointer to **string** |  | [optional] 
+**CreatedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **DroppedEventCount** | Pointer to **int32** |  | [optional] 
 **Events** | Pointer to **[]string** |  | [optional] 
 **Filter** | Pointer to **string** |  | [optional] 
 **FolderId** | Pointer to **string** |  | [optional] 
-**GetprojectId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
+**ProjectId** | Pointer to **string** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 
@@ -62,6 +64,31 @@ SetCompanyId sets CompanyId field to given value.
 
 HasCompanyId returns a boolean if a field has been set.
 
+### GetCreatedBy
+
+`func (o *BTWebhookInfo) GetCreatedBy() BTUserSummaryInfo`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *BTWebhookInfo) GetCreatedByOk() (*BTUserSummaryInfo, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *BTWebhookInfo) SetCreatedBy(v BTUserSummaryInfo)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *BTWebhookInfo) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
+
 ### GetData
 
 `func (o *BTWebhookInfo) GetData() string`
@@ -86,6 +113,31 @@ SetData sets Data field to given value.
 `func (o *BTWebhookInfo) HasData() bool`
 
 HasData returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *BTWebhookInfo) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *BTWebhookInfo) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *BTWebhookInfo) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *BTWebhookInfo) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetDroppedEventCount
 
@@ -187,31 +239,6 @@ SetFolderId sets FolderId field to given value.
 
 HasFolderId returns a boolean if a field has been set.
 
-### GetGetprojectId
-
-`func (o *BTWebhookInfo) GetGetprojectId() string`
-
-GetGetprojectId returns the GetprojectId field if non-nil, zero value otherwise.
-
-### GetGetprojectIdOk
-
-`func (o *BTWebhookInfo) GetGetprojectIdOk() (*string, bool)`
-
-GetGetprojectIdOk returns a tuple with the GetprojectId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGetprojectId
-
-`func (o *BTWebhookInfo) SetGetprojectId(v string)`
-
-SetGetprojectId sets GetprojectId field to given value.
-
-### HasGetprojectId
-
-`func (o *BTWebhookInfo) HasGetprojectId() bool`
-
-HasGetprojectId returns a boolean if a field has been set.
-
 ### GetHref
 
 `func (o *BTWebhookInfo) GetHref() string`
@@ -311,6 +338,31 @@ SetOptions sets Options field to given value.
 `func (o *BTWebhookInfo) HasOptions() bool`
 
 HasOptions returns a boolean if a field has been set.
+
+### GetProjectId
+
+`func (o *BTWebhookInfo) GetProjectId() string`
+
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
+
+### GetProjectIdOk
+
+`func (o *BTWebhookInfo) GetProjectIdOk() (*string, bool)`
+
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProjectId
+
+`func (o *BTWebhookInfo) SetProjectId(v string)`
+
+SetProjectId sets ProjectId field to given value.
+
+### HasProjectId
+
+`func (o *BTWebhookInfo) HasProjectId() bool`
+
+HasProjectId returns a boolean if a field has been set.
 
 ### GetUrl
 

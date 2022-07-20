@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Children** | Pointer to [**[]BTParameterVisibilityCondition177**](BTParameterVisibilityCondition-177.md) |  | [optional] 
+**Children** | Pointer to [**[]BTParameterVisibilityCondition177**](BTParameterVisibilityCondition177.md) |  | [optional] 
 **Operation** | Pointer to **string** |  | [optional] 
 
 ## Methods

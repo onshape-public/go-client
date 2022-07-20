@@ -7,12 +7,14 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **ExcludeFlattenedParts** | Pointer to **bool** |  | [optional] 
 **ExcludePatternInstances** | Pointer to **bool** |  | [optional] 
+**ExcludeReplicatedInstances** | Pointer to **bool** |  | [optional] 
 **ExcludeSketch** | Pointer to **bool** |  | [optional] 
 **ExcludeStandardContent** | Pointer to **bool** |  | [optional] 
 **ExcludeStudioInserts** | Pointer to **bool** |  | [optional] 
 **ExcludeSubAssemblies** | Pointer to **bool** |  | [optional] 
 **ExcludeSuppressed** | Pointer to **bool** |  | [optional] 
 **IncludeAssemblyRoot** | Pointer to **bool** |  | [optional] 
+**IncludeParametricInstance** | Pointer to **bool** |  | [optional] 
 **IncludePatternOccurrence** | Pointer to **bool** |  | [optional] 
 **SolidOrCompositeBodyOnly** | Pointer to **bool** |  | [optional] 
 **TopLevelOnly** | Pointer to **bool** |  | [optional] 
@@ -110,6 +112,31 @@ SetExcludePatternInstances sets ExcludePatternInstances field to given value.
 `func (o *BTOccurrenceFilter166AllOf) HasExcludePatternInstances() bool`
 
 HasExcludePatternInstances returns a boolean if a field has been set.
+
+### GetExcludeReplicatedInstances
+
+`func (o *BTOccurrenceFilter166AllOf) GetExcludeReplicatedInstances() bool`
+
+GetExcludeReplicatedInstances returns the ExcludeReplicatedInstances field if non-nil, zero value otherwise.
+
+### GetExcludeReplicatedInstancesOk
+
+`func (o *BTOccurrenceFilter166AllOf) GetExcludeReplicatedInstancesOk() (*bool, bool)`
+
+GetExcludeReplicatedInstancesOk returns a tuple with the ExcludeReplicatedInstances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeReplicatedInstances
+
+`func (o *BTOccurrenceFilter166AllOf) SetExcludeReplicatedInstances(v bool)`
+
+SetExcludeReplicatedInstances sets ExcludeReplicatedInstances field to given value.
+
+### HasExcludeReplicatedInstances
+
+`func (o *BTOccurrenceFilter166AllOf) HasExcludeReplicatedInstances() bool`
+
+HasExcludeReplicatedInstances returns a boolean if a field has been set.
 
 ### GetExcludeSketch
 
@@ -260,6 +287,31 @@ SetIncludeAssemblyRoot sets IncludeAssemblyRoot field to given value.
 `func (o *BTOccurrenceFilter166AllOf) HasIncludeAssemblyRoot() bool`
 
 HasIncludeAssemblyRoot returns a boolean if a field has been set.
+
+### GetIncludeParametricInstance
+
+`func (o *BTOccurrenceFilter166AllOf) GetIncludeParametricInstance() bool`
+
+GetIncludeParametricInstance returns the IncludeParametricInstance field if non-nil, zero value otherwise.
+
+### GetIncludeParametricInstanceOk
+
+`func (o *BTOccurrenceFilter166AllOf) GetIncludeParametricInstanceOk() (*bool, bool)`
+
+GetIncludeParametricInstanceOk returns a tuple with the IncludeParametricInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeParametricInstance
+
+`func (o *BTOccurrenceFilter166AllOf) SetIncludeParametricInstance(v bool)`
+
+SetIncludeParametricInstance sets IncludeParametricInstance field to given value.
+
+### HasIncludeParametricInstance
+
+`func (o *BTOccurrenceFilter166AllOf) HasIncludeParametricInstance() bool`
+
+HasIncludeParametricInstance returns a boolean if a field has been set.
 
 ### GetIncludePatternOccurrence
 

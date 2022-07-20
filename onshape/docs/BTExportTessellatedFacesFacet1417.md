@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Indices** | Pointer to **[]int32** |  | [optional] 
-**Normal** | Pointer to [**BTVector3d389**](BTVector3d-389.md) |  | [optional] 
-**Normals** | Pointer to [**[]BTVector3d389**](BTVector3d-389.md) |  | [optional] 
-**TextureCoordinates** | Pointer to [**[]BTVector2d1812**](BTVector2d-1812.md) |  | [optional] 
-**Vertices** | Pointer to [**[]BTVector3d389**](BTVector3d-389.md) |  | [optional] 
+**Normal** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**Normals** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**TextureCoordinates** | Pointer to [**[]BTVector2d1812**](BTVector2d1812.md) |  | [optional] 
+**Vertices** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
 
 ## Methods
 

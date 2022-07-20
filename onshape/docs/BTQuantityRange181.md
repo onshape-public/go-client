@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **float64** |  | [optional] 
-**Location** | Pointer to [**BTLocationInfo226**](BTLocationInfo-226.md) |  | [optional] 
+**Location** | Pointer to [**BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **MaxValue** | Pointer to **float64** |  | [optional] 
 **MinValue** | Pointer to **float64** |  | [optional] 
 **Units** | Pointer to **string** |  | [optional] 

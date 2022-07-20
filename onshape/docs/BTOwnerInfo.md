@@ -4,12 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AcceptOwnershipTransfer** | Pointer to **bool** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **IsEnterpriseOwnedResource** | Pointer to **bool** |  | [optional] 
-**JsonType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **int32** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
@@ -32,31 +30,6 @@ will change when the set of required properties is changed
 NewBTOwnerInfoWithDefaults instantiates a new BTOwnerInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAcceptOwnershipTransfer
-
-`func (o *BTOwnerInfo) GetAcceptOwnershipTransfer() bool`
-
-GetAcceptOwnershipTransfer returns the AcceptOwnershipTransfer field if non-nil, zero value otherwise.
-
-### GetAcceptOwnershipTransferOk
-
-`func (o *BTOwnerInfo) GetAcceptOwnershipTransferOk() (*bool, bool)`
-
-GetAcceptOwnershipTransferOk returns a tuple with the AcceptOwnershipTransfer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAcceptOwnershipTransfer
-
-`func (o *BTOwnerInfo) SetAcceptOwnershipTransfer(v bool)`
-
-SetAcceptOwnershipTransfer sets AcceptOwnershipTransfer field to given value.
-
-### HasAcceptOwnershipTransfer
-
-`func (o *BTOwnerInfo) HasAcceptOwnershipTransfer() bool`
-
-HasAcceptOwnershipTransfer returns a boolean if a field has been set.
 
 ### GetHref
 
@@ -157,31 +130,6 @@ SetIsEnterpriseOwnedResource sets IsEnterpriseOwnedResource field to given value
 `func (o *BTOwnerInfo) HasIsEnterpriseOwnedResource() bool`
 
 HasIsEnterpriseOwnedResource returns a boolean if a field has been set.
-
-### GetJsonType
-
-`func (o *BTOwnerInfo) GetJsonType() string`
-
-GetJsonType returns the JsonType field if non-nil, zero value otherwise.
-
-### GetJsonTypeOk
-
-`func (o *BTOwnerInfo) GetJsonTypeOk() (*string, bool)`
-
-GetJsonTypeOk returns a tuple with the JsonType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJsonType
-
-`func (o *BTOwnerInfo) SetJsonType(v string)`
-
-SetJsonType sets JsonType field to given value.
-
-### HasJsonType
-
-`func (o *BTOwnerInfo) HasJsonType() bool`
-
-HasJsonType returns a boolean if a field has been set.
 
 ### GetName
 

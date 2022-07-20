@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Material** | Pointer to [**BTPartMaterial1445**](BTPartMaterial-1445.md) |  | [optional] 
+**Material** | Pointer to [**BTPartMaterial1445**](BTPartMaterial1445.md) |  | [optional] 
 
 ## Methods
 

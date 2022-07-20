@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**ExplodeSteps** | Pointer to [**[]BTExplosionStepFeature3008**](BTExplosionStepFeature-3008.md) |  | [optional] 
-**StartingPositionId** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration-2338.md) |  | [optional] 
+**ExplodeSteps** | Pointer to [**[]BTExplosionStepFeature3008**](BTExplosionStepFeature3008.md) |  | [optional] 
+**StartingPositionId** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
 
 ## Methods
 

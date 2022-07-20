@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Images** | Pointer to [**[][]string**](array.md) |  | [optional] 
+**Images** | Pointer to **[][]string** |  | [optional] 
 
 ## Methods
 

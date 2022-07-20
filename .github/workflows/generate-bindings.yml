@@ -1,0 +1,96 @@
+name: Generate Bindings
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'openapi.json'
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Install json CLI
+        run: npm install -g json
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Setup Go environment
+        uses: actions/setup-go@v3.2.0
+        with:
+          go-version: 1.18.3
+      - name: Download OpenAPI generator
+        run: |
+          generatorUrl=$(cat ${{ github.workspace }}/bindgen-config.json | json generate.generatorUrl)
+          wget "${generatorUrl}" -O ${{ github.workspace }}/openapi-generator-cli.jar
+      - name: Preprocess specification
+        id: ps
+        run: |
+          repo=${{ github.workspace }} ${{ github.workspace }}/.github/workflows/preprocess.sh
+      - name: Remove old files
+        run: |
+          artifacts=$(cat ./onshape/.openapi-generator-ignore | grep "^[^#]")
+          if ! [ -z "$artifacts" ]; then
+           artifactOutput='-name .openapi-generator-ignore'
+           while IFS= read -r line; do
+              if ! [ -z "$line" ]; then
+               artifactOutput="${artifactOutput}"' -o -name '"${line}"
+              fi
+           done <<< "${artifacts}"
+           cd ./onshape
+           find . -type f ! \( ${artifactOutput} \) -delete
+           cd ./..
+          fi
+      - name: Generate bindings
+        id: gb
+        run: |
+          repo=${{ github.workspace }} packageVersion=${{ steps.ps.outputs.change }} ${{ github.workspace }}/.github/workflows/bindgen.sh
+          rm openapi.json.tmp
+          rm ${{ github.workspace }}/openapi-generator-cli.jar
+          git add --all
+          if [[ `git status --porcelain` ]]; then
+           echo ::set-output name=changes-occurred::true
+           echo 'Changes occured; creating pull request.'
+          else
+           echo 'No new changes; bindings are the same.'
+          fi
+      - name: Create pull request
+        if: ${{ steps.gb.outputs.changes-occurred }}
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: onshape-${{ steps.ps.outputs.change }}_${{ steps.ps.outputs.random-ext }}
+          delete-branch: true
+          title: Bindings for Onshape ${{ steps.ps.outputs.change }}
+          commit-message: Generate bindings for Onshape ${{ steps.ps.outputs.change }}
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+      - name: Wait for checks to pass
+        if: ${{ steps.gb.outputs.changes-occurred }}
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          checkName: test
+          ref: ${{ steps.cpr.outputs.pull-request-head-sha }}
+      - name: Merge pull request
+        if: (steps.gb.outputs.changes-occurred && steps.wait-for-build.outputs.conclusion == 'success')
+        uses: juliangruber/merge-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          number: ${{ steps.cpr.outputs.pull-request-number }}
+      - name: Create version tag
+        if: (steps.gb.outputs.changes-occurred && steps.wait-for-build.outputs.conclusion == 'success')
+        run: |
+          git fetch --all
+          git reset --hard origin/main
+          git tag -f v${{ steps.ps.outputs.change }}
+          git push -f origin --tags

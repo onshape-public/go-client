@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CollectionChanges** | Pointer to [**map[string][]BTDiffInfo**](array.md) |  | [optional] 
+**Changes** | Pointer to [**map[string]BTDiffInfo**](BTDiffInfo.md) |  | [optional] 
 **EntityType** | Pointer to **string** |  | [optional] 
 **GeometryChangeMessages** | Pointer to **[]string** |  | [optional] 
 **SourceId** | Pointer to **string** |  | [optional] 
@@ -32,30 +32,30 @@ NewBTDiffInfoWithDefaults instantiates a new BTDiffInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCollectionChanges
+### GetChanges
 
-`func (o *BTDiffInfo) GetCollectionChanges() map[string][]BTDiffInfo`
+`func (o *BTDiffInfo) GetChanges() map[string]BTDiffInfo`
 
-GetCollectionChanges returns the CollectionChanges field if non-nil, zero value otherwise.
+GetChanges returns the Changes field if non-nil, zero value otherwise.
 
-### GetCollectionChangesOk
+### GetChangesOk
 
-`func (o *BTDiffInfo) GetCollectionChangesOk() (*map[string][]BTDiffInfo, bool)`
+`func (o *BTDiffInfo) GetChangesOk() (*map[string]BTDiffInfo, bool)`
 
-GetCollectionChangesOk returns a tuple with the CollectionChanges field if it's non-nil, zero value otherwise
+GetChangesOk returns a tuple with the Changes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCollectionChanges
+### SetChanges
 
-`func (o *BTDiffInfo) SetCollectionChanges(v map[string][]BTDiffInfo)`
+`func (o *BTDiffInfo) SetChanges(v map[string]BTDiffInfo)`
 
-SetCollectionChanges sets CollectionChanges field to given value.
+SetChanges sets Changes field to given value.
 
-### HasCollectionChanges
+### HasChanges
 
-`func (o *BTDiffInfo) HasCollectionChanges() bool`
+`func (o *BTDiffInfo) HasChanges() bool`
 
-HasCollectionChanges returns a boolean if a field has been set.
+HasChanges returns a boolean if a field has been set.
 
 ### GetEntityType
 

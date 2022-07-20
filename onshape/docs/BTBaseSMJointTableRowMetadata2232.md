@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData-1753.md) |  | [optional] 
-**CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData-1753.md) |  | [optional] 
+**CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
+**CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 
 ## Methods
 

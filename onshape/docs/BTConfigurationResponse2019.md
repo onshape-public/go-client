@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConfigurationParameters** | Pointer to [**[]BTMConfigurationParameter819**](BTMConfigurationParameter-819.md) |  | [optional] 
-**CurrentConfiguration** | Pointer to [**[]BTMParameter1**](BTMParameter-1.md) |  | [optional] 
+**ConfigurationParameters** | Pointer to [**[]BTMConfigurationParameter819**](BTMConfigurationParameter819.md) |  | [optional] 
+**CurrentConfiguration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
 **MicroversionSkew** | Pointer to **bool** |  | [optional] 
 **RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 

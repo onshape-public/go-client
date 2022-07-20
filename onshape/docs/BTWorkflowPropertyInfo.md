@@ -4,22 +4,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultValue** | Pointer to [**map[string]interface{}**](.md) |  | [optional] 
+**ComputedProperty** | Pointer to **bool** |  | [optional] 
+**ComputedPropertyError** | Pointer to **string** |  | [optional] 
+**DefaultValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **Dirty** | Pointer to **bool** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
 **EditableInUi** | Pointer to **bool** |  | [optional] 
 **EnumValues** | Pointer to [**[]BTMetadataEnumValueInfo**](BTMetadataEnumValueInfo.md) |  | [optional] 
-**InitialValue** | Pointer to [**map[string]interface{}**](.md) |  | [optional] 
+**InitialValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **IsApproverProperty** | Pointer to **bool** |  | [optional] 
 **IsNotifierProperty** | Pointer to **bool** |  | [optional] 
+**Multivalued** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Observers** | Pointer to [**[]BTWorkflowableObjectObserver**](BTWorkflowableObjectObserver.md) |  | [optional] 
 **PropertyId** | Pointer to **string** |  | [optional] 
 **PropertySource** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 
+**TeamsOnly** | Pointer to **bool** |  | [optional] 
 **UiHints** | Pointer to [**BTMetadataPropertyUiHintsInfo**](BTMetadataPropertyUiHintsInfo.md) |  | [optional] 
+**UsersOnly** | Pointer to **bool** |  | [optional] 
 **Validator** | Pointer to [**BTMetadataPropertyValidatorInfo**](BTMetadataPropertyValidatorInfo.md) |  | [optional] 
-**Value** | Pointer to [**map[string]interface{}**](.md) |  | [optional] 
+**Value** | Pointer to **map[string]interface{}** |  | [optional] 
 **ValueType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -40,6 +46,56 @@ will change when the set of required properties is changed
 NewBTWorkflowPropertyInfoWithDefaults instantiates a new BTWorkflowPropertyInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetComputedProperty
+
+`func (o *BTWorkflowPropertyInfo) GetComputedProperty() bool`
+
+GetComputedProperty returns the ComputedProperty field if non-nil, zero value otherwise.
+
+### GetComputedPropertyOk
+
+`func (o *BTWorkflowPropertyInfo) GetComputedPropertyOk() (*bool, bool)`
+
+GetComputedPropertyOk returns a tuple with the ComputedProperty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedProperty
+
+`func (o *BTWorkflowPropertyInfo) SetComputedProperty(v bool)`
+
+SetComputedProperty sets ComputedProperty field to given value.
+
+### HasComputedProperty
+
+`func (o *BTWorkflowPropertyInfo) HasComputedProperty() bool`
+
+HasComputedProperty returns a boolean if a field has been set.
+
+### GetComputedPropertyError
+
+`func (o *BTWorkflowPropertyInfo) GetComputedPropertyError() string`
+
+GetComputedPropertyError returns the ComputedPropertyError field if non-nil, zero value otherwise.
+
+### GetComputedPropertyErrorOk
+
+`func (o *BTWorkflowPropertyInfo) GetComputedPropertyErrorOk() (*string, bool)`
+
+GetComputedPropertyErrorOk returns a tuple with the ComputedPropertyError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedPropertyError
+
+`func (o *BTWorkflowPropertyInfo) SetComputedPropertyError(v string)`
+
+SetComputedPropertyError sets ComputedPropertyError field to given value.
+
+### HasComputedPropertyError
+
+`func (o *BTWorkflowPropertyInfo) HasComputedPropertyError() bool`
+
+HasComputedPropertyError returns a boolean if a field has been set.
 
 ### GetDefaultValue
 
@@ -241,6 +297,31 @@ SetIsNotifierProperty sets IsNotifierProperty field to given value.
 
 HasIsNotifierProperty returns a boolean if a field has been set.
 
+### GetMultivalued
+
+`func (o *BTWorkflowPropertyInfo) GetMultivalued() bool`
+
+GetMultivalued returns the Multivalued field if non-nil, zero value otherwise.
+
+### GetMultivaluedOk
+
+`func (o *BTWorkflowPropertyInfo) GetMultivaluedOk() (*bool, bool)`
+
+GetMultivaluedOk returns a tuple with the Multivalued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultivalued
+
+`func (o *BTWorkflowPropertyInfo) SetMultivalued(v bool)`
+
+SetMultivalued sets Multivalued field to given value.
+
+### HasMultivalued
+
+`func (o *BTWorkflowPropertyInfo) HasMultivalued() bool`
+
+HasMultivalued returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *BTWorkflowPropertyInfo) GetName() string`
@@ -265,6 +346,31 @@ SetName sets Name field to given value.
 `func (o *BTWorkflowPropertyInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetObservers
+
+`func (o *BTWorkflowPropertyInfo) GetObservers() []BTWorkflowableObjectObserver`
+
+GetObservers returns the Observers field if non-nil, zero value otherwise.
+
+### GetObserversOk
+
+`func (o *BTWorkflowPropertyInfo) GetObserversOk() (*[]BTWorkflowableObjectObserver, bool)`
+
+GetObserversOk returns a tuple with the Observers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObservers
+
+`func (o *BTWorkflowPropertyInfo) SetObservers(v []BTWorkflowableObjectObserver)`
+
+SetObservers sets Observers field to given value.
+
+### HasObservers
+
+`func (o *BTWorkflowPropertyInfo) HasObservers() bool`
+
+HasObservers returns a boolean if a field has been set.
 
 ### GetPropertyId
 
@@ -366,6 +472,31 @@ SetSchemaId sets SchemaId field to given value.
 
 HasSchemaId returns a boolean if a field has been set.
 
+### GetTeamsOnly
+
+`func (o *BTWorkflowPropertyInfo) GetTeamsOnly() bool`
+
+GetTeamsOnly returns the TeamsOnly field if non-nil, zero value otherwise.
+
+### GetTeamsOnlyOk
+
+`func (o *BTWorkflowPropertyInfo) GetTeamsOnlyOk() (*bool, bool)`
+
+GetTeamsOnlyOk returns a tuple with the TeamsOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTeamsOnly
+
+`func (o *BTWorkflowPropertyInfo) SetTeamsOnly(v bool)`
+
+SetTeamsOnly sets TeamsOnly field to given value.
+
+### HasTeamsOnly
+
+`func (o *BTWorkflowPropertyInfo) HasTeamsOnly() bool`
+
+HasTeamsOnly returns a boolean if a field has been set.
+
 ### GetUiHints
 
 `func (o *BTWorkflowPropertyInfo) GetUiHints() BTMetadataPropertyUiHintsInfo`
@@ -390,6 +521,31 @@ SetUiHints sets UiHints field to given value.
 `func (o *BTWorkflowPropertyInfo) HasUiHints() bool`
 
 HasUiHints returns a boolean if a field has been set.
+
+### GetUsersOnly
+
+`func (o *BTWorkflowPropertyInfo) GetUsersOnly() bool`
+
+GetUsersOnly returns the UsersOnly field if non-nil, zero value otherwise.
+
+### GetUsersOnlyOk
+
+`func (o *BTWorkflowPropertyInfo) GetUsersOnlyOk() (*bool, bool)`
+
+GetUsersOnlyOk returns a tuple with the UsersOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsersOnly
+
+`func (o *BTWorkflowPropertyInfo) SetUsersOnly(v bool)`
+
+SetUsersOnly sets UsersOnly field to given value.
+
+### HasUsersOnly
+
+`func (o *BTWorkflowPropertyInfo) HasUsersOnly() bool`
+
+HasUsersOnly returns a boolean if a field has been set.
 
 ### GetValidator
 

@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance-1152.md) |  | [optional] 
+**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
+**AppearanceSourceId** | Pointer to **string** |  | [optional] 
+**AppearanceSourceName** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
-**Facets** | Pointer to [**[]BTExportTessellatedFacesFacet1417**](BTExportTessellatedFacesFacet-1417.md) |  | [optional] 
+**Facets** | Pointer to [**[]BTExportTessellatedFacesFacet1417**](BTExportTessellatedFacesFacet1417.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -53,6 +55,56 @@ SetAppearance sets Appearance field to given value.
 `func (o *BTExportTessellatedFacesFace1192) HasAppearance() bool`
 
 HasAppearance returns a boolean if a field has been set.
+
+### GetAppearanceSourceId
+
+`func (o *BTExportTessellatedFacesFace1192) GetAppearanceSourceId() string`
+
+GetAppearanceSourceId returns the AppearanceSourceId field if non-nil, zero value otherwise.
+
+### GetAppearanceSourceIdOk
+
+`func (o *BTExportTessellatedFacesFace1192) GetAppearanceSourceIdOk() (*string, bool)`
+
+GetAppearanceSourceIdOk returns a tuple with the AppearanceSourceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppearanceSourceId
+
+`func (o *BTExportTessellatedFacesFace1192) SetAppearanceSourceId(v string)`
+
+SetAppearanceSourceId sets AppearanceSourceId field to given value.
+
+### HasAppearanceSourceId
+
+`func (o *BTExportTessellatedFacesFace1192) HasAppearanceSourceId() bool`
+
+HasAppearanceSourceId returns a boolean if a field has been set.
+
+### GetAppearanceSourceName
+
+`func (o *BTExportTessellatedFacesFace1192) GetAppearanceSourceName() string`
+
+GetAppearanceSourceName returns the AppearanceSourceName field if non-nil, zero value otherwise.
+
+### GetAppearanceSourceNameOk
+
+`func (o *BTExportTessellatedFacesFace1192) GetAppearanceSourceNameOk() (*string, bool)`
+
+GetAppearanceSourceNameOk returns a tuple with the AppearanceSourceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppearanceSourceName
+
+`func (o *BTExportTessellatedFacesFace1192) SetAppearanceSourceName(v string)`
+
+SetAppearanceSourceName sets AppearanceSourceName field to given value.
+
+### HasAppearanceSourceName
+
+`func (o *BTExportTessellatedFacesFace1192) HasAppearanceSourceName() bool`
+
+HasAppearanceSourceName returns a boolean if a field has been set.
 
 ### GetBtType
 

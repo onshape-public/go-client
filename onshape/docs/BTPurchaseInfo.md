@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ActualAmountPaidCents** | Pointer to **int64** |  | [optional] 
 **AmountCents** | Pointer to **int64** |  | [optional] 
 **Application** | Pointer to [**BTAPIApplicationSummaryInfo**](BTAPIApplicationSummaryInfo.md) |  | [optional] 
-**CanceledAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CanceledAt** | Pointer to **JSONTime** |  | [optional] 
 **Card** | Pointer to [**BTCardInfo**](BTCardInfo.md) |  | [optional] 
 **ClientId** | Pointer to **string** |  | [optional] 
 **CouponAmountOff** | Pointer to **int64** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Group** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**LastModified** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**LastModified** | Pointer to **JSONTime** |  | [optional] 
 **LastModifiedBy** | Pointer to **string** |  | [optional] 
 **LightSeats** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -33,17 +33,18 @@ Name | Type | Description | Notes
 **PlanType** | Pointer to **int32** |  | [optional] 
 **ProratedCharges** | Pointer to [**[]ProratedCharges**](ProratedCharges.md) |  | [optional] 
 **ProratedTotal** | Pointer to **int64** |  | [optional] 
-**PurchaseDate** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**PurchaseDate** | Pointer to **JSONTime** |  | [optional] 
 **ResellerName** | Pointer to **string** |  | [optional] 
 **Seats** | Pointer to **int64** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **Subscribers** | Pointer to [**[]BTPlanSubscriberInfo**](BTPlanSubscriberInfo.md) |  | [optional] 
-**SubscriptionBeginAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
-**SubscriptionEndAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**SubscriptionBeginAt** | Pointer to **JSONTime** |  | [optional] 
+**SubscriptionEndAt** | Pointer to **JSONTime** |  | [optional] 
 **SubscriptionFields** | Pointer to [**Subscription**](Subscription.md) |  | [optional] 
 **SubscriptionId** | Pointer to **string** |  | [optional] 
 **SubscriptionType** | Pointer to **int32** |  | [optional] 
-**TrialEnd** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**TaxAmountCents** | Pointer to **int64** |  | [optional] 
+**TrialEnd** | Pointer to **JSONTime** |  | [optional] 
 **TrialInitiatedBy** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 
@@ -1040,6 +1041,31 @@ SetSubscriptionType sets SubscriptionType field to given value.
 `func (o *BTPurchaseInfo) HasSubscriptionType() bool`
 
 HasSubscriptionType returns a boolean if a field has been set.
+
+### GetTaxAmountCents
+
+`func (o *BTPurchaseInfo) GetTaxAmountCents() int64`
+
+GetTaxAmountCents returns the TaxAmountCents field if non-nil, zero value otherwise.
+
+### GetTaxAmountCentsOk
+
+`func (o *BTPurchaseInfo) GetTaxAmountCentsOk() (*int64, bool)`
+
+GetTaxAmountCentsOk returns a tuple with the TaxAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxAmountCents
+
+`func (o *BTPurchaseInfo) SetTaxAmountCents(v int64)`
+
+SetTaxAmountCents sets TaxAmountCents field to given value.
+
+### HasTaxAmountCents
+
+`func (o *BTPurchaseInfo) HasTaxAmountCents() bool`
+
+HasTaxAmountCents returns a boolean if a field has been set.
 
 ### GetTrialEnd
 

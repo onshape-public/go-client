@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**SpaceAfterReturn** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**Value** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**SpaceAfterReturn** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**Value** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 
 ## Methods
 

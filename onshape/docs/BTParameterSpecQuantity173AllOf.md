@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **QuantityType** | Pointer to **string** |  | [optional] 
-**Ranges** | Pointer to [**[]BTQuantityRange181**](BTQuantityRange-181.md) |  | [optional] 
+**Ranges** | Pointer to [**[]BTQuantityRange181**](BTQuantityRange181.md) |  | [optional] 
 
 ## Methods
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance-1152.md) |  | [optional] 
+**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods

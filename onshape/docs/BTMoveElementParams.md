@@ -23,7 +23,9 @@ Name | Type | Description | Notes
 **OwnerType** | Pointer to **int32** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
+**SelectedGroupIds** | Pointer to **[]string** |  | [optional] 
 **SourceDocumentId** | Pointer to **string** |  | [optional] 
+**SourceVersionId** | Pointer to **string** |  | [optional] 
 **SourceWorkspaceId** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **TargetDocumentId** | Pointer to **string** |  | [optional] 
@@ -524,6 +526,31 @@ SetProjectId sets ProjectId field to given value.
 
 HasProjectId returns a boolean if a field has been set.
 
+### GetSelectedGroupIds
+
+`func (o *BTMoveElementParams) GetSelectedGroupIds() []string`
+
+GetSelectedGroupIds returns the SelectedGroupIds field if non-nil, zero value otherwise.
+
+### GetSelectedGroupIdsOk
+
+`func (o *BTMoveElementParams) GetSelectedGroupIdsOk() (*[]string, bool)`
+
+GetSelectedGroupIdsOk returns a tuple with the SelectedGroupIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectedGroupIds
+
+`func (o *BTMoveElementParams) SetSelectedGroupIds(v []string)`
+
+SetSelectedGroupIds sets SelectedGroupIds field to given value.
+
+### HasSelectedGroupIds
+
+`func (o *BTMoveElementParams) HasSelectedGroupIds() bool`
+
+HasSelectedGroupIds returns a boolean if a field has been set.
+
 ### GetSourceDocumentId
 
 `func (o *BTMoveElementParams) GetSourceDocumentId() string`
@@ -548,6 +575,31 @@ SetSourceDocumentId sets SourceDocumentId field to given value.
 `func (o *BTMoveElementParams) HasSourceDocumentId() bool`
 
 HasSourceDocumentId returns a boolean if a field has been set.
+
+### GetSourceVersionId
+
+`func (o *BTMoveElementParams) GetSourceVersionId() string`
+
+GetSourceVersionId returns the SourceVersionId field if non-nil, zero value otherwise.
+
+### GetSourceVersionIdOk
+
+`func (o *BTMoveElementParams) GetSourceVersionIdOk() (*string, bool)`
+
+GetSourceVersionIdOk returns a tuple with the SourceVersionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceVersionId
+
+`func (o *BTMoveElementParams) SetSourceVersionId(v string)`
+
+SetSourceVersionId sets SourceVersionId field to given value.
+
+### HasSourceVersionId
+
+`func (o *BTMoveElementParams) HasSourceVersionId() bool`
+
+HasSourceVersionId returns a boolean if a field has been set.
 
 ### GetSourceWorkspaceId
 

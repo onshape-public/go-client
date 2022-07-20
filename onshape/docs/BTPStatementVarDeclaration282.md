@@ -5,11 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**Identifier** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
+**Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **StandardType** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**BTPTypeName290**](BTPTypeName-290.md) |  | [optional] 
+**Type** | Pointer to [**BTPTypeName290**](BTPTypeName290.md) |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**Value** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 
 ## Methods
 
@@ -54,6 +55,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPStatementVarDeclaration282) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetIdentifier
+
+`func (o *BTPStatementVarDeclaration282) GetIdentifier() BTPIdentifier8`
+
+GetIdentifier returns the Identifier field if non-nil, zero value otherwise.
+
+### GetIdentifierOk
+
+`func (o *BTPStatementVarDeclaration282) GetIdentifierOk() (*BTPIdentifier8, bool)`
+
+GetIdentifierOk returns a tuple with the Identifier field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdentifier
+
+`func (o *BTPStatementVarDeclaration282) SetIdentifier(v BTPIdentifier8)`
+
+SetIdentifier sets Identifier field to given value.
+
+### HasIdentifier
+
+`func (o *BTPStatementVarDeclaration282) HasIdentifier() bool`
+
+HasIdentifier returns a boolean if a field has been set.
 
 ### GetName
 

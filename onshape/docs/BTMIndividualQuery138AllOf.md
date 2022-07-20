@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**PersistentQuery** | Pointer to [**BTPStatement269**](BTPStatement-269.md) |  | [optional] 
-**QueryStatement** | Pointer to [**BTPStatement269**](BTPStatement-269.md) |  | [optional] 
-**VariableName** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery-138.md) |  | [optional] 
+**PersistentQuery** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
+**QueryStatement** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
+**VariableName** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 
 
 ## Methods
 

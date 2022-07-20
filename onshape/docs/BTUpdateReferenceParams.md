@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ConnectionId** | Pointer to **string** |  | [optional] 
+**EditDescription** | Pointer to **string** |  | [optional] 
 **ReferenceUpdates** | Pointer to [**[]UpdateParams**](UpdateParams.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +26,56 @@ will change when the set of required properties is changed
 NewBTUpdateReferenceParamsWithDefaults instantiates a new BTUpdateReferenceParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConnectionId
+
+`func (o *BTUpdateReferenceParams) GetConnectionId() string`
+
+GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
+
+### GetConnectionIdOk
+
+`func (o *BTUpdateReferenceParams) GetConnectionIdOk() (*string, bool)`
+
+GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionId
+
+`func (o *BTUpdateReferenceParams) SetConnectionId(v string)`
+
+SetConnectionId sets ConnectionId field to given value.
+
+### HasConnectionId
+
+`func (o *BTUpdateReferenceParams) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
+
+### GetEditDescription
+
+`func (o *BTUpdateReferenceParams) GetEditDescription() string`
+
+GetEditDescription returns the EditDescription field if non-nil, zero value otherwise.
+
+### GetEditDescriptionOk
+
+`func (o *BTUpdateReferenceParams) GetEditDescriptionOk() (*string, bool)`
+
+GetEditDescriptionOk returns a tuple with the EditDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEditDescription
+
+`func (o *BTUpdateReferenceParams) SetEditDescription(v string)`
+
+SetEditDescription sets EditDescription field to given value.
+
+### HasEditDescription
+
+`func (o *BTUpdateReferenceParams) HasEditDescription() bool`
+
+HasEditDescription returns a boolean if a field has been set.
 
 ### GetReferenceUpdates
 

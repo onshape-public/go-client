@@ -4,8 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
-**Features** | Pointer to [**[]BTMFeature134**](BTMFeature-134.md) |  | [optional] 
+**Features** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
+**LibraryVersion** | Pointer to **int32** |  | [optional] 
+**MicroversionSkew** | Pointer to **bool** |  | [optional] 
+**RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 
+**SerializationVersion** | Pointer to **string** |  | [optional] 
+**SourceMicroversion** | Pointer to **string** |  | [optional] 
 **UpdateSuppressionAttributes** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -26,31 +30,6 @@ will change when the set of required properties is changed
 NewBTUpdateFeaturesCall1748WithDefaults instantiates a new BTUpdateFeaturesCall1748 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBtType
-
-`func (o *BTUpdateFeaturesCall1748) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTUpdateFeaturesCall1748) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTUpdateFeaturesCall1748) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTUpdateFeaturesCall1748) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetFeatures
 
@@ -76,6 +55,131 @@ SetFeatures sets Features field to given value.
 `func (o *BTUpdateFeaturesCall1748) HasFeatures() bool`
 
 HasFeatures returns a boolean if a field has been set.
+
+### GetLibraryVersion
+
+`func (o *BTUpdateFeaturesCall1748) GetLibraryVersion() int32`
+
+GetLibraryVersion returns the LibraryVersion field if non-nil, zero value otherwise.
+
+### GetLibraryVersionOk
+
+`func (o *BTUpdateFeaturesCall1748) GetLibraryVersionOk() (*int32, bool)`
+
+GetLibraryVersionOk returns a tuple with the LibraryVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibraryVersion
+
+`func (o *BTUpdateFeaturesCall1748) SetLibraryVersion(v int32)`
+
+SetLibraryVersion sets LibraryVersion field to given value.
+
+### HasLibraryVersion
+
+`func (o *BTUpdateFeaturesCall1748) HasLibraryVersion() bool`
+
+HasLibraryVersion returns a boolean if a field has been set.
+
+### GetMicroversionSkew
+
+`func (o *BTUpdateFeaturesCall1748) GetMicroversionSkew() bool`
+
+GetMicroversionSkew returns the MicroversionSkew field if non-nil, zero value otherwise.
+
+### GetMicroversionSkewOk
+
+`func (o *BTUpdateFeaturesCall1748) GetMicroversionSkewOk() (*bool, bool)`
+
+GetMicroversionSkewOk returns a tuple with the MicroversionSkew field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMicroversionSkew
+
+`func (o *BTUpdateFeaturesCall1748) SetMicroversionSkew(v bool)`
+
+SetMicroversionSkew sets MicroversionSkew field to given value.
+
+### HasMicroversionSkew
+
+`func (o *BTUpdateFeaturesCall1748) HasMicroversionSkew() bool`
+
+HasMicroversionSkew returns a boolean if a field has been set.
+
+### GetRejectMicroversionSkew
+
+`func (o *BTUpdateFeaturesCall1748) GetRejectMicroversionSkew() bool`
+
+GetRejectMicroversionSkew returns the RejectMicroversionSkew field if non-nil, zero value otherwise.
+
+### GetRejectMicroversionSkewOk
+
+`func (o *BTUpdateFeaturesCall1748) GetRejectMicroversionSkewOk() (*bool, bool)`
+
+GetRejectMicroversionSkewOk returns a tuple with the RejectMicroversionSkew field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRejectMicroversionSkew
+
+`func (o *BTUpdateFeaturesCall1748) SetRejectMicroversionSkew(v bool)`
+
+SetRejectMicroversionSkew sets RejectMicroversionSkew field to given value.
+
+### HasRejectMicroversionSkew
+
+`func (o *BTUpdateFeaturesCall1748) HasRejectMicroversionSkew() bool`
+
+HasRejectMicroversionSkew returns a boolean if a field has been set.
+
+### GetSerializationVersion
+
+`func (o *BTUpdateFeaturesCall1748) GetSerializationVersion() string`
+
+GetSerializationVersion returns the SerializationVersion field if non-nil, zero value otherwise.
+
+### GetSerializationVersionOk
+
+`func (o *BTUpdateFeaturesCall1748) GetSerializationVersionOk() (*string, bool)`
+
+GetSerializationVersionOk returns a tuple with the SerializationVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSerializationVersion
+
+`func (o *BTUpdateFeaturesCall1748) SetSerializationVersion(v string)`
+
+SetSerializationVersion sets SerializationVersion field to given value.
+
+### HasSerializationVersion
+
+`func (o *BTUpdateFeaturesCall1748) HasSerializationVersion() bool`
+
+HasSerializationVersion returns a boolean if a field has been set.
+
+### GetSourceMicroversion
+
+`func (o *BTUpdateFeaturesCall1748) GetSourceMicroversion() string`
+
+GetSourceMicroversion returns the SourceMicroversion field if non-nil, zero value otherwise.
+
+### GetSourceMicroversionOk
+
+`func (o *BTUpdateFeaturesCall1748) GetSourceMicroversionOk() (*string, bool)`
+
+GetSourceMicroversionOk returns a tuple with the SourceMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceMicroversion
+
+`func (o *BTUpdateFeaturesCall1748) SetSourceMicroversion(v string)`
+
+SetSourceMicroversion sets SourceMicroversion field to given value.
+
+### HasSourceMicroversion
+
+`func (o *BTUpdateFeaturesCall1748) HasSourceMicroversion() bool`
+
+HasSourceMicroversion returns a boolean if a field has been set.
 
 ### GetUpdateSuppressionAttributes
 

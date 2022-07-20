@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Bodies** | Pointer to [**map[string]BTMassPropertiesInfoNull**](BTMassPropertiesInfo-null.md) |  | [optional] 
+**Bodies** | Pointer to [**map[string]BTMassPropertiesInfoNull**](BTMassPropertiesInfoNull.md) |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 
 ## Methods

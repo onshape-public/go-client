@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DefaultObjectType** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**ObjectTypes** | Pointer to **[]int32** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
 **OwnerType** | Pointer to **int32** |  | [optional] 
 **PublishState** | Pointer to **int32** |  | [optional] 
@@ -31,6 +33,31 @@ will change when the set of required properties is changed
 NewBTMetadataCategorySummaryInfoWithDefaults instantiates a new BTMetadataCategorySummaryInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDefaultObjectType
+
+`func (o *BTMetadataCategorySummaryInfo) GetDefaultObjectType() int32`
+
+GetDefaultObjectType returns the DefaultObjectType field if non-nil, zero value otherwise.
+
+### GetDefaultObjectTypeOk
+
+`func (o *BTMetadataCategorySummaryInfo) GetDefaultObjectTypeOk() (*int32, bool)`
+
+GetDefaultObjectTypeOk returns a tuple with the DefaultObjectType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultObjectType
+
+`func (o *BTMetadataCategorySummaryInfo) SetDefaultObjectType(v int32)`
+
+SetDefaultObjectType sets DefaultObjectType field to given value.
+
+### HasDefaultObjectType
+
+`func (o *BTMetadataCategorySummaryInfo) HasDefaultObjectType() bool`
+
+HasDefaultObjectType returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -131,6 +158,31 @@ SetName sets Name field to given value.
 `func (o *BTMetadataCategorySummaryInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetObjectTypes
+
+`func (o *BTMetadataCategorySummaryInfo) GetObjectTypes() []int32`
+
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
+
+### GetObjectTypesOk
+
+`func (o *BTMetadataCategorySummaryInfo) GetObjectTypesOk() (*[]int32, bool)`
+
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectTypes
+
+`func (o *BTMetadataCategorySummaryInfo) SetObjectTypes(v []int32)`
+
+SetObjectTypes sets ObjectTypes field to given value.
+
+### HasObjectTypes
+
+`func (o *BTMetadataCategorySummaryInfo) HasObjectTypes() bool`
+
+HasObjectTypes returns a boolean if a field has been set.
 
 ### GetOwnerId
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Label** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **int32** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetLabel sets Label field to given value.
 `func (o *BTMetadataEnumValueInfo) HasLabel() bool`
 
 HasLabel returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *BTMetadataEnumValueInfo) GetState() int32`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *BTMetadataEnumValueInfo) GetStateOk() (*int32, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *BTMetadataEnumValueInfo) SetState(v int32)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *BTMetadataEnumValueInfo) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetValue
 

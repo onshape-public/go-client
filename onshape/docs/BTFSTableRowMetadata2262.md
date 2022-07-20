@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Callout** | Pointer to **string** |  | [optional] 
-**CrossHighlightData** | Pointer to [**BTTableBaseCrossHighlightData2609**](BTTableBaseCrossHighlightData-2609.md) |  | [optional] 
+**CrossHighlightData** | Pointer to [**BTTableBaseCrossHighlightData2609**](BTTableBaseCrossHighlightData2609.md) |  | [optional] 
 
 ## Methods
 

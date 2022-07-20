@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody-3398.md) |  | [optional] 
+**Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody3398.md) |  | [optional] 
 **ErrorEnum** | Pointer to **string** |  | [optional] 
 
 ## Methods

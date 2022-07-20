@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase-139.md) |  | [optional] 
+**DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **DeterministicIds** | Pointer to **[]string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
-**Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase-139.md) |  | [optional] 
+**Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **QueryString** | Pointer to **string** |  | [optional] 
 
 ## Methods

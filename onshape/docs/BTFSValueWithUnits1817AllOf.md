@@ -5,10 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**QuantityType** | Pointer to **string** |  | [optional] 
 **UnitToPower** | Pointer to **map[string]int32** |  | [optional] 
 **Value** | Pointer to **float64** |  | [optional] 
-**ValueObject** | Pointer to **float64** |  | [optional] 
 
 ## Methods
 
@@ -53,31 +51,6 @@ SetBtType sets BtType field to given value.
 `func (o *BTFSValueWithUnits1817AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
-
-### GetQuantityType
-
-`func (o *BTFSValueWithUnits1817AllOf) GetQuantityType() string`
-
-GetQuantityType returns the QuantityType field if non-nil, zero value otherwise.
-
-### GetQuantityTypeOk
-
-`func (o *BTFSValueWithUnits1817AllOf) GetQuantityTypeOk() (*string, bool)`
-
-GetQuantityTypeOk returns a tuple with the QuantityType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuantityType
-
-`func (o *BTFSValueWithUnits1817AllOf) SetQuantityType(v string)`
-
-SetQuantityType sets QuantityType field to given value.
-
-### HasQuantityType
-
-`func (o *BTFSValueWithUnits1817AllOf) HasQuantityType() bool`
-
-HasQuantityType returns a boolean if a field has been set.
 
 ### GetUnitToPower
 
@@ -128,31 +101,6 @@ SetValue sets Value field to given value.
 `func (o *BTFSValueWithUnits1817AllOf) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
-
-### GetValueObject
-
-`func (o *BTFSValueWithUnits1817AllOf) GetValueObject() float64`
-
-GetValueObject returns the ValueObject field if non-nil, zero value otherwise.
-
-### GetValueObjectOk
-
-`func (o *BTFSValueWithUnits1817AllOf) GetValueObjectOk() (*float64, bool)`
-
-GetValueObjectOk returns a tuple with the ValueObject field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValueObject
-
-`func (o *BTFSValueWithUnits1817AllOf) SetValueObject(v float64)`
-
-SetValueObject sets ValueObject field to given value.
-
-### HasValueObject
-
-`func (o *BTFSValueWithUnits1817AllOf) HasValueObject() bool`
-
-HasValueObject returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

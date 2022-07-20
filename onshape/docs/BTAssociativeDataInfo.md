@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentMicroversion** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**Error** | Pointer to **string** |  | [optional] 
 **IdTag** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **OccurrenceId** | Pointer to **string** |  | [optional] 
@@ -158,6 +159,31 @@ SetElementId sets ElementId field to given value.
 `func (o *BTAssociativeDataInfo) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
+
+### GetError
+
+`func (o *BTAssociativeDataInfo) GetError() string`
+
+GetError returns the Error field if non-nil, zero value otherwise.
+
+### GetErrorOk
+
+`func (o *BTAssociativeDataInfo) GetErrorOk() (*string, bool)`
+
+GetErrorOk returns a tuple with the Error field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetError
+
+`func (o *BTAssociativeDataInfo) SetError(v string)`
+
+SetError sets Error field to given value.
+
+### HasError
+
+`func (o *BTAssociativeDataInfo) HasError() bool`
+
+HasError returns a boolean if a field has been set.
 
 ### GetIdTag
 

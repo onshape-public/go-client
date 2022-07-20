@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ElementId** | Pointer to **string** |  | [optional] 
-**GroupId** | Pointer to **string** |  | [optional] 
-**Position** | Pointer to **int32** |  | [optional] 
+**ElementId** | Pointer to **string** | The id of an element which provides context for the position value specified. | [optional] 
+**Position** | Pointer to **int32** | An indicator for the relative placement of the new element. If elementId is specified, a negative number indicates insertion prior to the element and a non-negative number indicates insertion following the element. If no elementId is specified, a negative value indicates insertion at the end of the element list and a non-negative number indicates insertion at the start of the element list. | [optional] 
 
 ## Methods
 
@@ -51,31 +50,6 @@ SetElementId sets ElementId field to given value.
 `func (o *BTElementLocationParams) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
-
-### GetGroupId
-
-`func (o *BTElementLocationParams) GetGroupId() string`
-
-GetGroupId returns the GroupId field if non-nil, zero value otherwise.
-
-### GetGroupIdOk
-
-`func (o *BTElementLocationParams) GetGroupIdOk() (*string, bool)`
-
-GetGroupIdOk returns a tuple with the GroupId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroupId
-
-`func (o *BTElementLocationParams) SetGroupId(v string)`
-
-SetGroupId sets GroupId field to given value.
-
-### HasGroupId
-
-`func (o *BTElementLocationParams) HasGroupId() bool`
-
-HasGroupId returns a boolean if a field has been set.
 
 ### GetPosition
 

@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Expression** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**Expression** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **Silent** | Pointer to **bool** |  | [optional] 
-**SpaceAfterSilent** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceAfterTry** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceAfterSilent** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceAfterTry** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

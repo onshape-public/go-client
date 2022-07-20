@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Annotation** | Pointer to [**BTPAnnotation231**](BTPAnnotation-231.md) |  | [optional] 
-**ArgumentsToDocument** | Pointer to [**[]BTPArgumentDeclaration232**](BTPArgumentDeclaration-232.md) |  | [optional] 
+**Annotation** | Pointer to [**BTPAnnotation231**](BTPAnnotation231.md) |  | [optional] 
+**ArgumentsToDocument** | Pointer to [**[]BTPArgumentDeclaration232**](BTPArgumentDeclaration232.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **Deprecated** | Pointer to **bool** |  | [optional] 
 **DeprecatedExplanation** | Pointer to **string** |  | [optional] 
 **ForExport** | Pointer to **bool** |  | [optional] 
-**SpaceAfterExport** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SymbolName** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**SpaceAfterExport** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SymbolName** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 
 ## Methods
 

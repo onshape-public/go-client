@@ -1,27 +1,63 @@
 # \MetadataApi
 
-All URIs are relative to *https://cad.onshape.com*
+All URIs are relative to *https://staging.dev.onshape.com/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVEOPStandardContentMetadata**](MetadataApi.md#GetVEOPStandardContentMetadata) | **Get** /api/metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/p/{pid} | 
-[**GetWMVEMetadata**](MetadataApi.md#GetWMVEMetadata) | **Get** /api/metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | 
-[**GetWMVEPMetadata**](MetadataApi.md#GetWMVEPMetadata) | **Get** /api/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p/{pid} | 
-[**GetWMVEPsMetadata**](MetadataApi.md#GetWMVEPsMetadata) | **Get** /api/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p | 
-[**GetWMVEsMetadata**](MetadataApi.md#GetWMVEsMetadata) | **Get** /api/metadata/d/{did}/{wvm}/{wvmid}/e | 
-[**GetWVMetadata**](MetadataApi.md#GetWVMetadata) | **Get** /api/metadata/d/{did}/{wv}/{wvid} | 
-[**UpdateVEOPStandardContentPartMetadata**](MetadataApi.md#UpdateVEOPStandardContentPartMetadata) | **Post** /api/metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/p/{pid} | 
-[**UpdateWVEMetadata**](MetadataApi.md#UpdateWVEMetadata) | **Post** /api/metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | 
-[**UpdateWVEPMetadata**](MetadataApi.md#UpdateWVEPMetadata) | **Post** /api/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p/{pid} | 
-[**UpdateWVMetadata**](MetadataApi.md#UpdateWVMetadata) | **Post** /api/metadata/d/{did}/{wv}/{wvid} | 
+[**GetVEOPStandardContentMetadata**](MetadataApi.md#GetVEOPStandardContentMetadata) | **Get** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/p/{pid} | Retrieve metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
+[**GetWMVEMetadata**](MetadataApi.md#GetWMVEMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
+[**GetWMVEPMetadata**](MetadataApi.md#GetWMVEPMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Retrieve metadata by document ID, workspace or version or microversion ID, tab ID, and Part ID.
+[**GetWMVEPsMetadata**](MetadataApi.md#GetWMVEPsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p | Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
+[**GetWMVEsMetadata**](MetadataApi.md#GetWMVEsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e | Retrieve metadata by document ID and workspace or version or microversion ID.
+[**GetWVMetadata**](MetadataApi.md#GetWVMetadata) | **Get** /metadata/d/{did}/{wv}/{wvid} | Retrieve workspace or version metadata by document ID and workspace or version ID.
+[**UpdateVEOPStandardContentPartMetadata**](MetadataApi.md#UpdateVEOPStandardContentPartMetadata) | **Post** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/p/{pid} | Update metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
+[**UpdateWVEMetadata**](MetadataApi.md#UpdateWVEMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Update workspace metadata by document ID, workspace or version or microversion ID, and tab ID.
+[**UpdateWVEPMetadata**](MetadataApi.md#UpdateWVEPMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Update workspace metadata by document ID, workspace or version or microversion ID, tab ID, and part ID.
+[**UpdateWVMetadata**](MetadataApi.md#UpdateWVMetadata) | **Post** /metadata/d/{did}/{wv}/{wvid} | Update workspace or version metadata by document ID and workspace or version ID.
 
 
 
 ## GetVEOPStandardContentMetadata
 
-> GetVEOPStandardContentMetadata(ctx, did, vid, eid, otype, oid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetVEOPStandardContentMetadata(ctx, did, vid, eid, otype, oid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
 
+Retrieve metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    vid := "vid_example" // string | 
+    eid := "eid_example" // string | 
+    otype := "otype_example" // string | 
+    oid := "oid_example" // string | 
+    pid := "pid_example" // string | 
+    configuration := "configuration_example" // string |  (optional)
+    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    includeComputedProperties := true // bool |  (optional) (default to true)
+    thumbnail := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.GetVEOPStandardContentMetadata(context.Background(), did, vid, eid, otype, oid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetVEOPStandardContentMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetVEOPStandardContentMetadata`: BTMetadataObjectInfo
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetVEOPStandardContentMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -51,20 +87,21 @@ Name | Type | Description  | Notes
 
  **configuration** | **string** |  | 
  **linkDocumentId** | **string** |  | 
+ **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
 
- (empty response body)
+[**BTMetadataObjectInfo**](BTMetadataObjectInfo.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -73,9 +110,45 @@ Name | Type | Description  | Notes
 
 ## GetWMVEMetadata
 
-> GetWMVEMetadata(ctx, did, wvm, wvmid, eid).Configuration(configuration).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetWMVEMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
 
+Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional)
+    inferMetadataOwner := true // bool |  (optional) (default to false)
+    depth := "depth_example" // string |  (optional) (default to "1")
+    includeComputedProperties := true // bool |  (optional) (default to true)
+    thumbnail := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.GetWMVEMetadata(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetWMVEMetadata`: BTMetadataObjectInfo
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetWMVEMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -83,10 +156,10 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -99,24 +172,25 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | 
- **linkDocumentId** | **string** |  | 
  **inferMetadataOwner** | **bool** |  | [default to false]
  **depth** | **string** |  | [default to &quot;1&quot;]
+ **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
 
- (empty response body)
+[**BTMetadataObjectInfo**](BTMetadataObjectInfo.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -125,9 +199,48 @@ Name | Type | Description  | Notes
 
 ## GetWMVEPMetadata
 
-> GetWMVEPMetadata(ctx, did, wvm, wvmid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetWMVEPMetadata(ctx, did, wvm, wvmid, eid, iden, pid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
 
+Retrieve metadata by document ID, workspace or version or microversion ID, tab ID, and Part ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    iden := "iden_example" // string | Denotes whether the pid specified is a part id (p) or a part identity (pi).
+    pid := "pid_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
+    rollbackBarIndex := int32(56) // int32 |  (optional) (default to -1)
+    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    inferMetadataOwner := true // bool |  (optional) (default to false)
+    includeComputedProperties := true // bool |  (optional) (default to true)
+    thumbnail := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.GetWMVEPMetadata(context.Background(), did, wvm, wvmid, eid, iden, pid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEPMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetWMVEPMetadata`: BTMetadataObjectInfo
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetWMVEPMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -135,10 +248,11 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+**iden** | **string** | Denotes whether the pid specified is a part id (p) or a part identity (pi). | 
 **pid** | **string** |  | 
 
 ### Other Parameters
@@ -153,23 +267,27 @@ Name | Type | Description  | Notes
 
 
 
- **configuration** | **string** |  | 
- **linkDocumentId** | **string** |  | 
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
+ **rollbackBarIndex** | **int32** |  | [default to -1]
+ **elementMicroversionId** | **string** |  | 
  **inferMetadataOwner** | **bool** |  | [default to false]
+ **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
 
- (empty response body)
+[**BTMetadataObjectInfo**](BTMetadataObjectInfo.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -178,9 +296,44 @@ Name | Type | Description  | Notes
 
 ## GetWMVEPsMetadata
 
-> GetWMVEPsMetadata(ctx, did, wvm, wvmid, eid).Configuration(configuration).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectListInfoBTMetadataPartInfo GetWMVEPsMetadata(ctx, did, wvm, wvmid, eid).Configuration(configuration).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
 
+Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wvm := "wvm_example" // string | 
+    wvmid := "wvmid_example" // string | 
+    eid := "eid_example" // string | 
+    configuration := "configuration_example" // string |  (optional)
+    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    inferMetadataOwner := true // bool |  (optional) (default to false)
+    includeComputedProperties := true // bool |  (optional) (default to true)
+    thumbnail := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.GetWMVEPsMetadata(context.Background(), did, wvm, wvmid, eid).Configuration(configuration).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEPsMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetWMVEPsMetadata`: BTMetadataObjectListInfoBTMetadataPartInfo
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetWMVEPsMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -207,20 +360,21 @@ Name | Type | Description  | Notes
  **configuration** | **string** |  | 
  **linkDocumentId** | **string** |  | 
  **inferMetadataOwner** | **bool** |  | [default to false]
+ **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
 
- (empty response body)
+[**BTMetadataObjectListInfoBTMetadataPartInfo**](BTMetadataObjectListInfoBTMetadataPartInfo.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -229,9 +383,43 @@ Name | Type | Description  | Notes
 
 ## GetWMVEsMetadata
 
-> GetWMVEsMetadata(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectListInfoBTMetadataElementInfo GetWMVEsMetadata(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
 
+Retrieve metadata by document ID and workspace or version or microversion ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wvm := "wvm_example" // string | 
+    wvmid := "wvmid_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    inferMetadataOwner := true // bool |  (optional) (default to false)
+    depth := "depth_example" // string |  (optional) (default to "1")
+    includeComputedProperties := true // bool |  (optional) (default to true)
+    thumbnail := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.GetWMVEsMetadata(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEsMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetWMVEsMetadata`: BTMetadataObjectListInfoBTMetadataElementInfo
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetWMVEsMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -256,20 +444,21 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** |  | 
  **inferMetadataOwner** | **bool** |  | [default to false]
  **depth** | **string** |  | [default to &quot;1&quot;]
+ **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
 
- (empty response body)
+[**BTMetadataObjectListInfoBTMetadataElementInfo**](BTMetadataObjectListInfoBTMetadataElementInfo.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -278,9 +467,43 @@ Name | Type | Description  | Notes
 
 ## GetWVMetadata
 
-> GetWVMetadata(ctx, did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetWVMetadata(ctx, did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
 
+Retrieve workspace or version metadata by document ID and workspace or version ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wv := "wv_example" // string | 
+    wvid := "wvid_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    inferMetadataOwner := true // bool |  (optional) (default to false)
+    depth := "depth_example" // string |  (optional) (default to "1")
+    includeComputedProperties := true // bool |  (optional) (default to true)
+    thumbnail := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.GetWVMetadata(context.Background(), did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWVMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetWVMetadata`: BTMetadataObjectInfo
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetWVMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -305,20 +528,21 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** |  | 
  **inferMetadataOwner** | **bool** |  | [default to false]
  **depth** | **string** |  | [default to &quot;1&quot;]
+ **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
 
- (empty response body)
+[**BTMetadataObjectInfo**](BTMetadataObjectInfo.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -327,9 +551,43 @@ Name | Type | Description  | Notes
 
 ## UpdateVEOPStandardContentPartMetadata
 
-> UpdateVEOPStandardContentPartMetadata(ctx, did, vid, eid, otype, oid, pid).Body(body).LinkDocumentId(linkDocumentId).Execute()
+> map[string]interface{} UpdateVEOPStandardContentPartMetadata(ctx, did, vid, eid, otype, oid, pid).Body(body).LinkDocumentId(linkDocumentId).Execute()
 
+Update metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    vid := "vid_example" // string | 
+    eid := "eid_example" // string | 
+    otype := "otype_example" // string | 
+    oid := "oid_example" // string | 
+    pid := "pid_example" // string | 
+    body := "body_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.UpdateVEOPStandardContentPartMetadata(context.Background(), did, vid, eid, otype, oid, pid).Body(body).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateVEOPStandardContentPartMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateVEOPStandardContentPartMetadata`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.UpdateVEOPStandardContentPartMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -362,16 +620,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=UTF-8; qs=0.09
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -380,9 +638,41 @@ Name | Type | Description  | Notes
 
 ## UpdateWVEMetadata
 
-> UpdateWVEMetadata(ctx, did, wvm, wvmid, eid).Body(body).Configuration(configuration).Execute()
+> map[string]interface{} UpdateWVEMetadata(ctx, did, wvm, wvmid, eid).Body(body).Configuration(configuration).Execute()
 
+Update workspace metadata by document ID, workspace or version or microversion ID, and tab ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wvm := "wvm_example" // string | 
+    wvmid := "wvmid_example" // string | 
+    eid := "eid_example" // string | 
+    body := "body_example" // string | 
+    configuration := "configuration_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.UpdateWVEMetadata(context.Background(), did, wvm, wvmid, eid).Body(body).Configuration(configuration).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateWVEMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateWVEMetadata`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.UpdateWVEMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -411,16 +701,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=UTF-8; qs=0.09
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -429,9 +719,46 @@ Name | Type | Description  | Notes
 
 ## UpdateWVEPMetadata
 
-> UpdateWVEPMetadata(ctx, did, wvm, wvmid, eid, pid, subResource).Body(body).Configuration(configuration).Execute()
+> map[string]interface{} UpdateWVEPMetadata(ctx, did, wvm, wvmid, eid, iden, pid).Body(body).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).Execute()
 
+Update workspace metadata by document ID, workspace or version or microversion ID, tab ID, and part ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    iden := "iden_example" // string | Denotes whether the pid specified is a part id (p) or a part identity (pi).
+    pid := "pid_example" // string | 
+    body := "body_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
+    rollbackBarIndex := int32(56) // int32 |  (optional) (default to -1)
+    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.UpdateWVEPMetadata(context.Background(), did, wvm, wvmid, eid, iden, pid).Body(body).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateWVEPMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateWVEPMetadata`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.UpdateWVEPMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -439,12 +766,12 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+**iden** | **string** | Denotes whether the pid specified is a part id (p) or a part identity (pi). | 
 **pid** | **string** |  | 
-**subResource** | **string** |  | 
 
 ### Other Parameters
 
@@ -460,20 +787,23 @@ Name | Type | Description  | Notes
 
 
  **body** | **string** |  | 
- **configuration** | **string** |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
+ **rollbackBarIndex** | **int32** |  | [default to -1]
+ **elementMicroversionId** | **string** |  | 
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=UTF-8; qs=0.09
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -482,9 +812,39 @@ Name | Type | Description  | Notes
 
 ## UpdateWVMetadata
 
-> UpdateWVMetadata(ctx, did, wv, wvid).Body(body).Execute()
+> map[string]interface{} UpdateWVMetadata(ctx, did, wv, wvid).Body(body).Execute()
 
+Update workspace or version metadata by document ID and workspace or version ID.
 
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wv := "wv_example" // string | 
+    wvid := "wvid_example" // string | 
+    body := "body_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataApi.UpdateWVMetadata(context.Background(), did, wv, wvid).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateWVMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateWVMetadata`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.UpdateWVMetadata`: %v\n", resp)
+}
+```
 
 ### Path Parameters
 
@@ -510,16 +870,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=UTF-8; qs=0.09
-- **Accept**: application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1
+- **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

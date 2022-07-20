@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllRowValues** | Pointer to [**[][]string**](array.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**AllRowValues** | Pointer to **[][]string** |  | [optional] 
 **ColumnCount** | Pointer to **int32** |  | [optional] 
 **FrozenColumns** | Pointer to **int32** |  | [optional] 
+**IsFailed** | Pointer to **bool** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **RowCount** | Pointer to **int32** |  | [optional] 
-**TableColumns** | Pointer to [**[]BTTableColumnInfo1222**](BTTableColumnInfo-1222.md) |  | [optional] 
+**TableColumns** | Pointer to [**[]BTTableColumnInfo1222**](BTTableColumnInfo1222.md) |  | [optional] 
 **TableId** | Pointer to **string** |  | [optional] 
-**TableRows** | Pointer to [**[]BTTableRow1054**](BTTableRow-1054.md) |  | [optional] 
+**TableRows** | Pointer to [**[]BTTableRow1054**](BTTableRow1054.md) |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -59,31 +59,6 @@ SetAllRowValues sets AllRowValues field to given value.
 `func (o *BTTable1825) HasAllRowValues() bool`
 
 HasAllRowValues returns a boolean if a field has been set.
-
-### GetBtType
-
-`func (o *BTTable1825) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTTable1825) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTTable1825) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTTable1825) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetColumnCount
 
@@ -134,6 +109,31 @@ SetFrozenColumns sets FrozenColumns field to given value.
 `func (o *BTTable1825) HasFrozenColumns() bool`
 
 HasFrozenColumns returns a boolean if a field has been set.
+
+### GetIsFailed
+
+`func (o *BTTable1825) GetIsFailed() bool`
+
+GetIsFailed returns the IsFailed field if non-nil, zero value otherwise.
+
+### GetIsFailedOk
+
+`func (o *BTTable1825) GetIsFailedOk() (*bool, bool)`
+
+GetIsFailedOk returns a tuple with the IsFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFailed
+
+`func (o *BTTable1825) SetIsFailed(v bool)`
+
+SetIsFailed sets IsFailed field to given value.
+
+### HasIsFailed
+
+`func (o *BTTable1825) HasIsFailed() bool`
+
+HasIsFailed returns a boolean if a field has been set.
 
 ### GetNodeId
 

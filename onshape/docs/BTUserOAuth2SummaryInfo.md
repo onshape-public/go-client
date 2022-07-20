@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **ClientId** | Pointer to **string** |  | [optional] 
 **Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
 **CompanyPlan** | Pointer to **bool** |  | [optional] 
+**DocumentationName** | Pointer to **string** |  | [optional] 
+**DocumentationNameOverride** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **FirstName** | Pointer to **string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**GlobalPermissionInfo**](GlobalPermissionInfo.md) |  | [optional] 
@@ -15,10 +17,11 @@ Name | Type | Description | Notes
 **Image** | Pointer to **string** |  | [optional] 
 **IsGuest** | Pointer to **bool** |  | [optional] 
 **IsLight** | Pointer to **bool** |  | [optional] 
-**LastLoginTime** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**LastLoginTime** | Pointer to **JSONTime** |  | [optional] 
 **LastName** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Oauth2Scopes** | Pointer to **int64** |  | [optional] 
+**PersonalMessageAllowed** | Pointer to **bool** |  | [optional] 
 **PlanGroup** | Pointer to **string** |  | [optional] 
 **Role** | Pointer to **int32** |  | [optional] 
 **Roles** | Pointer to **[]string** |  | [optional] 
@@ -119,6 +122,56 @@ SetCompanyPlan sets CompanyPlan field to given value.
 `func (o *BTUserOAuth2SummaryInfo) HasCompanyPlan() bool`
 
 HasCompanyPlan returns a boolean if a field has been set.
+
+### GetDocumentationName
+
+`func (o *BTUserOAuth2SummaryInfo) GetDocumentationName() string`
+
+GetDocumentationName returns the DocumentationName field if non-nil, zero value otherwise.
+
+### GetDocumentationNameOk
+
+`func (o *BTUserOAuth2SummaryInfo) GetDocumentationNameOk() (*string, bool)`
+
+GetDocumentationNameOk returns a tuple with the DocumentationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentationName
+
+`func (o *BTUserOAuth2SummaryInfo) SetDocumentationName(v string)`
+
+SetDocumentationName sets DocumentationName field to given value.
+
+### HasDocumentationName
+
+`func (o *BTUserOAuth2SummaryInfo) HasDocumentationName() bool`
+
+HasDocumentationName returns a boolean if a field has been set.
+
+### GetDocumentationNameOverride
+
+`func (o *BTUserOAuth2SummaryInfo) GetDocumentationNameOverride() string`
+
+GetDocumentationNameOverride returns the DocumentationNameOverride field if non-nil, zero value otherwise.
+
+### GetDocumentationNameOverrideOk
+
+`func (o *BTUserOAuth2SummaryInfo) GetDocumentationNameOverrideOk() (*string, bool)`
+
+GetDocumentationNameOverrideOk returns a tuple with the DocumentationNameOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentationNameOverride
+
+`func (o *BTUserOAuth2SummaryInfo) SetDocumentationNameOverride(v string)`
+
+SetDocumentationNameOverride sets DocumentationNameOverride field to given value.
+
+### HasDocumentationNameOverride
+
+`func (o *BTUserOAuth2SummaryInfo) HasDocumentationNameOverride() bool`
+
+HasDocumentationNameOverride returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -419,6 +472,31 @@ SetOauth2Scopes sets Oauth2Scopes field to given value.
 `func (o *BTUserOAuth2SummaryInfo) HasOauth2Scopes() bool`
 
 HasOauth2Scopes returns a boolean if a field has been set.
+
+### GetPersonalMessageAllowed
+
+`func (o *BTUserOAuth2SummaryInfo) GetPersonalMessageAllowed() bool`
+
+GetPersonalMessageAllowed returns the PersonalMessageAllowed field if non-nil, zero value otherwise.
+
+### GetPersonalMessageAllowedOk
+
+`func (o *BTUserOAuth2SummaryInfo) GetPersonalMessageAllowedOk() (*bool, bool)`
+
+GetPersonalMessageAllowedOk returns a tuple with the PersonalMessageAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersonalMessageAllowed
+
+`func (o *BTUserOAuth2SummaryInfo) SetPersonalMessageAllowed(v bool)`
+
+SetPersonalMessageAllowed sets PersonalMessageAllowed field to given value.
+
+### HasPersonalMessageAllowed
+
+`func (o *BTUserOAuth2SummaryInfo) HasPersonalMessageAllowed() bool`
+
+HasPersonalMessageAllowed returns a boolean if a field has been set.
 
 ### GetPlanGroup
 

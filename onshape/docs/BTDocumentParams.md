@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BetaCapabilityIds** | Pointer to **[]string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Elements** | Pointer to [**[]BTDocumentElementCreationDescriptor**](BTDocumentElementCreationDescriptor.md) |  | [optional] 
 **GenerateUnknownMessages** | Pointer to **bool** |  | [optional] 
 **IsEmptyContent** | Pointer to **bool** |  | [optional] 
 **IsPublic** | Pointer to **bool** |  | [optional] 
@@ -86,6 +87,31 @@ SetDescription sets Description field to given value.
 `func (o *BTDocumentParams) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetElements
+
+`func (o *BTDocumentParams) GetElements() []BTDocumentElementCreationDescriptor`
+
+GetElements returns the Elements field if non-nil, zero value otherwise.
+
+### GetElementsOk
+
+`func (o *BTDocumentParams) GetElementsOk() (*[]BTDocumentElementCreationDescriptor, bool)`
+
+GetElementsOk returns a tuple with the Elements field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElements
+
+`func (o *BTDocumentParams) SetElements(v []BTDocumentElementCreationDescriptor)`
+
+SetElements sets Elements field to given value.
+
+### HasElements
+
+`func (o *BTDocumentParams) HasElements() bool`
+
+HasElements returns a boolean if a field has been set.
 
 ### GetGenerateUnknownMessages
 

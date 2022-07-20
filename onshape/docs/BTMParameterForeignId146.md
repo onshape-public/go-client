@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **ForeignId** | Pointer to **string** |  | [optional] 
 **ForeignName** | Pointer to **string** |  | [optional] 
-**LocationInfo** | Pointer to [**BTForeignDataResponse1070**](BTForeignDataResponse-1070.md) |  | [optional] 
+**LocationInfo** | Pointer to [**BTForeignDataResponse1070**](BTForeignDataResponse1070.md) |  | [optional] 
 
 ## Methods
 

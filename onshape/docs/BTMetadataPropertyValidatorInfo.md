@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Max** | Pointer to **float32** |  | [optional] 
 **MaxCount** | Pointer to **int32** |  | [optional] 
-**MaxDate** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**MaxDate** | Pointer to **JSONTime** |  | [optional] 
 **MaxLength** | Pointer to **int32** |  | [optional] 
 **Min** | Pointer to **float32** |  | [optional] 
 **MinCount** | Pointer to **int32** |  | [optional] 
-**MinDate** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**MinDate** | Pointer to **JSONTime** |  | [optional] 
 **MinLength** | Pointer to **int32** |  | [optional] 
 **Pattern** | Pointer to **string** |  | [optional] 
+**QuantityType** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -257,6 +258,31 @@ SetPattern sets Pattern field to given value.
 `func (o *BTMetadataPropertyValidatorInfo) HasPattern() bool`
 
 HasPattern returns a boolean if a field has been set.
+
+### GetQuantityType
+
+`func (o *BTMetadataPropertyValidatorInfo) GetQuantityType() int32`
+
+GetQuantityType returns the QuantityType field if non-nil, zero value otherwise.
+
+### GetQuantityTypeOk
+
+`func (o *BTMetadataPropertyValidatorInfo) GetQuantityTypeOk() (*int32, bool)`
+
+GetQuantityTypeOk returns a tuple with the QuantityType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantityType
+
+`func (o *BTMetadataPropertyValidatorInfo) SetQuantityType(v int32)`
+
+SetQuantityType sets QuantityType field to given value.
+
+### HasQuantityType
+
+`func (o *BTMetadataPropertyValidatorInfo) HasQuantityType() bool`
+
+HasQuantityType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

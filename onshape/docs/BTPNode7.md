@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ShortDescriptor** | Pointer to **string** |  | [optional] 
-**SpaceAfter** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceBefore** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceAfter** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceBefore** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceDefault** | Pointer to **bool** |  | [optional] 
 **StartSourceLocation** | Pointer to **int32** |  | [optional] 
 

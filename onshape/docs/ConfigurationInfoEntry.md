@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Explicit** | Pointer to **bool** |  | [optional] 
+**ParameterAbbreviatedDisplayValue** | Pointer to **string** |  | [optional] 
 **ParameterDisplayValue** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **ParameterName** | Pointer to **string** |  | [optional] 
+**ParameterType** | Pointer to **int32** |  | [optional] 
 **ParameterValue** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -53,6 +55,31 @@ SetExplicit sets Explicit field to given value.
 `func (o *ConfigurationInfoEntry) HasExplicit() bool`
 
 HasExplicit returns a boolean if a field has been set.
+
+### GetParameterAbbreviatedDisplayValue
+
+`func (o *ConfigurationInfoEntry) GetParameterAbbreviatedDisplayValue() string`
+
+GetParameterAbbreviatedDisplayValue returns the ParameterAbbreviatedDisplayValue field if non-nil, zero value otherwise.
+
+### GetParameterAbbreviatedDisplayValueOk
+
+`func (o *ConfigurationInfoEntry) GetParameterAbbreviatedDisplayValueOk() (*string, bool)`
+
+GetParameterAbbreviatedDisplayValueOk returns a tuple with the ParameterAbbreviatedDisplayValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterAbbreviatedDisplayValue
+
+`func (o *ConfigurationInfoEntry) SetParameterAbbreviatedDisplayValue(v string)`
+
+SetParameterAbbreviatedDisplayValue sets ParameterAbbreviatedDisplayValue field to given value.
+
+### HasParameterAbbreviatedDisplayValue
+
+`func (o *ConfigurationInfoEntry) HasParameterAbbreviatedDisplayValue() bool`
+
+HasParameterAbbreviatedDisplayValue returns a boolean if a field has been set.
 
 ### GetParameterDisplayValue
 
@@ -128,6 +155,31 @@ SetParameterName sets ParameterName field to given value.
 `func (o *ConfigurationInfoEntry) HasParameterName() bool`
 
 HasParameterName returns a boolean if a field has been set.
+
+### GetParameterType
+
+`func (o *ConfigurationInfoEntry) GetParameterType() int32`
+
+GetParameterType returns the ParameterType field if non-nil, zero value otherwise.
+
+### GetParameterTypeOk
+
+`func (o *ConfigurationInfoEntry) GetParameterTypeOk() (*int32, bool)`
+
+GetParameterTypeOk returns a tuple with the ParameterType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterType
+
+`func (o *ConfigurationInfoEntry) SetParameterType(v int32)`
+
+SetParameterType sets ParameterType field to given value.
+
+### HasParameterType
+
+`func (o *ConfigurationInfoEntry) HasParameterType() bool`
+
+HasParameterType returns a boolean if a field has been set.
 
 ### GetParameterValue
 

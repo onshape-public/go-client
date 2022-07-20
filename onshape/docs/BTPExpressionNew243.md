@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**SpaceAfterBox** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceBetweenNewBox** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**Value** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**SpaceAfterBox** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceBetweenNewBox** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**Value** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 
 ## Methods
 

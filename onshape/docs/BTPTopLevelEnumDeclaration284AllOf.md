@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Annotations** | Pointer to [**[]BTPAnnotation231**](BTPAnnotation-231.md) |  | [optional] 
+**Annotations** | Pointer to [**[]BTPAnnotation231**](BTPAnnotation231.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **TrailingComma** | Pointer to **bool** |  | [optional] 
-**Values** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**Values** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 
 ## Methods
 

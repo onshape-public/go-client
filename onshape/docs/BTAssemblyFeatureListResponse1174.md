@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**FeatureStates** | Pointer to [**map[string]BTFeatureState1688**](BTFeatureState-1688.md) |  | [optional] 
-**Features** | Pointer to [**[]BTMAssemblyFeature887**](BTMAssemblyFeature-887.md) |  | [optional] 
+**FeatureStates** | Pointer to [**map[string]BTFeatureState1688**](BTFeatureState1688.md) |  | [optional] 
+**Features** | Pointer to [**[]BTMAssemblyFeature887**](BTMAssemblyFeature887.md) |  | [optional] 
 **IsComplete** | Pointer to **bool** |  | [optional] 
 
 ## Methods

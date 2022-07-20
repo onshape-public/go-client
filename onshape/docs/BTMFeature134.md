@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **FeatureType** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter-1.md) |  | [optional] 
+**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** |  | [optional] 
-**SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature-134.md) |  | [optional] 
+**SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
+**SuppressionConfigured** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -34,31 +34,6 @@ will change when the set of required properties is changed
 NewBTMFeature134WithDefaults instantiates a new BTMFeature134 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBtType
-
-`func (o *BTMFeature134) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTMFeature134) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTMFeature134) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTMFeature134) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetFeatureId
 
@@ -309,6 +284,31 @@ SetSuppressed sets Suppressed field to given value.
 `func (o *BTMFeature134) HasSuppressed() bool`
 
 HasSuppressed returns a boolean if a field has been set.
+
+### GetSuppressionConfigured
+
+`func (o *BTMFeature134) GetSuppressionConfigured() bool`
+
+GetSuppressionConfigured returns the SuppressionConfigured field if non-nil, zero value otherwise.
+
+### GetSuppressionConfiguredOk
+
+`func (o *BTMFeature134) GetSuppressionConfiguredOk() (*bool, bool)`
+
+GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressionConfigured
+
+`func (o *BTMFeature134) SetSuppressionConfigured(v bool)`
+
+SetSuppressionConfigured sets SuppressionConfigured field to given value.
+
+### HasSuppressionConfigured
+
+`func (o *BTMFeature134) HasSuppressionConfigured() bool`
+
+HasSuppressionConfigured returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

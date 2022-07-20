@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**QuantityTypeToBaseUnits** | Pointer to **map[string]map[string]int32** |  | [optional] 
 **Units** | Pointer to [**[]BTCommonUnitInfo**](BTCommonUnitInfo.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewBTCommonUnitsInfoWithDefaults instantiates a new BTCommonUnitsInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetQuantityTypeToBaseUnits
+
+`func (o *BTCommonUnitsInfo) GetQuantityTypeToBaseUnits() map[string]map[string]int32`
+
+GetQuantityTypeToBaseUnits returns the QuantityTypeToBaseUnits field if non-nil, zero value otherwise.
+
+### GetQuantityTypeToBaseUnitsOk
+
+`func (o *BTCommonUnitsInfo) GetQuantityTypeToBaseUnitsOk() (*map[string]map[string]int32, bool)`
+
+GetQuantityTypeToBaseUnitsOk returns a tuple with the QuantityTypeToBaseUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantityTypeToBaseUnits
+
+`func (o *BTCommonUnitsInfo) SetQuantityTypeToBaseUnits(v map[string]map[string]int32)`
+
+SetQuantityTypeToBaseUnits sets QuantityTypeToBaseUnits field to given value.
+
+### HasQuantityTypeToBaseUnits
+
+`func (o *BTCommonUnitsInfo) HasQuantityTypeToBaseUnits() bool`
+
+HasQuantityTypeToBaseUnits returns a boolean if a field has been set.
 
 ### GetUnits
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FeatureSpecs** | Pointer to [**[]BTFeatureSpec129**](BTFeatureSpec-129.md) |  | [optional] 
+**FeatureSpecs** | Pointer to [**[]BTFeatureSpec129**](BTFeatureSpec129.md) |  | [optional] 
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
 **MicroversionSkew** | Pointer to **bool** |  | [optional] 
 **RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 

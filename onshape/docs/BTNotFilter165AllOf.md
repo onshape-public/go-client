@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Operand** | Pointer to [**BTQueryFilter183**](BTQueryFilter-183.md) |  | [optional] 
+**Operand** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 
 ## Methods
 

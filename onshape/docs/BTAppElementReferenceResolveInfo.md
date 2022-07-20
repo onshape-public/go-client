@@ -5,13 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChangeId** | Pointer to **string** |  | [optional] 
-**ErrorCode** | Pointer to **int32** |  | [optional] 
-**ErrorDescription** | Pointer to **string** |  | [optional] 
+**ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
+**ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
 **ErrorValue** | Pointer to **string** |  | [optional] 
 **IdTag** | Pointer to **string** |  | [optional] 
 **IdTagIsValid** | Pointer to **bool** |  | [optional] 
 **IsConfigurable** | Pointer to **bool** |  | [optional] 
 **IsFlattenedPart** | Pointer to **bool** |  | [optional] 
+**IsLocked** | Pointer to **bool** |  | [optional] 
 **IsSketchOnly** | Pointer to **bool** |  | [optional] 
 **IsSurface** | Pointer to **bool** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
@@ -247,6 +248,31 @@ SetIsFlattenedPart sets IsFlattenedPart field to given value.
 `func (o *BTAppElementReferenceResolveInfo) HasIsFlattenedPart() bool`
 
 HasIsFlattenedPart returns a boolean if a field has been set.
+
+### GetIsLocked
+
+`func (o *BTAppElementReferenceResolveInfo) GetIsLocked() bool`
+
+GetIsLocked returns the IsLocked field if non-nil, zero value otherwise.
+
+### GetIsLockedOk
+
+`func (o *BTAppElementReferenceResolveInfo) GetIsLockedOk() (*bool, bool)`
+
+GetIsLockedOk returns a tuple with the IsLocked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsLocked
+
+`func (o *BTAppElementReferenceResolveInfo) SetIsLocked(v bool)`
+
+SetIsLocked sets IsLocked field to given value.
+
+### HasIsLocked
+
+`func (o *BTAppElementReferenceResolveInfo) HasIsLocked() bool`
+
+HasIsLocked returns a boolean if a field has been set.
 
 ### GetIsSketchOnly
 

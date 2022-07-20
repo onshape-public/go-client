@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
-**ValueObject** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -76,31 +75,6 @@ SetValue sets Value field to given value.
 `func (o *BTFSValueString1422AllOf) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
-
-### GetValueObject
-
-`func (o *BTFSValueString1422AllOf) GetValueObject() string`
-
-GetValueObject returns the ValueObject field if non-nil, zero value otherwise.
-
-### GetValueObjectOk
-
-`func (o *BTFSValueString1422AllOf) GetValueObjectOk() (*string, bool)`
-
-GetValueObjectOk returns a tuple with the ValueObject field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValueObject
-
-`func (o *BTFSValueString1422AllOf) SetValueObject(v string)`
-
-SetValueObject sets ValueObject field to given value.
-
-### HasValueObject
-
-`func (o *BTFSValueString1422AllOf) HasValueObject() bool`
-
-HasValueObject returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

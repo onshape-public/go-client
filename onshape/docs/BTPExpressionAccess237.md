@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Accessor** | Pointer to [**BTPPropertyAccessor23**](BTPPropertyAccessor-23.md) |  | [optional] 
-**Base** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**Accessor** | Pointer to [**BTPPropertyAccessor23**](BTPPropertyAccessor23.md) |  | [optional] 
+**Base** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**SpaceInAccessor** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceInAccessor** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

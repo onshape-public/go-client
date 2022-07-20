@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Choices** | Pointer to [**BTPLiteralMap256**](BTPLiteralMap-256.md) |  | [optional] 
-**Selector** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
-**SpaceAfterSwitch** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**Choices** | Pointer to [**BTPLiteralMap256**](BTPLiteralMap256.md) |  | [optional] 
+**Selector** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
+**SpaceAfterSwitch** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

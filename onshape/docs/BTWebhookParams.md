@@ -7,12 +7,14 @@ Name | Type | Description | Notes
 **ClientId** | Pointer to **string** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **Events** | Pointer to **[]string** |  | [optional] 
 **Filter** | Pointer to **string** |  | [optional] 
 **FolderId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**LinkDocumentId** | Pointer to **string** |  | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
@@ -114,6 +116,31 @@ SetData sets Data field to given value.
 `func (o *BTWebhookParams) HasData() bool`
 
 HasData returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *BTWebhookParams) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *BTWebhookParams) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *BTWebhookParams) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *BTWebhookParams) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetDocumentId
 
@@ -264,6 +291,31 @@ SetId sets Id field to given value.
 `func (o *BTWebhookParams) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetLinkDocumentId
+
+`func (o *BTWebhookParams) GetLinkDocumentId() string`
+
+GetLinkDocumentId returns the LinkDocumentId field if non-nil, zero value otherwise.
+
+### GetLinkDocumentIdOk
+
+`func (o *BTWebhookParams) GetLinkDocumentIdOk() (*string, bool)`
+
+GetLinkDocumentIdOk returns a tuple with the LinkDocumentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinkDocumentId
+
+`func (o *BTWebhookParams) SetLinkDocumentId(v string)`
+
+SetLinkDocumentId sets LinkDocumentId field to given value.
+
+### HasLinkDocumentId
+
+`func (o *BTWebhookParams) HasLinkDocumentId() bool`
+
+HasLinkDocumentId returns a boolean if a field has been set.
 
 ### GetOptions
 

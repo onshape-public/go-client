@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **DestinationName** | Pointer to **string** |  | [optional] 
 **DistanceTolerance** | Pointer to **float64** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**ElementIds** | Pointer to **[]string** |  | [optional] 
 **EmailLink** | Pointer to **bool** |  | [optional] 
 **EmailMessage** | Pointer to **string** |  | [optional] 
 **EmailSubject** | Pointer to **string** |  | [optional] 
@@ -36,10 +37,12 @@ Name | Type | Description | Notes
 **ImportWithinDocument** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
 **JoinAdjacentSurfaces** | Pointer to **bool** |  | [optional] 
+**Level** | Pointer to **string** |  | [optional] 
 **LinkDocumentId** | Pointer to **string** |  | [optional] 
 **LinkDocumentWorkspaceId** | Pointer to **string** |  | [optional] 
 **MaximumChordLength** | Pointer to **float64** |  | [optional] 
 **NotifyUser** | Pointer to **bool** |  | [optional] 
+**OnePartPerDoc** | Pointer to **bool** |  | [optional] 
 **OriginalForeignId** | Pointer to **string** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **PartIds** | Pointer to **string** |  | [optional] 
@@ -47,13 +50,16 @@ Name | Type | Description | Notes
 **PasswordRequired** | Pointer to **bool** |  | [optional] 
 **ProcessedForeignId** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
+**ProxiedDocumentId** | Pointer to **string** |  | [optional] 
 **SelectablePdfText** | Pointer to **bool** |  | [optional] 
 **SendCopyToMe** | Pointer to **bool** |  | [optional] 
+**SheetIndices** | Pointer to **[]int32** |  | [optional] 
 **ShowOverriddenDimensions** | Pointer to **bool** |  | [optional] 
 **SourceName** | Pointer to **string** |  | [optional] 
 **SpecifyUnits** | Pointer to **bool** |  | [optional] 
 **SplinesAsPolylines** | Pointer to **bool** |  | [optional] 
 **SplitAssembliesIntoMultipleDocuments** | Pointer to **bool** |  | [optional] 
+**StepVersionString** | Pointer to **string** |  | [optional] 
 **StoreInDocument** | Pointer to **bool** |  | [optional] 
 **TextAsGeometry** | Pointer to **bool** |  | [optional] 
 **TriggerAutoDownload** | Pointer to **bool** |  | [optional] 
@@ -430,6 +436,31 @@ SetElementId sets ElementId field to given value.
 `func (o *BTTranslateFormatParams) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
+
+### GetElementIds
+
+`func (o *BTTranslateFormatParams) GetElementIds() []string`
+
+GetElementIds returns the ElementIds field if non-nil, zero value otherwise.
+
+### GetElementIdsOk
+
+`func (o *BTTranslateFormatParams) GetElementIdsOk() (*[]string, bool)`
+
+GetElementIdsOk returns a tuple with the ElementIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementIds
+
+`func (o *BTTranslateFormatParams) SetElementIds(v []string)`
+
+SetElementIds sets ElementIds field to given value.
+
+### HasElementIds
+
+`func (o *BTTranslateFormatParams) HasElementIds() bool`
+
+HasElementIds returns a boolean if a field has been set.
 
 ### GetEmailLink
 
@@ -881,6 +912,31 @@ SetJoinAdjacentSurfaces sets JoinAdjacentSurfaces field to given value.
 
 HasJoinAdjacentSurfaces returns a boolean if a field has been set.
 
+### GetLevel
+
+`func (o *BTTranslateFormatParams) GetLevel() string`
+
+GetLevel returns the Level field if non-nil, zero value otherwise.
+
+### GetLevelOk
+
+`func (o *BTTranslateFormatParams) GetLevelOk() (*string, bool)`
+
+GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLevel
+
+`func (o *BTTranslateFormatParams) SetLevel(v string)`
+
+SetLevel sets Level field to given value.
+
+### HasLevel
+
+`func (o *BTTranslateFormatParams) HasLevel() bool`
+
+HasLevel returns a boolean if a field has been set.
+
 ### GetLinkDocumentId
 
 `func (o *BTTranslateFormatParams) GetLinkDocumentId() string`
@@ -980,6 +1036,31 @@ SetNotifyUser sets NotifyUser field to given value.
 `func (o *BTTranslateFormatParams) HasNotifyUser() bool`
 
 HasNotifyUser returns a boolean if a field has been set.
+
+### GetOnePartPerDoc
+
+`func (o *BTTranslateFormatParams) GetOnePartPerDoc() bool`
+
+GetOnePartPerDoc returns the OnePartPerDoc field if non-nil, zero value otherwise.
+
+### GetOnePartPerDocOk
+
+`func (o *BTTranslateFormatParams) GetOnePartPerDocOk() (*bool, bool)`
+
+GetOnePartPerDocOk returns a tuple with the OnePartPerDoc field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnePartPerDoc
+
+`func (o *BTTranslateFormatParams) SetOnePartPerDoc(v bool)`
+
+SetOnePartPerDoc sets OnePartPerDoc field to given value.
+
+### HasOnePartPerDoc
+
+`func (o *BTTranslateFormatParams) HasOnePartPerDoc() bool`
+
+HasOnePartPerDoc returns a boolean if a field has been set.
 
 ### GetOriginalForeignId
 
@@ -1156,6 +1237,31 @@ SetProjectId sets ProjectId field to given value.
 
 HasProjectId returns a boolean if a field has been set.
 
+### GetProxiedDocumentId
+
+`func (o *BTTranslateFormatParams) GetProxiedDocumentId() string`
+
+GetProxiedDocumentId returns the ProxiedDocumentId field if non-nil, zero value otherwise.
+
+### GetProxiedDocumentIdOk
+
+`func (o *BTTranslateFormatParams) GetProxiedDocumentIdOk() (*string, bool)`
+
+GetProxiedDocumentIdOk returns a tuple with the ProxiedDocumentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProxiedDocumentId
+
+`func (o *BTTranslateFormatParams) SetProxiedDocumentId(v string)`
+
+SetProxiedDocumentId sets ProxiedDocumentId field to given value.
+
+### HasProxiedDocumentId
+
+`func (o *BTTranslateFormatParams) HasProxiedDocumentId() bool`
+
+HasProxiedDocumentId returns a boolean if a field has been set.
+
 ### GetSelectablePdfText
 
 `func (o *BTTranslateFormatParams) GetSelectablePdfText() bool`
@@ -1205,6 +1311,31 @@ SetSendCopyToMe sets SendCopyToMe field to given value.
 `func (o *BTTranslateFormatParams) HasSendCopyToMe() bool`
 
 HasSendCopyToMe returns a boolean if a field has been set.
+
+### GetSheetIndices
+
+`func (o *BTTranslateFormatParams) GetSheetIndices() []int32`
+
+GetSheetIndices returns the SheetIndices field if non-nil, zero value otherwise.
+
+### GetSheetIndicesOk
+
+`func (o *BTTranslateFormatParams) GetSheetIndicesOk() (*[]int32, bool)`
+
+GetSheetIndicesOk returns a tuple with the SheetIndices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSheetIndices
+
+`func (o *BTTranslateFormatParams) SetSheetIndices(v []int32)`
+
+SetSheetIndices sets SheetIndices field to given value.
+
+### HasSheetIndices
+
+`func (o *BTTranslateFormatParams) HasSheetIndices() bool`
+
+HasSheetIndices returns a boolean if a field has been set.
 
 ### GetShowOverriddenDimensions
 
@@ -1330,6 +1461,31 @@ SetSplitAssembliesIntoMultipleDocuments sets SplitAssembliesIntoMultipleDocument
 `func (o *BTTranslateFormatParams) HasSplitAssembliesIntoMultipleDocuments() bool`
 
 HasSplitAssembliesIntoMultipleDocuments returns a boolean if a field has been set.
+
+### GetStepVersionString
+
+`func (o *BTTranslateFormatParams) GetStepVersionString() string`
+
+GetStepVersionString returns the StepVersionString field if non-nil, zero value otherwise.
+
+### GetStepVersionStringOk
+
+`func (o *BTTranslateFormatParams) GetStepVersionStringOk() (*string, bool)`
+
+GetStepVersionStringOk returns a tuple with the StepVersionString field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStepVersionString
+
+`func (o *BTTranslateFormatParams) SetStepVersionString(v string)`
+
+SetStepVersionString sets StepVersionString field to given value.
+
+### HasStepVersionString
+
+`func (o *BTTranslateFormatParams) HasStepVersionString() bool`
+
+HasStepVersionString returns a boolean if a field has been set.
 
 ### GetStoreInDocument
 

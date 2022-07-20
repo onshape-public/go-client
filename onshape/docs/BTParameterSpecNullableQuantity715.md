@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **QuantityType** | Pointer to **string** |  | [optional] 
-**Ranges** | Pointer to [**[]BTNullableQuantityRange1340**](BTNullableQuantityRange-1340.md) |  | [optional] 
+**Ranges** | Pointer to [**[]BTNullableQuantityRange1340**](BTNullableQuantityRange1340.md) |  | [optional] 
 
 ## Methods
 

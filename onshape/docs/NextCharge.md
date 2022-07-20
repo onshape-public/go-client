@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | Pointer to **int64** |  | [optional] 
-**CurrentPeriodEnd** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CurrentPeriodEnd** | Pointer to **JSONTime** |  | [optional] 
 **Interval** | Pointer to **string** |  | [optional] 
 **Total** | Pointer to **int64** |  | [optional] 
 

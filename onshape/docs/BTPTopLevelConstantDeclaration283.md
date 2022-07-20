@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Declaration** | Pointer to [**BTPStatementConstantDeclaration273**](BTPStatementConstantDeclaration-273.md) |  | [optional] 
+**Declaration** | Pointer to [**BTPStatementConstantDeclaration273**](BTPStatementConstantDeclaration273.md) |  | [optional] 
 
 ## Methods
 

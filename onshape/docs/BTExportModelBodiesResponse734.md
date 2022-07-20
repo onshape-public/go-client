@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Bodies** | Pointer to [**[]BTExportModelBody1272**](BTExportModelBody-1272.md) |  | [optional] 
+**Bodies** | Pointer to [**[]BTExportModelBody1272**](BTExportModelBody1272.md) |  | [optional] 
 **ErrorEnum** | Pointer to **string** |  | [optional] 
-**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId-366.md) |  | [optional] 
+**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 
 ## Methods
 

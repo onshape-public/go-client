@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowedInsertableTypes** | Pointer to **[]string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**ComputedConfigurationInputs** | Pointer to [**[]BTComputedConfigurationInputSpec2525**](BTComputedConfigurationInputSpec-2525.md) |  | [optional] 
+**ComputedConfigurationInputs** | Pointer to [**[]BTComputedConfigurationInputSpec2525**](BTComputedConfigurationInputSpec2525.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 
 ## Methods

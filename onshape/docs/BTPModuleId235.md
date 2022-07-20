@@ -4,9 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Atomic** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **DbimportString** | Pointer to **string** |  | [optional] 
+**DocumentationType** | Pointer to **string** |  | [optional] 
 **ElementImport** | Pointer to **bool** |  | [optional] 
+**EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **ExternalDocumentWithVersion** | Pointer to [**BTDocumentWithVersionId**](BTDocumentWithVersionId.md) |  | [optional] 
 **ExternalDocumentWithVersionAndElementId** | Pointer to [**BTDocumentWithVersionAndElementId**](BTDocumentWithVersionAndElementId.md) |  | [optional] 
 **ExternalImport** | Pointer to **bool** |  | [optional] 
@@ -14,19 +17,27 @@ Name | Type | Description | Notes
 **ImportedElementId** | Pointer to **string** |  | [optional] 
 **ImportedVersionId** | Pointer to **string** |  | [optional] 
 **Legacy** | Pointer to **bool** |  | [optional] 
+**LegacyElementName** | Pointer to **string** |  | [optional] 
+**LegacyVersionNumber** | Pointer to **int32** |  | [optional] 
 **Microversion** | Pointer to **string** |  | [optional] 
-**Path** | Pointer to [**BTPLiteralString259**](BTPLiteralString-259.md) |  | [optional] 
+**NodeId** | Pointer to **string** |  | [optional] 
+**Path** | Pointer to [**BTPLiteralString259**](BTPLiteralString259.md) |  | [optional] 
 **PathPotentiallyValid** | Pointer to **bool** |  | [optional] 
 **PathVersion** | Pointer to **string** |  | [optional] 
 **PotentiallyValid** | Pointer to **bool** |  | [optional] 
-**SpaceAfterPath** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceAfterVersion** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceBeforePath** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceBeforeVersion** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**ShortDescriptor** | Pointer to **string** |  | [optional] 
+**SpaceAfter** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceAfterPath** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceAfterVersion** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceBefore** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceBeforePath** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceBeforeVersion** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceDefault** | Pointer to **bool** |  | [optional] 
 **StandardLibrary** | Pointer to **bool** |  | [optional] 
 **StandardLibraryCommon** | Pointer to **bool** |  | [optional] 
+**StartSourceLocation** | Pointer to **int32** |  | [optional] 
 **ValidLegacyVersion** | Pointer to **bool** |  | [optional] 
-**Version** | Pointer to [**BTPLiteralString259**](BTPLiteralString-259.md) |  | [optional] 
+**Version** | Pointer to [**BTPLiteralString259**](BTPLiteralString259.md) |  | [optional] 
 **VersionAndMicroversion** | Pointer to **string** |  | [optional] 
 **VersionPotentiallyValid** | Pointer to **bool** |  | [optional] 
 
@@ -48,6 +59,31 @@ will change when the set of required properties is changed
 NewBTPModuleId235WithDefaults instantiates a new BTPModuleId235 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAtomic
+
+`func (o *BTPModuleId235) GetAtomic() bool`
+
+GetAtomic returns the Atomic field if non-nil, zero value otherwise.
+
+### GetAtomicOk
+
+`func (o *BTPModuleId235) GetAtomicOk() (*bool, bool)`
+
+GetAtomicOk returns a tuple with the Atomic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAtomic
+
+`func (o *BTPModuleId235) SetAtomic(v bool)`
+
+SetAtomic sets Atomic field to given value.
+
+### HasAtomic
+
+`func (o *BTPModuleId235) HasAtomic() bool`
+
+HasAtomic returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -99,6 +135,31 @@ SetDbimportString sets DbimportString field to given value.
 
 HasDbimportString returns a boolean if a field has been set.
 
+### GetDocumentationType
+
+`func (o *BTPModuleId235) GetDocumentationType() string`
+
+GetDocumentationType returns the DocumentationType field if non-nil, zero value otherwise.
+
+### GetDocumentationTypeOk
+
+`func (o *BTPModuleId235) GetDocumentationTypeOk() (*string, bool)`
+
+GetDocumentationTypeOk returns a tuple with the DocumentationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentationType
+
+`func (o *BTPModuleId235) SetDocumentationType(v string)`
+
+SetDocumentationType sets DocumentationType field to given value.
+
+### HasDocumentationType
+
+`func (o *BTPModuleId235) HasDocumentationType() bool`
+
+HasDocumentationType returns a boolean if a field has been set.
+
 ### GetElementImport
 
 `func (o *BTPModuleId235) GetElementImport() bool`
@@ -123,6 +184,31 @@ SetElementImport sets ElementImport field to given value.
 `func (o *BTPModuleId235) HasElementImport() bool`
 
 HasElementImport returns a boolean if a field has been set.
+
+### GetEndSourceLocation
+
+`func (o *BTPModuleId235) GetEndSourceLocation() int32`
+
+GetEndSourceLocation returns the EndSourceLocation field if non-nil, zero value otherwise.
+
+### GetEndSourceLocationOk
+
+`func (o *BTPModuleId235) GetEndSourceLocationOk() (*int32, bool)`
+
+GetEndSourceLocationOk returns a tuple with the EndSourceLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndSourceLocation
+
+`func (o *BTPModuleId235) SetEndSourceLocation(v int32)`
+
+SetEndSourceLocation sets EndSourceLocation field to given value.
+
+### HasEndSourceLocation
+
+`func (o *BTPModuleId235) HasEndSourceLocation() bool`
+
+HasEndSourceLocation returns a boolean if a field has been set.
 
 ### GetExternalDocumentWithVersion
 
@@ -299,6 +385,56 @@ SetLegacy sets Legacy field to given value.
 
 HasLegacy returns a boolean if a field has been set.
 
+### GetLegacyElementName
+
+`func (o *BTPModuleId235) GetLegacyElementName() string`
+
+GetLegacyElementName returns the LegacyElementName field if non-nil, zero value otherwise.
+
+### GetLegacyElementNameOk
+
+`func (o *BTPModuleId235) GetLegacyElementNameOk() (*string, bool)`
+
+GetLegacyElementNameOk returns a tuple with the LegacyElementName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLegacyElementName
+
+`func (o *BTPModuleId235) SetLegacyElementName(v string)`
+
+SetLegacyElementName sets LegacyElementName field to given value.
+
+### HasLegacyElementName
+
+`func (o *BTPModuleId235) HasLegacyElementName() bool`
+
+HasLegacyElementName returns a boolean if a field has been set.
+
+### GetLegacyVersionNumber
+
+`func (o *BTPModuleId235) GetLegacyVersionNumber() int32`
+
+GetLegacyVersionNumber returns the LegacyVersionNumber field if non-nil, zero value otherwise.
+
+### GetLegacyVersionNumberOk
+
+`func (o *BTPModuleId235) GetLegacyVersionNumberOk() (*int32, bool)`
+
+GetLegacyVersionNumberOk returns a tuple with the LegacyVersionNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLegacyVersionNumber
+
+`func (o *BTPModuleId235) SetLegacyVersionNumber(v int32)`
+
+SetLegacyVersionNumber sets LegacyVersionNumber field to given value.
+
+### HasLegacyVersionNumber
+
+`func (o *BTPModuleId235) HasLegacyVersionNumber() bool`
+
+HasLegacyVersionNumber returns a boolean if a field has been set.
+
 ### GetMicroversion
 
 `func (o *BTPModuleId235) GetMicroversion() string`
@@ -323,6 +459,31 @@ SetMicroversion sets Microversion field to given value.
 `func (o *BTPModuleId235) HasMicroversion() bool`
 
 HasMicroversion returns a boolean if a field has been set.
+
+### GetNodeId
+
+`func (o *BTPModuleId235) GetNodeId() string`
+
+GetNodeId returns the NodeId field if non-nil, zero value otherwise.
+
+### GetNodeIdOk
+
+`func (o *BTPModuleId235) GetNodeIdOk() (*string, bool)`
+
+GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeId
+
+`func (o *BTPModuleId235) SetNodeId(v string)`
+
+SetNodeId sets NodeId field to given value.
+
+### HasNodeId
+
+`func (o *BTPModuleId235) HasNodeId() bool`
+
+HasNodeId returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -424,6 +585,56 @@ SetPotentiallyValid sets PotentiallyValid field to given value.
 
 HasPotentiallyValid returns a boolean if a field has been set.
 
+### GetShortDescriptor
+
+`func (o *BTPModuleId235) GetShortDescriptor() string`
+
+GetShortDescriptor returns the ShortDescriptor field if non-nil, zero value otherwise.
+
+### GetShortDescriptorOk
+
+`func (o *BTPModuleId235) GetShortDescriptorOk() (*string, bool)`
+
+GetShortDescriptorOk returns a tuple with the ShortDescriptor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShortDescriptor
+
+`func (o *BTPModuleId235) SetShortDescriptor(v string)`
+
+SetShortDescriptor sets ShortDescriptor field to given value.
+
+### HasShortDescriptor
+
+`func (o *BTPModuleId235) HasShortDescriptor() bool`
+
+HasShortDescriptor returns a boolean if a field has been set.
+
+### GetSpaceAfter
+
+`func (o *BTPModuleId235) GetSpaceAfter() BTPSpace10`
+
+GetSpaceAfter returns the SpaceAfter field if non-nil, zero value otherwise.
+
+### GetSpaceAfterOk
+
+`func (o *BTPModuleId235) GetSpaceAfterOk() (*BTPSpace10, bool)`
+
+GetSpaceAfterOk returns a tuple with the SpaceAfter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpaceAfter
+
+`func (o *BTPModuleId235) SetSpaceAfter(v BTPSpace10)`
+
+SetSpaceAfter sets SpaceAfter field to given value.
+
+### HasSpaceAfter
+
+`func (o *BTPModuleId235) HasSpaceAfter() bool`
+
+HasSpaceAfter returns a boolean if a field has been set.
+
 ### GetSpaceAfterPath
 
 `func (o *BTPModuleId235) GetSpaceAfterPath() BTPSpace10`
@@ -473,6 +684,31 @@ SetSpaceAfterVersion sets SpaceAfterVersion field to given value.
 `func (o *BTPModuleId235) HasSpaceAfterVersion() bool`
 
 HasSpaceAfterVersion returns a boolean if a field has been set.
+
+### GetSpaceBefore
+
+`func (o *BTPModuleId235) GetSpaceBefore() BTPSpace10`
+
+GetSpaceBefore returns the SpaceBefore field if non-nil, zero value otherwise.
+
+### GetSpaceBeforeOk
+
+`func (o *BTPModuleId235) GetSpaceBeforeOk() (*BTPSpace10, bool)`
+
+GetSpaceBeforeOk returns a tuple with the SpaceBefore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpaceBefore
+
+`func (o *BTPModuleId235) SetSpaceBefore(v BTPSpace10)`
+
+SetSpaceBefore sets SpaceBefore field to given value.
+
+### HasSpaceBefore
+
+`func (o *BTPModuleId235) HasSpaceBefore() bool`
+
+HasSpaceBefore returns a boolean if a field has been set.
 
 ### GetSpaceBeforePath
 
@@ -524,6 +760,31 @@ SetSpaceBeforeVersion sets SpaceBeforeVersion field to given value.
 
 HasSpaceBeforeVersion returns a boolean if a field has been set.
 
+### GetSpaceDefault
+
+`func (o *BTPModuleId235) GetSpaceDefault() bool`
+
+GetSpaceDefault returns the SpaceDefault field if non-nil, zero value otherwise.
+
+### GetSpaceDefaultOk
+
+`func (o *BTPModuleId235) GetSpaceDefaultOk() (*bool, bool)`
+
+GetSpaceDefaultOk returns a tuple with the SpaceDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpaceDefault
+
+`func (o *BTPModuleId235) SetSpaceDefault(v bool)`
+
+SetSpaceDefault sets SpaceDefault field to given value.
+
+### HasSpaceDefault
+
+`func (o *BTPModuleId235) HasSpaceDefault() bool`
+
+HasSpaceDefault returns a boolean if a field has been set.
+
 ### GetStandardLibrary
 
 `func (o *BTPModuleId235) GetStandardLibrary() bool`
@@ -573,6 +834,31 @@ SetStandardLibraryCommon sets StandardLibraryCommon field to given value.
 `func (o *BTPModuleId235) HasStandardLibraryCommon() bool`
 
 HasStandardLibraryCommon returns a boolean if a field has been set.
+
+### GetStartSourceLocation
+
+`func (o *BTPModuleId235) GetStartSourceLocation() int32`
+
+GetStartSourceLocation returns the StartSourceLocation field if non-nil, zero value otherwise.
+
+### GetStartSourceLocationOk
+
+`func (o *BTPModuleId235) GetStartSourceLocationOk() (*int32, bool)`
+
+GetStartSourceLocationOk returns a tuple with the StartSourceLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartSourceLocation
+
+`func (o *BTPModuleId235) SetStartSourceLocation(v int32)`
+
+SetStartSourceLocation sets StartSourceLocation field to given value.
+
+### HasStartSourceLocation
+
+`func (o *BTPModuleId235) HasStartSourceLocation() bool`
+
+HasStartSourceLocation returns a boolean if a field has been set.
 
 ### GetValidLegacyVersion
 

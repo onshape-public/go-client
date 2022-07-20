@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Imports** | Pointer to [**[]BTMImport136**](BTMImport-136.md) |  | [optional] 
-**ModuleId** | Pointer to [**BTPModuleId235**](BTPModuleId-235.md) |  | [optional] 
+**Imports** | Pointer to [**[]BTMImport136**](BTMImport136.md) |  | [optional] 
+**ModuleId** | Pointer to [**BTPModuleId235**](BTPModuleId235.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods

@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**JsonType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 
@@ -78,31 +77,6 @@ SetId sets Id field to given value.
 `func (o *BTBaseInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
-
-### GetJsonType
-
-`func (o *BTBaseInfo) GetJsonType() string`
-
-GetJsonType returns the JsonType field if non-nil, zero value otherwise.
-
-### GetJsonTypeOk
-
-`func (o *BTBaseInfo) GetJsonTypeOk() (*string, bool)`
-
-GetJsonTypeOk returns a tuple with the JsonType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJsonType
-
-`func (o *BTBaseInfo) SetJsonType(v string)`
-
-SetJsonType sets JsonType field to given value.
-
-### HasJsonType
-
-`func (o *BTBaseInfo) HasJsonType() bool`
-
-HasJsonType returns a boolean if a field has been set.
 
 ### GetName
 

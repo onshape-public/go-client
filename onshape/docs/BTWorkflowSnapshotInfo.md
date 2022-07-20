@@ -6,6 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Actions** | Pointer to [**[]BTWorkflowActionInfo**](BTWorkflowActionInfo.md) |  | [optional] 
 **ApproverIds** | Pointer to **[]string** |  | [optional] 
+**CanBeDiscarded** | Pointer to **bool** |  | [optional] 
+**DebugMicroversionId** | Pointer to **string** |  | [optional] 
+**ErrorMessage** | Pointer to **string** |  | [optional] 
+**IsCreator** | Pointer to **bool** |  | [optional] 
 **IsDiscarded** | Pointer to **bool** |  | [optional] 
 **IsFrozen** | Pointer to **bool** |  | [optional] 
 **IsSetup** | Pointer to **bool** |  | [optional] 
@@ -81,6 +85,106 @@ SetApproverIds sets ApproverIds field to given value.
 `func (o *BTWorkflowSnapshotInfo) HasApproverIds() bool`
 
 HasApproverIds returns a boolean if a field has been set.
+
+### GetCanBeDiscarded
+
+`func (o *BTWorkflowSnapshotInfo) GetCanBeDiscarded() bool`
+
+GetCanBeDiscarded returns the CanBeDiscarded field if non-nil, zero value otherwise.
+
+### GetCanBeDiscardedOk
+
+`func (o *BTWorkflowSnapshotInfo) GetCanBeDiscardedOk() (*bool, bool)`
+
+GetCanBeDiscardedOk returns a tuple with the CanBeDiscarded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanBeDiscarded
+
+`func (o *BTWorkflowSnapshotInfo) SetCanBeDiscarded(v bool)`
+
+SetCanBeDiscarded sets CanBeDiscarded field to given value.
+
+### HasCanBeDiscarded
+
+`func (o *BTWorkflowSnapshotInfo) HasCanBeDiscarded() bool`
+
+HasCanBeDiscarded returns a boolean if a field has been set.
+
+### GetDebugMicroversionId
+
+`func (o *BTWorkflowSnapshotInfo) GetDebugMicroversionId() string`
+
+GetDebugMicroversionId returns the DebugMicroversionId field if non-nil, zero value otherwise.
+
+### GetDebugMicroversionIdOk
+
+`func (o *BTWorkflowSnapshotInfo) GetDebugMicroversionIdOk() (*string, bool)`
+
+GetDebugMicroversionIdOk returns a tuple with the DebugMicroversionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebugMicroversionId
+
+`func (o *BTWorkflowSnapshotInfo) SetDebugMicroversionId(v string)`
+
+SetDebugMicroversionId sets DebugMicroversionId field to given value.
+
+### HasDebugMicroversionId
+
+`func (o *BTWorkflowSnapshotInfo) HasDebugMicroversionId() bool`
+
+HasDebugMicroversionId returns a boolean if a field has been set.
+
+### GetErrorMessage
+
+`func (o *BTWorkflowSnapshotInfo) GetErrorMessage() string`
+
+GetErrorMessage returns the ErrorMessage field if non-nil, zero value otherwise.
+
+### GetErrorMessageOk
+
+`func (o *BTWorkflowSnapshotInfo) GetErrorMessageOk() (*string, bool)`
+
+GetErrorMessageOk returns a tuple with the ErrorMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorMessage
+
+`func (o *BTWorkflowSnapshotInfo) SetErrorMessage(v string)`
+
+SetErrorMessage sets ErrorMessage field to given value.
+
+### HasErrorMessage
+
+`func (o *BTWorkflowSnapshotInfo) HasErrorMessage() bool`
+
+HasErrorMessage returns a boolean if a field has been set.
+
+### GetIsCreator
+
+`func (o *BTWorkflowSnapshotInfo) GetIsCreator() bool`
+
+GetIsCreator returns the IsCreator field if non-nil, zero value otherwise.
+
+### GetIsCreatorOk
+
+`func (o *BTWorkflowSnapshotInfo) GetIsCreatorOk() (*bool, bool)`
+
+GetIsCreatorOk returns a tuple with the IsCreator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCreator
+
+`func (o *BTWorkflowSnapshotInfo) SetIsCreator(v bool)`
+
+SetIsCreator sets IsCreator field to given value.
+
+### HasIsCreator
+
+`func (o *BTWorkflowSnapshotInfo) HasIsCreator() bool`
+
+HasIsCreator returns a boolean if a field has been set.
 
 ### GetIsDiscarded
 

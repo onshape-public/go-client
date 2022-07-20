@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Operand** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
-**TypeName** | Pointer to [**BTPTypeName290**](BTPTypeName-290.md) |  | [optional] 
+**Operand** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
+**TypeName** | Pointer to [**BTPTypeName290**](BTPTypeName290.md) |  | [optional] 
 
 ## Methods
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ConfigurationValueString** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to [**BTMParameter1**](BTMParameter-1.md) |  | [optional] 
+**Value** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
 ## Methods
 

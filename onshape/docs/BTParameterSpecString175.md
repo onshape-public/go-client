@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**FormatConditions** | Pointer to [**[]BTStringFormatCondition683**](BTStringFormatCondition-683.md) |  | [optional] 
+**DisallowsEmptyStrings** | Pointer to **string** |  | [optional] 
+**DisallowsHtml** | Pointer to **string** |  | [optional] 
+**FormatConditions** | Pointer to [**[]BTStringFormatCondition683**](BTStringFormatCondition683.md) |  | [optional] 
 
 ## Methods
 
@@ -50,6 +52,56 @@ SetBtType sets BtType field to given value.
 `func (o *BTParameterSpecString175) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetDisallowsEmptyStrings
+
+`func (o *BTParameterSpecString175) GetDisallowsEmptyStrings() string`
+
+GetDisallowsEmptyStrings returns the DisallowsEmptyStrings field if non-nil, zero value otherwise.
+
+### GetDisallowsEmptyStringsOk
+
+`func (o *BTParameterSpecString175) GetDisallowsEmptyStringsOk() (*string, bool)`
+
+GetDisallowsEmptyStringsOk returns a tuple with the DisallowsEmptyStrings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisallowsEmptyStrings
+
+`func (o *BTParameterSpecString175) SetDisallowsEmptyStrings(v string)`
+
+SetDisallowsEmptyStrings sets DisallowsEmptyStrings field to given value.
+
+### HasDisallowsEmptyStrings
+
+`func (o *BTParameterSpecString175) HasDisallowsEmptyStrings() bool`
+
+HasDisallowsEmptyStrings returns a boolean if a field has been set.
+
+### GetDisallowsHtml
+
+`func (o *BTParameterSpecString175) GetDisallowsHtml() string`
+
+GetDisallowsHtml returns the DisallowsHtml field if non-nil, zero value otherwise.
+
+### GetDisallowsHtmlOk
+
+`func (o *BTParameterSpecString175) GetDisallowsHtmlOk() (*string, bool)`
+
+GetDisallowsHtmlOk returns a tuple with the DisallowsHtml field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisallowsHtml
+
+`func (o *BTParameterSpecString175) SetDisallowsHtml(v string)`
+
+SetDisallowsHtml sets DisallowsHtml field to given value.
+
+### HasDisallowsHtml
+
+`func (o *BTParameterSpecString175) HasDisallowsHtml() bool`
+
+HasDisallowsHtml returns a boolean if a field has been set.
 
 ### GetFormatConditions
 

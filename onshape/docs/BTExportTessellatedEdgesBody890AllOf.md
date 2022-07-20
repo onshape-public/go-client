@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Edges** | Pointer to [**[]BTExportTessellatedEdgesEdge1364**](BTExportTessellatedEdgesEdge-1364.md) |  | [optional] 
+**Edges** | Pointer to [**[]BTExportTessellatedEdgesEdge1364**](BTExportTessellatedEdgesEdge1364.md) |  | [optional] 
 
 ## Methods
 

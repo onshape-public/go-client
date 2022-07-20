@@ -4,12 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultValue** | Pointer to [**map[string]interface{}**](.md) |  | [optional] 
+**ComputedProperty** | Pointer to **bool** |  | [optional] 
+**ComputedPropertyError** | Pointer to **string** |  | [optional] 
+**DefaultValue** | Pointer to **interface{}** |  | [optional] 
 **Dirty** | Pointer to **bool** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
 **EditableInUi** | Pointer to **bool** |  | [optional] 
 **EnumValues** | Pointer to [**[]BTMetadataEnumValueInfo**](BTMetadataEnumValueInfo.md) |  | [optional] 
-**InitialValue** | Pointer to [**map[string]interface{}**](.md) |  | [optional] 
+**InitialValue** | Pointer to **map[string]interface{}** |  | [optional] 
+**Multivalued** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PropertyId** | Pointer to **string** |  | [optional] 
 **PropertySource** | Pointer to **int32** |  | [optional] 
@@ -17,7 +20,7 @@ Name | Type | Description | Notes
 **SchemaId** | Pointer to **string** |  | [optional] 
 **UiHints** | Pointer to [**BTMetadataPropertyUiHintsInfo**](BTMetadataPropertyUiHintsInfo.md) |  | [optional] 
 **Validator** | Pointer to [**BTMetadataPropertyValidatorInfo**](BTMetadataPropertyValidatorInfo.md) |  | [optional] 
-**Value** | Pointer to [**map[string]interface{}**](.md) |  | [optional] 
+**Value** | Pointer to **interface{}** |  | [optional] 
 **ValueType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -39,22 +42,72 @@ NewBTMetadataPropertyInfoWithDefaults instantiates a new BTMetadataPropertyInfo 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetComputedProperty
+
+`func (o *BTMetadataPropertyInfo) GetComputedProperty() bool`
+
+GetComputedProperty returns the ComputedProperty field if non-nil, zero value otherwise.
+
+### GetComputedPropertyOk
+
+`func (o *BTMetadataPropertyInfo) GetComputedPropertyOk() (*bool, bool)`
+
+GetComputedPropertyOk returns a tuple with the ComputedProperty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedProperty
+
+`func (o *BTMetadataPropertyInfo) SetComputedProperty(v bool)`
+
+SetComputedProperty sets ComputedProperty field to given value.
+
+### HasComputedProperty
+
+`func (o *BTMetadataPropertyInfo) HasComputedProperty() bool`
+
+HasComputedProperty returns a boolean if a field has been set.
+
+### GetComputedPropertyError
+
+`func (o *BTMetadataPropertyInfo) GetComputedPropertyError() string`
+
+GetComputedPropertyError returns the ComputedPropertyError field if non-nil, zero value otherwise.
+
+### GetComputedPropertyErrorOk
+
+`func (o *BTMetadataPropertyInfo) GetComputedPropertyErrorOk() (*string, bool)`
+
+GetComputedPropertyErrorOk returns a tuple with the ComputedPropertyError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedPropertyError
+
+`func (o *BTMetadataPropertyInfo) SetComputedPropertyError(v string)`
+
+SetComputedPropertyError sets ComputedPropertyError field to given value.
+
+### HasComputedPropertyError
+
+`func (o *BTMetadataPropertyInfo) HasComputedPropertyError() bool`
+
+HasComputedPropertyError returns a boolean if a field has been set.
+
 ### GetDefaultValue
 
-`func (o *BTMetadataPropertyInfo) GetDefaultValue() map[string]interface{}`
+`func (o *BTMetadataPropertyInfo) GetDefaultValue() interface{}`
 
 GetDefaultValue returns the DefaultValue field if non-nil, zero value otherwise.
 
 ### GetDefaultValueOk
 
-`func (o *BTMetadataPropertyInfo) GetDefaultValueOk() (*map[string]interface{}, bool)`
+`func (o *BTMetadataPropertyInfo) GetDefaultValueOk() (*interface{}, bool)`
 
 GetDefaultValueOk returns a tuple with the DefaultValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultValue
 
-`func (o *BTMetadataPropertyInfo) SetDefaultValue(v map[string]interface{})`
+`func (o *BTMetadataPropertyInfo) SetDefaultValue(v interface{})`
 
 SetDefaultValue sets DefaultValue field to given value.
 
@@ -64,6 +117,16 @@ SetDefaultValue sets DefaultValue field to given value.
 
 HasDefaultValue returns a boolean if a field has been set.
 
+### SetDefaultValueNil
+
+`func (o *BTMetadataPropertyInfo) SetDefaultValueNil(b bool)`
+
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
+
+### UnsetDefaultValue
+`func (o *BTMetadataPropertyInfo) UnsetDefaultValue()`
+
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetDirty
 
 `func (o *BTMetadataPropertyInfo) GetDirty() bool`
@@ -188,6 +251,31 @@ SetInitialValue sets InitialValue field to given value.
 `func (o *BTMetadataPropertyInfo) HasInitialValue() bool`
 
 HasInitialValue returns a boolean if a field has been set.
+
+### GetMultivalued
+
+`func (o *BTMetadataPropertyInfo) GetMultivalued() bool`
+
+GetMultivalued returns the Multivalued field if non-nil, zero value otherwise.
+
+### GetMultivaluedOk
+
+`func (o *BTMetadataPropertyInfo) GetMultivaluedOk() (*bool, bool)`
+
+GetMultivaluedOk returns a tuple with the Multivalued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultivalued
+
+`func (o *BTMetadataPropertyInfo) SetMultivalued(v bool)`
+
+SetMultivalued sets Multivalued field to given value.
+
+### HasMultivalued
+
+`func (o *BTMetadataPropertyInfo) HasMultivalued() bool`
+
+HasMultivalued returns a boolean if a field has been set.
 
 ### GetName
 
@@ -366,20 +454,20 @@ HasValidator returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *BTMetadataPropertyInfo) GetValue() map[string]interface{}`
+`func (o *BTMetadataPropertyInfo) GetValue() interface{}`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *BTMetadataPropertyInfo) GetValueOk() (*map[string]interface{}, bool)`
+`func (o *BTMetadataPropertyInfo) GetValueOk() (*interface{}, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *BTMetadataPropertyInfo) SetValue(v map[string]interface{})`
+`func (o *BTMetadataPropertyInfo) SetValue(v interface{})`
 
 SetValue sets Value field to given value.
 
@@ -389,6 +477,16 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
+### SetValueNil
+
+`func (o *BTMetadataPropertyInfo) SetValueNil(b bool)`
+
+ SetValueNil sets the value for Value to be an explicit nil
+
+### UnsetValue
+`func (o *BTMetadataPropertyInfo) UnsetValue()`
+
+UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetValueType
 
 `func (o *BTMetadataPropertyInfo) GetValueType() string`

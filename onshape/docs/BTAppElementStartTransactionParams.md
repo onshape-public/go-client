@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Description** | Pointer to **string** |  | [optional] 
 **ParentChangeId** | Pointer to **string** |  | [optional] 
 **ReturnError** | Pointer to **bool** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBTAppElementStartTransactionParamsWithDefaults instantiates a new BTAppElementStartTransactionParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDescription
+
+`func (o *BTAppElementStartTransactionParams) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *BTAppElementStartTransactionParams) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *BTAppElementStartTransactionParams) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *BTAppElementStartTransactionParams) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetParentChangeId
 

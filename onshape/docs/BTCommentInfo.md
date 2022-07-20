@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssemblyFeatures** | Pointer to **[]string** |  | [optional] 
-**AssignedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**AssignedAt** | Pointer to **JSONTime** |  | [optional] 
 **Assignee** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Attachment** | Pointer to [**BTCommentAttachmentInfo**](BTCommentAttachmentInfo.md) |  | [optional] 
 **CanDelete** | Pointer to **bool** |  | [optional] 
 **CanResolveOrReopen** | Pointer to **bool** |  | [optional] 
-**CreatedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementFeature** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -20,12 +20,14 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**ObjectId** | Pointer to **string** |  | [optional] 
+**ObjectType** | Pointer to **int32** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **ReleasePackageId** | Pointer to **string** |  | [optional] 
-**ReopenedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**ReopenedAt** | Pointer to **JSONTime** |  | [optional] 
 **ReopenedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **ReplyCount** | Pointer to **int64** |  | [optional] 
-**ResolvedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**ResolvedAt** | Pointer to **JSONTime** |  | [optional] 
 **ResolvedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **Thumbnail** | Pointer to [**BTCommentAttachmentInfo**](BTCommentAttachmentInfo.md) |  | [optional] 
@@ -454,6 +456,56 @@ SetName sets Name field to given value.
 `func (o *BTCommentInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetObjectId
+
+`func (o *BTCommentInfo) GetObjectId() string`
+
+GetObjectId returns the ObjectId field if non-nil, zero value otherwise.
+
+### GetObjectIdOk
+
+`func (o *BTCommentInfo) GetObjectIdOk() (*string, bool)`
+
+GetObjectIdOk returns a tuple with the ObjectId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectId
+
+`func (o *BTCommentInfo) SetObjectId(v string)`
+
+SetObjectId sets ObjectId field to given value.
+
+### HasObjectId
+
+`func (o *BTCommentInfo) HasObjectId() bool`
+
+HasObjectId returns a boolean if a field has been set.
+
+### GetObjectType
+
+`func (o *BTCommentInfo) GetObjectType() int32`
+
+GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
+
+### GetObjectTypeOk
+
+`func (o *BTCommentInfo) GetObjectTypeOk() (*int32, bool)`
+
+GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectType
+
+`func (o *BTCommentInfo) SetObjectType(v int32)`
+
+SetObjectType sets ObjectType field to given value.
+
+### HasObjectType
+
+`func (o *BTCommentInfo) HasObjectType() bool`
+
+HasObjectType returns a boolean if a field has been set.
 
 ### GetParentId
 

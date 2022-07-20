@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
-**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId-366.md) |  | [optional] 
+**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **MicroversionSkew** | Pointer to **bool** |  | [optional] 
 **RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 
 **RollbackIndex** | Pointer to **int32** |  | [optional] 

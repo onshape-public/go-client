@@ -4,17 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | Pointer to **string** |  | [optional] 
-**FormatId** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | The label that will appear in the document&#39;s edit history for this operation. If blank, a value will be auto-generated. | [optional] 
+**FormatId** | **string** | The data type of the application. This string allows an application to distinguish their elements from elements of another application. | 
+**JsonTree** | Pointer to **map[string]interface{}** | Initialization data for the new element&#39;s json tree. | [optional] 
 **Location** | Pointer to [**BTElementLocationParams**](BTElementLocationParams.md) |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Subelements** | Pointer to [**[]BTAppElementChangeParams**](BTAppElementChangeParams.md) |  | [optional] 
+**Name** | Pointer to **string** | The name of the element being created. If blank, a name will be auto-generated. | [optional] 
+**Subelements** | Pointer to [**[]BTAppElementChangeParams**](BTAppElementChangeParams.md) | Initialization data for the new element&#39;s subelements. | [optional] 
 
 ## Methods
 
 ### NewBTAppElementParams
 
-`func NewBTAppElementParams() *BTAppElementParams`
+`func NewBTAppElementParams(formatId string, ) *BTAppElementParams`
 
 NewBTAppElementParams instantiates a new BTAppElementParams object
 This constructor will assign default values to properties that have it defined,
@@ -73,11 +74,31 @@ and a boolean to check if the value has been set.
 
 SetFormatId sets FormatId field to given value.
 
-### HasFormatId
 
-`func (o *BTAppElementParams) HasFormatId() bool`
+### GetJsonTree
 
-HasFormatId returns a boolean if a field has been set.
+`func (o *BTAppElementParams) GetJsonTree() map[string]interface{}`
+
+GetJsonTree returns the JsonTree field if non-nil, zero value otherwise.
+
+### GetJsonTreeOk
+
+`func (o *BTAppElementParams) GetJsonTreeOk() (*map[string]interface{}, bool)`
+
+GetJsonTreeOk returns a tuple with the JsonTree field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJsonTree
+
+`func (o *BTAppElementParams) SetJsonTree(v map[string]interface{})`
+
+SetJsonTree sets JsonTree field to given value.
+
+### HasJsonTree
+
+`func (o *BTAppElementParams) HasJsonTree() bool`
+
+HasJsonTree returns a boolean if a field has been set.
 
 ### GetLocation
 

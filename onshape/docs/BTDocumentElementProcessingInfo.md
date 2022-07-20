@@ -4,23 +4,33 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AccelerationUnits** | Pointer to **string** |  | [optional] 
 **AngleUnits** | Pointer to **string** |  | [optional] 
+**AngularVelocityUnits** | Pointer to **string** |  | [optional] 
+**AreaUnits** | Pointer to **string** |  | [optional] 
 **DataType** | Pointer to **string** |  | [optional] 
+**Deleted** | Pointer to **bool** |  | [optional] 
 **ElementType** | Pointer to **string** |  | [optional] 
+**EnergyUnits** | Pointer to **string** |  | [optional] 
 **Filename** | Pointer to **string** |  | [optional] 
+**ForceUnits** | Pointer to **string** |  | [optional] 
 **ForeignDataId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **LengthUnits** | Pointer to **string** |  | [optional] 
 **MassUnits** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
+**MomentUnits** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**PressureUnits** | Pointer to **string** |  | [optional] 
 **SpecifiedUnit** | Pointer to **string** |  | [optional] 
 **ThumbnailInfo** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **Thumbnails** | Pointer to **string** |  | [optional] 
+**TimeUnits** | Pointer to **string** |  | [optional] 
 **TranslationEventKey** | Pointer to **string** |  | [optional] 
 **TranslationId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Unupdatable** | Pointer to **bool** |  | [optional] 
+**VolumeUnits** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -40,6 +50,31 @@ will change when the set of required properties is changed
 NewBTDocumentElementProcessingInfoWithDefaults instantiates a new BTDocumentElementProcessingInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAccelerationUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetAccelerationUnits() string`
+
+GetAccelerationUnits returns the AccelerationUnits field if non-nil, zero value otherwise.
+
+### GetAccelerationUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetAccelerationUnitsOk() (*string, bool)`
+
+GetAccelerationUnitsOk returns a tuple with the AccelerationUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccelerationUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetAccelerationUnits(v string)`
+
+SetAccelerationUnits sets AccelerationUnits field to given value.
+
+### HasAccelerationUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasAccelerationUnits() bool`
+
+HasAccelerationUnits returns a boolean if a field has been set.
 
 ### GetAngleUnits
 
@@ -66,6 +101,56 @@ SetAngleUnits sets AngleUnits field to given value.
 
 HasAngleUnits returns a boolean if a field has been set.
 
+### GetAngularVelocityUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetAngularVelocityUnits() string`
+
+GetAngularVelocityUnits returns the AngularVelocityUnits field if non-nil, zero value otherwise.
+
+### GetAngularVelocityUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetAngularVelocityUnitsOk() (*string, bool)`
+
+GetAngularVelocityUnitsOk returns a tuple with the AngularVelocityUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAngularVelocityUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetAngularVelocityUnits(v string)`
+
+SetAngularVelocityUnits sets AngularVelocityUnits field to given value.
+
+### HasAngularVelocityUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasAngularVelocityUnits() bool`
+
+HasAngularVelocityUnits returns a boolean if a field has been set.
+
+### GetAreaUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetAreaUnits() string`
+
+GetAreaUnits returns the AreaUnits field if non-nil, zero value otherwise.
+
+### GetAreaUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetAreaUnitsOk() (*string, bool)`
+
+GetAreaUnitsOk returns a tuple with the AreaUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAreaUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetAreaUnits(v string)`
+
+SetAreaUnits sets AreaUnits field to given value.
+
+### HasAreaUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasAreaUnits() bool`
+
+HasAreaUnits returns a boolean if a field has been set.
+
 ### GetDataType
 
 `func (o *BTDocumentElementProcessingInfo) GetDataType() string`
@@ -90,6 +175,31 @@ SetDataType sets DataType field to given value.
 `func (o *BTDocumentElementProcessingInfo) HasDataType() bool`
 
 HasDataType returns a boolean if a field has been set.
+
+### GetDeleted
+
+`func (o *BTDocumentElementProcessingInfo) GetDeleted() bool`
+
+GetDeleted returns the Deleted field if non-nil, zero value otherwise.
+
+### GetDeletedOk
+
+`func (o *BTDocumentElementProcessingInfo) GetDeletedOk() (*bool, bool)`
+
+GetDeletedOk returns a tuple with the Deleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeleted
+
+`func (o *BTDocumentElementProcessingInfo) SetDeleted(v bool)`
+
+SetDeleted sets Deleted field to given value.
+
+### HasDeleted
+
+`func (o *BTDocumentElementProcessingInfo) HasDeleted() bool`
+
+HasDeleted returns a boolean if a field has been set.
 
 ### GetElementType
 
@@ -116,6 +226,31 @@ SetElementType sets ElementType field to given value.
 
 HasElementType returns a boolean if a field has been set.
 
+### GetEnergyUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetEnergyUnits() string`
+
+GetEnergyUnits returns the EnergyUnits field if non-nil, zero value otherwise.
+
+### GetEnergyUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetEnergyUnitsOk() (*string, bool)`
+
+GetEnergyUnitsOk returns a tuple with the EnergyUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnergyUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetEnergyUnits(v string)`
+
+SetEnergyUnits sets EnergyUnits field to given value.
+
+### HasEnergyUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasEnergyUnits() bool`
+
+HasEnergyUnits returns a boolean if a field has been set.
+
 ### GetFilename
 
 `func (o *BTDocumentElementProcessingInfo) GetFilename() string`
@@ -140,6 +275,31 @@ SetFilename sets Filename field to given value.
 `func (o *BTDocumentElementProcessingInfo) HasFilename() bool`
 
 HasFilename returns a boolean if a field has been set.
+
+### GetForceUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetForceUnits() string`
+
+GetForceUnits returns the ForceUnits field if non-nil, zero value otherwise.
+
+### GetForceUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetForceUnitsOk() (*string, bool)`
+
+GetForceUnitsOk returns a tuple with the ForceUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForceUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetForceUnits(v string)`
+
+SetForceUnits sets ForceUnits field to given value.
+
+### HasForceUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasForceUnits() bool`
+
+HasForceUnits returns a boolean if a field has been set.
 
 ### GetForeignDataId
 
@@ -266,6 +426,31 @@ SetMicroversionId sets MicroversionId field to given value.
 
 HasMicroversionId returns a boolean if a field has been set.
 
+### GetMomentUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetMomentUnits() string`
+
+GetMomentUnits returns the MomentUnits field if non-nil, zero value otherwise.
+
+### GetMomentUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetMomentUnitsOk() (*string, bool)`
+
+GetMomentUnitsOk returns a tuple with the MomentUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMomentUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetMomentUnits(v string)`
+
+SetMomentUnits sets MomentUnits field to given value.
+
+### HasMomentUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasMomentUnits() bool`
+
+HasMomentUnits returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *BTDocumentElementProcessingInfo) GetName() string`
@@ -290,6 +475,31 @@ SetName sets Name field to given value.
 `func (o *BTDocumentElementProcessingInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPressureUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetPressureUnits() string`
+
+GetPressureUnits returns the PressureUnits field if non-nil, zero value otherwise.
+
+### GetPressureUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetPressureUnitsOk() (*string, bool)`
+
+GetPressureUnitsOk returns a tuple with the PressureUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPressureUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetPressureUnits(v string)`
+
+SetPressureUnits sets PressureUnits field to given value.
+
+### HasPressureUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasPressureUnits() bool`
+
+HasPressureUnits returns a boolean if a field has been set.
 
 ### GetSpecifiedUnit
 
@@ -365,6 +575,31 @@ SetThumbnails sets Thumbnails field to given value.
 `func (o *BTDocumentElementProcessingInfo) HasThumbnails() bool`
 
 HasThumbnails returns a boolean if a field has been set.
+
+### GetTimeUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetTimeUnits() string`
+
+GetTimeUnits returns the TimeUnits field if non-nil, zero value otherwise.
+
+### GetTimeUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetTimeUnitsOk() (*string, bool)`
+
+GetTimeUnitsOk returns a tuple with the TimeUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimeUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetTimeUnits(v string)`
+
+SetTimeUnits sets TimeUnits field to given value.
+
+### HasTimeUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasTimeUnits() bool`
+
+HasTimeUnits returns a boolean if a field has been set.
 
 ### GetTranslationEventKey
 
@@ -465,6 +700,31 @@ SetUnupdatable sets Unupdatable field to given value.
 `func (o *BTDocumentElementProcessingInfo) HasUnupdatable() bool`
 
 HasUnupdatable returns a boolean if a field has been set.
+
+### GetVolumeUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetVolumeUnits() string`
+
+GetVolumeUnits returns the VolumeUnits field if non-nil, zero value otherwise.
+
+### GetVolumeUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetVolumeUnitsOk() (*string, bool)`
+
+GetVolumeUnitsOk returns a tuple with the VolumeUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVolumeUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetVolumeUnits(v string)`
+
+SetVolumeUnits sets VolumeUnits field to given value.
+
+### HasVolumeUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasVolumeUnits() bool`
+
+HasVolumeUnits returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

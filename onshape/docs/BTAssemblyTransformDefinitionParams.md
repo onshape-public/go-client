@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsRelative** | Pointer to **bool** |  | [optional] 
-**Occurrences** | Pointer to [**[]BTOccurrence74**](BTOccurrence-74.md) |  | [optional] 
+**Occurrences** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Transform** | Pointer to **[]float64** |  | [optional] 
 
 ## Methods

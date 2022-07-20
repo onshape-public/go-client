@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Body** | Pointer to [**BTPStatement269**](BTPStatement-269.md) |  | [optional] 
+**Body** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**SpaceAfterLoopType** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceAfterLoopType** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

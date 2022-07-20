@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock-271.md) |  | [optional] 
+**Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**CatchBlock** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock-271.md) |  | [optional] 
-**CatchVariable** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
-**Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**CatchBlock** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
+**CatchVariable** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
+**Identifier** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **Silent** | Pointer to **bool** |  | [optional] 
-**SpaceAfterCatch** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceBeforeSilent** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceAfterCatch** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceBeforeSilent** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **StandardType** | Pointer to **string** |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
 
@@ -134,30 +134,30 @@ SetCatchVariable sets CatchVariable field to given value.
 
 HasCatchVariable returns a boolean if a field has been set.
 
-### GetName
+### GetIdentifier
 
-`func (o *BTPStatementTry1523) GetName() BTPIdentifier8`
+`func (o *BTPStatementTry1523) GetIdentifier() BTPIdentifier8`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetIdentifier returns the Identifier field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetIdentifierOk
 
-`func (o *BTPStatementTry1523) GetNameOk() (*BTPIdentifier8, bool)`
+`func (o *BTPStatementTry1523) GetIdentifierOk() (*BTPIdentifier8, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetIdentifierOk returns a tuple with the Identifier field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetIdentifier
 
-`func (o *BTPStatementTry1523) SetName(v BTPIdentifier8)`
+`func (o *BTPStatementTry1523) SetIdentifier(v BTPIdentifier8)`
 
-SetName sets Name field to given value.
+SetIdentifier sets Identifier field to given value.
 
-### HasName
+### HasIdentifier
 
-`func (o *BTPStatementTry1523) HasName() bool`
+`func (o *BTPStatementTry1523) HasIdentifier() bool`
 
-HasName returns a boolean if a field has been set.
+HasIdentifier returns a boolean if a field has been set.
 
 ### GetSilent
 

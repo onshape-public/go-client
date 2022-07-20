@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **EnumName** | Pointer to **string** |  | [optional] 
+**EnumValueToVisibilityCondition** | Pointer to [**map[string]BTParameterVisibilityCondition177**](BTParameterVisibilityCondition177.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **OptionNames** | Pointer to **[]string** |  | [optional] 
 **Options** | Pointer to **[]string** |  | [optional] 
@@ -78,6 +79,31 @@ SetEnumName sets EnumName field to given value.
 `func (o *BTParameterSpecEnum171AllOf) HasEnumName() bool`
 
 HasEnumName returns a boolean if a field has been set.
+
+### GetEnumValueToVisibilityCondition
+
+`func (o *BTParameterSpecEnum171AllOf) GetEnumValueToVisibilityCondition() map[string]BTParameterVisibilityCondition177`
+
+GetEnumValueToVisibilityCondition returns the EnumValueToVisibilityCondition field if non-nil, zero value otherwise.
+
+### GetEnumValueToVisibilityConditionOk
+
+`func (o *BTParameterSpecEnum171AllOf) GetEnumValueToVisibilityConditionOk() (*map[string]BTParameterVisibilityCondition177, bool)`
+
+GetEnumValueToVisibilityConditionOk returns a tuple with the EnumValueToVisibilityCondition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnumValueToVisibilityCondition
+
+`func (o *BTParameterSpecEnum171AllOf) SetEnumValueToVisibilityCondition(v map[string]BTParameterVisibilityCondition177)`
+
+SetEnumValueToVisibilityCondition sets EnumValueToVisibilityCondition field to given value.
+
+### HasEnumValueToVisibilityCondition
+
+`func (o *BTParameterSpecEnum171AllOf) HasEnumValueToVisibilityCondition() bool`
+
+HasEnumValueToVisibilityCondition returns a boolean if a field has been set.
 
 ### GetNamespace
 

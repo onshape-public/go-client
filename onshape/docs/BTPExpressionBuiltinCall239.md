@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Arguments** | Pointer to [**[]BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**Arguments** | Pointer to [**[]BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to [**BTPBuiltinIdentifier233**](BTPBuiltinIdentifier-233.md) |  | [optional] 
-**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**Name** | Pointer to [**BTPBuiltinIdentifier233**](BTPBuiltinIdentifier233.md) |  | [optional] 
+**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

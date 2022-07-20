@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**InArray** | Pointer to **bool** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
@@ -51,6 +52,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTParameterVisibilityOnEqual180AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetInArray
+
+`func (o *BTParameterVisibilityOnEqual180AllOf) GetInArray() bool`
+
+GetInArray returns the InArray field if non-nil, zero value otherwise.
+
+### GetInArrayOk
+
+`func (o *BTParameterVisibilityOnEqual180AllOf) GetInArrayOk() (*bool, bool)`
+
+GetInArrayOk returns a tuple with the InArray field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInArray
+
+`func (o *BTParameterVisibilityOnEqual180AllOf) SetInArray(v bool)`
+
+SetInArray sets InArray field to given value.
+
+### HasInArray
+
+`func (o *BTParameterVisibilityOnEqual180AllOf) HasInArray() bool`
+
+HasInArray returns a boolean if a field has been set.
 
 ### GetParameterId
 

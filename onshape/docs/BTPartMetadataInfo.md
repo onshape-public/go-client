@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **BodyType** | Pointer to **string** |  | [optional] 
 **ConfigurationId** | Pointer to **string** |  | [optional] 
 **CustomProperties** | Pointer to **map[string]string** |  | [optional] 
-**CustomPropertyDefinitions** | Pointer to [**map[string]BTCustomPropertyDefinitionInfo**](BTCustomPropertyDefinitionInfo.md) |  | [optional] 
+**DefaultColorHash** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
@@ -17,10 +17,12 @@ Name | Type | Description | Notes
 **IsHidden** | Pointer to **bool** |  | [optional] 
 **IsMesh** | Pointer to **bool** |  | [optional] 
 **Material** | Pointer to [**BTPartMaterialInfo**](BTPartMaterialInfo.md) |  | [optional] 
+**MeshState** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Ordinal** | Pointer to **int32** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **PartQuery** | Pointer to **string** |  | [optional] 
 **ProductLine** | Pointer to **string** |  | [optional] 
@@ -156,30 +158,30 @@ SetCustomProperties sets CustomProperties field to given value.
 
 HasCustomProperties returns a boolean if a field has been set.
 
-### GetCustomPropertyDefinitions
+### GetDefaultColorHash
 
-`func (o *BTPartMetadataInfo) GetCustomPropertyDefinitions() map[string]BTCustomPropertyDefinitionInfo`
+`func (o *BTPartMetadataInfo) GetDefaultColorHash() string`
 
-GetCustomPropertyDefinitions returns the CustomPropertyDefinitions field if non-nil, zero value otherwise.
+GetDefaultColorHash returns the DefaultColorHash field if non-nil, zero value otherwise.
 
-### GetCustomPropertyDefinitionsOk
+### GetDefaultColorHashOk
 
-`func (o *BTPartMetadataInfo) GetCustomPropertyDefinitionsOk() (*map[string]BTCustomPropertyDefinitionInfo, bool)`
+`func (o *BTPartMetadataInfo) GetDefaultColorHashOk() (*string, bool)`
 
-GetCustomPropertyDefinitionsOk returns a tuple with the CustomPropertyDefinitions field if it's non-nil, zero value otherwise
+GetDefaultColorHashOk returns a tuple with the DefaultColorHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomPropertyDefinitions
+### SetDefaultColorHash
 
-`func (o *BTPartMetadataInfo) SetCustomPropertyDefinitions(v map[string]BTCustomPropertyDefinitionInfo)`
+`func (o *BTPartMetadataInfo) SetDefaultColorHash(v string)`
 
-SetCustomPropertyDefinitions sets CustomPropertyDefinitions field to given value.
+SetDefaultColorHash sets DefaultColorHash field to given value.
 
-### HasCustomPropertyDefinitions
+### HasDefaultColorHash
 
-`func (o *BTPartMetadataInfo) HasCustomPropertyDefinitions() bool`
+`func (o *BTPartMetadataInfo) HasDefaultColorHash() bool`
 
-HasCustomPropertyDefinitions returns a boolean if a field has been set.
+HasDefaultColorHash returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -381,6 +383,31 @@ SetMaterial sets Material field to given value.
 
 HasMaterial returns a boolean if a field has been set.
 
+### GetMeshState
+
+`func (o *BTPartMetadataInfo) GetMeshState() string`
+
+GetMeshState returns the MeshState field if non-nil, zero value otherwise.
+
+### GetMeshStateOk
+
+`func (o *BTPartMetadataInfo) GetMeshStateOk() (*string, bool)`
+
+GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeshState
+
+`func (o *BTPartMetadataInfo) SetMeshState(v string)`
+
+SetMeshState sets MeshState field to given value.
+
+### HasMeshState
+
+`func (o *BTPartMetadataInfo) HasMeshState() bool`
+
+HasMeshState returns a boolean if a field has been set.
+
 ### GetMicroversionId
 
 `func (o *BTPartMetadataInfo) GetMicroversionId() string`
@@ -480,6 +507,31 @@ SetPartId sets PartId field to given value.
 `func (o *BTPartMetadataInfo) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTPartMetadataInfo) GetPartIdentity() string`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTPartMetadataInfo) GetPartIdentityOk() (*string, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTPartMetadataInfo) SetPartIdentity(v string)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTPartMetadataInfo) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetPartNumber
 

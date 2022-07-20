@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**Direction** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**DirectionOrientedWithFace** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**Origin** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,30 +28,80 @@ NewBTSurfaceDescription1564WithDefaults instantiates a new BTSurfaceDescription1
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetBtType
+### GetDirection
 
-`func (o *BTSurfaceDescription1564) GetBtType() string`
+`func (o *BTSurfaceDescription1564) GetDirection() BTVector3d389`
 
-GetBtType returns the BtType field if non-nil, zero value otherwise.
+GetDirection returns the Direction field if non-nil, zero value otherwise.
 
-### GetBtTypeOk
+### GetDirectionOk
 
-`func (o *BTSurfaceDescription1564) GetBtTypeOk() (*string, bool)`
+`func (o *BTSurfaceDescription1564) GetDirectionOk() (*BTVector3d389, bool)`
 
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+GetDirectionOk returns a tuple with the Direction field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBtType
+### SetDirection
 
-`func (o *BTSurfaceDescription1564) SetBtType(v string)`
+`func (o *BTSurfaceDescription1564) SetDirection(v BTVector3d389)`
 
-SetBtType sets BtType field to given value.
+SetDirection sets Direction field to given value.
 
-### HasBtType
+### HasDirection
 
-`func (o *BTSurfaceDescription1564) HasBtType() bool`
+`func (o *BTSurfaceDescription1564) HasDirection() bool`
 
-HasBtType returns a boolean if a field has been set.
+HasDirection returns a boolean if a field has been set.
+
+### GetDirectionOrientedWithFace
+
+`func (o *BTSurfaceDescription1564) GetDirectionOrientedWithFace() BTVector3d389`
+
+GetDirectionOrientedWithFace returns the DirectionOrientedWithFace field if non-nil, zero value otherwise.
+
+### GetDirectionOrientedWithFaceOk
+
+`func (o *BTSurfaceDescription1564) GetDirectionOrientedWithFaceOk() (*BTVector3d389, bool)`
+
+GetDirectionOrientedWithFaceOk returns a tuple with the DirectionOrientedWithFace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectionOrientedWithFace
+
+`func (o *BTSurfaceDescription1564) SetDirectionOrientedWithFace(v BTVector3d389)`
+
+SetDirectionOrientedWithFace sets DirectionOrientedWithFace field to given value.
+
+### HasDirectionOrientedWithFace
+
+`func (o *BTSurfaceDescription1564) HasDirectionOrientedWithFace() bool`
+
+HasDirectionOrientedWithFace returns a boolean if a field has been set.
+
+### GetOrigin
+
+`func (o *BTSurfaceDescription1564) GetOrigin() BTVector3d389`
+
+GetOrigin returns the Origin field if non-nil, zero value otherwise.
+
+### GetOriginOk
+
+`func (o *BTSurfaceDescription1564) GetOriginOk() (*BTVector3d389, bool)`
+
+GetOriginOk returns a tuple with the Origin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrigin
+
+`func (o *BTSurfaceDescription1564) SetOrigin(v BTVector3d389)`
+
+SetOrigin sets Origin field to given value.
+
+### HasOrigin
+
+`func (o *BTSurfaceDescription1564) HasOrigin() bool`
+
+HasOrigin returns a boolean if a field has been set.
 
 ### GetType
 

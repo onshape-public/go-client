@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **EnumName** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **OptionIds** | Pointer to **[]string** |  | [optional] 
-**Options** | Pointer to [**[]BTMEnumOption592**](BTMEnumOption-592.md) |  | [optional] 
+**Options** | Pointer to [**[]BTMEnumOption592**](BTMEnumOption592.md) |  | [optional] 
 
 ## Methods
 

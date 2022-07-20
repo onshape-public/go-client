@@ -5,10 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**FunctionExpression** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
-**FunctionName** | Pointer to [**BTPName261**](BTPName-261.md) |  | [optional] 
+**FunctionExpression** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
+**FunctionName** | Pointer to [**BTPName261**](BTPName261.md) |  | [optional] 
 **FunctionNameString** | Pointer to **string** |  | [optional] 
-**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**IsArrowCall** | Pointer to **bool** |  | [optional] 
+**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 
@@ -128,6 +129,31 @@ SetFunctionNameString sets FunctionNameString field to given value.
 `func (o *BTPExpressionCall240AllOf) HasFunctionNameString() bool`
 
 HasFunctionNameString returns a boolean if a field has been set.
+
+### GetIsArrowCall
+
+`func (o *BTPExpressionCall240AllOf) GetIsArrowCall() bool`
+
+GetIsArrowCall returns the IsArrowCall field if non-nil, zero value otherwise.
+
+### GetIsArrowCallOk
+
+`func (o *BTPExpressionCall240AllOf) GetIsArrowCallOk() (*bool, bool)`
+
+GetIsArrowCallOk returns a tuple with the IsArrowCall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsArrowCall
+
+`func (o *BTPExpressionCall240AllOf) SetIsArrowCall(v bool)`
+
+SetIsArrowCall sets IsArrowCall field to given value.
+
+### HasIsArrowCall
+
+`func (o *BTPExpressionCall240AllOf) HasIsArrowCall() bool`
+
+HasIsArrowCall returns a boolean if a field has been set.
 
 ### GetSpaceInEmptyList
 

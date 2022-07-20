@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AdditionalBoxSelectFilter** | Pointer to [**BTQueryFilter183**](BTQueryFilter-183.md) |  | [optional] 
+**AdditionalBoxSelectFilter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**Filter** | Pointer to [**BTQueryFilter183**](BTQueryFilter-183.md) |  | [optional] 
+**Filter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 
 ## Methods

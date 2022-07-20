@@ -5,31 +5,35 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
-**AllParameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec-6.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
-**EditingLogic** | Pointer to [**BTEditingLogic2350**](BTEditingLogic-2350.md) |  | [optional] 
+**AllParameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
+**ComputedPartPropertySpec** | Pointer to **bool** |  | [optional] 
+**DescriptionImageUri** | Pointer to **string** |  | [optional] 
+**EditingLogic** | Pointer to [**BTEditingLogic2350**](BTEditingLogic2350.md) |  | [optional] 
 **FeatureNameTemplate** | Pointer to **string** |  | [optional] 
 **FeatureType** | Pointer to **string** |  | [optional] 
+**FeatureTypeDescription** | Pointer to **string** |  | [optional] 
 **FeatureTypeName** | Pointer to **string** |  | [optional] 
 **FilterSelectors** | Pointer to **[]string** |  | [optional] 
 **FullFeatureType** | Pointer to **string** |  | [optional] 
-**Groups** | Pointer to [**[]BTParameterGroupSpec3469**](BTParameterGroupSpec-3469.md) |  | [optional] 
+**Groups** | Pointer to [**[]BTParameterGroupSpec3469**](BTParameterGroupSpec3469.md) |  | [optional] 
 **IconUri** | Pointer to **string** |  | [optional] 
 **LanguageVersion** | Pointer to **int32** |  | [optional] 
 **LinkedLocationName** | Pointer to **string** |  | [optional] 
 **LocalizableName** | Pointer to **string** |  | [optional] 
 **LocalizedName** | Pointer to **string** |  | [optional] 
-**LocationInfos** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo-226.md) |  | [optional] 
+**LocationInfos** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **ManipulatorChangeFunction** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **NamespaceIncludingEnums** | Pointer to **string** |  | [optional] 
 **NamespaceTheSource** | Pointer to **bool** |  | [optional] 
-**Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec-6.md) |  | [optional] 
+**ParameterIdToSpec** | Pointer to [**map[string]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
+**Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 **Signature** | Pointer to **string** |  | [optional] 
-**SourceLocation** | Pointer to [**BTLocationInfo226**](BTLocationInfo-226.md) |  | [optional] 
+**SourceLocation** | Pointer to [**BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **SourceMicroversionId** | Pointer to **string** |  | [optional] 
 **StringsToLocalize** | Pointer to **[]string** |  | [optional] 
 **TableSpec** | Pointer to **bool** |  | [optional] 
+**TooltipTemplate** | Pointer to **string** |  | [optional] 
 **UiHints** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -101,30 +105,55 @@ SetAllParameters sets AllParameters field to given value.
 
 HasAllParameters returns a boolean if a field has been set.
 
-### GetBtType
+### GetComputedPartPropertySpec
 
-`func (o *BTFeatureSpec129) GetBtType() string`
+`func (o *BTFeatureSpec129) GetComputedPartPropertySpec() bool`
 
-GetBtType returns the BtType field if non-nil, zero value otherwise.
+GetComputedPartPropertySpec returns the ComputedPartPropertySpec field if non-nil, zero value otherwise.
 
-### GetBtTypeOk
+### GetComputedPartPropertySpecOk
 
-`func (o *BTFeatureSpec129) GetBtTypeOk() (*string, bool)`
+`func (o *BTFeatureSpec129) GetComputedPartPropertySpecOk() (*bool, bool)`
 
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+GetComputedPartPropertySpecOk returns a tuple with the ComputedPartPropertySpec field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBtType
+### SetComputedPartPropertySpec
 
-`func (o *BTFeatureSpec129) SetBtType(v string)`
+`func (o *BTFeatureSpec129) SetComputedPartPropertySpec(v bool)`
 
-SetBtType sets BtType field to given value.
+SetComputedPartPropertySpec sets ComputedPartPropertySpec field to given value.
 
-### HasBtType
+### HasComputedPartPropertySpec
 
-`func (o *BTFeatureSpec129) HasBtType() bool`
+`func (o *BTFeatureSpec129) HasComputedPartPropertySpec() bool`
 
-HasBtType returns a boolean if a field has been set.
+HasComputedPartPropertySpec returns a boolean if a field has been set.
+
+### GetDescriptionImageUri
+
+`func (o *BTFeatureSpec129) GetDescriptionImageUri() string`
+
+GetDescriptionImageUri returns the DescriptionImageUri field if non-nil, zero value otherwise.
+
+### GetDescriptionImageUriOk
+
+`func (o *BTFeatureSpec129) GetDescriptionImageUriOk() (*string, bool)`
+
+GetDescriptionImageUriOk returns a tuple with the DescriptionImageUri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescriptionImageUri
+
+`func (o *BTFeatureSpec129) SetDescriptionImageUri(v string)`
+
+SetDescriptionImageUri sets DescriptionImageUri field to given value.
+
+### HasDescriptionImageUri
+
+`func (o *BTFeatureSpec129) HasDescriptionImageUri() bool`
+
+HasDescriptionImageUri returns a boolean if a field has been set.
 
 ### GetEditingLogic
 
@@ -200,6 +229,31 @@ SetFeatureType sets FeatureType field to given value.
 `func (o *BTFeatureSpec129) HasFeatureType() bool`
 
 HasFeatureType returns a boolean if a field has been set.
+
+### GetFeatureTypeDescription
+
+`func (o *BTFeatureSpec129) GetFeatureTypeDescription() string`
+
+GetFeatureTypeDescription returns the FeatureTypeDescription field if non-nil, zero value otherwise.
+
+### GetFeatureTypeDescriptionOk
+
+`func (o *BTFeatureSpec129) GetFeatureTypeDescriptionOk() (*string, bool)`
+
+GetFeatureTypeDescriptionOk returns a tuple with the FeatureTypeDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureTypeDescription
+
+`func (o *BTFeatureSpec129) SetFeatureTypeDescription(v string)`
+
+SetFeatureTypeDescription sets FeatureTypeDescription field to given value.
+
+### HasFeatureTypeDescription
+
+`func (o *BTFeatureSpec129) HasFeatureTypeDescription() bool`
+
+HasFeatureTypeDescription returns a boolean if a field has been set.
 
 ### GetFeatureTypeName
 
@@ -551,6 +605,31 @@ SetNamespaceTheSource sets NamespaceTheSource field to given value.
 
 HasNamespaceTheSource returns a boolean if a field has been set.
 
+### GetParameterIdToSpec
+
+`func (o *BTFeatureSpec129) GetParameterIdToSpec() map[string]BTParameterSpec6`
+
+GetParameterIdToSpec returns the ParameterIdToSpec field if non-nil, zero value otherwise.
+
+### GetParameterIdToSpecOk
+
+`func (o *BTFeatureSpec129) GetParameterIdToSpecOk() (*map[string]BTParameterSpec6, bool)`
+
+GetParameterIdToSpecOk returns a tuple with the ParameterIdToSpec field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterIdToSpec
+
+`func (o *BTFeatureSpec129) SetParameterIdToSpec(v map[string]BTParameterSpec6)`
+
+SetParameterIdToSpec sets ParameterIdToSpec field to given value.
+
+### HasParameterIdToSpec
+
+`func (o *BTFeatureSpec129) HasParameterIdToSpec() bool`
+
+HasParameterIdToSpec returns a boolean if a field has been set.
+
 ### GetParameters
 
 `func (o *BTFeatureSpec129) GetParameters() []BTParameterSpec6`
@@ -700,6 +779,31 @@ SetTableSpec sets TableSpec field to given value.
 `func (o *BTFeatureSpec129) HasTableSpec() bool`
 
 HasTableSpec returns a boolean if a field has been set.
+
+### GetTooltipTemplate
+
+`func (o *BTFeatureSpec129) GetTooltipTemplate() string`
+
+GetTooltipTemplate returns the TooltipTemplate field if non-nil, zero value otherwise.
+
+### GetTooltipTemplateOk
+
+`func (o *BTFeatureSpec129) GetTooltipTemplateOk() (*string, bool)`
+
+GetTooltipTemplateOk returns a tuple with the TooltipTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTooltipTemplate
+
+`func (o *BTFeatureSpec129) SetTooltipTemplate(v string)`
+
+SetTooltipTemplate sets TooltipTemplate field to given value.
+
+### HasTooltipTemplate
+
+`func (o *BTFeatureSpec129) HasTooltipTemplate() bool`
+
+HasTooltipTemplate returns a boolean if a field has been set.
 
 ### GetUiHints
 

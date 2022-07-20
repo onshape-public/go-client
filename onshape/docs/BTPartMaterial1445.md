@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **LibraryName** | Pointer to **string** |  | [optional] 
-**LibraryReference** | Pointer to [**BTElementReference725**](BTElementReference-725.md) |  | [optional] 
+**LibraryReference** | Pointer to [**BTElementReference725**](BTElementReference725.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to [**map[string]BTPartMaterialProperty1453**](BTPartMaterialProperty-1453.md) |  | [optional] 
+**Properties** | Pointer to [**map[string]BTPartMaterialProperty1453**](BTPartMaterialProperty1453.md) |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
 
 ## Methods

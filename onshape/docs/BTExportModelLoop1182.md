@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Coedges** | Pointer to [**[]BTExportModelCoedge1342**](BTExportModelCoedge-1342.md) |  | [optional] 
+**Coedges** | Pointer to [**[]BTExportModelCoedge1342**](BTExportModelCoedge1342.md) |  | [optional] 
 **IsInner** | Pointer to **bool** |  | [optional] 
 **IsOuter** | Pointer to **bool** |  | [optional] 
 

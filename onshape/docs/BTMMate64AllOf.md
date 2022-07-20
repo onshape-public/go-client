@@ -5,11 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**MateConnectorQueryList** | Pointer to [**BTMParameterQueryWithOccurrenceList67**](BTMParameterQueryWithOccurrenceList-67.md) |  | [optional] 
-**MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector-66.md) |  | [optional] 
-**MateOffset** | Pointer to [**BTVector3d389**](BTVector3d-389.md) |  | [optional] 
-**PrimaryAxisAlignment** | Pointer to **bool** |  | [optional] 
-**SecondaryAxisAlignment** | Pointer to **string** |  | [optional] 
+**MateConnectorQueryList** | Pointer to [**BTMParameterQueryWithOccurrenceList67**](BTMParameterQueryWithOccurrenceList67.md) |  | [optional] 
+**MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
+**MateType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -105,80 +103,30 @@ SetMateConnectors sets MateConnectors field to given value.
 
 HasMateConnectors returns a boolean if a field has been set.
 
-### GetMateOffset
+### GetMateType
 
-`func (o *BTMMate64AllOf) GetMateOffset() BTVector3d389`
+`func (o *BTMMate64AllOf) GetMateType() string`
 
-GetMateOffset returns the MateOffset field if non-nil, zero value otherwise.
+GetMateType returns the MateType field if non-nil, zero value otherwise.
 
-### GetMateOffsetOk
+### GetMateTypeOk
 
-`func (o *BTMMate64AllOf) GetMateOffsetOk() (*BTVector3d389, bool)`
+`func (o *BTMMate64AllOf) GetMateTypeOk() (*string, bool)`
 
-GetMateOffsetOk returns a tuple with the MateOffset field if it's non-nil, zero value otherwise
+GetMateTypeOk returns a tuple with the MateType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMateOffset
+### SetMateType
 
-`func (o *BTMMate64AllOf) SetMateOffset(v BTVector3d389)`
+`func (o *BTMMate64AllOf) SetMateType(v string)`
 
-SetMateOffset sets MateOffset field to given value.
+SetMateType sets MateType field to given value.
 
-### HasMateOffset
+### HasMateType
 
-`func (o *BTMMate64AllOf) HasMateOffset() bool`
+`func (o *BTMMate64AllOf) HasMateType() bool`
 
-HasMateOffset returns a boolean if a field has been set.
-
-### GetPrimaryAxisAlignment
-
-`func (o *BTMMate64AllOf) GetPrimaryAxisAlignment() bool`
-
-GetPrimaryAxisAlignment returns the PrimaryAxisAlignment field if non-nil, zero value otherwise.
-
-### GetPrimaryAxisAlignmentOk
-
-`func (o *BTMMate64AllOf) GetPrimaryAxisAlignmentOk() (*bool, bool)`
-
-GetPrimaryAxisAlignmentOk returns a tuple with the PrimaryAxisAlignment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrimaryAxisAlignment
-
-`func (o *BTMMate64AllOf) SetPrimaryAxisAlignment(v bool)`
-
-SetPrimaryAxisAlignment sets PrimaryAxisAlignment field to given value.
-
-### HasPrimaryAxisAlignment
-
-`func (o *BTMMate64AllOf) HasPrimaryAxisAlignment() bool`
-
-HasPrimaryAxisAlignment returns a boolean if a field has been set.
-
-### GetSecondaryAxisAlignment
-
-`func (o *BTMMate64AllOf) GetSecondaryAxisAlignment() string`
-
-GetSecondaryAxisAlignment returns the SecondaryAxisAlignment field if non-nil, zero value otherwise.
-
-### GetSecondaryAxisAlignmentOk
-
-`func (o *BTMMate64AllOf) GetSecondaryAxisAlignmentOk() (*string, bool)`
-
-GetSecondaryAxisAlignmentOk returns a tuple with the SecondaryAxisAlignment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecondaryAxisAlignment
-
-`func (o *BTMMate64AllOf) SetSecondaryAxisAlignment(v string)`
-
-SetSecondaryAxisAlignment sets SecondaryAxisAlignment field to given value.
-
-### HasSecondaryAxisAlignment
-
-`func (o *BTMMate64AllOf) HasSecondaryAxisAlignment() bool`
-
-HasSecondaryAxisAlignment returns a boolean if a field has been set.
+HasMateType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

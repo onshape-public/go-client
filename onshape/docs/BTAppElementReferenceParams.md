@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 **HasDocumentMicroversions** | Pointer to **bool** |  | [optional] 
 **IdTag** | Pointer to **string** |  | [optional] 
 **IdTagMicroversionId** | Pointer to **string** |  | [optional] 
+**IsLocked** | Pointer to **bool** |  | [optional] 
 **IsSketchOnly** | Pointer to **bool** |  | [optional] 
 **ParentChangeId** | Pointer to **string** |  | [optional] 
+**ParentViewId** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **PureSketch** | Pointer to **bool** |  | [optional] 
 **ReferenceType** | Pointer to **int32** |  | [optional] 
@@ -118,6 +120,31 @@ SetIdTagMicroversionId sets IdTagMicroversionId field to given value.
 
 HasIdTagMicroversionId returns a boolean if a field has been set.
 
+### GetIsLocked
+
+`func (o *BTAppElementReferenceParams) GetIsLocked() bool`
+
+GetIsLocked returns the IsLocked field if non-nil, zero value otherwise.
+
+### GetIsLockedOk
+
+`func (o *BTAppElementReferenceParams) GetIsLockedOk() (*bool, bool)`
+
+GetIsLockedOk returns a tuple with the IsLocked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsLocked
+
+`func (o *BTAppElementReferenceParams) SetIsLocked(v bool)`
+
+SetIsLocked sets IsLocked field to given value.
+
+### HasIsLocked
+
+`func (o *BTAppElementReferenceParams) HasIsLocked() bool`
+
+HasIsLocked returns a boolean if a field has been set.
+
 ### GetIsSketchOnly
 
 `func (o *BTAppElementReferenceParams) GetIsSketchOnly() bool`
@@ -167,6 +194,31 @@ SetParentChangeId sets ParentChangeId field to given value.
 `func (o *BTAppElementReferenceParams) HasParentChangeId() bool`
 
 HasParentChangeId returns a boolean if a field has been set.
+
+### GetParentViewId
+
+`func (o *BTAppElementReferenceParams) GetParentViewId() string`
+
+GetParentViewId returns the ParentViewId field if non-nil, zero value otherwise.
+
+### GetParentViewIdOk
+
+`func (o *BTAppElementReferenceParams) GetParentViewIdOk() (*string, bool)`
+
+GetParentViewIdOk returns a tuple with the ParentViewId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentViewId
+
+`func (o *BTAppElementReferenceParams) SetParentViewId(v string)`
+
+SetParentViewId sets ParentViewId field to given value.
+
+### HasParentViewId
+
+`func (o *BTAppElementReferenceParams) HasParentViewId() bool`
+
+HasParentViewId returns a boolean if a field has been set.
 
 ### GetPartNumber
 

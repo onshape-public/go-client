@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SourceMicroversion** | Pointer to **string** |  | [optional] 
-**Table** | Pointer to [**BTTable1825**](BTTable-1825.md) |  | [optional] 
+**Table** | Pointer to [**BTTable1825**](BTTable1825.md) |  | [optional] 
 
 ## Methods
 

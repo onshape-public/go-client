@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementName** | Pointer to **string** |  | [optional] 
-**HighlightedFields** | Pointer to [**map[string][]string**](array.md) |  | [optional] 
+**HighlightedFields** | Pointer to **map[string][]string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **SourceMap** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 

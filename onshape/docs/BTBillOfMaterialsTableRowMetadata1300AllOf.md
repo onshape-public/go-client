@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**CrossHighlightData** | Pointer to [**BTTableAssemblyCrossHighlightData2675**](BTTableAssemblyCrossHighlightData-2675.md) |  | [optional] 
-**CrossHighlightDataIfAny** | Pointer to [**BTTableAssemblyCrossHighlightData2675**](BTTableAssemblyCrossHighlightData-2675.md) |  | [optional] 
+**CrossHighlightData** | Pointer to [**BTTableAssemblyCrossHighlightData2675**](BTTableAssemblyCrossHighlightData2675.md) |  | [optional] 
+**CrossHighlightDataIfAny** | Pointer to [**BTTableAssemblyCrossHighlightData2675**](BTTableAssemblyCrossHighlightData2675.md) |  | [optional] 
 
 ## Methods
 

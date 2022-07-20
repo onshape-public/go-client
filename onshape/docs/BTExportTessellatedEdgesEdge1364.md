@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**Vertices** | Pointer to [**[]BTVector3d389**](BTVector3d-389.md) |  | [optional] 
+**Vertices** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
 
 ## Methods
 

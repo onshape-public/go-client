@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChangeId** | Pointer to **string** |  | [optional] 
-**CreatedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods

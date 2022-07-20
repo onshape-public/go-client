@@ -12,10 +12,11 @@ Name | Type | Description | Notes
 **EndCharacter** | Pointer to **int32** |  | [optional] 
 **EndColumn** | Pointer to **int32** |  | [optional] 
 **EndLine** | Pointer to **int32** |  | [optional] 
-**FromNode** | Pointer to [**BTPNode7**](BTPNode-7.md) |  | [optional] 
+**FromNode** | Pointer to [**BTPNode7**](BTPNode7.md) |  | [optional] 
+**FromTemplate** | Pointer to [**BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **LanguageVersion** | Pointer to **int32** |  | [optional] 
 **Line** | Pointer to **int32** |  | [optional] 
-**ModuleIds** | Pointer to [**BTDocumentVersionElementIds1897**](BTDocumentVersionElementIds-1897.md) |  | [optional] 
+**ModuleIds** | Pointer to [**BTDocumentVersionElementIds1897**](BTDocumentVersionElementIds1897.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ParseNodeId** | Pointer to **string** |  | [optional] 
 **ParseNodeIdRaw** | Pointer to [**BTObjectId**](BTObjectId.md) |  | [optional] 
@@ -265,6 +266,31 @@ SetFromNode sets FromNode field to given value.
 `func (o *BTLocationInfo226) HasFromNode() bool`
 
 HasFromNode returns a boolean if a field has been set.
+
+### GetFromTemplate
+
+`func (o *BTLocationInfo226) GetFromTemplate() BTLocationInfo226`
+
+GetFromTemplate returns the FromTemplate field if non-nil, zero value otherwise.
+
+### GetFromTemplateOk
+
+`func (o *BTLocationInfo226) GetFromTemplateOk() (*BTLocationInfo226, bool)`
+
+GetFromTemplateOk returns a tuple with the FromTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFromTemplate
+
+`func (o *BTLocationInfo226) SetFromTemplate(v BTLocationInfo226)`
+
+SetFromTemplate sets FromTemplate field to given value.
+
+### HasFromTemplate
+
+`func (o *BTLocationInfo226) HasFromTemplate() bool`
+
+HasFromTemplate returns a boolean if a field has been set.
 
 ### GetLanguageVersion
 

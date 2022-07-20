@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ParentId** | Pointer to **string** |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
-**TrashedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 
 ## Methods
 

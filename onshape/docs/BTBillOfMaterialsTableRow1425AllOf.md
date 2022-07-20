@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **ExpansionStatus** | Pointer to **string** |  | [optional] 
 **IndentLevel** | Pointer to **int32** |  | [optional] 
 **MetadataUpdateHref** | Pointer to **string** |  | [optional] 
-**UniqueItemId** | Pointer to [**BTBillOfMaterialsUniqueItemId2029**](BTBillOfMaterialsUniqueItemId-2029.md) |  | [optional] 
+**RelatedOccurrencePaths** | Pointer to **[]string** |  | [optional] 
+**UniqueItemId** | Pointer to [**BTBillOfMaterialsUniqueItemId2029**](BTBillOfMaterialsUniqueItemId2029.md) |  | [optional] 
 
 ## Methods
 
@@ -180,6 +181,31 @@ SetMetadataUpdateHref sets MetadataUpdateHref field to given value.
 `func (o *BTBillOfMaterialsTableRow1425AllOf) HasMetadataUpdateHref() bool`
 
 HasMetadataUpdateHref returns a boolean if a field has been set.
+
+### GetRelatedOccurrencePaths
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) GetRelatedOccurrencePaths() []string`
+
+GetRelatedOccurrencePaths returns the RelatedOccurrencePaths field if non-nil, zero value otherwise.
+
+### GetRelatedOccurrencePathsOk
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) GetRelatedOccurrencePathsOk() (*[]string, bool)`
+
+GetRelatedOccurrencePathsOk returns a tuple with the RelatedOccurrencePaths field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelatedOccurrencePaths
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) SetRelatedOccurrencePaths(v []string)`
+
+SetRelatedOccurrencePaths sets RelatedOccurrencePaths field to given value.
+
+### HasRelatedOccurrencePaths
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) HasRelatedOccurrencePaths() bool`
+
+HasRelatedOccurrencePaths returns a boolean if a field has been set.
 
 ### GetUniqueItemId
 

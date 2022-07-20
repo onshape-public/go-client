@@ -5,18 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
 **ColumnName** | Pointer to **string** |  | [optional] 
-**DefaultValue** | Pointer to [**BTMParameter1**](BTMParameter-1.md) |  | [optional] 
+**DefaultValue** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **IconUri** | Pointer to **string** |  | [optional] 
 **LocalizableName** | Pointer to **string** |  | [optional] 
 **LocalizedName** | Pointer to **string** |  | [optional] 
+**ParameterDescription** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **ParameterName** | Pointer to **string** |  | [optional] 
 **StringsToLocalize** | Pointer to **[]string** |  | [optional] 
 **UiHint** | Pointer to **string** |  | [optional] 
 **UiHints** | Pointer to **[]string** |  | [optional] 
-**VisibilityCondition** | Pointer to [**BTParameterVisibilityCondition177**](BTParameterVisibilityCondition-177.md) |  | [optional] 
+**VisibilityCondition** | Pointer to [**BTParameterVisibilityCondition177**](BTParameterVisibilityCondition177.md) |  | [optional] 
 
 ## Methods
 
@@ -61,31 +61,6 @@ SetAdditionalLocalizedStrings sets AdditionalLocalizedStrings field to given val
 `func (o *BTParameterSpec6) HasAdditionalLocalizedStrings() bool`
 
 HasAdditionalLocalizedStrings returns a boolean if a field has been set.
-
-### GetBtType
-
-`func (o *BTParameterSpec6) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTParameterSpec6) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTParameterSpec6) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTParameterSpec6) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetColumnName
 
@@ -211,6 +186,31 @@ SetLocalizedName sets LocalizedName field to given value.
 `func (o *BTParameterSpec6) HasLocalizedName() bool`
 
 HasLocalizedName returns a boolean if a field has been set.
+
+### GetParameterDescription
+
+`func (o *BTParameterSpec6) GetParameterDescription() string`
+
+GetParameterDescription returns the ParameterDescription field if non-nil, zero value otherwise.
+
+### GetParameterDescriptionOk
+
+`func (o *BTParameterSpec6) GetParameterDescriptionOk() (*string, bool)`
+
+GetParameterDescriptionOk returns a tuple with the ParameterDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterDescription
+
+`func (o *BTParameterSpec6) SetParameterDescription(v string)`
+
+SetParameterDescription sets ParameterDescription field to given value.
+
+### HasParameterDescription
+
+`func (o *BTParameterSpec6) HasParameterDescription() bool`
+
+HasParameterDescription returns a boolean if a field has been set.
 
 ### GetParameterId
 

@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
-**GeneratedParameterId** | Pointer to [**BTTreeNode20**](BTTreeNode-20.md) |  | [optional] 
+**GeneratedParameterId** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
@@ -31,31 +30,6 @@ will change when the set of required properties is changed
 NewBTMConfigurationParameter819WithDefaults instantiates a new BTMConfigurationParameter819 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBtType
-
-`func (o *BTMConfigurationParameter819) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTMConfigurationParameter819) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTMConfigurationParameter819) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTMConfigurationParameter819) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetGeneratedParameterId
 

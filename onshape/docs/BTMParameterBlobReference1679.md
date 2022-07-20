@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BlobImport** | Pointer to [**BTMImport136**](BTMImport-136.md) |  | [optional] 
+**BlobImport** | Pointer to [**BTMImport136**](BTMImport136.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 

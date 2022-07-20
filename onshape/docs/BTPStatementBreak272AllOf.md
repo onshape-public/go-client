@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**SpaceAfterBreak** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceAfterBreak** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

@@ -4,9 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ChangeOrderId** | Pointer to **string** |  | [optional] 
 **ColumnNames** | Pointer to **map[string]string** |  | [optional] 
 **Comments** | Pointer to [**[]BTCommentInfo**](BTCommentInfo.md) |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
+**CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DescriptionAsProperty** | Pointer to **string** |  | [optional] 
 **Detailed** | Pointer to **bool** |  | [optional] 
@@ -16,8 +19,11 @@ Name | Type | Description | Notes
 **IsObsoletion** | Pointer to **bool** |  | [optional] 
 **Items** | Pointer to [**[]BTReleasePackageItemInfo**](BTReleasePackageItemInfo.md) |  | [optional] 
 **LinkedVersionIds** | Pointer to **[]string** |  | [optional] 
+**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
+**ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NameAsProperty** | Pointer to **string** |  | [optional] 
+**OriginalWorkspaceId** | Pointer to **string** |  | [optional] 
 **PackageThumbnail** | Pointer to **string** |  | [optional] 
 **ParentComments** | Pointer to [**[]BTReleaseCommentListInfo**](BTReleaseCommentListInfo.md) |  | [optional] 
 **ParentPackages** | Pointer to **[]string** |  | [optional] 
@@ -26,6 +32,7 @@ Name | Type | Description | Notes
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 **Workflow** | Pointer to [**BTWorkflowSnapshotInfo**](BTWorkflowSnapshotInfo.md) |  | [optional] 
+**WorkflowError** | Pointer to **string** |  | [optional] 
 **WorkflowId** | Pointer to [**BTPublishedWorkflowId**](BTPublishedWorkflowId.md) |  | [optional] 
 **WorkspaceId** | Pointer to **string** |  | [optional] 
 
@@ -47,6 +54,31 @@ will change when the set of required properties is changed
 NewBTReleasePackageInfoWithDefaults instantiates a new BTReleasePackageInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetChangeOrderId
+
+`func (o *BTReleasePackageInfo) GetChangeOrderId() string`
+
+GetChangeOrderId returns the ChangeOrderId field if non-nil, zero value otherwise.
+
+### GetChangeOrderIdOk
+
+`func (o *BTReleasePackageInfo) GetChangeOrderIdOk() (*string, bool)`
+
+GetChangeOrderIdOk returns a tuple with the ChangeOrderId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChangeOrderId
+
+`func (o *BTReleasePackageInfo) SetChangeOrderId(v string)`
+
+SetChangeOrderId sets ChangeOrderId field to given value.
+
+### HasChangeOrderId
+
+`func (o *BTReleasePackageInfo) HasChangeOrderId() bool`
+
+HasChangeOrderId returns a boolean if a field has been set.
 
 ### GetColumnNames
 
@@ -122,6 +154,56 @@ SetCompanyId sets CompanyId field to given value.
 `func (o *BTReleasePackageInfo) HasCompanyId() bool`
 
 HasCompanyId returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *BTReleasePackageInfo) GetCreatedAt() JSONTime`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *BTReleasePackageInfo) GetCreatedAtOk() (*JSONTime, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *BTReleasePackageInfo) SetCreatedAt(v JSONTime)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *BTReleasePackageInfo) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### GetCreatedBy
+
+`func (o *BTReleasePackageInfo) GetCreatedBy() BTUserBasicSummaryInfo`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *BTReleasePackageInfo) GetCreatedByOk() (*BTUserBasicSummaryInfo, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *BTReleasePackageInfo) SetCreatedBy(v BTUserBasicSummaryInfo)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *BTReleasePackageInfo) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -348,6 +430,56 @@ SetLinkedVersionIds sets LinkedVersionIds field to given value.
 
 HasLinkedVersionIds returns a boolean if a field has been set.
 
+### GetModifiedAt
+
+`func (o *BTReleasePackageInfo) GetModifiedAt() JSONTime`
+
+GetModifiedAt returns the ModifiedAt field if non-nil, zero value otherwise.
+
+### GetModifiedAtOk
+
+`func (o *BTReleasePackageInfo) GetModifiedAtOk() (*JSONTime, bool)`
+
+GetModifiedAtOk returns a tuple with the ModifiedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedAt
+
+`func (o *BTReleasePackageInfo) SetModifiedAt(v JSONTime)`
+
+SetModifiedAt sets ModifiedAt field to given value.
+
+### HasModifiedAt
+
+`func (o *BTReleasePackageInfo) HasModifiedAt() bool`
+
+HasModifiedAt returns a boolean if a field has been set.
+
+### GetModifiedBy
+
+`func (o *BTReleasePackageInfo) GetModifiedBy() BTUserBasicSummaryInfo`
+
+GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
+
+### GetModifiedByOk
+
+`func (o *BTReleasePackageInfo) GetModifiedByOk() (*BTUserBasicSummaryInfo, bool)`
+
+GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedBy
+
+`func (o *BTReleasePackageInfo) SetModifiedBy(v BTUserBasicSummaryInfo)`
+
+SetModifiedBy sets ModifiedBy field to given value.
+
+### HasModifiedBy
+
+`func (o *BTReleasePackageInfo) HasModifiedBy() bool`
+
+HasModifiedBy returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *BTReleasePackageInfo) GetName() string`
@@ -397,6 +529,31 @@ SetNameAsProperty sets NameAsProperty field to given value.
 `func (o *BTReleasePackageInfo) HasNameAsProperty() bool`
 
 HasNameAsProperty returns a boolean if a field has been set.
+
+### GetOriginalWorkspaceId
+
+`func (o *BTReleasePackageInfo) GetOriginalWorkspaceId() string`
+
+GetOriginalWorkspaceId returns the OriginalWorkspaceId field if non-nil, zero value otherwise.
+
+### GetOriginalWorkspaceIdOk
+
+`func (o *BTReleasePackageInfo) GetOriginalWorkspaceIdOk() (*string, bool)`
+
+GetOriginalWorkspaceIdOk returns a tuple with the OriginalWorkspaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginalWorkspaceId
+
+`func (o *BTReleasePackageInfo) SetOriginalWorkspaceId(v string)`
+
+SetOriginalWorkspaceId sets OriginalWorkspaceId field to given value.
+
+### HasOriginalWorkspaceId
+
+`func (o *BTReleasePackageInfo) HasOriginalWorkspaceId() bool`
+
+HasOriginalWorkspaceId returns a boolean if a field has been set.
 
 ### GetPackageThumbnail
 
@@ -597,6 +754,31 @@ SetWorkflow sets Workflow field to given value.
 `func (o *BTReleasePackageInfo) HasWorkflow() bool`
 
 HasWorkflow returns a boolean if a field has been set.
+
+### GetWorkflowError
+
+`func (o *BTReleasePackageInfo) GetWorkflowError() string`
+
+GetWorkflowError returns the WorkflowError field if non-nil, zero value otherwise.
+
+### GetWorkflowErrorOk
+
+`func (o *BTReleasePackageInfo) GetWorkflowErrorOk() (*string, bool)`
+
+GetWorkflowErrorOk returns a tuple with the WorkflowError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowError
+
+`func (o *BTReleasePackageInfo) SetWorkflowError(v string)`
+
+SetWorkflowError sets WorkflowError field to given value.
+
+### HasWorkflowError
+
+`func (o *BTReleasePackageInfo) HasWorkflowError() bool`
+
+HasWorkflowError returns a boolean if a field has been set.
 
 ### GetWorkflowId
 

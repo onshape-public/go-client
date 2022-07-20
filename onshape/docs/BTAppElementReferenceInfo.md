@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChangeId** | Pointer to **string** |  | [optional] 
-**ErrorCode** | Pointer to **int32** |  | [optional] 
-**ErrorDescription** | Pointer to **string** |  | [optional] 
+**ChangeId** | **string** | The latest change id for the element, after the edit was committed. | 
+**ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
+**ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
 **ErrorValue** | Pointer to **string** |  | [optional] 
-**ParentChangeId** | Pointer to **string** |  | [optional] 
+**ParentChangeId** | Pointer to **string** | The latest change id for the element, before the edit was made. | [optional] 
 **ReferenceId** | Pointer to **string** |  | [optional] 
-**TransactionId** | Pointer to **string** |  | [optional] 
+**TransactionId** | Pointer to **string** | The id of the transaction in which the edit was applied. | [optional] 
 
 ## Methods
 
 ### NewBTAppElementReferenceInfo
 
-`func NewBTAppElementReferenceInfo() *BTAppElementReferenceInfo`
+`func NewBTAppElementReferenceInfo(changeId string, ) *BTAppElementReferenceInfo`
 
 NewBTAppElementReferenceInfo instantiates a new BTAppElementReferenceInfo object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetChangeId sets ChangeId field to given value.
 
-### HasChangeId
-
-`func (o *BTAppElementReferenceInfo) HasChangeId() bool`
-
-HasChangeId returns a boolean if a field has been set.
 
 ### GetErrorCode
 

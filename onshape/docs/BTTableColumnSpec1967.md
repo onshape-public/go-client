@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultCellSpec** | Pointer to [**BTParameterSpec6**](BTParameterSpec-6.md) |  | [optional] 
+**DefaultCellSpec** | Pointer to [**BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 **DefaultColumnWidthUnits** | Pointer to **string** |  | [optional] 
 **DefaultColumnWidthValue** | Pointer to **int32** |  | [optional] 
 **DefaultHeaderName** | Pointer to **string** |  | [optional] 

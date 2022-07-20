@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **CenterId** | Pointer to **string** |  | [optional] 
-**Geometry** | Pointer to [**BTCurveGeometry114**](BTCurveGeometry-114.md) |  | [optional] 
+**Geometry** | Pointer to [**BTCurveGeometry114**](BTCurveGeometry114.md) |  | [optional] 
 **InternalIds** | Pointer to **[]string** |  | [optional] 
 
 ## Methods

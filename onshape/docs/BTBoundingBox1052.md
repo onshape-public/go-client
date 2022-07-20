@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxCorner** | Pointer to [**BTVector3d389**](BTVector3d-389.md) |  | [optional] 
-**MinCorner** | Pointer to [**BTVector3d389**](BTVector3d-389.md) |  | [optional] 
+**MaxCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**MinCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 
 
 ## Methods

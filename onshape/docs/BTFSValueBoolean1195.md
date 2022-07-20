@@ -4,15 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | **string** |  | 
 **Value** | Pointer to **bool** |  | [optional] 
-**ValueObject** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewBTFSValueBoolean1195
 
-`func NewBTFSValueBoolean1195() *BTFSValueBoolean1195`
+`func NewBTFSValueBoolean1195(btType string, ) *BTFSValueBoolean1195`
 
 NewBTFSValueBoolean1195 instantiates a new BTFSValueBoolean1195 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTFSValueBoolean1195) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetValue
 
@@ -76,31 +70,6 @@ SetValue sets Value field to given value.
 `func (o *BTFSValueBoolean1195) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
-
-### GetValueObject
-
-`func (o *BTFSValueBoolean1195) GetValueObject() bool`
-
-GetValueObject returns the ValueObject field if non-nil, zero value otherwise.
-
-### GetValueObjectOk
-
-`func (o *BTFSValueBoolean1195) GetValueObjectOk() (*bool, bool)`
-
-GetValueObjectOk returns a tuple with the ValueObject field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValueObject
-
-`func (o *BTFSValueBoolean1195) SetValueObject(v bool)`
-
-SetValueObject sets ValueObject field to given value.
-
-### HasValueObject
-
-`func (o *BTFSValueBoolean1195) HasValueObject() bool`
-
-HasValueObject returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

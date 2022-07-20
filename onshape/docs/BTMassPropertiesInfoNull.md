@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Mass** | Pointer to **[]float64** |  | [optional] 
 **MassMissingCount** | Pointer to **int32** |  | [optional] 
 **Periphery** | Pointer to **[]float64** |  | [optional] 
-**PrincipalAxes** | Pointer to [**[]BTVector3d389**](BTVector3d-389.md) |  | [optional] 
+**PrincipalAxes** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **PrincipalInertia** | Pointer to **[]float64** |  | [optional] 
 **Volume** | Pointer to **[]float64** |  | [optional] 
 

@@ -6,14 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **DeepImports** | Pointer to [**map[string][]BTImport**](array.md) |  | [optional] 
-**Imports** | Pointer to [**[]BTPTopLevelImport285**](BTPTopLevelImport-285.md) |  | [optional] 
+**Imports** | Pointer to [**[]BTPTopLevelImport285**](BTPTopLevelImport285.md) |  | [optional] 
 **IsBlob** | Pointer to **bool** |  | [optional] 
 **IsInternalModule** | Pointer to **bool** |  | [optional] 
 **MayHaveImplicitImports** | Pointer to **bool** |  | [optional] 
-**PathMap** | Pointer to [**map[string]BTMicroversionId366**](BTMicroversionId-366.md) |  | [optional] 
-**PathToCache** | Pointer to [**BTCacheDataPath191**](BTCacheDataPath-191.md) |  | [optional] 
-**TopLevel** | Pointer to [**[]BTPTopLevelNode286**](BTPTopLevelNode-286.md) |  | [optional] 
-**Version** | Pointer to [**BTPLiteralNumber258**](BTPLiteralNumber-258.md) |  | [optional] 
+**PathMap** | Pointer to [**map[string]BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
+**PathToCache** | Pointer to [**BTCacheDataPath191**](BTCacheDataPath191.md) |  | [optional] 
+**ToBeParsed** | Pointer to [**BTLazilyParsedFeatureScript**](BTLazilyParsedFeatureScript.md) |  | [optional] 
+**TopLevel** | Pointer to [**[]BTPTopLevelNode286**](BTPTopLevelNode286.md) |  | [optional] 
+**Version** | Pointer to [**BTPLiteralNumber258**](BTPLiteralNumber258.md) |  | [optional] 
 **VersionNumber** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -234,6 +235,31 @@ SetPathToCache sets PathToCache field to given value.
 `func (o *BTPModule234AllOf) HasPathToCache() bool`
 
 HasPathToCache returns a boolean if a field has been set.
+
+### GetToBeParsed
+
+`func (o *BTPModule234AllOf) GetToBeParsed() BTLazilyParsedFeatureScript`
+
+GetToBeParsed returns the ToBeParsed field if non-nil, zero value otherwise.
+
+### GetToBeParsedOk
+
+`func (o *BTPModule234AllOf) GetToBeParsedOk() (*BTLazilyParsedFeatureScript, bool)`
+
+GetToBeParsedOk returns a tuple with the ToBeParsed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToBeParsed
+
+`func (o *BTPModule234AllOf) SetToBeParsed(v BTLazilyParsedFeatureScript)`
+
+SetToBeParsed sets ToBeParsed field to given value.
+
+### HasToBeParsed
+
+`func (o *BTPModule234AllOf) HasToBeParsed() bool`
+
+HasToBeParsed returns a boolean if a field has been set.
 
 ### GetTopLevel
 

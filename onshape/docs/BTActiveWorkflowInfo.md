@@ -4,20 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CanCreateReleases** | Pointer to **bool** |  | [optional] 
+**AllowReleaseItemsFromOtherDocuments** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserCreateReleases** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserManageWorkflows** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncBomToArena** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncToArena** | Pointer to **bool** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DrawingCanDuplicatePartNumber** | Pointer to **bool** |  | [optional] 
 **EnabledActiveMultipleWorkflows** | Pointer to **bool** |  | [optional] 
 **ObsoletionWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ObsoletionWorkflowId** | Pointer to **string** |  | [optional] 
+**PartNumberingSchemeId** | Pointer to **string** |  | [optional] 
 **PickableWorkflows** | Pointer to [**[]BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ReleaseWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ReleaseWorkflowId** | Pointer to **string** |  | [optional] 
+**ReleaseableApplications** | Pointer to **[]string** |  | [optional] 
 **UsingAutoPartNumbering** | Pointer to **bool** |  | [optional] 
-**UsingAutoPartNumberingScheme** | Pointer to **bool** |  | [optional] 
 **UsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
+**UsingThirdPartyPartNumbering** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -38,30 +43,30 @@ NewBTActiveWorkflowInfoWithDefaults instantiates a new BTActiveWorkflowInfo obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCanCreateReleases
+### GetAllowReleaseItemsFromOtherDocuments
 
-`func (o *BTActiveWorkflowInfo) GetCanCreateReleases() bool`
+`func (o *BTActiveWorkflowInfo) GetAllowReleaseItemsFromOtherDocuments() bool`
 
-GetCanCreateReleases returns the CanCreateReleases field if non-nil, zero value otherwise.
+GetAllowReleaseItemsFromOtherDocuments returns the AllowReleaseItemsFromOtherDocuments field if non-nil, zero value otherwise.
 
-### GetCanCreateReleasesOk
+### GetAllowReleaseItemsFromOtherDocumentsOk
 
-`func (o *BTActiveWorkflowInfo) GetCanCreateReleasesOk() (*bool, bool)`
+`func (o *BTActiveWorkflowInfo) GetAllowReleaseItemsFromOtherDocumentsOk() (*bool, bool)`
 
-GetCanCreateReleasesOk returns a tuple with the CanCreateReleases field if it's non-nil, zero value otherwise
+GetAllowReleaseItemsFromOtherDocumentsOk returns a tuple with the AllowReleaseItemsFromOtherDocuments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCanCreateReleases
+### SetAllowReleaseItemsFromOtherDocuments
 
-`func (o *BTActiveWorkflowInfo) SetCanCreateReleases(v bool)`
+`func (o *BTActiveWorkflowInfo) SetAllowReleaseItemsFromOtherDocuments(v bool)`
 
-SetCanCreateReleases sets CanCreateReleases field to given value.
+SetAllowReleaseItemsFromOtherDocuments sets AllowReleaseItemsFromOtherDocuments field to given value.
 
-### HasCanCreateReleases
+### HasAllowReleaseItemsFromOtherDocuments
 
-`func (o *BTActiveWorkflowInfo) HasCanCreateReleases() bool`
+`func (o *BTActiveWorkflowInfo) HasAllowReleaseItemsFromOtherDocuments() bool`
 
-HasCanCreateReleases returns a boolean if a field has been set.
+HasAllowReleaseItemsFromOtherDocuments returns a boolean if a field has been set.
 
 ### GetCanCurrentUserCreateReleases
 
@@ -87,6 +92,81 @@ SetCanCurrentUserCreateReleases sets CanCurrentUserCreateReleases field to given
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserCreateReleases() bool`
 
 HasCanCurrentUserCreateReleases returns a boolean if a field has been set.
+
+### GetCanCurrentUserManageWorkflows
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserManageWorkflows() bool`
+
+GetCanCurrentUserManageWorkflows returns the CanCurrentUserManageWorkflows field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserManageWorkflowsOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserManageWorkflowsOk() (*bool, bool)`
+
+GetCanCurrentUserManageWorkflowsOk returns a tuple with the CanCurrentUserManageWorkflows field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserManageWorkflows
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserManageWorkflows(v bool)`
+
+SetCanCurrentUserManageWorkflows sets CanCurrentUserManageWorkflows field to given value.
+
+### HasCanCurrentUserManageWorkflows
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserManageWorkflows() bool`
+
+HasCanCurrentUserManageWorkflows returns a boolean if a field has been set.
+
+### GetCanCurrentUserSyncBomToArena
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToArena() bool`
+
+GetCanCurrentUserSyncBomToArena returns the CanCurrentUserSyncBomToArena field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncBomToArenaOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToArenaOk() (*bool, bool)`
+
+GetCanCurrentUserSyncBomToArenaOk returns a tuple with the CanCurrentUserSyncBomToArena field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncBomToArena
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncBomToArena(v bool)`
+
+SetCanCurrentUserSyncBomToArena sets CanCurrentUserSyncBomToArena field to given value.
+
+### HasCanCurrentUserSyncBomToArena
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToArena() bool`
+
+HasCanCurrentUserSyncBomToArena returns a boolean if a field has been set.
+
+### GetCanCurrentUserSyncToArena
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToArena() bool`
+
+GetCanCurrentUserSyncToArena returns the CanCurrentUserSyncToArena field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncToArenaOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToArenaOk() (*bool, bool)`
+
+GetCanCurrentUserSyncToArenaOk returns a tuple with the CanCurrentUserSyncToArena field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncToArena
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncToArena(v bool)`
+
+SetCanCurrentUserSyncToArena sets CanCurrentUserSyncToArena field to given value.
+
+### HasCanCurrentUserSyncToArena
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncToArena() bool`
+
+HasCanCurrentUserSyncToArena returns a boolean if a field has been set.
 
 ### GetCompanyId
 
@@ -238,6 +318,31 @@ SetObsoletionWorkflowId sets ObsoletionWorkflowId field to given value.
 
 HasObsoletionWorkflowId returns a boolean if a field has been set.
 
+### GetPartNumberingSchemeId
+
+`func (o *BTActiveWorkflowInfo) GetPartNumberingSchemeId() string`
+
+GetPartNumberingSchemeId returns the PartNumberingSchemeId field if non-nil, zero value otherwise.
+
+### GetPartNumberingSchemeIdOk
+
+`func (o *BTActiveWorkflowInfo) GetPartNumberingSchemeIdOk() (*string, bool)`
+
+GetPartNumberingSchemeIdOk returns a tuple with the PartNumberingSchemeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartNumberingSchemeId
+
+`func (o *BTActiveWorkflowInfo) SetPartNumberingSchemeId(v string)`
+
+SetPartNumberingSchemeId sets PartNumberingSchemeId field to given value.
+
+### HasPartNumberingSchemeId
+
+`func (o *BTActiveWorkflowInfo) HasPartNumberingSchemeId() bool`
+
+HasPartNumberingSchemeId returns a boolean if a field has been set.
+
 ### GetPickableWorkflows
 
 `func (o *BTActiveWorkflowInfo) GetPickableWorkflows() []BTPublishedWorkflowInfo`
@@ -313,6 +418,31 @@ SetReleaseWorkflowId sets ReleaseWorkflowId field to given value.
 
 HasReleaseWorkflowId returns a boolean if a field has been set.
 
+### GetReleaseableApplications
+
+`func (o *BTActiveWorkflowInfo) GetReleaseableApplications() []string`
+
+GetReleaseableApplications returns the ReleaseableApplications field if non-nil, zero value otherwise.
+
+### GetReleaseableApplicationsOk
+
+`func (o *BTActiveWorkflowInfo) GetReleaseableApplicationsOk() (*[]string, bool)`
+
+GetReleaseableApplicationsOk returns a tuple with the ReleaseableApplications field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseableApplications
+
+`func (o *BTActiveWorkflowInfo) SetReleaseableApplications(v []string)`
+
+SetReleaseableApplications sets ReleaseableApplications field to given value.
+
+### HasReleaseableApplications
+
+`func (o *BTActiveWorkflowInfo) HasReleaseableApplications() bool`
+
+HasReleaseableApplications returns a boolean if a field has been set.
+
 ### GetUsingAutoPartNumbering
 
 `func (o *BTActiveWorkflowInfo) GetUsingAutoPartNumbering() bool`
@@ -338,31 +468,6 @@ SetUsingAutoPartNumbering sets UsingAutoPartNumbering field to given value.
 
 HasUsingAutoPartNumbering returns a boolean if a field has been set.
 
-### GetUsingAutoPartNumberingScheme
-
-`func (o *BTActiveWorkflowInfo) GetUsingAutoPartNumberingScheme() bool`
-
-GetUsingAutoPartNumberingScheme returns the UsingAutoPartNumberingScheme field if non-nil, zero value otherwise.
-
-### GetUsingAutoPartNumberingSchemeOk
-
-`func (o *BTActiveWorkflowInfo) GetUsingAutoPartNumberingSchemeOk() (*bool, bool)`
-
-GetUsingAutoPartNumberingSchemeOk returns a tuple with the UsingAutoPartNumberingScheme field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsingAutoPartNumberingScheme
-
-`func (o *BTActiveWorkflowInfo) SetUsingAutoPartNumberingScheme(v bool)`
-
-SetUsingAutoPartNumberingScheme sets UsingAutoPartNumberingScheme field to given value.
-
-### HasUsingAutoPartNumberingScheme
-
-`func (o *BTActiveWorkflowInfo) HasUsingAutoPartNumberingScheme() bool`
-
-HasUsingAutoPartNumberingScheme returns a boolean if a field has been set.
-
 ### GetUsingManagedWorkflow
 
 `func (o *BTActiveWorkflowInfo) GetUsingManagedWorkflow() bool`
@@ -387,6 +492,31 @@ SetUsingManagedWorkflow sets UsingManagedWorkflow field to given value.
 `func (o *BTActiveWorkflowInfo) HasUsingManagedWorkflow() bool`
 
 HasUsingManagedWorkflow returns a boolean if a field has been set.
+
+### GetUsingThirdPartyPartNumbering
+
+`func (o *BTActiveWorkflowInfo) GetUsingThirdPartyPartNumbering() bool`
+
+GetUsingThirdPartyPartNumbering returns the UsingThirdPartyPartNumbering field if non-nil, zero value otherwise.
+
+### GetUsingThirdPartyPartNumberingOk
+
+`func (o *BTActiveWorkflowInfo) GetUsingThirdPartyPartNumberingOk() (*bool, bool)`
+
+GetUsingThirdPartyPartNumberingOk returns a tuple with the UsingThirdPartyPartNumbering field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsingThirdPartyPartNumbering
+
+`func (o *BTActiveWorkflowInfo) SetUsingThirdPartyPartNumbering(v bool)`
+
+SetUsingThirdPartyPartNumbering sets UsingThirdPartyPartNumbering field to given value.
+
+### HasUsingThirdPartyPartNumbering
+
+`func (o *BTActiveWorkflowInfo) HasUsingThirdPartyPartNumbering() bool`
+
+HasUsingThirdPartyPartNumbering returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Operator** | Pointer to **string** |  | [optional] 
-**SpaceAfterOperator** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceBeforeOperator** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceAfterOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceBeforeOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

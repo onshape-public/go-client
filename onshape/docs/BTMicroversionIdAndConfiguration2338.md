@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **CacheKey** | Pointer to **string** |  | [optional] 
-**ConfigurationParameterIdToValue** | Pointer to [**map[string]BTFSValue1888**](BTFSValue-1888.md) |  | [optional] 
+**ConfigurationParameterIdToValue** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Microversion** | Pointer to [**BTMicroversionId366**](BTMicroversionId-366.md) |  | [optional] 
+**Microversion** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 
 ## Methods
 

@@ -10,9 +10,12 @@ Name | Type | Description | Notes
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **IsConstruction** | Pointer to **bool** |  | [optional] 
+**IsFromEndpointSplineHandle** | Pointer to **bool** |  | [optional] 
+**IsFromSplineControlPolygon** | Pointer to **bool** |  | [optional] 
+**IsFromSplineHandle** | Pointer to **bool** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter-1.md) |  | [optional] 
+**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
 ## Methods
 
@@ -182,6 +185,81 @@ SetIsConstruction sets IsConstruction field to given value.
 `func (o *BTMSketchGeomEntity5) HasIsConstruction() bool`
 
 HasIsConstruction returns a boolean if a field has been set.
+
+### GetIsFromEndpointSplineHandle
+
+`func (o *BTMSketchGeomEntity5) GetIsFromEndpointSplineHandle() bool`
+
+GetIsFromEndpointSplineHandle returns the IsFromEndpointSplineHandle field if non-nil, zero value otherwise.
+
+### GetIsFromEndpointSplineHandleOk
+
+`func (o *BTMSketchGeomEntity5) GetIsFromEndpointSplineHandleOk() (*bool, bool)`
+
+GetIsFromEndpointSplineHandleOk returns a tuple with the IsFromEndpointSplineHandle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFromEndpointSplineHandle
+
+`func (o *BTMSketchGeomEntity5) SetIsFromEndpointSplineHandle(v bool)`
+
+SetIsFromEndpointSplineHandle sets IsFromEndpointSplineHandle field to given value.
+
+### HasIsFromEndpointSplineHandle
+
+`func (o *BTMSketchGeomEntity5) HasIsFromEndpointSplineHandle() bool`
+
+HasIsFromEndpointSplineHandle returns a boolean if a field has been set.
+
+### GetIsFromSplineControlPolygon
+
+`func (o *BTMSketchGeomEntity5) GetIsFromSplineControlPolygon() bool`
+
+GetIsFromSplineControlPolygon returns the IsFromSplineControlPolygon field if non-nil, zero value otherwise.
+
+### GetIsFromSplineControlPolygonOk
+
+`func (o *BTMSketchGeomEntity5) GetIsFromSplineControlPolygonOk() (*bool, bool)`
+
+GetIsFromSplineControlPolygonOk returns a tuple with the IsFromSplineControlPolygon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFromSplineControlPolygon
+
+`func (o *BTMSketchGeomEntity5) SetIsFromSplineControlPolygon(v bool)`
+
+SetIsFromSplineControlPolygon sets IsFromSplineControlPolygon field to given value.
+
+### HasIsFromSplineControlPolygon
+
+`func (o *BTMSketchGeomEntity5) HasIsFromSplineControlPolygon() bool`
+
+HasIsFromSplineControlPolygon returns a boolean if a field has been set.
+
+### GetIsFromSplineHandle
+
+`func (o *BTMSketchGeomEntity5) GetIsFromSplineHandle() bool`
+
+GetIsFromSplineHandle returns the IsFromSplineHandle field if non-nil, zero value otherwise.
+
+### GetIsFromSplineHandleOk
+
+`func (o *BTMSketchGeomEntity5) GetIsFromSplineHandleOk() (*bool, bool)`
+
+GetIsFromSplineHandleOk returns a tuple with the IsFromSplineHandle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFromSplineHandle
+
+`func (o *BTMSketchGeomEntity5) SetIsFromSplineHandle(v bool)`
+
+SetIsFromSplineHandle sets IsFromSplineHandle field to given value.
+
+### HasIsFromSplineHandle
+
+`func (o *BTMSketchGeomEntity5) HasIsFromSplineHandle() bool`
+
+HasIsFromSplineHandle returns a boolean if a field has been set.
 
 ### GetNamespace
 

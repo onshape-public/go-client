@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ChangeOrderId** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to [**[]BTReleasePackageItemParams**](BTReleasePackageItemParams.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewBTReleasePackageParamsWithDefaults instantiates a new BTReleasePackageParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetChangeOrderId
+
+`func (o *BTReleasePackageParams) GetChangeOrderId() string`
+
+GetChangeOrderId returns the ChangeOrderId field if non-nil, zero value otherwise.
+
+### GetChangeOrderIdOk
+
+`func (o *BTReleasePackageParams) GetChangeOrderIdOk() (*string, bool)`
+
+GetChangeOrderIdOk returns a tuple with the ChangeOrderId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChangeOrderId
+
+`func (o *BTReleasePackageParams) SetChangeOrderId(v string)`
+
+SetChangeOrderId sets ChangeOrderId field to given value.
+
+### HasChangeOrderId
+
+`func (o *BTReleasePackageParams) HasChangeOrderId() bool`
+
+HasChangeOrderId returns a boolean if a field has been set.
 
 ### GetItems
 

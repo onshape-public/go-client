@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CameraViewport** | Pointer to **[]float64** |  | [optional] 
 **Perspective** | Pointer to **bool** |  | [optional] 
 **SectionPlanes** | Pointer to [**[]BTSectionPlaneInfo**](BTSectionPlaneInfo.md) |  | [optional] 
+**SectionViewData** | Pointer to [**BTGraphicsSectionViewStateData4379**](BTGraphicsSectionViewStateData4379.md) |  | [optional] 
 **ViewMatrix** | Pointer to **[]float64** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetSectionPlanes sets SectionPlanes field to given value.
 `func (o *BTNamedViewInfo) HasSectionPlanes() bool`
 
 HasSectionPlanes returns a boolean if a field has been set.
+
+### GetSectionViewData
+
+`func (o *BTNamedViewInfo) GetSectionViewData() BTGraphicsSectionViewStateData4379`
+
+GetSectionViewData returns the SectionViewData field if non-nil, zero value otherwise.
+
+### GetSectionViewDataOk
+
+`func (o *BTNamedViewInfo) GetSectionViewDataOk() (*BTGraphicsSectionViewStateData4379, bool)`
+
+GetSectionViewDataOk returns a tuple with the SectionViewData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSectionViewData
+
+`func (o *BTNamedViewInfo) SetSectionViewData(v BTGraphicsSectionViewStateData4379)`
+
+SetSectionViewData sets SectionViewData field to given value.
+
+### HasSectionViewData
+
+`func (o *BTNamedViewInfo) HasSectionViewData() bool`
+
+HasSectionViewData returns a boolean if a field has been set.
 
 ### GetViewMatrix
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Accessor** | Pointer to [**BTPPropertyAccessor23**](BTPPropertyAccessor-23.md) |  | [optional] 
-**Base** | Pointer to [**BTPLValue249**](BTPLValue-249.md) |  | [optional] 
+**Accessor** | Pointer to [**BTPPropertyAccessor23**](BTPPropertyAccessor23.md) |  | [optional] 
+**Base** | Pointer to [**BTPLValue249**](BTPLValue249.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods

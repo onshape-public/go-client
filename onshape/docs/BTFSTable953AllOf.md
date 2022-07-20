@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**CrossHighlightData** | Pointer to [**BTTableBaseCrossHighlightData2609**](BTTableBaseCrossHighlightData-2609.md) |  | [optional] 
+**CrossHighlightData** | Pointer to [**BTTableBaseCrossHighlightData2609**](BTTableBaseCrossHighlightData2609.md) |  | [optional] 
+**HiddenColumnIdsToNames** | Pointer to **map[string]string** |  | [optional] 
+**IndividualTableProperties** | Pointer to [**BTIndividualTableProperties3760**](BTIndividualTableProperties3760.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +77,56 @@ SetCrossHighlightData sets CrossHighlightData field to given value.
 `func (o *BTFSTable953AllOf) HasCrossHighlightData() bool`
 
 HasCrossHighlightData returns a boolean if a field has been set.
+
+### GetHiddenColumnIdsToNames
+
+`func (o *BTFSTable953AllOf) GetHiddenColumnIdsToNames() map[string]string`
+
+GetHiddenColumnIdsToNames returns the HiddenColumnIdsToNames field if non-nil, zero value otherwise.
+
+### GetHiddenColumnIdsToNamesOk
+
+`func (o *BTFSTable953AllOf) GetHiddenColumnIdsToNamesOk() (*map[string]string, bool)`
+
+GetHiddenColumnIdsToNamesOk returns a tuple with the HiddenColumnIdsToNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHiddenColumnIdsToNames
+
+`func (o *BTFSTable953AllOf) SetHiddenColumnIdsToNames(v map[string]string)`
+
+SetHiddenColumnIdsToNames sets HiddenColumnIdsToNames field to given value.
+
+### HasHiddenColumnIdsToNames
+
+`func (o *BTFSTable953AllOf) HasHiddenColumnIdsToNames() bool`
+
+HasHiddenColumnIdsToNames returns a boolean if a field has been set.
+
+### GetIndividualTableProperties
+
+`func (o *BTFSTable953AllOf) GetIndividualTableProperties() BTIndividualTableProperties3760`
+
+GetIndividualTableProperties returns the IndividualTableProperties field if non-nil, zero value otherwise.
+
+### GetIndividualTablePropertiesOk
+
+`func (o *BTFSTable953AllOf) GetIndividualTablePropertiesOk() (*BTIndividualTableProperties3760, bool)`
+
+GetIndividualTablePropertiesOk returns a tuple with the IndividualTableProperties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndividualTableProperties
+
+`func (o *BTFSTable953AllOf) SetIndividualTableProperties(v BTIndividualTableProperties3760)`
+
+SetIndividualTableProperties sets IndividualTableProperties field to given value.
+
+### HasIndividualTableProperties
+
+`func (o *BTFSTable953AllOf) HasIndividualTableProperties() bool`
+
+HasIndividualTableProperties returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

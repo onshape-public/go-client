@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CanMove** | Pointer to **bool** |  | [optional] 
-**CreatedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **IsContainer** | Pointer to **bool** |  | [optional] 
 **IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
 **IsMutable** | Pointer to **bool** |  | [optional] 
-**JsonType** | Pointer to **string** |  | [optional] 
-**ModifiedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**JsonType** | **string** |  | 
+**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Owner** | Pointer to [**BTOwnerInfo**](BTOwnerInfo.md) |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewBTGlobalTreeNodeInfo
 
-`func NewBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo`
+`func NewBTGlobalTreeNodeInfo(jsonType string, ) *BTGlobalTreeNodeInfo`
 
 NewBTGlobalTreeNodeInfo instantiates a new BTGlobalTreeNodeInfo object
 This constructor will assign default values to properties that have it defined,
@@ -286,11 +286,6 @@ and a boolean to check if the value has been set.
 
 SetJsonType sets JsonType field to given value.
 
-### HasJsonType
-
-`func (o *BTGlobalTreeNodeInfo) HasJsonType() bool`
-
-HasJsonType returns a boolean if a field has been set.
 
 ### GetModifiedAt
 

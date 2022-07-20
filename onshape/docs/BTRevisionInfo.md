@@ -9,8 +9,11 @@ Name | Type | Description | Notes
 **AutoObsoletionReleaseName** | Pointer to **string** |  | [optional] 
 **CanCurrentUserObsolete** | Pointer to **bool** |  | [optional] 
 **CanExport** | Pointer to **bool** |  | [optional] 
+**ChangeOrderId** | Pointer to **string** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentName** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -22,7 +25,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **InsertableId** | Pointer to **string** |  | [optional] 
 **IsObsolete** | Pointer to **bool** |  | [optional] 
+**IsRereleasable** | Pointer to **bool** |  | [optional] 
 **IsTranslatable** | Pointer to **bool** |  | [optional] 
+**MeshStates** | Pointer to **[]bool** |  | [optional] 
 **MimeType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NextRevisionId** | Pointer to **string** |  | [optional] 
@@ -30,7 +35,7 @@ Name | Type | Description | Notes
 **PartId** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **PreviousRevisionId** | Pointer to **string** |  | [optional] 
-**ReleaseCreatedDate** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**ReleaseCreatedDate** | Pointer to **JSONTime** |  | [optional] 
 **ReleaseId** | Pointer to **string** |  | [optional] 
 **ReleaseName** | Pointer to **string** |  | [optional] 
 **ReleasedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
@@ -184,6 +189,31 @@ SetCanExport sets CanExport field to given value.
 
 HasCanExport returns a boolean if a field has been set.
 
+### GetChangeOrderId
+
+`func (o *BTRevisionInfo) GetChangeOrderId() string`
+
+GetChangeOrderId returns the ChangeOrderId field if non-nil, zero value otherwise.
+
+### GetChangeOrderIdOk
+
+`func (o *BTRevisionInfo) GetChangeOrderIdOk() (*string, bool)`
+
+GetChangeOrderIdOk returns a tuple with the ChangeOrderId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChangeOrderId
+
+`func (o *BTRevisionInfo) SetChangeOrderId(v string)`
+
+SetChangeOrderId sets ChangeOrderId field to given value.
+
+### HasChangeOrderId
+
+`func (o *BTRevisionInfo) HasChangeOrderId() bool`
+
+HasChangeOrderId returns a boolean if a field has been set.
+
 ### GetCompanyId
 
 `func (o *BTRevisionInfo) GetCompanyId() string`
@@ -233,6 +263,56 @@ SetConfiguration sets Configuration field to given value.
 `func (o *BTRevisionInfo) HasConfiguration() bool`
 
 HasConfiguration returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *BTRevisionInfo) GetCreatedAt() JSONTime`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *BTRevisionInfo) GetCreatedAtOk() (*JSONTime, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *BTRevisionInfo) SetCreatedAt(v JSONTime)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *BTRevisionInfo) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *BTRevisionInfo) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *BTRevisionInfo) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *BTRevisionInfo) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *BTRevisionInfo) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetDocumentId
 
@@ -509,6 +589,31 @@ SetIsObsolete sets IsObsolete field to given value.
 
 HasIsObsolete returns a boolean if a field has been set.
 
+### GetIsRereleasable
+
+`func (o *BTRevisionInfo) GetIsRereleasable() bool`
+
+GetIsRereleasable returns the IsRereleasable field if non-nil, zero value otherwise.
+
+### GetIsRereleasableOk
+
+`func (o *BTRevisionInfo) GetIsRereleasableOk() (*bool, bool)`
+
+GetIsRereleasableOk returns a tuple with the IsRereleasable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsRereleasable
+
+`func (o *BTRevisionInfo) SetIsRereleasable(v bool)`
+
+SetIsRereleasable sets IsRereleasable field to given value.
+
+### HasIsRereleasable
+
+`func (o *BTRevisionInfo) HasIsRereleasable() bool`
+
+HasIsRereleasable returns a boolean if a field has been set.
+
 ### GetIsTranslatable
 
 `func (o *BTRevisionInfo) GetIsTranslatable() bool`
@@ -533,6 +638,31 @@ SetIsTranslatable sets IsTranslatable field to given value.
 `func (o *BTRevisionInfo) HasIsTranslatable() bool`
 
 HasIsTranslatable returns a boolean if a field has been set.
+
+### GetMeshStates
+
+`func (o *BTRevisionInfo) GetMeshStates() []bool`
+
+GetMeshStates returns the MeshStates field if non-nil, zero value otherwise.
+
+### GetMeshStatesOk
+
+`func (o *BTRevisionInfo) GetMeshStatesOk() (*[]bool, bool)`
+
+GetMeshStatesOk returns a tuple with the MeshStates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeshStates
+
+`func (o *BTRevisionInfo) SetMeshStates(v []bool)`
+
+SetMeshStates sets MeshStates field to given value.
+
+### HasMeshStates
+
+`func (o *BTRevisionInfo) HasMeshStates() bool`
+
+HasMeshStates returns a boolean if a field has been set.
 
 ### GetMimeType
 

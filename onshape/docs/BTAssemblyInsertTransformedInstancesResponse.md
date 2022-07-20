@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**InsertInstanceResponses** | Pointer to [**[]BTAssemblyInstanceOccurrenceInfo**](BTAssemblyInstanceOccurrenceInfo.md) |  | [optional] 
 **InsertResponses** | Pointer to [**[]BTAssemblyOccurrenceInfo**](BTAssemblyOccurrenceInfo.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewBTAssemblyInsertTransformedInstancesResponseWithDefaults instantiates a new BTAssemblyInsertTransformedInstancesResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetInsertInstanceResponses
+
+`func (o *BTAssemblyInsertTransformedInstancesResponse) GetInsertInstanceResponses() []BTAssemblyInstanceOccurrenceInfo`
+
+GetInsertInstanceResponses returns the InsertInstanceResponses field if non-nil, zero value otherwise.
+
+### GetInsertInstanceResponsesOk
+
+`func (o *BTAssemblyInsertTransformedInstancesResponse) GetInsertInstanceResponsesOk() (*[]BTAssemblyInstanceOccurrenceInfo, bool)`
+
+GetInsertInstanceResponsesOk returns a tuple with the InsertInstanceResponses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInsertInstanceResponses
+
+`func (o *BTAssemblyInsertTransformedInstancesResponse) SetInsertInstanceResponses(v []BTAssemblyInstanceOccurrenceInfo)`
+
+SetInsertInstanceResponses sets InsertInstanceResponses field to given value.
+
+### HasInsertInstanceResponses
+
+`func (o *BTAssemblyInsertTransformedInstancesResponse) HasInsertInstanceResponses() bool`
+
+HasInsertInstanceResponses returns a boolean if a field has been set.
 
 ### GetInsertResponses
 

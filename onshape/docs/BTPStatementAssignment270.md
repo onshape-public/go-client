@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Lvalue** | Pointer to [**BTPLValue249**](BTPLValue-249.md) |  | [optional] 
+**Lvalue** | Pointer to [**BTPLValue249**](BTPLValue249.md) |  | [optional] 
 **Operator** | Pointer to **string** |  | [optional] 
-**Rvalue** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**Rvalue** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 
 ## Methods
 

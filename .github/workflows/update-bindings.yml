@@ -1,0 +1,64 @@
+name: Update Bindings
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Install json CLI
+        run: npm install -g json
+      - name: Fetch specification
+        run: |
+         fetchSettings=$(cat ${{ github.workspace }}/bindgen-config.json | json fetch)
+         url=$(echo "${fetchSettings}" | json url)
+         versionAlias=$(echo "${fetchSettings}" | json versionAlias)
+         userRole=$(echo "${fetchSettings}" | json userRole)
+         operationIds=$(echo "${fetchSettings}" | json operationIds)
+         keySet=$(echo ${{ secrets.ONSHAPE_API_ACCESS_KEY }}:${{ secrets.ONSHAPE_API_SECRET_KEY }} | base64)
+         
+         if [ "${versionAlias}" = null ]; then
+           versionAlias=
+         else
+           versionAlias='-d versionAlias='"${versionAlias}"
+         fi
+         
+         if [ "${operationIds}" = null ]; then
+             echo 'Operation IDs not specified; downloading all endpoints.'
+             operationIdSet=
+         else
+          while IFS= read -r line; do
+              operationIdSet="${operationIdSet} -d operationIds=$line"
+          done <<< $(echo "${operationIds}" | json -ga)
+         fi
+         
+         curl -X 'GET' -G ${url}'/api/openapi' -d restUserRole=${userRole} ${versionAlias} ${operationIdSet} -H 'accept: */*' -H 'Authorization: Basic '"${keySet}" | json > ${{ github.workspace }}/openapi.json
+      - name: Check version status
+        id: fetchStatus
+        run: |
+         git config user.name github-actions
+         git config user.email github-actions@github.com
+         git add openapi.json
+         if [[ `git status --porcelain` ]]; then
+           echo 'Specification was outdated; committing new specification.'
+           changedVersion=$(cat ${{ github.workspace }}/openapi.json | json info.version)
+           git commit -m "Fetch latest OpenAPI specification (version ${changedVersion})"
+           echo ::set-output name=changes::true
+           echo ::set-output name=rev-sha::$(git rev-parse HEAD)
+         else
+           echo 'Specification was not outdated'
+         fi
+      - name: Push changes
+        if: ${{ steps.fetchStatus.outputs.changes }}
+        uses: ad-m/github-push-action@master
+        with:
+         github_token: ${{ secrets.BOT_ACCESS_TOKEN }}

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Error** | Pointer to **string** |  | [optional] 
-**OverrideSpec** | Pointer to [**BTParameterSpec6**](BTParameterSpec-6.md) |  | [optional] 
-**Parameter** | Pointer to [**BTMParameter1**](BTMParameter-1.md) |  | [optional] 
+**OverrideSpec** | Pointer to [**BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
+**Parameter** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
 ## Methods
 

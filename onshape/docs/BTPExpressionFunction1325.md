@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Arguments** | Pointer to [**[]BTPArgumentDeclaration232**](BTPArgumentDeclaration-232.md) |  | [optional] 
-**Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock-271.md) |  | [optional] 
+**Arguments** | Pointer to [**[]BTPArgumentDeclaration232**](BTPArgumentDeclaration232.md) |  | [optional] 
+**Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**Precondition** | Pointer to [**BTPStatement269**](BTPStatement-269.md) |  | [optional] 
-**ReturnType** | Pointer to [**BTPTypeName290**](BTPTypeName-290.md) |  | [optional] 
-**SpaceAfterArglist** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceAfterFunction** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**Precondition** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
+**ReturnType** | Pointer to [**BTPTypeName290**](BTPTypeName290.md) |  | [optional] 
+**SpaceAfterArglist** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceAfterFunction** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

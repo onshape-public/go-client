@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **FailedMetadataRepresentativeOccurrences** | Pointer to **[]string** |  | [optional] 
 **Indented** | Pointer to **bool** |  | [optional] 
+**PartNumber** | Pointer to **string** |  | [optional] 
+**Revision** | Pointer to **string** |  | [optional] 
 **ShowingExcluded** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -102,6 +104,56 @@ SetIndented sets Indented field to given value.
 `func (o *BTBillOfMaterialsTable1073AllOf) HasIndented() bool`
 
 HasIndented returns a boolean if a field has been set.
+
+### GetPartNumber
+
+`func (o *BTBillOfMaterialsTable1073AllOf) GetPartNumber() string`
+
+GetPartNumber returns the PartNumber field if non-nil, zero value otherwise.
+
+### GetPartNumberOk
+
+`func (o *BTBillOfMaterialsTable1073AllOf) GetPartNumberOk() (*string, bool)`
+
+GetPartNumberOk returns a tuple with the PartNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartNumber
+
+`func (o *BTBillOfMaterialsTable1073AllOf) SetPartNumber(v string)`
+
+SetPartNumber sets PartNumber field to given value.
+
+### HasPartNumber
+
+`func (o *BTBillOfMaterialsTable1073AllOf) HasPartNumber() bool`
+
+HasPartNumber returns a boolean if a field has been set.
+
+### GetRevision
+
+`func (o *BTBillOfMaterialsTable1073AllOf) GetRevision() string`
+
+GetRevision returns the Revision field if non-nil, zero value otherwise.
+
+### GetRevisionOk
+
+`func (o *BTBillOfMaterialsTable1073AllOf) GetRevisionOk() (*string, bool)`
+
+GetRevisionOk returns a tuple with the Revision field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRevision
+
+`func (o *BTBillOfMaterialsTable1073AllOf) SetRevision(v string)`
+
+SetRevision sets Revision field to given value.
+
+### HasRevision
+
+`func (o *BTBillOfMaterialsTable1073AllOf) HasRevision() bool`
+
+HasRevision returns a boolean if a field has been set.
 
 ### GetShowingExcluded
 

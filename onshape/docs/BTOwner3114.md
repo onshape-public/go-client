@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**CompanyId** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
 **OwnerType** | Pointer to **string** |  | [optional] 
 **OwnerTypeOrdinal** | Pointer to **int32** |  | [optional] 
+**UserId** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -52,6 +54,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTOwner3114) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetCompanyId
+
+`func (o *BTOwner3114) GetCompanyId() bool`
+
+GetCompanyId returns the CompanyId field if non-nil, zero value otherwise.
+
+### GetCompanyIdOk
+
+`func (o *BTOwner3114) GetCompanyIdOk() (*bool, bool)`
+
+GetCompanyIdOk returns a tuple with the CompanyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyId
+
+`func (o *BTOwner3114) SetCompanyId(v bool)`
+
+SetCompanyId sets CompanyId field to given value.
+
+### HasCompanyId
+
+`func (o *BTOwner3114) HasCompanyId() bool`
+
+HasCompanyId returns a boolean if a field has been set.
 
 ### GetOwnerId
 
@@ -127,6 +154,31 @@ SetOwnerTypeOrdinal sets OwnerTypeOrdinal field to given value.
 `func (o *BTOwner3114) HasOwnerTypeOrdinal() bool`
 
 HasOwnerTypeOrdinal returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *BTOwner3114) GetUserId() bool`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *BTOwner3114) GetUserIdOk() (*bool, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *BTOwner3114) SetUserId(v bool)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *BTOwner3114) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**InnerParameterLocation** | Pointer to [**BTInnerParameterLocation1715**](BTInnerParameterLocation-1715.md) |  | [optional] 
+**InnerParameterLocation** | Pointer to [**BTInnerParameterLocation1715**](BTInnerParameterLocation1715.md) |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 
 ## Methods

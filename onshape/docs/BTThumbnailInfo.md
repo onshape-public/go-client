@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**SecondarySizes** | Pointer to [**[][]BTThumbnailSizeInfo**](array.md) |  | [optional] 
+**SecondarySizes** | Pointer to [**[][]BTThumbnailSizeInfo**]([]BTThumbnailSizeInfo.md) |  | [optional] 
 **Sizes** | Pointer to [**[]BTThumbnailSizeInfo**](BTThumbnailSizeInfo.md) |  | [optional] 
 
 ## Methods

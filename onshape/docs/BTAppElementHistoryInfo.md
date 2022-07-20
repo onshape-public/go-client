@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Changes** | Pointer to [**[]BTAppElementHistoryEntryInfo**](BTAppElementHistoryEntryInfo.md) |  | [optional] 
-**ErrorCode** | Pointer to **int32** |  | [optional] 
-**ErrorDescription** | Pointer to **string** |  | [optional] 
+**ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
+**ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
 **ErrorValue** | Pointer to **string** |  | [optional] 
 
 ## Methods

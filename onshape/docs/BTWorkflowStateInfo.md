@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApproverSourceProperty** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
+**EditPermissions** | Pointer to **[]string** |  | [optional] 
 **EditableProperties** | Pointer to **[]string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**NonEditableProperties** | Pointer to **[]string** |  | [optional] 
 **NotifierSourceProperty** | Pointer to **string** |  | [optional] 
 **RequiredItemProperties** | Pointer to **[]string** |  | [optional] 
 **RequiredProperties** | Pointer to **[]string** |  | [optional] 
@@ -81,6 +83,31 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
+### GetEditPermissions
+
+`func (o *BTWorkflowStateInfo) GetEditPermissions() []string`
+
+GetEditPermissions returns the EditPermissions field if non-nil, zero value otherwise.
+
+### GetEditPermissionsOk
+
+`func (o *BTWorkflowStateInfo) GetEditPermissionsOk() (*[]string, bool)`
+
+GetEditPermissionsOk returns a tuple with the EditPermissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEditPermissions
+
+`func (o *BTWorkflowStateInfo) SetEditPermissions(v []string)`
+
+SetEditPermissions sets EditPermissions field to given value.
+
+### HasEditPermissions
+
+`func (o *BTWorkflowStateInfo) HasEditPermissions() bool`
+
+HasEditPermissions returns a boolean if a field has been set.
+
 ### GetEditableProperties
 
 `func (o *BTWorkflowStateInfo) GetEditableProperties() []string`
@@ -130,6 +157,31 @@ SetName sets Name field to given value.
 `func (o *BTWorkflowStateInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetNonEditableProperties
+
+`func (o *BTWorkflowStateInfo) GetNonEditableProperties() []string`
+
+GetNonEditableProperties returns the NonEditableProperties field if non-nil, zero value otherwise.
+
+### GetNonEditablePropertiesOk
+
+`func (o *BTWorkflowStateInfo) GetNonEditablePropertiesOk() (*[]string, bool)`
+
+GetNonEditablePropertiesOk returns a tuple with the NonEditableProperties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNonEditableProperties
+
+`func (o *BTWorkflowStateInfo) SetNonEditableProperties(v []string)`
+
+SetNonEditableProperties sets NonEditableProperties field to given value.
+
+### HasNonEditableProperties
+
+`func (o *BTWorkflowStateInfo) HasNonEditableProperties() bool`
+
+HasNonEditableProperties returns a boolean if a field has been set.
 
 ### GetNotifierSourceProperty
 

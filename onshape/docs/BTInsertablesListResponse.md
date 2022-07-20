@@ -6,11 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CanSaveVersion** | Pointer to **bool** |  | [optional] 
 **ChangesSinceVersionSave** | Pointer to **int32** |  | [optional] 
+**Configuration** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
+**ConfigurationKey** | Pointer to **string** |  | [optional] 
 **HasMultipleVersions** | Pointer to **bool** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to [**[]BTInsertableInfo**](BTInsertableInfo.md) |  | [optional] 
 **Next** | Pointer to **string** |  | [optional] 
 **Previous** | Pointer to **string** |  | [optional] 
+**UpdatedThumbnailUri** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -80,6 +83,56 @@ SetChangesSinceVersionSave sets ChangesSinceVersionSave field to given value.
 `func (o *BTInsertablesListResponse) HasChangesSinceVersionSave() bool`
 
 HasChangesSinceVersionSave returns a boolean if a field has been set.
+
+### GetConfiguration
+
+`func (o *BTInsertablesListResponse) GetConfiguration() map[string]BTFSValue1888`
+
+GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
+
+### GetConfigurationOk
+
+`func (o *BTInsertablesListResponse) GetConfigurationOk() (*map[string]BTFSValue1888, bool)`
+
+GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfiguration
+
+`func (o *BTInsertablesListResponse) SetConfiguration(v map[string]BTFSValue1888)`
+
+SetConfiguration sets Configuration field to given value.
+
+### HasConfiguration
+
+`func (o *BTInsertablesListResponse) HasConfiguration() bool`
+
+HasConfiguration returns a boolean if a field has been set.
+
+### GetConfigurationKey
+
+`func (o *BTInsertablesListResponse) GetConfigurationKey() string`
+
+GetConfigurationKey returns the ConfigurationKey field if non-nil, zero value otherwise.
+
+### GetConfigurationKeyOk
+
+`func (o *BTInsertablesListResponse) GetConfigurationKeyOk() (*string, bool)`
+
+GetConfigurationKeyOk returns a tuple with the ConfigurationKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigurationKey
+
+`func (o *BTInsertablesListResponse) SetConfigurationKey(v string)`
+
+SetConfigurationKey sets ConfigurationKey field to given value.
+
+### HasConfigurationKey
+
+`func (o *BTInsertablesListResponse) HasConfigurationKey() bool`
+
+HasConfigurationKey returns a boolean if a field has been set.
 
 ### GetHasMultipleVersions
 
@@ -205,6 +258,31 @@ SetPrevious sets Previous field to given value.
 `func (o *BTInsertablesListResponse) HasPrevious() bool`
 
 HasPrevious returns a boolean if a field has been set.
+
+### GetUpdatedThumbnailUri
+
+`func (o *BTInsertablesListResponse) GetUpdatedThumbnailUri() string`
+
+GetUpdatedThumbnailUri returns the UpdatedThumbnailUri field if non-nil, zero value otherwise.
+
+### GetUpdatedThumbnailUriOk
+
+`func (o *BTInsertablesListResponse) GetUpdatedThumbnailUriOk() (*string, bool)`
+
+GetUpdatedThumbnailUriOk returns a tuple with the UpdatedThumbnailUri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedThumbnailUri
+
+`func (o *BTInsertablesListResponse) SetUpdatedThumbnailUri(v string)`
+
+SetUpdatedThumbnailUri sets UpdatedThumbnailUri field to given value.
+
+### HasUpdatedThumbnailUri
+
+`func (o *BTInsertablesListResponse) HasUpdatedThumbnailUri() bool`
+
+HasUpdatedThumbnailUri returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

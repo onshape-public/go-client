@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **DocumentFilter** | Pointer to **int32** |  | [optional] 
 **FoundIn** | Pointer to **string** |  | [optional] 
 **Limit** | Pointer to **int32** |  | [optional] 
+**LuceneSyntax** | Pointer to **bool** |  | [optional] 
 **Offset** | Pointer to **int32** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
@@ -109,6 +110,31 @@ SetLimit sets Limit field to given value.
 `func (o *BTDocumentSearchParams) HasLimit() bool`
 
 HasLimit returns a boolean if a field has been set.
+
+### GetLuceneSyntax
+
+`func (o *BTDocumentSearchParams) GetLuceneSyntax() bool`
+
+GetLuceneSyntax returns the LuceneSyntax field if non-nil, zero value otherwise.
+
+### GetLuceneSyntaxOk
+
+`func (o *BTDocumentSearchParams) GetLuceneSyntaxOk() (*bool, bool)`
+
+GetLuceneSyntaxOk returns a tuple with the LuceneSyntax field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLuceneSyntax
+
+`func (o *BTDocumentSearchParams) SetLuceneSyntax(v bool)`
+
+SetLuceneSyntax sets LuceneSyntax field to given value.
+
+### HasLuceneSyntax
+
+`func (o *BTDocumentSearchParams) HasLuceneSyntax() bool`
+
+HasLuceneSyntax returns a boolean if a field has been set.
 
 ### GetOffset
 

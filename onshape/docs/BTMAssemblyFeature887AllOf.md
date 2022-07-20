@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuxiliaryAssemblyFeature** | Pointer to **bool** |  | [optional] 
+**AuxiliaryTreeFeature** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**FeatureFolder** | Pointer to **bool** |  | [optional] 
 **FeatureListFieldIndex** | Pointer to **int32** |  | [optional] 
-**OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase-904.md) |  | [optional] 
+**OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
+**ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -29,30 +31,30 @@ NewBTMAssemblyFeature887AllOfWithDefaults instantiates a new BTMAssemblyFeature8
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuxiliaryAssemblyFeature
+### GetAuxiliaryTreeFeature
 
-`func (o *BTMAssemblyFeature887AllOf) GetAuxiliaryAssemblyFeature() bool`
+`func (o *BTMAssemblyFeature887AllOf) GetAuxiliaryTreeFeature() bool`
 
-GetAuxiliaryAssemblyFeature returns the AuxiliaryAssemblyFeature field if non-nil, zero value otherwise.
+GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field if non-nil, zero value otherwise.
 
-### GetAuxiliaryAssemblyFeatureOk
+### GetAuxiliaryTreeFeatureOk
 
-`func (o *BTMAssemblyFeature887AllOf) GetAuxiliaryAssemblyFeatureOk() (*bool, bool)`
+`func (o *BTMAssemblyFeature887AllOf) GetAuxiliaryTreeFeatureOk() (*bool, bool)`
 
-GetAuxiliaryAssemblyFeatureOk returns a tuple with the AuxiliaryAssemblyFeature field if it's non-nil, zero value otherwise
+GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuxiliaryAssemblyFeature
+### SetAuxiliaryTreeFeature
 
-`func (o *BTMAssemblyFeature887AllOf) SetAuxiliaryAssemblyFeature(v bool)`
+`func (o *BTMAssemblyFeature887AllOf) SetAuxiliaryTreeFeature(v bool)`
 
-SetAuxiliaryAssemblyFeature sets AuxiliaryAssemblyFeature field to given value.
+SetAuxiliaryTreeFeature sets AuxiliaryTreeFeature field to given value.
 
-### HasAuxiliaryAssemblyFeature
+### HasAuxiliaryTreeFeature
 
-`func (o *BTMAssemblyFeature887AllOf) HasAuxiliaryAssemblyFeature() bool`
+`func (o *BTMAssemblyFeature887AllOf) HasAuxiliaryTreeFeature() bool`
 
-HasAuxiliaryAssemblyFeature returns a boolean if a field has been set.
+HasAuxiliaryTreeFeature returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -78,6 +80,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMAssemblyFeature887AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetFeatureFolder
+
+`func (o *BTMAssemblyFeature887AllOf) GetFeatureFolder() bool`
+
+GetFeatureFolder returns the FeatureFolder field if non-nil, zero value otherwise.
+
+### GetFeatureFolderOk
+
+`func (o *BTMAssemblyFeature887AllOf) GetFeatureFolderOk() (*bool, bool)`
+
+GetFeatureFolderOk returns a tuple with the FeatureFolder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureFolder
+
+`func (o *BTMAssemblyFeature887AllOf) SetFeatureFolder(v bool)`
+
+SetFeatureFolder sets FeatureFolder field to given value.
+
+### HasFeatureFolder
+
+`func (o *BTMAssemblyFeature887AllOf) HasFeatureFolder() bool`
+
+HasFeatureFolder returns a boolean if a field has been set.
 
 ### GetFeatureListFieldIndex
 
@@ -128,6 +155,31 @@ SetOccurrenceQueriesFromAllConfigurations sets OccurrenceQueriesFromAllConfigura
 `func (o *BTMAssemblyFeature887AllOf) HasOccurrenceQueriesFromAllConfigurations() bool`
 
 HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
+
+### GetParametricInstanceFeature
+
+`func (o *BTMAssemblyFeature887AllOf) GetParametricInstanceFeature() bool`
+
+GetParametricInstanceFeature returns the ParametricInstanceFeature field if non-nil, zero value otherwise.
+
+### GetParametricInstanceFeatureOk
+
+`func (o *BTMAssemblyFeature887AllOf) GetParametricInstanceFeatureOk() (*bool, bool)`
+
+GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParametricInstanceFeature
+
+`func (o *BTMAssemblyFeature887AllOf) SetParametricInstanceFeature(v bool)`
+
+SetParametricInstanceFeature sets ParametricInstanceFeature field to given value.
+
+### HasParametricInstanceFeature
+
+`func (o *BTMAssemblyFeature887AllOf) HasParametricInstanceFeature() bool`
+
+HasParametricInstanceFeature returns a boolean if a field has been set.
 
 ### GetVersion
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**EdgeTopology** | Pointer to **string** |  | [optional] 
 **IsInternalEdge** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTEdgeTopologyFilter122AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetEdgeTopology
+
+`func (o *BTEdgeTopologyFilter122AllOf) GetEdgeTopology() string`
+
+GetEdgeTopology returns the EdgeTopology field if non-nil, zero value otherwise.
+
+### GetEdgeTopologyOk
+
+`func (o *BTEdgeTopologyFilter122AllOf) GetEdgeTopologyOk() (*string, bool)`
+
+GetEdgeTopologyOk returns a tuple with the EdgeTopology field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEdgeTopology
+
+`func (o *BTEdgeTopologyFilter122AllOf) SetEdgeTopology(v string)`
+
+SetEdgeTopology sets EdgeTopology field to given value.
+
+### HasEdgeTopology
+
+`func (o *BTEdgeTopologyFilter122AllOf) HasEdgeTopology() bool`
+
+HasEdgeTopology returns a boolean if a field has been set.
 
 ### GetIsInternalEdge
 

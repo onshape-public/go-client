@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **ElementId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **ImageSrc** | Pointer to **string** |  | [optional] 
-**IsObsoletion** | Pointer to **bool** |  | [optional] 
 **IsPickable** | Pointer to **bool** |  | [optional] 
 **Json** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -212,31 +211,6 @@ SetImageSrc sets ImageSrc field to given value.
 `func (o *BTPublishedWorkflowInfo) HasImageSrc() bool`
 
 HasImageSrc returns a boolean if a field has been set.
-
-### GetIsObsoletion
-
-`func (o *BTPublishedWorkflowInfo) GetIsObsoletion() bool`
-
-GetIsObsoletion returns the IsObsoletion field if non-nil, zero value otherwise.
-
-### GetIsObsoletionOk
-
-`func (o *BTPublishedWorkflowInfo) GetIsObsoletionOk() (*bool, bool)`
-
-GetIsObsoletionOk returns a tuple with the IsObsoletion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsObsoletion
-
-`func (o *BTPublishedWorkflowInfo) SetIsObsoletion(v bool)`
-
-SetIsObsoletion sets IsObsoletion field to given value.
-
-### HasIsObsoletion
-
-`func (o *BTPublishedWorkflowInfo) HasIsObsoletion() bool`
-
-HasIsObsoletion returns a boolean if a field has been set.
 
 ### GetIsPickable
 

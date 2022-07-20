@@ -5,13 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Container** | Pointer to [**BTPExpression9**](BTPExpression-9.md) |  | [optional] 
+**Container** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
+**Identifiers** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **IsVarDeclaredHere** | Pointer to **bool** |  | [optional] 
-**Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
-**SpaceBeforeVar** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**StandardType** | Pointer to **string** |  | [optional] 
-**TypeName** | Pointer to **string** |  | [optional] 
-**Var** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**KeyVar** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
+**SpaceBeforeVar** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**StandardTypes** | Pointer to **[]string** |  | [optional] 
+**TypeNames** | Pointer to **[]string** |  | [optional] 
+**Var** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 
 ## Methods
 
@@ -82,6 +83,31 @@ SetContainer sets Container field to given value.
 
 HasContainer returns a boolean if a field has been set.
 
+### GetIdentifiers
+
+`func (o *BTPStatementLoopForIn279) GetIdentifiers() []BTPIdentifier8`
+
+GetIdentifiers returns the Identifiers field if non-nil, zero value otherwise.
+
+### GetIdentifiersOk
+
+`func (o *BTPStatementLoopForIn279) GetIdentifiersOk() (*[]BTPIdentifier8, bool)`
+
+GetIdentifiersOk returns a tuple with the Identifiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdentifiers
+
+`func (o *BTPStatementLoopForIn279) SetIdentifiers(v []BTPIdentifier8)`
+
+SetIdentifiers sets Identifiers field to given value.
+
+### HasIdentifiers
+
+`func (o *BTPStatementLoopForIn279) HasIdentifiers() bool`
+
+HasIdentifiers returns a boolean if a field has been set.
+
 ### GetIsVarDeclaredHere
 
 `func (o *BTPStatementLoopForIn279) GetIsVarDeclaredHere() bool`
@@ -107,30 +133,30 @@ SetIsVarDeclaredHere sets IsVarDeclaredHere field to given value.
 
 HasIsVarDeclaredHere returns a boolean if a field has been set.
 
-### GetName
+### GetKeyVar
 
-`func (o *BTPStatementLoopForIn279) GetName() BTPIdentifier8`
+`func (o *BTPStatementLoopForIn279) GetKeyVar() BTPIdentifier8`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetKeyVar returns the KeyVar field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetKeyVarOk
 
-`func (o *BTPStatementLoopForIn279) GetNameOk() (*BTPIdentifier8, bool)`
+`func (o *BTPStatementLoopForIn279) GetKeyVarOk() (*BTPIdentifier8, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetKeyVarOk returns a tuple with the KeyVar field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetKeyVar
 
-`func (o *BTPStatementLoopForIn279) SetName(v BTPIdentifier8)`
+`func (o *BTPStatementLoopForIn279) SetKeyVar(v BTPIdentifier8)`
 
-SetName sets Name field to given value.
+SetKeyVar sets KeyVar field to given value.
 
-### HasName
+### HasKeyVar
 
-`func (o *BTPStatementLoopForIn279) HasName() bool`
+`func (o *BTPStatementLoopForIn279) HasKeyVar() bool`
 
-HasName returns a boolean if a field has been set.
+HasKeyVar returns a boolean if a field has been set.
 
 ### GetSpaceBeforeVar
 
@@ -157,55 +183,55 @@ SetSpaceBeforeVar sets SpaceBeforeVar field to given value.
 
 HasSpaceBeforeVar returns a boolean if a field has been set.
 
-### GetStandardType
+### GetStandardTypes
 
-`func (o *BTPStatementLoopForIn279) GetStandardType() string`
+`func (o *BTPStatementLoopForIn279) GetStandardTypes() []string`
 
-GetStandardType returns the StandardType field if non-nil, zero value otherwise.
+GetStandardTypes returns the StandardTypes field if non-nil, zero value otherwise.
 
-### GetStandardTypeOk
+### GetStandardTypesOk
 
-`func (o *BTPStatementLoopForIn279) GetStandardTypeOk() (*string, bool)`
+`func (o *BTPStatementLoopForIn279) GetStandardTypesOk() (*[]string, bool)`
 
-GetStandardTypeOk returns a tuple with the StandardType field if it's non-nil, zero value otherwise
+GetStandardTypesOk returns a tuple with the StandardTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStandardType
+### SetStandardTypes
 
-`func (o *BTPStatementLoopForIn279) SetStandardType(v string)`
+`func (o *BTPStatementLoopForIn279) SetStandardTypes(v []string)`
 
-SetStandardType sets StandardType field to given value.
+SetStandardTypes sets StandardTypes field to given value.
 
-### HasStandardType
+### HasStandardTypes
 
-`func (o *BTPStatementLoopForIn279) HasStandardType() bool`
+`func (o *BTPStatementLoopForIn279) HasStandardTypes() bool`
 
-HasStandardType returns a boolean if a field has been set.
+HasStandardTypes returns a boolean if a field has been set.
 
-### GetTypeName
+### GetTypeNames
 
-`func (o *BTPStatementLoopForIn279) GetTypeName() string`
+`func (o *BTPStatementLoopForIn279) GetTypeNames() []string`
 
-GetTypeName returns the TypeName field if non-nil, zero value otherwise.
+GetTypeNames returns the TypeNames field if non-nil, zero value otherwise.
 
-### GetTypeNameOk
+### GetTypeNamesOk
 
-`func (o *BTPStatementLoopForIn279) GetTypeNameOk() (*string, bool)`
+`func (o *BTPStatementLoopForIn279) GetTypeNamesOk() (*[]string, bool)`
 
-GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
+GetTypeNamesOk returns a tuple with the TypeNames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTypeName
+### SetTypeNames
 
-`func (o *BTPStatementLoopForIn279) SetTypeName(v string)`
+`func (o *BTPStatementLoopForIn279) SetTypeNames(v []string)`
 
-SetTypeName sets TypeName field to given value.
+SetTypeNames sets TypeNames field to given value.
 
-### HasTypeName
+### HasTypeNames
 
-`func (o *BTPStatementLoopForIn279) HasTypeName() bool`
+`func (o *BTPStatementLoopForIn279) HasTypeNames() bool`
 
-HasTypeName returns a boolean if a field has been set.
+HasTypeNames returns a boolean if a field has been set.
 
 ### GetVar
 

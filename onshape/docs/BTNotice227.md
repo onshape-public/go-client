@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Level** | Pointer to **string** |  | [optional] 
-**LocationInfos** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo-226.md) |  | [optional] 
+**LocationInfos** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
-**StackTrace** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo-226.md) |  | [optional] 
-**TryNode** | Pointer to [**BTNodeReference21**](BTNodeReference-21.md) |  | [optional] 
+**StackTrace** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
+**TryNode** | Pointer to [**BTNodeReference21**](BTNodeReference21.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods

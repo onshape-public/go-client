@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ExternalDocumentVersionId** | Pointer to **string** |  | [optional] 
 **HiddenLines** | Pointer to **string** |  | [optional] 
 **IncludeSurfaces** | Pointer to **bool** |  | [optional] 
+**IncludeWires** | Pointer to **bool** |  | [optional] 
 **IsFlattenedPart** | Pointer to **bool** |  | [optional] 
 **IsSketchOnly** | Pointer to **bool** |  | [optional] 
 **IsSurface** | Pointer to **bool** |  | [optional] 
@@ -395,6 +396,31 @@ SetIncludeSurfaces sets IncludeSurfaces field to given value.
 `func (o *BTDrawingParams) HasIncludeSurfaces() bool`
 
 HasIncludeSurfaces returns a boolean if a field has been set.
+
+### GetIncludeWires
+
+`func (o *BTDrawingParams) GetIncludeWires() bool`
+
+GetIncludeWires returns the IncludeWires field if non-nil, zero value otherwise.
+
+### GetIncludeWiresOk
+
+`func (o *BTDrawingParams) GetIncludeWiresOk() (*bool, bool)`
+
+GetIncludeWiresOk returns a tuple with the IncludeWires field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeWires
+
+`func (o *BTDrawingParams) SetIncludeWires(v bool)`
+
+SetIncludeWires sets IncludeWires field to given value.
+
+### HasIncludeWires
+
+`func (o *BTDrawingParams) HasIncludeWires() bool`
+
+HasIncludeWires returns a boolean if a field has been set.
 
 ### GetIsFlattenedPart
 

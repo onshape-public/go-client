@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance-1152.md) |  | [optional] 
+**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
 **BodyType** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**Faces** | Pointer to [**[]BTExportTessellatedFacesFace1192**](BTExportTessellatedFacesFace-1192.md) |  | [optional] 
-**FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d-389.md) |  | [optional] 
+**Faces** | Pointer to [**[]BTExportTessellatedFacesFace1192**](BTExportTessellatedFacesFace1192.md) |  | [optional] 
+**FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
 
 ## Methods
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]BTMArrayParameterItem1843**](BTMArrayParameterItem-1843.md) |  | [optional] 
+**Items** | Pointer to [**[]BTMArrayParameterItem1843**](BTMArrayParameterItem1843.md) |  | [optional] 
 
 ## Methods
 

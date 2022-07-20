@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **OffsetDistance2** | Pointer to **float64** |  | [optional] 
 **OffsetOrientation1** | Pointer to **bool** |  | [optional] 
 **OffsetOrientation2** | Pointer to **bool** |  | [optional] 
-**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter-1.md) |  | [optional] 
+**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **PierceParameter** | Pointer to **float64** |  | [optional] 
 
 ## Methods

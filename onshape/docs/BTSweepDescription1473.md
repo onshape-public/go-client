@@ -5,8 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Direction** | Pointer to [**BTVector3d389**](BTVector3d-389.md) |  | [optional] 
-**Profile** | Pointer to [**BTSplineDescription2118**](BTSplineDescription-2118.md) |  | [optional] 
+**Profile** | Pointer to [**BTSplineDescription2118**](BTSplineDescription2118.md) |  | [optional] 
 
 ## Methods
 
@@ -51,31 +50,6 @@ SetBtType sets BtType field to given value.
 `func (o *BTSweepDescription1473) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
-
-### GetDirection
-
-`func (o *BTSweepDescription1473) GetDirection() BTVector3d389`
-
-GetDirection returns the Direction field if non-nil, zero value otherwise.
-
-### GetDirectionOk
-
-`func (o *BTSweepDescription1473) GetDirectionOk() (*BTVector3d389, bool)`
-
-GetDirectionOk returns a tuple with the Direction field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDirection
-
-`func (o *BTSweepDescription1473) SetDirection(v BTVector3d389)`
-
-SetDirection sets Direction field to given value.
-
-### HasDirection
-
-`func (o *BTSweepDescription1473) HasDirection() bool`
-
-HasDirection returns a boolean if a field has been set.
 
 ### GetProfile
 

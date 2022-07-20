@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Area** | Pointer to **float64** |  | [optional] 
-**Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox-1052.md) |  | [optional] 
+**Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**Loops** | Pointer to [**[]BTExportModelLoop1182**](BTExportModelLoop-1182.md) |  | [optional] 
+**Loops** | Pointer to [**[]BTExportModelLoop1182**](BTExportModelLoop1182.md) |  | [optional] 
 **Orientation** | Pointer to **bool** |  | [optional] 
-**Surface** | Pointer to [**BTSurfaceDescription1564**](BTSurfaceDescription-1564.md) |  | [optional] 
+**Surface** | Pointer to [**BTSurfaceDescription1564**](BTSurfaceDescription1564.md) |  | [optional] 
 
 ## Methods
 

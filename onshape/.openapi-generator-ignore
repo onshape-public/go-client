@@ -22,11 +22,8 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
+*_all_of.go
+*_test.go
 go.mod
 go.sum
-*_test.go
 utils_static.go
-# Next three files need to verified manually
-client.go
-model_bt_mass_properties_info_null.go
-model_btm_sketch_constraint_2.go

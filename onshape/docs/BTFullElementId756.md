@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **Configured** | Pointer to **bool** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
-**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId-366.md) |  | [optional] 
-**MicroversionIdAndConfiguration** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration-2338.md) |  | [optional] 
-**Target** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration-2338.md) |  | [optional] 
+**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
+**MicroversionIdAndConfiguration** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
+**Target** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
 
 ## Methods
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BaseContent** | Pointer to **string** |  | [optional] 
-**Delta** | Pointer to **string** |  | [optional] 
-**SubelementId** | Pointer to **string** |  | [optional] 
+**BaseContent** | Pointer to **string** | This base64-encoded data is treated as a full representation of the sub-element&#39;s data and all deltas previously added will no longer be returned. | [optional] 
+**Delta** | Pointer to **string** | This base64-encoded data is a delta which the application can apply to the last added baseContent data. | [optional] 
+**SubelementId** | **string** | The id of the subelement to edit. The value is determined by the application. | 
 
 ## Methods
 
 ### NewBTAppElementChangeParams
 
-`func NewBTAppElementChangeParams() *BTAppElementChangeParams`
+`func NewBTAppElementChangeParams(subelementId string, ) *BTAppElementChangeParams`
 
 NewBTAppElementChangeParams instantiates a new BTAppElementChangeParams object
 This constructor will assign default values to properties that have it defined,
@@ -96,11 +96,6 @@ and a boolean to check if the value has been set.
 
 SetSubelementId sets SubelementId field to given value.
 
-### HasSubelementId
-
-`func (o *BTAppElementChangeParams) HasSubelementId() bool`
-
-HasSubelementId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

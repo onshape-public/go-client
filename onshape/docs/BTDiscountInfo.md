@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **AmountOff** | Pointer to **int32** |  | [optional] 
 **CouponType** | Pointer to **int32** |  | [optional] 
 **CouponValidMonths** | Pointer to **int32** |  | [optional] 
-**CreatedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
-**ExpiresAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**ExpiresAt** | Pointer to **JSONTime** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **PercentOff** | Pointer to **int32** |  | [optional] 
 **PlanId** | Pointer to **string** |  | [optional] 
 **TrialEndDate** | Pointer to **string** |  | [optional] 
-**UsedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**UsedAt** | Pointer to **JSONTime** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 
 ## Methods

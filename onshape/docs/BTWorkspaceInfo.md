@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CanDelete** | Pointer to **bool** |  | [optional] 
-**CreatedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **Creator** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **IsReadOnly** | Pointer to **bool** |  | [optional] 
 **LastModifier** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Microversion** | Pointer to **string** |  | [optional] 
-**ModifiedAt** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**OverrideDate** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**OverrideDate** | Pointer to **JSONTime** |  | [optional] 
 **Parent** | Pointer to **string** |  | [optional] 
 **Parents** | Pointer to [**[]BTVersionInfo**](BTVersionInfo.md) |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 

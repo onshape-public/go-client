@@ -5,9 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Configuration** | Pointer to **string** |  | [optional] 
-**DocumentId** | Pointer to **string** |  | [optional] 
+**DocumentId** | **string** |  | 
 **ElementId** | Pointer to **string** |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
+**IncludePartTypes** | Pointer to **[]string** |  | [optional] 
 **IsAssembly** | Pointer to **bool** |  | [optional] 
 **IsHidden** | Pointer to **bool** |  | [optional] 
 **IsSuppressed** | Pointer to **bool** |  | [optional] 
@@ -22,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewBTAssemblyInstanceDefinitionParams
 
-`func NewBTAssemblyInstanceDefinitionParams() *BTAssemblyInstanceDefinitionParams`
+`func NewBTAssemblyInstanceDefinitionParams(documentId string, ) *BTAssemblyInstanceDefinitionParams`
 
 NewBTAssemblyInstanceDefinitionParams instantiates a new BTAssemblyInstanceDefinitionParams object
 This constructor will assign default values to properties that have it defined,
@@ -81,11 +82,6 @@ and a boolean to check if the value has been set.
 
 SetDocumentId sets DocumentId field to given value.
 
-### HasDocumentId
-
-`func (o *BTAssemblyInstanceDefinitionParams) HasDocumentId() bool`
-
-HasDocumentId returns a boolean if a field has been set.
 
 ### GetElementId
 
@@ -136,6 +132,31 @@ SetFeatureId sets FeatureId field to given value.
 `func (o *BTAssemblyInstanceDefinitionParams) HasFeatureId() bool`
 
 HasFeatureId returns a boolean if a field has been set.
+
+### GetIncludePartTypes
+
+`func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypes() []string`
+
+GetIncludePartTypes returns the IncludePartTypes field if non-nil, zero value otherwise.
+
+### GetIncludePartTypesOk
+
+`func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypesOk() (*[]string, bool)`
+
+GetIncludePartTypesOk returns a tuple with the IncludePartTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludePartTypes
+
+`func (o *BTAssemblyInstanceDefinitionParams) SetIncludePartTypes(v []string)`
+
+SetIncludePartTypes sets IncludePartTypes field to given value.
+
+### HasIncludePartTypes
+
+`func (o *BTAssemblyInstanceDefinitionParams) HasIncludePartTypes() bool`
+
+HasIncludePartTypes returns a boolean if a field has been set.
 
 ### GetIsAssembly
 

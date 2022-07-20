@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**Direction** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**DirectionOrientedWithFace** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**Origin** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,30 +28,80 @@ NewBTCurveDescription1583WithDefaults instantiates a new BTCurveDescription1583 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetBtType
+### GetDirection
 
-`func (o *BTCurveDescription1583) GetBtType() string`
+`func (o *BTCurveDescription1583) GetDirection() BTVector3d389`
 
-GetBtType returns the BtType field if non-nil, zero value otherwise.
+GetDirection returns the Direction field if non-nil, zero value otherwise.
 
-### GetBtTypeOk
+### GetDirectionOk
 
-`func (o *BTCurveDescription1583) GetBtTypeOk() (*string, bool)`
+`func (o *BTCurveDescription1583) GetDirectionOk() (*BTVector3d389, bool)`
 
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+GetDirectionOk returns a tuple with the Direction field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBtType
+### SetDirection
 
-`func (o *BTCurveDescription1583) SetBtType(v string)`
+`func (o *BTCurveDescription1583) SetDirection(v BTVector3d389)`
 
-SetBtType sets BtType field to given value.
+SetDirection sets Direction field to given value.
 
-### HasBtType
+### HasDirection
 
-`func (o *BTCurveDescription1583) HasBtType() bool`
+`func (o *BTCurveDescription1583) HasDirection() bool`
 
-HasBtType returns a boolean if a field has been set.
+HasDirection returns a boolean if a field has been set.
+
+### GetDirectionOrientedWithFace
+
+`func (o *BTCurveDescription1583) GetDirectionOrientedWithFace() BTVector3d389`
+
+GetDirectionOrientedWithFace returns the DirectionOrientedWithFace field if non-nil, zero value otherwise.
+
+### GetDirectionOrientedWithFaceOk
+
+`func (o *BTCurveDescription1583) GetDirectionOrientedWithFaceOk() (*BTVector3d389, bool)`
+
+GetDirectionOrientedWithFaceOk returns a tuple with the DirectionOrientedWithFace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectionOrientedWithFace
+
+`func (o *BTCurveDescription1583) SetDirectionOrientedWithFace(v BTVector3d389)`
+
+SetDirectionOrientedWithFace sets DirectionOrientedWithFace field to given value.
+
+### HasDirectionOrientedWithFace
+
+`func (o *BTCurveDescription1583) HasDirectionOrientedWithFace() bool`
+
+HasDirectionOrientedWithFace returns a boolean if a field has been set.
+
+### GetOrigin
+
+`func (o *BTCurveDescription1583) GetOrigin() BTVector3d389`
+
+GetOrigin returns the Origin field if non-nil, zero value otherwise.
+
+### GetOriginOk
+
+`func (o *BTCurveDescription1583) GetOriginOk() (*BTVector3d389, bool)`
+
+GetOriginOk returns a tuple with the Origin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrigin
+
+`func (o *BTCurveDescription1583) SetOrigin(v BTVector3d389)`
+
+SetOrigin sets Origin field to given value.
+
+### HasOrigin
+
+`func (o *BTCurveDescription1583) HasOrigin() bool`
+
+HasOrigin returns a boolean if a field has been set.
 
 ### GetType
 

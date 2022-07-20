@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PartStudioFeatures** | Pointer to [**[]BTAssemblyPSFeatureInfo**](BTAssemblyPSFeatureInfo.md) |  | [optional] 
-**Parts** | Pointer to [**[]BTAssemblyPartsInfo**](BTAssemblyPartsInfo.md) |  | [optional] 
+**PartStudioFeatures** | Pointer to [**[]BTAssemblyPsFeatureInfo**](BTAssemblyPsFeatureInfo.md) |  | [optional] 
+**Parts** | Pointer to [**[]BTAssemblyPartInfo**](BTAssemblyPartInfo.md) |  | [optional] 
 **RootAssembly** | Pointer to [**BTRootAssemblyInfo**](BTRootAssemblyInfo.md) |  | [optional] 
 **SubAssemblies** | Pointer to [**[]BTSubAssemblyInfo**](BTSubAssemblyInfo.md) |  | [optional] 
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPartStudioFeatures
 
-`func (o *BTAssemblyDefinitionInfo) GetPartStudioFeatures() []BTAssemblyPSFeatureInfo`
+`func (o *BTAssemblyDefinitionInfo) GetPartStudioFeatures() []BTAssemblyPsFeatureInfo`
 
 GetPartStudioFeatures returns the PartStudioFeatures field if non-nil, zero value otherwise.
 
 ### GetPartStudioFeaturesOk
 
-`func (o *BTAssemblyDefinitionInfo) GetPartStudioFeaturesOk() (*[]BTAssemblyPSFeatureInfo, bool)`
+`func (o *BTAssemblyDefinitionInfo) GetPartStudioFeaturesOk() (*[]BTAssemblyPsFeatureInfo, bool)`
 
 GetPartStudioFeaturesOk returns a tuple with the PartStudioFeatures field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPartStudioFeatures
 
-`func (o *BTAssemblyDefinitionInfo) SetPartStudioFeatures(v []BTAssemblyPSFeatureInfo)`
+`func (o *BTAssemblyDefinitionInfo) SetPartStudioFeatures(v []BTAssemblyPsFeatureInfo)`
 
 SetPartStudioFeatures sets PartStudioFeatures field to given value.
 
@@ -55,20 +55,20 @@ HasPartStudioFeatures returns a boolean if a field has been set.
 
 ### GetParts
 
-`func (o *BTAssemblyDefinitionInfo) GetParts() []BTAssemblyPartsInfo`
+`func (o *BTAssemblyDefinitionInfo) GetParts() []BTAssemblyPartInfo`
 
 GetParts returns the Parts field if non-nil, zero value otherwise.
 
 ### GetPartsOk
 
-`func (o *BTAssemblyDefinitionInfo) GetPartsOk() (*[]BTAssemblyPartsInfo, bool)`
+`func (o *BTAssemblyDefinitionInfo) GetPartsOk() (*[]BTAssemblyPartInfo, bool)`
 
 GetPartsOk returns a tuple with the Parts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParts
 
-`func (o *BTAssemblyDefinitionInfo) SetParts(v []BTAssemblyPartsInfo)`
+`func (o *BTAssemblyDefinitionInfo) SetParts(v []BTAssemblyPartInfo)`
 
 SetParts sets Parts field to given value.
 

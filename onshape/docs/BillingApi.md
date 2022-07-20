@@ -1,10 +1,10 @@
 # \BillingApi
 
-All URIs are relative to *https://cad.onshape.com*
+All URIs are relative to *https://staging.dev.onshape.com/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetClientPlans**](BillingApi.md#GetClientPlans) | **Get** /api/billing/plans/client/{cid} | Get billing plans for client.
+[**GetClientPlans**](BillingApi.md#GetClientPlans) | **Get** /billing/plans/client/{cid} | Retrieve billing plans and their information for an application by client ID.
 
 
 
@@ -12,7 +12,32 @@ Method | HTTP request | Description
 
 > GetClientPlans(ctx, cid).Execute()
 
-Get billing plans for client.
+Retrieve billing plans and their information for an application by client ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    cid := "cid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingApi.GetClientPlans(context.Background(), cid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingApi.GetClientPlans``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
 
 ### Path Parameters
 
@@ -37,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

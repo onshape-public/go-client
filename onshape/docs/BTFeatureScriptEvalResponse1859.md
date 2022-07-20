@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Console** | Pointer to **string** |  | [optional] 
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
 **MicroversionSkew** | Pointer to **bool** |  | [optional] 
-**Notices** | Pointer to [**[]BTNotice227**](BTNotice-227.md) |  | [optional] 
+**Notices** | Pointer to [**[]BTNotice227**](BTNotice227.md) |  | [optional] 
 **RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 
-**Result** | Pointer to [**BTFSValue1888**](BTFSValue-1888.md) |  | [optional] 
+**Result** | Pointer to [**BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 **SerializationVersion** | Pointer to **string** |  | [optional] 
 **SourceMicroversion** | Pointer to **string** |  | [optional] 
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Edges** | Pointer to [**[]BTExportModelEdge1782**](BTExportModelEdge-1782.md) |  | [optional] 
-**Faces** | Pointer to [**[]BTExportModelFace1363**](BTExportModelFace-1363.md) |  | [optional] 
+**Edges** | Pointer to [**[]BTExportModelEdge1782**](BTExportModelEdge1782.md) |  | [optional] 
+**Faces** | Pointer to [**[]BTExportModelFace1363**](BTExportModelFace1363.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**Vertices** | Pointer to [**[]BTExportModelVertex858**](BTExportModelVertex-858.md) |  | [optional] 
+**Vertices** | Pointer to [**[]BTExportModelVertex858**](BTExportModelVertex858.md) |  | [optional] 
 
 ## Methods
 

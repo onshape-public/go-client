@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**LookupTable** | Pointer to [**BTParameterLookupTableListEntry1916**](BTParameterLookupTableListEntry-1916.md) |  | [optional] 
+**LookupTable** | Pointer to [**BTParameterLookupTableListEntry1916**](BTParameterLookupTableListEntry1916.md) |  | [optional] 
 
 ## Methods
 

@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Changes** | Pointer to [**[]BTAppElementChangeParams**](BTAppElementChangeParams.md) |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**ParentChangeId** | Pointer to **string** |  | [optional] 
-**ReturnError** | Pointer to **bool** |  | [optional] 
-**TransactionId** | Pointer to **string** |  | [optional] 
+**Changes** | Pointer to [**[]BTAppElementChangeParams**](BTAppElementChangeParams.md) | Edits to be applied to the element&#39;s subelement data. | [optional] 
+**Description** | Pointer to **string** | The label that will appear in the document&#39;s edit history for this operation. If blank, a value will be auto-generated. | [optional] 
+**JsonTreeEdit** | Pointer to [**BTJEdit3734**](BTJEdit3734.md) |  | [optional] 
+**ParentChangeId** | Pointer to **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | [optional] 
+**PropertyUpdates** | Pointer to [**[]BTMetadataPropertyUpdateParams**](BTMetadataPropertyUpdateParams.md) | Edits to be applied to the element&#39;s metadata. | [optional] 
+**ReturnError** | Pointer to **bool** | If true, errors in request processing will be returned in a 200 response with a meaningful description. Otherwise, errors will result in a relevant HTTP error response. | [optional] 
+**ReturnJsonDifferenceFormat** | Pointer to **string** | If specified, and jsonTreeEdit is non-empty, the json difference will be returned in this format, otherwise no json difference will be returned. | [optional] 
+**TransactionId** | Pointer to **string** | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. | [optional] 
 
 ## Methods
 
@@ -79,6 +82,31 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetJsonTreeEdit
+
+`func (o *BTAppElementUpdateParams) GetJsonTreeEdit() BTJEdit3734`
+
+GetJsonTreeEdit returns the JsonTreeEdit field if non-nil, zero value otherwise.
+
+### GetJsonTreeEditOk
+
+`func (o *BTAppElementUpdateParams) GetJsonTreeEditOk() (*BTJEdit3734, bool)`
+
+GetJsonTreeEditOk returns a tuple with the JsonTreeEdit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJsonTreeEdit
+
+`func (o *BTAppElementUpdateParams) SetJsonTreeEdit(v BTJEdit3734)`
+
+SetJsonTreeEdit sets JsonTreeEdit field to given value.
+
+### HasJsonTreeEdit
+
+`func (o *BTAppElementUpdateParams) HasJsonTreeEdit() bool`
+
+HasJsonTreeEdit returns a boolean if a field has been set.
+
 ### GetParentChangeId
 
 `func (o *BTAppElementUpdateParams) GetParentChangeId() string`
@@ -104,6 +132,31 @@ SetParentChangeId sets ParentChangeId field to given value.
 
 HasParentChangeId returns a boolean if a field has been set.
 
+### GetPropertyUpdates
+
+`func (o *BTAppElementUpdateParams) GetPropertyUpdates() []BTMetadataPropertyUpdateParams`
+
+GetPropertyUpdates returns the PropertyUpdates field if non-nil, zero value otherwise.
+
+### GetPropertyUpdatesOk
+
+`func (o *BTAppElementUpdateParams) GetPropertyUpdatesOk() (*[]BTMetadataPropertyUpdateParams, bool)`
+
+GetPropertyUpdatesOk returns a tuple with the PropertyUpdates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPropertyUpdates
+
+`func (o *BTAppElementUpdateParams) SetPropertyUpdates(v []BTMetadataPropertyUpdateParams)`
+
+SetPropertyUpdates sets PropertyUpdates field to given value.
+
+### HasPropertyUpdates
+
+`func (o *BTAppElementUpdateParams) HasPropertyUpdates() bool`
+
+HasPropertyUpdates returns a boolean if a field has been set.
+
 ### GetReturnError
 
 `func (o *BTAppElementUpdateParams) GetReturnError() bool`
@@ -128,6 +181,31 @@ SetReturnError sets ReturnError field to given value.
 `func (o *BTAppElementUpdateParams) HasReturnError() bool`
 
 HasReturnError returns a boolean if a field has been set.
+
+### GetReturnJsonDifferenceFormat
+
+`func (o *BTAppElementUpdateParams) GetReturnJsonDifferenceFormat() string`
+
+GetReturnJsonDifferenceFormat returns the ReturnJsonDifferenceFormat field if non-nil, zero value otherwise.
+
+### GetReturnJsonDifferenceFormatOk
+
+`func (o *BTAppElementUpdateParams) GetReturnJsonDifferenceFormatOk() (*string, bool)`
+
+GetReturnJsonDifferenceFormatOk returns a tuple with the ReturnJsonDifferenceFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturnJsonDifferenceFormat
+
+`func (o *BTAppElementUpdateParams) SetReturnJsonDifferenceFormat(v string)`
+
+SetReturnJsonDifferenceFormat sets ReturnJsonDifferenceFormat field to given value.
+
+### HasReturnJsonDifferenceFormat
+
+`func (o *BTAppElementUpdateParams) HasReturnJsonDifferenceFormat() bool`
+
+HasReturnJsonDifferenceFormat returns a boolean if a field has been set.
 
 ### GetTransactionId
 

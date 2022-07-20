@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **CombinedNamespacePathAndVersion** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
-**ModuleId** | Pointer to [**BTPModuleId235**](BTPModuleId-235.md) |  | [optional] 
-**Namespace** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**ModuleId** | Pointer to [**BTPModuleId235**](BTPModuleId235.md) |  | [optional] 
+**Namespace** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **NamespaceString** | Pointer to **string** |  | [optional] 
-**SpaceBeforeImport** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
+**SpaceBeforeImport** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
 

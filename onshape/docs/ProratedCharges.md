@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | Pointer to **int64** |  | [optional] 
-**Date** | Pointer to [**JSONTime**](JSONTime.md) |  | [optional] 
+**Date** | Pointer to **JSONTime** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Constraints** | Pointer to [**[]BTMSketchConstraint2**](BTMSketchConstraint-2.md) |  | [optional] 
-**Entities** | Pointer to [**[]BTMSketchGeomEntity5**](BTMSketchGeomEntity-5.md) |  | [optional] 
+**Constraints** | Pointer to [**[]BTMSketchConstraint2**](BTMSketchConstraint2.md) |  | [optional] 
+**Entities** | Pointer to [**[]BTMSketchGeomEntity5**](BTMSketchGeomEntity5.md) |  | [optional] 
 
 ## Methods
 

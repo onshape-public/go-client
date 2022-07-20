@@ -5,18 +5,22 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CompanyId** | Pointer to **string** |  | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
+**CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DescriptionAsProperty** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Info** | Pointer to **map[string]string** |  | [optional] 
-**IsObsoletion** | Pointer to **bool** |  | [optional] 
+**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
+**ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NameAsProperty** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**[]BTWorkflowPropertyInfo**](BTWorkflowPropertyInfo.md) |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 **Workflow** | Pointer to [**BTWorkflowSnapshotInfo**](BTWorkflowSnapshotInfo.md) |  | [optional] 
+**WorkflowError** | Pointer to **string** |  | [optional] 
 **WorkflowId** | Pointer to [**BTPublishedWorkflowId**](BTPublishedWorkflowId.md) |  | [optional] 
 
 ## Methods
@@ -62,6 +66,56 @@ SetCompanyId sets CompanyId field to given value.
 `func (o *BTWorkflowableTestObjectInfo) HasCompanyId() bool`
 
 HasCompanyId returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *BTWorkflowableTestObjectInfo) GetCreatedAt() JSONTime`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *BTWorkflowableTestObjectInfo) GetCreatedAtOk() (*JSONTime, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *BTWorkflowableTestObjectInfo) SetCreatedAt(v JSONTime)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *BTWorkflowableTestObjectInfo) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### GetCreatedBy
+
+`func (o *BTWorkflowableTestObjectInfo) GetCreatedBy() BTUserBasicSummaryInfo`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *BTWorkflowableTestObjectInfo) GetCreatedByOk() (*BTUserBasicSummaryInfo, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *BTWorkflowableTestObjectInfo) SetCreatedBy(v BTUserBasicSummaryInfo)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *BTWorkflowableTestObjectInfo) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -213,30 +267,55 @@ SetInfo sets Info field to given value.
 
 HasInfo returns a boolean if a field has been set.
 
-### GetIsObsoletion
+### GetModifiedAt
 
-`func (o *BTWorkflowableTestObjectInfo) GetIsObsoletion() bool`
+`func (o *BTWorkflowableTestObjectInfo) GetModifiedAt() JSONTime`
 
-GetIsObsoletion returns the IsObsoletion field if non-nil, zero value otherwise.
+GetModifiedAt returns the ModifiedAt field if non-nil, zero value otherwise.
 
-### GetIsObsoletionOk
+### GetModifiedAtOk
 
-`func (o *BTWorkflowableTestObjectInfo) GetIsObsoletionOk() (*bool, bool)`
+`func (o *BTWorkflowableTestObjectInfo) GetModifiedAtOk() (*JSONTime, bool)`
 
-GetIsObsoletionOk returns a tuple with the IsObsoletion field if it's non-nil, zero value otherwise
+GetModifiedAtOk returns a tuple with the ModifiedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsObsoletion
+### SetModifiedAt
 
-`func (o *BTWorkflowableTestObjectInfo) SetIsObsoletion(v bool)`
+`func (o *BTWorkflowableTestObjectInfo) SetModifiedAt(v JSONTime)`
 
-SetIsObsoletion sets IsObsoletion field to given value.
+SetModifiedAt sets ModifiedAt field to given value.
 
-### HasIsObsoletion
+### HasModifiedAt
 
-`func (o *BTWorkflowableTestObjectInfo) HasIsObsoletion() bool`
+`func (o *BTWorkflowableTestObjectInfo) HasModifiedAt() bool`
 
-HasIsObsoletion returns a boolean if a field has been set.
+HasModifiedAt returns a boolean if a field has been set.
+
+### GetModifiedBy
+
+`func (o *BTWorkflowableTestObjectInfo) GetModifiedBy() BTUserBasicSummaryInfo`
+
+GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
+
+### GetModifiedByOk
+
+`func (o *BTWorkflowableTestObjectInfo) GetModifiedByOk() (*BTUserBasicSummaryInfo, bool)`
+
+GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedBy
+
+`func (o *BTWorkflowableTestObjectInfo) SetModifiedBy(v BTUserBasicSummaryInfo)`
+
+SetModifiedBy sets ModifiedBy field to given value.
+
+### HasModifiedBy
+
+`func (o *BTWorkflowableTestObjectInfo) HasModifiedBy() bool`
+
+HasModifiedBy returns a boolean if a field has been set.
 
 ### GetName
 
@@ -362,6 +441,31 @@ SetWorkflow sets Workflow field to given value.
 `func (o *BTWorkflowableTestObjectInfo) HasWorkflow() bool`
 
 HasWorkflow returns a boolean if a field has been set.
+
+### GetWorkflowError
+
+`func (o *BTWorkflowableTestObjectInfo) GetWorkflowError() string`
+
+GetWorkflowError returns the WorkflowError field if non-nil, zero value otherwise.
+
+### GetWorkflowErrorOk
+
+`func (o *BTWorkflowableTestObjectInfo) GetWorkflowErrorOk() (*string, bool)`
+
+GetWorkflowErrorOk returns a tuple with the WorkflowError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowError
+
+`func (o *BTWorkflowableTestObjectInfo) SetWorkflowError(v string)`
+
+SetWorkflowError sets WorkflowError field to given value.
+
+### HasWorkflowError
+
+`func (o *BTWorkflowableTestObjectInfo) HasWorkflowError() bool`
+
+HasWorkflowError returns a boolean if a field has been set.
 
 ### GetWorkflowId
 

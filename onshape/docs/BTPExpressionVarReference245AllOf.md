@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to [**BTPName261**](BTPName-261.md) |  | [optional] 
+**Name** | Pointer to [**BTPName261**](BTPName261.md) |  | [optional] 
 
 ## Methods
 

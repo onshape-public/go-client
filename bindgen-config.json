@@ -1,0 +1,126 @@
+{
+  "fetch": {
+    "url": "https://staging.dev.onshape.com",
+    "versionAlias": null,
+    "userRole": "PUBLIC",
+    "operationIds": null
+  },
+  "generate": {
+    "generatorUrl": "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.0.0/openapi-generator-cli-6.0.0.jar",
+    "preprocess": [
+      {
+        "key": "paths['/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodematrices'].get.parameters[7]",
+        "type": "remove"
+      },
+      {
+        "key": "paths['/appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}'].post.requestBody.content['multipart/form-data'].schema.properties.file.type",
+        "type": "update",
+        "value": "string"
+      },
+      {
+        "key": "components.schemas['BTMetadataPropertyInfo'].properties.value",
+        "type": "update",
+        "value": {}
+      },
+      {
+        "key": "components.schemas['BTMetadataPropertyInfo'].properties.defaultValue",
+        "type": "update",
+        "value": {}
+      },
+      {
+        "key": "components.schemas['BTJEditInsert-2523'].allOf[1].properties.value.additionalProperties",
+        "type": "update",
+        "value": true
+      },
+      {
+        "key": "components.schemas['BTGetJsonResponse-2137'].properties.tree.additionalProperties",
+        "type": "update",
+        "value": true
+      },
+      {
+        "key": "components.schemas['BTJEditChange-2636'].allOf[1].properties.value.additionalProperties",
+        "type": "update",
+        "value": true
+      },
+      {
+        "key": "components.schemas['BTEventParams']",
+        "type": "update",
+        "value": {
+          "type": "object",
+          "discriminator": {
+            "propertyName": "jsonType",
+            "mapping": {
+              "DocumentOpenEventInfo": "#/components/schemas/BTDocumentOpenEventParams"
+            }
+          },
+          "properties": { "jsonType": { "type":"string" } }
+        }
+      },
+      {
+        "key": "components.schemas['BTDocumentOpenEventParams']",
+        "type": "update",
+        "value": {
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/BTEventParams"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "documentId": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "key": "paths['/events']",
+        "type": "update",
+        "value": {
+          "post": {
+            "tags": [
+              "Event"
+            ],
+            "summary": "Fire an asynchronous event.",
+            "operationId": "fireEvent",
+            "requestBody": {
+              "content": {
+                "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
+                  "schema": {
+                    "$ref": "#/components/schemas/BTEventParams"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "default": {
+                "description": "default response",
+                "content": {
+                  "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
+                    "schema": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            },
+            "deprecated": false,
+            "security": [
+              {
+                "OAuth2": [
+                  "OAuth2Read"
+                ],
+                "BasicAuth": [
+                  "OAuth2Read"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

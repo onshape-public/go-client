@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **DefaultIndex** | Pointer to **int32** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**Entries** | Pointer to [**[]BTParameterLookupTableEntry1667**](BTParameterLookupTableEntry-1667.md) |  | [optional] 
+**Entries** | Pointer to [**[]BTParameterLookupTableEntry1667**](BTParameterLookupTableEntry1667.md) |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **LocalizableName** | Pointer to **string** |  | [optional] 
 **LocalizedLabel** | Pointer to **string** |  | [optional] 

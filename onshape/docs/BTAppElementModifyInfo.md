@@ -4,20 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChangeId** | Pointer to **string** |  | [optional] 
-**ElementId** | Pointer to **string** |  | [optional] 
-**ErrorCode** | Pointer to **int32** |  | [optional] 
-**ErrorDescription** | Pointer to **string** |  | [optional] 
+**ChangeId** | **string** | The latest change id for the element, after the edit was committed. | 
+**ElementId** | Pointer to **string** | The id of the edited element. | [optional] 
+**ElementIds** | Pointer to **[]string** | The ids of the edited elements, if multiple elements were edited. | [optional] 
+**ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
+**ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
 **ErrorValue** | Pointer to **string** |  | [optional] 
-**ParentChangeId** | Pointer to **string** |  | [optional] 
-**PropertyEditsMerged** | Pointer to **bool** |  | [optional] 
-**TransactionId** | Pointer to **string** |  | [optional] 
+**JsonDifference** | Pointer to [**BTDiffJsonResponse2725**](BTDiffJsonResponse2725.md) |  | [optional] 
+**ParentChangeId** | Pointer to **string** | The latest change id for the element, before the edit was made. | [optional] 
+**PropertyEditsMerged** | Pointer to **bool** | When committing a transaction, this field indicates if the properties of the application element were changed after the transaction was created. | [optional] 
+**TransactionId** | Pointer to **string** | The id of the transaction in which the edit was applied. | [optional] 
 
 ## Methods
 
 ### NewBTAppElementModifyInfo
 
-`func NewBTAppElementModifyInfo() *BTAppElementModifyInfo`
+`func NewBTAppElementModifyInfo(changeId string, ) *BTAppElementModifyInfo`
 
 NewBTAppElementModifyInfo instantiates a new BTAppElementModifyInfo object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +53,6 @@ and a boolean to check if the value has been set.
 
 SetChangeId sets ChangeId field to given value.
 
-### HasChangeId
-
-`func (o *BTAppElementModifyInfo) HasChangeId() bool`
-
-HasChangeId returns a boolean if a field has been set.
 
 ### GetElementId
 
@@ -81,6 +78,31 @@ SetElementId sets ElementId field to given value.
 `func (o *BTAppElementModifyInfo) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
+
+### GetElementIds
+
+`func (o *BTAppElementModifyInfo) GetElementIds() []string`
+
+GetElementIds returns the ElementIds field if non-nil, zero value otherwise.
+
+### GetElementIdsOk
+
+`func (o *BTAppElementModifyInfo) GetElementIdsOk() (*[]string, bool)`
+
+GetElementIdsOk returns a tuple with the ElementIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementIds
+
+`func (o *BTAppElementModifyInfo) SetElementIds(v []string)`
+
+SetElementIds sets ElementIds field to given value.
+
+### HasElementIds
+
+`func (o *BTAppElementModifyInfo) HasElementIds() bool`
+
+HasElementIds returns a boolean if a field has been set.
 
 ### GetErrorCode
 
@@ -156,6 +178,31 @@ SetErrorValue sets ErrorValue field to given value.
 `func (o *BTAppElementModifyInfo) HasErrorValue() bool`
 
 HasErrorValue returns a boolean if a field has been set.
+
+### GetJsonDifference
+
+`func (o *BTAppElementModifyInfo) GetJsonDifference() BTDiffJsonResponse2725`
+
+GetJsonDifference returns the JsonDifference field if non-nil, zero value otherwise.
+
+### GetJsonDifferenceOk
+
+`func (o *BTAppElementModifyInfo) GetJsonDifferenceOk() (*BTDiffJsonResponse2725, bool)`
+
+GetJsonDifferenceOk returns a tuple with the JsonDifference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJsonDifference
+
+`func (o *BTAppElementModifyInfo) SetJsonDifference(v BTDiffJsonResponse2725)`
+
+SetJsonDifference sets JsonDifference field to given value.
+
+### HasJsonDifference
+
+`func (o *BTAppElementModifyInfo) HasJsonDifference() bool`
+
+HasJsonDifference returns a boolean if a field has been set.
 
 ### GetParentChangeId
 

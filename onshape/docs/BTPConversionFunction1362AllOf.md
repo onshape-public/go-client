@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**From** | Pointer to [**BTPLiteralNumber258**](BTPLiteralNumber-258.md) |  | [optional] 
-**SpaceAfterType** | Pointer to [**BTPSpace10**](BTPSpace-10.md) |  | [optional] 
-**To** | Pointer to [**BTPLiteralNumber258**](BTPLiteralNumber-258.md) |  | [optional] 
-**TypeName** | Pointer to [**BTPIdentifier8**](BTPIdentifier-8.md) |  | [optional] 
+**From** | Pointer to [**BTPLiteralNumber258**](BTPLiteralNumber258.md) |  | [optional] 
+**SpaceAfterType** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
+**To** | Pointer to [**BTPLiteralNumber258**](BTPLiteralNumber258.md) |  | [optional] 
+**TypeName** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 
 ## Methods
 

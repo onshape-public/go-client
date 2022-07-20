@@ -7,11 +7,10 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **FullPathAsString** | Pointer to **string** |  | [optional] 
 **HeadInstanceId** | Pointer to **string** |  | [optional] 
-**OccurrenceWithoutHead** | Pointer to [**BTOccurrence74**](BTOccurrence-74.md) |  | [optional] 
-**OccurrenceWithoutTail** | Pointer to [**BTOccurrence74**](BTOccurrence-74.md) |  | [optional] 
-**Parent** | Pointer to [**BTOccurrence74**](BTOccurrence-74.md) |  | [optional] 
+**OccurrenceWithoutHead** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
+**OccurrenceWithoutTail** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
+**Parent** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Path** | Pointer to **[]string** |  | [optional] 
-**PatternDescendant** | Pointer to **bool** |  | [optional] 
 **RootOccurrence** | Pointer to **bool** |  | [optional] 
 **TailInstanceId** | Pointer to **string** |  | [optional] 
 
@@ -208,31 +207,6 @@ SetPath sets Path field to given value.
 `func (o *BTOccurrence74) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
-
-### GetPatternDescendant
-
-`func (o *BTOccurrence74) GetPatternDescendant() bool`
-
-GetPatternDescendant returns the PatternDescendant field if non-nil, zero value otherwise.
-
-### GetPatternDescendantOk
-
-`func (o *BTOccurrence74) GetPatternDescendantOk() (*bool, bool)`
-
-GetPatternDescendantOk returns a tuple with the PatternDescendant field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPatternDescendant
-
-`func (o *BTOccurrence74) SetPatternDescendant(v bool)`
-
-SetPatternDescendant sets PatternDescendant field to given value.
-
-### HasPatternDescendant
-
-`func (o *BTOccurrence74) HasPatternDescendant() bool`
-
-HasPatternDescendant returns a boolean if a field has been set.
 
 ### GetRootOccurrence
 

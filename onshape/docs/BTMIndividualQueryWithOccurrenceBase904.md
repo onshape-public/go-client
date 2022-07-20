@@ -5,12 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase-139.md) |  | [optional] 
+**DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **DeterministicIds** | Pointer to **[]string** |  | [optional] 
+**FullPathAsString** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
+**Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Path** | Pointer to **[]string** |  | [optional] 
-**Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase-139.md) |  | [optional] 
+**Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **QueryString** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -107,6 +109,31 @@ SetDeterministicIds sets DeterministicIds field to given value.
 
 HasDeterministicIds returns a boolean if a field has been set.
 
+### GetFullPathAsString
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetFullPathAsString() string`
+
+GetFullPathAsString returns the FullPathAsString field if non-nil, zero value otherwise.
+
+### GetFullPathAsStringOk
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetFullPathAsStringOk() (*string, bool)`
+
+GetFullPathAsStringOk returns a tuple with the FullPathAsString field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullPathAsString
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) SetFullPathAsString(v string)`
+
+SetFullPathAsString sets FullPathAsString field to given value.
+
+### HasFullPathAsString
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) HasFullPathAsString() bool`
+
+HasFullPathAsString returns a boolean if a field has been set.
+
 ### GetImportMicroversion
 
 `func (o *BTMIndividualQueryWithOccurrenceBase904) GetImportMicroversion() string`
@@ -156,6 +183,31 @@ SetNodeId sets NodeId field to given value.
 `func (o *BTMIndividualQueryWithOccurrenceBase904) HasNodeId() bool`
 
 HasNodeId returns a boolean if a field has been set.
+
+### GetOccurrence
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetOccurrence() BTOccurrence74`
+
+GetOccurrence returns the Occurrence field if non-nil, zero value otherwise.
+
+### GetOccurrenceOk
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetOccurrenceOk() (*BTOccurrence74, bool)`
+
+GetOccurrenceOk returns a tuple with the Occurrence field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOccurrence
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) SetOccurrence(v BTOccurrence74)`
+
+SetOccurrence sets Occurrence field to given value.
+
+### HasOccurrence
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) HasOccurrence() bool`
+
+HasOccurrence returns a boolean if a field has been set.
 
 ### GetPath
 

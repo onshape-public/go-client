@@ -7,14 +7,23 @@ Name | Type | Description | Notes
 **AccessReports** | Pointer to **bool** |  | [optional] 
 **AdminEnterprise** | Pointer to **bool** |  | [optional] 
 **AllowAppStoreAccess** | Pointer to **bool** |  | [optional] 
+**AllowPublicDocumentsAccess** | Pointer to **bool** |  | [optional] 
 **ApproveReleases** | Pointer to **bool** |  | [optional] 
+**CreateChangeOrders** | Pointer to **bool** |  | [optional] 
+**CreateChangeRequests** | Pointer to **bool** |  | [optional] 
+**CreateDocumentsInRoot** | Pointer to **bool** |  | [optional] 
 **CreateProject** | Pointer to **bool** |  | [optional] 
 **CreateReleases** | Pointer to **bool** |  | [optional] 
 **DeletePermanently** | Pointer to **bool** |  | [optional] 
 **ManageGuestUsers** | Pointer to **bool** |  | [optional] 
+**ManageNonGeometricItems** | Pointer to **bool** |  | [optional] 
 **ManageRbac** | Pointer to **bool** |  | [optional] 
 **ManageUsers** | Pointer to **bool** |  | [optional] 
+**ManageWorkflows** | Pointer to **bool** |  | [optional] 
 **ShareForAnonymousAccess** | Pointer to **bool** |  | [optional] 
+**TransferDocumentsFromEnterprise** | Pointer to **bool** |  | [optional] 
+**ViewChangeOrders** | Pointer to **bool** |  | [optional] 
+**ViewChangeRequests** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -110,6 +119,31 @@ SetAllowAppStoreAccess sets AllowAppStoreAccess field to given value.
 
 HasAllowAppStoreAccess returns a boolean if a field has been set.
 
+### GetAllowPublicDocumentsAccess
+
+`func (o *GlobalPermissionInfo) GetAllowPublicDocumentsAccess() bool`
+
+GetAllowPublicDocumentsAccess returns the AllowPublicDocumentsAccess field if non-nil, zero value otherwise.
+
+### GetAllowPublicDocumentsAccessOk
+
+`func (o *GlobalPermissionInfo) GetAllowPublicDocumentsAccessOk() (*bool, bool)`
+
+GetAllowPublicDocumentsAccessOk returns a tuple with the AllowPublicDocumentsAccess field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowPublicDocumentsAccess
+
+`func (o *GlobalPermissionInfo) SetAllowPublicDocumentsAccess(v bool)`
+
+SetAllowPublicDocumentsAccess sets AllowPublicDocumentsAccess field to given value.
+
+### HasAllowPublicDocumentsAccess
+
+`func (o *GlobalPermissionInfo) HasAllowPublicDocumentsAccess() bool`
+
+HasAllowPublicDocumentsAccess returns a boolean if a field has been set.
+
 ### GetApproveReleases
 
 `func (o *GlobalPermissionInfo) GetApproveReleases() bool`
@@ -134,6 +168,81 @@ SetApproveReleases sets ApproveReleases field to given value.
 `func (o *GlobalPermissionInfo) HasApproveReleases() bool`
 
 HasApproveReleases returns a boolean if a field has been set.
+
+### GetCreateChangeOrders
+
+`func (o *GlobalPermissionInfo) GetCreateChangeOrders() bool`
+
+GetCreateChangeOrders returns the CreateChangeOrders field if non-nil, zero value otherwise.
+
+### GetCreateChangeOrdersOk
+
+`func (o *GlobalPermissionInfo) GetCreateChangeOrdersOk() (*bool, bool)`
+
+GetCreateChangeOrdersOk returns a tuple with the CreateChangeOrders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateChangeOrders
+
+`func (o *GlobalPermissionInfo) SetCreateChangeOrders(v bool)`
+
+SetCreateChangeOrders sets CreateChangeOrders field to given value.
+
+### HasCreateChangeOrders
+
+`func (o *GlobalPermissionInfo) HasCreateChangeOrders() bool`
+
+HasCreateChangeOrders returns a boolean if a field has been set.
+
+### GetCreateChangeRequests
+
+`func (o *GlobalPermissionInfo) GetCreateChangeRequests() bool`
+
+GetCreateChangeRequests returns the CreateChangeRequests field if non-nil, zero value otherwise.
+
+### GetCreateChangeRequestsOk
+
+`func (o *GlobalPermissionInfo) GetCreateChangeRequestsOk() (*bool, bool)`
+
+GetCreateChangeRequestsOk returns a tuple with the CreateChangeRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateChangeRequests
+
+`func (o *GlobalPermissionInfo) SetCreateChangeRequests(v bool)`
+
+SetCreateChangeRequests sets CreateChangeRequests field to given value.
+
+### HasCreateChangeRequests
+
+`func (o *GlobalPermissionInfo) HasCreateChangeRequests() bool`
+
+HasCreateChangeRequests returns a boolean if a field has been set.
+
+### GetCreateDocumentsInRoot
+
+`func (o *GlobalPermissionInfo) GetCreateDocumentsInRoot() bool`
+
+GetCreateDocumentsInRoot returns the CreateDocumentsInRoot field if non-nil, zero value otherwise.
+
+### GetCreateDocumentsInRootOk
+
+`func (o *GlobalPermissionInfo) GetCreateDocumentsInRootOk() (*bool, bool)`
+
+GetCreateDocumentsInRootOk returns a tuple with the CreateDocumentsInRoot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateDocumentsInRoot
+
+`func (o *GlobalPermissionInfo) SetCreateDocumentsInRoot(v bool)`
+
+SetCreateDocumentsInRoot sets CreateDocumentsInRoot field to given value.
+
+### HasCreateDocumentsInRoot
+
+`func (o *GlobalPermissionInfo) HasCreateDocumentsInRoot() bool`
+
+HasCreateDocumentsInRoot returns a boolean if a field has been set.
 
 ### GetCreateProject
 
@@ -235,6 +344,31 @@ SetManageGuestUsers sets ManageGuestUsers field to given value.
 
 HasManageGuestUsers returns a boolean if a field has been set.
 
+### GetManageNonGeometricItems
+
+`func (o *GlobalPermissionInfo) GetManageNonGeometricItems() bool`
+
+GetManageNonGeometricItems returns the ManageNonGeometricItems field if non-nil, zero value otherwise.
+
+### GetManageNonGeometricItemsOk
+
+`func (o *GlobalPermissionInfo) GetManageNonGeometricItemsOk() (*bool, bool)`
+
+GetManageNonGeometricItemsOk returns a tuple with the ManageNonGeometricItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManageNonGeometricItems
+
+`func (o *GlobalPermissionInfo) SetManageNonGeometricItems(v bool)`
+
+SetManageNonGeometricItems sets ManageNonGeometricItems field to given value.
+
+### HasManageNonGeometricItems
+
+`func (o *GlobalPermissionInfo) HasManageNonGeometricItems() bool`
+
+HasManageNonGeometricItems returns a boolean if a field has been set.
+
 ### GetManageRbac
 
 `func (o *GlobalPermissionInfo) GetManageRbac() bool`
@@ -285,6 +419,31 @@ SetManageUsers sets ManageUsers field to given value.
 
 HasManageUsers returns a boolean if a field has been set.
 
+### GetManageWorkflows
+
+`func (o *GlobalPermissionInfo) GetManageWorkflows() bool`
+
+GetManageWorkflows returns the ManageWorkflows field if non-nil, zero value otherwise.
+
+### GetManageWorkflowsOk
+
+`func (o *GlobalPermissionInfo) GetManageWorkflowsOk() (*bool, bool)`
+
+GetManageWorkflowsOk returns a tuple with the ManageWorkflows field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManageWorkflows
+
+`func (o *GlobalPermissionInfo) SetManageWorkflows(v bool)`
+
+SetManageWorkflows sets ManageWorkflows field to given value.
+
+### HasManageWorkflows
+
+`func (o *GlobalPermissionInfo) HasManageWorkflows() bool`
+
+HasManageWorkflows returns a boolean if a field has been set.
+
 ### GetShareForAnonymousAccess
 
 `func (o *GlobalPermissionInfo) GetShareForAnonymousAccess() bool`
@@ -309,6 +468,81 @@ SetShareForAnonymousAccess sets ShareForAnonymousAccess field to given value.
 `func (o *GlobalPermissionInfo) HasShareForAnonymousAccess() bool`
 
 HasShareForAnonymousAccess returns a boolean if a field has been set.
+
+### GetTransferDocumentsFromEnterprise
+
+`func (o *GlobalPermissionInfo) GetTransferDocumentsFromEnterprise() bool`
+
+GetTransferDocumentsFromEnterprise returns the TransferDocumentsFromEnterprise field if non-nil, zero value otherwise.
+
+### GetTransferDocumentsFromEnterpriseOk
+
+`func (o *GlobalPermissionInfo) GetTransferDocumentsFromEnterpriseOk() (*bool, bool)`
+
+GetTransferDocumentsFromEnterpriseOk returns a tuple with the TransferDocumentsFromEnterprise field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransferDocumentsFromEnterprise
+
+`func (o *GlobalPermissionInfo) SetTransferDocumentsFromEnterprise(v bool)`
+
+SetTransferDocumentsFromEnterprise sets TransferDocumentsFromEnterprise field to given value.
+
+### HasTransferDocumentsFromEnterprise
+
+`func (o *GlobalPermissionInfo) HasTransferDocumentsFromEnterprise() bool`
+
+HasTransferDocumentsFromEnterprise returns a boolean if a field has been set.
+
+### GetViewChangeOrders
+
+`func (o *GlobalPermissionInfo) GetViewChangeOrders() bool`
+
+GetViewChangeOrders returns the ViewChangeOrders field if non-nil, zero value otherwise.
+
+### GetViewChangeOrdersOk
+
+`func (o *GlobalPermissionInfo) GetViewChangeOrdersOk() (*bool, bool)`
+
+GetViewChangeOrdersOk returns a tuple with the ViewChangeOrders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetViewChangeOrders
+
+`func (o *GlobalPermissionInfo) SetViewChangeOrders(v bool)`
+
+SetViewChangeOrders sets ViewChangeOrders field to given value.
+
+### HasViewChangeOrders
+
+`func (o *GlobalPermissionInfo) HasViewChangeOrders() bool`
+
+HasViewChangeOrders returns a boolean if a field has been set.
+
+### GetViewChangeRequests
+
+`func (o *GlobalPermissionInfo) GetViewChangeRequests() bool`
+
+GetViewChangeRequests returns the ViewChangeRequests field if non-nil, zero value otherwise.
+
+### GetViewChangeRequestsOk
+
+`func (o *GlobalPermissionInfo) GetViewChangeRequestsOk() (*bool, bool)`
+
+GetViewChangeRequestsOk returns a tuple with the ViewChangeRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetViewChangeRequests
+
+`func (o *GlobalPermissionInfo) SetViewChangeRequests(v bool)`
+
+SetViewChangeRequests sets ViewChangeRequests field to given value.
+
+### HasViewChangeRequests
+
+`func (o *GlobalPermissionInfo) HasViewChangeRequests() bool`
+
+HasViewChangeRequests returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

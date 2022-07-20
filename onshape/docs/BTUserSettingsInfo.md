@@ -18,9 +18,10 @@ Name | Type | Description | Notes
 **MiniToolbarSettings** | Pointer to **string** |  | [optional] 
 **MouseActions** | Pointer to **string** |  | [optional] 
 **ReverseScrollWheelZoomDirection** | Pointer to **bool** |  | [optional] 
+**SelectItemViewStateInfos** | Pointer to [**[]BTSelectItemViewStateInfo**](BTSelectItemViewStateInfo.md) |  | [optional] 
 **StartupPage** | Pointer to **int32** |  | [optional] 
 **SubstituteApprovers** | Pointer to [**[]BTSubstituteApproverInfo**](BTSubstituteApproverInfo.md) |  | [optional] 
-**UnitsDisplayPrecision** | Pointer to [**BTUnitsDisplayPrecision**](BTUnitsDisplayPrecision.md) |  | [optional] 
+**UnitsDisplayPrecision** | Pointer to **map[string]int32** |  | [optional] 
 **UnitsMaximumDisplayPrecision** | Pointer to [**BTUnitsMaximumDisplayPrecisionInfo**](BTUnitsMaximumDisplayPrecisionInfo.md) |  | [optional] 
 **Use24HourTime** | Pointer to **bool** |  | [optional] 
 **ViewManipulationMouseKeyMapping** | Pointer to [**BTViewManipulationMouseKeyMappingInfo**](BTViewManipulationMouseKeyMappingInfo.md) |  | [optional] 
@@ -395,6 +396,31 @@ SetReverseScrollWheelZoomDirection sets ReverseScrollWheelZoomDirection field to
 
 HasReverseScrollWheelZoomDirection returns a boolean if a field has been set.
 
+### GetSelectItemViewStateInfos
+
+`func (o *BTUserSettingsInfo) GetSelectItemViewStateInfos() []BTSelectItemViewStateInfo`
+
+GetSelectItemViewStateInfos returns the SelectItemViewStateInfos field if non-nil, zero value otherwise.
+
+### GetSelectItemViewStateInfosOk
+
+`func (o *BTUserSettingsInfo) GetSelectItemViewStateInfosOk() (*[]BTSelectItemViewStateInfo, bool)`
+
+GetSelectItemViewStateInfosOk returns a tuple with the SelectItemViewStateInfos field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectItemViewStateInfos
+
+`func (o *BTUserSettingsInfo) SetSelectItemViewStateInfos(v []BTSelectItemViewStateInfo)`
+
+SetSelectItemViewStateInfos sets SelectItemViewStateInfos field to given value.
+
+### HasSelectItemViewStateInfos
+
+`func (o *BTUserSettingsInfo) HasSelectItemViewStateInfos() bool`
+
+HasSelectItemViewStateInfos returns a boolean if a field has been set.
+
 ### GetStartupPage
 
 `func (o *BTUserSettingsInfo) GetStartupPage() int32`
@@ -447,20 +473,20 @@ HasSubstituteApprovers returns a boolean if a field has been set.
 
 ### GetUnitsDisplayPrecision
 
-`func (o *BTUserSettingsInfo) GetUnitsDisplayPrecision() BTUnitsDisplayPrecision`
+`func (o *BTUserSettingsInfo) GetUnitsDisplayPrecision() map[string]int32`
 
 GetUnitsDisplayPrecision returns the UnitsDisplayPrecision field if non-nil, zero value otherwise.
 
 ### GetUnitsDisplayPrecisionOk
 
-`func (o *BTUserSettingsInfo) GetUnitsDisplayPrecisionOk() (*BTUnitsDisplayPrecision, bool)`
+`func (o *BTUserSettingsInfo) GetUnitsDisplayPrecisionOk() (*map[string]int32, bool)`
 
 GetUnitsDisplayPrecisionOk returns a tuple with the UnitsDisplayPrecision field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnitsDisplayPrecision
 
-`func (o *BTUserSettingsInfo) SetUnitsDisplayPrecision(v BTUnitsDisplayPrecision)`
+`func (o *BTUserSettingsInfo) SetUnitsDisplayPrecision(v map[string]int32)`
 
 SetUnitsDisplayPrecision sets UnitsDisplayPrecision field to given value.
 

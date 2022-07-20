@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**RequireMateQueryData** | Pointer to **bool** |  | [optional] 
+**TopLevelMateOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -49,6 +51,56 @@ SetBtType sets BtType field to given value.
 `func (o *BTMateFilter162) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetRequireMateQueryData
+
+`func (o *BTMateFilter162) GetRequireMateQueryData() bool`
+
+GetRequireMateQueryData returns the RequireMateQueryData field if non-nil, zero value otherwise.
+
+### GetRequireMateQueryDataOk
+
+`func (o *BTMateFilter162) GetRequireMateQueryDataOk() (*bool, bool)`
+
+GetRequireMateQueryDataOk returns a tuple with the RequireMateQueryData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireMateQueryData
+
+`func (o *BTMateFilter162) SetRequireMateQueryData(v bool)`
+
+SetRequireMateQueryData sets RequireMateQueryData field to given value.
+
+### HasRequireMateQueryData
+
+`func (o *BTMateFilter162) HasRequireMateQueryData() bool`
+
+HasRequireMateQueryData returns a boolean if a field has been set.
+
+### GetTopLevelMateOnly
+
+`func (o *BTMateFilter162) GetTopLevelMateOnly() bool`
+
+GetTopLevelMateOnly returns the TopLevelMateOnly field if non-nil, zero value otherwise.
+
+### GetTopLevelMateOnlyOk
+
+`func (o *BTMateFilter162) GetTopLevelMateOnlyOk() (*bool, bool)`
+
+GetTopLevelMateOnlyOk returns a tuple with the TopLevelMateOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTopLevelMateOnly
+
+`func (o *BTMateFilter162) SetTopLevelMateOnly(v bool)`
+
+SetTopLevelMateOnly sets TopLevelMateOnly field to given value.
+
+### HasTopLevelMateOnly
+
+`func (o *BTMateFilter162) HasTopLevelMateOnly() bool`
+
+HasTopLevelMateOnly returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
