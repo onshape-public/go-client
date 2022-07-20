@@ -2,7 +2,7 @@ name: Generate Bindings
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
     paths:
       - 'openapi.json'
   workflow_dispatch:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
       - uses: actions/setup-node@v3
         with:
           node-version: 14
@@ -72,25 +72,25 @@ jobs:
           delete-branch: true
           title: Bindings for Onshape ${{ steps.ps.outputs.change }}
           commit-message: Generate bindings for Onshape ${{ steps.ps.outputs.change }}
-          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
       - name: Wait for checks to pass
         if: ${{ steps.gb.outputs.changes-occurred }}
         uses: fountainhead/action-wait-for-check@v1.0.0
         id: wait-for-build
         with:
-          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
           checkName: test
           ref: ${{ steps.cpr.outputs.pull-request-head-sha }}
       - name: Merge pull request
         if: (steps.gb.outputs.changes-occurred && steps.wait-for-build.outputs.conclusion == 'success')
         uses: juliangruber/merge-pull-request-action@v1
         with:
-          github-token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          github-token: ${{ secrets.GH_PAT }}
           number: ${{ steps.cpr.outputs.pull-request-number }}
       - name: Create version tag
         if: (steps.gb.outputs.changes-occurred && steps.wait-for-build.outputs.conclusion == 'success')
         run: |
           git fetch --all
-          git reset --hard origin/main
+          git reset --hard origin/master
           git tag -f v${{ steps.ps.outputs.change }}
           git push -f origin --tags
