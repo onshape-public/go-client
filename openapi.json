@@ -11,7 +11,7 @@
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "1.150.5616-564f6a8676f1",
+    "version": "1.150.5633-5ed6b38daa6b",
     "x-logo": {
       "backgroundColor": "#ffffff",
       "altText": "Onshape",
@@ -39160,52 +39160,6 @@
       },
       "BTPExpression-9": {
         "type": "object",
-        "properties": {
-          "atomic": {
-            "type": "boolean"
-          },
-          "btType": {
-            "type": "string"
-          },
-          "documentationType": {
-            "type": "string",
-            "enum": [
-              "FUNCTION",
-              "PREDICATE",
-              "CONSTANT",
-              "ENUM",
-              "USER_TYPE",
-              "FEATURE_DEFINITION",
-              "FILE_HEADER",
-              "UNDOCUMENTABLE",
-              "CONST_LAMBDA",
-              "UNKNOWN"
-            ]
-          },
-          "endSourceLocation": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nodeId": {
-            "type": "string"
-          },
-          "shortDescriptor": {
-            "type": "string"
-          },
-          "spaceAfter": {
-            "$ref": "#/components/schemas/BTPSpace-10"
-          },
-          "spaceBefore": {
-            "$ref": "#/components/schemas/BTPSpace-10"
-          },
-          "spaceDefault": {
-            "type": "boolean"
-          },
-          "startSourceLocation": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
         "discriminator": {
           "propertyName": "btType",
           "mapping": {
@@ -39223,7 +39177,20 @@
             "BTPExpressionVarReference-245": "#/components/schemas/BTPExpressionVarReference-245",
             "BTPLiteral-253": "#/components/schemas/BTPLiteral-253"
           }
-        }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTPPropertyAccessor-23"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              }
+            }
+          }
+        ]
       },
       "BTPExpressionAccess-237": {
         "type": "object",
@@ -39588,100 +39555,19 @@
       },
       "BTPFunctionDeclaration-246": {
         "type": "object",
-        "properties": {
-          "annotation": {
-            "$ref": "#/components/schemas/BTPAnnotation-231"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTPFunctionOrPredicateDeclaration-247"
           },
-          "arguments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BTPArgumentDeclaration-232"
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              }
             }
-          },
-          "argumentsToDocument": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BTPArgumentDeclaration-232"
-            }
-          },
-          "atomic": {
-            "type": "boolean"
-          },
-          "body": {
-            "$ref": "#/components/schemas/BTPStatementBlock-271"
-          },
-          "btType": {
-            "type": "string"
-          },
-          "deprecated": {
-            "type": "boolean"
-          },
-          "deprecatedExplanation": {
-            "type": "string"
-          },
-          "documentationType": {
-            "type": "string",
-            "enum": [
-              "FUNCTION",
-              "PREDICATE",
-              "CONSTANT",
-              "ENUM",
-              "USER_TYPE",
-              "FEATURE_DEFINITION",
-              "FILE_HEADER",
-              "UNDOCUMENTABLE",
-              "CONST_LAMBDA",
-              "UNKNOWN"
-            ]
-          },
-          "endSourceLocation": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "forExport": {
-            "type": "boolean"
-          },
-          "name": {
-            "$ref": "#/components/schemas/BTPIdentifier-8"
-          },
-          "nodeId": {
-            "type": "string"
-          },
-          "precondition": {
-            "$ref": "#/components/schemas/BTPStatement-269"
-          },
-          "returnType": {
-            "$ref": "#/components/schemas/BTPTypeName-290"
-          },
-          "shortDescriptor": {
-            "type": "string"
-          },
-          "spaceAfter": {
-            "$ref": "#/components/schemas/BTPSpace-10"
-          },
-          "spaceAfterArglist": {
-            "$ref": "#/components/schemas/BTPSpace-10"
-          },
-          "spaceAfterExport": {
-            "$ref": "#/components/schemas/BTPSpace-10"
-          },
-          "spaceBefore": {
-            "$ref": "#/components/schemas/BTPSpace-10"
-          },
-          "spaceDefault": {
-            "type": "boolean"
-          },
-          "spaceInEmptyList": {
-            "$ref": "#/components/schemas/BTPSpace-10"
-          },
-          "startSourceLocation": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "symbolName": {
-            "$ref": "#/components/schemas/BTPIdentifier-8"
           }
-        }
+        ]
       },
       "BTPFunctionOrPredicateDeclaration-247": {
         "type": "object",
