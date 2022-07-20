@@ -2,7 +2,7 @@ name: Generate Bindings
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
     paths:
       - 'openapi.json'
   workflow_dispatch:
@@ -91,6 +91,6 @@ jobs:
         if: (steps.gb.outputs.changes-occurred && steps.wait-for-build.outputs.conclusion == 'success')
         run: |
           git fetch --all
-          git reset --hard origin/main
+          git reset --hard origin/master
           git tag -f v${{ steps.ps.outputs.change }}
           git push -f origin --tags
