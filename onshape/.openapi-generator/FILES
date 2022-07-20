@@ -673,6 +673,7 @@ docs/BTPBuiltinIdentifier233.md
 docs/BTPConversionFunction1362.md
 docs/BTPConversionFunction1362AllOf.md
 docs/BTPExpression9.md
+docs/BTPExpression9AllOf.md
 docs/BTPExpressionAccess237.md
 docs/BTPExpressionAccess237AllOf.md
 docs/BTPExpressionAs238.md
@@ -698,6 +699,7 @@ docs/BTPExpressionTry1271AllOf.md
 docs/BTPExpressionVarReference245.md
 docs/BTPExpressionVarReference245AllOf.md
 docs/BTPFunctionDeclaration246.md
+docs/BTPFunctionDeclaration246AllOf.md
 docs/BTPFunctionOrPredicateDeclaration247.md
 docs/BTPFunctionOrPredicateDeclaration247AllOf.md
 docs/BTPIdentifier8.md

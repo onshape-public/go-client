@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.150.5616-564f6a8676f1
+  version: 1.150.5633-5ed6b38daa6b
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -39631,6 +39631,9 @@ components:
       - $ref: '#/components/schemas/BTPConversionFunction_1362_allOf'
       type: object
     BTPExpression-9:
+      allOf:
+      - $ref: '#/components/schemas/BTPPropertyAccessor-23'
+      - $ref: '#/components/schemas/BTPExpression_9_allOf'
       discriminator:
         mapping:
           BTPExpressionAccess-237: '#/components/schemas/BTPExpressionAccess-237'
@@ -39647,40 +39650,6 @@ components:
           BTPExpressionVarReference-245: '#/components/schemas/BTPExpressionVarReference-245'
           BTPLiteral-253: '#/components/schemas/BTPLiteral-253'
         propertyName: btType
-      properties:
-        atomic:
-          type: boolean
-        btType:
-          type: string
-        documentationType:
-          enum:
-          - FUNCTION
-          - PREDICATE
-          - CONSTANT
-          - ENUM
-          - USER_TYPE
-          - FEATURE_DEFINITION
-          - FILE_HEADER
-          - UNDOCUMENTABLE
-          - CONST_LAMBDA
-          - UNKNOWN
-          type: string
-        endSourceLocation:
-          format: int32
-          type: integer
-        nodeId:
-          type: string
-        shortDescriptor:
-          type: string
-        spaceAfter:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceBefore:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceDefault:
-          type: boolean
-        startSourceLocation:
-          format: int32
-          type: integer
       type: object
     BTPExpressionAccess-237:
       allOf:
@@ -39743,72 +39712,9 @@ components:
       - $ref: '#/components/schemas/BTPExpressionVarReference_245_allOf'
       type: object
     BTPFunctionDeclaration-246:
-      properties:
-        annotation:
-          $ref: '#/components/schemas/BTPAnnotation-231'
-        arguments:
-          items:
-            $ref: '#/components/schemas/BTPArgumentDeclaration-232'
-          type: array
-        argumentsToDocument:
-          items:
-            $ref: '#/components/schemas/BTPArgumentDeclaration-232'
-          type: array
-        atomic:
-          type: boolean
-        body:
-          $ref: '#/components/schemas/BTPStatementBlock-271'
-        btType:
-          type: string
-        deprecated:
-          type: boolean
-        deprecatedExplanation:
-          type: string
-        documentationType:
-          enum:
-          - FUNCTION
-          - PREDICATE
-          - CONSTANT
-          - ENUM
-          - USER_TYPE
-          - FEATURE_DEFINITION
-          - FILE_HEADER
-          - UNDOCUMENTABLE
-          - CONST_LAMBDA
-          - UNKNOWN
-          type: string
-        endSourceLocation:
-          format: int32
-          type: integer
-        forExport:
-          type: boolean
-        name:
-          $ref: '#/components/schemas/BTPIdentifier-8'
-        nodeId:
-          type: string
-        precondition:
-          $ref: '#/components/schemas/BTPStatement-269'
-        returnType:
-          $ref: '#/components/schemas/BTPTypeName-290'
-        shortDescriptor:
-          type: string
-        spaceAfter:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceAfterArglist:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceAfterExport:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceBefore:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceDefault:
-          type: boolean
-        spaceInEmptyList:
-          $ref: '#/components/schemas/BTPSpace-10'
-        startSourceLocation:
-          format: int32
-          type: integer
-        symbolName:
-          $ref: '#/components/schemas/BTPIdentifier-8'
+      allOf:
+      - $ref: '#/components/schemas/BTPFunctionOrPredicateDeclaration-247'
+      - $ref: '#/components/schemas/BTPFunctionDeclaration_246_allOf'
       type: object
     BTPFunctionOrPredicateDeclaration-247:
       allOf:
@@ -53605,6 +53511,11 @@ components:
         typeName:
           $ref: '#/components/schemas/BTPIdentifier-8'
       type: object
+    BTPExpression_9_allOf:
+      properties:
+        btType:
+          type: string
+      type: object
     BTPExpressionAccess_237_allOf:
       properties:
         accessor:
@@ -53783,6 +53694,11 @@ components:
           type: string
         name:
           $ref: '#/components/schemas/BTPName-261'
+      type: object
+    BTPFunctionDeclaration_246_allOf:
+      properties:
+        btType:
+          type: string
       type: object
     BTPFunctionOrPredicateDeclaration_247_allOf:
       properties:
