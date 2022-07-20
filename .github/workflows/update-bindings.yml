@@ -11,7 +11,7 @@ jobs:
     steps:      
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
       - uses: actions/setup-node@v3
         with:
           node-version: 14
@@ -24,6 +24,7 @@ jobs:
          versionAlias=$(echo "${fetchSettings}" | json versionAlias)
          userRole=$(echo "${fetchSettings}" | json userRole)
          operationIds=$(echo "${fetchSettings}" | json operationIds)
+         keySet=$(echo ${{ secrets.ONSHAPE_API_ACCESS_KEY }}:${{ secrets.ONSHAPE_API_SECRET_KEY }} | base64)
          
          if [ "${versionAlias}" = null ]; then
            versionAlias=
@@ -40,7 +41,7 @@ jobs:
           done <<< $(echo "${operationIds}" | json -ga)
          fi
          
-         curl -X 'GET' -G ${url}'/api/openapi' -d restUserRole=${userRole} ${versionAlias} ${operationIdSet} -H 'accept: */*' | json > ${{ github.workspace }}/openapi.json
+         curl -X 'GET' -G ${url}'/api/openapi' -d restUserRole=${userRole} ${versionAlias} ${operationIdSet} -H 'accept: */*' -H 'Authorization: Basic '"${keySet}" | json > ${{ github.workspace }}/openapi.json
       - name: Check version status
         id: fetchStatus
         run: |
@@ -60,4 +61,4 @@ jobs:
         if: ${{ steps.fetchStatus.outputs.changes }}
         uses: ad-m/github-push-action@master
         with:
-         github_token: ${{ secrets.GH_PAT }}
+         github_token: ${{ secrets.BOT_ACCESS_TOKEN }}
