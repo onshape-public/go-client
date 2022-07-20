@@ -7,15 +7,8 @@ on:
   
 jobs:
   test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Go environment
-        uses: actions/setup-go@v3.2.0
-        with:
-          go-version: 1.18.3
-      - name: Run all tests
-        run: |
-         export ONSHAPE_API_ACCESS_KEY=${{ secrets.ONSHAPE_API_ACCESS_KEY }}
-         export ONSHAPE_API_SECRET_KEY=${{ secrets.ONSHAPE_API_SECRET_KEY }}
-         go test ${{ github.workspace }}/...
+    uses: onshape-public/openapi-utilities/.github/workflows/test-bindings.yml@main
+    secrets:
+      BOT_ACCESS_TOKEN: ${{ secrets.GH_PAT }}
+      ONSHAPE_API_ACCESS_KEY: ${{ secrets.ONSHAPE_API_KEY_DEMO_C }}
+      ONSHAPE_API_SECRET_KEY: ${{ secrets.ONSHAPE_API_SECRET_DEMO_C }}

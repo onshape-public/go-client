@@ -1,3 +1,0 @@
-[submodule "ogw"]
-	path = .github/workflows
-	url = https://github.com/DouglasDwyer/openapi-generator-workflows
