@@ -7,6 +7,7 @@
   },
   "generate": {
     "generatorUrl": "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.0.0/openapi-generator-cli-6.0.0.jar",
+    "customGeneratorUrl": "https://github.com/onshape-public/openapi-utilities/raw/1a088f4c319bffd4ac3081a47ea5a29151e7d8b8/go-oapi-codegen/release/go-oapi-codegen-0.1.5.jar",
     "preprocess": [
       {
         "key": "paths['/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodematrices'].get.parameters[7]",
