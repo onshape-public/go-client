@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5616-564f6a8676f1
+API version: 1.150.5633-5ed6b38daa6b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -14,6 +14,7 @@ package onshape
 import (
 	"bytes"
 	"context"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -340,6 +341,7 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -448,6 +450,7 @@ func (a *TranslationApiService) DeleteTranslationExecute(r ApiDeleteTranslationR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -552,6 +555,7 @@ func (a *TranslationApiService) GetAllTranslatorFormatsExecute(r ApiGetAllTransl
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -678,6 +682,7 @@ func (a *TranslationApiService) GetDocumentTranslationsExecute(r ApiGetDocumentT
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -786,6 +791,7 @@ func (a *TranslationApiService) GetTranslationExecute(r ApiGetTranslationRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
