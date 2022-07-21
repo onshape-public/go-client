@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5616-564f6a8676f1
+API version: 1.150.5633-5ed6b38daa6b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -14,6 +14,7 @@ package onshape
 import (
 	"bytes"
 	"context"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -118,6 +119,7 @@ func (a *PartStudioApiService) AddPartStudioFeatureExecute(r ApiAddPartStudioFea
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -292,6 +294,7 @@ func (a *PartStudioApiService) ComparePartStudiosExecute(r ApiComparePartStudios
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -415,6 +418,7 @@ func (a *PartStudioApiService) CreatePartStudioExecute(r ApiCreatePartStudioRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -546,6 +550,7 @@ func (a *PartStudioApiService) CreatePartStudioTranslationExecute(r ApiCreatePar
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -666,6 +671,7 @@ func (a *PartStudioApiService) DeletePartStudioFeatureExecute(r ApiDeletePartStu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -831,6 +837,7 @@ func (a *PartStudioApiService) EvalFeatureScriptExecute(r ApiEvalFeatureScriptRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -999,6 +1006,7 @@ func (a *PartStudioApiService) ExportParasolidExecute(r ApiExportParasolidReques
 		return localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1228,6 +1236,7 @@ func (a *PartStudioApiService) ExportPartStudioGltfExecute(r ApiExportPartStudio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1449,6 +1458,7 @@ func (a *PartStudioApiService) ExportPartStudioStlExecute(r ApiExportPartStudioS
 		return localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1590,6 +1600,7 @@ func (a *PartStudioApiService) GetFeatureScriptRepresentationExecute(r ApiGetFea
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1765,6 +1776,7 @@ func (a *PartStudioApiService) GetFeatureScriptTableExecute(r ApiGetFeatureScrip
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -1912,6 +1924,7 @@ func (a *PartStudioApiService) GetPartStudioBodyDetailsExecute(r ApiGetPartStudi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2072,6 +2085,7 @@ func (a *PartStudioApiService) GetPartStudioBoundingBoxesExecute(r ApiGetPartStu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2290,6 +2304,7 @@ func (a *PartStudioApiService) GetPartStudioEdgesExecute(r ApiGetPartStudioEdges
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2580,6 +2595,7 @@ func (a *PartStudioApiService) GetPartStudioFacesExecute(r ApiGetPartStudioFaces
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2700,6 +2716,7 @@ func (a *PartStudioApiService) GetPartStudioFeatureSpecsExecute(r ApiGetPartStud
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -2867,6 +2884,7 @@ func (a *PartStudioApiService) GetPartStudioFeaturesExecute(r ApiGetPartStudioFe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3061,6 +3079,7 @@ func (a *PartStudioApiService) GetPartStudioMassPropertiesExecute(r ApiGetPartSt
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3201,6 +3220,7 @@ func (a *PartStudioApiService) GetPartStudioNamedViewsExecute(r ApiGetPartStudio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3430,6 +3450,7 @@ func (a *PartStudioApiService) GetPartStudioShadedViewsExecute(r ApiGetPartStudi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3561,6 +3582,7 @@ func (a *PartStudioApiService) TranslateIdsExecute(r ApiTranslateIdsRequest) (*B
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3686,6 +3708,7 @@ func (a *PartStudioApiService) UpdateFeaturesExecute(r ApiUpdateFeaturesRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3815,6 +3838,7 @@ func (a *PartStudioApiService) UpdatePartStudioFeatureExecute(r ApiUpdatePartStu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
@@ -3943,6 +3967,7 @@ func (a *PartStudioApiService) UpdateRollbackExecute(r ApiUpdateRollbackRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
+	var _ io.Reader
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))

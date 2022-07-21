@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5616-564f6a8676f1
+API version: 1.150.5633-5ed6b38daa6b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -41,7 +41,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Onshape REST API API v1.150.5616-564f6a8676f1
+// APIClient manages communication with the Onshape REST API API v1.150.5633-5ed6b38daa6b
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -298,9 +298,44 @@ func (c *APIClient) GetConfig() *Configuration {
 }
 
 type formFile struct {
-	fileBytes    []byte
+	fileData     io.Reader
 	fileName     string
 	formFileName string
+}
+
+type multipartStreamer struct {
+	buffer      *bytes.Buffer
+	reader      io.Reader
+	multiwriter *multipart.Writer
+	last        int
+}
+
+func newMultipartStreamer() *multipartStreamer {
+	buffer := &bytes.Buffer{}
+	return &multipartStreamer{
+		buffer:      buffer,
+		reader:      bytes.NewReader(buffer.Bytes()[0:0]),
+		multiwriter: multipart.NewWriter(buffer),
+		last:        0,
+	}
+}
+
+func (ms *multipartStreamer) appendStream(reader io.Reader) {
+	ms.reader = io.MultiReader(
+		ms.reader,
+		reader)
+}
+
+func (ms *multipartStreamer) partition() {
+	ms.reader = io.MultiReader(
+		ms.reader,
+		bytes.NewReader(ms.buffer.Bytes()[ms.last:]))
+	ms.last = len(ms.buffer.Bytes())
+}
+
+func (ms *multipartStreamer) Close() {
+	ms.multiwriter.Close()
+	ms.partition()
 }
 
 // prepareRequest build the request
@@ -313,7 +348,7 @@ func (c *APIClient) prepareRequest(
 	formParams url.Values,
 	formFiles []formFile) (localVarRequest *http.Request, err error) {
 
-	var body io.ReadWriter
+	var body io.Reader
 
 	// Detect postBody type and post.
 	if postBody != nil {
@@ -334,41 +369,37 @@ func (c *APIClient) prepareRequest(
 		if body != nil {
 			return nil, errors.New("Cannot specify postBody and multipart form at the same time.")
 		}
-		body = &bytes.Buffer{}
-		w := multipart.NewWriter(body)
+		w := newMultipartStreamer()
 
 		for k, v := range formParams {
 			for _, iv := range v {
 				if strings.HasPrefix(k, "@") { // file
-					err = addFile(w, k[1:], iv)
+					err = addFile(w.multiwriter, k[1:], iv)
 					if err != nil {
 						return nil, err
 					}
 				} else { // form value
-					w.WriteField(k, iv)
+					w.multiwriter.WriteField(k, iv)
 				}
 			}
 		}
 		for _, formFile := range formFiles {
-			if len(formFile.fileBytes) > 0 && formFile.fileName != "" {
-				w.Boundary()
-				part, err := w.CreateFormFile(formFile.formFileName, filepath.Base(formFile.fileName))
+			if formFile.fileName != "" {
+				w.multiwriter.Boundary()
+				_, err := w.multiwriter.CreateFormFile(formFile.formFileName, filepath.Base(formFile.fileName))
 				if err != nil {
 					return nil, err
 				}
-				_, err = part.Write(formFile.fileBytes)
-				if err != nil {
-					return nil, err
-				}
+				w.partition()
+				w.appendStream(formFile.fileData)
 			}
 		}
 
 		// Set the Boundary in the Content-Type
-		headerParams["Content-Type"] = w.FormDataContentType()
+		headerParams["Content-Type"] = w.multiwriter.FormDataContentType()
 
-		// Set Content-Length
-		headerParams["Content-Length"] = fmt.Sprintf("%d", body.(*bytes.Buffer).Len())
 		w.Close()
+		body = w.reader
 	}
 
 	if strings.HasPrefix(headerParams["Content-Type"], "application/x-www-form-urlencoded") && len(formParams) > 0 {
