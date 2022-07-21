@@ -150,7 +150,7 @@ func TestDocumentAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call:   onshape.ApiDeleteWorkspaceRequest{},
-		Expect: APIError, // enterprise disallows permanent deletion.
+		Expect: NoAPIError,
 	}.Execute(ctx.SetDefault("wid", swid), t)
 
 	OpenAPITest{
