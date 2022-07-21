@@ -3,7 +3,6 @@ package onshape_test
 import (
 	"context"
 	"net/http"
-	"sort"
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
@@ -91,9 +90,9 @@ func TestDocumentAPI(t *testing.T) {
 		Expect: func(ctx TestingContext, t *testing.T, r []string, _ *http.Response, err error) {
 			assert.NoError(t, err)
 			val := []string{"READ", "COPY", "WRITE", "RESHARE", "EXPORT", "DELETE", "COMMENT", "LINK"}
-			sort.Strings(r)
-			sort.Strings(val)
-			assert.EqualValues(t, r, val)
+			for _, c := range val {
+				assert.True(t, slices.Contains(r, c))
+			}
 		},
 	}.Execute(ctx, t)
 
