@@ -235,6 +235,10 @@ func DeleteDocumentPostTest(ctx TestingContext, t *testing.T) {
 /*** ADDITIONAL TESTS
 
 OpenAPITest{
+    Call: onshape.ApiDeleteWorkspaceRequest{},
+    Expect: Todo,
+}.Execute(ctx, t)
+OpenAPITest{
 	Call:   onshape.ApiRestoreFromHistoryRequest{},
 	Expect: Todo,
 },
