@@ -82,7 +82,6 @@ func TestDocumentAPI(t *testing.T) {
 		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTAclInfo, _ *http.Response, err error) {
 			assert.NoError(t, err)
 			assert.Equal(t, r.Owner.GetId(), *ctx["owner"].(*string))
-			assert.Equal(t, len(r.Entries), 1)
 			assert.Equal(t, r.GetPublic(), ctx["docPublic"])
 		},
 	}.Execute(ctx, t)
