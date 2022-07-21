@@ -149,11 +149,6 @@ func TestDocumentAPI(t *testing.T) {
 	}.Execute(ctx, t)
 
 	OpenAPITest{
-		Call:   onshape.ApiDeleteWorkspaceRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx.SetDefault("wid", swid), t)
-
-	OpenAPITest{
 		Call:   onshape.ApiGetElementsInDocumentRequest{},
 		Expect: NoAPIError,
 	}.Execute(ctx.SetDefault("wvm", "w").SetDefault("wvmid", ctx["wid"]), t)
