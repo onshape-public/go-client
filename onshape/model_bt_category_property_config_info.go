@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5677-bf971b1ec12b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,27 +17,27 @@ import (
 
 // BTCategoryPropertyConfigInfo struct for BTCategoryPropertyConfigInfo
 type BTCategoryPropertyConfigInfo struct {
-	ComputedPropertyConfig            *BTComputedPropertyConfig `json:"computedPropertyConfig,omitempty"`
-	ComputedPropertyFunctionName      *string                   `json:"computedPropertyFunctionName,omitempty"`
-	ComputedPropertyFunctionNamespace *string                   `json:"computedPropertyFunctionNamespace,omitempty"`
-	ComputedPropertyFunctionURL       *string                   `json:"computedPropertyFunctionURL,omitempty"`
-	DefaultValue                      *string                   `json:"defaultValue,omitempty"`
-	DisplayName                       *string                   `json:"displayName,omitempty"`
-	EnumValues                        []BTMetadataEnumValue     `json:"enumValues,omitempty"`
-	MaxCount                          *int32                    `json:"maxCount,omitempty"`
-	MaxDate                           *JSONTime                 `json:"maxDate,omitempty"`
-	MaxLength                         *int32                    `json:"maxLength,omitempty"`
-	MaxValue                          *float64                  `json:"maxValue,omitempty"`
-	MinCount                          *int32                    `json:"minCount,omitempty"`
-	MinDate                           *JSONTime                 `json:"minDate,omitempty"`
-	MinLength                         *int32                    `json:"minLength,omitempty"`
-	MinValue                          *float64                  `json:"minValue,omitempty"`
-	Multiline                         *bool                     `json:"multiline,omitempty"`
-	Multivalued                       *bool                     `json:"multivalued,omitempty"`
-	Pattern                           *string                   `json:"pattern,omitempty"`
-	PublishState                      *int32                    `json:"publishState,omitempty"`
-	QuantityType                      *int32                    `json:"quantityType,omitempty"`
-	Required                          *bool                     `json:"required,omitempty"`
+	ComputedPartPropertyConfig        *BTComputedPartPropertyConfig `json:"computedPartPropertyConfig,omitempty"`
+	ComputedPropertyFunctionName      *string                       `json:"computedPropertyFunctionName,omitempty"`
+	ComputedPropertyFunctionNamespace *string                       `json:"computedPropertyFunctionNamespace,omitempty"`
+	ComputedPropertyFunctionURL       *string                       `json:"computedPropertyFunctionURL,omitempty"`
+	DefaultValue                      *string                       `json:"defaultValue,omitempty"`
+	DisplayName                       *string                       `json:"displayName,omitempty"`
+	EnumValues                        []BTMetadataEnumValue         `json:"enumValues,omitempty"`
+	MaxCount                          *int32                        `json:"maxCount,omitempty"`
+	MaxDate                           *JSONTime                     `json:"maxDate,omitempty"`
+	MaxLength                         *int32                        `json:"maxLength,omitempty"`
+	MaxValue                          *float64                      `json:"maxValue,omitempty"`
+	MinCount                          *int32                        `json:"minCount,omitempty"`
+	MinDate                           *JSONTime                     `json:"minDate,omitempty"`
+	MinLength                         *int32                        `json:"minLength,omitempty"`
+	MinValue                          *float64                      `json:"minValue,omitempty"`
+	Multiline                         *bool                         `json:"multiline,omitempty"`
+	Multivalued                       *bool                         `json:"multivalued,omitempty"`
+	Pattern                           *string                       `json:"pattern,omitempty"`
+	PublishState                      *int32                        `json:"publishState,omitempty"`
+	QuantityType                      *int32                        `json:"quantityType,omitempty"`
+	Required                          *bool                         `json:"required,omitempty"`
 }
 
 // NewBTCategoryPropertyConfigInfo instantiates a new BTCategoryPropertyConfigInfo object
@@ -57,36 +57,36 @@ func NewBTCategoryPropertyConfigInfoWithDefaults() *BTCategoryPropertyConfigInfo
 	return &this
 }
 
-// GetComputedPropertyConfig returns the ComputedPropertyConfig field value if set, zero value otherwise.
-func (o *BTCategoryPropertyConfigInfo) GetComputedPropertyConfig() BTComputedPropertyConfig {
-	if o == nil || o.ComputedPropertyConfig == nil {
-		var ret BTComputedPropertyConfig
+// GetComputedPartPropertyConfig returns the ComputedPartPropertyConfig field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedPartPropertyConfig() BTComputedPartPropertyConfig {
+	if o == nil || o.ComputedPartPropertyConfig == nil {
+		var ret BTComputedPartPropertyConfig
 		return ret
 	}
-	return *o.ComputedPropertyConfig
+	return *o.ComputedPartPropertyConfig
 }
 
-// GetComputedPropertyConfigOk returns a tuple with the ComputedPropertyConfig field value if set, nil otherwise
+// GetComputedPartPropertyConfigOk returns a tuple with the ComputedPartPropertyConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTCategoryPropertyConfigInfo) GetComputedPropertyConfigOk() (*BTComputedPropertyConfig, bool) {
-	if o == nil || o.ComputedPropertyConfig == nil {
+func (o *BTCategoryPropertyConfigInfo) GetComputedPartPropertyConfigOk() (*BTComputedPartPropertyConfig, bool) {
+	if o == nil || o.ComputedPartPropertyConfig == nil {
 		return nil, false
 	}
-	return o.ComputedPropertyConfig, true
+	return o.ComputedPartPropertyConfig, true
 }
 
-// HasComputedPropertyConfig returns a boolean if a field has been set.
-func (o *BTCategoryPropertyConfigInfo) HasComputedPropertyConfig() bool {
-	if o != nil && o.ComputedPropertyConfig != nil {
+// HasComputedPartPropertyConfig returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedPartPropertyConfig() bool {
+	if o != nil && o.ComputedPartPropertyConfig != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputedPropertyConfig gets a reference to the given BTComputedPropertyConfig and assigns it to the ComputedPropertyConfig field.
-func (o *BTCategoryPropertyConfigInfo) SetComputedPropertyConfig(v BTComputedPropertyConfig) {
-	o.ComputedPropertyConfig = &v
+// SetComputedPartPropertyConfig gets a reference to the given BTComputedPartPropertyConfig and assigns it to the ComputedPartPropertyConfig field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedPartPropertyConfig(v BTComputedPartPropertyConfig) {
+	o.ComputedPartPropertyConfig = &v
 }
 
 // GetComputedPropertyFunctionName returns the ComputedPropertyFunctionName field value if set, zero value otherwise.
@@ -731,8 +731,8 @@ func (o *BTCategoryPropertyConfigInfo) SetRequired(v bool) {
 
 func (o BTCategoryPropertyConfigInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ComputedPropertyConfig != nil {
-		toSerialize["computedPropertyConfig"] = o.ComputedPropertyConfig
+	if o.ComputedPartPropertyConfig != nil {
+		toSerialize["computedPartPropertyConfig"] = o.ComputedPartPropertyConfig
 	}
 	if o.ComputedPropertyFunctionName != nil {
 		toSerialize["computedPropertyFunctionName"] = o.ComputedPropertyFunctionName

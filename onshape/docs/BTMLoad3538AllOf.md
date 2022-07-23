@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**DefinedByComponents** | Pointer to **bool** |  | [optional] 
 **LoadComponentParameterIds** | Pointer to **map[string]string** |  | [optional] 
 **LoadRegionParameterId** | Pointer to **string** |  | [optional] 
 **LoadType** | Pointer to **string** |  | [optional] 
@@ -56,6 +57,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMLoad3538AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetDefinedByComponents
+
+`func (o *BTMLoad3538AllOf) GetDefinedByComponents() bool`
+
+GetDefinedByComponents returns the DefinedByComponents field if non-nil, zero value otherwise.
+
+### GetDefinedByComponentsOk
+
+`func (o *BTMLoad3538AllOf) GetDefinedByComponentsOk() (*bool, bool)`
+
+GetDefinedByComponentsOk returns a tuple with the DefinedByComponents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefinedByComponents
+
+`func (o *BTMLoad3538AllOf) SetDefinedByComponents(v bool)`
+
+SetDefinedByComponents sets DefinedByComponents field to given value.
+
+### HasDefinedByComponents
+
+`func (o *BTMLoad3538AllOf) HasDefinedByComponents() bool`
+
+HasDefinedByComponents returns a boolean if a field has been set.
 
 ### GetLoadComponentParameterIds
 

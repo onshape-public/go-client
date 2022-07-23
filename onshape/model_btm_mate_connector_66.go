@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5677-bf971b1ec12b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -32,10 +32,12 @@ type BTMMateConnector66 struct {
 	BtType                                 *string                                   `json:"btType,omitempty"`
 	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
 	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
+	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
 	Implicit                               *bool                                     `json:"implicit,omitempty"`
+	IsAuxiliaryTreeMateConnector           *bool                                     `json:"isAuxiliaryTreeMateConnector,omitempty"`
 	IsHidden                               *bool                                     `json:"isHidden,omitempty"`
 	SavedFeatureType                       *string                                   `json:"savedFeatureType,omitempty"`
 }
@@ -537,6 +539,38 @@ func (o *BTMMateConnector66) SetFeatureListFieldIndex(v int32) {
 	o.FeatureListFieldIndex = &v
 }
 
+// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
+func (o *BTMMateConnector66) GetFieldIndexForOwnedMateConnectors() int32 {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FieldIndexForOwnedMateConnectors
+}
+
+// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMMateConnector66) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		return nil, false
+	}
+	return o.FieldIndexForOwnedMateConnectors, true
+}
+
+// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+func (o *BTMMateConnector66) HasFieldIndexForOwnedMateConnectors() bool {
+	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
+func (o *BTMMateConnector66) SetFieldIndexForOwnedMateConnectors(v int32) {
+	o.FieldIndexForOwnedMateConnectors = &v
+}
+
 // GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
 func (o *BTMMateConnector66) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
 	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
@@ -665,6 +699,38 @@ func (o *BTMMateConnector66) SetImplicit(v bool) {
 	o.Implicit = &v
 }
 
+// GetIsAuxiliaryTreeMateConnector returns the IsAuxiliaryTreeMateConnector field value if set, zero value otherwise.
+func (o *BTMMateConnector66) GetIsAuxiliaryTreeMateConnector() bool {
+	if o == nil || o.IsAuxiliaryTreeMateConnector == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsAuxiliaryTreeMateConnector
+}
+
+// GetIsAuxiliaryTreeMateConnectorOk returns a tuple with the IsAuxiliaryTreeMateConnector field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMMateConnector66) GetIsAuxiliaryTreeMateConnectorOk() (*bool, bool) {
+	if o == nil || o.IsAuxiliaryTreeMateConnector == nil {
+		return nil, false
+	}
+	return o.IsAuxiliaryTreeMateConnector, true
+}
+
+// HasIsAuxiliaryTreeMateConnector returns a boolean if a field has been set.
+func (o *BTMMateConnector66) HasIsAuxiliaryTreeMateConnector() bool {
+	if o != nil && o.IsAuxiliaryTreeMateConnector != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsAuxiliaryTreeMateConnector gets a reference to the given bool and assigns it to the IsAuxiliaryTreeMateConnector field.
+func (o *BTMMateConnector66) SetIsAuxiliaryTreeMateConnector(v bool) {
+	o.IsAuxiliaryTreeMateConnector = &v
+}
+
 // GetIsHidden returns the IsHidden field value if set, zero value otherwise.
 func (o *BTMMateConnector66) GetIsHidden() bool {
 	if o == nil || o.IsHidden == nil {
@@ -776,6 +842,9 @@ func (o BTMMateConnector66) MarshalJSON() ([]byte, error) {
 	if o.FeatureListFieldIndex != nil {
 		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
 	}
+	if o.FieldIndexForOwnedMateConnectors != nil {
+		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
+	}
 	if o.OccurrenceQueriesFromAllConfigurations != nil {
 		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
 	}
@@ -787,6 +856,9 @@ func (o BTMMateConnector66) MarshalJSON() ([]byte, error) {
 	}
 	if o.Implicit != nil {
 		toSerialize["implicit"] = o.Implicit
+	}
+	if o.IsAuxiliaryTreeMateConnector != nil {
+		toSerialize["isAuxiliaryTreeMateConnector"] = o.IsAuxiliaryTreeMateConnector
 	}
 	if o.IsHidden != nil {
 		toSerialize["isHidden"] = o.IsHidden

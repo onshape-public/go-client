@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ComputedPropertyConfig** | Pointer to [**BTComputedPropertyConfig**](BTComputedPropertyConfig.md) |  | [optional] 
+**ComputedPartPropertyConfig** | Pointer to [**BTComputedPartPropertyConfig**](BTComputedPartPropertyConfig.md) |  | [optional] 
 **ComputedPropertyFunctionName** | Pointer to **string** |  | [optional] 
 **ComputedPropertyFunctionNamespace** | Pointer to **string** |  | [optional] 
 **ComputedPropertyFunctionURL** | Pointer to **string** |  | [optional] 
@@ -45,30 +45,30 @@ NewBTCategoryPropertyConfigInfoWithDefaults instantiates a new BTCategoryPropert
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetComputedPropertyConfig
+### GetComputedPartPropertyConfig
 
-`func (o *BTCategoryPropertyConfigInfo) GetComputedPropertyConfig() BTComputedPropertyConfig`
+`func (o *BTCategoryPropertyConfigInfo) GetComputedPartPropertyConfig() BTComputedPartPropertyConfig`
 
-GetComputedPropertyConfig returns the ComputedPropertyConfig field if non-nil, zero value otherwise.
+GetComputedPartPropertyConfig returns the ComputedPartPropertyConfig field if non-nil, zero value otherwise.
 
-### GetComputedPropertyConfigOk
+### GetComputedPartPropertyConfigOk
 
-`func (o *BTCategoryPropertyConfigInfo) GetComputedPropertyConfigOk() (*BTComputedPropertyConfig, bool)`
+`func (o *BTCategoryPropertyConfigInfo) GetComputedPartPropertyConfigOk() (*BTComputedPartPropertyConfig, bool)`
 
-GetComputedPropertyConfigOk returns a tuple with the ComputedPropertyConfig field if it's non-nil, zero value otherwise
+GetComputedPartPropertyConfigOk returns a tuple with the ComputedPartPropertyConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputedPropertyConfig
+### SetComputedPartPropertyConfig
 
-`func (o *BTCategoryPropertyConfigInfo) SetComputedPropertyConfig(v BTComputedPropertyConfig)`
+`func (o *BTCategoryPropertyConfigInfo) SetComputedPartPropertyConfig(v BTComputedPartPropertyConfig)`
 
-SetComputedPropertyConfig sets ComputedPropertyConfig field to given value.
+SetComputedPartPropertyConfig sets ComputedPartPropertyConfig field to given value.
 
-### HasComputedPropertyConfig
+### HasComputedPartPropertyConfig
 
-`func (o *BTCategoryPropertyConfigInfo) HasComputedPropertyConfig() bool`
+`func (o *BTCategoryPropertyConfigInfo) HasComputedPartPropertyConfig() bool`
 
-HasComputedPropertyConfig returns a boolean if a field has been set.
+HasComputedPartPropertyConfig returns a boolean if a field has been set.
 
 ### GetComputedPropertyFunctionName
 

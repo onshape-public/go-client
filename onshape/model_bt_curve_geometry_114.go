@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5677-bf971b1ec12b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -33,6 +33,11 @@ func (o *BTCurveGeometryEllipse1189) AsBTCurveGeometry114() *BTCurveGeometry114 
 
 // BTCurveGeometryLine117AsBTCurveGeometry114 is a convenience function that returns BTCurveGeometryLine117 wrapped in BTCurveGeometry114
 func (o *BTCurveGeometryLine117) AsBTCurveGeometry114() *BTCurveGeometry114 {
+	return &BTCurveGeometry114{o}
+}
+
+// BTCurveGeometryControlPointSpline2197AsBTCurveGeometry114 is a convenience function that returns BTCurveGeometryControlPointSpline2197 wrapped in BTCurveGeometry114
+func (o *BTCurveGeometryControlPointSpline2197) AsBTCurveGeometry114() *BTCurveGeometry114 {
 	return &BTCurveGeometry114{o}
 }
 
@@ -153,6 +158,20 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTCurveGeometry114 = nil
 			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryConic2284: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTCurveGeometryControlPointSpline-2197'
+	if jsonDict["btType"] == "BTCurveGeometryControlPointSpline-2197" {
+		// try to unmarshal JSON data into BTCurveGeometryControlPointSpline2197
+		var qr *BTCurveGeometryControlPointSpline2197
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTCurveGeometry114 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTCurveGeometry114 = nil
+			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryControlPointSpline2197: %s", err.Error())
 		}
 	}
 

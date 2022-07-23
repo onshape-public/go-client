@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5677-bf971b1ec12b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -863,6 +863,56 @@ func (o *BTMAssemblyFeature887) SetFeatureListFieldIndex(v int32) {
 	o.GetActualInstance().(getResult).SetFeatureListFieldIndex(v)
 }
 
+// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
+func (o *BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectors() int32 {
+	type getResult interface {
+		GetFieldIndexForOwnedMateConnectors() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFieldIndexForOwnedMateConnectors()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
+	type getResult interface {
+		GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFieldIndexForOwnedMateConnectorsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+func (o *BTMAssemblyFeature887) HasFieldIndexForOwnedMateConnectors() bool {
+	type getResult interface {
+		HasFieldIndexForOwnedMateConnectors() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasFieldIndexForOwnedMateConnectors()
+	} else {
+		return false
+	}
+}
+
+// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
+func (o *BTMAssemblyFeature887) SetFieldIndexForOwnedMateConnectors(v int32) {
+	type getResult interface {
+		SetFieldIndexForOwnedMateConnectors(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetFieldIndexForOwnedMateConnectors(v)
+}
+
 // GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
 func (o *BTMAssemblyFeature887) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
 	type getResult interface {
@@ -1314,6 +1364,7 @@ type base_BTMAssemblyFeature887 struct {
 	BtType                                 *string                                   `json:"btType,omitempty"`
 	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
 	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
+	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
@@ -1816,6 +1867,38 @@ func (o *base_BTMAssemblyFeature887) SetFeatureListFieldIndex(v int32) {
 	o.FeatureListFieldIndex = &v
 }
 
+// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
+func (o *base_BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectors() int32 {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FieldIndexForOwnedMateConnectors
+}
+
+// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		return nil, false
+	}
+	return o.FieldIndexForOwnedMateConnectors, true
+}
+
+// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+func (o *base_BTMAssemblyFeature887) HasFieldIndexForOwnedMateConnectors() bool {
+	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
+func (o *base_BTMAssemblyFeature887) SetFieldIndexForOwnedMateConnectors(v int32) {
+	o.FieldIndexForOwnedMateConnectors = &v
+}
+
 // GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
 func (o *base_BTMAssemblyFeature887) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
 	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
@@ -1958,6 +2041,9 @@ func (o base_BTMAssemblyFeature887) MarshalJSON() ([]byte, error) {
 	}
 	if o.FeatureListFieldIndex != nil {
 		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
+	}
+	if o.FieldIndexForOwnedMateConnectors != nil {
+		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
 	}
 	if o.OccurrenceQueriesFromAllConfigurations != nil {
 		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations

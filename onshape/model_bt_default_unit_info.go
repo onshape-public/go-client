@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5677-bf971b1ec12b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -15,9 +15,11 @@ import (
 	"encoding/json"
 )
 
-// BTDefaultUnitInfo struct for BTDefaultUnitInfo
+// BTDefaultUnitInfo Specifies which unit should be used for each supported quantity type.
 type BTDefaultUnitInfo struct {
-	Key   *string `json:"key,omitempty"`
+	// The quantity type.
+	Key *string `json:"key,omitempty"`
+	// The unit that should be used.
 	Value *string `json:"value,omitempty"`
 }
 
