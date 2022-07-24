@@ -179,9 +179,9 @@ docs/BTCommonUnitsInfo.md
 docs/BTCompanyInfo.md
 docs/BTCompanySummaryInfo.md
 docs/BTComputedConfigurationInputSpec2525.md
+docs/BTComputedPartPropertyConfig.md
 docs/BTComputedPartPropertySpec1746.md
 docs/BTComputedPartPropertySpec1746AllOf.md
-docs/BTComputedPropertyConfig.md
 docs/BTConeDescription860.md
 docs/BTConeDescription860AllOf.md
 docs/BTConfigurationInfo.md
@@ -213,6 +213,8 @@ docs/BTCurveGeometryCircle115.md
 docs/BTCurveGeometryCircle115AllOf.md
 docs/BTCurveGeometryConic2284.md
 docs/BTCurveGeometryConic2284AllOf.md
+docs/BTCurveGeometryControlPointSpline2197.md
+docs/BTCurveGeometryControlPointSpline2197AllOf.md
 docs/BTCurveGeometryEllipse1189.md
 docs/BTCurveGeometryEllipse1189AllOf.md
 docs/BTCurveGeometryInterpolatedSpline116.md
@@ -261,6 +263,7 @@ docs/BTEditingLogic2350.md
 docs/BTElementLibraryPurpose3353.md
 docs/BTElementLibraryReferenceData3133.md
 docs/BTElementLocationParams.md
+docs/BTElementMergeInfo.md
 docs/BTElementReference725.md
 docs/BTElementTransaction.md
 docs/BTEllipseDescription866.md
@@ -614,6 +617,7 @@ docs/BTMaterialLibraryMetadataInfo.md
 docs/BTMaterialLibrarySettingsInfo.md
 docs/BTMaterialParams.md
 docs/BTMaterialPropertyParams.md
+docs/BTMergePreviewInfo.md
 docs/BTMetadataCategorySummaryInfo.md
 docs/BTMetadataElementInfo.md
 docs/BTMetadataElementInfoAllOf.md
@@ -673,7 +677,6 @@ docs/BTPBuiltinIdentifier233.md
 docs/BTPConversionFunction1362.md
 docs/BTPConversionFunction1362AllOf.md
 docs/BTPExpression9.md
-docs/BTPExpression9AllOf.md
 docs/BTPExpressionAccess237.md
 docs/BTPExpressionAccess237AllOf.md
 docs/BTPExpressionAs238.md
@@ -699,7 +702,6 @@ docs/BTPExpressionTry1271AllOf.md
 docs/BTPExpressionVarReference245.md
 docs/BTPExpressionVarReference245AllOf.md
 docs/BTPFunctionDeclaration246.md
-docs/BTPFunctionDeclaration246AllOf.md
 docs/BTPFunctionOrPredicateDeclaration247.md
 docs/BTPFunctionOrPredicateDeclaration247AllOf.md
 docs/BTPIdentifier8.md
@@ -933,6 +935,8 @@ docs/BTSketchObjectFilter184.md
 docs/BTSketchObjectFilter184AllOf.md
 docs/BTSphereDescription1263.md
 docs/BTSphereDescription1263AllOf.md
+docs/BTSplineControlPolygonFilter1130.md
+docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
 docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
@@ -1001,6 +1005,7 @@ docs/BTUiSelection1185.md
 docs/BTUnchangedElementInfo.md
 docs/BTUnchangedReferenceInfo.md
 docs/BTUniqueDocumentItemParams.md
+docs/BTUnitInfo.md
 docs/BTUnitsMaximumDisplayPrecisionInfo.md
 docs/BTUpdateFeaturesCall1748.md
 docs/BTUpdateFeaturesResponse1333.md
@@ -1027,7 +1032,7 @@ docs/BTVariableTableRowMetadata3912AllOf.md
 docs/BTVector2d1812.md
 docs/BTVector3d389.md
 docs/BTVersionInfo.md
-docs/BTVersionOrWorkspaceInfo.md
+docs/BTVersionOrWorkspaceMergeInfo.md
 docs/BTVersionOrWorkspaceParams.md
 docs/BTViewDataInfo.md
 docs/BTViewDataParams.md
@@ -1220,8 +1225,8 @@ model_bt_common_units_info.go
 model_bt_company_info.go
 model_bt_company_summary_info.go
 model_bt_computed_configuration_input_spec_2525.go
+model_bt_computed_part_property_config.go
 model_bt_computed_part_property_spec_1746.go
-model_bt_computed_property_config.go
 model_bt_cone_description_860.go
 model_bt_configuration_info.go
 model_bt_configuration_params.go
@@ -1243,6 +1248,7 @@ model_bt_curve_description_1583.go
 model_bt_curve_geometry_114.go
 model_bt_curve_geometry_circle_115.go
 model_bt_curve_geometry_conic_2284.go
+model_bt_curve_geometry_control_point_spline_2197.go
 model_bt_curve_geometry_ellipse_1189.go
 model_bt_curve_geometry_interpolated_spline_116.go
 model_bt_curve_geometry_line_117.go
@@ -1281,6 +1287,7 @@ model_bt_editing_logic_2350.go
 model_bt_element_library_purpose_3353.go
 model_bt_element_library_reference_data_3133.go
 model_bt_element_location_params.go
+model_bt_element_merge_info.go
 model_bt_element_reference_725.go
 model_bt_element_transaction.go
 model_bt_ellipse_description_866.go
@@ -1386,6 +1393,7 @@ model_bt_material_library_metadata_info.go
 model_bt_material_library_settings_info.go
 model_bt_material_params.go
 model_bt_material_property_params.go
+model_bt_merge_preview_info.go
 model_bt_metadata_category_summary_info.go
 model_bt_metadata_element_info.go
 model_bt_metadata_enum_value.go
@@ -1523,6 +1531,7 @@ model_bt_simulation_instance_3093.go
 model_bt_simulation_table_column_info_1785.go
 model_bt_sketch_object_filter_184.go
 model_bt_sphere_description_1263.go
+model_bt_spline_control_polygon_filter_1130.go
 model_bt_spline_description_2118.go
 model_bt_spline_handle_filter_2971.go
 model_bt_spun_description_657.go
@@ -1571,6 +1580,7 @@ model_bt_tree_node_20.go
 model_bt_unchanged_element_info.go
 model_bt_unchanged_reference_info.go
 model_bt_unique_document_item_params.go
+model_bt_unit_info.go
 model_bt_units_maximum_display_precision_info.go
 model_bt_update_features_call_1748.go
 model_bt_update_features_response_1333.go
@@ -1595,7 +1605,7 @@ model_bt_variable_table_row_metadata_3912.go
 model_bt_vector2d_1812.go
 model_bt_vector3d_389.go
 model_bt_version_info.go
-model_bt_version_or_workspace_info.go
+model_bt_version_or_workspace_merge_info.go
 model_bt_version_or_workspace_params.go
 model_bt_view_data_info.go
 model_bt_view_data_params.go

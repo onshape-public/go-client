@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5686-86cede96e73b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -2465,6 +2465,133 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiGetUnitInfoRequest struct {
+	ctx            context.Context
+	ApiService     *DocumentApiService
+	did            string
+	wvm            string
+	wvmid          string
+	linkDocumentId *string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetUnitInfoRequest) LinkDocumentId(linkDocumentId string) ApiGetUnitInfoRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiGetUnitInfoRequest) Execute() (*BTUnitInfo, *http.Response, error) {
+	return r.ApiService.GetUnitInfoExecute(r)
+}
+
+/*
+GetUnitInfo Get the selected units and precision by document ID and workspace or version or microversion ID.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param did The id of the document in which to perform the operation.
+ @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
+ @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @return ApiGetUnitInfoRequest
+*/
+func (a *DocumentApiService) GetUnitInfo(ctx context.Context, did string, wvm string, wvmid string) ApiGetUnitInfoRequest {
+	return ApiGetUnitInfoRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+	}
+}
+
+// Execute executes the request
+//  @return BTUnitInfo
+func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUnitInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTUnitInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetUnitInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/documents/d/{did}/{wvm}/{wvmid}/unitinfo"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTUnitInfo
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiGetVersionRequest struct {
 	ctx            context.Context
 	ApiService     *DocumentApiService
@@ -2590,15 +2717,15 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 }
 
 type ApiMergeIntoWorkspaceRequest struct {
-	ctx                      context.Context
-	ApiService               *DocumentApiService
-	did                      string
-	wid                      string
-	bTVersionOrWorkspaceInfo *BTVersionOrWorkspaceInfo
+	ctx                           context.Context
+	ApiService                    *DocumentApiService
+	did                           string
+	wid                           string
+	bTVersionOrWorkspaceMergeInfo *BTVersionOrWorkspaceMergeInfo
 }
 
-func (r ApiMergeIntoWorkspaceRequest) BTVersionOrWorkspaceInfo(bTVersionOrWorkspaceInfo BTVersionOrWorkspaceInfo) ApiMergeIntoWorkspaceRequest {
-	r.bTVersionOrWorkspaceInfo = &bTVersionOrWorkspaceInfo
+func (r ApiMergeIntoWorkspaceRequest) BTVersionOrWorkspaceMergeInfo(bTVersionOrWorkspaceMergeInfo BTVersionOrWorkspaceMergeInfo) ApiMergeIntoWorkspaceRequest {
+	r.bTVersionOrWorkspaceMergeInfo = &bTVersionOrWorkspaceMergeInfo
 	return r
 }
 
@@ -2645,8 +2772,8 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.bTVersionOrWorkspaceInfo == nil {
-		return localVarReturnValue, nil, reportError("bTVersionOrWorkspaceInfo is required and must be specified")
+	if r.bTVersionOrWorkspaceMergeInfo == nil {
+		return localVarReturnValue, nil, reportError("bTVersionOrWorkspaceMergeInfo is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2667,7 +2794,7 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.bTVersionOrWorkspaceInfo
+	localVarPostBody = r.bTVersionOrWorkspaceMergeInfo
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2692,6 +2819,149 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTDocumentMergeInfo
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiMergePreviewRequest struct {
+	ctx            context.Context
+	ApiService     *DocumentApiService
+	did            string
+	wid            string
+	sourceType     *string
+	sourceId       *string
+	linkDocumentId *string
+}
+
+func (r ApiMergePreviewRequest) SourceType(sourceType string) ApiMergePreviewRequest {
+	r.sourceType = &sourceType
+	return r
+}
+
+func (r ApiMergePreviewRequest) SourceId(sourceId string) ApiMergePreviewRequest {
+	r.sourceId = &sourceId
+	return r
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiMergePreviewRequest) LinkDocumentId(linkDocumentId string) ApiMergePreviewRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiMergePreviewRequest) Execute() (*BTMergePreviewInfo, *http.Response, error) {
+	return r.ApiService.MergePreviewExecute(r)
+}
+
+/*
+MergePreview Merge preview of changes that will occur based on document ID, workspace ID and source workspace/version ID
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param did The id of the document in which to perform the operation.
+ @param wid The id of the workspace in which to perform the operation.
+ @return ApiMergePreviewRequest
+*/
+func (a *DocumentApiService) MergePreview(ctx context.Context, did string, wid string) ApiMergePreviewRequest {
+	return ApiMergePreviewRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wid:        wid,
+	}
+}
+
+// Execute executes the request
+//  @return BTMergePreviewInfo
+func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTMergePreviewInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTMergePreviewInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.MergePreview")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/documents/{did}/w/{wid}/mergePreview"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wid"+"}", url.PathEscape(parameterToString(r.wid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.sourceType == nil {
+		return localVarReturnValue, nil, reportError("sourceType is required and must be specified")
+	}
+	if r.sourceId == nil {
+		return localVarReturnValue, nil, reportError("sourceId is required and must be specified")
+	}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	localVarQueryParams.Add("sourceType", parameterToString(*r.sourceType, ""))
+	localVarQueryParams.Add("sourceId", parameterToString(*r.sourceId, ""))
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTMergePreviewInfo
 		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
