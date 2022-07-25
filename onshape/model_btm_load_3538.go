@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5686-86cede96e73b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -32,9 +32,11 @@ type BTMLoad3538 struct {
 	BtType                                 *string                                   `json:"btType,omitempty"`
 	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
 	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
+	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
+	DefinedByComponents                    *bool                                     `json:"definedByComponents,omitempty"`
 	LoadComponentParameterIds              *map[string]string                        `json:"loadComponentParameterIds,omitempty"`
 	LoadRegionParameterId                  *string                                   `json:"loadRegionParameterId,omitempty"`
 	LoadType                               *string                                   `json:"loadType,omitempty"`
@@ -541,6 +543,38 @@ func (o *BTMLoad3538) SetFeatureListFieldIndex(v int32) {
 	o.FeatureListFieldIndex = &v
 }
 
+// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetFieldIndexForOwnedMateConnectors() int32 {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FieldIndexForOwnedMateConnectors
+}
+
+// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		return nil, false
+	}
+	return o.FieldIndexForOwnedMateConnectors, true
+}
+
+// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasFieldIndexForOwnedMateConnectors() bool {
+	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
+func (o *BTMLoad3538) SetFieldIndexForOwnedMateConnectors(v int32) {
+	o.FieldIndexForOwnedMateConnectors = &v
+}
+
 // GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
 func (o *BTMLoad3538) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
 	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
@@ -635,6 +669,38 @@ func (o *BTMLoad3538) HasVersion() bool {
 // SetVersion gets a reference to the given int32 and assigns it to the Version field.
 func (o *BTMLoad3538) SetVersion(v int32) {
 	o.Version = &v
+}
+
+// GetDefinedByComponents returns the DefinedByComponents field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetDefinedByComponents() bool {
+	if o == nil || o.DefinedByComponents == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DefinedByComponents
+}
+
+// GetDefinedByComponentsOk returns a tuple with the DefinedByComponents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetDefinedByComponentsOk() (*bool, bool) {
+	if o == nil || o.DefinedByComponents == nil {
+		return nil, false
+	}
+	return o.DefinedByComponents, true
+}
+
+// HasDefinedByComponents returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasDefinedByComponents() bool {
+	if o != nil && o.DefinedByComponents != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefinedByComponents gets a reference to the given bool and assigns it to the DefinedByComponents field.
+func (o *BTMLoad3538) SetDefinedByComponents(v bool) {
+	o.DefinedByComponents = &v
 }
 
 // GetLoadComponentParameterIds returns the LoadComponentParameterIds field value if set, zero value otherwise.
@@ -908,6 +974,9 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	if o.FeatureListFieldIndex != nil {
 		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
 	}
+	if o.FieldIndexForOwnedMateConnectors != nil {
+		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
+	}
 	if o.OccurrenceQueriesFromAllConfigurations != nil {
 		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
 	}
@@ -916,6 +985,9 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
+	}
+	if o.DefinedByComponents != nil {
+		toSerialize["definedByComponents"] = o.DefinedByComponents
 	}
 	if o.LoadComponentParameterIds != nil {
 		toSerialize["loadComponentParameterIds"] = o.LoadComponentParameterIds

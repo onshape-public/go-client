@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5686-86cede96e73b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -113,6 +113,11 @@ func (o *BTMateConnectorFilter163) AsBTQueryFilter183() *BTQueryFilter183 {
 
 // BTOrFilter167AsBTQueryFilter183 is a convenience function that returns BTOrFilter167 wrapped in BTQueryFilter183
 func (o *BTOrFilter167) AsBTQueryFilter183() *BTQueryFilter183 {
+	return &BTQueryFilter183{o}
+}
+
+// BTSplineControlPolygonFilter1130AsBTQueryFilter183 is a convenience function that returns BTSplineControlPolygonFilter1130 wrapped in BTQueryFilter183
+func (o *BTSplineControlPolygonFilter1130) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
 }
 
@@ -585,6 +590,20 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTQueryFilter183 = nil
 			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSketchObjectFilter184: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTSplineControlPolygonFilter-1130'
+	if jsonDict["btType"] == "BTSplineControlPolygonFilter-1130" {
+		// try to unmarshal JSON data into BTSplineControlPolygonFilter1130
+		var qr *BTSplineControlPolygonFilter1130
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTQueryFilter183 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTQueryFilter183 = nil
+			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSplineControlPolygonFilter1130: %s", err.Error())
 		}
 	}
 

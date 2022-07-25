@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.150.5633-5ed6b38daa6b
+  version: 1.151.5686-86cede96e73b
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -5817,6 +5817,66 @@ paths:
       tags:
       - Document
       x-BTVisibility: PRODUCTION
+  /documents/d/{did}/{wvm}/{wvmid}/unitinfo:
+    get:
+      deprecated: false
+      operationId: getUnitInfo
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace id, version id, or document microversion\
+          \ id is specified below."
+        explode: false
+        in: path
+        name: wvm
+        required: true
+        schema:
+          enum:
+          - w
+          - v
+          - m
+          type: string
+        style: simple
+      - description: "The id of the workspace, version, or document microversion in\
+          \ which the operation should be performed."
+        explode: false
+        in: path
+        name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTUnitInfo'
+          description: default response
+      summary: Get the selected units and precision by document ID and workspace or
+        version or microversion ID.
+      tags:
+      - Document
+      x-BTVisibility: PRODUCTION
   /documents/d/{did}/{wv}/{wvid}/currentmicroversion:
     get:
       deprecated: false
@@ -6443,6 +6503,73 @@ paths:
       tags:
       - Document
       x-BTVisibility: PRODUCTION
+  /documents/{did}/w/{wid}/mergePreview:
+    get:
+      deprecated: false
+      operationId: mergePreview
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: The id of the workspace in which to perform the operation.
+        explode: false
+        in: path
+        name: wid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: sourceType
+        required: true
+        schema:
+          pattern: w|v
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sourceId
+        required: true
+        schema:
+          pattern: "[a-zA-Z0-9]{24}"
+          type: string
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTMergePreviewInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: "Merge preview of changes that will occur based on document ID, workspace\
+        \ ID and source workspace/version ID"
+      tags:
+      - Document
+      x-BTVisibility: PRODUCTION
   /documents/{did}/w/{wid}/restore/{vm}/{vmid}:
     post:
       deprecated: false
@@ -6572,7 +6699,7 @@ paths:
         content:
           application/json;charset=UTF-8; qs=0.09:
             schema:
-              $ref: '#/components/schemas/BTVersionOrWorkspaceInfo'
+              $ref: '#/components/schemas/BTVersionOrWorkspaceMergeInfo'
         required: true
       responses:
         default:
@@ -10287,6 +10414,204 @@ paths:
       tags:
       - Part
       x-BTVisibility: PRODUCTION
+  /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces:
+    get:
+      deprecated: false
+      operationId: getFaces_1
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace id, version id, or document microversion\
+          \ id is specified below."
+        explode: false
+        in: path
+        name: wvm
+        required: true
+        schema:
+          enum:
+          - w
+          - v
+          - m
+          type: string
+        style: simple
+      - description: "The id of the workspace, version, or document microversion in\
+          \ which the operation should be performed."
+        explode: false
+        in: path
+        name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the element in which to perform the operation.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: configuration
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: rollbackBarIndex
+        required: false
+        schema:
+          default: -1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: elementMicroversionId
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: false
+        in: path
+        name: partid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: angleTolerance
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      - explode: true
+        in: query
+        name: chordTolerance
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      - explode: true
+        in: query
+        name: precomputedLevelOfDetail
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: faceId
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: outputFaceAppearances
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: maxFacetWidth
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      - explode: true
+        in: query
+        name: outputVertexNormals
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: outputFacetNormals
+        required: false
+        schema:
+          default: true
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: outputTextureCoordinates
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: outputIndexTable
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: outputErrorFaces
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: combineCompositePartConstituents
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTExportTessellatedFacesResponse-898'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      tags:
+      - Part
+      x-BTVisibility: PRODUCTION
   /parts/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/partid/{partid}/metadata:
     get:
       deprecated: false
@@ -13210,6 +13535,61 @@ paths:
       summary: Update release packages by release package ID.
       tags:
       - ReleasePackage
+      x-BTVisibility: PRODUCTION
+  /revisions/c/{cid}/partnumber/{pnum}:
+    get:
+      deprecated: false
+      description: Get Navigation URL for part number and revision.
+      operationId: getRevisionByPartNumber
+      parameters:
+      - description: Company id
+        explode: false
+        in: path
+        name: cid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Part Number
+        explode: false
+        in: path
+        name: pnum
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Revision
+        explode: true
+        in: query
+        name: revision
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob"
+        explode: true
+        in: query
+        name: elementType
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTRevisionInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Get Navigation URL
+      tags:
+      - Revision
       x-BTVisibility: PRODUCTION
   /revisions/companies/{cid}:
     get:
@@ -18915,6 +19295,11 @@ components:
       properties:
         btType:
           type: string
+        fullTransformation:
+          items:
+            format: double
+            type: number
+          type: array
         isNormalized:
           type: boolean
         m00:
@@ -19598,37 +19983,40 @@ components:
       type: object
     BTCategoryPropertyConfigInfo:
       example:
-        publishState: 9
-        quantityType: 3
+        publishState: 3
+        quantityType: 2
         minDate: 2000-01-23T04:56:07.000+00:00
+        computedPartPropertyConfig:
+          computedPartPropertySpecFunction: computedPartPropertySpecFunction
+          computedPropertyFunctionReturnType: 0
+          propertyFunctionDocumentId: propertyFunctionDocumentId
+          computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
         defaultValue: defaultValue
         displayName: displayName
-        maxValue: 5.962133916683182
-        minLength: 2
+        maxValue: 5.637376656633329
+        minLength: 7
         multivalued: true
         pattern: pattern
-        maxCount: 6
+        maxCount: 1
         required: true
         computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
         computedPropertyFunctionURL: computedPropertyFunctionURL
-        minValue: 7.061401241503109
-        computedPropertyConfig:
-          jsonType: jsonType
+        minValue: 9.301444243932576
         multiline: true
         maxDate: 2000-01-23T04:56:07.000+00:00
-        minCount: 5
+        minCount: 2
         computedPropertyFunctionName: computedPropertyFunctionName
-        maxLength: 1
+        maxLength: 5
         enumValues:
         - label: label
-          state: 0
+          state: 6
           value: value
         - label: label
-          state: 0
+          state: 6
           value: value
       properties:
-        computedPropertyConfig:
-          $ref: '#/components/schemas/BTComputedPropertyConfig'
+        computedPartPropertyConfig:
+          $ref: '#/components/schemas/BTComputedPartPropertyConfig'
         computedPropertyFunctionName:
           type: string
         computedPropertyFunctionNamespace:
@@ -19689,28 +20077,28 @@ components:
         editableInVersion: true
         uiReadonlyInVersion: true
         categorySummaryInfoList:
-        - defaultObjectType: 2
-          ownerType: 7
+        - defaultObjectType: 4
+          ownerType: 1
           publishState: 1
           name: name
           description: description
           href: https://openapi-generator.tech
           id: id
           objectTypes:
-          - 4
-          - 4
+          - 7
+          - 7
           ownerId: ownerId
           viewRef: https://openapi-generator.tech
-        - defaultObjectType: 2
-          ownerType: 7
+        - defaultObjectType: 4
+          ownerType: 1
           publishState: 1
           name: name
           description: description
           href: https://openapi-generator.tech
           id: id
           objectTypes:
-          - 4
-          - 4
+          - 7
+          - 7
           ownerId: ownerId
           viewRef: https://openapi-generator.tech
         description: description
@@ -19720,38 +20108,41 @@ components:
         assignable: true
         array: true
         uiReadonlyInMicroversion: true
-        valueType: 1
+        valueType: 6
         name: name
         href: https://openapi-generator.tech
         id: id
         categoryPropertyConfigInfo:
-          publishState: 9
-          quantityType: 3
+          publishState: 3
+          quantityType: 2
           minDate: 2000-01-23T04:56:07.000+00:00
+          computedPartPropertyConfig:
+            computedPartPropertySpecFunction: computedPartPropertySpecFunction
+            computedPropertyFunctionReturnType: 0
+            propertyFunctionDocumentId: propertyFunctionDocumentId
+            computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
           defaultValue: defaultValue
           displayName: displayName
-          maxValue: 5.962133916683182
-          minLength: 2
+          maxValue: 5.637376656633329
+          minLength: 7
           multivalued: true
           pattern: pattern
-          maxCount: 6
+          maxCount: 1
           required: true
           computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
           computedPropertyFunctionURL: computedPropertyFunctionURL
-          minValue: 7.061401241503109
-          computedPropertyConfig:
-            jsonType: jsonType
+          minValue: 9.301444243932576
           multiline: true
           maxDate: 2000-01-23T04:56:07.000+00:00
-          minCount: 5
+          minCount: 2
           computedPropertyFunctionName: computedPropertyFunctionName
-          maxLength: 1
+          maxLength: 5
           enumValues:
           - label: label
-            state: 0
+            state: 6
             value: value
           - label: label
-            state: 0
+            state: 6
             value: value
         viewRef: https://openapi-generator.tech
       properties:
@@ -20782,21 +21173,27 @@ components:
         inputId:
           type: string
       type: object
+    BTComputedPartPropertyConfig:
+      example:
+        computedPartPropertySpecFunction: computedPartPropertySpecFunction
+        computedPropertyFunctionReturnType: 0
+        propertyFunctionDocumentId: propertyFunctionDocumentId
+        computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
+      properties:
+        computedPartPropertySpecFunction:
+          type: string
+        computedPartPropertySpecNamespace:
+          type: string
+        computedPropertyFunctionReturnType:
+          format: int32
+          type: integer
+        propertyFunctionDocumentId:
+          type: string
+      type: object
     BTComputedPartPropertySpec-1746:
       allOf:
       - $ref: '#/components/schemas/BTFeatureSpec-129'
       - $ref: '#/components/schemas/BTComputedPartPropertySpec_1746_allOf'
-      type: object
-    BTComputedPropertyConfig:
-      discriminator:
-        propertyName: jsonType
-      example:
-        jsonType: jsonType
-      properties:
-        jsonType:
-          type: string
-      required:
-      - jsonType
       type: object
     BTConeDescription-860:
       allOf:
@@ -21148,6 +21545,11 @@ components:
       - $ref: '#/components/schemas/BTCurveGeometry-114'
       - $ref: '#/components/schemas/BTCurveGeometryConic_2284_allOf'
       type: object
+    BTCurveGeometryControlPointSpline-2197:
+      allOf:
+      - $ref: '#/components/schemas/BTCurveGeometrySpline-118'
+      - $ref: '#/components/schemas/BTCurveGeometryControlPointSpline_2197_allOf'
+      type: object
     BTCurveGeometryEllipse-1189:
       allOf:
       - $ref: '#/components/schemas/BTCurveGeometryCircle-115'
@@ -21167,6 +21569,10 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTCurveGeometry-114'
       - $ref: '#/components/schemas/BTCurveGeometrySpline_118_allOf'
+      discriminator:
+        mapping:
+          BTCurveGeometryControlPointSpline-2197: '#/components/schemas/BTCurveGeometryControlPointSpline-2197'
+        propertyName: btType
       type: object
     BTCylinderDescription-686:
       allOf:
@@ -21183,13 +21589,17 @@ components:
           type: array
       type: object
     BTDefaultUnitInfo:
+      description: Specifies which unit should be used for each supported quantity
+        type.
       example:
         value: value
         key: key
       properties:
         key:
+          description: The quantity type.
           type: string
         value:
+          description: The unit that should be used.
           type: string
       type: object
     BTDefaultUnitsInfo:
@@ -21461,6 +21871,7 @@ components:
           - TABLE
           - BILLOFMATERIALS
           - VARIABLESTUDIO
+          - PUBLICATIONITEM
           - UNKNOWN
           type: string
         energyUnits:
@@ -21600,6 +22011,7 @@ components:
           - TABLE
           - BILLOFMATERIALS
           - VARIABLESTUDIO
+          - PUBLICATIONITEM
           - UNKNOWN
           type: string
         energyUnits:
@@ -23036,6 +23448,84 @@ components:
             \ insertion at the start of the element list."
           format: int32
           type: integer
+      type: object
+    BTElementMergeInfo:
+      example:
+        elementId: elementId
+        sourceElementName: sourceElementName
+        branchPointElementPath:
+        - branchPointElementPath
+        - branchPointElementPath
+        mergeable: true
+        targetElementPath:
+        - targetElementPath
+        - targetElementPath
+        targetElementStatus: CREATED
+        sourceElementStatus: CREATED
+        targetElementName: targetElementName
+        branchPointElementName: branchPointElementName
+        sourceElementPath:
+        - sourceElementPath
+        - sourceElementPath
+        elementType: PARTSTUDIO
+        elementDataType: elementDataType
+      properties:
+        branchPointElementName:
+          type: string
+        branchPointElementPath:
+          items:
+            type: string
+          type: array
+        elementDataType:
+          type: string
+        elementId:
+          type: string
+        elementType:
+          enum:
+          - PARTSTUDIO
+          - ASSEMBLY
+          - DRAWING
+          - FEATURESTUDIO
+          - BLOB
+          - APPLICATION
+          - TABLE
+          - BILLOFMATERIALS
+          - VARIABLESTUDIO
+          - PUBLICATIONITEM
+          - UNKNOWN
+          type: string
+        mergeable:
+          type: boolean
+        sourceElementName:
+          type: string
+        sourceElementPath:
+          items:
+            type: string
+          type: array
+        sourceElementStatus:
+          enum:
+          - CREATED
+          - DELETED
+          - EDITS
+          - NOT_ON_THIS_BRANCH
+          - NO_CHANGES
+          - UNKNOWN
+          type: string
+        targetElementName:
+          type: string
+        targetElementPath:
+          items:
+            type: string
+          type: array
+        targetElementStatus:
+          enum:
+          - CREATED
+          - DELETED
+          - EDITS
+          - NOT_ON_THIS_BRANCH
+          - NO_CHANGES
+          - UNKNOWN
+          type: string
       type: object
     BTElementReference-725:
       discriminator:
@@ -28892,6 +29382,7 @@ components:
             - PREVENT_ARRAY_REORDER
             - VARIABLE_NAME
             - FOCUS_INNER_QUERY
+            - SHOW_TOLERANCE
             - UNKNOWN
             type: string
           type: array
@@ -30501,6 +30992,7 @@ components:
           - TABLE
           - BILLOFMATERIALS
           - VARIABLESTUDIO
+          - PUBLICATIONITEM
           - UNKNOWN
           type: string
         featureId:
@@ -31502,28 +31994,28 @@ components:
           editableInVersion: true
           uiReadonlyInVersion: true
           categorySummaryInfoList:
-          - defaultObjectType: 2
-            ownerType: 7
+          - defaultObjectType: 4
+            ownerType: 1
             publishState: 1
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 4
-            - 4
+            - 7
+            - 7
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
-          - defaultObjectType: 2
-            ownerType: 7
+          - defaultObjectType: 4
+            ownerType: 1
             publishState: 1
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 4
-            - 4
+            - 7
+            - 7
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
           description: description
@@ -31533,38 +32025,41 @@ components:
           assignable: true
           array: true
           uiReadonlyInMicroversion: true
-          valueType: 1
+          valueType: 6
           name: name
           href: https://openapi-generator.tech
           id: id
           categoryPropertyConfigInfo:
-            publishState: 9
-            quantityType: 3
+            publishState: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
+            computedPartPropertyConfig:
+              computedPartPropertySpecFunction: computedPartPropertySpecFunction
+              computedPropertyFunctionReturnType: 0
+              propertyFunctionDocumentId: propertyFunctionDocumentId
+              computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
             defaultValue: defaultValue
             displayName: displayName
-            maxValue: 5.962133916683182
-            minLength: 2
+            maxValue: 5.637376656633329
+            minLength: 7
             multivalued: true
             pattern: pattern
-            maxCount: 6
+            maxCount: 1
             required: true
             computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
             computedPropertyFunctionURL: computedPropertyFunctionURL
-            minValue: 7.061401241503109
-            computedPropertyConfig:
-              jsonType: jsonType
+            minValue: 9.301444243932576
             multiline: true
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 5
+            minCount: 2
             computedPropertyFunctionName: computedPropertyFunctionName
-            maxLength: 1
+            maxLength: 5
             enumValues:
             - label: label
-              state: 0
+              state: 6
               value: value
             - label: label
-              state: 0
+              state: 6
               value: value
           viewRef: https://openapi-generator.tech
         - ownerType: 1
@@ -31572,28 +32067,28 @@ components:
           editableInVersion: true
           uiReadonlyInVersion: true
           categorySummaryInfoList:
-          - defaultObjectType: 2
-            ownerType: 7
+          - defaultObjectType: 4
+            ownerType: 1
             publishState: 1
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 4
-            - 4
+            - 7
+            - 7
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
-          - defaultObjectType: 2
-            ownerType: 7
+          - defaultObjectType: 4
+            ownerType: 1
             publishState: 1
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 4
-            - 4
+            - 7
+            - 7
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
           description: description
@@ -31603,38 +32098,41 @@ components:
           assignable: true
           array: true
           uiReadonlyInMicroversion: true
-          valueType: 1
+          valueType: 6
           name: name
           href: https://openapi-generator.tech
           id: id
           categoryPropertyConfigInfo:
-            publishState: 9
-            quantityType: 3
+            publishState: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
+            computedPartPropertyConfig:
+              computedPartPropertySpecFunction: computedPartPropertySpecFunction
+              computedPropertyFunctionReturnType: 0
+              propertyFunctionDocumentId: propertyFunctionDocumentId
+              computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
             defaultValue: defaultValue
             displayName: displayName
-            maxValue: 5.962133916683182
-            minLength: 2
+            maxValue: 5.637376656633329
+            minLength: 7
             multivalued: true
             pattern: pattern
-            maxCount: 6
+            maxCount: 1
             required: true
             computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
             computedPropertyFunctionURL: computedPropertyFunctionURL
-            minValue: 7.061401241503109
-            computedPropertyConfig:
-              jsonType: jsonType
+            minValue: 9.301444243932576
             multiline: true
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 5
+            minCount: 2
             computedPropertyFunctionName: computedPropertyFunctionName
-            maxLength: 1
+            maxLength: 5
             enumValues:
             - label: label
-              state: 0
+              state: 6
               value: value
             - label: label
-              state: 0
+              state: 6
               value: value
           viewRef: https://openapi-generator.tech
       properties:
@@ -37088,6 +37586,21 @@ components:
           - V1801_HOLE_TAPPED_ONLY_IF_TAPPED_DEPTH_POSITIVE
           - V1802_PARTIAL_FLANGE_BUMP
           - V1803_VERSION_BUMP
+          - SKIP_1804
+          - SKIP_1805
+          - SKIP_1806
+          - SKIP_1807
+          - SKIP_1808
+          - SKIP_1809
+          - SKIP_1810
+          - SKIP_1811
+          - V1812_FIX_LOFT_CLAMPS
+          - V1813_UNION_TRACKING
+          - V1814_CONTAINED_SUBTRACT_COMPLEMENT
+          - V1815_DONT_GROW_SM_OFFSET
+          - V1816_WIRE_OP_DISCONTINUITY_SMUGGLER
+          - V1817_RULED_SURFACE_CLAMPED_ENDS
+          - V1818_REVERT_MEASURE_TO_VARIABLE
           - UNKNOWN
           type: string
         btType:
@@ -37985,18 +38498,75 @@ components:
         value:
           type: string
       type: object
+    BTMergePreviewInfo:
+      example:
+        targetMicroversionId: targetMicroversionId
+        changes:
+        - elementId: elementId
+          sourceElementName: sourceElementName
+          branchPointElementPath:
+          - branchPointElementPath
+          - branchPointElementPath
+          mergeable: true
+          targetElementPath:
+          - targetElementPath
+          - targetElementPath
+          targetElementStatus: CREATED
+          sourceElementStatus: CREATED
+          targetElementName: targetElementName
+          branchPointElementName: branchPointElementName
+          sourceElementPath:
+          - sourceElementPath
+          - sourceElementPath
+          elementType: PARTSTUDIO
+          elementDataType: elementDataType
+        - elementId: elementId
+          sourceElementName: sourceElementName
+          branchPointElementPath:
+          - branchPointElementPath
+          - branchPointElementPath
+          mergeable: true
+          targetElementPath:
+          - targetElementPath
+          - targetElementPath
+          targetElementStatus: CREATED
+          sourceElementStatus: CREATED
+          targetElementName: targetElementName
+          branchPointElementName: branchPointElementName
+          sourceElementPath:
+          - sourceElementPath
+          - sourceElementPath
+          elementType: PARTSTUDIO
+          elementDataType: elementDataType
+        branchPointVersionId: branchPointVersionId
+        branchPointMicroversionId: branchPointMicroversionId
+        sourceMicroversionId: sourceMicroversionId
+      properties:
+        branchPointMicroversionId:
+          type: string
+        branchPointVersionId:
+          type: string
+        changes:
+          items:
+            $ref: '#/components/schemas/BTElementMergeInfo'
+          type: array
+        sourceMicroversionId:
+          type: string
+        targetMicroversionId:
+          type: string
+      type: object
     BTMetadataCategorySummaryInfo:
       example:
-        defaultObjectType: 2
-        ownerType: 7
+        defaultObjectType: 4
+        ownerType: 1
         publishState: 1
         name: name
         description: description
         href: https://openapi-generator.tech
         id: id
         objectTypes:
-        - 4
-        - 4
+        - 7
+        - 7
         ownerId: ownerId
         viewRef: https://openapi-generator.tech
       properties:
@@ -38037,7 +38607,7 @@ components:
     BTMetadataEnumValue:
       example:
         label: label
-        state: 0
+        state: 6
         value: value
       properties:
         label:
@@ -39631,9 +40201,6 @@ components:
       - $ref: '#/components/schemas/BTPConversionFunction_1362_allOf'
       type: object
     BTPExpression-9:
-      allOf:
-      - $ref: '#/components/schemas/BTPPropertyAccessor-23'
-      - $ref: '#/components/schemas/BTPExpression_9_allOf'
       discriminator:
         mapping:
           BTPExpressionAccess-237: '#/components/schemas/BTPExpressionAccess-237'
@@ -39650,6 +40217,40 @@ components:
           BTPExpressionVarReference-245: '#/components/schemas/BTPExpressionVarReference-245'
           BTPLiteral-253: '#/components/schemas/BTPLiteral-253'
         propertyName: btType
+      properties:
+        atomic:
+          type: boolean
+        btType:
+          type: string
+        documentationType:
+          enum:
+          - FUNCTION
+          - PREDICATE
+          - CONSTANT
+          - ENUM
+          - USER_TYPE
+          - FEATURE_DEFINITION
+          - FILE_HEADER
+          - UNDOCUMENTABLE
+          - CONST_LAMBDA
+          - UNKNOWN
+          type: string
+        endSourceLocation:
+          format: int32
+          type: integer
+        nodeId:
+          type: string
+        shortDescriptor:
+          type: string
+        spaceAfter:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceBefore:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceDefault:
+          type: boolean
+        startSourceLocation:
+          format: int32
+          type: integer
       type: object
     BTPExpressionAccess-237:
       allOf:
@@ -39712,9 +40313,72 @@ components:
       - $ref: '#/components/schemas/BTPExpressionVarReference_245_allOf'
       type: object
     BTPFunctionDeclaration-246:
-      allOf:
-      - $ref: '#/components/schemas/BTPFunctionOrPredicateDeclaration-247'
-      - $ref: '#/components/schemas/BTPFunctionDeclaration_246_allOf'
+      properties:
+        annotation:
+          $ref: '#/components/schemas/BTPAnnotation-231'
+        arguments:
+          items:
+            $ref: '#/components/schemas/BTPArgumentDeclaration-232'
+          type: array
+        argumentsToDocument:
+          items:
+            $ref: '#/components/schemas/BTPArgumentDeclaration-232'
+          type: array
+        atomic:
+          type: boolean
+        body:
+          $ref: '#/components/schemas/BTPStatementBlock-271'
+        btType:
+          type: string
+        deprecated:
+          type: boolean
+        deprecatedExplanation:
+          type: string
+        documentationType:
+          enum:
+          - FUNCTION
+          - PREDICATE
+          - CONSTANT
+          - ENUM
+          - USER_TYPE
+          - FEATURE_DEFINITION
+          - FILE_HEADER
+          - UNDOCUMENTABLE
+          - CONST_LAMBDA
+          - UNKNOWN
+          type: string
+        endSourceLocation:
+          format: int32
+          type: integer
+        forExport:
+          type: boolean
+        name:
+          $ref: '#/components/schemas/BTPIdentifier-8'
+        nodeId:
+          type: string
+        precondition:
+          $ref: '#/components/schemas/BTPStatement-269'
+        returnType:
+          $ref: '#/components/schemas/BTPTypeName-290'
+        shortDescriptor:
+          type: string
+        spaceAfter:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceAfterArglist:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceAfterExport:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceBefore:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceDefault:
+          type: boolean
+        spaceInEmptyList:
+          $ref: '#/components/schemas/BTPSpace-10'
+        startSourceLocation:
+          format: int32
+          type: integer
+        symbolName:
+          $ref: '#/components/schemas/BTPIdentifier-8'
       type: object
     BTPFunctionOrPredicateDeclaration-247:
       allOf:
@@ -40653,6 +41317,7 @@ components:
             - PREVENT_ARRAY_REORDER
             - VARIABLE_NAME
             - FOCUS_INNER_QUERY
+            - SHOW_TOLERANCE
             - UNKNOWN
             type: string
           type: array
@@ -42209,6 +42874,7 @@ components:
           BTPlaneOrientationFilter-1700: '#/components/schemas/BTPlaneOrientationFilter-1700'
           BTSMDefinitionEntityTypeFilter-1651: '#/components/schemas/BTSMDefinitionEntityTypeFilter-1651'
           BTSketchObjectFilter-184: '#/components/schemas/BTSketchObjectFilter-184'
+          BTSplineControlPolygonFilter-1130: '#/components/schemas/BTSplineControlPolygonFilter-1130'
           BTSplineHandleFilter-2971: '#/components/schemas/BTSplineHandleFilter-2971'
           BTTextObjectFilter-1515: '#/components/schemas/BTTextObjectFilter-1515'
           BTTextStrokeFilter-461: '#/components/schemas/BTTextStrokeFilter-461'
@@ -44520,6 +45186,11 @@ components:
       - $ref: '#/components/schemas/BTSurfaceDescription-1564'
       - $ref: '#/components/schemas/BTSphereDescription_1263_allOf'
       type: object
+    BTSplineControlPolygonFilter-1130:
+      allOf:
+      - $ref: '#/components/schemas/BTQueryFilter-183'
+      - $ref: '#/components/schemas/BTSplineControlPolygonFilter_1130_allOf'
+      type: object
     BTSplineDescription-2118:
       allOf:
       - $ref: '#/components/schemas/BTCurveDescription-1583'
@@ -46163,6 +46834,28 @@ components:
         workspaceId:
           type: string
       type: object
+    BTUnitInfo:
+      example:
+        defaultUnits:
+          units:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          nodeId: nodeId
+        unitsDisplayPrecision:
+          key: 0
+      properties:
+        defaultUnits:
+          $ref: '#/components/schemas/BTDefaultUnitsInfo'
+        unitsDisplayPrecision:
+          additionalProperties:
+            description: Specifies the display precision for every supported unit.
+            format: int32
+            type: integer
+          description: Specifies the display precision for every supported unit.
+          type: object
+      type: object
     BTUnitsMaximumDisplayPrecisionInfo:
       example:
         unitsDisplayPrecision:
@@ -47278,13 +47971,30 @@ components:
           format: uri
           type: string
       type: object
-    BTVersionOrWorkspaceInfo:
+    BTVersionOrWorkspaceMergeInfo:
       example:
+        mergeStrategyElementOverrides:
+          key: MERGE
         id: id
         type: type
+        defaultMergeStrategy: MERGE
       properties:
+        defaultMergeStrategy:
+          enum:
+          - MERGE
+          - KEEP
+          - REPLACE
+          type: string
         id:
           type: string
+        mergeStrategyElementOverrides:
+          additionalProperties:
+            enum:
+            - MERGE
+            - KEEP
+            - REPLACE
+            type: string
+          type: object
         type:
           type: string
       type: object
@@ -50213,6 +50923,7 @@ components:
           - TABLE
           - BILLOFMATERIALS
           - VARIABLESTUDIO
+          - PUBLICATIONITEM
           - UNKNOWN
           type: string
         encodedConfiguration:
@@ -51390,6 +52101,13 @@ components:
       properties:
         btType:
           type: string
+        contactBehavior:
+          enum:
+          - MATES_ONLY
+          - FUSE_IN_CONTACT
+          - FUSE_IN_CONTACT_AND_USE_MATES
+          - UNKNOWN
+          type: string
         loads:
           items:
             $ref: '#/components/schemas/BTMLoad-3538'
@@ -51668,6 +52386,13 @@ components:
         rho:
           format: double
           type: number
+      type: object
+    BTCurveGeometryControlPointSpline_2197_allOf:
+      properties:
+        btType:
+          type: string
+        isBezier:
+          type: boolean
       type: object
     BTCurveGeometryEllipse_1189_allOf:
       properties:
@@ -52443,6 +53168,9 @@ components:
         featureListFieldIndex:
           format: int32
           type: integer
+        fieldIndexForOwnedMateConnectors:
+          format: int32
+          type: integer
         occurrenceQueriesFromAllConfigurations:
           items:
             $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
@@ -52754,6 +53482,8 @@ components:
       properties:
         btType:
           type: string
+        definedByComponents:
+          type: boolean
         loadComponentParameterIds:
           additionalProperties:
             type: string
@@ -52829,6 +53559,8 @@ components:
         btType:
           type: string
         implicit:
+          type: boolean
+        isAuxiliaryTreeMateConnector:
           type: boolean
         isHidden:
           type: boolean
@@ -53132,12 +53864,16 @@ components:
       properties:
         btType:
           type: string
+        doBodyValidation:
+          type: boolean
         previousFeatureId:
           type: string
         references:
           items:
             $ref: '#/components/schemas/BTMIndividualQuery-138'
           type: array
+        useLatestBehavior:
+          type: boolean
       type: object
     BTMRollback_150_allOf:
       properties:
@@ -53511,11 +54247,6 @@ components:
         typeName:
           $ref: '#/components/schemas/BTPIdentifier-8'
       type: object
-    BTPExpression_9_allOf:
-      properties:
-        btType:
-          type: string
-      type: object
     BTPExpressionAccess_237_allOf:
       properties:
         accessor:
@@ -53694,11 +54425,6 @@ components:
           type: string
         name:
           $ref: '#/components/schemas/BTPName-261'
-      type: object
-    BTPFunctionDeclaration_246_allOf:
-      properties:
-        btType:
-          type: string
       type: object
     BTPFunctionOrPredicateDeclaration_247_allOf:
       properties:
@@ -54712,6 +55438,13 @@ components:
         radius:
           format: double
           type: number
+      type: object
+    BTSplineControlPolygonFilter_1130_allOf:
+      properties:
+        allowsSplineControlPolygon:
+          type: boolean
+        btType:
+          type: string
       type: object
     BTSplineDescription_2118_allOf:
       properties:
