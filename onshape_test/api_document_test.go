@@ -144,7 +144,7 @@ func TestDocumentAPI(t *testing.T) {
 	}.Execute(ctx.SetDefault("wv", "w").SetDefault("wvid", ctx["wid"]), t)
 
 	OpenAPITest{
-		Call:   onshape.ApiMergeIntoWorkspaceRequest{}.BTVersionOrWorkspaceInfo(onshape.BTVersionOrWorkspaceInfo{Id: &swid, Type: Ptr("workspace")}),
+		Call:   onshape.ApiMergeIntoWorkspaceRequest{}.BTVersionOrWorkspaceMergeInfo(onshape.BTVersionOrWorkspaceMergeInfo{Id: &swid, Type: Ptr("workspace")}),
 		Expect: NoAPIError,
 	}.Execute(ctx, t)
 
