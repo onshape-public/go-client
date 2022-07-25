@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **string** |  | [optional] 
+**Key** | Pointer to **string** | The quantity type. | [optional] 
+**Value** | Pointer to **string** | The unit that should be used. | [optional] 
 
 ## Methods
 

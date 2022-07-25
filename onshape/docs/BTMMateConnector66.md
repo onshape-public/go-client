@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Implicit** | Pointer to **bool** |  | [optional] 
+**IsAuxiliaryTreeMateConnector** | Pointer to **bool** |  | [optional] 
 **IsHidden** | Pointer to **bool** |  | [optional] 
 **SavedFeatureType** | Pointer to **string** |  | [optional] 
 
@@ -77,6 +78,31 @@ SetImplicit sets Implicit field to given value.
 `func (o *BTMMateConnector66) HasImplicit() bool`
 
 HasImplicit returns a boolean if a field has been set.
+
+### GetIsAuxiliaryTreeMateConnector
+
+`func (o *BTMMateConnector66) GetIsAuxiliaryTreeMateConnector() bool`
+
+GetIsAuxiliaryTreeMateConnector returns the IsAuxiliaryTreeMateConnector field if non-nil, zero value otherwise.
+
+### GetIsAuxiliaryTreeMateConnectorOk
+
+`func (o *BTMMateConnector66) GetIsAuxiliaryTreeMateConnectorOk() (*bool, bool)`
+
+GetIsAuxiliaryTreeMateConnectorOk returns a tuple with the IsAuxiliaryTreeMateConnector field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsAuxiliaryTreeMateConnector
+
+`func (o *BTMMateConnector66) SetIsAuxiliaryTreeMateConnector(v bool)`
+
+SetIsAuxiliaryTreeMateConnector sets IsAuxiliaryTreeMateConnector field to given value.
+
+### HasIsAuxiliaryTreeMateConnector
+
+`func (o *BTMMateConnector66) HasIsAuxiliaryTreeMateConnector() bool`
+
+HasIsAuxiliaryTreeMateConnector returns a boolean if a field has been set.
 
 ### GetIsHidden
 

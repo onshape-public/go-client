@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**FullTransformation** | Pointer to **[]float64** |  | [optional] 
 **IsNormalized** | Pointer to **bool** |  | [optional] 
 **M00** | Pointer to **float64** |  | [optional] 
 **M01** | Pointer to **float64** |  | [optional] 
@@ -65,6 +66,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTBSMatrix386) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetFullTransformation
+
+`func (o *BTBSMatrix386) GetFullTransformation() []float64`
+
+GetFullTransformation returns the FullTransformation field if non-nil, zero value otherwise.
+
+### GetFullTransformationOk
+
+`func (o *BTBSMatrix386) GetFullTransformationOk() (*[]float64, bool)`
+
+GetFullTransformationOk returns a tuple with the FullTransformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullTransformation
+
+`func (o *BTBSMatrix386) SetFullTransformation(v []float64)`
+
+SetFullTransformation sets FullTransformation field to given value.
+
+### HasFullTransformation
+
+`func (o *BTBSMatrix386) HasFullTransformation() bool`
+
+HasFullTransformation returns a boolean if a field has been set.
 
 ### GetIsNormalized
 

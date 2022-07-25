@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**GetBodyDetails**](PartApi.md#GetBodyDetails) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails | Retrieve part body details by document ID, workspace or version or microversion ID, tab ID, and part ID.
 [**GetBoundingBoxes**](PartApi.md#GetBoundingBoxes) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/boundingboxes | Retrieve part bounding boxes by document ID, workspace or version or microversion ID, tab ID, and part ID.
 [**GetEdges**](PartApi.md#GetEdges) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatededges | Retrieve tessellated edges of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
+[**GetFaces1**](PartApi.md#GetFaces1) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces | 
 [**GetMassProperties**](PartApi.md#GetMassProperties) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/massproperties | Retrieve mass properties of a part document ID, workspace or version or microversion ID, tab ID, and part ID.
 [**GetPartMetadata**](PartApi.md#GetPartMetadata) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/metadata | 
 [**GetPartShadedViews**](PartApi.md#GetPartShadedViews) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/shadedviews | Retrieve shaded views of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
@@ -643,6 +644,118 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTExportTessellatedEdgesResponse327**](BTExportTessellatedEdgesResponse327.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetFaces1
+
+> BTExportTessellatedFacesResponse898 GetFaces1(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).OutputVertexNormals(outputVertexNormals).OutputFacetNormals(outputFacetNormals).OutputTextureCoordinates(outputTextureCoordinates).OutputIndexTable(outputIndexTable).OutputErrorFaces(outputErrorFaces).CombineCompositePartConstituents(combineCompositePartConstituents).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    partid := "partid_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
+    rollbackBarIndex := int32(56) // int32 |  (optional) (default to -1)
+    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    angleTolerance := float64(1.2) // float64 |  (optional)
+    chordTolerance := float64(1.2) // float64 |  (optional)
+    precomputedLevelOfDetail := "precomputedLevelOfDetail_example" // string |  (optional)
+    faceId := []string{"Inner_example"} // []string |  (optional)
+    outputFaceAppearances := true // bool |  (optional) (default to false)
+    maxFacetWidth := float64(1.2) // float64 |  (optional)
+    outputVertexNormals := true // bool |  (optional) (default to false)
+    outputFacetNormals := true // bool |  (optional) (default to true)
+    outputTextureCoordinates := true // bool |  (optional) (default to false)
+    outputIndexTable := true // bool |  (optional) (default to false)
+    outputErrorFaces := true // bool |  (optional) (default to false)
+    combineCompositePartConstituents := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PartApi.GetFaces1(context.Background(), did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).OutputVertexNormals(outputVertexNormals).OutputFacetNormals(outputFacetNormals).OutputTextureCoordinates(outputTextureCoordinates).OutputIndexTable(outputIndexTable).OutputErrorFaces(outputErrorFaces).CombineCompositePartConstituents(combineCompositePartConstituents).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PartApi.GetFaces1``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetFaces1`: BTExportTessellatedFacesResponse898
+    fmt.Fprintf(os.Stdout, "Response from `PartApi.GetFaces1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+**partid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFaces1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
+ **rollbackBarIndex** | **int32** |  | [default to -1]
+ **elementMicroversionId** | **string** |  | 
+ **angleTolerance** | **float64** |  | 
+ **chordTolerance** | **float64** |  | 
+ **precomputedLevelOfDetail** | **string** |  | 
+ **faceId** | **[]string** |  | 
+ **outputFaceAppearances** | **bool** |  | [default to false]
+ **maxFacetWidth** | **float64** |  | 
+ **outputVertexNormals** | **bool** |  | [default to false]
+ **outputFacetNormals** | **bool** |  | [default to true]
+ **outputTextureCoordinates** | **bool** |  | [default to false]
+ **outputIndexTable** | **bool** |  | [default to false]
+ **outputErrorFaces** | **bool** |  | [default to false]
+ **combineCompositePartConstituents** | **bool** |  | [default to false]
+
+### Return type
+
+[**BTExportTessellatedFacesResponse898**](BTExportTessellatedFacesResponse898.md)
 
 ### Authorization
 

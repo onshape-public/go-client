@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**DoBodyValidation** | Pointer to **bool** |  | [optional] 
 **PreviousFeatureId** | Pointer to **string** |  | [optional] 
 **References** | Pointer to [**[]BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 
+**UseLatestBehavior** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -51,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMRecordMetrics1169AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetDoBodyValidation
+
+`func (o *BTMRecordMetrics1169AllOf) GetDoBodyValidation() bool`
+
+GetDoBodyValidation returns the DoBodyValidation field if non-nil, zero value otherwise.
+
+### GetDoBodyValidationOk
+
+`func (o *BTMRecordMetrics1169AllOf) GetDoBodyValidationOk() (*bool, bool)`
+
+GetDoBodyValidationOk returns a tuple with the DoBodyValidation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDoBodyValidation
+
+`func (o *BTMRecordMetrics1169AllOf) SetDoBodyValidation(v bool)`
+
+SetDoBodyValidation sets DoBodyValidation field to given value.
+
+### HasDoBodyValidation
+
+`func (o *BTMRecordMetrics1169AllOf) HasDoBodyValidation() bool`
+
+HasDoBodyValidation returns a boolean if a field has been set.
 
 ### GetPreviousFeatureId
 
@@ -101,6 +128,31 @@ SetReferences sets References field to given value.
 `func (o *BTMRecordMetrics1169AllOf) HasReferences() bool`
 
 HasReferences returns a boolean if a field has been set.
+
+### GetUseLatestBehavior
+
+`func (o *BTMRecordMetrics1169AllOf) GetUseLatestBehavior() bool`
+
+GetUseLatestBehavior returns the UseLatestBehavior field if non-nil, zero value otherwise.
+
+### GetUseLatestBehaviorOk
+
+`func (o *BTMRecordMetrics1169AllOf) GetUseLatestBehaviorOk() (*bool, bool)`
+
+GetUseLatestBehaviorOk returns a tuple with the UseLatestBehavior field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseLatestBehavior
+
+`func (o *BTMRecordMetrics1169AllOf) SetUseLatestBehavior(v bool)`
+
+SetUseLatestBehavior sets UseLatestBehavior field to given value.
+
+### HasUseLatestBehavior
+
+`func (o *BTMRecordMetrics1169AllOf) HasUseLatestBehavior() bool`
+
+HasUseLatestBehavior returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

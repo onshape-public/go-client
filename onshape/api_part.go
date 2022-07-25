@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.150.5633-5ed6b38daa6b
+API version: 1.151.5686-86cede96e73b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1225,6 +1225,284 @@ func (a *PartApiService) GetEdgesExecute(r ApiGetEdgesRequest) (*BTExportTessell
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTExportTessellatedEdgesResponse327
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetFaces1Request struct {
+	ctx                              context.Context
+	ApiService                       *PartApiService
+	did                              string
+	wvm                              string
+	wvmid                            string
+	eid                              string
+	partid                           string
+	linkDocumentId                   *string
+	configuration                    *string
+	rollbackBarIndex                 *int32
+	elementMicroversionId            *string
+	angleTolerance                   *float64
+	chordTolerance                   *float64
+	precomputedLevelOfDetail         *string
+	faceId                           *[]string
+	outputFaceAppearances            *bool
+	maxFacetWidth                    *float64
+	outputVertexNormals              *bool
+	outputFacetNormals               *bool
+	outputTextureCoordinates         *bool
+	outputIndexTable                 *bool
+	outputErrorFaces                 *bool
+	combineCompositePartConstituents *bool
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetFaces1Request) LinkDocumentId(linkDocumentId string) ApiGetFaces1Request {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiGetFaces1Request) Configuration(configuration string) ApiGetFaces1Request {
+	r.configuration = &configuration
+	return r
+}
+
+func (r ApiGetFaces1Request) RollbackBarIndex(rollbackBarIndex int32) ApiGetFaces1Request {
+	r.rollbackBarIndex = &rollbackBarIndex
+	return r
+}
+
+func (r ApiGetFaces1Request) ElementMicroversionId(elementMicroversionId string) ApiGetFaces1Request {
+	r.elementMicroversionId = &elementMicroversionId
+	return r
+}
+
+func (r ApiGetFaces1Request) AngleTolerance(angleTolerance float64) ApiGetFaces1Request {
+	r.angleTolerance = &angleTolerance
+	return r
+}
+
+func (r ApiGetFaces1Request) ChordTolerance(chordTolerance float64) ApiGetFaces1Request {
+	r.chordTolerance = &chordTolerance
+	return r
+}
+
+func (r ApiGetFaces1Request) PrecomputedLevelOfDetail(precomputedLevelOfDetail string) ApiGetFaces1Request {
+	r.precomputedLevelOfDetail = &precomputedLevelOfDetail
+	return r
+}
+
+func (r ApiGetFaces1Request) FaceId(faceId []string) ApiGetFaces1Request {
+	r.faceId = &faceId
+	return r
+}
+
+func (r ApiGetFaces1Request) OutputFaceAppearances(outputFaceAppearances bool) ApiGetFaces1Request {
+	r.outputFaceAppearances = &outputFaceAppearances
+	return r
+}
+
+func (r ApiGetFaces1Request) MaxFacetWidth(maxFacetWidth float64) ApiGetFaces1Request {
+	r.maxFacetWidth = &maxFacetWidth
+	return r
+}
+
+func (r ApiGetFaces1Request) OutputVertexNormals(outputVertexNormals bool) ApiGetFaces1Request {
+	r.outputVertexNormals = &outputVertexNormals
+	return r
+}
+
+func (r ApiGetFaces1Request) OutputFacetNormals(outputFacetNormals bool) ApiGetFaces1Request {
+	r.outputFacetNormals = &outputFacetNormals
+	return r
+}
+
+func (r ApiGetFaces1Request) OutputTextureCoordinates(outputTextureCoordinates bool) ApiGetFaces1Request {
+	r.outputTextureCoordinates = &outputTextureCoordinates
+	return r
+}
+
+func (r ApiGetFaces1Request) OutputIndexTable(outputIndexTable bool) ApiGetFaces1Request {
+	r.outputIndexTable = &outputIndexTable
+	return r
+}
+
+func (r ApiGetFaces1Request) OutputErrorFaces(outputErrorFaces bool) ApiGetFaces1Request {
+	r.outputErrorFaces = &outputErrorFaces
+	return r
+}
+
+func (r ApiGetFaces1Request) CombineCompositePartConstituents(combineCompositePartConstituents bool) ApiGetFaces1Request {
+	r.combineCompositePartConstituents = &combineCompositePartConstituents
+	return r
+}
+
+func (r ApiGetFaces1Request) Execute() (*BTExportTessellatedFacesResponse898, *http.Response, error) {
+	return r.ApiService.GetFaces1Execute(r)
+}
+
+/*
+GetFaces1 Method for GetFaces1
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param did The id of the document in which to perform the operation.
+ @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
+ @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
+ @param partid
+ @return ApiGetFaces1Request
+*/
+func (a *PartApiService) GetFaces1(ctx context.Context, did string, wvm string, wvmid string, eid string, partid string) ApiGetFaces1Request {
+	return ApiGetFaces1Request{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+		eid:        eid,
+		partid:     partid,
+	}
+}
+
+// Execute executes the request
+//  @return BTExportTessellatedFacesResponse898
+func (a *PartApiService) GetFaces1Execute(r ApiGetFaces1Request) (*BTExportTessellatedFacesResponse898, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTExportTessellatedFacesResponse898
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartApiService.GetFaces1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"partid"+"}", url.PathEscape(parameterToString(r.partid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.configuration != nil {
+		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
+	}
+	if r.rollbackBarIndex != nil {
+		localVarQueryParams.Add("rollbackBarIndex", parameterToString(*r.rollbackBarIndex, ""))
+	}
+	if r.elementMicroversionId != nil {
+		localVarQueryParams.Add("elementMicroversionId", parameterToString(*r.elementMicroversionId, ""))
+	}
+	if r.angleTolerance != nil {
+		localVarQueryParams.Add("angleTolerance", parameterToString(*r.angleTolerance, ""))
+	}
+	if r.chordTolerance != nil {
+		localVarQueryParams.Add("chordTolerance", parameterToString(*r.chordTolerance, ""))
+	}
+	if r.precomputedLevelOfDetail != nil {
+		localVarQueryParams.Add("precomputedLevelOfDetail", parameterToString(*r.precomputedLevelOfDetail, ""))
+	}
+	if r.faceId != nil {
+		t := *r.faceId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("faceId", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("faceId", parameterToString(t, "multi"))
+		}
+	}
+	if r.outputFaceAppearances != nil {
+		localVarQueryParams.Add("outputFaceAppearances", parameterToString(*r.outputFaceAppearances, ""))
+	}
+	if r.maxFacetWidth != nil {
+		localVarQueryParams.Add("maxFacetWidth", parameterToString(*r.maxFacetWidth, ""))
+	}
+	if r.outputVertexNormals != nil {
+		localVarQueryParams.Add("outputVertexNormals", parameterToString(*r.outputVertexNormals, ""))
+	}
+	if r.outputFacetNormals != nil {
+		localVarQueryParams.Add("outputFacetNormals", parameterToString(*r.outputFacetNormals, ""))
+	}
+	if r.outputTextureCoordinates != nil {
+		localVarQueryParams.Add("outputTextureCoordinates", parameterToString(*r.outputTextureCoordinates, ""))
+	}
+	if r.outputIndexTable != nil {
+		localVarQueryParams.Add("outputIndexTable", parameterToString(*r.outputIndexTable, ""))
+	}
+	if r.outputErrorFaces != nil {
+		localVarQueryParams.Add("outputErrorFaces", parameterToString(*r.outputErrorFaces, ""))
+	}
+	if r.combineCompositePartConstituents != nil {
+		localVarQueryParams.Add("combineCompositePartConstituents", parameterToString(*r.combineCompositePartConstituents, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTExportTessellatedFacesResponse898
 		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
