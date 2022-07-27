@@ -202,6 +202,13 @@ func TestDocumentAPI(t *testing.T) {
 		Expect: APIError,
 	}.Execute(ctx.SetDefault("entryType", Ptr(ShareTestGroupType)).SetDefault("eid", ShareTestGroupId), t)
 
+	OpenAPITest{
+		Call: onshape.ApiUnShareDocumentRequest{},
+		Expect: func(_ TestingContext, t *testing.T, r []onshape.BTDocumentHistoryInfo, v *http.Response, err error) {
+			assert.True(t, false)
+		},
+	}.Execute(ctx.SetDefault("entryType", Ptr(ShareTestGroupType)).SetDefault("eid", ShareTestGroupId), t)
+
 	DeleteDocumentPostTest(ctx, t)
 }
 
@@ -290,5 +297,20 @@ OpenAPITest{
 	Call:   onshape.ApiSearchRequest{},
 	Expect: Todo,
 },
+
+***/
+
+/*** ADDITIONAL TESTS
+
+OpenAPITest{
+    Call: onshape.ApiGetUnitInfoRequest{},
+    Expect: Todo,
+}.Execute(ctx, t)
+
+OpenAPITest{
+    Call: onshape.ApiMergePreviewRequest{},
+    Expect: Todo,
+}.Execute(ctx, t)
+
 
 ***/

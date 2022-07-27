@@ -55,3 +55,12 @@ func TestRevisionAPI(t *testing.T) {
     }.Execute(ctx, t)
     
 }
+/*** ADDITIONAL TESTS
+
+OpenAPITest{
+    Call: onshape.ApiGetRevisionByPartNumberRequest{},
+    Expect: Todo,
+}.Execute(ctx, t)
+
+
+***/

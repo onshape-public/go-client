@@ -100,3 +100,12 @@ func TestPartAPI(t *testing.T) {
     }.Execute(ctx, t)
     
 }
+/*** ADDITIONAL TESTS
+
+OpenAPITest{
+    Call: onshape.ApiGetFaces1Request{},
+    Expect: Todo,
+}.Execute(ctx, t)
+
+
+***/
