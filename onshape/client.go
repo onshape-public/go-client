@@ -566,7 +566,7 @@ func newStrictDecoder(data []byte) *json.Decoder {
 }
 
 // Set request body from an interface{}
-func setBody(body interface{}, contentType string) (bodyBuf io.ReadWriter, err error) {
+func setBody(body interface{}, contentType string) (bodyBuf io.Reader, err error) {
 	bbf := &bytes.Buffer{}
 
 	if reader, ok := body.(io.Reader); ok {
@@ -676,7 +676,7 @@ func strlen(s string) int {
 
 type HttpFile struct {
 	Name string
-	Data io.ReadWriter
+	Data io.Reader
 }
 
 func NewHttpFile(name string, data []byte) HttpFile {
@@ -684,7 +684,7 @@ func NewHttpFile(name string, data []byte) HttpFile {
 	return HttpFile{name, buf}
 }
 
-func NewHttpFileFromReadWriter(name string, data io.ReadWriter) HttpFile {
+func NewHttpFileFromReader(name string, data io.Reader) HttpFile {
 	return HttpFile{name, data}
 }
 
