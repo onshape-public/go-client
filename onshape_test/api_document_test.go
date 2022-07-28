@@ -144,7 +144,12 @@ func TestDocumentAPI(t *testing.T) {
 	}.Execute(ctx.SetDefault("wv", "w").SetDefault("wvid", ctx["wid"]), t)
 
 	OpenAPITest{
-		Call:   onshape.ApiMergeIntoWorkspaceRequest{}.BTVersionOrWorkspaceMergeInfo(onshape.BTVersionOrWorkspaceMergeInfo{Id: &swid, Type: Ptr("workspace")}),
+		Call: onshape.ApiMergeIntoWorkspaceRequest{}.
+			BTVersionOrWorkspaceMergeInfo(onshape.BTVersionOrWorkspaceMergeInfo{
+				Id:                            &swid,
+				DefaultMergeStrategy:          Ptr("KEEP"),
+				MergeStrategyElementOverrides: Ptr(map[string]string{}),
+				Type:                          Ptr("workspace")}),
 		Expect: NoAPIError,
 	}.Execute(ctx, t)
 
@@ -201,6 +206,24 @@ func TestDocumentAPI(t *testing.T) {
 		Call:   onshape.ApiUnShareDocumentRequest{},
 		Expect: APIError,
 	}.Execute(ctx.SetDefault("entryType", Ptr(ShareTestGroupType)).SetDefault("eid", ShareTestGroupId), t)
+
+	var currentMV string
+	OpenAPITest{
+		Call: onshape.ApiGetCurrentMicroversionRequest{},
+		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMicroversionInfo, v *http.Response, err error) {
+			assert.NoError(t, err)
+			currentMV = r.GetMicroversion()
+		},
+	}.Execute(ctx.SetDefault("wv", "w").SetDefault("wvid", ctx["wid"]), t)
+
+	OpenAPITest{
+		Call: onshape.ApiMergePreviewRequest{},
+		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMergePreviewInfo, v *http.Response, err error) {
+			assert.NoError(t, err)
+			assert.NotNil(t, r)
+			assert.Equalf(t, r.GetTargetMicroversionId(), currentMV, "Target Microversion Id should be the same as the workspace id")
+		},
+	}.Execute(ctx.SetDefault("sourceType", Ptr("w")).SetDefault("sourceId", &swid), t)
 
 	DeleteDocumentPostTest(ctx, t)
 }
@@ -299,11 +322,5 @@ OpenAPITest{
     Call: onshape.ApiGetUnitInfoRequest{},
     Expect: Todo,
 }.Execute(ctx, t)
-
-OpenAPITest{
-    Call: onshape.ApiMergePreviewRequest{},
-    Expect: Todo,
-}.Execute(ctx, t)
-
 
 ***/
