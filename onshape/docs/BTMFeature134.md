@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
 **SuppressionConfigured** | Pointer to **bool** |  | [optional] 
+**VariableStudioReference** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -309,6 +310,31 @@ SetSuppressionConfigured sets SuppressionConfigured field to given value.
 `func (o *BTMFeature134) HasSuppressionConfigured() bool`
 
 HasSuppressionConfigured returns a boolean if a field has been set.
+
+### GetVariableStudioReference
+
+`func (o *BTMFeature134) GetVariableStudioReference() bool`
+
+GetVariableStudioReference returns the VariableStudioReference field if non-nil, zero value otherwise.
+
+### GetVariableStudioReferenceOk
+
+`func (o *BTMFeature134) GetVariableStudioReferenceOk() (*bool, bool)`
+
+GetVariableStudioReferenceOk returns a tuple with the VariableStudioReference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVariableStudioReference
+
+`func (o *BTMFeature134) SetVariableStudioReference(v bool)`
+
+SetVariableStudioReference sets VariableStudioReference field to given value.
+
+### HasVariableStudioReference
+
+`func (o *BTMFeature134) HasVariableStudioReference() bool`
+
+HasVariableStudioReference returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

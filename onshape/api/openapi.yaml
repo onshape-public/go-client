@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.151.5736-486a27d23d02
+  version: 1.151.5750-4f2542599dd4
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -28344,6 +28344,7 @@ components:
           name: name
           namespace: namespace
           suppressionConfigured: true
+          variableStudioReference: true
           importMicroversion: importMicroversion
           subFeatures:
           - null
@@ -28393,6 +28394,7 @@ components:
           name: name
           namespace: namespace
           suppressionConfigured: true
+          variableStudioReference: true
           importMicroversion: importMicroversion
           subFeatures:
           - null
@@ -28412,6 +28414,7 @@ components:
           name: name
           namespace: namespace
           suppressionConfigured: true
+          variableStudioReference: true
           importMicroversion: importMicroversion
           subFeatures:
           - null
@@ -28454,6 +28457,7 @@ components:
           name: name
           namespace: namespace
           suppressionConfigured: true
+          variableStudioReference: true
           importMicroversion: importMicroversion
           subFeatures:
           - null
@@ -28473,6 +28477,7 @@ components:
           name: name
           namespace: namespace
           suppressionConfigured: true
+          variableStudioReference: true
           importMicroversion: importMicroversion
           subFeatures:
           - null
@@ -35518,6 +35523,7 @@ components:
         name: name
         namespace: namespace
         suppressionConfigured: true
+        variableStudioReference: true
         importMicroversion: importMicroversion
         subFeatures:
         - null
@@ -35559,6 +35565,8 @@ components:
         suppressed:
           type: boolean
         suppressionConfigured:
+          type: boolean
+        variableStudioReference:
           type: boolean
       type: object
     BTMFeatureInvalid-1031:
@@ -37601,6 +37609,7 @@ components:
           - V1816_WIRE_OP_DISCONTINUITY_SMUGGLER
           - V1817_RULED_SURFACE_CLAMPED_ENDS
           - V1818_REVERT_MEASURE_TO_VARIABLE
+          - V1819_SKETCH_CURVE_CLIENT_ENUM
           - UNKNOWN
           type: string
         btType:
@@ -46896,6 +46905,7 @@ components:
           name: name
           namespace: namespace
           suppressionConfigured: true
+          variableStudioReference: true
           importMicroversion: importMicroversion
           subFeatures:
           - null
@@ -46915,6 +46925,7 @@ components:
           name: name
           namespace: namespace
           suppressionConfigured: true
+          variableStudioReference: true
           importMicroversion: importMicroversion
           subFeatures:
           - null
