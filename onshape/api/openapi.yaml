@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.151.5777-46062b6e03f9
+  version: 1.151.5805-1ec839b76add
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -25183,6 +25183,11 @@ components:
           - SKETCH_TRIM_NO_SPLINE_CONTROL_POLYGON
           - SELECTED_NON_MATCHING_SIZE
           - NEAREST_MATCHING_THREAD_SIZE
+          - SKETCH_PATTERN_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_TRANSFORM_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_FILLET_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_MIRROR_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_SPLIT_NO_SPLINE_CONTROL_POLYGON
           - UNKNOWN
           type: string
         microversionId:
@@ -26908,6 +26913,11 @@ components:
           - SKETCH_TRIM_NO_SPLINE_CONTROL_POLYGON
           - SELECTED_NON_MATCHING_SIZE
           - NEAREST_MATCHING_THREAD_SIZE
+          - SKETCH_PATTERN_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_TRANSFORM_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_FILLET_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_MIRROR_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_SPLIT_NO_SPLINE_CONTROL_POLYGON
           - UNKNOWN
           type: string
       type: object
@@ -28153,6 +28163,11 @@ components:
           - SKETCH_TRIM_NO_SPLINE_CONTROL_POLYGON
           - SELECTED_NON_MATCHING_SIZE
           - NEAREST_MATCHING_THREAD_SIZE
+          - SKETCH_PATTERN_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_TRANSFORM_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_FILLET_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_MIRROR_NO_SPLINE_CONTROL_POLYGON
+          - SKETCH_SPLIT_NO_SPLINE_CONTROL_POLYGON
           - UNKNOWN
           type: string
         facetPoints:
@@ -37610,6 +37625,7 @@ components:
           - V1817_RULED_SURFACE_CLAMPED_ENDS
           - V1818_REVERT_MEASURE_TO_VARIABLE
           - V1819_SKETCH_CURVE_CLIENT_ENUM
+          - V1820_VERSION_BUMP
           - UNKNOWN
           type: string
         btType:
