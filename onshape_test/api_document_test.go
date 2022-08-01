@@ -1,11 +1,8 @@
 package onshape_test
 
 import (
-	"context"
-	"net/http"
 	"testing"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/onshape-public/go-client/onshape"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/exp/slices"
@@ -16,181 +13,166 @@ const (
 	ShareTestGroupType int32 = 2
 )
 
-func initializeDocumentTests(t *testing.T) TestingContext {
-	client, err := onshape.NewAPIClientFromEnv()
-	assert.NoError(t, err)
-
-	ctx := context.Background()
-
-	return TestingContext{
-		"client":     client,
-		"ctx":        ctx,
-		"ApiService": client.DocumentApi,
-	}
-}
-
 func TestDocumentAPI(t *testing.T) {
-	ctx := TestingContext{
+	InitializeTester[*onshape.DocumentApiService](t)
+
+	SetContext(TestingContext{
 		"label":     Ptr("test-doc"),
 		"docPublic": false,
 		"bTDocumentParams": &onshape.BTDocumentParams{
+			Name:        Ptr("test-doc"),
 			Description: Ptr("This is a test document"),
+			IsPublic:    Ptr(false),
 		},
-	}.InheritDefaults(initializeDocumentTests(t))
+		"wm":  "w",
+		"wv":  "w",
+		"wvm": "w",
+		"vm":  "v",
+	}.InheritDefaults(Context()))
 
-	ctx = CreateDocumentPreTest(ctx, t)
+	OpenAPITest{
+		Call:   onshape.ApiCreateDocumentRequest{},
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentsRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, result *onshape.BTGlobalTreeNodeListResponse, _ *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.NotZero(t, len(result.Items))
-
-			assert.GreaterOrEqual(t, slices.IndexFunc(result.Items, func(q onshape.BTGlobalTreeNodeInfo) bool {
+		Expect: NoAPIErrorAnd(func(result *onshape.BTGlobalTreeNodeListResponse) {
+			assert.NotZero(Tester(), len(result.Items))
+			assert.GreaterOrEqual(Tester(), slices.IndexFunc(result.Items, func(q onshape.BTGlobalTreeNodeInfo) bool {
 				btd := q.GetActualInstance().(*onshape.BTDocumentSummaryInfo)
-				return btd.GetId() == ctx["did"] && Ptr(btd.GetCreatedBy()).GetId() == *ctx["creator"].(*string)
+				return btd.GetId() == Context()["did"] && Ptr(btd.GetCreatedBy()).GetId() == *Context()["creator"].(*string)
 			}), 0)
-		},
-	}.Execute(ctx, t)
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiUpdateDocumentAttributesRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTDocumentInfo, _ *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Equal(t, r.GetId(), ctx["did"])
-			assert.Equal(t, r.GetName(), *ctx["label"].(*string))
-			assert.Equal(t, r.GetPublic(), ctx["docPublic"])
-			assert.Equal(t, r.GetDescription(), *ctx["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
-			assert.True(t, r.HasDefaultWorkspace())
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r *onshape.BTDocumentInfo) {
+			assert.Equal(Tester(), r.GetId(), Context()["did"])
+			assert.Equal(Tester(), r.GetName(), *Context()["label"].(*string))
+			assert.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
+			assert.Equal(Tester(), r.GetDescription(), *Context()["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
+			assert.True(Tester(), r.HasDefaultWorkspace())
+		}),
+	}.Execute()
 
 	OpenAPITest{
-		Name:   "Test ApiGetDocumentRequest nonexistant",
-		Call:   onshape.ApiGetDocumentRequest{},
-		Expect: APIError,
-	}.Execute(ctx.SetDefault("did", "this-doesnt-exist"), t)
+		Name:    "Test ApiGetDocumentRequest nonexistant",
+		Call:    onshape.ApiGetDocumentRequest{},
+		Context: TestingContext{"did": "this-doesnt-exit"},
+		Expect:  APIError(),
+		Pass:    Nothing(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentAclRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTAclInfo, _ *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Equal(t, r.Owner.GetId(), *ctx["owner"].(*string))
-			assert.Equal(t, r.GetPublic(), ctx["docPublic"])
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r *onshape.BTAclInfo) {
+			assert.Equal(Tester(), r.Owner.GetId(), *Context()["owner"].(*string))
+			assert.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentPermissionSetRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r []string, _ *http.Response, err error) {
-			assert.NoError(t, err)
+		Expect: NoAPIErrorAnd(func(r []string) {
 			val := []string{"READ", "COPY", "WRITE", "RESHARE", "EXPORT", "DELETE", "COMMENT", "LINK"}
 			for _, c := range val {
-				assert.True(t, slices.Contains(r, c))
+				assert.True(Tester(), slices.Contains(r, c))
 			}
-		},
-	}.Execute(ctx, t)
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiCreateVersionRequest{}.BTVersionOrWorkspaceParams(onshape.BTVersionOrWorkspaceParams{
 			Name:        Ptr("Test version"),
 			Description: Ptr("bindings test"),
-			DocumentId:  Ptr(ctx["did"].(string)),
+			DocumentId:  Ptr(Context()["did"].(string)),
 			FromHistory: Ptr(true),
 		}),
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
-	var originalVersion string
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentVersionsRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r []onshape.BTVersionInfo, _ *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Equal(t, 2, len(r))
-			originalVersion = r[0].GetId()
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r []onshape.BTVersionInfo) {
+			assert.Equal(Tester(), 2, len(r))
+			Context()["vmid"] = r[0].GetId()
+		}),
+	}.Execute()
 
-	var swid string
 	OpenAPITest{
-		Call: onshape.ApiCreateWorkspaceRequest{
-			ApiService: ctx["client"].(*onshape.APIClient).DocumentApi,
-		}.BTVersionOrWorkspaceParams(onshape.BTVersionOrWorkspaceParams{Name: Ptr("branch")}),
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTWorkspaceInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			swid = r.GetId()
-		},
-	}.Execute(ctx, t)
+		Call: onshape.ApiCreateWorkspaceRequest{}.BTVersionOrWorkspaceParams(onshape.BTVersionOrWorkspaceParams{Name: Ptr("branch")}),
+		Expect: NoAPIErrorAnd(func(r *onshape.BTWorkspaceInfo) {
+			Context()["swid"] = r.Id
+		}),
+		Pass: Nothing(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentWorkspacesRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r []onshape.BTWorkspaceInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Len(t, r, 2)
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r []onshape.BTWorkspaceInfo) {
+			assert.Len(Tester(), r, 2)
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetCurrentMicroversionRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMicroversionInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Equal(t, ctx["mv"], r.GetMicroversion())
-		},
-	}.Execute(ctx.SetDefault("wv", "w").SetDefault("wvid", ctx["wid"]), t)
+		Expect: NoAPIErrorAnd(func(r *onshape.BTMicroversionInfo) {
+			assert.Equal(Tester(), Context()["mv"], r.GetMicroversion())
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiMergeIntoWorkspaceRequest{}.
 			BTVersionOrWorkspaceMergeInfo(onshape.BTVersionOrWorkspaceMergeInfo{
-				Id:                            &swid,
+				Id:                            Context()["swid"].(*string),
 				DefaultMergeStrategy:          Ptr("KEEP"),
 				MergeStrategyElementOverrides: Ptr(map[string]string{}),
 				Type:                          Ptr("workspace")}),
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiGetElementsInDocumentRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx.SetDefault("wvm", "w").SetDefault("wvmid", ctx["wid"]), t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetCurrentMicroversionRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMicroversionInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.NotEqual(t, ctx["mv"], r.GetMicroversion())
-		},
-	}.Execute(ctx.SetDefault("wv", "w").SetDefault("wvid", ctx["wid"]), t)
+		Expect: NoAPIErrorAnd(func(r *onshape.BTMicroversionInfo) {
+			assert.NotEqual(Tester(), Context()["mv"], r.GetMicroversion())
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r []onshape.BTDocumentHistoryInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Len(t, r, 2)
-		},
-	}.Execute(ctx.SetDefault("wm", "w").SetDefault("wmid", ctx["wid"]), t)
+		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
+			assert.Len(Tester(), r, 2)
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiRestoreFromHistoryRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx.SetDefault("vm", "v").SetDefault("vmid", originalVersion), t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r []onshape.BTDocumentHistoryInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Len(t, r, 3)
-		},
-	}.Execute(ctx.SetDefault("wm", "w").SetDefault("wmid", ctx["wid"]), t)
+		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
+			assert.Len(Tester(), r, 3)
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiShareDocumentRequest{}.BTShareParams(onshape.BTShareParams{
-			DocumentId:    Ptr(ctx["did"].(string)),
-			WorkspaceId:   Ptr(ctx["wid"].(string)),
+			DocumentId:    Ptr(Context()["did"].(string)),
+			WorkspaceId:   Ptr(Context()["wid"].(string)),
 			PermissionSet: []string{"COPY", "EXPORT", "COMMENT", "WRITE"},
 			Entries: []onshape.BTShareEntryParams{
 				{
@@ -199,128 +181,26 @@ func TestDocumentAPI(t *testing.T) {
 				},
 			},
 		}),
-		Expect: APIError,
-	}.Execute(ctx, t)
+		Expect: APIError(),
+	}.Execute()
 
 	OpenAPITest{
-		Call:   onshape.ApiUnShareDocumentRequest{},
-		Expect: APIError,
-	}.Execute(ctx.SetDefault("entryType", Ptr(ShareTestGroupType)).SetDefault("eid", ShareTestGroupId), t)
-
-	var currentMV string
-	OpenAPITest{
-		Call: onshape.ApiGetCurrentMicroversionRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMicroversionInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			currentMV = r.GetMicroversion()
-		},
-	}.Execute(ctx.SetDefault("wv", "w").SetDefault("wvid", ctx["wid"]), t)
+		Call:    onshape.ApiUnShareDocumentRequest{},
+		Context: TestingContext{"entryType": Ptr(ShareTestGroupType), "eid": ShareTestGroupId},
+		Expect:  APIError(),
+	}.Execute()
 
 	OpenAPITest{
-		Call: onshape.ApiMergePreviewRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMergePreviewInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.NotNil(t, r)
-			assert.Equalf(t, r.GetTargetMicroversionId(), currentMV, "Target Microversion Id should be the same as the workspace id")
-		},
-	}.Execute(ctx.SetDefault("sourceType", Ptr("w")).SetDefault("sourceId", &swid), t)
+		Call:    onshape.ApiMergePreviewRequest{},
+		Context: TestingContext{"sourceType": Ptr("w"), "sourceId": Context()["swid"].(*string)},
+		Expect: NoAPIErrorAnd(func(r *onshape.BTMergePreviewInfo) {
+			assert.NotNil(Tester(), r)
+			assert.Equalf(Tester(), r.GetTargetMicroversionId(), Context()["mv"], "Target Microversion Id should be the same as the workspace id")
+		}),
+	}.Execute()
 
-	DeleteDocumentPostTest(ctx, t)
+	OpenAPITest{
+		Call:   onshape.ApiDeleteDocumentRequest{},
+		Expect: NoAPIError(),
+	}.Execute()
 }
-
-func CreateDocumentPreTest(ctx TestingContext, t *testing.T) TestingContext {
-	ctx = ctx.InheritDefaults(TestingContext{"label": Ptr("test-doc"), "docPublic": false})
-
-	client := ctx["client"].(*onshape.APIClient)
-	docParams := onshape.NewBTDocumentParams()
-	docParams.Name = ctx["label"].(*string)
-	docParams.SetIsPublic(ctx["docPublic"].(bool))
-	doc, v, err := client.DocumentApi.CreateDocument(ctx["ctx"].(context.Context)).BTDocumentParams(*docParams).Execute()
-	assert.NoError(t, err)
-	if err != nil {
-		spew.Dump(v)
-	}
-	return TestingContext{
-		"did":     doc.GetId(),
-		"wid":     *doc.GetDefaultWorkspace().Id,
-		"mv":      *doc.GetDefaultWorkspace().Microversion,
-		"owner":   doc.GetOwner().Id,
-		"creator": Ptr(Ptr(doc.GetCreatedBy()).GetId()),
-	}.InheritDefaults(ctx)
-}
-
-func DeleteDocumentPostTest(ctx TestingContext, t *testing.T) {
-	client := ctx["client"].(*onshape.APIClient)
-	_, _, err := client.DocumentApi.DeleteDocument(ctx["ctx"].(context.Context), ctx["did"].(string)).Execute()
-	assert.NoError(t, err)
-}
-
-/*** ADDITIONAL TESTS
-
-OpenAPITest{
-    Call: onshape.ApiDeleteWorkspaceRequest{},
-    Expect: Todo,
-}.Execute(ctx, t)
-OpenAPITest{
-	Call:   onshape.ApiRestoreFromHistoryRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiCopyWorkspaceRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetDocumentHistoryRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetCurrentMicroversionRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiDownloadExternalDataRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetVersionRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiUpdateExternalReferencesToLatestDocumentsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiMoveElementsToDocumentRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiRevertUnchangedToRevisionsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiSyncApplicationElementsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiExport2JsonRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetInsertablesRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiSearchRequest{},
-	Expect: Todo,
-},
-
-***/
-
-/*** ADDITIONAL TESTS
-
-OpenAPITest{
-    Call: onshape.ApiGetUnitInfoRequest{},
-    Expect: Todo,
-}.Execute(ctx, t)
-
-***/

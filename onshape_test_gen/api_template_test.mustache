@@ -8,27 +8,14 @@ import (
 	"github.com/onshape-public/go-client/onshape"
 )
 
-func initialize{{APIName}}Tests(t *testing.T) TestingContext {
-    client, err := onshape.NewAPIClientFromEnv()
-    assert.NoError(t, err)
-
-    ctx := context.Background()
-
-    return TestingContext{
-		"client":     client,
-		"ctx":        ctx,
-		"ApiService": client.{{APIName}}Api,
-	}
-}
-
 func Test{{APIName}}API(t *testing.T) {
-    ctx := initialize{{APIName}}Tests(t)
+    InitializeTester[*onshape.{{APIName}}ApiService](t)
 
     {{#Requests}}
     OpenAPITest{
         Call: onshape.{{.}}{},
-        Expect: Todo,
-    }.Execute(ctx, t)
+        Expect: Todo(),
+    }.Execute()
     
     {{/Requests}}
 }

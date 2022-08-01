@@ -4,8 +4,8 @@
 {{#Requests}}
 OpenAPITest{
     Call: onshape.{{.}}{},
-    Expect: Todo,
-}.Execute(ctx, t)
+    Expect: Todo(),
+}.Execute()
 
 {{/Requests}}
 
