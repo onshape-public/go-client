@@ -277,3 +277,73 @@ func CreateAppElementChangeUpdate(name string) *onshape.BTAppElementUpdateParams
 		Changes:     []onshape.BTAppElementChangeParams{CreateChapterTestSubelement(name)},
 	}
 }
+
+/*** ADDITIONAL TESTS
+
+OpenAPITest{
+    Call: onshape.ApiDeleteBlobSubelementRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiGetElementTransactionsRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiDownloadBlobSubelementRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiGetBlobSubelementIdsRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiCompareAppElementJsonRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiGetAppElementHistoryRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiGetJsonPathsRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiDeleteAppElementContentRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiCreateReferenceRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiResolveReferenceRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiUpdateReferenceRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiDeleteReferenceRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiResolveReferencesRequest{},
+    Expect: Todo(),
+}.Execute()
+
+
+***/
