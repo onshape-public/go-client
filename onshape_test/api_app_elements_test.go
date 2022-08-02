@@ -10,7 +10,6 @@ import (
 	"github.com/google/uuid"
 	"github.com/onshape-public/go-client/onshape"
 	"github.com/onshape-public/go-client/onshape_test/testhelper"
-	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
@@ -92,7 +91,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			}
-			assert.True(t, jsonResponse.HasTree())
+			require.True(t, jsonResponse.HasTree())
 			propMapJsonResult, err := json.Marshal(jsonResponse.Tree)
 			if err != nil {
 				t.Error("Should be able to marshal the Received Map")
@@ -101,7 +100,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			if err != nil {
 				t.Error("Can't compare JSONs")
 			}
-			assert.True(t, eq, string(propMapJsonWanted), string(propMapJsonResult))
+			require.True(t, eq, string(propMapJsonWanted), string(propMapJsonResult))
 
 			//Update JSONTree: Insert
 			//Too much work for now, I know :)
@@ -135,18 +134,18 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			}
-			assert.True(t, jsonResponse.HasTree())
+			require.True(t, jsonResponse.HasTree())
 			propMapJsonResult, err = json.Marshal(jsonResponse.Tree)
 			if err != nil {
 				t.Error("Should be able to marshal the Received Map")
 			}
-			assert.True(t, strings.Contains(string(propMapJsonResult), "chapterProperties"))
+			require.True(t, strings.Contains(string(propMapJsonResult), "chapterProperties"))
 
 			//Try to send AppElement Upload data
 			f, err := os.Open(tt.args.blobFilePath)
 			require.NoError(t, err, "Error opening file")
 			fi, err := f.Stat()
-			assert.NoError(t, err, "Can't stat file")
+			require.NoError(t, err, "Can't stat file")
 			hf := onshape.NewHttpFileFromOsFile(f)
 
 			appElementModifyInfo, rawResp, err = client.AppElementApi.UploadBlobSubelement(ctx, did, wid, eid, "blob0001").Description("Test Blob Element").File(hf).Execute()
@@ -166,7 +165,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			defer resp.Body.Close()
 
 			fileBytes, err := ioutil.ReadAll(resp.Body)
-			assert.True(t, fi.Size() == int64(len(fileBytes)))
+			require.True(t, fi.Size() == int64(len(fileBytes)))
 			require.NoError(t, err, "can't read response body")
 			newFile, err := os.Create(tt.args.blobFilePath + ".new")
 			require.NoError(t, err, "can't create file ")
@@ -208,7 +207,7 @@ func TestCreateBulkAppElement(t *testing.T) {
 			require.NotNil(t, rawResp, "Response should not be nil")
 			require.True(t, rawResp.StatusCode < 300, "Status code should be less than 300")
 			require.NotNil(t, appElementBulkCreateInfo, "AppElementBulkCreateInfo should not be nil")
-			assert.True(t, len(appElementBulkCreateInfo.GetElementIds()) == len(tt.args.elementNames))
+			require.True(t, len(appElementBulkCreateInfo.GetElementIds()) == len(tt.args.elementNames))
 		})
 	}
 }

@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/onshape-public/go-client/onshape"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 type WVMetadataProperty struct {
@@ -66,7 +66,7 @@ func TestMetadataAPI(t *testing.T) {
 	}}
 	its := WVMetadataItems{Items: []WVMetadataItem{it}}
 	body, err := json.Marshal(its)
-	assert.NoError(Tester(), err)
+	require.NoError(Tester(), err)
 
 	Context()["body"] = Ptr(string(body))
 
@@ -83,12 +83,12 @@ func TestMetadataAPI(t *testing.T) {
 			for _, prop := range r.GetProperties() {
 				for _, x := range it.Properties {
 					if prop.GetPropertyId() == x.PropertyID {
-						assert.Equal(Tester(), prop.Value, x.Value)
+						require.Equal(Tester(), prop.Value, x.Value)
 						co++
 					}
 				}
 			}
-			assert.Len(Tester(), it.Properties, co)
+			require.Len(Tester(), it.Properties, co)
 		}),
 	}.Execute()
 

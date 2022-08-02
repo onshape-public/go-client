@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/onshape-public/go-client/onshape"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestAppElementAPI(t *testing.T) {
@@ -15,7 +15,7 @@ func TestAppElementAPI(t *testing.T) {
 
 	fileName := "./test_data/hf.txt"
 	osFile, err := os.Open(fileName)
-	assert.NoError(Tester(), err)
+	require.NoError(Tester(), err)
 	file := onshape.NewHttpFileFromOsFile(osFile)
 
 	SetContext(TestingContext{
@@ -51,14 +51,14 @@ func TestAppElementAPI(t *testing.T) {
 		Call: onshape.ApiBulkCreateElementRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementBulkCreateInfo) {
 			bcp := *Context()["bTAppElementBulkCreateParams"].(*onshape.BTAppElementBulkCreateParams)
-			assert.EqualValues(Tester(), len(r.ElementIds), len(bcp.Names))
+			require.EqualValues(Tester(), len(r.ElementIds), len(bcp.Names))
 		}),
 	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetSubElementContentRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementContentInfo) {
-			assert.Zero(Tester(), len(r.GetData()))
+			require.Zero(Tester(), len(r.GetData()))
 		}),
 	}.Execute()
 
@@ -71,17 +71,17 @@ func TestAppElementAPI(t *testing.T) {
 		Call: onshape.ApiDownloadBlobSubelementWorkspaceRequest{},
 		Expect: NoAPIErrorAnd(func(res *onshape.HttpFile) {
 			fileBytes, err := ioutil.ReadAll(res.Data)
-			assert.NoError(Tester(), err)
+			require.NoError(Tester(), err)
 			buf, err := os.ReadFile(Context()["fileName"].(string))
-			assert.NoError(Tester(), err)
-			assert.EqualValues(Tester(), buf, fileBytes)
+			require.NoError(Tester(), err)
+			require.EqualValues(Tester(), buf, fileBytes)
 		}),
 	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
-			assert.EqualValues(Tester(), r.GetTree().AdditionalProperties, *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
+			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
 		}),
 	}.Execute()
 
@@ -101,7 +101,7 @@ func TestAppElementAPI(t *testing.T) {
 			insert := Context()["bTAppElementUpdateParams"].(*onshape.BTAppElementUpdateParams).JsonTreeEdit.GetActualInstance().(*onshape.BTJEditInsert2523)
 			nm[insert.Path.GetPath()[0].GetActualInstance().(*onshape.BTJPathKey3221).GetKey()] = insert.GetValue()
 
-			assert.EqualValues(t, r.GetTree().AdditionalProperties, nm)
+			require.EqualValues(t, r.GetTree().AdditionalProperties, nm)
 		}),
 	}.Execute()
 
@@ -169,7 +169,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 		OpenAPITest{
 			Call: onshape.ApiUpdateAppElementRequest{}.BTAppElementUpdateParams(*eup),
 			Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementModifyInfo) {
-				assert.Equal(Tester(), Context()["tid"].(string), r.GetTransactionId())
+				require.Equal(Tester(), Context()["tid"].(string), r.GetTransactionId())
 			}),
 		}.Execute()
 	}
@@ -187,7 +187,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
-			assert.LessOrEqual(Tester(), 3, len(r))
+			require.LessOrEqual(Tester(), 3, len(r))
 			Context()["wvmid"] = r[0].GetMicroversionId()
 		}),
 	}.Execute()
@@ -196,7 +196,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 		Call:    onshape.ApiGetSubelementIdsRequest{},
 		Context: TestingContext{"wvm": "m"},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementIdsInfo) {
-			assert.Equal(Tester(), 3, len(r.GetSubelementIds()))
+			require.Equal(Tester(), 3, len(r.GetSubelementIds()))
 		}),
 	}.Execute()
 

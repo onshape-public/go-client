@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/onshape-public/go-client/onshape"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestEventAPI(t *testing.T) {
@@ -31,8 +31,8 @@ func TestEventAPI(t *testing.T) {
 
 	doc, err := requestRecentlyOpenedDocument()
 	if doc != nil {
-		assert.NoError(Tester(), err)
-		assert.NotEqual(t, Context()["did"], doc.GetId())
+		require.NoError(Tester(), err)
+		require.NotEqual(t, Context()["did"], doc.GetId())
 	}
 
 	OpenAPITest{
@@ -44,8 +44,8 @@ func TestEventAPI(t *testing.T) {
 	}.Execute()
 
 	doc, err = requestRecentlyOpenedDocument()
-	assert.NoError(t, err)
-	assert.Equal(t, Context()["did"], doc.GetId())
+	require.NoError(t, err)
+	require.Equal(t, Context()["did"], doc.GetId())
 
 	OpenAPITest{
 		Call: onshape.ApiDeleteDocumentRequest{

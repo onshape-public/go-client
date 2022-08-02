@@ -9,7 +9,7 @@ import (
 	"github.com/onshape-public/go-client/onshape"
 	"github.com/onshape-public/go-client/onshape_test/testhelper"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 type subelementCreateParams struct {
@@ -54,7 +54,7 @@ func TestTxnWorkflow(t *testing.T) {
 			branchCreateParams := onshape.NewBTVersionOrWorkspaceParams()
 			branchCreateParams.SetName(tt.args.branch_name)
 			wkspInfo, rawResp, err := client.DocumentApi.CreateWorkspace(ctx, did).BTVersionOrWorkspaceParams(*branchCreateParams).Execute()
-			assert.NoErrorf(t, err, "Response status %d", rawResp.StatusCode)
+			require.NoErrorf(t, err, "Response status %d", rawResp.StatusCode)
 			wid = wkspInfo.GetId()
 
 			//create assembly
@@ -62,7 +62,7 @@ func TestTxnWorkflow(t *testing.T) {
 			asmAppElementParams.SetName(tt.args.elementName)
 			appElementModifyInfo, rawResp, err :=
 				client.AppElementApi.CreateElement(ctx, did, wid).BTAppElementParams(*asmAppElementParams).Execute()
-			assert.NoError(t, err, "Response status %d", rawResp.StatusCode)
+			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 			eid := appElementModifyInfo.GetElementId()
 			fmt.Printf("Created Element with id:%s", eid)
 
@@ -71,7 +71,7 @@ func TestTxnWorkflow(t *testing.T) {
 			btAppElementStartTransactionParams.SetDescription("Transaction to populate Assembly w/Data")
 			btAppElementStartTransactionParams.SetParentChangeId(appElementModifyInfo.GetChangeId())
 			btAppElementModifyInfo, rawResp, err := client.AppElementApi.StartTransaction(ctx, did, eid, wid).BTAppElementStartTransactionParams(*btAppElementStartTransactionParams).Execute()
-			assert.NoError(t, err, "Response status %d", rawResp.StatusCode)
+			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 			txnID := btAppElementModifyInfo.TransactionId
 
 			//Update subelements in several consecutive operations using the same transaction
@@ -85,8 +85,8 @@ func TestTxnWorkflow(t *testing.T) {
 				btAppElementUpdateParams.SetTransactionId(*txnID)
 
 				btAppElementModifyInfo, rawResp, err = client.AppElementApi.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*btAppElementUpdateParams).Execute()
-				assert.NoError(t, err, "Response status %d", rawResp.StatusCode)
-				assert.Equal(t, *txnID, btAppElementModifyInfo.GetTransactionId())
+				require.NoError(t, err, "Response status %d", rawResp.StatusCode)
+				require.Equal(t, *txnID, btAppElementModifyInfo.GetTransactionId())
 			}
 
 			//Update Json Tree in the same transaction
@@ -112,24 +112,24 @@ func TestTxnWorkflow(t *testing.T) {
 			bTAppElementUpdateParams.SetJsonTreeEdit(*btjEditInsert.AsBTJEdit3734())
 			bTAppElementUpdateParams.SetTransactionId(*txnID)
 			client.AppElementApi.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*bTAppElementUpdateParams).Execute()
-			assert.NoError(t, err, "Response status %d", rawResp.StatusCode)
+			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 
 			//Commit Transaction
 			btAppElementCommitTransactionParams := onshape.NewBTAppElementCommitTransactionParams()
 			btAppElementCommitTransactionParams.SetDescription("Done Updating the Assembly")
 			btAppElementCommitTransactionParams.SetTransactionIds([]string{*txnID})
 			btAppElementModifyInfo, rawResp, err = client.AppElementApi.CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(*btAppElementCommitTransactionParams).Execute()
-			assert.NoError(t, err, "Response status %d", rawResp.StatusCode)
+			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 
 			//Verify we only have two microversions
 			btDocumentHistoryInfos, rawResp, err := client.DocumentApi.GetDocumentHistory(ctx, did, "w", wid).Execute()
-			assert.NoError(t, err, "Response status %d", rawResp.StatusCode)
-			assert.LessOrEqual(t, 3, len(btDocumentHistoryInfos))
+			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
+			require.LessOrEqual(t, 3, len(btDocumentHistoryInfos))
 			latestCommit := btDocumentHistoryInfos[0].GetMicroversionId()
 
 			btAppElementIdsInfo, rawResp, err := client.AppElementApi.GetSubelementIds(ctx, did, eid, "m", latestCommit).Execute()
-			assert.NoError(t, err, "Response status %d", rawResp.StatusCode)
-			assert.Equal(t, 3, len(btAppElementIdsInfo.GetSubelementIds()))
+			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
+			require.Equal(t, 3, len(btAppElementIdsInfo.GetSubelementIds()))
 		})
 	}
 }

@@ -8,7 +8,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/onshape-public/go-client/onshape"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 var propMap map[string]interface{}
@@ -116,9 +116,9 @@ func TestGetDocument(t *testing.T) {
 			ctx := context.Background()
 
 			resp, _, err := client.DocumentApi.GetDocuments(ctx).Filter(6).Owner("5ecd79b2a3e6eb1251369b10").SortColumn("modifiedAt").SortOrder("desc").Execute()
-			assert.NoError(t, err)
-			assert.NotNil(t, resp)
-			//assert.True(t, len(*resp.Items) == 20)
+			require.NoError(t, err)
+			require.NotNil(t, resp)
+			//require.True(t, len(*resp.Items) == 20)
 
 			for _, item := range resp.GetItems() {
 				cb := item.GetCreatedBy()
@@ -128,7 +128,7 @@ func TestGetDocument(t *testing.T) {
 				if doc == nil {
 					t.Error("Error: expected item to be BTDocumentSummaryInfo, but it was actually", item.GetActualInstance())
 				} else {
-					assert.True(t, doc.HasDefaultWorkspace())
+					require.True(t, doc.HasDefaultWorkspace())
 				}
 			}
 		})

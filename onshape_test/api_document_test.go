@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/onshape-public/go-client/onshape"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"golang.org/x/exp/slices"
 )
 
@@ -38,8 +38,8 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentsRequest{},
 		Expect: NoAPIErrorAnd(func(result *onshape.BTGlobalTreeNodeListResponse) {
-			assert.NotZero(Tester(), len(result.Items))
-			assert.GreaterOrEqual(Tester(), slices.IndexFunc(result.Items, func(q onshape.BTGlobalTreeNodeInfo) bool {
+			require.NotZero(Tester(), len(result.Items))
+			require.GreaterOrEqual(Tester(), slices.IndexFunc(result.Items, func(q onshape.BTGlobalTreeNodeInfo) bool {
 				btd := q.GetActualInstance().(*onshape.BTDocumentSummaryInfo)
 				return btd.GetId() == Context()["did"] && Ptr(btd.GetCreatedBy()).GetId() == *Context()["creator"].(*string)
 			}), 0)
@@ -54,11 +54,11 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTDocumentInfo) {
-			assert.Equal(Tester(), r.GetId(), Context()["did"])
-			assert.Equal(Tester(), r.GetName(), *Context()["label"].(*string))
-			assert.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
-			assert.Equal(Tester(), r.GetDescription(), *Context()["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
-			assert.True(Tester(), r.HasDefaultWorkspace())
+			require.Equal(Tester(), r.GetId(), Context()["did"])
+			require.Equal(Tester(), r.GetName(), *Context()["label"].(*string))
+			require.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
+			require.Equal(Tester(), r.GetDescription(), *Context()["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
+			require.True(Tester(), r.HasDefaultWorkspace())
 		}),
 	}.Execute()
 
@@ -73,8 +73,8 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentAclRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTAclInfo) {
-			assert.Equal(Tester(), r.Owner.GetId(), *Context()["owner"].(*string))
-			assert.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
+			require.Equal(Tester(), r.Owner.GetId(), *Context()["owner"].(*string))
+			require.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
 		}),
 	}.Execute()
 
@@ -83,7 +83,7 @@ func TestDocumentAPI(t *testing.T) {
 		Expect: NoAPIErrorAnd(func(r []string) {
 			val := []string{"READ", "COPY", "WRITE", "RESHARE", "EXPORT", "DELETE", "COMMENT", "LINK"}
 			for _, c := range val {
-				assert.True(Tester(), slices.Contains(r, c))
+				require.True(Tester(), slices.Contains(r, c))
 			}
 		}),
 	}.Execute()
@@ -101,7 +101,7 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentVersionsRequest{},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTVersionInfo) {
-			assert.Equal(Tester(), 2, len(r))
+			require.Equal(Tester(), 2, len(r))
 			Context()["vmid"] = r[0].GetId()
 		}),
 	}.Execute()
@@ -117,14 +117,14 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentWorkspacesRequest{},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTWorkspaceInfo) {
-			assert.Len(Tester(), r, 2)
+			require.Len(Tester(), r, 2)
 		}),
 	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetCurrentMicroversionRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTMicroversionInfo) {
-			assert.Equal(Tester(), Context()["mv"], r.GetMicroversion())
+			require.Equal(Tester(), Context()["mv"], r.GetMicroversion())
 		}),
 	}.Execute()
 
@@ -146,14 +146,14 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetCurrentMicroversionRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTMicroversionInfo) {
-			assert.NotEqual(Tester(), Context()["mv"], r.GetMicroversion())
+			require.NotEqual(Tester(), Context()["mv"], r.GetMicroversion())
 		}),
 	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
-			assert.Len(Tester(), r, 2)
+			require.Len(Tester(), r, 2)
 		}),
 	}.Execute()
 
@@ -165,7 +165,7 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
-			assert.Len(Tester(), r, 3)
+			require.Len(Tester(), r, 3)
 		}),
 	}.Execute()
 
@@ -194,8 +194,8 @@ func TestDocumentAPI(t *testing.T) {
 		Call:    onshape.ApiMergePreviewRequest{},
 		Context: TestingContext{"sourceType": Ptr("w"), "sourceId": Context()["swid"].(*string)},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTMergePreviewInfo) {
-			assert.NotNil(Tester(), r)
-			assert.Equalf(Tester(), r.GetTargetMicroversionId(), Context()["mv"], "Target Microversion Id should be the same as the workspace id")
+			require.NotNil(Tester(), r)
+			require.Equalf(Tester(), r.GetTargetMicroversionId(), Context()["mv"], "Target Microversion Id should be the same as the workspace id")
 		}),
 	}.Execute()
 

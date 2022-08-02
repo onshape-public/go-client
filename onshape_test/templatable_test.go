@@ -9,7 +9,7 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 	"github.com/onshape-public/go-client/onshape"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 var tester TestingInstance
@@ -73,7 +73,7 @@ type TestingInstance struct {
 
 func InitializeTester[T any](t *testing.T) {
 	client, err := onshape.NewAPIClientFromEnv()
-	assert.NoError(t, err)
+	require.NoError(t, err)
 
 	ctx := context.Background()
 
@@ -176,21 +176,21 @@ type OpenAPIResultHandler func(value interface{}, response *http.Response, err e
 
 func APIError() OpenAPIResultHandler {
 	return func(value interface{}, response *http.Response, err error) {
-		assert.Error(Tester(), err)
+		require.Error(Tester(), err)
 	}
 }
 
 func NoAPIError() OpenAPIResultHandler {
 	return func(value interface{}, response *http.Response, err error) {
-		assert.NoError(Tester(), err)
+		require.NoError(Tester(), err)
 	}
 }
 
 func NoAPIErrorAnd[T any](check func(value T)) OpenAPIResultHandler {
 	return func(value interface{}, response *http.Response, err error) {
-		assert.NoError(Tester(), err)
+		require.NoError(Tester(), err)
 		val, ok := value.(T)
-		assert.True(Tester(), ok)
+		require.True(Tester(), ok)
 		if ok && err == nil {
 			check(val)
 		}
