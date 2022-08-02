@@ -19,6 +19,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"net/http"
@@ -496,22 +497,32 @@ func (c *APIClient) prepareRequest(
 	return localVarRequest, nil
 }
 
-func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err error) {
+func (c *APIClient) decode(v interface{}, br *io.ReadCloser, contentType string) (err error) {
+	if f, ok := v.(*HttpFile); ok {
+		*f = NewHttpFileFromReader("", *br)
+		return
+	}
+	if f, ok := v.(**HttpFile); ok {
+		fil := NewHttpFileFromReader("", *br)
+		*f = &fil
+		return
+	}
+
+	b, err := ioutil.ReadAll(*br)
+	(*br).Close()
+
+	if err != nil {
+		return
+	}
+
+	*br = ioutil.NopCloser(bytes.NewBuffer(b))
+
 	if len(b) == 0 {
 		return nil
 	}
 	if s, ok := v.(*string); ok {
 		*s = string(b)
 		return nil
-	}
-	if f, ok := v.(*HttpFile); ok {
-		*f = NewHttpFile("", b)
-		return
-	}
-	if f, ok := v.(**HttpFile); ok {
-		fil := NewHttpFile("", b)
-		*f = &fil
-		return
 	}
 	if xmlCheck.MatchString(contentType) {
 		if err = xml.Unmarshal(b, v); err != nil {
@@ -676,21 +687,25 @@ func strlen(s string) int {
 
 type HttpFile struct {
 	Name string
-	Data io.Reader
+	Data io.ReadCloser
 }
 
 func NewHttpFile(name string, data []byte) HttpFile {
-	buf := bytes.NewBuffer(data)
+	buf := io.NopCloser(bytes.NewBuffer(data))
 	return HttpFile{name, buf}
 }
 
-func NewHttpFileFromReader(name string, data io.Reader) HttpFile {
+func NewHttpFileFromReader(name string, data io.ReadCloser) HttpFile {
 	return HttpFile{name, data}
 }
 
 func NewHttpFileFromOsFile(file *os.File) HttpFile {
 	name := file.Name()
 	return HttpFile{name, file}
+}
+
+func (h *HttpFile) Close() {
+	h.Data.Close()
 }
 
 // GenericOpenAPIError Provides access to the body, error and model on returned errors.
