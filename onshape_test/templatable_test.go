@@ -42,6 +42,14 @@ func populateDefaultResultMapper() {
 			"owner":   o.GetOwner().Id,
 			"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
 		}
+	})).Add(MapFields(func(o *onshape.BTWorkspaceInfo) TestingContext {
+		return TestingContext{
+			"wid":   o.GetId(),
+			"wmid":  o.GetId(),
+			"wvid":  o.GetId(),
+			"wvmid": o.GetId(),
+			"mv":    o.GetMicroversion(),
+		}
 	})).Add(MapFields(func(o *onshape.BTRestoreFromHistoryInfo) TestingContext {
 		return TestingContext{
 			"mv": o.GetNewMicroversion(),
@@ -49,6 +57,11 @@ func populateDefaultResultMapper() {
 	})).Add(MapFields(func(o *onshape.BTMicroversionInfo) TestingContext {
 		return TestingContext{
 			"mv": o.GetMicroversion(),
+		}
+	})).Add(MapFields(func(o *onshape.BTAppElementModifyInfo) TestingContext {
+		return TestingContext{
+			"eid": o.GetElementId(),
+			"tid": o.GetTransactionId(),
 		}
 	}))
 }

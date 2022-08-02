@@ -204,3 +204,68 @@ func TestDocumentAPI(t *testing.T) {
 		Expect: NoAPIError(),
 	}.Execute()
 }
+
+/*** ADDITIONAL TESTS
+
+OpenAPITest{
+    Call: onshape.ApiDownloadExternalDataRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiGetVersionRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiUpdateExternalReferencesToLatestDocumentsRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiMoveElementsToDocumentRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiRevertUnchangedToRevisionsRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiSyncApplicationElementsRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiDeleteWorkspaceRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiGetUnitInfoRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiExport2JsonRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiGetInsertablesRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiSearchRequest{},
+    Expect: Todo(),
+}.Execute()
+
+OpenAPITest{
+    Call: onshape.ApiCopyWorkspaceRequest{},
+    Expect: Todo(),
+}.Execute()
+
+
+***/
