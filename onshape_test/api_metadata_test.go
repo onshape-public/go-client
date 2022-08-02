@@ -1,7 +1,6 @@
 package onshape_test
 
 import (
-	"context"
 	"encoding/json"
 	"net/http"
 	"testing"
@@ -34,33 +33,32 @@ type WVMetadataResponse struct {
 	Status     string                       `json:"status,omitempty"`
 }
 
-func initializeMetadataTests(t *testing.T) TestingContext {
-	client, err := onshape.NewAPIClientFromEnv()
-	assert.NoError(t, err)
-
-	ctx := context.Background()
-
-	return TestingContext{
-		"client":     client,
-		"ctx":        ctx,
-		"ApiService": client.MetadataApi,
-	}
-}
-
 func TestMetadataAPI(t *testing.T) {
-	ctx := initializeMetadataTests(t)
-	ctx = CreateDocumentPreTest(ctx, t)
-	ctx = ctx.SetDefault("wv", "w").SetDefault("wvid", ctx["wid"])
+	InitializeTester[*onshape.MetadataApiService](t)
 
-	var href string
+	SetContext(TestingContext{
+		"wv": "w",
+	}.InheritDefaults(Context()))
+
+	OpenAPITest{
+		Call: onshape.ApiCreateDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		}.BTDocumentParams(onshape.BTDocumentParams{
+			Name:        Ptr("test-doc"),
+			Description: Ptr("This is a test document"),
+			IsPublic:    Ptr(false),
+		}),
+		Expect: NoAPIError(),
+	}.Execute()
+
 	OpenAPITest{
 		Call: onshape.ApiGetWVMetadataRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMetadataObjectInfo, v *http.Response, err error) {
-			href = v.Request.URL.String()
+		Expect: func(r interface{}, v *http.Response, err error) {
+			Context()["href"] = v.Request.URL.String()
 		},
-	}.Execute(ctx, t)
+	}.Execute()
 
-	it := WVMetadataItem{Href: href, Properties: []WVMetadataProperty{
+	it := WVMetadataItem{Href: Context()["href"].(string), Properties: []WVMetadataProperty{
 		{
 			PropertyID: "57f3fb8efa3416c06701d60d", // id of Name property
 			Value:      "test",
@@ -68,68 +66,76 @@ func TestMetadataAPI(t *testing.T) {
 	}}
 	its := WVMetadataItems{Items: []WVMetadataItem{it}}
 	body, err := json.Marshal(its)
-	assert.NoError(t, err)
+	assert.NoError(Tester(), err)
 
-	ctx = ctx.SetDefault("body", Ptr(string(body)))
+	Context()["body"] = Ptr(string(body))
 
 	OpenAPITest{
 		Call:   onshape.ApiUpdateWVMetadataRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetWVMetadataRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTMetadataObjectInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-
+		Expect: NoAPIErrorAnd(func(r *onshape.BTMetadataObjectInfo) {
 			// Check all included properties are updated
 			co := 0
 			for _, prop := range r.GetProperties() {
 				for _, x := range it.Properties {
 					if prop.GetPropertyId() == x.PropertyID {
-						assert.Equal(t, prop.Value, x.Value)
+						assert.Equal(Tester(), prop.Value, x.Value)
 						co++
 					}
 				}
 			}
-			assert.Len(t, it.Properties, co)
+			assert.Len(Tester(), it.Properties, co)
+		}),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiGetWMVEsMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiGetWMVEMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiUpdateWVEMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiGetWMVEPsMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiGetWMVEPMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiUpdateWVEPMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiGetVEOPStandardContentMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiUpdateVEOPStandardContentPartMetadataRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call: onshape.ApiDeleteDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		},
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 }
-
-/*** ADDITIONAL TESTS
-
-OpenAPITest{
-    Call: onshape.ApiGetWMVEsMetadataRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiGetWMVEMetadataRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiUpdateWVEMetadataRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiGetWMVEPsMetadataRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiGetWMVEPMetadataRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiUpdateWVEPMetadataRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiGetVEOPStandardContentMetadataRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiUpdateVEOPStandardContentPartMetadataRequest{},
-    Expect: Todo,
-},
-
-***/

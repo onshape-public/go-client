@@ -1,10 +1,8 @@
 package onshape_test
 
 import (
-	"context"
 	"encoding/base64"
 	"io/ioutil"
-	"net/http"
 	"os"
 	"testing"
 
@@ -12,21 +10,15 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func initializeAppElementTests(t *testing.T) TestingContext {
-	client, err := onshape.NewAPIClientFromEnv()
-	assert.NoError(t, err)
-
-	ctx := context.Background()
-
-	return TestingContext{
-		"client":     client,
-		"ctx":        ctx,
-		"ApiService": client.AppElementApi,
-	}
-}
-
 func TestAppElementAPI(t *testing.T) {
-	ctx := TestingContext{
+	InitializeTester[*onshape.AppElementApiService](t)
+
+	fileName := "./test_data/hf.txt"
+	osFile, err := os.Open(fileName)
+	assert.NoError(Tester(), err)
+	file := onshape.NewHttpFileFromOsFile(osFile)
+
+	SetContext(TestingContext{
 		"wvm":                      "w",
 		"bTAppElementParams":       GetDefaultAppElementParams(),
 		"bTAppElementUpdateParams": GetDefaultAppUpdateParams(),
@@ -35,97 +27,96 @@ func TestAppElementAPI(t *testing.T) {
 			FormatId: "CollabBulkCreate",
 		},
 		"bid":      "blob1",
-		"fileName": "./test_data/hf.txt",
-	}.InheritDefaults(initializeAppElementTests(t))
-
-	ctx = CreateDocumentPreTest(ctx, t)
-	var eid string
-
-	fileName := ctx["fileName"].(string)
-	osFile, err := os.Open(fileName)
-	assert.NoError(t, err)
-	file := onshape.NewHttpFileFromOsFile(osFile)
+		"fileName": fileName,
+		"file":     &file,
+	}.InheritDefaults(Context()))
 
 	OpenAPITest{
-		Call: onshape.ApiCreateElementRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTAppElementModifyInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			eid = *r.ElementId
-		},
-	}.Execute(ctx, t)
+		Call: onshape.ApiCreateDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		}.BTDocumentParams(onshape.BTDocumentParams{
+			Name:        Ptr("test-doc"),
+			Description: Ptr("This is a test document"),
+			IsPublic:    Ptr(false),
+		}),
+		Expect: NoAPIError(),
+	}.Execute()
 
-	ctx = TestingContext{"file": &file, "eid": eid, "wvmid": ctx["wid"]}.InheritDefaults(ctx)
+	OpenAPITest{
+		Call:   onshape.ApiCreateElementRequest{},
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiBulkCreateElementRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTAppElementBulkCreateInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			bcp := *ctx["bTAppElementBulkCreateParams"].(*onshape.BTAppElementBulkCreateParams)
-			assert.EqualValues(t, len(r.ElementIds), len(bcp.Names))
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementBulkCreateInfo) {
+			bcp := *Context()["bTAppElementBulkCreateParams"].(*onshape.BTAppElementBulkCreateParams)
+			assert.EqualValues(Tester(), len(r.ElementIds), len(bcp.Names))
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetSubElementContentRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTAppElementContentInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Zero(t, len(r.GetData()))
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementContentInfo) {
+			assert.Zero(Tester(), len(r.GetData()))
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiUploadBlobSubelementRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiDownloadBlobSubelementWorkspaceRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, res *onshape.HttpFile, v *http.Response, err error) {
-			assert.NoError(t, err)
-			defer v.Body.Close()
+		Expect: NoAPIErrorAnd(func(res *onshape.HttpFile) {
 			fileBytes, err := ioutil.ReadAll(res.Data)
-			assert.NoError(t, err)
-			buf, err := os.ReadFile(ctx["fileName"].(string))
-			assert.NoError(t, err)
-			assert.EqualValues(t, buf, fileBytes)
-		},
-	}.Execute(ctx, t)
+			assert.NoError(Tester(), err)
+			buf, err := os.ReadFile(Context()["fileName"].(string))
+			assert.NoError(Tester(), err)
+			assert.EqualValues(Tester(), buf, fileBytes)
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetJsonRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTGetJsonResponse2137, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.EqualValues(t, r.GetTree().AdditionalProperties, *ctx["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
+			assert.EqualValues(Tester(), r.GetTree().AdditionalProperties, *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
+		}),
+	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiUpdateAppElementRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetJsonRequest{},
-		Expect: func(ctx TestingContext, t *testing.T, r *onshape.BTGetJsonResponse2137, v *http.Response, err error) {
-			assert.NoError(t, err)
-
+		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
 			nm := make(map[string]interface{})
-			for k, v := range *ctx["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
+			for k, v := range *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
 				nm[k] = v
 			}
 
-			insert := ctx["bTAppElementUpdateParams"].(*onshape.BTAppElementUpdateParams).JsonTreeEdit.GetActualInstance().(*onshape.BTJEditInsert2523)
+			insert := Context()["bTAppElementUpdateParams"].(*onshape.BTAppElementUpdateParams).JsonTreeEdit.GetActualInstance().(*onshape.BTJEditInsert2523)
 			nm[insert.Path.GetPath()[0].GetActualInstance().(*onshape.BTJPathKey3221).GetKey()] = insert.GetValue()
 
 			assert.EqualValues(t, r.GetTree().AdditionalProperties, nm)
-		},
-	}.Execute(ctx, t)
+		}),
+	}.Execute()
 
-	DeleteDocumentPostTest(ctx, t)
+	OpenAPITest{
+		Call: onshape.ApiDeleteDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		},
+		Expect: NoAPIError(),
+	}.Execute()
 }
 
 func TestTransactionAppElementAPI(t *testing.T) {
-	ctx := TestingContext{
+	InitializeTester[*onshape.AppElementApiService](t)
+
+	SetContext(TestingContext{
 		"bTVersionOrWorkspaceParams": &onshape.BTVersionOrWorkspaceParams{
 			Name: Ptr("branch"),
 		},
@@ -135,101 +126,96 @@ func TestTransactionAppElementAPI(t *testing.T) {
 		},
 		"wvm": "w",
 		"wm":  "w",
-	}.InheritDefaults(initializeAppElementTests(t))
+	}.InheritDefaults(Context()))
 
-	ctx = CreateDocumentPreTest(ctx, t)
+	OpenAPITest{
+		Call: onshape.ApiCreateDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		}.BTDocumentParams(onshape.BTDocumentParams{
+			Name:        Ptr("test-doc"),
+			Description: Ptr("This is a test document"),
+			IsPublic:    Ptr(false),
+		}),
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiCreateWorkspaceRequest{
-			ApiService: ctx["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTWorkspaceInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			ctx = ctx.SetDefault("wid", r.GetId())
-			ctx = ctx.SetDefault("wvmid", r.GetId())
-			ctx = ctx.SetDefault("wmid", r.GetId())
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiCreateElementRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTAppElementModifyInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			ctx = ctx.SetDefault("eid", r.GetElementId())
-			ctx = ctx.SetDefault("bTAppElementStartTransactionParams", &onshape.BTAppElementStartTransactionParams{
+		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementModifyInfo) {
+			Context()["bTAppElementStartTransactionParams"] = &onshape.BTAppElementStartTransactionParams{
 				Description:    Ptr("Transaction to populate Assembly w/Data"),
 				ParentChangeId: Ptr(r.GetChangeId()),
-			})
-		},
-	}.Execute(ctx, t)
+			}
+		}),
+	}.Execute()
 
 	OpenAPITest{
-		Call: onshape.ApiStartTransactionRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTAppElementModifyInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			ctx = ctx.SetDefault("txnId", r.GetTransactionId())
-		},
-	}.Execute(ctx, t)
+		Call:   onshape.ApiStartTransactionRequest{},
+		Expect: NoAPIError(),
+	}.Execute()
 
 	for _, eup := range []*onshape.BTAppElementUpdateParams{
 		CreateAppElementChangeUpdate("Chapter 1"), CreateAppElementChangeUpdate("Chapter 2"), CreateAppElementChangeUpdate("Chapter 3"),
 	} {
-		eup.SetTransactionId(ctx["txnId"].(string))
-		ctx = ctx.SetDefault("bTAppElementUpdateParams", eup)
+		eup.SetTransactionId(Context()["tid"].(string))
 
 		OpenAPITest{
-			Call: onshape.ApiUpdateAppElementRequest{},
-			Expect: func(_ TestingContext, t *testing.T, r *onshape.BTAppElementModifyInfo, v *http.Response, err error) {
-				assert.NoError(t, err)
-				assert.Equal(t, ctx["txnId"], r.GetTransactionId())
-			},
-		}.Execute(ctx, t)
+			Call: onshape.ApiUpdateAppElementRequest{}.BTAppElementUpdateParams(*eup),
+			Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementModifyInfo) {
+				assert.Equal(Tester(), Context()["tid"].(string), r.GetTransactionId())
+			}),
+		}.Execute()
 	}
 
-	btAppElementCommitTransactionParams := onshape.NewBTAppElementCommitTransactionParams()
-	btAppElementCommitTransactionParams.SetDescription("Done Updating the Assembly")
-	btAppElementCommitTransactionParams.SetTransactionIds([]string{ctx["txnId"].(string)})
-
 	OpenAPITest{
-		Call:   onshape.ApiCommitTransactionsRequest{}.BTAppElementCommitTransactionParams(*btAppElementCommitTransactionParams),
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Call: onshape.ApiCommitTransactionsRequest{}.BTAppElementCommitTransactionParams(onshape.BTAppElementCommitTransactionParams{
+			Description:    Ptr("Done Updating the Assembly"),
+			TransactionIds: []string{Context()["tid"].(string)},
+		}),
+		Expect: NoAPIError(),
+	}.Execute()
 
-	var latestCommit string
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{
-			ApiService: ctx["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		},
-		Expect: func(_ TestingContext, t *testing.T, r []onshape.BTDocumentHistoryInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.LessOrEqual(t, 3, len(r))
-			latestCommit = r[0].GetMicroversionId()
-		},
-	}.Execute(ctx, t)
+		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
+			assert.LessOrEqual(Tester(), 3, len(r))
+			Context()["wvmid"] = r[0].GetMicroversionId()
+		}),
+	}.Execute()
 
 	OpenAPITest{
-		Call: onshape.ApiGetSubelementIdsRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTAppElementIdsInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			assert.Equal(t, 3, len(r.GetSubelementIds()))
-		},
-	}.Execute(TestingContext{
-		"wvm":   "m",
-		"wvmid": latestCommit,
-	}.InheritDefaults(ctx), t)
+		Call:    onshape.ApiGetSubelementIdsRequest{},
+		Context: TestingContext{"wvm": "m"},
+		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementIdsInfo) {
+			assert.Equal(Tester(), 3, len(r.GetSubelementIds()))
+		}),
+	}.Execute()
 
 	OpenAPITest{
-		Call: onshape.ApiStartTransactionRequest{},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTAppElementModifyInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			ctx = ctx.SetDefault("tid", r.GetTransactionId())
-		},
-	}.Execute(ctx, t)
+		Call:   onshape.ApiStartTransactionRequest{},
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiAbortTransactionRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
+
+	OpenAPITest{
+		Call: onshape.ApiDeleteDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		},
+		Expect: NoAPIError(),
+	}.Execute()
 }
 
 func GetDefaultAppElementParams() *onshape.BTAppElementParams {
@@ -291,72 +277,3 @@ func CreateAppElementChangeUpdate(name string) *onshape.BTAppElementUpdateParams
 		Changes:     []onshape.BTAppElementChangeParams{CreateChapterTestSubelement(name)},
 	}
 }
-
-/*** ADDITIONAL TESTS
-
-OpenAPITest{
-	Call:   onshape.ApiDownloadBlobSubelementRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiDeleteBlobSubelementRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetElementTransactionsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiStartTransactionRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiCommitTransactionsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetBlobSubelementIdsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiCompareAppElementJsonRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetAppElementHistoryRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetSubelementIdsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiGetJsonPathsRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiDeleteAppElementContentRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiCreateReferenceRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiResolveReferenceRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiUpdateReferenceRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiDeleteReferenceRequest{},
-	Expect: Todo,
-},
-OpenAPITest{
-	Call:   onshape.ApiResolveReferencesRequest{},
-	Expect: Todo,
-},
-
-***/

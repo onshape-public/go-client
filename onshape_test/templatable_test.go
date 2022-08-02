@@ -1,18 +1,137 @@
 package onshape_test
 
 import (
+	"context"
 	"net/http"
 	"reflect"
 	"testing"
 	"unsafe"
 
 	"github.com/davecgh/go-spew/spew"
+	"github.com/onshape-public/go-client/onshape"
 	"github.com/stretchr/testify/assert"
 )
 
+var tester TestingInstance
+var mapper *ResultMapper = &ResultMapper{}
+
+func init() {
+	populateDefaultResultMapper()
+}
+
+func populateDefaultResultMapper() {
+	DefaultResultMapper().Add(MapFields(func(o *onshape.BTDocumentInfo) TestingContext {
+		return TestingContext{
+			"did":     o.GetId(),
+			"wid":     *o.GetDefaultWorkspace().Id,
+			"wmid":    *o.GetDefaultWorkspace().Id,
+			"wvid":    *o.GetDefaultWorkspace().Id,
+			"wvmid":   *o.GetDefaultWorkspace().Id,
+			"mv":      *o.GetDefaultWorkspace().Microversion,
+			"owner":   o.GetOwner().Id,
+			"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
+		}
+	})).Add(MapFields(func(o *onshape.BTDocumentSummaryInfo) TestingContext {
+		return TestingContext{
+			"did":     o.GetId(),
+			"wid":     *o.GetDefaultWorkspace().Id,
+			"wmid":    *o.GetDefaultWorkspace().Id,
+			"wvid":    *o.GetDefaultWorkspace().Id,
+			"wvmid":   *o.GetDefaultWorkspace().Id,
+			"mv":      *o.GetDefaultWorkspace().Microversion,
+			"owner":   o.GetOwner().Id,
+			"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
+		}
+	})).Add(MapFields(func(o *onshape.BTWorkspaceInfo) TestingContext {
+		return TestingContext{
+			"wid":   o.GetId(),
+			"wmid":  o.GetId(),
+			"wvid":  o.GetId(),
+			"wvmid": o.GetId(),
+			"mv":    o.GetMicroversion(),
+		}
+	})).Add(MapFields(func(o *onshape.BTRestoreFromHistoryInfo) TestingContext {
+		return TestingContext{
+			"mv": o.GetNewMicroversion(),
+		}
+	})).Add(MapFields(func(o *onshape.BTMicroversionInfo) TestingContext {
+		return TestingContext{
+			"mv": o.GetMicroversion(),
+		}
+	})).Add(MapFields(func(o *onshape.BTAppElementModifyInfo) TestingContext {
+		return TestingContext{
+			"eid": o.GetElementId(),
+			"tid": o.GetTransactionId(),
+		}
+	}))
+}
+
+type TestingInstance struct {
+	context TestingContext
+	tests   []*testing.T
+}
+
+func InitializeTester[T any](t *testing.T) {
+	client, err := onshape.NewAPIClientFromEnv()
+	assert.NoError(t, err)
+
+	ctx := context.Background()
+
+	tester = TestingInstance{
+		context: TestingContext{
+			"client":     client,
+			"ctx":        ctx,
+			"ApiService": getAPIForOnshape[T](client),
+		},
+		tests: []*testing.T{t},
+	}
+}
+
+func getAPIForOnshape[T any](client *onshape.APIClient) T {
+	rv := reflect.ValueOf(client).Elem()
+
+	for i := 0; i < rv.NumField(); i++ {
+		fi := rv.Field(i)
+		rf := reflect.NewAt(fi.Type(), unsafe.Pointer(fi.UnsafeAddr())).Elem()
+		if val, ok := rf.Interface().(T); ok {
+			return val
+		}
+	}
+
+	panic("Couldn't find API")
+}
+
+func DefaultResultMapper() *ResultMapper {
+	return mapper
+}
+
+func Context() TestingContext {
+	return tester.context
+}
+
+func SetContext(ctx TestingContext) {
+	tester.context = ctx
+}
+
+func Tester() *testing.T {
+	l := len(tester.tests)
+	return tester.tests[l-1]
+}
+
+func (t *TestingInstance) pushTest(q *testing.T) {
+	t.tests = append(t.tests, q)
+}
+
+func (t *TestingInstance) popTest() *testing.T {
+	l := len(t.tests)
+	ret := Tester()
+	t.tests = t.tests[:l-1]
+	return ret
+}
+
 type TestingContext map[string]interface{}
 
-func (o TestingContext) SetDefault(name string, value interface{}) TestingContext {
+func (o TestingContext) WithDefault(name string, value interface{}) TestingContext {
 	return TestingContext{name: value}.InheritDefaults(o)
 }
 
@@ -44,7 +163,7 @@ func ApplyDefaultsToObject(tc TestingContext, o interface{}) interface{} {
 		name := val.Type().Field(i).Name
 		rf := reflect.NewAt(fi.Type(), unsafe.Pointer(fi.UnsafeAddr())).Elem()
 		if rf.IsZero() {
-			if v, ok := tc[name]; ok {
+			if v, ok := tc[name]; ok && rf.CanSet() {
 				rf.Set(reflect.ValueOf(v))
 			}
 		}
@@ -53,24 +172,67 @@ func ApplyDefaultsToObject(tc TestingContext, o interface{}) interface{} {
 	return vp.Interface()
 }
 
-type TemplatableTest interface {
-	Execute(ctx TestingContext, t *testing.T) bool
+type OpenAPIResultHandler func(value interface{}, response *http.Response, err error)
+
+func APIError() OpenAPIResultHandler {
+	return func(value interface{}, response *http.Response, err error) {
+		assert.Error(Tester(), err)
+	}
 }
 
-func Ptr[T any](val T) *T {
-	return &val
+func NoAPIError() OpenAPIResultHandler {
+	return func(value interface{}, response *http.Response, err error) {
+		assert.NoError(Tester(), err)
+	}
+}
+
+func NoAPIErrorAnd[T any](check func(value T)) OpenAPIResultHandler {
+	return func(value interface{}, response *http.Response, err error) {
+		assert.NoError(Tester(), err)
+		val, ok := value.(T)
+		assert.True(Tester(), ok)
+		if ok && err == nil {
+			check(val)
+		}
+	}
+}
+
+func Nothing() OpenAPIResultHandler {
+	return func(value interface{}, response *http.Response, err error) {
+	}
+}
+
+func MapResult() OpenAPIResultHandler {
+	return func(value interface{}, response *http.Response, err error) {
+		DefaultResultMapper().MapResult(value)
+	}
+}
+
+func Spew() OpenAPIResultHandler {
+	return func(value interface{}, response *http.Response, err error) {
+		spew.Dump("Spew(): "+Tester().Name(), value, response, err)
+	}
+}
+
+var todo = func(value interface{}, response *http.Response, err error) {
+	spew.Dump("Spew(): "+Tester().Name(), value, response, err)
+}
+
+func Todo() OpenAPIResultHandler {
+	return todo
 }
 
 type OpenAPITest struct {
-	Name   string
-	Call   interface{}
-	Expect interface{}
-	Pass   interface{}
-	Fail   interface{}
+	Name    string
+	Call    interface{}
+	Context TestingContext
+	Expect  OpenAPIResultHandler
+	Pass    OpenAPIResultHandler
+	Fail    OpenAPIResultHandler
 }
 
-func (o OpenAPITest) Execute(ctx TestingContext, t *testing.T) bool {
-	call := ApplyDefaultsToObject(ctx, o.Call)
+func (o OpenAPITest) Execute() bool {
+	call := ApplyDefaultsToObject(o.Context.InheritDefaults(Context()), o.Call)
 
 	name := o.Name
 
@@ -79,62 +241,69 @@ func (o OpenAPITest) Execute(ctx TestingContext, t *testing.T) bool {
 	}
 
 	if o.Pass == nil {
-		o.Pass = Nothing
+		o.Pass = MapResult()
 	}
 	if o.Fail == nil {
-		o.Fail = Spew
+		o.Fail = Spew()
 	}
 	if o.Expect == nil {
-		o.Expect = NoAPIError
+		o.Expect = NoAPIError()
 	}
 
-	var rs []reflect.Value
+	var value interface{}
+	var response *http.Response
+	var err error
 
-	ret := t.Run(name, func(t *testing.T) {
+	ret := Tester().Run(name, func(t *testing.T) {
+		tester.pushTest(t)
 		validator := o.Expect
 
-		if reflect.ValueOf(validator).Pointer() == reflect.ValueOf(Todo).Pointer() {
+		if reflect.ValueOf(validator).Pointer() == reflect.ValueOf(Todo()).Pointer() {
 			t.SkipNow()
 		}
 
-		rs = reflect.ValueOf(call).MethodByName("Execute").Call([]reflect.Value{})
-		rs = append([]reflect.Value{reflect.ValueOf(ctx), reflect.ValueOf(t)}, rs...)
-
-		reflect.ValueOf(o.Expect).Call(rs)
+		rs := reflect.ValueOf(call).MethodByName("Execute").Call([]reflect.Value{})
+		value = rs[0].Interface()
+		response = rs[1].Interface().(*http.Response)
+		err, _ = rs[2].Interface().(error)
+		o.Expect(value, response, err)
 	})
+	defer tester.popTest()
 
-	if reflect.ValueOf(o.Expect).Pointer() != reflect.ValueOf(Todo).Pointer() {
-		if ret {
-			reflect.ValueOf(o.Pass).Call(rs)
-		} else {
-			reflect.ValueOf(o.Fail).Call(rs)
-		}
+	if ret {
+		o.Pass(value, response, err)
+	} else {
+		o.Fail(value, response, err)
 	}
 
 	return ret
 }
 
-func NoAPIError(ctx TestingContext, t *testing.T, _ interface{}, _ *http.Response, err error) {
-	assert.NoError(t, err)
-}
+type ResultMapping func(value interface{})
 
-func APIError(ctx TestingContext, t *testing.T, _ interface{}, _ *http.Response, err error) {
-	assert.Error(t, err)
-}
-
-func Value[T any](val T) func(TestingContext, *testing.T, T, *http.Response, error) {
-	return func(ctx TestingContext, t *testing.T, cmp T, _ *http.Response, err error) {
-		assert.NoError(t, err)
-		assert.EqualValues(t, val, cmp)
+func MapFields[T any](fm func(T) TestingContext) ResultMapping {
+	return func(value interface{}) {
+		if t, ok := value.(T); ok {
+			SetContext(fm(t).InheritDefaults(Context()))
+		}
 	}
 }
 
-func Spew(_ TestingContext, t *testing.T, _ interface{}, v *http.Response, _ error) {
-	t.Log(spew.Sdump(v))
+type ResultMapper struct {
+	maps []ResultMapping
 }
 
-func Todo(ctx TestingContext, t *testing.T, _ interface{}, _ *http.Response, err error) {
-	t.SkipNow()
+func (m *ResultMapper) Add(mapping ResultMapping) *ResultMapper {
+	m.maps = append(m.maps, mapping)
+	return m
 }
 
-func Nothing(_, _, _, _, _ interface{}) {}
+func (m *ResultMapper) MapResult(value interface{}) {
+	for _, mapper := range m.maps {
+		mapper(value)
+	}
+}
+
+func Ptr[T any](val T) *T {
+	return &val
+}

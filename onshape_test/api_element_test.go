@@ -1,79 +1,85 @@
 package onshape_test
 
 import (
-	"context"
-	"net/http"
 	"testing"
 
 	"github.com/onshape-public/go-client/onshape"
-	"github.com/stretchr/testify/assert"
 )
 
-func initializeElementTests(t *testing.T) TestingContext {
-	client, err := onshape.NewAPIClientFromEnv()
-	assert.NoError(t, err)
-
-	ctx := context.Background()
-
-	return TestingContext{
-		"client":     client,
-		"ctx":        ctx,
-		"ApiService": client.ElementApi,
-	}
-}
-
 func TestElementAPI(t *testing.T) {
-	ctx := initializeElementTests(t)
-	ctx = CreateDocumentPreTest(ctx, t)
-	ctx = ctx.SetDefault("wvm", "w").SetDefault("bTAppElementParams", GetDefaultAppElementParams())
+	InitializeTester[*onshape.ElementApiService](t)
+
+	SetContext(TestingContext{
+		"wvm": "w",
+	}.InheritDefaults(Context()))
+
+	OpenAPITest{
+		Call: onshape.ApiCreateDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		}.BTDocumentParams(onshape.BTDocumentParams{
+			Name:        Ptr("test-doc"),
+			Description: Ptr("This is a test document"),
+			IsPublic:    Ptr(false),
+		}),
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiCreateElementRequest{
-			ApiService: ctx["client"].(*onshape.APIClient).AppElementApi,
-		},
-		Expect: func(_ TestingContext, t *testing.T, r *onshape.BTAppElementModifyInfo, v *http.Response, err error) {
-			assert.NoError(t, err)
-			ctx = ctx.SetDefault("eid", r.GetElementId())
-		},
-	}.Execute(ctx, t)
+			ApiService: Context()["client"].(*onshape.APIClient).AppElementApi,
+		}.BTAppElementParams(*GetDefaultAppElementParams()),
+		Expect: NoAPIError(),
+	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiDeleteElementRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Expect: NoAPIError(),
+	}.Execute()
 
-	DeleteDocumentPostTest(ctx, t)
+	OpenAPITest{
+		Call:   onshape.ApiCopyElementFromSourceDocumentRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiEncodeConfigurationMapRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiDeleteElementRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiUpdateReferencesRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiGetConfigurationRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiUpdateConfigurationRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiDecodeConfigurationRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
+		Call: onshape.ApiDeleteDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		},
+		Expect: NoAPIError(),
+	}.Execute()
 }
-
-/*** ADDITIONAL TESTS
-
-OpenAPITest{
-    Call: onshape.ApiCopyElementFromSourceDocumentRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiEncodeConfigurationMapRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiUpdateReferencesRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiGetConfigurationRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiUpdateConfigurationRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiDecodeConfigurationRequest{},
-    Expect: Todo,
-},
-OpenAPITest{
-    Call: onshape.ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest{},
-    Expect: Todo,
-},
-
-***/

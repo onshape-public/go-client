@@ -1,7 +1,6 @@
 package onshape_test
 
 import (
-	"context"
 	"encoding/json"
 	"errors"
 	"io/ioutil"
@@ -9,50 +8,51 @@ import (
 	"testing"
 	"time"
 
-	"github.com/google/uuid"
 	"github.com/onshape-public/go-client/onshape"
 	"github.com/stretchr/testify/assert"
 )
 
-func initializeEventTests(t *testing.T) TestingContext {
-	client, err := onshape.NewAPIClientFromEnv()
-	assert.NoError(t, err)
-
-	ctx := context.Background()
-
-	return TestingContext{
-		"client":     client,
-		"ctx":        ctx,
-		"ApiService": client.EventApi,
-	}
-}
-
 func TestEventAPI(t *testing.T) {
-	ctx := CreateDocumentPreTest(initializeEventTests(t).SetDefault("label", Ptr("test"+uuid.NewString())), t)
-	ctx = ctx.SetDefault("bTEventParams", Ptr(onshape.BTDocumentOpenEventParams{
-		JsonType:   Ptr("DocumentOpenEventInfo"),
-		DocumentId: Ptr(ctx["did"].(string)),
-	}).AsBTEventParams())
+	InitializeTester[*onshape.EventApiService](t)
+
+	OpenAPITest{
+		Call: onshape.ApiCreateDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		}.BTDocumentParams(onshape.BTDocumentParams{
+			Name:        Ptr("test-doc"),
+			Description: Ptr("This is a test document"),
+			IsPublic:    Ptr(false),
+		}),
+		Expect: NoAPIError(),
+	}.Execute()
 
 	//First wait for 3 sec to wait for doc to settle...
 	time.Sleep(3 * time.Second)
 
 	doc, err := requestRecentlyOpenedDocument()
 	if doc != nil {
-		assert.NoError(t, err)
-		assert.NotEqual(t, ctx["did"], doc.GetId())
+		assert.NoError(Tester(), err)
+		assert.NotEqual(t, Context()["did"], doc.GetId())
 	}
 
 	OpenAPITest{
-		Call:   onshape.ApiFireEventRequest{},
-		Expect: NoAPIError,
-	}.Execute(ctx, t)
+		Call: onshape.ApiFireEventRequest{}.BTEventParams(*Ptr(onshape.BTDocumentOpenEventParams{
+			JsonType:   Ptr("DocumentOpenEventInfo"),
+			DocumentId: Ptr(Context()["did"].(string)),
+		}).AsBTEventParams()),
+		Expect: NoAPIError(),
+	}.Execute()
 
 	doc, err = requestRecentlyOpenedDocument()
 	assert.NoError(t, err)
-	assert.Equal(t, ctx["did"], doc.GetId())
+	assert.Equal(t, Context()["did"], doc.GetId())
 
-	DeleteDocumentPostTest(ctx, t)
+	OpenAPITest{
+		Call: onshape.ApiDeleteDocumentRequest{
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+		},
+		Expect: NoAPIError(),
+	}.Execute()
 }
 
 func requestRecentlyOpenedDocument() (*onshape.BTDocumentSummaryInfo, error) {
