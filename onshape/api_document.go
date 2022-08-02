@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5836-ea08b349dac9
+API version: 1.151.5843-26f51e563fa4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -12,7 +12,6 @@ Contact: api-support@onshape.zendesk.com
 package onshape
 
 import (
-	"bytes"
 	"context"
 	"io"
 	"io/ioutil"
@@ -115,14 +114,10 @@ func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*B
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -130,8 +125,11 @@ func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*B
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -224,20 +222,16 @@ func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTDocumentInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -246,8 +240,11 @@ func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -344,20 +341,16 @@ func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*B
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTVersionInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -366,8 +359,11 @@ func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*B
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -461,20 +457,16 @@ func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest)
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTWorkspaceInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -483,8 +475,11 @@ func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -579,20 +574,16 @@ func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v map[string]interface{}
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -601,8 +592,11 @@ func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -692,20 +686,16 @@ func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest)
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v map[string]interface{}
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -714,8 +704,11 @@ func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -814,14 +807,10 @@ func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDa
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -829,8 +818,11 @@ func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDa
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -946,20 +938,16 @@ func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[st
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v map[string]interface{}
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -968,8 +956,11 @@ func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[st
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1063,20 +1054,16 @@ func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicrov
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTMicroversionInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1085,8 +1072,11 @@ func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicrov
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1172,14 +1162,10 @@ func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDoc
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -1187,8 +1173,11 @@ func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDoc
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1274,20 +1263,16 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTAclInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1296,8 +1281,11 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1391,20 +1379,16 @@ func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRe
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v []BTDocumentHistoryInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1413,8 +1397,11 @@ func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1500,14 +1487,10 @@ func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPer
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -1515,8 +1498,11 @@ func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPer
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1620,20 +1606,16 @@ func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersions
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v []BTVersionInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1642,8 +1624,11 @@ func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersions
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1729,20 +1714,16 @@ func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorksp
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v []BTWorkspaceInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1751,8 +1732,11 @@ func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorksp
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -1933,14 +1917,10 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -1948,8 +1928,11 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -2079,14 +2062,10 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -2094,8 +2073,11 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -2431,20 +2413,16 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTInsertablesListResponse
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2453,8 +2431,11 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -2558,20 +2539,16 @@ func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUni
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTUnitInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2580,8 +2557,11 @@ func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUni
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -2689,14 +2669,10 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -2704,8 +2680,11 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -2806,20 +2785,16 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTDocumentMergeInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2828,8 +2803,11 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -2949,20 +2927,16 @@ func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTM
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTMergePreviewInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2971,8 +2945,11 @@ func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTM
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3073,20 +3050,16 @@ func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDo
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTMoveElementInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3095,8 +3068,11 @@ func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3204,20 +3180,16 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTRestoreFromHistoryInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3226,8 +3198,11 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3325,20 +3300,16 @@ func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchan
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v []BTUnchangedElementInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3347,8 +3318,11 @@ func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchan
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3441,20 +3415,16 @@ func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]inter
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v map[string]interface{}
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3463,8 +3433,11 @@ func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]inter
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3561,20 +3534,16 @@ func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*B
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTAclInfo
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3583,8 +3552,11 @@ func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*B
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3685,20 +3657,16 @@ func (a *DocumentApiService) SyncApplicationElementsExecute(r ApiSyncApplication
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v map[string]interface{}
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3707,8 +3675,11 @@ func (a *DocumentApiService) SyncApplicationElementsExecute(r ApiSyncApplication
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3807,20 +3778,16 @@ func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest)
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v map[string]interface{}
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3829,8 +3796,11 @@ func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -3927,20 +3897,16 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
 		var v map[string]interface{}
-		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3949,8 +3915,11 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),
@@ -4052,14 +4021,10 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r 
 	}
 
 	var _ io.Reader
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
@@ -4067,8 +4032,11 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
 	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: err.Error(),

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5836-ea08b349dac9
+API version: 1.151.5843-26f51e563fa4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -19,6 +19,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"net/http"
@@ -41,7 +42,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Onshape REST API API v1.151.5836-ea08b349dac9
+// APIClient manages communication with the Onshape REST API API v1.151.5843-26f51e563fa4
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -496,22 +497,32 @@ func (c *APIClient) prepareRequest(
 	return localVarRequest, nil
 }
 
-func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err error) {
+func (c *APIClient) decode(v interface{}, br *io.ReadCloser, contentType string) (err error) {
+	if f, ok := v.(*HttpFile); ok {
+		*f = NewHttpFileFromReader("", *br)
+		return
+	}
+	if f, ok := v.(**HttpFile); ok {
+		fil := NewHttpFileFromReader("", *br)
+		*f = &fil
+		return
+	}
+
+	b, err := ioutil.ReadAll(*br)
+	(*br).Close()
+
+	if err != nil {
+		return
+	}
+
+	*br = ioutil.NopCloser(bytes.NewBuffer(b))
+
 	if len(b) == 0 {
 		return nil
 	}
 	if s, ok := v.(*string); ok {
 		*s = string(b)
 		return nil
-	}
-	if f, ok := v.(*HttpFile); ok {
-		*f = NewHttpFile("", b)
-		return
-	}
-	if f, ok := v.(**HttpFile); ok {
-		fil := NewHttpFile("", b)
-		*f = &fil
-		return
 	}
 	if xmlCheck.MatchString(contentType) {
 		if err = xml.Unmarshal(b, v); err != nil {
@@ -676,21 +687,25 @@ func strlen(s string) int {
 
 type HttpFile struct {
 	Name string
-	Data io.Reader
+	Data io.ReadCloser
 }
 
 func NewHttpFile(name string, data []byte) HttpFile {
-	buf := bytes.NewBuffer(data)
+	buf := io.NopCloser(bytes.NewBuffer(data))
 	return HttpFile{name, buf}
 }
 
-func NewHttpFileFromReader(name string, data io.Reader) HttpFile {
+func NewHttpFileFromReader(name string, data io.ReadCloser) HttpFile {
 	return HttpFile{name, data}
 }
 
 func NewHttpFileFromOsFile(file *os.File) HttpFile {
 	name := file.Name()
 	return HttpFile{name, file}
+}
+
+func (h *HttpFile) Close() {
+	h.Data.Close()
 }
 
 // GenericOpenAPIError Provides access to the body, error and model on returned errors.
