@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BranchPointMicroversionId** | Pointer to **string** |  | [optional] 
 **BranchPointVersionId** | Pointer to **string** |  | [optional] 
 **Changes** | Pointer to [**[]BTElementMergeInfo**](BTElementMergeInfo.md) |  | [optional] 
+**IsBranchPointAtStart** | Pointer to **bool** |  | [optional] 
 **SourceMicroversionId** | Pointer to **string** |  | [optional] 
 **TargetMicroversionId** | Pointer to **string** |  | [optional] 
 
@@ -103,6 +104,31 @@ SetChanges sets Changes field to given value.
 `func (o *BTMergePreviewInfo) HasChanges() bool`
 
 HasChanges returns a boolean if a field has been set.
+
+### GetIsBranchPointAtStart
+
+`func (o *BTMergePreviewInfo) GetIsBranchPointAtStart() bool`
+
+GetIsBranchPointAtStart returns the IsBranchPointAtStart field if non-nil, zero value otherwise.
+
+### GetIsBranchPointAtStartOk
+
+`func (o *BTMergePreviewInfo) GetIsBranchPointAtStartOk() (*bool, bool)`
+
+GetIsBranchPointAtStartOk returns a tuple with the IsBranchPointAtStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsBranchPointAtStart
+
+`func (o *BTMergePreviewInfo) SetIsBranchPointAtStart(v bool)`
+
+SetIsBranchPointAtStart sets IsBranchPointAtStart field to given value.
+
+### HasIsBranchPointAtStart
+
+`func (o *BTMergePreviewInfo) HasIsBranchPointAtStart() bool`
+
+HasIsBranchPointAtStart returns a boolean if a field has been set.
 
 ### GetSourceMicroversionId
 

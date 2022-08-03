@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5843-26f51e563fa4
+API version: 1.151.5858-88e9ceb97451
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,6 +20,7 @@ type BTMergePreviewInfo struct {
 	BranchPointMicroversionId *string              `json:"branchPointMicroversionId,omitempty"`
 	BranchPointVersionId      *string              `json:"branchPointVersionId,omitempty"`
 	Changes                   []BTElementMergeInfo `json:"changes,omitempty"`
+	IsBranchPointAtStart      *bool                `json:"isBranchPointAtStart,omitempty"`
 	SourceMicroversionId      *string              `json:"sourceMicroversionId,omitempty"`
 	TargetMicroversionId      *string              `json:"targetMicroversionId,omitempty"`
 }
@@ -137,6 +138,38 @@ func (o *BTMergePreviewInfo) SetChanges(v []BTElementMergeInfo) {
 	o.Changes = v
 }
 
+// GetIsBranchPointAtStart returns the IsBranchPointAtStart field value if set, zero value otherwise.
+func (o *BTMergePreviewInfo) GetIsBranchPointAtStart() bool {
+	if o == nil || o.IsBranchPointAtStart == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsBranchPointAtStart
+}
+
+// GetIsBranchPointAtStartOk returns a tuple with the IsBranchPointAtStart field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMergePreviewInfo) GetIsBranchPointAtStartOk() (*bool, bool) {
+	if o == nil || o.IsBranchPointAtStart == nil {
+		return nil, false
+	}
+	return o.IsBranchPointAtStart, true
+}
+
+// HasIsBranchPointAtStart returns a boolean if a field has been set.
+func (o *BTMergePreviewInfo) HasIsBranchPointAtStart() bool {
+	if o != nil && o.IsBranchPointAtStart != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsBranchPointAtStart gets a reference to the given bool and assigns it to the IsBranchPointAtStart field.
+func (o *BTMergePreviewInfo) SetIsBranchPointAtStart(v bool) {
+	o.IsBranchPointAtStart = &v
+}
+
 // GetSourceMicroversionId returns the SourceMicroversionId field value if set, zero value otherwise.
 func (o *BTMergePreviewInfo) GetSourceMicroversionId() string {
 	if o == nil || o.SourceMicroversionId == nil {
@@ -211,6 +244,9 @@ func (o BTMergePreviewInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Changes != nil {
 		toSerialize["changes"] = o.Changes
+	}
+	if o.IsBranchPointAtStart != nil {
+		toSerialize["isBranchPointAtStart"] = o.IsBranchPointAtStart
 	}
 	if o.SourceMicroversionId != nil {
 		toSerialize["sourceMicroversionId"] = o.SourceMicroversionId

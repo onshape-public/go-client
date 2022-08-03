@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.151.5843-26f51e563fa4
+  version: 1.151.5858-88e9ceb97451
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -23456,17 +23456,18 @@ components:
         branchPointElementPath:
         - branchPointElementPath
         - branchPointElementPath
-        mergeable: true
         targetElementPath:
         - targetElementPath
         - targetElementPath
-        targetElementStatus: CREATED
-        sourceElementStatus: CREATED
         targetElementName: targetElementName
         branchPointElementName: branchPointElementName
         sourceElementPath:
         - sourceElementPath
         - sourceElementPath
+        dependentElementMergeInfo: null
+        mergeable: true
+        targetElementStatus: CREATED
+        sourceElementStatus: CREATED
         elementType: PARTSTUDIO
         elementDataType: elementDataType
       properties:
@@ -23476,6 +23477,8 @@ components:
           items:
             type: string
           type: array
+        dependentElementMergeInfo:
+          $ref: '#/components/schemas/BTElementMergeInfo'
         elementDataType:
           type: string
         elementId:
@@ -38532,17 +38535,18 @@ components:
           branchPointElementPath:
           - branchPointElementPath
           - branchPointElementPath
-          mergeable: true
           targetElementPath:
           - targetElementPath
           - targetElementPath
-          targetElementStatus: CREATED
-          sourceElementStatus: CREATED
           targetElementName: targetElementName
           branchPointElementName: branchPointElementName
           sourceElementPath:
           - sourceElementPath
           - sourceElementPath
+          dependentElementMergeInfo: null
+          mergeable: true
+          targetElementStatus: CREATED
+          sourceElementStatus: CREATED
           elementType: PARTSTUDIO
           elementDataType: elementDataType
         - elementId: elementId
@@ -38550,19 +38554,21 @@ components:
           branchPointElementPath:
           - branchPointElementPath
           - branchPointElementPath
-          mergeable: true
           targetElementPath:
           - targetElementPath
           - targetElementPath
-          targetElementStatus: CREATED
-          sourceElementStatus: CREATED
           targetElementName: targetElementName
           branchPointElementName: branchPointElementName
           sourceElementPath:
           - sourceElementPath
           - sourceElementPath
+          dependentElementMergeInfo: null
+          mergeable: true
+          targetElementStatus: CREATED
+          sourceElementStatus: CREATED
           elementType: PARTSTUDIO
           elementDataType: elementDataType
+        isBranchPointAtStart: true
         branchPointVersionId: branchPointVersionId
         branchPointMicroversionId: branchPointMicroversionId
         sourceMicroversionId: sourceMicroversionId
@@ -38575,6 +38581,8 @@ components:
           items:
             $ref: '#/components/schemas/BTElementMergeInfo'
           type: array
+        isBranchPointAtStart:
+          type: boolean
         sourceMicroversionId:
           type: string
         targetMicroversionId:
