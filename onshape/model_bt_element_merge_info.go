@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5843-26f51e563fa4
+API version: 1.151.5858-88e9ceb97451
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,18 +17,19 @@ import (
 
 // BTElementMergeInfo struct for BTElementMergeInfo
 type BTElementMergeInfo struct {
-	BranchPointElementName *string  `json:"branchPointElementName,omitempty"`
-	BranchPointElementPath []string `json:"branchPointElementPath,omitempty"`
-	ElementDataType        *string  `json:"elementDataType,omitempty"`
-	ElementId              *string  `json:"elementId,omitempty"`
-	ElementType            *string  `json:"elementType,omitempty"`
-	Mergeable              *bool    `json:"mergeable,omitempty"`
-	SourceElementName      *string  `json:"sourceElementName,omitempty"`
-	SourceElementPath      []string `json:"sourceElementPath,omitempty"`
-	SourceElementStatus    *string  `json:"sourceElementStatus,omitempty"`
-	TargetElementName      *string  `json:"targetElementName,omitempty"`
-	TargetElementPath      []string `json:"targetElementPath,omitempty"`
-	TargetElementStatus    *string  `json:"targetElementStatus,omitempty"`
+	BranchPointElementName    *string             `json:"branchPointElementName,omitempty"`
+	BranchPointElementPath    []string            `json:"branchPointElementPath,omitempty"`
+	DependentElementMergeInfo *BTElementMergeInfo `json:"dependentElementMergeInfo,omitempty"`
+	ElementDataType           *string             `json:"elementDataType,omitempty"`
+	ElementId                 *string             `json:"elementId,omitempty"`
+	ElementType               *string             `json:"elementType,omitempty"`
+	Mergeable                 *bool               `json:"mergeable,omitempty"`
+	SourceElementName         *string             `json:"sourceElementName,omitempty"`
+	SourceElementPath         []string            `json:"sourceElementPath,omitempty"`
+	SourceElementStatus       *string             `json:"sourceElementStatus,omitempty"`
+	TargetElementName         *string             `json:"targetElementName,omitempty"`
+	TargetElementPath         []string            `json:"targetElementPath,omitempty"`
+	TargetElementStatus       *string             `json:"targetElementStatus,omitempty"`
 }
 
 // NewBTElementMergeInfo instantiates a new BTElementMergeInfo object
@@ -110,6 +111,38 @@ func (o *BTElementMergeInfo) HasBranchPointElementPath() bool {
 // SetBranchPointElementPath gets a reference to the given []string and assigns it to the BranchPointElementPath field.
 func (o *BTElementMergeInfo) SetBranchPointElementPath(v []string) {
 	o.BranchPointElementPath = v
+}
+
+// GetDependentElementMergeInfo returns the DependentElementMergeInfo field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetDependentElementMergeInfo() BTElementMergeInfo {
+	if o == nil || o.DependentElementMergeInfo == nil {
+		var ret BTElementMergeInfo
+		return ret
+	}
+	return *o.DependentElementMergeInfo
+}
+
+// GetDependentElementMergeInfoOk returns a tuple with the DependentElementMergeInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetDependentElementMergeInfoOk() (*BTElementMergeInfo, bool) {
+	if o == nil || o.DependentElementMergeInfo == nil {
+		return nil, false
+	}
+	return o.DependentElementMergeInfo, true
+}
+
+// HasDependentElementMergeInfo returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasDependentElementMergeInfo() bool {
+	if o != nil && o.DependentElementMergeInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDependentElementMergeInfo gets a reference to the given BTElementMergeInfo and assigns it to the DependentElementMergeInfo field.
+func (o *BTElementMergeInfo) SetDependentElementMergeInfo(v BTElementMergeInfo) {
+	o.DependentElementMergeInfo = &v
 }
 
 // GetElementDataType returns the ElementDataType field value if set, zero value otherwise.
@@ -439,6 +472,9 @@ func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.BranchPointElementPath != nil {
 		toSerialize["branchPointElementPath"] = o.BranchPointElementPath
+	}
+	if o.DependentElementMergeInfo != nil {
+		toSerialize["dependentElementMergeInfo"] = o.DependentElementMergeInfo
 	}
 	if o.ElementDataType != nil {
 		toSerialize["elementDataType"] = o.ElementDataType

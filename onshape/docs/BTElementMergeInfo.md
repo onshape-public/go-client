@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BranchPointElementName** | Pointer to **string** |  | [optional] 
 **BranchPointElementPath** | Pointer to **[]string** |  | [optional] 
+**DependentElementMergeInfo** | Pointer to [**BTElementMergeInfo**](BTElementMergeInfo.md) |  | [optional] 
 **ElementDataType** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementType** | Pointer to **string** |  | [optional] 
@@ -85,6 +86,31 @@ SetBranchPointElementPath sets BranchPointElementPath field to given value.
 `func (o *BTElementMergeInfo) HasBranchPointElementPath() bool`
 
 HasBranchPointElementPath returns a boolean if a field has been set.
+
+### GetDependentElementMergeInfo
+
+`func (o *BTElementMergeInfo) GetDependentElementMergeInfo() BTElementMergeInfo`
+
+GetDependentElementMergeInfo returns the DependentElementMergeInfo field if non-nil, zero value otherwise.
+
+### GetDependentElementMergeInfoOk
+
+`func (o *BTElementMergeInfo) GetDependentElementMergeInfoOk() (*BTElementMergeInfo, bool)`
+
+GetDependentElementMergeInfoOk returns a tuple with the DependentElementMergeInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDependentElementMergeInfo
+
+`func (o *BTElementMergeInfo) SetDependentElementMergeInfo(v BTElementMergeInfo)`
+
+SetDependentElementMergeInfo sets DependentElementMergeInfo field to given value.
+
+### HasDependentElementMergeInfo
+
+`func (o *BTElementMergeInfo) HasDependentElementMergeInfo() bool`
+
+HasDependentElementMergeInfo returns a boolean if a field has been set.
 
 ### GetElementDataType
 
