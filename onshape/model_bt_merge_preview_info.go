@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5858-88e9ceb97451
+API version: 1.151.5884-a8034368dd2e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -19,6 +19,7 @@ import (
 type BTMergePreviewInfo struct {
 	BranchPointMicroversionId *string              `json:"branchPointMicroversionId,omitempty"`
 	BranchPointVersionId      *string              `json:"branchPointVersionId,omitempty"`
+	BranchPointWorkspaceId    *string              `json:"branchPointWorkspaceId,omitempty"`
 	Changes                   []BTElementMergeInfo `json:"changes,omitempty"`
 	IsBranchPointAtStart      *bool                `json:"isBranchPointAtStart,omitempty"`
 	SourceMicroversionId      *string              `json:"sourceMicroversionId,omitempty"`
@@ -104,6 +105,38 @@ func (o *BTMergePreviewInfo) HasBranchPointVersionId() bool {
 // SetBranchPointVersionId gets a reference to the given string and assigns it to the BranchPointVersionId field.
 func (o *BTMergePreviewInfo) SetBranchPointVersionId(v string) {
 	o.BranchPointVersionId = &v
+}
+
+// GetBranchPointWorkspaceId returns the BranchPointWorkspaceId field value if set, zero value otherwise.
+func (o *BTMergePreviewInfo) GetBranchPointWorkspaceId() string {
+	if o == nil || o.BranchPointWorkspaceId == nil {
+		var ret string
+		return ret
+	}
+	return *o.BranchPointWorkspaceId
+}
+
+// GetBranchPointWorkspaceIdOk returns a tuple with the BranchPointWorkspaceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMergePreviewInfo) GetBranchPointWorkspaceIdOk() (*string, bool) {
+	if o == nil || o.BranchPointWorkspaceId == nil {
+		return nil, false
+	}
+	return o.BranchPointWorkspaceId, true
+}
+
+// HasBranchPointWorkspaceId returns a boolean if a field has been set.
+func (o *BTMergePreviewInfo) HasBranchPointWorkspaceId() bool {
+	if o != nil && o.BranchPointWorkspaceId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBranchPointWorkspaceId gets a reference to the given string and assigns it to the BranchPointWorkspaceId field.
+func (o *BTMergePreviewInfo) SetBranchPointWorkspaceId(v string) {
+	o.BranchPointWorkspaceId = &v
 }
 
 // GetChanges returns the Changes field value if set, zero value otherwise.
@@ -241,6 +274,9 @@ func (o BTMergePreviewInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.BranchPointVersionId != nil {
 		toSerialize["branchPointVersionId"] = o.BranchPointVersionId
+	}
+	if o.BranchPointWorkspaceId != nil {
+		toSerialize["branchPointWorkspaceId"] = o.BranchPointWorkspaceId
 	}
 	if o.Changes != nil {
 		toSerialize["changes"] = o.Changes
