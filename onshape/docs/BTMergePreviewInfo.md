@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BranchPointMicroversionId** | Pointer to **string** |  | [optional] 
 **BranchPointVersionId** | Pointer to **string** |  | [optional] 
+**BranchPointWorkspaceId** | Pointer to **string** |  | [optional] 
 **Changes** | Pointer to [**[]BTElementMergeInfo**](BTElementMergeInfo.md) |  | [optional] 
 **IsBranchPointAtStart** | Pointer to **bool** |  | [optional] 
 **SourceMicroversionId** | Pointer to **string** |  | [optional] 
@@ -79,6 +80,31 @@ SetBranchPointVersionId sets BranchPointVersionId field to given value.
 `func (o *BTMergePreviewInfo) HasBranchPointVersionId() bool`
 
 HasBranchPointVersionId returns a boolean if a field has been set.
+
+### GetBranchPointWorkspaceId
+
+`func (o *BTMergePreviewInfo) GetBranchPointWorkspaceId() string`
+
+GetBranchPointWorkspaceId returns the BranchPointWorkspaceId field if non-nil, zero value otherwise.
+
+### GetBranchPointWorkspaceIdOk
+
+`func (o *BTMergePreviewInfo) GetBranchPointWorkspaceIdOk() (*string, bool)`
+
+GetBranchPointWorkspaceIdOk returns a tuple with the BranchPointWorkspaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBranchPointWorkspaceId
+
+`func (o *BTMergePreviewInfo) SetBranchPointWorkspaceId(v string)`
+
+SetBranchPointWorkspaceId sets BranchPointWorkspaceId field to given value.
+
+### HasBranchPointWorkspaceId
+
+`func (o *BTMergePreviewInfo) HasBranchPointWorkspaceId() bool`
+
+HasBranchPointWorkspaceId returns a boolean if a field has been set.
 
 ### GetChanges
 

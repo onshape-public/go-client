@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.151.5858-88e9ceb97451
+  version: 1.151.5884-a8034368dd2e
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -38569,6 +38569,7 @@ components:
           elementType: PARTSTUDIO
           elementDataType: elementDataType
         isBranchPointAtStart: true
+        branchPointWorkspaceId: branchPointWorkspaceId
         branchPointVersionId: branchPointVersionId
         branchPointMicroversionId: branchPointMicroversionId
         sourceMicroversionId: sourceMicroversionId
@@ -38576,6 +38577,8 @@ components:
         branchPointMicroversionId:
           type: string
         branchPointVersionId:
+          type: string
+        branchPointWorkspaceId:
           type: string
         changes:
           items:
