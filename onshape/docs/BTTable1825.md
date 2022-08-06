@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **NodeId** | Pointer to **string** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **RowCount** | Pointer to **int32** |  | [optional] 
+**SortOrder** | Pointer to [**BTTableSortOrder4371**](BTTableSortOrder4371.md) |  | [optional] 
 **TableColumns** | Pointer to [**[]BTTableColumnInfo1222**](BTTableColumnInfo1222.md) |  | [optional] 
 **TableId** | Pointer to **string** |  | [optional] 
 **TableRows** | Pointer to [**[]BTTableRow1054**](BTTableRow1054.md) |  | [optional] 
@@ -209,6 +210,31 @@ SetRowCount sets RowCount field to given value.
 `func (o *BTTable1825) HasRowCount() bool`
 
 HasRowCount returns a boolean if a field has been set.
+
+### GetSortOrder
+
+`func (o *BTTable1825) GetSortOrder() BTTableSortOrder4371`
+
+GetSortOrder returns the SortOrder field if non-nil, zero value otherwise.
+
+### GetSortOrderOk
+
+`func (o *BTTable1825) GetSortOrderOk() (*BTTableSortOrder4371, bool)`
+
+GetSortOrderOk returns a tuple with the SortOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSortOrder
+
+`func (o *BTTable1825) SetSortOrder(v BTTableSortOrder4371)`
+
+SetSortOrder sets SortOrder field to given value.
+
+### HasSortOrder
+
+`func (o *BTTable1825) HasSortOrder() bool`
+
+HasSortOrder returns a boolean if a field has been set.
 
 ### GetTableColumns
 

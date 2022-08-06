@@ -976,6 +976,7 @@ docs/BTTableColumnSpec1967.md
 docs/BTTableCrossHighlightData1753.md
 docs/BTTableResponse1546.md
 docs/BTTableRow1054.md
+docs/BTTableSortOrder4371.md
 docs/BTTableSpec915.md
 docs/BTTableSpec915AllOf.md
 docs/BTTableTestCellDouble2509.md
@@ -1560,6 +1561,7 @@ model_bt_table_column_spec_1967.go
 model_bt_table_cross_highlight_data_1753.go
 model_bt_table_response_1546.go
 model_bt_table_row_1054.go
+model_bt_table_sort_order_4371.go
 model_bt_table_spec_915.go
 model_bt_table_test_cell_double_2509.go
 model_bt_table_test_cell_string_2112.go

@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.151.5901-446ed8116a32
+  version: 1.151.5928-bd774e9c9f97
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -45567,6 +45567,10 @@ components:
           nodeId: nodeId
         frozenColumns: 6
         isFailed: true
+        sortOrder:
+          isAscending: true
+          sortingColumnId: sortingColumnId
+          nodeId: nodeId
         tableId: tableId
         readOnly: true
         columnCount: 0
@@ -45625,6 +45629,8 @@ components:
         rowCount:
           format: int32
           type: integer
+        sortOrder:
+          $ref: '#/components/schemas/BTTableSortOrder-4371'
         tableColumns:
           items:
             $ref: '#/components/schemas/BTTableColumnInfo-1222'
@@ -45895,6 +45901,10 @@ components:
             nodeId: nodeId
           frozenColumns: 6
           isFailed: true
+          sortOrder:
+            isAscending: true
+            sortingColumnId: sortingColumnId
+            nodeId: nodeId
           tableId: tableId
           readOnly: true
           columnCount: 0
@@ -45968,6 +45978,19 @@ components:
           type: string
         rowMetadata:
           $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
+      type: object
+    BTTableSortOrder-4371:
+      example:
+        isAscending: true
+        sortingColumnId: sortingColumnId
+        nodeId: nodeId
+      properties:
+        isAscending:
+          type: boolean
+        nodeId:
+          type: string
+        sortingColumnId:
+          type: string
       type: object
     BTTableSpec-915:
       allOf:
