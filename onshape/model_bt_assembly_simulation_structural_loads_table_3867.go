@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5901-446ed8116a32
+API version: 1.151.5928-bd774e9c9f97
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -24,6 +24,7 @@ type BTAssemblySimulationStructuralLoadsTable3867 struct {
 	NodeId        *string                 `json:"nodeId,omitempty"`
 	ReadOnly      *bool                   `json:"readOnly,omitempty"`
 	RowCount      *int32                  `json:"rowCount,omitempty"`
+	SortOrder     *BTTableSortOrder4371   `json:"sortOrder,omitempty"`
 	TableColumns  []BTTableColumnInfo1222 `json:"tableColumns,omitempty"`
 	TableId       *string                 `json:"tableId,omitempty"`
 	TableRows     []BTTableRow1054        `json:"tableRows,omitempty"`
@@ -272,6 +273,38 @@ func (o *BTAssemblySimulationStructuralLoadsTable3867) SetRowCount(v int32) {
 	o.RowCount = &v
 }
 
+// GetSortOrder returns the SortOrder field value if set, zero value otherwise.
+func (o *BTAssemblySimulationStructuralLoadsTable3867) GetSortOrder() BTTableSortOrder4371 {
+	if o == nil || o.SortOrder == nil {
+		var ret BTTableSortOrder4371
+		return ret
+	}
+	return *o.SortOrder
+}
+
+// GetSortOrderOk returns a tuple with the SortOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulationStructuralLoadsTable3867) GetSortOrderOk() (*BTTableSortOrder4371, bool) {
+	if o == nil || o.SortOrder == nil {
+		return nil, false
+	}
+	return o.SortOrder, true
+}
+
+// HasSortOrder returns a boolean if a field has been set.
+func (o *BTAssemblySimulationStructuralLoadsTable3867) HasSortOrder() bool {
+	if o != nil && o.SortOrder != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSortOrder gets a reference to the given BTTableSortOrder4371 and assigns it to the SortOrder field.
+func (o *BTAssemblySimulationStructuralLoadsTable3867) SetSortOrder(v BTTableSortOrder4371) {
+	o.SortOrder = &v
+}
+
 // GetTableColumns returns the TableColumns field value if set, zero value otherwise.
 func (o *BTAssemblySimulationStructuralLoadsTable3867) GetTableColumns() []BTTableColumnInfo1222 {
 	if o == nil || o.TableColumns == nil {
@@ -454,6 +487,9 @@ func (o BTAssemblySimulationStructuralLoadsTable3867) MarshalJSON() ([]byte, err
 	}
 	if o.RowCount != nil {
 		toSerialize["rowCount"] = o.RowCount
+	}
+	if o.SortOrder != nil {
+		toSerialize["sortOrder"] = o.SortOrder
 	}
 	if o.TableColumns != nil {
 		toSerialize["tableColumns"] = o.TableColumns
