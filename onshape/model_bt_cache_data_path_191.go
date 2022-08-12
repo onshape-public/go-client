@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,15 +17,12 @@ import (
 
 // BTCacheDataPath191 struct for BTCacheDataPath191
 type BTCacheDataPath191 struct {
-	BtType            *string `json:"btType,omitempty"`
-	DocumentId        *string `json:"documentId,omitempty"`
-	ElementId         *string `json:"elementId,omitempty"`
-	ExpireSecs        *string `json:"expireSecs,omitempty"`
-	FullFilePath      *string `json:"fullFilePath,omitempty"`
-	IsPersisted       *bool   `json:"isPersisted,omitempty"`
-	Key               *string `json:"key,omitempty"`
-	UrlPath           *string `json:"urlPath,omitempty"`
-	UseLocalFileCache *bool   `json:"useLocalFileCache,omitempty"`
+	BtType                   *string `json:"btType,omitempty"`
+	DocumentId               *string `json:"documentId,omitempty"`
+	ElementId                *string `json:"elementId,omitempty"`
+	Key                      *string `json:"key,omitempty"`
+	KeyContainsConfiguration *bool   `json:"keyContainsConfiguration,omitempty"`
+	UseLocalFileCache        *bool   `json:"useLocalFileCache,omitempty"`
 }
 
 // NewBTCacheDataPath191 instantiates a new BTCacheDataPath191 object
@@ -141,102 +138,6 @@ func (o *BTCacheDataPath191) SetElementId(v string) {
 	o.ElementId = &v
 }
 
-// GetExpireSecs returns the ExpireSecs field value if set, zero value otherwise.
-func (o *BTCacheDataPath191) GetExpireSecs() string {
-	if o == nil || o.ExpireSecs == nil {
-		var ret string
-		return ret
-	}
-	return *o.ExpireSecs
-}
-
-// GetExpireSecsOk returns a tuple with the ExpireSecs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTCacheDataPath191) GetExpireSecsOk() (*string, bool) {
-	if o == nil || o.ExpireSecs == nil {
-		return nil, false
-	}
-	return o.ExpireSecs, true
-}
-
-// HasExpireSecs returns a boolean if a field has been set.
-func (o *BTCacheDataPath191) HasExpireSecs() bool {
-	if o != nil && o.ExpireSecs != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetExpireSecs gets a reference to the given string and assigns it to the ExpireSecs field.
-func (o *BTCacheDataPath191) SetExpireSecs(v string) {
-	o.ExpireSecs = &v
-}
-
-// GetFullFilePath returns the FullFilePath field value if set, zero value otherwise.
-func (o *BTCacheDataPath191) GetFullFilePath() string {
-	if o == nil || o.FullFilePath == nil {
-		var ret string
-		return ret
-	}
-	return *o.FullFilePath
-}
-
-// GetFullFilePathOk returns a tuple with the FullFilePath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTCacheDataPath191) GetFullFilePathOk() (*string, bool) {
-	if o == nil || o.FullFilePath == nil {
-		return nil, false
-	}
-	return o.FullFilePath, true
-}
-
-// HasFullFilePath returns a boolean if a field has been set.
-func (o *BTCacheDataPath191) HasFullFilePath() bool {
-	if o != nil && o.FullFilePath != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFullFilePath gets a reference to the given string and assigns it to the FullFilePath field.
-func (o *BTCacheDataPath191) SetFullFilePath(v string) {
-	o.FullFilePath = &v
-}
-
-// GetIsPersisted returns the IsPersisted field value if set, zero value otherwise.
-func (o *BTCacheDataPath191) GetIsPersisted() bool {
-	if o == nil || o.IsPersisted == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsPersisted
-}
-
-// GetIsPersistedOk returns a tuple with the IsPersisted field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTCacheDataPath191) GetIsPersistedOk() (*bool, bool) {
-	if o == nil || o.IsPersisted == nil {
-		return nil, false
-	}
-	return o.IsPersisted, true
-}
-
-// HasIsPersisted returns a boolean if a field has been set.
-func (o *BTCacheDataPath191) HasIsPersisted() bool {
-	if o != nil && o.IsPersisted != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsPersisted gets a reference to the given bool and assigns it to the IsPersisted field.
-func (o *BTCacheDataPath191) SetIsPersisted(v bool) {
-	o.IsPersisted = &v
-}
-
 // GetKey returns the Key field value if set, zero value otherwise.
 func (o *BTCacheDataPath191) GetKey() string {
 	if o == nil || o.Key == nil {
@@ -269,36 +170,36 @@ func (o *BTCacheDataPath191) SetKey(v string) {
 	o.Key = &v
 }
 
-// GetUrlPath returns the UrlPath field value if set, zero value otherwise.
-func (o *BTCacheDataPath191) GetUrlPath() string {
-	if o == nil || o.UrlPath == nil {
-		var ret string
+// GetKeyContainsConfiguration returns the KeyContainsConfiguration field value if set, zero value otherwise.
+func (o *BTCacheDataPath191) GetKeyContainsConfiguration() bool {
+	if o == nil || o.KeyContainsConfiguration == nil {
+		var ret bool
 		return ret
 	}
-	return *o.UrlPath
+	return *o.KeyContainsConfiguration
 }
 
-// GetUrlPathOk returns a tuple with the UrlPath field value if set, nil otherwise
+// GetKeyContainsConfigurationOk returns a tuple with the KeyContainsConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTCacheDataPath191) GetUrlPathOk() (*string, bool) {
-	if o == nil || o.UrlPath == nil {
+func (o *BTCacheDataPath191) GetKeyContainsConfigurationOk() (*bool, bool) {
+	if o == nil || o.KeyContainsConfiguration == nil {
 		return nil, false
 	}
-	return o.UrlPath, true
+	return o.KeyContainsConfiguration, true
 }
 
-// HasUrlPath returns a boolean if a field has been set.
-func (o *BTCacheDataPath191) HasUrlPath() bool {
-	if o != nil && o.UrlPath != nil {
+// HasKeyContainsConfiguration returns a boolean if a field has been set.
+func (o *BTCacheDataPath191) HasKeyContainsConfiguration() bool {
+	if o != nil && o.KeyContainsConfiguration != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrlPath gets a reference to the given string and assigns it to the UrlPath field.
-func (o *BTCacheDataPath191) SetUrlPath(v string) {
-	o.UrlPath = &v
+// SetKeyContainsConfiguration gets a reference to the given bool and assigns it to the KeyContainsConfiguration field.
+func (o *BTCacheDataPath191) SetKeyContainsConfiguration(v bool) {
+	o.KeyContainsConfiguration = &v
 }
 
 // GetUseLocalFileCache returns the UseLocalFileCache field value if set, zero value otherwise.
@@ -344,20 +245,11 @@ func (o BTCacheDataPath191) MarshalJSON() ([]byte, error) {
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
 	}
-	if o.ExpireSecs != nil {
-		toSerialize["expireSecs"] = o.ExpireSecs
-	}
-	if o.FullFilePath != nil {
-		toSerialize["fullFilePath"] = o.FullFilePath
-	}
-	if o.IsPersisted != nil {
-		toSerialize["isPersisted"] = o.IsPersisted
-	}
 	if o.Key != nil {
 		toSerialize["key"] = o.Key
 	}
-	if o.UrlPath != nil {
-		toSerialize["urlPath"] = o.UrlPath
+	if o.KeyContainsConfiguration != nil {
+		toSerialize["keyContainsConfiguration"] = o.KeyContainsConfiguration
 	}
 	if o.UseLocalFileCache != nil {
 		toSerialize["useLocalFileCache"] = o.UseLocalFileCache

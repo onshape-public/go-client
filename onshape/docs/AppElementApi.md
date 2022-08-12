@@ -1165,7 +1165,7 @@ Name | Type | Description  | Notes
 
 ## GetJson
 
-> BTGetJsonResponse2137 GetJson(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).Execute()
+> BTGetJsonResponse2137 GetJson(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).Execute()
 
 Retrieve JSON by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -1182,16 +1182,17 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    eid := "eid_example" // string | 
-    wvm := "wvm_example" // string | 
-    wvmid := "wvmid_example" // string | 
-    transactionId := "transactionId_example" // string |  (optional)
-    changeId := "changeId_example" // string |  (optional)
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    transactionId := "transactionId_example" // string | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. (optional)
+    changeId := "changeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppElementApi.GetJson(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).Execute()
+    resp, r, err := apiClient.AppElementApi.GetJson(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetJson``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1207,10 +1208,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**eid** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -1223,8 +1224,9 @@ Name | Type | Description  | Notes
 
 
 
- **transactionId** | **string** |  | 
- **changeId** | **string** |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **transactionId** | **string** | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. | 
+ **changeId** | **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | 
 
 ### Return type
 

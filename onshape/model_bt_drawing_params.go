@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,12 +20,14 @@ type BTDrawingParams struct {
 	Border                    *bool                    `json:"border,omitempty"`
 	ComputeIntersection       *bool                    `json:"computeIntersection,omitempty"`
 	DecimalSeparator          *string                  `json:"decimalSeparator,omitempty"`
+	DisplayStateId            *string                  `json:"displayStateId,omitempty"`
 	DocumentId                *string                  `json:"documentId,omitempty"`
 	DocumentMicroversionId    *string                  `json:"documentMicroversionId,omitempty"`
 	DrawingName               *string                  `json:"drawingName,omitempty"`
 	ElementConfiguration      *string                  `json:"elementConfiguration,omitempty"`
 	ElementId                 *string                  `json:"elementId,omitempty"`
 	ElementMicroversionId     *string                  `json:"elementMicroversionId,omitempty"`
+	ExplosionId               *string                  `json:"explosionId,omitempty"`
 	ExternalDocumentId        *string                  `json:"externalDocumentId,omitempty"`
 	ExternalDocumentVersionId *string                  `json:"externalDocumentVersionId,omitempty"`
 	HiddenLines               *string                  `json:"hiddenLines,omitempty"`
@@ -37,6 +39,7 @@ type BTDrawingParams struct {
 	Language                  *string                  `json:"language,omitempty"`
 	Location                  *BTElementLocationParams `json:"location,omitempty"`
 	ModelType                 *string                  `json:"modelType,omitempty"`
+	NamedPositionId           *string                  `json:"namedPositionId,omitempty"`
 	NumberHorizontalZones     *int32                   `json:"numberHorizontalZones,omitempty"`
 	NumberVerticalZones       *int32                   `json:"numberVerticalZones,omitempty"`
 	PartId                    *string                  `json:"partId,omitempty"`
@@ -178,6 +181,38 @@ func (o *BTDrawingParams) HasDecimalSeparator() bool {
 // SetDecimalSeparator gets a reference to the given string and assigns it to the DecimalSeparator field.
 func (o *BTDrawingParams) SetDecimalSeparator(v string) {
 	o.DecimalSeparator = &v
+}
+
+// GetDisplayStateId returns the DisplayStateId field value if set, zero value otherwise.
+func (o *BTDrawingParams) GetDisplayStateId() string {
+	if o == nil || o.DisplayStateId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DisplayStateId
+}
+
+// GetDisplayStateIdOk returns a tuple with the DisplayStateId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDrawingParams) GetDisplayStateIdOk() (*string, bool) {
+	if o == nil || o.DisplayStateId == nil {
+		return nil, false
+	}
+	return o.DisplayStateId, true
+}
+
+// HasDisplayStateId returns a boolean if a field has been set.
+func (o *BTDrawingParams) HasDisplayStateId() bool {
+	if o != nil && o.DisplayStateId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayStateId gets a reference to the given string and assigns it to the DisplayStateId field.
+func (o *BTDrawingParams) SetDisplayStateId(v string) {
+	o.DisplayStateId = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -370,6 +405,38 @@ func (o *BTDrawingParams) HasElementMicroversionId() bool {
 // SetElementMicroversionId gets a reference to the given string and assigns it to the ElementMicroversionId field.
 func (o *BTDrawingParams) SetElementMicroversionId(v string) {
 	o.ElementMicroversionId = &v
+}
+
+// GetExplosionId returns the ExplosionId field value if set, zero value otherwise.
+func (o *BTDrawingParams) GetExplosionId() string {
+	if o == nil || o.ExplosionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ExplosionId
+}
+
+// GetExplosionIdOk returns a tuple with the ExplosionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDrawingParams) GetExplosionIdOk() (*string, bool) {
+	if o == nil || o.ExplosionId == nil {
+		return nil, false
+	}
+	return o.ExplosionId, true
+}
+
+// HasExplosionId returns a boolean if a field has been set.
+func (o *BTDrawingParams) HasExplosionId() bool {
+	if o != nil && o.ExplosionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExplosionId gets a reference to the given string and assigns it to the ExplosionId field.
+func (o *BTDrawingParams) SetExplosionId(v string) {
+	o.ExplosionId = &v
 }
 
 // GetExternalDocumentId returns the ExternalDocumentId field value if set, zero value otherwise.
@@ -722,6 +789,38 @@ func (o *BTDrawingParams) HasModelType() bool {
 // SetModelType gets a reference to the given string and assigns it to the ModelType field.
 func (o *BTDrawingParams) SetModelType(v string) {
 	o.ModelType = &v
+}
+
+// GetNamedPositionId returns the NamedPositionId field value if set, zero value otherwise.
+func (o *BTDrawingParams) GetNamedPositionId() string {
+	if o == nil || o.NamedPositionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NamedPositionId
+}
+
+// GetNamedPositionIdOk returns a tuple with the NamedPositionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDrawingParams) GetNamedPositionIdOk() (*string, bool) {
+	if o == nil || o.NamedPositionId == nil {
+		return nil, false
+	}
+	return o.NamedPositionId, true
+}
+
+// HasNamedPositionId returns a boolean if a field has been set.
+func (o *BTDrawingParams) HasNamedPositionId() bool {
+	if o != nil && o.NamedPositionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNamedPositionId gets a reference to the given string and assigns it to the NamedPositionId field.
+func (o *BTDrawingParams) SetNamedPositionId(v string) {
+	o.NamedPositionId = &v
 }
 
 // GetNumberHorizontalZones returns the NumberHorizontalZones field value if set, zero value otherwise.
@@ -1631,6 +1730,9 @@ func (o BTDrawingParams) MarshalJSON() ([]byte, error) {
 	if o.DecimalSeparator != nil {
 		toSerialize["decimalSeparator"] = o.DecimalSeparator
 	}
+	if o.DisplayStateId != nil {
+		toSerialize["displayStateId"] = o.DisplayStateId
+	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
 	}
@@ -1648,6 +1750,9 @@ func (o BTDrawingParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ElementMicroversionId != nil {
 		toSerialize["elementMicroversionId"] = o.ElementMicroversionId
+	}
+	if o.ExplosionId != nil {
+		toSerialize["explosionId"] = o.ExplosionId
 	}
 	if o.ExternalDocumentId != nil {
 		toSerialize["externalDocumentId"] = o.ExternalDocumentId
@@ -1681,6 +1786,9 @@ func (o BTDrawingParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ModelType != nil {
 		toSerialize["modelType"] = o.ModelType
+	}
+	if o.NamedPositionId != nil {
+		toSerialize["namedPositionId"] = o.NamedPositionId
 	}
 	if o.NumberHorizontalZones != nil {
 		toSerialize["numberHorizontalZones"] = o.NumberHorizontalZones

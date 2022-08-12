@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -725,6 +725,7 @@ func (r ApiEvalFeatureScriptRequest) Configuration(configuration string) ApiEval
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiEvalFeatureScriptRequest) RollbackBarIndex(rollbackBarIndex int32) ApiEvalFeatureScriptRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -1046,6 +1047,7 @@ func (r ApiExportPartStudioGltfRequest) Configuration(configuration string) ApiE
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiExportPartStudioGltfRequest) RollbackBarIndex(rollbackBarIndex int32) ApiExportPartStudioGltfRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -1485,6 +1487,7 @@ func (r ApiGetFeatureScriptRepresentationRequest) Configuration(configuration st
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetFeatureScriptRepresentationRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetFeatureScriptRepresentationRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -1794,15 +1797,25 @@ func (a *PartStudioApiService) GetFeatureScriptTableExecute(r ApiGetFeatureScrip
 }
 
 type ApiGetPartStudioBodyDetailsRequest struct {
-	ctx              context.Context
-	ApiService       *PartStudioApiService
-	did              string
-	wvm              string
-	wvmid            string
-	eid              string
-	configuration    *string
-	linkDocumentId   *string
-	rollbackBarIndex *int32
+	ctx                   context.Context
+	ApiService            *PartStudioApiService
+	did                   string
+	wvm                   string
+	wvmid                 string
+	eid                   string
+	linkDocumentId        *string
+	configuration         *string
+	rollbackBarIndex      *int32
+	elementMicroversionId *string
+	includeSurfaces       *bool
+	includeCompositeParts *bool
+	includeGeometricData  *bool
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetPartStudioBodyDetailsRequest) LinkDocumentId(linkDocumentId string) ApiGetPartStudioBodyDetailsRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
 }
 
 func (r ApiGetPartStudioBodyDetailsRequest) Configuration(configuration string) ApiGetPartStudioBodyDetailsRequest {
@@ -1810,13 +1823,32 @@ func (r ApiGetPartStudioBodyDetailsRequest) Configuration(configuration string) 
 	return r
 }
 
-func (r ApiGetPartStudioBodyDetailsRequest) LinkDocumentId(linkDocumentId string) ApiGetPartStudioBodyDetailsRequest {
-	r.linkDocumentId = &linkDocumentId
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
+func (r ApiGetPartStudioBodyDetailsRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetPartStudioBodyDetailsRequest {
+	r.rollbackBarIndex = &rollbackBarIndex
 	return r
 }
 
-func (r ApiGetPartStudioBodyDetailsRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetPartStudioBodyDetailsRequest {
-	r.rollbackBarIndex = &rollbackBarIndex
+func (r ApiGetPartStudioBodyDetailsRequest) ElementMicroversionId(elementMicroversionId string) ApiGetPartStudioBodyDetailsRequest {
+	r.elementMicroversionId = &elementMicroversionId
+	return r
+}
+
+// Whether or not surfaces should be included in the response.
+func (r ApiGetPartStudioBodyDetailsRequest) IncludeSurfaces(includeSurfaces bool) ApiGetPartStudioBodyDetailsRequest {
+	r.includeSurfaces = &includeSurfaces
+	return r
+}
+
+// Whether or not composite parts should be included in the response.
+func (r ApiGetPartStudioBodyDetailsRequest) IncludeCompositeParts(includeCompositeParts bool) ApiGetPartStudioBodyDetailsRequest {
+	r.includeCompositeParts = &includeCompositeParts
+	return r
+}
+
+// Whether or not geometric data should be included in the response.
+func (r ApiGetPartStudioBodyDetailsRequest) IncludeGeometricData(includeGeometricData bool) ApiGetPartStudioBodyDetailsRequest {
+	r.includeGeometricData = &includeGeometricData
 	return r
 }
 
@@ -1828,10 +1860,10 @@ func (r ApiGetPartStudioBodyDetailsRequest) Execute() (*BTExportModelBodiesRespo
 GetPartStudioBodyDetails Retrieve an array of body details by document ID, workspace or version or microversion ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
+ @param did The id of the document in which to perform the operation.
+ @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
+ @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @return ApiGetPartStudioBodyDetailsRequest
 */
 func (a *PartStudioApiService) GetPartStudioBodyDetails(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioBodyDetailsRequest {
@@ -1870,14 +1902,26 @@ func (a *PartStudioApiService) GetPartStudioBodyDetailsExecute(r ApiGetPartStudi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.configuration != nil {
-		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
-	}
 	if r.linkDocumentId != nil {
 		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
 	}
+	if r.configuration != nil {
+		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
+	}
 	if r.rollbackBarIndex != nil {
 		localVarQueryParams.Add("rollbackBarIndex", parameterToString(*r.rollbackBarIndex, ""))
+	}
+	if r.elementMicroversionId != nil {
+		localVarQueryParams.Add("elementMicroversionId", parameterToString(*r.elementMicroversionId, ""))
+	}
+	if r.includeSurfaces != nil {
+		localVarQueryParams.Add("includeSurfaces", parameterToString(*r.includeSurfaces, ""))
+	}
+	if r.includeCompositeParts != nil {
+		localVarQueryParams.Add("includeCompositeParts", parameterToString(*r.includeCompositeParts, ""))
+	}
+	if r.includeGeometricData != nil {
+		localVarQueryParams.Add("includeGeometricData", parameterToString(*r.includeGeometricData, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2129,6 +2173,7 @@ func (r ApiGetPartStudioEdgesRequest) Configuration(configuration string) ApiGet
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetPartStudioEdgesRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetPartStudioEdgesRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -2355,6 +2400,7 @@ func (r ApiGetPartStudioFacesRequest) Configuration(configuration string) ApiGet
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetPartStudioFacesRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetPartStudioFacesRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -2922,6 +2968,7 @@ func (r ApiGetPartStudioMassPropertiesRequest) Configuration(configuration strin
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetPartStudioMassPropertiesRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetPartStudioMassPropertiesRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r

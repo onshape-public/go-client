@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -38,6 +38,7 @@ type BTMLoad3538 struct {
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
 	DefinedByComponents                    *bool                                     `json:"definedByComponents,omitempty"`
+	DirectionFlipped                       *bool                                     `json:"directionFlipped,omitempty"`
 	LoadComponentParameterIds              *map[string]string                        `json:"loadComponentParameterIds,omitempty"`
 	LoadRegionParameterId                  *string                                   `json:"loadRegionParameterId,omitempty"`
 	LoadType                               *string                                   `json:"loadType,omitempty"`
@@ -736,6 +737,38 @@ func (o *BTMLoad3538) SetDefinedByComponents(v bool) {
 	o.DefinedByComponents = &v
 }
 
+// GetDirectionFlipped returns the DirectionFlipped field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetDirectionFlipped() bool {
+	if o == nil || o.DirectionFlipped == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DirectionFlipped
+}
+
+// GetDirectionFlippedOk returns a tuple with the DirectionFlipped field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetDirectionFlippedOk() (*bool, bool) {
+	if o == nil || o.DirectionFlipped == nil {
+		return nil, false
+	}
+	return o.DirectionFlipped, true
+}
+
+// HasDirectionFlipped returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasDirectionFlipped() bool {
+	if o != nil && o.DirectionFlipped != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectionFlipped gets a reference to the given bool and assigns it to the DirectionFlipped field.
+func (o *BTMLoad3538) SetDirectionFlipped(v bool) {
+	o.DirectionFlipped = &v
+}
+
 // GetLoadComponentParameterIds returns the LoadComponentParameterIds field value if set, zero value otherwise.
 func (o *BTMLoad3538) GetLoadComponentParameterIds() map[string]string {
 	if o == nil || o.LoadComponentParameterIds == nil {
@@ -1024,6 +1057,9 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefinedByComponents != nil {
 		toSerialize["definedByComponents"] = o.DefinedByComponents
+	}
+	if o.DirectionFlipped != nil {
+		toSerialize["directionFlipped"] = o.DirectionFlipped
 	}
 	if o.LoadComponentParameterIds != nil {
 		toSerialize["loadComponentParameterIds"] = o.LoadComponentParameterIds
