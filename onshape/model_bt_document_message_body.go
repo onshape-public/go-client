@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -22,6 +22,7 @@ type BTDocumentMessageBody struct {
 	Data                *string   `json:"data,omitempty"`
 	DocumentId          *string   `json:"documentId,omitempty"`
 	DocumentState       *string   `json:"documentState,omitempty"`
+	DocumentType        *int32    `json:"documentType,omitempty"`
 	ElementId           *string   `json:"elementId,omitempty"`
 	Event               *string   `json:"event,omitempty"`
 	MessageId           *string   `json:"messageId,omitempty"`
@@ -213,6 +214,38 @@ func (o *BTDocumentMessageBody) HasDocumentState() bool {
 // SetDocumentState gets a reference to the given string and assigns it to the DocumentState field.
 func (o *BTDocumentMessageBody) SetDocumentState(v string) {
 	o.DocumentState = &v
+}
+
+// GetDocumentType returns the DocumentType field value if set, zero value otherwise.
+func (o *BTDocumentMessageBody) GetDocumentType() int32 {
+	if o == nil || o.DocumentType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DocumentType
+}
+
+// GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentMessageBody) GetDocumentTypeOk() (*int32, bool) {
+	if o == nil || o.DocumentType == nil {
+		return nil, false
+	}
+	return o.DocumentType, true
+}
+
+// HasDocumentType returns a boolean if a field has been set.
+func (o *BTDocumentMessageBody) HasDocumentType() bool {
+	if o != nil && o.DocumentType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentType gets a reference to the given int32 and assigns it to the DocumentType field.
+func (o *BTDocumentMessageBody) SetDocumentType(v int32) {
+	o.DocumentType = &v
 }
 
 // GetElementId returns the ElementId field value if set, zero value otherwise.
@@ -679,6 +712,9 @@ func (o BTDocumentMessageBody) MarshalJSON() ([]byte, error) {
 	}
 	if o.DocumentState != nil {
 		toSerialize["documentState"] = o.DocumentState
+	}
+	if o.DocumentType != nil {
+		toSerialize["documentType"] = o.DocumentType
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId

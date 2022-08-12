@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**DescriptionAsProperty** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -16,7 +15,6 @@ Name | Type | Description | Notes
 **ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**NameAsProperty** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**[]BTWorkflowPropertyInfo**](BTWorkflowPropertyInfo.md) |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 **Workflow** | Pointer to [**BTWorkflowSnapshotInfo**](BTWorkflowSnapshotInfo.md) |  | [optional] 
@@ -141,31 +139,6 @@ SetDescription sets Description field to given value.
 `func (o *BTWorkflowableTestObjectInfo) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
-
-### GetDescriptionAsProperty
-
-`func (o *BTWorkflowableTestObjectInfo) GetDescriptionAsProperty() string`
-
-GetDescriptionAsProperty returns the DescriptionAsProperty field if non-nil, zero value otherwise.
-
-### GetDescriptionAsPropertyOk
-
-`func (o *BTWorkflowableTestObjectInfo) GetDescriptionAsPropertyOk() (*string, bool)`
-
-GetDescriptionAsPropertyOk returns a tuple with the DescriptionAsProperty field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescriptionAsProperty
-
-`func (o *BTWorkflowableTestObjectInfo) SetDescriptionAsProperty(v string)`
-
-SetDescriptionAsProperty sets DescriptionAsProperty field to given value.
-
-### HasDescriptionAsProperty
-
-`func (o *BTWorkflowableTestObjectInfo) HasDescriptionAsProperty() bool`
-
-HasDescriptionAsProperty returns a boolean if a field has been set.
 
 ### GetDocumentId
 
@@ -341,31 +314,6 @@ SetName sets Name field to given value.
 `func (o *BTWorkflowableTestObjectInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetNameAsProperty
-
-`func (o *BTWorkflowableTestObjectInfo) GetNameAsProperty() string`
-
-GetNameAsProperty returns the NameAsProperty field if non-nil, zero value otherwise.
-
-### GetNameAsPropertyOk
-
-`func (o *BTWorkflowableTestObjectInfo) GetNameAsPropertyOk() (*string, bool)`
-
-GetNameAsPropertyOk returns a tuple with the NameAsProperty field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNameAsProperty
-
-`func (o *BTWorkflowableTestObjectInfo) SetNameAsProperty(v string)`
-
-SetNameAsProperty sets NameAsProperty field to given value.
-
-### HasNameAsProperty
-
-`func (o *BTWorkflowableTestObjectInfo) HasNameAsProperty() bool`
-
-HasNameAsProperty returns a boolean if a field has been set.
 
 ### GetProperties
 

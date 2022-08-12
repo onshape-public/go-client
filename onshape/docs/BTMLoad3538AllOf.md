@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **DefinedByComponents** | Pointer to **bool** |  | [optional] 
+**DirectionFlipped** | Pointer to **bool** |  | [optional] 
 **LoadComponentParameterIds** | Pointer to **map[string]string** |  | [optional] 
 **LoadRegionParameterId** | Pointer to **string** |  | [optional] 
 **LoadType** | Pointer to **string** |  | [optional] 
@@ -82,6 +83,31 @@ SetDefinedByComponents sets DefinedByComponents field to given value.
 `func (o *BTMLoad3538AllOf) HasDefinedByComponents() bool`
 
 HasDefinedByComponents returns a boolean if a field has been set.
+
+### GetDirectionFlipped
+
+`func (o *BTMLoad3538AllOf) GetDirectionFlipped() bool`
+
+GetDirectionFlipped returns the DirectionFlipped field if non-nil, zero value otherwise.
+
+### GetDirectionFlippedOk
+
+`func (o *BTMLoad3538AllOf) GetDirectionFlippedOk() (*bool, bool)`
+
+GetDirectionFlippedOk returns a tuple with the DirectionFlipped field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectionFlipped
+
+`func (o *BTMLoad3538AllOf) SetDirectionFlipped(v bool)`
+
+SetDirectionFlipped sets DirectionFlipped field to given value.
+
+### HasDirectionFlipped
+
+`func (o *BTMLoad3538AllOf) HasDirectionFlipped() bool`
+
+HasDirectionFlipped returns a boolean if a field has been set.
 
 ### GetLoadComponentParameterIds
 

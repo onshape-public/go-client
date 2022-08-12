@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -33,7 +33,6 @@ type BTPModule234 struct {
 	IsInternalModule       *bool                           `json:"isInternalModule,omitempty"`
 	MayHaveImplicitImports *bool                           `json:"mayHaveImplicitImports,omitempty"`
 	PathMap                *map[string]BTMicroversionId366 `json:"pathMap,omitempty"`
-	PathToCache            *BTCacheDataPath191             `json:"pathToCache,omitempty"`
 	ToBeParsed             *BTLazilyParsedFeatureScript    `json:"toBeParsed,omitempty"`
 	TopLevel               []BTPTopLevelNode286            `json:"topLevel,omitempty"`
 	Version                *BTPLiteralNumber258            `json:"version,omitempty"`
@@ -569,38 +568,6 @@ func (o *BTPModule234) SetPathMap(v map[string]BTMicroversionId366) {
 	o.PathMap = &v
 }
 
-// GetPathToCache returns the PathToCache field value if set, zero value otherwise.
-func (o *BTPModule234) GetPathToCache() BTCacheDataPath191 {
-	if o == nil || o.PathToCache == nil {
-		var ret BTCacheDataPath191
-		return ret
-	}
-	return *o.PathToCache
-}
-
-// GetPathToCacheOk returns a tuple with the PathToCache field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModule234) GetPathToCacheOk() (*BTCacheDataPath191, bool) {
-	if o == nil || o.PathToCache == nil {
-		return nil, false
-	}
-	return o.PathToCache, true
-}
-
-// HasPathToCache returns a boolean if a field has been set.
-func (o *BTPModule234) HasPathToCache() bool {
-	if o != nil && o.PathToCache != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPathToCache gets a reference to the given BTCacheDataPath191 and assigns it to the PathToCache field.
-func (o *BTPModule234) SetPathToCache(v BTCacheDataPath191) {
-	o.PathToCache = &v
-}
-
 // GetToBeParsed returns the ToBeParsed field value if set, zero value otherwise.
 func (o *BTPModule234) GetToBeParsed() BTLazilyParsedFeatureScript {
 	if o == nil || o.ToBeParsed == nil {
@@ -778,9 +745,6 @@ func (o BTPModule234) MarshalJSON() ([]byte, error) {
 	}
 	if o.PathMap != nil {
 		toSerialize["pathMap"] = o.PathMap
-	}
-	if o.PathToCache != nil {
-		toSerialize["pathToCache"] = o.PathToCache
 	}
 	if o.ToBeParsed != nil {
 		toSerialize["toBeParsed"] = o.ToBeParsed

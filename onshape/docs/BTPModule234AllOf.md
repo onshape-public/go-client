@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **IsInternalModule** | Pointer to **bool** |  | [optional] 
 **MayHaveImplicitImports** | Pointer to **bool** |  | [optional] 
 **PathMap** | Pointer to [**map[string]BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
-**PathToCache** | Pointer to [**BTCacheDataPath191**](BTCacheDataPath191.md) |  | [optional] 
 **ToBeParsed** | Pointer to [**BTLazilyParsedFeatureScript**](BTLazilyParsedFeatureScript.md) |  | [optional] 
 **TopLevel** | Pointer to [**[]BTPTopLevelNode286**](BTPTopLevelNode286.md) |  | [optional] 
 **Version** | Pointer to [**BTPLiteralNumber258**](BTPLiteralNumber258.md) |  | [optional] 
@@ -210,31 +209,6 @@ SetPathMap sets PathMap field to given value.
 `func (o *BTPModule234AllOf) HasPathMap() bool`
 
 HasPathMap returns a boolean if a field has been set.
-
-### GetPathToCache
-
-`func (o *BTPModule234AllOf) GetPathToCache() BTCacheDataPath191`
-
-GetPathToCache returns the PathToCache field if non-nil, zero value otherwise.
-
-### GetPathToCacheOk
-
-`func (o *BTPModule234AllOf) GetPathToCacheOk() (*BTCacheDataPath191, bool)`
-
-GetPathToCacheOk returns a tuple with the PathToCache field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPathToCache
-
-`func (o *BTPModule234AllOf) SetPathToCache(v BTCacheDataPath191)`
-
-SetPathToCache sets PathToCache field to given value.
-
-### HasPathToCache
-
-`func (o *BTPModule234AllOf) HasPathToCache() bool`
-
-HasPathToCache returns a boolean if a field has been set.
 
 ### GetToBeParsed
 

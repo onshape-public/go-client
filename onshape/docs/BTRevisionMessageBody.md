@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Data** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentState** | Pointer to **string** |  | [optional] 
+**DocumentType** | Pointer to **int32** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **Event** | Pointer to **string** |  | [optional] 
 **MessageId** | Pointer to **string** |  | [optional] 
@@ -174,6 +175,31 @@ SetDocumentState sets DocumentState field to given value.
 `func (o *BTRevisionMessageBody) HasDocumentState() bool`
 
 HasDocumentState returns a boolean if a field has been set.
+
+### GetDocumentType
+
+`func (o *BTRevisionMessageBody) GetDocumentType() int32`
+
+GetDocumentType returns the DocumentType field if non-nil, zero value otherwise.
+
+### GetDocumentTypeOk
+
+`func (o *BTRevisionMessageBody) GetDocumentTypeOk() (*int32, bool)`
+
+GetDocumentTypeOk returns a tuple with the DocumentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentType
+
+`func (o *BTRevisionMessageBody) SetDocumentType(v int32)`
+
+SetDocumentType sets DocumentType field to given value.
+
+### HasDocumentType
+
+`func (o *BTRevisionMessageBody) HasDocumentType() bool`
+
+HasDocumentType returns a boolean if a field has been set.
 
 ### GetElementId
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1989,21 +1989,30 @@ func (a *AppElementApiService) GetElementTransactionsExecute(r ApiGetElementTran
 }
 
 type ApiGetJsonRequest struct {
-	ctx           context.Context
-	ApiService    *AppElementApiService
-	did           string
-	eid           string
-	wvm           string
-	wvmid         string
-	transactionId *string
-	changeId      *string
+	ctx            context.Context
+	ApiService     *AppElementApiService
+	did            string
+	wvm            string
+	wvmid          string
+	eid            string
+	linkDocumentId *string
+	transactionId  *string
+	changeId       *string
 }
 
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetJsonRequest) LinkDocumentId(linkDocumentId string) ApiGetJsonRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API.
 func (r ApiGetJsonRequest) TransactionId(transactionId string) ApiGetJsonRequest {
 	r.transactionId = &transactionId
 	return r
 }
 
+// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
 func (r ApiGetJsonRequest) ChangeId(changeId string) ApiGetJsonRequest {
 	r.changeId = &changeId
 	return r
@@ -2017,20 +2026,20 @@ func (r ApiGetJsonRequest) Execute() (*BTGetJsonResponse2137, *http.Response, er
 GetJson Retrieve JSON by document ID, workspace or version or microversion ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
+ @param did The id of the document in which to perform the operation.
+ @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
+ @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @return ApiGetJsonRequest
 */
-func (a *AppElementApiService) GetJson(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiGetJsonRequest {
+func (a *AppElementApiService) GetJson(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetJsonRequest {
 	return ApiGetJsonRequest{
 		ApiService: a,
 		ctx:        ctx,
 		did:        did,
-		eid:        eid,
 		wvm:        wvm,
 		wvmid:      wvmid,
+		eid:        eid,
 	}
 }
 
@@ -2051,14 +2060,17 @@ func (a *AppElementApiService) GetJsonExecute(r ApiGetJsonRequest) (*BTGetJsonRe
 
 	localVarPath := localBasePath + "/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/json"
 	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	if r.transactionId != nil {
 		localVarQueryParams.Add("transactionId", parameterToString(*r.transactionId, ""))
 	}

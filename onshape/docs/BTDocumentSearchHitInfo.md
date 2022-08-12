@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementName** | Pointer to **string** |  | [optional] 
 **HighlightedFields** | Pointer to **map[string][]string** |  | [optional] 
+**HitId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**ProjectId** | Pointer to **string** |  | [optional] 
 **SourceMap** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **VersionOrWorkspaceName** | Pointer to **string** |  | [optional] 
@@ -106,6 +108,31 @@ SetHighlightedFields sets HighlightedFields field to given value.
 
 HasHighlightedFields returns a boolean if a field has been set.
 
+### GetHitId
+
+`func (o *BTDocumentSearchHitInfo) GetHitId() string`
+
+GetHitId returns the HitId field if non-nil, zero value otherwise.
+
+### GetHitIdOk
+
+`func (o *BTDocumentSearchHitInfo) GetHitIdOk() (*string, bool)`
+
+GetHitIdOk returns a tuple with the HitId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHitId
+
+`func (o *BTDocumentSearchHitInfo) SetHitId(v string)`
+
+SetHitId sets HitId field to given value.
+
+### HasHitId
+
+`func (o *BTDocumentSearchHitInfo) HasHitId() bool`
+
+HasHitId returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *BTDocumentSearchHitInfo) GetName() string`
@@ -130,6 +157,31 @@ SetName sets Name field to given value.
 `func (o *BTDocumentSearchHitInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetProjectId
+
+`func (o *BTDocumentSearchHitInfo) GetProjectId() string`
+
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
+
+### GetProjectIdOk
+
+`func (o *BTDocumentSearchHitInfo) GetProjectIdOk() (*string, bool)`
+
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProjectId
+
+`func (o *BTDocumentSearchHitInfo) SetProjectId(v string)`
+
+SetProjectId sets ProjectId field to given value.
+
+### HasProjectId
+
+`func (o *BTDocumentSearchHitInfo) HasProjectId() bool`
+
+HasProjectId returns a boolean if a field has been set.
 
 ### GetSourceMap
 

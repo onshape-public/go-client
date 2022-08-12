@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**DescriptionAsProperty** | Pointer to **string** |  | [optional] 
 **Detailed** | Pointer to **bool** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
@@ -22,7 +21,6 @@ Name | Type | Description | Notes
 **ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**NameAsProperty** | Pointer to **string** |  | [optional] 
 **OriginalWorkspaceId** | Pointer to **string** |  | [optional] 
 **PackageThumbnail** | Pointer to **string** |  | [optional] 
 **ParentComments** | Pointer to [**[]BTReleaseCommentListInfo**](BTReleaseCommentListInfo.md) |  | [optional] 
@@ -229,31 +227,6 @@ SetDescription sets Description field to given value.
 `func (o *BTReleasePackageInfo) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
-
-### GetDescriptionAsProperty
-
-`func (o *BTReleasePackageInfo) GetDescriptionAsProperty() string`
-
-GetDescriptionAsProperty returns the DescriptionAsProperty field if non-nil, zero value otherwise.
-
-### GetDescriptionAsPropertyOk
-
-`func (o *BTReleasePackageInfo) GetDescriptionAsPropertyOk() (*string, bool)`
-
-GetDescriptionAsPropertyOk returns a tuple with the DescriptionAsProperty field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescriptionAsProperty
-
-`func (o *BTReleasePackageInfo) SetDescriptionAsProperty(v string)`
-
-SetDescriptionAsProperty sets DescriptionAsProperty field to given value.
-
-### HasDescriptionAsProperty
-
-`func (o *BTReleasePackageInfo) HasDescriptionAsProperty() bool`
-
-HasDescriptionAsProperty returns a boolean if a field has been set.
 
 ### GetDetailed
 
@@ -504,31 +477,6 @@ SetName sets Name field to given value.
 `func (o *BTReleasePackageInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetNameAsProperty
-
-`func (o *BTReleasePackageInfo) GetNameAsProperty() string`
-
-GetNameAsProperty returns the NameAsProperty field if non-nil, zero value otherwise.
-
-### GetNameAsPropertyOk
-
-`func (o *BTReleasePackageInfo) GetNameAsPropertyOk() (*string, bool)`
-
-GetNameAsPropertyOk returns a tuple with the NameAsProperty field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNameAsProperty
-
-`func (o *BTReleasePackageInfo) SetNameAsProperty(v string)`
-
-SetNameAsProperty sets NameAsProperty field to given value.
-
-### HasNameAsProperty
-
-`func (o *BTReleasePackageInfo) HasNameAsProperty() bool`
-
-HasNameAsProperty returns a boolean if a field has been set.
 
 ### GetOriginalWorkspaceId
 
