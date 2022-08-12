@@ -87,7 +87,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 				}
 			}
 			//Check the JSONTreeContent
-			jsonResponse, rawResp, err := client.AppElementApi.GetJson(ctx, did, eid, "w", wid).Execute()
+			jsonResponse, rawResp, err := client.AppElementApi.GetJson(ctx, did, "w", wid, eid).Execute()
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			}
@@ -130,7 +130,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			client.AppElementApi.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*bTAppElementUpdateParams).Execute()
 
 			//Now get the JSONTree data again and see if the "chapterProperties" are there ...
-			jsonResponse, rawResp, err = client.AppElementApi.GetJson(ctx, did, eid, "w", wid).Execute()
+			jsonResponse, rawResp, err = client.AppElementApi.GetJson(ctx, did, "w", wid, eid).Execute()
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			}
