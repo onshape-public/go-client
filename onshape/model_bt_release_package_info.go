@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,37 +17,35 @@ import (
 
 // BTReleasePackageInfo struct for BTReleasePackageInfo
 type BTReleasePackageInfo struct {
-	ChangeOrderId         *string                    `json:"changeOrderId,omitempty"`
-	ColumnNames           *map[string]string         `json:"columnNames,omitempty"`
-	Comments              []BTCommentInfo            `json:"comments,omitempty"`
-	CompanyId             *string                    `json:"companyId,omitempty"`
-	CreatedAt             *JSONTime                  `json:"createdAt,omitempty"`
-	CreatedBy             *BTUserBasicSummaryInfo    `json:"createdBy,omitempty"`
-	Description           *string                    `json:"description,omitempty"`
-	DescriptionAsProperty *string                    `json:"descriptionAsProperty,omitempty"`
-	Detailed              *bool                      `json:"detailed,omitempty"`
-	DocumentId            *string                    `json:"documentId,omitempty"`
-	Href                  *string                    `json:"href,omitempty"`
-	Id                    *string                    `json:"id,omitempty"`
-	IsObsoletion          *bool                      `json:"isObsoletion,omitempty"`
-	Items                 []BTReleasePackageItemInfo `json:"items,omitempty"`
-	LinkedVersionIds      []string                   `json:"linkedVersionIds,omitempty"`
-	ModifiedAt            *JSONTime                  `json:"modifiedAt,omitempty"`
-	ModifiedBy            *BTUserBasicSummaryInfo    `json:"modifiedBy,omitempty"`
-	Name                  *string                    `json:"name,omitempty"`
-	NameAsProperty        *string                    `json:"nameAsProperty,omitempty"`
-	OriginalWorkspaceId   *string                    `json:"originalWorkspaceId,omitempty"`
-	PackageThumbnail      *string                    `json:"packageThumbnail,omitempty"`
-	ParentComments        []BTReleaseCommentListInfo `json:"parentComments,omitempty"`
-	ParentPackages        []string                   `json:"parentPackages,omitempty"`
-	Properties            []BTWorkflowPropertyInfo   `json:"properties,omitempty"`
-	RevisionRuleId        *string                    `json:"revisionRuleId,omitempty"`
-	VersionId             *string                    `json:"versionId,omitempty"`
-	ViewRef               *string                    `json:"viewRef,omitempty"`
-	Workflow              *BTWorkflowSnapshotInfo    `json:"workflow,omitempty"`
-	WorkflowError         *string                    `json:"workflowError,omitempty"`
-	WorkflowId            *BTPublishedWorkflowId     `json:"workflowId,omitempty"`
-	WorkspaceId           *string                    `json:"workspaceId,omitempty"`
+	ChangeOrderId       *string                    `json:"changeOrderId,omitempty"`
+	ColumnNames         *map[string]string         `json:"columnNames,omitempty"`
+	Comments            []BTCommentInfo            `json:"comments,omitempty"`
+	CompanyId           *string                    `json:"companyId,omitempty"`
+	CreatedAt           *JSONTime                  `json:"createdAt,omitempty"`
+	CreatedBy           *BTUserBasicSummaryInfo    `json:"createdBy,omitempty"`
+	Description         *string                    `json:"description,omitempty"`
+	Detailed            *bool                      `json:"detailed,omitempty"`
+	DocumentId          *string                    `json:"documentId,omitempty"`
+	Href                *string                    `json:"href,omitempty"`
+	Id                  *string                    `json:"id,omitempty"`
+	IsObsoletion        *bool                      `json:"isObsoletion,omitempty"`
+	Items               []BTReleasePackageItemInfo `json:"items,omitempty"`
+	LinkedVersionIds    []string                   `json:"linkedVersionIds,omitempty"`
+	ModifiedAt          *JSONTime                  `json:"modifiedAt,omitempty"`
+	ModifiedBy          *BTUserBasicSummaryInfo    `json:"modifiedBy,omitempty"`
+	Name                *string                    `json:"name,omitempty"`
+	OriginalWorkspaceId *string                    `json:"originalWorkspaceId,omitempty"`
+	PackageThumbnail    *string                    `json:"packageThumbnail,omitempty"`
+	ParentComments      []BTReleaseCommentListInfo `json:"parentComments,omitempty"`
+	ParentPackages      []string                   `json:"parentPackages,omitempty"`
+	Properties          []BTWorkflowPropertyInfo   `json:"properties,omitempty"`
+	RevisionRuleId      *string                    `json:"revisionRuleId,omitempty"`
+	VersionId           *string                    `json:"versionId,omitempty"`
+	ViewRef             *string                    `json:"viewRef,omitempty"`
+	Workflow            *BTWorkflowSnapshotInfo    `json:"workflow,omitempty"`
+	WorkflowError       *string                    `json:"workflowError,omitempty"`
+	WorkflowId          *BTPublishedWorkflowId     `json:"workflowId,omitempty"`
+	WorkspaceId         *string                    `json:"workspaceId,omitempty"`
 }
 
 // NewBTReleasePackageInfo instantiates a new BTReleasePackageInfo object
@@ -289,38 +287,6 @@ func (o *BTReleasePackageInfo) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *BTReleasePackageInfo) SetDescription(v string) {
 	o.Description = &v
-}
-
-// GetDescriptionAsProperty returns the DescriptionAsProperty field value if set, zero value otherwise.
-func (o *BTReleasePackageInfo) GetDescriptionAsProperty() string {
-	if o == nil || o.DescriptionAsProperty == nil {
-		var ret string
-		return ret
-	}
-	return *o.DescriptionAsProperty
-}
-
-// GetDescriptionAsPropertyOk returns a tuple with the DescriptionAsProperty field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTReleasePackageInfo) GetDescriptionAsPropertyOk() (*string, bool) {
-	if o == nil || o.DescriptionAsProperty == nil {
-		return nil, false
-	}
-	return o.DescriptionAsProperty, true
-}
-
-// HasDescriptionAsProperty returns a boolean if a field has been set.
-func (o *BTReleasePackageInfo) HasDescriptionAsProperty() bool {
-	if o != nil && o.DescriptionAsProperty != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDescriptionAsProperty gets a reference to the given string and assigns it to the DescriptionAsProperty field.
-func (o *BTReleasePackageInfo) SetDescriptionAsProperty(v string) {
-	o.DescriptionAsProperty = &v
 }
 
 // GetDetailed returns the Detailed field value if set, zero value otherwise.
@@ -641,38 +607,6 @@ func (o *BTReleasePackageInfo) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BTReleasePackageInfo) SetName(v string) {
 	o.Name = &v
-}
-
-// GetNameAsProperty returns the NameAsProperty field value if set, zero value otherwise.
-func (o *BTReleasePackageInfo) GetNameAsProperty() string {
-	if o == nil || o.NameAsProperty == nil {
-		var ret string
-		return ret
-	}
-	return *o.NameAsProperty
-}
-
-// GetNameAsPropertyOk returns a tuple with the NameAsProperty field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTReleasePackageInfo) GetNameAsPropertyOk() (*string, bool) {
-	if o == nil || o.NameAsProperty == nil {
-		return nil, false
-	}
-	return o.NameAsProperty, true
-}
-
-// HasNameAsProperty returns a boolean if a field has been set.
-func (o *BTReleasePackageInfo) HasNameAsProperty() bool {
-	if o != nil && o.NameAsProperty != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNameAsProperty gets a reference to the given string and assigns it to the NameAsProperty field.
-func (o *BTReleasePackageInfo) SetNameAsProperty(v string) {
-	o.NameAsProperty = &v
 }
 
 // GetOriginalWorkspaceId returns the OriginalWorkspaceId field value if set, zero value otherwise.
@@ -1082,9 +1016,6 @@ func (o BTReleasePackageInfo) MarshalJSON() ([]byte, error) {
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
-	if o.DescriptionAsProperty != nil {
-		toSerialize["descriptionAsProperty"] = o.DescriptionAsProperty
-	}
 	if o.Detailed != nil {
 		toSerialize["detailed"] = o.Detailed
 	}
@@ -1114,9 +1045,6 @@ func (o BTReleasePackageInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.NameAsProperty != nil {
-		toSerialize["nameAsProperty"] = o.NameAsProperty
 	}
 	if o.OriginalWorkspaceId != nil {
 		toSerialize["originalWorkspaceId"] = o.OriginalWorkspaceId

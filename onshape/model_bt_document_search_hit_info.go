@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,7 +20,9 @@ type BTDocumentSearchHitInfo struct {
 	DocumentId             *string                           `json:"documentId,omitempty"`
 	ElementName            *string                           `json:"elementName,omitempty"`
 	HighlightedFields      *map[string][]string              `json:"highlightedFields,omitempty"`
+	HitId                  *string                           `json:"hitId,omitempty"`
 	Name                   *string                           `json:"name,omitempty"`
+	ProjectId              *string                           `json:"projectId,omitempty"`
 	SourceMap              map[string]map[string]interface{} `json:"sourceMap,omitempty"`
 	Type                   *string                           `json:"type,omitempty"`
 	VersionOrWorkspaceName *string                           `json:"versionOrWorkspaceName,omitempty"`
@@ -139,6 +141,38 @@ func (o *BTDocumentSearchHitInfo) SetHighlightedFields(v map[string][]string) {
 	o.HighlightedFields = &v
 }
 
+// GetHitId returns the HitId field value if set, zero value otherwise.
+func (o *BTDocumentSearchHitInfo) GetHitId() string {
+	if o == nil || o.HitId == nil {
+		var ret string
+		return ret
+	}
+	return *o.HitId
+}
+
+// GetHitIdOk returns a tuple with the HitId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSearchHitInfo) GetHitIdOk() (*string, bool) {
+	if o == nil || o.HitId == nil {
+		return nil, false
+	}
+	return o.HitId, true
+}
+
+// HasHitId returns a boolean if a field has been set.
+func (o *BTDocumentSearchHitInfo) HasHitId() bool {
+	if o != nil && o.HitId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHitId gets a reference to the given string and assigns it to the HitId field.
+func (o *BTDocumentSearchHitInfo) SetHitId(v string) {
+	o.HitId = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTDocumentSearchHitInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -169,6 +203,38 @@ func (o *BTDocumentSearchHitInfo) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BTDocumentSearchHitInfo) SetName(v string) {
 	o.Name = &v
+}
+
+// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+func (o *BTDocumentSearchHitInfo) GetProjectId() string {
+	if o == nil || o.ProjectId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ProjectId
+}
+
+// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSearchHitInfo) GetProjectIdOk() (*string, bool) {
+	if o == nil || o.ProjectId == nil {
+		return nil, false
+	}
+	return o.ProjectId, true
+}
+
+// HasProjectId returns a boolean if a field has been set.
+func (o *BTDocumentSearchHitInfo) HasProjectId() bool {
+	if o != nil && o.ProjectId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+func (o *BTDocumentSearchHitInfo) SetProjectId(v string) {
+	o.ProjectId = &v
 }
 
 // GetSourceMap returns the SourceMap field value if set, zero value otherwise.
@@ -278,8 +344,14 @@ func (o BTDocumentSearchHitInfo) MarshalJSON() ([]byte, error) {
 	if o.HighlightedFields != nil {
 		toSerialize["highlightedFields"] = o.HighlightedFields
 	}
+	if o.HitId != nil {
+		toSerialize["hitId"] = o.HitId
+	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.ProjectId != nil {
+		toSerialize["projectId"] = o.ProjectId
 	}
 	if o.SourceMap != nil {
 		toSerialize["sourceMap"] = o.SourceMap

@@ -7,11 +7,8 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
-**ExpireSecs** | Pointer to **string** |  | [optional] 
-**FullFilePath** | Pointer to **string** |  | [optional] 
-**IsPersisted** | Pointer to **bool** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
-**UrlPath** | Pointer to **string** |  | [optional] 
+**KeyContainsConfiguration** | Pointer to **bool** |  | [optional] 
 **UseLocalFileCache** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -108,81 +105,6 @@ SetElementId sets ElementId field to given value.
 
 HasElementId returns a boolean if a field has been set.
 
-### GetExpireSecs
-
-`func (o *BTCacheDataPath191) GetExpireSecs() string`
-
-GetExpireSecs returns the ExpireSecs field if non-nil, zero value otherwise.
-
-### GetExpireSecsOk
-
-`func (o *BTCacheDataPath191) GetExpireSecsOk() (*string, bool)`
-
-GetExpireSecsOk returns a tuple with the ExpireSecs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpireSecs
-
-`func (o *BTCacheDataPath191) SetExpireSecs(v string)`
-
-SetExpireSecs sets ExpireSecs field to given value.
-
-### HasExpireSecs
-
-`func (o *BTCacheDataPath191) HasExpireSecs() bool`
-
-HasExpireSecs returns a boolean if a field has been set.
-
-### GetFullFilePath
-
-`func (o *BTCacheDataPath191) GetFullFilePath() string`
-
-GetFullFilePath returns the FullFilePath field if non-nil, zero value otherwise.
-
-### GetFullFilePathOk
-
-`func (o *BTCacheDataPath191) GetFullFilePathOk() (*string, bool)`
-
-GetFullFilePathOk returns a tuple with the FullFilePath field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFullFilePath
-
-`func (o *BTCacheDataPath191) SetFullFilePath(v string)`
-
-SetFullFilePath sets FullFilePath field to given value.
-
-### HasFullFilePath
-
-`func (o *BTCacheDataPath191) HasFullFilePath() bool`
-
-HasFullFilePath returns a boolean if a field has been set.
-
-### GetIsPersisted
-
-`func (o *BTCacheDataPath191) GetIsPersisted() bool`
-
-GetIsPersisted returns the IsPersisted field if non-nil, zero value otherwise.
-
-### GetIsPersistedOk
-
-`func (o *BTCacheDataPath191) GetIsPersistedOk() (*bool, bool)`
-
-GetIsPersistedOk returns a tuple with the IsPersisted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsPersisted
-
-`func (o *BTCacheDataPath191) SetIsPersisted(v bool)`
-
-SetIsPersisted sets IsPersisted field to given value.
-
-### HasIsPersisted
-
-`func (o *BTCacheDataPath191) HasIsPersisted() bool`
-
-HasIsPersisted returns a boolean if a field has been set.
-
 ### GetKey
 
 `func (o *BTCacheDataPath191) GetKey() string`
@@ -208,30 +130,30 @@ SetKey sets Key field to given value.
 
 HasKey returns a boolean if a field has been set.
 
-### GetUrlPath
+### GetKeyContainsConfiguration
 
-`func (o *BTCacheDataPath191) GetUrlPath() string`
+`func (o *BTCacheDataPath191) GetKeyContainsConfiguration() bool`
 
-GetUrlPath returns the UrlPath field if non-nil, zero value otherwise.
+GetKeyContainsConfiguration returns the KeyContainsConfiguration field if non-nil, zero value otherwise.
 
-### GetUrlPathOk
+### GetKeyContainsConfigurationOk
 
-`func (o *BTCacheDataPath191) GetUrlPathOk() (*string, bool)`
+`func (o *BTCacheDataPath191) GetKeyContainsConfigurationOk() (*bool, bool)`
 
-GetUrlPathOk returns a tuple with the UrlPath field if it's non-nil, zero value otherwise
+GetKeyContainsConfigurationOk returns a tuple with the KeyContainsConfiguration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrlPath
+### SetKeyContainsConfiguration
 
-`func (o *BTCacheDataPath191) SetUrlPath(v string)`
+`func (o *BTCacheDataPath191) SetKeyContainsConfiguration(v bool)`
 
-SetUrlPath sets UrlPath field to given value.
+SetKeyContainsConfiguration sets KeyContainsConfiguration field to given value.
 
-### HasUrlPath
+### HasKeyContainsConfiguration
 
-`func (o *BTCacheDataPath191) HasUrlPath() bool`
+`func (o *BTCacheDataPath191) HasKeyContainsConfiguration() bool`
 
-HasUrlPath returns a boolean if a field has been set.
+HasKeyContainsConfiguration returns a boolean if a field has been set.
 
 ### GetUseLocalFileCache
 

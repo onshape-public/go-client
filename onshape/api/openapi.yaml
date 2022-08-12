@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.151.5973-facb34a6e296
+  version: 1.152.5998-d3227e94fd7e
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -1962,42 +1962,70 @@ paths:
       deprecated: false
       operationId: getJson
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
-        in: path
-        name: eid
-        required: true
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
         schema:
+          default: ""
           type: string
-        style: simple
-      - explode: false
+        style: form
+      - description: "Indicates which of workspace id, version id, or document microversion\
+          \ id is specified below."
+        explode: false
         in: path
         name: wvm
         required: true
         schema:
+          enum:
+          - w
+          - v
+          - m
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version, or document microversion in\
+          \ which the operation should be performed."
+        explode: false
         in: path
         name: wvmid
         required: true
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: The id of the element in which to perform the operation.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the transaction in which this operation should take
+          place. Transaction ids can be generated through the AppElement startTransaction
+          API.
+        explode: true
         in: query
         name: transactionId
         required: false
         schema:
           type: string
         style: form
-      - explode: true
+      - description: The id of the last change made to this application element. This
+          can be retrieved from the response for any app element modification endpoint.
+        explode: true
         in: query
         name: changeId
         required: false
@@ -8255,7 +8283,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -8394,7 +8424,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -9469,7 +9501,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -9631,7 +9665,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -9753,7 +9789,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -10342,7 +10380,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -10478,7 +10518,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -11111,28 +11153,51 @@ paths:
       deprecated: false
       operationId: getPartStudioBodyDetails
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace id, version id, or document microversion\
+          \ id is specified below."
+        explode: false
         in: path
         name: wvm
         required: true
         schema:
+          enum:
+          - w
+          - v
+          - m
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version, or document microversion in\
+          \ which the operation should be performed."
+        explode: false
         in: path
         name: wvmid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
         required: true
@@ -11144,16 +11209,12 @@ paths:
         name: configuration
         required: false
         schema:
+          default: ""
           type: string
         style: form
-      - explode: true
-        in: query
-        name: linkDocumentId
-        required: false
-        schema:
-          type: string
-        style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -11161,6 +11222,40 @@ paths:
           default: -1
           format: int32
           type: integer
+        style: form
+      - explode: true
+        in: query
+        name: elementMicroversionId
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Whether or not surfaces should be included in the response.
+        explode: true
+        in: query
+        name: includeSurfaces
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - description: Whether or not composite parts should be included in the response.
+        explode: true
+        in: query
+        name: includeCompositeParts
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - description: Whether or not geometric data should be included in the response.
+        explode: true
+        in: query
+        name: includeGeometricData
+        required: false
+        schema:
+          default: true
+          type: boolean
         style: form
       responses:
         default:
@@ -11577,7 +11672,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -11679,7 +11776,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -11923,7 +12022,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -12148,7 +12249,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -12977,7 +13080,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -13115,7 +13220,9 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
         name: rollbackBarIndex
         required: false
@@ -13959,6 +14066,38 @@ paths:
         - OAuth2Delete
         BasicAuth:
         - OAuth2Delete
+      tags:
+      - Revision
+      x-BTVisibility: PRODUCTION
+  /revisions/d/{did}/v/{vid}:
+    get:
+      deprecated: false
+      description: Retrieve a list of all revisions that exist in a document version
+        and are owned by the document's owning company.
+      operationId: getAllInDocumentVersion
+      parameters:
+      - explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: vid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTListResponseBTRevisionInfo'
+          description: default response
+      summary: Retrieve a list of all revisions that exist in a document version.
       tags:
       - Revision
       x-BTVisibility: PRODUCTION
@@ -16613,6 +16752,7 @@ components:
           documentId: documentId
           id: id
         partNumberingSchemeId: partNumberingSchemeId
+        canCurrentUserSyncVersionsToArena: true
         drawingCanDuplicatePartNumber: true
         obsoletionWorkflow:
           elementId: elementId
@@ -16647,6 +16787,8 @@ components:
         canCurrentUserSyncBomToArena:
           type: boolean
         canCurrentUserSyncToArena:
+          type: boolean
+        canCurrentUserSyncVersionsToArena:
           type: boolean
         companyId:
           type: string
@@ -19754,38 +19896,18 @@ components:
       type: object
     BTBillOfMaterialsUniqueItemId-2029:
       properties:
-        ambiguousUniqueId:
-          $ref: '#/components/schemas/BTBillOfMaterialsUniqueItemId-2029'
         apiConfiguration:
           type: string
         btType:
           type: string
-        documentVersionElementId:
-          $ref: '#/components/schemas/BTDocumentVersionElementIds-1897'
-        elementId:
-          type: string
-        fullElementId:
-          $ref: '#/components/schemas/BTFullElementId-756'
         isStandardContent:
           type: boolean
         itemDefinitionId:
           type: string
-        nonGeometric:
-          type: boolean
         partId:
           type: string
         sourceElement:
           $ref: '#/components/schemas/BTElementReference-725'
-        standardContentOwner:
-          $ref: '#/components/schemas/BTOwner-3114'
-        uniqueElementId:
-          $ref: '#/components/schemas/BTBillOfMaterialsUniqueItemId-2029'
-        versionId:
-          type: string
-        workspacePartItem:
-          type: boolean
-        workspaceReference:
-          type: boolean
       type: object
     BTBillingPlanInfo:
       example:
@@ -19873,6 +19995,10 @@ components:
       - $ref: '#/components/schemas/BTBodyTypeFilter_112_allOf'
       type: object
     BTBoundingBox-1052:
+      discriminator:
+        mapping:
+          BTNonAlignedBoundingBox-4180: '#/components/schemas/BTNonAlignedBoundingBox-4180'
+        propertyName: btType
       example:
         valid: true
         minCorner:
@@ -19929,16 +20055,10 @@ components:
           type: string
         elementId:
           type: string
-        expireSecs:
-          type: string
-        fullFilePath:
-          type: string
-        isPersisted:
-          type: boolean
         key:
           type: string
-        urlPath:
-          type: string
+        keyContainsConfiguration:
+          type: boolean
         useLocalFileCache:
           type: boolean
       type: object
@@ -21376,6 +21496,21 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTQueryFilter-183'
       - $ref: '#/components/schemas/BTConstructionObjectFilter_113_allOf'
+      type: object
+    BTCoordinateSystem-387:
+      properties:
+        btType:
+          type: string
+        matrix:
+          $ref: '#/components/schemas/BTBSMatrix-386'
+        origin:
+          $ref: '#/components/schemas/BTVector3d-389'
+        xaxis:
+          $ref: '#/components/schemas/BTVector3d-389'
+        yaxis:
+          $ref: '#/components/schemas/BTVector3d-389'
+        zaxis:
+          $ref: '#/components/schemas/BTVector3d-389'
       type: object
     BTCopyDocumentInfo:
       example:
@@ -22896,6 +23031,7 @@ components:
         elementId: elementId
         webhookId: webhookId
         data: data
+        documentType: 0
         partId: partId
         partIdentity: partIdentity
         messageId: messageId
@@ -22923,6 +23059,9 @@ components:
           type: string
         documentState:
           type: string
+        documentType:
+          format: int32
+          type: integer
         elementId:
           type: string
         event:
@@ -23062,13 +23201,32 @@ components:
               type: string
             type: array
           type: object
+        hitId:
+          type: string
         name:
+          type: string
+        projectId:
           type: string
         sourceMap:
           additionalProperties:
             type: object
           type: object
         type:
+          enum:
+          - unknown
+          - capability
+          - company
+          - document
+          - element
+          - friend
+          - item
+          - part
+          - team
+          - user
+          - version
+          - workspace
+          - project
+          - publication
           type: string
         versionOrWorkspaceName:
           type: string
@@ -23214,45 +23372,51 @@ components:
         standard: standard
         includeSurfaces: true
         decimalSeparator: decimalSeparator
-        partId: partId
-        titleblock: true
         templateVersionId: templateVersionId
-        referenceType: 1
         language: language
-        computeIntersection: true
-        units: units
         qualityOption: qualityOption
-        includeWires: true
-        hiddenLines: drafting
-        templateDocumentId: templateDocumentId
+        namedPositionId: namedPositionId
         elementConfiguration: elementConfiguration
-        isSurface: true
-        numberVerticalZones: 6
         templateWorkspaceId: templateWorkspaceId
         simplificationOption: simplificationOption
-        projection: projection
-        drawingName: drawingName
-        views: views
-        workspaceId: workspaceId
         border: true
         elementId: elementId
-        elementMicroversionId: elementMicroversionId
-        numberHorizontalZones: 0
-        templateElementId: templateElementId
         sketchIds:
         - sketchIds
         - sketchIds
         modelType: modelType
         revision: revision
-        externalDocumentVersionId: externalDocumentVersionId
-        partQuery: partQuery
+        explosionId: explosionId
         externalDocumentId: externalDocumentId
-        simplificationThreshold: 5.962133916683182
         size: size
-        templateName: templateName
-        startZones: startZones
         isFlattenedPart: true
         isSketchOnly: true
+        templateArgs:
+        - templateArgs
+        - templateArgs
+        partId: partId
+        titleblock: true
+        referenceType: 1
+        computeIntersection: true
+        units: units
+        displayStateId: displayStateId
+        includeWires: true
+        hiddenLines: drafting
+        templateDocumentId: templateDocumentId
+        isSurface: true
+        numberVerticalZones: 6
+        projection: projection
+        drawingName: drawingName
+        views: views
+        workspaceId: workspaceId
+        elementMicroversionId: elementMicroversionId
+        numberHorizontalZones: 0
+        templateElementId: templateElementId
+        externalDocumentVersionId: externalDocumentVersionId
+        partQuery: partQuery
+        simplificationThreshold: 5.962133916683182
+        templateName: templateName
+        startZones: startZones
         showCutGeomOnly: true
         documentId: documentId
         location:
@@ -23261,9 +23425,6 @@ components:
         partNumber: partNumber
         referenceTypeEnum: UNKNOWN
         documentMicroversionId: documentMicroversionId
-        templateArgs:
-        - templateArgs
-        - templateArgs
         pureSketch: true
       properties:
         border:
@@ -23271,6 +23432,8 @@ components:
         computeIntersection:
           type: boolean
         decimalSeparator:
+          type: string
+        displayStateId:
           type: string
         documentId:
           type: string
@@ -23283,6 +23446,8 @@ components:
         elementId:
           type: string
         elementMicroversionId:
+          type: string
+        explosionId:
           type: string
         externalDocumentId:
           type: string
@@ -23309,6 +23474,8 @@ components:
         location:
           $ref: '#/components/schemas/BTElementLocationParams'
         modelType:
+          type: string
+        namedPositionId:
           type: string
         numberHorizontalZones:
           format: int32
@@ -25191,6 +25358,16 @@ components:
           - SKETCH_FILLET_NO_SPLINE_CONTROL_POLYGON
           - SKETCH_MIRROR_NO_SPLINE_CONTROL_POLYGON
           - SKETCH_SPLIT_NO_SPLINE_CONTROL_POLYGON
+          - VARIABLE_SELECT_FIRST_ENTITY
+          - VARIABLE_SELECT_SECOND_ENTITY
+          - VARIABLE_SELECT_CUSTOM_DIRECTION
+          - VARIABLE_SELECT_ENTITIES_TO_MEASURE
+          - VARIABLE_SELECT_ENTITY_TO_MEASURE
+          - VARIABLE_NO_GEOMETRY_WITH_DIAMETER
+          - VARIABLE_ONLY_TWO_ENTITIES_ALLOWED
+          - VARIABLE_FLATTENED_ENTITIES_MUST_BE_SAME_BODY
+          - CURVE_PROJECTION_FAILED
+          - FACE_INTERSECTION_FAILED
           - UNKNOWN
           type: string
         microversionId:
@@ -26921,6 +27098,16 @@ components:
           - SKETCH_FILLET_NO_SPLINE_CONTROL_POLYGON
           - SKETCH_MIRROR_NO_SPLINE_CONTROL_POLYGON
           - SKETCH_SPLIT_NO_SPLINE_CONTROL_POLYGON
+          - VARIABLE_SELECT_FIRST_ENTITY
+          - VARIABLE_SELECT_SECOND_ENTITY
+          - VARIABLE_SELECT_CUSTOM_DIRECTION
+          - VARIABLE_SELECT_ENTITIES_TO_MEASURE
+          - VARIABLE_SELECT_ENTITY_TO_MEASURE
+          - VARIABLE_NO_GEOMETRY_WITH_DIAMETER
+          - VARIABLE_ONLY_TWO_ENTITIES_ALLOWED
+          - VARIABLE_FLATTENED_ENTITIES_MUST_BE_SAME_BODY
+          - CURVE_PROJECTION_FAILED
+          - FACE_INTERSECTION_FAILED
           - UNKNOWN
           type: string
       type: object
@@ -28171,6 +28358,16 @@ components:
           - SKETCH_FILLET_NO_SPLINE_CONTROL_POLYGON
           - SKETCH_MIRROR_NO_SPLINE_CONTROL_POLYGON
           - SKETCH_SPLIT_NO_SPLINE_CONTROL_POLYGON
+          - VARIABLE_SELECT_FIRST_ENTITY
+          - VARIABLE_SELECT_SECOND_ENTITY
+          - VARIABLE_SELECT_CUSTOM_DIRECTION
+          - VARIABLE_SELECT_ENTITIES_TO_MEASURE
+          - VARIABLE_SELECT_ENTITY_TO_MEASURE
+          - VARIABLE_NO_GEOMETRY_WITH_DIAMETER
+          - VARIABLE_ONLY_TWO_ENTITIES_ALLOWED
+          - VARIABLE_FLATTENED_ENTITIES_MUST_BE_SAME_BODY
+          - CURVE_PROJECTION_FAILED
+          - FACE_INTERSECTION_FAILED
           - UNKNOWN
           type: string
         facetPoints:
@@ -37630,6 +37827,15 @@ components:
           - V1819_SKETCH_CURVE_CLIENT_ENUM
           - V1820_VERSION_BUMP
           - V1821_PARTIAL_FLANGE_BUMP
+          - SKIP_1822
+          - SKIP_1823
+          - SKIP_1824
+          - SKIP_1825
+          - SKIP_1826
+          - SKIP_1827
+          - V1828_FIX_DIRECTION_INTO_FACE
+          - V1829_HOLE_IS_TAPPED_THROUGH
+          - V1830_RULED_SURFACE_DRAFT
           - UNKNOWN
           type: string
         btType:
@@ -39677,6 +39883,11 @@ components:
         nodeIdRaw:
           $ref: '#/components/schemas/BTObjectId'
       type: object
+    BTNonAlignedBoundingBox-4180:
+      allOf:
+      - $ref: '#/components/schemas/BTBoundingBox-1052'
+      - $ref: '#/components/schemas/BTNonAlignedBoundingBox_4180_allOf'
+      type: object
     BTNotFilter-165:
       allOf:
       - $ref: '#/components/schemas/BTQueryFilter-183'
@@ -40050,26 +40261,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTDocumentSelectorParametersInfo'
       - $ref: '#/components/schemas/BTOtherDocumentSelectorParametersInfo_allOf'
-      type: object
-    BTOwner-3114:
-      properties:
-        btType:
-          type: string
-        companyId:
-          type: boolean
-        ownerId:
-          type: string
-        ownerType:
-          enum:
-          - USER
-          - COMPANY
-          - ONSHAPE
-          type: string
-        ownerTypeOrdinal:
-          format: int32
-          type: integer
-        userId:
-          type: boolean
       type: object
     BTOwnerInfo:
       example:
@@ -42911,6 +43102,7 @@ components:
           BTPlaneOrientationFilter-1700: '#/components/schemas/BTPlaneOrientationFilter-1700'
           BTSMDefinitionEntityTypeFilter-1651: '#/components/schemas/BTSMDefinitionEntityTypeFilter-1651'
           BTSketchObjectFilter-184: '#/components/schemas/BTSketchObjectFilter-184'
+          BTSketchSolveStatusFilter-3657: '#/components/schemas/BTSketchSolveStatusFilter-3657'
           BTSplineControlPolygonFilter-1130: '#/components/schemas/BTSplineControlPolygonFilter-1130'
           BTSplineHandleFilter-2971: '#/components/schemas/BTSplineHandleFilter-2971'
           BTTextObjectFilter-1515: '#/components/schemas/BTTextObjectFilter-1515'
@@ -43178,12 +43370,10 @@ components:
         - parentPackages
         changeOrderId: changeOrderId
         description: description
-        nameAsProperty: nameAsProperty
         packageThumbnail: packageThumbnail
         createdAt: 2000-01-23T04:56:07.000+00:00
         columnNames:
           key: columnNames
-        descriptionAsProperty: descriptionAsProperty
         modifiedBy:
           image: image
           name: name
@@ -44081,9 +44271,6 @@ components:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         description:
           type: string
-        descriptionAsProperty:
-          type: string
-          writeOnly: true
         detailed:
           type: boolean
         documentId:
@@ -44110,9 +44297,6 @@ components:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
           type: string
-        nameAsProperty:
-          type: string
-          writeOnly: true
         originalWorkspaceId:
           type: string
         packageThumbnail:
@@ -45217,6 +45401,11 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTQueryFilter-183'
       - $ref: '#/components/schemas/BTSketchObjectFilter_184_allOf'
+      type: object
+    BTSketchSolveStatusFilter-3657:
+      allOf:
+      - $ref: '#/components/schemas/BTQueryFilter-183'
+      - $ref: '#/components/schemas/BTSketchSolveStatusFilter_3657_allOf'
       type: object
     BTSphereDescription-1263:
       allOf:
@@ -49454,7 +49643,6 @@ components:
           isSetup: true
         modifiedAt: 2000-01-23T04:56:07.000+00:00
         description: description
-        nameAsProperty: nameAsProperty
         workflowError: workflowError
         createdAt: 2000-01-23T04:56:07.000+00:00
         companyId: companyId
@@ -49466,7 +49654,6 @@ components:
           state: 6
           viewRef: https://openapi-generator.tech
         name: name
-        descriptionAsProperty: descriptionAsProperty
         documentId: documentId
         modifiedBy:
           image: image
@@ -49663,9 +49850,6 @@ components:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         description:
           type: string
-        descriptionAsProperty:
-          type: string
-          writeOnly: true
         documentId:
           type: string
         href:
@@ -49684,9 +49868,6 @@ components:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
           type: string
-        nameAsProperty:
-          type: string
-          writeOnly: true
         properties:
           items:
             $ref: '#/components/schemas/BTWorkflowPropertyInfo'
@@ -53546,6 +53727,8 @@ components:
           type: string
         definedByComponents:
           type: boolean
+        directionFlipped:
+          type: boolean
         loadComponentParameterIds:
           additionalProperties:
             type: string
@@ -54214,6 +54397,13 @@ components:
         parentName:
           type: string
       type: object
+    BTNonAlignedBoundingBox_4180_allOf:
+      properties:
+        btType:
+          type: string
+        coordinateSystem:
+          $ref: '#/components/schemas/BTCoordinateSystem-387'
+      type: object
     BTNotFilter_165_allOf:
       properties:
         btType:
@@ -54601,8 +54791,6 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/BTMicroversionId-366'
           type: object
-        pathToCache:
-          $ref: '#/components/schemas/BTCacheDataPath-191'
         toBeParsed:
           $ref: '#/components/schemas/BTLazilyParsedFeatureScript'
         topLevel:
@@ -55491,6 +55679,20 @@ components:
           - ANY_SKETCH_OBJECT
           - USER_ENTITY
           - UNKNOWN
+          type: string
+      type: object
+    BTSketchSolveStatusFilter_3657_allOf:
+      properties:
+        btType:
+          type: string
+        solveStatus:
+          enum:
+          - UNKNOWN
+          - UNDER_DEFINED
+          - WELL_DEFINED
+          - FIXED
+          - OVER_DEFINED
+          - NOT_CONSISTENT
           type: string
       type: object
     BTSphereDescription_1263_allOf:

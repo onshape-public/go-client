@@ -7,12 +7,14 @@ Name | Type | Description | Notes
 **Border** | Pointer to **bool** |  | [optional] 
 **ComputeIntersection** | Pointer to **bool** |  | [optional] 
 **DecimalSeparator** | Pointer to **string** |  | [optional] 
+**DisplayStateId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentMicroversionId** | Pointer to **string** |  | [optional] 
 **DrawingName** | Pointer to **string** |  | [optional] 
 **ElementConfiguration** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementMicroversionId** | Pointer to **string** |  | [optional] 
+**ExplosionId** | Pointer to **string** |  | [optional] 
 **ExternalDocumentId** | Pointer to **string** |  | [optional] 
 **ExternalDocumentVersionId** | Pointer to **string** |  | [optional] 
 **HiddenLines** | Pointer to **string** |  | [optional] 
@@ -24,6 +26,7 @@ Name | Type | Description | Notes
 **Language** | Pointer to **string** |  | [optional] 
 **Location** | Pointer to [**BTElementLocationParams**](BTElementLocationParams.md) |  | [optional] 
 **ModelType** | Pointer to **string** |  | [optional] 
+**NamedPositionId** | Pointer to **string** |  | [optional] 
 **NumberHorizontalZones** | Pointer to **int32** |  | [optional] 
 **NumberVerticalZones** | Pointer to **int32** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
@@ -146,6 +149,31 @@ SetDecimalSeparator sets DecimalSeparator field to given value.
 `func (o *BTDrawingParams) HasDecimalSeparator() bool`
 
 HasDecimalSeparator returns a boolean if a field has been set.
+
+### GetDisplayStateId
+
+`func (o *BTDrawingParams) GetDisplayStateId() string`
+
+GetDisplayStateId returns the DisplayStateId field if non-nil, zero value otherwise.
+
+### GetDisplayStateIdOk
+
+`func (o *BTDrawingParams) GetDisplayStateIdOk() (*string, bool)`
+
+GetDisplayStateIdOk returns a tuple with the DisplayStateId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayStateId
+
+`func (o *BTDrawingParams) SetDisplayStateId(v string)`
+
+SetDisplayStateId sets DisplayStateId field to given value.
+
+### HasDisplayStateId
+
+`func (o *BTDrawingParams) HasDisplayStateId() bool`
+
+HasDisplayStateId returns a boolean if a field has been set.
 
 ### GetDocumentId
 
@@ -296,6 +324,31 @@ SetElementMicroversionId sets ElementMicroversionId field to given value.
 `func (o *BTDrawingParams) HasElementMicroversionId() bool`
 
 HasElementMicroversionId returns a boolean if a field has been set.
+
+### GetExplosionId
+
+`func (o *BTDrawingParams) GetExplosionId() string`
+
+GetExplosionId returns the ExplosionId field if non-nil, zero value otherwise.
+
+### GetExplosionIdOk
+
+`func (o *BTDrawingParams) GetExplosionIdOk() (*string, bool)`
+
+GetExplosionIdOk returns a tuple with the ExplosionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExplosionId
+
+`func (o *BTDrawingParams) SetExplosionId(v string)`
+
+SetExplosionId sets ExplosionId field to given value.
+
+### HasExplosionId
+
+`func (o *BTDrawingParams) HasExplosionId() bool`
+
+HasExplosionId returns a boolean if a field has been set.
 
 ### GetExternalDocumentId
 
@@ -571,6 +624,31 @@ SetModelType sets ModelType field to given value.
 `func (o *BTDrawingParams) HasModelType() bool`
 
 HasModelType returns a boolean if a field has been set.
+
+### GetNamedPositionId
+
+`func (o *BTDrawingParams) GetNamedPositionId() string`
+
+GetNamedPositionId returns the NamedPositionId field if non-nil, zero value otherwise.
+
+### GetNamedPositionIdOk
+
+`func (o *BTDrawingParams) GetNamedPositionIdOk() (*string, bool)`
+
+GetNamedPositionIdOk returns a tuple with the NamedPositionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamedPositionId
+
+`func (o *BTDrawingParams) SetNamedPositionId(v string)`
+
+SetNamedPositionId sets NamedPositionId field to given value.
+
+### HasNamedPositionId
+
+`func (o *BTDrawingParams) HasNamedPositionId() bool`
+
+HasNamedPositionId returns a boolean if a field has been set.
 
 ### GetNumberHorizontalZones
 

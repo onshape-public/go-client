@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.151.5973-facb34a6e296
+API version: 1.152.5998-d3227e94fd7e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -200,6 +200,7 @@ func (r ApiExportPartGltfRequest) Configuration(configuration string) ApiExportP
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiExportPartGltfRequest) RollbackBarIndex(rollbackBarIndex int32) ApiExportPartGltfRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -1062,6 +1063,7 @@ func (r ApiGetEdgesRequest) Configuration(configuration string) ApiGetEdgesReque
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetEdgesRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetEdgesRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -1275,6 +1277,7 @@ func (r ApiGetFaces1Request) Configuration(configuration string) ApiGetFaces1Req
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetFaces1Request) RollbackBarIndex(rollbackBarIndex int32) ApiGetFaces1Request {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -1542,6 +1545,7 @@ func (r ApiGetMassPropertiesRequest) Configuration(configuration string) ApiGetM
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetMassPropertiesRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetMassPropertiesRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r
@@ -1723,6 +1727,7 @@ func (r ApiGetPartMetadataRequest) Configuration(configuration string) ApiGetPar
 	return r
 }
 
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
 func (r ApiGetPartMetadataRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetPartMetadataRequest {
 	r.rollbackBarIndex = &rollbackBarIndex
 	return r

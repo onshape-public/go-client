@@ -203,6 +203,7 @@ docs/BTConfiguredValuesColumnInfo1025.md
 docs/BTConfiguredValuesColumnInfo1025AllOf.md
 docs/BTConstructionObjectFilter113.md
 docs/BTConstructionObjectFilter113AllOf.md
+docs/BTCoordinateSystem387.md
 docs/BTCopyDocumentInfo.md
 docs/BTCopyDocumentParams.md
 docs/BTCopyElementParams.md
@@ -652,6 +653,8 @@ docs/BTNextPartNumber.md
 docs/BTNextPartNumberParam.md
 docs/BTNextPartNumbersParam.md
 docs/BTNodeReference21.md
+docs/BTNonAlignedBoundingBox4180.md
+docs/BTNonAlignedBoundingBox4180AllOf.md
 docs/BTNotFilter165.md
 docs/BTNotFilter165AllOf.md
 docs/BTNotice227.md
@@ -669,7 +672,6 @@ docs/BTOrFilter167.md
 docs/BTOrFilter167AllOf.md
 docs/BTOtherDocumentSelectorParametersInfo.md
 docs/BTOtherDocumentSelectorParametersInfoAllOf.md
-docs/BTOwner3114.md
 docs/BTOwnerInfo.md
 docs/BTPAnnotation231.md
 docs/BTPArgumentDeclaration232.md
@@ -933,6 +935,8 @@ docs/BTSimulationTableColumnInfo1785.md
 docs/BTSimulationTableColumnInfo1785AllOf.md
 docs/BTSketchObjectFilter184.md
 docs/BTSketchObjectFilter184AllOf.md
+docs/BTSketchSolveStatusFilter3657.md
+docs/BTSketchSolveStatusFilter3657AllOf.md
 docs/BTSphereDescription1263.md
 docs/BTSphereDescription1263AllOf.md
 docs/BTSplineControlPolygonFilter1130.md
@@ -1241,6 +1245,7 @@ model_bt_configured_part_properties_table_2740.go
 model_bt_configured_suppression_column_info_2498.go
 model_bt_configured_values_column_info_1025.go
 model_bt_construction_object_filter_113.go
+model_bt_coordinate_system_387.go
 model_bt_copy_document_info.go
 model_bt_copy_document_params.go
 model_bt_copy_element_params.go
@@ -1425,6 +1430,7 @@ model_bt_next_part_number.go
 model_bt_next_part_number_param.go
 model_bt_next_part_numbers_param.go
 model_bt_node_reference_21.go
+model_bt_non_aligned_bounding_box_4180.go
 model_bt_not_filter_165.go
 model_bt_notice_227.go
 model_bt_nullable_quantity_range_1340.go
@@ -1435,7 +1441,6 @@ model_bt_occurrence_with_full_part_ids_1464.go
 model_bt_one_configuration_part_properties_1661.go
 model_bt_one_part_properties_230.go
 model_bt_other_document_selector_parameters_info.go
-model_bt_owner_3114.go
 model_bt_owner_info.go
 model_bt_parameter_group_spec_3469.go
 model_bt_parameter_lookup_table_entry_1667.go
@@ -1531,6 +1536,7 @@ model_bt_share_params.go
 model_bt_simulation_instance_3093.go
 model_bt_simulation_table_column_info_1785.go
 model_bt_sketch_object_filter_184.go
+model_bt_sketch_solve_status_filter_3657.go
 model_bt_sphere_description_1263.go
 model_bt_spline_control_polygon_filter_1130.go
 model_bt_spline_description_2118.go
