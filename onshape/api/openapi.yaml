@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.152.6026-75a79a3630ca
+  version: 1.152.6045-4b73632c6edb
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -167,6 +167,14 @@ paths:
       - explode: true
         in: query
         name: ownPurchaseOnly
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includeGoDEnabledAppPurchases
         required: false
         schema:
           default: false

@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## GetPurchases
 
-> []BTPurchaseInfo GetPurchases(ctx).All(all).OwnPurchaseOnly(ownPurchaseOnly).Execute()
+> []BTPurchaseInfo GetPurchases(ctx).All(all).OwnPurchaseOnly(ownPurchaseOnly).IncludeGoDEnabledAppPurchases(includeGoDEnabledAppPurchases).Execute()
 
 Retrieve an array of the user’s App Store purchases.
 
@@ -247,10 +247,11 @@ import (
 func main() {
     all := true // bool |  (optional) (default to false)
     ownPurchaseOnly := true // bool |  (optional) (default to false)
+    includeGoDEnabledAppPurchases := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountApi.GetPurchases(context.Background()).All(all).OwnPurchaseOnly(ownPurchaseOnly).Execute()
+    resp, r, err := apiClient.AccountApi.GetPurchases(context.Background()).All(all).OwnPurchaseOnly(ownPurchaseOnly).IncludeGoDEnabledAppPurchases(includeGoDEnabledAppPurchases).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountApi.GetPurchases``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -273,6 +274,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **all** | **bool** |  | [default to false]
  **ownPurchaseOnly** | **bool** |  | [default to false]
+ **includeGoDEnabledAppPurchases** | **bool** |  | [default to false]
 
 ### Return type
 
