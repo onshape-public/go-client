@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **DefinedByComponents** | Pointer to **bool** |  | [optional] 
 **DirectionFlipped** | Pointer to **bool** |  | [optional] 
+**FgsBaseUnits** | Pointer to **string** |  | [optional] 
 **LoadComponentParameterIds** | Pointer to **map[string]string** |  | [optional] 
 **LoadRegionParameterId** | Pointer to **string** |  | [optional] 
 **LoadType** | Pointer to **string** |  | [optional] 
@@ -108,6 +109,31 @@ SetDirectionFlipped sets DirectionFlipped field to given value.
 `func (o *BTMLoad3538) HasDirectionFlipped() bool`
 
 HasDirectionFlipped returns a boolean if a field has been set.
+
+### GetFgsBaseUnits
+
+`func (o *BTMLoad3538) GetFgsBaseUnits() string`
+
+GetFgsBaseUnits returns the FgsBaseUnits field if non-nil, zero value otherwise.
+
+### GetFgsBaseUnitsOk
+
+`func (o *BTMLoad3538) GetFgsBaseUnitsOk() (*string, bool)`
+
+GetFgsBaseUnitsOk returns a tuple with the FgsBaseUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFgsBaseUnits
+
+`func (o *BTMLoad3538) SetFgsBaseUnits(v string)`
+
+SetFgsBaseUnits sets FgsBaseUnits field to given value.
+
+### HasFgsBaseUnits
+
+`func (o *BTMLoad3538) HasFgsBaseUnits() bool`
+
+HasFgsBaseUnits returns a boolean if a field has been set.
 
 ### GetLoadComponentParameterIds
 
