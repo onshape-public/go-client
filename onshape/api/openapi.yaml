@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.152.6045-4b73632c6edb
+  version: 1.152.6085-0290120322c3
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -25376,6 +25376,7 @@ components:
           - VARIABLE_FLATTENED_ENTITIES_MUST_BE_SAME_BODY
           - CURVE_PROJECTION_FAILED
           - FACE_INTERSECTION_FAILED
+          - FACE_INTERSECTION_NO_RESULT
           - UNKNOWN
           type: string
         microversionId:
@@ -27116,6 +27117,7 @@ components:
           - VARIABLE_FLATTENED_ENTITIES_MUST_BE_SAME_BODY
           - CURVE_PROJECTION_FAILED
           - FACE_INTERSECTION_FAILED
+          - FACE_INTERSECTION_NO_RESULT
           - UNKNOWN
           type: string
       type: object
@@ -28376,6 +28378,7 @@ components:
           - VARIABLE_FLATTENED_ENTITIES_MUST_BE_SAME_BODY
           - CURVE_PROJECTION_FAILED
           - FACE_INTERSECTION_FAILED
+          - FACE_INTERSECTION_NO_RESULT
           - UNKNOWN
           type: string
         facetPoints:
@@ -37844,6 +37847,7 @@ components:
           - V1828_FIX_DIRECTION_INTO_FACE
           - V1829_HOLE_IS_TAPPED_THROUGH
           - V1830_RULED_SURFACE_DRAFT
+          - V1831_INTERSECTION_CURVE_VERSION_BUMP
           - UNKNOWN
           type: string
         btType:
@@ -53737,6 +53741,8 @@ components:
           type: boolean
         directionFlipped:
           type: boolean
+        fgsBaseUnits:
+          type: string
         loadComponentParameterIds:
           additionalProperties:
             type: string
