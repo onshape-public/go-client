@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.152.6108-60a91d537e42
+  version: 1.152.6126-5c3a878ad24b
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -25377,6 +25377,8 @@ components:
           - CURVE_PROJECTION_FAILED
           - FACE_INTERSECTION_FAILED
           - FACE_INTERSECTION_NO_RESULT
+          - FACE_INTERSECTION_UNIQUE_SELECTION
+          - FACE_INTERSECTION_OVERLAPPING_SELECTION
           - UNKNOWN
           type: string
         microversionId:
@@ -27118,6 +27120,8 @@ components:
           - CURVE_PROJECTION_FAILED
           - FACE_INTERSECTION_FAILED
           - FACE_INTERSECTION_NO_RESULT
+          - FACE_INTERSECTION_UNIQUE_SELECTION
+          - FACE_INTERSECTION_OVERLAPPING_SELECTION
           - UNKNOWN
           type: string
       type: object
@@ -28379,6 +28383,8 @@ components:
           - CURVE_PROJECTION_FAILED
           - FACE_INTERSECTION_FAILED
           - FACE_INTERSECTION_NO_RESULT
+          - FACE_INTERSECTION_UNIQUE_SELECTION
+          - FACE_INTERSECTION_OVERLAPPING_SELECTION
           - UNKNOWN
           type: string
         facetPoints:
@@ -37848,6 +37854,7 @@ components:
           - V1829_HOLE_IS_TAPPED_THROUGH
           - V1830_RULED_SURFACE_DRAFT
           - V1831_INTERSECTION_CURVE_VERSION_BUMP
+          - V1832_INTERSECTION_CURVE_VERSION_BUMP_2
           - UNKNOWN
           type: string
         btType:
