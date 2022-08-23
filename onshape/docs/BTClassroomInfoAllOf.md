@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Educator** | Pointer to **bool** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **StateName** | Pointer to **string** |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewBTClassroomInfoAllOfWithDefaults instantiates a new BTClassroomInfoAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEducator
+
+`func (o *BTClassroomInfoAllOf) GetEducator() bool`
+
+GetEducator returns the Educator field if non-nil, zero value otherwise.
+
+### GetEducatorOk
+
+`func (o *BTClassroomInfoAllOf) GetEducatorOk() (*bool, bool)`
+
+GetEducatorOk returns a tuple with the Educator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEducator
+
+`func (o *BTClassroomInfoAllOf) SetEducator(v bool)`
+
+SetEducator sets Educator field to given value.
+
+### HasEducator
+
+`func (o *BTClassroomInfoAllOf) HasEducator() bool`
+
+HasEducator returns a boolean if a field has been set.
 
 ### GetState
 
