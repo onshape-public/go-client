@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.152.6135-f341d0cf30dd
+  version: 1.152.6159-a7ef074944fe
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -52491,6 +52491,8 @@ components:
       type: object
     BTClassroomInfo_allOf:
       properties:
+        educator:
+          type: boolean
         state:
           format: int32
           type: integer

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.152.6135-f341d0cf30dd
+API version: 1.152.6159-a7ef074944fe
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -35,6 +35,7 @@ type BTClassroomInfo struct {
 	ResourceType      *string                 `json:"resourceType,omitempty"`
 	TreeHref          *string                 `json:"treeHref,omitempty"`
 	ViewRef           *string                 `json:"viewRef,omitempty"`
+	Educator          *bool                   `json:"educator,omitempty"`
 	State             *int32                  `json:"state,omitempty"`
 	StateName         *string                 `json:"stateName,omitempty"`
 	Title             *string                 `json:"title,omitempty"`
@@ -626,6 +627,38 @@ func (o *BTClassroomInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetEducator returns the Educator field value if set, zero value otherwise.
+func (o *BTClassroomInfo) GetEducator() bool {
+	if o == nil || o.Educator == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Educator
+}
+
+// GetEducatorOk returns a tuple with the Educator field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTClassroomInfo) GetEducatorOk() (*bool, bool) {
+	if o == nil || o.Educator == nil {
+		return nil, false
+	}
+	return o.Educator, true
+}
+
+// HasEducator returns a boolean if a field has been set.
+func (o *BTClassroomInfo) HasEducator() bool {
+	if o != nil && o.Educator != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEducator gets a reference to the given bool and assigns it to the Educator field.
+func (o *BTClassroomInfo) SetEducator(v bool) {
+	o.Educator = &v
+}
+
 // GetState returns the State field value if set, zero value otherwise.
 func (o *BTClassroomInfo) GetState() int32 {
 	if o == nil || o.State == nil {
@@ -777,6 +810,9 @@ func (o BTClassroomInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
+	}
+	if o.Educator != nil {
+		toSerialize["educator"] = o.Educator
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State
