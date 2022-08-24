@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.152.6159-a7ef074944fe
+  version: 1.152.6184-995caad96180
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -25379,6 +25379,8 @@ components:
           - FACE_INTERSECTION_NO_RESULT
           - FACE_INTERSECTION_UNIQUE_SELECTION
           - FACE_INTERSECTION_OVERLAPPING_SELECTION
+          - VARIABLE_CANNOT_USE_MAXIMUM_WITH_INFINITE_ENTITIES
+          - VARIABLE_NO_AXIS_ENTITIES
           - UNKNOWN
           type: string
         microversionId:
@@ -27122,6 +27124,8 @@ components:
           - FACE_INTERSECTION_NO_RESULT
           - FACE_INTERSECTION_UNIQUE_SELECTION
           - FACE_INTERSECTION_OVERLAPPING_SELECTION
+          - VARIABLE_CANNOT_USE_MAXIMUM_WITH_INFINITE_ENTITIES
+          - VARIABLE_NO_AXIS_ENTITIES
           - UNKNOWN
           type: string
       type: object
@@ -28385,6 +28389,8 @@ components:
           - FACE_INTERSECTION_NO_RESULT
           - FACE_INTERSECTION_UNIQUE_SELECTION
           - FACE_INTERSECTION_OVERLAPPING_SELECTION
+          - VARIABLE_CANNOT_USE_MAXIMUM_WITH_INFINITE_ENTITIES
+          - VARIABLE_NO_AXIS_ENTITIES
           - UNKNOWN
           type: string
         facetPoints:
@@ -37855,6 +37861,8 @@ components:
           - V1830_RULED_SURFACE_DRAFT
           - V1831_INTERSECTION_CURVE_VERSION_BUMP
           - V1832_INTERSECTION_CURVE_VERSION_BUMP_2
+          - V1833_INTERSECTION_CURVE_DUPLICATION_FIX_VERSION_BUMP
+          - V1834_FIX_VARIABLE_FEATURE_VERSION_BUMP
           - UNKNOWN
           type: string
         btType:
