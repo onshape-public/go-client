@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.152.6210-7a182f03d281
+  version: 1.152.6228-2857ab16a033
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -37865,6 +37865,7 @@ components:
           - V1834_FIX_VARIABLE_FEATURE_VERSION_BUMP
           - V1835_VARIABLE_FEATURE_VALUE_VERSION_BUMP
           - V1836_INTERSECTION_CURVE_PATTERN_FIX_VERSION_BUMP
+          - V1837_SENTENCE_CASE_IN_VARIABLE_FEATURE_VERSION_BUMP
           - UNKNOWN
           type: string
         btType:
