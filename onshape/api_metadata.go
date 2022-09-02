@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.152.6309-06d9e62c38f0
+API version: 1.153.6326-97b3616ccba2
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -562,20 +562,21 @@ type ApiGetWMVEPsMetadataRequest struct {
 	wvm                       string
 	wvmid                     string
 	eid                       string
-	configuration             *string
 	linkDocumentId            *string
+	configuration             *string
 	inferMetadataOwner        *bool
 	includeComputedProperties *bool
 	thumbnail                 *bool
 }
 
-func (r ApiGetWMVEPsMetadataRequest) Configuration(configuration string) ApiGetWMVEPsMetadataRequest {
-	r.configuration = &configuration
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetWMVEPsMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGetWMVEPsMetadataRequest {
+	r.linkDocumentId = &linkDocumentId
 	return r
 }
 
-func (r ApiGetWMVEPsMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGetWMVEPsMetadataRequest {
-	r.linkDocumentId = &linkDocumentId
+func (r ApiGetWMVEPsMetadataRequest) Configuration(configuration string) ApiGetWMVEPsMetadataRequest {
+	r.configuration = &configuration
 	return r
 }
 
@@ -602,10 +603,10 @@ func (r ApiGetWMVEPsMetadataRequest) Execute() (*BTMetadataObjectListInfoBTMetad
 GetWMVEPsMetadata Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
+ @param did The id of the document in which to perform the operation.
+ @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
+ @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @return ApiGetWMVEPsMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEPsMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetWMVEPsMetadataRequest {
@@ -644,11 +645,11 @@ func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.configuration != nil {
-		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
-	}
 	if r.linkDocumentId != nil {
 		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.configuration != nil {
+		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
 	}
 	if r.inferMetadataOwner != nil {
 		localVarQueryParams.Add("inferMetadataOwner", parameterToString(*r.inferMetadataOwner, ""))

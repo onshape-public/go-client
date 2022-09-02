@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.152.6309-06d9e62c38f0
+API version: 1.153.6326-97b3616ccba2
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,11 +17,12 @@ import (
 
 // BTPropertyTableColumnInfo2161 struct for BTPropertyTableColumnInfo2161
 type BTPropertyTableColumnInfo2161 struct {
-	Id                 *string                `json:"id,omitempty"`
-	NodeId             *string                `json:"nodeId,omitempty"`
-	Specification      *BTTableColumnSpec1967 `json:"specification,omitempty"`
-	BtType             *string                `json:"btType,omitempty"`
-	IsComputedProperty *bool                  `json:"isComputedProperty,omitempty"`
+	Id                         *string                `json:"id,omitempty"`
+	NodeId                     *string                `json:"nodeId,omitempty"`
+	Specification              *BTTableColumnSpec1967 `json:"specification,omitempty"`
+	BtType                     *string                `json:"btType,omitempty"`
+	IsComputedAssemblyProperty *bool                  `json:"isComputedAssemblyProperty,omitempty"`
+	IsComputedProperty         *bool                  `json:"isComputedProperty,omitempty"`
 }
 
 // NewBTPropertyTableColumnInfo2161 instantiates a new BTPropertyTableColumnInfo2161 object
@@ -169,6 +170,38 @@ func (o *BTPropertyTableColumnInfo2161) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetIsComputedAssemblyProperty returns the IsComputedAssemblyProperty field value if set, zero value otherwise.
+func (o *BTPropertyTableColumnInfo2161) GetIsComputedAssemblyProperty() bool {
+	if o == nil || o.IsComputedAssemblyProperty == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsComputedAssemblyProperty
+}
+
+// GetIsComputedAssemblyPropertyOk returns a tuple with the IsComputedAssemblyProperty field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPropertyTableColumnInfo2161) GetIsComputedAssemblyPropertyOk() (*bool, bool) {
+	if o == nil || o.IsComputedAssemblyProperty == nil {
+		return nil, false
+	}
+	return o.IsComputedAssemblyProperty, true
+}
+
+// HasIsComputedAssemblyProperty returns a boolean if a field has been set.
+func (o *BTPropertyTableColumnInfo2161) HasIsComputedAssemblyProperty() bool {
+	if o != nil && o.IsComputedAssemblyProperty != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsComputedAssemblyProperty gets a reference to the given bool and assigns it to the IsComputedAssemblyProperty field.
+func (o *BTPropertyTableColumnInfo2161) SetIsComputedAssemblyProperty(v bool) {
+	o.IsComputedAssemblyProperty = &v
+}
+
 // GetIsComputedProperty returns the IsComputedProperty field value if set, zero value otherwise.
 func (o *BTPropertyTableColumnInfo2161) GetIsComputedProperty() bool {
 	if o == nil || o.IsComputedProperty == nil {
@@ -214,6 +247,9 @@ func (o BTPropertyTableColumnInfo2161) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.IsComputedAssemblyProperty != nil {
+		toSerialize["isComputedAssemblyProperty"] = o.IsComputedAssemblyProperty
 	}
 	if o.IsComputedProperty != nil {
 		toSerialize["isComputedProperty"] = o.IsComputedProperty

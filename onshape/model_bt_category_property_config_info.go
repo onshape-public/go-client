@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.152.6309-06d9e62c38f0
+API version: 1.153.6326-97b3616ccba2
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,27 +17,35 @@ import (
 
 // BTCategoryPropertyConfigInfo struct for BTCategoryPropertyConfigInfo
 type BTCategoryPropertyConfigInfo struct {
-	ComputedPartPropertyConfig        *BTComputedPartPropertyConfig `json:"computedPartPropertyConfig,omitempty"`
-	ComputedPropertyFunctionName      *string                       `json:"computedPropertyFunctionName,omitempty"`
-	ComputedPropertyFunctionNamespace *string                       `json:"computedPropertyFunctionNamespace,omitempty"`
-	ComputedPropertyFunctionURL       *string                       `json:"computedPropertyFunctionURL,omitempty"`
-	DefaultValue                      *string                       `json:"defaultValue,omitempty"`
-	DisplayName                       *string                       `json:"displayName,omitempty"`
-	EnumValues                        []BTMetadataEnumValue         `json:"enumValues,omitempty"`
-	MaxCount                          *int32                        `json:"maxCount,omitempty"`
-	MaxDate                           *JSONTime                     `json:"maxDate,omitempty"`
-	MaxLength                         *int32                        `json:"maxLength,omitempty"`
-	MaxValue                          *float64                      `json:"maxValue,omitempty"`
-	MinCount                          *int32                        `json:"minCount,omitempty"`
-	MinDate                           *JSONTime                     `json:"minDate,omitempty"`
-	MinLength                         *int32                        `json:"minLength,omitempty"`
-	MinValue                          *float64                      `json:"minValue,omitempty"`
-	Multiline                         *bool                         `json:"multiline,omitempty"`
-	Multivalued                       *bool                         `json:"multivalued,omitempty"`
-	Pattern                           *string                       `json:"pattern,omitempty"`
-	PublishState                      *int32                        `json:"publishState,omitempty"`
-	QuantityType                      *int32                        `json:"quantityType,omitempty"`
-	Required                          *bool                         `json:"required,omitempty"`
+	ComputedAssemblyPropertyAggregatedPropertyId *string                           `json:"computedAssemblyPropertyAggregatedPropertyId,omitempty"`
+	ComputedAssemblyPropertyAggregationOperator  *int32                            `json:"computedAssemblyPropertyAggregationOperator,omitempty"`
+	ComputedAssemblyPropertyConfig               *BTComputedAssemblyPropertyConfig `json:"computedAssemblyPropertyConfig,omitempty"`
+	ComputedAssemblyPropertyErrorValuePolicy     *int32                            `json:"computedAssemblyPropertyErrorValuePolicy,omitempty"`
+	ComputedAssemblyPropertyFilterInverted       *bool                             `json:"computedAssemblyPropertyFilterInverted,omitempty"`
+	ComputedAssemblyPropertyFilterPropertyId     *string                           `json:"computedAssemblyPropertyFilterPropertyId,omitempty"`
+	ComputedAssemblyPropertyMissingValuePolicy   *int32                            `json:"computedAssemblyPropertyMissingValuePolicy,omitempty"`
+	ComputedAssemblyPropertySecondaryPropertyId  *string                           `json:"computedAssemblyPropertySecondaryPropertyId,omitempty"`
+	ComputedPartPropertyConfig                   *BTComputedPartPropertyConfig     `json:"computedPartPropertyConfig,omitempty"`
+	ComputedPropertyFunctionName                 *string                           `json:"computedPropertyFunctionName,omitempty"`
+	ComputedPropertyFunctionNamespace            *string                           `json:"computedPropertyFunctionNamespace,omitempty"`
+	ComputedPropertyFunctionURL                  *string                           `json:"computedPropertyFunctionURL,omitempty"`
+	DefaultValue                                 *string                           `json:"defaultValue,omitempty"`
+	DisplayName                                  *string                           `json:"displayName,omitempty"`
+	EnumValues                                   []BTMetadataEnumValue             `json:"enumValues,omitempty"`
+	MaxCount                                     *int32                            `json:"maxCount,omitempty"`
+	MaxDate                                      *JSONTime                         `json:"maxDate,omitempty"`
+	MaxLength                                    *int32                            `json:"maxLength,omitempty"`
+	MaxValue                                     *float64                          `json:"maxValue,omitempty"`
+	MinCount                                     *int32                            `json:"minCount,omitempty"`
+	MinDate                                      *JSONTime                         `json:"minDate,omitempty"`
+	MinLength                                    *int32                            `json:"minLength,omitempty"`
+	MinValue                                     *float64                          `json:"minValue,omitempty"`
+	Multiline                                    *bool                             `json:"multiline,omitempty"`
+	Multivalued                                  *bool                             `json:"multivalued,omitempty"`
+	Pattern                                      *string                           `json:"pattern,omitempty"`
+	PublishState                                 *int32                            `json:"publishState,omitempty"`
+	QuantityType                                 *int32                            `json:"quantityType,omitempty"`
+	Required                                     *bool                             `json:"required,omitempty"`
 }
 
 // NewBTCategoryPropertyConfigInfo instantiates a new BTCategoryPropertyConfigInfo object
@@ -55,6 +63,262 @@ func NewBTCategoryPropertyConfigInfo() *BTCategoryPropertyConfigInfo {
 func NewBTCategoryPropertyConfigInfoWithDefaults() *BTCategoryPropertyConfigInfo {
 	this := BTCategoryPropertyConfigInfo{}
 	return &this
+}
+
+// GetComputedAssemblyPropertyAggregatedPropertyId returns the ComputedAssemblyPropertyAggregatedPropertyId field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregatedPropertyId() string {
+	if o == nil || o.ComputedAssemblyPropertyAggregatedPropertyId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ComputedAssemblyPropertyAggregatedPropertyId
+}
+
+// GetComputedAssemblyPropertyAggregatedPropertyIdOk returns a tuple with the ComputedAssemblyPropertyAggregatedPropertyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregatedPropertyIdOk() (*string, bool) {
+	if o == nil || o.ComputedAssemblyPropertyAggregatedPropertyId == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertyAggregatedPropertyId, true
+}
+
+// HasComputedAssemblyPropertyAggregatedPropertyId returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyAggregatedPropertyId() bool {
+	if o != nil && o.ComputedAssemblyPropertyAggregatedPropertyId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertyAggregatedPropertyId gets a reference to the given string and assigns it to the ComputedAssemblyPropertyAggregatedPropertyId field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyAggregatedPropertyId(v string) {
+	o.ComputedAssemblyPropertyAggregatedPropertyId = &v
+}
+
+// GetComputedAssemblyPropertyAggregationOperator returns the ComputedAssemblyPropertyAggregationOperator field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregationOperator() int32 {
+	if o == nil || o.ComputedAssemblyPropertyAggregationOperator == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputedAssemblyPropertyAggregationOperator
+}
+
+// GetComputedAssemblyPropertyAggregationOperatorOk returns a tuple with the ComputedAssemblyPropertyAggregationOperator field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregationOperatorOk() (*int32, bool) {
+	if o == nil || o.ComputedAssemblyPropertyAggregationOperator == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertyAggregationOperator, true
+}
+
+// HasComputedAssemblyPropertyAggregationOperator returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyAggregationOperator() bool {
+	if o != nil && o.ComputedAssemblyPropertyAggregationOperator != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertyAggregationOperator gets a reference to the given int32 and assigns it to the ComputedAssemblyPropertyAggregationOperator field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyAggregationOperator(v int32) {
+	o.ComputedAssemblyPropertyAggregationOperator = &v
+}
+
+// GetComputedAssemblyPropertyConfig returns the ComputedAssemblyPropertyConfig field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyConfig() BTComputedAssemblyPropertyConfig {
+	if o == nil || o.ComputedAssemblyPropertyConfig == nil {
+		var ret BTComputedAssemblyPropertyConfig
+		return ret
+	}
+	return *o.ComputedAssemblyPropertyConfig
+}
+
+// GetComputedAssemblyPropertyConfigOk returns a tuple with the ComputedAssemblyPropertyConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyConfigOk() (*BTComputedAssemblyPropertyConfig, bool) {
+	if o == nil || o.ComputedAssemblyPropertyConfig == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertyConfig, true
+}
+
+// HasComputedAssemblyPropertyConfig returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyConfig() bool {
+	if o != nil && o.ComputedAssemblyPropertyConfig != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertyConfig gets a reference to the given BTComputedAssemblyPropertyConfig and assigns it to the ComputedAssemblyPropertyConfig field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyConfig(v BTComputedAssemblyPropertyConfig) {
+	o.ComputedAssemblyPropertyConfig = &v
+}
+
+// GetComputedAssemblyPropertyErrorValuePolicy returns the ComputedAssemblyPropertyErrorValuePolicy field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyErrorValuePolicy() int32 {
+	if o == nil || o.ComputedAssemblyPropertyErrorValuePolicy == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputedAssemblyPropertyErrorValuePolicy
+}
+
+// GetComputedAssemblyPropertyErrorValuePolicyOk returns a tuple with the ComputedAssemblyPropertyErrorValuePolicy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyErrorValuePolicyOk() (*int32, bool) {
+	if o == nil || o.ComputedAssemblyPropertyErrorValuePolicy == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertyErrorValuePolicy, true
+}
+
+// HasComputedAssemblyPropertyErrorValuePolicy returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyErrorValuePolicy() bool {
+	if o != nil && o.ComputedAssemblyPropertyErrorValuePolicy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertyErrorValuePolicy gets a reference to the given int32 and assigns it to the ComputedAssemblyPropertyErrorValuePolicy field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyErrorValuePolicy(v int32) {
+	o.ComputedAssemblyPropertyErrorValuePolicy = &v
+}
+
+// GetComputedAssemblyPropertyFilterInverted returns the ComputedAssemblyPropertyFilterInverted field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterInverted() bool {
+	if o == nil || o.ComputedAssemblyPropertyFilterInverted == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ComputedAssemblyPropertyFilterInverted
+}
+
+// GetComputedAssemblyPropertyFilterInvertedOk returns a tuple with the ComputedAssemblyPropertyFilterInverted field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterInvertedOk() (*bool, bool) {
+	if o == nil || o.ComputedAssemblyPropertyFilterInverted == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertyFilterInverted, true
+}
+
+// HasComputedAssemblyPropertyFilterInverted returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyFilterInverted() bool {
+	if o != nil && o.ComputedAssemblyPropertyFilterInverted != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertyFilterInverted gets a reference to the given bool and assigns it to the ComputedAssemblyPropertyFilterInverted field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyFilterInverted(v bool) {
+	o.ComputedAssemblyPropertyFilterInverted = &v
+}
+
+// GetComputedAssemblyPropertyFilterPropertyId returns the ComputedAssemblyPropertyFilterPropertyId field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterPropertyId() string {
+	if o == nil || o.ComputedAssemblyPropertyFilterPropertyId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ComputedAssemblyPropertyFilterPropertyId
+}
+
+// GetComputedAssemblyPropertyFilterPropertyIdOk returns a tuple with the ComputedAssemblyPropertyFilterPropertyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterPropertyIdOk() (*string, bool) {
+	if o == nil || o.ComputedAssemblyPropertyFilterPropertyId == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertyFilterPropertyId, true
+}
+
+// HasComputedAssemblyPropertyFilterPropertyId returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyFilterPropertyId() bool {
+	if o != nil && o.ComputedAssemblyPropertyFilterPropertyId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertyFilterPropertyId gets a reference to the given string and assigns it to the ComputedAssemblyPropertyFilterPropertyId field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyFilterPropertyId(v string) {
+	o.ComputedAssemblyPropertyFilterPropertyId = &v
+}
+
+// GetComputedAssemblyPropertyMissingValuePolicy returns the ComputedAssemblyPropertyMissingValuePolicy field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyMissingValuePolicy() int32 {
+	if o == nil || o.ComputedAssemblyPropertyMissingValuePolicy == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputedAssemblyPropertyMissingValuePolicy
+}
+
+// GetComputedAssemblyPropertyMissingValuePolicyOk returns a tuple with the ComputedAssemblyPropertyMissingValuePolicy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyMissingValuePolicyOk() (*int32, bool) {
+	if o == nil || o.ComputedAssemblyPropertyMissingValuePolicy == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertyMissingValuePolicy, true
+}
+
+// HasComputedAssemblyPropertyMissingValuePolicy returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyMissingValuePolicy() bool {
+	if o != nil && o.ComputedAssemblyPropertyMissingValuePolicy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertyMissingValuePolicy gets a reference to the given int32 and assigns it to the ComputedAssemblyPropertyMissingValuePolicy field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyMissingValuePolicy(v int32) {
+	o.ComputedAssemblyPropertyMissingValuePolicy = &v
+}
+
+// GetComputedAssemblyPropertySecondaryPropertyId returns the ComputedAssemblyPropertySecondaryPropertyId field value if set, zero value otherwise.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertySecondaryPropertyId() string {
+	if o == nil || o.ComputedAssemblyPropertySecondaryPropertyId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ComputedAssemblyPropertySecondaryPropertyId
+}
+
+// GetComputedAssemblyPropertySecondaryPropertyIdOk returns a tuple with the ComputedAssemblyPropertySecondaryPropertyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertySecondaryPropertyIdOk() (*string, bool) {
+	if o == nil || o.ComputedAssemblyPropertySecondaryPropertyId == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyPropertySecondaryPropertyId, true
+}
+
+// HasComputedAssemblyPropertySecondaryPropertyId returns a boolean if a field has been set.
+func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertySecondaryPropertyId() bool {
+	if o != nil && o.ComputedAssemblyPropertySecondaryPropertyId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyPropertySecondaryPropertyId gets a reference to the given string and assigns it to the ComputedAssemblyPropertySecondaryPropertyId field.
+func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertySecondaryPropertyId(v string) {
+	o.ComputedAssemblyPropertySecondaryPropertyId = &v
 }
 
 // GetComputedPartPropertyConfig returns the ComputedPartPropertyConfig field value if set, zero value otherwise.
@@ -731,6 +995,30 @@ func (o *BTCategoryPropertyConfigInfo) SetRequired(v bool) {
 
 func (o BTCategoryPropertyConfigInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ComputedAssemblyPropertyAggregatedPropertyId != nil {
+		toSerialize["computedAssemblyPropertyAggregatedPropertyId"] = o.ComputedAssemblyPropertyAggregatedPropertyId
+	}
+	if o.ComputedAssemblyPropertyAggregationOperator != nil {
+		toSerialize["computedAssemblyPropertyAggregationOperator"] = o.ComputedAssemblyPropertyAggregationOperator
+	}
+	if o.ComputedAssemblyPropertyConfig != nil {
+		toSerialize["computedAssemblyPropertyConfig"] = o.ComputedAssemblyPropertyConfig
+	}
+	if o.ComputedAssemblyPropertyErrorValuePolicy != nil {
+		toSerialize["computedAssemblyPropertyErrorValuePolicy"] = o.ComputedAssemblyPropertyErrorValuePolicy
+	}
+	if o.ComputedAssemblyPropertyFilterInverted != nil {
+		toSerialize["computedAssemblyPropertyFilterInverted"] = o.ComputedAssemblyPropertyFilterInverted
+	}
+	if o.ComputedAssemblyPropertyFilterPropertyId != nil {
+		toSerialize["computedAssemblyPropertyFilterPropertyId"] = o.ComputedAssemblyPropertyFilterPropertyId
+	}
+	if o.ComputedAssemblyPropertyMissingValuePolicy != nil {
+		toSerialize["computedAssemblyPropertyMissingValuePolicy"] = o.ComputedAssemblyPropertyMissingValuePolicy
+	}
+	if o.ComputedAssemblyPropertySecondaryPropertyId != nil {
+		toSerialize["computedAssemblyPropertySecondaryPropertyId"] = o.ComputedAssemblyPropertySecondaryPropertyId
+	}
 	if o.ComputedPartPropertyConfig != nil {
 		toSerialize["computedPartPropertyConfig"] = o.ComputedPartPropertyConfig
 	}

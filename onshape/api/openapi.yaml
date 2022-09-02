@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.152.6309-06d9e62c38f0
+  version: 1.153.6326-97b3616ccba2
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -5782,21 +5782,43 @@ paths:
       deprecated: false
       operationId: getElementsInDocument
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace id, version id, or document microversion\
+          \ id is specified below."
+        explode: false
         in: path
         name: wvm
         required: true
         schema:
+          enum:
+          - w
+          - v
+          - m
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version, or document microversion in\
+          \ which the operation should be performed."
+        explode: false
         in: path
         name: wvmid
         required: true
@@ -5826,13 +5848,6 @@ paths:
         schema:
           default: false
           type: boolean
-        style: form
-      - explode: true
-        in: query
-        name: linkDocumentId
-        required: false
-        schema:
-          type: string
         style: form
       responses:
         "200":
@@ -8144,28 +8159,51 @@ paths:
       deprecated: false
       operationId: getWMVEPsMetadata
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace id, version id, or document microversion\
+          \ id is specified below."
+        explode: false
         in: path
         name: wvm
         required: true
         schema:
+          enum:
+          - w
+          - v
+          - m
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version, or document microversion in\
+          \ which the operation should be performed."
+        explode: false
         in: path
         name: wvmid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
         required: true
@@ -8177,13 +8215,7 @@ paths:
         name: configuration
         required: false
         schema:
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: linkDocumentId
-        required: false
-        schema:
+          default: ""
           type: string
         style: form
       - explode: true
@@ -20111,38 +20143,72 @@ components:
       type: object
     BTCategoryPropertyConfigInfo:
       example:
-        publishState: 3
-        quantityType: 2
+        publishState: 7
+        quantityType: 1
         minDate: 2000-01-23T04:56:07.000+00:00
         computedPartPropertyConfig:
           computedPartPropertySpecFunction: computedPartPropertySpecFunction
-          computedPropertyFunctionReturnType: 0
+          computedPropertyFunctionReturnType: 5
           propertyFunctionDocumentId: propertyFunctionDocumentId
           computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
         defaultValue: defaultValue
         displayName: displayName
-        maxValue: 5.637376656633329
-        minLength: 7
-        multivalued: true
+        minLength: 2
         pattern: pattern
-        maxCount: 1
+        maxCount: 2
+        computedAssemblyPropertyFilterInverted: true
         required: true
-        computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
-        computedPropertyFunctionURL: computedPropertyFunctionURL
-        minValue: 9.301444243932576
-        multiline: true
-        maxDate: 2000-01-23T04:56:07.000+00:00
-        minCount: 2
+        minValue: 4.145608029883936
+        computedAssemblyPropertyAggregationOperator: 0
+        computedAssemblyPropertyConfig:
+          errorValuePolicy: ExcludeFromComputation
+          filterPropertyId: filterPropertyId
+          aggregationOperator: SUM
+          aggregatedPropertyId: aggregatedPropertyId
+          missingValuePolicy: ExcludeFromComputation
+          isFilterPropertyInverted: true
+          secondaryPropertyId: secondaryPropertyId
+        computedAssemblyPropertyErrorValuePolicy: 6
         computedPropertyFunctionName: computedPropertyFunctionName
-        maxLength: 5
         enumValues:
         - label: label
-          state: 6
+          state: 5
           value: value
         - label: label
-          state: 6
+          state: 5
           value: value
+        maxValue: 9.301444243932576
+        multivalued: true
+        computedAssemblyPropertyAggregatedPropertyId: computedAssemblyPropertyAggregatedPropertyId
+        computedAssemblyPropertyMissingValuePolicy: 1
+        computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
+        computedPropertyFunctionURL: computedPropertyFunctionURL
+        multiline: true
+        computedAssemblyPropertySecondaryPropertyId: computedAssemblyPropertySecondaryPropertyId
+        maxDate: 2000-01-23T04:56:07.000+00:00
+        minCount: 3
+        computedAssemblyPropertyFilterPropertyId: computedAssemblyPropertyFilterPropertyId
+        maxLength: 7
       properties:
+        computedAssemblyPropertyAggregatedPropertyId:
+          type: string
+        computedAssemblyPropertyAggregationOperator:
+          format: int32
+          type: integer
+        computedAssemblyPropertyConfig:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyConfig'
+        computedAssemblyPropertyErrorValuePolicy:
+          format: int32
+          type: integer
+        computedAssemblyPropertyFilterInverted:
+          type: boolean
+        computedAssemblyPropertyFilterPropertyId:
+          type: string
+        computedAssemblyPropertyMissingValuePolicy:
+          format: int32
+          type: integer
+        computedAssemblyPropertySecondaryPropertyId:
+          type: string
         computedPartPropertyConfig:
           $ref: '#/components/schemas/BTComputedPartPropertyConfig'
         computedPropertyFunctionName:
@@ -20205,28 +20271,28 @@ components:
         editableInVersion: true
         uiReadonlyInVersion: true
         categorySummaryInfoList:
-        - defaultObjectType: 4
-          ownerType: 1
-          publishState: 1
+        - defaultObjectType: 1
+          ownerType: 6
+          publishState: 7
           name: name
           description: description
           href: https://openapi-generator.tech
           id: id
           objectTypes:
-          - 7
-          - 7
+          - 1
+          - 1
           ownerId: ownerId
           viewRef: https://openapi-generator.tech
-        - defaultObjectType: 4
-          ownerType: 1
-          publishState: 1
+        - defaultObjectType: 1
+          ownerType: 6
+          publishState: 7
           name: name
           description: description
           href: https://openapi-generator.tech
           id: id
           objectTypes:
-          - 7
-          - 7
+          - 1
+          - 1
           ownerId: ownerId
           viewRef: https://openapi-generator.tech
         description: description
@@ -20236,42 +20302,57 @@ components:
         assignable: true
         array: true
         uiReadonlyInMicroversion: true
-        valueType: 6
+        valueType: 4
         name: name
         href: https://openapi-generator.tech
         id: id
         categoryPropertyConfigInfo:
-          publishState: 3
-          quantityType: 2
+          publishState: 7
+          quantityType: 1
           minDate: 2000-01-23T04:56:07.000+00:00
           computedPartPropertyConfig:
             computedPartPropertySpecFunction: computedPartPropertySpecFunction
-            computedPropertyFunctionReturnType: 0
+            computedPropertyFunctionReturnType: 5
             propertyFunctionDocumentId: propertyFunctionDocumentId
             computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
           defaultValue: defaultValue
           displayName: displayName
-          maxValue: 5.637376656633329
-          minLength: 7
-          multivalued: true
+          minLength: 2
           pattern: pattern
-          maxCount: 1
+          maxCount: 2
+          computedAssemblyPropertyFilterInverted: true
           required: true
-          computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
-          computedPropertyFunctionURL: computedPropertyFunctionURL
-          minValue: 9.301444243932576
-          multiline: true
-          maxDate: 2000-01-23T04:56:07.000+00:00
-          minCount: 2
+          minValue: 4.145608029883936
+          computedAssemblyPropertyAggregationOperator: 0
+          computedAssemblyPropertyConfig:
+            errorValuePolicy: ExcludeFromComputation
+            filterPropertyId: filterPropertyId
+            aggregationOperator: SUM
+            aggregatedPropertyId: aggregatedPropertyId
+            missingValuePolicy: ExcludeFromComputation
+            isFilterPropertyInverted: true
+            secondaryPropertyId: secondaryPropertyId
+          computedAssemblyPropertyErrorValuePolicy: 6
           computedPropertyFunctionName: computedPropertyFunctionName
-          maxLength: 5
           enumValues:
           - label: label
-            state: 6
+            state: 5
             value: value
           - label: label
-            state: 6
+            state: 5
             value: value
+          maxValue: 9.301444243932576
+          multivalued: true
+          computedAssemblyPropertyAggregatedPropertyId: computedAssemblyPropertyAggregatedPropertyId
+          computedAssemblyPropertyMissingValuePolicy: 1
+          computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
+          computedPropertyFunctionURL: computedPropertyFunctionURL
+          multiline: true
+          computedAssemblyPropertySecondaryPropertyId: computedAssemblyPropertySecondaryPropertyId
+          maxDate: 2000-01-23T04:56:07.000+00:00
+          minCount: 3
+          computedAssemblyPropertyFilterPropertyId: computedAssemblyPropertyFilterPropertyId
+          maxLength: 7
         viewRef: https://openapi-generator.tech
       properties:
         array:
@@ -21294,6 +21375,54 @@ components:
           format: uri
           type: string
       type: object
+    BTComputedAssemblyPropertyConfig:
+      example:
+        errorValuePolicy: ExcludeFromComputation
+        filterPropertyId: filterPropertyId
+        aggregationOperator: SUM
+        aggregatedPropertyId: aggregatedPropertyId
+        missingValuePolicy: ExcludeFromComputation
+        isFilterPropertyInverted: true
+        secondaryPropertyId: secondaryPropertyId
+      properties:
+        aggregatedPropertyId:
+          type: string
+        aggregationOperator:
+          enum:
+          - SUM
+          - MINIMUM
+          - MAXIMUM
+          - AVERAGE
+          - WEIGHTED_SUM
+          - WEIGHTED_AVERAGE
+          - ANY
+          - ALL
+          - NOT_ANY
+          - NOT_ALL
+          type: string
+        errorValuePolicy:
+          enum:
+          - ExcludeFromComputation
+          - TreatAsZero
+          - TreatAsTrue
+          - TreatAsFalse
+          - PropagateError
+          type: string
+        filterPropertyId:
+          type: string
+        isFilterPropertyInverted:
+          type: boolean
+        missingValuePolicy:
+          enum:
+          - ExcludeFromComputation
+          - TreatAsZero
+          - TreatAsTrue
+          - TreatAsFalse
+          - PropagateError
+          type: string
+        secondaryPropertyId:
+          type: string
+      type: object
     BTComputedConfigurationInputSpec-2525:
       properties:
         btType:
@@ -21304,7 +21433,7 @@ components:
     BTComputedPartPropertyConfig:
       example:
         computedPartPropertySpecFunction: computedPartPropertySpecFunction
-        computedPropertyFunctionReturnType: 0
+        computedPropertyFunctionReturnType: 5
         propertyFunctionDocumentId: propertyFunctionDocumentId
         computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
       properties:
@@ -22882,6 +23011,7 @@ components:
       type: object
     BTDocumentMergeInfo:
       example:
+        parentDocumentMicroversionId: parentDocumentMicroversionId
         libraryVersionMismatch: true
         overwrittenElements:
         - energyUnits: energyUnits
@@ -23033,6 +23163,8 @@ components:
           items:
             $ref: '#/components/schemas/BTDocumentElementInfo'
           type: array
+        parentDocumentMicroversionId:
+          type: string
       type: object
     BTDocumentMessageBody:
       example:
@@ -23631,6 +23763,13 @@ components:
         branchPointElementPath:
         - branchPointElementPath
         - branchPointElementPath
+        sourceModifiedBy:
+          image: image
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          state: 6
+          viewRef: https://openapi-generator.tech
         targetElementPath:
         - targetElementPath
         - targetElementPath
@@ -23639,10 +23778,19 @@ components:
         sourceElementPath:
         - sourceElementPath
         - sourceElementPath
+        targetModifiedBy:
+          image: image
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          state: 6
+          viewRef: https://openapi-generator.tech
+        sourceModifiedAt: 2000-01-23T04:56:07.000+00:00
         dependentElementMergeInfo: null
         mergeable: true
         targetElementStatus: CREATED
         sourceElementStatus: CREATED
+        targetModifiedAt: 2000-01-23T04:56:07.000+00:00
         elementType: PARTSTUDIO
         elementDataType: elementDataType
       properties:
@@ -23689,6 +23837,11 @@ components:
           - NO_CHANGES
           - UNKNOWN
           type: string
+        sourceModifiedAt:
+          format: date-time
+          type: string
+        sourceModifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         targetElementName:
           type: string
         targetElementPath:
@@ -23704,6 +23857,11 @@ components:
           - NO_CHANGES
           - UNKNOWN
           type: string
+        targetModifiedAt:
+          format: date-time
+          type: string
+        targetModifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
       type: object
     BTElementReference-725:
       discriminator:
@@ -25379,8 +25537,31 @@ components:
           - FACE_INTERSECTION_NO_RESULT
           - FACE_INTERSECTION_UNIQUE_SELECTION
           - FACE_INTERSECTION_OVERLAPPING_SELECTION
+          - CHAMFER_SIZE_EXCEED_GUSSET_SIZE
+          - EMPTY_GUSSET_SELECTION
+          - CANNOT_FIT_A_GUSSET
+          - NON_FRAME_EDGE_SELECTED
+          - SWEPT_EDGE_SELECTED
+          - NO_CAP_FACE_SELECTED_ERROR
+          - INVALID_CAP_FACE_SELECTED_ERROR
+          - CAP_MULTI_FACE_SELECTED_ERROR
+          - CAP_MULTI_LUMENS_SELECTED_ERROR
+          - CAP_CURVED_FRAME_ERROR
+          - CAP_FRAME_AXIS_ERROR
           - VARIABLE_CANNOT_USE_MAXIMUM_WITH_INFINITE_ENTITIES
           - VARIABLE_NO_AXIS_ENTITIES
+          - CURVE_PROJECTION_NO_RESULT
+          - BSURF_FAILED
+          - BSURF_PROFILE_FAILED
+          - BSURF_INCONSISTENT_BOUNDARY_CONDITIONS
+          - FGS_SIMULATION_ERROR_SIMULATION_NON_CONVERGENT
+          - FGS_SIMULATION_ERROR_LATERAL_BEARING_FORCE
+          - FGS_SIMULATION_ERROR_LOADS_NONE
+          - FGS_SIMULATION_ERROR_CONSTRAINTS_NONE
+          - FGS_SIMULATION_ERROR_CONSTRAINTS_ONLY_KINEMATIC
+          - FGS_SIMULATION_ERROR_INTERNAL_ERROR
+          - DXF_COULD_NOT_CONVERT_TEXT
+          - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - UNKNOWN
           type: string
         microversionId:
@@ -27124,8 +27305,31 @@ components:
           - FACE_INTERSECTION_NO_RESULT
           - FACE_INTERSECTION_UNIQUE_SELECTION
           - FACE_INTERSECTION_OVERLAPPING_SELECTION
+          - CHAMFER_SIZE_EXCEED_GUSSET_SIZE
+          - EMPTY_GUSSET_SELECTION
+          - CANNOT_FIT_A_GUSSET
+          - NON_FRAME_EDGE_SELECTED
+          - SWEPT_EDGE_SELECTED
+          - NO_CAP_FACE_SELECTED_ERROR
+          - INVALID_CAP_FACE_SELECTED_ERROR
+          - CAP_MULTI_FACE_SELECTED_ERROR
+          - CAP_MULTI_LUMENS_SELECTED_ERROR
+          - CAP_CURVED_FRAME_ERROR
+          - CAP_FRAME_AXIS_ERROR
           - VARIABLE_CANNOT_USE_MAXIMUM_WITH_INFINITE_ENTITIES
           - VARIABLE_NO_AXIS_ENTITIES
+          - CURVE_PROJECTION_NO_RESULT
+          - BSURF_FAILED
+          - BSURF_PROFILE_FAILED
+          - BSURF_INCONSISTENT_BOUNDARY_CONDITIONS
+          - FGS_SIMULATION_ERROR_SIMULATION_NON_CONVERGENT
+          - FGS_SIMULATION_ERROR_LATERAL_BEARING_FORCE
+          - FGS_SIMULATION_ERROR_LOADS_NONE
+          - FGS_SIMULATION_ERROR_CONSTRAINTS_NONE
+          - FGS_SIMULATION_ERROR_CONSTRAINTS_ONLY_KINEMATIC
+          - FGS_SIMULATION_ERROR_INTERNAL_ERROR
+          - DXF_COULD_NOT_CONVERT_TEXT
+          - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - UNKNOWN
           type: string
       type: object
@@ -28389,8 +28593,31 @@ components:
           - FACE_INTERSECTION_NO_RESULT
           - FACE_INTERSECTION_UNIQUE_SELECTION
           - FACE_INTERSECTION_OVERLAPPING_SELECTION
+          - CHAMFER_SIZE_EXCEED_GUSSET_SIZE
+          - EMPTY_GUSSET_SELECTION
+          - CANNOT_FIT_A_GUSSET
+          - NON_FRAME_EDGE_SELECTED
+          - SWEPT_EDGE_SELECTED
+          - NO_CAP_FACE_SELECTED_ERROR
+          - INVALID_CAP_FACE_SELECTED_ERROR
+          - CAP_MULTI_FACE_SELECTED_ERROR
+          - CAP_MULTI_LUMENS_SELECTED_ERROR
+          - CAP_CURVED_FRAME_ERROR
+          - CAP_FRAME_AXIS_ERROR
           - VARIABLE_CANNOT_USE_MAXIMUM_WITH_INFINITE_ENTITIES
           - VARIABLE_NO_AXIS_ENTITIES
+          - CURVE_PROJECTION_NO_RESULT
+          - BSURF_FAILED
+          - BSURF_PROFILE_FAILED
+          - BSURF_INCONSISTENT_BOUNDARY_CONDITIONS
+          - FGS_SIMULATION_ERROR_SIMULATION_NON_CONVERGENT
+          - FGS_SIMULATION_ERROR_LATERAL_BEARING_FORCE
+          - FGS_SIMULATION_ERROR_LOADS_NONE
+          - FGS_SIMULATION_ERROR_CONSTRAINTS_NONE
+          - FGS_SIMULATION_ERROR_CONSTRAINTS_ONLY_KINEMATIC
+          - FGS_SIMULATION_ERROR_INTERNAL_ERROR
+          - DXF_COULD_NOT_CONVERT_TEXT
+          - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - UNKNOWN
           type: string
         facetPoints:
@@ -32237,28 +32464,28 @@ components:
           editableInVersion: true
           uiReadonlyInVersion: true
           categorySummaryInfoList:
-          - defaultObjectType: 4
-            ownerType: 1
-            publishState: 1
+          - defaultObjectType: 1
+            ownerType: 6
+            publishState: 7
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 7
-            - 7
+            - 1
+            - 1
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
-          - defaultObjectType: 4
-            ownerType: 1
-            publishState: 1
+          - defaultObjectType: 1
+            ownerType: 6
+            publishState: 7
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 7
-            - 7
+            - 1
+            - 1
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
           description: description
@@ -32268,70 +32495,85 @@ components:
           assignable: true
           array: true
           uiReadonlyInMicroversion: true
-          valueType: 6
+          valueType: 4
           name: name
           href: https://openapi-generator.tech
           id: id
           categoryPropertyConfigInfo:
-            publishState: 3
-            quantityType: 2
+            publishState: 7
+            quantityType: 1
             minDate: 2000-01-23T04:56:07.000+00:00
             computedPartPropertyConfig:
               computedPartPropertySpecFunction: computedPartPropertySpecFunction
-              computedPropertyFunctionReturnType: 0
+              computedPropertyFunctionReturnType: 5
               propertyFunctionDocumentId: propertyFunctionDocumentId
               computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
             defaultValue: defaultValue
             displayName: displayName
-            maxValue: 5.637376656633329
-            minLength: 7
-            multivalued: true
+            minLength: 2
             pattern: pattern
-            maxCount: 1
+            maxCount: 2
+            computedAssemblyPropertyFilterInverted: true
             required: true
-            computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
-            computedPropertyFunctionURL: computedPropertyFunctionURL
-            minValue: 9.301444243932576
-            multiline: true
-            maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 2
+            minValue: 4.145608029883936
+            computedAssemblyPropertyAggregationOperator: 0
+            computedAssemblyPropertyConfig:
+              errorValuePolicy: ExcludeFromComputation
+              filterPropertyId: filterPropertyId
+              aggregationOperator: SUM
+              aggregatedPropertyId: aggregatedPropertyId
+              missingValuePolicy: ExcludeFromComputation
+              isFilterPropertyInverted: true
+              secondaryPropertyId: secondaryPropertyId
+            computedAssemblyPropertyErrorValuePolicy: 6
             computedPropertyFunctionName: computedPropertyFunctionName
-            maxLength: 5
             enumValues:
             - label: label
-              state: 6
+              state: 5
               value: value
             - label: label
-              state: 6
+              state: 5
               value: value
+            maxValue: 9.301444243932576
+            multivalued: true
+            computedAssemblyPropertyAggregatedPropertyId: computedAssemblyPropertyAggregatedPropertyId
+            computedAssemblyPropertyMissingValuePolicy: 1
+            computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
+            computedPropertyFunctionURL: computedPropertyFunctionURL
+            multiline: true
+            computedAssemblyPropertySecondaryPropertyId: computedAssemblyPropertySecondaryPropertyId
+            maxDate: 2000-01-23T04:56:07.000+00:00
+            minCount: 3
+            computedAssemblyPropertyFilterPropertyId: computedAssemblyPropertyFilterPropertyId
+            maxLength: 7
           viewRef: https://openapi-generator.tech
         - ownerType: 1
           editableInMicroversion: true
           editableInVersion: true
           uiReadonlyInVersion: true
           categorySummaryInfoList:
-          - defaultObjectType: 4
-            ownerType: 1
-            publishState: 1
+          - defaultObjectType: 1
+            ownerType: 6
+            publishState: 7
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 7
-            - 7
+            - 1
+            - 1
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
-          - defaultObjectType: 4
-            ownerType: 1
-            publishState: 1
+          - defaultObjectType: 1
+            ownerType: 6
+            publishState: 7
             name: name
             description: description
             href: https://openapi-generator.tech
             id: id
             objectTypes:
-            - 7
-            - 7
+            - 1
+            - 1
             ownerId: ownerId
             viewRef: https://openapi-generator.tech
           description: description
@@ -32341,42 +32583,57 @@ components:
           assignable: true
           array: true
           uiReadonlyInMicroversion: true
-          valueType: 6
+          valueType: 4
           name: name
           href: https://openapi-generator.tech
           id: id
           categoryPropertyConfigInfo:
-            publishState: 3
-            quantityType: 2
+            publishState: 7
+            quantityType: 1
             minDate: 2000-01-23T04:56:07.000+00:00
             computedPartPropertyConfig:
               computedPartPropertySpecFunction: computedPartPropertySpecFunction
-              computedPropertyFunctionReturnType: 0
+              computedPropertyFunctionReturnType: 5
               propertyFunctionDocumentId: propertyFunctionDocumentId
               computedPartPropertySpecNamespace: computedPartPropertySpecNamespace
             defaultValue: defaultValue
             displayName: displayName
-            maxValue: 5.637376656633329
-            minLength: 7
-            multivalued: true
+            minLength: 2
             pattern: pattern
-            maxCount: 1
+            maxCount: 2
+            computedAssemblyPropertyFilterInverted: true
             required: true
-            computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
-            computedPropertyFunctionURL: computedPropertyFunctionURL
-            minValue: 9.301444243932576
-            multiline: true
-            maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 2
+            minValue: 4.145608029883936
+            computedAssemblyPropertyAggregationOperator: 0
+            computedAssemblyPropertyConfig:
+              errorValuePolicy: ExcludeFromComputation
+              filterPropertyId: filterPropertyId
+              aggregationOperator: SUM
+              aggregatedPropertyId: aggregatedPropertyId
+              missingValuePolicy: ExcludeFromComputation
+              isFilterPropertyInverted: true
+              secondaryPropertyId: secondaryPropertyId
+            computedAssemblyPropertyErrorValuePolicy: 6
             computedPropertyFunctionName: computedPropertyFunctionName
-            maxLength: 5
             enumValues:
             - label: label
-              state: 6
+              state: 5
               value: value
             - label: label
-              state: 6
+              state: 5
               value: value
+            maxValue: 9.301444243932576
+            multivalued: true
+            computedAssemblyPropertyAggregatedPropertyId: computedAssemblyPropertyAggregatedPropertyId
+            computedAssemblyPropertyMissingValuePolicy: 1
+            computedPropertyFunctionNamespace: computedPropertyFunctionNamespace
+            computedPropertyFunctionURL: computedPropertyFunctionURL
+            multiline: true
+            computedAssemblyPropertySecondaryPropertyId: computedAssemblyPropertySecondaryPropertyId
+            maxDate: 2000-01-23T04:56:07.000+00:00
+            minCount: 3
+            computedAssemblyPropertyFilterPropertyId: computedAssemblyPropertyFilterPropertyId
+            maxLength: 7
           viewRef: https://openapi-generator.tech
       properties:
         href:
@@ -37866,6 +38123,15 @@ components:
           - V1835_VARIABLE_FEATURE_VALUE_VERSION_BUMP
           - V1836_INTERSECTION_CURVE_PATTERN_FIX_VERSION_BUMP
           - V1837_SENTENCE_CASE_IN_VARIABLE_FEATURE_VERSION_BUMP
+          - SKIP_1838
+          - SKIP_1839
+          - SKIP_1840
+          - V1841_LOFT_CONNECTION_GUIDE_DIFF
+          - V1842_HOLE_GENERAL_INTERSECT
+          - V1843_GUSSET_FEATURE
+          - V1844_ENDCAP_FEATURE
+          - V1845_RULED_SURFACE_DERIVATIVE
+          - V1846_BEND_LINE_ATTACHED
           - UNKNOWN
           type: string
         btType:
@@ -38772,6 +39038,13 @@ components:
           branchPointElementPath:
           - branchPointElementPath
           - branchPointElementPath
+          sourceModifiedBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
           targetElementPath:
           - targetElementPath
           - targetElementPath
@@ -38780,10 +39053,19 @@ components:
           sourceElementPath:
           - sourceElementPath
           - sourceElementPath
+          targetModifiedBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          sourceModifiedAt: 2000-01-23T04:56:07.000+00:00
           dependentElementMergeInfo: null
           mergeable: true
           targetElementStatus: CREATED
           sourceElementStatus: CREATED
+          targetModifiedAt: 2000-01-23T04:56:07.000+00:00
           elementType: PARTSTUDIO
           elementDataType: elementDataType
         - elementId: elementId
@@ -38791,6 +39073,13 @@ components:
           branchPointElementPath:
           - branchPointElementPath
           - branchPointElementPath
+          sourceModifiedBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
           targetElementPath:
           - targetElementPath
           - targetElementPath
@@ -38799,10 +39088,19 @@ components:
           sourceElementPath:
           - sourceElementPath
           - sourceElementPath
+          targetModifiedBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          sourceModifiedAt: 2000-01-23T04:56:07.000+00:00
           dependentElementMergeInfo: null
           mergeable: true
           targetElementStatus: CREATED
           sourceElementStatus: CREATED
+          targetModifiedAt: 2000-01-23T04:56:07.000+00:00
           elementType: PARTSTUDIO
           elementDataType: elementDataType
         isBranchPointAtStart: true
@@ -38830,16 +39128,16 @@ components:
       type: object
     BTMetadataCategorySummaryInfo:
       example:
-        defaultObjectType: 4
-        ownerType: 1
-        publishState: 1
+        defaultObjectType: 1
+        ownerType: 6
+        publishState: 7
         name: name
         description: description
         href: https://openapi-generator.tech
         id: id
         objectTypes:
-        - 7
-        - 7
+        - 1
+        - 1
         ownerId: ownerId
         viewRef: https://openapi-generator.tech
       properties:
@@ -38880,7 +39178,7 @@ components:
     BTMetadataEnumValue:
       example:
         label: label
-        state: 6
+        state: 5
         value: value
       properties:
         label:
@@ -46531,12 +46829,14 @@ components:
       example:
         splitAssembliesIntoMultipleDocuments: true
         originalForeignId: originalForeignId
+        proxyDocumentId: proxyDocumentId
         textAsGeometry: true
         sheetIndices:
         - 2
         - 2
         flatten: true
         password: password
+        proxyWorkspaceVersionId: proxyWorkspaceVersionId
         onePartPerDoc: true
         triggerAutoDownload: true
         elementId: elementId
@@ -46551,6 +46851,7 @@ components:
         specifyUnits: true
         distanceTolerance: 6.027456183070403
         foreignId: foreignId
+        proxyElementId: proxyElementId
         unit: unit
         sendCopyToMe: true
         angularTolerance: 0.8008281904610115
@@ -46558,7 +46859,6 @@ components:
         processedForeignId: processedForeignId
         connectionId: connectionId
         getyAxisIsUp: true
-        proxiedDocumentId: proxiedDocumentId
         projectId: projectId
         uploadId: uploadId
         configuration: configuration
@@ -46575,6 +46875,7 @@ components:
         includeExportIds: true
         cloudObjectId: cloudObjectId
         colorMethod: colorMethod
+        proxyWorkspaceVersion: proxyWorkspaceVersion
         currentSheetOnly: true
         selectablePdfText: true
         fromUserId: fromUserId
@@ -46700,7 +47001,13 @@ components:
           type: string
         projectId:
           type: string
-        proxiedDocumentId:
+        proxyDocumentId:
+          type: string
+        proxyElementId:
+          type: string
+        proxyWorkspaceVersion:
+          type: string
+        proxyWorkspaceVersionId:
           type: string
         selectablePdfText:
           type: boolean
@@ -55611,6 +55918,8 @@ components:
       properties:
         btType:
           type: string
+        isComputedAssemblyProperty:
+          type: boolean
         isComputedProperty:
           type: boolean
       type: object

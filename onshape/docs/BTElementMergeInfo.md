@@ -14,9 +14,13 @@ Name | Type | Description | Notes
 **SourceElementName** | Pointer to **string** |  | [optional] 
 **SourceElementPath** | Pointer to **[]string** |  | [optional] 
 **SourceElementStatus** | Pointer to **string** |  | [optional] 
+**SourceModifiedAt** | Pointer to **JSONTime** |  | [optional] 
+**SourceModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **TargetElementName** | Pointer to **string** |  | [optional] 
 **TargetElementPath** | Pointer to **[]string** |  | [optional] 
 **TargetElementStatus** | Pointer to **string** |  | [optional] 
+**TargetModifiedAt** | Pointer to **JSONTime** |  | [optional] 
+**TargetModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -287,6 +291,56 @@ SetSourceElementStatus sets SourceElementStatus field to given value.
 
 HasSourceElementStatus returns a boolean if a field has been set.
 
+### GetSourceModifiedAt
+
+`func (o *BTElementMergeInfo) GetSourceModifiedAt() JSONTime`
+
+GetSourceModifiedAt returns the SourceModifiedAt field if non-nil, zero value otherwise.
+
+### GetSourceModifiedAtOk
+
+`func (o *BTElementMergeInfo) GetSourceModifiedAtOk() (*JSONTime, bool)`
+
+GetSourceModifiedAtOk returns a tuple with the SourceModifiedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceModifiedAt
+
+`func (o *BTElementMergeInfo) SetSourceModifiedAt(v JSONTime)`
+
+SetSourceModifiedAt sets SourceModifiedAt field to given value.
+
+### HasSourceModifiedAt
+
+`func (o *BTElementMergeInfo) HasSourceModifiedAt() bool`
+
+HasSourceModifiedAt returns a boolean if a field has been set.
+
+### GetSourceModifiedBy
+
+`func (o *BTElementMergeInfo) GetSourceModifiedBy() BTUserBasicSummaryInfo`
+
+GetSourceModifiedBy returns the SourceModifiedBy field if non-nil, zero value otherwise.
+
+### GetSourceModifiedByOk
+
+`func (o *BTElementMergeInfo) GetSourceModifiedByOk() (*BTUserBasicSummaryInfo, bool)`
+
+GetSourceModifiedByOk returns a tuple with the SourceModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceModifiedBy
+
+`func (o *BTElementMergeInfo) SetSourceModifiedBy(v BTUserBasicSummaryInfo)`
+
+SetSourceModifiedBy sets SourceModifiedBy field to given value.
+
+### HasSourceModifiedBy
+
+`func (o *BTElementMergeInfo) HasSourceModifiedBy() bool`
+
+HasSourceModifiedBy returns a boolean if a field has been set.
+
 ### GetTargetElementName
 
 `func (o *BTElementMergeInfo) GetTargetElementName() string`
@@ -361,6 +415,56 @@ SetTargetElementStatus sets TargetElementStatus field to given value.
 `func (o *BTElementMergeInfo) HasTargetElementStatus() bool`
 
 HasTargetElementStatus returns a boolean if a field has been set.
+
+### GetTargetModifiedAt
+
+`func (o *BTElementMergeInfo) GetTargetModifiedAt() JSONTime`
+
+GetTargetModifiedAt returns the TargetModifiedAt field if non-nil, zero value otherwise.
+
+### GetTargetModifiedAtOk
+
+`func (o *BTElementMergeInfo) GetTargetModifiedAtOk() (*JSONTime, bool)`
+
+GetTargetModifiedAtOk returns a tuple with the TargetModifiedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetModifiedAt
+
+`func (o *BTElementMergeInfo) SetTargetModifiedAt(v JSONTime)`
+
+SetTargetModifiedAt sets TargetModifiedAt field to given value.
+
+### HasTargetModifiedAt
+
+`func (o *BTElementMergeInfo) HasTargetModifiedAt() bool`
+
+HasTargetModifiedAt returns a boolean if a field has been set.
+
+### GetTargetModifiedBy
+
+`func (o *BTElementMergeInfo) GetTargetModifiedBy() BTUserBasicSummaryInfo`
+
+GetTargetModifiedBy returns the TargetModifiedBy field if non-nil, zero value otherwise.
+
+### GetTargetModifiedByOk
+
+`func (o *BTElementMergeInfo) GetTargetModifiedByOk() (*BTUserBasicSummaryInfo, bool)`
+
+GetTargetModifiedByOk returns a tuple with the TargetModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetModifiedBy
+
+`func (o *BTElementMergeInfo) SetTargetModifiedBy(v BTUserBasicSummaryInfo)`
+
+SetTargetModifiedBy sets TargetModifiedBy field to given value.
+
+### HasTargetModifiedBy
+
+`func (o *BTElementMergeInfo) HasTargetModifiedBy() bool`
+
+HasTargetModifiedBy returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

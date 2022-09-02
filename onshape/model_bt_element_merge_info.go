@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.152.6309-06d9e62c38f0
+API version: 1.153.6326-97b3616ccba2
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,19 +17,23 @@ import (
 
 // BTElementMergeInfo struct for BTElementMergeInfo
 type BTElementMergeInfo struct {
-	BranchPointElementName    *string             `json:"branchPointElementName,omitempty"`
-	BranchPointElementPath    []string            `json:"branchPointElementPath,omitempty"`
-	DependentElementMergeInfo *BTElementMergeInfo `json:"dependentElementMergeInfo,omitempty"`
-	ElementDataType           *string             `json:"elementDataType,omitempty"`
-	ElementId                 *string             `json:"elementId,omitempty"`
-	ElementType               *string             `json:"elementType,omitempty"`
-	Mergeable                 *bool               `json:"mergeable,omitempty"`
-	SourceElementName         *string             `json:"sourceElementName,omitempty"`
-	SourceElementPath         []string            `json:"sourceElementPath,omitempty"`
-	SourceElementStatus       *string             `json:"sourceElementStatus,omitempty"`
-	TargetElementName         *string             `json:"targetElementName,omitempty"`
-	TargetElementPath         []string            `json:"targetElementPath,omitempty"`
-	TargetElementStatus       *string             `json:"targetElementStatus,omitempty"`
+	BranchPointElementName    *string                 `json:"branchPointElementName,omitempty"`
+	BranchPointElementPath    []string                `json:"branchPointElementPath,omitempty"`
+	DependentElementMergeInfo *BTElementMergeInfo     `json:"dependentElementMergeInfo,omitempty"`
+	ElementDataType           *string                 `json:"elementDataType,omitempty"`
+	ElementId                 *string                 `json:"elementId,omitempty"`
+	ElementType               *string                 `json:"elementType,omitempty"`
+	Mergeable                 *bool                   `json:"mergeable,omitempty"`
+	SourceElementName         *string                 `json:"sourceElementName,omitempty"`
+	SourceElementPath         []string                `json:"sourceElementPath,omitempty"`
+	SourceElementStatus       *string                 `json:"sourceElementStatus,omitempty"`
+	SourceModifiedAt          *JSONTime               `json:"sourceModifiedAt,omitempty"`
+	SourceModifiedBy          *BTUserBasicSummaryInfo `json:"sourceModifiedBy,omitempty"`
+	TargetElementName         *string                 `json:"targetElementName,omitempty"`
+	TargetElementPath         []string                `json:"targetElementPath,omitempty"`
+	TargetElementStatus       *string                 `json:"targetElementStatus,omitempty"`
+	TargetModifiedAt          *JSONTime               `json:"targetModifiedAt,omitempty"`
+	TargetModifiedBy          *BTUserBasicSummaryInfo `json:"targetModifiedBy,omitempty"`
 }
 
 // NewBTElementMergeInfo instantiates a new BTElementMergeInfo object
@@ -369,6 +373,70 @@ func (o *BTElementMergeInfo) SetSourceElementStatus(v string) {
 	o.SourceElementStatus = &v
 }
 
+// GetSourceModifiedAt returns the SourceModifiedAt field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetSourceModifiedAt() JSONTime {
+	if o == nil || o.SourceModifiedAt == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.SourceModifiedAt
+}
+
+// GetSourceModifiedAtOk returns a tuple with the SourceModifiedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetSourceModifiedAtOk() (*JSONTime, bool) {
+	if o == nil || o.SourceModifiedAt == nil {
+		return nil, false
+	}
+	return o.SourceModifiedAt, true
+}
+
+// HasSourceModifiedAt returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasSourceModifiedAt() bool {
+	if o != nil && o.SourceModifiedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceModifiedAt gets a reference to the given JSONTime and assigns it to the SourceModifiedAt field.
+func (o *BTElementMergeInfo) SetSourceModifiedAt(v JSONTime) {
+	o.SourceModifiedAt = &v
+}
+
+// GetSourceModifiedBy returns the SourceModifiedBy field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetSourceModifiedBy() BTUserBasicSummaryInfo {
+	if o == nil || o.SourceModifiedBy == nil {
+		var ret BTUserBasicSummaryInfo
+		return ret
+	}
+	return *o.SourceModifiedBy
+}
+
+// GetSourceModifiedByOk returns a tuple with the SourceModifiedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetSourceModifiedByOk() (*BTUserBasicSummaryInfo, bool) {
+	if o == nil || o.SourceModifiedBy == nil {
+		return nil, false
+	}
+	return o.SourceModifiedBy, true
+}
+
+// HasSourceModifiedBy returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasSourceModifiedBy() bool {
+	if o != nil && o.SourceModifiedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceModifiedBy gets a reference to the given BTUserBasicSummaryInfo and assigns it to the SourceModifiedBy field.
+func (o *BTElementMergeInfo) SetSourceModifiedBy(v BTUserBasicSummaryInfo) {
+	o.SourceModifiedBy = &v
+}
+
 // GetTargetElementName returns the TargetElementName field value if set, zero value otherwise.
 func (o *BTElementMergeInfo) GetTargetElementName() string {
 	if o == nil || o.TargetElementName == nil {
@@ -465,6 +533,70 @@ func (o *BTElementMergeInfo) SetTargetElementStatus(v string) {
 	o.TargetElementStatus = &v
 }
 
+// GetTargetModifiedAt returns the TargetModifiedAt field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetTargetModifiedAt() JSONTime {
+	if o == nil || o.TargetModifiedAt == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.TargetModifiedAt
+}
+
+// GetTargetModifiedAtOk returns a tuple with the TargetModifiedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetTargetModifiedAtOk() (*JSONTime, bool) {
+	if o == nil || o.TargetModifiedAt == nil {
+		return nil, false
+	}
+	return o.TargetModifiedAt, true
+}
+
+// HasTargetModifiedAt returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasTargetModifiedAt() bool {
+	if o != nil && o.TargetModifiedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTargetModifiedAt gets a reference to the given JSONTime and assigns it to the TargetModifiedAt field.
+func (o *BTElementMergeInfo) SetTargetModifiedAt(v JSONTime) {
+	o.TargetModifiedAt = &v
+}
+
+// GetTargetModifiedBy returns the TargetModifiedBy field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetTargetModifiedBy() BTUserBasicSummaryInfo {
+	if o == nil || o.TargetModifiedBy == nil {
+		var ret BTUserBasicSummaryInfo
+		return ret
+	}
+	return *o.TargetModifiedBy
+}
+
+// GetTargetModifiedByOk returns a tuple with the TargetModifiedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetTargetModifiedByOk() (*BTUserBasicSummaryInfo, bool) {
+	if o == nil || o.TargetModifiedBy == nil {
+		return nil, false
+	}
+	return o.TargetModifiedBy, true
+}
+
+// HasTargetModifiedBy returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasTargetModifiedBy() bool {
+	if o != nil && o.TargetModifiedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTargetModifiedBy gets a reference to the given BTUserBasicSummaryInfo and assigns it to the TargetModifiedBy field.
+func (o *BTElementMergeInfo) SetTargetModifiedBy(v BTUserBasicSummaryInfo) {
+	o.TargetModifiedBy = &v
+}
+
 func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BranchPointElementName != nil {
@@ -497,6 +629,12 @@ func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	if o.SourceElementStatus != nil {
 		toSerialize["sourceElementStatus"] = o.SourceElementStatus
 	}
+	if o.SourceModifiedAt != nil {
+		toSerialize["sourceModifiedAt"] = o.SourceModifiedAt
+	}
+	if o.SourceModifiedBy != nil {
+		toSerialize["sourceModifiedBy"] = o.SourceModifiedBy
+	}
 	if o.TargetElementName != nil {
 		toSerialize["targetElementName"] = o.TargetElementName
 	}
@@ -505,6 +643,12 @@ func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TargetElementStatus != nil {
 		toSerialize["targetElementStatus"] = o.TargetElementStatus
+	}
+	if o.TargetModifiedAt != nil {
+		toSerialize["targetModifiedAt"] = o.TargetModifiedAt
+	}
+	if o.TargetModifiedBy != nil {
+		toSerialize["targetModifiedBy"] = o.TargetModifiedBy
 	}
 	return json.Marshal(toSerialize)
 }

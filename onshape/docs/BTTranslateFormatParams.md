@@ -50,7 +50,10 @@ Name | Type | Description | Notes
 **PasswordRequired** | Pointer to **bool** |  | [optional] 
 **ProcessedForeignId** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
-**ProxiedDocumentId** | Pointer to **string** |  | [optional] 
+**ProxyDocumentId** | Pointer to **string** |  | [optional] 
+**ProxyElementId** | Pointer to **string** |  | [optional] 
+**ProxyWorkspaceVersion** | Pointer to **string** |  | [optional] 
+**ProxyWorkspaceVersionId** | Pointer to **string** |  | [optional] 
 **SelectablePdfText** | Pointer to **bool** |  | [optional] 
 **SendCopyToMe** | Pointer to **bool** |  | [optional] 
 **SheetIndices** | Pointer to **[]int32** |  | [optional] 
@@ -1237,30 +1240,105 @@ SetProjectId sets ProjectId field to given value.
 
 HasProjectId returns a boolean if a field has been set.
 
-### GetProxiedDocumentId
+### GetProxyDocumentId
 
-`func (o *BTTranslateFormatParams) GetProxiedDocumentId() string`
+`func (o *BTTranslateFormatParams) GetProxyDocumentId() string`
 
-GetProxiedDocumentId returns the ProxiedDocumentId field if non-nil, zero value otherwise.
+GetProxyDocumentId returns the ProxyDocumentId field if non-nil, zero value otherwise.
 
-### GetProxiedDocumentIdOk
+### GetProxyDocumentIdOk
 
-`func (o *BTTranslateFormatParams) GetProxiedDocumentIdOk() (*string, bool)`
+`func (o *BTTranslateFormatParams) GetProxyDocumentIdOk() (*string, bool)`
 
-GetProxiedDocumentIdOk returns a tuple with the ProxiedDocumentId field if it's non-nil, zero value otherwise
+GetProxyDocumentIdOk returns a tuple with the ProxyDocumentId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProxiedDocumentId
+### SetProxyDocumentId
 
-`func (o *BTTranslateFormatParams) SetProxiedDocumentId(v string)`
+`func (o *BTTranslateFormatParams) SetProxyDocumentId(v string)`
 
-SetProxiedDocumentId sets ProxiedDocumentId field to given value.
+SetProxyDocumentId sets ProxyDocumentId field to given value.
 
-### HasProxiedDocumentId
+### HasProxyDocumentId
 
-`func (o *BTTranslateFormatParams) HasProxiedDocumentId() bool`
+`func (o *BTTranslateFormatParams) HasProxyDocumentId() bool`
 
-HasProxiedDocumentId returns a boolean if a field has been set.
+HasProxyDocumentId returns a boolean if a field has been set.
+
+### GetProxyElementId
+
+`func (o *BTTranslateFormatParams) GetProxyElementId() string`
+
+GetProxyElementId returns the ProxyElementId field if non-nil, zero value otherwise.
+
+### GetProxyElementIdOk
+
+`func (o *BTTranslateFormatParams) GetProxyElementIdOk() (*string, bool)`
+
+GetProxyElementIdOk returns a tuple with the ProxyElementId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProxyElementId
+
+`func (o *BTTranslateFormatParams) SetProxyElementId(v string)`
+
+SetProxyElementId sets ProxyElementId field to given value.
+
+### HasProxyElementId
+
+`func (o *BTTranslateFormatParams) HasProxyElementId() bool`
+
+HasProxyElementId returns a boolean if a field has been set.
+
+### GetProxyWorkspaceVersion
+
+`func (o *BTTranslateFormatParams) GetProxyWorkspaceVersion() string`
+
+GetProxyWorkspaceVersion returns the ProxyWorkspaceVersion field if non-nil, zero value otherwise.
+
+### GetProxyWorkspaceVersionOk
+
+`func (o *BTTranslateFormatParams) GetProxyWorkspaceVersionOk() (*string, bool)`
+
+GetProxyWorkspaceVersionOk returns a tuple with the ProxyWorkspaceVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProxyWorkspaceVersion
+
+`func (o *BTTranslateFormatParams) SetProxyWorkspaceVersion(v string)`
+
+SetProxyWorkspaceVersion sets ProxyWorkspaceVersion field to given value.
+
+### HasProxyWorkspaceVersion
+
+`func (o *BTTranslateFormatParams) HasProxyWorkspaceVersion() bool`
+
+HasProxyWorkspaceVersion returns a boolean if a field has been set.
+
+### GetProxyWorkspaceVersionId
+
+`func (o *BTTranslateFormatParams) GetProxyWorkspaceVersionId() string`
+
+GetProxyWorkspaceVersionId returns the ProxyWorkspaceVersionId field if non-nil, zero value otherwise.
+
+### GetProxyWorkspaceVersionIdOk
+
+`func (o *BTTranslateFormatParams) GetProxyWorkspaceVersionIdOk() (*string, bool)`
+
+GetProxyWorkspaceVersionIdOk returns a tuple with the ProxyWorkspaceVersionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProxyWorkspaceVersionId
+
+`func (o *BTTranslateFormatParams) SetProxyWorkspaceVersionId(v string)`
+
+SetProxyWorkspaceVersionId sets ProxyWorkspaceVersionId field to given value.
+
+### HasProxyWorkspaceVersionId
+
+`func (o *BTTranslateFormatParams) HasProxyWorkspaceVersionId() bool`
+
+HasProxyWorkspaceVersionId returns a boolean if a field has been set.
 
 ### GetSelectablePdfText
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.152.6309-06d9e62c38f0
+API version: 1.153.6326-97b3616ccba2
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -63,7 +63,10 @@ type BTTranslateFormatParams struct {
 	PasswordRequired                     *bool    `json:"passwordRequired,omitempty"`
 	ProcessedForeignId                   *string  `json:"processedForeignId,omitempty"`
 	ProjectId                            *string  `json:"projectId,omitempty"`
-	ProxiedDocumentId                    *string  `json:"proxiedDocumentId,omitempty"`
+	ProxyDocumentId                      *string  `json:"proxyDocumentId,omitempty"`
+	ProxyElementId                       *string  `json:"proxyElementId,omitempty"`
+	ProxyWorkspaceVersion                *string  `json:"proxyWorkspaceVersion,omitempty"`
+	ProxyWorkspaceVersionId              *string  `json:"proxyWorkspaceVersionId,omitempty"`
 	SelectablePdfText                    *bool    `json:"selectablePdfText,omitempty"`
 	SendCopyToMe                         *bool    `json:"sendCopyToMe,omitempty"`
 	SheetIndices                         []int32  `json:"sheetIndices,omitempty"`
@@ -1571,36 +1574,132 @@ func (o *BTTranslateFormatParams) SetProjectId(v string) {
 	o.ProjectId = &v
 }
 
-// GetProxiedDocumentId returns the ProxiedDocumentId field value if set, zero value otherwise.
-func (o *BTTranslateFormatParams) GetProxiedDocumentId() string {
-	if o == nil || o.ProxiedDocumentId == nil {
+// GetProxyDocumentId returns the ProxyDocumentId field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetProxyDocumentId() string {
+	if o == nil || o.ProxyDocumentId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProxiedDocumentId
+	return *o.ProxyDocumentId
 }
 
-// GetProxiedDocumentIdOk returns a tuple with the ProxiedDocumentId field value if set, nil otherwise
+// GetProxyDocumentIdOk returns a tuple with the ProxyDocumentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTTranslateFormatParams) GetProxiedDocumentIdOk() (*string, bool) {
-	if o == nil || o.ProxiedDocumentId == nil {
+func (o *BTTranslateFormatParams) GetProxyDocumentIdOk() (*string, bool) {
+	if o == nil || o.ProxyDocumentId == nil {
 		return nil, false
 	}
-	return o.ProxiedDocumentId, true
+	return o.ProxyDocumentId, true
 }
 
-// HasProxiedDocumentId returns a boolean if a field has been set.
-func (o *BTTranslateFormatParams) HasProxiedDocumentId() bool {
-	if o != nil && o.ProxiedDocumentId != nil {
+// HasProxyDocumentId returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasProxyDocumentId() bool {
+	if o != nil && o.ProxyDocumentId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProxiedDocumentId gets a reference to the given string and assigns it to the ProxiedDocumentId field.
-func (o *BTTranslateFormatParams) SetProxiedDocumentId(v string) {
-	o.ProxiedDocumentId = &v
+// SetProxyDocumentId gets a reference to the given string and assigns it to the ProxyDocumentId field.
+func (o *BTTranslateFormatParams) SetProxyDocumentId(v string) {
+	o.ProxyDocumentId = &v
+}
+
+// GetProxyElementId returns the ProxyElementId field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetProxyElementId() string {
+	if o == nil || o.ProxyElementId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ProxyElementId
+}
+
+// GetProxyElementIdOk returns a tuple with the ProxyElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetProxyElementIdOk() (*string, bool) {
+	if o == nil || o.ProxyElementId == nil {
+		return nil, false
+	}
+	return o.ProxyElementId, true
+}
+
+// HasProxyElementId returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasProxyElementId() bool {
+	if o != nil && o.ProxyElementId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProxyElementId gets a reference to the given string and assigns it to the ProxyElementId field.
+func (o *BTTranslateFormatParams) SetProxyElementId(v string) {
+	o.ProxyElementId = &v
+}
+
+// GetProxyWorkspaceVersion returns the ProxyWorkspaceVersion field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetProxyWorkspaceVersion() string {
+	if o == nil || o.ProxyWorkspaceVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.ProxyWorkspaceVersion
+}
+
+// GetProxyWorkspaceVersionOk returns a tuple with the ProxyWorkspaceVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetProxyWorkspaceVersionOk() (*string, bool) {
+	if o == nil || o.ProxyWorkspaceVersion == nil {
+		return nil, false
+	}
+	return o.ProxyWorkspaceVersion, true
+}
+
+// HasProxyWorkspaceVersion returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasProxyWorkspaceVersion() bool {
+	if o != nil && o.ProxyWorkspaceVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProxyWorkspaceVersion gets a reference to the given string and assigns it to the ProxyWorkspaceVersion field.
+func (o *BTTranslateFormatParams) SetProxyWorkspaceVersion(v string) {
+	o.ProxyWorkspaceVersion = &v
+}
+
+// GetProxyWorkspaceVersionId returns the ProxyWorkspaceVersionId field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetProxyWorkspaceVersionId() string {
+	if o == nil || o.ProxyWorkspaceVersionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ProxyWorkspaceVersionId
+}
+
+// GetProxyWorkspaceVersionIdOk returns a tuple with the ProxyWorkspaceVersionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetProxyWorkspaceVersionIdOk() (*string, bool) {
+	if o == nil || o.ProxyWorkspaceVersionId == nil {
+		return nil, false
+	}
+	return o.ProxyWorkspaceVersionId, true
+}
+
+// HasProxyWorkspaceVersionId returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasProxyWorkspaceVersionId() bool {
+	if o != nil && o.ProxyWorkspaceVersionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProxyWorkspaceVersionId gets a reference to the given string and assigns it to the ProxyWorkspaceVersionId field.
+func (o *BTTranslateFormatParams) SetProxyWorkspaceVersionId(v string) {
+	o.ProxyWorkspaceVersionId = &v
 }
 
 // GetSelectablePdfText returns the SelectablePdfText field value if set, zero value otherwise.
@@ -2255,8 +2354,17 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
 	}
-	if o.ProxiedDocumentId != nil {
-		toSerialize["proxiedDocumentId"] = o.ProxiedDocumentId
+	if o.ProxyDocumentId != nil {
+		toSerialize["proxyDocumentId"] = o.ProxyDocumentId
+	}
+	if o.ProxyElementId != nil {
+		toSerialize["proxyElementId"] = o.ProxyElementId
+	}
+	if o.ProxyWorkspaceVersion != nil {
+		toSerialize["proxyWorkspaceVersion"] = o.ProxyWorkspaceVersion
+	}
+	if o.ProxyWorkspaceVersionId != nil {
+		toSerialize["proxyWorkspaceVersionId"] = o.ProxyWorkspaceVersionId
 	}
 	if o.SelectablePdfText != nil {
 		toSerialize["selectablePdfText"] = o.SelectablePdfText

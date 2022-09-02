@@ -1188,7 +1188,7 @@ Name | Type | Description  | Notes
 
 ## GetElementsInDocument
 
-> []BTDocumentElementInfo GetElementsInDocument(ctx, did, wvm, wvmid).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).LinkDocumentId(linkDocumentId).Execute()
+> []BTDocumentElementInfo GetElementsInDocument(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).Execute()
 
 Retrieve tabs by document ID and workspace or version or microversion ID.
 
@@ -1205,17 +1205,17 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wvm := "wvm_example" // string | 
-    wvmid := "wvmid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     elementType := "elementType_example" // string |  (optional) (default to "")
     elementId := "elementId_example" // string |  (optional) (default to "")
     withThumbnails := true // bool |  (optional) (default to false)
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DocumentApi.GetElementsInDocument(context.Background(), did, wvm, wvmid).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).LinkDocumentId(linkDocumentId).Execute()
+    resp, r, err := apiClient.DocumentApi.GetElementsInDocument(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetElementsInDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1231,9 +1231,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
 
 ### Other Parameters
 
@@ -1245,10 +1245,10 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **elementType** | **string** |  | [default to &quot;&quot;]
  **elementId** | **string** |  | [default to &quot;&quot;]
  **withThumbnails** | **bool** |  | [default to false]
- **linkDocumentId** | **string** |  | 
 
 ### Return type
 

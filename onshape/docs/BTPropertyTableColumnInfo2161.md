@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**IsComputedAssemblyProperty** | Pointer to **bool** |  | [optional] 
 **IsComputedProperty** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPropertyTableColumnInfo2161) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetIsComputedAssemblyProperty
+
+`func (o *BTPropertyTableColumnInfo2161) GetIsComputedAssemblyProperty() bool`
+
+GetIsComputedAssemblyProperty returns the IsComputedAssemblyProperty field if non-nil, zero value otherwise.
+
+### GetIsComputedAssemblyPropertyOk
+
+`func (o *BTPropertyTableColumnInfo2161) GetIsComputedAssemblyPropertyOk() (*bool, bool)`
+
+GetIsComputedAssemblyPropertyOk returns a tuple with the IsComputedAssemblyProperty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsComputedAssemblyProperty
+
+`func (o *BTPropertyTableColumnInfo2161) SetIsComputedAssemblyProperty(v bool)`
+
+SetIsComputedAssemblyProperty sets IsComputedAssemblyProperty field to given value.
+
+### HasIsComputedAssemblyProperty
+
+`func (o *BTPropertyTableColumnInfo2161) HasIsComputedAssemblyProperty() bool`
+
+HasIsComputedAssemblyProperty returns a boolean if a field has been set.
 
 ### GetIsComputedProperty
 
