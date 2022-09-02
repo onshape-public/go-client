@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ## GetWMVEPsMetadata
 
-> BTMetadataObjectListInfoBTMetadataPartInfo GetWMVEPsMetadata(ctx, did, wvm, wvmid, eid).Configuration(configuration).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectListInfoBTMetadataPartInfo GetWMVEPsMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
 
 Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -313,19 +313,19 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wvm := "wvm_example" // string | 
-    wvmid := "wvmid_example" // string | 
-    eid := "eid_example" // string | 
-    configuration := "configuration_example" // string |  (optional)
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
     inferMetadataOwner := true // bool |  (optional) (default to false)
     includeComputedProperties := true // bool |  (optional) (default to true)
     thumbnail := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.GetWMVEPsMetadata(context.Background(), did, wvm, wvmid, eid).Configuration(configuration).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetWMVEPsMetadata(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEPsMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -341,10 +341,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -357,8 +357,8 @@ Name | Type | Description  | Notes
 
 
 
- **configuration** | **string** |  | 
- **linkDocumentId** | **string** |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
  **inferMetadataOwner** | **bool** |  | [default to false]
  **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]

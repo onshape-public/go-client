@@ -4,6 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ComputedAssemblyPropertyAggregatedPropertyId** | Pointer to **string** |  | [optional] 
+**ComputedAssemblyPropertyAggregationOperator** | Pointer to **int32** |  | [optional] 
+**ComputedAssemblyPropertyConfig** | Pointer to [**BTComputedAssemblyPropertyConfig**](BTComputedAssemblyPropertyConfig.md) |  | [optional] 
+**ComputedAssemblyPropertyErrorValuePolicy** | Pointer to **int32** |  | [optional] 
+**ComputedAssemblyPropertyFilterInverted** | Pointer to **bool** |  | [optional] 
+**ComputedAssemblyPropertyFilterPropertyId** | Pointer to **string** |  | [optional] 
+**ComputedAssemblyPropertyMissingValuePolicy** | Pointer to **int32** |  | [optional] 
+**ComputedAssemblyPropertySecondaryPropertyId** | Pointer to **string** |  | [optional] 
 **ComputedPartPropertyConfig** | Pointer to [**BTComputedPartPropertyConfig**](BTComputedPartPropertyConfig.md) |  | [optional] 
 **ComputedPropertyFunctionName** | Pointer to **string** |  | [optional] 
 **ComputedPropertyFunctionNamespace** | Pointer to **string** |  | [optional] 
@@ -44,6 +52,206 @@ will change when the set of required properties is changed
 NewBTCategoryPropertyConfigInfoWithDefaults instantiates a new BTCategoryPropertyConfigInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetComputedAssemblyPropertyAggregatedPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregatedPropertyId() string`
+
+GetComputedAssemblyPropertyAggregatedPropertyId returns the ComputedAssemblyPropertyAggregatedPropertyId field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertyAggregatedPropertyIdOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregatedPropertyIdOk() (*string, bool)`
+
+GetComputedAssemblyPropertyAggregatedPropertyIdOk returns a tuple with the ComputedAssemblyPropertyAggregatedPropertyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertyAggregatedPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyAggregatedPropertyId(v string)`
+
+SetComputedAssemblyPropertyAggregatedPropertyId sets ComputedAssemblyPropertyAggregatedPropertyId field to given value.
+
+### HasComputedAssemblyPropertyAggregatedPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyAggregatedPropertyId() bool`
+
+HasComputedAssemblyPropertyAggregatedPropertyId returns a boolean if a field has been set.
+
+### GetComputedAssemblyPropertyAggregationOperator
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregationOperator() int32`
+
+GetComputedAssemblyPropertyAggregationOperator returns the ComputedAssemblyPropertyAggregationOperator field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertyAggregationOperatorOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyAggregationOperatorOk() (*int32, bool)`
+
+GetComputedAssemblyPropertyAggregationOperatorOk returns a tuple with the ComputedAssemblyPropertyAggregationOperator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertyAggregationOperator
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyAggregationOperator(v int32)`
+
+SetComputedAssemblyPropertyAggregationOperator sets ComputedAssemblyPropertyAggregationOperator field to given value.
+
+### HasComputedAssemblyPropertyAggregationOperator
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyAggregationOperator() bool`
+
+HasComputedAssemblyPropertyAggregationOperator returns a boolean if a field has been set.
+
+### GetComputedAssemblyPropertyConfig
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyConfig() BTComputedAssemblyPropertyConfig`
+
+GetComputedAssemblyPropertyConfig returns the ComputedAssemblyPropertyConfig field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertyConfigOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyConfigOk() (*BTComputedAssemblyPropertyConfig, bool)`
+
+GetComputedAssemblyPropertyConfigOk returns a tuple with the ComputedAssemblyPropertyConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertyConfig
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyConfig(v BTComputedAssemblyPropertyConfig)`
+
+SetComputedAssemblyPropertyConfig sets ComputedAssemblyPropertyConfig field to given value.
+
+### HasComputedAssemblyPropertyConfig
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyConfig() bool`
+
+HasComputedAssemblyPropertyConfig returns a boolean if a field has been set.
+
+### GetComputedAssemblyPropertyErrorValuePolicy
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyErrorValuePolicy() int32`
+
+GetComputedAssemblyPropertyErrorValuePolicy returns the ComputedAssemblyPropertyErrorValuePolicy field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertyErrorValuePolicyOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyErrorValuePolicyOk() (*int32, bool)`
+
+GetComputedAssemblyPropertyErrorValuePolicyOk returns a tuple with the ComputedAssemblyPropertyErrorValuePolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertyErrorValuePolicy
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyErrorValuePolicy(v int32)`
+
+SetComputedAssemblyPropertyErrorValuePolicy sets ComputedAssemblyPropertyErrorValuePolicy field to given value.
+
+### HasComputedAssemblyPropertyErrorValuePolicy
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyErrorValuePolicy() bool`
+
+HasComputedAssemblyPropertyErrorValuePolicy returns a boolean if a field has been set.
+
+### GetComputedAssemblyPropertyFilterInverted
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterInverted() bool`
+
+GetComputedAssemblyPropertyFilterInverted returns the ComputedAssemblyPropertyFilterInverted field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertyFilterInvertedOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterInvertedOk() (*bool, bool)`
+
+GetComputedAssemblyPropertyFilterInvertedOk returns a tuple with the ComputedAssemblyPropertyFilterInverted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertyFilterInverted
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyFilterInverted(v bool)`
+
+SetComputedAssemblyPropertyFilterInverted sets ComputedAssemblyPropertyFilterInverted field to given value.
+
+### HasComputedAssemblyPropertyFilterInverted
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyFilterInverted() bool`
+
+HasComputedAssemblyPropertyFilterInverted returns a boolean if a field has been set.
+
+### GetComputedAssemblyPropertyFilterPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterPropertyId() string`
+
+GetComputedAssemblyPropertyFilterPropertyId returns the ComputedAssemblyPropertyFilterPropertyId field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertyFilterPropertyIdOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyFilterPropertyIdOk() (*string, bool)`
+
+GetComputedAssemblyPropertyFilterPropertyIdOk returns a tuple with the ComputedAssemblyPropertyFilterPropertyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertyFilterPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyFilterPropertyId(v string)`
+
+SetComputedAssemblyPropertyFilterPropertyId sets ComputedAssemblyPropertyFilterPropertyId field to given value.
+
+### HasComputedAssemblyPropertyFilterPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyFilterPropertyId() bool`
+
+HasComputedAssemblyPropertyFilterPropertyId returns a boolean if a field has been set.
+
+### GetComputedAssemblyPropertyMissingValuePolicy
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyMissingValuePolicy() int32`
+
+GetComputedAssemblyPropertyMissingValuePolicy returns the ComputedAssemblyPropertyMissingValuePolicy field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertyMissingValuePolicyOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertyMissingValuePolicyOk() (*int32, bool)`
+
+GetComputedAssemblyPropertyMissingValuePolicyOk returns a tuple with the ComputedAssemblyPropertyMissingValuePolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertyMissingValuePolicy
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertyMissingValuePolicy(v int32)`
+
+SetComputedAssemblyPropertyMissingValuePolicy sets ComputedAssemblyPropertyMissingValuePolicy field to given value.
+
+### HasComputedAssemblyPropertyMissingValuePolicy
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertyMissingValuePolicy() bool`
+
+HasComputedAssemblyPropertyMissingValuePolicy returns a boolean if a field has been set.
+
+### GetComputedAssemblyPropertySecondaryPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertySecondaryPropertyId() string`
+
+GetComputedAssemblyPropertySecondaryPropertyId returns the ComputedAssemblyPropertySecondaryPropertyId field if non-nil, zero value otherwise.
+
+### GetComputedAssemblyPropertySecondaryPropertyIdOk
+
+`func (o *BTCategoryPropertyConfigInfo) GetComputedAssemblyPropertySecondaryPropertyIdOk() (*string, bool)`
+
+GetComputedAssemblyPropertySecondaryPropertyIdOk returns a tuple with the ComputedAssemblyPropertySecondaryPropertyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedAssemblyPropertySecondaryPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) SetComputedAssemblyPropertySecondaryPropertyId(v string)`
+
+SetComputedAssemblyPropertySecondaryPropertyId sets ComputedAssemblyPropertySecondaryPropertyId field to given value.
+
+### HasComputedAssemblyPropertySecondaryPropertyId
+
+`func (o *BTCategoryPropertyConfigInfo) HasComputedAssemblyPropertySecondaryPropertyId() bool`
+
+HasComputedAssemblyPropertySecondaryPropertyId returns a boolean if a field has been set.
 
 ### GetComputedPartPropertyConfig
 

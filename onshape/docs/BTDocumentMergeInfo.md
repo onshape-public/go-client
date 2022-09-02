@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LibraryVersionMismatch** | Pointer to **bool** |  | [optional] 
 **OverwrittenElements** | Pointer to [**[]BTDocumentElementInfo**](BTDocumentElementInfo.md) |  | [optional] 
+**ParentDocumentMicroversionId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetOverwrittenElements sets OverwrittenElements field to given value.
 `func (o *BTDocumentMergeInfo) HasOverwrittenElements() bool`
 
 HasOverwrittenElements returns a boolean if a field has been set.
+
+### GetParentDocumentMicroversionId
+
+`func (o *BTDocumentMergeInfo) GetParentDocumentMicroversionId() string`
+
+GetParentDocumentMicroversionId returns the ParentDocumentMicroversionId field if non-nil, zero value otherwise.
+
+### GetParentDocumentMicroversionIdOk
+
+`func (o *BTDocumentMergeInfo) GetParentDocumentMicroversionIdOk() (*string, bool)`
+
+GetParentDocumentMicroversionIdOk returns a tuple with the ParentDocumentMicroversionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentDocumentMicroversionId
+
+`func (o *BTDocumentMergeInfo) SetParentDocumentMicroversionId(v string)`
+
+SetParentDocumentMicroversionId sets ParentDocumentMicroversionId field to given value.
+
+### HasParentDocumentMicroversionId
+
+`func (o *BTDocumentMergeInfo) HasParentDocumentMicroversionId() bool`
+
+HasParentDocumentMicroversionId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

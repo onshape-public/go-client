@@ -178,6 +178,7 @@ docs/BTCommonUnitInfo.md
 docs/BTCommonUnitsInfo.md
 docs/BTCompanyInfo.md
 docs/BTCompanySummaryInfo.md
+docs/BTComputedAssemblyPropertyConfig.md
 docs/BTComputedConfigurationInputSpec2525.md
 docs/BTComputedPartPropertyConfig.md
 docs/BTComputedPartPropertySpec1746.md
@@ -1229,6 +1230,7 @@ model_bt_common_unit_info.go
 model_bt_common_units_info.go
 model_bt_company_info.go
 model_bt_company_summary_info.go
+model_bt_computed_assembly_property_config.go
 model_bt_computed_configuration_input_spec_2525.go
 model_bt_computed_part_property_config.go
 model_bt_computed_part_property_spec_1746.go
