@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.153.6344-db89a80956dd
+  version: 1.153.6358-16771368e3d1
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -18080,6 +18080,7 @@ components:
         - sketchIds
         targetDocumentId: targetDocumentId
         revision: revision
+        latestElementMicroversionId: latestElementMicroversionId
         targetElementId: targetElementId
         errorValue: OK
         isFlattenedPart: true
@@ -18119,6 +18120,8 @@ components:
           type: boolean
         isSurface:
           type: boolean
+        latestElementMicroversionId:
+          type: string
         partNumber:
           type: string
         referenceId:
@@ -18176,6 +18179,7 @@ components:
           - sketchIds
           targetDocumentId: targetDocumentId
           revision: revision
+          latestElementMicroversionId: latestElementMicroversionId
           targetElementId: targetElementId
           errorValue: OK
           isFlattenedPart: true
@@ -18203,6 +18207,7 @@ components:
           - sketchIds
           targetDocumentId: targetDocumentId
           revision: revision
+          latestElementMicroversionId: latestElementMicroversionId
           targetElementId: targetElementId
           errorValue: OK
           isFlattenedPart: true

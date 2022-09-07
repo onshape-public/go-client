@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **IsLocked** | Pointer to **bool** |  | [optional] 
 **IsSketchOnly** | Pointer to **bool** |  | [optional] 
 **IsSurface** | Pointer to **bool** |  | [optional] 
+**LatestElementMicroversionId** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **ReferenceId** | Pointer to **string** |  | [optional] 
 **ReferenceType** | Pointer to **int32** |  | [optional] 
@@ -323,6 +324,31 @@ SetIsSurface sets IsSurface field to given value.
 `func (o *BTAppElementReferenceResolveInfo) HasIsSurface() bool`
 
 HasIsSurface returns a boolean if a field has been set.
+
+### GetLatestElementMicroversionId
+
+`func (o *BTAppElementReferenceResolveInfo) GetLatestElementMicroversionId() string`
+
+GetLatestElementMicroversionId returns the LatestElementMicroversionId field if non-nil, zero value otherwise.
+
+### GetLatestElementMicroversionIdOk
+
+`func (o *BTAppElementReferenceResolveInfo) GetLatestElementMicroversionIdOk() (*string, bool)`
+
+GetLatestElementMicroversionIdOk returns a tuple with the LatestElementMicroversionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestElementMicroversionId
+
+`func (o *BTAppElementReferenceResolveInfo) SetLatestElementMicroversionId(v string)`
+
+SetLatestElementMicroversionId sets LatestElementMicroversionId field to given value.
+
+### HasLatestElementMicroversionId
+
+`func (o *BTAppElementReferenceResolveInfo) HasLatestElementMicroversionId() bool`
+
+HasLatestElementMicroversionId returns a boolean if a field has been set.
 
 ### GetPartNumber
 
