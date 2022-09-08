@@ -902,6 +902,7 @@ docs/BTReleasePackageItemInfo.md
 docs/BTReleasePackageItemParams.md
 docs/BTReleasePackageParams.md
 docs/BTResourceOwnerInfo.md
+docs/BTResourceOwnerInfoAllOf.md
 docs/BTRestoreFromHistoryInfo.md
 docs/BTRevertUnchangedElementParams.md
 docs/BTRevertUnchangedParams.md

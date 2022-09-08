@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.153.6358-16771368e3d1
+  version: 1.153.6373-48cecdd7807c
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -44954,6 +44954,7 @@ components:
     BTResourceOwnerInfo:
       allOf:
       - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+      - $ref: '#/components/schemas/BTResourceOwnerInfo_allOf'
       type: object
     BTRestoreFromHistoryInfo:
       example:
@@ -55948,6 +55949,11 @@ components:
           type: string
         transitionName:
           type: string
+      type: object
+    BTResourceOwnerInfo_allOf:
+      properties:
+        isEnterpriseEdu:
+          type: boolean
       type: object
     BTRevisionCustomData_2090_allOf:
       properties:
