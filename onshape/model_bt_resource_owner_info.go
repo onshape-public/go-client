@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6358-16771368e3d1
+API version: 1.153.6373-48cecdd7807c
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -35,6 +35,7 @@ type BTResourceOwnerInfo struct {
 	ResourceType      *string                 `json:"resourceType,omitempty"`
 	TreeHref          *string                 `json:"treeHref,omitempty"`
 	ViewRef           *string                 `json:"viewRef,omitempty"`
+	IsEnterpriseEdu   *bool                   `json:"isEnterpriseEdu,omitempty"`
 }
 
 // NewBTResourceOwnerInfo instantiates a new BTResourceOwnerInfo object
@@ -623,6 +624,38 @@ func (o *BTResourceOwnerInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetIsEnterpriseEdu returns the IsEnterpriseEdu field value if set, zero value otherwise.
+func (o *BTResourceOwnerInfo) GetIsEnterpriseEdu() bool {
+	if o == nil || o.IsEnterpriseEdu == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsEnterpriseEdu
+}
+
+// GetIsEnterpriseEduOk returns a tuple with the IsEnterpriseEdu field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTResourceOwnerInfo) GetIsEnterpriseEduOk() (*bool, bool) {
+	if o == nil || o.IsEnterpriseEdu == nil {
+		return nil, false
+	}
+	return o.IsEnterpriseEdu, true
+}
+
+// HasIsEnterpriseEdu returns a boolean if a field has been set.
+func (o *BTResourceOwnerInfo) HasIsEnterpriseEdu() bool {
+	if o != nil && o.IsEnterpriseEdu != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsEnterpriseEdu gets a reference to the given bool and assigns it to the IsEnterpriseEdu field.
+func (o *BTResourceOwnerInfo) SetIsEnterpriseEdu(v bool) {
+	o.IsEnterpriseEdu = &v
+}
+
 func (o BTResourceOwnerInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
@@ -678,6 +711,9 @@ func (o BTResourceOwnerInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
+	}
+	if o.IsEnterpriseEdu != nil {
+		toSerialize["isEnterpriseEdu"] = o.IsEnterpriseEdu
 	}
 	return json.Marshal(toSerialize)
 }
