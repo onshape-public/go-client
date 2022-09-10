@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6392-2b80dda1e33c
+API version: 1.153.6415-48a6b2252b8c
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,12 +17,13 @@ import (
 
 // BTExportModelFace1363 struct for BTExportModelFace1363
 type BTExportModelFace1363 struct {
-	Area        *float64                  `json:"area,omitempty"`
-	Box         *BTBoundingBox1052        `json:"box,omitempty"`
-	Id          *string                   `json:"id,omitempty"`
-	Loops       []BTExportModelLoop1182   `json:"loops,omitempty"`
-	Orientation *bool                     `json:"orientation,omitempty"`
-	Surface     *BTSurfaceDescription1564 `json:"surface,omitempty"`
+	AppearancePropertyNodeId *string                   `json:"appearancePropertyNodeId,omitempty"`
+	Area                     *float64                  `json:"area,omitempty"`
+	Box                      *BTBoundingBox1052        `json:"box,omitempty"`
+	Id                       *string                   `json:"id,omitempty"`
+	Loops                    []BTExportModelLoop1182   `json:"loops,omitempty"`
+	Orientation              *bool                     `json:"orientation,omitempty"`
+	Surface                  *BTSurfaceDescription1564 `json:"surface,omitempty"`
 }
 
 // NewBTExportModelFace1363 instantiates a new BTExportModelFace1363 object
@@ -40,6 +41,38 @@ func NewBTExportModelFace1363() *BTExportModelFace1363 {
 func NewBTExportModelFace1363WithDefaults() *BTExportModelFace1363 {
 	this := BTExportModelFace1363{}
 	return &this
+}
+
+// GetAppearancePropertyNodeId returns the AppearancePropertyNodeId field value if set, zero value otherwise.
+func (o *BTExportModelFace1363) GetAppearancePropertyNodeId() string {
+	if o == nil || o.AppearancePropertyNodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.AppearancePropertyNodeId
+}
+
+// GetAppearancePropertyNodeIdOk returns a tuple with the AppearancePropertyNodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelFace1363) GetAppearancePropertyNodeIdOk() (*string, bool) {
+	if o == nil || o.AppearancePropertyNodeId == nil {
+		return nil, false
+	}
+	return o.AppearancePropertyNodeId, true
+}
+
+// HasAppearancePropertyNodeId returns a boolean if a field has been set.
+func (o *BTExportModelFace1363) HasAppearancePropertyNodeId() bool {
+	if o != nil && o.AppearancePropertyNodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAppearancePropertyNodeId gets a reference to the given string and assigns it to the AppearancePropertyNodeId field.
+func (o *BTExportModelFace1363) SetAppearancePropertyNodeId(v string) {
+	o.AppearancePropertyNodeId = &v
 }
 
 // GetArea returns the Area field value if set, zero value otherwise.
@@ -236,6 +269,9 @@ func (o *BTExportModelFace1363) SetSurface(v BTSurfaceDescription1564) {
 
 func (o BTExportModelFace1363) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AppearancePropertyNodeId != nil {
+		toSerialize["appearancePropertyNodeId"] = o.AppearancePropertyNodeId
+	}
 	if o.Area != nil {
 		toSerialize["area"] = o.Area
 	}

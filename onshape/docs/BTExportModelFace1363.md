@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AppearancePropertyNodeId** | Pointer to **string** |  | [optional] 
 **Area** | Pointer to **float64** |  | [optional] 
 **Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewBTExportModelFace1363WithDefaults instantiates a new BTExportModelFace1363 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAppearancePropertyNodeId
+
+`func (o *BTExportModelFace1363) GetAppearancePropertyNodeId() string`
+
+GetAppearancePropertyNodeId returns the AppearancePropertyNodeId field if non-nil, zero value otherwise.
+
+### GetAppearancePropertyNodeIdOk
+
+`func (o *BTExportModelFace1363) GetAppearancePropertyNodeIdOk() (*string, bool)`
+
+GetAppearancePropertyNodeIdOk returns a tuple with the AppearancePropertyNodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppearancePropertyNodeId
+
+`func (o *BTExportModelFace1363) SetAppearancePropertyNodeId(v string)`
+
+SetAppearancePropertyNodeId sets AppearancePropertyNodeId field to given value.
+
+### HasAppearancePropertyNodeId
+
+`func (o *BTExportModelFace1363) HasAppearancePropertyNodeId() bool`
+
+HasAppearancePropertyNodeId returns a boolean if a field has been set.
 
 ### GetArea
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6392-2b80dda1e33c
+API version: 1.153.6415-48a6b2252b8c
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,13 +17,16 @@ import (
 
 // BTExportTessellatedFacesResponse898 struct for BTExportTessellatedFacesResponse898
 type BTExportTessellatedFacesResponse898 struct {
-	Bodies                  []BTExportTessellatedBody3398 `json:"bodies,omitempty"`
-	DocumentId              *string                       `json:"documentId,omitempty"`
-	ElementId               *string                       `json:"elementId,omitempty"`
-	ErrorEnum               *string                       `json:"errorEnum,omitempty"`
-	FacetPoints             []BTVector3d389               `json:"facetPoints,omitempty"`
-	FullElementId           *BTFullElementId756           `json:"fullElementId,omitempty"`
-	OutputSeparateFaceNodes *bool                         `json:"outputSeparateFaceNodes,omitempty"`
+	Bodies                           []BTExportTessellatedBody3398   `json:"bodies,omitempty"`
+	BodiesInfo                       *BTExportModelBodiesResponse734 `json:"bodiesInfo,omitempty"`
+	CombineCompositePartConstituents *bool                           `json:"combineCompositePartConstituents,omitempty"`
+	DisplayData                      *BTPartStudioDisplayData346     `json:"displayData,omitempty"`
+	DocumentId                       *string                         `json:"documentId,omitempty"`
+	ElementId                        *string                         `json:"elementId,omitempty"`
+	ErrorEnum                        *string                         `json:"errorEnum,omitempty"`
+	FacetPoints                      []BTVector3d389                 `json:"facetPoints,omitempty"`
+	FullElementId                    *BTFullElementId756             `json:"fullElementId,omitempty"`
+	OutputSeparateFaceNodes          *bool                           `json:"outputSeparateFaceNodes,omitempty"`
 }
 
 // NewBTExportTessellatedFacesResponse898 instantiates a new BTExportTessellatedFacesResponse898 object
@@ -73,6 +76,102 @@ func (o *BTExportTessellatedFacesResponse898) HasBodies() bool {
 // SetBodies gets a reference to the given []BTExportTessellatedBody3398 and assigns it to the Bodies field.
 func (o *BTExportTessellatedFacesResponse898) SetBodies(v []BTExportTessellatedBody3398) {
 	o.Bodies = v
+}
+
+// GetBodiesInfo returns the BodiesInfo field value if set, zero value otherwise.
+func (o *BTExportTessellatedFacesResponse898) GetBodiesInfo() BTExportModelBodiesResponse734 {
+	if o == nil || o.BodiesInfo == nil {
+		var ret BTExportModelBodiesResponse734
+		return ret
+	}
+	return *o.BodiesInfo
+}
+
+// GetBodiesInfoOk returns a tuple with the BodiesInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportTessellatedFacesResponse898) GetBodiesInfoOk() (*BTExportModelBodiesResponse734, bool) {
+	if o == nil || o.BodiesInfo == nil {
+		return nil, false
+	}
+	return o.BodiesInfo, true
+}
+
+// HasBodiesInfo returns a boolean if a field has been set.
+func (o *BTExportTessellatedFacesResponse898) HasBodiesInfo() bool {
+	if o != nil && o.BodiesInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBodiesInfo gets a reference to the given BTExportModelBodiesResponse734 and assigns it to the BodiesInfo field.
+func (o *BTExportTessellatedFacesResponse898) SetBodiesInfo(v BTExportModelBodiesResponse734) {
+	o.BodiesInfo = &v
+}
+
+// GetCombineCompositePartConstituents returns the CombineCompositePartConstituents field value if set, zero value otherwise.
+func (o *BTExportTessellatedFacesResponse898) GetCombineCompositePartConstituents() bool {
+	if o == nil || o.CombineCompositePartConstituents == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CombineCompositePartConstituents
+}
+
+// GetCombineCompositePartConstituentsOk returns a tuple with the CombineCompositePartConstituents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportTessellatedFacesResponse898) GetCombineCompositePartConstituentsOk() (*bool, bool) {
+	if o == nil || o.CombineCompositePartConstituents == nil {
+		return nil, false
+	}
+	return o.CombineCompositePartConstituents, true
+}
+
+// HasCombineCompositePartConstituents returns a boolean if a field has been set.
+func (o *BTExportTessellatedFacesResponse898) HasCombineCompositePartConstituents() bool {
+	if o != nil && o.CombineCompositePartConstituents != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCombineCompositePartConstituents gets a reference to the given bool and assigns it to the CombineCompositePartConstituents field.
+func (o *BTExportTessellatedFacesResponse898) SetCombineCompositePartConstituents(v bool) {
+	o.CombineCompositePartConstituents = &v
+}
+
+// GetDisplayData returns the DisplayData field value if set, zero value otherwise.
+func (o *BTExportTessellatedFacesResponse898) GetDisplayData() BTPartStudioDisplayData346 {
+	if o == nil || o.DisplayData == nil {
+		var ret BTPartStudioDisplayData346
+		return ret
+	}
+	return *o.DisplayData
+}
+
+// GetDisplayDataOk returns a tuple with the DisplayData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportTessellatedFacesResponse898) GetDisplayDataOk() (*BTPartStudioDisplayData346, bool) {
+	if o == nil || o.DisplayData == nil {
+		return nil, false
+	}
+	return o.DisplayData, true
+}
+
+// HasDisplayData returns a boolean if a field has been set.
+func (o *BTExportTessellatedFacesResponse898) HasDisplayData() bool {
+	if o != nil && o.DisplayData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayData gets a reference to the given BTPartStudioDisplayData346 and assigns it to the DisplayData field.
+func (o *BTExportTessellatedFacesResponse898) SetDisplayData(v BTPartStudioDisplayData346) {
+	o.DisplayData = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -271,6 +370,15 @@ func (o BTExportTessellatedFacesResponse898) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Bodies != nil {
 		toSerialize["bodies"] = o.Bodies
+	}
+	if o.BodiesInfo != nil {
+		toSerialize["bodiesInfo"] = o.BodiesInfo
+	}
+	if o.CombineCompositePartConstituents != nil {
+		toSerialize["combineCompositePartConstituents"] = o.CombineCompositePartConstituents
+	}
+	if o.DisplayData != nil {
+		toSerialize["displayData"] = o.DisplayData
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId

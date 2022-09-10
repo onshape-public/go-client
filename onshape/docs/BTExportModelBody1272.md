@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Edges** | Pointer to [**[]BTExportModelEdge1782**](BTExportModelEdge1782.md) |  | [optional] 
 **Faces** | Pointer to [**[]BTExportModelFace1363**](BTExportModelFace1363.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**Properties** | Pointer to [**BTExportBodyProperties3559**](BTExportBodyProperties3559.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Vertices** | Pointer to [**[]BTExportModelVertex858**](BTExportModelVertex858.md) |  | [optional] 
 
@@ -103,6 +104,31 @@ SetId sets Id field to given value.
 `func (o *BTExportModelBody1272) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetProperties
+
+`func (o *BTExportModelBody1272) GetProperties() BTExportBodyProperties3559`
+
+GetProperties returns the Properties field if non-nil, zero value otherwise.
+
+### GetPropertiesOk
+
+`func (o *BTExportModelBody1272) GetPropertiesOk() (*BTExportBodyProperties3559, bool)`
+
+GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProperties
+
+`func (o *BTExportModelBody1272) SetProperties(v BTExportBodyProperties3559)`
+
+SetProperties sets Properties field to given value.
+
+### HasProperties
+
+`func (o *BTExportModelBody1272) HasProperties() bool`
+
+HasProperties returns a boolean if a field has been set.
 
 ### GetType
 

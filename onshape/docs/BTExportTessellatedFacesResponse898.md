@@ -5,6 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody3398.md) |  | [optional] 
+**BodiesInfo** | Pointer to [**BTExportModelBodiesResponse734**](BTExportModelBodiesResponse734.md) |  | [optional] 
+**CombineCompositePartConstituents** | Pointer to **bool** |  | [optional] 
+**DisplayData** | Pointer to [**BTPartStudioDisplayData346**](BTPartStudioDisplayData346.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ErrorEnum** | Pointer to **string** |  | [optional] 
@@ -55,6 +58,81 @@ SetBodies sets Bodies field to given value.
 `func (o *BTExportTessellatedFacesResponse898) HasBodies() bool`
 
 HasBodies returns a boolean if a field has been set.
+
+### GetBodiesInfo
+
+`func (o *BTExportTessellatedFacesResponse898) GetBodiesInfo() BTExportModelBodiesResponse734`
+
+GetBodiesInfo returns the BodiesInfo field if non-nil, zero value otherwise.
+
+### GetBodiesInfoOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetBodiesInfoOk() (*BTExportModelBodiesResponse734, bool)`
+
+GetBodiesInfoOk returns a tuple with the BodiesInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodiesInfo
+
+`func (o *BTExportTessellatedFacesResponse898) SetBodiesInfo(v BTExportModelBodiesResponse734)`
+
+SetBodiesInfo sets BodiesInfo field to given value.
+
+### HasBodiesInfo
+
+`func (o *BTExportTessellatedFacesResponse898) HasBodiesInfo() bool`
+
+HasBodiesInfo returns a boolean if a field has been set.
+
+### GetCombineCompositePartConstituents
+
+`func (o *BTExportTessellatedFacesResponse898) GetCombineCompositePartConstituents() bool`
+
+GetCombineCompositePartConstituents returns the CombineCompositePartConstituents field if non-nil, zero value otherwise.
+
+### GetCombineCompositePartConstituentsOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetCombineCompositePartConstituentsOk() (*bool, bool)`
+
+GetCombineCompositePartConstituentsOk returns a tuple with the CombineCompositePartConstituents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCombineCompositePartConstituents
+
+`func (o *BTExportTessellatedFacesResponse898) SetCombineCompositePartConstituents(v bool)`
+
+SetCombineCompositePartConstituents sets CombineCompositePartConstituents field to given value.
+
+### HasCombineCompositePartConstituents
+
+`func (o *BTExportTessellatedFacesResponse898) HasCombineCompositePartConstituents() bool`
+
+HasCombineCompositePartConstituents returns a boolean if a field has been set.
+
+### GetDisplayData
+
+`func (o *BTExportTessellatedFacesResponse898) GetDisplayData() BTPartStudioDisplayData346`
+
+GetDisplayData returns the DisplayData field if non-nil, zero value otherwise.
+
+### GetDisplayDataOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetDisplayDataOk() (*BTPartStudioDisplayData346, bool)`
+
+GetDisplayDataOk returns a tuple with the DisplayData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayData
+
+`func (o *BTExportTessellatedFacesResponse898) SetDisplayData(v BTPartStudioDisplayData346)`
+
+SetDisplayData sets DisplayData field to given value.
+
+### HasDisplayData
+
+`func (o *BTExportTessellatedFacesResponse898) HasDisplayData() bool`
+
+HasDisplayData returns a boolean if a field has been set.
 
 ### GetDocumentId
 
