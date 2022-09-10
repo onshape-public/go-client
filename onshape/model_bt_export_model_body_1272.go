@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6392-2b80dda1e33c
+API version: 1.153.6415-48a6b2252b8c
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,11 +17,12 @@ import (
 
 // BTExportModelBody1272 struct for BTExportModelBody1272
 type BTExportModelBody1272 struct {
-	Edges    []BTExportModelEdge1782  `json:"edges,omitempty"`
-	Faces    []BTExportModelFace1363  `json:"faces,omitempty"`
-	Id       *string                  `json:"id,omitempty"`
-	Type     *string                  `json:"type,omitempty"`
-	Vertices []BTExportModelVertex858 `json:"vertices,omitempty"`
+	Edges      []BTExportModelEdge1782     `json:"edges,omitempty"`
+	Faces      []BTExportModelFace1363     `json:"faces,omitempty"`
+	Id         *string                     `json:"id,omitempty"`
+	Properties *BTExportBodyProperties3559 `json:"properties,omitempty"`
+	Type       *string                     `json:"type,omitempty"`
+	Vertices   []BTExportModelVertex858    `json:"vertices,omitempty"`
 }
 
 // NewBTExportModelBody1272 instantiates a new BTExportModelBody1272 object
@@ -137,6 +138,38 @@ func (o *BTExportModelBody1272) SetId(v string) {
 	o.Id = &v
 }
 
+// GetProperties returns the Properties field value if set, zero value otherwise.
+func (o *BTExportModelBody1272) GetProperties() BTExportBodyProperties3559 {
+	if o == nil || o.Properties == nil {
+		var ret BTExportBodyProperties3559
+		return ret
+	}
+	return *o.Properties
+}
+
+// GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelBody1272) GetPropertiesOk() (*BTExportBodyProperties3559, bool) {
+	if o == nil || o.Properties == nil {
+		return nil, false
+	}
+	return o.Properties, true
+}
+
+// HasProperties returns a boolean if a field has been set.
+func (o *BTExportModelBody1272) HasProperties() bool {
+	if o != nil && o.Properties != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProperties gets a reference to the given BTExportBodyProperties3559 and assigns it to the Properties field.
+func (o *BTExportModelBody1272) SetProperties(v BTExportBodyProperties3559) {
+	o.Properties = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *BTExportModelBody1272) GetType() string {
 	if o == nil || o.Type == nil {
@@ -211,6 +244,9 @@ func (o BTExportModelBody1272) MarshalJSON() ([]byte, error) {
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.Properties != nil {
+		toSerialize["properties"] = o.Properties
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

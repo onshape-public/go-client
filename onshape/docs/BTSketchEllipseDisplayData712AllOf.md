@@ -1,0 +1,134 @@
+# BTSketchEllipseDisplayData712AllOf
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
+**MinorRadius** | Pointer to **float64** |  | [optional] 
+**Offset** | Pointer to **float64** |  | [optional] 
+**Radius** | Pointer to **float64** |  | [optional] 
+
+## Methods
+
+### NewBTSketchEllipseDisplayData712AllOf
+
+`func NewBTSketchEllipseDisplayData712AllOf() *BTSketchEllipseDisplayData712AllOf`
+
+NewBTSketchEllipseDisplayData712AllOf instantiates a new BTSketchEllipseDisplayData712AllOf object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewBTSketchEllipseDisplayData712AllOfWithDefaults
+
+`func NewBTSketchEllipseDisplayData712AllOfWithDefaults() *BTSketchEllipseDisplayData712AllOf`
+
+NewBTSketchEllipseDisplayData712AllOfWithDefaults instantiates a new BTSketchEllipseDisplayData712AllOf object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTSketchEllipseDisplayData712AllOf) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTSketchEllipseDisplayData712AllOf) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
+
+### GetMinorRadius
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetMinorRadius() float64`
+
+GetMinorRadius returns the MinorRadius field if non-nil, zero value otherwise.
+
+### GetMinorRadiusOk
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetMinorRadiusOk() (*float64, bool)`
+
+GetMinorRadiusOk returns a tuple with the MinorRadius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinorRadius
+
+`func (o *BTSketchEllipseDisplayData712AllOf) SetMinorRadius(v float64)`
+
+SetMinorRadius sets MinorRadius field to given value.
+
+### HasMinorRadius
+
+`func (o *BTSketchEllipseDisplayData712AllOf) HasMinorRadius() bool`
+
+HasMinorRadius returns a boolean if a field has been set.
+
+### GetOffset
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetOffset() float64`
+
+GetOffset returns the Offset field if non-nil, zero value otherwise.
+
+### GetOffsetOk
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetOffsetOk() (*float64, bool)`
+
+GetOffsetOk returns a tuple with the Offset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOffset
+
+`func (o *BTSketchEllipseDisplayData712AllOf) SetOffset(v float64)`
+
+SetOffset sets Offset field to given value.
+
+### HasOffset
+
+`func (o *BTSketchEllipseDisplayData712AllOf) HasOffset() bool`
+
+HasOffset returns a boolean if a field has been set.
+
+### GetRadius
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetRadius() float64`
+
+GetRadius returns the Radius field if non-nil, zero value otherwise.
+
+### GetRadiusOk
+
+`func (o *BTSketchEllipseDisplayData712AllOf) GetRadiusOk() (*float64, bool)`
+
+GetRadiusOk returns a tuple with the Radius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRadius
+
+`func (o *BTSketchEllipseDisplayData712AllOf) SetRadius(v float64)`
+
+SetRadius sets Radius field to given value.
+
+### HasRadius
+
+`func (o *BTSketchEllipseDisplayData712AllOf) HasRadius() bool`
+
+HasRadius returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

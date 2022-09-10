@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Bodies** | Pointer to [**[]BTExportModelBody1272**](BTExportModelBody1272.md) |  | [optional] 
 **ErrorEnum** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
+**NodeIdToReferencedProperty** | Pointer to [**map[string]BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetMicroversionId sets MicroversionId field to given value.
 `func (o *BTExportModelBodiesResponse734) HasMicroversionId() bool`
 
 HasMicroversionId returns a boolean if a field has been set.
+
+### GetNodeIdToReferencedProperty
+
+`func (o *BTExportModelBodiesResponse734) GetNodeIdToReferencedProperty() map[string]BTExportModelProperties3216`
+
+GetNodeIdToReferencedProperty returns the NodeIdToReferencedProperty field if non-nil, zero value otherwise.
+
+### GetNodeIdToReferencedPropertyOk
+
+`func (o *BTExportModelBodiesResponse734) GetNodeIdToReferencedPropertyOk() (*map[string]BTExportModelProperties3216, bool)`
+
+GetNodeIdToReferencedPropertyOk returns a tuple with the NodeIdToReferencedProperty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeIdToReferencedProperty
+
+`func (o *BTExportModelBodiesResponse734) SetNodeIdToReferencedProperty(v map[string]BTExportModelProperties3216)`
+
+SetNodeIdToReferencedProperty sets NodeIdToReferencedProperty field to given value.
+
+### HasNodeIdToReferencedProperty
+
+`func (o *BTExportModelBodiesResponse734) HasNodeIdToReferencedProperty() bool`
+
+HasNodeIdToReferencedProperty returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
