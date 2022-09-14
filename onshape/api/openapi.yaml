@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.153.6438-5fd2d9755d52
+  version: 1.153.6457-6d43038cb4be
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41122,6 +41122,7 @@ components:
           - V1844_ENDCAP_FEATURE
           - V1845_RULED_SURFACE_DERIVATIVE
           - V1846_BEND_LINE_ATTACHED
+          - V1847_PROJECTED_CURVE_FIXES
           - UNKNOWN
           type: string
         btType:
