@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ErrorEnum** | Pointer to **string** |  | [optional] 
 **FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
+**OutputFaceAppearances** | Pointer to **bool** |  | [optional] 
 **OutputSeparateFaceNodes** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetFullElementId sets FullElementId field to given value.
 `func (o *BTExportTessellatedFacesResponse898) HasFullElementId() bool`
 
 HasFullElementId returns a boolean if a field has been set.
+
+### GetOutputFaceAppearances
+
+`func (o *BTExportTessellatedFacesResponse898) GetOutputFaceAppearances() bool`
+
+GetOutputFaceAppearances returns the OutputFaceAppearances field if non-nil, zero value otherwise.
+
+### GetOutputFaceAppearancesOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetOutputFaceAppearancesOk() (*bool, bool)`
+
+GetOutputFaceAppearancesOk returns a tuple with the OutputFaceAppearances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputFaceAppearances
+
+`func (o *BTExportTessellatedFacesResponse898) SetOutputFaceAppearances(v bool)`
+
+SetOutputFaceAppearances sets OutputFaceAppearances field to given value.
+
+### HasOutputFaceAppearances
+
+`func (o *BTExportTessellatedFacesResponse898) HasOutputFaceAppearances() bool`
+
+HasOutputFaceAppearances returns a boolean if a field has been set.
 
 ### GetOutputSeparateFaceNodes
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AppearancePropertyNodeId** | Pointer to **string** |  | [optional] 
 **Area** | Pointer to **float64** |  | [optional] 
 **Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
+**FaceProperties** | Pointer to [**BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Loops** | Pointer to [**[]BTExportModelLoop1182**](BTExportModelLoop1182.md) |  | [optional] 
 **Orientation** | Pointer to **bool** |  | [optional] 
@@ -105,6 +106,31 @@ SetBox sets Box field to given value.
 `func (o *BTExportModelFace1363) HasBox() bool`
 
 HasBox returns a boolean if a field has been set.
+
+### GetFaceProperties
+
+`func (o *BTExportModelFace1363) GetFaceProperties() BTExportModelProperties3216`
+
+GetFaceProperties returns the FaceProperties field if non-nil, zero value otherwise.
+
+### GetFacePropertiesOk
+
+`func (o *BTExportModelFace1363) GetFacePropertiesOk() (*BTExportModelProperties3216, bool)`
+
+GetFacePropertiesOk returns a tuple with the FaceProperties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFaceProperties
+
+`func (o *BTExportModelFace1363) SetFaceProperties(v BTExportModelProperties3216)`
+
+SetFaceProperties sets FaceProperties field to given value.
+
+### HasFaceProperties
+
+`func (o *BTExportModelFace1363) HasFaceProperties() bool`
+
+HasFaceProperties returns a boolean if a field has been set.
 
 ### GetId
 
