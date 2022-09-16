@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.153.6471-f221dba4a96a
+  version: 1.153.6489-39ccb1a53c2e
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -24969,6 +24969,20 @@ components:
           id: id
           faces:
           - area: 6.027456183070403
+            faceProperties:
+              appearance:
+                rgbaColor:
+                - rgbaColor
+                - rgbaColor
+                nonTrivial: true
+                color:
+                - color
+                - color
+                btType: btType
+                reset: true
+                opacity: 1
+                usableAppearance: true
+              name: name
             orientation: true
             surface:
               directionOrientedWithFace:
@@ -25017,6 +25031,20 @@ components:
                 z: 9.301444243932576
             id: id
           - area: 6.027456183070403
+            faceProperties:
+              appearance:
+                rgbaColor:
+                - rgbaColor
+                - rgbaColor
+                nonTrivial: true
+                color:
+                - color
+                - color
+                btType: btType
+                reset: true
+                opacity: 1
+                usableAppearance: true
+              name: name
             orientation: true
             surface:
               directionOrientedWithFace:
@@ -25189,6 +25217,20 @@ components:
           id: id
           faces:
           - area: 6.027456183070403
+            faceProperties:
+              appearance:
+                rgbaColor:
+                - rgbaColor
+                - rgbaColor
+                nonTrivial: true
+                color:
+                - color
+                - color
+                btType: btType
+                reset: true
+                opacity: 1
+                usableAppearance: true
+              name: name
             orientation: true
             surface:
               directionOrientedWithFace:
@@ -25237,6 +25279,20 @@ components:
                 z: 9.301444243932576
             id: id
           - area: 6.027456183070403
+            faceProperties:
+              appearance:
+                rgbaColor:
+                - rgbaColor
+                - rgbaColor
+                nonTrivial: true
+                color:
+                - color
+                - color
+                btType: btType
+                reset: true
+                opacity: 1
+                usableAppearance: true
+              name: name
             orientation: true
             surface:
               directionOrientedWithFace:
@@ -26599,6 +26655,20 @@ components:
         id: id
         faces:
         - area: 6.027456183070403
+          faceProperties:
+            appearance:
+              rgbaColor:
+              - rgbaColor
+              - rgbaColor
+              nonTrivial: true
+              color:
+              - color
+              - color
+              btType: btType
+              reset: true
+              opacity: 1
+              usableAppearance: true
+            name: name
           orientation: true
           surface:
             directionOrientedWithFace:
@@ -26647,6 +26717,20 @@ components:
               z: 9.301444243932576
           id: id
         - area: 6.027456183070403
+          faceProperties:
+            appearance:
+              rgbaColor:
+              - rgbaColor
+              - rgbaColor
+              nonTrivial: true
+              color:
+              - color
+              - color
+              btType: btType
+              reset: true
+              opacity: 1
+              usableAppearance: true
+            name: name
           orientation: true
           surface:
             directionOrientedWithFace:
@@ -26858,6 +26942,20 @@ components:
     BTExportModelFace-1363:
       example:
         area: 6.027456183070403
+        faceProperties:
+          appearance:
+            rgbaColor:
+            - rgbaColor
+            - rgbaColor
+            nonTrivial: true
+            color:
+            - color
+            - color
+            btType: btType
+            reset: true
+            opacity: 1
+            usableAppearance: true
+          name: name
         orientation: true
         surface:
           directionOrientedWithFace:
@@ -26913,6 +27011,8 @@ components:
           type: number
         box:
           $ref: '#/components/schemas/BTBoundingBox-1052'
+        faceProperties:
+          $ref: '#/components/schemas/BTExportModelProperties-3216'
         id:
           type: string
         loops:
@@ -28464,6 +28564,20 @@ components:
             id: id
             faces:
             - area: 6.027456183070403
+              faceProperties:
+                appearance:
+                  rgbaColor:
+                  - rgbaColor
+                  - rgbaColor
+                  nonTrivial: true
+                  color:
+                  - color
+                  - color
+                  btType: btType
+                  reset: true
+                  opacity: 1
+                  usableAppearance: true
+                name: name
               orientation: true
               surface:
                 directionOrientedWithFace:
@@ -28512,6 +28626,20 @@ components:
                   z: 9.301444243932576
               id: id
             - area: 6.027456183070403
+              faceProperties:
+                appearance:
+                  rgbaColor:
+                  - rgbaColor
+                  - rgbaColor
+                  nonTrivial: true
+                  color:
+                  - color
+                  - color
+                  btType: btType
+                  reset: true
+                  opacity: 1
+                  usableAppearance: true
+                name: name
               orientation: true
               surface:
                 directionOrientedWithFace:
@@ -28684,6 +28812,20 @@ components:
             id: id
             faces:
             - area: 6.027456183070403
+              faceProperties:
+                appearance:
+                  rgbaColor:
+                  - rgbaColor
+                  - rgbaColor
+                  nonTrivial: true
+                  color:
+                  - color
+                  - color
+                  btType: btType
+                  reset: true
+                  opacity: 1
+                  usableAppearance: true
+                name: name
               orientation: true
               surface:
                 directionOrientedWithFace:
@@ -28732,6 +28874,20 @@ components:
                   z: 9.301444243932576
               id: id
             - area: 6.027456183070403
+              faceProperties:
+                appearance:
+                  rgbaColor:
+                  - rgbaColor
+                  - rgbaColor
+                  nonTrivial: true
+                  color:
+                  - color
+                  - color
+                  btType: btType
+                  reset: true
+                  opacity: 1
+                  usableAppearance: true
+                name: name
               orientation: true
               surface:
                 directionOrientedWithFace:
@@ -30272,6 +30428,7 @@ components:
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
+        outputFaceAppearances: true
       properties:
         bodies:
           items:
@@ -31466,6 +31623,8 @@ components:
           type: array
         fullElementId:
           $ref: '#/components/schemas/BTFullElementId-756'
+        outputFaceAppearances:
+          type: boolean
         outputSeparateFaceNodes:
           type: boolean
       type: object

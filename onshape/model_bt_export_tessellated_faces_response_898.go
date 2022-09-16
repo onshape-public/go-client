@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6471-f221dba4a96a
+API version: 1.153.6489-39ccb1a53c2e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -26,6 +26,7 @@ type BTExportTessellatedFacesResponse898 struct {
 	ErrorEnum                        *string                         `json:"errorEnum,omitempty"`
 	FacetPoints                      []BTVector3d389                 `json:"facetPoints,omitempty"`
 	FullElementId                    *BTFullElementId756             `json:"fullElementId,omitempty"`
+	OutputFaceAppearances            *bool                           `json:"outputFaceAppearances,omitempty"`
 	OutputSeparateFaceNodes          *bool                           `json:"outputSeparateFaceNodes,omitempty"`
 }
 
@@ -334,6 +335,38 @@ func (o *BTExportTessellatedFacesResponse898) SetFullElementId(v BTFullElementId
 	o.FullElementId = &v
 }
 
+// GetOutputFaceAppearances returns the OutputFaceAppearances field value if set, zero value otherwise.
+func (o *BTExportTessellatedFacesResponse898) GetOutputFaceAppearances() bool {
+	if o == nil || o.OutputFaceAppearances == nil {
+		var ret bool
+		return ret
+	}
+	return *o.OutputFaceAppearances
+}
+
+// GetOutputFaceAppearancesOk returns a tuple with the OutputFaceAppearances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportTessellatedFacesResponse898) GetOutputFaceAppearancesOk() (*bool, bool) {
+	if o == nil || o.OutputFaceAppearances == nil {
+		return nil, false
+	}
+	return o.OutputFaceAppearances, true
+}
+
+// HasOutputFaceAppearances returns a boolean if a field has been set.
+func (o *BTExportTessellatedFacesResponse898) HasOutputFaceAppearances() bool {
+	if o != nil && o.OutputFaceAppearances != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOutputFaceAppearances gets a reference to the given bool and assigns it to the OutputFaceAppearances field.
+func (o *BTExportTessellatedFacesResponse898) SetOutputFaceAppearances(v bool) {
+	o.OutputFaceAppearances = &v
+}
+
 // GetOutputSeparateFaceNodes returns the OutputSeparateFaceNodes field value if set, zero value otherwise.
 func (o *BTExportTessellatedFacesResponse898) GetOutputSeparateFaceNodes() bool {
 	if o == nil || o.OutputSeparateFaceNodes == nil {
@@ -394,6 +427,9 @@ func (o BTExportTessellatedFacesResponse898) MarshalJSON() ([]byte, error) {
 	}
 	if o.FullElementId != nil {
 		toSerialize["fullElementId"] = o.FullElementId
+	}
+	if o.OutputFaceAppearances != nil {
+		toSerialize["outputFaceAppearances"] = o.OutputFaceAppearances
 	}
 	if o.OutputSeparateFaceNodes != nil {
 		toSerialize["outputSeparateFaceNodes"] = o.OutputSeparateFaceNodes
