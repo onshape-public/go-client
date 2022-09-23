@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **CreateProject** | Pointer to **bool** |  | [optional] 
 **CreateReleases** | Pointer to **bool** |  | [optional] 
 **DeletePermanently** | Pointer to **bool** |  | [optional] 
+**ManageArenaSync** | Pointer to **bool** |  | [optional] 
 **ManageGuestUsers** | Pointer to **bool** |  | [optional] 
 **ManageNonGeometricItems** | Pointer to **bool** |  | [optional] 
 **ManageRbac** | Pointer to **bool** |  | [optional] 
@@ -318,6 +319,31 @@ SetDeletePermanently sets DeletePermanently field to given value.
 `func (o *GlobalPermissionInfo) HasDeletePermanently() bool`
 
 HasDeletePermanently returns a boolean if a field has been set.
+
+### GetManageArenaSync
+
+`func (o *GlobalPermissionInfo) GetManageArenaSync() bool`
+
+GetManageArenaSync returns the ManageArenaSync field if non-nil, zero value otherwise.
+
+### GetManageArenaSyncOk
+
+`func (o *GlobalPermissionInfo) GetManageArenaSyncOk() (*bool, bool)`
+
+GetManageArenaSyncOk returns a tuple with the ManageArenaSync field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManageArenaSync
+
+`func (o *GlobalPermissionInfo) SetManageArenaSync(v bool)`
+
+SetManageArenaSync sets ManageArenaSync field to given value.
+
+### HasManageArenaSync
+
+`func (o *GlobalPermissionInfo) HasManageArenaSync() bool`
+
+HasManageArenaSync returns a boolean if a field has been set.
 
 ### GetManageGuestUsers
 

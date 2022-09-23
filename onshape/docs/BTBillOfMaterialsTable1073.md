@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **FailedMetadataRepresentativeOccurrences** | Pointer to **[]string** |  | [optional] 
 **Indented** | Pointer to **bool** |  | [optional] 
+**IsShowingTopLevelAssemblyRow** | Pointer to **bool** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 **ShowingExcluded** | Pointer to **bool** |  | [optional] 
@@ -104,6 +105,31 @@ SetIndented sets Indented field to given value.
 `func (o *BTBillOfMaterialsTable1073) HasIndented() bool`
 
 HasIndented returns a boolean if a field has been set.
+
+### GetIsShowingTopLevelAssemblyRow
+
+`func (o *BTBillOfMaterialsTable1073) GetIsShowingTopLevelAssemblyRow() bool`
+
+GetIsShowingTopLevelAssemblyRow returns the IsShowingTopLevelAssemblyRow field if non-nil, zero value otherwise.
+
+### GetIsShowingTopLevelAssemblyRowOk
+
+`func (o *BTBillOfMaterialsTable1073) GetIsShowingTopLevelAssemblyRowOk() (*bool, bool)`
+
+GetIsShowingTopLevelAssemblyRowOk returns a tuple with the IsShowingTopLevelAssemblyRow field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsShowingTopLevelAssemblyRow
+
+`func (o *BTBillOfMaterialsTable1073) SetIsShowingTopLevelAssemblyRow(v bool)`
+
+SetIsShowingTopLevelAssemblyRow sets IsShowingTopLevelAssemblyRow field to given value.
+
+### HasIsShowingTopLevelAssemblyRow
+
+`func (o *BTBillOfMaterialsTable1073) HasIsShowingTopLevelAssemblyRow() bool`
+
+HasIsShowingTopLevelAssemblyRow returns a boolean if a field has been set.
 
 ### GetPartNumber
 

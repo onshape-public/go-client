@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.153.6563-15cd2bfeebb4
+  version: 1.154.6590-f8226b4e1789
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -34,7 +34,7 @@ info:
   x-filter-info: ?restUserRole=PUBLIC
 servers:
 - description: Current
-  url: https://staging.dev.onshape.com/api/v4
+  url: https://staging.dev.onshape.com/api/v5
 security:
 - BasicAuth: []
 tags:
@@ -8334,7 +8334,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -8475,7 +8476,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -9330,39 +9332,56 @@ paths:
   /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails:
     get:
       deprecated: false
+      description: All coordinates are in meters.
       operationId: getBodyDetails
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace id, version id, or document microversion\
+          \ id is specified below."
+        explode: false
         in: path
         name: wvm
         required: true
         schema:
+          enum:
+          - w
+          - v
+          - m
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version, or document microversion in\
+          \ which the operation should be performed."
+        explode: false
         in: path
         name: wvmid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: partid
         required: true
         schema:
           type: string
@@ -9372,14 +9391,43 @@ paths:
         name: configuration
         required: false
         schema:
+          default: ""
           type: string
         style: form
-      - explode: true
+      - description: Index specifying the location of the rollback bar when the call
+          is evaluated. A -1 indicates that it should be at the end of the featurelist.
+        explode: true
         in: query
-        name: linkDocumentId
+        name: rollbackBarIndex
+        required: false
+        schema:
+          default: -1
+          format: int32
+          type: integer
+        style: form
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
+        in: query
+        name: elementMicroversionId
         required: false
         schema:
           type: string
+        style: form
+      - explode: false
+        in: path
+        name: partid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Whether or not geometric data should be included in the response.
+        explode: true
+        in: query
+        name: includeGeometricData
+        required: false
+        schema:
+          default: true
+          type: boolean
         style: form
       responses:
         default:
@@ -9552,7 +9600,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -9716,7 +9765,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -9840,7 +9890,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -10431,7 +10482,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -10569,7 +10621,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -11263,7 +11316,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -11723,7 +11777,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -11827,7 +11882,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -12073,7 +12129,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -12300,7 +12357,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -13131,7 +13189,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -13271,7 +13330,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: A specific element microversion in which to evaluate the request.
+        explode: true
         in: query
         name: elementMicroversionId
         required: false
@@ -13825,13 +13885,27 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
       - explode: false
         in: path
         name: wv
@@ -13846,7 +13920,8 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
         required: true
@@ -13855,22 +13930,16 @@ paths:
         style: simple
       - explode: true
         in: query
-        name: elementType
-        required: true
-        schema:
-          type: string
-        style: form
-      - explode: true
-        in: query
         name: configuration
         required: false
         schema:
+          default: ""
           type: string
         style: form
       - explode: true
         in: query
-        name: linkDocumentId
-        required: false
+        name: elementType
+        required: true
         schema:
           type: string
         style: form
@@ -16810,6 +16879,7 @@ components:
           id: id
         canCurrentUserSyncToArena: true
         canCurrentUserCreateReleases: true
+        canCurrentUserSeeArenaItemLink: true
         companyId: companyId
         enabledActiveMultipleWorkflows: true
         canCurrentUserManageWorkflows: true
@@ -16823,6 +16893,8 @@ components:
         canCurrentUserCreateReleases:
           type: boolean
         canCurrentUserManageWorkflows:
+          type: boolean
+        canCurrentUserSeeArenaItemLink:
           type: boolean
         canCurrentUserSyncBomToArena:
           type: boolean
@@ -24966,6 +25038,10 @@ components:
                 "y": 7.061401241503109
                 z: 9.301444243932576
             id: id
+          closed: true
+          constituentBodyIds:
+          - constituentBodyIds
+          - constituentBodyIds
           id: id
           faces:
           - area: 6.027456183070403
@@ -25093,6 +25169,7 @@ components:
                 z: 9.301444243932576
             id: id
           type: SOLID
+          consumedByComposite: true
           properties: null
         - vertices:
           - id: id
@@ -25214,6 +25291,10 @@ components:
                 "y": 7.061401241503109
                 z: 9.301444243932576
             id: id
+          closed: true
+          constituentBodyIds:
+          - constituentBodyIds
+          - constituentBodyIds
           id: id
           faces:
           - area: 6.027456183070403
@@ -25341,6 +25422,7 @@ components:
                 z: 9.301444243932576
             id: id
           type: SOLID
+          consumedByComposite: true
           properties: null
         microversionId:
           deleted: true
@@ -26195,6 +26277,7 @@ components:
           - DEFINED_IN_3D_CANT_REFERENCE_SM_FLAT
           - DEFINED_IN_SM_FLAT_CANT_REFERENCE_3D
           - CANNOT_CHANGE_REFERENCE_TO_DELETED_DOCUMENT
+          - CANNOT_CHANGE_REFERENCE_ELEMENT_NOT_FOUND
           - COPIED_SKETCH_NOT_FOUND
           - VARIABLE_NAME_TOO_LONG
           - NO_INSTANCE_TO_REPLACE
@@ -26407,6 +26490,9 @@ components:
           - FRAME_CUTLIST_NO_END_FACE_EDGE_GEOMETRY_PAIR
           - PUBLICATION_ITEM_INSERT_FAILED
           - PUBLICATION_ITEM_INSERT_FAILED_NO_LINK_PERMISSION
+          - PUBLICATION_ITEM_INSERT_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED
           - VRFILLET_RADIUS_REQUIRED_AT_POINT
           - VRFILLET_PARAMETER_REQUIRED_AT_POINT
           - VRFILLET_RHO_REQUIRED_AT_POINT
@@ -26467,6 +26553,8 @@ components:
           - SELECT_CYLINDER_EDGES
           - NOT_CYLINDER_OR_CONE
           - UNABLE_TO_FIND_THREAD_BOUNDARY
+          - UNDERCUT_OFF_FACE
+          - UNDERCUT_TOO_DEEP
           - HOLE_CBORE_CSINK_VALUES_NON_STD
           - SHEET_METAL_FLANGE_PARAMETER_BOUND
           - SHEET_METAL_FLANGE_ZERO_WIDTH
@@ -26521,6 +26609,7 @@ components:
           - FGS_SIMULATION_ERROR_INTERNAL_ERROR
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
+          - SPLIT_SELECT_FACE_DIRECTION
           - UNKNOWN
           type: string
         microversionId:
@@ -26652,6 +26741,10 @@ components:
               "y": 7.061401241503109
               z: 9.301444243932576
           id: id
+        closed: true
+        constituentBodyIds:
+        - constituentBodyIds
+        - constituentBodyIds
         id: id
         faces:
         - area: 6.027456183070403
@@ -26779,8 +26872,22 @@ components:
               z: 9.301444243932576
           id: id
         type: SOLID
+        consumedByComposite: true
         properties: null
       properties:
+        closed:
+          description: "If type == COMPOSITE, indicates whether it is open or closed."
+          type: boolean
+        constituentBodyIds:
+          items:
+            description: "If type == COMPOSITE, this is the id of a constituent that\
+              \ can be found in the 'bodies' array."
+            type: string
+          type: array
+        consumedByComposite:
+          description: Indicates if there is a closed composite that consumes this
+            body.
+          type: boolean
         edges:
           items:
             $ref: '#/components/schemas/BTExportModelEdge-1782'
@@ -27005,6 +27112,8 @@ components:
         id: id
       properties:
         appearancePropertyNodeId:
+          description: Identifies the application of the appearance. Faces that share
+            a value were assigned an appearance together.
           type: string
         area:
           format: double
@@ -28044,6 +28153,7 @@ components:
           - DEFINED_IN_3D_CANT_REFERENCE_SM_FLAT
           - DEFINED_IN_SM_FLAT_CANT_REFERENCE_3D
           - CANNOT_CHANGE_REFERENCE_TO_DELETED_DOCUMENT
+          - CANNOT_CHANGE_REFERENCE_ELEMENT_NOT_FOUND
           - COPIED_SKETCH_NOT_FOUND
           - VARIABLE_NAME_TOO_LONG
           - NO_INSTANCE_TO_REPLACE
@@ -28256,6 +28366,9 @@ components:
           - FRAME_CUTLIST_NO_END_FACE_EDGE_GEOMETRY_PAIR
           - PUBLICATION_ITEM_INSERT_FAILED
           - PUBLICATION_ITEM_INSERT_FAILED_NO_LINK_PERMISSION
+          - PUBLICATION_ITEM_INSERT_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED
           - VRFILLET_RADIUS_REQUIRED_AT_POINT
           - VRFILLET_PARAMETER_REQUIRED_AT_POINT
           - VRFILLET_RHO_REQUIRED_AT_POINT
@@ -28316,6 +28429,8 @@ components:
           - SELECT_CYLINDER_EDGES
           - NOT_CYLINDER_OR_CONE
           - UNABLE_TO_FIND_THREAD_BOUNDARY
+          - UNDERCUT_OFF_FACE
+          - UNDERCUT_TOO_DEEP
           - HOLE_CBORE_CSINK_VALUES_NON_STD
           - SHEET_METAL_FLANGE_PARAMETER_BOUND
           - SHEET_METAL_FLANGE_ZERO_WIDTH
@@ -28370,6 +28485,7 @@ components:
           - FGS_SIMULATION_ERROR_INTERNAL_ERROR
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
+          - SPLIT_SELECT_FACE_DIRECTION
           - UNKNOWN
           type: string
       type: object
@@ -28561,6 +28677,10 @@ components:
                   "y": 7.061401241503109
                   z: 9.301444243932576
               id: id
+            closed: true
+            constituentBodyIds:
+            - constituentBodyIds
+            - constituentBodyIds
             id: id
             faces:
             - area: 6.027456183070403
@@ -28688,6 +28808,7 @@ components:
                   z: 9.301444243932576
               id: id
             type: SOLID
+            consumedByComposite: true
             properties: null
           - vertices:
             - id: id
@@ -28809,6 +28930,10 @@ components:
                   "y": 7.061401241503109
                   z: 9.301444243932576
               id: id
+            closed: true
+            constituentBodyIds:
+            - constituentBodyIds
+            - constituentBodyIds
             id: id
             faces:
             - area: 6.027456183070403
@@ -28936,6 +29061,7 @@ components:
                   z: 9.301444243932576
               id: id
             type: SOLID
+            consumedByComposite: true
             properties: null
           microversionId:
             deleted: true
@@ -31289,6 +31415,7 @@ components:
           - DEFINED_IN_3D_CANT_REFERENCE_SM_FLAT
           - DEFINED_IN_SM_FLAT_CANT_REFERENCE_3D
           - CANNOT_CHANGE_REFERENCE_TO_DELETED_DOCUMENT
+          - CANNOT_CHANGE_REFERENCE_ELEMENT_NOT_FOUND
           - COPIED_SKETCH_NOT_FOUND
           - VARIABLE_NAME_TOO_LONG
           - NO_INSTANCE_TO_REPLACE
@@ -31501,6 +31628,9 @@ components:
           - FRAME_CUTLIST_NO_END_FACE_EDGE_GEOMETRY_PAIR
           - PUBLICATION_ITEM_INSERT_FAILED
           - PUBLICATION_ITEM_INSERT_FAILED_NO_LINK_PERMISSION
+          - PUBLICATION_ITEM_INSERT_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED
           - VRFILLET_RADIUS_REQUIRED_AT_POINT
           - VRFILLET_PARAMETER_REQUIRED_AT_POINT
           - VRFILLET_RHO_REQUIRED_AT_POINT
@@ -31561,6 +31691,8 @@ components:
           - SELECT_CYLINDER_EDGES
           - NOT_CYLINDER_OR_CONE
           - UNABLE_TO_FIND_THREAD_BOUNDARY
+          - UNDERCUT_OFF_FACE
+          - UNDERCUT_TOO_DEEP
           - HOLE_CBORE_CSINK_VALUES_NON_STD
           - SHEET_METAL_FLANGE_PARAMETER_BOUND
           - SHEET_METAL_FLANGE_ZERO_WIDTH
@@ -31615,6 +31747,7 @@ components:
           - FGS_SIMULATION_ERROR_INTERNAL_ERROR
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
+          - SPLIT_SELECT_FACE_DIRECTION
           - UNKNOWN
           type: string
         facetPoints:
@@ -41282,6 +41415,19 @@ components:
           - V1845_RULED_SURFACE_DERIVATIVE
           - V1846_BEND_LINE_ATTACHED
           - V1847_PROJECTED_CURVE_FIXES
+          - SKIP_1848
+          - SKIP_1849
+          - SKIP_1850
+          - SKIP_1851
+          - SKIP_1852
+          - SKIP_1853
+          - SKIP_1854
+          - SKIP_1855
+          - SKIP_1856
+          - V1857_TIP_ANGLE
+          - V1858_SWEEP_UTILS
+          - V1859_SPLIT_FACE_DEFAULT_NORMAL_TO_TARGET
+          - V1860_LOFT_CONNECTION_GUIDE_DIFF_FIX
           - UNKNOWN
           type: string
         btType:
@@ -52254,6 +52400,7 @@ components:
           - DEFINED_IN_3D_CANT_REFERENCE_SM_FLAT
           - DEFINED_IN_SM_FLAT_CANT_REFERENCE_3D
           - CANNOT_CHANGE_REFERENCE_TO_DELETED_DOCUMENT
+          - CANNOT_CHANGE_REFERENCE_ELEMENT_NOT_FOUND
           - COPIED_SKETCH_NOT_FOUND
           - VARIABLE_NAME_TOO_LONG
           - NO_INSTANCE_TO_REPLACE
@@ -52466,6 +52613,9 @@ components:
           - FRAME_CUTLIST_NO_END_FACE_EDGE_GEOMETRY_PAIR
           - PUBLICATION_ITEM_INSERT_FAILED
           - PUBLICATION_ITEM_INSERT_FAILED_NO_LINK_PERMISSION
+          - PUBLICATION_ITEM_INSERT_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED_NO_DUPLICATES_ALLOWED
+          - PUBLICATION_ITEM_UPDATE_FAILED
           - VRFILLET_RADIUS_REQUIRED_AT_POINT
           - VRFILLET_PARAMETER_REQUIRED_AT_POINT
           - VRFILLET_RHO_REQUIRED_AT_POINT
@@ -52526,6 +52676,8 @@ components:
           - SELECT_CYLINDER_EDGES
           - NOT_CYLINDER_OR_CONE
           - UNABLE_TO_FIND_THREAD_BOUNDARY
+          - UNDERCUT_OFF_FACE
+          - UNDERCUT_TOO_DEEP
           - HOLE_CBORE_CSINK_VALUES_NON_STD
           - SHEET_METAL_FLANGE_PARAMETER_BOUND
           - SHEET_METAL_FLANGE_ZERO_WIDTH
@@ -52580,6 +52732,7 @@ components:
           - FGS_SIMULATION_ERROR_INTERNAL_ERROR
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
+          - SPLIT_SELECT_FACE_DIRECTION
           - UNKNOWN
           type: string
         errorMessage:
@@ -54809,6 +54962,7 @@ components:
         globalPermissions:
           approveReleases: true
           viewChangeOrders: true
+          manageArenaSync: true
           accessReports: true
           transferDocumentsFromEnterprise: true
           manageNonGeometricItems: true
@@ -58430,6 +58584,7 @@ components:
       example:
         approveReleases: true
         viewChangeOrders: true
+        manageArenaSync: true
         accessReports: true
         transferDocumentsFromEnterprise: true
         manageNonGeometricItems: true
@@ -58471,6 +58626,9 @@ components:
           type: boolean
         deletePermanently:
           type: boolean
+        manageArenaSync:
+          type: boolean
+          writeOnly: true
         manageGuestUsers:
           type: boolean
         manageNonGeometricItems:
@@ -59363,6 +59521,7 @@ components:
             - V2_SERIALIZATION_UNIFICATION
             - V3_NEW_BOM_FORMAT
             - V4_TRANSACTIONS_NO_NEW
+            - V5_BODY_DETAILS_COMPOSITE_REFERENCE
             type: string
           type: array
         specifiedVersion:
@@ -59372,6 +59531,7 @@ components:
           - V2_SERIALIZATION_UNIFICATION
           - V3_NEW_BOM_FORMAT
           - V4_TRANSACTIONS_NO_NEW
+          - V5_BODY_DETAILS_COMPOSITE_REFERENCE
           type: string
       type: object
     BTEventParams:
@@ -59808,6 +59968,8 @@ components:
           type: array
         indented:
           type: boolean
+        isShowingTopLevelAssemblyRow:
+          type: boolean
         partNumber:
           type: string
         revision:
@@ -59897,6 +60059,12 @@ components:
       properties:
         educator:
           type: boolean
+        numberOfAssignments:
+          format: int64
+          type: integer
+        numberOfMembers:
+          format: int64
+          type: integer
         state:
           format: int32
           type: integer
@@ -60221,6 +60389,7 @@ components:
           - TRANSLUCENT_CYAN
           - TRANSLUCENT_YELLOW
           - TRANSLUCENT_BLACK
+          - TRANSLUCENT_ORANGE
           - UNKNOWN
           type: string
         deterministicId:

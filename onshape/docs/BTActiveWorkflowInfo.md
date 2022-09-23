@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AllowReleaseItemsFromOtherDocuments** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserCreateReleases** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserManageWorkflows** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSeeArenaItemLink** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncBomToArena** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncToArena** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncVersionsToArena** | Pointer to **bool** |  | [optional] 
@@ -118,6 +119,31 @@ SetCanCurrentUserManageWorkflows sets CanCurrentUserManageWorkflows field to giv
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserManageWorkflows() bool`
 
 HasCanCurrentUserManageWorkflows returns a boolean if a field has been set.
+
+### GetCanCurrentUserSeeArenaItemLink
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSeeArenaItemLink() bool`
+
+GetCanCurrentUserSeeArenaItemLink returns the CanCurrentUserSeeArenaItemLink field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSeeArenaItemLinkOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSeeArenaItemLinkOk() (*bool, bool)`
+
+GetCanCurrentUserSeeArenaItemLinkOk returns a tuple with the CanCurrentUserSeeArenaItemLink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSeeArenaItemLink
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSeeArenaItemLink(v bool)`
+
+SetCanCurrentUserSeeArenaItemLink sets CanCurrentUserSeeArenaItemLink field to given value.
+
+### HasCanCurrentUserSeeArenaItemLink
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSeeArenaItemLink() bool`
+
+HasCanCurrentUserSeeArenaItemLink returns a boolean if a field has been set.
 
 ### GetCanCurrentUserSyncBomToArena
 

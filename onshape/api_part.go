@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6563-15cd2bfeebb4
+API version: 1.154.6590-f8226b4e1789
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -206,6 +206,7 @@ func (r ApiExportPartGltfRequest) RollbackBarIndex(rollbackBarIndex int32) ApiEx
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiExportPartGltfRequest) ElementMicroversionId(elementMicroversionId string) ApiExportPartGltfRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -742,15 +743,24 @@ func (a *PartApiService) GetBendTableExecute(r ApiGetBendTableRequest) (*BTTable
 }
 
 type ApiGetBodyDetailsRequest struct {
-	ctx            context.Context
-	ApiService     *PartApiService
-	did            string
-	wvm            string
-	wvmid          string
-	eid            string
-	partid         string
-	configuration  *string
-	linkDocumentId *string
+	ctx                   context.Context
+	ApiService            *PartApiService
+	did                   string
+	wvm                   string
+	wvmid                 string
+	eid                   string
+	partid                string
+	linkDocumentId        *string
+	configuration         *string
+	rollbackBarIndex      *int32
+	elementMicroversionId *string
+	includeGeometricData  *bool
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetBodyDetailsRequest) LinkDocumentId(linkDocumentId string) ApiGetBodyDetailsRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
 }
 
 func (r ApiGetBodyDetailsRequest) Configuration(configuration string) ApiGetBodyDetailsRequest {
@@ -758,8 +768,21 @@ func (r ApiGetBodyDetailsRequest) Configuration(configuration string) ApiGetBody
 	return r
 }
 
-func (r ApiGetBodyDetailsRequest) LinkDocumentId(linkDocumentId string) ApiGetBodyDetailsRequest {
-	r.linkDocumentId = &linkDocumentId
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
+func (r ApiGetBodyDetailsRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetBodyDetailsRequest {
+	r.rollbackBarIndex = &rollbackBarIndex
+	return r
+}
+
+// A specific element microversion in which to evaluate the request.
+func (r ApiGetBodyDetailsRequest) ElementMicroversionId(elementMicroversionId string) ApiGetBodyDetailsRequest {
+	r.elementMicroversionId = &elementMicroversionId
+	return r
+}
+
+// Whether or not geometric data should be included in the response.
+func (r ApiGetBodyDetailsRequest) IncludeGeometricData(includeGeometricData bool) ApiGetBodyDetailsRequest {
+	r.includeGeometricData = &includeGeometricData
 	return r
 }
 
@@ -770,11 +793,13 @@ func (r ApiGetBodyDetailsRequest) Execute() (*BTExportModelBodiesResponse734, *h
 /*
 GetBodyDetails Retrieve part body details by document ID, workspace or version or microversion ID, tab ID, and part ID.
 
+All coordinates are in meters.
+
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
+ @param did The id of the document in which to perform the operation.
+ @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
+ @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @param partid
  @return ApiGetBodyDetailsRequest
 */
@@ -816,11 +841,20 @@ func (a *PartApiService) GetBodyDetailsExecute(r ApiGetBodyDetailsRequest) (*BTE
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	if r.configuration != nil {
 		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
 	}
-	if r.linkDocumentId != nil {
-		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	if r.rollbackBarIndex != nil {
+		localVarQueryParams.Add("rollbackBarIndex", parameterToString(*r.rollbackBarIndex, ""))
+	}
+	if r.elementMicroversionId != nil {
+		localVarQueryParams.Add("elementMicroversionId", parameterToString(*r.elementMicroversionId, ""))
+	}
+	if r.includeGeometricData != nil {
+		localVarQueryParams.Add("includeGeometricData", parameterToString(*r.includeGeometricData, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1069,6 +1103,7 @@ func (r ApiGetEdgesRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetEdges
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetEdgesRequest) ElementMicroversionId(elementMicroversionId string) ApiGetEdgesRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -1283,6 +1318,7 @@ func (r ApiGetFaces1Request) RollbackBarIndex(rollbackBarIndex int32) ApiGetFace
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetFaces1Request) ElementMicroversionId(elementMicroversionId string) ApiGetFaces1Request {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -1551,6 +1587,7 @@ func (r ApiGetMassPropertiesRequest) RollbackBarIndex(rollbackBarIndex int32) Ap
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetMassPropertiesRequest) ElementMicroversionId(elementMicroversionId string) ApiGetMassPropertiesRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -1733,6 +1770,7 @@ func (r ApiGetPartMetadataRequest) RollbackBarIndex(rollbackBarIndex int32) ApiG
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetPartMetadataRequest) ElementMicroversionId(elementMicroversionId string) ApiGetPartMetadataRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r

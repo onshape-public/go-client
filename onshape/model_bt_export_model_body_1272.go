@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6563-15cd2bfeebb4
+API version: 1.154.6590-f8226b4e1789
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,12 +17,17 @@ import (
 
 // BTExportModelBody1272 struct for BTExportModelBody1272
 type BTExportModelBody1272 struct {
-	Edges      []BTExportModelEdge1782     `json:"edges,omitempty"`
-	Faces      []BTExportModelFace1363     `json:"faces,omitempty"`
-	Id         *string                     `json:"id,omitempty"`
-	Properties *BTExportBodyProperties3559 `json:"properties,omitempty"`
-	Type       *string                     `json:"type,omitempty"`
-	Vertices   []BTExportModelVertex858    `json:"vertices,omitempty"`
+	// If type == COMPOSITE, indicates whether it is open or closed.
+	Closed             *bool    `json:"closed,omitempty"`
+	ConstituentBodyIds []string `json:"constituentBodyIds,omitempty"`
+	// Indicates if there is a closed composite that consumes this body.
+	ConsumedByComposite *bool                       `json:"consumedByComposite,omitempty"`
+	Edges               []BTExportModelEdge1782     `json:"edges,omitempty"`
+	Faces               []BTExportModelFace1363     `json:"faces,omitempty"`
+	Id                  *string                     `json:"id,omitempty"`
+	Properties          *BTExportBodyProperties3559 `json:"properties,omitempty"`
+	Type                *string                     `json:"type,omitempty"`
+	Vertices            []BTExportModelVertex858    `json:"vertices,omitempty"`
 }
 
 // NewBTExportModelBody1272 instantiates a new BTExportModelBody1272 object
@@ -40,6 +45,102 @@ func NewBTExportModelBody1272() *BTExportModelBody1272 {
 func NewBTExportModelBody1272WithDefaults() *BTExportModelBody1272 {
 	this := BTExportModelBody1272{}
 	return &this
+}
+
+// GetClosed returns the Closed field value if set, zero value otherwise.
+func (o *BTExportModelBody1272) GetClosed() bool {
+	if o == nil || o.Closed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Closed
+}
+
+// GetClosedOk returns a tuple with the Closed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelBody1272) GetClosedOk() (*bool, bool) {
+	if o == nil || o.Closed == nil {
+		return nil, false
+	}
+	return o.Closed, true
+}
+
+// HasClosed returns a boolean if a field has been set.
+func (o *BTExportModelBody1272) HasClosed() bool {
+	if o != nil && o.Closed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetClosed gets a reference to the given bool and assigns it to the Closed field.
+func (o *BTExportModelBody1272) SetClosed(v bool) {
+	o.Closed = &v
+}
+
+// GetConstituentBodyIds returns the ConstituentBodyIds field value if set, zero value otherwise.
+func (o *BTExportModelBody1272) GetConstituentBodyIds() []string {
+	if o == nil || o.ConstituentBodyIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.ConstituentBodyIds
+}
+
+// GetConstituentBodyIdsOk returns a tuple with the ConstituentBodyIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelBody1272) GetConstituentBodyIdsOk() ([]string, bool) {
+	if o == nil || o.ConstituentBodyIds == nil {
+		return nil, false
+	}
+	return o.ConstituentBodyIds, true
+}
+
+// HasConstituentBodyIds returns a boolean if a field has been set.
+func (o *BTExportModelBody1272) HasConstituentBodyIds() bool {
+	if o != nil && o.ConstituentBodyIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConstituentBodyIds gets a reference to the given []string and assigns it to the ConstituentBodyIds field.
+func (o *BTExportModelBody1272) SetConstituentBodyIds(v []string) {
+	o.ConstituentBodyIds = v
+}
+
+// GetConsumedByComposite returns the ConsumedByComposite field value if set, zero value otherwise.
+func (o *BTExportModelBody1272) GetConsumedByComposite() bool {
+	if o == nil || o.ConsumedByComposite == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ConsumedByComposite
+}
+
+// GetConsumedByCompositeOk returns a tuple with the ConsumedByComposite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelBody1272) GetConsumedByCompositeOk() (*bool, bool) {
+	if o == nil || o.ConsumedByComposite == nil {
+		return nil, false
+	}
+	return o.ConsumedByComposite, true
+}
+
+// HasConsumedByComposite returns a boolean if a field has been set.
+func (o *BTExportModelBody1272) HasConsumedByComposite() bool {
+	if o != nil && o.ConsumedByComposite != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConsumedByComposite gets a reference to the given bool and assigns it to the ConsumedByComposite field.
+func (o *BTExportModelBody1272) SetConsumedByComposite(v bool) {
+	o.ConsumedByComposite = &v
 }
 
 // GetEdges returns the Edges field value if set, zero value otherwise.
@@ -236,6 +337,15 @@ func (o *BTExportModelBody1272) SetVertices(v []BTExportModelVertex858) {
 
 func (o BTExportModelBody1272) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Closed != nil {
+		toSerialize["closed"] = o.Closed
+	}
+	if o.ConstituentBodyIds != nil {
+		toSerialize["constituentBodyIds"] = o.ConstituentBodyIds
+	}
+	if o.ConsumedByComposite != nil {
+		toSerialize["consumedByComposite"] = o.ConsumedByComposite
+	}
 	if o.Edges != nil {
 		toSerialize["edges"] = o.Edges
 	}

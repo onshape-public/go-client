@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6563-15cd2bfeebb4
+API version: 1.154.6590-f8226b4e1789
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -28,6 +28,7 @@ type GlobalPermissionInfo struct {
 	CreateProject                   *bool `json:"createProject,omitempty"`
 	CreateReleases                  *bool `json:"createReleases,omitempty"`
 	DeletePermanently               *bool `json:"deletePermanently,omitempty"`
+	ManageArenaSync                 *bool `json:"manageArenaSync,omitempty"`
 	ManageGuestUsers                *bool `json:"manageGuestUsers,omitempty"`
 	ManageNonGeometricItems         *bool `json:"manageNonGeometricItems,omitempty"`
 	ManageRbac                      *bool `json:"manageRbac,omitempty"`
@@ -408,6 +409,38 @@ func (o *GlobalPermissionInfo) SetDeletePermanently(v bool) {
 	o.DeletePermanently = &v
 }
 
+// GetManageArenaSync returns the ManageArenaSync field value if set, zero value otherwise.
+func (o *GlobalPermissionInfo) GetManageArenaSync() bool {
+	if o == nil || o.ManageArenaSync == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ManageArenaSync
+}
+
+// GetManageArenaSyncOk returns a tuple with the ManageArenaSync field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalPermissionInfo) GetManageArenaSyncOk() (*bool, bool) {
+	if o == nil || o.ManageArenaSync == nil {
+		return nil, false
+	}
+	return o.ManageArenaSync, true
+}
+
+// HasManageArenaSync returns a boolean if a field has been set.
+func (o *GlobalPermissionInfo) HasManageArenaSync() bool {
+	if o != nil && o.ManageArenaSync != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetManageArenaSync gets a reference to the given bool and assigns it to the ManageArenaSync field.
+func (o *GlobalPermissionInfo) SetManageArenaSync(v bool) {
+	o.ManageArenaSync = &v
+}
+
 // GetManageGuestUsers returns the ManageGuestUsers field value if set, zero value otherwise.
 func (o *GlobalPermissionInfo) GetManageGuestUsers() bool {
 	if o == nil || o.ManageGuestUsers == nil {
@@ -730,6 +763,9 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeletePermanently != nil {
 		toSerialize["deletePermanently"] = o.DeletePermanently
+	}
+	if o.ManageArenaSync != nil {
+		toSerialize["manageArenaSync"] = o.ManageArenaSync
 	}
 	if o.ManageGuestUsers != nil {
 		toSerialize["manageGuestUsers"] = o.ManageGuestUsers

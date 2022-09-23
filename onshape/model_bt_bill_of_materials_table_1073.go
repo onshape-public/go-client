@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6563-15cd2bfeebb4
+API version: 1.154.6590-f8226b4e1789
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -32,6 +32,7 @@ type BTBillOfMaterialsTable1073 struct {
 	BtType                                  *string                 `json:"btType,omitempty"`
 	FailedMetadataRepresentativeOccurrences []string                `json:"failedMetadataRepresentativeOccurrences,omitempty"`
 	Indented                                *bool                   `json:"indented,omitempty"`
+	IsShowingTopLevelAssemblyRow            *bool                   `json:"isShowingTopLevelAssemblyRow,omitempty"`
 	PartNumber                              *string                 `json:"partNumber,omitempty"`
 	Revision                                *string                 `json:"revision,omitempty"`
 	ShowingExcluded                         *bool                   `json:"showingExcluded,omitempty"`
@@ -534,6 +535,38 @@ func (o *BTBillOfMaterialsTable1073) SetIndented(v bool) {
 	o.Indented = &v
 }
 
+// GetIsShowingTopLevelAssemblyRow returns the IsShowingTopLevelAssemblyRow field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTable1073) GetIsShowingTopLevelAssemblyRow() bool {
+	if o == nil || o.IsShowingTopLevelAssemblyRow == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsShowingTopLevelAssemblyRow
+}
+
+// GetIsShowingTopLevelAssemblyRowOk returns a tuple with the IsShowingTopLevelAssemblyRow field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTable1073) GetIsShowingTopLevelAssemblyRowOk() (*bool, bool) {
+	if o == nil || o.IsShowingTopLevelAssemblyRow == nil {
+		return nil, false
+	}
+	return o.IsShowingTopLevelAssemblyRow, true
+}
+
+// HasIsShowingTopLevelAssemblyRow returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTable1073) HasIsShowingTopLevelAssemblyRow() bool {
+	if o != nil && o.IsShowingTopLevelAssemblyRow != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsShowingTopLevelAssemblyRow gets a reference to the given bool and assigns it to the IsShowingTopLevelAssemblyRow field.
+func (o *BTBillOfMaterialsTable1073) SetIsShowingTopLevelAssemblyRow(v bool) {
+	o.IsShowingTopLevelAssemblyRow = &v
+}
+
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTable1073) GetPartNumber() string {
 	if o == nil || o.PartNumber == nil {
@@ -676,6 +709,9 @@ func (o BTBillOfMaterialsTable1073) MarshalJSON() ([]byte, error) {
 	}
 	if o.Indented != nil {
 		toSerialize["indented"] = o.Indented
+	}
+	if o.IsShowingTopLevelAssemblyRow != nil {
+		toSerialize["isShowingTopLevelAssemblyRow"] = o.IsShowingTopLevelAssemblyRow
 	}
 	if o.PartNumber != nil {
 		toSerialize["partNumber"] = o.PartNumber

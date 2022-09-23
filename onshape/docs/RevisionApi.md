@@ -1,6 +1,6 @@
 # \RevisionApi
 
-All URIs are relative to *https://staging.dev.onshape.com/api/v4*
+All URIs are relative to *https://staging.dev.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ## GetRevisionHistoryInCompanyByElementId
 
-> BTRevisionListResponse GetRevisionHistoryInCompanyByElementId(ctx, cid, did, wv, wvid, eid).ElementType(elementType).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+> BTRevisionListResponse GetRevisionHistoryInCompanyByElementId(ctx, cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
 
 Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, and tab ID.
 
@@ -416,19 +416,19 @@ import (
 
 func main() {
     cid := "cid_example" // string | 
-    did := "did_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
     wv := "wv_example" // string | 
     wvid := "wvid_example" // string | 
-    eid := "eid_example" // string | 
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
     elementType := "elementType_example" // string | 
-    configuration := "configuration_example" // string |  (optional)
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
     fillApprovers := true // bool |  (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByElementId(context.Background(), cid, did, wv, wvid, eid).ElementType(elementType).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByElementId(context.Background(), cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RevisionApi.GetRevisionHistoryInCompanyByElementId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -445,10 +445,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **cid** | **string** |  | 
-**did** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
 **wv** | **string** |  | 
 **wvid** | **string** |  | 
-**eid** | **string** |  | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -463,8 +463,8 @@ Name | Type | Description  | Notes
 
 
  **elementType** | **string** |  | 
- **configuration** | **string** |  | 
- **linkDocumentId** | **string** |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
  **fillApprovers** | **bool** |  | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
 
