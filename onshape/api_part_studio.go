@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.153.6563-15cd2bfeebb4
+API version: 1.154.6590-f8226b4e1789
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -731,6 +731,7 @@ func (r ApiEvalFeatureScriptRequest) RollbackBarIndex(rollbackBarIndex int32) Ap
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiEvalFeatureScriptRequest) ElementMicroversionId(elementMicroversionId string) ApiEvalFeatureScriptRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -1053,6 +1054,7 @@ func (r ApiExportPartStudioGltfRequest) RollbackBarIndex(rollbackBarIndex int32)
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiExportPartStudioGltfRequest) ElementMicroversionId(elementMicroversionId string) ApiExportPartStudioGltfRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -1493,6 +1495,7 @@ func (r ApiGetFeatureScriptRepresentationRequest) RollbackBarIndex(rollbackBarIn
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetFeatureScriptRepresentationRequest) ElementMicroversionId(elementMicroversionId string) ApiGetFeatureScriptRepresentationRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -1829,6 +1832,7 @@ func (r ApiGetPartStudioBodyDetailsRequest) RollbackBarIndex(rollbackBarIndex in
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetPartStudioBodyDetailsRequest) ElementMicroversionId(elementMicroversionId string) ApiGetPartStudioBodyDetailsRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -2179,6 +2183,7 @@ func (r ApiGetPartStudioEdgesRequest) RollbackBarIndex(rollbackBarIndex int32) A
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetPartStudioEdgesRequest) ElementMicroversionId(elementMicroversionId string) ApiGetPartStudioEdgesRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -2406,6 +2411,7 @@ func (r ApiGetPartStudioFacesRequest) RollbackBarIndex(rollbackBarIndex int32) A
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetPartStudioFacesRequest) ElementMicroversionId(elementMicroversionId string) ApiGetPartStudioFacesRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r
@@ -2974,6 +2980,7 @@ func (r ApiGetPartStudioMassPropertiesRequest) RollbackBarIndex(rollbackBarIndex
 	return r
 }
 
+// A specific element microversion in which to evaluate the request.
 func (r ApiGetPartStudioMassPropertiesRequest) ElementMicroversionId(elementMicroversionId string) ApiGetPartStudioMassPropertiesRequest {
 	r.elementMicroversionId = &elementMicroversionId
 	return r

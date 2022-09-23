@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Educator** | Pointer to **bool** |  | [optional] 
+**NumberOfAssignments** | Pointer to **int64** |  | [optional] 
+**NumberOfMembers** | Pointer to **int64** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **StateName** | Pointer to **string** |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
@@ -52,6 +54,56 @@ SetEducator sets Educator field to given value.
 `func (o *BTClassroomInfo) HasEducator() bool`
 
 HasEducator returns a boolean if a field has been set.
+
+### GetNumberOfAssignments
+
+`func (o *BTClassroomInfo) GetNumberOfAssignments() int64`
+
+GetNumberOfAssignments returns the NumberOfAssignments field if non-nil, zero value otherwise.
+
+### GetNumberOfAssignmentsOk
+
+`func (o *BTClassroomInfo) GetNumberOfAssignmentsOk() (*int64, bool)`
+
+GetNumberOfAssignmentsOk returns a tuple with the NumberOfAssignments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfAssignments
+
+`func (o *BTClassroomInfo) SetNumberOfAssignments(v int64)`
+
+SetNumberOfAssignments sets NumberOfAssignments field to given value.
+
+### HasNumberOfAssignments
+
+`func (o *BTClassroomInfo) HasNumberOfAssignments() bool`
+
+HasNumberOfAssignments returns a boolean if a field has been set.
+
+### GetNumberOfMembers
+
+`func (o *BTClassroomInfo) GetNumberOfMembers() int64`
+
+GetNumberOfMembers returns the NumberOfMembers field if non-nil, zero value otherwise.
+
+### GetNumberOfMembersOk
+
+`func (o *BTClassroomInfo) GetNumberOfMembersOk() (*int64, bool)`
+
+GetNumberOfMembersOk returns a tuple with the NumberOfMembers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfMembers
+
+`func (o *BTClassroomInfo) SetNumberOfMembers(v int64)`
+
+SetNumberOfMembers sets NumberOfMembers field to given value.
+
+### HasNumberOfMembers
+
+`func (o *BTClassroomInfo) HasNumberOfMembers() bool`
+
+HasNumberOfMembers returns a boolean if a field has been set.
 
 ### GetState
 

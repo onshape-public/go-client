@@ -1,6 +1,6 @@
 # \UserApi
 
-All URIs are relative to *https://staging.dev.onshape.com/api/v4*
+All URIs are relative to *https://staging.dev.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

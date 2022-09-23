@@ -1,6 +1,6 @@
 # \MetadataApi
 
-All URIs are relative to *https://staging.dev.onshape.com/api/v4*
+All URIs are relative to *https://staging.dev.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -225,7 +225,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
-    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     inferMetadataOwner := true // bool |  (optional) (default to false)
     includeComputedProperties := true // bool |  (optional) (default to true)
     thumbnail := true // bool |  (optional) (default to false)
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
- **elementMicroversionId** | **string** |  | 
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **inferMetadataOwner** | **bool** |  | [default to false]
  **includeComputedProperties** | **bool** |  | [default to true]
  **thumbnail** | **bool** |  | [default to false]
@@ -746,7 +746,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
-    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -790,7 +790,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
- **elementMicroversionId** | **string** |  | 
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # \PartApi
 
-All URIs are relative to *https://staging.dev.onshape.com/api/v4*
+All URIs are relative to *https://staging.dev.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -136,7 +136,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
-    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     angleTolerance := float64(1.2) // float64 |  (optional)
     chordTolerance := float64(1.2) // float64 |  (optional)
     precomputedLevelOfDetail := "precomputedLevelOfDetail_example" // string |  (optional)
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
- **elementMicroversionId** | **string** |  | 
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **angleTolerance** | **float64** |  | 
  **chordTolerance** | **float64** |  | 
  **precomputedLevelOfDetail** | **string** |  | 
@@ -395,9 +395,11 @@ Name | Type | Description  | Notes
 
 ## GetBodyDetails
 
-> BTExportModelBodiesResponse734 GetBodyDetails(ctx, did, wvm, wvmid, eid, partid).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
+> BTExportModelBodiesResponse734 GetBodyDetails(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeGeometricData(includeGeometricData).Execute()
 
 Retrieve part body details by document ID, workspace or version or microversion ID, tab ID, and part ID.
+
+
 
 ### Example
 
@@ -412,17 +414,20 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wvm := "wvm_example" // string | 
-    wvmid := "wvmid_example" // string | 
-    eid := "eid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
     partid := "partid_example" // string | 
-    configuration := "configuration_example" // string |  (optional)
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
+    rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
+    includeGeometricData := true // bool | Whether or not geometric data should be included in the response. (optional) (default to true)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PartApi.GetBodyDetails(context.Background(), did, wvm, wvmid, eid, partid).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
+    resp, r, err := apiClient.PartApi.GetBodyDetails(context.Background(), did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeGeometricData(includeGeometricData).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartApi.GetBodyDetails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -438,10 +443,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 **partid** | **string** |  | 
 
 ### Other Parameters
@@ -456,8 +461,11 @@ Name | Type | Description  | Notes
 
 
 
- **configuration** | **string** |  | 
- **linkDocumentId** | **string** |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
+ **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
+ **includeGeometricData** | **bool** | Whether or not geometric data should be included in the response. | [default to true]
 
 ### Return type
 
@@ -590,7 +598,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
-    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     angleTolerance := float64(1.2) // float64 |  (optional)
     chordTolerance := float64(1.2) // float64 |  (optional)
     precomputedLevelOfDetail := "precomputedLevelOfDetail_example" // string |  (optional)
@@ -635,7 +643,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
- **elementMicroversionId** | **string** |  | 
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **angleTolerance** | **float64** |  | 
  **chordTolerance** | **float64** |  | 
  **precomputedLevelOfDetail** | **string** |  | 
@@ -686,7 +694,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
-    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     angleTolerance := float64(1.2) // float64 |  (optional)
     chordTolerance := float64(1.2) // float64 |  (optional)
     precomputedLevelOfDetail := "precomputedLevelOfDetail_example" // string |  (optional)
@@ -739,7 +747,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
- **elementMicroversionId** | **string** |  | 
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **angleTolerance** | **float64** |  | 
  **chordTolerance** | **float64** |  | 
  **precomputedLevelOfDetail** | **string** |  | 
@@ -798,7 +806,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
-    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     inferMetadataOwner := true // bool |  (optional) (default to true)
     useMassPropertyOverrides := true // bool | If true, use the user mass property overrides when calculated mass properties (optional) (default to false)
 
@@ -841,7 +849,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
- **elementMicroversionId** | **string** |  | 
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **inferMetadataOwner** | **bool** |  | [default to true]
  **useMassPropertyOverrides** | **bool** | If true, use the user mass property overrides when calculated mass properties | [default to false]
 
@@ -890,7 +898,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
-    elementMicroversionId := "elementMicroversionId_example" // string |  (optional)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     inferMetadataOwner := true // bool |  (optional) (default to false)
     includePropertyDefaults := true // bool |  (optional) (default to false)
     friendlyUserIds := true // bool |  (optional) (default to false)
@@ -934,7 +942,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
- **elementMicroversionId** | **string** |  | 
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **inferMetadataOwner** | **bool** |  | [default to false]
  **includePropertyDefaults** | **bool** |  | [default to false]
  **friendlyUserIds** | **bool** |  | [default to false]
