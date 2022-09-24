@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6590-f8226b4e1789
+  version: 1.154.6615-4098eb2c62ac
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41428,6 +41428,7 @@ components:
           - V1858_SWEEP_UTILS
           - V1859_SPLIT_FACE_DEFAULT_NORMAL_TO_TARGET
           - V1860_LOFT_CONNECTION_GUIDE_DIFF_FIX
+          - V1861_HOLE_TIP_ANGLE_NAMES
           - UNKNOWN
           type: string
         btType:
