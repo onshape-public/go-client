@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6621-03f431879e4b
+  version: 1.154.6633-e6f3d20f07a4
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -54963,7 +54963,6 @@ components:
         globalPermissions:
           approveReleases: true
           viewChangeOrders: true
-          manageArenaSync: true
           accessReports: true
           transferDocumentsFromEnterprise: true
           manageNonGeometricItems: true
@@ -58585,7 +58584,6 @@ components:
       example:
         approveReleases: true
         viewChangeOrders: true
-        manageArenaSync: true
         accessReports: true
         transferDocumentsFromEnterprise: true
         manageNonGeometricItems: true
@@ -58627,9 +58625,6 @@ components:
           type: boolean
         deletePermanently:
           type: boolean
-        manageArenaSync:
-          type: boolean
-          writeOnly: true
         manageGuestUsers:
           type: boolean
         manageNonGeometricItems:
