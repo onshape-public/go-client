@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6649-866b78b01936
+  version: 1.154.6672-3324fec9d980
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41430,6 +41430,7 @@ components:
           - V1860_LOFT_CONNECTION_GUIDE_DIFF_FIX
           - V1861_HOLE_TIP_ANGLE_NAMES
           - V1862_HOLE_TABLE_DRILL_ANGLE_NAME
+          - V1863_SPLIT_FACE_KEEP_CURVE_TOOLS
           - UNKNOWN
           type: string
         btType:
@@ -53278,8 +53279,7 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny:
-              btType: btType
+            crossHighlightDataIfAny: null
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53290,8 +53290,7 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny:
-              btType: btType
+            crossHighlightDataIfAny: null
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53355,12 +53354,8 @@ components:
           BTTableAssemblyCrossHighlightData-2675: '#/components/schemas/BTTableAssemblyCrossHighlightData-2675'
           BTTableCrossHighlightData-1753: '#/components/schemas/BTTableCrossHighlightData-1753'
         propertyName: btType
-      example:
-        btType: btType
-      properties:
-        btType:
-          type: string
       type: object
+      x-is-free-form: false
     BTTableBaseRowMetadata-3181:
       discriminator:
         mapping:
@@ -53370,8 +53365,7 @@ components:
           BTVariableTableRowMetadata-3912: '#/components/schemas/BTVariableTableRowMetadata-3912'
         propertyName: btType
       example:
-        crossHighlightDataIfAny:
-          btType: btType
+        crossHighlightDataIfAny: null
       properties:
         crossHighlightDataIfAny:
           $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
@@ -53612,8 +53606,7 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny:
-                btType: btType
+              crossHighlightDataIfAny: null
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -53624,8 +53617,7 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny:
-                btType: btType
+              crossHighlightDataIfAny: null
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -53648,8 +53640,7 @@ components:
         id: id
         nodeId: nodeId
         rowMetadata:
-          crossHighlightDataIfAny:
-            btType: btType
+          crossHighlightDataIfAny: null
         columnIdToCell:
           key:
             isEverVisible: true
