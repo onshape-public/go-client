@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6672-3324fec9d980
+  version: 1.154.6700-f2963ce28904
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -53279,7 +53279,8 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny: null
+            crossHighlightDataIfAny:
+              btType: btType
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53290,7 +53291,8 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny: null
+            crossHighlightDataIfAny:
+              btType: btType
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53354,8 +53356,12 @@ components:
           BTTableAssemblyCrossHighlightData-2675: '#/components/schemas/BTTableAssemblyCrossHighlightData-2675'
           BTTableCrossHighlightData-1753: '#/components/schemas/BTTableCrossHighlightData-1753'
         propertyName: btType
+      example:
+        btType: btType
+      properties:
+        btType:
+          type: string
       type: object
-      x-is-free-form: false
     BTTableBaseRowMetadata-3181:
       discriminator:
         mapping:
@@ -53365,7 +53371,8 @@ components:
           BTVariableTableRowMetadata-3912: '#/components/schemas/BTVariableTableRowMetadata-3912'
         propertyName: btType
       example:
-        crossHighlightDataIfAny: null
+        crossHighlightDataIfAny:
+          btType: btType
       properties:
         crossHighlightDataIfAny:
           $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
@@ -53606,7 +53613,8 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny: null
+              crossHighlightDataIfAny:
+                btType: btType
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -53617,7 +53625,8 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny: null
+              crossHighlightDataIfAny:
+                btType: btType
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -53640,7 +53649,8 @@ components:
         id: id
         nodeId: nodeId
         rowMetadata:
-          crossHighlightDataIfAny: null
+          crossHighlightDataIfAny:
+            btType: btType
         columnIdToCell:
           key:
             isEverVisible: true
