@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.154.6700-f2963ce28904
+API version: 1.154.6730-405400b0583f
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -160,9 +160,15 @@ type ApiDownloadFileWorkspaceRequest struct {
 	did                string
 	wid                string
 	eid                string
+	linkDocumentId     *string
 	contentDisposition *string
 	ifNoneMatch        *string
-	linkDocumentId     *string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiDownloadFileWorkspaceRequest) LinkDocumentId(linkDocumentId string) ApiDownloadFileWorkspaceRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
 }
 
 func (r ApiDownloadFileWorkspaceRequest) ContentDisposition(contentDisposition string) ApiDownloadFileWorkspaceRequest {
@@ -175,11 +181,6 @@ func (r ApiDownloadFileWorkspaceRequest) IfNoneMatch(ifNoneMatch string) ApiDown
 	return r
 }
 
-func (r ApiDownloadFileWorkspaceRequest) LinkDocumentId(linkDocumentId string) ApiDownloadFileWorkspaceRequest {
-	r.linkDocumentId = &linkDocumentId
-	return r
-}
-
 func (r ApiDownloadFileWorkspaceRequest) Execute() (*HttpFile, *http.Response, error) {
 	return r.ApiService.DownloadFileWorkspaceExecute(r)
 }
@@ -188,9 +189,9 @@ func (r ApiDownloadFileWorkspaceRequest) Execute() (*HttpFile, *http.Response, e
 DownloadFileWorkspace Method for DownloadFileWorkspace
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
+ @param did The id of the document in which to perform the operation.
+ @param wid The id of the workspace in which to perform the operation.
+ @param eid The id of the element in which to perform the operation.
  @return ApiDownloadFileWorkspaceRequest
 */
 func (a *BlobElementApiService) DownloadFileWorkspace(ctx context.Context, did string, wid string, eid string) ApiDownloadFileWorkspaceRequest {
@@ -227,11 +228,11 @@ func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWo
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.contentDisposition != nil {
-		localVarQueryParams.Add("contentDisposition", parameterToString(*r.contentDisposition, ""))
-	}
 	if r.linkDocumentId != nil {
 		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.contentDisposition != nil {
+		localVarQueryParams.Add("contentDisposition", parameterToString(*r.contentDisposition, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

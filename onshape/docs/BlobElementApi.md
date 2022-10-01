@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## DownloadFileWorkspace
 
-> HttpFile DownloadFileWorkspace(ctx, did, wid, eid).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).LinkDocumentId(linkDocumentId).Execute()
+> HttpFile DownloadFileWorkspace(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).Execute()
 
 
 
@@ -110,16 +110,16 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wid := "wid_example" // string | 
-    eid := "eid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     contentDisposition := "contentDisposition_example" // string |  (optional)
     ifNoneMatch := "ifNoneMatch_example" // string |  (optional)
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlobElementApi.DownloadFileWorkspace(context.Background(), did, wid, eid).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).LinkDocumentId(linkDocumentId).Execute()
+    resp, r, err := apiClient.BlobElementApi.DownloadFileWorkspace(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.DownloadFileWorkspace``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -135,9 +135,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -149,9 +149,9 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **contentDisposition** | **string** |  | 
  **ifNoneMatch** | **string** |  | 
- **linkDocumentId** | **string** |  | 
 
 ### Return type
 

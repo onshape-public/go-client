@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6700-f2963ce28904
+  version: 1.154.6730-405400b0583f
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -4471,21 +4471,37 @@ paths:
       deprecated: false
       operationId: downloadFileWorkspace
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: The id of the workspace in which to perform the operation.
+        explode: false
         in: path
         name: wid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
         required: true
@@ -4506,13 +4522,6 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: linkDocumentId
-        required: false
-        schema:
-          type: string
-        style: form
       responses:
         default:
           content:
@@ -26610,6 +26619,8 @@ components:
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
+          - SELECTION_IS_INVALID
+          - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
           - UNKNOWN
           type: string
         microversionId:
@@ -28486,6 +28497,8 @@ components:
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
+          - SELECTION_IS_INVALID
+          - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
           - UNKNOWN
           type: string
       type: object
@@ -31748,6 +31761,8 @@ components:
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
+          - SELECTION_IS_INVALID
+          - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
           - UNKNOWN
           type: string
         facetPoints:
@@ -41431,6 +41446,9 @@ components:
           - V1861_HOLE_TIP_ANGLE_NAMES
           - V1862_HOLE_TABLE_DRILL_ANGLE_NAME
           - V1863_SPLIT_FACE_KEEP_CURVE_TOOLS
+          - V1864_TANGENT_MATE_SPLIT_FACE_ERROR
+          - V1865_PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
+          - V1866_SPLIT_FACE_CURVE_TOOLS_NEED_DIR
           - UNKNOWN
           type: string
         btType:
@@ -52736,6 +52754,8 @@ components:
           - DXF_COULD_NOT_CONVERT_TEXT
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
+          - SELECTION_IS_INVALID
+          - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
           - UNKNOWN
           type: string
         errorMessage:
@@ -63089,10 +63109,6 @@ components:
           type: string
         itemName:
           type: string
-        parameters:
-          items:
-            $ref: '#/components/schemas/BTParameterSpec-6'
-          type: array
       type: object
     BTParameterSpecBoolean_170_allOf:
       properties:
