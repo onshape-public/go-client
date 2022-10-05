@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DrivenQuery** | Pointer to **string** |  | [optional] 
 **ItemLabelTemplate** | Pointer to **string** |  | [optional] 
 **ItemName** | Pointer to **string** |  | [optional] 
+**Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetItemName sets ItemName field to given value.
 `func (o *BTParameterSpecArray2600) HasItemName() bool`
 
 HasItemName returns a boolean if a field has been set.
+
+### GetParameters
+
+`func (o *BTParameterSpecArray2600) GetParameters() []BTParameterSpec6`
+
+GetParameters returns the Parameters field if non-nil, zero value otherwise.
+
+### GetParametersOk
+
+`func (o *BTParameterSpecArray2600) GetParametersOk() (*[]BTParameterSpec6, bool)`
+
+GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameters
+
+`func (o *BTParameterSpecArray2600) SetParameters(v []BTParameterSpec6)`
+
+SetParameters sets Parameters field to given value.
+
+### HasParameters
+
+`func (o *BTParameterSpecArray2600) HasParameters() bool`
+
+HasParameters returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
