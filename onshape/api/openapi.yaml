@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6754-5780ab52d7fd
+  version: 1.154.6764-8cd829594e49
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41449,6 +41449,7 @@ components:
           - V1864_TANGENT_MATE_SPLIT_FACE_ERROR
           - V1865_PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
           - V1866_SPLIT_FACE_CURVE_TOOLS_NEED_DIR
+          - V1867_HOLE_TIP_ANGLE_OPTION_NAMES
           - UNKNOWN
           type: string
         btType:
@@ -63109,6 +63110,10 @@ components:
           type: string
         itemName:
           type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/BTParameterSpec-6'
+          type: array
       type: object
     BTParameterSpecBoolean_170_allOf:
       properties:
