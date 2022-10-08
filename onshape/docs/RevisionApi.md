@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
