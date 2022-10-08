@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6797-6824f8df9946
+  version: 1.154.6820-1bef41f9cc03
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -14215,6 +14215,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTListResponseBTRevisionInfo'
           description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
       summary: Retrieve a list of all revisions that exist in a document version.
       tags:
       - Revision
