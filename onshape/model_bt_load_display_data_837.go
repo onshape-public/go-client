@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.154.6820-1bef41f9cc03
+API version: 1.154.6826-13f16e212af4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,7 +18,8 @@ import (
 // BTLoadDisplayData837 struct for BTLoadDisplayData837
 type BTLoadDisplayData837 struct {
 	BtType                   *string         `json:"btType,omitempty"`
-	Direction                *BTVector3d389  `json:"direction,omitempty"`
+	ComponentValues          *BTVector3d389  `json:"componentValues,omitempty"`
+	DirectionMateConnectorId *string         `json:"directionMateConnectorId,omitempty"`
 	FaceLoadDeterministicIds []string        `json:"faceLoadDeterministicIds,omitempty"`
 	Hidden                   *bool           `json:"hidden,omitempty"`
 	IsDerivedFeature         *bool           `json:"isDerivedFeature,omitempty"`
@@ -79,36 +80,68 @@ func (o *BTLoadDisplayData837) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetDirection returns the Direction field value if set, zero value otherwise.
-func (o *BTLoadDisplayData837) GetDirection() BTVector3d389 {
-	if o == nil || o.Direction == nil {
+// GetComponentValues returns the ComponentValues field value if set, zero value otherwise.
+func (o *BTLoadDisplayData837) GetComponentValues() BTVector3d389 {
+	if o == nil || o.ComponentValues == nil {
 		var ret BTVector3d389
 		return ret
 	}
-	return *o.Direction
+	return *o.ComponentValues
 }
 
-// GetDirectionOk returns a tuple with the Direction field value if set, nil otherwise
+// GetComponentValuesOk returns a tuple with the ComponentValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTLoadDisplayData837) GetDirectionOk() (*BTVector3d389, bool) {
-	if o == nil || o.Direction == nil {
+func (o *BTLoadDisplayData837) GetComponentValuesOk() (*BTVector3d389, bool) {
+	if o == nil || o.ComponentValues == nil {
 		return nil, false
 	}
-	return o.Direction, true
+	return o.ComponentValues, true
 }
 
-// HasDirection returns a boolean if a field has been set.
-func (o *BTLoadDisplayData837) HasDirection() bool {
-	if o != nil && o.Direction != nil {
+// HasComponentValues returns a boolean if a field has been set.
+func (o *BTLoadDisplayData837) HasComponentValues() bool {
+	if o != nil && o.ComponentValues != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDirection gets a reference to the given BTVector3d389 and assigns it to the Direction field.
-func (o *BTLoadDisplayData837) SetDirection(v BTVector3d389) {
-	o.Direction = &v
+// SetComponentValues gets a reference to the given BTVector3d389 and assigns it to the ComponentValues field.
+func (o *BTLoadDisplayData837) SetComponentValues(v BTVector3d389) {
+	o.ComponentValues = &v
+}
+
+// GetDirectionMateConnectorId returns the DirectionMateConnectorId field value if set, zero value otherwise.
+func (o *BTLoadDisplayData837) GetDirectionMateConnectorId() string {
+	if o == nil || o.DirectionMateConnectorId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DirectionMateConnectorId
+}
+
+// GetDirectionMateConnectorIdOk returns a tuple with the DirectionMateConnectorId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLoadDisplayData837) GetDirectionMateConnectorIdOk() (*string, bool) {
+	if o == nil || o.DirectionMateConnectorId == nil {
+		return nil, false
+	}
+	return o.DirectionMateConnectorId, true
+}
+
+// HasDirectionMateConnectorId returns a boolean if a field has been set.
+func (o *BTLoadDisplayData837) HasDirectionMateConnectorId() bool {
+	if o != nil && o.DirectionMateConnectorId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectionMateConnectorId gets a reference to the given string and assigns it to the DirectionMateConnectorId field.
+func (o *BTLoadDisplayData837) SetDirectionMateConnectorId(v string) {
+	o.DirectionMateConnectorId = &v
 }
 
 // GetFaceLoadDeterministicIds returns the FaceLoadDeterministicIds field value if set, zero value otherwise.
@@ -404,8 +437,11 @@ func (o BTLoadDisplayData837) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.Direction != nil {
-		toSerialize["direction"] = o.Direction
+	if o.ComponentValues != nil {
+		toSerialize["componentValues"] = o.ComponentValues
+	}
+	if o.DirectionMateConnectorId != nil {
+		toSerialize["directionMateConnectorId"] = o.DirectionMateConnectorId
 	}
 	if o.FaceLoadDeterministicIds != nil {
 		toSerialize["faceLoadDeterministicIds"] = o.FaceLoadDeterministicIds
