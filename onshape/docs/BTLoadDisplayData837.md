@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Direction** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**ComponentValues** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**DirectionMateConnectorId** | Pointer to **string** |  | [optional] 
 **FaceLoadDeterministicIds** | Pointer to **[]string** |  | [optional] 
 **Hidden** | Pointer to **bool** |  | [optional] 
 **IsDerivedFeature** | Pointer to **bool** |  | [optional] 
@@ -60,30 +61,55 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
-### GetDirection
+### GetComponentValues
 
-`func (o *BTLoadDisplayData837) GetDirection() BTVector3d389`
+`func (o *BTLoadDisplayData837) GetComponentValues() BTVector3d389`
 
-GetDirection returns the Direction field if non-nil, zero value otherwise.
+GetComponentValues returns the ComponentValues field if non-nil, zero value otherwise.
 
-### GetDirectionOk
+### GetComponentValuesOk
 
-`func (o *BTLoadDisplayData837) GetDirectionOk() (*BTVector3d389, bool)`
+`func (o *BTLoadDisplayData837) GetComponentValuesOk() (*BTVector3d389, bool)`
 
-GetDirectionOk returns a tuple with the Direction field if it's non-nil, zero value otherwise
+GetComponentValuesOk returns a tuple with the ComponentValues field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDirection
+### SetComponentValues
 
-`func (o *BTLoadDisplayData837) SetDirection(v BTVector3d389)`
+`func (o *BTLoadDisplayData837) SetComponentValues(v BTVector3d389)`
 
-SetDirection sets Direction field to given value.
+SetComponentValues sets ComponentValues field to given value.
 
-### HasDirection
+### HasComponentValues
 
-`func (o *BTLoadDisplayData837) HasDirection() bool`
+`func (o *BTLoadDisplayData837) HasComponentValues() bool`
 
-HasDirection returns a boolean if a field has been set.
+HasComponentValues returns a boolean if a field has been set.
+
+### GetDirectionMateConnectorId
+
+`func (o *BTLoadDisplayData837) GetDirectionMateConnectorId() string`
+
+GetDirectionMateConnectorId returns the DirectionMateConnectorId field if non-nil, zero value otherwise.
+
+### GetDirectionMateConnectorIdOk
+
+`func (o *BTLoadDisplayData837) GetDirectionMateConnectorIdOk() (*string, bool)`
+
+GetDirectionMateConnectorIdOk returns a tuple with the DirectionMateConnectorId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectionMateConnectorId
+
+`func (o *BTLoadDisplayData837) SetDirectionMateConnectorId(v string)`
+
+SetDirectionMateConnectorId sets DirectionMateConnectorId field to given value.
+
+### HasDirectionMateConnectorId
+
+`func (o *BTLoadDisplayData837) HasDirectionMateConnectorId() bool`
+
+HasDirectionMateConnectorId returns a boolean if a field has been set.
 
 ### GetFaceLoadDeterministicIds
 
