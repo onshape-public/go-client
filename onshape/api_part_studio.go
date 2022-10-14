@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.154.6870-e8e79a24dc2c
+API version: 1.155.6905-ae59ed040327
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -879,6 +879,7 @@ type ApiExportParasolidRequest struct {
 	includeExportIds *bool
 	configuration    *string
 	linkDocumentId   *string
+	binaryExport     *bool
 }
 
 // IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK&amp;partId&#x3D;JHD). May not be combined with other ID filters
@@ -893,7 +894,7 @@ func (r ApiExportParasolidRequest) Version(version string) ApiExportParasolidReq
 	return r
 }
 
-// Whether topolgy ids should be exported as parasolid attributes
+// Whether topology ids should be exported as parasolid attributes
 func (r ApiExportParasolidRequest) IncludeExportIds(includeExportIds bool) ApiExportParasolidRequest {
 	r.includeExportIds = &includeExportIds
 	return r
@@ -908,6 +909,12 @@ func (r ApiExportParasolidRequest) Configuration(configuration string) ApiExport
 // Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter.
 func (r ApiExportParasolidRequest) LinkDocumentId(linkDocumentId string) ApiExportParasolidRequest {
 	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// Whether to use binary parasolid format instead of text
+func (r ApiExportParasolidRequest) BinaryExport(binaryExport bool) ApiExportParasolidRequest {
+	r.binaryExport = &binaryExport
 	return r
 }
 
@@ -973,6 +980,9 @@ func (a *PartStudioApiService) ExportParasolidExecute(r ApiExportParasolidReques
 	}
 	if r.linkDocumentId != nil {
 		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.binaryExport != nil {
+		localVarQueryParams.Add("binaryExport", parameterToString(*r.binaryExport, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

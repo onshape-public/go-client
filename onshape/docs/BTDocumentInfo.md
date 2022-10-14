@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
+**UnparentHref** | Pointer to **string** |  | [optional] 
 **UserAccountLimitsBreached** | Pointer to **bool** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 
@@ -1351,6 +1352,31 @@ SetTreeHref sets TreeHref field to given value.
 `func (o *BTDocumentInfo) HasTreeHref() bool`
 
 HasTreeHref returns a boolean if a field has been set.
+
+### GetUnparentHref
+
+`func (o *BTDocumentInfo) GetUnparentHref() string`
+
+GetUnparentHref returns the UnparentHref field if non-nil, zero value otherwise.
+
+### GetUnparentHrefOk
+
+`func (o *BTDocumentInfo) GetUnparentHrefOk() (*string, bool)`
+
+GetUnparentHrefOk returns a tuple with the UnparentHref field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnparentHref
+
+`func (o *BTDocumentInfo) SetUnparentHref(v string)`
+
+SetUnparentHref sets UnparentHref field to given value.
+
+### HasUnparentHref
+
+`func (o *BTDocumentInfo) HasUnparentHref() bool`
+
+HasUnparentHref returns a boolean if a field has been set.
 
 ### GetUserAccountLimitsBreached
 

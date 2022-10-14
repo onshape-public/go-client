@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.154.6870-e8e79a24dc2c
+API version: 1.155.6905-ae59ed040327
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,6 +20,7 @@ type BTPartStudioDisplayData346 struct {
 	AppearanceIdToAppearanceOverride       *map[string]BTAppearanceOverride2517                `json:"appearanceIdToAppearanceOverride,omitempty"`
 	AssemblyReferenceDisplayData           *BTAssemblyReferencesDisplayData1562                `json:"assemblyReferenceDisplayData,omitempty"`
 	CacheablePartStudioDisplayDataVersion  *string                                             `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
+	DeterministicIdToAssociatedFeatureIds  *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
 	DeterministicIdToEntity                *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
 	DeterministicIdToPartDisplayData       *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
 	DeterministicPartIdToData              *map[string]BTPartData16                            `json:"deterministicPartIdToData,omitempty"`
@@ -159,6 +160,38 @@ func (o *BTPartStudioDisplayData346) HasCacheablePartStudioDisplayDataVersion() 
 // SetCacheablePartStudioDisplayDataVersion gets a reference to the given string and assigns it to the CacheablePartStudioDisplayDataVersion field.
 func (o *BTPartStudioDisplayData346) SetCacheablePartStudioDisplayDataVersion(v string) {
 	o.CacheablePartStudioDisplayDataVersion = &v
+}
+
+// GetDeterministicIdToAssociatedFeatureIds returns the DeterministicIdToAssociatedFeatureIds field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetDeterministicIdToAssociatedFeatureIds() map[string][]string {
+	if o == nil || o.DeterministicIdToAssociatedFeatureIds == nil {
+		var ret map[string][]string
+		return ret
+	}
+	return *o.DeterministicIdToAssociatedFeatureIds
+}
+
+// GetDeterministicIdToAssociatedFeatureIdsOk returns a tuple with the DeterministicIdToAssociatedFeatureIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetDeterministicIdToAssociatedFeatureIdsOk() (*map[string][]string, bool) {
+	if o == nil || o.DeterministicIdToAssociatedFeatureIds == nil {
+		return nil, false
+	}
+	return o.DeterministicIdToAssociatedFeatureIds, true
+}
+
+// HasDeterministicIdToAssociatedFeatureIds returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasDeterministicIdToAssociatedFeatureIds() bool {
+	if o != nil && o.DeterministicIdToAssociatedFeatureIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDeterministicIdToAssociatedFeatureIds gets a reference to the given map[string][]string and assigns it to the DeterministicIdToAssociatedFeatureIds field.
+func (o *BTPartStudioDisplayData346) SetDeterministicIdToAssociatedFeatureIds(v map[string][]string) {
+	o.DeterministicIdToAssociatedFeatureIds = &v
 }
 
 // GetDeterministicIdToEntity returns the DeterministicIdToEntity field value if set, zero value otherwise.
@@ -1003,6 +1036,9 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	}
 	if o.CacheablePartStudioDisplayDataVersion != nil {
 		toSerialize["cacheablePartStudioDisplayDataVersion"] = o.CacheablePartStudioDisplayDataVersion
+	}
+	if o.DeterministicIdToAssociatedFeatureIds != nil {
+		toSerialize["deterministicIdToAssociatedFeatureIds"] = o.DeterministicIdToAssociatedFeatureIds
 	}
 	if o.DeterministicIdToEntity != nil {
 		toSerialize["deterministicIdToEntity"] = o.DeterministicIdToEntity

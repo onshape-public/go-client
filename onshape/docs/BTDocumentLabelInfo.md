@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **ProjectId** | Pointer to **string** |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
+**UnparentHref** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -492,6 +493,31 @@ SetTreeHref sets TreeHref field to given value.
 `func (o *BTDocumentLabelInfo) HasTreeHref() bool`
 
 HasTreeHref returns a boolean if a field has been set.
+
+### GetUnparentHref
+
+`func (o *BTDocumentLabelInfo) GetUnparentHref() string`
+
+GetUnparentHref returns the UnparentHref field if non-nil, zero value otherwise.
+
+### GetUnparentHrefOk
+
+`func (o *BTDocumentLabelInfo) GetUnparentHrefOk() (*string, bool)`
+
+GetUnparentHrefOk returns a tuple with the UnparentHref field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnparentHref
+
+`func (o *BTDocumentLabelInfo) SetUnparentHref(v string)`
+
+SetUnparentHref sets UnparentHref field to given value.
+
+### HasUnparentHref
+
+`func (o *BTDocumentLabelInfo) HasUnparentHref() bool`
+
+HasUnparentHref returns a boolean if a field has been set.
 
 ### GetViewRef
 

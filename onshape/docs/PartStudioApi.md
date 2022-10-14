@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ## ExportParasolid
 
-> ExportParasolid(ctx, did, wvm, wvmid, eid).PartIds(partIds).Version(version).IncludeExportIds(includeExportIds).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
+> ExportParasolid(ctx, did, wvm, wvmid, eid).PartIds(partIds).Version(version).IncludeExportIds(includeExportIds).Configuration(configuration).LinkDocumentId(linkDocumentId).BinaryExport(binaryExport).Execute()
 
 Export Part Studio to Parasolid by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -540,13 +540,14 @@ func main() {
     eid := "eid_example" // string | Element ID.
     partIds := "partIds_example" // string | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId=JHK&partId=JHD). May not be combined with other ID filters (optional)
     version := "version_example" // string | Parasolid version (optional) (default to "0")
-    includeExportIds := true // bool | Whether topolgy ids should be exported as parasolid attributes (optional) (default to false)
+    includeExportIds := true // bool | Whether topology ids should be exported as parasolid attributes (optional) (default to false)
     configuration := "configuration_example" // string | Configuration string. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
+    binaryExport := true // bool | Whether to use binary parasolid format instead of text (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PartStudioApi.ExportParasolid(context.Background(), did, wvm, wvmid, eid).PartIds(partIds).Version(version).IncludeExportIds(includeExportIds).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
+    resp, r, err := apiClient.PartStudioApi.ExportParasolid(context.Background(), did, wvm, wvmid, eid).PartIds(partIds).Version(version).IncludeExportIds(includeExportIds).Configuration(configuration).LinkDocumentId(linkDocumentId).BinaryExport(binaryExport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.ExportParasolid``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -578,9 +579,10 @@ Name | Type | Description  | Notes
 
  **partIds** | **string** | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK&amp;partId&#x3D;JHD). May not be combined with other ID filters | 
  **version** | **string** | Parasolid version | [default to &quot;0&quot;]
- **includeExportIds** | **bool** | Whether topolgy ids should be exported as parasolid attributes | [default to false]
+ **includeExportIds** | **bool** | Whether topology ids should be exported as parasolid attributes | [default to false]
  **configuration** | **string** | Configuration string. | 
  **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
+ **binaryExport** | **bool** | Whether to use binary parasolid format instead of text | [default to false]
 
 ### Return type
 

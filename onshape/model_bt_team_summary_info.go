@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.154.6870-e8e79a24dc2c
+API version: 1.155.6905-ae59ed040327
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -993,6 +993,56 @@ func (o *BTTeamSummaryInfo) SetTreeHref(v string) {
 	o.GetActualInstance().(getResult).SetTreeHref(v)
 }
 
+// GetUnparentHref returns the UnparentHref field value if set, zero value otherwise.
+func (o *BTTeamSummaryInfo) GetUnparentHref() string {
+	type getResult interface {
+		GetUnparentHref() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetUnparentHref()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetUnparentHrefOk returns a tuple with the UnparentHref field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTeamSummaryInfo) GetUnparentHrefOk() (*string, bool) {
+	type getResult interface {
+		GetUnparentHrefOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetUnparentHrefOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasUnparentHref returns a boolean if a field has been set.
+func (o *BTTeamSummaryInfo) HasUnparentHref() bool {
+	type getResult interface {
+		HasUnparentHref() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasUnparentHref()
+	} else {
+		return false
+	}
+}
+
+// SetUnparentHref gets a reference to the given string and assigns it to the UnparentHref field.
+func (o *BTTeamSummaryInfo) SetUnparentHref(v string) {
+	type getResult interface {
+		SetUnparentHref(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetUnparentHref(v)
+}
+
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
 func (o *BTTeamSummaryInfo) GetViewRef() string {
 	type getResult interface {
@@ -1166,6 +1216,7 @@ type base_BTTeamSummaryInfo struct {
 	ProjectId             *string                 `json:"projectId,omitempty"`
 	ResourceType          *string                 `json:"resourceType,omitempty"`
 	TreeHref              *string                 `json:"treeHref,omitempty"`
+	UnparentHref          *string                 `json:"unparentHref,omitempty"`
 	ViewRef               *string                 `json:"viewRef,omitempty"`
 }
 
@@ -1794,6 +1845,38 @@ func (o *base_BTTeamSummaryInfo) SetTreeHref(v string) {
 	o.TreeHref = &v
 }
 
+// GetUnparentHref returns the UnparentHref field value if set, zero value otherwise.
+func (o *base_BTTeamSummaryInfo) GetUnparentHref() string {
+	if o == nil || o.UnparentHref == nil {
+		var ret string
+		return ret
+	}
+	return *o.UnparentHref
+}
+
+// GetUnparentHrefOk returns a tuple with the UnparentHref field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTeamSummaryInfo) GetUnparentHrefOk() (*string, bool) {
+	if o == nil || o.UnparentHref == nil {
+		return nil, false
+	}
+	return o.UnparentHref, true
+}
+
+// HasUnparentHref returns a boolean if a field has been set.
+func (o *base_BTTeamSummaryInfo) HasUnparentHref() bool {
+	if o != nil && o.UnparentHref != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUnparentHref gets a reference to the given string and assigns it to the UnparentHref field.
+func (o *base_BTTeamSummaryInfo) SetUnparentHref(v string) {
+	o.UnparentHref = &v
+}
+
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
 func (o *base_BTTeamSummaryInfo) GetViewRef() string {
 	if o == nil || o.ViewRef == nil {
@@ -1884,6 +1967,9 @@ func (o base_BTTeamSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TreeHref != nil {
 		toSerialize["treeHref"] = o.TreeHref
+	}
+	if o.UnparentHref != nil {
+		toSerialize["unparentHref"] = o.UnparentHref
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef

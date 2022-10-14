@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **SizeBytes** | Pointer to **int64** |  | [optional] 
 **ThumbnailInfo** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
+**UnparentHref** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 **WebViewLink** | Pointer to **string** |  | [optional] 
 
@@ -701,6 +702,31 @@ SetTreeHref sets TreeHref field to given value.
 `func (o *BTCloudStorageObjectInfo) HasTreeHref() bool`
 
 HasTreeHref returns a boolean if a field has been set.
+
+### GetUnparentHref
+
+`func (o *BTCloudStorageObjectInfo) GetUnparentHref() string`
+
+GetUnparentHref returns the UnparentHref field if non-nil, zero value otherwise.
+
+### GetUnparentHrefOk
+
+`func (o *BTCloudStorageObjectInfo) GetUnparentHrefOk() (*string, bool)`
+
+GetUnparentHrefOk returns a tuple with the UnparentHref field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnparentHref
+
+`func (o *BTCloudStorageObjectInfo) SetUnparentHref(v string)`
+
+SetUnparentHref sets UnparentHref field to given value.
+
+### HasUnparentHref
+
+`func (o *BTCloudStorageObjectInfo) HasUnparentHref() bool`
+
+HasUnparentHref returns a boolean if a field has been set.
 
 ### GetViewRef
 

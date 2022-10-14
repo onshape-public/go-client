@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.154.6870-e8e79a24dc2c
+API version: 1.155.6905-ae59ed040327
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,29 +17,31 @@ import (
 
 // BTSimulationFace2147 struct for BTSimulationFace2147
 type BTSimulationFace2147 struct {
-	BtType                      *string                 `json:"btType,omitempty"`
-	Compressed                  *bool                   `json:"compressed,omitempty"`
-	Decompressed                *BTEntityGeometry35     `json:"decompressed,omitempty"`
-	ErrorCode                   *int32                  `json:"errorCode,omitempty"`
-	EstimatedMemoryUsageInBytes *int32                  `json:"estimatedMemoryUsageInBytes,omitempty"`
-	Face                        *bool                   `json:"face,omitempty"`
-	HasTessellationError        *bool                   `json:"hasTessellationError,omitempty"`
-	SettingIndex                *int32                  `json:"settingIndex,omitempty"`
-	CompressedUvs               *BTImmutableByteArray   `json:"compressedUvs,omitempty"`
-	FlipComputedNormals         *bool                   `json:"flipComputedNormals,omitempty"`
-	Indices                     *BTImmutableIntArray    `json:"indices,omitempty"`
-	IndicesStoredAsDifferences  *bool                   `json:"indicesStoredAsDifferences,omitempty"`
-	IsPlanar                    *bool                   `json:"isPlanar,omitempty"`
-	Normals                     *BTImmutableFloatArray  `json:"normals,omitempty"`
-	Points                      *BTImmutableFloatArray  `json:"points,omitempty"`
-	SurfaceParameters           *BTImmutableDoubleArray `json:"surfaceParameters,omitempty"`
-	SurfaceType                 *string                 `json:"surfaceType,omitempty"`
-	TextureCoordinates          *BTImmutableFloatArray  `json:"textureCoordinates,omitempty"`
-	TriangleCount               *int32                  `json:"triangleCount,omitempty"`
-	Bounds                      *BTBoundingBox1052      `json:"bounds,omitempty"`
-	SampleTrianglePointIndices  *BTImmutableIntArray    `json:"sampleTrianglePointIndices,omitempty"`
-	TriangleNormalIndices       *BTImmutableIntArray    `json:"triangleNormalIndices,omitempty"`
-	TrianglePointIndices        *BTImmutableIntArray    `json:"trianglePointIndices,omitempty"`
+	BtType                          *string                 `json:"btType,omitempty"`
+	Compressed                      *bool                   `json:"compressed,omitempty"`
+	Decompressed                    *BTEntityGeometry35     `json:"decompressed,omitempty"`
+	ErrorCode                       *int32                  `json:"errorCode,omitempty"`
+	EstimatedMemoryUsageInBytes     *int32                  `json:"estimatedMemoryUsageInBytes,omitempty"`
+	Face                            *bool                   `json:"face,omitempty"`
+	HasTessellationError            *bool                   `json:"hasTessellationError,omitempty"`
+	SettingIndex                    *int32                  `json:"settingIndex,omitempty"`
+	CompressedUvs                   *BTImmutableByteArray   `json:"compressedUvs,omitempty"`
+	FlipComputedNormals             *bool                   `json:"flipComputedNormals,omitempty"`
+	Indices                         *BTImmutableIntArray    `json:"indices,omitempty"`
+	IndicesStoredAsDifferences      *bool                   `json:"indicesStoredAsDifferences,omitempty"`
+	IsPlanar                        *bool                   `json:"isPlanar,omitempty"`
+	MaxPrincipleCurvatureMagnitudes *BTImmutableFloatArray  `json:"maxPrincipleCurvatureMagnitudes,omitempty"`
+	MinPrincipleCurvatureMagnitudes *BTImmutableFloatArray  `json:"minPrincipleCurvatureMagnitudes,omitempty"`
+	Normals                         *BTImmutableFloatArray  `json:"normals,omitempty"`
+	Points                          *BTImmutableFloatArray  `json:"points,omitempty"`
+	SurfaceParameters               *BTImmutableDoubleArray `json:"surfaceParameters,omitempty"`
+	SurfaceType                     *string                 `json:"surfaceType,omitempty"`
+	TextureCoordinates              *BTImmutableFloatArray  `json:"textureCoordinates,omitempty"`
+	TriangleCount                   *int32                  `json:"triangleCount,omitempty"`
+	Bounds                          *BTBoundingBox1052      `json:"bounds,omitempty"`
+	SampleTrianglePointIndices      *BTImmutableIntArray    `json:"sampleTrianglePointIndices,omitempty"`
+	TriangleNormalIndices           *BTImmutableIntArray    `json:"triangleNormalIndices,omitempty"`
+	TrianglePointIndices            *BTImmutableIntArray    `json:"trianglePointIndices,omitempty"`
 }
 
 // NewBTSimulationFace2147 instantiates a new BTSimulationFace2147 object
@@ -475,6 +477,70 @@ func (o *BTSimulationFace2147) SetIsPlanar(v bool) {
 	o.IsPlanar = &v
 }
 
+// GetMaxPrincipleCurvatureMagnitudes returns the MaxPrincipleCurvatureMagnitudes field value if set, zero value otherwise.
+func (o *BTSimulationFace2147) GetMaxPrincipleCurvatureMagnitudes() BTImmutableFloatArray {
+	if o == nil || o.MaxPrincipleCurvatureMagnitudes == nil {
+		var ret BTImmutableFloatArray
+		return ret
+	}
+	return *o.MaxPrincipleCurvatureMagnitudes
+}
+
+// GetMaxPrincipleCurvatureMagnitudesOk returns a tuple with the MaxPrincipleCurvatureMagnitudes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSimulationFace2147) GetMaxPrincipleCurvatureMagnitudesOk() (*BTImmutableFloatArray, bool) {
+	if o == nil || o.MaxPrincipleCurvatureMagnitudes == nil {
+		return nil, false
+	}
+	return o.MaxPrincipleCurvatureMagnitudes, true
+}
+
+// HasMaxPrincipleCurvatureMagnitudes returns a boolean if a field has been set.
+func (o *BTSimulationFace2147) HasMaxPrincipleCurvatureMagnitudes() bool {
+	if o != nil && o.MaxPrincipleCurvatureMagnitudes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxPrincipleCurvatureMagnitudes gets a reference to the given BTImmutableFloatArray and assigns it to the MaxPrincipleCurvatureMagnitudes field.
+func (o *BTSimulationFace2147) SetMaxPrincipleCurvatureMagnitudes(v BTImmutableFloatArray) {
+	o.MaxPrincipleCurvatureMagnitudes = &v
+}
+
+// GetMinPrincipleCurvatureMagnitudes returns the MinPrincipleCurvatureMagnitudes field value if set, zero value otherwise.
+func (o *BTSimulationFace2147) GetMinPrincipleCurvatureMagnitudes() BTImmutableFloatArray {
+	if o == nil || o.MinPrincipleCurvatureMagnitudes == nil {
+		var ret BTImmutableFloatArray
+		return ret
+	}
+	return *o.MinPrincipleCurvatureMagnitudes
+}
+
+// GetMinPrincipleCurvatureMagnitudesOk returns a tuple with the MinPrincipleCurvatureMagnitudes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSimulationFace2147) GetMinPrincipleCurvatureMagnitudesOk() (*BTImmutableFloatArray, bool) {
+	if o == nil || o.MinPrincipleCurvatureMagnitudes == nil {
+		return nil, false
+	}
+	return o.MinPrincipleCurvatureMagnitudes, true
+}
+
+// HasMinPrincipleCurvatureMagnitudes returns a boolean if a field has been set.
+func (o *BTSimulationFace2147) HasMinPrincipleCurvatureMagnitudes() bool {
+	if o != nil && o.MinPrincipleCurvatureMagnitudes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMinPrincipleCurvatureMagnitudes gets a reference to the given BTImmutableFloatArray and assigns it to the MinPrincipleCurvatureMagnitudes field.
+func (o *BTSimulationFace2147) SetMinPrincipleCurvatureMagnitudes(v BTImmutableFloatArray) {
+	o.MinPrincipleCurvatureMagnitudes = &v
+}
+
 // GetNormals returns the Normals field value if set, zero value otherwise.
 func (o *BTSimulationFace2147) GetNormals() BTImmutableFloatArray {
 	if o == nil || o.Normals == nil {
@@ -835,6 +901,12 @@ func (o BTSimulationFace2147) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsPlanar != nil {
 		toSerialize["isPlanar"] = o.IsPlanar
+	}
+	if o.MaxPrincipleCurvatureMagnitudes != nil {
+		toSerialize["maxPrincipleCurvatureMagnitudes"] = o.MaxPrincipleCurvatureMagnitudes
+	}
+	if o.MinPrincipleCurvatureMagnitudes != nil {
+		toSerialize["minPrincipleCurvatureMagnitudes"] = o.MinPrincipleCurvatureMagnitudes
 	}
 	if o.Normals != nil {
 		toSerialize["normals"] = o.Normals

@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 **DeviceId** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **EnableTotp** | Pointer to **bool** |  | [optional] 
+**IsRecaptchaV3** | Pointer to **bool** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **RandomToken** | Pointer to **string** |  | [optional] 
+**RecaptchaToken** | Pointer to **string** |  | [optional] 
 **RememberTotp** | Pointer to **bool** |  | [optional] 
 **RendererPerformanceMeasurement** | Pointer to [**BTWebRendererPerformanceMeasurementParams**](BTWebRendererPerformanceMeasurementParams.md) |  | [optional] 
 **Totp** | Pointer to **string** |  | [optional] 
@@ -108,6 +110,31 @@ SetEnableTotp sets EnableTotp field to given value.
 
 HasEnableTotp returns a boolean if a field has been set.
 
+### GetIsRecaptchaV3
+
+`func (o *BTLoginParams) GetIsRecaptchaV3() bool`
+
+GetIsRecaptchaV3 returns the IsRecaptchaV3 field if non-nil, zero value otherwise.
+
+### GetIsRecaptchaV3Ok
+
+`func (o *BTLoginParams) GetIsRecaptchaV3Ok() (*bool, bool)`
+
+GetIsRecaptchaV3Ok returns a tuple with the IsRecaptchaV3 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsRecaptchaV3
+
+`func (o *BTLoginParams) SetIsRecaptchaV3(v bool)`
+
+SetIsRecaptchaV3 sets IsRecaptchaV3 field to given value.
+
+### HasIsRecaptchaV3
+
+`func (o *BTLoginParams) HasIsRecaptchaV3() bool`
+
+HasIsRecaptchaV3 returns a boolean if a field has been set.
+
 ### GetPassword
 
 `func (o *BTLoginParams) GetPassword() string`
@@ -157,6 +184,31 @@ SetRandomToken sets RandomToken field to given value.
 `func (o *BTLoginParams) HasRandomToken() bool`
 
 HasRandomToken returns a boolean if a field has been set.
+
+### GetRecaptchaToken
+
+`func (o *BTLoginParams) GetRecaptchaToken() string`
+
+GetRecaptchaToken returns the RecaptchaToken field if non-nil, zero value otherwise.
+
+### GetRecaptchaTokenOk
+
+`func (o *BTLoginParams) GetRecaptchaTokenOk() (*string, bool)`
+
+GetRecaptchaTokenOk returns a tuple with the RecaptchaToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecaptchaToken
+
+`func (o *BTLoginParams) SetRecaptchaToken(v string)`
+
+SetRecaptchaToken sets RecaptchaToken field to given value.
+
+### HasRecaptchaToken
+
+`func (o *BTLoginParams) HasRecaptchaToken() bool`
+
+HasRecaptchaToken returns a boolean if a field has been set.
 
 ### GetRememberTotp
 
