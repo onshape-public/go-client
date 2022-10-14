@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.154.6870-e8e79a24dc2c
+API version: 1.155.6905-ae59ed040327
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,8 +20,10 @@ type BTLoginParams struct {
 	DeviceId                       *string                                    `json:"deviceId,omitempty"`
 	Email                          *string                                    `json:"email,omitempty"`
 	EnableTotp                     *bool                                      `json:"enableTotp,omitempty"`
+	IsRecaptchaV3                  *bool                                      `json:"isRecaptchaV3,omitempty"`
 	Password                       *string                                    `json:"password,omitempty"`
 	RandomToken                    *string                                    `json:"randomToken,omitempty"`
+	RecaptchaToken                 *string                                    `json:"recaptchaToken,omitempty"`
 	RememberTotp                   *bool                                      `json:"rememberTotp,omitempty"`
 	RendererPerformanceMeasurement *BTWebRendererPerformanceMeasurementParams `json:"rendererPerformanceMeasurement,omitempty"`
 	Totp                           *string                                    `json:"totp,omitempty"`
@@ -141,6 +143,38 @@ func (o *BTLoginParams) SetEnableTotp(v bool) {
 	o.EnableTotp = &v
 }
 
+// GetIsRecaptchaV3 returns the IsRecaptchaV3 field value if set, zero value otherwise.
+func (o *BTLoginParams) GetIsRecaptchaV3() bool {
+	if o == nil || o.IsRecaptchaV3 == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsRecaptchaV3
+}
+
+// GetIsRecaptchaV3Ok returns a tuple with the IsRecaptchaV3 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLoginParams) GetIsRecaptchaV3Ok() (*bool, bool) {
+	if o == nil || o.IsRecaptchaV3 == nil {
+		return nil, false
+	}
+	return o.IsRecaptchaV3, true
+}
+
+// HasIsRecaptchaV3 returns a boolean if a field has been set.
+func (o *BTLoginParams) HasIsRecaptchaV3() bool {
+	if o != nil && o.IsRecaptchaV3 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsRecaptchaV3 gets a reference to the given bool and assigns it to the IsRecaptchaV3 field.
+func (o *BTLoginParams) SetIsRecaptchaV3(v bool) {
+	o.IsRecaptchaV3 = &v
+}
+
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *BTLoginParams) GetPassword() string {
 	if o == nil || o.Password == nil {
@@ -203,6 +237,38 @@ func (o *BTLoginParams) HasRandomToken() bool {
 // SetRandomToken gets a reference to the given string and assigns it to the RandomToken field.
 func (o *BTLoginParams) SetRandomToken(v string) {
 	o.RandomToken = &v
+}
+
+// GetRecaptchaToken returns the RecaptchaToken field value if set, zero value otherwise.
+func (o *BTLoginParams) GetRecaptchaToken() string {
+	if o == nil || o.RecaptchaToken == nil {
+		var ret string
+		return ret
+	}
+	return *o.RecaptchaToken
+}
+
+// GetRecaptchaTokenOk returns a tuple with the RecaptchaToken field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLoginParams) GetRecaptchaTokenOk() (*string, bool) {
+	if o == nil || o.RecaptchaToken == nil {
+		return nil, false
+	}
+	return o.RecaptchaToken, true
+}
+
+// HasRecaptchaToken returns a boolean if a field has been set.
+func (o *BTLoginParams) HasRecaptchaToken() bool {
+	if o != nil && o.RecaptchaToken != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRecaptchaToken gets a reference to the given string and assigns it to the RecaptchaToken field.
+func (o *BTLoginParams) SetRecaptchaToken(v string) {
+	o.RecaptchaToken = &v
 }
 
 // GetRememberTotp returns the RememberTotp field value if set, zero value otherwise.
@@ -344,11 +410,17 @@ func (o BTLoginParams) MarshalJSON() ([]byte, error) {
 	if o.EnableTotp != nil {
 		toSerialize["enableTotp"] = o.EnableTotp
 	}
+	if o.IsRecaptchaV3 != nil {
+		toSerialize["isRecaptchaV3"] = o.IsRecaptchaV3
+	}
 	if o.Password != nil {
 		toSerialize["password"] = o.Password
 	}
 	if o.RandomToken != nil {
 		toSerialize["randomToken"] = o.RandomToken
+	}
+	if o.RecaptchaToken != nil {
+		toSerialize["recaptchaToken"] = o.RecaptchaToken
 	}
 	if o.RememberTotp != nil {
 		toSerialize["rememberTotp"] = o.RememberTotp

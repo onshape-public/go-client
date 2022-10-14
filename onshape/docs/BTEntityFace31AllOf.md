@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **Indices** | Pointer to [**BTImmutableIntArray**](BTImmutableIntArray.md) |  | [optional] 
 **IndicesStoredAsDifferences** | Pointer to **bool** |  | [optional] 
 **IsPlanar** | Pointer to **bool** |  | [optional] 
+**MaxPrincipleCurvatureMagnitudes** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
+**MinPrincipleCurvatureMagnitudes** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
 **Normals** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
 **Points** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
 **SurfaceParameters** | Pointer to [**BTImmutableDoubleArray**](BTImmutableDoubleArray.md) |  | [optional] 
@@ -185,6 +187,56 @@ SetIsPlanar sets IsPlanar field to given value.
 `func (o *BTEntityFace31AllOf) HasIsPlanar() bool`
 
 HasIsPlanar returns a boolean if a field has been set.
+
+### GetMaxPrincipleCurvatureMagnitudes
+
+`func (o *BTEntityFace31AllOf) GetMaxPrincipleCurvatureMagnitudes() BTImmutableFloatArray`
+
+GetMaxPrincipleCurvatureMagnitudes returns the MaxPrincipleCurvatureMagnitudes field if non-nil, zero value otherwise.
+
+### GetMaxPrincipleCurvatureMagnitudesOk
+
+`func (o *BTEntityFace31AllOf) GetMaxPrincipleCurvatureMagnitudesOk() (*BTImmutableFloatArray, bool)`
+
+GetMaxPrincipleCurvatureMagnitudesOk returns a tuple with the MaxPrincipleCurvatureMagnitudes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxPrincipleCurvatureMagnitudes
+
+`func (o *BTEntityFace31AllOf) SetMaxPrincipleCurvatureMagnitudes(v BTImmutableFloatArray)`
+
+SetMaxPrincipleCurvatureMagnitudes sets MaxPrincipleCurvatureMagnitudes field to given value.
+
+### HasMaxPrincipleCurvatureMagnitudes
+
+`func (o *BTEntityFace31AllOf) HasMaxPrincipleCurvatureMagnitudes() bool`
+
+HasMaxPrincipleCurvatureMagnitudes returns a boolean if a field has been set.
+
+### GetMinPrincipleCurvatureMagnitudes
+
+`func (o *BTEntityFace31AllOf) GetMinPrincipleCurvatureMagnitudes() BTImmutableFloatArray`
+
+GetMinPrincipleCurvatureMagnitudes returns the MinPrincipleCurvatureMagnitudes field if non-nil, zero value otherwise.
+
+### GetMinPrincipleCurvatureMagnitudesOk
+
+`func (o *BTEntityFace31AllOf) GetMinPrincipleCurvatureMagnitudesOk() (*BTImmutableFloatArray, bool)`
+
+GetMinPrincipleCurvatureMagnitudesOk returns a tuple with the MinPrincipleCurvatureMagnitudes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinPrincipleCurvatureMagnitudes
+
+`func (o *BTEntityFace31AllOf) SetMinPrincipleCurvatureMagnitudes(v BTImmutableFloatArray)`
+
+SetMinPrincipleCurvatureMagnitudes sets MinPrincipleCurvatureMagnitudes field to given value.
+
+### HasMinPrincipleCurvatureMagnitudes
+
+`func (o *BTEntityFace31AllOf) HasMinPrincipleCurvatureMagnitudes() bool`
+
+HasMinPrincipleCurvatureMagnitudes returns a boolean if a field has been set.
 
 ### GetNormals
 

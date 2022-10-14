@@ -673,6 +673,8 @@ Name | Type | Description  | Notes
 
 
 
+
+
 ### Example
 
 ```go
@@ -874,6 +876,8 @@ Name | Type | Description  | Notes
 ## GetPartMetadata
 
 > BTPartMetadataInfo GetPartMetadata(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludePropertyDefaults(includePropertyDefaults).FriendlyUserIds(friendlyUserIds).Execute()
+
+
 
 
 
@@ -1240,6 +1244,8 @@ Name | Type | Description  | Notes
 
 
 
+
+
 ### Example
 
 ```go
@@ -1329,6 +1335,8 @@ Name | Type | Description  | Notes
 
 
 
+
+
 ### Example
 
 ```go
@@ -1408,6 +1416,8 @@ Name | Type | Description  | Notes
 ## UpdateStandardContentPartMetadata
 
 > BTPartMetadataInfo UpdateStandardContentPartMetadata(ctx, did, vid, eid, otype, oid, partid).LinkDocumentId(linkDocumentId).IncludePropertyDefaults(includePropertyDefaults).BTWorkspacePartParams(bTWorkspacePartParams).Execute()
+
+
 
 
 

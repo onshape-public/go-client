@@ -31,8 +31,10 @@ Method | HTTP request | Description
 [**RevertUnchangedToRevisions**](DocumentApi.md#RevertUnchangedToRevisions) | **Post** /documents/d/{did}/w/{wid}/revertunchangedtorevisions | 
 [**Search**](DocumentApi.md#Search) | **Post** /documents/search | Search document.
 [**ShareDocument**](DocumentApi.md#ShareDocument) | **Post** /documents/{did}/share | Share document by document ID.
+[**ShareWithSupport**](DocumentApi.md#ShareWithSupport) | **Post** /documents/{did}/shareWithSupport | Share document by document ID with Onshape support.
 [**SyncApplicationElements**](DocumentApi.md#SyncApplicationElements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
 [**UnShareDocument**](DocumentApi.md#UnShareDocument) | **Delete** /documents/{did}/share/{eid} | Unshare document by document ID and tab ID.
+[**UnshareFromSupport**](DocumentApi.md#UnshareFromSupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
 [**UpdateDocumentAttributes**](DocumentApi.md#UpdateDocumentAttributes) | **Post** /documents/{did} | Update document attributes by document ID.
 [**UpdateExternalReferencesToLatestDocuments**](DocumentApi.md#UpdateExternalReferencesToLatestDocuments) | **Post** /documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences | Update external references to latest by document ID, workspace ID, and tab ID.
 
@@ -2054,6 +2056,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ShareWithSupport
+
+> map[string]interface{} ShareWithSupport(ctx, did).Execute()
+
+Share document by document ID with Onshape support.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DocumentApi.ShareWithSupport(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.ShareWithSupport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ShareWithSupport`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.ShareWithSupport`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiShareWithSupportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## SyncApplicationElements
 
 > map[string]interface{} SyncApplicationElements(ctx, did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
@@ -2189,6 +2259,74 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UnshareFromSupport
+
+> map[string]interface{} UnshareFromSupport(ctx, did).Execute()
+
+Unshare document with support.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DocumentApi.UnshareFromSupport(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UnshareFromSupport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UnshareFromSupport`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.UnshareFromSupport`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUnshareFromSupportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

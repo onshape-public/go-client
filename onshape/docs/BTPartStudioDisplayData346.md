@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AppearanceIdToAppearanceOverride** | Pointer to [**map[string]BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **AssemblyReferenceDisplayData** | Pointer to [**BTAssemblyReferencesDisplayData1562**](BTAssemblyReferencesDisplayData1562.md) |  | [optional] 
 **CacheablePartStudioDisplayDataVersion** | Pointer to **string** |  | [optional] 
+**DeterministicIdToAssociatedFeatureIds** | Pointer to **map[string][]string** |  | [optional] 
 **DeterministicIdToEntity** | Pointer to [**map[string]BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **DeterministicIdToPartDisplayData** | Pointer to [**map[string]BTPartDisplayData17**](BTPartDisplayData17.md) |  | [optional] 
 **DeterministicPartIdToData** | Pointer to [**map[string]BTPartData16**](BTPartData16.md) |  | [optional] 
@@ -127,6 +128,31 @@ SetCacheablePartStudioDisplayDataVersion sets CacheablePartStudioDisplayDataVers
 `func (o *BTPartStudioDisplayData346) HasCacheablePartStudioDisplayDataVersion() bool`
 
 HasCacheablePartStudioDisplayDataVersion returns a boolean if a field has been set.
+
+### GetDeterministicIdToAssociatedFeatureIds
+
+`func (o *BTPartStudioDisplayData346) GetDeterministicIdToAssociatedFeatureIds() map[string][]string`
+
+GetDeterministicIdToAssociatedFeatureIds returns the DeterministicIdToAssociatedFeatureIds field if non-nil, zero value otherwise.
+
+### GetDeterministicIdToAssociatedFeatureIdsOk
+
+`func (o *BTPartStudioDisplayData346) GetDeterministicIdToAssociatedFeatureIdsOk() (*map[string][]string, bool)`
+
+GetDeterministicIdToAssociatedFeatureIdsOk returns a tuple with the DeterministicIdToAssociatedFeatureIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeterministicIdToAssociatedFeatureIds
+
+`func (o *BTPartStudioDisplayData346) SetDeterministicIdToAssociatedFeatureIds(v map[string][]string)`
+
+SetDeterministicIdToAssociatedFeatureIds sets DeterministicIdToAssociatedFeatureIds field to given value.
+
+### HasDeterministicIdToAssociatedFeatureIds
+
+`func (o *BTPartStudioDisplayData346) HasDeterministicIdToAssociatedFeatureIds() bool`
+
+HasDeterministicIdToAssociatedFeatureIds returns a boolean if a field has been set.
 
 ### GetDeterministicIdToEntity
 

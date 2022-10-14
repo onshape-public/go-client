@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.154.6870-e8e79a24dc2c
+  version: 1.155.6905-ae59ed040327
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -2826,6 +2826,8 @@ paths:
   /applications/extensions/user/{uid}/client/{cid}:
     get:
       deprecated: false
+      description: Get list of client extensions the user has granted/accepted terms
+        for
       operationId: getApplicableExtensionsForClient
       parameters:
       - explode: false
@@ -6563,6 +6565,53 @@ paths:
       tags:
       - Document
       x-BTVisibility: PRODUCTION
+  /documents/{did}/shareWithSupport:
+    delete:
+      deprecated: false
+      operationId: unshareFromSupport
+      parameters:
+      - description: Document ID.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      summary: Unshare document with support.
+      tags:
+      - Document
+      x-BTVisibility: PRODUCTION
+    post:
+      deprecated: false
+      operationId: shareWithSupport
+      parameters:
+      - description: Document ID.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      summary: Share document by document ID with Onshape support.
+      tags:
+      - Document
+      x-BTVisibility: PRODUCTION
   /documents/{did}/w/{wid}/mergePreview:
     get:
       deprecated: false
@@ -6780,6 +6829,7 @@ paths:
   /drawings/create:
     post:
       deprecated: false
+      description: Build a drawing app element in document's workspace
       operationId: createDrawingAppElement
       requestBody:
         content:
@@ -9827,6 +9877,7 @@ paths:
   /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/metadata:
     get:
       deprecated: false
+      description: Get a part's metadata.
       operationId: getPartMetadata
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -9955,6 +10006,7 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: Update a part's metadata
       operationId: updatePartMetadata
       parameters:
       - explode: false
@@ -10558,6 +10610,8 @@ paths:
   /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces:
     get:
       deprecated: false
+      description: Get the tessellated faces of a part. The accuracy of the tessellation
+        approximation to exact
       operationId: getFaces_1
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -10759,6 +10813,8 @@ paths:
   /parts/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/partid/{partid}/metadata:
     get:
       deprecated: false
+      description: Get metadata for a standard content part in the context of a user
+        or company
       operationId: getStandardContentPartMetadata
       parameters:
       - explode: false
@@ -10842,6 +10898,8 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: Update metadata for a standard content part in the context of a
+        company or user
       operationId: updateStandardContentPartMetadata
       parameters:
       - explode: false
@@ -12477,7 +12535,7 @@ paths:
           default: "0"
           type: string
         style: form
-      - description: Whether topolgy ids should be exported as parasolid attributes
+      - description: Whether topology ids should be exported as parasolid attributes
         explode: true
         in: query
         name: includeExportIds
@@ -12503,6 +12561,15 @@ paths:
         required: false
         schema:
           type: string
+        style: form
+      - description: Whether to use binary parasolid format instead of text
+        explode: true
+        in: query
+        name: binaryExport
+        required: false
+        schema:
+          default: false
+          type: boolean
         style: form
       responses:
         "307":
@@ -13531,6 +13598,7 @@ paths:
   /publications/{pid}/items:
     get:
       deprecated: false
+      description: Get items in a publication
       operationId: getPublicationItems
       parameters:
       - explode: false
@@ -17002,6 +17070,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -17088,6 +17157,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -17139,6 +17209,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -17189,6 +17260,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -17234,6 +17306,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -21025,6 +21098,8 @@ components:
           $ref: '#/components/schemas/BTThumbnailInfo'
         treeHref:
           type: string
+        unparentHref:
+          type: string
         viewRef:
           format: uri
           type: string
@@ -23028,6 +23103,7 @@ components:
         - betaCapabilityIds
         createdAt: 2000-01-23T04:56:07.000+00:00
         numberOfTimesReferenced: 5
+        unparentHref: unparentHref
         isOrphaned: true
         href: https://openapi-generator.tech
         id: id
@@ -23117,6 +23193,7 @@ components:
           path: path
           parentLabelId: parentLabelId
           isMutable: true
+          unparentHref: unparentHref
           createdBy:
             image: image
             name: name
@@ -23155,6 +23232,7 @@ components:
           path: path
           parentLabelId: parentLabelId
           isMutable: true
+          unparentHref: unparentHref
           createdBy:
             image: image
             name: name
@@ -23570,6 +23648,8 @@ components:
           type: string
         treeHref:
           type: string
+        unparentHref:
+          type: string
         userAccountLimitsBreached:
           type: boolean
         viewRef:
@@ -23596,6 +23676,7 @@ components:
         path: path
         parentLabelId: parentLabelId
         isMutable: true
+        unparentHref: unparentHref
         createdBy:
           image: image
           name: name
@@ -23655,6 +23736,8 @@ components:
         resourceType:
           type: string
         treeHref:
+          type: string
+        unparentHref:
           type: string
         viewRef:
           format: uri
@@ -26625,7 +26708,58 @@ components:
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
           - SELECTION_IS_INVALID
+          - CANNOT_ADD_MORE_THAN_ONE_THREAD_TO_UNSPLIT_CYLINDER
+          - UNDERCUT_TOO_SHALLOW
+          - CAP_INCLINED_CUT_FRAME_ERROR
+          - SPLIT_OFF_FACE
+          - UNDERCUT_DIAMETER_TOO_LARGE
           - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
+          - DISPLAY_STATES_NO_REFERENCE
+          - INVALID_ARC_LENGTH
+          - FILLET_ADJOINING_EDGE_NOT_FILLETED
+          - FILLET_BOUNDARY_INTERSECTS_EDGE
+          - FILLET_BOUNDARY_OVERLAP
+          - FILLET_EDGE_OVERLAPPED_BY_FILLET
+          - FILLET_FACE_RANGE_TOO_LARGE
+          - FILLET_ILLEGAL_END_BOUNDARY
+          - FILLET_OVERLAP
+          - FILLET_OVERLAPS_EDGE_LOOP
+          - FILLET_PRODUCED_SELF_INT_SURFACE
+          - FILLET_RANGE_INCONSISTENT_EDGE
+          - FILLET_REQUIRES_SURFACE_EXTENSION
+          - FILLET_RHO_TOO_LARGE
+          - FILLET_VERTEX_EDGES_COMPLICATED
+          - CHAMFER_ADJOINING_EDGE_NOT_CHAMFERED
+          - CHAMFER_BOUNDARY_INTERSECTS_EDGE
+          - CHAMFER_BOUNDARY_OVERLAP
+          - CHAMFER_EDGE_OVERLAPPED_BY_CHAMFER
+          - CHAMFER_FACE_RANGE_TOO_LARGE
+          - CHAMFER_ILLEGAL_END_BOUNDARY
+          - CHAMFER_OVERLAP
+          - CHAMFER_OVERLAPS_EDGE_LOOP
+          - CHAMFER_PRODUCED_SELF_INT_SURFACE
+          - CHAMFER_RANGE_INCONSISTENT_EDGE
+          - CHAMFER_REQUIRES_SURFACE_EXTENSION
+          - CHAMFER_RHO_TOO_LARGE
+          - CHAMFER_VERTEX_EDGES_COMPLICATED
+          - EDGEBLEND_ADJOINING_EDGE_NOT_BLENDED
+          - EDGEBLEND_BOUNDARY_INTERSECTS_EDGE
+          - EDGEBLEND_BOUNDARY_OVERLAP
+          - EDGEBLEND_EDGE_OVERLAPPED_BY_BLEND
+          - EDGEBLEND_FACE_RANGE_TOO_LARGE
+          - EDGEBLEND_ILLEGAL_END_BOUNDARY
+          - EDGEBLEND_OVERLAP
+          - EDGEBLEND_OVERLAPS_EDGE_LOOP
+          - EDGEBLEND_PRODUCED_SELF_INT_SURFACE
+          - EDGEBLEND_RANGE_INCONSISTENT_EDGE
+          - EDGEBLEND_REQUIRES_SURFACE_EXTENSION
+          - EDGEBLEND_RHO_TOO_LARGE
+          - EDGEBLEND_VERTEX_EDGES_COMPLICATED
+          - SIMULATION_LOAD_ON_FIXED_INSTANCE
+          - FRAME_CUSTOM_ALIGNMENT_POINTS_NOT_IN_SKETCH
+          - NON_MATCHING_SIZE_ERROR
+          - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
+          - FILL_ADJACENT_FACE_BAD_INPUT
           - UNKNOWN
           type: string
         microversionId:
@@ -28503,7 +28637,58 @@ components:
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
           - SELECTION_IS_INVALID
+          - CANNOT_ADD_MORE_THAN_ONE_THREAD_TO_UNSPLIT_CYLINDER
+          - UNDERCUT_TOO_SHALLOW
+          - CAP_INCLINED_CUT_FRAME_ERROR
+          - SPLIT_OFF_FACE
+          - UNDERCUT_DIAMETER_TOO_LARGE
           - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
+          - DISPLAY_STATES_NO_REFERENCE
+          - INVALID_ARC_LENGTH
+          - FILLET_ADJOINING_EDGE_NOT_FILLETED
+          - FILLET_BOUNDARY_INTERSECTS_EDGE
+          - FILLET_BOUNDARY_OVERLAP
+          - FILLET_EDGE_OVERLAPPED_BY_FILLET
+          - FILLET_FACE_RANGE_TOO_LARGE
+          - FILLET_ILLEGAL_END_BOUNDARY
+          - FILLET_OVERLAP
+          - FILLET_OVERLAPS_EDGE_LOOP
+          - FILLET_PRODUCED_SELF_INT_SURFACE
+          - FILLET_RANGE_INCONSISTENT_EDGE
+          - FILLET_REQUIRES_SURFACE_EXTENSION
+          - FILLET_RHO_TOO_LARGE
+          - FILLET_VERTEX_EDGES_COMPLICATED
+          - CHAMFER_ADJOINING_EDGE_NOT_CHAMFERED
+          - CHAMFER_BOUNDARY_INTERSECTS_EDGE
+          - CHAMFER_BOUNDARY_OVERLAP
+          - CHAMFER_EDGE_OVERLAPPED_BY_CHAMFER
+          - CHAMFER_FACE_RANGE_TOO_LARGE
+          - CHAMFER_ILLEGAL_END_BOUNDARY
+          - CHAMFER_OVERLAP
+          - CHAMFER_OVERLAPS_EDGE_LOOP
+          - CHAMFER_PRODUCED_SELF_INT_SURFACE
+          - CHAMFER_RANGE_INCONSISTENT_EDGE
+          - CHAMFER_REQUIRES_SURFACE_EXTENSION
+          - CHAMFER_RHO_TOO_LARGE
+          - CHAMFER_VERTEX_EDGES_COMPLICATED
+          - EDGEBLEND_ADJOINING_EDGE_NOT_BLENDED
+          - EDGEBLEND_BOUNDARY_INTERSECTS_EDGE
+          - EDGEBLEND_BOUNDARY_OVERLAP
+          - EDGEBLEND_EDGE_OVERLAPPED_BY_BLEND
+          - EDGEBLEND_FACE_RANGE_TOO_LARGE
+          - EDGEBLEND_ILLEGAL_END_BOUNDARY
+          - EDGEBLEND_OVERLAP
+          - EDGEBLEND_OVERLAPS_EDGE_LOOP
+          - EDGEBLEND_PRODUCED_SELF_INT_SURFACE
+          - EDGEBLEND_RANGE_INCONSISTENT_EDGE
+          - EDGEBLEND_REQUIRES_SURFACE_EXTENSION
+          - EDGEBLEND_RHO_TOO_LARGE
+          - EDGEBLEND_VERTEX_EDGES_COMPLICATED
+          - SIMULATION_LOAD_ON_FIXED_INSTANCE
+          - FRAME_CUSTOM_ALIGNMENT_POINTS_NOT_IN_SKETCH
+          - NON_MATCHING_SIZE_ERROR
+          - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
+          - FILL_ADJACENT_FACE_BAD_INPUT
           - UNKNOWN
           type: string
       type: object
@@ -30376,6 +30561,10 @@ components:
               deleted: true
               theId: theId
           instanceCount: 6
+          deterministicIdToAssociatedFeatureIds:
+            key:
+            - deterministicIdToAssociatedFeatureIds
+            - deterministicIdToAssociatedFeatureIds
           isBase: true
           deterministicIdToEntity:
             key:
@@ -31767,7 +31956,58 @@ components:
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
           - SELECTION_IS_INVALID
+          - CANNOT_ADD_MORE_THAN_ONE_THREAD_TO_UNSPLIT_CYLINDER
+          - UNDERCUT_TOO_SHALLOW
+          - CAP_INCLINED_CUT_FRAME_ERROR
+          - SPLIT_OFF_FACE
+          - UNDERCUT_DIAMETER_TOO_LARGE
           - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
+          - DISPLAY_STATES_NO_REFERENCE
+          - INVALID_ARC_LENGTH
+          - FILLET_ADJOINING_EDGE_NOT_FILLETED
+          - FILLET_BOUNDARY_INTERSECTS_EDGE
+          - FILLET_BOUNDARY_OVERLAP
+          - FILLET_EDGE_OVERLAPPED_BY_FILLET
+          - FILLET_FACE_RANGE_TOO_LARGE
+          - FILLET_ILLEGAL_END_BOUNDARY
+          - FILLET_OVERLAP
+          - FILLET_OVERLAPS_EDGE_LOOP
+          - FILLET_PRODUCED_SELF_INT_SURFACE
+          - FILLET_RANGE_INCONSISTENT_EDGE
+          - FILLET_REQUIRES_SURFACE_EXTENSION
+          - FILLET_RHO_TOO_LARGE
+          - FILLET_VERTEX_EDGES_COMPLICATED
+          - CHAMFER_ADJOINING_EDGE_NOT_CHAMFERED
+          - CHAMFER_BOUNDARY_INTERSECTS_EDGE
+          - CHAMFER_BOUNDARY_OVERLAP
+          - CHAMFER_EDGE_OVERLAPPED_BY_CHAMFER
+          - CHAMFER_FACE_RANGE_TOO_LARGE
+          - CHAMFER_ILLEGAL_END_BOUNDARY
+          - CHAMFER_OVERLAP
+          - CHAMFER_OVERLAPS_EDGE_LOOP
+          - CHAMFER_PRODUCED_SELF_INT_SURFACE
+          - CHAMFER_RANGE_INCONSISTENT_EDGE
+          - CHAMFER_REQUIRES_SURFACE_EXTENSION
+          - CHAMFER_RHO_TOO_LARGE
+          - CHAMFER_VERTEX_EDGES_COMPLICATED
+          - EDGEBLEND_ADJOINING_EDGE_NOT_BLENDED
+          - EDGEBLEND_BOUNDARY_INTERSECTS_EDGE
+          - EDGEBLEND_BOUNDARY_OVERLAP
+          - EDGEBLEND_EDGE_OVERLAPPED_BY_BLEND
+          - EDGEBLEND_FACE_RANGE_TOO_LARGE
+          - EDGEBLEND_ILLEGAL_END_BOUNDARY
+          - EDGEBLEND_OVERLAP
+          - EDGEBLEND_OVERLAPS_EDGE_LOOP
+          - EDGEBLEND_PRODUCED_SELF_INT_SURFACE
+          - EDGEBLEND_RANGE_INCONSISTENT_EDGE
+          - EDGEBLEND_REQUIRES_SURFACE_EXTENSION
+          - EDGEBLEND_RHO_TOO_LARGE
+          - EDGEBLEND_VERTEX_EDGES_COMPLICATED
+          - SIMULATION_LOAD_ON_FIXED_INSTANCE
+          - FRAME_CUSTOM_ALIGNMENT_POINTS_NOT_IN_SKETCH
+          - NON_MATCHING_SIZE_ERROR
+          - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
+          - FILL_ADJACENT_FACE_BAD_INPUT
           - UNKNOWN
           type: string
         facetPoints:
@@ -33733,6 +33973,7 @@ components:
           - ZIP
           - X_T_XMM_ZIP
           - OBJ_MTL_ZIP
+          - X_B
           - UNKNOWN
           type: string
         name:
@@ -33943,6 +34184,7 @@ components:
         treeHref: treeHref
         createdAt: 2000-01-23T04:56:07.000+00:00
         isMutable: true
+        unparentHref: unparentHref
         createdBy:
           image: image
           name: name
@@ -34001,6 +34243,8 @@ components:
           type: string
         treeHref:
           type: string
+        unparentHref:
+          type: string
         viewRef:
           format: uri
           type: string
@@ -34030,6 +34274,7 @@ components:
           treeHref: treeHref
           createdAt: 2000-01-23T04:56:07.000+00:00
           isMutable: true
+          unparentHref: unparentHref
           createdBy:
             image: image
             name: name
@@ -34067,6 +34312,7 @@ components:
           treeHref: treeHref
           createdAt: 2000-01-23T04:56:07.000+00:00
           isMutable: true
+          unparentHref: unparentHref
           createdBy:
             image: image
             name: name
@@ -34417,6 +34663,7 @@ components:
           treeHref: treeHref
           createdAt: 2000-01-23T04:56:07.000+00:00
           isMutable: true
+          unparentHref: unparentHref
           createdBy:
             image: image
             name: name
@@ -35199,6 +35446,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -35250,6 +35498,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -35325,6 +35574,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -35376,6 +35626,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -35426,6 +35677,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -35471,6 +35723,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -35526,6 +35779,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -35577,6 +35831,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -35627,6 +35882,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -35672,6 +35928,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -38231,6 +38488,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -38277,6 +38535,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -38471,6 +38730,7 @@ components:
                   treeHref: treeHref
                   createdAt: 2000-01-23T04:56:07.000+00:00
                   isMutable: true
+                  unparentHref: unparentHref
                   createdBy:
                     image: image
                     name: name
@@ -38522,6 +38782,7 @@ components:
                   treeHref: treeHref
                   createdAt: 2000-01-23T04:56:07.000+00:00
                   isMutable: true
+                  unparentHref: unparentHref
                   createdBy:
                     image: image
                     name: name
@@ -38572,6 +38833,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -38617,6 +38879,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -38666,6 +38929,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -38726,6 +38990,7 @@ components:
                   treeHref: treeHref
                   createdAt: 2000-01-23T04:56:07.000+00:00
                   isMutable: true
+                  unparentHref: unparentHref
                   createdBy:
                     image: image
                     name: name
@@ -38777,6 +39042,7 @@ components:
                   treeHref: treeHref
                   createdAt: 2000-01-23T04:56:07.000+00:00
                   isMutable: true
+                  unparentHref: unparentHref
                   createdBy:
                     image: image
                     name: name
@@ -38827,6 +39093,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -38872,6 +39139,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -38921,6 +39189,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -39118,7 +39387,9 @@ components:
         totp: totp
         enableTotp: true
         password: password
+        isRecaptchaV3: true
         randomToken: randomToken
+        recaptchaToken: recaptchaToken
         deviceId: deviceId
         email: email
         rendererPerformanceMeasurement:
@@ -39133,9 +39404,13 @@ components:
           type: string
         enableTotp:
           type: boolean
+        isRecaptchaV3:
+          type: boolean
         password:
           type: string
         randomToken:
+          type: string
+        recaptchaToken:
           type: string
         rememberTotp:
           type: boolean
@@ -41457,6 +41732,15 @@ components:
           - V1865_PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
           - V1866_SPLIT_FACE_CURVE_TOOLS_NEED_DIR
           - V1867_HOLE_TIP_ANGLE_OPTION_NAMES
+          - SKIP_1868
+          - SKIP_1869
+          - SKIP_1870
+          - V1871_PARTIAL_SECTION_CUT_TOOL_CORRECTION
+          - V1872_EXTRUDE_UP_TO_DERIVED_FIX
+          - V1873_ESTIMATE_CURVATURE
+          - V1874_FILLET_MORE_ERROR_INFO_MSGS
+          - V1875_FRAME_CUSTOM_ALIGNMENT_POINTS
+          - V1876_FILL_TANGENT_CURVATURE_FACE_PICK
           - UNKNOWN
           type: string
         btType:
@@ -45783,6 +46067,7 @@ components:
           - MEDIUM
           - FINE
           - VERY_FINE
+          - CURVATURE_VISUALIZATION
           - UNKNOWN
           type: string
         boundsDiameter:
@@ -45859,6 +46144,7 @@ components:
           - MEDIUM
           - FINE
           - VERY_FINE
+          - CURVATURE_VISUALIZATION
           - UNKNOWN
           type: string
       type: object
@@ -47895,6 +48181,10 @@ components:
             deleted: true
             theId: theId
         instanceCount: 6
+        deterministicIdToAssociatedFeatureIds:
+          key:
+          - deterministicIdToAssociatedFeatureIds
+          - deterministicIdToAssociatedFeatureIds
         isBase: true
         deterministicIdToEntity:
           key:
@@ -48065,6 +48355,12 @@ components:
           - V2_SMOOTH_EDGES_TOLERANCE_CHANGED
           - UNKNOWN
           type: string
+        deterministicIdToAssociatedFeatureIds:
+          additionalProperties:
+            items:
+              type: string
+            type: array
+          type: object
         deterministicIdToEntity:
           additionalProperties:
             $ref: '#/components/schemas/BTBaseEntityData-33'
@@ -48302,6 +48598,8 @@ components:
           type: boolean
         treeHref:
           type: string
+        unparentHref:
+          type: string
         viewRef:
           format: uri
           type: string
@@ -48361,6 +48659,7 @@ components:
         defaultWorkspaceId: defaultWorkspaceId
         sequence: sequence
         isMutable: true
+        unparentHref: unparentHref
         createdBy:
           image: image
           name: name
@@ -48459,6 +48758,8 @@ components:
         sequence:
           type: string
         treeHref:
+          type: string
+        unparentHref:
           type: string
         viewRef:
           format: uri
@@ -52763,7 +53064,58 @@ components:
           - FGS_SIMULATION_ASSEMBLY_TOO_COMPLEX
           - SPLIT_SELECT_FACE_DIRECTION
           - SELECTION_IS_INVALID
+          - CANNOT_ADD_MORE_THAN_ONE_THREAD_TO_UNSPLIT_CYLINDER
+          - UNDERCUT_TOO_SHALLOW
+          - CAP_INCLINED_CUT_FRAME_ERROR
+          - SPLIT_OFF_FACE
+          - UNDERCUT_DIAMETER_TOO_LARGE
           - PUBLICATION_ACTION_FAILED_NO_PLAN_ACCESS
+          - DISPLAY_STATES_NO_REFERENCE
+          - INVALID_ARC_LENGTH
+          - FILLET_ADJOINING_EDGE_NOT_FILLETED
+          - FILLET_BOUNDARY_INTERSECTS_EDGE
+          - FILLET_BOUNDARY_OVERLAP
+          - FILLET_EDGE_OVERLAPPED_BY_FILLET
+          - FILLET_FACE_RANGE_TOO_LARGE
+          - FILLET_ILLEGAL_END_BOUNDARY
+          - FILLET_OVERLAP
+          - FILLET_OVERLAPS_EDGE_LOOP
+          - FILLET_PRODUCED_SELF_INT_SURFACE
+          - FILLET_RANGE_INCONSISTENT_EDGE
+          - FILLET_REQUIRES_SURFACE_EXTENSION
+          - FILLET_RHO_TOO_LARGE
+          - FILLET_VERTEX_EDGES_COMPLICATED
+          - CHAMFER_ADJOINING_EDGE_NOT_CHAMFERED
+          - CHAMFER_BOUNDARY_INTERSECTS_EDGE
+          - CHAMFER_BOUNDARY_OVERLAP
+          - CHAMFER_EDGE_OVERLAPPED_BY_CHAMFER
+          - CHAMFER_FACE_RANGE_TOO_LARGE
+          - CHAMFER_ILLEGAL_END_BOUNDARY
+          - CHAMFER_OVERLAP
+          - CHAMFER_OVERLAPS_EDGE_LOOP
+          - CHAMFER_PRODUCED_SELF_INT_SURFACE
+          - CHAMFER_RANGE_INCONSISTENT_EDGE
+          - CHAMFER_REQUIRES_SURFACE_EXTENSION
+          - CHAMFER_RHO_TOO_LARGE
+          - CHAMFER_VERTEX_EDGES_COMPLICATED
+          - EDGEBLEND_ADJOINING_EDGE_NOT_BLENDED
+          - EDGEBLEND_BOUNDARY_INTERSECTS_EDGE
+          - EDGEBLEND_BOUNDARY_OVERLAP
+          - EDGEBLEND_EDGE_OVERLAPPED_BY_BLEND
+          - EDGEBLEND_FACE_RANGE_TOO_LARGE
+          - EDGEBLEND_ILLEGAL_END_BOUNDARY
+          - EDGEBLEND_OVERLAP
+          - EDGEBLEND_OVERLAPS_EDGE_LOOP
+          - EDGEBLEND_PRODUCED_SELF_INT_SURFACE
+          - EDGEBLEND_RANGE_INCONSISTENT_EDGE
+          - EDGEBLEND_REQUIRES_SURFACE_EXTENSION
+          - EDGEBLEND_RHO_TOO_LARGE
+          - EDGEBLEND_VERTEX_EDGES_COMPLICATED
+          - SIMULATION_LOAD_ON_FIXED_INSTANCE
+          - FRAME_CUSTOM_ALIGNMENT_POINTS_NOT_IN_SKETCH
+          - NON_MATCHING_SIZE_ERROR
+          - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
+          - FILL_ADJACENT_FACE_BAD_INPUT
           - UNKNOWN
           type: string
         errorMessage:
@@ -53106,6 +53458,7 @@ components:
             treeHref: treeHref
             createdAt: 2000-01-23T04:56:07.000+00:00
             isMutable: true
+            unparentHref: unparentHref
             createdBy:
               image: image
               name: name
@@ -53755,6 +54108,7 @@ components:
           treeHref: treeHref
           createdAt: 2000-01-23T04:56:07.000+00:00
           isMutable: true
+          unparentHref: unparentHref
           createdBy:
             image: image
             name: name
@@ -53819,6 +54173,7 @@ components:
         treeHref: treeHref
         createdAt: 2000-01-23T04:56:07.000+00:00
         isMutable: true
+        unparentHref: unparentHref
         createdBy:
           image: image
           name: name
@@ -53883,6 +54238,8 @@ components:
         resourceType:
           type: string
         treeHref:
+          type: string
+        unparentHref:
           type: string
         viewRef:
           format: uri
@@ -55321,6 +55678,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -55369,6 +55727,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -56515,6 +56874,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -56566,6 +56926,7 @@ components:
                 treeHref: treeHref
                 createdAt: 2000-01-23T04:56:07.000+00:00
                 isMutable: true
+                unparentHref: unparentHref
                 createdBy:
                   image: image
                   name: name
@@ -56616,6 +56977,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -56661,6 +57023,7 @@ components:
               treeHref: treeHref
               createdAt: 2000-01-23T04:56:07.000+00:00
               isMutable: true
+              unparentHref: unparentHref
               createdBy:
                 image: image
                 name: name
@@ -56710,6 +57073,7 @@ components:
           treeHref: treeHref
           createdAt: 2000-01-23T04:56:07.000+00:00
           isMutable: true
+          unparentHref: unparentHref
           createdBy:
             image: image
             name: name
@@ -60641,6 +61005,10 @@ components:
           type: boolean
         isPlanar:
           type: boolean
+        maxPrincipleCurvatureMagnitudes:
+          $ref: '#/components/schemas/BTImmutableFloatArray'
+        minPrincipleCurvatureMagnitudes:
+          $ref: '#/components/schemas/BTImmutableFloatArray'
         normals:
           $ref: '#/components/schemas/BTImmutableFloatArray'
         points:
