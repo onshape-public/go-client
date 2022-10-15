@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.6905-ae59ed040327
+  version: 1.155.6922-11b87e04d539
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -20056,7 +20056,6 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
-          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
@@ -20064,18 +20063,14 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
-          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
           decompressed: null
-        btType: btType
         decompressed: null
         copyWithoutGeometry: null
         fromSketch: true
       properties:
-        btType:
-          type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
         decompressed:
@@ -20116,12 +20111,8 @@ components:
         mapping:
           BTSystemPartColorCycle-1580: '#/components/schemas/BTSystemPartColorCycle-1580'
         propertyName: btType
-      example:
-        btType: btType
-      properties:
-        btType:
-          type: string
       type: object
+      x-is-free-form: false
     BTBaseSMJointTableRowMetadata-2232:
       allOf:
       - $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
@@ -24940,14 +24931,11 @@ components:
         hasTessellationError: true
         face: true
         settingIndex: 5
-        btType: btType
         errorCode: 1
         estimatedMemoryUsageInBytes: 5
         compressed: true
         decompressed: null
       properties:
-        btType:
-          type: string
         compressed:
           type: boolean
         decompressed:
@@ -26760,6 +26748,7 @@ components:
           - NON_MATCHING_SIZE_ERROR
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
+          - FRAME_BAD_OFFSET_INDEX
           - UNKNOWN
           type: string
         microversionId:
@@ -28689,6 +28678,7 @@ components:
           - NON_MATCHING_SIZE_ERROR
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
+          - FRAME_BAD_OFFSET_INDEX
           - UNKNOWN
           type: string
       type: object
@@ -29592,8 +29582,7 @@ components:
               microversion:
                 deleted: true
                 theId: theId
-          partColorCycle:
-            btType: btType
+          partColorCycle: null
           cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
           usage: BASE
           deterministicIdToPartDisplayData:
@@ -30576,7 +30565,6 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
-                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
@@ -30584,12 +30572,10 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
-                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
                 decompressed: null
-              btType: btType
               decompressed: null
               copyWithoutGeometry: null
               fromSketch: true
@@ -32008,6 +31994,7 @@ components:
           - NON_MATCHING_SIZE_ERROR
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
+          - FRAME_BAD_OFFSET_INDEX
           - UNKNOWN
           type: string
         facetPoints:
@@ -41741,6 +41728,8 @@ components:
           - V1874_FILLET_MORE_ERROR_INFO_MSGS
           - V1875_FRAME_CUSTOM_ALIGNMENT_POINTS
           - V1876_FILL_TANGENT_CURVATURE_FACE_PICK
+          - V1877_ADD_EXTERNAL_THREAD_COLUMN_NAMES
+          - V1878_FRAME_MISSING_CUSTOM_ALIGNMENT_POINT
           - UNKNOWN
           type: string
         btType:
@@ -47212,8 +47201,7 @@ components:
             microversion:
               deleted: true
               theId: theId
-        partColorCycle:
-          btType: btType
+        partColorCycle: null
         cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
         usage: BASE
         deterministicIdToPartDisplayData:
@@ -48196,7 +48184,6 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
-              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
@@ -48204,12 +48191,10 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
-              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
               decompressed: null
-            btType: btType
             decompressed: null
             copyWithoutGeometry: null
             fromSketch: true
@@ -53116,6 +53101,7 @@ components:
           - NON_MATCHING_SIZE_ERROR
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
+          - FRAME_BAD_OFFSET_INDEX
           - UNKNOWN
           type: string
         errorMessage:
@@ -53294,9 +53280,42 @@ components:
       - $ref: '#/components/schemas/BTSplineControlPolygonFilter_1130_allOf'
       type: object
     BTSplineDescription-2118:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveDescription-1583'
-      - $ref: '#/components/schemas/BTSplineDescription_2118_allOf'
+      properties:
+        btType:
+          type: string
+        controlPoints:
+          items:
+            format: double
+            type: number
+          type: array
+        degree:
+          format: int32
+          type: integer
+        direction:
+          $ref: '#/components/schemas/BTVector3d-389'
+        directionOrientedWithFace:
+          $ref: '#/components/schemas/BTVector3d-389'
+        isPeriodic:
+          type: boolean
+        isRational:
+          type: boolean
+        knots:
+          items:
+            format: double
+            type: number
+          type: array
+        origin:
+          $ref: '#/components/schemas/BTVector3d-389'
+        type:
+          enum:
+          - OTHER
+          - LINE
+          - CIRCLE
+          - ELLIPSE
+          - BCURVE
+          - ICURVE
+          - UNKNOWN
+          type: string
       type: object
     BTSplineHandleFilter-2971:
       allOf:
@@ -53660,8 +53679,7 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny:
-              btType: btType
+            crossHighlightDataIfAny: null
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53672,8 +53690,7 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny:
-              btType: btType
+            crossHighlightDataIfAny: null
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53737,12 +53754,8 @@ components:
           BTTableAssemblyCrossHighlightData-2675: '#/components/schemas/BTTableAssemblyCrossHighlightData-2675'
           BTTableCrossHighlightData-1753: '#/components/schemas/BTTableCrossHighlightData-1753'
         propertyName: btType
-      example:
-        btType: btType
-      properties:
-        btType:
-          type: string
       type: object
+      x-is-free-form: false
     BTTableBaseRowMetadata-3181:
       discriminator:
         mapping:
@@ -53752,8 +53765,7 @@ components:
           BTVariableTableRowMetadata-3912: '#/components/schemas/BTVariableTableRowMetadata-3912'
         propertyName: btType
       example:
-        crossHighlightDataIfAny:
-          btType: btType
+        crossHighlightDataIfAny: null
       properties:
         crossHighlightDataIfAny:
           $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
@@ -53994,8 +54006,7 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny:
-                btType: btType
+              crossHighlightDataIfAny: null
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -54006,8 +54017,7 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny:
-                btType: btType
+              crossHighlightDataIfAny: null
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -54030,8 +54040,7 @@ components:
         id: id
         nodeId: nodeId
         rowMetadata:
-          crossHighlightDataIfAny:
-            btType: btType
+          crossHighlightDataIfAny: null
         columnIdToCell:
           key:
             isEverVisible: true
@@ -64196,28 +64205,6 @@ components:
           type: boolean
         btType:
           type: string
-      type: object
-    BTSplineDescription_2118_allOf:
-      properties:
-        btType:
-          type: string
-        controlPoints:
-          items:
-            format: double
-            type: number
-          type: array
-        degree:
-          format: int32
-          type: integer
-        isPeriodic:
-          type: boolean
-        isRational:
-          type: boolean
-        knots:
-          items:
-            format: double
-            type: number
-          type: array
       type: object
     BTSplineHandleFilter_2971_allOf:
       properties:
