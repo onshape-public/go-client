@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.6922-11b87e04d539
+  version: 1.155.6926-35d1d6168263
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41730,6 +41730,7 @@ components:
           - V1876_FILL_TANGENT_CURVATURE_FACE_PICK
           - V1877_ADD_EXTERNAL_THREAD_COLUMN_NAMES
           - V1878_FRAME_MISSING_CUSTOM_ALIGNMENT_POINT
+          - V1879_EXTERNAL_THREAD_EXCESSIVE_UNDERCUT
           - UNKNOWN
           type: string
         btType:
@@ -53280,42 +53281,9 @@ components:
       - $ref: '#/components/schemas/BTSplineControlPolygonFilter_1130_allOf'
       type: object
     BTSplineDescription-2118:
-      properties:
-        btType:
-          type: string
-        controlPoints:
-          items:
-            format: double
-            type: number
-          type: array
-        degree:
-          format: int32
-          type: integer
-        direction:
-          $ref: '#/components/schemas/BTVector3d-389'
-        directionOrientedWithFace:
-          $ref: '#/components/schemas/BTVector3d-389'
-        isPeriodic:
-          type: boolean
-        isRational:
-          type: boolean
-        knots:
-          items:
-            format: double
-            type: number
-          type: array
-        origin:
-          $ref: '#/components/schemas/BTVector3d-389'
-        type:
-          enum:
-          - OTHER
-          - LINE
-          - CIRCLE
-          - ELLIPSE
-          - BCURVE
-          - ICURVE
-          - UNKNOWN
-          type: string
+      allOf:
+      - $ref: '#/components/schemas/BTCurveDescription-1583'
+      - $ref: '#/components/schemas/BTSplineDescription_2118_allOf'
       type: object
     BTSplineHandleFilter-2971:
       allOf:
@@ -53679,7 +53647,8 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny: null
+            crossHighlightDataIfAny:
+              btType: btType
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53690,7 +53659,8 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny: null
+            crossHighlightDataIfAny:
+              btType: btType
           columnIdToCell:
             key:
               isEverVisible: true
@@ -53754,8 +53724,12 @@ components:
           BTTableAssemblyCrossHighlightData-2675: '#/components/schemas/BTTableAssemblyCrossHighlightData-2675'
           BTTableCrossHighlightData-1753: '#/components/schemas/BTTableCrossHighlightData-1753'
         propertyName: btType
+      example:
+        btType: btType
+      properties:
+        btType:
+          type: string
       type: object
-      x-is-free-form: false
     BTTableBaseRowMetadata-3181:
       discriminator:
         mapping:
@@ -53765,7 +53739,8 @@ components:
           BTVariableTableRowMetadata-3912: '#/components/schemas/BTVariableTableRowMetadata-3912'
         propertyName: btType
       example:
-        crossHighlightDataIfAny: null
+        crossHighlightDataIfAny:
+          btType: btType
       properties:
         crossHighlightDataIfAny:
           $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
@@ -54006,7 +53981,8 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny: null
+              crossHighlightDataIfAny:
+                btType: btType
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -54017,7 +53993,8 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny: null
+              crossHighlightDataIfAny:
+                btType: btType
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -54040,7 +54017,8 @@ components:
         id: id
         nodeId: nodeId
         rowMetadata:
-          crossHighlightDataIfAny: null
+          crossHighlightDataIfAny:
+            btType: btType
         columnIdToCell:
           key:
             isEverVisible: true
@@ -64205,6 +64183,28 @@ components:
           type: boolean
         btType:
           type: string
+      type: object
+    BTSplineDescription_2118_allOf:
+      properties:
+        btType:
+          type: string
+        controlPoints:
+          items:
+            format: double
+            type: number
+          type: array
+        degree:
+          format: int32
+          type: integer
+        isPeriodic:
+          type: boolean
+        isRational:
+          type: boolean
+        knots:
+          items:
+            format: double
+            type: number
+          type: array
       type: object
     BTSplineHandleFilter_2971_allOf:
       properties:
