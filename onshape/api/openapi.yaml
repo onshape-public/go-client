@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.6926-35d1d6168263
+  version: 1.155.6946-bb9367a9d0cc
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -20056,6 +20056,7 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
+          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
@@ -20063,14 +20064,18 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
+          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
           decompressed: null
+        btType: btType
         decompressed: null
         copyWithoutGeometry: null
         fromSketch: true
       properties:
+        btType:
+          type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
         decompressed:
@@ -20111,8 +20116,12 @@ components:
         mapping:
           BTSystemPartColorCycle-1580: '#/components/schemas/BTSystemPartColorCycle-1580'
         propertyName: btType
+      example:
+        btType: btType
+      properties:
+        btType:
+          type: string
       type: object
-      x-is-free-form: false
     BTBaseSMJointTableRowMetadata-2232:
       allOf:
       - $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
@@ -24931,11 +24940,14 @@ components:
         hasTessellationError: true
         face: true
         settingIndex: 5
+        btType: btType
         errorCode: 1
         estimatedMemoryUsageInBytes: 5
         compressed: true
         decompressed: null
       properties:
+        btType:
+          type: string
         compressed:
           type: boolean
         decompressed:
@@ -26749,6 +26761,7 @@ components:
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
+          - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - UNKNOWN
           type: string
         microversionId:
@@ -28679,6 +28692,7 @@ components:
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
+          - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - UNKNOWN
           type: string
       type: object
@@ -29582,7 +29596,8 @@ components:
               microversion:
                 deleted: true
                 theId: theId
-          partColorCycle: null
+          partColorCycle:
+            btType: btType
           cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
           usage: BASE
           deterministicIdToPartDisplayData:
@@ -30565,6 +30580,7 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
+                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
@@ -30572,10 +30588,12 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
+                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
                 decompressed: null
+              btType: btType
               decompressed: null
               copyWithoutGeometry: null
               fromSketch: true
@@ -31995,6 +32013,7 @@ components:
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
+          - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - UNKNOWN
           type: string
         facetPoints:
@@ -41731,6 +41750,8 @@ components:
           - V1877_ADD_EXTERNAL_THREAD_COLUMN_NAMES
           - V1878_FRAME_MISSING_CUSTOM_ALIGNMENT_POINT
           - V1879_EXTERNAL_THREAD_EXCESSIVE_UNDERCUT
+          - V1880_INCORRECT_EXTERNAL_THREAD_QUERY_AND_REJECT_SHEET_METAL_AND_ADJACENT_FACES
+          - V1881_FRAME_CUSTOM_ALIGNMENT_POINTS_SILENCE_WARNING
           - UNKNOWN
           type: string
         btType:
@@ -47202,7 +47223,8 @@ components:
             microversion:
               deleted: true
               theId: theId
-        partColorCycle: null
+        partColorCycle:
+          btType: btType
         cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
         usage: BASE
         deterministicIdToPartDisplayData:
@@ -48185,6 +48207,7 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
+              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
@@ -48192,10 +48215,12 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
+              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
               decompressed: null
+            btType: btType
             decompressed: null
             copyWithoutGeometry: null
             fromSketch: true
@@ -53103,6 +53128,7 @@ components:
           - FILL_CANNOT_MATCH_EDGE_ADJACENT_FACES
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
+          - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - UNKNOWN
           type: string
         errorMessage:
