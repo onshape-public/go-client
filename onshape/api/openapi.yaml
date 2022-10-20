@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.6946-bb9367a9d0cc
+  version: 1.155.6979-8ce9514d51cf
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41752,6 +41752,8 @@ components:
           - V1879_EXTERNAL_THREAD_EXCESSIVE_UNDERCUT
           - V1880_INCORRECT_EXTERNAL_THREAD_QUERY_AND_REJECT_SHEET_METAL_AND_ADJACENT_FACES
           - V1881_FRAME_CUSTOM_ALIGNMENT_POINTS_SILENCE_WARNING
+          - V1882_PROPERLY_CHECK_SIZE_ON_PRESELECTION
+          - V1883_FRAME_ALWAYS_DISPLAY_POINTS_MANIPULATOR
           - UNKNOWN
           type: string
         btType:
