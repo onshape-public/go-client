@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.6979-8ce9514d51cf
+  version: 1.155.7010-841c6a8f62e7
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -26762,6 +26762,7 @@ components:
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
+          - THREAD_DEPTH_BEYOND_CYLINDER
           - UNKNOWN
           type: string
         microversionId:
@@ -28693,6 +28694,7 @@ components:
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
+          - THREAD_DEPTH_BEYOND_CYLINDER
           - UNKNOWN
           type: string
       type: object
@@ -32014,6 +32016,7 @@ components:
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
+          - THREAD_DEPTH_BEYOND_CYLINDER
           - UNKNOWN
           type: string
         facetPoints:
@@ -41754,6 +41757,7 @@ components:
           - V1881_FRAME_CUSTOM_ALIGNMENT_POINTS_SILENCE_WARNING
           - V1882_PROPERLY_CHECK_SIZE_ON_PRESELECTION
           - V1883_FRAME_ALWAYS_DISPLAY_POINTS_MANIPULATOR
+          - V1884_ERROR_ON_INVALID_THREAD_LENGTH_FOR_BLIND_THREADS_BUT_ONLY_BLIND_THREADS_AND_UNDERCUT_CHECK
           - UNKNOWN
           type: string
         btType:
@@ -53131,6 +53135,7 @@ components:
           - FILL_ADJACENT_FACE_BAD_INPUT
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
+          - THREAD_DEPTH_BEYOND_CYLINDER
           - UNKNOWN
           type: string
         errorMessage:
