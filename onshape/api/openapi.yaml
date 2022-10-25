@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.7027-4c1a314ba2c9
+  version: 1.155.7050-fa39b5514a7a
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41759,6 +41759,8 @@ components:
           - V1883_FRAME_ALWAYS_DISPLAY_POINTS_MANIPULATOR
           - V1884_ERROR_ON_INVALID_THREAD_LENGTH_FOR_BLIND_THREADS_BUT_ONLY_BLIND_THREADS_AND_UNDERCUT_CHECK
           - V1885_PROPERLY_SET_EXTERNAL_THREAD_SIZE_ON_MIN_MAX
+          - V1886_EXTERNAL_THREAD_STRING_RESOURCES_DEFAULT_ANSI_SIZE
+          - V1887_FILL_G0_ADJACENT_FACES_FAILURE_FIX
           - UNKNOWN
           type: string
         btType:
