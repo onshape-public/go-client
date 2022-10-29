@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.7096-ca38df42e877
+  version: 1.155.7106-4d7b01bfe2e0
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41763,6 +41763,7 @@ components:
           - V1887_FILL_G0_ADJACENT_FACES_FAILURE_FIX
           - V1888_DO_NOT_STORE_EXTERNAL_THREAD_FOUND_SIZES
           - V1889_REFACTOR_EXTERNAL_THREAD_STORAGE_SIMPLIFICATION
+          - V1890_FOLLOW_LAMINAR_SOURCE_COINCIDENCE_CHECK
           - UNKNOWN
           type: string
         btType:
