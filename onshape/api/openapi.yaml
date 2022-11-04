@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.7153-a5394a571d68
+  version: 1.155.7180-fb454452a4fd
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -20056,7 +20056,6 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
-          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
@@ -20064,18 +20063,14 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
-          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
           decompressed: null
-        btType: btType
         decompressed: null
         copyWithoutGeometry: null
         fromSketch: true
       properties:
-        btType:
-          type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
         decompressed:
@@ -20116,12 +20111,8 @@ components:
         mapping:
           BTSystemPartColorCycle-1580: '#/components/schemas/BTSystemPartColorCycle-1580'
         propertyName: btType
-      example:
-        btType: btType
-      properties:
-        btType:
-          type: string
       type: object
+      x-is-free-form: false
     BTBaseSMJointTableRowMetadata-2232:
       allOf:
       - $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
@@ -24940,14 +24931,11 @@ components:
         hasTessellationError: true
         face: true
         settingIndex: 5
-        btType: btType
         errorCode: 1
         estimatedMemoryUsageInBytes: 5
         compressed: true
         decompressed: null
       properties:
-        btType:
-          type: string
         compressed:
           type: boolean
         decompressed:
@@ -29598,8 +29586,7 @@ components:
               microversion:
                 deleted: true
                 theId: theId
-          partColorCycle:
-            btType: btType
+          partColorCycle: null
           cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
           usage: BASE
           deterministicIdToPartDisplayData:
@@ -30582,7 +30569,6 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
-                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
@@ -30590,12 +30576,10 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
-                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
                 decompressed: null
-              btType: btType
               decompressed: null
               copyWithoutGeometry: null
               fromSketch: true
@@ -47235,8 +47219,7 @@ components:
             microversion:
               deleted: true
               theId: theId
-        partColorCycle:
-          btType: btType
+        partColorCycle: null
         cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
         usage: BASE
         deterministicIdToPartDisplayData:
@@ -48219,7 +48202,6 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
-              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
@@ -48227,12 +48209,10 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
-              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
               decompressed: null
-            btType: btType
             decompressed: null
             copyWithoutGeometry: null
             fromSketch: true
