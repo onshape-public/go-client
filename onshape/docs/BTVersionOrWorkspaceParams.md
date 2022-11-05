@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **FromHistory** | Pointer to **bool** |  | [optional] 
 **IsRelease** | Pointer to **bool** |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
+**MissingBomTableTemplateId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Purpose** | Pointer to **int32** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
@@ -184,6 +185,31 @@ SetMicroversionId sets MicroversionId field to given value.
 `func (o *BTVersionOrWorkspaceParams) HasMicroversionId() bool`
 
 HasMicroversionId returns a boolean if a field has been set.
+
+### GetMissingBomTableTemplateId
+
+`func (o *BTVersionOrWorkspaceParams) GetMissingBomTableTemplateId() string`
+
+GetMissingBomTableTemplateId returns the MissingBomTableTemplateId field if non-nil, zero value otherwise.
+
+### GetMissingBomTableTemplateIdOk
+
+`func (o *BTVersionOrWorkspaceParams) GetMissingBomTableTemplateIdOk() (*string, bool)`
+
+GetMissingBomTableTemplateIdOk returns a tuple with the MissingBomTableTemplateId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMissingBomTableTemplateId
+
+`func (o *BTVersionOrWorkspaceParams) SetMissingBomTableTemplateId(v string)`
+
+SetMissingBomTableTemplateId sets MissingBomTableTemplateId field to given value.
+
+### HasMissingBomTableTemplateId
+
+`func (o *BTVersionOrWorkspaceParams) HasMissingBomTableTemplateId() bool`
+
+HasMissingBomTableTemplateId returns a boolean if a field has been set.
 
 ### GetName
 

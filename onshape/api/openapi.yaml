@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.155.7180-fb454452a4fd
+  version: 1.156.7192-0ed4c121c7d8
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -3509,7 +3509,7 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Ids of the columns to include, or all columnns if empty. BOM\
+      - description: "Ids of the columns to include, or all columns if empty. BOM\
           \ column ids correspond to metadata property ids."
         explode: true
         in: query
@@ -3583,6 +3583,25 @@ paths:
         name: ignoreSubassemblyBomBehavior
         required: false
         schema:
+          type: boolean
+        style: form
+      - description: Include element microversions and version metadata microversions
+          in the JSON.
+        explode: true
+        in: query
+        name: includeItemMicroversions
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - description: Include top-level assembly row when constructing the BOM table.
+        explode: true
+        in: query
+        name: includeTopLevelAssemblyRow
+        required: false
+        schema:
+          default: false
           type: boolean
         style: form
       responses:
@@ -8016,6 +8035,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: includeComputedAssemblyProperties
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: thumbnail
         required: false
         schema:
@@ -8124,6 +8151,14 @@ paths:
         required: false
         schema:
           default: true
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includeComputedAssemblyProperties
+        required: false
+        schema:
+          default: false
           type: boolean
         style: form
       - explode: true
@@ -8295,6 +8330,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: includeComputedAssemblyProperties
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: thumbnail
         required: false
         schema:
@@ -8434,6 +8477,14 @@ paths:
         required: false
         schema:
           default: true
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includeComputedAssemblyProperties
+        required: false
+        schema:
+          default: false
           type: boolean
         style: form
       - explode: true
@@ -8644,6 +8695,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: includeComputedAssemblyProperties
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: thumbnail
         required: false
         schema:
@@ -8782,6 +8841,14 @@ paths:
         required: false
         schema:
           default: true
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includeComputedAssemblyProperties
+        required: false
+        schema:
+          default: false
           type: boolean
         style: form
       - explode: true
@@ -20056,6 +20123,7 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
+          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
@@ -20063,14 +20131,18 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
+          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
           decompressed: null
+        btType: btType
         decompressed: null
         copyWithoutGeometry: null
         fromSketch: true
       properties:
+        btType:
+          type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
         decompressed:
@@ -20111,8 +20183,12 @@ components:
         mapping:
           BTSystemPartColorCycle-1580: '#/components/schemas/BTSystemPartColorCycle-1580'
         propertyName: btType
+      example:
+        btType: btType
+      properties:
+        btType:
+          type: string
       type: object
-      x-is-free-form: false
     BTBaseSMJointTableRowMetadata-2232:
       allOf:
       - $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
@@ -20195,6 +20271,32 @@ components:
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
+        topLevelAssemblyRow:
+          indentLevel: 0
+          name: name
+          headerIdToValue:
+            key: "{}"
+          itemSource:
+            elementId: elementId
+            wvmType: wvmType
+            configuration: configuration
+            partId: partId
+            fullConfiguration: fullConfiguration
+            isStandardContent: true
+            wvmId: wvmId
+            viewHref: viewHref
+            versionMetadataWorkspaceMicroversionId: versionMetadataWorkspaceMicroversionId
+            nonGeometricItemId: nonGeometricItemId
+            sourceElementMicroversionId: sourceElementMicroversionId
+            documentId: documentId
+            href: href
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+          relatedOccurrences:
+          - relatedOccurrences
+          - relatedOccurrences
+          rowId: rowId
         name: name
         bomSource:
           viewHref: viewHref
@@ -20244,16 +20346,18 @@ components:
             key: "{}"
           itemSource:
             elementId: elementId
-            viewHref: viewHref
             wvmType: wvmType
             configuration: configuration
             partId: partId
-            nonGeometricItemId: nonGeometricItemId
-            documentId: documentId
             fullConfiguration: fullConfiguration
             isStandardContent: true
-            href: href
             wvmId: wvmId
+            viewHref: viewHref
+            versionMetadataWorkspaceMicroversionId: versionMetadataWorkspaceMicroversionId
+            nonGeometricItemId: nonGeometricItemId
+            sourceElementMicroversionId: sourceElementMicroversionId
+            documentId: documentId
+            href: href
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
@@ -20267,16 +20371,18 @@ components:
             key: "{}"
           itemSource:
             elementId: elementId
-            viewHref: viewHref
             wvmType: wvmType
             configuration: configuration
             partId: partId
-            nonGeometricItemId: nonGeometricItemId
-            documentId: documentId
             fullConfiguration: fullConfiguration
             isStandardContent: true
-            href: href
             wvmId: wvmId
+            viewHref: viewHref
+            versionMetadataWorkspaceMicroversionId: versionMetadataWorkspaceMicroversionId
+            nonGeometricItemId: nonGeometricItemId
+            sourceElementMicroversionId: sourceElementMicroversionId
+            documentId: documentId
+            href: href
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
@@ -20312,6 +20418,8 @@ components:
           type: array
         templateId:
           type: string
+        topLevelAssemblyRow:
+          $ref: '#/components/schemas/BTBillOfMaterialsRowInfo'
         type:
           type: string
         viewRef:
@@ -20321,16 +20429,18 @@ components:
     BTBillOfMaterialsItemSourceInfo:
       example:
         elementId: elementId
-        viewHref: viewHref
         wvmType: wvmType
         configuration: configuration
         partId: partId
-        nonGeometricItemId: nonGeometricItemId
-        documentId: documentId
         fullConfiguration: fullConfiguration
         isStandardContent: true
-        href: href
         wvmId: wvmId
+        viewHref: viewHref
+        versionMetadataWorkspaceMicroversionId: versionMetadataWorkspaceMicroversionId
+        nonGeometricItemId: nonGeometricItemId
+        sourceElementMicroversionId: sourceElementMicroversionId
+        documentId: documentId
+        href: href
       properties:
         configuration:
           type: string
@@ -20347,6 +20457,10 @@ components:
         nonGeometricItemId:
           type: string
         partId:
+          type: string
+        sourceElementMicroversionId:
+          type: string
+        versionMetadataWorkspaceMicroversionId:
           type: string
         viewHref:
           type: string
@@ -20387,16 +20501,18 @@ components:
           key: "{}"
         itemSource:
           elementId: elementId
-          viewHref: viewHref
           wvmType: wvmType
           configuration: configuration
           partId: partId
-          nonGeometricItemId: nonGeometricItemId
-          documentId: documentId
           fullConfiguration: fullConfiguration
           isStandardContent: true
-          href: href
           wvmId: wvmId
+          viewHref: viewHref
+          versionMetadataWorkspaceMicroversionId: versionMetadataWorkspaceMicroversionId
+          nonGeometricItemId: nonGeometricItemId
+          sourceElementMicroversionId: sourceElementMicroversionId
+          documentId: documentId
+          href: href
         href: https://openapi-generator.tech
         id: id
         viewRef: https://openapi-generator.tech
@@ -20516,6 +20632,10 @@ components:
           type: string
         sourceElement:
           $ref: '#/components/schemas/BTElementReference-725'
+        versionMetadataWorkspaceId:
+          type: string
+        versionMetadataWorkspaceMicroversionId:
+          type: string
       type: object
     BTBillingPlanInfo:
       example:
@@ -23098,6 +23218,7 @@ components:
         isOrphaned: true
         href: https://openapi-generator.tech
         id: id
+        tracingEnabled: true
         anonymousAllowsExport: true
         likes: 1
         thumbnail:
@@ -23632,6 +23753,8 @@ components:
         totalWorkspacesUpdating:
           format: int32
           type: integer
+        tracingEnabled:
+          type: boolean
         trash:
           type: boolean
         trashedAt:
@@ -24931,11 +25054,14 @@ components:
         hasTessellationError: true
         face: true
         settingIndex: 5
+        btType: btType
         errorCode: 1
         estimatedMemoryUsageInBytes: 5
         compressed: true
         decompressed: null
       properties:
+        btType:
+          type: string
         compressed:
           type: boolean
         decompressed:
@@ -26751,6 +26877,13 @@ components:
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - THREAD_DEPTH_BEYOND_CYLINDER
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_VERTEX
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_POINT
+          - VRFILLET_BAD_COEDGE
+          - FILLET_LEGACY_ASYMMETRIC_UNSUPPORTED
+          - PARTIAL_FILLET_BAD_INPUT_ERROR
+          - GUSSET_EMPTY_ALIGNMENT_SELECTION
+          - GUSSET_ALIGNMENT_NO_INTERSECTION
           - UNKNOWN
           type: string
         microversionId:
@@ -28683,6 +28816,13 @@ components:
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - THREAD_DEPTH_BEYOND_CYLINDER
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_VERTEX
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_POINT
+          - VRFILLET_BAD_COEDGE
+          - FILLET_LEGACY_ASYMMETRIC_UNSUPPORTED
+          - PARTIAL_FILLET_BAD_INPUT_ERROR
+          - GUSSET_EMPTY_ALIGNMENT_SELECTION
+          - GUSSET_ALIGNMENT_NO_INTERSECTION
           - UNKNOWN
           type: string
       type: object
@@ -29586,7 +29726,8 @@ components:
               microversion:
                 deleted: true
                 theId: theId
-          partColorCycle: null
+          partColorCycle:
+            btType: btType
           cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
           usage: BASE
           deterministicIdToPartDisplayData:
@@ -30569,6 +30710,7 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
+                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
@@ -30576,10 +30718,12 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
+                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
                 decompressed: null
+              btType: btType
               decompressed: null
               copyWithoutGeometry: null
               fromSketch: true
@@ -32001,6 +32145,13 @@ components:
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - THREAD_DEPTH_BEYOND_CYLINDER
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_VERTEX
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_POINT
+          - VRFILLET_BAD_COEDGE
+          - FILLET_LEGACY_ASYMMETRIC_UNSUPPORTED
+          - PARTIAL_FILLET_BAD_INPUT_ERROR
+          - GUSSET_EMPTY_ALIGNMENT_SELECTION
+          - GUSSET_ALIGNMENT_NO_INTERSECTION
           - UNKNOWN
           type: string
         facetPoints:
@@ -41748,6 +41899,20 @@ components:
           - V1888_DO_NOT_STORE_EXTERNAL_THREAD_FOUND_SIZES
           - V1889_REFACTOR_EXTERNAL_THREAD_STORAGE_SIMPLIFICATION
           - V1890_FOLLOW_LAMINAR_SOURCE_COINCIDENCE_CHECK
+          - SKIP_1891
+          - SKIP_1892
+          - SKIP_1893
+          - SKIP_1894
+          - SKIP_1895
+          - SKIP_1896
+          - V1897_FIX_PARASOLID_BAD_STATE_IN_CURVE_ON_SURFACE
+          - V1898_FASTER_REDUNDANCY_REMOVAL
+          - V1899_OPHOLE_DESTROYS_PART
+          - V1900_EQUAL_HOLE_CBORE_FIX
+          - V1901_MAX_THREAD_LENGTH_COMPARISON_FIX
+          - V1902_START_FROM_SKETCH_MEASURE
+          - V1903_HOLD_ADJACENT_EDGES
+          - V1904_ADD_HOLE_ATTRIBUTES_TO_CHAMFER_FEATURES
           - UNKNOWN
           type: string
         btType:
@@ -43028,6 +43193,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           required: true
           uiHints:
             multiline: true
@@ -43063,6 +43229,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           required: true
           uiHints:
             multiline: true
@@ -43159,6 +43326,7 @@ components:
           maxCount: 5
           maxLength: 5
         computedPropertyError: computedPropertyError
+        computedAssemblyProperty: true
         required: true
         uiHints:
           multiline: true
@@ -43177,6 +43345,8 @@ components:
           state: 0
           value: value
       properties:
+        computedAssemblyProperty:
+          type: boolean
         computedProperty:
           type: boolean
         computedPropertyError:
@@ -47219,7 +47389,8 @@ components:
             microversion:
               deleted: true
               theId: theId
-        partColorCycle: null
+        partColorCycle:
+          btType: btType
         cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
         usage: BASE
         deterministicIdToPartDisplayData:
@@ -48202,6 +48373,7 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
+              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
@@ -48209,10 +48381,12 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
+              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
               decompressed: null
+            btType: btType
             decompressed: null
             copyWithoutGeometry: null
             fromSketch: true
@@ -50263,6 +50437,7 @@ components:
               maxCount: 5
               maxLength: 5
             computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
             required: true
             uiHints:
               multiline: true
@@ -50298,6 +50473,7 @@ components:
               maxCount: 5
               maxLength: 5
             computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
             required: true
             uiHints:
               multiline: true
@@ -50389,6 +50565,7 @@ components:
               maxCount: 5
               maxLength: 5
             computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
             required: true
             uiHints:
               multiline: true
@@ -50424,6 +50601,7 @@ components:
               maxCount: 5
               maxLength: 5
             computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
             required: true
             uiHints:
               multiline: true
@@ -50462,6 +50640,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           teamsOnly: true
           required: true
           usersOnly: true
@@ -50546,6 +50725,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           teamsOnly: true
           required: true
           usersOnly: true
@@ -50769,6 +50949,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           required: true
           uiHints:
             multiline: true
@@ -50804,6 +50985,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           required: true
           uiHints:
             multiline: true
@@ -53122,6 +53304,13 @@ components:
           - FRAME_BAD_OFFSET_INDEX
           - EXTERNAL_THREADS_UNSUPPORTED_ON_SHEET_METAL
           - THREAD_DEPTH_BEYOND_CYLINDER
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_VERTEX
+          - VRFILLET_ASYMMETRIC_RADIUS_REQUIRED_AT_POINT
+          - VRFILLET_BAD_COEDGE
+          - FILLET_LEGACY_ASYMMETRIC_UNSUPPORTED
+          - PARTIAL_FILLET_BAD_INPUT_ERROR
+          - GUSSET_EMPTY_ALIGNMENT_SELECTION
+          - GUSSET_ALIGNMENT_NO_INTERSECTION
           - UNKNOWN
           type: string
         errorMessage:
@@ -55356,6 +55545,7 @@ components:
         globalPermissions:
           approveReleases: true
           viewChangeOrders: true
+          createTasks: true
           accessReports: true
           transferDocumentsFromEnterprise: true
           manageNonGeometricItems: true
@@ -56168,6 +56358,7 @@ components:
       example:
         fromHistory: true
         versionId: versionId
+        missingBomTableTemplateId: missingBomTableTemplateId
         purpose: 0
         clientInteractionMode: clientInteractionMode
         name: name
@@ -56189,6 +56380,8 @@ components:
         isRelease:
           type: boolean
         microversionId:
+          type: string
+        missingBomTableTemplateId:
           type: string
         name:
           type: string
@@ -57146,6 +57339,7 @@ components:
           maxCount: 5
           maxLength: 5
         computedPropertyError: computedPropertyError
+        computedAssemblyProperty: true
         teamsOnly: true
         required: true
         usersOnly: true
@@ -57212,6 +57406,8 @@ components:
           state: 0
           value: value
       properties:
+        computedAssemblyProperty:
+          type: boolean
         computedProperty:
           type: boolean
         computedPropertyError:
@@ -57605,6 +57801,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           teamsOnly: true
           required: true
           usersOnly: true
@@ -57689,6 +57886,7 @@ components:
             maxCount: 5
             maxLength: 5
           computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
           teamsOnly: true
           required: true
           usersOnly: true
@@ -58984,6 +59182,7 @@ components:
       example:
         approveReleases: true
         viewChangeOrders: true
+        createTasks: true
         accessReports: true
         transferDocumentsFromEnterprise: true
         manageNonGeometricItems: true
@@ -59022,6 +59221,8 @@ components:
         createProject:
           type: boolean
         createReleases:
+          type: boolean
+        createTasks:
           type: boolean
         deletePermanently:
           type: boolean
