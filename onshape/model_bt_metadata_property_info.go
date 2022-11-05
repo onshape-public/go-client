@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.155.7180-fb454452a4fd
+API version: 1.156.7192-0ed4c121c7d8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,24 +17,25 @@ import (
 
 // BTMetadataPropertyInfo struct for BTMetadataPropertyInfo
 type BTMetadataPropertyInfo struct {
-	ComputedProperty      *bool                            `json:"computedProperty,omitempty"`
-	ComputedPropertyError *string                          `json:"computedPropertyError,omitempty"`
-	DefaultValue          interface{}                      `json:"defaultValue,omitempty"`
-	Dirty                 *bool                            `json:"dirty,omitempty"`
-	Editable              *bool                            `json:"editable,omitempty"`
-	EditableInUi          *bool                            `json:"editableInUi,omitempty"`
-	EnumValues            []BTMetadataEnumValueInfo        `json:"enumValues,omitempty"`
-	InitialValue          *map[string]interface{}          `json:"initialValue,omitempty"`
-	Multivalued           *bool                            `json:"multivalued,omitempty"`
-	Name                  *string                          `json:"name,omitempty"`
-	PropertyId            *string                          `json:"propertyId,omitempty"`
-	PropertySource        *int32                           `json:"propertySource,omitempty"`
-	Required              *bool                            `json:"required,omitempty"`
-	SchemaId              *string                          `json:"schemaId,omitempty"`
-	UiHints               *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
-	Validator             *BTMetadataPropertyValidatorInfo `json:"validator,omitempty"`
-	Value                 interface{}                      `json:"value,omitempty"`
-	ValueType             *string                          `json:"valueType,omitempty"`
+	ComputedAssemblyProperty *bool                            `json:"computedAssemblyProperty,omitempty"`
+	ComputedProperty         *bool                            `json:"computedProperty,omitempty"`
+	ComputedPropertyError    *string                          `json:"computedPropertyError,omitempty"`
+	DefaultValue             interface{}                      `json:"defaultValue,omitempty"`
+	Dirty                    *bool                            `json:"dirty,omitempty"`
+	Editable                 *bool                            `json:"editable,omitempty"`
+	EditableInUi             *bool                            `json:"editableInUi,omitempty"`
+	EnumValues               []BTMetadataEnumValueInfo        `json:"enumValues,omitempty"`
+	InitialValue             *map[string]interface{}          `json:"initialValue,omitempty"`
+	Multivalued              *bool                            `json:"multivalued,omitempty"`
+	Name                     *string                          `json:"name,omitempty"`
+	PropertyId               *string                          `json:"propertyId,omitempty"`
+	PropertySource           *int32                           `json:"propertySource,omitempty"`
+	Required                 *bool                            `json:"required,omitempty"`
+	SchemaId                 *string                          `json:"schemaId,omitempty"`
+	UiHints                  *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
+	Validator                *BTMetadataPropertyValidatorInfo `json:"validator,omitempty"`
+	Value                    interface{}                      `json:"value,omitempty"`
+	ValueType                *string                          `json:"valueType,omitempty"`
 }
 
 // NewBTMetadataPropertyInfo instantiates a new BTMetadataPropertyInfo object
@@ -52,6 +53,38 @@ func NewBTMetadataPropertyInfo() *BTMetadataPropertyInfo {
 func NewBTMetadataPropertyInfoWithDefaults() *BTMetadataPropertyInfo {
 	this := BTMetadataPropertyInfo{}
 	return &this
+}
+
+// GetComputedAssemblyProperty returns the ComputedAssemblyProperty field value if set, zero value otherwise.
+func (o *BTMetadataPropertyInfo) GetComputedAssemblyProperty() bool {
+	if o == nil || o.ComputedAssemblyProperty == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ComputedAssemblyProperty
+}
+
+// GetComputedAssemblyPropertyOk returns a tuple with the ComputedAssemblyProperty field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPropertyInfo) GetComputedAssemblyPropertyOk() (*bool, bool) {
+	if o == nil || o.ComputedAssemblyProperty == nil {
+		return nil, false
+	}
+	return o.ComputedAssemblyProperty, true
+}
+
+// HasComputedAssemblyProperty returns a boolean if a field has been set.
+func (o *BTMetadataPropertyInfo) HasComputedAssemblyProperty() bool {
+	if o != nil && o.ComputedAssemblyProperty != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedAssemblyProperty gets a reference to the given bool and assigns it to the ComputedAssemblyProperty field.
+func (o *BTMetadataPropertyInfo) SetComputedAssemblyProperty(v bool) {
+	o.ComputedAssemblyProperty = &v
 }
 
 // GetComputedProperty returns the ComputedProperty field value if set, zero value otherwise.
@@ -634,6 +667,9 @@ func (o *BTMetadataPropertyInfo) SetValueType(v string) {
 
 func (o BTMetadataPropertyInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ComputedAssemblyProperty != nil {
+		toSerialize["computedAssemblyProperty"] = o.ComputedAssemblyProperty
+	}
 	if o.ComputedProperty != nil {
 		toSerialize["computedProperty"] = o.ComputedProperty
 	}

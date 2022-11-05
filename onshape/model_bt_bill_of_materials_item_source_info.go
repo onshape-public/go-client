@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.155.7180-fb454452a4fd
+API version: 1.156.7192-0ed4c121c7d8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,17 +17,19 @@ import (
 
 // BTBillOfMaterialsItemSourceInfo struct for BTBillOfMaterialsItemSourceInfo
 type BTBillOfMaterialsItemSourceInfo struct {
-	Configuration      *string `json:"configuration,omitempty"`
-	DocumentId         *string `json:"documentId,omitempty"`
-	ElementId          *string `json:"elementId,omitempty"`
-	FullConfiguration  *string `json:"fullConfiguration,omitempty"`
-	Href               *string `json:"href,omitempty"`
-	IsStandardContent  *bool   `json:"isStandardContent,omitempty"`
-	NonGeometricItemId *string `json:"nonGeometricItemId,omitempty"`
-	PartId             *string `json:"partId,omitempty"`
-	ViewHref           *string `json:"viewHref,omitempty"`
-	WvmId              *string `json:"wvmId,omitempty"`
-	WvmType            *string `json:"wvmType,omitempty"`
+	Configuration                          *string `json:"configuration,omitempty"`
+	DocumentId                             *string `json:"documentId,omitempty"`
+	ElementId                              *string `json:"elementId,omitempty"`
+	FullConfiguration                      *string `json:"fullConfiguration,omitempty"`
+	Href                                   *string `json:"href,omitempty"`
+	IsStandardContent                      *bool   `json:"isStandardContent,omitempty"`
+	NonGeometricItemId                     *string `json:"nonGeometricItemId,omitempty"`
+	PartId                                 *string `json:"partId,omitempty"`
+	SourceElementMicroversionId            *string `json:"sourceElementMicroversionId,omitempty"`
+	VersionMetadataWorkspaceMicroversionId *string `json:"versionMetadataWorkspaceMicroversionId,omitempty"`
+	ViewHref                               *string `json:"viewHref,omitempty"`
+	WvmId                                  *string `json:"wvmId,omitempty"`
+	WvmType                                *string `json:"wvmType,omitempty"`
 }
 
 // NewBTBillOfMaterialsItemSourceInfo instantiates a new BTBillOfMaterialsItemSourceInfo object
@@ -303,6 +305,70 @@ func (o *BTBillOfMaterialsItemSourceInfo) SetPartId(v string) {
 	o.PartId = &v
 }
 
+// GetSourceElementMicroversionId returns the SourceElementMicroversionId field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsItemSourceInfo) GetSourceElementMicroversionId() string {
+	if o == nil || o.SourceElementMicroversionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceElementMicroversionId
+}
+
+// GetSourceElementMicroversionIdOk returns a tuple with the SourceElementMicroversionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) GetSourceElementMicroversionIdOk() (*string, bool) {
+	if o == nil || o.SourceElementMicroversionId == nil {
+		return nil, false
+	}
+	return o.SourceElementMicroversionId, true
+}
+
+// HasSourceElementMicroversionId returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) HasSourceElementMicroversionId() bool {
+	if o != nil && o.SourceElementMicroversionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceElementMicroversionId gets a reference to the given string and assigns it to the SourceElementMicroversionId field.
+func (o *BTBillOfMaterialsItemSourceInfo) SetSourceElementMicroversionId(v string) {
+	o.SourceElementMicroversionId = &v
+}
+
+// GetVersionMetadataWorkspaceMicroversionId returns the VersionMetadataWorkspaceMicroversionId field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsItemSourceInfo) GetVersionMetadataWorkspaceMicroversionId() string {
+	if o == nil || o.VersionMetadataWorkspaceMicroversionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.VersionMetadataWorkspaceMicroversionId
+}
+
+// GetVersionMetadataWorkspaceMicroversionIdOk returns a tuple with the VersionMetadataWorkspaceMicroversionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) GetVersionMetadataWorkspaceMicroversionIdOk() (*string, bool) {
+	if o == nil || o.VersionMetadataWorkspaceMicroversionId == nil {
+		return nil, false
+	}
+	return o.VersionMetadataWorkspaceMicroversionId, true
+}
+
+// HasVersionMetadataWorkspaceMicroversionId returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) HasVersionMetadataWorkspaceMicroversionId() bool {
+	if o != nil && o.VersionMetadataWorkspaceMicroversionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersionMetadataWorkspaceMicroversionId gets a reference to the given string and assigns it to the VersionMetadataWorkspaceMicroversionId field.
+func (o *BTBillOfMaterialsItemSourceInfo) SetVersionMetadataWorkspaceMicroversionId(v string) {
+	o.VersionMetadataWorkspaceMicroversionId = &v
+}
+
 // GetViewHref returns the ViewHref field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsItemSourceInfo) GetViewHref() string {
 	if o == nil || o.ViewHref == nil {
@@ -424,6 +490,12 @@ func (o BTBillOfMaterialsItemSourceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId
+	}
+	if o.SourceElementMicroversionId != nil {
+		toSerialize["sourceElementMicroversionId"] = o.SourceElementMicroversionId
+	}
+	if o.VersionMetadataWorkspaceMicroversionId != nil {
+		toSerialize["versionMetadataWorkspaceMicroversionId"] = o.VersionMetadataWorkspaceMicroversionId
 	}
 	if o.ViewHref != nil {
 		toSerialize["viewHref"] = o.ViewHref

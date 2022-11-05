@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **IsStandardContent** | Pointer to **bool** |  | [optional] 
 **NonGeometricItemId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
+**SourceElementMicroversionId** | Pointer to **string** |  | [optional] 
+**VersionMetadataWorkspaceMicroversionId** | Pointer to **string** |  | [optional] 
 **ViewHref** | Pointer to **string** |  | [optional] 
 **WvmId** | Pointer to **string** |  | [optional] 
 **WvmType** | Pointer to **string** |  | [optional] 
@@ -234,6 +236,56 @@ SetPartId sets PartId field to given value.
 `func (o *BTBillOfMaterialsItemSourceInfo) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
+
+### GetSourceElementMicroversionId
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetSourceElementMicroversionId() string`
+
+GetSourceElementMicroversionId returns the SourceElementMicroversionId field if non-nil, zero value otherwise.
+
+### GetSourceElementMicroversionIdOk
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetSourceElementMicroversionIdOk() (*string, bool)`
+
+GetSourceElementMicroversionIdOk returns a tuple with the SourceElementMicroversionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceElementMicroversionId
+
+`func (o *BTBillOfMaterialsItemSourceInfo) SetSourceElementMicroversionId(v string)`
+
+SetSourceElementMicroversionId sets SourceElementMicroversionId field to given value.
+
+### HasSourceElementMicroversionId
+
+`func (o *BTBillOfMaterialsItemSourceInfo) HasSourceElementMicroversionId() bool`
+
+HasSourceElementMicroversionId returns a boolean if a field has been set.
+
+### GetVersionMetadataWorkspaceMicroversionId
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetVersionMetadataWorkspaceMicroversionId() string`
+
+GetVersionMetadataWorkspaceMicroversionId returns the VersionMetadataWorkspaceMicroversionId field if non-nil, zero value otherwise.
+
+### GetVersionMetadataWorkspaceMicroversionIdOk
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetVersionMetadataWorkspaceMicroversionIdOk() (*string, bool)`
+
+GetVersionMetadataWorkspaceMicroversionIdOk returns a tuple with the VersionMetadataWorkspaceMicroversionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersionMetadataWorkspaceMicroversionId
+
+`func (o *BTBillOfMaterialsItemSourceInfo) SetVersionMetadataWorkspaceMicroversionId(v string)`
+
+SetVersionMetadataWorkspaceMicroversionId sets VersionMetadataWorkspaceMicroversionId field to given value.
+
+### HasVersionMetadataWorkspaceMicroversionId
+
+`func (o *BTBillOfMaterialsItemSourceInfo) HasVersionMetadataWorkspaceMicroversionId() bool`
+
+HasVersionMetadataWorkspaceMicroversionId returns a boolean if a field has been set.
 
 ### GetViewHref
 

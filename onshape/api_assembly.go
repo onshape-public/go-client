@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.155.7180-fb454452a4fd
+API version: 1.156.7192-0ed4c121c7d8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1397,6 +1397,8 @@ type ApiGetBillOfMaterialsRequest struct {
 	includeExcluded              *bool
 	onlyVisibleColumns           *bool
 	ignoreSubassemblyBomBehavior *bool
+	includeItemMicroversions     *bool
+	includeTopLevelAssemblyRow   *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -1410,7 +1412,7 @@ func (r ApiGetBillOfMaterialsRequest) Configuration(configuration string) ApiGet
 	return r
 }
 
-// Ids of the columns to include, or all columnns if empty. BOM column ids correspond to metadata property ids.
+// Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids.
 func (r ApiGetBillOfMaterialsRequest) BomColumnIds(bomColumnIds []string) ApiGetBillOfMaterialsRequest {
 	r.bomColumnIds = &bomColumnIds
 	return r
@@ -1455,6 +1457,18 @@ func (r ApiGetBillOfMaterialsRequest) OnlyVisibleColumns(onlyVisibleColumns bool
 // Ignore the &#39;Subassembly BOM behavior&#39; property when constructing the BOM table.
 func (r ApiGetBillOfMaterialsRequest) IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior bool) ApiGetBillOfMaterialsRequest {
 	r.ignoreSubassemblyBomBehavior = &ignoreSubassemblyBomBehavior
+	return r
+}
+
+// Include element microversions and version metadata microversions in the JSON.
+func (r ApiGetBillOfMaterialsRequest) IncludeItemMicroversions(includeItemMicroversions bool) ApiGetBillOfMaterialsRequest {
+	r.includeItemMicroversions = &includeItemMicroversions
+	return r
+}
+
+// Include top-level assembly row when constructing the BOM table.
+func (r ApiGetBillOfMaterialsRequest) IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow bool) ApiGetBillOfMaterialsRequest {
+	r.includeTopLevelAssemblyRow = &includeTopLevelAssemblyRow
 	return r
 }
 
@@ -1545,6 +1559,12 @@ func (a *AssemblyApiService) GetBillOfMaterialsExecute(r ApiGetBillOfMaterialsRe
 	}
 	if r.ignoreSubassemblyBomBehavior != nil {
 		localVarQueryParams.Add("ignoreSubassemblyBomBehavior", parameterToString(*r.ignoreSubassemblyBomBehavior, ""))
+	}
+	if r.includeItemMicroversions != nil {
+		localVarQueryParams.Add("includeItemMicroversions", parameterToString(*r.includeItemMicroversions, ""))
+	}
+	if r.includeTopLevelAssemblyRow != nil {
+		localVarQueryParams.Add("includeTopLevelAssemblyRow", parameterToString(*r.includeTopLevelAssemblyRow, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **TotalWorkspacesScheduledForUpdate** | Pointer to **int32** |  | [optional] 
 **TotalWorkspacesUpdating** | Pointer to **int32** |  | [optional] 
+**TracingEnabled** | Pointer to **bool** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
@@ -1277,6 +1278,31 @@ SetTotalWorkspacesUpdating sets TotalWorkspacesUpdating field to given value.
 `func (o *BTDocumentInfo) HasTotalWorkspacesUpdating() bool`
 
 HasTotalWorkspacesUpdating returns a boolean if a field has been set.
+
+### GetTracingEnabled
+
+`func (o *BTDocumentInfo) GetTracingEnabled() bool`
+
+GetTracingEnabled returns the TracingEnabled field if non-nil, zero value otherwise.
+
+### GetTracingEnabledOk
+
+`func (o *BTDocumentInfo) GetTracingEnabledOk() (*bool, bool)`
+
+GetTracingEnabledOk returns a tuple with the TracingEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTracingEnabled
+
+`func (o *BTDocumentInfo) SetTracingEnabled(v bool)`
+
+SetTracingEnabled sets TracingEnabled field to given value.
+
+### HasTracingEnabled
+
+`func (o *BTDocumentInfo) HasTracingEnabled() bool`
+
+HasTracingEnabled returns a boolean if a field has been set.
 
 ### GetTrash
 
