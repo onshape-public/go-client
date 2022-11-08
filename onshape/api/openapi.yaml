@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.156.7203-6065bde47225
+  version: 1.156.7215-bae57a997b00
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -41913,6 +41913,7 @@ components:
           - V1902_START_FROM_SKETCH_MEASURE
           - V1903_HOLD_ADJACENT_EDGES
           - V1904_ADD_HOLE_ATTRIBUTES_TO_CHAMFER_FEATURES
+          - V1905_PREVENT_ASYMMETRIC_SHEET_METAL_FILLETS
           - UNKNOWN
           type: string
         btType:
