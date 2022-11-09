@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.156.7215-bae57a997b00
+API version: 1.156.7229-e5b2027cabc0
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,19 +17,20 @@ import (
 
 // BTBillOfMaterialsItemSourceInfo struct for BTBillOfMaterialsItemSourceInfo
 type BTBillOfMaterialsItemSourceInfo struct {
-	Configuration                          *string `json:"configuration,omitempty"`
-	DocumentId                             *string `json:"documentId,omitempty"`
-	ElementId                              *string `json:"elementId,omitempty"`
-	FullConfiguration                      *string `json:"fullConfiguration,omitempty"`
-	Href                                   *string `json:"href,omitempty"`
-	IsStandardContent                      *bool   `json:"isStandardContent,omitempty"`
-	NonGeometricItemId                     *string `json:"nonGeometricItemId,omitempty"`
-	PartId                                 *string `json:"partId,omitempty"`
-	SourceElementMicroversionId            *string `json:"sourceElementMicroversionId,omitempty"`
-	VersionMetadataWorkspaceMicroversionId *string `json:"versionMetadataWorkspaceMicroversionId,omitempty"`
-	ViewHref                               *string `json:"viewHref,omitempty"`
-	WvmId                                  *string `json:"wvmId,omitempty"`
-	WvmType                                *string `json:"wvmType,omitempty"`
+	Configuration                          *string          `json:"configuration,omitempty"`
+	DocumentId                             *string          `json:"documentId,omitempty"`
+	ElementId                              *string          `json:"elementId,omitempty"`
+	FullConfiguration                      *string          `json:"fullConfiguration,omitempty"`
+	Href                                   *string          `json:"href,omitempty"`
+	IsStandardContent                      *bool            `json:"isStandardContent,omitempty"`
+	NonGeometricItemId                     *string          `json:"nonGeometricItemId,omitempty"`
+	PartId                                 *string          `json:"partId,omitempty"`
+	SourceElementMicroversionId            *string          `json:"sourceElementMicroversionId,omitempty"`
+	ThumbnailInfo                          *BTThumbnailInfo `json:"thumbnailInfo,omitempty"`
+	VersionMetadataWorkspaceMicroversionId *string          `json:"versionMetadataWorkspaceMicroversionId,omitempty"`
+	ViewHref                               *string          `json:"viewHref,omitempty"`
+	WvmId                                  *string          `json:"wvmId,omitempty"`
+	WvmType                                *string          `json:"wvmType,omitempty"`
 }
 
 // NewBTBillOfMaterialsItemSourceInfo instantiates a new BTBillOfMaterialsItemSourceInfo object
@@ -337,6 +338,38 @@ func (o *BTBillOfMaterialsItemSourceInfo) SetSourceElementMicroversionId(v strin
 	o.SourceElementMicroversionId = &v
 }
 
+// GetThumbnailInfo returns the ThumbnailInfo field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsItemSourceInfo) GetThumbnailInfo() BTThumbnailInfo {
+	if o == nil || o.ThumbnailInfo == nil {
+		var ret BTThumbnailInfo
+		return ret
+	}
+	return *o.ThumbnailInfo
+}
+
+// GetThumbnailInfoOk returns a tuple with the ThumbnailInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) GetThumbnailInfoOk() (*BTThumbnailInfo, bool) {
+	if o == nil || o.ThumbnailInfo == nil {
+		return nil, false
+	}
+	return o.ThumbnailInfo, true
+}
+
+// HasThumbnailInfo returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) HasThumbnailInfo() bool {
+	if o != nil && o.ThumbnailInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetThumbnailInfo gets a reference to the given BTThumbnailInfo and assigns it to the ThumbnailInfo field.
+func (o *BTBillOfMaterialsItemSourceInfo) SetThumbnailInfo(v BTThumbnailInfo) {
+	o.ThumbnailInfo = &v
+}
+
 // GetVersionMetadataWorkspaceMicroversionId returns the VersionMetadataWorkspaceMicroversionId field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsItemSourceInfo) GetVersionMetadataWorkspaceMicroversionId() string {
 	if o == nil || o.VersionMetadataWorkspaceMicroversionId == nil {
@@ -493,6 +526,9 @@ func (o BTBillOfMaterialsItemSourceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SourceElementMicroversionId != nil {
 		toSerialize["sourceElementMicroversionId"] = o.SourceElementMicroversionId
+	}
+	if o.ThumbnailInfo != nil {
+		toSerialize["thumbnailInfo"] = o.ThumbnailInfo
 	}
 	if o.VersionMetadataWorkspaceMicroversionId != nil {
 		toSerialize["versionMetadataWorkspaceMicroversionId"] = o.VersionMetadataWorkspaceMicroversionId

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **NonGeometricItemId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **SourceElementMicroversionId** | Pointer to **string** |  | [optional] 
+**ThumbnailInfo** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **VersionMetadataWorkspaceMicroversionId** | Pointer to **string** |  | [optional] 
 **ViewHref** | Pointer to **string** |  | [optional] 
 **WvmId** | Pointer to **string** |  | [optional] 
@@ -261,6 +262,31 @@ SetSourceElementMicroversionId sets SourceElementMicroversionId field to given v
 `func (o *BTBillOfMaterialsItemSourceInfo) HasSourceElementMicroversionId() bool`
 
 HasSourceElementMicroversionId returns a boolean if a field has been set.
+
+### GetThumbnailInfo
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetThumbnailInfo() BTThumbnailInfo`
+
+GetThumbnailInfo returns the ThumbnailInfo field if non-nil, zero value otherwise.
+
+### GetThumbnailInfoOk
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetThumbnailInfoOk() (*BTThumbnailInfo, bool)`
+
+GetThumbnailInfoOk returns a tuple with the ThumbnailInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetThumbnailInfo
+
+`func (o *BTBillOfMaterialsItemSourceInfo) SetThumbnailInfo(v BTThumbnailInfo)`
+
+SetThumbnailInfo sets ThumbnailInfo field to given value.
+
+### HasThumbnailInfo
+
+`func (o *BTBillOfMaterialsItemSourceInfo) HasThumbnailInfo() bool`
+
+HasThumbnailInfo returns a boolean if a field has been set.
 
 ### GetVersionMetadataWorkspaceMicroversionId
 

@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.156.7215-bae57a997b00
+  version: 1.156.7229-e5b2027cabc0
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -3599,6 +3599,15 @@ paths:
         explode: true
         in: query
         name: includeTopLevelAssemblyRow
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - description: Return thumbnail info
+        explode: true
+        in: query
+        name: thumbnail
         required: false
         schema:
           default: false
@@ -20290,6 +20299,53 @@ components:
             sourceElementMicroversionId: sourceElementMicroversionId
             documentId: documentId
             href: href
+            thumbnailInfo:
+              secondarySizes:
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              sizes:
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              href: https://openapi-generator.tech
+              id: id
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
@@ -20315,6 +20371,53 @@ components:
             id: id
             viewRef: https://openapi-generator.tech
           href: href
+          thumbnailInfo:
+            secondarySizes:
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            sizes:
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            href: https://openapi-generator.tech
+            id: id
           version:
             name: name
             headerIdToValue:
@@ -20358,6 +20461,53 @@ components:
             sourceElementMicroversionId: sourceElementMicroversionId
             documentId: documentId
             href: href
+            thumbnailInfo:
+              secondarySizes:
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              sizes:
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              href: https://openapi-generator.tech
+              id: id
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
@@ -20383,6 +20533,53 @@ components:
             sourceElementMicroversionId: sourceElementMicroversionId
             documentId: documentId
             href: href
+            thumbnailInfo:
+              secondarySizes:
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              sizes:
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              href: https://openapi-generator.tech
+              id: id
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
@@ -20441,6 +20638,53 @@ components:
         sourceElementMicroversionId: sourceElementMicroversionId
         documentId: documentId
         href: href
+        thumbnailInfo:
+          secondarySizes:
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          sizes:
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          href: https://openapi-generator.tech
+          id: id
       properties:
         configuration:
           type: string
@@ -20460,6 +20704,8 @@ components:
           type: string
         sourceElementMicroversionId:
           type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
         versionMetadataWorkspaceMicroversionId:
           type: string
         viewHref:
@@ -20513,6 +20759,53 @@ components:
           sourceElementMicroversionId: sourceElementMicroversionId
           documentId: documentId
           href: href
+          thumbnailInfo:
+            secondarySizes:
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            sizes:
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            href: https://openapi-generator.tech
+            id: id
         href: https://openapi-generator.tech
         id: id
         viewRef: https://openapi-generator.tech
@@ -20565,6 +20858,53 @@ components:
           id: id
           viewRef: https://openapi-generator.tech
         href: href
+        thumbnailInfo:
+          secondarySizes:
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          sizes:
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          href: https://openapi-generator.tech
+          id: id
         version:
           name: name
           headerIdToValue:
@@ -20596,6 +20936,8 @@ components:
           $ref: '#/components/schemas/BTBillOfMaterialsElementInfo'
         href:
           type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
         version:
           $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
         viewHref:
