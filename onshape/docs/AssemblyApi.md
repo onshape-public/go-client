@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 ## GetBillOfMaterials
 
-> BTBillOfMaterialsInfo GetBillOfMaterials(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Execute()
+> BTBillOfMaterialsInfo GetBillOfMaterials(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Thumbnail(thumbnail).Execute()
 
 Retrieve the bill of materials (BOM) by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -812,10 +812,11 @@ func main() {
     ignoreSubassemblyBomBehavior := true // bool | Ignore the 'Subassembly BOM behavior' property when constructing the BOM table. (optional)
     includeItemMicroversions := true // bool | Include element microversions and version metadata microversions in the JSON. (optional) (default to false)
     includeTopLevelAssemblyRow := true // bool | Include top-level assembly row when constructing the BOM table. (optional) (default to false)
+    thumbnail := true // bool | Return thumbnail info (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AssemblyApi.GetBillOfMaterials(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Execute()
+    resp, r, err := apiClient.AssemblyApi.GetBillOfMaterials(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.GetBillOfMaterials``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -859,6 +860,7 @@ Name | Type | Description  | Notes
  **ignoreSubassemblyBomBehavior** | **bool** | Ignore the &#39;Subassembly BOM behavior&#39; property when constructing the BOM table. | 
  **includeItemMicroversions** | **bool** | Include element microversions and version metadata microversions in the JSON. | [default to false]
  **includeTopLevelAssemblyRow** | **bool** | Include top-level assembly row when constructing the BOM table. | [default to false]
+ **thumbnail** | **bool** | Return thumbnail info | [default to false]
 
 ### Return type
 

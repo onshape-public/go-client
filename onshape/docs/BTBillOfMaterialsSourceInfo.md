@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DocumentMicroversion** | Pointer to [**BTBillOfMaterialsObjectWithPropertiesInfo**](BTBillOfMaterialsObjectWithPropertiesInfo.md) |  | [optional] 
 **Element** | Pointer to [**BTBillOfMaterialsElementInfo**](BTBillOfMaterialsElementInfo.md) |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
+**ThumbnailInfo** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **Version** | Pointer to [**BTBillOfMaterialsObjectWithPropertiesInfo**](BTBillOfMaterialsObjectWithPropertiesInfo.md) |  | [optional] 
 **ViewHref** | Pointer to **string** |  | [optional] 
 **Workspace** | Pointer to [**BTBillOfMaterialsObjectWithPropertiesInfo**](BTBillOfMaterialsObjectWithPropertiesInfo.md) |  | [optional] 
@@ -130,6 +131,31 @@ SetHref sets Href field to given value.
 `func (o *BTBillOfMaterialsSourceInfo) HasHref() bool`
 
 HasHref returns a boolean if a field has been set.
+
+### GetThumbnailInfo
+
+`func (o *BTBillOfMaterialsSourceInfo) GetThumbnailInfo() BTThumbnailInfo`
+
+GetThumbnailInfo returns the ThumbnailInfo field if non-nil, zero value otherwise.
+
+### GetThumbnailInfoOk
+
+`func (o *BTBillOfMaterialsSourceInfo) GetThumbnailInfoOk() (*BTThumbnailInfo, bool)`
+
+GetThumbnailInfoOk returns a tuple with the ThumbnailInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetThumbnailInfo
+
+`func (o *BTBillOfMaterialsSourceInfo) SetThumbnailInfo(v BTThumbnailInfo)`
+
+SetThumbnailInfo sets ThumbnailInfo field to given value.
+
+### HasThumbnailInfo
+
+`func (o *BTBillOfMaterialsSourceInfo) HasThumbnailInfo() bool`
+
+HasThumbnailInfo returns a boolean if a field has been set.
 
 ### GetVersion
 
