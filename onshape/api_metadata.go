@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.156.7250-f7937557e62d
+API version: 1.155.7232-a44b68534e12
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -24,19 +24,18 @@ import (
 type MetadataApiService service
 
 type ApiGetVEOPStandardContentMetadataRequest struct {
-	ctx                               context.Context
-	ApiService                        *MetadataApiService
-	did                               string
-	vid                               string
-	eid                               string
-	otype                             string
-	oid                               string
-	pid                               string
-	configuration                     *string
-	linkDocumentId                    *string
-	includeComputedProperties         *bool
-	includeComputedAssemblyProperties *bool
-	thumbnail                         *bool
+	ctx                       context.Context
+	ApiService                *MetadataApiService
+	did                       string
+	vid                       string
+	eid                       string
+	otype                     string
+	oid                       string
+	pid                       string
+	configuration             *string
+	linkDocumentId            *string
+	includeComputedProperties *bool
+	thumbnail                 *bool
 }
 
 func (r ApiGetVEOPStandardContentMetadataRequest) Configuration(configuration string) ApiGetVEOPStandardContentMetadataRequest {
@@ -51,11 +50,6 @@ func (r ApiGetVEOPStandardContentMetadataRequest) LinkDocumentId(linkDocumentId 
 
 func (r ApiGetVEOPStandardContentMetadataRequest) IncludeComputedProperties(includeComputedProperties bool) ApiGetVEOPStandardContentMetadataRequest {
 	r.includeComputedProperties = &includeComputedProperties
-	return r
-}
-
-func (r ApiGetVEOPStandardContentMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetVEOPStandardContentMetadataRequest {
-	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
 	return r
 }
 
@@ -129,9 +123,6 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPS
 	if r.includeComputedProperties != nil {
 		localVarQueryParams.Add("includeComputedProperties", parameterToString(*r.includeComputedProperties, ""))
 	}
-	if r.includeComputedAssemblyProperties != nil {
-		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
-	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -197,19 +188,18 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPS
 }
 
 type ApiGetWMVEMetadataRequest struct {
-	ctx                               context.Context
-	ApiService                        *MetadataApiService
-	did                               string
-	wvm                               string
-	wvmid                             string
-	eid                               string
-	linkDocumentId                    *string
-	configuration                     *string
-	inferMetadataOwner                *bool
-	depth                             *string
-	includeComputedProperties         *bool
-	includeComputedAssemblyProperties *bool
-	thumbnail                         *bool
+	ctx                       context.Context
+	ApiService                *MetadataApiService
+	did                       string
+	wvm                       string
+	wvmid                     string
+	eid                       string
+	linkDocumentId            *string
+	configuration             *string
+	inferMetadataOwner        *bool
+	depth                     *string
+	includeComputedProperties *bool
+	thumbnail                 *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -235,11 +225,6 @@ func (r ApiGetWMVEMetadataRequest) Depth(depth string) ApiGetWMVEMetadataRequest
 
 func (r ApiGetWMVEMetadataRequest) IncludeComputedProperties(includeComputedProperties bool) ApiGetWMVEMetadataRequest {
 	r.includeComputedProperties = &includeComputedProperties
-	return r
-}
-
-func (r ApiGetWMVEMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEMetadataRequest {
-	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
 	return r
 }
 
@@ -313,9 +298,6 @@ func (a *MetadataApiService) GetWMVEMetadataExecute(r ApiGetWMVEMetadataRequest)
 	if r.includeComputedProperties != nil {
 		localVarQueryParams.Add("includeComputedProperties", parameterToString(*r.includeComputedProperties, ""))
 	}
-	if r.includeComputedAssemblyProperties != nil {
-		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
-	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -381,22 +363,21 @@ func (a *MetadataApiService) GetWMVEMetadataExecute(r ApiGetWMVEMetadataRequest)
 }
 
 type ApiGetWMVEPMetadataRequest struct {
-	ctx                               context.Context
-	ApiService                        *MetadataApiService
-	did                               string
-	wvm                               string
-	wvmid                             string
-	eid                               string
-	iden                              string
-	pid                               string
-	linkDocumentId                    *string
-	configuration                     *string
-	rollbackBarIndex                  *int32
-	elementMicroversionId             *string
-	inferMetadataOwner                *bool
-	includeComputedProperties         *bool
-	includeComputedAssemblyProperties *bool
-	thumbnail                         *bool
+	ctx                       context.Context
+	ApiService                *MetadataApiService
+	did                       string
+	wvm                       string
+	wvmid                     string
+	eid                       string
+	iden                      string
+	pid                       string
+	linkDocumentId            *string
+	configuration             *string
+	rollbackBarIndex          *int32
+	elementMicroversionId     *string
+	inferMetadataOwner        *bool
+	includeComputedProperties *bool
+	thumbnail                 *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -429,11 +410,6 @@ func (r ApiGetWMVEPMetadataRequest) InferMetadataOwner(inferMetadataOwner bool) 
 
 func (r ApiGetWMVEPMetadataRequest) IncludeComputedProperties(includeComputedProperties bool) ApiGetWMVEPMetadataRequest {
 	r.includeComputedProperties = &includeComputedProperties
-	return r
-}
-
-func (r ApiGetWMVEPMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEPMetadataRequest {
-	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
 	return r
 }
 
@@ -516,9 +492,6 @@ func (a *MetadataApiService) GetWMVEPMetadataExecute(r ApiGetWMVEPMetadataReques
 	if r.includeComputedProperties != nil {
 		localVarQueryParams.Add("includeComputedProperties", parameterToString(*r.includeComputedProperties, ""))
 	}
-	if r.includeComputedAssemblyProperties != nil {
-		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
-	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -584,18 +557,17 @@ func (a *MetadataApiService) GetWMVEPMetadataExecute(r ApiGetWMVEPMetadataReques
 }
 
 type ApiGetWMVEPsMetadataRequest struct {
-	ctx                               context.Context
-	ApiService                        *MetadataApiService
-	did                               string
-	wvm                               string
-	wvmid                             string
-	eid                               string
-	linkDocumentId                    *string
-	configuration                     *string
-	inferMetadataOwner                *bool
-	includeComputedProperties         *bool
-	includeComputedAssemblyProperties *bool
-	thumbnail                         *bool
+	ctx                       context.Context
+	ApiService                *MetadataApiService
+	did                       string
+	wvm                       string
+	wvmid                     string
+	eid                       string
+	linkDocumentId            *string
+	configuration             *string
+	inferMetadataOwner        *bool
+	includeComputedProperties *bool
+	thumbnail                 *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -616,11 +588,6 @@ func (r ApiGetWMVEPsMetadataRequest) InferMetadataOwner(inferMetadataOwner bool)
 
 func (r ApiGetWMVEPsMetadataRequest) IncludeComputedProperties(includeComputedProperties bool) ApiGetWMVEPsMetadataRequest {
 	r.includeComputedProperties = &includeComputedProperties
-	return r
-}
-
-func (r ApiGetWMVEPsMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEPsMetadataRequest {
-	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
 	return r
 }
 
@@ -691,9 +658,6 @@ func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequ
 	if r.includeComputedProperties != nil {
 		localVarQueryParams.Add("includeComputedProperties", parameterToString(*r.includeComputedProperties, ""))
 	}
-	if r.includeComputedAssemblyProperties != nil {
-		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
-	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -759,17 +723,16 @@ func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequ
 }
 
 type ApiGetWMVEsMetadataRequest struct {
-	ctx                               context.Context
-	ApiService                        *MetadataApiService
-	did                               string
-	wvm                               string
-	wvmid                             string
-	linkDocumentId                    *string
-	inferMetadataOwner                *bool
-	depth                             *string
-	includeComputedProperties         *bool
-	includeComputedAssemblyProperties *bool
-	thumbnail                         *bool
+	ctx                       context.Context
+	ApiService                *MetadataApiService
+	did                       string
+	wvm                       string
+	wvmid                     string
+	linkDocumentId            *string
+	inferMetadataOwner        *bool
+	depth                     *string
+	includeComputedProperties *bool
+	thumbnail                 *bool
 }
 
 func (r ApiGetWMVEsMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGetWMVEsMetadataRequest {
@@ -789,11 +752,6 @@ func (r ApiGetWMVEsMetadataRequest) Depth(depth string) ApiGetWMVEsMetadataReque
 
 func (r ApiGetWMVEsMetadataRequest) IncludeComputedProperties(includeComputedProperties bool) ApiGetWMVEsMetadataRequest {
 	r.includeComputedProperties = &includeComputedProperties
-	return r
-}
-
-func (r ApiGetWMVEsMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEsMetadataRequest {
-	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
 	return r
 }
 
@@ -861,9 +819,6 @@ func (a *MetadataApiService) GetWMVEsMetadataExecute(r ApiGetWMVEsMetadataReques
 	if r.includeComputedProperties != nil {
 		localVarQueryParams.Add("includeComputedProperties", parameterToString(*r.includeComputedProperties, ""))
 	}
-	if r.includeComputedAssemblyProperties != nil {
-		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
-	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -929,17 +884,16 @@ func (a *MetadataApiService) GetWMVEsMetadataExecute(r ApiGetWMVEsMetadataReques
 }
 
 type ApiGetWVMetadataRequest struct {
-	ctx                               context.Context
-	ApiService                        *MetadataApiService
-	did                               string
-	wv                                string
-	wvid                              string
-	linkDocumentId                    *string
-	inferMetadataOwner                *bool
-	depth                             *string
-	includeComputedProperties         *bool
-	includeComputedAssemblyProperties *bool
-	thumbnail                         *bool
+	ctx                       context.Context
+	ApiService                *MetadataApiService
+	did                       string
+	wv                        string
+	wvid                      string
+	linkDocumentId            *string
+	inferMetadataOwner        *bool
+	depth                     *string
+	includeComputedProperties *bool
+	thumbnail                 *bool
 }
 
 func (r ApiGetWVMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGetWVMetadataRequest {
@@ -959,11 +913,6 @@ func (r ApiGetWVMetadataRequest) Depth(depth string) ApiGetWVMetadataRequest {
 
 func (r ApiGetWVMetadataRequest) IncludeComputedProperties(includeComputedProperties bool) ApiGetWVMetadataRequest {
 	r.includeComputedProperties = &includeComputedProperties
-	return r
-}
-
-func (r ApiGetWVMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWVMetadataRequest {
-	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
 	return r
 }
 
@@ -1030,9 +979,6 @@ func (a *MetadataApiService) GetWVMetadataExecute(r ApiGetWVMetadataRequest) (*B
 	}
 	if r.includeComputedProperties != nil {
 		localVarQueryParams.Add("includeComputedProperties", parameterToString(*r.includeComputedProperties, ""))
-	}
-	if r.includeComputedAssemblyProperties != nil {
-		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
 	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))

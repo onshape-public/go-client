@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **CreateDocumentsInRoot** | Pointer to **bool** |  | [optional] 
 **CreateProject** | Pointer to **bool** |  | [optional] 
 **CreateReleases** | Pointer to **bool** |  | [optional] 
-**CreateTasks** | Pointer to **bool** |  | [optional] 
 **DeletePermanently** | Pointer to **bool** |  | [optional] 
 **ManageGuestUsers** | Pointer to **bool** |  | [optional] 
 **ManageNonGeometricItems** | Pointer to **bool** |  | [optional] 
@@ -294,31 +293,6 @@ SetCreateReleases sets CreateReleases field to given value.
 `func (o *GlobalPermissionInfo) HasCreateReleases() bool`
 
 HasCreateReleases returns a boolean if a field has been set.
-
-### GetCreateTasks
-
-`func (o *GlobalPermissionInfo) GetCreateTasks() bool`
-
-GetCreateTasks returns the CreateTasks field if non-nil, zero value otherwise.
-
-### GetCreateTasksOk
-
-`func (o *GlobalPermissionInfo) GetCreateTasksOk() (*bool, bool)`
-
-GetCreateTasksOk returns a tuple with the CreateTasks field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreateTasks
-
-`func (o *GlobalPermissionInfo) SetCreateTasks(v bool)`
-
-SetCreateTasks sets CreateTasks field to given value.
-
-### HasCreateTasks
-
-`func (o *GlobalPermissionInfo) HasCreateTasks() bool`
-
-HasCreateTasks returns a boolean if a field has been set.
 
 ### GetDeletePermanently
 

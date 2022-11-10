@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ComputedAssemblyProperty** | Pointer to **bool** |  | [optional] 
 **ComputedProperty** | Pointer to **bool** |  | [optional] 
 **ComputedPropertyError** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **interface{}** |  | [optional] 
@@ -42,31 +41,6 @@ will change when the set of required properties is changed
 NewBTMetadataPropertyInfoWithDefaults instantiates a new BTMetadataPropertyInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetComputedAssemblyProperty
-
-`func (o *BTMetadataPropertyInfo) GetComputedAssemblyProperty() bool`
-
-GetComputedAssemblyProperty returns the ComputedAssemblyProperty field if non-nil, zero value otherwise.
-
-### GetComputedAssemblyPropertyOk
-
-`func (o *BTMetadataPropertyInfo) GetComputedAssemblyPropertyOk() (*bool, bool)`
-
-GetComputedAssemblyPropertyOk returns a tuple with the ComputedAssemblyProperty field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetComputedAssemblyProperty
-
-`func (o *BTMetadataPropertyInfo) SetComputedAssemblyProperty(v bool)`
-
-SetComputedAssemblyProperty sets ComputedAssemblyProperty field to given value.
-
-### HasComputedAssemblyProperty
-
-`func (o *BTMetadataPropertyInfo) HasComputedAssemblyProperty() bool`
-
-HasComputedAssemblyProperty returns a boolean if a field has been set.
 
 ### GetComputedProperty
 

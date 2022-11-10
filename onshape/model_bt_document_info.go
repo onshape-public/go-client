@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.156.7250-f7937557e62d
+API version: 1.155.7232-a44b68534e12
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -2443,56 +2443,6 @@ func (o *BTDocumentInfo) SetTotalWorkspacesUpdating(v int32) {
 	o.GetActualInstance().(getResult).SetTotalWorkspacesUpdating(v)
 }
 
-// GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetTracingEnabled() bool {
-	type getResult interface {
-		GetTracingEnabled() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTracingEnabled()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetTracingEnabledOk() (*bool, bool) {
-	type getResult interface {
-		GetTracingEnabledOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTracingEnabledOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTracingEnabled returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasTracingEnabled() bool {
-	type getResult interface {
-		HasTracingEnabled() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTracingEnabled()
-	} else {
-		return false
-	}
-}
-
-// SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
-func (o *BTDocumentInfo) SetTracingEnabled(v bool) {
-	type getResult interface {
-		SetTracingEnabled(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetTracingEnabled(v)
-}
-
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetTrash() bool {
 	type getResult interface {
@@ -2945,7 +2895,6 @@ type base_BTDocumentInfo struct {
 	Thumbnail                         *BTThumbnailInfo        `json:"thumbnail,omitempty"`
 	TotalWorkspacesScheduledForUpdate *int32                  `json:"totalWorkspacesScheduledForUpdate,omitempty"`
 	TotalWorkspacesUpdating           *int32                  `json:"totalWorkspacesUpdating,omitempty"`
-	TracingEnabled                    *bool                   `json:"tracingEnabled,omitempty"`
 	Trash                             *bool                   `json:"trash,omitempty"`
 	TrashedAt                         *JSONTime               `json:"trashedAt,omitempty"`
 	TreeHref                          *string                 `json:"treeHref,omitempty"`
@@ -4507,38 +4456,6 @@ func (o *base_BTDocumentInfo) SetTotalWorkspacesUpdating(v int32) {
 	o.TotalWorkspacesUpdating = &v
 }
 
-// GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetTracingEnabled() bool {
-	if o == nil || o.TracingEnabled == nil {
-		var ret bool
-		return ret
-	}
-	return *o.TracingEnabled
-}
-
-// GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetTracingEnabledOk() (*bool, bool) {
-	if o == nil || o.TracingEnabled == nil {
-		return nil, false
-	}
-	return o.TracingEnabled, true
-}
-
-// HasTracingEnabled returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasTracingEnabled() bool {
-	if o != nil && o.TracingEnabled != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
-func (o *base_BTDocumentInfo) SetTracingEnabled(v bool) {
-	o.TracingEnabled = &v
-}
-
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetTrash() bool {
 	if o == nil || o.Trash == nil {
@@ -4876,9 +4793,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TotalWorkspacesUpdating != nil {
 		toSerialize["totalWorkspacesUpdating"] = o.TotalWorkspacesUpdating
-	}
-	if o.TracingEnabled != nil {
-		toSerialize["tracingEnabled"] = o.TracingEnabled
 	}
 	if o.Trash != nil {
 		toSerialize["trash"] = o.Trash
