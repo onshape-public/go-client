@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Rows** | Pointer to [**[]BTBillOfMaterialsRowInfo**](BTBillOfMaterialsRowInfo.md) |  | [optional] 
 **TemplateId** | Pointer to **string** |  | [optional] 
-**TopLevelAssemblyRow** | Pointer to [**BTBillOfMaterialsRowInfo**](BTBillOfMaterialsRowInfo.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** |  | [optional] 
 
@@ -260,31 +259,6 @@ SetTemplateId sets TemplateId field to given value.
 `func (o *BTBillOfMaterialsInfo) HasTemplateId() bool`
 
 HasTemplateId returns a boolean if a field has been set.
-
-### GetTopLevelAssemblyRow
-
-`func (o *BTBillOfMaterialsInfo) GetTopLevelAssemblyRow() BTBillOfMaterialsRowInfo`
-
-GetTopLevelAssemblyRow returns the TopLevelAssemblyRow field if non-nil, zero value otherwise.
-
-### GetTopLevelAssemblyRowOk
-
-`func (o *BTBillOfMaterialsInfo) GetTopLevelAssemblyRowOk() (*BTBillOfMaterialsRowInfo, bool)`
-
-GetTopLevelAssemblyRowOk returns a tuple with the TopLevelAssemblyRow field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTopLevelAssemblyRow
-
-`func (o *BTBillOfMaterialsInfo) SetTopLevelAssemblyRow(v BTBillOfMaterialsRowInfo)`
-
-SetTopLevelAssemblyRow sets TopLevelAssemblyRow field to given value.
-
-### HasTopLevelAssemblyRow
-
-`func (o *BTBillOfMaterialsInfo) HasTopLevelAssemblyRow() bool`
-
-HasTopLevelAssemblyRow returns a boolean if a field has been set.
 
 ### GetType
 

@@ -1,6 +1,6 @@
 # \BlobElementApi
 
-All URIs are relative to *https://staging.dev.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

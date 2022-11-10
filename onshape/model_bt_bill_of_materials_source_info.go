@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.156.7250-f7937557e62d
+API version: 1.155.7232-a44b68534e12
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -21,7 +21,6 @@ type BTBillOfMaterialsSourceInfo struct {
 	DocumentMicroversion *BTBillOfMaterialsObjectWithPropertiesInfo `json:"documentMicroversion,omitempty"`
 	Element              *BTBillOfMaterialsElementInfo              `json:"element,omitempty"`
 	Href                 *string                                    `json:"href,omitempty"`
-	ThumbnailInfo        *BTThumbnailInfo                           `json:"thumbnailInfo,omitempty"`
 	Version              *BTBillOfMaterialsObjectWithPropertiesInfo `json:"version,omitempty"`
 	ViewHref             *string                                    `json:"viewHref,omitempty"`
 	Workspace            *BTBillOfMaterialsObjectWithPropertiesInfo `json:"workspace,omitempty"`
@@ -172,38 +171,6 @@ func (o *BTBillOfMaterialsSourceInfo) SetHref(v string) {
 	o.Href = &v
 }
 
-// GetThumbnailInfo returns the ThumbnailInfo field value if set, zero value otherwise.
-func (o *BTBillOfMaterialsSourceInfo) GetThumbnailInfo() BTThumbnailInfo {
-	if o == nil || o.ThumbnailInfo == nil {
-		var ret BTThumbnailInfo
-		return ret
-	}
-	return *o.ThumbnailInfo
-}
-
-// GetThumbnailInfoOk returns a tuple with the ThumbnailInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBillOfMaterialsSourceInfo) GetThumbnailInfoOk() (*BTThumbnailInfo, bool) {
-	if o == nil || o.ThumbnailInfo == nil {
-		return nil, false
-	}
-	return o.ThumbnailInfo, true
-}
-
-// HasThumbnailInfo returns a boolean if a field has been set.
-func (o *BTBillOfMaterialsSourceInfo) HasThumbnailInfo() bool {
-	if o != nil && o.ThumbnailInfo != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetThumbnailInfo gets a reference to the given BTThumbnailInfo and assigns it to the ThumbnailInfo field.
-func (o *BTBillOfMaterialsSourceInfo) SetThumbnailInfo(v BTThumbnailInfo) {
-	o.ThumbnailInfo = &v
-}
-
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsSourceInfo) GetVersion() BTBillOfMaterialsObjectWithPropertiesInfo {
 	if o == nil || o.Version == nil {
@@ -313,9 +280,6 @@ func (o BTBillOfMaterialsSourceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
-	}
-	if o.ThumbnailInfo != nil {
-		toSerialize["thumbnailInfo"] = o.ThumbnailInfo
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
