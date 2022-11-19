@@ -63511,10 +63511,6 @@ components:
           type: string
         itemName:
           type: string
-        parameters:
-          items:
-            $ref: '#/components/schemas/BTParameterSpec-6'
-          type: array
       type: object
     BTParameterSpecBoolean_170_allOf:
       properties:
