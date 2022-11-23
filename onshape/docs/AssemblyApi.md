@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 ## GetBillOfMaterials
 
-> BTBillOfMaterialsInfo GetBillOfMaterials(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).Execute()
+> BTBillOfMaterialsInfo GetBillOfMaterials(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Thumbnail(thumbnail).Execute()
 
 Retrieve the bill of materials (BOM) by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -802,7 +802,7 @@ func main() {
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
-    bomColumnIds := []string{"Inner_example"} // []string | Ids of the columns to include, or all columnns if empty. BOM column ids correspond to metadata property ids. (optional)
+    bomColumnIds := []string{"Inner_example"} // []string | Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids. (optional)
     indented := true // bool | Return the Structured BOM table with all rows collapsed, otherwise returns the Flattened BOM. (optional) (default to true)
     multiLevel := true // bool | Return the Structured BOM table with all rows expanded. Ignored if indented is false. (optional) (default to false)
     generateIfAbsent := true // bool | Return the BOM table data even if the BOM does not exist. If this is false and the BOM does not exist, a 404 status code will be returned. This option is highly recommended. (optional) (default to false)
@@ -810,10 +810,13 @@ func main() {
     includeExcluded := true // bool | Include items that have been excluded from the BOM table. (optional)
     onlyVisibleColumns := true // bool | Only return data for visible columns, instead of all possible columns. (optional)
     ignoreSubassemblyBomBehavior := true // bool | Ignore the 'Subassembly BOM behavior' property when constructing the BOM table. (optional)
+    includeItemMicroversions := true // bool | Include element microversions and version metadata microversions in the JSON. (optional) (default to false)
+    includeTopLevelAssemblyRow := true // bool | Include top-level assembly row when constructing the BOM table. (optional) (default to false)
+    thumbnail := true // bool | Return thumbnail info (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AssemblyApi.GetBillOfMaterials(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).Execute()
+    resp, r, err := apiClient.AssemblyApi.GetBillOfMaterials(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.GetBillOfMaterials``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -847,7 +850,7 @@ Name | Type | Description  | Notes
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** |  | [default to &quot;&quot;]
- **bomColumnIds** | **[]string** | Ids of the columns to include, or all columnns if empty. BOM column ids correspond to metadata property ids. | 
+ **bomColumnIds** | **[]string** | Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids. | 
  **indented** | **bool** | Return the Structured BOM table with all rows collapsed, otherwise returns the Flattened BOM. | [default to true]
  **multiLevel** | **bool** | Return the Structured BOM table with all rows expanded. Ignored if indented is false. | [default to false]
  **generateIfAbsent** | **bool** | Return the BOM table data even if the BOM does not exist. If this is false and the BOM does not exist, a 404 status code will be returned. This option is highly recommended. | [default to false]
@@ -855,6 +858,9 @@ Name | Type | Description  | Notes
  **includeExcluded** | **bool** | Include items that have been excluded from the BOM table. | 
  **onlyVisibleColumns** | **bool** | Only return data for visible columns, instead of all possible columns. | 
  **ignoreSubassemblyBomBehavior** | **bool** | Ignore the &#39;Subassembly BOM behavior&#39; property when constructing the BOM table. | 
+ **includeItemMicroversions** | **bool** | Include element microversions and version metadata microversions in the JSON. | [default to false]
+ **includeTopLevelAssemblyRow** | **bool** | Include top-level assembly row when constructing the BOM table. | [default to false]
+ **thumbnail** | **bool** | Return thumbnail info | [default to false]
 
 ### Return type
 
