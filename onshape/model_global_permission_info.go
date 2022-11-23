@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.155.7489-3fe01473c812
+API version: 1.156.7802-6b1a0d70e58f
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -27,6 +27,7 @@ type GlobalPermissionInfo struct {
 	CreateDocumentsInRoot           *bool `json:"createDocumentsInRoot,omitempty"`
 	CreateProject                   *bool `json:"createProject,omitempty"`
 	CreateReleases                  *bool `json:"createReleases,omitempty"`
+	CreateTasks                     *bool `json:"createTasks,omitempty"`
 	DeletePermanently               *bool `json:"deletePermanently,omitempty"`
 	ManageGuestUsers                *bool `json:"manageGuestUsers,omitempty"`
 	ManageNonGeometricItems         *bool `json:"manageNonGeometricItems,omitempty"`
@@ -374,6 +375,38 @@ func (o *GlobalPermissionInfo) HasCreateReleases() bool {
 // SetCreateReleases gets a reference to the given bool and assigns it to the CreateReleases field.
 func (o *GlobalPermissionInfo) SetCreateReleases(v bool) {
 	o.CreateReleases = &v
+}
+
+// GetCreateTasks returns the CreateTasks field value if set, zero value otherwise.
+func (o *GlobalPermissionInfo) GetCreateTasks() bool {
+	if o == nil || o.CreateTasks == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CreateTasks
+}
+
+// GetCreateTasksOk returns a tuple with the CreateTasks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalPermissionInfo) GetCreateTasksOk() (*bool, bool) {
+	if o == nil || o.CreateTasks == nil {
+		return nil, false
+	}
+	return o.CreateTasks, true
+}
+
+// HasCreateTasks returns a boolean if a field has been set.
+func (o *GlobalPermissionInfo) HasCreateTasks() bool {
+	if o != nil && o.CreateTasks != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateTasks gets a reference to the given bool and assigns it to the CreateTasks field.
+func (o *GlobalPermissionInfo) SetCreateTasks(v bool) {
+	o.CreateTasks = &v
 }
 
 // GetDeletePermanently returns the DeletePermanently field value if set, zero value otherwise.
@@ -727,6 +760,9 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CreateReleases != nil {
 		toSerialize["createReleases"] = o.CreateReleases
+	}
+	if o.CreateTasks != nil {
+		toSerialize["createTasks"] = o.CreateTasks
 	}
 	if o.DeletePermanently != nil {
 		toSerialize["deletePermanently"] = o.DeletePermanently
