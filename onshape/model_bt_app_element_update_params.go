@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.156.8083-f61e3e2b5294
+API version: 1.157.8642-f6ac639739bc
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,7 +20,9 @@ type BTAppElementUpdateParams struct {
 	// Edits to be applied to the element's subelement data.
 	Changes []BTAppElementChangeParams `json:"changes,omitempty"`
 	// The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
-	Description  *string      `json:"description,omitempty"`
+	Description *string `json:"description,omitempty"`
+	// A json patch that will be applied to the application element's json data.
+	JsonPatch    *string      `json:"jsonPatch,omitempty"`
 	JsonTreeEdit *BTJEdit3734 `json:"jsonTreeEdit,omitempty"`
 	// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
 	ParentChangeId *string `json:"parentChangeId,omitempty"`
@@ -113,6 +115,38 @@ func (o *BTAppElementUpdateParams) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *BTAppElementUpdateParams) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetJsonPatch returns the JsonPatch field value if set, zero value otherwise.
+func (o *BTAppElementUpdateParams) GetJsonPatch() string {
+	if o == nil || o.JsonPatch == nil {
+		var ret string
+		return ret
+	}
+	return *o.JsonPatch
+}
+
+// GetJsonPatchOk returns a tuple with the JsonPatch field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAppElementUpdateParams) GetJsonPatchOk() (*string, bool) {
+	if o == nil || o.JsonPatch == nil {
+		return nil, false
+	}
+	return o.JsonPatch, true
+}
+
+// HasJsonPatch returns a boolean if a field has been set.
+func (o *BTAppElementUpdateParams) HasJsonPatch() bool {
+	if o != nil && o.JsonPatch != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetJsonPatch gets a reference to the given string and assigns it to the JsonPatch field.
+func (o *BTAppElementUpdateParams) SetJsonPatch(v string) {
+	o.JsonPatch = &v
 }
 
 // GetJsonTreeEdit returns the JsonTreeEdit field value if set, zero value otherwise.
@@ -314,6 +348,9 @@ func (o BTAppElementUpdateParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
+	}
+	if o.JsonPatch != nil {
+		toSerialize["jsonPatch"] = o.JsonPatch
 	}
 	if o.JsonTreeEdit != nil {
 		toSerialize["jsonTreeEdit"] = o.JsonTreeEdit

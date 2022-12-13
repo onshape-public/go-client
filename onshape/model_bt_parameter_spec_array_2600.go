@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.156.8083-f61e3e2b5294
+API version: 1.157.8642-f6ac639739bc
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -34,6 +34,7 @@ type BTParameterSpecArray2600 struct {
 	DrivenQuery                *string                            `json:"drivenQuery,omitempty"`
 	ItemLabelTemplate          *string                            `json:"itemLabelTemplate,omitempty"`
 	ItemName                   *string                            `json:"itemName,omitempty"`
+	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
 	Parameters                 []BTParameterSpec6                 `json:"parameters,omitempty"`
 }
 
@@ -598,6 +599,38 @@ func (o *BTParameterSpecArray2600) SetItemName(v string) {
 	o.ItemName = &v
 }
 
+// GetMaxNumberOfPicks returns the MaxNumberOfPicks field value if set, zero value otherwise.
+func (o *BTParameterSpecArray2600) GetMaxNumberOfPicks() int32 {
+	if o == nil || o.MaxNumberOfPicks == nil {
+		var ret int32
+		return ret
+	}
+	return *o.MaxNumberOfPicks
+}
+
+// GetMaxNumberOfPicksOk returns a tuple with the MaxNumberOfPicks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecArray2600) GetMaxNumberOfPicksOk() (*int32, bool) {
+	if o == nil || o.MaxNumberOfPicks == nil {
+		return nil, false
+	}
+	return o.MaxNumberOfPicks, true
+}
+
+// HasMaxNumberOfPicks returns a boolean if a field has been set.
+func (o *BTParameterSpecArray2600) HasMaxNumberOfPicks() bool {
+	if o != nil && o.MaxNumberOfPicks != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxNumberOfPicks gets a reference to the given int32 and assigns it to the MaxNumberOfPicks field.
+func (o *BTParameterSpecArray2600) SetMaxNumberOfPicks(v int32) {
+	o.MaxNumberOfPicks = &v
+}
+
 // GetParameters returns the Parameters field value if set, zero value otherwise.
 func (o *BTParameterSpecArray2600) GetParameters() []BTParameterSpec6 {
 	if o == nil || o.Parameters == nil {
@@ -682,6 +715,9 @@ func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	}
 	if o.ItemName != nil {
 		toSerialize["itemName"] = o.ItemName
+	}
+	if o.MaxNumberOfPicks != nil {
+		toSerialize["maxNumberOfPicks"] = o.MaxNumberOfPicks
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters

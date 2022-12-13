@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Changes** | Pointer to [**[]BTAppElementChangeParams**](BTAppElementChangeParams.md) | Edits to be applied to the element&#39;s subelement data. | [optional] 
 **Description** | Pointer to **string** | The label that will appear in the document&#39;s edit history for this operation. If blank, a value will be auto-generated. | [optional] 
+**JsonPatch** | Pointer to **string** | A json patch that will be applied to the application element&#39;s json data. | [optional] 
 **JsonTreeEdit** | Pointer to [**BTJEdit3734**](BTJEdit3734.md) |  | [optional] 
 **ParentChangeId** | Pointer to **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | [optional] 
 **PropertyUpdates** | Pointer to [**[]BTMetadataPropertyUpdateParams**](BTMetadataPropertyUpdateParams.md) | Edits to be applied to the element&#39;s metadata. | [optional] 
@@ -81,6 +82,31 @@ SetDescription sets Description field to given value.
 `func (o *BTAppElementUpdateParams) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetJsonPatch
+
+`func (o *BTAppElementUpdateParams) GetJsonPatch() string`
+
+GetJsonPatch returns the JsonPatch field if non-nil, zero value otherwise.
+
+### GetJsonPatchOk
+
+`func (o *BTAppElementUpdateParams) GetJsonPatchOk() (*string, bool)`
+
+GetJsonPatchOk returns a tuple with the JsonPatch field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJsonPatch
+
+`func (o *BTAppElementUpdateParams) SetJsonPatch(v string)`
+
+SetJsonPatch sets JsonPatch field to given value.
+
+### HasJsonPatch
+
+`func (o *BTAppElementUpdateParams) HasJsonPatch() bool`
+
+HasJsonPatch returns a boolean if a field has been set.
 
 ### GetJsonTreeEdit
 

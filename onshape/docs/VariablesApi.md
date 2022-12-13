@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ## GetVariables
 
-> BTVariableTableInfo GetVariables(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
+> BTVariableTableInfo GetVariables(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
 
 Retrieve the variables from a variable table
 
@@ -279,11 +279,12 @@ func main() {
     wvid := "wvid_example" // string | 
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
     includeValuesAndReferencedVariables := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VariablesApi.GetVariables(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
+    resp, r, err := apiClient.VariablesApi.GetVariables(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VariablesApi.GetVariables``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -316,6 +317,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
  **includeValuesAndReferencedVariables** | **bool** |  | [default to false]
 
 ### Return type
