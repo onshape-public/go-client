@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DrivenQuery** | Pointer to **string** |  | [optional] 
 **ItemLabelTemplate** | Pointer to **string** |  | [optional] 
 **ItemName** | Pointer to **string** |  | [optional] 
+**MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 **Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetItemName sets ItemName field to given value.
 `func (o *BTParameterSpecArray2600) HasItemName() bool`
 
 HasItemName returns a boolean if a field has been set.
+
+### GetMaxNumberOfPicks
+
+`func (o *BTParameterSpecArray2600) GetMaxNumberOfPicks() int32`
+
+GetMaxNumberOfPicks returns the MaxNumberOfPicks field if non-nil, zero value otherwise.
+
+### GetMaxNumberOfPicksOk
+
+`func (o *BTParameterSpecArray2600) GetMaxNumberOfPicksOk() (*int32, bool)`
+
+GetMaxNumberOfPicksOk returns a tuple with the MaxNumberOfPicks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxNumberOfPicks
+
+`func (o *BTParameterSpecArray2600) SetMaxNumberOfPicks(v int32)`
+
+SetMaxNumberOfPicks sets MaxNumberOfPicks field to given value.
+
+### HasMaxNumberOfPicks
+
+`func (o *BTParameterSpecArray2600) HasMaxNumberOfPicks() bool`
+
+HasMaxNumberOfPicks returns a boolean if a field has been set.
 
 ### GetParameters
 

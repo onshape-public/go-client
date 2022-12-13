@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.156.8083-f61e3e2b5294
+  version: 1.157.8642-f6ac639739bc
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -15693,6 +15693,14 @@ paths:
         style: simple
       - explode: true
         in: query
+        name: configuration
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
         name: includeValuesAndReferencedVariables
         required: false
         schema:
@@ -18537,6 +18545,7 @@ components:
           delta: delta
           baseContent: baseContent
         description: description
+        jsonPatch: jsonPatch
         propertyUpdates:
         - propertyId: propertyId
           value: "{}"
@@ -18553,6 +18562,10 @@ components:
         description:
           description: "The label that will appear in the document's edit history\
             \ for this operation. If blank, a value will be auto-generated."
+          type: string
+        jsonPatch:
+          description: A json patch that will be applied to the application element's
+            json data.
           type: string
         jsonTreeEdit:
           $ref: '#/components/schemas/BTJEdit-3734'
@@ -27226,8 +27239,16 @@ components:
           - PARTIAL_FILLET_BAD_INPUT_ERROR
           - GUSSET_EMPTY_ALIGNMENT_SELECTION
           - GUSSET_ALIGNMENT_NO_INTERSECTION
+          - BRIDGING_CURVE_VERTEX_OR_EDGE_ON_SIDE
           - CANNOT_USE_PARTIAL_FILLET_IN_SHEET_METAL
           - PARTIAL_FILLET_CLOSED_PATH_ERROR
+          - WRONG_CYLINDER_EDGE_SELECTED
+          - GUSSET_OFFSET_NOT_PARALLEL
+          - GUSSET_ALIGNED_OFFSET_NOT_PARALLEL
+          - BRIDGING_CURVE_VERTEX_BELONG_TO_FACE
+          - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
+          - BRIDGING_CURVE_NO_START_SELECTION
+          - BRIDGING_CURVE_NO_END_SELECTION
           - UNKNOWN
           type: string
         microversionId:
@@ -29167,8 +29188,16 @@ components:
           - PARTIAL_FILLET_BAD_INPUT_ERROR
           - GUSSET_EMPTY_ALIGNMENT_SELECTION
           - GUSSET_ALIGNMENT_NO_INTERSECTION
+          - BRIDGING_CURVE_VERTEX_OR_EDGE_ON_SIDE
           - CANNOT_USE_PARTIAL_FILLET_IN_SHEET_METAL
           - PARTIAL_FILLET_CLOSED_PATH_ERROR
+          - WRONG_CYLINDER_EDGE_SELECTED
+          - GUSSET_OFFSET_NOT_PARALLEL
+          - GUSSET_ALIGNED_OFFSET_NOT_PARALLEL
+          - BRIDGING_CURVE_VERTEX_BELONG_TO_FACE
+          - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
+          - BRIDGING_CURVE_NO_START_SELECTION
+          - BRIDGING_CURVE_NO_END_SELECTION
           - UNKNOWN
           type: string
       type: object
@@ -32500,8 +32529,16 @@ components:
           - PARTIAL_FILLET_BAD_INPUT_ERROR
           - GUSSET_EMPTY_ALIGNMENT_SELECTION
           - GUSSET_ALIGNMENT_NO_INTERSECTION
+          - BRIDGING_CURVE_VERTEX_OR_EDGE_ON_SIDE
           - CANNOT_USE_PARTIAL_FILLET_IN_SHEET_METAL
           - PARTIAL_FILLET_CLOSED_PATH_ERROR
+          - WRONG_CYLINDER_EDGE_SELECTED
+          - GUSSET_OFFSET_NOT_PARALLEL
+          - GUSSET_ALIGNED_OFFSET_NOT_PARALLEL
+          - BRIDGING_CURVE_VERTEX_BELONG_TO_FACE
+          - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
+          - BRIDGING_CURVE_NO_START_SELECTION
+          - BRIDGING_CURVE_NO_END_SELECTION
           - UNKNOWN
           type: string
         facetPoints:
@@ -42272,6 +42309,23 @@ components:
           - V1911_PARTIAL_FILLET_FIX_MANIPULATORS
           - V1912_QUERY_ONLY_CIRCULAR_EDGES_FOR_CONVEX
           - V1913_BACK_OUT_THREADS_TAPPED_THRU_FOR_CHAMFER_CASE
+          - V1914_BRIDGING_CONNECTING_CURVE
+          - V1915_HOLE_CYLINDER_CAST_INTERSECT_ALL_TARGETS
+          - V1916_CHECK_INVALID_CYLINDER_END_SELECTION
+          - V1917_PARTIAL_FILLET_FIX_CHAIN_OF_EDGES
+          - V1918_THREADS_TAPPED_THRU_FOR_CHAMFER_CASE_v2
+          - V1919_CYLINDICAL_BEND_FLAT_TRANSFORM
+          - V1920_CONNECTING_CURVE_BETTER_INPUT_CHECKS
+          - V1921_BRIDGING_CURVE_FIXES_BUMP
+          - V1922_REVERT_PRECISION_AND_TOLERANCE_CHANGES
+          - V1923_BRIDGING_CURVE_MATE_CONNECTOR_BUMP
+          - V1924_BRIDGING_CURVE_MATE_CONNECTOR_REVERT
+          - V1925_HANDLE_MITER_IF_HOLD_ADJACENT_EDGES_FIX
+          - V1926_BRIDGING_CURVE_MATE_CONNECTOR_BUMP_BIS
+          - V1927_PARTIAL_FILLET_MANIPULATORS_FIX
+          - V1928_BRIDGING_CURVE_MATE_CONNECTOR_REVERT
+          - V1929_PARTIAL_FLANGE_PER_CHAIN_MANIPULATORS_FIX
+          - V1930_PARTIAL_FLANGE_ALIGNMENT_FIX
           - UNKNOWN
           type: string
         btType:
@@ -53677,8 +53731,16 @@ components:
           - PARTIAL_FILLET_BAD_INPUT_ERROR
           - GUSSET_EMPTY_ALIGNMENT_SELECTION
           - GUSSET_ALIGNMENT_NO_INTERSECTION
+          - BRIDGING_CURVE_VERTEX_OR_EDGE_ON_SIDE
           - CANNOT_USE_PARTIAL_FILLET_IN_SHEET_METAL
           - PARTIAL_FILLET_CLOSED_PATH_ERROR
+          - WRONG_CYLINDER_EDGE_SELECTED
+          - GUSSET_OFFSET_NOT_PARALLEL
+          - GUSSET_ALIGNED_OFFSET_NOT_PARALLEL
+          - BRIDGING_CURVE_VERTEX_BELONG_TO_FACE
+          - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
+          - BRIDGING_CURVE_NO_START_SELECTION
+          - BRIDGING_CURVE_NO_END_SELECTION
           - UNKNOWN
           type: string
         errorMessage:
@@ -56433,6 +56495,7 @@ components:
           type: string
         name:
           description: Variable name
+          pattern: "^[a-zA-Z_][a-zA-Z0-9_]*$"
           type: string
         type:
           description: "VariableType name, from FeatureScript VariableType"
@@ -64060,6 +64123,9 @@ components:
           type: string
         itemName:
           type: string
+        maxNumberOfPicks:
+          format: int32
+          type: integer
         parameters:
           items:
             $ref: '#/components/schemas/BTParameterSpec-6'
