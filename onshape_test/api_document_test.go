@@ -191,6 +191,16 @@ func TestDocumentAPI(t *testing.T) {
 	}.Execute()
 
 	OpenAPITest{
+		Call:   onshape.ApiShareWithSupportRequest{},
+		Expect: APIError(), //We expect the error to be related to HTTP 403
+	}.Execute()
+
+	OpenAPITest{
+		Call:   onshape.ApiUnshareFromSupportRequest{},
+		Expect: Todo(),
+	}.Execute()
+
+	OpenAPITest{
 		Call:    onshape.ApiMergePreviewRequest{},
 		Context: TestingContext{"sourceType": Ptr("w"), "sourceId": Context()["swid"].(*string)},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTMergePreviewInfo) {
