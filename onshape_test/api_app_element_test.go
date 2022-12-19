@@ -2,7 +2,7 @@ package onshape_test
 
 import (
 	"encoding/base64"
-	"io/ioutil"
+	"io"
 	"os"
 	"testing"
 
@@ -70,7 +70,7 @@ func TestAppElementAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiDownloadBlobSubelementWorkspaceRequest{},
 		Expect: NoAPIErrorAnd(func(res *onshape.HttpFile) {
-			fileBytes, err := ioutil.ReadAll(res.Data)
+			fileBytes, err := io.ReadAll(res.Data)
 			require.NoError(Tester(), err)
 			buf, err := os.ReadFile(Context()["fileName"].(string))
 			require.NoError(Tester(), err)

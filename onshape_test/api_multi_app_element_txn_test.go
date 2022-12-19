@@ -118,7 +118,7 @@ func TestTxnWorkflow(t *testing.T) {
 			btAppElementCommitTransactionParams := onshape.NewBTAppElementCommitTransactionParams()
 			btAppElementCommitTransactionParams.SetDescription("Done Updating the Assembly")
 			btAppElementCommitTransactionParams.SetTransactionIds([]string{*txnID})
-			btAppElementModifyInfo, rawResp, err = client.AppElementApi.CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(*btAppElementCommitTransactionParams).Execute()
+			_, rawResp, err = client.AppElementApi.CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(*btAppElementCommitTransactionParams).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 
 			//Verify we only have two microversions

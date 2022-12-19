@@ -2,7 +2,7 @@ package onshape_test
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"os"
 	"strings"
 	"testing"
@@ -148,7 +148,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			require.NoError(t, err, "Can't stat file")
 			hf := onshape.NewHttpFileFromOsFile(f)
 
-			appElementModifyInfo, rawResp, err = client.AppElementApi.UploadBlobSubelement(ctx, did, wid, eid, "blob0001").Description("Test Blob Element").File(hf).Execute()
+			_, _, err = client.AppElementApi.UploadBlobSubelement(ctx, did, wid, eid, "blob0001").Description("Test Blob Element").File(hf).Execute()
 			require.NoError(t, err, "Error Uploading Blob ...")
 
 			//Read Blob data ...
@@ -164,7 +164,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			//require.NoError(t, err, "Unable to download Blob Subelement")
 			defer resp.Body.Close()
 
-			fileBytes, err := ioutil.ReadAll(resp.Body)
+			fileBytes, err := io.ReadAll(resp.Body)
 			require.True(t, fi.Size() == int64(len(fileBytes)))
 			require.NoError(t, err, "can't read response body")
 			newFile, err := os.Create(tt.args.blobFilePath + ".new")

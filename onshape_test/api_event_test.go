@@ -3,7 +3,7 @@ package onshape_test
 import (
 	"encoding/json"
 	"errors"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"testing"
 	"time"
@@ -42,6 +42,9 @@ func TestEventAPI(t *testing.T) {
 		}).AsBTEventParams()),
 		Expect: NoAPIError(),
 	}.Execute()
+
+	//wait a bit again to let the event to percolate
+	time.Sleep(3 * time.Second)
 
 	doc, err = requestRecentlyOpenedDocument()
 	require.NoError(t, err)
@@ -141,7 +144,7 @@ func makeHTTPRequest(url string) ([]byte, *http.Response, error) {
 		return nil, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 
 	if err != nil {
