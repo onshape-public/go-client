@@ -115,7 +115,7 @@ func makeAuthKey(method, date, nonce, secretKey, accessKey, ctype, path, query s
 	return "On " + accessKeyUtf8.String() + ":HmacSHA256:" + utf8string.NewString(signature).String()
 }
 
-//GetAddAPIKeysReqHdrsFunc -- create a function which adds API Key specific headers
+// GetAddAPIKeysReqHdrsFunc -- create a function which adds API Key specific headers
 func GetAddAPIKeysReqHdrsFunc() HdrProcFunc {
 	secretKeyVal := os.Getenv(TestAPISecretKey)
 	accessKeyVal := os.Getenv(TestAPIAccessKey)
@@ -146,13 +146,13 @@ func GetAddAPIKeysReqHdrsFunc() HdrProcFunc {
 
 type HdrProcFunc func(req *http.Request)
 
-//APIKeysRoundTripper implements the http.RoundTripper interface
+// APIKeysRoundTripper implements the http.RoundTripper interface
 type APIKeysRoundTripper struct {
 	HdrProcessors []HdrProcFunc
 	Proxied       http.RoundTripper
 }
 
-//RoundTrip adds logging of req and response
+// RoundTrip adds logging of req and response
 func (art APIKeysRoundTripper) RoundTrip(req *http.Request) (res *http.Response, e error) {
 	//add req headers
 	for _, hp := range art.HdrProcessors {
@@ -177,15 +177,17 @@ func NewAPIClientFromEnv(hdrProcessors ...HdrProcFunc) (*APIClient, error) {
 	return NewAPIClient(cfg), nil
 }
 
-//GetDefaultConfig - creates default config
+// GetDefaultConfig - creates default config
 func GetDefaultConfig() *Configuration {
 	baseURL := os.Getenv(BaseURL)
 	cfg := NewConfiguration()
 	if baseURL != "" {
-		if !strings.HasSuffix(baseURL, "/api/v4") {
-			baseURL = baseURL + "/api/v4"
+		if u, err := url.Parse(baseURL); err == nil {
+			if uCfg, err := url.Parse(cfg.Servers[0].URL); err == nil {
+				u.Path = uCfg.Path
+				cfg.Servers[0].URL = u.String()
+			}
 		}
-		cfg.Servers[0].URL = baseURL
 	}
 	isDebug := false
 	if debugFromEnv, isDebugEnvSet := os.LookupEnv(HTTPDebug); isDebugEnvSet {
