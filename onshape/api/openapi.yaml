@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.157.9170-8cb36f16959d
+  version: 1.157.9191-43c781405890
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -20145,7 +20145,6 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
-          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
@@ -20153,18 +20152,14 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
-          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
           decompressed: null
-        btType: btType
         decompressed: null
         copyWithoutGeometry: null
         fromSketch: true
       properties:
-        btType:
-          type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
         decompressed:
@@ -25409,14 +25404,11 @@ components:
         hasTessellationError: true
         face: true
         settingIndex: 5
-        btType: btType
         errorCode: 1
         estimatedMemoryUsageInBytes: 5
         compressed: true
         decompressed: null
       properties:
-        btType:
-          type: string
         compressed:
           type: boolean
         decompressed:
@@ -31086,7 +31078,6 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
-                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
@@ -31094,12 +31085,10 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
-                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
                 decompressed: null
-              btType: btType
               decompressed: null
               copyWithoutGeometry: null
               fromSketch: true
@@ -48787,7 +48776,6 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
-              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
@@ -48795,12 +48783,10 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
-              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
               decompressed: null
-            btType: btType
             decompressed: null
             copyWithoutGeometry: null
             fromSketch: true
