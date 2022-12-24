@@ -192,12 +192,12 @@ func TestDocumentAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call:   onshape.ApiShareWithSupportRequest{},
-		Expect: APIError(), //We expect the error to be related to HTTP 403
+		Expect: NoAPIError(),
 	}.Execute()
 
 	OpenAPITest{
 		Call:   onshape.ApiUnshareFromSupportRequest{},
-		Expect: Todo(),
+		Expect: NoAPIError(),
 	}.Execute()
 
 	OpenAPITest{
