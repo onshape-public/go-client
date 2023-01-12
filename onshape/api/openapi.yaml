@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.157.9191-43c781405890
+  version: 1.158.9878-ff51e1211d95
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -4105,7 +4105,7 @@ paths:
           content:
             application/json;charset=UTF-8; qs=0.09:
               schema:
-                $ref: '#/components/schemas/BTMassPropertiesInfo-null'
+                $ref: '#/components/schemas/BTMassPropertiesInfo'
           description: default response
       security:
       - OAuth2:
@@ -13954,16 +13954,20 @@ paths:
   /revisions/companies/{cid}:
     get:
       deprecated: false
+      description: Enumerate all revisions in a company by creation time. Caller must
+        be a company admin. Specify after and use the next URI to do complete enumeration.
       operationId: enumerateRevisions
       parameters:
-      - explode: false
+      - description: The company or enterprise ID that owns the resource.
+        explode: false
         in: path
         name: cid
         required: true
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: "0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob"
+        explode: true
         in: query
         name: elementType
         required: false
@@ -13971,7 +13975,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - explode: true
+      - description: The number of items to return in a single API call
+        explode: true
         in: query
         name: limit
         required: false
@@ -13982,18 +13987,8 @@ paths:
           minimum: 1
           type: integer
         style: form
-      - explode: true
-        in: query
-        name: offset
-        required: false
-        schema:
-          default: 0
-          format: int32
-          maximum: 100
-          minimum: 0
-          type: integer
-        style: form
-      - explode: true
+      - description: Whether to limit search to only latest revisions.
+        explode: true
         in: query
         name: latestOnly
         required: false
@@ -14001,7 +13996,8 @@ paths:
           default: false
           type: boolean
         style: form
-      - explode: true
+      - description: The earliest creation date of the revision to find.
+        explode: true
         in: query
         name: after
         required: false
@@ -14022,7 +14018,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Enumerate all revisions released in a company by company ID.
+      summary: Enumerate all revisions created in a company.
       tags:
       - Revision
       x-BTVisibility: PRODUCTION
@@ -14328,6 +14324,36 @@ paths:
         - OAuth2Delete
         BasicAuth:
         - OAuth2Delete
+      tags:
+      - Revision
+      x-BTVisibility: PRODUCTION
+  /revisions/d/{did}:
+    get:
+      deprecated: false
+      description: Retrieve a list of all revisions that exist in a document and are
+        owned by the document's owning company.
+      operationId: getAllInDocument
+      parameters:
+      - explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTListResponseBTRevisionInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Retrieve a list of all revisions that exist in a document.
       tags:
       - Revision
       x-BTVisibility: PRODUCTION
@@ -14707,18 +14733,42 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "the generated thumbnail size in pixels, widthxheigth"
+        example: 300x300
+        explode: false
         in: path
         name: sz
         required: true
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: "Cache Control key. If specified, the response header returned\
+          \ will tell the client to use cached thumbnails."
+        explode: true
         in: query
         name: t
         required: false
         schema:
+          type: string
+        style: form
+      - description: "Controls the return of the default image, if thumbnail is not\
+          \ available"
+        examples:
+          By default return the default thumbnail, if the thumbnail is not found or generated:
+            description: "By default return the default thumbnail, if the thumbnail\
+              \ is not found or generated"
+            summary: "Get the default image, if the thumbnail is not found"
+          Setting skipDefaultImage=true, returns a 404 if the thumbnail is not found:
+            description: "Setting skipDefaultImage=true, returns a 404 if the thumbnail\
+              \ is not found"
+            summary: "Skip the default image, if the thumbnail does not exist."
+            value: true
+        explode: true
+        in: query
+        name: skipDefaultImage
+        required: false
+        schema:
+          default: ""
           type: string
         style: form
       - explode: true
@@ -14773,18 +14823,42 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "the generated thumbnail size in pixels, widthxheigth"
+        example: 300x300
+        explode: false
         in: path
         name: sz
         required: true
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: "Cache Control key. If specified, the response header returned\
+          \ will tell the client to use cached thumbnails."
+        explode: true
         in: query
         name: t
         required: false
         schema:
+          type: string
+        style: form
+      - description: "Controls the return of the default image, if thumbnail is not\
+          \ available"
+        examples:
+          By default return the default thumbnail, if the thumbnail is not found or generated:
+            description: "By default return the default thumbnail, if the thumbnail\
+              \ is not found or generated"
+            summary: "Get the default image, if the thumbnail is not found"
+          Setting skipDefaultImage=true, returns a 404 if the thumbnail is not found:
+            description: "Setting skipDefaultImage=true, returns a 404 if the thumbnail\
+              \ is not found"
+            summary: "Skip the default image, if the thumbnail does not exist."
+            value: true
+        explode: true
+        in: query
+        name: skipDefaultImage
+        required: false
+        schema:
+          default: ""
           type: string
         style: form
       responses:
@@ -15029,7 +15103,8 @@ paths:
         schema:
           type: string
         style: simple
-      - description: "Requested thumbnail size, such as 300x300"
+      - description: "the generated thumbnail size in pixels, widthxheigth"
+        example: 300x300
         explode: false
         in: path
         name: sz
@@ -15037,11 +15112,33 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: "Cache Control key. If specified, the response header returned\
+          \ will tell the client to use cached thumbnails."
+        explode: true
         in: query
         name: t
         required: false
         schema:
+          type: string
+        style: form
+      - description: "Controls the return of the default image, if thumbnail is not\
+          \ available"
+        examples:
+          By default return the default thumbnail, if the thumbnail is not found or generated:
+            description: "By default return the default thumbnail, if the thumbnail\
+              \ is not found or generated"
+            summary: "Get the default image, if the thumbnail is not found"
+          Setting skipDefaultImage=true, returns a 404 if the thumbnail is not found:
+            description: "Setting skipDefaultImage=true, returns a 404 if the thumbnail\
+              \ is not found"
+            summary: "Skip the default image, if the thumbnail does not exist."
+            value: true
+        explode: true
+        in: query
+        name: skipDefaultImage
+        required: false
+        schema:
+          default: ""
           type: string
         style: form
       - explode: true
@@ -16432,6 +16529,89 @@ paths:
       tags:
       - Workflow
       x-BTVisibility: PRODUCTION
+  /workflow/companies/{cid}/objects:
+    get:
+      deprecated: false
+      description: "Enumerate all workflowable objects like RELEASES, TASKS in a company\
+        \ by last modified time. Caller must be a company admin. Specify modifiedAfter\
+        \ and use the next URI to do complete enumeration."
+      operationId: enumerateObjectWorkflows
+      parameters:
+      - description: The company or enterprise ID that owns the resource.
+        explode: false
+        in: path
+        name: cid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Optionally filter for specific workflowable types. Defaults to
+          RELEASE and OBSOLETION
+        explode: true
+        in: query
+        name: objectTypes
+        required: false
+        schema:
+          items:
+            description: All workflowable types that can be enumerated.
+            enum:
+            - RELEASE
+            - TASK
+            - ASSIGNMENT
+            - OBSOLETION
+            type: string
+          type: array
+        style: form
+      - description: "Optionally filter for specific workflow states like PENDING,\
+          \ RELEASED"
+        explode: true
+        in: query
+        name: states
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        style: form
+      - description: The number of items to return in a single API call
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      - description: The earliest modification date of workflowable object to find.
+        explode: true
+        in: query
+        name: modifiedAfter
+        required: false
+        schema:
+          default: 2000-01-01T00:00:00Z
+          format: date-time
+          type: string
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTListResponseBTObjectWorkflowInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Enumerate workflowable objects created in a company.
+      tags:
+      - Workflow
+      x-BTVisibility: PRODUCTION
   /workflow/obj/{objectId}/auditlog:
     get:
       deprecated: false
@@ -16458,130 +16638,6 @@ paths:
         - OAuth2Read
       tags:
       - Workflow
-      x-BTVisibility: PRODUCTION
-  /workflowabletestobject/testobject/{wfid}:
-    post:
-      deprecated: false
-      operationId: createWorkflowableTestObject
-      parameters:
-      - explode: false
-        in: path
-        name: wfid
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        default:
-          content:
-            application/json;charset=UTF-8; qs=0.09:
-              schema:
-                $ref: '#/components/schemas/BTWorkflowableTestObjectInfo'
-          description: default response
-      security:
-      - OAuth2:
-        - OAuth2Write
-        BasicAuth:
-        - OAuth2Write
-      summary: Update workflowable test object by workflow ID.
-      tags:
-      - WorkflowableTestObject
-      x-BTVisibility: PRODUCTION
-  /workflowabletestobject/{oid}:
-    get:
-      deprecated: false
-      operationId: getWorkflowableTestObject
-      parameters:
-      - explode: false
-        in: path
-        name: oid
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        default:
-          content:
-            application/json;charset=UTF-8; qs=0.09:
-              schema:
-                $ref: '#/components/schemas/BTWorkflowableTestObjectInfo'
-          description: default response
-      security:
-      - OAuth2:
-        - OAuth2Read
-        BasicAuth:
-        - OAuth2Read
-      summary: Retrieve workflowable test object by object ID.
-      tags:
-      - WorkflowableTestObject
-      x-BTVisibility: PRODUCTION
-    post:
-      deprecated: false
-      operationId: updateWorkflowableTestObject
-      parameters:
-      - explode: false
-        in: path
-        name: oid
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json;charset=UTF-8; qs=0.09:
-            schema:
-              $ref: '#/components/schemas/BTUpdateWorkflowableTestObjectParams'
-        required: true
-      responses:
-        default:
-          content:
-            application/json;charset=UTF-8; qs=0.09:
-              schema:
-                $ref: '#/components/schemas/BTWorkflowableTestObjectInfo'
-          description: default response
-      security:
-      - OAuth2:
-        - OAuth2Write
-        BasicAuth:
-        - OAuth2Write
-      summary: Update workflowable test object by object ID.
-      tags:
-      - WorkflowableTestObject
-      x-BTVisibility: PRODUCTION
-  /workflowabletestobject/{oid}/{transition}:
-    post:
-      deprecated: false
-      operationId: transitionWorkflowableTestObject
-      parameters:
-      - explode: false
-        in: path
-        name: oid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: transition
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        default:
-          content:
-            application/json;charset=UTF-8; qs=0.09:
-              schema:
-                $ref: '#/components/schemas/BTWorkflowableTestObjectInfo'
-          description: default response
-      security:
-      - OAuth2:
-        - OAuth2Write
-        BasicAuth:
-        - OAuth2Write
-      summary: Update workflowable test object transition by object ID.
-      tags:
-      - WorkflowableTestObject
       x-BTVisibility: PRODUCTION
   /events:
     post:
@@ -16675,19 +16731,23 @@ components:
         hasPendingIcon:
           type: boolean
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         iconUrl:
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         parentAppPrimaryFormat:
           type: string
         showResponse:
           type: boolean
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -16706,16 +16766,20 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         state:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -16944,15 +17008,18 @@ components:
             $ref: '#/components/schemas/BTAclEntryInfo'
           type: array
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         inheritedAcls:
           items:
             $ref: '#/components/schemas/BTInheritedAclInfo'
           type: array
         name:
+          description: Name of the resource.
           type: string
         objectId:
           type: string
@@ -16966,6 +17033,7 @@ components:
         sharedWithSupport:
           type: boolean
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         visibility:
@@ -17188,15 +17256,19 @@ components:
           format: date-time
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         identity:
           $ref: '#/components/schemas/BTIdentityInfo'
         name:
+          description: Name of the resource.
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -17433,17 +17505,21 @@ components:
             $ref: '#/components/schemas/BTAliasEntryInfo'
           type: array
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         identities:
           items:
             $ref: '#/components/schemas/BTIdentityInfo'
           type: array
         name:
+          description: Name of the resource.
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -18749,6 +18825,23 @@ components:
             featureId: featureId
             documentMicroversion: documentMicroversion
             status: DeletedElement
+          patterns:
+          - seedToPatternInstances:
+              key:
+              - seedToPatternInstances
+              - seedToPatternInstances
+            name: name
+            id: id
+            suppressed: true
+            type: LINEAR
+          - seedToPatternInstances:
+              key:
+              - seedToPatternInstances
+              - seedToPatternInstances
+            name: name
+            id: id
+            suppressed: true
+            type: LINEAR
           documentId: documentId
           fullConfiguration: fullConfiguration
           partNumber: partNumber
@@ -18802,6 +18895,23 @@ components:
             featureId: featureId
             documentMicroversion: documentMicroversion
             status: DeletedElement
+          patterns:
+          - seedToPatternInstances:
+              key:
+              - seedToPatternInstances
+              - seedToPatternInstances
+            name: name
+            id: id
+            suppressed: true
+            type: LINEAR
+          - seedToPatternInstances:
+              key:
+              - seedToPatternInstances
+              - seedToPatternInstances
+            name: name
+            id: id
+            suppressed: true
+            type: LINEAR
           documentId: documentId
           fullConfiguration: fullConfiguration
           partNumber: partNumber
@@ -18854,6 +18964,23 @@ components:
             featureId: featureId
             documentMicroversion: documentMicroversion
             status: DeletedElement
+          patterns:
+          - seedToPatternInstances:
+              key:
+              - seedToPatternInstances
+              - seedToPatternInstances
+            name: name
+            id: id
+            suppressed: true
+            type: LINEAR
+          - seedToPatternInstances:
+              key:
+              - seedToPatternInstances
+              - seedToPatternInstances
+            name: name
+            id: id
+            suppressed: true
+            type: LINEAR
           documentId: documentId
           fullConfiguration: fullConfiguration
           partNumber: partNumber
@@ -18986,6 +19113,7 @@ components:
           type: string
       type: object
     BTAssemblyFeatureInfo:
+      description: List of Assembly features including those are created by replicates.
       example:
         featureData:
           name: name
@@ -19138,6 +19266,7 @@ components:
       - documentId
       type: object
     BTAssemblyInstanceInfo:
+      description: List of instances including those created by patterns and replicates.
       example:
         elementId: elementId
         configuration: configuration
@@ -19346,6 +19475,44 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTParametricInstance-2641'
       - $ref: '#/components/schemas/BTAssemblyPattern_1974_allOf'
+      type: object
+    BTAssemblyPatternInfo:
+      description: Pattern description.
+      example:
+        seedToPatternInstances:
+          key:
+          - seedToPatternInstances
+          - seedToPatternInstances
+        name: name
+        id: id
+        suppressed: true
+        type: LINEAR
+      properties:
+        id:
+          description: Id of the pattern.
+          type: string
+        name:
+          description: Name of the pattern.
+          type: string
+        seedToPatternInstances:
+          additionalProperties:
+            description: Mapping of seed to pattern instance ids.
+            items:
+              description: Mapping of seed to pattern instance ids.
+              type: string
+            type: array
+          description: Mapping of seed to pattern instance ids.
+          type: object
+        suppressed:
+          description: If pattern is suppressed.
+          type: boolean
+        type:
+          description: Pattern type.
+          enum:
+          - LINEAR
+          - CIRCULAR
+          - UNKNOWN
+          type: string
       type: object
     BTAssemblyPsFeatureInfo:
       example:
@@ -20145,6 +20312,7 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
+          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
@@ -20152,14 +20320,18 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 5
+          btType: btType
           errorCode: 1
           estimatedMemoryUsageInBytes: 5
           compressed: true
           decompressed: null
+        btType: btType
         decompressed: null
         copyWithoutGeometry: null
         fromSketch: true
       properties:
+        btType:
+          type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
         decompressed:
@@ -20185,13 +20357,17 @@ components:
         viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -20233,13 +20409,17 @@ components:
             type: object
           type: object
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -20254,17 +20434,21 @@ components:
         viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         propertyName:
           type: string
         valueType:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         visible:
@@ -20611,11 +20795,14 @@ components:
             $ref: '#/components/schemas/BTBillOfMaterialsHeaderInfo'
           type: array
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         rows:
           items:
@@ -20628,6 +20815,7 @@ components:
         type:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -20737,13 +20925,17 @@ components:
             type: object
           type: object
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -20827,9 +21019,11 @@ components:
             type: object
           type: object
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         indentLevel:
           format: int32
@@ -20837,6 +21031,7 @@ components:
         itemSource:
           $ref: '#/components/schemas/BTBillOfMaterialsItemSourceInfo'
         name:
+          description: Name of the resource.
           type: string
         relatedOccurrences:
           items:
@@ -20845,6 +21040,7 @@ components:
         rowId:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -21047,13 +21243,16 @@ components:
         hidden:
           type: boolean
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         interval:
           type: string
         name:
+          description: Name of the resource.
           type: string
         onshapePlan:
           type: boolean
@@ -21064,6 +21263,7 @@ components:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -21417,11 +21617,14 @@ components:
         editableInVersion:
           type: boolean
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         objectDefName:
           type: string
@@ -21438,6 +21641,7 @@ components:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -21521,11 +21725,13 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         iconLink:
           type: string
         id:
+          description: Id of the resource.
           type: string
         isContainer:
           type: boolean
@@ -21543,6 +21749,7 @@ components:
         modifiedById:
           type: string
         name:
+          description: Name of the resource.
           type: string
         owner:
           $ref: '#/components/schemas/BTOwnerInfo'
@@ -21562,6 +21769,7 @@ components:
         unparentHref:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         webViewLink:
@@ -21612,17 +21820,21 @@ components:
         fileName:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         mimeType:
           type: string
         name:
+          description: Name of the resource.
           type: string
         thumbnailFor:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -21719,13 +21931,16 @@ components:
         elementQuery:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         message:
           type: string
         name:
+          description: Name of the resource.
           type: string
         objectId:
           type: string
@@ -21763,6 +21978,7 @@ components:
         viewData:
           $ref: '#/components/schemas/BTViewDataInfo'
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         workspaceId:
@@ -22347,15 +22563,16 @@ components:
         admin: true
         description: description
         ownerId: ownerId
-        type: 6
+        type: 1
         domainPrefix: domainPrefix
         secondaryDomainPrefixes:
         - secondaryDomainPrefixes
         - secondaryDomainPrefixes
         name: name
+        enterpriseSubtype: 0
         href: https://openapi-generator.tech
         id: id
-        state: 0
+        state: 6
         viewRef: https://openapi-generator.tech
         enterpriseBaseUrl: enterpriseBaseUrl
       properties:
@@ -22369,14 +22586,20 @@ components:
           type: string
         enterpriseBaseUrl:
           type: string
+        enterpriseSubtype:
+          format: int32
+          type: integer
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         image:
           type: string
         name:
+          description: Name of the resource.
           type: string
         noPublicDocuments:
           type: boolean
@@ -22396,6 +22619,7 @@ components:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -22406,15 +22630,16 @@ components:
         admin: true
         description: description
         ownerId: ownerId
-        type: 6
+        type: 1
         domainPrefix: domainPrefix
         secondaryDomainPrefixes:
         - secondaryDomainPrefixes
         - secondaryDomainPrefixes
         name: name
+        enterpriseSubtype: 0
         href: https://openapi-generator.tech
         id: id
-        state: 0
+        state: 6
         viewRef: https://openapi-generator.tech
         enterpriseBaseUrl: enterpriseBaseUrl
       properties:
@@ -22426,14 +22651,20 @@ components:
           type: string
         enterpriseBaseUrl:
           type: string
+        enterpriseSubtype:
+          format: int32
+          type: integer
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         image:
           type: string
         name:
+          description: Name of the resource.
           type: string
         noPublicDocuments:
           type: boolean
@@ -22451,6 +22682,7 @@ components:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -23185,11 +23417,14 @@ components:
           format: date-time
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         ownerId:
           type: string
@@ -23204,6 +23439,7 @@ components:
           format: date-time
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -23570,7 +23806,7 @@ components:
         id: id
         tracingEnabled: true
         anonymousAllowsExport: true
-        likes: 1
+        likes: 6
         thumbnail:
           secondarySizes:
           - - renderMode: renderMode
@@ -23623,7 +23859,7 @@ components:
         - tags
         trash: true
         sequence: sequence
-        totalWorkspacesUpdating: 7
+        totalWorkspacesUpdating: 2
         isMutable: true
         canUnshare: true
         isUpgradedToLatestVersion: true
@@ -23715,9 +23951,9 @@ components:
           viewRef: https://openapi-generator.tech
           projectId: projectId
           resourceType: resourceType
-        numberOfTimesCopied: 5
-        documentType: 6
-        totalWorkspacesScheduledForUpdate: 2
+        numberOfTimesCopied: 1
+        documentType: 0
+        totalWorkspacesScheduledForUpdate: 5
         description: description
         isContainer: true
         hasRelevantInsertables: true
@@ -24021,9 +24257,11 @@ components:
         hasRelevantInsertables:
           type: boolean
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isContainer:
           type: boolean
@@ -24048,6 +24286,7 @@ components:
         modifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         notRevisionManaged:
           type: boolean
@@ -24117,6 +24356,7 @@ components:
         userAccountLimitsBreached:
           type: boolean
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -24172,9 +24412,11 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isContainer:
           type: boolean
@@ -24188,6 +24430,7 @@ components:
         modifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         owner:
           $ref: '#/components/schemas/BTOwnerInfo'
@@ -24204,6 +24447,7 @@ components:
         unparentHref:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -24645,14 +24889,569 @@ components:
       - jsonType
       type: object
     BTDocumentSummaryInfo:
-      allOf:
-      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-      - $ref: '#/components/schemas/BTDocumentSummaryInfo_allOf'
       discriminator:
         mapping:
           document: '#/components/schemas/BTDocumentInfo'
           document-summary-search: '#/components/schemas/BTDocumentSummarySearchInfo'
         propertyName: jsonType
+      example:
+        canMove: true
+        supportTeamUserAndShared: true
+        likedByCurrentUser: true
+        notes: notes
+        modifiedAt: 2000-01-23T04:56:07.000+00:00
+        isEnterpriseOwned: true
+        isUsingManagedWorkflow: true
+        recentVersion:
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        numberOfTimesReferenced: 5
+        unparentHref: unparentHref
+        isOrphaned: true
+        href: https://openapi-generator.tech
+        id: id
+        anonymousAllowsExport: true
+        likes: 1
+        thumbnail:
+          secondarySizes:
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          sizes:
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          href: https://openapi-generator.tech
+          id: id
+        tags:
+        - tags
+        - tags
+        trash: true
+        sequence: sequence
+        totalWorkspacesUpdating: 7
+        isMutable: true
+        canUnshare: true
+        permissionSet:
+        - permissionSet
+        - permissionSet
+        notRevisionManaged: true
+        name: name
+        hasReleaseRevisionableObjects: true
+        viewRef: https://openapi-generator.tech
+        projectId: projectId
+        trashedAt: 2000-01-23T04:56:07.000+00:00
+        documentLabels:
+        - canMove: true
+          owner:
+            image: image
+            isEnterpriseOwnedResource: true
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            type: 1
+            viewRef: https://openapi-generator.tech
+          modifiedAt: 2000-01-23T04:56:07.000+00:00
+          isEnterpriseOwned: true
+          description: description
+          isContainer: true
+          treeHref: treeHref
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          path: path
+          parentLabelId: parentLabelId
+          isMutable: true
+          unparentHref: unparentHref
+          createdBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          name: name
+          modifiedBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+          projectId: projectId
+          resourceType: resourceType
+        - canMove: true
+          owner:
+            image: image
+            isEnterpriseOwnedResource: true
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            type: 1
+            viewRef: https://openapi-generator.tech
+          modifiedAt: 2000-01-23T04:56:07.000+00:00
+          isEnterpriseOwned: true
+          description: description
+          isContainer: true
+          treeHref: treeHref
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          path: path
+          parentLabelId: parentLabelId
+          isMutable: true
+          unparentHref: unparentHref
+          createdBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          name: name
+          modifiedBy:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+          projectId: projectId
+          resourceType: resourceType
+        numberOfTimesCopied: 5
+        documentType: 6
+        totalWorkspacesScheduledForUpdate: 2
+        description: description
+        isContainer: true
+        hasRelevantInsertables: true
+        anonymousAccessAllowed: true
+        public: true
+        defaultWorkspace:
+          parent: parent
+          creator:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          thumbnail:
+            secondarySizes:
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            sizes:
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            href: https://openapi-generator.tech
+            id: id
+          modifiedAt: 2000-01-23T04:56:07.000+00:00
+          description: description
+          lastModifier:
+            image: image
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+          type: type
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          isReadOnly: true
+          overrideDate: 2000-01-23T04:56:07.000+00:00
+          name: name
+          canDelete: true
+          documentId: documentId
+          href: https://openapi-generator.tech
+          id: id
+          microversion: microversion
+          viewRef: https://openapi-generator.tech
+          parents:
+          - parent: parent
+            creator:
+              image: image
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+            thumbnail:
+              secondarySizes:
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              sizes:
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              href: https://openapi-generator.tech
+              id: id
+            purpose: 0
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            description: description
+            lastModifier:
+              image: image
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+            type: type
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            overrideDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            documentId: documentId
+            href: https://openapi-generator.tech
+            id: id
+            microversion: microversion
+            viewRef: https://openapi-generator.tech
+          - parent: parent
+            creator:
+              image: image
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+            thumbnail:
+              secondarySizes:
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              - - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+                - renderMode: renderMode
+                  sheetName: sheetName
+                  size: size
+                  viewOrientation: viewOrientation
+                  mediaType: mediaType
+                  href: https://openapi-generator.tech
+                  uniqueId: uniqueId
+              sizes:
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              href: https://openapi-generator.tech
+              id: id
+            purpose: 0
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            description: description
+            lastModifier:
+              image: image
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+            type: type
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            overrideDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            documentId: documentId
+            href: https://openapi-generator.tech
+            id: id
+            microversion: microversion
+            viewRef: https://openapi-generator.tech
+        modifiedBy:
+          image: image
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          state: 6
+          viewRef: https://openapi-generator.tech
+        userAccountLimitsBreached: true
+        owner:
+          image: image
+          isEnterpriseOwnedResource: true
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          type: 1
+          viewRef: https://openapi-generator.tech
+        createdWithEducationPlan: true
+        permission: NOACCESS
+        parentId: parentId
+        treeHref: treeHref
+        createdBy:
+          image: image
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          state: 6
+          viewRef: https://openapi-generator.tech
+        defaultElementId: defaultElementId
+        resourceType: resourceType
+      properties:
+        anonymousAccessAllowed:
+          type: boolean
+        anonymousAllowsExport:
+          type: boolean
+        canMove:
+          type: boolean
+        canUnshare:
+          type: boolean
+        createdAt:
+          format: date-time
+          type: string
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        createdWithEducationPlan:
+          type: boolean
+        defaultElementId:
+          type: string
+        defaultWorkspace:
+          $ref: '#/components/schemas/BTWorkspaceInfo'
+        description:
+          type: string
+        documentLabels:
+          items:
+            $ref: '#/components/schemas/BTDocumentLabelInfo'
+          type: array
+        documentType:
+          format: int32
+          type: integer
+        hasReleaseRevisionableObjects:
+          type: boolean
+        hasRelevantInsertables:
+          type: boolean
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        isContainer:
+          type: boolean
+        isEnterpriseOwned:
+          type: boolean
+        isMutable:
+          type: boolean
+        isOrphaned:
+          type: boolean
+        isUsingManagedWorkflow:
+          type: boolean
+        likedByCurrentUser:
+          type: boolean
+        likes:
+          format: int64
+          type: integer
+        modifiedAt:
+          format: date-time
+          type: string
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        name:
+          description: Name of the resource.
+          type: string
+        notRevisionManaged:
+          type: boolean
+        notes:
+          type: string
+        numberOfTimesCopied:
+          format: int64
+          type: integer
+        numberOfTimesReferenced:
+          format: int64
+          type: integer
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        parentId:
+          type: string
+        permission:
+          enum:
+          - NOACCESS
+          - ANONYMOUS_ACCESS
+          - READ
+          - READ_COPY_EXPORT
+          - COMMENT
+          - WRITE
+          - RESHARE
+          - FULL
+          - OWNER
+          type: string
+        permissionSet:
+          items:
+            type: string
+          type: array
+        projectId:
+          type: string
+        public:
+          type: boolean
+        recentVersion:
+          $ref: '#/components/schemas/BTBaseInfo'
+        resourceType:
+          type: string
+        sequence:
+          type: string
+        supportTeamUserAndShared:
+          type: boolean
+        tags:
+          items:
+            type: string
+          type: array
+        thumbnail:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        totalWorkspacesScheduledForUpdate:
+          format: int32
+          type: integer
+        totalWorkspacesUpdating:
+          format: int32
+          type: integer
+        trash:
+          type: boolean
+        trashedAt:
+          format: date-time
+          type: string
+        treeHref:
+          type: string
+        unparentHref:
+          type: string
+        userAccountLimitsBreached:
+          type: boolean
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
       type: object
     BTDocumentSummarySearchInfo:
       allOf:
@@ -25404,11 +26203,14 @@ components:
         hasTessellationError: true
         face: true
         settingIndex: 5
+        btType: btType
         errorCode: 1
         estimatedMemoryUsageInBytes: 5
         compressed: true
         decompressed: null
       properties:
+        btType:
+          type: string
         compressed:
           type: boolean
         decompressed:
@@ -27241,6 +28043,12 @@ components:
           - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
           - BRIDGING_CURVE_NO_START_SELECTION
           - BRIDGING_CURVE_NO_END_SELECTION
+          - NAMED_VIEW_INVALID
+          - MUTUAL_TRIM_SAME_SURFACE_USED
+          - MUTUAL_TRIM_SURFACE_NOT_SELECTED
+          - MUTUAL_TRIM_GENERIC_ERROR
+          - HOLE_CSINK_ANGLE_TOO_WIDE
+          - HOLE_CSINK_ANGLE_TOO_NARROW
           - UNKNOWN
           type: string
         microversionId:
@@ -29190,6 +29998,12 @@ components:
           - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
           - BRIDGING_CURVE_NO_START_SELECTION
           - BRIDGING_CURVE_NO_END_SELECTION
+          - NAMED_VIEW_INVALID
+          - MUTUAL_TRIM_SAME_SURFACE_USED
+          - MUTUAL_TRIM_SURFACE_NOT_SELECTED
+          - MUTUAL_TRIM_GENERIC_ERROR
+          - HOLE_CSINK_ANGLE_TOO_WIDE
+          - HOLE_CSINK_ANGLE_TOO_NARROW
           - UNKNOWN
           type: string
       type: object
@@ -31078,6 +31892,7 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
+                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
@@ -31085,10 +31900,12 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 5
+                btType: btType
                 errorCode: 1
                 estimatedMemoryUsageInBytes: 5
                 compressed: true
                 decompressed: null
+              btType: btType
               decompressed: null
               copyWithoutGeometry: null
               fromSketch: true
@@ -32528,6 +33345,12 @@ components:
           - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
           - BRIDGING_CURVE_NO_START_SELECTION
           - BRIDGING_CURVE_NO_END_SELECTION
+          - NAMED_VIEW_INVALID
+          - MUTUAL_TRIM_SAME_SURFACE_USED
+          - MUTUAL_TRIM_SURFACE_NOT_SELECTED
+          - MUTUAL_TRIM_GENERIC_ERROR
+          - HOLE_CSINK_ANGLE_TOO_WIDE
+          - HOLE_CSINK_ANGLE_TOO_NARROW
           - UNKNOWN
           type: string
         facetPoints:
@@ -34736,9 +35559,11 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isContainer:
           type: boolean
@@ -34754,6 +35579,7 @@ components:
         modifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         owner:
           $ref: '#/components/schemas/BTOwnerInfo'
@@ -34766,6 +35592,7 @@ components:
         unparentHref:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       required:
@@ -35210,9 +36037,11 @@ components:
         user: null
       properties:
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         identityType:
           format: int32
@@ -35222,6 +36051,7 @@ components:
         user:
           $ref: '#/components/schemas/BTUserSummaryInfo'
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -35334,11 +36164,14 @@ components:
             $ref: '#/components/schemas/BTAclEntryInfo'
           type: array
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         objectId:
           type: string
@@ -35354,6 +36187,7 @@ components:
         sharedWithSupport:
           type: boolean
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         visibility:
@@ -35385,6 +36219,7 @@ components:
           type: string
       type: object
     BTInsertableInfo:
+      description: Array of items in the current page.
       example:
         bodyType: SOLID
         predictableThumbnailId: predictableThumbnailId
@@ -35509,9 +36344,11 @@ components:
         hasFaults:
           type: boolean
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         insertableQuery:
           type: string
@@ -35529,6 +36366,7 @@ components:
         microversionId:
           type: string
         name:
+          description: Name of the resource.
           type: string
         parentId:
           type: string
@@ -35551,6 +36389,7 @@ components:
         versionName:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         workspaceId:
@@ -35686,16 +36525,20 @@ components:
         hasMultipleVersions:
           type: boolean
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTInsertableInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
         updatedThumbnailUri:
@@ -35938,6 +36781,7 @@ components:
           type: array
       type: object
     BTListResponseBTAliasEntryInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -36049,20 +36893,25 @@ components:
           viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTAliasEntryInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTAliasInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -36480,20 +37329,25 @@ components:
           viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTAliasInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTCategoryPropertyInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -36677,20 +37531,25 @@ components:
           viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTCategoryPropertyInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTCommentInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -36816,20 +37675,25 @@ components:
           user: null
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTCommentInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTCompanyInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -37305,15 +38169,16 @@ components:
           admin: true
           description: description
           ownerId: ownerId
-          type: 6
+          type: 1
           domainPrefix: domainPrefix
           secondaryDomainPrefixes:
           - secondaryDomainPrefixes
           - secondaryDomainPrefixes
           name: name
+          enterpriseSubtype: 0
           href: https://openapi-generator.tech
           id: id
-          state: 0
+          state: 6
           viewRef: https://openapi-generator.tech
           enterpriseBaseUrl: enterpriseBaseUrl
         - image: image
@@ -37786,33 +38651,39 @@ components:
           admin: true
           description: description
           ownerId: ownerId
-          type: 6
+          type: 1
           domainPrefix: domainPrefix
           secondaryDomainPrefixes:
           - secondaryDomainPrefixes
           - secondaryDomainPrefixes
           name: name
+          enterpriseSubtype: 0
           href: https://openapi-generator.tech
           id: id
-          state: 0
+          state: 6
           viewRef: https://openapi-generator.tech
           enterpriseBaseUrl: enterpriseBaseUrl
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTCompanyInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTInsertableInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -37918,20 +38789,73 @@ components:
           microversionId: microversionId
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTInsertableInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
+          format: uri
+          type: string
+      type: object
+    BTListResponseBTObjectWorkflowInfo:
+      description: A list of resources that typically supports paging.
+      example:
+        next: https://openapi-generator.tech
+        previous: https://openapi-generator.tech
+        href: https://openapi-generator.tech
+        items:
+        - metadataState: IN_PROGRESS
+          stateId: stateId
+          name: name
+          canBeDiscarded: true
+          href: https://openapi-generator.tech
+          id: id
+          isFrozen: true
+          viewRef: https://openapi-generator.tech
+          workflowId: workflowId
+          isDiscarded: true
+          objectType: RELEASE
+        - metadataState: IN_PROGRESS
+          stateId: stateId
+          name: name
+          canBeDiscarded: true
+          href: https://openapi-generator.tech
+          id: id
+          isFrozen: true
+          viewRef: https://openapi-generator.tech
+          workflowId: workflowId
+          isDiscarded: true
+          objectType: RELEASE
+      properties:
+        href:
+          description: URI for current page of resources.
+          format: uri
+          type: string
+        items:
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTObjectWorkflowInfo'
+          type: array
+        next:
+          description: URI for next page of the resources if more are available.
+          format: uri
+          type: string
+        previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTPurchaseInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -38849,31 +39773,34 @@ components:
             type: type
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTPurchaseInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTRevisionInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
         href: https://openapi-generator.tech
         items:
-        - fileName: fileName
-          obsoletionPackageId: obsoletionPackageId
+        - obsoletionPackageId: obsoletionPackageId
           configuration: configuration
           partId: partId
           releaseName: releaseName
-          changeOrderId: changeOrderId
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -38882,7 +39809,6 @@ components:
             name: name
             id: id
           description: description
-          canCurrentUserObsolete: true
           mimeType: mimeType
           versionName: versionName
           createdAt: 2000-01-23T04:56:07.000+00:00
@@ -38898,9 +39824,6 @@ components:
           releasedBy: null
           revisionRuleId: revisionRuleId
           errorMessage: errorMessage
-          meshStates:
-          - true
-          - true
           documentName: documentName
           isObsolete: true
           autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -38916,12 +39839,10 @@ components:
           viewRef: https://openapi-generator.tech
           elementType: 0
           previousRevisionId: previousRevisionId
-        - fileName: fileName
-          obsoletionPackageId: obsoletionPackageId
+        - obsoletionPackageId: obsoletionPackageId
           configuration: configuration
           partId: partId
           releaseName: releaseName
-          changeOrderId: changeOrderId
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -38930,7 +39851,6 @@ components:
             name: name
             id: id
           description: description
-          canCurrentUserObsolete: true
           mimeType: mimeType
           versionName: versionName
           createdAt: 2000-01-23T04:56:07.000+00:00
@@ -38946,9 +39866,6 @@ components:
           releasedBy: null
           revisionRuleId: revisionRuleId
           errorMessage: errorMessage
-          meshStates:
-          - true
-          - true
           documentName: documentName
           isObsolete: true
           autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -38966,20 +39883,25 @@ components:
           previousRevisionId: previousRevisionId
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTRevisionInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTTeamMemberInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -39081,20 +40003,25 @@ components:
           viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTTeamMemberInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTTranslationRequestInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -39138,20 +40065,25 @@ components:
           workspaceId: workspaceId
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTTranslationRequestInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTWebhookInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -39195,20 +40127,25 @@ components:
           - events
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTWebhookInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
     BTListResponseBTWorkflowObserverOptionInfo:
+      description: A list of resources that typically supports paging.
       example:
         next: https://openapi-generator.tech
         previous: https://openapi-generator.tech
@@ -39736,16 +40673,20 @@ components:
           user: null
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTWorkflowObserverOptionInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
@@ -42315,6 +43256,24 @@ components:
           - V1928_BRIDGING_CURVE_MATE_CONNECTOR_REVERT
           - V1929_PARTIAL_FLANGE_PER_CHAIN_MANIPULATORS_FIX
           - V1930_PARTIAL_FLANGE_ALIGNMENT_FIX
+          - V1931_UNUSED_TOPLEVEL_CHECK
+          - V1932_MUTUAL_TRIM_FEATURE
+          - V1933_TRANSFER_TOLERANCE
+          - V1934_PARTIAL_FLANGE_STABLE_EDGE_ORDER
+          - V1935_BRIDGING_CURVE_MATE_CONNECTOR
+          - V1936_INTERSECTION_CURVE_ENDPOINT_COINCIDENCE_FIX
+          - V1937_PS_VERSION_35_0_195
+          - V1938_HELIX_UI_UPGRADE
+          - V1939_PARTIAL_FLANGE_HOLD_ADJACENT_EDGES_FIX
+          - V1940_SET_PROPERTY_MASS_VALUE_WITH_UNITS
+          - V1941_HELIX_UI_UPGRADE_FIXES
+          - V1942_HELIX_UI_UPGRADE_FIXES
+          - V1943_VAR_FEATURE_EDIT_LOGIC_POPULATE_QLVS
+          - V1944_NEW_HELIX_REVERT
+          - V1945_HOLE_CSINK_TOLERANCE_BOUNDS_CHECK
+          - V1946_HOLE_CSINK_TOLERANCE_BOUNDS_CHECK_FIX
+          - V1947_TAP_DRILL_DIAMETER_FIX
+          - V1948_BRIDGING_CURVE_VERSION_BUMP
           - UNKNOWN
           type: string
         btType:
@@ -42947,12 +43906,12 @@ components:
       properties:
         bodies:
           additionalProperties:
-            $ref: '#/components/schemas/BTMassPropertiesInfo-null'
+            $ref: '#/components/schemas/BTMassPropertiesInfo'
           type: object
         microversionId:
           type: string
       type: object
-    BTMassPropertiesInfo-null:
+    BTMassPropertiesInfo:
       example:
         volume:
         - 7.061401241503109
@@ -43467,11 +44426,14 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         objectTypes:
           items:
@@ -43487,6 +44449,7 @@ components:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -44853,6 +45816,73 @@ components:
         empty:
           type: boolean
       type: object
+    BTObjectWorkflowInfo:
+      description: An workflowable object like Release or Task that supports states
+        and transitions.
+      example:
+        metadataState: IN_PROGRESS
+        stateId: stateId
+        name: name
+        canBeDiscarded: true
+        href: https://openapi-generator.tech
+        id: id
+        isFrozen: true
+        viewRef: https://openapi-generator.tech
+        workflowId: workflowId
+        isDiscarded: true
+        objectType: RELEASE
+      properties:
+        canBeDiscarded:
+          description: Whether workflowable object can be discarded.
+          type: boolean
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        isDiscarded:
+          description: Whether workflowable object has been discarded.
+          type: boolean
+        isFrozen:
+          description: Whether workflowable object has reached terminal state and
+            is frozen.
+          type: boolean
+        metadataState:
+          description: The current state metadata values if applicable.
+          enum:
+          - IN_PROGRESS
+          - PENDING
+          - RELEASED
+          - OBSOLETE
+          - REJECTED
+          - DISCARDED
+          type: string
+        name:
+          description: Name of the resource.
+          type: string
+        objectType:
+          description: All workflowable types that can be enumerated.
+          enum:
+          - RELEASE
+          - TASK
+          - ASSIGNMENT
+          - OBSOLETION
+          type: string
+        stateId:
+          description: "The current state of object like SETUP, REJECTED etc. Custom\
+            \ workflows can have any declared state."
+          type: string
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+        workflowId:
+          description: The workflow definition id that governs this object's states
+            and transitions.
+          type: string
+      type: object
     BTOccurrence-74:
       discriminator:
         mapping:
@@ -45048,20 +46078,24 @@ components:
         viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         image:
           type: string
         isEnterpriseOwnedResource:
           type: boolean
         name:
+          description: Name of the resource.
           type: string
         type:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -48776,6 +49810,7 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
+              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
@@ -48783,10 +49818,12 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 5
+              btType: btType
               errorCode: 1
               estimatedMemoryUsageInBytes: 5
               compressed: true
               decompressed: null
+            btType: btType
             decompressed: null
             copyWithoutGeometry: null
             fromSketch: true
@@ -49100,20 +50137,24 @@ components:
         firstName:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         image:
           type: string
         lastName:
           type: string
         name:
+          description: Name of the resource.
           type: string
         state:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -49144,9 +50185,11 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isContainer:
           type: boolean
@@ -49160,6 +50203,7 @@ components:
         modifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         owner:
           $ref: '#/components/schemas/BTOwnerInfo'
@@ -49184,6 +50228,7 @@ components:
         unparentHref:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -49309,9 +50354,11 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isContainer:
           type: boolean
@@ -49329,6 +50376,7 @@ components:
         modifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         notes:
           type: string
@@ -49345,6 +50393,7 @@ components:
         unparentHref:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -49901,9 +50950,11 @@ components:
         group:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         lastModified:
           format: date-time
@@ -49914,6 +50965,7 @@ components:
           format: int64
           type: integer
         name:
+          description: Name of the resource.
           type: string
         nextCharge:
           $ref: '#/components/schemas/NextCharge'
@@ -49975,6 +51027,7 @@ components:
         trialInitiatedBy:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -50067,16 +51120,20 @@ components:
             $ref: '#/components/schemas/Entry'
           type: array
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         predefinedPermissionScheme:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -50095,16 +51152,20 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         predefinedRole:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -51226,9 +52287,11 @@ components:
         documentId:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isObsoletion:
           type: boolean
@@ -51246,6 +52309,7 @@ components:
         modifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         originalWorkspaceId:
           type: string
@@ -51268,6 +52332,7 @@ components:
         versionId:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         workflow:
@@ -51436,9 +52501,11 @@ components:
             $ref: '#/components/schemas/BTReleaseItemErrorInfo'
           type: array
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isRevisionManaged:
           type: boolean
@@ -51452,6 +52519,7 @@ components:
         mimeType:
           type: string
         name:
+          description: Name of the resource.
           type: string
         obsoletionRevisionId:
           type: string
@@ -51480,6 +52548,7 @@ components:
         versionId:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         workspaceId:
@@ -51629,6 +52698,7 @@ components:
           type: array
       type: object
     BTRevisionApproverInfo:
+      description: The users who approved the release package that created this revision.
       example:
         date: 2000-01-23T04:56:07.000+00:00
         name: name
@@ -51648,13 +52718,12 @@ components:
       - $ref: '#/components/schemas/BTRevisionCustomData_2090_allOf'
       type: object
     BTRevisionInfo:
+      description: A revision of PART/ASSEMBLY etc created by release management.
       example:
-        fileName: fileName
         obsoletionPackageId: obsoletionPackageId
         configuration: configuration
         partId: partId
         releaseName: releaseName
-        changeOrderId: changeOrderId
         approvers:
         - date: 2000-01-23T04:56:07.000+00:00
           name: name
@@ -51663,7 +52732,6 @@ components:
           name: name
           id: id
         description: description
-        canCurrentUserObsolete: true
         mimeType: mimeType
         versionName: versionName
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -51679,9 +52747,6 @@ components:
         releasedBy: null
         revisionRuleId: revisionRuleId
         errorMessage: errorMessage
-        meshStates:
-        - true
-        - true
         documentName: documentName
         isObsolete: true
         autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -51699,6 +52764,8 @@ components:
         previousRevisionId: previousRevisionId
       properties:
         approvers:
+          description: The users who approved the release package that created this
+            revision.
           items:
             $ref: '#/components/schemas/BTRevisionApproverInfo'
           type: array
@@ -51706,13 +52773,10 @@ components:
           type: string
         autoObsoletionReleaseName:
           type: string
-        canCurrentUserObsolete:
-          type: boolean
         canExport:
           type: boolean
-        changeOrderId:
-          type: string
         companyId:
+          description: The company or enterprise ID that owns the resource.
           type: string
         configuration:
           type: string
@@ -51720,71 +52784,89 @@ components:
           format: date-time
           type: string
         description:
+          description: The Revision Description metadata property if revision is of
+            a drawing.
           type: string
         documentId:
+          description: The document that contains the item.
           type: string
         documentName:
+          description: The name of the document that contains the item.
           type: string
         elementId:
+          description: The element that contains the item.
           type: string
         elementType:
+          description: "The type of item 0: Part Studio, 1: Assembly, 2: Drawing.\
+            \ 4: Blob"
           format: int32
           type: integer
         errorMessage:
           type: string
-        fileName:
-          type: string
         flatPartInsertableId:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         insertableId:
           type: string
         isObsolete:
+          description: Whether the revision has been obsoleted.
           type: boolean
         isRereleasable:
+          description: "If true, the revision can be created again."
           type: boolean
         isTranslatable:
           type: boolean
-        meshStates:
-          items:
-            type: boolean
-          type: array
         mimeType:
           type: string
         name:
+          description: Name of the resource.
           type: string
         nextRevisionId:
+          description: The next revision if applicable. null for the latest revision.
           type: string
         obsoletionPackageId:
+          description: The OBSOLETION release package that obsoleted this revision
+            if applicable.
           type: string
         partId:
           type: string
         partNumber:
+          description: The Part Number with which the item was revised.
           type: string
         previousRevisionId:
+          description: The previous revision if applicable. null for first revision.
           type: string
         releaseCreatedDate:
           format: date-time
           type: string
         releaseId:
+          description: The release package that created this revision.
           type: string
         releaseName:
+          description: The name of the release package that created this item.
           type: string
         releasedBy:
           $ref: '#/components/schemas/BTUserSummaryInfo'
         revision:
+          description: The id of the revision.
           type: string
         revisionRuleId:
           type: string
         versionId:
+          description: The version of the document that contains this revision.
           type: string
         versionName:
+          description: The name of the version of the document that contains this
+            revision.
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -51795,12 +52877,10 @@ components:
         partNumber: partNumber
         href: https://openapi-generator.tech
         items:
-        - fileName: fileName
-          obsoletionPackageId: obsoletionPackageId
+        - obsoletionPackageId: obsoletionPackageId
           configuration: configuration
           partId: partId
           releaseName: releaseName
-          changeOrderId: changeOrderId
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -51809,7 +52889,6 @@ components:
             name: name
             id: id
           description: description
-          canCurrentUserObsolete: true
           mimeType: mimeType
           versionName: versionName
           createdAt: 2000-01-23T04:56:07.000+00:00
@@ -51825,9 +52904,6 @@ components:
           releasedBy: null
           revisionRuleId: revisionRuleId
           errorMessage: errorMessage
-          meshStates:
-          - true
-          - true
           documentName: documentName
           isObsolete: true
           autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -51843,12 +52919,10 @@ components:
           viewRef: https://openapi-generator.tech
           elementType: 0
           previousRevisionId: previousRevisionId
-        - fileName: fileName
-          obsoletionPackageId: obsoletionPackageId
+        - obsoletionPackageId: obsoletionPackageId
           configuration: configuration
           partId: partId
           releaseName: releaseName
-          changeOrderId: changeOrderId
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -51857,7 +52931,6 @@ components:
             name: name
             id: id
           description: description
-          canCurrentUserObsolete: true
           mimeType: mimeType
           versionName: versionName
           createdAt: 2000-01-23T04:56:07.000+00:00
@@ -51873,9 +52946,6 @@ components:
           releasedBy: null
           revisionRuleId: revisionRuleId
           errorMessage: errorMessage
-          meshStates:
-          - true
-          - true
           documentName: documentName
           isObsolete: true
           autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -51893,18 +52963,22 @@ components:
           previousRevisionId: previousRevisionId
       properties:
         href:
+          description: URI for current page of resources.
           format: uri
           type: string
         items:
+          description: Array of items in the current page.
           items:
             $ref: '#/components/schemas/BTRevisionInfo'
           type: array
         next:
+          description: URI for next page of the resources if more are available.
           format: uri
           type: string
         partNumber:
           type: string
         previous:
+          description: URI for previous page of the resources.
           format: uri
           type: string
       type: object
@@ -51922,6 +52996,9 @@ components:
       properties:
         btType:
           type: string
+        buildDurationMillis:
+          format: double
+          type: number
         deletedGeometryMateIds:
           items:
             type: string
@@ -52001,6 +53078,8 @@ components:
           type: array
         quickSummary:
           type: string
+        sentTimeISO:
+          type: string
         versionForRasterization:
           $ref: '#/components/schemas/BTElementDisplayData-326'
       type: object
@@ -52069,6 +53148,23 @@ components:
           featureId: featureId
           documentMicroversion: documentMicroversion
           status: DeletedElement
+        patterns:
+        - seedToPatternInstances:
+            key:
+            - seedToPatternInstances
+            - seedToPatternInstances
+          name: name
+          id: id
+          suppressed: true
+          type: LINEAR
+        - seedToPatternInstances:
+            key:
+            - seedToPatternInstances
+            - seedToPatternInstances
+          name: name
+          id: id
+          suppressed: true
+          type: LINEAR
         documentId: documentId
         fullConfiguration: fullConfiguration
         partNumber: partNumber
@@ -52087,12 +53183,14 @@ components:
         elementId:
           type: string
         features:
+          description: List of Assembly features including those are created by replicates.
           items:
             $ref: '#/components/schemas/BTAssemblyFeatureInfo'
           type: array
         fullConfiguration:
           type: string
         instances:
+          description: List of instances including those created by patterns and replicates.
           items:
             $ref: '#/components/schemas/BTAssemblyInstanceInfo'
           type: array
@@ -52102,6 +53200,11 @@ components:
           type: array
         partNumber:
           type: string
+        patterns:
+          description: List of patterns.
+          items:
+            $ref: '#/components/schemas/BTAssemblyPatternInfo'
+          type: array
         revision:
           type: string
       type: object
@@ -53727,6 +54830,12 @@ components:
           - BRIDGING_CURVE_EDGE_BELONG_TO_FACE
           - BRIDGING_CURVE_NO_START_SELECTION
           - BRIDGING_CURVE_NO_END_SELECTION
+          - NAMED_VIEW_INVALID
+          - MUTUAL_TRIM_SAME_SURFACE_USED
+          - MUTUAL_TRIM_SURFACE_NOT_SELECTED
+          - MUTUAL_TRIM_GENERIC_ERROR
+          - HOLE_CSINK_ANGLE_TOO_WIDE
+          - HOLE_CSINK_ANGLE_TOO_NARROW
           - UNKNOWN
           type: string
         errorMessage:
@@ -54012,6 +55121,23 @@ components:
           featureId: featureId
           documentMicroversion: documentMicroversion
           status: DeletedElement
+        patterns:
+        - seedToPatternInstances:
+            key:
+            - seedToPatternInstances
+            - seedToPatternInstances
+          name: name
+          id: id
+          suppressed: true
+          type: LINEAR
+        - seedToPatternInstances:
+            key:
+            - seedToPatternInstances
+            - seedToPatternInstances
+          name: name
+          id: id
+          suppressed: true
+          type: LINEAR
         documentId: documentId
         fullConfiguration: fullConfiguration
         partNumber: partNumber
@@ -54030,17 +55156,24 @@ components:
         elementId:
           type: string
         features:
+          description: List of Assembly features including those are created by replicates.
           items:
             $ref: '#/components/schemas/BTAssemblyFeatureInfo'
           type: array
         fullConfiguration:
           type: string
         instances:
+          description: List of instances including those created by patterns and replicates.
           items:
             $ref: '#/components/schemas/BTAssemblyInstanceInfo'
           type: array
         partNumber:
           type: string
+        patterns:
+          description: List of patterns.
+          items:
+            $ref: '#/components/schemas/BTAssemblyPatternInfo'
+          type: array
         revision:
           type: string
       type: object
@@ -54747,17 +55880,21 @@ components:
         admin:
           type: boolean
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         member:
           $ref: '#/components/schemas/BTUserSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         team:
           $ref: '#/components/schemas/BTTeamSummaryInfo'
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -54820,9 +55957,11 @@ components:
         description:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isContainer:
           type: boolean
@@ -54836,6 +55975,7 @@ components:
         modifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
+          description: Name of the resource.
           type: string
         owner:
           $ref: '#/components/schemas/BTOwnerInfo'
@@ -54853,6 +55993,7 @@ components:
         unparentHref:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -55253,11 +56394,14 @@ components:
         failureReason:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         requestElementId:
           type: string
@@ -55282,6 +56426,7 @@ components:
         versionId:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
         workspaceId:
@@ -55393,12 +56538,10 @@ components:
           - nodeIds
           metadataUnchanged: true
           toRevision:
-            fileName: fileName
             obsoletionPackageId: obsoletionPackageId
             configuration: configuration
             partId: partId
             releaseName: releaseName
-            changeOrderId: changeOrderId
             approvers:
             - date: 2000-01-23T04:56:07.000+00:00
               name: name
@@ -55407,7 +56550,6 @@ components:
               name: name
               id: id
             description: description
-            canCurrentUserObsolete: true
             mimeType: mimeType
             versionName: versionName
             createdAt: 2000-01-23T04:56:07.000+00:00
@@ -55423,9 +56565,6 @@ components:
             releasedBy: null
             revisionRuleId: revisionRuleId
             errorMessage: errorMessage
-            meshStates:
-            - true
-            - true
             documentName: documentName
             isObsolete: true
             autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -55446,12 +56585,10 @@ components:
           - nodeIds
           metadataUnchanged: true
           toRevision:
-            fileName: fileName
             obsoletionPackageId: obsoletionPackageId
             configuration: configuration
             partId: partId
             releaseName: releaseName
-            changeOrderId: changeOrderId
             approvers:
             - date: 2000-01-23T04:56:07.000+00:00
               name: name
@@ -55460,7 +56597,6 @@ components:
               name: name
               id: id
             description: description
-            canCurrentUserObsolete: true
             mimeType: mimeType
             versionName: versionName
             createdAt: 2000-01-23T04:56:07.000+00:00
@@ -55476,9 +56612,6 @@ components:
             releasedBy: null
             revisionRuleId: revisionRuleId
             errorMessage: errorMessage
-            meshStates:
-            - true
-            - true
             documentName: documentName
             isObsolete: true
             autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -55512,12 +56645,10 @@ components:
         - nodeIds
         metadataUnchanged: true
         toRevision:
-          fileName: fileName
           obsoletionPackageId: obsoletionPackageId
           configuration: configuration
           partId: partId
           releaseName: releaseName
-          changeOrderId: changeOrderId
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -55526,7 +56657,6 @@ components:
             name: name
             id: id
           description: description
-          canCurrentUserObsolete: true
           mimeType: mimeType
           versionName: versionName
           createdAt: 2000-01-23T04:56:07.000+00:00
@@ -55542,9 +56672,6 @@ components:
           releasedBy: null
           revisionRuleId: revisionRuleId
           errorMessage: errorMessage
-          meshStates:
-          - true
-          - true
           documentName: documentName
           isObsolete: true
           autoObsoletionReleaseName: autoObsoletionReleaseName
@@ -55852,19 +56979,6 @@ components:
             $ref: '#/components/schemas/BTPropertyValueParam'
           type: array
       type: object
-    BTUpdateWorkflowableTestObjectParams:
-      example:
-        properties:
-        - propertyId: propertyId
-          value: "{}"
-        - propertyId: propertyId
-          value: "{}"
-      properties:
-        properties:
-          items:
-            $ref: '#/components/schemas/BTPropertyValueParam'
-          type: array
-      type: object
     BTUserAppMessageBody:
       example:
         clientId: clientId
@@ -55941,18 +57055,22 @@ components:
         viewRef: https://openapi-generator.tech
       properties:
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         image:
           type: string
         name:
+          description: Name of the resource.
           type: string
         state:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -55985,13 +57103,13 @@ components:
         clientId: clientId
         role: 5
         isGuest: true
-        oauth2Scopes: 1
+        oauth2Scopes: 5
         isLight: true
         roles:
         - ANONYMOUS
         - ANONYMOUS
         planGroup: planGroup
-        source: 5
+        source: 2
         firstName: firstName
         lastLoginTime: 2000-01-23T04:56:07.000+00:00
         personalMessageAllowed: true
@@ -56003,21 +57121,22 @@ components:
           admin: true
           description: description
           ownerId: ownerId
-          type: 6
+          type: 1
           domainPrefix: domainPrefix
           secondaryDomainPrefixes:
           - secondaryDomainPrefixes
           - secondaryDomainPrefixes
           name: name
+          enterpriseSubtype: 0
           href: https://openapi-generator.tech
           id: id
-          state: 0
+          state: 6
           viewRef: https://openapi-generator.tech
           enterpriseBaseUrl: enterpriseBaseUrl
         documentationName: documentationName
         href: https://openapi-generator.tech
         id: id
-        state: 2
+        state: 7
         viewRef: https://openapi-generator.tech
         documentationNameOverride: documentationNameOverride
         email: email
@@ -56039,9 +57158,11 @@ components:
         globalPermissions:
           $ref: '#/components/schemas/GlobalPermissionInfo'
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         image:
           type: string
@@ -56055,6 +57176,7 @@ components:
         lastName:
           type: string
         name:
+          description: Name of the resource.
           type: string
         oauth2Scopes:
           format: int64
@@ -56087,6 +57209,7 @@ components:
           format: int32
           type: integer
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -56715,9 +57838,11 @@ components:
         documentId:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         lastModifier:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
@@ -56727,6 +57852,7 @@ components:
           format: date-time
           type: string
         name:
+          description: Name of the resource.
           type: string
         overrideDate:
           format: date-time
@@ -56741,6 +57867,7 @@ components:
         type:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -57102,11 +58229,14 @@ components:
         folderId:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         name:
+          description: Name of the resource.
           type: string
         options:
           $ref: '#/components/schemas/BTWebhookOptions'
@@ -57115,6 +58245,7 @@ components:
         url:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -57453,6 +58584,7 @@ components:
           type: string
       type: object
     BTWorkflowObserverOptionInfo:
+      description: Array of items in the current page.
       example:
         role:
           name: name
@@ -57718,9 +58850,11 @@ components:
         alias:
           $ref: '#/components/schemas/BTAliasInfo'
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         identityType:
           format: int32
@@ -57732,6 +58866,7 @@ components:
         user:
           $ref: '#/components/schemas/BTUserSummaryInfo'
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -58112,312 +59247,6 @@ components:
         removable:
           type: boolean
       type: object
-    BTWorkflowableTestObjectInfo:
-      example:
-        workflow:
-          approverIds:
-          - approverIds
-          - approverIds
-          metadataState: metadataState
-          notifierIds:
-          - notifierIds
-          - notifierIds
-          errorMessage: errorMessage
-          canBeDiscarded: true
-          state:
-            editableProperties:
-            - editableProperties
-            - editableProperties
-            nonEditableProperties:
-            - nonEditableProperties
-            - nonEditableProperties
-            requiredItemProperties:
-            - requiredItemProperties
-            - requiredItemProperties
-            requiredProperties:
-            - requiredProperties
-            - requiredProperties
-            displayName: displayName
-            editPermissions:
-            - editPermissions
-            - editPermissions
-            approverSourceProperty: approverSourceProperty
-            name: name
-            notifierSourceProperty: notifierSourceProperty
-          isFrozen: true
-          actions:
-          - alwaysAllow: true
-            isAdminOverride: true
-            requiredProperties:
-            - requiredProperties
-            - requiredProperties
-            allowIfApprovers: true
-            tooltip: tooltip
-            action: action
-            isApproverAction: true
-            label: label
-            uiHint: uiHint
-            allowIfNoApprovers: true
-          - alwaysAllow: true
-            isAdminOverride: true
-            requiredProperties:
-            - requiredProperties
-            - requiredProperties
-            allowIfApprovers: true
-            tooltip: tooltip
-            action: action
-            isApproverAction: true
-            label: label
-            uiHint: uiHint
-            allowIfNoApprovers: true
-          isCreator: true
-          debugMicroversionId: debugMicroversionId
-          isDiscarded: true
-          isSetup: true
-        modifiedAt: 2000-01-23T04:56:07.000+00:00
-        description: description
-        workflowError: workflowError
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        companyId: companyId
-        createdBy:
-          image: image
-          name: name
-          href: https://openapi-generator.tech
-          id: id
-          state: 6
-          viewRef: https://openapi-generator.tech
-        name: name
-        documentId: documentId
-        modifiedBy:
-          image: image
-          name: name
-          href: https://openapi-generator.tech
-          id: id
-          state: 6
-          viewRef: https://openapi-generator.tech
-        href: https://openapi-generator.tech
-        id: id
-        viewRef: https://openapi-generator.tech
-        properties:
-        - dirty: true
-          editableInUi: true
-          isNotifierProperty: true
-          defaultValue: "{}"
-          editable: true
-          multivalued: true
-          propertySource: 7
-          validator:
-            quantityType: 3
-            minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
-            pattern: pattern
-            maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
-            maxCount: 5
-            maxLength: 5
-          computedPropertyError: computedPropertyError
-          computedAssemblyProperty: true
-          teamsOnly: true
-          required: true
-          usersOnly: true
-          uiHints:
-            multiline: true
-          schemaId: schemaId
-          valueType: valueType
-          name: name
-          initialValue: "{}"
-          isApproverProperty: true
-          propertyId: propertyId
-          value: "{}"
-          computedProperty: true
-          observers:
-          - entryType: USER
-            new: true
-            approvalDate: 2000-01-23T04:56:07.000+00:00
-            approverId: approverId
-            modifiedAt: 2000-01-23T04:56:07.000+00:00
-            approvalState: NONE
-            description: description
-            approverName: approverName
-            entryId: entryId
-            createdAt: 2000-01-23T04:56:07.000+00:00
-            companyId: companyId
-            observationType: 2
-            createdBy: createdBy
-            removable: true
-            rejectionDate: 2000-01-23T04:56:07.000+00:00
-            name: name
-            adminOverride: true
-            modifiedBy: modifiedBy
-            id: id
-            propertyId: propertyId
-            associatedStates: associatedStates
-            objectId: objectId
-          - entryType: USER
-            new: true
-            approvalDate: 2000-01-23T04:56:07.000+00:00
-            approverId: approverId
-            modifiedAt: 2000-01-23T04:56:07.000+00:00
-            approvalState: NONE
-            description: description
-            approverName: approverName
-            entryId: entryId
-            createdAt: 2000-01-23T04:56:07.000+00:00
-            companyId: companyId
-            observationType: 2
-            createdBy: createdBy
-            removable: true
-            rejectionDate: 2000-01-23T04:56:07.000+00:00
-            name: name
-            adminOverride: true
-            modifiedBy: modifiedBy
-            id: id
-            propertyId: propertyId
-            associatedStates: associatedStates
-            objectId: objectId
-          enumValues:
-          - label: label
-            state: 0
-            value: value
-          - label: label
-            state: 0
-            value: value
-        - dirty: true
-          editableInUi: true
-          isNotifierProperty: true
-          defaultValue: "{}"
-          editable: true
-          multivalued: true
-          propertySource: 7
-          validator:
-            quantityType: 3
-            minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
-            pattern: pattern
-            maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
-            maxCount: 5
-            maxLength: 5
-          computedPropertyError: computedPropertyError
-          computedAssemblyProperty: true
-          teamsOnly: true
-          required: true
-          usersOnly: true
-          uiHints:
-            multiline: true
-          schemaId: schemaId
-          valueType: valueType
-          name: name
-          initialValue: "{}"
-          isApproverProperty: true
-          propertyId: propertyId
-          value: "{}"
-          computedProperty: true
-          observers:
-          - entryType: USER
-            new: true
-            approvalDate: 2000-01-23T04:56:07.000+00:00
-            approverId: approverId
-            modifiedAt: 2000-01-23T04:56:07.000+00:00
-            approvalState: NONE
-            description: description
-            approverName: approverName
-            entryId: entryId
-            createdAt: 2000-01-23T04:56:07.000+00:00
-            companyId: companyId
-            observationType: 2
-            createdBy: createdBy
-            removable: true
-            rejectionDate: 2000-01-23T04:56:07.000+00:00
-            name: name
-            adminOverride: true
-            modifiedBy: modifiedBy
-            id: id
-            propertyId: propertyId
-            associatedStates: associatedStates
-            objectId: objectId
-          - entryType: USER
-            new: true
-            approvalDate: 2000-01-23T04:56:07.000+00:00
-            approverId: approverId
-            modifiedAt: 2000-01-23T04:56:07.000+00:00
-            approvalState: NONE
-            description: description
-            approverName: approverName
-            entryId: entryId
-            createdAt: 2000-01-23T04:56:07.000+00:00
-            companyId: companyId
-            observationType: 2
-            createdBy: createdBy
-            removable: true
-            rejectionDate: 2000-01-23T04:56:07.000+00:00
-            name: name
-            adminOverride: true
-            modifiedBy: modifiedBy
-            id: id
-            propertyId: propertyId
-            associatedStates: associatedStates
-            objectId: objectId
-          enumValues:
-          - label: label
-            state: 0
-            value: value
-          - label: label
-            state: 0
-            value: value
-        workflowId:
-          companyId: companyId
-          versionId: versionId
-          workflowId: workflowId
-        info:
-          key: info
-      properties:
-        companyId:
-          type: string
-        createdAt:
-          format: date-time
-          type: string
-        createdBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        description:
-          type: string
-        documentId:
-          type: string
-        href:
-          format: uri
-          type: string
-        id:
-          type: string
-        info:
-          additionalProperties:
-            type: string
-          type: object
-        modifiedAt:
-          format: date-time
-          type: string
-        modifiedBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        name:
-          type: string
-        properties:
-          items:
-            $ref: '#/components/schemas/BTWorkflowPropertyInfo'
-          type: array
-        viewRef:
-          format: uri
-          type: string
-        workflow:
-          $ref: '#/components/schemas/BTWorkflowSnapshotInfo'
-        workflowError:
-          type: string
-          writeOnly: true
-        workflowId:
-          $ref: '#/components/schemas/BTPublishedWorkflowId'
-      type: object
     BTWorkspaceInfo:
       example:
         parent: parent
@@ -58657,9 +59486,11 @@ components:
         documentId:
           type: string
         href:
+          description: URI to fetch complete information of the resource.
           format: uri
           type: string
         id:
+          description: Id of the resource.
           type: string
         isReadOnly:
           type: boolean
@@ -58671,6 +59502,7 @@ components:
           format: date-time
           type: string
         name:
+          description: Name of the resource.
           type: string
         overrideDate:
           format: date-time
@@ -58686,6 +59518,7 @@ components:
         type:
           type: string
         viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
       type: object
@@ -61434,96 +62267,6 @@ components:
           type: string
         translationId:
           type: string
-      type: object
-    BTDocumentSummaryInfo_allOf:
-      properties:
-        anonymousAccessAllowed:
-          type: boolean
-        anonymousAllowsExport:
-          type: boolean
-        canUnshare:
-          type: boolean
-        createdWithEducationPlan:
-          type: boolean
-        defaultElementId:
-          type: string
-        defaultWorkspace:
-          $ref: '#/components/schemas/BTWorkspaceInfo'
-        documentLabels:
-          items:
-            $ref: '#/components/schemas/BTDocumentLabelInfo'
-          type: array
-        documentType:
-          format: int32
-          type: integer
-        hasReleaseRevisionableObjects:
-          type: boolean
-        hasRelevantInsertables:
-          type: boolean
-        isOrphaned:
-          type: boolean
-        isUsingManagedWorkflow:
-          type: boolean
-        likedByCurrentUser:
-          type: boolean
-        likes:
-          format: int64
-          type: integer
-        notRevisionManaged:
-          type: boolean
-        notes:
-          type: string
-        numberOfTimesCopied:
-          format: int64
-          type: integer
-        numberOfTimesReferenced:
-          format: int64
-          type: integer
-        parentId:
-          type: string
-        permission:
-          enum:
-          - NOACCESS
-          - ANONYMOUS_ACCESS
-          - READ
-          - READ_COPY_EXPORT
-          - COMMENT
-          - WRITE
-          - RESHARE
-          - FULL
-          - OWNER
-          type: string
-        permissionSet:
-          items:
-            type: string
-          type: array
-        public:
-          type: boolean
-        recentVersion:
-          $ref: '#/components/schemas/BTBaseInfo'
-        sequence:
-          type: string
-        supportTeamUserAndShared:
-          type: boolean
-        tags:
-          items:
-            type: string
-          type: array
-        thumbnail:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        totalWorkspacesScheduledForUpdate:
-          format: int32
-          type: integer
-        totalWorkspacesUpdating:
-          format: int32
-          type: integer
-        trash:
-          type: boolean
-        trashedAt:
-          format: date-time
-          type: string
-        userAccountLimitsBreached:
-          type: boolean
       type: object
     BTDocumentSummarySearchInfo_allOf:
       properties:

@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Identity** | Pointer to [**BTIdentityInfo**](BTIdentityInfo.md) |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 

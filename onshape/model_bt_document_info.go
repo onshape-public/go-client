@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.158.9878-ff51e1211d95
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -2897,61 +2897,65 @@ func (v *NullableBTDocumentInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTDocumentInfo struct {
-	AnonymousAccessAllowed            *bool                   `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport             *bool                   `json:"anonymousAllowsExport,omitempty"`
-	BetaCapabilityIds                 []string                `json:"betaCapabilityIds,omitempty"`
-	CanMove                           *bool                   `json:"canMove,omitempty"`
-	CanUnshare                        *bool                   `json:"canUnshare,omitempty"`
-	CreatedAt                         *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy                         *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	CreatedWithEducationPlan          *bool                   `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                  *string                 `json:"defaultElementId,omitempty"`
-	DefaultWorkspace                  *BTWorkspaceInfo        `json:"defaultWorkspace,omitempty"`
-	Description                       *string                 `json:"description,omitempty"`
-	DocumentLabels                    []BTDocumentLabelInfo   `json:"documentLabels,omitempty"`
-	DocumentThumbnailElementId        *string                 `json:"documentThumbnailElementId,omitempty"`
-	DocumentType                      *int32                  `json:"documentType,omitempty"`
-	DuplicateNameViolationError       *string                 `json:"duplicateNameViolationError,omitempty"`
-	HasReleaseRevisionableObjects     *bool                   `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables            *bool                   `json:"hasRelevantInsertables,omitempty"`
-	Href                              *string                 `json:"href,omitempty"`
-	Id                                *string                 `json:"id,omitempty"`
-	IsContainer                       *bool                   `json:"isContainer,omitempty"`
-	IsEnterpriseOwned                 *bool                   `json:"isEnterpriseOwned,omitempty"`
-	IsMutable                         *bool                   `json:"isMutable,omitempty"`
-	IsOrphaned                        *bool                   `json:"isOrphaned,omitempty"`
-	IsUpgradedToLatestVersion         *bool                   `json:"isUpgradedToLatestVersion,omitempty"`
-	IsUsingManagedWorkflow            *bool                   `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                *bool                   `json:"likedByCurrentUser,omitempty"`
-	Likes                             *int64                  `json:"likes,omitempty"`
-	ModifiedAt                        *JSONTime               `json:"modifiedAt,omitempty"`
-	ModifiedBy                        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
-	Name                              *string                 `json:"name,omitempty"`
-	NotRevisionManaged                *bool                   `json:"notRevisionManaged,omitempty"`
-	Notes                             *string                 `json:"notes,omitempty"`
-	NumberOfTimesCopied               *int64                  `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced           *int64                  `json:"numberOfTimesReferenced,omitempty"`
-	Owner                             *BTOwnerInfo            `json:"owner,omitempty"`
-	ParentId                          *string                 `json:"parentId,omitempty"`
-	Permission                        *string                 `json:"permission,omitempty"`
-	PermissionSet                     []string                `json:"permissionSet,omitempty"`
-	ProjectId                         *string                 `json:"projectId,omitempty"`
-	Public                            *bool                   `json:"public,omitempty"`
-	RecentVersion                     *BTBaseInfo             `json:"recentVersion,omitempty"`
-	ResourceType                      *string                 `json:"resourceType,omitempty"`
-	Sequence                          *string                 `json:"sequence,omitempty"`
-	SupportTeamUserAndShared          *bool                   `json:"supportTeamUserAndShared,omitempty"`
-	Tags                              []string                `json:"tags,omitempty"`
-	Thumbnail                         *BTThumbnailInfo        `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate *int32                  `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating           *int32                  `json:"totalWorkspacesUpdating,omitempty"`
-	TracingEnabled                    *bool                   `json:"tracingEnabled,omitempty"`
-	Trash                             *bool                   `json:"trash,omitempty"`
-	TrashedAt                         *JSONTime               `json:"trashedAt,omitempty"`
-	TreeHref                          *string                 `json:"treeHref,omitempty"`
-	UnparentHref                      *string                 `json:"unparentHref,omitempty"`
-	UserAccountLimitsBreached         *bool                   `json:"userAccountLimitsBreached,omitempty"`
-	ViewRef                           *string                 `json:"viewRef,omitempty"`
+	AnonymousAccessAllowed        *bool                   `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport         *bool                   `json:"anonymousAllowsExport,omitempty"`
+	BetaCapabilityIds             []string                `json:"betaCapabilityIds,omitempty"`
+	CanMove                       *bool                   `json:"canMove,omitempty"`
+	CanUnshare                    *bool                   `json:"canUnshare,omitempty"`
+	CreatedAt                     *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy                     *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	CreatedWithEducationPlan      *bool                   `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId              *string                 `json:"defaultElementId,omitempty"`
+	DefaultWorkspace              *BTWorkspaceInfo        `json:"defaultWorkspace,omitempty"`
+	Description                   *string                 `json:"description,omitempty"`
+	DocumentLabels                []BTDocumentLabelInfo   `json:"documentLabels,omitempty"`
+	DocumentThumbnailElementId    *string                 `json:"documentThumbnailElementId,omitempty"`
+	DocumentType                  *int32                  `json:"documentType,omitempty"`
+	DuplicateNameViolationError   *string                 `json:"duplicateNameViolationError,omitempty"`
+	HasReleaseRevisionableObjects *bool                   `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables        *bool                   `json:"hasRelevantInsertables,omitempty"`
+	// URI to fetch complete information of the resource.
+	Href *string `json:"href,omitempty"`
+	// Id of the resource.
+	Id                        *string                 `json:"id,omitempty"`
+	IsContainer               *bool                   `json:"isContainer,omitempty"`
+	IsEnterpriseOwned         *bool                   `json:"isEnterpriseOwned,omitempty"`
+	IsMutable                 *bool                   `json:"isMutable,omitempty"`
+	IsOrphaned                *bool                   `json:"isOrphaned,omitempty"`
+	IsUpgradedToLatestVersion *bool                   `json:"isUpgradedToLatestVersion,omitempty"`
+	IsUsingManagedWorkflow    *bool                   `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser        *bool                   `json:"likedByCurrentUser,omitempty"`
+	Likes                     *int64                  `json:"likes,omitempty"`
+	ModifiedAt                *JSONTime               `json:"modifiedAt,omitempty"`
+	ModifiedBy                *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
+	// Name of the resource.
+	Name                              *string          `json:"name,omitempty"`
+	NotRevisionManaged                *bool            `json:"notRevisionManaged,omitempty"`
+	Notes                             *string          `json:"notes,omitempty"`
+	NumberOfTimesCopied               *int64           `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced           *int64           `json:"numberOfTimesReferenced,omitempty"`
+	Owner                             *BTOwnerInfo     `json:"owner,omitempty"`
+	ParentId                          *string          `json:"parentId,omitempty"`
+	Permission                        *string          `json:"permission,omitempty"`
+	PermissionSet                     []string         `json:"permissionSet,omitempty"`
+	ProjectId                         *string          `json:"projectId,omitempty"`
+	Public                            *bool            `json:"public,omitempty"`
+	RecentVersion                     *BTBaseInfo      `json:"recentVersion,omitempty"`
+	ResourceType                      *string          `json:"resourceType,omitempty"`
+	Sequence                          *string          `json:"sequence,omitempty"`
+	SupportTeamUserAndShared          *bool            `json:"supportTeamUserAndShared,omitempty"`
+	Tags                              []string         `json:"tags,omitempty"`
+	Thumbnail                         *BTThumbnailInfo `json:"thumbnail,omitempty"`
+	TotalWorkspacesScheduledForUpdate *int32           `json:"totalWorkspacesScheduledForUpdate,omitempty"`
+	TotalWorkspacesUpdating           *int32           `json:"totalWorkspacesUpdating,omitempty"`
+	TracingEnabled                    *bool            `json:"tracingEnabled,omitempty"`
+	Trash                             *bool            `json:"trash,omitempty"`
+	TrashedAt                         *JSONTime        `json:"trashedAt,omitempty"`
+	TreeHref                          *string          `json:"treeHref,omitempty"`
+	UnparentHref                      *string          `json:"unparentHref,omitempty"`
+	UserAccountLimitsBreached         *bool            `json:"userAccountLimitsBreached,omitempty"`
+	// URI to visualize the resource in a webclient if applicable.
+	ViewRef *string `json:"viewRef,omitempty"`
 }
 
 // Newbase_BTDocumentInfo instantiates a new base_BTDocumentInfo object

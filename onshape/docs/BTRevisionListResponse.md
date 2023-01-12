@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Href** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]BTRevisionInfo**](BTRevisionInfo.md) |  | [optional] 
-**Next** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI for current page of resources. | [optional] 
+**Items** | Pointer to [**[]BTRevisionInfo**](BTRevisionInfo.md) | Array of items in the current page. | [optional] 
+**Next** | Pointer to **string** | URI for next page of the resources if more are available. | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
-**Previous** | Pointer to **string** |  | [optional] 
+**Previous** | Pointer to **string** | URI for previous page of the resources. | [optional] 
 
 ## Methods
 
