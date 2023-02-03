@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.158.10882-bf44380b65e2
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,6 +18,7 @@ import (
 // BTRootAssemblyDisplayData96 struct for BTRootAssemblyDisplayData96
 type BTRootAssemblyDisplayData96 struct {
 	BtType                                 *string                                       `json:"btType,omitempty"`
+	BuildDurationMillis                    *float64                                      `json:"buildDurationMillis,omitempty"`
 	DeletedGeometryMateIds                 []string                                      `json:"deletedGeometryMateIds,omitempty"`
 	DeletedLoads                           []string                                      `json:"deletedLoads,omitempty"`
 	DeletedMateConnectorIds                []string                                      `json:"deletedMateConnectorIds,omitempty"`
@@ -44,6 +45,7 @@ type BTRootAssemblyDisplayData96 struct {
 	OriginDisplayData                      *BTOriginDisplayData934                       `json:"originDisplayData,omitempty"`
 	PartStudioDisplayData                  []BTPartStudioDisplayDataBase2751             `json:"partStudioDisplayData,omitempty"`
 	QuickSummary                           *string                                       `json:"quickSummary,omitempty"`
+	SentTimeISO                            *string                                       `json:"sentTimeISO,omitempty"`
 	VersionForRasterization                *BTElementDisplayData326                      `json:"versionForRasterization,omitempty"`
 }
 
@@ -94,6 +96,38 @@ func (o *BTRootAssemblyDisplayData96) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTRootAssemblyDisplayData96) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetBuildDurationMillis returns the BuildDurationMillis field value if set, zero value otherwise.
+func (o *BTRootAssemblyDisplayData96) GetBuildDurationMillis() float64 {
+	if o == nil || o.BuildDurationMillis == nil {
+		var ret float64
+		return ret
+	}
+	return *o.BuildDurationMillis
+}
+
+// GetBuildDurationMillisOk returns a tuple with the BuildDurationMillis field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRootAssemblyDisplayData96) GetBuildDurationMillisOk() (*float64, bool) {
+	if o == nil || o.BuildDurationMillis == nil {
+		return nil, false
+	}
+	return o.BuildDurationMillis, true
+}
+
+// HasBuildDurationMillis returns a boolean if a field has been set.
+func (o *BTRootAssemblyDisplayData96) HasBuildDurationMillis() bool {
+	if o != nil && o.BuildDurationMillis != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBuildDurationMillis gets a reference to the given float64 and assigns it to the BuildDurationMillis field.
+func (o *BTRootAssemblyDisplayData96) SetBuildDurationMillis(v float64) {
+	o.BuildDurationMillis = &v
 }
 
 // GetDeletedGeometryMateIds returns the DeletedGeometryMateIds field value if set, zero value otherwise.
@@ -928,6 +962,38 @@ func (o *BTRootAssemblyDisplayData96) SetQuickSummary(v string) {
 	o.QuickSummary = &v
 }
 
+// GetSentTimeISO returns the SentTimeISO field value if set, zero value otherwise.
+func (o *BTRootAssemblyDisplayData96) GetSentTimeISO() string {
+	if o == nil || o.SentTimeISO == nil {
+		var ret string
+		return ret
+	}
+	return *o.SentTimeISO
+}
+
+// GetSentTimeISOOk returns a tuple with the SentTimeISO field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRootAssemblyDisplayData96) GetSentTimeISOOk() (*string, bool) {
+	if o == nil || o.SentTimeISO == nil {
+		return nil, false
+	}
+	return o.SentTimeISO, true
+}
+
+// HasSentTimeISO returns a boolean if a field has been set.
+func (o *BTRootAssemblyDisplayData96) HasSentTimeISO() bool {
+	if o != nil && o.SentTimeISO != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSentTimeISO gets a reference to the given string and assigns it to the SentTimeISO field.
+func (o *BTRootAssemblyDisplayData96) SetSentTimeISO(v string) {
+	o.SentTimeISO = &v
+}
+
 // GetVersionForRasterization returns the VersionForRasterization field value if set, zero value otherwise.
 func (o *BTRootAssemblyDisplayData96) GetVersionForRasterization() BTElementDisplayData326 {
 	if o == nil || o.VersionForRasterization == nil {
@@ -964,6 +1030,9 @@ func (o BTRootAssemblyDisplayData96) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.BuildDurationMillis != nil {
+		toSerialize["buildDurationMillis"] = o.BuildDurationMillis
 	}
 	if o.DeletedGeometryMateIds != nil {
 		toSerialize["deletedGeometryMateIds"] = o.DeletedGeometryMateIds
@@ -1042,6 +1111,9 @@ func (o BTRootAssemblyDisplayData96) MarshalJSON() ([]byte, error) {
 	}
 	if o.QuickSummary != nil {
 		toSerialize["quickSummary"] = o.QuickSummary
+	}
+	if o.SentTimeISO != nil {
+		toSerialize["sentTimeISO"] = o.SentTimeISO
 	}
 	if o.VersionForRasterization != nil {
 		toSerialize["versionForRasterization"] = o.VersionForRasterization

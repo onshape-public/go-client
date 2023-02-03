@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 **DiscountInfo** | Pointer to [**BTDiscountInfo**](BTDiscountInfo.md) |  | [optional] 
 **Group** | Pointer to **string** |  | [optional] 
 **Hidden** | Pointer to **bool** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Interval** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **OnshapePlan** | Pointer to **bool** |  | [optional] 
 **PlanType** | Pointer to **int32** |  | [optional] 
 **TrialPeriodDays** | Pointer to **int32** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 
