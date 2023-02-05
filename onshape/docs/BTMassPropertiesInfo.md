@@ -1,4 +1,4 @@
-# BTMassPropertiesInfoNull
+# BTMassPropertiesInfo
 
 ## Properties
 
@@ -16,245 +16,245 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewBTMassPropertiesInfoNull
+### NewBTMassPropertiesInfo
 
-`func NewBTMassPropertiesInfoNull() *BTMassPropertiesInfoNull`
+`func NewBTMassPropertiesInfo() *BTMassPropertiesInfo`
 
-NewBTMassPropertiesInfoNull instantiates a new BTMassPropertiesInfoNull object
+NewBTMassPropertiesInfo instantiates a new BTMassPropertiesInfo object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBTMassPropertiesInfoNullWithDefaults
+### NewBTMassPropertiesInfoWithDefaults
 
-`func NewBTMassPropertiesInfoNullWithDefaults() *BTMassPropertiesInfoNull`
+`func NewBTMassPropertiesInfoWithDefaults() *BTMassPropertiesInfo`
 
-NewBTMassPropertiesInfoNullWithDefaults instantiates a new BTMassPropertiesInfoNull object
+NewBTMassPropertiesInfoWithDefaults instantiates a new BTMassPropertiesInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCentroid
 
-`func (o *BTMassPropertiesInfoNull) GetCentroid() []float64`
+`func (o *BTMassPropertiesInfo) GetCentroid() []float64`
 
 GetCentroid returns the Centroid field if non-nil, zero value otherwise.
 
 ### GetCentroidOk
 
-`func (o *BTMassPropertiesInfoNull) GetCentroidOk() (*[]float64, bool)`
+`func (o *BTMassPropertiesInfo) GetCentroidOk() (*[]float64, bool)`
 
 GetCentroidOk returns a tuple with the Centroid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCentroid
 
-`func (o *BTMassPropertiesInfoNull) SetCentroid(v []float64)`
+`func (o *BTMassPropertiesInfo) SetCentroid(v []float64)`
 
 SetCentroid sets Centroid field to given value.
 
 ### HasCentroid
 
-`func (o *BTMassPropertiesInfoNull) HasCentroid() bool`
+`func (o *BTMassPropertiesInfo) HasCentroid() bool`
 
 HasCentroid returns a boolean if a field has been set.
 
 ### GetHasMass
 
-`func (o *BTMassPropertiesInfoNull) GetHasMass() bool`
+`func (o *BTMassPropertiesInfo) GetHasMass() bool`
 
 GetHasMass returns the HasMass field if non-nil, zero value otherwise.
 
 ### GetHasMassOk
 
-`func (o *BTMassPropertiesInfoNull) GetHasMassOk() (*bool, bool)`
+`func (o *BTMassPropertiesInfo) GetHasMassOk() (*bool, bool)`
 
 GetHasMassOk returns a tuple with the HasMass field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasMass
 
-`func (o *BTMassPropertiesInfoNull) SetHasMass(v bool)`
+`func (o *BTMassPropertiesInfo) SetHasMass(v bool)`
 
 SetHasMass sets HasMass field to given value.
 
 ### HasHasMass
 
-`func (o *BTMassPropertiesInfoNull) HasHasMass() bool`
+`func (o *BTMassPropertiesInfo) HasHasMass() bool`
 
 HasHasMass returns a boolean if a field has been set.
 
 ### GetInertia
 
-`func (o *BTMassPropertiesInfoNull) GetInertia() []float64`
+`func (o *BTMassPropertiesInfo) GetInertia() []float64`
 
 GetInertia returns the Inertia field if non-nil, zero value otherwise.
 
 ### GetInertiaOk
 
-`func (o *BTMassPropertiesInfoNull) GetInertiaOk() (*[]float64, bool)`
+`func (o *BTMassPropertiesInfo) GetInertiaOk() (*[]float64, bool)`
 
 GetInertiaOk returns a tuple with the Inertia field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInertia
 
-`func (o *BTMassPropertiesInfoNull) SetInertia(v []float64)`
+`func (o *BTMassPropertiesInfo) SetInertia(v []float64)`
 
 SetInertia sets Inertia field to given value.
 
 ### HasInertia
 
-`func (o *BTMassPropertiesInfoNull) HasInertia() bool`
+`func (o *BTMassPropertiesInfo) HasInertia() bool`
 
 HasInertia returns a boolean if a field has been set.
 
 ### GetMass
 
-`func (o *BTMassPropertiesInfoNull) GetMass() []float64`
+`func (o *BTMassPropertiesInfo) GetMass() []float64`
 
 GetMass returns the Mass field if non-nil, zero value otherwise.
 
 ### GetMassOk
 
-`func (o *BTMassPropertiesInfoNull) GetMassOk() (*[]float64, bool)`
+`func (o *BTMassPropertiesInfo) GetMassOk() (*[]float64, bool)`
 
 GetMassOk returns a tuple with the Mass field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMass
 
-`func (o *BTMassPropertiesInfoNull) SetMass(v []float64)`
+`func (o *BTMassPropertiesInfo) SetMass(v []float64)`
 
 SetMass sets Mass field to given value.
 
 ### HasMass
 
-`func (o *BTMassPropertiesInfoNull) HasMass() bool`
+`func (o *BTMassPropertiesInfo) HasMass() bool`
 
 HasMass returns a boolean if a field has been set.
 
 ### GetMassMissingCount
 
-`func (o *BTMassPropertiesInfoNull) GetMassMissingCount() int32`
+`func (o *BTMassPropertiesInfo) GetMassMissingCount() int32`
 
 GetMassMissingCount returns the MassMissingCount field if non-nil, zero value otherwise.
 
 ### GetMassMissingCountOk
 
-`func (o *BTMassPropertiesInfoNull) GetMassMissingCountOk() (*int32, bool)`
+`func (o *BTMassPropertiesInfo) GetMassMissingCountOk() (*int32, bool)`
 
 GetMassMissingCountOk returns a tuple with the MassMissingCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMassMissingCount
 
-`func (o *BTMassPropertiesInfoNull) SetMassMissingCount(v int32)`
+`func (o *BTMassPropertiesInfo) SetMassMissingCount(v int32)`
 
 SetMassMissingCount sets MassMissingCount field to given value.
 
 ### HasMassMissingCount
 
-`func (o *BTMassPropertiesInfoNull) HasMassMissingCount() bool`
+`func (o *BTMassPropertiesInfo) HasMassMissingCount() bool`
 
 HasMassMissingCount returns a boolean if a field has been set.
 
 ### GetPeriphery
 
-`func (o *BTMassPropertiesInfoNull) GetPeriphery() []float64`
+`func (o *BTMassPropertiesInfo) GetPeriphery() []float64`
 
 GetPeriphery returns the Periphery field if non-nil, zero value otherwise.
 
 ### GetPeripheryOk
 
-`func (o *BTMassPropertiesInfoNull) GetPeripheryOk() (*[]float64, bool)`
+`func (o *BTMassPropertiesInfo) GetPeripheryOk() (*[]float64, bool)`
 
 GetPeripheryOk returns a tuple with the Periphery field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriphery
 
-`func (o *BTMassPropertiesInfoNull) SetPeriphery(v []float64)`
+`func (o *BTMassPropertiesInfo) SetPeriphery(v []float64)`
 
 SetPeriphery sets Periphery field to given value.
 
 ### HasPeriphery
 
-`func (o *BTMassPropertiesInfoNull) HasPeriphery() bool`
+`func (o *BTMassPropertiesInfo) HasPeriphery() bool`
 
 HasPeriphery returns a boolean if a field has been set.
 
 ### GetPrincipalAxes
 
-`func (o *BTMassPropertiesInfoNull) GetPrincipalAxes() []BTVector3d389`
+`func (o *BTMassPropertiesInfo) GetPrincipalAxes() []BTVector3d389`
 
 GetPrincipalAxes returns the PrincipalAxes field if non-nil, zero value otherwise.
 
 ### GetPrincipalAxesOk
 
-`func (o *BTMassPropertiesInfoNull) GetPrincipalAxesOk() (*[]BTVector3d389, bool)`
+`func (o *BTMassPropertiesInfo) GetPrincipalAxesOk() (*[]BTVector3d389, bool)`
 
 GetPrincipalAxesOk returns a tuple with the PrincipalAxes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrincipalAxes
 
-`func (o *BTMassPropertiesInfoNull) SetPrincipalAxes(v []BTVector3d389)`
+`func (o *BTMassPropertiesInfo) SetPrincipalAxes(v []BTVector3d389)`
 
 SetPrincipalAxes sets PrincipalAxes field to given value.
 
 ### HasPrincipalAxes
 
-`func (o *BTMassPropertiesInfoNull) HasPrincipalAxes() bool`
+`func (o *BTMassPropertiesInfo) HasPrincipalAxes() bool`
 
 HasPrincipalAxes returns a boolean if a field has been set.
 
 ### GetPrincipalInertia
 
-`func (o *BTMassPropertiesInfoNull) GetPrincipalInertia() []float64`
+`func (o *BTMassPropertiesInfo) GetPrincipalInertia() []float64`
 
 GetPrincipalInertia returns the PrincipalInertia field if non-nil, zero value otherwise.
 
 ### GetPrincipalInertiaOk
 
-`func (o *BTMassPropertiesInfoNull) GetPrincipalInertiaOk() (*[]float64, bool)`
+`func (o *BTMassPropertiesInfo) GetPrincipalInertiaOk() (*[]float64, bool)`
 
 GetPrincipalInertiaOk returns a tuple with the PrincipalInertia field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrincipalInertia
 
-`func (o *BTMassPropertiesInfoNull) SetPrincipalInertia(v []float64)`
+`func (o *BTMassPropertiesInfo) SetPrincipalInertia(v []float64)`
 
 SetPrincipalInertia sets PrincipalInertia field to given value.
 
 ### HasPrincipalInertia
 
-`func (o *BTMassPropertiesInfoNull) HasPrincipalInertia() bool`
+`func (o *BTMassPropertiesInfo) HasPrincipalInertia() bool`
 
 HasPrincipalInertia returns a boolean if a field has been set.
 
 ### GetVolume
 
-`func (o *BTMassPropertiesInfoNull) GetVolume() []float64`
+`func (o *BTMassPropertiesInfo) GetVolume() []float64`
 
 GetVolume returns the Volume field if non-nil, zero value otherwise.
 
 ### GetVolumeOk
 
-`func (o *BTMassPropertiesInfoNull) GetVolumeOk() (*[]float64, bool)`
+`func (o *BTMassPropertiesInfo) GetVolumeOk() (*[]float64, bool)`
 
 GetVolumeOk returns a tuple with the Volume field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolume
 
-`func (o *BTMassPropertiesInfoNull) SetVolume(v []float64)`
+`func (o *BTMassPropertiesInfo) SetVolume(v []float64)`
 
 SetVolume sets Volume field to given value.
 
 ### HasVolume
 
-`func (o *BTMassPropertiesInfoNull) HasVolume() bool`
+`func (o *BTMassPropertiesInfo) HasVolume() bool`
 
 HasVolume returns a boolean if a field has been set.
 

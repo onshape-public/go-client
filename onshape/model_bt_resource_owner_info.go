@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.159.11021-6e0b27aeb9b7
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,11 +17,13 @@ import (
 
 // BTResourceOwnerInfo struct for BTResourceOwnerInfo
 type BTResourceOwnerInfo struct {
-	CanMove           *bool                   `json:"canMove,omitempty"`
-	CreatedAt         *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy         *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description       *string                 `json:"description,omitempty"`
-	Href              *string                 `json:"href,omitempty"`
+	CanMove     *bool                   `json:"canMove,omitempty"`
+	CreatedAt   *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy   *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description *string                 `json:"description,omitempty"`
+	// URI to fetch complete information of the resource.
+	Href *string `json:"href,omitempty"`
+	// Id of the resource.
 	Id                *string                 `json:"id,omitempty"`
 	IsContainer       *bool                   `json:"isContainer,omitempty"`
 	IsEnterpriseOwned *bool                   `json:"isEnterpriseOwned,omitempty"`
@@ -29,14 +31,16 @@ type BTResourceOwnerInfo struct {
 	JsonType          string                  `json:"jsonType"`
 	ModifiedAt        *JSONTime               `json:"modifiedAt,omitempty"`
 	ModifiedBy        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
-	Name              *string                 `json:"name,omitempty"`
-	Owner             *BTOwnerInfo            `json:"owner,omitempty"`
-	ProjectId         *string                 `json:"projectId,omitempty"`
-	ResourceType      *string                 `json:"resourceType,omitempty"`
-	TreeHref          *string                 `json:"treeHref,omitempty"`
-	UnparentHref      *string                 `json:"unparentHref,omitempty"`
-	ViewRef           *string                 `json:"viewRef,omitempty"`
-	IsEnterpriseEdu   *bool                   `json:"isEnterpriseEdu,omitempty"`
+	// Name of the resource.
+	Name         *string      `json:"name,omitempty"`
+	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ProjectId    *string      `json:"projectId,omitempty"`
+	ResourceType *string      `json:"resourceType,omitempty"`
+	TreeHref     *string      `json:"treeHref,omitempty"`
+	UnparentHref *string      `json:"unparentHref,omitempty"`
+	// URI to visualize the resource in a webclient if applicable.
+	ViewRef         *string `json:"viewRef,omitempty"`
+	IsEnterpriseEdu *bool   `json:"isEnterpriseEdu,omitempty"`
 }
 
 // NewBTResourceOwnerInfo instantiates a new BTResourceOwnerInfo object

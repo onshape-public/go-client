@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**IsImmutableContextPath** | Pointer to **bool** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
 **KeyContainsConfiguration** | Pointer to **bool** |  | [optional] 
 **UseLocalFileCache** | Pointer to **bool** |  | [optional] 
@@ -104,6 +105,31 @@ SetElementId sets ElementId field to given value.
 `func (o *BTCacheDataPath191) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
+
+### GetIsImmutableContextPath
+
+`func (o *BTCacheDataPath191) GetIsImmutableContextPath() bool`
+
+GetIsImmutableContextPath returns the IsImmutableContextPath field if non-nil, zero value otherwise.
+
+### GetIsImmutableContextPathOk
+
+`func (o *BTCacheDataPath191) GetIsImmutableContextPathOk() (*bool, bool)`
+
+GetIsImmutableContextPathOk returns a tuple with the IsImmutableContextPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsImmutableContextPath
+
+`func (o *BTCacheDataPath191) SetIsImmutableContextPath(v bool)`
+
+SetIsImmutableContextPath sets IsImmutableContextPath field to given value.
+
+### HasIsImmutableContextPath
+
+`func (o *BTCacheDataPath191) HasIsImmutableContextPath() bool`
+
+HasIsImmutableContextPath returns a boolean if a field has been set.
 
 ### GetKey
 

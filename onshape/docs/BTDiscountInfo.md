@@ -11,15 +11,15 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **ExpiresAt** | Pointer to **JSONTime** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
 **PercentOff** | Pointer to **int32** |  | [optional] 
 **PlanId** | Pointer to **string** |  | [optional] 
 **TrialEndDate** | Pointer to **string** |  | [optional] 
 **UsedAt** | Pointer to **JSONTime** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 

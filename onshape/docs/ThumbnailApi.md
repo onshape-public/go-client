@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ## GetDocumentThumbnailWithSize
 
-> map[string]interface{} GetDocumentThumbnailWithSize(ctx, did, wid, sz).T(t).Execute()
+> map[string]interface{} GetDocumentThumbnailWithSize(ctx, did, wid, sz).T(t).SkipDefaultImage(skipDefaultImage).Execute()
 
 Retrieve thumbnail information for a document, with a specified size in pixels by document ID and workspace ID.
 
@@ -187,12 +187,13 @@ import (
 func main() {
     did := "did_example" // string | 
     wid := "wid_example" // string | 
-    sz := "sz_example" // string | 
-    t := "t_example" // string |  (optional)
+    sz := "300x300" // string | the generated thumbnail size in pixels, widthxheigth
+    t := "t_example" // string | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. (optional)
+    skipDefaultImage := "skipDefaultImage_example" // string | Controls the return of the default image, if thumbnail is not available (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ThumbnailApi.GetDocumentThumbnailWithSize(context.Background(), did, wid, sz).T(t).Execute()
+    resp, r, err := apiClient.ThumbnailApi.GetDocumentThumbnailWithSize(context.Background(), did, wid, sz).T(t).SkipDefaultImage(skipDefaultImage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetDocumentThumbnailWithSize``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -210,7 +211,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** |  | 
 **wid** | **string** |  | 
-**sz** | **string** |  | 
+**sz** | **string** | the generated thumbnail size in pixels, widthxheigth | 
 
 ### Other Parameters
 
@@ -222,7 +223,8 @@ Name | Type | Description  | Notes
 
 
 
- **t** | **string** |  | 
+ **t** | **string** | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. | 
+ **skipDefaultImage** | **string** | Controls the return of the default image, if thumbnail is not available | [default to &quot;&quot;]
 
 ### Return type
 
@@ -323,7 +325,7 @@ Name | Type | Description  | Notes
 
 ## GetElementThumbnailWithApiConfiguration
 
-> map[string]interface{} GetElementThumbnailWithApiConfiguration(ctx, did, wid, eid, cid, sz).T(t).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
+> map[string]interface{} GetElementThumbnailWithApiConfiguration(ctx, did, wid, eid, cid, sz).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
 
 Retrieve thumbnail information for a tab, with a specified size in pixels by document ID, workspace ID, tab ID, and configuration ID.
 
@@ -344,14 +346,15 @@ func main() {
     wid := "wid_example" // string | 
     eid := "eid_example" // string | 
     cid := "cid_example" // string | 
-    sz := "sz_example" // string | 
-    t := "t_example" // string |  (optional)
+    sz := "300x300" // string | the generated thumbnail size in pixels, widthxheigth
+    t := "t_example" // string | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. (optional)
+    skipDefaultImage := "skipDefaultImage_example" // string | Controls the return of the default image, if thumbnail is not available (optional) (default to "")
     rejectEmpty := true // bool |  (optional) (default to false)
     requireConfigMatch := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithApiConfiguration(context.Background(), did, wid, eid, cid, sz).T(t).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
+    resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithApiConfiguration(context.Background(), did, wid, eid, cid, sz).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetElementThumbnailWithApiConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -371,7 +374,7 @@ Name | Type | Description  | Notes
 **wid** | **string** |  | 
 **eid** | **string** |  | 
 **cid** | **string** |  | 
-**sz** | **string** |  | 
+**sz** | **string** | the generated thumbnail size in pixels, widthxheigth | 
 
 ### Other Parameters
 
@@ -385,7 +388,8 @@ Name | Type | Description  | Notes
 
 
 
- **t** | **string** |  | 
+ **t** | **string** | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. | 
+ **skipDefaultImage** | **string** | Controls the return of the default image, if thumbnail is not available | [default to &quot;&quot;]
  **rejectEmpty** | **bool** |  | [default to false]
  **requireConfigMatch** | **bool** |  | [default to false]
 
@@ -409,7 +413,7 @@ Name | Type | Description  | Notes
 
 ## GetElementThumbnailWithSize
 
-> map[string]interface{} GetElementThumbnailWithSize(ctx, did, wv, wvid, eid, sz).LinkDocumentId(linkDocumentId).T(t).RejectEmpty(rejectEmpty).Execute()
+> map[string]interface{} GetElementThumbnailWithSize(ctx, did, wv, wvid, eid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).Execute()
 
 Retrieve thumbnail information for a tab, with a specified size in pixels by document ID, workspace ID, and tab ID.
 
@@ -430,14 +434,15 @@ func main() {
     wv := "wv_example" // string | 
     wvid := "wvid_example" // string | 
     eid := "eid_example" // string | The id of the element in which to perform the operation.
-    sz := "sz_example" // string | Requested thumbnail size, such as 300x300
+    sz := "300x300" // string | the generated thumbnail size in pixels, widthxheigth
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    t := "t_example" // string |  (optional)
+    t := "t_example" // string | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. (optional)
+    skipDefaultImage := "skipDefaultImage_example" // string | Controls the return of the default image, if thumbnail is not available (optional) (default to "")
     rejectEmpty := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithSize(context.Background(), did, wv, wvid, eid, sz).LinkDocumentId(linkDocumentId).T(t).RejectEmpty(rejectEmpty).Execute()
+    resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithSize(context.Background(), did, wv, wvid, eid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetElementThumbnailWithSize``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -457,7 +462,7 @@ Name | Type | Description  | Notes
 **wv** | **string** |  | 
 **wvid** | **string** |  | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
-**sz** | **string** | Requested thumbnail size, such as 300x300 | 
+**sz** | **string** | the generated thumbnail size in pixels, widthxheigth | 
 
 ### Other Parameters
 
@@ -472,7 +477,8 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **t** | **string** |  | 
+ **t** | **string** | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. | 
+ **skipDefaultImage** | **string** | Controls the return of the default image, if thumbnail is not available | [default to &quot;&quot;]
  **rejectEmpty** | **bool** |  | [default to false]
 
 ### Return type
