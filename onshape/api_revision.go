@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.159.11083-1aa1496ff436
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -154,31 +154,29 @@ type ApiEnumerateRevisionsRequest struct {
 	cid         string
 	elementType *int32
 	limit       *int32
-	offset      *int32
 	latestOnly  *bool
 	after       *JSONTime
 }
 
+// 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
 func (r ApiEnumerateRevisionsRequest) ElementType(elementType int32) ApiEnumerateRevisionsRequest {
 	r.elementType = &elementType
 	return r
 }
 
+// The number of items to return in a single API call
 func (r ApiEnumerateRevisionsRequest) Limit(limit int32) ApiEnumerateRevisionsRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiEnumerateRevisionsRequest) Offset(offset int32) ApiEnumerateRevisionsRequest {
-	r.offset = &offset
-	return r
-}
-
+// Whether to limit search to only latest revisions.
 func (r ApiEnumerateRevisionsRequest) LatestOnly(latestOnly bool) ApiEnumerateRevisionsRequest {
 	r.latestOnly = &latestOnly
 	return r
 }
 
+// The earliest creation date of the revision to find.
 func (r ApiEnumerateRevisionsRequest) After(after JSONTime) ApiEnumerateRevisionsRequest {
 	r.after = &after
 	return r
@@ -189,10 +187,12 @@ func (r ApiEnumerateRevisionsRequest) Execute() (*BTListResponseBTRevisionInfo, 
 }
 
 /*
-EnumerateRevisions Enumerate all revisions released in a company by company ID.
+EnumerateRevisions Enumerate all revisions created in a company.
+
+Enumerate all revisions in a company by creation time. Caller must be a company admin. Specify after and use the next URI to do complete enumeration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
+ @param cid The company or enterprise ID that owns the resource.
  @return ApiEnumerateRevisionsRequest
 */
 func (a *RevisionApiService) EnumerateRevisions(ctx context.Context, cid string) ApiEnumerateRevisionsRequest {
@@ -231,15 +231,122 @@ func (a *RevisionApiService) EnumerateRevisionsExecute(r ApiEnumerateRevisionsRe
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
-	if r.offset != nil {
-		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
-	}
 	if r.latestOnly != nil {
 		localVarQueryParams.Add("latestOnly", parameterToString(*r.latestOnly, ""))
 	}
 	if r.after != nil {
 		localVarQueryParams.Add("after", parameterToString(*r.after, ""))
 	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTListResponseBTRevisionInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAllInDocumentRequest struct {
+	ctx        context.Context
+	ApiService *RevisionApiService
+	did        string
+}
+
+func (r ApiGetAllInDocumentRequest) Execute() (*BTListResponseBTRevisionInfo, *http.Response, error) {
+	return r.ApiService.GetAllInDocumentExecute(r)
+}
+
+/*
+GetAllInDocument Retrieve a list of all revisions that exist in a document.
+
+Retrieve a list of all revisions that exist in a document and are owned by the document's owning company.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param did
+ @return ApiGetAllInDocumentRequest
+*/
+func (a *RevisionApiService) GetAllInDocument(ctx context.Context, did string) ApiGetAllInDocumentRequest {
+	return ApiGetAllInDocumentRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+	}
+}
+
+// Execute executes the request
+//  @return BTListResponseBTRevisionInfo
+func (a *RevisionApiService) GetAllInDocumentExecute(r ApiGetAllInDocumentRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTListResponseBTRevisionInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetAllInDocument")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/revisions/d/{did}"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

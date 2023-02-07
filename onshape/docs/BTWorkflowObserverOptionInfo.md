@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Alias** | Pointer to [**BTAliasInfo**](BTAliasInfo.md) |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IdentityType** | Pointer to **int32** |  | [optional] 
 **Role** | Pointer to [**BTRbacRoleInfo**](BTRbacRoleInfo.md) |  | [optional] 
 **Team** | Pointer to [**BTTeamSummaryInfo**](BTTeamSummaryInfo.md) |  | [optional] 
 **User** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 
