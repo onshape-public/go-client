@@ -8,16 +8,17 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **DomainPrefix** | Pointer to **string** |  | [optional] 
 **EnterpriseBaseUrl** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**EnterpriseSubtype** | Pointer to **int32** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **NoPublicDocuments** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
 **SecondaryDomainPrefixes** | Pointer to **[]string** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **Type** | Pointer to **int32** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 
@@ -137,6 +138,31 @@ SetEnterpriseBaseUrl sets EnterpriseBaseUrl field to given value.
 `func (o *BTCompanySummaryInfo) HasEnterpriseBaseUrl() bool`
 
 HasEnterpriseBaseUrl returns a boolean if a field has been set.
+
+### GetEnterpriseSubtype
+
+`func (o *BTCompanySummaryInfo) GetEnterpriseSubtype() int32`
+
+GetEnterpriseSubtype returns the EnterpriseSubtype field if non-nil, zero value otherwise.
+
+### GetEnterpriseSubtypeOk
+
+`func (o *BTCompanySummaryInfo) GetEnterpriseSubtypeOk() (*int32, bool)`
+
+GetEnterpriseSubtypeOk returns a tuple with the EnterpriseSubtype field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnterpriseSubtype
+
+`func (o *BTCompanySummaryInfo) SetEnterpriseSubtype(v int32)`
+
+SetEnterpriseSubtype sets EnterpriseSubtype field to given value.
+
+### HasEnterpriseSubtype
+
+`func (o *BTCompanySummaryInfo) HasEnterpriseSubtype() bool`
+
+HasEnterpriseSubtype returns a boolean if a field has been set.
 
 ### GetHref
 

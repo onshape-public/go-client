@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.159.11092-7dadcdce7710
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -256,16 +256,24 @@ func (a *ThumbnailApiService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbn
 }
 
 type ApiGetDocumentThumbnailWithSizeRequest struct {
-	ctx        context.Context
-	ApiService *ThumbnailApiService
-	did        string
-	wid        string
-	sz         string
-	t          *string
+	ctx              context.Context
+	ApiService       *ThumbnailApiService
+	did              string
+	wid              string
+	sz               string
+	t                *string
+	skipDefaultImage *string
 }
 
+// Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails.
 func (r ApiGetDocumentThumbnailWithSizeRequest) T(t string) ApiGetDocumentThumbnailWithSizeRequest {
 	r.t = &t
+	return r
+}
+
+// Controls the return of the default image, if thumbnail is not available
+func (r ApiGetDocumentThumbnailWithSizeRequest) SkipDefaultImage(skipDefaultImage string) ApiGetDocumentThumbnailWithSizeRequest {
+	r.skipDefaultImage = &skipDefaultImage
 	return r
 }
 
@@ -279,7 +287,7 @@ GetDocumentThumbnailWithSize Retrieve thumbnail information for a document, with
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
  @param wid
- @param sz
+ @param sz the generated thumbnail size in pixels, widthxheigth
  @return ApiGetDocumentThumbnailWithSizeRequest
 */
 func (a *ThumbnailApiService) GetDocumentThumbnailWithSize(ctx context.Context, did string, wid string, sz string) ApiGetDocumentThumbnailWithSizeRequest {
@@ -318,6 +326,9 @@ func (a *ThumbnailApiService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocume
 
 	if r.t != nil {
 		localVarQueryParams.Add("t", parameterToString(*r.t, ""))
+	}
+	if r.skipDefaultImage != nil {
+		localVarQueryParams.Add("skipDefaultImage", parameterToString(*r.skipDefaultImage, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -519,12 +530,20 @@ type ApiGetElementThumbnailWithApiConfigurationRequest struct {
 	cid                string
 	sz                 string
 	t                  *string
+	skipDefaultImage   *string
 	rejectEmpty        *bool
 	requireConfigMatch *bool
 }
 
+// Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails.
 func (r ApiGetElementThumbnailWithApiConfigurationRequest) T(t string) ApiGetElementThumbnailWithApiConfigurationRequest {
 	r.t = &t
+	return r
+}
+
+// Controls the return of the default image, if thumbnail is not available
+func (r ApiGetElementThumbnailWithApiConfigurationRequest) SkipDefaultImage(skipDefaultImage string) ApiGetElementThumbnailWithApiConfigurationRequest {
+	r.skipDefaultImage = &skipDefaultImage
 	return r
 }
 
@@ -550,7 +569,7 @@ GetElementThumbnailWithApiConfiguration Retrieve thumbnail information for a tab
  @param wid
  @param eid
  @param cid
- @param sz
+ @param sz the generated thumbnail size in pixels, widthxheigth
  @return ApiGetElementThumbnailWithApiConfigurationRequest
 */
 func (a *ThumbnailApiService) GetElementThumbnailWithApiConfiguration(ctx context.Context, did string, wid string, eid string, cid string, sz string) ApiGetElementThumbnailWithApiConfigurationRequest {
@@ -593,6 +612,9 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r A
 
 	if r.t != nil {
 		localVarQueryParams.Add("t", parameterToString(*r.t, ""))
+	}
+	if r.skipDefaultImage != nil {
+		localVarQueryParams.Add("skipDefaultImage", parameterToString(*r.skipDefaultImage, ""))
 	}
 	if r.rejectEmpty != nil {
 		localVarQueryParams.Add("rejectEmpty", parameterToString(*r.rejectEmpty, ""))
@@ -662,16 +684,17 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r A
 }
 
 type ApiGetElementThumbnailWithSizeRequest struct {
-	ctx            context.Context
-	ApiService     *ThumbnailApiService
-	did            string
-	wv             string
-	wvid           string
-	eid            string
-	sz             string
-	linkDocumentId *string
-	t              *string
-	rejectEmpty    *bool
+	ctx              context.Context
+	ApiService       *ThumbnailApiService
+	did              string
+	wv               string
+	wvid             string
+	eid              string
+	sz               string
+	linkDocumentId   *string
+	t                *string
+	skipDefaultImage *string
+	rejectEmpty      *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -680,8 +703,15 @@ func (r ApiGetElementThumbnailWithSizeRequest) LinkDocumentId(linkDocumentId str
 	return r
 }
 
+// Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails.
 func (r ApiGetElementThumbnailWithSizeRequest) T(t string) ApiGetElementThumbnailWithSizeRequest {
 	r.t = &t
+	return r
+}
+
+// Controls the return of the default image, if thumbnail is not available
+func (r ApiGetElementThumbnailWithSizeRequest) SkipDefaultImage(skipDefaultImage string) ApiGetElementThumbnailWithSizeRequest {
+	r.skipDefaultImage = &skipDefaultImage
 	return r
 }
 
@@ -702,7 +732,7 @@ GetElementThumbnailWithSize Retrieve thumbnail information for a tab, with a spe
  @param wv
  @param wvid
  @param eid The id of the element in which to perform the operation.
- @param sz Requested thumbnail size, such as 300x300
+ @param sz the generated thumbnail size in pixels, widthxheigth
  @return ApiGetElementThumbnailWithSizeRequest
 */
 func (a *ThumbnailApiService) GetElementThumbnailWithSize(ctx context.Context, did string, wv string, wvid string, eid string, sz string) ApiGetElementThumbnailWithSizeRequest {
@@ -748,6 +778,9 @@ func (a *ThumbnailApiService) GetElementThumbnailWithSizeExecute(r ApiGetElement
 	}
 	if r.t != nil {
 		localVarQueryParams.Add("t", parameterToString(*r.t, ""))
+	}
+	if r.skipDefaultImage != nil {
+		localVarQueryParams.Add("skipDefaultImage", parameterToString(*r.skipDefaultImage, ""))
 	}
 	if r.rejectEmpty != nil {
 		localVarQueryParams.Add("rejectEmpty", parameterToString(*r.rejectEmpty, ""))

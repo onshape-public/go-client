@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **Events** | Pointer to **[]string** |  | [optional] 
 **Filter** | Pointer to **string** |  | [optional] 
 **FolderId** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 

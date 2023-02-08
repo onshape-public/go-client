@@ -4,46 +4,42 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Approvers** | Pointer to [**[]BTRevisionApproverInfo**](BTRevisionApproverInfo.md) |  | [optional] 
+**Approvers** | Pointer to [**[]BTRevisionApproverInfo**](BTRevisionApproverInfo.md) | The users who approved the release package that created this revision. | [optional] 
 **AutoObsoletionReleaseId** | Pointer to **string** |  | [optional] 
 **AutoObsoletionReleaseName** | Pointer to **string** |  | [optional] 
-**CanCurrentUserObsolete** | Pointer to **bool** |  | [optional] 
 **CanExport** | Pointer to **bool** |  | [optional] 
-**ChangeOrderId** | Pointer to **string** |  | [optional] 
-**CompanyId** | Pointer to **string** |  | [optional] 
+**CompanyId** | Pointer to **string** | The company or enterprise ID that owns the resource. | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**DocumentId** | Pointer to **string** |  | [optional] 
-**DocumentName** | Pointer to **string** |  | [optional] 
-**ElementId** | Pointer to **string** |  | [optional] 
-**ElementType** | Pointer to **int32** |  | [optional] 
+**Description** | Pointer to **string** | The Revision Description metadata property if revision is of a drawing. | [optional] 
+**DocumentId** | Pointer to **string** | The document that contains the item. | [optional] 
+**DocumentName** | Pointer to **string** | The name of the document that contains the item. | [optional] 
+**ElementId** | Pointer to **string** | The element that contains the item. | [optional] 
+**ElementType** | Pointer to **int32** | The type of item 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
-**FileName** | Pointer to **string** |  | [optional] 
 **FlatPartInsertableId** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **InsertableId** | Pointer to **string** |  | [optional] 
-**IsObsolete** | Pointer to **bool** |  | [optional] 
-**IsRereleasable** | Pointer to **bool** |  | [optional] 
+**IsObsolete** | Pointer to **bool** | Whether the revision has been obsoleted. | [optional] 
+**IsRereleasable** | Pointer to **bool** | If true, the revision can be created again. | [optional] 
 **IsTranslatable** | Pointer to **bool** |  | [optional] 
-**MeshStates** | Pointer to **[]bool** |  | [optional] 
 **MimeType** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**NextRevisionId** | Pointer to **string** |  | [optional] 
-**ObsoletionPackageId** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
+**NextRevisionId** | Pointer to **string** | The next revision if applicable. null for the latest revision. | [optional] 
+**ObsoletionPackageId** | Pointer to **string** | The OBSOLETION release package that obsoleted this revision if applicable. | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
-**PartNumber** | Pointer to **string** |  | [optional] 
-**PreviousRevisionId** | Pointer to **string** |  | [optional] 
+**PartNumber** | Pointer to **string** | The Part Number with which the item was revised. | [optional] 
+**PreviousRevisionId** | Pointer to **string** | The previous revision if applicable. null for first revision. | [optional] 
 **ReleaseCreatedDate** | Pointer to **JSONTime** |  | [optional] 
-**ReleaseId** | Pointer to **string** |  | [optional] 
-**ReleaseName** | Pointer to **string** |  | [optional] 
+**ReleaseId** | Pointer to **string** | The release package that created this revision. | [optional] 
+**ReleaseName** | Pointer to **string** | The name of the release package that created this item. | [optional] 
 **ReleasedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
-**Revision** | Pointer to **string** |  | [optional] 
+**Revision** | Pointer to **string** | The id of the revision. | [optional] 
 **RevisionRuleId** | Pointer to **string** |  | [optional] 
-**VersionId** | Pointer to **string** |  | [optional] 
-**VersionName** | Pointer to **string** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**VersionId** | Pointer to **string** | The version of the document that contains this revision. | [optional] 
+**VersionName** | Pointer to **string** | The name of the version of the document that contains this revision. | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 
@@ -139,31 +135,6 @@ SetAutoObsoletionReleaseName sets AutoObsoletionReleaseName field to given value
 
 HasAutoObsoletionReleaseName returns a boolean if a field has been set.
 
-### GetCanCurrentUserObsolete
-
-`func (o *BTRevisionInfo) GetCanCurrentUserObsolete() bool`
-
-GetCanCurrentUserObsolete returns the CanCurrentUserObsolete field if non-nil, zero value otherwise.
-
-### GetCanCurrentUserObsoleteOk
-
-`func (o *BTRevisionInfo) GetCanCurrentUserObsoleteOk() (*bool, bool)`
-
-GetCanCurrentUserObsoleteOk returns a tuple with the CanCurrentUserObsolete field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCanCurrentUserObsolete
-
-`func (o *BTRevisionInfo) SetCanCurrentUserObsolete(v bool)`
-
-SetCanCurrentUserObsolete sets CanCurrentUserObsolete field to given value.
-
-### HasCanCurrentUserObsolete
-
-`func (o *BTRevisionInfo) HasCanCurrentUserObsolete() bool`
-
-HasCanCurrentUserObsolete returns a boolean if a field has been set.
-
 ### GetCanExport
 
 `func (o *BTRevisionInfo) GetCanExport() bool`
@@ -188,31 +159,6 @@ SetCanExport sets CanExport field to given value.
 `func (o *BTRevisionInfo) HasCanExport() bool`
 
 HasCanExport returns a boolean if a field has been set.
-
-### GetChangeOrderId
-
-`func (o *BTRevisionInfo) GetChangeOrderId() string`
-
-GetChangeOrderId returns the ChangeOrderId field if non-nil, zero value otherwise.
-
-### GetChangeOrderIdOk
-
-`func (o *BTRevisionInfo) GetChangeOrderIdOk() (*string, bool)`
-
-GetChangeOrderIdOk returns a tuple with the ChangeOrderId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChangeOrderId
-
-`func (o *BTRevisionInfo) SetChangeOrderId(v string)`
-
-SetChangeOrderId sets ChangeOrderId field to given value.
-
-### HasChangeOrderId
-
-`func (o *BTRevisionInfo) HasChangeOrderId() bool`
-
-HasChangeOrderId returns a boolean if a field has been set.
 
 ### GetCompanyId
 
@@ -439,31 +385,6 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
-### GetFileName
-
-`func (o *BTRevisionInfo) GetFileName() string`
-
-GetFileName returns the FileName field if non-nil, zero value otherwise.
-
-### GetFileNameOk
-
-`func (o *BTRevisionInfo) GetFileNameOk() (*string, bool)`
-
-GetFileNameOk returns a tuple with the FileName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFileName
-
-`func (o *BTRevisionInfo) SetFileName(v string)`
-
-SetFileName sets FileName field to given value.
-
-### HasFileName
-
-`func (o *BTRevisionInfo) HasFileName() bool`
-
-HasFileName returns a boolean if a field has been set.
-
 ### GetFlatPartInsertableId
 
 `func (o *BTRevisionInfo) GetFlatPartInsertableId() string`
@@ -638,31 +559,6 @@ SetIsTranslatable sets IsTranslatable field to given value.
 `func (o *BTRevisionInfo) HasIsTranslatable() bool`
 
 HasIsTranslatable returns a boolean if a field has been set.
-
-### GetMeshStates
-
-`func (o *BTRevisionInfo) GetMeshStates() []bool`
-
-GetMeshStates returns the MeshStates field if non-nil, zero value otherwise.
-
-### GetMeshStatesOk
-
-`func (o *BTRevisionInfo) GetMeshStatesOk() (*[]bool, bool)`
-
-GetMeshStatesOk returns a tuple with the MeshStates field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeshStates
-
-`func (o *BTRevisionInfo) SetMeshStates(v []bool)`
-
-SetMeshStates sets MeshStates field to given value.
-
-### HasMeshStates
-
-`func (o *BTRevisionInfo) HasMeshStates() bool`
-
-HasMeshStates returns a boolean if a field has been set.
 
 ### GetMimeType
 
