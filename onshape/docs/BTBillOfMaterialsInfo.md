@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **FormatVersion** | Pointer to **string** |  | [optional] 
 **Headers** | Pointer to [**[]BTBillOfMaterialsHeaderInfo**](BTBillOfMaterialsHeaderInfo.md) |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **Rows** | Pointer to [**[]BTBillOfMaterialsRowInfo**](BTBillOfMaterialsRowInfo.md) |  | [optional] 
 **TemplateId** | Pointer to **string** |  | [optional] 
 **TopLevelAssemblyRow** | Pointer to [**BTBillOfMaterialsRowInfo**](BTBillOfMaterialsRowInfo.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 

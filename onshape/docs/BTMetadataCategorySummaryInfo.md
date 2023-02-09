@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultObjectType** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ObjectTypes** | Pointer to **[]int32** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
 **OwnerType** | Pointer to **int32** |  | [optional] 
 **PublishState** | Pointer to **int32** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 
