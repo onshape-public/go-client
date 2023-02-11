@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Entries** | Pointer to [**[]BTAclEntryInfo**](BTAclEntryInfo.md) |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ObjectId** | Pointer to **string** |  | [optional] 
 **ObjectName** | Pointer to **string** |  | [optional] 
 **ObjectType** | Pointer to **int64** |  | [optional] 
 **Owner** | Pointer to [**BTOwnerInfo**](BTOwnerInfo.md) |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
 **SharedWithSupport** | Pointer to **bool** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 
 ## Methods

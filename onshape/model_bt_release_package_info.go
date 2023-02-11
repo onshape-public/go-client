@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.159.11153-01265f451c50
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,22 +17,25 @@ import (
 
 // BTReleasePackageInfo struct for BTReleasePackageInfo
 type BTReleasePackageInfo struct {
-	ChangeOrderId       *string                    `json:"changeOrderId,omitempty"`
-	ColumnNames         *map[string]string         `json:"columnNames,omitempty"`
-	Comments            []BTCommentInfo            `json:"comments,omitempty"`
-	CompanyId           *string                    `json:"companyId,omitempty"`
-	CreatedAt           *JSONTime                  `json:"createdAt,omitempty"`
-	CreatedBy           *BTUserBasicSummaryInfo    `json:"createdBy,omitempty"`
-	Description         *string                    `json:"description,omitempty"`
-	Detailed            *bool                      `json:"detailed,omitempty"`
-	DocumentId          *string                    `json:"documentId,omitempty"`
-	Href                *string                    `json:"href,omitempty"`
-	Id                  *string                    `json:"id,omitempty"`
-	IsObsoletion        *bool                      `json:"isObsoletion,omitempty"`
-	Items               []BTReleasePackageItemInfo `json:"items,omitempty"`
-	LinkedVersionIds    []string                   `json:"linkedVersionIds,omitempty"`
-	ModifiedAt          *JSONTime                  `json:"modifiedAt,omitempty"`
-	ModifiedBy          *BTUserBasicSummaryInfo    `json:"modifiedBy,omitempty"`
+	ChangeOrderId *string                 `json:"changeOrderId,omitempty"`
+	ColumnNames   *map[string]string      `json:"columnNames,omitempty"`
+	Comments      []BTCommentInfo         `json:"comments,omitempty"`
+	CompanyId     *string                 `json:"companyId,omitempty"`
+	CreatedAt     *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy     *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description   *string                 `json:"description,omitempty"`
+	Detailed      *bool                   `json:"detailed,omitempty"`
+	DocumentId    *string                 `json:"documentId,omitempty"`
+	// URI to fetch complete information of the resource.
+	Href *string `json:"href,omitempty"`
+	// Id of the resource.
+	Id               *string                    `json:"id,omitempty"`
+	IsObsoletion     *bool                      `json:"isObsoletion,omitempty"`
+	Items            []BTReleasePackageItemInfo `json:"items,omitempty"`
+	LinkedVersionIds []string                   `json:"linkedVersionIds,omitempty"`
+	ModifiedAt       *JSONTime                  `json:"modifiedAt,omitempty"`
+	ModifiedBy       *BTUserBasicSummaryInfo    `json:"modifiedBy,omitempty"`
+	// Name of the resource.
 	Name                *string                    `json:"name,omitempty"`
 	OriginalWorkspaceId *string                    `json:"originalWorkspaceId,omitempty"`
 	PackageThumbnail    *string                    `json:"packageThumbnail,omitempty"`
@@ -41,11 +44,12 @@ type BTReleasePackageInfo struct {
 	Properties          []BTWorkflowPropertyInfo   `json:"properties,omitempty"`
 	RevisionRuleId      *string                    `json:"revisionRuleId,omitempty"`
 	VersionId           *string                    `json:"versionId,omitempty"`
-	ViewRef             *string                    `json:"viewRef,omitempty"`
-	Workflow            *BTWorkflowSnapshotInfo    `json:"workflow,omitempty"`
-	WorkflowError       *string                    `json:"workflowError,omitempty"`
-	WorkflowId          *BTPublishedWorkflowId     `json:"workflowId,omitempty"`
-	WorkspaceId         *string                    `json:"workspaceId,omitempty"`
+	// URI to visualize the resource in a webclient if applicable.
+	ViewRef       *string                 `json:"viewRef,omitempty"`
+	Workflow      *BTWorkflowSnapshotInfo `json:"workflow,omitempty"`
+	WorkflowError *string                 `json:"workflowError,omitempty"`
+	WorkflowId    *BTPublishedWorkflowId  `json:"workflowId,omitempty"`
+	WorkspaceId   *string                 `json:"workspaceId,omitempty"`
 }
 
 // NewBTReleasePackageInfo instantiates a new BTReleasePackageInfo object

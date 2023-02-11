@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HeaderIdToValue** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IndentLevel** | Pointer to **int32** |  | [optional] 
 **ItemSource** | Pointer to [**BTBillOfMaterialsItemSourceInfo**](BTBillOfMaterialsItemSourceInfo.md) |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **RelatedOccurrences** | Pointer to **[]string** |  | [optional] 
 **RowId** | Pointer to **string** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 

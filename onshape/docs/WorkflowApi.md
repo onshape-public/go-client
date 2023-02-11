@@ -4,10 +4,90 @@ All URIs are relative to *https://cad.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**EnumerateObjectWorkflows**](WorkflowApi.md#EnumerateObjectWorkflows) | **Get** /workflow/companies/{cid}/objects | Enumerate workflowable objects created in a company.
 [**GetActiveWorkflows**](WorkflowApi.md#GetActiveWorkflows) | **Get** /workflow/active | Retrieve active workflow.
 [**GetAllowedApprovers**](WorkflowApi.md#GetAllowedApprovers) | **Get** /workflow/c/{companyId}/approvers | 
 [**GetAuditLog**](WorkflowApi.md#GetAuditLog) | **Get** /workflow/obj/{objectId}/auditlog | 
 
+
+
+## EnumerateObjectWorkflows
+
+> BTListResponseBTObjectWorkflowInfo EnumerateObjectWorkflows(ctx, cid).ObjectTypes(objectTypes).States(states).Limit(limit).ModifiedAfter(modifiedAfter).Execute()
+
+Enumerate workflowable objects created in a company.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "time"
+    openapiclient "./openapi"
+)
+
+func main() {
+    cid := "cid_example" // string | The company or enterprise ID that owns the resource.
+    objectTypes := []string{"ObjectTypes_example"} // []string | Optionally filter for specific workflowable types. Defaults to RELEASE and OBSOLETION (optional)
+    states := []string{"Inner_example"} // []string | Optionally filter for specific workflow states like PENDING, RELEASED (optional)
+    limit := int32(56) // int32 | The number of items to return in a single API call (optional) (default to 20)
+    modifiedAfter := time.Now() // JSONTime | The earliest modification date of workflowable object to find. (optional) (default to "2000-01-01T00:00Z")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowApi.EnumerateObjectWorkflows(context.Background(), cid).ObjectTypes(objectTypes).States(states).Limit(limit).ModifiedAfter(modifiedAfter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.EnumerateObjectWorkflows``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EnumerateObjectWorkflows`: BTListResponseBTObjectWorkflowInfo
+    fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.EnumerateObjectWorkflows`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cid** | **string** | The company or enterprise ID that owns the resource. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEnumerateObjectWorkflowsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **objectTypes** | **[]string** | Optionally filter for specific workflowable types. Defaults to RELEASE and OBSOLETION | 
+ **states** | **[]string** | Optionally filter for specific workflow states like PENDING, RELEASED | 
+ **limit** | **int32** | The number of items to return in a single API call | [default to 20]
+ **modifiedAfter** | **JSONTime** | The earliest modification date of workflowable object to find. | [default to &quot;2000-01-01T00:00Z&quot;]
+
+### Return type
+
+[**BTListResponseBTObjectWorkflowInfo**](BTListResponseBTObjectWorkflowInfo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetActiveWorkflows
