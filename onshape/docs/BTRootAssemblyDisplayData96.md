@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**BuildDurationMillis** | Pointer to **float64** |  | [optional] 
 **DeletedGeometryMateIds** | Pointer to **[]string** |  | [optional] 
 **DeletedLoads** | Pointer to **[]string** |  | [optional] 
 **DeletedMateConnectorIds** | Pointer to **[]string** |  | [optional] 
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 **OriginDisplayData** | Pointer to [**BTOriginDisplayData934**](BTOriginDisplayData934.md) |  | [optional] 
 **PartStudioDisplayData** | Pointer to [**[]BTPartStudioDisplayDataBase2751**](BTPartStudioDisplayDataBase2751.md) |  | [optional] 
 **QuickSummary** | Pointer to **string** |  | [optional] 
+**SentTimeISO** | Pointer to **string** |  | [optional] 
 **VersionForRasterization** | Pointer to [**BTElementDisplayData326**](BTElementDisplayData326.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +78,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTRootAssemblyDisplayData96) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBuildDurationMillis
+
+`func (o *BTRootAssemblyDisplayData96) GetBuildDurationMillis() float64`
+
+GetBuildDurationMillis returns the BuildDurationMillis field if non-nil, zero value otherwise.
+
+### GetBuildDurationMillisOk
+
+`func (o *BTRootAssemblyDisplayData96) GetBuildDurationMillisOk() (*float64, bool)`
+
+GetBuildDurationMillisOk returns a tuple with the BuildDurationMillis field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBuildDurationMillis
+
+`func (o *BTRootAssemblyDisplayData96) SetBuildDurationMillis(v float64)`
+
+SetBuildDurationMillis sets BuildDurationMillis field to given value.
+
+### HasBuildDurationMillis
+
+`func (o *BTRootAssemblyDisplayData96) HasBuildDurationMillis() bool`
+
+HasBuildDurationMillis returns a boolean if a field has been set.
 
 ### GetDeletedGeometryMateIds
 
@@ -726,6 +753,31 @@ SetQuickSummary sets QuickSummary field to given value.
 `func (o *BTRootAssemblyDisplayData96) HasQuickSummary() bool`
 
 HasQuickSummary returns a boolean if a field has been set.
+
+### GetSentTimeISO
+
+`func (o *BTRootAssemblyDisplayData96) GetSentTimeISO() string`
+
+GetSentTimeISO returns the SentTimeISO field if non-nil, zero value otherwise.
+
+### GetSentTimeISOOk
+
+`func (o *BTRootAssemblyDisplayData96) GetSentTimeISOOk() (*string, bool)`
+
+GetSentTimeISOOk returns a tuple with the SentTimeISO field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSentTimeISO
+
+`func (o *BTRootAssemblyDisplayData96) SetSentTimeISO(v string)`
+
+SetSentTimeISO sets SentTimeISO field to given value.
+
+### HasSentTimeISO
+
+`func (o *BTRootAssemblyDisplayData96) HasSentTimeISO() bool`
+
+HasSentTimeISO returns a boolean if a field has been set.
 
 ### GetVersionForRasterization
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Bodies** | Pointer to [**map[string]BTMassPropertiesInfoNull**](BTMassPropertiesInfoNull.md) |  | [optional] 
+**Bodies** | Pointer to [**map[string]BTMassPropertiesInfo**](BTMassPropertiesInfo.md) |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBodies
 
-`func (o *BTMassPropertiesBulkInfo) GetBodies() map[string]BTMassPropertiesInfoNull`
+`func (o *BTMassPropertiesBulkInfo) GetBodies() map[string]BTMassPropertiesInfo`
 
 GetBodies returns the Bodies field if non-nil, zero value otherwise.
 
 ### GetBodiesOk
 
-`func (o *BTMassPropertiesBulkInfo) GetBodiesOk() (*map[string]BTMassPropertiesInfoNull, bool)`
+`func (o *BTMassPropertiesBulkInfo) GetBodiesOk() (*map[string]BTMassPropertiesInfo, bool)`
 
 GetBodiesOk returns a tuple with the Bodies field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodies
 
-`func (o *BTMassPropertiesBulkInfo) SetBodies(v map[string]BTMassPropertiesInfoNull)`
+`func (o *BTMassPropertiesBulkInfo) SetBodies(v map[string]BTMassPropertiesInfo)`
 
 SetBodies sets Bodies field to given value.
 

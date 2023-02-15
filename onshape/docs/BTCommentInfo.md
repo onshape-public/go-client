@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementOccurrences** | Pointer to **[]string** |  | [optional] 
 **ElementQuery** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ObjectId** | Pointer to **string** |  | [optional] 
 **ObjectType** | Pointer to **int32** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **User** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewData** | Pointer to [**BTViewDataInfo**](BTViewDataInfo.md) |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 **WorkspaceId** | Pointer to **string** |  | [optional] 
 
 ## Methods
