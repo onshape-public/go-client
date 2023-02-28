@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.160.12117-533984354e9a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -29,8 +29,8 @@ type ApiGetVEOPStandardContentMetadataRequest struct {
 	did                               string
 	vid                               string
 	eid                               string
-	otype                             string
-	oid                               string
+	cu                                string
+	cuid                              string
 	pid                               string
 	configuration                     *string
 	linkDocumentId                    *string
@@ -75,20 +75,20 @@ GetVEOPStandardContentMetadata Retrieve metadata of a standard content part in a
  @param did
  @param vid
  @param eid
- @param otype
- @param oid
+ @param cu Indicates which of company (c) or user (u) id is specified below.
+ @param cuid The id of the company or user in which the operation should be performed.
  @param pid
  @return ApiGetVEOPStandardContentMetadataRequest
 */
-func (a *MetadataApiService) GetVEOPStandardContentMetadata(ctx context.Context, did string, vid string, eid string, otype string, oid string, pid string) ApiGetVEOPStandardContentMetadataRequest {
+func (a *MetadataApiService) GetVEOPStandardContentMetadata(ctx context.Context, did string, vid string, eid string, cu string, cuid string, pid string) ApiGetVEOPStandardContentMetadataRequest {
 	return ApiGetVEOPStandardContentMetadataRequest{
 		ApiService: a,
 		ctx:        ctx,
 		did:        did,
 		vid:        vid,
 		eid:        eid,
-		otype:      otype,
-		oid:        oid,
+		cu:         cu,
+		cuid:       cuid,
 		pid:        pid,
 	}
 }
@@ -108,12 +108,12 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPS
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/p/{pid}"
+	localVarPath := localBasePath + "/metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{cu}/{cuid}/p/{pid}"
 	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"vid"+"}", url.PathEscape(parameterToString(r.vid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otype"+"}", url.PathEscape(parameterToString(r.otype, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"oid"+"}", url.PathEscape(parameterToString(r.oid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cu"+"}", url.PathEscape(parameterToString(r.cu, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cuid"+"}", url.PathEscape(parameterToString(r.cuid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pid"+"}", url.PathEscape(parameterToString(r.pid, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1104,8 +1104,8 @@ type ApiUpdateVEOPStandardContentPartMetadataRequest struct {
 	did            string
 	vid            string
 	eid            string
-	otype          string
-	oid            string
+	cu             string
+	cuid           string
 	pid            string
 	body           *string
 	linkDocumentId *string
@@ -1132,20 +1132,20 @@ UpdateVEOPStandardContentPartMetadata Update metadata of a standard content part
  @param did
  @param vid
  @param eid
- @param otype
- @param oid
+ @param cu Indicates which of company (c) or user (u) id is specified below.
+ @param cuid The id of the company or user in which the operation should be performed.
  @param pid
  @return ApiUpdateVEOPStandardContentPartMetadataRequest
 */
-func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadata(ctx context.Context, did string, vid string, eid string, otype string, oid string, pid string) ApiUpdateVEOPStandardContentPartMetadataRequest {
+func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadata(ctx context.Context, did string, vid string, eid string, cu string, cuid string, pid string) ApiUpdateVEOPStandardContentPartMetadataRequest {
 	return ApiUpdateVEOPStandardContentPartMetadataRequest{
 		ApiService: a,
 		ctx:        ctx,
 		did:        did,
 		vid:        vid,
 		eid:        eid,
-		otype:      otype,
-		oid:        oid,
+		cu:         cu,
+		cuid:       cuid,
 		pid:        pid,
 	}
 }
@@ -1165,12 +1165,12 @@ func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadataExecute(r ApiU
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{otype}/{oid}/p/{pid}"
+	localVarPath := localBasePath + "/metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{cu}/{cuid}/p/{pid}"
 	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"vid"+"}", url.PathEscape(parameterToString(r.vid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otype"+"}", url.PathEscape(parameterToString(r.otype, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"oid"+"}", url.PathEscape(parameterToString(r.oid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cu"+"}", url.PathEscape(parameterToString(r.cu, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cuid"+"}", url.PathEscape(parameterToString(r.cuid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pid"+"}", url.PathEscape(parameterToString(r.pid, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)

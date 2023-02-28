@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentId** | Pointer to **string** |  | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **RequestElementId** | Pointer to **string** |  | [optional] 
 **RequestState** | Pointer to **string** |  | [optional] 
 **ResultDocumentId** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ResultExternalDataIds** | Pointer to **[]string** |  | [optional] 
 **ResultWorkspaceId** | Pointer to **string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 **WorkspaceId** | Pointer to **string** |  | [optional] 
 
 ## Methods

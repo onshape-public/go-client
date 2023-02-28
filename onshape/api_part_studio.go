@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.160.12117-533984354e9a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -882,7 +882,7 @@ type ApiExportParasolidRequest struct {
 	binaryExport     *bool
 }
 
-// IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK&amp;partId&#x3D;JHD). May not be combined with other ID filters
+// IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK,JHD). May not be combined with other ID filters
 func (r ApiExportParasolidRequest) PartIds(partIds string) ApiExportParasolidRequest {
 	r.partIds = &partIds
 	return r
@@ -1286,7 +1286,7 @@ type ApiExportPartStudioStlRequest struct {
 	linkDocumentId *string
 }
 
-// IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK&amp;partId&#x3D;JHD). May not be combined with other ID filters
+// IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK,JHD). May not be combined with other ID filters
 func (r ApiExportPartStudioStlRequest) PartIds(partIds string) ApiExportPartStudioStlRequest {
 	r.partIds = &partIds
 	return r
@@ -2791,16 +2791,42 @@ func (a *PartStudioApiService) GetPartStudioFeatureSpecsExecute(r ApiGetPartStud
 }
 
 type ApiGetPartStudioFeaturesRequest struct {
-	ctx                context.Context
-	ApiService         *PartStudioApiService
-	did                string
-	wvm                string
-	wvmid              string
-	eid                string
-	includeGeometryIds *bool
-	featureId          *[]string
-	linkDocumentId     *string
-	noSketchGeometry   *bool
+	ctx                   context.Context
+	ApiService            *PartStudioApiService
+	did                   string
+	wvm                   string
+	wvmid                 string
+	eid                   string
+	linkDocumentId        *string
+	configuration         *string
+	rollbackBarIndex      *int32
+	elementMicroversionId *string
+	includeGeometryIds    *bool
+	featureId             *[]string
+	noSketchGeometry      *bool
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetPartStudioFeaturesRequest) LinkDocumentId(linkDocumentId string) ApiGetPartStudioFeaturesRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiGetPartStudioFeaturesRequest) Configuration(configuration string) ApiGetPartStudioFeaturesRequest {
+	r.configuration = &configuration
+	return r
+}
+
+// Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist.
+func (r ApiGetPartStudioFeaturesRequest) RollbackBarIndex(rollbackBarIndex int32) ApiGetPartStudioFeaturesRequest {
+	r.rollbackBarIndex = &rollbackBarIndex
+	return r
+}
+
+// A specific element microversion in which to evaluate the request.
+func (r ApiGetPartStudioFeaturesRequest) ElementMicroversionId(elementMicroversionId string) ApiGetPartStudioFeaturesRequest {
+	r.elementMicroversionId = &elementMicroversionId
+	return r
 }
 
 func (r ApiGetPartStudioFeaturesRequest) IncludeGeometryIds(includeGeometryIds bool) ApiGetPartStudioFeaturesRequest {
@@ -2811,12 +2837,6 @@ func (r ApiGetPartStudioFeaturesRequest) IncludeGeometryIds(includeGeometryIds b
 // ID of a feature; repeat query param to add more than one
 func (r ApiGetPartStudioFeaturesRequest) FeatureId(featureId []string) ApiGetPartStudioFeaturesRequest {
 	r.featureId = &featureId
-	return r
-}
-
-// Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter.
-func (r ApiGetPartStudioFeaturesRequest) LinkDocumentId(linkDocumentId string) ApiGetPartStudioFeaturesRequest {
-	r.linkDocumentId = &linkDocumentId
 	return r
 }
 
@@ -2834,10 +2854,10 @@ func (r ApiGetPartStudioFeaturesRequest) Execute() (*BTFeatureListResponse2457, 
 GetPartStudioFeatures Retrieve a feature list of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
+ @param did The id of the document in which to perform the operation.
+ @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
+ @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @return ApiGetPartStudioFeaturesRequest
 */
 func (a *PartStudioApiService) GetPartStudioFeatures(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioFeaturesRequest {
@@ -2876,6 +2896,18 @@ func (a *PartStudioApiService) GetPartStudioFeaturesExecute(r ApiGetPartStudioFe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.configuration != nil {
+		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
+	}
+	if r.rollbackBarIndex != nil {
+		localVarQueryParams.Add("rollbackBarIndex", parameterToString(*r.rollbackBarIndex, ""))
+	}
+	if r.elementMicroversionId != nil {
+		localVarQueryParams.Add("elementMicroversionId", parameterToString(*r.elementMicroversionId, ""))
+	}
 	if r.includeGeometryIds != nil {
 		localVarQueryParams.Add("includeGeometryIds", parameterToString(*r.includeGeometryIds, ""))
 	}
@@ -2889,9 +2921,6 @@ func (a *PartStudioApiService) GetPartStudioFeaturesExecute(r ApiGetPartStudioFe
 		} else {
 			localVarQueryParams.Add("featureId", parameterToString(t, "multi"))
 		}
-	}
-	if r.linkDocumentId != nil {
-		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
 	}
 	if r.noSketchGeometry != nil {
 		localVarQueryParams.Add("noSketchGeometry", parameterToString(*r.noSketchGeometry, ""))
