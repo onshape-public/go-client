@@ -38,7 +38,6 @@ api_variables.go
 api_version.go
 api_webhook.go
 api_workflow.go
-api_workflowable_test_object.go
 client.go
 configuration.go
 docs/APIApplicationApi.md
@@ -120,6 +119,7 @@ docs/BTAssemblyOccurrenceInfo.md
 docs/BTAssemblyPartInfo.md
 docs/BTAssemblyPattern1974.md
 docs/BTAssemblyPattern1974AllOf.md
+docs/BTAssemblyPatternInfo.md
 docs/BTAssemblyPsFeatureInfo.md
 docs/BTAssemblyReferencesDisplayData1562.md
 docs/BTAssemblyReplicate2774.md
@@ -183,7 +183,6 @@ docs/BTCloudStorageAccountInfo.md
 docs/BTCloudStorageAccountInfoAllOf.md
 docs/BTCloudStorageObjectInfo.md
 docs/BTColorInfo.md
-docs/BTColorParams.md
 docs/BTCommentAttachmentInfo.md
 docs/BTCommentInfo.md
 docs/BTCommentParams.md
@@ -274,7 +273,6 @@ docs/BTDocumentSearchParams.md
 docs/BTDocumentSelectorInfo.md
 docs/BTDocumentSelectorParametersInfo.md
 docs/BTDocumentSummaryInfo.md
-docs/BTDocumentSummaryInfoAllOf.md
 docs/BTDocumentSummarySearchInfo.md
 docs/BTDocumentSummarySearchInfoAllOf.md
 docs/BTDocumentVersionElementIds1897.md
@@ -476,6 +474,7 @@ docs/BTListResponseBTCategoryPropertyInfo.md
 docs/BTListResponseBTCommentInfo.md
 docs/BTListResponseBTCompanyInfo.md
 docs/BTListResponseBTInsertableInfo.md
+docs/BTListResponseBTObjectWorkflowInfo.md
 docs/BTListResponseBTPurchaseInfo.md
 docs/BTListResponseBTRevisionInfo.md
 docs/BTListResponseBTTeamMemberInfo.md
@@ -662,7 +661,7 @@ docs/BTMUserCode161AllOf.md
 docs/BTMVariableStudioReference2764.md
 docs/BTMVariableStudioReference2764AllOf.md
 docs/BTMassPropertiesBulkInfo.md
-docs/BTMassPropertiesInfoNull.md
+docs/BTMassPropertiesInfo.md
 docs/BTMateConnectorCSInfo.md
 docs/BTMateConnectorDisplayData94.md
 docs/BTMateConnectorEntity28.md
@@ -677,8 +676,6 @@ docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
 docs/BTMaterialLibraryMetadataInfo.md
 docs/BTMaterialLibrarySettingsInfo.md
-docs/BTMaterialParams.md
-docs/BTMaterialPropertyParams.md
 docs/BTMatrix3x3340.md
 docs/BTMergePreviewInfo.md
 docs/BTMetadataCategorySummaryInfo.md
@@ -725,6 +722,7 @@ docs/BTNotice227.md
 docs/BTNullableQuantityRange1340.md
 docs/BTNullableQuantityRange1340AllOf.md
 docs/BTObjectId.md
+docs/BTObjectWorkflowInfo.md
 docs/BTOccurrence74.md
 docs/BTOccurrenceData75.md
 docs/BTOccurrenceDisplayData95.md
@@ -928,7 +926,6 @@ docs/BTParameterVisibilityOnMateDOFType2114AllOf.md
 docs/BTParametricInstance2641.md
 docs/BTParametricInstance2641AllOf.md
 docs/BTPartAppearanceInfo.md
-docs/BTPartAppearanceParams.md
 docs/BTPartCustomProperties1338.md
 docs/BTPartData16.md
 docs/BTPartDisplayData17.md
@@ -1136,7 +1133,6 @@ docs/BTUpdateFeaturesResponse1333.md
 docs/BTUpdateMeshUnitsParams.md
 docs/BTUpdateReferenceParams.md
 docs/BTUpdateReleasePackageParams.md
-docs/BTUpdateWorkflowableTestObjectParams.md
 docs/BTUserAppMessageBody.md
 docs/BTUserAppSettingsInfo.md
 docs/BTUserAppSettingsParams.md
@@ -1177,9 +1173,9 @@ docs/BTWorkflowPropertyInfo.md
 docs/BTWorkflowSnapshotInfo.md
 docs/BTWorkflowStateInfo.md
 docs/BTWorkflowableObjectObserver.md
-docs/BTWorkflowableTestObjectInfo.md
 docs/BTWorkspaceInfo.md
-docs/BTWorkspacePartParams.md
+docs/BTWorkspaceMessageBody.md
+docs/BTWorkspaceMessageBodyAllOf.md
 docs/BillingApi.md
 docs/BlobElementApi.md
 docs/BlobItem.md
@@ -1242,7 +1238,6 @@ docs/VersionApi.md
 docs/Versions.md
 docs/WebhookApi.md
 docs/WorkflowApi.md
-docs/WorkflowableTestObjectApi.md
 git_push.sh
 model_address.go
 model_blob_item.go
@@ -1305,6 +1300,7 @@ model_bt_assembly_mate_connector_info.go
 model_bt_assembly_occurrence_info.go
 model_bt_assembly_part_info.go
 model_bt_assembly_pattern_1974.go
+model_bt_assembly_pattern_info.go
 model_bt_assembly_ps_feature_info.go
 model_bt_assembly_references_display_data_1562.go
 model_bt_assembly_replicate_2774.go
@@ -1349,7 +1345,6 @@ model_bt_closed_curve_filter_1206.go
 model_bt_cloud_storage_account_info.go
 model_bt_cloud_storage_object_info.go
 model_bt_color_info.go
-model_bt_color_params.go
 model_bt_comment_attachment_info.go
 model_bt_comment_info.go
 model_bt_comment_params.go
@@ -1536,6 +1531,7 @@ model_bt_list_response_bt_category_property_info.go
 model_bt_list_response_bt_comment_info.go
 model_bt_list_response_bt_company_info.go
 model_bt_list_response_bt_insertable_info.go
+model_bt_list_response_bt_object_workflow_info.go
 model_bt_list_response_bt_purchase_info.go
 model_bt_list_response_bt_revision_info.go
 model_bt_list_response_bt_team_member_info.go
@@ -1546,7 +1542,7 @@ model_bt_load_display_data_837.go
 model_bt_location_info_226.go
 model_bt_login_params.go
 model_bt_mass_properties_bulk_info.go
-model_bt_mass_properties_info_null.go
+model_bt_mass_properties_info.go
 model_bt_mate_connector_cs_info.go
 model_bt_mate_connector_display_data_94.go
 model_bt_mate_connector_entity_28.go
@@ -1557,8 +1553,6 @@ model_bt_mate_group_display_data_1990.go
 model_bt_mate_occurrence_data_1671.go
 model_bt_material_library_metadata_info.go
 model_bt_material_library_settings_info.go
-model_bt_material_params.go
-model_bt_material_property_params.go
 model_bt_matrix3x3_340.go
 model_bt_merge_preview_info.go
 model_bt_metadata_category_summary_info.go
@@ -1598,6 +1592,7 @@ model_bt_not_filter_165.go
 model_bt_notice_227.go
 model_bt_nullable_quantity_range_1340.go
 model_bt_object_id.go
+model_bt_object_workflow_info.go
 model_bt_occurrence_74.go
 model_bt_occurrence_data_75.go
 model_bt_occurrence_display_data_95.go
@@ -1645,7 +1640,6 @@ model_bt_parameter_visibility_on_equal_180.go
 model_bt_parameter_visibility_on_mate_dof_type_2114.go
 model_bt_parametric_instance_2641.go
 model_bt_part_appearance_info.go
-model_bt_part_appearance_params.go
 model_bt_part_custom_properties_1338.go
 model_bt_part_data_16.go
 model_bt_part_display_data_17.go
@@ -1790,7 +1784,6 @@ model_bt_update_features_response_1333.go
 model_bt_update_mesh_units_params.go
 model_bt_update_reference_params.go
 model_bt_update_release_package_params.go
-model_bt_update_workflowable_test_object_params.go
 model_bt_user_app_message_body.go
 model_bt_user_app_settings_info.go
 model_bt_user_app_settings_params.go
@@ -1829,9 +1822,8 @@ model_bt_workflow_property_info.go
 model_bt_workflow_snapshot_info.go
 model_bt_workflow_state_info.go
 model_bt_workflowable_object_observer.go
-model_bt_workflowable_test_object_info.go
 model_bt_workspace_info.go
-model_bt_workspace_part_params.go
+model_bt_workspace_message_body.go
 model_btapi_application_extension_info.go
 model_btapi_application_summary_info.go
 model_btb_export_model_params.go

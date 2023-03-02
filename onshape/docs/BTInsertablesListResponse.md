@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **Configuration** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 **ConfigurationKey** | Pointer to **string** |  | [optional] 
 **HasMultipleVersions** | Pointer to **bool** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]BTInsertableInfo**](BTInsertableInfo.md) |  | [optional] 
-**Next** | Pointer to **string** |  | [optional] 
-**Previous** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI for current page of resources. | [optional] 
+**Items** | Pointer to [**[]BTInsertableInfo**](BTInsertableInfo.md) | Array of items in the current page. | [optional] 
+**Next** | Pointer to **string** | URI for next page of the resources if more are available. | [optional] 
+**Previous** | Pointer to **string** | URI for previous page of the resources. | [optional] 
 **UpdatedThumbnailUri** | Pointer to **string** |  | [optional] 
 
 ## Methods

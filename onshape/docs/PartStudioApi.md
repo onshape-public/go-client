@@ -538,7 +538,7 @@ func main() {
     wvm := "wvm_example" // string | One of w or v or m corresponding to whether a workspace or version or microversion was entered.
     wvmid := "wvmid_example" // string | Workspace (w), Version (v) or Microversion (m) ID.
     eid := "eid_example" // string | Element ID.
-    partIds := "partIds_example" // string | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId=JHK&partId=JHD). May not be combined with other ID filters (optional)
+    partIds := "partIds_example" // string | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId=JHK,JHD). May not be combined with other ID filters (optional)
     version := "version_example" // string | Parasolid version (optional) (default to "0")
     includeExportIds := true // bool | Whether topology ids should be exported as parasolid attributes (optional) (default to false)
     configuration := "configuration_example" // string | Configuration string. (optional)
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 
 
- **partIds** | **string** | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK&amp;partId&#x3D;JHD). May not be combined with other ID filters | 
+ **partIds** | **string** | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK,JHD). May not be combined with other ID filters | 
  **version** | **string** | Parasolid version | [default to &quot;0&quot;]
  **includeExportIds** | **bool** | Whether topology ids should be exported as parasolid attributes | [default to false]
  **configuration** | **string** | Configuration string. | 
@@ -726,7 +726,7 @@ func main() {
     wvm := "wvm_example" // string | One of w or v or m corresponding to whether a workspace or version or microversion was entered.
     wvmid := "wvmid_example" // string | Workspace (w), Version (v) or Microversion (m) ID.
     eid := "eid_example" // string | Element ID.
-    partIds := "partIds_example" // string | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId=JHK&partId=JHD). May not be combined with other ID filters (optional)
+    partIds := "partIds_example" // string | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId=JHK,JHD). May not be combined with other ID filters (optional)
     mode := "mode_example" // string | Type of file: text, binary (optional) (default to "text")
     grouping := true // bool | Whether parts should be exported as a group or individually in a .zip file (optional) (default to true)
     scale := float64(1.2) // float64 | Scale for measurements. (optional) (default to 1)
@@ -770,7 +770,7 @@ Name | Type | Description  | Notes
 
 
 
- **partIds** | **string** | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK&amp;partId&#x3D;JHD). May not be combined with other ID filters | 
+ **partIds** | **string** | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK,JHD). May not be combined with other ID filters | 
  **mode** | **string** | Type of file: text, binary | [default to &quot;text&quot;]
  **grouping** | **bool** | Whether parts should be exported as a group or individually in a .zip file | [default to true]
  **scale** | **float64** | Scale for measurements. | [default to 1]
@@ -1435,7 +1435,7 @@ Name | Type | Description  | Notes
 
 ## GetPartStudioFeatures
 
-> BTFeatureListResponse2457 GetPartStudioFeatures(ctx, did, wvm, wvmid, eid).IncludeGeometryIds(includeGeometryIds).FeatureId(featureId).LinkDocumentId(linkDocumentId).NoSketchGeometry(noSketchGeometry).Execute()
+> BTFeatureListResponse2457 GetPartStudioFeatures(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeGeometryIds(includeGeometryIds).FeatureId(featureId).NoSketchGeometry(noSketchGeometry).Execute()
 
 Retrieve a feature list of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -1452,18 +1452,21 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | Document ID.
-    wvm := "wvm_example" // string | One of w or v or m corresponding to whether a workspace or version or microversion was entered.
-    wvmid := "wvmid_example" // string | Workspace (w), Version (v) or Microversion (m) ID.
-    eid := "eid_example" // string | Element ID.
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string |  (optional) (default to "")
+    rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
+    elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     includeGeometryIds := true // bool |  (optional) (default to true)
     featureId := []string{"Inner_example"} // []string | ID of a feature; repeat query param to add more than one (optional)
-    linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
     noSketchGeometry := true // bool | Whether or not to output simple sketch info without geometry (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PartStudioApi.GetPartStudioFeatures(context.Background(), did, wvm, wvmid, eid).IncludeGeometryIds(includeGeometryIds).FeatureId(featureId).LinkDocumentId(linkDocumentId).NoSketchGeometry(noSketchGeometry).Execute()
+    resp, r, err := apiClient.PartStudioApi.GetPartStudioFeatures(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeGeometryIds(includeGeometryIds).FeatureId(featureId).NoSketchGeometry(noSketchGeometry).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioFeatures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1479,10 +1482,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** | Document ID. | 
-**wvm** | **string** | One of w or v or m corresponding to whether a workspace or version or microversion was entered. | 
-**wvmid** | **string** | Workspace (w), Version (v) or Microversion (m) ID. | 
-**eid** | **string** | Element ID. | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -1495,9 +1498,12 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** |  | [default to &quot;&quot;]
+ **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
+ **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **includeGeometryIds** | **bool** |  | [default to true]
  **featureId** | **[]string** | ID of a feature; repeat query param to add more than one | 
- **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
  **noSketchGeometry** | **bool** | Whether or not to output simple sketch info without geometry | [default to false]
 
 ### Return type

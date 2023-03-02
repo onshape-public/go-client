@@ -9,10 +9,11 @@ Name | Type | Description | Notes
 **DocumentMicroversion** | Pointer to **string** |  | [optional] 
 **DocumentVersion** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
-**Features** | Pointer to [**[]BTAssemblyFeatureInfo**](BTAssemblyFeatureInfo.md) |  | [optional] 
+**Features** | Pointer to [**[]BTAssemblyFeatureInfo**](BTAssemblyFeatureInfo.md) | List of Assembly features including those are created by replicates. | [optional] 
 **FullConfiguration** | Pointer to **string** |  | [optional] 
-**Instances** | Pointer to [**[]BTAssemblyInstanceInfo**](BTAssemblyInstanceInfo.md) |  | [optional] 
+**Instances** | Pointer to [**[]BTAssemblyInstanceInfo**](BTAssemblyInstanceInfo.md) | List of instances including those created by patterns and replicates. | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
+**Patterns** | Pointer to [**[]BTAssemblyPatternInfo**](BTAssemblyPatternInfo.md) | List of patterns. | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetPartNumber sets PartNumber field to given value.
 `func (o *BTSubAssemblyInfo) HasPartNumber() bool`
 
 HasPartNumber returns a boolean if a field has been set.
+
+### GetPatterns
+
+`func (o *BTSubAssemblyInfo) GetPatterns() []BTAssemblyPatternInfo`
+
+GetPatterns returns the Patterns field if non-nil, zero value otherwise.
+
+### GetPatternsOk
+
+`func (o *BTSubAssemblyInfo) GetPatternsOk() (*[]BTAssemblyPatternInfo, bool)`
+
+GetPatternsOk returns a tuple with the Patterns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPatterns
+
+`func (o *BTSubAssemblyInfo) SetPatterns(v []BTAssemblyPatternInfo)`
+
+SetPatterns sets Patterns field to given value.
+
+### HasPatterns
+
+`func (o *BTSubAssemblyInfo) HasPatterns() bool`
+
+HasPatterns returns a boolean if a field has been set.
 
 ### GetRevision
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **CopyWithoutGeometry** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **Decompressed** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **Deletion** | Pointer to **bool** |  | [optional] 
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewBTBaseEntityData33WithDefaults instantiates a new BTBaseEntityData33 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTBaseEntityData33) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTBaseEntityData33) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTBaseEntityData33) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTBaseEntityData33) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetCopyWithoutGeometry
 
