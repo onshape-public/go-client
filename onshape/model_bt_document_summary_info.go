@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.160.12410-b0c73c1032e8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -35,8 +35,8 @@ func (o *BTDocumentSummarySearchInfo) AsBTDocumentSummaryInfo() *BTDocumentSumma
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTDocumentSummaryInfo(jsonType string) *BTDocumentSummaryInfo {
-	this := BTDocumentSummaryInfo{Newbase_BTDocumentSummaryInfo(jsonType)}
+func NewBTDocumentSummaryInfo() *BTDocumentSummaryInfo {
+	this := BTDocumentSummaryInfo{Newbase_BTDocumentSummaryInfo()}
 	return &this
 }
 
@@ -46,6 +46,106 @@ func NewBTDocumentSummaryInfo(jsonType string) *BTDocumentSummaryInfo {
 func NewBTDocumentSummaryInfoWithDefaults() *BTDocumentSummaryInfo {
 	this := BTDocumentSummaryInfo{Newbase_BTDocumentSummaryInfoWithDefaults()}
 	return &this
+}
+
+// GetAnonymousAccessAllowed returns the AnonymousAccessAllowed field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetAnonymousAccessAllowed() bool {
+	type getResult interface {
+		GetAnonymousAccessAllowed() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnonymousAccessAllowed()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAnonymousAccessAllowedOk returns a tuple with the AnonymousAccessAllowed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetAnonymousAccessAllowedOk() (*bool, bool) {
+	type getResult interface {
+		GetAnonymousAccessAllowedOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnonymousAccessAllowedOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAnonymousAccessAllowed returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasAnonymousAccessAllowed() bool {
+	type getResult interface {
+		HasAnonymousAccessAllowed() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAnonymousAccessAllowed()
+	} else {
+		return false
+	}
+}
+
+// SetAnonymousAccessAllowed gets a reference to the given bool and assigns it to the AnonymousAccessAllowed field.
+func (o *BTDocumentSummaryInfo) SetAnonymousAccessAllowed(v bool) {
+	type getResult interface {
+		SetAnonymousAccessAllowed(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAnonymousAccessAllowed(v)
+}
+
+// GetAnonymousAllowsExport returns the AnonymousAllowsExport field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetAnonymousAllowsExport() bool {
+	type getResult interface {
+		GetAnonymousAllowsExport() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnonymousAllowsExport()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAnonymousAllowsExportOk returns a tuple with the AnonymousAllowsExport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetAnonymousAllowsExportOk() (*bool, bool) {
+	type getResult interface {
+		GetAnonymousAllowsExportOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnonymousAllowsExportOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAnonymousAllowsExport returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasAnonymousAllowsExport() bool {
+	type getResult interface {
+		HasAnonymousAllowsExport() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAnonymousAllowsExport()
+	} else {
+		return false
+	}
+}
+
+// SetAnonymousAllowsExport gets a reference to the given bool and assigns it to the AnonymousAllowsExport field.
+func (o *BTDocumentSummaryInfo) SetAnonymousAllowsExport(v bool) {
+	type getResult interface {
+		SetAnonymousAllowsExport(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAnonymousAllowsExport(v)
 }
 
 // GetCanMove returns the CanMove field value if set, zero value otherwise.
@@ -96,6 +196,56 @@ func (o *BTDocumentSummaryInfo) SetCanMove(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetCanMove(v)
+}
+
+// GetCanUnshare returns the CanUnshare field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetCanUnshare() bool {
+	type getResult interface {
+		GetCanUnshare() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCanUnshare()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetCanUnshareOk returns a tuple with the CanUnshare field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetCanUnshareOk() (*bool, bool) {
+	type getResult interface {
+		GetCanUnshareOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCanUnshareOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCanUnshare returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasCanUnshare() bool {
+	type getResult interface {
+		HasCanUnshare() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCanUnshare()
+	} else {
+		return false
+	}
+}
+
+// SetCanUnshare gets a reference to the given bool and assigns it to the CanUnshare field.
+func (o *BTDocumentSummaryInfo) SetCanUnshare(v bool) {
+	type getResult interface {
+		SetCanUnshare(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetCanUnshare(v)
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -198,6 +348,156 @@ func (o *BTDocumentSummaryInfo) SetCreatedBy(v BTUserBasicSummaryInfo) {
 	o.GetActualInstance().(getResult).SetCreatedBy(v)
 }
 
+// GetCreatedWithEducationPlan returns the CreatedWithEducationPlan field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetCreatedWithEducationPlan() bool {
+	type getResult interface {
+		GetCreatedWithEducationPlan() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCreatedWithEducationPlan()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetCreatedWithEducationPlanOk returns a tuple with the CreatedWithEducationPlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetCreatedWithEducationPlanOk() (*bool, bool) {
+	type getResult interface {
+		GetCreatedWithEducationPlanOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCreatedWithEducationPlanOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCreatedWithEducationPlan returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasCreatedWithEducationPlan() bool {
+	type getResult interface {
+		HasCreatedWithEducationPlan() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCreatedWithEducationPlan()
+	} else {
+		return false
+	}
+}
+
+// SetCreatedWithEducationPlan gets a reference to the given bool and assigns it to the CreatedWithEducationPlan field.
+func (o *BTDocumentSummaryInfo) SetCreatedWithEducationPlan(v bool) {
+	type getResult interface {
+		SetCreatedWithEducationPlan(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetCreatedWithEducationPlan(v)
+}
+
+// GetDefaultElementId returns the DefaultElementId field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetDefaultElementId() string {
+	type getResult interface {
+		GetDefaultElementId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultElementId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDefaultElementIdOk returns a tuple with the DefaultElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetDefaultElementIdOk() (*string, bool) {
+	type getResult interface {
+		GetDefaultElementIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultElementIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDefaultElementId returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasDefaultElementId() bool {
+	type getResult interface {
+		HasDefaultElementId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDefaultElementId()
+	} else {
+		return false
+	}
+}
+
+// SetDefaultElementId gets a reference to the given string and assigns it to the DefaultElementId field.
+func (o *BTDocumentSummaryInfo) SetDefaultElementId(v string) {
+	type getResult interface {
+		SetDefaultElementId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDefaultElementId(v)
+}
+
+// GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetDefaultWorkspace() BTWorkspaceInfo {
+	type getResult interface {
+		GetDefaultWorkspace() BTWorkspaceInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultWorkspace()
+	} else {
+		var de BTWorkspaceInfo
+		return de
+	}
+}
+
+// GetDefaultWorkspaceOk returns a tuple with the DefaultWorkspace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetDefaultWorkspaceOk() (*BTWorkspaceInfo, bool) {
+	type getResult interface {
+		GetDefaultWorkspaceOk() (*BTWorkspaceInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultWorkspaceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDefaultWorkspace returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasDefaultWorkspace() bool {
+	type getResult interface {
+		HasDefaultWorkspace() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDefaultWorkspace()
+	} else {
+		return false
+	}
+}
+
+// SetDefaultWorkspace gets a reference to the given BTWorkspaceInfo and assigns it to the DefaultWorkspace field.
+func (o *BTDocumentSummaryInfo) SetDefaultWorkspace(v BTWorkspaceInfo) {
+	type getResult interface {
+		SetDefaultWorkspace(v BTWorkspaceInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetDefaultWorkspace(v)
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *BTDocumentSummaryInfo) GetDescription() string {
 	type getResult interface {
@@ -246,6 +546,206 @@ func (o *BTDocumentSummaryInfo) SetDescription(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetDescription(v)
+}
+
+// GetDocumentLabels returns the DocumentLabels field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetDocumentLabels() []BTDocumentLabelInfo {
+	type getResult interface {
+		GetDocumentLabels() []BTDocumentLabelInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentLabels()
+	} else {
+		var de []BTDocumentLabelInfo
+		return de
+	}
+}
+
+// GetDocumentLabelsOk returns a tuple with the DocumentLabels field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetDocumentLabelsOk() ([]BTDocumentLabelInfo, bool) {
+	type getResult interface {
+		GetDocumentLabelsOk() ([]BTDocumentLabelInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentLabelsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDocumentLabels returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasDocumentLabels() bool {
+	type getResult interface {
+		HasDocumentLabels() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDocumentLabels()
+	} else {
+		return false
+	}
+}
+
+// SetDocumentLabels gets a reference to the given []BTDocumentLabelInfo and assigns it to the DocumentLabels field.
+func (o *BTDocumentSummaryInfo) SetDocumentLabels(v []BTDocumentLabelInfo) {
+	type getResult interface {
+		SetDocumentLabels(v []BTDocumentLabelInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetDocumentLabels(v)
+}
+
+// GetDocumentType returns the DocumentType field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetDocumentType() int32 {
+	type getResult interface {
+		GetDocumentType() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentType()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetDocumentTypeOk() (*int32, bool) {
+	type getResult interface {
+		GetDocumentTypeOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDocumentType returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasDocumentType() bool {
+	type getResult interface {
+		HasDocumentType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDocumentType()
+	} else {
+		return false
+	}
+}
+
+// SetDocumentType gets a reference to the given int32 and assigns it to the DocumentType field.
+func (o *BTDocumentSummaryInfo) SetDocumentType(v int32) {
+	type getResult interface {
+		SetDocumentType(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetDocumentType(v)
+}
+
+// GetHasReleaseRevisionableObjects returns the HasReleaseRevisionableObjects field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetHasReleaseRevisionableObjects() bool {
+	type getResult interface {
+		GetHasReleaseRevisionableObjects() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetHasReleaseRevisionableObjects()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetHasReleaseRevisionableObjectsOk returns a tuple with the HasReleaseRevisionableObjects field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetHasReleaseRevisionableObjectsOk() (*bool, bool) {
+	type getResult interface {
+		GetHasReleaseRevisionableObjectsOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetHasReleaseRevisionableObjectsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasHasReleaseRevisionableObjects returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasHasReleaseRevisionableObjects() bool {
+	type getResult interface {
+		HasHasReleaseRevisionableObjects() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasHasReleaseRevisionableObjects()
+	} else {
+		return false
+	}
+}
+
+// SetHasReleaseRevisionableObjects gets a reference to the given bool and assigns it to the HasReleaseRevisionableObjects field.
+func (o *BTDocumentSummaryInfo) SetHasReleaseRevisionableObjects(v bool) {
+	type getResult interface {
+		SetHasReleaseRevisionableObjects(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetHasReleaseRevisionableObjects(v)
+}
+
+// GetHasRelevantInsertables returns the HasRelevantInsertables field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetHasRelevantInsertables() bool {
+	type getResult interface {
+		GetHasRelevantInsertables() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetHasRelevantInsertables()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetHasRelevantInsertablesOk returns a tuple with the HasRelevantInsertables field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetHasRelevantInsertablesOk() (*bool, bool) {
+	type getResult interface {
+		GetHasRelevantInsertablesOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetHasRelevantInsertablesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasHasRelevantInsertables returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasHasRelevantInsertables() bool {
+	type getResult interface {
+		HasHasRelevantInsertables() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasHasRelevantInsertables()
+	} else {
+		return false
+	}
+}
+
+// SetHasRelevantInsertables gets a reference to the given bool and assigns it to the HasRelevantInsertables field.
+func (o *BTDocumentSummaryInfo) SetHasRelevantInsertables(v bool) {
+	type getResult interface {
+		SetHasRelevantInsertables(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetHasRelevantInsertables(v)
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -498,993 +998,6 @@ func (o *BTDocumentSummaryInfo) SetIsMutable(v bool) {
 	o.GetActualInstance().(getResult).SetIsMutable(v)
 }
 
-// GetJsonType returns the JsonType field value
-func (o *BTDocumentSummaryInfo) GetJsonType() string {
-	type getResult interface {
-		GetJsonType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetJsonType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetJsonTypeOk returns a tuple with the JsonType field value
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetJsonTypeOk() (*string, bool) {
-	type getResult interface {
-		GetJsonTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetJsonTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// SetJsonType sets field value
-func (o *BTDocumentSummaryInfo) SetJsonType(v string) {
-	type getResult interface {
-		SetJsonType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetJsonType(v)
-}
-
-// GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetModifiedAt() JSONTime {
-	type getResult interface {
-		GetModifiedAt() JSONTime
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetModifiedAt()
-	} else {
-		var de JSONTime
-		return de
-	}
-}
-
-// GetModifiedAtOk returns a tuple with the ModifiedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetModifiedAtOk() (*JSONTime, bool) {
-	type getResult interface {
-		GetModifiedAtOk() (*JSONTime, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetModifiedAtOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasModifiedAt returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasModifiedAt() bool {
-	type getResult interface {
-		HasModifiedAt() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasModifiedAt()
-	} else {
-		return false
-	}
-}
-
-// SetModifiedAt gets a reference to the given JSONTime and assigns it to the ModifiedAt field.
-func (o *BTDocumentSummaryInfo) SetModifiedAt(v JSONTime) {
-	type getResult interface {
-		SetModifiedAt(v JSONTime)
-	}
-
-	o.GetActualInstance().(getResult).SetModifiedAt(v)
-}
-
-// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetModifiedBy() BTUserBasicSummaryInfo {
-	type getResult interface {
-		GetModifiedBy() BTUserBasicSummaryInfo
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetModifiedBy()
-	} else {
-		var de BTUserBasicSummaryInfo
-		return de
-	}
-}
-
-// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetModifiedByOk() (*BTUserBasicSummaryInfo, bool) {
-	type getResult interface {
-		GetModifiedByOk() (*BTUserBasicSummaryInfo, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetModifiedByOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasModifiedBy returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasModifiedBy() bool {
-	type getResult interface {
-		HasModifiedBy() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasModifiedBy()
-	} else {
-		return false
-	}
-}
-
-// SetModifiedBy gets a reference to the given BTUserBasicSummaryInfo and assigns it to the ModifiedBy field.
-func (o *BTDocumentSummaryInfo) SetModifiedBy(v BTUserBasicSummaryInfo) {
-	type getResult interface {
-		SetModifiedBy(v BTUserBasicSummaryInfo)
-	}
-
-	o.GetActualInstance().(getResult).SetModifiedBy(v)
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetName() string {
-	type getResult interface {
-		GetName() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetName()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetNameOk() (*string, bool) {
-	type getResult interface {
-		GetNameOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNameOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasName() bool {
-	type getResult interface {
-		HasName() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasName()
-	} else {
-		return false
-	}
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *BTDocumentSummaryInfo) SetName(v string) {
-	type getResult interface {
-		SetName(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetName(v)
-}
-
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetOwner() BTOwnerInfo {
-	type getResult interface {
-		GetOwner() BTOwnerInfo
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOwner()
-	} else {
-		var de BTOwnerInfo
-		return de
-	}
-}
-
-// GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetOwnerOk() (*BTOwnerInfo, bool) {
-	type getResult interface {
-		GetOwnerOk() (*BTOwnerInfo, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOwnerOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasOwner returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasOwner() bool {
-	type getResult interface {
-		HasOwner() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasOwner()
-	} else {
-		return false
-	}
-}
-
-// SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
-func (o *BTDocumentSummaryInfo) SetOwner(v BTOwnerInfo) {
-	type getResult interface {
-		SetOwner(v BTOwnerInfo)
-	}
-
-	o.GetActualInstance().(getResult).SetOwner(v)
-}
-
-// GetProjectId returns the ProjectId field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetProjectId() string {
-	type getResult interface {
-		GetProjectId() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetProjectId()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetProjectIdOk() (*string, bool) {
-	type getResult interface {
-		GetProjectIdOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetProjectIdOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasProjectId returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasProjectId() bool {
-	type getResult interface {
-		HasProjectId() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasProjectId()
-	} else {
-		return false
-	}
-}
-
-// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
-func (o *BTDocumentSummaryInfo) SetProjectId(v string) {
-	type getResult interface {
-		SetProjectId(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetProjectId(v)
-}
-
-// GetResourceType returns the ResourceType field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetResourceType() string {
-	type getResult interface {
-		GetResourceType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetResourceType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetResourceTypeOk() (*string, bool) {
-	type getResult interface {
-		GetResourceTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetResourceTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasResourceType returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasResourceType() bool {
-	type getResult interface {
-		HasResourceType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasResourceType()
-	} else {
-		return false
-	}
-}
-
-// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
-func (o *BTDocumentSummaryInfo) SetResourceType(v string) {
-	type getResult interface {
-		SetResourceType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetResourceType(v)
-}
-
-// GetTreeHref returns the TreeHref field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetTreeHref() string {
-	type getResult interface {
-		GetTreeHref() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTreeHref()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetTreeHrefOk returns a tuple with the TreeHref field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetTreeHrefOk() (*string, bool) {
-	type getResult interface {
-		GetTreeHrefOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTreeHrefOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTreeHref returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasTreeHref() bool {
-	type getResult interface {
-		HasTreeHref() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTreeHref()
-	} else {
-		return false
-	}
-}
-
-// SetTreeHref gets a reference to the given string and assigns it to the TreeHref field.
-func (o *BTDocumentSummaryInfo) SetTreeHref(v string) {
-	type getResult interface {
-		SetTreeHref(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetTreeHref(v)
-}
-
-// GetUnparentHref returns the UnparentHref field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetUnparentHref() string {
-	type getResult interface {
-		GetUnparentHref() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetUnparentHref()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetUnparentHrefOk returns a tuple with the UnparentHref field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetUnparentHrefOk() (*string, bool) {
-	type getResult interface {
-		GetUnparentHrefOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetUnparentHrefOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasUnparentHref returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasUnparentHref() bool {
-	type getResult interface {
-		HasUnparentHref() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasUnparentHref()
-	} else {
-		return false
-	}
-}
-
-// SetUnparentHref gets a reference to the given string and assigns it to the UnparentHref field.
-func (o *BTDocumentSummaryInfo) SetUnparentHref(v string) {
-	type getResult interface {
-		SetUnparentHref(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetUnparentHref(v)
-}
-
-// GetViewRef returns the ViewRef field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetViewRef() string {
-	type getResult interface {
-		GetViewRef() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetViewRef()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetViewRefOk returns a tuple with the ViewRef field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetViewRefOk() (*string, bool) {
-	type getResult interface {
-		GetViewRefOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetViewRefOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasViewRef returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasViewRef() bool {
-	type getResult interface {
-		HasViewRef() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasViewRef()
-	} else {
-		return false
-	}
-}
-
-// SetViewRef gets a reference to the given string and assigns it to the ViewRef field.
-func (o *BTDocumentSummaryInfo) SetViewRef(v string) {
-	type getResult interface {
-		SetViewRef(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetViewRef(v)
-}
-
-// GetAnonymousAccessAllowed returns the AnonymousAccessAllowed field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetAnonymousAccessAllowed() bool {
-	type getResult interface {
-		GetAnonymousAccessAllowed() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAnonymousAccessAllowed()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetAnonymousAccessAllowedOk returns a tuple with the AnonymousAccessAllowed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetAnonymousAccessAllowedOk() (*bool, bool) {
-	type getResult interface {
-		GetAnonymousAccessAllowedOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAnonymousAccessAllowedOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasAnonymousAccessAllowed returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasAnonymousAccessAllowed() bool {
-	type getResult interface {
-		HasAnonymousAccessAllowed() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasAnonymousAccessAllowed()
-	} else {
-		return false
-	}
-}
-
-// SetAnonymousAccessAllowed gets a reference to the given bool and assigns it to the AnonymousAccessAllowed field.
-func (o *BTDocumentSummaryInfo) SetAnonymousAccessAllowed(v bool) {
-	type getResult interface {
-		SetAnonymousAccessAllowed(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetAnonymousAccessAllowed(v)
-}
-
-// GetAnonymousAllowsExport returns the AnonymousAllowsExport field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetAnonymousAllowsExport() bool {
-	type getResult interface {
-		GetAnonymousAllowsExport() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAnonymousAllowsExport()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetAnonymousAllowsExportOk returns a tuple with the AnonymousAllowsExport field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetAnonymousAllowsExportOk() (*bool, bool) {
-	type getResult interface {
-		GetAnonymousAllowsExportOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAnonymousAllowsExportOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasAnonymousAllowsExport returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasAnonymousAllowsExport() bool {
-	type getResult interface {
-		HasAnonymousAllowsExport() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasAnonymousAllowsExport()
-	} else {
-		return false
-	}
-}
-
-// SetAnonymousAllowsExport gets a reference to the given bool and assigns it to the AnonymousAllowsExport field.
-func (o *BTDocumentSummaryInfo) SetAnonymousAllowsExport(v bool) {
-	type getResult interface {
-		SetAnonymousAllowsExport(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetAnonymousAllowsExport(v)
-}
-
-// GetCanUnshare returns the CanUnshare field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetCanUnshare() bool {
-	type getResult interface {
-		GetCanUnshare() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanUnshare()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetCanUnshareOk returns a tuple with the CanUnshare field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetCanUnshareOk() (*bool, bool) {
-	type getResult interface {
-		GetCanUnshareOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanUnshareOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasCanUnshare returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasCanUnshare() bool {
-	type getResult interface {
-		HasCanUnshare() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasCanUnshare()
-	} else {
-		return false
-	}
-}
-
-// SetCanUnshare gets a reference to the given bool and assigns it to the CanUnshare field.
-func (o *BTDocumentSummaryInfo) SetCanUnshare(v bool) {
-	type getResult interface {
-		SetCanUnshare(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetCanUnshare(v)
-}
-
-// GetCreatedWithEducationPlan returns the CreatedWithEducationPlan field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetCreatedWithEducationPlan() bool {
-	type getResult interface {
-		GetCreatedWithEducationPlan() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCreatedWithEducationPlan()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetCreatedWithEducationPlanOk returns a tuple with the CreatedWithEducationPlan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetCreatedWithEducationPlanOk() (*bool, bool) {
-	type getResult interface {
-		GetCreatedWithEducationPlanOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCreatedWithEducationPlanOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasCreatedWithEducationPlan returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasCreatedWithEducationPlan() bool {
-	type getResult interface {
-		HasCreatedWithEducationPlan() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasCreatedWithEducationPlan()
-	} else {
-		return false
-	}
-}
-
-// SetCreatedWithEducationPlan gets a reference to the given bool and assigns it to the CreatedWithEducationPlan field.
-func (o *BTDocumentSummaryInfo) SetCreatedWithEducationPlan(v bool) {
-	type getResult interface {
-		SetCreatedWithEducationPlan(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetCreatedWithEducationPlan(v)
-}
-
-// GetDefaultElementId returns the DefaultElementId field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetDefaultElementId() string {
-	type getResult interface {
-		GetDefaultElementId() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultElementId()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetDefaultElementIdOk returns a tuple with the DefaultElementId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetDefaultElementIdOk() (*string, bool) {
-	type getResult interface {
-		GetDefaultElementIdOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultElementIdOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasDefaultElementId returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasDefaultElementId() bool {
-	type getResult interface {
-		HasDefaultElementId() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasDefaultElementId()
-	} else {
-		return false
-	}
-}
-
-// SetDefaultElementId gets a reference to the given string and assigns it to the DefaultElementId field.
-func (o *BTDocumentSummaryInfo) SetDefaultElementId(v string) {
-	type getResult interface {
-		SetDefaultElementId(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetDefaultElementId(v)
-}
-
-// GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetDefaultWorkspace() BTWorkspaceInfo {
-	type getResult interface {
-		GetDefaultWorkspace() BTWorkspaceInfo
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultWorkspace()
-	} else {
-		var de BTWorkspaceInfo
-		return de
-	}
-}
-
-// GetDefaultWorkspaceOk returns a tuple with the DefaultWorkspace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetDefaultWorkspaceOk() (*BTWorkspaceInfo, bool) {
-	type getResult interface {
-		GetDefaultWorkspaceOk() (*BTWorkspaceInfo, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultWorkspaceOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasDefaultWorkspace returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasDefaultWorkspace() bool {
-	type getResult interface {
-		HasDefaultWorkspace() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasDefaultWorkspace()
-	} else {
-		return false
-	}
-}
-
-// SetDefaultWorkspace gets a reference to the given BTWorkspaceInfo and assigns it to the DefaultWorkspace field.
-func (o *BTDocumentSummaryInfo) SetDefaultWorkspace(v BTWorkspaceInfo) {
-	type getResult interface {
-		SetDefaultWorkspace(v BTWorkspaceInfo)
-	}
-
-	o.GetActualInstance().(getResult).SetDefaultWorkspace(v)
-}
-
-// GetDocumentLabels returns the DocumentLabels field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetDocumentLabels() []BTDocumentLabelInfo {
-	type getResult interface {
-		GetDocumentLabels() []BTDocumentLabelInfo
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDocumentLabels()
-	} else {
-		var de []BTDocumentLabelInfo
-		return de
-	}
-}
-
-// GetDocumentLabelsOk returns a tuple with the DocumentLabels field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetDocumentLabelsOk() ([]BTDocumentLabelInfo, bool) {
-	type getResult interface {
-		GetDocumentLabelsOk() ([]BTDocumentLabelInfo, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDocumentLabelsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasDocumentLabels returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasDocumentLabels() bool {
-	type getResult interface {
-		HasDocumentLabels() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasDocumentLabels()
-	} else {
-		return false
-	}
-}
-
-// SetDocumentLabels gets a reference to the given []BTDocumentLabelInfo and assigns it to the DocumentLabels field.
-func (o *BTDocumentSummaryInfo) SetDocumentLabels(v []BTDocumentLabelInfo) {
-	type getResult interface {
-		SetDocumentLabels(v []BTDocumentLabelInfo)
-	}
-
-	o.GetActualInstance().(getResult).SetDocumentLabels(v)
-}
-
-// GetDocumentType returns the DocumentType field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetDocumentType() int32 {
-	type getResult interface {
-		GetDocumentType() int32
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDocumentType()
-	} else {
-		var de int32
-		return de
-	}
-}
-
-// GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetDocumentTypeOk() (*int32, bool) {
-	type getResult interface {
-		GetDocumentTypeOk() (*int32, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDocumentTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasDocumentType returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasDocumentType() bool {
-	type getResult interface {
-		HasDocumentType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasDocumentType()
-	} else {
-		return false
-	}
-}
-
-// SetDocumentType gets a reference to the given int32 and assigns it to the DocumentType field.
-func (o *BTDocumentSummaryInfo) SetDocumentType(v int32) {
-	type getResult interface {
-		SetDocumentType(v int32)
-	}
-
-	o.GetActualInstance().(getResult).SetDocumentType(v)
-}
-
-// GetHasReleaseRevisionableObjects returns the HasReleaseRevisionableObjects field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetHasReleaseRevisionableObjects() bool {
-	type getResult interface {
-		GetHasReleaseRevisionableObjects() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetHasReleaseRevisionableObjects()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetHasReleaseRevisionableObjectsOk returns a tuple with the HasReleaseRevisionableObjects field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetHasReleaseRevisionableObjectsOk() (*bool, bool) {
-	type getResult interface {
-		GetHasReleaseRevisionableObjectsOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetHasReleaseRevisionableObjectsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasHasReleaseRevisionableObjects returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasHasReleaseRevisionableObjects() bool {
-	type getResult interface {
-		HasHasReleaseRevisionableObjects() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasHasReleaseRevisionableObjects()
-	} else {
-		return false
-	}
-}
-
-// SetHasReleaseRevisionableObjects gets a reference to the given bool and assigns it to the HasReleaseRevisionableObjects field.
-func (o *BTDocumentSummaryInfo) SetHasReleaseRevisionableObjects(v bool) {
-	type getResult interface {
-		SetHasReleaseRevisionableObjects(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetHasReleaseRevisionableObjects(v)
-}
-
-// GetHasRelevantInsertables returns the HasRelevantInsertables field value if set, zero value otherwise.
-func (o *BTDocumentSummaryInfo) GetHasRelevantInsertables() bool {
-	type getResult interface {
-		GetHasRelevantInsertables() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetHasRelevantInsertables()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetHasRelevantInsertablesOk returns a tuple with the HasRelevantInsertables field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummaryInfo) GetHasRelevantInsertablesOk() (*bool, bool) {
-	type getResult interface {
-		GetHasRelevantInsertablesOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetHasRelevantInsertablesOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasHasRelevantInsertables returns a boolean if a field has been set.
-func (o *BTDocumentSummaryInfo) HasHasRelevantInsertables() bool {
-	type getResult interface {
-		HasHasRelevantInsertables() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasHasRelevantInsertables()
-	} else {
-		return false
-	}
-}
-
-// SetHasRelevantInsertables gets a reference to the given bool and assigns it to the HasRelevantInsertables field.
-func (o *BTDocumentSummaryInfo) SetHasRelevantInsertables(v bool) {
-	type getResult interface {
-		SetHasRelevantInsertables(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetHasRelevantInsertables(v)
-}
-
 // GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
 func (o *BTDocumentSummaryInfo) GetIsOrphaned() bool {
 	type getResult interface {
@@ -1683,6 +1196,156 @@ func (o *BTDocumentSummaryInfo) SetLikes(v int64) {
 	}
 
 	o.GetActualInstance().(getResult).SetLikes(v)
+}
+
+// GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetModifiedAt() JSONTime {
+	type getResult interface {
+		GetModifiedAt() JSONTime
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetModifiedAt()
+	} else {
+		var de JSONTime
+		return de
+	}
+}
+
+// GetModifiedAtOk returns a tuple with the ModifiedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetModifiedAtOk() (*JSONTime, bool) {
+	type getResult interface {
+		GetModifiedAtOk() (*JSONTime, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetModifiedAtOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasModifiedAt returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasModifiedAt() bool {
+	type getResult interface {
+		HasModifiedAt() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasModifiedAt()
+	} else {
+		return false
+	}
+}
+
+// SetModifiedAt gets a reference to the given JSONTime and assigns it to the ModifiedAt field.
+func (o *BTDocumentSummaryInfo) SetModifiedAt(v JSONTime) {
+	type getResult interface {
+		SetModifiedAt(v JSONTime)
+	}
+
+	o.GetActualInstance().(getResult).SetModifiedAt(v)
+}
+
+// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetModifiedBy() BTUserBasicSummaryInfo {
+	type getResult interface {
+		GetModifiedBy() BTUserBasicSummaryInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetModifiedBy()
+	} else {
+		var de BTUserBasicSummaryInfo
+		return de
+	}
+}
+
+// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetModifiedByOk() (*BTUserBasicSummaryInfo, bool) {
+	type getResult interface {
+		GetModifiedByOk() (*BTUserBasicSummaryInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetModifiedByOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasModifiedBy returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasModifiedBy() bool {
+	type getResult interface {
+		HasModifiedBy() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasModifiedBy()
+	} else {
+		return false
+	}
+}
+
+// SetModifiedBy gets a reference to the given BTUserBasicSummaryInfo and assigns it to the ModifiedBy field.
+func (o *BTDocumentSummaryInfo) SetModifiedBy(v BTUserBasicSummaryInfo) {
+	type getResult interface {
+		SetModifiedBy(v BTUserBasicSummaryInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetModifiedBy(v)
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetName() string {
+	type getResult interface {
+		GetName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetNameOk() (*string, bool) {
+	type getResult interface {
+		GetNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasName() bool {
+	type getResult interface {
+		HasName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasName()
+	} else {
+		return false
+	}
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTDocumentSummaryInfo) SetName(v string) {
+	type getResult interface {
+		SetName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetName(v)
 }
 
 // GetNotRevisionManaged returns the NotRevisionManaged field value if set, zero value otherwise.
@@ -1885,6 +1548,56 @@ func (o *BTDocumentSummaryInfo) SetNumberOfTimesReferenced(v int64) {
 	o.GetActualInstance().(getResult).SetNumberOfTimesReferenced(v)
 }
 
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetOwner() BTOwnerInfo {
+	type getResult interface {
+		GetOwner() BTOwnerInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetOwner()
+	} else {
+		var de BTOwnerInfo
+		return de
+	}
+}
+
+// GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetOwnerOk() (*BTOwnerInfo, bool) {
+	type getResult interface {
+		GetOwnerOk() (*BTOwnerInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetOwnerOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasOwner returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasOwner() bool {
+	type getResult interface {
+		HasOwner() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasOwner()
+	} else {
+		return false
+	}
+}
+
+// SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
+func (o *BTDocumentSummaryInfo) SetOwner(v BTOwnerInfo) {
+	type getResult interface {
+		SetOwner(v BTOwnerInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetOwner(v)
+}
+
 // GetParentId returns the ParentId field value if set, zero value otherwise.
 func (o *BTDocumentSummaryInfo) GetParentId() string {
 	type getResult interface {
@@ -2035,6 +1748,56 @@ func (o *BTDocumentSummaryInfo) SetPermissionSet(v []string) {
 	o.GetActualInstance().(getResult).SetPermissionSet(v)
 }
 
+// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetProjectId() string {
+	type getResult interface {
+		GetProjectId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetProjectId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetProjectIdOk() (*string, bool) {
+	type getResult interface {
+		GetProjectIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetProjectIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasProjectId returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasProjectId() bool {
+	type getResult interface {
+		HasProjectId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasProjectId()
+	} else {
+		return false
+	}
+}
+
+// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+func (o *BTDocumentSummaryInfo) SetProjectId(v string) {
+	type getResult interface {
+		SetProjectId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetProjectId(v)
+}
+
 // GetPublic returns the Public field value if set, zero value otherwise.
 func (o *BTDocumentSummaryInfo) GetPublic() bool {
 	type getResult interface {
@@ -2133,6 +1896,56 @@ func (o *BTDocumentSummaryInfo) SetRecentVersion(v BTBaseInfo) {
 	}
 
 	o.GetActualInstance().(getResult).SetRecentVersion(v)
+}
+
+// GetResourceType returns the ResourceType field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetResourceType() string {
+	type getResult interface {
+		GetResourceType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetResourceType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetResourceTypeOk() (*string, bool) {
+	type getResult interface {
+		GetResourceTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetResourceTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasResourceType returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasResourceType() bool {
+	type getResult interface {
+		HasResourceType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasResourceType()
+	} else {
+		return false
+	}
+}
+
+// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
+func (o *BTDocumentSummaryInfo) SetResourceType(v string) {
+	type getResult interface {
+		SetResourceType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetResourceType(v)
 }
 
 // GetSequence returns the Sequence field value if set, zero value otherwise.
@@ -2535,6 +2348,106 @@ func (o *BTDocumentSummaryInfo) SetTrashedAt(v JSONTime) {
 	o.GetActualInstance().(getResult).SetTrashedAt(v)
 }
 
+// GetTreeHref returns the TreeHref field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetTreeHref() string {
+	type getResult interface {
+		GetTreeHref() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTreeHref()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetTreeHrefOk returns a tuple with the TreeHref field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetTreeHrefOk() (*string, bool) {
+	type getResult interface {
+		GetTreeHrefOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTreeHrefOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasTreeHref returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasTreeHref() bool {
+	type getResult interface {
+		HasTreeHref() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasTreeHref()
+	} else {
+		return false
+	}
+}
+
+// SetTreeHref gets a reference to the given string and assigns it to the TreeHref field.
+func (o *BTDocumentSummaryInfo) SetTreeHref(v string) {
+	type getResult interface {
+		SetTreeHref(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetTreeHref(v)
+}
+
+// GetUnparentHref returns the UnparentHref field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetUnparentHref() string {
+	type getResult interface {
+		GetUnparentHref() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetUnparentHref()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetUnparentHrefOk returns a tuple with the UnparentHref field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetUnparentHrefOk() (*string, bool) {
+	type getResult interface {
+		GetUnparentHrefOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetUnparentHrefOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasUnparentHref returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasUnparentHref() bool {
+	type getResult interface {
+		HasUnparentHref() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasUnparentHref()
+	} else {
+		return false
+	}
+}
+
+// SetUnparentHref gets a reference to the given string and assigns it to the UnparentHref field.
+func (o *BTDocumentSummaryInfo) SetUnparentHref(v string) {
+	type getResult interface {
+		SetUnparentHref(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetUnparentHref(v)
+}
+
 // GetUserAccountLimitsBreached returns the UserAccountLimitsBreached field value if set, zero value otherwise.
 func (o *BTDocumentSummaryInfo) GetUserAccountLimitsBreached() bool {
 	type getResult interface {
@@ -2583,6 +2496,56 @@ func (o *BTDocumentSummaryInfo) SetUserAccountLimitsBreached(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetUserAccountLimitsBreached(v)
+}
+
+// GetViewRef returns the ViewRef field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetViewRef() string {
+	type getResult interface {
+		GetViewRef() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetViewRef()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetViewRefOk returns a tuple with the ViewRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetViewRefOk() (*string, bool) {
+	type getResult interface {
+		GetViewRefOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetViewRefOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasViewRef returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasViewRef() bool {
+	type getResult interface {
+		HasViewRef() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasViewRef()
+	} else {
+		return false
+	}
+}
+
+// SetViewRef gets a reference to the given string and assigns it to the ViewRef field.
+func (o *BTDocumentSummaryInfo) SetViewRef(v string) {
+	type getResult interface {
+		SetViewRef(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetViewRef(v)
 }
 
 // Unmarshal JSON data into one of the pointers in the struct
@@ -2703,66 +2666,68 @@ func (v *NullableBTDocumentSummaryInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTDocumentSummaryInfo struct {
-	CanMove                           *bool                   `json:"canMove,omitempty"`
-	CreatedAt                         *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy                         *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description                       *string                 `json:"description,omitempty"`
-	Href                              *string                 `json:"href,omitempty"`
-	Id                                *string                 `json:"id,omitempty"`
-	IsContainer                       *bool                   `json:"isContainer,omitempty"`
-	IsEnterpriseOwned                 *bool                   `json:"isEnterpriseOwned,omitempty"`
-	IsMutable                         *bool                   `json:"isMutable,omitempty"`
-	JsonType                          string                  `json:"jsonType"`
-	ModifiedAt                        *JSONTime               `json:"modifiedAt,omitempty"`
-	ModifiedBy                        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
-	Name                              *string                 `json:"name,omitempty"`
-	Owner                             *BTOwnerInfo            `json:"owner,omitempty"`
-	ProjectId                         *string                 `json:"projectId,omitempty"`
-	ResourceType                      *string                 `json:"resourceType,omitempty"`
-	TreeHref                          *string                 `json:"treeHref,omitempty"`
-	UnparentHref                      *string                 `json:"unparentHref,omitempty"`
-	ViewRef                           *string                 `json:"viewRef,omitempty"`
-	AnonymousAccessAllowed            *bool                   `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport             *bool                   `json:"anonymousAllowsExport,omitempty"`
-	CanUnshare                        *bool                   `json:"canUnshare,omitempty"`
-	CreatedWithEducationPlan          *bool                   `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                  *string                 `json:"defaultElementId,omitempty"`
-	DefaultWorkspace                  *BTWorkspaceInfo        `json:"defaultWorkspace,omitempty"`
-	DocumentLabels                    []BTDocumentLabelInfo   `json:"documentLabels,omitempty"`
-	DocumentType                      *int32                  `json:"documentType,omitempty"`
-	HasReleaseRevisionableObjects     *bool                   `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables            *bool                   `json:"hasRelevantInsertables,omitempty"`
-	IsOrphaned                        *bool                   `json:"isOrphaned,omitempty"`
-	IsUsingManagedWorkflow            *bool                   `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                *bool                   `json:"likedByCurrentUser,omitempty"`
-	Likes                             *int64                  `json:"likes,omitempty"`
-	NotRevisionManaged                *bool                   `json:"notRevisionManaged,omitempty"`
-	Notes                             *string                 `json:"notes,omitempty"`
-	NumberOfTimesCopied               *int64                  `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced           *int64                  `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                          *string                 `json:"parentId,omitempty"`
-	Permission                        *string                 `json:"permission,omitempty"`
-	PermissionSet                     []string                `json:"permissionSet,omitempty"`
-	Public                            *bool                   `json:"public,omitempty"`
-	RecentVersion                     *BTBaseInfo             `json:"recentVersion,omitempty"`
-	Sequence                          *string                 `json:"sequence,omitempty"`
-	SupportTeamUserAndShared          *bool                   `json:"supportTeamUserAndShared,omitempty"`
-	Tags                              []string                `json:"tags,omitempty"`
-	Thumbnail                         *BTThumbnailInfo        `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate *int32                  `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating           *int32                  `json:"totalWorkspacesUpdating,omitempty"`
-	Trash                             *bool                   `json:"trash,omitempty"`
-	TrashedAt                         *JSONTime               `json:"trashedAt,omitempty"`
-	UserAccountLimitsBreached         *bool                   `json:"userAccountLimitsBreached,omitempty"`
+	AnonymousAccessAllowed        *bool                   `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport         *bool                   `json:"anonymousAllowsExport,omitempty"`
+	CanMove                       *bool                   `json:"canMove,omitempty"`
+	CanUnshare                    *bool                   `json:"canUnshare,omitempty"`
+	CreatedAt                     *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy                     *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	CreatedWithEducationPlan      *bool                   `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId              *string                 `json:"defaultElementId,omitempty"`
+	DefaultWorkspace              *BTWorkspaceInfo        `json:"defaultWorkspace,omitempty"`
+	Description                   *string                 `json:"description,omitempty"`
+	DocumentLabels                []BTDocumentLabelInfo   `json:"documentLabels,omitempty"`
+	DocumentType                  *int32                  `json:"documentType,omitempty"`
+	HasReleaseRevisionableObjects *bool                   `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables        *bool                   `json:"hasRelevantInsertables,omitempty"`
+	// URI to fetch complete information of the resource.
+	Href *string `json:"href,omitempty"`
+	// Id of the resource.
+	Id                     *string                 `json:"id,omitempty"`
+	IsContainer            *bool                   `json:"isContainer,omitempty"`
+	IsEnterpriseOwned      *bool                   `json:"isEnterpriseOwned,omitempty"`
+	IsMutable              *bool                   `json:"isMutable,omitempty"`
+	IsOrphaned             *bool                   `json:"isOrphaned,omitempty"`
+	IsUsingManagedWorkflow *bool                   `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser     *bool                   `json:"likedByCurrentUser,omitempty"`
+	Likes                  *int64                  `json:"likes,omitempty"`
+	ModifiedAt             *JSONTime               `json:"modifiedAt,omitempty"`
+	ModifiedBy             *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
+	// Name of the resource.
+	Name                              *string          `json:"name,omitempty"`
+	NotRevisionManaged                *bool            `json:"notRevisionManaged,omitempty"`
+	Notes                             *string          `json:"notes,omitempty"`
+	NumberOfTimesCopied               *int64           `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced           *int64           `json:"numberOfTimesReferenced,omitempty"`
+	Owner                             *BTOwnerInfo     `json:"owner,omitempty"`
+	ParentId                          *string          `json:"parentId,omitempty"`
+	Permission                        *string          `json:"permission,omitempty"`
+	PermissionSet                     []string         `json:"permissionSet,omitempty"`
+	ProjectId                         *string          `json:"projectId,omitempty"`
+	Public                            *bool            `json:"public,omitempty"`
+	RecentVersion                     *BTBaseInfo      `json:"recentVersion,omitempty"`
+	ResourceType                      *string          `json:"resourceType,omitempty"`
+	Sequence                          *string          `json:"sequence,omitempty"`
+	SupportTeamUserAndShared          *bool            `json:"supportTeamUserAndShared,omitempty"`
+	Tags                              []string         `json:"tags,omitempty"`
+	Thumbnail                         *BTThumbnailInfo `json:"thumbnail,omitempty"`
+	TotalWorkspacesScheduledForUpdate *int32           `json:"totalWorkspacesScheduledForUpdate,omitempty"`
+	TotalWorkspacesUpdating           *int32           `json:"totalWorkspacesUpdating,omitempty"`
+	Trash                             *bool            `json:"trash,omitempty"`
+	TrashedAt                         *JSONTime        `json:"trashedAt,omitempty"`
+	TreeHref                          *string          `json:"treeHref,omitempty"`
+	UnparentHref                      *string          `json:"unparentHref,omitempty"`
+	UserAccountLimitsBreached         *bool            `json:"userAccountLimitsBreached,omitempty"`
+	// URI to visualize the resource in a webclient if applicable.
+	ViewRef *string `json:"viewRef,omitempty"`
 }
 
 // Newbase_BTDocumentSummaryInfo instantiates a new base_BTDocumentSummaryInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func Newbase_BTDocumentSummaryInfo(jsonType string) *base_BTDocumentSummaryInfo {
+func Newbase_BTDocumentSummaryInfo() *base_BTDocumentSummaryInfo {
 	this := base_BTDocumentSummaryInfo{}
-	this.JsonType = jsonType
 	return &this
 }
 
@@ -2772,6 +2737,70 @@ func Newbase_BTDocumentSummaryInfo(jsonType string) *base_BTDocumentSummaryInfo 
 func Newbase_BTDocumentSummaryInfoWithDefaults() *base_BTDocumentSummaryInfo {
 	this := base_BTDocumentSummaryInfo{}
 	return &this
+}
+
+// GetAnonymousAccessAllowed returns the AnonymousAccessAllowed field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetAnonymousAccessAllowed() bool {
+	if o == nil || o.AnonymousAccessAllowed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AnonymousAccessAllowed
+}
+
+// GetAnonymousAccessAllowedOk returns a tuple with the AnonymousAccessAllowed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetAnonymousAccessAllowedOk() (*bool, bool) {
+	if o == nil || o.AnonymousAccessAllowed == nil {
+		return nil, false
+	}
+	return o.AnonymousAccessAllowed, true
+}
+
+// HasAnonymousAccessAllowed returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasAnonymousAccessAllowed() bool {
+	if o != nil && o.AnonymousAccessAllowed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnonymousAccessAllowed gets a reference to the given bool and assigns it to the AnonymousAccessAllowed field.
+func (o *base_BTDocumentSummaryInfo) SetAnonymousAccessAllowed(v bool) {
+	o.AnonymousAccessAllowed = &v
+}
+
+// GetAnonymousAllowsExport returns the AnonymousAllowsExport field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetAnonymousAllowsExport() bool {
+	if o == nil || o.AnonymousAllowsExport == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AnonymousAllowsExport
+}
+
+// GetAnonymousAllowsExportOk returns a tuple with the AnonymousAllowsExport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetAnonymousAllowsExportOk() (*bool, bool) {
+	if o == nil || o.AnonymousAllowsExport == nil {
+		return nil, false
+	}
+	return o.AnonymousAllowsExport, true
+}
+
+// HasAnonymousAllowsExport returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasAnonymousAllowsExport() bool {
+	if o != nil && o.AnonymousAllowsExport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnonymousAllowsExport gets a reference to the given bool and assigns it to the AnonymousAllowsExport field.
+func (o *base_BTDocumentSummaryInfo) SetAnonymousAllowsExport(v bool) {
+	o.AnonymousAllowsExport = &v
 }
 
 // GetCanMove returns the CanMove field value if set, zero value otherwise.
@@ -2804,6 +2833,38 @@ func (o *base_BTDocumentSummaryInfo) HasCanMove() bool {
 // SetCanMove gets a reference to the given bool and assigns it to the CanMove field.
 func (o *base_BTDocumentSummaryInfo) SetCanMove(v bool) {
 	o.CanMove = &v
+}
+
+// GetCanUnshare returns the CanUnshare field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetCanUnshare() bool {
+	if o == nil || o.CanUnshare == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanUnshare
+}
+
+// GetCanUnshareOk returns a tuple with the CanUnshare field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetCanUnshareOk() (*bool, bool) {
+	if o == nil || o.CanUnshare == nil {
+		return nil, false
+	}
+	return o.CanUnshare, true
+}
+
+// HasCanUnshare returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasCanUnshare() bool {
+	if o != nil && o.CanUnshare != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanUnshare gets a reference to the given bool and assigns it to the CanUnshare field.
+func (o *base_BTDocumentSummaryInfo) SetCanUnshare(v bool) {
+	o.CanUnshare = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -2870,6 +2931,102 @@ func (o *base_BTDocumentSummaryInfo) SetCreatedBy(v BTUserBasicSummaryInfo) {
 	o.CreatedBy = &v
 }
 
+// GetCreatedWithEducationPlan returns the CreatedWithEducationPlan field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetCreatedWithEducationPlan() bool {
+	if o == nil || o.CreatedWithEducationPlan == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CreatedWithEducationPlan
+}
+
+// GetCreatedWithEducationPlanOk returns a tuple with the CreatedWithEducationPlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetCreatedWithEducationPlanOk() (*bool, bool) {
+	if o == nil || o.CreatedWithEducationPlan == nil {
+		return nil, false
+	}
+	return o.CreatedWithEducationPlan, true
+}
+
+// HasCreatedWithEducationPlan returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasCreatedWithEducationPlan() bool {
+	if o != nil && o.CreatedWithEducationPlan != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedWithEducationPlan gets a reference to the given bool and assigns it to the CreatedWithEducationPlan field.
+func (o *base_BTDocumentSummaryInfo) SetCreatedWithEducationPlan(v bool) {
+	o.CreatedWithEducationPlan = &v
+}
+
+// GetDefaultElementId returns the DefaultElementId field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetDefaultElementId() string {
+	if o == nil || o.DefaultElementId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DefaultElementId
+}
+
+// GetDefaultElementIdOk returns a tuple with the DefaultElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetDefaultElementIdOk() (*string, bool) {
+	if o == nil || o.DefaultElementId == nil {
+		return nil, false
+	}
+	return o.DefaultElementId, true
+}
+
+// HasDefaultElementId returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasDefaultElementId() bool {
+	if o != nil && o.DefaultElementId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultElementId gets a reference to the given string and assigns it to the DefaultElementId field.
+func (o *base_BTDocumentSummaryInfo) SetDefaultElementId(v string) {
+	o.DefaultElementId = &v
+}
+
+// GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetDefaultWorkspace() BTWorkspaceInfo {
+	if o == nil || o.DefaultWorkspace == nil {
+		var ret BTWorkspaceInfo
+		return ret
+	}
+	return *o.DefaultWorkspace
+}
+
+// GetDefaultWorkspaceOk returns a tuple with the DefaultWorkspace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetDefaultWorkspaceOk() (*BTWorkspaceInfo, bool) {
+	if o == nil || o.DefaultWorkspace == nil {
+		return nil, false
+	}
+	return o.DefaultWorkspace, true
+}
+
+// HasDefaultWorkspace returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasDefaultWorkspace() bool {
+	if o != nil && o.DefaultWorkspace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultWorkspace gets a reference to the given BTWorkspaceInfo and assigns it to the DefaultWorkspace field.
+func (o *base_BTDocumentSummaryInfo) SetDefaultWorkspace(v BTWorkspaceInfo) {
+	o.DefaultWorkspace = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *base_BTDocumentSummaryInfo) GetDescription() string {
 	if o == nil || o.Description == nil {
@@ -2900,6 +3057,134 @@ func (o *base_BTDocumentSummaryInfo) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *base_BTDocumentSummaryInfo) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetDocumentLabels returns the DocumentLabels field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetDocumentLabels() []BTDocumentLabelInfo {
+	if o == nil || o.DocumentLabels == nil {
+		var ret []BTDocumentLabelInfo
+		return ret
+	}
+	return o.DocumentLabels
+}
+
+// GetDocumentLabelsOk returns a tuple with the DocumentLabels field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetDocumentLabelsOk() ([]BTDocumentLabelInfo, bool) {
+	if o == nil || o.DocumentLabels == nil {
+		return nil, false
+	}
+	return o.DocumentLabels, true
+}
+
+// HasDocumentLabels returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasDocumentLabels() bool {
+	if o != nil && o.DocumentLabels != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentLabels gets a reference to the given []BTDocumentLabelInfo and assigns it to the DocumentLabels field.
+func (o *base_BTDocumentSummaryInfo) SetDocumentLabels(v []BTDocumentLabelInfo) {
+	o.DocumentLabels = v
+}
+
+// GetDocumentType returns the DocumentType field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetDocumentType() int32 {
+	if o == nil || o.DocumentType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DocumentType
+}
+
+// GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetDocumentTypeOk() (*int32, bool) {
+	if o == nil || o.DocumentType == nil {
+		return nil, false
+	}
+	return o.DocumentType, true
+}
+
+// HasDocumentType returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasDocumentType() bool {
+	if o != nil && o.DocumentType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentType gets a reference to the given int32 and assigns it to the DocumentType field.
+func (o *base_BTDocumentSummaryInfo) SetDocumentType(v int32) {
+	o.DocumentType = &v
+}
+
+// GetHasReleaseRevisionableObjects returns the HasReleaseRevisionableObjects field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetHasReleaseRevisionableObjects() bool {
+	if o == nil || o.HasReleaseRevisionableObjects == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasReleaseRevisionableObjects
+}
+
+// GetHasReleaseRevisionableObjectsOk returns a tuple with the HasReleaseRevisionableObjects field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetHasReleaseRevisionableObjectsOk() (*bool, bool) {
+	if o == nil || o.HasReleaseRevisionableObjects == nil {
+		return nil, false
+	}
+	return o.HasReleaseRevisionableObjects, true
+}
+
+// HasHasReleaseRevisionableObjects returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasHasReleaseRevisionableObjects() bool {
+	if o != nil && o.HasReleaseRevisionableObjects != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasReleaseRevisionableObjects gets a reference to the given bool and assigns it to the HasReleaseRevisionableObjects field.
+func (o *base_BTDocumentSummaryInfo) SetHasReleaseRevisionableObjects(v bool) {
+	o.HasReleaseRevisionableObjects = &v
+}
+
+// GetHasRelevantInsertables returns the HasRelevantInsertables field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetHasRelevantInsertables() bool {
+	if o == nil || o.HasRelevantInsertables == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasRelevantInsertables
+}
+
+// GetHasRelevantInsertablesOk returns a tuple with the HasRelevantInsertables field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetHasRelevantInsertablesOk() (*bool, bool) {
+	if o == nil || o.HasRelevantInsertables == nil {
+		return nil, false
+	}
+	return o.HasRelevantInsertables, true
+}
+
+// HasHasRelevantInsertables returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasHasRelevantInsertables() bool {
+	if o != nil && o.HasRelevantInsertables != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasRelevantInsertables gets a reference to the given bool and assigns it to the HasRelevantInsertables field.
+func (o *base_BTDocumentSummaryInfo) SetHasRelevantInsertables(v bool) {
+	o.HasRelevantInsertables = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -3062,638 +3347,6 @@ func (o *base_BTDocumentSummaryInfo) SetIsMutable(v bool) {
 	o.IsMutable = &v
 }
 
-// GetJsonType returns the JsonType field value
-func (o *base_BTDocumentSummaryInfo) GetJsonType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.JsonType
-}
-
-// GetJsonTypeOk returns a tuple with the JsonType field value
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetJsonTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.JsonType, true
-}
-
-// SetJsonType sets field value
-func (o *base_BTDocumentSummaryInfo) SetJsonType(v string) {
-	o.JsonType = v
-}
-
-// GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetModifiedAt() JSONTime {
-	if o == nil || o.ModifiedAt == nil {
-		var ret JSONTime
-		return ret
-	}
-	return *o.ModifiedAt
-}
-
-// GetModifiedAtOk returns a tuple with the ModifiedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetModifiedAtOk() (*JSONTime, bool) {
-	if o == nil || o.ModifiedAt == nil {
-		return nil, false
-	}
-	return o.ModifiedAt, true
-}
-
-// HasModifiedAt returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasModifiedAt() bool {
-	if o != nil && o.ModifiedAt != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedAt gets a reference to the given JSONTime and assigns it to the ModifiedAt field.
-func (o *base_BTDocumentSummaryInfo) SetModifiedAt(v JSONTime) {
-	o.ModifiedAt = &v
-}
-
-// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetModifiedBy() BTUserBasicSummaryInfo {
-	if o == nil || o.ModifiedBy == nil {
-		var ret BTUserBasicSummaryInfo
-		return ret
-	}
-	return *o.ModifiedBy
-}
-
-// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetModifiedByOk() (*BTUserBasicSummaryInfo, bool) {
-	if o == nil || o.ModifiedBy == nil {
-		return nil, false
-	}
-	return o.ModifiedBy, true
-}
-
-// HasModifiedBy returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasModifiedBy() bool {
-	if o != nil && o.ModifiedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedBy gets a reference to the given BTUserBasicSummaryInfo and assigns it to the ModifiedBy field.
-func (o *base_BTDocumentSummaryInfo) SetModifiedBy(v BTUserBasicSummaryInfo) {
-	o.ModifiedBy = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *base_BTDocumentSummaryInfo) SetName(v string) {
-	o.Name = &v
-}
-
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetOwner() BTOwnerInfo {
-	if o == nil || o.Owner == nil {
-		var ret BTOwnerInfo
-		return ret
-	}
-	return *o.Owner
-}
-
-// GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetOwnerOk() (*BTOwnerInfo, bool) {
-	if o == nil || o.Owner == nil {
-		return nil, false
-	}
-	return o.Owner, true
-}
-
-// HasOwner returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasOwner() bool {
-	if o != nil && o.Owner != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
-func (o *base_BTDocumentSummaryInfo) SetOwner(v BTOwnerInfo) {
-	o.Owner = &v
-}
-
-// GetProjectId returns the ProjectId field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetProjectId() string {
-	if o == nil || o.ProjectId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ProjectId
-}
-
-// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetProjectIdOk() (*string, bool) {
-	if o == nil || o.ProjectId == nil {
-		return nil, false
-	}
-	return o.ProjectId, true
-}
-
-// HasProjectId returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasProjectId() bool {
-	if o != nil && o.ProjectId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
-func (o *base_BTDocumentSummaryInfo) SetProjectId(v string) {
-	o.ProjectId = &v
-}
-
-// GetResourceType returns the ResourceType field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetResourceType() string {
-	if o == nil || o.ResourceType == nil {
-		var ret string
-		return ret
-	}
-	return *o.ResourceType
-}
-
-// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetResourceTypeOk() (*string, bool) {
-	if o == nil || o.ResourceType == nil {
-		return nil, false
-	}
-	return o.ResourceType, true
-}
-
-// HasResourceType returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasResourceType() bool {
-	if o != nil && o.ResourceType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
-func (o *base_BTDocumentSummaryInfo) SetResourceType(v string) {
-	o.ResourceType = &v
-}
-
-// GetTreeHref returns the TreeHref field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetTreeHref() string {
-	if o == nil || o.TreeHref == nil {
-		var ret string
-		return ret
-	}
-	return *o.TreeHref
-}
-
-// GetTreeHrefOk returns a tuple with the TreeHref field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetTreeHrefOk() (*string, bool) {
-	if o == nil || o.TreeHref == nil {
-		return nil, false
-	}
-	return o.TreeHref, true
-}
-
-// HasTreeHref returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasTreeHref() bool {
-	if o != nil && o.TreeHref != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTreeHref gets a reference to the given string and assigns it to the TreeHref field.
-func (o *base_BTDocumentSummaryInfo) SetTreeHref(v string) {
-	o.TreeHref = &v
-}
-
-// GetUnparentHref returns the UnparentHref field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetUnparentHref() string {
-	if o == nil || o.UnparentHref == nil {
-		var ret string
-		return ret
-	}
-	return *o.UnparentHref
-}
-
-// GetUnparentHrefOk returns a tuple with the UnparentHref field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetUnparentHrefOk() (*string, bool) {
-	if o == nil || o.UnparentHref == nil {
-		return nil, false
-	}
-	return o.UnparentHref, true
-}
-
-// HasUnparentHref returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasUnparentHref() bool {
-	if o != nil && o.UnparentHref != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUnparentHref gets a reference to the given string and assigns it to the UnparentHref field.
-func (o *base_BTDocumentSummaryInfo) SetUnparentHref(v string) {
-	o.UnparentHref = &v
-}
-
-// GetViewRef returns the ViewRef field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetViewRef() string {
-	if o == nil || o.ViewRef == nil {
-		var ret string
-		return ret
-	}
-	return *o.ViewRef
-}
-
-// GetViewRefOk returns a tuple with the ViewRef field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetViewRefOk() (*string, bool) {
-	if o == nil || o.ViewRef == nil {
-		return nil, false
-	}
-	return o.ViewRef, true
-}
-
-// HasViewRef returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasViewRef() bool {
-	if o != nil && o.ViewRef != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetViewRef gets a reference to the given string and assigns it to the ViewRef field.
-func (o *base_BTDocumentSummaryInfo) SetViewRef(v string) {
-	o.ViewRef = &v
-}
-
-// GetAnonymousAccessAllowed returns the AnonymousAccessAllowed field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetAnonymousAccessAllowed() bool {
-	if o == nil || o.AnonymousAccessAllowed == nil {
-		var ret bool
-		return ret
-	}
-	return *o.AnonymousAccessAllowed
-}
-
-// GetAnonymousAccessAllowedOk returns a tuple with the AnonymousAccessAllowed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetAnonymousAccessAllowedOk() (*bool, bool) {
-	if o == nil || o.AnonymousAccessAllowed == nil {
-		return nil, false
-	}
-	return o.AnonymousAccessAllowed, true
-}
-
-// HasAnonymousAccessAllowed returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasAnonymousAccessAllowed() bool {
-	if o != nil && o.AnonymousAccessAllowed != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAnonymousAccessAllowed gets a reference to the given bool and assigns it to the AnonymousAccessAllowed field.
-func (o *base_BTDocumentSummaryInfo) SetAnonymousAccessAllowed(v bool) {
-	o.AnonymousAccessAllowed = &v
-}
-
-// GetAnonymousAllowsExport returns the AnonymousAllowsExport field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetAnonymousAllowsExport() bool {
-	if o == nil || o.AnonymousAllowsExport == nil {
-		var ret bool
-		return ret
-	}
-	return *o.AnonymousAllowsExport
-}
-
-// GetAnonymousAllowsExportOk returns a tuple with the AnonymousAllowsExport field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetAnonymousAllowsExportOk() (*bool, bool) {
-	if o == nil || o.AnonymousAllowsExport == nil {
-		return nil, false
-	}
-	return o.AnonymousAllowsExport, true
-}
-
-// HasAnonymousAllowsExport returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasAnonymousAllowsExport() bool {
-	if o != nil && o.AnonymousAllowsExport != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAnonymousAllowsExport gets a reference to the given bool and assigns it to the AnonymousAllowsExport field.
-func (o *base_BTDocumentSummaryInfo) SetAnonymousAllowsExport(v bool) {
-	o.AnonymousAllowsExport = &v
-}
-
-// GetCanUnshare returns the CanUnshare field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetCanUnshare() bool {
-	if o == nil || o.CanUnshare == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CanUnshare
-}
-
-// GetCanUnshareOk returns a tuple with the CanUnshare field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetCanUnshareOk() (*bool, bool) {
-	if o == nil || o.CanUnshare == nil {
-		return nil, false
-	}
-	return o.CanUnshare, true
-}
-
-// HasCanUnshare returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasCanUnshare() bool {
-	if o != nil && o.CanUnshare != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCanUnshare gets a reference to the given bool and assigns it to the CanUnshare field.
-func (o *base_BTDocumentSummaryInfo) SetCanUnshare(v bool) {
-	o.CanUnshare = &v
-}
-
-// GetCreatedWithEducationPlan returns the CreatedWithEducationPlan field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetCreatedWithEducationPlan() bool {
-	if o == nil || o.CreatedWithEducationPlan == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CreatedWithEducationPlan
-}
-
-// GetCreatedWithEducationPlanOk returns a tuple with the CreatedWithEducationPlan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetCreatedWithEducationPlanOk() (*bool, bool) {
-	if o == nil || o.CreatedWithEducationPlan == nil {
-		return nil, false
-	}
-	return o.CreatedWithEducationPlan, true
-}
-
-// HasCreatedWithEducationPlan returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasCreatedWithEducationPlan() bool {
-	if o != nil && o.CreatedWithEducationPlan != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedWithEducationPlan gets a reference to the given bool and assigns it to the CreatedWithEducationPlan field.
-func (o *base_BTDocumentSummaryInfo) SetCreatedWithEducationPlan(v bool) {
-	o.CreatedWithEducationPlan = &v
-}
-
-// GetDefaultElementId returns the DefaultElementId field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetDefaultElementId() string {
-	if o == nil || o.DefaultElementId == nil {
-		var ret string
-		return ret
-	}
-	return *o.DefaultElementId
-}
-
-// GetDefaultElementIdOk returns a tuple with the DefaultElementId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetDefaultElementIdOk() (*string, bool) {
-	if o == nil || o.DefaultElementId == nil {
-		return nil, false
-	}
-	return o.DefaultElementId, true
-}
-
-// HasDefaultElementId returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasDefaultElementId() bool {
-	if o != nil && o.DefaultElementId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultElementId gets a reference to the given string and assigns it to the DefaultElementId field.
-func (o *base_BTDocumentSummaryInfo) SetDefaultElementId(v string) {
-	o.DefaultElementId = &v
-}
-
-// GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetDefaultWorkspace() BTWorkspaceInfo {
-	if o == nil || o.DefaultWorkspace == nil {
-		var ret BTWorkspaceInfo
-		return ret
-	}
-	return *o.DefaultWorkspace
-}
-
-// GetDefaultWorkspaceOk returns a tuple with the DefaultWorkspace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetDefaultWorkspaceOk() (*BTWorkspaceInfo, bool) {
-	if o == nil || o.DefaultWorkspace == nil {
-		return nil, false
-	}
-	return o.DefaultWorkspace, true
-}
-
-// HasDefaultWorkspace returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasDefaultWorkspace() bool {
-	if o != nil && o.DefaultWorkspace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultWorkspace gets a reference to the given BTWorkspaceInfo and assigns it to the DefaultWorkspace field.
-func (o *base_BTDocumentSummaryInfo) SetDefaultWorkspace(v BTWorkspaceInfo) {
-	o.DefaultWorkspace = &v
-}
-
-// GetDocumentLabels returns the DocumentLabels field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetDocumentLabels() []BTDocumentLabelInfo {
-	if o == nil || o.DocumentLabels == nil {
-		var ret []BTDocumentLabelInfo
-		return ret
-	}
-	return o.DocumentLabels
-}
-
-// GetDocumentLabelsOk returns a tuple with the DocumentLabels field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetDocumentLabelsOk() ([]BTDocumentLabelInfo, bool) {
-	if o == nil || o.DocumentLabels == nil {
-		return nil, false
-	}
-	return o.DocumentLabels, true
-}
-
-// HasDocumentLabels returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasDocumentLabels() bool {
-	if o != nil && o.DocumentLabels != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDocumentLabels gets a reference to the given []BTDocumentLabelInfo and assigns it to the DocumentLabels field.
-func (o *base_BTDocumentSummaryInfo) SetDocumentLabels(v []BTDocumentLabelInfo) {
-	o.DocumentLabels = v
-}
-
-// GetDocumentType returns the DocumentType field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetDocumentType() int32 {
-	if o == nil || o.DocumentType == nil {
-		var ret int32
-		return ret
-	}
-	return *o.DocumentType
-}
-
-// GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetDocumentTypeOk() (*int32, bool) {
-	if o == nil || o.DocumentType == nil {
-		return nil, false
-	}
-	return o.DocumentType, true
-}
-
-// HasDocumentType returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasDocumentType() bool {
-	if o != nil && o.DocumentType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDocumentType gets a reference to the given int32 and assigns it to the DocumentType field.
-func (o *base_BTDocumentSummaryInfo) SetDocumentType(v int32) {
-	o.DocumentType = &v
-}
-
-// GetHasReleaseRevisionableObjects returns the HasReleaseRevisionableObjects field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetHasReleaseRevisionableObjects() bool {
-	if o == nil || o.HasReleaseRevisionableObjects == nil {
-		var ret bool
-		return ret
-	}
-	return *o.HasReleaseRevisionableObjects
-}
-
-// GetHasReleaseRevisionableObjectsOk returns a tuple with the HasReleaseRevisionableObjects field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetHasReleaseRevisionableObjectsOk() (*bool, bool) {
-	if o == nil || o.HasReleaseRevisionableObjects == nil {
-		return nil, false
-	}
-	return o.HasReleaseRevisionableObjects, true
-}
-
-// HasHasReleaseRevisionableObjects returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasHasReleaseRevisionableObjects() bool {
-	if o != nil && o.HasReleaseRevisionableObjects != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetHasReleaseRevisionableObjects gets a reference to the given bool and assigns it to the HasReleaseRevisionableObjects field.
-func (o *base_BTDocumentSummaryInfo) SetHasReleaseRevisionableObjects(v bool) {
-	o.HasReleaseRevisionableObjects = &v
-}
-
-// GetHasRelevantInsertables returns the HasRelevantInsertables field value if set, zero value otherwise.
-func (o *base_BTDocumentSummaryInfo) GetHasRelevantInsertables() bool {
-	if o == nil || o.HasRelevantInsertables == nil {
-		var ret bool
-		return ret
-	}
-	return *o.HasRelevantInsertables
-}
-
-// GetHasRelevantInsertablesOk returns a tuple with the HasRelevantInsertables field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentSummaryInfo) GetHasRelevantInsertablesOk() (*bool, bool) {
-	if o == nil || o.HasRelevantInsertables == nil {
-		return nil, false
-	}
-	return o.HasRelevantInsertables, true
-}
-
-// HasHasRelevantInsertables returns a boolean if a field has been set.
-func (o *base_BTDocumentSummaryInfo) HasHasRelevantInsertables() bool {
-	if o != nil && o.HasRelevantInsertables != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetHasRelevantInsertables gets a reference to the given bool and assigns it to the HasRelevantInsertables field.
-func (o *base_BTDocumentSummaryInfo) SetHasRelevantInsertables(v bool) {
-	o.HasRelevantInsertables = &v
-}
-
 // GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
 func (o *base_BTDocumentSummaryInfo) GetIsOrphaned() bool {
 	if o == nil || o.IsOrphaned == nil {
@@ -3820,6 +3473,102 @@ func (o *base_BTDocumentSummaryInfo) HasLikes() bool {
 // SetLikes gets a reference to the given int64 and assigns it to the Likes field.
 func (o *base_BTDocumentSummaryInfo) SetLikes(v int64) {
 	o.Likes = &v
+}
+
+// GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetModifiedAt() JSONTime {
+	if o == nil || o.ModifiedAt == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ModifiedAt
+}
+
+// GetModifiedAtOk returns a tuple with the ModifiedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetModifiedAtOk() (*JSONTime, bool) {
+	if o == nil || o.ModifiedAt == nil {
+		return nil, false
+	}
+	return o.ModifiedAt, true
+}
+
+// HasModifiedAt returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasModifiedAt() bool {
+	if o != nil && o.ModifiedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedAt gets a reference to the given JSONTime and assigns it to the ModifiedAt field.
+func (o *base_BTDocumentSummaryInfo) SetModifiedAt(v JSONTime) {
+	o.ModifiedAt = &v
+}
+
+// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetModifiedBy() BTUserBasicSummaryInfo {
+	if o == nil || o.ModifiedBy == nil {
+		var ret BTUserBasicSummaryInfo
+		return ret
+	}
+	return *o.ModifiedBy
+}
+
+// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetModifiedByOk() (*BTUserBasicSummaryInfo, bool) {
+	if o == nil || o.ModifiedBy == nil {
+		return nil, false
+	}
+	return o.ModifiedBy, true
+}
+
+// HasModifiedBy returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasModifiedBy() bool {
+	if o != nil && o.ModifiedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedBy gets a reference to the given BTUserBasicSummaryInfo and assigns it to the ModifiedBy field.
+func (o *base_BTDocumentSummaryInfo) SetModifiedBy(v BTUserBasicSummaryInfo) {
+	o.ModifiedBy = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *base_BTDocumentSummaryInfo) SetName(v string) {
+	o.Name = &v
 }
 
 // GetNotRevisionManaged returns the NotRevisionManaged field value if set, zero value otherwise.
@@ -3950,6 +3699,38 @@ func (o *base_BTDocumentSummaryInfo) SetNumberOfTimesReferenced(v int64) {
 	o.NumberOfTimesReferenced = &v
 }
 
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetOwner() BTOwnerInfo {
+	if o == nil || o.Owner == nil {
+		var ret BTOwnerInfo
+		return ret
+	}
+	return *o.Owner
+}
+
+// GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetOwnerOk() (*BTOwnerInfo, bool) {
+	if o == nil || o.Owner == nil {
+		return nil, false
+	}
+	return o.Owner, true
+}
+
+// HasOwner returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasOwner() bool {
+	if o != nil && o.Owner != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
+func (o *base_BTDocumentSummaryInfo) SetOwner(v BTOwnerInfo) {
+	o.Owner = &v
+}
+
 // GetParentId returns the ParentId field value if set, zero value otherwise.
 func (o *base_BTDocumentSummaryInfo) GetParentId() string {
 	if o == nil || o.ParentId == nil {
@@ -4046,6 +3827,38 @@ func (o *base_BTDocumentSummaryInfo) SetPermissionSet(v []string) {
 	o.PermissionSet = v
 }
 
+// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetProjectId() string {
+	if o == nil || o.ProjectId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ProjectId
+}
+
+// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetProjectIdOk() (*string, bool) {
+	if o == nil || o.ProjectId == nil {
+		return nil, false
+	}
+	return o.ProjectId, true
+}
+
+// HasProjectId returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasProjectId() bool {
+	if o != nil && o.ProjectId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+func (o *base_BTDocumentSummaryInfo) SetProjectId(v string) {
+	o.ProjectId = &v
+}
+
 // GetPublic returns the Public field value if set, zero value otherwise.
 func (o *base_BTDocumentSummaryInfo) GetPublic() bool {
 	if o == nil || o.Public == nil {
@@ -4108,6 +3921,38 @@ func (o *base_BTDocumentSummaryInfo) HasRecentVersion() bool {
 // SetRecentVersion gets a reference to the given BTBaseInfo and assigns it to the RecentVersion field.
 func (o *base_BTDocumentSummaryInfo) SetRecentVersion(v BTBaseInfo) {
 	o.RecentVersion = &v
+}
+
+// GetResourceType returns the ResourceType field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetResourceType() string {
+	if o == nil || o.ResourceType == nil {
+		var ret string
+		return ret
+	}
+	return *o.ResourceType
+}
+
+// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetResourceTypeOk() (*string, bool) {
+	if o == nil || o.ResourceType == nil {
+		return nil, false
+	}
+	return o.ResourceType, true
+}
+
+// HasResourceType returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasResourceType() bool {
+	if o != nil && o.ResourceType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
+func (o *base_BTDocumentSummaryInfo) SetResourceType(v string) {
+	o.ResourceType = &v
 }
 
 // GetSequence returns the Sequence field value if set, zero value otherwise.
@@ -4366,6 +4211,70 @@ func (o *base_BTDocumentSummaryInfo) SetTrashedAt(v JSONTime) {
 	o.TrashedAt = &v
 }
 
+// GetTreeHref returns the TreeHref field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetTreeHref() string {
+	if o == nil || o.TreeHref == nil {
+		var ret string
+		return ret
+	}
+	return *o.TreeHref
+}
+
+// GetTreeHrefOk returns a tuple with the TreeHref field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetTreeHrefOk() (*string, bool) {
+	if o == nil || o.TreeHref == nil {
+		return nil, false
+	}
+	return o.TreeHref, true
+}
+
+// HasTreeHref returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasTreeHref() bool {
+	if o != nil && o.TreeHref != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTreeHref gets a reference to the given string and assigns it to the TreeHref field.
+func (o *base_BTDocumentSummaryInfo) SetTreeHref(v string) {
+	o.TreeHref = &v
+}
+
+// GetUnparentHref returns the UnparentHref field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetUnparentHref() string {
+	if o == nil || o.UnparentHref == nil {
+		var ret string
+		return ret
+	}
+	return *o.UnparentHref
+}
+
+// GetUnparentHrefOk returns a tuple with the UnparentHref field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetUnparentHrefOk() (*string, bool) {
+	if o == nil || o.UnparentHref == nil {
+		return nil, false
+	}
+	return o.UnparentHref, true
+}
+
+// HasUnparentHref returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasUnparentHref() bool {
+	if o != nil && o.UnparentHref != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUnparentHref gets a reference to the given string and assigns it to the UnparentHref field.
+func (o *base_BTDocumentSummaryInfo) SetUnparentHref(v string) {
+	o.UnparentHref = &v
+}
+
 // GetUserAccountLimitsBreached returns the UserAccountLimitsBreached field value if set, zero value otherwise.
 func (o *base_BTDocumentSummaryInfo) GetUserAccountLimitsBreached() bool {
 	if o == nil || o.UserAccountLimitsBreached == nil {
@@ -4398,10 +4307,51 @@ func (o *base_BTDocumentSummaryInfo) SetUserAccountLimitsBreached(v bool) {
 	o.UserAccountLimitsBreached = &v
 }
 
+// GetViewRef returns the ViewRef field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetViewRef() string {
+	if o == nil || o.ViewRef == nil {
+		var ret string
+		return ret
+	}
+	return *o.ViewRef
+}
+
+// GetViewRefOk returns a tuple with the ViewRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetViewRefOk() (*string, bool) {
+	if o == nil || o.ViewRef == nil {
+		return nil, false
+	}
+	return o.ViewRef, true
+}
+
+// HasViewRef returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasViewRef() bool {
+	if o != nil && o.ViewRef != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetViewRef gets a reference to the given string and assigns it to the ViewRef field.
+func (o *base_BTDocumentSummaryInfo) SetViewRef(v string) {
+	o.ViewRef = &v
+}
+
 func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AnonymousAccessAllowed != nil {
+		toSerialize["anonymousAccessAllowed"] = o.AnonymousAccessAllowed
+	}
+	if o.AnonymousAllowsExport != nil {
+		toSerialize["anonymousAllowsExport"] = o.AnonymousAllowsExport
+	}
 	if o.CanMove != nil {
 		toSerialize["canMove"] = o.CanMove
+	}
+	if o.CanUnshare != nil {
+		toSerialize["canUnshare"] = o.CanUnshare
 	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt
@@ -4409,8 +4359,29 @@ func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+	if o.CreatedWithEducationPlan != nil {
+		toSerialize["createdWithEducationPlan"] = o.CreatedWithEducationPlan
+	}
+	if o.DefaultElementId != nil {
+		toSerialize["defaultElementId"] = o.DefaultElementId
+	}
+	if o.DefaultWorkspace != nil {
+		toSerialize["defaultWorkspace"] = o.DefaultWorkspace
+	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
+	}
+	if o.DocumentLabels != nil {
+		toSerialize["documentLabels"] = o.DocumentLabels
+	}
+	if o.DocumentType != nil {
+		toSerialize["documentType"] = o.DocumentType
+	}
+	if o.HasReleaseRevisionableObjects != nil {
+		toSerialize["hasReleaseRevisionableObjects"] = o.HasReleaseRevisionableObjects
+	}
+	if o.HasRelevantInsertables != nil {
+		toSerialize["hasRelevantInsertables"] = o.HasRelevantInsertables
 	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
@@ -4427,66 +4398,6 @@ func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.IsMutable != nil {
 		toSerialize["isMutable"] = o.IsMutable
 	}
-	if true {
-		toSerialize["jsonType"] = o.JsonType
-	}
-	if o.ModifiedAt != nil {
-		toSerialize["modifiedAt"] = o.ModifiedAt
-	}
-	if o.ModifiedBy != nil {
-		toSerialize["modifiedBy"] = o.ModifiedBy
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.Owner != nil {
-		toSerialize["owner"] = o.Owner
-	}
-	if o.ProjectId != nil {
-		toSerialize["projectId"] = o.ProjectId
-	}
-	if o.ResourceType != nil {
-		toSerialize["resourceType"] = o.ResourceType
-	}
-	if o.TreeHref != nil {
-		toSerialize["treeHref"] = o.TreeHref
-	}
-	if o.UnparentHref != nil {
-		toSerialize["unparentHref"] = o.UnparentHref
-	}
-	if o.ViewRef != nil {
-		toSerialize["viewRef"] = o.ViewRef
-	}
-	if o.AnonymousAccessAllowed != nil {
-		toSerialize["anonymousAccessAllowed"] = o.AnonymousAccessAllowed
-	}
-	if o.AnonymousAllowsExport != nil {
-		toSerialize["anonymousAllowsExport"] = o.AnonymousAllowsExport
-	}
-	if o.CanUnshare != nil {
-		toSerialize["canUnshare"] = o.CanUnshare
-	}
-	if o.CreatedWithEducationPlan != nil {
-		toSerialize["createdWithEducationPlan"] = o.CreatedWithEducationPlan
-	}
-	if o.DefaultElementId != nil {
-		toSerialize["defaultElementId"] = o.DefaultElementId
-	}
-	if o.DefaultWorkspace != nil {
-		toSerialize["defaultWorkspace"] = o.DefaultWorkspace
-	}
-	if o.DocumentLabels != nil {
-		toSerialize["documentLabels"] = o.DocumentLabels
-	}
-	if o.DocumentType != nil {
-		toSerialize["documentType"] = o.DocumentType
-	}
-	if o.HasReleaseRevisionableObjects != nil {
-		toSerialize["hasReleaseRevisionableObjects"] = o.HasReleaseRevisionableObjects
-	}
-	if o.HasRelevantInsertables != nil {
-		toSerialize["hasRelevantInsertables"] = o.HasRelevantInsertables
-	}
 	if o.IsOrphaned != nil {
 		toSerialize["isOrphaned"] = o.IsOrphaned
 	}
@@ -4498,6 +4409,15 @@ func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Likes != nil {
 		toSerialize["likes"] = o.Likes
+	}
+	if o.ModifiedAt != nil {
+		toSerialize["modifiedAt"] = o.ModifiedAt
+	}
+	if o.ModifiedBy != nil {
+		toSerialize["modifiedBy"] = o.ModifiedBy
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.NotRevisionManaged != nil {
 		toSerialize["notRevisionManaged"] = o.NotRevisionManaged
@@ -4511,6 +4431,9 @@ func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.NumberOfTimesReferenced != nil {
 		toSerialize["numberOfTimesReferenced"] = o.NumberOfTimesReferenced
 	}
+	if o.Owner != nil {
+		toSerialize["owner"] = o.Owner
+	}
 	if o.ParentId != nil {
 		toSerialize["parentId"] = o.ParentId
 	}
@@ -4520,11 +4443,17 @@ func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.PermissionSet != nil {
 		toSerialize["permissionSet"] = o.PermissionSet
 	}
+	if o.ProjectId != nil {
+		toSerialize["projectId"] = o.ProjectId
+	}
 	if o.Public != nil {
 		toSerialize["public"] = o.Public
 	}
 	if o.RecentVersion != nil {
 		toSerialize["recentVersion"] = o.RecentVersion
+	}
+	if o.ResourceType != nil {
+		toSerialize["resourceType"] = o.ResourceType
 	}
 	if o.Sequence != nil {
 		toSerialize["sequence"] = o.Sequence
@@ -4550,8 +4479,17 @@ func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.TrashedAt != nil {
 		toSerialize["trashedAt"] = o.TrashedAt
 	}
+	if o.TreeHref != nil {
+		toSerialize["treeHref"] = o.TreeHref
+	}
+	if o.UnparentHref != nil {
+		toSerialize["unparentHref"] = o.UnparentHref
+	}
 	if o.UserAccountLimitsBreached != nil {
 		toSerialize["userAccountLimitsBreached"] = o.UserAccountLimitsBreached
+	}
+	if o.ViewRef != nil {
+		toSerialize["viewRef"] = o.ViewRef
 	}
 	return json.Marshal(toSerialize)
 }

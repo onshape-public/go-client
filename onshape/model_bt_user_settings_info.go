@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.160.12410-b0c73c1032e8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -37,6 +37,7 @@ type BTUserSettingsInfo struct {
 	UnitsDisplayPrecision           *map[string]int32                      `json:"unitsDisplayPrecision,omitempty"`
 	UnitsMaximumDisplayPrecision    *BTUnitsMaximumDisplayPrecisionInfo    `json:"unitsMaximumDisplayPrecision,omitempty"`
 	Use24HourTime                   *bool                                  `json:"use24HourTime,omitempty"`
+	UseDecimalComma                 *bool                                  `json:"useDecimalComma,omitempty"`
 	ViewManipulationMouseKeyMapping *BTViewManipulationMouseKeyMappingInfo `json:"viewManipulationMouseKeyMapping,omitempty"`
 	ViewMappingId                   *int32                                 `json:"viewMappingId,omitempty"`
 }
@@ -698,6 +699,38 @@ func (o *BTUserSettingsInfo) SetUse24HourTime(v bool) {
 	o.Use24HourTime = &v
 }
 
+// GetUseDecimalComma returns the UseDecimalComma field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetUseDecimalComma() bool {
+	if o == nil || o.UseDecimalComma == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UseDecimalComma
+}
+
+// GetUseDecimalCommaOk returns a tuple with the UseDecimalComma field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetUseDecimalCommaOk() (*bool, bool) {
+	if o == nil || o.UseDecimalComma == nil {
+		return nil, false
+	}
+	return o.UseDecimalComma, true
+}
+
+// HasUseDecimalComma returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasUseDecimalComma() bool {
+	if o != nil && o.UseDecimalComma != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUseDecimalComma gets a reference to the given bool and assigns it to the UseDecimalComma field.
+func (o *BTUserSettingsInfo) SetUseDecimalComma(v bool) {
+	o.UseDecimalComma = &v
+}
+
 // GetViewManipulationMouseKeyMapping returns the ViewManipulationMouseKeyMapping field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetViewManipulationMouseKeyMapping() BTViewManipulationMouseKeyMappingInfo {
 	if o == nil || o.ViewManipulationMouseKeyMapping == nil {
@@ -823,6 +856,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Use24HourTime != nil {
 		toSerialize["use24HourTime"] = o.Use24HourTime
+	}
+	if o.UseDecimalComma != nil {
+		toSerialize["useDecimalComma"] = o.UseDecimalComma
 	}
 	if o.ViewManipulationMouseKeyMapping != nil {
 		toSerialize["viewManipulationMouseKeyMapping"] = o.ViewManipulationMouseKeyMapping

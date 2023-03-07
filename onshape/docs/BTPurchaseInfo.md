@@ -18,12 +18,12 @@ Name | Type | Description | Notes
 **Duration** | Pointer to **int32** |  | [optional] 
 **DurationMonths** | Pointer to **int32** |  | [optional] 
 **Group** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
+**Id** | Pointer to **string** | Id of the resource. | [optional] 
 **LastModified** | Pointer to **JSONTime** |  | [optional] 
 **LastModifiedBy** | Pointer to **string** |  | [optional] 
 **LightSeats** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **NextCharge** | Pointer to [**NextCharge**](NextCharge.md) |  | [optional] 
 **PaymentType** | Pointer to **int32** |  | [optional] 
 **PendingCancelation** | Pointer to **bool** |  | [optional] 
@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **TaxAmountCents** | Pointer to **int64** |  | [optional] 
 **TrialEnd** | Pointer to **JSONTime** |  | [optional] 
 **TrialInitiatedBy** | Pointer to **string** |  | [optional] 
-**ViewRef** | Pointer to **string** |  | [optional] 
+**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**FeatureFolder** | Pointer to **bool** |  | [optional] 
 **FolderEnd** | Pointer to **bool** |  | [optional] 
 **FolderStart** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -55,6 +56,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTInstanceFolder3627AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetFeatureFolder
+
+`func (o *BTInstanceFolder3627AllOf) GetFeatureFolder() bool`
+
+GetFeatureFolder returns the FeatureFolder field if non-nil, zero value otherwise.
+
+### GetFeatureFolderOk
+
+`func (o *BTInstanceFolder3627AllOf) GetFeatureFolderOk() (*bool, bool)`
+
+GetFeatureFolderOk returns a tuple with the FeatureFolder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureFolder
+
+`func (o *BTInstanceFolder3627AllOf) SetFeatureFolder(v bool)`
+
+SetFeatureFolder sets FeatureFolder field to given value.
+
+### HasFeatureFolder
+
+`func (o *BTInstanceFolder3627AllOf) HasFeatureFolder() bool`
+
+HasFeatureFolder returns a boolean if a field has been set.
 
 ### GetFolderEnd
 

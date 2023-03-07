@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.160.12410-b0c73c1032e8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,11 +17,178 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"reflect"
 	"strings"
 )
 
 // WorkflowApiService WorkflowApi service
 type WorkflowApiService service
+
+type ApiEnumerateObjectWorkflowsRequest struct {
+	ctx           context.Context
+	ApiService    *WorkflowApiService
+	cid           string
+	objectTypes   *[]string
+	states        *[]string
+	limit         *int32
+	modifiedAfter *JSONTime
+}
+
+// Optionally filter for specific workflowable types. Defaults to RELEASE and OBSOLETION
+func (r ApiEnumerateObjectWorkflowsRequest) ObjectTypes(objectTypes []string) ApiEnumerateObjectWorkflowsRequest {
+	r.objectTypes = &objectTypes
+	return r
+}
+
+// Optionally filter for specific workflow states like PENDING, RELEASED
+func (r ApiEnumerateObjectWorkflowsRequest) States(states []string) ApiEnumerateObjectWorkflowsRequest {
+	r.states = &states
+	return r
+}
+
+// The number of items to return in a single API call
+func (r ApiEnumerateObjectWorkflowsRequest) Limit(limit int32) ApiEnumerateObjectWorkflowsRequest {
+	r.limit = &limit
+	return r
+}
+
+// The earliest modification date of workflowable object to find.
+func (r ApiEnumerateObjectWorkflowsRequest) ModifiedAfter(modifiedAfter JSONTime) ApiEnumerateObjectWorkflowsRequest {
+	r.modifiedAfter = &modifiedAfter
+	return r
+}
+
+func (r ApiEnumerateObjectWorkflowsRequest) Execute() (*BTListResponseBTObjectWorkflowInfo, *http.Response, error) {
+	return r.ApiService.EnumerateObjectWorkflowsExecute(r)
+}
+
+/*
+EnumerateObjectWorkflows Enumerate workflowable objects created in a company.
+
+Enumerate all workflowable objects like RELEASES, TASKS in a company by last modified time. Caller must be a company admin. Specify modifiedAfter and use the next URI to do complete enumeration.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param cid The company or enterprise ID that owns the resource.
+ @return ApiEnumerateObjectWorkflowsRequest
+*/
+func (a *WorkflowApiService) EnumerateObjectWorkflows(ctx context.Context, cid string) ApiEnumerateObjectWorkflowsRequest {
+	return ApiEnumerateObjectWorkflowsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		cid:        cid,
+	}
+}
+
+// Execute executes the request
+//  @return BTListResponseBTObjectWorkflowInfo
+func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjectWorkflowsRequest) (*BTListResponseBTObjectWorkflowInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTListResponseBTObjectWorkflowInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.EnumerateObjectWorkflows")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/workflow/companies/{cid}/objects"
+	localVarPath = strings.Replace(localVarPath, "{"+"cid"+"}", url.PathEscape(parameterToString(r.cid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.objectTypes != nil {
+		t := *r.objectTypes
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("objectTypes", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("objectTypes", parameterToString(t, "multi"))
+		}
+	}
+	if r.states != nil {
+		t := *r.states
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("states", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("states", parameterToString(t, "multi"))
+		}
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.modifiedAfter != nil {
+		localVarQueryParams.Add("modifiedAfter", parameterToString(*r.modifiedAfter, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTListResponseBTObjectWorkflowInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type ApiGetActiveWorkflowsRequest struct {
 	ctx        context.Context
