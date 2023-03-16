@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.157.9191-43c781405890
+API version: 1.160.12410-b0c73c1032e8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -15,48 +15,66 @@ import (
 	"encoding/json"
 )
 
-// BTRevisionInfo struct for BTRevisionInfo
+// BTRevisionInfo A revision of PART/ASSEMBLY etc created by release management.
 type BTRevisionInfo struct {
+	// The users who approved the release package that created this revision.
 	Approvers                 []BTRevisionApproverInfo `json:"approvers,omitempty"`
 	AutoObsoletionReleaseId   *string                  `json:"autoObsoletionReleaseId,omitempty"`
 	AutoObsoletionReleaseName *string                  `json:"autoObsoletionReleaseName,omitempty"`
-	CanCurrentUserObsolete    *bool                    `json:"canCurrentUserObsolete,omitempty"`
 	CanExport                 *bool                    `json:"canExport,omitempty"`
-	ChangeOrderId             *string                  `json:"changeOrderId,omitempty"`
-	CompanyId                 *string                  `json:"companyId,omitempty"`
-	Configuration             *string                  `json:"configuration,omitempty"`
-	CreatedAt                 *JSONTime                `json:"createdAt,omitempty"`
-	Description               *string                  `json:"description,omitempty"`
-	DocumentId                *string                  `json:"documentId,omitempty"`
-	DocumentName              *string                  `json:"documentName,omitempty"`
-	ElementId                 *string                  `json:"elementId,omitempty"`
-	ElementType               *int32                   `json:"elementType,omitempty"`
-	ErrorMessage              *string                  `json:"errorMessage,omitempty"`
-	FileName                  *string                  `json:"fileName,omitempty"`
-	FlatPartInsertableId      *string                  `json:"flatPartInsertableId,omitempty"`
-	Href                      *string                  `json:"href,omitempty"`
-	Id                        *string                  `json:"id,omitempty"`
-	InsertableId              *string                  `json:"insertableId,omitempty"`
-	IsObsolete                *bool                    `json:"isObsolete,omitempty"`
-	IsRereleasable            *bool                    `json:"isRereleasable,omitempty"`
-	IsTranslatable            *bool                    `json:"isTranslatable,omitempty"`
-	MeshStates                []bool                   `json:"meshStates,omitempty"`
-	MimeType                  *string                  `json:"mimeType,omitempty"`
-	Name                      *string                  `json:"name,omitempty"`
-	NextRevisionId            *string                  `json:"nextRevisionId,omitempty"`
-	ObsoletionPackageId       *string                  `json:"obsoletionPackageId,omitempty"`
-	PartId                    *string                  `json:"partId,omitempty"`
-	PartNumber                *string                  `json:"partNumber,omitempty"`
-	PreviousRevisionId        *string                  `json:"previousRevisionId,omitempty"`
-	ReleaseCreatedDate        *JSONTime                `json:"releaseCreatedDate,omitempty"`
-	ReleaseId                 *string                  `json:"releaseId,omitempty"`
-	ReleaseName               *string                  `json:"releaseName,omitempty"`
-	ReleasedBy                *BTUserSummaryInfo       `json:"releasedBy,omitempty"`
-	Revision                  *string                  `json:"revision,omitempty"`
-	RevisionRuleId            *string                  `json:"revisionRuleId,omitempty"`
-	VersionId                 *string                  `json:"versionId,omitempty"`
-	VersionName               *string                  `json:"versionName,omitempty"`
-	ViewRef                   *string                  `json:"viewRef,omitempty"`
+	// The company or enterprise ID that owns the resource.
+	CompanyId     *string   `json:"companyId,omitempty"`
+	Configuration *string   `json:"configuration,omitempty"`
+	CreatedAt     *JSONTime `json:"createdAt,omitempty"`
+	// The Revision Description metadata property if revision is of a drawing.
+	Description *string `json:"description,omitempty"`
+	// The document that contains the item.
+	DocumentId *string `json:"documentId,omitempty"`
+	// The name of the document that contains the item.
+	DocumentName *string `json:"documentName,omitempty"`
+	// The element that contains the item.
+	ElementId *string `json:"elementId,omitempty"`
+	// The type of item 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
+	ElementType          *int32  `json:"elementType,omitempty"`
+	ErrorMessage         *string `json:"errorMessage,omitempty"`
+	FlatPartInsertableId *string `json:"flatPartInsertableId,omitempty"`
+	// URI to fetch complete information of the resource.
+	Href *string `json:"href,omitempty"`
+	// Id of the resource.
+	Id           *string `json:"id,omitempty"`
+	InsertableId *string `json:"insertableId,omitempty"`
+	// Whether the revision has been obsoleted.
+	IsObsolete *bool `json:"isObsolete,omitempty"`
+	// If true, the revision can be created again.
+	IsRereleasable *bool   `json:"isRereleasable,omitempty"`
+	IsTranslatable *bool   `json:"isTranslatable,omitempty"`
+	MimeType       *string `json:"mimeType,omitempty"`
+	// Name of the resource.
+	Name *string `json:"name,omitempty"`
+	// The next revision if applicable. null for the latest revision.
+	NextRevisionId *string `json:"nextRevisionId,omitempty"`
+	// The OBSOLETION release package that obsoleted this revision if applicable.
+	ObsoletionPackageId *string `json:"obsoletionPackageId,omitempty"`
+	PartId              *string `json:"partId,omitempty"`
+	// The Part Number with which the item was revised.
+	PartNumber *string `json:"partNumber,omitempty"`
+	// The previous revision if applicable. null for first revision.
+	PreviousRevisionId *string   `json:"previousRevisionId,omitempty"`
+	ReleaseCreatedDate *JSONTime `json:"releaseCreatedDate,omitempty"`
+	// The release package that created this revision.
+	ReleaseId *string `json:"releaseId,omitempty"`
+	// The name of the release package that created this item.
+	ReleaseName *string            `json:"releaseName,omitempty"`
+	ReleasedBy  *BTUserSummaryInfo `json:"releasedBy,omitempty"`
+	// The id of the revision.
+	Revision       *string `json:"revision,omitempty"`
+	RevisionRuleId *string `json:"revisionRuleId,omitempty"`
+	// The version of the document that contains this revision.
+	VersionId *string `json:"versionId,omitempty"`
+	// The name of the version of the document that contains this revision.
+	VersionName *string `json:"versionName,omitempty"`
+	// URI to visualize the resource in a webclient if applicable.
+	ViewRef *string `json:"viewRef,omitempty"`
 }
 
 // NewBTRevisionInfo instantiates a new BTRevisionInfo object
@@ -172,38 +190,6 @@ func (o *BTRevisionInfo) SetAutoObsoletionReleaseName(v string) {
 	o.AutoObsoletionReleaseName = &v
 }
 
-// GetCanCurrentUserObsolete returns the CanCurrentUserObsolete field value if set, zero value otherwise.
-func (o *BTRevisionInfo) GetCanCurrentUserObsolete() bool {
-	if o == nil || o.CanCurrentUserObsolete == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CanCurrentUserObsolete
-}
-
-// GetCanCurrentUserObsoleteOk returns a tuple with the CanCurrentUserObsolete field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTRevisionInfo) GetCanCurrentUserObsoleteOk() (*bool, bool) {
-	if o == nil || o.CanCurrentUserObsolete == nil {
-		return nil, false
-	}
-	return o.CanCurrentUserObsolete, true
-}
-
-// HasCanCurrentUserObsolete returns a boolean if a field has been set.
-func (o *BTRevisionInfo) HasCanCurrentUserObsolete() bool {
-	if o != nil && o.CanCurrentUserObsolete != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCanCurrentUserObsolete gets a reference to the given bool and assigns it to the CanCurrentUserObsolete field.
-func (o *BTRevisionInfo) SetCanCurrentUserObsolete(v bool) {
-	o.CanCurrentUserObsolete = &v
-}
-
 // GetCanExport returns the CanExport field value if set, zero value otherwise.
 func (o *BTRevisionInfo) GetCanExport() bool {
 	if o == nil || o.CanExport == nil {
@@ -234,38 +220,6 @@ func (o *BTRevisionInfo) HasCanExport() bool {
 // SetCanExport gets a reference to the given bool and assigns it to the CanExport field.
 func (o *BTRevisionInfo) SetCanExport(v bool) {
 	o.CanExport = &v
-}
-
-// GetChangeOrderId returns the ChangeOrderId field value if set, zero value otherwise.
-func (o *BTRevisionInfo) GetChangeOrderId() string {
-	if o == nil || o.ChangeOrderId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ChangeOrderId
-}
-
-// GetChangeOrderIdOk returns a tuple with the ChangeOrderId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTRevisionInfo) GetChangeOrderIdOk() (*string, bool) {
-	if o == nil || o.ChangeOrderId == nil {
-		return nil, false
-	}
-	return o.ChangeOrderId, true
-}
-
-// HasChangeOrderId returns a boolean if a field has been set.
-func (o *BTRevisionInfo) HasChangeOrderId() bool {
-	if o != nil && o.ChangeOrderId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetChangeOrderId gets a reference to the given string and assigns it to the ChangeOrderId field.
-func (o *BTRevisionInfo) SetChangeOrderId(v string) {
-	o.ChangeOrderId = &v
 }
 
 // GetCompanyId returns the CompanyId field value if set, zero value otherwise.
@@ -556,38 +510,6 @@ func (o *BTRevisionInfo) SetErrorMessage(v string) {
 	o.ErrorMessage = &v
 }
 
-// GetFileName returns the FileName field value if set, zero value otherwise.
-func (o *BTRevisionInfo) GetFileName() string {
-	if o == nil || o.FileName == nil {
-		var ret string
-		return ret
-	}
-	return *o.FileName
-}
-
-// GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTRevisionInfo) GetFileNameOk() (*string, bool) {
-	if o == nil || o.FileName == nil {
-		return nil, false
-	}
-	return o.FileName, true
-}
-
-// HasFileName returns a boolean if a field has been set.
-func (o *BTRevisionInfo) HasFileName() bool {
-	if o != nil && o.FileName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFileName gets a reference to the given string and assigns it to the FileName field.
-func (o *BTRevisionInfo) SetFileName(v string) {
-	o.FileName = &v
-}
-
 // GetFlatPartInsertableId returns the FlatPartInsertableId field value if set, zero value otherwise.
 func (o *BTRevisionInfo) GetFlatPartInsertableId() string {
 	if o == nil || o.FlatPartInsertableId == nil {
@@ -810,38 +732,6 @@ func (o *BTRevisionInfo) HasIsTranslatable() bool {
 // SetIsTranslatable gets a reference to the given bool and assigns it to the IsTranslatable field.
 func (o *BTRevisionInfo) SetIsTranslatable(v bool) {
 	o.IsTranslatable = &v
-}
-
-// GetMeshStates returns the MeshStates field value if set, zero value otherwise.
-func (o *BTRevisionInfo) GetMeshStates() []bool {
-	if o == nil || o.MeshStates == nil {
-		var ret []bool
-		return ret
-	}
-	return o.MeshStates
-}
-
-// GetMeshStatesOk returns a tuple with the MeshStates field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTRevisionInfo) GetMeshStatesOk() ([]bool, bool) {
-	if o == nil || o.MeshStates == nil {
-		return nil, false
-	}
-	return o.MeshStates, true
-}
-
-// HasMeshStates returns a boolean if a field has been set.
-func (o *BTRevisionInfo) HasMeshStates() bool {
-	if o != nil && o.MeshStates != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMeshStates gets a reference to the given []bool and assigns it to the MeshStates field.
-func (o *BTRevisionInfo) SetMeshStates(v []bool) {
-	o.MeshStates = v
 }
 
 // GetMimeType returns the MimeType field value if set, zero value otherwise.
@@ -1367,14 +1257,8 @@ func (o BTRevisionInfo) MarshalJSON() ([]byte, error) {
 	if o.AutoObsoletionReleaseName != nil {
 		toSerialize["autoObsoletionReleaseName"] = o.AutoObsoletionReleaseName
 	}
-	if o.CanCurrentUserObsolete != nil {
-		toSerialize["canCurrentUserObsolete"] = o.CanCurrentUserObsolete
-	}
 	if o.CanExport != nil {
 		toSerialize["canExport"] = o.CanExport
-	}
-	if o.ChangeOrderId != nil {
-		toSerialize["changeOrderId"] = o.ChangeOrderId
 	}
 	if o.CompanyId != nil {
 		toSerialize["companyId"] = o.CompanyId
@@ -1403,9 +1287,6 @@ func (o BTRevisionInfo) MarshalJSON() ([]byte, error) {
 	if o.ErrorMessage != nil {
 		toSerialize["errorMessage"] = o.ErrorMessage
 	}
-	if o.FileName != nil {
-		toSerialize["fileName"] = o.FileName
-	}
 	if o.FlatPartInsertableId != nil {
 		toSerialize["flatPartInsertableId"] = o.FlatPartInsertableId
 	}
@@ -1426,9 +1307,6 @@ func (o BTRevisionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsTranslatable != nil {
 		toSerialize["isTranslatable"] = o.IsTranslatable
-	}
-	if o.MeshStates != nil {
-		toSerialize["meshStates"] = o.MeshStates
 	}
 	if o.MimeType != nil {
 		toSerialize["mimeType"] = o.MimeType

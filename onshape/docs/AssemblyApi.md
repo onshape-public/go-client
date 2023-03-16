@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ## GetAssemblyMassProperties
 
-> BTMassPropertiesInfoNull GetAssemblyMassProperties(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).Execute()
+> BTMassPropertiesInfo GetAssemblyMassProperties(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).Execute()
 
 
 
@@ -624,7 +624,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.GetAssemblyMassProperties``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAssemblyMassProperties`: BTMassPropertiesInfoNull
+    // response from `GetAssemblyMassProperties`: BTMassPropertiesInfo
     fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.GetAssemblyMassProperties`: %v\n", resp)
 }
 ```
@@ -656,7 +656,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BTMassPropertiesInfoNull**](BTMassPropertiesInfoNull.md)
+[**BTMassPropertiesInfo**](BTMassPropertiesInfo.md)
 
 ### Authorization
 

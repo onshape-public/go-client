@@ -5,7 +5,8 @@ All URIs are relative to *https://cad.onshape.com/api/v5*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteRevisionHistory**](RevisionApi.md#DeleteRevisionHistory) | **Delete** /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et} | 
-[**EnumerateRevisions**](RevisionApi.md#EnumerateRevisions) | **Get** /revisions/companies/{cid} | Enumerate all revisions released in a company by company ID.
+[**EnumerateRevisions**](RevisionApi.md#EnumerateRevisions) | **Get** /revisions/companies/{cid} | Enumerate all revisions created in a company.
+[**GetAllInDocument**](RevisionApi.md#GetAllInDocument) | **Get** /revisions/d/{did} | Retrieve a list of all revisions that exist in a document.
 [**GetAllInDocumentVersion**](RevisionApi.md#GetAllInDocumentVersion) | **Get** /revisions/d/{did}/v/{vid} | Retrieve a list of all revisions that exist in a document version.
 [**GetLatestInDocumentOrCompany**](RevisionApi.md#GetLatestInDocumentOrCompany) | **Get** /revisions/{cd}/{cdid}/p/{pnum}/latest | Retrieve latest revisions for a part number in a document or company by document ID, workspace or version or microversion ID, and tab ID.
 [**GetRevisionByPartNumber**](RevisionApi.md#GetRevisionByPartNumber) | **Get** /revisions/c/{cid}/partnumber/{pnum} | Get Navigation URL
@@ -93,9 +94,11 @@ Name | Type | Description  | Notes
 
 ## EnumerateRevisions
 
-> BTListResponseBTRevisionInfo EnumerateRevisions(ctx, cid).ElementType(elementType).Limit(limit).Offset(offset).LatestOnly(latestOnly).After(after).Execute()
+> BTListResponseBTRevisionInfo EnumerateRevisions(ctx, cid).ElementType(elementType).Limit(limit).LatestOnly(latestOnly).After(after).Execute()
 
-Enumerate all revisions released in a company by company ID.
+Enumerate all revisions created in a company.
+
+
 
 ### Example
 
@@ -111,16 +114,15 @@ import (
 )
 
 func main() {
-    cid := "cid_example" // string | 
-    elementType := int32(56) // int32 |  (optional)
-    limit := int32(56) // int32 |  (optional) (default to 20)
-    offset := int32(56) // int32 |  (optional) (default to 0)
-    latestOnly := true // bool |  (optional) (default to false)
-    after := time.Now() // JSONTime |  (optional) (default to "2000-01-01T00:00Z")
+    cid := "cid_example" // string | The company or enterprise ID that owns the resource.
+    elementType := int32(56) // int32 | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob (optional)
+    limit := int32(56) // int32 | The number of items to return in a single API call (optional) (default to 20)
+    latestOnly := true // bool | Whether to limit search to only latest revisions. (optional) (default to false)
+    after := time.Now() // JSONTime | The earliest creation date of the revision to find. (optional) (default to "2000-01-01T00:00Z")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RevisionApi.EnumerateRevisions(context.Background(), cid).ElementType(elementType).Limit(limit).Offset(offset).LatestOnly(latestOnly).After(after).Execute()
+    resp, r, err := apiClient.RevisionApi.EnumerateRevisions(context.Background(), cid).ElementType(elementType).Limit(limit).LatestOnly(latestOnly).After(after).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RevisionApi.EnumerateRevisions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -136,7 +138,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cid** | **string** |  | 
+**cid** | **string** | The company or enterprise ID that owns the resource. | 
 
 ### Other Parameters
 
@@ -146,11 +148,80 @@ Other parameters are passed through a pointer to a apiEnumerateRevisionsRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **elementType** | **int32** |  | 
- **limit** | **int32** |  | [default to 20]
- **offset** | **int32** |  | [default to 0]
- **latestOnly** | **bool** |  | [default to false]
- **after** | **JSONTime** |  | [default to &quot;2000-01-01T00:00Z&quot;]
+ **elementType** | **int32** | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob | 
+ **limit** | **int32** | The number of items to return in a single API call | [default to 20]
+ **latestOnly** | **bool** | Whether to limit search to only latest revisions. | [default to false]
+ **after** | **JSONTime** | The earliest creation date of the revision to find. | [default to &quot;2000-01-01T00:00Z&quot;]
+
+### Return type
+
+[**BTListResponseBTRevisionInfo**](BTListResponseBTRevisionInfo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAllInDocument
+
+> BTListResponseBTRevisionInfo GetAllInDocument(ctx, did).Execute()
+
+Retrieve a list of all revisions that exist in a document.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RevisionApi.GetAllInDocument(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RevisionApi.GetAllInDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAllInDocument`: BTListResponseBTRevisionInfo
+    fmt.Fprintf(os.Stdout, "Response from `RevisionApi.GetAllInDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllInDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 

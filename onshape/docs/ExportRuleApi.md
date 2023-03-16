@@ -4,13 +4,13 @@ All URIs are relative to *https://cad.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetValidRuleOptions**](ExportRuleApi.md#GetValidRuleOptions) | **Get** /exportrules/options/{otype}/{oid} | Retrieve a list of the valid export rule options by object type and owner ID.
+[**GetValidRuleOptions**](ExportRuleApi.md#GetValidRuleOptions) | **Get** /exportrules/options/{cu}/{cuid} | Retrieve a list of the valid export rule options by object type and owner ID.
 
 
 
 ## GetValidRuleOptions
 
-> BTExportRuleValidOptionsInfo GetValidRuleOptions(ctx, otype, oid).Execute()
+> BTExportRuleValidOptionsInfo GetValidRuleOptions(ctx, cu, cuid).Execute()
 
 Retrieve a list of the valid export rule options by object type and owner ID.
 
@@ -27,12 +27,12 @@ import (
 )
 
 func main() {
-    otype := "otype_example" // string | 
-    oid := "oid_example" // string | 
+    cu := "cu_example" // string | Indicates which of company (c) or user (u) id is specified below.
+    cuid := "cuid_example" // string | The id of the company or user in which the operation should be performed.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExportRuleApi.GetValidRuleOptions(context.Background(), otype, oid).Execute()
+    resp, r, err := apiClient.ExportRuleApi.GetValidRuleOptions(context.Background(), cu, cuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportRuleApi.GetValidRuleOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -48,8 +48,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**otype** | **string** |  | 
-**oid** | **string** |  | 
+**cu** | **string** | Indicates which of company (c) or user (u) id is specified below. | 
+**cuid** | **string** | The id of the company or user in which the operation should be performed. | 
 
 ### Other Parameters
 

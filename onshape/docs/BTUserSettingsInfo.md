@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **UnitsDisplayPrecision** | Pointer to **map[string]int32** |  | [optional] 
 **UnitsMaximumDisplayPrecision** | Pointer to [**BTUnitsMaximumDisplayPrecisionInfo**](BTUnitsMaximumDisplayPrecisionInfo.md) |  | [optional] 
 **Use24HourTime** | Pointer to **bool** |  | [optional] 
+**UseDecimalComma** | Pointer to **bool** |  | [optional] 
 **ViewManipulationMouseKeyMapping** | Pointer to [**BTViewManipulationMouseKeyMappingInfo**](BTViewManipulationMouseKeyMappingInfo.md) |  | [optional] 
 **ViewMappingId** | Pointer to **int32** |  | [optional] 
 
@@ -545,6 +546,31 @@ SetUse24HourTime sets Use24HourTime field to given value.
 `func (o *BTUserSettingsInfo) HasUse24HourTime() bool`
 
 HasUse24HourTime returns a boolean if a field has been set.
+
+### GetUseDecimalComma
+
+`func (o *BTUserSettingsInfo) GetUseDecimalComma() bool`
+
+GetUseDecimalComma returns the UseDecimalComma field if non-nil, zero value otherwise.
+
+### GetUseDecimalCommaOk
+
+`func (o *BTUserSettingsInfo) GetUseDecimalCommaOk() (*bool, bool)`
+
+GetUseDecimalCommaOk returns a tuple with the UseDecimalComma field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseDecimalComma
+
+`func (o *BTUserSettingsInfo) SetUseDecimalComma(v bool)`
+
+SetUseDecimalComma sets UseDecimalComma field to given value.
+
+### HasUseDecimalComma
+
+`func (o *BTUserSettingsInfo) HasUseDecimalComma() bool`
+
+HasUseDecimalComma returns a boolean if a field has been set.
 
 ### GetViewManipulationMouseKeyMapping
 
