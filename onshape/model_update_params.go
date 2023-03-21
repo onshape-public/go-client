@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,9 +17,10 @@ import (
 
 // UpdateParams struct for UpdateParams
 type UpdateParams struct {
-	FromReference *BTUniqueDocumentItemParams `json:"fromReference,omitempty"`
-	IdsToUpdate   []string                    `json:"idsToUpdate,omitempty"`
-	ToReference   *BTUniqueDocumentItemParams `json:"toReference,omitempty"`
+	FromReference  *BTUniqueDocumentItemParams `json:"fromReference,omitempty"`
+	IdsToUpdate    []string                    `json:"idsToUpdate,omitempty"`
+	IgnoreChildren *bool                       `json:"ignoreChildren,omitempty"`
+	ToReference    *BTUniqueDocumentItemParams `json:"toReference,omitempty"`
 }
 
 // NewUpdateParams instantiates a new UpdateParams object
@@ -103,6 +104,38 @@ func (o *UpdateParams) SetIdsToUpdate(v []string) {
 	o.IdsToUpdate = v
 }
 
+// GetIgnoreChildren returns the IgnoreChildren field value if set, zero value otherwise.
+func (o *UpdateParams) GetIgnoreChildren() bool {
+	if o == nil || o.IgnoreChildren == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IgnoreChildren
+}
+
+// GetIgnoreChildrenOk returns a tuple with the IgnoreChildren field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateParams) GetIgnoreChildrenOk() (*bool, bool) {
+	if o == nil || o.IgnoreChildren == nil {
+		return nil, false
+	}
+	return o.IgnoreChildren, true
+}
+
+// HasIgnoreChildren returns a boolean if a field has been set.
+func (o *UpdateParams) HasIgnoreChildren() bool {
+	if o != nil && o.IgnoreChildren != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIgnoreChildren gets a reference to the given bool and assigns it to the IgnoreChildren field.
+func (o *UpdateParams) SetIgnoreChildren(v bool) {
+	o.IgnoreChildren = &v
+}
+
 // GetToReference returns the ToReference field value if set, zero value otherwise.
 func (o *UpdateParams) GetToReference() BTUniqueDocumentItemParams {
 	if o == nil || o.ToReference == nil {
@@ -142,6 +175,9 @@ func (o UpdateParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.IdsToUpdate != nil {
 		toSerialize["idsToUpdate"] = o.IdsToUpdate
+	}
+	if o.IgnoreChildren != nil {
+		toSerialize["ignoreChildren"] = o.IgnoreChildren
 	}
 	if o.ToReference != nil {
 		toSerialize["toReference"] = o.ToReference

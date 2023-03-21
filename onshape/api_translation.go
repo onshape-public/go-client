@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -62,6 +62,7 @@ func (r ApiCreateTranslationRequest) File(file map[string]interface{}) ApiCreate
 	return r
 }
 
+// If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults.
 func (r ApiCreateTranslationRequest) AllowFaultyParts(allowFaultyParts bool) ApiCreateTranslationRequest {
 	r.allowFaultyParts = &allowFaultyParts
 	return r
@@ -77,6 +78,7 @@ func (r ApiCreateTranslationRequest) CreateDrawingIfPossible(createDrawingIfPoss
 	return r
 }
 
+// If the filename contains non-ASCII characters. Use this field to store the filename.
 func (r ApiCreateTranslationRequest) EncodedFilename(encodedFilename string) ApiCreateTranslationRequest {
 	r.encodedFilename = &encodedFilename
 	return r
@@ -87,6 +89,7 @@ func (r ApiCreateTranslationRequest) ExtractAssemblyHierarchy(extractAssemblyHie
 	return r
 }
 
+// If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly.
 func (r ApiCreateTranslationRequest) FlattenAssemblies(flattenAssemblies bool) ApiCreateTranslationRequest {
 	r.flattenAssemblies = &flattenAssemblies
 	return r
@@ -177,6 +180,7 @@ func (r ApiCreateTranslationRequest) VersionString(versionString string) ApiCrea
 	return r
 }
 
+// If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect.
 func (r ApiCreateTranslationRequest) YAxisIsUp(yAxisIsUp bool) ApiCreateTranslationRequest {
 	r.yAxisIsUp = &yAxisIsUp
 	return r

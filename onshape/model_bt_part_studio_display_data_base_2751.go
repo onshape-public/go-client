@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -598,6 +598,56 @@ func (o *BTPartStudioDisplayDataBase2751) SetMicroversionInterval(v BTMicroversi
 	o.GetActualInstance().(getResult).SetMicroversionInterval(v)
 }
 
+// GetNumberOfSketchEntities returns the NumberOfSketchEntities field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayDataBase2751) GetNumberOfSketchEntities() int32 {
+	type getResult interface {
+		GetNumberOfSketchEntities() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNumberOfSketchEntities()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetNumberOfSketchEntitiesOk returns a tuple with the NumberOfSketchEntities field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayDataBase2751) GetNumberOfSketchEntitiesOk() (*int32, bool) {
+	type getResult interface {
+		GetNumberOfSketchEntitiesOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNumberOfSketchEntitiesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNumberOfSketchEntities returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayDataBase2751) HasNumberOfSketchEntities() bool {
+	type getResult interface {
+		HasNumberOfSketchEntities() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNumberOfSketchEntities()
+	} else {
+		return false
+	}
+}
+
+// SetNumberOfSketchEntities gets a reference to the given int32 and assigns it to the NumberOfSketchEntities field.
+func (o *BTPartStudioDisplayDataBase2751) SetNumberOfSketchEntities(v int32) {
+	type getResult interface {
+		SetNumberOfSketchEntities(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetNumberOfSketchEntities(v)
+}
+
 // GetVersionForRasterization returns the VersionForRasterization field value if set, zero value otherwise.
 func (o *BTPartStudioDisplayDataBase2751) GetVersionForRasterization() BTElementDisplayData326 {
 	type getResult interface {
@@ -763,6 +813,7 @@ type base_BTPartStudioDisplayDataBase2751 struct {
 	MicroversionId                         *BTMicroversionId366                          `json:"microversionId,omitempty"`
 	MicroversionIdAndConfigurationInterval *BTMicroversionIdAndConfigurationInterval2364 `json:"microversionIdAndConfigurationInterval,omitempty"`
 	MicroversionInterval                   *BTMicroversionIdInterval367                  `json:"microversionInterval,omitempty"`
+	NumberOfSketchEntities                 *int32                                        `json:"numberOfSketchEntities,omitempty"`
 	VersionForRasterization                *BTElementDisplayData326                      `json:"versionForRasterization,omitempty"`
 }
 
@@ -1135,6 +1186,38 @@ func (o *base_BTPartStudioDisplayDataBase2751) SetMicroversionInterval(v BTMicro
 	o.MicroversionInterval = &v
 }
 
+// GetNumberOfSketchEntities returns the NumberOfSketchEntities field value if set, zero value otherwise.
+func (o *base_BTPartStudioDisplayDataBase2751) GetNumberOfSketchEntities() int32 {
+	if o == nil || o.NumberOfSketchEntities == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NumberOfSketchEntities
+}
+
+// GetNumberOfSketchEntitiesOk returns a tuple with the NumberOfSketchEntities field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPartStudioDisplayDataBase2751) GetNumberOfSketchEntitiesOk() (*int32, bool) {
+	if o == nil || o.NumberOfSketchEntities == nil {
+		return nil, false
+	}
+	return o.NumberOfSketchEntities, true
+}
+
+// HasNumberOfSketchEntities returns a boolean if a field has been set.
+func (o *base_BTPartStudioDisplayDataBase2751) HasNumberOfSketchEntities() bool {
+	if o != nil && o.NumberOfSketchEntities != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNumberOfSketchEntities gets a reference to the given int32 and assigns it to the NumberOfSketchEntities field.
+func (o *base_BTPartStudioDisplayDataBase2751) SetNumberOfSketchEntities(v int32) {
+	o.NumberOfSketchEntities = &v
+}
+
 // GetVersionForRasterization returns the VersionForRasterization field value if set, zero value otherwise.
 func (o *base_BTPartStudioDisplayDataBase2751) GetVersionForRasterization() BTElementDisplayData326 {
 	if o == nil || o.VersionForRasterization == nil {
@@ -1201,6 +1284,9 @@ func (o base_BTPartStudioDisplayDataBase2751) MarshalJSON() ([]byte, error) {
 	}
 	if o.MicroversionInterval != nil {
 		toSerialize["microversionInterval"] = o.MicroversionInterval
+	}
+	if o.NumberOfSketchEntities != nil {
+		toSerialize["numberOfSketchEntities"] = o.NumberOfSketchEntities
 	}
 	if o.VersionForRasterization != nil {
 		toSerialize["versionForRasterization"] = o.VersionForRasterization

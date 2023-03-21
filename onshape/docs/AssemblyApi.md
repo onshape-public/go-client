@@ -429,8 +429,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -459,8 +459,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -520,8 +520,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -550,8 +550,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -611,8 +611,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -636,8 +636,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -692,8 +692,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -729,8 +729,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -797,8 +797,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -833,8 +833,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -900,8 +900,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -926,8 +926,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -1060,8 +1060,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -1087,8 +1087,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -1145,8 +1145,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wvm := "wvm_example" // string | Indicates which of workspace id, version id, or document microversion id is specified below.
-    wvmid := "wvmid_example" // string | The id of the workspace, version, or document microversion in which the operation should be performed.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -1171,8 +1171,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wvm** | **string** | Indicates which of workspace id, version id, or document microversion id is specified below. | 
-**wvmid** | **string** | The id of the workspace, version, or document microversion in which the operation should be performed. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -1534,7 +1534,7 @@ func main() {
     wv := "wv_example" // string | 
     wvid := "wvid_example" // string | 
     eid := "eid_example" // string | 
-    bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams() // BTTranslateFormatParams | 
+    bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams("FormatName_example") // BTTranslateFormatParams | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

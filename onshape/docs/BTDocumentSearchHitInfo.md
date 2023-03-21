@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementName** | Pointer to **string** |  | [optional] 
 **HighlightedFields** | Pointer to **map[string][]string** |  | [optional] 
+**Hit** | Pointer to [**BTLegacySearchHit**](BTLegacySearchHit.md) |  | [optional] 
 **HitId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
@@ -107,6 +108,31 @@ SetHighlightedFields sets HighlightedFields field to given value.
 `func (o *BTDocumentSearchHitInfo) HasHighlightedFields() bool`
 
 HasHighlightedFields returns a boolean if a field has been set.
+
+### GetHit
+
+`func (o *BTDocumentSearchHitInfo) GetHit() BTLegacySearchHit`
+
+GetHit returns the Hit field if non-nil, zero value otherwise.
+
+### GetHitOk
+
+`func (o *BTDocumentSearchHitInfo) GetHitOk() (*BTLegacySearchHit, bool)`
+
+GetHitOk returns a tuple with the Hit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHit
+
+`func (o *BTDocumentSearchHitInfo) SetHit(v BTLegacySearchHit)`
+
+SetHit sets Hit field to given value.
+
+### HasHit
+
+`func (o *BTDocumentSearchHitInfo) HasHit() bool`
+
+HasHit returns a boolean if a field has been set.
 
 ### GetHitId
 

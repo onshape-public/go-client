@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **MicroversionIdAndConfigurationInterval** | Pointer to [**BTMicroversionIdAndConfigurationInterval2364**](BTMicroversionIdAndConfigurationInterval2364.md) |  | [optional] 
 **MicroversionInterval** | Pointer to [**BTMicroversionIdInterval367**](BTMicroversionIdInterval367.md) |  | [optional] 
+**NumberOfSketchEntities** | Pointer to **int32** |  | [optional] 
 **VersionForRasterization** | Pointer to [**BTElementDisplayData326**](BTElementDisplayData326.md) |  | [optional] 
 
 ## Methods
@@ -310,6 +311,31 @@ SetMicroversionInterval sets MicroversionInterval field to given value.
 `func (o *BTPartStudioDisplayDataBase2751) HasMicroversionInterval() bool`
 
 HasMicroversionInterval returns a boolean if a field has been set.
+
+### GetNumberOfSketchEntities
+
+`func (o *BTPartStudioDisplayDataBase2751) GetNumberOfSketchEntities() int32`
+
+GetNumberOfSketchEntities returns the NumberOfSketchEntities field if non-nil, zero value otherwise.
+
+### GetNumberOfSketchEntitiesOk
+
+`func (o *BTPartStudioDisplayDataBase2751) GetNumberOfSketchEntitiesOk() (*int32, bool)`
+
+GetNumberOfSketchEntitiesOk returns a tuple with the NumberOfSketchEntities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfSketchEntities
+
+`func (o *BTPartStudioDisplayDataBase2751) SetNumberOfSketchEntities(v int32)`
+
+SetNumberOfSketchEntities sets NumberOfSketchEntities field to given value.
+
+### HasNumberOfSketchEntities
+
+`func (o *BTPartStudioDisplayDataBase2751) HasNumberOfSketchEntities() bool`
+
+HasNumberOfSketchEntities returns a boolean if a field has been set.
 
 ### GetVersionForRasterization
 

@@ -113,8 +113,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wv := "wv_example" // string | 
-    wvid := "wvid_example" // string | 
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
@@ -137,8 +137,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wv** | **string** |  | 
-**wvid** | **string** |  | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -194,8 +194,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wv := "wv_example" // string | 
-    wvid := "wvid_example" // string | 
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
@@ -218,8 +218,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wv** | **string** |  | 
-**wvid** | **string** |  | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
@@ -275,8 +275,8 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    wv := "wv_example" // string | 
-    wvid := "wvid_example" // string | 
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string |  (optional) (default to "")
@@ -301,8 +301,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** | The id of the document in which to perform the operation. | 
-**wv** | **string** |  | 
-**wvid** | **string** |  | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
 **eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters

@@ -4,16 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CompanyId** | Pointer to **string** |  | [optional] 
+**CompanyId** | Pointer to **string** | Company admins can register webhooks to listen to all company events. | [optional] 
 **CreatedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DroppedEventCount** | Pointer to **int32** |  | [optional] 
-**Events** | Pointer to **[]string** |  | [optional] 
+**Events** | Pointer to **[]string** | List of events for which webhook callback is invoked. | [optional] 
+**ExternalSessionId** | Pointer to **string** | Applications can pass this parameter as X-Session-ID with every REST call to distinguish webhooks triggered by self. | [optional] 
 **Filter** | Pointer to **string** |  | [optional] 
 **FolderId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
+**IsTransient** | Pointer to **bool** | Transient webhooks are automatically cleaned up after a period of inactivity. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
@@ -189,6 +191,31 @@ SetEvents sets Events field to given value.
 
 HasEvents returns a boolean if a field has been set.
 
+### GetExternalSessionId
+
+`func (o *BTWebhookInfo) GetExternalSessionId() string`
+
+GetExternalSessionId returns the ExternalSessionId field if non-nil, zero value otherwise.
+
+### GetExternalSessionIdOk
+
+`func (o *BTWebhookInfo) GetExternalSessionIdOk() (*string, bool)`
+
+GetExternalSessionIdOk returns a tuple with the ExternalSessionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalSessionId
+
+`func (o *BTWebhookInfo) SetExternalSessionId(v string)`
+
+SetExternalSessionId sets ExternalSessionId field to given value.
+
+### HasExternalSessionId
+
+`func (o *BTWebhookInfo) HasExternalSessionId() bool`
+
+HasExternalSessionId returns a boolean if a field has been set.
+
 ### GetFilter
 
 `func (o *BTWebhookInfo) GetFilter() string`
@@ -288,6 +315,31 @@ SetId sets Id field to given value.
 `func (o *BTWebhookInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsTransient
+
+`func (o *BTWebhookInfo) GetIsTransient() bool`
+
+GetIsTransient returns the IsTransient field if non-nil, zero value otherwise.
+
+### GetIsTransientOk
+
+`func (o *BTWebhookInfo) GetIsTransientOk() (*bool, bool)`
+
+GetIsTransientOk returns a tuple with the IsTransient field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsTransient
+
+`func (o *BTWebhookInfo) SetIsTransient(v bool)`
+
+SetIsTransient sets IsTransient field to given value.
+
+### HasIsTransient
+
+`func (o *BTWebhookInfo) HasIsTransient() bool`
+
+HasIsTransient returns a boolean if a field has been set.
 
 ### GetName
 

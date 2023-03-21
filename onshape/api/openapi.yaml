@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.160.12410-b0c73c1032e8
+  version: 1.161.13200-ff216a970a02
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -81,6 +81,8 @@ tags:
   name: Part
 - description: "Modify, change, and get PartStudios."
   name: PartStudio
+- description: Access and manipulate properties table templates.
+  name: PropertiesTableTemplate
 - description: Modify and access publication information.
   name: Publication
 - description: Manage Release Management workflows.
@@ -1343,8 +1345,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -1356,7 +1358,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -1719,8 +1721,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -1732,7 +1734,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -1991,8 +1993,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -2004,7 +2006,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -2516,8 +2518,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -2529,7 +2531,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -3349,8 +3351,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -3362,7 +3364,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -3471,8 +3473,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -3484,7 +3486,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -3656,8 +3658,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -3669,7 +3671,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -3773,8 +3775,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -3786,7 +3788,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -3861,8 +3863,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -3874,7 +3876,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -4062,8 +4064,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -4075,7 +4077,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -4141,8 +4143,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -4154,7 +4156,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -4229,8 +4231,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -4242,7 +4244,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -4461,14 +4463,29 @@ paths:
       deprecated: false
       operationId: uploadFileCreateElement
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: The id of the workspace in which to perform the operation.
+        explode: false
         in: path
         name: wid
         required: true
@@ -4565,6 +4582,8 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: "Retrieve a file from a blob element by document ID, workspace ID,\
+        \ and tab ID."
       tags:
       - BlobElement
       x-BTVisibility: PRODUCTION
@@ -4572,28 +4591,46 @@ paths:
       deprecated: false
       operationId: uploadFileUpdateElement
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
-        in: path
-        name: eid
-        required: true
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
         schema:
+          default: ""
           type: string
-        style: simple
-      - explode: false
+        style: form
+      - description: The id of the workspace in which to perform the operation.
+        explode: false
         in: path
         name: wid
         required: true
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: The id of the element in which to perform the operation.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the last change made to this application element. This
+          can be retrieved from the response for any app element modification endpoint.
+        explode: true
         in: query
         name: parentChangeId
         required: false
@@ -4627,23 +4664,39 @@ paths:
       deprecated: false
       operationId: updateUnits
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: The id of the workspace in which to perform the operation.
+        explode: false
         in: path
-        name: eid
+        name: wid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
-        name: wid
+        name: eid
         required: true
         schema:
           type: string
@@ -4676,28 +4729,50 @@ paths:
       deprecated: false
       operationId: createBlobTranslation
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
         required: true
@@ -5842,8 +5917,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -5855,7 +5930,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -5933,8 +6008,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -5946,7 +6021,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -6036,14 +6111,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -7372,14 +7454,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -8107,8 +8196,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -8120,7 +8209,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -8289,8 +8378,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -8302,7 +8391,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -8402,8 +8491,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -8415,7 +8504,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -8552,8 +8641,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -8565,7 +8654,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -9300,8 +9389,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -9313,7 +9402,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -9509,8 +9598,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -9522,7 +9611,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -9704,8 +9793,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -9717,7 +9806,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -9869,8 +9958,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -9882,7 +9971,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -10396,8 +10485,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -10409,7 +10498,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -10537,8 +10626,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -10550,7 +10639,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -11065,8 +11154,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -11078,7 +11167,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -11380,8 +11469,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -11393,7 +11482,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -11561,8 +11650,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -11574,7 +11663,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -11666,8 +11755,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -11679,7 +11768,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -11913,8 +12002,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -11926,7 +12015,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -12141,8 +12230,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -12154,7 +12243,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -12980,8 +13069,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -12993,7 +13082,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -13121,8 +13210,8 @@ paths:
           default: ""
           type: string
         style: form
-      - description: "Indicates which of workspace id, version id, or document microversion\
-          \ id is specified below."
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
         explode: false
         in: path
         name: wvm
@@ -13134,7 +13223,7 @@ paths:
           - m
           type: string
         style: simple
-      - description: "The id of the workspace, version, or document microversion in\
+      - description: "The id of the workspace, version or document microversion in\
           \ which the operation should be performed."
         explode: false
         in: path
@@ -13743,14 +13832,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -14132,6 +14228,215 @@ paths:
         \ by document ID, workspace or version or microversion ID, and tab ID."
       tags:
       - Revision
+      x-BTVisibility: PRODUCTION
+  /tabletemplates:
+    post:
+      deprecated: false
+      operationId: createTableTemplate
+      parameters:
+      - explode: true
+        in: query
+        name: templateGroupId
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTPropertiesTableTemplateParams'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTPropertiesTableTemplateInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: Create a new properties table template.
+      tags:
+      - PropertiesTableTemplate
+      x-BTVisibility: PRODUCTION
+  /tabletemplates/companies/{cid}:
+    get:
+      deprecated: false
+      operationId: getByCompanyId
+      parameters:
+      - description: The id of the company in which to perform the operation.
+        explode: false
+        in: path
+        name: cid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Indicates filter for table templates: 0 (BOM) or 1 (Revision\
+          \ Table)."
+        explode: true
+        in: query
+        name: templateType
+        required: false
+        schema:
+          enum:
+          - BOM
+          - REVISION_TABLE
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: onlyActive
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includeDefaults
+        required: false
+        schema:
+          default: true
+          type: boolean
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                items:
+                  $ref: '#/components/schemas/BTPropertiesTableTemplateInfo'
+                type: array
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Retrieve the properties table templates by company ID.
+      tags:
+      - PropertiesTableTemplate
+      x-BTVisibility: PRODUCTION
+  /tabletemplates/d/{did}:
+    get:
+      deprecated: false
+      operationId: getByDocumentId
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Indicates filter for table templates: 0 (BOM) or 1 (Revision\
+          \ Table)."
+        explode: true
+        in: query
+        name: templateType
+        required: false
+        schema:
+          enum:
+          - BOM
+          - REVISION_TABLE
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: onlyActive
+        required: false
+        schema:
+          default: true
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includeDefaults
+        required: false
+        schema:
+          default: true
+          type: boolean
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                items:
+                  $ref: '#/components/schemas/BTPropertiesTableTemplateInfo'
+                type: array
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Retrieve the properties table templates by document ID.
+      tags:
+      - PropertiesTableTemplate
+      x-BTVisibility: PRODUCTION
+  /tabletemplates/{tid}:
+    delete:
+      deprecated: false
+      operationId: deleteTableTemplate
+      parameters:
+      - description: The id of the template in which to perform the operation.
+        explode: false
+        in: path
+        name: tid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Delete
+        BasicAuth:
+        - OAuth2Delete
+      summary: Delete a properties table template by template ID.
+      tags:
+      - PropertiesTableTemplate
+      x-BTVisibility: PRODUCTION
+    get:
+      deprecated: false
+      operationId: getTableTemplate
+      parameters:
+      - description: The id of the template in which to perform the operation.
+        explode: false
+        in: path
+        name: tid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTPropertiesTableTemplateInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Retrieve a properties table template by template ID.
+      tags:
+      - PropertiesTableTemplate
       x-BTVisibility: PRODUCTION
   /teams:
     get:
@@ -14641,14 +14946,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -14769,14 +15081,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -15454,14 +15773,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -15535,14 +15861,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -15600,14 +15933,21 @@ paths:
           default: ""
           type: string
         style: form
-      - explode: false
+      - description: Indicates which of workspace (w) or version (v) id is specified
+          below.
+        explode: false
         in: path
         name: wv
         required: true
         schema:
+          enum:
+          - w
+          - v
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version in which the operation should\
+          \ be performed."
+        explode: false
         in: path
         name: wvid
         required: true
@@ -18499,6 +18839,24 @@ components:
             $ref: '#/components/schemas/BTApplicationElementThumbnailParams'
           type: array
       type: object
+    BTApplicationTargetInfo:
+      example:
+        baseHref: https://openapi-generator.tech
+        clientId: clientId
+        supportsCollaboration: true
+        tabIconHref: https://openapi-generator.tech
+      properties:
+        baseHref:
+          format: uri
+          type: string
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          format: uri
+          type: string
+      type: object
     BTArcLengthDimensionDisplayData-1018:
       allOf:
       - $ref: '#/components/schemas/BTAngularDimensionDisplayData-320'
@@ -20056,18 +20414,18 @@ components:
         geometries:
         - hasTessellationError: true
           face: true
-          settingIndex: 5
+          settingIndex: 1
           btType: btType
-          errorCode: 1
-          estimatedMemoryUsageInBytes: 5
+          errorCode: 7
+          estimatedMemoryUsageInBytes: 1
           compressed: true
           decompressed: null
         - hasTessellationError: true
           face: true
-          settingIndex: 5
+          settingIndex: 1
           btType: btType
-          errorCode: 1
-          estimatedMemoryUsageInBytes: 5
+          errorCode: 7
+          estimatedMemoryUsageInBytes: 1
           compressed: true
           decompressed: null
         btType: btType
@@ -22252,6 +22610,7 @@ components:
             viewRef: https://openapi-generator.tech
             email: email
           lastModifiedBy: lastModifiedBy
+          preTrialPlanId: preTrialPlanId
           nextCharge:
             amount: 4
             total: 7
@@ -22913,6 +23272,44 @@ components:
       - $ref: '#/components/schemas/BTEntityGeometry-35'
       - $ref: '#/components/schemas/BTDebugGeometry_2059_allOf'
       type: object
+    BTDecal-2404:
+      example:
+        mappings:
+        - deterministicIds:
+          - deterministicIds
+          - deterministicIds
+          uvTransform:
+            m20: 3.616076749251911
+            m00: 1.4658129805029452
+            m11: 7.061401241503109
+            m22: 4.145608029883936
+            m10: 2.3021358869347655
+            m21: 2.027123023002322
+            m02: 5.637376656633329
+            m01: 5.962133916683182
+            m12: 9.301444243932576
+        - deterministicIds:
+          - deterministicIds
+          - deterministicIds
+          uvTransform:
+            m20: 3.616076749251911
+            m00: 1.4658129805029452
+            m11: 7.061401241503109
+            m22: 4.145608029883936
+            m10: 2.3021358869347655
+            m21: 2.027123023002322
+            m02: 5.637376656633329
+            m01: 5.962133916683182
+            m12: 9.301444243932576
+        imageSourceId: imageSourceId
+      properties:
+        imageSourceId:
+          type: string
+        mappings:
+          items:
+            $ref: '#/components/schemas/BTImageMapping-3821'
+          type: array
+      type: object
     BTDefaultFeatures-119:
       properties:
         btType:
@@ -23040,15 +23437,15 @@ components:
         maximumLimit: 6.683562403749608
         hasMinimumLimit: true
         coordinateSystem:
-          m20: 5.025004791520295
-          m00: 1.0246457001441578
-          m11: 1.1730742509559433
-          m22: 9.369310271410669
-          m10: 7.457744773683766
-          m21: 9.965781217890562
-          m02: 6.84685269835264
-          m01: 1.4894159098541704
-          m12: 4.965218492984954
+          m20: 3.616076749251911
+          m00: 1.4658129805029452
+          m11: 7.061401241503109
+          m22: 4.145608029883936
+          m10: 2.3021358869347655
+          m21: 2.027123023002322
+          m02: 5.637376656633329
+          m01: 5.962133916683182
+          m12: 9.301444243932576
         id: id
         planeMatrix:
           rigidWithinTransformTolerance: true
@@ -23206,10 +23603,21 @@ components:
         lengthUnits: lengthUnits
         type: type
         areaUnits: areaUnits
+        safeToShow: true
+        prettyType: prettyType
         unupdatable: true
         id: id
         massUnits: massUnits
+        zip:
+          files:
+          - files
+          - files
         foreignDataId: foreignDataId
+        applicationTarget:
+          baseHref: https://openapi-generator.tech
+          clientId: clientId
+          supportsCollaboration: true
+          tabIconHref: https://openapi-generator.tech
         specifiedUnit: specifiedUnit
         pressureUnits: pressureUnits
         dataType: dataType
@@ -23280,6 +23688,8 @@ components:
           type: string
         angularVelocityUnits:
           type: string
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
         areaUnits:
           type: string
         dataType:
@@ -23322,6 +23732,10 @@ components:
           type: string
         pressureUnits:
           type: string
+        prettyType:
+          type: string
+        safeToShow:
+          type: boolean
         specifiedUnit:
           type: string
         thumbnailInfo:
@@ -23337,6 +23751,8 @@ components:
           type: boolean
         volumeUnits:
           type: string
+        zip:
+          $ref: '#/components/schemas/BTZipFileInfo'
       type: object
     BTDocumentElementProcessingInfo:
       example:
@@ -23345,10 +23761,21 @@ components:
         lengthUnits: lengthUnits
         type: type
         areaUnits: areaUnits
+        safeToShow: true
+        prettyType: prettyType
         unupdatable: true
         id: id
         massUnits: massUnits
+        zip:
+          files:
+          - files
+          - files
         foreignDataId: foreignDataId
+        applicationTarget:
+          baseHref: https://openapi-generator.tech
+          clientId: clientId
+          supportsCollaboration: true
+          tabIconHref: https://openapi-generator.tech
         specifiedUnit: specifiedUnit
         pressureUnits: pressureUnits
         dataType: dataType
@@ -23420,6 +23847,8 @@ components:
           type: string
         angularVelocityUnits:
           type: string
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
         areaUnits:
           type: string
         dataType:
@@ -23462,6 +23891,10 @@ components:
           type: string
         pressureUnits:
           type: string
+        prettyType:
+          type: string
+        safeToShow:
+          type: boolean
         specifiedUnit:
           type: string
         thumbnailInfo:
@@ -23481,6 +23914,8 @@ components:
           type: boolean
         volumeUnits:
           type: string
+        zip:
+          $ref: '#/components/schemas/BTZipFileInfo'
       type: object
     BTDocumentHistoryInfo:
       example:
@@ -23526,9 +23961,6 @@ components:
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
-        betaCapabilityIds:
-        - betaCapabilityIds
-        - betaCapabilityIds
         createdAt: 2000-01-23T04:56:07.000+00:00
         numberOfTimesReferenced: 5
         unparentHref: unparentHref
@@ -23840,6 +24272,7 @@ components:
             documentId: documentId
             href: https://openapi-generator.tech
             id: id
+            metadataWorkspaceId: metadataWorkspaceId
             microversion: microversion
             viewRef: https://openapi-generator.tech
           - parent: parent
@@ -23914,6 +24347,7 @@ components:
             documentId: documentId
             href: https://openapi-generator.tech
             id: id
+            metadataWorkspaceId: metadataWorkspaceId
             microversion: microversion
             viewRef: https://openapi-generator.tech
         modifiedBy:
@@ -23951,10 +24385,6 @@ components:
           type: boolean
         anonymousAllowsExport:
           type: boolean
-        betaCapabilityIds:
-          items:
-            type: string
-          type: array
         canMove:
           type: boolean
         canUnshare:
@@ -24091,6 +24521,8 @@ components:
           format: uri
           type: string
       type: object
+      x-BTVisibility-properties:
+        betaCapabilityIds: INTERNAL
     BTDocumentLabelInfo:
       example:
         canMove: true
@@ -24192,10 +24624,21 @@ components:
           lengthUnits: lengthUnits
           type: type
           areaUnits: areaUnits
+          safeToShow: true
+          prettyType: prettyType
           unupdatable: true
           id: id
           massUnits: massUnits
+          zip:
+            files:
+            - files
+            - files
           foreignDataId: foreignDataId
+          applicationTarget:
+            baseHref: https://openapi-generator.tech
+            clientId: clientId
+            supportsCollaboration: true
+            tabIconHref: https://openapi-generator.tech
           specifiedUnit: specifiedUnit
           pressureUnits: pressureUnits
           dataType: dataType
@@ -24263,10 +24706,21 @@ components:
           lengthUnits: lengthUnits
           type: type
           areaUnits: areaUnits
+          safeToShow: true
+          prettyType: prettyType
           unupdatable: true
           id: id
           massUnits: massUnits
+          zip:
+            files:
+            - files
+            - files
           foreignDataId: foreignDataId
+          applicationTarget:
+            baseHref: https://openapi-generator.tech
+            clientId: clientId
+            supportsCollaboration: true
+            tabIconHref: https://openapi-generator.tech
           specifiedUnit: specifiedUnit
           pressureUnits: pressureUnits
           dataType: dataType
@@ -24505,6 +24959,8 @@ components:
       - $ref: '#/components/schemas/BTDocumentInfo'
       - $ref: '#/components/schemas/BTDocumentProcessingInfo_allOf'
       type: object
+      x-BTVisibility-properties:
+        betaCapabilityIds: INTERNAL
     BTDocumentSearchHitInfo:
       properties:
         documentId:
@@ -24517,6 +24973,8 @@ components:
               type: string
             type: array
           type: object
+        hit:
+          $ref: '#/components/schemas/BTLegacySearchHit'
         hitId:
           type: string
         name:
@@ -24949,6 +25407,7 @@ components:
             documentId: documentId
             href: https://openapi-generator.tech
             id: id
+            metadataWorkspaceId: metadataWorkspaceId
             microversion: microversion
             viewRef: https://openapi-generator.tech
           - parent: parent
@@ -25023,6 +25482,7 @@ components:
             documentId: documentId
             href: https://openapi-generator.tech
             id: id
+            metadataWorkspaceId: metadataWorkspaceId
             microversion: microversion
             viewRef: https://openapi-generator.tech
         modifiedBy:
@@ -25213,10 +25673,10 @@ components:
         elementId: elementId
         elementLibraryVersion:
           date: 2000-01-23T04:56:07.000+00:00
-          timestamp: 2
+          timestamp: 1
         elementLibraryId:
           date: 2000-01-23T04:56:07.000+00:00
-          timestamp: 2
+          timestamp: 1
         documentVersionId: documentVersionId
         validRevisionReference: true
         documentId: documentId
@@ -25782,10 +26242,10 @@ components:
           elementId: elementId
           elementLibraryVersion:
             date: 2000-01-23T04:56:07.000+00:00
-            timestamp: 2
+            timestamp: 1
           elementLibraryId:
             date: 2000-01-23T04:56:07.000+00:00
-            timestamp: 2
+            timestamp: 1
           documentVersionId: documentVersionId
           validRevisionReference: true
           documentId: documentId
@@ -25936,10 +26396,10 @@ components:
       example:
         hasTessellationError: true
         face: true
-        settingIndex: 5
+        settingIndex: 1
         btType: btType
-        errorCode: 1
-        estimatedMemoryUsageInBytes: 5
+        errorCode: 7
+        estimatedMemoryUsageInBytes: 1
         compressed: true
         decompressed: null
       properties:
@@ -27802,6 +28262,8 @@ components:
           - PARTIAL_FILLET_INVALID_BOUNDS_ERROR
           - DOCUMENT_ELEMENT_NOT_FOUND
           - BSURF_PROFILE_NON_G1
+          - SM_FLAT_OP_FACES_DONT_MATCH
+          - HOLE_REVERSED_BOUNDS
           - UNKNOWN
           type: string
         microversionId:
@@ -29776,6 +30238,8 @@ components:
           - PARTIAL_FILLET_INVALID_BOUNDS_ERROR
           - DOCUMENT_ELEMENT_NOT_FOUND
           - BSURF_PROFILE_NON_G1
+          - SM_FLAT_OP_FACES_DONT_MATCH
+          - HOLE_REVERSED_BOUNDS
           - UNKNOWN
           type: string
       type: object
@@ -30700,10 +31164,10 @@ components:
                     elementId: elementId
                     elementLibraryVersion:
                       date: 2000-01-23T04:56:07.000+00:00
-                      timestamp: 2
+                      timestamp: 1
                     elementLibraryId:
                       date: 2000-01-23T04:56:07.000+00:00
-                      timestamp: 2
+                      timestamp: 1
                     documentVersionId: documentVersionId
                     validRevisionReference: true
                     documentId: documentId
@@ -30762,7 +31226,7 @@ components:
                 name: name
                 btType: btType
                 id: id
-                version: 7
+                version: 6
                 properties:
                   key:
                     displayName: displayName
@@ -30835,10 +31299,10 @@ components:
                     elementId: elementId
                     elementLibraryVersion:
                       date: 2000-01-23T04:56:07.000+00:00
-                      timestamp: 2
+                      timestamp: 1
                     elementLibraryId:
                       date: 2000-01-23T04:56:07.000+00:00
-                      timestamp: 2
+                      timestamp: 1
                     documentVersionId: documentVersionId
                     validRevisionReference: true
                     documentId: documentId
@@ -30897,7 +31361,7 @@ components:
                 name: name
                 btType: btType
                 id: id
-                version: 7
+                version: 6
                 properties:
                   key:
                     displayName: displayName
@@ -30922,7 +31386,7 @@ components:
                 opacity: 1
                 usableAppearance: true
               isSheet: true
-              ordinal: 9
+              ordinal: 7
           isNoop: true
           fullElementId:
             configured: true
@@ -31112,6 +31576,7 @@ components:
                 deleted: true
                 theId: theId
           isExternal: true
+          numberOfSketchEntities: 0
           partDisplayData:
           - referencingConfiguredPartNodeIds:
             - empty: true
@@ -31127,10 +31592,10 @@ components:
                   elementId: elementId
                   elementLibraryVersion:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   elementLibraryId:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   documentVersionId: documentVersionId
                   validRevisionReference: true
                   documentId: documentId
@@ -31189,7 +31654,7 @@ components:
               name: name
               btType: btType
               id: id
-              version: 7
+              version: 6
               properties:
                 key:
                   displayName: displayName
@@ -31262,10 +31727,10 @@ components:
                   elementId: elementId
                   elementLibraryVersion:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   elementLibraryId:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   documentVersionId: documentVersionId
                   validRevisionReference: true
                   documentId: documentId
@@ -31324,7 +31789,7 @@ components:
               name: name
               btType: btType
               id: id
-              version: 7
+              version: 6
               properties:
                 key:
                   displayName: displayName
@@ -31349,7 +31814,7 @@ components:
               opacity: 1
               usableAppearance: true
             isSheet: true
-            ordinal: 9
+            ordinal: 7
           - referencingConfiguredPartNodeIds:
             - empty: true
             - empty: true
@@ -31364,10 +31829,10 @@ components:
                   elementId: elementId
                   elementLibraryVersion:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   elementLibraryId:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   documentVersionId: documentVersionId
                   validRevisionReference: true
                   documentId: documentId
@@ -31426,7 +31891,7 @@ components:
               name: name
               btType: btType
               id: id
-              version: 7
+              version: 6
               properties:
                 key:
                   displayName: displayName
@@ -31499,10 +31964,10 @@ components:
                   elementId: elementId
                   elementLibraryVersion:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   elementLibraryId:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   documentVersionId: documentVersionId
                   validRevisionReference: true
                   documentId: documentId
@@ -31561,7 +32026,7 @@ components:
               name: name
               btType: btType
               id: id
-              version: 7
+              version: 6
               properties:
                 key:
                   displayName: displayName
@@ -31586,8 +32051,38 @@ components:
               opacity: 1
               usableAppearance: true
             isSheet: true
-            ordinal: 9
+            ordinal: 7
           incremental: true
+          decalIdToDecal:
+            key:
+              mappings:
+              - deterministicIds:
+                - deterministicIds
+                - deterministicIds
+                uvTransform:
+                  m20: 3.616076749251911
+                  m00: 1.4658129805029452
+                  m11: 7.061401241503109
+                  m22: 4.145608029883936
+                  m10: 2.3021358869347655
+                  m21: 2.027123023002322
+                  m02: 5.637376656633329
+                  m01: 5.962133916683182
+                  m12: 9.301444243932576
+              - deterministicIds:
+                - deterministicIds
+                - deterministicIds
+                uvTransform:
+                  m20: 3.616076749251911
+                  m00: 1.4658129805029452
+                  m11: 7.061401241503109
+                  m22: 4.145608029883936
+                  m10: 2.3021358869347655
+                  m21: 2.027123023002322
+                  m02: 5.637376656633329
+                  m01: 5.962133916683182
+                  m12: 9.301444243932576
+              imageSourceId: imageSourceId
           deterministicPartIdToData:
             key:
               entityDeterministicIds:
@@ -31610,24 +32105,24 @@ components:
               - constituentBodyDeterministicIds
               - constituentBodyDeterministicIds
               isBendCenterLineBody: true
-              coarsePlanarFaceTriangleCount: 2
+              coarsePlanarFaceTriangleCount: 4
               lowBoxCorner:
                 x: 2.3021358869347655
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
               isAssociatedWithFlat: true
-              coarseTriangleCount: 4
-              totalEntityCount: 1
+              coarseTriangleCount: 5
+              totalEntityCount: 9
               entityDIds:
               - entityDIds
               - entityDIds
               sheetMetalModelId: sheetMetalModelId
               sheetMetalOrderId: sheetMetalOrderId
               tessellationSettings:
-              - 7
-              - 7
-              boundsDiameter: 3.616076749251911
+              - 9
+              - 9
+              boundsDiameter: 1.1730742509559433
               isEntitylessPartData: true
               copyWithoutEntities: null
               isComposite: true
@@ -31663,18 +32158,18 @@ components:
               geometries:
               - hasTessellationError: true
                 face: true
-                settingIndex: 5
+                settingIndex: 1
                 btType: btType
-                errorCode: 1
-                estimatedMemoryUsageInBytes: 5
+                errorCode: 7
+                estimatedMemoryUsageInBytes: 1
                 compressed: true
                 decompressed: null
               - hasTessellationError: true
                 face: true
-                settingIndex: 5
+                settingIndex: 1
                 btType: btType
-                errorCode: 1
-                estimatedMemoryUsageInBytes: 5
+                errorCode: 7
+                estimatedMemoryUsageInBytes: 1
                 compressed: true
                 decompressed: null
               btType: btType
@@ -31691,15 +32186,15 @@ components:
             maximumLimit: 6.683562403749608
             hasMinimumLimit: true
             coordinateSystem:
-              m20: 5.025004791520295
-              m00: 1.0246457001441578
-              m11: 1.1730742509559433
-              m22: 9.369310271410669
-              m10: 7.457744773683766
-              m21: 9.965781217890562
-              m02: 6.84685269835264
-              m01: 1.4894159098541704
-              m12: 4.965218492984954
+              m20: 3.616076749251911
+              m00: 1.4658129805029452
+              m11: 7.061401241503109
+              m22: 4.145608029883936
+              m10: 2.3021358869347655
+              m21: 2.027123023002322
+              m02: 5.637376656633329
+              m01: 5.962133916683182
+              m12: 9.301444243932576
             id: id
             planeMatrix:
               rigidWithinTransformTolerance: true
@@ -31737,15 +32232,15 @@ components:
             maximumLimit: 6.683562403749608
             hasMinimumLimit: true
             coordinateSystem:
-              m20: 5.025004791520295
-              m00: 1.0246457001441578
-              m11: 1.1730742509559433
-              m22: 9.369310271410669
-              m10: 7.457744773683766
-              m21: 9.965781217890562
-              m02: 6.84685269835264
-              m01: 1.4894159098541704
-              m12: 4.965218492984954
+              m20: 3.616076749251911
+              m00: 1.4658129805029452
+              m11: 7.061401241503109
+              m22: 4.145608029883936
+              m10: 2.3021358869347655
+              m21: 2.027123023002322
+              m02: 5.637376656633329
+              m01: 5.962133916683182
+              m12: 9.301444243932576
             id: id
             planeMatrix:
               rigidWithinTransformTolerance: true
@@ -31790,11 +32285,11 @@ components:
                 isOnFlat: true
                 entities:
                 - points:
-                  - 0.10263654006109402
-                  - 0.10263654006109402
+                  - 4.652396432933246
+                  - 4.652396432933246
                 - points:
-                  - 0.10263654006109402
-                  - 0.10263654006109402
+                  - 4.652396432933246
+                  - 4.652396432933246
                 bottomRightCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -31807,8 +32302,8 @@ components:
                   z: 9.301444243932576
                 featureId: featureId
                 points:
-                - 4.652396432933246
-                - 4.652396432933246
+                - 8.969578798196912
+                - 8.969578798196912
           useCPUIntensiveThreadPoolForCopyForSettings: true
         fullElementId:
           configured: true
@@ -33142,6 +33637,8 @@ components:
           - PARTIAL_FILLET_INVALID_BOUNDS_ERROR
           - DOCUMENT_ELEMENT_NOT_FOUND
           - BSURF_PROFILE_NON_G1
+          - SM_FLAT_OP_FACES_DONT_MATCH
+          - HOLE_REVERSED_BOUNDS
           - UNKNOWN
           type: string
         facetPoints:
@@ -35851,6 +36348,33 @@ components:
       - $ref: '#/components/schemas/BTQueryFilter-183'
       - $ref: '#/components/schemas/BTImageFilter_853_allOf'
       type: object
+    BTImageMapping-3821:
+      discriminator:
+        mapping:
+          BTPlanarImageMapping-4398: '#/components/schemas/BTPlanarImageMapping-4398'
+        propertyName: btType
+      example:
+        deterministicIds:
+        - deterministicIds
+        - deterministicIds
+        uvTransform:
+          m20: 3.616076749251911
+          m00: 1.4658129805029452
+          m11: 7.061401241503109
+          m22: 4.145608029883936
+          m10: 2.3021358869347655
+          m21: 2.027123023002322
+          m02: 5.637376656633329
+          m01: 5.962133916683182
+          m12: 9.301444243932576
+      properties:
+        deterministicIds:
+          items:
+            type: string
+          type: array
+        uvTransform:
+          $ref: '#/components/schemas/BTMatrix3x3-340'
+      type: object
     BTImmutableByteArray:
       properties:
         empty:
@@ -36532,6 +37056,44 @@ components:
             $ref: '#/components/schemas/BTMicroversionId-366'
           type: object
         source:
+          type: string
+      type: object
+    BTLegacySearchHit:
+      properties:
+        documentId:
+          type: string
+        highlightedFields:
+          additionalProperties:
+            items:
+              type: string
+            type: array
+          type: object
+        hitId:
+          type: string
+        name:
+          type: string
+        projectId:
+          type: string
+        sourceMap:
+          additionalProperties:
+            type: object
+          type: object
+        type:
+          enum:
+          - unknown
+          - capability
+          - company
+          - document
+          - element
+          - friend
+          - item
+          - part
+          - team
+          - user
+          - version
+          - workspace
+          - project
+          - publication
           type: string
       type: object
     BTLineDescription-1559:
@@ -37918,6 +38480,7 @@ components:
               viewRef: https://openapi-generator.tech
               email: email
             lastModifiedBy: lastModifiedBy
+            preTrialPlanId: preTrialPlanId
             nextCharge:
               amount: 4
               total: 7
@@ -38400,6 +38963,7 @@ components:
               viewRef: https://openapi-generator.tech
               email: email
             lastModifiedBy: lastModifiedBy
+            preTrialPlanId: preTrialPlanId
             nextCharge:
               amount: 4
               total: 7
@@ -39068,6 +39632,7 @@ components:
             viewRef: https://openapi-generator.tech
             email: email
           lastModifiedBy: lastModifiedBy
+          preTrialPlanId: preTrialPlanId
           nextCharge:
             amount: 4
             total: 7
@@ -39523,6 +40088,7 @@ components:
             viewRef: https://openapi-generator.tech
             email: email
           lastModifiedBy: lastModifiedBy
+          preTrialPlanId: preTrialPlanId
           nextCharge:
             amount: 4
             total: 7
@@ -39882,6 +40448,7 @@ components:
         items:
         - data: data
           description: description
+          externalSessionId: externalSessionId
           folderId: folderId
           url: url
           filter: filter
@@ -39892,6 +40459,7 @@ components:
             collapseEvents: true
           href: https://openapi-generator.tech
           id: id
+          isTransient: true
           viewRef: https://openapi-generator.tech
           projectId: projectId
           droppedEventCount: 0
@@ -39900,6 +40468,7 @@ components:
           - events
         - data: data
           description: description
+          externalSessionId: externalSessionId
           folderId: folderId
           url: url
           filter: filter
@@ -39910,6 +40479,7 @@ components:
             collapseEvents: true
           href: https://openapi-generator.tech
           id: id
+          isTransient: true
           viewRef: https://openapi-generator.tech
           projectId: projectId
           droppedEventCount: 0
@@ -43094,6 +43664,20 @@ components:
           - V1975_FIX_EXTRUDE_OFFSET_MIRROR
           - V1976_BSURF_MATRIX_SCALING_FIX
           - V1977_SM_BOOLEAN_FIX
+          - SKIP_1978
+          - SKIP_1979
+          - SKIP_1980
+          - SKIP_1981
+          - V1982_EXTENDED_TOOL_BODY_TYPE_FOR_EXTRUDE
+          - V1983_SM_BOOLEAN_FIX
+          - V1984_BEND_REPLACEMENT_CHECKS
+          - V1985_SM_BOOLEAN_FIX
+          - V1986_SM_RECORD_SWAP
+          - V1987_SM_SKIP_MODIFICATION_IF_ASSOCIATED
+          - V1988_CHERRYPICK_TOLERANCE_FIXES
+          - V1989_FIX_LIMITS_BOUNDS
+          - V1990_SM_BOOLEAN_SIMPLIFIED
+          - V1991_USE_LENGTH_BOUNDS_FOR_SYMMETRICAL
           - UNKNOWN
           type: string
         btType:
@@ -44026,15 +44610,15 @@ components:
       type: object
     BTMatrix3x3-340:
       example:
-        m20: 5.025004791520295
-        m00: 1.0246457001441578
-        m11: 1.1730742509559433
-        m22: 9.369310271410669
-        m10: 7.457744773683766
-        m21: 9.965781217890562
-        m02: 6.84685269835264
-        m01: 1.4894159098541704
-        m12: 4.965218492984954
+        m20: 3.616076749251911
+        m00: 1.4658129805029452
+        m11: 7.061401241503109
+        m22: 4.145608029883936
+        m10: 2.3021358869347655
+        m21: 2.027123023002322
+        m02: 5.637376656633329
+        m01: 5.962133916683182
+        m12: 9.301444243932576
       properties:
         m00:
           format: double
@@ -47382,24 +47966,24 @@ components:
         - constituentBodyDeterministicIds
         - constituentBodyDeterministicIds
         isBendCenterLineBody: true
-        coarsePlanarFaceTriangleCount: 2
+        coarsePlanarFaceTriangleCount: 4
         lowBoxCorner:
           x: 2.3021358869347655
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
         isAssociatedWithFlat: true
-        coarseTriangleCount: 4
-        totalEntityCount: 1
+        coarseTriangleCount: 5
+        totalEntityCount: 9
         entityDIds:
         - entityDIds
         - entityDIds
         sheetMetalModelId: sheetMetalModelId
         sheetMetalOrderId: sheetMetalOrderId
         tessellationSettings:
-        - 7
-        - 7
-        boundsDiameter: 3.616076749251911
+        - 9
+        - 9
+        boundsDiameter: 1.1730742509559433
         isEntitylessPartData: true
         copyWithoutEntities: null
         isComposite: true
@@ -47516,10 +48100,10 @@ components:
               elementId: elementId
               elementLibraryVersion:
                 date: 2000-01-23T04:56:07.000+00:00
-                timestamp: 2
+                timestamp: 1
               elementLibraryId:
                 date: 2000-01-23T04:56:07.000+00:00
-                timestamp: 2
+                timestamp: 1
               documentVersionId: documentVersionId
               validRevisionReference: true
               documentId: documentId
@@ -47578,7 +48162,7 @@ components:
           name: name
           btType: btType
           id: id
-          version: 7
+          version: 6
           properties:
             key:
               displayName: displayName
@@ -47651,10 +48235,10 @@ components:
               elementId: elementId
               elementLibraryVersion:
                 date: 2000-01-23T04:56:07.000+00:00
-                timestamp: 2
+                timestamp: 1
               elementLibraryId:
                 date: 2000-01-23T04:56:07.000+00:00
-                timestamp: 2
+                timestamp: 1
               documentVersionId: documentVersionId
               validRevisionReference: true
               documentId: documentId
@@ -47713,7 +48297,7 @@ components:
           name: name
           btType: btType
           id: id
-          version: 7
+          version: 6
           properties:
             key:
               displayName: displayName
@@ -47738,7 +48322,7 @@ components:
           opacity: 1
           usableAppearance: true
         isSheet: true
-        ordinal: 9
+        ordinal: 7
       properties:
         appearance:
           $ref: '#/components/schemas/BTGraphicsAppearance-1152'
@@ -47822,10 +48406,10 @@ components:
             elementId: elementId
             elementLibraryVersion:
               date: 2000-01-23T04:56:07.000+00:00
-              timestamp: 2
+              timestamp: 1
             elementLibraryId:
               date: 2000-01-23T04:56:07.000+00:00
-              timestamp: 2
+              timestamp: 1
             documentVersionId: documentVersionId
             validRevisionReference: true
             documentId: documentId
@@ -47884,7 +48468,7 @@ components:
         name: name
         btType: btType
         id: id
-        version: 7
+        version: 6
         properties:
           key:
             displayName: displayName
@@ -48585,10 +49169,10 @@ components:
                   elementId: elementId
                   elementLibraryVersion:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   elementLibraryId:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   documentVersionId: documentVersionId
                   validRevisionReference: true
                   documentId: documentId
@@ -48647,7 +49231,7 @@ components:
               name: name
               btType: btType
               id: id
-              version: 7
+              version: 6
               properties:
                 key:
                   displayName: displayName
@@ -48720,10 +49304,10 @@ components:
                   elementId: elementId
                   elementLibraryVersion:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   elementLibraryId:
                     date: 2000-01-23T04:56:07.000+00:00
-                    timestamp: 2
+                    timestamp: 1
                   documentVersionId: documentVersionId
                   validRevisionReference: true
                   documentId: documentId
@@ -48782,7 +49366,7 @@ components:
               name: name
               btType: btType
               id: id
-              version: 7
+              version: 6
               properties:
                 key:
                   displayName: displayName
@@ -48807,7 +49391,7 @@ components:
               opacity: 1
               usableAppearance: true
             isSheet: true
-            ordinal: 9
+            ordinal: 7
         isNoop: true
         fullElementId:
           configured: true
@@ -48997,6 +49581,7 @@ components:
               deleted: true
               theId: theId
         isExternal: true
+        numberOfSketchEntities: 0
         partDisplayData:
         - referencingConfiguredPartNodeIds:
           - empty: true
@@ -49012,10 +49597,10 @@ components:
                 elementId: elementId
                 elementLibraryVersion:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 elementLibraryId:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 documentVersionId: documentVersionId
                 validRevisionReference: true
                 documentId: documentId
@@ -49074,7 +49659,7 @@ components:
             name: name
             btType: btType
             id: id
-            version: 7
+            version: 6
             properties:
               key:
                 displayName: displayName
@@ -49147,10 +49732,10 @@ components:
                 elementId: elementId
                 elementLibraryVersion:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 elementLibraryId:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 documentVersionId: documentVersionId
                 validRevisionReference: true
                 documentId: documentId
@@ -49209,7 +49794,7 @@ components:
             name: name
             btType: btType
             id: id
-            version: 7
+            version: 6
             properties:
               key:
                 displayName: displayName
@@ -49234,7 +49819,7 @@ components:
             opacity: 1
             usableAppearance: true
           isSheet: true
-          ordinal: 9
+          ordinal: 7
         - referencingConfiguredPartNodeIds:
           - empty: true
           - empty: true
@@ -49249,10 +49834,10 @@ components:
                 elementId: elementId
                 elementLibraryVersion:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 elementLibraryId:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 documentVersionId: documentVersionId
                 validRevisionReference: true
                 documentId: documentId
@@ -49311,7 +49896,7 @@ components:
             name: name
             btType: btType
             id: id
-            version: 7
+            version: 6
             properties:
               key:
                 displayName: displayName
@@ -49384,10 +49969,10 @@ components:
                 elementId: elementId
                 elementLibraryVersion:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 elementLibraryId:
                   date: 2000-01-23T04:56:07.000+00:00
-                  timestamp: 2
+                  timestamp: 1
                 documentVersionId: documentVersionId
                 validRevisionReference: true
                 documentId: documentId
@@ -49446,7 +50031,7 @@ components:
             name: name
             btType: btType
             id: id
-            version: 7
+            version: 6
             properties:
               key:
                 displayName: displayName
@@ -49471,8 +50056,38 @@ components:
             opacity: 1
             usableAppearance: true
           isSheet: true
-          ordinal: 9
+          ordinal: 7
         incremental: true
+        decalIdToDecal:
+          key:
+            mappings:
+            - deterministicIds:
+              - deterministicIds
+              - deterministicIds
+              uvTransform:
+                m20: 3.616076749251911
+                m00: 1.4658129805029452
+                m11: 7.061401241503109
+                m22: 4.145608029883936
+                m10: 2.3021358869347655
+                m21: 2.027123023002322
+                m02: 5.637376656633329
+                m01: 5.962133916683182
+                m12: 9.301444243932576
+            - deterministicIds:
+              - deterministicIds
+              - deterministicIds
+              uvTransform:
+                m20: 3.616076749251911
+                m00: 1.4658129805029452
+                m11: 7.061401241503109
+                m22: 4.145608029883936
+                m10: 2.3021358869347655
+                m21: 2.027123023002322
+                m02: 5.637376656633329
+                m01: 5.962133916683182
+                m12: 9.301444243932576
+            imageSourceId: imageSourceId
         deterministicPartIdToData:
           key:
             entityDeterministicIds:
@@ -49495,24 +50110,24 @@ components:
             - constituentBodyDeterministicIds
             - constituentBodyDeterministicIds
             isBendCenterLineBody: true
-            coarsePlanarFaceTriangleCount: 2
+            coarsePlanarFaceTriangleCount: 4
             lowBoxCorner:
               x: 2.3021358869347655
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
             isAssociatedWithFlat: true
-            coarseTriangleCount: 4
-            totalEntityCount: 1
+            coarseTriangleCount: 5
+            totalEntityCount: 9
             entityDIds:
             - entityDIds
             - entityDIds
             sheetMetalModelId: sheetMetalModelId
             sheetMetalOrderId: sheetMetalOrderId
             tessellationSettings:
-            - 7
-            - 7
-            boundsDiameter: 3.616076749251911
+            - 9
+            - 9
+            boundsDiameter: 1.1730742509559433
             isEntitylessPartData: true
             copyWithoutEntities: null
             isComposite: true
@@ -49548,18 +50163,18 @@ components:
             geometries:
             - hasTessellationError: true
               face: true
-              settingIndex: 5
+              settingIndex: 1
               btType: btType
-              errorCode: 1
-              estimatedMemoryUsageInBytes: 5
+              errorCode: 7
+              estimatedMemoryUsageInBytes: 1
               compressed: true
               decompressed: null
             - hasTessellationError: true
               face: true
-              settingIndex: 5
+              settingIndex: 1
               btType: btType
-              errorCode: 1
-              estimatedMemoryUsageInBytes: 5
+              errorCode: 7
+              estimatedMemoryUsageInBytes: 1
               compressed: true
               decompressed: null
             btType: btType
@@ -49576,15 +50191,15 @@ components:
           maximumLimit: 6.683562403749608
           hasMinimumLimit: true
           coordinateSystem:
-            m20: 5.025004791520295
-            m00: 1.0246457001441578
-            m11: 1.1730742509559433
-            m22: 9.369310271410669
-            m10: 7.457744773683766
-            m21: 9.965781217890562
-            m02: 6.84685269835264
-            m01: 1.4894159098541704
-            m12: 4.965218492984954
+            m20: 3.616076749251911
+            m00: 1.4658129805029452
+            m11: 7.061401241503109
+            m22: 4.145608029883936
+            m10: 2.3021358869347655
+            m21: 2.027123023002322
+            m02: 5.637376656633329
+            m01: 5.962133916683182
+            m12: 9.301444243932576
           id: id
           planeMatrix:
             rigidWithinTransformTolerance: true
@@ -49622,15 +50237,15 @@ components:
           maximumLimit: 6.683562403749608
           hasMinimumLimit: true
           coordinateSystem:
-            m20: 5.025004791520295
-            m00: 1.0246457001441578
-            m11: 1.1730742509559433
-            m22: 9.369310271410669
-            m10: 7.457744773683766
-            m21: 9.965781217890562
-            m02: 6.84685269835264
-            m01: 1.4894159098541704
-            m12: 4.965218492984954
+            m20: 3.616076749251911
+            m00: 1.4658129805029452
+            m11: 7.061401241503109
+            m22: 4.145608029883936
+            m10: 2.3021358869347655
+            m21: 2.027123023002322
+            m02: 5.637376656633329
+            m01: 5.962133916683182
+            m12: 9.301444243932576
           id: id
           planeMatrix:
             rigidWithinTransformTolerance: true
@@ -49675,11 +50290,11 @@ components:
               isOnFlat: true
               entities:
               - points:
-                - 0.10263654006109402
-                - 0.10263654006109402
+                - 4.652396432933246
+                - 4.652396432933246
               - points:
-                - 0.10263654006109402
-                - 0.10263654006109402
+                - 4.652396432933246
+                - 4.652396432933246
               bottomRightCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -49692,8 +50307,8 @@ components:
                 z: 9.301444243932576
               featureId: featureId
               points:
-              - 4.652396432933246
-              - 4.652396432933246
+              - 8.969578798196912
+              - 8.969578798196912
         useCPUIntensiveThreadPoolForCopyForSettings: true
       properties:
         appearanceIdToAppearanceOverride:
@@ -49709,6 +50324,10 @@ components:
           - V2_SMOOTH_EDGES_TOLERANCE_CHANGED
           - UNKNOWN
           type: string
+        decalIdToDecal:
+          additionalProperties:
+            $ref: '#/components/schemas/BTDecal-2404'
+          type: object
         deterministicIdToAssociatedFeatureIds:
           additionalProperties:
             items:
@@ -49769,6 +50388,9 @@ components:
           $ref: '#/components/schemas/BTMicroversionIdAndConfigurationInterval-2364'
         microversionInterval:
           $ref: '#/components/schemas/BTMicroversionIdInterval-367'
+        numberOfSketchEntities:
+          format: int32
+          type: integer
         partColorCycle:
           $ref: '#/components/schemas/BTBasePartColorCycle-2614'
         partDisplayData:
@@ -49832,6 +50454,9 @@ components:
           $ref: '#/components/schemas/BTMicroversionIdAndConfigurationInterval-2364'
         microversionInterval:
           $ref: '#/components/schemas/BTMicroversionIdInterval-367'
+        numberOfSketchEntities:
+          format: int32
+          type: integer
         versionForRasterization:
           $ref: '#/components/schemas/BTElementDisplayData-326'
       type: object
@@ -49896,6 +50521,11 @@ components:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
           type: string
+      type: object
+    BTPlanarImageMapping-4398:
+      allOf:
+      - $ref: '#/components/schemas/BTImageMapping-3821'
+      - $ref: '#/components/schemas/BTPlanarImageMapping_4398_allOf'
       type: object
     BTPlaneDescription-692:
       allOf:
@@ -49969,6 +50599,85 @@ components:
         viewRef:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+          type: string
+      type: object
+    BTPropertiesTableTemplateInfo:
+      example:
+        tableType: BOM
+        companyId: companyId
+        isAllCaps: true
+        propertyColumns:
+        - publishState: 0
+          displayName: displayName
+          frozen: true
+          propertyId: propertyId
+        - publishState: 0
+          displayName: displayName
+          frozen: true
+          propertyId: propertyId
+        name: name
+        href: https://openapi-generator.tech
+        id: id
+        isActive: true
+        viewRef: https://openapi-generator.tech
+        templateGroupId: templateGroupId
+      properties:
+        companyId:
+          type: string
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        isActive:
+          type: boolean
+        isAllCaps:
+          type: boolean
+        name:
+          description: Name of the resource.
+          type: string
+        propertyColumns:
+          items:
+            $ref: '#/components/schemas/BTSimplePropertyInfo'
+          type: array
+        tableType:
+          enum:
+          - BOM
+          - REVISION_TABLE
+          type: string
+        templateGroupId:
+          type: string
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+      type: object
+    BTPropertiesTableTemplateParams:
+      example:
+        tableType: BOM
+        companyId: companyId
+        isAllCaps: true
+        propertyColumns:
+        - propertyColumns
+        - propertyColumns
+        name: name
+      properties:
+        companyId:
+          type: string
+        isAllCaps:
+          type: boolean
+        name:
+          type: string
+        propertyColumns:
+          items:
+            type: string
+          type: array
+        tableType:
+          enum:
+          - BOM
+          - REVISION_TABLE
           type: string
       type: object
     BTPropertyTableColumnInfo-2161:
@@ -50047,7 +50756,12 @@ components:
         viewRef: https://openapi-generator.tech
         items:
         - elementId: elementId
-          baseHref: baseHref
+          baseHref: https://openapi-generator.tech
+          applicationTarget:
+            baseHref: https://openapi-generator.tech
+            clientId: clientId
+            supportsCollaboration: true
+            tabIconHref: https://openapi-generator.tech
           partId: partId
           dataType: dataType
           encodedConfiguration: encodedConfiguration
@@ -50063,7 +50777,12 @@ components:
           state: 0
           elementType: PARTSTUDIO
         - elementId: elementId
-          baseHref: baseHref
+          baseHref: https://openapi-generator.tech
+          applicationTarget:
+            baseHref: https://openapi-generator.tech
+            clientId: clientId
+            supportsCollaboration: true
+            tabIconHref: https://openapi-generator.tech
           partId: partId
           dataType: dataType
           encodedConfiguration: encodedConfiguration
@@ -50613,6 +51332,7 @@ components:
           viewRef: https://openapi-generator.tech
           email: email
         lastModifiedBy: lastModifiedBy
+        preTrialPlanId: preTrialPlanId
         nextCharge:
           amount: 4
           total: 7
@@ -50722,6 +51442,8 @@ components:
         planType:
           format: int32
           type: integer
+        preTrialPlanId:
+          type: string
         proratedCharges:
           items:
             $ref: '#/components/schemas/ProratedCharges'
@@ -53278,6 +54000,23 @@ components:
         workspaceId:
           type: string
       type: object
+    BTSimplePropertyInfo:
+      example:
+        publishState: 0
+        displayName: displayName
+        frozen: true
+        propertyId: propertyId
+      properties:
+        displayName:
+          type: string
+        frozen:
+          type: boolean
+        propertyId:
+          type: string
+        publishState:
+          format: int32
+          type: integer
+      type: object
     BTSimulationFace-2147:
       allOf:
       - $ref: '#/components/schemas/BTEntityFace-31'
@@ -54594,6 +55333,8 @@ components:
           - PARTIAL_FILLET_INVALID_BOUNDS_ERROR
           - DOCUMENT_ELEMENT_NOT_FOUND
           - BSURF_PROFILE_NON_G1
+          - SM_FLAT_OP_FACES_DONT_MATCH
+          - HOLE_REVERSED_BOUNDS
           - UNKNOWN
           type: string
         errorMessage:
@@ -54669,8 +55410,8 @@ components:
         propertyName: btType
       example:
         points:
-        - 0.10263654006109402
-        - 0.10263654006109402
+        - 4.652396432933246
+        - 4.652396432933246
       properties:
         points:
           items:
@@ -54689,11 +55430,11 @@ components:
         isOnFlat: true
         entities:
         - points:
-          - 0.10263654006109402
-          - 0.10263654006109402
+          - 4.652396432933246
+          - 4.652396432933246
         - points:
-          - 0.10263654006109402
-          - 0.10263654006109402
+          - 4.652396432933246
+          - 4.652396432933246
         bottomRightCorner:
           x: 2.3021358869347655
           btType: btType
@@ -54706,8 +55447,8 @@ components:
           z: 9.301444243932576
         featureId: featureId
         points:
-        - 4.652396432933246
-        - 4.652396432933246
+        - 8.969578798196912
+        - 8.969578798196912
       properties:
         bottomLeftCorner:
           $ref: '#/components/schemas/BTVector3d-389'
@@ -55912,15 +56653,15 @@ components:
         proxyDocumentId: proxyDocumentId
         textAsGeometry: true
         sheetIndices:
-        - 2
-        - 2
+        - 5
+        - 5
         flatten: true
         password: password
         proxyWorkspaceVersionId: proxyWorkspaceVersionId
         onePartPerDoc: true
         triggerAutoDownload: true
         elementId: elementId
-        imageWidth: 5
+        imageWidth: 1
         importWithinDocument: true
         flattenAssemblies: true
         level: level
@@ -55929,12 +56670,12 @@ components:
         cloudStorageAccountId: cloudStorageAccountId
         grouping: true
         specifyUnits: true
-        distanceTolerance: 6.027456183070403
+        distanceTolerance: 0.8008281904610115
         foreignId: foreignId
         proxyElementId: proxyElementId
         unit: unit
         sendCopyToMe: true
-        angularTolerance: 0.8008281904610115
+        angularTolerance: 0.001
         emailMessage: emailMessage
         processedForeignId: processedForeignId
         connectionId: connectionId
@@ -55944,7 +56685,7 @@ components:
         configuration: configuration
         linkDocumentId: linkDocumentId
         emailSubject: emailSubject
-        allowFaultyParts: true
+        allowFaultyParts: false
         elementIds:
         - elementIds
         - elementIds
@@ -55966,14 +56707,14 @@ components:
         emailTo:
         - emailTo
         - emailTo
-        imageHeight: 1
+        imageHeight: 6
         joinAdjacentSurfaces: true
         parentId: parentId
         importInBackground: true
         blobElementId: blobElementId
         extractAssemblyHierarchy: true
-        maximumChordLength: 5.637376656633329
-        validForDays: 7
+        maximumChordLength: 0.01
+        validForDays: 5
         partIds: partIds
         blobMicroversionId: blobMicroversionId
         sourceName: sourceName
@@ -55981,8 +56722,15 @@ components:
         splinesAsPolylines: true
       properties:
         allowFaultyParts:
+          description: "If true, parts with faults are imported. If false, faulty\
+            \ parts are omitted."
+          example: false
           type: boolean
         angularTolerance:
+          description: "Determines the maximum angular deviation, between the analytical\
+            \ surface and its triangulation. Lower values result in a finer geometry\
+            \ and higher values result in coarser geometry."
+          example: 0.001
           format: double
           type: number
         blobElementId:
@@ -56009,9 +56757,12 @@ components:
           format: double
           type: number
         elementId:
+          description: The id of the element in which to perform the operation.
           type: string
         elementIds:
+          description: An array of element ids.
           items:
+            description: An array of element ids.
             type: string
           type: array
         emailLink:
@@ -56033,6 +56784,7 @@ components:
         foreignId:
           type: string
         formatName:
+          description: The name of the file format.
           type: string
         fromUserId:
           type: string
@@ -56057,10 +56809,19 @@ components:
         level:
           type: string
         linkDocumentId:
+          description: "The id of the document through which the above document should\
+            \ be accessed; only applicable when accessing a version of the document.\
+            \ This allows a user who has access to document a to see data from document\
+            \ b, as long as document b has been linked to document a by a user who\
+            \ has permission to both."
           type: string
         linkDocumentWorkspaceId:
           type: string
         maximumChordLength:
+          description: "Determines the maximum distance, between the analytical surface\
+            \ and its triangulation. Lower values result in a finer geometry and higher\
+            \ values result in coarser geometry."
+          example: 0.01
           format: double
           type: number
         notifyUser:
@@ -56125,6 +56886,8 @@ components:
           type: integer
         versionString:
           type: string
+      required:
+      - formatName
       type: object
     BTTranslationRequestInfo:
       example:
@@ -56631,6 +57394,7 @@ components:
             elementType: elementType
             revision: revision
             workspaceId: workspaceId
+          ignoreChildren: true
           idsToUpdate:
           - idsToUpdate
           - idsToUpdate
@@ -56654,6 +57418,7 @@ components:
             elementType: elementType
             revision: revision
             workspaceId: workspaceId
+          ignoreChildren: true
           idsToUpdate:
           - idsToUpdate
           - idsToUpdate
@@ -57586,6 +58351,7 @@ components:
         documentId: documentId
         href: https://openapi-generator.tech
         id: id
+        metadataWorkspaceId: metadataWorkspaceId
         microversion: microversion
         viewRef: https://openapi-generator.tech
       properties:
@@ -57607,6 +58373,8 @@ components:
           type: string
         lastModifier:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        metadataWorkspaceId:
+          type: string
         microversion:
           type: string
         modifiedAt:
@@ -57953,6 +58721,7 @@ components:
       example:
         data: data
         description: description
+        externalSessionId: externalSessionId
         folderId: folderId
         url: url
         filter: filter
@@ -57963,6 +58732,7 @@ components:
           collapseEvents: true
         href: https://openapi-generator.tech
         id: id
+        isTransient: true
         viewRef: https://openapi-generator.tech
         projectId: projectId
         droppedEventCount: 0
@@ -57971,6 +58741,8 @@ components:
         - events
       properties:
         companyId:
+          description: Company admins can register webhooks to listen to all company
+            events.
           type: string
         createdBy:
           $ref: '#/components/schemas/BTUserSummaryInfo'
@@ -57982,9 +58754,15 @@ components:
           format: int32
           type: integer
         events:
+          description: List of events for which webhook callback is invoked.
           items:
+            description: List of events for which webhook callback is invoked.
             type: string
           type: array
+        externalSessionId:
+          description: Applications can pass this parameter as X-Session-ID with every
+            REST call to distinguish webhooks triggered by self.
+          type: string
         filter:
           type: string
         folderId:
@@ -57996,6 +58774,10 @@ components:
         id:
           description: Id of the resource.
           type: string
+        isTransient:
+          description: Transient webhooks are automatically cleaned up after a period
+            of inactivity.
+          type: boolean
         name:
           description: Name of the resource.
           type: string
@@ -58047,6 +58829,7 @@ components:
         data: data
         partId: partId
         description: description
+        externalSessionId: externalSessionId
         linkDocumentId: linkDocumentId
         userId: userId
         folderId: folderId
@@ -58058,6 +58841,7 @@ components:
           collapseEvents: true
         documentId: documentId
         id: id
+        isTransient: true
         projectId: projectId
         events:
         - events
@@ -58067,6 +58851,8 @@ components:
         clientId:
           type: string
         companyId:
+          description: Company admins can register webhooks to listen to all company
+            events.
           type: string
         data:
           type: string
@@ -58077,15 +58863,25 @@ components:
         elementId:
           type: string
         events:
+          description: List of events for which webhook callback is invoked.
           items:
+            description: List of events for which webhook callback is invoked.
             type: string
           type: array
+        externalSessionId:
+          description: Applications can pass this parameter as X-Session-ID with every
+            REST call to distinguish webhooks triggered by self.
+          type: string
         filter:
           type: string
         folderId:
           type: string
         id:
           type: string
+        isTransient:
+          description: Transient webhooks are automatically cleaned up after a period
+            of inactivity.
+          type: boolean
         linkDocumentId:
           type: string
         options:
@@ -59158,6 +59954,7 @@ components:
           documentId: documentId
           href: https://openapi-generator.tech
           id: id
+          metadataWorkspaceId: metadataWorkspaceId
           microversion: microversion
           viewRef: https://openapi-generator.tech
         - parent: parent
@@ -59232,6 +60029,7 @@ components:
           documentId: documentId
           href: https://openapi-generator.tech
           id: id
+          metadataWorkspaceId: metadataWorkspaceId
           microversion: microversion
           viewRef: https://openapi-generator.tech
       properties:
@@ -59287,6 +60085,17 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTDocumentMessageBody'
       - $ref: '#/components/schemas/BTWorkspaceMessageBody_allOf'
+      type: object
+    BTZipFileInfo:
+      example:
+        files:
+        - files
+        - files
+      properties:
+        files:
+          items:
+            type: string
+          type: array
       type: object
     BlobItem:
       allOf:
@@ -60171,7 +60980,12 @@ components:
         propertyName: jsonType
       example:
         elementId: elementId
-        baseHref: baseHref
+        baseHref: https://openapi-generator.tech
+        applicationTarget:
+          baseHref: https://openapi-generator.tech
+          clientId: clientId
+          supportsCollaboration: true
+          tabIconHref: https://openapi-generator.tech
         partId: partId
         dataType: dataType
         encodedConfiguration: encodedConfiguration
@@ -60187,7 +61001,11 @@ components:
         state: 0
         elementType: PARTSTUDIO
       properties:
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
         baseHref:
+          format: uri
+          readOnly: true
           type: string
         dataType:
           type: string
@@ -60271,7 +61089,7 @@ components:
     ObjectId:
       example:
         date: 2000-01-23T04:56:07.000+00:00
-        timestamp: 2
+        timestamp: 1
       properties:
         date:
           format: date-time
@@ -60999,6 +61817,7 @@ components:
           elementType: elementType
           revision: revision
           workspaceId: workspaceId
+        ignoreChildren: true
         idsToUpdate:
         - idsToUpdate
         - idsToUpdate
@@ -61019,6 +61838,8 @@ components:
           items:
             type: string
           type: array
+        ignoreChildren:
+          type: boolean
         toReference:
           $ref: '#/components/schemas/BTUniqueDocumentItemParams'
       type: object
@@ -61087,16 +61908,25 @@ components:
           description: The file to upload.
           type: object
         allowFaultyParts:
+          description: "If true, and a part doesn't pass Onshape validation, it will\
+            \ be imported with faults."
           type: boolean
         createComposite:
           type: boolean
         createDrawingIfPossible:
           type: boolean
         encodedFilename:
+          description: If the filename contains non-ASCII characters. Use this field
+            to store the filename.
           type: string
         extractAssemblyHierarchy:
           type: boolean
         flattenAssemblies:
+          description: "If the file is an assembly, or contains an assembly, setting\
+            \ this to True will import it as a Part Studio. In this case the assembly\
+            \ will be flattened to a set of parts in a Part Studio. There will be\
+            \ duplicate parts created whenever a part is instanced more than once.\
+            \ If False, it will be imported as an Assembly."
           type: boolean
         formatName:
           type: string
@@ -61141,6 +61971,11 @@ components:
         versionString:
           type: string
         yAxisIsUp:
+          description: "If the file was created in a system that orients with Y Axis\
+            \ Up, the models would by default be brought into Onshape (a Z Axis Up\
+            \ system) with a flipped coordinate system. Toggle this value to reorient\
+            \ the axis system to match Onshape and display the model with the coordinates\
+            \ you expect."
           type: boolean
         importWithinDocument:
           type: boolean
@@ -61151,16 +61986,25 @@ components:
           description: The file to upload.
           type: object
         allowFaultyParts:
+          description: "If true, and a part doesn't pass Onshape validation, it will\
+            \ be imported with faults."
           type: boolean
         createComposite:
           type: boolean
         createDrawingIfPossible:
           type: boolean
         encodedFilename:
+          description: If the filename contains non-ASCII characters. Use this field
+            to store the filename.
           type: string
         extractAssemblyHierarchy:
           type: boolean
         flattenAssemblies:
+          description: "If the file is an assembly, or contains an assembly, setting\
+            \ this to True will import it as a Part Studio. In this case the assembly\
+            \ will be flattened to a set of parts in a Part Studio. There will be\
+            \ duplicate parts created whenever a part is instanced more than once.\
+            \ If False, it will be imported as an Assembly."
           type: boolean
         formatName:
           type: string
@@ -61205,6 +62049,11 @@ components:
         versionString:
           type: string
         yAxisIsUp:
+          description: "If the file was created in a system that orients with Y Axis\
+            \ Up, the models would by default be brought into Onshape (a Z Axis Up\
+            \ system) with a flipped coordinate system. Toggle this value to reorient\
+            \ the axis system to match Onshape and display the model with the coordinates\
+            \ you expect."
           type: boolean
         importWithinDocument:
           type: boolean
@@ -61223,16 +62072,25 @@ components:
           description: The file to upload.
           type: object
         allowFaultyParts:
+          description: "If true, and a part doesn't pass Onshape validation, it will\
+            \ be imported with faults."
           type: boolean
         createComposite:
           type: boolean
         createDrawingIfPossible:
           type: boolean
         encodedFilename:
+          description: If the filename contains non-ASCII characters. Use this field
+            to store the filename.
           type: string
         extractAssemblyHierarchy:
           type: boolean
         flattenAssemblies:
+          description: "If the file is an assembly, or contains an assembly, setting\
+            \ this to True will import it as a Part Studio. In this case the assembly\
+            \ will be flattened to a set of parts in a Part Studio. There will be\
+            \ duplicate parts created whenever a part is instanced more than once.\
+            \ If False, it will be imported as an Assembly."
           type: boolean
         formatName:
           type: string
@@ -61277,6 +62135,11 @@ components:
         versionString:
           type: string
         yAxisIsUp:
+          description: "If the file was created in a system that orients with Y Axis\
+            \ Up, the models would by default be brought into Onshape (a Z Axis Up\
+            \ system) with a flipped coordinate system. Toggle this value to reorient\
+            \ the axis system to match Onshape and display the model with the coordinates\
+            \ you expect."
           type: boolean
         importWithinDocument:
           type: boolean
@@ -64860,6 +65723,13 @@ components:
               type: integer
             type: array
           type: object
+      type: object
+    BTPlanarImageMapping_4398_allOf:
+      properties:
+        btType:
+          type: string
+        planeSystem:
+          $ref: '#/components/schemas/BTCoordinateSystem-387'
       type: object
     BTPlaneDescription_692_allOf:
       properties:
