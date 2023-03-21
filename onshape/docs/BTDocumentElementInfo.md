@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AccelerationUnits** | Pointer to **string** |  | [optional] 
 **AngleUnits** | Pointer to **string** |  | [optional] 
 **AngularVelocityUnits** | Pointer to **string** |  | [optional] 
+**ApplicationTarget** | Pointer to [**BTApplicationTargetInfo**](BTApplicationTargetInfo.md) |  | [optional] 
 **AreaUnits** | Pointer to **string** |  | [optional] 
 **DataType** | Pointer to **string** |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
@@ -22,6 +23,8 @@ Name | Type | Description | Notes
 **MomentUnits** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PressureUnits** | Pointer to **string** |  | [optional] 
+**PrettyType** | Pointer to **string** |  | [optional] 
+**SafeToShow** | Pointer to **bool** |  | [optional] 
 **SpecifiedUnit** | Pointer to **string** |  | [optional] 
 **ThumbnailInfo** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **Thumbnails** | Pointer to **string** |  | [optional] 
@@ -29,6 +32,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **Unupdatable** | Pointer to **bool** |  | [optional] 
 **VolumeUnits** | Pointer to **string** |  | [optional] 
+**Zip** | Pointer to [**BTZipFileInfo**](BTZipFileInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -123,6 +127,31 @@ SetAngularVelocityUnits sets AngularVelocityUnits field to given value.
 `func (o *BTDocumentElementInfo) HasAngularVelocityUnits() bool`
 
 HasAngularVelocityUnits returns a boolean if a field has been set.
+
+### GetApplicationTarget
+
+`func (o *BTDocumentElementInfo) GetApplicationTarget() BTApplicationTargetInfo`
+
+GetApplicationTarget returns the ApplicationTarget field if non-nil, zero value otherwise.
+
+### GetApplicationTargetOk
+
+`func (o *BTDocumentElementInfo) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool)`
+
+GetApplicationTargetOk returns a tuple with the ApplicationTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationTarget
+
+`func (o *BTDocumentElementInfo) SetApplicationTarget(v BTApplicationTargetInfo)`
+
+SetApplicationTarget sets ApplicationTarget field to given value.
+
+### HasApplicationTarget
+
+`func (o *BTDocumentElementInfo) HasApplicationTarget() bool`
+
+HasApplicationTarget returns a boolean if a field has been set.
 
 ### GetAreaUnits
 
@@ -499,6 +528,56 @@ SetPressureUnits sets PressureUnits field to given value.
 
 HasPressureUnits returns a boolean if a field has been set.
 
+### GetPrettyType
+
+`func (o *BTDocumentElementInfo) GetPrettyType() string`
+
+GetPrettyType returns the PrettyType field if non-nil, zero value otherwise.
+
+### GetPrettyTypeOk
+
+`func (o *BTDocumentElementInfo) GetPrettyTypeOk() (*string, bool)`
+
+GetPrettyTypeOk returns a tuple with the PrettyType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrettyType
+
+`func (o *BTDocumentElementInfo) SetPrettyType(v string)`
+
+SetPrettyType sets PrettyType field to given value.
+
+### HasPrettyType
+
+`func (o *BTDocumentElementInfo) HasPrettyType() bool`
+
+HasPrettyType returns a boolean if a field has been set.
+
+### GetSafeToShow
+
+`func (o *BTDocumentElementInfo) GetSafeToShow() bool`
+
+GetSafeToShow returns the SafeToShow field if non-nil, zero value otherwise.
+
+### GetSafeToShowOk
+
+`func (o *BTDocumentElementInfo) GetSafeToShowOk() (*bool, bool)`
+
+GetSafeToShowOk returns a tuple with the SafeToShow field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSafeToShow
+
+`func (o *BTDocumentElementInfo) SetSafeToShow(v bool)`
+
+SetSafeToShow sets SafeToShow field to given value.
+
+### HasSafeToShow
+
+`func (o *BTDocumentElementInfo) HasSafeToShow() bool`
+
+HasSafeToShow returns a boolean if a field has been set.
+
 ### GetSpecifiedUnit
 
 `func (o *BTDocumentElementInfo) GetSpecifiedUnit() string`
@@ -673,6 +752,31 @@ SetVolumeUnits sets VolumeUnits field to given value.
 `func (o *BTDocumentElementInfo) HasVolumeUnits() bool`
 
 HasVolumeUnits returns a boolean if a field has been set.
+
+### GetZip
+
+`func (o *BTDocumentElementInfo) GetZip() BTZipFileInfo`
+
+GetZip returns the Zip field if non-nil, zero value otherwise.
+
+### GetZipOk
+
+`func (o *BTDocumentElementInfo) GetZipOk() (*BTZipFileInfo, bool)`
+
+GetZipOk returns a tuple with the Zip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZip
+
+`func (o *BTDocumentElementInfo) SetZip(v BTZipFileInfo)`
+
+SetZip sets Zip field to given value.
+
+### HasZip
+
+`func (o *BTDocumentElementInfo) HasZip() bool`
+
+HasZip returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

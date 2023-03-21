@@ -5,7 +5,7 @@ All URIs are relative to *https://cad.onshape.com/api/v5*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateBlobTranslation**](BlobElementApi.md#CreateBlobTranslation) | **Post** /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations | Create translation (export) of blob element (document tab) by document id, workspace or version ID, and tab ID.
-[**DownloadFileWorkspace**](BlobElementApi.md#DownloadFileWorkspace) | **Get** /blobelements/d/{did}/w/{wid}/e/{eid} | 
+[**DownloadFileWorkspace**](BlobElementApi.md#DownloadFileWorkspace) | **Get** /blobelements/d/{did}/w/{wid}/e/{eid} | Retrieve a file from a blob element by document ID, workspace ID, and tab ID.
 [**UpdateUnits**](BlobElementApi.md#UpdateUnits) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid}/units | Update mesh units of a previously imported STL or OBJ file by document ID, workspace ID, and tab ID.
 [**UploadFileCreateElement**](BlobElementApi.md#UploadFileCreateElement) | **Post** /blobelements/d/{did}/w/{wid} | Upload the file to a new tab by document ID and workspace ID.
 [**UploadFileUpdateElement**](BlobElementApi.md#UploadFileUpdateElement) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid} | Update a blob element by uploading a file by document ID, workspace ID, and tab ID.
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateBlobTranslation
 
-> BTTranslationRequestInfo CreateBlobTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
+> BTTranslationRequestInfo CreateBlobTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).LinkDocumentId(linkDocumentId).Execute()
 
 Create translation (export) of blob element (document tab) by document id, workspace or version ID, and tab ID.
 
@@ -31,15 +31,16 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wv := "wv_example" // string | 
-    wvid := "wvid_example" // string | 
-    eid := "eid_example" // string | 
-    bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams() // BTTranslateFormatParams | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams("FormatName_example") // BTTranslateFormatParams | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlobElementApi.CreateBlobTranslation(context.Background(), did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
+    resp, r, err := apiClient.BlobElementApi.CreateBlobTranslation(context.Background(), did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.CreateBlobTranslation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,10 +56,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wv** | **string** |  | 
-**wvid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -72,6 +73,7 @@ Name | Type | Description  | Notes
 
 
  **bTTranslateFormatParams** | [**BTTranslateFormatParams**](BTTranslateFormatParams.md) |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
 
 ### Return type
 
@@ -95,7 +97,7 @@ Name | Type | Description  | Notes
 
 > HttpFile DownloadFileWorkspace(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).Execute()
 
-
+Retrieve a file from a blob element by document ID, workspace ID, and tab ID.
 
 ### Example
 
@@ -173,7 +175,7 @@ Name | Type | Description  | Notes
 
 ## UpdateUnits
 
-> BTDocumentElementProcessingInfo UpdateUnits(ctx, did, eid, wid).BTUpdateMeshUnitsParams(bTUpdateMeshUnitsParams).Execute()
+> BTDocumentElementProcessingInfo UpdateUnits(ctx, did, wid, eid).BTUpdateMeshUnitsParams(bTUpdateMeshUnitsParams).LinkDocumentId(linkDocumentId).Execute()
 
 Update mesh units of a previously imported STL or OBJ file by document ID, workspace ID, and tab ID.
 
@@ -190,14 +192,15 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    eid := "eid_example" // string | 
-    wid := "wid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
     bTUpdateMeshUnitsParams := *openapiclient.NewBTUpdateMeshUnitsParams() // BTUpdateMeshUnitsParams | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlobElementApi.UpdateUnits(context.Background(), did, eid, wid).BTUpdateMeshUnitsParams(bTUpdateMeshUnitsParams).Execute()
+    resp, r, err := apiClient.BlobElementApi.UpdateUnits(context.Background(), did, wid, eid).BTUpdateMeshUnitsParams(bTUpdateMeshUnitsParams).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UpdateUnits``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -213,9 +216,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**eid** | **string** |  | 
-**wid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -228,6 +231,7 @@ Name | Type | Description  | Notes
 
 
  **bTUpdateMeshUnitsParams** | [**BTUpdateMeshUnitsParams**](BTUpdateMeshUnitsParams.md) |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
 
 ### Return type
 
@@ -249,7 +253,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileCreateElement
 
-> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
 
 Upload the file to a new tab by document ID and workspace ID.
 
@@ -266,15 +270,16 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wid := "wid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
-    allowFaultyParts := true // bool |  (optional)
+    allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
     createComposite := true // bool |  (optional)
     createDrawingIfPossible := true // bool |  (optional)
-    encodedFilename := "encodedFilename_example" // string |  (optional)
+    encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
-    flattenAssemblies := true // bool |  (optional)
+    flattenAssemblies := true // bool | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. (optional)
     formatName := "formatName_example" // string |  (optional)
     joinAdjacentSurfaces := true // bool |  (optional)
     locationElementId := "locationElementId_example" // string |  (optional)
@@ -292,12 +297,12 @@ func main() {
     unit := "unit_example" // string |  (optional) (default to "")
     uploadId := "uploadId_example" // string |  (optional)
     versionString := "versionString_example" // string |  (optional)
-    yAxisIsUp := true // bool |  (optional)
+    yAxisIsUp := true // bool | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. (optional)
     importWithinDocument := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileCreateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -313,8 +318,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -325,13 +330,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
- **allowFaultyParts** | **bool** |  | 
+ **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
  **createComposite** | **bool** |  | 
  **createDrawingIfPossible** | **bool** |  | 
- **encodedFilename** | **string** |  | 
+ **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
  **extractAssemblyHierarchy** | **bool** |  | 
- **flattenAssemblies** | **bool** |  | 
+ **flattenAssemblies** | **bool** | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. | 
  **formatName** | **string** |  | 
  **joinAdjacentSurfaces** | **bool** |  | 
  **locationElementId** | **string** |  | 
@@ -349,7 +355,7 @@ Name | Type | Description  | Notes
  **unit** | **string** |  | [default to &quot;&quot;]
  **uploadId** | **string** |  | 
  **versionString** | **string** |  | 
- **yAxisIsUp** | **bool** |  | 
+ **yAxisIsUp** | **bool** | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. | 
  **importWithinDocument** | **bool** |  | 
 
 ### Return type
@@ -372,7 +378,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileUpdateElement
 
-> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, eid, wid).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
 
 Update a blob element by uploading a file by document ID, workspace ID, and tab ID.
 
@@ -389,17 +395,18 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    eid := "eid_example" // string | 
-    wid := "wid_example" // string | 
-    parentChangeId := "parentChangeId_example" // string |  (optional)
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    parentChangeId := "parentChangeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional)
     file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
-    allowFaultyParts := true // bool |  (optional)
+    allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
     createComposite := true // bool |  (optional)
     createDrawingIfPossible := true // bool |  (optional)
-    encodedFilename := "encodedFilename_example" // string |  (optional)
+    encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
-    flattenAssemblies := true // bool |  (optional)
+    flattenAssemblies := true // bool | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. (optional)
     formatName := "formatName_example" // string |  (optional)
     joinAdjacentSurfaces := true // bool |  (optional)
     locationElementId := "locationElementId_example" // string |  (optional)
@@ -417,12 +424,12 @@ func main() {
     unit := "unit_example" // string |  (optional) (default to "")
     uploadId := "uploadId_example" // string |  (optional)
     versionString := "versionString_example" // string |  (optional)
-    yAxisIsUp := true // bool |  (optional)
+    yAxisIsUp := true // bool | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. (optional)
     importWithinDocument := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, eid, wid).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileUpdateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -438,9 +445,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**eid** | **string** |  | 
-**wid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -452,14 +459,15 @@ Name | Type | Description  | Notes
 
 
 
- **parentChangeId** | **string** |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **parentChangeId** | **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | 
  **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
- **allowFaultyParts** | **bool** |  | 
+ **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
  **createComposite** | **bool** |  | 
  **createDrawingIfPossible** | **bool** |  | 
- **encodedFilename** | **string** |  | 
+ **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
  **extractAssemblyHierarchy** | **bool** |  | 
- **flattenAssemblies** | **bool** |  | 
+ **flattenAssemblies** | **bool** | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. | 
  **formatName** | **string** |  | 
  **joinAdjacentSurfaces** | **bool** |  | 
  **locationElementId** | **string** |  | 
@@ -477,7 +485,7 @@ Name | Type | Description  | Notes
  **unit** | **string** |  | [default to &quot;&quot;]
  **uploadId** | **string** |  | 
  **versionString** | **string** |  | 
- **yAxisIsUp** | **bool** |  | 
+ **yAxisIsUp** | **bool** | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. | 
  **importWithinDocument** | **bool** |  | 
 
 ### Return type

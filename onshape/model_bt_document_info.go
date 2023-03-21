@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -141,56 +141,6 @@ func (o *BTDocumentInfo) SetAnonymousAllowsExport(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetAnonymousAllowsExport(v)
-}
-
-// GetBetaCapabilityIds returns the BetaCapabilityIds field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetBetaCapabilityIds() []string {
-	type getResult interface {
-		GetBetaCapabilityIds() []string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBetaCapabilityIds()
-	} else {
-		var de []string
-		return de
-	}
-}
-
-// GetBetaCapabilityIdsOk returns a tuple with the BetaCapabilityIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetBetaCapabilityIdsOk() ([]string, bool) {
-	type getResult interface {
-		GetBetaCapabilityIdsOk() ([]string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBetaCapabilityIdsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBetaCapabilityIds returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasBetaCapabilityIds() bool {
-	type getResult interface {
-		HasBetaCapabilityIds() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBetaCapabilityIds()
-	} else {
-		return false
-	}
-}
-
-// SetBetaCapabilityIds gets a reference to the given []string and assigns it to the BetaCapabilityIds field.
-func (o *BTDocumentInfo) SetBetaCapabilityIds(v []string) {
-	type getResult interface {
-		SetBetaCapabilityIds(v []string)
-	}
-
-	o.GetActualInstance().(getResult).SetBetaCapabilityIds(v)
 }
 
 // GetCanMove returns the CanMove field value if set, zero value otherwise.
@@ -2899,7 +2849,6 @@ func (v *NullableBTDocumentInfo) UnmarshalJSON(src []byte) error {
 type base_BTDocumentInfo struct {
 	AnonymousAccessAllowed        *bool                   `json:"anonymousAccessAllowed,omitempty"`
 	AnonymousAllowsExport         *bool                   `json:"anonymousAllowsExport,omitempty"`
-	BetaCapabilityIds             []string                `json:"betaCapabilityIds,omitempty"`
 	CanMove                       *bool                   `json:"canMove,omitempty"`
 	CanUnshare                    *bool                   `json:"canUnshare,omitempty"`
 	CreatedAt                     *JSONTime               `json:"createdAt,omitempty"`
@@ -3037,38 +2986,6 @@ func (o *base_BTDocumentInfo) HasAnonymousAllowsExport() bool {
 // SetAnonymousAllowsExport gets a reference to the given bool and assigns it to the AnonymousAllowsExport field.
 func (o *base_BTDocumentInfo) SetAnonymousAllowsExport(v bool) {
 	o.AnonymousAllowsExport = &v
-}
-
-// GetBetaCapabilityIds returns the BetaCapabilityIds field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetBetaCapabilityIds() []string {
-	if o == nil || o.BetaCapabilityIds == nil {
-		var ret []string
-		return ret
-	}
-	return o.BetaCapabilityIds
-}
-
-// GetBetaCapabilityIdsOk returns a tuple with the BetaCapabilityIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetBetaCapabilityIdsOk() ([]string, bool) {
-	if o == nil || o.BetaCapabilityIds == nil {
-		return nil, false
-	}
-	return o.BetaCapabilityIds, true
-}
-
-// HasBetaCapabilityIds returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasBetaCapabilityIds() bool {
-	if o != nil && o.BetaCapabilityIds != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBetaCapabilityIds gets a reference to the given []string and assigns it to the BetaCapabilityIds field.
-func (o *base_BTDocumentInfo) SetBetaCapabilityIds(v []string) {
-	o.BetaCapabilityIds = v
 }
 
 // GetCanMove returns the CanMove field value if set, zero value otherwise.
@@ -4742,9 +4659,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.AnonymousAllowsExport != nil {
 		toSerialize["anonymousAllowsExport"] = o.AnonymousAllowsExport
-	}
-	if o.BetaCapabilityIds != nil {
-		toSerialize["betaCapabilityIds"] = o.BetaCapabilityIds
 	}
 	if o.CanMove != nil {
 		toSerialize["canMove"] = o.CanMove

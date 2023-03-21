@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -31,10 +31,17 @@ type ApiCreateBlobTranslationRequest struct {
 	wvid                    string
 	eid                     string
 	bTTranslateFormatParams *BTTranslateFormatParams
+	linkDocumentId          *string
 }
 
 func (r ApiCreateBlobTranslationRequest) BTTranslateFormatParams(bTTranslateFormatParams BTTranslateFormatParams) ApiCreateBlobTranslationRequest {
 	r.bTTranslateFormatParams = &bTTranslateFormatParams
+	return r
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiCreateBlobTranslationRequest) LinkDocumentId(linkDocumentId string) ApiCreateBlobTranslationRequest {
+	r.linkDocumentId = &linkDocumentId
 	return r
 }
 
@@ -46,10 +53,10 @@ func (r ApiCreateBlobTranslationRequest) Execute() (*BTTranslationRequestInfo, *
 CreateBlobTranslation Create translation (export) of blob element (document tab) by document id, workspace or version ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @param eid
+ @param did The id of the document in which to perform the operation.
+ @param wv Indicates which of workspace (w) or version (v) id is specified below.
+ @param wvid The id of the workspace, version in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @return ApiCreateBlobTranslationRequest
 */
 func (a *BlobElementApiService) CreateBlobTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateBlobTranslationRequest {
@@ -91,6 +98,9 @@ func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTran
 		return localVarReturnValue, nil, reportError("bTTranslateFormatParams is required and must be specified")
 	}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
 
@@ -186,7 +196,7 @@ func (r ApiDownloadFileWorkspaceRequest) Execute() (*HttpFile, *http.Response, e
 }
 
 /*
-DownloadFileWorkspace Method for DownloadFileWorkspace
+DownloadFileWorkspace Retrieve a file from a blob element by document ID, workspace ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -302,13 +312,20 @@ type ApiUpdateUnitsRequest struct {
 	ctx                     context.Context
 	ApiService              *BlobElementApiService
 	did                     string
-	eid                     string
 	wid                     string
+	eid                     string
 	bTUpdateMeshUnitsParams *BTUpdateMeshUnitsParams
+	linkDocumentId          *string
 }
 
 func (r ApiUpdateUnitsRequest) BTUpdateMeshUnitsParams(bTUpdateMeshUnitsParams BTUpdateMeshUnitsParams) ApiUpdateUnitsRequest {
 	r.bTUpdateMeshUnitsParams = &bTUpdateMeshUnitsParams
+	return r
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiUpdateUnitsRequest) LinkDocumentId(linkDocumentId string) ApiUpdateUnitsRequest {
+	r.linkDocumentId = &linkDocumentId
 	return r
 }
 
@@ -320,18 +337,18 @@ func (r ApiUpdateUnitsRequest) Execute() (*BTDocumentElementProcessingInfo, *htt
 UpdateUnits Update mesh units of a previously imported STL or OBJ file by document ID, workspace ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
+ @param did The id of the document in which to perform the operation.
+ @param wid The id of the workspace in which to perform the operation.
+ @param eid The id of the element in which to perform the operation.
  @return ApiUpdateUnitsRequest
 */
-func (a *BlobElementApiService) UpdateUnits(ctx context.Context, did string, eid string, wid string) ApiUpdateUnitsRequest {
+func (a *BlobElementApiService) UpdateUnits(ctx context.Context, did string, wid string, eid string) ApiUpdateUnitsRequest {
 	return ApiUpdateUnitsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		did:        did,
-		eid:        eid,
 		wid:        wid,
+		eid:        eid,
 	}
 }
 
@@ -352,8 +369,8 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 
 	localVarPath := localBasePath + "/blobelements/d/{did}/w/{wid}/e/{eid}/units"
 	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wid"+"}", url.PathEscape(parameterToString(r.wid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -362,6 +379,9 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 		return localVarReturnValue, nil, reportError("bTUpdateMeshUnitsParams is required and must be specified")
 	}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
 
@@ -430,6 +450,7 @@ type ApiUploadFileCreateElementRequest struct {
 	ApiService                           *BlobElementApiService
 	did                                  string
 	wid                                  string
+	linkDocumentId                       *string
 	file                                 *map[string]interface{}
 	allowFaultyParts                     *bool
 	createComposite                      *bool
@@ -458,12 +479,19 @@ type ApiUploadFileCreateElementRequest struct {
 	importWithinDocument                 *bool
 }
 
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiUploadFileCreateElementRequest) LinkDocumentId(linkDocumentId string) ApiUploadFileCreateElementRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
 // The file to upload.
 func (r ApiUploadFileCreateElementRequest) File(file map[string]interface{}) ApiUploadFileCreateElementRequest {
 	r.file = &file
 	return r
 }
 
+// If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults.
 func (r ApiUploadFileCreateElementRequest) AllowFaultyParts(allowFaultyParts bool) ApiUploadFileCreateElementRequest {
 	r.allowFaultyParts = &allowFaultyParts
 	return r
@@ -479,6 +507,7 @@ func (r ApiUploadFileCreateElementRequest) CreateDrawingIfPossible(createDrawing
 	return r
 }
 
+// If the filename contains non-ASCII characters. Use this field to store the filename.
 func (r ApiUploadFileCreateElementRequest) EncodedFilename(encodedFilename string) ApiUploadFileCreateElementRequest {
 	r.encodedFilename = &encodedFilename
 	return r
@@ -489,6 +518,7 @@ func (r ApiUploadFileCreateElementRequest) ExtractAssemblyHierarchy(extractAssem
 	return r
 }
 
+// If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly.
 func (r ApiUploadFileCreateElementRequest) FlattenAssemblies(flattenAssemblies bool) ApiUploadFileCreateElementRequest {
 	r.flattenAssemblies = &flattenAssemblies
 	return r
@@ -579,6 +609,7 @@ func (r ApiUploadFileCreateElementRequest) VersionString(versionString string) A
 	return r
 }
 
+// If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect.
 func (r ApiUploadFileCreateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFileCreateElementRequest {
 	r.yAxisIsUp = &yAxisIsUp
 	return r
@@ -597,8 +628,8 @@ func (r ApiUploadFileCreateElementRequest) Execute() (*BTDocumentElementProcessi
 UploadFileCreateElement Upload the file to a new tab by document ID and workspace ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
+ @param did The id of the document in which to perform the operation.
+ @param wid The id of the workspace in which to perform the operation.
  @return ApiUploadFileCreateElementRequest
 */
 func (a *BlobElementApiService) UploadFileCreateElement(ctx context.Context, did string, wid string) ApiUploadFileCreateElementRequest {
@@ -633,6 +664,9 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/form-data"}
 
@@ -780,8 +814,9 @@ type ApiUploadFileUpdateElementRequest struct {
 	ctx                                  context.Context
 	ApiService                           *BlobElementApiService
 	did                                  string
-	eid                                  string
 	wid                                  string
+	eid                                  string
+	linkDocumentId                       *string
 	parentChangeId                       *string
 	file                                 *map[string]interface{}
 	allowFaultyParts                     *bool
@@ -811,6 +846,13 @@ type ApiUploadFileUpdateElementRequest struct {
 	importWithinDocument                 *bool
 }
 
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiUploadFileUpdateElementRequest) LinkDocumentId(linkDocumentId string) ApiUploadFileUpdateElementRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
 func (r ApiUploadFileUpdateElementRequest) ParentChangeId(parentChangeId string) ApiUploadFileUpdateElementRequest {
 	r.parentChangeId = &parentChangeId
 	return r
@@ -822,6 +864,7 @@ func (r ApiUploadFileUpdateElementRequest) File(file map[string]interface{}) Api
 	return r
 }
 
+// If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults.
 func (r ApiUploadFileUpdateElementRequest) AllowFaultyParts(allowFaultyParts bool) ApiUploadFileUpdateElementRequest {
 	r.allowFaultyParts = &allowFaultyParts
 	return r
@@ -837,6 +880,7 @@ func (r ApiUploadFileUpdateElementRequest) CreateDrawingIfPossible(createDrawing
 	return r
 }
 
+// If the filename contains non-ASCII characters. Use this field to store the filename.
 func (r ApiUploadFileUpdateElementRequest) EncodedFilename(encodedFilename string) ApiUploadFileUpdateElementRequest {
 	r.encodedFilename = &encodedFilename
 	return r
@@ -847,6 +891,7 @@ func (r ApiUploadFileUpdateElementRequest) ExtractAssemblyHierarchy(extractAssem
 	return r
 }
 
+// If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly.
 func (r ApiUploadFileUpdateElementRequest) FlattenAssemblies(flattenAssemblies bool) ApiUploadFileUpdateElementRequest {
 	r.flattenAssemblies = &flattenAssemblies
 	return r
@@ -937,6 +982,7 @@ func (r ApiUploadFileUpdateElementRequest) VersionString(versionString string) A
 	return r
 }
 
+// If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect.
 func (r ApiUploadFileUpdateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFileUpdateElementRequest {
 	r.yAxisIsUp = &yAxisIsUp
 	return r
@@ -955,18 +1001,18 @@ func (r ApiUploadFileUpdateElementRequest) Execute() (*BTDocumentElementProcessi
 UploadFileUpdateElement Update a blob element by uploading a file by document ID, workspace ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
+ @param did The id of the document in which to perform the operation.
+ @param wid The id of the workspace in which to perform the operation.
+ @param eid The id of the element in which to perform the operation.
  @return ApiUploadFileUpdateElementRequest
 */
-func (a *BlobElementApiService) UploadFileUpdateElement(ctx context.Context, did string, eid string, wid string) ApiUploadFileUpdateElementRequest {
+func (a *BlobElementApiService) UploadFileUpdateElement(ctx context.Context, did string, wid string, eid string) ApiUploadFileUpdateElementRequest {
 	return ApiUploadFileUpdateElementRequest{
 		ApiService: a,
 		ctx:        ctx,
 		did:        did,
-		eid:        eid,
 		wid:        wid,
+		eid:        eid,
 	}
 }
 
@@ -987,13 +1033,16 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 
 	localVarPath := localBasePath + "/blobelements/d/{did}/w/{wid}/e/{eid}"
 	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wid"+"}", url.PathEscape(parameterToString(r.wid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	if r.parentChangeId != nil {
 		localVarQueryParams.Add("parentChangeId", parameterToString(*r.parentChangeId, ""))
 	}

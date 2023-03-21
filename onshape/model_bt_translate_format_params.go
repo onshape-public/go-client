@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,42 +17,49 @@ import (
 
 // BTTranslateFormatParams struct for BTTranslateFormatParams
 type BTTranslateFormatParams struct {
-	AllowFaultyParts                     *bool    `json:"allowFaultyParts,omitempty"`
-	AngularTolerance                     *float64 `json:"angularTolerance,omitempty"`
-	BlobElementId                        *string  `json:"blobElementId,omitempty"`
-	BlobMicroversionId                   *string  `json:"blobMicroversionId,omitempty"`
-	CloudObjectId                        *string  `json:"cloudObjectId,omitempty"`
-	CloudStorageAccountId                *string  `json:"cloudStorageAccountId,omitempty"`
-	ColorMethod                          *string  `json:"colorMethod,omitempty"`
-	Configuration                        *string  `json:"configuration,omitempty"`
-	ConnectionId                         *string  `json:"connectionId,omitempty"`
-	CreateComposite                      *bool    `json:"createComposite,omitempty"`
-	CurrentSheetOnly                     *bool    `json:"currentSheetOnly,omitempty"`
-	DestinationName                      *string  `json:"destinationName,omitempty"`
-	DistanceTolerance                    *float64 `json:"distanceTolerance,omitempty"`
-	ElementId                            *string  `json:"elementId,omitempty"`
-	ElementIds                           []string `json:"elementIds,omitempty"`
-	EmailLink                            *bool    `json:"emailLink,omitempty"`
-	EmailMessage                         *string  `json:"emailMessage,omitempty"`
-	EmailSubject                         *string  `json:"emailSubject,omitempty"`
-	EmailTo                              []string `json:"emailTo,omitempty"`
-	ExtractAssemblyHierarchy             *bool    `json:"extractAssemblyHierarchy,omitempty"`
-	Flatten                              *bool    `json:"flatten,omitempty"`
-	FlattenAssemblies                    *bool    `json:"flattenAssemblies,omitempty"`
-	ForeignId                            *string  `json:"foreignId,omitempty"`
-	FormatName                           *string  `json:"formatName,omitempty"`
-	FromUserId                           *string  `json:"fromUserId,omitempty"`
-	GetyAxisIsUp                         *bool    `json:"getyAxisIsUp,omitempty"`
-	Grouping                             *bool    `json:"grouping,omitempty"`
-	ImageHeight                          *int32   `json:"imageHeight,omitempty"`
-	ImageWidth                           *int32   `json:"imageWidth,omitempty"`
-	ImportInBackground                   *bool    `json:"importInBackground,omitempty"`
-	ImportWithinDocument                 *bool    `json:"importWithinDocument,omitempty"`
-	IncludeExportIds                     *bool    `json:"includeExportIds,omitempty"`
-	JoinAdjacentSurfaces                 *bool    `json:"joinAdjacentSurfaces,omitempty"`
-	Level                                *string  `json:"level,omitempty"`
-	LinkDocumentId                       *string  `json:"linkDocumentId,omitempty"`
-	LinkDocumentWorkspaceId              *string  `json:"linkDocumentWorkspaceId,omitempty"`
+	// If true, parts with faults are imported. If false, faulty parts are omitted.
+	AllowFaultyParts *bool `json:"allowFaultyParts,omitempty"`
+	// Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
+	AngularTolerance      *float64 `json:"angularTolerance,omitempty"`
+	BlobElementId         *string  `json:"blobElementId,omitempty"`
+	BlobMicroversionId    *string  `json:"blobMicroversionId,omitempty"`
+	CloudObjectId         *string  `json:"cloudObjectId,omitempty"`
+	CloudStorageAccountId *string  `json:"cloudStorageAccountId,omitempty"`
+	ColorMethod           *string  `json:"colorMethod,omitempty"`
+	Configuration         *string  `json:"configuration,omitempty"`
+	ConnectionId          *string  `json:"connectionId,omitempty"`
+	CreateComposite       *bool    `json:"createComposite,omitempty"`
+	CurrentSheetOnly      *bool    `json:"currentSheetOnly,omitempty"`
+	DestinationName       *string  `json:"destinationName,omitempty"`
+	DistanceTolerance     *float64 `json:"distanceTolerance,omitempty"`
+	// The id of the element in which to perform the operation.
+	ElementId *string `json:"elementId,omitempty"`
+	// An array of element ids.
+	ElementIds               []string `json:"elementIds,omitempty"`
+	EmailLink                *bool    `json:"emailLink,omitempty"`
+	EmailMessage             *string  `json:"emailMessage,omitempty"`
+	EmailSubject             *string  `json:"emailSubject,omitempty"`
+	EmailTo                  []string `json:"emailTo,omitempty"`
+	ExtractAssemblyHierarchy *bool    `json:"extractAssemblyHierarchy,omitempty"`
+	Flatten                  *bool    `json:"flatten,omitempty"`
+	FlattenAssemblies        *bool    `json:"flattenAssemblies,omitempty"`
+	ForeignId                *string  `json:"foreignId,omitempty"`
+	// The name of the file format.
+	FormatName           string  `json:"formatName"`
+	FromUserId           *string `json:"fromUserId,omitempty"`
+	GetyAxisIsUp         *bool   `json:"getyAxisIsUp,omitempty"`
+	Grouping             *bool   `json:"grouping,omitempty"`
+	ImageHeight          *int32  `json:"imageHeight,omitempty"`
+	ImageWidth           *int32  `json:"imageWidth,omitempty"`
+	ImportInBackground   *bool   `json:"importInBackground,omitempty"`
+	ImportWithinDocument *bool   `json:"importWithinDocument,omitempty"`
+	IncludeExportIds     *bool   `json:"includeExportIds,omitempty"`
+	JoinAdjacentSurfaces *bool   `json:"joinAdjacentSurfaces,omitempty"`
+	Level                *string `json:"level,omitempty"`
+	// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
+	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
+	// Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
 	MaximumChordLength                   *float64 `json:"maximumChordLength,omitempty"`
 	NotifyUser                           *bool    `json:"notifyUser,omitempty"`
 	OnePartPerDoc                        *bool    `json:"onePartPerDoc,omitempty"`
@@ -89,8 +96,9 @@ type BTTranslateFormatParams struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTTranslateFormatParams() *BTTranslateFormatParams {
+func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 	this := BTTranslateFormatParams{}
+	this.FormatName = formatName
 	return &this
 }
 
@@ -838,36 +846,28 @@ func (o *BTTranslateFormatParams) SetForeignId(v string) {
 	o.ForeignId = &v
 }
 
-// GetFormatName returns the FormatName field value if set, zero value otherwise.
+// GetFormatName returns the FormatName field value
 func (o *BTTranslateFormatParams) GetFormatName() string {
-	if o == nil || o.FormatName == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.FormatName
+
+	return o.FormatName
 }
 
-// GetFormatNameOk returns a tuple with the FormatName field value if set, nil otherwise
+// GetFormatNameOk returns a tuple with the FormatName field value
 // and a boolean to check if the value has been set.
 func (o *BTTranslateFormatParams) GetFormatNameOk() (*string, bool) {
-	if o == nil || o.FormatName == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.FormatName, true
+	return &o.FormatName, true
 }
 
-// HasFormatName returns a boolean if a field has been set.
-func (o *BTTranslateFormatParams) HasFormatName() bool {
-	if o != nil && o.FormatName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFormatName gets a reference to the given string and assigns it to the FormatName field.
+// SetFormatName sets field value
 func (o *BTTranslateFormatParams) SetFormatName(v string) {
-	o.FormatName = &v
+	o.FormatName = v
 }
 
 // GetFromUserId returns the FromUserId field value if set, zero value otherwise.
@@ -2285,7 +2285,7 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.ForeignId != nil {
 		toSerialize["foreignId"] = o.ForeignId
 	}
-	if o.FormatName != nil {
+	if true {
 		toSerialize["formatName"] = o.FormatName
 	}
 	if o.FromUserId != nil {

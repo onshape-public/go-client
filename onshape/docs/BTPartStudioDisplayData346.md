@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AppearanceIdToAppearanceOverride** | Pointer to [**map[string]BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **AssemblyReferenceDisplayData** | Pointer to [**BTAssemblyReferencesDisplayData1562**](BTAssemblyReferencesDisplayData1562.md) |  | [optional] 
 **CacheablePartStudioDisplayDataVersion** | Pointer to **string** |  | [optional] 
+**DecalIdToDecal** | Pointer to [**map[string]BTDecal2404**](BTDecal2404.md) |  | [optional] 
 **DeterministicIdToAssociatedFeatureIds** | Pointer to **map[string][]string** |  | [optional] 
 **DeterministicIdToEntity** | Pointer to [**map[string]BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **DeterministicIdToPartDisplayData** | Pointer to [**map[string]BTPartDisplayData17**](BTPartDisplayData17.md) |  | [optional] 
@@ -28,6 +29,7 @@ Name | Type | Description | Notes
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **MicroversionIdAndConfigurationInterval** | Pointer to [**BTMicroversionIdAndConfigurationInterval2364**](BTMicroversionIdAndConfigurationInterval2364.md) |  | [optional] 
 **MicroversionInterval** | Pointer to [**BTMicroversionIdInterval367**](BTMicroversionIdInterval367.md) |  | [optional] 
+**NumberOfSketchEntities** | Pointer to **int32** |  | [optional] 
 **PartColorCycle** | Pointer to [**BTBasePartColorCycle2614**](BTBasePartColorCycle2614.md) |  | [optional] 
 **PartDisplayData** | Pointer to [**[]BTPartDisplayData17**](BTPartDisplayData17.md) |  | [optional] 
 **SketchImages** | Pointer to [**map[string]map[string]BTSketchImageDisplayData1379**](map.md) |  | [optional] 
@@ -130,6 +132,31 @@ SetCacheablePartStudioDisplayDataVersion sets CacheablePartStudioDisplayDataVers
 `func (o *BTPartStudioDisplayData346) HasCacheablePartStudioDisplayDataVersion() bool`
 
 HasCacheablePartStudioDisplayDataVersion returns a boolean if a field has been set.
+
+### GetDecalIdToDecal
+
+`func (o *BTPartStudioDisplayData346) GetDecalIdToDecal() map[string]BTDecal2404`
+
+GetDecalIdToDecal returns the DecalIdToDecal field if non-nil, zero value otherwise.
+
+### GetDecalIdToDecalOk
+
+`func (o *BTPartStudioDisplayData346) GetDecalIdToDecalOk() (*map[string]BTDecal2404, bool)`
+
+GetDecalIdToDecalOk returns a tuple with the DecalIdToDecal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDecalIdToDecal
+
+`func (o *BTPartStudioDisplayData346) SetDecalIdToDecal(v map[string]BTDecal2404)`
+
+SetDecalIdToDecal sets DecalIdToDecal field to given value.
+
+### HasDecalIdToDecal
+
+`func (o *BTPartStudioDisplayData346) HasDecalIdToDecal() bool`
+
+HasDecalIdToDecal returns a boolean if a field has been set.
 
 ### GetDeterministicIdToAssociatedFeatureIds
 
@@ -655,6 +682,31 @@ SetMicroversionInterval sets MicroversionInterval field to given value.
 `func (o *BTPartStudioDisplayData346) HasMicroversionInterval() bool`
 
 HasMicroversionInterval returns a boolean if a field has been set.
+
+### GetNumberOfSketchEntities
+
+`func (o *BTPartStudioDisplayData346) GetNumberOfSketchEntities() int32`
+
+GetNumberOfSketchEntities returns the NumberOfSketchEntities field if non-nil, zero value otherwise.
+
+### GetNumberOfSketchEntitiesOk
+
+`func (o *BTPartStudioDisplayData346) GetNumberOfSketchEntitiesOk() (*int32, bool)`
+
+GetNumberOfSketchEntitiesOk returns a tuple with the NumberOfSketchEntities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfSketchEntities
+
+`func (o *BTPartStudioDisplayData346) SetNumberOfSketchEntities(v int32)`
+
+SetNumberOfSketchEntities sets NumberOfSketchEntities field to given value.
+
+### HasNumberOfSketchEntities
+
+`func (o *BTPartStudioDisplayData346) HasNumberOfSketchEntities() bool`
+
+HasNumberOfSketchEntities returns a boolean if a field has been set.
 
 ### GetPartColorCycle
 

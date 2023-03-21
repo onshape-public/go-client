@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BaseHref** | Pointer to **string** |  | [optional] 
+**ApplicationTarget** | Pointer to [**BTApplicationTargetInfo**](BTApplicationTargetInfo.md) |  | [optional] 
+**BaseHref** | Pointer to **string** |  | [optional] [readonly] 
 **DataType** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -39,6 +40,31 @@ will change when the set of required properties is changed
 NewItemWithDefaults instantiates a new Item object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplicationTarget
+
+`func (o *Item) GetApplicationTarget() BTApplicationTargetInfo`
+
+GetApplicationTarget returns the ApplicationTarget field if non-nil, zero value otherwise.
+
+### GetApplicationTargetOk
+
+`func (o *Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool)`
+
+GetApplicationTargetOk returns a tuple with the ApplicationTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationTarget
+
+`func (o *Item) SetApplicationTarget(v BTApplicationTargetInfo)`
+
+SetApplicationTarget sets ApplicationTarget field to given value.
+
+### HasApplicationTarget
+
+`func (o *Item) HasApplicationTarget() bool`
+
+HasApplicationTarget returns a boolean if a field has been set.
 
 ### GetBaseHref
 

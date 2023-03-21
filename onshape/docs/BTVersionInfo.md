@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **LastModifier** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
+**MetadataWorkspaceId** | Pointer to **string** |  | [optional] 
 **Microversion** | Pointer to **string** |  | [optional] 
 **ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
@@ -214,6 +215,31 @@ SetLastModifier sets LastModifier field to given value.
 `func (o *BTVersionInfo) HasLastModifier() bool`
 
 HasLastModifier returns a boolean if a field has been set.
+
+### GetMetadataWorkspaceId
+
+`func (o *BTVersionInfo) GetMetadataWorkspaceId() string`
+
+GetMetadataWorkspaceId returns the MetadataWorkspaceId field if non-nil, zero value otherwise.
+
+### GetMetadataWorkspaceIdOk
+
+`func (o *BTVersionInfo) GetMetadataWorkspaceIdOk() (*string, bool)`
+
+GetMetadataWorkspaceIdOk returns a tuple with the MetadataWorkspaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadataWorkspaceId
+
+`func (o *BTVersionInfo) SetMetadataWorkspaceId(v string)`
+
+SetMetadataWorkspaceId sets MetadataWorkspaceId field to given value.
+
+### HasMetadataWorkspaceId
+
+`func (o *BTVersionInfo) HasMetadataWorkspaceId() bool`
+
+HasMetadataWorkspaceId returns a boolean if a field has been set.
 
 ### GetMicroversion
 

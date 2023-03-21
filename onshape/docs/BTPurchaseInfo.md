@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **PlanId** | Pointer to **string** |  | [optional] 
 **PlanName** | Pointer to **string** |  | [optional] 
 **PlanType** | Pointer to **int32** |  | [optional] 
+**PreTrialPlanId** | Pointer to **string** |  | [optional] 
 **ProratedCharges** | Pointer to [**[]ProratedCharges**](ProratedCharges.md) |  | [optional] 
 **ProratedTotal** | Pointer to **int64** |  | [optional] 
 **PurchaseDate** | Pointer to **JSONTime** |  | [optional] 
@@ -741,6 +742,31 @@ SetPlanType sets PlanType field to given value.
 `func (o *BTPurchaseInfo) HasPlanType() bool`
 
 HasPlanType returns a boolean if a field has been set.
+
+### GetPreTrialPlanId
+
+`func (o *BTPurchaseInfo) GetPreTrialPlanId() string`
+
+GetPreTrialPlanId returns the PreTrialPlanId field if non-nil, zero value otherwise.
+
+### GetPreTrialPlanIdOk
+
+`func (o *BTPurchaseInfo) GetPreTrialPlanIdOk() (*string, bool)`
+
+GetPreTrialPlanIdOk returns a tuple with the PreTrialPlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreTrialPlanId
+
+`func (o *BTPurchaseInfo) SetPreTrialPlanId(v string)`
+
+SetPreTrialPlanId sets PreTrialPlanId field to given value.
+
+### HasPreTrialPlanId
+
+`func (o *BTPurchaseInfo) HasPreTrialPlanId() bool`
+
+HasPreTrialPlanId returns a boolean if a field has been set.
 
 ### GetProratedCharges
 

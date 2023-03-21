@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -41,6 +41,56 @@ func NewItem(jsonType string) *Item {
 func NewItemWithDefaults() *Item {
 	this := Item{Newbase_ItemWithDefaults()}
 	return &this
+}
+
+// GetApplicationTarget returns the ApplicationTarget field value if set, zero value otherwise.
+func (o *Item) GetApplicationTarget() BTApplicationTargetInfo {
+	type getResult interface {
+		GetApplicationTarget() BTApplicationTargetInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetApplicationTarget()
+	} else {
+		var de BTApplicationTargetInfo
+		return de
+	}
+}
+
+// GetApplicationTargetOk returns a tuple with the ApplicationTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
+	type getResult interface {
+		GetApplicationTargetOk() (*BTApplicationTargetInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetApplicationTargetOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasApplicationTarget returns a boolean if a field has been set.
+func (o *Item) HasApplicationTarget() bool {
+	type getResult interface {
+		HasApplicationTarget() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasApplicationTarget()
+	} else {
+		return false
+	}
+}
+
+// SetApplicationTarget gets a reference to the given BTApplicationTargetInfo and assigns it to the ApplicationTarget field.
+func (o *Item) SetApplicationTarget(v BTApplicationTargetInfo) {
+	type getResult interface {
+		SetApplicationTarget(v BTApplicationTargetInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetApplicationTarget(v)
 }
 
 // GetBaseHref returns the BaseHref field value if set, zero value otherwise.
@@ -934,22 +984,23 @@ func (v *NullableItem) UnmarshalJSON(src []byte) error {
 }
 
 type base_Item struct {
-	BaseHref             *string `json:"baseHref,omitempty"`
-	DataType             *string `json:"dataType,omitempty"`
-	DocumentId           *string `json:"documentId,omitempty"`
-	ElementId            *string `json:"elementId,omitempty"`
-	ElementType          *string `json:"elementType,omitempty"`
-	EncodedConfiguration *string `json:"encodedConfiguration,omitempty"`
-	Id                   *string `json:"id,omitempty"`
-	JsonType             string  `json:"jsonType"`
-	PartId               *string `json:"partId,omitempty"`
-	PartName             *string `json:"partName,omitempty"`
-	PartNumber           *string `json:"partNumber,omitempty"`
-	Revision             *string `json:"revision,omitempty"`
-	RevisionId           *string `json:"revisionId,omitempty"`
-	State                *int32  `json:"state,omitempty"`
-	VersionId            *string `json:"versionId,omitempty"`
-	VersionName          *string `json:"versionName,omitempty"`
+	ApplicationTarget    *BTApplicationTargetInfo `json:"applicationTarget,omitempty"`
+	BaseHref             *string                  `json:"baseHref,omitempty"`
+	DataType             *string                  `json:"dataType,omitempty"`
+	DocumentId           *string                  `json:"documentId,omitempty"`
+	ElementId            *string                  `json:"elementId,omitempty"`
+	ElementType          *string                  `json:"elementType,omitempty"`
+	EncodedConfiguration *string                  `json:"encodedConfiguration,omitempty"`
+	Id                   *string                  `json:"id,omitempty"`
+	JsonType             string                   `json:"jsonType"`
+	PartId               *string                  `json:"partId,omitempty"`
+	PartName             *string                  `json:"partName,omitempty"`
+	PartNumber           *string                  `json:"partNumber,omitempty"`
+	Revision             *string                  `json:"revision,omitempty"`
+	RevisionId           *string                  `json:"revisionId,omitempty"`
+	State                *int32                   `json:"state,omitempty"`
+	VersionId            *string                  `json:"versionId,omitempty"`
+	VersionName          *string                  `json:"versionName,omitempty"`
 }
 
 // Newbase_Item instantiates a new base_Item object
@@ -968,6 +1019,38 @@ func Newbase_Item(jsonType string) *base_Item {
 func Newbase_ItemWithDefaults() *base_Item {
 	this := base_Item{}
 	return &this
+}
+
+// GetApplicationTarget returns the ApplicationTarget field value if set, zero value otherwise.
+func (o *base_Item) GetApplicationTarget() BTApplicationTargetInfo {
+	if o == nil || o.ApplicationTarget == nil {
+		var ret BTApplicationTargetInfo
+		return ret
+	}
+	return *o.ApplicationTarget
+}
+
+// GetApplicationTargetOk returns a tuple with the ApplicationTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
+	if o == nil || o.ApplicationTarget == nil {
+		return nil, false
+	}
+	return o.ApplicationTarget, true
+}
+
+// HasApplicationTarget returns a boolean if a field has been set.
+func (o *base_Item) HasApplicationTarget() bool {
+	if o != nil && o.ApplicationTarget != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationTarget gets a reference to the given BTApplicationTargetInfo and assigns it to the ApplicationTarget field.
+func (o *base_Item) SetApplicationTarget(v BTApplicationTargetInfo) {
+	o.ApplicationTarget = &v
 }
 
 // GetBaseHref returns the BaseHref field value if set, zero value otherwise.
@@ -1476,6 +1559,9 @@ func (o *base_Item) SetVersionName(v string) {
 
 func (o base_Item) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ApplicationTarget != nil {
+		toSerialize["applicationTarget"] = o.ApplicationTarget
+	}
 	if o.BaseHref != nil {
 		toSerialize["baseHref"] = o.BaseHref
 	}

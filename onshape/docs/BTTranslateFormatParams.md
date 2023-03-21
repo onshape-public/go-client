@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowFaultyParts** | Pointer to **bool** |  | [optional] 
-**AngularTolerance** | Pointer to **float64** |  | [optional] 
+**AllowFaultyParts** | Pointer to **bool** | If true, parts with faults are imported. If false, faulty parts are omitted. | [optional] 
+**AngularTolerance** | Pointer to **float64** | Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry. | [optional] 
 **BlobElementId** | Pointer to **string** |  | [optional] 
 **BlobMicroversionId** | Pointer to **string** |  | [optional] 
 **CloudObjectId** | Pointer to **string** |  | [optional] 
@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **CurrentSheetOnly** | Pointer to **bool** |  | [optional] 
 **DestinationName** | Pointer to **string** |  | [optional] 
 **DistanceTolerance** | Pointer to **float64** |  | [optional] 
-**ElementId** | Pointer to **string** |  | [optional] 
-**ElementIds** | Pointer to **[]string** |  | [optional] 
+**ElementId** | Pointer to **string** | The id of the element in which to perform the operation. | [optional] 
+**ElementIds** | Pointer to **[]string** | An array of element ids. | [optional] 
 **EmailLink** | Pointer to **bool** |  | [optional] 
 **EmailMessage** | Pointer to **string** |  | [optional] 
 **EmailSubject** | Pointer to **string** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **Flatten** | Pointer to **bool** |  | [optional] 
 **FlattenAssemblies** | Pointer to **bool** |  | [optional] 
 **ForeignId** | Pointer to **string** |  | [optional] 
-**FormatName** | Pointer to **string** |  | [optional] 
+**FormatName** | **string** | The name of the file format. | 
 **FromUserId** | Pointer to **string** |  | [optional] 
 **GetyAxisIsUp** | Pointer to **bool** |  | [optional] 
 **Grouping** | Pointer to **bool** |  | [optional] 
@@ -38,9 +38,9 @@ Name | Type | Description | Notes
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
 **JoinAdjacentSurfaces** | Pointer to **bool** |  | [optional] 
 **Level** | Pointer to **string** |  | [optional] 
-**LinkDocumentId** | Pointer to **string** |  | [optional] 
+**LinkDocumentId** | Pointer to **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [optional] 
 **LinkDocumentWorkspaceId** | Pointer to **string** |  | [optional] 
-**MaximumChordLength** | Pointer to **float64** |  | [optional] 
+**MaximumChordLength** | Pointer to **float64** | Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry. | [optional] 
 **NotifyUser** | Pointer to **bool** |  | [optional] 
 **OnePartPerDoc** | Pointer to **bool** |  | [optional] 
 **OriginalForeignId** | Pointer to **string** |  | [optional] 
@@ -75,7 +75,7 @@ Name | Type | Description | Notes
 
 ### NewBTTranslateFormatParams
 
-`func NewBTTranslateFormatParams() *BTTranslateFormatParams`
+`func NewBTTranslateFormatParams(formatName string, ) *BTTranslateFormatParams`
 
 NewBTTranslateFormatParams instantiates a new BTTranslateFormatParams object
 This constructor will assign default values to properties that have it defined,
@@ -684,11 +684,6 @@ and a boolean to check if the value has been set.
 
 SetFormatName sets FormatName field to given value.
 
-### HasFormatName
-
-`func (o *BTTranslateFormatParams) HasFormatName() bool`
-
-HasFormatName returns a boolean if a field has been set.
 
 ### GetFromUserId
 

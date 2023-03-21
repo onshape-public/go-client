@@ -99,7 +99,7 @@ func main() {
     wv := "wv_example" // string | 
     wvid := "wvid_example" // string | 
     eid := "eid_example" // string | 
-    bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams() // BTTranslateFormatParams | 
+    bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams("FormatName_example") // BTTranslateFormatParams | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

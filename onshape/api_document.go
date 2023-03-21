@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -864,8 +864,8 @@ Export2Json Export document by document ID, workspace or version ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
- @param wv
- @param wvid
+ @param wv Indicates which of workspace (w) or version (v) id is specified below.
+ @param wvid The id of the workspace, version in which the operation should be performed.
  @param eid The id of the element in which to perform the operation.
  @return ApiExport2JsonRequest
 */
@@ -1985,8 +1985,8 @@ GetElementsInDocument Retrieve tabs by document ID and workspace or version or m
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
- @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+ @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
  @return ApiGetElementsInDocumentRequest
 */
 func (a *DocumentApiService) GetElementsInDocument(ctx context.Context, did string, wvm string, wvmid string) ApiGetElementsInDocumentRequest {
@@ -2471,8 +2471,8 @@ GetUnitInfo Get the selected units and precision by document ID and workspace or
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace id, version id, or document microversion id is specified below.
- @param wvmid The id of the workspace, version, or document microversion in which the operation should be performed.
+ @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+ @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
  @return ApiGetUnitInfoRequest
 */
 func (a *DocumentApiService) GetUnitInfo(ctx context.Context, did string, wvm string, wvmid string) ApiGetUnitInfoRequest {

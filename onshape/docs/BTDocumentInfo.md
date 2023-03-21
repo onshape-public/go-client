@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnonymousAccessAllowed** | Pointer to **bool** |  | [optional] 
 **AnonymousAllowsExport** | Pointer to **bool** |  | [optional] 
-**BetaCapabilityIds** | Pointer to **[]string** |  | [optional] 
 **CanMove** | Pointer to **bool** |  | [optional] 
 **CanUnshare** | Pointer to **bool** |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
@@ -128,31 +127,6 @@ SetAnonymousAllowsExport sets AnonymousAllowsExport field to given value.
 `func (o *BTDocumentInfo) HasAnonymousAllowsExport() bool`
 
 HasAnonymousAllowsExport returns a boolean if a field has been set.
-
-### GetBetaCapabilityIds
-
-`func (o *BTDocumentInfo) GetBetaCapabilityIds() []string`
-
-GetBetaCapabilityIds returns the BetaCapabilityIds field if non-nil, zero value otherwise.
-
-### GetBetaCapabilityIdsOk
-
-`func (o *BTDocumentInfo) GetBetaCapabilityIdsOk() (*[]string, bool)`
-
-GetBetaCapabilityIdsOk returns a tuple with the BetaCapabilityIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBetaCapabilityIds
-
-`func (o *BTDocumentInfo) SetBetaCapabilityIds(v []string)`
-
-SetBetaCapabilityIds sets BetaCapabilityIds field to given value.
-
-### HasBetaCapabilityIds
-
-`func (o *BTDocumentInfo) HasBetaCapabilityIds() bool`
-
-HasBetaCapabilityIds returns a boolean if a field has been set.
 
 ### GetCanMove
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,33 +17,37 @@ import (
 
 // BTDocumentElementProcessingInfo struct for BTDocumentElementProcessingInfo
 type BTDocumentElementProcessingInfo struct {
-	AccelerationUnits    *string          `json:"accelerationUnits,omitempty"`
-	AngleUnits           *string          `json:"angleUnits,omitempty"`
-	AngularVelocityUnits *string          `json:"angularVelocityUnits,omitempty"`
-	AreaUnits            *string          `json:"areaUnits,omitempty"`
-	DataType             *string          `json:"dataType,omitempty"`
-	Deleted              *bool            `json:"deleted,omitempty"`
-	ElementType          *string          `json:"elementType,omitempty"`
-	EnergyUnits          *string          `json:"energyUnits,omitempty"`
-	Filename             *string          `json:"filename,omitempty"`
-	ForceUnits           *string          `json:"forceUnits,omitempty"`
-	ForeignDataId        *string          `json:"foreignDataId,omitempty"`
-	Id                   *string          `json:"id,omitempty"`
-	LengthUnits          *string          `json:"lengthUnits,omitempty"`
-	MassUnits            *string          `json:"massUnits,omitempty"`
-	MicroversionId       *string          `json:"microversionId,omitempty"`
-	MomentUnits          *string          `json:"momentUnits,omitempty"`
-	Name                 *string          `json:"name,omitempty"`
-	PressureUnits        *string          `json:"pressureUnits,omitempty"`
-	SpecifiedUnit        *string          `json:"specifiedUnit,omitempty"`
-	ThumbnailInfo        *BTThumbnailInfo `json:"thumbnailInfo,omitempty"`
-	Thumbnails           *string          `json:"thumbnails,omitempty"`
-	TimeUnits            *string          `json:"timeUnits,omitempty"`
-	TranslationEventKey  *string          `json:"translationEventKey,omitempty"`
-	TranslationId        *string          `json:"translationId,omitempty"`
-	Type                 *string          `json:"type,omitempty"`
-	Unupdatable          *bool            `json:"unupdatable,omitempty"`
-	VolumeUnits          *string          `json:"volumeUnits,omitempty"`
+	AccelerationUnits    *string                  `json:"accelerationUnits,omitempty"`
+	AngleUnits           *string                  `json:"angleUnits,omitempty"`
+	AngularVelocityUnits *string                  `json:"angularVelocityUnits,omitempty"`
+	ApplicationTarget    *BTApplicationTargetInfo `json:"applicationTarget,omitempty"`
+	AreaUnits            *string                  `json:"areaUnits,omitempty"`
+	DataType             *string                  `json:"dataType,omitempty"`
+	Deleted              *bool                    `json:"deleted,omitempty"`
+	ElementType          *string                  `json:"elementType,omitempty"`
+	EnergyUnits          *string                  `json:"energyUnits,omitempty"`
+	Filename             *string                  `json:"filename,omitempty"`
+	ForceUnits           *string                  `json:"forceUnits,omitempty"`
+	ForeignDataId        *string                  `json:"foreignDataId,omitempty"`
+	Id                   *string                  `json:"id,omitempty"`
+	LengthUnits          *string                  `json:"lengthUnits,omitempty"`
+	MassUnits            *string                  `json:"massUnits,omitempty"`
+	MicroversionId       *string                  `json:"microversionId,omitempty"`
+	MomentUnits          *string                  `json:"momentUnits,omitempty"`
+	Name                 *string                  `json:"name,omitempty"`
+	PressureUnits        *string                  `json:"pressureUnits,omitempty"`
+	PrettyType           *string                  `json:"prettyType,omitempty"`
+	SafeToShow           *bool                    `json:"safeToShow,omitempty"`
+	SpecifiedUnit        *string                  `json:"specifiedUnit,omitempty"`
+	ThumbnailInfo        *BTThumbnailInfo         `json:"thumbnailInfo,omitempty"`
+	Thumbnails           *string                  `json:"thumbnails,omitempty"`
+	TimeUnits            *string                  `json:"timeUnits,omitempty"`
+	TranslationEventKey  *string                  `json:"translationEventKey,omitempty"`
+	TranslationId        *string                  `json:"translationId,omitempty"`
+	Type                 *string                  `json:"type,omitempty"`
+	Unupdatable          *bool                    `json:"unupdatable,omitempty"`
+	VolumeUnits          *string                  `json:"volumeUnits,omitempty"`
+	Zip                  *BTZipFileInfo           `json:"zip,omitempty"`
 }
 
 // NewBTDocumentElementProcessingInfo instantiates a new BTDocumentElementProcessingInfo object
@@ -157,6 +161,38 @@ func (o *BTDocumentElementProcessingInfo) HasAngularVelocityUnits() bool {
 // SetAngularVelocityUnits gets a reference to the given string and assigns it to the AngularVelocityUnits field.
 func (o *BTDocumentElementProcessingInfo) SetAngularVelocityUnits(v string) {
 	o.AngularVelocityUnits = &v
+}
+
+// GetApplicationTarget returns the ApplicationTarget field value if set, zero value otherwise.
+func (o *BTDocumentElementProcessingInfo) GetApplicationTarget() BTApplicationTargetInfo {
+	if o == nil || o.ApplicationTarget == nil {
+		var ret BTApplicationTargetInfo
+		return ret
+	}
+	return *o.ApplicationTarget
+}
+
+// GetApplicationTargetOk returns a tuple with the ApplicationTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentElementProcessingInfo) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
+	if o == nil || o.ApplicationTarget == nil {
+		return nil, false
+	}
+	return o.ApplicationTarget, true
+}
+
+// HasApplicationTarget returns a boolean if a field has been set.
+func (o *BTDocumentElementProcessingInfo) HasApplicationTarget() bool {
+	if o != nil && o.ApplicationTarget != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationTarget gets a reference to the given BTApplicationTargetInfo and assigns it to the ApplicationTarget field.
+func (o *BTDocumentElementProcessingInfo) SetApplicationTarget(v BTApplicationTargetInfo) {
+	o.ApplicationTarget = &v
 }
 
 // GetAreaUnits returns the AreaUnits field value if set, zero value otherwise.
@@ -639,6 +675,70 @@ func (o *BTDocumentElementProcessingInfo) SetPressureUnits(v string) {
 	o.PressureUnits = &v
 }
 
+// GetPrettyType returns the PrettyType field value if set, zero value otherwise.
+func (o *BTDocumentElementProcessingInfo) GetPrettyType() string {
+	if o == nil || o.PrettyType == nil {
+		var ret string
+		return ret
+	}
+	return *o.PrettyType
+}
+
+// GetPrettyTypeOk returns a tuple with the PrettyType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentElementProcessingInfo) GetPrettyTypeOk() (*string, bool) {
+	if o == nil || o.PrettyType == nil {
+		return nil, false
+	}
+	return o.PrettyType, true
+}
+
+// HasPrettyType returns a boolean if a field has been set.
+func (o *BTDocumentElementProcessingInfo) HasPrettyType() bool {
+	if o != nil && o.PrettyType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrettyType gets a reference to the given string and assigns it to the PrettyType field.
+func (o *BTDocumentElementProcessingInfo) SetPrettyType(v string) {
+	o.PrettyType = &v
+}
+
+// GetSafeToShow returns the SafeToShow field value if set, zero value otherwise.
+func (o *BTDocumentElementProcessingInfo) GetSafeToShow() bool {
+	if o == nil || o.SafeToShow == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SafeToShow
+}
+
+// GetSafeToShowOk returns a tuple with the SafeToShow field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentElementProcessingInfo) GetSafeToShowOk() (*bool, bool) {
+	if o == nil || o.SafeToShow == nil {
+		return nil, false
+	}
+	return o.SafeToShow, true
+}
+
+// HasSafeToShow returns a boolean if a field has been set.
+func (o *BTDocumentElementProcessingInfo) HasSafeToShow() bool {
+	if o != nil && o.SafeToShow != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSafeToShow gets a reference to the given bool and assigns it to the SafeToShow field.
+func (o *BTDocumentElementProcessingInfo) SetSafeToShow(v bool) {
+	o.SafeToShow = &v
+}
+
 // GetSpecifiedUnit returns the SpecifiedUnit field value if set, zero value otherwise.
 func (o *BTDocumentElementProcessingInfo) GetSpecifiedUnit() string {
 	if o == nil || o.SpecifiedUnit == nil {
@@ -927,6 +1027,38 @@ func (o *BTDocumentElementProcessingInfo) SetVolumeUnits(v string) {
 	o.VolumeUnits = &v
 }
 
+// GetZip returns the Zip field value if set, zero value otherwise.
+func (o *BTDocumentElementProcessingInfo) GetZip() BTZipFileInfo {
+	if o == nil || o.Zip == nil {
+		var ret BTZipFileInfo
+		return ret
+	}
+	return *o.Zip
+}
+
+// GetZipOk returns a tuple with the Zip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentElementProcessingInfo) GetZipOk() (*BTZipFileInfo, bool) {
+	if o == nil || o.Zip == nil {
+		return nil, false
+	}
+	return o.Zip, true
+}
+
+// HasZip returns a boolean if a field has been set.
+func (o *BTDocumentElementProcessingInfo) HasZip() bool {
+	if o != nil && o.Zip != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetZip gets a reference to the given BTZipFileInfo and assigns it to the Zip field.
+func (o *BTDocumentElementProcessingInfo) SetZip(v BTZipFileInfo) {
+	o.Zip = &v
+}
+
 func (o BTDocumentElementProcessingInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AccelerationUnits != nil {
@@ -937,6 +1069,9 @@ func (o BTDocumentElementProcessingInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.AngularVelocityUnits != nil {
 		toSerialize["angularVelocityUnits"] = o.AngularVelocityUnits
+	}
+	if o.ApplicationTarget != nil {
+		toSerialize["applicationTarget"] = o.ApplicationTarget
 	}
 	if o.AreaUnits != nil {
 		toSerialize["areaUnits"] = o.AreaUnits
@@ -983,6 +1118,12 @@ func (o BTDocumentElementProcessingInfo) MarshalJSON() ([]byte, error) {
 	if o.PressureUnits != nil {
 		toSerialize["pressureUnits"] = o.PressureUnits
 	}
+	if o.PrettyType != nil {
+		toSerialize["prettyType"] = o.PrettyType
+	}
+	if o.SafeToShow != nil {
+		toSerialize["safeToShow"] = o.SafeToShow
+	}
 	if o.SpecifiedUnit != nil {
 		toSerialize["specifiedUnit"] = o.SpecifiedUnit
 	}
@@ -1009,6 +1150,9 @@ func (o BTDocumentElementProcessingInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.VolumeUnits != nil {
 		toSerialize["volumeUnits"] = o.VolumeUnits
+	}
+	if o.Zip != nil {
+		toSerialize["zip"] = o.Zip
 	}
 	return json.Marshal(toSerialize)
 }

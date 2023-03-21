@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,6 +20,7 @@ type BTPartStudioDisplayData346 struct {
 	AppearanceIdToAppearanceOverride                *map[string]BTAppearanceOverride2517                `json:"appearanceIdToAppearanceOverride,omitempty"`
 	AssemblyReferenceDisplayData                    *BTAssemblyReferencesDisplayData1562                `json:"assemblyReferenceDisplayData,omitempty"`
 	CacheablePartStudioDisplayDataVersion           *string                                             `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
+	DecalIdToDecal                                  *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
 	DeterministicIdToAssociatedFeatureIds           *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
 	DeterministicIdToEntity                         *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
 	DeterministicIdToPartDisplayData                *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
@@ -41,6 +42,7 @@ type BTPartStudioDisplayData346 struct {
 	MicroversionId                                  *BTMicroversionId366                                `json:"microversionId,omitempty"`
 	MicroversionIdAndConfigurationInterval          *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
 	MicroversionInterval                            *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
+	NumberOfSketchEntities                          *int32                                              `json:"numberOfSketchEntities,omitempty"`
 	PartColorCycle                                  *BTBasePartColorCycle2614                           `json:"partColorCycle,omitempty"`
 	PartDisplayData                                 []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
 	SketchImages                                    *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
@@ -162,6 +164,38 @@ func (o *BTPartStudioDisplayData346) HasCacheablePartStudioDisplayDataVersion() 
 // SetCacheablePartStudioDisplayDataVersion gets a reference to the given string and assigns it to the CacheablePartStudioDisplayDataVersion field.
 func (o *BTPartStudioDisplayData346) SetCacheablePartStudioDisplayDataVersion(v string) {
 	o.CacheablePartStudioDisplayDataVersion = &v
+}
+
+// GetDecalIdToDecal returns the DecalIdToDecal field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetDecalIdToDecal() map[string]BTDecal2404 {
+	if o == nil || o.DecalIdToDecal == nil {
+		var ret map[string]BTDecal2404
+		return ret
+	}
+	return *o.DecalIdToDecal
+}
+
+// GetDecalIdToDecalOk returns a tuple with the DecalIdToDecal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetDecalIdToDecalOk() (*map[string]BTDecal2404, bool) {
+	if o == nil || o.DecalIdToDecal == nil {
+		return nil, false
+	}
+	return o.DecalIdToDecal, true
+}
+
+// HasDecalIdToDecal returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasDecalIdToDecal() bool {
+	if o != nil && o.DecalIdToDecal != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDecalIdToDecal gets a reference to the given map[string]BTDecal2404 and assigns it to the DecalIdToDecal field.
+func (o *BTPartStudioDisplayData346) SetDecalIdToDecal(v map[string]BTDecal2404) {
+	o.DecalIdToDecal = &v
 }
 
 // GetDeterministicIdToAssociatedFeatureIds returns the DeterministicIdToAssociatedFeatureIds field value if set, zero value otherwise.
@@ -836,6 +870,38 @@ func (o *BTPartStudioDisplayData346) SetMicroversionInterval(v BTMicroversionIdI
 	o.MicroversionInterval = &v
 }
 
+// GetNumberOfSketchEntities returns the NumberOfSketchEntities field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetNumberOfSketchEntities() int32 {
+	if o == nil || o.NumberOfSketchEntities == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NumberOfSketchEntities
+}
+
+// GetNumberOfSketchEntitiesOk returns a tuple with the NumberOfSketchEntities field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetNumberOfSketchEntitiesOk() (*int32, bool) {
+	if o == nil || o.NumberOfSketchEntities == nil {
+		return nil, false
+	}
+	return o.NumberOfSketchEntities, true
+}
+
+// HasNumberOfSketchEntities returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasNumberOfSketchEntities() bool {
+	if o != nil && o.NumberOfSketchEntities != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNumberOfSketchEntities gets a reference to the given int32 and assigns it to the NumberOfSketchEntities field.
+func (o *BTPartStudioDisplayData346) SetNumberOfSketchEntities(v int32) {
+	o.NumberOfSketchEntities = &v
+}
+
 // GetPartColorCycle returns the PartColorCycle field value if set, zero value otherwise.
 func (o *BTPartStudioDisplayData346) GetPartColorCycle() BTBasePartColorCycle2614 {
 	if o == nil || o.PartColorCycle == nil {
@@ -1103,6 +1169,9 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	if o.CacheablePartStudioDisplayDataVersion != nil {
 		toSerialize["cacheablePartStudioDisplayDataVersion"] = o.CacheablePartStudioDisplayDataVersion
 	}
+	if o.DecalIdToDecal != nil {
+		toSerialize["decalIdToDecal"] = o.DecalIdToDecal
+	}
 	if o.DeterministicIdToAssociatedFeatureIds != nil {
 		toSerialize["deterministicIdToAssociatedFeatureIds"] = o.DeterministicIdToAssociatedFeatureIds
 	}
@@ -1165,6 +1234,9 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	}
 	if o.MicroversionInterval != nil {
 		toSerialize["microversionInterval"] = o.MicroversionInterval
+	}
+	if o.NumberOfSketchEntities != nil {
+		toSerialize["numberOfSketchEntities"] = o.NumberOfSketchEntities
 	}
 	if o.PartColorCycle != nil {
 		toSerialize["partColorCycle"] = o.PartColorCycle

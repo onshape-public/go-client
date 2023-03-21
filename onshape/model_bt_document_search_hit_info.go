@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.160.12410-b0c73c1032e8
+API version: 1.161.13200-ff216a970a02
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,6 +20,7 @@ type BTDocumentSearchHitInfo struct {
 	DocumentId             *string                           `json:"documentId,omitempty"`
 	ElementName            *string                           `json:"elementName,omitempty"`
 	HighlightedFields      *map[string][]string              `json:"highlightedFields,omitempty"`
+	Hit                    *BTLegacySearchHit                `json:"hit,omitempty"`
 	HitId                  *string                           `json:"hitId,omitempty"`
 	Name                   *string                           `json:"name,omitempty"`
 	ProjectId              *string                           `json:"projectId,omitempty"`
@@ -139,6 +140,38 @@ func (o *BTDocumentSearchHitInfo) HasHighlightedFields() bool {
 // SetHighlightedFields gets a reference to the given map[string][]string and assigns it to the HighlightedFields field.
 func (o *BTDocumentSearchHitInfo) SetHighlightedFields(v map[string][]string) {
 	o.HighlightedFields = &v
+}
+
+// GetHit returns the Hit field value if set, zero value otherwise.
+func (o *BTDocumentSearchHitInfo) GetHit() BTLegacySearchHit {
+	if o == nil || o.Hit == nil {
+		var ret BTLegacySearchHit
+		return ret
+	}
+	return *o.Hit
+}
+
+// GetHitOk returns a tuple with the Hit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSearchHitInfo) GetHitOk() (*BTLegacySearchHit, bool) {
+	if o == nil || o.Hit == nil {
+		return nil, false
+	}
+	return o.Hit, true
+}
+
+// HasHit returns a boolean if a field has been set.
+func (o *BTDocumentSearchHitInfo) HasHit() bool {
+	if o != nil && o.Hit != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHit gets a reference to the given BTLegacySearchHit and assigns it to the Hit field.
+func (o *BTDocumentSearchHitInfo) SetHit(v BTLegacySearchHit) {
+	o.Hit = &v
 }
 
 // GetHitId returns the HitId field value if set, zero value otherwise.
@@ -343,6 +376,9 @@ func (o BTDocumentSearchHitInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.HighlightedFields != nil {
 		toSerialize["highlightedFields"] = o.HighlightedFields
+	}
+	if o.Hit != nil {
+		toSerialize["hit"] = o.Hit
 	}
 	if o.HitId != nil {
 		toSerialize["hitId"] = o.HitId

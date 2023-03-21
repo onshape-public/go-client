@@ -26,6 +26,7 @@ api_open_api.go
 api_part.go
 api_part_number.go
 api_part_studio.go
+api_properties_table_template.go
 api_publication.go
 api_release_package.go
 api_revision.go
@@ -101,6 +102,7 @@ docs/BTAppElementUpdateParams.md
 docs/BTAppearanceOverride2517.md
 docs/BTApplicationElementThumbnailParams.md
 docs/BTApplicationElementThumbnailParamsArray.md
+docs/BTApplicationTargetInfo.md
 docs/BTArcLengthDimensionDisplayData1018.md
 docs/BTArcLengthDimensionDisplayData1018AllOf.md
 docs/BTAssemblyDefinitionInfo.md
@@ -247,6 +249,7 @@ docs/BTCylinderDescription686.md
 docs/BTCylinderDescription686AllOf.md
 docs/BTDebugGeometry2059.md
 docs/BTDebugGeometry2059AllOf.md
+docs/BTDecal2404.md
 docs/BTDefaultFeatures119.md
 docs/BTDefaultUnitInfo.md
 docs/BTDefaultUnitsInfo.md
@@ -417,6 +420,7 @@ docs/BTIdTranslationResultInfo.md
 docs/BTIdentityInfo.md
 docs/BTImageFilter853.md
 docs/BTImageFilter853AllOf.md
+docs/BTImageMapping3821.md
 docs/BTImmutableByteArray.md
 docs/BTImmutableDoubleArray.md
 docs/BTImmutableFloatArray.md
@@ -462,6 +466,7 @@ docs/BTJsonMatch2290.md
 docs/BTJsonMatch2290Node.md
 docs/BTKeyMouseValuesInfo.md
 docs/BTLazilyParsedFeatureScript.md
+docs/BTLegacySearchHit.md
 docs/BTLineDescription1559.md
 docs/BTLineDescription1559AllOf.md
 docs/BTLinearDimensionDisplayData330.md
@@ -944,6 +949,8 @@ docs/BTPartStudioDisplayDataReference4360.md
 docs/BTPartStudioDisplayDataReference4360AllOf.md
 docs/BTPartWithConfiguredProperties2163.md
 docs/BTPlanSubscriberInfo.md
+docs/BTPlanarImageMapping4398.md
+docs/BTPlanarImageMapping4398AllOf.md
 docs/BTPlaneDescription692.md
 docs/BTPlaneDescription692AllOf.md
 docs/BTPlaneOrientationFilter1700.md
@@ -951,6 +958,8 @@ docs/BTPlaneOrientationFilter1700AllOf.md
 docs/BTPointEntity1439.md
 docs/BTPointEntity1439AllOf.md
 docs/BTProjectInfo.md
+docs/BTPropertiesTableTemplateInfo.md
+docs/BTPropertiesTableTemplateParams.md
 docs/BTPropertyTableColumnInfo2161.md
 docs/BTPropertyTableColumnInfo2161AllOf.md
 docs/BTPropertyUpdateInfo.md
@@ -1012,6 +1021,7 @@ docs/BTSettingParam.md
 docs/BTShadedViewsInfo.md
 docs/BTShareEntryParams.md
 docs/BTShareParams.md
+docs/BTSimplePropertyInfo.md
 docs/BTSimulationFace2147.md
 docs/BTSimulationFace2147AllOf.md
 docs/BTSimulationInstance3093.md
@@ -1176,6 +1186,7 @@ docs/BTWorkflowableObjectObserver.md
 docs/BTWorkspaceInfo.md
 docs/BTWorkspaceMessageBody.md
 docs/BTWorkspaceMessageBodyAllOf.md
+docs/BTZipFileInfo.md
 docs/BillingApi.md
 docs/BlobElementApi.md
 docs/BlobItem.md
@@ -1215,6 +1226,7 @@ docs/PartApi.md
 docs/PartNumberApi.md
 docs/PartStudioApi.md
 docs/Plan.md
+docs/PropertiesTableTemplateApi.md
 docs/ProratedCharges.md
 docs/PublicationApi.md
 docs/ReleasePackageApi.md
@@ -1286,6 +1298,7 @@ model_bt_app_element_update_params.go
 model_bt_appearance_override_2517.go
 model_bt_application_element_thumbnail_params.go
 model_bt_application_element_thumbnail_params_array.go
+model_bt_application_target_info.go
 model_bt_arc_length_dimension_display_data_1018.go
 model_bt_assembly_definition_info.go
 model_bt_assembly_feature_data_info.go
@@ -1388,6 +1401,7 @@ model_bt_curve_geometry_spline_118.go
 model_bt_curve_length_dimension_display_data_322.go
 model_bt_cylinder_description_686.go
 model_bt_debug_geometry_2059.go
+model_bt_decal_2404.go
 model_bt_default_features_119.go
 model_bt_default_unit_info.go
 model_bt_default_units_info.go
@@ -1500,6 +1514,7 @@ model_bt_graphics_section_plane_data_1429.go
 model_bt_graphics_section_view_state_data_4379.go
 model_bt_identity_info.go
 model_bt_image_filter_853.go
+model_bt_image_mapping_3821.go
 model_bt_immutable_byte_array.go
 model_bt_immutable_double_array.go
 model_bt_immutable_float_array.go
@@ -1521,6 +1536,7 @@ model_bt_json_match_2290.go
 model_bt_json_match_2290_node.go
 model_bt_key_mouse_values_info.go
 model_bt_lazily_parsed_feature_script.go
+model_bt_legacy_search_hit.go
 model_bt_line_description_1559.go
 model_bt_linear_dimension_display_data_330.go
 model_bt_link_to_latest_document_info.go
@@ -1656,10 +1672,13 @@ model_bt_part_studio_display_data_base_2751.go
 model_bt_part_studio_display_data_reference_4360.go
 model_bt_part_with_configured_properties_2163.go
 model_bt_plan_subscriber_info.go
+model_bt_planar_image_mapping_4398.go
 model_bt_plane_description_692.go
 model_bt_plane_orientation_filter_1700.go
 model_bt_point_entity_1439.go
 model_bt_project_info.go
+model_bt_properties_table_template_info.go
+model_bt_properties_table_template_params.go
 model_bt_property_table_column_info_2161.go
 model_bt_property_update_info.go
 model_bt_property_value_param.go
@@ -1704,6 +1723,7 @@ model_bt_setting_param.go
 model_bt_shaded_views_info.go
 model_bt_share_entry_params.go
 model_bt_share_params.go
+model_bt_simple_property_info.go
 model_bt_simulation_face_2147.go
 model_bt_simulation_instance_3093.go
 model_bt_simulation_table_column_info_1785.go
@@ -1824,6 +1844,7 @@ model_bt_workflow_state_info.go
 model_bt_workflowable_object_observer.go
 model_bt_workspace_info.go
 model_bt_workspace_message_body.go
+model_bt_zip_file_info.go
 model_btapi_application_extension_info.go
 model_btapi_application_summary_info.go
 model_btb_export_model_params.go

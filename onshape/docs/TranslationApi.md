@@ -34,12 +34,12 @@ func main() {
     did := "did_example" // string | 
     wid := "wid_example" // string | 
     file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
-    allowFaultyParts := true // bool |  (optional)
+    allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
     createComposite := true // bool |  (optional)
     createDrawingIfPossible := true // bool |  (optional)
-    encodedFilename := "encodedFilename_example" // string |  (optional)
+    encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
-    flattenAssemblies := true // bool |  (optional)
+    flattenAssemblies := true // bool | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. (optional)
     formatName := "formatName_example" // string |  (optional)
     joinAdjacentSurfaces := true // bool |  (optional)
     locationElementId := "locationElementId_example" // string |  (optional)
@@ -57,7 +57,7 @@ func main() {
     unit := "unit_example" // string |  (optional) (default to "")
     uploadId := "uploadId_example" // string |  (optional)
     versionString := "versionString_example" // string |  (optional)
-    yAxisIsUp := true // bool |  (optional)
+    yAxisIsUp := true // bool | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. (optional)
     importWithinDocument := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -91,12 +91,12 @@ Name | Type | Description  | Notes
 
 
  **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
- **allowFaultyParts** | **bool** |  | 
+ **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
  **createComposite** | **bool** |  | 
  **createDrawingIfPossible** | **bool** |  | 
- **encodedFilename** | **string** |  | 
+ **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
  **extractAssemblyHierarchy** | **bool** |  | 
- **flattenAssemblies** | **bool** |  | 
+ **flattenAssemblies** | **bool** | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. | 
  **formatName** | **string** |  | 
  **joinAdjacentSurfaces** | **bool** |  | 
  **locationElementId** | **string** |  | 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
  **unit** | **string** |  | [default to &quot;&quot;]
  **uploadId** | **string** |  | 
  **versionString** | **string** |  | 
- **yAxisIsUp** | **bool** |  | 
+ **yAxisIsUp** | **bool** | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. | 
  **importWithinDocument** | **bool** |  | 
 
 ### Return type
