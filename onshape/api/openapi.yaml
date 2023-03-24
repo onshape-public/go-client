@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.161.13361-b3ca458f6e4e
+  version: 1.161.13452-78145f970001
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -43678,6 +43678,8 @@ components:
           - V1989_FIX_LIMITS_BOUNDS
           - V1990_SM_BOOLEAN_SIMPLIFIED
           - V1991_USE_LENGTH_BOUNDS_FOR_SYMMETRICAL
+          - V1992_FLIP_LOWER_TOLERANCE_BOUND
+          - V1993_CORRECT_UNDEFINED_LOWER_BOUND
           - UNKNOWN
           type: string
         btType:
