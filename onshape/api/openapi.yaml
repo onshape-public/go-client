@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.161.13883-0fccf6f231ad
+  version: 1.161.13995-cdd961a1a6ad
   x-logo:
     backgroundColor: '#ffffff'
     altText: Onshape
@@ -55515,42 +55515,9 @@ components:
       - $ref: '#/components/schemas/BTSplineControlPolygonFilter_1130_allOf'
       type: object
     BTSplineDescription-2118:
-      properties:
-        btType:
-          type: string
-        controlPoints:
-          items:
-            format: double
-            type: number
-          type: array
-        degree:
-          format: int32
-          type: integer
-        direction:
-          $ref: '#/components/schemas/BTVector3d-389'
-        directionOrientedWithFace:
-          $ref: '#/components/schemas/BTVector3d-389'
-        isPeriodic:
-          type: boolean
-        isRational:
-          type: boolean
-        knots:
-          items:
-            format: double
-            type: number
-          type: array
-        origin:
-          $ref: '#/components/schemas/BTVector3d-389'
-        type:
-          enum:
-          - OTHER
-          - LINE
-          - CIRCLE
-          - ELLIPSE
-          - BCURVE
-          - ICURVE
-          - UNKNOWN
-          type: string
+      allOf:
+      - $ref: '#/components/schemas/BTCurveDescription-1583'
+      - $ref: '#/components/schemas/BTSplineDescription_2118_allOf'
       type: object
     BTSplineHandleFilter-2971:
       allOf:
@@ -66143,6 +66110,28 @@ components:
           type: boolean
         btType:
           type: string
+      type: object
+    BTSplineDescription_2118_allOf:
+      properties:
+        btType:
+          type: string
+        controlPoints:
+          items:
+            format: double
+            type: number
+          type: array
+        degree:
+          format: int32
+          type: integer
+        isPeriodic:
+          type: boolean
+        isRational:
+          type: boolean
+        knots:
+          items:
+            format: double
+            type: number
+          type: array
       type: object
     BTSplineHandleFilter_2971_allOf:
       properties:
