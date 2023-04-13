@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.161.14306-351f5b17f026
+API version: 1.162.14462-13ace71ec1df
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,6 +20,7 @@ type BTUserSettingsInfo struct {
 	CommonUnits                     *BTCommonUnitsInfo                     `json:"commonUnits,omitempty"`
 	CustomColors                    []string                               `json:"customColors,omitempty"`
 	DefaultUnits                    *BTDefaultUnitsInfo                    `json:"defaultUnits,omitempty"`
+	DisplayAssemblyProperties       *bool                                  `json:"displayAssemblyProperties,omitempty"`
 	DrawingBackgroundId             *int32                                 `json:"drawingBackgroundId,omitempty"`
 	EnforceApplicationAcl           *bool                                  `json:"enforceApplicationAcl,omitempty"`
 	ExportDrawingOptions            *string                                `json:"exportDrawingOptions,omitempty"`
@@ -153,6 +154,38 @@ func (o *BTUserSettingsInfo) HasDefaultUnits() bool {
 // SetDefaultUnits gets a reference to the given BTDefaultUnitsInfo and assigns it to the DefaultUnits field.
 func (o *BTUserSettingsInfo) SetDefaultUnits(v BTDefaultUnitsInfo) {
 	o.DefaultUnits = &v
+}
+
+// GetDisplayAssemblyProperties returns the DisplayAssemblyProperties field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetDisplayAssemblyProperties() bool {
+	if o == nil || o.DisplayAssemblyProperties == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DisplayAssemblyProperties
+}
+
+// GetDisplayAssemblyPropertiesOk returns a tuple with the DisplayAssemblyProperties field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetDisplayAssemblyPropertiesOk() (*bool, bool) {
+	if o == nil || o.DisplayAssemblyProperties == nil {
+		return nil, false
+	}
+	return o.DisplayAssemblyProperties, true
+}
+
+// HasDisplayAssemblyProperties returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasDisplayAssemblyProperties() bool {
+	if o != nil && o.DisplayAssemblyProperties != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayAssemblyProperties gets a reference to the given bool and assigns it to the DisplayAssemblyProperties field.
+func (o *BTUserSettingsInfo) SetDisplayAssemblyProperties(v bool) {
+	o.DisplayAssemblyProperties = &v
 }
 
 // GetDrawingBackgroundId returns the DrawingBackgroundId field value if set, zero value otherwise.
@@ -805,6 +838,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultUnits != nil {
 		toSerialize["defaultUnits"] = o.DefaultUnits
+	}
+	if o.DisplayAssemblyProperties != nil {
+		toSerialize["displayAssemblyProperties"] = o.DisplayAssemblyProperties
 	}
 	if o.DrawingBackgroundId != nil {
 		toSerialize["drawingBackgroundId"] = o.DrawingBackgroundId

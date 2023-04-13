@@ -4,13 +4,13 @@ All URIs are relative to *https://cad.onshape.com/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVEOPStandardContentMetadata**](MetadataApi.md#GetVEOPStandardContentMetadata) | **Get** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{cu}/{cuid}/p/{pid} | Retrieve metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
+[**GetVEOPStandardContentMetadata**](MetadataApi.md#GetVEOPStandardContentMetadata) | **Get** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid} | Retrieve metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
 [**GetWMVEMetadata**](MetadataApi.md#GetWMVEMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
 [**GetWMVEPMetadata**](MetadataApi.md#GetWMVEPMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Retrieve metadata by document ID, workspace or version or microversion ID, tab ID, and Part ID.
 [**GetWMVEPsMetadata**](MetadataApi.md#GetWMVEPsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p | Retrieve metadata by document ID, workspace or version or microversion ID, and tab ID.
 [**GetWMVEsMetadata**](MetadataApi.md#GetWMVEsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e | Retrieve metadata by document ID and workspace or version or microversion ID.
 [**GetWVMetadata**](MetadataApi.md#GetWVMetadata) | **Get** /metadata/d/{did}/{wv}/{wvid} | Retrieve workspace or version metadata by document ID and workspace or version ID.
-[**UpdateVEOPStandardContentPartMetadata**](MetadataApi.md#UpdateVEOPStandardContentPartMetadata) | **Post** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{cu}/{cuid}/p/{pid} | Update metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
+[**UpdateVEOPStandardContentPartMetadata**](MetadataApi.md#UpdateVEOPStandardContentPartMetadata) | **Post** /metadata/standardcontent/d/{did} | Update metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
 [**UpdateWVEMetadata**](MetadataApi.md#UpdateWVEMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Update workspace metadata by document ID, workspace or version or microversion ID, and tab ID.
 [**UpdateWVEPMetadata**](MetadataApi.md#UpdateWVEPMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Update workspace metadata by document ID, workspace or version or microversion ID, tab ID, and part ID.
 [**UpdateWVMetadata**](MetadataApi.md#UpdateWVMetadata) | **Post** /metadata/d/{did}/{wv}/{wvid} | Update workspace or version metadata by document ID and workspace or version ID.
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## GetVEOPStandardContentMetadata
 
-> BTMetadataObjectInfo GetVEOPStandardContentMetadata(ctx, did, vid, eid, cu, cuid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetVEOPStandardContentMetadata(ctx, did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
 
 Retrieve metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
 
@@ -39,8 +39,6 @@ func main() {
     did := "did_example" // string | 
     vid := "vid_example" // string | 
     eid := "eid_example" // string | 
-    cu := "cu_example" // string | Indicates which of company (c) or user (u) id is specified below.
-    cuid := "cuid_example" // string | The id of the company or user in which the operation should be performed.
     pid := "pid_example" // string | 
     configuration := "configuration_example" // string |  (optional)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
@@ -50,7 +48,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.GetVEOPStandardContentMetadata(context.Background(), did, vid, eid, cu, cuid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetVEOPStandardContentMetadata(context.Background(), did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetVEOPStandardContentMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -69,8 +67,6 @@ Name | Type | Description  | Notes
 **did** | **string** |  | 
 **vid** | **string** |  | 
 **eid** | **string** |  | 
-**cu** | **string** | Indicates which of company (c) or user (u) id is specified below. | 
-**cuid** | **string** | The id of the company or user in which the operation should be performed. | 
 **pid** | **string** |  | 
 
 ### Other Parameters
@@ -80,8 +76,6 @@ Other parameters are passed through a pointer to a apiGetVEOPStandardContentMeta
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
 
 
 
@@ -563,7 +557,7 @@ Name | Type | Description  | Notes
 
 ## UpdateVEOPStandardContentPartMetadata
 
-> map[string]interface{} UpdateVEOPStandardContentPartMetadata(ctx, did, vid, eid, cu, cuid, pid).Body(body).LinkDocumentId(linkDocumentId).Execute()
+> map[string]interface{} UpdateVEOPStandardContentPartMetadata(ctx, did).LinkDocumentId(linkDocumentId).Body(body).Execute()
 
 Update metadata of a standard content part in a version by document ID, version ID, tab ID, owner ID, and part ID.
 
@@ -581,17 +575,12 @@ import (
 
 func main() {
     did := "did_example" // string | 
-    vid := "vid_example" // string | 
-    eid := "eid_example" // string | 
-    cu := "cu_example" // string | Indicates which of company (c) or user (u) id is specified below.
-    cuid := "cuid_example" // string | The id of the company or user in which the operation should be performed.
-    pid := "pid_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | 
     body := "body_example" // string | 
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.UpdateVEOPStandardContentPartMetadata(context.Background(), did, vid, eid, cu, cuid, pid).Body(body).LinkDocumentId(linkDocumentId).Execute()
+    resp, r, err := apiClient.MetadataApi.UpdateVEOPStandardContentPartMetadata(context.Background(), did).LinkDocumentId(linkDocumentId).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateVEOPStandardContentPartMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -608,11 +597,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** |  | 
-**vid** | **string** |  | 
-**eid** | **string** |  | 
-**cu** | **string** | Indicates which of company (c) or user (u) id is specified below. | 
-**cuid** | **string** | The id of the company or user in which the operation should be performed. | 
-**pid** | **string** |  | 
 
 ### Other Parameters
 
@@ -622,13 +606,8 @@ Other parameters are passed through a pointer to a apiUpdateVEOPStandardContentP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
-
-
-
-
- **body** | **string** |  | 
  **linkDocumentId** | **string** |  | 
+ **body** | **string** |  | 
 
 ### Return type
 

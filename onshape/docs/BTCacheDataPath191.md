@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**ImmutablePathContentsShouldExist** | Pointer to **bool** |  | [optional] 
 **IsImmutableContextPath** | Pointer to **bool** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
 **KeyContainsConfiguration** | Pointer to **bool** |  | [optional] 
@@ -105,6 +106,31 @@ SetElementId sets ElementId field to given value.
 `func (o *BTCacheDataPath191) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
+
+### GetImmutablePathContentsShouldExist
+
+`func (o *BTCacheDataPath191) GetImmutablePathContentsShouldExist() bool`
+
+GetImmutablePathContentsShouldExist returns the ImmutablePathContentsShouldExist field if non-nil, zero value otherwise.
+
+### GetImmutablePathContentsShouldExistOk
+
+`func (o *BTCacheDataPath191) GetImmutablePathContentsShouldExistOk() (*bool, bool)`
+
+GetImmutablePathContentsShouldExistOk returns a tuple with the ImmutablePathContentsShouldExist field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImmutablePathContentsShouldExist
+
+`func (o *BTCacheDataPath191) SetImmutablePathContentsShouldExist(v bool)`
+
+SetImmutablePathContentsShouldExist sets ImmutablePathContentsShouldExist field to given value.
+
+### HasImmutablePathContentsShouldExist
+
+`func (o *BTCacheDataPath191) HasImmutablePathContentsShouldExist() bool`
+
+HasImmutablePathContentsShouldExist returns a boolean if a field has been set.
 
 ### GetIsImmutableContextPath
 

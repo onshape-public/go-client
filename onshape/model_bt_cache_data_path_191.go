@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.161.14306-351f5b17f026
+API version: 1.162.14462-13ace71ec1df
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,13 +17,14 @@ import (
 
 // BTCacheDataPath191 struct for BTCacheDataPath191
 type BTCacheDataPath191 struct {
-	BtType                   *string `json:"btType,omitempty"`
-	DocumentId               *string `json:"documentId,omitempty"`
-	ElementId                *string `json:"elementId,omitempty"`
-	IsImmutableContextPath   *bool   `json:"isImmutableContextPath,omitempty"`
-	Key                      *string `json:"key,omitempty"`
-	KeyContainsConfiguration *bool   `json:"keyContainsConfiguration,omitempty"`
-	UseLocalFileCache        *bool   `json:"useLocalFileCache,omitempty"`
+	BtType                           *string `json:"btType,omitempty"`
+	DocumentId                       *string `json:"documentId,omitempty"`
+	ElementId                        *string `json:"elementId,omitempty"`
+	ImmutablePathContentsShouldExist *bool   `json:"immutablePathContentsShouldExist,omitempty"`
+	IsImmutableContextPath           *bool   `json:"isImmutableContextPath,omitempty"`
+	Key                              *string `json:"key,omitempty"`
+	KeyContainsConfiguration         *bool   `json:"keyContainsConfiguration,omitempty"`
+	UseLocalFileCache                *bool   `json:"useLocalFileCache,omitempty"`
 }
 
 // NewBTCacheDataPath191 instantiates a new BTCacheDataPath191 object
@@ -137,6 +138,38 @@ func (o *BTCacheDataPath191) HasElementId() bool {
 // SetElementId gets a reference to the given string and assigns it to the ElementId field.
 func (o *BTCacheDataPath191) SetElementId(v string) {
 	o.ElementId = &v
+}
+
+// GetImmutablePathContentsShouldExist returns the ImmutablePathContentsShouldExist field value if set, zero value otherwise.
+func (o *BTCacheDataPath191) GetImmutablePathContentsShouldExist() bool {
+	if o == nil || o.ImmutablePathContentsShouldExist == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ImmutablePathContentsShouldExist
+}
+
+// GetImmutablePathContentsShouldExistOk returns a tuple with the ImmutablePathContentsShouldExist field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCacheDataPath191) GetImmutablePathContentsShouldExistOk() (*bool, bool) {
+	if o == nil || o.ImmutablePathContentsShouldExist == nil {
+		return nil, false
+	}
+	return o.ImmutablePathContentsShouldExist, true
+}
+
+// HasImmutablePathContentsShouldExist returns a boolean if a field has been set.
+func (o *BTCacheDataPath191) HasImmutablePathContentsShouldExist() bool {
+	if o != nil && o.ImmutablePathContentsShouldExist != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImmutablePathContentsShouldExist gets a reference to the given bool and assigns it to the ImmutablePathContentsShouldExist field.
+func (o *BTCacheDataPath191) SetImmutablePathContentsShouldExist(v bool) {
+	o.ImmutablePathContentsShouldExist = &v
 }
 
 // GetIsImmutableContextPath returns the IsImmutableContextPath field value if set, zero value otherwise.
@@ -277,6 +310,9 @@ func (o BTCacheDataPath191) MarshalJSON() ([]byte, error) {
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
+	}
+	if o.ImmutablePathContentsShouldExist != nil {
+		toSerialize["immutablePathContentsShouldExist"] = o.ImmutablePathContentsShouldExist
 	}
 	if o.IsImmutableContextPath != nil {
 		toSerialize["isImmutableContextPath"] = o.IsImmutableContextPath

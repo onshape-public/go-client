@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.161.14306-351f5b17f026
+API version: 1.162.14462-13ace71ec1df
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,17 +17,19 @@ import (
 
 // BTNextPartNumberParam struct for BTNextPartNumberParam
 type BTNextPartNumberParam struct {
-	Categories    []BTCategoryParam `json:"categories,omitempty"`
-	Configuration *string           `json:"configuration,omitempty"`
-	DocumentId    *string           `json:"documentId,omitempty"`
-	ElementId     *string           `json:"elementId,omitempty"`
-	ElementType   *int32            `json:"elementType,omitempty"`
-	Id            *string           `json:"id,omitempty"`
-	MimeType      *string           `json:"mimeType,omitempty"`
-	PartId        *string           `json:"partId,omitempty"`
-	PartNumber    *string           `json:"partNumber,omitempty"`
-	VersionId     *string           `json:"versionId,omitempty"`
-	WorkspaceId   *string           `json:"workspaceId,omitempty"`
+	Categories                 []BTCategoryParam `json:"categories,omitempty"`
+	Configuration              *string           `json:"configuration,omitempty"`
+	DocumentId                 *string           `json:"documentId,omitempty"`
+	ElementId                  *string           `json:"elementId,omitempty"`
+	ElementType                *int32            `json:"elementType,omitempty"`
+	Id                         *string           `json:"id,omitempty"`
+	ItemId                     *string           `json:"itemId,omitempty"`
+	MimeType                   *string           `json:"mimeType,omitempty"`
+	NumberSchemeResourceTypeId *string           `json:"numberSchemeResourceTypeId,omitempty"`
+	PartId                     *string           `json:"partId,omitempty"`
+	PartNumber                 *string           `json:"partNumber,omitempty"`
+	VersionId                  *string           `json:"versionId,omitempty"`
+	WorkspaceId                *string           `json:"workspaceId,omitempty"`
 }
 
 // NewBTNextPartNumberParam instantiates a new BTNextPartNumberParam object
@@ -239,6 +241,38 @@ func (o *BTNextPartNumberParam) SetId(v string) {
 	o.Id = &v
 }
 
+// GetItemId returns the ItemId field value if set, zero value otherwise.
+func (o *BTNextPartNumberParam) GetItemId() string {
+	if o == nil || o.ItemId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ItemId
+}
+
+// GetItemIdOk returns a tuple with the ItemId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTNextPartNumberParam) GetItemIdOk() (*string, bool) {
+	if o == nil || o.ItemId == nil {
+		return nil, false
+	}
+	return o.ItemId, true
+}
+
+// HasItemId returns a boolean if a field has been set.
+func (o *BTNextPartNumberParam) HasItemId() bool {
+	if o != nil && o.ItemId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetItemId gets a reference to the given string and assigns it to the ItemId field.
+func (o *BTNextPartNumberParam) SetItemId(v string) {
+	o.ItemId = &v
+}
+
 // GetMimeType returns the MimeType field value if set, zero value otherwise.
 func (o *BTNextPartNumberParam) GetMimeType() string {
 	if o == nil || o.MimeType == nil {
@@ -269,6 +303,38 @@ func (o *BTNextPartNumberParam) HasMimeType() bool {
 // SetMimeType gets a reference to the given string and assigns it to the MimeType field.
 func (o *BTNextPartNumberParam) SetMimeType(v string) {
 	o.MimeType = &v
+}
+
+// GetNumberSchemeResourceTypeId returns the NumberSchemeResourceTypeId field value if set, zero value otherwise.
+func (o *BTNextPartNumberParam) GetNumberSchemeResourceTypeId() string {
+	if o == nil || o.NumberSchemeResourceTypeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NumberSchemeResourceTypeId
+}
+
+// GetNumberSchemeResourceTypeIdOk returns a tuple with the NumberSchemeResourceTypeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTNextPartNumberParam) GetNumberSchemeResourceTypeIdOk() (*string, bool) {
+	if o == nil || o.NumberSchemeResourceTypeId == nil {
+		return nil, false
+	}
+	return o.NumberSchemeResourceTypeId, true
+}
+
+// HasNumberSchemeResourceTypeId returns a boolean if a field has been set.
+func (o *BTNextPartNumberParam) HasNumberSchemeResourceTypeId() bool {
+	if o != nil && o.NumberSchemeResourceTypeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNumberSchemeResourceTypeId gets a reference to the given string and assigns it to the NumberSchemeResourceTypeId field.
+func (o *BTNextPartNumberParam) SetNumberSchemeResourceTypeId(v string) {
+	o.NumberSchemeResourceTypeId = &v
 }
 
 // GetPartId returns the PartId field value if set, zero value otherwise.
@@ -419,8 +485,14 @@ func (o BTNextPartNumberParam) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
+	if o.ItemId != nil {
+		toSerialize["itemId"] = o.ItemId
+	}
 	if o.MimeType != nil {
 		toSerialize["mimeType"] = o.MimeType
+	}
+	if o.NumberSchemeResourceTypeId != nil {
+		toSerialize["numberSchemeResourceTypeId"] = o.NumberSchemeResourceTypeId
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CommonUnits** | Pointer to [**BTCommonUnitsInfo**](BTCommonUnitsInfo.md) |  | [optional] 
 **CustomColors** | Pointer to **[]string** |  | [optional] 
 **DefaultUnits** | Pointer to [**BTDefaultUnitsInfo**](BTDefaultUnitsInfo.md) |  | [optional] 
+**DisplayAssemblyProperties** | Pointer to **bool** |  | [optional] 
 **DrawingBackgroundId** | Pointer to **int32** |  | [optional] 
 **EnforceApplicationAcl** | Pointer to **bool** |  | [optional] 
 **ExportDrawingOptions** | Pointer to **string** |  | [optional] 
@@ -121,6 +122,31 @@ SetDefaultUnits sets DefaultUnits field to given value.
 `func (o *BTUserSettingsInfo) HasDefaultUnits() bool`
 
 HasDefaultUnits returns a boolean if a field has been set.
+
+### GetDisplayAssemblyProperties
+
+`func (o *BTUserSettingsInfo) GetDisplayAssemblyProperties() bool`
+
+GetDisplayAssemblyProperties returns the DisplayAssemblyProperties field if non-nil, zero value otherwise.
+
+### GetDisplayAssemblyPropertiesOk
+
+`func (o *BTUserSettingsInfo) GetDisplayAssemblyPropertiesOk() (*bool, bool)`
+
+GetDisplayAssemblyPropertiesOk returns a tuple with the DisplayAssemblyProperties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayAssemblyProperties
+
+`func (o *BTUserSettingsInfo) SetDisplayAssemblyProperties(v bool)`
+
+SetDisplayAssemblyProperties sets DisplayAssemblyProperties field to given value.
+
+### HasDisplayAssemblyProperties
+
+`func (o *BTUserSettingsInfo) HasDisplayAssemblyProperties() bool`
+
+HasDisplayAssemblyProperties returns a boolean if a field has been set.
 
 ### GetDrawingBackgroundId
 
