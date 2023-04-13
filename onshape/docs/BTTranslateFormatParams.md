@@ -68,6 +68,7 @@ Name | Type | Description | Notes
 **TriggerAutoDownload** | Pointer to **bool** |  | [optional] 
 **Unit** | Pointer to **string** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
+**UseIgesCompatibilityMode** | Pointer to **bool** |  | [optional] 
 **ValidForDays** | Pointer to **int32** |  | [optional] 
 **VersionString** | Pointer to **string** |  | [optional] 
 
@@ -1684,6 +1685,31 @@ SetUploadId sets UploadId field to given value.
 `func (o *BTTranslateFormatParams) HasUploadId() bool`
 
 HasUploadId returns a boolean if a field has been set.
+
+### GetUseIgesCompatibilityMode
+
+`func (o *BTTranslateFormatParams) GetUseIgesCompatibilityMode() bool`
+
+GetUseIgesCompatibilityMode returns the UseIgesCompatibilityMode field if non-nil, zero value otherwise.
+
+### GetUseIgesCompatibilityModeOk
+
+`func (o *BTTranslateFormatParams) GetUseIgesCompatibilityModeOk() (*bool, bool)`
+
+GetUseIgesCompatibilityModeOk returns a tuple with the UseIgesCompatibilityMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseIgesCompatibilityMode
+
+`func (o *BTTranslateFormatParams) SetUseIgesCompatibilityMode(v bool)`
+
+SetUseIgesCompatibilityMode sets UseIgesCompatibilityMode field to given value.
+
+### HasUseIgesCompatibilityMode
+
+`func (o *BTTranslateFormatParams) HasUseIgesCompatibilityMode() bool`
+
+HasUseIgesCompatibilityMode returns a boolean if a field has been set.
 
 ### GetValidForDays
 

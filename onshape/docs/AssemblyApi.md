@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**GetNamedViews**](AssemblyApi.md#GetNamedViews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | 
 [**GetOrCreateBillOfMaterialsElement**](AssemblyApi.md#GetOrCreateBillOfMaterialsElement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Create a bill of materials (BOM) table by document ID, workspace ID, and tab ID.
 [**InsertTransformedInstances**](AssemblyApi.md#InsertTransformedInstances) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/transformedinstances | Create an instance transform by document ID, workspace ID, and tab ID.
+[**Modify**](AssemblyApi.md#Modify) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/modify | Modify assembly by document ID, workspace ID and tab ID.
 [**TransformOccurrences**](AssemblyApi.md#TransformOccurrences) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms | Create an occurrence transform by document ID, workspace ID, and tab ID.
 [**TranslateFormat**](AssemblyApi.md#TranslateFormat) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations | Create assembly translation by document ID, workspace or version ID, and tab ID.
 [**UpdateFeature**](AssemblyApi.md#UpdateFeature) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Upload a feature by document ID, workspace ID, tab ID, and feature ID.
@@ -1420,6 +1421,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTAssemblyInsertTransformedInstancesResponse**](BTAssemblyInsertTransformedInstancesResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Modify
+
+> map[string]interface{} Modify(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).BTAssemblyModificationParams(bTAssemblyModificationParams).Execute()
+
+Modify assembly by document ID, workspace ID and tab ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    bTAssemblyModificationParams := *openapiclient.NewBTAssemblyModificationParams() // BTAssemblyModificationParams |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyApi.Modify(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).BTAssemblyModificationParams(bTAssemblyModificationParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.Modify``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `Modify`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.Modify`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **bTAssemblyModificationParams** | [**BTAssemblyModificationParams**](BTAssemblyModificationParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
 
 ### Authorization
 

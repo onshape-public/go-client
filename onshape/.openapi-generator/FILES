@@ -117,6 +117,7 @@ docs/BTAssemblyInstanceDefinitionParams.md
 docs/BTAssemblyInstanceInfo.md
 docs/BTAssemblyInstanceOccurrenceInfo.md
 docs/BTAssemblyMateConnectorInfo.md
+docs/BTAssemblyModificationParams.md
 docs/BTAssemblyOccurrenceInfo.md
 docs/BTAssemblyPartInfo.md
 docs/BTAssemblyPattern1974.md
@@ -1310,6 +1311,7 @@ model_bt_assembly_instance_definition_params.go
 model_bt_assembly_instance_info.go
 model_bt_assembly_instance_occurrence_info.go
 model_bt_assembly_mate_connector_info.go
+model_bt_assembly_modification_params.go
 model_bt_assembly_occurrence_info.go
 model_bt_assembly_part_info.go
 model_bt_assembly_pattern_1974.go

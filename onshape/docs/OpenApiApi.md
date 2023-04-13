@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetOpenApi
 
-> GetOpenApi(ctx).ForceReload(forceReload).Version(version).VersionAlias(versionAlias).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
+> GetOpenApi(ctx).ForceReload(forceReload).Version(version).VersionAlias(versionAlias).NoFilter(noFilter).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
 
 
 
@@ -31,6 +31,7 @@ func main() {
     forceReload := true // bool | Force reload the OpenApi definition. Only works when asking for the latest version. (optional)
     version := "version_example" // string | Specify a version of Onshape from which the OpenAPI is generated. If '*' is specified in any of the version fields, that indicates any version if acceptable. (optional)
     versionAlias := "versionAlias_example" // string | Version aliases based on the currently released version. (optional)
+    noFilter := true // bool | Do not filter the specification at all. (optional) (default to false)
     includedTags := []string{"Inner_example"} // []string | Return only operations with tags included in includedTags. (optional)
     excludedTags := []string{"Inner_example"} // []string | If an operation contains an excluded tag, it is not returned from this endpoint. (optional)
     includeDeprecated := true // bool | Include deprecated endpoints. (optional) (default to false)
@@ -42,7 +43,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OpenApiApi.GetOpenApi(context.Background()).ForceReload(forceReload).Version(version).VersionAlias(versionAlias).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
+    resp, r, err := apiClient.OpenApiApi.GetOpenApi(context.Background()).ForceReload(forceReload).Version(version).VersionAlias(versionAlias).NoFilter(noFilter).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OpenApiApi.GetOpenApi``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **forceReload** | **bool** | Force reload the OpenApi definition. Only works when asking for the latest version. | 
  **version** | **string** | Specify a version of Onshape from which the OpenAPI is generated. If &#39;*&#39; is specified in any of the version fields, that indicates any version if acceptable. | 
  **versionAlias** | **string** | Version aliases based on the currently released version. | 
+ **noFilter** | **bool** | Do not filter the specification at all. | [default to false]
  **includedTags** | **[]string** | Return only operations with tags included in includedTags. | 
  **excludedTags** | **[]string** | If an operation contains an excluded tag, it is not returned from this endpoint. | 
  **includeDeprecated** | **bool** | Include deprecated endpoints. | [default to false]

@@ -25,12 +25,12 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.161.14306-351f5b17f026
+  version: 1.162.14462-13ace71ec1df
   x-logo:
+    url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
     altText: Onshape
     href: images/logo-onshape-gray-green.svg
-    url: images/logo-onshape-gray-green.svg
   x-filter-info: ?restUserRole=PUBLIC
 servers:
 - description: Current
@@ -3224,6 +3224,69 @@ paths:
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
+  /assemblies/d/{did}/w/{wid}/e/{eid}/modify:
+    post:
+      deprecated: false
+      operationId: modify
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: The id of the workspace in which to perform the operation.
+        explode: false
+        in: path
+        name: wid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the element in which to perform the operation.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTAssemblyModificationParams'
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: "Modify assembly by document ID, workspace ID and tab ID."
+      tags:
+      - Assembly
+      x-BTVisibility: PRODUCTION
   /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms:
     post:
       deprecated: false
@@ -6414,6 +6477,7 @@ paths:
   /documents/search:
     post:
       deprecated: false
+      description: This returns list of documents based on search parameters.
       operationId: search
       requestBody:
         content:
@@ -8878,7 +8942,49 @@ paths:
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
-  /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/{cu}/{cuid}/p/{pid}:
+  /metadata/standardcontent/d/{did}:
+    post:
+      deprecated: false
+      operationId: updateVEOPStandardContentPartMetadata
+      parameters:
+      - explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: linkDocumentId
+        required: true
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              type: string
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: "Update metadata of a standard content part in a version by document\
+        \ ID, version ID, tab ID, owner ID, and part ID."
+      tags:
+      - Metadata
+      x-BTVisibility: PRODUCTION
+  /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid}:
     get:
       deprecated: false
       operationId: getVEOPStandardContentMetadata
@@ -8900,26 +9006,6 @@ paths:
       - explode: false
         in: path
         name: eid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Indicates which of company (c) or user (u) id is specified below.
-        explode: false
-        in: path
-        name: cu
-        required: true
-        schema:
-          enum:
-          - c
-          - u
-          type: string
-        style: simple
-      - description: The id of the company or user in which the operation should be
-          performed.
-        explode: false
-        in: path
-        name: cuid
         required: true
         schema:
           type: string
@@ -8982,88 +9068,6 @@ paths:
         BasicAuth:
         - OAuth2Read
       summary: "Retrieve metadata of a standard content part in a version by document\
-        \ ID, version ID, tab ID, owner ID, and part ID."
-      tags:
-      - Metadata
-      x-BTVisibility: PRODUCTION
-    post:
-      deprecated: false
-      operationId: updateVEOPStandardContentPartMetadata
-      parameters:
-      - explode: false
-        in: path
-        name: did
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: vid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: eid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Indicates which of company (c) or user (u) id is specified below.
-        explode: false
-        in: path
-        name: cu
-        required: true
-        schema:
-          enum:
-          - c
-          - u
-          type: string
-        style: simple
-      - description: The id of the company or user in which the operation should be
-          performed.
-        explode: false
-        in: path
-        name: cuid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: pid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: true
-        in: query
-        name: linkDocumentId
-        required: false
-        schema:
-          type: string
-        style: form
-      requestBody:
-        content:
-          application/json;charset=UTF-8; qs=0.09:
-            schema:
-              type: string
-        required: true
-      responses:
-        default:
-          content:
-            application/json;charset=UTF-8; qs=0.09:
-              schema:
-                type: object
-          description: default response
-      security:
-      - OAuth2:
-        - OAuth2Write
-        BasicAuth:
-        - OAuth2Write
-      summary: "Update metadata of a standard content part in a version by document\
         \ ID, version ID, tab ID, owner ID, and part ID."
       tags:
       - Metadata
@@ -9177,6 +9181,51 @@ paths:
       tags:
       - MetadataCategory
       x-BTVisibility: PRODUCTION
+  /numberingscheme/nextnumbers:
+    post:
+      deprecated: false
+      operationId: nextNumbers
+      parameters:
+      - explode: true
+        in: query
+        name: cid
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: did
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTNextPartNumbersParam'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                additionalProperties:
+                  items:
+                    $ref: '#/components/schemas/BTNextPartNumber'
+                  type: array
+                type: object
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Update a set of valid part numbers for the supplied parts.
+      tags:
+      - PartNumber
+      x-BTVisibility: PRODUCTION
   /openapi:
     get:
       deprecated: false
@@ -9211,6 +9260,15 @@ paths:
           - LAST_MINOR
           - LAST_BUILD
           type: string
+        style: form
+      - description: Do not filter the specification at all.
+        explode: true
+        in: query
+        name: noFilter
+        required: false
+        schema:
+          default: false
+          type: boolean
         style: form
       - description: Return only operations with tags included in includedTags.
         explode: true
@@ -9321,7 +9379,7 @@ paths:
   /partnumber/nextnumbers:
     post:
       deprecated: false
-      operationId: nextNumbers
+      operationId: nextNumbers_1
       parameters:
       - explode: true
         in: query
@@ -19475,6 +19533,93 @@ components:
         mateConnectorCS:
           $ref: '#/components/schemas/BTMateConnectorCSInfo'
       type: object
+    BTAssemblyModificationParams:
+      example:
+        unsuppressInstances:
+        - unsuppressInstances
+        - unsuppressInstances
+        deleteInstances:
+        - deleteInstances
+        - deleteInstances
+        editDescription: editDescription
+        transformDefinitions:
+        - occurrences:
+          - parent: null
+            path:
+            - path
+            - path
+            occurrenceWithoutHead: null
+            tailInstanceId: tailInstanceId
+            headInstanceId: headInstanceId
+            fullPathAsString: fullPathAsString
+            btType: btType
+            rootOccurrence: true
+            occurrenceWithoutTail: null
+          - parent: null
+            path:
+            - path
+            - path
+            occurrenceWithoutHead: null
+            tailInstanceId: tailInstanceId
+            headInstanceId: headInstanceId
+            fullPathAsString: fullPathAsString
+            btType: btType
+            rootOccurrence: true
+            occurrenceWithoutTail: null
+          transform:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          isRelative: true
+        - occurrences:
+          - parent: null
+            path:
+            - path
+            - path
+            occurrenceWithoutHead: null
+            tailInstanceId: tailInstanceId
+            headInstanceId: headInstanceId
+            fullPathAsString: fullPathAsString
+            btType: btType
+            rootOccurrence: true
+            occurrenceWithoutTail: null
+          - parent: null
+            path:
+            - path
+            - path
+            occurrenceWithoutHead: null
+            tailInstanceId: tailInstanceId
+            headInstanceId: headInstanceId
+            fullPathAsString: fullPathAsString
+            btType: btType
+            rootOccurrence: true
+            occurrenceWithoutTail: null
+          transform:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          isRelative: true
+        suppressInstances:
+        - suppressInstances
+        - suppressInstances
+      properties:
+        deleteInstances:
+          items:
+            type: string
+          type: array
+        editDescription:
+          type: string
+        suppressInstances:
+          items:
+            type: string
+          type: array
+        transformDefinitions:
+          items:
+            $ref: '#/components/schemas/BTAssemblyTransformDefinitionParams'
+          type: array
+        unsuppressInstances:
+          items:
+            type: string
+          type: array
+      type: object
     BTAssemblyOccurrenceInfo:
       example:
         path:
@@ -20415,7 +20560,6 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 1
-          btType: btType
           errorCode: 7
           estimatedMemoryUsageInBytes: 1
           compressed: true
@@ -20423,18 +20567,14 @@ components:
         - hasTessellationError: true
           face: true
           settingIndex: 1
-          btType: btType
           errorCode: 7
           estimatedMemoryUsageInBytes: 1
           compressed: true
           decompressed: null
-        btType: btType
         decompressed: null
         copyWithoutGeometry: null
         fromSketch: true
       properties:
-        btType:
-          type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
         decompressed:
@@ -20479,12 +20619,8 @@ components:
         mapping:
           BTSystemPartColorCycle-1580: '#/components/schemas/BTSystemPartColorCycle-1580'
         propertyName: btType
-      example:
-        btType: btType
-      properties:
-        btType:
-          type: string
       type: object
+      x-is-free-form: false
     BTBaseSMJointTableRowMetadata-2232:
       allOf:
       - $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
@@ -21392,12 +21528,15 @@ components:
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
+        btType: btType
         maxCorner:
           x: 2.3021358869347655
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
       properties:
+        btType:
+          type: string
         maxCorner:
           $ref: '#/components/schemas/BTVector3d-389'
         minCorner:
@@ -21441,6 +21580,8 @@ components:
           type: string
         elementId:
           type: string
+        immutablePathContentsShouldExist:
+          type: boolean
         isImmutableContextPath:
           type: boolean
         key:
@@ -25009,51 +25150,78 @@ components:
       example:
         documentFilter: 0
         sortColumn: sortColumn
-        offset: 1
+        offset: 0
         luceneSyntax: true
         sortOrder: sortOrder
-        limit: 6
+        limit: 1
         ownerId: ownerId
         type: type
         when: ALL
         foundIn: ALL
-        parentId: parentId
+        parentId: ALL
         rawQuery: rawQuery
       properties:
         documentFilter:
+          description: "Filter ID. Options are 0 (my documents), 1 (created), 2 (shared),\
+            \ 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or\
+            \ 9 (by team)."
           format: int32
           type: integer
         foundIn:
+          description: Search result found in
           enum:
           - ALL
           - WORKSPACES
           - VERSIONS
+          example: ALL
           type: string
         limit:
+          description: Number of results to return per page. Default value is 20 (also
+            the maximum).
+          example: 1
           format: int32
           type: integer
         luceneSyntax:
+          description: 'Lucene syntax '
+          example: true
           type: boolean
         offset:
+          description: Offset. Determines where search results begin. Default value
+            is 0.
+          example: 0
           format: int32
           type: integer
         ownerId:
+          description: "Document owner's ID (if the filter is 6 or 7), or Team Id\
+            \ (if the filter is 9) "
           type: string
         parentId:
+          description: 'Search document parent Id '
+          example: ALL
           type: string
         rawQuery:
+          description: Search for documents that contain the given string in the name.
+            Search is not case-sensitive.
           type: string
         sortColumn:
+          description: "Column by which to sort search results. Options are name,\
+            \ modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt."
           type: string
         sortOrder:
+          description: "Sort order. Options are desc (descending, the default), or\
+            \ asc (ascending)."
           type: string
         type:
+          description: "Type of owner. Options are 0 (user), 1 (company), 2 (onshape).\
+            \ If the owner is a teamId, leave this unspecified."
           type: string
         when:
+          description: Search result when
           enum:
           - ALL
           - LATEST
           - LATEST_PER_HIT
+          example: ALL
           type: string
       type: object
     BTDocumentSelectorInfo:
@@ -26397,14 +26565,11 @@ components:
         hasTessellationError: true
         face: true
         settingIndex: 1
-        btType: btType
         errorCode: 7
         estimatedMemoryUsageInBytes: 1
         compressed: true
         decompressed: null
       properties:
-        btType:
-          type: string
         compressed:
           type: boolean
         decompressed:
@@ -26654,6 +26819,7 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
+              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -26716,6 +26882,7 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
+              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -26907,6 +27074,7 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
+              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -26969,6 +27137,7 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
+              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -28264,6 +28433,46 @@ components:
           - BSURF_PROFILE_NON_G1
           - SM_FLAT_OP_FACES_DONT_MATCH
           - HOLE_REVERSED_BOUNDS
+          - HELIX_INPUT_AXIS
+          - HELIX_BOTH_RADII_ZERO
+          - HELIX_START_POINT_MISALIGNED
+          - HELIX_END_POINT_MISALIGNED
+          - FACE_BLEND_SELECT_FACES
+          - FACE_BLEND_FAILED
+          - FACE_BLEND_DIMENSION_TOO_SMALL
+          - FACE_BLEND_DIMENSION_TOO_LARGE
+          - FACE_BLEND_CANNOT_ATTACH
+          - FACE_BLEND_WRONG_LEFT_WALL_SENSE
+          - FACE_BLEND_WRONG_RIGHT_WALL_SENSE
+          - FACE_BLEND_WRONG_SENSES
+          - FACE_BLEND_LEFT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_RIGHT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_INCONSISTENT_DATA
+          - FACE_BLEND_INVALID_TANGENT_HOLD_LINE
+          - FACE_BLEND_INVALID_CONIC_HOLD_LINE
+          - FACE_BLEND_BAD_SPINE
+          - FACE_BLEND_RHO_TOO_LARGE
+          - FACE_BLEND_RHO_INVALID
+          - FACE_BLEND_SELF_INTERSECTION
+          - FACE_BLEND_INVALID_CAP
+          - FACE_BLEND_INVALID_LIMIT
+          - FACE_BLEND_INVALID_LIMIT_DIRECTION
+          - FACE_BLEND_SPINE_ZERO_ANGLE_PROPAGATION
+          - FACE_BLEND_SPINE_TANGENT_PROPAGATION
+          - FACE_BLEND_SELECT_SPINE
+          - FACE_BLEND_HOLD_LINE_IN_WALLS
+          - FACE_BLEND_TANGENT_HL_ASYMMETRIC
+          - FACE_BLEND_WIDTH_HOLD_LINES
+          - FACE_BLEND_EDGE_LIMIT_NEEDS_SIDE
+          - FACE_BLEND_INVALID_PLANE_LIMIT
+          - FACE_BLEND_INVALID_PROPAGATION_ANGLE
+          - OFFSET_WIRE_GENERIC_ERROR
+          - OFFSET_WIRE_SELECT_WALL_PATH
+          - OFFSET_WIRE_DIR1_FAILED
+          - OFFSET_WIRE_DIR2_FAILED
+          - FACE_BLEND_SOLID_LONG_ATTACH
+          - OFFSET_WIRE_SHAPES_NON_CONSISTENT
+          - OFFSET_WIRE_MULTIPLE_SHAPES
           - UNKNOWN
           type: string
         microversionId:
@@ -28457,6 +28666,7 @@ components:
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
+            btType: btType
             maxCorner:
               x: 2.3021358869347655
               btType: btType
@@ -28519,6 +28729,7 @@ components:
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
+            btType: btType
             maxCorner:
               x: 2.3021358869347655
               btType: btType
@@ -28758,6 +28969,7 @@ components:
             btType: btType
             "y": 7.061401241503109
             z: 9.301444243932576
+          btType: btType
           maxCorner:
             x: 2.3021358869347655
             btType: btType
@@ -30240,6 +30452,46 @@ components:
           - BSURF_PROFILE_NON_G1
           - SM_FLAT_OP_FACES_DONT_MATCH
           - HOLE_REVERSED_BOUNDS
+          - HELIX_INPUT_AXIS
+          - HELIX_BOTH_RADII_ZERO
+          - HELIX_START_POINT_MISALIGNED
+          - HELIX_END_POINT_MISALIGNED
+          - FACE_BLEND_SELECT_FACES
+          - FACE_BLEND_FAILED
+          - FACE_BLEND_DIMENSION_TOO_SMALL
+          - FACE_BLEND_DIMENSION_TOO_LARGE
+          - FACE_BLEND_CANNOT_ATTACH
+          - FACE_BLEND_WRONG_LEFT_WALL_SENSE
+          - FACE_BLEND_WRONG_RIGHT_WALL_SENSE
+          - FACE_BLEND_WRONG_SENSES
+          - FACE_BLEND_LEFT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_RIGHT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_INCONSISTENT_DATA
+          - FACE_BLEND_INVALID_TANGENT_HOLD_LINE
+          - FACE_BLEND_INVALID_CONIC_HOLD_LINE
+          - FACE_BLEND_BAD_SPINE
+          - FACE_BLEND_RHO_TOO_LARGE
+          - FACE_BLEND_RHO_INVALID
+          - FACE_BLEND_SELF_INTERSECTION
+          - FACE_BLEND_INVALID_CAP
+          - FACE_BLEND_INVALID_LIMIT
+          - FACE_BLEND_INVALID_LIMIT_DIRECTION
+          - FACE_BLEND_SPINE_ZERO_ANGLE_PROPAGATION
+          - FACE_BLEND_SPINE_TANGENT_PROPAGATION
+          - FACE_BLEND_SELECT_SPINE
+          - FACE_BLEND_HOLD_LINE_IN_WALLS
+          - FACE_BLEND_TANGENT_HL_ASYMMETRIC
+          - FACE_BLEND_WIDTH_HOLD_LINES
+          - FACE_BLEND_EDGE_LIMIT_NEEDS_SIDE
+          - FACE_BLEND_INVALID_PLANE_LIMIT
+          - FACE_BLEND_INVALID_PROPAGATION_ANGLE
+          - OFFSET_WIRE_GENERIC_ERROR
+          - OFFSET_WIRE_SELECT_WALL_PATH
+          - OFFSET_WIRE_DIR1_FAILED
+          - OFFSET_WIRE_DIR2_FAILED
+          - FACE_BLEND_SOLID_LONG_ATTACH
+          - OFFSET_WIRE_SHAPES_NON_CONSISTENT
+          - OFFSET_WIRE_MULTIPLE_SHAPES
           - UNKNOWN
           type: string
       type: object
@@ -30493,6 +30745,7 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
+                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -30555,6 +30808,7 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
+                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -30746,6 +31000,7 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
+                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -30808,6 +31063,7 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
+                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -31143,8 +31399,7 @@ components:
               microversion:
                 deleted: true
                 theId: theId
-          partColorCycle:
-            btType: btType
+          partColorCycle: null
           isUsingCPUIntensiveThreadPoolForCopyForSettings: true
           cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
           usage: BASE
@@ -32159,7 +32414,6 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 1
-                btType: btType
                 errorCode: 7
                 estimatedMemoryUsageInBytes: 1
                 compressed: true
@@ -32167,12 +32421,10 @@ components:
               - hasTessellationError: true
                 face: true
                 settingIndex: 1
-                btType: btType
                 errorCode: 7
                 estimatedMemoryUsageInBytes: 1
                 compressed: true
                 decompressed: null
-              btType: btType
               decompressed: null
               copyWithoutGeometry: null
               fromSketch: true
@@ -33639,6 +33891,46 @@ components:
           - BSURF_PROFILE_NON_G1
           - SM_FLAT_OP_FACES_DONT_MATCH
           - HOLE_REVERSED_BOUNDS
+          - HELIX_INPUT_AXIS
+          - HELIX_BOTH_RADII_ZERO
+          - HELIX_START_POINT_MISALIGNED
+          - HELIX_END_POINT_MISALIGNED
+          - FACE_BLEND_SELECT_FACES
+          - FACE_BLEND_FAILED
+          - FACE_BLEND_DIMENSION_TOO_SMALL
+          - FACE_BLEND_DIMENSION_TOO_LARGE
+          - FACE_BLEND_CANNOT_ATTACH
+          - FACE_BLEND_WRONG_LEFT_WALL_SENSE
+          - FACE_BLEND_WRONG_RIGHT_WALL_SENSE
+          - FACE_BLEND_WRONG_SENSES
+          - FACE_BLEND_LEFT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_RIGHT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_INCONSISTENT_DATA
+          - FACE_BLEND_INVALID_TANGENT_HOLD_LINE
+          - FACE_BLEND_INVALID_CONIC_HOLD_LINE
+          - FACE_BLEND_BAD_SPINE
+          - FACE_BLEND_RHO_TOO_LARGE
+          - FACE_BLEND_RHO_INVALID
+          - FACE_BLEND_SELF_INTERSECTION
+          - FACE_BLEND_INVALID_CAP
+          - FACE_BLEND_INVALID_LIMIT
+          - FACE_BLEND_INVALID_LIMIT_DIRECTION
+          - FACE_BLEND_SPINE_ZERO_ANGLE_PROPAGATION
+          - FACE_BLEND_SPINE_TANGENT_PROPAGATION
+          - FACE_BLEND_SELECT_SPINE
+          - FACE_BLEND_HOLD_LINE_IN_WALLS
+          - FACE_BLEND_TANGENT_HL_ASYMMETRIC
+          - FACE_BLEND_WIDTH_HOLD_LINES
+          - FACE_BLEND_EDGE_LIMIT_NEEDS_SIDE
+          - FACE_BLEND_INVALID_PLANE_LIMIT
+          - FACE_BLEND_INVALID_PROPAGATION_ANGLE
+          - OFFSET_WIRE_GENERIC_ERROR
+          - OFFSET_WIRE_SELECT_WALL_PATH
+          - OFFSET_WIRE_DIR1_FAILED
+          - OFFSET_WIRE_DIR2_FAILED
+          - FACE_BLEND_SOLID_LONG_ATTACH
+          - OFFSET_WIRE_SHAPES_NON_CONSISTENT
+          - OFFSET_WIRE_MULTIPLE_SHAPES
           - UNKNOWN
           type: string
         facetPoints:
@@ -43680,6 +43972,27 @@ components:
           - V1991_USE_LENGTH_BOUNDS_FOR_SYMMETRICAL
           - V1992_FLIP_LOWER_TOLERANCE_BOUND
           - V1993_CORRECT_UNDEFINED_LOWER_BOUND
+          - SKIP_1994
+          - SKIP_1995
+          - SKIP_1996
+          - SKIP_1997
+          - V1998_HELIX_UI_UPGRADE
+          - V1999_EXTERNAL_DISAMBIGUATION
+          - V2000_HIDE_COMPOSITE_BODY_VERTEX
+          - V2001_EXTRUDE_TRACKING_SURFACE_CHECK
+          - V2002_FACE_BLEND
+          - V2003_EXTENDED_TOOL_BODY_TYPE_FOR_EXTRUDE
+          - V2004_PS_VERSION_35_1_171
+          - V2005_THIN_EXTRUDE_FIXES
+          - V2006_LINE_TO_TANGENT_ARC_BUGFIX_BACKPORT
+          - V2007_REVERT_PS_VERSION_35_1_171
+          - V2008_FIX_ELLIPTICAL_ARC_SNAPPING
+          - V2009_HELIX_MANIPULATOR_FIXES
+          - V2010_LINE_TO_TANGENT_ARC_CORRECT_TERMINATION
+          - V2011_BLENDED_RECORDS_FIX
+          - V2012_THIN_EXTRUDE_PATTERN_FIX
+          - V2013_FACE_BLEND_ASYMMETRIC_FLIP_FIX
+          - V2014_HELIX_MANIPULATOR_FIXES
           - UNKNOWN
           type: string
         btType:
@@ -45809,9 +46122,12 @@ components:
     BTNextPartNumberParam:
       example:
         elementId: elementId
-        versionId: versionId
         configuration: configuration
         partId: partId
+        mimeType: mimeType
+        itemId: itemId
+        versionId: versionId
+        numberSchemeResourceTypeId: numberSchemeResourceTypeId
         documentId: documentId
         partNumber: partNumber
         categories:
@@ -45820,7 +46136,6 @@ components:
         - name: name
           id: id
         id: id
-        mimeType: mimeType
         elementType: 0
         workspaceId: workspaceId
       properties:
@@ -45839,7 +46154,11 @@ components:
           type: integer
         id:
           type: string
+        itemId:
+          type: string
         mimeType:
+          type: string
+        numberSchemeResourceTypeId:
           type: string
         partId:
           type: string
@@ -45857,9 +46176,12 @@ components:
         - skipPartNumbers
         itemPartNumbers:
         - elementId: elementId
-          versionId: versionId
           configuration: configuration
           partId: partId
+          mimeType: mimeType
+          itemId: itemId
+          versionId: versionId
+          numberSchemeResourceTypeId: numberSchemeResourceTypeId
           documentId: documentId
           partNumber: partNumber
           categories:
@@ -45868,13 +46190,15 @@ components:
           - name: name
             id: id
           id: id
-          mimeType: mimeType
           elementType: 0
           workspaceId: workspaceId
         - elementId: elementId
-          versionId: versionId
           configuration: configuration
           partId: partId
+          mimeType: mimeType
+          itemId: itemId
+          versionId: versionId
+          numberSchemeResourceTypeId: numberSchemeResourceTypeId
           documentId: documentId
           partNumber: partNumber
           categories:
@@ -45883,7 +46207,6 @@ components:
           - name: name
             id: id
           id: id
-          mimeType: mimeType
           elementType: 0
           workspaceId: workspaceId
       properties:
@@ -49150,8 +49473,7 @@ components:
             microversion:
               deleted: true
               theId: theId
-        partColorCycle:
-          btType: btType
+        partColorCycle: null
         isUsingCPUIntensiveThreadPoolForCopyForSettings: true
         cacheablePartStudioDisplayDataVersion: V0_ORIGINAL_VERSION
         usage: BASE
@@ -50166,7 +50488,6 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 1
-              btType: btType
               errorCode: 7
               estimatedMemoryUsageInBytes: 1
               compressed: true
@@ -50174,12 +50495,10 @@ components:
             - hasTessellationError: true
               face: true
               settingIndex: 1
-              btType: btType
               errorCode: 7
               estimatedMemoryUsageInBytes: 1
               compressed: true
               decompressed: null
-            btType: btType
             decompressed: null
             copyWithoutGeometry: null
             fromSketch: true
@@ -52014,6 +52333,7 @@ components:
             isApproverAction: true
             label: label
             uiHint: uiHint
+            type: DEFAULT
             allowIfNoApprovers: true
           - alwaysAllow: true
             isAdminOverride: true
@@ -52026,6 +52346,7 @@ components:
             isApproverAction: true
             label: label
             uiHint: uiHint
+            type: DEFAULT
             allowIfNoApprovers: true
           isCreator: true
           debugMicroversionId: debugMicroversionId
@@ -55337,6 +55658,46 @@ components:
           - BSURF_PROFILE_NON_G1
           - SM_FLAT_OP_FACES_DONT_MATCH
           - HOLE_REVERSED_BOUNDS
+          - HELIX_INPUT_AXIS
+          - HELIX_BOTH_RADII_ZERO
+          - HELIX_START_POINT_MISALIGNED
+          - HELIX_END_POINT_MISALIGNED
+          - FACE_BLEND_SELECT_FACES
+          - FACE_BLEND_FAILED
+          - FACE_BLEND_DIMENSION_TOO_SMALL
+          - FACE_BLEND_DIMENSION_TOO_LARGE
+          - FACE_BLEND_CANNOT_ATTACH
+          - FACE_BLEND_WRONG_LEFT_WALL_SENSE
+          - FACE_BLEND_WRONG_RIGHT_WALL_SENSE
+          - FACE_BLEND_WRONG_SENSES
+          - FACE_BLEND_LEFT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_RIGHT_WALL_MULTIPLE_BODIES
+          - FACE_BLEND_INCONSISTENT_DATA
+          - FACE_BLEND_INVALID_TANGENT_HOLD_LINE
+          - FACE_BLEND_INVALID_CONIC_HOLD_LINE
+          - FACE_BLEND_BAD_SPINE
+          - FACE_BLEND_RHO_TOO_LARGE
+          - FACE_BLEND_RHO_INVALID
+          - FACE_BLEND_SELF_INTERSECTION
+          - FACE_BLEND_INVALID_CAP
+          - FACE_BLEND_INVALID_LIMIT
+          - FACE_BLEND_INVALID_LIMIT_DIRECTION
+          - FACE_BLEND_SPINE_ZERO_ANGLE_PROPAGATION
+          - FACE_BLEND_SPINE_TANGENT_PROPAGATION
+          - FACE_BLEND_SELECT_SPINE
+          - FACE_BLEND_HOLD_LINE_IN_WALLS
+          - FACE_BLEND_TANGENT_HL_ASYMMETRIC
+          - FACE_BLEND_WIDTH_HOLD_LINES
+          - FACE_BLEND_EDGE_LIMIT_NEEDS_SIDE
+          - FACE_BLEND_INVALID_PLANE_LIMIT
+          - FACE_BLEND_INVALID_PROPAGATION_ANGLE
+          - OFFSET_WIRE_GENERIC_ERROR
+          - OFFSET_WIRE_SELECT_WALL_PATH
+          - OFFSET_WIRE_DIR1_FAILED
+          - OFFSET_WIRE_DIR2_FAILED
+          - FACE_BLEND_SOLID_LONG_ATTACH
+          - OFFSET_WIRE_SHAPES_NON_CONSISTENT
+          - OFFSET_WIRE_MULTIPLE_SHAPES
           - UNKNOWN
           type: string
         errorMessage:
@@ -55905,8 +56266,7 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny:
-              btType: btType
+            crossHighlightDataIfAny: null
           columnIdToCell:
             key:
               isEverVisible: true
@@ -55917,8 +56277,7 @@ components:
           id: id
           nodeId: nodeId
           rowMetadata:
-            crossHighlightDataIfAny:
-              btType: btType
+            crossHighlightDataIfAny: null
           columnIdToCell:
             key:
               isEverVisible: true
@@ -55982,12 +56341,8 @@ components:
           BTTableAssemblyCrossHighlightData-2675: '#/components/schemas/BTTableAssemblyCrossHighlightData-2675'
           BTTableCrossHighlightData-1753: '#/components/schemas/BTTableCrossHighlightData-1753'
         propertyName: btType
-      example:
-        btType: btType
-      properties:
-        btType:
-          type: string
       type: object
+      x-is-free-form: false
     BTTableBaseRowMetadata-3181:
       discriminator:
         mapping:
@@ -55997,8 +56352,7 @@ components:
           BTVariableTableRowMetadata-3912: '#/components/schemas/BTVariableTableRowMetadata-3912'
         propertyName: btType
       example:
-        crossHighlightDataIfAny:
-          btType: btType
+        crossHighlightDataIfAny: null
       properties:
         crossHighlightDataIfAny:
           $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
@@ -56239,8 +56593,7 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny:
-                btType: btType
+              crossHighlightDataIfAny: null
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -56251,8 +56604,7 @@ components:
             id: id
             nodeId: nodeId
             rowMetadata:
-              crossHighlightDataIfAny:
-                btType: btType
+              crossHighlightDataIfAny: null
             columnIdToCell:
               key:
                 isEverVisible: true
@@ -56275,8 +56627,7 @@ components:
         id: id
         nodeId: nodeId
         rowMetadata:
-          crossHighlightDataIfAny:
-            btType: btType
+          crossHighlightDataIfAny: null
         columnIdToCell:
           key:
             isEverVisible: true
@@ -56677,6 +57028,7 @@ components:
         proxyElementId: proxyElementId
         unit: unit
         sendCopyToMe: true
+        useIgesCompatibilityMode: true
         angularTolerance: 0.001
         emailMessage: emailMessage
         processedForeignId: processedForeignId
@@ -56883,6 +57235,8 @@ components:
           type: string
         uploadId:
           type: string
+        useIgesCompatibilityMode:
+          type: boolean
         validForDays:
           format: int32
           type: integer
@@ -57613,6 +57967,7 @@ components:
           createProject: true
           createChangeRequests: true
           createDocumentsInRoot: true
+          manageStandardContentMetadata: true
           manageUsers: true
           manageWorkflows: true
           allowPublicDocumentsAccess: true
@@ -57769,6 +58124,7 @@ components:
             parameters:
               jsonType: jsonType
         useDecimalComma: true
+        displayAssemblyProperties: true
         customColors:
         - customColors
         - customColors
@@ -58025,6 +58381,8 @@ components:
           type: array
         defaultUnits:
           $ref: '#/components/schemas/BTDefaultUnitsInfo'
+        displayAssemblyProperties:
+          type: boolean
         drawingBackgroundId:
           format: int32
           type: integer
@@ -58914,6 +59272,7 @@ components:
         isApproverAction: true
         label: label
         uiHint: uiHint
+        type: DEFAULT
         allowIfNoApprovers: true
       properties:
         action:
@@ -58936,6 +59295,17 @@ components:
           type: array
           uniqueItems: true
         tooltip:
+          type: string
+        type:
+          description: "Transition types(SUBMIT, APPROVE, REJECT)"
+          enum:
+          - DEFAULT
+          - SUBMIT
+          - APPROVE
+          - APPROVE_DIRECT
+          - REJECT
+          - DELETE
+          - COMMENT
           type: string
         uiHint:
           type: string
@@ -59616,6 +59986,7 @@ components:
           isApproverAction: true
           label: label
           uiHint: uiHint
+          type: DEFAULT
           allowIfNoApprovers: true
         - alwaysAllow: true
           isAdminOverride: true
@@ -59628,6 +59999,7 @@ components:
           isApproverAction: true
           label: label
           uiHint: uiHint
+          type: DEFAULT
           allowIfNoApprovers: true
         isCreator: true
         debugMicroversionId: debugMicroversionId
@@ -60921,6 +61293,7 @@ components:
         createProject: true
         createChangeRequests: true
         createDocumentsInRoot: true
+        manageStandardContentMetadata: true
         manageUsers: true
         manageWorkflows: true
         allowPublicDocumentsAccess: true
@@ -60961,6 +61334,8 @@ components:
         manageNonGeometricItems:
           type: boolean
         manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
           type: boolean
         manageUsers:
           type: boolean

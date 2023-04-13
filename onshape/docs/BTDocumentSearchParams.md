@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocumentFilter** | Pointer to **int32** |  | [optional] 
-**FoundIn** | Pointer to **string** |  | [optional] 
-**Limit** | Pointer to **int32** |  | [optional] 
-**LuceneSyntax** | Pointer to **bool** |  | [optional] 
-**Offset** | Pointer to **int32** |  | [optional] 
-**OwnerId** | Pointer to **string** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
-**RawQuery** | Pointer to **string** |  | [optional] 
-**SortColumn** | Pointer to **string** |  | [optional] 
-**SortOrder** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**When** | Pointer to **string** |  | [optional] 
+**DocumentFilter** | Pointer to **int32** | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). | [optional] 
+**FoundIn** | Pointer to **string** | Search result found in | [optional] 
+**Limit** | Pointer to **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [optional] 
+**LuceneSyntax** | Pointer to **bool** | Lucene syntax  | [optional] 
+**Offset** | Pointer to **int32** | Offset. Determines where search results begin. Default value is 0. | [optional] 
+**OwnerId** | Pointer to **string** | Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  | [optional] 
+**ParentId** | Pointer to **string** | Search document parent Id  | [optional] 
+**RawQuery** | Pointer to **string** | Search for documents that contain the given string in the name. Search is not case-sensitive. | [optional] 
+**SortColumn** | Pointer to **string** | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. | [optional] 
+**SortOrder** | Pointer to **string** | Sort order. Options are desc (descending, the default), or asc (ascending). | [optional] 
+**Type** | Pointer to **string** | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. | [optional] 
+**When** | Pointer to **string** | Search result when | [optional] 
 
 ## Methods
 

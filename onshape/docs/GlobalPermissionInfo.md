@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **ManageGuestUsers** | Pointer to **bool** |  | [optional] 
 **ManageNonGeometricItems** | Pointer to **bool** |  | [optional] 
 **ManageRbac** | Pointer to **bool** |  | [optional] 
+**ManageStandardContentMetadata** | Pointer to **bool** |  | [optional] 
 **ManageUsers** | Pointer to **bool** |  | [optional] 
 **ManageWorkflows** | Pointer to **bool** |  | [optional] 
 **ShareForAnonymousAccess** | Pointer to **bool** |  | [optional] 
@@ -419,6 +420,31 @@ SetManageRbac sets ManageRbac field to given value.
 `func (o *GlobalPermissionInfo) HasManageRbac() bool`
 
 HasManageRbac returns a boolean if a field has been set.
+
+### GetManageStandardContentMetadata
+
+`func (o *GlobalPermissionInfo) GetManageStandardContentMetadata() bool`
+
+GetManageStandardContentMetadata returns the ManageStandardContentMetadata field if non-nil, zero value otherwise.
+
+### GetManageStandardContentMetadataOk
+
+`func (o *GlobalPermissionInfo) GetManageStandardContentMetadataOk() (*bool, bool)`
+
+GetManageStandardContentMetadataOk returns a tuple with the ManageStandardContentMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManageStandardContentMetadata
+
+`func (o *GlobalPermissionInfo) SetManageStandardContentMetadata(v bool)`
+
+SetManageStandardContentMetadata sets ManageStandardContentMetadata field to given value.
+
+### HasManageStandardContentMetadata
+
+`func (o *GlobalPermissionInfo) HasManageStandardContentMetadata() bool`
+
+HasManageStandardContentMetadata returns a boolean if a field has been set.
 
 ### GetManageUsers
 
