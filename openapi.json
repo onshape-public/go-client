@@ -18957,6 +18957,9 @@
           "appearanceReset" : {
             "type" : "boolean"
           },
+          "btType" : {
+            "type" : "string"
+          },
           "copyWithoutEntities" : {
             "$ref" : "#/components/schemas/BTAppearanceOverride-2517"
           },
@@ -22351,6 +22354,9 @@
       "BTDecal-2404" : {
         "type" : "object",
         "properties" : {
+          "btType" : {
+            "type" : "string"
+          },
           "imageSourceId" : {
             "type" : "string"
           },
@@ -26330,6 +26336,9 @@
       "BTImageMapping-3821" : {
         "type" : "object",
         "properties" : {
+          "btType" : {
+            "type" : "string"
+          },
           "deterministicIds" : {
             "type" : "array",
             "items" : {
@@ -38196,6 +38205,9 @@
       "BTSketchEntityDisplayData-354" : {
         "type" : "object",
         "properties" : {
+          "btType" : {
+            "type" : "string"
+          },
           "points" : {
             "type" : "array",
             "items" : {
@@ -38227,6 +38239,9 @@
           },
           "bottomRightCorner" : {
             "$ref" : "#/components/schemas/BTVector3d-389"
+          },
+          "btType" : {
+            "type" : "string"
           },
           "entities" : {
             "type" : "array",
