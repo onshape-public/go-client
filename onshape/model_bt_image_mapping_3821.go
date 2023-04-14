@@ -43,6 +43,56 @@ func NewBTImageMapping3821WithDefaults() *BTImageMapping3821 {
 	return &this
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTImageMapping3821) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTImageMapping3821) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTImageMapping3821) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTImageMapping3821) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // GetDeterministicIds returns the DeterministicIds field value if set, zero value otherwise.
 func (o *BTImageMapping3821) GetDeterministicIds() []string {
 	type getResult interface {
@@ -233,6 +283,7 @@ func (v *NullableBTImageMapping3821) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTImageMapping3821 struct {
+	BtType           *string         `json:"btType,omitempty"`
 	DeterministicIds []string        `json:"deterministicIds,omitempty"`
 	UvTransform      *BTMatrix3x3340 `json:"uvTransform,omitempty"`
 }
@@ -252,6 +303,38 @@ func Newbase_BTImageMapping3821() *base_BTImageMapping3821 {
 func Newbase_BTImageMapping3821WithDefaults() *base_BTImageMapping3821 {
 	this := base_BTImageMapping3821{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTImageMapping3821) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTImageMapping3821) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTImageMapping3821) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTImageMapping3821) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetDeterministicIds returns the DeterministicIds field value if set, zero value otherwise.
@@ -320,6 +403,9 @@ func (o *base_BTImageMapping3821) SetUvTransform(v BTMatrix3x3340) {
 
 func (o base_BTImageMapping3821) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.DeterministicIds != nil {
 		toSerialize["deterministicIds"] = o.DeterministicIds
 	}
