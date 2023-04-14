@@ -18836,6 +18836,7 @@ components:
           reset: true
           opacity: 1
           usableAppearance: true
+        btType: btType
         isDeletion: true
         appearanceReset: true
       properties:
@@ -18843,6 +18844,8 @@ components:
           $ref: '#/components/schemas/BTGraphicsAppearance-1152'
         appearanceReset:
           type: boolean
+        btType:
+          type: string
         copyWithoutEntities:
           $ref: '#/components/schemas/BTAppearanceOverride-2517'
         entityDeterministicIds:
@@ -23416,7 +23419,8 @@ components:
     BTDecal-2404:
       example:
         mappings:
-        - deterministicIds:
+        - btType: btType
+          deterministicIds:
           - deterministicIds
           - deterministicIds
           uvTransform:
@@ -23429,7 +23433,8 @@ components:
             m02: 5.637376656633329
             m01: 5.962133916683182
             m12: 9.301444243932576
-        - deterministicIds:
+        - btType: btType
+          deterministicIds:
           - deterministicIds
           - deterministicIds
           uvTransform:
@@ -23443,7 +23448,10 @@ components:
             m01: 5.962133916683182
             m12: 9.301444243932576
         imageSourceId: imageSourceId
+        btType: btType
       properties:
+        btType:
+          type: string
         imageSourceId:
           type: string
         mappings:
@@ -31111,6 +31119,7 @@ components:
                 reset: true
                 opacity: 1
                 usableAppearance: true
+              btType: btType
               isDeletion: true
               appearanceReset: true
           usesMultipleTessellationSettings: true
@@ -32311,7 +32320,8 @@ components:
           decalIdToDecal:
             key:
               mappings:
-              - deterministicIds:
+              - btType: btType
+                deterministicIds:
                 - deterministicIds
                 - deterministicIds
                 uvTransform:
@@ -32324,7 +32334,8 @@ components:
                   m02: 5.637376656633329
                   m01: 5.962133916683182
                   m12: 9.301444243932576
-              - deterministicIds:
+              - btType: btType
+                deterministicIds:
                 - deterministicIds
                 - deterministicIds
                 uvTransform:
@@ -32338,6 +32349,7 @@ components:
                   m01: 5.962133916683182
                   m12: 9.301444243932576
               imageSourceId: imageSourceId
+              btType: btType
           deterministicPartIdToData:
             key:
               entityDeterministicIds:
@@ -32536,10 +32548,12 @@ components:
                   z: 9.301444243932576
                 isOnFlat: true
                 entities:
-                - points:
+                - btType: btType
+                  points:
                   - 4.652396432933246
                   - 4.652396432933246
-                - points:
+                - btType: btType
+                  points:
                   - 4.652396432933246
                   - 4.652396432933246
                 bottomRightCorner:
@@ -32547,6 +32561,7 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
+                btType: btType
                 bottomLeftCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -36646,6 +36661,7 @@ components:
           BTPlanarImageMapping-4398: '#/components/schemas/BTPlanarImageMapping-4398'
         propertyName: btType
       example:
+        btType: btType
         deterministicIds:
         - deterministicIds
         - deterministicIds
@@ -36660,6 +36676,8 @@ components:
           m01: 5.962133916683182
           m12: 9.301444243932576
       properties:
+        btType:
+          type: string
         deterministicIds:
           items:
             type: string
@@ -49185,6 +49203,7 @@ components:
               reset: true
               opacity: 1
               usableAppearance: true
+            btType: btType
             isDeletion: true
             appearanceReset: true
         usesMultipleTessellationSettings: true
@@ -50385,7 +50404,8 @@ components:
         decalIdToDecal:
           key:
             mappings:
-            - deterministicIds:
+            - btType: btType
+              deterministicIds:
               - deterministicIds
               - deterministicIds
               uvTransform:
@@ -50398,7 +50418,8 @@ components:
                 m02: 5.637376656633329
                 m01: 5.962133916683182
                 m12: 9.301444243932576
-            - deterministicIds:
+            - btType: btType
+              deterministicIds:
               - deterministicIds
               - deterministicIds
               uvTransform:
@@ -50412,6 +50433,7 @@ components:
                 m01: 5.962133916683182
                 m12: 9.301444243932576
             imageSourceId: imageSourceId
+            btType: btType
         deterministicPartIdToData:
           key:
             entityDeterministicIds:
@@ -50610,10 +50632,12 @@ components:
                 z: 9.301444243932576
               isOnFlat: true
               entities:
-              - points:
+              - btType: btType
+                points:
                 - 4.652396432933246
                 - 4.652396432933246
-              - points:
+              - btType: btType
+                points:
                 - 4.652396432933246
                 - 4.652396432933246
               bottomRightCorner:
@@ -50621,6 +50645,7 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
+              btType: btType
               bottomLeftCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -55772,10 +55797,13 @@ components:
           BTSketchSplineDisplayData-359: '#/components/schemas/BTSketchSplineDisplayData-359'
         propertyName: btType
       example:
+        btType: btType
         points:
         - 4.652396432933246
         - 4.652396432933246
       properties:
+        btType:
+          type: string
         points:
           items:
             format: double
@@ -55792,10 +55820,12 @@ components:
           z: 9.301444243932576
         isOnFlat: true
         entities:
-        - points:
+        - btType: btType
+          points:
           - 4.652396432933246
           - 4.652396432933246
-        - points:
+        - btType: btType
+          points:
           - 4.652396432933246
           - 4.652396432933246
         bottomRightCorner:
@@ -55803,6 +55833,7 @@ components:
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
+        btType: btType
         bottomLeftCorner:
           x: 2.3021358869347655
           btType: btType
@@ -55817,6 +55848,8 @@ components:
           $ref: '#/components/schemas/BTVector3d-389'
         bottomRightCorner:
           $ref: '#/components/schemas/BTVector3d-389'
+        btType:
+          type: string
         entities:
           items:
             $ref: '#/components/schemas/BTSketchEntityDisplayData-354'

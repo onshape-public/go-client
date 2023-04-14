@@ -48,56 +48,6 @@ func NewBTSketchCompositeEntityDisplayData1093WithDefaults() *BTSketchCompositeE
 	return &this
 }
 
-// GetPoints returns the Points field value if set, zero value otherwise.
-func (o *BTSketchCompositeEntityDisplayData1093) GetPoints() []float64 {
-	type getResult interface {
-		GetPoints() []float64
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetPoints()
-	} else {
-		var de []float64
-		return de
-	}
-}
-
-// GetPointsOk returns a tuple with the Points field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSketchCompositeEntityDisplayData1093) GetPointsOk() ([]float64, bool) {
-	type getResult interface {
-		GetPointsOk() ([]float64, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetPointsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasPoints returns a boolean if a field has been set.
-func (o *BTSketchCompositeEntityDisplayData1093) HasPoints() bool {
-	type getResult interface {
-		HasPoints() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasPoints()
-	} else {
-		return false
-	}
-}
-
-// SetPoints gets a reference to the given []float64 and assigns it to the Points field.
-func (o *BTSketchCompositeEntityDisplayData1093) SetPoints(v []float64) {
-	type getResult interface {
-		SetPoints(v []float64)
-	}
-
-	o.GetActualInstance().(getResult).SetPoints(v)
-}
-
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTSketchCompositeEntityDisplayData1093) GetBtType() string {
 	type getResult interface {
@@ -146,6 +96,56 @@ func (o *BTSketchCompositeEntityDisplayData1093) SetBtType(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
+// GetPoints returns the Points field value if set, zero value otherwise.
+func (o *BTSketchCompositeEntityDisplayData1093) GetPoints() []float64 {
+	type getResult interface {
+		GetPoints() []float64
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPoints()
+	} else {
+		var de []float64
+		return de
+	}
+}
+
+// GetPointsOk returns a tuple with the Points field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchCompositeEntityDisplayData1093) GetPointsOk() ([]float64, bool) {
+	type getResult interface {
+		GetPointsOk() ([]float64, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPointsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasPoints returns a boolean if a field has been set.
+func (o *BTSketchCompositeEntityDisplayData1093) HasPoints() bool {
+	type getResult interface {
+		HasPoints() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasPoints()
+	} else {
+		return false
+	}
+}
+
+// SetPoints gets a reference to the given []float64 and assigns it to the Points field.
+func (o *BTSketchCompositeEntityDisplayData1093) SetPoints(v []float64) {
+	type getResult interface {
+		SetPoints(v []float64)
+	}
+
+	o.GetActualInstance().(getResult).SetPoints(v)
 }
 
 // Unmarshal JSON data into one of the pointers in the struct
@@ -252,8 +252,8 @@ func (v *NullableBTSketchCompositeEntityDisplayData1093) UnmarshalJSON(src []byt
 }
 
 type base_BTSketchCompositeEntityDisplayData1093 struct {
-	Points []float64 `json:"points,omitempty"`
 	BtType *string   `json:"btType,omitempty"`
+	Points []float64 `json:"points,omitempty"`
 }
 
 // Newbase_BTSketchCompositeEntityDisplayData1093 instantiates a new base_BTSketchCompositeEntityDisplayData1093 object
@@ -271,38 +271,6 @@ func Newbase_BTSketchCompositeEntityDisplayData1093() *base_BTSketchCompositeEnt
 func Newbase_BTSketchCompositeEntityDisplayData1093WithDefaults() *base_BTSketchCompositeEntityDisplayData1093 {
 	this := base_BTSketchCompositeEntityDisplayData1093{}
 	return &this
-}
-
-// GetPoints returns the Points field value if set, zero value otherwise.
-func (o *base_BTSketchCompositeEntityDisplayData1093) GetPoints() []float64 {
-	if o == nil || o.Points == nil {
-		var ret []float64
-		return ret
-	}
-	return o.Points
-}
-
-// GetPointsOk returns a tuple with the Points field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTSketchCompositeEntityDisplayData1093) GetPointsOk() ([]float64, bool) {
-	if o == nil || o.Points == nil {
-		return nil, false
-	}
-	return o.Points, true
-}
-
-// HasPoints returns a boolean if a field has been set.
-func (o *base_BTSketchCompositeEntityDisplayData1093) HasPoints() bool {
-	if o != nil && o.Points != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPoints gets a reference to the given []float64 and assigns it to the Points field.
-func (o *base_BTSketchCompositeEntityDisplayData1093) SetPoints(v []float64) {
-	o.Points = v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -337,13 +305,45 @@ func (o *base_BTSketchCompositeEntityDisplayData1093) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetPoints returns the Points field value if set, zero value otherwise.
+func (o *base_BTSketchCompositeEntityDisplayData1093) GetPoints() []float64 {
+	if o == nil || o.Points == nil {
+		var ret []float64
+		return ret
+	}
+	return o.Points
+}
+
+// GetPointsOk returns a tuple with the Points field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTSketchCompositeEntityDisplayData1093) GetPointsOk() ([]float64, bool) {
+	if o == nil || o.Points == nil {
+		return nil, false
+	}
+	return o.Points, true
+}
+
+// HasPoints returns a boolean if a field has been set.
+func (o *base_BTSketchCompositeEntityDisplayData1093) HasPoints() bool {
+	if o != nil && o.Points != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPoints gets a reference to the given []float64 and assigns it to the Points field.
+func (o *base_BTSketchCompositeEntityDisplayData1093) SetPoints(v []float64) {
+	o.Points = v
+}
+
 func (o base_BTSketchCompositeEntityDisplayData1093) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Points != nil {
-		toSerialize["points"] = o.Points
-	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Points != nil {
+		toSerialize["points"] = o.Points
 	}
 	return json.Marshal(toSerialize)
 }
