@@ -88,56 +88,6 @@ func NewBTSketchEntityDisplayData354WithDefaults() *BTSketchEntityDisplayData354
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTSketchEntityDisplayData354) GetBtType() string {
-	type getResult interface {
-		GetBtType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSketchEntityDisplayData354) GetBtTypeOk() (*string, bool) {
-	type getResult interface {
-		GetBtTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTSketchEntityDisplayData354) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTSketchEntityDisplayData354) SetBtType(v string) {
-	type getResult interface {
-		SetBtType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetBtType(v)
-}
-
 // GetPoints returns the Points field value if set, zero value otherwise.
 func (o *BTSketchEntityDisplayData354) GetPoints() []float64 {
 	type getResult interface {
@@ -404,7 +354,6 @@ func (v *NullableBTSketchEntityDisplayData354) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTSketchEntityDisplayData354 struct {
-	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
 }
 
@@ -423,38 +372,6 @@ func Newbase_BTSketchEntityDisplayData354() *base_BTSketchEntityDisplayData354 {
 func Newbase_BTSketchEntityDisplayData354WithDefaults() *base_BTSketchEntityDisplayData354 {
 	this := base_BTSketchEntityDisplayData354{}
 	return &this
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *base_BTSketchEntityDisplayData354) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTSketchEntityDisplayData354) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTSketchEntityDisplayData354) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *base_BTSketchEntityDisplayData354) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetPoints returns the Points field value if set, zero value otherwise.
@@ -491,9 +408,6 @@ func (o *base_BTSketchEntityDisplayData354) SetPoints(v []float64) {
 
 func (o base_BTSketchEntityDisplayData354) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
-	}
 	if o.Points != nil {
 		toSerialize["points"] = o.Points
 	}

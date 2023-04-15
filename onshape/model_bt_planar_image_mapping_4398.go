@@ -17,9 +17,9 @@ import (
 
 // BTPlanarImageMapping4398 struct for BTPlanarImageMapping4398
 type BTPlanarImageMapping4398 struct {
-	BtType           *string                `json:"btType,omitempty"`
 	DeterministicIds []string               `json:"deterministicIds,omitempty"`
 	UvTransform      *BTMatrix3x3340        `json:"uvTransform,omitempty"`
+	BtType           *string                `json:"btType,omitempty"`
 	PlaneSystem      *BTCoordinateSystem387 `json:"planeSystem,omitempty"`
 }
 
@@ -38,38 +38,6 @@ func NewBTPlanarImageMapping4398() *BTPlanarImageMapping4398 {
 func NewBTPlanarImageMapping4398WithDefaults() *BTPlanarImageMapping4398 {
 	this := BTPlanarImageMapping4398{}
 	return &this
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTPlanarImageMapping4398) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPlanarImageMapping4398) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTPlanarImageMapping4398) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTPlanarImageMapping4398) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetDeterministicIds returns the DeterministicIds field value if set, zero value otherwise.
@@ -136,6 +104,38 @@ func (o *BTPlanarImageMapping4398) SetUvTransform(v BTMatrix3x3340) {
 	o.UvTransform = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPlanarImageMapping4398) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPlanarImageMapping4398) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPlanarImageMapping4398) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPlanarImageMapping4398) SetBtType(v string) {
+	o.BtType = &v
+}
+
 // GetPlaneSystem returns the PlaneSystem field value if set, zero value otherwise.
 func (o *BTPlanarImageMapping4398) GetPlaneSystem() BTCoordinateSystem387 {
 	if o == nil || o.PlaneSystem == nil {
@@ -170,14 +170,14 @@ func (o *BTPlanarImageMapping4398) SetPlaneSystem(v BTCoordinateSystem387) {
 
 func (o BTPlanarImageMapping4398) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
-	}
 	if o.DeterministicIds != nil {
 		toSerialize["deterministicIds"] = o.DeterministicIds
 	}
 	if o.UvTransform != nil {
 		toSerialize["uvTransform"] = o.UvTransform
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	if o.PlaneSystem != nil {
 		toSerialize["planeSystem"] = o.PlaneSystem
