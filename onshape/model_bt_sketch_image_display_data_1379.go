@@ -19,7 +19,6 @@ import (
 type BTSketchImageDisplayData1379 struct {
 	BottomLeftCorner  *BTVector3d389                 `json:"bottomLeftCorner,omitempty"`
 	BottomRightCorner *BTVector3d389                 `json:"bottomRightCorner,omitempty"`
-	BtType            *string                        `json:"btType,omitempty"`
 	Entities          []BTSketchEntityDisplayData354 `json:"entities,omitempty"`
 	FeatureId         *string                        `json:"featureId,omitempty"`
 	IsOnFlat          *bool                          `json:"isOnFlat,omitempty"`
@@ -107,38 +106,6 @@ func (o *BTSketchImageDisplayData1379) HasBottomRightCorner() bool {
 // SetBottomRightCorner gets a reference to the given BTVector3d389 and assigns it to the BottomRightCorner field.
 func (o *BTSketchImageDisplayData1379) SetBottomRightCorner(v BTVector3d389) {
 	o.BottomRightCorner = &v
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTSketchImageDisplayData1379) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSketchImageDisplayData1379) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTSketchImageDisplayData1379) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTSketchImageDisplayData1379) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetEntities returns the Entities field value if set, zero value otherwise.
@@ -340,9 +307,6 @@ func (o BTSketchImageDisplayData1379) MarshalJSON() ([]byte, error) {
 	}
 	if o.BottomRightCorner != nil {
 		toSerialize["bottomRightCorner"] = o.BottomRightCorner
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.Entities != nil {
 		toSerialize["entities"] = o.Entities

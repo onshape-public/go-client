@@ -19,7 +19,6 @@ import (
 type BTAppearanceOverride2517 struct {
 	Appearance             *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
 	AppearanceReset        *bool                     `json:"appearanceReset,omitempty"`
-	BtType                 *string                   `json:"btType,omitempty"`
 	CopyWithoutEntities    *BTAppearanceOverride2517 `json:"copyWithoutEntities,omitempty"`
 	EntityDeterministicIds []string                  `json:"entityDeterministicIds,omitempty"`
 	IsDeletion             *bool                     `json:"isDeletion,omitempty"`
@@ -104,38 +103,6 @@ func (o *BTAppearanceOverride2517) HasAppearanceReset() bool {
 // SetAppearanceReset gets a reference to the given bool and assigns it to the AppearanceReset field.
 func (o *BTAppearanceOverride2517) SetAppearanceReset(v bool) {
 	o.AppearanceReset = &v
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTAppearanceOverride2517) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAppearanceOverride2517) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTAppearanceOverride2517) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTAppearanceOverride2517) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetCopyWithoutEntities returns the CopyWithoutEntities field value if set, zero value otherwise.
@@ -241,9 +208,6 @@ func (o BTAppearanceOverride2517) MarshalJSON() ([]byte, error) {
 	}
 	if o.AppearanceReset != nil {
 		toSerialize["appearanceReset"] = o.AppearanceReset
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.CopyWithoutEntities != nil {
 		toSerialize["copyWithoutEntities"] = o.CopyWithoutEntities

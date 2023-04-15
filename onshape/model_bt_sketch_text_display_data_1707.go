@@ -17,8 +17,8 @@ import (
 
 // BTSketchTextDisplayData1707 struct for BTSketchTextDisplayData1707
 type BTSketchTextDisplayData1707 struct {
-	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
+	BtType *string   `json:"btType,omitempty"`
 }
 
 // NewBTSketchTextDisplayData1707 instantiates a new BTSketchTextDisplayData1707 object
@@ -36,38 +36,6 @@ func NewBTSketchTextDisplayData1707() *BTSketchTextDisplayData1707 {
 func NewBTSketchTextDisplayData1707WithDefaults() *BTSketchTextDisplayData1707 {
 	this := BTSketchTextDisplayData1707{}
 	return &this
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTSketchTextDisplayData1707) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSketchTextDisplayData1707) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTSketchTextDisplayData1707) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTSketchTextDisplayData1707) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetPoints returns the Points field value if set, zero value otherwise.
@@ -102,13 +70,45 @@ func (o *BTSketchTextDisplayData1707) SetPoints(v []float64) {
 	o.Points = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSketchTextDisplayData1707) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchTextDisplayData1707) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSketchTextDisplayData1707) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSketchTextDisplayData1707) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSketchTextDisplayData1707) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
-	}
 	if o.Points != nil {
 		toSerialize["points"] = o.Points
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -17,8 +17,8 @@ import (
 
 // BTSketchCircleDisplayData350 struct for BTSketchCircleDisplayData350
 type BTSketchCircleDisplayData350 struct {
-	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
+	BtType *string   `json:"btType,omitempty"`
 	Radius *float64  `json:"radius,omitempty"`
 }
 
@@ -37,38 +37,6 @@ func NewBTSketchCircleDisplayData350() *BTSketchCircleDisplayData350 {
 func NewBTSketchCircleDisplayData350WithDefaults() *BTSketchCircleDisplayData350 {
 	this := BTSketchCircleDisplayData350{}
 	return &this
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTSketchCircleDisplayData350) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSketchCircleDisplayData350) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTSketchCircleDisplayData350) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTSketchCircleDisplayData350) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetPoints returns the Points field value if set, zero value otherwise.
@@ -101,6 +69,38 @@ func (o *BTSketchCircleDisplayData350) HasPoints() bool {
 // SetPoints gets a reference to the given []float64 and assigns it to the Points field.
 func (o *BTSketchCircleDisplayData350) SetPoints(v []float64) {
 	o.Points = v
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSketchCircleDisplayData350) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchCircleDisplayData350) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSketchCircleDisplayData350) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSketchCircleDisplayData350) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetRadius returns the Radius field value if set, zero value otherwise.
@@ -137,11 +137,11 @@ func (o *BTSketchCircleDisplayData350) SetRadius(v float64) {
 
 func (o BTSketchCircleDisplayData350) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
-	}
 	if o.Points != nil {
 		toSerialize["points"] = o.Points
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	if o.Radius != nil {
 		toSerialize["radius"] = o.Radius
