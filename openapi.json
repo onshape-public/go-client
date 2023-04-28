@@ -20543,9 +20543,6 @@
       "BTBoundingBox-1052" : {
         "type" : "object",
         "properties" : {
-          "btType" : {
-            "type" : "string"
-          },
           "maxCorner" : {
             "$ref" : "#/components/schemas/BTVector3d-389"
           },
