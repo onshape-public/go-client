@@ -43,56 +43,6 @@ func NewBTBoundingBox1052WithDefaults() *BTBoundingBox1052 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTBoundingBox1052) GetBtType() string {
-	type getResult interface {
-		GetBtType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBoundingBox1052) GetBtTypeOk() (*string, bool) {
-	type getResult interface {
-		GetBtTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTBoundingBox1052) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTBoundingBox1052) SetBtType(v string) {
-	type getResult interface {
-		SetBtType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetBtType(v)
-}
-
 // GetMaxCorner returns the MaxCorner field value if set, zero value otherwise.
 func (o *BTBoundingBox1052) GetMaxCorner() BTVector3d389 {
 	type getResult interface {
@@ -333,7 +283,6 @@ func (v *NullableBTBoundingBox1052) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTBoundingBox1052 struct {
-	BtType    *string        `json:"btType,omitempty"`
 	MaxCorner *BTVector3d389 `json:"maxCorner,omitempty"`
 	MinCorner *BTVector3d389 `json:"minCorner,omitempty"`
 	Valid     *bool          `json:"valid,omitempty"`
@@ -354,38 +303,6 @@ func Newbase_BTBoundingBox1052() *base_BTBoundingBox1052 {
 func Newbase_BTBoundingBox1052WithDefaults() *base_BTBoundingBox1052 {
 	this := base_BTBoundingBox1052{}
 	return &this
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *base_BTBoundingBox1052) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTBoundingBox1052) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTBoundingBox1052) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *base_BTBoundingBox1052) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetMaxCorner returns the MaxCorner field value if set, zero value otherwise.
@@ -486,9 +403,6 @@ func (o *base_BTBoundingBox1052) SetValid(v bool) {
 
 func (o base_BTBoundingBox1052) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
-	}
 	if o.MaxCorner != nil {
 		toSerialize["maxCorner"] = o.MaxCorner
 	}

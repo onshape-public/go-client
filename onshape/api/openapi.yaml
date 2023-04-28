@@ -21528,15 +21528,12 @@ components:
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
-        btType: btType
         maxCorner:
           x: 2.3021358869347655
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
       properties:
-        btType:
-          type: string
         maxCorner:
           $ref: '#/components/schemas/BTVector3d-389'
         minCorner:
@@ -26819,7 +26816,6 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
-              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -26882,7 +26878,6 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
-              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -27074,7 +27069,6 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
-              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -27137,7 +27131,6 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
-              btType: btType
               maxCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -28666,7 +28659,6 @@ components:
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
-            btType: btType
             maxCorner:
               x: 2.3021358869347655
               btType: btType
@@ -28729,7 +28721,6 @@ components:
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
-            btType: btType
             maxCorner:
               x: 2.3021358869347655
               btType: btType
@@ -28969,7 +28960,6 @@ components:
             btType: btType
             "y": 7.061401241503109
             z: 9.301444243932576
-          btType: btType
           maxCorner:
             x: 2.3021358869347655
             btType: btType
@@ -30745,7 +30735,6 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
-                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -30808,7 +30797,6 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
-                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -31000,7 +30988,6 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
-                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -31063,7 +31050,6 @@ components:
                   btType: btType
                   "y": 7.061401241503109
                   z: 9.301444243932576
-                btType: btType
                 maxCorner:
                   x: 2.3021358869347655
                   btType: btType
