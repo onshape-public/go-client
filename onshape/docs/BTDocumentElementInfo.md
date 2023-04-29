@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **AreaUnits** | Pointer to **string** |  | [optional] 
 **DataType** | Pointer to **string** |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
-**ElementType** | Pointer to **string** |  | [optional] 
+**ElementType** | Pointer to [**GBTElementType**](GBTElementType.md) |  | [optional] 
 **EnergyUnits** | Pointer to **string** |  | [optional] 
 **Filename** | Pointer to **string** |  | [optional] 
 **ForceUnits** | Pointer to **string** |  | [optional] 
@@ -230,20 +230,20 @@ HasDeleted returns a boolean if a field has been set.
 
 ### GetElementType
 
-`func (o *BTDocumentElementInfo) GetElementType() string`
+`func (o *BTDocumentElementInfo) GetElementType() GBTElementType`
 
 GetElementType returns the ElementType field if non-nil, zero value otherwise.
 
 ### GetElementTypeOk
 
-`func (o *BTDocumentElementInfo) GetElementTypeOk() (*string, bool)`
+`func (o *BTDocumentElementInfo) GetElementTypeOk() (*GBTElementType, bool)`
 
 GetElementTypeOk returns a tuple with the ElementType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElementType
 
-`func (o *BTDocumentElementInfo) SetElementType(v string)`
+`func (o *BTDocumentElementInfo) SetElementType(v GBTElementType)`
 
 SetElementType sets ElementType field to given value.
 

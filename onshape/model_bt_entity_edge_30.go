@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,20 +17,20 @@ import (
 
 // BTEntityEdge30 struct for BTEntityEdge30
 type BTEntityEdge30 struct {
-	Compressed                  *bool                  `json:"compressed,omitempty"`
-	Decompressed                *BTEntityGeometry35    `json:"decompressed,omitempty"`
-	ErrorCode                   *int32                 `json:"errorCode,omitempty"`
-	EstimatedMemoryUsageInBytes *int32                 `json:"estimatedMemoryUsageInBytes,omitempty"`
-	Face                        *bool                  `json:"face,omitempty"`
-	HasTessellationError        *bool                  `json:"hasTessellationError,omitempty"`
-	SettingIndex                *int32                 `json:"settingIndex,omitempty"`
-	BtType                      *string                `json:"btType,omitempty"`
-	CompressedPoints            *BTImmutableByteArray  `json:"compressedPoints,omitempty"`
-	EdgeSmoothnessStatus        *string                `json:"edgeSmoothnessStatus,omitempty"`
-	EdgeType                    *string                `json:"edgeType,omitempty"`
-	IsClosed                    *bool                  `json:"isClosed,omitempty"`
-	IsInternalEdge              *bool                  `json:"isInternalEdge,omitempty"`
-	Points                      *BTImmutableFloatArray `json:"points,omitempty"`
+	BtType                      *string                        `json:"btType,omitempty"`
+	Compressed                  *bool                          `json:"compressed,omitempty"`
+	Decompressed                *BTEntityGeometry35            `json:"decompressed,omitempty"`
+	ErrorCode                   *int32                         `json:"errorCode,omitempty"`
+	EstimatedMemoryUsageInBytes *int32                         `json:"estimatedMemoryUsageInBytes,omitempty"`
+	Face                        *bool                          `json:"face,omitempty"`
+	HasTessellationError        *bool                          `json:"hasTessellationError,omitempty"`
+	SettingIndex                *int32                         `json:"settingIndex,omitempty"`
+	CompressedPoints            *BTImmutableByteArray          `json:"compressedPoints,omitempty"`
+	EdgeSmoothnessStatus        *GBTEntityEdgeSmoothnessStatus `json:"edgeSmoothnessStatus,omitempty"`
+	EdgeType                    *GBTEdgeType                   `json:"edgeType,omitempty"`
+	IsClosed                    *bool                          `json:"isClosed,omitempty"`
+	IsInternalEdge              *bool                          `json:"isInternalEdge,omitempty"`
+	Points                      *BTImmutableFloatArray         `json:"points,omitempty"`
 }
 
 // NewBTEntityEdge30 instantiates a new BTEntityEdge30 object
@@ -48,6 +48,38 @@ func NewBTEntityEdge30() *BTEntityEdge30 {
 func NewBTEntityEdge30WithDefaults() *BTEntityEdge30 {
 	this := BTEntityEdge30{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTEntityEdge30) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityEdge30) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTEntityEdge30) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTEntityEdge30) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetCompressed returns the Compressed field value if set, zero value otherwise.
@@ -274,38 +306,6 @@ func (o *BTEntityEdge30) SetSettingIndex(v int32) {
 	o.SettingIndex = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTEntityEdge30) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTEntityEdge30) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTEntityEdge30) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTEntityEdge30) SetBtType(v string) {
-	o.BtType = &v
-}
-
 // GetCompressedPoints returns the CompressedPoints field value if set, zero value otherwise.
 func (o *BTEntityEdge30) GetCompressedPoints() BTImmutableByteArray {
 	if o == nil || o.CompressedPoints == nil {
@@ -339,9 +339,9 @@ func (o *BTEntityEdge30) SetCompressedPoints(v BTImmutableByteArray) {
 }
 
 // GetEdgeSmoothnessStatus returns the EdgeSmoothnessStatus field value if set, zero value otherwise.
-func (o *BTEntityEdge30) GetEdgeSmoothnessStatus() string {
+func (o *BTEntityEdge30) GetEdgeSmoothnessStatus() GBTEntityEdgeSmoothnessStatus {
 	if o == nil || o.EdgeSmoothnessStatus == nil {
-		var ret string
+		var ret GBTEntityEdgeSmoothnessStatus
 		return ret
 	}
 	return *o.EdgeSmoothnessStatus
@@ -349,7 +349,7 @@ func (o *BTEntityEdge30) GetEdgeSmoothnessStatus() string {
 
 // GetEdgeSmoothnessStatusOk returns a tuple with the EdgeSmoothnessStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTEntityEdge30) GetEdgeSmoothnessStatusOk() (*string, bool) {
+func (o *BTEntityEdge30) GetEdgeSmoothnessStatusOk() (*GBTEntityEdgeSmoothnessStatus, bool) {
 	if o == nil || o.EdgeSmoothnessStatus == nil {
 		return nil, false
 	}
@@ -365,15 +365,15 @@ func (o *BTEntityEdge30) HasEdgeSmoothnessStatus() bool {
 	return false
 }
 
-// SetEdgeSmoothnessStatus gets a reference to the given string and assigns it to the EdgeSmoothnessStatus field.
-func (o *BTEntityEdge30) SetEdgeSmoothnessStatus(v string) {
+// SetEdgeSmoothnessStatus gets a reference to the given GBTEntityEdgeSmoothnessStatus and assigns it to the EdgeSmoothnessStatus field.
+func (o *BTEntityEdge30) SetEdgeSmoothnessStatus(v GBTEntityEdgeSmoothnessStatus) {
 	o.EdgeSmoothnessStatus = &v
 }
 
 // GetEdgeType returns the EdgeType field value if set, zero value otherwise.
-func (o *BTEntityEdge30) GetEdgeType() string {
+func (o *BTEntityEdge30) GetEdgeType() GBTEdgeType {
 	if o == nil || o.EdgeType == nil {
-		var ret string
+		var ret GBTEdgeType
 		return ret
 	}
 	return *o.EdgeType
@@ -381,7 +381,7 @@ func (o *BTEntityEdge30) GetEdgeType() string {
 
 // GetEdgeTypeOk returns a tuple with the EdgeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTEntityEdge30) GetEdgeTypeOk() (*string, bool) {
+func (o *BTEntityEdge30) GetEdgeTypeOk() (*GBTEdgeType, bool) {
 	if o == nil || o.EdgeType == nil {
 		return nil, false
 	}
@@ -397,8 +397,8 @@ func (o *BTEntityEdge30) HasEdgeType() bool {
 	return false
 }
 
-// SetEdgeType gets a reference to the given string and assigns it to the EdgeType field.
-func (o *BTEntityEdge30) SetEdgeType(v string) {
+// SetEdgeType gets a reference to the given GBTEdgeType and assigns it to the EdgeType field.
+func (o *BTEntityEdge30) SetEdgeType(v GBTEdgeType) {
 	o.EdgeType = &v
 }
 
@@ -500,6 +500,9 @@ func (o *BTEntityEdge30) SetPoints(v BTImmutableFloatArray) {
 
 func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.Compressed != nil {
 		toSerialize["compressed"] = o.Compressed
 	}
@@ -520,9 +523,6 @@ func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	}
 	if o.SettingIndex != nil {
 		toSerialize["settingIndex"] = o.SettingIndex
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.CompressedPoints != nil {
 		toSerialize["compressedPoints"] = o.CompressedPoints

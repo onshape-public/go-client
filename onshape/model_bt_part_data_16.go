@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,8 +17,9 @@ import (
 
 // BTPartData16 struct for BTPartData16
 type BTPartData16 struct {
-	BestAvailableTessellationSetting          *string                          `json:"bestAvailableTessellationSetting,omitempty"`
+	BestAvailableTessellationSetting          *GBTTessellationSettingEnum      `json:"bestAvailableTessellationSetting,omitempty"`
 	BoundsDiameter                            *float64                         `json:"boundsDiameter,omitempty"`
+	BtType                                    *string                          `json:"btType,omitempty"`
 	ClosedConstituentPartData                 *BTClosedConstituentPartData2911 `json:"closedConstituentPartData,omitempty"`
 	CoarsePlanarFaceTriangleCount             *int32                           `json:"coarsePlanarFaceTriangleCount,omitempty"`
 	CoarseTriangleCount                       *int32                           `json:"coarseTriangleCount,omitempty"`
@@ -44,7 +45,7 @@ type BTPartData16 struct {
 	ShouldAlwaysUseHighestQualityTessellation *bool                            `json:"shouldAlwaysUseHighestQualityTessellation,omitempty"`
 	TessellationSettings                      []int32                          `json:"tessellationSettings,omitempty"`
 	TotalEntityCount                          *int32                           `json:"totalEntityCount,omitempty"`
-	UserTessellationSetting                   *string                          `json:"userTessellationSetting,omitempty"`
+	UserTessellationSetting                   *GBTTessellationSettingEnum      `json:"userTessellationSetting,omitempty"`
 }
 
 // NewBTPartData16 instantiates a new BTPartData16 object
@@ -65,9 +66,9 @@ func NewBTPartData16WithDefaults() *BTPartData16 {
 }
 
 // GetBestAvailableTessellationSetting returns the BestAvailableTessellationSetting field value if set, zero value otherwise.
-func (o *BTPartData16) GetBestAvailableTessellationSetting() string {
+func (o *BTPartData16) GetBestAvailableTessellationSetting() GBTTessellationSettingEnum {
 	if o == nil || o.BestAvailableTessellationSetting == nil {
-		var ret string
+		var ret GBTTessellationSettingEnum
 		return ret
 	}
 	return *o.BestAvailableTessellationSetting
@@ -75,7 +76,7 @@ func (o *BTPartData16) GetBestAvailableTessellationSetting() string {
 
 // GetBestAvailableTessellationSettingOk returns a tuple with the BestAvailableTessellationSetting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartData16) GetBestAvailableTessellationSettingOk() (*string, bool) {
+func (o *BTPartData16) GetBestAvailableTessellationSettingOk() (*GBTTessellationSettingEnum, bool) {
 	if o == nil || o.BestAvailableTessellationSetting == nil {
 		return nil, false
 	}
@@ -91,8 +92,8 @@ func (o *BTPartData16) HasBestAvailableTessellationSetting() bool {
 	return false
 }
 
-// SetBestAvailableTessellationSetting gets a reference to the given string and assigns it to the BestAvailableTessellationSetting field.
-func (o *BTPartData16) SetBestAvailableTessellationSetting(v string) {
+// SetBestAvailableTessellationSetting gets a reference to the given GBTTessellationSettingEnum and assigns it to the BestAvailableTessellationSetting field.
+func (o *BTPartData16) SetBestAvailableTessellationSetting(v GBTTessellationSettingEnum) {
 	o.BestAvailableTessellationSetting = &v
 }
 
@@ -126,6 +127,38 @@ func (o *BTPartData16) HasBoundsDiameter() bool {
 // SetBoundsDiameter gets a reference to the given float64 and assigns it to the BoundsDiameter field.
 func (o *BTPartData16) SetBoundsDiameter(v float64) {
 	o.BoundsDiameter = &v
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPartData16) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartData16) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPartData16) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPartData16) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetClosedConstituentPartData returns the ClosedConstituentPartData field value if set, zero value otherwise.
@@ -929,9 +962,9 @@ func (o *BTPartData16) SetTotalEntityCount(v int32) {
 }
 
 // GetUserTessellationSetting returns the UserTessellationSetting field value if set, zero value otherwise.
-func (o *BTPartData16) GetUserTessellationSetting() string {
+func (o *BTPartData16) GetUserTessellationSetting() GBTTessellationSettingEnum {
 	if o == nil || o.UserTessellationSetting == nil {
-		var ret string
+		var ret GBTTessellationSettingEnum
 		return ret
 	}
 	return *o.UserTessellationSetting
@@ -939,7 +972,7 @@ func (o *BTPartData16) GetUserTessellationSetting() string {
 
 // GetUserTessellationSettingOk returns a tuple with the UserTessellationSetting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartData16) GetUserTessellationSettingOk() (*string, bool) {
+func (o *BTPartData16) GetUserTessellationSettingOk() (*GBTTessellationSettingEnum, bool) {
 	if o == nil || o.UserTessellationSetting == nil {
 		return nil, false
 	}
@@ -955,8 +988,8 @@ func (o *BTPartData16) HasUserTessellationSetting() bool {
 	return false
 }
 
-// SetUserTessellationSetting gets a reference to the given string and assigns it to the UserTessellationSetting field.
-func (o *BTPartData16) SetUserTessellationSetting(v string) {
+// SetUserTessellationSetting gets a reference to the given GBTTessellationSettingEnum and assigns it to the UserTessellationSetting field.
+func (o *BTPartData16) SetUserTessellationSetting(v GBTTessellationSettingEnum) {
 	o.UserTessellationSetting = &v
 }
 
@@ -967,6 +1000,9 @@ func (o BTPartData16) MarshalJSON() ([]byte, error) {
 	}
 	if o.BoundsDiameter != nil {
 		toSerialize["boundsDiameter"] = o.BoundsDiameter
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	if o.ClosedConstituentPartData != nil {
 		toSerialize["closedConstituentPartData"] = o.ClosedConstituentPartData

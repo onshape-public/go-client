@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**DefinitionEntityType** | Pointer to **string** |  | [optional] 
+**DefinitionEntityType** | Pointer to [**GBTEntityType**](GBTEntityType.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetDefinitionEntityType
 
-`func (o *BTSMSpecificMetadata1315AllOf) GetDefinitionEntityType() string`
+`func (o *BTSMSpecificMetadata1315AllOf) GetDefinitionEntityType() GBTEntityType`
 
 GetDefinitionEntityType returns the DefinitionEntityType field if non-nil, zero value otherwise.
 
 ### GetDefinitionEntityTypeOk
 
-`func (o *BTSMSpecificMetadata1315AllOf) GetDefinitionEntityTypeOk() (*string, bool)`
+`func (o *BTSMSpecificMetadata1315AllOf) GetDefinitionEntityTypeOk() (*GBTEntityType, bool)`
 
 GetDefinitionEntityTypeOk returns a tuple with the DefinitionEntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefinitionEntityType
 
-`func (o *BTSMSpecificMetadata1315AllOf) SetDefinitionEntityType(v string)`
+`func (o *BTSMSpecificMetadata1315AllOf) SetDefinitionEntityType(v GBTEntityType)`
 
 SetDefinitionEntityType sets DefinitionEntityType field to given value.
 

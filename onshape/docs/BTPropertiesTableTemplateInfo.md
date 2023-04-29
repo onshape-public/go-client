@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **IsAllCaps** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **PropertyColumns** | Pointer to [**[]BTSimplePropertyInfo**](BTSimplePropertyInfo.md) |  | [optional] 
-**TableType** | Pointer to **string** |  | [optional] 
+**TableType** | Pointer to [**BTPropertiesTableTemplateType**](BTPropertiesTableTemplateType.md) |  | [optional] 
 **TemplateGroupId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
@@ -211,20 +211,20 @@ HasPropertyColumns returns a boolean if a field has been set.
 
 ### GetTableType
 
-`func (o *BTPropertiesTableTemplateInfo) GetTableType() string`
+`func (o *BTPropertiesTableTemplateInfo) GetTableType() BTPropertiesTableTemplateType`
 
 GetTableType returns the TableType field if non-nil, zero value otherwise.
 
 ### GetTableTypeOk
 
-`func (o *BTPropertiesTableTemplateInfo) GetTableTypeOk() (*string, bool)`
+`func (o *BTPropertiesTableTemplateInfo) GetTableTypeOk() (*BTPropertiesTableTemplateType, bool)`
 
 GetTableTypeOk returns a tuple with the TableType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTableType
 
-`func (o *BTPropertiesTableTemplateInfo) SetTableType(v string)`
+`func (o *BTPropertiesTableTemplateInfo) SetTableType(v BTPropertiesTableTemplateType)`
 
 SetTableType sets TableType field to given value.
 

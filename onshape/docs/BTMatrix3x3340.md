@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **M00** | Pointer to **float64** |  | [optional] 
 **M01** | Pointer to **float64** |  | [optional] 
 **M02** | Pointer to **float64** |  | [optional] 
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewBTMatrix3x3340WithDefaults instantiates a new BTMatrix3x3340 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTMatrix3x3340) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTMatrix3x3340) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTMatrix3x3340) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTMatrix3x3340) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetM00
 

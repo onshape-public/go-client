@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AssemblyDisplayData** | Pointer to [**BTRootAssemblyDisplayData96**](BTRootAssemblyDisplayData96.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AssemblyDisplayData** | Pointer to [**BTRootAssemblyDisplayData96**](BTRootAssemblyDisplayData96.md) |  | [optional] 
 **OccurrencesToExclude** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Transform** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewBTSingleAssemblyReferenceDisplayData1557WithDefaults instantiates a new BTSingleAssemblyReferenceDisplayData1557 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAssemblyDisplayData
-
-`func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyDisplayData() BTRootAssemblyDisplayData96`
-
-GetAssemblyDisplayData returns the AssemblyDisplayData field if non-nil, zero value otherwise.
-
-### GetAssemblyDisplayDataOk
-
-`func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyDisplayDataOk() (*BTRootAssemblyDisplayData96, bool)`
-
-GetAssemblyDisplayDataOk returns a tuple with the AssemblyDisplayData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAssemblyDisplayData
-
-`func (o *BTSingleAssemblyReferenceDisplayData1557) SetAssemblyDisplayData(v BTRootAssemblyDisplayData96)`
-
-SetAssemblyDisplayData sets AssemblyDisplayData field to given value.
-
-### HasAssemblyDisplayData
-
-`func (o *BTSingleAssemblyReferenceDisplayData1557) HasAssemblyDisplayData() bool`
-
-HasAssemblyDisplayData returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -77,6 +52,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTSingleAssemblyReferenceDisplayData1557) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAssemblyDisplayData
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyDisplayData() BTRootAssemblyDisplayData96`
+
+GetAssemblyDisplayData returns the AssemblyDisplayData field if non-nil, zero value otherwise.
+
+### GetAssemblyDisplayDataOk
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyDisplayDataOk() (*BTRootAssemblyDisplayData96, bool)`
+
+GetAssemblyDisplayDataOk returns a tuple with the AssemblyDisplayData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssemblyDisplayData
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) SetAssemblyDisplayData(v BTRootAssemblyDisplayData96)`
+
+SetAssemblyDisplayData sets AssemblyDisplayData field to given value.
+
+### HasAssemblyDisplayData
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) HasAssemblyDisplayData() bool`
+
+HasAssemblyDisplayData returns a boolean if a field has been set.
 
 ### GetOccurrencesToExclude
 

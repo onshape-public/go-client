@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Data** | Pointer to [**[]BTAppElementContentEntryInfo**](BTAppElementContentEntryInfo.md) |  | [optional] 
 **ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
 **ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
-**ErrorValue** | Pointer to **string** |  | [optional] 
+**ErrorValue** | Pointer to [**BTAppElementErrorCode**](BTAppElementErrorCode.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasErrorDescription returns a boolean if a field has been set.
 
 ### GetErrorValue
 
-`func (o *BTAppElementContentInfo) GetErrorValue() string`
+`func (o *BTAppElementContentInfo) GetErrorValue() BTAppElementErrorCode`
 
 GetErrorValue returns the ErrorValue field if non-nil, zero value otherwise.
 
 ### GetErrorValueOk
 
-`func (o *BTAppElementContentInfo) GetErrorValueOk() (*string, bool)`
+`func (o *BTAppElementContentInfo) GetErrorValueOk() (*BTAppElementErrorCode, bool)`
 
 GetErrorValueOk returns a tuple with the ErrorValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorValue
 
-`func (o *BTAppElementContentInfo) SetErrorValue(v string)`
+`func (o *BTAppElementContentInfo) SetErrorValue(v BTAppElementErrorCode)`
 
 SetErrorValue sets ErrorValue field to given value.
 

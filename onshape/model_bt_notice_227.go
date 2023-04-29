@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,14 +17,15 @@ import (
 
 // BTNotice227 struct for BTNotice227
 type BTNotice227 struct {
-	Level         *string             `json:"level,omitempty"`
+	BtType        *string             `json:"btType,omitempty"`
+	Level         *GBTNoticeLevel     `json:"level,omitempty"`
 	LocationInfos []BTLocationInfo226 `json:"locationInfos,omitempty"`
 	Message       *string             `json:"message,omitempty"`
 	NodeId        *string             `json:"nodeId,omitempty"`
 	ParameterId   *string             `json:"parameterId,omitempty"`
 	StackTrace    []BTLocationInfo226 `json:"stackTrace,omitempty"`
 	TryNode       *BTNodeReference21  `json:"tryNode,omitempty"`
-	Type          *string             `json:"type,omitempty"`
+	Type          *GBTNoticeType      `json:"type,omitempty"`
 }
 
 // NewBTNotice227 instantiates a new BTNotice227 object
@@ -44,10 +45,42 @@ func NewBTNotice227WithDefaults() *BTNotice227 {
 	return &this
 }
 
-// GetLevel returns the Level field value if set, zero value otherwise.
-func (o *BTNotice227) GetLevel() string {
-	if o == nil || o.Level == nil {
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTNotice227) GetBtType() string {
+	if o == nil || o.BtType == nil {
 		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTNotice227) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTNotice227) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTNotice227) SetBtType(v string) {
+	o.BtType = &v
+}
+
+// GetLevel returns the Level field value if set, zero value otherwise.
+func (o *BTNotice227) GetLevel() GBTNoticeLevel {
+	if o == nil || o.Level == nil {
+		var ret GBTNoticeLevel
 		return ret
 	}
 	return *o.Level
@@ -55,7 +88,7 @@ func (o *BTNotice227) GetLevel() string {
 
 // GetLevelOk returns a tuple with the Level field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTNotice227) GetLevelOk() (*string, bool) {
+func (o *BTNotice227) GetLevelOk() (*GBTNoticeLevel, bool) {
 	if o == nil || o.Level == nil {
 		return nil, false
 	}
@@ -71,8 +104,8 @@ func (o *BTNotice227) HasLevel() bool {
 	return false
 }
 
-// SetLevel gets a reference to the given string and assigns it to the Level field.
-func (o *BTNotice227) SetLevel(v string) {
+// SetLevel gets a reference to the given GBTNoticeLevel and assigns it to the Level field.
+func (o *BTNotice227) SetLevel(v GBTNoticeLevel) {
 	o.Level = &v
 }
 
@@ -269,9 +302,9 @@ func (o *BTNotice227) SetTryNode(v BTNodeReference21) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *BTNotice227) GetType() string {
+func (o *BTNotice227) GetType() GBTNoticeType {
 	if o == nil || o.Type == nil {
-		var ret string
+		var ret GBTNoticeType
 		return ret
 	}
 	return *o.Type
@@ -279,7 +312,7 @@ func (o *BTNotice227) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTNotice227) GetTypeOk() (*string, bool) {
+func (o *BTNotice227) GetTypeOk() (*GBTNoticeType, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -295,13 +328,16 @@ func (o *BTNotice227) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *BTNotice227) SetType(v string) {
+// SetType gets a reference to the given GBTNoticeType and assigns it to the Type field.
+func (o *BTNotice227) SetType(v GBTNoticeType) {
 	o.Type = &v
 }
 
 func (o BTNotice227) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.Level != nil {
 		toSerialize["level"] = o.Level
 	}

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Normals** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
 **Points** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
 **SurfaceParameters** | Pointer to [**BTImmutableDoubleArray**](BTImmutableDoubleArray.md) |  | [optional] 
-**SurfaceType** | Pointer to **string** |  | [optional] 
+**SurfaceType** | Pointer to [**GBTSurfaceType**](GBTSurfaceType.md) |  | [optional] 
 **TextureCoordinates** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
 **TriangleCount** | Pointer to **int32** |  | [optional] 
 
@@ -315,20 +315,20 @@ HasSurfaceParameters returns a boolean if a field has been set.
 
 ### GetSurfaceType
 
-`func (o *BTEntityFace31) GetSurfaceType() string`
+`func (o *BTEntityFace31) GetSurfaceType() GBTSurfaceType`
 
 GetSurfaceType returns the SurfaceType field if non-nil, zero value otherwise.
 
 ### GetSurfaceTypeOk
 
-`func (o *BTEntityFace31) GetSurfaceTypeOk() (*string, bool)`
+`func (o *BTEntityFace31) GetSurfaceTypeOk() (*GBTSurfaceType, bool)`
 
 GetSurfaceTypeOk returns a tuple with the SurfaceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSurfaceType
 
-`func (o *BTEntityFace31) SetSurfaceType(v string)`
+`func (o *BTEntityFace31) SetSurfaceType(v GBTSurfaceType)`
 
 SetSurfaceType sets SurfaceType field to given value.
 

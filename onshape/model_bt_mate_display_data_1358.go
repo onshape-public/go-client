@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,14 +17,14 @@ import (
 
 // BTMateDisplayData1358 struct for BTMateDisplayData1358
 type BTMateDisplayData1358 struct {
-	BtType           *string         `json:"btType,omitempty"`
-	Hidden           *bool           `json:"hidden,omitempty"`
-	IsDerivedFeature *bool           `json:"isDerivedFeature,omitempty"`
-	MateConnectorIds []string        `json:"mateConnectorIds,omitempty"`
-	MateType         *string         `json:"mateType,omitempty"`
-	NodeId           *string         `json:"nodeId,omitempty"`
-	OwnerOccurrence  *BTOccurrence74 `json:"ownerOccurrence,omitempty"`
-	Status           *string         `json:"status,omitempty"`
+	BtType           *string                          `json:"btType,omitempty"`
+	Hidden           *bool                            `json:"hidden,omitempty"`
+	IsDerivedFeature *bool                            `json:"isDerivedFeature,omitempty"`
+	MateConnectorIds []string                         `json:"mateConnectorIds,omitempty"`
+	MateType         *GBTMateType                     `json:"mateType,omitempty"`
+	NodeId           *string                          `json:"nodeId,omitempty"`
+	OwnerOccurrence  *BTOccurrence74                  `json:"ownerOccurrence,omitempty"`
+	Status           *GBTAssemblyFeatureDisplayStatus `json:"status,omitempty"`
 }
 
 // NewBTMateDisplayData1358 instantiates a new BTMateDisplayData1358 object
@@ -173,9 +173,9 @@ func (o *BTMateDisplayData1358) SetMateConnectorIds(v []string) {
 }
 
 // GetMateType returns the MateType field value if set, zero value otherwise.
-func (o *BTMateDisplayData1358) GetMateType() string {
+func (o *BTMateDisplayData1358) GetMateType() GBTMateType {
 	if o == nil || o.MateType == nil {
-		var ret string
+		var ret GBTMateType
 		return ret
 	}
 	return *o.MateType
@@ -183,7 +183,7 @@ func (o *BTMateDisplayData1358) GetMateType() string {
 
 // GetMateTypeOk returns a tuple with the MateType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMateDisplayData1358) GetMateTypeOk() (*string, bool) {
+func (o *BTMateDisplayData1358) GetMateTypeOk() (*GBTMateType, bool) {
 	if o == nil || o.MateType == nil {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *BTMateDisplayData1358) HasMateType() bool {
 	return false
 }
 
-// SetMateType gets a reference to the given string and assigns it to the MateType field.
-func (o *BTMateDisplayData1358) SetMateType(v string) {
+// SetMateType gets a reference to the given GBTMateType and assigns it to the MateType field.
+func (o *BTMateDisplayData1358) SetMateType(v GBTMateType) {
 	o.MateType = &v
 }
 
@@ -269,9 +269,9 @@ func (o *BTMateDisplayData1358) SetOwnerOccurrence(v BTOccurrence74) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *BTMateDisplayData1358) GetStatus() string {
+func (o *BTMateDisplayData1358) GetStatus() GBTAssemblyFeatureDisplayStatus {
 	if o == nil || o.Status == nil {
-		var ret string
+		var ret GBTAssemblyFeatureDisplayStatus
 		return ret
 	}
 	return *o.Status
@@ -279,7 +279,7 @@ func (o *BTMateDisplayData1358) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMateDisplayData1358) GetStatusOk() (*string, bool) {
+func (o *BTMateDisplayData1358) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -295,8 +295,8 @@ func (o *BTMateDisplayData1358) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *BTMateDisplayData1358) SetStatus(v string) {
+// SetStatus gets a reference to the given GBTAssemblyFeatureDisplayStatus and assigns it to the Status field.
+func (o *BTMateDisplayData1358) SetStatus(v GBTAssemblyFeatureDisplayStatus) {
 	o.Status = &v
 }
 

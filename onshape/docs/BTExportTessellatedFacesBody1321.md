@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
-**BodyType** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
+**BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 **Faces** | Pointer to [**[]BTExportTessellatedFacesFace1192**](BTExportTessellatedFacesFace1192.md) |  | [optional] 
 **FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
 
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewBTExportTessellatedFacesBody1321WithDefaults instantiates a new BTExportTessellatedFacesBody1321 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTExportTessellatedFacesBody1321) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportTessellatedFacesBody1321) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportTessellatedFacesBody1321) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportTessellatedFacesBody1321) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetAppearance
 
@@ -56,20 +81,20 @@ HasAppearance returns a boolean if a field has been set.
 
 ### GetBodyType
 
-`func (o *BTExportTessellatedFacesBody1321) GetBodyType() string`
+`func (o *BTExportTessellatedFacesBody1321) GetBodyType() GBTBodyType`
 
 GetBodyType returns the BodyType field if non-nil, zero value otherwise.
 
 ### GetBodyTypeOk
 
-`func (o *BTExportTessellatedFacesBody1321) GetBodyTypeOk() (*string, bool)`
+`func (o *BTExportTessellatedFacesBody1321) GetBodyTypeOk() (*GBTBodyType, bool)`
 
 GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodyType
 
-`func (o *BTExportTessellatedFacesBody1321) SetBodyType(v string)`
+`func (o *BTExportTessellatedFacesBody1321) SetBodyType(v GBTBodyType)`
 
 SetBodyType sets BodyType field to given value.
 
@@ -78,31 +103,6 @@ SetBodyType sets BodyType field to given value.
 `func (o *BTExportTessellatedFacesBody1321) HasBodyType() bool`
 
 HasBodyType returns a boolean if a field has been set.
-
-### GetBtType
-
-`func (o *BTExportTessellatedFacesBody1321) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTExportTessellatedFacesBody1321) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTExportTessellatedFacesBody1321) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTExportTessellatedFacesBody1321) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetFaces
 

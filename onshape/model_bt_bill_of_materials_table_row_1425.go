@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,15 +17,15 @@ import (
 
 // BTBillOfMaterialsTableRow1425 struct for BTBillOfMaterialsTableRow1425
 type BTBillOfMaterialsTableRow1425 struct {
+	BtType                 *string                            `json:"btType,omitempty"`
 	ColumnIdToCell         *map[string]BTTableCell1114        `json:"columnIdToCell,omitempty"`
 	Id                     *string                            `json:"id,omitempty"`
 	MetaData               *BTTreeNode20                      `json:"metaData,omitempty"`
 	NodeId                 *string                            `json:"nodeId,omitempty"`
 	RowMetadata            *BTTableBaseRowMetadata3181        `json:"rowMetadata,omitempty"`
-	BtType                 *string                            `json:"btType,omitempty"`
 	ExcludeIsEditable      *bool                              `json:"excludeIsEditable,omitempty"`
-	ExclusionStatus        *string                            `json:"exclusionStatus,omitempty"`
-	ExpansionStatus        *string                            `json:"expansionStatus,omitempty"`
+	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus `json:"exclusionStatus,omitempty"`
+	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus `json:"expansionStatus,omitempty"`
 	IndentLevel            *int32                             `json:"indentLevel,omitempty"`
 	MetadataUpdateHref     *string                            `json:"metadataUpdateHref,omitempty"`
 	RelatedOccurrencePaths []string                           `json:"relatedOccurrencePaths,omitempty"`
@@ -47,6 +47,38 @@ func NewBTBillOfMaterialsTableRow1425() *BTBillOfMaterialsTableRow1425 {
 func NewBTBillOfMaterialsTableRow1425WithDefaults() *BTBillOfMaterialsTableRow1425 {
 	this := BTBillOfMaterialsTableRow1425{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTBillOfMaterialsTableRow1425) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetColumnIdToCell returns the ColumnIdToCell field value if set, zero value otherwise.
@@ -209,38 +241,6 @@ func (o *BTBillOfMaterialsTableRow1425) SetRowMetadata(v BTTableBaseRowMetadata3
 	o.RowMetadata = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTBillOfMaterialsTableRow1425) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBillOfMaterialsTableRow1425) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTBillOfMaterialsTableRow1425) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTBillOfMaterialsTableRow1425) SetBtType(v string) {
-	o.BtType = &v
-}
-
 // GetExcludeIsEditable returns the ExcludeIsEditable field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsEditable() bool {
 	if o == nil || o.ExcludeIsEditable == nil {
@@ -274,9 +274,9 @@ func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsEditable(v bool) {
 }
 
 // GetExclusionStatus returns the ExclusionStatus field value if set, zero value otherwise.
-func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() string {
+func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() GBTBillOfMaterialsExclusionStatus {
 	if o == nil || o.ExclusionStatus == nil {
-		var ret string
+		var ret GBTBillOfMaterialsExclusionStatus
 		return ret
 	}
 	return *o.ExclusionStatus
@@ -284,7 +284,7 @@ func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() string {
 
 // GetExclusionStatusOk returns a tuple with the ExclusionStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatusOk() (*string, bool) {
+func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatusOk() (*GBTBillOfMaterialsExclusionStatus, bool) {
 	if o == nil || o.ExclusionStatus == nil {
 		return nil, false
 	}
@@ -300,15 +300,15 @@ func (o *BTBillOfMaterialsTableRow1425) HasExclusionStatus() bool {
 	return false
 }
 
-// SetExclusionStatus gets a reference to the given string and assigns it to the ExclusionStatus field.
-func (o *BTBillOfMaterialsTableRow1425) SetExclusionStatus(v string) {
+// SetExclusionStatus gets a reference to the given GBTBillOfMaterialsExclusionStatus and assigns it to the ExclusionStatus field.
+func (o *BTBillOfMaterialsTableRow1425) SetExclusionStatus(v GBTBillOfMaterialsExclusionStatus) {
 	o.ExclusionStatus = &v
 }
 
 // GetExpansionStatus returns the ExpansionStatus field value if set, zero value otherwise.
-func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatus() string {
+func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatus() GBTBillOfMaterialsExpansionStatus {
 	if o == nil || o.ExpansionStatus == nil {
-		var ret string
+		var ret GBTBillOfMaterialsExpansionStatus
 		return ret
 	}
 	return *o.ExpansionStatus
@@ -316,7 +316,7 @@ func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatus() string {
 
 // GetExpansionStatusOk returns a tuple with the ExpansionStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatusOk() (*string, bool) {
+func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatusOk() (*GBTBillOfMaterialsExpansionStatus, bool) {
 	if o == nil || o.ExpansionStatus == nil {
 		return nil, false
 	}
@@ -332,8 +332,8 @@ func (o *BTBillOfMaterialsTableRow1425) HasExpansionStatus() bool {
 	return false
 }
 
-// SetExpansionStatus gets a reference to the given string and assigns it to the ExpansionStatus field.
-func (o *BTBillOfMaterialsTableRow1425) SetExpansionStatus(v string) {
+// SetExpansionStatus gets a reference to the given GBTBillOfMaterialsExpansionStatus and assigns it to the ExpansionStatus field.
+func (o *BTBillOfMaterialsTableRow1425) SetExpansionStatus(v GBTBillOfMaterialsExpansionStatus) {
 	o.ExpansionStatus = &v
 }
 
@@ -467,6 +467,9 @@ func (o *BTBillOfMaterialsTableRow1425) SetUniqueItemId(v BTBillOfMaterialsUniqu
 
 func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.ColumnIdToCell != nil {
 		toSerialize["columnIdToCell"] = o.ColumnIdToCell
 	}
@@ -481,9 +484,6 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.RowMetadata != nil {
 		toSerialize["rowMetadata"] = o.RowMetadata
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.ExcludeIsEditable != nil {
 		toSerialize["excludeIsEditable"] = o.ExcludeIsEditable

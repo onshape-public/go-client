@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,17 +17,17 @@ import (
 
 // BTSingleAssemblyReferenceDisplayData1557 struct for BTSingleAssemblyReferenceDisplayData1557
 type BTSingleAssemblyReferenceDisplayData1557 struct {
+	BtType               *string                      `json:"btType,omitempty"`
 	ContextWorkspaceId   *string                      `json:"contextWorkspaceId,omitempty"`
 	DocumentId           *string                      `json:"documentId,omitempty"`
-	Error                *string                      `json:"error,omitempty"`
+	Error                *GBTErrorStringEnum          `json:"error,omitempty"`
 	ErrorMessage         *string                      `json:"errorMessage,omitempty"`
 	IsTransient          *bool                        `json:"isTransient,omitempty"`
 	Name                 *string                      `json:"name,omitempty"`
 	ReferenceName        *string                      `json:"referenceName,omitempty"`
 	ReferenceNodeId      *string                      `json:"referenceNodeId,omitempty"`
-	Visibility           *string                      `json:"visibility,omitempty"`
+	Visibility           *GBTBSFeatureVisibility      `json:"visibility,omitempty"`
 	AssemblyDisplayData  *BTRootAssemblyDisplayData96 `json:"assemblyDisplayData,omitempty"`
-	BtType               *string                      `json:"btType,omitempty"`
 	OccurrencesToExclude []BTOccurrence74             `json:"occurrencesToExclude,omitempty"`
 	Transform            *BTBSMatrix386               `json:"transform,omitempty"`
 }
@@ -47,6 +47,38 @@ func NewBTSingleAssemblyReferenceDisplayData1557() *BTSingleAssemblyReferenceDis
 func NewBTSingleAssemblyReferenceDisplayData1557WithDefaults() *BTSingleAssemblyReferenceDisplayData1557 {
 	this := BTSingleAssemblyReferenceDisplayData1557{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSingleAssemblyReferenceDisplayData1557) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetContextWorkspaceId returns the ContextWorkspaceId field value if set, zero value otherwise.
@@ -114,9 +146,9 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) SetDocumentId(v string) {
 }
 
 // GetError returns the Error field value if set, zero value otherwise.
-func (o *BTSingleAssemblyReferenceDisplayData1557) GetError() string {
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetError() GBTErrorStringEnum {
 	if o == nil || o.Error == nil {
-		var ret string
+		var ret GBTErrorStringEnum
 		return ret
 	}
 	return *o.Error
@@ -124,7 +156,7 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) GetError() string {
 
 // GetErrorOk returns a tuple with the Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTSingleAssemblyReferenceDisplayData1557) GetErrorOk() (*string, bool) {
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetErrorOk() (*GBTErrorStringEnum, bool) {
 	if o == nil || o.Error == nil {
 		return nil, false
 	}
@@ -140,8 +172,8 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) HasError() bool {
 	return false
 }
 
-// SetError gets a reference to the given string and assigns it to the Error field.
-func (o *BTSingleAssemblyReferenceDisplayData1557) SetError(v string) {
+// SetError gets a reference to the given GBTErrorStringEnum and assigns it to the Error field.
+func (o *BTSingleAssemblyReferenceDisplayData1557) SetError(v GBTErrorStringEnum) {
 	o.Error = &v
 }
 
@@ -306,9 +338,9 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) SetReferenceNodeId(v string) 
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *BTSingleAssemblyReferenceDisplayData1557) GetVisibility() string {
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetVisibility() GBTBSFeatureVisibility {
 	if o == nil || o.Visibility == nil {
-		var ret string
+		var ret GBTBSFeatureVisibility
 		return ret
 	}
 	return *o.Visibility
@@ -316,7 +348,7 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) GetVisibility() string {
 
 // GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTSingleAssemblyReferenceDisplayData1557) GetVisibilityOk() (*string, bool) {
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetVisibilityOk() (*GBTBSFeatureVisibility, bool) {
 	if o == nil || o.Visibility == nil {
 		return nil, false
 	}
@@ -332,8 +364,8 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) HasVisibility() bool {
 	return false
 }
 
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *BTSingleAssemblyReferenceDisplayData1557) SetVisibility(v string) {
+// SetVisibility gets a reference to the given GBTBSFeatureVisibility and assigns it to the Visibility field.
+func (o *BTSingleAssemblyReferenceDisplayData1557) SetVisibility(v GBTBSFeatureVisibility) {
 	o.Visibility = &v
 }
 
@@ -367,38 +399,6 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) HasAssemblyDisplayData() bool
 // SetAssemblyDisplayData gets a reference to the given BTRootAssemblyDisplayData96 and assigns it to the AssemblyDisplayData field.
 func (o *BTSingleAssemblyReferenceDisplayData1557) SetAssemblyDisplayData(v BTRootAssemblyDisplayData96) {
 	o.AssemblyDisplayData = &v
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTSingleAssemblyReferenceDisplayData1557) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSingleAssemblyReferenceDisplayData1557) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTSingleAssemblyReferenceDisplayData1557) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTSingleAssemblyReferenceDisplayData1557) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetOccurrencesToExclude returns the OccurrencesToExclude field value if set, zero value otherwise.
@@ -467,6 +467,9 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) SetTransform(v BTBSMatrix386)
 
 func (o BTSingleAssemblyReferenceDisplayData1557) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.ContextWorkspaceId != nil {
 		toSerialize["contextWorkspaceId"] = o.ContextWorkspaceId
 	}
@@ -496,9 +499,6 @@ func (o BTSingleAssemblyReferenceDisplayData1557) MarshalJSON() ([]byte, error) 
 	}
 	if o.AssemblyDisplayData != nil {
 		toSerialize["assemblyDisplayData"] = o.AssemblyDisplayData
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.OccurrencesToExclude != nil {
 		toSerialize["occurrencesToExclude"] = o.OccurrencesToExclude

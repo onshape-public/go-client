@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowsEdgePoint** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AllowsEdgePoint** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewBTAllowEdgePointFilter2371WithDefaults instantiates a new BTAllowEdgePointFilter2371 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAllowsEdgePoint
-
-`func (o *BTAllowEdgePointFilter2371) GetAllowsEdgePoint() bool`
-
-GetAllowsEdgePoint returns the AllowsEdgePoint field if non-nil, zero value otherwise.
-
-### GetAllowsEdgePointOk
-
-`func (o *BTAllowEdgePointFilter2371) GetAllowsEdgePointOk() (*bool, bool)`
-
-GetAllowsEdgePointOk returns a tuple with the AllowsEdgePoint field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowsEdgePoint
-
-`func (o *BTAllowEdgePointFilter2371) SetAllowsEdgePoint(v bool)`
-
-SetAllowsEdgePoint sets AllowsEdgePoint field to given value.
-
-### HasAllowsEdgePoint
-
-`func (o *BTAllowEdgePointFilter2371) HasAllowsEdgePoint() bool`
-
-HasAllowsEdgePoint returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -75,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTAllowEdgePointFilter2371) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAllowsEdgePoint
+
+`func (o *BTAllowEdgePointFilter2371) GetAllowsEdgePoint() bool`
+
+GetAllowsEdgePoint returns the AllowsEdgePoint field if non-nil, zero value otherwise.
+
+### GetAllowsEdgePointOk
+
+`func (o *BTAllowEdgePointFilter2371) GetAllowsEdgePointOk() (*bool, bool)`
+
+GetAllowsEdgePointOk returns a tuple with the AllowsEdgePoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowsEdgePoint
+
+`func (o *BTAllowEdgePointFilter2371) SetAllowsEdgePoint(v bool)`
+
+SetAllowsEdgePoint sets AllowsEdgePoint field to given value.
+
+### HasAllowsEdgePoint
+
+`func (o *BTAllowEdgePointFilter2371) HasAllowsEdgePoint() bool`
+
+HasAllowsEdgePoint returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **FromUserId** | Pointer to **string** |  | [optional] 
 **GetyAxisIsUp** | Pointer to **bool** |  | [optional] 
 **Grouping** | Pointer to **bool** |  | [optional] 
+**IgnoreExportRulesForContents** | Pointer to **bool** |  | [optional] 
 **ImageHeight** | Pointer to **int32** |  | [optional] 
 **ImageWidth** | Pointer to **int32** |  | [optional] 
 **ImportInBackground** | Pointer to **bool** |  | [optional] 
@@ -760,6 +761,31 @@ SetGrouping sets Grouping field to given value.
 `func (o *BTTranslateFormatParams) HasGrouping() bool`
 
 HasGrouping returns a boolean if a field has been set.
+
+### GetIgnoreExportRulesForContents
+
+`func (o *BTTranslateFormatParams) GetIgnoreExportRulesForContents() bool`
+
+GetIgnoreExportRulesForContents returns the IgnoreExportRulesForContents field if non-nil, zero value otherwise.
+
+### GetIgnoreExportRulesForContentsOk
+
+`func (o *BTTranslateFormatParams) GetIgnoreExportRulesForContentsOk() (*bool, bool)`
+
+GetIgnoreExportRulesForContentsOk returns a tuple with the IgnoreExportRulesForContents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreExportRulesForContents
+
+`func (o *BTTranslateFormatParams) SetIgnoreExportRulesForContents(v bool)`
+
+SetIgnoreExportRulesForContents sets IgnoreExportRulesForContents field to given value.
+
+### HasIgnoreExportRulesForContents
+
+`func (o *BTTranslateFormatParams) HasIgnoreExportRulesForContents() bool`
+
+HasIgnoreExportRulesForContents returns a boolean if a field has been set.
 
 ### GetImageHeight
 

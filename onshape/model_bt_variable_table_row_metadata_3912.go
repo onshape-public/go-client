@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,8 +17,8 @@ import (
 
 // BTVariableTableRowMetadata3912 struct for BTVariableTableRowMetadata3912
 type BTVariableTableRowMetadata3912 struct {
-	CrossHighlightDataIfAny  *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	BtType                   *string                            `json:"btType,omitempty"`
+	CrossHighlightDataIfAny  *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData       *BTTableBaseCrossHighlightData2609 `json:"crossHighlightData,omitempty"`
 	Info                     *string                            `json:"info,omitempty"`
 	IsFullyEditable          *bool                              `json:"isFullyEditable,omitempty"`
@@ -41,38 +41,6 @@ func NewBTVariableTableRowMetadata3912() *BTVariableTableRowMetadata3912 {
 func NewBTVariableTableRowMetadata3912WithDefaults() *BTVariableTableRowMetadata3912 {
 	this := BTVariableTableRowMetadata3912{}
 	return &this
-}
-
-// GetCrossHighlightDataIfAny returns the CrossHighlightDataIfAny field value if set, zero value otherwise.
-func (o *BTVariableTableRowMetadata3912) GetCrossHighlightDataIfAny() BTTableBaseCrossHighlightData2609 {
-	if o == nil || o.CrossHighlightDataIfAny == nil {
-		var ret BTTableBaseCrossHighlightData2609
-		return ret
-	}
-	return *o.CrossHighlightDataIfAny
-}
-
-// GetCrossHighlightDataIfAnyOk returns a tuple with the CrossHighlightDataIfAny field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTVariableTableRowMetadata3912) GetCrossHighlightDataIfAnyOk() (*BTTableBaseCrossHighlightData2609, bool) {
-	if o == nil || o.CrossHighlightDataIfAny == nil {
-		return nil, false
-	}
-	return o.CrossHighlightDataIfAny, true
-}
-
-// HasCrossHighlightDataIfAny returns a boolean if a field has been set.
-func (o *BTVariableTableRowMetadata3912) HasCrossHighlightDataIfAny() bool {
-	if o != nil && o.CrossHighlightDataIfAny != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCrossHighlightDataIfAny gets a reference to the given BTTableBaseCrossHighlightData2609 and assigns it to the CrossHighlightDataIfAny field.
-func (o *BTVariableTableRowMetadata3912) SetCrossHighlightDataIfAny(v BTTableBaseCrossHighlightData2609) {
-	o.CrossHighlightDataIfAny = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -105,6 +73,38 @@ func (o *BTVariableTableRowMetadata3912) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTVariableTableRowMetadata3912) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetCrossHighlightDataIfAny returns the CrossHighlightDataIfAny field value if set, zero value otherwise.
+func (o *BTVariableTableRowMetadata3912) GetCrossHighlightDataIfAny() BTTableBaseCrossHighlightData2609 {
+	if o == nil || o.CrossHighlightDataIfAny == nil {
+		var ret BTTableBaseCrossHighlightData2609
+		return ret
+	}
+	return *o.CrossHighlightDataIfAny
+}
+
+// GetCrossHighlightDataIfAnyOk returns a tuple with the CrossHighlightDataIfAny field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTVariableTableRowMetadata3912) GetCrossHighlightDataIfAnyOk() (*BTTableBaseCrossHighlightData2609, bool) {
+	if o == nil || o.CrossHighlightDataIfAny == nil {
+		return nil, false
+	}
+	return o.CrossHighlightDataIfAny, true
+}
+
+// HasCrossHighlightDataIfAny returns a boolean if a field has been set.
+func (o *BTVariableTableRowMetadata3912) HasCrossHighlightDataIfAny() bool {
+	if o != nil && o.CrossHighlightDataIfAny != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCrossHighlightDataIfAny gets a reference to the given BTTableBaseCrossHighlightData2609 and assigns it to the CrossHighlightDataIfAny field.
+func (o *BTVariableTableRowMetadata3912) SetCrossHighlightDataIfAny(v BTTableBaseCrossHighlightData2609) {
+	o.CrossHighlightDataIfAny = &v
 }
 
 // GetCrossHighlightData returns the CrossHighlightData field value if set, zero value otherwise.
@@ -269,11 +269,11 @@ func (o *BTVariableTableRowMetadata3912) SetLastWritingFeatureNodeId(v string) {
 
 func (o BTVariableTableRowMetadata3912) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CrossHighlightDataIfAny != nil {
-		toSerialize["crossHighlightDataIfAny"] = o.CrossHighlightDataIfAny
-	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.CrossHighlightDataIfAny != nil {
+		toSerialize["crossHighlightDataIfAny"] = o.CrossHighlightDataIfAny
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData

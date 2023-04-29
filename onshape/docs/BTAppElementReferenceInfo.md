@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ChangeId** | **string** | The latest change id for the element, after the edit was committed. | 
 **ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
 **ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
-**ErrorValue** | Pointer to **string** |  | [optional] 
+**ErrorValue** | Pointer to [**BTAppElementErrorCode**](BTAppElementErrorCode.md) |  | [optional] 
 **ParentChangeId** | Pointer to **string** | The latest change id for the element, before the edit was made. | [optional] 
 **ReferenceId** | Pointer to **string** |  | [optional] 
 **TransactionId** | Pointer to **string** | The id of the transaction in which the edit was applied. | [optional] 
@@ -103,20 +103,20 @@ HasErrorDescription returns a boolean if a field has been set.
 
 ### GetErrorValue
 
-`func (o *BTAppElementReferenceInfo) GetErrorValue() string`
+`func (o *BTAppElementReferenceInfo) GetErrorValue() BTAppElementErrorCode`
 
 GetErrorValue returns the ErrorValue field if non-nil, zero value otherwise.
 
 ### GetErrorValueOk
 
-`func (o *BTAppElementReferenceInfo) GetErrorValueOk() (*string, bool)`
+`func (o *BTAppElementReferenceInfo) GetErrorValueOk() (*BTAppElementErrorCode, bool)`
 
 GetErrorValueOk returns a tuple with the ErrorValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorValue
 
-`func (o *BTAppElementReferenceInfo) SetErrorValue(v string)`
+`func (o *BTAppElementReferenceInfo) SetErrorValue(v BTAppElementErrorCode)`
 
 SetErrorValue sets ErrorValue field to given value.
 

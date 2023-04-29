@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **IsSketchObject** | Pointer to **bool** |  | [optional] 
-**ObjectType** | Pointer to **string** |  | [optional] 
+**ObjectType** | Pointer to [**GBTSketchObjectType**](GBTSketchObjectType.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasIsSketchObject returns a boolean if a field has been set.
 
 ### GetObjectType
 
-`func (o *BTSketchObjectFilter184AllOf) GetObjectType() string`
+`func (o *BTSketchObjectFilter184AllOf) GetObjectType() GBTSketchObjectType`
 
 GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
 ### GetObjectTypeOk
 
-`func (o *BTSketchObjectFilter184AllOf) GetObjectTypeOk() (*string, bool)`
+`func (o *BTSketchObjectFilter184AllOf) GetObjectTypeOk() (*GBTSketchObjectType, bool)`
 
 GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObjectType
 
-`func (o *BTSketchObjectFilter184AllOf) SetObjectType(v string)`
+`func (o *BTSketchObjectFilter184AllOf) SetObjectType(v GBTSketchObjectType)`
 
 SetObjectType sets ObjectType field to given value.
 

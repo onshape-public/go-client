@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **SourceId** | Pointer to **string** |  | [optional] 
-**SourceType** | Pointer to **string** |  | [optional] 
+**SourceType** | Pointer to [**GBTMetadataSourceType**](GBTMetadataSourceType.md) |  | [optional] 
 
 ## Methods
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBTPartMetadataSource2895WithDefaults instantiates a new BTPartMetadataSource2895 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTPartMetadataSource2895) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTPartMetadataSource2895) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTPartMetadataSource2895) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTPartMetadataSource2895) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetSourceId
 
@@ -53,20 +79,20 @@ HasSourceId returns a boolean if a field has been set.
 
 ### GetSourceType
 
-`func (o *BTPartMetadataSource2895) GetSourceType() string`
+`func (o *BTPartMetadataSource2895) GetSourceType() GBTMetadataSourceType`
 
 GetSourceType returns the SourceType field if non-nil, zero value otherwise.
 
 ### GetSourceTypeOk
 
-`func (o *BTPartMetadataSource2895) GetSourceTypeOk() (*string, bool)`
+`func (o *BTPartMetadataSource2895) GetSourceTypeOk() (*GBTMetadataSourceType, bool)`
 
 GetSourceTypeOk returns a tuple with the SourceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceType
 
-`func (o *BTPartMetadataSource2895) SetSourceType(v string)`
+`func (o *BTPartMetadataSource2895) SetSourceType(v GBTMetadataSourceType)`
 
 SetSourceType sets SourceType field to given value.
 

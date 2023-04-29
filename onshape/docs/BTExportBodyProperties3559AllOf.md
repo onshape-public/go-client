@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Material** | Pointer to [**BTPartMaterial1445**](BTPartMaterial1445.md) |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to [**GBTPartVisibility**](GBTPartVisibility.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasMaterial returns a boolean if a field has been set.
 
 ### GetVisibility
 
-`func (o *BTExportBodyProperties3559AllOf) GetVisibility() string`
+`func (o *BTExportBodyProperties3559AllOf) GetVisibility() GBTPartVisibility`
 
 GetVisibility returns the Visibility field if non-nil, zero value otherwise.
 
 ### GetVisibilityOk
 
-`func (o *BTExportBodyProperties3559AllOf) GetVisibilityOk() (*string, bool)`
+`func (o *BTExportBodyProperties3559AllOf) GetVisibilityOk() (*GBTPartVisibility, bool)`
 
 GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVisibility
 
-`func (o *BTExportBodyProperties3559AllOf) SetVisibility(v string)`
+`func (o *BTExportBodyProperties3559AllOf) SetVisibility(v GBTPartVisibility)`
 
 SetVisibility sets Visibility field to given value.
 

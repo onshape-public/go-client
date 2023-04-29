@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvailableVersions** | Pointer to **[]string** |  | [optional] 
-**SpecifiedVersion** | Pointer to **string** |  | [optional] 
+**AvailableVersions** | Pointer to [**[]BTApiVersion**](BTApiVersion.md) |  | [optional] 
+**SpecifiedVersion** | Pointer to [**BTApiVersion**](BTApiVersion.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAvailableVersions
 
-`func (o *Versions) GetAvailableVersions() []string`
+`func (o *Versions) GetAvailableVersions() []BTApiVersion`
 
 GetAvailableVersions returns the AvailableVersions field if non-nil, zero value otherwise.
 
 ### GetAvailableVersionsOk
 
-`func (o *Versions) GetAvailableVersionsOk() (*[]string, bool)`
+`func (o *Versions) GetAvailableVersionsOk() (*[]BTApiVersion, bool)`
 
 GetAvailableVersionsOk returns a tuple with the AvailableVersions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableVersions
 
-`func (o *Versions) SetAvailableVersions(v []string)`
+`func (o *Versions) SetAvailableVersions(v []BTApiVersion)`
 
 SetAvailableVersions sets AvailableVersions field to given value.
 
@@ -53,20 +53,20 @@ HasAvailableVersions returns a boolean if a field has been set.
 
 ### GetSpecifiedVersion
 
-`func (o *Versions) GetSpecifiedVersion() string`
+`func (o *Versions) GetSpecifiedVersion() BTApiVersion`
 
 GetSpecifiedVersion returns the SpecifiedVersion field if non-nil, zero value otherwise.
 
 ### GetSpecifiedVersionOk
 
-`func (o *Versions) GetSpecifiedVersionOk() (*string, bool)`
+`func (o *Versions) GetSpecifiedVersionOk() (*BTApiVersion, bool)`
 
 GetSpecifiedVersionOk returns a tuple with the SpecifiedVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSpecifiedVersion
 
-`func (o *Versions) SetSpecifiedVersion(v string)`
+`func (o *Versions) SetSpecifiedVersion(v BTApiVersion)`
 
 SetSpecifiedVersion sets SpecifiedVersion field to given value.
 

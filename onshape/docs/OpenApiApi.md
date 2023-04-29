@@ -1,6 +1,6 @@
 # \OpenApiApi
 
-All URIs are relative to *https://cad.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,14 +30,14 @@ import (
 func main() {
     forceReload := true // bool | Force reload the OpenApi definition. Only works when asking for the latest version. (optional)
     version := "version_example" // string | Specify a version of Onshape from which the OpenAPI is generated. If '*' is specified in any of the version fields, that indicates any version if acceptable. (optional)
-    versionAlias := "versionAlias_example" // string | Version aliases based on the currently released version. (optional)
+    versionAlias := openapiclient.VersionAlias("LAST_MINOR") // VersionAlias | Version aliases based on the currently released version. (optional)
     noFilter := true // bool | Do not filter the specification at all. (optional) (default to false)
     includedTags := []string{"Inner_example"} // []string | Return only operations with tags included in includedTags. (optional)
     excludedTags := []string{"Inner_example"} // []string | If an operation contains an excluded tag, it is not returned from this endpoint. (optional)
     includeDeprecated := true // bool | Include deprecated endpoints. (optional) (default to false)
     onlyDeprecated := true // bool | Only include deprecated endpoints. (optional) (default to false)
-    documentationStatuses := []string{"DocumentationStatuses_example"} // []string | Only return endpoints that have the specified documentation status. Default is to return all the endpoints the user should have access to. (optional)
-    restUserRole := "restUserRole_example" // string | The REST user role for which this spec is requested. (optional)
+    documentationStatuses := []openapiclient.Status{openapiclient.Status("DEVELOPMENT")} // []Status | Only return endpoints that have the specified documentation status. Default is to return all the endpoints the user should have access to. (optional)
+    restUserRole := openapiclient.BTRestUserRole("PUBLIC") // BTRestUserRole | The REST user role for which this spec is requested. (optional)
     operationIds := []string{"Inner_example"} // []string | Only return operations with specified ids. (optional)
     excludedOperationIds := []string{"Inner_example"} // []string | Do not return operations with specified ids. (optional)
 
@@ -64,14 +64,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **forceReload** | **bool** | Force reload the OpenApi definition. Only works when asking for the latest version. | 
  **version** | **string** | Specify a version of Onshape from which the OpenAPI is generated. If &#39;*&#39; is specified in any of the version fields, that indicates any version if acceptable. | 
- **versionAlias** | **string** | Version aliases based on the currently released version. | 
+ **versionAlias** | [**VersionAlias**](VersionAlias.md) | Version aliases based on the currently released version. | 
  **noFilter** | **bool** | Do not filter the specification at all. | [default to false]
  **includedTags** | **[]string** | Return only operations with tags included in includedTags. | 
  **excludedTags** | **[]string** | If an operation contains an excluded tag, it is not returned from this endpoint. | 
  **includeDeprecated** | **bool** | Include deprecated endpoints. | [default to false]
  **onlyDeprecated** | **bool** | Only include deprecated endpoints. | [default to false]
- **documentationStatuses** | **[]string** | Only return endpoints that have the specified documentation status. Default is to return all the endpoints the user should have access to. | 
- **restUserRole** | **string** | The REST user role for which this spec is requested. | 
+ **documentationStatuses** | [**[]Status**](Status.md) | Only return endpoints that have the specified documentation status. Default is to return all the endpoints the user should have access to. | 
+ **restUserRole** | [**BTRestUserRole**](BTRestUserRole.md) | The REST user role for which this spec is requested. | 
  **operationIds** | **[]string** | Only return operations with specified ids. | 
  **excludedOperationIds** | **[]string** | Do not return operations with specified ids. | 
 

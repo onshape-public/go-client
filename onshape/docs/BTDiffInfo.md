@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Changes** | Pointer to [**map[string]BTDiffInfo**](BTDiffInfo.md) |  | [optional] 
-**EntityType** | Pointer to **string** |  | [optional] 
+**EntityType** | Pointer to [**BTDiffInfoCollectionType**](BTDiffInfoCollectionType.md) |  | [optional] 
 **GeometryChangeMessages** | Pointer to **[]string** |  | [optional] 
 **SourceId** | Pointer to **string** |  | [optional] 
 **SourceValue** | Pointer to **string** |  | [optional] 
 **TargetId** | Pointer to **string** |  | [optional] 
 **TargetValue** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTNodeChange**](GBTNodeChange.md) |  | [optional] 
 
 ## Methods
 
@@ -59,20 +59,20 @@ HasChanges returns a boolean if a field has been set.
 
 ### GetEntityType
 
-`func (o *BTDiffInfo) GetEntityType() string`
+`func (o *BTDiffInfo) GetEntityType() BTDiffInfoCollectionType`
 
 GetEntityType returns the EntityType field if non-nil, zero value otherwise.
 
 ### GetEntityTypeOk
 
-`func (o *BTDiffInfo) GetEntityTypeOk() (*string, bool)`
+`func (o *BTDiffInfo) GetEntityTypeOk() (*BTDiffInfoCollectionType, bool)`
 
 GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntityType
 
-`func (o *BTDiffInfo) SetEntityType(v string)`
+`func (o *BTDiffInfo) SetEntityType(v BTDiffInfoCollectionType)`
 
 SetEntityType sets EntityType field to given value.
 
@@ -209,20 +209,20 @@ HasTargetValue returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTDiffInfo) GetType() string`
+`func (o *BTDiffInfo) GetType() GBTNodeChange`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTDiffInfo) GetTypeOk() (*string, bool)`
+`func (o *BTDiffInfo) GetTypeOk() (*GBTNodeChange, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTDiffInfo) SetType(v string)`
+`func (o *BTDiffInfo) SetType(v GBTNodeChange)`
 
 SetType sets Type field to given value.
 

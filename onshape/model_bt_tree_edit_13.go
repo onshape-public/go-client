@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,7 +18,7 @@ import (
 // BTTreeEdit13 struct for BTTreeEdit13
 type BTTreeEdit13 struct {
 	BtType   *string        `json:"btType,omitempty"`
-	EditType *string        `json:"editType,omitempty"`
+	EditType *EditType      `json:"editType,omitempty"`
 	NewNodes []BTTreeNode20 `json:"newNodes,omitempty"`
 	Nothing  *bool          `json:"nothing,omitempty"`
 }
@@ -73,9 +73,9 @@ func (o *BTTreeEdit13) SetBtType(v string) {
 }
 
 // GetEditType returns the EditType field value if set, zero value otherwise.
-func (o *BTTreeEdit13) GetEditType() string {
+func (o *BTTreeEdit13) GetEditType() EditType {
 	if o == nil || o.EditType == nil {
-		var ret string
+		var ret EditType
 		return ret
 	}
 	return *o.EditType
@@ -83,7 +83,7 @@ func (o *BTTreeEdit13) GetEditType() string {
 
 // GetEditTypeOk returns a tuple with the EditType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTTreeEdit13) GetEditTypeOk() (*string, bool) {
+func (o *BTTreeEdit13) GetEditTypeOk() (*EditType, bool) {
 	if o == nil || o.EditType == nil {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *BTTreeEdit13) HasEditType() bool {
 	return false
 }
 
-// SetEditType gets a reference to the given string and assigns it to the EditType field.
-func (o *BTTreeEdit13) SetEditType(v string) {
+// SetEditType gets a reference to the given EditType and assigns it to the EditType field.
+func (o *BTTreeEdit13) SetEditType(v EditType) {
 	o.EditType = &v
 }
 

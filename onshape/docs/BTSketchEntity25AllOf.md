@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **IsFromSplineHandle** | Pointer to **bool** |  | [optional] 
 **IsTextStroke** | Pointer to **bool** |  | [optional] 
 **IsUserPoint** | Pointer to **bool** |  | [optional] 
-**SketchCurveType** | Pointer to **string** |  | [optional] 
+**SketchCurveType** | Pointer to [**GBTSketchCurveType**](GBTSketchCurveType.md) |  | [optional] 
 **SketchEntityId** | Pointer to **string** |  | [optional] 
 **SolveStatus** | Pointer to **int32** |  | [optional] 
 
@@ -185,20 +185,20 @@ HasIsUserPoint returns a boolean if a field has been set.
 
 ### GetSketchCurveType
 
-`func (o *BTSketchEntity25AllOf) GetSketchCurveType() string`
+`func (o *BTSketchEntity25AllOf) GetSketchCurveType() GBTSketchCurveType`
 
 GetSketchCurveType returns the SketchCurveType field if non-nil, zero value otherwise.
 
 ### GetSketchCurveTypeOk
 
-`func (o *BTSketchEntity25AllOf) GetSketchCurveTypeOk() (*string, bool)`
+`func (o *BTSketchEntity25AllOf) GetSketchCurveTypeOk() (*GBTSketchCurveType, bool)`
 
 GetSketchCurveTypeOk returns a tuple with the SketchCurveType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSketchCurveType
 
-`func (o *BTSketchEntity25AllOf) SetSketchCurveType(v string)`
+`func (o *BTSketchEntity25AllOf) SetSketchCurveType(v GBTSketchCurveType)`
 
 SetSketchCurveType sets SketchCurveType field to given value.
 

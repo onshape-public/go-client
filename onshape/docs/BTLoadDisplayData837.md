@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **Hidden** | Pointer to **bool** |  | [optional] 
 **IsDerivedFeature** | Pointer to **bool** |  | [optional] 
 **IsDirectionFlipped** | Pointer to **bool** |  | [optional] 
-**LoadType** | Pointer to **string** |  | [optional] 
+**LoadType** | Pointer to [**GBTLoadType**](GBTLoadType.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **OwnerOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**GBTAssemblyFeatureDisplayStatus**](GBTAssemblyFeatureDisplayStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -213,20 +213,20 @@ HasIsDirectionFlipped returns a boolean if a field has been set.
 
 ### GetLoadType
 
-`func (o *BTLoadDisplayData837) GetLoadType() string`
+`func (o *BTLoadDisplayData837) GetLoadType() GBTLoadType`
 
 GetLoadType returns the LoadType field if non-nil, zero value otherwise.
 
 ### GetLoadTypeOk
 
-`func (o *BTLoadDisplayData837) GetLoadTypeOk() (*string, bool)`
+`func (o *BTLoadDisplayData837) GetLoadTypeOk() (*GBTLoadType, bool)`
 
 GetLoadTypeOk returns a tuple with the LoadType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLoadType
 
-`func (o *BTLoadDisplayData837) SetLoadType(v string)`
+`func (o *BTLoadDisplayData837) SetLoadType(v GBTLoadType)`
 
 SetLoadType sets LoadType field to given value.
 
@@ -313,20 +313,20 @@ HasOwnerOccurrence returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *BTLoadDisplayData837) GetStatus() string`
+`func (o *BTLoadDisplayData837) GetStatus() GBTAssemblyFeatureDisplayStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *BTLoadDisplayData837) GetStatusOk() (*string, bool)`
+`func (o *BTLoadDisplayData837) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *BTLoadDisplayData837) SetStatus(v string)`
+`func (o *BTLoadDisplayData837) SetStatus(v GBTAssemblyFeatureDisplayStatus)`
 
 SetStatus sets Status field to given value.
 

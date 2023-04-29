@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -27,8 +27,8 @@ type BTMIndividualCreatedByQuery137 struct {
 	PersistentQuery     *BTPStatement269           `json:"persistentQuery,omitempty"`
 	QueryStatement      *BTPStatement269           `json:"queryStatement,omitempty"`
 	VariableName        *BTMIndividualQuery138     `json:"variableName,omitempty"`
-	BodyType            *string                    `json:"bodyType,omitempty"`
-	EntityType          *string                    `json:"entityType,omitempty"`
+	BodyType            *GBTBodyType               `json:"bodyType,omitempty"`
+	EntityType          *GBTEntityType             `json:"entityType,omitempty"`
 	FeatureId           *string                    `json:"featureId,omitempty"`
 	FilterConstruction  *bool                      `json:"filterConstruction,omitempty"`
 }
@@ -371,9 +371,9 @@ func (o *BTMIndividualCreatedByQuery137) SetVariableName(v BTMIndividualQuery138
 }
 
 // GetBodyType returns the BodyType field value if set, zero value otherwise.
-func (o *BTMIndividualCreatedByQuery137) GetBodyType() string {
+func (o *BTMIndividualCreatedByQuery137) GetBodyType() GBTBodyType {
 	if o == nil || o.BodyType == nil {
-		var ret string
+		var ret GBTBodyType
 		return ret
 	}
 	return *o.BodyType
@@ -381,7 +381,7 @@ func (o *BTMIndividualCreatedByQuery137) GetBodyType() string {
 
 // GetBodyTypeOk returns a tuple with the BodyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMIndividualCreatedByQuery137) GetBodyTypeOk() (*string, bool) {
+func (o *BTMIndividualCreatedByQuery137) GetBodyTypeOk() (*GBTBodyType, bool) {
 	if o == nil || o.BodyType == nil {
 		return nil, false
 	}
@@ -397,15 +397,15 @@ func (o *BTMIndividualCreatedByQuery137) HasBodyType() bool {
 	return false
 }
 
-// SetBodyType gets a reference to the given string and assigns it to the BodyType field.
-func (o *BTMIndividualCreatedByQuery137) SetBodyType(v string) {
+// SetBodyType gets a reference to the given GBTBodyType and assigns it to the BodyType field.
+func (o *BTMIndividualCreatedByQuery137) SetBodyType(v GBTBodyType) {
 	o.BodyType = &v
 }
 
 // GetEntityType returns the EntityType field value if set, zero value otherwise.
-func (o *BTMIndividualCreatedByQuery137) GetEntityType() string {
+func (o *BTMIndividualCreatedByQuery137) GetEntityType() GBTEntityType {
 	if o == nil || o.EntityType == nil {
-		var ret string
+		var ret GBTEntityType
 		return ret
 	}
 	return *o.EntityType
@@ -413,7 +413,7 @@ func (o *BTMIndividualCreatedByQuery137) GetEntityType() string {
 
 // GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMIndividualCreatedByQuery137) GetEntityTypeOk() (*string, bool) {
+func (o *BTMIndividualCreatedByQuery137) GetEntityTypeOk() (*GBTEntityType, bool) {
 	if o == nil || o.EntityType == nil {
 		return nil, false
 	}
@@ -429,8 +429,8 @@ func (o *BTMIndividualCreatedByQuery137) HasEntityType() bool {
 	return false
 }
 
-// SetEntityType gets a reference to the given string and assigns it to the EntityType field.
-func (o *BTMIndividualCreatedByQuery137) SetEntityType(v string) {
+// SetEntityType gets a reference to the given GBTEntityType and assigns it to the EntityType field.
+func (o *BTMIndividualCreatedByQuery137) SetEntityType(v GBTEntityType) {
 	o.EntityType = &v
 }
 

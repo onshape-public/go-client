@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AppearanceIdToAppearanceOverride** | Pointer to [**map[string]BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **AssemblyReferenceDisplayData** | Pointer to [**BTAssemblyReferencesDisplayData1562**](BTAssemblyReferencesDisplayData1562.md) |  | [optional] 
-**CacheablePartStudioDisplayDataVersion** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
+**CacheablePartStudioDisplayDataVersion** | Pointer to [**GBTPartStudioDisplayDataVersion**](GBTPartStudioDisplayDataVersion.md) |  | [optional] 
 **DecalIdToDecal** | Pointer to [**map[string]BTDecal2404**](BTDecal2404.md) |  | [optional] 
 **DeterministicIdToAssociatedFeatureIds** | Pointer to **map[string][]string** |  | [optional] 
 **DeterministicIdToEntity** | Pointer to [**map[string]BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
@@ -34,7 +35,7 @@ Name | Type | Description | Notes
 **PartDisplayData** | Pointer to [**[]BTPartDisplayData17**](BTPartDisplayData17.md) |  | [optional] 
 **SketchImages** | Pointer to [**map[string]map[string]BTSketchImageDisplayData1379**](map.md) |  | [optional] 
 **UpdatedParts** | Pointer to **[]string** |  | [optional] 
-**Usage** | Pointer to **string** |  | [optional] 
+**Usage** | Pointer to [**GBTDisplayDataUsage**](GBTDisplayDataUsage.md) |  | [optional] 
 **UseCPUIntensiveThreadPoolForCopyForSettings** | Pointer to **bool** |  | [optional] 
 **UsesMultipleTessellationSettings** | Pointer to **bool** |  | [optional] 
 **VersionForRasterization** | Pointer to [**BTElementDisplayData326**](BTElementDisplayData326.md) |  | [optional] 
@@ -108,22 +109,47 @@ SetAssemblyReferenceDisplayData sets AssemblyReferenceDisplayData field to given
 
 HasAssemblyReferenceDisplayData returns a boolean if a field has been set.
 
+### GetBtType
+
+`func (o *BTPartStudioDisplayData346) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTPartStudioDisplayData346) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTPartStudioDisplayData346) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTPartStudioDisplayData346) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
+
 ### GetCacheablePartStudioDisplayDataVersion
 
-`func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersion() string`
+`func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersion() GBTPartStudioDisplayDataVersion`
 
 GetCacheablePartStudioDisplayDataVersion returns the CacheablePartStudioDisplayDataVersion field if non-nil, zero value otherwise.
 
 ### GetCacheablePartStudioDisplayDataVersionOk
 
-`func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersionOk() (*string, bool)`
+`func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersionOk() (*GBTPartStudioDisplayDataVersion, bool)`
 
 GetCacheablePartStudioDisplayDataVersionOk returns a tuple with the CacheablePartStudioDisplayDataVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCacheablePartStudioDisplayDataVersion
 
-`func (o *BTPartStudioDisplayData346) SetCacheablePartStudioDisplayDataVersion(v string)`
+`func (o *BTPartStudioDisplayData346) SetCacheablePartStudioDisplayDataVersion(v GBTPartStudioDisplayDataVersion)`
 
 SetCacheablePartStudioDisplayDataVersion sets CacheablePartStudioDisplayDataVersion field to given value.
 
@@ -810,20 +836,20 @@ HasUpdatedParts returns a boolean if a field has been set.
 
 ### GetUsage
 
-`func (o *BTPartStudioDisplayData346) GetUsage() string`
+`func (o *BTPartStudioDisplayData346) GetUsage() GBTDisplayDataUsage`
 
 GetUsage returns the Usage field if non-nil, zero value otherwise.
 
 ### GetUsageOk
 
-`func (o *BTPartStudioDisplayData346) GetUsageOk() (*string, bool)`
+`func (o *BTPartStudioDisplayData346) GetUsageOk() (*GBTDisplayDataUsage, bool)`
 
 GetUsageOk returns a tuple with the Usage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsage
 
-`func (o *BTPartStudioDisplayData346) SetUsage(v string)`
+`func (o *BTPartStudioDisplayData346) SetUsage(v GBTDisplayDataUsage)`
 
 SetUsage sets Usage field to given value.
 

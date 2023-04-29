@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -30,7 +30,7 @@ type BTPartMetadataInfo struct {
 	IsHidden                         *bool                 `json:"isHidden,omitempty"`
 	IsMesh                           *bool                 `json:"isMesh,omitempty"`
 	Material                         *BTPartMaterialInfo   `json:"material,omitempty"`
-	MeshState                        *string               `json:"meshState,omitempty"`
+	MeshState                        *GBTMeshState         `json:"meshState,omitempty"`
 	MicroversionId                   *string               `json:"microversionId,omitempty"`
 	Name                             *string               `json:"name,omitempty"`
 	Ordinal                          *int32                `json:"ordinal,omitempty"`
@@ -43,7 +43,7 @@ type BTPartMetadataInfo struct {
 	PropertySourceTypes              *map[string]int32     `json:"propertySourceTypes,omitempty"`
 	ReferencingConfiguredPartNodeIds []string              `json:"referencingConfiguredPartNodeIds,omitempty"`
 	Revision                         *string               `json:"revision,omitempty"`
-	State                            *string               `json:"state,omitempty"`
+	State                            *BTMetadataStateType  `json:"state,omitempty"`
 	ThumbnailConfigurationId         *string               `json:"thumbnailConfigurationId,omitempty"`
 	ThumbnailInfo                    *BTThumbnailInfo      `json:"thumbnailInfo,omitempty"`
 	Title1                           *string               `json:"title1,omitempty"`
@@ -487,9 +487,9 @@ func (o *BTPartMetadataInfo) SetMaterial(v BTPartMaterialInfo) {
 }
 
 // GetMeshState returns the MeshState field value if set, zero value otherwise.
-func (o *BTPartMetadataInfo) GetMeshState() string {
+func (o *BTPartMetadataInfo) GetMeshState() GBTMeshState {
 	if o == nil || o.MeshState == nil {
-		var ret string
+		var ret GBTMeshState
 		return ret
 	}
 	return *o.MeshState
@@ -497,7 +497,7 @@ func (o *BTPartMetadataInfo) GetMeshState() string {
 
 // GetMeshStateOk returns a tuple with the MeshState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartMetadataInfo) GetMeshStateOk() (*string, bool) {
+func (o *BTPartMetadataInfo) GetMeshStateOk() (*GBTMeshState, bool) {
 	if o == nil || o.MeshState == nil {
 		return nil, false
 	}
@@ -513,8 +513,8 @@ func (o *BTPartMetadataInfo) HasMeshState() bool {
 	return false
 }
 
-// SetMeshState gets a reference to the given string and assigns it to the MeshState field.
-func (o *BTPartMetadataInfo) SetMeshState(v string) {
+// SetMeshState gets a reference to the given GBTMeshState and assigns it to the MeshState field.
+func (o *BTPartMetadataInfo) SetMeshState(v GBTMeshState) {
 	o.MeshState = &v
 }
 
@@ -903,9 +903,9 @@ func (o *BTPartMetadataInfo) SetRevision(v string) {
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *BTPartMetadataInfo) GetState() string {
+func (o *BTPartMetadataInfo) GetState() BTMetadataStateType {
 	if o == nil || o.State == nil {
-		var ret string
+		var ret BTMetadataStateType
 		return ret
 	}
 	return *o.State
@@ -913,7 +913,7 @@ func (o *BTPartMetadataInfo) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartMetadataInfo) GetStateOk() (*string, bool) {
+func (o *BTPartMetadataInfo) GetStateOk() (*BTMetadataStateType, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -929,8 +929,8 @@ func (o *BTPartMetadataInfo) HasState() bool {
 	return false
 }
 
-// SetState gets a reference to the given string and assigns it to the State field.
-func (o *BTPartMetadataInfo) SetState(v string) {
+// SetState gets a reference to the given BTMetadataStateType and assigns it to the State field.
+func (o *BTPartMetadataInfo) SetState(v BTMetadataStateType) {
 	o.State = &v
 }
 

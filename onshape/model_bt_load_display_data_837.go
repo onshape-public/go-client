@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,18 +17,18 @@ import (
 
 // BTLoadDisplayData837 struct for BTLoadDisplayData837
 type BTLoadDisplayData837 struct {
-	BtType                   *string         `json:"btType,omitempty"`
-	ComponentValues          *BTVector3d389  `json:"componentValues,omitempty"`
-	DirectionMateConnectorId *string         `json:"directionMateConnectorId,omitempty"`
-	FaceLoadDeterministicIds []string        `json:"faceLoadDeterministicIds,omitempty"`
-	Hidden                   *bool           `json:"hidden,omitempty"`
-	IsDerivedFeature         *bool           `json:"isDerivedFeature,omitempty"`
-	IsDirectionFlipped       *bool           `json:"isDirectionFlipped,omitempty"`
-	LoadType                 *string         `json:"loadType,omitempty"`
-	NodeId                   *string         `json:"nodeId,omitempty"`
-	Occurrence               *BTOccurrence74 `json:"occurrence,omitempty"`
-	OwnerOccurrence          *BTOccurrence74 `json:"ownerOccurrence,omitempty"`
-	Status                   *string         `json:"status,omitempty"`
+	BtType                   *string                          `json:"btType,omitempty"`
+	ComponentValues          *BTVector3d389                   `json:"componentValues,omitempty"`
+	DirectionMateConnectorId *string                          `json:"directionMateConnectorId,omitempty"`
+	FaceLoadDeterministicIds []string                         `json:"faceLoadDeterministicIds,omitempty"`
+	Hidden                   *bool                            `json:"hidden,omitempty"`
+	IsDerivedFeature         *bool                            `json:"isDerivedFeature,omitempty"`
+	IsDirectionFlipped       *bool                            `json:"isDirectionFlipped,omitempty"`
+	LoadType                 *GBTLoadType                     `json:"loadType,omitempty"`
+	NodeId                   *string                          `json:"nodeId,omitempty"`
+	Occurrence               *BTOccurrence74                  `json:"occurrence,omitempty"`
+	OwnerOccurrence          *BTOccurrence74                  `json:"ownerOccurrence,omitempty"`
+	Status                   *GBTAssemblyFeatureDisplayStatus `json:"status,omitempty"`
 }
 
 // NewBTLoadDisplayData837 instantiates a new BTLoadDisplayData837 object
@@ -273,9 +273,9 @@ func (o *BTLoadDisplayData837) SetIsDirectionFlipped(v bool) {
 }
 
 // GetLoadType returns the LoadType field value if set, zero value otherwise.
-func (o *BTLoadDisplayData837) GetLoadType() string {
+func (o *BTLoadDisplayData837) GetLoadType() GBTLoadType {
 	if o == nil || o.LoadType == nil {
-		var ret string
+		var ret GBTLoadType
 		return ret
 	}
 	return *o.LoadType
@@ -283,7 +283,7 @@ func (o *BTLoadDisplayData837) GetLoadType() string {
 
 // GetLoadTypeOk returns a tuple with the LoadType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTLoadDisplayData837) GetLoadTypeOk() (*string, bool) {
+func (o *BTLoadDisplayData837) GetLoadTypeOk() (*GBTLoadType, bool) {
 	if o == nil || o.LoadType == nil {
 		return nil, false
 	}
@@ -299,8 +299,8 @@ func (o *BTLoadDisplayData837) HasLoadType() bool {
 	return false
 }
 
-// SetLoadType gets a reference to the given string and assigns it to the LoadType field.
-func (o *BTLoadDisplayData837) SetLoadType(v string) {
+// SetLoadType gets a reference to the given GBTLoadType and assigns it to the LoadType field.
+func (o *BTLoadDisplayData837) SetLoadType(v GBTLoadType) {
 	o.LoadType = &v
 }
 
@@ -401,9 +401,9 @@ func (o *BTLoadDisplayData837) SetOwnerOccurrence(v BTOccurrence74) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *BTLoadDisplayData837) GetStatus() string {
+func (o *BTLoadDisplayData837) GetStatus() GBTAssemblyFeatureDisplayStatus {
 	if o == nil || o.Status == nil {
-		var ret string
+		var ret GBTAssemblyFeatureDisplayStatus
 		return ret
 	}
 	return *o.Status
@@ -411,7 +411,7 @@ func (o *BTLoadDisplayData837) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTLoadDisplayData837) GetStatusOk() (*string, bool) {
+func (o *BTLoadDisplayData837) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -427,8 +427,8 @@ func (o *BTLoadDisplayData837) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *BTLoadDisplayData837) SetStatus(v string) {
+// SetStatus gets a reference to the given GBTAssemblyFeatureDisplayStatus and assigns it to the Status field.
+func (o *BTLoadDisplayData837) SetStatus(v GBTAssemblyFeatureDisplayStatus) {
 	o.Status = &v
 }
 

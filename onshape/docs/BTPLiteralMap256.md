@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Atomic** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**DocumentationType** | Pointer to **string** |  | [optional] 
+**DocumentationType** | Pointer to [**GBTPDefinitionType**](GBTPDefinitionType.md) |  | [optional] 
 **EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **Entries** | Pointer to [**[]BTPLiteralMapEntry257**](BTPLiteralMapEntry257.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
@@ -89,20 +89,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetDocumentationType
 
-`func (o *BTPLiteralMap256) GetDocumentationType() string`
+`func (o *BTPLiteralMap256) GetDocumentationType() GBTPDefinitionType`
 
 GetDocumentationType returns the DocumentationType field if non-nil, zero value otherwise.
 
 ### GetDocumentationTypeOk
 
-`func (o *BTPLiteralMap256) GetDocumentationTypeOk() (*string, bool)`
+`func (o *BTPLiteralMap256) GetDocumentationTypeOk() (*GBTPDefinitionType, bool)`
 
 GetDocumentationTypeOk returns a tuple with the DocumentationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDocumentationType
 
-`func (o *BTPLiteralMap256) SetDocumentationType(v string)`
+`func (o *BTPLiteralMap256) SetDocumentationType(v GBTPDefinitionType)`
 
 SetDocumentationType sets DocumentationType field to given value.
 

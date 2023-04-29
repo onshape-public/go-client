@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -45,17 +45,18 @@ type BTTranslateFormatParams struct {
 	FlattenAssemblies        *bool    `json:"flattenAssemblies,omitempty"`
 	ForeignId                *string  `json:"foreignId,omitempty"`
 	// The name of the file format.
-	FormatName           string  `json:"formatName"`
-	FromUserId           *string `json:"fromUserId,omitempty"`
-	GetyAxisIsUp         *bool   `json:"getyAxisIsUp,omitempty"`
-	Grouping             *bool   `json:"grouping,omitempty"`
-	ImageHeight          *int32  `json:"imageHeight,omitempty"`
-	ImageWidth           *int32  `json:"imageWidth,omitempty"`
-	ImportInBackground   *bool   `json:"importInBackground,omitempty"`
-	ImportWithinDocument *bool   `json:"importWithinDocument,omitempty"`
-	IncludeExportIds     *bool   `json:"includeExportIds,omitempty"`
-	JoinAdjacentSurfaces *bool   `json:"joinAdjacentSurfaces,omitempty"`
-	Level                *string `json:"level,omitempty"`
+	FormatName                   string  `json:"formatName"`
+	FromUserId                   *string `json:"fromUserId,omitempty"`
+	GetyAxisIsUp                 *bool   `json:"getyAxisIsUp,omitempty"`
+	Grouping                     *bool   `json:"grouping,omitempty"`
+	IgnoreExportRulesForContents *bool   `json:"ignoreExportRulesForContents,omitempty"`
+	ImageHeight                  *int32  `json:"imageHeight,omitempty"`
+	ImageWidth                   *int32  `json:"imageWidth,omitempty"`
+	ImportInBackground           *bool   `json:"importInBackground,omitempty"`
+	ImportWithinDocument         *bool   `json:"importWithinDocument,omitempty"`
+	IncludeExportIds             *bool   `json:"includeExportIds,omitempty"`
+	JoinAdjacentSurfaces         *bool   `json:"joinAdjacentSurfaces,omitempty"`
+	Level                        *string `json:"level,omitempty"`
 	// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
 	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
 	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
@@ -965,6 +966,38 @@ func (o *BTTranslateFormatParams) HasGrouping() bool {
 // SetGrouping gets a reference to the given bool and assigns it to the Grouping field.
 func (o *BTTranslateFormatParams) SetGrouping(v bool) {
 	o.Grouping = &v
+}
+
+// GetIgnoreExportRulesForContents returns the IgnoreExportRulesForContents field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIgnoreExportRulesForContents() bool {
+	if o == nil || o.IgnoreExportRulesForContents == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IgnoreExportRulesForContents
+}
+
+// GetIgnoreExportRulesForContentsOk returns a tuple with the IgnoreExportRulesForContents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIgnoreExportRulesForContentsOk() (*bool, bool) {
+	if o == nil || o.IgnoreExportRulesForContents == nil {
+		return nil, false
+	}
+	return o.IgnoreExportRulesForContents, true
+}
+
+// HasIgnoreExportRulesForContents returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIgnoreExportRulesForContents() bool {
+	if o != nil && o.IgnoreExportRulesForContents != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIgnoreExportRulesForContents gets a reference to the given bool and assigns it to the IgnoreExportRulesForContents field.
+func (o *BTTranslateFormatParams) SetIgnoreExportRulesForContents(v bool) {
+	o.IgnoreExportRulesForContents = &v
 }
 
 // GetImageHeight returns the ImageHeight field value if set, zero value otherwise.
@@ -2329,6 +2362,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Grouping != nil {
 		toSerialize["grouping"] = o.Grouping
+	}
+	if o.IgnoreExportRulesForContents != nil {
+		toSerialize["ignoreExportRulesForContents"] = o.IgnoreExportRulesForContents
 	}
 	if o.ImageHeight != nil {
 		toSerialize["imageHeight"] = o.ImageHeight

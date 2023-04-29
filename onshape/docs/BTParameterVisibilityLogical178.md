@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Children** | Pointer to [**[]BTParameterVisibilityCondition177**](BTParameterVisibilityCondition177.md) |  | [optional] 
-**Operation** | Pointer to **string** |  | [optional] 
+**Operation** | Pointer to [**GBTParameterVisibilityLogicalOp**](GBTParameterVisibilityLogicalOp.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasChildren returns a boolean if a field has been set.
 
 ### GetOperation
 
-`func (o *BTParameterVisibilityLogical178) GetOperation() string`
+`func (o *BTParameterVisibilityLogical178) GetOperation() GBTParameterVisibilityLogicalOp`
 
 GetOperation returns the Operation field if non-nil, zero value otherwise.
 
 ### GetOperationOk
 
-`func (o *BTParameterVisibilityLogical178) GetOperationOk() (*string, bool)`
+`func (o *BTParameterVisibilityLogical178) GetOperationOk() (*GBTParameterVisibilityLogicalOp, bool)`
 
 GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperation
 
-`func (o *BTParameterVisibilityLogical178) SetOperation(v string)`
+`func (o *BTParameterVisibilityLogical178) SetOperation(v GBTParameterVisibilityLogicalOp)`
 
 SetOperation sets Operation field to given value.
 

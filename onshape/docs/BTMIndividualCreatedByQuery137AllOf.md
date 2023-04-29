@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BodyType** | Pointer to **string** |  | [optional] 
+**BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**EntityType** | Pointer to **string** |  | [optional] 
+**EntityType** | Pointer to [**GBTEntityType**](GBTEntityType.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **FilterConstruction** | Pointer to **bool** |  | [optional] 
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBodyType
 
-`func (o *BTMIndividualCreatedByQuery137AllOf) GetBodyType() string`
+`func (o *BTMIndividualCreatedByQuery137AllOf) GetBodyType() GBTBodyType`
 
 GetBodyType returns the BodyType field if non-nil, zero value otherwise.
 
 ### GetBodyTypeOk
 
-`func (o *BTMIndividualCreatedByQuery137AllOf) GetBodyTypeOk() (*string, bool)`
+`func (o *BTMIndividualCreatedByQuery137AllOf) GetBodyTypeOk() (*GBTBodyType, bool)`
 
 GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodyType
 
-`func (o *BTMIndividualCreatedByQuery137AllOf) SetBodyType(v string)`
+`func (o *BTMIndividualCreatedByQuery137AllOf) SetBodyType(v GBTBodyType)`
 
 SetBodyType sets BodyType field to given value.
 
@@ -81,20 +81,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetEntityType
 
-`func (o *BTMIndividualCreatedByQuery137AllOf) GetEntityType() string`
+`func (o *BTMIndividualCreatedByQuery137AllOf) GetEntityType() GBTEntityType`
 
 GetEntityType returns the EntityType field if non-nil, zero value otherwise.
 
 ### GetEntityTypeOk
 
-`func (o *BTMIndividualCreatedByQuery137AllOf) GetEntityTypeOk() (*string, bool)`
+`func (o *BTMIndividualCreatedByQuery137AllOf) GetEntityTypeOk() (*GBTEntityType, bool)`
 
 GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntityType
 
-`func (o *BTMIndividualCreatedByQuery137AllOf) SetEntityType(v string)`
+`func (o *BTMIndividualCreatedByQuery137AllOf) SetEntityType(v GBTEntityType)`
 
 SetEntityType sets EntityType field to given value.
 

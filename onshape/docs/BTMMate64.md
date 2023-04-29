@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **MateConnectorQueryList** | Pointer to [**BTMParameterQueryWithOccurrenceList67**](BTMParameterQueryWithOccurrenceList67.md) |  | [optional] 
 **MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
-**MateType** | Pointer to **string** |  | [optional] 
+**MateType** | Pointer to [**GBTMateType**](GBTMateType.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasMateConnectors returns a boolean if a field has been set.
 
 ### GetMateType
 
-`func (o *BTMMate64) GetMateType() string`
+`func (o *BTMMate64) GetMateType() GBTMateType`
 
 GetMateType returns the MateType field if non-nil, zero value otherwise.
 
 ### GetMateTypeOk
 
-`func (o *BTMMate64) GetMateTypeOk() (*string, bool)`
+`func (o *BTMMate64) GetMateTypeOk() (*GBTMateType, bool)`
 
 GetMateTypeOk returns a tuple with the MateType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMateType
 
-`func (o *BTMMate64) SetMateType(v string)`
+`func (o *BTMMate64) SetMateType(v GBTMateType)`
 
 SetMateType sets MateType field to given value.
 

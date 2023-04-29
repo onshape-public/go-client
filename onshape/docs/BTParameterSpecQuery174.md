@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AdditionalBoxSelectFilter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AdditionalBoxSelectFilter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **Filter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewBTParameterSpecQuery174WithDefaults instantiates a new BTParameterSpecQuery174 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAdditionalBoxSelectFilter
-
-`func (o *BTParameterSpecQuery174) GetAdditionalBoxSelectFilter() BTQueryFilter183`
-
-GetAdditionalBoxSelectFilter returns the AdditionalBoxSelectFilter field if non-nil, zero value otherwise.
-
-### GetAdditionalBoxSelectFilterOk
-
-`func (o *BTParameterSpecQuery174) GetAdditionalBoxSelectFilterOk() (*BTQueryFilter183, bool)`
-
-GetAdditionalBoxSelectFilterOk returns a tuple with the AdditionalBoxSelectFilter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAdditionalBoxSelectFilter
-
-`func (o *BTParameterSpecQuery174) SetAdditionalBoxSelectFilter(v BTQueryFilter183)`
-
-SetAdditionalBoxSelectFilter sets AdditionalBoxSelectFilter field to given value.
-
-### HasAdditionalBoxSelectFilter
-
-`func (o *BTParameterSpecQuery174) HasAdditionalBoxSelectFilter() bool`
-
-HasAdditionalBoxSelectFilter returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -77,6 +52,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTParameterSpecQuery174) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAdditionalBoxSelectFilter
+
+`func (o *BTParameterSpecQuery174) GetAdditionalBoxSelectFilter() BTQueryFilter183`
+
+GetAdditionalBoxSelectFilter returns the AdditionalBoxSelectFilter field if non-nil, zero value otherwise.
+
+### GetAdditionalBoxSelectFilterOk
+
+`func (o *BTParameterSpecQuery174) GetAdditionalBoxSelectFilterOk() (*BTQueryFilter183, bool)`
+
+GetAdditionalBoxSelectFilterOk returns a tuple with the AdditionalBoxSelectFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdditionalBoxSelectFilter
+
+`func (o *BTParameterSpecQuery174) SetAdditionalBoxSelectFilter(v BTQueryFilter183)`
+
+SetAdditionalBoxSelectFilter sets AdditionalBoxSelectFilter field to given value.
+
+### HasAdditionalBoxSelectFilter
+
+`func (o *BTParameterSpecQuery174) HasAdditionalBoxSelectFilter() bool`
+
+HasAdditionalBoxSelectFilter returns a boolean if a field has been set.
 
 ### GetFilter
 

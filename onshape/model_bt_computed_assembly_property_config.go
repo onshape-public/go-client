@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,13 +17,13 @@ import (
 
 // BTComputedAssemblyPropertyConfig struct for BTComputedAssemblyPropertyConfig
 type BTComputedAssemblyPropertyConfig struct {
-	AggregatedPropertyId     *string `json:"aggregatedPropertyId,omitempty"`
-	AggregationOperator      *string `json:"aggregationOperator,omitempty"`
-	ErrorValuePolicy         *string `json:"errorValuePolicy,omitempty"`
-	FilterPropertyId         *string `json:"filterPropertyId,omitempty"`
-	IsFilterPropertyInverted *bool   `json:"isFilterPropertyInverted,omitempty"`
-	MissingValuePolicy       *string `json:"missingValuePolicy,omitempty"`
-	SecondaryPropertyId      *string `json:"secondaryPropertyId,omitempty"`
+	AggregatedPropertyId     *string                                        `json:"aggregatedPropertyId,omitempty"`
+	AggregationOperator      *BTComputedAssemblyPropertyAggregationOperator `json:"aggregationOperator,omitempty"`
+	ErrorValuePolicy         *BTComputedAssemblyPropertyErrorPolicy         `json:"errorValuePolicy,omitempty"`
+	FilterPropertyId         *string                                        `json:"filterPropertyId,omitempty"`
+	IsFilterPropertyInverted *bool                                          `json:"isFilterPropertyInverted,omitempty"`
+	MissingValuePolicy       *BTComputedAssemblyPropertyErrorPolicy         `json:"missingValuePolicy,omitempty"`
+	SecondaryPropertyId      *string                                        `json:"secondaryPropertyId,omitempty"`
 }
 
 // NewBTComputedAssemblyPropertyConfig instantiates a new BTComputedAssemblyPropertyConfig object
@@ -76,9 +76,9 @@ func (o *BTComputedAssemblyPropertyConfig) SetAggregatedPropertyId(v string) {
 }
 
 // GetAggregationOperator returns the AggregationOperator field value if set, zero value otherwise.
-func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperator() string {
+func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperator() BTComputedAssemblyPropertyAggregationOperator {
 	if o == nil || o.AggregationOperator == nil {
-		var ret string
+		var ret BTComputedAssemblyPropertyAggregationOperator
 		return ret
 	}
 	return *o.AggregationOperator
@@ -86,7 +86,7 @@ func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperator() string {
 
 // GetAggregationOperatorOk returns a tuple with the AggregationOperator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperatorOk() (*string, bool) {
+func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperatorOk() (*BTComputedAssemblyPropertyAggregationOperator, bool) {
 	if o == nil || o.AggregationOperator == nil {
 		return nil, false
 	}
@@ -102,15 +102,15 @@ func (o *BTComputedAssemblyPropertyConfig) HasAggregationOperator() bool {
 	return false
 }
 
-// SetAggregationOperator gets a reference to the given string and assigns it to the AggregationOperator field.
-func (o *BTComputedAssemblyPropertyConfig) SetAggregationOperator(v string) {
+// SetAggregationOperator gets a reference to the given BTComputedAssemblyPropertyAggregationOperator and assigns it to the AggregationOperator field.
+func (o *BTComputedAssemblyPropertyConfig) SetAggregationOperator(v BTComputedAssemblyPropertyAggregationOperator) {
 	o.AggregationOperator = &v
 }
 
 // GetErrorValuePolicy returns the ErrorValuePolicy field value if set, zero value otherwise.
-func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicy() string {
+func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicy() BTComputedAssemblyPropertyErrorPolicy {
 	if o == nil || o.ErrorValuePolicy == nil {
-		var ret string
+		var ret BTComputedAssemblyPropertyErrorPolicy
 		return ret
 	}
 	return *o.ErrorValuePolicy
@@ -118,7 +118,7 @@ func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicy() string {
 
 // GetErrorValuePolicyOk returns a tuple with the ErrorValuePolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicyOk() (*string, bool) {
+func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicyOk() (*BTComputedAssemblyPropertyErrorPolicy, bool) {
 	if o == nil || o.ErrorValuePolicy == nil {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *BTComputedAssemblyPropertyConfig) HasErrorValuePolicy() bool {
 	return false
 }
 
-// SetErrorValuePolicy gets a reference to the given string and assigns it to the ErrorValuePolicy field.
-func (o *BTComputedAssemblyPropertyConfig) SetErrorValuePolicy(v string) {
+// SetErrorValuePolicy gets a reference to the given BTComputedAssemblyPropertyErrorPolicy and assigns it to the ErrorValuePolicy field.
+func (o *BTComputedAssemblyPropertyConfig) SetErrorValuePolicy(v BTComputedAssemblyPropertyErrorPolicy) {
 	o.ErrorValuePolicy = &v
 }
 
@@ -204,9 +204,9 @@ func (o *BTComputedAssemblyPropertyConfig) SetIsFilterPropertyInverted(v bool) {
 }
 
 // GetMissingValuePolicy returns the MissingValuePolicy field value if set, zero value otherwise.
-func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicy() string {
+func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicy() BTComputedAssemblyPropertyErrorPolicy {
 	if o == nil || o.MissingValuePolicy == nil {
-		var ret string
+		var ret BTComputedAssemblyPropertyErrorPolicy
 		return ret
 	}
 	return *o.MissingValuePolicy
@@ -214,7 +214,7 @@ func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicy() string {
 
 // GetMissingValuePolicyOk returns a tuple with the MissingValuePolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicyOk() (*string, bool) {
+func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicyOk() (*BTComputedAssemblyPropertyErrorPolicy, bool) {
 	if o == nil || o.MissingValuePolicy == nil {
 		return nil, false
 	}
@@ -230,8 +230,8 @@ func (o *BTComputedAssemblyPropertyConfig) HasMissingValuePolicy() bool {
 	return false
 }
 
-// SetMissingValuePolicy gets a reference to the given string and assigns it to the MissingValuePolicy field.
-func (o *BTComputedAssemblyPropertyConfig) SetMissingValuePolicy(v string) {
+// SetMissingValuePolicy gets a reference to the given BTComputedAssemblyPropertyErrorPolicy and assigns it to the MissingValuePolicy field.
+func (o *BTComputedAssemblyPropertyConfig) SetMissingValuePolicy(v BTComputedAssemblyPropertyErrorPolicy) {
 	o.MissingValuePolicy = &v
 }
 

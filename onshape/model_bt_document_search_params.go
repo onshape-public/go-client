@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,9 +18,8 @@ import (
 // BTDocumentSearchParams struct for BTDocumentSearchParams
 type BTDocumentSearchParams struct {
 	// Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team).
-	DocumentFilter *int32 `json:"documentFilter,omitempty"`
-	// Search result found in
-	FoundIn *string `json:"foundIn,omitempty"`
+	DocumentFilter *int32                      `json:"documentFilter,omitempty"`
+	FoundIn        *BTESVersionWorkspaceChoice `json:"foundIn,omitempty"`
 	// Number of results to return per page. Default value is 20 (also the maximum).
 	Limit *int32 `json:"limit,omitempty"`
 	// Lucene syntax
@@ -38,9 +37,8 @@ type BTDocumentSearchParams struct {
 	// Sort order. Options are desc (descending, the default), or asc (ascending).
 	SortOrder *string `json:"sortOrder,omitempty"`
 	// Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified.
-	Type *string `json:"type,omitempty"`
-	// Search result when
-	When *string `json:"when,omitempty"`
+	Type *string            `json:"type,omitempty"`
+	When *BTESResultsFilter `json:"when,omitempty"`
 }
 
 // NewBTDocumentSearchParams instantiates a new BTDocumentSearchParams object
@@ -93,9 +91,9 @@ func (o *BTDocumentSearchParams) SetDocumentFilter(v int32) {
 }
 
 // GetFoundIn returns the FoundIn field value if set, zero value otherwise.
-func (o *BTDocumentSearchParams) GetFoundIn() string {
+func (o *BTDocumentSearchParams) GetFoundIn() BTESVersionWorkspaceChoice {
 	if o == nil || o.FoundIn == nil {
-		var ret string
+		var ret BTESVersionWorkspaceChoice
 		return ret
 	}
 	return *o.FoundIn
@@ -103,7 +101,7 @@ func (o *BTDocumentSearchParams) GetFoundIn() string {
 
 // GetFoundInOk returns a tuple with the FoundIn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDocumentSearchParams) GetFoundInOk() (*string, bool) {
+func (o *BTDocumentSearchParams) GetFoundInOk() (*BTESVersionWorkspaceChoice, bool) {
 	if o == nil || o.FoundIn == nil {
 		return nil, false
 	}
@@ -119,8 +117,8 @@ func (o *BTDocumentSearchParams) HasFoundIn() bool {
 	return false
 }
 
-// SetFoundIn gets a reference to the given string and assigns it to the FoundIn field.
-func (o *BTDocumentSearchParams) SetFoundIn(v string) {
+// SetFoundIn gets a reference to the given BTESVersionWorkspaceChoice and assigns it to the FoundIn field.
+func (o *BTDocumentSearchParams) SetFoundIn(v BTESVersionWorkspaceChoice) {
 	o.FoundIn = &v
 }
 
@@ -413,9 +411,9 @@ func (o *BTDocumentSearchParams) SetType(v string) {
 }
 
 // GetWhen returns the When field value if set, zero value otherwise.
-func (o *BTDocumentSearchParams) GetWhen() string {
+func (o *BTDocumentSearchParams) GetWhen() BTESResultsFilter {
 	if o == nil || o.When == nil {
-		var ret string
+		var ret BTESResultsFilter
 		return ret
 	}
 	return *o.When
@@ -423,7 +421,7 @@ func (o *BTDocumentSearchParams) GetWhen() string {
 
 // GetWhenOk returns a tuple with the When field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDocumentSearchParams) GetWhenOk() (*string, bool) {
+func (o *BTDocumentSearchParams) GetWhenOk() (*BTESResultsFilter, bool) {
 	if o == nil || o.When == nil {
 		return nil, false
 	}
@@ -439,8 +437,8 @@ func (o *BTDocumentSearchParams) HasWhen() bool {
 	return false
 }
 
-// SetWhen gets a reference to the given string and assigns it to the When field.
-func (o *BTDocumentSearchParams) SetWhen(v string) {
+// SetWhen gets a reference to the given BTESResultsFilter and assigns it to the When field.
+func (o *BTDocumentSearchParams) SetWhen(v BTESResultsFilter) {
 	o.When = &v
 }
 

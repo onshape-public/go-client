@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15296-122c93d7dbb6
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,12 +17,13 @@ import (
 
 // BTTableColumnSpec1967 struct for BTTableColumnSpec1967
 type BTTableColumnSpec1967 struct {
-	DefaultCellSpec         *BTParameterSpec6 `json:"defaultCellSpec,omitempty"`
-	DefaultColumnWidthUnits *string           `json:"defaultColumnWidthUnits,omitempty"`
-	DefaultColumnWidthValue *int32            `json:"defaultColumnWidthValue,omitempty"`
-	DefaultHeaderName       *string           `json:"defaultHeaderName,omitempty"`
-	DefaultTextAlignment    *string           `json:"defaultTextAlignment,omitempty"`
-	ReadOnly                *bool             `json:"readOnly,omitempty"`
+	BtType                  *string                   `json:"btType,omitempty"`
+	DefaultCellSpec         *BTParameterSpec6         `json:"defaultCellSpec,omitempty"`
+	DefaultColumnWidthUnits *GBTTableColumnWidthUnits `json:"defaultColumnWidthUnits,omitempty"`
+	DefaultColumnWidthValue *int32                    `json:"defaultColumnWidthValue,omitempty"`
+	DefaultHeaderName       *string                   `json:"defaultHeaderName,omitempty"`
+	DefaultTextAlignment    *GBTTableTextAlignment    `json:"defaultTextAlignment,omitempty"`
+	ReadOnly                *bool                     `json:"readOnly,omitempty"`
 }
 
 // NewBTTableColumnSpec1967 instantiates a new BTTableColumnSpec1967 object
@@ -40,6 +41,38 @@ func NewBTTableColumnSpec1967() *BTTableColumnSpec1967 {
 func NewBTTableColumnSpec1967WithDefaults() *BTTableColumnSpec1967 {
 	this := BTTableColumnSpec1967{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTTableColumnSpec1967) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableColumnSpec1967) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTTableColumnSpec1967) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTTableColumnSpec1967) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetDefaultCellSpec returns the DefaultCellSpec field value if set, zero value otherwise.
@@ -75,9 +108,9 @@ func (o *BTTableColumnSpec1967) SetDefaultCellSpec(v BTParameterSpec6) {
 }
 
 // GetDefaultColumnWidthUnits returns the DefaultColumnWidthUnits field value if set, zero value otherwise.
-func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnits() string {
+func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnits() GBTTableColumnWidthUnits {
 	if o == nil || o.DefaultColumnWidthUnits == nil {
-		var ret string
+		var ret GBTTableColumnWidthUnits
 		return ret
 	}
 	return *o.DefaultColumnWidthUnits
@@ -85,7 +118,7 @@ func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnits() string {
 
 // GetDefaultColumnWidthUnitsOk returns a tuple with the DefaultColumnWidthUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnitsOk() (*string, bool) {
+func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnitsOk() (*GBTTableColumnWidthUnits, bool) {
 	if o == nil || o.DefaultColumnWidthUnits == nil {
 		return nil, false
 	}
@@ -101,8 +134,8 @@ func (o *BTTableColumnSpec1967) HasDefaultColumnWidthUnits() bool {
 	return false
 }
 
-// SetDefaultColumnWidthUnits gets a reference to the given string and assigns it to the DefaultColumnWidthUnits field.
-func (o *BTTableColumnSpec1967) SetDefaultColumnWidthUnits(v string) {
+// SetDefaultColumnWidthUnits gets a reference to the given GBTTableColumnWidthUnits and assigns it to the DefaultColumnWidthUnits field.
+func (o *BTTableColumnSpec1967) SetDefaultColumnWidthUnits(v GBTTableColumnWidthUnits) {
 	o.DefaultColumnWidthUnits = &v
 }
 
@@ -171,9 +204,9 @@ func (o *BTTableColumnSpec1967) SetDefaultHeaderName(v string) {
 }
 
 // GetDefaultTextAlignment returns the DefaultTextAlignment field value if set, zero value otherwise.
-func (o *BTTableColumnSpec1967) GetDefaultTextAlignment() string {
+func (o *BTTableColumnSpec1967) GetDefaultTextAlignment() GBTTableTextAlignment {
 	if o == nil || o.DefaultTextAlignment == nil {
-		var ret string
+		var ret GBTTableTextAlignment
 		return ret
 	}
 	return *o.DefaultTextAlignment
@@ -181,7 +214,7 @@ func (o *BTTableColumnSpec1967) GetDefaultTextAlignment() string {
 
 // GetDefaultTextAlignmentOk returns a tuple with the DefaultTextAlignment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTTableColumnSpec1967) GetDefaultTextAlignmentOk() (*string, bool) {
+func (o *BTTableColumnSpec1967) GetDefaultTextAlignmentOk() (*GBTTableTextAlignment, bool) {
 	if o == nil || o.DefaultTextAlignment == nil {
 		return nil, false
 	}
@@ -197,8 +230,8 @@ func (o *BTTableColumnSpec1967) HasDefaultTextAlignment() bool {
 	return false
 }
 
-// SetDefaultTextAlignment gets a reference to the given string and assigns it to the DefaultTextAlignment field.
-func (o *BTTableColumnSpec1967) SetDefaultTextAlignment(v string) {
+// SetDefaultTextAlignment gets a reference to the given GBTTableTextAlignment and assigns it to the DefaultTextAlignment field.
+func (o *BTTableColumnSpec1967) SetDefaultTextAlignment(v GBTTableTextAlignment) {
 	o.DefaultTextAlignment = &v
 }
 
@@ -236,6 +269,9 @@ func (o *BTTableColumnSpec1967) SetReadOnly(v bool) {
 
 func (o BTTableColumnSpec1967) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.DefaultCellSpec != nil {
 		toSerialize["defaultCellSpec"] = o.DefaultCellSpec
 	}

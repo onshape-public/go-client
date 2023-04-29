@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **BucketPath** | Pointer to **string** |  | [optional] 
 **CacheChunkList** | Pointer to **[]string** |  | [optional] 
 **DataId** | Pointer to **string** |  | [optional] 
-**Format** | Pointer to **string** |  | [optional] 
+**Format** | Pointer to [**GBTDataItemFormat**](GBTDataItemFormat.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Region** | Pointer to **string** |  | [optional] 
 **Size** | Pointer to **int32** |  | [optional] 
@@ -162,20 +162,20 @@ HasDataId returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *BTForeignDataResponse1070) GetFormat() string`
+`func (o *BTForeignDataResponse1070) GetFormat() GBTDataItemFormat`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *BTForeignDataResponse1070) GetFormatOk() (*string, bool)`
+`func (o *BTForeignDataResponse1070) GetFormatOk() (*GBTDataItemFormat, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *BTForeignDataResponse1070) SetFormat(v string)`
+`func (o *BTForeignDataResponse1070) SetFormat(v GBTDataItemFormat)`
 
 SetFormat sets Format field to given value.
 

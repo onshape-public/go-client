@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Hidden** | Pointer to **bool** |  | [optional] 
 **IsDerivedFeature** | Pointer to **bool** |  | [optional] 
 **MateConnectorIds** | Pointer to **[]string** |  | [optional] 
-**MateType** | Pointer to **string** |  | [optional] 
+**MateType** | Pointer to [**GBTMateType**](GBTMateType.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **OwnerOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**GBTAssemblyFeatureDisplayStatus**](GBTAssemblyFeatureDisplayStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -134,20 +134,20 @@ HasMateConnectorIds returns a boolean if a field has been set.
 
 ### GetMateType
 
-`func (o *BTMateDisplayData1358) GetMateType() string`
+`func (o *BTMateDisplayData1358) GetMateType() GBTMateType`
 
 GetMateType returns the MateType field if non-nil, zero value otherwise.
 
 ### GetMateTypeOk
 
-`func (o *BTMateDisplayData1358) GetMateTypeOk() (*string, bool)`
+`func (o *BTMateDisplayData1358) GetMateTypeOk() (*GBTMateType, bool)`
 
 GetMateTypeOk returns a tuple with the MateType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMateType
 
-`func (o *BTMateDisplayData1358) SetMateType(v string)`
+`func (o *BTMateDisplayData1358) SetMateType(v GBTMateType)`
 
 SetMateType sets MateType field to given value.
 
@@ -209,20 +209,20 @@ HasOwnerOccurrence returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *BTMateDisplayData1358) GetStatus() string`
+`func (o *BTMateDisplayData1358) GetStatus() GBTAssemblyFeatureDisplayStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *BTMateDisplayData1358) GetStatusOk() (*string, bool)`
+`func (o *BTMateDisplayData1358) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *BTMateDisplayData1358) SetStatus(v string)`
+`func (o *BTMateDisplayData1358) SetStatus(v GBTAssemblyFeatureDisplayStatus)`
 
 SetStatus sets Status field to given value.
 

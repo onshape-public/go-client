@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **NumberOfTimesReferenced** | Pointer to **int64** |  | [optional] 
 **Owner** | Pointer to [**BTOwnerInfo**](BTOwnerInfo.md) |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
-**Permission** | Pointer to **string** |  | [optional] 
+**Permission** | Pointer to [**BTOldPermission**](BTOldPermission.md) |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
@@ -876,20 +876,20 @@ HasParentId returns a boolean if a field has been set.
 
 ### GetPermission
 
-`func (o *BTDocumentSummaryInfo) GetPermission() string`
+`func (o *BTDocumentSummaryInfo) GetPermission() BTOldPermission`
 
 GetPermission returns the Permission field if non-nil, zero value otherwise.
 
 ### GetPermissionOk
 
-`func (o *BTDocumentSummaryInfo) GetPermissionOk() (*string, bool)`
+`func (o *BTDocumentSummaryInfo) GetPermissionOk() (*BTOldPermission, bool)`
 
 GetPermissionOk returns a tuple with the Permission field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermission
 
-`func (o *BTDocumentSummaryInfo) SetPermission(v string)`
+`func (o *BTDocumentSummaryInfo) SetPermission(v BTOldPermission)`
 
 SetPermission sets Permission field to given value.
 

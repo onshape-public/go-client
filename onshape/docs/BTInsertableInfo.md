@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BodyType** | Pointer to **string** |  | [optional] 
+**BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 **ClassType** | Pointer to **int32** |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
 **ConfigurationParameterValues** | Pointer to **[]string** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementName** | Pointer to **string** |  | [optional] 
-**ElementType** | Pointer to **string** |  | [optional] 
+**ElementType** | Pointer to [**GBTElementType**](GBTElementType.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **FeatureName** | Pointer to **string** |  | [optional] 
 **FeatureSpec** | Pointer to **[]string** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **InsertableQuery** | Pointer to **string** |  | [optional] 
 **IsFlattenedBody** | Pointer to **bool** |  | [optional] 
 **IsMesh** | Pointer to **bool** |  | [optional] 
-**MeshState** | Pointer to **string** |  | [optional] 
+**MeshState** | Pointer to [**GBTMeshState**](GBTMeshState.md) |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
@@ -65,20 +65,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBodyType
 
-`func (o *BTInsertableInfo) GetBodyType() string`
+`func (o *BTInsertableInfo) GetBodyType() GBTBodyType`
 
 GetBodyType returns the BodyType field if non-nil, zero value otherwise.
 
 ### GetBodyTypeOk
 
-`func (o *BTInsertableInfo) GetBodyTypeOk() (*string, bool)`
+`func (o *BTInsertableInfo) GetBodyTypeOk() (*GBTBodyType, bool)`
 
 GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodyType
 
-`func (o *BTInsertableInfo) SetBodyType(v string)`
+`func (o *BTInsertableInfo) SetBodyType(v GBTBodyType)`
 
 SetBodyType sets BodyType field to given value.
 
@@ -315,20 +315,20 @@ HasElementName returns a boolean if a field has been set.
 
 ### GetElementType
 
-`func (o *BTInsertableInfo) GetElementType() string`
+`func (o *BTInsertableInfo) GetElementType() GBTElementType`
 
 GetElementType returns the ElementType field if non-nil, zero value otherwise.
 
 ### GetElementTypeOk
 
-`func (o *BTInsertableInfo) GetElementTypeOk() (*string, bool)`
+`func (o *BTInsertableInfo) GetElementTypeOk() (*GBTElementType, bool)`
 
 GetElementTypeOk returns a tuple with the ElementType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElementType
 
-`func (o *BTInsertableInfo) SetElementType(v string)`
+`func (o *BTInsertableInfo) SetElementType(v GBTElementType)`
 
 SetElementType sets ElementType field to given value.
 
@@ -640,20 +640,20 @@ HasIsMesh returns a boolean if a field has been set.
 
 ### GetMeshState
 
-`func (o *BTInsertableInfo) GetMeshState() string`
+`func (o *BTInsertableInfo) GetMeshState() GBTMeshState`
 
 GetMeshState returns the MeshState field if non-nil, zero value otherwise.
 
 ### GetMeshStateOk
 
-`func (o *BTInsertableInfo) GetMeshStateOk() (*string, bool)`
+`func (o *BTInsertableInfo) GetMeshStateOk() (*GBTMeshState, bool)`
 
 GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeshState
 
-`func (o *BTInsertableInfo) SetMeshState(v string)`
+`func (o *BTInsertableInfo) SetMeshState(v GBTMeshState)`
 
 SetMeshState sets MeshState field to given value.
 
