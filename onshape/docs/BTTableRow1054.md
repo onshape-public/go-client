@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **ColumnIdToCell** | Pointer to [**map[string]BTTableCell1114**](BTTableCell1114.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **MetaData** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewBTTableRow1054WithDefaults instantiates a new BTTableRow1054 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTTableRow1054) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTTableRow1054) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTTableRow1054) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTTableRow1054) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetColumnIdToCell
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **Deprecated** | Pointer to **bool** |  | [optional] 
 **DeprecatedExplanation** | Pointer to **string** |  | [optional] 
-**DocumentationType** | Pointer to **string** |  | [optional] 
+**DocumentationType** | Pointer to [**GBTPDefinitionType**](GBTPDefinitionType.md) |  | [optional] 
 **EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **ForExport** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
@@ -250,20 +250,20 @@ HasDeprecatedExplanation returns a boolean if a field has been set.
 
 ### GetDocumentationType
 
-`func (o *BTPFunctionDeclaration246) GetDocumentationType() string`
+`func (o *BTPFunctionDeclaration246) GetDocumentationType() GBTPDefinitionType`
 
 GetDocumentationType returns the DocumentationType field if non-nil, zero value otherwise.
 
 ### GetDocumentationTypeOk
 
-`func (o *BTPFunctionDeclaration246) GetDocumentationTypeOk() (*string, bool)`
+`func (o *BTPFunctionDeclaration246) GetDocumentationTypeOk() (*GBTPDefinitionType, bool)`
 
 GetDocumentationTypeOk returns a tuple with the DocumentationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDocumentationType
 
-`func (o *BTPFunctionDeclaration246) SetDocumentationType(v string)`
+`func (o *BTPFunctionDeclaration246) SetDocumentationType(v GBTPDefinitionType)`
 
 SetDocumentationType sets DocumentationType field to given value.
 

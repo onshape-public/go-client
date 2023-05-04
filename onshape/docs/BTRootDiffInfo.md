@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Changes** | Pointer to [**map[string]BTDiffInfo**](BTDiffInfo.md) |  | [optional] 
 **CollectionChanges** | Pointer to [**map[string][]BTDiffInfo**](array.md) |  | [optional] 
-**EntityType** | Pointer to **string** |  | [optional] 
+**EntityType** | Pointer to [**BTDiffInfoCollectionType**](BTDiffInfoCollectionType.md) |  | [optional] 
 **GeometryChangeMessages** | Pointer to **[]string** |  | [optional] 
 **SourceConfiguration** | Pointer to **string** |  | [optional] 
 **SourceId** | Pointer to **string** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **TargetValue** | Pointer to **string** |  | [optional] 
 **TargetVersionId** | Pointer to **string** |  | [optional] 
 **TargetWorkspaceId** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTNodeChange**](GBTNodeChange.md) |  | [optional] 
 
 ## Methods
 
@@ -93,20 +93,20 @@ HasCollectionChanges returns a boolean if a field has been set.
 
 ### GetEntityType
 
-`func (o *BTRootDiffInfo) GetEntityType() string`
+`func (o *BTRootDiffInfo) GetEntityType() BTDiffInfoCollectionType`
 
 GetEntityType returns the EntityType field if non-nil, zero value otherwise.
 
 ### GetEntityTypeOk
 
-`func (o *BTRootDiffInfo) GetEntityTypeOk() (*string, bool)`
+`func (o *BTRootDiffInfo) GetEntityTypeOk() (*BTDiffInfoCollectionType, bool)`
 
 GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntityType
 
-`func (o *BTRootDiffInfo) SetEntityType(v string)`
+`func (o *BTRootDiffInfo) SetEntityType(v BTDiffInfoCollectionType)`
 
 SetEntityType sets EntityType field to given value.
 
@@ -443,20 +443,20 @@ HasTargetWorkspaceId returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTRootDiffInfo) GetType() string`
+`func (o *BTRootDiffInfo) GetType() GBTNodeChange`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTRootDiffInfo) GetTypeOk() (*string, bool)`
+`func (o *BTRootDiffInfo) GetTypeOk() (*GBTNodeChange, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTRootDiffInfo) SetType(v string)`
+`func (o *BTRootDiffInfo) SetType(v GBTNodeChange)`
 
 SetType sets Type field to given value.
 

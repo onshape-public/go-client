@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BestAvailableTessellationSetting** | Pointer to **string** |  | [optional] 
+**BestAvailableTessellationSetting** | Pointer to [**GBTTessellationSettingEnum**](GBTTessellationSettingEnum.md) |  | [optional] 
 **BoundsDiameter** | Pointer to **float64** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **ClosedConstituentPartData** | Pointer to [**BTClosedConstituentPartData2911**](BTClosedConstituentPartData2911.md) |  | [optional] 
 **CoarsePlanarFaceTriangleCount** | Pointer to **int32** |  | [optional] 
 **CoarseTriangleCount** | Pointer to **int32** |  | [optional] 
@@ -31,7 +32,7 @@ Name | Type | Description | Notes
 **ShouldAlwaysUseHighestQualityTessellation** | Pointer to **bool** |  | [optional] 
 **TessellationSettings** | Pointer to **[]int32** |  | [optional] 
 **TotalEntityCount** | Pointer to **int32** |  | [optional] 
-**UserTessellationSetting** | Pointer to **string** |  | [optional] 
+**UserTessellationSetting** | Pointer to [**GBTTessellationSettingEnum**](GBTTessellationSettingEnum.md) |  | [optional] 
 
 ## Methods
 
@@ -54,20 +55,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBestAvailableTessellationSetting
 
-`func (o *BTPartData16) GetBestAvailableTessellationSetting() string`
+`func (o *BTPartData16) GetBestAvailableTessellationSetting() GBTTessellationSettingEnum`
 
 GetBestAvailableTessellationSetting returns the BestAvailableTessellationSetting field if non-nil, zero value otherwise.
 
 ### GetBestAvailableTessellationSettingOk
 
-`func (o *BTPartData16) GetBestAvailableTessellationSettingOk() (*string, bool)`
+`func (o *BTPartData16) GetBestAvailableTessellationSettingOk() (*GBTTessellationSettingEnum, bool)`
 
 GetBestAvailableTessellationSettingOk returns a tuple with the BestAvailableTessellationSetting field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBestAvailableTessellationSetting
 
-`func (o *BTPartData16) SetBestAvailableTessellationSetting(v string)`
+`func (o *BTPartData16) SetBestAvailableTessellationSetting(v GBTTessellationSettingEnum)`
 
 SetBestAvailableTessellationSetting sets BestAvailableTessellationSetting field to given value.
 
@@ -101,6 +102,31 @@ SetBoundsDiameter sets BoundsDiameter field to given value.
 `func (o *BTPartData16) HasBoundsDiameter() bool`
 
 HasBoundsDiameter returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTPartData16) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTPartData16) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTPartData16) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTPartData16) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetClosedConstituentPartData
 
@@ -729,20 +755,20 @@ HasTotalEntityCount returns a boolean if a field has been set.
 
 ### GetUserTessellationSetting
 
-`func (o *BTPartData16) GetUserTessellationSetting() string`
+`func (o *BTPartData16) GetUserTessellationSetting() GBTTessellationSettingEnum`
 
 GetUserTessellationSetting returns the UserTessellationSetting field if non-nil, zero value otherwise.
 
 ### GetUserTessellationSettingOk
 
-`func (o *BTPartData16) GetUserTessellationSettingOk() (*string, bool)`
+`func (o *BTPartData16) GetUserTessellationSettingOk() (*GBTTessellationSettingEnum, bool)`
 
 GetUserTessellationSettingOk returns a tuple with the UserTessellationSetting field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserTessellationSetting
 
-`func (o *BTPartData16) SetUserTessellationSetting(v string)`
+`func (o *BTPartData16) SetUserTessellationSetting(v GBTTessellationSettingEnum)`
 
 SetUserTessellationSetting sets UserTessellationSetting field to given value.
 

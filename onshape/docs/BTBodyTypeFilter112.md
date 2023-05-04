@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BodyType** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewBTBodyTypeFilter112WithDefaults instantiates a new BTBodyTypeFilter112 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBodyType
-
-`func (o *BTBodyTypeFilter112) GetBodyType() string`
-
-GetBodyType returns the BodyType field if non-nil, zero value otherwise.
-
-### GetBodyTypeOk
-
-`func (o *BTBodyTypeFilter112) GetBodyTypeOk() (*string, bool)`
-
-GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBodyType
-
-`func (o *BTBodyTypeFilter112) SetBodyType(v string)`
-
-SetBodyType sets BodyType field to given value.
-
-### HasBodyType
-
-`func (o *BTBodyTypeFilter112) HasBodyType() bool`
-
-HasBodyType returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -75,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTBodyTypeFilter112) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBodyType
+
+`func (o *BTBodyTypeFilter112) GetBodyType() GBTBodyType`
+
+GetBodyType returns the BodyType field if non-nil, zero value otherwise.
+
+### GetBodyTypeOk
+
+`func (o *BTBodyTypeFilter112) GetBodyTypeOk() (*GBTBodyType, bool)`
+
+GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyType
+
+`func (o *BTBodyTypeFilter112) SetBodyType(v GBTBodyType)`
+
+SetBodyType sets BodyType field to given value.
+
+### HasBodyType
+
+`func (o *BTBodyTypeFilter112) HasBodyType() bool`
+
+HasBodyType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

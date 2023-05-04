@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Feature** | Pointer to [**BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **FeatureState** | Pointer to [**BTFeatureState1688**](BTFeatureState1688.md) |  | [optional] 
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
@@ -30,6 +31,31 @@ will change when the set of required properties is changed
 NewBTFeatureDefinitionResponse1617WithDefaults instantiates a new BTFeatureDefinitionResponse1617 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTFeatureDefinitionResponse1617) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTFeatureDefinitionResponse1617) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTFeatureDefinitionResponse1617) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTFeatureDefinitionResponse1617) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetFeature
 

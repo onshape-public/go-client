@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **MicroversionSkew** | Pointer to **bool** |  | [optional] 
@@ -30,6 +31,31 @@ will change when the set of required properties is changed
 NewBTSetFeatureRollbackResponse1042WithDefaults instantiates a new BTSetFeatureRollbackResponse1042 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTSetFeatureRollbackResponse1042) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTSetFeatureRollbackResponse1042) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTSetFeatureRollbackResponse1042) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTSetFeatureRollbackResponse1042) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetLibraryVersion
 

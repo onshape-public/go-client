@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to [**GBTBSFeatureVisibility**](GBTBSFeatureVisibility.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetVisibility
 
-`func (o *BTFeatureOccurrenceData775) GetVisibility() string`
+`func (o *BTFeatureOccurrenceData775) GetVisibility() GBTBSFeatureVisibility`
 
 GetVisibility returns the Visibility field if non-nil, zero value otherwise.
 
 ### GetVisibilityOk
 
-`func (o *BTFeatureOccurrenceData775) GetVisibilityOk() (*string, bool)`
+`func (o *BTFeatureOccurrenceData775) GetVisibilityOk() (*GBTBSFeatureVisibility, bool)`
 
 GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVisibility
 
-`func (o *BTFeatureOccurrenceData775) SetVisibility(v string)`
+`func (o *BTFeatureOccurrenceData775) SetVisibility(v GBTBSFeatureVisibility)`
 
 SetVisibility sets Visibility field to given value.
 

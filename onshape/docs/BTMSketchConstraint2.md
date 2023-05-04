@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**ConstraintType** | Pointer to **string** |  | [optional] 
+**ConstraintType** | Pointer to [**GBTConstraintType**](GBTConstraintType.md) |  | [optional] 
 **DrivenDimension** | Pointer to **bool** |  | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
@@ -69,20 +69,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetConstraintType
 
-`func (o *BTMSketchConstraint2) GetConstraintType() string`
+`func (o *BTMSketchConstraint2) GetConstraintType() GBTConstraintType`
 
 GetConstraintType returns the ConstraintType field if non-nil, zero value otherwise.
 
 ### GetConstraintTypeOk
 
-`func (o *BTMSketchConstraint2) GetConstraintTypeOk() (*string, bool)`
+`func (o *BTMSketchConstraint2) GetConstraintTypeOk() (*GBTConstraintType, bool)`
 
 GetConstraintTypeOk returns a tuple with the ConstraintType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConstraintType
 
-`func (o *BTMSketchConstraint2) SetConstraintType(v string)`
+`func (o *BTMSketchConstraint2) SetConstraintType(v GBTConstraintType)`
 
 SetConstraintType sets ConstraintType field to given value.
 

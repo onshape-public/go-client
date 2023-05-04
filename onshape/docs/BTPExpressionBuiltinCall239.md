@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Arguments** | Pointer to [**[]BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**Arguments** | Pointer to [**[]BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **Name** | Pointer to [**BTPBuiltinIdentifier233**](BTPBuiltinIdentifier233.md) |  | [optional] 
 **SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewBTPExpressionBuiltinCall239WithDefaults instantiates a new BTPExpressionBuiltinCall239 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetArguments
-
-`func (o *BTPExpressionBuiltinCall239) GetArguments() []BTPExpression9`
-
-GetArguments returns the Arguments field if non-nil, zero value otherwise.
-
-### GetArgumentsOk
-
-`func (o *BTPExpressionBuiltinCall239) GetArgumentsOk() (*[]BTPExpression9, bool)`
-
-GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArguments
-
-`func (o *BTPExpressionBuiltinCall239) SetArguments(v []BTPExpression9)`
-
-SetArguments sets Arguments field to given value.
-
-### HasArguments
-
-`func (o *BTPExpressionBuiltinCall239) HasArguments() bool`
-
-HasArguments returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -77,6 +52,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPExpressionBuiltinCall239) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetArguments
+
+`func (o *BTPExpressionBuiltinCall239) GetArguments() []BTPExpression9`
+
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
+
+### GetArgumentsOk
+
+`func (o *BTPExpressionBuiltinCall239) GetArgumentsOk() (*[]BTPExpression9, bool)`
+
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArguments
+
+`func (o *BTPExpressionBuiltinCall239) SetArguments(v []BTPExpression9)`
+
+SetArguments sets Arguments field to given value.
+
+### HasArguments
+
+`func (o *BTPExpressionBuiltinCall239) HasArguments() bool`
+
+HasArguments returns a boolean if a field has been set.
 
 ### GetName
 

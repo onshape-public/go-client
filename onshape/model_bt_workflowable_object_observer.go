@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,28 +17,28 @@ import (
 
 // BTWorkflowableObjectObserver struct for BTWorkflowableObjectObserver
 type BTWorkflowableObjectObserver struct {
-	AdminOverride    *bool     `json:"adminOverride,omitempty"`
-	ApprovalDate     *JSONTime `json:"approvalDate,omitempty"`
-	ApprovalState    *string   `json:"approvalState,omitempty"`
-	ApproverId       *string   `json:"approverId,omitempty"`
-	ApproverName     *string   `json:"approverName,omitempty"`
-	AssociatedStates *string   `json:"associatedStates,omitempty"`
-	CompanyId        *string   `json:"companyId,omitempty"`
-	CreatedAt        *JSONTime `json:"createdAt,omitempty"`
-	CreatedBy        *string   `json:"createdBy,omitempty"`
-	Description      *string   `json:"description,omitempty"`
-	EntryId          *string   `json:"entryId,omitempty"`
-	EntryType        *string   `json:"entryType,omitempty"`
-	Id               *string   `json:"id,omitempty"`
-	ModifiedAt       *JSONTime `json:"modifiedAt,omitempty"`
-	ModifiedBy       *string   `json:"modifiedBy,omitempty"`
-	Name             *string   `json:"name,omitempty"`
-	New              *bool     `json:"new,omitempty"`
-	ObjectId         *string   `json:"objectId,omitempty"`
-	ObservationType  *int32    `json:"observationType,omitempty"`
-	PropertyId       *string   `json:"propertyId,omitempty"`
-	RejectionDate    *JSONTime `json:"rejectionDate,omitempty"`
-	Removable        *bool     `json:"removable,omitempty"`
+	AdminOverride    *bool                        `json:"adminOverride,omitempty"`
+	ApprovalDate     *JSONTime                    `json:"approvalDate,omitempty"`
+	ApprovalState    *BTWorkflowObserverState     `json:"approvalState,omitempty"`
+	ApproverId       *string                      `json:"approverId,omitempty"`
+	ApproverName     *string                      `json:"approverName,omitempty"`
+	AssociatedStates *string                      `json:"associatedStates,omitempty"`
+	CompanyId        *string                      `json:"companyId,omitempty"`
+	CreatedAt        *JSONTime                    `json:"createdAt,omitempty"`
+	CreatedBy        *string                      `json:"createdBy,omitempty"`
+	Description      *string                      `json:"description,omitempty"`
+	EntryId          *string                      `json:"entryId,omitempty"`
+	EntryType        *BTWorkflowObserverEntryType `json:"entryType,omitempty"`
+	Id               *string                      `json:"id,omitempty"`
+	ModifiedAt       *JSONTime                    `json:"modifiedAt,omitempty"`
+	ModifiedBy       *string                      `json:"modifiedBy,omitempty"`
+	Name             *string                      `json:"name,omitempty"`
+	New              *bool                        `json:"new,omitempty"`
+	ObjectId         *string                      `json:"objectId,omitempty"`
+	ObservationType  *int32                       `json:"observationType,omitempty"`
+	PropertyId       *string                      `json:"propertyId,omitempty"`
+	RejectionDate    *JSONTime                    `json:"rejectionDate,omitempty"`
+	Removable        *bool                        `json:"removable,omitempty"`
 }
 
 // NewBTWorkflowableObjectObserver instantiates a new BTWorkflowableObjectObserver object
@@ -123,9 +123,9 @@ func (o *BTWorkflowableObjectObserver) SetApprovalDate(v JSONTime) {
 }
 
 // GetApprovalState returns the ApprovalState field value if set, zero value otherwise.
-func (o *BTWorkflowableObjectObserver) GetApprovalState() string {
+func (o *BTWorkflowableObjectObserver) GetApprovalState() BTWorkflowObserverState {
 	if o == nil || o.ApprovalState == nil {
-		var ret string
+		var ret BTWorkflowObserverState
 		return ret
 	}
 	return *o.ApprovalState
@@ -133,7 +133,7 @@ func (o *BTWorkflowableObjectObserver) GetApprovalState() string {
 
 // GetApprovalStateOk returns a tuple with the ApprovalState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTWorkflowableObjectObserver) GetApprovalStateOk() (*string, bool) {
+func (o *BTWorkflowableObjectObserver) GetApprovalStateOk() (*BTWorkflowObserverState, bool) {
 	if o == nil || o.ApprovalState == nil {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *BTWorkflowableObjectObserver) HasApprovalState() bool {
 	return false
 }
 
-// SetApprovalState gets a reference to the given string and assigns it to the ApprovalState field.
-func (o *BTWorkflowableObjectObserver) SetApprovalState(v string) {
+// SetApprovalState gets a reference to the given BTWorkflowObserverState and assigns it to the ApprovalState field.
+func (o *BTWorkflowableObjectObserver) SetApprovalState(v BTWorkflowObserverState) {
 	o.ApprovalState = &v
 }
 
@@ -411,9 +411,9 @@ func (o *BTWorkflowableObjectObserver) SetEntryId(v string) {
 }
 
 // GetEntryType returns the EntryType field value if set, zero value otherwise.
-func (o *BTWorkflowableObjectObserver) GetEntryType() string {
+func (o *BTWorkflowableObjectObserver) GetEntryType() BTWorkflowObserverEntryType {
 	if o == nil || o.EntryType == nil {
-		var ret string
+		var ret BTWorkflowObserverEntryType
 		return ret
 	}
 	return *o.EntryType
@@ -421,7 +421,7 @@ func (o *BTWorkflowableObjectObserver) GetEntryType() string {
 
 // GetEntryTypeOk returns a tuple with the EntryType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTWorkflowableObjectObserver) GetEntryTypeOk() (*string, bool) {
+func (o *BTWorkflowableObjectObserver) GetEntryTypeOk() (*BTWorkflowObserverEntryType, bool) {
 	if o == nil || o.EntryType == nil {
 		return nil, false
 	}
@@ -437,8 +437,8 @@ func (o *BTWorkflowableObjectObserver) HasEntryType() bool {
 	return false
 }
 
-// SetEntryType gets a reference to the given string and assigns it to the EntryType field.
-func (o *BTWorkflowableObjectObserver) SetEntryType(v string) {
+// SetEntryType gets a reference to the given BTWorkflowObserverEntryType and assigns it to the EntryType field.
+func (o *BTWorkflowableObjectObserver) SetEntryType(v BTWorkflowObserverEntryType) {
 	o.EntryType = &v
 }
 

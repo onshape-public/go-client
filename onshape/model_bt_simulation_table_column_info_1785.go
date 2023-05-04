@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,10 +17,10 @@ import (
 
 // BTSimulationTableColumnInfo1785 struct for BTSimulationTableColumnInfo1785
 type BTSimulationTableColumnInfo1785 struct {
+	BtType             *string                                `json:"btType,omitempty"`
 	Id                 *string                                `json:"id,omitempty"`
 	NodeId             *string                                `json:"nodeId,omitempty"`
 	Specification      *BTTableColumnSpec1967                 `json:"specification,omitempty"`
-	BtType             *string                                `json:"btType,omitempty"`
 	CrossHighlightData *BTTableAssemblyCrossHighlightData2675 `json:"crossHighlightData,omitempty"`
 }
 
@@ -39,6 +39,38 @@ func NewBTSimulationTableColumnInfo1785() *BTSimulationTableColumnInfo1785 {
 func NewBTSimulationTableColumnInfo1785WithDefaults() *BTSimulationTableColumnInfo1785 {
 	this := BTSimulationTableColumnInfo1785{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSimulationTableColumnInfo1785) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSimulationTableColumnInfo1785) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSimulationTableColumnInfo1785) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSimulationTableColumnInfo1785) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -137,38 +169,6 @@ func (o *BTSimulationTableColumnInfo1785) SetSpecification(v BTTableColumnSpec19
 	o.Specification = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTSimulationTableColumnInfo1785) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSimulationTableColumnInfo1785) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTSimulationTableColumnInfo1785) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTSimulationTableColumnInfo1785) SetBtType(v string) {
-	o.BtType = &v
-}
-
 // GetCrossHighlightData returns the CrossHighlightData field value if set, zero value otherwise.
 func (o *BTSimulationTableColumnInfo1785) GetCrossHighlightData() BTTableAssemblyCrossHighlightData2675 {
 	if o == nil || o.CrossHighlightData == nil {
@@ -203,6 +203,9 @@ func (o *BTSimulationTableColumnInfo1785) SetCrossHighlightData(v BTTableAssembl
 
 func (o BTSimulationTableColumnInfo1785) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
@@ -211,9 +214,6 @@ func (o BTSimulationTableColumnInfo1785) MarshalJSON() ([]byte, error) {
 	}
 	if o.Specification != nil {
 		toSerialize["specification"] = o.Specification
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData

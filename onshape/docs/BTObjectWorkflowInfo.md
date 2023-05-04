@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IsDiscarded** | Pointer to **bool** | Whether workflowable object has been discarded. | [optional] 
 **IsFrozen** | Pointer to **bool** | Whether workflowable object has reached terminal state and is frozen. | [optional] 
-**MetadataState** | Pointer to **string** | The current state metadata values if applicable. | [optional] 
+**MetadataState** | Pointer to [**BTMetadataStateType**](BTMetadataStateType.md) |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
-**ObjectType** | Pointer to **string** | All workflowable types that can be enumerated. | [optional] 
+**ObjectType** | Pointer to [**BTAPIWorkflowableType**](BTAPIWorkflowableType.md) |  | [optional] 
 **StateId** | Pointer to **string** | The current state of object like SETUP, REJECTED etc. Custom workflows can have any declared state. | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 **WorkflowId** | Pointer to **string** | The workflow definition id that governs this object&#39;s states and transitions. | [optional] 
@@ -162,20 +162,20 @@ HasIsFrozen returns a boolean if a field has been set.
 
 ### GetMetadataState
 
-`func (o *BTObjectWorkflowInfo) GetMetadataState() string`
+`func (o *BTObjectWorkflowInfo) GetMetadataState() BTMetadataStateType`
 
 GetMetadataState returns the MetadataState field if non-nil, zero value otherwise.
 
 ### GetMetadataStateOk
 
-`func (o *BTObjectWorkflowInfo) GetMetadataStateOk() (*string, bool)`
+`func (o *BTObjectWorkflowInfo) GetMetadataStateOk() (*BTMetadataStateType, bool)`
 
 GetMetadataStateOk returns a tuple with the MetadataState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadataState
 
-`func (o *BTObjectWorkflowInfo) SetMetadataState(v string)`
+`func (o *BTObjectWorkflowInfo) SetMetadataState(v BTMetadataStateType)`
 
 SetMetadataState sets MetadataState field to given value.
 
@@ -212,20 +212,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetObjectType
 
-`func (o *BTObjectWorkflowInfo) GetObjectType() string`
+`func (o *BTObjectWorkflowInfo) GetObjectType() BTAPIWorkflowableType`
 
 GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
 ### GetObjectTypeOk
 
-`func (o *BTObjectWorkflowInfo) GetObjectTypeOk() (*string, bool)`
+`func (o *BTObjectWorkflowInfo) GetObjectTypeOk() (*BTAPIWorkflowableType, bool)`
 
 GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObjectType
 
-`func (o *BTObjectWorkflowInfo) SetObjectType(v string)`
+`func (o *BTObjectWorkflowInfo) SetObjectType(v BTAPIWorkflowableType)`
 
 SetObjectType sets ObjectType field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Atomic** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**DocumentationType** | Pointer to **string** |  | [optional] 
+**DocumentationType** | Pointer to [**GBTPDefinitionType**](GBTPDefinitionType.md) |  | [optional] 
 **EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **Identifier** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **SpaceAfter** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceBefore** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceDefault** | Pointer to **bool** |  | [optional] 
-**StandardType** | Pointer to **string** |  | [optional] 
+**StandardType** | Pointer to [**GBTPType**](GBTPType.md) |  | [optional] 
 **StartSourceLocation** | Pointer to **int32** |  | [optional] 
 **Type** | Pointer to [**BTPTypeName290**](BTPTypeName290.md) |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
@@ -91,20 +91,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetDocumentationType
 
-`func (o *BTPArgumentDeclaration232) GetDocumentationType() string`
+`func (o *BTPArgumentDeclaration232) GetDocumentationType() GBTPDefinitionType`
 
 GetDocumentationType returns the DocumentationType field if non-nil, zero value otherwise.
 
 ### GetDocumentationTypeOk
 
-`func (o *BTPArgumentDeclaration232) GetDocumentationTypeOk() (*string, bool)`
+`func (o *BTPArgumentDeclaration232) GetDocumentationTypeOk() (*GBTPDefinitionType, bool)`
 
 GetDocumentationTypeOk returns a tuple with the DocumentationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDocumentationType
 
-`func (o *BTPArgumentDeclaration232) SetDocumentationType(v string)`
+`func (o *BTPArgumentDeclaration232) SetDocumentationType(v GBTPDefinitionType)`
 
 SetDocumentationType sets DocumentationType field to given value.
 
@@ -316,20 +316,20 @@ HasSpaceDefault returns a boolean if a field has been set.
 
 ### GetStandardType
 
-`func (o *BTPArgumentDeclaration232) GetStandardType() string`
+`func (o *BTPArgumentDeclaration232) GetStandardType() GBTPType`
 
 GetStandardType returns the StandardType field if non-nil, zero value otherwise.
 
 ### GetStandardTypeOk
 
-`func (o *BTPArgumentDeclaration232) GetStandardTypeOk() (*string, bool)`
+`func (o *BTPArgumentDeclaration232) GetStandardTypeOk() (*GBTPType, bool)`
 
 GetStandardTypeOk returns a tuple with the StandardType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStandardType
 
-`func (o *BTPArgumentDeclaration232) SetStandardType(v string)`
+`func (o *BTPArgumentDeclaration232) SetStandardType(v GBTPType)`
 
 SetStandardType sets StandardType field to given value.
 

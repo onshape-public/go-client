@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,17 +17,17 @@ import (
 
 // BTForeignDataResponse1070 struct for BTForeignDataResponse1070
 type BTForeignDataResponse1070 struct {
-	BtType          *string  `json:"btType,omitempty"`
-	BucketName      *string  `json:"bucketName,omitempty"`
-	BucketPath      *string  `json:"bucketPath,omitempty"`
-	CacheChunkList  []string `json:"cacheChunkList,omitempty"`
-	DataId          *string  `json:"dataId,omitempty"`
-	Format          *string  `json:"format,omitempty"`
-	Name            *string  `json:"name,omitempty"`
-	Region          *string  `json:"region,omitempty"`
-	Size            *int32   `json:"size,omitempty"`
-	StorageType     *string  `json:"storageType,omitempty"`
-	UseLocalStorage *bool    `json:"useLocalStorage,omitempty"`
+	BtType          *string            `json:"btType,omitempty"`
+	BucketName      *string            `json:"bucketName,omitempty"`
+	BucketPath      *string            `json:"bucketPath,omitempty"`
+	CacheChunkList  []string           `json:"cacheChunkList,omitempty"`
+	DataId          *string            `json:"dataId,omitempty"`
+	Format          *GBTDataItemFormat `json:"format,omitempty"`
+	Name            *string            `json:"name,omitempty"`
+	Region          *string            `json:"region,omitempty"`
+	Size            *int32             `json:"size,omitempty"`
+	StorageType     *string            `json:"storageType,omitempty"`
+	UseLocalStorage *bool              `json:"useLocalStorage,omitempty"`
 }
 
 // NewBTForeignDataResponse1070 instantiates a new BTForeignDataResponse1070 object
@@ -208,9 +208,9 @@ func (o *BTForeignDataResponse1070) SetDataId(v string) {
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise.
-func (o *BTForeignDataResponse1070) GetFormat() string {
+func (o *BTForeignDataResponse1070) GetFormat() GBTDataItemFormat {
 	if o == nil || o.Format == nil {
-		var ret string
+		var ret GBTDataItemFormat
 		return ret
 	}
 	return *o.Format
@@ -218,7 +218,7 @@ func (o *BTForeignDataResponse1070) GetFormat() string {
 
 // GetFormatOk returns a tuple with the Format field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTForeignDataResponse1070) GetFormatOk() (*string, bool) {
+func (o *BTForeignDataResponse1070) GetFormatOk() (*GBTDataItemFormat, bool) {
 	if o == nil || o.Format == nil {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *BTForeignDataResponse1070) HasFormat() bool {
 	return false
 }
 
-// SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *BTForeignDataResponse1070) SetFormat(v string) {
+// SetFormat gets a reference to the given GBTDataItemFormat and assigns it to the Format field.
+func (o *BTForeignDataResponse1070) SetFormat(v GBTDataItemFormat) {
 	o.Format = &v
 }
 

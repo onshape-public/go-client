@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BodyType** | Pointer to **string** |  | [optional] 
+**BodyType** | Pointer to [**BTAssemblyPartBodyType**](BTAssemblyPartBodyType.md) |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentMicroversion** | Pointer to **string** |  | [optional] 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBodyType
 
-`func (o *BTAssemblyPartInfo) GetBodyType() string`
+`func (o *BTAssemblyPartInfo) GetBodyType() BTAssemblyPartBodyType`
 
 GetBodyType returns the BodyType field if non-nil, zero value otherwise.
 
 ### GetBodyTypeOk
 
-`func (o *BTAssemblyPartInfo) GetBodyTypeOk() (*string, bool)`
+`func (o *BTAssemblyPartInfo) GetBodyTypeOk() (*BTAssemblyPartBodyType, bool)`
 
 GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodyType
 
-`func (o *BTAssemblyPartInfo) SetBodyType(v string)`
+`func (o *BTAssemblyPartInfo) SetBodyType(v BTAssemblyPartBodyType)`
 
 SetBodyType sets BodyType field to given value.
 

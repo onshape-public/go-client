@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **DefaultCellSpec** | Pointer to [**BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
-**DefaultColumnWidthUnits** | Pointer to **string** |  | [optional] 
+**DefaultColumnWidthUnits** | Pointer to [**GBTTableColumnWidthUnits**](GBTTableColumnWidthUnits.md) |  | [optional] 
 **DefaultColumnWidthValue** | Pointer to **int32** |  | [optional] 
 **DefaultHeaderName** | Pointer to **string** |  | [optional] 
-**DefaultTextAlignment** | Pointer to **string** |  | [optional] 
+**DefaultTextAlignment** | Pointer to [**GBTTableTextAlignment**](GBTTableTextAlignment.md) |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewBTTableColumnSpec1967WithDefaults instantiates a new BTTableColumnSpec1967 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTTableColumnSpec1967) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTTableColumnSpec1967) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTTableColumnSpec1967) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTTableColumnSpec1967) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetDefaultCellSpec
 
@@ -57,20 +83,20 @@ HasDefaultCellSpec returns a boolean if a field has been set.
 
 ### GetDefaultColumnWidthUnits
 
-`func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnits() string`
+`func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnits() GBTTableColumnWidthUnits`
 
 GetDefaultColumnWidthUnits returns the DefaultColumnWidthUnits field if non-nil, zero value otherwise.
 
 ### GetDefaultColumnWidthUnitsOk
 
-`func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnitsOk() (*string, bool)`
+`func (o *BTTableColumnSpec1967) GetDefaultColumnWidthUnitsOk() (*GBTTableColumnWidthUnits, bool)`
 
 GetDefaultColumnWidthUnitsOk returns a tuple with the DefaultColumnWidthUnits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultColumnWidthUnits
 
-`func (o *BTTableColumnSpec1967) SetDefaultColumnWidthUnits(v string)`
+`func (o *BTTableColumnSpec1967) SetDefaultColumnWidthUnits(v GBTTableColumnWidthUnits)`
 
 SetDefaultColumnWidthUnits sets DefaultColumnWidthUnits field to given value.
 
@@ -132,20 +158,20 @@ HasDefaultHeaderName returns a boolean if a field has been set.
 
 ### GetDefaultTextAlignment
 
-`func (o *BTTableColumnSpec1967) GetDefaultTextAlignment() string`
+`func (o *BTTableColumnSpec1967) GetDefaultTextAlignment() GBTTableTextAlignment`
 
 GetDefaultTextAlignment returns the DefaultTextAlignment field if non-nil, zero value otherwise.
 
 ### GetDefaultTextAlignmentOk
 
-`func (o *BTTableColumnSpec1967) GetDefaultTextAlignmentOk() (*string, bool)`
+`func (o *BTTableColumnSpec1967) GetDefaultTextAlignmentOk() (*GBTTableTextAlignment, bool)`
 
 GetDefaultTextAlignmentOk returns a tuple with the DefaultTextAlignment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultTextAlignment
 
-`func (o *BTTableColumnSpec1967) SetDefaultTextAlignment(v string)`
+`func (o *BTTableColumnSpec1967) SetDefaultTextAlignment(v GBTTableTextAlignment)`
 
 SetDefaultTextAlignment sets DefaultTextAlignment field to given value.
 

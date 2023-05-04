@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Operator** | Pointer to **string** |  | [optional] 
+**Operator** | Pointer to [**GBTPOperator**](GBTPOperator.md) |  | [optional] 
 **SpaceAfterOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceBeforeOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
@@ -55,20 +55,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetOperator
 
-`func (o *BTPOperatorDeclaration264AllOf) GetOperator() string`
+`func (o *BTPOperatorDeclaration264AllOf) GetOperator() GBTPOperator`
 
 GetOperator returns the Operator field if non-nil, zero value otherwise.
 
 ### GetOperatorOk
 
-`func (o *BTPOperatorDeclaration264AllOf) GetOperatorOk() (*string, bool)`
+`func (o *BTPOperatorDeclaration264AllOf) GetOperatorOk() (*GBTPOperator, bool)`
 
 GetOperatorOk returns a tuple with the Operator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperator
 
-`func (o *BTPOperatorDeclaration264AllOf) SetOperator(v string)`
+`func (o *BTPOperatorDeclaration264AllOf) SetOperator(v GBTPOperator)`
 
 SetOperator sets Operator field to given value.
 

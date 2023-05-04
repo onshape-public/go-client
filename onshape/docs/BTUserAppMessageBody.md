@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Event** | Pointer to **string** |  | [optional] 
 **IdentityId** | Pointer to **string** |  | [optional] 
 **MessageId** | Pointer to **string** |  | [optional] 
-**SettingType** | Pointer to **string** |  | [optional] 
+**SettingType** | Pointer to [**BTApplicationSettingsType**](BTApplicationSettingsType.md) |  | [optional] 
 **Timestamp** | Pointer to **JSONTime** |  | [optional] 
 **WebhookId** | Pointer to **string** |  | [optional] 
 
@@ -185,20 +185,20 @@ HasMessageId returns a boolean if a field has been set.
 
 ### GetSettingType
 
-`func (o *BTUserAppMessageBody) GetSettingType() string`
+`func (o *BTUserAppMessageBody) GetSettingType() BTApplicationSettingsType`
 
 GetSettingType returns the SettingType field if non-nil, zero value otherwise.
 
 ### GetSettingTypeOk
 
-`func (o *BTUserAppMessageBody) GetSettingTypeOk() (*string, bool)`
+`func (o *BTUserAppMessageBody) GetSettingTypeOk() (*BTApplicationSettingsType, bool)`
 
 GetSettingTypeOk returns a tuple with the SettingType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSettingType
 
-`func (o *BTUserAppMessageBody) SetSettingType(v string)`
+`func (o *BTUserAppMessageBody) SetSettingType(v BTApplicationSettingsType)`
 
 SetSettingType sets SettingType field to given value.
 

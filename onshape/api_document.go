@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1763,56 +1763,67 @@ type ApiGetDocumentsRequest struct {
 	parentId   *string
 }
 
+// Search for documents that contain the given string in the name. Search is not case-sensitive.
 func (r ApiGetDocumentsRequest) Q(q string) ApiGetDocumentsRequest {
 	r.q = &q
 	return r
 }
 
+// Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team).
 func (r ApiGetDocumentsRequest) Filter(filter int32) ApiGetDocumentsRequest {
 	r.filter = &filter
 	return r
 }
 
+// Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)
 func (r ApiGetDocumentsRequest) Owner(owner string) ApiGetDocumentsRequest {
 	r.owner = &owner
 	return r
 }
 
+// Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified.
 func (r ApiGetDocumentsRequest) OwnerType(ownerType int32) ApiGetDocumentsRequest {
 	r.ownerType = &ownerType
 	return r
 }
 
+// Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt.
 func (r ApiGetDocumentsRequest) SortColumn(sortColumn string) ApiGetDocumentsRequest {
 	r.sortColumn = &sortColumn
 	return r
 }
 
+// Sort order. Options are desc (descending, the default), or asc (ascending).
 func (r ApiGetDocumentsRequest) SortOrder(sortOrder string) ApiGetDocumentsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
+// Offset. Determines where search results begin. Default value is 0.
 func (r ApiGetDocumentsRequest) Offset(offset int32) ApiGetDocumentsRequest {
 	r.offset = &offset
 	return r
 }
 
+// Number of results to return per page. Default value is 20 (also the maximum).
 func (r ApiGetDocumentsRequest) Limit(limit int32) ApiGetDocumentsRequest {
 	r.limit = &limit
 	return r
 }
 
+// Label
 func (r ApiGetDocumentsRequest) Label(label string) ApiGetDocumentsRequest {
 	r.label = &label
 	return r
 }
 
+// Project
 func (r ApiGetDocumentsRequest) Project(project string) ApiGetDocumentsRequest {
 	r.project = &project
 	return r
 }
 
+// Parent Id
 func (r ApiGetDocumentsRequest) ParentId(parentId string) ApiGetDocumentsRequest {
 	r.parentId = &parentId
 	return r

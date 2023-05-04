@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Axis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**Axis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **HalfAngle** | Pointer to **float64** |  | [optional] 
 **Radius** | Pointer to **float64** |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewBTConeDescription860WithDefaults instantiates a new BTConeDescription860 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAxis
-
-`func (o *BTConeDescription860) GetAxis() BTVector3d389`
-
-GetAxis returns the Axis field if non-nil, zero value otherwise.
-
-### GetAxisOk
-
-`func (o *BTConeDescription860) GetAxisOk() (*BTVector3d389, bool)`
-
-GetAxisOk returns a tuple with the Axis field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAxis
-
-`func (o *BTConeDescription860) SetAxis(v BTVector3d389)`
-
-SetAxis sets Axis field to given value.
-
-### HasAxis
-
-`func (o *BTConeDescription860) HasAxis() bool`
-
-HasAxis returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -77,6 +52,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTConeDescription860) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAxis
+
+`func (o *BTConeDescription860) GetAxis() BTVector3d389`
+
+GetAxis returns the Axis field if non-nil, zero value otherwise.
+
+### GetAxisOk
+
+`func (o *BTConeDescription860) GetAxisOk() (*BTVector3d389, bool)`
+
+GetAxisOk returns a tuple with the Axis field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAxis
+
+`func (o *BTConeDescription860) SetAxis(v BTVector3d389)`
+
+SetAxis sets Axis field to given value.
+
+### HasAxis
+
+`func (o *BTConeDescription860) HasAxis() bool`
+
+HasAxis returns a boolean if a field has been set.
 
 ### GetHalfAngle
 

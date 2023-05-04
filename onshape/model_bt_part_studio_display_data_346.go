@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -19,7 +19,8 @@ import (
 type BTPartStudioDisplayData346 struct {
 	AppearanceIdToAppearanceOverride                *map[string]BTAppearanceOverride2517                `json:"appearanceIdToAppearanceOverride,omitempty"`
 	AssemblyReferenceDisplayData                    *BTAssemblyReferencesDisplayData1562                `json:"assemblyReferenceDisplayData,omitempty"`
-	CacheablePartStudioDisplayDataVersion           *string                                             `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
+	BtType                                          *string                                             `json:"btType,omitempty"`
+	CacheablePartStudioDisplayDataVersion           *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
 	DecalIdToDecal                                  *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
 	DeterministicIdToAssociatedFeatureIds           *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
 	DeterministicIdToEntity                         *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
@@ -47,7 +48,7 @@ type BTPartStudioDisplayData346 struct {
 	PartDisplayData                                 []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
 	SketchImages                                    *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
 	UpdatedParts                                    []string                                            `json:"updatedParts,omitempty"`
-	Usage                                           *string                                             `json:"usage,omitempty"`
+	Usage                                           *GBTDisplayDataUsage                                `json:"usage,omitempty"`
 	UseCPUIntensiveThreadPoolForCopyForSettings     *bool                                               `json:"useCPUIntensiveThreadPoolForCopyForSettings,omitempty"`
 	UsesMultipleTessellationSettings                *bool                                               `json:"usesMultipleTessellationSettings,omitempty"`
 	VersionForRasterization                         *BTElementDisplayData326                            `json:"versionForRasterization,omitempty"`
@@ -134,10 +135,42 @@ func (o *BTPartStudioDisplayData346) SetAssemblyReferenceDisplayData(v BTAssembl
 	o.AssemblyReferenceDisplayData = &v
 }
 
-// GetCacheablePartStudioDisplayDataVersion returns the CacheablePartStudioDisplayDataVersion field value if set, zero value otherwise.
-func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersion() string {
-	if o == nil || o.CacheablePartStudioDisplayDataVersion == nil {
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetBtType() string {
+	if o == nil || o.BtType == nil {
 		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPartStudioDisplayData346) SetBtType(v string) {
+	o.BtType = &v
+}
+
+// GetCacheablePartStudioDisplayDataVersion returns the CacheablePartStudioDisplayDataVersion field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersion() GBTPartStudioDisplayDataVersion {
+	if o == nil || o.CacheablePartStudioDisplayDataVersion == nil {
+		var ret GBTPartStudioDisplayDataVersion
 		return ret
 	}
 	return *o.CacheablePartStudioDisplayDataVersion
@@ -145,7 +178,7 @@ func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersion() 
 
 // GetCacheablePartStudioDisplayDataVersionOk returns a tuple with the CacheablePartStudioDisplayDataVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersionOk() (*string, bool) {
+func (o *BTPartStudioDisplayData346) GetCacheablePartStudioDisplayDataVersionOk() (*GBTPartStudioDisplayDataVersion, bool) {
 	if o == nil || o.CacheablePartStudioDisplayDataVersion == nil {
 		return nil, false
 	}
@@ -161,8 +194,8 @@ func (o *BTPartStudioDisplayData346) HasCacheablePartStudioDisplayDataVersion() 
 	return false
 }
 
-// SetCacheablePartStudioDisplayDataVersion gets a reference to the given string and assigns it to the CacheablePartStudioDisplayDataVersion field.
-func (o *BTPartStudioDisplayData346) SetCacheablePartStudioDisplayDataVersion(v string) {
+// SetCacheablePartStudioDisplayDataVersion gets a reference to the given GBTPartStudioDisplayDataVersion and assigns it to the CacheablePartStudioDisplayDataVersion field.
+func (o *BTPartStudioDisplayData346) SetCacheablePartStudioDisplayDataVersion(v GBTPartStudioDisplayDataVersion) {
 	o.CacheablePartStudioDisplayDataVersion = &v
 }
 
@@ -1031,9 +1064,9 @@ func (o *BTPartStudioDisplayData346) SetUpdatedParts(v []string) {
 }
 
 // GetUsage returns the Usage field value if set, zero value otherwise.
-func (o *BTPartStudioDisplayData346) GetUsage() string {
+func (o *BTPartStudioDisplayData346) GetUsage() GBTDisplayDataUsage {
 	if o == nil || o.Usage == nil {
-		var ret string
+		var ret GBTDisplayDataUsage
 		return ret
 	}
 	return *o.Usage
@@ -1041,7 +1074,7 @@ func (o *BTPartStudioDisplayData346) GetUsage() string {
 
 // GetUsageOk returns a tuple with the Usage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartStudioDisplayData346) GetUsageOk() (*string, bool) {
+func (o *BTPartStudioDisplayData346) GetUsageOk() (*GBTDisplayDataUsage, bool) {
 	if o == nil || o.Usage == nil {
 		return nil, false
 	}
@@ -1057,8 +1090,8 @@ func (o *BTPartStudioDisplayData346) HasUsage() bool {
 	return false
 }
 
-// SetUsage gets a reference to the given string and assigns it to the Usage field.
-func (o *BTPartStudioDisplayData346) SetUsage(v string) {
+// SetUsage gets a reference to the given GBTDisplayDataUsage and assigns it to the Usage field.
+func (o *BTPartStudioDisplayData346) SetUsage(v GBTDisplayDataUsage) {
 	o.Usage = &v
 }
 
@@ -1165,6 +1198,9 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	}
 	if o.AssemblyReferenceDisplayData != nil {
 		toSerialize["assemblyReferenceDisplayData"] = o.AssemblyReferenceDisplayData
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	if o.CacheablePartStudioDisplayDataVersion != nil {
 		toSerialize["cacheablePartStudioDisplayDataVersion"] = o.CacheablePartStudioDisplayDataVersion

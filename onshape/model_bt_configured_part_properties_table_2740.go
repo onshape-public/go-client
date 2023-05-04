@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,6 +18,7 @@ import (
 // BTConfiguredPartPropertiesTable2740 struct for BTConfiguredPartPropertiesTable2740
 type BTConfiguredPartPropertiesTable2740 struct {
 	AllRowValues         [][]string              `json:"allRowValues,omitempty"`
+	BtType               *string                 `json:"btType,omitempty"`
 	ColumnCount          *int32                  `json:"columnCount,omitempty"`
 	FrozenColumns        *int32                  `json:"frozenColumns,omitempty"`
 	IsFailed             *bool                   `json:"isFailed,omitempty"`
@@ -29,7 +30,6 @@ type BTConfiguredPartPropertiesTable2740 struct {
 	TableId              *string                 `json:"tableId,omitempty"`
 	TableRows            []BTTableRow1054        `json:"tableRows,omitempty"`
 	Title                *string                 `json:"title,omitempty"`
-	BtType               *string                 `json:"btType,omitempty"`
 	PartDeterministicId  *string                 `json:"partDeterministicId,omitempty"`
 	PartDeterministicIds []string                `json:"partDeterministicIds,omitempty"`
 	PropertyNodeId       *string                 `json:"propertyNodeId,omitempty"`
@@ -82,6 +82,38 @@ func (o *BTConfiguredPartPropertiesTable2740) HasAllRowValues() bool {
 // SetAllRowValues gets a reference to the given [][]string and assigns it to the AllRowValues field.
 func (o *BTConfiguredPartPropertiesTable2740) SetAllRowValues(v [][]string) {
 	o.AllRowValues = v
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTConfiguredPartPropertiesTable2740) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTConfiguredPartPropertiesTable2740) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTConfiguredPartPropertiesTable2740) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTConfiguredPartPropertiesTable2740) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetColumnCount returns the ColumnCount field value if set, zero value otherwise.
@@ -436,38 +468,6 @@ func (o *BTConfiguredPartPropertiesTable2740) SetTitle(v string) {
 	o.Title = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTConfiguredPartPropertiesTable2740) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTConfiguredPartPropertiesTable2740) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTConfiguredPartPropertiesTable2740) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTConfiguredPartPropertiesTable2740) SetBtType(v string) {
-	o.BtType = &v
-}
-
 // GetPartDeterministicId returns the PartDeterministicId field value if set, zero value otherwise.
 func (o *BTConfiguredPartPropertiesTable2740) GetPartDeterministicId() string {
 	if o == nil || o.PartDeterministicId == nil {
@@ -569,6 +569,9 @@ func (o BTConfiguredPartPropertiesTable2740) MarshalJSON() ([]byte, error) {
 	if o.AllRowValues != nil {
 		toSerialize["allRowValues"] = o.AllRowValues
 	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.ColumnCount != nil {
 		toSerialize["columnCount"] = o.ColumnCount
 	}
@@ -601,9 +604,6 @@ func (o BTConfiguredPartPropertiesTable2740) MarshalJSON() ([]byte, error) {
 	}
 	if o.Title != nil {
 		toSerialize["title"] = o.Title
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.PartDeterministicId != nil {
 		toSerialize["partDeterministicId"] = o.PartDeterministicId

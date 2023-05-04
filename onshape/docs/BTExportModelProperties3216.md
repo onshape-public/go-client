@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetAppearance sets Appearance field to given value.
 `func (o *BTExportModelProperties3216) HasAppearance() bool`
 
 HasAppearance returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTExportModelProperties3216) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportModelProperties3216) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportModelProperties3216) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportModelProperties3216) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetName
 

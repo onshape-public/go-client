@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,6 +17,7 @@ import (
 
 // BTMLoad3538 struct for BTMLoad3538
 type BTMLoad3538 struct {
+	BtType                                 *string                                   `json:"btType,omitempty"`
 	FeatureId                              *string                                   `json:"featureId,omitempty"`
 	FeatureType                            *string                                   `json:"featureType,omitempty"`
 	ImportMicroversion                     *string                                   `json:"importMicroversion,omitempty"`
@@ -30,7 +31,6 @@ type BTMLoad3538 struct {
 	SuppressionConfigured                  *bool                                     `json:"suppressionConfigured,omitempty"`
 	VariableStudioReference                *bool                                     `json:"variableStudioReference,omitempty"`
 	AuxiliaryTreeFeature                   *bool                                     `json:"auxiliaryTreeFeature,omitempty"`
-	BtType                                 *string                                   `json:"btType,omitempty"`
 	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
 	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
 	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
@@ -42,9 +42,9 @@ type BTMLoad3538 struct {
 	FgsBaseUnits                           *string                                   `json:"fgsBaseUnits,omitempty"`
 	LoadComponentParameterIds              *map[string]string                        `json:"loadComponentParameterIds,omitempty"`
 	LoadRegionParameterId                  *string                                   `json:"loadRegionParameterId,omitempty"`
-	LoadType                               *string                                   `json:"loadType,omitempty"`
+	LoadType                               *GBTLoadType                              `json:"loadType,omitempty"`
 	MagnitudeParameterId                   *string                                   `json:"magnitudeParameterId,omitempty"`
-	MagnitudeQuantityType                  *string                                   `json:"magnitudeQuantityType,omitempty"`
+	MagnitudeQuantityType                  *GBTQuantityType                          `json:"magnitudeQuantityType,omitempty"`
 	StructuralLoad                         *bool                                     `json:"structuralLoad,omitempty"`
 	SuppressedInSimulations                *map[string]int32                         `json:"suppressedInSimulations,omitempty"`
 }
@@ -64,6 +64,38 @@ func NewBTMLoad3538() *BTMLoad3538 {
 func NewBTMLoad3538WithDefaults() *BTMLoad3538 {
 	this := BTMLoad3538{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMLoad3538) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
@@ -482,38 +514,6 @@ func (o *BTMLoad3538) SetAuxiliaryTreeFeature(v bool) {
 	o.AuxiliaryTreeFeature = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMLoad3538) SetBtType(v string) {
-	o.BtType = &v
-}
-
 // GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
 func (o *BTMLoad3538) GetFeatureFolder() bool {
 	if o == nil || o.FeatureFolder == nil {
@@ -867,9 +867,9 @@ func (o *BTMLoad3538) SetLoadRegionParameterId(v string) {
 }
 
 // GetLoadType returns the LoadType field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetLoadType() string {
+func (o *BTMLoad3538) GetLoadType() GBTLoadType {
 	if o == nil || o.LoadType == nil {
-		var ret string
+		var ret GBTLoadType
 		return ret
 	}
 	return *o.LoadType
@@ -877,7 +877,7 @@ func (o *BTMLoad3538) GetLoadType() string {
 
 // GetLoadTypeOk returns a tuple with the LoadType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetLoadTypeOk() (*string, bool) {
+func (o *BTMLoad3538) GetLoadTypeOk() (*GBTLoadType, bool) {
 	if o == nil || o.LoadType == nil {
 		return nil, false
 	}
@@ -893,8 +893,8 @@ func (o *BTMLoad3538) HasLoadType() bool {
 	return false
 }
 
-// SetLoadType gets a reference to the given string and assigns it to the LoadType field.
-func (o *BTMLoad3538) SetLoadType(v string) {
+// SetLoadType gets a reference to the given GBTLoadType and assigns it to the LoadType field.
+func (o *BTMLoad3538) SetLoadType(v GBTLoadType) {
 	o.LoadType = &v
 }
 
@@ -931,9 +931,9 @@ func (o *BTMLoad3538) SetMagnitudeParameterId(v string) {
 }
 
 // GetMagnitudeQuantityType returns the MagnitudeQuantityType field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetMagnitudeQuantityType() string {
+func (o *BTMLoad3538) GetMagnitudeQuantityType() GBTQuantityType {
 	if o == nil || o.MagnitudeQuantityType == nil {
-		var ret string
+		var ret GBTQuantityType
 		return ret
 	}
 	return *o.MagnitudeQuantityType
@@ -941,7 +941,7 @@ func (o *BTMLoad3538) GetMagnitudeQuantityType() string {
 
 // GetMagnitudeQuantityTypeOk returns a tuple with the MagnitudeQuantityType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetMagnitudeQuantityTypeOk() (*string, bool) {
+func (o *BTMLoad3538) GetMagnitudeQuantityTypeOk() (*GBTQuantityType, bool) {
 	if o == nil || o.MagnitudeQuantityType == nil {
 		return nil, false
 	}
@@ -957,8 +957,8 @@ func (o *BTMLoad3538) HasMagnitudeQuantityType() bool {
 	return false
 }
 
-// SetMagnitudeQuantityType gets a reference to the given string and assigns it to the MagnitudeQuantityType field.
-func (o *BTMLoad3538) SetMagnitudeQuantityType(v string) {
+// SetMagnitudeQuantityType gets a reference to the given GBTQuantityType and assigns it to the MagnitudeQuantityType field.
+func (o *BTMLoad3538) SetMagnitudeQuantityType(v GBTQuantityType) {
 	o.MagnitudeQuantityType = &v
 }
 
@@ -1028,6 +1028,9 @@ func (o *BTMLoad3538) SetSuppressedInSimulations(v map[string]int32) {
 
 func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
 	}
@@ -1066,9 +1069,6 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	}
 	if o.AuxiliaryTreeFeature != nil {
 		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.FeatureFolder != nil {
 		toSerialize["featureFolder"] = o.FeatureFolder

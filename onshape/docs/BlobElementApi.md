@@ -1,6 +1,6 @@
 # \BlobElementApi
 
-All URIs are relative to *https://cad.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -116,8 +116,8 @@ func main() {
     wid := "wid_example" // string | The id of the workspace in which to perform the operation.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    contentDisposition := "contentDisposition_example" // string |  (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string |  (optional)
+    contentDisposition := "contentDisposition_example" // string | If \"attachment\", includes a Content-Disposition return header with the filename. (optional)
+    ifNoneMatch := "ifNoneMatch_example" // string | Entity tag; an md5 checksum of the data in double quotes. If the data to download has the same checksum as this entity tag, a 304 'Not Modified' status will be returned. The entity tag is returned in the response headers as ETag. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **contentDisposition** | **string** |  | 
- **ifNoneMatch** | **string** |  | 
+ **contentDisposition** | **string** | If \&quot;attachment\&quot;, includes a Content-Disposition return header with the filename. | 
+ **ifNoneMatch** | **string** | Entity tag; an md5 checksum of the data in double quotes. If the data to download has the same checksum as this entity tag, a 304 &#39;Not Modified&#39; status will be returned. The entity tag is returned in the response headers as ETag. | 
 
 ### Return type
 

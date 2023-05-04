@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,6 +18,7 @@ import (
 // BTParameterSpecReferencePartStudio1256 struct for BTParameterSpecReferencePartStudio1256
 type BTParameterSpecReferencePartStudio1256 struct {
 	AdditionalLocalizedStrings  *int32                                 `json:"additionalLocalizedStrings,omitempty"`
+	BtType                      *string                                `json:"btType,omitempty"`
 	ColumnName                  *string                                `json:"columnName,omitempty"`
 	DefaultValue                *BTMParameter1                         `json:"defaultValue,omitempty"`
 	IconUri                     *string                                `json:"iconUri,omitempty"`
@@ -28,11 +29,10 @@ type BTParameterSpecReferencePartStudio1256 struct {
 	ParameterName               *string                                `json:"parameterName,omitempty"`
 	StringsToLocalize           []string                               `json:"stringsToLocalize,omitempty"`
 	UiHint                      *string                                `json:"uiHint,omitempty"`
-	UiHints                     []string                               `json:"uiHints,omitempty"`
+	UiHints                     []GBTUIHint                            `json:"uiHints,omitempty"`
 	VisibilityCondition         *BTParameterVisibilityCondition177     `json:"visibilityCondition,omitempty"`
-	BtType                      *string                                `json:"btType,omitempty"`
 	DefaultPurpose              *BTElementLibraryPurpose3353           `json:"defaultPurpose,omitempty"`
-	AllowedInsertableTypes      []string                               `json:"allowedInsertableTypes,omitempty"`
+	AllowedInsertableTypes      []GBTPartStudioItemType                `json:"allowedInsertableTypes,omitempty"`
 	ComputedConfigurationInputs []BTComputedConfigurationInputSpec2525 `json:"computedConfigurationInputs,omitempty"`
 	MaxNumberOfPicks            *int32                                 `json:"maxNumberOfPicks,omitempty"`
 }
@@ -84,6 +84,38 @@ func (o *BTParameterSpecReferencePartStudio1256) HasAdditionalLocalizedStrings()
 // SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
 func (o *BTParameterSpecReferencePartStudio1256) SetAdditionalLocalizedStrings(v int32) {
 	o.AdditionalLocalizedStrings = &v
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecReferencePartStudio1256) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferencePartStudio1256) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecReferencePartStudio1256) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecReferencePartStudio1256) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetColumnName returns the ColumnName field value if set, zero value otherwise.
@@ -407,9 +439,9 @@ func (o *BTParameterSpecReferencePartStudio1256) SetUiHint(v string) {
 }
 
 // GetUiHints returns the UiHints field value if set, zero value otherwise.
-func (o *BTParameterSpecReferencePartStudio1256) GetUiHints() []string {
+func (o *BTParameterSpecReferencePartStudio1256) GetUiHints() []GBTUIHint {
 	if o == nil || o.UiHints == nil {
-		var ret []string
+		var ret []GBTUIHint
 		return ret
 	}
 	return o.UiHints
@@ -417,7 +449,7 @@ func (o *BTParameterSpecReferencePartStudio1256) GetUiHints() []string {
 
 // GetUiHintsOk returns a tuple with the UiHints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecReferencePartStudio1256) GetUiHintsOk() ([]string, bool) {
+func (o *BTParameterSpecReferencePartStudio1256) GetUiHintsOk() ([]GBTUIHint, bool) {
 	if o == nil || o.UiHints == nil {
 		return nil, false
 	}
@@ -433,8 +465,8 @@ func (o *BTParameterSpecReferencePartStudio1256) HasUiHints() bool {
 	return false
 }
 
-// SetUiHints gets a reference to the given []string and assigns it to the UiHints field.
-func (o *BTParameterSpecReferencePartStudio1256) SetUiHints(v []string) {
+// SetUiHints gets a reference to the given []GBTUIHint and assigns it to the UiHints field.
+func (o *BTParameterSpecReferencePartStudio1256) SetUiHints(v []GBTUIHint) {
 	o.UiHints = v
 }
 
@@ -470,38 +502,6 @@ func (o *BTParameterSpecReferencePartStudio1256) SetVisibilityCondition(v BTPara
 	o.VisibilityCondition = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTParameterSpecReferencePartStudio1256) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecReferencePartStudio1256) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTParameterSpecReferencePartStudio1256) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTParameterSpecReferencePartStudio1256) SetBtType(v string) {
-	o.BtType = &v
-}
-
 // GetDefaultPurpose returns the DefaultPurpose field value if set, zero value otherwise.
 func (o *BTParameterSpecReferencePartStudio1256) GetDefaultPurpose() BTElementLibraryPurpose3353 {
 	if o == nil || o.DefaultPurpose == nil {
@@ -535,9 +535,9 @@ func (o *BTParameterSpecReferencePartStudio1256) SetDefaultPurpose(v BTElementLi
 }
 
 // GetAllowedInsertableTypes returns the AllowedInsertableTypes field value if set, zero value otherwise.
-func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypes() []string {
+func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypes() []GBTPartStudioItemType {
 	if o == nil || o.AllowedInsertableTypes == nil {
-		var ret []string
+		var ret []GBTPartStudioItemType
 		return ret
 	}
 	return o.AllowedInsertableTypes
@@ -545,7 +545,7 @@ func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypes() []s
 
 // GetAllowedInsertableTypesOk returns a tuple with the AllowedInsertableTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypesOk() ([]string, bool) {
+func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypesOk() ([]GBTPartStudioItemType, bool) {
 	if o == nil || o.AllowedInsertableTypes == nil {
 		return nil, false
 	}
@@ -561,8 +561,8 @@ func (o *BTParameterSpecReferencePartStudio1256) HasAllowedInsertableTypes() boo
 	return false
 }
 
-// SetAllowedInsertableTypes gets a reference to the given []string and assigns it to the AllowedInsertableTypes field.
-func (o *BTParameterSpecReferencePartStudio1256) SetAllowedInsertableTypes(v []string) {
+// SetAllowedInsertableTypes gets a reference to the given []GBTPartStudioItemType and assigns it to the AllowedInsertableTypes field.
+func (o *BTParameterSpecReferencePartStudio1256) SetAllowedInsertableTypes(v []GBTPartStudioItemType) {
 	o.AllowedInsertableTypes = v
 }
 
@@ -635,6 +635,9 @@ func (o BTParameterSpecReferencePartStudio1256) MarshalJSON() ([]byte, error) {
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.ColumnName != nil {
 		toSerialize["columnName"] = o.ColumnName
 	}
@@ -670,9 +673,6 @@ func (o BTParameterSpecReferencePartStudio1256) MarshalJSON() ([]byte, error) {
 	}
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.DefaultPurpose != nil {
 		toSerialize["defaultPurpose"] = o.DefaultPurpose

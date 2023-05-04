@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Format** | **string** |  | 
 **FromUserId** | Pointer to **string** |  | [optional] 
 **Grouping** | Pointer to **string** |  | [optional] 
+**IgnoreExportRulesForContents** | Pointer to **bool** |  | [optional] 
 **IncludeBendCenterlines** | Pointer to **bool** |  | [optional] 
 **IncludeBendLines** | Pointer to **bool** |  | [optional] 
 **IncludeComments** | Pointer to **bool** |  | [optional] 
@@ -624,6 +625,31 @@ SetGrouping sets Grouping field to given value.
 `func (o *BTBExportModelParams) HasGrouping() bool`
 
 HasGrouping returns a boolean if a field has been set.
+
+### GetIgnoreExportRulesForContents
+
+`func (o *BTBExportModelParams) GetIgnoreExportRulesForContents() bool`
+
+GetIgnoreExportRulesForContents returns the IgnoreExportRulesForContents field if non-nil, zero value otherwise.
+
+### GetIgnoreExportRulesForContentsOk
+
+`func (o *BTBExportModelParams) GetIgnoreExportRulesForContentsOk() (*bool, bool)`
+
+GetIgnoreExportRulesForContentsOk returns a tuple with the IgnoreExportRulesForContents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreExportRulesForContents
+
+`func (o *BTBExportModelParams) SetIgnoreExportRulesForContents(v bool)`
+
+SetIgnoreExportRulesForContents sets IgnoreExportRulesForContents field to given value.
+
+### HasIgnoreExportRulesForContents
+
+`func (o *BTBExportModelParams) HasIgnoreExportRulesForContents() bool`
+
+HasIgnoreExportRulesForContents returns a boolean if a field has been set.
 
 ### GetIncludeBendCenterlines
 

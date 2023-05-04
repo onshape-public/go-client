@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Exclusion** | Pointer to **string** |  | [optional] 
+**Exclusion** | Pointer to [**GBTFeatureFilterExclusion**](GBTFeatureFilterExclusion.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetExclusion
 
-`func (o *BTFeatureFilter127AllOf) GetExclusion() string`
+`func (o *BTFeatureFilter127AllOf) GetExclusion() GBTFeatureFilterExclusion`
 
 GetExclusion returns the Exclusion field if non-nil, zero value otherwise.
 
 ### GetExclusionOk
 
-`func (o *BTFeatureFilter127AllOf) GetExclusionOk() (*string, bool)`
+`func (o *BTFeatureFilter127AllOf) GetExclusionOk() (*GBTFeatureFilterExclusion, bool)`
 
 GetExclusionOk returns a tuple with the Exclusion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExclusion
 
-`func (o *BTFeatureFilter127AllOf) SetExclusion(v string)`
+`func (o *BTFeatureFilter127AllOf) SetExclusion(v GBTFeatureFilterExclusion)`
 
 SetExclusion sets Exclusion field to given value.
 

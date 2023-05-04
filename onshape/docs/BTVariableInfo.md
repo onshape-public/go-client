@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Variable description | [optional] 
 **Expression** | **string** | Variable expression | 
 **Name** | **string** | Variable name | 
-**Type** | **string** | Variable type name, from FeatureScript VariableType | 
+**Type** | [**GBTVariableType**](GBTVariableType.md) |  | 
 **Value** | **string** | Variable formatted value | 
 
 ## Methods
 
 ### NewBTVariableInfo
 
-`func NewBTVariableInfo(expression string, name string, type_ string, value string, ) *BTVariableInfo`
+`func NewBTVariableInfo(expression string, name string, type_ GBTVariableType, value string, ) *BTVariableInfo`
 
 NewBTVariableInfo instantiates a new BTVariableInfo object
 This constructor will assign default values to properties that have it defined,
@@ -96,20 +96,20 @@ SetName sets Name field to given value.
 
 ### GetType
 
-`func (o *BTVariableInfo) GetType() string`
+`func (o *BTVariableInfo) GetType() GBTVariableType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTVariableInfo) GetTypeOk() (*string, bool)`
+`func (o *BTVariableInfo) GetTypeOk() (*GBTVariableType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTVariableInfo) SetType(v string)`
+`func (o *BTVariableInfo) SetType(v GBTVariableType)`
 
 SetType sets Type field to given value.
 

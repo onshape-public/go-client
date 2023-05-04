@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Allows** | Pointer to **string** |  | [optional] 
+**Allows** | Pointer to [**GBTFilterFlattenedGeometryOptions**](GBTFilterFlattenedGeometryOptions.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAllows
 
-`func (o *BTFlatSheetMetalFilter3018AllOf) GetAllows() string`
+`func (o *BTFlatSheetMetalFilter3018AllOf) GetAllows() GBTFilterFlattenedGeometryOptions`
 
 GetAllows returns the Allows field if non-nil, zero value otherwise.
 
 ### GetAllowsOk
 
-`func (o *BTFlatSheetMetalFilter3018AllOf) GetAllowsOk() (*string, bool)`
+`func (o *BTFlatSheetMetalFilter3018AllOf) GetAllowsOk() (*GBTFilterFlattenedGeometryOptions, bool)`
 
 GetAllowsOk returns a tuple with the Allows field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllows
 
-`func (o *BTFlatSheetMetalFilter3018AllOf) SetAllows(v string)`
+`func (o *BTFlatSheetMetalFilter3018AllOf) SetAllows(v GBTFilterFlattenedGeometryOptions)`
 
 SetAllows sets Allows field to given value.
 

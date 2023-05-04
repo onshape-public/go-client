@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DocumentId** | **string** |  | 
 **ElementId** | Pointer to **string** |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
-**IncludePartTypes** | Pointer to **[]string** |  | [optional] 
+**IncludePartTypes** | Pointer to [**[]GBTInsertableType**](GBTInsertableType.md) |  | [optional] 
 **IsAssembly** | Pointer to **bool** |  | [optional] 
 **IsHidden** | Pointer to **bool** |  | [optional] 
 **IsSuppressed** | Pointer to **bool** |  | [optional] 
@@ -135,20 +135,20 @@ HasFeatureId returns a boolean if a field has been set.
 
 ### GetIncludePartTypes
 
-`func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypes() []string`
+`func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypes() []GBTInsertableType`
 
 GetIncludePartTypes returns the IncludePartTypes field if non-nil, zero value otherwise.
 
 ### GetIncludePartTypesOk
 
-`func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypesOk() (*[]string, bool)`
+`func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypesOk() (*[]GBTInsertableType, bool)`
 
 GetIncludePartTypesOk returns a tuple with the IncludePartTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIncludePartTypes
 
-`func (o *BTAssemblyInstanceDefinitionParams) SetIncludePartTypes(v []string)`
+`func (o *BTAssemblyInstanceDefinitionParams) SetIncludePartTypes(v []GBTInsertableType)`
 
 SetIncludePartTypes sets IncludePartTypes field to given value.
 

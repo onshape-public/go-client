@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15457-d8ebaa9b9e42
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,23 +17,23 @@ import (
 
 // BTPStatementVarDeclaration282 struct for BTPStatementVarDeclaration282
 type BTPStatementVarDeclaration282 struct {
-	Annotation          *BTPAnnotation231 `json:"annotation,omitempty"`
-	Atomic              *bool             `json:"atomic,omitempty"`
-	BtType              *string           `json:"btType,omitempty"`
-	DocumentationType   *string           `json:"documentationType,omitempty"`
-	EndSourceLocation   *int32            `json:"endSourceLocation,omitempty"`
-	NodeId              *string           `json:"nodeId,omitempty"`
-	ShortDescriptor     *string           `json:"shortDescriptor,omitempty"`
-	SpaceAfter          *BTPSpace10       `json:"spaceAfter,omitempty"`
-	SpaceBefore         *BTPSpace10       `json:"spaceBefore,omitempty"`
-	SpaceDefault        *bool             `json:"spaceDefault,omitempty"`
-	StartSourceLocation *int32            `json:"startSourceLocation,omitempty"`
-	Identifier          *BTPIdentifier8   `json:"identifier,omitempty"`
-	Name                *BTPIdentifier8   `json:"name,omitempty"`
-	StandardType        *string           `json:"standardType,omitempty"`
-	Type                *BTPTypeName290   `json:"type,omitempty"`
-	TypeName            *string           `json:"typeName,omitempty"`
-	Value               *BTPExpression9   `json:"value,omitempty"`
+	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
+	Atomic              *bool               `json:"atomic,omitempty"`
+	BtType              *string             `json:"btType,omitempty"`
+	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
+	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
+	NodeId              *string             `json:"nodeId,omitempty"`
+	ShortDescriptor     *string             `json:"shortDescriptor,omitempty"`
+	SpaceAfter          *BTPSpace10         `json:"spaceAfter,omitempty"`
+	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
+	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
+	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	Identifier          *BTPIdentifier8     `json:"identifier,omitempty"`
+	Name                *BTPIdentifier8     `json:"name,omitempty"`
+	StandardType        *GBTPType           `json:"standardType,omitempty"`
+	Type                *BTPTypeName290     `json:"type,omitempty"`
+	TypeName            *string             `json:"typeName,omitempty"`
+	Value               *BTPExpression9     `json:"value,omitempty"`
 }
 
 // NewBTPStatementVarDeclaration282 instantiates a new BTPStatementVarDeclaration282 object
@@ -150,9 +150,9 @@ func (o *BTPStatementVarDeclaration282) SetBtType(v string) {
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
-func (o *BTPStatementVarDeclaration282) GetDocumentationType() string {
+func (o *BTPStatementVarDeclaration282) GetDocumentationType() GBTPDefinitionType {
 	if o == nil || o.DocumentationType == nil {
-		var ret string
+		var ret GBTPDefinitionType
 		return ret
 	}
 	return *o.DocumentationType
@@ -160,7 +160,7 @@ func (o *BTPStatementVarDeclaration282) GetDocumentationType() string {
 
 // GetDocumentationTypeOk returns a tuple with the DocumentationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPStatementVarDeclaration282) GetDocumentationTypeOk() (*string, bool) {
+func (o *BTPStatementVarDeclaration282) GetDocumentationTypeOk() (*GBTPDefinitionType, bool) {
 	if o == nil || o.DocumentationType == nil {
 		return nil, false
 	}
@@ -176,8 +176,8 @@ func (o *BTPStatementVarDeclaration282) HasDocumentationType() bool {
 	return false
 }
 
-// SetDocumentationType gets a reference to the given string and assigns it to the DocumentationType field.
-func (o *BTPStatementVarDeclaration282) SetDocumentationType(v string) {
+// SetDocumentationType gets a reference to the given GBTPDefinitionType and assigns it to the DocumentationType field.
+func (o *BTPStatementVarDeclaration282) SetDocumentationType(v GBTPDefinitionType) {
 	o.DocumentationType = &v
 }
 
@@ -470,9 +470,9 @@ func (o *BTPStatementVarDeclaration282) SetName(v BTPIdentifier8) {
 }
 
 // GetStandardType returns the StandardType field value if set, zero value otherwise.
-func (o *BTPStatementVarDeclaration282) GetStandardType() string {
+func (o *BTPStatementVarDeclaration282) GetStandardType() GBTPType {
 	if o == nil || o.StandardType == nil {
-		var ret string
+		var ret GBTPType
 		return ret
 	}
 	return *o.StandardType
@@ -480,7 +480,7 @@ func (o *BTPStatementVarDeclaration282) GetStandardType() string {
 
 // GetStandardTypeOk returns a tuple with the StandardType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPStatementVarDeclaration282) GetStandardTypeOk() (*string, bool) {
+func (o *BTPStatementVarDeclaration282) GetStandardTypeOk() (*GBTPType, bool) {
 	if o == nil || o.StandardType == nil {
 		return nil, false
 	}
@@ -496,8 +496,8 @@ func (o *BTPStatementVarDeclaration282) HasStandardType() bool {
 	return false
 }
 
-// SetStandardType gets a reference to the given string and assigns it to the StandardType field.
-func (o *BTPStatementVarDeclaration282) SetStandardType(v string) {
+// SetStandardType gets a reference to the given GBTPType and assigns it to the StandardType field.
+func (o *BTPStatementVarDeclaration282) SetStandardType(v GBTPType) {
 	o.StandardType = &v
 }
 
