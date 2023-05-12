@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **IsUnchanged** | Pointer to **bool** |  | [optional] 
-**PropertySourceType** | Pointer to **string** |  | [optional] 
+**PropertySourceType** | Pointer to [**GBTMetadataSourceType**](GBTMetadataSourceType.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasIsUnchanged returns a boolean if a field has been set.
 
 ### GetPropertySourceType
 
-`func (o *BTTableCellPropertyParameter2983AllOf) GetPropertySourceType() string`
+`func (o *BTTableCellPropertyParameter2983AllOf) GetPropertySourceType() GBTMetadataSourceType`
 
 GetPropertySourceType returns the PropertySourceType field if non-nil, zero value otherwise.
 
 ### GetPropertySourceTypeOk
 
-`func (o *BTTableCellPropertyParameter2983AllOf) GetPropertySourceTypeOk() (*string, bool)`
+`func (o *BTTableCellPropertyParameter2983AllOf) GetPropertySourceTypeOk() (*GBTMetadataSourceType, bool)`
 
 GetPropertySourceTypeOk returns a tuple with the PropertySourceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPropertySourceType
 
-`func (o *BTTableCellPropertyParameter2983AllOf) SetPropertySourceType(v string)`
+`func (o *BTTableCellPropertyParameter2983AllOf) SetPropertySourceType(v GBTMetadataSourceType)`
 
 SetPropertySourceType sets PropertySourceType field to given value.
 

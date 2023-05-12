@@ -1,6 +1,6 @@
 # \PropertiesTableTemplateApi
 
-All URIs are relative to *https://cad.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -166,7 +166,7 @@ import (
 
 func main() {
     cid := "cid_example" // string | The id of the company in which to perform the operation.
-    templateType := "templateType_example" // string | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). (optional)
+    templateType := openapiclient.BTPropertiesTableTemplateType("BOM") // BTPropertiesTableTemplateType | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). (optional)
     onlyActive := true // bool |  (optional) (default to false)
     includeDefaults := true // bool |  (optional) (default to true)
 
@@ -198,7 +198,7 @@ Other parameters are passed through a pointer to a apiGetByCompanyIdRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **templateType** | **string** | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). | 
+ **templateType** | [**BTPropertiesTableTemplateType**](BTPropertiesTableTemplateType.md) | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). | 
  **onlyActive** | **bool** |  | [default to false]
  **includeDefaults** | **bool** |  | [default to true]
 
@@ -240,7 +240,7 @@ import (
 
 func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
-    templateType := "templateType_example" // string | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). (optional)
+    templateType := openapiclient.BTPropertiesTableTemplateType("BOM") // BTPropertiesTableTemplateType | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). (optional)
     onlyActive := true // bool |  (optional) (default to true)
     includeDefaults := true // bool |  (optional) (default to true)
 
@@ -272,7 +272,7 @@ Other parameters are passed through a pointer to a apiGetByDocumentIdRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **templateType** | **string** | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). | 
+ **templateType** | [**BTPropertiesTableTemplateType**](BTPropertiesTableTemplateType.md) | Indicates filter for table templates: 0 (BOM) or 1 (Revision Table). | 
  **onlyActive** | **bool** |  | [default to true]
  **includeDefaults** | **bool** |  | [default to true]
 

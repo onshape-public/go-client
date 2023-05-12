@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DataType** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
-**ElementType** | Pointer to **string** |  | [optional] 
+**ElementType** | Pointer to [**GBTElementType**](GBTElementType.md) |  | [optional] 
 **EncodedConfiguration** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **JsonType** | **string** |  | 
@@ -168,20 +168,20 @@ HasElementId returns a boolean if a field has been set.
 
 ### GetElementType
 
-`func (o *Item) GetElementType() string`
+`func (o *Item) GetElementType() GBTElementType`
 
 GetElementType returns the ElementType field if non-nil, zero value otherwise.
 
 ### GetElementTypeOk
 
-`func (o *Item) GetElementTypeOk() (*string, bool)`
+`func (o *Item) GetElementTypeOk() (*GBTElementType, bool)`
 
 GetElementTypeOk returns a tuple with the ElementType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElementType
 
-`func (o *Item) SetElementType(v string)`
+`func (o *Item) SetElementType(v GBTElementType)`
 
 SetElementType sets ElementType field to given value.
 

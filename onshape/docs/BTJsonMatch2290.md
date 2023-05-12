@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **DefiniteJsonPath** | Pointer to **string** |  | [optional] 
 **Node** | Pointer to [**BTJsonMatch2290Node**](BTJsonMatch2290Node.md) |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBTJsonMatch2290WithDefaults instantiates a new BTJsonMatch2290 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTJsonMatch2290) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTJsonMatch2290) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTJsonMatch2290) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTJsonMatch2290) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetDefiniteJsonPath
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**GeometryType** | Pointer to **string** |  | [optional] 
+**GeometryType** | Pointer to [**GBTGeometryType**](GBTGeometryType.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetGeometryType
 
-`func (o *BTGeometryFilter130) GetGeometryType() string`
+`func (o *BTGeometryFilter130) GetGeometryType() GBTGeometryType`
 
 GetGeometryType returns the GeometryType field if non-nil, zero value otherwise.
 
 ### GetGeometryTypeOk
 
-`func (o *BTGeometryFilter130) GetGeometryTypeOk() (*string, bool)`
+`func (o *BTGeometryFilter130) GetGeometryTypeOk() (*GBTGeometryType, bool)`
 
 GetGeometryTypeOk returns a tuple with the GeometryType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGeometryType
 
-`func (o *BTGeometryFilter130) SetGeometryType(v string)`
+`func (o *BTGeometryFilter130) SetGeometryType(v GBTGeometryType)`
 
 SetGeometryType sets GeometryType field to given value.
 

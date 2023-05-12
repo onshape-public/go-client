@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Direction** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **DirectionOrientedWithFace** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **Origin** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTSurfaceTypeEnum**](GBTSurfaceTypeEnum.md) |  | [optional] 
 
 ## Methods
 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewBTSurfaceDescription1564WithDefaults instantiates a new BTSurfaceDescription1564 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTSurfaceDescription1564) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTSurfaceDescription1564) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTSurfaceDescription1564) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTSurfaceDescription1564) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetDirection
 
@@ -105,20 +131,20 @@ HasOrigin returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTSurfaceDescription1564) GetType() string`
+`func (o *BTSurfaceDescription1564) GetType() GBTSurfaceTypeEnum`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTSurfaceDescription1564) GetTypeOk() (*string, bool)`
+`func (o *BTSurfaceDescription1564) GetTypeOk() (*GBTSurfaceTypeEnum, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTSurfaceDescription1564) SetType(v string)`
+`func (o *BTSurfaceDescription1564) SetType(v GBTSurfaceTypeEnum)`
 
 SetType sets Type field to given value.
 

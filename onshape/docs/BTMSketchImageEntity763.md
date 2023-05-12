@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AspectRatio** | Pointer to **float64** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AspectRatio** | Pointer to **float64** |  | [optional] 
 **OriginX** | Pointer to **float64** |  | [optional] 
 **OriginY** | Pointer to **float64** |  | [optional] 
 **XaxisX** | Pointer to **float64** |  | [optional] 
@@ -29,31 +29,6 @@ will change when the set of required properties is changed
 NewBTMSketchImageEntity763WithDefaults instantiates a new BTMSketchImageEntity763 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAspectRatio
-
-`func (o *BTMSketchImageEntity763) GetAspectRatio() float64`
-
-GetAspectRatio returns the AspectRatio field if non-nil, zero value otherwise.
-
-### GetAspectRatioOk
-
-`func (o *BTMSketchImageEntity763) GetAspectRatioOk() (*float64, bool)`
-
-GetAspectRatioOk returns a tuple with the AspectRatio field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAspectRatio
-
-`func (o *BTMSketchImageEntity763) SetAspectRatio(v float64)`
-
-SetAspectRatio sets AspectRatio field to given value.
-
-### HasAspectRatio
-
-`func (o *BTMSketchImageEntity763) HasAspectRatio() bool`
-
-HasAspectRatio returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -79,6 +54,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMSketchImageEntity763) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAspectRatio
+
+`func (o *BTMSketchImageEntity763) GetAspectRatio() float64`
+
+GetAspectRatio returns the AspectRatio field if non-nil, zero value otherwise.
+
+### GetAspectRatioOk
+
+`func (o *BTMSketchImageEntity763) GetAspectRatioOk() (*float64, bool)`
+
+GetAspectRatioOk returns a tuple with the AspectRatio field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAspectRatio
+
+`func (o *BTMSketchImageEntity763) SetAspectRatio(v float64)`
+
+SetAspectRatio sets AspectRatio field to given value.
+
+### HasAspectRatio
+
+`func (o *BTMSketchImageEntity763) HasAspectRatio() bool`
+
+HasAspectRatio returns a boolean if a field has been set.
 
 ### GetOriginX
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**SolveStatus** | Pointer to **string** |  | [optional] 
+**SolveStatus** | Pointer to [**GBTMGeomStatus**](GBTMGeomStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetSolveStatus
 
-`func (o *BTSketchSolveStatusFilter3657AllOf) GetSolveStatus() string`
+`func (o *BTSketchSolveStatusFilter3657AllOf) GetSolveStatus() GBTMGeomStatus`
 
 GetSolveStatus returns the SolveStatus field if non-nil, zero value otherwise.
 
 ### GetSolveStatusOk
 
-`func (o *BTSketchSolveStatusFilter3657AllOf) GetSolveStatusOk() (*string, bool)`
+`func (o *BTSketchSolveStatusFilter3657AllOf) GetSolveStatusOk() (*GBTMGeomStatus, bool)`
 
 GetSolveStatusOk returns a tuple with the SolveStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSolveStatus
 
-`func (o *BTSketchSolveStatusFilter3657AllOf) SetSolveStatus(v string)`
+`func (o *BTSketchSolveStatusFilter3657AllOf) SetSolveStatus(v GBTMGeomStatus)`
 
 SetSolveStatus sets SolveStatus field to given value.
 

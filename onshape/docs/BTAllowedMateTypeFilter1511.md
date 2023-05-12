@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowedMateTypes** | Pointer to **[]string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AllowedMateTypes** | Pointer to [**[]GBTMateType**](GBTMateType.md) |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewBTAllowedMateTypeFilter1511WithDefaults instantiates a new BTAllowedMateTypeFilter1511 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAllowedMateTypes
-
-`func (o *BTAllowedMateTypeFilter1511) GetAllowedMateTypes() []string`
-
-GetAllowedMateTypes returns the AllowedMateTypes field if non-nil, zero value otherwise.
-
-### GetAllowedMateTypesOk
-
-`func (o *BTAllowedMateTypeFilter1511) GetAllowedMateTypesOk() (*[]string, bool)`
-
-GetAllowedMateTypesOk returns a tuple with the AllowedMateTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowedMateTypes
-
-`func (o *BTAllowedMateTypeFilter1511) SetAllowedMateTypes(v []string)`
-
-SetAllowedMateTypes sets AllowedMateTypes field to given value.
-
-### HasAllowedMateTypes
-
-`func (o *BTAllowedMateTypeFilter1511) HasAllowedMateTypes() bool`
-
-HasAllowedMateTypes returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -75,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTAllowedMateTypeFilter1511) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAllowedMateTypes
+
+`func (o *BTAllowedMateTypeFilter1511) GetAllowedMateTypes() []GBTMateType`
+
+GetAllowedMateTypes returns the AllowedMateTypes field if non-nil, zero value otherwise.
+
+### GetAllowedMateTypesOk
+
+`func (o *BTAllowedMateTypeFilter1511) GetAllowedMateTypesOk() (*[]GBTMateType, bool)`
+
+GetAllowedMateTypesOk returns a tuple with the AllowedMateTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedMateTypes
+
+`func (o *BTAllowedMateTypeFilter1511) SetAllowedMateTypes(v []GBTMateType)`
+
+SetAllowedMateTypes sets AllowedMateTypes field to given value.
+
+### HasAllowedMateTypes
+
+`func (o *BTAllowedMateTypeFilter1511) HasAllowedMateTypes() bool`
+
+HasAllowedMateTypes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

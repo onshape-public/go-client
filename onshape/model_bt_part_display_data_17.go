@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -19,6 +19,7 @@ import (
 type BTPartDisplayData17 struct {
 	Appearance                       *BTGraphicsAppearance1152            `json:"appearance,omitempty"`
 	AppearanceForNewCell             *BTGraphicsAppearance1152            `json:"appearanceForNewCell,omitempty"`
+	BtType                           *string                              `json:"btType,omitempty"`
 	CustomProperties                 *BTPartCustomProperties1338          `json:"customProperties,omitempty"`
 	DefaultColorHash                 *string                              `json:"defaultColorHash,omitempty"`
 	HasFaults                        *bool                                `json:"hasFaults,omitempty"`
@@ -34,14 +35,14 @@ type BTPartDisplayData17 struct {
 	LowBoxCorner                     *BTVector3d389                       `json:"lowBoxCorner,omitempty"`
 	Material                         *BTPartMaterial1445                  `json:"material,omitempty"`
 	MaterialForNewCell               *BTPartMaterial1445                  `json:"materialForNewCell,omitempty"`
-	MeshState                        *string                              `json:"meshState,omitempty"`
+	MeshState                        *GBTMeshState                        `json:"meshState,omitempty"`
 	Name                             *string                              `json:"name,omitempty"`
 	NameForNewCell                   *string                              `json:"nameForNewCell,omitempty"`
 	Ordinal                          *int32                               `json:"ordinal,omitempty"`
 	PartId                           *string                              `json:"partId,omitempty"`
 	PropertyIdToSource               *map[string]BTPartMetadataSource2895 `json:"propertyIdToSource,omitempty"`
 	ReferencingConfiguredPartNodeIds []BTObjectId                         `json:"referencingConfiguredPartNodeIds,omitempty"`
-	Visibility                       *string                              `json:"visibility,omitempty"`
+	Visibility                       *GBTPartVisibility                   `json:"visibility,omitempty"`
 }
 
 // NewBTPartDisplayData17 instantiates a new BTPartDisplayData17 object
@@ -123,6 +124,38 @@ func (o *BTPartDisplayData17) HasAppearanceForNewCell() bool {
 // SetAppearanceForNewCell gets a reference to the given BTGraphicsAppearance1152 and assigns it to the AppearanceForNewCell field.
 func (o *BTPartDisplayData17) SetAppearanceForNewCell(v BTGraphicsAppearance1152) {
 	o.AppearanceForNewCell = &v
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPartDisplayData17) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartDisplayData17) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPartDisplayData17) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPartDisplayData17) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetCustomProperties returns the CustomProperties field value if set, zero value otherwise.
@@ -606,9 +639,9 @@ func (o *BTPartDisplayData17) SetMaterialForNewCell(v BTPartMaterial1445) {
 }
 
 // GetMeshState returns the MeshState field value if set, zero value otherwise.
-func (o *BTPartDisplayData17) GetMeshState() string {
+func (o *BTPartDisplayData17) GetMeshState() GBTMeshState {
 	if o == nil || o.MeshState == nil {
-		var ret string
+		var ret GBTMeshState
 		return ret
 	}
 	return *o.MeshState
@@ -616,7 +649,7 @@ func (o *BTPartDisplayData17) GetMeshState() string {
 
 // GetMeshStateOk returns a tuple with the MeshState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartDisplayData17) GetMeshStateOk() (*string, bool) {
+func (o *BTPartDisplayData17) GetMeshStateOk() (*GBTMeshState, bool) {
 	if o == nil || o.MeshState == nil {
 		return nil, false
 	}
@@ -632,8 +665,8 @@ func (o *BTPartDisplayData17) HasMeshState() bool {
 	return false
 }
 
-// SetMeshState gets a reference to the given string and assigns it to the MeshState field.
-func (o *BTPartDisplayData17) SetMeshState(v string) {
+// SetMeshState gets a reference to the given GBTMeshState and assigns it to the MeshState field.
+func (o *BTPartDisplayData17) SetMeshState(v GBTMeshState) {
 	o.MeshState = &v
 }
 
@@ -830,9 +863,9 @@ func (o *BTPartDisplayData17) SetReferencingConfiguredPartNodeIds(v []BTObjectId
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *BTPartDisplayData17) GetVisibility() string {
+func (o *BTPartDisplayData17) GetVisibility() GBTPartVisibility {
 	if o == nil || o.Visibility == nil {
-		var ret string
+		var ret GBTPartVisibility
 		return ret
 	}
 	return *o.Visibility
@@ -840,7 +873,7 @@ func (o *BTPartDisplayData17) GetVisibility() string {
 
 // GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPartDisplayData17) GetVisibilityOk() (*string, bool) {
+func (o *BTPartDisplayData17) GetVisibilityOk() (*GBTPartVisibility, bool) {
 	if o == nil || o.Visibility == nil {
 		return nil, false
 	}
@@ -856,8 +889,8 @@ func (o *BTPartDisplayData17) HasVisibility() bool {
 	return false
 }
 
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *BTPartDisplayData17) SetVisibility(v string) {
+// SetVisibility gets a reference to the given GBTPartVisibility and assigns it to the Visibility field.
+func (o *BTPartDisplayData17) SetVisibility(v GBTPartVisibility) {
 	o.Visibility = &v
 }
 
@@ -868,6 +901,9 @@ func (o BTPartDisplayData17) MarshalJSON() ([]byte, error) {
 	}
 	if o.AppearanceForNewCell != nil {
 		toSerialize["appearanceForNewCell"] = o.AppearanceForNewCell
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	if o.CustomProperties != nil {
 		toSerialize["customProperties"] = o.CustomProperties

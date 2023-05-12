@@ -1,6 +1,6 @@
 # \InsertableApi
 
-All URIs are relative to *https://cad.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -1,6 +1,6 @@
 # \DocumentApi
 
-All URIs are relative to *https://cad.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1123,17 +1123,17 @@ import (
 )
 
 func main() {
-    q := "q_example" // string |  (optional) (default to "")
-    filter := int32(56) // int32 |  (optional)
-    owner := "owner_example" // string |  (optional) (default to "")
-    ownerType := int32(56) // int32 |  (optional) (default to 1)
-    sortColumn := "sortColumn_example" // string |  (optional) (default to "createdAt")
-    sortOrder := "sortOrder_example" // string |  (optional) (default to "desc")
-    offset := int32(56) // int32 |  (optional) (default to 0)
-    limit := int32(56) // int32 |  (optional) (default to 20)
-    label := "label_example" // string |  (optional)
-    project := "project_example" // string |  (optional)
-    parentId := "parentId_example" // string |  (optional)
+    q := "q_example" // string | Search for documents that contain the given string in the name. Search is not case-sensitive. (optional) (default to "")
+    filter := int32(56) // int32 | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). (optional)
+    owner := "owner_example" // string | Document owner's ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  (optional) (default to "")
+    ownerType := int32(56) // int32 | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. (optional) (default to 1)
+    sortColumn := "sortColumn_example" // string | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. (optional) (default to "createdAt")
+    sortOrder := "sortOrder_example" // string | Sort order. Options are desc (descending, the default), or asc (ascending). (optional) (default to "desc")
+    offset := int32(56) // int32 | Offset. Determines where search results begin. Default value is 0. (optional) (default to 0)
+    limit := int32(56) // int32 | Number of results to return per page. Default value is 20 (also the maximum). (optional) (default to 20)
+    label := "label_example" // string | Label (optional)
+    project := "project_example" // string | Project (optional)
+    parentId := "parentId_example" // string | Parent Id (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1158,17 +1158,17 @@ Other parameters are passed through a pointer to a apiGetDocumentsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **q** | **string** |  | [default to &quot;&quot;]
- **filter** | **int32** |  | 
- **owner** | **string** |  | [default to &quot;&quot;]
- **ownerType** | **int32** |  | [default to 1]
- **sortColumn** | **string** |  | [default to &quot;createdAt&quot;]
- **sortOrder** | **string** |  | [default to &quot;desc&quot;]
- **offset** | **int32** |  | [default to 0]
- **limit** | **int32** |  | [default to 20]
- **label** | **string** |  | 
- **project** | **string** |  | 
- **parentId** | **string** |  | 
+ **q** | **string** | Search for documents that contain the given string in the name. Search is not case-sensitive. | [default to &quot;&quot;]
+ **filter** | **int32** | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). | 
+ **owner** | **string** | Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  | [default to &quot;&quot;]
+ **ownerType** | **int32** | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. | [default to 1]
+ **sortColumn** | **string** | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. | [default to &quot;createdAt&quot;]
+ **sortOrder** | **string** | Sort order. Options are desc (descending, the default), or asc (ascending). | [default to &quot;desc&quot;]
+ **offset** | **int32** | Offset. Determines where search results begin. Default value is 0. | [default to 0]
+ **limit** | **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [default to 20]
+ **label** | **string** | Label | 
+ **project** | **string** | Project | 
+ **parentId** | **string** | Parent Id | 
 
 ### Return type
 

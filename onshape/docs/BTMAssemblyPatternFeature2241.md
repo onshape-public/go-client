@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**PatternType** | Pointer to **string** |  | [optional] 
+**PatternType** | Pointer to [**GBTPatternType**](GBTPatternType.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetPatternType
 
-`func (o *BTMAssemblyPatternFeature2241) GetPatternType() string`
+`func (o *BTMAssemblyPatternFeature2241) GetPatternType() GBTPatternType`
 
 GetPatternType returns the PatternType field if non-nil, zero value otherwise.
 
 ### GetPatternTypeOk
 
-`func (o *BTMAssemblyPatternFeature2241) GetPatternTypeOk() (*string, bool)`
+`func (o *BTMAssemblyPatternFeature2241) GetPatternTypeOk() (*GBTPatternType, bool)`
 
 GetPatternTypeOk returns a tuple with the PatternType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPatternType
 
-`func (o *BTMAssemblyPatternFeature2241) SetPatternType(v string)`
+`func (o *BTMAssemblyPatternFeature2241) SetPatternType(v GBTPatternType)`
 
 SetPatternType sets PatternType field to given value.
 

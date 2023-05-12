@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **QueryListParameter** | Pointer to [**BTMParameterQueryList148**](BTMParameterQueryList148.md) |  | [optional] 
 **SheetMetalBendOrder** | Pointer to **[]string** |  | [optional] 
 **SheetMetalBendOrderIfNotNull** | Pointer to [**BTOnePartProperties230**](BTOnePartProperties230.md) |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to [**GBTPartVisibility**](GBTPartVisibility.md) |  | [optional] 
 
 ## Methods
 
@@ -443,20 +443,20 @@ HasSheetMetalBendOrderIfNotNull returns a boolean if a field has been set.
 
 ### GetVisibility
 
-`func (o *BTOnePartProperties230) GetVisibility() string`
+`func (o *BTOnePartProperties230) GetVisibility() GBTPartVisibility`
 
 GetVisibility returns the Visibility field if non-nil, zero value otherwise.
 
 ### GetVisibilityOk
 
-`func (o *BTOnePartProperties230) GetVisibilityOk() (*string, bool)`
+`func (o *BTOnePartProperties230) GetVisibilityOk() (*GBTPartVisibility, bool)`
 
 GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVisibility
 
-`func (o *BTOnePartProperties230) SetVisibility(v string)`
+`func (o *BTOnePartProperties230) SetVisibility(v GBTPartVisibility)`
 
 SetVisibility sets Visibility field to given value.
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **AllFeaturesAndSubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **BelScriptLibraryMajorVersion** | Pointer to **int32** |  | [optional] 
 **BelScriptLibraryVersion** | Pointer to **string** |  | [optional] 
-**BelScriptLibraryVersionEnum** | Pointer to **string** |  | [optional] 
+**BelScriptLibraryVersionEnum** | Pointer to [**GBTFeatureScriptVersionNumber**](GBTFeatureScriptVersionNumber.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **Children** | Pointer to [**[]BTMNode19**](BTMNode19.md) |  | [optional] 
 **ConfigurationData** | Pointer to [**BTMConfigurationData1560**](BTMConfigurationData1560.md) |  | [optional] 
@@ -179,20 +179,20 @@ HasBelScriptLibraryVersion returns a boolean if a field has been set.
 
 ### GetBelScriptLibraryVersionEnum
 
-`func (o *BTMModel141) GetBelScriptLibraryVersionEnum() string`
+`func (o *BTMModel141) GetBelScriptLibraryVersionEnum() GBTFeatureScriptVersionNumber`
 
 GetBelScriptLibraryVersionEnum returns the BelScriptLibraryVersionEnum field if non-nil, zero value otherwise.
 
 ### GetBelScriptLibraryVersionEnumOk
 
-`func (o *BTMModel141) GetBelScriptLibraryVersionEnumOk() (*string, bool)`
+`func (o *BTMModel141) GetBelScriptLibraryVersionEnumOk() (*GBTFeatureScriptVersionNumber, bool)`
 
 GetBelScriptLibraryVersionEnumOk returns a tuple with the BelScriptLibraryVersionEnum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBelScriptLibraryVersionEnum
 
-`func (o *BTMModel141) SetBelScriptLibraryVersionEnum(v string)`
+`func (o *BTMModel141) SetBelScriptLibraryVersionEnum(v GBTFeatureScriptVersionNumber)`
 
 SetBelScriptLibraryVersionEnum sets BelScriptLibraryVersionEnum field to given value.
 

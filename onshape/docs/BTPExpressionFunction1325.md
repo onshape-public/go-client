@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Arguments** | Pointer to [**[]BTPArgumentDeclaration232**](BTPArgumentDeclaration232.md) |  | [optional] 
 **Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
 **Precondition** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
 **ReturnType** | Pointer to [**BTPTypeName290**](BTPTypeName290.md) |  | [optional] 
 **SpaceAfterArglist** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
@@ -31,6 +31,31 @@ will change when the set of required properties is changed
 NewBTPExpressionFunction1325WithDefaults instantiates a new BTPExpressionFunction1325 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTPExpressionFunction1325) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTPExpressionFunction1325) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTPExpressionFunction1325) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTPExpressionFunction1325) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetArguments
 
@@ -81,31 +106,6 @@ SetBody sets Body field to given value.
 `func (o *BTPExpressionFunction1325) HasBody() bool`
 
 HasBody returns a boolean if a field has been set.
-
-### GetBtType
-
-`func (o *BTPExpressionFunction1325) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTPExpressionFunction1325) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTPExpressionFunction1325) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTPExpressionFunction1325) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetPrecondition
 

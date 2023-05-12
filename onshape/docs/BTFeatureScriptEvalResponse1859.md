@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Console** | Pointer to **string** |  | [optional] 
 **LibraryVersion** | Pointer to **int32** |  | [optional] 
 **MicroversionSkew** | Pointer to **bool** |  | [optional] 
@@ -31,6 +32,31 @@ will change when the set of required properties is changed
 NewBTFeatureScriptEvalResponse1859WithDefaults instantiates a new BTFeatureScriptEvalResponse1859 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTFeatureScriptEvalResponse1859) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTFeatureScriptEvalResponse1859) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTFeatureScriptEvalResponse1859) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTFeatureScriptEvalResponse1859) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetConsole
 

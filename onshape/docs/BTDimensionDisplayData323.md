@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **CoordinateSystem** | Pointer to [**BTMatrix3x3340**](BTMatrix3x3340.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **HasMaximumLimit** | Pointer to **bool** |  | [optional] 
@@ -36,6 +37,31 @@ will change when the set of required properties is changed
 NewBTDimensionDisplayData323WithDefaults instantiates a new BTDimensionDisplayData323 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTDimensionDisplayData323) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTDimensionDisplayData323) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTDimensionDisplayData323) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTDimensionDisplayData323) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetCoordinateSystem
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -24,12 +24,19 @@ import (
 type ThumbnailApiService service
 
 type ApiDeleteApplicationThumbnailsRequest struct {
-	ctx        context.Context
-	ApiService *ThumbnailApiService
-	did        string
-	wv         string
-	wvid       string
-	eid        string
+	ctx            context.Context
+	ApiService     *ThumbnailApiService
+	did            string
+	wv             string
+	wvid           string
+	eid            string
+	linkDocumentId *string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiDeleteApplicationThumbnailsRequest) LinkDocumentId(linkDocumentId string) ApiDeleteApplicationThumbnailsRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
 }
 
 func (r ApiDeleteApplicationThumbnailsRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -40,10 +47,10 @@ func (r ApiDeleteApplicationThumbnailsRequest) Execute() (map[string]interface{}
 DeleteApplicationThumbnails Delete application tab thumbnail by document ID, workspace or version ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @param eid
+ @param did The id of the document in which to perform the operation.
+ @param wv Indicates which of workspace (w) or version (v) id is specified below.
+ @param wvid The id of the workspace, version in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @return ApiDeleteApplicationThumbnailsRequest
 */
 func (a *ThumbnailApiService) DeleteApplicationThumbnails(ctx context.Context, did string, wv string, wvid string, eid string) ApiDeleteApplicationThumbnailsRequest {
@@ -82,6 +89,9 @@ func (a *ThumbnailApiService) DeleteApplicationThumbnailsExecute(r ApiDeleteAppl
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1303,11 +1313,18 @@ type ApiSetApplicationElementThumbnailRequest struct {
 	wvid                                     string
 	eid                                      string
 	bTApplicationElementThumbnailParamsArray *BTApplicationElementThumbnailParamsArray
+	linkDocumentId                           *string
 	overwrite                                *bool
 }
 
 func (r ApiSetApplicationElementThumbnailRequest) BTApplicationElementThumbnailParamsArray(bTApplicationElementThumbnailParamsArray BTApplicationElementThumbnailParamsArray) ApiSetApplicationElementThumbnailRequest {
 	r.bTApplicationElementThumbnailParamsArray = &bTApplicationElementThumbnailParamsArray
+	return r
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiSetApplicationElementThumbnailRequest) LinkDocumentId(linkDocumentId string) ApiSetApplicationElementThumbnailRequest {
+	r.linkDocumentId = &linkDocumentId
 	return r
 }
 
@@ -1324,10 +1341,10 @@ func (r ApiSetApplicationElementThumbnailRequest) Execute() (map[string]interfac
 SetApplicationElementThumbnail Update application tab thumbnail by document ID, workspace or version ID, and tab ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @param eid
+ @param did The id of the document in which to perform the operation.
+ @param wv Indicates which of workspace (w) or version (v) id is specified below.
+ @param wvid The id of the workspace, version in which the operation should be performed.
+ @param eid The id of the element in which to perform the operation.
  @return ApiSetApplicationElementThumbnailRequest
 */
 func (a *ThumbnailApiService) SetApplicationElementThumbnail(ctx context.Context, did string, wv string, wvid string, eid string) ApiSetApplicationElementThumbnailRequest {
@@ -1369,6 +1386,9 @@ func (a *ThumbnailApiService) SetApplicationElementThumbnailExecute(r ApiSetAppl
 		return localVarReturnValue, nil, reportError("bTApplicationElementThumbnailParamsArray is required and must be specified")
 	}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	if r.overwrite != nil {
 		localVarQueryParams.Add("overwrite", parameterToString(*r.overwrite, ""))
 	}

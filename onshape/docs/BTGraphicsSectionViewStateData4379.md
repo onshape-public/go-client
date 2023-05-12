@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **IsExcluding** | Pointer to **bool** |  | [optional] 
 **SectionPlanes** | Pointer to [**[]BTGraphicsSectionPlaneData1429**](BTGraphicsSectionPlaneData1429.md) |  | [optional] 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewBTGraphicsSectionViewStateData4379WithDefaults instantiates a new BTGraphicsSectionViewStateData4379 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTGraphicsSectionViewStateData4379) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTGraphicsSectionViewStateData4379) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTGraphicsSectionViewStateData4379) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTGraphicsSectionViewStateData4379) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetElementId
 

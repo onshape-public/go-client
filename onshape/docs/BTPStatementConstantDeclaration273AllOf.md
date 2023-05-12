@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **Identifier** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
-**StandardType** | Pointer to **string** |  | [optional] 
+**StandardType** | Pointer to [**GBTPType**](GBTPType.md) |  | [optional] 
 **Type** | Pointer to [**BTPTypeName290**](BTPTypeName290.md) |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
@@ -108,20 +108,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetStandardType
 
-`func (o *BTPStatementConstantDeclaration273AllOf) GetStandardType() string`
+`func (o *BTPStatementConstantDeclaration273AllOf) GetStandardType() GBTPType`
 
 GetStandardType returns the StandardType field if non-nil, zero value otherwise.
 
 ### GetStandardTypeOk
 
-`func (o *BTPStatementConstantDeclaration273AllOf) GetStandardTypeOk() (*string, bool)`
+`func (o *BTPStatementConstantDeclaration273AllOf) GetStandardTypeOk() (*GBTPType, bool)`
 
 GetStandardTypeOk returns a tuple with the StandardType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStandardType
 
-`func (o *BTPStatementConstantDeclaration273AllOf) SetStandardType(v string)`
+`func (o *BTPStatementConstantDeclaration273AllOf) SetStandardType(v GBTPType)`
 
 SetStandardType sets StandardType field to given value.
 

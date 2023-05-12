@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,14 +17,14 @@ import (
 
 // BTDiffInfo struct for BTDiffInfo
 type BTDiffInfo struct {
-	Changes                *map[string]BTDiffInfo `json:"changes,omitempty"`
-	EntityType             *string                `json:"entityType,omitempty"`
-	GeometryChangeMessages []string               `json:"geometryChangeMessages,omitempty"`
-	SourceId               *string                `json:"sourceId,omitempty"`
-	SourceValue            *string                `json:"sourceValue,omitempty"`
-	TargetId               *string                `json:"targetId,omitempty"`
-	TargetValue            *string                `json:"targetValue,omitempty"`
-	Type                   *string                `json:"type,omitempty"`
+	Changes                *map[string]BTDiffInfo    `json:"changes,omitempty"`
+	EntityType             *BTDiffInfoCollectionType `json:"entityType,omitempty"`
+	GeometryChangeMessages []string                  `json:"geometryChangeMessages,omitempty"`
+	SourceId               *string                   `json:"sourceId,omitempty"`
+	SourceValue            *string                   `json:"sourceValue,omitempty"`
+	TargetId               *string                   `json:"targetId,omitempty"`
+	TargetValue            *string                   `json:"targetValue,omitempty"`
+	Type                   *GBTNodeChange            `json:"type,omitempty"`
 }
 
 // NewBTDiffInfo instantiates a new BTDiffInfo object
@@ -77,9 +77,9 @@ func (o *BTDiffInfo) SetChanges(v map[string]BTDiffInfo) {
 }
 
 // GetEntityType returns the EntityType field value if set, zero value otherwise.
-func (o *BTDiffInfo) GetEntityType() string {
+func (o *BTDiffInfo) GetEntityType() BTDiffInfoCollectionType {
 	if o == nil || o.EntityType == nil {
-		var ret string
+		var ret BTDiffInfoCollectionType
 		return ret
 	}
 	return *o.EntityType
@@ -87,7 +87,7 @@ func (o *BTDiffInfo) GetEntityType() string {
 
 // GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDiffInfo) GetEntityTypeOk() (*string, bool) {
+func (o *BTDiffInfo) GetEntityTypeOk() (*BTDiffInfoCollectionType, bool) {
 	if o == nil || o.EntityType == nil {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *BTDiffInfo) HasEntityType() bool {
 	return false
 }
 
-// SetEntityType gets a reference to the given string and assigns it to the EntityType field.
-func (o *BTDiffInfo) SetEntityType(v string) {
+// SetEntityType gets a reference to the given BTDiffInfoCollectionType and assigns it to the EntityType field.
+func (o *BTDiffInfo) SetEntityType(v BTDiffInfoCollectionType) {
 	o.EntityType = &v
 }
 
@@ -269,9 +269,9 @@ func (o *BTDiffInfo) SetTargetValue(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *BTDiffInfo) GetType() string {
+func (o *BTDiffInfo) GetType() GBTNodeChange {
 	if o == nil || o.Type == nil {
-		var ret string
+		var ret GBTNodeChange
 		return ret
 	}
 	return *o.Type
@@ -279,7 +279,7 @@ func (o *BTDiffInfo) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDiffInfo) GetTypeOk() (*string, bool) {
+func (o *BTDiffInfo) GetTypeOk() (*GBTNodeChange, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -295,8 +295,8 @@ func (o *BTDiffInfo) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *BTDiffInfo) SetType(v string) {
+// SetType gets a reference to the given GBTNodeChange and assigns it to the Type field.
+func (o *BTDiffInfo) SetType(v GBTNodeChange) {
 	o.Type = &v
 }
 
