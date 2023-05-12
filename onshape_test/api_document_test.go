@@ -132,8 +132,8 @@ func TestDocumentAPI(t *testing.T) {
 		Call: onshape.ApiMergeIntoWorkspaceRequest{}.
 			BTVersionOrWorkspaceMergeInfo(onshape.BTVersionOrWorkspaceMergeInfo{
 				Id:                            Context()["swid"].(*string),
-				DefaultMergeStrategy:          Ptr("KEEP"),
-				MergeStrategyElementOverrides: Ptr(map[string]string{}),
+				DefaultMergeStrategy:          onshape.BTMergeStrategyKeep.Ptr(),
+				MergeStrategyElementOverrides: Ptr(map[string]onshape.BTMergeStrategy{}),
 				Type:                          Ptr("workspace")}),
 		Expect: NoAPIError(),
 	}.Execute()
