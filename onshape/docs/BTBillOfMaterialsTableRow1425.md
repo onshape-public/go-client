@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **ExcludeIsEditable** | Pointer to **bool** |  | [optional] 
-**ExclusionStatus** | Pointer to **string** |  | [optional] 
-**ExpansionStatus** | Pointer to **string** |  | [optional] 
+**ExclusionStatus** | Pointer to [**GBTBillOfMaterialsExclusionStatus**](GBTBillOfMaterialsExclusionStatus.md) |  | [optional] 
+**ExpansionStatus** | Pointer to [**GBTBillOfMaterialsExpansionStatus**](GBTBillOfMaterialsExpansionStatus.md) |  | [optional] 
 **IndentLevel** | Pointer to **int32** |  | [optional] 
 **MetadataUpdateHref** | Pointer to **string** |  | [optional] 
 **RelatedOccurrencePaths** | Pointer to **[]string** |  | [optional] 
@@ -84,20 +84,20 @@ HasExcludeIsEditable returns a boolean if a field has been set.
 
 ### GetExclusionStatus
 
-`func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() string`
+`func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() GBTBillOfMaterialsExclusionStatus`
 
 GetExclusionStatus returns the ExclusionStatus field if non-nil, zero value otherwise.
 
 ### GetExclusionStatusOk
 
-`func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatusOk() (*string, bool)`
+`func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatusOk() (*GBTBillOfMaterialsExclusionStatus, bool)`
 
 GetExclusionStatusOk returns a tuple with the ExclusionStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExclusionStatus
 
-`func (o *BTBillOfMaterialsTableRow1425) SetExclusionStatus(v string)`
+`func (o *BTBillOfMaterialsTableRow1425) SetExclusionStatus(v GBTBillOfMaterialsExclusionStatus)`
 
 SetExclusionStatus sets ExclusionStatus field to given value.
 
@@ -109,20 +109,20 @@ HasExclusionStatus returns a boolean if a field has been set.
 
 ### GetExpansionStatus
 
-`func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatus() string`
+`func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatus() GBTBillOfMaterialsExpansionStatus`
 
 GetExpansionStatus returns the ExpansionStatus field if non-nil, zero value otherwise.
 
 ### GetExpansionStatusOk
 
-`func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatusOk() (*string, bool)`
+`func (o *BTBillOfMaterialsTableRow1425) GetExpansionStatusOk() (*GBTBillOfMaterialsExpansionStatus, bool)`
 
 GetExpansionStatusOk returns a tuple with the ExpansionStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpansionStatus
 
-`func (o *BTBillOfMaterialsTableRow1425) SetExpansionStatus(v string)`
+`func (o *BTBillOfMaterialsTableRow1425) SetExpansionStatus(v GBTBillOfMaterialsExpansionStatus)`
 
 SetExpansionStatus sets ExpansionStatus field to given value.
 

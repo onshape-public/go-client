@@ -9,16 +9,16 @@ Name | Type | Description | Notes
 **DependentElementMergeInfo** | Pointer to [**BTElementMergeInfo**](BTElementMergeInfo.md) |  | [optional] 
 **ElementDataType** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
-**ElementType** | Pointer to **string** |  | [optional] 
+**ElementType** | Pointer to [**GBTElementType**](GBTElementType.md) |  | [optional] 
 **Mergeable** | Pointer to **bool** |  | [optional] 
 **SourceElementName** | Pointer to **string** |  | [optional] 
 **SourceElementPath** | Pointer to **[]string** |  | [optional] 
-**SourceElementStatus** | Pointer to **string** |  | [optional] 
+**SourceElementStatus** | Pointer to [**GBTElementBranchStatus**](GBTElementBranchStatus.md) |  | [optional] 
 **SourceModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **SourceModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **TargetElementName** | Pointer to **string** |  | [optional] 
 **TargetElementPath** | Pointer to **[]string** |  | [optional] 
-**TargetElementStatus** | Pointer to **string** |  | [optional] 
+**TargetElementStatus** | Pointer to [**GBTElementBranchStatus**](GBTElementBranchStatus.md) |  | [optional] 
 **TargetModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **TargetModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 
@@ -168,20 +168,20 @@ HasElementId returns a boolean if a field has been set.
 
 ### GetElementType
 
-`func (o *BTElementMergeInfo) GetElementType() string`
+`func (o *BTElementMergeInfo) GetElementType() GBTElementType`
 
 GetElementType returns the ElementType field if non-nil, zero value otherwise.
 
 ### GetElementTypeOk
 
-`func (o *BTElementMergeInfo) GetElementTypeOk() (*string, bool)`
+`func (o *BTElementMergeInfo) GetElementTypeOk() (*GBTElementType, bool)`
 
 GetElementTypeOk returns a tuple with the ElementType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElementType
 
-`func (o *BTElementMergeInfo) SetElementType(v string)`
+`func (o *BTElementMergeInfo) SetElementType(v GBTElementType)`
 
 SetElementType sets ElementType field to given value.
 
@@ -268,20 +268,20 @@ HasSourceElementPath returns a boolean if a field has been set.
 
 ### GetSourceElementStatus
 
-`func (o *BTElementMergeInfo) GetSourceElementStatus() string`
+`func (o *BTElementMergeInfo) GetSourceElementStatus() GBTElementBranchStatus`
 
 GetSourceElementStatus returns the SourceElementStatus field if non-nil, zero value otherwise.
 
 ### GetSourceElementStatusOk
 
-`func (o *BTElementMergeInfo) GetSourceElementStatusOk() (*string, bool)`
+`func (o *BTElementMergeInfo) GetSourceElementStatusOk() (*GBTElementBranchStatus, bool)`
 
 GetSourceElementStatusOk returns a tuple with the SourceElementStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceElementStatus
 
-`func (o *BTElementMergeInfo) SetSourceElementStatus(v string)`
+`func (o *BTElementMergeInfo) SetSourceElementStatus(v GBTElementBranchStatus)`
 
 SetSourceElementStatus sets SourceElementStatus field to given value.
 
@@ -393,20 +393,20 @@ HasTargetElementPath returns a boolean if a field has been set.
 
 ### GetTargetElementStatus
 
-`func (o *BTElementMergeInfo) GetTargetElementStatus() string`
+`func (o *BTElementMergeInfo) GetTargetElementStatus() GBTElementBranchStatus`
 
 GetTargetElementStatus returns the TargetElementStatus field if non-nil, zero value otherwise.
 
 ### GetTargetElementStatusOk
 
-`func (o *BTElementMergeInfo) GetTargetElementStatusOk() (*string, bool)`
+`func (o *BTElementMergeInfo) GetTargetElementStatusOk() (*GBTElementBranchStatus, bool)`
 
 GetTargetElementStatusOk returns a tuple with the TargetElementStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTargetElementStatus
 
-`func (o *BTElementMergeInfo) SetTargetElementStatus(v string)`
+`func (o *BTElementMergeInfo) SetTargetElementStatus(v GBTElementBranchStatus)`
 
 SetTargetElementStatus sets TargetElementStatus field to given value.
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
 **AllParameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **ComputedPartPropertySpec** | Pointer to **bool** |  | [optional] 
 **DescriptionImageUri** | Pointer to **string** |  | [optional] 
 **EditingLogic** | Pointer to [**BTEditingLogic2350**](BTEditingLogic2350.md) |  | [optional] 
@@ -34,7 +35,7 @@ Name | Type | Description | Notes
 **StringsToLocalize** | Pointer to **[]string** |  | [optional] 
 **TableSpec** | Pointer to **bool** |  | [optional] 
 **TooltipTemplate** | Pointer to **string** |  | [optional] 
-**UiHints** | Pointer to **[]string** |  | [optional] 
+**UiHints** | Pointer to [**[]GBTUIHint**](GBTUIHint.md) |  | [optional] 
 
 ## Methods
 
@@ -104,6 +105,31 @@ SetAllParameters sets AllParameters field to given value.
 `func (o *BTFeatureSpec129) HasAllParameters() bool`
 
 HasAllParameters returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTFeatureSpec129) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTFeatureSpec129) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTFeatureSpec129) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTFeatureSpec129) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetComputedPartPropertySpec
 
@@ -807,20 +833,20 @@ HasTooltipTemplate returns a boolean if a field has been set.
 
 ### GetUiHints
 
-`func (o *BTFeatureSpec129) GetUiHints() []string`
+`func (o *BTFeatureSpec129) GetUiHints() []GBTUIHint`
 
 GetUiHints returns the UiHints field if non-nil, zero value otherwise.
 
 ### GetUiHintsOk
 
-`func (o *BTFeatureSpec129) GetUiHintsOk() (*[]string, bool)`
+`func (o *BTFeatureSpec129) GetUiHintsOk() (*[]GBTUIHint, bool)`
 
 GetUiHintsOk returns a tuple with the UiHints field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUiHints
 
-`func (o *BTFeatureSpec129) SetUiHints(v []string)`
+`func (o *BTFeatureSpec129) SetUiHints(v []GBTUIHint)`
 
 SetUiHints sets UiHints field to given value.
 

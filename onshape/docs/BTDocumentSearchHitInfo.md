@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **SourceMap** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**BTSearchEntityType**](BTSearchEntityType.md) |  | [optional] 
 **VersionOrWorkspaceName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -236,20 +236,20 @@ HasSourceMap returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTDocumentSearchHitInfo) GetType() string`
+`func (o *BTDocumentSearchHitInfo) GetType() BTSearchEntityType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTDocumentSearchHitInfo) GetTypeOk() (*string, bool)`
+`func (o *BTDocumentSearchHitInfo) GetTypeOk() (*BTSearchEntityType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTDocumentSearchHitInfo) SetType(v string)`
+`func (o *BTDocumentSearchHitInfo) SetType(v BTSearchEntityType)`
 
 SetType sets Type field to given value.
 

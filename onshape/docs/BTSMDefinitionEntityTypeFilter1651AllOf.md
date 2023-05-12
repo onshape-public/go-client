@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**SmDefinitionEntityType** | Pointer to **string** |  | [optional] 
+**SmDefinitionEntityType** | Pointer to [**GBTEntityType**](GBTEntityType.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetSmDefinitionEntityType
 
-`func (o *BTSMDefinitionEntityTypeFilter1651AllOf) GetSmDefinitionEntityType() string`
+`func (o *BTSMDefinitionEntityTypeFilter1651AllOf) GetSmDefinitionEntityType() GBTEntityType`
 
 GetSmDefinitionEntityType returns the SmDefinitionEntityType field if non-nil, zero value otherwise.
 
 ### GetSmDefinitionEntityTypeOk
 
-`func (o *BTSMDefinitionEntityTypeFilter1651AllOf) GetSmDefinitionEntityTypeOk() (*string, bool)`
+`func (o *BTSMDefinitionEntityTypeFilter1651AllOf) GetSmDefinitionEntityTypeOk() (*GBTEntityType, bool)`
 
 GetSmDefinitionEntityTypeOk returns a tuple with the SmDefinitionEntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSmDefinitionEntityType
 
-`func (o *BTSMDefinitionEntityTypeFilter1651AllOf) SetSmDefinitionEntityType(v string)`
+`func (o *BTSMDefinitionEntityTypeFilter1651AllOf) SetSmDefinitionEntityType(v GBTEntityType)`
 
 SetSmDefinitionEntityType sets SmDefinitionEntityType field to given value.
 

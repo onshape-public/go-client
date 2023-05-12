@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
 **BelongsToFlattenedSheetMetalBody** | Pointer to **bool** |  | [optional] 
 **BodyId** | Pointer to **string** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
-**Color** | Pointer to **string** |  | [optional] 
+**Color** | Pointer to [**GBTDebugEntityColor**](GBTDebugEntityColor.md) |  | [optional] 
 **DeterministicId** | Pointer to **string** |  | [optional] 
 **SheetMetalModelId** | Pointer to **string** |  | [optional] 
-**Style** | Pointer to **string** |  | [optional] 
+**Style** | Pointer to [**GBTDebugEntityStyle**](GBTDebugEntityStyle.md) |  | [optional] 
 **Tessellation** | Pointer to [**BTTessellatedGeometry2576**](BTTessellatedGeometry2576.md) |  | [optional] 
 
 ## Methods
@@ -32,6 +32,31 @@ will change when the set of required properties is changed
 NewBTDebugGeometry2059WithDefaults instantiates a new BTDebugGeometry2059 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTDebugGeometry2059) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTDebugGeometry2059) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTDebugGeometry2059) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTDebugGeometry2059) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetAppearance
 
@@ -108,47 +133,22 @@ SetBodyId sets BodyId field to given value.
 
 HasBodyId returns a boolean if a field has been set.
 
-### GetBtType
-
-`func (o *BTDebugGeometry2059) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTDebugGeometry2059) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTDebugGeometry2059) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTDebugGeometry2059) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
-
 ### GetColor
 
-`func (o *BTDebugGeometry2059) GetColor() string`
+`func (o *BTDebugGeometry2059) GetColor() GBTDebugEntityColor`
 
 GetColor returns the Color field if non-nil, zero value otherwise.
 
 ### GetColorOk
 
-`func (o *BTDebugGeometry2059) GetColorOk() (*string, bool)`
+`func (o *BTDebugGeometry2059) GetColorOk() (*GBTDebugEntityColor, bool)`
 
 GetColorOk returns a tuple with the Color field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetColor
 
-`func (o *BTDebugGeometry2059) SetColor(v string)`
+`func (o *BTDebugGeometry2059) SetColor(v GBTDebugEntityColor)`
 
 SetColor sets Color field to given value.
 
@@ -210,20 +210,20 @@ HasSheetMetalModelId returns a boolean if a field has been set.
 
 ### GetStyle
 
-`func (o *BTDebugGeometry2059) GetStyle() string`
+`func (o *BTDebugGeometry2059) GetStyle() GBTDebugEntityStyle`
 
 GetStyle returns the Style field if non-nil, zero value otherwise.
 
 ### GetStyleOk
 
-`func (o *BTDebugGeometry2059) GetStyleOk() (*string, bool)`
+`func (o *BTDebugGeometry2059) GetStyleOk() (*GBTDebugEntityStyle, bool)`
 
 GetStyleOk returns a tuple with the Style field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStyle
 
-`func (o *BTDebugGeometry2059) SetStyle(v string)`
+`func (o *BTDebugGeometry2059) SetStyle(v GBTDebugEntityStyle)`
 
 SetStyle sets Style field to given value.
 

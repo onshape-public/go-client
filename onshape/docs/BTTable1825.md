@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllRowValues** | Pointer to **[][]string** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **ColumnCount** | Pointer to **int32** |  | [optional] 
 **FrozenColumns** | Pointer to **int32** |  | [optional] 
 **IsFailed** | Pointer to **bool** |  | [optional] 
@@ -60,6 +61,31 @@ SetAllRowValues sets AllRowValues field to given value.
 `func (o *BTTable1825) HasAllRowValues() bool`
 
 HasAllRowValues returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTTable1825) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTTable1825) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTTable1825) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTTable1825) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetColumnCount
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuxiliaryTreeFeature** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AuxiliaryTreeFeature** | Pointer to **bool** |  | [optional] 
 **FeatureFolder** | Pointer to **bool** |  | [optional] 
 **FeatureListFieldIndex** | Pointer to **int32** |  | [optional] 
 **FieldIndexForOwnedMateConnectors** | Pointer to **int32** |  | [optional] 
@@ -32,31 +32,6 @@ NewBTMAssemblyFeature887WithDefaults instantiates a new BTMAssemblyFeature887 ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuxiliaryTreeFeature
-
-`func (o *BTMAssemblyFeature887) GetAuxiliaryTreeFeature() bool`
-
-GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field if non-nil, zero value otherwise.
-
-### GetAuxiliaryTreeFeatureOk
-
-`func (o *BTMAssemblyFeature887) GetAuxiliaryTreeFeatureOk() (*bool, bool)`
-
-GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuxiliaryTreeFeature
-
-`func (o *BTMAssemblyFeature887) SetAuxiliaryTreeFeature(v bool)`
-
-SetAuxiliaryTreeFeature sets AuxiliaryTreeFeature field to given value.
-
-### HasAuxiliaryTreeFeature
-
-`func (o *BTMAssemblyFeature887) HasAuxiliaryTreeFeature() bool`
-
-HasAuxiliaryTreeFeature returns a boolean if a field has been set.
-
 ### GetBtType
 
 `func (o *BTMAssemblyFeature887) GetBtType() string`
@@ -81,6 +56,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMAssemblyFeature887) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAuxiliaryTreeFeature
+
+`func (o *BTMAssemblyFeature887) GetAuxiliaryTreeFeature() bool`
+
+GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field if non-nil, zero value otherwise.
+
+### GetAuxiliaryTreeFeatureOk
+
+`func (o *BTMAssemblyFeature887) GetAuxiliaryTreeFeatureOk() (*bool, bool)`
+
+GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuxiliaryTreeFeature
+
+`func (o *BTMAssemblyFeature887) SetAuxiliaryTreeFeature(v bool)`
+
+SetAuxiliaryTreeFeature sets AuxiliaryTreeFeature field to given value.
+
+### HasAuxiliaryTreeFeature
+
+`func (o *BTMAssemblyFeature887) HasAuxiliaryTreeFeature() bool`
+
+HasAuxiliaryTreeFeature returns a boolean if a field has been set.
 
 ### GetFeatureFolder
 

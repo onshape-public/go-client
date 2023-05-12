@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** |  | [optional] 
 **EnterpriseMember** | Pointer to **bool** |  | [optional] 
 **EntryId** | Pointer to **string** |  | [optional] 
-**EntryState** | Pointer to **string** |  | [optional] 
+**EntryState** | Pointer to [**BTUserState**](BTUserState.md) |  | [optional] 
 **EntryType** | Pointer to **int32** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -165,20 +165,20 @@ HasEntryId returns a boolean if a field has been set.
 
 ### GetEntryState
 
-`func (o *BTAclEntryInfo) GetEntryState() string`
+`func (o *BTAclEntryInfo) GetEntryState() BTUserState`
 
 GetEntryState returns the EntryState field if non-nil, zero value otherwise.
 
 ### GetEntryStateOk
 
-`func (o *BTAclEntryInfo) GetEntryStateOk() (*string, bool)`
+`func (o *BTAclEntryInfo) GetEntryStateOk() (*BTUserState, bool)`
 
 GetEntryStateOk returns a tuple with the EntryState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntryState
 
-`func (o *BTAclEntryInfo) SetEntryState(v string)`
+`func (o *BTAclEntryInfo) SetEntryState(v BTUserState)`
 
 SetEntryState sets EntryState field to given value.
 

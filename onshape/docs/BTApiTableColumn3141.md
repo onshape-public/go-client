@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Header** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**TextAlignment** | Pointer to **string** |  | [optional] 
+**TextAlignment** | Pointer to [**GBTTableTextAlignment**](GBTTableTextAlignment.md) |  | [optional] 
 
 ## Methods
 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewBTApiTableColumn3141WithDefaults instantiates a new BTApiTableColumn3141 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTApiTableColumn3141) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTApiTableColumn3141) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTApiTableColumn3141) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTApiTableColumn3141) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetHeader
 
@@ -79,20 +105,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetTextAlignment
 
-`func (o *BTApiTableColumn3141) GetTextAlignment() string`
+`func (o *BTApiTableColumn3141) GetTextAlignment() GBTTableTextAlignment`
 
 GetTextAlignment returns the TextAlignment field if non-nil, zero value otherwise.
 
 ### GetTextAlignmentOk
 
-`func (o *BTApiTableColumn3141) GetTextAlignmentOk() (*string, bool)`
+`func (o *BTApiTableColumn3141) GetTextAlignmentOk() (*GBTTableTextAlignment, bool)`
 
 GetTextAlignmentOk returns a tuple with the TextAlignment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTextAlignment
 
-`func (o *BTApiTableColumn3141) SetTextAlignment(v string)`
+`func (o *BTApiTableColumn3141) SetTextAlignment(v GBTTableTextAlignment)`
 
 SetTextAlignment sets TextAlignment field to given value.
 

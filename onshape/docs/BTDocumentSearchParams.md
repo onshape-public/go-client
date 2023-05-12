@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentFilter** | Pointer to **int32** | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). | [optional] 
-**FoundIn** | Pointer to **string** | Search result found in | [optional] 
+**FoundIn** | Pointer to [**BTESVersionWorkspaceChoice**](BTESVersionWorkspaceChoice.md) |  | [optional] 
 **Limit** | Pointer to **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [optional] 
 **LuceneSyntax** | Pointer to **bool** | Lucene syntax  | [optional] 
 **Offset** | Pointer to **int32** | Offset. Determines where search results begin. Default value is 0. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **SortColumn** | Pointer to **string** | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. | [optional] 
 **SortOrder** | Pointer to **string** | Sort order. Options are desc (descending, the default), or asc (ascending). | [optional] 
 **Type** | Pointer to **string** | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. | [optional] 
-**When** | Pointer to **string** | Search result when | [optional] 
+**When** | Pointer to [**BTESResultsFilter**](BTESResultsFilter.md) |  | [optional] 
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasDocumentFilter returns a boolean if a field has been set.
 
 ### GetFoundIn
 
-`func (o *BTDocumentSearchParams) GetFoundIn() string`
+`func (o *BTDocumentSearchParams) GetFoundIn() BTESVersionWorkspaceChoice`
 
 GetFoundIn returns the FoundIn field if non-nil, zero value otherwise.
 
 ### GetFoundInOk
 
-`func (o *BTDocumentSearchParams) GetFoundInOk() (*string, bool)`
+`func (o *BTDocumentSearchParams) GetFoundInOk() (*BTESVersionWorkspaceChoice, bool)`
 
 GetFoundInOk returns a tuple with the FoundIn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFoundIn
 
-`func (o *BTDocumentSearchParams) SetFoundIn(v string)`
+`func (o *BTDocumentSearchParams) SetFoundIn(v BTESVersionWorkspaceChoice)`
 
 SetFoundIn sets FoundIn field to given value.
 
@@ -313,20 +313,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetWhen
 
-`func (o *BTDocumentSearchParams) GetWhen() string`
+`func (o *BTDocumentSearchParams) GetWhen() BTESResultsFilter`
 
 GetWhen returns the When field if non-nil, zero value otherwise.
 
 ### GetWhenOk
 
-`func (o *BTDocumentSearchParams) GetWhenOk() (*string, bool)`
+`func (o *BTDocumentSearchParams) GetWhenOk() (*BTESResultsFilter, bool)`
 
 GetWhenOk returns a tuple with the When field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWhen
 
-`func (o *BTDocumentSearchParams) SetWhen(v string)`
+`func (o *BTDocumentSearchParams) SetWhen(v BTESResultsFilter)`
 
 SetWhen sets When field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Annotations** | Pointer to [**[]BTPAnnotation231**](BTPAnnotation231.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**Annotations** | Pointer to [**[]BTPAnnotation231**](BTPAnnotation231.md) |  | [optional] 
 **SpaceInEmptyList** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **TrailingComma** | Pointer to **bool** |  | [optional] 
 **Values** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewBTPTopLevelEnumDeclaration284WithDefaults instantiates a new BTPTopLevelEnumDeclaration284 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAnnotations
-
-`func (o *BTPTopLevelEnumDeclaration284) GetAnnotations() []BTPAnnotation231`
-
-GetAnnotations returns the Annotations field if non-nil, zero value otherwise.
-
-### GetAnnotationsOk
-
-`func (o *BTPTopLevelEnumDeclaration284) GetAnnotationsOk() (*[]BTPAnnotation231, bool)`
-
-GetAnnotationsOk returns a tuple with the Annotations field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAnnotations
-
-`func (o *BTPTopLevelEnumDeclaration284) SetAnnotations(v []BTPAnnotation231)`
-
-SetAnnotations sets Annotations field to given value.
-
-### HasAnnotations
-
-`func (o *BTPTopLevelEnumDeclaration284) HasAnnotations() bool`
-
-HasAnnotations returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -78,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPTopLevelEnumDeclaration284) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAnnotations
+
+`func (o *BTPTopLevelEnumDeclaration284) GetAnnotations() []BTPAnnotation231`
+
+GetAnnotations returns the Annotations field if non-nil, zero value otherwise.
+
+### GetAnnotationsOk
+
+`func (o *BTPTopLevelEnumDeclaration284) GetAnnotationsOk() (*[]BTPAnnotation231, bool)`
+
+GetAnnotationsOk returns a tuple with the Annotations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotations
+
+`func (o *BTPTopLevelEnumDeclaration284) SetAnnotations(v []BTPAnnotation231)`
+
+SetAnnotations sets Annotations field to given value.
+
+### HasAnnotations
+
+`func (o *BTPTopLevelEnumDeclaration284) HasAnnotations() bool`
+
+HasAnnotations returns a boolean if a field has been set.
 
 ### GetSpaceInEmptyList
 

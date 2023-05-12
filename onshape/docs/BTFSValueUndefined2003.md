@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
+**BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBTFSValueUndefined2003
 
-`func NewBTFSValueUndefined2003(btType string, ) *BTFSValueUndefined2003`
+`func NewBTFSValueUndefined2003() *BTFSValueUndefined2003`
 
 NewBTFSValueUndefined2003 instantiates a new BTFSValueUndefined2003 object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
+### HasBtType
+
+`func (o *BTFSValueUndefined2003) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

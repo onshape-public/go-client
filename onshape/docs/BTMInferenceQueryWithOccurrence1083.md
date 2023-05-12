@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**InferenceType** | Pointer to **string** |  | [optional] 
+**InferenceType** | Pointer to [**GBTEntityInferenceType**](GBTEntityInferenceType.md) |  | [optional] 
 **SecondDeterministicId** | Pointer to **string** |  | [optional] 
 **SecondEntityQuery** | Pointer to **string** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetInferenceType
 
-`func (o *BTMInferenceQueryWithOccurrence1083) GetInferenceType() string`
+`func (o *BTMInferenceQueryWithOccurrence1083) GetInferenceType() GBTEntityInferenceType`
 
 GetInferenceType returns the InferenceType field if non-nil, zero value otherwise.
 
 ### GetInferenceTypeOk
 
-`func (o *BTMInferenceQueryWithOccurrence1083) GetInferenceTypeOk() (*string, bool)`
+`func (o *BTMInferenceQueryWithOccurrence1083) GetInferenceTypeOk() (*GBTEntityInferenceType, bool)`
 
 GetInferenceTypeOk returns a tuple with the InferenceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInferenceType
 
-`func (o *BTMInferenceQueryWithOccurrence1083) SetInferenceType(v string)`
+`func (o *BTMInferenceQueryWithOccurrence1083) SetInferenceType(v GBTEntityInferenceType)`
 
 SetInferenceType sets InferenceType field to given value.
 

@@ -1,6 +1,6 @@
 # \AssemblyApi
 
-All URIs are relative to *https://cad.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1029,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1114,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1197,7 +1197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1274,7 +1274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1348,7 +1348,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1424,7 +1424,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1502,7 +1502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1578,7 +1578,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1657,7 +1657,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -1736,7 +1736,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

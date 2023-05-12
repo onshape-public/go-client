@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**ContactBehavior** | Pointer to **string** |  | [optional] 
+**ContactBehavior** | Pointer to [**GBTSimulationContactBehavior**](GBTSimulationContactBehavior.md) |  | [optional] 
 **Loads** | Pointer to [**[]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
 **LoadsByNodeId** | Pointer to [**map[string]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
 **Simulations** | Pointer to [**[]BTAssemblySimulation2246**](BTAssemblySimulation2246.md) |  | [optional] 
@@ -57,20 +57,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetContactBehavior
 
-`func (o *BTAssemblySimulationData978AllOf) GetContactBehavior() string`
+`func (o *BTAssemblySimulationData978AllOf) GetContactBehavior() GBTSimulationContactBehavior`
 
 GetContactBehavior returns the ContactBehavior field if non-nil, zero value otherwise.
 
 ### GetContactBehaviorOk
 
-`func (o *BTAssemblySimulationData978AllOf) GetContactBehaviorOk() (*string, bool)`
+`func (o *BTAssemblySimulationData978AllOf) GetContactBehaviorOk() (*GBTSimulationContactBehavior, bool)`
 
 GetContactBehaviorOk returns a tuple with the ContactBehavior field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContactBehavior
 
-`func (o *BTAssemblySimulationData978AllOf) SetContactBehavior(v string)`
+`func (o *BTAssemblySimulationData978AllOf) SetContactBehavior(v GBTSimulationContactBehavior)`
 
 SetContactBehavior sets ContactBehavior field to given value.
 

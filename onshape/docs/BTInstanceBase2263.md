@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **AssemblyInstance** | Pointer to **bool** |  | [optional] 
 **AssemblyPattern** | Pointer to **bool** |  | [optional] 
 **AssemblyReplicate** | Pointer to **bool** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
 **ClonedInstance** | Pointer to **bool** |  | [optional] 
 **CustomData** | Pointer to [**map[string]BTReferenceCustomData1551**](BTReferenceCustomData1551.md) |  | [optional] 
 **InstanceFolder** | Pointer to **bool** |  | [optional] 
@@ -46,6 +46,31 @@ will change when the set of required properties is changed
 NewBTInstanceBase2263WithDefaults instantiates a new BTInstanceBase2263 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTInstanceBase2263) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTInstanceBase2263) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTInstanceBase2263) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTInstanceBase2263) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetAssemblyInstance
 
@@ -121,31 +146,6 @@ SetAssemblyReplicate sets AssemblyReplicate field to given value.
 `func (o *BTInstanceBase2263) HasAssemblyReplicate() bool`
 
 HasAssemblyReplicate returns a boolean if a field has been set.
-
-### GetBtType
-
-`func (o *BTInstanceBase2263) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTInstanceBase2263) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTInstanceBase2263) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTInstanceBase2263) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetClonedInstance
 

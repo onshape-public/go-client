@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
-**Type** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTPType**](GBTPType.md) |  | [optional] 
 
 ## Methods
 
 ### NewBTFSValueOther1124
 
-`func NewBTFSValueOther1124(btType string, ) *BTFSValueOther1124`
+`func NewBTFSValueOther1124() *BTFSValueOther1124`
 
 NewBTFSValueOther1124 instantiates a new BTFSValueOther1124 object
 This constructor will assign default values to properties that have it defined,
@@ -45,23 +45,28 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
+### HasBtType
+
+`func (o *BTFSValueOther1124) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTFSValueOther1124) GetType() string`
+`func (o *BTFSValueOther1124) GetType() GBTPType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTFSValueOther1124) GetTypeOk() (*string, bool)`
+`func (o *BTFSValueOther1124) GetTypeOk() (*GBTPType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTFSValueOther1124) SetType(v string)`
+`func (o *BTFSValueOther1124) SetType(v GBTPType)`
 
 SetType sets Type field to given value.
 

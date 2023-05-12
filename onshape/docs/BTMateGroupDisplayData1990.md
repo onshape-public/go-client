@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **NodeId** | Pointer to **string** |  | [optional] 
 **OccurrenceIds** | Pointer to **[]string** |  | [optional] 
 **OwnerOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**GBTAssemblyFeatureDisplayStatus**](GBTAssemblyFeatureDisplayStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -183,20 +183,20 @@ HasOwnerOccurrence returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *BTMateGroupDisplayData1990) GetStatus() string`
+`func (o *BTMateGroupDisplayData1990) GetStatus() GBTAssemblyFeatureDisplayStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *BTMateGroupDisplayData1990) GetStatusOk() (*string, bool)`
+`func (o *BTMateGroupDisplayData1990) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *BTMateGroupDisplayData1990) SetStatus(v string)`
+`func (o *BTMateGroupDisplayData1990) SetStatus(v GBTAssemblyFeatureDisplayStatus)`
 
 SetStatus sets Status field to given value.
 

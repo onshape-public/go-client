@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **FgsBaseUnits** | Pointer to **string** |  | [optional] 
 **LoadComponentParameterIds** | Pointer to **map[string]string** |  | [optional] 
 **LoadRegionParameterId** | Pointer to **string** |  | [optional] 
-**LoadType** | Pointer to **string** |  | [optional] 
+**LoadType** | Pointer to [**GBTLoadType**](GBTLoadType.md) |  | [optional] 
 **MagnitudeParameterId** | Pointer to **string** |  | [optional] 
-**MagnitudeQuantityType** | Pointer to **string** |  | [optional] 
+**MagnitudeQuantityType** | Pointer to [**GBTQuantityType**](GBTQuantityType.md) |  | [optional] 
 **StructuralLoad** | Pointer to **bool** |  | [optional] 
 **SuppressedInSimulations** | Pointer to **map[string]int32** |  | [optional] 
 
@@ -187,20 +187,20 @@ HasLoadRegionParameterId returns a boolean if a field has been set.
 
 ### GetLoadType
 
-`func (o *BTMLoad3538) GetLoadType() string`
+`func (o *BTMLoad3538) GetLoadType() GBTLoadType`
 
 GetLoadType returns the LoadType field if non-nil, zero value otherwise.
 
 ### GetLoadTypeOk
 
-`func (o *BTMLoad3538) GetLoadTypeOk() (*string, bool)`
+`func (o *BTMLoad3538) GetLoadTypeOk() (*GBTLoadType, bool)`
 
 GetLoadTypeOk returns a tuple with the LoadType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLoadType
 
-`func (o *BTMLoad3538) SetLoadType(v string)`
+`func (o *BTMLoad3538) SetLoadType(v GBTLoadType)`
 
 SetLoadType sets LoadType field to given value.
 
@@ -237,20 +237,20 @@ HasMagnitudeParameterId returns a boolean if a field has been set.
 
 ### GetMagnitudeQuantityType
 
-`func (o *BTMLoad3538) GetMagnitudeQuantityType() string`
+`func (o *BTMLoad3538) GetMagnitudeQuantityType() GBTQuantityType`
 
 GetMagnitudeQuantityType returns the MagnitudeQuantityType field if non-nil, zero value otherwise.
 
 ### GetMagnitudeQuantityTypeOk
 
-`func (o *BTMLoad3538) GetMagnitudeQuantityTypeOk() (*string, bool)`
+`func (o *BTMLoad3538) GetMagnitudeQuantityTypeOk() (*GBTQuantityType, bool)`
 
 GetMagnitudeQuantityTypeOk returns a tuple with the MagnitudeQuantityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMagnitudeQuantityType
 
-`func (o *BTMLoad3538) SetMagnitudeQuantityType(v string)`
+`func (o *BTMLoad3538) SetMagnitudeQuantityType(v GBTQuantityType)`
 
 SetMagnitudeQuantityType sets MagnitudeQuantityType field to given value.
 

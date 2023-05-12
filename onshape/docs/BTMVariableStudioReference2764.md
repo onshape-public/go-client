@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiConfiguration** | Pointer to [**BTApiConfiguration**](BTApiConfiguration.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**ApiConfiguration** | Pointer to [**BTApiConfiguration**](BTApiConfiguration.md) |  | [optional] 
 **Configuration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -41,31 +41,6 @@ NewBTMVariableStudioReference2764WithDefaults instantiates a new BTMVariableStud
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetApiConfiguration
-
-`func (o *BTMVariableStudioReference2764) GetApiConfiguration() BTApiConfiguration`
-
-GetApiConfiguration returns the ApiConfiguration field if non-nil, zero value otherwise.
-
-### GetApiConfigurationOk
-
-`func (o *BTMVariableStudioReference2764) GetApiConfigurationOk() (*BTApiConfiguration, bool)`
-
-GetApiConfigurationOk returns a tuple with the ApiConfiguration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiConfiguration
-
-`func (o *BTMVariableStudioReference2764) SetApiConfiguration(v BTApiConfiguration)`
-
-SetApiConfiguration sets ApiConfiguration field to given value.
-
-### HasApiConfiguration
-
-`func (o *BTMVariableStudioReference2764) HasApiConfiguration() bool`
-
-HasApiConfiguration returns a boolean if a field has been set.
-
 ### GetBtType
 
 `func (o *BTMVariableStudioReference2764) GetBtType() string`
@@ -90,6 +65,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMVariableStudioReference2764) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetApiConfiguration
+
+`func (o *BTMVariableStudioReference2764) GetApiConfiguration() BTApiConfiguration`
+
+GetApiConfiguration returns the ApiConfiguration field if non-nil, zero value otherwise.
+
+### GetApiConfigurationOk
+
+`func (o *BTMVariableStudioReference2764) GetApiConfigurationOk() (*BTApiConfiguration, bool)`
+
+GetApiConfigurationOk returns a tuple with the ApiConfiguration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiConfiguration
+
+`func (o *BTMVariableStudioReference2764) SetApiConfiguration(v BTApiConfiguration)`
+
+SetApiConfiguration sets ApiConfiguration field to given value.
+
+### HasApiConfiguration
+
+`func (o *BTMVariableStudioReference2764) HasApiConfiguration() bool`
+
+HasApiConfiguration returns a boolean if a field has been set.
 
 ### GetConfiguration
 

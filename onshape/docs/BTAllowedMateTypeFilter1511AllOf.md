@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowedMateTypes** | Pointer to **[]string** |  | [optional] 
+**AllowedMateTypes** | Pointer to [**[]GBTMateType**](GBTMateType.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAllowedMateTypes
 
-`func (o *BTAllowedMateTypeFilter1511AllOf) GetAllowedMateTypes() []string`
+`func (o *BTAllowedMateTypeFilter1511AllOf) GetAllowedMateTypes() []GBTMateType`
 
 GetAllowedMateTypes returns the AllowedMateTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedMateTypesOk
 
-`func (o *BTAllowedMateTypeFilter1511AllOf) GetAllowedMateTypesOk() (*[]string, bool)`
+`func (o *BTAllowedMateTypeFilter1511AllOf) GetAllowedMateTypesOk() (*[]GBTMateType, bool)`
 
 GetAllowedMateTypesOk returns a tuple with the AllowedMateTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedMateTypes
 
-`func (o *BTAllowedMateTypeFilter1511AllOf) SetAllowedMateTypes(v []string)`
+`func (o *BTAllowedMateTypeFilter1511AllOf) SetAllowedMateTypes(v []GBTMateType)`
 
 SetAllowedMateTypes sets AllowedMateTypes field to given value.
 

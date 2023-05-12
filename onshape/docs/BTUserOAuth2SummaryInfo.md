@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **PersonalMessageAllowed** | Pointer to **bool** |  | [optional] 
 **PlanGroup** | Pointer to **string** |  | [optional] 
 **Role** | Pointer to **int32** |  | [optional] 
-**Roles** | Pointer to **[]string** |  | [optional] 
+**Roles** | Pointer to [**[]BTRole**](BTRole.md) |  | [optional] 
 **Source** | Pointer to **int32** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -550,20 +550,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetRoles
 
-`func (o *BTUserOAuth2SummaryInfo) GetRoles() []string`
+`func (o *BTUserOAuth2SummaryInfo) GetRoles() []BTRole`
 
 GetRoles returns the Roles field if non-nil, zero value otherwise.
 
 ### GetRolesOk
 
-`func (o *BTUserOAuth2SummaryInfo) GetRolesOk() (*[]string, bool)`
+`func (o *BTUserOAuth2SummaryInfo) GetRolesOk() (*[]BTRole, bool)`
 
 GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoles
 
-`func (o *BTUserOAuth2SummaryInfo) SetRoles(v []string)`
+`func (o *BTUserOAuth2SummaryInfo) SetRoles(v []BTRole)`
 
 SetRoles sets Roles field to given value.
 

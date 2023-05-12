@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Curve** | Pointer to [**BTCurveDescription1583**](BTCurveDescription1583.md) |  | [optional] 
 **Geometry** | Pointer to [**BTExportModelEdgeGeometry1125**](BTExportModelEdgeGeometry1125.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewBTExportModelEdge1782WithDefaults instantiates a new BTExportModelEdge1782 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTExportModelEdge1782) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportModelEdge1782) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportModelEdge1782) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportModelEdge1782) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetCurve
 

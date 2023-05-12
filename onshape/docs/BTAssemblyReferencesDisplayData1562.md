@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssemblyReferences** | Pointer to [**[]BTSingleReferenceDisplayData1943**](BTSingleReferenceDisplayData1943.md) |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **FromFullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
@@ -59,6 +60,31 @@ SetAssemblyReferences sets AssemblyReferences field to given value.
 `func (o *BTAssemblyReferencesDisplayData1562) HasAssemblyReferences() bool`
 
 HasAssemblyReferences returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTAssemblyReferencesDisplayData1562) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTAssemblyReferencesDisplayData1562) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTAssemblyReferencesDisplayData1562) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTAssemblyReferencesDisplayData1562) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetElementId
 

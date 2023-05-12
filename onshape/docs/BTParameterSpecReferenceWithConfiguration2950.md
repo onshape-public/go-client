@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowAssemblies** | Pointer to **bool** |  | [optional] 
-**AllowedInsertableTypes** | Pointer to **[]string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AllowAssemblies** | Pointer to **bool** |  | [optional] 
+**AllowedInsertableTypes** | Pointer to [**[]GBTPartStudioItemType**](GBTPartStudioItemType.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -27,6 +27,31 @@ will change when the set of required properties is changed
 NewBTParameterSpecReferenceWithConfiguration2950WithDefaults instantiates a new BTParameterSpecReferenceWithConfiguration2950 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTParameterSpecReferenceWithConfiguration2950) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTParameterSpecReferenceWithConfiguration2950) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTParameterSpecReferenceWithConfiguration2950) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTParameterSpecReferenceWithConfiguration2950) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetAllowAssemblies
 
@@ -55,20 +80,20 @@ HasAllowAssemblies returns a boolean if a field has been set.
 
 ### GetAllowedInsertableTypes
 
-`func (o *BTParameterSpecReferenceWithConfiguration2950) GetAllowedInsertableTypes() []string`
+`func (o *BTParameterSpecReferenceWithConfiguration2950) GetAllowedInsertableTypes() []GBTPartStudioItemType`
 
 GetAllowedInsertableTypes returns the AllowedInsertableTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedInsertableTypesOk
 
-`func (o *BTParameterSpecReferenceWithConfiguration2950) GetAllowedInsertableTypesOk() (*[]string, bool)`
+`func (o *BTParameterSpecReferenceWithConfiguration2950) GetAllowedInsertableTypesOk() (*[]GBTPartStudioItemType, bool)`
 
 GetAllowedInsertableTypesOk returns a tuple with the AllowedInsertableTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedInsertableTypes
 
-`func (o *BTParameterSpecReferenceWithConfiguration2950) SetAllowedInsertableTypes(v []string)`
+`func (o *BTParameterSpecReferenceWithConfiguration2950) SetAllowedInsertableTypes(v []GBTPartStudioItemType)`
 
 SetAllowedInsertableTypes sets AllowedInsertableTypes field to given value.
 
@@ -77,31 +102,6 @@ SetAllowedInsertableTypes sets AllowedInsertableTypes field to given value.
 `func (o *BTParameterSpecReferenceWithConfiguration2950) HasAllowedInsertableTypes() bool`
 
 HasAllowedInsertableTypes returns a boolean if a field has been set.
-
-### GetBtType
-
-`func (o *BTParameterSpecReferenceWithConfiguration2950) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTParameterSpecReferenceWithConfiguration2950) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTParameterSpecReferenceWithConfiguration2950) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTParameterSpecReferenceWithConfiguration2950) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetMaxNumberOfPicks
 

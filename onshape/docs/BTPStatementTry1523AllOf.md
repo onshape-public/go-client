@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Silent** | Pointer to **bool** |  | [optional] 
 **SpaceAfterCatch** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceBeforeSilent** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
-**StandardType** | Pointer to **string** |  | [optional] 
+**StandardType** | Pointer to [**GBTPType**](GBTPType.md) |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -236,20 +236,20 @@ HasSpaceBeforeSilent returns a boolean if a field has been set.
 
 ### GetStandardType
 
-`func (o *BTPStatementTry1523AllOf) GetStandardType() string`
+`func (o *BTPStatementTry1523AllOf) GetStandardType() GBTPType`
 
 GetStandardType returns the StandardType field if non-nil, zero value otherwise.
 
 ### GetStandardTypeOk
 
-`func (o *BTPStatementTry1523AllOf) GetStandardTypeOk() (*string, bool)`
+`func (o *BTPStatementTry1523AllOf) GetStandardTypeOk() (*GBTPType, bool)`
 
 GetStandardTypeOk returns a tuple with the StandardType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStandardType
 
-`func (o *BTPStatementTry1523AllOf) SetStandardType(v string)`
+`func (o *BTPStatementTry1523AllOf) SetStandardType(v GBTPType)`
 
 SetStandardType sets StandardType field to given value.
 

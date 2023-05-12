@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody3398.md) |  | [optional] 
-**ErrorEnum** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
+**ErrorEnum** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 
 
 ## Methods
 
@@ -51,22 +52,47 @@ SetBodies sets Bodies field to given value.
 
 HasBodies returns a boolean if a field has been set.
 
+### GetBtType
+
+`func (o *BTExportTessellatedEdgesResponse327) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportTessellatedEdgesResponse327) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportTessellatedEdgesResponse327) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportTessellatedEdgesResponse327) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
+
 ### GetErrorEnum
 
-`func (o *BTExportTessellatedEdgesResponse327) GetErrorEnum() string`
+`func (o *BTExportTessellatedEdgesResponse327) GetErrorEnum() GBTErrorStringEnum`
 
 GetErrorEnum returns the ErrorEnum field if non-nil, zero value otherwise.
 
 ### GetErrorEnumOk
 
-`func (o *BTExportTessellatedEdgesResponse327) GetErrorEnumOk() (*string, bool)`
+`func (o *BTExportTessellatedEdgesResponse327) GetErrorEnumOk() (*GBTErrorStringEnum, bool)`
 
 GetErrorEnumOk returns a tuple with the ErrorEnum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorEnum
 
-`func (o *BTExportTessellatedEdgesResponse327) SetErrorEnum(v string)`
+`func (o *BTExportTessellatedEdgesResponse327) SetErrorEnum(v GBTErrorStringEnum)`
 
 SetErrorEnum sets ErrorEnum field to given value.
 
