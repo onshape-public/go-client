@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,33 +17,33 @@ import (
 
 // BTInsertableInfo Array of items in the current page.
 type BTInsertableInfo struct {
-	BodyType                     *string  `json:"bodyType,omitempty"`
-	ClassType                    *int32   `json:"classType,omitempty"`
-	Configuration                *string  `json:"configuration,omitempty"`
-	ConfigurationParameterValues []string `json:"configurationParameterValues,omitempty"`
-	ConfigurationParameters      []string `json:"configurationParameters,omitempty"`
-	DataType                     *string  `json:"dataType,omitempty"`
-	DeterministicId              *string  `json:"deterministicId,omitempty"`
-	DocumentId                   *string  `json:"documentId,omitempty"`
-	ElementId                    *string  `json:"elementId,omitempty"`
-	ElementName                  *string  `json:"elementName,omitempty"`
-	ElementType                  *string  `json:"elementType,omitempty"`
-	FeatureId                    *string  `json:"featureId,omitempty"`
-	FeatureName                  *string  `json:"featureName,omitempty"`
-	FeatureSpec                  []string `json:"featureSpec,omitempty"`
-	FeatureType                  *string  `json:"featureType,omitempty"`
-	FsComputedPartPropertySpec   []string `json:"fsComputedPartPropertySpec,omitempty"`
-	FsTableSpec                  []string `json:"fsTableSpec,omitempty"`
-	HasFaults                    *bool    `json:"hasFaults,omitempty"`
+	BodyType                     *GBTBodyType    `json:"bodyType,omitempty"`
+	ClassType                    *int32          `json:"classType,omitempty"`
+	Configuration                *string         `json:"configuration,omitempty"`
+	ConfigurationParameterValues []string        `json:"configurationParameterValues,omitempty"`
+	ConfigurationParameters      []string        `json:"configurationParameters,omitempty"`
+	DataType                     *string         `json:"dataType,omitempty"`
+	DeterministicId              *string         `json:"deterministicId,omitempty"`
+	DocumentId                   *string         `json:"documentId,omitempty"`
+	ElementId                    *string         `json:"elementId,omitempty"`
+	ElementName                  *string         `json:"elementName,omitempty"`
+	ElementType                  *GBTElementType `json:"elementType,omitempty"`
+	FeatureId                    *string         `json:"featureId,omitempty"`
+	FeatureName                  *string         `json:"featureName,omitempty"`
+	FeatureSpec                  []string        `json:"featureSpec,omitempty"`
+	FeatureType                  *string         `json:"featureType,omitempty"`
+	FsComputedPartPropertySpec   []string        `json:"fsComputedPartPropertySpec,omitempty"`
+	FsTableSpec                  []string        `json:"fsTableSpec,omitempty"`
+	HasFaults                    *bool           `json:"hasFaults,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id              *string `json:"id,omitempty"`
-	InsertableQuery *string `json:"insertableQuery,omitempty"`
-	IsFlattenedBody *bool   `json:"isFlattenedBody,omitempty"`
-	IsMesh          *bool   `json:"isMesh,omitempty"`
-	MeshState       *string `json:"meshState,omitempty"`
-	MicroversionId  *string `json:"microversionId,omitempty"`
+	Id              *string       `json:"id,omitempty"`
+	InsertableQuery *string       `json:"insertableQuery,omitempty"`
+	IsFlattenedBody *bool         `json:"isFlattenedBody,omitempty"`
+	IsMesh          *bool         `json:"isMesh,omitempty"`
+	MeshState       *GBTMeshState `json:"meshState,omitempty"`
+	MicroversionId  *string       `json:"microversionId,omitempty"`
 	// Name of the resource.
 	Name                           *string `json:"name,omitempty"`
 	ParentId                       *string `json:"parentId,omitempty"`
@@ -80,9 +80,9 @@ func NewBTInsertableInfoWithDefaults() *BTInsertableInfo {
 }
 
 // GetBodyType returns the BodyType field value if set, zero value otherwise.
-func (o *BTInsertableInfo) GetBodyType() string {
+func (o *BTInsertableInfo) GetBodyType() GBTBodyType {
 	if o == nil || o.BodyType == nil {
-		var ret string
+		var ret GBTBodyType
 		return ret
 	}
 	return *o.BodyType
@@ -90,7 +90,7 @@ func (o *BTInsertableInfo) GetBodyType() string {
 
 // GetBodyTypeOk returns a tuple with the BodyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTInsertableInfo) GetBodyTypeOk() (*string, bool) {
+func (o *BTInsertableInfo) GetBodyTypeOk() (*GBTBodyType, bool) {
 	if o == nil || o.BodyType == nil {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *BTInsertableInfo) HasBodyType() bool {
 	return false
 }
 
-// SetBodyType gets a reference to the given string and assigns it to the BodyType field.
-func (o *BTInsertableInfo) SetBodyType(v string) {
+// SetBodyType gets a reference to the given GBTBodyType and assigns it to the BodyType field.
+func (o *BTInsertableInfo) SetBodyType(v GBTBodyType) {
 	o.BodyType = &v
 }
 
@@ -400,9 +400,9 @@ func (o *BTInsertableInfo) SetElementName(v string) {
 }
 
 // GetElementType returns the ElementType field value if set, zero value otherwise.
-func (o *BTInsertableInfo) GetElementType() string {
+func (o *BTInsertableInfo) GetElementType() GBTElementType {
 	if o == nil || o.ElementType == nil {
-		var ret string
+		var ret GBTElementType
 		return ret
 	}
 	return *o.ElementType
@@ -410,7 +410,7 @@ func (o *BTInsertableInfo) GetElementType() string {
 
 // GetElementTypeOk returns a tuple with the ElementType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTInsertableInfo) GetElementTypeOk() (*string, bool) {
+func (o *BTInsertableInfo) GetElementTypeOk() (*GBTElementType, bool) {
 	if o == nil || o.ElementType == nil {
 		return nil, false
 	}
@@ -426,8 +426,8 @@ func (o *BTInsertableInfo) HasElementType() bool {
 	return false
 }
 
-// SetElementType gets a reference to the given string and assigns it to the ElementType field.
-func (o *BTInsertableInfo) SetElementType(v string) {
+// SetElementType gets a reference to the given GBTElementType and assigns it to the ElementType field.
+func (o *BTInsertableInfo) SetElementType(v GBTElementType) {
 	o.ElementType = &v
 }
 
@@ -816,9 +816,9 @@ func (o *BTInsertableInfo) SetIsMesh(v bool) {
 }
 
 // GetMeshState returns the MeshState field value if set, zero value otherwise.
-func (o *BTInsertableInfo) GetMeshState() string {
+func (o *BTInsertableInfo) GetMeshState() GBTMeshState {
 	if o == nil || o.MeshState == nil {
-		var ret string
+		var ret GBTMeshState
 		return ret
 	}
 	return *o.MeshState
@@ -826,7 +826,7 @@ func (o *BTInsertableInfo) GetMeshState() string {
 
 // GetMeshStateOk returns a tuple with the MeshState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTInsertableInfo) GetMeshStateOk() (*string, bool) {
+func (o *BTInsertableInfo) GetMeshStateOk() (*GBTMeshState, bool) {
 	if o == nil || o.MeshState == nil {
 		return nil, false
 	}
@@ -842,8 +842,8 @@ func (o *BTInsertableInfo) HasMeshState() bool {
 	return false
 }
 
-// SetMeshState gets a reference to the given string and assigns it to the MeshState field.
-func (o *BTInsertableInfo) SetMeshState(v string) {
+// SetMeshState gets a reference to the given GBTMeshState and assigns it to the MeshState field.
+func (o *BTInsertableInfo) SetMeshState(v GBTMeshState) {
 	o.MeshState = &v
 }
 

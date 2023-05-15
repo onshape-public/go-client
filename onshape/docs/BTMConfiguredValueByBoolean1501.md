@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BooleanValue** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**BooleanValue** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewBTMConfiguredValueByBoolean1501WithDefaults instantiates a new BTMConfiguredValueByBoolean1501 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBooleanValue
-
-`func (o *BTMConfiguredValueByBoolean1501) GetBooleanValue() bool`
-
-GetBooleanValue returns the BooleanValue field if non-nil, zero value otherwise.
-
-### GetBooleanValueOk
-
-`func (o *BTMConfiguredValueByBoolean1501) GetBooleanValueOk() (*bool, bool)`
-
-GetBooleanValueOk returns a tuple with the BooleanValue field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBooleanValue
-
-`func (o *BTMConfiguredValueByBoolean1501) SetBooleanValue(v bool)`
-
-SetBooleanValue sets BooleanValue field to given value.
-
-### HasBooleanValue
-
-`func (o *BTMConfiguredValueByBoolean1501) HasBooleanValue() bool`
-
-HasBooleanValue returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -75,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMConfiguredValueByBoolean1501) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBooleanValue
+
+`func (o *BTMConfiguredValueByBoolean1501) GetBooleanValue() bool`
+
+GetBooleanValue returns the BooleanValue field if non-nil, zero value otherwise.
+
+### GetBooleanValueOk
+
+`func (o *BTMConfiguredValueByBoolean1501) GetBooleanValueOk() (*bool, bool)`
+
+GetBooleanValueOk returns a tuple with the BooleanValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBooleanValue
+
+`func (o *BTMConfiguredValueByBoolean1501) SetBooleanValue(v bool)`
+
+SetBooleanValue sets BooleanValue field to given value.
+
+### HasBooleanValue
+
+`func (o *BTMConfiguredValueByBoolean1501) HasBooleanValue() bool`
+
+HasBooleanValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

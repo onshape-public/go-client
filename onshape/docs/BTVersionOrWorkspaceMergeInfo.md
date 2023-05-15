@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultMergeStrategy** | Pointer to **string** |  | [optional] 
+**DefaultMergeStrategy** | Pointer to [**BTMergeStrategy**](BTMergeStrategy.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**MergeStrategyElementOverrides** | Pointer to **map[string]string** |  | [optional] 
+**MergeStrategyElementOverrides** | Pointer to [**map[string]BTMergeStrategy**](BTMergeStrategy.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDefaultMergeStrategy
 
-`func (o *BTVersionOrWorkspaceMergeInfo) GetDefaultMergeStrategy() string`
+`func (o *BTVersionOrWorkspaceMergeInfo) GetDefaultMergeStrategy() BTMergeStrategy`
 
 GetDefaultMergeStrategy returns the DefaultMergeStrategy field if non-nil, zero value otherwise.
 
 ### GetDefaultMergeStrategyOk
 
-`func (o *BTVersionOrWorkspaceMergeInfo) GetDefaultMergeStrategyOk() (*string, bool)`
+`func (o *BTVersionOrWorkspaceMergeInfo) GetDefaultMergeStrategyOk() (*BTMergeStrategy, bool)`
 
 GetDefaultMergeStrategyOk returns a tuple with the DefaultMergeStrategy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultMergeStrategy
 
-`func (o *BTVersionOrWorkspaceMergeInfo) SetDefaultMergeStrategy(v string)`
+`func (o *BTVersionOrWorkspaceMergeInfo) SetDefaultMergeStrategy(v BTMergeStrategy)`
 
 SetDefaultMergeStrategy sets DefaultMergeStrategy field to given value.
 
@@ -80,20 +80,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMergeStrategyElementOverrides
 
-`func (o *BTVersionOrWorkspaceMergeInfo) GetMergeStrategyElementOverrides() map[string]string`
+`func (o *BTVersionOrWorkspaceMergeInfo) GetMergeStrategyElementOverrides() map[string]BTMergeStrategy`
 
 GetMergeStrategyElementOverrides returns the MergeStrategyElementOverrides field if non-nil, zero value otherwise.
 
 ### GetMergeStrategyElementOverridesOk
 
-`func (o *BTVersionOrWorkspaceMergeInfo) GetMergeStrategyElementOverridesOk() (*map[string]string, bool)`
+`func (o *BTVersionOrWorkspaceMergeInfo) GetMergeStrategyElementOverridesOk() (*map[string]BTMergeStrategy, bool)`
 
 GetMergeStrategyElementOverridesOk returns a tuple with the MergeStrategyElementOverrides field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMergeStrategyElementOverrides
 
-`func (o *BTVersionOrWorkspaceMergeInfo) SetMergeStrategyElementOverrides(v map[string]string)`
+`func (o *BTVersionOrWorkspaceMergeInfo) SetMergeStrategyElementOverrides(v map[string]BTMergeStrategy)`
 
 SetMergeStrategyElementOverrides sets MergeStrategyElementOverrides field to given value.
 

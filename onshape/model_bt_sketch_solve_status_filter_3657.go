@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,8 +17,8 @@ import (
 
 // BTSketchSolveStatusFilter3657 struct for BTSketchSolveStatusFilter3657
 type BTSketchSolveStatusFilter3657 struct {
-	BtType      *string `json:"btType,omitempty"`
-	SolveStatus *string `json:"solveStatus,omitempty"`
+	BtType      *string         `json:"btType,omitempty"`
+	SolveStatus *GBTMGeomStatus `json:"solveStatus,omitempty"`
 }
 
 // NewBTSketchSolveStatusFilter3657 instantiates a new BTSketchSolveStatusFilter3657 object
@@ -71,9 +71,9 @@ func (o *BTSketchSolveStatusFilter3657) SetBtType(v string) {
 }
 
 // GetSolveStatus returns the SolveStatus field value if set, zero value otherwise.
-func (o *BTSketchSolveStatusFilter3657) GetSolveStatus() string {
+func (o *BTSketchSolveStatusFilter3657) GetSolveStatus() GBTMGeomStatus {
 	if o == nil || o.SolveStatus == nil {
-		var ret string
+		var ret GBTMGeomStatus
 		return ret
 	}
 	return *o.SolveStatus
@@ -81,7 +81,7 @@ func (o *BTSketchSolveStatusFilter3657) GetSolveStatus() string {
 
 // GetSolveStatusOk returns a tuple with the SolveStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTSketchSolveStatusFilter3657) GetSolveStatusOk() (*string, bool) {
+func (o *BTSketchSolveStatusFilter3657) GetSolveStatusOk() (*GBTMGeomStatus, bool) {
 	if o == nil || o.SolveStatus == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *BTSketchSolveStatusFilter3657) HasSolveStatus() bool {
 	return false
 }
 
-// SetSolveStatus gets a reference to the given string and assigns it to the SolveStatus field.
-func (o *BTSketchSolveStatusFilter3657) SetSolveStatus(v string) {
+// SetSolveStatus gets a reference to the given GBTMGeomStatus and assigns it to the SolveStatus field.
+func (o *BTSketchSolveStatusFilter3657) SetSolveStatus(v GBTMGeomStatus) {
 	o.SolveStatus = &v
 }
 

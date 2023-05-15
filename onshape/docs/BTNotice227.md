@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Level** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
+**Level** | Pointer to [**GBTNoticeLevel**](GBTNoticeLevel.md) |  | [optional] 
 **LocationInfos** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **StackTrace** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **TryNode** | Pointer to [**BTNodeReference21**](BTNodeReference21.md) |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTNoticeType**](GBTNoticeType.md) |  | [optional] 
 
 ## Methods
 
@@ -32,22 +33,47 @@ NewBTNotice227WithDefaults instantiates a new BTNotice227 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetBtType
+
+`func (o *BTNotice227) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTNotice227) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTNotice227) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTNotice227) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
+
 ### GetLevel
 
-`func (o *BTNotice227) GetLevel() string`
+`func (o *BTNotice227) GetLevel() GBTNoticeLevel`
 
 GetLevel returns the Level field if non-nil, zero value otherwise.
 
 ### GetLevelOk
 
-`func (o *BTNotice227) GetLevelOk() (*string, bool)`
+`func (o *BTNotice227) GetLevelOk() (*GBTNoticeLevel, bool)`
 
 GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLevel
 
-`func (o *BTNotice227) SetLevel(v string)`
+`func (o *BTNotice227) SetLevel(v GBTNoticeLevel)`
 
 SetLevel sets Level field to given value.
 
@@ -209,20 +235,20 @@ HasTryNode returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTNotice227) GetType() string`
+`func (o *BTNotice227) GetType() GBTNoticeType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTNotice227) GetTypeOk() (*string, bool)`
+`func (o *BTNotice227) GetTypeOk() (*GBTNoticeType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTNotice227) SetType(v string)`
+`func (o *BTNotice227) SetType(v GBTNoticeType)`
 
 SetType sets Type field to given value.
 

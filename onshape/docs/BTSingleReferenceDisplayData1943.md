@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **ContextWorkspaceId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
-**Error** | Pointer to **string** |  | [optional] 
+**Error** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
 **IsTransient** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ReferenceName** | Pointer to **string** |  | [optional] 
 **ReferenceNodeId** | Pointer to **string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to [**GBTBSFeatureVisibility**](GBTBSFeatureVisibility.md) |  | [optional] 
 
 ## Methods
 
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewBTSingleReferenceDisplayData1943WithDefaults instantiates a new BTSingleReferenceDisplayData1943 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTSingleReferenceDisplayData1943) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTSingleReferenceDisplayData1943) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTSingleReferenceDisplayData1943) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTSingleReferenceDisplayData1943) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetContextWorkspaceId
 
@@ -85,20 +111,20 @@ HasDocumentId returns a boolean if a field has been set.
 
 ### GetError
 
-`func (o *BTSingleReferenceDisplayData1943) GetError() string`
+`func (o *BTSingleReferenceDisplayData1943) GetError() GBTErrorStringEnum`
 
 GetError returns the Error field if non-nil, zero value otherwise.
 
 ### GetErrorOk
 
-`func (o *BTSingleReferenceDisplayData1943) GetErrorOk() (*string, bool)`
+`func (o *BTSingleReferenceDisplayData1943) GetErrorOk() (*GBTErrorStringEnum, bool)`
 
 GetErrorOk returns a tuple with the Error field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetError
 
-`func (o *BTSingleReferenceDisplayData1943) SetError(v string)`
+`func (o *BTSingleReferenceDisplayData1943) SetError(v GBTErrorStringEnum)`
 
 SetError sets Error field to given value.
 
@@ -235,20 +261,20 @@ HasReferenceNodeId returns a boolean if a field has been set.
 
 ### GetVisibility
 
-`func (o *BTSingleReferenceDisplayData1943) GetVisibility() string`
+`func (o *BTSingleReferenceDisplayData1943) GetVisibility() GBTBSFeatureVisibility`
 
 GetVisibility returns the Visibility field if non-nil, zero value otherwise.
 
 ### GetVisibilityOk
 
-`func (o *BTSingleReferenceDisplayData1943) GetVisibilityOk() (*string, bool)`
+`func (o *BTSingleReferenceDisplayData1943) GetVisibilityOk() (*GBTBSFeatureVisibility, bool)`
 
 GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVisibility
 
-`func (o *BTSingleReferenceDisplayData1943) SetVisibility(v string)`
+`func (o *BTSingleReferenceDisplayData1943) SetVisibility(v GBTBSFeatureVisibility)`
 
 SetVisibility sets Visibility field to given value.
 

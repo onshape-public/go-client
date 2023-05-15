@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdminOverride** | Pointer to **bool** |  | [optional] 
 **ApprovalDate** | Pointer to **JSONTime** |  | [optional] 
-**ApprovalState** | Pointer to **string** |  | [optional] 
+**ApprovalState** | Pointer to [**BTWorkflowObserverState**](BTWorkflowObserverState.md) |  | [optional] 
 **ApproverId** | Pointer to **string** |  | [optional] 
 **ApproverName** | Pointer to **string** |  | [optional] 
 **AssociatedStates** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **EntryId** | Pointer to **string** |  | [optional] 
-**EntryType** | Pointer to **string** |  | [optional] 
+**EntryType** | Pointer to [**BTWorkflowObserverEntryType**](BTWorkflowObserverEntryType.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
@@ -98,20 +98,20 @@ HasApprovalDate returns a boolean if a field has been set.
 
 ### GetApprovalState
 
-`func (o *BTWorkflowableObjectObserver) GetApprovalState() string`
+`func (o *BTWorkflowableObjectObserver) GetApprovalState() BTWorkflowObserverState`
 
 GetApprovalState returns the ApprovalState field if non-nil, zero value otherwise.
 
 ### GetApprovalStateOk
 
-`func (o *BTWorkflowableObjectObserver) GetApprovalStateOk() (*string, bool)`
+`func (o *BTWorkflowableObjectObserver) GetApprovalStateOk() (*BTWorkflowObserverState, bool)`
 
 GetApprovalStateOk returns a tuple with the ApprovalState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApprovalState
 
-`func (o *BTWorkflowableObjectObserver) SetApprovalState(v string)`
+`func (o *BTWorkflowableObjectObserver) SetApprovalState(v BTWorkflowObserverState)`
 
 SetApprovalState sets ApprovalState field to given value.
 
@@ -323,20 +323,20 @@ HasEntryId returns a boolean if a field has been set.
 
 ### GetEntryType
 
-`func (o *BTWorkflowableObjectObserver) GetEntryType() string`
+`func (o *BTWorkflowableObjectObserver) GetEntryType() BTWorkflowObserverEntryType`
 
 GetEntryType returns the EntryType field if non-nil, zero value otherwise.
 
 ### GetEntryTypeOk
 
-`func (o *BTWorkflowableObjectObserver) GetEntryTypeOk() (*string, bool)`
+`func (o *BTWorkflowableObjectObserver) GetEntryTypeOk() (*BTWorkflowObserverEntryType, bool)`
 
 GetEntryTypeOk returns a tuple with the EntryType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntryType
 
-`func (o *BTWorkflowableObjectObserver) SetEntryType(v string)`
+`func (o *BTWorkflowableObjectObserver) SetEntryType(v BTWorkflowObserverEntryType)`
 
 SetEntryType sets EntryType field to given value.
 

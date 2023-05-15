@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowAssemblies** | Pointer to **bool** |  | [optional] 
-**AllowedInsertableTypes** | Pointer to **[]string** |  | [optional] 
+**AllowedInsertableTypes** | Pointer to [**[]GBTPartStudioItemType**](GBTPartStudioItemType.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasAllowAssemblies returns a boolean if a field has been set.
 
 ### GetAllowedInsertableTypes
 
-`func (o *BTParameterSpecReferenceWithConfiguration2950AllOf) GetAllowedInsertableTypes() []string`
+`func (o *BTParameterSpecReferenceWithConfiguration2950AllOf) GetAllowedInsertableTypes() []GBTPartStudioItemType`
 
 GetAllowedInsertableTypes returns the AllowedInsertableTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedInsertableTypesOk
 
-`func (o *BTParameterSpecReferenceWithConfiguration2950AllOf) GetAllowedInsertableTypesOk() (*[]string, bool)`
+`func (o *BTParameterSpecReferenceWithConfiguration2950AllOf) GetAllowedInsertableTypesOk() (*[]GBTPartStudioItemType, bool)`
 
 GetAllowedInsertableTypesOk returns a tuple with the AllowedInsertableTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedInsertableTypes
 
-`func (o *BTParameterSpecReferenceWithConfiguration2950AllOf) SetAllowedInsertableTypes(v []string)`
+`func (o *BTParameterSpecReferenceWithConfiguration2950AllOf) SetAllowedInsertableTypes(v []GBTPartStudioItemType)`
 
 SetAllowedInsertableTypes sets AllowedInsertableTypes field to given value.
 

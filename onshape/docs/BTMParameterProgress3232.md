@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **PercentDone** | Pointer to **float64** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**GBTComputeStatus**](GBTComputeStatus.md) |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasPercentDone returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *BTMParameterProgress3232) GetStatus() string`
+`func (o *BTMParameterProgress3232) GetStatus() GBTComputeStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *BTMParameterProgress3232) GetStatusOk() (*string, bool)`
+`func (o *BTMParameterProgress3232) GetStatusOk() (*GBTComputeStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *BTMParameterProgress3232) SetStatus(v string)`
+`func (o *BTMParameterProgress3232) SetStatus(v GBTComputeStatus)`
 
 SetStatus sets Status field to given value.
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **IsVarDeclaredHere** | Pointer to **bool** |  | [optional] 
 **KeyVar** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **SpaceBeforeVar** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
-**StandardTypes** | Pointer to **[]string** |  | [optional] 
+**StandardTypes** | Pointer to [**[]GBTPType**](GBTPType.md) |  | [optional] 
 **TypeNames** | Pointer to **[]string** |  | [optional] 
 **Var** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 
@@ -185,20 +185,20 @@ HasSpaceBeforeVar returns a boolean if a field has been set.
 
 ### GetStandardTypes
 
-`func (o *BTPStatementLoopForIn279) GetStandardTypes() []string`
+`func (o *BTPStatementLoopForIn279) GetStandardTypes() []GBTPType`
 
 GetStandardTypes returns the StandardTypes field if non-nil, zero value otherwise.
 
 ### GetStandardTypesOk
 
-`func (o *BTPStatementLoopForIn279) GetStandardTypesOk() (*[]string, bool)`
+`func (o *BTPStatementLoopForIn279) GetStandardTypesOk() (*[]GBTPType, bool)`
 
 GetStandardTypesOk returns a tuple with the StandardTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStandardTypes
 
-`func (o *BTPStatementLoopForIn279) SetStandardTypes(v []string)`
+`func (o *BTPStatementLoopForIn279) SetStandardTypes(v []GBTPType)`
 
 SetStandardTypes sets StandardTypes field to given value.
 

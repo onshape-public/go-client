@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BodyType** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**EntityType** | Pointer to **string** |  | [optional] 
+**BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
+**EntityType** | Pointer to [**GBTEntityType**](GBTEntityType.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **FilterConstruction** | Pointer to **bool** |  | [optional] 
 
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewBTMIndividualCreatedByQuery137WithDefaults instantiates a new BTMIndividualCreatedByQuery137 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBodyType
-
-`func (o *BTMIndividualCreatedByQuery137) GetBodyType() string`
-
-GetBodyType returns the BodyType field if non-nil, zero value otherwise.
-
-### GetBodyTypeOk
-
-`func (o *BTMIndividualCreatedByQuery137) GetBodyTypeOk() (*string, bool)`
-
-GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBodyType
-
-`func (o *BTMIndividualCreatedByQuery137) SetBodyType(v string)`
-
-SetBodyType sets BodyType field to given value.
-
-### HasBodyType
-
-`func (o *BTMIndividualCreatedByQuery137) HasBodyType() bool`
-
-HasBodyType returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -79,22 +54,47 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
+### GetBodyType
+
+`func (o *BTMIndividualCreatedByQuery137) GetBodyType() GBTBodyType`
+
+GetBodyType returns the BodyType field if non-nil, zero value otherwise.
+
+### GetBodyTypeOk
+
+`func (o *BTMIndividualCreatedByQuery137) GetBodyTypeOk() (*GBTBodyType, bool)`
+
+GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyType
+
+`func (o *BTMIndividualCreatedByQuery137) SetBodyType(v GBTBodyType)`
+
+SetBodyType sets BodyType field to given value.
+
+### HasBodyType
+
+`func (o *BTMIndividualCreatedByQuery137) HasBodyType() bool`
+
+HasBodyType returns a boolean if a field has been set.
+
 ### GetEntityType
 
-`func (o *BTMIndividualCreatedByQuery137) GetEntityType() string`
+`func (o *BTMIndividualCreatedByQuery137) GetEntityType() GBTEntityType`
 
 GetEntityType returns the EntityType field if non-nil, zero value otherwise.
 
 ### GetEntityTypeOk
 
-`func (o *BTMIndividualCreatedByQuery137) GetEntityTypeOk() (*string, bool)`
+`func (o *BTMIndividualCreatedByQuery137) GetEntityTypeOk() (*GBTEntityType, bool)`
 
 GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntityType
 
-`func (o *BTMIndividualCreatedByQuery137) SetEntityType(v string)`
+`func (o *BTMIndividualCreatedByQuery137) SetEntityType(v GBTEntityType)`
 
 SetEntityType sets EntityType field to given value.
 

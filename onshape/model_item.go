@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -294,24 +294,24 @@ func (o *Item) SetElementId(v string) {
 }
 
 // GetElementType returns the ElementType field value if set, zero value otherwise.
-func (o *Item) GetElementType() string {
+func (o *Item) GetElementType() GBTElementType {
 	type getResult interface {
-		GetElementType() string
+		GetElementType() GBTElementType
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
 		return tx.GetElementType()
 	} else {
-		var de string
+		var de GBTElementType
 		return de
 	}
 }
 
 // GetElementTypeOk returns a tuple with the ElementType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetElementTypeOk() (*string, bool) {
+func (o *Item) GetElementTypeOk() (*GBTElementType, bool) {
 	type getResult interface {
-		GetElementTypeOk() (*string, bool)
+		GetElementTypeOk() (*GBTElementType, bool)
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
@@ -334,10 +334,10 @@ func (o *Item) HasElementType() bool {
 	}
 }
 
-// SetElementType gets a reference to the given string and assigns it to the ElementType field.
-func (o *Item) SetElementType(v string) {
+// SetElementType gets a reference to the given GBTElementType and assigns it to the ElementType field.
+func (o *Item) SetElementType(v GBTElementType) {
 	type getResult interface {
-		SetElementType(v string)
+		SetElementType(v GBTElementType)
 	}
 
 	o.GetActualInstance().(getResult).SetElementType(v)
@@ -890,20 +890,6 @@ func (dst *Item) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
 	}
 
-	// check if the discriminator value is 'BlobItem'
-	if jsonDict["jsonType"] == "BlobItem" {
-		// try to unmarshal JSON data into BlobItem
-		var qr *BlobItem
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implItem = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implItem = nil
-			return fmt.Errorf("Failed to unmarshal Item as BlobItem: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'publication-blob-item'
 	if jsonDict["jsonType"] == "publication-blob-item" {
 		// try to unmarshal JSON data into BlobItem
@@ -989,7 +975,7 @@ type base_Item struct {
 	DataType             *string                  `json:"dataType,omitempty"`
 	DocumentId           *string                  `json:"documentId,omitempty"`
 	ElementId            *string                  `json:"elementId,omitempty"`
-	ElementType          *string                  `json:"elementType,omitempty"`
+	ElementType          *GBTElementType          `json:"elementType,omitempty"`
 	EncodedConfiguration *string                  `json:"encodedConfiguration,omitempty"`
 	Id                   *string                  `json:"id,omitempty"`
 	JsonType             string                   `json:"jsonType"`
@@ -1182,9 +1168,9 @@ func (o *base_Item) SetElementId(v string) {
 }
 
 // GetElementType returns the ElementType field value if set, zero value otherwise.
-func (o *base_Item) GetElementType() string {
+func (o *base_Item) GetElementType() GBTElementType {
 	if o == nil || o.ElementType == nil {
-		var ret string
+		var ret GBTElementType
 		return ret
 	}
 	return *o.ElementType
@@ -1192,7 +1178,7 @@ func (o *base_Item) GetElementType() string {
 
 // GetElementTypeOk returns a tuple with the ElementType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetElementTypeOk() (*string, bool) {
+func (o *base_Item) GetElementTypeOk() (*GBTElementType, bool) {
 	if o == nil || o.ElementType == nil {
 		return nil, false
 	}
@@ -1208,8 +1194,8 @@ func (o *base_Item) HasElementType() bool {
 	return false
 }
 
-// SetElementType gets a reference to the given string and assigns it to the ElementType field.
-func (o *base_Item) SetElementType(v string) {
+// SetElementType gets a reference to the given GBTElementType and assigns it to the ElementType field.
+func (o *base_Item) SetElementType(v GBTElementType) {
 	o.ElementType = &v
 }
 

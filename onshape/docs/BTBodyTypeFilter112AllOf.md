@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BodyType** | Pointer to **string** |  | [optional] 
+**BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBodyType
 
-`func (o *BTBodyTypeFilter112AllOf) GetBodyType() string`
+`func (o *BTBodyTypeFilter112AllOf) GetBodyType() GBTBodyType`
 
 GetBodyType returns the BodyType field if non-nil, zero value otherwise.
 
 ### GetBodyTypeOk
 
-`func (o *BTBodyTypeFilter112AllOf) GetBodyTypeOk() (*string, bool)`
+`func (o *BTBodyTypeFilter112AllOf) GetBodyTypeOk() (*GBTBodyType, bool)`
 
 GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodyType
 
-`func (o *BTBodyTypeFilter112AllOf) SetBodyType(v string)`
+`func (o *BTBodyTypeFilter112AllOf) SetBodyType(v GBTBodyType)`
 
 SetBodyType sets BodyType field to given value.
 

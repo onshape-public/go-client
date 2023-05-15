@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowedInsertableTypes** | Pointer to **[]string** |  | [optional] 
+**AllowedInsertableTypes** | Pointer to [**[]GBTPartStudioItemType**](GBTPartStudioItemType.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **ComputedConfigurationInputs** | Pointer to [**[]BTComputedConfigurationInputSpec2525**](BTComputedConfigurationInputSpec2525.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAllowedInsertableTypes
 
-`func (o *BTParameterSpecReferencePartStudio1256AllOf) GetAllowedInsertableTypes() []string`
+`func (o *BTParameterSpecReferencePartStudio1256AllOf) GetAllowedInsertableTypes() []GBTPartStudioItemType`
 
 GetAllowedInsertableTypes returns the AllowedInsertableTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedInsertableTypesOk
 
-`func (o *BTParameterSpecReferencePartStudio1256AllOf) GetAllowedInsertableTypesOk() (*[]string, bool)`
+`func (o *BTParameterSpecReferencePartStudio1256AllOf) GetAllowedInsertableTypesOk() (*[]GBTPartStudioItemType, bool)`
 
 GetAllowedInsertableTypesOk returns a tuple with the AllowedInsertableTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedInsertableTypes
 
-`func (o *BTParameterSpecReferencePartStudio1256AllOf) SetAllowedInsertableTypes(v []string)`
+`func (o *BTParameterSpecReferencePartStudio1256AllOf) SetAllowedInsertableTypes(v []GBTPartStudioItemType)`
 
 SetAllowedInsertableTypes sets AllowedInsertableTypes field to given value.
 

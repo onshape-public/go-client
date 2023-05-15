@@ -6,11 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody3398.md) |  | [optional] 
 **BodiesInfo** | Pointer to [**BTExportModelBodiesResponse734**](BTExportModelBodiesResponse734.md) |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **CombineCompositePartConstituents** | Pointer to **bool** |  | [optional] 
 **DisplayData** | Pointer to [**BTPartStudioDisplayData346**](BTPartStudioDisplayData346.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
-**ErrorEnum** | Pointer to **string** |  | [optional] 
+**ErrorEnum** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 
 **FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **OutputFaceAppearances** | Pointer to **bool** |  | [optional] 
@@ -84,6 +85,31 @@ SetBodiesInfo sets BodiesInfo field to given value.
 `func (o *BTExportTessellatedFacesResponse898) HasBodiesInfo() bool`
 
 HasBodiesInfo returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTExportTessellatedFacesResponse898) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportTessellatedFacesResponse898) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportTessellatedFacesResponse898) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportTessellatedFacesResponse898) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetCombineCompositePartConstituents
 
@@ -187,20 +213,20 @@ HasElementId returns a boolean if a field has been set.
 
 ### GetErrorEnum
 
-`func (o *BTExportTessellatedFacesResponse898) GetErrorEnum() string`
+`func (o *BTExportTessellatedFacesResponse898) GetErrorEnum() GBTErrorStringEnum`
 
 GetErrorEnum returns the ErrorEnum field if non-nil, zero value otherwise.
 
 ### GetErrorEnumOk
 
-`func (o *BTExportTessellatedFacesResponse898) GetErrorEnumOk() (*string, bool)`
+`func (o *BTExportTessellatedFacesResponse898) GetErrorEnumOk() (*GBTErrorStringEnum, bool)`
 
 GetErrorEnumOk returns a tuple with the ErrorEnum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorEnum
 
-`func (o *BTExportTessellatedFacesResponse898) SetErrorEnum(v string)`
+`func (o *BTExportTessellatedFacesResponse898) SetErrorEnum(v GBTErrorStringEnum)`
 
 SetErrorEnum sets ErrorEnum field to given value.
 

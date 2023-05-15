@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Callout** | Pointer to **string** |  | [optional] 
 **ColumnIdToValue** | Pointer to **map[string]string** |  | [optional] 
 **EntityIds** | Pointer to **[]string** |  | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewBTApiTableRow2915WithDefaults instantiates a new BTApiTableRow2915 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTApiTableRow2915) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTApiTableRow2915) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTApiTableRow2915) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTApiTableRow2915) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetCallout
 

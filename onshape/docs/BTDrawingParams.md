@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **ExplosionId** | Pointer to **string** |  | [optional] 
 **ExternalDocumentId** | Pointer to **string** |  | [optional] 
 **ExternalDocumentVersionId** | Pointer to **string** |  | [optional] 
-**HiddenLines** | Pointer to **string** |  | [optional] 
+**HiddenLines** | Pointer to [**BTDrawingHiddenLineOption**](BTDrawingHiddenLineOption.md) |  | [optional] 
 **IncludeSurfaces** | Pointer to **bool** |  | [optional] 
 **IncludeWires** | Pointer to **bool** |  | [optional] 
 **IsFlattenedPart** | Pointer to **bool** |  | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **PureSketch** | Pointer to **bool** |  | [optional] 
 **QualityOption** | Pointer to **string** |  | [optional] 
 **ReferenceType** | Pointer to **int32** |  | [optional] 
-**ReferenceTypeEnum** | Pointer to **string** |  | [optional] 
+**ReferenceTypeEnum** | Pointer to [**GBTAppElementReferenceType**](GBTAppElementReferenceType.md) |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 **ShowCutGeomOnly** | Pointer to **bool** |  | [optional] 
 **SimplificationOption** | Pointer to **string** |  | [optional] 
@@ -402,20 +402,20 @@ HasExternalDocumentVersionId returns a boolean if a field has been set.
 
 ### GetHiddenLines
 
-`func (o *BTDrawingParams) GetHiddenLines() string`
+`func (o *BTDrawingParams) GetHiddenLines() BTDrawingHiddenLineOption`
 
 GetHiddenLines returns the HiddenLines field if non-nil, zero value otherwise.
 
 ### GetHiddenLinesOk
 
-`func (o *BTDrawingParams) GetHiddenLinesOk() (*string, bool)`
+`func (o *BTDrawingParams) GetHiddenLinesOk() (*BTDrawingHiddenLineOption, bool)`
 
 GetHiddenLinesOk returns a tuple with the HiddenLines field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHiddenLines
 
-`func (o *BTDrawingParams) SetHiddenLines(v string)`
+`func (o *BTDrawingParams) SetHiddenLines(v BTDrawingHiddenLineOption)`
 
 SetHiddenLines sets HiddenLines field to given value.
 
@@ -877,20 +877,20 @@ HasReferenceType returns a boolean if a field has been set.
 
 ### GetReferenceTypeEnum
 
-`func (o *BTDrawingParams) GetReferenceTypeEnum() string`
+`func (o *BTDrawingParams) GetReferenceTypeEnum() GBTAppElementReferenceType`
 
 GetReferenceTypeEnum returns the ReferenceTypeEnum field if non-nil, zero value otherwise.
 
 ### GetReferenceTypeEnumOk
 
-`func (o *BTDrawingParams) GetReferenceTypeEnumOk() (*string, bool)`
+`func (o *BTDrawingParams) GetReferenceTypeEnumOk() (*GBTAppElementReferenceType, bool)`
 
 GetReferenceTypeEnumOk returns a tuple with the ReferenceTypeEnum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReferenceTypeEnum
 
-`func (o *BTDrawingParams) SetReferenceTypeEnum(v string)`
+`func (o *BTDrawingParams) SetReferenceTypeEnum(v GBTAppElementReferenceType)`
 
 SetReferenceTypeEnum sets ReferenceTypeEnum field to given value.
 

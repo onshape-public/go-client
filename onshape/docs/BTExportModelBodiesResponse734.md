@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bodies** | Pointer to [**[]BTExportModelBody1272**](BTExportModelBody1272.md) |  | [optional] 
-**ErrorEnum** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
+**ErrorEnum** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **NodeIdToReferencedProperty** | Pointer to [**map[string]BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 
 
@@ -53,22 +54,47 @@ SetBodies sets Bodies field to given value.
 
 HasBodies returns a boolean if a field has been set.
 
+### GetBtType
+
+`func (o *BTExportModelBodiesResponse734) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportModelBodiesResponse734) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportModelBodiesResponse734) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportModelBodiesResponse734) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
+
 ### GetErrorEnum
 
-`func (o *BTExportModelBodiesResponse734) GetErrorEnum() string`
+`func (o *BTExportModelBodiesResponse734) GetErrorEnum() GBTErrorStringEnum`
 
 GetErrorEnum returns the ErrorEnum field if non-nil, zero value otherwise.
 
 ### GetErrorEnumOk
 
-`func (o *BTExportModelBodiesResponse734) GetErrorEnumOk() (*string, bool)`
+`func (o *BTExportModelBodiesResponse734) GetErrorEnumOk() (*GBTErrorStringEnum, bool)`
 
 GetErrorEnumOk returns a tuple with the ErrorEnum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorEnum
 
-`func (o *BTExportModelBodiesResponse734) SetErrorEnum(v string)`
+`func (o *BTExportModelBodiesResponse734) SetErrorEnum(v GBTErrorStringEnum)`
 
 SetErrorEnum sets ErrorEnum field to given value.
 

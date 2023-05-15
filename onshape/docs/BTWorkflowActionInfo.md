@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** |  | [optional] 
 **RequiredProperties** | Pointer to **[]string** |  | [optional] 
 **Tooltip** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** | Transition types(SUBMIT, APPROVE, REJECT) | [optional] 
+**Type** | Pointer to [**BTTransitionType**](BTTransitionType.md) |  | [optional] 
 **UiHint** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -262,20 +262,20 @@ HasTooltip returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTWorkflowActionInfo) GetType() string`
+`func (o *BTWorkflowActionInfo) GetType() BTTransitionType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTWorkflowActionInfo) GetTypeOk() (*string, bool)`
+`func (o *BTWorkflowActionInfo) GetTypeOk() (*BTTransitionType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTWorkflowActionInfo) SetType(v string)`
+`func (o *BTWorkflowActionInfo) SetType(v BTTransitionType)`
 
 SetType sets Type field to given value.
 

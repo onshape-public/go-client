@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
+**BtType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBTFSValueTooBig1247
 
-`func NewBTFSValueTooBig1247(btType string, ) *BTFSValueTooBig1247`
+`func NewBTFSValueTooBig1247() *BTFSValueTooBig1247`
 
 NewBTFSValueTooBig1247 instantiates a new BTFSValueTooBig1247 object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
+### HasBtType
+
+`func (o *BTFSValueTooBig1247) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

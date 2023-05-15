@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **IsHidden** | Pointer to **bool** |  | [optional] 
 **IsMesh** | Pointer to **bool** |  | [optional] 
 **Material** | Pointer to [**BTPartMaterialInfo**](BTPartMaterialInfo.md) |  | [optional] 
-**MeshState** | Pointer to **string** |  | [optional] 
+**MeshState** | Pointer to [**GBTMeshState**](GBTMeshState.md) |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Ordinal** | Pointer to **int32** |  | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **PropertySourceTypes** | Pointer to **map[string]int32** |  | [optional] 
 **ReferencingConfiguredPartNodeIds** | Pointer to **[]string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
-**State** | Pointer to **string** |  | [optional] 
+**State** | Pointer to [**BTMetadataStateType**](BTMetadataStateType.md) |  | [optional] 
 **ThumbnailConfigurationId** | Pointer to **string** |  | [optional] 
 **ThumbnailInfo** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **Title1** | Pointer to **string** |  | [optional] 
@@ -385,20 +385,20 @@ HasMaterial returns a boolean if a field has been set.
 
 ### GetMeshState
 
-`func (o *BTPartMetadataInfo) GetMeshState() string`
+`func (o *BTPartMetadataInfo) GetMeshState() GBTMeshState`
 
 GetMeshState returns the MeshState field if non-nil, zero value otherwise.
 
 ### GetMeshStateOk
 
-`func (o *BTPartMetadataInfo) GetMeshStateOk() (*string, bool)`
+`func (o *BTPartMetadataInfo) GetMeshStateOk() (*GBTMeshState, bool)`
 
 GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeshState
 
-`func (o *BTPartMetadataInfo) SetMeshState(v string)`
+`func (o *BTPartMetadataInfo) SetMeshState(v GBTMeshState)`
 
 SetMeshState sets MeshState field to given value.
 
@@ -710,20 +710,20 @@ HasRevision returns a boolean if a field has been set.
 
 ### GetState
 
-`func (o *BTPartMetadataInfo) GetState() string`
+`func (o *BTPartMetadataInfo) GetState() BTMetadataStateType`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *BTPartMetadataInfo) GetStateOk() (*string, bool)`
+`func (o *BTPartMetadataInfo) GetStateOk() (*BTMetadataStateType, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *BTPartMetadataInfo) SetState(v string)`
+`func (o *BTPartMetadataInfo) SetState(v BTMetadataStateType)`
 
 SetState sets State field to given value.
 

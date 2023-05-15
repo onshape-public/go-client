@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,57 +17,57 @@ import (
 
 // BTDrawingParams struct for BTDrawingParams
 type BTDrawingParams struct {
-	Border                    *bool                    `json:"border,omitempty"`
-	ComputeIntersection       *bool                    `json:"computeIntersection,omitempty"`
-	DecimalSeparator          *string                  `json:"decimalSeparator,omitempty"`
-	DisplayStateId            *string                  `json:"displayStateId,omitempty"`
-	DocumentId                *string                  `json:"documentId,omitempty"`
-	DocumentMicroversionId    *string                  `json:"documentMicroversionId,omitempty"`
-	DrawingName               *string                  `json:"drawingName,omitempty"`
-	ElementConfiguration      *string                  `json:"elementConfiguration,omitempty"`
-	ElementId                 *string                  `json:"elementId,omitempty"`
-	ElementMicroversionId     *string                  `json:"elementMicroversionId,omitempty"`
-	ExplosionId               *string                  `json:"explosionId,omitempty"`
-	ExternalDocumentId        *string                  `json:"externalDocumentId,omitempty"`
-	ExternalDocumentVersionId *string                  `json:"externalDocumentVersionId,omitempty"`
-	HiddenLines               *string                  `json:"hiddenLines,omitempty"`
-	IncludeSurfaces           *bool                    `json:"includeSurfaces,omitempty"`
-	IncludeWires              *bool                    `json:"includeWires,omitempty"`
-	IsFlattenedPart           *bool                    `json:"isFlattenedPart,omitempty"`
-	IsSketchOnly              *bool                    `json:"isSketchOnly,omitempty"`
-	IsSurface                 *bool                    `json:"isSurface,omitempty"`
-	Language                  *string                  `json:"language,omitempty"`
-	Location                  *BTElementLocationParams `json:"location,omitempty"`
-	ModelType                 *string                  `json:"modelType,omitempty"`
-	NamedPositionId           *string                  `json:"namedPositionId,omitempty"`
-	NumberHorizontalZones     *int32                   `json:"numberHorizontalZones,omitempty"`
-	NumberVerticalZones       *int32                   `json:"numberVerticalZones,omitempty"`
-	PartId                    *string                  `json:"partId,omitempty"`
-	PartNumber                *string                  `json:"partNumber,omitempty"`
-	PartQuery                 *string                  `json:"partQuery,omitempty"`
-	Projection                *string                  `json:"projection,omitempty"`
-	PureSketch                *bool                    `json:"pureSketch,omitempty"`
-	QualityOption             *string                  `json:"qualityOption,omitempty"`
-	ReferenceType             *int32                   `json:"referenceType,omitempty"`
-	ReferenceTypeEnum         *string                  `json:"referenceTypeEnum,omitempty"`
-	Revision                  *string                  `json:"revision,omitempty"`
-	ShowCutGeomOnly           *bool                    `json:"showCutGeomOnly,omitempty"`
-	SimplificationOption      *string                  `json:"simplificationOption,omitempty"`
-	SimplificationThreshold   *float64                 `json:"simplificationThreshold,omitempty"`
-	Size                      *string                  `json:"size,omitempty"`
-	SketchIds                 []string                 `json:"sketchIds,omitempty"`
-	Standard                  *string                  `json:"standard,omitempty"`
-	StartZones                *string                  `json:"startZones,omitempty"`
-	TemplateArgs              []string                 `json:"templateArgs,omitempty"`
-	TemplateDocumentId        *string                  `json:"templateDocumentId,omitempty"`
-	TemplateElementId         *string                  `json:"templateElementId,omitempty"`
-	TemplateName              *string                  `json:"templateName,omitempty"`
-	TemplateVersionId         *string                  `json:"templateVersionId,omitempty"`
-	TemplateWorkspaceId       *string                  `json:"templateWorkspaceId,omitempty"`
-	Titleblock                *bool                    `json:"titleblock,omitempty"`
-	Units                     *string                  `json:"units,omitempty"`
-	Views                     *string                  `json:"views,omitempty"`
-	WorkspaceId               *string                  `json:"workspaceId,omitempty"`
+	Border                    *bool                       `json:"border,omitempty"`
+	ComputeIntersection       *bool                       `json:"computeIntersection,omitempty"`
+	DecimalSeparator          *string                     `json:"decimalSeparator,omitempty"`
+	DisplayStateId            *string                     `json:"displayStateId,omitempty"`
+	DocumentId                *string                     `json:"documentId,omitempty"`
+	DocumentMicroversionId    *string                     `json:"documentMicroversionId,omitempty"`
+	DrawingName               *string                     `json:"drawingName,omitempty"`
+	ElementConfiguration      *string                     `json:"elementConfiguration,omitempty"`
+	ElementId                 *string                     `json:"elementId,omitempty"`
+	ElementMicroversionId     *string                     `json:"elementMicroversionId,omitempty"`
+	ExplosionId               *string                     `json:"explosionId,omitempty"`
+	ExternalDocumentId        *string                     `json:"externalDocumentId,omitempty"`
+	ExternalDocumentVersionId *string                     `json:"externalDocumentVersionId,omitempty"`
+	HiddenLines               *BTDrawingHiddenLineOption  `json:"hiddenLines,omitempty"`
+	IncludeSurfaces           *bool                       `json:"includeSurfaces,omitempty"`
+	IncludeWires              *bool                       `json:"includeWires,omitempty"`
+	IsFlattenedPart           *bool                       `json:"isFlattenedPart,omitempty"`
+	IsSketchOnly              *bool                       `json:"isSketchOnly,omitempty"`
+	IsSurface                 *bool                       `json:"isSurface,omitempty"`
+	Language                  *string                     `json:"language,omitempty"`
+	Location                  *BTElementLocationParams    `json:"location,omitempty"`
+	ModelType                 *string                     `json:"modelType,omitempty"`
+	NamedPositionId           *string                     `json:"namedPositionId,omitempty"`
+	NumberHorizontalZones     *int32                      `json:"numberHorizontalZones,omitempty"`
+	NumberVerticalZones       *int32                      `json:"numberVerticalZones,omitempty"`
+	PartId                    *string                     `json:"partId,omitempty"`
+	PartNumber                *string                     `json:"partNumber,omitempty"`
+	PartQuery                 *string                     `json:"partQuery,omitempty"`
+	Projection                *string                     `json:"projection,omitempty"`
+	PureSketch                *bool                       `json:"pureSketch,omitempty"`
+	QualityOption             *string                     `json:"qualityOption,omitempty"`
+	ReferenceType             *int32                      `json:"referenceType,omitempty"`
+	ReferenceTypeEnum         *GBTAppElementReferenceType `json:"referenceTypeEnum,omitempty"`
+	Revision                  *string                     `json:"revision,omitempty"`
+	ShowCutGeomOnly           *bool                       `json:"showCutGeomOnly,omitempty"`
+	SimplificationOption      *string                     `json:"simplificationOption,omitempty"`
+	SimplificationThreshold   *float64                    `json:"simplificationThreshold,omitempty"`
+	Size                      *string                     `json:"size,omitempty"`
+	SketchIds                 []string                    `json:"sketchIds,omitempty"`
+	Standard                  *string                     `json:"standard,omitempty"`
+	StartZones                *string                     `json:"startZones,omitempty"`
+	TemplateArgs              []string                    `json:"templateArgs,omitempty"`
+	TemplateDocumentId        *string                     `json:"templateDocumentId,omitempty"`
+	TemplateElementId         *string                     `json:"templateElementId,omitempty"`
+	TemplateName              *string                     `json:"templateName,omitempty"`
+	TemplateVersionId         *string                     `json:"templateVersionId,omitempty"`
+	TemplateWorkspaceId       *string                     `json:"templateWorkspaceId,omitempty"`
+	Titleblock                *bool                       `json:"titleblock,omitempty"`
+	Units                     *string                     `json:"units,omitempty"`
+	Views                     *string                     `json:"views,omitempty"`
+	WorkspaceId               *string                     `json:"workspaceId,omitempty"`
 }
 
 // NewBTDrawingParams instantiates a new BTDrawingParams object
@@ -504,9 +504,9 @@ func (o *BTDrawingParams) SetExternalDocumentVersionId(v string) {
 }
 
 // GetHiddenLines returns the HiddenLines field value if set, zero value otherwise.
-func (o *BTDrawingParams) GetHiddenLines() string {
+func (o *BTDrawingParams) GetHiddenLines() BTDrawingHiddenLineOption {
 	if o == nil || o.HiddenLines == nil {
-		var ret string
+		var ret BTDrawingHiddenLineOption
 		return ret
 	}
 	return *o.HiddenLines
@@ -514,7 +514,7 @@ func (o *BTDrawingParams) GetHiddenLines() string {
 
 // GetHiddenLinesOk returns a tuple with the HiddenLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDrawingParams) GetHiddenLinesOk() (*string, bool) {
+func (o *BTDrawingParams) GetHiddenLinesOk() (*BTDrawingHiddenLineOption, bool) {
 	if o == nil || o.HiddenLines == nil {
 		return nil, false
 	}
@@ -530,8 +530,8 @@ func (o *BTDrawingParams) HasHiddenLines() bool {
 	return false
 }
 
-// SetHiddenLines gets a reference to the given string and assigns it to the HiddenLines field.
-func (o *BTDrawingParams) SetHiddenLines(v string) {
+// SetHiddenLines gets a reference to the given BTDrawingHiddenLineOption and assigns it to the HiddenLines field.
+func (o *BTDrawingParams) SetHiddenLines(v BTDrawingHiddenLineOption) {
 	o.HiddenLines = &v
 }
 
@@ -1112,9 +1112,9 @@ func (o *BTDrawingParams) SetReferenceType(v int32) {
 }
 
 // GetReferenceTypeEnum returns the ReferenceTypeEnum field value if set, zero value otherwise.
-func (o *BTDrawingParams) GetReferenceTypeEnum() string {
+func (o *BTDrawingParams) GetReferenceTypeEnum() GBTAppElementReferenceType {
 	if o == nil || o.ReferenceTypeEnum == nil {
-		var ret string
+		var ret GBTAppElementReferenceType
 		return ret
 	}
 	return *o.ReferenceTypeEnum
@@ -1122,7 +1122,7 @@ func (o *BTDrawingParams) GetReferenceTypeEnum() string {
 
 // GetReferenceTypeEnumOk returns a tuple with the ReferenceTypeEnum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDrawingParams) GetReferenceTypeEnumOk() (*string, bool) {
+func (o *BTDrawingParams) GetReferenceTypeEnumOk() (*GBTAppElementReferenceType, bool) {
 	if o == nil || o.ReferenceTypeEnum == nil {
 		return nil, false
 	}
@@ -1138,8 +1138,8 @@ func (o *BTDrawingParams) HasReferenceTypeEnum() bool {
 	return false
 }
 
-// SetReferenceTypeEnum gets a reference to the given string and assigns it to the ReferenceTypeEnum field.
-func (o *BTDrawingParams) SetReferenceTypeEnum(v string) {
+// SetReferenceTypeEnum gets a reference to the given GBTAppElementReferenceType and assigns it to the ReferenceTypeEnum field.
+func (o *BTDrawingParams) SetReferenceTypeEnum(v GBTAppElementReferenceType) {
 	o.ReferenceTypeEnum = &v
 }
 

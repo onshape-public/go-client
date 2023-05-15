@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTPType**](GBTPType.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTPTypeNameStandard291) GetType() string`
+`func (o *BTPTypeNameStandard291) GetType() GBTPType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTPTypeNameStandard291) GetTypeOk() (*string, bool)`
+`func (o *BTPTypeNameStandard291) GetTypeOk() (*GBTPType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTPTypeNameStandard291) SetType(v string)`
+`func (o *BTPTypeNameStandard291) SetType(v GBTPType)`
 
 SetType sets Type field to given value.
 

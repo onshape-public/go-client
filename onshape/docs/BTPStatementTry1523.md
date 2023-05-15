@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
 **CatchBlock** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
 **CatchVariable** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **Identifier** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **Silent** | Pointer to **bool** |  | [optional] 
 **SpaceAfterCatch** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceBeforeSilent** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
-**StandardType** | Pointer to **string** |  | [optional] 
+**StandardType** | Pointer to [**GBTPType**](GBTPType.md) |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -33,31 +33,6 @@ will change when the set of required properties is changed
 NewBTPStatementTry1523WithDefaults instantiates a new BTPStatementTry1523 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBody
-
-`func (o *BTPStatementTry1523) GetBody() BTPStatementBlock271`
-
-GetBody returns the Body field if non-nil, zero value otherwise.
-
-### GetBodyOk
-
-`func (o *BTPStatementTry1523) GetBodyOk() (*BTPStatementBlock271, bool)`
-
-GetBodyOk returns a tuple with the Body field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBody
-
-`func (o *BTPStatementTry1523) SetBody(v BTPStatementBlock271)`
-
-SetBody sets Body field to given value.
-
-### HasBody
-
-`func (o *BTPStatementTry1523) HasBody() bool`
-
-HasBody returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -83,6 +58,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPStatementTry1523) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBody
+
+`func (o *BTPStatementTry1523) GetBody() BTPStatementBlock271`
+
+GetBody returns the Body field if non-nil, zero value otherwise.
+
+### GetBodyOk
+
+`func (o *BTPStatementTry1523) GetBodyOk() (*BTPStatementBlock271, bool)`
+
+GetBodyOk returns a tuple with the Body field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBody
+
+`func (o *BTPStatementTry1523) SetBody(v BTPStatementBlock271)`
+
+SetBody sets Body field to given value.
+
+### HasBody
+
+`func (o *BTPStatementTry1523) HasBody() bool`
+
+HasBody returns a boolean if a field has been set.
 
 ### GetCatchBlock
 
@@ -236,20 +236,20 @@ HasSpaceBeforeSilent returns a boolean if a field has been set.
 
 ### GetStandardType
 
-`func (o *BTPStatementTry1523) GetStandardType() string`
+`func (o *BTPStatementTry1523) GetStandardType() GBTPType`
 
 GetStandardType returns the StandardType field if non-nil, zero value otherwise.
 
 ### GetStandardTypeOk
 
-`func (o *BTPStatementTry1523) GetStandardTypeOk() (*string, bool)`
+`func (o *BTPStatementTry1523) GetStandardTypeOk() (*GBTPType, bool)`
 
 GetStandardTypeOk returns a tuple with the StandardType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStandardType
 
-`func (o *BTPStatementTry1523) SetStandardType(v string)`
+`func (o *BTPStatementTry1523) SetStandardType(v GBTPType)`
 
 SetStandardType sets StandardType field to given value.
 

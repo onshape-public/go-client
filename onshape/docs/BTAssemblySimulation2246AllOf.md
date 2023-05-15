@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Modal** | Pointer to **bool** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTAssemblySimulationType**](GBTAssemblySimulationType.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasModal returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTAssemblySimulation2246AllOf) GetType() string`
+`func (o *BTAssemblySimulation2246AllOf) GetType() GBTAssemblySimulationType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTAssemblySimulation2246AllOf) GetTypeOk() (*string, bool)`
+`func (o *BTAssemblySimulation2246AllOf) GetTypeOk() (*GBTAssemblySimulationType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTAssemblySimulation2246AllOf) SetType(v string)`
+`func (o *BTAssemblySimulation2246AllOf) SetType(v GBTAssemblySimulationType)`
 
 SetType sets Type field to given value.
 

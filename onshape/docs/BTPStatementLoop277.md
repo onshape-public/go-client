@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Body** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**Body** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
 **SpaceAfterLoopType** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewBTPStatementLoop277WithDefaults instantiates a new BTPStatementLoop277 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBody
-
-`func (o *BTPStatementLoop277) GetBody() BTPStatement269`
-
-GetBody returns the Body field if non-nil, zero value otherwise.
-
-### GetBodyOk
-
-`func (o *BTPStatementLoop277) GetBodyOk() (*BTPStatement269, bool)`
-
-GetBodyOk returns a tuple with the Body field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBody
-
-`func (o *BTPStatementLoop277) SetBody(v BTPStatement269)`
-
-SetBody sets Body field to given value.
-
-### HasBody
-
-`func (o *BTPStatementLoop277) HasBody() bool`
-
-HasBody returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -76,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPStatementLoop277) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBody
+
+`func (o *BTPStatementLoop277) GetBody() BTPStatement269`
+
+GetBody returns the Body field if non-nil, zero value otherwise.
+
+### GetBodyOk
+
+`func (o *BTPStatementLoop277) GetBodyOk() (*BTPStatement269, bool)`
+
+GetBodyOk returns a tuple with the Body field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBody
+
+`func (o *BTPStatementLoop277) SetBody(v BTPStatement269)`
+
+SetBody sets Body field to given value.
+
+### HasBody
+
+`func (o *BTPStatementLoop277) HasBody() bool`
+
+HasBody returns a boolean if a field has been set.
 
 ### GetSpaceAfterLoopType
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,20 +17,20 @@ import (
 
 // BTAclEntryInfo struct for BTAclEntryInfo
 type BTAclEntryInfo struct {
-	AcceptOwnerTransfer  *bool    `json:"acceptOwnerTransfer,omitempty"`
-	CompanyName          *string  `json:"companyName,omitempty"`
-	Email                *string  `json:"email,omitempty"`
-	EnterpriseMember     *bool    `json:"enterpriseMember,omitempty"`
-	EntryId              *string  `json:"entryId,omitempty"`
-	EntryState           *string  `json:"entryState,omitempty"`
-	EntryType            *int32   `json:"entryType,omitempty"`
-	Image                *string  `json:"image,omitempty"`
-	Name                 *string  `json:"name,omitempty"`
-	ObjectId             *string  `json:"objectId,omitempty"`
-	PendingOwnerTransfer *bool    `json:"pendingOwnerTransfer,omitempty"`
-	Permission           *int64   `json:"permission,omitempty"`
-	PermissionSet        []string `json:"permissionSet,omitempty"`
-	TeamName             *string  `json:"teamName,omitempty"`
+	AcceptOwnerTransfer  *bool        `json:"acceptOwnerTransfer,omitempty"`
+	CompanyName          *string      `json:"companyName,omitempty"`
+	Email                *string      `json:"email,omitempty"`
+	EnterpriseMember     *bool        `json:"enterpriseMember,omitempty"`
+	EntryId              *string      `json:"entryId,omitempty"`
+	EntryState           *BTUserState `json:"entryState,omitempty"`
+	EntryType            *int32       `json:"entryType,omitempty"`
+	Image                *string      `json:"image,omitempty"`
+	Name                 *string      `json:"name,omitempty"`
+	ObjectId             *string      `json:"objectId,omitempty"`
+	PendingOwnerTransfer *bool        `json:"pendingOwnerTransfer,omitempty"`
+	Permission           *int64       `json:"permission,omitempty"`
+	PermissionSet        []string     `json:"permissionSet,omitempty"`
+	TeamName             *string      `json:"teamName,omitempty"`
 }
 
 // NewBTAclEntryInfo instantiates a new BTAclEntryInfo object
@@ -211,9 +211,9 @@ func (o *BTAclEntryInfo) SetEntryId(v string) {
 }
 
 // GetEntryState returns the EntryState field value if set, zero value otherwise.
-func (o *BTAclEntryInfo) GetEntryState() string {
+func (o *BTAclEntryInfo) GetEntryState() BTUserState {
 	if o == nil || o.EntryState == nil {
-		var ret string
+		var ret BTUserState
 		return ret
 	}
 	return *o.EntryState
@@ -221,7 +221,7 @@ func (o *BTAclEntryInfo) GetEntryState() string {
 
 // GetEntryStateOk returns a tuple with the EntryState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAclEntryInfo) GetEntryStateOk() (*string, bool) {
+func (o *BTAclEntryInfo) GetEntryStateOk() (*BTUserState, bool) {
 	if o == nil || o.EntryState == nil {
 		return nil, false
 	}
@@ -237,8 +237,8 @@ func (o *BTAclEntryInfo) HasEntryState() bool {
 	return false
 }
 
-// SetEntryState gets a reference to the given string and assigns it to the EntryState field.
-func (o *BTAclEntryInfo) SetEntryState(v string) {
+// SetEntryState gets a reference to the given BTUserState and assigns it to the EntryState field.
+func (o *BTAclEntryInfo) SetEntryState(v BTUserState) {
 	o.EntryState = &v
 }
 

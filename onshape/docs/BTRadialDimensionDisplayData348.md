@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **PositionR** | Pointer to **float64** |  | [optional] 
 **PositionT** | Pointer to **float64** |  | [optional] 
-**RadiusDisplay** | Pointer to **string** |  | [optional] 
+**RadiusDisplay** | Pointer to [**GBTRadiusDisplay**](GBTRadiusDisplay.md) |  | [optional] 
 **RealDiameter** | Pointer to **bool** |  | [optional] 
 **WitnessEndPoint0r** | Pointer to **float64** |  | [optional] 
 **WitnessEndPoint0t** | Pointer to **float64** |  | [optional] 
@@ -110,20 +110,20 @@ HasPositionT returns a boolean if a field has been set.
 
 ### GetRadiusDisplay
 
-`func (o *BTRadialDimensionDisplayData348) GetRadiusDisplay() string`
+`func (o *BTRadialDimensionDisplayData348) GetRadiusDisplay() GBTRadiusDisplay`
 
 GetRadiusDisplay returns the RadiusDisplay field if non-nil, zero value otherwise.
 
 ### GetRadiusDisplayOk
 
-`func (o *BTRadialDimensionDisplayData348) GetRadiusDisplayOk() (*string, bool)`
+`func (o *BTRadialDimensionDisplayData348) GetRadiusDisplayOk() (*GBTRadiusDisplay, bool)`
 
 GetRadiusDisplayOk returns a tuple with the RadiusDisplay field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRadiusDisplay
 
-`func (o *BTRadialDimensionDisplayData348) SetRadiusDisplay(v string)`
+`func (o *BTRadialDimensionDisplayData348) SetRadiusDisplay(v GBTRadiusDisplay)`
 
 SetRadiusDisplay sets RadiusDisplay field to given value.
 

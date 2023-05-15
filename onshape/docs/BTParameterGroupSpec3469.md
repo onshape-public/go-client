@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **CollapsedByDefault** | Pointer to **bool** |  | [optional] 
 **DrivingParameterId** | Pointer to **string** |  | [optional] 
 **GroupId** | Pointer to **string** |  | [optional] 
@@ -57,6 +58,31 @@ SetAdditionalLocalizedStrings sets AdditionalLocalizedStrings field to given val
 `func (o *BTParameterGroupSpec3469) HasAdditionalLocalizedStrings() bool`
 
 HasAdditionalLocalizedStrings returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTParameterGroupSpec3469) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTParameterGroupSpec3469) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTParameterGroupSpec3469) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTParameterGroupSpec3469) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetCollapsedByDefault
 

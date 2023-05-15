@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the pattern. | [optional] 
 **SeedToPatternInstances** | Pointer to **map[string][]string** | Mapping of seed to pattern instance ids. | [optional] 
 **Suppressed** | Pointer to **bool** | If pattern is suppressed. | [optional] 
-**Type** | Pointer to **string** | Pattern type. | [optional] 
+**Type** | Pointer to [**GBTPatternType**](GBTPatternType.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasSuppressed returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTAssemblyPatternInfo) GetType() string`
+`func (o *BTAssemblyPatternInfo) GetType() GBTPatternType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTAssemblyPatternInfo) GetTypeOk() (*string, bool)`
+`func (o *BTAssemblyPatternInfo) GetTypeOk() (*GBTPatternType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTAssemblyPatternInfo) SetType(v string)`
+`func (o *BTAssemblyPatternInfo) SetType(v GBTPatternType)`
 
 SetType sets Type field to given value.
 

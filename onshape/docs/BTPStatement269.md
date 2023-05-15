@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Annotation** | Pointer to [**BTPAnnotation231**](BTPAnnotation231.md) |  | [optional] 
 **Atomic** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**DocumentationType** | Pointer to **string** |  | [optional] 
+**DocumentationType** | Pointer to [**GBTPDefinitionType**](GBTPDefinitionType.md) |  | [optional] 
 **EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ShortDescriptor** | Pointer to **string** |  | [optional] 
@@ -112,20 +112,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetDocumentationType
 
-`func (o *BTPStatement269) GetDocumentationType() string`
+`func (o *BTPStatement269) GetDocumentationType() GBTPDefinitionType`
 
 GetDocumentationType returns the DocumentationType field if non-nil, zero value otherwise.
 
 ### GetDocumentationTypeOk
 
-`func (o *BTPStatement269) GetDocumentationTypeOk() (*string, bool)`
+`func (o *BTPStatement269) GetDocumentationTypeOk() (*GBTPDefinitionType, bool)`
 
 GetDocumentationTypeOk returns a tuple with the DocumentationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDocumentationType
 
-`func (o *BTPStatement269) SetDocumentationType(v string)`
+`func (o *BTPStatement269) SetDocumentationType(v GBTPDefinitionType)`
 
 SetDocumentationType sets DocumentationType field to given value.
 
