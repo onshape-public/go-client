@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BlockBuildFunctionAccess** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**BlockBuildFunctionAccess** | Pointer to **bool** |  | [optional] 
 **PartIdentity** | Pointer to [**BTPSOIdentity2741**](BTPSOIdentity2741.md) |  | [optional] 
 **PartQuery** | Pointer to [**BTMParameterQueryList148**](BTMParameterQueryList148.md) |  | [optional] 
 **StandardContentParametersId** | Pointer to **string** |  | [optional] 
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewBTMParameterReferencePartStudio3302WithDefaults instantiates a new BTMParameterReferencePartStudio3302 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBlockBuildFunctionAccess
-
-`func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccess() bool`
-
-GetBlockBuildFunctionAccess returns the BlockBuildFunctionAccess field if non-nil, zero value otherwise.
-
-### GetBlockBuildFunctionAccessOk
-
-`func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccessOk() (*bool, bool)`
-
-GetBlockBuildFunctionAccessOk returns a tuple with the BlockBuildFunctionAccess field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBlockBuildFunctionAccess
-
-`func (o *BTMParameterReferencePartStudio3302) SetBlockBuildFunctionAccess(v bool)`
-
-SetBlockBuildFunctionAccess sets BlockBuildFunctionAccess field to given value.
-
-### HasBlockBuildFunctionAccess
-
-`func (o *BTMParameterReferencePartStudio3302) HasBlockBuildFunctionAccess() bool`
-
-HasBlockBuildFunctionAccess returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -78,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMParameterReferencePartStudio3302) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBlockBuildFunctionAccess
+
+`func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccess() bool`
+
+GetBlockBuildFunctionAccess returns the BlockBuildFunctionAccess field if non-nil, zero value otherwise.
+
+### GetBlockBuildFunctionAccessOk
+
+`func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccessOk() (*bool, bool)`
+
+GetBlockBuildFunctionAccessOk returns a tuple with the BlockBuildFunctionAccess field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockBuildFunctionAccess
+
+`func (o *BTMParameterReferencePartStudio3302) SetBlockBuildFunctionAccess(v bool)`
+
+SetBlockBuildFunctionAccess sets BlockBuildFunctionAccess field to given value.
+
+### HasBlockBuildFunctionAccess
+
+`func (o *BTMParameterReferencePartStudio3302) HasBlockBuildFunctionAccess() bool`
+
+HasBlockBuildFunctionAccess returns a boolean if a field has been set.
 
 ### GetPartIdentity
 

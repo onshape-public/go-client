@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **OwnerOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **SecondDeterministicId** | Pointer to **string** |  | [optional] 
 **SecondOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**GBTAssemblyFeatureDisplayStatus**](GBTAssemblyFeatureDisplayStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -287,20 +287,20 @@ HasSecondOccurrence returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *BTGeometryMateDisplayData1050) GetStatus() string`
+`func (o *BTGeometryMateDisplayData1050) GetStatus() GBTAssemblyFeatureDisplayStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *BTGeometryMateDisplayData1050) GetStatusOk() (*string, bool)`
+`func (o *BTGeometryMateDisplayData1050) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *BTGeometryMateDisplayData1050) SetStatus(v string)`
+`func (o *BTGeometryMateDisplayData1050) SetStatus(v GBTAssemblyFeatureDisplayStatus)`
 
 SetStatus sets Status field to given value.
 

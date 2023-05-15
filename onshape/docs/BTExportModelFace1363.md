@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AppearancePropertyNodeId** | Pointer to **string** | Identifies the application of the appearance. Faces that share a value were assigned an appearance together. | [optional] 
 **Area** | Pointer to **float64** |  | [optional] 
 **Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **FaceProperties** | Pointer to [**BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Loops** | Pointer to [**[]BTExportModelLoop1182**](BTExportModelLoop1182.md) |  | [optional] 
@@ -106,6 +107,31 @@ SetBox sets Box field to given value.
 `func (o *BTExportModelFace1363) HasBox() bool`
 
 HasBox returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTExportModelFace1363) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportModelFace1363) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportModelFace1363) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportModelFace1363) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetFaceProperties
 

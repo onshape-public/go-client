@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Href** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]BTGlobalTreeNodeInfo**](BTGlobalTreeNodeInfo.md) |  | [optional] 
-**Next** | Pointer to **string** |  | [optional] 
-**Previous** | Pointer to **string** |  | [optional] 
+**Href** | Pointer to **string** | Requested Document URL | [optional] 
+**Items** | Pointer to [**[]BTGlobalTreeNodeInfo**](BTGlobalTreeNodeInfo.md) | Document Items array. Array entries are the same as that returned from \&quot;/api/documents/{did}\&quot;. | [optional] 
+**Next** | Pointer to **string** | The URL for the next page of items. Responses are limited to 20 items per page. | [optional] 
+**Previous** | Pointer to **string** | The URL for the previous page of items. Responses are limited to 20 items per page. | [optional] 
 
 ## Methods
 

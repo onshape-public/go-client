@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Direction** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **DirectionOrientedWithFace** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **Origin** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTCurveTypeEnum**](GBTCurveTypeEnum.md) |  | [optional] 
 
 ## Methods
 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewBTCurveDescription1583WithDefaults instantiates a new BTCurveDescription1583 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTCurveDescription1583) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTCurveDescription1583) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTCurveDescription1583) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTCurveDescription1583) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetDirection
 
@@ -105,20 +131,20 @@ HasOrigin returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTCurveDescription1583) GetType() string`
+`func (o *BTCurveDescription1583) GetType() GBTCurveTypeEnum`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTCurveDescription1583) GetTypeOk() (*string, bool)`
+`func (o *BTCurveDescription1583) GetTypeOk() (*GBTCurveTypeEnum, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTCurveDescription1583) SetType(v string)`
+`func (o *BTCurveDescription1583) SetType(v GBTCurveTypeEnum)`
 
 SetType sets Type field to given value.
 

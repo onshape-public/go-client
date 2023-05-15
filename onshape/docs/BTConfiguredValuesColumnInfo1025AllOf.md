@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **ParentName** | Pointer to **string** |  | [optional] 
-**ParentType** | Pointer to **string** |  | [optional] 
+**ParentType** | Pointer to [**GBTConfiguredParentType**](GBTConfiguredParentType.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasParentName returns a boolean if a field has been set.
 
 ### GetParentType
 
-`func (o *BTConfiguredValuesColumnInfo1025AllOf) GetParentType() string`
+`func (o *BTConfiguredValuesColumnInfo1025AllOf) GetParentType() GBTConfiguredParentType`
 
 GetParentType returns the ParentType field if non-nil, zero value otherwise.
 
 ### GetParentTypeOk
 
-`func (o *BTConfiguredValuesColumnInfo1025AllOf) GetParentTypeOk() (*string, bool)`
+`func (o *BTConfiguredValuesColumnInfo1025AllOf) GetParentTypeOk() (*GBTConfiguredParentType, bool)`
 
 GetParentTypeOk returns a tuple with the ParentType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentType
 
-`func (o *BTConfiguredValuesColumnInfo1025AllOf) SetParentType(v string)`
+`func (o *BTConfiguredValuesColumnInfo1025AllOf) SetParentType(v GBTConfiguredParentType)`
 
 SetParentType sets ParentType field to given value.
 

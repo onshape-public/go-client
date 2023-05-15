@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
+**BtType** | Pointer to **string** |  | [optional] 
 **UnitToPower** | Pointer to **map[string]int32** |  | [optional] 
 **Value** | Pointer to **float64** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBTFSValueWithUnits1817
 
-`func NewBTFSValueWithUnits1817(btType string, ) *BTFSValueWithUnits1817`
+`func NewBTFSValueWithUnits1817() *BTFSValueWithUnits1817`
 
 NewBTFSValueWithUnits1817 instantiates a new BTFSValueWithUnits1817 object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
+### HasBtType
+
+`func (o *BTFSValueWithUnits1817) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetUnitToPower
 

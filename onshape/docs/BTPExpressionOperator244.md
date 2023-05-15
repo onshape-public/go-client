@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Operand1** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **Operand2** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **Operand3** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
-**Operator** | Pointer to **string** |  | [optional] 
+**Operator** | Pointer to [**GBTPOperator**](GBTPOperator.md) |  | [optional] 
 **SpaceAfterNamespace** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceAfterOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceBeforeOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
@@ -239,20 +239,20 @@ HasOperand3 returns a boolean if a field has been set.
 
 ### GetOperator
 
-`func (o *BTPExpressionOperator244) GetOperator() string`
+`func (o *BTPExpressionOperator244) GetOperator() GBTPOperator`
 
 GetOperator returns the Operator field if non-nil, zero value otherwise.
 
 ### GetOperatorOk
 
-`func (o *BTPExpressionOperator244) GetOperatorOk() (*string, bool)`
+`func (o *BTPExpressionOperator244) GetOperatorOk() (*GBTPOperator, bool)`
 
 GetOperatorOk returns a tuple with the Operator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperator
 
-`func (o *BTPExpressionOperator244) SetOperator(v string)`
+`func (o *BTPExpressionOperator244) SetOperator(v GBTPOperator)`
 
 SetOperator sets Operator field to given value.
 

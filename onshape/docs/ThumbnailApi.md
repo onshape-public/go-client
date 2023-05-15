@@ -1,6 +1,6 @@
 # \ThumbnailApi
 
-All URIs are relative to *https://cad.onshape.com/api/v5*
+All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## DeleteApplicationThumbnails
 
-> map[string]interface{} DeleteApplicationThumbnails(ctx, did, wv, wvid, eid).Execute()
+> map[string]interface{} DeleteApplicationThumbnails(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
 
 Delete application tab thumbnail by document ID, workspace or version ID, and tab ID.
 
@@ -37,14 +37,15 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wv := "wv_example" // string | 
-    wvid := "wvid_example" // string | 
-    eid := "eid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ThumbnailApi.DeleteApplicationThumbnails(context.Background(), did, wv, wvid, eid).Execute()
+    resp, r, err := apiClient.ThumbnailApi.DeleteApplicationThumbnails(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.DeleteApplicationThumbnails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,10 +61,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wv** | **string** |  | 
-**wvid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -76,6 +77,7 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
 
 ### Return type
 
@@ -83,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -154,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -232,12 +234,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: image/_*
+- **Accept**: image/*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -311,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -399,12 +401,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: image/_*
+- **Accept**: image/*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -487,12 +489,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: image/_*
+- **Accept**: image/*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -555,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -628,7 +630,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -699,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -767,7 +769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -781,7 +783,7 @@ Name | Type | Description  | Notes
 
 ## SetApplicationElementThumbnail
 
-> map[string]interface{} SetApplicationElementThumbnail(ctx, did, wv, wvid, eid).BTApplicationElementThumbnailParamsArray(bTApplicationElementThumbnailParamsArray).Overwrite(overwrite).Execute()
+> map[string]interface{} SetApplicationElementThumbnail(ctx, did, wv, wvid, eid).BTApplicationElementThumbnailParamsArray(bTApplicationElementThumbnailParamsArray).LinkDocumentId(linkDocumentId).Overwrite(overwrite).Execute()
 
 Update application tab thumbnail by document ID, workspace or version ID, and tab ID.
 
@@ -798,16 +800,17 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wv := "wv_example" // string | 
-    wvid := "wvid_example" // string | 
-    eid := "eid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
     bTApplicationElementThumbnailParamsArray := *openapiclient.NewBTApplicationElementThumbnailParamsArray() // BTApplicationElementThumbnailParamsArray | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     overwrite := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ThumbnailApi.SetApplicationElementThumbnail(context.Background(), did, wv, wvid, eid).BTApplicationElementThumbnailParamsArray(bTApplicationElementThumbnailParamsArray).Overwrite(overwrite).Execute()
+    resp, r, err := apiClient.ThumbnailApi.SetApplicationElementThumbnail(context.Background(), did, wv, wvid, eid).BTApplicationElementThumbnailParamsArray(bTApplicationElementThumbnailParamsArray).LinkDocumentId(linkDocumentId).Overwrite(overwrite).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.SetApplicationElementThumbnail``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -823,10 +826,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wv** | **string** |  | 
-**wvid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -840,6 +843,7 @@ Name | Type | Description  | Notes
 
 
  **bTApplicationElementThumbnailParamsArray** | [**BTApplicationElementThumbnailParamsArray**](BTApplicationElementThumbnailParamsArray.md) |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **overwrite** | **bool** |  | [default to false]
 
 ### Return type
@@ -848,7 +852,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

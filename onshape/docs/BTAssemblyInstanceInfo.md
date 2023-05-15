@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **PartId** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**BTAssemblyInstanceStatus**](BTAssemblyInstanceStatus.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**BTAssemblyInstanceType**](BTAssemblyInstanceType.md) |  | [optional] 
 
 ## Methods
 
@@ -367,20 +367,20 @@ HasRevision returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *BTAssemblyInstanceInfo) GetStatus() string`
+`func (o *BTAssemblyInstanceInfo) GetStatus() BTAssemblyInstanceStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *BTAssemblyInstanceInfo) GetStatusOk() (*string, bool)`
+`func (o *BTAssemblyInstanceInfo) GetStatusOk() (*BTAssemblyInstanceStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *BTAssemblyInstanceInfo) SetStatus(v string)`
+`func (o *BTAssemblyInstanceInfo) SetStatus(v BTAssemblyInstanceStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -417,20 +417,20 @@ HasSuppressed returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTAssemblyInstanceInfo) GetType() string`
+`func (o *BTAssemblyInstanceInfo) GetType() BTAssemblyInstanceType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTAssemblyInstanceInfo) GetTypeOk() (*string, bool)`
+`func (o *BTAssemblyInstanceInfo) GetTypeOk() (*BTAssemblyInstanceType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTAssemblyInstanceInfo) SetType(v string)`
+`func (o *BTAssemblyInstanceInfo) SetType(v BTAssemblyInstanceType)`
 
 SetType sets Type field to given value.
 

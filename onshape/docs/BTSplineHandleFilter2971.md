@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowsSplineHandle** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AllowsSplineHandle** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewBTSplineHandleFilter2971WithDefaults instantiates a new BTSplineHandleFilter2971 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAllowsSplineHandle
-
-`func (o *BTSplineHandleFilter2971) GetAllowsSplineHandle() bool`
-
-GetAllowsSplineHandle returns the AllowsSplineHandle field if non-nil, zero value otherwise.
-
-### GetAllowsSplineHandleOk
-
-`func (o *BTSplineHandleFilter2971) GetAllowsSplineHandleOk() (*bool, bool)`
-
-GetAllowsSplineHandleOk returns a tuple with the AllowsSplineHandle field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowsSplineHandle
-
-`func (o *BTSplineHandleFilter2971) SetAllowsSplineHandle(v bool)`
-
-SetAllowsSplineHandle sets AllowsSplineHandle field to given value.
-
-### HasAllowsSplineHandle
-
-`func (o *BTSplineHandleFilter2971) HasAllowsSplineHandle() bool`
-
-HasAllowsSplineHandle returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -75,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTSplineHandleFilter2971) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAllowsSplineHandle
+
+`func (o *BTSplineHandleFilter2971) GetAllowsSplineHandle() bool`
+
+GetAllowsSplineHandle returns the AllowsSplineHandle field if non-nil, zero value otherwise.
+
+### GetAllowsSplineHandleOk
+
+`func (o *BTSplineHandleFilter2971) GetAllowsSplineHandleOk() (*bool, bool)`
+
+GetAllowsSplineHandleOk returns a tuple with the AllowsSplineHandle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowsSplineHandle
+
+`func (o *BTSplineHandleFilter2971) SetAllowsSplineHandle(v bool)`
+
+SetAllowsSplineHandle sets AllowsSplineHandle field to given value.
+
+### HasAllowsSplineHandle
+
+`func (o *BTSplineHandleFilter2971) HasAllowsSplineHandle() bool`
+
+HasAllowsSplineHandle returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

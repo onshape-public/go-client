@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**EntityType** | Pointer to **string** |  | [optional] 
+**EntityType** | Pointer to [**GBTEntityType**](GBTEntityType.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetEntityType
 
-`func (o *BTEntityTypeFilter124AllOf) GetEntityType() string`
+`func (o *BTEntityTypeFilter124AllOf) GetEntityType() GBTEntityType`
 
 GetEntityType returns the EntityType field if non-nil, zero value otherwise.
 
 ### GetEntityTypeOk
 
-`func (o *BTEntityTypeFilter124AllOf) GetEntityTypeOk() (*string, bool)`
+`func (o *BTEntityTypeFilter124AllOf) GetEntityTypeOk() (*GBTEntityType, bool)`
 
 GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntityType
 
-`func (o *BTEntityTypeFilter124AllOf) SetEntityType(v string)`
+`func (o *BTEntityTypeFilter124AllOf) SetEntityType(v GBTEntityType)`
 
 SetEntityType sets EntityType field to given value.
 

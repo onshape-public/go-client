@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **BelongsToFlattenedSheetMetalBody** | Pointer to **bool** |  | [optional] 
 **BodyId** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
-**Color** | Pointer to **string** |  | [optional] 
+**Color** | Pointer to [**GBTDebugEntityColor**](GBTDebugEntityColor.md) |  | [optional] 
 **DeterministicId** | Pointer to **string** |  | [optional] 
 **SheetMetalModelId** | Pointer to **string** |  | [optional] 
-**Style** | Pointer to **string** |  | [optional] 
+**Style** | Pointer to [**GBTDebugEntityStyle**](GBTDebugEntityStyle.md) |  | [optional] 
 **Tessellation** | Pointer to [**BTTessellatedGeometry2576**](BTTessellatedGeometry2576.md) |  | [optional] 
 
 ## Methods
@@ -135,20 +135,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetColor
 
-`func (o *BTDebugGeometry2059AllOf) GetColor() string`
+`func (o *BTDebugGeometry2059AllOf) GetColor() GBTDebugEntityColor`
 
 GetColor returns the Color field if non-nil, zero value otherwise.
 
 ### GetColorOk
 
-`func (o *BTDebugGeometry2059AllOf) GetColorOk() (*string, bool)`
+`func (o *BTDebugGeometry2059AllOf) GetColorOk() (*GBTDebugEntityColor, bool)`
 
 GetColorOk returns a tuple with the Color field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetColor
 
-`func (o *BTDebugGeometry2059AllOf) SetColor(v string)`
+`func (o *BTDebugGeometry2059AllOf) SetColor(v GBTDebugEntityColor)`
 
 SetColor sets Color field to given value.
 
@@ -210,20 +210,20 @@ HasSheetMetalModelId returns a boolean if a field has been set.
 
 ### GetStyle
 
-`func (o *BTDebugGeometry2059AllOf) GetStyle() string`
+`func (o *BTDebugGeometry2059AllOf) GetStyle() GBTDebugEntityStyle`
 
 GetStyle returns the Style field if non-nil, zero value otherwise.
 
 ### GetStyleOk
 
-`func (o *BTDebugGeometry2059AllOf) GetStyleOk() (*string, bool)`
+`func (o *BTDebugGeometry2059AllOf) GetStyleOk() (*GBTDebugEntityStyle, bool)`
 
 GetStyleOk returns a tuple with the Style field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStyle
 
-`func (o *BTDebugGeometry2059AllOf) SetStyle(v string)`
+`func (o *BTDebugGeometry2059AllOf) SetStyle(v GBTDebugEntityStyle)`
 
 SetStyle sets Style field to given value.
 

@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AggregatedPropertyId** | Pointer to **string** |  | [optional] 
-**AggregationOperator** | Pointer to **string** |  | [optional] 
-**ErrorValuePolicy** | Pointer to **string** |  | [optional] 
+**AggregationOperator** | Pointer to [**BTComputedAssemblyPropertyAggregationOperator**](BTComputedAssemblyPropertyAggregationOperator.md) |  | [optional] 
+**ErrorValuePolicy** | Pointer to [**BTComputedAssemblyPropertyErrorPolicy**](BTComputedAssemblyPropertyErrorPolicy.md) |  | [optional] 
 **FilterPropertyId** | Pointer to **string** |  | [optional] 
 **IsFilterPropertyInverted** | Pointer to **bool** |  | [optional] 
-**MissingValuePolicy** | Pointer to **string** |  | [optional] 
+**MissingValuePolicy** | Pointer to [**BTComputedAssemblyPropertyErrorPolicy**](BTComputedAssemblyPropertyErrorPolicy.md) |  | [optional] 
 **SecondaryPropertyId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -58,20 +58,20 @@ HasAggregatedPropertyId returns a boolean if a field has been set.
 
 ### GetAggregationOperator
 
-`func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperator() string`
+`func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperator() BTComputedAssemblyPropertyAggregationOperator`
 
 GetAggregationOperator returns the AggregationOperator field if non-nil, zero value otherwise.
 
 ### GetAggregationOperatorOk
 
-`func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperatorOk() (*string, bool)`
+`func (o *BTComputedAssemblyPropertyConfig) GetAggregationOperatorOk() (*BTComputedAssemblyPropertyAggregationOperator, bool)`
 
 GetAggregationOperatorOk returns a tuple with the AggregationOperator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAggregationOperator
 
-`func (o *BTComputedAssemblyPropertyConfig) SetAggregationOperator(v string)`
+`func (o *BTComputedAssemblyPropertyConfig) SetAggregationOperator(v BTComputedAssemblyPropertyAggregationOperator)`
 
 SetAggregationOperator sets AggregationOperator field to given value.
 
@@ -83,20 +83,20 @@ HasAggregationOperator returns a boolean if a field has been set.
 
 ### GetErrorValuePolicy
 
-`func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicy() string`
+`func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicy() BTComputedAssemblyPropertyErrorPolicy`
 
 GetErrorValuePolicy returns the ErrorValuePolicy field if non-nil, zero value otherwise.
 
 ### GetErrorValuePolicyOk
 
-`func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicyOk() (*string, bool)`
+`func (o *BTComputedAssemblyPropertyConfig) GetErrorValuePolicyOk() (*BTComputedAssemblyPropertyErrorPolicy, bool)`
 
 GetErrorValuePolicyOk returns a tuple with the ErrorValuePolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorValuePolicy
 
-`func (o *BTComputedAssemblyPropertyConfig) SetErrorValuePolicy(v string)`
+`func (o *BTComputedAssemblyPropertyConfig) SetErrorValuePolicy(v BTComputedAssemblyPropertyErrorPolicy)`
 
 SetErrorValuePolicy sets ErrorValuePolicy field to given value.
 
@@ -158,20 +158,20 @@ HasIsFilterPropertyInverted returns a boolean if a field has been set.
 
 ### GetMissingValuePolicy
 
-`func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicy() string`
+`func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicy() BTComputedAssemblyPropertyErrorPolicy`
 
 GetMissingValuePolicy returns the MissingValuePolicy field if non-nil, zero value otherwise.
 
 ### GetMissingValuePolicyOk
 
-`func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicyOk() (*string, bool)`
+`func (o *BTComputedAssemblyPropertyConfig) GetMissingValuePolicyOk() (*BTComputedAssemblyPropertyErrorPolicy, bool)`
 
 GetMissingValuePolicyOk returns a tuple with the MissingValuePolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMissingValuePolicy
 
-`func (o *BTComputedAssemblyPropertyConfig) SetMissingValuePolicy(v string)`
+`func (o *BTComputedAssemblyPropertyConfig) SetMissingValuePolicy(v BTComputedAssemblyPropertyErrorPolicy)`
 
 SetMissingValuePolicy sets MissingValuePolicy field to given value.
 

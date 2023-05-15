@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -22,16 +22,16 @@ type BTElementMergeInfo struct {
 	DependentElementMergeInfo *BTElementMergeInfo     `json:"dependentElementMergeInfo,omitempty"`
 	ElementDataType           *string                 `json:"elementDataType,omitempty"`
 	ElementId                 *string                 `json:"elementId,omitempty"`
-	ElementType               *string                 `json:"elementType,omitempty"`
+	ElementType               *GBTElementType         `json:"elementType,omitempty"`
 	Mergeable                 *bool                   `json:"mergeable,omitempty"`
 	SourceElementName         *string                 `json:"sourceElementName,omitempty"`
 	SourceElementPath         []string                `json:"sourceElementPath,omitempty"`
-	SourceElementStatus       *string                 `json:"sourceElementStatus,omitempty"`
+	SourceElementStatus       *GBTElementBranchStatus `json:"sourceElementStatus,omitempty"`
 	SourceModifiedAt          *JSONTime               `json:"sourceModifiedAt,omitempty"`
 	SourceModifiedBy          *BTUserBasicSummaryInfo `json:"sourceModifiedBy,omitempty"`
 	TargetElementName         *string                 `json:"targetElementName,omitempty"`
 	TargetElementPath         []string                `json:"targetElementPath,omitempty"`
-	TargetElementStatus       *string                 `json:"targetElementStatus,omitempty"`
+	TargetElementStatus       *GBTElementBranchStatus `json:"targetElementStatus,omitempty"`
 	TargetModifiedAt          *JSONTime               `json:"targetModifiedAt,omitempty"`
 	TargetModifiedBy          *BTUserBasicSummaryInfo `json:"targetModifiedBy,omitempty"`
 }
@@ -214,9 +214,9 @@ func (o *BTElementMergeInfo) SetElementId(v string) {
 }
 
 // GetElementType returns the ElementType field value if set, zero value otherwise.
-func (o *BTElementMergeInfo) GetElementType() string {
+func (o *BTElementMergeInfo) GetElementType() GBTElementType {
 	if o == nil || o.ElementType == nil {
-		var ret string
+		var ret GBTElementType
 		return ret
 	}
 	return *o.ElementType
@@ -224,7 +224,7 @@ func (o *BTElementMergeInfo) GetElementType() string {
 
 // GetElementTypeOk returns a tuple with the ElementType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTElementMergeInfo) GetElementTypeOk() (*string, bool) {
+func (o *BTElementMergeInfo) GetElementTypeOk() (*GBTElementType, bool) {
 	if o == nil || o.ElementType == nil {
 		return nil, false
 	}
@@ -240,8 +240,8 @@ func (o *BTElementMergeInfo) HasElementType() bool {
 	return false
 }
 
-// SetElementType gets a reference to the given string and assigns it to the ElementType field.
-func (o *BTElementMergeInfo) SetElementType(v string) {
+// SetElementType gets a reference to the given GBTElementType and assigns it to the ElementType field.
+func (o *BTElementMergeInfo) SetElementType(v GBTElementType) {
 	o.ElementType = &v
 }
 
@@ -342,9 +342,9 @@ func (o *BTElementMergeInfo) SetSourceElementPath(v []string) {
 }
 
 // GetSourceElementStatus returns the SourceElementStatus field value if set, zero value otherwise.
-func (o *BTElementMergeInfo) GetSourceElementStatus() string {
+func (o *BTElementMergeInfo) GetSourceElementStatus() GBTElementBranchStatus {
 	if o == nil || o.SourceElementStatus == nil {
-		var ret string
+		var ret GBTElementBranchStatus
 		return ret
 	}
 	return *o.SourceElementStatus
@@ -352,7 +352,7 @@ func (o *BTElementMergeInfo) GetSourceElementStatus() string {
 
 // GetSourceElementStatusOk returns a tuple with the SourceElementStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTElementMergeInfo) GetSourceElementStatusOk() (*string, bool) {
+func (o *BTElementMergeInfo) GetSourceElementStatusOk() (*GBTElementBranchStatus, bool) {
 	if o == nil || o.SourceElementStatus == nil {
 		return nil, false
 	}
@@ -368,8 +368,8 @@ func (o *BTElementMergeInfo) HasSourceElementStatus() bool {
 	return false
 }
 
-// SetSourceElementStatus gets a reference to the given string and assigns it to the SourceElementStatus field.
-func (o *BTElementMergeInfo) SetSourceElementStatus(v string) {
+// SetSourceElementStatus gets a reference to the given GBTElementBranchStatus and assigns it to the SourceElementStatus field.
+func (o *BTElementMergeInfo) SetSourceElementStatus(v GBTElementBranchStatus) {
 	o.SourceElementStatus = &v
 }
 
@@ -502,9 +502,9 @@ func (o *BTElementMergeInfo) SetTargetElementPath(v []string) {
 }
 
 // GetTargetElementStatus returns the TargetElementStatus field value if set, zero value otherwise.
-func (o *BTElementMergeInfo) GetTargetElementStatus() string {
+func (o *BTElementMergeInfo) GetTargetElementStatus() GBTElementBranchStatus {
 	if o == nil || o.TargetElementStatus == nil {
-		var ret string
+		var ret GBTElementBranchStatus
 		return ret
 	}
 	return *o.TargetElementStatus
@@ -512,7 +512,7 @@ func (o *BTElementMergeInfo) GetTargetElementStatus() string {
 
 // GetTargetElementStatusOk returns a tuple with the TargetElementStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTElementMergeInfo) GetTargetElementStatusOk() (*string, bool) {
+func (o *BTElementMergeInfo) GetTargetElementStatusOk() (*GBTElementBranchStatus, bool) {
 	if o == nil || o.TargetElementStatus == nil {
 		return nil, false
 	}
@@ -528,8 +528,8 @@ func (o *BTElementMergeInfo) HasTargetElementStatus() bool {
 	return false
 }
 
-// SetTargetElementStatus gets a reference to the given string and assigns it to the TargetElementStatus field.
-func (o *BTElementMergeInfo) SetTargetElementStatus(v string) {
+// SetTargetElementStatus gets a reference to the given GBTElementBranchStatus and assigns it to the TargetElementStatus field.
+func (o *BTElementMergeInfo) SetTargetElementStatus(v GBTElementBranchStatus) {
 	o.TargetElementStatus = &v
 }
 

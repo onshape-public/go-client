@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowedInsertableTypes** | Pointer to **[]string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AllowedInsertableTypes** | Pointer to [**[]GBTPartStudioItemType**](GBTPartStudioItemType.md) |  | [optional] 
 **ComputedConfigurationInputs** | Pointer to [**[]BTComputedConfigurationInputSpec2525**](BTComputedConfigurationInputSpec2525.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewBTParameterSpecReferencePartStudio1256WithDefaults instantiates a new BTParameterSpecReferencePartStudio1256 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAllowedInsertableTypes
-
-`func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypes() []string`
-
-GetAllowedInsertableTypes returns the AllowedInsertableTypes field if non-nil, zero value otherwise.
-
-### GetAllowedInsertableTypesOk
-
-`func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypesOk() (*[]string, bool)`
-
-GetAllowedInsertableTypesOk returns a tuple with the AllowedInsertableTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowedInsertableTypes
-
-`func (o *BTParameterSpecReferencePartStudio1256) SetAllowedInsertableTypes(v []string)`
-
-SetAllowedInsertableTypes sets AllowedInsertableTypes field to given value.
-
-### HasAllowedInsertableTypes
-
-`func (o *BTParameterSpecReferencePartStudio1256) HasAllowedInsertableTypes() bool`
-
-HasAllowedInsertableTypes returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -77,6 +52,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTParameterSpecReferencePartStudio1256) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAllowedInsertableTypes
+
+`func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypes() []GBTPartStudioItemType`
+
+GetAllowedInsertableTypes returns the AllowedInsertableTypes field if non-nil, zero value otherwise.
+
+### GetAllowedInsertableTypesOk
+
+`func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypesOk() (*[]GBTPartStudioItemType, bool)`
+
+GetAllowedInsertableTypesOk returns a tuple with the AllowedInsertableTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedInsertableTypes
+
+`func (o *BTParameterSpecReferencePartStudio1256) SetAllowedInsertableTypes(v []GBTPartStudioItemType)`
+
+SetAllowedInsertableTypes sets AllowedInsertableTypes field to given value.
+
+### HasAllowedInsertableTypes
+
+`func (o *BTParameterSpecReferencePartStudio1256) HasAllowedInsertableTypes() bool`
+
+HasAllowedInsertableTypes returns a boolean if a field has been set.
 
 ### GetComputedConfigurationInputs
 

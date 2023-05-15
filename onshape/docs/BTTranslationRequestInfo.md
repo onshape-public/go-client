@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **RequestElementId** | Pointer to **string** |  | [optional] 
-**RequestState** | Pointer to **string** |  | [optional] 
+**RequestState** | Pointer to [**BTTranslationRequestState**](BTTranslationRequestState.md) |  | [optional] 
 **ResultDocumentId** | Pointer to **string** |  | [optional] 
 **ResultElementIds** | Pointer to **[]string** |  | [optional] 
 **ResultExternalDataIds** | Pointer to **[]string** |  | [optional] 
@@ -190,20 +190,20 @@ HasRequestElementId returns a boolean if a field has been set.
 
 ### GetRequestState
 
-`func (o *BTTranslationRequestInfo) GetRequestState() string`
+`func (o *BTTranslationRequestInfo) GetRequestState() BTTranslationRequestState`
 
 GetRequestState returns the RequestState field if non-nil, zero value otherwise.
 
 ### GetRequestStateOk
 
-`func (o *BTTranslationRequestInfo) GetRequestStateOk() (*string, bool)`
+`func (o *BTTranslationRequestInfo) GetRequestStateOk() (*BTTranslationRequestState, bool)`
 
 GetRequestStateOk returns a tuple with the RequestState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestState
 
-`func (o *BTTranslationRequestInfo) SetRequestState(v string)`
+`func (o *BTTranslationRequestInfo) SetRequestState(v BTTranslationRequestState)`
 
 SetRequestState sets RequestState field to given value.
 

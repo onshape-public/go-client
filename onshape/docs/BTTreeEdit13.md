@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**EditType** | Pointer to **string** |  | [optional] 
+**EditType** | Pointer to [**EditType**](EditType.md) |  | [optional] 
 **NewNodes** | Pointer to [**[]BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
 **Nothing** | Pointer to **bool** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetEditType
 
-`func (o *BTTreeEdit13) GetEditType() string`
+`func (o *BTTreeEdit13) GetEditType() EditType`
 
 GetEditType returns the EditType field if non-nil, zero value otherwise.
 
 ### GetEditTypeOk
 
-`func (o *BTTreeEdit13) GetEditTypeOk() (*string, bool)`
+`func (o *BTTreeEdit13) GetEditTypeOk() (*EditType, bool)`
 
 GetEditTypeOk returns a tuple with the EditType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEditType
 
-`func (o *BTTreeEdit13) SetEditType(v string)`
+`func (o *BTTreeEdit13) SetEditType(v EditType)`
 
 SetEditType sets EditType field to given value.
 

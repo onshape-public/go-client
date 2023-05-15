@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** |  | [optional] 
 **Closed** | Pointer to **bool** | If type &#x3D;&#x3D; COMPOSITE, indicates whether it is open or closed. | [optional] 
 **ConstituentBodyIds** | Pointer to **[]string** |  | [optional] 
 **ConsumedByComposite** | Pointer to **bool** | Indicates if there is a closed composite that consumes this body. | [optional] 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 **Faces** | Pointer to [**[]BTExportModelFace1363**](BTExportModelFace1363.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**BTExportBodyProperties3559**](BTExportBodyProperties3559.md) |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 **Vertices** | Pointer to [**[]BTExportModelVertex858**](BTExportModelVertex858.md) |  | [optional] 
 
 ## Methods
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewBTExportModelBody1272WithDefaults instantiates a new BTExportModelBody1272 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTExportModelBody1272) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTExportModelBody1272) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTExportModelBody1272) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTExportModelBody1272) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetClosed
 
@@ -210,20 +236,20 @@ HasProperties returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTExportModelBody1272) GetType() string`
+`func (o *BTExportModelBody1272) GetType() GBTBodyType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTExportModelBody1272) GetTypeOk() (*string, bool)`
+`func (o *BTExportModelBody1272) GetTypeOk() (*GBTBodyType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTExportModelBody1272) SetType(v string)`
+`func (o *BTExportModelBody1272) SetType(v GBTBodyType)`
 
 SetType sets Type field to given value.
 

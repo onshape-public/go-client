@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**Version** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to [**GBTPartColorCycleVersion**](GBTPartColorCycleVersion.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBtType returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *BTSystemPartColorCycle1580) GetVersion() string`
+`func (o *BTSystemPartColorCycle1580) GetVersion() GBTPartColorCycleVersion`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *BTSystemPartColorCycle1580) GetVersionOk() (*string, bool)`
+`func (o *BTSystemPartColorCycle1580) GetVersionOk() (*GBTPartColorCycleVersion, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *BTSystemPartColorCycle1580) SetVersion(v string)`
+`func (o *BTSystemPartColorCycle1580) SetVersion(v GBTPartColorCycleVersion)`
 
 SetVersion sets Version field to given value.
 

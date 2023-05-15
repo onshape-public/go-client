@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
 **AppearanceForNewCell** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
+**BtType** | Pointer to **string** |  | [optional] 
 **CustomProperties** | Pointer to [**BTPartCustomProperties1338**](BTPartCustomProperties1338.md) |  | [optional] 
 **DefaultColorHash** | Pointer to **string** |  | [optional] 
 **HasFaults** | Pointer to **bool** |  | [optional] 
@@ -21,14 +22,14 @@ Name | Type | Description | Notes
 **LowBoxCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **Material** | Pointer to [**BTPartMaterial1445**](BTPartMaterial1445.md) |  | [optional] 
 **MaterialForNewCell** | Pointer to [**BTPartMaterial1445**](BTPartMaterial1445.md) |  | [optional] 
-**MeshState** | Pointer to **string** |  | [optional] 
+**MeshState** | Pointer to [**GBTMeshState**](GBTMeshState.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NameForNewCell** | Pointer to **string** |  | [optional] 
 **Ordinal** | Pointer to **int32** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **PropertyIdToSource** | Pointer to [**map[string]BTPartMetadataSource2895**](BTPartMetadataSource2895.md) |  | [optional] 
 **ReferencingConfiguredPartNodeIds** | Pointer to [**[]BTObjectId**](BTObjectId.md) |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to [**GBTPartVisibility**](GBTPartVisibility.md) |  | [optional] 
 
 ## Methods
 
@@ -98,6 +99,31 @@ SetAppearanceForNewCell sets AppearanceForNewCell field to given value.
 `func (o *BTPartDisplayData17) HasAppearanceForNewCell() bool`
 
 HasAppearanceForNewCell returns a boolean if a field has been set.
+
+### GetBtType
+
+`func (o *BTPartDisplayData17) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTPartDisplayData17) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTPartDisplayData17) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTPartDisplayData17) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetCustomProperties
 
@@ -476,20 +502,20 @@ HasMaterialForNewCell returns a boolean if a field has been set.
 
 ### GetMeshState
 
-`func (o *BTPartDisplayData17) GetMeshState() string`
+`func (o *BTPartDisplayData17) GetMeshState() GBTMeshState`
 
 GetMeshState returns the MeshState field if non-nil, zero value otherwise.
 
 ### GetMeshStateOk
 
-`func (o *BTPartDisplayData17) GetMeshStateOk() (*string, bool)`
+`func (o *BTPartDisplayData17) GetMeshStateOk() (*GBTMeshState, bool)`
 
 GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeshState
 
-`func (o *BTPartDisplayData17) SetMeshState(v string)`
+`func (o *BTPartDisplayData17) SetMeshState(v GBTMeshState)`
 
 SetMeshState sets MeshState field to given value.
 
@@ -651,20 +677,20 @@ HasReferencingConfiguredPartNodeIds returns a boolean if a field has been set.
 
 ### GetVisibility
 
-`func (o *BTPartDisplayData17) GetVisibility() string`
+`func (o *BTPartDisplayData17) GetVisibility() GBTPartVisibility`
 
 GetVisibility returns the Visibility field if non-nil, zero value otherwise.
 
 ### GetVisibilityOk
 
-`func (o *BTPartDisplayData17) GetVisibilityOk() (*string, bool)`
+`func (o *BTPartDisplayData17) GetVisibilityOk() (*GBTPartVisibility, bool)`
 
 GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVisibility
 
-`func (o *BTPartDisplayData17) SetVisibility(v string)`
+`func (o *BTPartDisplayData17) SetVisibility(v GBTPartVisibility)`
 
 SetVisibility sets Visibility field to given value.
 

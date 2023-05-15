@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **PartIdentity** | Pointer to [**BTPSOIdentity2741**](BTPSOIdentity2741.md) |  | [optional] 
 **PartQuery** | Pointer to **string** |  | [optional] 
 **PartReference** | Pointer to [**BTMParameterReferencePartStudio3302**](BTMParameterReferencePartStudio3302.md) |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to [**GBTPartStudioInstanceType**](GBTPartStudioInstanceType.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasPartReference returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *BTPartInstance81) GetType() string`
+`func (o *BTPartInstance81) GetType() GBTPartStudioInstanceType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BTPartInstance81) GetTypeOk() (*string, bool)`
+`func (o *BTPartInstance81) GetTypeOk() (*GBTPartStudioInstanceType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BTPartInstance81) SetType(v string)`
+`func (o *BTPartInstance81) SetType(v GBTPartStudioInstanceType)`
 
 SetType sets Type field to given value.
 

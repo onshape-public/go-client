@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,20 +17,20 @@ import (
 
 // BTAssemblyInstanceDefinitionParams struct for BTAssemblyInstanceDefinitionParams
 type BTAssemblyInstanceDefinitionParams struct {
-	Configuration     *string  `json:"configuration,omitempty"`
-	DocumentId        string   `json:"documentId"`
-	ElementId         *string  `json:"elementId,omitempty"`
-	FeatureId         *string  `json:"featureId,omitempty"`
-	IncludePartTypes  []string `json:"includePartTypes,omitempty"`
-	IsAssembly        *bool    `json:"isAssembly,omitempty"`
-	IsHidden          *bool    `json:"isHidden,omitempty"`
-	IsSuppressed      *bool    `json:"isSuppressed,omitempty"`
-	IsWholePartStudio *bool    `json:"isWholePartStudio,omitempty"`
-	MicroversionId    *string  `json:"microversionId,omitempty"`
-	PartId            *string  `json:"partId,omitempty"`
-	PartNumber        *string  `json:"partNumber,omitempty"`
-	Revision          *string  `json:"revision,omitempty"`
-	VersionId         *string  `json:"versionId,omitempty"`
+	Configuration     *string             `json:"configuration,omitempty"`
+	DocumentId        string              `json:"documentId"`
+	ElementId         *string             `json:"elementId,omitempty"`
+	FeatureId         *string             `json:"featureId,omitempty"`
+	IncludePartTypes  []GBTInsertableType `json:"includePartTypes,omitempty"`
+	IsAssembly        *bool               `json:"isAssembly,omitempty"`
+	IsHidden          *bool               `json:"isHidden,omitempty"`
+	IsSuppressed      *bool               `json:"isSuppressed,omitempty"`
+	IsWholePartStudio *bool               `json:"isWholePartStudio,omitempty"`
+	MicroversionId    *string             `json:"microversionId,omitempty"`
+	PartId            *string             `json:"partId,omitempty"`
+	PartNumber        *string             `json:"partNumber,omitempty"`
+	Revision          *string             `json:"revision,omitempty"`
+	VersionId         *string             `json:"versionId,omitempty"`
 }
 
 // NewBTAssemblyInstanceDefinitionParams instantiates a new BTAssemblyInstanceDefinitionParams object
@@ -172,9 +172,9 @@ func (o *BTAssemblyInstanceDefinitionParams) SetFeatureId(v string) {
 }
 
 // GetIncludePartTypes returns the IncludePartTypes field value if set, zero value otherwise.
-func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypes() []string {
+func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypes() []GBTInsertableType {
 	if o == nil || o.IncludePartTypes == nil {
-		var ret []string
+		var ret []GBTInsertableType
 		return ret
 	}
 	return o.IncludePartTypes
@@ -182,7 +182,7 @@ func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypes() []string {
 
 // GetIncludePartTypesOk returns a tuple with the IncludePartTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypesOk() ([]string, bool) {
+func (o *BTAssemblyInstanceDefinitionParams) GetIncludePartTypesOk() ([]GBTInsertableType, bool) {
 	if o == nil || o.IncludePartTypes == nil {
 		return nil, false
 	}
@@ -198,8 +198,8 @@ func (o *BTAssemblyInstanceDefinitionParams) HasIncludePartTypes() bool {
 	return false
 }
 
-// SetIncludePartTypes gets a reference to the given []string and assigns it to the IncludePartTypes field.
-func (o *BTAssemblyInstanceDefinitionParams) SetIncludePartTypes(v []string) {
+// SetIncludePartTypes gets a reference to the given []GBTInsertableType and assigns it to the IncludePartTypes field.
+func (o *BTAssemblyInstanceDefinitionParams) SetIncludePartTypes(v []GBTInsertableType) {
 	o.IncludePartTypes = v
 }
 

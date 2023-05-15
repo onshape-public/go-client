@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Atomic** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **DbimportString** | Pointer to **string** |  | [optional] 
-**DocumentationType** | Pointer to **string** |  | [optional] 
+**DocumentationType** | Pointer to [**GBTPDefinitionType**](GBTPDefinitionType.md) |  | [optional] 
 **ElementImport** | Pointer to **bool** |  | [optional] 
 **EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **ExternalDocumentWithVersion** | Pointer to [**BTDocumentWithVersionId**](BTDocumentWithVersionId.md) |  | [optional] 
@@ -137,20 +137,20 @@ HasDbimportString returns a boolean if a field has been set.
 
 ### GetDocumentationType
 
-`func (o *BTPModuleId235) GetDocumentationType() string`
+`func (o *BTPModuleId235) GetDocumentationType() GBTPDefinitionType`
 
 GetDocumentationType returns the DocumentationType field if non-nil, zero value otherwise.
 
 ### GetDocumentationTypeOk
 
-`func (o *BTPModuleId235) GetDocumentationTypeOk() (*string, bool)`
+`func (o *BTPModuleId235) GetDocumentationTypeOk() (*GBTPDefinitionType, bool)`
 
 GetDocumentationTypeOk returns a tuple with the DocumentationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDocumentationType
 
-`func (o *BTPModuleId235) SetDocumentationType(v string)`
+`func (o *BTPModuleId235) SetDocumentationType(v GBTPDefinitionType)`
 
 SetDocumentationType sets DocumentationType field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
-**BodyType** | Pointer to **string** |  | [optional] 
+**BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **Faces** | Pointer to [**[]BTExportTessellatedFacesFace1192**](BTExportTessellatedFacesFace1192.md) |  | [optional] 
 **FacetPoints** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
@@ -56,20 +56,20 @@ HasAppearance returns a boolean if a field has been set.
 
 ### GetBodyType
 
-`func (o *BTExportTessellatedFacesBody1321AllOf) GetBodyType() string`
+`func (o *BTExportTessellatedFacesBody1321AllOf) GetBodyType() GBTBodyType`
 
 GetBodyType returns the BodyType field if non-nil, zero value otherwise.
 
 ### GetBodyTypeOk
 
-`func (o *BTExportTessellatedFacesBody1321AllOf) GetBodyTypeOk() (*string, bool)`
+`func (o *BTExportTessellatedFacesBody1321AllOf) GetBodyTypeOk() (*GBTBodyType, bool)`
 
 GetBodyTypeOk returns a tuple with the BodyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodyType
 
-`func (o *BTExportTessellatedFacesBody1321AllOf) SetBodyType(v string)`
+`func (o *BTExportTessellatedFacesBody1321AllOf) SetBodyType(v GBTBodyType)`
 
 SetBodyType sets BodyType field to given value.
 

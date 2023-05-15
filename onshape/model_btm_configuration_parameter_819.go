@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.162.14806-89d807e7089c
+API version: 1.163.15808-38acf80dff96
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -56,6 +56,56 @@ func NewBTMConfigurationParameter819() *BTMConfigurationParameter819 {
 func NewBTMConfigurationParameter819WithDefaults() *BTMConfigurationParameter819 {
 	this := BTMConfigurationParameter819{Newbase_BTMConfigurationParameter819WithDefaults()}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMConfigurationParameter819) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameter819) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMConfigurationParameter819) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMConfigurationParameter819) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
 // GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
@@ -309,24 +359,24 @@ func (o *BTMConfigurationParameter819) SetParameterName(v string) {
 }
 
 // GetParameterType returns the ParameterType field value if set, zero value otherwise.
-func (o *BTMConfigurationParameter819) GetParameterType() string {
+func (o *BTMConfigurationParameter819) GetParameterType() GBTConfigurationParameterType {
 	type getResult interface {
-		GetParameterType() string
+		GetParameterType() GBTConfigurationParameterType
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
 		return tx.GetParameterType()
 	} else {
-		var de string
+		var de GBTConfigurationParameterType
 		return de
 	}
 }
 
 // GetParameterTypeOk returns a tuple with the ParameterType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMConfigurationParameter819) GetParameterTypeOk() (*string, bool) {
+func (o *BTMConfigurationParameter819) GetParameterTypeOk() (*GBTConfigurationParameterType, bool) {
 	type getResult interface {
-		GetParameterTypeOk() (*string, bool)
+		GetParameterTypeOk() (*GBTConfigurationParameterType, bool)
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
@@ -349,10 +399,10 @@ func (o *BTMConfigurationParameter819) HasParameterType() bool {
 	}
 }
 
-// SetParameterType gets a reference to the given string and assigns it to the ParameterType field.
-func (o *BTMConfigurationParameter819) SetParameterType(v string) {
+// SetParameterType gets a reference to the given GBTConfigurationParameterType and assigns it to the ParameterType field.
+func (o *BTMConfigurationParameter819) SetParameterType(v GBTConfigurationParameterType) {
 	type getResult interface {
-		SetParameterType(v string)
+		SetParameterType(v GBTConfigurationParameterType)
 	}
 
 	o.GetActualInstance().(getResult).SetParameterType(v)
@@ -540,13 +590,14 @@ func (v *NullableBTMConfigurationParameter819) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMConfigurationParameter819 struct {
-	GeneratedParameterId *BTTreeNode20 `json:"generatedParameterId,omitempty"`
-	ImportMicroversion   *string       `json:"importMicroversion,omitempty"`
-	NodeId               *string       `json:"nodeId,omitempty"`
-	ParameterId          *string       `json:"parameterId,omitempty"`
-	ParameterName        *string       `json:"parameterName,omitempty"`
-	ParameterType        *string       `json:"parameterType,omitempty"`
-	Valid                *bool         `json:"valid,omitempty"`
+	BtType               *string                        `json:"btType,omitempty"`
+	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
+	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
+	NodeId               *string                        `json:"nodeId,omitempty"`
+	ParameterId          *string                        `json:"parameterId,omitempty"`
+	ParameterName        *string                        `json:"parameterName,omitempty"`
+	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
+	Valid                *bool                          `json:"valid,omitempty"`
 }
 
 // Newbase_BTMConfigurationParameter819 instantiates a new base_BTMConfigurationParameter819 object
@@ -564,6 +615,38 @@ func Newbase_BTMConfigurationParameter819() *base_BTMConfigurationParameter819 {
 func Newbase_BTMConfigurationParameter819WithDefaults() *base_BTMConfigurationParameter819 {
 	this := base_BTMConfigurationParameter819{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTMConfigurationParameter819) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMConfigurationParameter819) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTMConfigurationParameter819) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTMConfigurationParameter819) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
@@ -727,9 +810,9 @@ func (o *base_BTMConfigurationParameter819) SetParameterName(v string) {
 }
 
 // GetParameterType returns the ParameterType field value if set, zero value otherwise.
-func (o *base_BTMConfigurationParameter819) GetParameterType() string {
+func (o *base_BTMConfigurationParameter819) GetParameterType() GBTConfigurationParameterType {
 	if o == nil || o.ParameterType == nil {
-		var ret string
+		var ret GBTConfigurationParameterType
 		return ret
 	}
 	return *o.ParameterType
@@ -737,7 +820,7 @@ func (o *base_BTMConfigurationParameter819) GetParameterType() string {
 
 // GetParameterTypeOk returns a tuple with the ParameterType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_BTMConfigurationParameter819) GetParameterTypeOk() (*string, bool) {
+func (o *base_BTMConfigurationParameter819) GetParameterTypeOk() (*GBTConfigurationParameterType, bool) {
 	if o == nil || o.ParameterType == nil {
 		return nil, false
 	}
@@ -753,8 +836,8 @@ func (o *base_BTMConfigurationParameter819) HasParameterType() bool {
 	return false
 }
 
-// SetParameterType gets a reference to the given string and assigns it to the ParameterType field.
-func (o *base_BTMConfigurationParameter819) SetParameterType(v string) {
+// SetParameterType gets a reference to the given GBTConfigurationParameterType and assigns it to the ParameterType field.
+func (o *base_BTMConfigurationParameter819) SetParameterType(v GBTConfigurationParameterType) {
 	o.ParameterType = &v
 }
 
@@ -792,6 +875,9 @@ func (o *base_BTMConfigurationParameter819) SetValid(v bool) {
 
 func (o base_BTMConfigurationParameter819) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.GeneratedParameterId != nil {
 		toSerialize["generatedParameterId"] = o.GeneratedParameterId
 	}

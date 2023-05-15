@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BlobImport** | Pointer to [**BTMImport136**](BTMImport136.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**BlobImport** | Pointer to [**BTMImport136**](BTMImport136.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewBTMParameterBlobReference1679WithDefaults instantiates a new BTMParameterBlobReference1679 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBlobImport
-
-`func (o *BTMParameterBlobReference1679) GetBlobImport() BTMImport136`
-
-GetBlobImport returns the BlobImport field if non-nil, zero value otherwise.
-
-### GetBlobImportOk
-
-`func (o *BTMParameterBlobReference1679) GetBlobImportOk() (*BTMImport136, bool)`
-
-GetBlobImportOk returns a tuple with the BlobImport field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBlobImport
-
-`func (o *BTMParameterBlobReference1679) SetBlobImport(v BTMImport136)`
-
-SetBlobImport sets BlobImport field to given value.
-
-### HasBlobImport
-
-`func (o *BTMParameterBlobReference1679) HasBlobImport() bool`
-
-HasBlobImport returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -76,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMParameterBlobReference1679) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBlobImport
+
+`func (o *BTMParameterBlobReference1679) GetBlobImport() BTMImport136`
+
+GetBlobImport returns the BlobImport field if non-nil, zero value otherwise.
+
+### GetBlobImportOk
+
+`func (o *BTMParameterBlobReference1679) GetBlobImportOk() (*BTMImport136, bool)`
+
+GetBlobImportOk returns a tuple with the BlobImport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobImport
+
+`func (o *BTMParameterBlobReference1679) SetBlobImport(v BTMImport136)`
+
+SetBlobImport sets BlobImport field to given value.
+
+### HasBlobImport
+
+`func (o *BTMParameterBlobReference1679) HasBlobImport() bool`
+
+HasBlobImport returns a boolean if a field has been set.
 
 ### GetNamespace
 

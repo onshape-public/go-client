@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **CompressedPoints** | Pointer to [**BTImmutableByteArray**](BTImmutableByteArray.md) |  | [optional] 
-**EdgeSmoothnessStatus** | Pointer to **string** |  | [optional] 
-**EdgeType** | Pointer to **string** |  | [optional] 
+**EdgeSmoothnessStatus** | Pointer to [**GBTEntityEdgeSmoothnessStatus**](GBTEntityEdgeSmoothnessStatus.md) |  | [optional] 
+**EdgeType** | Pointer to [**GBTEdgeType**](GBTEdgeType.md) |  | [optional] 
 **IsClosed** | Pointer to **bool** |  | [optional] 
 **IsInternalEdge** | Pointer to **bool** |  | [optional] 
 **Points** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
@@ -83,20 +83,20 @@ HasCompressedPoints returns a boolean if a field has been set.
 
 ### GetEdgeSmoothnessStatus
 
-`func (o *BTEntityEdge30AllOf) GetEdgeSmoothnessStatus() string`
+`func (o *BTEntityEdge30AllOf) GetEdgeSmoothnessStatus() GBTEntityEdgeSmoothnessStatus`
 
 GetEdgeSmoothnessStatus returns the EdgeSmoothnessStatus field if non-nil, zero value otherwise.
 
 ### GetEdgeSmoothnessStatusOk
 
-`func (o *BTEntityEdge30AllOf) GetEdgeSmoothnessStatusOk() (*string, bool)`
+`func (o *BTEntityEdge30AllOf) GetEdgeSmoothnessStatusOk() (*GBTEntityEdgeSmoothnessStatus, bool)`
 
 GetEdgeSmoothnessStatusOk returns a tuple with the EdgeSmoothnessStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEdgeSmoothnessStatus
 
-`func (o *BTEntityEdge30AllOf) SetEdgeSmoothnessStatus(v string)`
+`func (o *BTEntityEdge30AllOf) SetEdgeSmoothnessStatus(v GBTEntityEdgeSmoothnessStatus)`
 
 SetEdgeSmoothnessStatus sets EdgeSmoothnessStatus field to given value.
 
@@ -108,20 +108,20 @@ HasEdgeSmoothnessStatus returns a boolean if a field has been set.
 
 ### GetEdgeType
 
-`func (o *BTEntityEdge30AllOf) GetEdgeType() string`
+`func (o *BTEntityEdge30AllOf) GetEdgeType() GBTEdgeType`
 
 GetEdgeType returns the EdgeType field if non-nil, zero value otherwise.
 
 ### GetEdgeTypeOk
 
-`func (o *BTEntityEdge30AllOf) GetEdgeTypeOk() (*string, bool)`
+`func (o *BTEntityEdge30AllOf) GetEdgeTypeOk() (*GBTEdgeType, bool)`
 
 GetEdgeTypeOk returns a tuple with the EdgeType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEdgeType
 
-`func (o *BTEntityEdge30AllOf) SetEdgeType(v string)`
+`func (o *BTEntityEdge30AllOf) SetEdgeType(v GBTEdgeType)`
 
 SetEdgeType sets EdgeType field to given value.
 
