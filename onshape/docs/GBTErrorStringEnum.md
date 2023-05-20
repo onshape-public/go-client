@@ -2635,6 +2635,12 @@
 
 * `GBTErrorStringEnumOffsetWireMultipleShapes` (value: `"OFFSET_WIRE_MULTIPLE_SHAPES"`)
 
+* `GBTErrorStringEnumBooleanNonManifoldResult` (value: `"BOOLEAN_NON_MANIFOLD_RESULT"`)
+
+* `GBTErrorStringEnumDrawingAssemblyNonmanifoldSectionCut` (value: `"DRAWING_ASSEMBLY_NONMANIFOLD_SECTION_CUT"`)
+
+* `GBTErrorStringEnumDrawingPartstudioNonmanifoldSectionCut` (value: `"DRAWING_PARTSTUDIO_NONMANIFOLD_SECTION_CUT"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

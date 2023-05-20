@@ -4049,6 +4049,52 @@
 
 * `GBTFeatureScriptVersionNumberV2022ProperlyRemoveInvalidFacesOnBooleanChange` (value: `"V2022_PROPERLY_REMOVE_INVALID_FACES_ON_BOOLEAN_CHANGE"`)
 
+* `GBTFeatureScriptVersionNumberSkip2023` (value: `"SKIP_2023"`)
+
+* `GBTFeatureScriptVersionNumberSkip2024` (value: `"SKIP_2024"`)
+
+* `GBTFeatureScriptVersionNumberSkip2025` (value: `"SKIP_2025"`)
+
+* `GBTFeatureScriptVersionNumberSkip2026` (value: `"SKIP_2026"`)
+
+* `GBTFeatureScriptVersionNumberSkip2027` (value: `"SKIP_2027"`)
+
+* `GBTFeatureScriptVersionNumberSkip2028` (value: `"SKIP_2028"`)
+
+* `GBTFeatureScriptVersionNumberSkip2029` (value: `"SKIP_2029"`)
+
+* `GBTFeatureScriptVersionNumberSkip2030` (value: `"SKIP_2030"`)
+
+* `GBTFeatureScriptVersionNumberSkip2031` (value: `"SKIP_2031"`)
+
+* `GBTFeatureScriptVersionNumberSkip2032` (value: `"SKIP_2032"`)
+
+* `GBTFeatureScriptVersionNumberV2033BooleanNonManifoldResultError` (value: `"V2033_BOOLEAN_NON_MANIFOLD_RESULT_ERROR"`)
+
+* `GBTFeatureScriptVersionNumberV2034FaceIntersectionTolerance` (value: `"V2034_FACE_INTERSECTION_TOLERANCE"`)
+
+* `GBTFeatureScriptVersionNumberV2035FaceBlendSoftExtension` (value: `"V2035_FACE_BLEND_SOFT_EXTENSION"`)
+
+* `GBTFeatureScriptVersionNumberV2036RuledSurfaceNominalCurves` (value: `"V2036_RULED_SURFACE_NOMINAL_CURVES"`)
+
+* `GBTFeatureScriptVersionNumberV2037MirrorNominalCurves` (value: `"V2037_MIRROR_NOMINAL_CURVES"`)
+
+* `GBTFeatureScriptVersionNumberV2038BridgingCurveCurvatureFix` (value: `"V2038_BRIDGING_CURVE_CURVATURE_FIX"`)
+
+* `GBTFeatureScriptVersionNumberV2039HoleFeatureBadPositionWarning` (value: `"V2039_HOLE_FEATURE_BAD_POSITION_WARNING"`)
+
+* `GBTFeatureScriptVersionNumberV2040SectionViewFixCompositeAppearance` (value: `"V2040_SECTION_VIEW_FIX_COMPOSITE_APPEARANCE"`)
+
+* `GBTFeatureScriptVersionNumberV2041SameHoleOnSheetMetalError` (value: `"V2041_SAME_HOLE_ON_SHEET_METAL_ERROR"`)
+
+* `GBTFeatureScriptVersionNumberV2042HoleUpdateThreadClassFix` (value: `"V2042_HOLE_UPDATE_THREAD_CLASS_FIX"`)
+
+* `GBTFeatureScriptVersionNumberV2043HoleRemoveUpToFaceEndCondition` (value: `"V2043_HOLE_REMOVE_UP_TO_FACE_END_CONDITION"`)
+
+* `GBTFeatureScriptVersionNumberV2044HoleRemoveUpToEndConditions` (value: `"V2044_HOLE_REMOVE_UP_TO_END_CONDITIONS"`)
+
+* `GBTFeatureScriptVersionNumberV2045HoleChangeThreadClassTable` (value: `"V2045_HOLE_CHANGE_THREAD_CLASS_TABLE"`)
+
 * `GBTFeatureScriptVersionNumberUnknown` (value: `"UNKNOWN"`)
 
 

@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.163.15808-38acf80dff96
+  version: 1.164.16251-6646bbcf15b8
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -2061,30 +2061,53 @@ paths:
       deprecated: false
       operationId: getJsonPaths
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
-        in: path
-        name: eid
-        required: true
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
         schema:
+          default: ""
           type: string
-        style: simple
-      - explode: false
+        style: form
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
+        explode: false
         in: path
         name: wvm
         required: true
         schema:
+          enum:
+          - w
+          - v
+          - m
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version or document microversion in\
+          \ which the operation should be performed."
+        explode: false
         in: path
         name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the element in which to perform the operation.
+        explode: false
+        in: path
+        name: eid
         required: true
         schema:
           type: string
@@ -2651,6 +2674,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: A document owned by the company. Read access to this document
+          allows read access to its owning company's settings.
+        explode: true
+        in: query
+        name: documentId
+        required: false
+        schema:
+          type: string
+        style: form
       - explode: true
         in: query
         name: key
@@ -12443,8 +12475,8 @@ paths:
         schema:
           type: string
         style: simple
-      - description: "IDs of the parts to retrieve. Repeat query param to add more\
-          \ than one (i.e. partId=JHK,JHD). May not be combined with other ID filters"
+      - description: "IDs of the parts to retrieve. Use comma-separated IDs for multiple\
+          \ parts (example: partIds=JHK,JHD)."
         explode: true
         in: query
         name: partIds
@@ -12988,8 +13020,8 @@ paths:
         schema:
           type: string
         style: simple
-      - description: "IDs of the parts to retrieve. Repeat query param to add more\
-          \ than one (i.e. partId=JHK,JHD). May not be combined with other ID filters"
+      - description: "IDs of the parts to retrieve. Use comma-separated IDs for multiple\
+          \ parts (example: partIds=JHK,JHD)."
         explode: true
         in: query
         name: partIds
@@ -20377,44 +20409,32 @@ components:
         chordTolerance: 6.027456183070403
         zipSingleFileOutput: true
         minFacetWidth: 5.962133916683182
-        includeCustomPropertiesData: true
         resolution: resolution
         flatten: true
         mode: mode
-        includeContentCaptures: true
         ignoreExportRulesForContents: true
         password: password
         view: view
         triggerAutoDownload: true
         elementId: elementId
         format: format
-        includeForeignData: true
         cloudStorageAccountId: cloudStorageAccountId
-        includeComments: true
         grouping: grouping
         version: version
         includeBendCenterlines: true
         angleTolerance: 0.8008281904610115
         sendCopyToMe: true
         emailMessage: emailMessage
-        includeLinkedDocuments: true
-        extractToS3: true
-        includeItemsData: true
         configuration: configuration
-        includeStd: true
         linkDocumentId: linkDocumentId
         scale: 5.637376656633329
         units: units
-        deepSearchForForeignData: true
         emailSubject: emailSubject
         sheetMetalFlat: true
-        linkedDocumentSubSetId: linkedDocumentSubSetId
         elementIds: elementIds
-        includeReleaseManagementData: true
         passwordRequired: true
         destinationName: destinationName
         includeExportIds: true
-        includeThumbnails: true
         cloudObjectId: cloudObjectId
         workspaceId: workspaceId
         featureIds: featureIds
@@ -20451,8 +20471,6 @@ components:
           type: string
         configuration:
           type: string
-        deepSearchForForeignData:
-          type: boolean
         destinationName:
           type: string
         documentId:
@@ -20471,8 +20489,6 @@ components:
           type: string
         emailTo:
           type: string
-        extractToS3:
-          type: boolean
         featureIds:
           type: string
         flatten:
@@ -20489,35 +20505,15 @@ components:
           type: boolean
         includeBendLines:
           type: boolean
-        includeComments:
-          type: boolean
-        includeContentCaptures:
-          type: boolean
-        includeCustomPropertiesData:
-          type: boolean
         includeExportIds:
           type: boolean
-        includeForeignData:
-          type: boolean
-        includeItemsData:
-          type: boolean
-        includeLinkedDocuments:
-          type: boolean
-        includeReleaseManagementData:
-          type: boolean
         includeSketches:
-          type: boolean
-        includeStd:
-          type: boolean
-        includeThumbnails:
           type: boolean
         isPartingOut:
           type: boolean
         linkDocumentId:
           type: string
         linkDocumentWorkspaceId:
-          type: string
-        linkedDocumentSubSetId:
           type: string
         maxFacetWidth:
           format: double
@@ -23605,6 +23601,14 @@ components:
         btType:
           type: string
       type: object
+    BTCylindricalImageMapping-1640:
+      allOf:
+      - $ref: '#/components/schemas/BTImageMapping-3821'
+      - $ref: '#/components/schemas/BTCylindricalImageMapping_1640_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
     BTDebugGeometry-2059:
       allOf:
       - $ref: '#/components/schemas/BTEntityGeometry-35'
@@ -26433,6 +26437,47 @@ components:
           type: string
         elementLibraryVersionRaw:
           $ref: '#/components/schemas/BTObjectId'
+      type: object
+    BTElementLibrarySummaryInfo:
+      description: Element library metadata
+      properties:
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        libraryId:
+          description: The Id of the library -- unique across Onshape.
+          pattern: "[0-9a-fA-F]{24}"
+          type: string
+        libraryVersion:
+          description: The current version Id of the library.
+          pattern: "[0-9a-fA-F]{24}"
+          type: string
+        name:
+          description: Name of the resource.
+          type: string
+        ownerId:
+          description: "The owner Id of an element library (either Onshape, company,\
+            \ or user)."
+          pattern: "[0-9a-fA-F]{24}"
+          type: string
+        ownerType:
+          description: "The type of library owner, Onshape, user, or company"
+          format: int32
+          type: integer
+        purpose:
+          description: The purpose string identifying the type of element library.
+          type: string
+        sourceFolderId:
+          description: The id of the root folder of the library
+          type: string
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
       type: object
     BTElementLocationParams:
       description: The location at which the new element should be inserted.
@@ -33332,6 +33377,7 @@ components:
     BTImageMapping-3821:
       discriminator:
         mapping:
+          BTCylindricalImageMapping-1640: '#/components/schemas/BTCylindricalImageMapping-1640'
           BTPlanarImageMapping-4398: '#/components/schemas/BTPlanarImageMapping-4398'
         propertyName: btType
       example:
@@ -56858,6 +56904,9 @@ components:
       - FACE_BLEND_SOLID_LONG_ATTACH
       - OFFSET_WIRE_SHAPES_NON_CONSISTENT
       - OFFSET_WIRE_MULTIPLE_SHAPES
+      - BOOLEAN_NON_MANIFOLD_RESULT
+      - DRAWING_ASSEMBLY_NONMANIFOLD_SECTION_CUT
+      - DRAWING_PARTSTUDIO_NONMANIFOLD_SECTION_CUT
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -58891,6 +58940,29 @@ components:
       - V2020_MARK_OLD_VERSIONS_IMMUTABLE_1
       - V2021_BSURF_SET_NMNL_CRVS
       - V2022_PROPERLY_REMOVE_INVALID_FACES_ON_BOOLEAN_CHANGE
+      - SKIP_2023
+      - SKIP_2024
+      - SKIP_2025
+      - SKIP_2026
+      - SKIP_2027
+      - SKIP_2028
+      - SKIP_2029
+      - SKIP_2030
+      - SKIP_2031
+      - SKIP_2032
+      - V2033_BOOLEAN_NON_MANIFOLD_RESULT_ERROR
+      - V2034_FACE_INTERSECTION_TOLERANCE
+      - V2035_FACE_BLEND_SOFT_EXTENSION
+      - V2036_RULED_SURFACE_NOMINAL_CURVES
+      - V2037_MIRROR_NOMINAL_CURVES
+      - V2038_BRIDGING_CURVE_CURVATURE_FIX
+      - V2039_HOLE_FEATURE_BAD_POSITION_WARNING
+      - V2040_SECTION_VIEW_FIX_COMPOSITE_APPEARANCE
+      - V2041_SAME_HOLE_ON_SHEET_METAL_ERROR
+      - V2042_HOLE_UPDATE_THREAD_CLASS_FIX
+      - V2043_HOLE_REMOVE_UP_TO_FACE_END_CONDITION
+      - V2044_HOLE_REMOVE_UP_TO_END_CONDITIONS
+      - V2045_HOLE_CHANGE_THREAD_CLASS_TABLE
       - UNKNOWN
       type: string
     GBTFilterFlattenedGeometryOptions:
@@ -61119,6 +61191,17 @@ components:
           type: number
       type: object
       example: null
+    BTCylindricalImageMapping_1640_allOf:
+      properties:
+        btType:
+          type: string
+        cylinderSystem:
+          $ref: '#/components/schemas/BTCoordinateSystem-387'
+        radius:
+          format: float
+          type: number
+      type: object
+      example: null
     BTDebugGeometry_2059_allOf:
       properties:
         appearance:
@@ -61511,6 +61594,8 @@ components:
           type: boolean
         canUnshare:
           type: boolean
+        elementLibrarySummaryInfo:
+          $ref: '#/components/schemas/BTElementLibrarySummaryInfo'
         isOrphaned:
           type: boolean
         parentId:

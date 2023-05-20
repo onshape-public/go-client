@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **CloudObjectId** | Pointer to **string** |  | [optional] 
 **CloudStorageAccountId** | Pointer to **string** |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
-**DeepSearchForForeignData** | Pointer to **bool** |  | [optional] 
 **DestinationName** | Pointer to **string** |  | [optional] 
 **DocumentId** | **string** |  | 
 **DocumentVersionId** | Pointer to **string** |  | [optional] 
@@ -20,7 +19,6 @@ Name | Type | Description | Notes
 **EmailMessage** | Pointer to **string** |  | [optional] 
 **EmailSubject** | Pointer to **string** |  | [optional] 
 **EmailTo** | Pointer to **string** |  | [optional] 
-**ExtractToS3** | Pointer to **bool** |  | [optional] 
 **FeatureIds** | Pointer to **string** |  | [optional] 
 **Flatten** | Pointer to **bool** |  | [optional] 
 **Format** | **string** |  | 
@@ -29,21 +27,11 @@ Name | Type | Description | Notes
 **IgnoreExportRulesForContents** | Pointer to **bool** |  | [optional] 
 **IncludeBendCenterlines** | Pointer to **bool** |  | [optional] 
 **IncludeBendLines** | Pointer to **bool** |  | [optional] 
-**IncludeComments** | Pointer to **bool** |  | [optional] 
-**IncludeContentCaptures** | Pointer to **bool** |  | [optional] 
-**IncludeCustomPropertiesData** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
-**IncludeForeignData** | Pointer to **bool** |  | [optional] 
-**IncludeItemsData** | Pointer to **bool** |  | [optional] 
-**IncludeLinkedDocuments** | Pointer to **bool** |  | [optional] 
-**IncludeReleaseManagementData** | Pointer to **bool** |  | [optional] 
 **IncludeSketches** | Pointer to **bool** |  | [optional] 
-**IncludeStd** | Pointer to **bool** |  | [optional] 
-**IncludeThumbnails** | Pointer to **bool** |  | [optional] 
 **IsPartingOut** | Pointer to **bool** |  | [optional] 
 **LinkDocumentId** | Pointer to **string** |  | [optional] 
 **LinkDocumentWorkspaceId** | Pointer to **string** |  | [optional] 
-**LinkedDocumentSubSetId** | Pointer to **string** |  | [optional] 
 **MaxFacetWidth** | Pointer to **float64** |  | [optional] 
 **Microversion** | Pointer to **string** |  | [optional] 
 **MinFacetWidth** | Pointer to **float64** |  | [optional] 
@@ -235,31 +223,6 @@ SetConfiguration sets Configuration field to given value.
 `func (o *BTBExportModelParams) HasConfiguration() bool`
 
 HasConfiguration returns a boolean if a field has been set.
-
-### GetDeepSearchForForeignData
-
-`func (o *BTBExportModelParams) GetDeepSearchForForeignData() bool`
-
-GetDeepSearchForForeignData returns the DeepSearchForForeignData field if non-nil, zero value otherwise.
-
-### GetDeepSearchForForeignDataOk
-
-`func (o *BTBExportModelParams) GetDeepSearchForForeignDataOk() (*bool, bool)`
-
-GetDeepSearchForForeignDataOk returns a tuple with the DeepSearchForForeignData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeepSearchForForeignData
-
-`func (o *BTBExportModelParams) SetDeepSearchForForeignData(v bool)`
-
-SetDeepSearchForForeignData sets DeepSearchForForeignData field to given value.
-
-### HasDeepSearchForForeignData
-
-`func (o *BTBExportModelParams) HasDeepSearchForForeignData() bool`
-
-HasDeepSearchForForeignData returns a boolean if a field has been set.
 
 ### GetDestinationName
 
@@ -481,31 +444,6 @@ SetEmailTo sets EmailTo field to given value.
 
 HasEmailTo returns a boolean if a field has been set.
 
-### GetExtractToS3
-
-`func (o *BTBExportModelParams) GetExtractToS3() bool`
-
-GetExtractToS3 returns the ExtractToS3 field if non-nil, zero value otherwise.
-
-### GetExtractToS3Ok
-
-`func (o *BTBExportModelParams) GetExtractToS3Ok() (*bool, bool)`
-
-GetExtractToS3Ok returns a tuple with the ExtractToS3 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtractToS3
-
-`func (o *BTBExportModelParams) SetExtractToS3(v bool)`
-
-SetExtractToS3 sets ExtractToS3 field to given value.
-
-### HasExtractToS3
-
-`func (o *BTBExportModelParams) HasExtractToS3() bool`
-
-HasExtractToS3 returns a boolean if a field has been set.
-
 ### GetFeatureIds
 
 `func (o *BTBExportModelParams) GetFeatureIds() string`
@@ -701,81 +639,6 @@ SetIncludeBendLines sets IncludeBendLines field to given value.
 
 HasIncludeBendLines returns a boolean if a field has been set.
 
-### GetIncludeComments
-
-`func (o *BTBExportModelParams) GetIncludeComments() bool`
-
-GetIncludeComments returns the IncludeComments field if non-nil, zero value otherwise.
-
-### GetIncludeCommentsOk
-
-`func (o *BTBExportModelParams) GetIncludeCommentsOk() (*bool, bool)`
-
-GetIncludeCommentsOk returns a tuple with the IncludeComments field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeComments
-
-`func (o *BTBExportModelParams) SetIncludeComments(v bool)`
-
-SetIncludeComments sets IncludeComments field to given value.
-
-### HasIncludeComments
-
-`func (o *BTBExportModelParams) HasIncludeComments() bool`
-
-HasIncludeComments returns a boolean if a field has been set.
-
-### GetIncludeContentCaptures
-
-`func (o *BTBExportModelParams) GetIncludeContentCaptures() bool`
-
-GetIncludeContentCaptures returns the IncludeContentCaptures field if non-nil, zero value otherwise.
-
-### GetIncludeContentCapturesOk
-
-`func (o *BTBExportModelParams) GetIncludeContentCapturesOk() (*bool, bool)`
-
-GetIncludeContentCapturesOk returns a tuple with the IncludeContentCaptures field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeContentCaptures
-
-`func (o *BTBExportModelParams) SetIncludeContentCaptures(v bool)`
-
-SetIncludeContentCaptures sets IncludeContentCaptures field to given value.
-
-### HasIncludeContentCaptures
-
-`func (o *BTBExportModelParams) HasIncludeContentCaptures() bool`
-
-HasIncludeContentCaptures returns a boolean if a field has been set.
-
-### GetIncludeCustomPropertiesData
-
-`func (o *BTBExportModelParams) GetIncludeCustomPropertiesData() bool`
-
-GetIncludeCustomPropertiesData returns the IncludeCustomPropertiesData field if non-nil, zero value otherwise.
-
-### GetIncludeCustomPropertiesDataOk
-
-`func (o *BTBExportModelParams) GetIncludeCustomPropertiesDataOk() (*bool, bool)`
-
-GetIncludeCustomPropertiesDataOk returns a tuple with the IncludeCustomPropertiesData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeCustomPropertiesData
-
-`func (o *BTBExportModelParams) SetIncludeCustomPropertiesData(v bool)`
-
-SetIncludeCustomPropertiesData sets IncludeCustomPropertiesData field to given value.
-
-### HasIncludeCustomPropertiesData
-
-`func (o *BTBExportModelParams) HasIncludeCustomPropertiesData() bool`
-
-HasIncludeCustomPropertiesData returns a boolean if a field has been set.
-
 ### GetIncludeExportIds
 
 `func (o *BTBExportModelParams) GetIncludeExportIds() bool`
@@ -801,106 +664,6 @@ SetIncludeExportIds sets IncludeExportIds field to given value.
 
 HasIncludeExportIds returns a boolean if a field has been set.
 
-### GetIncludeForeignData
-
-`func (o *BTBExportModelParams) GetIncludeForeignData() bool`
-
-GetIncludeForeignData returns the IncludeForeignData field if non-nil, zero value otherwise.
-
-### GetIncludeForeignDataOk
-
-`func (o *BTBExportModelParams) GetIncludeForeignDataOk() (*bool, bool)`
-
-GetIncludeForeignDataOk returns a tuple with the IncludeForeignData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeForeignData
-
-`func (o *BTBExportModelParams) SetIncludeForeignData(v bool)`
-
-SetIncludeForeignData sets IncludeForeignData field to given value.
-
-### HasIncludeForeignData
-
-`func (o *BTBExportModelParams) HasIncludeForeignData() bool`
-
-HasIncludeForeignData returns a boolean if a field has been set.
-
-### GetIncludeItemsData
-
-`func (o *BTBExportModelParams) GetIncludeItemsData() bool`
-
-GetIncludeItemsData returns the IncludeItemsData field if non-nil, zero value otherwise.
-
-### GetIncludeItemsDataOk
-
-`func (o *BTBExportModelParams) GetIncludeItemsDataOk() (*bool, bool)`
-
-GetIncludeItemsDataOk returns a tuple with the IncludeItemsData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeItemsData
-
-`func (o *BTBExportModelParams) SetIncludeItemsData(v bool)`
-
-SetIncludeItemsData sets IncludeItemsData field to given value.
-
-### HasIncludeItemsData
-
-`func (o *BTBExportModelParams) HasIncludeItemsData() bool`
-
-HasIncludeItemsData returns a boolean if a field has been set.
-
-### GetIncludeLinkedDocuments
-
-`func (o *BTBExportModelParams) GetIncludeLinkedDocuments() bool`
-
-GetIncludeLinkedDocuments returns the IncludeLinkedDocuments field if non-nil, zero value otherwise.
-
-### GetIncludeLinkedDocumentsOk
-
-`func (o *BTBExportModelParams) GetIncludeLinkedDocumentsOk() (*bool, bool)`
-
-GetIncludeLinkedDocumentsOk returns a tuple with the IncludeLinkedDocuments field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeLinkedDocuments
-
-`func (o *BTBExportModelParams) SetIncludeLinkedDocuments(v bool)`
-
-SetIncludeLinkedDocuments sets IncludeLinkedDocuments field to given value.
-
-### HasIncludeLinkedDocuments
-
-`func (o *BTBExportModelParams) HasIncludeLinkedDocuments() bool`
-
-HasIncludeLinkedDocuments returns a boolean if a field has been set.
-
-### GetIncludeReleaseManagementData
-
-`func (o *BTBExportModelParams) GetIncludeReleaseManagementData() bool`
-
-GetIncludeReleaseManagementData returns the IncludeReleaseManagementData field if non-nil, zero value otherwise.
-
-### GetIncludeReleaseManagementDataOk
-
-`func (o *BTBExportModelParams) GetIncludeReleaseManagementDataOk() (*bool, bool)`
-
-GetIncludeReleaseManagementDataOk returns a tuple with the IncludeReleaseManagementData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeReleaseManagementData
-
-`func (o *BTBExportModelParams) SetIncludeReleaseManagementData(v bool)`
-
-SetIncludeReleaseManagementData sets IncludeReleaseManagementData field to given value.
-
-### HasIncludeReleaseManagementData
-
-`func (o *BTBExportModelParams) HasIncludeReleaseManagementData() bool`
-
-HasIncludeReleaseManagementData returns a boolean if a field has been set.
-
 ### GetIncludeSketches
 
 `func (o *BTBExportModelParams) GetIncludeSketches() bool`
@@ -925,56 +688,6 @@ SetIncludeSketches sets IncludeSketches field to given value.
 `func (o *BTBExportModelParams) HasIncludeSketches() bool`
 
 HasIncludeSketches returns a boolean if a field has been set.
-
-### GetIncludeStd
-
-`func (o *BTBExportModelParams) GetIncludeStd() bool`
-
-GetIncludeStd returns the IncludeStd field if non-nil, zero value otherwise.
-
-### GetIncludeStdOk
-
-`func (o *BTBExportModelParams) GetIncludeStdOk() (*bool, bool)`
-
-GetIncludeStdOk returns a tuple with the IncludeStd field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeStd
-
-`func (o *BTBExportModelParams) SetIncludeStd(v bool)`
-
-SetIncludeStd sets IncludeStd field to given value.
-
-### HasIncludeStd
-
-`func (o *BTBExportModelParams) HasIncludeStd() bool`
-
-HasIncludeStd returns a boolean if a field has been set.
-
-### GetIncludeThumbnails
-
-`func (o *BTBExportModelParams) GetIncludeThumbnails() bool`
-
-GetIncludeThumbnails returns the IncludeThumbnails field if non-nil, zero value otherwise.
-
-### GetIncludeThumbnailsOk
-
-`func (o *BTBExportModelParams) GetIncludeThumbnailsOk() (*bool, bool)`
-
-GetIncludeThumbnailsOk returns a tuple with the IncludeThumbnails field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeThumbnails
-
-`func (o *BTBExportModelParams) SetIncludeThumbnails(v bool)`
-
-SetIncludeThumbnails sets IncludeThumbnails field to given value.
-
-### HasIncludeThumbnails
-
-`func (o *BTBExportModelParams) HasIncludeThumbnails() bool`
-
-HasIncludeThumbnails returns a boolean if a field has been set.
 
 ### GetIsPartingOut
 
@@ -1050,31 +763,6 @@ SetLinkDocumentWorkspaceId sets LinkDocumentWorkspaceId field to given value.
 `func (o *BTBExportModelParams) HasLinkDocumentWorkspaceId() bool`
 
 HasLinkDocumentWorkspaceId returns a boolean if a field has been set.
-
-### GetLinkedDocumentSubSetId
-
-`func (o *BTBExportModelParams) GetLinkedDocumentSubSetId() string`
-
-GetLinkedDocumentSubSetId returns the LinkedDocumentSubSetId field if non-nil, zero value otherwise.
-
-### GetLinkedDocumentSubSetIdOk
-
-`func (o *BTBExportModelParams) GetLinkedDocumentSubSetIdOk() (*string, bool)`
-
-GetLinkedDocumentSubSetIdOk returns a tuple with the LinkedDocumentSubSetId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLinkedDocumentSubSetId
-
-`func (o *BTBExportModelParams) SetLinkedDocumentSubSetId(v string)`
-
-SetLinkedDocumentSubSetId sets LinkedDocumentSubSetId field to given value.
-
-### HasLinkedDocumentSubSetId
-
-`func (o *BTBExportModelParams) HasLinkedDocumentSubSetId() bool`
-
-HasLinkedDocumentSubSetId returns a boolean if a field has been set.
 
 ### GetMaxFacetWidth
 
