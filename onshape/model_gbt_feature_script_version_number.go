@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.163.15808-38acf80dff96
+API version: 1.164.16251-6646bbcf15b8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -2044,6 +2044,29 @@ const (
 	GBTFeatureScriptVersionNumberV2020MarkOldVersionsImmutable1                                                    GBTFeatureScriptVersionNumber = "V2020_MARK_OLD_VERSIONS_IMMUTABLE_1"
 	GBTFeatureScriptVersionNumberV2021BsurfSetNmnlCrvs                                                             GBTFeatureScriptVersionNumber = "V2021_BSURF_SET_NMNL_CRVS"
 	GBTFeatureScriptVersionNumberV2022ProperlyRemoveInvalidFacesOnBooleanChange                                    GBTFeatureScriptVersionNumber = "V2022_PROPERLY_REMOVE_INVALID_FACES_ON_BOOLEAN_CHANGE"
+	GBTFeatureScriptVersionNumberSkip2023                                                                          GBTFeatureScriptVersionNumber = "SKIP_2023"
+	GBTFeatureScriptVersionNumberSkip2024                                                                          GBTFeatureScriptVersionNumber = "SKIP_2024"
+	GBTFeatureScriptVersionNumberSkip2025                                                                          GBTFeatureScriptVersionNumber = "SKIP_2025"
+	GBTFeatureScriptVersionNumberSkip2026                                                                          GBTFeatureScriptVersionNumber = "SKIP_2026"
+	GBTFeatureScriptVersionNumberSkip2027                                                                          GBTFeatureScriptVersionNumber = "SKIP_2027"
+	GBTFeatureScriptVersionNumberSkip2028                                                                          GBTFeatureScriptVersionNumber = "SKIP_2028"
+	GBTFeatureScriptVersionNumberSkip2029                                                                          GBTFeatureScriptVersionNumber = "SKIP_2029"
+	GBTFeatureScriptVersionNumberSkip2030                                                                          GBTFeatureScriptVersionNumber = "SKIP_2030"
+	GBTFeatureScriptVersionNumberSkip2031                                                                          GBTFeatureScriptVersionNumber = "SKIP_2031"
+	GBTFeatureScriptVersionNumberSkip2032                                                                          GBTFeatureScriptVersionNumber = "SKIP_2032"
+	GBTFeatureScriptVersionNumberV2033BooleanNonManifoldResultError                                                GBTFeatureScriptVersionNumber = "V2033_BOOLEAN_NON_MANIFOLD_RESULT_ERROR"
+	GBTFeatureScriptVersionNumberV2034FaceIntersectionTolerance                                                    GBTFeatureScriptVersionNumber = "V2034_FACE_INTERSECTION_TOLERANCE"
+	GBTFeatureScriptVersionNumberV2035FaceBlendSoftExtension                                                       GBTFeatureScriptVersionNumber = "V2035_FACE_BLEND_SOFT_EXTENSION"
+	GBTFeatureScriptVersionNumberV2036RuledSurfaceNominalCurves                                                    GBTFeatureScriptVersionNumber = "V2036_RULED_SURFACE_NOMINAL_CURVES"
+	GBTFeatureScriptVersionNumberV2037MirrorNominalCurves                                                          GBTFeatureScriptVersionNumber = "V2037_MIRROR_NOMINAL_CURVES"
+	GBTFeatureScriptVersionNumberV2038BridgingCurveCurvatureFix                                                    GBTFeatureScriptVersionNumber = "V2038_BRIDGING_CURVE_CURVATURE_FIX"
+	GBTFeatureScriptVersionNumberV2039HoleFeatureBadPositionWarning                                                GBTFeatureScriptVersionNumber = "V2039_HOLE_FEATURE_BAD_POSITION_WARNING"
+	GBTFeatureScriptVersionNumberV2040SectionViewFixCompositeAppearance                                            GBTFeatureScriptVersionNumber = "V2040_SECTION_VIEW_FIX_COMPOSITE_APPEARANCE"
+	GBTFeatureScriptVersionNumberV2041SameHoleOnSheetMetalError                                                    GBTFeatureScriptVersionNumber = "V2041_SAME_HOLE_ON_SHEET_METAL_ERROR"
+	GBTFeatureScriptVersionNumberV2042HoleUpdateThreadClassFix                                                     GBTFeatureScriptVersionNumber = "V2042_HOLE_UPDATE_THREAD_CLASS_FIX"
+	GBTFeatureScriptVersionNumberV2043HoleRemoveUpToFaceEndCondition                                               GBTFeatureScriptVersionNumber = "V2043_HOLE_REMOVE_UP_TO_FACE_END_CONDITION"
+	GBTFeatureScriptVersionNumberV2044HoleRemoveUpToEndConditions                                                  GBTFeatureScriptVersionNumber = "V2044_HOLE_REMOVE_UP_TO_END_CONDITIONS"
+	GBTFeatureScriptVersionNumberV2045HoleChangeThreadClassTable                                                   GBTFeatureScriptVersionNumber = "V2045_HOLE_CHANGE_THREAD_CLASS_TABLE"
 	GBTFeatureScriptVersionNumberUnknown                                                                           GBTFeatureScriptVersionNumber = "UNKNOWN"
 )
 
@@ -4072,6 +4095,29 @@ var AllowedGBTFeatureScriptVersionNumberEnumValues = []GBTFeatureScriptVersionNu
 	"V2020_MARK_OLD_VERSIONS_IMMUTABLE_1",
 	"V2021_BSURF_SET_NMNL_CRVS",
 	"V2022_PROPERLY_REMOVE_INVALID_FACES_ON_BOOLEAN_CHANGE",
+	"SKIP_2023",
+	"SKIP_2024",
+	"SKIP_2025",
+	"SKIP_2026",
+	"SKIP_2027",
+	"SKIP_2028",
+	"SKIP_2029",
+	"SKIP_2030",
+	"SKIP_2031",
+	"SKIP_2032",
+	"V2033_BOOLEAN_NON_MANIFOLD_RESULT_ERROR",
+	"V2034_FACE_INTERSECTION_TOLERANCE",
+	"V2035_FACE_BLEND_SOFT_EXTENSION",
+	"V2036_RULED_SURFACE_NOMINAL_CURVES",
+	"V2037_MIRROR_NOMINAL_CURVES",
+	"V2038_BRIDGING_CURVE_CURVATURE_FIX",
+	"V2039_HOLE_FEATURE_BAD_POSITION_WARNING",
+	"V2040_SECTION_VIEW_FIX_COMPOSITE_APPEARANCE",
+	"V2041_SAME_HOLE_ON_SHEET_METAL_ERROR",
+	"V2042_HOLE_UPDATE_THREAD_CLASS_FIX",
+	"V2043_HOLE_REMOVE_UP_TO_FACE_END_CONDITION",
+	"V2044_HOLE_REMOVE_UP_TO_END_CONDITIONS",
+	"V2045_HOLE_CHANGE_THREAD_CLASS_TABLE",
 	"UNKNOWN",
 }
 

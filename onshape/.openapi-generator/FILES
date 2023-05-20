@@ -257,6 +257,8 @@ docs/BTCurveLengthDimensionDisplayData322.md
 docs/BTCurveLengthDimensionDisplayData322AllOf.md
 docs/BTCylinderDescription686.md
 docs/BTCylinderDescription686AllOf.md
+docs/BTCylindricalImageMapping1640.md
+docs/BTCylindricalImageMapping1640AllOf.md
 docs/BTDebugGeometry2059.md
 docs/BTDebugGeometry2059AllOf.md
 docs/BTDecal2404.md
@@ -303,6 +305,7 @@ docs/BTEditingLogic2350.md
 docs/BTElementDisplayData326.md
 docs/BTElementLibraryPurpose3353.md
 docs/BTElementLibraryReferenceData3133.md
+docs/BTElementLibrarySummaryInfo.md
 docs/BTElementLocationParams.md
 docs/BTElementMergeInfo.md
 docs/BTElementReference725.md
@@ -1500,6 +1503,7 @@ model_bt_curve_geometry_line_117.go
 model_bt_curve_geometry_spline_118.go
 model_bt_curve_length_dimension_display_data_322.go
 model_bt_cylinder_description_686.go
+model_bt_cylindrical_image_mapping_1640.go
 model_bt_debug_geometry_2059.go
 model_bt_decal_2404.go
 model_bt_default_features_119.go
@@ -1539,6 +1543,7 @@ model_bt_editing_logic_2350.go
 model_bt_element_display_data_326.go
 model_bt_element_library_purpose_3353.go
 model_bt_element_library_reference_data_3133.go
+model_bt_element_library_summary_info.go
 model_bt_element_location_params.go
 model_bt_element_merge_info.go
 model_bt_element_reference_725.go

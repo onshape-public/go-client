@@ -1248,7 +1248,7 @@ Name | Type | Description  | Notes
 
 ## GetJsonPaths
 
-> BTGetJsonPathsResponse1544 GetJsonPaths(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).BTGetJsonPaths1697(bTGetJsonPaths1697).Execute()
+> BTGetJsonPathsResponse1544 GetJsonPaths(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BTGetJsonPaths1697(bTGetJsonPaths1697).Execute()
 
 Retrieve JSON paths by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -1265,17 +1265,18 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    eid := "eid_example" // string | 
-    wvm := "wvm_example" // string | 
-    wvmid := "wvmid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     transactionId := "transactionId_example" // string |  (optional)
     changeId := "changeId_example" // string |  (optional)
     bTGetJsonPaths1697 := *openapiclient.NewBTGetJsonPaths1697() // BTGetJsonPaths1697 |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppElementApi.GetJsonPaths(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).BTGetJsonPaths1697(bTGetJsonPaths1697).Execute()
+    resp, r, err := apiClient.AppElementApi.GetJsonPaths(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BTGetJsonPaths1697(bTGetJsonPaths1697).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetJsonPaths``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1291,10 +1292,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**eid** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -1307,6 +1308,7 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **transactionId** | **string** |  | 
  **changeId** | **string** |  | 
  **bTGetJsonPaths1697** | [**BTGetJsonPaths1697**](BTGetJsonPaths1697.md) |  | 

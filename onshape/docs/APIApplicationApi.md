@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## GetCompanyAppSettings
 
-> BTUserAppSettingsInfo GetCompanyAppSettings(ctx, cpid, cid).Key(key).Execute()
+> BTUserAppSettingsInfo GetCompanyAppSettings(ctx, cpid, cid).DocumentId(documentId).Key(key).Execute()
 
 Retrieve company level settings for this application by client ID and company ID. This API may only be used with an OAuth token and only by the current user.
 
@@ -254,11 +254,12 @@ import (
 func main() {
     cpid := "cpid_example" // string | 
     cid := "cid_example" // string | 
+    documentId := "documentId_example" // string | A document owned by the company. Read access to this document allows read access to its owning company's settings. (optional)
     key := []string{"Inner_example"} // []string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.APIApplicationApi.GetCompanyAppSettings(context.Background(), cpid, cid).Key(key).Execute()
+    resp, r, err := apiClient.APIApplicationApi.GetCompanyAppSettings(context.Background(), cpid, cid).DocumentId(documentId).Key(key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.GetCompanyAppSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -286,6 +287,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **documentId** | **string** | A document owned by the company. Read access to this document allows read access to its owning company&#39;s settings. | 
  **key** | **[]string** |  | 
 
 ### Return type

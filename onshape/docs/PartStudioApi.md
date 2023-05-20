@@ -538,7 +538,7 @@ func main() {
     wvm := "wvm_example" // string | One of w or v or m corresponding to whether a workspace or version or microversion was entered.
     wvmid := "wvmid_example" // string | Workspace (w), Version (v) or Microversion (m) ID.
     eid := "eid_example" // string | Element ID.
-    partIds := "partIds_example" // string | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId=JHK,JHD). May not be combined with other ID filters (optional)
+    partIds := "partIds_example" // string | IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds=JHK,JHD). (optional)
     version := "version_example" // string | Parasolid version (optional) (default to "0")
     includeExportIds := true // bool | Whether topology ids should be exported as parasolid attributes (optional) (default to false)
     configuration := "configuration_example" // string | Configuration string. (optional)
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 
 
- **partIds** | **string** | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK,JHD). May not be combined with other ID filters | 
+ **partIds** | **string** | IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds&#x3D;JHK,JHD). | 
  **version** | **string** | Parasolid version | [default to &quot;0&quot;]
  **includeExportIds** | **bool** | Whether topology ids should be exported as parasolid attributes | [default to false]
  **configuration** | **string** | Configuration string. | 
@@ -726,7 +726,7 @@ func main() {
     wvm := "wvm_example" // string | One of w or v or m corresponding to whether a workspace or version or microversion was entered.
     wvmid := "wvmid_example" // string | Workspace (w), Version (v) or Microversion (m) ID.
     eid := "eid_example" // string | Element ID.
-    partIds := "partIds_example" // string | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId=JHK,JHD). May not be combined with other ID filters (optional)
+    partIds := "partIds_example" // string | IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds=JHK,JHD). (optional)
     mode := "mode_example" // string | Type of file: text, binary (optional) (default to "text")
     grouping := true // bool | Whether parts should be exported as a group or individually in a .zip file (optional) (default to true)
     scale := float64(1.2) // float64 | Scale for measurements. (optional) (default to 1)
@@ -770,7 +770,7 @@ Name | Type | Description  | Notes
 
 
 
- **partIds** | **string** | IDs of the parts to retrieve. Repeat query param to add more than one (i.e. partId&#x3D;JHK,JHD). May not be combined with other ID filters | 
+ **partIds** | **string** | IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds&#x3D;JHK,JHD). | 
  **mode** | **string** | Type of file: text, binary | [default to &quot;text&quot;]
  **grouping** | **bool** | Whether parts should be exported as a group or individually in a .zip file | [default to true]
  **scale** | **float64** | Scale for measurements. | [default to 1]

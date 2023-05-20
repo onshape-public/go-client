@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.163.15808-38acf80dff96
+API version: 1.164.16251-6646bbcf15b8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -23,7 +23,6 @@ type BTBExportModelParams struct {
 	CloudObjectId                *string  `json:"cloudObjectId,omitempty"`
 	CloudStorageAccountId        *string  `json:"cloudStorageAccountId,omitempty"`
 	Configuration                *string  `json:"configuration,omitempty"`
-	DeepSearchForForeignData     *bool    `json:"deepSearchForForeignData,omitempty"`
 	DestinationName              *string  `json:"destinationName,omitempty"`
 	DocumentId                   string   `json:"documentId"`
 	DocumentVersionId            *string  `json:"documentVersionId,omitempty"`
@@ -33,7 +32,6 @@ type BTBExportModelParams struct {
 	EmailMessage                 *string  `json:"emailMessage,omitempty"`
 	EmailSubject                 *string  `json:"emailSubject,omitempty"`
 	EmailTo                      *string  `json:"emailTo,omitempty"`
-	ExtractToS3                  *bool    `json:"extractToS3,omitempty"`
 	FeatureIds                   *string  `json:"featureIds,omitempty"`
 	Flatten                      *bool    `json:"flatten,omitempty"`
 	Format                       string   `json:"format"`
@@ -42,21 +40,11 @@ type BTBExportModelParams struct {
 	IgnoreExportRulesForContents *bool    `json:"ignoreExportRulesForContents,omitempty"`
 	IncludeBendCenterlines       *bool    `json:"includeBendCenterlines,omitempty"`
 	IncludeBendLines             *bool    `json:"includeBendLines,omitempty"`
-	IncludeComments              *bool    `json:"includeComments,omitempty"`
-	IncludeContentCaptures       *bool    `json:"includeContentCaptures,omitempty"`
-	IncludeCustomPropertiesData  *bool    `json:"includeCustomPropertiesData,omitempty"`
 	IncludeExportIds             *bool    `json:"includeExportIds,omitempty"`
-	IncludeForeignData           *bool    `json:"includeForeignData,omitempty"`
-	IncludeItemsData             *bool    `json:"includeItemsData,omitempty"`
-	IncludeLinkedDocuments       *bool    `json:"includeLinkedDocuments,omitempty"`
-	IncludeReleaseManagementData *bool    `json:"includeReleaseManagementData,omitempty"`
 	IncludeSketches              *bool    `json:"includeSketches,omitempty"`
-	IncludeStd                   *bool    `json:"includeStd,omitempty"`
-	IncludeThumbnails            *bool    `json:"includeThumbnails,omitempty"`
 	IsPartingOut                 *bool    `json:"isPartingOut,omitempty"`
 	LinkDocumentId               *string  `json:"linkDocumentId,omitempty"`
 	LinkDocumentWorkspaceId      *string  `json:"linkDocumentWorkspaceId,omitempty"`
-	LinkedDocumentSubSetId       *string  `json:"linkedDocumentSubSetId,omitempty"`
 	MaxFacetWidth                *float64 `json:"maxFacetWidth,omitempty"`
 	Microversion                 *string  `json:"microversion,omitempty"`
 	MinFacetWidth                *float64 `json:"minFacetWidth,omitempty"`
@@ -290,38 +278,6 @@ func (o *BTBExportModelParams) HasConfiguration() bool {
 // SetConfiguration gets a reference to the given string and assigns it to the Configuration field.
 func (o *BTBExportModelParams) SetConfiguration(v string) {
 	o.Configuration = &v
-}
-
-// GetDeepSearchForForeignData returns the DeepSearchForForeignData field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetDeepSearchForForeignData() bool {
-	if o == nil || o.DeepSearchForForeignData == nil {
-		var ret bool
-		return ret
-	}
-	return *o.DeepSearchForForeignData
-}
-
-// GetDeepSearchForForeignDataOk returns a tuple with the DeepSearchForForeignData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetDeepSearchForForeignDataOk() (*bool, bool) {
-	if o == nil || o.DeepSearchForForeignData == nil {
-		return nil, false
-	}
-	return o.DeepSearchForForeignData, true
-}
-
-// HasDeepSearchForForeignData returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasDeepSearchForForeignData() bool {
-	if o != nil && o.DeepSearchForForeignData != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDeepSearchForForeignData gets a reference to the given bool and assigns it to the DeepSearchForForeignData field.
-func (o *BTBExportModelParams) SetDeepSearchForForeignData(v bool) {
-	o.DeepSearchForForeignData = &v
 }
 
 // GetDestinationName returns the DestinationName field value if set, zero value otherwise.
@@ -604,38 +560,6 @@ func (o *BTBExportModelParams) SetEmailTo(v string) {
 	o.EmailTo = &v
 }
 
-// GetExtractToS3 returns the ExtractToS3 field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetExtractToS3() bool {
-	if o == nil || o.ExtractToS3 == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ExtractToS3
-}
-
-// GetExtractToS3Ok returns a tuple with the ExtractToS3 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetExtractToS3Ok() (*bool, bool) {
-	if o == nil || o.ExtractToS3 == nil {
-		return nil, false
-	}
-	return o.ExtractToS3, true
-}
-
-// HasExtractToS3 returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasExtractToS3() bool {
-	if o != nil && o.ExtractToS3 != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetExtractToS3 gets a reference to the given bool and assigns it to the ExtractToS3 field.
-func (o *BTBExportModelParams) SetExtractToS3(v bool) {
-	o.ExtractToS3 = &v
-}
-
 // GetFeatureIds returns the FeatureIds field value if set, zero value otherwise.
 func (o *BTBExportModelParams) GetFeatureIds() string {
 	if o == nil || o.FeatureIds == nil {
@@ -884,102 +808,6 @@ func (o *BTBExportModelParams) SetIncludeBendLines(v bool) {
 	o.IncludeBendLines = &v
 }
 
-// GetIncludeComments returns the IncludeComments field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeComments() bool {
-	if o == nil || o.IncludeComments == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeComments
-}
-
-// GetIncludeCommentsOk returns a tuple with the IncludeComments field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeCommentsOk() (*bool, bool) {
-	if o == nil || o.IncludeComments == nil {
-		return nil, false
-	}
-	return o.IncludeComments, true
-}
-
-// HasIncludeComments returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeComments() bool {
-	if o != nil && o.IncludeComments != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeComments gets a reference to the given bool and assigns it to the IncludeComments field.
-func (o *BTBExportModelParams) SetIncludeComments(v bool) {
-	o.IncludeComments = &v
-}
-
-// GetIncludeContentCaptures returns the IncludeContentCaptures field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeContentCaptures() bool {
-	if o == nil || o.IncludeContentCaptures == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeContentCaptures
-}
-
-// GetIncludeContentCapturesOk returns a tuple with the IncludeContentCaptures field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeContentCapturesOk() (*bool, bool) {
-	if o == nil || o.IncludeContentCaptures == nil {
-		return nil, false
-	}
-	return o.IncludeContentCaptures, true
-}
-
-// HasIncludeContentCaptures returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeContentCaptures() bool {
-	if o != nil && o.IncludeContentCaptures != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeContentCaptures gets a reference to the given bool and assigns it to the IncludeContentCaptures field.
-func (o *BTBExportModelParams) SetIncludeContentCaptures(v bool) {
-	o.IncludeContentCaptures = &v
-}
-
-// GetIncludeCustomPropertiesData returns the IncludeCustomPropertiesData field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeCustomPropertiesData() bool {
-	if o == nil || o.IncludeCustomPropertiesData == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeCustomPropertiesData
-}
-
-// GetIncludeCustomPropertiesDataOk returns a tuple with the IncludeCustomPropertiesData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeCustomPropertiesDataOk() (*bool, bool) {
-	if o == nil || o.IncludeCustomPropertiesData == nil {
-		return nil, false
-	}
-	return o.IncludeCustomPropertiesData, true
-}
-
-// HasIncludeCustomPropertiesData returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeCustomPropertiesData() bool {
-	if o != nil && o.IncludeCustomPropertiesData != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeCustomPropertiesData gets a reference to the given bool and assigns it to the IncludeCustomPropertiesData field.
-func (o *BTBExportModelParams) SetIncludeCustomPropertiesData(v bool) {
-	o.IncludeCustomPropertiesData = &v
-}
-
 // GetIncludeExportIds returns the IncludeExportIds field value if set, zero value otherwise.
 func (o *BTBExportModelParams) GetIncludeExportIds() bool {
 	if o == nil || o.IncludeExportIds == nil {
@@ -1012,134 +840,6 @@ func (o *BTBExportModelParams) SetIncludeExportIds(v bool) {
 	o.IncludeExportIds = &v
 }
 
-// GetIncludeForeignData returns the IncludeForeignData field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeForeignData() bool {
-	if o == nil || o.IncludeForeignData == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeForeignData
-}
-
-// GetIncludeForeignDataOk returns a tuple with the IncludeForeignData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeForeignDataOk() (*bool, bool) {
-	if o == nil || o.IncludeForeignData == nil {
-		return nil, false
-	}
-	return o.IncludeForeignData, true
-}
-
-// HasIncludeForeignData returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeForeignData() bool {
-	if o != nil && o.IncludeForeignData != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeForeignData gets a reference to the given bool and assigns it to the IncludeForeignData field.
-func (o *BTBExportModelParams) SetIncludeForeignData(v bool) {
-	o.IncludeForeignData = &v
-}
-
-// GetIncludeItemsData returns the IncludeItemsData field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeItemsData() bool {
-	if o == nil || o.IncludeItemsData == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeItemsData
-}
-
-// GetIncludeItemsDataOk returns a tuple with the IncludeItemsData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeItemsDataOk() (*bool, bool) {
-	if o == nil || o.IncludeItemsData == nil {
-		return nil, false
-	}
-	return o.IncludeItemsData, true
-}
-
-// HasIncludeItemsData returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeItemsData() bool {
-	if o != nil && o.IncludeItemsData != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeItemsData gets a reference to the given bool and assigns it to the IncludeItemsData field.
-func (o *BTBExportModelParams) SetIncludeItemsData(v bool) {
-	o.IncludeItemsData = &v
-}
-
-// GetIncludeLinkedDocuments returns the IncludeLinkedDocuments field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeLinkedDocuments() bool {
-	if o == nil || o.IncludeLinkedDocuments == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeLinkedDocuments
-}
-
-// GetIncludeLinkedDocumentsOk returns a tuple with the IncludeLinkedDocuments field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeLinkedDocumentsOk() (*bool, bool) {
-	if o == nil || o.IncludeLinkedDocuments == nil {
-		return nil, false
-	}
-	return o.IncludeLinkedDocuments, true
-}
-
-// HasIncludeLinkedDocuments returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeLinkedDocuments() bool {
-	if o != nil && o.IncludeLinkedDocuments != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeLinkedDocuments gets a reference to the given bool and assigns it to the IncludeLinkedDocuments field.
-func (o *BTBExportModelParams) SetIncludeLinkedDocuments(v bool) {
-	o.IncludeLinkedDocuments = &v
-}
-
-// GetIncludeReleaseManagementData returns the IncludeReleaseManagementData field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeReleaseManagementData() bool {
-	if o == nil || o.IncludeReleaseManagementData == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeReleaseManagementData
-}
-
-// GetIncludeReleaseManagementDataOk returns a tuple with the IncludeReleaseManagementData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeReleaseManagementDataOk() (*bool, bool) {
-	if o == nil || o.IncludeReleaseManagementData == nil {
-		return nil, false
-	}
-	return o.IncludeReleaseManagementData, true
-}
-
-// HasIncludeReleaseManagementData returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeReleaseManagementData() bool {
-	if o != nil && o.IncludeReleaseManagementData != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeReleaseManagementData gets a reference to the given bool and assigns it to the IncludeReleaseManagementData field.
-func (o *BTBExportModelParams) SetIncludeReleaseManagementData(v bool) {
-	o.IncludeReleaseManagementData = &v
-}
-
 // GetIncludeSketches returns the IncludeSketches field value if set, zero value otherwise.
 func (o *BTBExportModelParams) GetIncludeSketches() bool {
 	if o == nil || o.IncludeSketches == nil {
@@ -1170,70 +870,6 @@ func (o *BTBExportModelParams) HasIncludeSketches() bool {
 // SetIncludeSketches gets a reference to the given bool and assigns it to the IncludeSketches field.
 func (o *BTBExportModelParams) SetIncludeSketches(v bool) {
 	o.IncludeSketches = &v
-}
-
-// GetIncludeStd returns the IncludeStd field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeStd() bool {
-	if o == nil || o.IncludeStd == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeStd
-}
-
-// GetIncludeStdOk returns a tuple with the IncludeStd field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeStdOk() (*bool, bool) {
-	if o == nil || o.IncludeStd == nil {
-		return nil, false
-	}
-	return o.IncludeStd, true
-}
-
-// HasIncludeStd returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeStd() bool {
-	if o != nil && o.IncludeStd != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeStd gets a reference to the given bool and assigns it to the IncludeStd field.
-func (o *BTBExportModelParams) SetIncludeStd(v bool) {
-	o.IncludeStd = &v
-}
-
-// GetIncludeThumbnails returns the IncludeThumbnails field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetIncludeThumbnails() bool {
-	if o == nil || o.IncludeThumbnails == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeThumbnails
-}
-
-// GetIncludeThumbnailsOk returns a tuple with the IncludeThumbnails field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetIncludeThumbnailsOk() (*bool, bool) {
-	if o == nil || o.IncludeThumbnails == nil {
-		return nil, false
-	}
-	return o.IncludeThumbnails, true
-}
-
-// HasIncludeThumbnails returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasIncludeThumbnails() bool {
-	if o != nil && o.IncludeThumbnails != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeThumbnails gets a reference to the given bool and assigns it to the IncludeThumbnails field.
-func (o *BTBExportModelParams) SetIncludeThumbnails(v bool) {
-	o.IncludeThumbnails = &v
 }
 
 // GetIsPartingOut returns the IsPartingOut field value if set, zero value otherwise.
@@ -1330,38 +966,6 @@ func (o *BTBExportModelParams) HasLinkDocumentWorkspaceId() bool {
 // SetLinkDocumentWorkspaceId gets a reference to the given string and assigns it to the LinkDocumentWorkspaceId field.
 func (o *BTBExportModelParams) SetLinkDocumentWorkspaceId(v string) {
 	o.LinkDocumentWorkspaceId = &v
-}
-
-// GetLinkedDocumentSubSetId returns the LinkedDocumentSubSetId field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetLinkedDocumentSubSetId() string {
-	if o == nil || o.LinkedDocumentSubSetId == nil {
-		var ret string
-		return ret
-	}
-	return *o.LinkedDocumentSubSetId
-}
-
-// GetLinkedDocumentSubSetIdOk returns a tuple with the LinkedDocumentSubSetId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetLinkedDocumentSubSetIdOk() (*string, bool) {
-	if o == nil || o.LinkedDocumentSubSetId == nil {
-		return nil, false
-	}
-	return o.LinkedDocumentSubSetId, true
-}
-
-// HasLinkedDocumentSubSetId returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasLinkedDocumentSubSetId() bool {
-	if o != nil && o.LinkedDocumentSubSetId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLinkedDocumentSubSetId gets a reference to the given string and assigns it to the LinkedDocumentSubSetId field.
-func (o *BTBExportModelParams) SetLinkedDocumentSubSetId(v string) {
-	o.LinkedDocumentSubSetId = &v
 }
 
 // GetMaxFacetWidth returns the MaxFacetWidth field value if set, zero value otherwise.
@@ -2088,9 +1692,6 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	if o.Configuration != nil {
 		toSerialize["configuration"] = o.Configuration
 	}
-	if o.DeepSearchForForeignData != nil {
-		toSerialize["deepSearchForForeignData"] = o.DeepSearchForForeignData
-	}
 	if o.DestinationName != nil {
 		toSerialize["destinationName"] = o.DestinationName
 	}
@@ -2118,9 +1719,6 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	if o.EmailTo != nil {
 		toSerialize["emailTo"] = o.EmailTo
 	}
-	if o.ExtractToS3 != nil {
-		toSerialize["extractToS3"] = o.ExtractToS3
-	}
 	if o.FeatureIds != nil {
 		toSerialize["featureIds"] = o.FeatureIds
 	}
@@ -2145,38 +1743,11 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	if o.IncludeBendLines != nil {
 		toSerialize["includeBendLines"] = o.IncludeBendLines
 	}
-	if o.IncludeComments != nil {
-		toSerialize["includeComments"] = o.IncludeComments
-	}
-	if o.IncludeContentCaptures != nil {
-		toSerialize["includeContentCaptures"] = o.IncludeContentCaptures
-	}
-	if o.IncludeCustomPropertiesData != nil {
-		toSerialize["includeCustomPropertiesData"] = o.IncludeCustomPropertiesData
-	}
 	if o.IncludeExportIds != nil {
 		toSerialize["includeExportIds"] = o.IncludeExportIds
 	}
-	if o.IncludeForeignData != nil {
-		toSerialize["includeForeignData"] = o.IncludeForeignData
-	}
-	if o.IncludeItemsData != nil {
-		toSerialize["includeItemsData"] = o.IncludeItemsData
-	}
-	if o.IncludeLinkedDocuments != nil {
-		toSerialize["includeLinkedDocuments"] = o.IncludeLinkedDocuments
-	}
-	if o.IncludeReleaseManagementData != nil {
-		toSerialize["includeReleaseManagementData"] = o.IncludeReleaseManagementData
-	}
 	if o.IncludeSketches != nil {
 		toSerialize["includeSketches"] = o.IncludeSketches
-	}
-	if o.IncludeStd != nil {
-		toSerialize["includeStd"] = o.IncludeStd
-	}
-	if o.IncludeThumbnails != nil {
-		toSerialize["includeThumbnails"] = o.IncludeThumbnails
 	}
 	if o.IsPartingOut != nil {
 		toSerialize["isPartingOut"] = o.IsPartingOut
@@ -2186,9 +1757,6 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.LinkDocumentWorkspaceId != nil {
 		toSerialize["linkDocumentWorkspaceId"] = o.LinkDocumentWorkspaceId
-	}
-	if o.LinkedDocumentSubSetId != nil {
-		toSerialize["linkedDocumentSubSetId"] = o.LinkedDocumentSubSetId
 	}
 	if o.MaxFacetWidth != nil {
 		toSerialize["maxFacetWidth"] = o.MaxFacetWidth

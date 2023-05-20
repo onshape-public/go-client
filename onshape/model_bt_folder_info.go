@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.163.15808-38acf80dff96
+API version: 1.164.16251-6646bbcf15b8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -39,14 +39,15 @@ type BTFolderInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef       *string   `json:"viewRef,omitempty"`
-	Active        *bool     `json:"active,omitempty"`
-	CanUnshare    *bool     `json:"canUnshare,omitempty"`
-	IsOrphaned    *bool     `json:"isOrphaned,omitempty"`
-	ParentId      *string   `json:"parentId,omitempty"`
-	PermissionSet []string  `json:"permissionSet,omitempty"`
-	Trash         *bool     `json:"trash,omitempty"`
-	TrashedAt     *JSONTime `json:"trashedAt,omitempty"`
+	ViewRef                   *string                      `json:"viewRef,omitempty"`
+	Active                    *bool                        `json:"active,omitempty"`
+	CanUnshare                *bool                        `json:"canUnshare,omitempty"`
+	ElementLibrarySummaryInfo *BTElementLibrarySummaryInfo `json:"elementLibrarySummaryInfo,omitempty"`
+	IsOrphaned                *bool                        `json:"isOrphaned,omitempty"`
+	ParentId                  *string                      `json:"parentId,omitempty"`
+	PermissionSet             []string                     `json:"permissionSet,omitempty"`
+	Trash                     *bool                        `json:"trash,omitempty"`
+	TrashedAt                 *JSONTime                    `json:"trashedAt,omitempty"`
 }
 
 // NewBTFolderInfo instantiates a new BTFolderInfo object
@@ -731,6 +732,38 @@ func (o *BTFolderInfo) SetCanUnshare(v bool) {
 	o.CanUnshare = &v
 }
 
+// GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field value if set, zero value otherwise.
+func (o *BTFolderInfo) GetElementLibrarySummaryInfo() BTElementLibrarySummaryInfo {
+	if o == nil || o.ElementLibrarySummaryInfo == nil {
+		var ret BTElementLibrarySummaryInfo
+		return ret
+	}
+	return *o.ElementLibrarySummaryInfo
+}
+
+// GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTFolderInfo) GetElementLibrarySummaryInfoOk() (*BTElementLibrarySummaryInfo, bool) {
+	if o == nil || o.ElementLibrarySummaryInfo == nil {
+		return nil, false
+	}
+	return o.ElementLibrarySummaryInfo, true
+}
+
+// HasElementLibrarySummaryInfo returns a boolean if a field has been set.
+func (o *BTFolderInfo) HasElementLibrarySummaryInfo() bool {
+	if o != nil && o.ElementLibrarySummaryInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementLibrarySummaryInfo gets a reference to the given BTElementLibrarySummaryInfo and assigns it to the ElementLibrarySummaryInfo field.
+func (o *BTFolderInfo) SetElementLibrarySummaryInfo(v BTElementLibrarySummaryInfo) {
+	o.ElementLibrarySummaryInfo = &v
+}
+
 // GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
 func (o *BTFolderInfo) GetIsOrphaned() bool {
 	if o == nil || o.IsOrphaned == nil {
@@ -955,6 +988,9 @@ func (o BTFolderInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CanUnshare != nil {
 		toSerialize["canUnshare"] = o.CanUnshare
+	}
+	if o.ElementLibrarySummaryInfo != nil {
+		toSerialize["elementLibrarySummaryInfo"] = o.ElementLibrarySummaryInfo
 	}
 	if o.IsOrphaned != nil {
 		toSerialize["isOrphaned"] = o.IsOrphaned

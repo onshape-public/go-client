@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.163.15808-38acf80dff96
+API version: 1.164.16251-6646bbcf15b8
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -19,6 +19,11 @@ import (
 // BTImageMapping3821 - struct for BTImageMapping3821
 type BTImageMapping3821 struct {
 	implBTImageMapping3821 interface{}
+}
+
+// BTCylindricalImageMapping1640AsBTImageMapping3821 is a convenience function that returns BTCylindricalImageMapping1640 wrapped in BTImageMapping3821
+func (o *BTCylindricalImageMapping1640) AsBTImageMapping3821() *BTImageMapping3821 {
+	return &BTImageMapping3821{o}
 }
 
 // BTPlanarImageMapping4398AsBTImageMapping3821 is a convenience function that returns BTPlanarImageMapping4398 wrapped in BTImageMapping3821
@@ -201,6 +206,20 @@ func (dst *BTImageMapping3821) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+	}
+
+	// check if the discriminator value is 'BTCylindricalImageMapping-1640'
+	if jsonDict["btType"] == "BTCylindricalImageMapping-1640" {
+		// try to unmarshal JSON data into BTCylindricalImageMapping1640
+		var qr *BTCylindricalImageMapping1640
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTImageMapping3821 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTImageMapping3821 = nil
+			return fmt.Errorf("Failed to unmarshal BTImageMapping3821 as BTCylindricalImageMapping1640: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTPlanarImageMapping-4398'
