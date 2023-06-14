@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.164.16955-b4ecd192bba6
+API version: 1.165.17369-82f2ed5d514e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,41 +17,39 @@ import (
 
 // BTPartStudioDisplayData346 struct for BTPartStudioDisplayData346
 type BTPartStudioDisplayData346 struct {
-	AppearanceIdToAppearanceOverride                *map[string]BTAppearanceOverride2517                `json:"appearanceIdToAppearanceOverride,omitempty"`
-	AssemblyReferenceDisplayData                    *BTAssemblyReferencesDisplayData1562                `json:"assemblyReferenceDisplayData,omitempty"`
-	BtType                                          *string                                             `json:"btType,omitempty"`
-	CacheablePartStudioDisplayDataVersion           *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
-	DecalIdToDecal                                  *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
-	DeterministicIdToAssociatedFeatureIds           *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
-	DeterministicIdToEntity                         *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
-	DeterministicIdToPartDisplayData                *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
-	DeterministicPartIdToData                       *map[string]BTPartData16                            `json:"deterministicPartIdToData,omitempty"`
-	Dimensions                                      []BTDimensionDisplayData323                         `json:"dimensions,omitempty"`
-	DisplayStateId                                  *string                                             `json:"displayStateId,omitempty"`
-	ElementId                                       *string                                             `json:"elementId,omitempty"`
-	FeatureIdToOperationIndices                     *map[string][]int32                                 `json:"featureIdToOperationIndices,omitempty"`
-	FromCache                                       *bool                                               `json:"fromCache,omitempty"`
-	FromFullElementId                               *BTFullElementId756                                 `json:"fromFullElementId,omitempty"`
-	FullElementId                                   *BTFullElementId756                                 `json:"fullElementId,omitempty"`
-	Incremental                                     *bool                                               `json:"incremental,omitempty"`
-	InstanceCount                                   *int32                                              `json:"instanceCount,omitempty"`
-	IsBase                                          *bool                                               `json:"isBase,omitempty"`
-	IsExternal                                      *bool                                               `json:"isExternal,omitempty"`
-	IsNoop                                          *bool                                               `json:"isNoop,omitempty"`
-	IsUsingCPUIntensiveThreadPoolForCopyForSettings *bool                                               `json:"isUsingCPUIntensiveThreadPoolForCopyForSettings,omitempty"`
-	KeepFromMicroversion                            *bool                                               `json:"keepFromMicroversion,omitempty"`
-	MicroversionId                                  *BTMicroversionId366                                `json:"microversionId,omitempty"`
-	MicroversionIdAndConfigurationInterval          *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
-	MicroversionInterval                            *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
-	NumberOfSketchEntities                          *int32                                              `json:"numberOfSketchEntities,omitempty"`
-	PartColorCycle                                  *BTBasePartColorCycle2614                           `json:"partColorCycle,omitempty"`
-	PartDisplayData                                 []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
-	SketchImages                                    *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
-	UpdatedParts                                    []string                                            `json:"updatedParts,omitempty"`
-	Usage                                           *GBTDisplayDataUsage                                `json:"usage,omitempty"`
-	UseCPUIntensiveThreadPoolForCopyForSettings     *bool                                               `json:"useCPUIntensiveThreadPoolForCopyForSettings,omitempty"`
-	UsesMultipleTessellationSettings                *bool                                               `json:"usesMultipleTessellationSettings,omitempty"`
-	VersionForRasterization                         *BTElementDisplayData326                            `json:"versionForRasterization,omitempty"`
+	AppearanceIdToAppearanceOverride       *map[string]BTAppearanceOverride2517                `json:"appearanceIdToAppearanceOverride,omitempty"`
+	AssemblyReferenceDisplayData           *BTAssemblyReferencesDisplayData1562                `json:"assemblyReferenceDisplayData,omitempty"`
+	BtType                                 *string                                             `json:"btType,omitempty"`
+	CacheablePartStudioDisplayDataVersion  *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
+	DecalIdToDecal                         *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
+	DeterministicIdToAssociatedFeatureIds  *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
+	DeterministicIdToEntity                *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
+	DeterministicIdToPartDisplayData       *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
+	DeterministicPartIdToData              *map[string]BTPartData16                            `json:"deterministicPartIdToData,omitempty"`
+	Dimensions                             []BTDimensionDisplayData323                         `json:"dimensions,omitempty"`
+	DisplayStateId                         *string                                             `json:"displayStateId,omitempty"`
+	ElementId                              *string                                             `json:"elementId,omitempty"`
+	FeatureIdToOperationIndices            *map[string][]int32                                 `json:"featureIdToOperationIndices,omitempty"`
+	FromCache                              *bool                                               `json:"fromCache,omitempty"`
+	FromFullElementId                      *BTFullElementId756                                 `json:"fromFullElementId,omitempty"`
+	FullElementId                          *BTFullElementId756                                 `json:"fullElementId,omitempty"`
+	Incremental                            *bool                                               `json:"incremental,omitempty"`
+	InstanceCount                          *int32                                              `json:"instanceCount,omitempty"`
+	IsBase                                 *bool                                               `json:"isBase,omitempty"`
+	IsExternal                             *bool                                               `json:"isExternal,omitempty"`
+	IsNoop                                 *bool                                               `json:"isNoop,omitempty"`
+	KeepFromMicroversion                   *bool                                               `json:"keepFromMicroversion,omitempty"`
+	MicroversionId                         *BTMicroversionId366                                `json:"microversionId,omitempty"`
+	MicroversionIdAndConfigurationInterval *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
+	MicroversionInterval                   *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
+	NumberOfSketchEntities                 *int32                                              `json:"numberOfSketchEntities,omitempty"`
+	PartColorCycle                         *BTBasePartColorCycle2614                           `json:"partColorCycle,omitempty"`
+	PartDisplayData                        []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
+	SketchImages                           *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
+	UpdatedParts                           []string                                            `json:"updatedParts,omitempty"`
+	Usage                                  *GBTDisplayDataUsage                                `json:"usage,omitempty"`
+	UsesMultipleTessellationSettings       *bool                                               `json:"usesMultipleTessellationSettings,omitempty"`
+	VersionForRasterization                *BTElementDisplayData326                            `json:"versionForRasterization,omitempty"`
 }
 
 // NewBTPartStudioDisplayData346 instantiates a new BTPartStudioDisplayData346 object
@@ -743,38 +741,6 @@ func (o *BTPartStudioDisplayData346) SetIsNoop(v bool) {
 	o.IsNoop = &v
 }
 
-// GetIsUsingCPUIntensiveThreadPoolForCopyForSettings returns the IsUsingCPUIntensiveThreadPoolForCopyForSettings field value if set, zero value otherwise.
-func (o *BTPartStudioDisplayData346) GetIsUsingCPUIntensiveThreadPoolForCopyForSettings() bool {
-	if o == nil || o.IsUsingCPUIntensiveThreadPoolForCopyForSettings == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsUsingCPUIntensiveThreadPoolForCopyForSettings
-}
-
-// GetIsUsingCPUIntensiveThreadPoolForCopyForSettingsOk returns a tuple with the IsUsingCPUIntensiveThreadPoolForCopyForSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPartStudioDisplayData346) GetIsUsingCPUIntensiveThreadPoolForCopyForSettingsOk() (*bool, bool) {
-	if o == nil || o.IsUsingCPUIntensiveThreadPoolForCopyForSettings == nil {
-		return nil, false
-	}
-	return o.IsUsingCPUIntensiveThreadPoolForCopyForSettings, true
-}
-
-// HasIsUsingCPUIntensiveThreadPoolForCopyForSettings returns a boolean if a field has been set.
-func (o *BTPartStudioDisplayData346) HasIsUsingCPUIntensiveThreadPoolForCopyForSettings() bool {
-	if o != nil && o.IsUsingCPUIntensiveThreadPoolForCopyForSettings != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsUsingCPUIntensiveThreadPoolForCopyForSettings gets a reference to the given bool and assigns it to the IsUsingCPUIntensiveThreadPoolForCopyForSettings field.
-func (o *BTPartStudioDisplayData346) SetIsUsingCPUIntensiveThreadPoolForCopyForSettings(v bool) {
-	o.IsUsingCPUIntensiveThreadPoolForCopyForSettings = &v
-}
-
 // GetKeepFromMicroversion returns the KeepFromMicroversion field value if set, zero value otherwise.
 func (o *BTPartStudioDisplayData346) GetKeepFromMicroversion() bool {
 	if o == nil || o.KeepFromMicroversion == nil {
@@ -1095,38 +1061,6 @@ func (o *BTPartStudioDisplayData346) SetUsage(v GBTDisplayDataUsage) {
 	o.Usage = &v
 }
 
-// GetUseCPUIntensiveThreadPoolForCopyForSettings returns the UseCPUIntensiveThreadPoolForCopyForSettings field value if set, zero value otherwise.
-func (o *BTPartStudioDisplayData346) GetUseCPUIntensiveThreadPoolForCopyForSettings() bool {
-	if o == nil || o.UseCPUIntensiveThreadPoolForCopyForSettings == nil {
-		var ret bool
-		return ret
-	}
-	return *o.UseCPUIntensiveThreadPoolForCopyForSettings
-}
-
-// GetUseCPUIntensiveThreadPoolForCopyForSettingsOk returns a tuple with the UseCPUIntensiveThreadPoolForCopyForSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPartStudioDisplayData346) GetUseCPUIntensiveThreadPoolForCopyForSettingsOk() (*bool, bool) {
-	if o == nil || o.UseCPUIntensiveThreadPoolForCopyForSettings == nil {
-		return nil, false
-	}
-	return o.UseCPUIntensiveThreadPoolForCopyForSettings, true
-}
-
-// HasUseCPUIntensiveThreadPoolForCopyForSettings returns a boolean if a field has been set.
-func (o *BTPartStudioDisplayData346) HasUseCPUIntensiveThreadPoolForCopyForSettings() bool {
-	if o != nil && o.UseCPUIntensiveThreadPoolForCopyForSettings != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUseCPUIntensiveThreadPoolForCopyForSettings gets a reference to the given bool and assigns it to the UseCPUIntensiveThreadPoolForCopyForSettings field.
-func (o *BTPartStudioDisplayData346) SetUseCPUIntensiveThreadPoolForCopyForSettings(v bool) {
-	o.UseCPUIntensiveThreadPoolForCopyForSettings = &v
-}
-
 // GetUsesMultipleTessellationSettings returns the UsesMultipleTessellationSettings field value if set, zero value otherwise.
 func (o *BTPartStudioDisplayData346) GetUsesMultipleTessellationSettings() bool {
 	if o == nil || o.UsesMultipleTessellationSettings == nil {
@@ -1256,9 +1190,6 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	if o.IsNoop != nil {
 		toSerialize["isNoop"] = o.IsNoop
 	}
-	if o.IsUsingCPUIntensiveThreadPoolForCopyForSettings != nil {
-		toSerialize["isUsingCPUIntensiveThreadPoolForCopyForSettings"] = o.IsUsingCPUIntensiveThreadPoolForCopyForSettings
-	}
 	if o.KeepFromMicroversion != nil {
 		toSerialize["keepFromMicroversion"] = o.KeepFromMicroversion
 	}
@@ -1288,9 +1219,6 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	}
 	if o.Usage != nil {
 		toSerialize["usage"] = o.Usage
-	}
-	if o.UseCPUIntensiveThreadPoolForCopyForSettings != nil {
-		toSerialize["useCPUIntensiveThreadPoolForCopyForSettings"] = o.UseCPUIntensiveThreadPoolForCopyForSettings
 	}
 	if o.UsesMultipleTessellationSettings != nil {
 		toSerialize["usesMultipleTessellationSettings"] = o.UsesMultipleTessellationSettings

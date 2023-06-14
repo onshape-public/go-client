@@ -22,6 +22,7 @@ api_folder.go
 api_insertable.go
 api_metadata.go
 api_metadata_category.go
+api_numbering_scheme.go
 api_open_api.go
 api_part.go
 api_part_number.go
@@ -1268,7 +1269,6 @@ docs/GBTEntityInferenceType.md
 docs/GBTEntityType.md
 docs/GBTErrorStringEnum.md
 docs/GBTFeatureFilterExclusion.md
-docs/GBTFeatureScriptVersionNumber.md
 docs/GBTFilterFlattenedGeometryOptions.md
 docs/GBTGeometryType.md
 docs/GBTInsertableType.md
@@ -1312,6 +1312,7 @@ docs/MetadataApi.md
 docs/MetadataCategoryApi.md
 docs/NextCharge.md
 docs/NextRecurringCharge.md
+docs/NumberingSchemeApi.md
 docs/ObjectId.md
 docs/OpenApiApi.md
 docs/PartApi.md
@@ -2206,7 +2207,6 @@ model_gbt_entity_inference_type.go
 model_gbt_entity_type.go
 model_gbt_error_string_enum.go
 model_gbt_feature_filter_exclusion.go
-model_gbt_feature_script_version_number.go
 model_gbt_filter_flattened_geometry_options.go
 model_gbt_geometry_type.go
 model_gbt_insertable_type.go

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.164.16955-b4ecd192bba6
+API version: 1.165.17369-82f2ed5d514e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1340,6 +1340,20 @@ const (
 	GBTErrorStringEnumBooleanNonManifoldResult                              GBTErrorStringEnum = "BOOLEAN_NON_MANIFOLD_RESULT"
 	GBTErrorStringEnumDrawingAssemblyNonmanifoldSectionCut                  GBTErrorStringEnum = "DRAWING_ASSEMBLY_NONMANIFOLD_SECTION_CUT"
 	GBTErrorStringEnumDrawingPartstudioNonmanifoldSectionCut                GBTErrorStringEnum = "DRAWING_PARTSTUDIO_NONMANIFOLD_SECTION_CUT"
+	GBTErrorStringEnumMoveCurveBoundaryFailed                               GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_FAILED"
+	GBTErrorStringEnumMoveCurveBoundaryExtensionNoIntersection              GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_EXTENSION_NO_INTERSECTION"
+	GBTErrorStringEnumMoveCurveBoundaryTrimNoIntersection                   GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_TRIM_NO_INTERSECTION"
+	GBTErrorStringEnumMoveCurveBoundarySelectCurve                          GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_SELECT_CURVE"
+	GBTErrorStringEnumMoveCurveBoundarySelectTrimBoundary                   GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_SELECT_TRIM_BOUNDARY"
+	GBTErrorStringEnumMoveCurveBoundarySelectExtendBoundary                 GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_SELECT_EXTEND_BOUNDARY"
+	GBTErrorStringEnumMoveCurveBoundaryNoSketchEntities                     GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_NO_SKETCH_ENTITIES"
+	GBTErrorStringEnumMoveCurveBoundaryOnlyWires                            GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_ONLY_WIRES"
+	GBTErrorStringEnumMoveCurveBoundarySelectHelpPoint                      GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_SELECT_HELP_POINT"
+	GBTErrorStringEnumMoveCurveBoundaryExtendRequiresOpenCurve              GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_EXTEND_REQUIRES_OPEN_CURVE"
+	GBTErrorStringEnumMoveCurveBoundarySplitClosedAtTwoPoints               GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_SPLIT_CLOSED_AT_TWO_POINTS"
+	GBTErrorStringEnumHoleNoEndBounds                                       GBTErrorStringEnum = "HOLE_NO_END_BOUNDS"
+	GBTErrorStringEnumHoleTapTooDeep                                        GBTErrorStringEnum = "HOLE_TAP_TOO_DEEP"
+	GBTErrorStringEnumMoveCurveBoundaryToolIsTarget                         GBTErrorStringEnum = "MOVE_CURVE_BOUNDARY_TOOL_IS_TARGET"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2664,6 +2678,20 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"BOOLEAN_NON_MANIFOLD_RESULT",
 	"DRAWING_ASSEMBLY_NONMANIFOLD_SECTION_CUT",
 	"DRAWING_PARTSTUDIO_NONMANIFOLD_SECTION_CUT",
+	"MOVE_CURVE_BOUNDARY_FAILED",
+	"MOVE_CURVE_BOUNDARY_EXTENSION_NO_INTERSECTION",
+	"MOVE_CURVE_BOUNDARY_TRIM_NO_INTERSECTION",
+	"MOVE_CURVE_BOUNDARY_SELECT_CURVE",
+	"MOVE_CURVE_BOUNDARY_SELECT_TRIM_BOUNDARY",
+	"MOVE_CURVE_BOUNDARY_SELECT_EXTEND_BOUNDARY",
+	"MOVE_CURVE_BOUNDARY_NO_SKETCH_ENTITIES",
+	"MOVE_CURVE_BOUNDARY_ONLY_WIRES",
+	"MOVE_CURVE_BOUNDARY_SELECT_HELP_POINT",
+	"MOVE_CURVE_BOUNDARY_EXTEND_REQUIRES_OPEN_CURVE",
+	"MOVE_CURVE_BOUNDARY_SPLIT_CLOSED_AT_TWO_POINTS",
+	"HOLE_NO_END_BOUNDS",
+	"HOLE_TAP_TOO_DEEP",
+	"MOVE_CURVE_BOUNDARY_TOOL_IS_TARGET",
 	"UNKNOWN",
 }
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.164.16955-b4ecd192bba6
+API version: 1.165.17369-82f2ed5d514e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,27 +17,31 @@ import (
 
 // BTActiveWorkflowInfo struct for BTActiveWorkflowInfo
 type BTActiveWorkflowInfo struct {
-	AllowReleaseItemsFromOtherDocuments *bool                     `json:"allowReleaseItemsFromOtherDocuments,omitempty"`
-	CanCurrentUserCreateReleases        *bool                     `json:"canCurrentUserCreateReleases,omitempty"`
-	CanCurrentUserManageWorkflows       *bool                     `json:"canCurrentUserManageWorkflows,omitempty"`
-	CanCurrentUserSeeArenaItemLink      *bool                     `json:"canCurrentUserSeeArenaItemLink,omitempty"`
-	CanCurrentUserSyncBomToArena        *bool                     `json:"canCurrentUserSyncBomToArena,omitempty"`
-	CanCurrentUserSyncToArena           *bool                     `json:"canCurrentUserSyncToArena,omitempty"`
-	CanCurrentUserSyncVersionsToArena   *bool                     `json:"canCurrentUserSyncVersionsToArena,omitempty"`
-	CompanyId                           *string                   `json:"companyId,omitempty"`
-	DocumentId                          *string                   `json:"documentId,omitempty"`
-	DrawingCanDuplicatePartNumber       *bool                     `json:"drawingCanDuplicatePartNumber,omitempty"`
-	EnabledActiveMultipleWorkflows      *bool                     `json:"enabledActiveMultipleWorkflows,omitempty"`
-	ObsoletionWorkflow                  *BTPublishedWorkflowInfo  `json:"obsoletionWorkflow,omitempty"`
-	ObsoletionWorkflowId                *string                   `json:"obsoletionWorkflowId,omitempty"`
-	PartNumberingSchemeId               *string                   `json:"partNumberingSchemeId,omitempty"`
-	PickableWorkflows                   []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
-	ReleaseWorkflow                     *BTPublishedWorkflowInfo  `json:"releaseWorkflow,omitempty"`
-	ReleaseWorkflowId                   *string                   `json:"releaseWorkflowId,omitempty"`
-	ReleaseableApplications             []string                  `json:"releaseableApplications,omitempty"`
-	UsingAutoPartNumbering              *bool                     `json:"usingAutoPartNumbering,omitempty"`
-	UsingManagedWorkflow                *bool                     `json:"usingManagedWorkflow,omitempty"`
-	UsingThirdPartyPartNumbering        *bool                     `json:"usingThirdPartyPartNumbering,omitempty"`
+	AllowReleaseItemsFromOtherDocuments         *bool                     `json:"allowReleaseItemsFromOtherDocuments,omitempty"`
+	CanCurrentUserCreateReleases                *bool                     `json:"canCurrentUserCreateReleases,omitempty"`
+	CanCurrentUserEditStandardContent           *bool                     `json:"canCurrentUserEditStandardContent,omitempty"`
+	CanCurrentUserManageWorkflows               *bool                     `json:"canCurrentUserManageWorkflows,omitempty"`
+	CanCurrentUserSeeArenaItemLink              *bool                     `json:"canCurrentUserSeeArenaItemLink,omitempty"`
+	CanCurrentUserSyncBomToArena                *bool                     `json:"canCurrentUserSyncBomToArena,omitempty"`
+	CanCurrentUserSyncToArena                   *bool                     `json:"canCurrentUserSyncToArena,omitempty"`
+	CanCurrentUserSyncVersionsToArena           *bool                     `json:"canCurrentUserSyncVersionsToArena,omitempty"`
+	CompanyId                                   *string                   `json:"companyId,omitempty"`
+	DocumentId                                  *string                   `json:"documentId,omitempty"`
+	DrawingCanDuplicatePartNumber               *bool                     `json:"drawingCanDuplicatePartNumber,omitempty"`
+	EnabledActiveMultipleWorkflows              *bool                     `json:"enabledActiveMultipleWorkflows,omitempty"`
+	ObsoletionWorkflow                          *BTPublishedWorkflowInfo  `json:"obsoletionWorkflow,omitempty"`
+	ObsoletionWorkflowId                        *string                   `json:"obsoletionWorkflowId,omitempty"`
+	PartNumberingSchemeId                       *string                   `json:"partNumberingSchemeId,omitempty"`
+	PickableWorkflows                           []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
+	ReleaseWorkflow                             *BTPublishedWorkflowInfo  `json:"releaseWorkflow,omitempty"`
+	ReleaseWorkflowId                           *string                   `json:"releaseWorkflowId,omitempty"`
+	ReleaseableApplications                     []string                  `json:"releaseableApplications,omitempty"`
+	StandardContentNumberingSchemeId            *string                   `json:"standardContentNumberingSchemeId,omitempty"`
+	StandardContentUsingAutoNumbering           *bool                     `json:"standardContentUsingAutoNumbering,omitempty"`
+	StandardContentUsingThirdPartyPartNumbering *bool                     `json:"standardContentUsingThirdPartyPartNumbering,omitempty"`
+	UsingAutoPartNumbering                      *bool                     `json:"usingAutoPartNumbering,omitempty"`
+	UsingManagedWorkflow                        *bool                     `json:"usingManagedWorkflow,omitempty"`
+	UsingThirdPartyPartNumbering                *bool                     `json:"usingThirdPartyPartNumbering,omitempty"`
 }
 
 // NewBTActiveWorkflowInfo instantiates a new BTActiveWorkflowInfo object
@@ -119,6 +123,38 @@ func (o *BTActiveWorkflowInfo) HasCanCurrentUserCreateReleases() bool {
 // SetCanCurrentUserCreateReleases gets a reference to the given bool and assigns it to the CanCurrentUserCreateReleases field.
 func (o *BTActiveWorkflowInfo) SetCanCurrentUserCreateReleases(v bool) {
 	o.CanCurrentUserCreateReleases = &v
+}
+
+// GetCanCurrentUserEditStandardContent returns the CanCurrentUserEditStandardContent field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserEditStandardContent() bool {
+	if o == nil || o.CanCurrentUserEditStandardContent == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserEditStandardContent
+}
+
+// GetCanCurrentUserEditStandardContentOk returns a tuple with the CanCurrentUserEditStandardContent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserEditStandardContentOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserEditStandardContent == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserEditStandardContent, true
+}
+
+// HasCanCurrentUserEditStandardContent returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserEditStandardContent() bool {
+	if o != nil && o.CanCurrentUserEditStandardContent != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserEditStandardContent gets a reference to the given bool and assigns it to the CanCurrentUserEditStandardContent field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserEditStandardContent(v bool) {
+	o.CanCurrentUserEditStandardContent = &v
 }
 
 // GetCanCurrentUserManageWorkflows returns the CanCurrentUserManageWorkflows field value if set, zero value otherwise.
@@ -633,6 +669,102 @@ func (o *BTActiveWorkflowInfo) SetReleaseableApplications(v []string) {
 	o.ReleaseableApplications = v
 }
 
+// GetStandardContentNumberingSchemeId returns the StandardContentNumberingSchemeId field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetStandardContentNumberingSchemeId() string {
+	if o == nil || o.StandardContentNumberingSchemeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.StandardContentNumberingSchemeId
+}
+
+// GetStandardContentNumberingSchemeIdOk returns a tuple with the StandardContentNumberingSchemeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetStandardContentNumberingSchemeIdOk() (*string, bool) {
+	if o == nil || o.StandardContentNumberingSchemeId == nil {
+		return nil, false
+	}
+	return o.StandardContentNumberingSchemeId, true
+}
+
+// HasStandardContentNumberingSchemeId returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasStandardContentNumberingSchemeId() bool {
+	if o != nil && o.StandardContentNumberingSchemeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStandardContentNumberingSchemeId gets a reference to the given string and assigns it to the StandardContentNumberingSchemeId field.
+func (o *BTActiveWorkflowInfo) SetStandardContentNumberingSchemeId(v string) {
+	o.StandardContentNumberingSchemeId = &v
+}
+
+// GetStandardContentUsingAutoNumbering returns the StandardContentUsingAutoNumbering field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetStandardContentUsingAutoNumbering() bool {
+	if o == nil || o.StandardContentUsingAutoNumbering == nil {
+		var ret bool
+		return ret
+	}
+	return *o.StandardContentUsingAutoNumbering
+}
+
+// GetStandardContentUsingAutoNumberingOk returns a tuple with the StandardContentUsingAutoNumbering field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetStandardContentUsingAutoNumberingOk() (*bool, bool) {
+	if o == nil || o.StandardContentUsingAutoNumbering == nil {
+		return nil, false
+	}
+	return o.StandardContentUsingAutoNumbering, true
+}
+
+// HasStandardContentUsingAutoNumbering returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasStandardContentUsingAutoNumbering() bool {
+	if o != nil && o.StandardContentUsingAutoNumbering != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStandardContentUsingAutoNumbering gets a reference to the given bool and assigns it to the StandardContentUsingAutoNumbering field.
+func (o *BTActiveWorkflowInfo) SetStandardContentUsingAutoNumbering(v bool) {
+	o.StandardContentUsingAutoNumbering = &v
+}
+
+// GetStandardContentUsingThirdPartyPartNumbering returns the StandardContentUsingThirdPartyPartNumbering field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetStandardContentUsingThirdPartyPartNumbering() bool {
+	if o == nil || o.StandardContentUsingThirdPartyPartNumbering == nil {
+		var ret bool
+		return ret
+	}
+	return *o.StandardContentUsingThirdPartyPartNumbering
+}
+
+// GetStandardContentUsingThirdPartyPartNumberingOk returns a tuple with the StandardContentUsingThirdPartyPartNumbering field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetStandardContentUsingThirdPartyPartNumberingOk() (*bool, bool) {
+	if o == nil || o.StandardContentUsingThirdPartyPartNumbering == nil {
+		return nil, false
+	}
+	return o.StandardContentUsingThirdPartyPartNumbering, true
+}
+
+// HasStandardContentUsingThirdPartyPartNumbering returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasStandardContentUsingThirdPartyPartNumbering() bool {
+	if o != nil && o.StandardContentUsingThirdPartyPartNumbering != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStandardContentUsingThirdPartyPartNumbering gets a reference to the given bool and assigns it to the StandardContentUsingThirdPartyPartNumbering field.
+func (o *BTActiveWorkflowInfo) SetStandardContentUsingThirdPartyPartNumbering(v bool) {
+	o.StandardContentUsingThirdPartyPartNumbering = &v
+}
+
 // GetUsingAutoPartNumbering returns the UsingAutoPartNumbering field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetUsingAutoPartNumbering() bool {
 	if o == nil || o.UsingAutoPartNumbering == nil {
@@ -737,6 +869,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	if o.CanCurrentUserCreateReleases != nil {
 		toSerialize["canCurrentUserCreateReleases"] = o.CanCurrentUserCreateReleases
 	}
+	if o.CanCurrentUserEditStandardContent != nil {
+		toSerialize["canCurrentUserEditStandardContent"] = o.CanCurrentUserEditStandardContent
+	}
 	if o.CanCurrentUserManageWorkflows != nil {
 		toSerialize["canCurrentUserManageWorkflows"] = o.CanCurrentUserManageWorkflows
 	}
@@ -784,6 +919,15 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ReleaseableApplications != nil {
 		toSerialize["releaseableApplications"] = o.ReleaseableApplications
+	}
+	if o.StandardContentNumberingSchemeId != nil {
+		toSerialize["standardContentNumberingSchemeId"] = o.StandardContentNumberingSchemeId
+	}
+	if o.StandardContentUsingAutoNumbering != nil {
+		toSerialize["standardContentUsingAutoNumbering"] = o.StandardContentUsingAutoNumbering
+	}
+	if o.StandardContentUsingThirdPartyPartNumbering != nil {
+		toSerialize["standardContentUsingThirdPartyPartNumbering"] = o.StandardContentUsingThirdPartyPartNumbering
 	}
 	if o.UsingAutoPartNumbering != nil {
 		toSerialize["usingAutoPartNumbering"] = o.UsingAutoPartNumbering

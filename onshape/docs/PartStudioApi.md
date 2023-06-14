@@ -976,7 +976,7 @@ Name | Type | Description  | Notes
 
 ## GetPartStudioBodyDetails
 
-> BTExportModelBodiesResponse734 GetPartStudioBodyDetails(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeSurfaces(includeSurfaces).IncludeCompositeParts(includeCompositeParts).IncludeGeometricData(includeGeometricData).Execute()
+> BTExportModelBodiesResponse734 GetPartStudioBodyDetails(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartIds(partIds).IncludeSurfaces(includeSurfaces).IncludeCompositeParts(includeCompositeParts).IncludeGeometricData(includeGeometricData).Execute()
 
 Retrieve an array of body details by document ID, workspace or version or microversion ID, and tab ID.
 
@@ -1001,13 +1001,14 @@ func main() {
     configuration := "configuration_example" // string |  (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
+    partIds := []string{"Inner_example"} // []string | If specified, the response will only include body details for the specific parts as indicated here by their corresponding Id (optional)
     includeSurfaces := true // bool | Whether or not surfaces should be included in the response. (optional) (default to false)
     includeCompositeParts := true // bool | Whether or not composite parts should be included in the response. (optional) (default to false)
     includeGeometricData := true // bool | Whether or not geometric data should be included in the response. (optional) (default to true)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PartStudioApi.GetPartStudioBodyDetails(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeSurfaces(includeSurfaces).IncludeCompositeParts(includeCompositeParts).IncludeGeometricData(includeGeometricData).Execute()
+    resp, r, err := apiClient.PartStudioApi.GetPartStudioBodyDetails(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartIds(partIds).IncludeSurfaces(includeSurfaces).IncludeCompositeParts(includeCompositeParts).IncludeGeometricData(includeGeometricData).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioBodyDetails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1043,6 +1044,7 @@ Name | Type | Description  | Notes
  **configuration** | **string** |  | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
+ **partIds** | **[]string** | If specified, the response will only include body details for the specific parts as indicated here by their corresponding Id | 
  **includeSurfaces** | **bool** | Whether or not surfaces should be included in the response. | [default to false]
  **includeCompositeParts** | **bool** | Whether or not composite parts should be included in the response. | [default to false]
  **includeGeometricData** | **bool** | Whether or not geometric data should be included in the response. | [default to true]

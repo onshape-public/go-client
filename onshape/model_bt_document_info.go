@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.164.16955-b4ecd192bba6
+API version: 1.165.17369-82f2ed5d514e
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1091,56 +1091,6 @@ func (o *BTDocumentInfo) SetIsMutable(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetIsMutable(v)
-}
-
-// GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetIsOrphaned() bool {
-	type getResult interface {
-		GetIsOrphaned() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetIsOrphaned()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetIsOrphanedOk returns a tuple with the IsOrphaned field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetIsOrphanedOk() (*bool, bool) {
-	type getResult interface {
-		GetIsOrphanedOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetIsOrphanedOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasIsOrphaned returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasIsOrphaned() bool {
-	type getResult interface {
-		HasIsOrphaned() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasIsOrphaned()
-	} else {
-		return false
-	}
-}
-
-// SetIsOrphaned gets a reference to the given bool and assigns it to the IsOrphaned field.
-func (o *BTDocumentInfo) SetIsOrphaned(v bool) {
-	type getResult interface {
-		SetIsOrphaned(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetIsOrphaned(v)
 }
 
 // GetIsUpgradedToLatestVersion returns the IsUpgradedToLatestVersion field value if set, zero value otherwise.
@@ -2293,156 +2243,6 @@ func (o *BTDocumentInfo) SetThumbnail(v BTThumbnailInfo) {
 	o.GetActualInstance().(getResult).SetThumbnail(v)
 }
 
-// GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdate() int32 {
-	type getResult interface {
-		GetTotalWorkspacesScheduledForUpdate() int32
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesScheduledForUpdate()
-	} else {
-		var de int32
-		return de
-	}
-}
-
-// GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool) {
-	type getResult interface {
-		GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesScheduledForUpdateOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasTotalWorkspacesScheduledForUpdate() bool {
-	type getResult interface {
-		HasTotalWorkspacesScheduledForUpdate() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTotalWorkspacesScheduledForUpdate()
-	} else {
-		return false
-	}
-}
-
-// SetTotalWorkspacesScheduledForUpdate gets a reference to the given int32 and assigns it to the TotalWorkspacesScheduledForUpdate field.
-func (o *BTDocumentInfo) SetTotalWorkspacesScheduledForUpdate(v int32) {
-	type getResult interface {
-		SetTotalWorkspacesScheduledForUpdate(v int32)
-	}
-
-	o.GetActualInstance().(getResult).SetTotalWorkspacesScheduledForUpdate(v)
-}
-
-// GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetTotalWorkspacesUpdating() int32 {
-	type getResult interface {
-		GetTotalWorkspacesUpdating() int32
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesUpdating()
-	} else {
-		var de int32
-		return de
-	}
-}
-
-// GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool) {
-	type getResult interface {
-		GetTotalWorkspacesUpdatingOk() (*int32, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesUpdatingOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTotalWorkspacesUpdating returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasTotalWorkspacesUpdating() bool {
-	type getResult interface {
-		HasTotalWorkspacesUpdating() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTotalWorkspacesUpdating()
-	} else {
-		return false
-	}
-}
-
-// SetTotalWorkspacesUpdating gets a reference to the given int32 and assigns it to the TotalWorkspacesUpdating field.
-func (o *BTDocumentInfo) SetTotalWorkspacesUpdating(v int32) {
-	type getResult interface {
-		SetTotalWorkspacesUpdating(v int32)
-	}
-
-	o.GetActualInstance().(getResult).SetTotalWorkspacesUpdating(v)
-}
-
-// GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetTracingEnabled() bool {
-	type getResult interface {
-		GetTracingEnabled() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTracingEnabled()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetTracingEnabledOk() (*bool, bool) {
-	type getResult interface {
-		GetTracingEnabledOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTracingEnabledOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTracingEnabled returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasTracingEnabled() bool {
-	type getResult interface {
-		HasTracingEnabled() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTracingEnabled()
-	} else {
-		return false
-	}
-}
-
-// SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
-func (o *BTDocumentInfo) SetTracingEnabled(v bool) {
-	type getResult interface {
-		SetTracingEnabled(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetTracingEnabled(v)
-}
-
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetTrash() bool {
 	type getResult interface {
@@ -2856,7 +2656,6 @@ type base_BTDocumentInfo struct {
 	IsContainer               *bool                   `json:"isContainer,omitempty"`
 	IsEnterpriseOwned         *bool                   `json:"isEnterpriseOwned,omitempty"`
 	IsMutable                 *bool                   `json:"isMutable,omitempty"`
-	IsOrphaned                *bool                   `json:"isOrphaned,omitempty"`
 	IsUpgradedToLatestVersion *bool                   `json:"isUpgradedToLatestVersion,omitempty"`
 	IsUsingManagedWorkflow    *bool                   `json:"isUsingManagedWorkflow,omitempty"`
 	LikedByCurrentUser        *bool                   `json:"likedByCurrentUser,omitempty"`
@@ -2864,31 +2663,28 @@ type base_BTDocumentInfo struct {
 	ModifiedAt                *JSONTime               `json:"modifiedAt,omitempty"`
 	ModifiedBy                *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
 	// Name of the resource.
-	Name                              *string          `json:"name,omitempty"`
-	NotRevisionManaged                *bool            `json:"notRevisionManaged,omitempty"`
-	Notes                             *string          `json:"notes,omitempty"`
-	NumberOfTimesCopied               *int64           `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced           *int64           `json:"numberOfTimesReferenced,omitempty"`
-	Owner                             *BTOwnerInfo     `json:"owner,omitempty"`
-	ParentId                          *string          `json:"parentId,omitempty"`
-	Permission                        *BTOldPermission `json:"permission,omitempty"`
-	PermissionSet                     []string         `json:"permissionSet,omitempty"`
-	ProjectId                         *string          `json:"projectId,omitempty"`
-	Public                            *bool            `json:"public,omitempty"`
-	RecentVersion                     *BTBaseInfo      `json:"recentVersion,omitempty"`
-	ResourceType                      *string          `json:"resourceType,omitempty"`
-	Sequence                          *string          `json:"sequence,omitempty"`
-	SupportTeamUserAndShared          *bool            `json:"supportTeamUserAndShared,omitempty"`
-	Tags                              []string         `json:"tags,omitempty"`
-	Thumbnail                         *BTThumbnailInfo `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate *int32           `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating           *int32           `json:"totalWorkspacesUpdating,omitempty"`
-	TracingEnabled                    *bool            `json:"tracingEnabled,omitempty"`
-	Trash                             *bool            `json:"trash,omitempty"`
-	TrashedAt                         *JSONTime        `json:"trashedAt,omitempty"`
-	TreeHref                          *string          `json:"treeHref,omitempty"`
-	UnparentHref                      *string          `json:"unparentHref,omitempty"`
-	UserAccountLimitsBreached         *bool            `json:"userAccountLimitsBreached,omitempty"`
+	Name                      *string          `json:"name,omitempty"`
+	NotRevisionManaged        *bool            `json:"notRevisionManaged,omitempty"`
+	Notes                     *string          `json:"notes,omitempty"`
+	NumberOfTimesCopied       *int64           `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced   *int64           `json:"numberOfTimesReferenced,omitempty"`
+	Owner                     *BTOwnerInfo     `json:"owner,omitempty"`
+	ParentId                  *string          `json:"parentId,omitempty"`
+	Permission                *BTOldPermission `json:"permission,omitempty"`
+	PermissionSet             []string         `json:"permissionSet,omitempty"`
+	ProjectId                 *string          `json:"projectId,omitempty"`
+	Public                    *bool            `json:"public,omitempty"`
+	RecentVersion             *BTBaseInfo      `json:"recentVersion,omitempty"`
+	ResourceType              *string          `json:"resourceType,omitempty"`
+	Sequence                  *string          `json:"sequence,omitempty"`
+	SupportTeamUserAndShared  *bool            `json:"supportTeamUserAndShared,omitempty"`
+	Tags                      []string         `json:"tags,omitempty"`
+	Thumbnail                 *BTThumbnailInfo `json:"thumbnail,omitempty"`
+	Trash                     *bool            `json:"trash,omitempty"`
+	TrashedAt                 *JSONTime        `json:"trashedAt,omitempty"`
+	TreeHref                  *string          `json:"treeHref,omitempty"`
+	UnparentHref              *string          `json:"unparentHref,omitempty"`
+	UserAccountLimitsBreached *bool            `json:"userAccountLimitsBreached,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -3580,38 +3376,6 @@ func (o *base_BTDocumentInfo) HasIsMutable() bool {
 // SetIsMutable gets a reference to the given bool and assigns it to the IsMutable field.
 func (o *base_BTDocumentInfo) SetIsMutable(v bool) {
 	o.IsMutable = &v
-}
-
-// GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetIsOrphaned() bool {
-	if o == nil || o.IsOrphaned == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsOrphaned
-}
-
-// GetIsOrphanedOk returns a tuple with the IsOrphaned field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetIsOrphanedOk() (*bool, bool) {
-	if o == nil || o.IsOrphaned == nil {
-		return nil, false
-	}
-	return o.IsOrphaned, true
-}
-
-// HasIsOrphaned returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasIsOrphaned() bool {
-	if o != nil && o.IsOrphaned != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsOrphaned gets a reference to the given bool and assigns it to the IsOrphaned field.
-func (o *base_BTDocumentInfo) SetIsOrphaned(v bool) {
-	o.IsOrphaned = &v
 }
 
 // GetIsUpgradedToLatestVersion returns the IsUpgradedToLatestVersion field value if set, zero value otherwise.
@@ -4350,102 +4114,6 @@ func (o *base_BTDocumentInfo) SetThumbnail(v BTThumbnailInfo) {
 	o.Thumbnail = &v
 }
 
-// GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesScheduledForUpdate() int32 {
-	if o == nil || o.TotalWorkspacesScheduledForUpdate == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TotalWorkspacesScheduledForUpdate
-}
-
-// GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool) {
-	if o == nil || o.TotalWorkspacesScheduledForUpdate == nil {
-		return nil, false
-	}
-	return o.TotalWorkspacesScheduledForUpdate, true
-}
-
-// HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasTotalWorkspacesScheduledForUpdate() bool {
-	if o != nil && o.TotalWorkspacesScheduledForUpdate != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalWorkspacesScheduledForUpdate gets a reference to the given int32 and assigns it to the TotalWorkspacesScheduledForUpdate field.
-func (o *base_BTDocumentInfo) SetTotalWorkspacesScheduledForUpdate(v int32) {
-	o.TotalWorkspacesScheduledForUpdate = &v
-}
-
-// GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesUpdating() int32 {
-	if o == nil || o.TotalWorkspacesUpdating == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TotalWorkspacesUpdating
-}
-
-// GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool) {
-	if o == nil || o.TotalWorkspacesUpdating == nil {
-		return nil, false
-	}
-	return o.TotalWorkspacesUpdating, true
-}
-
-// HasTotalWorkspacesUpdating returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasTotalWorkspacesUpdating() bool {
-	if o != nil && o.TotalWorkspacesUpdating != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalWorkspacesUpdating gets a reference to the given int32 and assigns it to the TotalWorkspacesUpdating field.
-func (o *base_BTDocumentInfo) SetTotalWorkspacesUpdating(v int32) {
-	o.TotalWorkspacesUpdating = &v
-}
-
-// GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetTracingEnabled() bool {
-	if o == nil || o.TracingEnabled == nil {
-		var ret bool
-		return ret
-	}
-	return *o.TracingEnabled
-}
-
-// GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetTracingEnabledOk() (*bool, bool) {
-	if o == nil || o.TracingEnabled == nil {
-		return nil, false
-	}
-	return o.TracingEnabled, true
-}
-
-// HasTracingEnabled returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasTracingEnabled() bool {
-	if o != nil && o.TracingEnabled != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
-func (o *base_BTDocumentInfo) SetTracingEnabled(v bool) {
-	o.TracingEnabled = &v
-}
-
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetTrash() bool {
 	if o == nil || o.Trash == nil {
@@ -4703,9 +4371,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	if o.IsMutable != nil {
 		toSerialize["isMutable"] = o.IsMutable
 	}
-	if o.IsOrphaned != nil {
-		toSerialize["isOrphaned"] = o.IsOrphaned
-	}
 	if o.IsUpgradedToLatestVersion != nil {
 		toSerialize["isUpgradedToLatestVersion"] = o.IsUpgradedToLatestVersion
 	}
@@ -4774,15 +4439,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Thumbnail != nil {
 		toSerialize["thumbnail"] = o.Thumbnail
-	}
-	if o.TotalWorkspacesScheduledForUpdate != nil {
-		toSerialize["totalWorkspacesScheduledForUpdate"] = o.TotalWorkspacesScheduledForUpdate
-	}
-	if o.TotalWorkspacesUpdating != nil {
-		toSerialize["totalWorkspacesUpdating"] = o.TotalWorkspacesUpdating
-	}
-	if o.TracingEnabled != nil {
-		toSerialize["tracingEnabled"] = o.TracingEnabled
 	}
 	if o.Trash != nil {
 		toSerialize["trash"] = o.Trash
