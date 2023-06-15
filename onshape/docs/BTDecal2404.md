@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **ImageSourceId** | Pointer to **string** |  | [optional] 
+**IsDeletion** | Pointer to **bool** |  | [optional] 
 **Mappings** | Pointer to [**[]BTImageMapping3821**](BTImageMapping3821.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetImageSourceId sets ImageSourceId field to given value.
 `func (o *BTDecal2404) HasImageSourceId() bool`
 
 HasImageSourceId returns a boolean if a field has been set.
+
+### GetIsDeletion
+
+`func (o *BTDecal2404) GetIsDeletion() bool`
+
+GetIsDeletion returns the IsDeletion field if non-nil, zero value otherwise.
+
+### GetIsDeletionOk
+
+`func (o *BTDecal2404) GetIsDeletionOk() (*bool, bool)`
+
+GetIsDeletionOk returns a tuple with the IsDeletion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeletion
+
+`func (o *BTDecal2404) SetIsDeletion(v bool)`
+
+SetIsDeletion sets IsDeletion field to given value.
+
+### HasIsDeletion
+
+`func (o *BTDecal2404) HasIsDeletion() bool`
+
+HasIsDeletion returns a boolean if a field has been set.
 
 ### GetMappings
 

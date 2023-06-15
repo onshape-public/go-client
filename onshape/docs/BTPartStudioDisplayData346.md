@@ -25,7 +25,6 @@ Name | Type | Description | Notes
 **IsBase** | Pointer to **bool** |  | [optional] 
 **IsExternal** | Pointer to **bool** |  | [optional] 
 **IsNoop** | Pointer to **bool** |  | [optional] 
-**IsUsingCPUIntensiveThreadPoolForCopyForSettings** | Pointer to **bool** |  | [optional] 
 **KeepFromMicroversion** | Pointer to **bool** |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **MicroversionIdAndConfigurationInterval** | Pointer to [**BTMicroversionIdAndConfigurationInterval2364**](BTMicroversionIdAndConfigurationInterval2364.md) |  | [optional] 
@@ -36,7 +35,6 @@ Name | Type | Description | Notes
 **SketchImages** | Pointer to [**map[string]map[string]BTSketchImageDisplayData1379**](map.md) |  | [optional] 
 **UpdatedParts** | Pointer to **[]string** |  | [optional] 
 **Usage** | Pointer to [**GBTDisplayDataUsage**](GBTDisplayDataUsage.md) |  | [optional] 
-**UseCPUIntensiveThreadPoolForCopyForSettings** | Pointer to **bool** |  | [optional] 
 **UsesMultipleTessellationSettings** | Pointer to **bool** |  | [optional] 
 **VersionForRasterization** | Pointer to [**BTElementDisplayData326**](BTElementDisplayData326.md) |  | [optional] 
 
@@ -584,31 +582,6 @@ SetIsNoop sets IsNoop field to given value.
 
 HasIsNoop returns a boolean if a field has been set.
 
-### GetIsUsingCPUIntensiveThreadPoolForCopyForSettings
-
-`func (o *BTPartStudioDisplayData346) GetIsUsingCPUIntensiveThreadPoolForCopyForSettings() bool`
-
-GetIsUsingCPUIntensiveThreadPoolForCopyForSettings returns the IsUsingCPUIntensiveThreadPoolForCopyForSettings field if non-nil, zero value otherwise.
-
-### GetIsUsingCPUIntensiveThreadPoolForCopyForSettingsOk
-
-`func (o *BTPartStudioDisplayData346) GetIsUsingCPUIntensiveThreadPoolForCopyForSettingsOk() (*bool, bool)`
-
-GetIsUsingCPUIntensiveThreadPoolForCopyForSettingsOk returns a tuple with the IsUsingCPUIntensiveThreadPoolForCopyForSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsUsingCPUIntensiveThreadPoolForCopyForSettings
-
-`func (o *BTPartStudioDisplayData346) SetIsUsingCPUIntensiveThreadPoolForCopyForSettings(v bool)`
-
-SetIsUsingCPUIntensiveThreadPoolForCopyForSettings sets IsUsingCPUIntensiveThreadPoolForCopyForSettings field to given value.
-
-### HasIsUsingCPUIntensiveThreadPoolForCopyForSettings
-
-`func (o *BTPartStudioDisplayData346) HasIsUsingCPUIntensiveThreadPoolForCopyForSettings() bool`
-
-HasIsUsingCPUIntensiveThreadPoolForCopyForSettings returns a boolean if a field has been set.
-
 ### GetKeepFromMicroversion
 
 `func (o *BTPartStudioDisplayData346) GetKeepFromMicroversion() bool`
@@ -858,31 +831,6 @@ SetUsage sets Usage field to given value.
 `func (o *BTPartStudioDisplayData346) HasUsage() bool`
 
 HasUsage returns a boolean if a field has been set.
-
-### GetUseCPUIntensiveThreadPoolForCopyForSettings
-
-`func (o *BTPartStudioDisplayData346) GetUseCPUIntensiveThreadPoolForCopyForSettings() bool`
-
-GetUseCPUIntensiveThreadPoolForCopyForSettings returns the UseCPUIntensiveThreadPoolForCopyForSettings field if non-nil, zero value otherwise.
-
-### GetUseCPUIntensiveThreadPoolForCopyForSettingsOk
-
-`func (o *BTPartStudioDisplayData346) GetUseCPUIntensiveThreadPoolForCopyForSettingsOk() (*bool, bool)`
-
-GetUseCPUIntensiveThreadPoolForCopyForSettingsOk returns a tuple with the UseCPUIntensiveThreadPoolForCopyForSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseCPUIntensiveThreadPoolForCopyForSettings
-
-`func (o *BTPartStudioDisplayData346) SetUseCPUIntensiveThreadPoolForCopyForSettings(v bool)`
-
-SetUseCPUIntensiveThreadPoolForCopyForSettings sets UseCPUIntensiveThreadPoolForCopyForSettings field to given value.
-
-### HasUseCPUIntensiveThreadPoolForCopyForSettings
-
-`func (o *BTPartStudioDisplayData346) HasUseCPUIntensiveThreadPoolForCopyForSettings() bool`
-
-HasUseCPUIntensiveThreadPoolForCopyForSettings returns a boolean if a field has been set.
 
 ### GetUsesMultipleTessellationSettings
 

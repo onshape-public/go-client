@@ -7,9 +7,6 @@ Name | Type | Description | Notes
 **AllFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndOtherReferences** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndSubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
-**BelScriptLibraryMajorVersion** | Pointer to **int32** |  | [optional] 
-**BelScriptLibraryVersion** | Pointer to **string** |  | [optional] 
-**BelScriptLibraryVersionEnum** | Pointer to [**GBTFeatureScriptVersionNumber**](GBTFeatureScriptVersionNumber.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **Children** | Pointer to [**[]BTMNode19**](BTMNode19.md) |  | [optional] 
 **ConfigurationData** | Pointer to [**BTMConfigurationData1560**](BTMConfigurationData1560.md) |  | [optional] 
@@ -126,81 +123,6 @@ SetAllFeaturesAndSubFeatures sets AllFeaturesAndSubFeatures field to given value
 `func (o *BTMModel141) HasAllFeaturesAndSubFeatures() bool`
 
 HasAllFeaturesAndSubFeatures returns a boolean if a field has been set.
-
-### GetBelScriptLibraryMajorVersion
-
-`func (o *BTMModel141) GetBelScriptLibraryMajorVersion() int32`
-
-GetBelScriptLibraryMajorVersion returns the BelScriptLibraryMajorVersion field if non-nil, zero value otherwise.
-
-### GetBelScriptLibraryMajorVersionOk
-
-`func (o *BTMModel141) GetBelScriptLibraryMajorVersionOk() (*int32, bool)`
-
-GetBelScriptLibraryMajorVersionOk returns a tuple with the BelScriptLibraryMajorVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBelScriptLibraryMajorVersion
-
-`func (o *BTMModel141) SetBelScriptLibraryMajorVersion(v int32)`
-
-SetBelScriptLibraryMajorVersion sets BelScriptLibraryMajorVersion field to given value.
-
-### HasBelScriptLibraryMajorVersion
-
-`func (o *BTMModel141) HasBelScriptLibraryMajorVersion() bool`
-
-HasBelScriptLibraryMajorVersion returns a boolean if a field has been set.
-
-### GetBelScriptLibraryVersion
-
-`func (o *BTMModel141) GetBelScriptLibraryVersion() string`
-
-GetBelScriptLibraryVersion returns the BelScriptLibraryVersion field if non-nil, zero value otherwise.
-
-### GetBelScriptLibraryVersionOk
-
-`func (o *BTMModel141) GetBelScriptLibraryVersionOk() (*string, bool)`
-
-GetBelScriptLibraryVersionOk returns a tuple with the BelScriptLibraryVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBelScriptLibraryVersion
-
-`func (o *BTMModel141) SetBelScriptLibraryVersion(v string)`
-
-SetBelScriptLibraryVersion sets BelScriptLibraryVersion field to given value.
-
-### HasBelScriptLibraryVersion
-
-`func (o *BTMModel141) HasBelScriptLibraryVersion() bool`
-
-HasBelScriptLibraryVersion returns a boolean if a field has been set.
-
-### GetBelScriptLibraryVersionEnum
-
-`func (o *BTMModel141) GetBelScriptLibraryVersionEnum() GBTFeatureScriptVersionNumber`
-
-GetBelScriptLibraryVersionEnum returns the BelScriptLibraryVersionEnum field if non-nil, zero value otherwise.
-
-### GetBelScriptLibraryVersionEnumOk
-
-`func (o *BTMModel141) GetBelScriptLibraryVersionEnumOk() (*GBTFeatureScriptVersionNumber, bool)`
-
-GetBelScriptLibraryVersionEnumOk returns a tuple with the BelScriptLibraryVersionEnum field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBelScriptLibraryVersionEnum
-
-`func (o *BTMModel141) SetBelScriptLibraryVersionEnum(v GBTFeatureScriptVersionNumber)`
-
-SetBelScriptLibraryVersionEnum sets BelScriptLibraryVersionEnum field to given value.
-
-### HasBelScriptLibraryVersionEnum
-
-`func (o *BTMModel141) HasBelScriptLibraryVersionEnum() bool`
-
-HasBelScriptLibraryVersionEnum returns a boolean if a field has been set.
 
 ### GetBtType
 

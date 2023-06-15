@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **IsContainer** | Pointer to **bool** |  | [optional] 
 **IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
 **IsMutable** | Pointer to **bool** |  | [optional] 
-**IsOrphaned** | Pointer to **bool** |  | [optional] 
 **IsUsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **LikedByCurrentUser** | Pointer to **bool** |  | [optional] 
 **Likes** | Pointer to **int64** |  | [optional] 
@@ -46,8 +45,6 @@ Name | Type | Description | Notes
 **SupportTeamUserAndShared** | Pointer to **bool** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
-**TotalWorkspacesScheduledForUpdate** | Pointer to **int32** |  | [optional] 
-**TotalWorkspacesUpdating** | Pointer to **int32** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
@@ -548,31 +545,6 @@ SetIsMutable sets IsMutable field to given value.
 `func (o *BTDocumentSummaryInfo) HasIsMutable() bool`
 
 HasIsMutable returns a boolean if a field has been set.
-
-### GetIsOrphaned
-
-`func (o *BTDocumentSummaryInfo) GetIsOrphaned() bool`
-
-GetIsOrphaned returns the IsOrphaned field if non-nil, zero value otherwise.
-
-### GetIsOrphanedOk
-
-`func (o *BTDocumentSummaryInfo) GetIsOrphanedOk() (*bool, bool)`
-
-GetIsOrphanedOk returns a tuple with the IsOrphaned field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsOrphaned
-
-`func (o *BTDocumentSummaryInfo) SetIsOrphaned(v bool)`
-
-SetIsOrphaned sets IsOrphaned field to given value.
-
-### HasIsOrphaned
-
-`func (o *BTDocumentSummaryInfo) HasIsOrphaned() bool`
-
-HasIsOrphaned returns a boolean if a field has been set.
 
 ### GetIsUsingManagedWorkflow
 
@@ -1123,56 +1095,6 @@ SetThumbnail sets Thumbnail field to given value.
 `func (o *BTDocumentSummaryInfo) HasThumbnail() bool`
 
 HasThumbnail returns a boolean if a field has been set.
-
-### GetTotalWorkspacesScheduledForUpdate
-
-`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesScheduledForUpdate() int32`
-
-GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field if non-nil, zero value otherwise.
-
-### GetTotalWorkspacesScheduledForUpdateOk
-
-`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool)`
-
-GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalWorkspacesScheduledForUpdate
-
-`func (o *BTDocumentSummaryInfo) SetTotalWorkspacesScheduledForUpdate(v int32)`
-
-SetTotalWorkspacesScheduledForUpdate sets TotalWorkspacesScheduledForUpdate field to given value.
-
-### HasTotalWorkspacesScheduledForUpdate
-
-`func (o *BTDocumentSummaryInfo) HasTotalWorkspacesScheduledForUpdate() bool`
-
-HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-
-### GetTotalWorkspacesUpdating
-
-`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesUpdating() int32`
-
-GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field if non-nil, zero value otherwise.
-
-### GetTotalWorkspacesUpdatingOk
-
-`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool)`
-
-GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalWorkspacesUpdating
-
-`func (o *BTDocumentSummaryInfo) SetTotalWorkspacesUpdating(v int32)`
-
-SetTotalWorkspacesUpdating sets TotalWorkspacesUpdating field to given value.
-
-### HasTotalWorkspacesUpdating
-
-`func (o *BTDocumentSummaryInfo) HasTotalWorkspacesUpdating() bool`
-
-HasTotalWorkspacesUpdating returns a boolean if a field has been set.
 
 ### GetTrash
 

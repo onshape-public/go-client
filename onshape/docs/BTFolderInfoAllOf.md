@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** |  | [optional] 
 **CanUnshare** | Pointer to **bool** |  | [optional] 
-**ElementLibrarySummaryInfo** | Pointer to [**BTElementLibrarySummaryInfo**](BTElementLibrarySummaryInfo.md) |  | [optional] 
+**ElementLibrarySummaryInfo** | Pointer to [**[]BTElementLibrarySummaryInfo**](BTElementLibrarySummaryInfo.md) |  | [optional] 
 **IsOrphaned** | Pointer to **bool** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
@@ -84,20 +84,20 @@ HasCanUnshare returns a boolean if a field has been set.
 
 ### GetElementLibrarySummaryInfo
 
-`func (o *BTFolderInfoAllOf) GetElementLibrarySummaryInfo() BTElementLibrarySummaryInfo`
+`func (o *BTFolderInfoAllOf) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo`
 
 GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field if non-nil, zero value otherwise.
 
 ### GetElementLibrarySummaryInfoOk
 
-`func (o *BTFolderInfoAllOf) GetElementLibrarySummaryInfoOk() (*BTElementLibrarySummaryInfo, bool)`
+`func (o *BTFolderInfoAllOf) GetElementLibrarySummaryInfoOk() (*[]BTElementLibrarySummaryInfo, bool)`
 
 GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElementLibrarySummaryInfo
 
-`func (o *BTFolderInfoAllOf) SetElementLibrarySummaryInfo(v BTElementLibrarySummaryInfo)`
+`func (o *BTFolderInfoAllOf) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo)`
 
 SetElementLibrarySummaryInfo sets ElementLibrarySummaryInfo field to given value.
 

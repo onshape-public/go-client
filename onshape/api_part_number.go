@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.164.16955-b4ecd192bba6
+API version: 1.165.17497-411bb6b98e6b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -22,7 +22,7 @@ import (
 // PartNumberApiService PartNumberApi service
 type PartNumberApiService service
 
-type ApiNextNumbersRequest struct {
+type ApiUpdateNextNumbersRequest struct {
 	ctx                    context.Context
 	ApiService             *PartNumberApiService
 	bTNextPartNumbersParam *BTNextPartNumbersParam
@@ -30,33 +30,33 @@ type ApiNextNumbersRequest struct {
 	did                    *string
 }
 
-func (r ApiNextNumbersRequest) BTNextPartNumbersParam(bTNextPartNumbersParam BTNextPartNumbersParam) ApiNextNumbersRequest {
+func (r ApiUpdateNextNumbersRequest) BTNextPartNumbersParam(bTNextPartNumbersParam BTNextPartNumbersParam) ApiUpdateNextNumbersRequest {
 	r.bTNextPartNumbersParam = &bTNextPartNumbersParam
 	return r
 }
 
-func (r ApiNextNumbersRequest) Cid(cid string) ApiNextNumbersRequest {
+func (r ApiUpdateNextNumbersRequest) Cid(cid string) ApiUpdateNextNumbersRequest {
 	r.cid = &cid
 	return r
 }
 
-func (r ApiNextNumbersRequest) Did(did string) ApiNextNumbersRequest {
+func (r ApiUpdateNextNumbersRequest) Did(did string) ApiUpdateNextNumbersRequest {
 	r.did = &did
 	return r
 }
 
-func (r ApiNextNumbersRequest) Execute() (*map[string][]BTNextPartNumber, *http.Response, error) {
-	return r.ApiService.NextNumbersExecute(r)
+func (r ApiUpdateNextNumbersRequest) Execute() (*map[string][]BTNextPartNumber, *http.Response, error) {
+	return r.ApiService.UpdateNextNumbersExecute(r)
 }
 
 /*
-NextNumbers Update a set of valid part numbers for the supplied parts.
+UpdateNextNumbers Update a set of valid part numbers for the supplied parts.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiNextNumbersRequest
+ @return ApiUpdateNextNumbersRequest
 */
-func (a *PartNumberApiService) NextNumbers(ctx context.Context) ApiNextNumbersRequest {
-	return ApiNextNumbersRequest{
+func (a *PartNumberApiService) UpdateNextNumbers(ctx context.Context) ApiUpdateNextNumbersRequest {
+	return ApiUpdateNextNumbersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -64,7 +64,7 @@ func (a *PartNumberApiService) NextNumbers(ctx context.Context) ApiNextNumbersRe
 
 // Execute executes the request
 //  @return map[string][]BTNextPartNumber
-func (a *PartNumberApiService) NextNumbersExecute(r ApiNextNumbersRequest) (*map[string][]BTNextPartNumber, *http.Response, error) {
+func (a *PartNumberApiService) UpdateNextNumbersExecute(r ApiUpdateNextNumbersRequest) (*map[string][]BTNextPartNumber, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -72,140 +72,7 @@ func (a *PartNumberApiService) NextNumbersExecute(r ApiNextNumbersRequest) (*map
 		localVarReturnValue *map[string][]BTNextPartNumber
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartNumberApiService.NextNumbers")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/numberingscheme/nextnumbers"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.bTNextPartNumbersParam == nil {
-		return localVarReturnValue, nil, reportError("bTNextPartNumbersParam is required and must be specified")
-	}
-
-	if r.cid != nil {
-		localVarQueryParams.Add("cid", parameterToString(*r.cid, ""))
-	}
-	if r.did != nil {
-		localVarQueryParams.Add("did", parameterToString(*r.did, ""))
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.bTNextPartNumbersParam
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	var _ io.Reader
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
-
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		var v map[string][]BTNextPartNumber
-		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			newErr.error = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
-
-	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
-
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiNextNumbers1Request struct {
-	ctx                    context.Context
-	ApiService             *PartNumberApiService
-	bTNextPartNumbersParam *BTNextPartNumbersParam
-	cid                    *string
-	did                    *string
-}
-
-func (r ApiNextNumbers1Request) BTNextPartNumbersParam(bTNextPartNumbersParam BTNextPartNumbersParam) ApiNextNumbers1Request {
-	r.bTNextPartNumbersParam = &bTNextPartNumbersParam
-	return r
-}
-
-func (r ApiNextNumbers1Request) Cid(cid string) ApiNextNumbers1Request {
-	r.cid = &cid
-	return r
-}
-
-func (r ApiNextNumbers1Request) Did(did string) ApiNextNumbers1Request {
-	r.did = &did
-	return r
-}
-
-func (r ApiNextNumbers1Request) Execute() (*map[string][]BTNextPartNumber, *http.Response, error) {
-	return r.ApiService.NextNumbers1Execute(r)
-}
-
-/*
-NextNumbers1 Update a set of valid part numbers for the supplied parts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiNextNumbers1Request
-*/
-func (a *PartNumberApiService) NextNumbers1(ctx context.Context) ApiNextNumbers1Request {
-	return ApiNextNumbers1Request{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-//  @return map[string][]BTNextPartNumber
-func (a *PartNumberApiService) NextNumbers1Execute(r ApiNextNumbers1Request) (*map[string][]BTNextPartNumber, *http.Response, error) {
-	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *map[string][]BTNextPartNumber
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartNumberApiService.NextNumbers1")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartNumberApiService.UpdateNextNumbers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
