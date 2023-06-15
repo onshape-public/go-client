@@ -7,7 +7,7 @@ import (
 )
 
 func TestPartNumberAPI(t *testing.T) {
-    InitializeTester[*onshape.PartNumberApiService](t)
+    InitializeTester[*onshape.NumberingSchemeApiService](t)
 
     OpenAPITest{
         Call: onshape.ApiNextNumbersRequest{},

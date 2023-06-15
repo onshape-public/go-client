@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowReleaseItemsFromOtherDocuments** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserCreateReleases** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserEditStandardContent** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserManageWorkflows** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSeeArenaItemLink** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncBomToArena** | Pointer to **bool** |  | [optional] 
@@ -22,6 +23,9 @@ Name | Type | Description | Notes
 **ReleaseWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ReleaseWorkflowId** | Pointer to **string** |  | [optional] 
 **ReleaseableApplications** | Pointer to **[]string** |  | [optional] 
+**StandardContentNumberingSchemeId** | Pointer to **string** |  | [optional] 
+**StandardContentUsingAutoNumbering** | Pointer to **bool** |  | [optional] 
+**StandardContentUsingThirdPartyPartNumbering** | Pointer to **bool** |  | [optional] 
 **UsingAutoPartNumbering** | Pointer to **bool** |  | [optional] 
 **UsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **UsingThirdPartyPartNumbering** | Pointer to **bool** |  | [optional] 
@@ -94,6 +98,31 @@ SetCanCurrentUserCreateReleases sets CanCurrentUserCreateReleases field to given
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserCreateReleases() bool`
 
 HasCanCurrentUserCreateReleases returns a boolean if a field has been set.
+
+### GetCanCurrentUserEditStandardContent
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserEditStandardContent() bool`
+
+GetCanCurrentUserEditStandardContent returns the CanCurrentUserEditStandardContent field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserEditStandardContentOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserEditStandardContentOk() (*bool, bool)`
+
+GetCanCurrentUserEditStandardContentOk returns a tuple with the CanCurrentUserEditStandardContent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserEditStandardContent
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserEditStandardContent(v bool)`
+
+SetCanCurrentUserEditStandardContent sets CanCurrentUserEditStandardContent field to given value.
+
+### HasCanCurrentUserEditStandardContent
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserEditStandardContent() bool`
+
+HasCanCurrentUserEditStandardContent returns a boolean if a field has been set.
 
 ### GetCanCurrentUserManageWorkflows
 
@@ -494,6 +523,81 @@ SetReleaseableApplications sets ReleaseableApplications field to given value.
 `func (o *BTActiveWorkflowInfo) HasReleaseableApplications() bool`
 
 HasReleaseableApplications returns a boolean if a field has been set.
+
+### GetStandardContentNumberingSchemeId
+
+`func (o *BTActiveWorkflowInfo) GetStandardContentNumberingSchemeId() string`
+
+GetStandardContentNumberingSchemeId returns the StandardContentNumberingSchemeId field if non-nil, zero value otherwise.
+
+### GetStandardContentNumberingSchemeIdOk
+
+`func (o *BTActiveWorkflowInfo) GetStandardContentNumberingSchemeIdOk() (*string, bool)`
+
+GetStandardContentNumberingSchemeIdOk returns a tuple with the StandardContentNumberingSchemeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStandardContentNumberingSchemeId
+
+`func (o *BTActiveWorkflowInfo) SetStandardContentNumberingSchemeId(v string)`
+
+SetStandardContentNumberingSchemeId sets StandardContentNumberingSchemeId field to given value.
+
+### HasStandardContentNumberingSchemeId
+
+`func (o *BTActiveWorkflowInfo) HasStandardContentNumberingSchemeId() bool`
+
+HasStandardContentNumberingSchemeId returns a boolean if a field has been set.
+
+### GetStandardContentUsingAutoNumbering
+
+`func (o *BTActiveWorkflowInfo) GetStandardContentUsingAutoNumbering() bool`
+
+GetStandardContentUsingAutoNumbering returns the StandardContentUsingAutoNumbering field if non-nil, zero value otherwise.
+
+### GetStandardContentUsingAutoNumberingOk
+
+`func (o *BTActiveWorkflowInfo) GetStandardContentUsingAutoNumberingOk() (*bool, bool)`
+
+GetStandardContentUsingAutoNumberingOk returns a tuple with the StandardContentUsingAutoNumbering field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStandardContentUsingAutoNumbering
+
+`func (o *BTActiveWorkflowInfo) SetStandardContentUsingAutoNumbering(v bool)`
+
+SetStandardContentUsingAutoNumbering sets StandardContentUsingAutoNumbering field to given value.
+
+### HasStandardContentUsingAutoNumbering
+
+`func (o *BTActiveWorkflowInfo) HasStandardContentUsingAutoNumbering() bool`
+
+HasStandardContentUsingAutoNumbering returns a boolean if a field has been set.
+
+### GetStandardContentUsingThirdPartyPartNumbering
+
+`func (o *BTActiveWorkflowInfo) GetStandardContentUsingThirdPartyPartNumbering() bool`
+
+GetStandardContentUsingThirdPartyPartNumbering returns the StandardContentUsingThirdPartyPartNumbering field if non-nil, zero value otherwise.
+
+### GetStandardContentUsingThirdPartyPartNumberingOk
+
+`func (o *BTActiveWorkflowInfo) GetStandardContentUsingThirdPartyPartNumberingOk() (*bool, bool)`
+
+GetStandardContentUsingThirdPartyPartNumberingOk returns a tuple with the StandardContentUsingThirdPartyPartNumbering field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStandardContentUsingThirdPartyPartNumbering
+
+`func (o *BTActiveWorkflowInfo) SetStandardContentUsingThirdPartyPartNumbering(v bool)`
+
+SetStandardContentUsingThirdPartyPartNumbering sets StandardContentUsingThirdPartyPartNumbering field to given value.
+
+### HasStandardContentUsingThirdPartyPartNumbering
+
+`func (o *BTActiveWorkflowInfo) HasStandardContentUsingThirdPartyPartNumbering() bool`
+
+HasStandardContentUsingThirdPartyPartNumbering returns a boolean if a field has been set.
 
 ### GetUsingAutoPartNumbering
 

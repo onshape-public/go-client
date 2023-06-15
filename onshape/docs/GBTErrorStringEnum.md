@@ -2641,6 +2641,34 @@
 
 * `GBTErrorStringEnumDrawingPartstudioNonmanifoldSectionCut` (value: `"DRAWING_PARTSTUDIO_NONMANIFOLD_SECTION_CUT"`)
 
+* `GBTErrorStringEnumMoveCurveBoundaryFailed` (value: `"MOVE_CURVE_BOUNDARY_FAILED"`)
+
+* `GBTErrorStringEnumMoveCurveBoundaryExtensionNoIntersection` (value: `"MOVE_CURVE_BOUNDARY_EXTENSION_NO_INTERSECTION"`)
+
+* `GBTErrorStringEnumMoveCurveBoundaryTrimNoIntersection` (value: `"MOVE_CURVE_BOUNDARY_TRIM_NO_INTERSECTION"`)
+
+* `GBTErrorStringEnumMoveCurveBoundarySelectCurve` (value: `"MOVE_CURVE_BOUNDARY_SELECT_CURVE"`)
+
+* `GBTErrorStringEnumMoveCurveBoundarySelectTrimBoundary` (value: `"MOVE_CURVE_BOUNDARY_SELECT_TRIM_BOUNDARY"`)
+
+* `GBTErrorStringEnumMoveCurveBoundarySelectExtendBoundary` (value: `"MOVE_CURVE_BOUNDARY_SELECT_EXTEND_BOUNDARY"`)
+
+* `GBTErrorStringEnumMoveCurveBoundaryNoSketchEntities` (value: `"MOVE_CURVE_BOUNDARY_NO_SKETCH_ENTITIES"`)
+
+* `GBTErrorStringEnumMoveCurveBoundaryOnlyWires` (value: `"MOVE_CURVE_BOUNDARY_ONLY_WIRES"`)
+
+* `GBTErrorStringEnumMoveCurveBoundarySelectHelpPoint` (value: `"MOVE_CURVE_BOUNDARY_SELECT_HELP_POINT"`)
+
+* `GBTErrorStringEnumMoveCurveBoundaryExtendRequiresOpenCurve` (value: `"MOVE_CURVE_BOUNDARY_EXTEND_REQUIRES_OPEN_CURVE"`)
+
+* `GBTErrorStringEnumMoveCurveBoundarySplitClosedAtTwoPoints` (value: `"MOVE_CURVE_BOUNDARY_SPLIT_CLOSED_AT_TWO_POINTS"`)
+
+* `GBTErrorStringEnumHoleNoEndBounds` (value: `"HOLE_NO_END_BOUNDS"`)
+
+* `GBTErrorStringEnumHoleTapTooDeep` (value: `"HOLE_TAP_TOO_DEEP"`)
+
+* `GBTErrorStringEnumMoveCurveBoundaryToolIsTarget` (value: `"MOVE_CURVE_BOUNDARY_TOOL_IS_TARGET"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

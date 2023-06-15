@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.164.16955-b4ecd192bba6
+API version: 1.165.17497-411bb6b98e6b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -19,6 +19,7 @@ import (
 type BTDecal2404 struct {
 	BtType        *string              `json:"btType,omitempty"`
 	ImageSourceId *string              `json:"imageSourceId,omitempty"`
+	IsDeletion    *bool                `json:"isDeletion,omitempty"`
 	Mappings      []BTImageMapping3821 `json:"mappings,omitempty"`
 }
 
@@ -103,6 +104,38 @@ func (o *BTDecal2404) SetImageSourceId(v string) {
 	o.ImageSourceId = &v
 }
 
+// GetIsDeletion returns the IsDeletion field value if set, zero value otherwise.
+func (o *BTDecal2404) GetIsDeletion() bool {
+	if o == nil || o.IsDeletion == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDeletion
+}
+
+// GetIsDeletionOk returns a tuple with the IsDeletion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDecal2404) GetIsDeletionOk() (*bool, bool) {
+	if o == nil || o.IsDeletion == nil {
+		return nil, false
+	}
+	return o.IsDeletion, true
+}
+
+// HasIsDeletion returns a boolean if a field has been set.
+func (o *BTDecal2404) HasIsDeletion() bool {
+	if o != nil && o.IsDeletion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDeletion gets a reference to the given bool and assigns it to the IsDeletion field.
+func (o *BTDecal2404) SetIsDeletion(v bool) {
+	o.IsDeletion = &v
+}
+
 // GetMappings returns the Mappings field value if set, zero value otherwise.
 func (o *BTDecal2404) GetMappings() []BTImageMapping3821 {
 	if o == nil || o.Mappings == nil {
@@ -142,6 +175,9 @@ func (o BTDecal2404) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImageSourceId != nil {
 		toSerialize["imageSourceId"] = o.ImageSourceId
+	}
+	if o.IsDeletion != nil {
+		toSerialize["isDeletion"] = o.IsDeletion
 	}
 	if o.Mappings != nil {
 		toSerialize["mappings"] = o.Mappings
