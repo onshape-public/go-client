@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.165.18120-f464f720d215
+  version: 1.166.18273-3025d52f81b7
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -147,12 +147,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTListResponseBTPurchaseInfo'
           description: default response
+      summary: Get a list of all app purchases made for the specified plan.
       tags:
       - Account
       x-BTVisibility: PRODUCTION
   /accounts/purchases:
     get:
       deprecated: false
+      description: Get a list of all app purchases made by the current user.
       operationId: getPurchases
       parameters:
       - explode: true
@@ -188,7 +190,7 @@ paths:
                   $ref: '#/components/schemas/BTPurchaseInfo'
                 type: array
           description: default response
-      summary: Retrieve an array of the user’s App Store purchases.
+      summary: This API should be used within the context of an OAuth-enabled application.
       tags:
       - Account
       x-BTVisibility: PRODUCTION
@@ -221,7 +223,7 @@ paths:
         - OAuth2Purchase
         BasicAuth:
         - OAuth2Purchase
-      summary: Mark purchase consumed by the user by purchase ID.
+      summary: Mark a purchase as consumed by the current user.
       tags:
       - Account
       x-BTVisibility: PRODUCTION
@@ -10906,6 +10908,7 @@ paths:
   /partstudios/d/{did}/e/{eid}/namedViews:
     get:
       deprecated: false
+      description: Returns a map from view name to view data for the given element
       operationId: getPartStudioNamedViews
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -14177,6 +14180,9 @@ paths:
   /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et}:
     delete:
       deprecated: false
+      description: Erase all revisions of a given partnumber. Only company admins
+        can delete all revisions in a company. All documents that contain the partnumber
+        or use it must be deleted first. This operation is not undoable.
       operationId: deleteRevisionHistory
       parameters:
       - explode: false
@@ -14727,6 +14733,7 @@ paths:
   /thumbnails/d/{did}/v/{vid}:
     get:
       deprecated: false
+      description: Return thumbnail info for document at specified version
       operationId: getThumbnailForDocumentAndVersion
       parameters:
       - explode: false
@@ -14768,6 +14775,7 @@ paths:
   /thumbnails/d/{did}/w/{wid}:
     get:
       deprecated: false
+      description: Get the thumbnail for a document in a specific workspace
       operationId: getDocumentThumbnail
       parameters:
       - explode: false
@@ -15436,13 +15444,18 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Request an array of translations that were made against this document.
+      summary: Get information on an in-progress or completed translation by documentID.
       tags:
       - Translation
       x-BTVisibility: PRODUCTION
   /translations/d/{did}/w/{wid}:
     post:
       deprecated: false
+      description: "The API call may complete before the translation is finished.\
+        \ If `requestState = ACTIVE`, the translation can be polled until the state\
+        \ is either DONE or FAILED. Alternatively, a webhook callback can be registered\
+        \ for notification of translation completion (requires `Write` scope if `storeInDocument`\
+        \ is `true`)."
       operationId: createTranslation
       parameters:
       - explode: false
@@ -15476,14 +15489,17 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Upload foreign data (for example, an X_T file) into Onshape, and then\
-        \ translate the data to generate a part, Part Studio, Assembly, or subassembly."
+      summary: "Upload a foreign file into Onshape and translate the data into parts,\
+        \ part studios, assemblies, and subassemblies."
       tags:
       - Translation
       x-BTVisibility: PRODUCTION
   /translations/translationformats:
     get:
       deprecated: false
+      description: "Note that we don’t necessarily support both import and export\
+        \ for any given format. Please use specific export APIs, such as `exportPartStudioStl`,\
+        \ for STL and Parasolid exports."
       operationId: getAllTranslatorFormats
       responses:
         default:
@@ -15494,8 +15510,7 @@ paths:
                   $ref: '#/components/schemas/BTModelFormatFullInfo'
                 type: array
           description: default response
-      summary: Retrieve a list of translation formats that can work for this translation.
-        Some are valid only as an input format and cannot be used as an output format.
+      summary: Get a list of formats this translation can use.
       tags:
       - Translation
       x-BTVisibility: PRODUCTION
@@ -15523,7 +15538,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Delete translation status entry.
+      summary: Delete a translation request.
       tags:
       - Translation
       x-BTVisibility: PRODUCTION
@@ -15550,13 +15565,15 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Request information on an in-progress or completed translation.
+      summary: Get information on an in-progress or completed translation by translation
+        ID.
       tags:
       - Translation
       x-BTVisibility: PRODUCTION
   /users/session:
     post:
       deprecated: false
+      description: Returned information depends on caller's OAuth2ReadPll scope.
       operationId: session
       requestBody:
         content:
@@ -15579,6 +15596,7 @@ paths:
   /users/sessioninfo:
     get:
       deprecated: false
+      description: Returned information depends on caller's OAuth2ReadPll scope.
       operationId: sessionInfo
       responses:
         default:
@@ -15587,8 +15605,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTUserOAuth2SummaryInfo'
           description: default response
-      summary: Check if current user is signed-in. Information returned depends on
-        OAuth2ReadPII scope.
+      summary: Check to see if a user is signed in to a current session.
       tags:
       - User
       x-BTVisibility: PRODUCTION
@@ -16545,6 +16562,7 @@ paths:
               summary: Occurs in response to a notification deregistation API call.
               x-callback-request: true
       deprecated: false
+      description: Create a webhook
       operationId: createWebhook
       requestBody:
         content:
@@ -16631,6 +16649,7 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: Update a webhook
       operationId: updateWebhook
       parameters:
       - explode: false
@@ -16663,6 +16682,7 @@ paths:
   /webhooks/{webhookid}/ping:
     post:
       deprecated: false
+      description: Ping a webhook
       operationId: pingWebhook
       parameters:
       - explode: false
@@ -16719,6 +16739,9 @@ paths:
   /workflow/c/{companyId}/approvers:
     get:
       deprecated: false
+      description: Get identities (users and/or teams) allowed to be approvers on
+        a workflow object for the company. Not object- or property-specific; used
+        for delegation and company settings
       operationId: getAllowedApprovers
       parameters:
       - explode: false
@@ -16847,6 +16870,9 @@ paths:
   /workflow/obj/{objectId}/auditlog:
     get:
       deprecated: false
+      description: Get identities (users and/or teams) allowed to be approvers on
+        a workflow object for the company. Not object- or property-specific; used
+        for delegation and company settings
       operationId: getAuditLog
       parameters:
       - explode: false
@@ -21558,6 +21584,8 @@ components:
           type: boolean
         itemDefinitionId:
           type: string
+        metadataObjectType:
+          $ref: '#/components/schemas/BTMetadataObjectType'
         partId:
           type: string
         sourceElement:
@@ -25335,7 +25363,6 @@ components:
         documentFilter: 0
         sortColumn: sortColumn
         offset: 0
-        luceneSyntax: true
         sortOrder: sortOrder
         limit: 1
         ownerId: ownerId
@@ -25359,10 +25386,6 @@ components:
           example: 1
           format: int32
           type: integer
-        luceneSyntax:
-          description: 'Lucene syntax '
-          example: true
-          type: boolean
         offset:
           description: Offset. Determines where search results begin. Default value
             is 0.
@@ -25396,6 +25419,9 @@ components:
         when:
           $ref: '#/components/schemas/BTESResultsFilter'
       type: object
+      x-BTVisibility-properties:
+        luceneSyntax: INTERNAL
+        dochitsOnly: INTERNAL
     BTDocumentSelectorInfo:
       example:
         selectorId: selectorId
@@ -38313,6 +38339,7 @@ components:
           BTMAssemblyFeatureFolder-2543: '#/components/schemas/BTMAssemblyFeatureFolder-2543'
           BTMAssemblyPatternFeature-2241: '#/components/schemas/BTMAssemblyPatternFeature-2241'
           BTMAssemblyReplicateFeature-1351: '#/components/schemas/BTMAssemblyReplicateFeature-1351'
+          BTMGenerativeDesignFeature-3195: '#/components/schemas/BTMGenerativeDesignFeature-3195'
           BTMGeometryMate-1260: '#/components/schemas/BTMGeometryMate-1260'
           BTMLoad-3538: '#/components/schemas/BTMLoad-3538'
           BTMMate-64: '#/components/schemas/BTMMate-64'
@@ -38583,6 +38610,14 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTMNode-19'
       - $ref: '#/components/schemas/BTMFolder_3208_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
+    BTMGenerativeDesignFeature-3195:
+      allOf:
+      - $ref: '#/components/schemas/BTMAssemblyFeature-887'
+      - $ref: '#/components/schemas/BTMGenerativeDesignFeature_3195_allOf'
       properties:
         btType:
           type: string
@@ -39190,11 +39225,33 @@ components:
           type: string
       type: object
     BTMParameterReferenceJSON-790:
-      allOf:
-      - $ref: '#/components/schemas/BTMParameterReferenceBlob-3281'
-      - $ref: '#/components/schemas/BTMParameterReferenceJSON_790_allOf'
       properties:
         btType:
+          type: string
+        documentId:
+          type: string
+        documentVersionId:
+          type: string
+        elementId:
+          type: string
+        elementLibraryData:
+          $ref: '#/components/schemas/BTElementLibraryReferenceData-3133'
+        featureScriptType:
+          type: string
+        ids:
+          items:
+            type: string
+          type: array
+        importMicroversion:
+          type: string
+          writeOnly: true
+        microversioId:
+          type: string
+        namespace:
+          type: string
+        nodeId:
+          type: string
+        parameterId:
           type: string
       type: object
     BTMParameterReferencePartStudio-3302:
@@ -40264,6 +40321,27 @@ components:
         prev:
           type: string
       type: object
+    BTMetadataObjectType:
+      enum:
+      - GLOBAL
+      - DOCUMENT
+      - PART
+      - ASSEMBLY
+      - DRAWING
+      - PART_STUDIO
+      - BLOB_ELEMENT
+      - APP_ELEMENT
+      - VERSION
+      - WORKSPACE
+      - PROJECT
+      - ITEM
+      - FEATURE_STUDIO
+      - CHANGE_REQUEST
+      - TASK
+      - CHANGE_ORDER
+      - CHANGE_TASK
+      - VARIABLE_STUDIO
+      type: string
     BTMetadataPartInfo:
       allOf:
       - $ref: '#/components/schemas/BTMetadataObjectInfo'
@@ -41097,6 +41175,9 @@ components:
           type: string
         prefix:
           type: string
+        resourceType:
+          format: int32
+          type: integer
         versionId:
           type: string
         workspaceId:
@@ -41105,11 +41186,9 @@ components:
     BTNextPartNumberParam:
       example:
         elementId: elementId
+        versionId: versionId
         configuration: configuration
         partId: partId
-        mimeType: mimeType
-        itemId: itemId
-        versionId: versionId
         numberSchemeResourceTypeId: numberSchemeResourceTypeId
         documentId: documentId
         partNumber: partNumber
@@ -41119,6 +41198,7 @@ components:
         - name: name
           id: id
         id: id
+        mimeType: mimeType
         elementType: 0
         workspaceId: workspaceId
       properties:
@@ -41136,8 +41216,6 @@ components:
           format: int32
           type: integer
         id:
-          type: string
-        itemId:
           type: string
         mimeType:
           type: string
@@ -41159,11 +41237,9 @@ components:
         - skipPartNumbers
         itemPartNumbers:
         - elementId: elementId
+          versionId: versionId
           configuration: configuration
           partId: partId
-          mimeType: mimeType
-          itemId: itemId
-          versionId: versionId
           numberSchemeResourceTypeId: numberSchemeResourceTypeId
           documentId: documentId
           partNumber: partNumber
@@ -41173,14 +41249,13 @@ components:
           - name: name
             id: id
           id: id
+          mimeType: mimeType
           elementType: 0
           workspaceId: workspaceId
         - elementId: elementId
+          versionId: versionId
           configuration: configuration
           partId: partId
-          mimeType: mimeType
-          itemId: itemId
-          versionId: versionId
           numberSchemeResourceTypeId: numberSchemeResourceTypeId
           documentId: documentId
           partNumber: partNumber
@@ -41190,6 +41265,7 @@ components:
           - name: name
             id: id
           id: id
+          mimeType: mimeType
           elementType: 0
           workspaceId: workspaceId
       properties:
@@ -51119,6 +51195,7 @@ components:
         joinAdjacentSurfaces: true
         parentId: parentId
         importInBackground: true
+        skipBodyshop: true
         blobElementId: blobElementId
         extractAssemblyHierarchy: true
         maximumChordLength: 0.01
@@ -51270,6 +51347,8 @@ components:
             type: integer
           type: array
         showOverriddenDimensions:
+          type: boolean
+        skipBodyshop:
           type: boolean
         sourceName:
           type: string
@@ -52153,71 +52232,13 @@ components:
           - selectorId: selectorId
             parameters:
               jsonType: jsonType
-        useDecimalComma: true
         displayAssemblyProperties: true
         customColors:
         - customColors
         - customColors
-        exportDrawingOptions: exportDrawingOptions
-        materialLibrarySettings:
-          companyLibraries:
-          - elementId: elementId
-            libraryName: libraryName
-            versionId: versionId
-            ownerName: ownerName
-            isPublic: true
-            documentId: documentId
-            documentName: documentName
-            workspaceId: workspaceId
-          - elementId: elementId
-            libraryName: libraryName
-            versionId: versionId
-            ownerName: ownerName
-            isPublic: true
-            documentId: documentId
-            documentName: documentName
-            workspaceId: workspaceId
-          libraries:
-          - elementId: elementId
-            libraryName: libraryName
-            versionId: versionId
-            ownerName: ownerName
-            isPublic: true
-            documentId: documentId
-            documentName: documentName
-            workspaceId: workspaceId
-          - elementId: elementId
-            libraryName: libraryName
-            versionId: versionId
-            ownerName: ownerName
-            isPublic: true
-            documentId: documentId
-            documentName: documentName
-            workspaceId: workspaceId
+        previousSketchFont: previousSketchFont
         locale: locale
-        startupPage: 5
         exportSolidOptions: exportSolidOptions
-        enforceApplicationAcl: true
-        reverseScrollWheelZoomDirection: true
-        drawingBackgroundId: 1
-        importOptions: importOptions
-        commonUnits:
-          units:
-          - unitType: unitType
-            unit: unit
-            unitName: unitName
-            valueInBaseUnits: 6.027456183070403
-            abbreviation: abbreviation
-          - unitType: unitType
-            unit: unit
-            unitName: unitName
-            valueInBaseUnits: 6.027456183070403
-            abbreviation: abbreviation
-          quantityTypeToBaseUnits:
-            key:
-              key: 0
-        miniToolbarSettings: miniToolbarSettings
-        mouseActions: mouseActions
         viewManipulationMouseKeyMapping:
           zoom2DMapping:
           - mouseButtons:
@@ -52401,6 +52422,65 @@ components:
             user: null
           enabled: true
         use24HourTime: true
+        useDecimalComma: true
+        exportDrawingOptions: exportDrawingOptions
+        materialLibrarySettings:
+          companyLibraries:
+          - elementId: elementId
+            libraryName: libraryName
+            versionId: versionId
+            ownerName: ownerName
+            isPublic: true
+            documentId: documentId
+            documentName: documentName
+            workspaceId: workspaceId
+          - elementId: elementId
+            libraryName: libraryName
+            versionId: versionId
+            ownerName: ownerName
+            isPublic: true
+            documentId: documentId
+            documentName: documentName
+            workspaceId: workspaceId
+          libraries:
+          - elementId: elementId
+            libraryName: libraryName
+            versionId: versionId
+            ownerName: ownerName
+            isPublic: true
+            documentId: documentId
+            documentName: documentName
+            workspaceId: workspaceId
+          - elementId: elementId
+            libraryName: libraryName
+            versionId: versionId
+            ownerName: ownerName
+            isPublic: true
+            documentId: documentId
+            documentName: documentName
+            workspaceId: workspaceId
+        startupPage: 5
+        enforceApplicationAcl: true
+        reverseScrollWheelZoomDirection: true
+        drawingBackgroundId: 1
+        importOptions: importOptions
+        commonUnits:
+          units:
+          - unitType: unitType
+            unit: unit
+            unitName: unitName
+            valueInBaseUnits: 6.027456183070403
+            abbreviation: abbreviation
+          - unitType: unitType
+            unit: unit
+            unitName: unitName
+            valueInBaseUnits: 6.027456183070403
+            abbreviation: abbreviation
+          quantityTypeToBaseUnits:
+            key:
+              key: 0
+        miniToolbarSettings: miniToolbarSettings
+        mouseActions: mouseActions
         viewMappingId: 7
       properties:
         commonUnits:
@@ -52433,6 +52513,8 @@ components:
         miniToolbarSettings:
           type: string
         mouseActions:
+          type: string
+        previousSketchFont:
           type: string
         reverseScrollWheelZoomDirection:
           type: boolean
@@ -56911,6 +56993,11 @@ components:
       - HOLE_NO_END_BOUNDS
       - HOLE_TAP_TOO_DEEP
       - MOVE_CURVE_BOUNDARY_TOOL_IS_TARGET
+      - DRAWING_IGNORE_FAULTY_PARTS
+      - ISOCLINE_NO_RESULT
+      - ISOCLINE_SELECT_FACES
+      - ISOCLINE_SELECT_DIRECTION
+      - ISOCLINE_FAILED
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -58767,6 +58854,9 @@ components:
         indentLevel:
           format: int32
           type: integer
+        metadataObjectType:
+          format: int32
+          type: integer
         metadataUpdateHref:
           type: string
         relatedOccurrencePaths:
@@ -60076,6 +60166,34 @@ components:
           type: string
       type: object
       example: null
+    BTMGenerativeDesignFeature_3195_allOf:
+      properties:
+        additiveSupportsOccurrences:
+          items:
+            $ref: '#/components/schemas/BTOccurrence-74'
+          type: array
+        btType:
+          type: string
+        draftOccurrences:
+          items:
+            $ref: '#/components/schemas/BTOccurrence-74'
+          type: array
+        extrusionOccurrences:
+          items:
+            $ref: '#/components/schemas/BTOccurrence-74'
+          type: array
+        jsonRecipe:
+          $ref: '#/components/schemas/BTMParameterReferenceJSON-790'
+        millingOccurrences:
+          items:
+            $ref: '#/components/schemas/BTOccurrence-74'
+          type: array
+        occurrences:
+          items:
+            $ref: '#/components/schemas/BTOccurrence-74'
+          type: array
+      type: object
+      example: null
     BTMGeometryMate_1260_allOf:
       properties:
         btType:
@@ -60482,12 +60600,6 @@ components:
       type: object
       example: null
     BTMParameterReferenceImage_2014_allOf:
-      properties:
-        btType:
-          type: string
-      type: object
-      example: null
-    BTMParameterReferenceJSON_790_allOf:
       properties:
         btType:
           type: string
@@ -62016,6 +62128,9 @@ components:
           type: boolean
         isComputedProperty:
           type: boolean
+        propertyValueType:
+          format: int32
+          type: integer
       type: object
       example: null
     BTRadialDimensionDisplayData_348_allOf:
@@ -62670,6 +62785,7 @@ components:
               user
             webhook.delete: Atlas Application can delete a webhook on behalf of the
               logged-in user
+            PLMIntegration: PLM automation can invoke limited operations
           tokenUrl: /oauth/token
       type: oauth2
     BasicAuth:

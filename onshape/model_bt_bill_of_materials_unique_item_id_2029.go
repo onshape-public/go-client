@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.165.18120-f464f720d215
+API version: 1.166.18273-3025d52f81b7
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -21,6 +21,7 @@ type BTBillOfMaterialsUniqueItemId2029 struct {
 	BtType                                 *string                `json:"btType,omitempty"`
 	IsStandardContent                      *bool                  `json:"isStandardContent,omitempty"`
 	ItemDefinitionId                       *string                `json:"itemDefinitionId,omitempty"`
+	MetadataObjectType                     *BTMetadataObjectType  `json:"metadataObjectType,omitempty"`
 	PartId                                 *string                `json:"partId,omitempty"`
 	SourceElement                          *BTElementReference725 `json:"sourceElement,omitempty"`
 	VersionMetadataWorkspaceId             *string                `json:"versionMetadataWorkspaceId,omitempty"`
@@ -172,6 +173,38 @@ func (o *BTBillOfMaterialsUniqueItemId2029) SetItemDefinitionId(v string) {
 	o.ItemDefinitionId = &v
 }
 
+// GetMetadataObjectType returns the MetadataObjectType field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsUniqueItemId2029) GetMetadataObjectType() BTMetadataObjectType {
+	if o == nil || o.MetadataObjectType == nil {
+		var ret BTMetadataObjectType
+		return ret
+	}
+	return *o.MetadataObjectType
+}
+
+// GetMetadataObjectTypeOk returns a tuple with the MetadataObjectType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsUniqueItemId2029) GetMetadataObjectTypeOk() (*BTMetadataObjectType, bool) {
+	if o == nil || o.MetadataObjectType == nil {
+		return nil, false
+	}
+	return o.MetadataObjectType, true
+}
+
+// HasMetadataObjectType returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsUniqueItemId2029) HasMetadataObjectType() bool {
+	if o != nil && o.MetadataObjectType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadataObjectType gets a reference to the given BTMetadataObjectType and assigns it to the MetadataObjectType field.
+func (o *BTBillOfMaterialsUniqueItemId2029) SetMetadataObjectType(v BTMetadataObjectType) {
+	o.MetadataObjectType = &v
+}
+
 // GetPartId returns the PartId field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsUniqueItemId2029) GetPartId() string {
 	if o == nil || o.PartId == nil {
@@ -313,6 +346,9 @@ func (o BTBillOfMaterialsUniqueItemId2029) MarshalJSON() ([]byte, error) {
 	}
 	if o.ItemDefinitionId != nil {
 		toSerialize["itemDefinitionId"] = o.ItemDefinitionId
+	}
+	if o.MetadataObjectType != nil {
+		toSerialize["metadataObjectType"] = o.MetadataObjectType
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId

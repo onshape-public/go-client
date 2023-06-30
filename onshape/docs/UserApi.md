@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**GetUserSettings**](UserApi.md#GetUserSettings) | **Get** /users/{uid}/settings | Retrieve user settings by user ID.
 [**GetUserSettingsCurrentLoggedInUser**](UserApi.md#GetUserSettingsCurrentLoggedInUser) | **Get** /users/settings | Get user settings for the currently signed-in user if there is one, or else return the default settings.
 [**Session**](UserApi.md#Session) | **Post** /users/session | Check if current user is signed-in.Information returned depends on OAuth2ReadPII scope.
-[**SessionInfo**](UserApi.md#SessionInfo) | **Get** /users/sessioninfo | Check if current user is signed-in. Information returned depends on OAuth2ReadPII scope.
+[**SessionInfo**](UserApi.md#SessionInfo) | **Get** /users/sessioninfo | Check to see if a user is signed in to a current session.
 
 
 
@@ -151,6 +151,8 @@ Name | Type | Description  | Notes
 
 Check if current user is signed-in.Information returned depends on OAuth2ReadPII scope.
 
+
+
 ### Example
 
 ```go
@@ -213,7 +215,9 @@ Name | Type | Description  | Notes
 
 > BTUserOAuth2SummaryInfo SessionInfo(ctx).Execute()
 
-Check if current user is signed-in. Information returned depends on OAuth2ReadPII scope.
+Check to see if a user is signed in to a current session.
+
+
 
 ### Example
 

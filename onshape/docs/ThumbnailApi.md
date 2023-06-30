@@ -103,6 +103,8 @@ Name | Type | Description  | Notes
 
 
 
+
+
 ### Example
 
 ```go
@@ -572,6 +574,8 @@ Name | Type | Description  | Notes
 ## GetThumbnailForDocumentAndVersion
 
 > BTThumbnailInfo GetThumbnailForDocumentAndVersion(ctx, did, vid).LinkDocumentId(linkDocumentId).Execute()
+
+
 
 
 

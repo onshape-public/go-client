@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **MaterialLibrarySettings** | Pointer to [**BTMaterialLibrarySettingsInfo**](BTMaterialLibrarySettingsInfo.md) |  | [optional] 
 **MiniToolbarSettings** | Pointer to **string** |  | [optional] 
 **MouseActions** | Pointer to **string** |  | [optional] 
+**PreviousSketchFont** | Pointer to **string** |  | [optional] 
 **ReverseScrollWheelZoomDirection** | Pointer to **bool** |  | [optional] 
 **SelectItemViewStateInfos** | Pointer to [**[]BTSelectItemViewStateInfo**](BTSelectItemViewStateInfo.md) |  | [optional] 
 **StartupPage** | Pointer to **int32** |  | [optional] 
@@ -397,6 +398,31 @@ SetMouseActions sets MouseActions field to given value.
 `func (o *BTUserSettingsInfo) HasMouseActions() bool`
 
 HasMouseActions returns a boolean if a field has been set.
+
+### GetPreviousSketchFont
+
+`func (o *BTUserSettingsInfo) GetPreviousSketchFont() string`
+
+GetPreviousSketchFont returns the PreviousSketchFont field if non-nil, zero value otherwise.
+
+### GetPreviousSketchFontOk
+
+`func (o *BTUserSettingsInfo) GetPreviousSketchFontOk() (*string, bool)`
+
+GetPreviousSketchFontOk returns a tuple with the PreviousSketchFont field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreviousSketchFont
+
+`func (o *BTUserSettingsInfo) SetPreviousSketchFont(v string)`
+
+SetPreviousSketchFont sets PreviousSketchFont field to given value.
+
+### HasPreviousSketchFont
+
+`func (o *BTUserSettingsInfo) HasPreviousSketchFont() bool`
+
+HasPreviousSketchFont returns a boolean if a field has been set.
 
 ### GetReverseScrollWheelZoomDirection
 

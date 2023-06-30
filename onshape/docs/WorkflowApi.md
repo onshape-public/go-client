@@ -160,6 +160,8 @@ Name | Type | Description  | Notes
 
 
 
+
+
 ### Example
 
 ```go
@@ -231,6 +233,8 @@ Name | Type | Description  | Notes
 ## GetAuditLog
 
 > BTWorkflowAuditLogInfo GetAuditLog(ctx, objectId).Execute()
+
+
 
 
 

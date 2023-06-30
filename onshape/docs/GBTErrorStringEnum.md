@@ -2669,6 +2669,16 @@
 
 * `GBTErrorStringEnumMoveCurveBoundaryToolIsTarget` (value: `"MOVE_CURVE_BOUNDARY_TOOL_IS_TARGET"`)
 
+* `GBTErrorStringEnumDrawingIgnoreFaultyParts` (value: `"DRAWING_IGNORE_FAULTY_PARTS"`)
+
+* `GBTErrorStringEnumIsoclineNoResult` (value: `"ISOCLINE_NO_RESULT"`)
+
+* `GBTErrorStringEnumIsoclineSelectFaces` (value: `"ISOCLINE_SELECT_FACES"`)
+
+* `GBTErrorStringEnumIsoclineSelectDirection` (value: `"ISOCLINE_SELECT_DIRECTION"`)
+
+* `GBTErrorStringEnumIsoclineFailed` (value: `"ISOCLINE_FAILED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

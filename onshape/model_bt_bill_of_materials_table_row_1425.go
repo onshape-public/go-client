@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.165.18120-f464f720d215
+API version: 1.166.18273-3025d52f81b7
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -27,6 +27,7 @@ type BTBillOfMaterialsTableRow1425 struct {
 	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus `json:"exclusionStatus,omitempty"`
 	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus `json:"expansionStatus,omitempty"`
 	IndentLevel            *int32                             `json:"indentLevel,omitempty"`
+	MetadataObjectType     *int32                             `json:"metadataObjectType,omitempty"`
 	MetadataUpdateHref     *string                            `json:"metadataUpdateHref,omitempty"`
 	RelatedOccurrencePaths []string                           `json:"relatedOccurrencePaths,omitempty"`
 	UniqueItemId           *BTBillOfMaterialsUniqueItemId2029 `json:"uniqueItemId,omitempty"`
@@ -369,6 +370,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetIndentLevel(v int32) {
 	o.IndentLevel = &v
 }
 
+// GetMetadataObjectType returns the MetadataObjectType field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetMetadataObjectType() int32 {
+	if o == nil || o.MetadataObjectType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.MetadataObjectType
+}
+
+// GetMetadataObjectTypeOk returns a tuple with the MetadataObjectType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetMetadataObjectTypeOk() (*int32, bool) {
+	if o == nil || o.MetadataObjectType == nil {
+		return nil, false
+	}
+	return o.MetadataObjectType, true
+}
+
+// HasMetadataObjectType returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasMetadataObjectType() bool {
+	if o != nil && o.MetadataObjectType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadataObjectType gets a reference to the given int32 and assigns it to the MetadataObjectType field.
+func (o *BTBillOfMaterialsTableRow1425) SetMetadataObjectType(v int32) {
+	o.MetadataObjectType = &v
+}
+
 // GetMetadataUpdateHref returns the MetadataUpdateHref field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetMetadataUpdateHref() string {
 	if o == nil || o.MetadataUpdateHref == nil {
@@ -496,6 +529,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.IndentLevel != nil {
 		toSerialize["indentLevel"] = o.IndentLevel
+	}
+	if o.MetadataObjectType != nil {
+		toSerialize["metadataObjectType"] = o.MetadataObjectType
 	}
 	if o.MetadataUpdateHref != nil {
 		toSerialize["metadataUpdateHref"] = o.MetadataUpdateHref

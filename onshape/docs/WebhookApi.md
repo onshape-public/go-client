@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 
 
+
+
 ### Example
 
 ```go
@@ -221,6 +223,8 @@ Name | Type | Description  | Notes
 
 
 
+
+
 ### Example
 
 ```go
@@ -356,6 +360,8 @@ Name | Type | Description  | Notes
 ## UpdateWebhook
 
 > BTWebhookInfo UpdateWebhook(ctx, webhookid).BTWebhookParams(bTWebhookParams).Execute()
+
+
 
 
 

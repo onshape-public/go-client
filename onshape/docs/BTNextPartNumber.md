@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **PartId** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Prefix** | Pointer to **string** |  | [optional] 
+**ResourceType** | Pointer to **int32** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **WorkspaceId** | Pointer to **string** |  | [optional] 
 
@@ -311,6 +312,31 @@ SetPrefix sets Prefix field to given value.
 `func (o *BTNextPartNumber) HasPrefix() bool`
 
 HasPrefix returns a boolean if a field has been set.
+
+### GetResourceType
+
+`func (o *BTNextPartNumber) GetResourceType() int32`
+
+GetResourceType returns the ResourceType field if non-nil, zero value otherwise.
+
+### GetResourceTypeOk
+
+`func (o *BTNextPartNumber) GetResourceTypeOk() (*int32, bool)`
+
+GetResourceTypeOk returns a tuple with the ResourceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceType
+
+`func (o *BTNextPartNumber) SetResourceType(v int32)`
+
+SetResourceType sets ResourceType field to given value.
+
+### HasResourceType
+
+`func (o *BTNextPartNumber) HasResourceType() bool`
+
+HasResourceType returns a boolean if a field has been set.
 
 ### GetVersionId
 

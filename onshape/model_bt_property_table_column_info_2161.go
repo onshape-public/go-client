@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.165.18120-f464f720d215
+API version: 1.166.18273-3025d52f81b7
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -23,6 +23,7 @@ type BTPropertyTableColumnInfo2161 struct {
 	Specification              *BTTableColumnSpec1967 `json:"specification,omitempty"`
 	IsComputedAssemblyProperty *bool                  `json:"isComputedAssemblyProperty,omitempty"`
 	IsComputedProperty         *bool                  `json:"isComputedProperty,omitempty"`
+	PropertyValueType          *int32                 `json:"propertyValueType,omitempty"`
 }
 
 // NewBTPropertyTableColumnInfo2161 instantiates a new BTPropertyTableColumnInfo2161 object
@@ -234,6 +235,38 @@ func (o *BTPropertyTableColumnInfo2161) SetIsComputedProperty(v bool) {
 	o.IsComputedProperty = &v
 }
 
+// GetPropertyValueType returns the PropertyValueType field value if set, zero value otherwise.
+func (o *BTPropertyTableColumnInfo2161) GetPropertyValueType() int32 {
+	if o == nil || o.PropertyValueType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.PropertyValueType
+}
+
+// GetPropertyValueTypeOk returns a tuple with the PropertyValueType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPropertyTableColumnInfo2161) GetPropertyValueTypeOk() (*int32, bool) {
+	if o == nil || o.PropertyValueType == nil {
+		return nil, false
+	}
+	return o.PropertyValueType, true
+}
+
+// HasPropertyValueType returns a boolean if a field has been set.
+func (o *BTPropertyTableColumnInfo2161) HasPropertyValueType() bool {
+	if o != nil && o.PropertyValueType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPropertyValueType gets a reference to the given int32 and assigns it to the PropertyValueType field.
+func (o *BTPropertyTableColumnInfo2161) SetPropertyValueType(v int32) {
+	o.PropertyValueType = &v
+}
+
 func (o BTPropertyTableColumnInfo2161) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -253,6 +286,9 @@ func (o BTPropertyTableColumnInfo2161) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsComputedProperty != nil {
 		toSerialize["isComputedProperty"] = o.IsComputedProperty
+	}
+	if o.PropertyValueType != nil {
+		toSerialize["propertyValueType"] = o.PropertyValueType
 	}
 	return json.Marshal(toSerialize)
 }
