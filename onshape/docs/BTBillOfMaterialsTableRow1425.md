@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ExclusionStatus** | Pointer to [**GBTBillOfMaterialsExclusionStatus**](GBTBillOfMaterialsExclusionStatus.md) |  | [optional] 
 **ExpansionStatus** | Pointer to [**GBTBillOfMaterialsExpansionStatus**](GBTBillOfMaterialsExpansionStatus.md) |  | [optional] 
 **IndentLevel** | Pointer to **int32** |  | [optional] 
+**MetadataObjectType** | Pointer to **int32** |  | [optional] 
 **MetadataUpdateHref** | Pointer to **string** |  | [optional] 
 **RelatedOccurrencePaths** | Pointer to **[]string** |  | [optional] 
 **UniqueItemId** | Pointer to [**BTBillOfMaterialsUniqueItemId2029**](BTBillOfMaterialsUniqueItemId2029.md) |  | [optional] 
@@ -156,6 +157,31 @@ SetIndentLevel sets IndentLevel field to given value.
 `func (o *BTBillOfMaterialsTableRow1425) HasIndentLevel() bool`
 
 HasIndentLevel returns a boolean if a field has been set.
+
+### GetMetadataObjectType
+
+`func (o *BTBillOfMaterialsTableRow1425) GetMetadataObjectType() int32`
+
+GetMetadataObjectType returns the MetadataObjectType field if non-nil, zero value otherwise.
+
+### GetMetadataObjectTypeOk
+
+`func (o *BTBillOfMaterialsTableRow1425) GetMetadataObjectTypeOk() (*int32, bool)`
+
+GetMetadataObjectTypeOk returns a tuple with the MetadataObjectType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadataObjectType
+
+`func (o *BTBillOfMaterialsTableRow1425) SetMetadataObjectType(v int32)`
+
+SetMetadataObjectType sets MetadataObjectType field to given value.
+
+### HasMetadataObjectType
+
+`func (o *BTBillOfMaterialsTableRow1425) HasMetadataObjectType() bool`
+
+HasMetadataObjectType returns a boolean if a field has been set.
 
 ### GetMetadataUpdateHref
 

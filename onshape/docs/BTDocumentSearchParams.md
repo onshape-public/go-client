@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **DocumentFilter** | Pointer to **int32** | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). | [optional] 
 **FoundIn** | Pointer to [**BTESVersionWorkspaceChoice**](BTESVersionWorkspaceChoice.md) |  | [optional] 
 **Limit** | Pointer to **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [optional] 
-**LuceneSyntax** | Pointer to **bool** | Lucene syntax  | [optional] 
 **Offset** | Pointer to **int32** | Offset. Determines where search results begin. Default value is 0. | [optional] 
 **OwnerId** | Pointer to **string** | Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  | [optional] 
 **ParentId** | Pointer to **string** | Search document parent Id  | [optional] 
@@ -110,31 +109,6 @@ SetLimit sets Limit field to given value.
 `func (o *BTDocumentSearchParams) HasLimit() bool`
 
 HasLimit returns a boolean if a field has been set.
-
-### GetLuceneSyntax
-
-`func (o *BTDocumentSearchParams) GetLuceneSyntax() bool`
-
-GetLuceneSyntax returns the LuceneSyntax field if non-nil, zero value otherwise.
-
-### GetLuceneSyntaxOk
-
-`func (o *BTDocumentSearchParams) GetLuceneSyntaxOk() (*bool, bool)`
-
-GetLuceneSyntaxOk returns a tuple with the LuceneSyntax field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLuceneSyntax
-
-`func (o *BTDocumentSearchParams) SetLuceneSyntax(v bool)`
-
-SetLuceneSyntax sets LuceneSyntax field to given value.
-
-### HasLuceneSyntax
-
-`func (o *BTDocumentSearchParams) HasLuceneSyntax() bool`
-
-HasLuceneSyntax returns a boolean if a field has been set.
 
 ### GetOffset
 

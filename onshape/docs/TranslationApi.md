@@ -4,11 +4,11 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTranslation**](TranslationApi.md#CreateTranslation) | **Post** /translations/d/{did}/w/{wid} | Upload foreign data (for example, an X_T file) into Onshape, and then translate the data to generate a part, Part Studio, Assembly, or subassembly.
-[**DeleteTranslation**](TranslationApi.md#DeleteTranslation) | **Delete** /translations/{tid} | Delete translation status entry.
-[**GetAllTranslatorFormats**](TranslationApi.md#GetAllTranslatorFormats) | **Get** /translations/translationformats | Retrieve a list of translation formats that can work for this translation. Some are valid only as an input format and cannot be used as an output format.
-[**GetDocumentTranslations**](TranslationApi.md#GetDocumentTranslations) | **Get** /translations/d/{did} | Request an array of translations that were made against this document.
-[**GetTranslation**](TranslationApi.md#GetTranslation) | **Get** /translations/{tid} | Request information on an in-progress or completed translation.
+[**CreateTranslation**](TranslationApi.md#CreateTranslation) | **Post** /translations/d/{did}/w/{wid} | Upload a foreign file into Onshape and translate the data into parts, part studios, assemblies, and subassemblies.
+[**DeleteTranslation**](TranslationApi.md#DeleteTranslation) | **Delete** /translations/{tid} | Delete a translation request.
+[**GetAllTranslatorFormats**](TranslationApi.md#GetAllTranslatorFormats) | **Get** /translations/translationformats | Get a list of formats this translation can use.
+[**GetDocumentTranslations**](TranslationApi.md#GetDocumentTranslations) | **Get** /translations/d/{did} | Get information on an in-progress or completed translation by documentID.
+[**GetTranslation**](TranslationApi.md#GetTranslation) | **Get** /translations/{tid} | Get information on an in-progress or completed translation by translation ID.
 
 
 
@@ -16,7 +16,9 @@ Method | HTTP request | Description
 
 > BTTranslationRequestInfo CreateTranslation(ctx, did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
 
-Upload foreign data (for example, an X_T file) into Onshape, and then translate the data to generate a part, Part Studio, Assembly, or subassembly.
+Upload a foreign file into Onshape and translate the data into parts, part studios, assemblies, and subassemblies.
+
+
 
 ### Example
 
@@ -139,7 +141,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteTranslation(ctx, tid).Execute()
 
-Delete translation status entry.
+Delete a translation request.
 
 ### Example
 
@@ -207,7 +209,9 @@ Name | Type | Description  | Notes
 
 > []BTModelFormatFullInfo GetAllTranslatorFormats(ctx).Execute()
 
-Retrieve a list of translation formats that can work for this translation. Some are valid only as an input format and cannot be used as an output format.
+Get a list of formats this translation can use.
+
+
 
 ### Example
 
@@ -266,7 +270,7 @@ Other parameters are passed through a pointer to a apiGetAllTranslatorFormatsReq
 
 > BTListResponseBTTranslationRequestInfo GetDocumentTranslations(ctx, did).Offset(offset).Limit(limit).Execute()
 
-Request an array of translations that were made against this document.
+Get information on an in-progress or completed translation by documentID.
 
 ### Example
 
@@ -338,7 +342,7 @@ Name | Type | Description  | Notes
 
 > BTTranslationRequestInfo GetTranslation(ctx, tid).Execute()
 
-Request information on an in-progress or completed translation.
+Get information on an in-progress or completed translation by translation ID.
 
 ### Example
 

@@ -5,9 +5,9 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelPurchaseNew**](AccountApi.md#CancelPurchaseNew) | **Delete** /accounts/{aid}/purchases/{pid} | Cancel recurring subscription for the account by account ID and purchase ID.
-[**ConsumePurchase**](AccountApi.md#ConsumePurchase) | **Post** /accounts/purchases/{pid}/consume | Mark purchase consumed by the user by purchase ID.
-[**GetPlanPurchases**](AccountApi.md#GetPlanPurchases) | **Get** /accounts/plans/{planId}/purchases | 
-[**GetPurchases**](AccountApi.md#GetPurchases) | **Get** /accounts/purchases | Retrieve an array of the user’s App Store purchases.
+[**ConsumePurchase**](AccountApi.md#ConsumePurchase) | **Post** /accounts/purchases/{pid}/consume | Mark a purchase as consumed by the current user.
+[**GetPlanPurchases**](AccountApi.md#GetPlanPurchases) | **Get** /accounts/plans/{planId}/purchases | Get a list of all app purchases made for the specified plan.
+[**GetPurchases**](AccountApi.md#GetPurchases) | **Get** /accounts/purchases | This API should be used within the context of an OAuth-enabled application.
 
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 > BTPurchaseInfo ConsumePurchase(ctx, pid).BTPurchaseUserParams(bTPurchaseUserParams).Execute()
 
-Mark purchase consumed by the user by purchase ID.
+Mark a purchase as consumed by the current user.
 
 ### Example
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTPurchaseInfo GetPlanPurchases(ctx, planId).Offset(offset).Limit(limit).Execute()
 
-
+Get a list of all app purchases made for the specified plan.
 
 ### Example
 
@@ -230,7 +230,9 @@ Name | Type | Description  | Notes
 
 > []BTPurchaseInfo GetPurchases(ctx).All(all).OwnPurchaseOnly(ownPurchaseOnly).IncludeGoDEnabledAppPurchases(includeGoDEnabledAppPurchases).Execute()
 
-Retrieve an array of the user’s App Store purchases.
+This API should be used within the context of an OAuth-enabled application.
+
+
 
 ### Example
 

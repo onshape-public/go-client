@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **SendCopyToMe** | Pointer to **bool** |  | [optional] 
 **SheetIndices** | Pointer to **[]int32** |  | [optional] 
 **ShowOverriddenDimensions** | Pointer to **bool** |  | [optional] 
+**SkipBodyshop** | Pointer to **bool** |  | [optional] 
 **SourceName** | Pointer to **string** |  | [optional] 
 **SpecifyUnits** | Pointer to **bool** |  | [optional] 
 **SplinesAsPolylines** | Pointer to **bool** |  | [optional] 
@@ -1461,6 +1462,31 @@ SetShowOverriddenDimensions sets ShowOverriddenDimensions field to given value.
 `func (o *BTTranslateFormatParams) HasShowOverriddenDimensions() bool`
 
 HasShowOverriddenDimensions returns a boolean if a field has been set.
+
+### GetSkipBodyshop
+
+`func (o *BTTranslateFormatParams) GetSkipBodyshop() bool`
+
+GetSkipBodyshop returns the SkipBodyshop field if non-nil, zero value otherwise.
+
+### GetSkipBodyshopOk
+
+`func (o *BTTranslateFormatParams) GetSkipBodyshopOk() (*bool, bool)`
+
+GetSkipBodyshopOk returns a tuple with the SkipBodyshop field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkipBodyshop
+
+`func (o *BTTranslateFormatParams) SetSkipBodyshop(v bool)`
+
+SetSkipBodyshop sets SkipBodyshop field to given value.
+
+### HasSkipBodyshop
+
+`func (o *BTTranslateFormatParams) HasSkipBodyshop() bool`
+
+HasSkipBodyshop returns a boolean if a field has been set.
 
 ### GetSourceName
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.165.18120-f464f720d215
+API version: 1.166.18273-3025d52f81b7
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -196,7 +196,9 @@ func (r ApiCreateTranslationRequest) Execute() (*BTTranslationRequestInfo, *http
 }
 
 /*
-CreateTranslation Upload foreign data (for example, an X_T file) into Onshape, and then translate the data to generate a part, Part Studio, Assembly, or subassembly.
+CreateTranslation Upload a foreign file into Onshape and translate the data into parts, part studios, assemblies, and subassemblies.
+
+The API call may complete before the translation is finished. If `requestState = ACTIVE`, the translation can be polled until the state is either DONE or FAILED. Alternatively, a webhook callback can be registered for notification of translation completion (requires `Write` scope if `storeInDocument` is `true`).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -389,7 +391,7 @@ func (r ApiDeleteTranslationRequest) Execute() (map[string]interface{}, *http.Re
 }
 
 /*
-DeleteTranslation Delete translation status entry.
+DeleteTranslation Delete a translation request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tid
@@ -496,7 +498,9 @@ func (r ApiGetAllTranslatorFormatsRequest) Execute() ([]BTModelFormatFullInfo, *
 }
 
 /*
-GetAllTranslatorFormats Retrieve a list of translation formats that can work for this translation. Some are valid only as an input format and cannot be used as an output format.
+GetAllTranslatorFormats Get a list of formats this translation can use.
+
+Note that we don’t necessarily support both import and export for any given format. Please use specific export APIs, such as `exportPartStudioStl`, for STL and Parasolid exports.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetAllTranslatorFormatsRequest
@@ -613,7 +617,7 @@ func (r ApiGetDocumentTranslationsRequest) Execute() (*BTListResponseBTTranslati
 }
 
 /*
-GetDocumentTranslations Request an array of translations that were made against this document.
+GetDocumentTranslations Get information on an in-progress or completed translation by documentID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -727,7 +731,7 @@ func (r ApiGetTranslationRequest) Execute() (*BTTranslationRequestInfo, *http.Re
 }
 
 /*
-GetTranslation Request information on an in-progress or completed translation.
+GetTranslation Get information on an in-progress or completed translation by translation ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tid

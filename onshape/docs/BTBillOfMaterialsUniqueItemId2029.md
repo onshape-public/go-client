@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **IsStandardContent** | Pointer to **bool** |  | [optional] 
 **ItemDefinitionId** | Pointer to **string** |  | [optional] 
+**MetadataObjectType** | Pointer to [**BTMetadataObjectType**](BTMetadataObjectType.md) |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **SourceElement** | Pointer to [**BTElementReference725**](BTElementReference725.md) |  | [optional] 
 **VersionMetadataWorkspaceId** | Pointer to **string** |  | [optional] 
@@ -131,6 +132,31 @@ SetItemDefinitionId sets ItemDefinitionId field to given value.
 `func (o *BTBillOfMaterialsUniqueItemId2029) HasItemDefinitionId() bool`
 
 HasItemDefinitionId returns a boolean if a field has been set.
+
+### GetMetadataObjectType
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) GetMetadataObjectType() BTMetadataObjectType`
+
+GetMetadataObjectType returns the MetadataObjectType field if non-nil, zero value otherwise.
+
+### GetMetadataObjectTypeOk
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) GetMetadataObjectTypeOk() (*BTMetadataObjectType, bool)`
+
+GetMetadataObjectTypeOk returns a tuple with the MetadataObjectType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadataObjectType
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) SetMetadataObjectType(v BTMetadataObjectType)`
+
+SetMetadataObjectType sets MetadataObjectType field to given value.
+
+### HasMetadataObjectType
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) HasMetadataObjectType() bool`
+
+HasMetadataObjectType returns a boolean if a field has been set.
 
 ### GetPartId
 

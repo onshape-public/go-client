@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.165.18120-f464f720d215
+API version: 1.166.18273-3025d52f81b7
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -22,8 +22,6 @@ type BTDocumentSearchParams struct {
 	FoundIn        *BTESVersionWorkspaceChoice `json:"foundIn,omitempty"`
 	// Number of results to return per page. Default value is 20 (also the maximum).
 	Limit *int32 `json:"limit,omitempty"`
-	// Lucene syntax
-	LuceneSyntax *bool `json:"luceneSyntax,omitempty"`
 	// Offset. Determines where search results begin. Default value is 0.
 	Offset *int32 `json:"offset,omitempty"`
 	// Document owner's ID (if the filter is 6 or 7), or Team Id (if the filter is 9)
@@ -152,38 +150,6 @@ func (o *BTDocumentSearchParams) HasLimit() bool {
 // SetLimit gets a reference to the given int32 and assigns it to the Limit field.
 func (o *BTDocumentSearchParams) SetLimit(v int32) {
 	o.Limit = &v
-}
-
-// GetLuceneSyntax returns the LuceneSyntax field value if set, zero value otherwise.
-func (o *BTDocumentSearchParams) GetLuceneSyntax() bool {
-	if o == nil || o.LuceneSyntax == nil {
-		var ret bool
-		return ret
-	}
-	return *o.LuceneSyntax
-}
-
-// GetLuceneSyntaxOk returns a tuple with the LuceneSyntax field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSearchParams) GetLuceneSyntaxOk() (*bool, bool) {
-	if o == nil || o.LuceneSyntax == nil {
-		return nil, false
-	}
-	return o.LuceneSyntax, true
-}
-
-// HasLuceneSyntax returns a boolean if a field has been set.
-func (o *BTDocumentSearchParams) HasLuceneSyntax() bool {
-	if o != nil && o.LuceneSyntax != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLuceneSyntax gets a reference to the given bool and assigns it to the LuceneSyntax field.
-func (o *BTDocumentSearchParams) SetLuceneSyntax(v bool) {
-	o.LuceneSyntax = &v
 }
 
 // GetOffset returns the Offset field value if set, zero value otherwise.
@@ -452,9 +418,6 @@ func (o BTDocumentSearchParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Limit != nil {
 		toSerialize["limit"] = o.Limit
-	}
-	if o.LuceneSyntax != nil {
-		toSerialize["luceneSyntax"] = o.LuceneSyntax
 	}
 	if o.Offset != nil {
 		toSerialize["offset"] = o.Offset

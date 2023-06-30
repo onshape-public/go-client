@@ -22,6 +22,8 @@ Method | HTTP request | Description
 
 
 
+
+
 ### Example
 
 ```go

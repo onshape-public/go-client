@@ -547,6 +547,8 @@ docs/BTMFeatureQueryWithOccurrence157.md
 docs/BTMFeatureQueryWithOccurrence157AllOf.md
 docs/BTMFolder3208.md
 docs/BTMFolder3208AllOf.md
+docs/BTMGenerativeDesignFeature3195.md
+docs/BTMGenerativeDesignFeature3195AllOf.md
 docs/BTMGeometryMate1260.md
 docs/BTMGeometryMate1260AllOf.md
 docs/BTMImport136.md
@@ -633,7 +635,6 @@ docs/BTMParameterReferenceCADImport2016AllOf.md
 docs/BTMParameterReferenceImage2014.md
 docs/BTMParameterReferenceImage2014AllOf.md
 docs/BTMParameterReferenceJSON790.md
-docs/BTMParameterReferenceJSON790AllOf.md
 docs/BTMParameterReferencePartStudio3302.md
 docs/BTMParameterReferencePartStudio3302AllOf.md
 docs/BTMParameterReferenceTable917.md
@@ -710,6 +711,7 @@ docs/BTMetadataEnumValueInfo.md
 docs/BTMetadataObjectInfo.md
 docs/BTMetadataObjectListInfoBTMetadataElementInfo.md
 docs/BTMetadataObjectListInfoBTMetadataPartInfo.md
+docs/BTMetadataObjectType.md
 docs/BTMetadataPartInfo.md
 docs/BTMetadataPartInfoAllOf.md
 docs/BTMetadataPropertyInfo.md
@@ -1687,6 +1689,7 @@ model_bt_metadata_enum_value_info.go
 model_bt_metadata_object_info.go
 model_bt_metadata_object_list_info_bt_metadata_element_info.go
 model_bt_metadata_object_list_info_bt_metadata_part_info.go
+model_bt_metadata_object_type.go
 model_bt_metadata_part_info.go
 model_bt_metadata_property_info.go
 model_bt_metadata_property_ui_hints_info.go
@@ -2021,6 +2024,7 @@ model_btm_feature_134.go
 model_btm_feature_invalid_1031.go
 model_btm_feature_query_with_occurrence_157.go
 model_btm_folder_3208.go
+model_btm_generative_design_feature_3195.go
 model_btm_geometry_mate_1260.go
 model_btm_import_136.go
 model_btm_individual_co_edge_query_1332.go
