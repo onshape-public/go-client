@@ -16512,7 +16512,10 @@
             "content" : {
               "application/json;charset=UTF-8; qs=0.09" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/BTVariableTableInfo"
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/BTVariableTableInfo"
+                  }
                 }
               }
             }

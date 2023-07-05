@@ -15993,7 +15993,9 @@ paths:
           content:
             application/json;charset=UTF-8; qs=0.09:
               schema:
-                $ref: '#/components/schemas/BTVariableTableInfo'
+                items:
+                  $ref: '#/components/schemas/BTVariableTableInfo'
+                type: array
           description: default response
       security:
       - OAuth2:

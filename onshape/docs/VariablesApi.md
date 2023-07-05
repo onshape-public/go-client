@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ## GetVariables
 
-> BTVariableTableInfo GetVariables(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
+> []BTVariableTableInfo GetVariables(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
 
 Retrieve the variables from a variable table
 
@@ -289,7 +289,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `VariablesApi.GetVariables``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetVariables`: BTVariableTableInfo
+    // response from `GetVariables`: []BTVariableTableInfo
     fmt.Fprintf(os.Stdout, "Response from `VariablesApi.GetVariables`: %v\n", resp)
 }
 ```
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BTVariableTableInfo**](BTVariableTableInfo.md)
+[**[]BTVariableTableInfo**](BTVariableTableInfo.md)
 
 ### Authorization
 
