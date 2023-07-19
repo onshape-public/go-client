@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.166.18819-fa27aca4c021
+  version: 1.166.19032-0b307c4b0d0e
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
