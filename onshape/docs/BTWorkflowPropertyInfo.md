@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Editable** | Pointer to **bool** |  | [optional] 
 **EditableInUi** | Pointer to **bool** |  | [optional] 
 **EnumValues** | Pointer to [**[]BTMetadataEnumValueInfo**](BTMetadataEnumValueInfo.md) |  | [optional] 
+**HideInUi** | Pointer to **bool** |  | [optional] 
 **InitialValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **IsApproverProperty** | Pointer to **bool** |  | [optional] 
 **IsNotifierProperty** | Pointer to **bool** |  | [optional] 
@@ -247,6 +248,31 @@ SetEnumValues sets EnumValues field to given value.
 `func (o *BTWorkflowPropertyInfo) HasEnumValues() bool`
 
 HasEnumValues returns a boolean if a field has been set.
+
+### GetHideInUi
+
+`func (o *BTWorkflowPropertyInfo) GetHideInUi() bool`
+
+GetHideInUi returns the HideInUi field if non-nil, zero value otherwise.
+
+### GetHideInUiOk
+
+`func (o *BTWorkflowPropertyInfo) GetHideInUiOk() (*bool, bool)`
+
+GetHideInUiOk returns a tuple with the HideInUi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHideInUi
+
+`func (o *BTWorkflowPropertyInfo) SetHideInUi(v bool)`
+
+SetHideInUi sets HideInUi field to given value.
+
+### HasHideInUi
+
+`func (o *BTWorkflowPropertyInfo) HasHideInUi() bool`
+
+HasHideInUi returns a boolean if a field has been set.
 
 ### GetInitialValue
 

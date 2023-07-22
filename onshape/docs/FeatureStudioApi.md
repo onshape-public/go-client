@@ -4,10 +4,10 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateFeatureStudio**](FeatureStudioApi.md#CreateFeatureStudio) | **Post** /featurestudios/d/{did}/w/{wid} | Create Feature Studio by document ID and workspace ID.
-[**GetFeatureStudioContents**](FeatureStudioApi.md#GetFeatureStudioContents) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | 
-[**GetFeatureStudioSpecs**](FeatureStudioApi.md#GetFeatureStudioSpecs) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Retrieve Feature Studio specs by document ID, workspace or version or microversion ID, and tab ID.
-[**UpdateFeatureStudioContents**](FeatureStudioApi.md#UpdateFeatureStudioContents) | **Post** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | Update Feature Studio contents by document ID, workspace or version or microversion ID, and tab ID.
+[**CreateFeatureStudio**](FeatureStudioApi.md#CreateFeatureStudio) | **Post** /featurestudios/d/{did}/w/{wid} | Create a new Feature Studio tab in a document.
+[**GetFeatureStudioContents**](FeatureStudioApi.md#GetFeatureStudioContents) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | Get the text for a Feature Studio element.
+[**GetFeatureStudioSpecs**](FeatureStudioApi.md#GetFeatureStudioSpecs) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature specs for a Feature Studio element.
+[**UpdateFeatureStudioContents**](FeatureStudioApi.md#UpdateFeatureStudioContents) | **Post** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | Update the text for a Feature Studio element.
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > BTDocumentElementInfo CreateFeatureStudio(ctx, did, wid).BTModelElementParams(bTModelElementParams).Execute()
 
-Create Feature Studio by document ID and workspace ID.
+Create a new Feature Studio tab in a document.
 
 ### Example
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureStudioContents2239 GetFeatureStudioContents(ctx, did, wvm, wvmid, eid).Execute()
 
-
+Get the text for a Feature Studio element.
 
 ### Example
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureSpecsResponse664 GetFeatureStudioSpecs(ctx, did, wvm, wvmid, eid).Execute()
 
-Retrieve Feature Studio specs by document ID, workspace or version or microversion ID, and tab ID.
+Get the feature specs for a Feature Studio element.
 
 ### Example
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureStudioContents2239 UpdateFeatureStudioContents(ctx, did, wvm, wvmid, eid).BTFeatureStudioContents2239(bTFeatureStudioContents2239).Execute()
 
-Update Feature Studio contents by document ID, workspace or version or microversion ID, and tab ID.
+Update the text for a Feature Studio element.
 
 ### Example
 

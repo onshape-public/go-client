@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **Modal** | Pointer to **bool** |  | [optional] 
+**NumberOfModes** | Pointer to **float64** |  | [optional] 
 **Type** | Pointer to [**GBTAssemblySimulationType**](GBTAssemblySimulationType.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetModal sets Modal field to given value.
 `func (o *BTAssemblySimulation2246) HasModal() bool`
 
 HasModal returns a boolean if a field has been set.
+
+### GetNumberOfModes
+
+`func (o *BTAssemblySimulation2246) GetNumberOfModes() float64`
+
+GetNumberOfModes returns the NumberOfModes field if non-nil, zero value otherwise.
+
+### GetNumberOfModesOk
+
+`func (o *BTAssemblySimulation2246) GetNumberOfModesOk() (*float64, bool)`
+
+GetNumberOfModesOk returns a tuple with the NumberOfModes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfModes
+
+`func (o *BTAssemblySimulation2246) SetNumberOfModes(v float64)`
+
+SetNumberOfModes sets NumberOfModes field to given value.
+
+### HasNumberOfModes
+
+`func (o *BTAssemblySimulation2246) HasNumberOfModes() bool`
+
+HasNumberOfModes returns a boolean if a field has been set.
 
 ### GetType
 

@@ -4,12 +4,12 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateWebhook**](WebhookApi.md#CreateWebhook) | **Post** /webhooks | 
-[**GetWebhook**](WebhookApi.md#GetWebhook) | **Get** /webhooks/{webhookid} | Retrieve webhook by webhook ID.
-[**GetWebhooks**](WebhookApi.md#GetWebhooks) | **Get** /webhooks | Retrieve a list of webhooks registered for a company or user.
-[**PingWebhook**](WebhookApi.md#PingWebhook) | **Post** /webhooks/{webhookid}/ping | 
-[**UnregisterWebhook**](WebhookApi.md#UnregisterWebhook) | **Delete** /webhooks/{webhookid} | Delete webhook by webhook ID.
-[**UpdateWebhook**](WebhookApi.md#UpdateWebhook) | **Post** /webhooks/{webhookid} | 
+[**CreateWebhook**](WebhookApi.md#CreateWebhook) | **Post** /webhooks | Create a new webhook.
+[**GetWebhook**](WebhookApi.md#GetWebhook) | **Get** /webhooks/{webhookid} | Get webhook info by webhook ID.
+[**GetWebhooks**](WebhookApi.md#GetWebhooks) | **Get** /webhooks | Get a list of all webhooks registered bt a user or company.
+[**PingWebhook**](WebhookApi.md#PingWebhook) | **Post** /webhooks/{webhookid}/ping | Ping a webhook.
+[**UnregisterWebhook**](WebhookApi.md#UnregisterWebhook) | **Delete** /webhooks/{webhookid} | Unregister a webhook.
+[**UpdateWebhook**](WebhookApi.md#UpdateWebhook) | **Post** /webhooks/{webhookid} | Update a webhook.
 
 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 > BTWebhookInfo CreateWebhook(ctx).BTWebhookParams(bTWebhookParams).Execute()
 
-
+Create a new webhook.
 
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 > BTWebhookInfo GetWebhook(ctx, webhookid).Execute()
 
-Retrieve webhook by webhook ID.
+Get webhook info by webhook ID.
 
 ### Example
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTWebhookInfo GetWebhooks(ctx).Company(company).User(user).Offset(offset).Limit(limit).Execute()
 
-Retrieve a list of webhooks registered for a company or user.
+Get a list of all webhooks registered bt a user or company.
 
 ### Example
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} PingWebhook(ctx, webhookid).Execute()
 
-
+Ping a webhook.
 
 
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UnregisterWebhook(ctx, webhookid).BlockNotification(blockNotification).Execute()
 
-Delete webhook by webhook ID.
+Unregister a webhook.
 
 ### Example
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 > BTWebhookInfo UpdateWebhook(ctx, webhookid).BTWebhookParams(bTWebhookParams).Execute()
 
-
+Update a webhook.
 
 
 

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **DocumentThumbnailElementId** | Pointer to **string** |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
 **DuplicateNameViolationError** | Pointer to **string** |  | [optional] 
+**ForceExportRules** | Pointer to **bool** |  | [optional] 
 **HasReleaseRevisionableObjects** | Pointer to **bool** |  | [optional] 
 **HasRelevantInsertables** | Pointer to **bool** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
@@ -423,6 +424,31 @@ SetDuplicateNameViolationError sets DuplicateNameViolationError field to given v
 `func (o *BTDocumentInfo) HasDuplicateNameViolationError() bool`
 
 HasDuplicateNameViolationError returns a boolean if a field has been set.
+
+### GetForceExportRules
+
+`func (o *BTDocumentInfo) GetForceExportRules() bool`
+
+GetForceExportRules returns the ForceExportRules field if non-nil, zero value otherwise.
+
+### GetForceExportRulesOk
+
+`func (o *BTDocumentInfo) GetForceExportRulesOk() (*bool, bool)`
+
+GetForceExportRulesOk returns a tuple with the ForceExportRules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForceExportRules
+
+`func (o *BTDocumentInfo) SetForceExportRules(v bool)`
+
+SetForceExportRules sets ForceExportRules field to given value.
+
+### HasForceExportRules
+
+`func (o *BTDocumentInfo) HasForceExportRules() bool`
+
+HasForceExportRules returns a boolean if a field has been set.
 
 ### GetHasReleaseRevisionableObjects
 

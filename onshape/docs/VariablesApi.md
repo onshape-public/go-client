@@ -4,13 +4,13 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateVariableStudio**](VariablesApi.md#CreateVariableStudio) | **Post** /variables/d/{did}/w/{wid}/variablestudio | Create a variable studio
-[**GetVariableStudioReferences**](VariablesApi.md#GetVariableStudioReferences) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioreferences | Retrieve the variable studio references from an element
-[**GetVariableStudioScope**](VariablesApi.md#GetVariableStudioScope) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioscope | Get the scope of a variable studio
-[**GetVariables**](VariablesApi.md#GetVariables) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variables | Retrieve the variables from a variable table
-[**SetVariableStudioReferences**](VariablesApi.md#SetVariableStudioReferences) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioreferences | Set the variable studio references for an element
-[**SetVariableStudioScope**](VariablesApi.md#SetVariableStudioScope) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioscope | Set the scope of a variable studio
-[**SetVariables**](VariablesApi.md#SetVariables) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variables | Assign variables to a variable studio
+[**CreateVariableStudio**](VariablesApi.md#CreateVariableStudio) | **Post** /variables/d/{did}/w/{wid}/variablestudio | Create a new Variable Studio in a document and workspace.
+[**GetVariableStudioReferences**](VariablesApi.md#GetVariableStudioReferences) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioreferences | Get the Variable Studio references for an element.
+[**GetVariableStudioScope**](VariablesApi.md#GetVariableStudioScope) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioscope | Get the scope of a Variable Studio.
+[**GetVariables**](VariablesApi.md#GetVariables) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variables | Get the contents of all variable tables in an element.
+[**SetVariableStudioReferences**](VariablesApi.md#SetVariableStudioReferences) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioreferences | Set the Variable Studio references for an element.
+[**SetVariableStudioScope**](VariablesApi.md#SetVariableStudioScope) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioscope | Set the scope the Variable Studio.
+[**SetVariables**](VariablesApi.md#SetVariables) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variables | Assign variables to a Variable Studio
 
 
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 > BTDocumentElementInfo CreateVariableStudio(ctx, did, wid).BTModelElementParams(bTModelElementParams).LinkDocumentId(linkDocumentId).Execute()
 
-Create a variable studio
+Create a new Variable Studio in a document and workspace.
 
 
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 > BTVariableStudioReferenceListInfo GetVariableStudioReferences(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve the variable studio references from an element
+Get the Variable Studio references for an element.
 
 
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 > BTVariableStudioScopeInfo GetVariableStudioScope(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
 
-Get the scope of a variable studio
+Get the scope of a Variable Studio.
 
 
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 > BTVariableTableInfo GetVariables(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
 
-Retrieve the variables from a variable table
+Get the contents of all variable tables in an element.
 
 
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} SetVariableStudioReferences(ctx, did, wid, eid).BTVariableStudioReferenceListInfo(bTVariableStudioReferenceListInfo).LinkDocumentId(linkDocumentId).Execute()
 
-Set the variable studio references for an element
+Set the Variable Studio references for an element.
 
 
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} SetVariableStudioScope(ctx, did, wid, eid).BTVariableStudioScopeInfo(bTVariableStudioScopeInfo).LinkDocumentId(linkDocumentId).Execute()
 
-Set the scope of a variable studio
+Set the scope the Variable Studio.
 
 
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} SetVariables(ctx, did, wid, eid).BTVariableParams(bTVariableParams).LinkDocumentId(linkDocumentId).Execute()
 
-Assign variables to a variable studio
+Assign variables to a Variable Studio
 
 
 

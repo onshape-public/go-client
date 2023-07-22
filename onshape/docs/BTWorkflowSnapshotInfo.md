@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **MetadataState** | Pointer to **string** |  | [optional] 
 **NotifierIds** | Pointer to **[]string** |  | [optional] 
 **State** | Pointer to [**BTWorkflowStateInfo**](BTWorkflowStateInfo.md) |  | [optional] 
+**UsesExternalPlm** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -335,6 +336,31 @@ SetState sets State field to given value.
 `func (o *BTWorkflowSnapshotInfo) HasState() bool`
 
 HasState returns a boolean if a field has been set.
+
+### GetUsesExternalPlm
+
+`func (o *BTWorkflowSnapshotInfo) GetUsesExternalPlm() bool`
+
+GetUsesExternalPlm returns the UsesExternalPlm field if non-nil, zero value otherwise.
+
+### GetUsesExternalPlmOk
+
+`func (o *BTWorkflowSnapshotInfo) GetUsesExternalPlmOk() (*bool, bool)`
+
+GetUsesExternalPlmOk returns a tuple with the UsesExternalPlm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsesExternalPlm
+
+`func (o *BTWorkflowSnapshotInfo) SetUsesExternalPlm(v bool)`
+
+SetUsesExternalPlm sets UsesExternalPlm field to given value.
+
+### HasUsesExternalPlm
+
+`func (o *BTWorkflowSnapshotInfo) HasUsesExternalPlm() bool`
+
+HasUsesExternalPlm returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

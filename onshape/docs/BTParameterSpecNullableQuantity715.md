@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**QuantityType** | Pointer to [**GBTQuantityType**](GBTQuantityType.md) |  | [optional] 
 **Ranges** | Pointer to [**[]BTNullableQuantityRange1340**](BTNullableQuantityRange1340.md) |  | [optional] 
 
 ## Methods
@@ -51,31 +50,6 @@ SetBtType sets BtType field to given value.
 `func (o *BTParameterSpecNullableQuantity715) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
-
-### GetQuantityType
-
-`func (o *BTParameterSpecNullableQuantity715) GetQuantityType() GBTQuantityType`
-
-GetQuantityType returns the QuantityType field if non-nil, zero value otherwise.
-
-### GetQuantityTypeOk
-
-`func (o *BTParameterSpecNullableQuantity715) GetQuantityTypeOk() (*GBTQuantityType, bool)`
-
-GetQuantityTypeOk returns a tuple with the QuantityType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuantityType
-
-`func (o *BTParameterSpecNullableQuantity715) SetQuantityType(v GBTQuantityType)`
-
-SetQuantityType sets QuantityType field to given value.
-
-### HasQuantityType
-
-`func (o *BTParameterSpecNullableQuantity715) HasQuantityType() bool`
-
-HasQuantityType returns a boolean if a field has been set.
 
 ### GetRanges
 

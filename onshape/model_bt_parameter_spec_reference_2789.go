@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -578,6 +578,56 @@ func (o *BTParameterSpecReference2789) SetParameterName(v string) {
 	o.GetActualInstance().(getResult).SetParameterName(v)
 }
 
+// GetQuantityType returns the QuantityType field value if set, zero value otherwise.
+func (o *BTParameterSpecReference2789) GetQuantityType() GBTQuantityType {
+	type getResult interface {
+		GetQuantityType() GBTQuantityType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetQuantityType()
+	} else {
+		var de GBTQuantityType
+		return de
+	}
+}
+
+// GetQuantityTypeOk returns a tuple with the QuantityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReference2789) GetQuantityTypeOk() (*GBTQuantityType, bool) {
+	type getResult interface {
+		GetQuantityTypeOk() (*GBTQuantityType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetQuantityTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasQuantityType returns a boolean if a field has been set.
+func (o *BTParameterSpecReference2789) HasQuantityType() bool {
+	type getResult interface {
+		HasQuantityType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasQuantityType()
+	} else {
+		return false
+	}
+}
+
+// SetQuantityType gets a reference to the given GBTQuantityType and assigns it to the QuantityType field.
+func (o *BTParameterSpecReference2789) SetQuantityType(v GBTQuantityType) {
+	type getResult interface {
+		SetQuantityType(v GBTQuantityType)
+	}
+
+	o.GetActualInstance().(getResult).SetQuantityType(v)
+}
+
 // GetStringsToLocalize returns the StringsToLocalize field value if set, zero value otherwise.
 func (o *BTParameterSpecReference2789) GetStringsToLocalize() []string {
 	type getResult interface {
@@ -1026,6 +1076,7 @@ type base_BTParameterSpecReference2789 struct {
 	ParameterDescription       *string                            `json:"parameterDescription,omitempty"`
 	ParameterId                *string                            `json:"parameterId,omitempty"`
 	ParameterName              *string                            `json:"parameterName,omitempty"`
+	QuantityType               *GBTQuantityType                   `json:"quantityType,omitempty"`
 	StringsToLocalize          []string                           `json:"stringsToLocalize,omitempty"`
 	UiHint                     *string                            `json:"uiHint,omitempty"`
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
@@ -1370,6 +1421,38 @@ func (o *base_BTParameterSpecReference2789) SetParameterName(v string) {
 	o.ParameterName = &v
 }
 
+// GetQuantityType returns the QuantityType field value if set, zero value otherwise.
+func (o *base_BTParameterSpecReference2789) GetQuantityType() GBTQuantityType {
+	if o == nil || o.QuantityType == nil {
+		var ret GBTQuantityType
+		return ret
+	}
+	return *o.QuantityType
+}
+
+// GetQuantityTypeOk returns a tuple with the QuantityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterSpecReference2789) GetQuantityTypeOk() (*GBTQuantityType, bool) {
+	if o == nil || o.QuantityType == nil {
+		return nil, false
+	}
+	return o.QuantityType, true
+}
+
+// HasQuantityType returns a boolean if a field has been set.
+func (o *base_BTParameterSpecReference2789) HasQuantityType() bool {
+	if o != nil && o.QuantityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQuantityType gets a reference to the given GBTQuantityType and assigns it to the QuantityType field.
+func (o *base_BTParameterSpecReference2789) SetQuantityType(v GBTQuantityType) {
+	o.QuantityType = &v
+}
+
 // GetStringsToLocalize returns the StringsToLocalize field value if set, zero value otherwise.
 func (o *base_BTParameterSpecReference2789) GetStringsToLocalize() []string {
 	if o == nil || o.StringsToLocalize == nil {
@@ -1561,6 +1644,9 @@ func (o base_BTParameterSpecReference2789) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterName != nil {
 		toSerialize["parameterName"] = o.ParameterName
+	}
+	if o.QuantityType != nil {
+		toSerialize["quantityType"] = o.QuantityType
 	}
 	if o.StringsToLocalize != nil {
 		toSerialize["stringsToLocalize"] = o.StringsToLocalize

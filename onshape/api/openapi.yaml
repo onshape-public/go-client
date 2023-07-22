@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.166.19032-0b307c4b0d0e
+  version: 1.167.19303-3cbf47a47fe4
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -110,6 +110,7 @@ paths:
   /accounts/plans/{planId}/purchases:
     get:
       deprecated: false
+      description: Get a list of all app purchases made for the specified plan.
       operationId: getPlanPurchases
       parameters:
       - explode: false
@@ -7711,7 +7712,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Create Feature Studio by document ID and workspace ID.
+      summary: Create a new Feature Studio tab in a document.
       tags:
       - FeatureStudio
       x-BTVisibility: PRODUCTION
@@ -7760,6 +7761,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get the text for a Feature Studio element.
       tags:
       - FeatureStudio
       x-BTVisibility: PRODUCTION
@@ -7812,8 +7814,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update Feature Studio contents by document ID, workspace or version\
-        \ or microversion ID, and tab ID."
+      summary: Update the text for a Feature Studio element.
       tags:
       - FeatureStudio
       x-BTVisibility: PRODUCTION
@@ -7862,8 +7863,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve Feature Studio specs by document ID, workspace or version\
-        \ or microversion ID, and tab ID."
+      summary: Get the feature specs for a Feature Studio element.
       tags:
       - FeatureStudio
       x-BTVisibility: PRODUCTION
@@ -8197,7 +8197,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve insertables for a document by document ID.
+      summary: Get a list of all insertables for the document.
       tags:
       - Insertable
       x-BTVisibility: PRODUCTION
@@ -9286,6 +9286,8 @@ paths:
   /openapi:
     get:
       deprecated: false
+      description: 'The Onshape API OpenAPI specification is returned in the JSON
+        format. '
       operationId: getOpenApi
       parameters:
       - description: Force reload the OpenApi definition. Only works when asking for
@@ -9406,17 +9408,22 @@ paths:
         default:
           content: {}
           description: default response
+      summary: Get the OpenAPI specification for the Onshape REST API.
       tags:
       - OpenApi
       x-BTVisibility: PRODUCTION
   /openapi/tags:
     get:
       deprecated: false
+      description: "Tags are used to group operations. For example, `Document` groups\
+        \ operations on documents."
       operationId: getTags
       responses:
         default:
           content: {}
           description: default response
+      summary: "Tags are used to group operations. For example, `Document` groups\
+        \ operations on documents."
       tags:
       - OpenApi
       x-BTVisibility: PRODUCTION
@@ -12824,8 +12831,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve sketches by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: Get information or all sketches in part studio.
       tags:
       - Sketch
       x-BTVisibility: PRODUCTION
@@ -12895,14 +12901,18 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve sketch bounding boxes by document ID, workspace or version\
-        \ or microversion ID, tab ID, and sketch ID."
+      summary: Get all bounding boxes for a sketch.
       tags:
       - Sketch
       x-BTVisibility: PRODUCTION
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities:
     get:
       deprecated: false
+      description: "The accuracy of the tessellation to exact geometry is controlled\
+        \ by the `angleTolerance` and `chordTolerance` parameters. The tessellation\
+        \ points are computed closely enough so that neither the angle tolerance nor\
+        \ the chord tolerance are exceeded. For most parts, the angular tolerance\
+        \ is the most restrictive of the two default tolerances."
       operationId: getTessellatedEntities
       parameters:
       - explode: false
@@ -12991,8 +13001,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve tessellated entities of sketches by document ID, workspace\
-        \ or version or microversion ID, tab ID, and sketch ID."
+      summary: Get the tessellations of a sketch in a Part Studio.
       tags:
       - Sketch
       x-BTVisibility: PRODUCTION
@@ -13588,6 +13597,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get all items in a publication.
       tags:
       - Publication
       x-BTVisibility: PRODUCTION
@@ -14180,9 +14190,8 @@ paths:
   /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et}:
     delete:
       deprecated: false
-      description: Erase all revisions of a given partnumber. Only company admins
-        can delete all revisions in a company. All documents that contain the partnumber
-        or use it must be deleted first. This operation is not undoable.
+      description: Only company admins can call this API. All documents that contain
+        or use the part number must be deleted first. This operation cannot be undone.
       operationId: deleteRevisionHistory
       parameters:
       - explode: false
@@ -14226,6 +14235,7 @@ paths:
         - OAuth2Delete
         BasicAuth:
         - OAuth2Delete
+      summary: Delete all revisions for the specified part number.
       tags:
       - Revision
       x-BTVisibility: PRODUCTION
@@ -14733,7 +14743,12 @@ paths:
   /thumbnails/d/{did}/v/{vid}:
     get:
       deprecated: false
-      description: Return thumbnail info for document at specified version
+      description: "By default, returns thumbnail info for the element with the most-recently\
+        \ generated image. If you pinned an element for the document thumbnail, that\
+        \ element will always be used for the document-level thumbnail, if it exists\
+        \ in the workspace. The default workspace may vary by user; the image served\
+        \ depends on the signed-in user. See also: [Tech Tip: How to Change A Document\
+        \ Thumbnail in Onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)"
       operationId: getThumbnailForDocumentAndVersion
       parameters:
       - explode: false
@@ -14769,13 +14784,18 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get the thumbnail info for the specified version of a document.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
   /thumbnails/d/{did}/w/{wid}:
     get:
       deprecated: false
-      description: Get the thumbnail for a document in a specific workspace
+      description: "By default, returns thumbnail info for the element with the most-recently\
+        \ generated image. If you pinned an element for the document thumbnail, that\
+        \ element will always be used for the document-level thumbnail, if it exists\
+        \ in the workspace. See also: [Tech tip: How to change a Document Thumbnail\
+        \ in Onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)"
       operationId: getDocumentThumbnail
       parameters:
       - explode: false
@@ -14804,6 +14824,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get the thumbnail info for the specified workspace of a document.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
@@ -15727,7 +15748,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Assign variables to a variable studio
+      summary: Assign variables to a Variable Studio
       tags:
       - Variables
       x-BTVisibility: PRODUCTION
@@ -15791,7 +15812,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Set the variable studio references for an element
+      summary: Set the Variable Studio references for an element.
       tags:
       - Variables
       x-BTVisibility: PRODUCTION
@@ -15855,7 +15876,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Set the scope of a variable studio
+      summary: Set the scope the Variable Studio.
       tags:
       - Variables
       x-BTVisibility: PRODUCTION
@@ -15912,7 +15933,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Create a variable studio
+      summary: Create a new Variable Studio in a document and workspace.
       tags:
       - Variables
       x-BTVisibility: PRODUCTION
@@ -16000,7 +16021,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve the variables from a variable table
+      summary: Get the contents of all variable tables in an element.
       tags:
       - Variables
       x-BTVisibility: PRODUCTION
@@ -16072,7 +16093,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve the variable studio references from an element
+      summary: Get the Variable Studio references for an element.
       tags:
       - Variables
       x-BTVisibility: PRODUCTION
@@ -16144,7 +16165,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Get the scope of a variable studio
+      summary: Get the scope of a Variable Studio.
       tags:
       - Variables
       x-BTVisibility: PRODUCTION
@@ -16215,7 +16236,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve a list of webhooks registered for a company or user.
+      summary: Get a list of all webhooks registered bt a user or company.
       tags:
       - Webhook
       x-BTVisibility: PRODUCTION
@@ -16581,6 +16602,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Create a new webhook.
       tags:
       - Webhook
       x-BTVisibility: PRODUCTION
@@ -16616,7 +16638,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Delete webhook by webhook ID.
+      summary: Unregister a webhook.
       tags:
       - Webhook
       x-BTVisibility: PRODUCTION
@@ -16643,7 +16665,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve webhook by webhook ID.
+      summary: Get webhook info by webhook ID.
       tags:
       - Webhook
       x-BTVisibility: PRODUCTION
@@ -16676,6 +16698,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Update a webhook.
       tags:
       - Webhook
       x-BTVisibility: PRODUCTION
@@ -16704,6 +16727,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Ping a webhook.
       tags:
       - Webhook
       x-BTVisibility: PRODUCTION
@@ -24399,6 +24423,7 @@ components:
             uniqueId: uniqueId
           href: https://openapi-generator.tech
           id: id
+        forceExportRules: true
         tags:
         - tags
         - tags
@@ -24793,6 +24818,8 @@ components:
           type: integer
         duplicateNameViolationError:
           type: string
+        forceExportRules:
+          type: boolean
         hasReleaseRevisionableObjects:
           type: boolean
         hasRelevantInsertables:
@@ -25231,6 +25258,7 @@ components:
       example:
         ownerType: 6
         isEmptyContent: true
+        forceExportRules: true
         description: description
         betaCapabilityIds:
         - betaCapabilityIds
@@ -25292,6 +25320,8 @@ components:
           items:
             $ref: '#/components/schemas/BTDocumentElementCreationDescriptor'
           type: array
+        forceExportRules:
+          type: boolean
         generateUnknownMessages:
           type: boolean
         isEmptyContent:
@@ -25849,6 +25879,7 @@ components:
             uniqueId: uniqueId
           href: https://openapi-generator.tech
           id: id
+        forceExportRules: true
         createdWithEducationPlan: true
         permission: null
         parentId: parentId
@@ -25906,6 +25937,8 @@ components:
         documentType:
           format: int32
           type: integer
+        forceExportRules:
+          type: boolean
         hasReleaseRevisionableObjects:
           type: boolean
         hasRelevantInsertables:
@@ -31491,6 +31524,7 @@ components:
         tableSpec: true
         parameterIdToSpec:
           key:
+            quantityType: null
             localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
@@ -31519,7 +31553,8 @@ components:
         - null
         - null
         allParameters:
-        - localizedName: localizedName
+        - quantityType: null
+          localizedName: localizedName
           localizableName: localizableName
           parameterId: parameterId
           stringsToLocalize:
@@ -31542,7 +31577,8 @@ components:
           additionalLocalizedStrings: 6
           iconUri: iconUri
           columnName: columnName
-        - localizedName: localizedName
+        - quantityType: null
+          localizedName: localizedName
           localizableName: localizableName
           parameterId: parameterId
           stringsToLocalize:
@@ -31754,7 +31790,8 @@ components:
           endCharacter: 7
           nodeId: nodeId
         parameters:
-        - localizedName: localizedName
+        - quantityType: null
+          localizedName: localizedName
           localizableName: localizableName
           parameterId: parameterId
           stringsToLocalize:
@@ -31777,7 +31814,8 @@ components:
           additionalLocalizedStrings: 6
           iconUri: iconUri
           columnName: columnName
-        - localizedName: localizedName
+        - quantityType: null
+          localizedName: localizedName
           localizableName: localizableName
           parameterId: parameterId
           stringsToLocalize:
@@ -31905,6 +31943,7 @@ components:
           tableSpec: true
           parameterIdToSpec:
             key:
+              quantityType: null
               localizedName: localizedName
               localizableName: localizableName
               parameterId: parameterId
@@ -31933,7 +31972,8 @@ components:
           - null
           - null
           allParameters:
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -31956,7 +31996,8 @@ components:
             additionalLocalizedStrings: 6
             iconUri: iconUri
             columnName: columnName
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -32168,7 +32209,8 @@ components:
             endCharacter: 7
             nodeId: nodeId
           parameters:
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -32191,7 +32233,8 @@ components:
             additionalLocalizedStrings: 6
             iconUri: iconUri
             columnName: columnName
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -32227,6 +32270,7 @@ components:
           tableSpec: true
           parameterIdToSpec:
             key:
+              quantityType: null
               localizedName: localizedName
               localizableName: localizableName
               parameterId: parameterId
@@ -32255,7 +32299,8 @@ components:
           - null
           - null
           allParameters:
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -32278,7 +32323,8 @@ components:
             additionalLocalizedStrings: 6
             iconUri: iconUri
             columnName: columnName
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -32490,7 +32536,8 @@ components:
             endCharacter: 7
             nodeId: nodeId
           parameters:
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -32513,7 +32560,8 @@ components:
             additionalLocalizedStrings: 6
             iconUri: iconUri
             columnName: columnName
-          - localizedName: localizedName
+          - quantityType: null
+            localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
             stringsToLocalize:
@@ -38997,6 +39045,7 @@ components:
           BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
           BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
           BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
+          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
           BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
           BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
           BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
@@ -39112,6 +39161,14 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTMParameter-1'
       - $ref: '#/components/schemas/BTMParameterMaterial_1388_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
+    BTMParameterMultiEnum-3411:
+      allOf:
+      - $ref: '#/components/schemas/BTMParameter-1'
+      - $ref: '#/components/schemas/BTMParameterMultiEnum_3411_allOf'
       properties:
         btType:
           type: string
@@ -42992,6 +43049,7 @@ components:
           BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
           BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
           BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
+          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
           BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
           BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
           BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
@@ -43000,6 +43058,7 @@ components:
           BTReadOnlyParameterSpec-1889: '#/components/schemas/BTReadOnlyParameterSpec-1889'
         propertyName: btType
       example:
+        quantityType: null
         localizedName: localizedName
         localizableName: localizableName
         parameterId: parameterId
@@ -43047,6 +43106,8 @@ components:
           type: string
         parameterName:
           type: string
+        quantityType:
+          $ref: '#/components/schemas/GBTQuantityType'
         stringsToLocalize:
           items:
             type: string
@@ -43080,6 +43141,14 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpec-6'
       - $ref: '#/components/schemas/BTParameterSpecBoolean_170_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
+    BTParameterSpecCategories-4083:
+      allOf:
+      - $ref: '#/components/schemas/BTParameterSpecMultiEnum-3118'
+      - $ref: '#/components/schemas/BTParameterSpecCategories_4083_allOf'
       properties:
         btType:
           type: string
@@ -43136,6 +43205,18 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpec-6'
       - $ref: '#/components/schemas/BTParameterSpecMaterial_2700_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
+    BTParameterSpecMultiEnum-3118:
+      allOf:
+      - $ref: '#/components/schemas/BTParameterSpec-6'
+      - $ref: '#/components/schemas/BTParameterSpecMultiEnum_3118_allOf'
+      discriminator:
+        mapping:
+          BTParameterSpecCategories-4083: '#/components/schemas/BTParameterSpecCategories-4083'
+        propertyName: btType
       properties:
         btType:
           type: string
@@ -47511,11 +47592,14 @@ components:
           - approverIds
           - approverIds
           metadataState: metadataState
+          errorMessage: errorMessage
+          canBeDiscarded: true
+          usesExternalPlm: true
+          debugMicroversionId: debugMicroversionId
+          isDiscarded: true
           notifierIds:
           - notifierIds
           - notifierIds
-          errorMessage: errorMessage
-          canBeDiscarded: true
           state:
             editableProperties:
             - editableProperties
@@ -47565,8 +47649,6 @@ components:
             type: null
             allowIfNoApprovers: true
           isCreator: true
-          debugMicroversionId: debugMicroversionId
-          isDiscarded: true
           isSetup: true
         linkedVersionIds:
         - linkedVersionIds
@@ -47835,6 +47917,7 @@ components:
           obsoletionRevisionId: obsoletionRevisionId
           configuration: configuration
           partId: partId
+          partIdentity: partIdentity
           mimeType: mimeType
           configurationKey: configurationKey
           changeDetectionStatus: 0
@@ -47963,6 +48046,7 @@ components:
           obsoletionRevisionId: obsoletionRevisionId
           configuration: configuration
           partId: partId
+          partIdentity: partIdentity
           mimeType: mimeType
           configurationKey: configurationKey
           changeDetectionStatus: 0
@@ -48088,13 +48172,9 @@ components:
               value: value
           diffThumbnailConfigurationKey: diffThumbnailConfigurationKey
         properties:
-        - dirty: true
-          editableInUi: true
-          isNotifierProperty: true
+        - isNotifierProperty: true
+          hideInUi: true
           defaultValue: "{}"
-          editable: true
-          multivalued: true
-          propertySource: 7
           validator:
             quantityType: 3
             minDate: 2000-01-23T04:56:07.000+00:00
@@ -48106,20 +48186,32 @@ components:
             minCount: 7
             maxCount: 5
             maxLength: 5
-          computedPropertyError: computedPropertyError
-          computedAssemblyProperty: true
           teamsOnly: true
           required: true
           usersOnly: true
           uiHints:
             multiline: true
-          schemaId: schemaId
           valueType: valueType
-          name: name
           initialValue: "{}"
           isApproverProperty: true
           propertyId: propertyId
           value: "{}"
+          enumValues:
+          - label: label
+            state: 0
+            value: value
+          - label: label
+            state: 0
+            value: value
+          dirty: true
+          editableInUi: true
+          editable: true
+          multivalued: true
+          propertySource: 7
+          computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
+          schemaId: schemaId
+          name: name
           computedProperty: true
           observers:
           - entryType: null
@@ -48166,20 +48258,9 @@ components:
             propertyId: propertyId
             associatedStates: associatedStates
             objectId: objectId
-          enumValues:
-          - label: label
-            state: 0
-            value: value
-          - label: label
-            state: 0
-            value: value
-        - dirty: true
-          editableInUi: true
-          isNotifierProperty: true
+        - isNotifierProperty: true
+          hideInUi: true
           defaultValue: "{}"
-          editable: true
-          multivalued: true
-          propertySource: 7
           validator:
             quantityType: 3
             minDate: 2000-01-23T04:56:07.000+00:00
@@ -48191,20 +48272,32 @@ components:
             minCount: 7
             maxCount: 5
             maxLength: 5
-          computedPropertyError: computedPropertyError
-          computedAssemblyProperty: true
           teamsOnly: true
           required: true
           usersOnly: true
           uiHints:
             multiline: true
-          schemaId: schemaId
           valueType: valueType
-          name: name
           initialValue: "{}"
           isApproverProperty: true
           propertyId: propertyId
           value: "{}"
+          enumValues:
+          - label: label
+            state: 0
+            value: value
+          - label: label
+            state: 0
+            value: value
+          dirty: true
+          editableInUi: true
+          editable: true
+          multivalued: true
+          propertySource: 7
+          computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
+          schemaId: schemaId
+          name: name
           computedProperty: true
           observers:
           - entryType: null
@@ -48251,13 +48344,6 @@ components:
             propertyId: propertyId
             associatedStates: associatedStates
             objectId: objectId
-          enumValues:
-          - label: label
-            state: 0
-            value: value
-          - label: label
-            state: 0
-            value: value
         workflowId:
           companyId: companyId
           versionId: versionId
@@ -48351,6 +48437,7 @@ components:
         obsoletionRevisionId: obsoletionRevisionId
         configuration: configuration
         partId: partId
+        partIdentity: partIdentity
         mimeType: mimeType
         configurationKey: configurationKey
         changeDetectionStatus: 0
@@ -48526,6 +48613,8 @@ components:
         originalWorkspaceId:
           type: string
         partId:
+          type: string
+        partIdentity:
           type: string
         partType:
           type: string
@@ -50209,6 +50298,7 @@ components:
             defaultHeaderName: defaultHeaderName
             defaultColumnWidthValue: 5
             defaultCellSpec:
+              quantityType: null
               localizedName: localizedName
               localizableName: localizableName
               parameterId: parameterId
@@ -50243,6 +50333,7 @@ components:
             defaultHeaderName: defaultHeaderName
             defaultColumnWidthValue: 5
             defaultCellSpec:
+              quantityType: null
               localizedName: localizedName
               localizableName: localizableName
               parameterId: parameterId
@@ -50470,6 +50561,7 @@ components:
           defaultHeaderName: defaultHeaderName
           defaultColumnWidthValue: 5
           defaultCellSpec:
+            quantityType: null
             localizedName: localizedName
             localizableName: localizableName
             parameterId: parameterId
@@ -50514,6 +50606,7 @@ components:
         defaultHeaderName: defaultHeaderName
         defaultColumnWidthValue: 5
         defaultCellSpec:
+          quantityType: null
           localizedName: localizedName
           localizableName: localizableName
           parameterId: parameterId
@@ -50582,6 +50675,7 @@ components:
               defaultHeaderName: defaultHeaderName
               defaultColumnWidthValue: 5
               defaultCellSpec:
+                quantityType: null
                 localizedName: localizedName
                 localizableName: localizableName
                 parameterId: parameterId
@@ -50616,6 +50710,7 @@ components:
               defaultHeaderName: defaultHeaderName
               defaultColumnWidthValue: 5
               defaultCellSpec:
+                quantityType: null
                 localizedName: localizedName
                 localizableName: localizableName
                 parameterId: parameterId
@@ -51142,6 +51237,7 @@ components:
         password: password
         proxyWorkspaceVersionId: proxyWorkspaceVersionId
         onePartPerDoc: true
+        useGltfCompression: true
         triggerAutoDownload: true
         elementId: elementId
         imageWidth: 1
@@ -51178,6 +51274,7 @@ components:
         stepVersionString: stepVersionString
         destinationName: destinationName
         includeExportIds: true
+        stepParasolidPreprocessingOption: null
         cloudObjectId: cloudObjectId
         colorMethod: colorMethod
         proxyWorkspaceVersion: proxyWorkspaceVersion
@@ -51358,6 +51455,8 @@ components:
           type: boolean
         splitAssembliesIntoMultipleDocuments:
           type: boolean
+        stepParasolidPreprocessingOption:
+          $ref: '#/components/schemas/GBTPreProcessParasolidOption'
         stepVersionString:
           type: string
         storeInDocument:
@@ -51370,6 +51469,8 @@ components:
           type: string
         uploadId:
           type: string
+        useGltfCompression:
+          type: boolean
         useIgesCompatibilityMode:
           type: boolean
         validForDays:
@@ -53917,13 +54018,9 @@ components:
       type: string
     BTWorkflowPropertyInfo:
       example:
-        dirty: true
-        editableInUi: true
         isNotifierProperty: true
+        hideInUi: true
         defaultValue: "{}"
-        editable: true
-        multivalued: true
-        propertySource: 7
         validator:
           quantityType: 3
           minDate: 2000-01-23T04:56:07.000+00:00
@@ -53935,20 +54032,32 @@ components:
           minCount: 7
           maxCount: 5
           maxLength: 5
-        computedPropertyError: computedPropertyError
-        computedAssemblyProperty: true
         teamsOnly: true
         required: true
         usersOnly: true
         uiHints:
           multiline: true
-        schemaId: schemaId
         valueType: valueType
-        name: name
         initialValue: "{}"
         isApproverProperty: true
         propertyId: propertyId
         value: "{}"
+        enumValues:
+        - label: label
+          state: 0
+          value: value
+        - label: label
+          state: 0
+          value: value
+        dirty: true
+        editableInUi: true
+        editable: true
+        multivalued: true
+        propertySource: 7
+        computedPropertyError: computedPropertyError
+        computedAssemblyProperty: true
+        schemaId: schemaId
+        name: name
         computedProperty: true
         observers:
         - entryType: null
@@ -53995,13 +54104,6 @@ components:
           propertyId: propertyId
           associatedStates: associatedStates
           objectId: objectId
-        enumValues:
-        - label: label
-          state: 0
-          value: value
-        - label: label
-          state: 0
-          value: value
       properties:
         computedAssemblyProperty:
           type: boolean
@@ -54021,6 +54123,8 @@ components:
           items:
             $ref: '#/components/schemas/BTMetadataEnumValueInfo'
           type: array
+        hideInUi:
+          type: boolean
         initialValue:
           type: object
         isApproverProperty:
@@ -54064,11 +54168,14 @@ components:
         - approverIds
         - approverIds
         metadataState: metadataState
+        errorMessage: errorMessage
+        canBeDiscarded: true
+        usesExternalPlm: true
+        debugMicroversionId: debugMicroversionId
+        isDiscarded: true
         notifierIds:
         - notifierIds
         - notifierIds
-        errorMessage: errorMessage
-        canBeDiscarded: true
         state:
           editableProperties:
           - editableProperties
@@ -54118,8 +54225,6 @@ components:
           type: null
           allowIfNoApprovers: true
         isCreator: true
-        debugMicroversionId: debugMicroversionId
-        isDiscarded: true
         isSetup: true
       properties:
         actions:
@@ -54152,6 +54257,8 @@ components:
           type: array
         state:
           $ref: '#/components/schemas/BTWorkflowStateInfo'
+        usesExternalPlm:
+          type: boolean
       type: object
     BTWorkflowStateInfo:
       example:
@@ -56998,6 +57105,14 @@ components:
       - ISOCLINE_SELECT_FACES
       - ISOCLINE_SELECT_DIRECTION
       - ISOCLINE_FAILED
+      - FGS_GENERATIVE_OPT_MAX_ITERATIONS
+      - FGS_GENERATIVE_TARGET_VOLUME_LOW
+      - FGS_GENERATIVE_TARGET_VOLUME_LARGE
+      - FGS_GENERATIVE_THIN_GENERIC
+      - FGS_GENERATIVE_SYMMETRY_DEF_PROBLEM
+      - FGS_GENERATIVE_MINRADIUS_SMALL
+      - FGS_GENERATIVE_MINRADIUS_LARGE
+      - FGS_GENERATIVE_OPT_INVALID_SETUP
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -57235,6 +57350,14 @@ components:
       - CIRCULAR
       - UNKNOWN
       type: string
+    GBTPreProcessParasolidOption:
+      enum:
+      - NO_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
+      - USE_TRANSLATOR_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING
+      - UNKNOWN
+      type: string
     GBTQuantityType:
       enum:
       - UNKNOWN
@@ -57256,6 +57379,8 @@ components:
       - ENERGY
       - AREA
       - VOLUME
+      - BOOLEAN
+      - STRING
       type: string
     GBTRadiusDisplay:
       enum:
@@ -58771,6 +58896,9 @@ components:
           type: string
         modal:
           type: boolean
+        numberOfModes:
+          format: double
+          type: number
         type:
           $ref: '#/components/schemas/GBTAssemblySimulationType'
       type: object
@@ -60509,6 +60637,20 @@ components:
           $ref: '#/components/schemas/BTPartMaterial-1445'
       type: object
       example: null
+    BTMParameterMultiEnum_3411_allOf:
+      properties:
+        btType:
+          type: string
+        enumName:
+          type: string
+        namespace:
+          type: string
+        values:
+          items:
+            type: string
+          type: array
+      type: object
+      example: null
     BTMParameterNullableQuantity_807_allOf:
       properties:
         btType:
@@ -60731,6 +60873,11 @@ components:
           type: number
         endPointId:
           type: string
+        offsetCurveExtensions:
+          items:
+            format: double
+            type: number
+          type: array
         startParam:
           format: double
           type: number
@@ -61808,6 +61955,19 @@ components:
           type: string
       type: object
       example: null
+    BTParameterSpecCategories_4083_allOf:
+      properties:
+        btType:
+          type: string
+        categoryIdToMetadataTypes:
+          additionalProperties:
+            items:
+              format: int32
+              type: integer
+            type: array
+          type: object
+      type: object
+      example: null
     BTParameterSpecDatabase_1071_allOf:
       properties:
         btType:
@@ -61868,12 +62028,34 @@ components:
           type: string
       type: object
       example: null
+    BTParameterSpecMultiEnum_3118_allOf:
+      properties:
+        btType:
+          type: string
+        enumName:
+          type: string
+        enumValueToVisibilityCondition:
+          additionalProperties:
+            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+          type: object
+        multivalued:
+          type: boolean
+        namespace:
+          type: string
+        optionNames:
+          items:
+            type: string
+          type: array
+        options:
+          items:
+            type: string
+          type: array
+      type: object
+      example: null
     BTParameterSpecNullableQuantity_715_allOf:
       properties:
         btType:
           type: string
-        quantityType:
-          $ref: '#/components/schemas/GBTQuantityType'
         ranges:
           items:
             $ref: '#/components/schemas/BTNullableQuantityRange-1340'
@@ -61890,8 +62072,6 @@ components:
       properties:
         btType:
           type: string
-        quantityType:
-          $ref: '#/components/schemas/GBTQuantityType'
         ranges:
           items:
             $ref: '#/components/schemas/BTQuantityRange-181'

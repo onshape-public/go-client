@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -51,7 +51,7 @@ func (r ApiGetSketchBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *http.R
 }
 
 /*
-GetSketchBoundingBoxes Retrieve sketch bounding boxes by document ID, workspace or version or microversion ID, tab ID, and sketch ID.
+GetSketchBoundingBoxes Get all bounding boxes for a sketch.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -216,7 +216,7 @@ func (r ApiGetSketchInfoRequest) Execute() (map[string]interface{}, *http.Respon
 }
 
 /*
-GetSketchInfo Retrieve sketches by document ID, workspace or version or microversion ID, and tab ID.
+GetSketchInfo Get information or all sketches in part studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -393,7 +393,9 @@ func (r ApiGetTessellatedEntitiesRequest) Execute() (map[string]interface{}, *ht
 }
 
 /*
-GetTessellatedEntities Retrieve tessellated entities of sketches by document ID, workspace or version or microversion ID, tab ID, and sketch ID.
+GetTessellatedEntities Get the tessellations of a sketch in a Part Studio.
+
+The accuracy of the tessellation to exact geometry is controlled by the `angleTolerance` and `chordTolerance` parameters. The tessellation points are computed closely enough so that neither the angle tolerance nor the chord tolerance are exceeded. For most parts, the angular tolerance is the most restrictive of the two default tolerances.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did

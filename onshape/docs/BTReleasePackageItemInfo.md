@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **ObsoletionRevisionId** | Pointer to **string** |  | [optional] 
 **OriginalWorkspaceId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to **string** |  | [optional] 
 **PartType** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**[]BTMetadataPropertyInfo**](BTMetadataPropertyInfo.md) |  | [optional] 
 **ReferenceIds** | Pointer to **[]string** |  | [optional] 
@@ -578,6 +579,31 @@ SetPartId sets PartId field to given value.
 `func (o *BTReleasePackageItemInfo) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTReleasePackageItemInfo) GetPartIdentity() string`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTReleasePackageItemInfo) GetPartIdentityOk() (*string, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTReleasePackageItemInfo) SetPartIdentity(v string)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTReleasePackageItemInfo) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetPartType
 

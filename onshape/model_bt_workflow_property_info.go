@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -25,6 +25,7 @@ type BTWorkflowPropertyInfo struct {
 	Editable                 *bool                            `json:"editable,omitempty"`
 	EditableInUi             *bool                            `json:"editableInUi,omitempty"`
 	EnumValues               []BTMetadataEnumValueInfo        `json:"enumValues,omitempty"`
+	HideInUi                 *bool                            `json:"hideInUi,omitempty"`
 	InitialValue             *map[string]interface{}          `json:"initialValue,omitempty"`
 	IsApproverProperty       *bool                            `json:"isApproverProperty,omitempty"`
 	IsNotifierProperty       *bool                            `json:"isNotifierProperty,omitempty"`
@@ -314,6 +315,38 @@ func (o *BTWorkflowPropertyInfo) HasEnumValues() bool {
 // SetEnumValues gets a reference to the given []BTMetadataEnumValueInfo and assigns it to the EnumValues field.
 func (o *BTWorkflowPropertyInfo) SetEnumValues(v []BTMetadataEnumValueInfo) {
 	o.EnumValues = v
+}
+
+// GetHideInUi returns the HideInUi field value if set, zero value otherwise.
+func (o *BTWorkflowPropertyInfo) GetHideInUi() bool {
+	if o == nil || o.HideInUi == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HideInUi
+}
+
+// GetHideInUiOk returns a tuple with the HideInUi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowPropertyInfo) GetHideInUiOk() (*bool, bool) {
+	if o == nil || o.HideInUi == nil {
+		return nil, false
+	}
+	return o.HideInUi, true
+}
+
+// HasHideInUi returns a boolean if a field has been set.
+func (o *BTWorkflowPropertyInfo) HasHideInUi() bool {
+	if o != nil && o.HideInUi != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHideInUi gets a reference to the given bool and assigns it to the HideInUi field.
+func (o *BTWorkflowPropertyInfo) SetHideInUi(v bool) {
+	o.HideInUi = &v
 }
 
 // GetInitialValue returns the InitialValue field value if set, zero value otherwise.
@@ -853,6 +886,9 @@ func (o BTWorkflowPropertyInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.EnumValues != nil {
 		toSerialize["enumValues"] = o.EnumValues
+	}
+	if o.HideInUi != nil {
+		toSerialize["hideInUi"] = o.HideInUi
 	}
 	if o.InitialValue != nil {
 		toSerialize["initialValue"] = o.InitialValue

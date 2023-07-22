@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **EndParam** | Pointer to **float64** |  | [optional] 
 **EndPointId** | Pointer to **string** |  | [optional] 
+**OffsetCurveExtensions** | Pointer to **[]float64** |  | [optional] 
 **StartParam** | Pointer to **float64** |  | [optional] 
 **StartPointId** | Pointer to **string** |  | [optional] 
 
@@ -103,6 +104,31 @@ SetEndPointId sets EndPointId field to given value.
 `func (o *BTMSketchCurveSegment155) HasEndPointId() bool`
 
 HasEndPointId returns a boolean if a field has been set.
+
+### GetOffsetCurveExtensions
+
+`func (o *BTMSketchCurveSegment155) GetOffsetCurveExtensions() []float64`
+
+GetOffsetCurveExtensions returns the OffsetCurveExtensions field if non-nil, zero value otherwise.
+
+### GetOffsetCurveExtensionsOk
+
+`func (o *BTMSketchCurveSegment155) GetOffsetCurveExtensionsOk() (*[]float64, bool)`
+
+GetOffsetCurveExtensionsOk returns a tuple with the OffsetCurveExtensions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOffsetCurveExtensions
+
+`func (o *BTMSketchCurveSegment155) SetOffsetCurveExtensions(v []float64)`
+
+SetOffsetCurveExtensions sets OffsetCurveExtensions field to given value.
+
+### HasOffsetCurveExtensions
+
+`func (o *BTMSketchCurveSegment155) HasOffsetCurveExtensions() bool`
+
+HasOffsetCurveExtensions returns a boolean if a field has been set.
 
 ### GetStartParam
 
