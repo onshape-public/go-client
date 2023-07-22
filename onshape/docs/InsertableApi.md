@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetLatestInDocument**](InsertableApi.md#GetLatestInDocument) | **Get** /insertables/d/{did}/latest | Retrieve insertables for a document by document ID.
+[**GetLatestInDocument**](InsertableApi.md#GetLatestInDocument) | **Get** /insertables/d/{did}/latest | Get a list of all insertables for the document.
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > BTListResponseBTInsertableInfo GetLatestInDocument(ctx, did).BetaCapabilityIds(betaCapabilityIds).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
 
-Retrieve insertables for a document by document ID.
+Get a list of all insertables for the document.
 
 ### Example
 

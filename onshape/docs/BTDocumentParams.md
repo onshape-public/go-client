@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BetaCapabilityIds** | Pointer to **[]string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Elements** | Pointer to [**[]BTDocumentElementCreationDescriptor**](BTDocumentElementCreationDescriptor.md) |  | [optional] 
+**ForceExportRules** | Pointer to **bool** |  | [optional] 
 **GenerateUnknownMessages** | Pointer to **bool** |  | [optional] 
 **IsEmptyContent** | Pointer to **bool** |  | [optional] 
 **IsPublic** | Pointer to **bool** |  | [optional] 
@@ -112,6 +113,31 @@ SetElements sets Elements field to given value.
 `func (o *BTDocumentParams) HasElements() bool`
 
 HasElements returns a boolean if a field has been set.
+
+### GetForceExportRules
+
+`func (o *BTDocumentParams) GetForceExportRules() bool`
+
+GetForceExportRules returns the ForceExportRules field if non-nil, zero value otherwise.
+
+### GetForceExportRulesOk
+
+`func (o *BTDocumentParams) GetForceExportRulesOk() (*bool, bool)`
+
+GetForceExportRulesOk returns a tuple with the ForceExportRules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForceExportRules
+
+`func (o *BTDocumentParams) SetForceExportRules(v bool)`
+
+SetForceExportRules sets ForceExportRules field to given value.
+
+### HasForceExportRules
+
+`func (o *BTDocumentParams) HasForceExportRules() bool`
+
+HasForceExportRules returns a boolean if a field has been set.
 
 ### GetGenerateUnknownMessages
 

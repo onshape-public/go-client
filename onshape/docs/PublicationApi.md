@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetPublicationItems**](PublicationApi.md#GetPublicationItems) | **Get** /publications/{pid}/items | 
+[**GetPublicationItems**](PublicationApi.md#GetPublicationItems) | **Get** /publications/{pid}/items | Get all items in a publication.
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > BTPublicationInfo GetPublicationItems(ctx, pid).Execute()
 
-
+Get all items in a publication.
 
 
 

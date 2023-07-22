@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ParameterDescription** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **ParameterName** | Pointer to **string** |  | [optional] 
+**QuantityType** | Pointer to [**GBTQuantityType**](GBTQuantityType.md) |  | [optional] 
 **StringsToLocalize** | Pointer to **[]string** |  | [optional] 
 **UiHint** | Pointer to **string** |  | [optional] 
 **UiHints** | Pointer to [**[]GBTUIHint**](GBTUIHint.md) |  | [optional] 
@@ -287,6 +288,31 @@ SetParameterName sets ParameterName field to given value.
 `func (o *BTParameterSpec6) HasParameterName() bool`
 
 HasParameterName returns a boolean if a field has been set.
+
+### GetQuantityType
+
+`func (o *BTParameterSpec6) GetQuantityType() GBTQuantityType`
+
+GetQuantityType returns the QuantityType field if non-nil, zero value otherwise.
+
+### GetQuantityTypeOk
+
+`func (o *BTParameterSpec6) GetQuantityTypeOk() (*GBTQuantityType, bool)`
+
+GetQuantityTypeOk returns a tuple with the QuantityType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantityType
+
+`func (o *BTParameterSpec6) SetQuantityType(v GBTQuantityType)`
+
+SetQuantityType sets QuantityType field to given value.
+
+### HasQuantityType
+
+`func (o *BTParameterSpec6) HasQuantityType() bool`
+
+HasQuantityType returns a boolean if a field has been set.
 
 ### GetStringsToLocalize
 

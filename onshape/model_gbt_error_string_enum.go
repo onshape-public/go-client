@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1359,6 +1359,14 @@ const (
 	GBTErrorStringEnumIsoclineSelectFaces                                   GBTErrorStringEnum = "ISOCLINE_SELECT_FACES"
 	GBTErrorStringEnumIsoclineSelectDirection                               GBTErrorStringEnum = "ISOCLINE_SELECT_DIRECTION"
 	GBTErrorStringEnumIsoclineFailed                                        GBTErrorStringEnum = "ISOCLINE_FAILED"
+	GBTErrorStringEnumFgsGenerativeOptMaxIterations                         GBTErrorStringEnum = "FGS_GENERATIVE_OPT_MAX_ITERATIONS"
+	GBTErrorStringEnumFgsGenerativeTargetVolumeLow                          GBTErrorStringEnum = "FGS_GENERATIVE_TARGET_VOLUME_LOW"
+	GBTErrorStringEnumFgsGenerativeTargetVolumeLarge                        GBTErrorStringEnum = "FGS_GENERATIVE_TARGET_VOLUME_LARGE"
+	GBTErrorStringEnumFgsGenerativeThinGeneric                              GBTErrorStringEnum = "FGS_GENERATIVE_THIN_GENERIC"
+	GBTErrorStringEnumFgsGenerativeSymmetryDefProblem                       GBTErrorStringEnum = "FGS_GENERATIVE_SYMMETRY_DEF_PROBLEM"
+	GBTErrorStringEnumFgsGenerativeMinradiusSmall                           GBTErrorStringEnum = "FGS_GENERATIVE_MINRADIUS_SMALL"
+	GBTErrorStringEnumFgsGenerativeMinradiusLarge                           GBTErrorStringEnum = "FGS_GENERATIVE_MINRADIUS_LARGE"
+	GBTErrorStringEnumFgsGenerativeOptInvalidSetup                          GBTErrorStringEnum = "FGS_GENERATIVE_OPT_INVALID_SETUP"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2702,6 +2710,14 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"ISOCLINE_SELECT_FACES",
 	"ISOCLINE_SELECT_DIRECTION",
 	"ISOCLINE_FAILED",
+	"FGS_GENERATIVE_OPT_MAX_ITERATIONS",
+	"FGS_GENERATIVE_TARGET_VOLUME_LOW",
+	"FGS_GENERATIVE_TARGET_VOLUME_LARGE",
+	"FGS_GENERATIVE_THIN_GENERIC",
+	"FGS_GENERATIVE_SYMMETRY_DEF_PROBLEM",
+	"FGS_GENERATIVE_MINRADIUS_SMALL",
+	"FGS_GENERATIVE_MINRADIUS_LARGE",
+	"FGS_GENERATIVE_OPT_INVALID_SETUP",
 	"UNKNOWN",
 }
 

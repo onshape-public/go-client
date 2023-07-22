@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -39,7 +39,7 @@ func (r ApiCreateWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, erro
 }
 
 /*
-CreateWebhook Method for CreateWebhook
+CreateWebhook Create a new webhook.
 
 Create a webhook
 
@@ -148,7 +148,7 @@ func (r ApiGetWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, error) 
 }
 
 /*
-GetWebhook Retrieve webhook by webhook ID.
+GetWebhook Get webhook info by webhook ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param webhookid
@@ -279,7 +279,7 @@ func (r ApiGetWebhooksRequest) Execute() (*BTListResponseBTWebhookInfo, *http.Re
 }
 
 /*
-GetWebhooks Retrieve a list of webhooks registered for a company or user.
+GetWebhooks Get a list of all webhooks registered bt a user or company.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetWebhooksRequest
@@ -396,7 +396,7 @@ func (r ApiPingWebhookRequest) Execute() (map[string]interface{}, *http.Response
 }
 
 /*
-PingWebhook Method for PingWebhook
+PingWebhook Ping a webhook.
 
 Ping a webhook
 
@@ -512,7 +512,7 @@ func (r ApiUnregisterWebhookRequest) Execute() (map[string]interface{}, *http.Re
 }
 
 /*
-UnregisterWebhook Delete webhook by webhook ID.
+UnregisterWebhook Unregister a webhook.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param webhookid
@@ -629,7 +629,7 @@ func (r ApiUpdateWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, erro
 }
 
 /*
-UpdateWebhook Method for UpdateWebhook
+UpdateWebhook Update a webhook.
 
 Update a webhook
 

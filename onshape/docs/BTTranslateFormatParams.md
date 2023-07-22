@@ -64,12 +64,14 @@ Name | Type | Description | Notes
 **SpecifyUnits** | Pointer to **bool** |  | [optional] 
 **SplinesAsPolylines** | Pointer to **bool** |  | [optional] 
 **SplitAssembliesIntoMultipleDocuments** | Pointer to **bool** |  | [optional] 
+**StepParasolidPreprocessingOption** | Pointer to [**GBTPreProcessParasolidOption**](GBTPreProcessParasolidOption.md) |  | [optional] 
 **StepVersionString** | Pointer to **string** |  | [optional] 
 **StoreInDocument** | Pointer to **bool** |  | [optional] 
 **TextAsGeometry** | Pointer to **bool** |  | [optional] 
 **TriggerAutoDownload** | Pointer to **bool** |  | [optional] 
 **Unit** | Pointer to **string** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
+**UseGltfCompression** | Pointer to **bool** |  | [optional] 
 **UseIgesCompatibilityMode** | Pointer to **bool** |  | [optional] 
 **ValidForDays** | Pointer to **int32** |  | [optional] 
 **VersionString** | Pointer to **string** |  | [optional] 
@@ -1588,6 +1590,31 @@ SetSplitAssembliesIntoMultipleDocuments sets SplitAssembliesIntoMultipleDocument
 
 HasSplitAssembliesIntoMultipleDocuments returns a boolean if a field has been set.
 
+### GetStepParasolidPreprocessingOption
+
+`func (o *BTTranslateFormatParams) GetStepParasolidPreprocessingOption() GBTPreProcessParasolidOption`
+
+GetStepParasolidPreprocessingOption returns the StepParasolidPreprocessingOption field if non-nil, zero value otherwise.
+
+### GetStepParasolidPreprocessingOptionOk
+
+`func (o *BTTranslateFormatParams) GetStepParasolidPreprocessingOptionOk() (*GBTPreProcessParasolidOption, bool)`
+
+GetStepParasolidPreprocessingOptionOk returns a tuple with the StepParasolidPreprocessingOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStepParasolidPreprocessingOption
+
+`func (o *BTTranslateFormatParams) SetStepParasolidPreprocessingOption(v GBTPreProcessParasolidOption)`
+
+SetStepParasolidPreprocessingOption sets StepParasolidPreprocessingOption field to given value.
+
+### HasStepParasolidPreprocessingOption
+
+`func (o *BTTranslateFormatParams) HasStepParasolidPreprocessingOption() bool`
+
+HasStepParasolidPreprocessingOption returns a boolean if a field has been set.
+
 ### GetStepVersionString
 
 `func (o *BTTranslateFormatParams) GetStepVersionString() string`
@@ -1737,6 +1764,31 @@ SetUploadId sets UploadId field to given value.
 `func (o *BTTranslateFormatParams) HasUploadId() bool`
 
 HasUploadId returns a boolean if a field has been set.
+
+### GetUseGltfCompression
+
+`func (o *BTTranslateFormatParams) GetUseGltfCompression() bool`
+
+GetUseGltfCompression returns the UseGltfCompression field if non-nil, zero value otherwise.
+
+### GetUseGltfCompressionOk
+
+`func (o *BTTranslateFormatParams) GetUseGltfCompressionOk() (*bool, bool)`
+
+GetUseGltfCompressionOk returns a tuple with the UseGltfCompression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseGltfCompression
+
+`func (o *BTTranslateFormatParams) SetUseGltfCompression(v bool)`
+
+SetUseGltfCompression sets UseGltfCompression field to given value.
+
+### HasUseGltfCompression
+
+`func (o *BTTranslateFormatParams) HasUseGltfCompression() bool`
+
+HasUseGltfCompression returns a boolean if a field has been set.
 
 ### GetUseIgesCompatibilityMode
 

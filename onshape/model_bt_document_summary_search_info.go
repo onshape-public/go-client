@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -29,6 +29,7 @@ type BTDocumentSummarySearchInfo struct {
 	Description                   *string                 `json:"description,omitempty"`
 	DocumentLabels                []BTDocumentLabelInfo   `json:"documentLabels,omitempty"`
 	DocumentType                  *int32                  `json:"documentType,omitempty"`
+	ForceExportRules              *bool                   `json:"forceExportRules,omitempty"`
 	HasReleaseRevisionableObjects *bool                   `json:"hasReleaseRevisionableObjects,omitempty"`
 	HasRelevantInsertables        *bool                   `json:"hasRelevantInsertables,omitempty"`
 	// URI to fetch complete information of the resource.
@@ -470,6 +471,38 @@ func (o *BTDocumentSummarySearchInfo) HasDocumentType() bool {
 // SetDocumentType gets a reference to the given int32 and assigns it to the DocumentType field.
 func (o *BTDocumentSummarySearchInfo) SetDocumentType(v int32) {
 	o.DocumentType = &v
+}
+
+// GetForceExportRules returns the ForceExportRules field value if set, zero value otherwise.
+func (o *BTDocumentSummarySearchInfo) GetForceExportRules() bool {
+	if o == nil || o.ForceExportRules == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ForceExportRules
+}
+
+// GetForceExportRulesOk returns a tuple with the ForceExportRules field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummarySearchInfo) GetForceExportRulesOk() (*bool, bool) {
+	if o == nil || o.ForceExportRules == nil {
+		return nil, false
+	}
+	return o.ForceExportRules, true
+}
+
+// HasForceExportRules returns a boolean if a field has been set.
+func (o *BTDocumentSummarySearchInfo) HasForceExportRules() bool {
+	if o != nil && o.ForceExportRules != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetForceExportRules gets a reference to the given bool and assigns it to the ForceExportRules field.
+func (o *BTDocumentSummarySearchInfo) SetForceExportRules(v bool) {
+	o.ForceExportRules = &v
 }
 
 // GetHasReleaseRevisionableObjects returns the HasReleaseRevisionableObjects field value if set, zero value otherwise.
@@ -1661,6 +1694,9 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DocumentType != nil {
 		toSerialize["documentType"] = o.DocumentType
+	}
+	if o.ForceExportRules != nil {
+		toSerialize["forceExportRules"] = o.ForceExportRules
 	}
 	if o.HasReleaseRevisionableObjects != nil {
 		toSerialize["hasReleaseRevisionableObjects"] = o.HasReleaseRevisionableObjects

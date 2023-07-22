@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -38,6 +38,7 @@ type BTAssemblySimulation2246 struct {
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
 	Modal                                  *bool                                     `json:"modal,omitempty"`
+	NumberOfModes                          *float64                                  `json:"numberOfModes,omitempty"`
 	Type                                   *GBTAssemblySimulationType                `json:"type,omitempty"`
 }
 
@@ -730,6 +731,38 @@ func (o *BTAssemblySimulation2246) SetModal(v bool) {
 	o.Modal = &v
 }
 
+// GetNumberOfModes returns the NumberOfModes field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetNumberOfModes() float64 {
+	if o == nil || o.NumberOfModes == nil {
+		var ret float64
+		return ret
+	}
+	return *o.NumberOfModes
+}
+
+// GetNumberOfModesOk returns a tuple with the NumberOfModes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetNumberOfModesOk() (*float64, bool) {
+	if o == nil || o.NumberOfModes == nil {
+		return nil, false
+	}
+	return o.NumberOfModes, true
+}
+
+// HasNumberOfModes returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasNumberOfModes() bool {
+	if o != nil && o.NumberOfModes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNumberOfModes gets a reference to the given float64 and assigns it to the NumberOfModes field.
+func (o *BTAssemblySimulation2246) SetNumberOfModes(v float64) {
+	o.NumberOfModes = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *BTAssemblySimulation2246) GetType() GBTAssemblySimulationType {
 	if o == nil || o.Type == nil {
@@ -826,6 +859,9 @@ func (o BTAssemblySimulation2246) MarshalJSON() ([]byte, error) {
 	}
 	if o.Modal != nil {
 		toSerialize["modal"] = o.Modal
+	}
+	if o.NumberOfModes != nil {
+		toSerialize["numberOfModes"] = o.NumberOfModes
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

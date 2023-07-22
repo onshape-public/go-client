@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -61,38 +61,40 @@ type BTTranslateFormatParams struct {
 	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
 	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
 	// Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-	MaximumChordLength                   *float64 `json:"maximumChordLength,omitempty"`
-	NotifyUser                           *bool    `json:"notifyUser,omitempty"`
-	OnePartPerDoc                        *bool    `json:"onePartPerDoc,omitempty"`
-	OriginalForeignId                    *string  `json:"originalForeignId,omitempty"`
-	ParentId                             *string  `json:"parentId,omitempty"`
-	PartIds                              *string  `json:"partIds,omitempty"`
-	Password                             *string  `json:"password,omitempty"`
-	PasswordRequired                     *bool    `json:"passwordRequired,omitempty"`
-	ProcessedForeignId                   *string  `json:"processedForeignId,omitempty"`
-	ProjectId                            *string  `json:"projectId,omitempty"`
-	ProxyDocumentId                      *string  `json:"proxyDocumentId,omitempty"`
-	ProxyElementId                       *string  `json:"proxyElementId,omitempty"`
-	ProxyWorkspaceVersion                *string  `json:"proxyWorkspaceVersion,omitempty"`
-	ProxyWorkspaceVersionId              *string  `json:"proxyWorkspaceVersionId,omitempty"`
-	SelectablePdfText                    *bool    `json:"selectablePdfText,omitempty"`
-	SendCopyToMe                         *bool    `json:"sendCopyToMe,omitempty"`
-	SheetIndices                         []int32  `json:"sheetIndices,omitempty"`
-	ShowOverriddenDimensions             *bool    `json:"showOverriddenDimensions,omitempty"`
-	SkipBodyshop                         *bool    `json:"skipBodyshop,omitempty"`
-	SourceName                           *string  `json:"sourceName,omitempty"`
-	SpecifyUnits                         *bool    `json:"specifyUnits,omitempty"`
-	SplinesAsPolylines                   *bool    `json:"splinesAsPolylines,omitempty"`
-	SplitAssembliesIntoMultipleDocuments *bool    `json:"splitAssembliesIntoMultipleDocuments,omitempty"`
-	StepVersionString                    *string  `json:"stepVersionString,omitempty"`
-	StoreInDocument                      *bool    `json:"storeInDocument,omitempty"`
-	TextAsGeometry                       *bool    `json:"textAsGeometry,omitempty"`
-	TriggerAutoDownload                  *bool    `json:"triggerAutoDownload,omitempty"`
-	Unit                                 *string  `json:"unit,omitempty"`
-	UploadId                             *string  `json:"uploadId,omitempty"`
-	UseIgesCompatibilityMode             *bool    `json:"useIgesCompatibilityMode,omitempty"`
-	ValidForDays                         *int32   `json:"validForDays,omitempty"`
-	VersionString                        *string  `json:"versionString,omitempty"`
+	MaximumChordLength                   *float64                      `json:"maximumChordLength,omitempty"`
+	NotifyUser                           *bool                         `json:"notifyUser,omitempty"`
+	OnePartPerDoc                        *bool                         `json:"onePartPerDoc,omitempty"`
+	OriginalForeignId                    *string                       `json:"originalForeignId,omitempty"`
+	ParentId                             *string                       `json:"parentId,omitempty"`
+	PartIds                              *string                       `json:"partIds,omitempty"`
+	Password                             *string                       `json:"password,omitempty"`
+	PasswordRequired                     *bool                         `json:"passwordRequired,omitempty"`
+	ProcessedForeignId                   *string                       `json:"processedForeignId,omitempty"`
+	ProjectId                            *string                       `json:"projectId,omitempty"`
+	ProxyDocumentId                      *string                       `json:"proxyDocumentId,omitempty"`
+	ProxyElementId                       *string                       `json:"proxyElementId,omitempty"`
+	ProxyWorkspaceVersion                *string                       `json:"proxyWorkspaceVersion,omitempty"`
+	ProxyWorkspaceVersionId              *string                       `json:"proxyWorkspaceVersionId,omitempty"`
+	SelectablePdfText                    *bool                         `json:"selectablePdfText,omitempty"`
+	SendCopyToMe                         *bool                         `json:"sendCopyToMe,omitempty"`
+	SheetIndices                         []int32                       `json:"sheetIndices,omitempty"`
+	ShowOverriddenDimensions             *bool                         `json:"showOverriddenDimensions,omitempty"`
+	SkipBodyshop                         *bool                         `json:"skipBodyshop,omitempty"`
+	SourceName                           *string                       `json:"sourceName,omitempty"`
+	SpecifyUnits                         *bool                         `json:"specifyUnits,omitempty"`
+	SplinesAsPolylines                   *bool                         `json:"splinesAsPolylines,omitempty"`
+	SplitAssembliesIntoMultipleDocuments *bool                         `json:"splitAssembliesIntoMultipleDocuments,omitempty"`
+	StepParasolidPreprocessingOption     *GBTPreProcessParasolidOption `json:"stepParasolidPreprocessingOption,omitempty"`
+	StepVersionString                    *string                       `json:"stepVersionString,omitempty"`
+	StoreInDocument                      *bool                         `json:"storeInDocument,omitempty"`
+	TextAsGeometry                       *bool                         `json:"textAsGeometry,omitempty"`
+	TriggerAutoDownload                  *bool                         `json:"triggerAutoDownload,omitempty"`
+	Unit                                 *string                       `json:"unit,omitempty"`
+	UploadId                             *string                       `json:"uploadId,omitempty"`
+	UseGltfCompression                   *bool                         `json:"useGltfCompression,omitempty"`
+	UseIgesCompatibilityMode             *bool                         `json:"useIgesCompatibilityMode,omitempty"`
+	ValidForDays                         *int32                        `json:"validForDays,omitempty"`
+	VersionString                        *string                       `json:"versionString,omitempty"`
 }
 
 // NewBTTranslateFormatParams instantiates a new BTTranslateFormatParams object
@@ -2025,6 +2027,38 @@ func (o *BTTranslateFormatParams) SetSplitAssembliesIntoMultipleDocuments(v bool
 	o.SplitAssembliesIntoMultipleDocuments = &v
 }
 
+// GetStepParasolidPreprocessingOption returns the StepParasolidPreprocessingOption field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetStepParasolidPreprocessingOption() GBTPreProcessParasolidOption {
+	if o == nil || o.StepParasolidPreprocessingOption == nil {
+		var ret GBTPreProcessParasolidOption
+		return ret
+	}
+	return *o.StepParasolidPreprocessingOption
+}
+
+// GetStepParasolidPreprocessingOptionOk returns a tuple with the StepParasolidPreprocessingOption field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetStepParasolidPreprocessingOptionOk() (*GBTPreProcessParasolidOption, bool) {
+	if o == nil || o.StepParasolidPreprocessingOption == nil {
+		return nil, false
+	}
+	return o.StepParasolidPreprocessingOption, true
+}
+
+// HasStepParasolidPreprocessingOption returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasStepParasolidPreprocessingOption() bool {
+	if o != nil && o.StepParasolidPreprocessingOption != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStepParasolidPreprocessingOption gets a reference to the given GBTPreProcessParasolidOption and assigns it to the StepParasolidPreprocessingOption field.
+func (o *BTTranslateFormatParams) SetStepParasolidPreprocessingOption(v GBTPreProcessParasolidOption) {
+	o.StepParasolidPreprocessingOption = &v
+}
+
 // GetStepVersionString returns the StepVersionString field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetStepVersionString() string {
 	if o == nil || o.StepVersionString == nil {
@@ -2215,6 +2249,38 @@ func (o *BTTranslateFormatParams) HasUploadId() bool {
 // SetUploadId gets a reference to the given string and assigns it to the UploadId field.
 func (o *BTTranslateFormatParams) SetUploadId(v string) {
 	o.UploadId = &v
+}
+
+// GetUseGltfCompression returns the UseGltfCompression field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetUseGltfCompression() bool {
+	if o == nil || o.UseGltfCompression == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UseGltfCompression
+}
+
+// GetUseGltfCompressionOk returns a tuple with the UseGltfCompression field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetUseGltfCompressionOk() (*bool, bool) {
+	if o == nil || o.UseGltfCompression == nil {
+		return nil, false
+	}
+	return o.UseGltfCompression, true
+}
+
+// HasUseGltfCompression returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasUseGltfCompression() bool {
+	if o != nil && o.UseGltfCompression != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUseGltfCompression gets a reference to the given bool and assigns it to the UseGltfCompression field.
+func (o *BTTranslateFormatParams) SetUseGltfCompression(v bool) {
+	o.UseGltfCompression = &v
 }
 
 // GetUseIgesCompatibilityMode returns the UseIgesCompatibilityMode field value if set, zero value otherwise.
@@ -2495,6 +2561,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.SplitAssembliesIntoMultipleDocuments != nil {
 		toSerialize["splitAssembliesIntoMultipleDocuments"] = o.SplitAssembliesIntoMultipleDocuments
 	}
+	if o.StepParasolidPreprocessingOption != nil {
+		toSerialize["stepParasolidPreprocessingOption"] = o.StepParasolidPreprocessingOption
+	}
 	if o.StepVersionString != nil {
 		toSerialize["stepVersionString"] = o.StepVersionString
 	}
@@ -2512,6 +2581,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.UploadId != nil {
 		toSerialize["uploadId"] = o.UploadId
+	}
+	if o.UseGltfCompression != nil {
+		toSerialize["useGltfCompression"] = o.UseGltfCompression
 	}
 	if o.UseIgesCompatibilityMode != nil {
 		toSerialize["useIgesCompatibilityMode"] = o.UseIgesCompatibilityMode

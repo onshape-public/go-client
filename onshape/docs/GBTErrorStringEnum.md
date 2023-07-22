@@ -2679,6 +2679,22 @@
 
 * `GBTErrorStringEnumIsoclineFailed` (value: `"ISOCLINE_FAILED"`)
 
+* `GBTErrorStringEnumFgsGenerativeOptMaxIterations` (value: `"FGS_GENERATIVE_OPT_MAX_ITERATIONS"`)
+
+* `GBTErrorStringEnumFgsGenerativeTargetVolumeLow` (value: `"FGS_GENERATIVE_TARGET_VOLUME_LOW"`)
+
+* `GBTErrorStringEnumFgsGenerativeTargetVolumeLarge` (value: `"FGS_GENERATIVE_TARGET_VOLUME_LARGE"`)
+
+* `GBTErrorStringEnumFgsGenerativeThinGeneric` (value: `"FGS_GENERATIVE_THIN_GENERIC"`)
+
+* `GBTErrorStringEnumFgsGenerativeSymmetryDefProblem` (value: `"FGS_GENERATIVE_SYMMETRY_DEF_PROBLEM"`)
+
+* `GBTErrorStringEnumFgsGenerativeMinradiusSmall` (value: `"FGS_GENERATIVE_MINRADIUS_SMALL"`)
+
+* `GBTErrorStringEnumFgsGenerativeMinradiusLarge` (value: `"FGS_GENERATIVE_MINRADIUS_LARGE"`)
+
+* `GBTErrorStringEnumFgsGenerativeOptInvalidSetup` (value: `"FGS_GENERATIVE_OPT_INVALID_SETUP"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

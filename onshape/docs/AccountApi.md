@@ -160,6 +160,8 @@ Name | Type | Description  | Notes
 
 Get a list of all app purchases made for the specified plan.
 
+
+
 ### Example
 
 ```go

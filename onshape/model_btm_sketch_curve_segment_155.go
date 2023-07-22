@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.166.19032-0b307c4b0d0e
+API version: 1.167.19303-3cbf47a47fe4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -34,6 +34,7 @@ type BTMSketchCurveSegment155 struct {
 	InternalIds                         []string            `json:"internalIds,omitempty"`
 	EndParam                            *float64            `json:"endParam,omitempty"`
 	EndPointId                          *string             `json:"endPointId,omitempty"`
+	OffsetCurveExtensions               []float64           `json:"offsetCurveExtensions,omitempty"`
 	StartParam                          *float64            `json:"startParam,omitempty"`
 	StartPointId                        *string             `json:"startPointId,omitempty"`
 }
@@ -599,6 +600,38 @@ func (o *BTMSketchCurveSegment155) SetEndPointId(v string) {
 	o.EndPointId = &v
 }
 
+// GetOffsetCurveExtensions returns the OffsetCurveExtensions field value if set, zero value otherwise.
+func (o *BTMSketchCurveSegment155) GetOffsetCurveExtensions() []float64 {
+	if o == nil || o.OffsetCurveExtensions == nil {
+		var ret []float64
+		return ret
+	}
+	return o.OffsetCurveExtensions
+}
+
+// GetOffsetCurveExtensionsOk returns a tuple with the OffsetCurveExtensions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurveSegment155) GetOffsetCurveExtensionsOk() ([]float64, bool) {
+	if o == nil || o.OffsetCurveExtensions == nil {
+		return nil, false
+	}
+	return o.OffsetCurveExtensions, true
+}
+
+// HasOffsetCurveExtensions returns a boolean if a field has been set.
+func (o *BTMSketchCurveSegment155) HasOffsetCurveExtensions() bool {
+	if o != nil && o.OffsetCurveExtensions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOffsetCurveExtensions gets a reference to the given []float64 and assigns it to the OffsetCurveExtensions field.
+func (o *BTMSketchCurveSegment155) SetOffsetCurveExtensions(v []float64) {
+	o.OffsetCurveExtensions = v
+}
+
 // GetStartParam returns the StartParam field value if set, zero value otherwise.
 func (o *BTMSketchCurveSegment155) GetStartParam() float64 {
 	if o == nil || o.StartParam == nil {
@@ -715,6 +748,9 @@ func (o BTMSketchCurveSegment155) MarshalJSON() ([]byte, error) {
 	}
 	if o.EndPointId != nil {
 		toSerialize["endPointId"] = o.EndPointId
+	}
+	if o.OffsetCurveExtensions != nil {
+		toSerialize["offsetCurveExtensions"] = o.OffsetCurveExtensions
 	}
 	if o.StartParam != nil {
 		toSerialize["startParam"] = o.StartParam

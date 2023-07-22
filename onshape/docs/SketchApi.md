@@ -4,9 +4,9 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSketchBoundingBoxes**](SketchApi.md#GetSketchBoundingBoxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes | Retrieve sketch bounding boxes by document ID, workspace or version or microversion ID, tab ID, and sketch ID.
-[**GetSketchInfo**](SketchApi.md#GetSketchInfo) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches | Retrieve sketches by document ID, workspace or version or microversion ID, and tab ID.
-[**GetTessellatedEntities**](SketchApi.md#GetTessellatedEntities) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities | Retrieve tessellated entities of sketches by document ID, workspace or version or microversion ID, tab ID, and sketch ID.
+[**GetSketchBoundingBoxes**](SketchApi.md#GetSketchBoundingBoxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes | Get all bounding boxes for a sketch.
+[**GetSketchInfo**](SketchApi.md#GetSketchInfo) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches | Get information or all sketches in part studio.
+[**GetTessellatedEntities**](SketchApi.md#GetTessellatedEntities) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities | Get the tessellations of a sketch in a Part Studio.
 
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > BTBoundingBoxInfo GetSketchBoundingBoxes(ctx, did, wvm, wvmid, eid, sid).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve sketch bounding boxes by document ID, workspace or version or microversion ID, tab ID, and sketch ID.
+Get all bounding boxes for a sketch.
 
 ### Example
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetSketchInfo(ctx, did, wvm, wvmid, eid).Configuration(configuration).SketchId(sketchId).Output3D(output3D).CurvePoints(curvePoints).IncludeGeometry(includeGeometry).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve sketches by document ID, workspace or version or microversion ID, and tab ID.
+Get information or all sketches in part studio.
 
 ### Example
 
@@ -187,7 +187,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetTessellatedEntities(ctx, did, wvm, wvmid, eid, sid).Configuration(configuration).EntityId(entityId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve tessellated entities of sketches by document ID, workspace or version or microversion ID, tab ID, and sketch ID.
+Get the tessellations of a sketch in a Part Studio.
+
+
 
 ### Example
 
