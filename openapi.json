@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.167.19458-7ff87863110f",
+    "version" : "1.167.19740-5e8d8b0919a8",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green.svg",
       "backgroundColor" : "#ffffff",
@@ -30101,7 +30101,6 @@
             "BTMParameterInvalid-1664" : "#/components/schemas/BTMParameterInvalid-1664",
             "BTMParameterLookupTablePath-1419" : "#/components/schemas/BTMParameterLookupTablePath-1419",
             "BTMParameterMaterial-1388" : "#/components/schemas/BTMParameterMaterial-1388",
-            "BTMParameterMultiEnum-3411" : "#/components/schemas/BTMParameterMultiEnum-3411",
             "BTMParameterQuantity-147" : "#/components/schemas/BTMParameterQuantity-147",
             "BTMParameterQueryList-148" : "#/components/schemas/BTMParameterQueryList-148",
             "BTMParameterQueryWithOccurrenceList-67" : "#/components/schemas/BTMParameterQueryWithOccurrenceList-67",
@@ -30403,36 +30402,6 @@
             },
             "material" : {
               "$ref" : "#/components/schemas/BTPartMaterial-1445"
-            }
-          }
-        } ]
-      },
-      "BTMParameterMultiEnum-3411" : {
-        "type" : "object",
-        "properties" : {
-          "btType" : {
-            "type" : "string"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTMParameter-1"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
-              "type" : "string"
-            },
-            "enumName" : {
-              "type" : "string"
-            },
-            "namespace" : {
-              "type" : "string"
-            },
-            "values" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
             }
           }
         } ]
@@ -36016,7 +35985,6 @@
             "BTParameterSpecForeignId-172" : "#/components/schemas/BTParameterSpecForeignId-172",
             "BTParameterSpecLookupTablePath-761" : "#/components/schemas/BTParameterSpecLookupTablePath-761",
             "BTParameterSpecMaterial-2700" : "#/components/schemas/BTParameterSpecMaterial-2700",
-            "BTParameterSpecMultiEnum-3118" : "#/components/schemas/BTParameterSpecMultiEnum-3118",
             "BTParameterSpecNullableQuantity-715" : "#/components/schemas/BTParameterSpecNullableQuantity-715",
             "BTParameterSpecQuantity-173" : "#/components/schemas/BTParameterSpecQuantity-173",
             "BTParameterSpecQuery-174" : "#/components/schemas/BTParameterSpecQuery-174",
@@ -36095,34 +36063,6 @@
           "properties" : {
             "btType" : {
               "type" : "string"
-            }
-          }
-        } ]
-      },
-      "BTParameterSpecCategories-4083" : {
-        "type" : "object",
-        "properties" : {
-          "btType" : {
-            "type" : "string"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTParameterSpecMultiEnum-3118"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
-              "type" : "string"
-            },
-            "categoryIdToMetadataTypes" : {
-              "type" : "object",
-              "additionalProperties" : {
-                "type" : "array",
-                "items" : {
-                  "type" : "integer",
-                  "format" : "int32"
-                }
-              }
             }
           }
         } ]
@@ -36276,57 +36216,6 @@
           "properties" : {
             "btType" : {
               "type" : "string"
-            }
-          }
-        } ]
-      },
-      "BTParameterSpecMultiEnum-3118" : {
-        "type" : "object",
-        "properties" : {
-          "btType" : {
-            "type" : "string"
-          }
-        },
-        "discriminator" : {
-          "propertyName" : "btType",
-          "mapping" : {
-            "BTParameterSpecCategories-4083" : "#/components/schemas/BTParameterSpecCategories-4083"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTParameterSpec-6"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
-              "type" : "string"
-            },
-            "enumName" : {
-              "type" : "string"
-            },
-            "enumValueToVisibilityCondition" : {
-              "type" : "object",
-              "additionalProperties" : {
-                "$ref" : "#/components/schemas/BTParameterVisibilityCondition-177"
-              }
-            },
-            "multivalued" : {
-              "type" : "boolean"
-            },
-            "namespace" : {
-              "type" : "string"
-            },
-            "optionNames" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
-            },
-            "options" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
             }
           }
         } ]
