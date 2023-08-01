@@ -615,8 +615,6 @@ docs/BTMParameterLookupTablePath1419.md
 docs/BTMParameterLookupTablePath1419AllOf.md
 docs/BTMParameterMaterial1388.md
 docs/BTMParameterMaterial1388AllOf.md
-docs/BTMParameterMultiEnum3411.md
-docs/BTMParameterMultiEnum3411AllOf.md
 docs/BTMParameterNullableQuantity807.md
 docs/BTMParameterNullableQuantity807AllOf.md
 docs/BTMParameterProgress3232.md
@@ -900,8 +898,6 @@ docs/BTParameterSpecArray2600.md
 docs/BTParameterSpecArray2600AllOf.md
 docs/BTParameterSpecBoolean170.md
 docs/BTParameterSpecBoolean170AllOf.md
-docs/BTParameterSpecCategories4083.md
-docs/BTParameterSpecCategories4083AllOf.md
 docs/BTParameterSpecDatabase1071.md
 docs/BTParameterSpecDatabase1071AllOf.md
 docs/BTParameterSpecDerived736.md
@@ -916,8 +912,6 @@ docs/BTParameterSpecLookupTablePath761.md
 docs/BTParameterSpecLookupTablePath761AllOf.md
 docs/BTParameterSpecMaterial2700.md
 docs/BTParameterSpecMaterial2700AllOf.md
-docs/BTParameterSpecMultiEnum3118.md
-docs/BTParameterSpecMultiEnum3118AllOf.md
 docs/BTParameterSpecNullableQuantity715.md
 docs/BTParameterSpecNullableQuantity715AllOf.md
 docs/BTParameterSpecProgress3078.md
@@ -1748,7 +1742,6 @@ model_bt_parameter_spec_6.go
 model_bt_parameter_spec_appearance_1740.go
 model_bt_parameter_spec_array_2600.go
 model_bt_parameter_spec_boolean_170.go
-model_bt_parameter_spec_categories_4083.go
 model_bt_parameter_spec_database_1071.go
 model_bt_parameter_spec_derived_736.go
 model_bt_parameter_spec_enum_171.go
@@ -1756,7 +1749,6 @@ model_bt_parameter_spec_feature_list_703.go
 model_bt_parameter_spec_foreign_id_172.go
 model_bt_parameter_spec_lookup_table_path_761.go
 model_bt_parameter_spec_material_2700.go
-model_bt_parameter_spec_multi_enum_3118.go
 model_bt_parameter_spec_nullable_quantity_715.go
 model_bt_parameter_spec_progress_3078.go
 model_bt_parameter_spec_quantity_173.go
@@ -2069,7 +2061,6 @@ model_btm_parameter_foreign_id_146.go
 model_btm_parameter_invalid_1664.go
 model_btm_parameter_lookup_table_path_1419.go
 model_btm_parameter_material_1388.go
-model_btm_parameter_multi_enum_3411.go
 model_btm_parameter_nullable_quantity_807.go
 model_btm_parameter_progress_3232.go
 model_btm_parameter_quantity_147.go

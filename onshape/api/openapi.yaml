@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.167.19458-7ff87863110f
+  version: 1.167.19740-5e8d8b0919a8
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -39045,7 +39045,6 @@ components:
           BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
           BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
           BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
-          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
           BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
           BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
           BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
@@ -39161,14 +39160,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTMParameter-1'
       - $ref: '#/components/schemas/BTMParameterMaterial_1388_allOf'
-      properties:
-        btType:
-          type: string
-      type: object
-    BTMParameterMultiEnum-3411:
-      allOf:
-      - $ref: '#/components/schemas/BTMParameter-1'
-      - $ref: '#/components/schemas/BTMParameterMultiEnum_3411_allOf'
       properties:
         btType:
           type: string
@@ -43049,7 +43040,6 @@ components:
           BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
           BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
           BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
-          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
           BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
           BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
           BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
@@ -43145,14 +43135,6 @@ components:
         btType:
           type: string
       type: object
-    BTParameterSpecCategories-4083:
-      allOf:
-      - $ref: '#/components/schemas/BTParameterSpecMultiEnum-3118'
-      - $ref: '#/components/schemas/BTParameterSpecCategories_4083_allOf'
-      properties:
-        btType:
-          type: string
-      type: object
     BTParameterSpecDatabase-1071:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpec-6'
@@ -43205,18 +43187,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpec-6'
       - $ref: '#/components/schemas/BTParameterSpecMaterial_2700_allOf'
-      properties:
-        btType:
-          type: string
-      type: object
-    BTParameterSpecMultiEnum-3118:
-      allOf:
-      - $ref: '#/components/schemas/BTParameterSpec-6'
-      - $ref: '#/components/schemas/BTParameterSpecMultiEnum_3118_allOf'
-      discriminator:
-        mapping:
-          BTParameterSpecCategories-4083: '#/components/schemas/BTParameterSpecCategories-4083'
-        propertyName: btType
       properties:
         btType:
           type: string
@@ -60637,20 +60607,6 @@ components:
           $ref: '#/components/schemas/BTPartMaterial-1445'
       type: object
       example: null
-    BTMParameterMultiEnum_3411_allOf:
-      properties:
-        btType:
-          type: string
-        enumName:
-          type: string
-        namespace:
-          type: string
-        values:
-          items:
-            type: string
-          type: array
-      type: object
-      example: null
     BTMParameterNullableQuantity_807_allOf:
       properties:
         btType:
@@ -61955,19 +61911,6 @@ components:
           type: string
       type: object
       example: null
-    BTParameterSpecCategories_4083_allOf:
-      properties:
-        btType:
-          type: string
-        categoryIdToMetadataTypes:
-          additionalProperties:
-            items:
-              format: int32
-              type: integer
-            type: array
-          type: object
-      type: object
-      example: null
     BTParameterSpecDatabase_1071_allOf:
       properties:
         btType:
@@ -62026,30 +61969,6 @@ components:
       properties:
         btType:
           type: string
-      type: object
-      example: null
-    BTParameterSpecMultiEnum_3118_allOf:
-      properties:
-        btType:
-          type: string
-        enumName:
-          type: string
-        enumValueToVisibilityCondition:
-          additionalProperties:
-            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
-          type: object
-        multivalued:
-          type: boolean
-        namespace:
-          type: string
-        optionNames:
-          items:
-            type: string
-          type: array
-        options:
-          items:
-            type: string
-          type: array
       type: object
       example: null
     BTParameterSpecNullableQuantity_715_allOf:
