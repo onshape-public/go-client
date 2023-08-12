@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
+**PublishedVersionId** | Pointer to **string** |  | [optional] 
 **RecentVersion** | Pointer to [**BTBaseInfo**](BTBaseInfo.md) |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
 **Sequence** | Pointer to **string** |  | [optional] 
@@ -971,6 +972,31 @@ SetPublic sets Public field to given value.
 `func (o *BTDocumentSummaryInfo) HasPublic() bool`
 
 HasPublic returns a boolean if a field has been set.
+
+### GetPublishedVersionId
+
+`func (o *BTDocumentSummaryInfo) GetPublishedVersionId() string`
+
+GetPublishedVersionId returns the PublishedVersionId field if non-nil, zero value otherwise.
+
+### GetPublishedVersionIdOk
+
+`func (o *BTDocumentSummaryInfo) GetPublishedVersionIdOk() (*string, bool)`
+
+GetPublishedVersionIdOk returns a tuple with the PublishedVersionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublishedVersionId
+
+`func (o *BTDocumentSummaryInfo) SetPublishedVersionId(v string)`
+
+SetPublishedVersionId sets PublishedVersionId field to given value.
+
+### HasPublishedVersionId
+
+`func (o *BTDocumentSummaryInfo) HasPublishedVersionId() bool`
+
+HasPublishedVersionId returns a boolean if a field has been set.
 
 ### GetRecentVersion
 

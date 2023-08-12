@@ -5,7 +5,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetSketchBoundingBoxes**](SketchApi.md#GetSketchBoundingBoxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes | Get all bounding boxes for a sketch.
-[**GetSketchInfo**](SketchApi.md#GetSketchInfo) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches | Get information or all sketches in part studio.
+[**GetSketchInfo**](SketchApi.md#GetSketchInfo) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches | Get information on all sketches in part studio.
 [**GetTessellatedEntities**](SketchApi.md#GetTessellatedEntities) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities | Get the tessellations of a sketch in a Part Studio.
 
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetSketchInfo(ctx, did, wvm, wvmid, eid).Configuration(configuration).SketchId(sketchId).Output3D(output3D).CurvePoints(curvePoints).IncludeGeometry(includeGeometry).LinkDocumentId(linkDocumentId).Execute()
 
-Get information or all sketches in part studio.
+Get information on all sketches in part studio.
 
 ### Example
 

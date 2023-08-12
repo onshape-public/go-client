@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.167.20169-88260985a0b6
+API version: 1.168.20454-7718daa9749d
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -25,6 +25,7 @@ type BTVersionOrWorkspaceParams struct {
 	MicroversionId            *string `json:"microversionId,omitempty"`
 	MissingBomTableTemplateId *string `json:"missingBomTableTemplateId,omitempty"`
 	Name                      *string `json:"name,omitempty"`
+	PublishVersion            *bool   `json:"publishVersion,omitempty"`
 	Purpose                   *int32  `json:"purpose,omitempty"`
 	ReadOnly                  *bool   `json:"readOnly,omitempty"`
 	VersionId                 *string `json:"versionId,omitempty"`
@@ -304,6 +305,38 @@ func (o *BTVersionOrWorkspaceParams) SetName(v string) {
 	o.Name = &v
 }
 
+// GetPublishVersion returns the PublishVersion field value if set, zero value otherwise.
+func (o *BTVersionOrWorkspaceParams) GetPublishVersion() bool {
+	if o == nil || o.PublishVersion == nil {
+		var ret bool
+		return ret
+	}
+	return *o.PublishVersion
+}
+
+// GetPublishVersionOk returns a tuple with the PublishVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTVersionOrWorkspaceParams) GetPublishVersionOk() (*bool, bool) {
+	if o == nil || o.PublishVersion == nil {
+		return nil, false
+	}
+	return o.PublishVersion, true
+}
+
+// HasPublishVersion returns a boolean if a field has been set.
+func (o *BTVersionOrWorkspaceParams) HasPublishVersion() bool {
+	if o != nil && o.PublishVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPublishVersion gets a reference to the given bool and assigns it to the PublishVersion field.
+func (o *BTVersionOrWorkspaceParams) SetPublishVersion(v bool) {
+	o.PublishVersion = &v
+}
+
 // GetPurpose returns the Purpose field value if set, zero value otherwise.
 func (o *BTVersionOrWorkspaceParams) GetPurpose() int32 {
 	if o == nil || o.Purpose == nil {
@@ -457,6 +490,9 @@ func (o BTVersionOrWorkspaceParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.PublishVersion != nil {
+		toSerialize["publishVersion"] = o.PublishVersion
 	}
 	if o.Purpose != nil {
 		toSerialize["purpose"] = o.Purpose

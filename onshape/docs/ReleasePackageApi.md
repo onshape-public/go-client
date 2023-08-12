@@ -4,11 +4,11 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateObsoletionPackage**](ReleasePackageApi.md#CreateObsoletionPackage) | **Post** /releasepackages/obsoletion/{wfid} | Update release package obsoletion by workflow ID.
-[**CreateReleasePackage**](ReleasePackageApi.md#CreateReleasePackage) | **Post** /releasepackages/release/{wfid} | Update release package release by workflow ID.
-[**GetCompanyReleaseWorkflow**](ReleasePackageApi.md#GetCompanyReleaseWorkflow) | **Get** /releasepackages/companyreleaseworkflow | Retrieve release packages company release workflow.
-[**GetReleasePackage**](ReleasePackageApi.md#GetReleasePackage) | **Get** /releasepackages/{rpid} | Retrieve release packages by release package ID.
-[**UpdateReleasePackage**](ReleasePackageApi.md#UpdateReleasePackage) | **Post** /releasepackages/{rpid} | Update release packages by release package ID.
+[**CreateObsoletionPackage**](ReleasePackageApi.md#CreateObsoletionPackage) | **Post** /releasepackages/obsoletion/{wfid} | Create an obsoletion package to make an existing revision obsolete.
+[**CreateReleasePackage**](ReleasePackageApi.md#CreateReleasePackage) | **Post** /releasepackages/release/{wfid} | Create a new release package for one or more items.
+[**GetCompanyReleaseWorkflow**](ReleasePackageApi.md#GetCompanyReleaseWorkflow) | **Get** /releasepackages/companyreleaseworkflow | Get information about the release/obsoletion workflow for a company-owned document.
+[**GetReleasePackage**](ReleasePackageApi.md#GetReleasePackage) | **Get** /releasepackages/{rpid} | Get details about the specified release package.
+[**UpdateReleasePackage**](ReleasePackageApi.md#UpdateReleasePackage) | **Post** /releasepackages/{rpid} | Update the release/obsoletion package/item properties.
 
 
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 > map[string]interface{} CreateObsoletionPackage(ctx, wfid).RevisionId(revisionId).DebugMode(debugMode).Execute()
 
-Update release package obsoletion by workflow ID.
+Create an obsoletion package to make an existing revision obsolete.
 
 ### Example
 
@@ -88,7 +88,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} CreateReleasePackage(ctx, wfid).BTReleasePackageParams(bTReleasePackageParams).DebugMode(debugMode).Execute()
 
-Update release package release by workflow ID.
+Create a new release package for one or more items.
+
+
 
 ### Example
 
@@ -160,7 +162,7 @@ Name | Type | Description  | Notes
 
 > BTActiveWorkflowInfo GetCompanyReleaseWorkflow(ctx).DocumentId(documentId).Execute()
 
-Retrieve release packages company release workflow.
+Get information about the release/obsoletion workflow for a company-owned document.
 
 ### Example
 
@@ -224,7 +226,7 @@ Name | Type | Description  | Notes
 
 > BTReleasePackageInfo GetReleasePackage(ctx, rpid).Detailed(detailed).Execute()
 
-Retrieve release packages by release package ID.
+Get details about the specified release package.
 
 ### Example
 
@@ -294,7 +296,9 @@ Name | Type | Description  | Notes
 
 > BTReleasePackageInfo UpdateReleasePackage(ctx, rpid).BTUpdateReleasePackageParams(bTUpdateReleasePackageParams).Action(action).Wfaction(wfaction).Execute()
 
-Update release packages by release package ID.
+Update the release/obsoletion package/item properties.
+
+
 
 ### Example
 

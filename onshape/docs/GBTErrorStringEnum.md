@@ -2695,6 +2695,12 @@
 
 * `GBTErrorStringEnumFgsGenerativeOptInvalidSetup` (value: `"FGS_GENERATIVE_OPT_INVALID_SETUP"`)
 
+* `GBTErrorStringEnumCurvePatternDistanceTooLarge` (value: `"CURVE_PATTERN_DISTANCE_TOO_LARGE"`)
+
+* `GBTErrorStringEnumBendReplacementHealFailed` (value: `"BEND_REPLACEMENT_HEAL_FAILED"`)
+
+* `GBTErrorStringEnumCannotCopyConstraints` (value: `"CANNOT_COPY_CONSTRAINTS"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

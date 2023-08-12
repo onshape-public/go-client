@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **NextMicroversionId** | Pointer to **string** |  | [optional] 
+**RestoreId** | Pointer to **string** | If this microversion is the result of a restore from another microversion, the restoreId will be the microversion Id of the original microversion that was restored. Otherwise this id will not be included within the response. | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 
@@ -155,6 +156,31 @@ SetNextMicroversionId sets NextMicroversionId field to given value.
 `func (o *BTDocumentHistoryInfo) HasNextMicroversionId() bool`
 
 HasNextMicroversionId returns a boolean if a field has been set.
+
+### GetRestoreId
+
+`func (o *BTDocumentHistoryInfo) GetRestoreId() string`
+
+GetRestoreId returns the RestoreId field if non-nil, zero value otherwise.
+
+### GetRestoreIdOk
+
+`func (o *BTDocumentHistoryInfo) GetRestoreIdOk() (*string, bool)`
+
+GetRestoreIdOk returns a tuple with the RestoreId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestoreId
+
+`func (o *BTDocumentHistoryInfo) SetRestoreId(v string)`
+
+SetRestoreId sets RestoreId field to given value.
+
+### HasRestoreId
+
+`func (o *BTDocumentHistoryInfo) HasRestoreId() bool`
+
+HasRestoreId returns a boolean if a field has been set.
 
 ### GetUserId
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.167.20169-88260985a0b6
+API version: 1.168.20454-7718daa9749d
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -22,8 +22,10 @@ type BTDocumentHistoryInfo struct {
 	Description        *string   `json:"description,omitempty"`
 	MicroversionId     *string   `json:"microversionId,omitempty"`
 	NextMicroversionId *string   `json:"nextMicroversionId,omitempty"`
-	UserId             *string   `json:"userId,omitempty"`
-	Username           *string   `json:"username,omitempty"`
+	// If this microversion is the result of a restore from another microversion, the restoreId will be the microversion Id of the original microversion that was restored. Otherwise this id will not be included within the response.
+	RestoreId *string `json:"restoreId,omitempty"`
+	UserId    *string `json:"userId,omitempty"`
+	Username  *string `json:"username,omitempty"`
 }
 
 // NewBTDocumentHistoryInfo instantiates a new BTDocumentHistoryInfo object
@@ -203,6 +205,38 @@ func (o *BTDocumentHistoryInfo) SetNextMicroversionId(v string) {
 	o.NextMicroversionId = &v
 }
 
+// GetRestoreId returns the RestoreId field value if set, zero value otherwise.
+func (o *BTDocumentHistoryInfo) GetRestoreId() string {
+	if o == nil || o.RestoreId == nil {
+		var ret string
+		return ret
+	}
+	return *o.RestoreId
+}
+
+// GetRestoreIdOk returns a tuple with the RestoreId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentHistoryInfo) GetRestoreIdOk() (*string, bool) {
+	if o == nil || o.RestoreId == nil {
+		return nil, false
+	}
+	return o.RestoreId, true
+}
+
+// HasRestoreId returns a boolean if a field has been set.
+func (o *BTDocumentHistoryInfo) HasRestoreId() bool {
+	if o != nil && o.RestoreId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRestoreId gets a reference to the given string and assigns it to the RestoreId field.
+func (o *BTDocumentHistoryInfo) SetRestoreId(v string) {
+	o.RestoreId = &v
+}
+
 // GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *BTDocumentHistoryInfo) GetUserId() string {
 	if o == nil || o.UserId == nil {
@@ -283,6 +317,9 @@ func (o BTDocumentHistoryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.NextMicroversionId != nil {
 		toSerialize["nextMicroversionId"] = o.NextMicroversionId
+	}
+	if o.RestoreId != nil {
+		toSerialize["restoreId"] = o.RestoreId
 	}
 	if o.UserId != nil {
 		toSerialize["userId"] = o.UserId

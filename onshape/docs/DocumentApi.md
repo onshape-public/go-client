@@ -1130,7 +1130,7 @@ func main() {
     sortColumn := "sortColumn_example" // string | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. (optional) (default to "createdAt")
     sortOrder := "sortOrder_example" // string | Sort order. Options are desc (descending, the default), or asc (ascending). (optional) (default to "desc")
     offset := int32(56) // int32 | Offset. Determines where search results begin. Default value is 0. (optional) (default to 0)
-    limit := int32(56) // int32 | Number of results to return per page. Default value is 20 (also the maximum). (optional) (default to 20)
+    limit := int32(56) // int32 | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the `next` URL in the response to fetch the next page. (optional) (default to 20)
     label := "label_example" // string | Label (optional)
     project := "project_example" // string | Project (optional)
     parentId := "parentId_example" // string | Parent Id (optional)
@@ -1165,7 +1165,7 @@ Name | Type | Description  | Notes
  **sortColumn** | **string** | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. | [default to &quot;createdAt&quot;]
  **sortOrder** | **string** | Sort order. Options are desc (descending, the default), or asc (ascending). | [default to &quot;desc&quot;]
  **offset** | **int32** | Offset. Determines where search results begin. Default value is 0. | [default to 0]
- **limit** | **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [default to 20]
+ **limit** | **int32** | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the &#x60;next&#x60; URL in the response to fetch the next page. | [default to 20]
  **label** | **string** | Label | 
  **project** | **string** | Project | 
  **parentId** | **string** | Parent Id | 

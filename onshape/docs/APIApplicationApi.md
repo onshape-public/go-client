@@ -4,13 +4,13 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAppSettings**](APIApplicationApi.md#DeleteAppSettings) | **Delete** /applications/clients/{cid}/settings/users/{uid} | Delete application settings for a user by client ID and user ID. This API may only be used with an OAuth token and only by the current user.
-[**DeleteCompanyAppSettings**](APIApplicationApi.md#DeleteCompanyAppSettings) | **Delete** /applications/clients/{cid}/settings/companies/{cpid} | Delete company level settings for this application by client ID and company ID. This API may only be used with an OAuth token and only by the current user.
-[**GetApplicableExtensionsForClient**](APIApplicationApi.md#GetApplicableExtensionsForClient) | **Get** /applications/extensions/user/{uid}/client/{cid} | 
-[**GetCompanyAppSettings**](APIApplicationApi.md#GetCompanyAppSettings) | **Get** /applications/clients/{cid}/settings/companies/{cpid} | Retrieve company level settings for this application by client ID and company ID. This API may only be used with an OAuth token and only by the current user.
-[**GetUserAppSettings**](APIApplicationApi.md#GetUserAppSettings) | **Get** /applications/clients/{cid}/settings/users/{uid} | Retrieve application settings for a user by client ID and user ID. This API may only be used with an OAuth token and only by the current user.
-[**UpdateAppCompanySettings**](APIApplicationApi.md#UpdateAppCompanySettings) | **Post** /applications/clients/{cid}/settings/companies/{cpid} | Update or create company level settings for this application by client ID and company ID. This API may only be used with an OAuth token and only by the current user.
-[**UpdateAppSettings**](APIApplicationApi.md#UpdateAppSettings) | **Post** /applications/clients/{cid}/settings/users/{uid} | Update or create application settings for a user by client ID and user ID. This API may only be used with an OAuth token and only by the current user.
+[**DeleteAppSettings**](APIApplicationApi.md#DeleteAppSettings) | **Delete** /applications/clients/{cid}/settings/users/{uid} | Delete a user&#39;s application preference settings.
+[**DeleteCompanyAppSettings**](APIApplicationApi.md#DeleteCompanyAppSettings) | **Delete** /applications/clients/{cid}/settings/companies/{cpid} | Delete a company&#39;s application preference settings.
+[**GetApplicableExtensionsForClient**](APIApplicationApi.md#GetApplicableExtensionsForClient) | **Get** /applications/extensions/user/{uid}/client/{cid} | Get a list of the client extensions the specified user has granted/accepted terms for.
+[**GetCompanyAppSettings**](APIApplicationApi.md#GetCompanyAppSettings) | **Get** /applications/clients/{cid}/settings/companies/{cpid} | Get company-level preference settings for an application.
+[**GetUserAppSettings**](APIApplicationApi.md#GetUserAppSettings) | **Get** /applications/clients/{cid}/settings/users/{uid} | Get user-level preference settings for an application.
+[**UpdateAppCompanySettings**](APIApplicationApi.md#UpdateAppCompanySettings) | **Post** /applications/clients/{cid}/settings/companies/{cpid} | Update company preference settings for an application.
+[**UpdateAppSettings**](APIApplicationApi.md#UpdateAppSettings) | **Post** /applications/clients/{cid}/settings/users/{uid} | Update a user&#39;s application preference settings.
 
 
 
@@ -18,7 +18,9 @@ Method | HTTP request | Description
 
 > DeleteAppSettings(ctx, uid, cid).Key(key).Execute()
 
-Delete application settings for a user by client ID and user ID. This API may only be used with an OAuth token and only by the current user.
+Delete a user's application preference settings.
+
+
 
 ### Example
 
@@ -89,7 +91,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteCompanyAppSettings(ctx, cpid, cid).Key(key).Execute()
 
-Delete company level settings for this application by client ID and company ID. This API may only be used with an OAuth token and only by the current user.
+Delete a company's application preference settings.
+
+
 
 ### Example
 
@@ -162,9 +166,7 @@ Name | Type | Description  | Notes
 
 > []BTAPIApplicationExtensionInfo GetApplicableExtensionsForClient(ctx, uid, cid).ValidPurchases(validPurchases).Execute()
 
-
-
-
+Get a list of the client extensions the specified user has granted/accepted terms for.
 
 ### Example
 
@@ -237,7 +239,9 @@ Name | Type | Description  | Notes
 
 > BTUserAppSettingsInfo GetCompanyAppSettings(ctx, cpid, cid).DocumentId(documentId).Key(key).Execute()
 
-Retrieve company level settings for this application by client ID and company ID. This API may only be used with an OAuth token and only by the current user.
+Get company-level preference settings for an application.
+
+
 
 ### Example
 
@@ -312,7 +316,9 @@ Name | Type | Description  | Notes
 
 > BTUserAppSettingsInfo GetUserAppSettings(ctx, uid, cid).Key(key).Execute()
 
-Retrieve application settings for a user by client ID and user ID. This API may only be used with an OAuth token and only by the current user.
+Get user-level preference settings for an application.
+
+
 
 ### Example
 
@@ -385,7 +391,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdateAppCompanySettings(ctx, cpid, cid).BTUserAppSettingsParams(bTUserAppSettingsParams).Execute()
 
-Update or create company level settings for this application by client ID and company ID. This API may only be used with an OAuth token and only by the current user.
+Update company preference settings for an application.
+
+
 
 ### Example
 
@@ -458,7 +466,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdateAppSettings(ctx, uid, cid).BTUserAppSettingsParams(bTUserAppSettingsParams).Execute()
 
-Update or create application settings for a user by client ID and user ID. This API may only be used with an OAuth token and only by the current user.
+Update a user's application preference settings.
+
+
 
 ### Example
 

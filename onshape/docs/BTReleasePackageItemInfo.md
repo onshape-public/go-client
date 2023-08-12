@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **ReferenceIdsFromOriginalWorkspace** | Pointer to **[]string** |  | [optional] 
 **Rpid** | Pointer to **string** |  | [optional] 
 **SmallThumbnailHref** | Pointer to **string** |  | [optional] 
+**SyncedWithPLM** | Pointer to **bool** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 **WorkspaceId** | Pointer to **string** |  | [optional] 
@@ -754,6 +755,31 @@ SetSmallThumbnailHref sets SmallThumbnailHref field to given value.
 `func (o *BTReleasePackageItemInfo) HasSmallThumbnailHref() bool`
 
 HasSmallThumbnailHref returns a boolean if a field has been set.
+
+### GetSyncedWithPLM
+
+`func (o *BTReleasePackageItemInfo) GetSyncedWithPLM() bool`
+
+GetSyncedWithPLM returns the SyncedWithPLM field if non-nil, zero value otherwise.
+
+### GetSyncedWithPLMOk
+
+`func (o *BTReleasePackageItemInfo) GetSyncedWithPLMOk() (*bool, bool)`
+
+GetSyncedWithPLMOk returns a tuple with the SyncedWithPLM field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSyncedWithPLM
+
+`func (o *BTReleasePackageItemInfo) SetSyncedWithPLM(v bool)`
+
+SetSyncedWithPLM sets SyncedWithPLM field to given value.
+
+### HasSyncedWithPLM
+
+`func (o *BTReleasePackageItemInfo) HasSyncedWithPLM() bool`
+
+HasSyncedWithPLM returns a boolean if a field has been set.
 
 ### GetVersionId
 

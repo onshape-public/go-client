@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CanCurrentUserManageWorkflows** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSeeArenaItemLink** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncBomToArena** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncRevisionsToArena** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncToArena** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncVersionsToArena** | Pointer to **bool** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
@@ -198,6 +199,31 @@ SetCanCurrentUserSyncBomToArena sets CanCurrentUserSyncBomToArena field to given
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToArena() bool`
 
 HasCanCurrentUserSyncBomToArena returns a boolean if a field has been set.
+
+### GetCanCurrentUserSyncRevisionsToArena
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToArena() bool`
+
+GetCanCurrentUserSyncRevisionsToArena returns the CanCurrentUserSyncRevisionsToArena field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncRevisionsToArenaOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToArenaOk() (*bool, bool)`
+
+GetCanCurrentUserSyncRevisionsToArenaOk returns a tuple with the CanCurrentUserSyncRevisionsToArena field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncRevisionsToArena
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncRevisionsToArena(v bool)`
+
+SetCanCurrentUserSyncRevisionsToArena sets CanCurrentUserSyncRevisionsToArena field to given value.
+
+### HasCanCurrentUserSyncRevisionsToArena
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncRevisionsToArena() bool`
+
+HasCanCurrentUserSyncRevisionsToArena returns a boolean if a field has been set.
 
 ### GetCanCurrentUserSyncToArena
 

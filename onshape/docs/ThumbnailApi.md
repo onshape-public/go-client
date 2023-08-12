@@ -4,17 +4,17 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApplicationThumbnails**](ThumbnailApi.md#DeleteApplicationThumbnails) | **Delete** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Delete application tab thumbnail by document ID, workspace or version ID, and tab ID.
+[**DeleteApplicationThumbnails**](ThumbnailApi.md#DeleteApplicationThumbnails) | **Delete** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Delete an element&#39;s thumbnail.
 [**GetDocumentThumbnail**](ThumbnailApi.md#GetDocumentThumbnail) | **Get** /thumbnails/d/{did}/w/{wid} | Get the thumbnail info for the specified workspace of a document.
-[**GetDocumentThumbnailWithSize**](ThumbnailApi.md#GetDocumentThumbnailWithSize) | **Get** /thumbnails/d/{did}/w/{wid}/s/{sz} | Retrieve thumbnail information for a document, with a specified size in pixels by document ID and workspace ID.
-[**GetElementThumbnail**](ThumbnailApi.md#GetElementThumbnail) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Retrieve thumbnail information for a tab by document ID, workspace or version ID, and tab ID.
-[**GetElementThumbnailWithApiConfiguration**](ThumbnailApi.md#GetElementThumbnailWithApiConfiguration) | **Get** /thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz} | Retrieve thumbnail information for a tab, with a specified size in pixels by document ID, workspace ID, tab ID, and configuration ID.
-[**GetElementThumbnailWithSize**](ThumbnailApi.md#GetElementThumbnailWithSize) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid}/s/{sz} | Retrieve thumbnail information for a tab, with a specified size in pixels by document ID, workspace ID, and tab ID.
-[**GetThumbnailForDocument**](ThumbnailApi.md#GetThumbnailForDocument) | **Get** /thumbnails/d/{did} | Retrieve thumbnail information for document in default workspace by document ID.
+[**GetDocumentThumbnailWithSize**](ThumbnailApi.md#GetDocumentThumbnailWithSize) | **Get** /thumbnails/d/{did}/w/{wid}/s/{sz} | Get the thumbnail image with the given size for the specified document and workspace.
+[**GetElementThumbnail**](ThumbnailApi.md#GetElementThumbnail) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Get the thumbnail info structure for the specified element.
+[**GetElementThumbnailWithApiConfiguration**](ThumbnailApi.md#GetElementThumbnailWithApiConfiguration) | **Get** /thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz} | Get the thumbnail image with the given configuration for the specified element.
+[**GetElementThumbnailWithSize**](ThumbnailApi.md#GetElementThumbnailWithSize) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid}/s/{sz} | Get the thumbnail image with the given size for the specified element.
+[**GetThumbnailForDocument**](ThumbnailApi.md#GetThumbnailForDocument) | **Get** /thumbnails/d/{did} | Get the thumbnail info for the specified document in the default workspace.
 [**GetThumbnailForDocumentAndVersion**](ThumbnailApi.md#GetThumbnailForDocumentAndVersion) | **Get** /thumbnails/d/{did}/v/{vid} | Get the thumbnail info for the specified version of a document.
-[**GetThumbnailForDocumentAndVersionOld**](ThumbnailApi.md#GetThumbnailForDocumentAndVersionOld) | **Get** /thumbnails/document/{did}/version/{vid} | Retrieve thumbnail information for a document at a specified version by document ID and version ID.
-[**GetThumbnailForDocumentOld**](ThumbnailApi.md#GetThumbnailForDocumentOld) | **Get** /thumbnails/document/{did} | Retrieve thumbnail information for a document in default workspace by document ID.
-[**SetApplicationElementThumbnail**](ThumbnailApi.md#SetApplicationElementThumbnail) | **Post** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Update application tab thumbnail by document ID, workspace or version ID, and tab ID.
+[**GetThumbnailForDocumentAndVersionOld**](ThumbnailApi.md#GetThumbnailForDocumentAndVersionOld) | **Get** /thumbnails/document/{did}/version/{vid} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocumentAndVersion&#x60;.
+[**GetThumbnailForDocumentOld**](ThumbnailApi.md#GetThumbnailForDocumentOld) | **Get** /thumbnails/document/{did} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocument&#x60;.
+[**SetApplicationElementThumbnail**](ThumbnailApi.md#SetApplicationElementThumbnail) | **Post** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Set the thumbnail image for an application element.
 
 
 
@@ -22,7 +22,9 @@ Method | HTTP request | Description
 
 > map[string]interface{} DeleteApplicationThumbnails(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
 
-Delete application tab thumbnail by document ID, workspace or version ID, and tab ID.
+Delete an element's thumbnail.
+
+
 
 ### Example
 
@@ -174,7 +176,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetDocumentThumbnailWithSize(ctx, did, wid, sz).T(t).SkipDefaultImage(skipDefaultImage).Execute()
 
-Retrieve thumbnail information for a document, with a specified size in pixels by document ID and workspace ID.
+Get the thumbnail image with the given size for the specified document and workspace.
+
+
 
 ### Example
 
@@ -252,7 +256,9 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetElementThumbnail(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve thumbnail information for a tab by document ID, workspace or version ID, and tab ID.
+Get the thumbnail info structure for the specified element.
+
+
 
 ### Example
 
@@ -331,7 +337,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetElementThumbnailWithApiConfiguration(ctx, did, wid, eid, cid, sz).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
 
-Retrieve thumbnail information for a tab, with a specified size in pixels by document ID, workspace ID, tab ID, and configuration ID.
+Get the thumbnail image with the given configuration for the specified element.
+
+
 
 ### Example
 
@@ -419,7 +427,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetElementThumbnailWithSize(ctx, did, wv, wvid, eid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).Execute()
 
-Retrieve thumbnail information for a tab, with a specified size in pixels by document ID, workspace ID, and tab ID.
+Get the thumbnail image with the given size for the specified element.
 
 ### Example
 
@@ -507,7 +515,9 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetThumbnailForDocument(ctx, did).Execute()
 
-Retrieve thumbnail information for document in default workspace by document ID.
+Get the thumbnail info for the specified document in the default workspace.
+
+
 
 ### Example
 
@@ -650,7 +660,9 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetThumbnailForDocumentAndVersionOld(ctx, did, vid).Execute()
 
-Retrieve thumbnail information for a document at a specified version by document ID and version ID.
+This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion`.
+
+
 
 ### Example
 
@@ -721,7 +733,9 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetThumbnailForDocumentOld(ctx, did).Execute()
 
-Retrieve thumbnail information for a document in default workspace by document ID.
+This endpoint will be deprecated soon. Use `getThumbnailForDocument`.
+
+
 
 ### Example
 
@@ -789,7 +803,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} SetApplicationElementThumbnail(ctx, did, wv, wvid, eid).BTApplicationElementThumbnailParamsArray(bTApplicationElementThumbnailParamsArray).LinkDocumentId(linkDocumentId).Overwrite(overwrite).Execute()
 
-Update application tab thumbnail by document ID, workspace or version ID, and tab ID.
+Set the thumbnail image for an application element.
+
+
 
 ### Example
 
