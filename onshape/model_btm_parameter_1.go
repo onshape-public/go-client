@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.167.20169-88260985a0b6
+API version: 1.168.20454-7718daa9749d
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -38,6 +38,11 @@ func (o *BTMParameterReferenceImage2014) AsBTMParameter1() *BTMParameter1 {
 
 // BTMParameterBlobReference1679AsBTMParameter1 is a convenience function that returns BTMParameterBlobReference1679 wrapped in BTMParameter1
 func (o *BTMParameterBlobReference1679) AsBTMParameter1() *BTMParameter1 {
+	return &BTMParameter1{o}
+}
+
+// BTMParameterMultiEnum3411AsBTMParameter1 is a convenience function that returns BTMParameterMultiEnum3411 wrapped in BTMParameter1
+func (o *BTMParameterMultiEnum3411) AsBTMParameter1() *BTMParameter1 {
 	return &BTMParameter1{o}
 }
 
@@ -557,6 +562,20 @@ func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameter1 = nil
 			return fmt.Errorf("Failed to unmarshal BTMParameter1 as BTMParameterMaterial1388: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterMultiEnum-3411'
+	if jsonDict["btType"] == "BTMParameterMultiEnum-3411" {
+		// try to unmarshal JSON data into BTMParameterMultiEnum3411
+		var qr *BTMParameterMultiEnum3411
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameter1 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameter1 = nil
+			return fmt.Errorf("Failed to unmarshal BTMParameter1 as BTMParameterMultiEnum3411: %s", err.Error())
 		}
 	}
 

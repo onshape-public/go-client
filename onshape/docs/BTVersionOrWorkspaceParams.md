@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **MissingBomTableTemplateId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**PublishVersion** | Pointer to **bool** |  | [optional] 
 **Purpose** | Pointer to **int32** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -235,6 +236,31 @@ SetName sets Name field to given value.
 `func (o *BTVersionOrWorkspaceParams) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPublishVersion
+
+`func (o *BTVersionOrWorkspaceParams) GetPublishVersion() bool`
+
+GetPublishVersion returns the PublishVersion field if non-nil, zero value otherwise.
+
+### GetPublishVersionOk
+
+`func (o *BTVersionOrWorkspaceParams) GetPublishVersionOk() (*bool, bool)`
+
+GetPublishVersionOk returns a tuple with the PublishVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublishVersion
+
+`func (o *BTVersionOrWorkspaceParams) SetPublishVersion(v bool)`
+
+SetPublishVersion sets PublishVersion field to given value.
+
+### HasPublishVersion
+
+`func (o *BTVersionOrWorkspaceParams) HasPublishVersion() bool`
+
+HasPublishVersion returns a boolean if a field has been set.
 
 ### GetPurpose
 

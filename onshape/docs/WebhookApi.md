@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateWebhook**](WebhookApi.md#CreateWebhook) | **Post** /webhooks | Create a new webhook.
 [**GetWebhook**](WebhookApi.md#GetWebhook) | **Get** /webhooks/{webhookid} | Get webhook info by webhook ID.
-[**GetWebhooks**](WebhookApi.md#GetWebhooks) | **Get** /webhooks | Get a list of all webhooks registered bt a user or company.
+[**GetWebhooks**](WebhookApi.md#GetWebhooks) | **Get** /webhooks | Get a list of all webhooks registered by a user or company.
 [**PingWebhook**](WebhookApi.md#PingWebhook) | **Post** /webhooks/{webhookid}/ping | Ping a webhook.
 [**UnregisterWebhook**](WebhookApi.md#UnregisterWebhook) | **Delete** /webhooks/{webhookid} | Unregister a webhook.
 [**UpdateWebhook**](WebhookApi.md#UpdateWebhook) | **Post** /webhooks/{webhookid} | Update a webhook.
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTWebhookInfo GetWebhooks(ctx).Company(company).User(user).Offset(offset).Limit(limit).Execute()
 
-Get a list of all webhooks registered bt a user or company.
+Get a list of all webhooks registered by a user or company.
 
 ### Example
 

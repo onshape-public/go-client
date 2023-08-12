@@ -5,7 +5,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetOpenApi**](OpenApiApi.md#GetOpenApi) | **Get** /openapi | Get the OpenAPI specification for the Onshape REST API.
-[**GetTags**](OpenApiApi.md#GetTags) | **Get** /openapi/tags | Tags are used to group operations. For example, &#x60;Document&#x60; groups operations on documents.
+[**GetTags**](OpenApiApi.md#GetTags) | **Get** /openapi/tags | Get the list of tags in the Onshape OpenAPI specification.
 
 
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 > GetTags(ctx).Execute()
 
-Tags are used to group operations. For example, `Document` groups operations on documents.
+Get the list of tags in the Onshape OpenAPI specification.
 
 
 

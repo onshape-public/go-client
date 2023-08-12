@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.167.20169-88260985a0b6
+API version: 1.168.20454-7718daa9749d
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -23,6 +23,7 @@ type BTActiveWorkflowInfo struct {
 	CanCurrentUserManageWorkflows               *bool                     `json:"canCurrentUserManageWorkflows,omitempty"`
 	CanCurrentUserSeeArenaItemLink              *bool                     `json:"canCurrentUserSeeArenaItemLink,omitempty"`
 	CanCurrentUserSyncBomToArena                *bool                     `json:"canCurrentUserSyncBomToArena,omitempty"`
+	CanCurrentUserSyncRevisionsToArena          *bool                     `json:"canCurrentUserSyncRevisionsToArena,omitempty"`
 	CanCurrentUserSyncToArena                   *bool                     `json:"canCurrentUserSyncToArena,omitempty"`
 	CanCurrentUserSyncVersionsToArena           *bool                     `json:"canCurrentUserSyncVersionsToArena,omitempty"`
 	CompanyId                                   *string                   `json:"companyId,omitempty"`
@@ -251,6 +252,38 @@ func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToArena() bool {
 // SetCanCurrentUserSyncBomToArena gets a reference to the given bool and assigns it to the CanCurrentUserSyncBomToArena field.
 func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncBomToArena(v bool) {
 	o.CanCurrentUserSyncBomToArena = &v
+}
+
+// GetCanCurrentUserSyncRevisionsToArena returns the CanCurrentUserSyncRevisionsToArena field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToArena() bool {
+	if o == nil || o.CanCurrentUserSyncRevisionsToArena == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserSyncRevisionsToArena
+}
+
+// GetCanCurrentUserSyncRevisionsToArenaOk returns a tuple with the CanCurrentUserSyncRevisionsToArena field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToArenaOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserSyncRevisionsToArena == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserSyncRevisionsToArena, true
+}
+
+// HasCanCurrentUserSyncRevisionsToArena returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncRevisionsToArena() bool {
+	if o != nil && o.CanCurrentUserSyncRevisionsToArena != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserSyncRevisionsToArena gets a reference to the given bool and assigns it to the CanCurrentUserSyncRevisionsToArena field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncRevisionsToArena(v bool) {
+	o.CanCurrentUserSyncRevisionsToArena = &v
 }
 
 // GetCanCurrentUserSyncToArena returns the CanCurrentUserSyncToArena field value if set, zero value otherwise.
@@ -880,6 +913,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CanCurrentUserSyncBomToArena != nil {
 		toSerialize["canCurrentUserSyncBomToArena"] = o.CanCurrentUserSyncBomToArena
+	}
+	if o.CanCurrentUserSyncRevisionsToArena != nil {
+		toSerialize["canCurrentUserSyncRevisionsToArena"] = o.CanCurrentUserSyncRevisionsToArena
 	}
 	if o.CanCurrentUserSyncToArena != nil {
 		toSerialize["canCurrentUserSyncToArena"] = o.CanCurrentUserSyncToArena

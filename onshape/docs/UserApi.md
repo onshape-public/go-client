@@ -4,9 +4,9 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetUserSettings**](UserApi.md#GetUserSettings) | **Get** /users/{uid}/settings | Retrieve user settings by user ID.
-[**GetUserSettingsCurrentLoggedInUser**](UserApi.md#GetUserSettingsCurrentLoggedInUser) | **Get** /users/settings | Get user settings for the currently signed-in user if there is one, or else return the default settings.
-[**Session**](UserApi.md#Session) | **Post** /users/session | Check if current user is signed-in.Information returned depends on OAuth2ReadPII scope.
+[**GetUserSettings**](UserApi.md#GetUserSettings) | **Get** /users/{uid}/settings | Get the default user settings that are used when the user creates a new document.
+[**GetUserSettingsCurrentLoggedInUser**](UserApi.md#GetUserSettingsCurrentLoggedInUser) | **Get** /users/settings | Get the user settings for currently signed in user.
+[**Session**](UserApi.md#Session) | **Post** /users/session | Returned information depends on caller&#39;s OAuth2ReadPll scope.
 [**SessionInfo**](UserApi.md#SessionInfo) | **Get** /users/sessioninfo | Check to see if a user is signed in to a current session.
 
 
@@ -15,7 +15,9 @@ Method | HTTP request | Description
 
 > BTUserSettingsInfo GetUserSettings(ctx, uid).Includematerials(includematerials).Execute()
 
-Retrieve user settings by user ID.
+Get the default user settings that are used when the user creates a new document.
+
+
 
 ### Example
 
@@ -85,7 +87,9 @@ Name | Type | Description  | Notes
 
 > BTUserSettingsInfo GetUserSettingsCurrentLoggedInUser(ctx).Includematerials(includematerials).Execute()
 
-Get user settings for the currently signed-in user if there is one, or else return the default settings.
+Get the user settings for currently signed in user.
+
+
 
 ### Example
 
@@ -149,9 +153,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} Session(ctx).BTLoginParams(bTLoginParams).Execute()
 
-Check if current user is signed-in.Information returned depends on OAuth2ReadPII scope.
-
-
+Returned information depends on caller's OAuth2ReadPll scope.
 
 ### Example
 

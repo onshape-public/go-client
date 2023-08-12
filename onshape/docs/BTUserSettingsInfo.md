@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AxisRotationLock** | Pointer to **bool** |  | [optional] 
 **CommonUnits** | Pointer to [**BTCommonUnitsInfo**](BTCommonUnitsInfo.md) |  | [optional] 
 **CustomColors** | Pointer to **[]string** |  | [optional] 
 **DefaultUnits** | Pointer to [**BTDefaultUnitsInfo**](BTDefaultUnitsInfo.md) |  | [optional] 
@@ -48,6 +49,31 @@ will change when the set of required properties is changed
 NewBTUserSettingsInfoWithDefaults instantiates a new BTUserSettingsInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAxisRotationLock
+
+`func (o *BTUserSettingsInfo) GetAxisRotationLock() bool`
+
+GetAxisRotationLock returns the AxisRotationLock field if non-nil, zero value otherwise.
+
+### GetAxisRotationLockOk
+
+`func (o *BTUserSettingsInfo) GetAxisRotationLockOk() (*bool, bool)`
+
+GetAxisRotationLockOk returns a tuple with the AxisRotationLock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAxisRotationLock
+
+`func (o *BTUserSettingsInfo) SetAxisRotationLock(v bool)`
+
+SetAxisRotationLock sets AxisRotationLock field to given value.
+
+### HasAxisRotationLock
+
+`func (o *BTUserSettingsInfo) HasAxisRotationLock() bool`
+
+HasAxisRotationLock returns a boolean if a field has been set.
 
 ### GetCommonUnits
 

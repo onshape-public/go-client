@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.167.20169-88260985a0b6
+  version: 1.168.20454-7718daa9749d
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -110,7 +110,6 @@ paths:
   /accounts/plans/{planId}/purchases:
     get:
       deprecated: false
-      description: Get a list of all app purchases made for the specified plan.
       operationId: getPlanPurchases
       parameters:
       - explode: false
@@ -155,7 +154,8 @@ paths:
   /accounts/purchases:
     get:
       deprecated: false
-      description: Get a list of all app purchases made by the current user.
+      description: This API should be used within the context of an OAuth-enabled
+        application.
       operationId: getPurchases
       parameters:
       - explode: true
@@ -191,7 +191,7 @@ paths:
                   $ref: '#/components/schemas/BTPurchaseInfo'
                 type: array
           description: default response
-      summary: This API should be used within the context of an OAuth-enabled application.
+      summary: Get a list of all app purchases made by the current user.
       tags:
       - Account
       x-BTVisibility: PRODUCTION
@@ -267,7 +267,7 @@ paths:
         - OAuth2Purchase
         BasicAuth:
         - OAuth2Purchase
-      summary: Cancel recurring subscription for the account by account ID and purchase
+      summary: Cancel a recurring subscription for the specified account ID and purchase
         ID.
       tags:
       - Account
@@ -2621,6 +2621,8 @@ paths:
   /applications/clients/{cid}/settings/companies/{cpid}:
     delete:
       deprecated: false
+      description: This API is only usable with an OAuth token and only by the current
+        user or admin.
       operationId: deleteCompanyAppSettings
       parameters:
       - explode: false
@@ -2653,14 +2655,14 @@ paths:
               schema:
                 type: object
           description: default response
-      summary: Delete company level settings for this application by client ID and
-        company ID. This API may only be used with an OAuth token and only by the
-        current user.
+      summary: Delete a company's application preference settings.
       tags:
       - APIApplication
       x-BTVisibility: PRODUCTION
     get:
       deprecated: false
+      description: This API is only usable with an OAuth token and only by the current
+        user or admin.
       operationId: getCompanyAppSettings
       parameters:
       - explode: false
@@ -2702,14 +2704,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTUserAppSettingsInfo'
           description: default response
-      summary: Retrieve company level settings for this application by client ID and
-        company ID. This API may only be used with an OAuth token and only by the
-        current user.
+      summary: Get company-level preference settings for an application.
       tags:
       - APIApplication
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: This API is only usable with an OAuth token and only by the current
+        user or admin.
       operationId: updateAppCompanySettings
       parameters:
       - explode: false
@@ -2739,15 +2741,15 @@ paths:
               schema:
                 type: object
           description: default response
-      summary: Update or create company level settings for this application by client
-        ID and company ID. This API may only be used with an OAuth token and only
-        by the current user.
+      summary: Update company preference settings for an application.
       tags:
       - APIApplication
       x-BTVisibility: PRODUCTION
   /applications/clients/{cid}/settings/users/{uid}:
     delete:
       deprecated: false
+      description: This API is only usable with an OAuth token and only by the current
+        user or admin.
       operationId: deleteAppSettings
       parameters:
       - explode: false
@@ -2776,13 +2778,14 @@ paths:
       responses:
         "200":
           description: Success!
-      summary: Delete application settings for a user by client ID and user ID. This
-        API may only be used with an OAuth token and only by the current user.
+      summary: Delete a user's application preference settings.
       tags:
       - APIApplication
       x-BTVisibility: PRODUCTION
     get:
       deprecated: false
+      description: This API is only usable with an OAuth token and only by the current
+        user or admin.
       operationId: getUserAppSettings
       parameters:
       - explode: false
@@ -2815,13 +2818,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTUserAppSettingsInfo'
           description: default response
-      summary: Retrieve application settings for a user by client ID and user ID.
-        This API may only be used with an OAuth token and only by the current user.
+      summary: Get user-level preference settings for an application.
       tags:
       - APIApplication
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: This API is only usable with an OAuth token and only by the current
+        user or admin.
       operationId: updateAppSettings
       parameters:
       - explode: false
@@ -2851,17 +2855,13 @@ paths:
               schema:
                 type: object
           description: default response
-      summary: Update or create application settings for a user by client ID and user
-        ID. This API may only be used with an OAuth token and only by the current
-        user.
+      summary: Update a user's application preference settings.
       tags:
       - APIApplication
       x-BTVisibility: PRODUCTION
   /applications/extensions/user/{uid}/client/{cid}:
     get:
       deprecated: false
-      description: Get list of client extensions the user has granted/accepted terms
-        for
       operationId: getApplicableExtensionsForClient
       parameters:
       - explode: false
@@ -2900,6 +2900,8 @@ paths:
         - OAuth2ReadPII
         BasicAuth:
         - OAuth2ReadPII
+      summary: Get a list of the client extensions the specified user has granted/accepted
+        terms for.
       tags:
       - APIApplication
       x-BTVisibility: PRODUCTION
@@ -5446,8 +5448,9 @@ paths:
           minimum: 0
           type: integer
         style: form
-      - description: Number of results to return per page. Default value is 20 (also
-          the maximum).
+      - description: Maximum number of results to return per page. Default value is
+          20 (also the maximum). Number of results returned can be less than this
+          value. Use the `next` URL in the response to fetch the next page.
         explode: true
         in: query
         name: limit
@@ -7058,11 +7061,26 @@ paths:
       tags:
       - Document
       x-BTVisibility: PRODUCTION
-  /drawings/create:
+  /drawings/d/{did}/w/{wid}/create:
     post:
       deprecated: false
       description: Build a drawing app element in document's workspace
       operationId: createDrawingAppElement
+      parameters:
+      - explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: wid
+        required: true
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json;charset=UTF-8; qs=0.09:
@@ -8204,6 +8222,14 @@ paths:
   /metadata/d/{did}/{wvm}/{wvmid}/e:
     get:
       deprecated: false
+      description: "* You can specify the optional `depth` query parameter to get\
+        \ multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId`\
+        \ can be specified where applicable. Combined with `inferMetadataOwner` (default\
+        \ value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties`\
+        \ can be used to include or omit computed properties. Default value is `true`.\
+        \ \n* `includeComputedAssemblyProperties` can be used to query computed assembly\
+        \ properties which are generally expensive. Default value is `false`. \n*\
+        \ You can also choose to include a `thumbnail`. Default value is `false`."
       operationId: getWMVEsMetadata
       parameters:
       - explode: false
@@ -8286,14 +8312,24 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve metadata by document ID and workspace or version or microversion
-        ID.
+      summary: Get the metadata for all elements in a document with given document
+        id and version or microversion id.
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
   /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}:
     get:
       deprecated: false
+      description: "* `linkDocumentId` can be specified where applicable and this\
+        \ combined with the query param `inferMetadataOwner` (default value is `false`)\
+        \ will be used to infer metadata owner. \n* `configuration` optional query\
+        \ parameter defaults to default configuration. \n* You can specify an optional\
+        \ `depth` query parameter to get multiple levels in an assembly. Default `depth`\
+        \ is `1`. \n* `includeComputedProperties` can be used to include or omit computed\
+        \ properties. Default value is `true`. \n* `includeComputedAssemblyProperties`\
+        \ can be used to query computed assembly properties which are generally expensive.\
+        \ Default value is `false`. \n* You can also choose to include a `thumbnail`.\
+        \ Default value is `false`."
       operationId: getWMVEMetadata
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -8406,13 +8442,14 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve metadata by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: "Get the metadata for an element in a document, version or micro version."
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: "* Microversion (`m`) in `wvm` path parameter option is not supported.\
+        \ \n* Specify the property metadata to update in the Request body."
       operationId: updateWVEMetadata
       parameters:
       - explode: false
@@ -8468,14 +8505,23 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update workspace metadata by document ID, workspace or version or\
-        \ microversion ID, and tab ID."
+      summary: Update the metadata for an element in a document workspace or version
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
   /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p:
     get:
       deprecated: false
+      description: "* The `configuration` optional query parameter uses the default\
+        \ configuration unless otherwise specified. \n* You can specify an optional\
+        \ `depth` query parameter to get multiple levels in an assembly. Default `depth`\
+        \ is `1`. \n* `linkDocumentId` can be specified where applicable. Combined\
+        \ with `inferMetadataOwner` (default value is `false`), this is used to infer\
+        \ metadata owner. \n* `includeComputedProperties` can be used to include or\
+        \ omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties`\
+        \ can be used to query computed assembly properties which are generally expensive.\
+        \ Default value is `false`. \n* You can also choose to include a `thumbnail`.\
+        \ Default value is `false`."
       operationId: getWMVEPsMetadata
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -8581,14 +8627,23 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve metadata by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: "Get the metadata for all parts in a document workspace or version\
+        \ or microversion, element and configuration."
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
   /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid}:
     get:
       deprecated: false
+      description: "* Specify the part in the `iden` or `pid` path parameter. \n*\
+        \ The `configuration` optional query parameter uses the default configuration\
+        \ unless otherwise specified. \n* `linkDocumentId` can be specified where\
+        \ applicable. Combined with `inferMetadataOwner` (default value is `false`),\
+        \ this is used to infer metadata owner. \n* `includeComputedProperties` can\
+        \ be used to include or omit computed properties. Default value is `true`.\
+        \ \n* `includeComputedAssemblyProperties` can be used to query computed assembly\
+        \ properties which are generally expensive. Default value is `false`. \n*\
+        \ You can also choose to include a `thumbnail`. Default value is `false`."
       operationId: getWMVEPMetadata
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -8732,13 +8787,19 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve metadata by document ID, workspace or version or microversion\
-        \ ID, tab ID, and Part ID."
+      summary: "Get the metadata for a part in a document workspace or version or\
+        \ microversion, element."
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: "* Specify the part in the `iden` or `pid` path parameter. \n*\
+        \ The `configuration` optional query parameter uses the default configuration\
+        \ unless otherwise specified. \n* `linkDocumentId` can be specified where\
+        \ applicable. Combined with `inferMetadataOwner` (default value is `false`),\
+        \ this is used to infer metadata owner. \n* Specify the property metadata\
+        \ to update in the Request body."
       operationId: updateWVEPMetadata
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -8856,14 +8917,22 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update workspace metadata by document ID, workspace or version or\
-        \ microversion ID, tab ID, and part ID."
+      summary: "Update the metadata for a part in a document workspace or version\
+        \ or microversion, element."
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
   /metadata/d/{did}/{wv}/{wvid}:
     get:
       deprecated: false
+      description: "* `linkDocumentId` can be specified where applicable. Combined\
+        \ with `inferMetadataOwner` (default value is `false`), this is used to infer\
+        \ metadata owner. \n* You can specify an optional `depth` query parameter\
+        \ to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedProperties`\
+        \ can be used to include or omit computed properties. Default value is `true`.\
+        \ \n* `includeComputedAssemblyProperties` can be used to query computed assembly\
+        \ properties which are generally expensive. Default value is `false`. \n*\
+        \ You can also choose to include a `thumbnail`. Default value is `false`."
       operationId: getWVMetadata
       parameters:
       - explode: false
@@ -8946,13 +9015,13 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve workspace or version metadata by document ID and workspace
-        or version ID.
+      summary: Get the metadata for a workspace or version in a document.
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: Specify the property metadata to update in the Request body.
       operationId: updateWVMetadata
       parameters:
       - explode: false
@@ -8994,14 +9063,17 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Update workspace or version metadata by document ID and workspace or
-        version ID.
+      summary: Update the metadata for a workspace or version in a document.
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
   /metadata/standardcontent/d/{did}:
     post:
       deprecated: false
+      description: "* Specify the document ID to update in the `did` path param. \n\
+        * Specify the document in which you have inserted the standard content part\
+        \ in the `linkDocumentId` query param. \n* Specify the property metadata to\
+        \ update in the Request body."
       operationId: updateVEOPStandardContentPartMetadata
       parameters:
       - explode: false
@@ -9036,14 +9108,19 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update metadata of a standard content part in a version by document\
-        \ ID, version ID, tab ID, owner ID, and part ID."
+      summary: Update the metadata in a document for a standard content part.
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
   /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid}:
     get:
       deprecated: false
+      description: "* Specify the part in the `pid` path parameter. \n* The `configuration`\
+        \ and `linkDocumentId` query parameters are required. \n* `includeComputedProperties`\
+        \ can be used to include or omit computed properties. Default value is `true`.\
+        \ \n* `includeComputedAssemblyProperties` can be used to query computed assembly\
+        \ properties which are generally expensive. Default value is `false`. \n*\
+        \ You can also choose to include a `thumbnail`. Default value is `false`."
       operationId: getVEOPStandardContentMetadata
       parameters:
       - explode: false
@@ -9124,8 +9201,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve metadata of a standard content part in a version by document\
-        \ ID, version ID, tab ID, owner ID, and part ID."
+      summary: Get the metadata for a standard content part.
       tags:
       - Metadata
       x-BTVisibility: PRODUCTION
@@ -9286,8 +9362,7 @@ paths:
   /openapi:
     get:
       deprecated: false
-      description: 'The Onshape API OpenAPI specification is returned in the JSON
-        format. '
+      description: The Onshape API OpenAPI specification is returned in the JSON format.
       operationId: getOpenApi
       parameters:
       - description: Force reload the OpenApi definition. Only works when asking for
@@ -9422,8 +9497,7 @@ paths:
         default:
           content: {}
           description: default response
-      summary: "Tags are used to group operations. For example, `Document` groups\
-        \ operations on documents."
+      summary: Get the list of tags in the Onshape OpenAPI specification.
       tags:
       - OpenApi
       x-BTVisibility: PRODUCTION
@@ -12831,7 +12905,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Get information or all sketches in part studio.
+      summary: Get information on all sketches in part studio.
       tags:
       - Sketch
       x-BTVisibility: PRODUCTION
@@ -13625,7 +13699,8 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve release packages company release workflow.
+      summary: Get information about the release/obsoletion workflow for a company-owned
+        document.
       tags:
       - ReleasePackage
       x-BTVisibility: PRODUCTION
@@ -13668,13 +13743,16 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Update release package obsoletion by workflow ID.
+      summary: Create an obsoletion package to make an existing revision obsolete.
       tags:
       - ReleasePackage
       x-BTVisibility: PRODUCTION
   /releasepackages/release/{wfid}:
     post:
       deprecated: false
+      description: "All revisionable items must be from the same document. Once a\
+        \ release package is successfully created, use `updateReleasePackage` to update\
+        \ all desired item/package properties, and transition it to the desired state."
       operationId: createReleasePackage
       parameters:
       - explode: false
@@ -13710,7 +13788,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Update release package release by workflow ID.
+      summary: Create a new release package for one or more items.
       tags:
       - ReleasePackage
       x-BTVisibility: PRODUCTION
@@ -13746,12 +13824,13 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve release packages by release package ID.
+      summary: Get details about the specified release package.
       tags:
       - ReleasePackage
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: Use the `wfaction` query param to also perform a workflow transition.
       operationId: updateReleasePackage
       parameters:
       - explode: false
@@ -13794,7 +13873,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Update release packages by release package ID.
+      summary: Update the release/obsoletion package/item properties.
       tags:
       - ReleasePackage
       x-BTVisibility: PRODUCTION
@@ -14714,6 +14793,10 @@ paths:
   /thumbnails/d/{did}:
     get:
       deprecated: false
+      description: |-
+        * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
+        * The default workspace may vary by user; the image served depends on the signed-in user.
+        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
       operationId: getThumbnailForDocument
       parameters:
       - explode: false
@@ -14735,20 +14818,16 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve thumbnail information for document in default workspace by
-        document ID.
+      summary: Get the thumbnail info for the specified document in the default workspace.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
   /thumbnails/d/{did}/v/{vid}:
     get:
       deprecated: false
-      description: "By default, returns thumbnail info for the element with the most-recently\
-        \ generated image. If you pinned an element for the document thumbnail, that\
-        \ element will always be used for the document-level thumbnail, if it exists\
-        \ in the workspace. The default workspace may vary by user; the image served\
-        \ depends on the signed-in user. See also: [Tech Tip: How to Change A Document\
-        \ Thumbnail in Onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)"
+      description: |-
+        * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
+        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
       operationId: getThumbnailForDocumentAndVersion
       parameters:
       - explode: false
@@ -14791,11 +14870,9 @@ paths:
   /thumbnails/d/{did}/w/{wid}:
     get:
       deprecated: false
-      description: "By default, returns thumbnail info for the element with the most-recently\
-        \ generated image. If you pinned an element for the document thumbnail, that\
-        \ element will always be used for the document-level thumbnail, if it exists\
-        \ in the workspace. See also: [Tech tip: How to change a Document Thumbnail\
-        \ in Onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)"
+      description: |-
+        * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
+        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
       operationId: getDocumentThumbnail
       parameters:
       - explode: false
@@ -14831,6 +14908,8 @@ paths:
   /thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz}:
     get:
       deprecated: false
+      description: "Returns the thumbnail image for an element at a specified version,\
+        \ with the given configuration."
       operationId: getElementThumbnailWithApiConfiguration
       parameters:
       - explode: false
@@ -14928,14 +15007,17 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve thumbnail information for a tab, with a specified size in\
-        \ pixels by document ID, workspace ID, tab ID, and configuration ID."
+      summary: Get the thumbnail image with the given configuration for the specified
+        element.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
   /thumbnails/d/{did}/w/{wid}/s/{sz}:
     get:
       deprecated: false
+      description: |-
+        * By default, returns thumbnail image for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
+        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
       operationId: getDocumentThumbnailWithSize
       parameters:
       - explode: false
@@ -15003,14 +15085,16 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve thumbnail information for a document, with a specified size\
-        \ in pixels by document ID and workspace ID."
+      summary: Get the thumbnail image with the given size for the specified document
+        and workspace.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
   /thumbnails/d/{did}/{wv}/{wvid}/e/{eid}:
     delete:
       deprecated: false
+      description: "Deletes an application element’s thumbnail and images for the\
+        \ given document, workspace or version, and element combination."
       operationId: deleteApplicationThumbnails
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -15075,13 +15159,14 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Delete application tab thumbnail by document ID, workspace or version\
-        \ ID, and tab ID."
+      summary: Delete an element's thumbnail.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
     get:
       deprecated: false
+      description: "Returns thumbnail info for the given document, workspace or version,\
+        \ and element."
       operationId: getElementThumbnail
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -15146,13 +15231,19 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve thumbnail information for a tab by document ID, workspace\
-        \ or version ID, and tab ID."
+      summary: Get the thumbnail info structure for the specified element.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: "* Allows 3rd-party applications to set thumbnails for their elements.\
+        \ \n* Application elements can have both primary and secondary thumbnails.\
+        \ A primary thumbnail represents the top-level of the element. A secondary\
+        \ thumbnail can represent sub-components of the element (e.g., a drawing sheet).\n\
+        * To update one or more thumbnails, you must set the overwrite query param\
+        \ to `true` and supply the entire set of thumbnails. All previous thumbnails\
+        \ will be deleted prior to updating the element with the latest images."
       operationId: setApplicationElementThumbnail
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -15231,8 +15322,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update application tab thumbnail by document ID, workspace or version\
-        \ ID, and tab ID."
+      summary: Set the thumbnail image for an application element.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
@@ -15350,14 +15440,15 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve thumbnail information for a tab, with a specified size in\
-        \ pixels by document ID, workspace ID, and tab ID."
+      summary: Get the thumbnail image with the given size for the specified element.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
   /thumbnails/document/{did}:
     get:
       deprecated: false
+      description: "This API exists for historical reasons. It uses `/document/` in\
+        \ the path, rather than the standard `/d/` to specify the document."
       operationId: getThumbnailForDocumentOld
       parameters:
       - explode: false
@@ -15379,14 +15470,15 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve thumbnail information for a document in default workspace
-        by document ID.
+      summary: This endpoint will be deprecated soon. Use `getThumbnailForDocument`.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
   /thumbnails/document/{did}/version/{vid}:
     get:
       deprecated: false
+      description: "This API exists for historical reasons. It uses `/document/` in\
+        \ the path, rather than the standard `/d/` to specify the document."
       operationId: getThumbnailForDocumentAndVersionOld
       parameters:
       - explode: false
@@ -15415,8 +15507,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve thumbnail information for a document at a specified version
-        by document ID and version ID.
+      summary: This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion`.
       tags:
       - Thumbnail
       x-BTVisibility: PRODUCTION
@@ -15594,7 +15685,6 @@ paths:
   /users/session:
     post:
       deprecated: false
-      description: Returned information depends on caller's OAuth2ReadPll scope.
       operationId: session
       requestBody:
         content:
@@ -15609,8 +15699,7 @@ paths:
               schema:
                 type: object
           description: default response
-      summary: Check if current user is signed-in.Information returned depends on
-        OAuth2ReadPII scope.
+      summary: Returned information depends on caller's OAuth2ReadPll scope.
       tags:
       - User
       x-BTVisibility: PRODUCTION
@@ -15633,6 +15722,13 @@ paths:
   /users/settings:
     get:
       deprecated: false
+      description: "* Mouse button settings are contained in `reverseScrollWheelZoomDirection`\
+        \ and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`,\
+        \ an array of modifier key/mouse combos is provided that performs that action.\
+        \ \n* Possible modifier keys include SHIFT and CTRL. \n* Possible mouse buttons\
+        \ include MMB (middle), RMB (right), and SCROLLWHEEL. \n* The scroll wheel\
+        \ is used in zoom operations, where scrolling forward causes the view to zoom\
+        \ in unless `reverseScrollWheelZoomDirection` is set to true."
       operationId: getUserSettingsCurrentLoggedInUser
       parameters:
       - explode: true
@@ -15650,14 +15746,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTUserSettingsInfo'
           description: default response
-      summary: "Get user settings for the currently signed-in user if there is one,\
-        \ or else return the default settings."
+      summary: Get the user settings for currently signed in user.
       tags:
       - User
       x-BTVisibility: PRODUCTION
   /users/{uid}/settings:
     get:
       deprecated: false
+      description: "* Mouse button settings are contained in `reverseScrollWheelZoomDirection`\
+        \ and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`,\
+        \ an array of modifier key/mouse combos is provided that performs that action.\
+        \ \n* Possible modifier keys include SHIFT and CTRL. \n* Possible mouse buttons\
+        \ include MMB (middle), RMB (right), and SCROLLWHEEL. \n* The scroll wheel\
+        \ is used in zoom operations, where scrolling forward causes the view to zoom\
+        \ in unless `reverseScrollWheelZoomDirection` is set to true."
       operationId: getUserSettings
       parameters:
       - explode: false
@@ -15682,7 +15784,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTUserSettingsInfo'
           description: default response
-      summary: Retrieve user settings by user ID.
+      summary: Get the default user settings that are used when the user creates a
+        new document.
       tags:
       - User
       x-BTVisibility: PRODUCTION
@@ -16236,7 +16339,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Get a list of all webhooks registered bt a user or company.
+      summary: Get a list of all webhooks registered by a user or company.
       tags:
       - Webhook
       x-BTVisibility: PRODUCTION
@@ -17374,6 +17477,7 @@ components:
           id: id
         drawingCanDuplicatePartNumber: true
         canCurrentUserCreateReleases: true
+        canCurrentUserSyncRevisionsToArena: true
         enabledActiveMultipleWorkflows: true
         canCurrentUserManageWorkflows: true
         obsoletionWorkflowId: obsoletionWorkflowId
@@ -17421,6 +17525,8 @@ components:
         canCurrentUserSeeArenaItemLink:
           type: boolean
         canCurrentUserSyncBomToArena:
+          type: boolean
+        canCurrentUserSyncRevisionsToArena:
           type: boolean
         canCurrentUserSyncToArena:
           type: boolean
@@ -24331,6 +24437,7 @@ components:
         canBeRestored: true
         nextMicroversionId: nextMicroversionId
         description: description
+        restoreId: restoreId
         userId: userId
         microversionId: microversionId
         username: username
@@ -24345,6 +24452,12 @@ components:
         microversionId:
           type: string
         nextMicroversionId:
+          type: string
+        restoreId:
+          description: "If this microversion is the result of a restore from another\
+            \ microversion, the restoreId will be the microversion Id of the original\
+            \ microversion that was restored. Otherwise this id will not be included\
+            \ within the response."
           type: string
         userId:
           type: string
@@ -24376,6 +24489,7 @@ components:
         id: id
         anonymousAllowsExport: true
         likes: 6
+        publishedVersionId: publishedVersionId
         thumbnail:
           secondarySizes:
           - - renderMode: renderMode
@@ -24878,6 +24992,8 @@ components:
           type: string
         public:
           type: boolean
+        publishedVersionId:
+          type: string
         recentVersion:
           $ref: '#/components/schemas/BTBaseInfo'
         resourceType:
@@ -25485,8 +25601,88 @@ components:
       example:
         canMove: true
         supportTeamUserAndShared: true
-        trashedAt: 2000-01-23T04:56:07.000+00:00
         likedByCurrentUser: true
+        notes: notes
+        modifiedAt: 2000-01-23T04:56:07.000+00:00
+        isEnterpriseOwned: true
+        isUsingManagedWorkflow: true
+        recentVersion:
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        numberOfTimesReferenced: 5
+        unparentHref: unparentHref
+        href: https://openapi-generator.tech
+        id: id
+        anonymousAllowsExport: true
+        likes: 1
+        publishedVersionId: publishedVersionId
+        thumbnail:
+          secondarySizes:
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          sizes:
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          href: https://openapi-generator.tech
+          id: id
+        forceExportRules: true
+        tags:
+        - tags
+        - tags
+        trash: true
+        sequence: sequence
+        isMutable: true
+        canUnshare: true
+        permissionSet:
+        - permissionSet
+        - permissionSet
+        notRevisionManaged: true
+        name: name
+        hasReleaseRevisionableObjects: true
+        viewRef: https://openapi-generator.tech
+        projectId: projectId
+        trashedAt: 2000-01-23T04:56:07.000+00:00
         documentLabels:
         - canMove: true
           owner:
@@ -25566,25 +25762,13 @@ components:
           viewRef: https://openapi-generator.tech
           projectId: projectId
           resourceType: resourceType
-        notes: notes
         numberOfTimesCopied: 5
         documentType: 6
-        modifiedAt: 2000-01-23T04:56:07.000+00:00
-        isEnterpriseOwned: true
         description: description
         isContainer: true
-        isUsingManagedWorkflow: true
         hasRelevantInsertables: true
-        recentVersion:
-          name: name
-          href: https://openapi-generator.tech
-          id: id
-          viewRef: https://openapi-generator.tech
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        numberOfTimesReferenced: 5
         anonymousAccessAllowed: true
         public: true
-        unparentHref: unparentHref
         defaultWorkspace:
           parent: parent
           creator:
@@ -25820,10 +26004,6 @@ components:
           state: 6
           viewRef: https://openapi-generator.tech
         userAccountLimitsBreached: true
-        href: https://openapi-generator.tech
-        id: id
-        anonymousAllowsExport: true
-        likes: 1
         owner:
           image: image
           isEnterpriseOwnedResource: true
@@ -25832,68 +26012,10 @@ components:
           id: id
           type: 1
           viewRef: https://openapi-generator.tech
-        thumbnail:
-          secondarySizes:
-          - - renderMode: renderMode
-              sheetName: sheetName
-              size: size
-              viewOrientation: viewOrientation
-              mediaType: mediaType
-              href: https://openapi-generator.tech
-              uniqueId: uniqueId
-            - renderMode: renderMode
-              sheetName: sheetName
-              size: size
-              viewOrientation: viewOrientation
-              mediaType: mediaType
-              href: https://openapi-generator.tech
-              uniqueId: uniqueId
-          - - renderMode: renderMode
-              sheetName: sheetName
-              size: size
-              viewOrientation: viewOrientation
-              mediaType: mediaType
-              href: https://openapi-generator.tech
-              uniqueId: uniqueId
-            - renderMode: renderMode
-              sheetName: sheetName
-              size: size
-              viewOrientation: viewOrientation
-              mediaType: mediaType
-              href: https://openapi-generator.tech
-              uniqueId: uniqueId
-          sizes:
-          - renderMode: renderMode
-            sheetName: sheetName
-            size: size
-            viewOrientation: viewOrientation
-            mediaType: mediaType
-            href: https://openapi-generator.tech
-            uniqueId: uniqueId
-          - renderMode: renderMode
-            sheetName: sheetName
-            size: size
-            viewOrientation: viewOrientation
-            mediaType: mediaType
-            href: https://openapi-generator.tech
-            uniqueId: uniqueId
-          href: https://openapi-generator.tech
-          id: id
-        forceExportRules: true
         createdWithEducationPlan: true
         permission: null
         parentId: parentId
-        tags:
-        - tags
-        - tags
-        trash: true
         treeHref: treeHref
-        sequence: sequence
-        isMutable: true
-        canUnshare: true
-        permissionSet:
-        - permissionSet
-        - permissionSet
         createdBy:
           image: image
           name: name
@@ -25901,12 +26023,7 @@ components:
           id: id
           state: 6
           viewRef: https://openapi-generator.tech
-        notRevisionManaged: true
-        name: name
         defaultElementId: defaultElementId
-        hasReleaseRevisionableObjects: true
-        viewRef: https://openapi-generator.tech
-        projectId: projectId
         resourceType: resourceType
       properties:
         anonymousAccessAllowed:
@@ -25995,6 +26112,8 @@ components:
           type: string
         public:
           type: boolean
+        publishedVersionId:
+          type: string
         recentVersion:
           $ref: '#/components/schemas/BTBaseInfo'
         resourceType:
@@ -39045,6 +39164,7 @@ components:
           BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
           BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
           BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
+          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
           BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
           BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
           BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
@@ -39160,6 +39280,14 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTMParameter-1'
       - $ref: '#/components/schemas/BTMParameterMaterial_1388_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
+    BTMParameterMultiEnum-3411:
+      allOf:
+      - $ref: '#/components/schemas/BTMParameter-1'
+      - $ref: '#/components/schemas/BTMParameterMultiEnum_3411_allOf'
       properties:
         btType:
           type: string
@@ -43040,6 +43168,7 @@ components:
           BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
           BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
           BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
+          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
           BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
           BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
           BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
@@ -43135,6 +43264,14 @@ components:
         btType:
           type: string
       type: object
+    BTParameterSpecCategories-4083:
+      allOf:
+      - $ref: '#/components/schemas/BTParameterSpecMultiEnum-3118'
+      - $ref: '#/components/schemas/BTParameterSpecCategories_4083_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
     BTParameterSpecDatabase-1071:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpec-6'
@@ -43187,6 +43324,18 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpec-6'
       - $ref: '#/components/schemas/BTParameterSpecMaterial_2700_allOf'
+      properties:
+        btType:
+          type: string
+      type: object
+    BTParameterSpecMultiEnum-3118:
+      allOf:
+      - $ref: '#/components/schemas/BTParameterSpec-6'
+      - $ref: '#/components/schemas/BTParameterSpecMultiEnum_3118_allOf'
+      discriminator:
+        mapping:
+          BTParameterSpecCategories-4083: '#/components/schemas/BTParameterSpecCategories-4083'
+        propertyName: btType
       properties:
         btType:
           type: string
@@ -46258,6 +46407,7 @@ components:
       enum:
       - BOM
       - REVISION_TABLE
+      - INSPECTION_TABLE
       type: string
     BTPropertyTableColumnInfo-2161:
       allOf:
@@ -47425,6 +47575,7 @@ components:
         changeOrderId: changeOrderId
         description: description
         packageThumbnail: packageThumbnail
+        retainedAsDraft: true
         createdAt: 2000-01-23T04:56:07.000+00:00
         columnNames:
           key: columnNames
@@ -47885,6 +48036,7 @@ components:
         items:
         - meshState: 5
           obsoletionRevisionId: obsoletionRevisionId
+          syncedWithPLM: true
           configuration: configuration
           partId: partId
           partIdentity: partIdentity
@@ -48014,6 +48166,7 @@ components:
           diffThumbnailConfigurationKey: diffThumbnailConfigurationKey
         - meshState: 5
           obsoletionRevisionId: obsoletionRevisionId
+          syncedWithPLM: true
           configuration: configuration
           partId: partId
           partIdentity: partIdentity
@@ -48383,6 +48536,10 @@ components:
           items:
             $ref: '#/components/schemas/BTWorkflowPropertyInfo'
           type: array
+        retainedAsDraft:
+          description: Indicates whether the release is still in setup state and saved
+            as a draft.
+          type: boolean
         revisionRuleId:
           type: string
         versionId:
@@ -48405,6 +48562,7 @@ components:
       example:
         meshState: 5
         obsoletionRevisionId: obsoletionRevisionId
+        syncedWithPLM: true
         configuration: configuration
         partId: partId
         partIdentity: partIdentity
@@ -48604,6 +48762,8 @@ components:
           type: string
         smallThumbnailHref:
           type: string
+        syncedWithPLM:
+          type: boolean
         versionId:
           type: string
         viewRef:
@@ -52282,6 +52442,7 @@ components:
           - value: value
             key: key
           nodeId: nodeId
+        axisRotationLock: true
         unitsDisplayPrecision:
           key: 5
         selectItemViewStateInfos:
@@ -52554,6 +52715,8 @@ components:
         mouseActions: mouseActions
         viewMappingId: 7
       properties:
+        axisRotationLock:
+          type: boolean
         commonUnits:
           $ref: '#/components/schemas/BTCommonUnitsInfo'
         customColors:
@@ -52971,16 +53134,17 @@ components:
       type: object
     BTVersionOrWorkspaceParams:
       example:
-        fromHistory: true
-        versionId: versionId
         missingBomTableTemplateId: missingBomTableTemplateId
+        publishVersion: true
         purpose: 0
-        clientInteractionMode: clientInteractionMode
-        name: name
         description: description
-        documentId: documentId
         readOnly: true
         isRelease: true
+        fromHistory: true
+        versionId: versionId
+        clientInteractionMode: clientInteractionMode
+        name: name
+        documentId: documentId
         microversionId: microversionId
         workspaceId: workspaceId
       properties:
@@ -53000,6 +53164,8 @@ components:
           type: string
         name:
           type: string
+        publishVersion:
+          type: boolean
         purpose:
           format: int32
           type: integer
@@ -57083,6 +57249,9 @@ components:
       - FGS_GENERATIVE_MINRADIUS_SMALL
       - FGS_GENERATIVE_MINRADIUS_LARGE
       - FGS_GENERATIVE_OPT_INVALID_SETUP
+      - CURVE_PATTERN_DISTANCE_TOO_LARGE
+      - BEND_REPLACEMENT_HEAL_FAILED
+      - CANNOT_COPY_CONSTRAINTS
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -60607,6 +60776,20 @@ components:
           $ref: '#/components/schemas/BTPartMaterial-1445'
       type: object
       example: null
+    BTMParameterMultiEnum_3411_allOf:
+      properties:
+        btType:
+          type: string
+        enumName:
+          type: string
+        namespace:
+          type: string
+        values:
+          items:
+            type: string
+          type: array
+      type: object
+      example: null
     BTMParameterNullableQuantity_807_allOf:
       properties:
         btType:
@@ -61911,6 +62094,19 @@ components:
           type: string
       type: object
       example: null
+    BTParameterSpecCategories_4083_allOf:
+      properties:
+        btType:
+          type: string
+        categoryIdToMetadataTypes:
+          additionalProperties:
+            items:
+              format: int32
+              type: integer
+            type: array
+          type: object
+      type: object
+      example: null
     BTParameterSpecDatabase_1071_allOf:
       properties:
         btType:
@@ -61969,6 +62165,30 @@ components:
       properties:
         btType:
           type: string
+      type: object
+      example: null
+    BTParameterSpecMultiEnum_3118_allOf:
+      properties:
+        btType:
+          type: string
+        enumName:
+          type: string
+        enumValueToVisibilityCondition:
+          additionalProperties:
+            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+          type: object
+        multivalued:
+          type: boolean
+        namespace:
+          type: string
+        optionNames:
+          items:
+            type: string
+          type: array
+        options:
+          items:
+            type: string
+          type: array
       type: object
       example: null
     BTParameterSpecNullableQuantity_715_allOf:
@@ -62287,6 +62507,9 @@ components:
       properties:
         isEnterpriseEdu:
           type: boolean
+        state:
+          format: int32
+          type: integer
       type: object
       example: null
     BTRevisionCustomData_2090_allOf:

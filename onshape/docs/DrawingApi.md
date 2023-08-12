@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDrawingAppElement**](DrawingApi.md#CreateDrawingAppElement) | **Post** /drawings/create | 
+[**CreateDrawingAppElement**](DrawingApi.md#CreateDrawingAppElement) | **Post** /drawings/d/{did}/w/{wid}/create | 
 [**CreateDrawingTranslation**](DrawingApi.md#CreateDrawingTranslation) | **Post** /drawings/d/{did}/{wv}/{wvid}/e/{eid}/translations | 
 [**GetDrawingTranslatorFormats**](DrawingApi.md#GetDrawingTranslatorFormats) | **Get** /drawings/d/{did}/w/{wid}/e/{eid}/translationformats | Retrieve translation formats by document ID, workspace ID, and tab ID.
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## CreateDrawingAppElement
 
-> BTDocumentElementInfo CreateDrawingAppElement(ctx).BTDrawingParams(bTDrawingParams).Execute()
+> BTDocumentElementInfo CreateDrawingAppElement(ctx, did, wid).BTDrawingParams(bTDrawingParams).Execute()
 
 
 
@@ -31,11 +31,13 @@ import (
 )
 
 func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
     bTDrawingParams := *openapiclient.NewBTDrawingParams() // BTDrawingParams | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DrawingApi.CreateDrawingAppElement(context.Background()).BTDrawingParams(bTDrawingParams).Execute()
+    resp, r, err := apiClient.DrawingApi.CreateDrawingAppElement(context.Background(), did, wid).BTDrawingParams(bTDrawingParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.CreateDrawingAppElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -48,6 +50,11 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
 
 ### Other Parameters
 
@@ -56,6 +63,8 @@ Other parameters are passed through a pointer to a apiCreateDrawingAppElementReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
+
  **bTDrawingParams** | [**BTDrawingParams**](BTDrawingParams.md) |  | 
 
 ### Return type

@@ -4,10 +4,10 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelPurchaseNew**](AccountApi.md#CancelPurchaseNew) | **Delete** /accounts/{aid}/purchases/{pid} | Cancel recurring subscription for the account by account ID and purchase ID.
+[**CancelPurchaseNew**](AccountApi.md#CancelPurchaseNew) | **Delete** /accounts/{aid}/purchases/{pid} | Cancel a recurring subscription for the specified account ID and purchase ID.
 [**ConsumePurchase**](AccountApi.md#ConsumePurchase) | **Post** /accounts/purchases/{pid}/consume | Mark a purchase as consumed by the current user.
 [**GetPlanPurchases**](AccountApi.md#GetPlanPurchases) | **Get** /accounts/plans/{planId}/purchases | Get a list of all app purchases made for the specified plan.
-[**GetPurchases**](AccountApi.md#GetPurchases) | **Get** /accounts/purchases | This API should be used within the context of an OAuth-enabled application.
+[**GetPurchases**](AccountApi.md#GetPurchases) | **Get** /accounts/purchases | Get a list of all app purchases made by the current user.
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > map[string]interface{} CancelPurchaseNew(ctx, aid, pid).CancelImmediately(cancelImmediately).Execute()
 
-Cancel recurring subscription for the account by account ID and purchase ID.
+Cancel a recurring subscription for the specified account ID and purchase ID.
 
 ### Example
 
@@ -160,8 +160,6 @@ Name | Type | Description  | Notes
 
 Get a list of all app purchases made for the specified plan.
 
-
-
 ### Example
 
 ```go
@@ -232,7 +230,7 @@ Name | Type | Description  | Notes
 
 > []BTPurchaseInfo GetPurchases(ctx).All(all).OwnPurchaseOnly(ownPurchaseOnly).IncludeGoDEnabledAppPurchases(includeGoDEnabledAppPurchases).Execute()
 
-This API should be used within the context of an OAuth-enabled application.
+Get a list of all app purchases made by the current user.
 
 
 

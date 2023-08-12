@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **ParentComments** | Pointer to [**[]BTReleaseCommentListInfo**](BTReleaseCommentListInfo.md) |  | [optional] 
 **ParentPackages** | Pointer to **[]string** |  | [optional] 
 **Properties** | Pointer to [**[]BTWorkflowPropertyInfo**](BTWorkflowPropertyInfo.md) |  | [optional] 
+**RetainedAsDraft** | Pointer to **bool** | Indicates whether the release is still in setup state and saved as a draft. | [optional] 
 **RevisionRuleId** | Pointer to **string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -602,6 +603,31 @@ SetProperties sets Properties field to given value.
 `func (o *BTReleasePackageInfo) HasProperties() bool`
 
 HasProperties returns a boolean if a field has been set.
+
+### GetRetainedAsDraft
+
+`func (o *BTReleasePackageInfo) GetRetainedAsDraft() bool`
+
+GetRetainedAsDraft returns the RetainedAsDraft field if non-nil, zero value otherwise.
+
+### GetRetainedAsDraftOk
+
+`func (o *BTReleasePackageInfo) GetRetainedAsDraftOk() (*bool, bool)`
+
+GetRetainedAsDraftOk returns a tuple with the RetainedAsDraft field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetainedAsDraft
+
+`func (o *BTReleasePackageInfo) SetRetainedAsDraft(v bool)`
+
+SetRetainedAsDraft sets RetainedAsDraft field to given value.
+
+### HasRetainedAsDraft
+
+`func (o *BTReleasePackageInfo) HasRetainedAsDraft() bool`
+
+HasRetainedAsDraft returns a boolean if a field has been set.
 
 ### GetRevisionRuleId
 
