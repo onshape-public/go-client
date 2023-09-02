@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllVersions**](VersionApi.md#GetAllVersions) | **Get** /versions | 
+[**GetAllVersions**](VersionApi.md#GetAllVersions) | **Get** /versions | Get all versions of the Onshape REST APIs.
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > Versions GetAllVersions(ctx).Execute()
 
-
+Get all versions of the Onshape REST APIs.
 
 ### Example
 

@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **IgnoreExportRulesForContents** | Pointer to **bool** |  | [optional] 
 **ImageHeight** | Pointer to **int32** |  | [optional] 
 **ImageWidth** | Pointer to **int32** |  | [optional] 
+**ImportAppearances** | Pointer to **bool** |  | [optional] 
 **ImportInBackground** | Pointer to **bool** |  | [optional] 
 **ImportWithinDocument** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
@@ -839,6 +840,31 @@ SetImageWidth sets ImageWidth field to given value.
 `func (o *BTTranslateFormatParams) HasImageWidth() bool`
 
 HasImageWidth returns a boolean if a field has been set.
+
+### GetImportAppearances
+
+`func (o *BTTranslateFormatParams) GetImportAppearances() bool`
+
+GetImportAppearances returns the ImportAppearances field if non-nil, zero value otherwise.
+
+### GetImportAppearancesOk
+
+`func (o *BTTranslateFormatParams) GetImportAppearancesOk() (*bool, bool)`
+
+GetImportAppearancesOk returns a tuple with the ImportAppearances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportAppearances
+
+`func (o *BTTranslateFormatParams) SetImportAppearances(v bool)`
+
+SetImportAppearances sets ImportAppearances field to given value.
+
+### HasImportAppearances
+
+`func (o *BTTranslateFormatParams) HasImportAppearances() bool`
+
+HasImportAppearances returns a boolean if a field has been set.
 
 ### GetImportInBackground
 

@@ -4,10 +4,10 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CopyAssociativeData**](AppAssociativeDataApi.md#CopyAssociativeData) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata | Copy associative data between sub-views inside this application tab by document ID, workspace ID, and tab ID. Useful if the application has multiple sub-components; for example, Drawing views.
-[**DeleteAssociativeData**](AppAssociativeDataApi.md#DeleteAssociativeData) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Delete associative data for this application tab by document ID, workspace or version or microversion ID, and tab ID.
-[**GetAssociativeData**](AppAssociativeDataApi.md#GetAssociativeData) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Retrieve associative data for the application tab by document ID, workspace or version or microversion ID, and tab ID.
-[**PostAssociativeData**](AppAssociativeDataApi.md#PostAssociativeData) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Update associative data for an application tab by document ID, workspace or version or microversion ID, and tab ID.
+[**CopyAssociativeData**](AppAssociativeDataApi.md#CopyAssociativeData) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata | Copy associative data from one view to another.
+[**DeleteAssociativeData**](AppAssociativeDataApi.md#DeleteAssociativeData) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Delete the associative data from the specified app element.
+[**GetAssociativeData**](AppAssociativeDataApi.md#GetAssociativeData) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Get the associative data for the specified app element.
+[**PostAssociativeData**](AppAssociativeDataApi.md#PostAssociativeData) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Set the associative data for the specified app element.
 
 
 
@@ -15,7 +15,9 @@ Method | HTTP request | Description
 
 > BTAppAssociativeDataArrayInfo CopyAssociativeData(ctx, did, wid, eid).BTAppElementParamsArrayBTCopyViewAssociativeDataParams(bTAppElementParamsArrayBTCopyViewAssociativeDataParams).Execute()
 
-Copy associative data between sub-views inside this application tab by document ID, workspace ID, and tab ID. Useful if the application has multiple sub-components; for example, Drawing views.
+Copy associative data from one view to another.
+
+
 
 ### Example
 
@@ -91,7 +93,9 @@ Name | Type | Description  | Notes
 
 > BTAppElementBasicInfo DeleteAssociativeData(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).Execute()
 
-Delete associative data for this application tab by document ID, workspace or version or microversion ID, and tab ID.
+Delete the associative data from the specified app element.
+
+
 
 ### Example
 
@@ -190,7 +194,9 @@ Name | Type | Description  | Notes
 
 > BTAppAssociativeDataArrayInfo GetAssociativeData(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).Execute()
 
-Retrieve associative data for the application tab by document ID, workspace or version or microversion ID, and tab ID.
+Get the associative data for the specified app element.
+
+
 
 ### Example
 
@@ -293,7 +299,9 @@ Name | Type | Description  | Notes
 
 > BTAppAssociativeDataArrayInfo PostAssociativeData(ctx, did, eid, wvm, wvmid).Body(body).Execute()
 
-Update associative data for an application tab by document ID, workspace or version or microversion ID, and tab ID.
+Set the associative data for the specified app element.
+
+
 
 ### Example
 

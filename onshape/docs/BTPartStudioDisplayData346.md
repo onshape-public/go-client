@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AppearanceIdToAppearanceOverride** | Pointer to [**map[string]BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **AssemblyReferenceDisplayData** | Pointer to [**BTAssemblyReferencesDisplayData1562**](BTAssemblyReferencesDisplayData1562.md) |  | [optional] 
+**BodyIdToEntityAppearanceSettings** | Pointer to [**map[string]BTBaseEntityAppearanceSettings1391**](BTBaseEntityAppearanceSettings1391.md) |  | [optional] 
+**BodyIdToEntityAppearanceSettingsChanged** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **CacheablePartStudioDisplayDataVersion** | Pointer to [**GBTPartStudioDisplayDataVersion**](GBTPartStudioDisplayDataVersion.md) |  | [optional] 
 **DecalIdToDecal** | Pointer to [**map[string]BTDecal2404**](BTDecal2404.md) |  | [optional] 
@@ -106,6 +108,56 @@ SetAssemblyReferenceDisplayData sets AssemblyReferenceDisplayData field to given
 `func (o *BTPartStudioDisplayData346) HasAssemblyReferenceDisplayData() bool`
 
 HasAssemblyReferenceDisplayData returns a boolean if a field has been set.
+
+### GetBodyIdToEntityAppearanceSettings
+
+`func (o *BTPartStudioDisplayData346) GetBodyIdToEntityAppearanceSettings() map[string]BTBaseEntityAppearanceSettings1391`
+
+GetBodyIdToEntityAppearanceSettings returns the BodyIdToEntityAppearanceSettings field if non-nil, zero value otherwise.
+
+### GetBodyIdToEntityAppearanceSettingsOk
+
+`func (o *BTPartStudioDisplayData346) GetBodyIdToEntityAppearanceSettingsOk() (*map[string]BTBaseEntityAppearanceSettings1391, bool)`
+
+GetBodyIdToEntityAppearanceSettingsOk returns a tuple with the BodyIdToEntityAppearanceSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyIdToEntityAppearanceSettings
+
+`func (o *BTPartStudioDisplayData346) SetBodyIdToEntityAppearanceSettings(v map[string]BTBaseEntityAppearanceSettings1391)`
+
+SetBodyIdToEntityAppearanceSettings sets BodyIdToEntityAppearanceSettings field to given value.
+
+### HasBodyIdToEntityAppearanceSettings
+
+`func (o *BTPartStudioDisplayData346) HasBodyIdToEntityAppearanceSettings() bool`
+
+HasBodyIdToEntityAppearanceSettings returns a boolean if a field has been set.
+
+### GetBodyIdToEntityAppearanceSettingsChanged
+
+`func (o *BTPartStudioDisplayData346) GetBodyIdToEntityAppearanceSettingsChanged() bool`
+
+GetBodyIdToEntityAppearanceSettingsChanged returns the BodyIdToEntityAppearanceSettingsChanged field if non-nil, zero value otherwise.
+
+### GetBodyIdToEntityAppearanceSettingsChangedOk
+
+`func (o *BTPartStudioDisplayData346) GetBodyIdToEntityAppearanceSettingsChangedOk() (*bool, bool)`
+
+GetBodyIdToEntityAppearanceSettingsChangedOk returns a tuple with the BodyIdToEntityAppearanceSettingsChanged field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyIdToEntityAppearanceSettingsChanged
+
+`func (o *BTPartStudioDisplayData346) SetBodyIdToEntityAppearanceSettingsChanged(v bool)`
+
+SetBodyIdToEntityAppearanceSettingsChanged sets BodyIdToEntityAppearanceSettingsChanged field to given value.
+
+### HasBodyIdToEntityAppearanceSettingsChanged
+
+`func (o *BTPartStudioDisplayData346) HasBodyIdToEntityAppearanceSettingsChanged() bool`
+
+HasBodyIdToEntityAppearanceSettingsChanged returns a boolean if a field has been set.
 
 ### GetBtType
 

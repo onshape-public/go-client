@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BetaCapabilityIds** | Pointer to **[]string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Elements** | Pointer to [**[]BTDocumentElementCreationDescriptor**](BTDocumentElementCreationDescriptor.md) |  | [optional] 
 **ForceExportRules** | Pointer to **bool** |  | [optional] 
@@ -38,31 +37,6 @@ will change when the set of required properties is changed
 NewBTDocumentParamsWithDefaults instantiates a new BTDocumentParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBetaCapabilityIds
-
-`func (o *BTDocumentParams) GetBetaCapabilityIds() []string`
-
-GetBetaCapabilityIds returns the BetaCapabilityIds field if non-nil, zero value otherwise.
-
-### GetBetaCapabilityIdsOk
-
-`func (o *BTDocumentParams) GetBetaCapabilityIdsOk() (*[]string, bool)`
-
-GetBetaCapabilityIdsOk returns a tuple with the BetaCapabilityIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBetaCapabilityIds
-
-`func (o *BTDocumentParams) SetBetaCapabilityIds(v []string)`
-
-SetBetaCapabilityIds sets BetaCapabilityIds field to given value.
-
-### HasBetaCapabilityIds
-
-`func (o *BTDocumentParams) HasBetaCapabilityIds() bool`
-
-HasBetaCapabilityIds returns a boolean if a field has been set.
 
 ### GetDescription
 

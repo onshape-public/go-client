@@ -21,6 +21,8 @@
 
 * `GBTMetadataSourceTypeComputedConfigured` (value: `"COMPUTED_CONFIGURED"`)
 
+* `GBTMetadataSourceTypeImport` (value: `"IMPORT"`)
+
 * `GBTMetadataSourceTypeUnknown` (value: `"UNKNOWN"`)
 
 

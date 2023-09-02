@@ -4,27 +4,27 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddFeature**](AssemblyApi.md#AddFeature) | **Post** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Create features array by document ID, workspace or version or microversion ID, and tab ID.
-[**CreateAssembly**](AssemblyApi.md#CreateAssembly) | **Post** /assemblies/d/{did}/w/{wid} | Create Assembly by document ID and workspace ID.
-[**CreateInstance**](AssemblyApi.md#CreateInstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Create Assembly instances by document ID, workspace ID, and tab ID.
-[**DeleteFeature**](AssemblyApi.md#DeleteFeature) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a feature by document ID, workspace ID, tab ID, and feature ID.
-[**DeleteInstance**](AssemblyApi.md#DeleteInstance) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid} | Delete an instance by document ID, workspace ID, tab ID, and node ID.
-[**GetAssemblyBoundingBoxes**](AssemblyApi.md#GetAssemblyBoundingBoxes) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Retrieve bounding boxes by document ID, workspace or version or microversion ID, and tab ID.
-[**GetAssemblyDefinition**](AssemblyApi.md#GetAssemblyDefinition) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid} | Retrieve assembly by document ID, workspace or version or microversion ID, and tab ID.
-[**GetAssemblyMassProperties**](AssemblyApi.md#GetAssemblyMassProperties) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | 
-[**GetAssemblyShadedViews**](AssemblyApi.md#GetAssemblyShadedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Retrieve an array of shaded view images by document ID, workspace or version or microversion ID, and tab ID.
-[**GetBillOfMaterials**](AssemblyApi.md#GetBillOfMaterials) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom | Retrieve the bill of materials (BOM) by document ID, workspace or version or microversion ID, and tab ID.
-[**GetExplodedViews**](AssemblyApi.md#GetExplodedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | 
-[**GetFeatureSpecs**](AssemblyApi.md#GetFeatureSpecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Retrieve feature specifications array by document ID, workspace or version or microversion ID, and tab ID.
-[**GetFeatures**](AssemblyApi.md#GetFeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Retrieve features array by document ID, workspace or version or microversion ID, and tab ID.
-[**GetNamedPositions**](AssemblyApi.md#GetNamedPositions) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions | 
-[**GetNamedViews**](AssemblyApi.md#GetNamedViews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | 
-[**GetOrCreateBillOfMaterialsElement**](AssemblyApi.md#GetOrCreateBillOfMaterialsElement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Create a bill of materials (BOM) table by document ID, workspace ID, and tab ID.
-[**InsertTransformedInstances**](AssemblyApi.md#InsertTransformedInstances) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/transformedinstances | Create an instance transform by document ID, workspace ID, and tab ID.
-[**Modify**](AssemblyApi.md#Modify) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/modify | Modify assembly by document ID, workspace ID and tab ID.
-[**TransformOccurrences**](AssemblyApi.md#TransformOccurrences) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms | Create an occurrence transform by document ID, workspace ID, and tab ID.
-[**TranslateFormat**](AssemblyApi.md#TranslateFormat) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations | Create assembly translation by document ID, workspace or version ID, and tab ID.
-[**UpdateFeature**](AssemblyApi.md#UpdateFeature) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Upload a feature by document ID, workspace ID, tab ID, and feature ID.
+[**AddFeature**](AssemblyApi.md#AddFeature) | **Post** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the assembly feature list.
+[**CreateAssembly**](AssemblyApi.md#CreateAssembly) | **Post** /assemblies/d/{did}/w/{wid} | Create a new assembly tab in the document.
+[**CreateInstance**](AssemblyApi.md#CreateInstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Insert an instance of a part, sketch, assembly, or Part Studio into a document.
+[**DeleteFeature**](AssemblyApi.md#DeleteFeature) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a feature from an assembly.
+[**DeleteInstance**](AssemblyApi.md#DeleteInstance) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid} | Delete an instance of an assembly.
+[**GetAssemblyBoundingBoxes**](AssemblyApi.md#GetAssemblyBoundingBoxes) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get bounding box information for the specified assembly.
+[**GetAssemblyDefinition**](AssemblyApi.md#GetAssemblyDefinition) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid} | Get definition information for the specified assembly.
+[**GetAssemblyMassProperties**](AssemblyApi.md#GetAssemblyMassProperties) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for the assembly.
+[**GetAssemblyShadedViews**](AssemblyApi.md#GetAssemblyShadedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get an array of shaded view images for the document.
+[**GetBillOfMaterials**](AssemblyApi.md#GetBillOfMaterials) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom | Get the Bill Of Materials (BOM) content for the specified assembly.
+[**GetExplodedViews**](AssemblyApi.md#GetExplodedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | Get a list of exploded views for the specified assembly.
+[**GetFeatureSpecs**](AssemblyApi.md#GetFeatureSpecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature spec definitions for an assembly.
+[**GetFeatures**](AssemblyApi.md#GetFeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get the definitions of the specified features in an assembly.
+[**GetNamedPositions**](AssemblyApi.md#GetNamedPositions) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions | Get a list of all named positions for the assembly.
+[**GetNamedViews**](AssemblyApi.md#GetNamedViews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | Get the view data for all named views for the specified element.
+[**GetOrCreateBillOfMaterialsElement**](AssemblyApi.md#GetOrCreateBillOfMaterialsElement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
+[**InsertTransformedInstances**](AssemblyApi.md#InsertTransformedInstances) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/transformedinstances | Create new instances with transformation.
+[**Modify**](AssemblyApi.md#Modify) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/modify | Modify an assembly.
+[**TransformOccurrences**](AssemblyApi.md#TransformOccurrences) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms | Transform a list of assembly occurrences.
+[**TranslateFormat**](AssemblyApi.md#TranslateFormat) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations | Translate the assembly to another format for export.
+[**UpdateFeature**](AssemblyApi.md#UpdateFeature) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update an existing feature for an Assembly.
 
 
 
@@ -32,7 +32,7 @@ Method | HTTP request | Description
 
 > BTFeatureDefinitionResponse1617 AddFeature(ctx, did, wvm, wvmid, eid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
 
-Create features array by document ID, workspace or version or microversion ID, and tab ID.
+Add a feature to the assembly feature list.
 
 ### Example
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 > BTDocumentElementInfo CreateAssembly(ctx, did, wid).BTModelElementParams(bTModelElementParams).Execute()
 
-Create Assembly by document ID and workspace ID.
+Create a new assembly tab in the document.
 
 ### Example
 
@@ -184,7 +184,9 @@ Name | Type | Description  | Notes
 
 > []BTOccurrence74 CreateInstance(ctx, did, wid, eid).BTAssemblyInstanceDefinitionParams(bTAssemblyInstanceDefinitionParams).Execute()
 
-Create Assembly instances by document ID, workspace ID, and tab ID.
+Insert an instance of a part, sketch, assembly, or Part Studio into a document.
+
+
 
 ### Example
 
@@ -260,7 +262,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureApiBase1430 DeleteFeature(ctx, did, wid, eid, fid).Execute()
 
-Delete a feature by document ID, workspace ID, tab ID, and feature ID.
+Delete a feature from an assembly.
 
 ### Example
 
@@ -337,7 +339,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteInstance(ctx, did, eid, wid, nid).Execute()
 
-Delete an instance by document ID, workspace ID, tab ID, and node ID.
+Delete an instance of an assembly.
 
 ### Example
 
@@ -414,7 +416,7 @@ Name | Type | Description  | Notes
 
 > BTBoundingBoxInfo GetAssemblyBoundingBoxes(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).IncludeHidden(includeHidden).DisplayStateId(displayStateId).NamedPositionId(namedPositionId).IncludeSketches(includeSketches).Execute()
 
-Retrieve bounding boxes by document ID, workspace or version or microversion ID, and tab ID.
+Get bounding box information for the specified assembly.
 
 ### Example
 
@@ -505,7 +507,9 @@ Name | Type | Description  | Notes
 
 > BTAssemblyDefinitionInfo GetAssemblyDefinition(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).IncludeMateFeatures(includeMateFeatures).IncludeNonSolids(includeNonSolids).IncludeMateConnectors(includeMateConnectors).ExcludeSuppressed(excludeSuppressed).Execute()
 
-Retrieve assembly by document ID, workspace or version or microversion ID, and tab ID.
+Get definition information for the specified assembly.
+
+
 
 ### Example
 
@@ -596,7 +600,7 @@ Name | Type | Description  | Notes
 
 > BTMassPropertiesInfo GetAssemblyMassProperties(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).Execute()
 
-
+Get the mass properties for the assembly.
 
 ### Example
 
@@ -677,7 +681,7 @@ Name | Type | Description  | Notes
 
 > BTShadedViewsInfo GetAssemblyShadedViews(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).ViewMatrix(viewMatrix).OutputHeight(outputHeight).OutputWidth(outputWidth).PixelSize(pixelSize).Edges(edges).ShowAllParts(showAllParts).IncludeSurfaces(includeSurfaces).UseAntiAliasing(useAntiAliasing).IncludeWires(includeWires).DisplayStateId(displayStateId).NamedPositionId(namedPositionId).Execute()
 
-Retrieve an array of shaded view images by document ID, workspace or version or microversion ID, and tab ID.
+Get an array of shaded view images for the document.
 
 ### Example
 
@@ -782,7 +786,9 @@ Name | Type | Description  | Notes
 
 > BTBillOfMaterialsInfo GetBillOfMaterials(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Thumbnail(thumbnail).Execute()
 
-Retrieve the bill of materials (BOM) by document ID, workspace or version or microversion ID, and tab ID.
+Get the Bill Of Materials (BOM) content for the specified assembly.
+
+
 
 ### Example
 
@@ -885,7 +891,7 @@ Name | Type | Description  | Notes
 
 > []BTViewFeatureBaseInfo GetExplodedViews(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).Execute()
 
-
+Get a list of exploded views for the specified assembly.
 
 ### Example
 
@@ -968,7 +974,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureSpecsResponse664 GetFeatureSpecs(ctx, did, wvm, wvmid, eid).Execute()
 
-Retrieve feature specifications array by document ID, workspace or version or microversion ID, and tab ID.
+Get the feature spec definitions for an assembly.
 
 ### Example
 
@@ -1045,7 +1051,7 @@ Name | Type | Description  | Notes
 
 > BTAssemblyFeatureListResponse1174 GetFeatures(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).FeatureId(featureId).Execute()
 
-Retrieve features array by document ID, workspace or version or microversion ID, and tab ID.
+Get the definitions of the specified features in an assembly.
 
 ### Example
 
@@ -1130,7 +1136,7 @@ Name | Type | Description  | Notes
 
 > []BTViewFeatureBaseInfo GetNamedPositions(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).Execute()
 
-
+Get a list of all named positions for the assembly.
 
 ### Example
 
@@ -1213,7 +1219,7 @@ Name | Type | Description  | Notes
 
 > BTNamedViewsInfo GetNamedViews(ctx, did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
 
-
+Get the view data for all named views for the specified element.
 
 ### Example
 
@@ -1290,7 +1296,7 @@ Name | Type | Description  | Notes
 
 > BTDocumentElementInfo GetOrCreateBillOfMaterialsElement(ctx, did, wid, eid).Execute()
 
-Create a bill of materials (BOM) table by document ID, workspace ID, and tab ID.
+Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
 
 ### Example
 
@@ -1364,7 +1370,7 @@ Name | Type | Description  | Notes
 
 > BTAssemblyInsertTransformedInstancesResponse InsertTransformedInstances(ctx, did, eid, wid).BTAssemblyTransformedInstancesDefinitionParams(bTAssemblyTransformedInstancesDefinitionParams).Execute()
 
-Create an instance transform by document ID, workspace ID, and tab ID.
+Create new instances with transformation.
 
 ### Example
 
@@ -1440,7 +1446,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} Modify(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).BTAssemblyModificationParams(bTAssemblyModificationParams).Execute()
 
-Modify assembly by document ID, workspace ID and tab ID.
+Modify an assembly.
+
+
 
 ### Example
 
@@ -1518,7 +1526,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} TransformOccurrences(ctx, did, eid, wid).BTAssemblyTransformDefinitionParams(bTAssemblyTransformDefinitionParams).Execute()
 
-Create an occurrence transform by document ID, workspace ID, and tab ID.
+Transform a list of assembly occurrences.
 
 ### Example
 
@@ -1594,7 +1602,9 @@ Name | Type | Description  | Notes
 
 > BTTranslationRequestInfo TranslateFormat(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
 
-Create assembly translation by document ID, workspace or version ID, and tab ID.
+Translate the assembly to another format for export.
+
+
 
 ### Example
 
@@ -1673,7 +1683,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureDefinitionResponse1617 UpdateFeature(ctx, did, wid, eid, fid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
 
-Upload a feature by document ID, workspace ID, tab ID, and feature ID.
+Update an existing feature for an Assembly.
 
 ### Example
 

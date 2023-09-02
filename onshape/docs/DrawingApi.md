@@ -4,9 +4,9 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDrawingAppElement**](DrawingApi.md#CreateDrawingAppElement) | **Post** /drawings/d/{did}/w/{wid}/create | 
-[**CreateDrawingTranslation**](DrawingApi.md#CreateDrawingTranslation) | **Post** /drawings/d/{did}/{wv}/{wvid}/e/{eid}/translations | 
-[**GetDrawingTranslatorFormats**](DrawingApi.md#GetDrawingTranslatorFormats) | **Get** /drawings/d/{did}/w/{wid}/e/{eid}/translationformats | Retrieve translation formats by document ID, workspace ID, and tab ID.
+[**CreateDrawingAppElement**](DrawingApi.md#CreateDrawingAppElement) | **Post** /drawings/d/{did}/w/{wid}/create | Create a new drawing in a document.
+[**CreateDrawingTranslation**](DrawingApi.md#CreateDrawingTranslation) | **Post** /drawings/d/{did}/{wv}/{wvid}/e/{eid}/translations | Translate a drawing to a different format.
+[**GetDrawingTranslatorFormats**](DrawingApi.md#GetDrawingTranslatorFormats) | **Get** /drawings/d/{did}/w/{wid}/e/{eid}/translationformats | Get a list of all valid formats the drawing can be translated to.
 
 
 
@@ -14,9 +14,7 @@ Method | HTTP request | Description
 
 > BTDocumentElementInfo CreateDrawingAppElement(ctx, did, wid).BTDrawingParams(bTDrawingParams).Execute()
 
-
-
-
+Create a new drawing in a document.
 
 ### Example
 
@@ -88,6 +86,8 @@ Name | Type | Description  | Notes
 ## CreateDrawingTranslation
 
 > BTTranslationRequestInfo CreateDrawingTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
+
+Translate a drawing to a different format.
 
 
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 > []BTModelFormatInfo GetDrawingTranslatorFormats(ctx, did, wid, eid).Execute()
 
-Retrieve translation formats by document ID, workspace ID, and tab ID.
+Get a list of all valid formats the drawing can be translated to.
 
 ### Example
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**ExpressionErrorInfo** | Pointer to [**BTParameterExpressionErrorInfo2037**](BTParameterExpressionErrorInfo2037.md) |  | [optional] 
 **Level** | Pointer to [**GBTNoticeLevel**](GBTNoticeLevel.md) |  | [optional] 
 **LocationInfos** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
@@ -57,6 +58,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTNotice227) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetExpressionErrorInfo
+
+`func (o *BTNotice227) GetExpressionErrorInfo() BTParameterExpressionErrorInfo2037`
+
+GetExpressionErrorInfo returns the ExpressionErrorInfo field if non-nil, zero value otherwise.
+
+### GetExpressionErrorInfoOk
+
+`func (o *BTNotice227) GetExpressionErrorInfoOk() (*BTParameterExpressionErrorInfo2037, bool)`
+
+GetExpressionErrorInfoOk returns a tuple with the ExpressionErrorInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpressionErrorInfo
+
+`func (o *BTNotice227) SetExpressionErrorInfo(v BTParameterExpressionErrorInfo2037)`
+
+SetExpressionErrorInfo sets ExpressionErrorInfo field to given value.
+
+### HasExpressionErrorInfo
+
+`func (o *BTNotice227) HasExpressionErrorInfo() bool`
+
+HasExpressionErrorInfo returns a boolean if a field has been set.
 
 ### GetLevel
 
