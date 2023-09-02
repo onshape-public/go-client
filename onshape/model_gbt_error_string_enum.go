@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.168.21279-402b6292597b
+API version: 1.169.21702-242da806ef2a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1370,6 +1370,17 @@ const (
 	GBTErrorStringEnumCurvePatternDistanceTooLarge                          GBTErrorStringEnum = "CURVE_PATTERN_DISTANCE_TOO_LARGE"
 	GBTErrorStringEnumBendReplacementHealFailed                             GBTErrorStringEnum = "BEND_REPLACEMENT_HEAL_FAILED"
 	GBTErrorStringEnumCannotCopyConstraints                                 GBTErrorStringEnum = "CANNOT_COPY_CONSTRAINTS"
+	GBTErrorStringEnumParameterExpressionValidationUnitsMismatch3Args       GBTErrorStringEnum = "PARAMETER_EXPRESSION_VALIDATION_UNITS_MISMATCH_3ARGS"
+	GBTErrorStringEnumParameterExpressionValidationSyntaxError0Args         GBTErrorStringEnum = "PARAMETER_EXPRESSION_VALIDATION_SYNTAX_ERROR_0ARGS"
+	GBTErrorStringEnumParameterExpressionValidationReservedId1Arg           GBTErrorStringEnum = "PARAMETER_EXPRESSION_VALIDATION_RESERVED_ID_1ARG"
+	GBTErrorStringEnumParameterExpressionValidationCannotApplyOpTo1Arg      GBTErrorStringEnum = "PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_1ARG"
+	GBTErrorStringEnumParameterExpressionValidationCannotApplyOpTo2Args     GBTErrorStringEnum = "PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_2ARGS"
+	GBTErrorStringEnumParameterExpressionValidationCannotApplyOpTo3Args     GBTErrorStringEnum = "PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_3ARGS"
+	GBTErrorStringEnumParameterExpressionValidationIncorrectType            GBTErrorStringEnum = "PARAMETER_EXPRESSION_VALIDATION_INCORRECT_TYPE"
+	GBTErrorStringEnumParameterExpressionUnknownFunction                    GBTErrorStringEnum = "PARAMETER_EXPRESSION_UNKNOWN_FUNCTION"
+	GBTErrorStringEnumParameterExpressionUnknownVariable                    GBTErrorStringEnum = "PARAMETER_EXPRESSION_UNKNOWN_VARIABLE"
+	GBTErrorStringEnumRevolveNotCoplanarWithAxis                            GBTErrorStringEnum = "REVOLVE_NOT_COPLANAR_WITH_AXIS"
+	GBTErrorStringEnumFrameAngleReferenceInvalidEntity                      GBTErrorStringEnum = "FRAME_ANGLE_REFERENCE_INVALID_ENTITY"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2724,6 +2735,17 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"CURVE_PATTERN_DISTANCE_TOO_LARGE",
 	"BEND_REPLACEMENT_HEAL_FAILED",
 	"CANNOT_COPY_CONSTRAINTS",
+	"PARAMETER_EXPRESSION_VALIDATION_UNITS_MISMATCH_3ARGS",
+	"PARAMETER_EXPRESSION_VALIDATION_SYNTAX_ERROR_0ARGS",
+	"PARAMETER_EXPRESSION_VALIDATION_RESERVED_ID_1ARG",
+	"PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_1ARG",
+	"PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_2ARGS",
+	"PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_3ARGS",
+	"PARAMETER_EXPRESSION_VALIDATION_INCORRECT_TYPE",
+	"PARAMETER_EXPRESSION_UNKNOWN_FUNCTION",
+	"PARAMETER_EXPRESSION_UNKNOWN_VARIABLE",
+	"REVOLVE_NOT_COPLANAR_WITH_AXIS",
+	"FRAME_ANGLE_REFERENCE_INVALID_ENTITY",
 	"UNKNOWN",
 }
 

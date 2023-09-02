@@ -2701,6 +2701,28 @@
 
 * `GBTErrorStringEnumCannotCopyConstraints` (value: `"CANNOT_COPY_CONSTRAINTS"`)
 
+* `GBTErrorStringEnumParameterExpressionValidationUnitsMismatch3Args` (value: `"PARAMETER_EXPRESSION_VALIDATION_UNITS_MISMATCH_3ARGS"`)
+
+* `GBTErrorStringEnumParameterExpressionValidationSyntaxError0Args` (value: `"PARAMETER_EXPRESSION_VALIDATION_SYNTAX_ERROR_0ARGS"`)
+
+* `GBTErrorStringEnumParameterExpressionValidationReservedId1Arg` (value: `"PARAMETER_EXPRESSION_VALIDATION_RESERVED_ID_1ARG"`)
+
+* `GBTErrorStringEnumParameterExpressionValidationCannotApplyOpTo1Arg` (value: `"PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_1ARG"`)
+
+* `GBTErrorStringEnumParameterExpressionValidationCannotApplyOpTo2Args` (value: `"PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_2ARGS"`)
+
+* `GBTErrorStringEnumParameterExpressionValidationCannotApplyOpTo3Args` (value: `"PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_3ARGS"`)
+
+* `GBTErrorStringEnumParameterExpressionValidationIncorrectType` (value: `"PARAMETER_EXPRESSION_VALIDATION_INCORRECT_TYPE"`)
+
+* `GBTErrorStringEnumParameterExpressionUnknownFunction` (value: `"PARAMETER_EXPRESSION_UNKNOWN_FUNCTION"`)
+
+* `GBTErrorStringEnumParameterExpressionUnknownVariable` (value: `"PARAMETER_EXPRESSION_UNKNOWN_VARIABLE"`)
+
+* `GBTErrorStringEnumRevolveNotCoplanarWithAxis` (value: `"REVOLVE_NOT_COPLANAR_WITH_AXIS"`)
+
+* `GBTErrorStringEnumFrameAngleReferenceInvalidEntity` (value: `"FRAME_ANGLE_REFERENCE_INVALID_ENTITY"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

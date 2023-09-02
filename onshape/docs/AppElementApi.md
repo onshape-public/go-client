@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**CommitTransactions**](AppElementApi.md#CommitTransactions) | **Post** /appelements/d/{did}/w/{wid}/transactions | Commit transactions by document ID and workspace ID.
 [**CompareAppElementJson**](AppElementApi.md#CompareAppElementJson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Compare JSON by document ID, workspace or version or microversion ID, and tab ID.
 [**CreateElement**](AppElementApi.md#CreateElement) | **Post** /appelements/d/{did}/w/{wid} | Create application tab by document ID and workspace ID.
-[**CreateReference**](AppElementApi.md#CreateReference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references | Create referencesby document ID, workspace or version or microversion ID, and tab ID.
+[**CreateReference**](AppElementApi.md#CreateReference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references | Create references by document ID, workspace or version or microversion ID, and tab ID.
 [**DeleteAppElementContent**](AppElementApi.md#DeleteAppElementContent) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements/{sid} | Delete subelement array by document ID, workspace or version or microversion ID, tab ID, and subelement ID. A Subelement is used to store and organize data.
 [**DeleteBlobSubelement**](AppElementApi.md#DeleteBlobSubelement) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Delete blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
 [**DeleteReference**](AppElementApi.md#DeleteReference) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Delete references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementReferenceInfo CreateReference(ctx, did, eid, wvm, wvmid).BTAppElementReferenceParams(bTAppElementReferenceParams).Execute()
 
-Create referencesby document ID, workspace or version or microversion ID, and tab ID.
+Create references by document ID, workspace or version or microversion ID, and tab ID.
 
 ### Example
 

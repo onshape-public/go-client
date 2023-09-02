@@ -5,10 +5,10 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateTableTemplate**](PropertiesTableTemplateApi.md#CreateTableTemplate) | **Post** /tabletemplates | Create a new properties table template.
-[**DeleteTableTemplate**](PropertiesTableTemplateApi.md#DeleteTableTemplate) | **Delete** /tabletemplates/{tid} | Delete a properties table template by template ID.
-[**GetByCompanyId**](PropertiesTableTemplateApi.md#GetByCompanyId) | **Get** /tabletemplates/companies/{cid} | Retrieve the properties table templates by company ID.
-[**GetByDocumentId**](PropertiesTableTemplateApi.md#GetByDocumentId) | **Get** /tabletemplates/d/{did} | Retrieve the properties table templates by document ID.
-[**GetTableTemplate**](PropertiesTableTemplateApi.md#GetTableTemplate) | **Get** /tabletemplates/{tid} | Retrieve a properties table template by template ID.
+[**DeleteTableTemplate**](PropertiesTableTemplateApi.md#DeleteTableTemplate) | **Delete** /tabletemplates/{tid} | Delete a properties table template.
+[**GetByCompanyId**](PropertiesTableTemplateApi.md#GetByCompanyId) | **Get** /tabletemplates/companies/{cid} | Get all properties table templates available for a company.
+[**GetByDocumentId**](PropertiesTableTemplateApi.md#GetByDocumentId) | **Get** /tabletemplates/d/{did} | Get all table templates that are available to use on the provided document.
+[**GetTableTemplate**](PropertiesTableTemplateApi.md#GetTableTemplate) | **Get** /tabletemplates/{tid} | Get a properties table template by template ID.
 
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteTableTemplate(ctx, tid).Execute()
 
-Delete a properties table template by template ID.
+Delete a properties table template.
 
 ### Example
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 > []BTPropertiesTableTemplateInfo GetByCompanyId(ctx, cid).TemplateType(templateType).OnlyActive(onlyActive).IncludeDefaults(includeDefaults).Execute()
 
-Retrieve the properties table templates by company ID.
+Get all properties table templates available for a company.
 
 ### Example
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 > []BTPropertiesTableTemplateInfo GetByDocumentId(ctx, did).TemplateType(templateType).OnlyActive(onlyActive).IncludeDefaults(includeDefaults).Execute()
 
-Retrieve the properties table templates by document ID.
+Get all table templates that are available to use on the provided document.
 
 ### Example
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 > BTPropertiesTableTemplateInfo GetTableTemplate(ctx, tid).Execute()
 
-Retrieve a properties table template by template ID.
+Get a properties table template by template ID.
 
 ### Example
 

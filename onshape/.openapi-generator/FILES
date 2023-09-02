@@ -148,6 +148,8 @@ docs/BTAssemblyTransformedInstancesDefinitionParams.md
 docs/BTAssociativeDataInfo.md
 docs/BTBExportModelParams.md
 docs/BTBSMatrix386.md
+docs/BTBaseEntityAppearanceEntry3607.md
+docs/BTBaseEntityAppearanceSettings1391.md
 docs/BTBaseEntityData33.md
 docs/BTBaseInfo.md
 docs/BTBasePartColorCycle2614.md
@@ -890,6 +892,7 @@ docs/BTPTypeNameStandard291.md
 docs/BTPTypeNameStandard291AllOf.md
 docs/BTPTypeNameUser292.md
 docs/BTPTypeNameUser292AllOf.md
+docs/BTParameterExpressionErrorInfo2037.md
 docs/BTParameterGroupSpec3469.md
 docs/BTParameterLookupTableEntry1667.md
 docs/BTParameterLookupTableListEntry1916.md
@@ -1187,6 +1190,7 @@ docs/BTUserSettingsInfo.md
 docs/BTUserState.md
 docs/BTUserSummaryInfo.md
 docs/BTUserSummaryInfoAllOf.md
+docs/BTValueAndUse4696.md
 docs/BTVariableInfo.md
 docs/BTVariableParams.md
 docs/BTVariableStudioReferenceInfo.md
@@ -1312,6 +1316,7 @@ docs/GBTTableTextAlignment.md
 docs/GBTTessellationSettingEnum.md
 docs/GBTUIHint.md
 docs/GBTUiSelectionType.md
+docs/GBTValueUse.md
 docs/GBTVariableType.md
 docs/GlobalPermissionInfo.md
 docs/InsertableApi.md
@@ -1435,6 +1440,8 @@ model_bt_assembly_simulation_table_3236.go
 model_bt_assembly_transform_definition_params.go
 model_bt_assembly_transformed_instances_definition_params.go
 model_bt_associative_data_info.go
+model_bt_base_entity_appearance_entry_3607.go
+model_bt_base_entity_appearance_settings_1391.go
 model_bt_base_entity_data_33.go
 model_bt_base_info.go
 model_bt_base_part_color_cycle_2614.go
@@ -1741,6 +1748,7 @@ model_bt_origin_display_data_934.go
 model_bt_origin_entity_935.go
 model_bt_other_document_selector_parameters_info.go
 model_bt_owner_info.go
+model_bt_parameter_expression_error_info_2037.go
 model_bt_parameter_group_spec_3469.go
 model_bt_parameter_lookup_table_entry_1667.go
 model_bt_parameter_lookup_table_list_entry_1916.go
@@ -1941,6 +1949,7 @@ model_bt_user_o_auth2_summary_info.go
 model_bt_user_settings_info.go
 model_bt_user_state.go
 model_bt_user_summary_info.go
+model_bt_value_and_use_4696.go
 model_bt_variable_info.go
 model_bt_variable_params.go
 model_bt_variable_studio_reference_info.go
@@ -2250,6 +2259,7 @@ model_gbt_surface_type_enum.go
 model_gbt_table_column_width_units.go
 model_gbt_table_text_alignment.go
 model_gbt_tessellation_setting_enum.go
+model_gbt_value_use.go
 model_gbt_variable_type.go
 model_gbtbs_feature_visibility.go
 model_gbtm_geom_status.go

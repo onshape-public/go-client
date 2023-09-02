@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BetaCapabilityIds** | Pointer to **[]string** |  | [optional] 
 **IsPublic** | Pointer to **bool** |  | [optional] 
 **NewName** | Pointer to **string** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
@@ -30,31 +29,6 @@ will change when the set of required properties is changed
 NewBTCopyDocumentParamsWithDefaults instantiates a new BTCopyDocumentParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBetaCapabilityIds
-
-`func (o *BTCopyDocumentParams) GetBetaCapabilityIds() []string`
-
-GetBetaCapabilityIds returns the BetaCapabilityIds field if non-nil, zero value otherwise.
-
-### GetBetaCapabilityIdsOk
-
-`func (o *BTCopyDocumentParams) GetBetaCapabilityIdsOk() (*[]string, bool)`
-
-GetBetaCapabilityIdsOk returns a tuple with the BetaCapabilityIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBetaCapabilityIds
-
-`func (o *BTCopyDocumentParams) SetBetaCapabilityIds(v []string)`
-
-SetBetaCapabilityIds sets BetaCapabilityIds field to given value.
-
-### HasBetaCapabilityIds
-
-`func (o *BTCopyDocumentParams) HasBetaCapabilityIds() bool`
-
-HasBetaCapabilityIds returns a boolean if a field has been set.
 
 ### GetIsPublic
 

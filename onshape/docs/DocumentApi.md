@@ -1272,7 +1272,7 @@ Name | Type | Description  | Notes
 
 ## GetInsertables
 
-> BTInsertablesListResponse GetInsertables(ctx, did, wv, wvid).ElementId(elementId).Configuration(configuration).BetaCapabilityIds(betaCapabilityIds).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
+> BTInsertablesListResponse GetInsertables(ctx, did, wv, wvid).ElementId(elementId).Configuration(configuration).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
 
 Retrieve insertables by document ID and workspace or version ID.
 
@@ -1294,7 +1294,6 @@ func main() {
     wvid := "wvid_example" // string | 
     elementId := "elementId_example" // string |  (optional)
     configuration := "configuration_example" // string |  (optional)
-    betaCapabilityIds := []string{"Inner_example"} // []string |  (optional)
     includeParts := true // bool |  (optional) (default to false)
     includeSurfaces := true // bool |  (optional) (default to false)
     includeSketches := true // bool |  (optional) (default to false)
@@ -1321,7 +1320,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DocumentApi.GetInsertables(context.Background(), did, wv, wvid).ElementId(elementId).Configuration(configuration).BetaCapabilityIds(betaCapabilityIds).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
+    resp, r, err := apiClient.DocumentApi.GetInsertables(context.Background(), did, wv, wvid).ElementId(elementId).Configuration(configuration).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetInsertables``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1353,7 +1352,6 @@ Name | Type | Description  | Notes
 
  **elementId** | **string** |  | 
  **configuration** | **string** |  | 
- **betaCapabilityIds** | **[]string** |  | 
  **includeParts** | **bool** |  | [default to false]
  **includeSurfaces** | **bool** |  | [default to false]
  **includeSketches** | **bool** |  | [default to false]

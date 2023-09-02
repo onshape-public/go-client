@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.168.21279-402b6292597b
+API version: 1.169.21702-242da806ef2a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -44,7 +44,7 @@ func (r ApiAddFeatureRequest) Execute() (*BTFeatureDefinitionResponse1617, *http
 }
 
 /*
-AddFeature Create features array by document ID, workspace or version or microversion ID, and tab ID.
+AddFeature Add a feature to the assembly feature list.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -170,7 +170,7 @@ func (r ApiCreateAssemblyRequest) Execute() (*BTDocumentElementInfo, *http.Respo
 }
 
 /*
-CreateAssembly Create Assembly by document ID and workspace ID.
+CreateAssembly Create a new assembly tab in the document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -294,7 +294,9 @@ func (r ApiCreateInstanceRequest) Execute() ([]BTOccurrence74, *http.Response, e
 }
 
 /*
-CreateInstance Create Assembly instances by document ID, workspace ID, and tab ID.
+CreateInstance Insert an instance of a part, sketch, assembly, or Part Studio into a document.
+
+Part Studio instances may include multiple parts.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -406,7 +408,7 @@ func (r ApiDeleteFeatureRequest) Execute() (*BTFeatureApiBase1430, *http.Respons
 }
 
 /*
-DeleteFeature Delete a feature by document ID, workspace ID, tab ID, and feature ID.
+DeleteFeature Delete a feature from an assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -519,7 +521,7 @@ func (r ApiDeleteInstanceRequest) Execute() (map[string]interface{}, *http.Respo
 }
 
 /*
-DeleteInstance Delete an instance by document ID, workspace ID, tab ID, and node ID.
+DeleteInstance Delete an instance of an assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -682,7 +684,7 @@ func (r ApiGetAssemblyBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *http
 }
 
 /*
-GetAssemblyBoundingBoxes Retrieve bounding boxes by document ID, workspace or version or microversion ID, and tab ID.
+GetAssemblyBoundingBoxes Get bounding box information for the specified assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -867,7 +869,9 @@ func (r ApiGetAssemblyDefinitionRequest) Execute() (*BTAssemblyDefinitionInfo, *
 }
 
 /*
-GetAssemblyDefinition Retrieve assembly by document ID, workspace or version or microversion ID, and tab ID.
+GetAssemblyDefinition Get definition information for the specified assembly.
+
+All coordinates and translation matrix components are in meters (m).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1021,7 +1025,7 @@ func (r ApiGetAssemblyMassPropertiesRequest) Execute() (*BTMassPropertiesInfo, *
 }
 
 /*
-GetAssemblyMassProperties Method for GetAssemblyMassProperties
+GetAssemblyMassProperties Get the mass properties for the assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1232,7 +1236,7 @@ func (r ApiGetAssemblyShadedViewsRequest) Execute() (*BTShadedViewsInfo, *http.R
 }
 
 /*
-GetAssemblyShadedViews Retrieve an array of shaded view images by document ID, workspace or version or microversion ID, and tab ID.
+GetAssemblyShadedViews Get an array of shaded view images for the document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1484,7 +1488,9 @@ func (r ApiGetBillOfMaterialsRequest) Execute() (*BTBillOfMaterialsInfo, *http.R
 }
 
 /*
-GetBillOfMaterials Retrieve the bill of materials (BOM) by document ID, workspace or version or microversion ID, and tab ID.
+GetBillOfMaterials Get the Bill Of Materials (BOM) content for the specified assembly.
+
+Returns the BOM in JSON in the Onshape BOM Standard format.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1670,7 +1676,7 @@ func (r ApiGetExplodedViewsRequest) Execute() ([]BTViewFeatureBaseInfo, *http.Re
 }
 
 /*
-GetExplodedViews Method for GetExplodedViews
+GetExplodedViews Get a list of exploded views for the specified assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1799,7 +1805,7 @@ func (r ApiGetFeatureSpecsRequest) Execute() (*BTFeatureSpecsResponse664, *http.
 }
 
 /*
-GetFeatureSpecs Retrieve feature specifications array by document ID, workspace or version or microversion ID, and tab ID.
+GetFeatureSpecs Get the feature spec definitions for an assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1944,7 +1950,7 @@ func (r ApiGetFeaturesRequest) Execute() (*BTAssemblyFeatureListResponse1174, *h
 }
 
 /*
-GetFeatures Retrieve features array by document ID, workspace or version or microversion ID, and tab ID.
+GetFeatures Get the definitions of the specified features in an assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2096,7 +2102,7 @@ func (r ApiGetNamedPositionsRequest) Execute() ([]BTViewFeatureBaseInfo, *http.R
 }
 
 /*
-GetNamedPositions Method for GetNamedPositions
+GetNamedPositions Get a list of all named positions for the assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2242,7 +2248,7 @@ func (r ApiGetNamedViewsRequest) Execute() (*BTNamedViewsInfo, *http.Response, e
 }
 
 /*
-GetNamedViews Method for GetNamedViews
+GetNamedViews Get the view data for all named views for the specified element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2364,7 +2370,7 @@ func (r ApiGetOrCreateBillOfMaterialsElementRequest) Execute() (*BTDocumentEleme
 }
 
 /*
-GetOrCreateBillOfMaterialsElement Create a bill of materials (BOM) table by document ID, workspace ID, and tab ID.
+GetOrCreateBillOfMaterialsElement Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -2486,7 +2492,7 @@ func (r ApiInsertTransformedInstancesRequest) Execute() (*BTAssemblyInsertTransf
 }
 
 /*
-InsertTransformedInstances Create an instance transform by document ID, workspace ID, and tab ID.
+InsertTransformedInstances Create new instances with transformation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -2620,7 +2626,9 @@ func (r ApiModifyRequest) Execute() (map[string]interface{}, *http.Response, err
 }
 
 /*
-Modify Modify assembly by document ID, workspace ID and tab ID.
+Modify Modify an assembly.
+
+This endpoint can include multiple modifications to an assembly with one change. For example, it can delete/suppress/unsuppress/transform multiple instances. It creates one history entry in the document history list.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2747,7 +2755,7 @@ func (r ApiTransformOccurrencesRequest) Execute() (map[string]interface{}, *http
 }
 
 /*
-TransformOccurrences Create an occurrence transform by document ID, workspace ID, and tab ID.
+TransformOccurrences Transform a list of assembly occurrences.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -2872,7 +2880,9 @@ func (r ApiTranslateFormatRequest) Execute() (*BTTranslationRequestInfo, *http.R
 }
 
 /*
-TranslateFormat Create assembly translation by document ID, workspace or version ID, and tab ID.
+TranslateFormat Translate the assembly to another format for export.
+
+Refer to the [Export dialog][https://cad.onshape.com/help/Content/exporting-files.htm] for a list of valid formats.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -3003,7 +3013,7 @@ func (r ApiUpdateFeatureRequest) Execute() (*BTFeatureDefinitionResponse1617, *h
 }
 
 /*
-UpdateFeature Upload a feature by document ID, workspace ID, tab ID, and feature ID.
+UpdateFeature Update an existing feature for an Assembly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did

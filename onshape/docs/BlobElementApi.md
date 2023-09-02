@@ -4,11 +4,11 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateBlobTranslation**](BlobElementApi.md#CreateBlobTranslation) | **Post** /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations | Create translation (export) of blob element (document tab) by document id, workspace or version ID, and tab ID.
-[**DownloadFileWorkspace**](BlobElementApi.md#DownloadFileWorkspace) | **Get** /blobelements/d/{did}/w/{wid}/e/{eid} | Retrieve a file from a blob element by document ID, workspace ID, and tab ID.
-[**UpdateUnits**](BlobElementApi.md#UpdateUnits) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid}/units | Update mesh units of a previously imported STL or OBJ file by document ID, workspace ID, and tab ID.
-[**UploadFileCreateElement**](BlobElementApi.md#UploadFileCreateElement) | **Post** /blobelements/d/{did}/w/{wid} | Upload the file to a new tab by document ID and workspace ID.
-[**UploadFileUpdateElement**](BlobElementApi.md#UploadFileUpdateElement) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid} | Update a blob element by uploading a file by document ID, workspace ID, and tab ID.
+[**CreateBlobTranslation**](BlobElementApi.md#CreateBlobTranslation) | **Post** /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a blob element.
+[**DownloadFileWorkspace**](BlobElementApi.md#DownloadFileWorkspace) | **Get** /blobelements/d/{did}/w/{wid}/e/{eid} | Download a file from a blob element for the specified workspace/version/microversion.
+[**UpdateUnits**](BlobElementApi.md#UpdateUnits) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid}/units | Change the measurement units for the blob element.
+[**UploadFileCreateElement**](BlobElementApi.md#UploadFileCreateElement) | **Post** /blobelements/d/{did}/w/{wid} | Upload a file and create a blob element from it.
+[**UploadFileUpdateElement**](BlobElementApi.md#UploadFileUpdateElement) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid} | Update a blob element by uploading a file.
 
 
 
@@ -16,7 +16,9 @@ Method | HTTP request | Description
 
 > BTTranslationRequestInfo CreateBlobTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).LinkDocumentId(linkDocumentId).Execute()
 
-Create translation (export) of blob element (document tab) by document id, workspace or version ID, and tab ID.
+Export a blob element.
+
+
 
 ### Example
 
@@ -97,7 +99,7 @@ Name | Type | Description  | Notes
 
 > HttpFile DownloadFileWorkspace(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).Execute()
 
-Retrieve a file from a blob element by document ID, workspace ID, and tab ID.
+Download a file from a blob element for the specified workspace/version/microversion.
 
 ### Example
 
@@ -177,7 +179,7 @@ Name | Type | Description  | Notes
 
 > BTDocumentElementProcessingInfo UpdateUnits(ctx, did, wid, eid).BTUpdateMeshUnitsParams(bTUpdateMeshUnitsParams).LinkDocumentId(linkDocumentId).Execute()
 
-Update mesh units of a previously imported STL or OBJ file by document ID, workspace ID, and tab ID.
+Change the measurement units for the blob element.
 
 ### Example
 
@@ -253,9 +255,11 @@ Name | Type | Description  | Notes
 
 ## UploadFileCreateElement
 
-> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
 
-Upload the file to a new tab by document ID and workspace ID.
+Upload a file and create a blob element from it.
+
+
 
 ### Example
 
@@ -297,12 +301,13 @@ func main() {
     unit := "unit_example" // string |  (optional) (default to "")
     uploadId := "uploadId_example" // string |  (optional)
     versionString := "versionString_example" // string |  (optional)
+    importAppearances := true // bool | Face appearances defined on models will be imported. (optional) (default to true)
     yAxisIsUp := true // bool | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. (optional)
     importWithinDocument := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileCreateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -355,6 +360,7 @@ Name | Type | Description  | Notes
  **unit** | **string** |  | [default to &quot;&quot;]
  **uploadId** | **string** |  | 
  **versionString** | **string** |  | 
+ **importAppearances** | **bool** | Face appearances defined on models will be imported. | [default to true]
  **yAxisIsUp** | **bool** | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. | 
  **importWithinDocument** | **bool** |  | 
 
@@ -378,9 +384,11 @@ Name | Type | Description  | Notes
 
 ## UploadFileUpdateElement
 
-> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
 
-Update a blob element by uploading a file by document ID, workspace ID, and tab ID.
+Update a blob element by uploading a file.
+
+
 
 ### Example
 
@@ -424,12 +432,13 @@ func main() {
     unit := "unit_example" // string |  (optional) (default to "")
     uploadId := "uploadId_example" // string |  (optional)
     versionString := "versionString_example" // string |  (optional)
+    importAppearances := true // bool | Face appearances defined on models will be imported. (optional) (default to true)
     yAxisIsUp := true // bool | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. (optional)
     importWithinDocument := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileUpdateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -485,6 +494,7 @@ Name | Type | Description  | Notes
  **unit** | **string** |  | [default to &quot;&quot;]
  **uploadId** | **string** |  | 
  **versionString** | **string** |  | 
+ **importAppearances** | **bool** | Face appearances defined on models will be imported. | [default to true]
  **yAxisIsUp** | **bool** | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. | 
  **importWithinDocument** | **bool** |  | 
 

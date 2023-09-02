@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.168.21279-402b6292597b
+API version: 1.169.21702-242da806ef2a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -158,7 +158,7 @@ func (r ApiDeleteTableTemplateRequest) Execute() (map[string]interface{}, *http.
 }
 
 /*
-DeleteTableTemplate Delete a properties table template by template ID.
+DeleteTableTemplate Delete a properties table template.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tid The id of the template in which to perform the operation.
@@ -285,7 +285,7 @@ func (r ApiGetByCompanyIdRequest) Execute() ([]BTPropertiesTableTemplateInfo, *h
 }
 
 /*
-GetByCompanyId Retrieve the properties table templates by company ID.
+GetByCompanyId Get all properties table templates available for a company.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid The id of the company in which to perform the operation.
@@ -421,7 +421,7 @@ func (r ApiGetByDocumentIdRequest) Execute() ([]BTPropertiesTableTemplateInfo, *
 }
 
 /*
-GetByDocumentId Retrieve the properties table templates by document ID.
+GetByDocumentId Get all table templates that are available to use on the provided document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -538,7 +538,7 @@ func (r ApiGetTableTemplateRequest) Execute() (*BTPropertiesTableTemplateInfo, *
 }
 
 /*
-GetTableTemplate Retrieve a properties table template by template ID.
+GetTableTemplate Get a properties table template by template ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tid The id of the template in which to perform the operation.

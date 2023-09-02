@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.168.21279-402b6292597b
+  version: 1.169.21702-242da806ef2a
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -837,6 +837,8 @@ paths:
   /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata:
     post:
       deprecated: false
+      description: "Can only be copied between tabs in the same document. You can\
+        \ manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
       operationId: copyAssociativeData
       parameters:
       - explode: false
@@ -877,9 +879,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Copy associative data between sub-views inside this application tab\
-        \ by document ID, workspace ID, and tab ID. Useful if the application has\
-        \ multiple sub-components; for example, Drawing views."
+      summary: Copy associative data from one view to another.
       tags:
       - AppAssociativeData
       x-BTVisibility: PRODUCTION
@@ -1184,6 +1184,7 @@ paths:
   /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata:
     delete:
       deprecated: false
+      description: "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
       operationId: deleteAssociativeData
       parameters:
       - explode: false
@@ -1315,13 +1316,13 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Delete associative data for this application tab by document ID, workspace\
-        \ or version or microversion ID, and tab ID."
+      summary: Delete the associative data from the specified app element.
       tags:
       - AppAssociativeData
       x-BTVisibility: PRODUCTION
     get:
       deprecated: false
+      description: "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
       operationId: getAssociativeData
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -1484,13 +1485,13 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve associative data for the application tab by document ID,\
-        \ workspace or version or microversion ID, and tab ID."
+      summary: Get the associative data for the specified app element.
       tags:
       - AppAssociativeData
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
       operationId: postAssociativeData
       parameters:
       - explode: false
@@ -1541,8 +1542,7 @@ paths:
         BasicAuth:
         - OAuth2Read
         - OAuth2Write
-      summary: "Update associative data for an application tab by document ID, workspace\
-        \ or version or microversion ID, and tab ID."
+      summary: Set the associative data for the specified app element.
       tags:
       - AppAssociativeData
       x-BTVisibility: PRODUCTION
@@ -2283,7 +2283,7 @@ paths:
         BasicAuth:
         - OAuth2Write
         - OAuth2Read
-      summary: "Create referencesby document ID, workspace or version or microversion\
+      summary: "Create references by document ID, workspace or version or microversion\
         \ ID, and tab ID."
       tags:
       - AppElement
@@ -2966,6 +2966,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get the view data for all named views for the specified element.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3006,7 +3007,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Create Assembly by document ID and workspace ID.
+      summary: Create a new assembly tab in the document.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3048,8 +3049,8 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Create a bill of materials (BOM) table by document ID, workspace ID,\
-        \ and tab ID."
+      summary: "Gets the Bill Of Materials (BOM) for the specified assembly, or creates\
+        \ a BOM if none exist."
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3098,8 +3099,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Delete a feature by document ID, workspace ID, tab ID, and feature\
-        \ ID."
+      summary: Delete a feature from an assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3152,8 +3152,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Upload a feature by document ID, workspace ID, tab ID, and feature\
-        \ ID."
+      summary: Update an existing feature for an Assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3202,14 +3201,14 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Delete an instance by document ID, workspace ID, tab ID, and node\
-        \ ID."
+      summary: Delete an instance of an assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
   /assemblies/d/{did}/w/{wid}/e/{eid}/instances:
     post:
       deprecated: false
+      description: Part Studio instances may include multiple parts.
       operationId: createInstance
       parameters:
       - explode: false
@@ -3254,13 +3253,18 @@ paths:
         BasicAuth:
         - OAuth2Read
         - OAuth2Write
-      summary: "Create Assembly instances by document ID, workspace ID, and tab ID."
+      summary: "Insert an instance of a part, sketch, assembly, or Part Studio into\
+        \ a document."
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
   /assemblies/d/{did}/w/{wid}/e/{eid}/modify:
     post:
       deprecated: false
+      description: "This endpoint can include multiple modifications to an assembly\
+        \ with one change. For example, it can delete/suppress/unsuppress/transform\
+        \ multiple instances. It creates one history entry in the document history\
+        \ list."
       operationId: modify
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -3317,7 +3321,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Modify assembly by document ID, workspace ID and tab ID."
+      summary: Modify an assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3366,8 +3370,7 @@ paths:
         BasicAuth:
         - OAuth2Read
         - OAuth2Write
-      summary: "Create an occurrence transform by document ID, workspace ID, and tab\
-        \ ID."
+      summary: Transform a list of assembly occurrences.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3417,14 +3420,15 @@ paths:
         BasicAuth:
         - OAuth2Read
         - OAuth2Write
-      summary: "Create an instance transform by document ID, workspace ID, and tab\
-        \ ID."
+      summary: Create new instances with transformation.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
   /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}:
     get:
       deprecated: false
+      description: All coordinates and translation matrix components are in meters
+        (m).
       operationId: getAssemblyDefinition
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -3539,14 +3543,14 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve assembly by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: Get definition information for the specified assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
   /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom:
     get:
       deprecated: false
+      description: Returns the BOM in JSON in the Onshape BOM Standard format.
       operationId: getBillOfMaterials
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -3724,8 +3728,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve the bill of materials (BOM) by document ID, workspace or\
-        \ version or microversion ID, and tab ID."
+      summary: Get the Bill Of Materials (BOM) content for the specified assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3841,8 +3844,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve bounding boxes by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: Get bounding box information for the specified assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -3931,6 +3933,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get a list of exploded views for the specified assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4026,8 +4029,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve features array by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: Get the definitions of the specified features in an assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4080,8 +4082,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Create features array by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: Add a feature to the assembly feature list.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4130,8 +4131,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve feature specifications array by document ID, workspace or\
-        \ version or microversion ID, and tab ID."
+      summary: Get the feature spec definitions for an assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4211,6 +4211,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get the mass properties for the assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4299,6 +4300,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Get a list of all named positions for the assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4474,14 +4476,15 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve an array of shaded view images by document ID, workspace\
-        \ or version or microversion ID, and tab ID."
+      summary: Get an array of shaded view images for the document.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
   /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations:
     post:
       deprecated: false
+      description: "Refer to the [Export dialog][https://cad.onshape.com/help/Content/exporting-files.htm]\
+        \ for a list of valid formats."
       operationId: translateFormat
       parameters:
       - explode: false
@@ -4530,8 +4533,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Create assembly translation by document ID, workspace or version ID,\
-        \ and tab ID."
+      summary: Translate the assembly to another format for export.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4558,6 +4560,8 @@ paths:
   /blobelements/d/{did}/w/{wid}:
     post:
       deprecated: false
+      description: "Request body parameters are multipart fields, so you must use\
+        \ `\"Content-Type\":\"multipart/form-data\"` in the request header."
       operationId: uploadFileCreateElement
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -4606,7 +4610,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Upload the file to a new tab by document ID and workspace ID.
+      summary: Upload a file and create a blob element from it.
       tags:
       - BlobElement
       x-BTVisibility: PRODUCTION
@@ -4685,13 +4689,14 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve a file from a blob element by document ID, workspace ID,\
-        \ and tab ID."
+      summary: Download a file from a blob element for the specified workspace/version/microversion.
       tags:
       - BlobElement
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: "Request body parameters are multipart fields, so you must use\
+        \ `\"Content-Type\":\"multipart/form-data\"` in the request header."
       operationId: uploadFileUpdateElement
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -4757,8 +4762,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update a blob element by uploading a file by document ID, workspace\
-        \ ID, and tab ID."
+      summary: Update a blob element by uploading a file.
       tags:
       - BlobElement
       x-BTVisibility: PRODUCTION
@@ -4822,14 +4826,14 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update mesh units of a previously imported STL or OBJ file by document\
-        \ ID, workspace ID, and tab ID."
+      summary: Change the measurement units for the blob element.
       tags:
       - BlobElement
       x-BTVisibility: PRODUCTION
   /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations:
     post:
       deprecated: false
+      description: "Translate (i.e., export) a blob element to a different format."
       operationId: createBlobTranslation
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -4900,8 +4904,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Create translation (export) of blob element (document tab) by document\
-        \ id, workspace or version ID, and tab ID."
+      summary: Export a blob element.
       tags:
       - BlobElement
       x-BTVisibility: PRODUCTION
@@ -6327,16 +6330,6 @@ paths:
         style: form
       - explode: true
         in: query
-        name: betaCapabilityIds
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-          uniqueItems: true
-        style: form
-      - explode: true
-        in: query
         name: includeParts
         required: false
         schema:
@@ -7064,7 +7057,6 @@ paths:
   /drawings/d/{did}/w/{wid}/create:
     post:
       deprecated: false
-      description: Build a drawing app element in document's workspace
       operationId: createDrawingAppElement
       parameters:
       - explode: false
@@ -7099,6 +7091,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
+      summary: Create a new drawing in a document.
       tags:
       - Drawing
       x-BTVisibility: PRODUCTION
@@ -7137,14 +7130,17 @@ paths:
                   $ref: '#/components/schemas/BTModelFormatInfo'
                 type: array
           description: default response
-      summary: "Retrieve translation formats by document ID, workspace ID, and tab\
-        \ ID."
+      summary: Get a list of all valid formats the drawing can be translated to.
       tags:
       - Drawing
       x-BTVisibility: PRODUCTION
   /drawings/d/{did}/{wv}/{wvid}/e/{eid}/translations:
     post:
       deprecated: false
+      description: "Starts a drawing translation into a neutral file format (i.e.,\
+        \ DWG, DWT, DXF, or PDF) and returns a translation ID that can be used to\
+        \ poll the status. If set to add a new tab, creates a new tab in the document.\
+        \ Otherwise, returns an ID to download the translated field."
       operationId: createDrawingTranslation
       parameters:
       - explode: false
@@ -7193,6 +7189,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
+      summary: Translate a drawing to a different format.
       tags:
       - Drawing
       x-BTVisibility: PRODUCTION
@@ -8009,16 +8006,6 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: betaCapabilityIds
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-          uniqueItems: true
-        style: form
       - explode: true
         in: query
         name: includeParts
@@ -14522,7 +14509,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve the properties table templates by company ID.
+      summary: Get all properties table templates available for a company.
       tags:
       - PropertiesTableTemplate
       x-BTVisibility: PRODUCTION
@@ -14578,7 +14565,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve the properties table templates by document ID.
+      summary: Get all table templates that are available to use on the provided document.
       tags:
       - PropertiesTableTemplate
       x-BTVisibility: PRODUCTION
@@ -14607,7 +14594,7 @@ paths:
         - OAuth2Delete
         BasicAuth:
         - OAuth2Delete
-      summary: Delete a properties table template by template ID.
+      summary: Delete a properties table template.
       tags:
       - PropertiesTableTemplate
       x-BTVisibility: PRODUCTION
@@ -14635,7 +14622,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve a properties table template by template ID.
+      summary: Get a properties table template by template ID.
       tags:
       - PropertiesTableTemplate
       x-BTVisibility: PRODUCTION
@@ -14796,7 +14783,7 @@ paths:
       description: |-
         * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
         * The default workspace may vary by user; the image served depends on the signed-in user.
-        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
+        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
       operationId: getThumbnailForDocument
       parameters:
       - explode: false
@@ -14827,7 +14814,7 @@ paths:
       deprecated: false
       description: |-
         * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
-        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
+        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
       operationId: getThumbnailForDocumentAndVersion
       parameters:
       - explode: false
@@ -14872,7 +14859,7 @@ paths:
       deprecated: false
       description: |-
         * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
-        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
+        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
       operationId: getDocumentThumbnail
       parameters:
       - explode: false
@@ -15017,7 +15004,7 @@ paths:
       deprecated: false
       description: |-
         * By default, returns thumbnail image for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
-        * See also: https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape
+        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
       operationId: getDocumentThumbnailWithSize
       parameters:
       - explode: false
@@ -16283,6 +16270,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Versions'
           description: default response
+      summary: Get all versions of the Onshape REST APIs.
       tags:
       - Version
       x-BTVisibility: PRODUCTION
@@ -20825,6 +20813,76 @@ components:
         translation:
           $ref: '#/components/schemas/BTVector3d-389'
       type: object
+    BTBaseEntityAppearanceEntry-3607:
+      example:
+        appearance:
+          rgbaColor:
+          - rgbaColor
+          - rgbaColor
+          nonTrivial: true
+          color:
+          - color
+          - color
+          btType: btType
+          reset: true
+          opacity: 1
+          usableAppearance: true
+        affectedDeterministicIds:
+        - affectedDeterministicIds
+        - affectedDeterministicIds
+        btType: btType
+        source:
+          sourceId: sourceId
+          sourceType: null
+          btType: btType
+      properties:
+        affectedDeterministicIds:
+          items:
+            type: string
+          type: array
+        appearance:
+          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
+        btType:
+          type: string
+        source:
+          $ref: '#/components/schemas/BTPartMetadataSource-2895'
+      type: object
+    BTBaseEntityAppearanceSettings-1391:
+      example:
+        btType: btType
+        colorIdToBaseEntityAppearanceEntry:
+          key:
+            appearance:
+              rgbaColor:
+              - rgbaColor
+              - rgbaColor
+              nonTrivial: true
+              color:
+              - color
+              - color
+              btType: btType
+              reset: true
+              opacity: 1
+              usableAppearance: true
+            affectedDeterministicIds:
+            - affectedDeterministicIds
+            - affectedDeterministicIds
+            btType: btType
+            source:
+              sourceId: sourceId
+              sourceType: null
+              btType: btType
+        isNoop: true
+      properties:
+        btType:
+          type: string
+        colorIdToBaseEntityAppearanceEntry:
+          additionalProperties:
+            $ref: '#/components/schemas/BTBaseEntityAppearanceEntry-3607'
+          type: object
+        isNoop:
+          type: boolean
+      type: object
     BTBaseEntityData-33:
       discriminator:
         mapping:
@@ -23579,17 +23637,10 @@ components:
         ownerTypeIndex: 0
         newName: newName
         isPublic: true
-        betaCapabilityIds:
-        - betaCapabilityIds
-        - betaCapabilityIds
         ownerId: ownerId
         projectId: projectId
         parentId: parentId
       properties:
-        betaCapabilityIds:
-          items:
-            type: string
-          type: array
         isPublic:
           type: boolean
         newName:
@@ -25028,7 +25079,6 @@ components:
         totalWorkspacesUpdating: INTERNAL
         totalWorkspacesScheduledForUpdate: INTERNAL
         isOrphaned: INTERNAL
-        betaCapabilityIds: INTERNAL
         tracingEnabled: INTERNAL
     BTDocumentLabelInfo:
       example:
@@ -25376,9 +25426,6 @@ components:
         isEmptyContent: true
         forceExportRules: true
         description: description
-        betaCapabilityIds:
-        - betaCapabilityIds
-        - betaCapabilityIds
         ownerId: ownerId
         parentId: parentId
         ownerEmail: ownerEmail
@@ -25426,10 +25473,6 @@ components:
         isPublic: true
         projectId: projectId
       properties:
-        betaCapabilityIds:
-          items:
-            type: string
-          type: array
         description:
           type: string
         elements:
@@ -25473,7 +25516,6 @@ components:
         totalWorkspacesUpdating: INTERNAL
         totalWorkspacesScheduledForUpdate: INTERNAL
         isOrphaned: INTERNAL
-        betaCapabilityIds: INTERNAL
         tracingEnabled: INTERNAL
     BTDocumentSearchHitInfo:
       properties:
@@ -29666,6 +29708,32 @@ components:
               isSheet: true
               ordinal: 7
           isNoop: true
+          bodyIdToEntityAppearanceSettings:
+            key:
+              btType: btType
+              colorIdToBaseEntityAppearanceEntry:
+                key:
+                  appearance:
+                    rgbaColor:
+                    - rgbaColor
+                    - rgbaColor
+                    nonTrivial: true
+                    color:
+                    - color
+                    - color
+                    btType: btType
+                    reset: true
+                    opacity: 1
+                    usableAppearance: true
+                  affectedDeterministicIds:
+                  - affectedDeterministicIds
+                  - affectedDeterministicIds
+                  btType: btType
+                  source:
+                    sourceId: sourceId
+                    sourceType: null
+                    btType: btType
+              isNoop: true
           fullElementId:
             configured: true
             elementId: elementId
@@ -29700,6 +29768,7 @@ components:
                 deleted: true
                 btType: btType
                 theId: theId
+          bodyIdToEntityAppearanceSettingsChanged: true
           updatedParts:
           - updatedParts
           - updatedParts
@@ -31305,6 +31374,20 @@ components:
               empty: true
           level: null
           btType: btType
+          expressionErrorInfo:
+            btType: btType
+            messageArguments:
+            - use: null
+              btType: btType
+              value:
+                typeTag: typeTag
+                btType: btType
+            - use: null
+              btType: btType
+              value:
+                typeTag: typeTag
+                btType: btType
+            errorMessageIdentifier: null
           stackTrace:
           - endLine: 3
             fromNode:
@@ -31498,6 +31581,20 @@ components:
               empty: true
           level: null
           btType: btType
+          expressionErrorInfo:
+            btType: btType
+            messageArguments:
+            - use: null
+              btType: btType
+              value:
+                typeTag: typeTag
+                btType: btType
+            - use: null
+              btType: btType
+              value:
+                typeTag: typeTag
+                btType: btType
+            errorMessageIdentifier: null
           stackTrace:
           - endLine: 3
             fromNode:
@@ -41585,6 +41682,20 @@ components:
             empty: true
         level: null
         btType: btType
+        expressionErrorInfo:
+          btType: btType
+          messageArguments:
+          - use: null
+            btType: btType
+            value:
+              typeTag: typeTag
+              btType: btType
+          - use: null
+            btType: btType
+            value:
+              typeTag: typeTag
+              btType: btType
+          errorMessageIdentifier: null
         stackTrace:
         - endLine: 3
           fromNode:
@@ -41682,6 +41793,8 @@ components:
       properties:
         btType:
           type: string
+        expressionErrorInfo:
+          $ref: '#/components/schemas/BTParameterExpressionErrorInfo-2037'
         level:
           $ref: '#/components/schemas/GBTNoticeLevel'
         locationInfos:
@@ -43050,6 +43163,31 @@ components:
       properties:
         btType:
           type: string
+      type: object
+    BTParameterExpressionErrorInfo-2037:
+      example:
+        btType: btType
+        messageArguments:
+        - use: null
+          btType: btType
+          value:
+            typeTag: typeTag
+            btType: btType
+        - use: null
+          btType: btType
+          value:
+            typeTag: typeTag
+            btType: btType
+        errorMessageIdentifier: null
+      properties:
+        btType:
+          type: string
+        errorMessageIdentifier:
+          $ref: '#/components/schemas/GBTErrorStringEnum'
+        messageArguments:
+          items:
+            $ref: '#/components/schemas/BTValueAndUse-4696'
+          type: array
       type: object
     BTParameterGroupSpec-3469:
       example:
@@ -45065,6 +45203,32 @@ components:
             isSheet: true
             ordinal: 7
         isNoop: true
+        bodyIdToEntityAppearanceSettings:
+          key:
+            btType: btType
+            colorIdToBaseEntityAppearanceEntry:
+              key:
+                appearance:
+                  rgbaColor:
+                  - rgbaColor
+                  - rgbaColor
+                  nonTrivial: true
+                  color:
+                  - color
+                  - color
+                  btType: btType
+                  reset: true
+                  opacity: 1
+                  usableAppearance: true
+                affectedDeterministicIds:
+                - affectedDeterministicIds
+                - affectedDeterministicIds
+                btType: btType
+                source:
+                  sourceId: sourceId
+                  sourceType: null
+                  btType: btType
+            isNoop: true
         fullElementId:
           configured: true
           elementId: elementId
@@ -45099,6 +45263,7 @@ components:
               deleted: true
               btType: btType
               theId: theId
+        bodyIdToEntityAppearanceSettingsChanged: true
         updatedParts:
         - updatedParts
         - updatedParts
@@ -46046,6 +46211,12 @@ components:
           type: object
         assemblyReferenceDisplayData:
           $ref: '#/components/schemas/BTAssemblyReferencesDisplayData-1562'
+        bodyIdToEntityAppearanceSettings:
+          additionalProperties:
+            $ref: '#/components/schemas/BTBaseEntityAppearanceSettings-1391'
+          type: object
+        bodyIdToEntityAppearanceSettingsChanged:
+          type: boolean
         btType:
           type: string
         cacheablePartStudioDisplayDataVersion:
@@ -47787,6 +47958,7 @@ components:
           state: 6
           viewRef: https://openapi-generator.tech
         detailed: true
+        independentCADRevisions: true
         name: name
         parentComments:
         - comments:
@@ -48502,6 +48674,9 @@ components:
         id:
           description: Id of the resource.
           type: string
+        independentCADRevisions:
+          description: Indicates whether CAD and PLM have independent revisions.
+          type: boolean
         isObsoletion:
           type: boolean
         items:
@@ -51354,6 +51529,7 @@ components:
       - REJECT
       - DELETE
       - COMMENT
+      - REASSIGN_TASK
       type: string
     BTTranslateFormatParams:
       example:
@@ -51392,6 +51568,7 @@ components:
         processedForeignId: processedForeignId
         connectionId: connectionId
         getyAxisIsUp: true
+        importAppearances: true
         projectId: projectId
         uploadId: uploadId
         configuration: configuration
@@ -51514,6 +51691,8 @@ components:
         imageWidth:
           format: int32
           type: integer
+        importAppearances:
+          type: boolean
         importInBackground:
           type: boolean
         importWithinDocument:
@@ -52797,6 +52976,21 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
       - $ref: '#/components/schemas/BTUserSummaryInfo_allOf'
+      type: object
+    BTValueAndUse-4696:
+      example:
+        use: null
+        btType: btType
+        value:
+          typeTag: typeTag
+          btType: btType
+      properties:
+        btType:
+          type: string
+        use:
+          $ref: '#/components/schemas/GBTValueUse'
+        value:
+          $ref: '#/components/schemas/BTFSValue-1888'
       type: object
     BTVariableInfo:
       description: Variables in the VariableTable
@@ -57254,6 +57448,17 @@ components:
       - CURVE_PATTERN_DISTANCE_TOO_LARGE
       - BEND_REPLACEMENT_HEAL_FAILED
       - CANNOT_COPY_CONSTRAINTS
+      - PARAMETER_EXPRESSION_VALIDATION_UNITS_MISMATCH_3ARGS
+      - PARAMETER_EXPRESSION_VALIDATION_SYNTAX_ERROR_0ARGS
+      - PARAMETER_EXPRESSION_VALIDATION_RESERVED_ID_1ARG
+      - PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_1ARG
+      - PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_2ARGS
+      - PARAMETER_EXPRESSION_VALIDATION_CANNOT_APPLY_OP_TO_3ARGS
+      - PARAMETER_EXPRESSION_VALIDATION_INCORRECT_TYPE
+      - PARAMETER_EXPRESSION_UNKNOWN_FUNCTION
+      - PARAMETER_EXPRESSION_UNKNOWN_VARIABLE
+      - REVOLVE_NOT_COPLANAR_WITH_AXIS
+      - FRAME_ANGLE_REFERENCE_INVALID_ENTITY
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -57351,6 +57556,7 @@ components:
       - DEFAULT
       - COMPUTED
       - COMPUTED_CONFIGURED
+      - IMPORT
       - UNKNOWN
       type: string
     GBTNodeChange:
@@ -57657,6 +57863,15 @@ components:
       - PROPERTY
       - SIMULATION_LOAD
       - PERSISTENT_QUERY_STRING
+      - UNKNOWN
+      type: string
+    GBTValueUse:
+      enum:
+      - STRING
+      - INTEGER
+      - UNITS
+      - TYPE
+      - LOCALIZE
       - UNKNOWN
       type: string
     GBTVariableType:
@@ -58723,6 +58938,10 @@ components:
           type: string
         versionString:
           type: string
+        importAppearances:
+          default: true
+          description: Face appearances defined on models will be imported.
+          type: boolean
         yAxisIsUp:
           description: "If the file was created in a system that orients with Y Axis\
             \ Up, the models would by default be brought into Onshape (a Z Axis Up\
@@ -58801,6 +59020,10 @@ components:
           type: string
         versionString:
           type: string
+        importAppearances:
+          default: true
+          description: Face appearances defined on models will be imported.
+          type: boolean
         yAxisIsUp:
           description: "If the file was created in a system that orients with Y Axis\
             \ Up, the models would by default be brought into Onshape (a Z Axis Up\
@@ -58887,6 +59110,10 @@ components:
           type: string
         versionString:
           type: string
+        importAppearances:
+          default: true
+          description: Face appearances defined on models will be imported.
+          type: boolean
         yAxisIsUp:
           description: "If the file was created in a system that orients with Y Axis\
             \ Up, the models would by default be brought into Onshape (a Z Axis Up\
