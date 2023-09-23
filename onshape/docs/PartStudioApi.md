@@ -4,30 +4,30 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPartStudioFeature**](PartStudioApi.md#AddPartStudioFeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add feature to the feature list for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**ComparePartStudios**](PartStudioApi.md#ComparePartStudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Compare Part Studios by document ID, workspace or version or microversion ID, and tab ID.
-[**CreatePartStudio**](PartStudioApi.md#CreatePartStudio) | **Post** /partstudios/d/{did}/w/{wid} | Create Part Studio by document ID and workspace ID.
-[**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Create Part Studio translation by document ID, workspace or version ID, and tab ID.
-[**DeletePartStudioFeature**](PartStudioApi.md#DeletePartStudioFeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete feature by document ID, workspace ID, tab ID, and feature ID.
-[**EvalFeatureScript**](PartStudioApi.md#EvalFeatureScript) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript | Evaluate FeatureScript for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**ExportParasolid**](PartStudioApi.md#ExportParasolid) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid | Export Part Studio to Parasolid by document ID, workspace or version or microversion ID, and tab ID.
-[**ExportPartStudioGltf**](PartStudioApi.md#ExportPartStudioGltf) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf | Export GLTF representation for parts in a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**ExportPartStudioStl**](PartStudioApi.md#ExportPartStudioStl) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl | Export Part Studio to STL by document ID, workspace or version or microversion ID, and tab ID.
-[**GetFeatureScriptRepresentation**](PartStudioApi.md#GetFeatureScriptRepresentation) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescriptrepresentation | Retrieve FeatureScript representation of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**GetFeatureScriptTable**](PartStudioApi.md#GetFeatureScriptTable) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/fstable | Retrieve FeatureScript table of the Part Studio or part by document ID, workspace or version or microversion ID, and tab ID.
-[**GetPartStudioBodyDetails**](PartStudioApi.md#GetPartStudioBodyDetails) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/bodydetails | Retrieve an array of body details by document ID, workspace or version or microversion ID, and tab ID.
-[**GetPartStudioBoundingBoxes**](PartStudioApi.md#GetPartStudioBoundingBoxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Retrieve an array of Mass properties of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**GetPartStudioEdges**](PartStudioApi.md#GetPartStudioEdges) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatededges | Retrieve tessellated edges of the parts in the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**GetPartStudioFaces**](PartStudioApi.md#GetPartStudioFaces) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatedfaces | 
-[**GetPartStudioFeatureSpecs**](PartStudioApi.md#GetPartStudioFeatureSpecs) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Retrieve feature specifications of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+[**AddPartStudioFeature**](PartStudioApi.md#AddPartStudioFeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the Part Studio&#39;s Feature List.
+[**ComparePartStudios**](PartStudioApi.md#ComparePartStudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Get the differences between two Part Studios in a single document.
+[**CreatePartStudio**](PartStudioApi.md#CreatePartStudio) | **Post** /partstudios/d/{did}/w/{wid} | Create a new Part Studio in a document.
+[**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Translate (export) a Part Studio.
+[**DeletePartStudioFeature**](PartStudioApi.md#DeletePartStudioFeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a Part Studio feature.
+[**EvalFeatureScript**](PartStudioApi.md#EvalFeatureScript) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript | Evaluate the FeatureScript snippet for a Part Studio.
+[**ExportParasolid**](PartStudioApi.md#ExportParasolid) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid | Export the Part Studio as a Parasolid file.
+[**ExportPartStudioGltf**](PartStudioApi.md#ExportPartStudioGltf) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf | Export the Part Studio as a glTF file.
+[**ExportPartStudioStl**](PartStudioApi.md#ExportPartStudioStl) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl | Export the Part Studio as an STL file.
+[**GetFeatureScriptRepresentation**](PartStudioApi.md#GetFeatureScriptRepresentation) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescriptrepresentation | Get the FeatureScript representation of a Part Studio.
+[**GetFeatureScriptTable**](PartStudioApi.md#GetFeatureScriptTable) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/fstable | Compute and return a FeatureScript table for a Part Studio.
+[**GetPartStudioBodyDetails**](PartStudioApi.md#GetPartStudioBodyDetails) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/bodydetails | Get the body details for a Part Studio.
+[**GetPartStudioBoundingBoxes**](PartStudioApi.md#GetPartStudioBoundingBoxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get the bounding boxes for a Part Studio.
+[**GetPartStudioEdges**](PartStudioApi.md#GetPartStudioEdges) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatededges | Get a list of all edges in a Part Studio.
+[**GetPartStudioFaces**](PartStudioApi.md#GetPartStudioFaces) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatedfaces | Get a list of all faces in a Part Studio.
+[**GetPartStudioFeatureSpecs**](PartStudioApi.md#GetPartStudioFeatureSpecs) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the specs for a Part Studio feature.
 [**GetPartStudioFeatures**](PartStudioApi.md#GetPartStudioFeatures) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Retrieve a feature list of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**GetPartStudioMassProperties**](PartStudioApi.md#GetPartStudioMassProperties) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Retrieve mass properties of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**GetPartStudioNamedViews**](PartStudioApi.md#GetPartStudioNamedViews) | **Get** /partstudios/d/{did}/e/{eid}/namedViews | 
-[**GetPartStudioShadedViews**](PartStudioApi.md#GetPartStudioShadedViews) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Retrieve shaded views of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
-[**TranslateIds**](PartStudioApi.md#TranslateIds) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/idtranslations | Create Part Studio ID translation by document ID, workspace or version or microversion ID, and tab ID.
-[**UpdateFeatures**](PartStudioApi.md#UpdateFeatures) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/updates | Update features by document ID, workspace ID, and tab ID.
-[**UpdatePartStudioFeature**](PartStudioApi.md#UpdatePartStudioFeature) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update feature by document ID, workspace ID, tab ID, and feature ID.
-[**UpdateRollback**](PartStudioApi.md#UpdateRollback) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/rollback | Update feature rollback by document ID, workspace ID, and tab ID.
+[**GetPartStudioMassProperties**](PartStudioApi.md#GetPartStudioMassProperties) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for a Part Studio.
+[**GetPartStudioNamedViews**](PartStudioApi.md#GetPartStudioNamedViews) | **Get** /partstudios/d/{did}/e/{eid}/namedViews | Get a list of all named views that exist in the Part Studio.
+[**GetPartStudioShadedViews**](PartStudioApi.md#GetPartStudioShadedViews) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get a list of shaded views for a Part Studio.
+[**TranslateIds**](PartStudioApi.md#TranslateIds) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/idtranslations | Find corresponding deterministic IDs from a source document microversion at the target version.
+[**UpdateFeatures**](PartStudioApi.md#UpdateFeatures) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/updates | Update existing features&#39; parameters.
+[**UpdatePartStudioFeature**](PartStudioApi.md#UpdatePartStudioFeature) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update the definition of a Part Studio feature.
+[**UpdateRollback**](PartStudioApi.md#UpdateRollback) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/rollback | Move the Feature List rollback bar in the Part Studio.
 
 
 
@@ -35,7 +35,9 @@ Method | HTTP request | Description
 
 > BTFeatureDefinitionResponse1617 AddPartStudioFeature(ctx, did, wvm, wvmid, eid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
 
-Add feature to the feature list for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Add a feature to the Part Studio's Feature List.
+
+
 
 ### Example
 
@@ -114,7 +116,7 @@ Name | Type | Description  | Notes
 
 > BTRootDiffInfo ComparePartStudios(ctx, did, wvm, wvmid, eid).WorkspaceId(workspaceId).VersionId(versionId).MicroversionId(microversionId).SourceConfiguration(sourceConfiguration).TargetConfiguration(targetConfiguration).LinkDocumentId(linkDocumentId).Execute()
 
-Compare Part Studios by document ID, workspace or version or microversion ID, and tab ID.
+Get the differences between two Part Studios in a single document.
 
 ### Example
 
@@ -203,7 +205,7 @@ Name | Type | Description  | Notes
 
 > BTDocumentElementInfo CreatePartStudio(ctx, did, wid).BTModelElementParams(bTModelElementParams).Execute()
 
-Create Part Studio by document ID and workspace ID.
+Create a new Part Studio in a document.
 
 ### Example
 
@@ -276,7 +278,7 @@ Name | Type | Description  | Notes
 
 > BTTranslationRequestInfo CreatePartStudioTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
 
-Create Part Studio translation by document ID, workspace or version ID, and tab ID.
+Translate (export) a Part Studio.
 
 ### Example
 
@@ -355,7 +357,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureApiBase1430 DeletePartStudioFeature(ctx, did, wid, eid, fid).Execute()
 
-Delete feature by document ID, workspace ID, tab ID, and feature ID.
+Delete a Part Studio feature.
 
 ### Example
 
@@ -432,7 +434,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureScriptEvalResponse1859 EvalFeatureScript(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).BTFeatureScriptEvalCall2377(bTFeatureScriptEvalCall2377).Execute()
 
-Evaluate FeatureScript for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Evaluate the FeatureScript snippet for a Part Studio.
 
 ### Example
 
@@ -519,7 +521,9 @@ Name | Type | Description  | Notes
 
 > ExportParasolid(ctx, did, wvm, wvmid, eid).PartIds(partIds).Version(version).IncludeExportIds(includeExportIds).Configuration(configuration).LinkDocumentId(linkDocumentId).BinaryExport(binaryExport).Execute()
 
-Export Part Studio to Parasolid by document ID, workspace or version or microversion ID, and tab ID.
+Export the Part Studio as a Parasolid file.
+
+
 
 ### Example
 
@@ -606,7 +610,7 @@ Name | Type | Description  | Notes
 
 > HttpFile ExportPartStudioGltf(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).OutputSeparateFaceNodes(outputSeparateFaceNodes).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).Execute()
 
-Export GLTF representation for parts in a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Export the Part Studio as a glTF file.
 
 ### Example
 
@@ -707,7 +711,7 @@ Name | Type | Description  | Notes
 
 > ExportPartStudioStl(ctx, did, wvm, wvmid, eid).PartIds(partIds).Mode(mode).Grouping(grouping).Scale(scale).Units(units).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).MaxFacetWidth(maxFacetWidth).MinFacetWidth(minFacetWidth).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Export Part Studio to STL by document ID, workspace or version or microversion ID, and tab ID.
+Export the Part Studio as an STL file.
 
 ### Example
 
@@ -804,7 +808,7 @@ Name | Type | Description  | Notes
 
 > BTPModule234 GetFeatureScriptRepresentation(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).Execute()
 
-Retrieve FeatureScript representation of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Get the FeatureScript representation of a Part Studio.
 
 ### Example
 
@@ -889,7 +893,7 @@ Name | Type | Description  | Notes
 
 > BTApiTableList1223 GetFeatureScriptTable(ctx, did, wvm, wvmid, eid).TableType(tableType).Configuration(configuration).TableNamespace(tableNamespace).TableParameters(tableParameters).PartId(partId).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve FeatureScript table of the Part Studio or part by document ID, workspace or version or microversion ID, and tab ID.
+Compute and return a FeatureScript table for a Part Studio.
 
 ### Example
 
@@ -978,7 +982,7 @@ Name | Type | Description  | Notes
 
 > BTExportModelBodiesResponse734 GetPartStudioBodyDetails(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartIds(partIds).IncludeSurfaces(includeSurfaces).IncludeCompositeParts(includeCompositeParts).IncludeGeometricData(includeGeometricData).Execute()
 
-Retrieve an array of body details by document ID, workspace or version or microversion ID, and tab ID.
+Get the body details for a Part Studio.
 
 ### Example
 
@@ -1071,7 +1075,7 @@ Name | Type | Description  | Notes
 
 > BTBoundingBoxInfo GetPartStudioBoundingBoxes(ctx, did, wvm, wvmid, eid).IncludeHidden(includeHidden).IncludeWireBodies(includeWireBodies).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve an array of Mass properties of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Get the bounding boxes for a Part Studio.
 
 ### Example
 
@@ -1156,7 +1160,9 @@ Name | Type | Description  | Notes
 
 > BTExportTessellatedEdgesResponse327 GetPartStudioEdges(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).EdgeId(edgeId).Execute()
 
-Retrieve tessellated edges of the parts in the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Get a list of all edges in a Part Studio.
+
+
 
 ### Example
 
@@ -1250,6 +1256,8 @@ Name | Type | Description  | Notes
 ## GetPartStudioFaces
 
 > BTExportTessellatedFacesResponse898 GetPartStudioFaces(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).OutputVertexNormals(outputVertexNormals).OutputFacetNormals(outputFacetNormals).OutputTextureCoordinates(outputTextureCoordinates).OutputIndexTable(outputIndexTable).OutputErrorFaces(outputErrorFaces).CombineCompositePartConstituents(combineCompositePartConstituents).Execute()
+
+Get a list of all faces in a Part Studio.
 
 
 
@@ -1362,7 +1370,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureSpecsResponse664 GetPartStudioFeatureSpecs(ctx, did, wvm, wvmid, eid).Execute()
 
-Retrieve feature specifications of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Get the specs for a Part Studio feature.
 
 ### Example
 
@@ -1530,7 +1538,9 @@ Name | Type | Description  | Notes
 
 > BTMassPropertiesBulkInfo GetPartStudioMassProperties(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).MassAsGroup(massAsGroup).UseMassPropertyOverrides(useMassPropertyOverrides).Execute()
 
-Retrieve mass properties of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Get the mass properties for a Part Studio.
+
+
 
 ### Example
 
@@ -1621,7 +1631,7 @@ Name | Type | Description  | Notes
 
 > BTNamedViewsInfo GetPartStudioNamedViews(ctx, did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
 
-
+Get a list of all named views that exist in the Part Studio.
 
 
 
@@ -1700,7 +1710,7 @@ Name | Type | Description  | Notes
 
 > BTShadedViewsInfo GetPartStudioShadedViews(ctx, did, wvm, wvmid, eid).ViewMatrix(viewMatrix).OutputHeight(outputHeight).OutputWidth(outputWidth).PixelSize(pixelSize).Edges(edges).ShowAllParts(showAllParts).IncludeSurfaces(includeSurfaces).UseAntiAliasing(useAntiAliasing).IncludeWires(includeWires).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve shaded views of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+Get a list of shaded views for a Part Studio.
 
 ### Example
 
@@ -1799,7 +1809,9 @@ Name | Type | Description  | Notes
 
 > BTIdTranslationInfo TranslateIds(ctx, did, wvm, wvmid, eid).BTIdTranslationParams(bTIdTranslationParams).Execute()
 
-Create Part Studio ID translation by document ID, workspace or version or microversion ID, and tab ID.
+Find corresponding deterministic IDs from a source document microversion at the target version.
+
+
 
 ### Example
 
@@ -1878,7 +1890,9 @@ Name | Type | Description  | Notes
 
 > BTUpdateFeaturesResponse1333 UpdateFeatures(ctx, did, wid, eid).BTUpdateFeaturesCall1748(bTUpdateFeaturesCall1748).Execute()
 
-Update features by document ID, workspace ID, and tab ID.
+Update existing features' parameters.
+
+
 
 ### Example
 
@@ -1954,7 +1968,7 @@ Name | Type | Description  | Notes
 
 > BTFeatureDefinitionResponse1617 UpdatePartStudioFeature(ctx, did, wid, eid, fid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
 
-Update feature by document ID, workspace ID, tab ID, and feature ID.
+Update the definition of a Part Studio feature.
 
 ### Example
 
@@ -2033,7 +2047,9 @@ Name | Type | Description  | Notes
 
 > BTSetFeatureRollbackResponse1042 UpdateRollback(ctx, did, wid, eid).Body(body).Execute()
 
-Update feature rollback by document ID, workspace ID, and tab ID.
+Move the Feature List rollback bar in the Part Studio.
+
+
 
 ### Example
 

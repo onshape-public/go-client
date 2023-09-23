@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ObjectType** | Pointer to **int32** |  | [optional] 
 **OwnerType** | Pointer to **int32** |  | [optional] 
+**PublishedDate** | Pointer to **JSONTime** | The date of publication of workflow | [optional] 
+**UsesExternalPlm** | Pointer to **bool** | Whether the workflow connects to an external PLM service like Arena | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -336,6 +338,56 @@ SetOwnerType sets OwnerType field to given value.
 `func (o *BTPublishedWorkflowInfo) HasOwnerType() bool`
 
 HasOwnerType returns a boolean if a field has been set.
+
+### GetPublishedDate
+
+`func (o *BTPublishedWorkflowInfo) GetPublishedDate() JSONTime`
+
+GetPublishedDate returns the PublishedDate field if non-nil, zero value otherwise.
+
+### GetPublishedDateOk
+
+`func (o *BTPublishedWorkflowInfo) GetPublishedDateOk() (*JSONTime, bool)`
+
+GetPublishedDateOk returns a tuple with the PublishedDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublishedDate
+
+`func (o *BTPublishedWorkflowInfo) SetPublishedDate(v JSONTime)`
+
+SetPublishedDate sets PublishedDate field to given value.
+
+### HasPublishedDate
+
+`func (o *BTPublishedWorkflowInfo) HasPublishedDate() bool`
+
+HasPublishedDate returns a boolean if a field has been set.
+
+### GetUsesExternalPlm
+
+`func (o *BTPublishedWorkflowInfo) GetUsesExternalPlm() bool`
+
+GetUsesExternalPlm returns the UsesExternalPlm field if non-nil, zero value otherwise.
+
+### GetUsesExternalPlmOk
+
+`func (o *BTPublishedWorkflowInfo) GetUsesExternalPlmOk() (*bool, bool)`
+
+GetUsesExternalPlmOk returns a tuple with the UsesExternalPlm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsesExternalPlm
+
+`func (o *BTPublishedWorkflowInfo) SetUsesExternalPlm(v bool)`
+
+SetUsesExternalPlm sets UsesExternalPlm field to given value.
+
+### HasUsesExternalPlm
+
+`func (o *BTPublishedWorkflowInfo) HasUsesExternalPlm() bool`
+
+HasUsesExternalPlm returns a boolean if a field has been set.
 
 ### GetVersionId
 

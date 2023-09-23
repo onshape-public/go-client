@@ -4,16 +4,16 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAttachment**](CommentApi.md#AddAttachment) | **Post** /comments/{cid}/attachment | Update a user’s comment by comment ID.
+[**AddAttachment**](CommentApi.md#AddAttachment) | **Post** /comments/{cid}/attachment | Add an attachment to a comment.
 [**CreateComment**](CommentApi.md#CreateComment) | **Post** /comments | Update a document with a new comment.
-[**DeleteAttachments**](CommentApi.md#DeleteAttachments) | **Delete** /comments/{cid}/attachment | Delete an attachment from a comment by comment ID.
-[**DeleteComment**](CommentApi.md#DeleteComment) | **Delete** /comments/{cid} | Delete a comment by comment ID.
-[**GetAttachment**](CommentApi.md#GetAttachment) | **Get** /comments/{cid}/attachment/{fdid}.{ext} | Retrieve an attachment associated with a comment by comment ID and file document ID (and extension).
-[**GetComment**](CommentApi.md#GetComment) | **Get** /comments/{cid} | Retrieve details for a comment by comment ID.
-[**GetComments**](CommentApi.md#GetComments) | **Get** /comments | Retrieve a list of comments for a document.
-[**Reopen**](CommentApi.md#Reopen) | **Post** /comments/{cid}/reopen | Reopen a resolved comment by comment ID.
-[**Resolve**](CommentApi.md#Resolve) | **Post** /comments/{cid}/resolve | Resolve a comment by comment ID.
-[**UpdateComment**](CommentApi.md#UpdateComment) | **Post** /comments/{cid} | Update a user’s comment by comment ID.
+[**DeleteAttachments**](CommentApi.md#DeleteAttachments) | **Delete** /comments/{cid}/attachment | Delete all attachments from a comment.
+[**DeleteComment**](CommentApi.md#DeleteComment) | **Delete** /comments/{cid} | Delete a comment from a document.
+[**GetAttachment**](CommentApi.md#GetAttachment) | **Get** /comments/{cid}/attachment/{fdid}.{ext} | Get the attachment with the specified file extension that is associated with the specified comment.
+[**GetComment**](CommentApi.md#GetComment) | **Get** /comments/{cid} | Get details for a comment.
+[**GetComments**](CommentApi.md#GetComments) | **Get** /comments | Get a list of comments in a document.
+[**Reopen**](CommentApi.md#Reopen) | **Post** /comments/{cid}/reopen | Reopen a resolved comment.
+[**Resolve**](CommentApi.md#Resolve) | **Post** /comments/{cid}/resolve | Resolve a comment.
+[**UpdateComment**](CommentApi.md#UpdateComment) | **Post** /comments/{cid} | Update the content of an existing comment.
 
 
 
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 > BTCommentInfo AddAttachment(ctx, cid).File(file).Execute()
 
-Update a user’s comment by comment ID.
+Add an attachment to a comment.
 
 ### Example
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteAttachments(ctx, cid).Execute()
 
-Delete an attachment from a comment by comment ID.
+Delete all attachments from a comment.
 
 ### Example
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteComment(ctx, cid).Execute()
 
-Delete a comment by comment ID.
+Delete a comment from a document.
 
 ### Example
 
@@ -291,7 +291,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetAttachment(ctx, cid, fdid, ext).Execute()
 
-Retrieve an attachment associated with a comment by comment ID and file document ID (and extension).
+Get the attachment with the specified file extension that is associated with the specified comment.
+
+
 
 ### Example
 
@@ -365,7 +367,7 @@ Name | Type | Description  | Notes
 
 > BTCommentInfo GetComment(ctx, cid).Execute()
 
-Retrieve details for a comment by comment ID.
+Get details for a comment.
 
 ### Example
 
@@ -433,7 +435,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTCommentInfo GetComments(ctx).Did(did).ObjectType(objectType).Pid(pid).Eid(eid).Filter(filter).Resolved(resolved).Offset(offset).Limit(limit).Execute()
 
-Retrieve a list of comments for a document.
+Get a list of comments in a document.
 
 ### Example
 
@@ -511,7 +513,7 @@ Name | Type | Description  | Notes
 
 > BTCommentInfo Reopen(ctx, cid).Execute()
 
-Reopen a resolved comment by comment ID.
+Reopen a resolved comment.
 
 ### Example
 
@@ -579,7 +581,7 @@ Name | Type | Description  | Notes
 
 > BTCommentInfo Resolve(ctx, cid).Execute()
 
-Resolve a comment by comment ID.
+Resolve a comment.
 
 ### Example
 
@@ -647,7 +649,7 @@ Name | Type | Description  | Notes
 
 > BTCommentInfo UpdateComment(ctx, cid).BTCommentParams(bTCommentParams).Execute()
 
-Update a user’s comment by comment ID.
+Update the content of an existing comment.
 
 ### Example
 

@@ -6,53 +6,38 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnonymousAccessAllowed** | Pointer to **bool** |  | [optional] 
 **AnonymousAllowsExport** | Pointer to **bool** |  | [optional] 
-**CanMove** | Pointer to **bool** |  | [optional] 
 **CanUnshare** | Pointer to **bool** |  | [optional] 
-**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
-**CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **CreatedWithEducationPlan** | Pointer to **bool** |  | [optional] 
 **DefaultElementId** | Pointer to **string** |  | [optional] 
 **DefaultWorkspace** | Pointer to [**BTWorkspaceInfo**](BTWorkspaceInfo.md) |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
 **DocumentLabels** | Pointer to [**[]BTDocumentLabelInfo**](BTDocumentLabelInfo.md) |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
 **ForceExportRules** | Pointer to **bool** |  | [optional] 
 **HasReleaseRevisionableObjects** | Pointer to **bool** |  | [optional] 
 **HasRelevantInsertables** | Pointer to **bool** |  | [optional] 
-**Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
-**Id** | Pointer to **string** | Id of the resource. | [optional] 
-**IsContainer** | Pointer to **bool** |  | [optional] 
-**IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
-**IsMutable** | Pointer to **bool** |  | [optional] 
+**IsOrphaned** | Pointer to **bool** |  | [optional] 
 **IsUsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **LikedByCurrentUser** | Pointer to **bool** |  | [optional] 
 **Likes** | Pointer to **int64** |  | [optional] 
-**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
-**ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
-**Name** | Pointer to **string** | Name of the resource. | [optional] 
 **NotRevisionManaged** | Pointer to **bool** |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **NumberOfTimesCopied** | Pointer to **int64** |  | [optional] 
 **NumberOfTimesReferenced** | Pointer to **int64** |  | [optional] 
-**Owner** | Pointer to [**BTOwnerInfo**](BTOwnerInfo.md) |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **Permission** | Pointer to [**BTOldPermission**](BTOldPermission.md) |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
-**ProjectId** | Pointer to **string** |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
 **PublishedVersionId** | Pointer to **string** |  | [optional] 
 **RecentVersion** | Pointer to [**BTBaseInfo**](BTBaseInfo.md) |  | [optional] 
-**ResourceType** | Pointer to **string** |  | [optional] 
 **Sequence** | Pointer to **string** |  | [optional] 
 **SupportTeamUserAndShared** | Pointer to **bool** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
+**TotalWorkspacesScheduledForUpdate** | Pointer to **int32** |  | [optional] 
+**TotalWorkspacesUpdating** | Pointer to **int32** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
-**TreeHref** | Pointer to **string** |  | [optional] 
-**UnparentHref** | Pointer to **string** |  | [optional] 
 **UserAccountLimitsBreached** | Pointer to **bool** |  | [optional] 
-**ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
 
@@ -123,31 +108,6 @@ SetAnonymousAllowsExport sets AnonymousAllowsExport field to given value.
 
 HasAnonymousAllowsExport returns a boolean if a field has been set.
 
-### GetCanMove
-
-`func (o *BTDocumentSummaryInfo) GetCanMove() bool`
-
-GetCanMove returns the CanMove field if non-nil, zero value otherwise.
-
-### GetCanMoveOk
-
-`func (o *BTDocumentSummaryInfo) GetCanMoveOk() (*bool, bool)`
-
-GetCanMoveOk returns a tuple with the CanMove field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCanMove
-
-`func (o *BTDocumentSummaryInfo) SetCanMove(v bool)`
-
-SetCanMove sets CanMove field to given value.
-
-### HasCanMove
-
-`func (o *BTDocumentSummaryInfo) HasCanMove() bool`
-
-HasCanMove returns a boolean if a field has been set.
-
 ### GetCanUnshare
 
 `func (o *BTDocumentSummaryInfo) GetCanUnshare() bool`
@@ -172,56 +132,6 @@ SetCanUnshare sets CanUnshare field to given value.
 `func (o *BTDocumentSummaryInfo) HasCanUnshare() bool`
 
 HasCanUnshare returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *BTDocumentSummaryInfo) GetCreatedAt() JSONTime`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *BTDocumentSummaryInfo) GetCreatedAtOk() (*JSONTime, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *BTDocumentSummaryInfo) SetCreatedAt(v JSONTime)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-### HasCreatedAt
-
-`func (o *BTDocumentSummaryInfo) HasCreatedAt() bool`
-
-HasCreatedAt returns a boolean if a field has been set.
-
-### GetCreatedBy
-
-`func (o *BTDocumentSummaryInfo) GetCreatedBy() BTUserBasicSummaryInfo`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *BTDocumentSummaryInfo) GetCreatedByOk() (*BTUserBasicSummaryInfo, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *BTDocumentSummaryInfo) SetCreatedBy(v BTUserBasicSummaryInfo)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *BTDocumentSummaryInfo) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
 
 ### GetCreatedWithEducationPlan
 
@@ -297,31 +207,6 @@ SetDefaultWorkspace sets DefaultWorkspace field to given value.
 `func (o *BTDocumentSummaryInfo) HasDefaultWorkspace() bool`
 
 HasDefaultWorkspace returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *BTDocumentSummaryInfo) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *BTDocumentSummaryInfo) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *BTDocumentSummaryInfo) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *BTDocumentSummaryInfo) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
 
 ### GetDocumentLabels
 
@@ -448,130 +333,30 @@ SetHasRelevantInsertables sets HasRelevantInsertables field to given value.
 
 HasHasRelevantInsertables returns a boolean if a field has been set.
 
-### GetHref
+### GetIsOrphaned
 
-`func (o *BTDocumentSummaryInfo) GetHref() string`
+`func (o *BTDocumentSummaryInfo) GetIsOrphaned() bool`
 
-GetHref returns the Href field if non-nil, zero value otherwise.
+GetIsOrphaned returns the IsOrphaned field if non-nil, zero value otherwise.
 
-### GetHrefOk
+### GetIsOrphanedOk
 
-`func (o *BTDocumentSummaryInfo) GetHrefOk() (*string, bool)`
+`func (o *BTDocumentSummaryInfo) GetIsOrphanedOk() (*bool, bool)`
 
-GetHrefOk returns a tuple with the Href field if it's non-nil, zero value otherwise
+GetIsOrphanedOk returns a tuple with the IsOrphaned field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHref
+### SetIsOrphaned
 
-`func (o *BTDocumentSummaryInfo) SetHref(v string)`
+`func (o *BTDocumentSummaryInfo) SetIsOrphaned(v bool)`
 
-SetHref sets Href field to given value.
+SetIsOrphaned sets IsOrphaned field to given value.
 
-### HasHref
+### HasIsOrphaned
 
-`func (o *BTDocumentSummaryInfo) HasHref() bool`
+`func (o *BTDocumentSummaryInfo) HasIsOrphaned() bool`
 
-HasHref returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *BTDocumentSummaryInfo) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *BTDocumentSummaryInfo) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *BTDocumentSummaryInfo) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *BTDocumentSummaryInfo) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetIsContainer
-
-`func (o *BTDocumentSummaryInfo) GetIsContainer() bool`
-
-GetIsContainer returns the IsContainer field if non-nil, zero value otherwise.
-
-### GetIsContainerOk
-
-`func (o *BTDocumentSummaryInfo) GetIsContainerOk() (*bool, bool)`
-
-GetIsContainerOk returns a tuple with the IsContainer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsContainer
-
-`func (o *BTDocumentSummaryInfo) SetIsContainer(v bool)`
-
-SetIsContainer sets IsContainer field to given value.
-
-### HasIsContainer
-
-`func (o *BTDocumentSummaryInfo) HasIsContainer() bool`
-
-HasIsContainer returns a boolean if a field has been set.
-
-### GetIsEnterpriseOwned
-
-`func (o *BTDocumentSummaryInfo) GetIsEnterpriseOwned() bool`
-
-GetIsEnterpriseOwned returns the IsEnterpriseOwned field if non-nil, zero value otherwise.
-
-### GetIsEnterpriseOwnedOk
-
-`func (o *BTDocumentSummaryInfo) GetIsEnterpriseOwnedOk() (*bool, bool)`
-
-GetIsEnterpriseOwnedOk returns a tuple with the IsEnterpriseOwned field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsEnterpriseOwned
-
-`func (o *BTDocumentSummaryInfo) SetIsEnterpriseOwned(v bool)`
-
-SetIsEnterpriseOwned sets IsEnterpriseOwned field to given value.
-
-### HasIsEnterpriseOwned
-
-`func (o *BTDocumentSummaryInfo) HasIsEnterpriseOwned() bool`
-
-HasIsEnterpriseOwned returns a boolean if a field has been set.
-
-### GetIsMutable
-
-`func (o *BTDocumentSummaryInfo) GetIsMutable() bool`
-
-GetIsMutable returns the IsMutable field if non-nil, zero value otherwise.
-
-### GetIsMutableOk
-
-`func (o *BTDocumentSummaryInfo) GetIsMutableOk() (*bool, bool)`
-
-GetIsMutableOk returns a tuple with the IsMutable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsMutable
-
-`func (o *BTDocumentSummaryInfo) SetIsMutable(v bool)`
-
-SetIsMutable sets IsMutable field to given value.
-
-### HasIsMutable
-
-`func (o *BTDocumentSummaryInfo) HasIsMutable() bool`
-
-HasIsMutable returns a boolean if a field has been set.
+HasIsOrphaned returns a boolean if a field has been set.
 
 ### GetIsUsingManagedWorkflow
 
@@ -647,81 +432,6 @@ SetLikes sets Likes field to given value.
 `func (o *BTDocumentSummaryInfo) HasLikes() bool`
 
 HasLikes returns a boolean if a field has been set.
-
-### GetModifiedAt
-
-`func (o *BTDocumentSummaryInfo) GetModifiedAt() JSONTime`
-
-GetModifiedAt returns the ModifiedAt field if non-nil, zero value otherwise.
-
-### GetModifiedAtOk
-
-`func (o *BTDocumentSummaryInfo) GetModifiedAtOk() (*JSONTime, bool)`
-
-GetModifiedAtOk returns a tuple with the ModifiedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedAt
-
-`func (o *BTDocumentSummaryInfo) SetModifiedAt(v JSONTime)`
-
-SetModifiedAt sets ModifiedAt field to given value.
-
-### HasModifiedAt
-
-`func (o *BTDocumentSummaryInfo) HasModifiedAt() bool`
-
-HasModifiedAt returns a boolean if a field has been set.
-
-### GetModifiedBy
-
-`func (o *BTDocumentSummaryInfo) GetModifiedBy() BTUserBasicSummaryInfo`
-
-GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
-
-### GetModifiedByOk
-
-`func (o *BTDocumentSummaryInfo) GetModifiedByOk() (*BTUserBasicSummaryInfo, bool)`
-
-GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedBy
-
-`func (o *BTDocumentSummaryInfo) SetModifiedBy(v BTUserBasicSummaryInfo)`
-
-SetModifiedBy sets ModifiedBy field to given value.
-
-### HasModifiedBy
-
-`func (o *BTDocumentSummaryInfo) HasModifiedBy() bool`
-
-HasModifiedBy returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *BTDocumentSummaryInfo) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *BTDocumentSummaryInfo) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *BTDocumentSummaryInfo) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *BTDocumentSummaryInfo) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNotRevisionManaged
 
@@ -823,31 +533,6 @@ SetNumberOfTimesReferenced sets NumberOfTimesReferenced field to given value.
 
 HasNumberOfTimesReferenced returns a boolean if a field has been set.
 
-### GetOwner
-
-`func (o *BTDocumentSummaryInfo) GetOwner() BTOwnerInfo`
-
-GetOwner returns the Owner field if non-nil, zero value otherwise.
-
-### GetOwnerOk
-
-`func (o *BTDocumentSummaryInfo) GetOwnerOk() (*BTOwnerInfo, bool)`
-
-GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOwner
-
-`func (o *BTDocumentSummaryInfo) SetOwner(v BTOwnerInfo)`
-
-SetOwner sets Owner field to given value.
-
-### HasOwner
-
-`func (o *BTDocumentSummaryInfo) HasOwner() bool`
-
-HasOwner returns a boolean if a field has been set.
-
 ### GetParentId
 
 `func (o *BTDocumentSummaryInfo) GetParentId() string`
@@ -923,31 +608,6 @@ SetPermissionSet sets PermissionSet field to given value.
 
 HasPermissionSet returns a boolean if a field has been set.
 
-### GetProjectId
-
-`func (o *BTDocumentSummaryInfo) GetProjectId() string`
-
-GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
-
-### GetProjectIdOk
-
-`func (o *BTDocumentSummaryInfo) GetProjectIdOk() (*string, bool)`
-
-GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProjectId
-
-`func (o *BTDocumentSummaryInfo) SetProjectId(v string)`
-
-SetProjectId sets ProjectId field to given value.
-
-### HasProjectId
-
-`func (o *BTDocumentSummaryInfo) HasProjectId() bool`
-
-HasProjectId returns a boolean if a field has been set.
-
 ### GetPublic
 
 `func (o *BTDocumentSummaryInfo) GetPublic() bool`
@@ -1022,31 +682,6 @@ SetRecentVersion sets RecentVersion field to given value.
 `func (o *BTDocumentSummaryInfo) HasRecentVersion() bool`
 
 HasRecentVersion returns a boolean if a field has been set.
-
-### GetResourceType
-
-`func (o *BTDocumentSummaryInfo) GetResourceType() string`
-
-GetResourceType returns the ResourceType field if non-nil, zero value otherwise.
-
-### GetResourceTypeOk
-
-`func (o *BTDocumentSummaryInfo) GetResourceTypeOk() (*string, bool)`
-
-GetResourceTypeOk returns a tuple with the ResourceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceType
-
-`func (o *BTDocumentSummaryInfo) SetResourceType(v string)`
-
-SetResourceType sets ResourceType field to given value.
-
-### HasResourceType
-
-`func (o *BTDocumentSummaryInfo) HasResourceType() bool`
-
-HasResourceType returns a boolean if a field has been set.
 
 ### GetSequence
 
@@ -1148,6 +783,56 @@ SetThumbnail sets Thumbnail field to given value.
 
 HasThumbnail returns a boolean if a field has been set.
 
+### GetTotalWorkspacesScheduledForUpdate
+
+`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesScheduledForUpdate() int32`
+
+GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field if non-nil, zero value otherwise.
+
+### GetTotalWorkspacesScheduledForUpdateOk
+
+`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool)`
+
+GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalWorkspacesScheduledForUpdate
+
+`func (o *BTDocumentSummaryInfo) SetTotalWorkspacesScheduledForUpdate(v int32)`
+
+SetTotalWorkspacesScheduledForUpdate sets TotalWorkspacesScheduledForUpdate field to given value.
+
+### HasTotalWorkspacesScheduledForUpdate
+
+`func (o *BTDocumentSummaryInfo) HasTotalWorkspacesScheduledForUpdate() bool`
+
+HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
+
+### GetTotalWorkspacesUpdating
+
+`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesUpdating() int32`
+
+GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field if non-nil, zero value otherwise.
+
+### GetTotalWorkspacesUpdatingOk
+
+`func (o *BTDocumentSummaryInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool)`
+
+GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalWorkspacesUpdating
+
+`func (o *BTDocumentSummaryInfo) SetTotalWorkspacesUpdating(v int32)`
+
+SetTotalWorkspacesUpdating sets TotalWorkspacesUpdating field to given value.
+
+### HasTotalWorkspacesUpdating
+
+`func (o *BTDocumentSummaryInfo) HasTotalWorkspacesUpdating() bool`
+
+HasTotalWorkspacesUpdating returns a boolean if a field has been set.
+
 ### GetTrash
 
 `func (o *BTDocumentSummaryInfo) GetTrash() bool`
@@ -1198,56 +883,6 @@ SetTrashedAt sets TrashedAt field to given value.
 
 HasTrashedAt returns a boolean if a field has been set.
 
-### GetTreeHref
-
-`func (o *BTDocumentSummaryInfo) GetTreeHref() string`
-
-GetTreeHref returns the TreeHref field if non-nil, zero value otherwise.
-
-### GetTreeHrefOk
-
-`func (o *BTDocumentSummaryInfo) GetTreeHrefOk() (*string, bool)`
-
-GetTreeHrefOk returns a tuple with the TreeHref field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTreeHref
-
-`func (o *BTDocumentSummaryInfo) SetTreeHref(v string)`
-
-SetTreeHref sets TreeHref field to given value.
-
-### HasTreeHref
-
-`func (o *BTDocumentSummaryInfo) HasTreeHref() bool`
-
-HasTreeHref returns a boolean if a field has been set.
-
-### GetUnparentHref
-
-`func (o *BTDocumentSummaryInfo) GetUnparentHref() string`
-
-GetUnparentHref returns the UnparentHref field if non-nil, zero value otherwise.
-
-### GetUnparentHrefOk
-
-`func (o *BTDocumentSummaryInfo) GetUnparentHrefOk() (*string, bool)`
-
-GetUnparentHrefOk returns a tuple with the UnparentHref field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUnparentHref
-
-`func (o *BTDocumentSummaryInfo) SetUnparentHref(v string)`
-
-SetUnparentHref sets UnparentHref field to given value.
-
-### HasUnparentHref
-
-`func (o *BTDocumentSummaryInfo) HasUnparentHref() bool`
-
-HasUnparentHref returns a boolean if a field has been set.
-
 ### GetUserAccountLimitsBreached
 
 `func (o *BTDocumentSummaryInfo) GetUserAccountLimitsBreached() bool`
@@ -1272,31 +907,6 @@ SetUserAccountLimitsBreached sets UserAccountLimitsBreached field to given value
 `func (o *BTDocumentSummaryInfo) HasUserAccountLimitsBreached() bool`
 
 HasUserAccountLimitsBreached returns a boolean if a field has been set.
-
-### GetViewRef
-
-`func (o *BTDocumentSummaryInfo) GetViewRef() string`
-
-GetViewRef returns the ViewRef field if non-nil, zero value otherwise.
-
-### GetViewRefOk
-
-`func (o *BTDocumentSummaryInfo) GetViewRefOk() (*string, bool)`
-
-GetViewRefOk returns a tuple with the ViewRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetViewRef
-
-`func (o *BTDocumentSummaryInfo) SetViewRef(v string)`
-
-SetViewRef sets ViewRef field to given value.
-
-### HasViewRef
-
-`func (o *BTDocumentSummaryInfo) HasViewRef() bool`
-
-HasViewRef returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

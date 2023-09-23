@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -57,7 +57,7 @@ func (r ApiExportPSRequest) Execute() (*HttpFile, *http.Response, error) {
 }
 
 /*
-ExportPS Export part to Parasolid by document ID, workspace or version or microversion ID, tab ID, and part ID.
+ExportPS Export a part as a Parasolid file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -252,7 +252,7 @@ func (r ApiExportPartGltfRequest) Execute() (*HttpFile, *http.Response, error) {
 }
 
 /*
-ExportPartGltf Retrieve GLTF for part by document ID, workspace or version or microversion ID, tab ID, and part ID.
+ExportPartGltf Export a part as a glTF file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -470,7 +470,9 @@ func (r ApiExportStlRequest) Execute() (map[string]interface{}, *http.Response, 
 }
 
 /*
-ExportStl Retrieve part STL by document ID, workspace or version or microversion ID, tab ID, and part ID.
+ExportStl Export a part to an STL file.
+
+Returns a 307 redirect.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -630,7 +632,7 @@ func (r ApiGetBendTableRequest) Execute() (*BTTableResponse1546, *http.Response,
 }
 
 /*
-GetBendTable Retrieve sheet metal bend table by document ID, workspace or version or microversion ID, tab ID, and part ID.
+GetBendTable Get a part's sheet metal bend table.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -791,9 +793,9 @@ func (r ApiGetBodyDetailsRequest) Execute() (*BTExportModelBodiesResponse734, *h
 }
 
 /*
-GetBodyDetails Retrieve part body details by document ID, workspace or version or microversion ID, tab ID, and part ID.
+GetBodyDetails Get a part's body details.
 
-All coordinates are in meters.
+All coordinates are in meters (m).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -950,7 +952,7 @@ func (r ApiGetBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *http.Respons
 }
 
 /*
-GetBoundingBoxes Retrieve part bounding boxes by document ID, workspace or version or microversion ID, tab ID, and part ID.
+GetBoundingBoxes Get a part's bounding box details.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1134,7 +1136,9 @@ func (r ApiGetEdgesRequest) Execute() (*BTExportTessellatedEdgesResponse327, *ht
 }
 
 /*
-GetEdges Retrieve tessellated edges of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
+GetEdges Get a list of a part's tessellation edges.
+
+Returns the coordinates (in meters) of each edge's endpoints.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1389,9 +1393,9 @@ func (r ApiGetFaces1Request) Execute() (*BTExportTessellatedFacesResponse898, *h
 }
 
 /*
-GetFaces1 Method for GetFaces1
+GetFaces1 Get a list of a part's tessellation faces.
 
-Get the tessellated faces of a part. The accuracy of the tessellation approximation to exact
+Coordinates are in meters (m).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1611,7 +1615,9 @@ func (r ApiGetMassPropertiesRequest) Execute() (*BTMassPropertiesBulkInfo, *http
 }
 
 /*
-GetMassProperties Retrieve mass properties of a part document ID, workspace or version or microversion ID, tab ID, and part ID.
+GetMassProperties Get a part's mass properties.
+
+Parts must have density. If three mass properties are returned, the first is the calculated mass; the second and third are the minimum and maximum possible values considering tolerance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1801,7 +1807,7 @@ func (r ApiGetPartShadedViewsRequest) Execute() (*BTShadedViewsInfo, *http.Respo
 }
 
 /*
-GetPartShadedViews Retrieve shaded views of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
+GetPartShadedViews Get a part's shaded views.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1987,7 +1993,7 @@ func (r ApiGetPartsWMVRequest) Execute() ([]BTPartMetadataInfo, *http.Response, 
 }
 
 /*
-GetPartsWMV Retrieve a list of parts by document ID, and workspace or version or microversion ID.
+GetPartsWMV Get all parts in a workspace, version, or microversion.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2157,7 +2163,7 @@ func (r ApiGetPartsWMVERequest) Execute() ([]BTPartMetadataInfo, *http.Response,
 }
 
 /*
-GetPartsWMVE Retrieve a list of parts from a tab by document ID, workspace or version or microversion ID, and tab ID.
+GetPartsWMVE Get all parts in an element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.

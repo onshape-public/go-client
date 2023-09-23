@@ -4,10 +4,10 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EnumerateObjectWorkflows**](WorkflowApi.md#EnumerateObjectWorkflows) | **Get** /workflow/companies/{cid}/objects | Enumerate workflowable objects created in a company.
-[**GetActiveWorkflows**](WorkflowApi.md#GetActiveWorkflows) | **Get** /workflow/active | Retrieve active workflow.
-[**GetAllowedApprovers**](WorkflowApi.md#GetAllowedApprovers) | **Get** /workflow/c/{companyId}/approvers | 
-[**GetAuditLog**](WorkflowApi.md#GetAuditLog) | **Get** /workflow/obj/{objectId}/auditlog | 
+[**EnumerateObjectWorkflows**](WorkflowApi.md#EnumerateObjectWorkflows) | **Get** /workflow/companies/{cid}/objects | Enumerate all of a company&#39;s workflowable objects.
+[**GetActiveWorkflows**](WorkflowApi.md#GetActiveWorkflows) | **Get** /workflow/active | Get all active workflows for the currently logged in user&#39;s company.
+[**GetAllowedApprovers**](WorkflowApi.md#GetAllowedApprovers) | **Get** /workflow/c/{companyId}/approvers | Get all identities allowed to be approvers on a workflow object.
+[**GetAuditLog**](WorkflowApi.md#GetAuditLog) | **Get** /workflow/obj/{objectId}/auditlog | Get all audit log entries for a workflowable object.
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > BTListResponseBTObjectWorkflowInfo EnumerateObjectWorkflows(ctx, cid).ObjectTypes(objectTypes).States(states).Limit(limit).ModifiedAfter(modifiedAfter).Execute()
 
-Enumerate workflowable objects created in a company.
+Enumerate all of a company's workflowable objects.
 
 
 
@@ -94,7 +94,9 @@ Name | Type | Description  | Notes
 
 > BTActiveWorkflowInfo GetActiveWorkflows(ctx).DocumentId(documentId).Execute()
 
-Retrieve active workflow.
+Get all active workflows for the currently logged in user's company.
+
+
 
 ### Example
 
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTWorkflowObserverOptionInfo GetAllowedApprovers(ctx, companyId).Q(q).ExpandTeams(expandTeams).IncludeSelf(includeSelf).Execute()
 
-
+Get all identities allowed to be approvers on a workflow object.
 
 
 
@@ -234,7 +236,7 @@ Name | Type | Description  | Notes
 
 > BTWorkflowAuditLogInfo GetAuditLog(ctx, objectId).Execute()
 
-
+Get all audit log entries for a workflowable object.
 
 
 

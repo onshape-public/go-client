@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AngleTolerance** | Pointer to **float64** |  | [optional] 
+**BatchAllFlatPatterns** | Pointer to **bool** |  | [optional] 
 **BatchFlatPatterns** | Pointer to **bool** |  | [optional] 
 **ChordTolerance** | Pointer to **float64** |  | [optional] 
 **CloudObjectId** | Pointer to **string** |  | [optional] 
@@ -98,6 +99,31 @@ SetAngleTolerance sets AngleTolerance field to given value.
 `func (o *BTBExportModelParams) HasAngleTolerance() bool`
 
 HasAngleTolerance returns a boolean if a field has been set.
+
+### GetBatchAllFlatPatterns
+
+`func (o *BTBExportModelParams) GetBatchAllFlatPatterns() bool`
+
+GetBatchAllFlatPatterns returns the BatchAllFlatPatterns field if non-nil, zero value otherwise.
+
+### GetBatchAllFlatPatternsOk
+
+`func (o *BTBExportModelParams) GetBatchAllFlatPatternsOk() (*bool, bool)`
+
+GetBatchAllFlatPatternsOk returns a tuple with the BatchAllFlatPatterns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatchAllFlatPatterns
+
+`func (o *BTBExportModelParams) SetBatchAllFlatPatterns(v bool)`
+
+SetBatchAllFlatPatterns sets BatchAllFlatPatterns field to given value.
+
+### HasBatchAllFlatPatterns
+
+`func (o *BTBExportModelParams) HasBatchAllFlatPatterns() bool`
+
+HasBatchAllFlatPatterns returns a boolean if a field has been set.
 
 ### GetBatchFlatPatterns
 

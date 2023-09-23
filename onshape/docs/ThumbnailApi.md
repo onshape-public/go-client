@@ -5,15 +5,15 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteApplicationThumbnails**](ThumbnailApi.md#DeleteApplicationThumbnails) | **Delete** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Delete an element&#39;s thumbnail.
-[**GetDocumentThumbnail**](ThumbnailApi.md#GetDocumentThumbnail) | **Get** /thumbnails/d/{did}/w/{wid} | Get the thumbnail info for the specified workspace of a document.
-[**GetDocumentThumbnailWithSize**](ThumbnailApi.md#GetDocumentThumbnailWithSize) | **Get** /thumbnails/d/{did}/w/{wid}/s/{sz} | Get the thumbnail image with the given size for the specified document and workspace.
-[**GetElementThumbnail**](ThumbnailApi.md#GetElementThumbnail) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Get the thumbnail info structure for the specified element.
-[**GetElementThumbnailWithApiConfiguration**](ThumbnailApi.md#GetElementThumbnailWithApiConfiguration) | **Get** /thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz} | Get the thumbnail image with the given configuration for the specified element.
-[**GetElementThumbnailWithSize**](ThumbnailApi.md#GetElementThumbnailWithSize) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid}/s/{sz} | Get the thumbnail image with the given size for the specified element.
-[**GetThumbnailForDocument**](ThumbnailApi.md#GetThumbnailForDocument) | **Get** /thumbnails/d/{did} | Get the thumbnail info for the specified document in the default workspace.
-[**GetThumbnailForDocumentAndVersion**](ThumbnailApi.md#GetThumbnailForDocumentAndVersion) | **Get** /thumbnails/d/{did}/v/{vid} | Get the thumbnail info for the specified version of a document.
-[**GetThumbnailForDocumentAndVersionOld**](ThumbnailApi.md#GetThumbnailForDocumentAndVersionOld) | **Get** /thumbnails/document/{did}/version/{vid} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocumentAndVersion&#x60;.
-[**GetThumbnailForDocumentOld**](ThumbnailApi.md#GetThumbnailForDocumentOld) | **Get** /thumbnails/document/{did} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocument&#x60;.
+[**GetDocumentThumbnail**](ThumbnailApi.md#GetDocumentThumbnail) | **Get** /thumbnails/d/{did}/w/{wid} | Get the thumbnail info for a workspace.
+[**GetDocumentThumbnailWithSize**](ThumbnailApi.md#GetDocumentThumbnailWithSize) | **Get** /thumbnails/d/{did}/w/{wid}/s/{sz} | Get the thumbnail image with the given size for a document.
+[**GetElementThumbnail**](ThumbnailApi.md#GetElementThumbnail) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Get the thumbnail info structure for an element.
+[**GetElementThumbnailWithApiConfiguration**](ThumbnailApi.md#GetElementThumbnailWithApiConfiguration) | **Get** /thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz} | Get the thumbnail image with the given configuration for an element.
+[**GetElementThumbnailWithSize**](ThumbnailApi.md#GetElementThumbnailWithSize) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid}/s/{sz} | Get the thumbnail image with the given size for an element.
+[**GetThumbnailForDocument**](ThumbnailApi.md#GetThumbnailForDocument) | **Get** /thumbnails/d/{did} | Get the thumbnail info for a document in the default workspace.
+[**GetThumbnailForDocumentAndVersion**](ThumbnailApi.md#GetThumbnailForDocumentAndVersion) | **Get** /thumbnails/d/{did}/v/{vid} | Get the thumbnail info for a version of a document.
+[**GetThumbnailForDocumentAndVersionOld**](ThumbnailApi.md#GetThumbnailForDocumentAndVersionOld) | **Get** /thumbnails/document/{did}/version/{vid} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocumentAndVersion&#x60; instead.
+[**GetThumbnailForDocumentOld**](ThumbnailApi.md#GetThumbnailForDocumentOld) | **Get** /thumbnails/document/{did} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocument&#x60; instead.
 [**SetApplicationElementThumbnail**](ThumbnailApi.md#SetApplicationElementThumbnail) | **Post** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Set the thumbnail image for an application element.
 
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetDocumentThumbnail(ctx, did, wid).Execute()
 
-Get the thumbnail info for the specified workspace of a document.
+Get the thumbnail info for a workspace.
 
 
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetDocumentThumbnailWithSize(ctx, did, wid, sz).T(t).SkipDefaultImage(skipDefaultImage).Execute()
 
-Get the thumbnail image with the given size for the specified document and workspace.
+Get the thumbnail image with the given size for a document.
 
 
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetElementThumbnail(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
 
-Get the thumbnail info structure for the specified element.
+Get the thumbnail info structure for an element.
 
 
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetElementThumbnailWithApiConfiguration(ctx, did, wid, eid, cid, sz).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
 
-Get the thumbnail image with the given configuration for the specified element.
+Get the thumbnail image with the given configuration for an element.
 
 
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} GetElementThumbnailWithSize(ctx, did, wv, wvid, eid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).Execute()
 
-Get the thumbnail image with the given size for the specified element.
+Get the thumbnail image with the given size for an element.
 
 ### Example
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetThumbnailForDocument(ctx, did).Execute()
 
-Get the thumbnail info for the specified document in the default workspace.
+Get the thumbnail info for a document in the default workspace.
 
 
 
@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetThumbnailForDocumentAndVersion(ctx, did, vid).LinkDocumentId(linkDocumentId).Execute()
 
-Get the thumbnail info for the specified version of a document.
+Get the thumbnail info for a version of a document.
 
 
 
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetThumbnailForDocumentAndVersionOld(ctx, did, vid).Execute()
 
-This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion`.
+This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion` instead.
 
 
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 > BTThumbnailInfo GetThumbnailForDocumentOld(ctx, did).Execute()
 
-This endpoint will be deprecated soon. Use `getThumbnailForDocument`.
+This endpoint will be deprecated soon. Use `getThumbnailForDocument` instead.
 
 
 

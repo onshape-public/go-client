@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -28,29 +28,31 @@ type BTProjectInfo struct {
 	IsContainer       *bool                   `json:"isContainer,omitempty"`
 	IsEnterpriseOwned *bool                   `json:"isEnterpriseOwned,omitempty"`
 	IsMutable         *bool                   `json:"isMutable,omitempty"`
+	JsonType          string                  `json:"jsonType"`
 	ModifiedAt        *JSONTime               `json:"modifiedAt,omitempty"`
 	ModifiedBy        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
 	// Name of the resource.
-	Name             *string                     `json:"name,omitempty"`
-	Owner            *BTOwnerInfo                `json:"owner,omitempty"`
+	Name         *string      `json:"name,omitempty"`
+	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ProjectId    *string      `json:"projectId,omitempty"`
+	ResourceType *string      `json:"resourceType,omitempty"`
+	TreeHref     *string      `json:"treeHref,omitempty"`
+	UnparentHref *string      `json:"unparentHref,omitempty"`
+	// URI to visualize the resource in a webclient if applicable.
+	ViewRef          *string                     `json:"viewRef,omitempty"`
 	PermissionScheme *BTRbacPermissionSchemeInfo `json:"permissionScheme,omitempty"`
 	PermissionSet    []string                    `json:"permissionSet,omitempty"`
-	ProjectId        *string                     `json:"projectId,omitempty"`
-	ResourceType     *string                     `json:"resourceType,omitempty"`
 	RoleMapEntries   []RoleMapEntry              `json:"roleMapEntries,omitempty"`
 	Trash            *bool                       `json:"trash,omitempty"`
-	TreeHref         *string                     `json:"treeHref,omitempty"`
-	UnparentHref     *string                     `json:"unparentHref,omitempty"`
-	// URI to visualize the resource in a webclient if applicable.
-	ViewRef *string `json:"viewRef,omitempty"`
 }
 
 // NewBTProjectInfo instantiates a new BTProjectInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTProjectInfo() *BTProjectInfo {
+func NewBTProjectInfo(jsonType string) *BTProjectInfo {
 	this := BTProjectInfo{}
+	this.JsonType = jsonType
 	return &this
 }
 
@@ -350,6 +352,30 @@ func (o *BTProjectInfo) SetIsMutable(v bool) {
 	o.IsMutable = &v
 }
 
+// GetJsonType returns the JsonType field value
+func (o *BTProjectInfo) GetJsonType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.JsonType
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *BTProjectInfo) GetJsonTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JsonType, true
+}
+
+// SetJsonType sets field value
+func (o *BTProjectInfo) SetJsonType(v string) {
+	o.JsonType = v
+}
+
 // GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
 func (o *BTProjectInfo) GetModifiedAt() JSONTime {
 	if o == nil || o.ModifiedAt == nil {
@@ -478,70 +504,6 @@ func (o *BTProjectInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
 }
 
-// GetPermissionScheme returns the PermissionScheme field value if set, zero value otherwise.
-func (o *BTProjectInfo) GetPermissionScheme() BTRbacPermissionSchemeInfo {
-	if o == nil || o.PermissionScheme == nil {
-		var ret BTRbacPermissionSchemeInfo
-		return ret
-	}
-	return *o.PermissionScheme
-}
-
-// GetPermissionSchemeOk returns a tuple with the PermissionScheme field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTProjectInfo) GetPermissionSchemeOk() (*BTRbacPermissionSchemeInfo, bool) {
-	if o == nil || o.PermissionScheme == nil {
-		return nil, false
-	}
-	return o.PermissionScheme, true
-}
-
-// HasPermissionScheme returns a boolean if a field has been set.
-func (o *BTProjectInfo) HasPermissionScheme() bool {
-	if o != nil && o.PermissionScheme != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPermissionScheme gets a reference to the given BTRbacPermissionSchemeInfo and assigns it to the PermissionScheme field.
-func (o *BTProjectInfo) SetPermissionScheme(v BTRbacPermissionSchemeInfo) {
-	o.PermissionScheme = &v
-}
-
-// GetPermissionSet returns the PermissionSet field value if set, zero value otherwise.
-func (o *BTProjectInfo) GetPermissionSet() []string {
-	if o == nil || o.PermissionSet == nil {
-		var ret []string
-		return ret
-	}
-	return o.PermissionSet
-}
-
-// GetPermissionSetOk returns a tuple with the PermissionSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTProjectInfo) GetPermissionSetOk() ([]string, bool) {
-	if o == nil || o.PermissionSet == nil {
-		return nil, false
-	}
-	return o.PermissionSet, true
-}
-
-// HasPermissionSet returns a boolean if a field has been set.
-func (o *BTProjectInfo) HasPermissionSet() bool {
-	if o != nil && o.PermissionSet != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPermissionSet gets a reference to the given []string and assigns it to the PermissionSet field.
-func (o *BTProjectInfo) SetPermissionSet(v []string) {
-	o.PermissionSet = v
-}
-
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
 func (o *BTProjectInfo) GetProjectId() string {
 	if o == nil || o.ProjectId == nil {
@@ -604,70 +566,6 @@ func (o *BTProjectInfo) HasResourceType() bool {
 // SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
 func (o *BTProjectInfo) SetResourceType(v string) {
 	o.ResourceType = &v
-}
-
-// GetRoleMapEntries returns the RoleMapEntries field value if set, zero value otherwise.
-func (o *BTProjectInfo) GetRoleMapEntries() []RoleMapEntry {
-	if o == nil || o.RoleMapEntries == nil {
-		var ret []RoleMapEntry
-		return ret
-	}
-	return o.RoleMapEntries
-}
-
-// GetRoleMapEntriesOk returns a tuple with the RoleMapEntries field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTProjectInfo) GetRoleMapEntriesOk() ([]RoleMapEntry, bool) {
-	if o == nil || o.RoleMapEntries == nil {
-		return nil, false
-	}
-	return o.RoleMapEntries, true
-}
-
-// HasRoleMapEntries returns a boolean if a field has been set.
-func (o *BTProjectInfo) HasRoleMapEntries() bool {
-	if o != nil && o.RoleMapEntries != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetRoleMapEntries gets a reference to the given []RoleMapEntry and assigns it to the RoleMapEntries field.
-func (o *BTProjectInfo) SetRoleMapEntries(v []RoleMapEntry) {
-	o.RoleMapEntries = v
-}
-
-// GetTrash returns the Trash field value if set, zero value otherwise.
-func (o *BTProjectInfo) GetTrash() bool {
-	if o == nil || o.Trash == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Trash
-}
-
-// GetTrashOk returns a tuple with the Trash field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTProjectInfo) GetTrashOk() (*bool, bool) {
-	if o == nil || o.Trash == nil {
-		return nil, false
-	}
-	return o.Trash, true
-}
-
-// HasTrash returns a boolean if a field has been set.
-func (o *BTProjectInfo) HasTrash() bool {
-	if o != nil && o.Trash != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTrash gets a reference to the given bool and assigns it to the Trash field.
-func (o *BTProjectInfo) SetTrash(v bool) {
-	o.Trash = &v
 }
 
 // GetTreeHref returns the TreeHref field value if set, zero value otherwise.
@@ -766,6 +664,134 @@ func (o *BTProjectInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetPermissionScheme returns the PermissionScheme field value if set, zero value otherwise.
+func (o *BTProjectInfo) GetPermissionScheme() BTRbacPermissionSchemeInfo {
+	if o == nil || o.PermissionScheme == nil {
+		var ret BTRbacPermissionSchemeInfo
+		return ret
+	}
+	return *o.PermissionScheme
+}
+
+// GetPermissionSchemeOk returns a tuple with the PermissionScheme field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTProjectInfo) GetPermissionSchemeOk() (*BTRbacPermissionSchemeInfo, bool) {
+	if o == nil || o.PermissionScheme == nil {
+		return nil, false
+	}
+	return o.PermissionScheme, true
+}
+
+// HasPermissionScheme returns a boolean if a field has been set.
+func (o *BTProjectInfo) HasPermissionScheme() bool {
+	if o != nil && o.PermissionScheme != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPermissionScheme gets a reference to the given BTRbacPermissionSchemeInfo and assigns it to the PermissionScheme field.
+func (o *BTProjectInfo) SetPermissionScheme(v BTRbacPermissionSchemeInfo) {
+	o.PermissionScheme = &v
+}
+
+// GetPermissionSet returns the PermissionSet field value if set, zero value otherwise.
+func (o *BTProjectInfo) GetPermissionSet() []string {
+	if o == nil || o.PermissionSet == nil {
+		var ret []string
+		return ret
+	}
+	return o.PermissionSet
+}
+
+// GetPermissionSetOk returns a tuple with the PermissionSet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTProjectInfo) GetPermissionSetOk() ([]string, bool) {
+	if o == nil || o.PermissionSet == nil {
+		return nil, false
+	}
+	return o.PermissionSet, true
+}
+
+// HasPermissionSet returns a boolean if a field has been set.
+func (o *BTProjectInfo) HasPermissionSet() bool {
+	if o != nil && o.PermissionSet != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPermissionSet gets a reference to the given []string and assigns it to the PermissionSet field.
+func (o *BTProjectInfo) SetPermissionSet(v []string) {
+	o.PermissionSet = v
+}
+
+// GetRoleMapEntries returns the RoleMapEntries field value if set, zero value otherwise.
+func (o *BTProjectInfo) GetRoleMapEntries() []RoleMapEntry {
+	if o == nil || o.RoleMapEntries == nil {
+		var ret []RoleMapEntry
+		return ret
+	}
+	return o.RoleMapEntries
+}
+
+// GetRoleMapEntriesOk returns a tuple with the RoleMapEntries field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTProjectInfo) GetRoleMapEntriesOk() ([]RoleMapEntry, bool) {
+	if o == nil || o.RoleMapEntries == nil {
+		return nil, false
+	}
+	return o.RoleMapEntries, true
+}
+
+// HasRoleMapEntries returns a boolean if a field has been set.
+func (o *BTProjectInfo) HasRoleMapEntries() bool {
+	if o != nil && o.RoleMapEntries != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRoleMapEntries gets a reference to the given []RoleMapEntry and assigns it to the RoleMapEntries field.
+func (o *BTProjectInfo) SetRoleMapEntries(v []RoleMapEntry) {
+	o.RoleMapEntries = v
+}
+
+// GetTrash returns the Trash field value if set, zero value otherwise.
+func (o *BTProjectInfo) GetTrash() bool {
+	if o == nil || o.Trash == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Trash
+}
+
+// GetTrashOk returns a tuple with the Trash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTProjectInfo) GetTrashOk() (*bool, bool) {
+	if o == nil || o.Trash == nil {
+		return nil, false
+	}
+	return o.Trash, true
+}
+
+// HasTrash returns a boolean if a field has been set.
+func (o *BTProjectInfo) HasTrash() bool {
+	if o != nil && o.Trash != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTrash gets a reference to the given bool and assigns it to the Trash field.
+func (o *BTProjectInfo) SetTrash(v bool) {
+	o.Trash = &v
+}
+
 func (o BTProjectInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
@@ -795,6 +821,9 @@ func (o BTProjectInfo) MarshalJSON() ([]byte, error) {
 	if o.IsMutable != nil {
 		toSerialize["isMutable"] = o.IsMutable
 	}
+	if true {
+		toSerialize["jsonType"] = o.JsonType
+	}
 	if o.ModifiedAt != nil {
 		toSerialize["modifiedAt"] = o.ModifiedAt
 	}
@@ -807,23 +836,11 @@ func (o BTProjectInfo) MarshalJSON() ([]byte, error) {
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
 	}
-	if o.PermissionScheme != nil {
-		toSerialize["permissionScheme"] = o.PermissionScheme
-	}
-	if o.PermissionSet != nil {
-		toSerialize["permissionSet"] = o.PermissionSet
-	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
 	}
 	if o.ResourceType != nil {
 		toSerialize["resourceType"] = o.ResourceType
-	}
-	if o.RoleMapEntries != nil {
-		toSerialize["roleMapEntries"] = o.RoleMapEntries
-	}
-	if o.Trash != nil {
-		toSerialize["trash"] = o.Trash
 	}
 	if o.TreeHref != nil {
 		toSerialize["treeHref"] = o.TreeHref
@@ -833,6 +850,18 @@ func (o BTProjectInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
+	}
+	if o.PermissionScheme != nil {
+		toSerialize["permissionScheme"] = o.PermissionScheme
+	}
+	if o.PermissionSet != nil {
+		toSerialize["permissionSet"] = o.PermissionSet
+	}
+	if o.RoleMapEntries != nil {
+		toSerialize["roleMapEntries"] = o.RoleMapEntries
+	}
+	if o.Trash != nil {
+		toSerialize["trash"] = o.Trash
 	}
 	return json.Marshal(toSerialize)
 }

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -63,9 +63,11 @@ func (r ApiEnumerateObjectWorkflowsRequest) Execute() (*BTListResponseBTObjectWo
 }
 
 /*
-EnumerateObjectWorkflows Enumerate workflowable objects created in a company.
+EnumerateObjectWorkflows Enumerate all of a company's workflowable objects.
 
-Enumerate all workflowable objects like RELEASES, TASKS in a company by last modified time. Caller must be a company admin. Specify modifiedAfter and use the next URI to do complete enumeration.
+* For example, you can enumerate RELEASES, TASKS, etc in a company by last modified time.
+* Caller must be a company admin.
+* Specify `modifiedAfter` and use the `next` URI for complete enumeration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid The company or enterprise ID that owns the resource.
@@ -206,7 +208,9 @@ func (r ApiGetActiveWorkflowsRequest) Execute() (*BTActiveWorkflowInfo, *http.Re
 }
 
 /*
-GetActiveWorkflows Retrieve active workflow.
+GetActiveWorkflows Get all active workflows for the currently logged in user's company.
+
+Optionally takes a document ID to return all workflows for that document's owning company.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetActiveWorkflowsRequest
@@ -332,9 +336,12 @@ func (r ApiGetAllowedApproversRequest) Execute() (*BTListResponseBTWorkflowObser
 }
 
 /*
-GetAllowedApprovers Method for GetAllowedApprovers
+GetAllowedApprovers Get all identities allowed to be approvers on a workflow object.
 
-Get identities (users and/or teams) allowed to be approvers on a workflow object for the company. Not object- or property-specific; used for delegation and company settings
+* Identities can be users and/or teams.
+* For Enterprise accounts, also includes roles and any aliases that contain allowed users/teams.
+* Not object- or property-specific.
+* Used for delegation and company settings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param companyId
@@ -451,7 +458,7 @@ func (r ApiGetAuditLogRequest) Execute() (*BTWorkflowAuditLogInfo, *http.Respons
 }
 
 /*
-GetAuditLog Method for GetAuditLog
+GetAuditLog Get all audit log entries for a workflowable object.
 
 Get identities (users and/or teams) allowed to be approvers on a workflow object for the company. Not object- or property-specific; used for delegation and company settings
 

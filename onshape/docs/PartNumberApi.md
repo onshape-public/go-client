@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UpdateNextNumbers**](PartNumberApi.md#UpdateNextNumbers) | **Post** /partnumber/nextnumbers | Update a set of valid part numbers for the supplied parts.
+[**UpdateNextNumbers**](PartNumberApi.md#UpdateNextNumbers) | **Post** /partnumber/nextnumbers | Send the items to generate numbers for, and return the next valid available part numbers.
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > map[string][]BTNextPartNumber UpdateNextNumbers(ctx).BTNextPartNumbersParam(bTNextPartNumbersParam).Cid(cid).Did(did).Execute()
 
-Update a set of valid part numbers for the supplied parts.
+Send the items to generate numbers for, and return the next valid available part numbers.
 
 ### Example
 

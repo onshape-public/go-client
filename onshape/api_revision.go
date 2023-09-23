@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -42,7 +42,7 @@ func (r ApiDeleteRevisionHistoryRequest) Execute() (map[string]interface{}, *htt
 }
 
 /*
-DeleteRevisionHistory Delete all revisions for the specified part number.
+DeleteRevisionHistory Delete all revisions for a part number.
 
 Only company admins can call this API. All documents that contain or use the part number must be deleted first. This operation cannot be undone.
 
@@ -189,9 +189,11 @@ func (r ApiEnumerateRevisionsRequest) Execute() (*BTListResponseBTRevisionInfo, 
 }
 
 /*
-EnumerateRevisions Enumerate all revisions created in a company.
+EnumerateRevisions Enumerate all of a company's revisions.
 
-Enumerate all revisions in a company by creation time. Caller must be a company admin. Specify after and use the next URI to do complete enumeration.
+* Returns a slice of all revisions per API call.
+* To get the next set of results, use the `next` URL from the response body.
+* This API can only be called by company admins.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid The company or enterprise ID that owns the resource.
@@ -311,7 +313,7 @@ func (r ApiGetAllInDocumentRequest) Execute() (*BTListResponseBTRevisionInfo, *h
 }
 
 /*
-GetAllInDocument Retrieve a list of all revisions that exist in a document.
+GetAllInDocument Get all revisions for the specified document.
 
 Retrieve a list of all revisions that exist in a document and are owned by the document's owning company.
 
@@ -422,7 +424,7 @@ func (r ApiGetAllInDocumentVersionRequest) Execute() (*BTListResponseBTRevisionI
 }
 
 /*
-GetAllInDocumentVersion Retrieve a list of all revisions that exist in a document version.
+GetAllInDocumentVersion Get all revisions for a version.
 
 Retrieve a list of all revisions that exist in a document version and are owned by the document's owning company.
 
@@ -544,7 +546,9 @@ func (r ApiGetLatestInDocumentOrCompanyRequest) Execute() (*BTRevisionInfo, *htt
 }
 
 /*
-GetLatestInDocumentOrCompany Retrieve latest revisions for a part number in a document or company by document ID, workspace or version or microversion ID, and tab ID.
+GetLatestInDocumentOrCompany Get the latest revision for a part number in a document or company.
+
+Returns 204 if no revisions are found.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cd
@@ -677,9 +681,7 @@ func (r ApiGetRevisionByPartNumberRequest) Execute() (*BTRevisionInfo, *http.Res
 }
 
 /*
-GetRevisionByPartNumber Get Navigation URL
-
-Get Navigation URL for part number and revision.
+GetRevisionByPartNumber Get a list of revisions by part number.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid Company id
@@ -831,7 +833,7 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) Execute() (*BTRevision
 }
 
 /*
-GetRevisionHistoryInCompanyByElementId Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, and tab ID.
+GetRevisionHistoryInCompanyByElementId Get a list of all revisions for an element in a company-owned document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -996,7 +998,7 @@ func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) Execute() (*BTRevisionLis
 }
 
 /*
-GetRevisionHistoryInCompanyByPartId Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, tab ID, and part ID.
+GetRevisionHistoryInCompanyByPartId Get a list of all revisions for a part in a company-owned document by part ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -1150,7 +1152,9 @@ func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) Execute() (*BTRevisio
 }
 
 /*
-GetRevisionHistoryInCompanyByPartNumber Retrieve a list of all revisions for a part number in a company by company ID.
+GetRevisionHistoryInCompanyByPartNumber Get a list of all revisions for a part or element in a company-owned document by part number.
+
+You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid

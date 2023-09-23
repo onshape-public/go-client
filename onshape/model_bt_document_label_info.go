@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -28,27 +28,29 @@ type BTDocumentLabelInfo struct {
 	IsContainer       *bool                   `json:"isContainer,omitempty"`
 	IsEnterpriseOwned *bool                   `json:"isEnterpriseOwned,omitempty"`
 	IsMutable         *bool                   `json:"isMutable,omitempty"`
+	JsonType          string                  `json:"jsonType"`
 	ModifiedAt        *JSONTime               `json:"modifiedAt,omitempty"`
 	ModifiedBy        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
 	// Name of the resource.
-	Name          *string      `json:"name,omitempty"`
-	Owner         *BTOwnerInfo `json:"owner,omitempty"`
-	ParentLabelId *string      `json:"parentLabelId,omitempty"`
-	Path          *string      `json:"path,omitempty"`
-	ProjectId     *string      `json:"projectId,omitempty"`
-	ResourceType  *string      `json:"resourceType,omitempty"`
-	TreeHref      *string      `json:"treeHref,omitempty"`
-	UnparentHref  *string      `json:"unparentHref,omitempty"`
+	Name         *string      `json:"name,omitempty"`
+	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ProjectId    *string      `json:"projectId,omitempty"`
+	ResourceType *string      `json:"resourceType,omitempty"`
+	TreeHref     *string      `json:"treeHref,omitempty"`
+	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef *string `json:"viewRef,omitempty"`
+	ViewRef       *string `json:"viewRef,omitempty"`
+	ParentLabelId *string `json:"parentLabelId,omitempty"`
+	Path          *string `json:"path,omitempty"`
 }
 
 // NewBTDocumentLabelInfo instantiates a new BTDocumentLabelInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTDocumentLabelInfo() *BTDocumentLabelInfo {
+func NewBTDocumentLabelInfo(jsonType string) *BTDocumentLabelInfo {
 	this := BTDocumentLabelInfo{}
+	this.JsonType = jsonType
 	return &this
 }
 
@@ -348,6 +350,30 @@ func (o *BTDocumentLabelInfo) SetIsMutable(v bool) {
 	o.IsMutable = &v
 }
 
+// GetJsonType returns the JsonType field value
+func (o *BTDocumentLabelInfo) GetJsonType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.JsonType
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *BTDocumentLabelInfo) GetJsonTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JsonType, true
+}
+
+// SetJsonType sets field value
+func (o *BTDocumentLabelInfo) SetJsonType(v string) {
+	o.JsonType = v
+}
+
 // GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
 func (o *BTDocumentLabelInfo) GetModifiedAt() JSONTime {
 	if o == nil || o.ModifiedAt == nil {
@@ -474,70 +500,6 @@ func (o *BTDocumentLabelInfo) HasOwner() bool {
 // SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
 func (o *BTDocumentLabelInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
-}
-
-// GetParentLabelId returns the ParentLabelId field value if set, zero value otherwise.
-func (o *BTDocumentLabelInfo) GetParentLabelId() string {
-	if o == nil || o.ParentLabelId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ParentLabelId
-}
-
-// GetParentLabelIdOk returns a tuple with the ParentLabelId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentLabelInfo) GetParentLabelIdOk() (*string, bool) {
-	if o == nil || o.ParentLabelId == nil {
-		return nil, false
-	}
-	return o.ParentLabelId, true
-}
-
-// HasParentLabelId returns a boolean if a field has been set.
-func (o *BTDocumentLabelInfo) HasParentLabelId() bool {
-	if o != nil && o.ParentLabelId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParentLabelId gets a reference to the given string and assigns it to the ParentLabelId field.
-func (o *BTDocumentLabelInfo) SetParentLabelId(v string) {
-	o.ParentLabelId = &v
-}
-
-// GetPath returns the Path field value if set, zero value otherwise.
-func (o *BTDocumentLabelInfo) GetPath() string {
-	if o == nil || o.Path == nil {
-		var ret string
-		return ret
-	}
-	return *o.Path
-}
-
-// GetPathOk returns a tuple with the Path field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentLabelInfo) GetPathOk() (*string, bool) {
-	if o == nil || o.Path == nil {
-		return nil, false
-	}
-	return o.Path, true
-}
-
-// HasPath returns a boolean if a field has been set.
-func (o *BTDocumentLabelInfo) HasPath() bool {
-	if o != nil && o.Path != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPath gets a reference to the given string and assigns it to the Path field.
-func (o *BTDocumentLabelInfo) SetPath(v string) {
-	o.Path = &v
 }
 
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
@@ -700,6 +662,70 @@ func (o *BTDocumentLabelInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetParentLabelId returns the ParentLabelId field value if set, zero value otherwise.
+func (o *BTDocumentLabelInfo) GetParentLabelId() string {
+	if o == nil || o.ParentLabelId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentLabelId
+}
+
+// GetParentLabelIdOk returns a tuple with the ParentLabelId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentLabelInfo) GetParentLabelIdOk() (*string, bool) {
+	if o == nil || o.ParentLabelId == nil {
+		return nil, false
+	}
+	return o.ParentLabelId, true
+}
+
+// HasParentLabelId returns a boolean if a field has been set.
+func (o *BTDocumentLabelInfo) HasParentLabelId() bool {
+	if o != nil && o.ParentLabelId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentLabelId gets a reference to the given string and assigns it to the ParentLabelId field.
+func (o *BTDocumentLabelInfo) SetParentLabelId(v string) {
+	o.ParentLabelId = &v
+}
+
+// GetPath returns the Path field value if set, zero value otherwise.
+func (o *BTDocumentLabelInfo) GetPath() string {
+	if o == nil || o.Path == nil {
+		var ret string
+		return ret
+	}
+	return *o.Path
+}
+
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentLabelInfo) GetPathOk() (*string, bool) {
+	if o == nil || o.Path == nil {
+		return nil, false
+	}
+	return o.Path, true
+}
+
+// HasPath returns a boolean if a field has been set.
+func (o *BTDocumentLabelInfo) HasPath() bool {
+	if o != nil && o.Path != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given string and assigns it to the Path field.
+func (o *BTDocumentLabelInfo) SetPath(v string) {
+	o.Path = &v
+}
+
 func (o BTDocumentLabelInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
@@ -729,6 +755,9 @@ func (o BTDocumentLabelInfo) MarshalJSON() ([]byte, error) {
 	if o.IsMutable != nil {
 		toSerialize["isMutable"] = o.IsMutable
 	}
+	if true {
+		toSerialize["jsonType"] = o.JsonType
+	}
 	if o.ModifiedAt != nil {
 		toSerialize["modifiedAt"] = o.ModifiedAt
 	}
@@ -740,12 +769,6 @@ func (o BTDocumentLabelInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
-	}
-	if o.ParentLabelId != nil {
-		toSerialize["parentLabelId"] = o.ParentLabelId
-	}
-	if o.Path != nil {
-		toSerialize["path"] = o.Path
 	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
@@ -761,6 +784,12 @@ func (o BTDocumentLabelInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
+	}
+	if o.ParentLabelId != nil {
+		toSerialize["parentLabelId"] = o.ParentLabelId
+	}
+	if o.Path != nil {
+		toSerialize["path"] = o.Path
 	}
 	return json.Marshal(toSerialize)
 }

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -39,7 +39,9 @@ func (r ApiCreateAliasRequest) Execute() (*BTAliasInfo, *http.Response, error) {
 }
 
 /*
-CreateAlias Create an alias that contains users and/or teams.
+CreateAlias Create an alias in your enterprise.
+
+`Manage users and teams` global permission is required to call this API.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateAliasRequest
@@ -149,7 +151,9 @@ func (r ApiDeleteAliasRequest) Execute() (map[string]interface{}, *http.Response
 }
 
 /*
-DeleteAlias Delete alias by alias ID.
+DeleteAlias Delete an alias from your enterprise.
+
+`Manage users and teams` global permission is required to call this API.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param aid
@@ -257,7 +261,9 @@ func (r ApiGetAliasRequest) Execute() (*BTAliasInfo, *http.Response, error) {
 }
 
 /*
-GetAlias Retrieve an alias by alias ID.
+GetAlias Get an alias by ID.
+
+Get the information for an alias ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param aid
@@ -395,7 +401,9 @@ func (r ApiGetAliasMembersRequest) Execute() (*BTListResponseBTAliasEntryInfo, *
 }
 
 /*
-GetAliasMembers Retrieve all alias members by alias ID.
+GetAliasMembers Get all users and teams assigned to an alias.
+
+This is a search-like endpoint that returns a subset of the member list. Use `getAlias` to return all members every time it's called.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param aid
@@ -547,7 +555,7 @@ func (r ApiGetAliasesInCompanyRequest) Execute() (*BTListResponseBTAliasInfo, *h
 }
 
 /*
-GetAliasesInCompany Retrieve an array of aliases for the enterprise.
+GetAliasesInCompany Get a list of all aliases that exist for your enterprise.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetAliasesInCompanyRequest
@@ -673,7 +681,17 @@ func (r ApiUpdateAliasRequest) Execute() (*BTAliasInfo, *http.Response, error) {
 }
 
 /*
-UpdateAlias Update alias by alias ID.
+UpdateAlias Add, remove, replace, or rename entries in an alias list.
+
+`Manage users and teams` global permission is required to call this API.
+* Add new users in the `additions` array.
+* Remove existing users in the `removals` array. Attempts to remove a user that does not exist in the Alias list will have no effect.
+* Replace the entire Alias list with the `entries` array.
+* You can also update the alias' `name` and `description`.
+For example, given an Alias with members userA and userB:
+* `additions: [userC]` results in [userA, userB, userC]
+* `removals: [userB]` results in [userA]
+* `entries: [userC, user D]` results in [userC, userD]
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param aid

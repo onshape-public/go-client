@@ -4,10 +4,10 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTranslation**](TranslationApi.md#CreateTranslation) | **Post** /translations/d/{did}/w/{wid} | Upload a foreign file into Onshape and translate the data into parts, part studios, assemblies, and subassemblies.
+[**CreateTranslation**](TranslationApi.md#CreateTranslation) | **Post** /translations/d/{did}/w/{wid} | Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.
 [**DeleteTranslation**](TranslationApi.md#DeleteTranslation) | **Delete** /translations/{tid} | Delete a translation request.
 [**GetAllTranslatorFormats**](TranslationApi.md#GetAllTranslatorFormats) | **Get** /translations/translationformats | Get a list of formats this translation can use.
-[**GetDocumentTranslations**](TranslationApi.md#GetDocumentTranslations) | **Get** /translations/d/{did} | Get information on an in-progress or completed translation by documentID.
+[**GetDocumentTranslations**](TranslationApi.md#GetDocumentTranslations) | **Get** /translations/d/{did} | Get information on an in-progress or completed translation by document ID.
 [**GetTranslation**](TranslationApi.md#GetTranslation) | **Get** /translations/{tid} | Get information on an in-progress or completed translation by translation ID.
 
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 > BTTranslationRequestInfo CreateTranslation(ctx, did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).Execute()
 
-Upload a foreign file into Onshape and translate the data into parts, part studios, assemblies, and subassemblies.
+Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.
 
 
 
@@ -272,7 +272,7 @@ Other parameters are passed through a pointer to a apiGetAllTranslatorFormatsReq
 
 > BTListResponseBTTranslationRequestInfo GetDocumentTranslations(ctx, did).Offset(offset).Limit(limit).Execute()
 
-Get information on an in-progress or completed translation by documentID.
+Get information on an in-progress or completed translation by document ID.
 
 ### Example
 

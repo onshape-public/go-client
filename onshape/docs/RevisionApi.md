@@ -4,15 +4,15 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteRevisionHistory**](RevisionApi.md#DeleteRevisionHistory) | **Delete** /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et} | Delete all revisions for the specified part number.
-[**EnumerateRevisions**](RevisionApi.md#EnumerateRevisions) | **Get** /revisions/companies/{cid} | Enumerate all revisions created in a company.
-[**GetAllInDocument**](RevisionApi.md#GetAllInDocument) | **Get** /revisions/d/{did} | Retrieve a list of all revisions that exist in a document.
-[**GetAllInDocumentVersion**](RevisionApi.md#GetAllInDocumentVersion) | **Get** /revisions/d/{did}/v/{vid} | Retrieve a list of all revisions that exist in a document version.
-[**GetLatestInDocumentOrCompany**](RevisionApi.md#GetLatestInDocumentOrCompany) | **Get** /revisions/{cd}/{cdid}/p/{pnum}/latest | Retrieve latest revisions for a part number in a document or company by document ID, workspace or version or microversion ID, and tab ID.
-[**GetRevisionByPartNumber**](RevisionApi.md#GetRevisionByPartNumber) | **Get** /revisions/c/{cid}/partnumber/{pnum} | Get Navigation URL
-[**GetRevisionHistoryInCompanyByElementId**](RevisionApi.md#GetRevisionHistoryInCompanyByElementId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid} | Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, and tab ID.
-[**GetRevisionHistoryInCompanyByPartId**](RevisionApi.md#GetRevisionHistoryInCompanyByPartId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}/p/{pid} | Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, tab ID, and part ID.
-[**GetRevisionHistoryInCompanyByPartNumber**](RevisionApi.md#GetRevisionHistoryInCompanyByPartNumber) | **Get** /revisions/companies/{cid}/partnumber/{pnum} | Retrieve a list of all revisions for a part number in a company by company ID.
+[**DeleteRevisionHistory**](RevisionApi.md#DeleteRevisionHistory) | **Delete** /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et} | Delete all revisions for a part number.
+[**EnumerateRevisions**](RevisionApi.md#EnumerateRevisions) | **Get** /revisions/companies/{cid} | Enumerate all of a company&#39;s revisions.
+[**GetAllInDocument**](RevisionApi.md#GetAllInDocument) | **Get** /revisions/d/{did} | Get all revisions for the specified document.
+[**GetAllInDocumentVersion**](RevisionApi.md#GetAllInDocumentVersion) | **Get** /revisions/d/{did}/v/{vid} | Get all revisions for a version.
+[**GetLatestInDocumentOrCompany**](RevisionApi.md#GetLatestInDocumentOrCompany) | **Get** /revisions/{cd}/{cdid}/p/{pnum}/latest | Get the latest revision for a part number in a document or company.
+[**GetRevisionByPartNumber**](RevisionApi.md#GetRevisionByPartNumber) | **Get** /revisions/c/{cid}/partnumber/{pnum} | Get a list of revisions by part number.
+[**GetRevisionHistoryInCompanyByElementId**](RevisionApi.md#GetRevisionHistoryInCompanyByElementId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid} | Get a list of all revisions for an element in a company-owned document.
+[**GetRevisionHistoryInCompanyByPartId**](RevisionApi.md#GetRevisionHistoryInCompanyByPartId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}/p/{pid} | Get a list of all revisions for a part in a company-owned document by part ID.
+[**GetRevisionHistoryInCompanyByPartNumber**](RevisionApi.md#GetRevisionHistoryInCompanyByPartNumber) | **Get** /revisions/companies/{cid}/partnumber/{pnum} | Get a list of all revisions for a part or element in a company-owned document by part number.
 
 
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 > map[string]interface{} DeleteRevisionHistory(ctx, cid, pnum, et).IgnoreLinkedDocuments(ignoreLinkedDocuments).Execute()
 
-Delete all revisions for the specified part number.
+Delete all revisions for a part number.
 
 
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTRevisionInfo EnumerateRevisions(ctx, cid).ElementType(elementType).Limit(limit).LatestOnly(latestOnly).After(after).Execute()
 
-Enumerate all revisions created in a company.
+Enumerate all of a company's revisions.
 
 
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTRevisionInfo GetAllInDocument(ctx, did).Execute()
 
-Retrieve a list of all revisions that exist in a document.
+Get all revisions for the specified document.
 
 
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTRevisionInfo GetAllInDocumentVersion(ctx, did, vid).Execute()
 
-Retrieve a list of all revisions that exist in a document version.
+Get all revisions for a version.
 
 
 
@@ -320,7 +320,9 @@ Name | Type | Description  | Notes
 
 > BTRevisionInfo GetLatestInDocumentOrCompany(ctx, cd, cdid, pnum).Et(et).Execute()
 
-Retrieve latest revisions for a part number in a document or company by document ID, workspace or version or microversion ID, and tab ID.
+Get the latest revision for a part number in a document or company.
+
+
 
 ### Example
 
@@ -396,9 +398,7 @@ Name | Type | Description  | Notes
 
 > BTRevisionInfo GetRevisionByPartNumber(ctx, cid, pnum).Revision(revision).ElementType(elementType).Execute()
 
-Get Navigation URL
-
-
+Get a list of revisions by part number.
 
 ### Example
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 > BTRevisionListResponse GetRevisionHistoryInCompanyByElementId(ctx, cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
 
-Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, and tab ID.
+Get a list of all revisions for an element in a company-owned document.
 
 ### Example
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 > BTRevisionListResponse GetRevisionHistoryInCompanyByPartId(ctx, cid, did, wv, wvid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
 
-Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, tab ID, and part ID.
+Get a list of all revisions for a part in a company-owned document by part ID.
 
 ### Example
 
@@ -654,7 +654,9 @@ Name | Type | Description  | Notes
 
 > BTRevisionListResponse GetRevisionHistoryInCompanyByPartNumber(ctx, cid, pnum).ElementType(elementType).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
 
-Retrieve a list of all revisions for a part number in a company by company ID.
+Get a list of all revisions for a part or element in a company-owned document by part number.
+
+
 
 ### Example
 

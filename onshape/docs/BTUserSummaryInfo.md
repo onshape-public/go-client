@@ -5,15 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
-**DocumentationName** | Pointer to **string** |  | [optional] 
 **DocumentationNameOverride** | Pointer to **string** |  | [optional] 
-**Email** | Pointer to **string** |  | [optional] 
-**FirstName** | Pointer to **string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**GlobalPermissionInfo**](GlobalPermissionInfo.md) |  | [optional] 
 **IsGuest** | Pointer to **bool** |  | [optional] 
 **IsLight** | Pointer to **bool** |  | [optional] 
 **LastLoginTime** | Pointer to **JSONTime** |  | [optional] 
-**LastName** | Pointer to **string** |  | [optional] 
 **PersonalMessageAllowed** | Pointer to **bool** |  | [optional] 
 **Source** | Pointer to **int32** |  | [optional] 
 
@@ -61,31 +57,6 @@ SetCompany sets Company field to given value.
 
 HasCompany returns a boolean if a field has been set.
 
-### GetDocumentationName
-
-`func (o *BTUserSummaryInfo) GetDocumentationName() string`
-
-GetDocumentationName returns the DocumentationName field if non-nil, zero value otherwise.
-
-### GetDocumentationNameOk
-
-`func (o *BTUserSummaryInfo) GetDocumentationNameOk() (*string, bool)`
-
-GetDocumentationNameOk returns a tuple with the DocumentationName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDocumentationName
-
-`func (o *BTUserSummaryInfo) SetDocumentationName(v string)`
-
-SetDocumentationName sets DocumentationName field to given value.
-
-### HasDocumentationName
-
-`func (o *BTUserSummaryInfo) HasDocumentationName() bool`
-
-HasDocumentationName returns a boolean if a field has been set.
-
 ### GetDocumentationNameOverride
 
 `func (o *BTUserSummaryInfo) GetDocumentationNameOverride() string`
@@ -110,56 +81,6 @@ SetDocumentationNameOverride sets DocumentationNameOverride field to given value
 `func (o *BTUserSummaryInfo) HasDocumentationNameOverride() bool`
 
 HasDocumentationNameOverride returns a boolean if a field has been set.
-
-### GetEmail
-
-`func (o *BTUserSummaryInfo) GetEmail() string`
-
-GetEmail returns the Email field if non-nil, zero value otherwise.
-
-### GetEmailOk
-
-`func (o *BTUserSummaryInfo) GetEmailOk() (*string, bool)`
-
-GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmail
-
-`func (o *BTUserSummaryInfo) SetEmail(v string)`
-
-SetEmail sets Email field to given value.
-
-### HasEmail
-
-`func (o *BTUserSummaryInfo) HasEmail() bool`
-
-HasEmail returns a boolean if a field has been set.
-
-### GetFirstName
-
-`func (o *BTUserSummaryInfo) GetFirstName() string`
-
-GetFirstName returns the FirstName field if non-nil, zero value otherwise.
-
-### GetFirstNameOk
-
-`func (o *BTUserSummaryInfo) GetFirstNameOk() (*string, bool)`
-
-GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFirstName
-
-`func (o *BTUserSummaryInfo) SetFirstName(v string)`
-
-SetFirstName sets FirstName field to given value.
-
-### HasFirstName
-
-`func (o *BTUserSummaryInfo) HasFirstName() bool`
-
-HasFirstName returns a boolean if a field has been set.
 
 ### GetGlobalPermissions
 
@@ -260,31 +181,6 @@ SetLastLoginTime sets LastLoginTime field to given value.
 `func (o *BTUserSummaryInfo) HasLastLoginTime() bool`
 
 HasLastLoginTime returns a boolean if a field has been set.
-
-### GetLastName
-
-`func (o *BTUserSummaryInfo) GetLastName() string`
-
-GetLastName returns the LastName field if non-nil, zero value otherwise.
-
-### GetLastNameOk
-
-`func (o *BTUserSummaryInfo) GetLastNameOk() (*string, bool)`
-
-GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastName
-
-`func (o *BTUserSummaryInfo) SetLastName(v string)`
-
-SetLastName sets LastName field to given value.
-
-### HasLastName
-
-`func (o *BTUserSummaryInfo) HasLastName() bool`
-
-HasLastName returns a boolean if a field has been set.
 
 ### GetPersonalMessageAllowed
 

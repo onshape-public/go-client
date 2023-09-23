@@ -19,8 +19,6 @@ Method | HTTP request | Description
 
 Create a new webhook.
 
-
-
 ### Example
 
 ```go
@@ -222,8 +220,6 @@ Name | Type | Description  | Notes
 > map[string]interface{} PingWebhook(ctx, webhookid).Execute()
 
 Ping a webhook.
-
-
 
 ### Example
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCategoryProperties**](MetadataCategoryApi.md#GetCategoryProperties) | **Get** /metadatacategory/categoryproperties | Retrieve category properties for metadata.
+[**GetCategoryProperties**](MetadataCategoryApi.md#GetCategoryProperties) | **Get** /metadatacategory/categoryproperties | Get properties associated with the specified metadata categories.
 
 
 
@@ -12,7 +12,9 @@ Method | HTTP request | Description
 
 > BTListResponseBTCategoryPropertyInfo GetCategoryProperties(ctx).OwnerId(ownerId).OwnerType(ownerType).DocumentId(documentId).CategoryIds(categoryIds).ObjectType(objectType).Strict(strict).IncludeObjectTypeDefaults(includeObjectTypeDefaults).IncludeComputedProperties(includeComputedProperties).IncludePartPropertiesTableOnlyProperties(includePartPropertiesTableOnlyProperties).OnlyActive(onlyActive).OnlyObjectTypeDefaults(onlyObjectTypeDefaults).Execute()
 
-Retrieve category properties for metadata.
+Get properties associated with the specified metadata categories.
+
+
 
 ### Example
 

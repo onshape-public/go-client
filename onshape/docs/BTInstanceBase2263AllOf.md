@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **Locked** | Pointer to **bool** |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **ParametricInstance** | Pointer to **bool** |  | [optional] 
+**ParametricOutputInstance** | Pointer to **bool** |  | [optional] 
+**ParametricPartStudioChildInstance** | Pointer to **bool** |  | [optional] 
+**ParametricPartStudioInstance** | Pointer to **bool** |  | [optional] 
 **PartInstance** | Pointer to **bool** |  | [optional] 
 **Releasable** | Pointer to **bool** |  | [optional] 
 **RevisionCustomData** | Pointer to [**BTRevisionCustomData2090**](BTRevisionCustomData2090.md) |  | [optional] 
@@ -346,6 +349,81 @@ SetParametricInstance sets ParametricInstance field to given value.
 `func (o *BTInstanceBase2263AllOf) HasParametricInstance() bool`
 
 HasParametricInstance returns a boolean if a field has been set.
+
+### GetParametricOutputInstance
+
+`func (o *BTInstanceBase2263AllOf) GetParametricOutputInstance() bool`
+
+GetParametricOutputInstance returns the ParametricOutputInstance field if non-nil, zero value otherwise.
+
+### GetParametricOutputInstanceOk
+
+`func (o *BTInstanceBase2263AllOf) GetParametricOutputInstanceOk() (*bool, bool)`
+
+GetParametricOutputInstanceOk returns a tuple with the ParametricOutputInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParametricOutputInstance
+
+`func (o *BTInstanceBase2263AllOf) SetParametricOutputInstance(v bool)`
+
+SetParametricOutputInstance sets ParametricOutputInstance field to given value.
+
+### HasParametricOutputInstance
+
+`func (o *BTInstanceBase2263AllOf) HasParametricOutputInstance() bool`
+
+HasParametricOutputInstance returns a boolean if a field has been set.
+
+### GetParametricPartStudioChildInstance
+
+`func (o *BTInstanceBase2263AllOf) GetParametricPartStudioChildInstance() bool`
+
+GetParametricPartStudioChildInstance returns the ParametricPartStudioChildInstance field if non-nil, zero value otherwise.
+
+### GetParametricPartStudioChildInstanceOk
+
+`func (o *BTInstanceBase2263AllOf) GetParametricPartStudioChildInstanceOk() (*bool, bool)`
+
+GetParametricPartStudioChildInstanceOk returns a tuple with the ParametricPartStudioChildInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParametricPartStudioChildInstance
+
+`func (o *BTInstanceBase2263AllOf) SetParametricPartStudioChildInstance(v bool)`
+
+SetParametricPartStudioChildInstance sets ParametricPartStudioChildInstance field to given value.
+
+### HasParametricPartStudioChildInstance
+
+`func (o *BTInstanceBase2263AllOf) HasParametricPartStudioChildInstance() bool`
+
+HasParametricPartStudioChildInstance returns a boolean if a field has been set.
+
+### GetParametricPartStudioInstance
+
+`func (o *BTInstanceBase2263AllOf) GetParametricPartStudioInstance() bool`
+
+GetParametricPartStudioInstance returns the ParametricPartStudioInstance field if non-nil, zero value otherwise.
+
+### GetParametricPartStudioInstanceOk
+
+`func (o *BTInstanceBase2263AllOf) GetParametricPartStudioInstanceOk() (*bool, bool)`
+
+GetParametricPartStudioInstanceOk returns a tuple with the ParametricPartStudioInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParametricPartStudioInstance
+
+`func (o *BTInstanceBase2263AllOf) SetParametricPartStudioInstance(v bool)`
+
+SetParametricPartStudioInstance sets ParametricPartStudioInstance field to given value.
+
+### HasParametricPartStudioInstance
+
+`func (o *BTInstanceBase2263AllOf) HasParametricPartStudioInstance() bool`
+
+HasParametricPartStudioInstance returns a boolean if a field has been set.
 
 ### GetPartInstance
 

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -63,6 +63,11 @@ func (o *BTMEnumOption592) AsBTMNode19() *BTMNode19 {
 
 // BTMNodeInvalid1772AsBTMNode19 is a convenience function that returns BTMNodeInvalid1772 wrapped in BTMNode19
 func (o *BTMNodeInvalid1772) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTParametricOutputInstance2288AsBTMNode19 is a convenience function that returns BTParametricOutputInstance2288 wrapped in BTMNode19
+func (o *BTParametricOutputInstance2288) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -168,6 +173,16 @@ func (o *BTMRollback150) AsBTMNode19() *BTMNode19 {
 
 // BTPartInstance81AsBTMNode19 is a convenience function that returns BTPartInstance81 wrapped in BTMNode19
 func (o *BTPartInstance81) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTParametricPartStudioInstance4374AsBTMNode19 is a convenience function that returns BTParametricPartStudioInstance4374 wrapped in BTMNode19
+func (o *BTParametricPartStudioInstance4374) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTParametricPartStudioChildInstance3696AsBTMNode19 is a convenience function that returns BTParametricPartStudioChildInstance3696 wrapped in BTMNode19
+func (o *BTParametricPartStudioChildInstance3696) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -799,6 +814,48 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricInstance2641: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParametricOutputInstance-2288'
+	if jsonDict["btType"] == "BTParametricOutputInstance-2288" {
+		// try to unmarshal JSON data into BTParametricOutputInstance2288
+		var qr *BTParametricOutputInstance2288
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricOutputInstance2288: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParametricPartStudioChildInstance-3696'
+	if jsonDict["btType"] == "BTParametricPartStudioChildInstance-3696" {
+		// try to unmarshal JSON data into BTParametricPartStudioChildInstance3696
+		var qr *BTParametricPartStudioChildInstance3696
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricPartStudioChildInstance3696: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParametricPartStudioInstance-4374'
+	if jsonDict["btType"] == "BTParametricPartStudioInstance-4374" {
+		// try to unmarshal JSON data into BTParametricPartStudioInstance4374
+		var qr *BTParametricPartStudioInstance4374
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricPartStudioInstance4374: %s", err.Error())
 		}
 	}
 

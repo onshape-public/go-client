@@ -17,6 +17,8 @@ Method | HTTP request | Description
 
 Create a new Feature Studio tab in a document.
 
+
+
 ### Example
 
 ```go
