@@ -2723,6 +2723,8 @@
 
 * `GBTErrorStringEnumFrameAngleReferenceInvalidEntity` (value: `"FRAME_ANGLE_REFERENCE_INVALID_ENTITY"`)
 
+* `GBTErrorStringEnumAmbiguousGeometryForGussetDefinition` (value: `"AMBIGUOUS_GEOMETRY_FOR_GUSSET_DEFINITION"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

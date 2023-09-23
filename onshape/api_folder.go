@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -34,7 +34,27 @@ func (r ApiGetFolderAclRequest) Execute() (*BTAclInfo, *http.Response, error) {
 }
 
 /*
-GetFolderAcl Get access control list (ACL) by folder ID.
+GetFolderAcl Get the Access Control List (ACL) for a folder to view permissions.
+
+Returns the ACL of permission objects. Each object contains:
+* The type of entity
+    * 0 (User)
+    * 1 (Company)
+    * 2 (Team)
+    * 3 (Document)
+    * 4 (Application)
+ * The ID of the entity for the specified type.
+* The permissions for that entity.
+    *  OWNER (100): All permissions, including those not listed, such as permission to transfer ownership.
+    * DELETE (90)
+    * RESHARE (80)
+    * WRITE (70)
+    * READ (60)
+    * LINK (50)
+    * COPY (30): Can copy workspace
+    * EXPORT (20): Can export geometry
+    * COMMENT (10)
+    * ANONYMOUS_ACCESS (5): Special, restricted read access
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fid
@@ -148,7 +168,27 @@ func (r ApiShareRequest) Execute() (*BTAclInfo, *http.Response, error) {
 }
 
 /*
-Share Share folder by folder ID.
+Share Share folder with an entity.
+
+* Specify the type of entity to share with using `entries.entryType`:
+    * 0 (User)
+    * 1 (Company)
+    * 2 (Team)
+    * 3 (Document)
+    * 4 (Application)
+* Provide one of the identifiers in the `entries` object in the request body.
+    * You can share with non-Onshape users with the `email` field when `entryType=0`.
+ * Provide the string for the permission set. Do not include the integer in parentheses:
+    * OWNER (100): Object owner. Implies all permissions including those not listed such as permission to transfer ownership.
+    * DELETE (90)
+    * RESHARE (80)
+    * WRITE (70)
+    * READ (60)
+    * LINK (50)
+    * COPY (30): Can copy workspace
+    * EXPORT (20): Can export geometry
+    * COMMENT (10)
+    * ANONYMOUS_ACCESS (5): Special, restricted read access
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fid
@@ -268,7 +308,16 @@ func (r ApiUnShareRequest) Execute() (map[string]interface{}, *http.Response, er
 }
 
 /*
-UnShare Unshare folder by folder ID and tab ID.
+UnShare Remove permissions from the folder for the specified Access Control List (ACL) entry.
+
+* Provide the folder ID for the folder to unshare.
+ * Provide the `entityType` for the type of entity to remove.
+    * 0 (User)
+    * 1 (Company)
+    * 2 (Team)
+    * 3 (Document)
+    * 4 (Application)
+* Provide the entity ID in the `eid` param.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fid

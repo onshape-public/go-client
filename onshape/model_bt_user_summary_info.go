@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,23 +20,23 @@ type BTUserSummaryInfo struct {
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id    *string `json:"id,omitempty"`
-	Image *string `json:"image,omitempty"`
+	Id *string `json:"id,omitempty"`
 	// Name of the resource.
-	Name  *string `json:"name,omitempty"`
-	State *int32  `json:"state,omitempty"`
+	Name *string `json:"name,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef                   *string               `json:"viewRef,omitempty"`
-	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
+	Image                     *string               `json:"image,omitempty"`
+	State                     *int32                `json:"state,omitempty"`
 	DocumentationName         *string               `json:"documentationName,omitempty"`
-	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	Email                     *string               `json:"email,omitempty"`
 	FirstName                 *string               `json:"firstName,omitempty"`
+	LastName                  *string               `json:"lastName,omitempty"`
+	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
+	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions         *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
 	IsGuest                   *bool                 `json:"isGuest,omitempty"`
 	IsLight                   *bool                 `json:"isLight,omitempty"`
 	LastLoginTime             *JSONTime             `json:"lastLoginTime,omitempty"`
-	LastName                  *string               `json:"lastName,omitempty"`
 	PersonalMessageAllowed    *bool                 `json:"personalMessageAllowed,omitempty"`
 	Source                    *int32                `json:"source,omitempty"`
 }
@@ -122,38 +122,6 @@ func (o *BTUserSummaryInfo) SetId(v string) {
 	o.Id = &v
 }
 
-// GetImage returns the Image field value if set, zero value otherwise.
-func (o *BTUserSummaryInfo) GetImage() string {
-	if o == nil || o.Image == nil {
-		var ret string
-		return ret
-	}
-	return *o.Image
-}
-
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTUserSummaryInfo) GetImageOk() (*string, bool) {
-	if o == nil || o.Image == nil {
-		return nil, false
-	}
-	return o.Image, true
-}
-
-// HasImage returns a boolean if a field has been set.
-func (o *BTUserSummaryInfo) HasImage() bool {
-	if o != nil && o.Image != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImage gets a reference to the given string and assigns it to the Image field.
-func (o *BTUserSummaryInfo) SetImage(v string) {
-	o.Image = &v
-}
-
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTUserSummaryInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -184,38 +152,6 @@ func (o *BTUserSummaryInfo) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BTUserSummaryInfo) SetName(v string) {
 	o.Name = &v
-}
-
-// GetState returns the State field value if set, zero value otherwise.
-func (o *BTUserSummaryInfo) GetState() int32 {
-	if o == nil || o.State == nil {
-		var ret int32
-		return ret
-	}
-	return *o.State
-}
-
-// GetStateOk returns a tuple with the State field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTUserSummaryInfo) GetStateOk() (*int32, bool) {
-	if o == nil || o.State == nil {
-		return nil, false
-	}
-	return o.State, true
-}
-
-// HasState returns a boolean if a field has been set.
-func (o *BTUserSummaryInfo) HasState() bool {
-	if o != nil && o.State != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetState gets a reference to the given int32 and assigns it to the State field.
-func (o *BTUserSummaryInfo) SetState(v int32) {
-	o.State = &v
 }
 
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
@@ -250,36 +186,68 @@ func (o *BTUserSummaryInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
-// GetCompany returns the Company field value if set, zero value otherwise.
-func (o *BTUserSummaryInfo) GetCompany() BTCompanySummaryInfo {
-	if o == nil || o.Company == nil {
-		var ret BTCompanySummaryInfo
+// GetImage returns the Image field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetImage() string {
+	if o == nil || o.Image == nil {
+		var ret string
 		return ret
 	}
-	return *o.Company
+	return *o.Image
 }
 
-// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserSummaryInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
-	if o == nil || o.Company == nil {
+func (o *BTUserSummaryInfo) GetImageOk() (*string, bool) {
+	if o == nil || o.Image == nil {
 		return nil, false
 	}
-	return o.Company, true
+	return o.Image, true
 }
 
-// HasCompany returns a boolean if a field has been set.
-func (o *BTUserSummaryInfo) HasCompany() bool {
-	if o != nil && o.Company != nil {
+// HasImage returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasImage() bool {
+	if o != nil && o.Image != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
-func (o *BTUserSummaryInfo) SetCompany(v BTCompanySummaryInfo) {
-	o.Company = &v
+// SetImage gets a reference to the given string and assigns it to the Image field.
+func (o *BTUserSummaryInfo) SetImage(v string) {
+	o.Image = &v
+}
+
+// GetState returns the State field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetState() int32 {
+	if o == nil || o.State == nil {
+		var ret int32
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetStateOk() (*int32, bool) {
+	if o == nil || o.State == nil {
+		return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasState() bool {
+	if o != nil && o.State != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given int32 and assigns it to the State field.
+func (o *BTUserSummaryInfo) SetState(v int32) {
+	o.State = &v
 }
 
 // GetDocumentationName returns the DocumentationName field value if set, zero value otherwise.
@@ -312,38 +280,6 @@ func (o *BTUserSummaryInfo) HasDocumentationName() bool {
 // SetDocumentationName gets a reference to the given string and assigns it to the DocumentationName field.
 func (o *BTUserSummaryInfo) SetDocumentationName(v string) {
 	o.DocumentationName = &v
-}
-
-// GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
-func (o *BTUserSummaryInfo) GetDocumentationNameOverride() string {
-	if o == nil || o.DocumentationNameOverride == nil {
-		var ret string
-		return ret
-	}
-	return *o.DocumentationNameOverride
-}
-
-// GetDocumentationNameOverrideOk returns a tuple with the DocumentationNameOverride field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTUserSummaryInfo) GetDocumentationNameOverrideOk() (*string, bool) {
-	if o == nil || o.DocumentationNameOverride == nil {
-		return nil, false
-	}
-	return o.DocumentationNameOverride, true
-}
-
-// HasDocumentationNameOverride returns a boolean if a field has been set.
-func (o *BTUserSummaryInfo) HasDocumentationNameOverride() bool {
-	if o != nil && o.DocumentationNameOverride != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDocumentationNameOverride gets a reference to the given string and assigns it to the DocumentationNameOverride field.
-func (o *BTUserSummaryInfo) SetDocumentationNameOverride(v string) {
-	o.DocumentationNameOverride = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
@@ -408,6 +344,102 @@ func (o *BTUserSummaryInfo) HasFirstName() bool {
 // SetFirstName gets a reference to the given string and assigns it to the FirstName field.
 func (o *BTUserSummaryInfo) SetFirstName(v string) {
 	o.FirstName = &v
+}
+
+// GetLastName returns the LastName field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetLastName() string {
+	if o == nil || o.LastName == nil {
+		var ret string
+		return ret
+	}
+	return *o.LastName
+}
+
+// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetLastNameOk() (*string, bool) {
+	if o == nil || o.LastName == nil {
+		return nil, false
+	}
+	return o.LastName, true
+}
+
+// HasLastName returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasLastName() bool {
+	if o != nil && o.LastName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLastName gets a reference to the given string and assigns it to the LastName field.
+func (o *BTUserSummaryInfo) SetLastName(v string) {
+	o.LastName = &v
+}
+
+// GetCompany returns the Company field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetCompany() BTCompanySummaryInfo {
+	if o == nil || o.Company == nil {
+		var ret BTCompanySummaryInfo
+		return ret
+	}
+	return *o.Company
+}
+
+// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
+	if o == nil || o.Company == nil {
+		return nil, false
+	}
+	return o.Company, true
+}
+
+// HasCompany returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasCompany() bool {
+	if o != nil && o.Company != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
+func (o *BTUserSummaryInfo) SetCompany(v BTCompanySummaryInfo) {
+	o.Company = &v
+}
+
+// GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetDocumentationNameOverride() string {
+	if o == nil || o.DocumentationNameOverride == nil {
+		var ret string
+		return ret
+	}
+	return *o.DocumentationNameOverride
+}
+
+// GetDocumentationNameOverrideOk returns a tuple with the DocumentationNameOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetDocumentationNameOverrideOk() (*string, bool) {
+	if o == nil || o.DocumentationNameOverride == nil {
+		return nil, false
+	}
+	return o.DocumentationNameOverride, true
+}
+
+// HasDocumentationNameOverride returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasDocumentationNameOverride() bool {
+	if o != nil && o.DocumentationNameOverride != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentationNameOverride gets a reference to the given string and assigns it to the DocumentationNameOverride field.
+func (o *BTUserSummaryInfo) SetDocumentationNameOverride(v string) {
+	o.DocumentationNameOverride = &v
 }
 
 // GetGlobalPermissions returns the GlobalPermissions field value if set, zero value otherwise.
@@ -538,38 +570,6 @@ func (o *BTUserSummaryInfo) SetLastLoginTime(v JSONTime) {
 	o.LastLoginTime = &v
 }
 
-// GetLastName returns the LastName field value if set, zero value otherwise.
-func (o *BTUserSummaryInfo) GetLastName() string {
-	if o == nil || o.LastName == nil {
-		var ret string
-		return ret
-	}
-	return *o.LastName
-}
-
-// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTUserSummaryInfo) GetLastNameOk() (*string, bool) {
-	if o == nil || o.LastName == nil {
-		return nil, false
-	}
-	return o.LastName, true
-}
-
-// HasLastName returns a boolean if a field has been set.
-func (o *BTUserSummaryInfo) HasLastName() bool {
-	if o != nil && o.LastName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLastName gets a reference to the given string and assigns it to the LastName field.
-func (o *BTUserSummaryInfo) SetLastName(v string) {
-	o.LastName = &v
-}
-
 // GetPersonalMessageAllowed returns the PersonalMessageAllowed field value if set, zero value otherwise.
 func (o *BTUserSummaryInfo) GetPersonalMessageAllowed() bool {
 	if o == nil || o.PersonalMessageAllowed == nil {
@@ -642,32 +642,35 @@ func (o BTUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if o.Image != nil {
-		toSerialize["image"] = o.Image
-	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.State != nil {
-		toSerialize["state"] = o.State
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
 	}
-	if o.Company != nil {
-		toSerialize["company"] = o.Company
+	if o.Image != nil {
+		toSerialize["image"] = o.Image
+	}
+	if o.State != nil {
+		toSerialize["state"] = o.State
 	}
 	if o.DocumentationName != nil {
 		toSerialize["documentationName"] = o.DocumentationName
-	}
-	if o.DocumentationNameOverride != nil {
-		toSerialize["documentationNameOverride"] = o.DocumentationNameOverride
 	}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email
 	}
 	if o.FirstName != nil {
 		toSerialize["firstName"] = o.FirstName
+	}
+	if o.LastName != nil {
+		toSerialize["lastName"] = o.LastName
+	}
+	if o.Company != nil {
+		toSerialize["company"] = o.Company
+	}
+	if o.DocumentationNameOverride != nil {
+		toSerialize["documentationNameOverride"] = o.DocumentationNameOverride
 	}
 	if o.GlobalPermissions != nil {
 		toSerialize["globalPermissions"] = o.GlobalPermissions
@@ -680,9 +683,6 @@ func (o BTUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.LastLoginTime != nil {
 		toSerialize["lastLoginTime"] = o.LastLoginTime
-	}
-	if o.LastName != nil {
-		toSerialize["lastName"] = o.LastName
 	}
 	if o.PersonalMessageAllowed != nil {
 		toSerialize["personalMessageAllowed"] = o.PersonalMessageAllowed

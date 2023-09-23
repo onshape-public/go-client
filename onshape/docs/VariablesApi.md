@@ -20,8 +20,6 @@ Method | HTTP request | Description
 
 Create a new Variable Studio in a document and workspace.
 
-
-
 ### Example
 
 ```go
@@ -96,8 +94,6 @@ Name | Type | Description  | Notes
 > BTVariableStudioReferenceListInfo GetVariableStudioReferences(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
 
 Get the Variable Studio references for an element.
-
-
 
 ### Example
 
@@ -178,8 +174,6 @@ Name | Type | Description  | Notes
 
 Get the scope of a Variable Studio.
 
-
-
 ### Example
 
 ```go
@@ -258,8 +252,6 @@ Name | Type | Description  | Notes
 > BTVariableTableInfo GetVariables(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
 
 Get the contents of all variable tables in an element.
-
-
 
 ### Example
 
@@ -344,8 +336,6 @@ Name | Type | Description  | Notes
 
 Set the Variable Studio references for an element.
 
-
-
 ### Example
 
 ```go
@@ -424,8 +414,6 @@ Name | Type | Description  | Notes
 
 Set the scope the Variable Studio.
 
-
-
 ### Example
 
 ```go
@@ -503,8 +491,6 @@ Name | Type | Description  | Notes
 > map[string]interface{} SetVariables(ctx, did, wid, eid).BTVariableParams(bTVariableParams).LinkDocumentId(linkDocumentId).Execute()
 
 Assign variables to a Variable Studio
-
-
 
 ### Example
 

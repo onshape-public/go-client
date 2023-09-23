@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetValidRuleOptions**](ExportRuleApi.md#GetValidRuleOptions) | **Get** /exportrules/options/{cu}/{cuid} | Retrieve a list of the valid export rule options by object type and owner ID.
+[**GetValidRuleOptions**](ExportRuleApi.md#GetValidRuleOptions) | **Get** /exportrules/options/{cu}/{cuid} |  Get a list of valid export rule options for the user or company.
 
 
 
@@ -12,7 +12,9 @@ Method | HTTP request | Description
 
 > BTExportRuleValidOptionsInfo GetValidRuleOptions(ctx, cu, cuid).Execute()
 
-Retrieve a list of the valid export rule options by object type and owner ID.
+ Get a list of valid export rule options for the user or company.
+
+
 
 ### Example
 

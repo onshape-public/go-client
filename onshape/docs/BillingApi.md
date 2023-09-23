@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetClientPlans**](BillingApi.md#GetClientPlans) | **Get** /billing/plans/client/{cid} | Retrieve billing plans and their information for an application by client ID.
+[**GetClientPlans**](BillingApi.md#GetClientPlans) | **Get** /billing/plans/client/{cid} | Get all billing plans and their information for an application by client ID.
 
 
 
@@ -12,7 +12,9 @@ Method | HTTP request | Description
 
 > GetClientPlans(ctx, cid).Execute()
 
-Retrieve billing plans and their information for an application by client ID.
+Get all billing plans and their information for an application by client ID.
+
+
 
 ### Example
 

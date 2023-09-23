@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -15,7 +15,7 @@ import (
 	"encoding/json"
 )
 
-// BTPublishedWorkflowInfo struct for BTPublishedWorkflowInfo
+// BTPublishedWorkflowInfo Captures information about a published workflow
 type BTPublishedWorkflowInfo struct {
 	ActiveState *int32  `json:"activeState,omitempty"`
 	CompanyId   *string `json:"companyId,omitempty"`
@@ -29,7 +29,11 @@ type BTPublishedWorkflowInfo struct {
 	Name        *string `json:"name,omitempty"`
 	ObjectType  *int32  `json:"objectType,omitempty"`
 	OwnerType   *int32  `json:"ownerType,omitempty"`
-	VersionId   *string `json:"versionId,omitempty"`
+	// The date of publication of workflow
+	PublishedDate *JSONTime `json:"publishedDate,omitempty"`
+	// Whether the workflow connects to an external PLM service like Arena
+	UsesExternalPlm *bool   `json:"usesExternalPlm,omitempty"`
+	VersionId       *string `json:"versionId,omitempty"`
 }
 
 // NewBTPublishedWorkflowInfo instantiates a new BTPublishedWorkflowInfo object
@@ -433,6 +437,70 @@ func (o *BTPublishedWorkflowInfo) SetOwnerType(v int32) {
 	o.OwnerType = &v
 }
 
+// GetPublishedDate returns the PublishedDate field value if set, zero value otherwise.
+func (o *BTPublishedWorkflowInfo) GetPublishedDate() JSONTime {
+	if o == nil || o.PublishedDate == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.PublishedDate
+}
+
+// GetPublishedDateOk returns a tuple with the PublishedDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPublishedWorkflowInfo) GetPublishedDateOk() (*JSONTime, bool) {
+	if o == nil || o.PublishedDate == nil {
+		return nil, false
+	}
+	return o.PublishedDate, true
+}
+
+// HasPublishedDate returns a boolean if a field has been set.
+func (o *BTPublishedWorkflowInfo) HasPublishedDate() bool {
+	if o != nil && o.PublishedDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPublishedDate gets a reference to the given JSONTime and assigns it to the PublishedDate field.
+func (o *BTPublishedWorkflowInfo) SetPublishedDate(v JSONTime) {
+	o.PublishedDate = &v
+}
+
+// GetUsesExternalPlm returns the UsesExternalPlm field value if set, zero value otherwise.
+func (o *BTPublishedWorkflowInfo) GetUsesExternalPlm() bool {
+	if o == nil || o.UsesExternalPlm == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UsesExternalPlm
+}
+
+// GetUsesExternalPlmOk returns a tuple with the UsesExternalPlm field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPublishedWorkflowInfo) GetUsesExternalPlmOk() (*bool, bool) {
+	if o == nil || o.UsesExternalPlm == nil {
+		return nil, false
+	}
+	return o.UsesExternalPlm, true
+}
+
+// HasUsesExternalPlm returns a boolean if a field has been set.
+func (o *BTPublishedWorkflowInfo) HasUsesExternalPlm() bool {
+	if o != nil && o.UsesExternalPlm != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUsesExternalPlm gets a reference to the given bool and assigns it to the UsesExternalPlm field.
+func (o *BTPublishedWorkflowInfo) SetUsesExternalPlm(v bool) {
+	o.UsesExternalPlm = &v
+}
+
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
 func (o *BTPublishedWorkflowInfo) GetVersionId() string {
 	if o == nil || o.VersionId == nil {
@@ -502,6 +570,12 @@ func (o BTPublishedWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.OwnerType != nil {
 		toSerialize["ownerType"] = o.OwnerType
+	}
+	if o.PublishedDate != nil {
+		toSerialize["publishedDate"] = o.PublishedDate
+	}
+	if o.UsesExternalPlm != nil {
+		toSerialize["usesExternalPlm"] = o.UsesExternalPlm
 	}
 	if o.VersionId != nil {
 		toSerialize["versionId"] = o.VersionId

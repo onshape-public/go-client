@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -251,7 +251,7 @@ func (r ApiGetWMVEMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Respo
 }
 
 /*
-GetWMVEMetadata Get the metadata for an element in a document, version or micro version.
+GetWMVEMetadata Get the metadata for an element.
 
 * `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner.
 * `configuration` optional query parameter defaults to default configuration.
@@ -452,7 +452,7 @@ func (r ApiGetWMVEPMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Resp
 }
 
 /*
-GetWMVEPMetadata Get the metadata for a part in a document workspace or version or microversion, element.
+GetWMVEPMetadata Get the metadata for a part.
 
 * Specify the part in the `iden` or `pid` path parameter.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
@@ -646,7 +646,7 @@ func (r ApiGetWMVEPsMetadataRequest) Execute() (*BTMetadataObjectListInfoBTMetad
 }
 
 /*
-GetWMVEPsMetadata Get the metadata for all parts in a document workspace or version or microversion, element and configuration.
+GetWMVEPsMetadata Get the metadata for all parts in a document.
 
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
@@ -826,7 +826,7 @@ func (r ApiGetWMVEsMetadataRequest) Execute() (*BTMetadataObjectListInfoBTMetada
 }
 
 /*
-GetWMVEsMetadata Get the metadata for all elements in a document with given document id and version or microversion id.
+GetWMVEsMetadata Get the metadata for all elements in a document.
 
 * You can specify the optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
@@ -1002,7 +1002,7 @@ func (r ApiGetWVMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Respons
 }
 
 /*
-GetWVMetadata Get the metadata for a workspace or version in a document.
+GetWVMetadata Get the metadata for a workspace or version.
 
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
@@ -1152,7 +1152,7 @@ func (r ApiUpdateVEOPStandardContentPartMetadataRequest) Execute() (map[string]i
 }
 
 /*
-UpdateVEOPStandardContentPartMetadata Update the metadata in a document for a standard content part.
+UpdateVEOPStandardContentPartMetadata Update the metadata for a standard content part.
 
 * Specify the document ID to update in the `did` path param.
 * Specify the document in which you have inserted the standard content part in the `linkDocumentId` query param.
@@ -1288,7 +1288,7 @@ func (r ApiUpdateWVEMetadataRequest) Execute() (map[string]interface{}, *http.Re
 }
 
 /*
-UpdateWVEMetadata Update the metadata for an element in a document workspace or version
+UpdateWVEMetadata Update the metadata for an element.
 
 * Microversion (`m`) in `wvm` path parameter option is not supported.
 * Specify the property metadata to update in the Request body.
@@ -1454,7 +1454,7 @@ func (r ApiUpdateWVEPMetadataRequest) Execute() (map[string]interface{}, *http.R
 }
 
 /*
-UpdateWVEPMetadata Update the metadata for a part in a document workspace or version or microversion, element.
+UpdateWVEPMetadata Update the metadata for a part.
 
 * Specify the part in the `iden` or `pid` path parameter.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
@@ -1607,7 +1607,7 @@ func (r ApiUpdateWVMetadataRequest) Execute() (map[string]interface{}, *http.Res
 }
 
 /*
-UpdateWVMetadata Update the metadata for a workspace or version in a document.
+UpdateWVMetadata Update the metadata for a workspace or version.
 
 Specify the property metadata to update in the Request body.
 

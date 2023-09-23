@@ -4,9 +4,9 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Find**](TeamApi.md#Find) | **Get** /teams | Retrieve list of teams for current user.
-[**GetMembers**](TeamApi.md#GetMembers) | **Get** /teams/{tid}/members | Retrieve team members by team ID.
-[**GetTeam**](TeamApi.md#GetTeam) | **Get** /teams/{tid} | Retrieve team information by team ID.
+[**Find**](TeamApi.md#Find) | **Get** /teams | Get a list of all teams the current user belongs to.
+[**GetMembers**](TeamApi.md#GetMembers) | **Get** /teams/{tid}/members | Get a list of a team&#39;s members.
+[**GetTeam**](TeamApi.md#GetTeam) | **Get** /teams/{tid} | Get team information by team ID.
 
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > BTGlobalTreeNodeListResponseBTTeamInfo Find(ctx).Prefix(prefix).Uid(uid).CompanyId(companyId).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
 
-Retrieve list of teams for current user.
+Get a list of all teams the current user belongs to.
 
 ### Example
 
@@ -84,7 +84,9 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTTeamMemberInfo GetMembers(ctx, tid).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Q(q).Execute()
 
-Retrieve team members by team ID.
+Get a list of a team's members.
+
+
 
 ### Example
 
@@ -162,7 +164,7 @@ Name | Type | Description  | Notes
 
 > BTTeamInfo GetTeam(ctx, tid).Execute()
 
-Retrieve team information by team ID.
+Get team information by team ID.
 
 ### Example
 

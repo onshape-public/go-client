@@ -4,9 +4,9 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetFolderAcl**](FolderApi.md#GetFolderAcl) | **Get** /folders/{fid}/acl | Get access control list (ACL) by folder ID.
-[**Share**](FolderApi.md#Share) | **Post** /folders/{fid}/share | Share folder by folder ID.
-[**UnShare**](FolderApi.md#UnShare) | **Delete** /folders/{fid}/share/{eid} | Unshare folder by folder ID and tab ID.
+[**GetFolderAcl**](FolderApi.md#GetFolderAcl) | **Get** /folders/{fid}/acl | Get the Access Control List (ACL) for a folder to view permissions.
+[**Share**](FolderApi.md#Share) | **Post** /folders/{fid}/share | Share folder with an entity.
+[**UnShare**](FolderApi.md#UnShare) | **Delete** /folders/{fid}/share/{eid} | Remove permissions from the folder for the specified Access Control List (ACL) entry.
 
 
 
@@ -14,7 +14,9 @@ Method | HTTP request | Description
 
 > BTAclInfo GetFolderAcl(ctx, fid).Execute()
 
-Get access control list (ACL) by folder ID.
+Get the Access Control List (ACL) for a folder to view permissions.
+
+
 
 ### Example
 
@@ -82,7 +84,9 @@ Name | Type | Description  | Notes
 
 > BTAclInfo Share(ctx, fid).BTShareParams(bTShareParams).Execute()
 
-Share folder by folder ID.
+Share folder with an entity.
+
+
 
 ### Example
 
@@ -152,7 +156,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UnShare(ctx, fid, eid).EntryType(entryType).Execute()
 
-Unshare folder by folder ID and tab ID.
+Remove permissions from the folder for the specified Access Control List (ACL) entry.
+
+
 
 ### Example
 

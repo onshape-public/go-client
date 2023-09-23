@@ -4,18 +4,18 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExportPS**](PartApi.md#ExportPS) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid | Export part to Parasolid by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**ExportPartGltf**](PartApi.md#ExportPartGltf) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf | Retrieve GLTF for part by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**ExportStl**](PartApi.md#ExportStl) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl | Retrieve part STL by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**GetBendTable**](PartApi.md#GetBendTable) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/sheetmetal/bendtable | Retrieve sheet metal bend table by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**GetBodyDetails**](PartApi.md#GetBodyDetails) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails | Retrieve part body details by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**GetBoundingBoxes**](PartApi.md#GetBoundingBoxes) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/boundingboxes | Retrieve part bounding boxes by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**GetEdges**](PartApi.md#GetEdges) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatededges | Retrieve tessellated edges of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**GetFaces1**](PartApi.md#GetFaces1) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces | 
-[**GetMassProperties**](PartApi.md#GetMassProperties) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/massproperties | Retrieve mass properties of a part document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**GetPartShadedViews**](PartApi.md#GetPartShadedViews) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/shadedviews | Retrieve shaded views of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
-[**GetPartsWMV**](PartApi.md#GetPartsWMV) | **Get** /parts/d/{did}/{wvm}/{wvmid} | Retrieve a list of parts by document ID, and workspace or version or microversion ID.
-[**GetPartsWMVE**](PartApi.md#GetPartsWMVE) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid} | Retrieve a list of parts from a tab by document ID, workspace or version or microversion ID, and tab ID.
+[**ExportPS**](PartApi.md#ExportPS) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid | Export a part as a Parasolid file.
+[**ExportPartGltf**](PartApi.md#ExportPartGltf) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf | Export a part as a glTF file.
+[**ExportStl**](PartApi.md#ExportStl) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl | Export a part to an STL file.
+[**GetBendTable**](PartApi.md#GetBendTable) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/sheetmetal/bendtable | Get a part&#39;s sheet metal bend table.
+[**GetBodyDetails**](PartApi.md#GetBodyDetails) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails | Get a part&#39;s body details.
+[**GetBoundingBoxes**](PartApi.md#GetBoundingBoxes) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/boundingboxes | Get a part&#39;s bounding box details.
+[**GetEdges**](PartApi.md#GetEdges) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatededges | Get a list of a part&#39;s tessellation edges.
+[**GetFaces1**](PartApi.md#GetFaces1) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces | Get a list of a part&#39;s tessellation faces.
+[**GetMassProperties**](PartApi.md#GetMassProperties) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/massproperties | Get a part&#39;s mass properties.
+[**GetPartShadedViews**](PartApi.md#GetPartShadedViews) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/shadedviews | Get a part&#39;s shaded views.
+[**GetPartsWMV**](PartApi.md#GetPartsWMV) | **Get** /parts/d/{did}/{wvm}/{wvmid} | Get all parts in a workspace, version, or microversion.
+[**GetPartsWMVE**](PartApi.md#GetPartsWMVE) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid} | Get all parts in an element.
 
 
 
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 > HttpFile ExportPS(ctx, did, wvm, wvmid, eid, partid).Version(version).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Export part to Parasolid by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Export a part as a Parasolid file.
 
 ### Example
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 > HttpFile ExportPartGltf(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).OutputSeparateFaceNodes(outputSeparateFaceNodes).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).Execute()
 
-Retrieve GLTF for part by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Export a part as a glTF file.
 
 ### Example
 
@@ -211,7 +211,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} ExportStl(ctx, did, wvm, wvmid, eid, partid).Mode(mode).Grouping(grouping).Scale(scale).Units(units).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).MaxFacetWidth(maxFacetWidth).MinFacetWidth(minFacetWidth).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve part STL by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Export a part to an STL file.
+
+
 
 ### Example
 
@@ -311,7 +313,7 @@ Name | Type | Description  | Notes
 
 > BTTableResponse1546 GetBendTable(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve sheet metal bend table by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Get a part's sheet metal bend table.
 
 ### Example
 
@@ -393,7 +395,7 @@ Name | Type | Description  | Notes
 
 > BTExportModelBodiesResponse734 GetBodyDetails(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeGeometricData(includeGeometricData).Execute()
 
-Retrieve part body details by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Get a part's body details.
 
 
 
@@ -485,7 +487,7 @@ Name | Type | Description  | Notes
 
 > BTBoundingBoxInfo GetBoundingBoxes(ctx, did, wvm, wvmid, eid, partid).IncludeHidden(includeHidden).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve part bounding boxes by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Get a part's bounding box details.
 
 ### Example
 
@@ -571,7 +573,9 @@ Name | Type | Description  | Notes
 
 > BTExportTessellatedEdgesResponse327 GetEdges(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).EdgeId(edgeId).Execute()
 
-Retrieve tessellated edges of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Get a list of a part's tessellation edges.
+
+
 
 ### Example
 
@@ -667,7 +671,7 @@ Name | Type | Description  | Notes
 
 > BTExportTessellatedFacesResponse898 GetFaces1(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).OutputVertexNormals(outputVertexNormals).OutputFacetNormals(outputFacetNormals).OutputTextureCoordinates(outputTextureCoordinates).OutputIndexTable(outputIndexTable).OutputErrorFaces(outputErrorFaces).CombineCompositePartConstituents(combineCompositePartConstituents).Execute()
 
-
+Get a list of a part's tessellation faces.
 
 
 
@@ -781,7 +785,9 @@ Name | Type | Description  | Notes
 
 > BTMassPropertiesBulkInfo GetMassProperties(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).UseMassPropertyOverrides(useMassPropertyOverrides).Execute()
 
-Retrieve mass properties of a part document ID, workspace or version or microversion ID, tab ID, and part ID.
+Get a part's mass properties.
+
+
 
 ### Example
 
@@ -873,7 +879,7 @@ Name | Type | Description  | Notes
 
 > BTShadedViewsInfo GetPartShadedViews(ctx, did, wvm, wvmid, eid, partid).ViewMatrix(viewMatrix).OutputHeight(outputHeight).OutputWidth(outputWidth).PixelSize(pixelSize).Edges(edges).UseAntiAliasing(useAntiAliasing).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve shaded views of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.
+Get a part's shaded views.
 
 ### Example
 
@@ -969,7 +975,7 @@ Name | Type | Description  | Notes
 
 > []BTPartMetadataInfo GetPartsWMV(ctx, did, wvm, wvmid).ElementId(elementId).LinkDocumentId(linkDocumentId).Configuration(configuration).WithThumbnails(withThumbnails).IncludePropertyDefaults(includePropertyDefaults).IncludeFlatParts(includeFlatParts).Execute()
 
-Retrieve a list of parts by document ID, and workspace or version or microversion ID.
+Get all parts in a workspace, version, or microversion.
 
 ### Example
 
@@ -1055,7 +1061,7 @@ Name | Type | Description  | Notes
 
 > []BTPartMetadataInfo GetPartsWMVE(ctx, did, wvm, wvmid, eid).WithThumbnails(withThumbnails).IncludePropertyDefaults(includePropertyDefaults).IncludeFlatParts(includeFlatParts).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve a list of parts from a tab by document ID, workspace or version or microversion ID, and tab ID.
+Get all parts in an element.
 
 ### Example
 

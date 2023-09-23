@@ -4,12 +4,12 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAlias**](AliasApi.md#CreateAlias) | **Post** /aliases | Create an alias that contains users and/or teams.
-[**DeleteAlias**](AliasApi.md#DeleteAlias) | **Delete** /aliases/{aid} | Delete alias by alias ID.
-[**GetAlias**](AliasApi.md#GetAlias) | **Get** /aliases/{aid} | Retrieve an alias by alias ID.
-[**GetAliasMembers**](AliasApi.md#GetAliasMembers) | **Get** /aliases/{aid}/members | Retrieve all alias members by alias ID.
-[**GetAliasesInCompany**](AliasApi.md#GetAliasesInCompany) | **Get** /aliases | Retrieve an array of aliases for the enterprise.
-[**UpdateAlias**](AliasApi.md#UpdateAlias) | **Post** /aliases/{aid} | Update alias by alias ID.
+[**CreateAlias**](AliasApi.md#CreateAlias) | **Post** /aliases | Create an alias in your enterprise.
+[**DeleteAlias**](AliasApi.md#DeleteAlias) | **Delete** /aliases/{aid} | Delete an alias from your enterprise.
+[**GetAlias**](AliasApi.md#GetAlias) | **Get** /aliases/{aid} | Get an alias by ID.
+[**GetAliasMembers**](AliasApi.md#GetAliasMembers) | **Get** /aliases/{aid}/members | Get all users and teams assigned to an alias.
+[**GetAliasesInCompany**](AliasApi.md#GetAliasesInCompany) | **Get** /aliases | Get a list of all aliases that exist for your enterprise.
+[**UpdateAlias**](AliasApi.md#UpdateAlias) | **Post** /aliases/{aid} | Add, remove, replace, or rename entries in an alias list.
 
 
 
@@ -17,7 +17,9 @@ Method | HTTP request | Description
 
 > BTAliasInfo CreateAlias(ctx).BTAliasParams(bTAliasParams).Execute()
 
-Create an alias that contains users and/or teams.
+Create an alias in your enterprise.
+
+
 
 ### Example
 
@@ -81,7 +83,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteAlias(ctx, aid).Execute()
 
-Delete alias by alias ID.
+Delete an alias from your enterprise.
+
+
 
 ### Example
 
@@ -149,7 +153,9 @@ Name | Type | Description  | Notes
 
 > BTAliasInfo GetAlias(ctx, aid).Execute()
 
-Retrieve an alias by alias ID.
+Get an alias by ID.
+
+
 
 ### Example
 
@@ -217,7 +223,9 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTAliasEntryInfo GetAliasMembers(ctx, aid).Prefix(prefix).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Execute()
 
-Retrieve all alias members by alias ID.
+Get all users and teams assigned to an alias.
+
+
 
 ### Example
 
@@ -295,7 +303,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTAliasInfo GetAliasesInCompany(ctx).Prefix(prefix).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Execute()
 
-Retrieve an array of aliases for the enterprise.
+Get a list of all aliases that exist for your enterprise.
 
 ### Example
 
@@ -367,7 +375,9 @@ Name | Type | Description  | Notes
 
 > BTAliasInfo UpdateAlias(ctx, aid).BTAliasParams(bTAliasParams).Execute()
 
-Update alias by alias ID.
+Add, remove, replace, or rename entries in an alias list.
+
+
 
 ### Example
 

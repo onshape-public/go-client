@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -41,7 +41,7 @@ func (r ApiAddAttachmentRequest) Execute() (*BTCommentInfo, *http.Response, erro
 }
 
 /*
-AddAttachment Update a user’s comment by comment ID.
+AddAttachment Add an attachment to a comment.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -268,7 +268,7 @@ func (r ApiDeleteAttachmentsRequest) Execute() (map[string]interface{}, *http.Re
 }
 
 /*
-DeleteAttachments Delete an attachment from a comment by comment ID.
+DeleteAttachments Delete all attachments from a comment.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -376,7 +376,7 @@ func (r ApiDeleteCommentRequest) Execute() (map[string]interface{}, *http.Respon
 }
 
 /*
-DeleteComment Delete a comment by comment ID.
+DeleteComment Delete a comment from a document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -486,7 +486,9 @@ func (r ApiGetAttachmentRequest) Execute() (map[string]interface{}, *http.Respon
 }
 
 /*
-GetAttachment Retrieve an attachment associated with a comment by comment ID and file document ID (and extension).
+GetAttachment Get the attachment with the specified file extension that is associated with the specified comment.
+
+Returns only a single attachment.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -600,7 +602,7 @@ func (r ApiGetCommentRequest) Execute() (*BTCommentInfo, *http.Response, error) 
 }
 
 /*
-GetComment Retrieve details for a comment by comment ID.
+GetComment Get details for a comment.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -755,7 +757,7 @@ func (r ApiGetCommentsRequest) Execute() (*BTListResponseBTCommentInfo, *http.Re
 }
 
 /*
-GetComments Retrieve a list of comments for a document.
+GetComments Get a list of comments in a document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetCommentsRequest
@@ -884,7 +886,7 @@ func (r ApiReopenRequest) Execute() (*BTCommentInfo, *http.Response, error) {
 }
 
 /*
-Reopen Reopen a resolved comment by comment ID.
+Reopen Reopen a resolved comment.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -992,7 +994,7 @@ func (r ApiResolveRequest) Execute() (*BTCommentInfo, *http.Response, error) {
 }
 
 /*
-Resolve Resolve a comment by comment ID.
+Resolve Resolve a comment.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid
@@ -1106,7 +1108,7 @@ func (r ApiUpdateCommentRequest) Execute() (*BTCommentInfo, *http.Response, erro
 }
 
 /*
-UpdateComment Update a user’s comment by comment ID.
+UpdateComment Update the content of an existing comment.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cid

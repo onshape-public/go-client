@@ -1,0 +1,56 @@
+# BTCompanyUserSummaryAdminInfoAllOf
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**TotpEnabled** | Pointer to **bool** |  | [optional] 
+
+## Methods
+
+### NewBTCompanyUserSummaryAdminInfoAllOf
+
+`func NewBTCompanyUserSummaryAdminInfoAllOf() *BTCompanyUserSummaryAdminInfoAllOf`
+
+NewBTCompanyUserSummaryAdminInfoAllOf instantiates a new BTCompanyUserSummaryAdminInfoAllOf object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewBTCompanyUserSummaryAdminInfoAllOfWithDefaults
+
+`func NewBTCompanyUserSummaryAdminInfoAllOfWithDefaults() *BTCompanyUserSummaryAdminInfoAllOf`
+
+NewBTCompanyUserSummaryAdminInfoAllOfWithDefaults instantiates a new BTCompanyUserSummaryAdminInfoAllOf object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetTotpEnabled
+
+`func (o *BTCompanyUserSummaryAdminInfoAllOf) GetTotpEnabled() bool`
+
+GetTotpEnabled returns the TotpEnabled field if non-nil, zero value otherwise.
+
+### GetTotpEnabledOk
+
+`func (o *BTCompanyUserSummaryAdminInfoAllOf) GetTotpEnabledOk() (*bool, bool)`
+
+GetTotpEnabledOk returns a tuple with the TotpEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotpEnabled
+
+`func (o *BTCompanyUserSummaryAdminInfoAllOf) SetTotpEnabled(v bool)`
+
+SetTotpEnabled sets TotpEnabled field to given value.
+
+### HasTotpEnabled
+
+`func (o *BTCompanyUserSummaryAdminInfoAllOf) HasTotpEnabled() bool`
+
+HasTotpEnabled returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

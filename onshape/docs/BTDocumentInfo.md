@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **IsContainer** | Pointer to **bool** |  | [optional] 
 **IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
 **IsMutable** | Pointer to **bool** |  | [optional] 
+**IsOrphaned** | Pointer to **bool** |  | [optional] 
 **IsUpgradedToLatestVersion** | Pointer to **bool** |  | [optional] 
 **IsUsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **LikedByCurrentUser** | Pointer to **bool** |  | [optional] 
@@ -50,6 +51,9 @@ Name | Type | Description | Notes
 **SupportTeamUserAndShared** | Pointer to **bool** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
+**TotalWorkspacesScheduledForUpdate** | Pointer to **int32** |  | [optional] 
+**TotalWorkspacesUpdating** | Pointer to **int32** |  | [optional] 
+**TracingEnabled** | Pointer to **bool** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
@@ -625,6 +629,31 @@ SetIsMutable sets IsMutable field to given value.
 `func (o *BTDocumentInfo) HasIsMutable() bool`
 
 HasIsMutable returns a boolean if a field has been set.
+
+### GetIsOrphaned
+
+`func (o *BTDocumentInfo) GetIsOrphaned() bool`
+
+GetIsOrphaned returns the IsOrphaned field if non-nil, zero value otherwise.
+
+### GetIsOrphanedOk
+
+`func (o *BTDocumentInfo) GetIsOrphanedOk() (*bool, bool)`
+
+GetIsOrphanedOk returns a tuple with the IsOrphaned field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsOrphaned
+
+`func (o *BTDocumentInfo) SetIsOrphaned(v bool)`
+
+SetIsOrphaned sets IsOrphaned field to given value.
+
+### HasIsOrphaned
+
+`func (o *BTDocumentInfo) HasIsOrphaned() bool`
+
+HasIsOrphaned returns a boolean if a field has been set.
 
 ### GetIsUpgradedToLatestVersion
 
@@ -1225,6 +1254,81 @@ SetThumbnail sets Thumbnail field to given value.
 `func (o *BTDocumentInfo) HasThumbnail() bool`
 
 HasThumbnail returns a boolean if a field has been set.
+
+### GetTotalWorkspacesScheduledForUpdate
+
+`func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdate() int32`
+
+GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field if non-nil, zero value otherwise.
+
+### GetTotalWorkspacesScheduledForUpdateOk
+
+`func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool)`
+
+GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalWorkspacesScheduledForUpdate
+
+`func (o *BTDocumentInfo) SetTotalWorkspacesScheduledForUpdate(v int32)`
+
+SetTotalWorkspacesScheduledForUpdate sets TotalWorkspacesScheduledForUpdate field to given value.
+
+### HasTotalWorkspacesScheduledForUpdate
+
+`func (o *BTDocumentInfo) HasTotalWorkspacesScheduledForUpdate() bool`
+
+HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
+
+### GetTotalWorkspacesUpdating
+
+`func (o *BTDocumentInfo) GetTotalWorkspacesUpdating() int32`
+
+GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field if non-nil, zero value otherwise.
+
+### GetTotalWorkspacesUpdatingOk
+
+`func (o *BTDocumentInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool)`
+
+GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalWorkspacesUpdating
+
+`func (o *BTDocumentInfo) SetTotalWorkspacesUpdating(v int32)`
+
+SetTotalWorkspacesUpdating sets TotalWorkspacesUpdating field to given value.
+
+### HasTotalWorkspacesUpdating
+
+`func (o *BTDocumentInfo) HasTotalWorkspacesUpdating() bool`
+
+HasTotalWorkspacesUpdating returns a boolean if a field has been set.
+
+### GetTracingEnabled
+
+`func (o *BTDocumentInfo) GetTracingEnabled() bool`
+
+GetTracingEnabled returns the TracingEnabled field if non-nil, zero value otherwise.
+
+### GetTracingEnabledOk
+
+`func (o *BTDocumentInfo) GetTracingEnabledOk() (*bool, bool)`
+
+GetTracingEnabledOk returns a tuple with the TracingEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTracingEnabled
+
+`func (o *BTDocumentInfo) SetTracingEnabled(v bool)`
+
+SetTracingEnabled sets TracingEnabled field to given value.
+
+### HasTracingEnabled
+
+`func (o *BTDocumentInfo) HasTracingEnabled() bool`
+
+HasTracingEnabled returns a boolean if a field has been set.
 
 ### GetTrash
 

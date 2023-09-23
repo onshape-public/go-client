@@ -4,30 +4,31 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AbortTransaction**](AppElementApi.md#AbortTransaction) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/transactions/{tid} | Abort transaction by document ID, workspace ID, tab ID, and transaction ID.
-[**BulkCreateElement**](AppElementApi.md#BulkCreateElement) | **Post** /appelements/d/{did}/w/{wid}/bulkcreate | Create multiple empty application tabs by document ID and workspace ID.
-[**CommitTransactions**](AppElementApi.md#CommitTransactions) | **Post** /appelements/d/{did}/w/{wid}/transactions | Commit transactions by document ID and workspace ID.
-[**CompareAppElementJson**](AppElementApi.md#CompareAppElementJson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Compare JSON by document ID, workspace or version or microversion ID, and tab ID.
-[**CreateElement**](AppElementApi.md#CreateElement) | **Post** /appelements/d/{did}/w/{wid} | Create application tab by document ID and workspace ID.
-[**CreateReference**](AppElementApi.md#CreateReference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references | Create references by document ID, workspace or version or microversion ID, and tab ID.
-[**DeleteAppElementContent**](AppElementApi.md#DeleteAppElementContent) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements/{sid} | Delete subelement array by document ID, workspace or version or microversion ID, tab ID, and subelement ID. A Subelement is used to store and organize data.
-[**DeleteBlobSubelement**](AppElementApi.md#DeleteBlobSubelement) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Delete blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
-[**DeleteReference**](AppElementApi.md#DeleteReference) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Delete references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.
-[**DownloadBlobSubelement**](AppElementApi.md#DownloadBlobSubelement) | **Get** /appelements/d/{did}/{vm}/{vmid}/e/{eid}/blob/{bid} | Download blob subelement file by document ID, version or microversion ID, tab ID, and blob ID. A Subelement is used to store and organize data.
-[**DownloadBlobSubelementWorkspace**](AppElementApi.md#DownloadBlobSubelementWorkspace) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Download blob subelement as a file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
-[**GetAppElementHistory**](AppElementApi.md#GetAppElementHistory) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/history | Retrieve history by document ID, workspace or version or microversion ID, and tab ID.
-[**GetBlobSubelementIds**](AppElementApi.md#GetBlobSubelementIds) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/blob | Retrieve an array of blob subelement IDs by document ID and workspace or microversion ID. A Subelement is used to store and organize data.
-[**GetElementTransactions**](AppElementApi.md#GetElementTransactions) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Retrieve an array of tab transactions by document ID, workspace ID, and tab ID.
-[**GetJson**](AppElementApi.md#GetJson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/json | Retrieve JSON by document ID, workspace or version or microversion ID, and tab ID.
-[**GetJsonPaths**](AppElementApi.md#GetJsonPaths) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/jsonpaths | Retrieve JSON paths by document ID, workspace or version or microversion ID, and tab ID.
-[**GetSubElementContent**](AppElementApi.md#GetSubElementContent) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Retrieve subelement content by document ID, tab ID, and workspace or version or microversion ID. A Subelement is used to store and organize data.
-[**GetSubelementIds**](AppElementApi.md#GetSubelementIds) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/ids | Retrieve subelement IDs by document ID, workspace or version or microversion ID, and tab ID. A Subelement is used to store and organize data.
-[**ResolveReference**](AppElementApi.md#ResolveReference) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Resolve references by document ID, workspace or version or microversion ID, tab ID and resolve ID.
-[**ResolveReferences**](AppElementApi.md#ResolveReferences) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/resolvereferences | Resolve references by document ID, workspace or version or microversion ID, and tab ID.
-[**StartTransaction**](AppElementApi.md#StartTransaction) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Start application tab transaction by document ID, workspace ID, and tab ID.
-[**UpdateAppElement**](AppElementApi.md#UpdateAppElement) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Update application tab by document ID, workspace or version or microversion ID, and tab ID.
-[**UpdateReference**](AppElementApi.md#UpdateReference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Update references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.
-[**UploadBlobSubelement**](AppElementApi.md#UploadBlobSubelement) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Upload blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+[**AbortTransaction**](AppElementApi.md#AbortTransaction) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/transactions/{tid} | Abort a transaction.
+[**BulkCreateElement**](AppElementApi.md#BulkCreateElement) | **Post** /appelements/d/{did}/w/{wid}/bulkcreate | Create multiple empty application elements at once.
+[**CommitTransactions**](AppElementApi.md#CommitTransactions) | **Post** /appelements/d/{did}/w/{wid}/transactions | Merge multiple transactions into one microversion.
+[**CompareAppElementJson**](AppElementApi.md#CompareAppElementJson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Compare app element JSON trees between workspaces/versions/microversions in a document.
+[**CreateElement**](AppElementApi.md#CreateElement) | **Post** /appelements/d/{did}/w/{wid} | Create a new application element.
+[**CreateReference**](AppElementApi.md#CreateReference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references | Creates a reference to an app element.
+[**DeleteAppElementContent**](AppElementApi.md#DeleteAppElementContent) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements/{sid} | Deletes the content from the specified app element.
+[**DeleteAppElementContentBatch**](AppElementApi.md#DeleteAppElementContentBatch) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements | Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+[**DeleteBlobSubelement**](AppElementApi.md#DeleteBlobSubelement) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Delete a blob subelement from an app element.
+[**DeleteReference**](AppElementApi.md#DeleteReference) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Delete an app element reference.
+[**DownloadBlobSubelement**](AppElementApi.md#DownloadBlobSubelement) | **Get** /appelements/d/{did}/{vm}/{vmid}/e/{eid}/blob/{bid} | Download a blob subelement from the specified app element.
+[**DownloadBlobSubelementWorkspace**](AppElementApi.md#DownloadBlobSubelementWorkspace) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Download the blob element (i.e., a file) stored in an app element in a document&#39;s workspace.
+[**GetAppElementHistory**](AppElementApi.md#GetAppElementHistory) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/history | Get the history of the specified all element.
+[**GetBlobSubelementIds**](AppElementApi.md#GetBlobSubelementIds) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/blob | Get a list of all blob subelement IDs for the specified workspace, version, or microversion.
+[**GetElementTransactions**](AppElementApi.md#GetElementTransactions) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Get a list of all transactions performed on an element.
+[**GetJson**](AppElementApi.md#GetJson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/json | Get the full JSON tree for the specified workspace/version/microversion.
+[**GetJsonPaths**](AppElementApi.md#GetJsonPaths) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/jsonpaths | Get the JSON at specified paths for an element.
+[**GetSubElementContent**](AppElementApi.md#GetSubElementContent) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Get a list of all subelement IDs in a specified workspace/version/microversion.
+[**GetSubelementIds**](AppElementApi.md#GetSubelementIds) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/ids | Get a list of all subelement IDs in a specified workspace/version/microversion.
+[**ResolveReference**](AppElementApi.md#ResolveReference) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Resolves a single reference to an app element.
+[**ResolveReferences**](AppElementApi.md#ResolveReferences) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/resolvereferences | Resolves bulk app element references.
+[**StartTransaction**](AppElementApi.md#StartTransaction) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Start a transaction
+[**UpdateAppElement**](AppElementApi.md#UpdateAppElement) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Update the content for the specified app element.
+[**UpdateReference**](AppElementApi.md#UpdateReference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Update an app element reference.
+[**UploadBlobSubelement**](AppElementApi.md#UploadBlobSubelement) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Create a new blob subelement from an uploaded file.
 
 
 
@@ -35,7 +36,9 @@ Method | HTTP request | Description
 
 > map[string]interface{} AbortTransaction(ctx, did, eid, wid, tid).ReturnError(returnError).Execute()
 
-Abort transaction by document ID, workspace ID, tab ID, and transaction ID.
+Abort a transaction.
+
+
 
 ### Example
 
@@ -114,7 +117,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementBulkCreateInfo BulkCreateElement(ctx, did, wid).BTAppElementBulkCreateParams(bTAppElementBulkCreateParams).LinkDocumentId(linkDocumentId).Execute()
 
-Create multiple empty application tabs by document ID and workspace ID.
+Create multiple empty application elements at once.
 
 
 
@@ -191,7 +194,9 @@ Name | Type | Description  | Notes
 
 > BTAppElementModifyInfo CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(bTAppElementCommitTransactionParams).LinkDocumentId(linkDocumentId).Execute()
 
-Commit transactions by document ID and workspace ID.
+Merge multiple transactions into one microversion.
+
+
 
 ### Example
 
@@ -266,7 +271,9 @@ Name | Type | Description  | Notes
 
 > BTDiffJsonResponse2725 CompareAppElementJson(ctx, did, wvm, wvmid, eid).WorkspaceId(workspaceId).VersionId(versionId).MicroversionId(microversionId).LinkDocumentId(linkDocumentId).JsonDifferenceFormat(jsonDifferenceFormat).Execute()
 
-Compare JSON by document ID, workspace or version or microversion ID, and tab ID.
+Compare app element JSON trees between workspaces/versions/microversions in a document.
+
+
 
 ### Example
 
@@ -353,7 +360,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementModifyInfo CreateElement(ctx, did, wid).BTAppElementParams(bTAppElementParams).LinkDocumentId(linkDocumentId).Execute()
 
-Create application tab by document ID and workspace ID.
+Create a new application element.
 
 ### Example
 
@@ -428,7 +435,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementReferenceInfo CreateReference(ctx, did, eid, wvm, wvmid).BTAppElementReferenceParams(bTAppElementReferenceParams).Execute()
 
-Create references by document ID, workspace or version or microversion ID, and tab ID.
+Creates a reference to an app element.
 
 ### Example
 
@@ -507,7 +514,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementModifyInfo DeleteAppElementContent(ctx, did, eid, wvm, wvmid, sid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).Execute()
 
-Delete subelement array by document ID, workspace or version or microversion ID, tab ID, and subelement ID. A Subelement is used to store and organize data.
+Deletes the content from the specified app element.
 
 ### Example
 
@@ -589,11 +596,96 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteAppElementContentBatch
+
+> BTAppElementModifyInfo DeleteAppElementContentBatch(ctx, did, eid, wvm, wvmid).SubelementIds(subelementIds).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).Execute()
+
+Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    eid := "eid_example" // string | 
+    wvm := "wvm_example" // string | 
+    wvmid := "wvmid_example" // string | 
+    subelementIds := []string{"Inner_example"} // []string |  (optional)
+    transactionId := "transactionId_example" // string |  (optional)
+    parentChangeId := "parentChangeId_example" // string |  (optional)
+    description := "description_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AppElementApi.DeleteAppElementContentBatch(context.Background(), did, eid, wvm, wvmid).SubelementIds(subelementIds).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.DeleteAppElementContentBatch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteAppElementContentBatch`: BTAppElementModifyInfo
+    fmt.Fprintf(os.Stdout, "Response from `AppElementApi.DeleteAppElementContentBatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**eid** | **string** |  | 
+**wvm** | **string** |  | 
+**wvmid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteAppElementContentBatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **subelementIds** | **[]string** |  | 
+ **transactionId** | **string** |  | 
+ **parentChangeId** | **string** |  | 
+ **description** | **string** |  | 
+
+### Return type
+
+[**BTAppElementModifyInfo**](BTAppElementModifyInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteBlobSubelement
 
 > BTAppElementModifyInfo DeleteBlobSubelement(ctx, did, wid, eid, bid).TransactionId(transactionId).ChangeId(changeId).Execute()
 
-Delete blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+Delete a blob subelement from an app element.
 
 ### Example
 
@@ -674,7 +766,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementReferenceInfo DeleteReference(ctx, did, eid, wvm, wvmid, rid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).Execute()
 
-Delete references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.
+Delete an app element reference.
 
 ### Example
 
@@ -760,7 +852,9 @@ Name | Type | Description  | Notes
 
 > HttpFile DownloadBlobSubelement(ctx, did, vm, vmid, eid, bid).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).TransactionId(transactionId).ChangeId(changeId).LinkDocumentId(linkDocumentId).Execute()
 
-Download blob subelement file by document ID, version or microversion ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+Download a blob subelement from the specified app element.
+
+
 
 ### Example
 
@@ -850,7 +944,9 @@ Name | Type | Description  | Notes
 
 > HttpFile DownloadBlobSubelementWorkspace(ctx, did, wid, eid, bid).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).TransactionId(transactionId).ChangeId(changeId).Execute()
 
-Download blob subelement as a file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+Download the blob element (i.e., a file) stored in an app element in a document's workspace.
+
+
 
 ### Example
 
@@ -935,7 +1031,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementHistoryInfo GetAppElementHistory(ctx, did, eid, wvm, wvmid).Execute()
 
-Retrieve history by document ID, workspace or version or microversion ID, and tab ID.
+Get the history of the specified all element.
 
 ### Example
 
@@ -1012,7 +1108,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementIdsInfo GetBlobSubelementIds(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).Execute()
 
-Retrieve an array of blob subelement IDs by document ID and workspace or microversion ID. A Subelement is used to store and organize data.
+Get a list of all blob subelement IDs for the specified workspace, version, or microversion.
 
 ### Example
 
@@ -1093,7 +1189,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementTransactionsInfo GetElementTransactions(ctx, did, eid, wid).Execute()
 
-Retrieve an array of tab transactions by document ID, workspace ID, and tab ID.
+Get a list of all transactions performed on an element.
 
 ### Example
 
@@ -1167,7 +1263,7 @@ Name | Type | Description  | Notes
 
 > BTGetJsonResponse2137 GetJson(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).Execute()
 
-Retrieve JSON by document ID, workspace or version or microversion ID, and tab ID.
+Get the full JSON tree for the specified workspace/version/microversion.
 
 ### Example
 
@@ -1250,7 +1346,9 @@ Name | Type | Description  | Notes
 
 > BTGetJsonPathsResponse1544 GetJsonPaths(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BTGetJsonPaths1697(bTGetJsonPaths1697).Execute()
 
-Retrieve JSON paths by document ID, workspace or version or microversion ID, and tab ID.
+Get the JSON at specified paths for an element.
+
+
 
 ### Example
 
@@ -1335,7 +1433,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementContentInfo GetSubElementContent(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BaseChangeId(baseChangeId).SubelementId(subelementId).Execute()
 
-Retrieve subelement content by document ID, tab ID, and workspace or version or microversion ID. A Subelement is used to store and organize data.
+Get a list of all subelement IDs in a specified workspace/version/microversion.
 
 ### Example
 
@@ -1422,7 +1520,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementIdsInfo GetSubelementIds(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).Execute()
 
-Retrieve subelement IDs by document ID, workspace or version or microversion ID, and tab ID. A Subelement is used to store and organize data.
+Get a list of all subelement IDs in a specified workspace/version/microversion.
 
 ### Example
 
@@ -1503,7 +1601,9 @@ Name | Type | Description  | Notes
 
 > BTAppElementReferenceResolveInfo ResolveReference(ctx, did, eid, wvm, wvmid, rid).TransactionId(transactionId).ParentChangeId(parentChangeId).IncludeInternal(includeInternal).LinkDocumentId(linkDocumentId).Execute()
 
-Resolve references by document ID, workspace or version or microversion ID, tab ID and resolve ID.
+Resolves a single reference to an app element.
+
+
 
 ### Example
 
@@ -1591,7 +1691,9 @@ Name | Type | Description  | Notes
 
 > BTAppElementReferencesResolveInfo ResolveReferences(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ParentChangeId(parentChangeId).IncludeInternal(includeInternal).ReferenceIds(referenceIds).Execute()
 
-Resolve references by document ID, workspace or version or microversion ID, and tab ID.
+Resolves bulk app element references.
+
+
 
 ### Example
 
@@ -1678,7 +1780,9 @@ Name | Type | Description  | Notes
 
 > BTAppElementModifyInfo StartTransaction(ctx, did, eid, wid).BTAppElementStartTransactionParams(bTAppElementStartTransactionParams).Execute()
 
-Start application tab transaction by document ID, workspace ID, and tab ID.
+Start a transaction
+
+
 
 ### Example
 
@@ -1754,7 +1858,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementModifyInfo UpdateAppElement(ctx, did, eid, wvm, wvmid).BTAppElementUpdateParams(bTAppElementUpdateParams).Execute()
 
-Update application tab by document ID, workspace or version or microversion ID, and tab ID.
+Update the content for the specified app element.
 
 ### Example
 
@@ -1833,7 +1937,7 @@ Name | Type | Description  | Notes
 
 > BTAppElementReferenceInfo UpdateReference(ctx, did, eid, wvm, wvmid, rid).BTAppElementReferenceParams(bTAppElementReferenceParams).Execute()
 
-Update references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.
+Update an app element reference.
 
 ### Example
 
@@ -1915,7 +2019,9 @@ Name | Type | Description  | Notes
 
 > BTAppElementModifyInfo UploadBlobSubelement(ctx, did, wid, eid, bid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).File(file).FileContentLength(fileContentLength).Execute()
 
-Upload blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+Create a new blob subelement from an uploaded file.
+
+
 
 ### Example
 

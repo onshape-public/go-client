@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -58,6 +58,11 @@ func (o *BTMAssemblyFeature12218) AsBTMFeature134() *BTMFeature134 {
 
 // BTMMateRelation1412AsBTMFeature134 is a convenience function that returns BTMMateRelation1412 wrapped in BTMFeature134
 func (o *BTMMateRelation1412) AsBTMFeature134() *BTMFeature134 {
+	return &BTMFeature134{o}
+}
+
+// BTMParametricPartStudioFeature3883AsBTMFeature134 is a convenience function that returns BTMParametricPartStudioFeature3883 wrapped in BTMFeature134
+func (o *BTMParametricPartStudioFeature3883) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
@@ -1047,6 +1052,20 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMFeature134 = nil
 			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMNonGeometricItem1864: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParametricPartStudioFeature-3883'
+	if jsonDict["btType"] == "BTMParametricPartStudioFeature-3883" {
+		// try to unmarshal JSON data into BTMParametricPartStudioFeature3883
+		var qr *BTMParametricPartStudioFeature3883
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMParametricPartStudioFeature3883: %s", err.Error())
 		}
 	}
 

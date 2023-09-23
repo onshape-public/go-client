@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,6 +17,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"reflect"
 	"strings"
 )
 
@@ -43,7 +44,9 @@ func (r ApiAbortTransactionRequest) Execute() (map[string]interface{}, *http.Res
 }
 
 /*
-AbortTransaction Abort transaction by document ID, workspace ID, tab ID, and transaction ID.
+AbortTransaction Abort a transaction.
+
+Deletes a microbranch (i.e., the branch with the microversion for the transaction).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -177,9 +180,9 @@ func (r ApiBulkCreateElementRequest) Execute() (*BTAppElementBulkCreateInfo, *ht
 }
 
 /*
-BulkCreateElement Create multiple empty application tabs by document ID and workspace ID.
+BulkCreateElement Create multiple empty application elements at once.
 
-Creates several new empty application elements in the document.
+Call this faster API instead of creating multiple app elements one at a time or in parallel.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -312,7 +315,9 @@ func (r ApiCommitTransactionsRequest) Execute() (*BTAppElementModifyInfo, *http.
 }
 
 /*
-CommitTransactions Commit transactions by document ID and workspace ID.
+CommitTransactions Merge multiple transactions into one microversion.
+
+If successful, all transactions will be committed to a single microversion. If the call raises an error, nothing will be committed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -464,7 +469,9 @@ func (r ApiCompareAppElementJsonRequest) Execute() (*BTDiffJsonResponse2725, *ht
 }
 
 /*
-CompareAppElementJson Compare JSON by document ID, workspace or version or microversion ID, and tab ID.
+CompareAppElementJson Compare app element JSON trees between workspaces/versions/microversions in a document.
+
+Specify the source workspace/version/microversion in the URL and specify the target workspace/version/microversion in the query parameters.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -610,7 +617,7 @@ func (r ApiCreateElementRequest) Execute() (*BTAppElementModifyInfo, *http.Respo
 }
 
 /*
-CreateElement Create application tab by document ID and workspace ID.
+CreateElement Create a new application element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -738,7 +745,7 @@ func (r ApiCreateReferenceRequest) Execute() (*BTAppElementReferenceInfo, *http.
 }
 
 /*
-CreateReference Create references by document ID, workspace or version or microversion ID, and tab ID.
+CreateReference Creates a reference to an app element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -882,7 +889,7 @@ func (r ApiDeleteAppElementContentRequest) Execute() (*BTAppElementModifyInfo, *
 }
 
 /*
-DeleteAppElementContent Delete subelement array by document ID, workspace or version or microversion ID, tab ID, and subelement ID. A Subelement is used to store and organize data.
+DeleteAppElementContent Deletes the content from the specified app element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1000,6 +1007,170 @@ func (a *AppElementApiService) DeleteAppElementContentExecute(r ApiDeleteAppElem
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiDeleteAppElementContentBatchRequest struct {
+	ctx            context.Context
+	ApiService     *AppElementApiService
+	did            string
+	eid            string
+	wvm            string
+	wvmid          string
+	subelementIds  *[]string
+	transactionId  *string
+	parentChangeId *string
+	description    *string
+}
+
+func (r ApiDeleteAppElementContentBatchRequest) SubelementIds(subelementIds []string) ApiDeleteAppElementContentBatchRequest {
+	r.subelementIds = &subelementIds
+	return r
+}
+
+func (r ApiDeleteAppElementContentBatchRequest) TransactionId(transactionId string) ApiDeleteAppElementContentBatchRequest {
+	r.transactionId = &transactionId
+	return r
+}
+
+func (r ApiDeleteAppElementContentBatchRequest) ParentChangeId(parentChangeId string) ApiDeleteAppElementContentBatchRequest {
+	r.parentChangeId = &parentChangeId
+	return r
+}
+
+func (r ApiDeleteAppElementContentBatchRequest) Description(description string) ApiDeleteAppElementContentBatchRequest {
+	r.description = &description
+	return r
+}
+
+func (r ApiDeleteAppElementContentBatchRequest) Execute() (*BTAppElementModifyInfo, *http.Response, error) {
+	return r.ApiService.DeleteAppElementContentBatchExecute(r)
+}
+
+/*
+DeleteAppElementContentBatch Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param did
+ @param eid
+ @param wvm
+ @param wvmid
+ @return ApiDeleteAppElementContentBatchRequest
+*/
+func (a *AppElementApiService) DeleteAppElementContentBatch(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiDeleteAppElementContentBatchRequest {
+	return ApiDeleteAppElementContentBatchRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		eid:        eid,
+		wvm:        wvm,
+		wvmid:      wvmid,
+	}
+}
+
+// Execute executes the request
+//  @return BTAppElementModifyInfo
+func (a *AppElementApiService) DeleteAppElementContentBatchExecute(r ApiDeleteAppElementContentBatchRequest) (*BTAppElementModifyInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTAppElementModifyInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppElementApiService.DeleteAppElementContentBatch")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.subelementIds != nil {
+		t := *r.subelementIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("subelementIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("subelementIds", parameterToString(t, "multi"))
+		}
+	}
+	if r.transactionId != nil {
+		localVarQueryParams.Add("transactionId", parameterToString(*r.transactionId, ""))
+	}
+	if r.parentChangeId != nil {
+		localVarQueryParams.Add("parentChangeId", parameterToString(*r.parentChangeId, ""))
+	}
+	if r.description != nil {
+		localVarQueryParams.Add("description", parameterToString(*r.description, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTAppElementModifyInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiDeleteBlobSubelementRequest struct {
 	ctx           context.Context
 	ApiService    *AppElementApiService
@@ -1026,7 +1197,7 @@ func (r ApiDeleteBlobSubelementRequest) Execute() (*BTAppElementModifyInfo, *htt
 }
 
 /*
-DeleteBlobSubelement Delete blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+DeleteBlobSubelement Delete a blob subelement from an app element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1171,7 +1342,7 @@ func (r ApiDeleteReferenceRequest) Execute() (*BTAppElementReferenceInfo, *http.
 }
 
 /*
-DeleteReference Delete references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.
+DeleteReference Delete an app element reference.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1334,7 +1505,9 @@ func (r ApiDownloadBlobSubelementRequest) Execute() (*HttpFile, *http.Response, 
 }
 
 /*
-DownloadBlobSubelement Download blob subelement file by document ID, version or microversion ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+DownloadBlobSubelement Download a blob subelement from the specified app element.
+
+Download a blob subelement as a file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1496,7 +1669,9 @@ func (r ApiDownloadBlobSubelementWorkspaceRequest) Execute() (*HttpFile, *http.R
 }
 
 /*
-DownloadBlobSubelementWorkspace Download blob subelement as a file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+DownloadBlobSubelementWorkspace Download the blob element (i.e., a file) stored in an app element in a document's workspace.
+
+The downloaded file can be used to retrieve stored subelements.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1628,7 +1803,7 @@ func (r ApiGetAppElementHistoryRequest) Execute() (*BTAppElementHistoryInfo, *ht
 }
 
 /*
-GetAppElementHistory Retrieve history by document ID, workspace or version or microversion ID, and tab ID.
+GetAppElementHistory Get the history of the specified all element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1760,7 +1935,7 @@ func (r ApiGetBlobSubelementIdsRequest) Execute() (*BTAppElementIdsInfo, *http.R
 }
 
 /*
-GetBlobSubelementIds Retrieve an array of blob subelement IDs by document ID and workspace or microversion ID. A Subelement is used to store and organize data.
+GetBlobSubelementIds Get a list of all blob subelement IDs for the specified workspace, version, or microversion.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1885,7 +2060,7 @@ func (r ApiGetElementTransactionsRequest) Execute() (*BTAppElementTransactionsIn
 }
 
 /*
-GetElementTransactions Retrieve an array of tab transactions by document ID, workspace ID, and tab ID.
+GetElementTransactions Get a list of all transactions performed on an element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -2023,7 +2198,7 @@ func (r ApiGetJsonRequest) Execute() (*BTGetJsonResponse2137, *http.Response, er
 }
 
 /*
-GetJson Retrieve JSON by document ID, workspace or version or microversion ID, and tab ID.
+GetJson Get the full JSON tree for the specified workspace/version/microversion.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2177,7 +2352,9 @@ func (r ApiGetJsonPathsRequest) Execute() (*BTGetJsonPathsResponse1544, *http.Re
 }
 
 /*
-GetJsonPaths Retrieve JSON paths by document ID, workspace or version or microversion ID, and tab ID.
+GetJsonPaths Get the JSON at specified paths for an element.
+
+Use this endpoint to return the JSON at the specified path instead of returning the entire JSON for the element. This POST endpoint does not write any information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2339,7 +2516,7 @@ func (r ApiGetSubElementContentRequest) Execute() (*BTAppElementContentInfo, *ht
 }
 
 /*
-GetSubElementContent Retrieve subelement content by document ID, tab ID, and workspace or version or microversion ID. A Subelement is used to store and organize data.
+GetSubElementContent Get a list of all subelement IDs in a specified workspace/version/microversion.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2486,7 +2663,7 @@ func (r ApiGetSubelementIdsRequest) Execute() (*BTAppElementIdsInfo, *http.Respo
 }
 
 /*
-GetSubelementIds Retrieve subelement IDs by document ID, workspace or version or microversion ID, and tab ID. A Subelement is used to store and organize data.
+GetSubelementIds Get a list of all subelement IDs in a specified workspace/version/microversion.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -2637,7 +2814,9 @@ func (r ApiResolveReferenceRequest) Execute() (*BTAppElementReferenceResolveInfo
 }
 
 /*
-ResolveReference Resolve references by document ID, workspace or version or microversion ID, tab ID and resolve ID.
+ResolveReference Resolves a single reference to an app element.
+
+For single operations only. Use `resolveReferences` for bulk operations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -2803,7 +2982,9 @@ func (r ApiResolveReferencesRequest) Execute() (*BTAppElementReferencesResolveIn
 }
 
 /*
-ResolveReferences Resolve references by document ID, workspace or version or microversion ID, and tab ID.
+ResolveReferences Resolves bulk app element references.
+
+For bulk operations only. Use `resolveReference` for a single operation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2943,7 +3124,9 @@ func (r ApiStartTransactionRequest) Execute() (*BTAppElementModifyInfo, *http.Re
 }
 
 /*
-StartTransaction Start application tab transaction by document ID, workspace ID, and tab ID.
+StartTransaction Start a transaction
+
+Creates a microbranch (i.e., a branch for a new microversion).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -3071,7 +3254,7 @@ func (r ApiUpdateAppElementRequest) Execute() (*BTAppElementModifyInfo, *http.Re
 }
 
 /*
-UpdateAppElement Update application tab by document ID, workspace or version or microversion ID, and tab ID.
+UpdateAppElement Update the content for the specified app element.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -3200,7 +3383,7 @@ func (r ApiUpdateReferenceRequest) Execute() (*BTAppElementReferenceInfo, *http.
 }
 
 /*
-UpdateReference Update references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.
+UpdateReference Update an app element reference.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -3359,7 +3542,9 @@ func (r ApiUploadBlobSubelementRequest) Execute() (*BTAppElementModifyInfo, *htt
 }
 
 /*
-UploadBlobSubelement Upload blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.
+UploadBlobSubelement Create a new blob subelement from an uploaded file.
+
+Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"` in the request header.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did

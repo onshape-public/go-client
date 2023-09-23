@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -16,28 +16,13 @@ import (
 	"fmt"
 )
 
-// BTGlobalTreeNodeInfo - Document Items array. Array entries are the same as that returned from \"/api/documents/{did}\".
+// BTGlobalTreeNodeInfo - struct for BTGlobalTreeNodeInfo
 type BTGlobalTreeNodeInfo struct {
 	implBTGlobalTreeNodeInfo interface{}
 }
 
-// BTClassroomInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTClassroomInfo wrapped in BTGlobalTreeNodeInfo
-func (o *BTClassroomInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
-	return &BTGlobalTreeNodeInfo{o}
-}
-
 // BTProjectInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTProjectInfo wrapped in BTGlobalTreeNodeInfo
 func (o *BTProjectInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
-	return &BTGlobalTreeNodeInfo{o}
-}
-
-// BTDocumentLabelInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentLabelInfo wrapped in BTGlobalTreeNodeInfo
-func (o *BTDocumentLabelInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
-	return &BTGlobalTreeNodeInfo{o}
-}
-
-// BTGlobalTreeMagicNodeInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTGlobalTreeMagicNodeInfo wrapped in BTGlobalTreeNodeInfo
-func (o *BTGlobalTreeMagicNodeInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
 	return &BTGlobalTreeNodeInfo{o}
 }
 
@@ -51,8 +36,43 @@ func (o *BTCloudStorageAccountInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeIn
 	return &BTGlobalTreeNodeInfo{o}
 }
 
+// BTDocumentProcessingInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentProcessingInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTDocumentProcessingInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
+// BTPublicationInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTPublicationInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTPublicationInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
 // BTDocumentSummaryInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentSummaryInfo wrapped in BTGlobalTreeNodeInfo
 func (o *BTDocumentSummaryInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
+// BTClassroomInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTClassroomInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTClassroomInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
+// BTDocumentLabelInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentLabelInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTDocumentLabelInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
+// BTGlobalTreeMagicNodeInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTGlobalTreeMagicNodeInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTGlobalTreeMagicNodeInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
+// BTDocumentInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTDocumentInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
+// BTDocumentSummarySearchInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentSummarySearchInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTDocumentSummarySearchInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
 	return &BTGlobalTreeNodeInfo{o}
 }
 
@@ -1028,6 +1048,62 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+	}
+
+	// check if the discriminator value is 'BTDocumentInfo'
+	if jsonDict["jsonType"] == "BTDocumentInfo" {
+		// try to unmarshal JSON data into BTDocumentInfo
+		var qr *BTDocumentInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDocumentProcessingInfo'
+	if jsonDict["jsonType"] == "BTDocumentProcessingInfo" {
+		// try to unmarshal JSON data into BTDocumentProcessingInfo
+		var qr *BTDocumentProcessingInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentProcessingInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDocumentSummarySearchInfo'
+	if jsonDict["jsonType"] == "BTDocumentSummarySearchInfo" {
+		// try to unmarshal JSON data into BTDocumentSummarySearchInfo
+		var qr *BTDocumentSummarySearchInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummarySearchInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPublicationInfo'
+	if jsonDict["jsonType"] == "BTPublicationInfo" {
+		// try to unmarshal JSON data into BTPublicationInfo
+		var qr *BTPublicationInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTPublicationInfo: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'classroom'

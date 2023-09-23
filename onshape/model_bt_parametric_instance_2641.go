@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -23,6 +23,11 @@ type BTParametricInstance2641 struct {
 
 // BTAssemblyPattern1974AsBTParametricInstance2641 is a convenience function that returns BTAssemblyPattern1974 wrapped in BTParametricInstance2641
 func (o *BTAssemblyPattern1974) AsBTParametricInstance2641() *BTParametricInstance2641 {
+	return &BTParametricInstance2641{o}
+}
+
+// BTParametricPartStudioInstance4374AsBTParametricInstance2641 is a convenience function that returns BTParametricPartStudioInstance4374 wrapped in BTParametricInstance2641
+func (o *BTParametricPartStudioInstance4374) AsBTParametricInstance2641() *BTParametricInstance2641 {
 	return &BTParametricInstance2641{o}
 }
 
@@ -746,6 +751,156 @@ func (o *BTParametricInstance2641) SetParametricInstance(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetParametricInstance(v)
+}
+
+// GetParametricOutputInstance returns the ParametricOutputInstance field value if set, zero value otherwise.
+func (o *BTParametricInstance2641) GetParametricOutputInstance() bool {
+	type getResult interface {
+		GetParametricOutputInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParametricOutputInstance()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetParametricOutputInstanceOk returns a tuple with the ParametricOutputInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricInstance2641) GetParametricOutputInstanceOk() (*bool, bool) {
+	type getResult interface {
+		GetParametricOutputInstanceOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParametricOutputInstanceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParametricOutputInstance returns a boolean if a field has been set.
+func (o *BTParametricInstance2641) HasParametricOutputInstance() bool {
+	type getResult interface {
+		HasParametricOutputInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParametricOutputInstance()
+	} else {
+		return false
+	}
+}
+
+// SetParametricOutputInstance gets a reference to the given bool and assigns it to the ParametricOutputInstance field.
+func (o *BTParametricInstance2641) SetParametricOutputInstance(v bool) {
+	type getResult interface {
+		SetParametricOutputInstance(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetParametricOutputInstance(v)
+}
+
+// GetParametricPartStudioChildInstance returns the ParametricPartStudioChildInstance field value if set, zero value otherwise.
+func (o *BTParametricInstance2641) GetParametricPartStudioChildInstance() bool {
+	type getResult interface {
+		GetParametricPartStudioChildInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParametricPartStudioChildInstance()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetParametricPartStudioChildInstanceOk returns a tuple with the ParametricPartStudioChildInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricInstance2641) GetParametricPartStudioChildInstanceOk() (*bool, bool) {
+	type getResult interface {
+		GetParametricPartStudioChildInstanceOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParametricPartStudioChildInstanceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParametricPartStudioChildInstance returns a boolean if a field has been set.
+func (o *BTParametricInstance2641) HasParametricPartStudioChildInstance() bool {
+	type getResult interface {
+		HasParametricPartStudioChildInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParametricPartStudioChildInstance()
+	} else {
+		return false
+	}
+}
+
+// SetParametricPartStudioChildInstance gets a reference to the given bool and assigns it to the ParametricPartStudioChildInstance field.
+func (o *BTParametricInstance2641) SetParametricPartStudioChildInstance(v bool) {
+	type getResult interface {
+		SetParametricPartStudioChildInstance(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetParametricPartStudioChildInstance(v)
+}
+
+// GetParametricPartStudioInstance returns the ParametricPartStudioInstance field value if set, zero value otherwise.
+func (o *BTParametricInstance2641) GetParametricPartStudioInstance() bool {
+	type getResult interface {
+		GetParametricPartStudioInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParametricPartStudioInstance()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetParametricPartStudioInstanceOk returns a tuple with the ParametricPartStudioInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricInstance2641) GetParametricPartStudioInstanceOk() (*bool, bool) {
+	type getResult interface {
+		GetParametricPartStudioInstanceOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParametricPartStudioInstanceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParametricPartStudioInstance returns a boolean if a field has been set.
+func (o *BTParametricInstance2641) HasParametricPartStudioInstance() bool {
+	type getResult interface {
+		HasParametricPartStudioInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParametricPartStudioInstance()
+	} else {
+		return false
+	}
+}
+
+// SetParametricPartStudioInstance gets a reference to the given bool and assigns it to the ParametricPartStudioInstance field.
+func (o *BTParametricInstance2641) SetParametricPartStudioInstance(v bool) {
+	type getResult interface {
+		SetParametricPartStudioInstance(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetParametricPartStudioInstance(v)
 }
 
 // GetPartInstance returns the PartInstance field value if set, zero value otherwise.
@@ -1486,6 +1641,20 @@ func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTParametricPartStudioInstance-4374'
+	if jsonDict["btType"] == "BTParametricPartStudioInstance-4374" {
+		// try to unmarshal JSON data into BTParametricPartStudioInstance4374
+		var qr *BTParametricPartStudioInstance4374
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParametricInstance2641 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParametricInstance2641 = nil
+			return fmt.Errorf("Failed to unmarshal BTParametricInstance2641 as BTParametricPartStudioInstance4374: %s", err.Error())
+		}
+	}
+
 	var qtx *base_BTParametricInstance2641
 	err = json.Unmarshal(data, &qtx)
 	if err == nil {
@@ -1552,34 +1721,37 @@ func (v *NullableBTParametricInstance2641) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTParametricInstance2641 struct {
-	BtType                      *string                               `json:"btType,omitempty"`
-	ImportMicroversion          *string                               `json:"importMicroversion,omitempty"`
-	NodeId                      *string                               `json:"nodeId,omitempty"`
-	AssemblyInstance            *bool                                 `json:"assemblyInstance,omitempty"`
-	AssemblyPattern             *bool                                 `json:"assemblyPattern,omitempty"`
-	AssemblyReplicate           *bool                                 `json:"assemblyReplicate,omitempty"`
-	ClonedInstance              *bool                                 `json:"clonedInstance,omitempty"`
-	CustomData                  *map[string]BTReferenceCustomData1551 `json:"customData,omitempty"`
-	InstanceFolder              *bool                                 `json:"instanceFolder,omitempty"`
-	InstanceName                *string                               `json:"instanceName,omitempty"`
-	IsFlattenedPart             *bool                                 `json:"isFlattenedPart,omitempty"`
-	Locked                      *bool                                 `json:"locked,omitempty"`
-	MicroversionId              *BTMicroversionId366                  `json:"microversionId,omitempty"`
-	ParametricInstance          *bool                                 `json:"parametricInstance,omitempty"`
-	PartInstance                *bool                                 `json:"partInstance,omitempty"`
-	Releasable                  *bool                                 `json:"releasable,omitempty"`
-	RevisionCustomData          *BTRevisionCustomData2090             `json:"revisionCustomData,omitempty"`
-	StandardContent             *bool                                 `json:"standardContent,omitempty"`
-	StandardContentParametersId *string                               `json:"standardContentParametersId,omitempty"`
-	Suppressed                  *bool                                 `json:"suppressed,omitempty"`
-	SuppressedFieldIndex        *int32                                `json:"suppressedFieldIndex,omitempty"`
-	SuppressionConfigured       *bool                                 `json:"suppressionConfigured,omitempty"`
-	SuppressionState            *BTMSuppressionState1924              `json:"suppressionState,omitempty"`
-	ValidRevisionReference      *bool                                 `json:"validRevisionReference,omitempty"`
-	Version                     *int32                                `json:"version,omitempty"`
-	Feature                     *BTMAssemblyFeature887                `json:"feature,omitempty"`
-	FeatureId                   *string                               `json:"featureId,omitempty"`
-	InstanceControlNodes        []BTInstanceControlNode750            `json:"instanceControlNodes,omitempty"`
+	BtType                            *string                               `json:"btType,omitempty"`
+	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
+	NodeId                            *string                               `json:"nodeId,omitempty"`
+	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
+	AssemblyPattern                   *bool                                 `json:"assemblyPattern,omitempty"`
+	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
+	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
+	CustomData                        *map[string]BTReferenceCustomData1551 `json:"customData,omitempty"`
+	InstanceFolder                    *bool                                 `json:"instanceFolder,omitempty"`
+	InstanceName                      *string                               `json:"instanceName,omitempty"`
+	IsFlattenedPart                   *bool                                 `json:"isFlattenedPart,omitempty"`
+	Locked                            *bool                                 `json:"locked,omitempty"`
+	MicroversionId                    *BTMicroversionId366                  `json:"microversionId,omitempty"`
+	ParametricInstance                *bool                                 `json:"parametricInstance,omitempty"`
+	ParametricOutputInstance          *bool                                 `json:"parametricOutputInstance,omitempty"`
+	ParametricPartStudioChildInstance *bool                                 `json:"parametricPartStudioChildInstance,omitempty"`
+	ParametricPartStudioInstance      *bool                                 `json:"parametricPartStudioInstance,omitempty"`
+	PartInstance                      *bool                                 `json:"partInstance,omitempty"`
+	Releasable                        *bool                                 `json:"releasable,omitempty"`
+	RevisionCustomData                *BTRevisionCustomData2090             `json:"revisionCustomData,omitempty"`
+	StandardContent                   *bool                                 `json:"standardContent,omitempty"`
+	StandardContentParametersId       *string                               `json:"standardContentParametersId,omitempty"`
+	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
+	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
+	SuppressionConfigured             *bool                                 `json:"suppressionConfigured,omitempty"`
+	SuppressionState                  *BTMSuppressionState1924              `json:"suppressionState,omitempty"`
+	ValidRevisionReference            *bool                                 `json:"validRevisionReference,omitempty"`
+	Version                           *int32                                `json:"version,omitempty"`
+	Feature                           *BTMAssemblyFeature887                `json:"feature,omitempty"`
+	FeatureId                         *string                               `json:"featureId,omitempty"`
+	InstanceControlNodes              []BTInstanceControlNode750            `json:"instanceControlNodes,omitempty"`
 }
 
 // Newbase_BTParametricInstance2641 instantiates a new base_BTParametricInstance2641 object
@@ -2045,6 +2217,102 @@ func (o *base_BTParametricInstance2641) HasParametricInstance() bool {
 // SetParametricInstance gets a reference to the given bool and assigns it to the ParametricInstance field.
 func (o *base_BTParametricInstance2641) SetParametricInstance(v bool) {
 	o.ParametricInstance = &v
+}
+
+// GetParametricOutputInstance returns the ParametricOutputInstance field value if set, zero value otherwise.
+func (o *base_BTParametricInstance2641) GetParametricOutputInstance() bool {
+	if o == nil || o.ParametricOutputInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParametricOutputInstance
+}
+
+// GetParametricOutputInstanceOk returns a tuple with the ParametricOutputInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParametricInstance2641) GetParametricOutputInstanceOk() (*bool, bool) {
+	if o == nil || o.ParametricOutputInstance == nil {
+		return nil, false
+	}
+	return o.ParametricOutputInstance, true
+}
+
+// HasParametricOutputInstance returns a boolean if a field has been set.
+func (o *base_BTParametricInstance2641) HasParametricOutputInstance() bool {
+	if o != nil && o.ParametricOutputInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricOutputInstance gets a reference to the given bool and assigns it to the ParametricOutputInstance field.
+func (o *base_BTParametricInstance2641) SetParametricOutputInstance(v bool) {
+	o.ParametricOutputInstance = &v
+}
+
+// GetParametricPartStudioChildInstance returns the ParametricPartStudioChildInstance field value if set, zero value otherwise.
+func (o *base_BTParametricInstance2641) GetParametricPartStudioChildInstance() bool {
+	if o == nil || o.ParametricPartStudioChildInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParametricPartStudioChildInstance
+}
+
+// GetParametricPartStudioChildInstanceOk returns a tuple with the ParametricPartStudioChildInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParametricInstance2641) GetParametricPartStudioChildInstanceOk() (*bool, bool) {
+	if o == nil || o.ParametricPartStudioChildInstance == nil {
+		return nil, false
+	}
+	return o.ParametricPartStudioChildInstance, true
+}
+
+// HasParametricPartStudioChildInstance returns a boolean if a field has been set.
+func (o *base_BTParametricInstance2641) HasParametricPartStudioChildInstance() bool {
+	if o != nil && o.ParametricPartStudioChildInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricPartStudioChildInstance gets a reference to the given bool and assigns it to the ParametricPartStudioChildInstance field.
+func (o *base_BTParametricInstance2641) SetParametricPartStudioChildInstance(v bool) {
+	o.ParametricPartStudioChildInstance = &v
+}
+
+// GetParametricPartStudioInstance returns the ParametricPartStudioInstance field value if set, zero value otherwise.
+func (o *base_BTParametricInstance2641) GetParametricPartStudioInstance() bool {
+	if o == nil || o.ParametricPartStudioInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParametricPartStudioInstance
+}
+
+// GetParametricPartStudioInstanceOk returns a tuple with the ParametricPartStudioInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParametricInstance2641) GetParametricPartStudioInstanceOk() (*bool, bool) {
+	if o == nil || o.ParametricPartStudioInstance == nil {
+		return nil, false
+	}
+	return o.ParametricPartStudioInstance, true
+}
+
+// HasParametricPartStudioInstance returns a boolean if a field has been set.
+func (o *base_BTParametricInstance2641) HasParametricPartStudioInstance() bool {
+	if o != nil && o.ParametricPartStudioInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricPartStudioInstance gets a reference to the given bool and assigns it to the ParametricPartStudioInstance field.
+func (o *base_BTParametricInstance2641) SetParametricPartStudioInstance(v bool) {
+	o.ParametricPartStudioInstance = &v
 }
 
 // GetPartInstance returns the PartInstance field value if set, zero value otherwise.
@@ -2538,6 +2806,15 @@ func (o base_BTParametricInstance2641) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametricInstance != nil {
 		toSerialize["parametricInstance"] = o.ParametricInstance
+	}
+	if o.ParametricOutputInstance != nil {
+		toSerialize["parametricOutputInstance"] = o.ParametricOutputInstance
+	}
+	if o.ParametricPartStudioChildInstance != nil {
+		toSerialize["parametricPartStudioChildInstance"] = o.ParametricPartStudioChildInstance
+	}
+	if o.ParametricPartStudioInstance != nil {
+		toSerialize["parametricPartStudioInstance"] = o.ParametricPartStudioInstance
 	}
 	if o.PartInstance != nil {
 		toSerialize["partInstance"] = o.PartInstance

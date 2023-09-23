@@ -14,8 +14,6 @@ Method | HTTP request | Description
 
 Get all items in a publication.
 
-
-
 ### Example
 
 ```go

@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,6 +18,7 @@ import (
 // BTBExportModelParams struct for BTBExportModelParams
 type BTBExportModelParams struct {
 	AngleTolerance               *float64 `json:"angleTolerance,omitempty"`
+	BatchAllFlatPatterns         *bool    `json:"batchAllFlatPatterns,omitempty"`
 	BatchFlatPatterns            *bool    `json:"batchFlatPatterns,omitempty"`
 	ChordTolerance               *float64 `json:"chordTolerance,omitempty"`
 	CloudObjectId                *string  `json:"cloudObjectId,omitempty"`
@@ -118,6 +119,38 @@ func (o *BTBExportModelParams) HasAngleTolerance() bool {
 // SetAngleTolerance gets a reference to the given float64 and assigns it to the AngleTolerance field.
 func (o *BTBExportModelParams) SetAngleTolerance(v float64) {
 	o.AngleTolerance = &v
+}
+
+// GetBatchAllFlatPatterns returns the BatchAllFlatPatterns field value if set, zero value otherwise.
+func (o *BTBExportModelParams) GetBatchAllFlatPatterns() bool {
+	if o == nil || o.BatchAllFlatPatterns == nil {
+		var ret bool
+		return ret
+	}
+	return *o.BatchAllFlatPatterns
+}
+
+// GetBatchAllFlatPatternsOk returns a tuple with the BatchAllFlatPatterns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBExportModelParams) GetBatchAllFlatPatternsOk() (*bool, bool) {
+	if o == nil || o.BatchAllFlatPatterns == nil {
+		return nil, false
+	}
+	return o.BatchAllFlatPatterns, true
+}
+
+// HasBatchAllFlatPatterns returns a boolean if a field has been set.
+func (o *BTBExportModelParams) HasBatchAllFlatPatterns() bool {
+	if o != nil && o.BatchAllFlatPatterns != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBatchAllFlatPatterns gets a reference to the given bool and assigns it to the BatchAllFlatPatterns field.
+func (o *BTBExportModelParams) SetBatchAllFlatPatterns(v bool) {
+	o.BatchAllFlatPatterns = &v
 }
 
 // GetBatchFlatPatterns returns the BatchFlatPatterns field value if set, zero value otherwise.
@@ -1676,6 +1709,9 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AngleTolerance != nil {
 		toSerialize["angleTolerance"] = o.AngleTolerance
+	}
+	if o.BatchAllFlatPatterns != nil {
+		toSerialize["batchAllFlatPatterns"] = o.BatchAllFlatPatterns
 	}
 	if o.BatchFlatPatterns != nil {
 		toSerialize["batchFlatPatterns"] = o.BatchFlatPatterns

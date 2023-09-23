@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.169.22266-e2d421ffb3ea
+API version: 1.170.22862-4427d042758b
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -44,7 +44,9 @@ func (r ApiAddPartStudioFeatureRequest) Execute() (*BTFeatureDefinitionResponse1
 }
 
 /*
-AddPartStudioFeature Add feature to the feature list for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+AddPartStudioFeature Add a feature to the Part Studio's Feature List.
+
+See Feature List APIs in the [developer documentation](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -202,7 +204,7 @@ func (r ApiComparePartStudiosRequest) Execute() (*BTRootDiffInfo, *http.Response
 }
 
 /*
-ComparePartStudios Compare Part Studios by document ID, workspace or version or microversion ID, and tab ID.
+ComparePartStudios Get the differences between two Part Studios in a single document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -344,7 +346,7 @@ func (r ApiCreatePartStudioRequest) Execute() (*BTDocumentElementInfo, *http.Res
 }
 
 /*
-CreatePartStudio Create Part Studio by document ID and workspace ID.
+CreatePartStudio Create a new Part Studio in a document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -469,7 +471,7 @@ func (r ApiCreatePartStudioTranslationRequest) Execute() (*BTTranslationRequestI
 }
 
 /*
-CreatePartStudioTranslation Create Part Studio translation by document ID, workspace or version ID, and tab ID.
+CreatePartStudioTranslation Translate (export) a Part Studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -594,7 +596,7 @@ func (r ApiDeletePartStudioFeatureRequest) Execute() (*BTFeatureApiBase1430, *ht
 }
 
 /*
-DeletePartStudioFeature Delete feature by document ID, workspace ID, tab ID, and feature ID.
+DeletePartStudioFeature Delete a Part Studio feature.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -747,7 +749,7 @@ func (r ApiEvalFeatureScriptRequest) Execute() (*BTFeatureScriptEvalResponse1859
 }
 
 /*
-EvalFeatureScript Evaluate FeatureScript for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+EvalFeatureScript Evaluate the FeatureScript snippet for a Part Studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -923,7 +925,9 @@ func (r ApiExportParasolidRequest) Execute() (*http.Response, error) {
 }
 
 /*
-ExportParasolid Export Part Studio to Parasolid by document ID, workspace or version or microversion ID, and tab ID.
+ExportParasolid Export the Part Studio as a Parasolid file.
+
+Returns a 307 redirect.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -1115,7 +1119,7 @@ func (r ApiExportPartStudioGltfRequest) Execute() (*HttpFile, *http.Response, er
 }
 
 /*
-ExportPartStudioGltf Export GLTF representation for parts in a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+ExportPartStudioGltf Export the Part Studio as a glTF file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1357,7 +1361,7 @@ func (r ApiExportPartStudioStlRequest) Execute() (*http.Response, error) {
 }
 
 /*
-ExportPartStudioStl Export Part Studio to STL by document ID, workspace or version or microversion ID, and tab ID.
+ExportPartStudioStl Export the Part Studio as an STL file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -1516,7 +1520,7 @@ func (r ApiGetFeatureScriptRepresentationRequest) Execute() (*BTPModule234, *htt
 }
 
 /*
-GetFeatureScriptRepresentation Retrieve FeatureScript representation of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+GetFeatureScriptRepresentation Get the FeatureScript representation of a Part Studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -1684,7 +1688,7 @@ func (r ApiGetFeatureScriptTableRequest) Execute() (*BTApiTableList1223, *http.R
 }
 
 /*
-GetFeatureScriptTable Retrieve FeatureScript table of the Part Studio or part by document ID, workspace or version or microversion ID, and tab ID.
+GetFeatureScriptTable Compute and return a FeatureScript table for a Part Studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -1878,7 +1882,7 @@ func (r ApiGetPartStudioBodyDetailsRequest) Execute() (*BTExportModelBodiesRespo
 }
 
 /*
-GetPartStudioBodyDetails Retrieve an array of body details by document ID, workspace or version or microversion ID, and tab ID.
+GetPartStudioBodyDetails Get the body details for a Part Studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2058,7 +2062,7 @@ func (r ApiGetPartStudioBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *ht
 }
 
 /*
-GetPartStudioBoundingBoxes Retrieve an array of Mass properties of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+GetPartStudioBoundingBoxes Get the bounding boxes for a Part Studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -2247,7 +2251,10 @@ func (r ApiGetPartStudioEdgesRequest) Execute() (*BTExportTessellatedEdgesRespon
 }
 
 /*
-GetPartStudioEdges Retrieve tessellated edges of the parts in the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+GetPartStudioEdges Get a list of all edges in a Part Studio.
+
+Returns the edges as tessellated data and includes display data.
+Coordinates are in meters (m).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2515,7 +2522,9 @@ func (r ApiGetPartStudioFacesRequest) Execute() (*BTExportTessellatedFacesRespon
 }
 
 /*
-GetPartStudioFaces Method for GetPartStudioFaces
+GetPartStudioFaces Get a list of all faces in a Part Studio.
+
+Coordinates are in meters (m).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -2702,7 +2711,7 @@ func (r ApiGetPartStudioFeatureSpecsRequest) Execute() (*BTFeatureSpecsResponse6
 }
 
 /*
-GetPartStudioFeatureSpecs Retrieve feature specifications of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+GetPartStudioFeatureSpecs Get the specs for a Part Studio feature.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -3065,7 +3074,9 @@ func (r ApiGetPartStudioMassPropertiesRequest) Execute() (*BTMassPropertiesBulkI
 }
 
 /*
-GetPartStudioMassProperties Retrieve mass properties of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+GetPartStudioMassProperties Get the mass properties for a Part Studio.
+
+If three mass properties are returned, the first is the calculated mass; the second and third are the minimum and maximum possible values considering tolerance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -3231,7 +3242,7 @@ func (r ApiGetPartStudioNamedViewsRequest) Execute() (*BTNamedViewsInfo, *http.R
 }
 
 /*
-GetPartStudioNamedViews Method for GetPartStudioNamedViews
+GetPartStudioNamedViews Get a list of all named views that exist in the Part Studio.
 
 Returns a map from view name to view data for the given element
 
@@ -3432,7 +3443,7 @@ func (r ApiGetPartStudioShadedViewsRequest) Execute() (*BTShadedViewsInfo, *http
 }
 
 /*
-GetPartStudioShadedViews Retrieve shaded views of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+GetPartStudioShadedViews Get a list of shaded views for a Part Studio.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -3591,7 +3602,10 @@ func (r ApiTranslateIdsRequest) Execute() (*BTIdTranslationInfo, *http.Response,
 }
 
 /*
-TranslateIds Create Part Studio ID translation by document ID, workspace or version or microversion ID, and tab ID.
+TranslateIds Find corresponding deterministic IDs from a source document microversion at the target version.
+
+* Deterministic IDs are only valid for one microversion.
+* This maps deterministic IDs between microversions in an attempt to find the corresponding entities in each version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -3722,7 +3736,9 @@ func (r ApiUpdateFeaturesRequest) Execute() (*BTUpdateFeaturesResponse1333, *htt
 }
 
 /*
-UpdateFeatures Update features by document ID, workspace ID, and tab ID.
+UpdateFeatures Update existing features' parameters.
+
+You can update multiple features with a single call.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -3848,7 +3864,7 @@ func (r ApiUpdatePartStudioFeatureRequest) Execute() (*BTFeatureDefinitionRespon
 }
 
 /*
-UpdatePartStudioFeature Update feature by document ID, workspace ID, tab ID, and feature ID.
+UpdatePartStudioFeature Update the definition of a Part Studio feature.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -3976,7 +3992,9 @@ func (r ApiUpdateRollbackRequest) Execute() (*BTSetFeatureRollbackResponse1042, 
 }
 
 /*
-UpdateRollback Update feature rollback by document ID, workspace ID, and tab ID.
+UpdateRollback Move the Feature List rollback bar in the Part Studio.
+
+Set to -1 to move the rollback bar to the end of the list.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.

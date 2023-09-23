@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddFeature**](AssemblyApi.md#AddFeature) | **Post** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the assembly feature list.
 [**CreateAssembly**](AssemblyApi.md#CreateAssembly) | **Post** /assemblies/d/{did}/w/{wid} | Create a new assembly tab in the document.
-[**CreateInstance**](AssemblyApi.md#CreateInstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Insert an instance of a part, sketch, assembly, or Part Studio into a document.
+[**CreateInstance**](AssemblyApi.md#CreateInstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
 [**DeleteFeature**](AssemblyApi.md#DeleteFeature) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a feature from an assembly.
 [**DeleteInstance**](AssemblyApi.md#DeleteInstance) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid} | Delete an instance of an assembly.
 [**GetAssemblyBoundingBoxes**](AssemblyApi.md#GetAssemblyBoundingBoxes) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get bounding box information for the specified assembly.
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 > []BTOccurrence74 CreateInstance(ctx, did, wid, eid).BTAssemblyInstanceDefinitionParams(bTAssemblyInstanceDefinitionParams).Execute()
 
-Insert an instance of a part, sketch, assembly, or Part Studio into a document.
+Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
 
 
 

@@ -5,15 +5,15 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetVEOPStandardContentMetadata**](MetadataApi.md#GetVEOPStandardContentMetadata) | **Get** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid} | Get the metadata for a standard content part.
-[**GetWMVEMetadata**](MetadataApi.md#GetWMVEMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Get the metadata for an element in a document, version or micro version.
-[**GetWMVEPMetadata**](MetadataApi.md#GetWMVEPMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Get the metadata for a part in a document workspace or version or microversion, element.
-[**GetWMVEPsMetadata**](MetadataApi.md#GetWMVEPsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p | Get the metadata for all parts in a document workspace or version or microversion, element and configuration.
-[**GetWMVEsMetadata**](MetadataApi.md#GetWMVEsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e | Get the metadata for all elements in a document with given document id and version or microversion id.
-[**GetWVMetadata**](MetadataApi.md#GetWVMetadata) | **Get** /metadata/d/{did}/{wv}/{wvid} | Get the metadata for a workspace or version in a document.
-[**UpdateVEOPStandardContentPartMetadata**](MetadataApi.md#UpdateVEOPStandardContentPartMetadata) | **Post** /metadata/standardcontent/d/{did} | Update the metadata in a document for a standard content part.
-[**UpdateWVEMetadata**](MetadataApi.md#UpdateWVEMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Update the metadata for an element in a document workspace or version
-[**UpdateWVEPMetadata**](MetadataApi.md#UpdateWVEPMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Update the metadata for a part in a document workspace or version or microversion, element.
-[**UpdateWVMetadata**](MetadataApi.md#UpdateWVMetadata) | **Post** /metadata/d/{did}/{wv}/{wvid} | Update the metadata for a workspace or version in a document.
+[**GetWMVEMetadata**](MetadataApi.md#GetWMVEMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Get the metadata for an element.
+[**GetWMVEPMetadata**](MetadataApi.md#GetWMVEPMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Get the metadata for a part.
+[**GetWMVEPsMetadata**](MetadataApi.md#GetWMVEPsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p | Get the metadata for all parts in a document.
+[**GetWMVEsMetadata**](MetadataApi.md#GetWMVEsMetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e | Get the metadata for all elements in a document.
+[**GetWVMetadata**](MetadataApi.md#GetWVMetadata) | **Get** /metadata/d/{did}/{wv}/{wvid} | Get the metadata for a workspace or version.
+[**UpdateVEOPStandardContentPartMetadata**](MetadataApi.md#UpdateVEOPStandardContentPartMetadata) | **Post** /metadata/standardcontent/d/{did} | Update the metadata for a standard content part.
+[**UpdateWVEMetadata**](MetadataApi.md#UpdateWVEMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Update the metadata for an element.
+[**UpdateWVEPMetadata**](MetadataApi.md#UpdateWVEPMetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Update the metadata for a part.
+[**UpdateWVMetadata**](MetadataApi.md#UpdateWVMetadata) | **Post** /metadata/d/{did}/{wv}/{wvid} | Update the metadata for a workspace or version.
 
 
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 > BTMetadataObjectInfo GetWMVEMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
 
-Get the metadata for an element in a document, version or micro version.
+Get the metadata for an element.
 
 
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 > BTMetadataObjectInfo GetWMVEPMetadata(ctx, did, wvm, wvmid, eid, iden, pid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
 
-Get the metadata for a part in a document workspace or version or microversion, element.
+Get the metadata for a part.
 
 
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 > BTMetadataObjectListInfoBTMetadataPartInfo GetWMVEPsMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
 
-Get the metadata for all parts in a document workspace or version or microversion, element and configuration.
+Get the metadata for all parts in a document.
 
 
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 > BTMetadataObjectListInfoBTMetadataElementInfo GetWMVEsMetadata(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
 
-Get the metadata for all elements in a document with given document id and version or microversion id.
+Get the metadata for all elements in a document.
 
 
 
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 > BTMetadataObjectInfo GetWVMetadata(ctx, did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
 
-Get the metadata for a workspace or version in a document.
+Get the metadata for a workspace or version.
 
 
 
@@ -571,7 +571,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdateVEOPStandardContentPartMetadata(ctx, did).LinkDocumentId(linkDocumentId).Body(body).Execute()
 
-Update the metadata in a document for a standard content part.
+Update the metadata for a standard content part.
 
 
 
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdateWVEMetadata(ctx, did, wvm, wvmid, eid).Body(body).Configuration(configuration).Execute()
 
-Update the metadata for an element in a document workspace or version
+Update the metadata for an element.
 
 
 
@@ -728,7 +728,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdateWVEPMetadata(ctx, did, wvm, wvmid, eid, iden, pid).Body(body).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).Execute()
 
-Update the metadata for a part in a document workspace or version or microversion, element.
+Update the metadata for a part.
 
 
 
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdateWVMetadata(ctx, did, wv, wvid).Body(body).Execute()
 
-Update the metadata for a workspace or version in a document.
+Update the metadata for a workspace or version.
 
 
 
