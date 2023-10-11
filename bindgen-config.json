@@ -10,10 +10,6 @@
     "customGeneratorUrl": "https://github.com/onshape-public/openapi-utilities/raw/main/go-oapi-codegen/release/go-oapi-codegen-latest.jar",
     "preprocess": [
       {
-        "key": "paths['/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodematrices'].get.parameters[7]",
-        "type": "remove"
-      },
-      {
         "key": "paths['/appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}'].post.requestBody.content['multipart/form-data'].schema.properties.file.type",
         "type": "update",
         "value": "string"
@@ -54,7 +50,11 @@
               "DocumentOpenEventInfo": "#/components/schemas/BTDocumentOpenEventParams"
             }
           },
-          "properties": { "jsonType": { "type":"string" } }
+          "properties": {
+            "jsonType": {
+              "type": "string"
+            }
+          }
         }
       },
       {
@@ -121,6 +121,22 @@
             ]
           }
         }
+      },
+      {
+        "key": "components.schemas.BTDocumentInfo.discriminator.mapping.document",
+        "type": "remove"
+      },
+      {
+        "key": "components.schemas.BTDocumentSummaryInfo.discriminator.mapping['document-summary']",
+        "type": "remove"
+      },
+      {
+        "key": "components.schemas.BTUserInfo.discriminator.mapping.userinfo",
+        "type": "remove"
+      },
+      {
+        "key": "components.schemas.BTUserSummaryInfo.discriminator.mapping['user-summary']",
+        "type": "remove"
       }
     ]
   }
