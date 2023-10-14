@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24027-dfe4b3143653
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -21,24 +21,25 @@ type BTMetadataObjectType string
 
 // List of BTMetadataObjectType
 const (
-	BTMetadataObjectTypeGlobal         BTMetadataObjectType = "GLOBAL"
-	BTMetadataObjectTypeDocument       BTMetadataObjectType = "DOCUMENT"
-	BTMetadataObjectTypePart           BTMetadataObjectType = "PART"
-	BTMetadataObjectTypeAssembly       BTMetadataObjectType = "ASSEMBLY"
-	BTMetadataObjectTypeDrawing        BTMetadataObjectType = "DRAWING"
-	BTMetadataObjectTypePartStudio     BTMetadataObjectType = "PART_STUDIO"
-	BTMetadataObjectTypeBlobElement    BTMetadataObjectType = "BLOB_ELEMENT"
-	BTMetadataObjectTypeAppElement     BTMetadataObjectType = "APP_ELEMENT"
-	BTMetadataObjectTypeVersion        BTMetadataObjectType = "VERSION"
-	BTMetadataObjectTypeWorkspace      BTMetadataObjectType = "WORKSPACE"
-	BTMetadataObjectTypeProject        BTMetadataObjectType = "PROJECT"
-	BTMetadataObjectTypeItem           BTMetadataObjectType = "ITEM"
-	BTMetadataObjectTypeFeatureStudio  BTMetadataObjectType = "FEATURE_STUDIO"
-	BTMetadataObjectTypeChangeRequest  BTMetadataObjectType = "CHANGE_REQUEST"
-	BTMetadataObjectTypeTask           BTMetadataObjectType = "TASK"
-	BTMetadataObjectTypeChangeOrder    BTMetadataObjectType = "CHANGE_ORDER"
-	BTMetadataObjectTypeChangeTask     BTMetadataObjectType = "CHANGE_TASK"
-	BTMetadataObjectTypeVariableStudio BTMetadataObjectType = "VARIABLE_STUDIO"
+	BTMetadataObjectTypeGlobal             BTMetadataObjectType = "GLOBAL"
+	BTMetadataObjectTypeDocument           BTMetadataObjectType = "DOCUMENT"
+	BTMetadataObjectTypePart               BTMetadataObjectType = "PART"
+	BTMetadataObjectTypeAssembly           BTMetadataObjectType = "ASSEMBLY"
+	BTMetadataObjectTypeDrawing            BTMetadataObjectType = "DRAWING"
+	BTMetadataObjectTypePartStudio         BTMetadataObjectType = "PART_STUDIO"
+	BTMetadataObjectTypeBlobElement        BTMetadataObjectType = "BLOB_ELEMENT"
+	BTMetadataObjectTypeAppElement         BTMetadataObjectType = "APP_ELEMENT"
+	BTMetadataObjectTypeVersion            BTMetadataObjectType = "VERSION"
+	BTMetadataObjectTypeWorkspace          BTMetadataObjectType = "WORKSPACE"
+	BTMetadataObjectTypeProject            BTMetadataObjectType = "PROJECT"
+	BTMetadataObjectTypeItem               BTMetadataObjectType = "ITEM"
+	BTMetadataObjectTypeFeatureStudio      BTMetadataObjectType = "FEATURE_STUDIO"
+	BTMetadataObjectTypeChangeRequest      BTMetadataObjectType = "CHANGE_REQUEST"
+	BTMetadataObjectTypeTask               BTMetadataObjectType = "TASK"
+	BTMetadataObjectTypeChangeOrder        BTMetadataObjectType = "CHANGE_ORDER"
+	BTMetadataObjectTypeChangeTask         BTMetadataObjectType = "CHANGE_TASK"
+	BTMetadataObjectTypeVariableStudio     BTMetadataObjectType = "VARIABLE_STUDIO"
+	BTMetadataObjectTypeDrawingAnnotations BTMetadataObjectType = "DRAWING_ANNOTATIONS"
 )
 
 // All allowed values of BTMetadataObjectType enum
@@ -61,6 +62,7 @@ var AllowedBTMetadataObjectTypeEnumValues = []BTMetadataObjectType{
 	"CHANGE_ORDER",
 	"CHANGE_TASK",
 	"VARIABLE_STUDIO",
+	"DRAWING_ANNOTATIONS",
 }
 
 func (v *BTMetadataObjectType) UnmarshalJSON(src []byte) error {

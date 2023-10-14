@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AssemblyCrossHighlightItems** | Pointer to [**[]BTTableAssemblyCrossHighlightDataItem2659**](BTTableAssemblyCrossHighlightDataItem2659.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**AssemblyCrossHighlightItems** | Pointer to [**[]BTTableAssemblyCrossHighlightDataItem2659**](BTTableAssemblyCrossHighlightDataItem2659.md) |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewBTTableAssemblyCrossHighlightData2675WithDefaults instantiates a new BTTableAssemblyCrossHighlightData2675 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAssemblyCrossHighlightItems
-
-`func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItems() []BTTableAssemblyCrossHighlightDataItem2659`
-
-GetAssemblyCrossHighlightItems returns the AssemblyCrossHighlightItems field if non-nil, zero value otherwise.
-
-### GetAssemblyCrossHighlightItemsOk
-
-`func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItemsOk() (*[]BTTableAssemblyCrossHighlightDataItem2659, bool)`
-
-GetAssemblyCrossHighlightItemsOk returns a tuple with the AssemblyCrossHighlightItems field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAssemblyCrossHighlightItems
-
-`func (o *BTTableAssemblyCrossHighlightData2675) SetAssemblyCrossHighlightItems(v []BTTableAssemblyCrossHighlightDataItem2659)`
-
-SetAssemblyCrossHighlightItems sets AssemblyCrossHighlightItems field to given value.
-
-### HasAssemblyCrossHighlightItems
-
-`func (o *BTTableAssemblyCrossHighlightData2675) HasAssemblyCrossHighlightItems() bool`
-
-HasAssemblyCrossHighlightItems returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -75,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTTableAssemblyCrossHighlightData2675) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAssemblyCrossHighlightItems
+
+`func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItems() []BTTableAssemblyCrossHighlightDataItem2659`
+
+GetAssemblyCrossHighlightItems returns the AssemblyCrossHighlightItems field if non-nil, zero value otherwise.
+
+### GetAssemblyCrossHighlightItemsOk
+
+`func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItemsOk() (*[]BTTableAssemblyCrossHighlightDataItem2659, bool)`
+
+GetAssemblyCrossHighlightItemsOk returns a tuple with the AssemblyCrossHighlightItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssemblyCrossHighlightItems
+
+`func (o *BTTableAssemblyCrossHighlightData2675) SetAssemblyCrossHighlightItems(v []BTTableAssemblyCrossHighlightDataItem2659)`
+
+SetAssemblyCrossHighlightItems sets AssemblyCrossHighlightItems field to given value.
+
+### HasAssemblyCrossHighlightItems
+
+`func (o *BTTableAssemblyCrossHighlightData2675) HasAssemblyCrossHighlightItems() bool`
+
+HasAssemblyCrossHighlightItems returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

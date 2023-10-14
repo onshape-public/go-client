@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24027-dfe4b3143653
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -40,13 +40,13 @@ func (r ApiGetUserSettingsRequest) Execute() (*BTUserSettingsInfo, *http.Respons
 }
 
 /*
-GetUserSettings Get the default user settings that are used when the user creates a new document.
+GetUserSettings Get the user settings for any user in your organization (admins only).
 
 * Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`.
 * For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action.
-* Possible modifier keys include SHIFT and CTRL.
-* Possible mouse buttons include MMB (middle), RMB (right), and SCROLLWHEEL.
-* The scroll wheel is used in zoom operations, where scrolling forward causes the view to zoom in unless `reverseScrollWheelZoomDirection` is set to true.
+* Possible modifier keys include `SHIFT` and `CTRL`.
+* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`.
+* Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param uid
@@ -162,13 +162,14 @@ func (r ApiGetUserSettingsCurrentLoggedInUserRequest) Execute() (*BTUserSettings
 }
 
 /*
-GetUserSettingsCurrentLoggedInUser Get the user settings for currently signed in user.
+GetUserSettingsCurrentLoggedInUser Get the user settings for the signed-in user (i.e., you) for the current session.
 
+* Non-admins can call this API for their own user ID.
 * Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`.
 * For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action.
-* Possible modifier keys include SHIFT and CTRL.
-* Possible mouse buttons include MMB (middle), RMB (right), and SCROLLWHEEL.
-* The scroll wheel is used in zoom operations, where scrolling forward causes the view to zoom in unless `reverseScrollWheelZoomDirection` is set to true.
+* Possible modifier keys include `SHIFT` and `CTRL`.
+* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`.
+* Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetUserSettingsCurrentLoggedInUserRequest
@@ -281,7 +282,9 @@ func (r ApiSessionRequest) Execute() (map[string]interface{}, *http.Response, er
 }
 
 /*
-Session Returned information depends on caller's OAuth2ReadPll scope.
+Session Authenticate a user's Onshape credentials, and create a session.
+
+Returned information depends on caller's `OAuth2ReadPll` scope.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiSessionRequest
@@ -390,9 +393,9 @@ func (r ApiSessionInfoRequest) Execute() (*BTUserOAuth2SummaryInfo, *http.Respon
 }
 
 /*
-SessionInfo Check to see if a user is signed in to a current session.
+SessionInfo Get the session information for an authenticated (signed-in) user.
 
-Returned information depends on caller's OAuth2ReadPll scope.
+Returned information depends on caller's `OAuth2ReadPll` scope.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiSessionInfoRequest
