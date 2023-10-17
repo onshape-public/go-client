@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **FromUserId** | Pointer to **string** |  | [optional] 
 **GetyAxisIsUp** | Pointer to **bool** |  | [optional] 
 **Grouping** | Pointer to **bool** |  | [optional] 
+**HideInspectionItems** | Pointer to **bool** |  | [optional] 
 **IgnoreExportRulesForContents** | Pointer to **bool** |  | [optional] 
 **ImageHeight** | Pointer to **int32** |  | [optional] 
 **ImageWidth** | Pointer to **int32** |  | [optional] 
@@ -69,6 +70,7 @@ Name | Type | Description | Notes
 **StepVersionString** | Pointer to **string** |  | [optional] 
 **StoreInDocument** | Pointer to **bool** |  | [optional] 
 **TextAsGeometry** | Pointer to **bool** |  | [optional] 
+**TextOption** | Pointer to **string** |  | [optional] 
 **TriggerAutoDownload** | Pointer to **bool** |  | [optional] 
 **Unit** | Pointer to **string** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
@@ -765,6 +767,31 @@ SetGrouping sets Grouping field to given value.
 `func (o *BTTranslateFormatParams) HasGrouping() bool`
 
 HasGrouping returns a boolean if a field has been set.
+
+### GetHideInspectionItems
+
+`func (o *BTTranslateFormatParams) GetHideInspectionItems() bool`
+
+GetHideInspectionItems returns the HideInspectionItems field if non-nil, zero value otherwise.
+
+### GetHideInspectionItemsOk
+
+`func (o *BTTranslateFormatParams) GetHideInspectionItemsOk() (*bool, bool)`
+
+GetHideInspectionItemsOk returns a tuple with the HideInspectionItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHideInspectionItems
+
+`func (o *BTTranslateFormatParams) SetHideInspectionItems(v bool)`
+
+SetHideInspectionItems sets HideInspectionItems field to given value.
+
+### HasHideInspectionItems
+
+`func (o *BTTranslateFormatParams) HasHideInspectionItems() bool`
+
+HasHideInspectionItems returns a boolean if a field has been set.
 
 ### GetIgnoreExportRulesForContents
 
@@ -1715,6 +1742,31 @@ SetTextAsGeometry sets TextAsGeometry field to given value.
 `func (o *BTTranslateFormatParams) HasTextAsGeometry() bool`
 
 HasTextAsGeometry returns a boolean if a field has been set.
+
+### GetTextOption
+
+`func (o *BTTranslateFormatParams) GetTextOption() string`
+
+GetTextOption returns the TextOption field if non-nil, zero value otherwise.
+
+### GetTextOptionOk
+
+`func (o *BTTranslateFormatParams) GetTextOptionOk() (*string, bool)`
+
+GetTextOptionOk returns a tuple with the TextOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTextOption
+
+`func (o *BTTranslateFormatParams) SetTextOption(v string)`
+
+SetTextOption sets TextOption field to given value.
+
+### HasTextOption
+
+`func (o *BTTranslateFormatParams) HasTextOption() bool`
+
+HasTextOption returns a boolean if a field has been set.
 
 ### GetTriggerAutoDownload
 

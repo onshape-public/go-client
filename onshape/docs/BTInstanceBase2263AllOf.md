@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **InstanceName** | Pointer to **string** |  | [optional] 
 **IsFlattenedPart** | Pointer to **bool** |  | [optional] 
 **Locked** | Pointer to **bool** |  | [optional] 
-**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **ParametricInstance** | Pointer to **bool** |  | [optional] 
 **ParametricOutputInstance** | Pointer to **bool** |  | [optional] 
 **ParametricPartStudioChildInstance** | Pointer to **bool** |  | [optional] 
@@ -299,31 +298,6 @@ SetLocked sets Locked field to given value.
 `func (o *BTInstanceBase2263AllOf) HasLocked() bool`
 
 HasLocked returns a boolean if a field has been set.
-
-### GetMicroversionId
-
-`func (o *BTInstanceBase2263AllOf) GetMicroversionId() BTMicroversionId366`
-
-GetMicroversionId returns the MicroversionId field if non-nil, zero value otherwise.
-
-### GetMicroversionIdOk
-
-`func (o *BTInstanceBase2263AllOf) GetMicroversionIdOk() (*BTMicroversionId366, bool)`
-
-GetMicroversionIdOk returns a tuple with the MicroversionId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMicroversionId
-
-`func (o *BTInstanceBase2263AllOf) SetMicroversionId(v BTMicroversionId366)`
-
-SetMicroversionId sets MicroversionId field to given value.
-
-### HasMicroversionId
-
-`func (o *BTInstanceBase2263AllOf) HasMicroversionId() bool`
-
-HasMicroversionId returns a boolean if a field has been set.
 
 ### GetParametricInstance
 

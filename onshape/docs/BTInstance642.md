@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ExternalDocumentWithVersion** | Pointer to [**BTDocumentWithVersionId**](BTDocumentWithVersionId.md) |  | [optional] 
 **ExternalDocumentWithVersionAndElementId** | Pointer to [**BTDocumentWithVersionAndElementId**](BTDocumentWithVersionAndElementId.md) |  | [optional] 
 **LockedState** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
+**MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
@@ -262,6 +263,31 @@ SetLockedState sets LockedState field to given value.
 `func (o *BTInstance642) HasLockedState() bool`
 
 HasLockedState returns a boolean if a field has been set.
+
+### GetMicroversionId
+
+`func (o *BTInstance642) GetMicroversionId() BTMicroversionId366`
+
+GetMicroversionId returns the MicroversionId field if non-nil, zero value otherwise.
+
+### GetMicroversionIdOk
+
+`func (o *BTInstance642) GetMicroversionIdOk() (*BTMicroversionId366, bool)`
+
+GetMicroversionIdOk returns a tuple with the MicroversionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMicroversionId
+
+`func (o *BTInstance642) SetMicroversionId(v BTMicroversionId366)`
+
+SetMicroversionId sets MicroversionId field to given value.
+
+### HasMicroversionId
+
+`func (o *BTInstance642) HasMicroversionId() bool`
+
+HasMicroversionId returns a boolean if a field has been set.
 
 ### GetName
 

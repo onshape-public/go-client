@@ -4,10 +4,10 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetUserSettings**](UserApi.md#GetUserSettings) | **Get** /users/{uid}/settings | Get the default user settings that are used when the user creates a new document.
-[**GetUserSettingsCurrentLoggedInUser**](UserApi.md#GetUserSettingsCurrentLoggedInUser) | **Get** /users/settings | Get the user settings for currently signed in user.
-[**Session**](UserApi.md#Session) | **Post** /users/session | Returned information depends on caller&#39;s OAuth2ReadPll scope.
-[**SessionInfo**](UserApi.md#SessionInfo) | **Get** /users/sessioninfo | Check to see if a user is signed in to a current session.
+[**GetUserSettings**](UserApi.md#GetUserSettings) | **Get** /users/{uid}/settings | Get the user settings for any user in your organization (admins only).
+[**GetUserSettingsCurrentLoggedInUser**](UserApi.md#GetUserSettingsCurrentLoggedInUser) | **Get** /users/settings | Get the user settings for the signed-in user (i.e., you) for the current session.
+[**Session**](UserApi.md#Session) | **Post** /users/session | Authenticate a user&#39;s Onshape credentials, and create a session.
+[**SessionInfo**](UserApi.md#SessionInfo) | **Get** /users/sessioninfo | Get the session information for an authenticated (signed-in) user.
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > BTUserSettingsInfo GetUserSettings(ctx, uid).Includematerials(includematerials).Execute()
 
-Get the default user settings that are used when the user creates a new document.
+Get the user settings for any user in your organization (admins only).
 
 
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 > BTUserSettingsInfo GetUserSettingsCurrentLoggedInUser(ctx).Includematerials(includematerials).Execute()
 
-Get the user settings for currently signed in user.
+Get the user settings for the signed-in user (i.e., you) for the current session.
 
 
 
@@ -153,7 +153,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} Session(ctx).BTLoginParams(bTLoginParams).Execute()
 
-Returned information depends on caller's OAuth2ReadPll scope.
+Authenticate a user's Onshape credentials, and create a session.
+
+
 
 ### Example
 
@@ -217,7 +219,7 @@ Name | Type | Description  | Notes
 
 > BTUserOAuth2SummaryInfo SessionInfo(ctx).Execute()
 
-Check to see if a user is signed in to a current session.
+Get the session information for an authenticated (signed-in) user.
 
 
 

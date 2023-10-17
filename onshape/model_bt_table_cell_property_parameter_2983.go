@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24127-2ec83fd5fc94
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,14 +17,15 @@ import (
 
 // BTTableCellPropertyParameter2983 struct for BTTableCellPropertyParameter2983
 type BTTableCellPropertyParameter2983 struct {
-	BtType             *string                `json:"btType,omitempty"`
-	IsEverVisible      *bool                  `json:"isEverVisible,omitempty"`
-	IsReadOnly         *bool                  `json:"isReadOnly,omitempty"`
-	Error              *string                `json:"error,omitempty"`
-	OverrideSpec       *BTParameterSpec6      `json:"overrideSpec,omitempty"`
-	Parameter          *BTMParameter1         `json:"parameter,omitempty"`
-	IsUnchanged        *bool                  `json:"isUnchanged,omitempty"`
-	PropertySourceType *GBTMetadataSourceType `json:"propertySourceType,omitempty"`
+	BtType             *string                        `json:"btType,omitempty"`
+	IsEverVisible      *bool                          `json:"isEverVisible,omitempty"`
+	IsReadOnly         *bool                          `json:"isReadOnly,omitempty"`
+	Error              *string                        `json:"error,omitempty"`
+	OverrideSpec       *BTParameterSpec6              `json:"overrideSpec,omitempty"`
+	Parameter          *BTMParameter1                 `json:"parameter,omitempty"`
+	IsUnchanged        *bool                          `json:"isUnchanged,omitempty"`
+	OverrideStatusType *GBTMetadataOverrideStatusType `json:"overrideStatusType,omitempty"`
+	PropertySourceType *GBTMetadataSourceType         `json:"propertySourceType,omitempty"`
 }
 
 // NewBTTableCellPropertyParameter2983 instantiates a new BTTableCellPropertyParameter2983 object
@@ -268,6 +269,38 @@ func (o *BTTableCellPropertyParameter2983) SetIsUnchanged(v bool) {
 	o.IsUnchanged = &v
 }
 
+// GetOverrideStatusType returns the OverrideStatusType field value if set, zero value otherwise.
+func (o *BTTableCellPropertyParameter2983) GetOverrideStatusType() GBTMetadataOverrideStatusType {
+	if o == nil || o.OverrideStatusType == nil {
+		var ret GBTMetadataOverrideStatusType
+		return ret
+	}
+	return *o.OverrideStatusType
+}
+
+// GetOverrideStatusTypeOk returns a tuple with the OverrideStatusType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellPropertyParameter2983) GetOverrideStatusTypeOk() (*GBTMetadataOverrideStatusType, bool) {
+	if o == nil || o.OverrideStatusType == nil {
+		return nil, false
+	}
+	return o.OverrideStatusType, true
+}
+
+// HasOverrideStatusType returns a boolean if a field has been set.
+func (o *BTTableCellPropertyParameter2983) HasOverrideStatusType() bool {
+	if o != nil && o.OverrideStatusType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOverrideStatusType gets a reference to the given GBTMetadataOverrideStatusType and assigns it to the OverrideStatusType field.
+func (o *BTTableCellPropertyParameter2983) SetOverrideStatusType(v GBTMetadataOverrideStatusType) {
+	o.OverrideStatusType = &v
+}
+
 // GetPropertySourceType returns the PropertySourceType field value if set, zero value otherwise.
 func (o *BTTableCellPropertyParameter2983) GetPropertySourceType() GBTMetadataSourceType {
 	if o == nil || o.PropertySourceType == nil {
@@ -322,6 +355,9 @@ func (o BTTableCellPropertyParameter2983) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsUnchanged != nil {
 		toSerialize["isUnchanged"] = o.IsUnchanged
+	}
+	if o.OverrideStatusType != nil {
+		toSerialize["overrideStatusType"] = o.OverrideStatusType
 	}
 	if o.PropertySourceType != nil {
 		toSerialize["propertySourceType"] = o.PropertySourceType

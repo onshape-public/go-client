@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **IsUnchanged** | Pointer to **bool** |  | [optional] 
+**OverrideStatusType** | Pointer to [**GBTMetadataOverrideStatusType**](GBTMetadataOverrideStatusType.md) |  | [optional] 
 **PropertySourceType** | Pointer to [**GBTMetadataSourceType**](GBTMetadataSourceType.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetIsUnchanged sets IsUnchanged field to given value.
 `func (o *BTTableCellPropertyParameter2983) HasIsUnchanged() bool`
 
 HasIsUnchanged returns a boolean if a field has been set.
+
+### GetOverrideStatusType
+
+`func (o *BTTableCellPropertyParameter2983) GetOverrideStatusType() GBTMetadataOverrideStatusType`
+
+GetOverrideStatusType returns the OverrideStatusType field if non-nil, zero value otherwise.
+
+### GetOverrideStatusTypeOk
+
+`func (o *BTTableCellPropertyParameter2983) GetOverrideStatusTypeOk() (*GBTMetadataOverrideStatusType, bool)`
+
+GetOverrideStatusTypeOk returns a tuple with the OverrideStatusType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverrideStatusType
+
+`func (o *BTTableCellPropertyParameter2983) SetOverrideStatusType(v GBTMetadataOverrideStatusType)`
+
+SetOverrideStatusType sets OverrideStatusType field to given value.
+
+### HasOverrideStatusType
+
+`func (o *BTTableCellPropertyParameter2983) HasOverrideStatusType() bool`
+
+HasOverrideStatusType returns a boolean if a field has been set.
 
 ### GetPropertySourceType
 

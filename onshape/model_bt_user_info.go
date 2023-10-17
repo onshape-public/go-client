@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24127-2ec83fd5fc94
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -13,10 +13,2576 @@ package onshape
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// BTUserInfo struct for BTUserInfo
+// BTUserInfo - struct for BTUserInfo
 type BTUserInfo struct {
+	implBTUserInfo interface{}
+}
+
+// BTUserAdminInfoAsBTUserInfo is a convenience function that returns BTUserAdminInfo wrapped in BTUserInfo
+func (o *BTUserAdminInfo) AsBTUserInfo() *BTUserInfo {
+	return &BTUserInfo{o}
+}
+
+// NewBTUserInfo instantiates a new BTUserInfo object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewBTUserInfo() *BTUserInfo {
+	this := BTUserInfo{Newbase_BTUserInfo()}
+	return &this
+}
+
+// NewBTUserInfoWithDefaults instantiates a new BTUserInfo object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewBTUserInfoWithDefaults() *BTUserInfo {
+	this := BTUserInfo{Newbase_BTUserInfoWithDefaults()}
+	return &this
+}
+
+// GetHref returns the Href field value if set, zero value otherwise.
+func (o *BTUserInfo) GetHref() string {
+	type getResult interface {
+		GetHref() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetHref()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetHrefOk returns a tuple with the Href field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetHrefOk() (*string, bool) {
+	type getResult interface {
+		GetHrefOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetHrefOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasHref returns a boolean if a field has been set.
+func (o *BTUserInfo) HasHref() bool {
+	type getResult interface {
+		HasHref() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasHref()
+	} else {
+		return false
+	}
+}
+
+// SetHref gets a reference to the given string and assigns it to the Href field.
+func (o *BTUserInfo) SetHref(v string) {
+	type getResult interface {
+		SetHref(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetHref(v)
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *BTUserInfo) GetId() string {
+	type getResult interface {
+		GetId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetIdOk() (*string, bool) {
+	type getResult interface {
+		GetIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *BTUserInfo) HasId() bool {
+	type getResult interface {
+		HasId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasId()
+	} else {
+		return false
+	}
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *BTUserInfo) SetId(v string) {
+	type getResult interface {
+		SetId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetId(v)
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTUserInfo) GetName() string {
+	type getResult interface {
+		GetName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetNameOk() (*string, bool) {
+	type getResult interface {
+		GetNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTUserInfo) HasName() bool {
+	type getResult interface {
+		HasName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasName()
+	} else {
+		return false
+	}
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTUserInfo) SetName(v string) {
+	type getResult interface {
+		SetName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetName(v)
+}
+
+// GetViewRef returns the ViewRef field value if set, zero value otherwise.
+func (o *BTUserInfo) GetViewRef() string {
+	type getResult interface {
+		GetViewRef() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetViewRef()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetViewRefOk returns a tuple with the ViewRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetViewRefOk() (*string, bool) {
+	type getResult interface {
+		GetViewRefOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetViewRefOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasViewRef returns a boolean if a field has been set.
+func (o *BTUserInfo) HasViewRef() bool {
+	type getResult interface {
+		HasViewRef() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasViewRef()
+	} else {
+		return false
+	}
+}
+
+// SetViewRef gets a reference to the given string and assigns it to the ViewRef field.
+func (o *BTUserInfo) SetViewRef(v string) {
+	type getResult interface {
+		SetViewRef(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetViewRef(v)
+}
+
+// GetImage returns the Image field value if set, zero value otherwise.
+func (o *BTUserInfo) GetImage() string {
+	type getResult interface {
+		GetImage() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetImage()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetImageOk() (*string, bool) {
+	type getResult interface {
+		GetImageOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetImageOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasImage returns a boolean if a field has been set.
+func (o *BTUserInfo) HasImage() bool {
+	type getResult interface {
+		HasImage() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasImage()
+	} else {
+		return false
+	}
+}
+
+// SetImage gets a reference to the given string and assigns it to the Image field.
+func (o *BTUserInfo) SetImage(v string) {
+	type getResult interface {
+		SetImage(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetImage(v)
+}
+
+// GetState returns the State field value if set, zero value otherwise.
+func (o *BTUserInfo) GetState() int32 {
+	type getResult interface {
+		GetState() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetState()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetStateOk() (*int32, bool) {
+	type getResult interface {
+		GetStateOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStateOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *BTUserInfo) HasState() bool {
+	type getResult interface {
+		HasState() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasState()
+	} else {
+		return false
+	}
+}
+
+// SetState gets a reference to the given int32 and assigns it to the State field.
+func (o *BTUserInfo) SetState(v int32) {
+	type getResult interface {
+		SetState(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetState(v)
+}
+
+// GetDocumentationName returns the DocumentationName field value if set, zero value otherwise.
+func (o *BTUserInfo) GetDocumentationName() string {
+	type getResult interface {
+		GetDocumentationName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentationName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDocumentationNameOk returns a tuple with the DocumentationName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetDocumentationNameOk() (*string, bool) {
+	type getResult interface {
+		GetDocumentationNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentationNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDocumentationName returns a boolean if a field has been set.
+func (o *BTUserInfo) HasDocumentationName() bool {
+	type getResult interface {
+		HasDocumentationName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDocumentationName()
+	} else {
+		return false
+	}
+}
+
+// SetDocumentationName gets a reference to the given string and assigns it to the DocumentationName field.
+func (o *BTUserInfo) SetDocumentationName(v string) {
+	type getResult interface {
+		SetDocumentationName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDocumentationName(v)
+}
+
+// GetEmail returns the Email field value if set, zero value otherwise.
+func (o *BTUserInfo) GetEmail() string {
+	type getResult interface {
+		GetEmail() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEmail()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetEmailOk() (*string, bool) {
+	type getResult interface {
+		GetEmailOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEmailOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEmail returns a boolean if a field has been set.
+func (o *BTUserInfo) HasEmail() bool {
+	type getResult interface {
+		HasEmail() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEmail()
+	} else {
+		return false
+	}
+}
+
+// SetEmail gets a reference to the given string and assigns it to the Email field.
+func (o *BTUserInfo) SetEmail(v string) {
+	type getResult interface {
+		SetEmail(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetEmail(v)
+}
+
+// GetFirstName returns the FirstName field value if set, zero value otherwise.
+func (o *BTUserInfo) GetFirstName() string {
+	type getResult interface {
+		GetFirstName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFirstName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetFirstNameOk() (*string, bool) {
+	type getResult interface {
+		GetFirstNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFirstNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasFirstName returns a boolean if a field has been set.
+func (o *BTUserInfo) HasFirstName() bool {
+	type getResult interface {
+		HasFirstName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasFirstName()
+	} else {
+		return false
+	}
+}
+
+// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
+func (o *BTUserInfo) SetFirstName(v string) {
+	type getResult interface {
+		SetFirstName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetFirstName(v)
+}
+
+// GetLastName returns the LastName field value if set, zero value otherwise.
+func (o *BTUserInfo) GetLastName() string {
+	type getResult interface {
+		GetLastName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLastName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetLastNameOk() (*string, bool) {
+	type getResult interface {
+		GetLastNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLastNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLastName returns a boolean if a field has been set.
+func (o *BTUserInfo) HasLastName() bool {
+	type getResult interface {
+		HasLastName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLastName()
+	} else {
+		return false
+	}
+}
+
+// SetLastName gets a reference to the given string and assigns it to the LastName field.
+func (o *BTUserInfo) SetLastName(v string) {
+	type getResult interface {
+		SetLastName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetLastName(v)
+}
+
+// GetCompany returns the Company field value if set, zero value otherwise.
+func (o *BTUserInfo) GetCompany() BTCompanySummaryInfo {
+	type getResult interface {
+		GetCompany() BTCompanySummaryInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCompany()
+	} else {
+		var de BTCompanySummaryInfo
+		return de
+	}
+}
+
+// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
+	type getResult interface {
+		GetCompanyOk() (*BTCompanySummaryInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCompanyOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCompany returns a boolean if a field has been set.
+func (o *BTUserInfo) HasCompany() bool {
+	type getResult interface {
+		HasCompany() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCompany()
+	} else {
+		return false
+	}
+}
+
+// SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
+func (o *BTUserInfo) SetCompany(v BTCompanySummaryInfo) {
+	type getResult interface {
+		SetCompany(v BTCompanySummaryInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetCompany(v)
+}
+
+// GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
+func (o *BTUserInfo) GetDocumentationNameOverride() string {
+	type getResult interface {
+		GetDocumentationNameOverride() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentationNameOverride()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDocumentationNameOverrideOk returns a tuple with the DocumentationNameOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetDocumentationNameOverrideOk() (*string, bool) {
+	type getResult interface {
+		GetDocumentationNameOverrideOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentationNameOverrideOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDocumentationNameOverride returns a boolean if a field has been set.
+func (o *BTUserInfo) HasDocumentationNameOverride() bool {
+	type getResult interface {
+		HasDocumentationNameOverride() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDocumentationNameOverride()
+	} else {
+		return false
+	}
+}
+
+// SetDocumentationNameOverride gets a reference to the given string and assigns it to the DocumentationNameOverride field.
+func (o *BTUserInfo) SetDocumentationNameOverride(v string) {
+	type getResult interface {
+		SetDocumentationNameOverride(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDocumentationNameOverride(v)
+}
+
+// GetGlobalPermissions returns the GlobalPermissions field value if set, zero value otherwise.
+func (o *BTUserInfo) GetGlobalPermissions() GlobalPermissionInfo {
+	type getResult interface {
+		GetGlobalPermissions() GlobalPermissionInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGlobalPermissions()
+	} else {
+		var de GlobalPermissionInfo
+		return de
+	}
+}
+
+// GetGlobalPermissionsOk returns a tuple with the GlobalPermissions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetGlobalPermissionsOk() (*GlobalPermissionInfo, bool) {
+	type getResult interface {
+		GetGlobalPermissionsOk() (*GlobalPermissionInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGlobalPermissionsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasGlobalPermissions returns a boolean if a field has been set.
+func (o *BTUserInfo) HasGlobalPermissions() bool {
+	type getResult interface {
+		HasGlobalPermissions() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasGlobalPermissions()
+	} else {
+		return false
+	}
+}
+
+// SetGlobalPermissions gets a reference to the given GlobalPermissionInfo and assigns it to the GlobalPermissions field.
+func (o *BTUserInfo) SetGlobalPermissions(v GlobalPermissionInfo) {
+	type getResult interface {
+		SetGlobalPermissions(v GlobalPermissionInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetGlobalPermissions(v)
+}
+
+// GetIsGuest returns the IsGuest field value if set, zero value otherwise.
+func (o *BTUserInfo) GetIsGuest() bool {
+	type getResult interface {
+		GetIsGuest() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsGuest()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsGuestOk returns a tuple with the IsGuest field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetIsGuestOk() (*bool, bool) {
+	type getResult interface {
+		GetIsGuestOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsGuestOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsGuest returns a boolean if a field has been set.
+func (o *BTUserInfo) HasIsGuest() bool {
+	type getResult interface {
+		HasIsGuest() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsGuest()
+	} else {
+		return false
+	}
+}
+
+// SetIsGuest gets a reference to the given bool and assigns it to the IsGuest field.
+func (o *BTUserInfo) SetIsGuest(v bool) {
+	type getResult interface {
+		SetIsGuest(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsGuest(v)
+}
+
+// GetIsLight returns the IsLight field value if set, zero value otherwise.
+func (o *BTUserInfo) GetIsLight() bool {
+	type getResult interface {
+		GetIsLight() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsLight()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsLightOk returns a tuple with the IsLight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetIsLightOk() (*bool, bool) {
+	type getResult interface {
+		GetIsLightOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsLightOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsLight returns a boolean if a field has been set.
+func (o *BTUserInfo) HasIsLight() bool {
+	type getResult interface {
+		HasIsLight() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsLight()
+	} else {
+		return false
+	}
+}
+
+// SetIsLight gets a reference to the given bool and assigns it to the IsLight field.
+func (o *BTUserInfo) SetIsLight(v bool) {
+	type getResult interface {
+		SetIsLight(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsLight(v)
+}
+
+// GetLastLoginTime returns the LastLoginTime field value if set, zero value otherwise.
+func (o *BTUserInfo) GetLastLoginTime() JSONTime {
+	type getResult interface {
+		GetLastLoginTime() JSONTime
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLastLoginTime()
+	} else {
+		var de JSONTime
+		return de
+	}
+}
+
+// GetLastLoginTimeOk returns a tuple with the LastLoginTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetLastLoginTimeOk() (*JSONTime, bool) {
+	type getResult interface {
+		GetLastLoginTimeOk() (*JSONTime, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLastLoginTimeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLastLoginTime returns a boolean if a field has been set.
+func (o *BTUserInfo) HasLastLoginTime() bool {
+	type getResult interface {
+		HasLastLoginTime() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLastLoginTime()
+	} else {
+		return false
+	}
+}
+
+// SetLastLoginTime gets a reference to the given JSONTime and assigns it to the LastLoginTime field.
+func (o *BTUserInfo) SetLastLoginTime(v JSONTime) {
+	type getResult interface {
+		SetLastLoginTime(v JSONTime)
+	}
+
+	o.GetActualInstance().(getResult).SetLastLoginTime(v)
+}
+
+// GetPersonalMessageAllowed returns the PersonalMessageAllowed field value if set, zero value otherwise.
+func (o *BTUserInfo) GetPersonalMessageAllowed() bool {
+	type getResult interface {
+		GetPersonalMessageAllowed() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPersonalMessageAllowed()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetPersonalMessageAllowedOk returns a tuple with the PersonalMessageAllowed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetPersonalMessageAllowedOk() (*bool, bool) {
+	type getResult interface {
+		GetPersonalMessageAllowedOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPersonalMessageAllowedOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasPersonalMessageAllowed returns a boolean if a field has been set.
+func (o *BTUserInfo) HasPersonalMessageAllowed() bool {
+	type getResult interface {
+		HasPersonalMessageAllowed() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasPersonalMessageAllowed()
+	} else {
+		return false
+	}
+}
+
+// SetPersonalMessageAllowed gets a reference to the given bool and assigns it to the PersonalMessageAllowed field.
+func (o *BTUserInfo) SetPersonalMessageAllowed(v bool) {
+	type getResult interface {
+		SetPersonalMessageAllowed(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetPersonalMessageAllowed(v)
+}
+
+// GetSource returns the Source field value if set, zero value otherwise.
+func (o *BTUserInfo) GetSource() int32 {
+	type getResult interface {
+		GetSource() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSource()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetSourceOk returns a tuple with the Source field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetSourceOk() (*int32, bool) {
+	type getResult interface {
+		GetSourceOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSourceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSource returns a boolean if a field has been set.
+func (o *BTUserInfo) HasSource() bool {
+	type getResult interface {
+		HasSource() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSource()
+	} else {
+		return false
+	}
+}
+
+// SetSource gets a reference to the given int32 and assigns it to the Source field.
+func (o *BTUserInfo) SetSource(v int32) {
+	type getResult interface {
+		SetSource(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetSource(v)
+}
+
+// GetActivePlan returns the ActivePlan field value if set, zero value otherwise.
+func (o *BTUserInfo) GetActivePlan() BTBillingPlanInfo {
+	type getResult interface {
+		GetActivePlan() BTBillingPlanInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActivePlan()
+	} else {
+		var de BTBillingPlanInfo
+		return de
+	}
+}
+
+// GetActivePlanOk returns a tuple with the ActivePlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetActivePlanOk() (*BTBillingPlanInfo, bool) {
+	type getResult interface {
+		GetActivePlanOk() (*BTBillingPlanInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActivePlanOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasActivePlan returns a boolean if a field has been set.
+func (o *BTUserInfo) HasActivePlan() bool {
+	type getResult interface {
+		HasActivePlan() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasActivePlan()
+	} else {
+		return false
+	}
+}
+
+// SetActivePlan gets a reference to the given BTBillingPlanInfo and assigns it to the ActivePlan field.
+func (o *BTUserInfo) SetActivePlan(v BTBillingPlanInfo) {
+	type getResult interface {
+		SetActivePlan(v BTBillingPlanInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetActivePlan(v)
+}
+
+// GetActivePlanId returns the ActivePlanId field value if set, zero value otherwise.
+func (o *BTUserInfo) GetActivePlanId() string {
+	type getResult interface {
+		GetActivePlanId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActivePlanId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetActivePlanIdOk returns a tuple with the ActivePlanId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetActivePlanIdOk() (*string, bool) {
+	type getResult interface {
+		GetActivePlanIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActivePlanIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasActivePlanId returns a boolean if a field has been set.
+func (o *BTUserInfo) HasActivePlanId() bool {
+	type getResult interface {
+		HasActivePlanId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasActivePlanId()
+	} else {
+		return false
+	}
+}
+
+// SetActivePlanId gets a reference to the given string and assigns it to the ActivePlanId field.
+func (o *BTUserInfo) SetActivePlanId(v string) {
+	type getResult interface {
+		SetActivePlanId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetActivePlanId(v)
+}
+
+// GetActivePurchases returns the ActivePurchases field value if set, zero value otherwise.
+func (o *BTUserInfo) GetActivePurchases() []BTPurchaseInfo {
+	type getResult interface {
+		GetActivePurchases() []BTPurchaseInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActivePurchases()
+	} else {
+		var de []BTPurchaseInfo
+		return de
+	}
+}
+
+// GetActivePurchasesOk returns a tuple with the ActivePurchases field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetActivePurchasesOk() ([]BTPurchaseInfo, bool) {
+	type getResult interface {
+		GetActivePurchasesOk() ([]BTPurchaseInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActivePurchasesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasActivePurchases returns a boolean if a field has been set.
+func (o *BTUserInfo) HasActivePurchases() bool {
+	type getResult interface {
+		HasActivePurchases() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasActivePurchases()
+	} else {
+		return false
+	}
+}
+
+// SetActivePurchases gets a reference to the given []BTPurchaseInfo and assigns it to the ActivePurchases field.
+func (o *BTUserInfo) SetActivePurchases(v []BTPurchaseInfo) {
+	type getResult interface {
+		SetActivePurchases(v []BTPurchaseInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetActivePurchases(v)
+}
+
+// GetActiveTrialInfo returns the ActiveTrialInfo field value if set, zero value otherwise.
+func (o *BTUserInfo) GetActiveTrialInfo() BTTrialInfo {
+	type getResult interface {
+		GetActiveTrialInfo() BTTrialInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActiveTrialInfo()
+	} else {
+		var de BTTrialInfo
+		return de
+	}
+}
+
+// GetActiveTrialInfoOk returns a tuple with the ActiveTrialInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetActiveTrialInfoOk() (*BTTrialInfo, bool) {
+	type getResult interface {
+		GetActiveTrialInfoOk() (*BTTrialInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetActiveTrialInfoOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasActiveTrialInfo returns a boolean if a field has been set.
+func (o *BTUserInfo) HasActiveTrialInfo() bool {
+	type getResult interface {
+		HasActiveTrialInfo() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasActiveTrialInfo()
+	} else {
+		return false
+	}
+}
+
+// SetActiveTrialInfo gets a reference to the given BTTrialInfo and assigns it to the ActiveTrialInfo field.
+func (o *BTUserInfo) SetActiveTrialInfo(v BTTrialInfo) {
+	type getResult interface {
+		SetActiveTrialInfo(v BTTrialInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetActiveTrialInfo(v)
+}
+
+// GetB2cId returns the B2cId field value if set, zero value otherwise.
+func (o *BTUserInfo) GetB2cId() string {
+	type getResult interface {
+		GetB2cId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetB2cId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetB2cIdOk returns a tuple with the B2cId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetB2cIdOk() (*string, bool) {
+	type getResult interface {
+		GetB2cIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetB2cIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasB2cId returns a boolean if a field has been set.
+func (o *BTUserInfo) HasB2cId() bool {
+	type getResult interface {
+		HasB2cId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasB2cId()
+	} else {
+		return false
+	}
+}
+
+// SetB2cId gets a reference to the given string and assigns it to the B2cId field.
+func (o *BTUserInfo) SetB2cId(v string) {
+	type getResult interface {
+		SetB2cId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetB2cId(v)
+}
+
+// GetBillingUpdateRequired returns the BillingUpdateRequired field value if set, zero value otherwise.
+func (o *BTUserInfo) GetBillingUpdateRequired() bool {
+	type getResult interface {
+		GetBillingUpdateRequired() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBillingUpdateRequired()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetBillingUpdateRequiredOk returns a tuple with the BillingUpdateRequired field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetBillingUpdateRequiredOk() (*bool, bool) {
+	type getResult interface {
+		GetBillingUpdateRequiredOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBillingUpdateRequiredOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBillingUpdateRequired returns a boolean if a field has been set.
+func (o *BTUserInfo) HasBillingUpdateRequired() bool {
+	type getResult interface {
+		HasBillingUpdateRequired() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBillingUpdateRequired()
+	} else {
+		return false
+	}
+}
+
+// SetBillingUpdateRequired gets a reference to the given bool and assigns it to the BillingUpdateRequired field.
+func (o *BTUserInfo) SetBillingUpdateRequired(v bool) {
+	type getResult interface {
+		SetBillingUpdateRequired(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetBillingUpdateRequired(v)
+}
+
+// GetCadSystemAtSignup returns the CadSystemAtSignup field value if set, zero value otherwise.
+func (o *BTUserInfo) GetCadSystemAtSignup() string {
+	type getResult interface {
+		GetCadSystemAtSignup() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCadSystemAtSignup()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetCadSystemAtSignupOk returns a tuple with the CadSystemAtSignup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetCadSystemAtSignupOk() (*string, bool) {
+	type getResult interface {
+		GetCadSystemAtSignupOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCadSystemAtSignupOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCadSystemAtSignup returns a boolean if a field has been set.
+func (o *BTUserInfo) HasCadSystemAtSignup() bool {
+	type getResult interface {
+		HasCadSystemAtSignup() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCadSystemAtSignup()
+	} else {
+		return false
+	}
+}
+
+// SetCadSystemAtSignup gets a reference to the given string and assigns it to the CadSystemAtSignup field.
+func (o *BTUserInfo) SetCadSystemAtSignup(v string) {
+	type getResult interface {
+		SetCadSystemAtSignup(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetCadSystemAtSignup(v)
+}
+
+// GetCountryCode returns the CountryCode field value if set, zero value otherwise.
+func (o *BTUserInfo) GetCountryCode() string {
+	type getResult interface {
+		GetCountryCode() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCountryCode()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetCountryCodeOk() (*string, bool) {
+	type getResult interface {
+		GetCountryCodeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCountryCodeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCountryCode returns a boolean if a field has been set.
+func (o *BTUserInfo) HasCountryCode() bool {
+	type getResult interface {
+		HasCountryCode() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCountryCode()
+	} else {
+		return false
+	}
+}
+
+// SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
+func (o *BTUserInfo) SetCountryCode(v string) {
+	type getResult interface {
+		SetCountryCode(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetCountryCode(v)
+}
+
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
+func (o *BTUserInfo) GetCreatedAt() JSONTime {
+	type getResult interface {
+		GetCreatedAt() JSONTime
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCreatedAt()
+	} else {
+		var de JSONTime
+		return de
+	}
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetCreatedAtOk() (*JSONTime, bool) {
+	type getResult interface {
+		GetCreatedAtOk() (*JSONTime, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCreatedAtOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *BTUserInfo) HasCreatedAt() bool {
+	type getResult interface {
+		HasCreatedAt() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCreatedAt()
+	} else {
+		return false
+	}
+}
+
+// SetCreatedAt gets a reference to the given JSONTime and assigns it to the CreatedAt field.
+func (o *BTUserInfo) SetCreatedAt(v JSONTime) {
+	type getResult interface {
+		SetCreatedAt(v JSONTime)
+	}
+
+	o.GetActualInstance().(getResult).SetCreatedAt(v)
+}
+
+// GetCredential returns the Credential field value if set, zero value otherwise.
+func (o *BTUserInfo) GetCredential() BTSessionCredentialInfo {
+	type getResult interface {
+		GetCredential() BTSessionCredentialInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCredential()
+	} else {
+		var de BTSessionCredentialInfo
+		return de
+	}
+}
+
+// GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetCredentialOk() (*BTSessionCredentialInfo, bool) {
+	type getResult interface {
+		GetCredentialOk() (*BTSessionCredentialInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCredentialOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCredential returns a boolean if a field has been set.
+func (o *BTUserInfo) HasCredential() bool {
+	type getResult interface {
+		HasCredential() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCredential()
+	} else {
+		return false
+	}
+}
+
+// SetCredential gets a reference to the given BTSessionCredentialInfo and assigns it to the Credential field.
+func (o *BTUserInfo) SetCredential(v BTSessionCredentialInfo) {
+	type getResult interface {
+		SetCredential(v BTSessionCredentialInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetCredential(v)
+}
+
+// GetDefaultCompanyName returns the DefaultCompanyName field value if set, zero value otherwise.
+func (o *BTUserInfo) GetDefaultCompanyName() string {
+	type getResult interface {
+		GetDefaultCompanyName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultCompanyName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDefaultCompanyNameOk returns a tuple with the DefaultCompanyName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetDefaultCompanyNameOk() (*string, bool) {
+	type getResult interface {
+		GetDefaultCompanyNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultCompanyNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDefaultCompanyName returns a boolean if a field has been set.
+func (o *BTUserInfo) HasDefaultCompanyName() bool {
+	type getResult interface {
+		HasDefaultCompanyName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDefaultCompanyName()
+	} else {
+		return false
+	}
+}
+
+// SetDefaultCompanyName gets a reference to the given string and assigns it to the DefaultCompanyName field.
+func (o *BTUserInfo) SetDefaultCompanyName(v string) {
+	type getResult interface {
+		SetDefaultCompanyName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDefaultCompanyName(v)
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *BTUserInfo) GetDescription() string {
+	type getResult interface {
+		GetDescription() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDescription()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetDescriptionOk() (*string, bool) {
+	type getResult interface {
+		GetDescriptionOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDescriptionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *BTUserInfo) HasDescription() bool {
+	type getResult interface {
+		HasDescription() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDescription()
+	} else {
+		return false
+	}
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *BTUserInfo) SetDescription(v string) {
+	type getResult interface {
+		SetDescription(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDescription(v)
+}
+
+// GetDeviceInfo returns the DeviceInfo field value if set, zero value otherwise.
+func (o *BTUserInfo) GetDeviceInfo() BTDeviceLoginSecretInfo {
+	type getResult interface {
+		GetDeviceInfo() BTDeviceLoginSecretInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDeviceInfo()
+	} else {
+		var de BTDeviceLoginSecretInfo
+		return de
+	}
+}
+
+// GetDeviceInfoOk returns a tuple with the DeviceInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetDeviceInfoOk() (*BTDeviceLoginSecretInfo, bool) {
+	type getResult interface {
+		GetDeviceInfoOk() (*BTDeviceLoginSecretInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDeviceInfoOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDeviceInfo returns a boolean if a field has been set.
+func (o *BTUserInfo) HasDeviceInfo() bool {
+	type getResult interface {
+		HasDeviceInfo() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDeviceInfo()
+	} else {
+		return false
+	}
+}
+
+// SetDeviceInfo gets a reference to the given BTDeviceLoginSecretInfo and assigns it to the DeviceInfo field.
+func (o *BTUserInfo) SetDeviceInfo(v BTDeviceLoginSecretInfo) {
+	type getResult interface {
+		SetDeviceInfo(v BTDeviceLoginSecretInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetDeviceInfo(v)
+}
+
+// GetEnterprise returns the Enterprise field value if set, zero value otherwise.
+func (o *BTUserInfo) GetEnterprise() bool {
+	type getResult interface {
+		GetEnterprise() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnterprise()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetEnterpriseOk returns a tuple with the Enterprise field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetEnterpriseOk() (*bool, bool) {
+	type getResult interface {
+		GetEnterpriseOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnterpriseOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEnterprise returns a boolean if a field has been set.
+func (o *BTUserInfo) HasEnterprise() bool {
+	type getResult interface {
+		HasEnterprise() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEnterprise()
+	} else {
+		return false
+	}
+}
+
+// SetEnterprise gets a reference to the given bool and assigns it to the Enterprise field.
+func (o *BTUserInfo) SetEnterprise(v bool) {
+	type getResult interface {
+		SetEnterprise(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetEnterprise(v)
+}
+
+// GetEulaId returns the EulaId field value if set, zero value otherwise.
+func (o *BTUserInfo) GetEulaId() string {
+	type getResult interface {
+		GetEulaId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEulaId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetEulaIdOk returns a tuple with the EulaId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetEulaIdOk() (*string, bool) {
+	type getResult interface {
+		GetEulaIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEulaIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEulaId returns a boolean if a field has been set.
+func (o *BTUserInfo) HasEulaId() bool {
+	type getResult interface {
+		HasEulaId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEulaId()
+	} else {
+		return false
+	}
+}
+
+// SetEulaId gets a reference to the given string and assigns it to the EulaId field.
+func (o *BTUserInfo) SetEulaId(v string) {
+	type getResult interface {
+		SetEulaId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetEulaId(v)
+}
+
+// GetEulaRequired returns the EulaRequired field value if set, zero value otherwise.
+func (o *BTUserInfo) GetEulaRequired() bool {
+	type getResult interface {
+		GetEulaRequired() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEulaRequired()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetEulaRequiredOk returns a tuple with the EulaRequired field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetEulaRequiredOk() (*bool, bool) {
+	type getResult interface {
+		GetEulaRequiredOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEulaRequiredOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEulaRequired returns a boolean if a field has been set.
+func (o *BTUserInfo) HasEulaRequired() bool {
+	type getResult interface {
+		HasEulaRequired() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEulaRequired()
+	} else {
+		return false
+	}
+}
+
+// SetEulaRequired gets a reference to the given bool and assigns it to the EulaRequired field.
+func (o *BTUserInfo) SetEulaRequired(v bool) {
+	type getResult interface {
+		SetEulaRequired(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetEulaRequired(v)
+}
+
+// GetEvalCenter returns the EvalCenter field value if set, zero value otherwise.
+func (o *BTUserInfo) GetEvalCenter() bool {
+	type getResult interface {
+		GetEvalCenter() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEvalCenter()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetEvalCenterOk returns a tuple with the EvalCenter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetEvalCenterOk() (*bool, bool) {
+	type getResult interface {
+		GetEvalCenterOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEvalCenterOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEvalCenter returns a boolean if a field has been set.
+func (o *BTUserInfo) HasEvalCenter() bool {
+	type getResult interface {
+		HasEvalCenter() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEvalCenter()
+	} else {
+		return false
+	}
+}
+
+// SetEvalCenter gets a reference to the given bool and assigns it to the EvalCenter field.
+func (o *BTUserInfo) SetEvalCenter(v bool) {
+	type getResult interface {
+		SetEvalCenter(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetEvalCenter(v)
+}
+
+// GetForumId returns the ForumId field value if set, zero value otherwise.
+func (o *BTUserInfo) GetForumId() string {
+	type getResult interface {
+		GetForumId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetForumId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetForumIdOk returns a tuple with the ForumId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetForumIdOk() (*string, bool) {
+	type getResult interface {
+		GetForumIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetForumIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasForumId returns a boolean if a field has been set.
+func (o *BTUserInfo) HasForumId() bool {
+	type getResult interface {
+		HasForumId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasForumId()
+	} else {
+		return false
+	}
+}
+
+// SetForumId gets a reference to the given string and assigns it to the ForumId field.
+func (o *BTUserInfo) SetForumId(v string) {
+	type getResult interface {
+		SetForumId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetForumId(v)
+}
+
+// GetLastTrialInfo returns the LastTrialInfo field value if set, zero value otherwise.
+func (o *BTUserInfo) GetLastTrialInfo() BTTrialInfo {
+	type getResult interface {
+		GetLastTrialInfo() BTTrialInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLastTrialInfo()
+	} else {
+		var de BTTrialInfo
+		return de
+	}
+}
+
+// GetLastTrialInfoOk returns a tuple with the LastTrialInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetLastTrialInfoOk() (*BTTrialInfo, bool) {
+	type getResult interface {
+		GetLastTrialInfoOk() (*BTTrialInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLastTrialInfoOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLastTrialInfo returns a boolean if a field has been set.
+func (o *BTUserInfo) HasLastTrialInfo() bool {
+	type getResult interface {
+		HasLastTrialInfo() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLastTrialInfo()
+	} else {
+		return false
+	}
+}
+
+// SetLastTrialInfo gets a reference to the given BTTrialInfo and assigns it to the LastTrialInfo field.
+func (o *BTUserInfo) SetLastTrialInfo(v BTTrialInfo) {
+	type getResult interface {
+		SetLastTrialInfo(v BTTrialInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetLastTrialInfo(v)
+}
+
+// GetNeedToShowNewWalkthrough returns the NeedToShowNewWalkthrough field value if set, zero value otherwise.
+func (o *BTUserInfo) GetNeedToShowNewWalkthrough() bool {
+	type getResult interface {
+		GetNeedToShowNewWalkthrough() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNeedToShowNewWalkthrough()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetNeedToShowNewWalkthroughOk returns a tuple with the NeedToShowNewWalkthrough field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetNeedToShowNewWalkthroughOk() (*bool, bool) {
+	type getResult interface {
+		GetNeedToShowNewWalkthroughOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNeedToShowNewWalkthroughOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNeedToShowNewWalkthrough returns a boolean if a field has been set.
+func (o *BTUserInfo) HasNeedToShowNewWalkthrough() bool {
+	type getResult interface {
+		HasNeedToShowNewWalkthrough() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNeedToShowNewWalkthrough()
+	} else {
+		return false
+	}
+}
+
+// SetNeedToShowNewWalkthrough gets a reference to the given bool and assigns it to the NeedToShowNewWalkthrough field.
+func (o *BTUserInfo) SetNeedToShowNewWalkthrough(v bool) {
+	type getResult interface {
+		SetNeedToShowNewWalkthrough(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetNeedToShowNewWalkthrough(v)
+}
+
+// GetOwnPurchase returns the OwnPurchase field value if set, zero value otherwise.
+func (o *BTUserInfo) GetOwnPurchase() BTPurchaseInfo {
+	type getResult interface {
+		GetOwnPurchase() BTPurchaseInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetOwnPurchase()
+	} else {
+		var de BTPurchaseInfo
+		return de
+	}
+}
+
+// GetOwnPurchaseOk returns a tuple with the OwnPurchase field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetOwnPurchaseOk() (*BTPurchaseInfo, bool) {
+	type getResult interface {
+		GetOwnPurchaseOk() (*BTPurchaseInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetOwnPurchaseOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasOwnPurchase returns a boolean if a field has been set.
+func (o *BTUserInfo) HasOwnPurchase() bool {
+	type getResult interface {
+		HasOwnPurchase() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasOwnPurchase()
+	} else {
+		return false
+	}
+}
+
+// SetOwnPurchase gets a reference to the given BTPurchaseInfo and assigns it to the OwnPurchase field.
+func (o *BTUserInfo) SetOwnPurchase(v BTPurchaseInfo) {
+	type getResult interface {
+		SetOwnPurchase(v BTPurchaseInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetOwnPurchase(v)
+}
+
+// GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
+func (o *BTUserInfo) GetPhoneNumber() string {
+	type getResult interface {
+		GetPhoneNumber() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPhoneNumber()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetPhoneNumberOk returns a tuple with the PhoneNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetPhoneNumberOk() (*string, bool) {
+	type getResult interface {
+		GetPhoneNumberOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPhoneNumberOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasPhoneNumber returns a boolean if a field has been set.
+func (o *BTUserInfo) HasPhoneNumber() bool {
+	type getResult interface {
+		HasPhoneNumber() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasPhoneNumber()
+	} else {
+		return false
+	}
+}
+
+// SetPhoneNumber gets a reference to the given string and assigns it to the PhoneNumber field.
+func (o *BTUserInfo) SetPhoneNumber(v string) {
+	type getResult interface {
+		SetPhoneNumber(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetPhoneNumber(v)
+}
+
+// GetProductType returns the ProductType field value if set, zero value otherwise.
+func (o *BTUserInfo) GetProductType() []string {
+	type getResult interface {
+		GetProductType() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetProductType()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetProductTypeOk returns a tuple with the ProductType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetProductTypeOk() ([]string, bool) {
+	type getResult interface {
+		GetProductTypeOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetProductTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasProductType returns a boolean if a field has been set.
+func (o *BTUserInfo) HasProductType() bool {
+	type getResult interface {
+		HasProductType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasProductType()
+	} else {
+		return false
+	}
+}
+
+// SetProductType gets a reference to the given []string and assigns it to the ProductType field.
+func (o *BTUserInfo) SetProductType(v []string) {
+	type getResult interface {
+		SetProductType(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetProductType(v)
+}
+
+// GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise.
+func (o *BTUserInfo) GetRedirectUrl() string {
+	type getResult interface {
+		GetRedirectUrl() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRedirectUrl()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetRedirectUrlOk returns a tuple with the RedirectUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetRedirectUrlOk() (*string, bool) {
+	type getResult interface {
+		GetRedirectUrlOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRedirectUrlOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasRedirectUrl returns a boolean if a field has been set.
+func (o *BTUserInfo) HasRedirectUrl() bool {
+	type getResult interface {
+		HasRedirectUrl() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasRedirectUrl()
+	} else {
+		return false
+	}
+}
+
+// SetRedirectUrl gets a reference to the given string and assigns it to the RedirectUrl field.
+func (o *BTUserInfo) SetRedirectUrl(v string) {
+	type getResult interface {
+		SetRedirectUrl(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetRedirectUrl(v)
+}
+
+// GetRole returns the Role field value if set, zero value otherwise.
+func (o *BTUserInfo) GetRole() int32 {
+	type getResult interface {
+		GetRole() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRole()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetRoleOk() (*int32, bool) {
+	type getResult interface {
+		GetRoleOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRoleOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasRole returns a boolean if a field has been set.
+func (o *BTUserInfo) HasRole() bool {
+	type getResult interface {
+		HasRole() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasRole()
+	} else {
+		return false
+	}
+}
+
+// SetRole gets a reference to the given int32 and assigns it to the Role field.
+func (o *BTUserInfo) SetRole(v int32) {
+	type getResult interface {
+		SetRole(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetRole(v)
+}
+
+// GetRoles returns the Roles field value if set, zero value otherwise.
+func (o *BTUserInfo) GetRoles() []BTRole {
+	type getResult interface {
+		GetRoles() []BTRole
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRoles()
+	} else {
+		var de []BTRole
+		return de
+	}
+}
+
+// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetRolesOk() ([]BTRole, bool) {
+	type getResult interface {
+		GetRolesOk() ([]BTRole, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRolesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasRoles returns a boolean if a field has been set.
+func (o *BTUserInfo) HasRoles() bool {
+	type getResult interface {
+		HasRoles() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasRoles()
+	} else {
+		return false
+	}
+}
+
+// SetRoles gets a reference to the given []BTRole and assigns it to the Roles field.
+func (o *BTUserInfo) SetRoles(v []BTRole) {
+	type getResult interface {
+		SetRoles(v []BTRole)
+	}
+
+	o.GetActualInstance().(getResult).SetRoles(v)
+}
+
+// GetStartupPage returns the StartupPage field value if set, zero value otherwise.
+func (o *BTUserInfo) GetStartupPage() int32 {
+	type getResult interface {
+		GetStartupPage() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStartupPage()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetStartupPageOk returns a tuple with the StartupPage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetStartupPageOk() (*int32, bool) {
+	type getResult interface {
+		GetStartupPageOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStartupPageOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasStartupPage returns a boolean if a field has been set.
+func (o *BTUserInfo) HasStartupPage() bool {
+	type getResult interface {
+		HasStartupPage() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasStartupPage()
+	} else {
+		return false
+	}
+}
+
+// SetStartupPage gets a reference to the given int32 and assigns it to the StartupPage field.
+func (o *BTUserInfo) SetStartupPage(v int32) {
+	type getResult interface {
+		SetStartupPage(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetStartupPage(v)
+}
+
+// GetSystemUser returns the SystemUser field value if set, zero value otherwise.
+func (o *BTUserInfo) GetSystemUser() bool {
+	type getResult interface {
+		GetSystemUser() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSystemUser()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetSystemUserOk returns a tuple with the SystemUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetSystemUserOk() (*bool, bool) {
+	type getResult interface {
+		GetSystemUserOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSystemUserOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSystemUser returns a boolean if a field has been set.
+func (o *BTUserInfo) HasSystemUser() bool {
+	type getResult interface {
+		HasSystemUser() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSystemUser()
+	} else {
+		return false
+	}
+}
+
+// SetSystemUser gets a reference to the given bool and assigns it to the SystemUser field.
+func (o *BTUserInfo) SetSystemUser(v bool) {
+	type getResult interface {
+		SetSystemUser(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetSystemUser(v)
+}
+
+// GetTotpEnabled returns the TotpEnabled field value if set, zero value otherwise.
+func (o *BTUserInfo) GetTotpEnabled() bool {
+	type getResult interface {
+		GetTotpEnabled() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTotpEnabled()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetTotpEnabledOk returns a tuple with the TotpEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetTotpEnabledOk() (*bool, bool) {
+	type getResult interface {
+		GetTotpEnabledOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTotpEnabledOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasTotpEnabled returns a boolean if a field has been set.
+func (o *BTUserInfo) HasTotpEnabled() bool {
+	type getResult interface {
+		HasTotpEnabled() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasTotpEnabled()
+	} else {
+		return false
+	}
+}
+
+// SetTotpEnabled gets a reference to the given bool and assigns it to the TotpEnabled field.
+func (o *BTUserInfo) SetTotpEnabled(v bool) {
+	type getResult interface {
+		SetTotpEnabled(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetTotpEnabled(v)
+}
+
+// GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
+func (o *BTUserInfo) GetTracingEnabled() bool {
+	type getResult interface {
+		GetTracingEnabled() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTracingEnabled()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetTracingEnabledOk() (*bool, bool) {
+	type getResult interface {
+		GetTracingEnabledOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTracingEnabledOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasTracingEnabled returns a boolean if a field has been set.
+func (o *BTUserInfo) HasTracingEnabled() bool {
+	type getResult interface {
+		HasTracingEnabled() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasTracingEnabled()
+	} else {
+		return false
+	}
+}
+
+// SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
+func (o *BTUserInfo) SetTracingEnabled(v bool) {
+	type getResult interface {
+		SetTracingEnabled(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetTracingEnabled(v)
+}
+
+// GetTrialInfos returns the TrialInfos field value if set, zero value otherwise.
+func (o *BTUserInfo) GetTrialInfos() []BTTrialInfo {
+	type getResult interface {
+		GetTrialInfos() []BTTrialInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTrialInfos()
+	} else {
+		var de []BTTrialInfo
+		return de
+	}
+}
+
+// GetTrialInfosOk returns a tuple with the TrialInfos field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetTrialInfosOk() ([]BTTrialInfo, bool) {
+	type getResult interface {
+		GetTrialInfosOk() ([]BTTrialInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTrialInfosOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasTrialInfos returns a boolean if a field has been set.
+func (o *BTUserInfo) HasTrialInfos() bool {
+	type getResult interface {
+		HasTrialInfos() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasTrialInfos()
+	} else {
+		return false
+	}
+}
+
+// SetTrialInfos gets a reference to the given []BTTrialInfo and assigns it to the TrialInfos field.
+func (o *BTUserInfo) SetTrialInfos(v []BTTrialInfo) {
+	type getResult interface {
+		SetTrialInfos(v []BTTrialInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetTrialInfos(v)
+}
+
+// Unmarshal JSON data into one of the pointers in the struct
+func (dst *BTUserInfo) UnmarshalJSON(data []byte) error {
+	var err error
+	// use discriminator value to speed up the lookup
+	var jsonDict map[string]interface{}
+	err = newStrictDecoder(data).Decode(&jsonDict)
+	if err != nil {
+		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+	}
+
+	// check if the discriminator value is 'BTUserAdminInfo'
+	if jsonDict["jsonType"] == "BTUserAdminInfo" {
+		// try to unmarshal JSON data into BTUserAdminInfo
+		var qr *BTUserAdminInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTUserInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTUserInfo = nil
+			return fmt.Errorf("Failed to unmarshal BTUserInfo as BTUserAdminInfo: %s", err.Error())
+		}
+	}
+
+	var qtx *base_BTUserInfo
+	err = json.Unmarshal(data, &qtx)
+	if err == nil {
+		dst.implBTUserInfo = qtx
+		return nil // data stored in dst.base_BTUserInfo, return on the first match
+	} else {
+		dst.implBTUserInfo = nil
+		return fmt.Errorf("Failed to unmarshal BTUserInfo as base_BTUserInfo: %s", err.Error())
+	}
+}
+
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src BTUserInfo) MarshalJSON() ([]byte, error) {
+	ret := src.GetActualInstance()
+	if ret == nil {
+		return nil, nil // no data in oneOf schemas
+	} else {
+		return json.Marshal(&ret)
+	}
+}
+
+// Get the actual instance
+func (obj *BTUserInfo) GetActualInstance() interface{} {
+	if obj == nil {
+		return nil
+	}
+	return obj.implBTUserInfo
+}
+
+type NullableBTUserInfo struct {
+	value *BTUserInfo
+	isSet bool
+}
+
+func (v NullableBTUserInfo) Get() *BTUserInfo {
+	return v.value
+}
+
+func (v *NullableBTUserInfo) Set(val *BTUserInfo) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBTUserInfo) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBTUserInfo) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBTUserInfo(val *BTUserInfo) *NullableBTUserInfo {
+	return &NullableBTUserInfo{value: val, isSet: true}
+}
+
+func (v NullableBTUserInfo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBTUserInfo) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
+type base_BTUserInfo struct {
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -72,25 +2638,25 @@ type BTUserInfo struct {
 	TrialInfos                []BTTrialInfo            `json:"trialInfos,omitempty"`
 }
 
-// NewBTUserInfo instantiates a new BTUserInfo object
+// Newbase_BTUserInfo instantiates a new base_BTUserInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTUserInfo() *BTUserInfo {
-	this := BTUserInfo{}
+func Newbase_BTUserInfo() *base_BTUserInfo {
+	this := base_BTUserInfo{}
 	return &this
 }
 
-// NewBTUserInfoWithDefaults instantiates a new BTUserInfo object
+// Newbase_BTUserInfoWithDefaults instantiates a new base_BTUserInfo object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBTUserInfoWithDefaults() *BTUserInfo {
-	this := BTUserInfo{}
+func Newbase_BTUserInfoWithDefaults() *base_BTUserInfo {
+	this := base_BTUserInfo{}
 	return &this
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
-func (o *BTUserInfo) GetHref() string {
+func (o *base_BTUserInfo) GetHref() string {
 	if o == nil || o.Href == nil {
 		var ret string
 		return ret
@@ -100,7 +2666,7 @@ func (o *BTUserInfo) GetHref() string {
 
 // GetHrefOk returns a tuple with the Href field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetHrefOk() (*string, bool) {
+func (o *base_BTUserInfo) GetHrefOk() (*string, bool) {
 	if o == nil || o.Href == nil {
 		return nil, false
 	}
@@ -108,7 +2674,7 @@ func (o *BTUserInfo) GetHrefOk() (*string, bool) {
 }
 
 // HasHref returns a boolean if a field has been set.
-func (o *BTUserInfo) HasHref() bool {
+func (o *base_BTUserInfo) HasHref() bool {
 	if o != nil && o.Href != nil {
 		return true
 	}
@@ -117,12 +2683,12 @@ func (o *BTUserInfo) HasHref() bool {
 }
 
 // SetHref gets a reference to the given string and assigns it to the Href field.
-func (o *BTUserInfo) SetHref(v string) {
+func (o *base_BTUserInfo) SetHref(v string) {
 	o.Href = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *BTUserInfo) GetId() string {
+func (o *base_BTUserInfo) GetId() string {
 	if o == nil || o.Id == nil {
 		var ret string
 		return ret
@@ -132,7 +2698,7 @@ func (o *BTUserInfo) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetIdOk() (*string, bool) {
+func (o *base_BTUserInfo) GetIdOk() (*string, bool) {
 	if o == nil || o.Id == nil {
 		return nil, false
 	}
@@ -140,7 +2706,7 @@ func (o *BTUserInfo) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *BTUserInfo) HasId() bool {
+func (o *base_BTUserInfo) HasId() bool {
 	if o != nil && o.Id != nil {
 		return true
 	}
@@ -149,12 +2715,12 @@ func (o *BTUserInfo) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *BTUserInfo) SetId(v string) {
+func (o *base_BTUserInfo) SetId(v string) {
 	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *BTUserInfo) GetName() string {
+func (o *base_BTUserInfo) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -164,7 +2730,7 @@ func (o *BTUserInfo) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetNameOk() (*string, bool) {
+func (o *base_BTUserInfo) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -172,7 +2738,7 @@ func (o *BTUserInfo) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *BTUserInfo) HasName() bool {
+func (o *base_BTUserInfo) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -181,12 +2747,12 @@ func (o *BTUserInfo) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *BTUserInfo) SetName(v string) {
+func (o *base_BTUserInfo) SetName(v string) {
 	o.Name = &v
 }
 
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
-func (o *BTUserInfo) GetViewRef() string {
+func (o *base_BTUserInfo) GetViewRef() string {
 	if o == nil || o.ViewRef == nil {
 		var ret string
 		return ret
@@ -196,7 +2762,7 @@ func (o *BTUserInfo) GetViewRef() string {
 
 // GetViewRefOk returns a tuple with the ViewRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetViewRefOk() (*string, bool) {
+func (o *base_BTUserInfo) GetViewRefOk() (*string, bool) {
 	if o == nil || o.ViewRef == nil {
 		return nil, false
 	}
@@ -204,7 +2770,7 @@ func (o *BTUserInfo) GetViewRefOk() (*string, bool) {
 }
 
 // HasViewRef returns a boolean if a field has been set.
-func (o *BTUserInfo) HasViewRef() bool {
+func (o *base_BTUserInfo) HasViewRef() bool {
 	if o != nil && o.ViewRef != nil {
 		return true
 	}
@@ -213,12 +2779,12 @@ func (o *BTUserInfo) HasViewRef() bool {
 }
 
 // SetViewRef gets a reference to the given string and assigns it to the ViewRef field.
-func (o *BTUserInfo) SetViewRef(v string) {
+func (o *base_BTUserInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
 // GetImage returns the Image field value if set, zero value otherwise.
-func (o *BTUserInfo) GetImage() string {
+func (o *base_BTUserInfo) GetImage() string {
 	if o == nil || o.Image == nil {
 		var ret string
 		return ret
@@ -228,7 +2794,7 @@ func (o *BTUserInfo) GetImage() string {
 
 // GetImageOk returns a tuple with the Image field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetImageOk() (*string, bool) {
+func (o *base_BTUserInfo) GetImageOk() (*string, bool) {
 	if o == nil || o.Image == nil {
 		return nil, false
 	}
@@ -236,7 +2802,7 @@ func (o *BTUserInfo) GetImageOk() (*string, bool) {
 }
 
 // HasImage returns a boolean if a field has been set.
-func (o *BTUserInfo) HasImage() bool {
+func (o *base_BTUserInfo) HasImage() bool {
 	if o != nil && o.Image != nil {
 		return true
 	}
@@ -245,12 +2811,12 @@ func (o *BTUserInfo) HasImage() bool {
 }
 
 // SetImage gets a reference to the given string and assigns it to the Image field.
-func (o *BTUserInfo) SetImage(v string) {
+func (o *base_BTUserInfo) SetImage(v string) {
 	o.Image = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *BTUserInfo) GetState() int32 {
+func (o *base_BTUserInfo) GetState() int32 {
 	if o == nil || o.State == nil {
 		var ret int32
 		return ret
@@ -260,7 +2826,7 @@ func (o *BTUserInfo) GetState() int32 {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetStateOk() (*int32, bool) {
+func (o *base_BTUserInfo) GetStateOk() (*int32, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -268,7 +2834,7 @@ func (o *BTUserInfo) GetStateOk() (*int32, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *BTUserInfo) HasState() bool {
+func (o *base_BTUserInfo) HasState() bool {
 	if o != nil && o.State != nil {
 		return true
 	}
@@ -277,12 +2843,12 @@ func (o *BTUserInfo) HasState() bool {
 }
 
 // SetState gets a reference to the given int32 and assigns it to the State field.
-func (o *BTUserInfo) SetState(v int32) {
+func (o *base_BTUserInfo) SetState(v int32) {
 	o.State = &v
 }
 
 // GetDocumentationName returns the DocumentationName field value if set, zero value otherwise.
-func (o *BTUserInfo) GetDocumentationName() string {
+func (o *base_BTUserInfo) GetDocumentationName() string {
 	if o == nil || o.DocumentationName == nil {
 		var ret string
 		return ret
@@ -292,7 +2858,7 @@ func (o *BTUserInfo) GetDocumentationName() string {
 
 // GetDocumentationNameOk returns a tuple with the DocumentationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetDocumentationNameOk() (*string, bool) {
+func (o *base_BTUserInfo) GetDocumentationNameOk() (*string, bool) {
 	if o == nil || o.DocumentationName == nil {
 		return nil, false
 	}
@@ -300,7 +2866,7 @@ func (o *BTUserInfo) GetDocumentationNameOk() (*string, bool) {
 }
 
 // HasDocumentationName returns a boolean if a field has been set.
-func (o *BTUserInfo) HasDocumentationName() bool {
+func (o *base_BTUserInfo) HasDocumentationName() bool {
 	if o != nil && o.DocumentationName != nil {
 		return true
 	}
@@ -309,12 +2875,12 @@ func (o *BTUserInfo) HasDocumentationName() bool {
 }
 
 // SetDocumentationName gets a reference to the given string and assigns it to the DocumentationName field.
-func (o *BTUserInfo) SetDocumentationName(v string) {
+func (o *base_BTUserInfo) SetDocumentationName(v string) {
 	o.DocumentationName = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
-func (o *BTUserInfo) GetEmail() string {
+func (o *base_BTUserInfo) GetEmail() string {
 	if o == nil || o.Email == nil {
 		var ret string
 		return ret
@@ -324,7 +2890,7 @@ func (o *BTUserInfo) GetEmail() string {
 
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetEmailOk() (*string, bool) {
+func (o *base_BTUserInfo) GetEmailOk() (*string, bool) {
 	if o == nil || o.Email == nil {
 		return nil, false
 	}
@@ -332,7 +2898,7 @@ func (o *BTUserInfo) GetEmailOk() (*string, bool) {
 }
 
 // HasEmail returns a boolean if a field has been set.
-func (o *BTUserInfo) HasEmail() bool {
+func (o *base_BTUserInfo) HasEmail() bool {
 	if o != nil && o.Email != nil {
 		return true
 	}
@@ -341,12 +2907,12 @@ func (o *BTUserInfo) HasEmail() bool {
 }
 
 // SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *BTUserInfo) SetEmail(v string) {
+func (o *base_BTUserInfo) SetEmail(v string) {
 	o.Email = &v
 }
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise.
-func (o *BTUserInfo) GetFirstName() string {
+func (o *base_BTUserInfo) GetFirstName() string {
 	if o == nil || o.FirstName == nil {
 		var ret string
 		return ret
@@ -356,7 +2922,7 @@ func (o *BTUserInfo) GetFirstName() string {
 
 // GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetFirstNameOk() (*string, bool) {
+func (o *base_BTUserInfo) GetFirstNameOk() (*string, bool) {
 	if o == nil || o.FirstName == nil {
 		return nil, false
 	}
@@ -364,7 +2930,7 @@ func (o *BTUserInfo) GetFirstNameOk() (*string, bool) {
 }
 
 // HasFirstName returns a boolean if a field has been set.
-func (o *BTUserInfo) HasFirstName() bool {
+func (o *base_BTUserInfo) HasFirstName() bool {
 	if o != nil && o.FirstName != nil {
 		return true
 	}
@@ -373,12 +2939,12 @@ func (o *BTUserInfo) HasFirstName() bool {
 }
 
 // SetFirstName gets a reference to the given string and assigns it to the FirstName field.
-func (o *BTUserInfo) SetFirstName(v string) {
+func (o *base_BTUserInfo) SetFirstName(v string) {
 	o.FirstName = &v
 }
 
 // GetLastName returns the LastName field value if set, zero value otherwise.
-func (o *BTUserInfo) GetLastName() string {
+func (o *base_BTUserInfo) GetLastName() string {
 	if o == nil || o.LastName == nil {
 		var ret string
 		return ret
@@ -388,7 +2954,7 @@ func (o *BTUserInfo) GetLastName() string {
 
 // GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetLastNameOk() (*string, bool) {
+func (o *base_BTUserInfo) GetLastNameOk() (*string, bool) {
 	if o == nil || o.LastName == nil {
 		return nil, false
 	}
@@ -396,7 +2962,7 @@ func (o *BTUserInfo) GetLastNameOk() (*string, bool) {
 }
 
 // HasLastName returns a boolean if a field has been set.
-func (o *BTUserInfo) HasLastName() bool {
+func (o *base_BTUserInfo) HasLastName() bool {
 	if o != nil && o.LastName != nil {
 		return true
 	}
@@ -405,12 +2971,12 @@ func (o *BTUserInfo) HasLastName() bool {
 }
 
 // SetLastName gets a reference to the given string and assigns it to the LastName field.
-func (o *BTUserInfo) SetLastName(v string) {
+func (o *base_BTUserInfo) SetLastName(v string) {
 	o.LastName = &v
 }
 
 // GetCompany returns the Company field value if set, zero value otherwise.
-func (o *BTUserInfo) GetCompany() BTCompanySummaryInfo {
+func (o *base_BTUserInfo) GetCompany() BTCompanySummaryInfo {
 	if o == nil || o.Company == nil {
 		var ret BTCompanySummaryInfo
 		return ret
@@ -420,7 +2986,7 @@ func (o *BTUserInfo) GetCompany() BTCompanySummaryInfo {
 
 // GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
+func (o *base_BTUserInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
 	if o == nil || o.Company == nil {
 		return nil, false
 	}
@@ -428,7 +2994,7 @@ func (o *BTUserInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
 }
 
 // HasCompany returns a boolean if a field has been set.
-func (o *BTUserInfo) HasCompany() bool {
+func (o *base_BTUserInfo) HasCompany() bool {
 	if o != nil && o.Company != nil {
 		return true
 	}
@@ -437,12 +3003,12 @@ func (o *BTUserInfo) HasCompany() bool {
 }
 
 // SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
-func (o *BTUserInfo) SetCompany(v BTCompanySummaryInfo) {
+func (o *base_BTUserInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.Company = &v
 }
 
 // GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
-func (o *BTUserInfo) GetDocumentationNameOverride() string {
+func (o *base_BTUserInfo) GetDocumentationNameOverride() string {
 	if o == nil || o.DocumentationNameOverride == nil {
 		var ret string
 		return ret
@@ -452,7 +3018,7 @@ func (o *BTUserInfo) GetDocumentationNameOverride() string {
 
 // GetDocumentationNameOverrideOk returns a tuple with the DocumentationNameOverride field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetDocumentationNameOverrideOk() (*string, bool) {
+func (o *base_BTUserInfo) GetDocumentationNameOverrideOk() (*string, bool) {
 	if o == nil || o.DocumentationNameOverride == nil {
 		return nil, false
 	}
@@ -460,7 +3026,7 @@ func (o *BTUserInfo) GetDocumentationNameOverrideOk() (*string, bool) {
 }
 
 // HasDocumentationNameOverride returns a boolean if a field has been set.
-func (o *BTUserInfo) HasDocumentationNameOverride() bool {
+func (o *base_BTUserInfo) HasDocumentationNameOverride() bool {
 	if o != nil && o.DocumentationNameOverride != nil {
 		return true
 	}
@@ -469,12 +3035,12 @@ func (o *BTUserInfo) HasDocumentationNameOverride() bool {
 }
 
 // SetDocumentationNameOverride gets a reference to the given string and assigns it to the DocumentationNameOverride field.
-func (o *BTUserInfo) SetDocumentationNameOverride(v string) {
+func (o *base_BTUserInfo) SetDocumentationNameOverride(v string) {
 	o.DocumentationNameOverride = &v
 }
 
 // GetGlobalPermissions returns the GlobalPermissions field value if set, zero value otherwise.
-func (o *BTUserInfo) GetGlobalPermissions() GlobalPermissionInfo {
+func (o *base_BTUserInfo) GetGlobalPermissions() GlobalPermissionInfo {
 	if o == nil || o.GlobalPermissions == nil {
 		var ret GlobalPermissionInfo
 		return ret
@@ -484,7 +3050,7 @@ func (o *BTUserInfo) GetGlobalPermissions() GlobalPermissionInfo {
 
 // GetGlobalPermissionsOk returns a tuple with the GlobalPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetGlobalPermissionsOk() (*GlobalPermissionInfo, bool) {
+func (o *base_BTUserInfo) GetGlobalPermissionsOk() (*GlobalPermissionInfo, bool) {
 	if o == nil || o.GlobalPermissions == nil {
 		return nil, false
 	}
@@ -492,7 +3058,7 @@ func (o *BTUserInfo) GetGlobalPermissionsOk() (*GlobalPermissionInfo, bool) {
 }
 
 // HasGlobalPermissions returns a boolean if a field has been set.
-func (o *BTUserInfo) HasGlobalPermissions() bool {
+func (o *base_BTUserInfo) HasGlobalPermissions() bool {
 	if o != nil && o.GlobalPermissions != nil {
 		return true
 	}
@@ -501,12 +3067,12 @@ func (o *BTUserInfo) HasGlobalPermissions() bool {
 }
 
 // SetGlobalPermissions gets a reference to the given GlobalPermissionInfo and assigns it to the GlobalPermissions field.
-func (o *BTUserInfo) SetGlobalPermissions(v GlobalPermissionInfo) {
+func (o *base_BTUserInfo) SetGlobalPermissions(v GlobalPermissionInfo) {
 	o.GlobalPermissions = &v
 }
 
 // GetIsGuest returns the IsGuest field value if set, zero value otherwise.
-func (o *BTUserInfo) GetIsGuest() bool {
+func (o *base_BTUserInfo) GetIsGuest() bool {
 	if o == nil || o.IsGuest == nil {
 		var ret bool
 		return ret
@@ -516,7 +3082,7 @@ func (o *BTUserInfo) GetIsGuest() bool {
 
 // GetIsGuestOk returns a tuple with the IsGuest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetIsGuestOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetIsGuestOk() (*bool, bool) {
 	if o == nil || o.IsGuest == nil {
 		return nil, false
 	}
@@ -524,7 +3090,7 @@ func (o *BTUserInfo) GetIsGuestOk() (*bool, bool) {
 }
 
 // HasIsGuest returns a boolean if a field has been set.
-func (o *BTUserInfo) HasIsGuest() bool {
+func (o *base_BTUserInfo) HasIsGuest() bool {
 	if o != nil && o.IsGuest != nil {
 		return true
 	}
@@ -533,12 +3099,12 @@ func (o *BTUserInfo) HasIsGuest() bool {
 }
 
 // SetIsGuest gets a reference to the given bool and assigns it to the IsGuest field.
-func (o *BTUserInfo) SetIsGuest(v bool) {
+func (o *base_BTUserInfo) SetIsGuest(v bool) {
 	o.IsGuest = &v
 }
 
 // GetIsLight returns the IsLight field value if set, zero value otherwise.
-func (o *BTUserInfo) GetIsLight() bool {
+func (o *base_BTUserInfo) GetIsLight() bool {
 	if o == nil || o.IsLight == nil {
 		var ret bool
 		return ret
@@ -548,7 +3114,7 @@ func (o *BTUserInfo) GetIsLight() bool {
 
 // GetIsLightOk returns a tuple with the IsLight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetIsLightOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetIsLightOk() (*bool, bool) {
 	if o == nil || o.IsLight == nil {
 		return nil, false
 	}
@@ -556,7 +3122,7 @@ func (o *BTUserInfo) GetIsLightOk() (*bool, bool) {
 }
 
 // HasIsLight returns a boolean if a field has been set.
-func (o *BTUserInfo) HasIsLight() bool {
+func (o *base_BTUserInfo) HasIsLight() bool {
 	if o != nil && o.IsLight != nil {
 		return true
 	}
@@ -565,12 +3131,12 @@ func (o *BTUserInfo) HasIsLight() bool {
 }
 
 // SetIsLight gets a reference to the given bool and assigns it to the IsLight field.
-func (o *BTUserInfo) SetIsLight(v bool) {
+func (o *base_BTUserInfo) SetIsLight(v bool) {
 	o.IsLight = &v
 }
 
 // GetLastLoginTime returns the LastLoginTime field value if set, zero value otherwise.
-func (o *BTUserInfo) GetLastLoginTime() JSONTime {
+func (o *base_BTUserInfo) GetLastLoginTime() JSONTime {
 	if o == nil || o.LastLoginTime == nil {
 		var ret JSONTime
 		return ret
@@ -580,7 +3146,7 @@ func (o *BTUserInfo) GetLastLoginTime() JSONTime {
 
 // GetLastLoginTimeOk returns a tuple with the LastLoginTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetLastLoginTimeOk() (*JSONTime, bool) {
+func (o *base_BTUserInfo) GetLastLoginTimeOk() (*JSONTime, bool) {
 	if o == nil || o.LastLoginTime == nil {
 		return nil, false
 	}
@@ -588,7 +3154,7 @@ func (o *BTUserInfo) GetLastLoginTimeOk() (*JSONTime, bool) {
 }
 
 // HasLastLoginTime returns a boolean if a field has been set.
-func (o *BTUserInfo) HasLastLoginTime() bool {
+func (o *base_BTUserInfo) HasLastLoginTime() bool {
 	if o != nil && o.LastLoginTime != nil {
 		return true
 	}
@@ -597,12 +3163,12 @@ func (o *BTUserInfo) HasLastLoginTime() bool {
 }
 
 // SetLastLoginTime gets a reference to the given JSONTime and assigns it to the LastLoginTime field.
-func (o *BTUserInfo) SetLastLoginTime(v JSONTime) {
+func (o *base_BTUserInfo) SetLastLoginTime(v JSONTime) {
 	o.LastLoginTime = &v
 }
 
 // GetPersonalMessageAllowed returns the PersonalMessageAllowed field value if set, zero value otherwise.
-func (o *BTUserInfo) GetPersonalMessageAllowed() bool {
+func (o *base_BTUserInfo) GetPersonalMessageAllowed() bool {
 	if o == nil || o.PersonalMessageAllowed == nil {
 		var ret bool
 		return ret
@@ -612,7 +3178,7 @@ func (o *BTUserInfo) GetPersonalMessageAllowed() bool {
 
 // GetPersonalMessageAllowedOk returns a tuple with the PersonalMessageAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetPersonalMessageAllowedOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetPersonalMessageAllowedOk() (*bool, bool) {
 	if o == nil || o.PersonalMessageAllowed == nil {
 		return nil, false
 	}
@@ -620,7 +3186,7 @@ func (o *BTUserInfo) GetPersonalMessageAllowedOk() (*bool, bool) {
 }
 
 // HasPersonalMessageAllowed returns a boolean if a field has been set.
-func (o *BTUserInfo) HasPersonalMessageAllowed() bool {
+func (o *base_BTUserInfo) HasPersonalMessageAllowed() bool {
 	if o != nil && o.PersonalMessageAllowed != nil {
 		return true
 	}
@@ -629,12 +3195,12 @@ func (o *BTUserInfo) HasPersonalMessageAllowed() bool {
 }
 
 // SetPersonalMessageAllowed gets a reference to the given bool and assigns it to the PersonalMessageAllowed field.
-func (o *BTUserInfo) SetPersonalMessageAllowed(v bool) {
+func (o *base_BTUserInfo) SetPersonalMessageAllowed(v bool) {
 	o.PersonalMessageAllowed = &v
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
-func (o *BTUserInfo) GetSource() int32 {
+func (o *base_BTUserInfo) GetSource() int32 {
 	if o == nil || o.Source == nil {
 		var ret int32
 		return ret
@@ -644,7 +3210,7 @@ func (o *BTUserInfo) GetSource() int32 {
 
 // GetSourceOk returns a tuple with the Source field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetSourceOk() (*int32, bool) {
+func (o *base_BTUserInfo) GetSourceOk() (*int32, bool) {
 	if o == nil || o.Source == nil {
 		return nil, false
 	}
@@ -652,7 +3218,7 @@ func (o *BTUserInfo) GetSourceOk() (*int32, bool) {
 }
 
 // HasSource returns a boolean if a field has been set.
-func (o *BTUserInfo) HasSource() bool {
+func (o *base_BTUserInfo) HasSource() bool {
 	if o != nil && o.Source != nil {
 		return true
 	}
@@ -661,12 +3227,12 @@ func (o *BTUserInfo) HasSource() bool {
 }
 
 // SetSource gets a reference to the given int32 and assigns it to the Source field.
-func (o *BTUserInfo) SetSource(v int32) {
+func (o *base_BTUserInfo) SetSource(v int32) {
 	o.Source = &v
 }
 
 // GetActivePlan returns the ActivePlan field value if set, zero value otherwise.
-func (o *BTUserInfo) GetActivePlan() BTBillingPlanInfo {
+func (o *base_BTUserInfo) GetActivePlan() BTBillingPlanInfo {
 	if o == nil || o.ActivePlan == nil {
 		var ret BTBillingPlanInfo
 		return ret
@@ -676,7 +3242,7 @@ func (o *BTUserInfo) GetActivePlan() BTBillingPlanInfo {
 
 // GetActivePlanOk returns a tuple with the ActivePlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetActivePlanOk() (*BTBillingPlanInfo, bool) {
+func (o *base_BTUserInfo) GetActivePlanOk() (*BTBillingPlanInfo, bool) {
 	if o == nil || o.ActivePlan == nil {
 		return nil, false
 	}
@@ -684,7 +3250,7 @@ func (o *BTUserInfo) GetActivePlanOk() (*BTBillingPlanInfo, bool) {
 }
 
 // HasActivePlan returns a boolean if a field has been set.
-func (o *BTUserInfo) HasActivePlan() bool {
+func (o *base_BTUserInfo) HasActivePlan() bool {
 	if o != nil && o.ActivePlan != nil {
 		return true
 	}
@@ -693,12 +3259,12 @@ func (o *BTUserInfo) HasActivePlan() bool {
 }
 
 // SetActivePlan gets a reference to the given BTBillingPlanInfo and assigns it to the ActivePlan field.
-func (o *BTUserInfo) SetActivePlan(v BTBillingPlanInfo) {
+func (o *base_BTUserInfo) SetActivePlan(v BTBillingPlanInfo) {
 	o.ActivePlan = &v
 }
 
 // GetActivePlanId returns the ActivePlanId field value if set, zero value otherwise.
-func (o *BTUserInfo) GetActivePlanId() string {
+func (o *base_BTUserInfo) GetActivePlanId() string {
 	if o == nil || o.ActivePlanId == nil {
 		var ret string
 		return ret
@@ -708,7 +3274,7 @@ func (o *BTUserInfo) GetActivePlanId() string {
 
 // GetActivePlanIdOk returns a tuple with the ActivePlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetActivePlanIdOk() (*string, bool) {
+func (o *base_BTUserInfo) GetActivePlanIdOk() (*string, bool) {
 	if o == nil || o.ActivePlanId == nil {
 		return nil, false
 	}
@@ -716,7 +3282,7 @@ func (o *BTUserInfo) GetActivePlanIdOk() (*string, bool) {
 }
 
 // HasActivePlanId returns a boolean if a field has been set.
-func (o *BTUserInfo) HasActivePlanId() bool {
+func (o *base_BTUserInfo) HasActivePlanId() bool {
 	if o != nil && o.ActivePlanId != nil {
 		return true
 	}
@@ -725,12 +3291,12 @@ func (o *BTUserInfo) HasActivePlanId() bool {
 }
 
 // SetActivePlanId gets a reference to the given string and assigns it to the ActivePlanId field.
-func (o *BTUserInfo) SetActivePlanId(v string) {
+func (o *base_BTUserInfo) SetActivePlanId(v string) {
 	o.ActivePlanId = &v
 }
 
 // GetActivePurchases returns the ActivePurchases field value if set, zero value otherwise.
-func (o *BTUserInfo) GetActivePurchases() []BTPurchaseInfo {
+func (o *base_BTUserInfo) GetActivePurchases() []BTPurchaseInfo {
 	if o == nil || o.ActivePurchases == nil {
 		var ret []BTPurchaseInfo
 		return ret
@@ -740,7 +3306,7 @@ func (o *BTUserInfo) GetActivePurchases() []BTPurchaseInfo {
 
 // GetActivePurchasesOk returns a tuple with the ActivePurchases field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetActivePurchasesOk() ([]BTPurchaseInfo, bool) {
+func (o *base_BTUserInfo) GetActivePurchasesOk() ([]BTPurchaseInfo, bool) {
 	if o == nil || o.ActivePurchases == nil {
 		return nil, false
 	}
@@ -748,7 +3314,7 @@ func (o *BTUserInfo) GetActivePurchasesOk() ([]BTPurchaseInfo, bool) {
 }
 
 // HasActivePurchases returns a boolean if a field has been set.
-func (o *BTUserInfo) HasActivePurchases() bool {
+func (o *base_BTUserInfo) HasActivePurchases() bool {
 	if o != nil && o.ActivePurchases != nil {
 		return true
 	}
@@ -757,12 +3323,12 @@ func (o *BTUserInfo) HasActivePurchases() bool {
 }
 
 // SetActivePurchases gets a reference to the given []BTPurchaseInfo and assigns it to the ActivePurchases field.
-func (o *BTUserInfo) SetActivePurchases(v []BTPurchaseInfo) {
+func (o *base_BTUserInfo) SetActivePurchases(v []BTPurchaseInfo) {
 	o.ActivePurchases = v
 }
 
 // GetActiveTrialInfo returns the ActiveTrialInfo field value if set, zero value otherwise.
-func (o *BTUserInfo) GetActiveTrialInfo() BTTrialInfo {
+func (o *base_BTUserInfo) GetActiveTrialInfo() BTTrialInfo {
 	if o == nil || o.ActiveTrialInfo == nil {
 		var ret BTTrialInfo
 		return ret
@@ -772,7 +3338,7 @@ func (o *BTUserInfo) GetActiveTrialInfo() BTTrialInfo {
 
 // GetActiveTrialInfoOk returns a tuple with the ActiveTrialInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetActiveTrialInfoOk() (*BTTrialInfo, bool) {
+func (o *base_BTUserInfo) GetActiveTrialInfoOk() (*BTTrialInfo, bool) {
 	if o == nil || o.ActiveTrialInfo == nil {
 		return nil, false
 	}
@@ -780,7 +3346,7 @@ func (o *BTUserInfo) GetActiveTrialInfoOk() (*BTTrialInfo, bool) {
 }
 
 // HasActiveTrialInfo returns a boolean if a field has been set.
-func (o *BTUserInfo) HasActiveTrialInfo() bool {
+func (o *base_BTUserInfo) HasActiveTrialInfo() bool {
 	if o != nil && o.ActiveTrialInfo != nil {
 		return true
 	}
@@ -789,12 +3355,12 @@ func (o *BTUserInfo) HasActiveTrialInfo() bool {
 }
 
 // SetActiveTrialInfo gets a reference to the given BTTrialInfo and assigns it to the ActiveTrialInfo field.
-func (o *BTUserInfo) SetActiveTrialInfo(v BTTrialInfo) {
+func (o *base_BTUserInfo) SetActiveTrialInfo(v BTTrialInfo) {
 	o.ActiveTrialInfo = &v
 }
 
 // GetB2cId returns the B2cId field value if set, zero value otherwise.
-func (o *BTUserInfo) GetB2cId() string {
+func (o *base_BTUserInfo) GetB2cId() string {
 	if o == nil || o.B2cId == nil {
 		var ret string
 		return ret
@@ -804,7 +3370,7 @@ func (o *BTUserInfo) GetB2cId() string {
 
 // GetB2cIdOk returns a tuple with the B2cId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetB2cIdOk() (*string, bool) {
+func (o *base_BTUserInfo) GetB2cIdOk() (*string, bool) {
 	if o == nil || o.B2cId == nil {
 		return nil, false
 	}
@@ -812,7 +3378,7 @@ func (o *BTUserInfo) GetB2cIdOk() (*string, bool) {
 }
 
 // HasB2cId returns a boolean if a field has been set.
-func (o *BTUserInfo) HasB2cId() bool {
+func (o *base_BTUserInfo) HasB2cId() bool {
 	if o != nil && o.B2cId != nil {
 		return true
 	}
@@ -821,12 +3387,12 @@ func (o *BTUserInfo) HasB2cId() bool {
 }
 
 // SetB2cId gets a reference to the given string and assigns it to the B2cId field.
-func (o *BTUserInfo) SetB2cId(v string) {
+func (o *base_BTUserInfo) SetB2cId(v string) {
 	o.B2cId = &v
 }
 
 // GetBillingUpdateRequired returns the BillingUpdateRequired field value if set, zero value otherwise.
-func (o *BTUserInfo) GetBillingUpdateRequired() bool {
+func (o *base_BTUserInfo) GetBillingUpdateRequired() bool {
 	if o == nil || o.BillingUpdateRequired == nil {
 		var ret bool
 		return ret
@@ -836,7 +3402,7 @@ func (o *BTUserInfo) GetBillingUpdateRequired() bool {
 
 // GetBillingUpdateRequiredOk returns a tuple with the BillingUpdateRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetBillingUpdateRequiredOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetBillingUpdateRequiredOk() (*bool, bool) {
 	if o == nil || o.BillingUpdateRequired == nil {
 		return nil, false
 	}
@@ -844,7 +3410,7 @@ func (o *BTUserInfo) GetBillingUpdateRequiredOk() (*bool, bool) {
 }
 
 // HasBillingUpdateRequired returns a boolean if a field has been set.
-func (o *BTUserInfo) HasBillingUpdateRequired() bool {
+func (o *base_BTUserInfo) HasBillingUpdateRequired() bool {
 	if o != nil && o.BillingUpdateRequired != nil {
 		return true
 	}
@@ -853,12 +3419,12 @@ func (o *BTUserInfo) HasBillingUpdateRequired() bool {
 }
 
 // SetBillingUpdateRequired gets a reference to the given bool and assigns it to the BillingUpdateRequired field.
-func (o *BTUserInfo) SetBillingUpdateRequired(v bool) {
+func (o *base_BTUserInfo) SetBillingUpdateRequired(v bool) {
 	o.BillingUpdateRequired = &v
 }
 
 // GetCadSystemAtSignup returns the CadSystemAtSignup field value if set, zero value otherwise.
-func (o *BTUserInfo) GetCadSystemAtSignup() string {
+func (o *base_BTUserInfo) GetCadSystemAtSignup() string {
 	if o == nil || o.CadSystemAtSignup == nil {
 		var ret string
 		return ret
@@ -868,7 +3434,7 @@ func (o *BTUserInfo) GetCadSystemAtSignup() string {
 
 // GetCadSystemAtSignupOk returns a tuple with the CadSystemAtSignup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetCadSystemAtSignupOk() (*string, bool) {
+func (o *base_BTUserInfo) GetCadSystemAtSignupOk() (*string, bool) {
 	if o == nil || o.CadSystemAtSignup == nil {
 		return nil, false
 	}
@@ -876,7 +3442,7 @@ func (o *BTUserInfo) GetCadSystemAtSignupOk() (*string, bool) {
 }
 
 // HasCadSystemAtSignup returns a boolean if a field has been set.
-func (o *BTUserInfo) HasCadSystemAtSignup() bool {
+func (o *base_BTUserInfo) HasCadSystemAtSignup() bool {
 	if o != nil && o.CadSystemAtSignup != nil {
 		return true
 	}
@@ -885,12 +3451,12 @@ func (o *BTUserInfo) HasCadSystemAtSignup() bool {
 }
 
 // SetCadSystemAtSignup gets a reference to the given string and assigns it to the CadSystemAtSignup field.
-func (o *BTUserInfo) SetCadSystemAtSignup(v string) {
+func (o *base_BTUserInfo) SetCadSystemAtSignup(v string) {
 	o.CadSystemAtSignup = &v
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
-func (o *BTUserInfo) GetCountryCode() string {
+func (o *base_BTUserInfo) GetCountryCode() string {
 	if o == nil || o.CountryCode == nil {
 		var ret string
 		return ret
@@ -900,7 +3466,7 @@ func (o *BTUserInfo) GetCountryCode() string {
 
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetCountryCodeOk() (*string, bool) {
+func (o *base_BTUserInfo) GetCountryCodeOk() (*string, bool) {
 	if o == nil || o.CountryCode == nil {
 		return nil, false
 	}
@@ -908,7 +3474,7 @@ func (o *BTUserInfo) GetCountryCodeOk() (*string, bool) {
 }
 
 // HasCountryCode returns a boolean if a field has been set.
-func (o *BTUserInfo) HasCountryCode() bool {
+func (o *base_BTUserInfo) HasCountryCode() bool {
 	if o != nil && o.CountryCode != nil {
 		return true
 	}
@@ -917,12 +3483,12 @@ func (o *BTUserInfo) HasCountryCode() bool {
 }
 
 // SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
-func (o *BTUserInfo) SetCountryCode(v string) {
+func (o *base_BTUserInfo) SetCountryCode(v string) {
 	o.CountryCode = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *BTUserInfo) GetCreatedAt() JSONTime {
+func (o *base_BTUserInfo) GetCreatedAt() JSONTime {
 	if o == nil || o.CreatedAt == nil {
 		var ret JSONTime
 		return ret
@@ -932,7 +3498,7 @@ func (o *BTUserInfo) GetCreatedAt() JSONTime {
 
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetCreatedAtOk() (*JSONTime, bool) {
+func (o *base_BTUserInfo) GetCreatedAtOk() (*JSONTime, bool) {
 	if o == nil || o.CreatedAt == nil {
 		return nil, false
 	}
@@ -940,7 +3506,7 @@ func (o *BTUserInfo) GetCreatedAtOk() (*JSONTime, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *BTUserInfo) HasCreatedAt() bool {
+func (o *base_BTUserInfo) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt != nil {
 		return true
 	}
@@ -949,12 +3515,12 @@ func (o *BTUserInfo) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given JSONTime and assigns it to the CreatedAt field.
-func (o *BTUserInfo) SetCreatedAt(v JSONTime) {
+func (o *base_BTUserInfo) SetCreatedAt(v JSONTime) {
 	o.CreatedAt = &v
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *BTUserInfo) GetCredential() BTSessionCredentialInfo {
+func (o *base_BTUserInfo) GetCredential() BTSessionCredentialInfo {
 	if o == nil || o.Credential == nil {
 		var ret BTSessionCredentialInfo
 		return ret
@@ -964,7 +3530,7 @@ func (o *BTUserInfo) GetCredential() BTSessionCredentialInfo {
 
 // GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetCredentialOk() (*BTSessionCredentialInfo, bool) {
+func (o *base_BTUserInfo) GetCredentialOk() (*BTSessionCredentialInfo, bool) {
 	if o == nil || o.Credential == nil {
 		return nil, false
 	}
@@ -972,7 +3538,7 @@ func (o *BTUserInfo) GetCredentialOk() (*BTSessionCredentialInfo, bool) {
 }
 
 // HasCredential returns a boolean if a field has been set.
-func (o *BTUserInfo) HasCredential() bool {
+func (o *base_BTUserInfo) HasCredential() bool {
 	if o != nil && o.Credential != nil {
 		return true
 	}
@@ -981,12 +3547,12 @@ func (o *BTUserInfo) HasCredential() bool {
 }
 
 // SetCredential gets a reference to the given BTSessionCredentialInfo and assigns it to the Credential field.
-func (o *BTUserInfo) SetCredential(v BTSessionCredentialInfo) {
+func (o *base_BTUserInfo) SetCredential(v BTSessionCredentialInfo) {
 	o.Credential = &v
 }
 
 // GetDefaultCompanyName returns the DefaultCompanyName field value if set, zero value otherwise.
-func (o *BTUserInfo) GetDefaultCompanyName() string {
+func (o *base_BTUserInfo) GetDefaultCompanyName() string {
 	if o == nil || o.DefaultCompanyName == nil {
 		var ret string
 		return ret
@@ -996,7 +3562,7 @@ func (o *BTUserInfo) GetDefaultCompanyName() string {
 
 // GetDefaultCompanyNameOk returns a tuple with the DefaultCompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetDefaultCompanyNameOk() (*string, bool) {
+func (o *base_BTUserInfo) GetDefaultCompanyNameOk() (*string, bool) {
 	if o == nil || o.DefaultCompanyName == nil {
 		return nil, false
 	}
@@ -1004,7 +3570,7 @@ func (o *BTUserInfo) GetDefaultCompanyNameOk() (*string, bool) {
 }
 
 // HasDefaultCompanyName returns a boolean if a field has been set.
-func (o *BTUserInfo) HasDefaultCompanyName() bool {
+func (o *base_BTUserInfo) HasDefaultCompanyName() bool {
 	if o != nil && o.DefaultCompanyName != nil {
 		return true
 	}
@@ -1013,12 +3579,12 @@ func (o *BTUserInfo) HasDefaultCompanyName() bool {
 }
 
 // SetDefaultCompanyName gets a reference to the given string and assigns it to the DefaultCompanyName field.
-func (o *BTUserInfo) SetDefaultCompanyName(v string) {
+func (o *base_BTUserInfo) SetDefaultCompanyName(v string) {
 	o.DefaultCompanyName = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *BTUserInfo) GetDescription() string {
+func (o *base_BTUserInfo) GetDescription() string {
 	if o == nil || o.Description == nil {
 		var ret string
 		return ret
@@ -1028,7 +3594,7 @@ func (o *BTUserInfo) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetDescriptionOk() (*string, bool) {
+func (o *base_BTUserInfo) GetDescriptionOk() (*string, bool) {
 	if o == nil || o.Description == nil {
 		return nil, false
 	}
@@ -1036,7 +3602,7 @@ func (o *BTUserInfo) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *BTUserInfo) HasDescription() bool {
+func (o *base_BTUserInfo) HasDescription() bool {
 	if o != nil && o.Description != nil {
 		return true
 	}
@@ -1045,12 +3611,12 @@ func (o *BTUserInfo) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *BTUserInfo) SetDescription(v string) {
+func (o *base_BTUserInfo) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetDeviceInfo returns the DeviceInfo field value if set, zero value otherwise.
-func (o *BTUserInfo) GetDeviceInfo() BTDeviceLoginSecretInfo {
+func (o *base_BTUserInfo) GetDeviceInfo() BTDeviceLoginSecretInfo {
 	if o == nil || o.DeviceInfo == nil {
 		var ret BTDeviceLoginSecretInfo
 		return ret
@@ -1060,7 +3626,7 @@ func (o *BTUserInfo) GetDeviceInfo() BTDeviceLoginSecretInfo {
 
 // GetDeviceInfoOk returns a tuple with the DeviceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetDeviceInfoOk() (*BTDeviceLoginSecretInfo, bool) {
+func (o *base_BTUserInfo) GetDeviceInfoOk() (*BTDeviceLoginSecretInfo, bool) {
 	if o == nil || o.DeviceInfo == nil {
 		return nil, false
 	}
@@ -1068,7 +3634,7 @@ func (o *BTUserInfo) GetDeviceInfoOk() (*BTDeviceLoginSecretInfo, bool) {
 }
 
 // HasDeviceInfo returns a boolean if a field has been set.
-func (o *BTUserInfo) HasDeviceInfo() bool {
+func (o *base_BTUserInfo) HasDeviceInfo() bool {
 	if o != nil && o.DeviceInfo != nil {
 		return true
 	}
@@ -1077,12 +3643,12 @@ func (o *BTUserInfo) HasDeviceInfo() bool {
 }
 
 // SetDeviceInfo gets a reference to the given BTDeviceLoginSecretInfo and assigns it to the DeviceInfo field.
-func (o *BTUserInfo) SetDeviceInfo(v BTDeviceLoginSecretInfo) {
+func (o *base_BTUserInfo) SetDeviceInfo(v BTDeviceLoginSecretInfo) {
 	o.DeviceInfo = &v
 }
 
 // GetEnterprise returns the Enterprise field value if set, zero value otherwise.
-func (o *BTUserInfo) GetEnterprise() bool {
+func (o *base_BTUserInfo) GetEnterprise() bool {
 	if o == nil || o.Enterprise == nil {
 		var ret bool
 		return ret
@@ -1092,7 +3658,7 @@ func (o *BTUserInfo) GetEnterprise() bool {
 
 // GetEnterpriseOk returns a tuple with the Enterprise field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetEnterpriseOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetEnterpriseOk() (*bool, bool) {
 	if o == nil || o.Enterprise == nil {
 		return nil, false
 	}
@@ -1100,7 +3666,7 @@ func (o *BTUserInfo) GetEnterpriseOk() (*bool, bool) {
 }
 
 // HasEnterprise returns a boolean if a field has been set.
-func (o *BTUserInfo) HasEnterprise() bool {
+func (o *base_BTUserInfo) HasEnterprise() bool {
 	if o != nil && o.Enterprise != nil {
 		return true
 	}
@@ -1109,12 +3675,12 @@ func (o *BTUserInfo) HasEnterprise() bool {
 }
 
 // SetEnterprise gets a reference to the given bool and assigns it to the Enterprise field.
-func (o *BTUserInfo) SetEnterprise(v bool) {
+func (o *base_BTUserInfo) SetEnterprise(v bool) {
 	o.Enterprise = &v
 }
 
 // GetEulaId returns the EulaId field value if set, zero value otherwise.
-func (o *BTUserInfo) GetEulaId() string {
+func (o *base_BTUserInfo) GetEulaId() string {
 	if o == nil || o.EulaId == nil {
 		var ret string
 		return ret
@@ -1124,7 +3690,7 @@ func (o *BTUserInfo) GetEulaId() string {
 
 // GetEulaIdOk returns a tuple with the EulaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetEulaIdOk() (*string, bool) {
+func (o *base_BTUserInfo) GetEulaIdOk() (*string, bool) {
 	if o == nil || o.EulaId == nil {
 		return nil, false
 	}
@@ -1132,7 +3698,7 @@ func (o *BTUserInfo) GetEulaIdOk() (*string, bool) {
 }
 
 // HasEulaId returns a boolean if a field has been set.
-func (o *BTUserInfo) HasEulaId() bool {
+func (o *base_BTUserInfo) HasEulaId() bool {
 	if o != nil && o.EulaId != nil {
 		return true
 	}
@@ -1141,12 +3707,12 @@ func (o *BTUserInfo) HasEulaId() bool {
 }
 
 // SetEulaId gets a reference to the given string and assigns it to the EulaId field.
-func (o *BTUserInfo) SetEulaId(v string) {
+func (o *base_BTUserInfo) SetEulaId(v string) {
 	o.EulaId = &v
 }
 
 // GetEulaRequired returns the EulaRequired field value if set, zero value otherwise.
-func (o *BTUserInfo) GetEulaRequired() bool {
+func (o *base_BTUserInfo) GetEulaRequired() bool {
 	if o == nil || o.EulaRequired == nil {
 		var ret bool
 		return ret
@@ -1156,7 +3722,7 @@ func (o *BTUserInfo) GetEulaRequired() bool {
 
 // GetEulaRequiredOk returns a tuple with the EulaRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetEulaRequiredOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetEulaRequiredOk() (*bool, bool) {
 	if o == nil || o.EulaRequired == nil {
 		return nil, false
 	}
@@ -1164,7 +3730,7 @@ func (o *BTUserInfo) GetEulaRequiredOk() (*bool, bool) {
 }
 
 // HasEulaRequired returns a boolean if a field has been set.
-func (o *BTUserInfo) HasEulaRequired() bool {
+func (o *base_BTUserInfo) HasEulaRequired() bool {
 	if o != nil && o.EulaRequired != nil {
 		return true
 	}
@@ -1173,12 +3739,12 @@ func (o *BTUserInfo) HasEulaRequired() bool {
 }
 
 // SetEulaRequired gets a reference to the given bool and assigns it to the EulaRequired field.
-func (o *BTUserInfo) SetEulaRequired(v bool) {
+func (o *base_BTUserInfo) SetEulaRequired(v bool) {
 	o.EulaRequired = &v
 }
 
 // GetEvalCenter returns the EvalCenter field value if set, zero value otherwise.
-func (o *BTUserInfo) GetEvalCenter() bool {
+func (o *base_BTUserInfo) GetEvalCenter() bool {
 	if o == nil || o.EvalCenter == nil {
 		var ret bool
 		return ret
@@ -1188,7 +3754,7 @@ func (o *BTUserInfo) GetEvalCenter() bool {
 
 // GetEvalCenterOk returns a tuple with the EvalCenter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetEvalCenterOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetEvalCenterOk() (*bool, bool) {
 	if o == nil || o.EvalCenter == nil {
 		return nil, false
 	}
@@ -1196,7 +3762,7 @@ func (o *BTUserInfo) GetEvalCenterOk() (*bool, bool) {
 }
 
 // HasEvalCenter returns a boolean if a field has been set.
-func (o *BTUserInfo) HasEvalCenter() bool {
+func (o *base_BTUserInfo) HasEvalCenter() bool {
 	if o != nil && o.EvalCenter != nil {
 		return true
 	}
@@ -1205,12 +3771,12 @@ func (o *BTUserInfo) HasEvalCenter() bool {
 }
 
 // SetEvalCenter gets a reference to the given bool and assigns it to the EvalCenter field.
-func (o *BTUserInfo) SetEvalCenter(v bool) {
+func (o *base_BTUserInfo) SetEvalCenter(v bool) {
 	o.EvalCenter = &v
 }
 
 // GetForumId returns the ForumId field value if set, zero value otherwise.
-func (o *BTUserInfo) GetForumId() string {
+func (o *base_BTUserInfo) GetForumId() string {
 	if o == nil || o.ForumId == nil {
 		var ret string
 		return ret
@@ -1220,7 +3786,7 @@ func (o *BTUserInfo) GetForumId() string {
 
 // GetForumIdOk returns a tuple with the ForumId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetForumIdOk() (*string, bool) {
+func (o *base_BTUserInfo) GetForumIdOk() (*string, bool) {
 	if o == nil || o.ForumId == nil {
 		return nil, false
 	}
@@ -1228,7 +3794,7 @@ func (o *BTUserInfo) GetForumIdOk() (*string, bool) {
 }
 
 // HasForumId returns a boolean if a field has been set.
-func (o *BTUserInfo) HasForumId() bool {
+func (o *base_BTUserInfo) HasForumId() bool {
 	if o != nil && o.ForumId != nil {
 		return true
 	}
@@ -1237,12 +3803,12 @@ func (o *BTUserInfo) HasForumId() bool {
 }
 
 // SetForumId gets a reference to the given string and assigns it to the ForumId field.
-func (o *BTUserInfo) SetForumId(v string) {
+func (o *base_BTUserInfo) SetForumId(v string) {
 	o.ForumId = &v
 }
 
 // GetLastTrialInfo returns the LastTrialInfo field value if set, zero value otherwise.
-func (o *BTUserInfo) GetLastTrialInfo() BTTrialInfo {
+func (o *base_BTUserInfo) GetLastTrialInfo() BTTrialInfo {
 	if o == nil || o.LastTrialInfo == nil {
 		var ret BTTrialInfo
 		return ret
@@ -1252,7 +3818,7 @@ func (o *BTUserInfo) GetLastTrialInfo() BTTrialInfo {
 
 // GetLastTrialInfoOk returns a tuple with the LastTrialInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetLastTrialInfoOk() (*BTTrialInfo, bool) {
+func (o *base_BTUserInfo) GetLastTrialInfoOk() (*BTTrialInfo, bool) {
 	if o == nil || o.LastTrialInfo == nil {
 		return nil, false
 	}
@@ -1260,7 +3826,7 @@ func (o *BTUserInfo) GetLastTrialInfoOk() (*BTTrialInfo, bool) {
 }
 
 // HasLastTrialInfo returns a boolean if a field has been set.
-func (o *BTUserInfo) HasLastTrialInfo() bool {
+func (o *base_BTUserInfo) HasLastTrialInfo() bool {
 	if o != nil && o.LastTrialInfo != nil {
 		return true
 	}
@@ -1269,12 +3835,12 @@ func (o *BTUserInfo) HasLastTrialInfo() bool {
 }
 
 // SetLastTrialInfo gets a reference to the given BTTrialInfo and assigns it to the LastTrialInfo field.
-func (o *BTUserInfo) SetLastTrialInfo(v BTTrialInfo) {
+func (o *base_BTUserInfo) SetLastTrialInfo(v BTTrialInfo) {
 	o.LastTrialInfo = &v
 }
 
 // GetNeedToShowNewWalkthrough returns the NeedToShowNewWalkthrough field value if set, zero value otherwise.
-func (o *BTUserInfo) GetNeedToShowNewWalkthrough() bool {
+func (o *base_BTUserInfo) GetNeedToShowNewWalkthrough() bool {
 	if o == nil || o.NeedToShowNewWalkthrough == nil {
 		var ret bool
 		return ret
@@ -1284,7 +3850,7 @@ func (o *BTUserInfo) GetNeedToShowNewWalkthrough() bool {
 
 // GetNeedToShowNewWalkthroughOk returns a tuple with the NeedToShowNewWalkthrough field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetNeedToShowNewWalkthroughOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetNeedToShowNewWalkthroughOk() (*bool, bool) {
 	if o == nil || o.NeedToShowNewWalkthrough == nil {
 		return nil, false
 	}
@@ -1292,7 +3858,7 @@ func (o *BTUserInfo) GetNeedToShowNewWalkthroughOk() (*bool, bool) {
 }
 
 // HasNeedToShowNewWalkthrough returns a boolean if a field has been set.
-func (o *BTUserInfo) HasNeedToShowNewWalkthrough() bool {
+func (o *base_BTUserInfo) HasNeedToShowNewWalkthrough() bool {
 	if o != nil && o.NeedToShowNewWalkthrough != nil {
 		return true
 	}
@@ -1301,12 +3867,12 @@ func (o *BTUserInfo) HasNeedToShowNewWalkthrough() bool {
 }
 
 // SetNeedToShowNewWalkthrough gets a reference to the given bool and assigns it to the NeedToShowNewWalkthrough field.
-func (o *BTUserInfo) SetNeedToShowNewWalkthrough(v bool) {
+func (o *base_BTUserInfo) SetNeedToShowNewWalkthrough(v bool) {
 	o.NeedToShowNewWalkthrough = &v
 }
 
 // GetOwnPurchase returns the OwnPurchase field value if set, zero value otherwise.
-func (o *BTUserInfo) GetOwnPurchase() BTPurchaseInfo {
+func (o *base_BTUserInfo) GetOwnPurchase() BTPurchaseInfo {
 	if o == nil || o.OwnPurchase == nil {
 		var ret BTPurchaseInfo
 		return ret
@@ -1316,7 +3882,7 @@ func (o *BTUserInfo) GetOwnPurchase() BTPurchaseInfo {
 
 // GetOwnPurchaseOk returns a tuple with the OwnPurchase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetOwnPurchaseOk() (*BTPurchaseInfo, bool) {
+func (o *base_BTUserInfo) GetOwnPurchaseOk() (*BTPurchaseInfo, bool) {
 	if o == nil || o.OwnPurchase == nil {
 		return nil, false
 	}
@@ -1324,7 +3890,7 @@ func (o *BTUserInfo) GetOwnPurchaseOk() (*BTPurchaseInfo, bool) {
 }
 
 // HasOwnPurchase returns a boolean if a field has been set.
-func (o *BTUserInfo) HasOwnPurchase() bool {
+func (o *base_BTUserInfo) HasOwnPurchase() bool {
 	if o != nil && o.OwnPurchase != nil {
 		return true
 	}
@@ -1333,12 +3899,12 @@ func (o *BTUserInfo) HasOwnPurchase() bool {
 }
 
 // SetOwnPurchase gets a reference to the given BTPurchaseInfo and assigns it to the OwnPurchase field.
-func (o *BTUserInfo) SetOwnPurchase(v BTPurchaseInfo) {
+func (o *base_BTUserInfo) SetOwnPurchase(v BTPurchaseInfo) {
 	o.OwnPurchase = &v
 }
 
 // GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
-func (o *BTUserInfo) GetPhoneNumber() string {
+func (o *base_BTUserInfo) GetPhoneNumber() string {
 	if o == nil || o.PhoneNumber == nil {
 		var ret string
 		return ret
@@ -1348,7 +3914,7 @@ func (o *BTUserInfo) GetPhoneNumber() string {
 
 // GetPhoneNumberOk returns a tuple with the PhoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetPhoneNumberOk() (*string, bool) {
+func (o *base_BTUserInfo) GetPhoneNumberOk() (*string, bool) {
 	if o == nil || o.PhoneNumber == nil {
 		return nil, false
 	}
@@ -1356,7 +3922,7 @@ func (o *BTUserInfo) GetPhoneNumberOk() (*string, bool) {
 }
 
 // HasPhoneNumber returns a boolean if a field has been set.
-func (o *BTUserInfo) HasPhoneNumber() bool {
+func (o *base_BTUserInfo) HasPhoneNumber() bool {
 	if o != nil && o.PhoneNumber != nil {
 		return true
 	}
@@ -1365,12 +3931,12 @@ func (o *BTUserInfo) HasPhoneNumber() bool {
 }
 
 // SetPhoneNumber gets a reference to the given string and assigns it to the PhoneNumber field.
-func (o *BTUserInfo) SetPhoneNumber(v string) {
+func (o *base_BTUserInfo) SetPhoneNumber(v string) {
 	o.PhoneNumber = &v
 }
 
 // GetProductType returns the ProductType field value if set, zero value otherwise.
-func (o *BTUserInfo) GetProductType() []string {
+func (o *base_BTUserInfo) GetProductType() []string {
 	if o == nil || o.ProductType == nil {
 		var ret []string
 		return ret
@@ -1380,7 +3946,7 @@ func (o *BTUserInfo) GetProductType() []string {
 
 // GetProductTypeOk returns a tuple with the ProductType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetProductTypeOk() ([]string, bool) {
+func (o *base_BTUserInfo) GetProductTypeOk() ([]string, bool) {
 	if o == nil || o.ProductType == nil {
 		return nil, false
 	}
@@ -1388,7 +3954,7 @@ func (o *BTUserInfo) GetProductTypeOk() ([]string, bool) {
 }
 
 // HasProductType returns a boolean if a field has been set.
-func (o *BTUserInfo) HasProductType() bool {
+func (o *base_BTUserInfo) HasProductType() bool {
 	if o != nil && o.ProductType != nil {
 		return true
 	}
@@ -1397,12 +3963,12 @@ func (o *BTUserInfo) HasProductType() bool {
 }
 
 // SetProductType gets a reference to the given []string and assigns it to the ProductType field.
-func (o *BTUserInfo) SetProductType(v []string) {
+func (o *base_BTUserInfo) SetProductType(v []string) {
 	o.ProductType = v
 }
 
 // GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise.
-func (o *BTUserInfo) GetRedirectUrl() string {
+func (o *base_BTUserInfo) GetRedirectUrl() string {
 	if o == nil || o.RedirectUrl == nil {
 		var ret string
 		return ret
@@ -1412,7 +3978,7 @@ func (o *BTUserInfo) GetRedirectUrl() string {
 
 // GetRedirectUrlOk returns a tuple with the RedirectUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetRedirectUrlOk() (*string, bool) {
+func (o *base_BTUserInfo) GetRedirectUrlOk() (*string, bool) {
 	if o == nil || o.RedirectUrl == nil {
 		return nil, false
 	}
@@ -1420,7 +3986,7 @@ func (o *BTUserInfo) GetRedirectUrlOk() (*string, bool) {
 }
 
 // HasRedirectUrl returns a boolean if a field has been set.
-func (o *BTUserInfo) HasRedirectUrl() bool {
+func (o *base_BTUserInfo) HasRedirectUrl() bool {
 	if o != nil && o.RedirectUrl != nil {
 		return true
 	}
@@ -1429,12 +3995,12 @@ func (o *BTUserInfo) HasRedirectUrl() bool {
 }
 
 // SetRedirectUrl gets a reference to the given string and assigns it to the RedirectUrl field.
-func (o *BTUserInfo) SetRedirectUrl(v string) {
+func (o *base_BTUserInfo) SetRedirectUrl(v string) {
 	o.RedirectUrl = &v
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
-func (o *BTUserInfo) GetRole() int32 {
+func (o *base_BTUserInfo) GetRole() int32 {
 	if o == nil || o.Role == nil {
 		var ret int32
 		return ret
@@ -1444,7 +4010,7 @@ func (o *BTUserInfo) GetRole() int32 {
 
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetRoleOk() (*int32, bool) {
+func (o *base_BTUserInfo) GetRoleOk() (*int32, bool) {
 	if o == nil || o.Role == nil {
 		return nil, false
 	}
@@ -1452,7 +4018,7 @@ func (o *BTUserInfo) GetRoleOk() (*int32, bool) {
 }
 
 // HasRole returns a boolean if a field has been set.
-func (o *BTUserInfo) HasRole() bool {
+func (o *base_BTUserInfo) HasRole() bool {
 	if o != nil && o.Role != nil {
 		return true
 	}
@@ -1461,12 +4027,12 @@ func (o *BTUserInfo) HasRole() bool {
 }
 
 // SetRole gets a reference to the given int32 and assigns it to the Role field.
-func (o *BTUserInfo) SetRole(v int32) {
+func (o *base_BTUserInfo) SetRole(v int32) {
 	o.Role = &v
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
-func (o *BTUserInfo) GetRoles() []BTRole {
+func (o *base_BTUserInfo) GetRoles() []BTRole {
 	if o == nil || o.Roles == nil {
 		var ret []BTRole
 		return ret
@@ -1476,7 +4042,7 @@ func (o *BTUserInfo) GetRoles() []BTRole {
 
 // GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetRolesOk() ([]BTRole, bool) {
+func (o *base_BTUserInfo) GetRolesOk() ([]BTRole, bool) {
 	if o == nil || o.Roles == nil {
 		return nil, false
 	}
@@ -1484,7 +4050,7 @@ func (o *BTUserInfo) GetRolesOk() ([]BTRole, bool) {
 }
 
 // HasRoles returns a boolean if a field has been set.
-func (o *BTUserInfo) HasRoles() bool {
+func (o *base_BTUserInfo) HasRoles() bool {
 	if o != nil && o.Roles != nil {
 		return true
 	}
@@ -1493,12 +4059,12 @@ func (o *BTUserInfo) HasRoles() bool {
 }
 
 // SetRoles gets a reference to the given []BTRole and assigns it to the Roles field.
-func (o *BTUserInfo) SetRoles(v []BTRole) {
+func (o *base_BTUserInfo) SetRoles(v []BTRole) {
 	o.Roles = v
 }
 
 // GetStartupPage returns the StartupPage field value if set, zero value otherwise.
-func (o *BTUserInfo) GetStartupPage() int32 {
+func (o *base_BTUserInfo) GetStartupPage() int32 {
 	if o == nil || o.StartupPage == nil {
 		var ret int32
 		return ret
@@ -1508,7 +4074,7 @@ func (o *BTUserInfo) GetStartupPage() int32 {
 
 // GetStartupPageOk returns a tuple with the StartupPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetStartupPageOk() (*int32, bool) {
+func (o *base_BTUserInfo) GetStartupPageOk() (*int32, bool) {
 	if o == nil || o.StartupPage == nil {
 		return nil, false
 	}
@@ -1516,7 +4082,7 @@ func (o *BTUserInfo) GetStartupPageOk() (*int32, bool) {
 }
 
 // HasStartupPage returns a boolean if a field has been set.
-func (o *BTUserInfo) HasStartupPage() bool {
+func (o *base_BTUserInfo) HasStartupPage() bool {
 	if o != nil && o.StartupPage != nil {
 		return true
 	}
@@ -1525,12 +4091,12 @@ func (o *BTUserInfo) HasStartupPage() bool {
 }
 
 // SetStartupPage gets a reference to the given int32 and assigns it to the StartupPage field.
-func (o *BTUserInfo) SetStartupPage(v int32) {
+func (o *base_BTUserInfo) SetStartupPage(v int32) {
 	o.StartupPage = &v
 }
 
 // GetSystemUser returns the SystemUser field value if set, zero value otherwise.
-func (o *BTUserInfo) GetSystemUser() bool {
+func (o *base_BTUserInfo) GetSystemUser() bool {
 	if o == nil || o.SystemUser == nil {
 		var ret bool
 		return ret
@@ -1540,7 +4106,7 @@ func (o *BTUserInfo) GetSystemUser() bool {
 
 // GetSystemUserOk returns a tuple with the SystemUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetSystemUserOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetSystemUserOk() (*bool, bool) {
 	if o == nil || o.SystemUser == nil {
 		return nil, false
 	}
@@ -1548,7 +4114,7 @@ func (o *BTUserInfo) GetSystemUserOk() (*bool, bool) {
 }
 
 // HasSystemUser returns a boolean if a field has been set.
-func (o *BTUserInfo) HasSystemUser() bool {
+func (o *base_BTUserInfo) HasSystemUser() bool {
 	if o != nil && o.SystemUser != nil {
 		return true
 	}
@@ -1557,12 +4123,12 @@ func (o *BTUserInfo) HasSystemUser() bool {
 }
 
 // SetSystemUser gets a reference to the given bool and assigns it to the SystemUser field.
-func (o *BTUserInfo) SetSystemUser(v bool) {
+func (o *base_BTUserInfo) SetSystemUser(v bool) {
 	o.SystemUser = &v
 }
 
 // GetTotpEnabled returns the TotpEnabled field value if set, zero value otherwise.
-func (o *BTUserInfo) GetTotpEnabled() bool {
+func (o *base_BTUserInfo) GetTotpEnabled() bool {
 	if o == nil || o.TotpEnabled == nil {
 		var ret bool
 		return ret
@@ -1572,7 +4138,7 @@ func (o *BTUserInfo) GetTotpEnabled() bool {
 
 // GetTotpEnabledOk returns a tuple with the TotpEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetTotpEnabledOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetTotpEnabledOk() (*bool, bool) {
 	if o == nil || o.TotpEnabled == nil {
 		return nil, false
 	}
@@ -1580,7 +4146,7 @@ func (o *BTUserInfo) GetTotpEnabledOk() (*bool, bool) {
 }
 
 // HasTotpEnabled returns a boolean if a field has been set.
-func (o *BTUserInfo) HasTotpEnabled() bool {
+func (o *base_BTUserInfo) HasTotpEnabled() bool {
 	if o != nil && o.TotpEnabled != nil {
 		return true
 	}
@@ -1589,12 +4155,12 @@ func (o *BTUserInfo) HasTotpEnabled() bool {
 }
 
 // SetTotpEnabled gets a reference to the given bool and assigns it to the TotpEnabled field.
-func (o *BTUserInfo) SetTotpEnabled(v bool) {
+func (o *base_BTUserInfo) SetTotpEnabled(v bool) {
 	o.TotpEnabled = &v
 }
 
 // GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
-func (o *BTUserInfo) GetTracingEnabled() bool {
+func (o *base_BTUserInfo) GetTracingEnabled() bool {
 	if o == nil || o.TracingEnabled == nil {
 		var ret bool
 		return ret
@@ -1604,7 +4170,7 @@ func (o *BTUserInfo) GetTracingEnabled() bool {
 
 // GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetTracingEnabledOk() (*bool, bool) {
+func (o *base_BTUserInfo) GetTracingEnabledOk() (*bool, bool) {
 	if o == nil || o.TracingEnabled == nil {
 		return nil, false
 	}
@@ -1612,7 +4178,7 @@ func (o *BTUserInfo) GetTracingEnabledOk() (*bool, bool) {
 }
 
 // HasTracingEnabled returns a boolean if a field has been set.
-func (o *BTUserInfo) HasTracingEnabled() bool {
+func (o *base_BTUserInfo) HasTracingEnabled() bool {
 	if o != nil && o.TracingEnabled != nil {
 		return true
 	}
@@ -1621,12 +4187,12 @@ func (o *BTUserInfo) HasTracingEnabled() bool {
 }
 
 // SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
-func (o *BTUserInfo) SetTracingEnabled(v bool) {
+func (o *base_BTUserInfo) SetTracingEnabled(v bool) {
 	o.TracingEnabled = &v
 }
 
 // GetTrialInfos returns the TrialInfos field value if set, zero value otherwise.
-func (o *BTUserInfo) GetTrialInfos() []BTTrialInfo {
+func (o *base_BTUserInfo) GetTrialInfos() []BTTrialInfo {
 	if o == nil || o.TrialInfos == nil {
 		var ret []BTTrialInfo
 		return ret
@@ -1636,7 +4202,7 @@ func (o *BTUserInfo) GetTrialInfos() []BTTrialInfo {
 
 // GetTrialInfosOk returns a tuple with the TrialInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserInfo) GetTrialInfosOk() ([]BTTrialInfo, bool) {
+func (o *base_BTUserInfo) GetTrialInfosOk() ([]BTTrialInfo, bool) {
 	if o == nil || o.TrialInfos == nil {
 		return nil, false
 	}
@@ -1644,7 +4210,7 @@ func (o *BTUserInfo) GetTrialInfosOk() ([]BTTrialInfo, bool) {
 }
 
 // HasTrialInfos returns a boolean if a field has been set.
-func (o *BTUserInfo) HasTrialInfos() bool {
+func (o *base_BTUserInfo) HasTrialInfos() bool {
 	if o != nil && o.TrialInfos != nil {
 		return true
 	}
@@ -1653,11 +4219,11 @@ func (o *BTUserInfo) HasTrialInfos() bool {
 }
 
 // SetTrialInfos gets a reference to the given []BTTrialInfo and assigns it to the TrialInfos field.
-func (o *BTUserInfo) SetTrialInfos(v []BTTrialInfo) {
+func (o *base_BTUserInfo) SetTrialInfos(v []BTTrialInfo) {
 	o.TrialInfos = v
 }
 
-func (o BTUserInfo) MarshalJSON() ([]byte, error) {
+func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
@@ -1807,40 +4373,4 @@ func (o BTUserInfo) MarshalJSON() ([]byte, error) {
 		toSerialize["trialInfos"] = o.TrialInfos
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableBTUserInfo struct {
-	value *BTUserInfo
-	isSet bool
-}
-
-func (v NullableBTUserInfo) Get() *BTUserInfo {
-	return v.value
-}
-
-func (v *NullableBTUserInfo) Set(val *BTUserInfo) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBTUserInfo) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBTUserInfo) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBTUserInfo(val *BTUserInfo) *NullableBTUserInfo {
-	return &NullableBTUserInfo{value: val, isSet: true}
-}
-
-func (v NullableBTUserInfo) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBTUserInfo) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }

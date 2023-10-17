@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24127-2ec83fd5fc94
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,8 +17,8 @@ import (
 
 // BTTableAssemblyCrossHighlightData2675 struct for BTTableAssemblyCrossHighlightData2675
 type BTTableAssemblyCrossHighlightData2675 struct {
-	AssemblyCrossHighlightItems []BTTableAssemblyCrossHighlightDataItem2659 `json:"assemblyCrossHighlightItems,omitempty"`
 	BtType                      *string                                     `json:"btType,omitempty"`
+	AssemblyCrossHighlightItems []BTTableAssemblyCrossHighlightDataItem2659 `json:"assemblyCrossHighlightItems,omitempty"`
 }
 
 // NewBTTableAssemblyCrossHighlightData2675 instantiates a new BTTableAssemblyCrossHighlightData2675 object
@@ -36,38 +36,6 @@ func NewBTTableAssemblyCrossHighlightData2675() *BTTableAssemblyCrossHighlightDa
 func NewBTTableAssemblyCrossHighlightData2675WithDefaults() *BTTableAssemblyCrossHighlightData2675 {
 	this := BTTableAssemblyCrossHighlightData2675{}
 	return &this
-}
-
-// GetAssemblyCrossHighlightItems returns the AssemblyCrossHighlightItems field value if set, zero value otherwise.
-func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItems() []BTTableAssemblyCrossHighlightDataItem2659 {
-	if o == nil || o.AssemblyCrossHighlightItems == nil {
-		var ret []BTTableAssemblyCrossHighlightDataItem2659
-		return ret
-	}
-	return o.AssemblyCrossHighlightItems
-}
-
-// GetAssemblyCrossHighlightItemsOk returns a tuple with the AssemblyCrossHighlightItems field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItemsOk() ([]BTTableAssemblyCrossHighlightDataItem2659, bool) {
-	if o == nil || o.AssemblyCrossHighlightItems == nil {
-		return nil, false
-	}
-	return o.AssemblyCrossHighlightItems, true
-}
-
-// HasAssemblyCrossHighlightItems returns a boolean if a field has been set.
-func (o *BTTableAssemblyCrossHighlightData2675) HasAssemblyCrossHighlightItems() bool {
-	if o != nil && o.AssemblyCrossHighlightItems != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAssemblyCrossHighlightItems gets a reference to the given []BTTableAssemblyCrossHighlightDataItem2659 and assigns it to the AssemblyCrossHighlightItems field.
-func (o *BTTableAssemblyCrossHighlightData2675) SetAssemblyCrossHighlightItems(v []BTTableAssemblyCrossHighlightDataItem2659) {
-	o.AssemblyCrossHighlightItems = v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -102,13 +70,45 @@ func (o *BTTableAssemblyCrossHighlightData2675) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetAssemblyCrossHighlightItems returns the AssemblyCrossHighlightItems field value if set, zero value otherwise.
+func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItems() []BTTableAssemblyCrossHighlightDataItem2659 {
+	if o == nil || o.AssemblyCrossHighlightItems == nil {
+		var ret []BTTableAssemblyCrossHighlightDataItem2659
+		return ret
+	}
+	return o.AssemblyCrossHighlightItems
+}
+
+// GetAssemblyCrossHighlightItemsOk returns a tuple with the AssemblyCrossHighlightItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableAssemblyCrossHighlightData2675) GetAssemblyCrossHighlightItemsOk() ([]BTTableAssemblyCrossHighlightDataItem2659, bool) {
+	if o == nil || o.AssemblyCrossHighlightItems == nil {
+		return nil, false
+	}
+	return o.AssemblyCrossHighlightItems, true
+}
+
+// HasAssemblyCrossHighlightItems returns a boolean if a field has been set.
+func (o *BTTableAssemblyCrossHighlightData2675) HasAssemblyCrossHighlightItems() bool {
+	if o != nil && o.AssemblyCrossHighlightItems != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssemblyCrossHighlightItems gets a reference to the given []BTTableAssemblyCrossHighlightDataItem2659 and assigns it to the AssemblyCrossHighlightItems field.
+func (o *BTTableAssemblyCrossHighlightData2675) SetAssemblyCrossHighlightItems(v []BTTableAssemblyCrossHighlightDataItem2659) {
+	o.AssemblyCrossHighlightItems = v
+}
+
 func (o BTTableAssemblyCrossHighlightData2675) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AssemblyCrossHighlightItems != nil {
-		toSerialize["assemblyCrossHighlightItems"] = o.AssemblyCrossHighlightItems
-	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.AssemblyCrossHighlightItems != nil {
+		toSerialize["assemblyCrossHighlightItems"] = o.AssemblyCrossHighlightItems
 	}
 	return json.Marshal(toSerialize)
 }

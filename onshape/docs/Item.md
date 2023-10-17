@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplicationTarget** | Pointer to [**BTApplicationTargetInfo**](BTApplicationTargetInfo.md) |  | [optional] 
-**BaseHref** | Pointer to **string** |  | [optional] [readonly] 
 **DataType** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -65,31 +64,6 @@ SetApplicationTarget sets ApplicationTarget field to given value.
 `func (o *Item) HasApplicationTarget() bool`
 
 HasApplicationTarget returns a boolean if a field has been set.
-
-### GetBaseHref
-
-`func (o *Item) GetBaseHref() string`
-
-GetBaseHref returns the BaseHref field if non-nil, zero value otherwise.
-
-### GetBaseHrefOk
-
-`func (o *Item) GetBaseHrefOk() (*string, bool)`
-
-GetBaseHrefOk returns a tuple with the BaseHref field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBaseHref
-
-`func (o *Item) SetBaseHref(v string)`
-
-SetBaseHref sets BaseHref field to given value.
-
-### HasBaseHref
-
-`func (o *Item) HasBaseHref() bool`
-
-HasBaseHref returns a boolean if a field has been set.
 
 ### GetDataType
 
