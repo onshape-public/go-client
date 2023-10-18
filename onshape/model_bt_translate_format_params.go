@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24257-687de06de652
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -49,6 +49,7 @@ type BTTranslateFormatParams struct {
 	FromUserId                   *string `json:"fromUserId,omitempty"`
 	GetyAxisIsUp                 *bool   `json:"getyAxisIsUp,omitempty"`
 	Grouping                     *bool   `json:"grouping,omitempty"`
+	HideInspectionItems          *bool   `json:"hideInspectionItems,omitempty"`
 	IgnoreExportRulesForContents *bool   `json:"ignoreExportRulesForContents,omitempty"`
 	ImageHeight                  *int32  `json:"imageHeight,omitempty"`
 	ImageWidth                   *int32  `json:"imageWidth,omitempty"`
@@ -89,6 +90,7 @@ type BTTranslateFormatParams struct {
 	StepVersionString                    *string                       `json:"stepVersionString,omitempty"`
 	StoreInDocument                      *bool                         `json:"storeInDocument,omitempty"`
 	TextAsGeometry                       *bool                         `json:"textAsGeometry,omitempty"`
+	TextOption                           *string                       `json:"textOption,omitempty"`
 	TriggerAutoDownload                  *bool                         `json:"triggerAutoDownload,omitempty"`
 	Unit                                 *string                       `json:"unit,omitempty"`
 	UploadId                             *string                       `json:"uploadId,omitempty"`
@@ -970,6 +972,38 @@ func (o *BTTranslateFormatParams) HasGrouping() bool {
 // SetGrouping gets a reference to the given bool and assigns it to the Grouping field.
 func (o *BTTranslateFormatParams) SetGrouping(v bool) {
 	o.Grouping = &v
+}
+
+// GetHideInspectionItems returns the HideInspectionItems field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetHideInspectionItems() bool {
+	if o == nil || o.HideInspectionItems == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HideInspectionItems
+}
+
+// GetHideInspectionItemsOk returns a tuple with the HideInspectionItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetHideInspectionItemsOk() (*bool, bool) {
+	if o == nil || o.HideInspectionItems == nil {
+		return nil, false
+	}
+	return o.HideInspectionItems, true
+}
+
+// HasHideInspectionItems returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasHideInspectionItems() bool {
+	if o != nil && o.HideInspectionItems != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHideInspectionItems gets a reference to the given bool and assigns it to the HideInspectionItems field.
+func (o *BTTranslateFormatParams) SetHideInspectionItems(v bool) {
+	o.HideInspectionItems = &v
 }
 
 // GetIgnoreExportRulesForContents returns the IgnoreExportRulesForContents field value if set, zero value otherwise.
@@ -2188,6 +2222,38 @@ func (o *BTTranslateFormatParams) SetTextAsGeometry(v bool) {
 	o.TextAsGeometry = &v
 }
 
+// GetTextOption returns the TextOption field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetTextOption() string {
+	if o == nil || o.TextOption == nil {
+		var ret string
+		return ret
+	}
+	return *o.TextOption
+}
+
+// GetTextOptionOk returns a tuple with the TextOption field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetTextOptionOk() (*string, bool) {
+	if o == nil || o.TextOption == nil {
+		return nil, false
+	}
+	return o.TextOption, true
+}
+
+// HasTextOption returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasTextOption() bool {
+	if o != nil && o.TextOption != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTextOption gets a reference to the given string and assigns it to the TextOption field.
+func (o *BTTranslateFormatParams) SetTextOption(v string) {
+	o.TextOption = &v
+}
+
 // GetTriggerAutoDownload returns the TriggerAutoDownload field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetTriggerAutoDownload() bool {
 	if o == nil || o.TriggerAutoDownload == nil {
@@ -2495,6 +2561,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.Grouping != nil {
 		toSerialize["grouping"] = o.Grouping
 	}
+	if o.HideInspectionItems != nil {
+		toSerialize["hideInspectionItems"] = o.HideInspectionItems
+	}
 	if o.IgnoreExportRulesForContents != nil {
 		toSerialize["ignoreExportRulesForContents"] = o.IgnoreExportRulesForContents
 	}
@@ -2608,6 +2677,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.TextAsGeometry != nil {
 		toSerialize["textAsGeometry"] = o.TextAsGeometry
+	}
+	if o.TextOption != nil {
+		toSerialize["textOption"] = o.TextOption
 	}
 	if o.TriggerAutoDownload != nil {
 		toSerialize["triggerAutoDownload"] = o.TriggerAutoDownload

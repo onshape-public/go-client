@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Frozen** | Pointer to **bool** |  | [optional] 
 **PropertyId** | Pointer to **string** |  | [optional] 
 **PublishState** | Pointer to **int32** |  | [optional] 
+**ValueType** | Pointer to [**BTMetadataValueType**](BTMetadataValueType.md) |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetPublishState sets PublishState field to given value.
 `func (o *BTSimplePropertyInfo) HasPublishState() bool`
 
 HasPublishState returns a boolean if a field has been set.
+
+### GetValueType
+
+`func (o *BTSimplePropertyInfo) GetValueType() BTMetadataValueType`
+
+GetValueType returns the ValueType field if non-nil, zero value otherwise.
+
+### GetValueTypeOk
+
+`func (o *BTSimplePropertyInfo) GetValueTypeOk() (*BTMetadataValueType, bool)`
+
+GetValueTypeOk returns a tuple with the ValueType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValueType
+
+`func (o *BTSimplePropertyInfo) SetValueType(v BTMetadataValueType)`
+
+SetValueType sets ValueType field to given value.
+
+### HasValueType
+
+`func (o *BTSimplePropertyInfo) HasValueType() bool`
+
+HasValueType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
