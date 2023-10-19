@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **CanCurrentUserSeeArenaItemLink** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncBomToArena** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncRevisionsToArena** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncStandardContentToArena** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncToArena** | Pointer to **bool** |  | [optional] 
-**CanCurrentUserSyncVersionsToArena** | Pointer to **bool** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DrawingCanDuplicatePartNumber** | Pointer to **bool** |  | [optional] 
@@ -225,6 +225,31 @@ SetCanCurrentUserSyncRevisionsToArena sets CanCurrentUserSyncRevisionsToArena fi
 
 HasCanCurrentUserSyncRevisionsToArena returns a boolean if a field has been set.
 
+### GetCanCurrentUserSyncStandardContentToArena
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToArena() bool`
+
+GetCanCurrentUserSyncStandardContentToArena returns the CanCurrentUserSyncStandardContentToArena field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncStandardContentToArenaOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToArenaOk() (*bool, bool)`
+
+GetCanCurrentUserSyncStandardContentToArenaOk returns a tuple with the CanCurrentUserSyncStandardContentToArena field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncStandardContentToArena
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncStandardContentToArena(v bool)`
+
+SetCanCurrentUserSyncStandardContentToArena sets CanCurrentUserSyncStandardContentToArena field to given value.
+
+### HasCanCurrentUserSyncStandardContentToArena
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncStandardContentToArena() bool`
+
+HasCanCurrentUserSyncStandardContentToArena returns a boolean if a field has been set.
+
 ### GetCanCurrentUserSyncToArena
 
 `func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToArena() bool`
@@ -249,31 +274,6 @@ SetCanCurrentUserSyncToArena sets CanCurrentUserSyncToArena field to given value
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncToArena() bool`
 
 HasCanCurrentUserSyncToArena returns a boolean if a field has been set.
-
-### GetCanCurrentUserSyncVersionsToArena
-
-`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncVersionsToArena() bool`
-
-GetCanCurrentUserSyncVersionsToArena returns the CanCurrentUserSyncVersionsToArena field if non-nil, zero value otherwise.
-
-### GetCanCurrentUserSyncVersionsToArenaOk
-
-`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncVersionsToArenaOk() (*bool, bool)`
-
-GetCanCurrentUserSyncVersionsToArenaOk returns a tuple with the CanCurrentUserSyncVersionsToArena field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCanCurrentUserSyncVersionsToArena
-
-`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncVersionsToArena(v bool)`
-
-SetCanCurrentUserSyncVersionsToArena sets CanCurrentUserSyncVersionsToArena field to given value.
-
-### HasCanCurrentUserSyncVersionsToArena
-
-`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncVersionsToArena() bool`
-
-HasCanCurrentUserSyncVersionsToArena returns a boolean if a field has been set.
 
 ### GetCompanyId
 

@@ -2725,6 +2725,46 @@
 
 * `GBTErrorStringEnumAmbiguousGeometryForGussetDefinition` (value: `"AMBIGUOUS_GEOMETRY_FOR_GUSSET_DEFINITION"`)
 
+* `GBTErrorStringEnumHoleStartBoundInvalid` (value: `"HOLE_START_BOUND_INVALID"`)
+
+* `GBTErrorStringEnumHoleNoStartBound` (value: `"HOLE_NO_START_BOUND"`)
+
+* `GBTErrorStringEnumBodyDraftFailed` (value: `"BODY_DRAFT_FAILED"`)
+
+* `GBTErrorStringEnumBodyDraftNoReferences` (value: `"BODY_DRAFT_NO_REFERENCES"`)
+
+* `GBTErrorStringEnumBodyDraftNoAngles` (value: `"BODY_DRAFT_NO_ANGLES"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidAboveAngle` (value: `"BODY_DRAFT_INVALID_ABOVE_ANGLE"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidBelowAngle` (value: `"BODY_DRAFT_INVALID_BELOW_ANGLE"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidPartingEntity` (value: `"BODY_DRAFT_INVALID_PARTING_ENTITY"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidPullDirection` (value: `"BODY_DRAFT_INVALID_PULL_DIRECTION"`)
+
+* `GBTErrorStringEnumBodyDraftMiterNeedBothSides` (value: `"BODY_DRAFT_MITER_NEED_BOTH_SIDES"`)
+
+* `GBTErrorStringEnumBodyDraftEdgeSeparationFailed` (value: `"BODY_DRAFT_EDGE_SEPARATION_FAILED"`)
+
+* `GBTErrorStringEnumBodyDraftEdgeSplitFailed` (value: `"BODY_DRAFT_EDGE_SPLIT_FAILED"`)
+
+* `GBTErrorStringEnumBodyDraftIsoclineSplitFailed` (value: `"BODY_DRAFT_ISOCLINE_SPLIT_FAILED"`)
+
+* `GBTErrorStringEnumBodyDraftPartingPlaneSheetError` (value: `"BODY_DRAFT_PARTING_PLANE_SHEET_ERROR"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidReference` (value: `"BODY_DRAFT_INVALID_REFERENCE"`)
+
+* `GBTErrorStringEnumBodyDraftReferenceLoop` (value: `"BODY_DRAFT_REFERENCE_LOOP"`)
+
+* `GBTErrorStringEnumBodyDraftTooSteep` (value: `"BODY_DRAFT_TOO_STEEP"`)
+
+* `GBTErrorStringEnumBodyDraftBadPullDirection` (value: `"BODY_DRAFT_BAD_PULL_DIRECTION"`)
+
+* `GBTErrorStringEnumBodyDraftMiterFailed` (value: `"BODY_DRAFT_MITER_FAILED"`)
+
+* `GBTErrorStringEnumDecalHorizontalReferenceInvalidEntity` (value: `"DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

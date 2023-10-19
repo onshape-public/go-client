@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24257-687de06de652
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1114,7 +1114,7 @@ func (r ApiExportPartStudioGltfRequest) MaxFacetWidth(maxFacetWidth float64) Api
 	return r
 }
 
-func (r ApiExportPartStudioGltfRequest) Execute() (*HttpFile, *http.Response, error) {
+func (r ApiExportPartStudioGltfRequest) Execute() (*GlTF, *http.Response, error) {
 	return r.ApiService.ExportPartStudioGltfExecute(r)
 }
 
@@ -1140,13 +1140,13 @@ func (a *PartStudioApiService) ExportPartStudioGltf(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return HttpFile
-func (a *PartStudioApiService) ExportPartStudioGltfExecute(r ApiExportPartStudioGltfRequest) (*HttpFile, *http.Response, error) {
+//  @return GlTF
+func (a *PartStudioApiService) ExportPartStudioGltfExecute(r ApiExportPartStudioGltfRequest) (*GlTF, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *HttpFile
+		localVarReturnValue *GlTF
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartStudioApiService.ExportPartStudioGltf")
@@ -1226,7 +1226,7 @@ func (a *PartStudioApiService) ExportPartStudioGltfExecute(r ApiExportPartStudio
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"model/gltf-binary;qs=0.08"}
+	localVarHTTPHeaderAccepts := []string{"model/gltf+json;charset=UTF-8;qs=0.08", "model/gltf-binary;qs=0.08"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)

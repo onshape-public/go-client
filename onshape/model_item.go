@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24257-687de06de652
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -91,56 +91,6 @@ func (o *Item) SetApplicationTarget(v BTApplicationTargetInfo) {
 	}
 
 	o.GetActualInstance().(getResult).SetApplicationTarget(v)
-}
-
-// GetBaseHref returns the BaseHref field value if set, zero value otherwise.
-func (o *Item) GetBaseHref() string {
-	type getResult interface {
-		GetBaseHref() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBaseHref()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetBaseHrefOk returns a tuple with the BaseHref field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Item) GetBaseHrefOk() (*string, bool) {
-	type getResult interface {
-		GetBaseHrefOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBaseHrefOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBaseHref returns a boolean if a field has been set.
-func (o *Item) HasBaseHref() bool {
-	type getResult interface {
-		HasBaseHref() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBaseHref()
-	} else {
-		return false
-	}
-}
-
-// SetBaseHref gets a reference to the given string and assigns it to the BaseHref field.
-func (o *Item) SetBaseHref(v string) {
-	type getResult interface {
-		SetBaseHref(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetBaseHref(v)
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
@@ -971,7 +921,6 @@ func (v *NullableItem) UnmarshalJSON(src []byte) error {
 
 type base_Item struct {
 	ApplicationTarget    *BTApplicationTargetInfo `json:"applicationTarget,omitempty"`
-	BaseHref             *string                  `json:"baseHref,omitempty"`
 	DataType             *string                  `json:"dataType,omitempty"`
 	DocumentId           *string                  `json:"documentId,omitempty"`
 	ElementId            *string                  `json:"elementId,omitempty"`
@@ -1037,38 +986,6 @@ func (o *base_Item) HasApplicationTarget() bool {
 // SetApplicationTarget gets a reference to the given BTApplicationTargetInfo and assigns it to the ApplicationTarget field.
 func (o *base_Item) SetApplicationTarget(v BTApplicationTargetInfo) {
 	o.ApplicationTarget = &v
-}
-
-// GetBaseHref returns the BaseHref field value if set, zero value otherwise.
-func (o *base_Item) GetBaseHref() string {
-	if o == nil || o.BaseHref == nil {
-		var ret string
-		return ret
-	}
-	return *o.BaseHref
-}
-
-// GetBaseHrefOk returns a tuple with the BaseHref field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_Item) GetBaseHrefOk() (*string, bool) {
-	if o == nil || o.BaseHref == nil {
-		return nil, false
-	}
-	return o.BaseHref, true
-}
-
-// HasBaseHref returns a boolean if a field has been set.
-func (o *base_Item) HasBaseHref() bool {
-	if o != nil && o.BaseHref != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBaseHref gets a reference to the given string and assigns it to the BaseHref field.
-func (o *base_Item) SetBaseHref(v string) {
-	o.BaseHref = &v
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
@@ -1547,9 +1464,6 @@ func (o base_Item) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ApplicationTarget != nil {
 		toSerialize["applicationTarget"] = o.ApplicationTarget
-	}
-	if o.BaseHref != nil {
-		toSerialize["baseHref"] = o.BaseHref
 	}
 	if o.DataType != nil {
 		toSerialize["dataType"] = o.DataType

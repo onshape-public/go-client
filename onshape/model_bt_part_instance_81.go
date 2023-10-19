@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24257-687de06de652
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -29,7 +29,6 @@ type BTPartInstance81 struct {
 	InstanceName                            *string                                     `json:"instanceName,omitempty"`
 	IsFlattenedPart                         *bool                                       `json:"isFlattenedPart,omitempty"`
 	Locked                                  *bool                                       `json:"locked,omitempty"`
-	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	ParametricInstance                      *bool                                       `json:"parametricInstance,omitempty"`
 	ParametricOutputInstance                *bool                                       `json:"parametricOutputInstance,omitempty"`
 	ParametricPartStudioChildInstance       *bool                                       `json:"parametricPartStudioChildInstance,omitempty"`
@@ -53,6 +52,7 @@ type BTPartInstance81 struct {
 	ExternalDocumentWithVersion             *BTDocumentWithVersionId                    `json:"externalDocumentWithVersion,omitempty"`
 	ExternalDocumentWithVersionAndElementId *BTDocumentWithVersionAndElementId          `json:"externalDocumentWithVersionAndElementId,omitempty"`
 	LockedState                             *BTMParameter1                              `json:"lockedState,omitempty"`
+	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	Name                                    *string                                     `json:"name,omitempty"`
 	Parameters                              []BTMParameter1                             `json:"parameters,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
@@ -463,38 +463,6 @@ func (o *BTPartInstance81) HasLocked() bool {
 // SetLocked gets a reference to the given bool and assigns it to the Locked field.
 func (o *BTPartInstance81) SetLocked(v bool) {
 	o.Locked = &v
-}
-
-// GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
-func (o *BTPartInstance81) GetMicroversionId() BTMicroversionId366 {
-	if o == nil || o.MicroversionId == nil {
-		var ret BTMicroversionId366
-		return ret
-	}
-	return *o.MicroversionId
-}
-
-// GetMicroversionIdOk returns a tuple with the MicroversionId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPartInstance81) GetMicroversionIdOk() (*BTMicroversionId366, bool) {
-	if o == nil || o.MicroversionId == nil {
-		return nil, false
-	}
-	return o.MicroversionId, true
-}
-
-// HasMicroversionId returns a boolean if a field has been set.
-func (o *BTPartInstance81) HasMicroversionId() bool {
-	if o != nil && o.MicroversionId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMicroversionId gets a reference to the given BTMicroversionId366 and assigns it to the MicroversionId field.
-func (o *BTPartInstance81) SetMicroversionId(v BTMicroversionId366) {
-	o.MicroversionId = &v
 }
 
 // GetParametricInstance returns the ParametricInstance field value if set, zero value otherwise.
@@ -1233,6 +1201,38 @@ func (o *BTPartInstance81) SetLockedState(v BTMParameter1) {
 	o.LockedState = &v
 }
 
+// GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
+func (o *BTPartInstance81) GetMicroversionId() BTMicroversionId366 {
+	if o == nil || o.MicroversionId == nil {
+		var ret BTMicroversionId366
+		return ret
+	}
+	return *o.MicroversionId
+}
+
+// GetMicroversionIdOk returns a tuple with the MicroversionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartInstance81) GetMicroversionIdOk() (*BTMicroversionId366, bool) {
+	if o == nil || o.MicroversionId == nil {
+		return nil, false
+	}
+	return o.MicroversionId, true
+}
+
+// HasMicroversionId returns a boolean if a field has been set.
+func (o *BTPartInstance81) HasMicroversionId() bool {
+	if o != nil && o.MicroversionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMicroversionId gets a reference to the given BTMicroversionId366 and assigns it to the MicroversionId field.
+func (o *BTPartInstance81) SetMicroversionId(v BTMicroversionId366) {
+	o.MicroversionId = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTPartInstance81) GetName() string {
 	if o == nil || o.Name == nil {
@@ -1559,9 +1559,6 @@ func (o BTPartInstance81) MarshalJSON() ([]byte, error) {
 	if o.Locked != nil {
 		toSerialize["locked"] = o.Locked
 	}
-	if o.MicroversionId != nil {
-		toSerialize["microversionId"] = o.MicroversionId
-	}
 	if o.ParametricInstance != nil {
 		toSerialize["parametricInstance"] = o.ParametricInstance
 	}
@@ -1630,6 +1627,9 @@ func (o BTPartInstance81) MarshalJSON() ([]byte, error) {
 	}
 	if o.LockedState != nil {
 		toSerialize["lockedState"] = o.LockedState
+	}
+	if o.MicroversionId != nil {
+		toSerialize["microversionId"] = o.MicroversionId
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

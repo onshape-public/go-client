@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ## CreateInstance
 
-> []BTOccurrence74 CreateInstance(ctx, did, wid, eid).BTAssemblyInstanceDefinitionParams(bTAssemblyInstanceDefinitionParams).Execute()
+> map[string]interface{} CreateInstance(ctx, did, wid, eid).BTAssemblyInstanceDefinitionParams(bTAssemblyInstanceDefinitionParams).Execute()
 
 Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
 
@@ -213,7 +213,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.CreateInstance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateInstance`: []BTOccurrence74
+    // response from `CreateInstance`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.CreateInstance`: %v\n", resp)
 }
 ```
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]BTOccurrence74**](BTOccurrence74.md)
+**map[string]interface{}**
 
 ### Authorization
 
