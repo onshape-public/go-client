@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.170.23626-a0760da15717
+API version: 1.171.24257-687de06de652
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1382,6 +1382,26 @@ const (
 	GBTErrorStringEnumRevolveNotCoplanarWithAxis                            GBTErrorStringEnum = "REVOLVE_NOT_COPLANAR_WITH_AXIS"
 	GBTErrorStringEnumFrameAngleReferenceInvalidEntity                      GBTErrorStringEnum = "FRAME_ANGLE_REFERENCE_INVALID_ENTITY"
 	GBTErrorStringEnumAmbiguousGeometryForGussetDefinition                  GBTErrorStringEnum = "AMBIGUOUS_GEOMETRY_FOR_GUSSET_DEFINITION"
+	GBTErrorStringEnumHoleStartBoundInvalid                                 GBTErrorStringEnum = "HOLE_START_BOUND_INVALID"
+	GBTErrorStringEnumHoleNoStartBound                                      GBTErrorStringEnum = "HOLE_NO_START_BOUND"
+	GBTErrorStringEnumBodyDraftFailed                                       GBTErrorStringEnum = "BODY_DRAFT_FAILED"
+	GBTErrorStringEnumBodyDraftNoReferences                                 GBTErrorStringEnum = "BODY_DRAFT_NO_REFERENCES"
+	GBTErrorStringEnumBodyDraftNoAngles                                     GBTErrorStringEnum = "BODY_DRAFT_NO_ANGLES"
+	GBTErrorStringEnumBodyDraftInvalidAboveAngle                            GBTErrorStringEnum = "BODY_DRAFT_INVALID_ABOVE_ANGLE"
+	GBTErrorStringEnumBodyDraftInvalidBelowAngle                            GBTErrorStringEnum = "BODY_DRAFT_INVALID_BELOW_ANGLE"
+	GBTErrorStringEnumBodyDraftInvalidPartingEntity                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_PARTING_ENTITY"
+	GBTErrorStringEnumBodyDraftInvalidPullDirection                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_PULL_DIRECTION"
+	GBTErrorStringEnumBodyDraftMiterNeedBothSides                           GBTErrorStringEnum = "BODY_DRAFT_MITER_NEED_BOTH_SIDES"
+	GBTErrorStringEnumBodyDraftEdgeSeparationFailed                         GBTErrorStringEnum = "BODY_DRAFT_EDGE_SEPARATION_FAILED"
+	GBTErrorStringEnumBodyDraftEdgeSplitFailed                              GBTErrorStringEnum = "BODY_DRAFT_EDGE_SPLIT_FAILED"
+	GBTErrorStringEnumBodyDraftIsoclineSplitFailed                          GBTErrorStringEnum = "BODY_DRAFT_ISOCLINE_SPLIT_FAILED"
+	GBTErrorStringEnumBodyDraftPartingPlaneSheetError                       GBTErrorStringEnum = "BODY_DRAFT_PARTING_PLANE_SHEET_ERROR"
+	GBTErrorStringEnumBodyDraftInvalidReference                             GBTErrorStringEnum = "BODY_DRAFT_INVALID_REFERENCE"
+	GBTErrorStringEnumBodyDraftReferenceLoop                                GBTErrorStringEnum = "BODY_DRAFT_REFERENCE_LOOP"
+	GBTErrorStringEnumBodyDraftTooSteep                                     GBTErrorStringEnum = "BODY_DRAFT_TOO_STEEP"
+	GBTErrorStringEnumBodyDraftBadPullDirection                             GBTErrorStringEnum = "BODY_DRAFT_BAD_PULL_DIRECTION"
+	GBTErrorStringEnumBodyDraftMiterFailed                                  GBTErrorStringEnum = "BODY_DRAFT_MITER_FAILED"
+	GBTErrorStringEnumDecalHorizontalReferenceInvalidEntity                 GBTErrorStringEnum = "DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2748,6 +2768,26 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"REVOLVE_NOT_COPLANAR_WITH_AXIS",
 	"FRAME_ANGLE_REFERENCE_INVALID_ENTITY",
 	"AMBIGUOUS_GEOMETRY_FOR_GUSSET_DEFINITION",
+	"HOLE_START_BOUND_INVALID",
+	"HOLE_NO_START_BOUND",
+	"BODY_DRAFT_FAILED",
+	"BODY_DRAFT_NO_REFERENCES",
+	"BODY_DRAFT_NO_ANGLES",
+	"BODY_DRAFT_INVALID_ABOVE_ANGLE",
+	"BODY_DRAFT_INVALID_BELOW_ANGLE",
+	"BODY_DRAFT_INVALID_PARTING_ENTITY",
+	"BODY_DRAFT_INVALID_PULL_DIRECTION",
+	"BODY_DRAFT_MITER_NEED_BOTH_SIDES",
+	"BODY_DRAFT_EDGE_SEPARATION_FAILED",
+	"BODY_DRAFT_EDGE_SPLIT_FAILED",
+	"BODY_DRAFT_ISOCLINE_SPLIT_FAILED",
+	"BODY_DRAFT_PARTING_PLANE_SHEET_ERROR",
+	"BODY_DRAFT_INVALID_REFERENCE",
+	"BODY_DRAFT_REFERENCE_LOOP",
+	"BODY_DRAFT_TOO_STEEP",
+	"BODY_DRAFT_BAD_PULL_DIRECTION",
+	"BODY_DRAFT_MITER_FAILED",
+	"DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY",
 	"UNKNOWN",
 }
 
