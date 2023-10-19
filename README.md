@@ -35,3 +35,7 @@ func main() {
 
 ## The Detailed API Documentation
 Could be found [here](./onshape/README.md)
+
+## Breaking Changes
+### v1.171.24257-687de06de652
+* ServerVariable was renamed to APIServerVariable after OnShape introduced a data structure with the same name
