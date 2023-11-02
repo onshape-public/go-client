@@ -103133,6 +103133,10 @@ components:
         maxNumberOfPicks:
           format: int32
           type: integer
+        parameters:
+          items:
+            $ref: '#/components/schemas/BTParameterSpec-6'
+          type: array
       type: object
       example: null
     BTParameterSpecBoolean_170_allOf:
