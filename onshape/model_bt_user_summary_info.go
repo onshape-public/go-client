@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.171.24804-920f3dc76f2b
+API version: 1.172.25478-d4e5ab4765a4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -718,6 +718,56 @@ func (o *BTUserSummaryInfo) SetGlobalPermissions(v GlobalPermissionInfo) {
 	o.GetActualInstance().(getResult).SetGlobalPermissions(v)
 }
 
+// GetInvitationState returns the InvitationState field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetInvitationState() int32 {
+	type getResult interface {
+		GetInvitationState() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInvitationState()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetInvitationStateOk returns a tuple with the InvitationState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetInvitationStateOk() (*int32, bool) {
+	type getResult interface {
+		GetInvitationStateOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInvitationStateOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasInvitationState returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasInvitationState() bool {
+	type getResult interface {
+		HasInvitationState() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasInvitationState()
+	} else {
+		return false
+	}
+}
+
+// SetInvitationState gets a reference to the given int32 and assigns it to the InvitationState field.
+func (o *BTUserSummaryInfo) SetInvitationState(v int32) {
+	type getResult interface {
+		SetInvitationState(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetInvitationState(v)
+}
+
 // GetIsGuest returns the IsGuest field value if set, zero value otherwise.
 func (o *BTUserSummaryInfo) GetIsGuest() bool {
 	type getResult interface {
@@ -1145,6 +1195,7 @@ type base_BTUserSummaryInfo struct {
 	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
 	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions         *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
+	InvitationState           *int32                `json:"invitationState,omitempty"`
 	IsGuest                   *bool                 `json:"isGuest,omitempty"`
 	IsLight                   *bool                 `json:"isLight,omitempty"`
 	LastLoginTime             *JSONTime             `json:"lastLoginTime,omitempty"`
@@ -1585,6 +1636,38 @@ func (o *base_BTUserSummaryInfo) SetGlobalPermissions(v GlobalPermissionInfo) {
 	o.GlobalPermissions = &v
 }
 
+// GetInvitationState returns the InvitationState field value if set, zero value otherwise.
+func (o *base_BTUserSummaryInfo) GetInvitationState() int32 {
+	if o == nil || o.InvitationState == nil {
+		var ret int32
+		return ret
+	}
+	return *o.InvitationState
+}
+
+// GetInvitationStateOk returns a tuple with the InvitationState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserSummaryInfo) GetInvitationStateOk() (*int32, bool) {
+	if o == nil || o.InvitationState == nil {
+		return nil, false
+	}
+	return o.InvitationState, true
+}
+
+// HasInvitationState returns a boolean if a field has been set.
+func (o *base_BTUserSummaryInfo) HasInvitationState() bool {
+	if o != nil && o.InvitationState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInvitationState gets a reference to the given int32 and assigns it to the InvitationState field.
+func (o *base_BTUserSummaryInfo) SetInvitationState(v int32) {
+	o.InvitationState = &v
+}
+
 // GetIsGuest returns the IsGuest field value if set, zero value otherwise.
 func (o *base_BTUserSummaryInfo) GetIsGuest() bool {
 	if o == nil || o.IsGuest == nil {
@@ -1785,6 +1868,9 @@ func (o base_BTUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.GlobalPermissions != nil {
 		toSerialize["globalPermissions"] = o.GlobalPermissions
+	}
+	if o.InvitationState != nil {
+		toSerialize["invitationState"] = o.InvitationState
 	}
 	if o.IsGuest != nil {
 		toSerialize["isGuest"] = o.IsGuest

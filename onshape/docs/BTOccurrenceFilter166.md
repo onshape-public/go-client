@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **ExcludeFlattenedParts** | Pointer to **bool** |  | [optional] 
+**ExcludeParametricPartStudioInstance** | Pointer to **bool** |  | [optional] 
 **ExcludePatternInstances** | Pointer to **bool** |  | [optional] 
 **ExcludeReplicatedInstances** | Pointer to **bool** |  | [optional] 
 **ExcludeSketch** | Pointer to **bool** |  | [optional] 
@@ -87,6 +88,31 @@ SetExcludeFlattenedParts sets ExcludeFlattenedParts field to given value.
 `func (o *BTOccurrenceFilter166) HasExcludeFlattenedParts() bool`
 
 HasExcludeFlattenedParts returns a boolean if a field has been set.
+
+### GetExcludeParametricPartStudioInstance
+
+`func (o *BTOccurrenceFilter166) GetExcludeParametricPartStudioInstance() bool`
+
+GetExcludeParametricPartStudioInstance returns the ExcludeParametricPartStudioInstance field if non-nil, zero value otherwise.
+
+### GetExcludeParametricPartStudioInstanceOk
+
+`func (o *BTOccurrenceFilter166) GetExcludeParametricPartStudioInstanceOk() (*bool, bool)`
+
+GetExcludeParametricPartStudioInstanceOk returns a tuple with the ExcludeParametricPartStudioInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeParametricPartStudioInstance
+
+`func (o *BTOccurrenceFilter166) SetExcludeParametricPartStudioInstance(v bool)`
+
+SetExcludeParametricPartStudioInstance sets ExcludeParametricPartStudioInstance field to given value.
+
+### HasExcludeParametricPartStudioInstance
+
+`func (o *BTOccurrenceFilter166) HasExcludeParametricPartStudioInstance() bool`
+
+HasExcludeParametricPartStudioInstance returns a boolean if a field has been set.
 
 ### GetExcludePatternInstances
 

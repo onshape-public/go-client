@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**CreateWorkspace**](DocumentApi.md#CreateWorkspace) | **Post** /documents/d/{did}/workspaces | Create workspace by document ID.
 [**DeleteDocument**](DocumentApi.md#DeleteDocument) | **Delete** /documents/{did} | Delete document by document ID.
 [**DeleteWorkspace**](DocumentApi.md#DeleteWorkspace) | **Delete** /documents/d/{did}/workspaces/{wid} | Delete workspace by document ID and workspace ID.
-[**DownloadExternalData**](DocumentApi.md#DownloadExternalData) | **Get** /documents/d/{did}/externaldata/{fid} | Retrieve external data by document ID and foreign ID.
+[**DownloadExternalData**](DocumentApi.md#DownloadExternalData) | **Get** /documents/d/{did}/externaldata/{fid} | Download external data file(s) associated with the document.
 [**Export2Json**](DocumentApi.md#Export2Json) | **Post** /documents/d/{did}/{wv}/{wvid}/e/{eid}/export | Export document by document ID, workspace or version ID, and tab ID.
 [**GetCurrentMicroversion**](DocumentApi.md#GetCurrentMicroversion) | **Get** /documents/d/{did}/{wv}/{wvid}/currentmicroversion | Retrieve current microversion by document ID and workspace or version ID.
 [**GetDocument**](DocumentApi.md#GetDocument) | **Get** /documents/{did} | Retrieve document by document ID.
@@ -462,7 +462,9 @@ Name | Type | Description  | Notes
 
 > HttpFile DownloadExternalData(ctx, did, fid).IfNoneMatch(ifNoneMatch).Execute()
 
-Retrieve external data by document ID and foreign ID.
+Download external data file(s) associated with the document.
+
+
 
 ### Example
 

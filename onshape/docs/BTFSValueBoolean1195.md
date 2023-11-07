@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | **string** |  | 
 **Value** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewBTFSValueBoolean1195
 
-`func NewBTFSValueBoolean1195() *BTFSValueBoolean1195`
+`func NewBTFSValueBoolean1195(btType string, ) *BTFSValueBoolean1195`
 
 NewBTFSValueBoolean1195 instantiates a new BTFSValueBoolean1195 object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTFSValueBoolean1195) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetValue
 

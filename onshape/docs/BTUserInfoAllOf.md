@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **NeedToShowNewWalkthrough** | Pointer to **bool** |  | [optional] 
 **OwnPurchase** | Pointer to [**BTPurchaseInfo**](BTPurchaseInfo.md) |  | [optional] 
 **PhoneNumber** | Pointer to **string** |  | [optional] 
+**ProDiscoveryTrialRejected** | Pointer to **bool** |  | [optional] 
 **ProductType** | Pointer to **[]string** |  | [optional] 
 **RedirectUrl** | Pointer to **string** |  | [optional] 
 **Role** | Pointer to **int32** |  | [optional] 
@@ -604,6 +605,31 @@ SetPhoneNumber sets PhoneNumber field to given value.
 `func (o *BTUserInfoAllOf) HasPhoneNumber() bool`
 
 HasPhoneNumber returns a boolean if a field has been set.
+
+### GetProDiscoveryTrialRejected
+
+`func (o *BTUserInfoAllOf) GetProDiscoveryTrialRejected() bool`
+
+GetProDiscoveryTrialRejected returns the ProDiscoveryTrialRejected field if non-nil, zero value otherwise.
+
+### GetProDiscoveryTrialRejectedOk
+
+`func (o *BTUserInfoAllOf) GetProDiscoveryTrialRejectedOk() (*bool, bool)`
+
+GetProDiscoveryTrialRejectedOk returns a tuple with the ProDiscoveryTrialRejected field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProDiscoveryTrialRejected
+
+`func (o *BTUserInfoAllOf) SetProDiscoveryTrialRejected(v bool)`
+
+SetProDiscoveryTrialRejected sets ProDiscoveryTrialRejected field to given value.
+
+### HasProDiscoveryTrialRejected
+
+`func (o *BTUserInfoAllOf) HasProDiscoveryTrialRejected() bool`
+
+HasProDiscoveryTrialRejected returns a boolean if a field has been set.
 
 ### GetProductType
 

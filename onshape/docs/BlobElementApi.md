@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateBlobTranslation**](BlobElementApi.md#CreateBlobTranslation) | **Post** /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a blob element.
+[**CreateBlobTranslation**](BlobElementApi.md#CreateBlobTranslation) | **Post** /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a blob element to another format.
 [**DownloadFileWorkspace**](BlobElementApi.md#DownloadFileWorkspace) | **Get** /blobelements/d/{did}/w/{wid}/e/{eid} | Download a file from a blob element for the specified workspace/version/microversion.
 [**UpdateUnits**](BlobElementApi.md#UpdateUnits) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid}/units | Change the measurement units for the blob element.
 [**UploadFileCreateElement**](BlobElementApi.md#UploadFileCreateElement) | **Post** /blobelements/d/{did}/w/{wid} | Upload a file and create a blob element from it.
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 > BTTranslationRequestInfo CreateBlobTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).LinkDocumentId(linkDocumentId).Execute()
 
-Export a blob element.
+Export a blob element to another format.
 
 
 
@@ -100,6 +100,8 @@ Name | Type | Description  | Notes
 > HttpFile DownloadFileWorkspace(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).Execute()
 
 Download a file from a blob element for the specified workspace/version/microversion.
+
+
 
 ### Example
 

@@ -2765,6 +2765,30 @@
 
 * `GBTErrorStringEnumDecalHorizontalReferenceInvalidEntity` (value: `"DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY"`)
 
+* `GBTErrorStringEnumOffsetWireSheetCreationFailed` (value: `"OFFSET_WIRE_SHEET_CREATION_FAILED"`)
+
+* `GBTErrorStringEnumReplaceFaceSheetSmall` (value: `"REPLACE_FACE_SHEET_SMALL"`)
+
+* `GBTErrorStringEnumReplaceFacesNotAdjacent` (value: `"REPLACE_FACES_NOT_ADJACENT"`)
+
+* `GBTErrorStringEnumSheetMetalHoleRebuildFailed` (value: `"SHEET_METAL_HOLE_REBUILD_FAILED"`)
+
+* `GBTErrorStringEnumCplaneTangentInput` (value: `"CPLANE_TANGENT_INPUT"`)
+
+* `GBTErrorStringEnumCplaneTangentSelectReference` (value: `"CPLANE_TANGENT_SELECT_REFERENCE"`)
+
+* `GBTErrorStringEnumCplaneTangentPlaneInvalid` (value: `"CPLANE_TANGENT_PLANE_INVALID"`)
+
+* `GBTErrorStringEnumCplaneTangentPointInvalid` (value: `"CPLANE_TANGENT_POINT_INVALID"`)
+
+* `GBTErrorStringEnumReplaceFacesNotSameBody` (value: `"REPLACE_FACES_NOT_SAME_BODY"`)
+
+* `GBTErrorStringEnumMustUseDefaultRadiusWithFaceBend` (value: `"MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND"`)
+
+* `GBTErrorStringEnumCannotRipAFaceBend` (value: `"CANNOT_RIP_A_FACE_BEND"`)
+
+* `GBTErrorStringEnumCannotMakeAFaceBendTangent` (value: `"CANNOT_MAKE_A_FACE_BEND_TANGENT"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

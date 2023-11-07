@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
 **DocumentationNameOverride** | Pointer to **string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**GlobalPermissionInfo**](GlobalPermissionInfo.md) |  | [optional] 
+**InvitationState** | Pointer to **int32** |  | [optional] 
 **IsGuest** | Pointer to **bool** |  | [optional] 
 **IsLight** | Pointer to **bool** |  | [optional] 
 **LastLoginTime** | Pointer to **JSONTime** |  | [optional] 
@@ -106,6 +107,31 @@ SetGlobalPermissions sets GlobalPermissions field to given value.
 `func (o *BTUserSummaryInfoAllOf) HasGlobalPermissions() bool`
 
 HasGlobalPermissions returns a boolean if a field has been set.
+
+### GetInvitationState
+
+`func (o *BTUserSummaryInfoAllOf) GetInvitationState() int32`
+
+GetInvitationState returns the InvitationState field if non-nil, zero value otherwise.
+
+### GetInvitationStateOk
+
+`func (o *BTUserSummaryInfoAllOf) GetInvitationStateOk() (*int32, bool)`
+
+GetInvitationStateOk returns a tuple with the InvitationState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvitationState
+
+`func (o *BTUserSummaryInfoAllOf) SetInvitationState(v int32)`
+
+SetInvitationState sets InvitationState field to given value.
+
+### HasInvitationState
+
+`func (o *BTUserSummaryInfoAllOf) HasInvitationState() bool`
+
+HasInvitationState returns a boolean if a field has been set.
 
 ### GetIsGuest
 

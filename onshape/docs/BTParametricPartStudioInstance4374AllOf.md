@@ -13,8 +13,6 @@ Name | Type | Description | Notes
 **ExternalDocumentWithVersionAndElementId** | Pointer to [**BTDocumentWithVersionAndElementId**](BTDocumentWithVersionAndElementId.md) |  | [optional] 
 **LockedState** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ParametricPartStudioFeature** | Pointer to [**BTMParametricPartStudioFeature3883**](BTMParametricPartStudioFeature3883.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferencePartStudio3302**](BTMParameterReferencePartStudio3302.md) |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -263,56 +261,6 @@ SetMicroversionId sets MicroversionId field to given value.
 `func (o *BTParametricPartStudioInstance4374AllOf) HasMicroversionId() bool`
 
 HasMicroversionId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *BTParametricPartStudioInstance4374AllOf) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *BTParametricPartStudioInstance4374AllOf) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *BTParametricPartStudioInstance4374AllOf) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *BTParametricPartStudioInstance4374AllOf) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetParameters
-
-`func (o *BTParametricPartStudioInstance4374AllOf) GetParameters() []BTMParameter1`
-
-GetParameters returns the Parameters field if non-nil, zero value otherwise.
-
-### GetParametersOk
-
-`func (o *BTParametricPartStudioInstance4374AllOf) GetParametersOk() (*[]BTMParameter1, bool)`
-
-GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParameters
-
-`func (o *BTParametricPartStudioInstance4374AllOf) SetParameters(v []BTMParameter1)`
-
-SetParameters sets Parameters field to given value.
-
-### HasParameters
-
-`func (o *BTParametricPartStudioInstance4374AllOf) HasParameters() bool`
-
-HasParameters returns a boolean if a field has been set.
 
 ### GetParametricPartStudioFeature
 

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**AddPartStudioFeature**](PartStudioApi.md#AddPartStudioFeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the Part Studio&#39;s Feature List.
 [**ComparePartStudios**](PartStudioApi.md#ComparePartStudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Get the differences between two Part Studios in a single document.
 [**CreatePartStudio**](PartStudioApi.md#CreatePartStudio) | **Post** /partstudios/d/{did}/w/{wid} | Create a new Part Studio in a document.
-[**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Translate (export) a Part Studio.
+[**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a Part Studio to another format.
 [**DeletePartStudioFeature**](PartStudioApi.md#DeletePartStudioFeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a Part Studio feature.
 [**EvalFeatureScript**](PartStudioApi.md#EvalFeatureScript) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript | Evaluate the FeatureScript snippet for a Part Studio.
 [**ExportParasolid**](PartStudioApi.md#ExportParasolid) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid | Export the Part Studio as a Parasolid file.
@@ -278,7 +278,9 @@ Name | Type | Description  | Notes
 
 > BTTranslationRequestInfo CreatePartStudioTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
 
-Translate (export) a Part Studio.
+Export a Part Studio to another format.
+
+
 
 ### Example
 
@@ -612,6 +614,8 @@ Name | Type | Description  | Notes
 
 Export the Part Studio as a glTF file.
 
+
+
 ### Example
 
 ```go
@@ -712,6 +716,8 @@ Name | Type | Description  | Notes
 > ExportPartStudioStl(ctx, did, wvm, wvmid, eid).PartIds(partIds).Mode(mode).Grouping(grouping).Scale(scale).Units(units).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).MaxFacetWidth(maxFacetWidth).MinFacetWidth(minFacetWidth).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
 Export the Part Studio as an STL file.
+
+
 
 ### Example
 
