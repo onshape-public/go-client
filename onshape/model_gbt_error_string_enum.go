@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.171.24804-920f3dc76f2b
+API version: 1.172.25478-d4e5ab4765a4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1402,6 +1402,18 @@ const (
 	GBTErrorStringEnumBodyDraftBadPullDirection                             GBTErrorStringEnum = "BODY_DRAFT_BAD_PULL_DIRECTION"
 	GBTErrorStringEnumBodyDraftMiterFailed                                  GBTErrorStringEnum = "BODY_DRAFT_MITER_FAILED"
 	GBTErrorStringEnumDecalHorizontalReferenceInvalidEntity                 GBTErrorStringEnum = "DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY"
+	GBTErrorStringEnumOffsetWireSheetCreationFailed                         GBTErrorStringEnum = "OFFSET_WIRE_SHEET_CREATION_FAILED"
+	GBTErrorStringEnumReplaceFaceSheetSmall                                 GBTErrorStringEnum = "REPLACE_FACE_SHEET_SMALL"
+	GBTErrorStringEnumReplaceFacesNotAdjacent                               GBTErrorStringEnum = "REPLACE_FACES_NOT_ADJACENT"
+	GBTErrorStringEnumSheetMetalHoleRebuildFailed                           GBTErrorStringEnum = "SHEET_METAL_HOLE_REBUILD_FAILED"
+	GBTErrorStringEnumCplaneTangentInput                                    GBTErrorStringEnum = "CPLANE_TANGENT_INPUT"
+	GBTErrorStringEnumCplaneTangentSelectReference                          GBTErrorStringEnum = "CPLANE_TANGENT_SELECT_REFERENCE"
+	GBTErrorStringEnumCplaneTangentPlaneInvalid                             GBTErrorStringEnum = "CPLANE_TANGENT_PLANE_INVALID"
+	GBTErrorStringEnumCplaneTangentPointInvalid                             GBTErrorStringEnum = "CPLANE_TANGENT_POINT_INVALID"
+	GBTErrorStringEnumReplaceFacesNotSameBody                               GBTErrorStringEnum = "REPLACE_FACES_NOT_SAME_BODY"
+	GBTErrorStringEnumMustUseDefaultRadiusWithFaceBend                      GBTErrorStringEnum = "MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND"
+	GBTErrorStringEnumCannotRipAFaceBend                                    GBTErrorStringEnum = "CANNOT_RIP_A_FACE_BEND"
+	GBTErrorStringEnumCannotMakeAFaceBendTangent                            GBTErrorStringEnum = "CANNOT_MAKE_A_FACE_BEND_TANGENT"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2788,6 +2800,18 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"BODY_DRAFT_BAD_PULL_DIRECTION",
 	"BODY_DRAFT_MITER_FAILED",
 	"DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY",
+	"OFFSET_WIRE_SHEET_CREATION_FAILED",
+	"REPLACE_FACE_SHEET_SMALL",
+	"REPLACE_FACES_NOT_ADJACENT",
+	"SHEET_METAL_HOLE_REBUILD_FAILED",
+	"CPLANE_TANGENT_INPUT",
+	"CPLANE_TANGENT_SELECT_REFERENCE",
+	"CPLANE_TANGENT_PLANE_INVALID",
+	"CPLANE_TANGENT_POINT_INVALID",
+	"REPLACE_FACES_NOT_SAME_BODY",
+	"MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND",
+	"CANNOT_RIP_A_FACE_BEND",
+	"CANNOT_MAKE_A_FACE_BEND_TANGENT",
 	"UNKNOWN",
 }
 

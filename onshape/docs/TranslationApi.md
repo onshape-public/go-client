@@ -346,6 +346,8 @@ Name | Type | Description  | Notes
 
 Get information on an in-progress or completed translation by translation ID.
 
+
+
 ### Example
 
 ```go

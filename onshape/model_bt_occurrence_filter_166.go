@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.171.24804-920f3dc76f2b
+API version: 1.172.25478-d4e5ab4765a4
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,20 +17,21 @@ import (
 
 // BTOccurrenceFilter166 struct for BTOccurrenceFilter166
 type BTOccurrenceFilter166 struct {
-	BtType                     *string `json:"btType,omitempty"`
-	ExcludeFlattenedParts      *bool   `json:"excludeFlattenedParts,omitempty"`
-	ExcludePatternInstances    *bool   `json:"excludePatternInstances,omitempty"`
-	ExcludeReplicatedInstances *bool   `json:"excludeReplicatedInstances,omitempty"`
-	ExcludeSketch              *bool   `json:"excludeSketch,omitempty"`
-	ExcludeStandardContent     *bool   `json:"excludeStandardContent,omitempty"`
-	ExcludeStudioInserts       *bool   `json:"excludeStudioInserts,omitempty"`
-	ExcludeSubAssemblies       *bool   `json:"excludeSubAssemblies,omitempty"`
-	ExcludeSuppressed          *bool   `json:"excludeSuppressed,omitempty"`
-	IncludeAssemblyRoot        *bool   `json:"includeAssemblyRoot,omitempty"`
-	IncludeParametricInstance  *bool   `json:"includeParametricInstance,omitempty"`
-	IncludePatternOccurrence   *bool   `json:"includePatternOccurrence,omitempty"`
-	SolidOrCompositeBodyOnly   *bool   `json:"solidOrCompositeBodyOnly,omitempty"`
-	TopLevelOnly               *bool   `json:"topLevelOnly,omitempty"`
+	BtType                              *string `json:"btType,omitempty"`
+	ExcludeFlattenedParts               *bool   `json:"excludeFlattenedParts,omitempty"`
+	ExcludeParametricPartStudioInstance *bool   `json:"excludeParametricPartStudioInstance,omitempty"`
+	ExcludePatternInstances             *bool   `json:"excludePatternInstances,omitempty"`
+	ExcludeReplicatedInstances          *bool   `json:"excludeReplicatedInstances,omitempty"`
+	ExcludeSketch                       *bool   `json:"excludeSketch,omitempty"`
+	ExcludeStandardContent              *bool   `json:"excludeStandardContent,omitempty"`
+	ExcludeStudioInserts                *bool   `json:"excludeStudioInserts,omitempty"`
+	ExcludeSubAssemblies                *bool   `json:"excludeSubAssemblies,omitempty"`
+	ExcludeSuppressed                   *bool   `json:"excludeSuppressed,omitempty"`
+	IncludeAssemblyRoot                 *bool   `json:"includeAssemblyRoot,omitempty"`
+	IncludeParametricInstance           *bool   `json:"includeParametricInstance,omitempty"`
+	IncludePatternOccurrence            *bool   `json:"includePatternOccurrence,omitempty"`
+	SolidOrCompositeBodyOnly            *bool   `json:"solidOrCompositeBodyOnly,omitempty"`
+	TopLevelOnly                        *bool   `json:"topLevelOnly,omitempty"`
 }
 
 // NewBTOccurrenceFilter166 instantiates a new BTOccurrenceFilter166 object
@@ -112,6 +113,38 @@ func (o *BTOccurrenceFilter166) HasExcludeFlattenedParts() bool {
 // SetExcludeFlattenedParts gets a reference to the given bool and assigns it to the ExcludeFlattenedParts field.
 func (o *BTOccurrenceFilter166) SetExcludeFlattenedParts(v bool) {
 	o.ExcludeFlattenedParts = &v
+}
+
+// GetExcludeParametricPartStudioInstance returns the ExcludeParametricPartStudioInstance field value if set, zero value otherwise.
+func (o *BTOccurrenceFilter166) GetExcludeParametricPartStudioInstance() bool {
+	if o == nil || o.ExcludeParametricPartStudioInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeParametricPartStudioInstance
+}
+
+// GetExcludeParametricPartStudioInstanceOk returns a tuple with the ExcludeParametricPartStudioInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrenceFilter166) GetExcludeParametricPartStudioInstanceOk() (*bool, bool) {
+	if o == nil || o.ExcludeParametricPartStudioInstance == nil {
+		return nil, false
+	}
+	return o.ExcludeParametricPartStudioInstance, true
+}
+
+// HasExcludeParametricPartStudioInstance returns a boolean if a field has been set.
+func (o *BTOccurrenceFilter166) HasExcludeParametricPartStudioInstance() bool {
+	if o != nil && o.ExcludeParametricPartStudioInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeParametricPartStudioInstance gets a reference to the given bool and assigns it to the ExcludeParametricPartStudioInstance field.
+func (o *BTOccurrenceFilter166) SetExcludeParametricPartStudioInstance(v bool) {
+	o.ExcludeParametricPartStudioInstance = &v
 }
 
 // GetExcludePatternInstances returns the ExcludePatternInstances field value if set, zero value otherwise.
@@ -505,6 +538,9 @@ func (o BTOccurrenceFilter166) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExcludeFlattenedParts != nil {
 		toSerialize["excludeFlattenedParts"] = o.ExcludeFlattenedParts
+	}
+	if o.ExcludeParametricPartStudioInstance != nil {
+		toSerialize["excludeParametricPartStudioInstance"] = o.ExcludeParametricPartStudioInstance
 	}
 	if o.ExcludePatternInstances != nil {
 		toSerialize["excludePatternInstances"] = o.ExcludePatternInstances

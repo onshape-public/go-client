@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.171.24804-920f3dc76f2b
+  version: 1.172.25478-d4e5ab4765a4
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -28,6 +28,7 @@ info:
   - BTPFunctionDeclaration-246
   - BTPFunctionOrPredicateDeclaration-247
   - BTPExpression-9
+  - SkinModel
   x-filter-info: ?restUserRole=PUBLIC
 servers:
 - description: Current
@@ -4586,8 +4587,13 @@ paths:
   /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations:
     post:
       deprecated: false
-      description: "Refer to the [Export dialog](https://cad.onshape.com/help/Content/exporting-files.htm)\
-        \ for a list of valid formats."
+      description: "* Use `formatName` in the JSON request body to specify the export\
+        \ file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats)\
+        \ to get a list of valid export file formats. Confirm that `couldBeAssembly=true.`\n\
+        * Set `storeInDocument` to `true` to export to a data file. Set to `false`\
+        \ to export to a blob element in the same document. \n* See [API Guide: Model\
+        \ Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: translateFormat
       parameters:
       - explode: false
@@ -4636,7 +4642,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Translate the assembly to another format for export.
+      summary: Export the assembly to another format.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4722,6 +4728,8 @@ paths:
   /blobelements/d/{did}/w/{wid}/e/{eid}:
     get:
       deprecated: false
+      description: "See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: downloadFileWorkspace
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -4942,7 +4950,12 @@ paths:
   /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations:
     post:
       deprecated: false
-      description: "Translate (i.e., export) a blob element to a different format."
+      description: "* Use `formatName` in the JSON request body to specify the export\
+        \ file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats)\
+        \ to get a list of valid export file formats. \n* Set `storeInDocument` to\
+        \ `true` to export to a data file. Set to `false` to export to a blob element\
+        \ in the same document. \n* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: createBlobTranslation
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -5013,7 +5026,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Export a blob element.
+      summary: Export a blob element to another format.
       tags:
       - BlobElement
       x-BTVisibility: PRODUCTION
@@ -5777,6 +5790,11 @@ paths:
   /documents/d/{did}/externaldata/{fid}:
     get:
       deprecated: false
+      description: "* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details.\n* If downloading an exported file, poll the `requestState`\
+        \ in the translation response and wait for a result of `DONE` before attempting\
+        \ to download the file. \n* Use the `resultExternalDataIds` from the translation\
+        \ response as the foreign id (`{fid}`) in this API."
       operationId: downloadExternalData
       parameters:
       - explode: false
@@ -5817,7 +5835,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve external data by document ID and foreign ID.
+      summary: Download external data file(s) associated with the document.
       tags:
       - Document
       x-BTVisibility: PRODUCTION
@@ -10327,6 +10345,9 @@ paths:
   /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf:
     get:
       deprecated: false
+      description: "Returns a 307 redirect from which to download the exported file.\
+        \ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: exportPartGltf
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -10623,6 +10644,9 @@ paths:
   /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid:
     get:
       deprecated: false
+      description: "Returns a 307 redirect from which to download the exported file.\
+        \ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: exportPS
       parameters:
       - explode: false
@@ -10890,7 +10914,9 @@ paths:
   /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl:
     get:
       deprecated: false
-      description: Returns a 307 redirect.
+      description: "Returns a 307 redirect from which to download the exported file.\
+        \ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: exportStl
       parameters:
       - explode: false
@@ -11022,7 +11048,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Export a part to an STL file.
+      summary: Export a part as an STL file.
       tags:
       - Part
       x-BTVisibility: PRODUCTION
@@ -12555,6 +12581,8 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf:
     get:
       deprecated: false
+      description: "Returns a 307 redirect from which to download the exported file.\
+        \ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)"
       operationId: exportPartStudioGltf
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -12921,7 +12949,9 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid:
     get:
       deprecated: false
-      description: Returns a 307 redirect.
+      description: "Returns a 307 redirect from which to download the exported file.\
+        \ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: exportParasolid
       parameters:
       - description: Document ID.
@@ -13467,6 +13497,8 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl:
     get:
       deprecated: false
+      description: "Returns a 307 redirect from which to download the exported file.\
+        \ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)"
       operationId: exportPartStudioStl
       parameters:
       - description: Document ID.
@@ -13975,6 +14007,12 @@ paths:
   /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations:
     post:
       deprecated: false
+      description: "* Use `formatName` in the JSON request body to specify the export\
+        \ file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats)\
+        \ to get a list of valid export file formats. `\n* Set `storeInDocument` to\
+        \ `true` to export to a data file. Set to `false` to export to a blob element\
+        \ in the same document. \n* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: createPartStudioTranslation
       parameters:
       - description: Document ID.
@@ -14028,7 +14066,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Translate (export) a Part Studio.
+      summary: Export a Part Studio to another format.
       tags:
       - PartStudio
       x-BTVisibility: PRODUCTION
@@ -15963,9 +16001,10 @@ paths:
       deprecated: false
       description: "The API call may complete before the translation is finished.\
         \ If `requestState = ACTIVE`, the translation can be polled until the state\
-        \ is either DONE or FAILED. Alternatively, a webhook callback can be registered\
+        \ is either `DONE` or `FAILED`. Alternatively, a webhook callback can be registered\
         \ for notification of translation completion (requires `Write` scope if `storeInDocument`\
-        \ is `true`)."
+        \ is `true`). See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: createTranslation
       parameters:
       - explode: false
@@ -16008,8 +16047,8 @@ paths:
     get:
       deprecated: false
       description: "Note that we don't necessarily support both import and export\
-        \ for any given format. Please use specific export APIs, such as `exportPartStudioStl`,\
-        \ for STL and Parasolid exports."
+        \ for any given format. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: getAllTranslatorFormats
       responses:
         default:
@@ -16054,6 +16093,9 @@ paths:
       x-BTVisibility: PRODUCTION
     get:
       deprecated: false
+      description: "When the translation is complete, `requestState` changes from\
+        \ `ACTIVE` to `DONE` or `FAILED`. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for more details."
       operationId: getTranslation
       parameters:
       - explode: false
@@ -31016,6 +31058,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFSValueBoolean-1195:
       allOf:
@@ -31024,6 +31068,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFSValueMap-2062:
       properties:
@@ -31052,6 +31098,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFSValueOther-1124:
       allOf:
@@ -31060,6 +31108,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFSValueString-1422:
       allOf:
@@ -31068,6 +31118,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFSValueTooBig-1247:
       allOf:
@@ -31076,6 +31128,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFSValueUndefined-2003:
       allOf:
@@ -31084,6 +31138,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFSValueWithUnits-1817:
       allOf:
@@ -31092,6 +31148,8 @@ components:
       properties:
         btType:
           type: string
+      required:
+      - btType
       type: object
     BTFeatureApiBase-1430:
       discriminator:
@@ -48725,6 +48783,7 @@ components:
         versionId: versionId
         configuration: configuration
         partId: partId
+        partIdentity: partIdentity
         documentId: documentId
         partNumber: partNumber
         href: href
@@ -48751,6 +48810,8 @@ components:
           type: boolean
         partId:
           type: string
+        partIdentity:
+          type: string
         partNumber:
           type: string
         properties:
@@ -48770,6 +48831,7 @@ components:
           versionId: versionId
           configuration: configuration
           partId: partId
+          partIdentity: partIdentity
           documentId: documentId
           partNumber: partNumber
           href: href
@@ -48785,6 +48847,7 @@ components:
           versionId: versionId
           configuration: configuration
           partId: partId
+          partIdentity: partIdentity
           documentId: documentId
           partNumber: partNumber
           href: href
@@ -52122,6 +52185,7 @@ components:
           versionId: versionId
           configuration: configuration
           partId: partId
+          partIdentity: partIdentity
           documentId: documentId
           partNumber: partNumber
           href: href
@@ -52137,6 +52201,7 @@ components:
           versionId: versionId
           configuration: configuration
           partId: partId
+          partIdentity: partIdentity
           documentId: documentId
           partNumber: partNumber
           href: href
@@ -67464,6 +67529,18 @@ components:
       - BODY_DRAFT_BAD_PULL_DIRECTION
       - BODY_DRAFT_MITER_FAILED
       - DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY
+      - OFFSET_WIRE_SHEET_CREATION_FAILED
+      - REPLACE_FACE_SHEET_SMALL
+      - REPLACE_FACES_NOT_ADJACENT
+      - SHEET_METAL_HOLE_REBUILD_FAILED
+      - CPLANE_TANGENT_INPUT
+      - CPLANE_TANGENT_SELECT_REFERENCE
+      - CPLANE_TANGENT_PLANE_INVALID
+      - CPLANE_TANGENT_POINT_INVALID
+      - REPLACE_FACES_NOT_SAME_BODY
+      - MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND
+      - CANNOT_RIP_A_FACE_BEND
+      - CANNOT_MAKE_A_FACE_BEND_TANGENT
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -102373,6 +102450,8 @@ components:
           type: string
         excludeFlattenedParts:
           type: boolean
+        excludeParametricPartStudioInstance:
+          type: boolean
         excludePatternInstances:
           type: boolean
         excludeReplicatedInstances:
@@ -103469,12 +103548,6 @@ components:
           $ref: '#/components/schemas/BTMParameter-1'
         microversionId:
           $ref: '#/components/schemas/BTMicroversionId-366'
-        name:
-          type: string
-        parameters:
-          items:
-            $ref: '#/components/schemas/BTMParameter-1'
-          type: array
         parametricPartStudioFeature:
           $ref: '#/components/schemas/BTMParametricPartStudioFeature-3883'
         referenceParameter:
@@ -104281,6 +104354,8 @@ components:
           $ref: '#/components/schemas/BTPurchaseInfo'
         phoneNumber:
           type: string
+        proDiscoveryTrialRejected:
+          type: boolean
         productType:
           items:
             type: string
@@ -104340,6 +104415,9 @@ components:
           type: string
         globalPermissions:
           $ref: '#/components/schemas/GlobalPermissionInfo'
+        invitationState:
+          format: int32
+          type: integer
         isGuest:
           type: boolean
         isLight:
