@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAssociativeData
 
-> BTAppElementBasicInfo DeleteAssociativeData(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).Execute()
+> BTAppElementBasicInfo DeleteAssociativeData(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReferenceId(referenceId).Execute()
 
 Delete the associative data from the specified app element.
 
@@ -125,10 +125,11 @@ func main() {
     featureId := "featureId_example" // string |  (optional) (default to "")
     entityId := "entityId_example" // string |  (optional) (default to "")
     occurrenceId := "occurrenceId_example" // string |  (optional) (default to "")
+    referenceId := "referenceId_example" // string |  (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppAssociativeDataApi.DeleteAssociativeData(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).Execute()
+    resp, r, err := apiClient.AppAssociativeDataApi.DeleteAssociativeData(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReferenceId(referenceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.DeleteAssociativeData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -171,6 +172,7 @@ Name | Type | Description  | Notes
  **featureId** | **string** |  | [default to &quot;&quot;]
  **entityId** | **string** |  | [default to &quot;&quot;]
  **occurrenceId** | **string** |  | [default to &quot;&quot;]
+ **referenceId** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 
@@ -192,7 +194,7 @@ Name | Type | Description  | Notes
 
 ## GetAssociativeData
 
-> BTAppAssociativeDataArrayInfo GetAssociativeData(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).Execute()
+> BTAppAssociativeDataArrayInfo GetAssociativeData(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).ReferenceId(referenceId).Execute()
 
 Get the associative data for the specified app element.
 
@@ -228,10 +230,11 @@ func main() {
     entityId := "entityId_example" // string |  (optional) (default to "")
     occurrenceId := "occurrenceId_example" // string |  (optional) (default to "")
     returnIdTags := true // bool |  (optional) (default to false)
+    referenceId := "referenceId_example" // string |  (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppAssociativeDataApi.GetAssociativeData(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).Execute()
+    resp, r, err := apiClient.AppAssociativeDataApi.GetAssociativeData(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).ReferenceId(referenceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.GetAssociativeData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -276,6 +279,7 @@ Name | Type | Description  | Notes
  **entityId** | **string** |  | [default to &quot;&quot;]
  **occurrenceId** | **string** |  | [default to &quot;&quot;]
  **returnIdTags** | **bool** |  | [default to false]
+ **referenceId** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 

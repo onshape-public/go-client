@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.172.26043-b28d7068bd76
+API version: 1.173.26754-ceeaad064d4a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -15,30 +15,46 @@ import (
 	"encoding/json"
 )
 
-// BTDocumentParams struct for BTDocumentParams
+// BTDocumentParams Parameters for creating and updating documents.
 type BTDocumentParams struct {
-	Description             *string                               `json:"description,omitempty"`
-	Elements                []BTDocumentElementCreationDescriptor `json:"elements,omitempty"`
-	ForceExportRules        *bool                                 `json:"forceExportRules,omitempty"`
-	GenerateUnknownMessages *bool                                 `json:"generateUnknownMessages,omitempty"`
-	IsEmptyContent          *bool                                 `json:"isEmptyContent,omitempty"`
-	IsPublic                *bool                                 `json:"isPublic,omitempty"`
-	Name                    *string                               `json:"name,omitempty"`
-	NotRevisionManaged      *bool                                 `json:"notRevisionManaged,omitempty"`
-	OwnerEmail              *string                               `json:"ownerEmail,omitempty"`
-	OwnerId                 *string                               `json:"ownerId,omitempty"`
-	OwnerType               *int32                                `json:"ownerType,omitempty"`
-	ParentId                *string                               `json:"parentId,omitempty"`
-	ProjectId               *string                               `json:"projectId,omitempty"`
-	Tags                    []string                              `json:"tags,omitempty"`
+	// Document description.
+	Description string `json:"description"`
+	// List of element IDs to include in the document.
+	Elements []BTDocumentElementCreationDescriptor `json:"elements,omitempty"`
+	// `true` if the current user can toggle the Force Export Rule flag on a document.
+	ForceExportRules *bool `json:"forceExportRules,omitempty"`
+	// Set to `true` for debugging.
+	GenerateUnknownMessages *bool `json:"generateUnknownMessages,omitempty"`
+	// Set to `true` to generate an empty document.
+	IsEmptyContent *bool `json:"isEmptyContent,omitempty"`
+	// Set to `true` to make the document public.
+	IsPublic *bool `json:"isPublic,omitempty"`
+	// Document name.
+	Name string `json:"name"`
+	// Set to `true` to indicate that revisions are not managed for this document.
+	NotRevisionManaged *bool `json:"notRevisionManaged,omitempty"`
+	// The document owner's email address.
+	OwnerEmail *string `json:"ownerEmail,omitempty"`
+	// If `ownerType=USER`, this is the user ID. If `ownerType=COMPANY`, this is the company ID.
+	OwnerId *string `json:"ownerId,omitempty"`
+	// The document's owner type. `USER=0` | `COMPANY=1` | `ONSHAPE=2`
+	OwnerType *int32 `json:"ownerType,omitempty"`
+	// Document ID of this document's parent.
+	ParentId *string `json:"parentId,omitempty"`
+	// ID of the project this document belongs to.
+	ProjectId *string `json:"projectId,omitempty"`
+	// Array of strings to set as tags for the document.
+	Tags []string `json:"tags,omitempty"`
 }
 
 // NewBTDocumentParams instantiates a new BTDocumentParams object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTDocumentParams() *BTDocumentParams {
+func NewBTDocumentParams(description string, name string) *BTDocumentParams {
 	this := BTDocumentParams{}
+	this.Description = description
+	this.Name = name
 	return &this
 }
 
@@ -50,36 +66,28 @@ func NewBTDocumentParamsWithDefaults() *BTDocumentParams {
 	return &this
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value
 func (o *BTDocumentParams) GetDescription() string {
-	if o == nil || o.Description == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description
+
+	return o.Description
 }
 
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// GetDescriptionOk returns a tuple with the Description field value
 // and a boolean to check if the value has been set.
 func (o *BTDocumentParams) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return &o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *BTDocumentParams) HasDescription() bool {
-	if o != nil && o.Description != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription sets field value
 func (o *BTDocumentParams) SetDescription(v string) {
-	o.Description = &v
+	o.Description = v
 }
 
 // GetElements returns the Elements field value if set, zero value otherwise.
@@ -242,36 +250,28 @@ func (o *BTDocumentParams) SetIsPublic(v bool) {
 	o.IsPublic = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *BTDocumentParams) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *BTDocumentParams) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *BTDocumentParams) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *BTDocumentParams) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetNotRevisionManaged returns the NotRevisionManaged field value if set, zero value otherwise.
@@ -500,7 +500,7 @@ func (o *BTDocumentParams) SetTags(v []string) {
 
 func (o BTDocumentParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Description != nil {
+	if true {
 		toSerialize["description"] = o.Description
 	}
 	if o.Elements != nil {
@@ -518,7 +518,7 @@ func (o BTDocumentParams) MarshalJSON() ([]byte, error) {
 	if o.IsPublic != nil {
 		toSerialize["isPublic"] = o.IsPublic
 	}
-	if o.Name != nil {
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if o.NotRevisionManaged != nil {

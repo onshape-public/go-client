@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.172.26043-b28d7068bd76
+API version: 1.173.26754-ceeaad064d4a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1414,6 +1414,22 @@ const (
 	GBTErrorStringEnumMustUseDefaultRadiusWithFaceBend                      GBTErrorStringEnum = "MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND"
 	GBTErrorStringEnumCannotRipAFaceBend                                    GBTErrorStringEnum = "CANNOT_RIP_A_FACE_BEND"
 	GBTErrorStringEnumCannotMakeAFaceBendTangent                            GBTErrorStringEnum = "CANNOT_MAKE_A_FACE_BEND_TANGENT"
+	GBTErrorStringEnumSketchHasPatternTooLarge                              GBTErrorStringEnum = "SKETCH_HAS_PATTERN_TOO_LARGE"
+	GBTErrorStringEnumSketchLinearPatternFailed                             GBTErrorStringEnum = "SKETCH_LINEAR_PATTERN_FAILED"
+	GBTErrorStringEnumDecalProjectedOffFace                                 GBTErrorStringEnum = "DECAL_PROJECTED_OFF_FACE"
+	GBTErrorStringEnumFitToleranceLimitsNotFound                            GBTErrorStringEnum = "FIT_TOLERANCE_LIMITS_NOT_FOUND"
+	GBTErrorStringEnumFitToleranceSizeTooLargeIso                           GBTErrorStringEnum = "FIT_TOLERANCE_SIZE_TOO_LARGE_ISO"
+	GBTErrorStringEnumFitToleranceSizeTooLargeAnsi                          GBTErrorStringEnum = "FIT_TOLERANCE_SIZE_TOO_LARGE_ANSI"
+	GBTErrorStringEnumDecalNoFaceSelection                                  GBTErrorStringEnum = "DECAL_NO_FACE_SELECTION"
+	GBTErrorStringEnumDecalNoImageSelection                                 GBTErrorStringEnum = "DECAL_NO_IMAGE_SELECTION"
+	GBTErrorStringEnumDecalImageTooLarge                                    GBTErrorStringEnum = "DECAL_IMAGE_TOO_LARGE"
+	GBTErrorStringEnumFgsSimulationAssemblyHasNoInstances                   GBTErrorStringEnum = "FGS_SIMULATION_ASSEMBLY_HAS_NO_INSTANCES"
+	GBTErrorStringEnumFgsSimulationAssemblyHasTooFewInstances               GBTErrorStringEnum = "FGS_SIMULATION_ASSEMBLY_HAS_TOO_FEW_INSTANCES"
+	GBTErrorStringEnumFgsModalSimulationHasAllFixedParts                    GBTErrorStringEnum = "FGS_MODAL_SIMULATION_HAS_ALL_FIXED_PARTS"
+	GBTErrorStringEnumLinearPatternSketchReapplyInfo                        GBTErrorStringEnum = "LINEAR_PATTERN_SKETCH_REAPPLY_INFO"
+	GBTErrorStringEnumCircularPatternSketchReapplyInfo                      GBTErrorStringEnum = "CIRCULAR_PATTERN_SKETCH_REAPPLY_INFO"
+	GBTErrorStringEnumCurvePatternSketchReapplyInfo                         GBTErrorStringEnum = "CURVE_PATTERN_SKETCH_REAPPLY_INFO"
+	GBTErrorStringEnumMirrorSketchReapplyInfo                               GBTErrorStringEnum = "MIRROR_SKETCH_REAPPLY_INFO"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2812,6 +2828,22 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND",
 	"CANNOT_RIP_A_FACE_BEND",
 	"CANNOT_MAKE_A_FACE_BEND_TANGENT",
+	"SKETCH_HAS_PATTERN_TOO_LARGE",
+	"SKETCH_LINEAR_PATTERN_FAILED",
+	"DECAL_PROJECTED_OFF_FACE",
+	"FIT_TOLERANCE_LIMITS_NOT_FOUND",
+	"FIT_TOLERANCE_SIZE_TOO_LARGE_ISO",
+	"FIT_TOLERANCE_SIZE_TOO_LARGE_ANSI",
+	"DECAL_NO_FACE_SELECTION",
+	"DECAL_NO_IMAGE_SELECTION",
+	"DECAL_IMAGE_TOO_LARGE",
+	"FGS_SIMULATION_ASSEMBLY_HAS_NO_INSTANCES",
+	"FGS_SIMULATION_ASSEMBLY_HAS_TOO_FEW_INSTANCES",
+	"FGS_MODAL_SIMULATION_HAS_ALL_FIXED_PARTS",
+	"LINEAR_PATTERN_SKETCH_REAPPLY_INFO",
+	"CIRCULAR_PATTERN_SKETCH_REAPPLY_INFO",
+	"CURVE_PATTERN_SKETCH_REAPPLY_INFO",
+	"MIRROR_SKETCH_REAPPLY_INFO",
 	"UNKNOWN",
 }
 

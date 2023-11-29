@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**Classification** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **Lower** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
@@ -54,6 +55,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTToleranceString3274) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetClassification
+
+`func (o *BTToleranceString3274) GetClassification() string`
+
+GetClassification returns the Classification field if non-nil, zero value otherwise.
+
+### GetClassificationOk
+
+`func (o *BTToleranceString3274) GetClassificationOk() (*string, bool)`
+
+GetClassificationOk returns a tuple with the Classification field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClassification
+
+`func (o *BTToleranceString3274) SetClassification(v string)`
+
+SetClassification sets Classification field to given value.
+
+### HasClassification
+
+`func (o *BTToleranceString3274) HasClassification() bool`
+
+HasClassification returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 

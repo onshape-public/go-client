@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## ExportPS
 
-> HttpFile ExportPS(ctx, did, wvm, wvmid, eid, partid).Version(version).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
+> ExportPS(ctx, did, wvm, wvmid, eid, partid).Version(version).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
 Export a part as a Parasolid file.
 
@@ -56,8 +56,6 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PartApi.ExportPS``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExportPS`: HttpFile
-    fmt.Fprintf(os.Stdout, "Response from `PartApi.ExportPS`: %v\n", resp)
 }
 ```
 
@@ -91,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HttpFile**](HttpFile.md)
+ (empty response body)
 
 ### Authorization
 

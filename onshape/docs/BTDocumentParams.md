@@ -4,26 +4,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | Pointer to **string** |  | [optional] 
-**Elements** | Pointer to [**[]BTDocumentElementCreationDescriptor**](BTDocumentElementCreationDescriptor.md) |  | [optional] 
-**ForceExportRules** | Pointer to **bool** |  | [optional] 
-**GenerateUnknownMessages** | Pointer to **bool** |  | [optional] 
-**IsEmptyContent** | Pointer to **bool** |  | [optional] 
-**IsPublic** | Pointer to **bool** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**NotRevisionManaged** | Pointer to **bool** |  | [optional] 
-**OwnerEmail** | Pointer to **string** |  | [optional] 
-**OwnerId** | Pointer to **string** |  | [optional] 
-**OwnerType** | Pointer to **int32** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
-**ProjectId** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **[]string** |  | [optional] 
+**Description** | **string** | Document description. | 
+**Elements** | Pointer to [**[]BTDocumentElementCreationDescriptor**](BTDocumentElementCreationDescriptor.md) | List of element IDs to include in the document. | [optional] 
+**ForceExportRules** | Pointer to **bool** | &#x60;true&#x60; if the current user can toggle the Force Export Rule flag on a document. | [optional] 
+**GenerateUnknownMessages** | Pointer to **bool** | Set to &#x60;true&#x60; for debugging. | [optional] 
+**IsEmptyContent** | Pointer to **bool** | Set to &#x60;true&#x60; to generate an empty document. | [optional] 
+**IsPublic** | Pointer to **bool** | Set to &#x60;true&#x60; to make the document public. | [optional] 
+**Name** | **string** | Document name. | 
+**NotRevisionManaged** | Pointer to **bool** | Set to &#x60;true&#x60; to indicate that revisions are not managed for this document. | [optional] 
+**OwnerEmail** | Pointer to **string** | The document owner&#39;s email address. | [optional] 
+**OwnerId** | Pointer to **string** | If &#x60;ownerType&#x3D;USER&#x60;, this is the user ID. If &#x60;ownerType&#x3D;COMPANY&#x60;, this is the company ID. | [optional] 
+**OwnerType** | Pointer to **int32** | The document&#39;s owner type. &#x60;USER&#x3D;0&#x60; | &#x60;COMPANY&#x3D;1&#x60; | &#x60;ONSHAPE&#x3D;2&#x60; | [optional] 
+**ParentId** | Pointer to **string** | Document ID of this document&#39;s parent. | [optional] 
+**ProjectId** | Pointer to **string** | ID of the project this document belongs to. | [optional] 
+**Tags** | Pointer to **[]string** | Array of strings to set as tags for the document. | [optional] 
 
 ## Methods
 
 ### NewBTDocumentParams
 
-`func NewBTDocumentParams() *BTDocumentParams`
+`func NewBTDocumentParams(description string, name string, ) *BTDocumentParams`
 
 NewBTDocumentParams instantiates a new BTDocumentParams object
 This constructor will assign default values to properties that have it defined,
@@ -57,11 +57,6 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
-### HasDescription
-
-`func (o *BTDocumentParams) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
 
 ### GetElements
 
@@ -207,11 +202,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *BTDocumentParams) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNotRevisionManaged
 

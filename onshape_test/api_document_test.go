@@ -20,8 +20,8 @@ func TestDocumentAPI(t *testing.T) {
 		"label":     Ptr("test-doc"),
 		"docPublic": false,
 		"bTDocumentParams": &onshape.BTDocumentParams{
-			Name:        Ptr("test-doc"),
-			Description: Ptr("This is a test document"),
+			Name:        "test-doc",
+			Description: "This is a test document",
 			IsPublic:    Ptr(false),
 		},
 		"wm":  "w",
@@ -57,7 +57,7 @@ func TestDocumentAPI(t *testing.T) {
 			require.Equal(Tester(), r.GetId(), Context()["did"])
 			require.Equal(Tester(), r.GetName(), *Context()["label"].(*string))
 			require.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
-			require.Equal(Tester(), r.GetDescription(), *Context()["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
+			require.Equal(Tester(), r.GetDescription(), Context()["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
 			require.True(Tester(), r.HasDefaultWorkspace())
 		}),
 	}.Execute()

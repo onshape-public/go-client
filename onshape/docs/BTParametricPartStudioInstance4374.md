@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ElementReference** | Pointer to [**BTElementReference725**](BTElementReference725.md) |  | [optional] 
 **ExternalDocumentWithVersion** | Pointer to [**BTDocumentWithVersionId**](BTDocumentWithVersionId.md) |  | [optional] 
 **ExternalDocumentWithVersionAndElementId** | Pointer to [**BTDocumentWithVersionAndElementId**](BTDocumentWithVersionAndElementId.md) |  | [optional] 
-**LockedState** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
+**LockedState** | Pointer to **bool** |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **ParametricPartStudioFeature** | Pointer to [**BTMParametricPartStudioFeature3883**](BTMParametricPartStudioFeature3883.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferencePartStudio3302**](BTMParameterReferencePartStudio3302.md) |  | [optional] 
@@ -214,20 +214,20 @@ HasExternalDocumentWithVersionAndElementId returns a boolean if a field has been
 
 ### GetLockedState
 
-`func (o *BTParametricPartStudioInstance4374) GetLockedState() BTMParameter1`
+`func (o *BTParametricPartStudioInstance4374) GetLockedState() bool`
 
 GetLockedState returns the LockedState field if non-nil, zero value otherwise.
 
 ### GetLockedStateOk
 
-`func (o *BTParametricPartStudioInstance4374) GetLockedStateOk() (*BTMParameter1, bool)`
+`func (o *BTParametricPartStudioInstance4374) GetLockedStateOk() (*bool, bool)`
 
 GetLockedStateOk returns a tuple with the LockedState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLockedState
 
-`func (o *BTParametricPartStudioInstance4374) SetLockedState(v BTMParameter1)`
+`func (o *BTParametricPartStudioInstance4374) SetLockedState(v bool)`
 
 SetLockedState sets LockedState field to given value.
 

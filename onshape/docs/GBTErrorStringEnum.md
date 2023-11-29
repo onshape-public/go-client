@@ -2789,6 +2789,38 @@
 
 * `GBTErrorStringEnumCannotMakeAFaceBendTangent` (value: `"CANNOT_MAKE_A_FACE_BEND_TANGENT"`)
 
+* `GBTErrorStringEnumSketchHasPatternTooLarge` (value: `"SKETCH_HAS_PATTERN_TOO_LARGE"`)
+
+* `GBTErrorStringEnumSketchLinearPatternFailed` (value: `"SKETCH_LINEAR_PATTERN_FAILED"`)
+
+* `GBTErrorStringEnumDecalProjectedOffFace` (value: `"DECAL_PROJECTED_OFF_FACE"`)
+
+* `GBTErrorStringEnumFitToleranceLimitsNotFound` (value: `"FIT_TOLERANCE_LIMITS_NOT_FOUND"`)
+
+* `GBTErrorStringEnumFitToleranceSizeTooLargeIso` (value: `"FIT_TOLERANCE_SIZE_TOO_LARGE_ISO"`)
+
+* `GBTErrorStringEnumFitToleranceSizeTooLargeAnsi` (value: `"FIT_TOLERANCE_SIZE_TOO_LARGE_ANSI"`)
+
+* `GBTErrorStringEnumDecalNoFaceSelection` (value: `"DECAL_NO_FACE_SELECTION"`)
+
+* `GBTErrorStringEnumDecalNoImageSelection` (value: `"DECAL_NO_IMAGE_SELECTION"`)
+
+* `GBTErrorStringEnumDecalImageTooLarge` (value: `"DECAL_IMAGE_TOO_LARGE"`)
+
+* `GBTErrorStringEnumFgsSimulationAssemblyHasNoInstances` (value: `"FGS_SIMULATION_ASSEMBLY_HAS_NO_INSTANCES"`)
+
+* `GBTErrorStringEnumFgsSimulationAssemblyHasTooFewInstances` (value: `"FGS_SIMULATION_ASSEMBLY_HAS_TOO_FEW_INSTANCES"`)
+
+* `GBTErrorStringEnumFgsModalSimulationHasAllFixedParts` (value: `"FGS_MODAL_SIMULATION_HAS_ALL_FIXED_PARTS"`)
+
+* `GBTErrorStringEnumLinearPatternSketchReapplyInfo` (value: `"LINEAR_PATTERN_SKETCH_REAPPLY_INFO"`)
+
+* `GBTErrorStringEnumCircularPatternSketchReapplyInfo` (value: `"CIRCULAR_PATTERN_SKETCH_REAPPLY_INFO"`)
+
+* `GBTErrorStringEnumCurvePatternSketchReapplyInfo` (value: `"CURVE_PATTERN_SKETCH_REAPPLY_INFO"`)
+
+* `GBTErrorStringEnumMirrorSketchReapplyInfo` (value: `"MIRROR_SKETCH_REAPPLY_INFO"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

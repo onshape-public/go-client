@@ -14,7 +14,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.172.26043-b28d7068bd76
+  version: 1.173.26754-ceeaad064d4a
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -1337,6 +1337,14 @@ paths:
           default: ""
           type: string
         style: form
+      - explode: true
+        in: query
+        name: referenceId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
       responses:
         default:
           content:
@@ -1505,6 +1513,14 @@ paths:
         schema:
           default: false
           type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: referenceId
+        required: false
+        schema:
+          default: ""
+          type: string
         style: form
       responses:
         default:
@@ -10707,7 +10723,7 @@ paths:
           type: string
         style: form
       responses:
-        "200":
+        "307":
           content:
             application/octet-stream:
               schema:
@@ -10717,7 +10733,7 @@ paths:
               schema:
                 format: binary
                 type: string
-          description: Success!
+          description: A Redirect!
       security:
       - OAuth2:
         - OAuth2Read
@@ -12581,8 +12597,7 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf:
     get:
       deprecated: false
-      description: "Returns a 307 redirect from which to download the exported file.\
-        \ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)"
+      description: "Returns the glTF representation. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)"
       operationId: exportPartStudioGltf
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -20271,6 +20286,7 @@ components:
           btType: btType
           reset: true
           opacity: 1
+          type: null
           usableAppearance: true
         btType: btType
         isDeletion: true
@@ -22019,6 +22035,7 @@ components:
           btType: btType
           reset: true
           opacity: 1
+          type: null
           usableAppearance: true
         affectedDeterministicIds:
         - affectedDeterministicIds
@@ -22056,6 +22073,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             affectedDeterministicIds:
             - affectedDeterministicIds
@@ -25536,6 +25554,7 @@ components:
           type: string
       type: object
     BTDocumentElementCreationDescriptor:
+      description: List of element IDs to include in the document.
       example:
         elementParams:
           formatId: formatId
@@ -26159,11 +26178,12 @@ components:
           type: string
       type: object
     BTDocumentParams:
+      description: Parameters for creating and updating documents.
       example:
-        ownerType: 6
+        ownerType: 0
         isEmptyContent: true
         forceExportRules: true
-        description: description
+        description: My first Onshape document.
         ownerId: ownerId
         parentId: parentId
         ownerEmail: ownerEmail
@@ -26207,43 +26227,67 @@ components:
               \ { 'subKey': false } }"
           elementType: 0
         generateUnknownMessages: true
-        name: name
+        name: myDocument
         isPublic: true
         projectId: projectId
       properties:
         description:
+          description: Document description.
+          example: My first Onshape document.
           type: string
         elements:
+          description: List of element IDs to include in the document.
           items:
             $ref: '#/components/schemas/BTDocumentElementCreationDescriptor'
           type: array
         forceExportRules:
+          description: '`true` if the current user can toggle the Force Export Rule
+            flag on a document.'
           type: boolean
         generateUnknownMessages:
+          description: Set to `true` for debugging.
           type: boolean
         isEmptyContent:
+          description: Set to `true` to generate an empty document.
           type: boolean
         isPublic:
+          description: Set to `true` to make the document public.
           type: boolean
         name:
+          description: Document name.
+          example: myDocument
           type: string
         notRevisionManaged:
+          description: Set to `true` to indicate that revisions are not managed for
+            this document.
           type: boolean
         ownerEmail:
+          description: The document owner's email address.
           type: string
         ownerId:
+          description: "If `ownerType=USER`, this is the user ID. If `ownerType=COMPANY`,\
+            \ this is the company ID."
           type: string
         ownerType:
+          description: The document's owner type. `USER=0` | `COMPANY=1` | `ONSHAPE=2`
+          example: 0
           format: int32
           type: integer
         parentId:
+          description: Document ID of this document's parent.
           type: string
         projectId:
+          description: ID of the project this document belongs to.
           type: string
         tags:
+          description: Array of strings to set as tags for the document.
           items:
+            description: Array of strings to set as tags for the document.
             type: string
           type: array
+      required:
+      - description
+      - name
       type: object
     BTDocumentProcessingInfo:
       allOf:
@@ -27294,6 +27338,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             name: name
             btType: btType
@@ -27447,6 +27492,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               name: name
               btType: btType
@@ -27519,6 +27565,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               name: name
               btType: btType
@@ -27730,6 +27777,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               name: name
               btType: btType
@@ -27802,6 +27850,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               name: name
               btType: btType
@@ -28036,6 +28085,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             name: name
             btType: btType
@@ -28108,6 +28158,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             name: name
             btType: btType
@@ -28363,6 +28414,7 @@ components:
             btType: btType
             reset: true
             opacity: 1
+            type: null
             usableAppearance: true
           name: name
           btType: btType
@@ -28488,6 +28540,7 @@ components:
           btType: btType
           reset: true
           opacity: 1
+          type: null
           usableAppearance: true
         name: name
         btType: btType
@@ -28714,6 +28767,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               name: name
               btType: btType
@@ -28867,6 +28921,7 @@ components:
                   btType: btType
                   reset: true
                   opacity: 1
+                  type: null
                   usableAppearance: true
                 name: name
                 btType: btType
@@ -28939,6 +28994,7 @@ components:
                   btType: btType
                   reset: true
                   opacity: 1
+                  type: null
                   usableAppearance: true
                 name: name
                 btType: btType
@@ -29150,6 +29206,7 @@ components:
                   btType: btType
                   reset: true
                   opacity: 1
+                  type: null
                   usableAppearance: true
                 name: name
                 btType: btType
@@ -29222,6 +29279,7 @@ components:
                   btType: btType
                   reset: true
                   opacity: 1
+                  type: null
                   usableAppearance: true
                 name: name
                 btType: btType
@@ -29327,6 +29385,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               btType: btType
               isDeletion: true
@@ -29781,6 +29840,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               customProperties:
                 productLine: productLine
@@ -29900,6 +29960,7 @@ components:
                 btType: btType
                 reset: true
                 opacity: 1
+                type: null
                 usableAppearance: true
               isSheet: true
               ordinal: 7
@@ -29920,6 +29981,7 @@ components:
                     btType: btType
                     reset: true
                     opacity: 1
+                    type: null
                     usableAppearance: true
                   affectedDeterministicIds:
                   - affectedDeterministicIds
@@ -30266,6 +30328,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             customProperties:
               productLine: productLine
@@ -30385,6 +30448,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             isSheet: true
             ordinal: 7
@@ -30513,6 +30577,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             customProperties:
               productLine: productLine
@@ -30632,6 +30697,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             isSheet: true
             ordinal: 7
@@ -33525,6 +33591,7 @@ components:
         btType: btType
         reset: true
         opacity: 1
+        type: null
         usableAppearance: true
       properties:
         btType:
@@ -33546,6 +33613,8 @@ components:
             format: byte
             type: string
           type: array
+        type:
+          $ref: '#/components/schemas/GBTAppearanceType'
         usableAppearance:
           type: boolean
       type: object
@@ -33909,6 +33978,14 @@ components:
         importMicroversion:
           type: string
           writeOnly: true
+      type: object
+    BTInContextObjectFilter-3810:
+      allOf:
+      - $ref: '#/components/schemas/BTQueryFilter-183'
+      - $ref: '#/components/schemas/BTInContextObjectFilter_3810_allOf'
+      properties:
+        btType:
+          type: string
       type: object
     BTIndividualTableProperties-3760:
       properties:
@@ -40409,23 +40486,25 @@ components:
         properties:
         - dirty: true
           editableInUi: true
+          dateFormat: dateFormat
           defaultValue: ""
           editable: true
           multivalued: true
-          propertySource: 6
+          propertySource: 1
           validator:
-            quantityType: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
             pattern: pattern
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
+            minCount: 9
             maxCount: 5
-            maxLength: 5
+            maxLength: 2
           computedPropertyError: computedPropertyError
           computedAssemblyProperty: true
+          propertyOverrideStatus: 6
           required: true
           uiHints:
             multiline: true
@@ -40445,23 +40524,25 @@ components:
             value: value
         - dirty: true
           editableInUi: true
+          dateFormat: dateFormat
           defaultValue: ""
           editable: true
           multivalued: true
-          propertySource: 6
+          propertySource: 1
           validator:
-            quantityType: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
             pattern: pattern
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
+            minCount: 9
             maxCount: 5
-            maxLength: 5
+            maxLength: 2
           computedPropertyError: computedPropertyError
           computedAssemblyProperty: true
+          propertyOverrideStatus: 6
           required: true
           uiHints:
             multiline: true
@@ -40564,23 +40645,25 @@ components:
       example:
         dirty: true
         editableInUi: true
+        dateFormat: dateFormat
         defaultValue: ""
         editable: true
         multivalued: true
-        propertySource: 6
+        propertySource: 1
         validator:
-          quantityType: 3
+          quantityType: 2
           minDate: 2000-01-23T04:56:07.000+00:00
-          min: 2.3021358869347655
-          max: 1.4658129805029452
-          minLength: 9
+          min: 7.061401241503109
+          max: 5.962133916683182
+          minLength: 3
           pattern: pattern
           maxDate: 2000-01-23T04:56:07.000+00:00
-          minCount: 7
+          minCount: 9
           maxCount: 5
-          maxLength: 5
+          maxLength: 2
         computedPropertyError: computedPropertyError
         computedAssemblyProperty: true
+        propertyOverrideStatus: 6
         required: true
         uiHints:
           multiline: true
@@ -40605,6 +40688,8 @@ components:
           type: boolean
         computedPropertyError:
           type: string
+        dateFormat:
+          type: string
         defaultValue: {}
         dirty:
           type: boolean
@@ -40624,6 +40709,9 @@ components:
           type: string
         propertyId:
           type: string
+        propertyOverrideStatus:
+          format: int32
+          type: integer
         propertySource:
           format: int32
           type: integer
@@ -40661,16 +40749,16 @@ components:
       type: object
     BTMetadataPropertyValidatorInfo:
       example:
-        quantityType: 3
+        quantityType: 2
         minDate: 2000-01-23T04:56:07.000+00:00
-        min: 2.3021358869347655
-        max: 1.4658129805029452
-        minLength: 9
+        min: 7.061401241503109
+        max: 5.962133916683182
+        minLength: 3
         pattern: pattern
         maxDate: 2000-01-23T04:56:07.000+00:00
-        minCount: 7
+        minCount: 9
         maxCount: 5
-        maxLength: 5
+        maxLength: 2
       properties:
         max:
           type: number
@@ -43976,6 +44064,7 @@ components:
           btType: btType
           reset: true
           opacity: 1
+          type: null
           usableAppearance: true
         customProperties:
           productLine: productLine
@@ -44095,6 +44184,7 @@ components:
           btType: btType
           reset: true
           opacity: 1
+          type: null
           usableAppearance: true
         isSheet: true
         ordinal: 7
@@ -44613,6 +44703,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             btType: btType
             isDeletion: true
@@ -45067,6 +45158,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             customProperties:
               productLine: productLine
@@ -45186,6 +45278,7 @@ components:
               btType: btType
               reset: true
               opacity: 1
+              type: null
               usableAppearance: true
             isSheet: true
             ordinal: 7
@@ -45206,6 +45299,7 @@ components:
                   btType: btType
                   reset: true
                   opacity: 1
+                  type: null
                   usableAppearance: true
                 affectedDeterministicIds:
                 - affectedDeterministicIds
@@ -45552,6 +45646,7 @@ components:
             btType: btType
             reset: true
             opacity: 1
+            type: null
             usableAppearance: true
           customProperties:
             productLine: productLine
@@ -45671,6 +45766,7 @@ components:
             btType: btType
             reset: true
             opacity: 1
+            type: null
             usableAppearance: true
           isSheet: true
           ordinal: 7
@@ -45799,6 +45895,7 @@ components:
             btType: btType
             reset: true
             opacity: 1
+            type: null
             usableAppearance: true
           customProperties:
             productLine: productLine
@@ -45918,6 +46015,7 @@ components:
             btType: btType
             reset: true
             opacity: 1
+            type: null
             usableAppearance: true
           isSheet: true
           ordinal: 7
@@ -47285,6 +47383,7 @@ components:
           BTFlatSheetMetalFilter-3018: '#/components/schemas/BTFlatSheetMetalFilter-3018'
           BTGeometryFilter-130: '#/components/schemas/BTGeometryFilter-130'
           BTImageFilter-853: '#/components/schemas/BTImageFilter-853'
+          BTInContextObjectFilter-3810: '#/components/schemas/BTInContextObjectFilter-3810'
           BTMateConnectorFilter-163: '#/components/schemas/BTMateConnectorFilter-163'
           BTMateFilter-162: '#/components/schemas/BTMateFilter-162'
           BTModifiableEntityOnlyFilter-1593: '#/components/schemas/BTModifiableEntityOnlyFilter-1593'
@@ -48092,23 +48191,25 @@ components:
           properties:
           - dirty: true
             editableInUi: true
+            dateFormat: dateFormat
             defaultValue: ""
             editable: true
             multivalued: true
-            propertySource: 6
+            propertySource: 1
             validator:
-              quantityType: 3
+              quantityType: 2
               minDate: 2000-01-23T04:56:07.000+00:00
-              min: 2.3021358869347655
-              max: 1.4658129805029452
-              minLength: 9
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
               pattern: pattern
               maxDate: 2000-01-23T04:56:07.000+00:00
-              minCount: 7
+              minCount: 9
               maxCount: 5
-              maxLength: 5
+              maxLength: 2
             computedPropertyError: computedPropertyError
             computedAssemblyProperty: true
+            propertyOverrideStatus: 6
             required: true
             uiHints:
               multiline: true
@@ -48128,23 +48229,25 @@ components:
               value: value
           - dirty: true
             editableInUi: true
+            dateFormat: dateFormat
             defaultValue: ""
             editable: true
             multivalued: true
-            propertySource: 6
+            propertySource: 1
             validator:
-              quantityType: 3
+              quantityType: 2
               minDate: 2000-01-23T04:56:07.000+00:00
-              min: 2.3021358869347655
-              max: 1.4658129805029452
-              minLength: 9
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
               pattern: pattern
               maxDate: 2000-01-23T04:56:07.000+00:00
-              minCount: 7
+              minCount: 9
               maxCount: 5
-              maxLength: 5
+              maxLength: 2
             computedPropertyError: computedPropertyError
             computedAssemblyProperty: true
+            propertyOverrideStatus: 6
             required: true
             uiHints:
               multiline: true
@@ -48222,23 +48325,25 @@ components:
           properties:
           - dirty: true
             editableInUi: true
+            dateFormat: dateFormat
             defaultValue: ""
             editable: true
             multivalued: true
-            propertySource: 6
+            propertySource: 1
             validator:
-              quantityType: 3
+              quantityType: 2
               minDate: 2000-01-23T04:56:07.000+00:00
-              min: 2.3021358869347655
-              max: 1.4658129805029452
-              minLength: 9
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
               pattern: pattern
               maxDate: 2000-01-23T04:56:07.000+00:00
-              minCount: 7
+              minCount: 9
               maxCount: 5
-              maxLength: 5
+              maxLength: 2
             computedPropertyError: computedPropertyError
             computedAssemblyProperty: true
+            propertyOverrideStatus: 6
             required: true
             uiHints:
               multiline: true
@@ -48258,23 +48363,25 @@ components:
               value: value
           - dirty: true
             editableInUi: true
+            dateFormat: dateFormat
             defaultValue: ""
             editable: true
             multivalued: true
-            propertySource: 6
+            propertySource: 1
             validator:
-              quantityType: 3
+              quantityType: 2
               minDate: 2000-01-23T04:56:07.000+00:00
-              min: 2.3021358869347655
-              max: 1.4658129805029452
-              minLength: 9
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
               pattern: pattern
               maxDate: 2000-01-23T04:56:07.000+00:00
-              minCount: 7
+              minCount: 9
               maxCount: 5
-              maxLength: 5
+              maxLength: 2
             computedPropertyError: computedPropertyError
             computedAssemblyProperty: true
+            propertyOverrideStatus: 6
             required: true
             uiHints:
               multiline: true
@@ -48296,18 +48403,20 @@ components:
         properties:
         - isNotifierProperty: true
           hideInUi: true
+          dateFormat: dateFormat
           defaultValue: "{}"
           validator:
-            quantityType: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
             pattern: pattern
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
+            minCount: 9
             maxCount: 5
-            maxLength: 5
+            maxLength: 2
+          propertyOverrideStatus: 7
           teamsOnly: true
           required: true
           usersOnly: true
@@ -48329,7 +48438,7 @@ components:
           editableInUi: true
           editable: true
           multivalued: true
-          propertySource: 7
+          propertySource: 9
           computedPropertyError: computedPropertyError
           computedAssemblyProperty: true
           schemaId: schemaId
@@ -48382,18 +48491,20 @@ components:
             objectId: objectId
         - isNotifierProperty: true
           hideInUi: true
+          dateFormat: dateFormat
           defaultValue: "{}"
           validator:
-            quantityType: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
             pattern: pattern
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
+            minCount: 9
             maxCount: 5
-            maxLength: 5
+            maxLength: 2
+          propertyOverrideStatus: 7
           teamsOnly: true
           required: true
           usersOnly: true
@@ -48415,7 +48526,7 @@ components:
           editableInUi: true
           editable: true
           multivalued: true
-          propertySource: 7
+          propertySource: 9
           computedPropertyError: computedPropertyError
           computedAssemblyProperty: true
           schemaId: schemaId
@@ -48623,23 +48734,25 @@ components:
         properties:
         - dirty: true
           editableInUi: true
+          dateFormat: dateFormat
           defaultValue: ""
           editable: true
           multivalued: true
-          propertySource: 6
+          propertySource: 1
           validator:
-            quantityType: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
             pattern: pattern
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
+            minCount: 9
             maxCount: 5
-            maxLength: 5
+            maxLength: 2
           computedPropertyError: computedPropertyError
           computedAssemblyProperty: true
+          propertyOverrideStatus: 6
           required: true
           uiHints:
             multiline: true
@@ -48659,23 +48772,25 @@ components:
             value: value
         - dirty: true
           editableInUi: true
+          dateFormat: dateFormat
           defaultValue: ""
           editable: true
           multivalued: true
-          propertySource: 6
+          propertySource: 1
           validator:
-            quantityType: 3
+            quantityType: 2
             minDate: 2000-01-23T04:56:07.000+00:00
-            min: 2.3021358869347655
-            max: 1.4658129805029452
-            minLength: 9
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
             pattern: pattern
             maxDate: 2000-01-23T04:56:07.000+00:00
-            minCount: 7
+            minCount: 9
             maxCount: 5
-            maxLength: 5
+            maxLength: 2
           computedPropertyError: computedPropertyError
           computedAssemblyProperty: true
+          propertyOverrideStatus: 6
           required: true
           uiHints:
             multiline: true
@@ -49733,6 +49848,7 @@ components:
           type: object
       type: object
     BTShadedViewsInfo:
+      description: Images are returned as base64-encoded strings.
       example:
         images:
         - - images
@@ -51312,6 +51428,8 @@ components:
     BTToleranceString-3274:
       properties:
         btType:
+          type: string
+        classification:
           type: string
         importMicroversion:
           type: string
@@ -54046,18 +54164,20 @@ components:
       example:
         isNotifierProperty: true
         hideInUi: true
+        dateFormat: dateFormat
         defaultValue: "{}"
         validator:
-          quantityType: 3
+          quantityType: 2
           minDate: 2000-01-23T04:56:07.000+00:00
-          min: 2.3021358869347655
-          max: 1.4658129805029452
-          minLength: 9
+          min: 7.061401241503109
+          max: 5.962133916683182
+          minLength: 3
           pattern: pattern
           maxDate: 2000-01-23T04:56:07.000+00:00
-          minCount: 7
+          minCount: 9
           maxCount: 5
-          maxLength: 5
+          maxLength: 2
+        propertyOverrideStatus: 7
         teamsOnly: true
         required: true
         usersOnly: true
@@ -54079,7 +54199,7 @@ components:
         editableInUi: true
         editable: true
         multivalued: true
-        propertySource: 7
+        propertySource: 9
         computedPropertyError: computedPropertyError
         computedAssemblyProperty: true
         schemaId: schemaId
@@ -54137,6 +54257,8 @@ components:
           type: boolean
         computedPropertyError:
           type: string
+        dateFormat:
+          type: string
         defaultValue:
           type: object
         dirty:
@@ -54168,6 +54290,9 @@ components:
           writeOnly: true
         propertyId:
           type: string
+        propertyOverrideStatus:
+          format: int32
+          type: integer
         propertySource:
           format: int32
           type: integer
@@ -65906,6 +66031,11 @@ components:
       - SKETCH
       - CURVE
       type: string
+    GBTAppearanceType:
+      enum:
+      - UNKNOWN
+      - SKETCH
+      type: string
     GBTAssemblyFeatureDisplayStatus:
       enum:
       - OK
@@ -67541,6 +67671,22 @@ components:
       - MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND
       - CANNOT_RIP_A_FACE_BEND
       - CANNOT_MAKE_A_FACE_BEND_TANGENT
+      - SKETCH_HAS_PATTERN_TOO_LARGE
+      - SKETCH_LINEAR_PATTERN_FAILED
+      - DECAL_PROJECTED_OFF_FACE
+      - FIT_TOLERANCE_LIMITS_NOT_FOUND
+      - FIT_TOLERANCE_SIZE_TOO_LARGE_ISO
+      - FIT_TOLERANCE_SIZE_TOO_LARGE_ANSI
+      - DECAL_NO_FACE_SELECTION
+      - DECAL_NO_IMAGE_SELECTION
+      - DECAL_IMAGE_TOO_LARGE
+      - FGS_SIMULATION_ASSEMBLY_HAS_NO_INSTANCES
+      - FGS_SIMULATION_ASSEMBLY_HAS_TOO_FEW_INSTANCES
+      - FGS_MODAL_SIMULATION_HAS_ALL_FIXED_PARTS
+      - LINEAR_PATTERN_SKETCH_REAPPLY_INFO
+      - CIRCULAR_PATTERN_SKETCH_REAPPLY_INFO
+      - CURVE_PATTERN_SKETCH_REAPPLY_INFO
+      - MIRROR_SKETCH_REAPPLY_INFO
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -101086,6 +101232,14 @@ components:
           type: boolean
       type: object
       example: null
+    BTInContextObjectFilter_3810_allOf:
+      properties:
+        btType:
+          type: string
+        isInContext:
+          type: boolean
+      type: object
+      example: null
     BTInnerArrayParameterLocation_2368_allOf:
       properties:
         btType:
@@ -102298,8 +102452,6 @@ components:
           type: boolean
         isAutomatic:
           type: boolean
-        lockedState:
-          $ref: '#/components/schemas/BTMParameter-1'
         microversionId:
           $ref: '#/components/schemas/BTMicroversionId-366'
         partialReference:
@@ -103545,7 +103697,7 @@ components:
         externalDocumentWithVersionAndElementId:
           $ref: '#/components/schemas/BTDocumentWithVersionAndElementId'
         lockedState:
-          $ref: '#/components/schemas/BTMParameter-1'
+          type: boolean
         microversionId:
           $ref: '#/components/schemas/BTMicroversionId-366'
         parametricPartStudioFeature:

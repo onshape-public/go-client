@@ -474,6 +474,8 @@ docs/BTImmutableDoubleArray.md
 docs/BTImmutableFloatArray.md
 docs/BTImmutableIntArray.md
 docs/BTImport.md
+docs/BTInContextObjectFilter3810.md
+docs/BTInContextObjectFilter3810AllOf.md
 docs/BTIndividualTableProperties3760.md
 docs/BTInheritedAclInfo.md
 docs/BTInnerArrayParameterLocation2368.md
@@ -1332,6 +1334,7 @@ docs/FeatureStudioApi.md
 docs/FolderApi.md
 docs/GBTAppElementAssociativeDataType.md
 docs/GBTAppElementReferenceType.md
+docs/GBTAppearanceType.md
 docs/GBTAssemblyFeatureDisplayStatus.md
 docs/GBTAssemblySimulationType.md
 docs/GBTBSFeatureVisibility.md
@@ -2166,6 +2169,7 @@ model_btfs_value_with_units_1817.go
 model_btid_translation_info.go
 model_btid_translation_params.go
 model_btid_translation_result_info.go
+model_btin_context_object_filter_3810.go
 model_btj_edit_3734.go
 model_btj_edit_change_2636.go
 model_btj_edit_delete_1992.go
@@ -2382,6 +2386,7 @@ model_external_account_collection.go
 model_external_documentation.go
 model_gbt_app_element_associative_data_type.go
 model_gbt_app_element_reference_type.go
+model_gbt_appearance_type.go
 model_gbt_assembly_feature_display_status.go
 model_gbt_assembly_simulation_type.go
 model_gbt_bill_of_materials_exclusion_status.go

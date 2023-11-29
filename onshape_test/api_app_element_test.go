@@ -35,8 +35,8 @@ func TestAppElementAPI(t *testing.T) {
 		Call: onshape.ApiCreateDocumentRequest{
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		}.BTDocumentParams(onshape.BTDocumentParams{
-			Name:        Ptr("test-doc"),
-			Description: Ptr("This is a test document"),
+			Name:        "test-doc",
+			Description: "This is a test document",
 			IsPublic:    Ptr(false),
 		}),
 		Expect: NoAPIError(),
@@ -132,8 +132,8 @@ func TestTransactionAppElementAPI(t *testing.T) {
 		Call: onshape.ApiCreateDocumentRequest{
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		}.BTDocumentParams(onshape.BTDocumentParams{
-			Name:        Ptr("test-doc"),
-			Description: Ptr("This is a test document"),
+			Name:        "test-doc",
+			Description: "This is a test document",
 			IsPublic:    Ptr(false),
 		}),
 		Expect: NoAPIError(),
