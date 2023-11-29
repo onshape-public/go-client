@@ -33527,9 +33527,6 @@ components:
             \ from \"/api/documents/{did}\"."
           items:
             $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-          properties:
-            empty:
-              type: boolean
           type: array
         next:
           description: The URL for the next page of items. Responses are limited to
@@ -33560,9 +33557,6 @@ components:
             \ from \"/api/documents/{did}\"."
           items:
             $ref: '#/components/schemas/BTTeamInfo'
-          properties:
-            empty:
-              type: boolean
           type: array
         next:
           description: The URL for the next page of items. Responses are limited to
