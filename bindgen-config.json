@@ -137,6 +137,14 @@
       {
         "key": "components.schemas.BTUserSummaryInfo.discriminator.mapping['user-summary']",
         "type": "remove"
+      },
+      {
+        "key": "components.schemas.BTGlobalTreeNodeListResponse.properties.items.properties",
+        "type": "remove"
+      },
+      {
+        "key": "components.schemas.BTGlobalTreeNodeListResponseBTTeamInfo.properties.items.properties",
+        "type": "remove"
       }
     ]
   }
