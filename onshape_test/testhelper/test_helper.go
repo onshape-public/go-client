@@ -13,7 +13,7 @@ import (
 // SetupDocument creates an Onshape document
 func SetupDocument(ctx context.Context, client *onshape.APIClient, name string) (string, string,
 	func() (respStatus int, err error)) {
-	docParams := onshape.NewBTDocumentParams()
+	docParams := onshape.NewBTDocumentParams("Document description", "Test document")
 	docParams.SetName(name)
 	//docParams.SetIsPublic(true)
 	//create document
