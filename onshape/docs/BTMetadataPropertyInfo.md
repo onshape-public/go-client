@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ComputedAssemblyProperty** | Pointer to **bool** |  | [optional] 
 **ComputedProperty** | Pointer to **bool** |  | [optional] 
 **ComputedPropertyError** | Pointer to **string** |  | [optional] 
+**DateFormat** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **interface{}** |  | [optional] 
 **Dirty** | Pointer to **bool** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **Multivalued** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PropertyId** | Pointer to **string** |  | [optional] 
+**PropertyOverrideStatus** | Pointer to **int32** |  | [optional] 
 **PropertySource** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 
@@ -117,6 +119,31 @@ SetComputedPropertyError sets ComputedPropertyError field to given value.
 `func (o *BTMetadataPropertyInfo) HasComputedPropertyError() bool`
 
 HasComputedPropertyError returns a boolean if a field has been set.
+
+### GetDateFormat
+
+`func (o *BTMetadataPropertyInfo) GetDateFormat() string`
+
+GetDateFormat returns the DateFormat field if non-nil, zero value otherwise.
+
+### GetDateFormatOk
+
+`func (o *BTMetadataPropertyInfo) GetDateFormatOk() (*string, bool)`
+
+GetDateFormatOk returns a tuple with the DateFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDateFormat
+
+`func (o *BTMetadataPropertyInfo) SetDateFormat(v string)`
+
+SetDateFormat sets DateFormat field to given value.
+
+### HasDateFormat
+
+`func (o *BTMetadataPropertyInfo) HasDateFormat() bool`
+
+HasDateFormat returns a boolean if a field has been set.
 
 ### GetDefaultValue
 
@@ -352,6 +379,31 @@ SetPropertyId sets PropertyId field to given value.
 `func (o *BTMetadataPropertyInfo) HasPropertyId() bool`
 
 HasPropertyId returns a boolean if a field has been set.
+
+### GetPropertyOverrideStatus
+
+`func (o *BTMetadataPropertyInfo) GetPropertyOverrideStatus() int32`
+
+GetPropertyOverrideStatus returns the PropertyOverrideStatus field if non-nil, zero value otherwise.
+
+### GetPropertyOverrideStatusOk
+
+`func (o *BTMetadataPropertyInfo) GetPropertyOverrideStatusOk() (*int32, bool)`
+
+GetPropertyOverrideStatusOk returns a tuple with the PropertyOverrideStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPropertyOverrideStatus
+
+`func (o *BTMetadataPropertyInfo) SetPropertyOverrideStatus(v int32)`
+
+SetPropertyOverrideStatus sets PropertyOverrideStatus field to given value.
+
+### HasPropertyOverrideStatus
+
+`func (o *BTMetadataPropertyInfo) HasPropertyOverrideStatus() bool`
+
+HasPropertyOverrideStatus returns a boolean if a field has been set.
 
 ### GetPropertySource
 

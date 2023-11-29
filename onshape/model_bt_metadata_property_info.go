@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.172.26043-b28d7068bd76
+API version: 1.173.26754-ceeaad064d4a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,6 +20,7 @@ type BTMetadataPropertyInfo struct {
 	ComputedAssemblyProperty *bool                            `json:"computedAssemblyProperty,omitempty"`
 	ComputedProperty         *bool                            `json:"computedProperty,omitempty"`
 	ComputedPropertyError    *string                          `json:"computedPropertyError,omitempty"`
+	DateFormat               *string                          `json:"dateFormat,omitempty"`
 	DefaultValue             interface{}                      `json:"defaultValue,omitempty"`
 	Dirty                    *bool                            `json:"dirty,omitempty"`
 	Editable                 *bool                            `json:"editable,omitempty"`
@@ -29,6 +30,7 @@ type BTMetadataPropertyInfo struct {
 	Multivalued              *bool                            `json:"multivalued,omitempty"`
 	Name                     *string                          `json:"name,omitempty"`
 	PropertyId               *string                          `json:"propertyId,omitempty"`
+	PropertyOverrideStatus   *int32                           `json:"propertyOverrideStatus,omitempty"`
 	PropertySource           *int32                           `json:"propertySource,omitempty"`
 	Required                 *bool                            `json:"required,omitempty"`
 	SchemaId                 *string                          `json:"schemaId,omitempty"`
@@ -149,6 +151,38 @@ func (o *BTMetadataPropertyInfo) HasComputedPropertyError() bool {
 // SetComputedPropertyError gets a reference to the given string and assigns it to the ComputedPropertyError field.
 func (o *BTMetadataPropertyInfo) SetComputedPropertyError(v string) {
 	o.ComputedPropertyError = &v
+}
+
+// GetDateFormat returns the DateFormat field value if set, zero value otherwise.
+func (o *BTMetadataPropertyInfo) GetDateFormat() string {
+	if o == nil || o.DateFormat == nil {
+		var ret string
+		return ret
+	}
+	return *o.DateFormat
+}
+
+// GetDateFormatOk returns a tuple with the DateFormat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPropertyInfo) GetDateFormatOk() (*string, bool) {
+	if o == nil || o.DateFormat == nil {
+		return nil, false
+	}
+	return o.DateFormat, true
+}
+
+// HasDateFormat returns a boolean if a field has been set.
+func (o *BTMetadataPropertyInfo) HasDateFormat() bool {
+	if o != nil && o.DateFormat != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDateFormat gets a reference to the given string and assigns it to the DateFormat field.
+func (o *BTMetadataPropertyInfo) SetDateFormat(v string) {
+	o.DateFormat = &v
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -440,6 +474,38 @@ func (o *BTMetadataPropertyInfo) SetPropertyId(v string) {
 	o.PropertyId = &v
 }
 
+// GetPropertyOverrideStatus returns the PropertyOverrideStatus field value if set, zero value otherwise.
+func (o *BTMetadataPropertyInfo) GetPropertyOverrideStatus() int32 {
+	if o == nil || o.PropertyOverrideStatus == nil {
+		var ret int32
+		return ret
+	}
+	return *o.PropertyOverrideStatus
+}
+
+// GetPropertyOverrideStatusOk returns a tuple with the PropertyOverrideStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPropertyInfo) GetPropertyOverrideStatusOk() (*int32, bool) {
+	if o == nil || o.PropertyOverrideStatus == nil {
+		return nil, false
+	}
+	return o.PropertyOverrideStatus, true
+}
+
+// HasPropertyOverrideStatus returns a boolean if a field has been set.
+func (o *BTMetadataPropertyInfo) HasPropertyOverrideStatus() bool {
+	if o != nil && o.PropertyOverrideStatus != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPropertyOverrideStatus gets a reference to the given int32 and assigns it to the PropertyOverrideStatus field.
+func (o *BTMetadataPropertyInfo) SetPropertyOverrideStatus(v int32) {
+	o.PropertyOverrideStatus = &v
+}
+
 // GetPropertySource returns the PropertySource field value if set, zero value otherwise.
 func (o *BTMetadataPropertyInfo) GetPropertySource() int32 {
 	if o == nil || o.PropertySource == nil {
@@ -676,6 +742,9 @@ func (o BTMetadataPropertyInfo) MarshalJSON() ([]byte, error) {
 	if o.ComputedPropertyError != nil {
 		toSerialize["computedPropertyError"] = o.ComputedPropertyError
 	}
+	if o.DateFormat != nil {
+		toSerialize["dateFormat"] = o.DateFormat
+	}
 	if o.DefaultValue != nil {
 		toSerialize["defaultValue"] = o.DefaultValue
 	}
@@ -702,6 +771,9 @@ func (o BTMetadataPropertyInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PropertyId != nil {
 		toSerialize["propertyId"] = o.PropertyId
+	}
+	if o.PropertyOverrideStatus != nil {
+		toSerialize["propertyOverrideStatus"] = o.PropertyOverrideStatus
 	}
 	if o.PropertySource != nil {
 		toSerialize["propertySource"] = o.PropertySource

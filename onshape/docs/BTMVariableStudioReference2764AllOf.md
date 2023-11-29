@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **ElementId** | Pointer to **string** |  | [optional] 
 **EntireVariableStudio** | Pointer to **bool** |  | [optional] 
 **IsAutomatic** | Pointer to **bool** |  | [optional] 
-**LockedState** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **PartialReference** | Pointer to **bool** |  | [optional] 
 **ReferenceId** | Pointer to **string** |  | [optional] 
@@ -215,31 +214,6 @@ SetIsAutomatic sets IsAutomatic field to given value.
 `func (o *BTMVariableStudioReference2764AllOf) HasIsAutomatic() bool`
 
 HasIsAutomatic returns a boolean if a field has been set.
-
-### GetLockedState
-
-`func (o *BTMVariableStudioReference2764AllOf) GetLockedState() BTMParameter1`
-
-GetLockedState returns the LockedState field if non-nil, zero value otherwise.
-
-### GetLockedStateOk
-
-`func (o *BTMVariableStudioReference2764AllOf) GetLockedStateOk() (*BTMParameter1, bool)`
-
-GetLockedStateOk returns a tuple with the LockedState field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLockedState
-
-`func (o *BTMVariableStudioReference2764AllOf) SetLockedState(v BTMParameter1)`
-
-SetLockedState sets LockedState field to given value.
-
-### HasLockedState
-
-`func (o *BTMVariableStudioReference2764AllOf) HasLockedState() bool`
-
-HasLockedState returns a boolean if a field has been set.
 
 ### GetMicroversionId
 

@@ -132,7 +132,7 @@ import (
 )
 
 func main() {
-    bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
+    bTDocumentParams := *openapiclient.NewBTDocumentParams("My first Onshape document.", "myDocument") // BTDocumentParams | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -2360,7 +2360,7 @@ import (
 
 func main() {
     did := "did_example" // string | 
-    bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
+    bTDocumentParams := *openapiclient.NewBTDocumentParams("My first Onshape document.", "myDocument") // BTDocumentParams | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

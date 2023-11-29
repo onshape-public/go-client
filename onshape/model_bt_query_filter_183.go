@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.172.26043-b28d7068bd76
+API version: 1.173.26754-ceeaad064d4a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -98,6 +98,11 @@ func (o *BTAllowedMateTypeFilter1511) AsBTQueryFilter183() *BTQueryFilter183 {
 
 // BTPlaneOrientationFilter1700AsBTQueryFilter183 is a convenience function that returns BTPlaneOrientationFilter1700 wrapped in BTQueryFilter183
 func (o *BTPlaneOrientationFilter1700) AsBTQueryFilter183() *BTQueryFilter183 {
+	return &BTQueryFilter183{o}
+}
+
+// BTInContextObjectFilter3810AsBTQueryFilter183 is a convenience function that returns BTInContextObjectFilter3810 wrapped in BTQueryFilter183
+func (o *BTInContextObjectFilter3810) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
 }
 
@@ -474,6 +479,20 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTQueryFilter183 = nil
 			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTImageFilter853: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTInContextObjectFilter-3810'
+	if jsonDict["btType"] == "BTInContextObjectFilter-3810" {
+		// try to unmarshal JSON data into BTInContextObjectFilter3810
+		var qr *BTInContextObjectFilter3810
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTQueryFilter183 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTQueryFilter183 = nil
+			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTInContextObjectFilter3810: %s", err.Error())
 		}
 	}
 

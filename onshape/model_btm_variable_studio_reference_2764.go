@@ -3,7 +3,7 @@ Onshape REST API
 
 The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
 
-API version: 1.172.26043-b28d7068bd76
+API version: 1.173.26754-ceeaad064d4a
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -36,7 +36,6 @@ type BTMVariableStudioReference2764 struct {
 	ElementId               *string                                     `json:"elementId,omitempty"`
 	EntireVariableStudio    *bool                                       `json:"entireVariableStudio,omitempty"`
 	IsAutomatic             *bool                                       `json:"isAutomatic,omitempty"`
-	LockedState             *BTMParameter1                              `json:"lockedState,omitempty"`
 	MicroversionId          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	PartialReference        *bool                                       `json:"partialReference,omitempty"`
 	ReferenceId             *string                                     `json:"referenceId,omitempty"`
@@ -673,38 +672,6 @@ func (o *BTMVariableStudioReference2764) SetIsAutomatic(v bool) {
 	o.IsAutomatic = &v
 }
 
-// GetLockedState returns the LockedState field value if set, zero value otherwise.
-func (o *BTMVariableStudioReference2764) GetLockedState() BTMParameter1 {
-	if o == nil || o.LockedState == nil {
-		var ret BTMParameter1
-		return ret
-	}
-	return *o.LockedState
-}
-
-// GetLockedStateOk returns a tuple with the LockedState field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMVariableStudioReference2764) GetLockedStateOk() (*BTMParameter1, bool) {
-	if o == nil || o.LockedState == nil {
-		return nil, false
-	}
-	return o.LockedState, true
-}
-
-// HasLockedState returns a boolean if a field has been set.
-func (o *BTMVariableStudioReference2764) HasLockedState() bool {
-	if o != nil && o.LockedState != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLockedState gets a reference to the given BTMParameter1 and assigns it to the LockedState field.
-func (o *BTMVariableStudioReference2764) SetLockedState(v BTMParameter1) {
-	o.LockedState = &v
-}
-
 // GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
 func (o *BTMVariableStudioReference2764) GetMicroversionId() BTMicroversionId366 {
 	if o == nil || o.MicroversionId == nil {
@@ -1051,9 +1018,6 @@ func (o BTMVariableStudioReference2764) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsAutomatic != nil {
 		toSerialize["isAutomatic"] = o.IsAutomatic
-	}
-	if o.LockedState != nil {
-		toSerialize["lockedState"] = o.LockedState
 	}
 	if o.MicroversionId != nil {
 		toSerialize["microversionId"] = o.MicroversionId

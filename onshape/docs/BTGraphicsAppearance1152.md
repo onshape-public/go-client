@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Opacity** | Pointer to **int32** |  | [optional] 
 **Reset** | Pointer to **bool** |  | [optional] 
 **RgbaColor** | Pointer to **[]string** |  | [optional] 
+**Type** | Pointer to [**GBTAppearanceType**](GBTAppearanceType.md) |  | [optional] 
 **UsableAppearance** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetRgbaColor sets RgbaColor field to given value.
 `func (o *BTGraphicsAppearance1152) HasRgbaColor() bool`
 
 HasRgbaColor returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *BTGraphicsAppearance1152) GetType() GBTAppearanceType`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *BTGraphicsAppearance1152) GetTypeOk() (*GBTAppearanceType, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *BTGraphicsAppearance1152) SetType(v GBTAppearanceType)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *BTGraphicsAppearance1152) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUsableAppearance
 
