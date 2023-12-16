@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **PendingOwnerTransfer** | Pointer to **bool** |  | [optional] 
 **Permission** | Pointer to **int64** |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
+**ProCompanySubtype** | Pointer to **int32** |  | [optional] 
 **TeamName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -362,6 +363,31 @@ SetPermissionSet sets PermissionSet field to given value.
 `func (o *BTAclEntryInfo) HasPermissionSet() bool`
 
 HasPermissionSet returns a boolean if a field has been set.
+
+### GetProCompanySubtype
+
+`func (o *BTAclEntryInfo) GetProCompanySubtype() int32`
+
+GetProCompanySubtype returns the ProCompanySubtype field if non-nil, zero value otherwise.
+
+### GetProCompanySubtypeOk
+
+`func (o *BTAclEntryInfo) GetProCompanySubtypeOk() (*int32, bool)`
+
+GetProCompanySubtypeOk returns a tuple with the ProCompanySubtype field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProCompanySubtype
+
+`func (o *BTAclEntryInfo) SetProCompanySubtype(v int32)`
+
+SetProCompanySubtype sets ProCompanySubtype field to given value.
+
+### HasProCompanySubtype
+
+`func (o *BTAclEntryInfo) HasProCompanySubtype() bool`
+
+HasProCompanySubtype returns a boolean if a field has been set.
 
 ### GetTeamName
 

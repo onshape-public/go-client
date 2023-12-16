@@ -1260,6 +1260,7 @@ docs/BTVariableTableRowMetadata3912.md
 docs/BTVariableTableRowMetadata3912AllOf.md
 docs/BTVector2d1812.md
 docs/BTVector3d389.md
+docs/BTVersionGraphMode.md
 docs/BTVersionInfo.md
 docs/BTVersionOrWorkspaceMergeInfo.md
 docs/BTVersionOrWorkspaceParams.md
@@ -2118,6 +2119,7 @@ model_bt_variable_table_info.go
 model_bt_variable_table_row_metadata_3912.go
 model_bt_vector2d_1812.go
 model_bt_vector3d_389.go
+model_bt_version_graph_mode.go
 model_bt_version_info.go
 model_bt_version_or_workspace_merge_info.go
 model_bt_version_or_workspace_params.go

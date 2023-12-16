@@ -1,9 +1,9 @@
 /*
 Onshape REST API
 
-The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.173.27678-64d64396ca66
+API version: 1.174.27783-ab3907bf6199
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,10 +17,11 @@ import (
 
 // BTDecal2404 struct for BTDecal2404
 type BTDecal2404 struct {
-	BtType        *string              `json:"btType,omitempty"`
-	ImageSourceId *string              `json:"imageSourceId,omitempty"`
-	IsDeletion    *bool                `json:"isDeletion,omitempty"`
-	Mappings      []BTImageMapping3821 `json:"mappings,omitempty"`
+	BtType         *string              `json:"btType,omitempty"`
+	ImageForeignId *string              `json:"imageForeignId,omitempty"`
+	ImageSourceId  *string              `json:"imageSourceId,omitempty"`
+	IsDeletion     *bool                `json:"isDeletion,omitempty"`
+	Mappings       []BTImageMapping3821 `json:"mappings,omitempty"`
 }
 
 // NewBTDecal2404 instantiates a new BTDecal2404 object
@@ -70,6 +71,38 @@ func (o *BTDecal2404) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTDecal2404) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetImageForeignId returns the ImageForeignId field value if set, zero value otherwise.
+func (o *BTDecal2404) GetImageForeignId() string {
+	if o == nil || o.ImageForeignId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImageForeignId
+}
+
+// GetImageForeignIdOk returns a tuple with the ImageForeignId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDecal2404) GetImageForeignIdOk() (*string, bool) {
+	if o == nil || o.ImageForeignId == nil {
+		return nil, false
+	}
+	return o.ImageForeignId, true
+}
+
+// HasImageForeignId returns a boolean if a field has been set.
+func (o *BTDecal2404) HasImageForeignId() bool {
+	if o != nil && o.ImageForeignId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImageForeignId gets a reference to the given string and assigns it to the ImageForeignId field.
+func (o *BTDecal2404) SetImageForeignId(v string) {
+	o.ImageForeignId = &v
 }
 
 // GetImageSourceId returns the ImageSourceId field value if set, zero value otherwise.
@@ -172,6 +205,9 @@ func (o BTDecal2404) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.ImageForeignId != nil {
+		toSerialize["imageForeignId"] = o.ImageForeignId
 	}
 	if o.ImageSourceId != nil {
 		toSerialize["imageSourceId"] = o.ImageSourceId

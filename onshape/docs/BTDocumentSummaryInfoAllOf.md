@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CanUnshare** | Pointer to **bool** |  | [optional] 
 **CreatedWithEducationPlan** | Pointer to **bool** |  | [optional] 
 **DefaultElementId** | Pointer to **string** |  | [optional] 
+**DefaultVersionGraphMode** | Pointer to [**BTVersionGraphMode**](BTVersionGraphMode.md) |  | [optional] 
 **DefaultWorkspace** | Pointer to [**BTWorkspaceInfo**](BTWorkspaceInfo.md) |  | [optional] 
 **DocumentLabels** | Pointer to [**[]BTDocumentLabelInfo**](BTDocumentLabelInfo.md) |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
@@ -182,6 +183,31 @@ SetDefaultElementId sets DefaultElementId field to given value.
 `func (o *BTDocumentSummaryInfoAllOf) HasDefaultElementId() bool`
 
 HasDefaultElementId returns a boolean if a field has been set.
+
+### GetDefaultVersionGraphMode
+
+`func (o *BTDocumentSummaryInfoAllOf) GetDefaultVersionGraphMode() BTVersionGraphMode`
+
+GetDefaultVersionGraphMode returns the DefaultVersionGraphMode field if non-nil, zero value otherwise.
+
+### GetDefaultVersionGraphModeOk
+
+`func (o *BTDocumentSummaryInfoAllOf) GetDefaultVersionGraphModeOk() (*BTVersionGraphMode, bool)`
+
+GetDefaultVersionGraphModeOk returns a tuple with the DefaultVersionGraphMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultVersionGraphMode
+
+`func (o *BTDocumentSummaryInfoAllOf) SetDefaultVersionGraphMode(v BTVersionGraphMode)`
+
+SetDefaultVersionGraphMode sets DefaultVersionGraphMode field to given value.
+
+### HasDefaultVersionGraphMode
+
+`func (o *BTDocumentSummaryInfoAllOf) HasDefaultVersionGraphMode() bool`
+
+HasDefaultVersionGraphMode returns a boolean if a field has been set.
 
 ### GetDefaultWorkspace
 
