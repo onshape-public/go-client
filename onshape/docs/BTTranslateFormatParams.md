@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **PartIds** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **PasswordRequired** | Pointer to **bool** |  | [optional] 
+**PdfVersion** | Pointer to **string** |  | [optional] 
 **ProcessedForeignId** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **ProxyDocumentId** | Pointer to **string** |  | [optional] 
@@ -1267,6 +1268,31 @@ SetPasswordRequired sets PasswordRequired field to given value.
 `func (o *BTTranslateFormatParams) HasPasswordRequired() bool`
 
 HasPasswordRequired returns a boolean if a field has been set.
+
+### GetPdfVersion
+
+`func (o *BTTranslateFormatParams) GetPdfVersion() string`
+
+GetPdfVersion returns the PdfVersion field if non-nil, zero value otherwise.
+
+### GetPdfVersionOk
+
+`func (o *BTTranslateFormatParams) GetPdfVersionOk() (*string, bool)`
+
+GetPdfVersionOk returns a tuple with the PdfVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPdfVersion
+
+`func (o *BTTranslateFormatParams) SetPdfVersion(v string)`
+
+SetPdfVersion sets PdfVersion field to given value.
+
+### HasPdfVersion
+
+`func (o *BTTranslateFormatParams) HasPdfVersion() bool`
+
+HasPdfVersion returns a boolean if a field has been set.
 
 ### GetProcessedForeignId
 

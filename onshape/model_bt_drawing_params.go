@@ -1,9 +1,9 @@
 /*
 Onshape REST API
 
-The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.173.27678-64d64396ca66
+API version: 1.174.27783-ab3907bf6199
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -15,59 +15,107 @@ import (
 	"encoding/json"
 )
 
-// BTDrawingParams struct for BTDrawingParams
+// BTDrawingParams JSON schema for creating or updating a drawing.
 type BTDrawingParams struct {
-	Border                    *bool                       `json:"border,omitempty"`
-	ComputeIntersection       *bool                       `json:"computeIntersection,omitempty"`
-	DecimalSeparator          *string                     `json:"decimalSeparator,omitempty"`
-	DisplayStateId            *string                     `json:"displayStateId,omitempty"`
-	DocumentId                *string                     `json:"documentId,omitempty"`
-	DocumentMicroversionId    *string                     `json:"documentMicroversionId,omitempty"`
-	DrawingName               *string                     `json:"drawingName,omitempty"`
-	ElementConfiguration      *string                     `json:"elementConfiguration,omitempty"`
-	ElementId                 *string                     `json:"elementId,omitempty"`
-	ElementMicroversionId     *string                     `json:"elementMicroversionId,omitempty"`
-	ExplosionId               *string                     `json:"explosionId,omitempty"`
-	ExternalDocumentId        *string                     `json:"externalDocumentId,omitempty"`
-	ExternalDocumentVersionId *string                     `json:"externalDocumentVersionId,omitempty"`
-	HiddenLines               *BTDrawingHiddenLineOption  `json:"hiddenLines,omitempty"`
-	IncludeSurfaces           *bool                       `json:"includeSurfaces,omitempty"`
-	IncludeWires              *bool                       `json:"includeWires,omitempty"`
-	IsFlattenedPart           *bool                       `json:"isFlattenedPart,omitempty"`
-	IsSketchOnly              *bool                       `json:"isSketchOnly,omitempty"`
-	IsSurface                 *bool                       `json:"isSurface,omitempty"`
-	Language                  *string                     `json:"language,omitempty"`
-	Location                  *BTElementLocationParams    `json:"location,omitempty"`
-	ModelType                 *string                     `json:"modelType,omitempty"`
-	NamedPositionId           *string                     `json:"namedPositionId,omitempty"`
-	NumberHorizontalZones     *int32                      `json:"numberHorizontalZones,omitempty"`
-	NumberVerticalZones       *int32                      `json:"numberVerticalZones,omitempty"`
-	PartId                    *string                     `json:"partId,omitempty"`
-	PartNumber                *string                     `json:"partNumber,omitempty"`
-	PartQuery                 *string                     `json:"partQuery,omitempty"`
-	Projection                *string                     `json:"projection,omitempty"`
-	PureSketch                *bool                       `json:"pureSketch,omitempty"`
-	QualityOption             *string                     `json:"qualityOption,omitempty"`
-	ReferenceType             *int32                      `json:"referenceType,omitempty"`
-	ReferenceTypeEnum         *GBTAppElementReferenceType `json:"referenceTypeEnum,omitempty"`
-	Revision                  *string                     `json:"revision,omitempty"`
-	ShowCutGeomOnly           *bool                       `json:"showCutGeomOnly,omitempty"`
-	SimplificationOption      *string                     `json:"simplificationOption,omitempty"`
-	SimplificationThreshold   *float64                    `json:"simplificationThreshold,omitempty"`
-	Size                      *string                     `json:"size,omitempty"`
-	SketchIds                 []string                    `json:"sketchIds,omitempty"`
-	Standard                  *string                     `json:"standard,omitempty"`
-	StartZones                *string                     `json:"startZones,omitempty"`
-	TemplateArgs              []string                    `json:"templateArgs,omitempty"`
-	TemplateDocumentId        *string                     `json:"templateDocumentId,omitempty"`
-	TemplateElementId         *string                     `json:"templateElementId,omitempty"`
-	TemplateName              *string                     `json:"templateName,omitempty"`
-	TemplateVersionId         *string                     `json:"templateVersionId,omitempty"`
-	TemplateWorkspaceId       *string                     `json:"templateWorkspaceId,omitempty"`
-	Titleblock                *bool                       `json:"titleblock,omitempty"`
-	Units                     *string                     `json:"units,omitempty"`
-	Views                     *string                     `json:"views,omitempty"`
-	WorkspaceId               *string                     `json:"workspaceId,omitempty"`
+	// Set to `true` to include a border in the drawing.
+	Border *bool `json:"border,omitempty"`
+	// Set to `true` to compute and display virtual edges (curves drawn where parts intersect). Leave as `false` to improve performance.
+	ComputeIntersection *bool `json:"computeIntersection,omitempty"`
+	// `PERIOD` | `COMMA`
+	DecimalSeparator *string `json:"decimalSeparator,omitempty"`
+	// Apply this display state's properties to the drawing.
+	DisplayStateId *string `json:"displayStateId,omitempty"`
+	// The document in which to create the drawing. If used, this value must match the document ID (`did`) value provided in the URL.
+	DocumentId *string `json:"documentId,omitempty"`
+	// Create a drawing of a part or assembly from this microversion.
+	DocumentMicroversionId *string `json:"documentMicroversionId,omitempty"`
+	// Provide a name for the drawing.
+	DrawingName *string `json:"drawingName,omitempty"`
+	// Apply this configuration from the source element to the drawing.
+	ElementConfiguration *string `json:"elementConfiguration,omitempty"`
+	// The id of the element in which to perform the operation.
+	ElementId *string `json:"elementId,omitempty"`
+	// The id of the element microversion in which to perform the operation.
+	ElementMicroversionId *string `json:"elementMicroversionId,omitempty"`
+	// Apply this exploded view to the drawing.
+	ExplosionId *string `json:"explosionId,omitempty"`
+	// Create a drawing of an element from this external document.
+	ExternalDocumentId *string `json:"externalDocumentId,omitempty"`
+	// Create a drawing of an element from this external document version.
+	ExternalDocumentVersionId *string                    `json:"externalDocumentVersionId,omitempty"`
+	HiddenLines               *BTDrawingHiddenLineOption `json:"hiddenLines,omitempty"`
+	// Set to `true` to include surfaces in the drawing.
+	IncludeSurfaces *bool `json:"includeSurfaces,omitempty"`
+	// Set to `true` to include wires in the drawing.
+	IncludeWires *bool `json:"includeWires,omitempty"`
+	// Set to `true` if creating a drawing from a flattened part.
+	IsFlattenedPart *bool `json:"isFlattenedPart,omitempty"`
+	// Set to `true` if creating a drawing of a sketch.
+	IsSketchOnly *bool `json:"isSketchOnly,omitempty"`
+	// Set to `true` if creating a drawing from a surface.
+	IsSurface *bool `json:"isSurface,omitempty"`
+	// Set the language for the drawing. Accepts any ISO 639-1 standard language code.
+	Language *string                  `json:"language,omitempty"`
+	Location *BTElementLocationParams `json:"location,omitempty"`
+	// The type of model to include in the drawing: `partstudio` | `assembly`
+	ModelType *string `json:"modelType,omitempty"`
+	// Apply this named view to the drawing.
+	NamedPositionId *string `json:"namedPositionId,omitempty"`
+	// The number of horizontal zones to include in the drawing's graphics area.
+	NumberHorizontalZones *int32 `json:"numberHorizontalZones,omitempty"`
+	// The number of vertical zones to include in the drawing's graphics area.
+	NumberVerticalZones *int32 `json:"numberVerticalZones,omitempty"`
+	// Include this part in the drawing.
+	PartId *string `json:"partId,omitempty"`
+	// Include this part in the drawing.
+	PartNumber *string `json:"partNumber,omitempty"`
+	// Include all parts found by the query in the drawing.
+	PartQuery *string `json:"partQuery,omitempty"`
+	// Apply this projection to the drawing.
+	Projection *string `json:"projection,omitempty"`
+	// Set to `true` if creating the drawing of an empty sketch.
+	PureSketch *bool `json:"pureSketch,omitempty"`
+	// `BEST_PERFORMANCE` | `BEST_QUALITY` | `BALANCED` | `ADAPTIVE`
+	QualityOption *string `json:"qualityOption,omitempty"`
+	// Specify the type of element to create the drawing from. `0: UNKNOWN` | `1: PARTSTUDIO` | `2: ASSEMBLY` | `3: PART` | `4: FLATTENED_PART` | `5: COMPOSITE_PART` | `6: MESH_PART` | `7: SURFACE` | `8: SKETCH` | `9: CURVE`
+	ReferenceType     *int32                      `json:"referenceType,omitempty"`
+	ReferenceTypeEnum *GBTAppElementReferenceType `json:"referenceTypeEnum,omitempty"`
+	// Create the drawing from this specific revision.
+	Revision *string `json:"revision,omitempty"`
+	// Set to `true` to show only cut geometry in the drawing.
+	ShowCutGeomOnly *bool `json:"showCutGeomOnly,omitempty"`
+	// `NONE` | `ABSOLUTE` | `RATIO_TO_MODEL` | `RATIO_TO_BODY` | `AUTOMATIC`
+	SimplificationOption *string `json:"simplificationOption,omitempty"`
+	// `NONE` | `UNKNOWN` | `SMOOTH` | `DRAFTING`
+	SimplificationThreshold *float64 `json:"simplificationThreshold,omitempty"`
+	// Provide a size for the drawing.
+	Size *string `json:"size,omitempty"`
+	// Include these sketches in the drawing.
+	SketchIds []string `json:"sketchIds,omitempty"`
+	// Provide the Standard to use in the drawing.
+	Standard *string `json:"standard,omitempty"`
+	// The zone in which to start the drawing.
+	StartZones *string `json:"startZones,omitempty"`
+	// Provide any additional arguments for the template being used for this drawing.
+	TemplateArgs []string `json:"templateArgs,omitempty"`
+	// Apply the template from this document to the drawing.
+	TemplateDocumentId *string `json:"templateDocumentId,omitempty"`
+	// Apply the template from this element to the drawing.
+	TemplateElementId *string `json:"templateElementId,omitempty"`
+	// Apply this template to the drawing.
+	TemplateName *string `json:"templateName,omitempty"`
+	// Apply the template from this version to the drawing.
+	TemplateVersionId *string `json:"templateVersionId,omitempty"`
+	// Apply the template from this workspace to the drawing.
+	TemplateWorkspaceId *string `json:"templateWorkspaceId,omitempty"`
+	// Set to `true` to include a title block in the drawing.
+	Titleblock *bool `json:"titleblock,omitempty"`
+	// Units for the element: `METER` | `CENTIMETER` | `MILLIMETER` | `INCH` | `FOOT` | `YARD`
+	Units *string `json:"units,omitempty"`
+	// Add these views to the drawing.
+	Views *string `json:"views,omitempty"`
+	// Create a drawing of a part or assembly from this workspace.
+	WorkspaceId *string `json:"workspaceId,omitempty"`
 }
 
 // NewBTDrawingParams instantiates a new BTDrawingParams object

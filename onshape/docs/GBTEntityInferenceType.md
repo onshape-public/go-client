@@ -27,6 +27,8 @@
 
 * `GBTEntityInferenceTypeLoopCenter` (value: `"LOOP_CENTER"`)
 
+* `GBTEntityInferenceTypeVirtualSharp` (value: `"VIRTUAL_SHARP"`)
+
 * `GBTEntityInferenceTypeUnknown` (value: `"UNKNOWN"`)
 
 

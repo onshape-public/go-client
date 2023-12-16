@@ -1,9 +1,9 @@
 /*
 Onshape REST API
 
-The Onshape REST API consumed by all client. # Authorization The simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site). - **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/). - **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`. - **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.173.27678-64d64396ca66
+API version: 1.174.27783-ab3907bf6199
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -30,6 +30,7 @@ type BTAclEntryInfo struct {
 	PendingOwnerTransfer *bool        `json:"pendingOwnerTransfer,omitempty"`
 	Permission           *int64       `json:"permission,omitempty"`
 	PermissionSet        []string     `json:"permissionSet,omitempty"`
+	ProCompanySubtype    *int32       `json:"proCompanySubtype,omitempty"`
 	TeamName             *string      `json:"teamName,omitempty"`
 }
 
@@ -466,6 +467,38 @@ func (o *BTAclEntryInfo) SetPermissionSet(v []string) {
 	o.PermissionSet = v
 }
 
+// GetProCompanySubtype returns the ProCompanySubtype field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetProCompanySubtype() int32 {
+	if o == nil || o.ProCompanySubtype == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ProCompanySubtype
+}
+
+// GetProCompanySubtypeOk returns a tuple with the ProCompanySubtype field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetProCompanySubtypeOk() (*int32, bool) {
+	if o == nil || o.ProCompanySubtype == nil {
+		return nil, false
+	}
+	return o.ProCompanySubtype, true
+}
+
+// HasProCompanySubtype returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasProCompanySubtype() bool {
+	if o != nil && o.ProCompanySubtype != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProCompanySubtype gets a reference to the given int32 and assigns it to the ProCompanySubtype field.
+func (o *BTAclEntryInfo) SetProCompanySubtype(v int32) {
+	o.ProCompanySubtype = &v
+}
+
 // GetTeamName returns the TeamName field value if set, zero value otherwise.
 func (o *BTAclEntryInfo) GetTeamName() string {
 	if o == nil || o.TeamName == nil {
@@ -538,6 +571,9 @@ func (o BTAclEntryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PermissionSet != nil {
 		toSerialize["permissionSet"] = o.PermissionSet
+	}
+	if o.ProCompanySubtype != nil {
+		toSerialize["proCompanySubtype"] = o.ProCompanySubtype
 	}
 	if o.TeamName != nil {
 		toSerialize["teamName"] = o.TeamName

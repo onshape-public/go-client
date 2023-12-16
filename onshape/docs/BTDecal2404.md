@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**ImageForeignId** | Pointer to **string** |  | [optional] 
 **ImageSourceId** | Pointer to **string** |  | [optional] 
 **IsDeletion** | Pointer to **bool** |  | [optional] 
 **Mappings** | Pointer to [**[]BTImageMapping3821**](BTImageMapping3821.md) |  | [optional] 
@@ -52,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTDecal2404) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetImageForeignId
+
+`func (o *BTDecal2404) GetImageForeignId() string`
+
+GetImageForeignId returns the ImageForeignId field if non-nil, zero value otherwise.
+
+### GetImageForeignIdOk
+
+`func (o *BTDecal2404) GetImageForeignIdOk() (*string, bool)`
+
+GetImageForeignIdOk returns a tuple with the ImageForeignId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageForeignId
+
+`func (o *BTDecal2404) SetImageForeignId(v string)`
+
+SetImageForeignId sets ImageForeignId field to given value.
+
+### HasImageForeignId
+
+`func (o *BTDecal2404) HasImageForeignId() bool`
+
+HasImageForeignId returns a boolean if a field has been set.
 
 ### GetImageSourceId
 

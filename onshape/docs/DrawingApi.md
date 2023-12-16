@@ -18,6 +18,8 @@ Method | HTTP request | Description
 
 Create a new drawing in a document.
 
+
+
 ### Example
 
 ```go
@@ -31,8 +33,8 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wid := "wid_example" // string | 
+    did := "did_example" // string | ID of the document in which to create the drawing.
+    wid := "wid_example" // string | ID of the workspace in which to create the drawing.
     bTDrawingParams := *openapiclient.NewBTDrawingParams() // BTDrawingParams | 
 
     configuration := openapiclient.NewConfiguration()
@@ -53,8 +55,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wid** | **string** |  | 
+**did** | **string** | ID of the document in which to create the drawing. | 
+**wid** | **string** | ID of the workspace in which to create the drawing. | 
 
 ### Other Parameters
 

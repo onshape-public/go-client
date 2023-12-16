@@ -2813,6 +2813,18 @@
 
 * `GBTErrorStringEnumFgsModalSimulationHasAllFixedParts` (value: `"FGS_MODAL_SIMULATION_HAS_ALL_FIXED_PARTS"`)
 
+* `GBTErrorStringEnumBodyDraftStrayNonmiterEdges` (value: `"BODY_DRAFT_STRAY_NONMITER_EDGES"`)
+
+* `GBTErrorStringEnumMassPropertyFacesNotCoplanar` (value: `"MASS_PROPERTY_FACES_NOT_COPLANAR"`)
+
+* `GBTErrorStringEnumParameterValueInvalid` (value: `"PARAMETER_VALUE_INVALID"`)
+
+* `GBTErrorStringEnumSheetMetalChamferNoTangentBased` (value: `"SHEET_METAL_CHAMFER_NO_TANGENT_BASED"`)
+
+* `GBTErrorStringEnumChamferDirectionOverrideNoEffect` (value: `"CHAMFER_DIRECTION_OVERRIDE_NO_EFFECT"`)
+
+* `GBTErrorStringEnumFilletChamferUnsupported` (value: `"FILLET_CHAMFER_UNSUPPORTED"`)
+
 * `GBTErrorStringEnumLinearPatternSketchReapplyInfo` (value: `"LINEAR_PATTERN_SKETCH_REAPPLY_INFO"`)
 
 * `GBTErrorStringEnumCircularPatternSketchReapplyInfo` (value: `"CIRCULAR_PATTERN_SKETCH_REAPPLY_INFO"`)
@@ -2820,6 +2832,14 @@
 * `GBTErrorStringEnumCurvePatternSketchReapplyInfo` (value: `"CURVE_PATTERN_SKETCH_REAPPLY_INFO"`)
 
 * `GBTErrorStringEnumMirrorSketchReapplyInfo` (value: `"MIRROR_SKETCH_REAPPLY_INFO"`)
+
+* `GBTErrorStringEnumChamferHeldBack` (value: `"CHAMFER_HELD_BACK"`)
+
+* `GBTErrorStringEnumSweepBadLockDirection` (value: `"SWEEP_BAD_LOCK_DIRECTION"`)
+
+* `GBTErrorStringEnumSheetMetalCounterHoleUnsupported` (value: `"SHEET_METAL_COUNTER_HOLE_UNSUPPORTED"`)
+
+* `GBTErrorStringEnumSweepSelectDirection` (value: `"SWEEP_SELECT_DIRECTION"`)
 
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 

@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ## GetComments
 
-> BTListResponseBTCommentInfo GetComments(ctx).Did(did).ObjectType(objectType).Pid(pid).Eid(eid).Filter(filter).Resolved(resolved).Offset(offset).Limit(limit).Execute()
+> BTListResponseBTCommentInfo GetComments(ctx).Did(did).ObjectType(objectType).Pid(pid).Eid(eid).Filter(filter).Resolved(resolved).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Execute()
 
 Get a list of comments in a document.
 
@@ -456,12 +456,14 @@ func main() {
     eid := "eid_example" // string |  (optional) (default to "")
     filter := int32(56) // int32 |  (optional) (default to 0)
     resolved := true // bool |  (optional) (default to true)
+    sortColumn := "sortColumn_example" // string |  (optional) (default to "createdAt")
+    sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CommentApi.GetComments(context.Background()).Did(did).ObjectType(objectType).Pid(pid).Eid(eid).Filter(filter).Resolved(resolved).Offset(offset).Limit(limit).Execute()
+    resp, r, err := apiClient.CommentApi.GetComments(context.Background()).Did(did).ObjectType(objectType).Pid(pid).Eid(eid).Filter(filter).Resolved(resolved).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.GetComments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -488,6 +490,8 @@ Name | Type | Description  | Notes
  **eid** | **string** |  | [default to &quot;&quot;]
  **filter** | **int32** |  | [default to 0]
  **resolved** | **bool** |  | [default to true]
+ **sortColumn** | **string** |  | [default to &quot;createdAt&quot;]
+ **sortOrder** | **string** |  | [default to &quot;asc&quot;]
  **offset** | **int32** |  | [default to 0]
  **limit** | **int32** |  | [default to 20]
 

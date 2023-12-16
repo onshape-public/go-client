@@ -740,7 +740,7 @@ func main() {
     mode := "mode_example" // string | Type of file: text, binary (optional) (default to "text")
     grouping := true // bool | Whether parts should be exported as a group or individually in a .zip file (optional) (default to true)
     scale := float64(1.2) // float64 | Scale for measurements. (optional) (default to 1)
-    units := "units_example" // string | Name of base unit (meter, centimeter, millimeter, inch, foot, or yard) (optional) (default to "inch")
+    units := "units_example" // string | Units for the element: `METER` | `CENTIMETER` | `MILLIMETER` | `INCH` | `FOOT` | `YARD` (optional) (default to "inch")
     angleTolerance := float64(1.2) // float64 | Angle tolerance (in radians). This specifies the limit on the sum of the angular deviations of a tessellation chord from the tangent vectors at two chord endpoints. The specified value must be less than PI/2. This parameter currently has a default value chosen based on the complexity of the parts being tessellated. (optional)
     chordTolerance := float64(1.2) // float64 | Chord tolerance (in meters). This specifies the limit on the maximum deviation of a tessellation chord from the true surface/edge. This parameter currently has a default value chosen based on the size and complexity of the parts being tessellated. (optional)
     maxFacetWidth := float64(1.2) // float64 | Max facet width. This specifies the limit on the size of any side of a tessellation facet. (optional)
@@ -784,7 +784,7 @@ Name | Type | Description  | Notes
  **mode** | **string** | Type of file: text, binary | [default to &quot;text&quot;]
  **grouping** | **bool** | Whether parts should be exported as a group or individually in a .zip file | [default to true]
  **scale** | **float64** | Scale for measurements. | [default to 1]
- **units** | **string** | Name of base unit (meter, centimeter, millimeter, inch, foot, or yard) | [default to &quot;inch&quot;]
+ **units** | **string** | Units for the element: &#x60;METER&#x60; | &#x60;CENTIMETER&#x60; | &#x60;MILLIMETER&#x60; | &#x60;INCH&#x60; | &#x60;FOOT&#x60; | &#x60;YARD&#x60; | [default to &quot;inch&quot;]
  **angleTolerance** | **float64** | Angle tolerance (in radians). This specifies the limit on the sum of the angular deviations of a tessellation chord from the tangent vectors at two chord endpoints. The specified value must be less than PI/2. This parameter currently has a default value chosen based on the complexity of the parts being tessellated. | 
  **chordTolerance** | **float64** | Chord tolerance (in meters). This specifies the limit on the maximum deviation of a tessellation chord from the true surface/edge. This parameter currently has a default value chosen based on the size and complexity of the parts being tessellated. | 
  **maxFacetWidth** | **float64** | Max facet width. This specifies the limit on the size of any side of a tessellation facet. | 
