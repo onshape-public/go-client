@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowMerge** | Pointer to **bool** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | The label that will appear in the document&#39;s edit history for this operation. If blank, a value will be auto-generated. | [optional] 
 **ReturnError** | Pointer to **bool** |  | [optional] 
 **TransactionIds** | Pointer to **[]string** |  | [optional] 
 

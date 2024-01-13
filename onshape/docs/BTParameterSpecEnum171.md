@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **EnumName** | Pointer to **string** |  | [optional] 
 **EnumValueToVisibilityCondition** | Pointer to [**map[string]BTParameterVisibilityCondition177**](BTParameterVisibilityCondition177.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
+**OptionIconUris** | Pointer to **[]string** |  | [optional] 
 **OptionNames** | Pointer to **[]string** |  | [optional] 
 **Options** | Pointer to **[]string** |  | [optional] 
 
@@ -129,6 +130,31 @@ SetNamespace sets Namespace field to given value.
 `func (o *BTParameterSpecEnum171) HasNamespace() bool`
 
 HasNamespace returns a boolean if a field has been set.
+
+### GetOptionIconUris
+
+`func (o *BTParameterSpecEnum171) GetOptionIconUris() []string`
+
+GetOptionIconUris returns the OptionIconUris field if non-nil, zero value otherwise.
+
+### GetOptionIconUrisOk
+
+`func (o *BTParameterSpecEnum171) GetOptionIconUrisOk() (*[]string, bool)`
+
+GetOptionIconUrisOk returns a tuple with the OptionIconUris field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptionIconUris
+
+`func (o *BTParameterSpecEnum171) SetOptionIconUris(v []string)`
+
+SetOptionIconUris sets OptionIconUris field to given value.
+
+### HasOptionIconUris
+
+`func (o *BTParameterSpecEnum171) HasOptionIconUris() bool`
+
+HasOptionIconUris returns a boolean if a field has been set.
 
 ### GetOptionNames
 

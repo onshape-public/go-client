@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | The label that will appear in the document&#39;s edit history for this operation. If blank, a value will be auto-generated. | [optional] 
 **ParentChangeId** | Pointer to **string** |  | [optional] 
 **ReturnError** | Pointer to **bool** |  | [optional] 
 

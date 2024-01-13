@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -31,12 +31,13 @@ type BTWorkspaceInfo struct {
 	Microversion *string                 `json:"microversion,omitempty"`
 	ModifiedAt   *JSONTime               `json:"modifiedAt,omitempty"`
 	// Name of the resource.
-	Name         *string          `json:"name,omitempty"`
-	OverrideDate *JSONTime        `json:"overrideDate,omitempty"`
-	Parent       *string          `json:"parent,omitempty"`
-	Parents      []BTVersionInfo  `json:"parents,omitempty"`
-	Thumbnail    *BTThumbnailInfo `json:"thumbnail,omitempty"`
-	Type         *string          `json:"type,omitempty"`
+	Name           *string                           `json:"name,omitempty"`
+	OverrideDate   *JSONTime                         `json:"overrideDate,omitempty"`
+	Parent         *string                           `json:"parent,omitempty"`
+	Parents        []BTVersionInfo                   `json:"parents,omitempty"`
+	ProtectionRule *BTWorkspaceProtectionRuleOptions `json:"protectionRule,omitempty"`
+	Thumbnail      *BTThumbnailInfo                  `json:"thumbnail,omitempty"`
+	Type           *string                           `json:"type,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -538,6 +539,38 @@ func (o *BTWorkspaceInfo) SetParents(v []BTVersionInfo) {
 	o.Parents = v
 }
 
+// GetProtectionRule returns the ProtectionRule field value if set, zero value otherwise.
+func (o *BTWorkspaceInfo) GetProtectionRule() BTWorkspaceProtectionRuleOptions {
+	if o == nil || o.ProtectionRule == nil {
+		var ret BTWorkspaceProtectionRuleOptions
+		return ret
+	}
+	return *o.ProtectionRule
+}
+
+// GetProtectionRuleOk returns a tuple with the ProtectionRule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceInfo) GetProtectionRuleOk() (*BTWorkspaceProtectionRuleOptions, bool) {
+	if o == nil || o.ProtectionRule == nil {
+		return nil, false
+	}
+	return o.ProtectionRule, true
+}
+
+// HasProtectionRule returns a boolean if a field has been set.
+func (o *BTWorkspaceInfo) HasProtectionRule() bool {
+	if o != nil && o.ProtectionRule != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProtectionRule gets a reference to the given BTWorkspaceProtectionRuleOptions and assigns it to the ProtectionRule field.
+func (o *BTWorkspaceInfo) SetProtectionRule(v BTWorkspaceProtectionRuleOptions) {
+	o.ProtectionRule = &v
+}
+
 // GetThumbnail returns the Thumbnail field value if set, zero value otherwise.
 func (o *BTWorkspaceInfo) GetThumbnail() BTThumbnailInfo {
 	if o == nil || o.Thumbnail == nil {
@@ -680,6 +713,9 @@ func (o BTWorkspaceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parents != nil {
 		toSerialize["parents"] = o.Parents
+	}
+	if o.ProtectionRule != nil {
+		toSerialize["protectionRule"] = o.ProtectionRule
 	}
 	if o.Thumbnail != nil {
 		toSerialize["thumbnail"] = o.Thumbnail

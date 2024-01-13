@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **DeterministicIds** | Pointer to **[]string** |  | [optional] 
+**GenerateSectionEntityQuery** | Pointer to **bool** |  | [optional] 
+**GeneratedSectionQueryId** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
@@ -105,6 +107,56 @@ SetDeterministicIds sets DeterministicIds field to given value.
 `func (o *BTMIndividualQueryBase139) HasDeterministicIds() bool`
 
 HasDeterministicIds returns a boolean if a field has been set.
+
+### GetGenerateSectionEntityQuery
+
+`func (o *BTMIndividualQueryBase139) GetGenerateSectionEntityQuery() bool`
+
+GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field if non-nil, zero value otherwise.
+
+### GetGenerateSectionEntityQueryOk
+
+`func (o *BTMIndividualQueryBase139) GetGenerateSectionEntityQueryOk() (*bool, bool)`
+
+GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGenerateSectionEntityQuery
+
+`func (o *BTMIndividualQueryBase139) SetGenerateSectionEntityQuery(v bool)`
+
+SetGenerateSectionEntityQuery sets GenerateSectionEntityQuery field to given value.
+
+### HasGenerateSectionEntityQuery
+
+`func (o *BTMIndividualQueryBase139) HasGenerateSectionEntityQuery() bool`
+
+HasGenerateSectionEntityQuery returns a boolean if a field has been set.
+
+### GetGeneratedSectionQueryId
+
+`func (o *BTMIndividualQueryBase139) GetGeneratedSectionQueryId() string`
+
+GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field if non-nil, zero value otherwise.
+
+### GetGeneratedSectionQueryIdOk
+
+`func (o *BTMIndividualQueryBase139) GetGeneratedSectionQueryIdOk() (*string, bool)`
+
+GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeneratedSectionQueryId
+
+`func (o *BTMIndividualQueryBase139) SetGeneratedSectionQueryId(v string)`
+
+SetGeneratedSectionQueryId sets GeneratedSectionQueryId field to given value.
+
+### HasGeneratedSectionQueryId
+
+`func (o *BTMIndividualQueryBase139) HasGeneratedSectionQueryId() bool`
+
+HasGeneratedSectionQueryId returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 

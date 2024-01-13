@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **DeterministicIds** | Pointer to **[]string** |  | [optional] 
 **FullPathAsString** | Pointer to **string** |  | [optional] 
+**GenerateSectionEntityQuery** | Pointer to **bool** |  | [optional] 
+**GeneratedSectionQueryId** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
@@ -133,6 +135,56 @@ SetFullPathAsString sets FullPathAsString field to given value.
 `func (o *BTMIndividualQueryWithOccurrenceBase904) HasFullPathAsString() bool`
 
 HasFullPathAsString returns a boolean if a field has been set.
+
+### GetGenerateSectionEntityQuery
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGenerateSectionEntityQuery() bool`
+
+GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field if non-nil, zero value otherwise.
+
+### GetGenerateSectionEntityQueryOk
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGenerateSectionEntityQueryOk() (*bool, bool)`
+
+GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGenerateSectionEntityQuery
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) SetGenerateSectionEntityQuery(v bool)`
+
+SetGenerateSectionEntityQuery sets GenerateSectionEntityQuery field to given value.
+
+### HasGenerateSectionEntityQuery
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) HasGenerateSectionEntityQuery() bool`
+
+HasGenerateSectionEntityQuery returns a boolean if a field has been set.
+
+### GetGeneratedSectionQueryId
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGeneratedSectionQueryId() string`
+
+GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field if non-nil, zero value otherwise.
+
+### GetGeneratedSectionQueryIdOk
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGeneratedSectionQueryIdOk() (*string, bool)`
+
+GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeneratedSectionQueryId
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) SetGeneratedSectionQueryId(v string)`
+
+SetGeneratedSectionQueryId sets GeneratedSectionQueryId field to given value.
+
+### HasGeneratedSectionQueryId
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) HasGeneratedSectionQueryId() bool`
+
+HasGeneratedSectionQueryId returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 

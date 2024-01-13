@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -35,6 +35,7 @@ type BTParameterSpecEnum171 struct {
 	EnumName                       *string                                       `json:"enumName,omitempty"`
 	EnumValueToVisibilityCondition *map[string]BTParameterVisibilityCondition177 `json:"enumValueToVisibilityCondition,omitempty"`
 	Namespace                      *string                                       `json:"namespace,omitempty"`
+	OptionIconUris                 []string                                      `json:"optionIconUris,omitempty"`
 	OptionNames                    []string                                      `json:"optionNames,omitempty"`
 	Options                        []string                                      `json:"options,omitempty"`
 }
@@ -632,6 +633,38 @@ func (o *BTParameterSpecEnum171) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
+// GetOptionIconUris returns the OptionIconUris field value if set, zero value otherwise.
+func (o *BTParameterSpecEnum171) GetOptionIconUris() []string {
+	if o == nil || o.OptionIconUris == nil {
+		var ret []string
+		return ret
+	}
+	return o.OptionIconUris
+}
+
+// GetOptionIconUrisOk returns a tuple with the OptionIconUris field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecEnum171) GetOptionIconUrisOk() ([]string, bool) {
+	if o == nil || o.OptionIconUris == nil {
+		return nil, false
+	}
+	return o.OptionIconUris, true
+}
+
+// HasOptionIconUris returns a boolean if a field has been set.
+func (o *BTParameterSpecEnum171) HasOptionIconUris() bool {
+	if o != nil && o.OptionIconUris != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOptionIconUris gets a reference to the given []string and assigns it to the OptionIconUris field.
+func (o *BTParameterSpecEnum171) SetOptionIconUris(v []string) {
+	o.OptionIconUris = v
+}
+
 // GetOptionNames returns the OptionNames field value if set, zero value otherwise.
 func (o *BTParameterSpecEnum171) GetOptionNames() []string {
 	if o == nil || o.OptionNames == nil {
@@ -751,6 +784,9 @@ func (o BTParameterSpecEnum171) MarshalJSON() ([]byte, error) {
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace
+	}
+	if o.OptionIconUris != nil {
+		toSerialize["optionIconUris"] = o.OptionIconUris
 	}
 	if o.OptionNames != nil {
 		toSerialize["optionNames"] = o.OptionNames
