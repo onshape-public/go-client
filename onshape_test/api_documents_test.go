@@ -8,6 +8,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/onshape-public/go-client/onshape"
+	"github.com/onshape-public/go-client/onshape_test/testhelper"
 	"github.com/stretchr/testify/require"
 )
 
@@ -51,7 +52,8 @@ func TestCreateAndGetDocument(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			docParams := onshape.NewBTDocumentParams("Document description", "Test document")
+			docParams := onshape.NewBTDocumentParams("Document description")
+			docParams.Description = &testhelper.DocumentDescription
 			docParams.SetName(tt.args.docName)
 			docParams.SetIsPublic(false)
 

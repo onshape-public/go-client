@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/onshape-public/go-client/onshape"
+	"github.com/onshape-public/go-client/onshape_test/testhelper"
 	"github.com/stretchr/testify/require"
 )
 
@@ -20,7 +21,7 @@ func TestEventAPI(t *testing.T) {
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        "test-doc",
-			Description: "This is a test document",
+			Description: &testhelper.DocumentDescription,
 			IsPublic:    Ptr(false),
 		}),
 		Expect: NoAPIError(),

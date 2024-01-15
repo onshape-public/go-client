@@ -10,10 +10,13 @@ import (
 	"github.com/onshape-public/go-client/onshape"
 )
 
+var DocumentDescription = "This is a test document"
+
 // SetupDocument creates an Onshape document
 func SetupDocument(ctx context.Context, client *onshape.APIClient, name string) (string, string,
 	func() (respStatus int, err error)) {
-	docParams := onshape.NewBTDocumentParams("Document description", "Test document")
+	docParams := onshape.NewBTDocumentParams("Test document")
+	docParams.Description = &DocumentDescription
 	docParams.SetName(name)
 	//docParams.SetIsPublic(true)
 	//create document

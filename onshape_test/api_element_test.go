@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/onshape-public/go-client/onshape"
+	"github.com/onshape-public/go-client/onshape_test/testhelper"
 )
 
 func TestElementAPI(t *testing.T) {
@@ -18,7 +19,7 @@ func TestElementAPI(t *testing.T) {
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        "test-doc",
-			Description: "This is a test document",
+			Description: &testhelper.DocumentDescription,
 			IsPublic:    Ptr(false),
 		}),
 		Expect: NoAPIError(),
