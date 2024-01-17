@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EditDescription** | Pointer to **string** |  | [optional] 
-**JsonRequests** | Pointer to **map[string]interface{}** |  | [optional] 
+**Description** | Pointer to **string** | The label that will appear in the document&#39;s edit history for this operation. If blank, a value will be auto-generated. | [optional] 
+**JsonRequests** | Pointer to [**[]BTBDrawingOperationParams**](BTBDrawingOperationParams.md) | Array of drawing modification operations. | [optional] 
 
 ## Methods
 
@@ -26,47 +26,47 @@ NewBTDrawingModificationParamsWithDefaults instantiates a new BTDrawingModificat
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetEditDescription
+### GetDescription
 
-`func (o *BTDrawingModificationParams) GetEditDescription() string`
+`func (o *BTDrawingModificationParams) GetDescription() string`
 
-GetEditDescription returns the EditDescription field if non-nil, zero value otherwise.
+GetDescription returns the Description field if non-nil, zero value otherwise.
 
-### GetEditDescriptionOk
+### GetDescriptionOk
 
-`func (o *BTDrawingModificationParams) GetEditDescriptionOk() (*string, bool)`
+`func (o *BTDrawingModificationParams) GetDescriptionOk() (*string, bool)`
 
-GetEditDescriptionOk returns a tuple with the EditDescription field if it's non-nil, zero value otherwise
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEditDescription
+### SetDescription
 
-`func (o *BTDrawingModificationParams) SetEditDescription(v string)`
+`func (o *BTDrawingModificationParams) SetDescription(v string)`
 
-SetEditDescription sets EditDescription field to given value.
+SetDescription sets Description field to given value.
 
-### HasEditDescription
+### HasDescription
 
-`func (o *BTDrawingModificationParams) HasEditDescription() bool`
+`func (o *BTDrawingModificationParams) HasDescription() bool`
 
-HasEditDescription returns a boolean if a field has been set.
+HasDescription returns a boolean if a field has been set.
 
 ### GetJsonRequests
 
-`func (o *BTDrawingModificationParams) GetJsonRequests() map[string]interface{}`
+`func (o *BTDrawingModificationParams) GetJsonRequests() []BTBDrawingOperationParams`
 
 GetJsonRequests returns the JsonRequests field if non-nil, zero value otherwise.
 
 ### GetJsonRequestsOk
 
-`func (o *BTDrawingModificationParams) GetJsonRequestsOk() (*map[string]interface{}, bool)`
+`func (o *BTDrawingModificationParams) GetJsonRequestsOk() (*[]BTBDrawingOperationParams, bool)`
 
 GetJsonRequestsOk returns a tuple with the JsonRequests field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJsonRequests
 
-`func (o *BTDrawingModificationParams) SetJsonRequests(v map[string]interface{})`
+`func (o *BTDrawingModificationParams) SetJsonRequests(v []BTBDrawingOperationParams)`
 
 SetJsonRequests sets JsonRequests field to given value.
 

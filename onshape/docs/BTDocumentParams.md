@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | **string** | Document description. | 
+**Description** | Pointer to **string** | Document description. | [optional] 
 **Elements** | Pointer to [**[]BTDocumentElementCreationDescriptor**](BTDocumentElementCreationDescriptor.md) | List of element IDs to include in the document. | [optional] 
 **ForceExportRules** | Pointer to **bool** | &#x60;true&#x60; if the current user can toggle the Force Export Rule flag on a document. | [optional] 
 **GenerateUnknownMessages** | Pointer to **bool** | Set to &#x60;true&#x60; for debugging. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewBTDocumentParams
 
-`func NewBTDocumentParams(description string, name string, ) *BTDocumentParams`
+`func NewBTDocumentParams(name string, ) *BTDocumentParams`
 
 NewBTDocumentParams instantiates a new BTDocumentParams object
 This constructor will assign default values to properties that have it defined,
@@ -57,6 +57,11 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
+### HasDescription
+
+`func (o *BTDocumentParams) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetElements
 

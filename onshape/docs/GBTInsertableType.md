@@ -17,6 +17,8 @@
 
 * `GBTInsertableTypeWires` (value: `"WIRES"`)
 
+* `GBTInsertableTypeParametricPartStudios` (value: `"PARAMETRIC_PART_STUDIOS"`)
+
 * `GBTInsertableTypeUnknown` (value: `"UNKNOWN"`)
 
 

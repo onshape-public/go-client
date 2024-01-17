@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -18,7 +18,7 @@ import (
 // BTDocumentParams Parameters for creating and updating documents.
 type BTDocumentParams struct {
 	// Document description.
-	Description string `json:"description"`
+	Description *string `json:"description,omitempty"`
 	// List of element IDs to include in the document.
 	Elements []BTDocumentElementCreationDescriptor `json:"elements,omitempty"`
 	// `true` if the current user can toggle the Force Export Rule flag on a document.
@@ -51,9 +51,8 @@ type BTDocumentParams struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTDocumentParams(description string, name string) *BTDocumentParams {
+func NewBTDocumentParams(name string) *BTDocumentParams {
 	this := BTDocumentParams{}
-	this.Description = description
 	this.Name = name
 	return &this
 }
@@ -66,28 +65,36 @@ func NewBTDocumentParamsWithDefaults() *BTDocumentParams {
 	return &this
 }
 
-// GetDescription returns the Description field value
+// GetDescription returns the Description field value if set, zero value otherwise.
 func (o *BTDocumentParams) GetDescription() string {
-	if o == nil {
+	if o == nil || o.Description == nil {
 		var ret string
 		return ret
 	}
-
-	return o.Description
+	return *o.Description
 }
 
-// GetDescriptionOk returns a tuple with the Description field value
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTDocumentParams) GetDescriptionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Description == nil {
 		return nil, false
 	}
-	return &o.Description, true
+	return o.Description, true
 }
 
-// SetDescription sets field value
+// HasDescription returns a boolean if a field has been set.
+func (o *BTDocumentParams) HasDescription() bool {
+	if o != nil && o.Description != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *BTDocumentParams) SetDescription(v string) {
-	o.Description = v
+	o.Description = &v
 }
 
 // GetElements returns the Elements field value if set, zero value otherwise.
@@ -500,7 +507,7 @@ func (o *BTDocumentParams) SetTags(v []string) {
 
 func (o BTDocumentParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
 	if o.Elements != nil {

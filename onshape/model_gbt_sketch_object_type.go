@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -24,6 +24,7 @@ const (
 	GBTSketchObjectTypeNotSketchObject GBTSketchObjectType = "NOT_SKETCH_OBJECT"
 	GBTSketchObjectTypeAnySketchObject GBTSketchObjectType = "ANY_SKETCH_OBJECT"
 	GBTSketchObjectTypeUserEntity      GBTSketchObjectType = "USER_ENTITY"
+	GBTSketchObjectTypeWholeSketch     GBTSketchObjectType = "WHOLE_SKETCH"
 	GBTSketchObjectTypeUnknown         GBTSketchObjectType = "UNKNOWN"
 )
 
@@ -32,6 +33,7 @@ var AllowedGBTSketchObjectTypeEnumValues = []GBTSketchObjectType{
 	"NOT_SKETCH_OBJECT",
 	"ANY_SKETCH_OBJECT",
 	"USER_ENTITY",
+	"WHOLE_SKETCH",
 	"UNKNOWN",
 }
 

@@ -9,6 +9,8 @@
 
 * `GBTSketchObjectTypeUserEntity` (value: `"USER_ENTITY"`)
 
+* `GBTSketchObjectTypeWholeSketch` (value: `"WHOLE_SKETCH"`)
+
 * `GBTSketchObjectTypeUnknown` (value: `"UNKNOWN"`)
 
 

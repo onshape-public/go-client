@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1439,7 +1439,46 @@ const (
 	GBTErrorStringEnumChamferHeldBack                                       GBTErrorStringEnum = "CHAMFER_HELD_BACK"
 	GBTErrorStringEnumSweepBadLockDirection                                 GBTErrorStringEnum = "SWEEP_BAD_LOCK_DIRECTION"
 	GBTErrorStringEnumSheetMetalCounterHoleUnsupported                      GBTErrorStringEnum = "SHEET_METAL_COUNTER_HOLE_UNSUPPORTED"
+	GBTErrorStringEnumSpecifiedFeatureDoesNotExist                          GBTErrorStringEnum = "SPECIFIED_FEATURE_DOES_NOT_EXIST"
+	GBTErrorStringEnumSheetMetalBendNoBendLine                              GBTErrorStringEnum = "SHEET_METAL_BEND_NO_BEND_LINE"
+	GBTErrorStringEnumSheetMetalBendBadBendLine                             GBTErrorStringEnum = "SHEET_METAL_BEND_BAD_BEND_LINE"
+	GBTErrorStringEnumSheetMetalBendNoFace                                  GBTErrorStringEnum = "SHEET_METAL_BEND_NO_FACE"
+	GBTErrorStringEnumSheetMetalBendNoParallel                              GBTErrorStringEnum = "SHEET_METAL_BEND_NO_PARALLEL"
+	GBTErrorStringEnumSheetMetalBendNoDirection                             GBTErrorStringEnum = "SHEET_METAL_BEND_NO_DIRECTION"
+	GBTErrorStringEnumSheetMetalBendBadFace                                 GBTErrorStringEnum = "SHEET_METAL_BEND_BAD_FACE"
+	GBTErrorStringEnumSheetMetalBendImprintFailed                           GBTErrorStringEnum = "SHEET_METAL_BEND_IMPRINT_FAILED"
+	GBTErrorStringEnumSheetMetalBendBadDecomposition                        GBTErrorStringEnum = "SHEET_METAL_BEND_BAD_DECOMPOSITION"
+	GBTErrorStringEnumSheetMetalBendLinePerpendicularToFace                 GBTErrorStringEnum = "SHEET_METAL_BEND_LINE_PERPENDICULAR_TO_FACE"
 	GBTErrorStringEnumSweepSelectDirection                                  GBTErrorStringEnum = "SWEEP_SELECT_DIRECTION"
+	GBTErrorStringEnumSheetMetalBendRollFailed                              GBTErrorStringEnum = "SHEET_METAL_BEND_ROLL_FAILED"
+	GBTErrorStringEnumSheetMetalBothSidesConnected                          GBTErrorStringEnum = "SHEET_METAL_BOTH_SIDES_CONNECTED"
+	GBTErrorStringEnumSheetMetalCannotBendButts                             GBTErrorStringEnum = "SHEET_METAL_CANNOT_BEND_BUTTS"
+	GBTErrorStringEnumSheetMetalBendCollision                               GBTErrorStringEnum = "SHEET_METAL_BEND_COLLISION"
+	GBTErrorStringEnumMissingParameterReference                             GBTErrorStringEnum = "MISSING_PARAMETER_REFERENCE"
+	GBTErrorStringEnumMissingImageParameterReference                        GBTErrorStringEnum = "MISSING_IMAGE_PARAMETER_REFERENCE"
+	GBTErrorStringEnumBodyDraftSelectEdges                                  GBTErrorStringEnum = "BODY_DRAFT_SELECT_EDGES"
+	GBTErrorStringEnumBodyDraftSelectFaces                                  GBTErrorStringEnum = "BODY_DRAFT_SELECT_FACES"
+	GBTErrorStringEnumBodyDraftSelectParts                                  GBTErrorStringEnum = "BODY_DRAFT_SELECT_PARTS"
+	GBTErrorStringEnumSplitEdgeInvalidSurface                               GBTErrorStringEnum = "SPLIT_EDGE_INVALID_SURFACE"
+	GBTErrorStringEnumBodyDraftNoEffect                                     GBTErrorStringEnum = "BODY_DRAFT_NO_EFFECT"
+	GBTErrorStringEnumOffsetCurveOnFaceSelectEdges                          GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_SELECT_EDGES"
+	GBTErrorStringEnumOffsetCurveOnFaceWireEdges                            GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_WIRE_EDGES"
+	GBTErrorStringEnumOffsetCurveOnFaceInvalidTargets                       GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_INVALID_TARGETS"
+	GBTErrorStringEnumOffsetCurveOnFaceInvalidDistance                      GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_INVALID_DISTANCE"
+	GBTErrorStringEnumOffsetCurveOnFaceImprintNoExtend                      GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_IMPRINT_NO_EXTEND"
+	GBTErrorStringEnumOffsetCurveOnFaceFailedToCreateChain                  GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_FAILED_TO_CREATE_CHAIN"
+	GBTErrorStringEnumOffsetCurveOnFaceBranchingChain                       GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_BRANCHING_CHAIN"
+	GBTErrorStringEnumOffsetCurveOnFaceFailed                               GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_FAILED"
+	GBTErrorStringEnumOffsetCurveOnFaceBadDirection                         GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_BAD_DIRECTION"
+	GBTErrorStringEnumOffsetCurveOnFaceGeodesicOutside                      GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_GEODESIC_OUTSIDE"
+	GBTErrorStringEnumOffsetCurveOnFaceExtensionFailed                      GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_EXTENSION_FAILED"
+	GBTErrorStringEnumOffsetCurveOnFaceChainYieldedNoResult                 GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_CHAIN_YIELDED_NO_RESULT"
+	GBTErrorStringEnumOffsetCurveOnFaceNoResult                             GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_NO_RESULT"
+	GBTErrorStringEnumOffsetCurveOnFaceInputWithNoTargets                   GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_INPUT_WITH_NO_TARGETS"
+	GBTErrorStringEnumOffsetCurveOnFaceEuclideanSidePickFail                GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_EUCLIDEAN_SIDE_PICK_FAIL"
+	GBTErrorStringEnumOffsetCurveOnFaceScarEdge                             GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_SCAR_EDGE"
+	GBTErrorStringEnumOffsetCurveOnFaceClosedCurveNoTrim                    GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_CLOSED_CURVE_NO_TRIM"
+	GBTErrorStringEnumOffsetCurveOnFaceSideDiffFail                         GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2863,7 +2902,46 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"CHAMFER_HELD_BACK",
 	"SWEEP_BAD_LOCK_DIRECTION",
 	"SHEET_METAL_COUNTER_HOLE_UNSUPPORTED",
+	"SPECIFIED_FEATURE_DOES_NOT_EXIST",
+	"SHEET_METAL_BEND_NO_BEND_LINE",
+	"SHEET_METAL_BEND_BAD_BEND_LINE",
+	"SHEET_METAL_BEND_NO_FACE",
+	"SHEET_METAL_BEND_NO_PARALLEL",
+	"SHEET_METAL_BEND_NO_DIRECTION",
+	"SHEET_METAL_BEND_BAD_FACE",
+	"SHEET_METAL_BEND_IMPRINT_FAILED",
+	"SHEET_METAL_BEND_BAD_DECOMPOSITION",
+	"SHEET_METAL_BEND_LINE_PERPENDICULAR_TO_FACE",
 	"SWEEP_SELECT_DIRECTION",
+	"SHEET_METAL_BEND_ROLL_FAILED",
+	"SHEET_METAL_BOTH_SIDES_CONNECTED",
+	"SHEET_METAL_CANNOT_BEND_BUTTS",
+	"SHEET_METAL_BEND_COLLISION",
+	"MISSING_PARAMETER_REFERENCE",
+	"MISSING_IMAGE_PARAMETER_REFERENCE",
+	"BODY_DRAFT_SELECT_EDGES",
+	"BODY_DRAFT_SELECT_FACES",
+	"BODY_DRAFT_SELECT_PARTS",
+	"SPLIT_EDGE_INVALID_SURFACE",
+	"BODY_DRAFT_NO_EFFECT",
+	"OFFSET_CURVE_ON_FACE_SELECT_EDGES",
+	"OFFSET_CURVE_ON_FACE_WIRE_EDGES",
+	"OFFSET_CURVE_ON_FACE_INVALID_TARGETS",
+	"OFFSET_CURVE_ON_FACE_INVALID_DISTANCE",
+	"OFFSET_CURVE_ON_FACE_IMPRINT_NO_EXTEND",
+	"OFFSET_CURVE_ON_FACE_FAILED_TO_CREATE_CHAIN",
+	"OFFSET_CURVE_ON_FACE_BRANCHING_CHAIN",
+	"OFFSET_CURVE_ON_FACE_FAILED",
+	"OFFSET_CURVE_ON_FACE_BAD_DIRECTION",
+	"OFFSET_CURVE_ON_FACE_GEODESIC_OUTSIDE",
+	"OFFSET_CURVE_ON_FACE_EXTENSION_FAILED",
+	"OFFSET_CURVE_ON_FACE_CHAIN_YIELDED_NO_RESULT",
+	"OFFSET_CURVE_ON_FACE_NO_RESULT",
+	"OFFSET_CURVE_ON_FACE_INPUT_WITH_NO_TARGETS",
+	"OFFSET_CURVE_ON_FACE_EUCLIDEAN_SIDE_PICK_FAIL",
+	"OFFSET_CURVE_ON_FACE_SCAR_EDGE",
+	"OFFSET_CURVE_ON_FACE_CLOSED_CURVE_NO_TRIM",
+	"OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL",
 	"UNKNOWN",
 }
 

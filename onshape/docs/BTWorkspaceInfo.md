@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **OverrideDate** | Pointer to **JSONTime** |  | [optional] 
 **Parent** | Pointer to **string** |  | [optional] 
 **Parents** | Pointer to [**[]BTVersionInfo**](BTVersionInfo.md) |  | [optional] 
+**ProtectionRule** | Pointer to [**BTWorkspaceProtectionRuleOptions**](BTWorkspaceProtectionRuleOptions.md) |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -416,6 +417,31 @@ SetParents sets Parents field to given value.
 `func (o *BTWorkspaceInfo) HasParents() bool`
 
 HasParents returns a boolean if a field has been set.
+
+### GetProtectionRule
+
+`func (o *BTWorkspaceInfo) GetProtectionRule() BTWorkspaceProtectionRuleOptions`
+
+GetProtectionRule returns the ProtectionRule field if non-nil, zero value otherwise.
+
+### GetProtectionRuleOk
+
+`func (o *BTWorkspaceInfo) GetProtectionRuleOk() (*BTWorkspaceProtectionRuleOptions, bool)`
+
+GetProtectionRuleOk returns a tuple with the ProtectionRule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProtectionRule
+
+`func (o *BTWorkspaceInfo) SetProtectionRule(v BTWorkspaceProtectionRuleOptions)`
+
+SetProtectionRule sets ProtectionRule field to given value.
+
+### HasProtectionRule
+
+`func (o *BTWorkspaceInfo) HasProtectionRule() bool`
+
+HasProtectionRule returns a boolean if a field has been set.
 
 ### GetThumbnail
 

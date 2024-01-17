@@ -2839,7 +2839,85 @@
 
 * `GBTErrorStringEnumSheetMetalCounterHoleUnsupported` (value: `"SHEET_METAL_COUNTER_HOLE_UNSUPPORTED"`)
 
+* `GBTErrorStringEnumSpecifiedFeatureDoesNotExist` (value: `"SPECIFIED_FEATURE_DOES_NOT_EXIST"`)
+
+* `GBTErrorStringEnumSheetMetalBendNoBendLine` (value: `"SHEET_METAL_BEND_NO_BEND_LINE"`)
+
+* `GBTErrorStringEnumSheetMetalBendBadBendLine` (value: `"SHEET_METAL_BEND_BAD_BEND_LINE"`)
+
+* `GBTErrorStringEnumSheetMetalBendNoFace` (value: `"SHEET_METAL_BEND_NO_FACE"`)
+
+* `GBTErrorStringEnumSheetMetalBendNoParallel` (value: `"SHEET_METAL_BEND_NO_PARALLEL"`)
+
+* `GBTErrorStringEnumSheetMetalBendNoDirection` (value: `"SHEET_METAL_BEND_NO_DIRECTION"`)
+
+* `GBTErrorStringEnumSheetMetalBendBadFace` (value: `"SHEET_METAL_BEND_BAD_FACE"`)
+
+* `GBTErrorStringEnumSheetMetalBendImprintFailed` (value: `"SHEET_METAL_BEND_IMPRINT_FAILED"`)
+
+* `GBTErrorStringEnumSheetMetalBendBadDecomposition` (value: `"SHEET_METAL_BEND_BAD_DECOMPOSITION"`)
+
+* `GBTErrorStringEnumSheetMetalBendLinePerpendicularToFace` (value: `"SHEET_METAL_BEND_LINE_PERPENDICULAR_TO_FACE"`)
+
 * `GBTErrorStringEnumSweepSelectDirection` (value: `"SWEEP_SELECT_DIRECTION"`)
+
+* `GBTErrorStringEnumSheetMetalBendRollFailed` (value: `"SHEET_METAL_BEND_ROLL_FAILED"`)
+
+* `GBTErrorStringEnumSheetMetalBothSidesConnected` (value: `"SHEET_METAL_BOTH_SIDES_CONNECTED"`)
+
+* `GBTErrorStringEnumSheetMetalCannotBendButts` (value: `"SHEET_METAL_CANNOT_BEND_BUTTS"`)
+
+* `GBTErrorStringEnumSheetMetalBendCollision` (value: `"SHEET_METAL_BEND_COLLISION"`)
+
+* `GBTErrorStringEnumMissingParameterReference` (value: `"MISSING_PARAMETER_REFERENCE"`)
+
+* `GBTErrorStringEnumMissingImageParameterReference` (value: `"MISSING_IMAGE_PARAMETER_REFERENCE"`)
+
+* `GBTErrorStringEnumBodyDraftSelectEdges` (value: `"BODY_DRAFT_SELECT_EDGES"`)
+
+* `GBTErrorStringEnumBodyDraftSelectFaces` (value: `"BODY_DRAFT_SELECT_FACES"`)
+
+* `GBTErrorStringEnumBodyDraftSelectParts` (value: `"BODY_DRAFT_SELECT_PARTS"`)
+
+* `GBTErrorStringEnumSplitEdgeInvalidSurface` (value: `"SPLIT_EDGE_INVALID_SURFACE"`)
+
+* `GBTErrorStringEnumBodyDraftNoEffect` (value: `"BODY_DRAFT_NO_EFFECT"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceSelectEdges` (value: `"OFFSET_CURVE_ON_FACE_SELECT_EDGES"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceWireEdges` (value: `"OFFSET_CURVE_ON_FACE_WIRE_EDGES"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceInvalidTargets` (value: `"OFFSET_CURVE_ON_FACE_INVALID_TARGETS"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceInvalidDistance` (value: `"OFFSET_CURVE_ON_FACE_INVALID_DISTANCE"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceImprintNoExtend` (value: `"OFFSET_CURVE_ON_FACE_IMPRINT_NO_EXTEND"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceFailedToCreateChain` (value: `"OFFSET_CURVE_ON_FACE_FAILED_TO_CREATE_CHAIN"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceBranchingChain` (value: `"OFFSET_CURVE_ON_FACE_BRANCHING_CHAIN"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceFailed` (value: `"OFFSET_CURVE_ON_FACE_FAILED"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceBadDirection` (value: `"OFFSET_CURVE_ON_FACE_BAD_DIRECTION"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceGeodesicOutside` (value: `"OFFSET_CURVE_ON_FACE_GEODESIC_OUTSIDE"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceExtensionFailed` (value: `"OFFSET_CURVE_ON_FACE_EXTENSION_FAILED"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceChainYieldedNoResult` (value: `"OFFSET_CURVE_ON_FACE_CHAIN_YIELDED_NO_RESULT"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceNoResult` (value: `"OFFSET_CURVE_ON_FACE_NO_RESULT"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceInputWithNoTargets` (value: `"OFFSET_CURVE_ON_FACE_INPUT_WITH_NO_TARGETS"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceEuclideanSidePickFail` (value: `"OFFSET_CURVE_ON_FACE_EUCLIDEAN_SIDE_PICK_FAIL"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceScarEdge` (value: `"OFFSET_CURVE_ON_FACE_SCAR_EDGE"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceClosedCurveNoTrim` (value: `"OFFSET_CURVE_ON_FACE_CLOSED_CURVE_NO_TRIM"`)
+
+* `GBTErrorStringEnumOffsetCurveOnFaceSideDiffFail` (value: `"OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL"`)
 
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 

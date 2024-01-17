@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,8 +17,10 @@ import (
 
 // BTDrawingModificationParams struct for BTDrawingModificationParams
 type BTDrawingModificationParams struct {
-	EditDescription *string                 `json:"editDescription,omitempty"`
-	JsonRequests    *map[string]interface{} `json:"jsonRequests,omitempty"`
+	// The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+	Description *string `json:"description,omitempty"`
+	// Array of drawing modification operations.
+	JsonRequests []BTBDrawingOperationParams `json:"jsonRequests,omitempty"`
 }
 
 // NewBTDrawingModificationParams instantiates a new BTDrawingModificationParams object
@@ -38,50 +40,50 @@ func NewBTDrawingModificationParamsWithDefaults() *BTDrawingModificationParams {
 	return &this
 }
 
-// GetEditDescription returns the EditDescription field value if set, zero value otherwise.
-func (o *BTDrawingModificationParams) GetEditDescription() string {
-	if o == nil || o.EditDescription == nil {
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *BTDrawingModificationParams) GetDescription() string {
+	if o == nil || o.Description == nil {
 		var ret string
 		return ret
 	}
-	return *o.EditDescription
+	return *o.Description
 }
 
-// GetEditDescriptionOk returns a tuple with the EditDescription field value if set, nil otherwise
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDrawingModificationParams) GetEditDescriptionOk() (*string, bool) {
-	if o == nil || o.EditDescription == nil {
+func (o *BTDrawingModificationParams) GetDescriptionOk() (*string, bool) {
+	if o == nil || o.Description == nil {
 		return nil, false
 	}
-	return o.EditDescription, true
+	return o.Description, true
 }
 
-// HasEditDescription returns a boolean if a field has been set.
-func (o *BTDrawingModificationParams) HasEditDescription() bool {
-	if o != nil && o.EditDescription != nil {
+// HasDescription returns a boolean if a field has been set.
+func (o *BTDrawingModificationParams) HasDescription() bool {
+	if o != nil && o.Description != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetEditDescription gets a reference to the given string and assigns it to the EditDescription field.
-func (o *BTDrawingModificationParams) SetEditDescription(v string) {
-	o.EditDescription = &v
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *BTDrawingModificationParams) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetJsonRequests returns the JsonRequests field value if set, zero value otherwise.
-func (o *BTDrawingModificationParams) GetJsonRequests() map[string]interface{} {
+func (o *BTDrawingModificationParams) GetJsonRequests() []BTBDrawingOperationParams {
 	if o == nil || o.JsonRequests == nil {
-		var ret map[string]interface{}
+		var ret []BTBDrawingOperationParams
 		return ret
 	}
-	return *o.JsonRequests
+	return o.JsonRequests
 }
 
 // GetJsonRequestsOk returns a tuple with the JsonRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDrawingModificationParams) GetJsonRequestsOk() (*map[string]interface{}, bool) {
+func (o *BTDrawingModificationParams) GetJsonRequestsOk() ([]BTBDrawingOperationParams, bool) {
 	if o == nil || o.JsonRequests == nil {
 		return nil, false
 	}
@@ -97,15 +99,15 @@ func (o *BTDrawingModificationParams) HasJsonRequests() bool {
 	return false
 }
 
-// SetJsonRequests gets a reference to the given map[string]interface{} and assigns it to the JsonRequests field.
-func (o *BTDrawingModificationParams) SetJsonRequests(v map[string]interface{}) {
-	o.JsonRequests = &v
+// SetJsonRequests gets a reference to the given []BTBDrawingOperationParams and assigns it to the JsonRequests field.
+func (o *BTDrawingModificationParams) SetJsonRequests(v []BTBDrawingOperationParams) {
+	o.JsonRequests = v
 }
 
 func (o BTDrawingModificationParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.EditDescription != nil {
-		toSerialize["editDescription"] = o.EditDescription
+	if o.Description != nil {
+		toSerialize["description"] = o.Description
 	}
 	if o.JsonRequests != nil {
 		toSerialize["jsonRequests"] = o.JsonRequests

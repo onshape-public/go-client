@@ -161,6 +161,7 @@ docs/BTAssemblySimulationTable3236AllOf.md
 docs/BTAssemblyTransformDefinitionParams.md
 docs/BTAssemblyTransformedInstancesDefinitionParams.md
 docs/BTAssociativeDataInfo.md
+docs/BTBDrawingOperationParams.md
 docs/BTBExportModelParams.md
 docs/BTBSMatrix386.md
 docs/BTBaseEntityAppearanceEntry3607.md
@@ -1288,6 +1289,7 @@ docs/BTWorkflowableObjectObserver.md
 docs/BTWorkspaceInfo.md
 docs/BTWorkspaceMessageBody.md
 docs/BTWorkspaceMessageBodyAllOf.md
+docs/BTWorkspaceProtectionRuleOptions.md
 docs/BTZipFileInfo.md
 docs/BillingApi.md
 docs/BlobElementApi.md
@@ -2146,10 +2148,12 @@ model_bt_workflow_state_info.go
 model_bt_workflowable_object_observer.go
 model_bt_workspace_info.go
 model_bt_workspace_message_body.go
+model_bt_workspace_protection_rule_options.go
 model_bt_zip_file_info.go
 model_btapi_application_extension_info.go
 model_btapi_application_summary_info.go
 model_btapi_workflowable_type.go
+model_btb_drawing_operation_params.go
 model_btb_export_model_params.go
 model_btbs_matrix_386_.go
 model_btes_results_filter.go

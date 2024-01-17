@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -17,17 +17,19 @@ import (
 
 // BTMIndividualSketchUniqueVerticesQuery1472 struct for BTMIndividualSketchUniqueVerticesQuery1472
 type BTMIndividualSketchUniqueVerticesQuery1472 struct {
-	BtType              *string                    `json:"btType,omitempty"`
-	DeterministicIdList *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
-	DeterministicIds    []string                   `json:"deterministicIds,omitempty"`
-	ImportMicroversion  *string                    `json:"importMicroversion,omitempty"`
-	NodeId              *string                    `json:"nodeId,omitempty"`
-	Query               *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString         *string                    `json:"queryString,omitempty"`
-	PersistentQuery     *BTPStatement269           `json:"persistentQuery,omitempty"`
-	QueryStatement      *BTPStatement269           `json:"queryStatement,omitempty"`
-	VariableName        *BTMIndividualQuery138     `json:"variableName,omitempty"`
-	FeatureId           *string                    `json:"featureId,omitempty"`
+	BtType                     *string                    `json:"btType,omitempty"`
+	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
+	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
+	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
+	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
+	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
+	NodeId                     *string                    `json:"nodeId,omitempty"`
+	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString                *string                    `json:"queryString,omitempty"`
+	PersistentQuery            *BTPStatement269           `json:"persistentQuery,omitempty"`
+	QueryStatement             *BTPStatement269           `json:"queryStatement,omitempty"`
+	VariableName               *BTMIndividualQuery138     `json:"variableName,omitempty"`
+	FeatureId                  *string                    `json:"featureId,omitempty"`
 }
 
 // NewBTMIndividualSketchUniqueVerticesQuery1472 instantiates a new BTMIndividualSketchUniqueVerticesQuery1472 object
@@ -141,6 +143,70 @@ func (o *BTMIndividualSketchUniqueVerticesQuery1472) HasDeterministicIds() bool 
 // SetDeterministicIds gets a reference to the given []string and assigns it to the DeterministicIds field.
 func (o *BTMIndividualSketchUniqueVerticesQuery1472) SetDeterministicIds(v []string) {
 	o.DeterministicIds = v
+}
+
+// GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field value if set, zero value otherwise.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) GetGenerateSectionEntityQuery() bool {
+	if o == nil || o.GenerateSectionEntityQuery == nil {
+		var ret bool
+		return ret
+	}
+	return *o.GenerateSectionEntityQuery
+}
+
+// GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) GetGenerateSectionEntityQueryOk() (*bool, bool) {
+	if o == nil || o.GenerateSectionEntityQuery == nil {
+		return nil, false
+	}
+	return o.GenerateSectionEntityQuery, true
+}
+
+// HasGenerateSectionEntityQuery returns a boolean if a field has been set.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) HasGenerateSectionEntityQuery() bool {
+	if o != nil && o.GenerateSectionEntityQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGenerateSectionEntityQuery gets a reference to the given bool and assigns it to the GenerateSectionEntityQuery field.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) SetGenerateSectionEntityQuery(v bool) {
+	o.GenerateSectionEntityQuery = &v
+}
+
+// GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field value if set, zero value otherwise.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) GetGeneratedSectionQueryId() string {
+	if o == nil || o.GeneratedSectionQueryId == nil {
+		var ret string
+		return ret
+	}
+	return *o.GeneratedSectionQueryId
+}
+
+// GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) GetGeneratedSectionQueryIdOk() (*string, bool) {
+	if o == nil || o.GeneratedSectionQueryId == nil {
+		return nil, false
+	}
+	return o.GeneratedSectionQueryId, true
+}
+
+// HasGeneratedSectionQueryId returns a boolean if a field has been set.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) HasGeneratedSectionQueryId() bool {
+	if o != nil && o.GeneratedSectionQueryId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeneratedSectionQueryId gets a reference to the given string and assigns it to the GeneratedSectionQueryId field.
+func (o *BTMIndividualSketchUniqueVerticesQuery1472) SetGeneratedSectionQueryId(v string) {
+	o.GeneratedSectionQueryId = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -409,6 +475,12 @@ func (o BTMIndividualSketchUniqueVerticesQuery1472) MarshalJSON() ([]byte, error
 	}
 	if o.DeterministicIds != nil {
 		toSerialize["deterministicIds"] = o.DeterministicIds
+	}
+	if o.GenerateSectionEntityQuery != nil {
+		toSerialize["generateSectionEntityQuery"] = o.GenerateSectionEntityQuery
+	}
+	if o.GeneratedSectionQueryId != nil {
+		toSerialize["generatedSectionQueryId"] = o.GeneratedSectionQueryId
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion

@@ -3,7 +3,7 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.174.28658-06d4d4923fc7
+API version: 1.175.28944-54786a5810c9
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -221,6 +221,106 @@ func (o *BTMIndividualQueryBase139) SetDeterministicIds(v []string) {
 	}
 
 	o.GetActualInstance().(getResult).SetDeterministicIds(v)
+}
+
+// GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field value if set, zero value otherwise.
+func (o *BTMIndividualQueryBase139) GetGenerateSectionEntityQuery() bool {
+	type getResult interface {
+		GetGenerateSectionEntityQuery() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGenerateSectionEntityQuery()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualQueryBase139) GetGenerateSectionEntityQueryOk() (*bool, bool) {
+	type getResult interface {
+		GetGenerateSectionEntityQueryOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGenerateSectionEntityQueryOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasGenerateSectionEntityQuery returns a boolean if a field has been set.
+func (o *BTMIndividualQueryBase139) HasGenerateSectionEntityQuery() bool {
+	type getResult interface {
+		HasGenerateSectionEntityQuery() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasGenerateSectionEntityQuery()
+	} else {
+		return false
+	}
+}
+
+// SetGenerateSectionEntityQuery gets a reference to the given bool and assigns it to the GenerateSectionEntityQuery field.
+func (o *BTMIndividualQueryBase139) SetGenerateSectionEntityQuery(v bool) {
+	type getResult interface {
+		SetGenerateSectionEntityQuery(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetGenerateSectionEntityQuery(v)
+}
+
+// GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field value if set, zero value otherwise.
+func (o *BTMIndividualQueryBase139) GetGeneratedSectionQueryId() string {
+	type getResult interface {
+		GetGeneratedSectionQueryId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeneratedSectionQueryId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualQueryBase139) GetGeneratedSectionQueryIdOk() (*string, bool) {
+	type getResult interface {
+		GetGeneratedSectionQueryIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeneratedSectionQueryIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasGeneratedSectionQueryId returns a boolean if a field has been set.
+func (o *BTMIndividualQueryBase139) HasGeneratedSectionQueryId() bool {
+	type getResult interface {
+		HasGeneratedSectionQueryId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasGeneratedSectionQueryId()
+	} else {
+		return false
+	}
+}
+
+// SetGeneratedSectionQueryId gets a reference to the given string and assigns it to the GeneratedSectionQueryId field.
+func (o *BTMIndividualQueryBase139) SetGeneratedSectionQueryId(v string) {
+	type getResult interface {
+		SetGeneratedSectionQueryId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetGeneratedSectionQueryId(v)
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -597,13 +697,15 @@ func (v *NullableBTMIndividualQueryBase139) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMIndividualQueryBase139 struct {
-	BtType              *string                    `json:"btType,omitempty"`
-	DeterministicIdList *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
-	DeterministicIds    []string                   `json:"deterministicIds,omitempty"`
-	ImportMicroversion  *string                    `json:"importMicroversion,omitempty"`
-	NodeId              *string                    `json:"nodeId,omitempty"`
-	Query               *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString         *string                    `json:"queryString,omitempty"`
+	BtType                     *string                    `json:"btType,omitempty"`
+	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
+	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
+	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
+	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
+	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
+	NodeId                     *string                    `json:"nodeId,omitempty"`
+	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString                *string                    `json:"queryString,omitempty"`
 }
 
 // Newbase_BTMIndividualQueryBase139 instantiates a new base_BTMIndividualQueryBase139 object
@@ -717,6 +819,70 @@ func (o *base_BTMIndividualQueryBase139) HasDeterministicIds() bool {
 // SetDeterministicIds gets a reference to the given []string and assigns it to the DeterministicIds field.
 func (o *base_BTMIndividualQueryBase139) SetDeterministicIds(v []string) {
 	o.DeterministicIds = v
+}
+
+// GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field value if set, zero value otherwise.
+func (o *base_BTMIndividualQueryBase139) GetGenerateSectionEntityQuery() bool {
+	if o == nil || o.GenerateSectionEntityQuery == nil {
+		var ret bool
+		return ret
+	}
+	return *o.GenerateSectionEntityQuery
+}
+
+// GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMIndividualQueryBase139) GetGenerateSectionEntityQueryOk() (*bool, bool) {
+	if o == nil || o.GenerateSectionEntityQuery == nil {
+		return nil, false
+	}
+	return o.GenerateSectionEntityQuery, true
+}
+
+// HasGenerateSectionEntityQuery returns a boolean if a field has been set.
+func (o *base_BTMIndividualQueryBase139) HasGenerateSectionEntityQuery() bool {
+	if o != nil && o.GenerateSectionEntityQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGenerateSectionEntityQuery gets a reference to the given bool and assigns it to the GenerateSectionEntityQuery field.
+func (o *base_BTMIndividualQueryBase139) SetGenerateSectionEntityQuery(v bool) {
+	o.GenerateSectionEntityQuery = &v
+}
+
+// GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field value if set, zero value otherwise.
+func (o *base_BTMIndividualQueryBase139) GetGeneratedSectionQueryId() string {
+	if o == nil || o.GeneratedSectionQueryId == nil {
+		var ret string
+		return ret
+	}
+	return *o.GeneratedSectionQueryId
+}
+
+// GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMIndividualQueryBase139) GetGeneratedSectionQueryIdOk() (*string, bool) {
+	if o == nil || o.GeneratedSectionQueryId == nil {
+		return nil, false
+	}
+	return o.GeneratedSectionQueryId, true
+}
+
+// HasGeneratedSectionQueryId returns a boolean if a field has been set.
+func (o *base_BTMIndividualQueryBase139) HasGeneratedSectionQueryId() bool {
+	if o != nil && o.GeneratedSectionQueryId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeneratedSectionQueryId gets a reference to the given string and assigns it to the GeneratedSectionQueryId field.
+func (o *base_BTMIndividualQueryBase139) SetGeneratedSectionQueryId(v string) {
+	o.GeneratedSectionQueryId = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -857,6 +1023,12 @@ func (o base_BTMIndividualQueryBase139) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeterministicIds != nil {
 		toSerialize["deterministicIds"] = o.DeterministicIds
+	}
+	if o.GenerateSectionEntityQuery != nil {
+		toSerialize["generateSectionEntityQuery"] = o.GenerateSectionEntityQuery
+	}
+	if o.GeneratedSectionQueryId != nil {
+		toSerialize["generatedSectionQueryId"] = o.GeneratedSectionQueryId
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
