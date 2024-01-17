@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/onshape-public/go-client/onshape"
+	"github.com/onshape-public/go-client/onshape_test/testhelper"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/exp/slices"
 )
@@ -21,7 +22,7 @@ func TestDocumentAPI(t *testing.T) {
 		"docPublic": false,
 		"bTDocumentParams": &onshape.BTDocumentParams{
 			Name:        "test-doc",
-			Description: "This is a test document",
+			Description: &testhelper.DocumentDescription,
 			IsPublic:    Ptr(false),
 		},
 		"wm":  "w",
@@ -57,7 +58,7 @@ func TestDocumentAPI(t *testing.T) {
 			require.Equal(Tester(), r.GetId(), Context()["did"])
 			require.Equal(Tester(), r.GetName(), *Context()["label"].(*string))
 			require.Equal(Tester(), r.GetPublic(), Context()["docPublic"])
-			require.Equal(Tester(), r.GetDescription(), Context()["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
+			require.Equal(Tester(), r.GetDescription(), *Context()["bTDocumentParams"].(*onshape.BTDocumentParams).Description)
 			require.True(Tester(), r.HasDefaultWorkspace())
 		}),
 	}.Execute()
