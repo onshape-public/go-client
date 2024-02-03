@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **EulaRequired** | Pointer to **bool** |  | [optional] 
 **EvalCenter** | Pointer to **bool** |  | [optional] 
 **ForumId** | Pointer to **string** |  | [optional] 
+**IntendedUse** | Pointer to **int32** |  | [optional] 
 **LastTrialInfo** | Pointer to [**BTTrialInfo**](BTTrialInfo.md) |  | [optional] 
 **NeedToShowNewWalkthrough** | Pointer to **bool** |  | [optional] 
 **OwnPurchase** | Pointer to [**BTPurchaseInfo**](BTPurchaseInfo.md) |  | [optional] 
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 **RedirectUrl** | Pointer to **string** |  | [optional] 
 **Role** | Pointer to **int32** |  | [optional] 
 **Roles** | Pointer to [**[]BTRole**](BTRole.md) |  | [optional] 
+**ShowRenewStudentPages** | Pointer to **bool** |  | [optional] 
 **StartupPage** | Pointer to **int32** |  | [optional] 
 **SystemUser** | Pointer to **bool** |  | [optional] 
 **TotpEnabled** | Pointer to **bool** |  | [optional] 
@@ -506,6 +508,31 @@ SetForumId sets ForumId field to given value.
 
 HasForumId returns a boolean if a field has been set.
 
+### GetIntendedUse
+
+`func (o *BTUserInfo) GetIntendedUse() int32`
+
+GetIntendedUse returns the IntendedUse field if non-nil, zero value otherwise.
+
+### GetIntendedUseOk
+
+`func (o *BTUserInfo) GetIntendedUseOk() (*int32, bool)`
+
+GetIntendedUseOk returns a tuple with the IntendedUse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntendedUse
+
+`func (o *BTUserInfo) SetIntendedUse(v int32)`
+
+SetIntendedUse sets IntendedUse field to given value.
+
+### HasIntendedUse
+
+`func (o *BTUserInfo) HasIntendedUse() bool`
+
+HasIntendedUse returns a boolean if a field has been set.
+
 ### GetLastTrialInfo
 
 `func (o *BTUserInfo) GetLastTrialInfo() BTTrialInfo`
@@ -730,6 +757,31 @@ SetRoles sets Roles field to given value.
 `func (o *BTUserInfo) HasRoles() bool`
 
 HasRoles returns a boolean if a field has been set.
+
+### GetShowRenewStudentPages
+
+`func (o *BTUserInfo) GetShowRenewStudentPages() bool`
+
+GetShowRenewStudentPages returns the ShowRenewStudentPages field if non-nil, zero value otherwise.
+
+### GetShowRenewStudentPagesOk
+
+`func (o *BTUserInfo) GetShowRenewStudentPagesOk() (*bool, bool)`
+
+GetShowRenewStudentPagesOk returns a tuple with the ShowRenewStudentPages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowRenewStudentPages
+
+`func (o *BTUserInfo) SetShowRenewStudentPages(v bool)`
+
+SetShowRenewStudentPages sets ShowRenewStudentPages field to given value.
+
+### HasShowRenewStudentPages
+
+`func (o *BTUserInfo) HasShowRenewStudentPages() bool`
+
+HasShowRenewStudentPages returns a boolean if a field has been set.
 
 ### GetStartupPage
 

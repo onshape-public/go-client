@@ -13,6 +13,8 @@
 
 * `GBTDisplayDataUsageCompareTarget` (value: `"COMPARE_TARGET"`)
 
+* `GBTDisplayDataUsageReferenceRepair` (value: `"REFERENCE_REPAIR"`)
+
 * `GBTDisplayDataUsageUnknown` (value: `"UNKNOWN"`)
 
 

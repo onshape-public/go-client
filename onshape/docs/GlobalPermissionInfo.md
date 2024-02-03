@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **AllowAppStoreAccess** | Pointer to **bool** |  | [optional] 
 **AllowPublicDocumentsAccess** | Pointer to **bool** |  | [optional] 
 **ApproveReleases** | Pointer to **bool** |  | [optional] 
+**BranchLockPermissions** | Pointer to **bool** |  | [optional] 
 **CreateChangeOrders** | Pointer to **bool** |  | [optional] 
 **CreateChangeRequests** | Pointer to **bool** |  | [optional] 
 **CreateDocumentsInRoot** | Pointer to **bool** |  | [optional] 
@@ -170,6 +171,31 @@ SetApproveReleases sets ApproveReleases field to given value.
 `func (o *GlobalPermissionInfo) HasApproveReleases() bool`
 
 HasApproveReleases returns a boolean if a field has been set.
+
+### GetBranchLockPermissions
+
+`func (o *GlobalPermissionInfo) GetBranchLockPermissions() bool`
+
+GetBranchLockPermissions returns the BranchLockPermissions field if non-nil, zero value otherwise.
+
+### GetBranchLockPermissionsOk
+
+`func (o *GlobalPermissionInfo) GetBranchLockPermissionsOk() (*bool, bool)`
+
+GetBranchLockPermissionsOk returns a tuple with the BranchLockPermissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBranchLockPermissions
+
+`func (o *GlobalPermissionInfo) SetBranchLockPermissions(v bool)`
+
+SetBranchLockPermissions sets BranchLockPermissions field to given value.
+
+### HasBranchLockPermissions
+
+`func (o *GlobalPermissionInfo) HasBranchLockPermissions() bool`
+
+HasBranchLockPermissions returns a boolean if a field has been set.
 
 ### GetCreateChangeOrders
 

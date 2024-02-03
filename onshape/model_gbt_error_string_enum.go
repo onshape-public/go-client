@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1479,6 +1478,13 @@ const (
 	GBTErrorStringEnumOffsetCurveOnFaceScarEdge                             GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_SCAR_EDGE"
 	GBTErrorStringEnumOffsetCurveOnFaceClosedCurveNoTrim                    GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_CLOSED_CURVE_NO_TRIM"
 	GBTErrorStringEnumOffsetCurveOnFaceSideDiffFail                         GBTErrorStringEnum = "OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL"
+	GBTErrorStringEnumAngleControlParallelToBend                            GBTErrorStringEnum = "ANGLE_CONTROL_PARALLEL_TO_BEND"
+	GBTErrorStringEnumBodyDraftPartingSurfaceSmall                          GBTErrorStringEnum = "BODY_DRAFT_PARTING_SURFACE_SMALL"
+	GBTErrorStringEnumMassPropertyMateConnectorZAxisNotNormal               GBTErrorStringEnum = "MASS_PROPERTY_MATE_CONNECTOR_Z_AXIS_NOT_NORMAL"
+	GBTErrorStringEnumDerivedMateConnectorIndexOutOfBounds                  GBTErrorStringEnum = "DERIVED_MATE_CONNECTOR_INDEX_OUT_OF_BOUNDS"
+	GBTErrorStringEnumDerivedMateConnectorNoLongerValid                     GBTErrorStringEnum = "DERIVED_MATE_CONNECTOR_NO_LONGER_VALID"
+	GBTErrorStringEnumDerivedMateConnectorReset                             GBTErrorStringEnum = "DERIVED_MATE_CONNECTOR_RESET"
+	GBTErrorStringEnumDerivedNoMateConnectors                               GBTErrorStringEnum = "DERIVED_NO_MATE_CONNECTORS"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2942,6 +2948,13 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"OFFSET_CURVE_ON_FACE_SCAR_EDGE",
 	"OFFSET_CURVE_ON_FACE_CLOSED_CURVE_NO_TRIM",
 	"OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL",
+	"ANGLE_CONTROL_PARALLEL_TO_BEND",
+	"BODY_DRAFT_PARTING_SURFACE_SMALL",
+	"MASS_PROPERTY_MATE_CONNECTOR_Z_AXIS_NOT_NORMAL",
+	"DERIVED_MATE_CONNECTOR_INDEX_OUT_OF_BOUNDS",
+	"DERIVED_MATE_CONNECTOR_NO_LONGER_VALID",
+	"DERIVED_MATE_CONNECTOR_RESET",
+	"DERIVED_NO_MATE_CONNECTORS",
 	"UNKNOWN",
 }
 
