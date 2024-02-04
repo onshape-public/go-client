@@ -2919,6 +2919,20 @@
 
 * `GBTErrorStringEnumOffsetCurveOnFaceSideDiffFail` (value: `"OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL"`)
 
+* `GBTErrorStringEnumAngleControlParallelToBend` (value: `"ANGLE_CONTROL_PARALLEL_TO_BEND"`)
+
+* `GBTErrorStringEnumBodyDraftPartingSurfaceSmall` (value: `"BODY_DRAFT_PARTING_SURFACE_SMALL"`)
+
+* `GBTErrorStringEnumMassPropertyMateConnectorZAxisNotNormal` (value: `"MASS_PROPERTY_MATE_CONNECTOR_Z_AXIS_NOT_NORMAL"`)
+
+* `GBTErrorStringEnumDerivedMateConnectorIndexOutOfBounds` (value: `"DERIVED_MATE_CONNECTOR_INDEX_OUT_OF_BOUNDS"`)
+
+* `GBTErrorStringEnumDerivedMateConnectorNoLongerValid` (value: `"DERIVED_MATE_CONNECTOR_NO_LONGER_VALID"`)
+
+* `GBTErrorStringEnumDerivedMateConnectorReset` (value: `"DERIVED_MATE_CONNECTOR_RESET"`)
+
+* `GBTErrorStringEnumDerivedNoMateConnectors` (value: `"DERIVED_NO_MATE_CONNECTORS"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

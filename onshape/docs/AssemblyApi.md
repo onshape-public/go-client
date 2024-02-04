@@ -602,6 +602,8 @@ Name | Type | Description  | Notes
 
 Get the mass properties for the assembly.
 
+
+
 ### Example
 
 ```go
