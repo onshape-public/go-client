@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **EnforceApplicationAcl** | Pointer to **bool** |  | [optional] 
 **ExportDrawingOptions** | Pointer to **string** |  | [optional] 
 **ExportSolidOptions** | Pointer to **string** |  | [optional] 
+**GraphicsRenderMode** | Pointer to **string** |  | [optional] 
+**GraphicsSmoothEdge** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **ImportOptions** | Pointer to **string** |  | [optional] 
 **Locale** | Pointer to **string** |  | [optional] 
@@ -274,6 +276,56 @@ SetExportSolidOptions sets ExportSolidOptions field to given value.
 `func (o *BTUserSettingsInfo) HasExportSolidOptions() bool`
 
 HasExportSolidOptions returns a boolean if a field has been set.
+
+### GetGraphicsRenderMode
+
+`func (o *BTUserSettingsInfo) GetGraphicsRenderMode() string`
+
+GetGraphicsRenderMode returns the GraphicsRenderMode field if non-nil, zero value otherwise.
+
+### GetGraphicsRenderModeOk
+
+`func (o *BTUserSettingsInfo) GetGraphicsRenderModeOk() (*string, bool)`
+
+GetGraphicsRenderModeOk returns a tuple with the GraphicsRenderMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGraphicsRenderMode
+
+`func (o *BTUserSettingsInfo) SetGraphicsRenderMode(v string)`
+
+SetGraphicsRenderMode sets GraphicsRenderMode field to given value.
+
+### HasGraphicsRenderMode
+
+`func (o *BTUserSettingsInfo) HasGraphicsRenderMode() bool`
+
+HasGraphicsRenderMode returns a boolean if a field has been set.
+
+### GetGraphicsSmoothEdge
+
+`func (o *BTUserSettingsInfo) GetGraphicsSmoothEdge() string`
+
+GetGraphicsSmoothEdge returns the GraphicsSmoothEdge field if non-nil, zero value otherwise.
+
+### GetGraphicsSmoothEdgeOk
+
+`func (o *BTUserSettingsInfo) GetGraphicsSmoothEdgeOk() (*string, bool)`
+
+GetGraphicsSmoothEdgeOk returns a tuple with the GraphicsSmoothEdge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGraphicsSmoothEdge
+
+`func (o *BTUserSettingsInfo) SetGraphicsSmoothEdge(v string)`
+
+SetGraphicsSmoothEdge sets GraphicsSmoothEdge field to given value.
+
+### HasGraphicsSmoothEdge
+
+`func (o *BTUserSettingsInfo) HasGraphicsSmoothEdge() bool`
+
+HasGraphicsSmoothEdge returns a boolean if a field has been set.
 
 ### GetId
 

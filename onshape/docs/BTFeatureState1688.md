@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **FeatureStatus** | Pointer to [**GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
+**Inactive** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetFeatureStatus sets FeatureStatus field to given value.
 `func (o *BTFeatureState1688) HasFeatureStatus() bool`
 
 HasFeatureStatus returns a boolean if a field has been set.
+
+### GetInactive
+
+`func (o *BTFeatureState1688) GetInactive() bool`
+
+GetInactive returns the Inactive field if non-nil, zero value otherwise.
+
+### GetInactiveOk
+
+`func (o *BTFeatureState1688) GetInactiveOk() (*bool, bool)`
+
+GetInactiveOk returns a tuple with the Inactive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInactive
+
+`func (o *BTFeatureState1688) SetInactive(v bool)`
+
+SetInactive sets Inactive field to given value.
+
+### HasInactive
+
+`func (o *BTFeatureState1688) HasInactive() bool`
+
+HasInactive returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -19,6 +18,7 @@ import (
 type BTFeatureState1688 struct {
 	BtType        *string            `json:"btType,omitempty"`
 	FeatureStatus *GBTNodeStatusType `json:"featureStatus,omitempty"`
+	Inactive      *bool              `json:"inactive,omitempty"`
 }
 
 // NewBTFeatureState1688 instantiates a new BTFeatureState1688 object
@@ -102,6 +102,38 @@ func (o *BTFeatureState1688) SetFeatureStatus(v GBTNodeStatusType) {
 	o.FeatureStatus = &v
 }
 
+// GetInactive returns the Inactive field value if set, zero value otherwise.
+func (o *BTFeatureState1688) GetInactive() bool {
+	if o == nil || o.Inactive == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Inactive
+}
+
+// GetInactiveOk returns a tuple with the Inactive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTFeatureState1688) GetInactiveOk() (*bool, bool) {
+	if o == nil || o.Inactive == nil {
+		return nil, false
+	}
+	return o.Inactive, true
+}
+
+// HasInactive returns a boolean if a field has been set.
+func (o *BTFeatureState1688) HasInactive() bool {
+	if o != nil && o.Inactive != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInactive gets a reference to the given bool and assigns it to the Inactive field.
+func (o *BTFeatureState1688) SetInactive(v bool) {
+	o.Inactive = &v
+}
+
 func (o BTFeatureState1688) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -109,6 +141,9 @@ func (o BTFeatureState1688) MarshalJSON() ([]byte, error) {
 	}
 	if o.FeatureStatus != nil {
 		toSerialize["featureStatus"] = o.FeatureStatus
+	}
+	if o.Inactive != nil {
+		toSerialize["inactive"] = o.Inactive
 	}
 	return json.Marshal(toSerialize)
 }
