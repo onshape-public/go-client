@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -23,6 +22,471 @@ import (
 // PublicationApiService PublicationApi service
 type PublicationApiService service
 
+type ApiAddItemToPublicationRequest struct {
+	ctx                     context.Context
+	ApiService              *PublicationApiService
+	pid                     string
+	bTPublicationItemParams *BTPublicationItemParams
+}
+
+func (r ApiAddItemToPublicationRequest) BTPublicationItemParams(bTPublicationItemParams BTPublicationItemParams) ApiAddItemToPublicationRequest {
+	r.bTPublicationItemParams = &bTPublicationItemParams
+	return r
+}
+
+func (r ApiAddItemToPublicationRequest) Execute() (*BTPublicationInfo, *http.Response, error) {
+	return r.ApiService.AddItemToPublicationExecute(r)
+}
+
+/*
+AddItemToPublication Add an item in a publication.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param pid Publication ID.
+ @return ApiAddItemToPublicationRequest
+*/
+func (a *PublicationApiService) AddItemToPublication(ctx context.Context, pid string) ApiAddItemToPublicationRequest {
+	return ApiAddItemToPublicationRequest{
+		ApiService: a,
+		ctx:        ctx,
+		pid:        pid,
+	}
+}
+
+// Execute executes the request
+//  @return BTPublicationInfo
+func (a *PublicationApiService) AddItemToPublicationExecute(r ApiAddItemToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTPublicationInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.AddItemToPublication")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/publications/{pid}/item"
+	localVarPath = strings.Replace(localVarPath, "{"+"pid"+"}", url.PathEscape(parameterToString(r.pid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTPublicationItemParams == nil {
+		return localVarReturnValue, nil, reportError("bTPublicationItemParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTPublicationItemParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTPublicationInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiAddItemsToPublicationRequest struct {
+	ctx                         context.Context
+	ApiService                  *PublicationApiService
+	pid                         string
+	bTPublicationBulkItemParams *BTPublicationBulkItemParams
+}
+
+func (r ApiAddItemsToPublicationRequest) BTPublicationBulkItemParams(bTPublicationBulkItemParams BTPublicationBulkItemParams) ApiAddItemsToPublicationRequest {
+	r.bTPublicationBulkItemParams = &bTPublicationBulkItemParams
+	return r
+}
+
+func (r ApiAddItemsToPublicationRequest) Execute() (*BTPublicationInfo, *http.Response, error) {
+	return r.ApiService.AddItemsToPublicationExecute(r)
+}
+
+/*
+AddItemsToPublication Add publication items in bulk.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param pid Publication ID.
+ @return ApiAddItemsToPublicationRequest
+*/
+func (a *PublicationApiService) AddItemsToPublication(ctx context.Context, pid string) ApiAddItemsToPublicationRequest {
+	return ApiAddItemsToPublicationRequest{
+		ApiService: a,
+		ctx:        ctx,
+		pid:        pid,
+	}
+}
+
+// Execute executes the request
+//  @return BTPublicationInfo
+func (a *PublicationApiService) AddItemsToPublicationExecute(r ApiAddItemsToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTPublicationInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.AddItemsToPublication")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/publications/{pid}/items"
+	localVarPath = strings.Replace(localVarPath, "{"+"pid"+"}", url.PathEscape(parameterToString(r.pid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTPublicationBulkItemParams == nil {
+		return localVarReturnValue, nil, reportError("bTPublicationBulkItemParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTPublicationBulkItemParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTPublicationInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreatePublicationRequest struct {
+	ctx                 context.Context
+	ApiService          *PublicationApiService
+	bTPublicationParams *BTPublicationParams
+}
+
+func (r ApiCreatePublicationRequest) BTPublicationParams(bTPublicationParams BTPublicationParams) ApiCreatePublicationRequest {
+	r.bTPublicationParams = &bTPublicationParams
+	return r
+}
+
+func (r ApiCreatePublicationRequest) Execute() (*BTPublicationInfo, *http.Response, error) {
+	return r.ApiService.CreatePublicationExecute(r)
+}
+
+/*
+CreatePublication Create a new publication.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreatePublicationRequest
+*/
+func (a *PublicationApiService) CreatePublication(ctx context.Context) ApiCreatePublicationRequest {
+	return ApiCreatePublicationRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//  @return BTPublicationInfo
+func (a *PublicationApiService) CreatePublicationExecute(r ApiCreatePublicationRequest) (*BTPublicationInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTPublicationInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.CreatePublication")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/publications"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTPublicationParams == nil {
+		return localVarReturnValue, nil, reportError("bTPublicationParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTPublicationParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTPublicationInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeletePublicationItemRequest struct {
+	ctx        context.Context
+	ApiService *PublicationApiService
+	pid        string
+	iid        string
+}
+
+func (r ApiDeletePublicationItemRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeletePublicationItemExecute(r)
+}
+
+/*
+DeletePublicationItem Remove an item from a publication.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param pid Publication ID.
+ @param iid Publication item ID.
+ @return ApiDeletePublicationItemRequest
+*/
+func (a *PublicationApiService) DeletePublicationItem(ctx context.Context, pid string, iid string) ApiDeletePublicationItemRequest {
+	return ApiDeletePublicationItemRequest{
+		ApiService: a,
+		ctx:        ctx,
+		pid:        pid,
+		iid:        iid,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *PublicationApiService) DeletePublicationItemExecute(r ApiDeletePublicationItemRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.DeletePublicationItem")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/publications/{pid}/item/{iid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"pid"+"}", url.PathEscape(parameterToString(r.pid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"iid"+"}", url.PathEscape(parameterToString(r.iid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]interface{}
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiGetPublicationItemsRequest struct {
 	ctx        context.Context
 	ApiService *PublicationApiService
@@ -37,7 +501,7 @@ func (r ApiGetPublicationItemsRequest) Execute() (*BTPublicationInfo, *http.Resp
 GetPublicationItems Get all items in a publication.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid
+ @param pid Publication ID.
  @return ApiGetPublicationItemsRequest
 */
 func (a *PublicationApiService) GetPublicationItems(ctx context.Context, pid string) ApiGetPublicationItemsRequest {
@@ -107,6 +571,125 @@ func (a *PublicationApiService) GetPublicationItemsExecute(r ApiGetPublicationIt
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTPublicationInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdatePublicationAttributesRequest struct {
+	ctx                 context.Context
+	ApiService          *PublicationApiService
+	pid                 string
+	bTPublicationParams *BTPublicationParams
+}
+
+func (r ApiUpdatePublicationAttributesRequest) BTPublicationParams(bTPublicationParams BTPublicationParams) ApiUpdatePublicationAttributesRequest {
+	r.bTPublicationParams = &bTPublicationParams
+	return r
+}
+
+func (r ApiUpdatePublicationAttributesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.UpdatePublicationAttributesExecute(r)
+}
+
+/*
+UpdatePublicationAttributes Update publication's attributes name, description, and notes.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param pid Publication ID.
+ @return ApiUpdatePublicationAttributesRequest
+*/
+func (a *PublicationApiService) UpdatePublicationAttributes(ctx context.Context, pid string) ApiUpdatePublicationAttributesRequest {
+	return ApiUpdatePublicationAttributesRequest{
+		ApiService: a,
+		ctx:        ctx,
+		pid:        pid,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *PublicationApiService) UpdatePublicationAttributesExecute(r ApiUpdatePublicationAttributesRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.UpdatePublicationAttributes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/publications/{pid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"pid"+"}", url.PathEscape(parameterToString(r.pid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTPublicationParams == nil {
+		return localVarReturnValue, nil, reportError("bTPublicationParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTPublicationParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]interface{}
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

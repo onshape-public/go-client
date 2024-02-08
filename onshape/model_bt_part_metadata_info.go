@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -31,6 +30,7 @@ type BTPartMetadataInfo struct {
 	IsMesh                           *bool                 `json:"isMesh,omitempty"`
 	Material                         *BTPartMaterialInfo   `json:"material,omitempty"`
 	MeshState                        *GBTMeshState         `json:"meshState,omitempty"`
+	MetadataMicroversion             *string               `json:"metadataMicroversion,omitempty"`
 	MicroversionId                   *string               `json:"microversionId,omitempty"`
 	Name                             *string               `json:"name,omitempty"`
 	Ordinal                          *int32                `json:"ordinal,omitempty"`
@@ -516,6 +516,38 @@ func (o *BTPartMetadataInfo) HasMeshState() bool {
 // SetMeshState gets a reference to the given GBTMeshState and assigns it to the MeshState field.
 func (o *BTPartMetadataInfo) SetMeshState(v GBTMeshState) {
 	o.MeshState = &v
+}
+
+// GetMetadataMicroversion returns the MetadataMicroversion field value if set, zero value otherwise.
+func (o *BTPartMetadataInfo) GetMetadataMicroversion() string {
+	if o == nil || o.MetadataMicroversion == nil {
+		var ret string
+		return ret
+	}
+	return *o.MetadataMicroversion
+}
+
+// GetMetadataMicroversionOk returns a tuple with the MetadataMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartMetadataInfo) GetMetadataMicroversionOk() (*string, bool) {
+	if o == nil || o.MetadataMicroversion == nil {
+		return nil, false
+	}
+	return o.MetadataMicroversion, true
+}
+
+// HasMetadataMicroversion returns a boolean if a field has been set.
+func (o *BTPartMetadataInfo) HasMetadataMicroversion() bool {
+	if o != nil && o.MetadataMicroversion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadataMicroversion gets a reference to the given string and assigns it to the MetadataMicroversion field.
+func (o *BTPartMetadataInfo) SetMetadataMicroversion(v string) {
+	o.MetadataMicroversion = &v
 }
 
 // GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
@@ -1201,6 +1233,9 @@ func (o BTPartMetadataInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.MeshState != nil {
 		toSerialize["meshState"] = o.MeshState
+	}
+	if o.MetadataMicroversion != nil {
+		toSerialize["metadataMicroversion"] = o.MetadataMicroversion
 	}
 	if o.MicroversionId != nil {
 		toSerialize["microversionId"] = o.MicroversionId

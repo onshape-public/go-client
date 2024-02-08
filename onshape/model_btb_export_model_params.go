@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -62,6 +61,7 @@ type BTBExportModelParams struct {
 	StoreInDocument              *bool    `json:"storeInDocument,omitempty"`
 	TriggerAutoDownload          *bool    `json:"triggerAutoDownload,omitempty"`
 	Units                        *string  `json:"units,omitempty"`
+	UseYAxisAsUp                 *bool    `json:"useYAxisAsUp,omitempty"`
 	UserId                       *string  `json:"userId,omitempty"`
 	ValidForDays                 *int32   `json:"validForDays,omitempty"`
 	Version                      *string  `json:"version,omitempty"`
@@ -1513,6 +1513,38 @@ func (o *BTBExportModelParams) SetUnits(v string) {
 	o.Units = &v
 }
 
+// GetUseYAxisAsUp returns the UseYAxisAsUp field value if set, zero value otherwise.
+func (o *BTBExportModelParams) GetUseYAxisAsUp() bool {
+	if o == nil || o.UseYAxisAsUp == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UseYAxisAsUp
+}
+
+// GetUseYAxisAsUpOk returns a tuple with the UseYAxisAsUp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBExportModelParams) GetUseYAxisAsUpOk() (*bool, bool) {
+	if o == nil || o.UseYAxisAsUp == nil {
+		return nil, false
+	}
+	return o.UseYAxisAsUp, true
+}
+
+// HasUseYAxisAsUp returns a boolean if a field has been set.
+func (o *BTBExportModelParams) HasUseYAxisAsUp() bool {
+	if o != nil && o.UseYAxisAsUp != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUseYAxisAsUp gets a reference to the given bool and assigns it to the UseYAxisAsUp field.
+func (o *BTBExportModelParams) SetUseYAxisAsUp(v bool) {
+	o.UseYAxisAsUp = &v
+}
+
 // GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *BTBExportModelParams) GetUserId() string {
 	if o == nil || o.UserId == nil {
@@ -1841,6 +1873,9 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Units != nil {
 		toSerialize["units"] = o.Units
+	}
+	if o.UseYAxisAsUp != nil {
+		toSerialize["useYAxisAsUp"] = o.UseYAxisAsUp
 	}
 	if o.UserId != nil {
 		toSerialize["userId"] = o.UserId

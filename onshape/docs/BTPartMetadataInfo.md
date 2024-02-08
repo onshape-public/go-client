@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **IsMesh** | Pointer to **bool** |  | [optional] 
 **Material** | Pointer to [**BTPartMaterialInfo**](BTPartMaterialInfo.md) |  | [optional] 
 **MeshState** | Pointer to [**GBTMeshState**](GBTMeshState.md) |  | [optional] 
+**MetadataMicroversion** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Ordinal** | Pointer to **int32** |  | [optional] 
@@ -407,6 +408,31 @@ SetMeshState sets MeshState field to given value.
 `func (o *BTPartMetadataInfo) HasMeshState() bool`
 
 HasMeshState returns a boolean if a field has been set.
+
+### GetMetadataMicroversion
+
+`func (o *BTPartMetadataInfo) GetMetadataMicroversion() string`
+
+GetMetadataMicroversion returns the MetadataMicroversion field if non-nil, zero value otherwise.
+
+### GetMetadataMicroversionOk
+
+`func (o *BTPartMetadataInfo) GetMetadataMicroversionOk() (*string, bool)`
+
+GetMetadataMicroversionOk returns a tuple with the MetadataMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadataMicroversion
+
+`func (o *BTPartMetadataInfo) SetMetadataMicroversion(v string)`
+
+SetMetadataMicroversion sets MetadataMicroversion field to given value.
+
+### HasMetadataMicroversion
+
+`func (o *BTPartMetadataInfo) HasMetadataMicroversion() bool`
+
+HasMetadataMicroversion returns a boolean if a field has been set.
 
 ### GetMicroversionId
 
