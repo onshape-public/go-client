@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -58,6 +57,7 @@ type BTUserAdminInfo struct {
 	EulaRequired              *bool                    `json:"eulaRequired,omitempty"`
 	EvalCenter                *bool                    `json:"evalCenter,omitempty"`
 	ForumId                   *string                  `json:"forumId,omitempty"`
+	IntendedUse               *int32                   `json:"intendedUse,omitempty"`
 	LastTrialInfo             *BTTrialInfo             `json:"lastTrialInfo,omitempty"`
 	NeedToShowNewWalkthrough  *bool                    `json:"needToShowNewWalkthrough,omitempty"`
 	OwnPurchase               *BTPurchaseInfo          `json:"ownPurchase,omitempty"`
@@ -67,6 +67,7 @@ type BTUserAdminInfo struct {
 	RedirectUrl               *string                  `json:"redirectUrl,omitempty"`
 	Role                      *int32                   `json:"role,omitempty"`
 	Roles                     []BTRole                 `json:"roles,omitempty"`
+	ShowRenewStudentPages     *bool                    `json:"showRenewStudentPages,omitempty"`
 	StartupPage               *int32                   `json:"startupPage,omitempty"`
 	SystemUser                *bool                    `json:"systemUser,omitempty"`
 	TotpEnabled               *bool                    `json:"totpEnabled,omitempty"`
@@ -1282,6 +1283,38 @@ func (o *BTUserAdminInfo) SetForumId(v string) {
 	o.ForumId = &v
 }
 
+// GetIntendedUse returns the IntendedUse field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetIntendedUse() int32 {
+	if o == nil || o.IntendedUse == nil {
+		var ret int32
+		return ret
+	}
+	return *o.IntendedUse
+}
+
+// GetIntendedUseOk returns a tuple with the IntendedUse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetIntendedUseOk() (*int32, bool) {
+	if o == nil || o.IntendedUse == nil {
+		return nil, false
+	}
+	return o.IntendedUse, true
+}
+
+// HasIntendedUse returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasIntendedUse() bool {
+	if o != nil && o.IntendedUse != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIntendedUse gets a reference to the given int32 and assigns it to the IntendedUse field.
+func (o *BTUserAdminInfo) SetIntendedUse(v int32) {
+	o.IntendedUse = &v
+}
+
 // GetLastTrialInfo returns the LastTrialInfo field value if set, zero value otherwise.
 func (o *BTUserAdminInfo) GetLastTrialInfo() BTTrialInfo {
 	if o == nil || o.LastTrialInfo == nil {
@@ -1568,6 +1601,38 @@ func (o *BTUserAdminInfo) HasRoles() bool {
 // SetRoles gets a reference to the given []BTRole and assigns it to the Roles field.
 func (o *BTUserAdminInfo) SetRoles(v []BTRole) {
 	o.Roles = v
+}
+
+// GetShowRenewStudentPages returns the ShowRenewStudentPages field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetShowRenewStudentPages() bool {
+	if o == nil || o.ShowRenewStudentPages == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowRenewStudentPages
+}
+
+// GetShowRenewStudentPagesOk returns a tuple with the ShowRenewStudentPages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetShowRenewStudentPagesOk() (*bool, bool) {
+	if o == nil || o.ShowRenewStudentPages == nil {
+		return nil, false
+	}
+	return o.ShowRenewStudentPages, true
+}
+
+// HasShowRenewStudentPages returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasShowRenewStudentPages() bool {
+	if o != nil && o.ShowRenewStudentPages != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowRenewStudentPages gets a reference to the given bool and assigns it to the ShowRenewStudentPages field.
+func (o *BTUserAdminInfo) SetShowRenewStudentPages(v bool) {
+	o.ShowRenewStudentPages = &v
 }
 
 // GetStartupPage returns the StartupPage field value if set, zero value otherwise.
@@ -2067,6 +2132,9 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	if o.ForumId != nil {
 		toSerialize["forumId"] = o.ForumId
 	}
+	if o.IntendedUse != nil {
+		toSerialize["intendedUse"] = o.IntendedUse
+	}
 	if o.LastTrialInfo != nil {
 		toSerialize["lastTrialInfo"] = o.LastTrialInfo
 	}
@@ -2093,6 +2161,9 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Roles != nil {
 		toSerialize["roles"] = o.Roles
+	}
+	if o.ShowRenewStudentPages != nil {
+		toSerialize["showRenewStudentPages"] = o.ShowRenewStudentPages
 	}
 	if o.StartupPage != nil {
 		toSerialize["startupPage"] = o.StartupPage

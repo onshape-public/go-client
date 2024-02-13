@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -20,6 +19,7 @@ type BTMConfigurationParameterString872 struct {
 	BtType               *string                        `json:"btType,omitempty"`
 	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
 	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
+	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
 	NodeId               *string                        `json:"nodeId,omitempty"`
 	ParameterId          *string                        `json:"parameterId,omitempty"`
 	ParameterName        *string                        `json:"parameterName,omitempty"`
@@ -139,6 +139,38 @@ func (o *BTMConfigurationParameterString872) HasImportMicroversion() bool {
 // SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
 func (o *BTMConfigurationParameterString872) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
+}
+
+// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
+func (o *BTMConfigurationParameterString872) GetIsCosmetic() bool {
+	if o == nil || o.IsCosmetic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsCosmetic
+}
+
+// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameterString872) GetIsCosmeticOk() (*bool, bool) {
+	if o == nil || o.IsCosmetic == nil {
+		return nil, false
+	}
+	return o.IsCosmetic, true
+}
+
+// HasIsCosmetic returns a boolean if a field has been set.
+func (o *BTMConfigurationParameterString872) HasIsCosmetic() bool {
+	if o != nil && o.IsCosmetic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
+func (o *BTMConfigurationParameterString872) SetIsCosmetic(v bool) {
+	o.IsCosmetic = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
@@ -343,6 +375,9 @@ func (o BTMConfigurationParameterString872) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.IsCosmetic != nil {
+		toSerialize["isCosmetic"] = o.IsCosmetic
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId

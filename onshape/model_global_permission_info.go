@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -22,6 +21,7 @@ type GlobalPermissionInfo struct {
 	AllowAppStoreAccess             *bool `json:"allowAppStoreAccess,omitempty"`
 	AllowPublicDocumentsAccess      *bool `json:"allowPublicDocumentsAccess,omitempty"`
 	ApproveReleases                 *bool `json:"approveReleases,omitempty"`
+	BranchLockPermissions           *bool `json:"branchLockPermissions,omitempty"`
 	CreateChangeOrders              *bool `json:"createChangeOrders,omitempty"`
 	CreateChangeRequests            *bool `json:"createChangeRequests,omitempty"`
 	CreateDocumentsInRoot           *bool `json:"createDocumentsInRoot,omitempty"`
@@ -216,6 +216,38 @@ func (o *GlobalPermissionInfo) HasApproveReleases() bool {
 // SetApproveReleases gets a reference to the given bool and assigns it to the ApproveReleases field.
 func (o *GlobalPermissionInfo) SetApproveReleases(v bool) {
 	o.ApproveReleases = &v
+}
+
+// GetBranchLockPermissions returns the BranchLockPermissions field value if set, zero value otherwise.
+func (o *GlobalPermissionInfo) GetBranchLockPermissions() bool {
+	if o == nil || o.BranchLockPermissions == nil {
+		var ret bool
+		return ret
+	}
+	return *o.BranchLockPermissions
+}
+
+// GetBranchLockPermissionsOk returns a tuple with the BranchLockPermissions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalPermissionInfo) GetBranchLockPermissionsOk() (*bool, bool) {
+	if o == nil || o.BranchLockPermissions == nil {
+		return nil, false
+	}
+	return o.BranchLockPermissions, true
+}
+
+// HasBranchLockPermissions returns a boolean if a field has been set.
+func (o *GlobalPermissionInfo) HasBranchLockPermissions() bool {
+	if o != nil && o.BranchLockPermissions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBranchLockPermissions gets a reference to the given bool and assigns it to the BranchLockPermissions field.
+func (o *GlobalPermissionInfo) SetBranchLockPermissions(v bool) {
+	o.BranchLockPermissions = &v
 }
 
 // GetCreateChangeOrders returns the CreateChangeOrders field value if set, zero value otherwise.
@@ -778,6 +810,9 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ApproveReleases != nil {
 		toSerialize["approveReleases"] = o.ApproveReleases
+	}
+	if o.BranchLockPermissions != nil {
+		toSerialize["branchLockPermissions"] = o.BranchLockPermissions
 	}
 	if o.CreateChangeOrders != nil {
 		toSerialize["createChangeOrders"] = o.CreateChangeOrders

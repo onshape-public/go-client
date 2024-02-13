@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.175.29320-74695940af99
+  version: 1.176.30682-6f8b76b680d2
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -4265,6 +4265,10 @@ paths:
   /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties:
     get:
       deprecated: false
+      description: "The assembly must contain parts that have assigned density or\
+        \ are globally overridden. If three mass properties are returned: the first\
+        \ is the calculated mass, and the second and third are the minimum and maximum\
+        \ possible values, considering tolerance."
       operationId: getAssemblyMassProperties
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -14113,12 +14117,126 @@ paths:
       tags:
       - PartStudio
       x-BTVisibility: PRODUCTION
+  /publications:
+    post:
+      deprecated: false
+      operationId: createPublication
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTPublicationParams'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTPublicationInfo'
+          description: default response
+      summary: Create a new publication.
+      tags:
+      - Publication
+      x-BTVisibility: PRODUCTION
+  /publications/{pid}:
+    post:
+      deprecated: false
+      operationId: updatePublicationAttributes
+      parameters:
+      - description: Publication ID.
+        explode: false
+        in: path
+        name: pid
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTPublicationParams'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      summary: "Update publication's attributes name, description, and notes."
+      tags:
+      - Publication
+      x-BTVisibility: PRODUCTION
+  /publications/{pid}/item:
+    post:
+      deprecated: false
+      operationId: addItemToPublication
+      parameters:
+      - description: Publication ID.
+        explode: false
+        in: path
+        name: pid
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTPublicationItemParams'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTPublicationInfo'
+          description: default response
+      summary: Add an item in a publication.
+      tags:
+      - Publication
+      x-BTVisibility: PRODUCTION
+  /publications/{pid}/item/{iid}:
+    delete:
+      deprecated: false
+      operationId: deletePublicationItem
+      parameters:
+      - description: Publication ID.
+        explode: false
+        in: path
+        name: pid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Publication item ID.
+        explode: false
+        in: path
+        name: iid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      summary: Remove an item from a publication.
+      tags:
+      - Publication
+      x-BTVisibility: PRODUCTION
   /publications/{pid}/items:
     get:
       deprecated: false
       operationId: getPublicationItems
       parameters:
-      - explode: false
+      - description: Publication ID.
+        explode: false
         in: path
         name: pid
         required: true
@@ -14138,6 +14256,35 @@ paths:
         BasicAuth:
         - OAuth2Read
       summary: Get all items in a publication.
+      tags:
+      - Publication
+      x-BTVisibility: PRODUCTION
+    post:
+      deprecated: false
+      operationId: addItemsToPublication
+      parameters:
+      - description: Publication ID.
+        explode: false
+        in: path
+        name: pid
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTPublicationBulkItemParams'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTPublicationInfo'
+          description: default response
+      summary: Add publication items in bulk.
       tags:
       - Publication
       x-BTVisibility: PRODUCTION
@@ -21879,6 +22026,7 @@ components:
         documentVersionId: documentVersionId
         linkDocumentWorkspaceId: linkDocumentWorkspaceId
         emailLink: true
+        useYAxisAsUp: true
         emailTo: emailTo
         includeBendLines: true
         batchFlatPatterns: true
@@ -21987,6 +22135,8 @@ components:
           type: boolean
         units:
           type: string
+        useYAxisAsUp:
+          type: boolean
         userId:
           type: string
         validForDays:
@@ -24825,6 +24975,7 @@ components:
             btType: btType
             nodeId: nodeId
           parameterId: parameterId
+          isCosmetic: true
           btType: btType
           importMicroversion: importMicroversion
           parameterName: parameterName
@@ -24835,6 +24986,7 @@ components:
             btType: btType
             nodeId: nodeId
           parameterId: parameterId
+          isCosmetic: true
           btType: btType
           importMicroversion: importMicroversion
           parameterName: parameterName
@@ -31437,6 +31589,7 @@ components:
       example:
         serializationVersion: serializationVersion
         featureState:
+          inactive: true
           featureStatus: null
           btType: btType
         feature:
@@ -31582,6 +31735,7 @@ components:
         rejectMicroversionSkew: true
         featureStates:
           key:
+            inactive: true
             featureStatus: null
             btType: btType
         sourceMicroversion: sourceMicroversion
@@ -33263,6 +33417,7 @@ components:
       type: object
     BTFeatureState-1688:
       example:
+        inactive: true
         featureStatus: null
         btType: btType
       properties:
@@ -33270,6 +33425,8 @@ components:
           type: string
         featureStatus:
           $ref: '#/components/schemas/GBTNodeStatusType'
+        inactive:
+          type: boolean
       type: object
     BTFeatureStudioContents-2239:
       allOf:
@@ -38861,6 +39018,7 @@ components:
           btType: btType
           nodeId: nodeId
         parameterId: parameterId
+        isCosmetic: true
         btType: btType
         importMicroversion: importMicroversion
         parameterName: parameterName
@@ -38873,6 +39031,8 @@ components:
         importMicroversion:
           type: string
           writeOnly: true
+        isCosmetic:
+          type: boolean
         nodeId:
           type: string
         parameterId:
@@ -44643,6 +44803,7 @@ components:
         title1: title1
         title2: title2
         title3: title3
+        metadataMicroversion: metadataMicroversion
         isHidden: true
         revision: revision
         unflattenedPartId: unflattenedPartId
@@ -44763,6 +44924,8 @@ components:
           $ref: '#/components/schemas/BTPartMaterialInfo'
         meshState:
           $ref: '#/components/schemas/GBTMeshState'
+        metadataMicroversion:
+          type: string
         microversionId:
           type: string
         name:
@@ -46839,10 +47002,159 @@ components:
         value:
           type: object
       type: object
+    BTPublicationBulkItemParams:
+      example:
+        items:
+        - elementId: elementId
+          isAssembly: true
+          partId: partId
+          isBlob: true
+          dataType: dataType
+          encodedConfiguration: encodedConfiguration
+          mimeType: mimeType
+          partName: partName
+          revision: revision
+          revisionId: revisionId
+          versionId: versionId
+          isWholePartStudio: true
+          documentId: documentId
+          partNumber: partNumber
+          isApplication: true
+        - elementId: elementId
+          isAssembly: true
+          partId: partId
+          isBlob: true
+          dataType: dataType
+          encodedConfiguration: encodedConfiguration
+          mimeType: mimeType
+          partName: partName
+          revision: revision
+          revisionId: revisionId
+          versionId: versionId
+          isWholePartStudio: true
+          documentId: documentId
+          partNumber: partNumber
+          isApplication: true
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/BTPublicationItemParams'
+          type: array
+      type: object
     BTPublicationInfo:
       allOf:
       - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
       - $ref: '#/components/schemas/BTPublicationInfo_allOf'
+      type: object
+    BTPublicationItemParams:
+      example:
+        elementId: elementId
+        isAssembly: true
+        partId: partId
+        isBlob: true
+        dataType: dataType
+        encodedConfiguration: encodedConfiguration
+        mimeType: mimeType
+        partName: partName
+        revision: revision
+        revisionId: revisionId
+        versionId: versionId
+        isWholePartStudio: true
+        documentId: documentId
+        partNumber: partNumber
+        isApplication: true
+      properties:
+        dataType:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        encodedConfiguration:
+          type: string
+        isApplication:
+          type: boolean
+        isAssembly:
+          type: boolean
+        isBlob:
+          type: boolean
+        isWholePartStudio:
+          type: boolean
+        mimeType:
+          type: string
+        partId:
+          type: string
+        partName:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        revisionId:
+          type: string
+        versionId:
+          type: string
+      type: object
+    BTPublicationParams:
+      example:
+        ownerType: 0
+        notes: notes
+        name: name
+        description: description
+        ownerId: ownerId
+        items:
+        - elementId: elementId
+          isAssembly: true
+          partId: partId
+          isBlob: true
+          dataType: dataType
+          encodedConfiguration: encodedConfiguration
+          mimeType: mimeType
+          partName: partName
+          revision: revision
+          revisionId: revisionId
+          versionId: versionId
+          isWholePartStudio: true
+          documentId: documentId
+          partNumber: partNumber
+          isApplication: true
+        - elementId: elementId
+          isAssembly: true
+          partId: partId
+          isBlob: true
+          dataType: dataType
+          encodedConfiguration: encodedConfiguration
+          mimeType: mimeType
+          partName: partName
+          revision: revision
+          revisionId: revisionId
+          versionId: versionId
+          isWholePartStudio: true
+          documentId: documentId
+          partNumber: partNumber
+          isApplication: true
+        projectId: projectId
+        parentId: parentId
+      properties:
+        description:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/BTPublicationItemParams'
+          type: array
+        name:
+          type: string
+        notes:
+          type: string
+        ownerId:
+          type: string
+        ownerType:
+          format: int32
+          type: integer
+        parentId:
+          type: string
+        projectId:
+          type: string
       type: object
     BTPublishedWorkflowId:
       example:
@@ -52360,6 +52672,7 @@ components:
         rejectMicroversionSkew: true
         featureStates:
           key:
+            inactive: true
             featureStatus: null
             btType: btType
         sourceMicroversion: sourceMicroversion
@@ -52785,6 +53098,7 @@ components:
         unitsMaximumDisplayPrecision:
           unitsDisplayPrecision:
             key: 2
+        graphicsRenderMode: graphicsRenderMode
         id: id
         substituteApprovers:
         - companyId: companyId
@@ -52866,6 +53180,7 @@ components:
             user: null
           enabled: true
         use24HourTime: true
+        graphicsSmoothEdge: graphicsSmoothEdge
         useDecimalComma: true
         exportDrawingOptions: exportDrawingOptions
         materialLibrarySettings:
@@ -52947,6 +53262,10 @@ components:
         exportDrawingOptions:
           type: string
         exportSolidOptions:
+          type: string
+        graphicsRenderMode:
+          type: string
+        graphicsSmoothEdge:
           type: string
         id:
           type: string
@@ -66379,6 +66698,7 @@ components:
       - PREVIEW_AFTER
       - PREVIEW_FINAL
       - COMPARE_TARGET
+      - REFERENCE_REPAIR
       - UNKNOWN
       type: string
     GBTEdgeTopology:
@@ -67918,6 +68238,13 @@ components:
       - OFFSET_CURVE_ON_FACE_SCAR_EDGE
       - OFFSET_CURVE_ON_FACE_CLOSED_CURVE_NO_TRIM
       - OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL
+      - ANGLE_CONTROL_PARALLEL_TO_BEND
+      - BODY_DRAFT_PARTING_SURFACE_SMALL
+      - MASS_PROPERTY_MATE_CONNECTOR_Z_AXIS_NOT_NORMAL
+      - DERIVED_MATE_CONNECTOR_INDEX_OUT_OF_BOUNDS
+      - DERIVED_MATE_CONNECTOR_NO_LONGER_VALID
+      - DERIVED_MATE_CONNECTOR_RESET
+      - DERIVED_NO_MATE_CONNECTORS
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -68438,6 +68765,8 @@ components:
         allowPublicDocumentsAccess:
           type: boolean
         approveReleases:
+          type: boolean
+        branchLockPermissions:
           type: boolean
         createChangeOrders:
           type: boolean
@@ -104741,6 +105070,9 @@ components:
           type: boolean
         forumId:
           type: string
+        intendedUse:
+          format: int32
+          type: integer
         lastTrialInfo:
           $ref: '#/components/schemas/BTTrialInfo'
         needToShowNewWalkthrough:
@@ -104766,6 +105098,8 @@ components:
             $ref: '#/components/schemas/BTRole'
           type: array
           uniqueItems: true
+        showRenewStudentPages:
+          type: boolean
         startupPage:
           format: int32
           type: integer
