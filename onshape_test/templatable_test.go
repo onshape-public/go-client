@@ -51,9 +51,12 @@ func populateDefaultResultMapper() {
 			"mv":    o.GetMicroversion(),
 		}
 	})).Add(MapFields(func(o *onshape.BTRestoreFromHistoryInfo) TestingContext {
-		return TestingContext{
-			"mv": o.GetNewMicroversion(),
+		if mv := o.GetNewMicroversion(); mv != "" {
+			return TestingContext{
+				"mv": o.GetNewMicroversion(),
+			}
 		}
+		return tester.context
 	})).Add(MapFields(func(o *onshape.BTMicroversionInfo) TestingContext {
 		return TestingContext{
 			"mv": o.GetMicroversion(),

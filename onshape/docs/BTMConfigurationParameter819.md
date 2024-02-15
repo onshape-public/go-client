@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **GeneratedParameterId** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
 **ImportMicroversion** | Pointer to **string** |  | [optional] 
+**IsCosmetic** | Pointer to **bool** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **ParameterName** | Pointer to **string** |  | [optional] 
@@ -106,6 +107,31 @@ SetImportMicroversion sets ImportMicroversion field to given value.
 `func (o *BTMConfigurationParameter819) HasImportMicroversion() bool`
 
 HasImportMicroversion returns a boolean if a field has been set.
+
+### GetIsCosmetic
+
+`func (o *BTMConfigurationParameter819) GetIsCosmetic() bool`
+
+GetIsCosmetic returns the IsCosmetic field if non-nil, zero value otherwise.
+
+### GetIsCosmeticOk
+
+`func (o *BTMConfigurationParameter819) GetIsCosmeticOk() (*bool, bool)`
+
+GetIsCosmeticOk returns a tuple with the IsCosmetic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCosmetic
+
+`func (o *BTMConfigurationParameter819) SetIsCosmetic(v bool)`
+
+SetIsCosmetic sets IsCosmetic field to given value.
+
+### HasIsCosmetic
+
+`func (o *BTMConfigurationParameter819) HasIsCosmetic() bool`
+
+HasIsCosmetic returns a boolean if a field has been set.
 
 ### GetNodeId
 

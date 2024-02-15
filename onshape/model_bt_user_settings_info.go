@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -26,6 +25,8 @@ type BTUserSettingsInfo struct {
 	EnforceApplicationAcl           *bool                                  `json:"enforceApplicationAcl,omitempty"`
 	ExportDrawingOptions            *string                                `json:"exportDrawingOptions,omitempty"`
 	ExportSolidOptions              *string                                `json:"exportSolidOptions,omitempty"`
+	GraphicsRenderMode              *string                                `json:"graphicsRenderMode,omitempty"`
+	GraphicsSmoothEdge              *string                                `json:"graphicsSmoothEdge,omitempty"`
 	Id                              *string                                `json:"id,omitempty"`
 	ImportOptions                   *string                                `json:"importOptions,omitempty"`
 	Locale                          *string                                `json:"locale,omitempty"`
@@ -348,6 +349,70 @@ func (o *BTUserSettingsInfo) HasExportSolidOptions() bool {
 // SetExportSolidOptions gets a reference to the given string and assigns it to the ExportSolidOptions field.
 func (o *BTUserSettingsInfo) SetExportSolidOptions(v string) {
 	o.ExportSolidOptions = &v
+}
+
+// GetGraphicsRenderMode returns the GraphicsRenderMode field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetGraphicsRenderMode() string {
+	if o == nil || o.GraphicsRenderMode == nil {
+		var ret string
+		return ret
+	}
+	return *o.GraphicsRenderMode
+}
+
+// GetGraphicsRenderModeOk returns a tuple with the GraphicsRenderMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetGraphicsRenderModeOk() (*string, bool) {
+	if o == nil || o.GraphicsRenderMode == nil {
+		return nil, false
+	}
+	return o.GraphicsRenderMode, true
+}
+
+// HasGraphicsRenderMode returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasGraphicsRenderMode() bool {
+	if o != nil && o.GraphicsRenderMode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGraphicsRenderMode gets a reference to the given string and assigns it to the GraphicsRenderMode field.
+func (o *BTUserSettingsInfo) SetGraphicsRenderMode(v string) {
+	o.GraphicsRenderMode = &v
+}
+
+// GetGraphicsSmoothEdge returns the GraphicsSmoothEdge field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetGraphicsSmoothEdge() string {
+	if o == nil || o.GraphicsSmoothEdge == nil {
+		var ret string
+		return ret
+	}
+	return *o.GraphicsSmoothEdge
+}
+
+// GetGraphicsSmoothEdgeOk returns a tuple with the GraphicsSmoothEdge field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetGraphicsSmoothEdgeOk() (*string, bool) {
+	if o == nil || o.GraphicsSmoothEdge == nil {
+		return nil, false
+	}
+	return o.GraphicsSmoothEdge, true
+}
+
+// HasGraphicsSmoothEdge returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasGraphicsSmoothEdge() bool {
+	if o != nil && o.GraphicsSmoothEdge != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGraphicsSmoothEdge gets a reference to the given string and assigns it to the GraphicsSmoothEdge field.
+func (o *BTUserSettingsInfo) SetGraphicsSmoothEdge(v string) {
+	o.GraphicsSmoothEdge = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -922,6 +987,12 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExportSolidOptions != nil {
 		toSerialize["exportSolidOptions"] = o.ExportSolidOptions
+	}
+	if o.GraphicsRenderMode != nil {
+		toSerialize["graphicsRenderMode"] = o.GraphicsRenderMode
+	}
+	if o.GraphicsSmoothEdge != nil {
+		toSerialize["graphicsSmoothEdge"] = o.GraphicsSmoothEdge
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

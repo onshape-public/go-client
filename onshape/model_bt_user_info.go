@@ -3,7 +3,6 @@ Onshape REST API
 
 ## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
-API version: 1.175.29320-74695940af99
 Contact: api-support@onshape.zendesk.com
 */
 
@@ -1893,6 +1892,56 @@ func (o *BTUserInfo) SetForumId(v string) {
 	o.GetActualInstance().(getResult).SetForumId(v)
 }
 
+// GetIntendedUse returns the IntendedUse field value if set, zero value otherwise.
+func (o *BTUserInfo) GetIntendedUse() int32 {
+	type getResult interface {
+		GetIntendedUse() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIntendedUse()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetIntendedUseOk returns a tuple with the IntendedUse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetIntendedUseOk() (*int32, bool) {
+	type getResult interface {
+		GetIntendedUseOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIntendedUseOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIntendedUse returns a boolean if a field has been set.
+func (o *BTUserInfo) HasIntendedUse() bool {
+	type getResult interface {
+		HasIntendedUse() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIntendedUse()
+	} else {
+		return false
+	}
+}
+
+// SetIntendedUse gets a reference to the given int32 and assigns it to the IntendedUse field.
+func (o *BTUserInfo) SetIntendedUse(v int32) {
+	type getResult interface {
+		SetIntendedUse(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetIntendedUse(v)
+}
+
 // GetLastTrialInfo returns the LastTrialInfo field value if set, zero value otherwise.
 func (o *BTUserInfo) GetLastTrialInfo() BTTrialInfo {
 	type getResult interface {
@@ -2343,6 +2392,56 @@ func (o *BTUserInfo) SetRoles(v []BTRole) {
 	o.GetActualInstance().(getResult).SetRoles(v)
 }
 
+// GetShowRenewStudentPages returns the ShowRenewStudentPages field value if set, zero value otherwise.
+func (o *BTUserInfo) GetShowRenewStudentPages() bool {
+	type getResult interface {
+		GetShowRenewStudentPages() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetShowRenewStudentPages()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetShowRenewStudentPagesOk returns a tuple with the ShowRenewStudentPages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetShowRenewStudentPagesOk() (*bool, bool) {
+	type getResult interface {
+		GetShowRenewStudentPagesOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetShowRenewStudentPagesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasShowRenewStudentPages returns a boolean if a field has been set.
+func (o *BTUserInfo) HasShowRenewStudentPages() bool {
+	type getResult interface {
+		HasShowRenewStudentPages() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasShowRenewStudentPages()
+	} else {
+		return false
+	}
+}
+
+// SetShowRenewStudentPages gets a reference to the given bool and assigns it to the ShowRenewStudentPages field.
+func (o *BTUserInfo) SetShowRenewStudentPages(v bool) {
+	type getResult interface {
+		SetShowRenewStudentPages(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetShowRenewStudentPages(v)
+}
+
 // GetStartupPage returns the StartupPage field value if set, zero value otherwise.
 func (o *BTUserInfo) GetStartupPage() int32 {
 	type getResult interface {
@@ -2724,6 +2823,7 @@ type base_BTUserInfo struct {
 	EulaRequired              *bool                    `json:"eulaRequired,omitempty"`
 	EvalCenter                *bool                    `json:"evalCenter,omitempty"`
 	ForumId                   *string                  `json:"forumId,omitempty"`
+	IntendedUse               *int32                   `json:"intendedUse,omitempty"`
 	LastTrialInfo             *BTTrialInfo             `json:"lastTrialInfo,omitempty"`
 	NeedToShowNewWalkthrough  *bool                    `json:"needToShowNewWalkthrough,omitempty"`
 	OwnPurchase               *BTPurchaseInfo          `json:"ownPurchase,omitempty"`
@@ -2733,6 +2833,7 @@ type base_BTUserInfo struct {
 	RedirectUrl               *string                  `json:"redirectUrl,omitempty"`
 	Role                      *int32                   `json:"role,omitempty"`
 	Roles                     []BTRole                 `json:"roles,omitempty"`
+	ShowRenewStudentPages     *bool                    `json:"showRenewStudentPages,omitempty"`
 	StartupPage               *int32                   `json:"startupPage,omitempty"`
 	SystemUser                *bool                    `json:"systemUser,omitempty"`
 	TotpEnabled               *bool                    `json:"totpEnabled,omitempty"`
@@ -3941,6 +4042,38 @@ func (o *base_BTUserInfo) SetForumId(v string) {
 	o.ForumId = &v
 }
 
+// GetIntendedUse returns the IntendedUse field value if set, zero value otherwise.
+func (o *base_BTUserInfo) GetIntendedUse() int32 {
+	if o == nil || o.IntendedUse == nil {
+		var ret int32
+		return ret
+	}
+	return *o.IntendedUse
+}
+
+// GetIntendedUseOk returns a tuple with the IntendedUse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetIntendedUseOk() (*int32, bool) {
+	if o == nil || o.IntendedUse == nil {
+		return nil, false
+	}
+	return o.IntendedUse, true
+}
+
+// HasIntendedUse returns a boolean if a field has been set.
+func (o *base_BTUserInfo) HasIntendedUse() bool {
+	if o != nil && o.IntendedUse != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIntendedUse gets a reference to the given int32 and assigns it to the IntendedUse field.
+func (o *base_BTUserInfo) SetIntendedUse(v int32) {
+	o.IntendedUse = &v
+}
+
 // GetLastTrialInfo returns the LastTrialInfo field value if set, zero value otherwise.
 func (o *base_BTUserInfo) GetLastTrialInfo() BTTrialInfo {
 	if o == nil || o.LastTrialInfo == nil {
@@ -4229,6 +4362,38 @@ func (o *base_BTUserInfo) SetRoles(v []BTRole) {
 	o.Roles = v
 }
 
+// GetShowRenewStudentPages returns the ShowRenewStudentPages field value if set, zero value otherwise.
+func (o *base_BTUserInfo) GetShowRenewStudentPages() bool {
+	if o == nil || o.ShowRenewStudentPages == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowRenewStudentPages
+}
+
+// GetShowRenewStudentPagesOk returns a tuple with the ShowRenewStudentPages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetShowRenewStudentPagesOk() (*bool, bool) {
+	if o == nil || o.ShowRenewStudentPages == nil {
+		return nil, false
+	}
+	return o.ShowRenewStudentPages, true
+}
+
+// HasShowRenewStudentPages returns a boolean if a field has been set.
+func (o *base_BTUserInfo) HasShowRenewStudentPages() bool {
+	if o != nil && o.ShowRenewStudentPages != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowRenewStudentPages gets a reference to the given bool and assigns it to the ShowRenewStudentPages field.
+func (o *base_BTUserInfo) SetShowRenewStudentPages(v bool) {
+	o.ShowRenewStudentPages = &v
+}
+
 // GetStartupPage returns the StartupPage field value if set, zero value otherwise.
 func (o *base_BTUserInfo) GetStartupPage() int32 {
 	if o == nil || o.StartupPage == nil {
@@ -4502,6 +4667,9 @@ func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	if o.ForumId != nil {
 		toSerialize["forumId"] = o.ForumId
 	}
+	if o.IntendedUse != nil {
+		toSerialize["intendedUse"] = o.IntendedUse
+	}
 	if o.LastTrialInfo != nil {
 		toSerialize["lastTrialInfo"] = o.LastTrialInfo
 	}
@@ -4528,6 +4696,9 @@ func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Roles != nil {
 		toSerialize["roles"] = o.Roles
+	}
+	if o.ShowRenewStudentPages != nil {
+		toSerialize["showRenewStudentPages"] = o.ShowRenewStudentPages
 	}
 	if o.StartupPage != nil {
 		toSerialize["startupPage"] = o.StartupPage

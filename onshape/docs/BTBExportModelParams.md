@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **StoreInDocument** | Pointer to **bool** |  | [optional] 
 **TriggerAutoDownload** | Pointer to **bool** |  | [optional] 
 **Units** | Pointer to **string** |  | [optional] 
+**UseYAxisAsUp** | Pointer to **bool** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **ValidForDays** | Pointer to **int32** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
@@ -1189,6 +1190,31 @@ SetUnits sets Units field to given value.
 `func (o *BTBExportModelParams) HasUnits() bool`
 
 HasUnits returns a boolean if a field has been set.
+
+### GetUseYAxisAsUp
+
+`func (o *BTBExportModelParams) GetUseYAxisAsUp() bool`
+
+GetUseYAxisAsUp returns the UseYAxisAsUp field if non-nil, zero value otherwise.
+
+### GetUseYAxisAsUpOk
+
+`func (o *BTBExportModelParams) GetUseYAxisAsUpOk() (*bool, bool)`
+
+GetUseYAxisAsUpOk returns a tuple with the UseYAxisAsUp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseYAxisAsUp
+
+`func (o *BTBExportModelParams) SetUseYAxisAsUp(v bool)`
+
+SetUseYAxisAsUp sets UseYAxisAsUp field to given value.
+
+### HasUseYAxisAsUp
+
+`func (o *BTBExportModelParams) HasUseYAxisAsUp() bool`
+
+HasUseYAxisAsUp returns a boolean if a field has been set.
 
 ### GetUserId
 

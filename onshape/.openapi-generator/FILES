@@ -1039,8 +1039,11 @@ docs/BTPropertyTableColumnInfo2161.md
 docs/BTPropertyTableColumnInfo2161AllOf.md
 docs/BTPropertyUpdateInfo.md
 docs/BTPropertyValueParam.md
+docs/BTPublicationBulkItemParams.md
 docs/BTPublicationInfo.md
 docs/BTPublicationInfoAllOf.md
+docs/BTPublicationItemParams.md
+docs/BTPublicationParams.md
 docs/BTPublishedWorkflowId.md
 docs/BTPublishedWorkflowInfo.md
 docs/BTPurchaseInfo.md
@@ -1968,7 +1971,10 @@ model_bt_properties_table_template_type.go
 model_bt_property_table_column_info_2161.go
 model_bt_property_update_info.go
 model_bt_property_value_param.go
+model_bt_publication_bulk_item_params.go
 model_bt_publication_info.go
+model_bt_publication_item_params.go
+model_bt_publication_params.go
 model_bt_published_workflow_id.go
 model_bt_published_workflow_info.go
 model_bt_purchase_info.go
