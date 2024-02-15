@@ -147,14 +147,16 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetCurrentMicroversionRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTMicroversionInfo) {
-			require.NotEqual(Tester(), Context()["mv"], r.GetMicroversion())
+			// When there are no changes, merging doesn't create a new mv anymore
+			require.Equal(Tester(), Context()["mv"], r.GetMicroversion())
 		}),
 	}.Execute()
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
-			require.Len(Tester(), r, 2)
+			// Merge does not create a mv anymore
+			require.Len(Tester(), r, 1)
 		}),
 	}.Execute()
 
@@ -166,7 +168,8 @@ func TestDocumentAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
-			require.Len(Tester(), r, 3)
+			// Restore to the same mv does not create a new mv anymore
+			require.Len(Tester(), r, 1)
 		}),
 	}.Execute()
 
@@ -206,7 +209,7 @@ func TestDocumentAPI(t *testing.T) {
 		Context: TestingContext{"sourceType": Ptr("w"), "sourceId": Context()["swid"].(*string)},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTMergePreviewInfo) {
 			require.NotNil(Tester(), r)
-			require.Equalf(Tester(), r.GetTargetMicroversionId(), Context()["mv"], "Target Microversion Id should be the same as the workspace id")
+			require.Equalf(Tester(), Context()["mv"], r.GetTargetMicroversionId(), "Target Microversion Id should be the same as the workspace id")
 		}),
 	}.Execute()
 
