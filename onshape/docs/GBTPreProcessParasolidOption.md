@@ -11,6 +11,8 @@
 
 * `GBTPreProcessParasolidOptionUseBodyshopPreProcessing` (value: `"USE_BODYSHOP_PRE_PROCESSING"`)
 
+* `GBTPreProcessParasolidOptionUseBodyshopPreProcessingAdvancedWithSurfsToBsurfsConverting` (value: `"USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING"`)
+
 * `GBTPreProcessParasolidOptionUnknown` (value: `"UNKNOWN"`)
 
 

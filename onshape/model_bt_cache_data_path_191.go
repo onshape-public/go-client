@@ -19,6 +19,7 @@ type BTCacheDataPath191 struct {
 	BtType                           *string `json:"btType,omitempty"`
 	DocumentId                       *string `json:"documentId,omitempty"`
 	ElementId                        *string `json:"elementId,omitempty"`
+	ImmutableContextVersion          *string `json:"immutableContextVersion,omitempty"`
 	ImmutablePathContentsShouldExist *bool   `json:"immutablePathContentsShouldExist,omitempty"`
 	IsImmutableContextPath           *bool   `json:"isImmutableContextPath,omitempty"`
 	Key                              *string `json:"key,omitempty"`
@@ -137,6 +138,38 @@ func (o *BTCacheDataPath191) HasElementId() bool {
 // SetElementId gets a reference to the given string and assigns it to the ElementId field.
 func (o *BTCacheDataPath191) SetElementId(v string) {
 	o.ElementId = &v
+}
+
+// GetImmutableContextVersion returns the ImmutableContextVersion field value if set, zero value otherwise.
+func (o *BTCacheDataPath191) GetImmutableContextVersion() string {
+	if o == nil || o.ImmutableContextVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImmutableContextVersion
+}
+
+// GetImmutableContextVersionOk returns a tuple with the ImmutableContextVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCacheDataPath191) GetImmutableContextVersionOk() (*string, bool) {
+	if o == nil || o.ImmutableContextVersion == nil {
+		return nil, false
+	}
+	return o.ImmutableContextVersion, true
+}
+
+// HasImmutableContextVersion returns a boolean if a field has been set.
+func (o *BTCacheDataPath191) HasImmutableContextVersion() bool {
+	if o != nil && o.ImmutableContextVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImmutableContextVersion gets a reference to the given string and assigns it to the ImmutableContextVersion field.
+func (o *BTCacheDataPath191) SetImmutableContextVersion(v string) {
+	o.ImmutableContextVersion = &v
 }
 
 // GetImmutablePathContentsShouldExist returns the ImmutablePathContentsShouldExist field value if set, zero value otherwise.
@@ -309,6 +342,9 @@ func (o BTCacheDataPath191) MarshalJSON() ([]byte, error) {
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
+	}
+	if o.ImmutableContextVersion != nil {
+		toSerialize["immutableContextVersion"] = o.ImmutableContextVersion
 	}
 	if o.ImmutablePathContentsShouldExist != nil {
 		toSerialize["immutablePathContentsShouldExist"] = o.ImmutablePathContentsShouldExist

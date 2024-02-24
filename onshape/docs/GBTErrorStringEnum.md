@@ -2933,6 +2933,14 @@
 
 * `GBTErrorStringEnumDerivedNoMateConnectors` (value: `"DERIVED_NO_MATE_CONNECTORS"`)
 
+* `GBTErrorStringEnumTessellatedLoftError` (value: `"TESSELLATED_LOFT_ERROR"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidFaceReference` (value: `"BODY_DRAFT_INVALID_FACE_REFERENCE"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidEdgeReference` (value: `"BODY_DRAFT_INVALID_EDGE_REFERENCE"`)
+
+* `GBTErrorStringEnumBodyDraftInvalidPartReference` (value: `"BODY_DRAFT_INVALID_PART_REFERENCE"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

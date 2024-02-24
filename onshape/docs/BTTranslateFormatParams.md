@@ -76,6 +76,7 @@ Name | Type | Description | Notes
 **Unit** | Pointer to **string** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
 **UseGltfCompression** | Pointer to **bool** |  | [optional] 
+**UseIGESImportPostProcessing** | Pointer to **bool** |  | [optional] 
 **UseIgesCompatibilityMode** | Pointer to **bool** |  | [optional] 
 **ValidForDays** | Pointer to **int32** |  | [optional] 
 **VersionString** | Pointer to **string** |  | [optional] 
@@ -1893,6 +1894,31 @@ SetUseGltfCompression sets UseGltfCompression field to given value.
 `func (o *BTTranslateFormatParams) HasUseGltfCompression() bool`
 
 HasUseGltfCompression returns a boolean if a field has been set.
+
+### GetUseIGESImportPostProcessing
+
+`func (o *BTTranslateFormatParams) GetUseIGESImportPostProcessing() bool`
+
+GetUseIGESImportPostProcessing returns the UseIGESImportPostProcessing field if non-nil, zero value otherwise.
+
+### GetUseIGESImportPostProcessingOk
+
+`func (o *BTTranslateFormatParams) GetUseIGESImportPostProcessingOk() (*bool, bool)`
+
+GetUseIGESImportPostProcessingOk returns a tuple with the UseIGESImportPostProcessing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseIGESImportPostProcessing
+
+`func (o *BTTranslateFormatParams) SetUseIGESImportPostProcessing(v bool)`
+
+SetUseIGESImportPostProcessing sets UseIGESImportPostProcessing field to given value.
+
+### HasUseIGESImportPostProcessing
+
+`func (o *BTTranslateFormatParams) HasUseIGESImportPostProcessing() bool`
+
+HasUseIGESImportPostProcessing returns a boolean if a field has been set.
 
 ### GetUseIgesCompatibilityMode
 

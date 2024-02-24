@@ -16,27 +16,28 @@ import (
 
 // BTMetadataPropertyInfo struct for BTMetadataPropertyInfo
 type BTMetadataPropertyInfo struct {
-	ComputedAssemblyProperty *bool                            `json:"computedAssemblyProperty,omitempty"`
-	ComputedProperty         *bool                            `json:"computedProperty,omitempty"`
-	ComputedPropertyError    *string                          `json:"computedPropertyError,omitempty"`
-	DateFormat               *string                          `json:"dateFormat,omitempty"`
-	DefaultValue             interface{}                      `json:"defaultValue,omitempty"`
-	Dirty                    *bool                            `json:"dirty,omitempty"`
-	Editable                 *bool                            `json:"editable,omitempty"`
-	EditableInUi             *bool                            `json:"editableInUi,omitempty"`
-	EnumValues               []BTMetadataEnumValueInfo        `json:"enumValues,omitempty"`
-	InitialValue             *map[string]interface{}          `json:"initialValue,omitempty"`
-	Multivalued              *bool                            `json:"multivalued,omitempty"`
-	Name                     *string                          `json:"name,omitempty"`
-	PropertyId               *string                          `json:"propertyId,omitempty"`
-	PropertyOverrideStatus   *int32                           `json:"propertyOverrideStatus,omitempty"`
-	PropertySource           *int32                           `json:"propertySource,omitempty"`
-	Required                 *bool                            `json:"required,omitempty"`
-	SchemaId                 *string                          `json:"schemaId,omitempty"`
-	UiHints                  *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
-	Validator                *BTMetadataPropertyValidatorInfo `json:"validator,omitempty"`
-	Value                    interface{}                      `json:"value,omitempty"`
-	ValueType                *string                          `json:"valueType,omitempty"`
+	ComputedAssemblyProperty *bool                     `json:"computedAssemblyProperty,omitempty"`
+	ComputedProperty         *bool                     `json:"computedProperty,omitempty"`
+	ComputedPropertyError    *string                   `json:"computedPropertyError,omitempty"`
+	DateFormat               *string                   `json:"dateFormat,omitempty"`
+	DefaultValue             interface{}               `json:"defaultValue,omitempty"`
+	Dirty                    *bool                     `json:"dirty,omitempty"`
+	Editable                 *bool                     `json:"editable,omitempty"`
+	EditableInUi             *bool                     `json:"editableInUi,omitempty"`
+	EnumValues               []BTMetadataEnumValueInfo `json:"enumValues,omitempty"`
+	InitialValue             *map[string]interface{}   `json:"initialValue,omitempty"`
+	Multivalued              *bool                     `json:"multivalued,omitempty"`
+	Name                     *string                   `json:"name,omitempty"`
+	PropertyId               *string                   `json:"propertyId,omitempty"`
+	// 0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden
+	PropertyOverrideStatus *int32                           `json:"propertyOverrideStatus,omitempty"`
+	PropertySource         *int32                           `json:"propertySource,omitempty"`
+	Required               *bool                            `json:"required,omitempty"`
+	SchemaId               *string                          `json:"schemaId,omitempty"`
+	UiHints                *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
+	Validator              *BTMetadataPropertyValidatorInfo `json:"validator,omitempty"`
+	Value                  interface{}                      `json:"value,omitempty"`
+	ValueType              *string                          `json:"valueType,omitempty"`
 }
 
 // NewBTMetadataPropertyInfo instantiates a new BTMetadataPropertyInfo object

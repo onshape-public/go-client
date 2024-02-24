@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.176.31331-9973bea21f0e
+  version: 1.177.31464-ce62c4b66bbc
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -5807,6 +5807,8 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: The `name` field is required in the `BTDocumentParams` schema when
+        creating a new document.
       operationId: createDocument
       requestBody:
         content:
@@ -15283,6 +15285,27 @@ paths:
         style: form
       - explode: true
         in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          format: int32
+          minimum: 0
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 20
+          format: int32
+          maximum: 1000
+          minimum: 1
+          type: integer
+        style: form
+      - explode: true
+        in: query
         name: includeCompanyOwnedTeams
         required: false
         schema:
@@ -23365,6 +23388,8 @@ components:
           type: string
         elementId:
           type: string
+        immutableContextVersion:
+          type: string
         immutablePathContentsShouldExist:
           type: boolean
         isImmutableContextPath:
@@ -26501,8 +26526,6 @@ components:
             description: Array of strings to set as tags for the document.
             type: string
           type: array
-      required:
-      - name
       type: object
     BTDocumentProcessingInfo:
       allOf:
@@ -41032,6 +41055,9 @@ components:
         propertyId:
           type: string
         propertyOverrideStatus:
+          description: "0: Unknown | 1: Not computed | 2: Computed without override\
+            \ | 3: Computed with override | 4: Computed with subassembly overrides\
+            \ | 5: Overridden"
           format: int32
           type: integer
         propertySource:
@@ -52007,6 +52033,7 @@ components:
         emailTo:
         - emailTo
         - emailTo
+        useIGESImportPostProcessing: true
         imageHeight: 6
         joinAdjacentSurfaces: true
         parentId: parentId
@@ -52197,6 +52224,8 @@ components:
         uploadId:
           type: string
         useGltfCompression:
+          type: boolean
+        useIGESImportPostProcessing:
           type: boolean
         useIgesCompatibilityMode:
           type: boolean
@@ -54782,6 +54811,9 @@ components:
         propertyId:
           type: string
         propertyOverrideStatus:
+          description: "0: Unknown | 1: Not computed | 2: Computed without override\
+            \ | 3: Computed with override | 4: Computed with subassembly overrides\
+            \ | 5: Overridden"
           format: int32
           type: integer
         propertySource:
@@ -66681,6 +66713,8 @@ components:
       - TRANSLUCENT_YELLOW
       - TRANSLUCENT_BLACK
       - TRANSLUCENT_ORANGE
+      - TRANSLUCENT_RED
+      - TRANSLUCENT_MAGENTA
       - UNKNOWN
       type: string
     GBTDebugEntityStyle:
@@ -68245,6 +68279,10 @@ components:
       - DERIVED_MATE_CONNECTOR_NO_LONGER_VALID
       - DERIVED_MATE_CONNECTOR_RESET
       - DERIVED_NO_MATE_CONNECTORS
+      - TESSELLATED_LOFT_ERROR
+      - BODY_DRAFT_INVALID_FACE_REFERENCE
+      - BODY_DRAFT_INVALID_EDGE_REFERENCE
+      - BODY_DRAFT_INVALID_PART_REFERENCE
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -68499,6 +68537,7 @@ components:
       - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
       - USE_TRANSLATOR_PRE_PROCESSING
       - USE_BODYSHOP_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
       - UNKNOWN
       type: string
     GBTQuantityType:
@@ -100294,6 +100333,10 @@ components:
           type: boolean
         importWithinDocument:
           type: boolean
+        useIGESImportPostProcessing:
+          default: false
+          description: Try getting optimized topology from IGES model.
+          type: boolean
       type: object
     uploadFileUpdateElement_request:
       properties:
@@ -100375,6 +100418,10 @@ components:
             \ you expect."
           type: boolean
         importWithinDocument:
+          type: boolean
+        useIGESImportPostProcessing:
+          default: false
+          description: Try getting optimized topology from IGES model.
           type: boolean
       type: object
     addAttachment_request:
@@ -100465,6 +100512,10 @@ components:
             \ you expect."
           type: boolean
         importWithinDocument:
+          type: boolean
+        useIGESImportPostProcessing:
+          default: false
+          description: Try getting optimized topology from IGES model.
           type: boolean
       type: object
     ApiResponse_content:
@@ -104561,6 +104612,8 @@ components:
           $ref: '#/components/schemas/BTRootAssemblyDisplayData-96'
         btType:
           type: string
+        hasConfiguration:
+          type: boolean
         occurrencesToExclude:
           items:
             $ref: '#/components/schemas/BTOccurrence-74'

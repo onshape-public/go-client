@@ -27,6 +27,7 @@ type BTSingleAssemblyReferenceDisplayData1557 struct {
 	ReferenceNodeId      *string                      `json:"referenceNodeId,omitempty"`
 	Visibility           *GBTBSFeatureVisibility      `json:"visibility,omitempty"`
 	AssemblyDisplayData  *BTRootAssemblyDisplayData96 `json:"assemblyDisplayData,omitempty"`
+	HasConfiguration     *bool                        `json:"hasConfiguration,omitempty"`
 	OccurrencesToExclude []BTOccurrence74             `json:"occurrencesToExclude,omitempty"`
 	Transform            *BTBSMatrix386               `json:"transform,omitempty"`
 }
@@ -400,6 +401,38 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) SetAssemblyDisplayData(v BTRo
 	o.AssemblyDisplayData = &v
 }
 
+// GetHasConfiguration returns the HasConfiguration field value if set, zero value otherwise.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetHasConfiguration() bool {
+	if o == nil || o.HasConfiguration == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasConfiguration
+}
+
+// GetHasConfigurationOk returns a tuple with the HasConfiguration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetHasConfigurationOk() (*bool, bool) {
+	if o == nil || o.HasConfiguration == nil {
+		return nil, false
+	}
+	return o.HasConfiguration, true
+}
+
+// HasHasConfiguration returns a boolean if a field has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) HasHasConfiguration() bool {
+	if o != nil && o.HasConfiguration != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasConfiguration gets a reference to the given bool and assigns it to the HasConfiguration field.
+func (o *BTSingleAssemblyReferenceDisplayData1557) SetHasConfiguration(v bool) {
+	o.HasConfiguration = &v
+}
+
 // GetOccurrencesToExclude returns the OccurrencesToExclude field value if set, zero value otherwise.
 func (o *BTSingleAssemblyReferenceDisplayData1557) GetOccurrencesToExclude() []BTOccurrence74 {
 	if o == nil || o.OccurrencesToExclude == nil {
@@ -498,6 +531,9 @@ func (o BTSingleAssemblyReferenceDisplayData1557) MarshalJSON() ([]byte, error) 
 	}
 	if o.AssemblyDisplayData != nil {
 		toSerialize["assemblyDisplayData"] = o.AssemblyDisplayData
+	}
+	if o.HasConfiguration != nil {
+		toSerialize["hasConfiguration"] = o.HasConfiguration
 	}
 	if o.OccurrencesToExclude != nil {
 		toSerialize["occurrencesToExclude"] = o.OccurrencesToExclude

@@ -95,6 +95,7 @@ type BTTranslateFormatParams struct {
 	Unit                                 *string                       `json:"unit,omitempty"`
 	UploadId                             *string                       `json:"uploadId,omitempty"`
 	UseGltfCompression                   *bool                         `json:"useGltfCompression,omitempty"`
+	UseIGESImportPostProcessing          *bool                         `json:"useIGESImportPostProcessing,omitempty"`
 	UseIgesCompatibilityMode             *bool                         `json:"useIgesCompatibilityMode,omitempty"`
 	ValidForDays                         *int32                        `json:"validForDays,omitempty"`
 	VersionString                        *string                       `json:"versionString,omitempty"`
@@ -2414,6 +2415,38 @@ func (o *BTTranslateFormatParams) SetUseGltfCompression(v bool) {
 	o.UseGltfCompression = &v
 }
 
+// GetUseIGESImportPostProcessing returns the UseIGESImportPostProcessing field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetUseIGESImportPostProcessing() bool {
+	if o == nil || o.UseIGESImportPostProcessing == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UseIGESImportPostProcessing
+}
+
+// GetUseIGESImportPostProcessingOk returns a tuple with the UseIGESImportPostProcessing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetUseIGESImportPostProcessingOk() (*bool, bool) {
+	if o == nil || o.UseIGESImportPostProcessing == nil {
+		return nil, false
+	}
+	return o.UseIGESImportPostProcessing, true
+}
+
+// HasUseIGESImportPostProcessing returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasUseIGESImportPostProcessing() bool {
+	if o != nil && o.UseIGESImportPostProcessing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUseIGESImportPostProcessing gets a reference to the given bool and assigns it to the UseIGESImportPostProcessing field.
+func (o *BTTranslateFormatParams) SetUseIGESImportPostProcessing(v bool) {
+	o.UseIGESImportPostProcessing = &v
+}
+
 // GetUseIgesCompatibilityMode returns the UseIgesCompatibilityMode field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetUseIgesCompatibilityMode() bool {
 	if o == nil || o.UseIgesCompatibilityMode == nil {
@@ -2727,6 +2760,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.UseGltfCompression != nil {
 		toSerialize["useGltfCompression"] = o.UseGltfCompression
+	}
+	if o.UseIGESImportPostProcessing != nil {
+		toSerialize["useIGESImportPostProcessing"] = o.UseIGESImportPostProcessing
 	}
 	if o.UseIgesCompatibilityMode != nil {
 		toSerialize["useIgesCompatibilityMode"] = o.UseIgesCompatibilityMode

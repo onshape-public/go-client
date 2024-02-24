@@ -119,6 +119,8 @@ Name | Type | Description  | Notes
 
 Create and upload a document.
 
+
+
 ### Example
 
 ```go
@@ -132,7 +134,7 @@ import (
 )
 
 func main() {
-    bTDocumentParams := *openapiclient.NewBTDocumentParams("myDocument") // BTDocumentParams | 
+    bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -2360,7 +2362,7 @@ import (
 
 func main() {
     did := "did_example" // string | 
-    bTDocumentParams := *openapiclient.NewBTDocumentParams("myDocument") // BTDocumentParams | 
+    bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

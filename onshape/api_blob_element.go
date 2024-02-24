@@ -485,6 +485,7 @@ type ApiUploadFileCreateElementRequest struct {
 	importAppearances                    *bool
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
+	useIGESImportPostProcessing          *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -631,6 +632,12 @@ func (r ApiUploadFileCreateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFi
 
 func (r ApiUploadFileCreateElementRequest) ImportWithinDocument(importWithinDocument bool) ApiUploadFileCreateElementRequest {
 	r.importWithinDocument = &importWithinDocument
+	return r
+}
+
+// Try getting optimized topology from IGES model.
+func (r ApiUploadFileCreateElementRequest) UseIGESImportPostProcessing(useIGESImportPostProcessing bool) ApiUploadFileCreateElementRequest {
+	r.useIGESImportPostProcessing = &useIGESImportPostProcessing
 	return r
 }
 
@@ -785,6 +792,9 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.importWithinDocument != nil {
 		localVarFormParams.Add("importWithinDocument", parameterToString(*r.importWithinDocument, ""))
 	}
+	if r.useIGESImportPostProcessing != nil {
+		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -864,6 +874,7 @@ type ApiUploadFileUpdateElementRequest struct {
 	importAppearances                    *bool
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
+	useIGESImportPostProcessing          *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -1016,6 +1027,12 @@ func (r ApiUploadFileUpdateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFi
 
 func (r ApiUploadFileUpdateElementRequest) ImportWithinDocument(importWithinDocument bool) ApiUploadFileUpdateElementRequest {
 	r.importWithinDocument = &importWithinDocument
+	return r
+}
+
+// Try getting optimized topology from IGES model.
+func (r ApiUploadFileUpdateElementRequest) UseIGESImportPostProcessing(useIGESImportPostProcessing bool) ApiUploadFileUpdateElementRequest {
+	r.useIGESImportPostProcessing = &useIGESImportPostProcessing
 	return r
 }
 
@@ -1175,6 +1192,9 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	}
 	if r.importWithinDocument != nil {
 		localVarFormParams.Add("importWithinDocument", parameterToString(*r.importWithinDocument, ""))
+	}
+	if r.useIGESImportPostProcessing != nil {
+		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

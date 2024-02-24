@@ -54,6 +54,7 @@ type ApiCreateTranslationRequest struct {
 	importAppearances                    *bool
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
+	useIGESImportPostProcessing          *bool
 }
 
 // The file to upload.
@@ -194,6 +195,12 @@ func (r ApiCreateTranslationRequest) YAxisIsUp(yAxisIsUp bool) ApiCreateTranslat
 
 func (r ApiCreateTranslationRequest) ImportWithinDocument(importWithinDocument bool) ApiCreateTranslationRequest {
 	r.importWithinDocument = &importWithinDocument
+	return r
+}
+
+// Try getting optimized topology from IGES model.
+func (r ApiCreateTranslationRequest) UseIGESImportPostProcessing(useIGESImportPostProcessing bool) ApiCreateTranslationRequest {
+	r.useIGESImportPostProcessing = &useIGESImportPostProcessing
 	return r
 }
 
@@ -344,6 +351,9 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 	}
 	if r.importWithinDocument != nil {
 		localVarFormParams.Add("importWithinDocument", parameterToString(*r.importWithinDocument, ""))
+	}
+	if r.useIGESImportPostProcessing != nil {
+		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

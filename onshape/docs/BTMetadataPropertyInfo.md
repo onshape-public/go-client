@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Multivalued** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PropertyId** | Pointer to **string** |  | [optional] 
-**PropertyOverrideStatus** | Pointer to **int32** |  | [optional] 
+**PropertyOverrideStatus** | Pointer to **int32** | 0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden | [optional] 
 **PropertySource** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 

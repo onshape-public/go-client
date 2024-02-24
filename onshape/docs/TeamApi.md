@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## Find
 
-> BTGlobalTreeNodeListResponseBTTeamInfo Find(ctx).Prefix(prefix).Uid(uid).CompanyId(companyId).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
+> BTGlobalTreeNodeListResponseBTTeamInfo Find(ctx).Prefix(prefix).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
 
 Get a list of all teams the current user belongs to.
 
@@ -32,11 +32,13 @@ func main() {
     prefix := "prefix_example" // string |  (optional) (default to "")
     uid := "uid_example" // string |  (optional)
     companyId := "companyId_example" // string |  (optional)
+    offset := int32(56) // int32 |  (optional) (default to 0)
+    limit := int32(56) // int32 |  (optional) (default to 20)
     includeCompanyOwnedTeams := true // bool |  (optional) (default to true)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TeamApi.Find(context.Background()).Prefix(prefix).Uid(uid).CompanyId(companyId).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
+    resp, r, err := apiClient.TeamApi.Find(context.Background()).Prefix(prefix).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TeamApi.Find``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +62,8 @@ Name | Type | Description  | Notes
  **prefix** | **string** |  | [default to &quot;&quot;]
  **uid** | **string** |  | 
  **companyId** | **string** |  | 
+ **offset** | **int32** |  | [default to 0]
+ **limit** | **int32** |  | [default to 20]
  **includeCompanyOwnedTeams** | **bool** |  | [default to true]
 
 ### Return type
