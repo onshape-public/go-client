@@ -52,7 +52,8 @@ func TestCreateAndGetDocument(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			docParams := onshape.NewBTDocumentParams("Document description")
+			docParams := onshape.NewBTDocumentParams()
+			docParams.Name = &testhelper.DocumentName
 			docParams.Description = &testhelper.DocumentDescription
 			docParams.SetName(tt.args.docName)
 			docParams.SetIsPublic(false)
