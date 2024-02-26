@@ -29,7 +29,7 @@ type BTDocumentParams struct {
 	// Set to `true` to make the document public.
 	IsPublic *bool `json:"isPublic,omitempty"`
 	// Document name.
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	// Set to `true` to indicate that revisions are not managed for this document.
 	NotRevisionManaged *bool `json:"notRevisionManaged,omitempty"`
 	// The document owner's email address.
@@ -50,9 +50,8 @@ type BTDocumentParams struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTDocumentParams(name string) *BTDocumentParams {
+func NewBTDocumentParams() *BTDocumentParams {
 	this := BTDocumentParams{}
-	this.Name = name
 	return &this
 }
 
@@ -256,28 +255,36 @@ func (o *BTDocumentParams) SetIsPublic(v bool) {
 	o.IsPublic = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *BTDocumentParams) GetName() string {
-	if o == nil {
+	if o == nil || o.Name == nil {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTDocumentParams) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Name == nil {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *BTDocumentParams) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BTDocumentParams) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetNotRevisionManaged returns the NotRevisionManaged field value if set, zero value otherwise.
@@ -524,7 +531,7 @@ func (o BTDocumentParams) MarshalJSON() ([]byte, error) {
 	if o.IsPublic != nil {
 		toSerialize["isPublic"] = o.IsPublic
 	}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.NotRevisionManaged != nil {

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **GenerateUnknownMessages** | Pointer to **bool** | Set to &#x60;true&#x60; for debugging. | [optional] 
 **IsEmptyContent** | Pointer to **bool** | Set to &#x60;true&#x60; to generate an empty document. | [optional] 
 **IsPublic** | Pointer to **bool** | Set to &#x60;true&#x60; to make the document public. | [optional] 
-**Name** | **string** | Document name. | 
+**Name** | Pointer to **string** | Document name. | [optional] 
 **NotRevisionManaged** | Pointer to **bool** | Set to &#x60;true&#x60; to indicate that revisions are not managed for this document. | [optional] 
 **OwnerEmail** | Pointer to **string** | The document owner&#39;s email address. | [optional] 
 **OwnerId** | Pointer to **string** | If &#x60;ownerType&#x3D;USER&#x60;, this is the user ID. If &#x60;ownerType&#x3D;COMPANY&#x60;, this is the company ID. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewBTDocumentParams
 
-`func NewBTDocumentParams(name string, ) *BTDocumentParams`
+`func NewBTDocumentParams() *BTDocumentParams`
 
 NewBTDocumentParams instantiates a new BTDocumentParams object
 This constructor will assign default values to properties that have it defined,
@@ -207,6 +207,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *BTDocumentParams) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNotRevisionManaged
 

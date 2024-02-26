@@ -20,23 +20,25 @@ type GBTDebugEntityColor string
 
 // List of GBTDebugEntityColor
 const (
-	GBTDebugEntityColorRed               GBTDebugEntityColor = "RED"
-	GBTDebugEntityColorGreen             GBTDebugEntityColor = "GREEN"
-	GBTDebugEntityColorBlue              GBTDebugEntityColor = "BLUE"
-	GBTDebugEntityColorCyan              GBTDebugEntityColor = "CYAN"
-	GBTDebugEntityColorYellow            GBTDebugEntityColor = "YELLOW"
-	GBTDebugEntityColorMagenta           GBTDebugEntityColor = "MAGENTA"
-	GBTDebugEntityColorBlack             GBTDebugEntityColor = "BLACK"
-	GBTDebugEntityColorTranslucentPurple GBTDebugEntityColor = "TRANSLUCENT_PURPLE"
-	GBTDebugEntityColorFeatureError      GBTDebugEntityColor = "FEATURE_ERROR"
-	GBTDebugEntityColorFeatureDebug      GBTDebugEntityColor = "FEATURE_DEBUG"
-	GBTDebugEntityColorTranslucentGreen  GBTDebugEntityColor = "TRANSLUCENT_GREEN"
-	GBTDebugEntityColorTranslucentBlue   GBTDebugEntityColor = "TRANSLUCENT_BLUE"
-	GBTDebugEntityColorTranslucentCyan   GBTDebugEntityColor = "TRANSLUCENT_CYAN"
-	GBTDebugEntityColorTranslucentYellow GBTDebugEntityColor = "TRANSLUCENT_YELLOW"
-	GBTDebugEntityColorTranslucentBlack  GBTDebugEntityColor = "TRANSLUCENT_BLACK"
-	GBTDebugEntityColorTranslucentOrange GBTDebugEntityColor = "TRANSLUCENT_ORANGE"
-	GBTDebugEntityColorUnknown           GBTDebugEntityColor = "UNKNOWN"
+	GBTDebugEntityColorRed                GBTDebugEntityColor = "RED"
+	GBTDebugEntityColorGreen              GBTDebugEntityColor = "GREEN"
+	GBTDebugEntityColorBlue               GBTDebugEntityColor = "BLUE"
+	GBTDebugEntityColorCyan               GBTDebugEntityColor = "CYAN"
+	GBTDebugEntityColorYellow             GBTDebugEntityColor = "YELLOW"
+	GBTDebugEntityColorMagenta            GBTDebugEntityColor = "MAGENTA"
+	GBTDebugEntityColorBlack              GBTDebugEntityColor = "BLACK"
+	GBTDebugEntityColorTranslucentPurple  GBTDebugEntityColor = "TRANSLUCENT_PURPLE"
+	GBTDebugEntityColorFeatureError       GBTDebugEntityColor = "FEATURE_ERROR"
+	GBTDebugEntityColorFeatureDebug       GBTDebugEntityColor = "FEATURE_DEBUG"
+	GBTDebugEntityColorTranslucentGreen   GBTDebugEntityColor = "TRANSLUCENT_GREEN"
+	GBTDebugEntityColorTranslucentBlue    GBTDebugEntityColor = "TRANSLUCENT_BLUE"
+	GBTDebugEntityColorTranslucentCyan    GBTDebugEntityColor = "TRANSLUCENT_CYAN"
+	GBTDebugEntityColorTranslucentYellow  GBTDebugEntityColor = "TRANSLUCENT_YELLOW"
+	GBTDebugEntityColorTranslucentBlack   GBTDebugEntityColor = "TRANSLUCENT_BLACK"
+	GBTDebugEntityColorTranslucentOrange  GBTDebugEntityColor = "TRANSLUCENT_ORANGE"
+	GBTDebugEntityColorTranslucentRed     GBTDebugEntityColor = "TRANSLUCENT_RED"
+	GBTDebugEntityColorTranslucentMagenta GBTDebugEntityColor = "TRANSLUCENT_MAGENTA"
+	GBTDebugEntityColorUnknown            GBTDebugEntityColor = "UNKNOWN"
 )
 
 // All allowed values of GBTDebugEntityColor enum
@@ -57,6 +59,8 @@ var AllowedGBTDebugEntityColorEnumValues = []GBTDebugEntityColor{
 	"TRANSLUCENT_YELLOW",
 	"TRANSLUCENT_BLACK",
 	"TRANSLUCENT_ORANGE",
+	"TRANSLUCENT_RED",
+	"TRANSLUCENT_MAGENTA",
 	"UNKNOWN",
 }
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **AssemblyDisplayData** | Pointer to [**BTRootAssemblyDisplayData96**](BTRootAssemblyDisplayData96.md) |  | [optional] 
+**HasConfiguration** | Pointer to **bool** |  | [optional] 
 **OccurrencesToExclude** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Transform** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
 
@@ -77,6 +78,31 @@ SetAssemblyDisplayData sets AssemblyDisplayData field to given value.
 `func (o *BTSingleAssemblyReferenceDisplayData1557) HasAssemblyDisplayData() bool`
 
 HasAssemblyDisplayData returns a boolean if a field has been set.
+
+### GetHasConfiguration
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetHasConfiguration() bool`
+
+GetHasConfiguration returns the HasConfiguration field if non-nil, zero value otherwise.
+
+### GetHasConfigurationOk
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetHasConfigurationOk() (*bool, bool)`
+
+GetHasConfigurationOk returns a tuple with the HasConfiguration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasConfiguration
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) SetHasConfiguration(v bool)`
+
+SetHasConfiguration sets HasConfiguration field to given value.
+
+### HasHasConfiguration
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) HasHasConfiguration() bool`
+
+HasHasConfiguration returns a boolean if a field has been set.
 
 ### GetOccurrencesToExclude
 

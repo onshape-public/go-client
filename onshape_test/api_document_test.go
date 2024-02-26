@@ -18,10 +18,10 @@ func TestDocumentAPI(t *testing.T) {
 	InitializeTester[*onshape.DocumentApiService](t)
 
 	SetContext(TestingContext{
-		"label":     Ptr("test-doc"),
+		"label":     &testhelper.DocumentName,
 		"docPublic": false,
 		"bTDocumentParams": &onshape.BTDocumentParams{
-			Name:        "test-doc",
+			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,
 			IsPublic:    Ptr(false),
 		},

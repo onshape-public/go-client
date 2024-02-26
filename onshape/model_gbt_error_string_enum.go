@@ -1485,6 +1485,10 @@ const (
 	GBTErrorStringEnumDerivedMateConnectorNoLongerValid                     GBTErrorStringEnum = "DERIVED_MATE_CONNECTOR_NO_LONGER_VALID"
 	GBTErrorStringEnumDerivedMateConnectorReset                             GBTErrorStringEnum = "DERIVED_MATE_CONNECTOR_RESET"
 	GBTErrorStringEnumDerivedNoMateConnectors                               GBTErrorStringEnum = "DERIVED_NO_MATE_CONNECTORS"
+	GBTErrorStringEnumTessellatedLoftError                                  GBTErrorStringEnum = "TESSELLATED_LOFT_ERROR"
+	GBTErrorStringEnumBodyDraftInvalidFaceReference                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_FACE_REFERENCE"
+	GBTErrorStringEnumBodyDraftInvalidEdgeReference                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_EDGE_REFERENCE"
+	GBTErrorStringEnumBodyDraftInvalidPartReference                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_PART_REFERENCE"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2955,6 +2959,10 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"DERIVED_MATE_CONNECTOR_NO_LONGER_VALID",
 	"DERIVED_MATE_CONNECTOR_RESET",
 	"DERIVED_NO_MATE_CONNECTORS",
+	"TESSELLATED_LOFT_ERROR",
+	"BODY_DRAFT_INVALID_FACE_REFERENCE",
+	"BODY_DRAFT_INVALID_EDGE_REFERENCE",
+	"BODY_DRAFT_INVALID_PART_REFERENCE",
 	"UNKNOWN",
 }
 

@@ -156,6 +156,8 @@ func (r ApiCreateDocumentRequest) Execute() (*BTDocumentInfo, *http.Response, er
 /*
 CreateDocument Create and upload a document.
 
+The `name` field is required in the `BTDocumentParams` schema when creating a new document.
+
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateDocumentRequest
 */

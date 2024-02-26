@@ -16,33 +16,34 @@ import (
 
 // BTWorkflowPropertyInfo struct for BTWorkflowPropertyInfo
 type BTWorkflowPropertyInfo struct {
-	ComputedAssemblyProperty *bool                            `json:"computedAssemblyProperty,omitempty"`
-	ComputedProperty         *bool                            `json:"computedProperty,omitempty"`
-	ComputedPropertyError    *string                          `json:"computedPropertyError,omitempty"`
-	DateFormat               *string                          `json:"dateFormat,omitempty"`
-	DefaultValue             *map[string]interface{}          `json:"defaultValue,omitempty"`
-	Dirty                    *bool                            `json:"dirty,omitempty"`
-	Editable                 *bool                            `json:"editable,omitempty"`
-	EditableInUi             *bool                            `json:"editableInUi,omitempty"`
-	EnumValues               []BTMetadataEnumValueInfo        `json:"enumValues,omitempty"`
-	HideInUi                 *bool                            `json:"hideInUi,omitempty"`
-	InitialValue             *map[string]interface{}          `json:"initialValue,omitempty"`
-	IsApproverProperty       *bool                            `json:"isApproverProperty,omitempty"`
-	IsNotifierProperty       *bool                            `json:"isNotifierProperty,omitempty"`
-	Multivalued              *bool                            `json:"multivalued,omitempty"`
-	Name                     *string                          `json:"name,omitempty"`
-	Observers                []BTWorkflowableObjectObserver   `json:"observers,omitempty"`
-	PropertyId               *string                          `json:"propertyId,omitempty"`
-	PropertyOverrideStatus   *int32                           `json:"propertyOverrideStatus,omitempty"`
-	PropertySource           *int32                           `json:"propertySource,omitempty"`
-	Required                 *bool                            `json:"required,omitempty"`
-	SchemaId                 *string                          `json:"schemaId,omitempty"`
-	TeamsOnly                *bool                            `json:"teamsOnly,omitempty"`
-	UiHints                  *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
-	UsersOnly                *bool                            `json:"usersOnly,omitempty"`
-	Validator                *BTMetadataPropertyValidatorInfo `json:"validator,omitempty"`
-	Value                    *map[string]interface{}          `json:"value,omitempty"`
-	ValueType                *string                          `json:"valueType,omitempty"`
+	ComputedAssemblyProperty *bool                          `json:"computedAssemblyProperty,omitempty"`
+	ComputedProperty         *bool                          `json:"computedProperty,omitempty"`
+	ComputedPropertyError    *string                        `json:"computedPropertyError,omitempty"`
+	DateFormat               *string                        `json:"dateFormat,omitempty"`
+	DefaultValue             *map[string]interface{}        `json:"defaultValue,omitempty"`
+	Dirty                    *bool                          `json:"dirty,omitempty"`
+	Editable                 *bool                          `json:"editable,omitempty"`
+	EditableInUi             *bool                          `json:"editableInUi,omitempty"`
+	EnumValues               []BTMetadataEnumValueInfo      `json:"enumValues,omitempty"`
+	HideInUi                 *bool                          `json:"hideInUi,omitempty"`
+	InitialValue             *map[string]interface{}        `json:"initialValue,omitempty"`
+	IsApproverProperty       *bool                          `json:"isApproverProperty,omitempty"`
+	IsNotifierProperty       *bool                          `json:"isNotifierProperty,omitempty"`
+	Multivalued              *bool                          `json:"multivalued,omitempty"`
+	Name                     *string                        `json:"name,omitempty"`
+	Observers                []BTWorkflowableObjectObserver `json:"observers,omitempty"`
+	PropertyId               *string                        `json:"propertyId,omitempty"`
+	// 0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden
+	PropertyOverrideStatus *int32                           `json:"propertyOverrideStatus,omitempty"`
+	PropertySource         *int32                           `json:"propertySource,omitempty"`
+	Required               *bool                            `json:"required,omitempty"`
+	SchemaId               *string                          `json:"schemaId,omitempty"`
+	TeamsOnly              *bool                            `json:"teamsOnly,omitempty"`
+	UiHints                *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
+	UsersOnly              *bool                            `json:"usersOnly,omitempty"`
+	Validator              *BTMetadataPropertyValidatorInfo `json:"validator,omitempty"`
+	Value                  *map[string]interface{}          `json:"value,omitempty"`
+	ValueType              *string                          `json:"valueType,omitempty"`
 }
 
 // NewBTWorkflowPropertyInfo instantiates a new BTWorkflowPropertyInfo object

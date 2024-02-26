@@ -28,6 +28,8 @@ type ApiFindRequest struct {
 	prefix                   *string
 	uid                      *string
 	companyId                *string
+	offset                   *int32
+	limit                    *int32
 	includeCompanyOwnedTeams *bool
 }
 
@@ -43,6 +45,16 @@ func (r ApiFindRequest) Uid(uid string) ApiFindRequest {
 
 func (r ApiFindRequest) CompanyId(companyId string) ApiFindRequest {
 	r.companyId = &companyId
+	return r
+}
+
+func (r ApiFindRequest) Offset(offset int32) ApiFindRequest {
+	r.offset = &offset
+	return r
+}
+
+func (r ApiFindRequest) Limit(limit int32) ApiFindRequest {
+	r.limit = &limit
 	return r
 }
 
@@ -97,6 +109,12 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	}
 	if r.companyId != nil {
 		localVarQueryParams.Add("companyId", parameterToString(*r.companyId, ""))
+	}
+	if r.offset != nil {
+		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
 	if r.includeCompanyOwnedTeams != nil {
 		localVarQueryParams.Add("includeCompanyOwnedTeams", parameterToString(*r.includeCompanyOwnedTeams, ""))

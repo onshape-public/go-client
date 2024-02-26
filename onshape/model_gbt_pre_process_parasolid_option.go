@@ -20,11 +20,12 @@ type GBTPreProcessParasolidOption string
 
 // List of GBTPreProcessParasolidOption
 const (
-	GBTPreProcessParasolidOptionNoPreProcessing                  GBTPreProcessParasolidOption = "NO_PRE_PROCESSING"
-	GBTPreProcessParasolidOptionUseBodyshopPreProcessingAdvanced GBTPreProcessParasolidOption = "USE_BODYSHOP_PRE_PROCESSING_ADVANCED"
-	GBTPreProcessParasolidOptionUseTranslatorPreProcessing       GBTPreProcessParasolidOption = "USE_TRANSLATOR_PRE_PROCESSING"
-	GBTPreProcessParasolidOptionUseBodyshopPreProcessing         GBTPreProcessParasolidOption = "USE_BODYSHOP_PRE_PROCESSING"
-	GBTPreProcessParasolidOptionUnknown                          GBTPreProcessParasolidOption = "UNKNOWN"
+	GBTPreProcessParasolidOptionNoPreProcessing                                             GBTPreProcessParasolidOption = "NO_PRE_PROCESSING"
+	GBTPreProcessParasolidOptionUseBodyshopPreProcessingAdvanced                            GBTPreProcessParasolidOption = "USE_BODYSHOP_PRE_PROCESSING_ADVANCED"
+	GBTPreProcessParasolidOptionUseTranslatorPreProcessing                                  GBTPreProcessParasolidOption = "USE_TRANSLATOR_PRE_PROCESSING"
+	GBTPreProcessParasolidOptionUseBodyshopPreProcessing                                    GBTPreProcessParasolidOption = "USE_BODYSHOP_PRE_PROCESSING"
+	GBTPreProcessParasolidOptionUseBodyshopPreProcessingAdvancedWithSurfsToBsurfsConverting GBTPreProcessParasolidOption = "USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING"
+	GBTPreProcessParasolidOptionUnknown                                                     GBTPreProcessParasolidOption = "UNKNOWN"
 )
 
 // All allowed values of GBTPreProcessParasolidOption enum
@@ -33,6 +34,7 @@ var AllowedGBTPreProcessParasolidOptionEnumValues = []GBTPreProcessParasolidOpti
 	"USE_BODYSHOP_PRE_PROCESSING_ADVANCED",
 	"USE_TRANSLATOR_PRE_PROCESSING",
 	"USE_BODYSHOP_PRE_PROCESSING",
+	"USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING",
 	"UNKNOWN",
 }
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**ImmutableContextVersion** | Pointer to **string** |  | [optional] 
 **ImmutablePathContentsShouldExist** | Pointer to **bool** |  | [optional] 
 **IsImmutableContextPath** | Pointer to **bool** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
@@ -106,6 +107,31 @@ SetElementId sets ElementId field to given value.
 `func (o *BTCacheDataPath191) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
+
+### GetImmutableContextVersion
+
+`func (o *BTCacheDataPath191) GetImmutableContextVersion() string`
+
+GetImmutableContextVersion returns the ImmutableContextVersion field if non-nil, zero value otherwise.
+
+### GetImmutableContextVersionOk
+
+`func (o *BTCacheDataPath191) GetImmutableContextVersionOk() (*string, bool)`
+
+GetImmutableContextVersionOk returns a tuple with the ImmutableContextVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImmutableContextVersion
+
+`func (o *BTCacheDataPath191) SetImmutableContextVersion(v string)`
+
+SetImmutableContextVersion sets ImmutableContextVersion field to given value.
+
+### HasImmutableContextVersion
+
+`func (o *BTCacheDataPath191) HasImmutableContextVersion() bool`
+
+HasImmutableContextVersion returns a boolean if a field has been set.
 
 ### GetImmutablePathContentsShouldExist
 
