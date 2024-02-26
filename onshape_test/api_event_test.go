@@ -20,7 +20,7 @@ func TestEventAPI(t *testing.T) {
 		Call: onshape.ApiCreateDocumentRequest{
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		}.BTDocumentParams(onshape.BTDocumentParams{
-			Name:        "test-doc",
+			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,
 			IsPublic:    Ptr(false),
 		}),
