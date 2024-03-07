@@ -15,6 +15,17 @@
         "value": "string"
       },
       {
+        "key": "paths['/comments/{cid}/attachment'].post.requestBody.content['multipart/form-data'].schema.properties.file",
+        "type": "update",
+        "value": {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "format" : "binary"
+          }
+        }
+      },
+      {
         "key": "components.schemas['BTMetadataPropertyInfo'].properties.value",
         "type": "update",
         "value": {}
