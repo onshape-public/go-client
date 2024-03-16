@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BestAvailableTessellationSetting** | Pointer to [**GBTTessellationSettingEnum**](GBTTessellationSettingEnum.md) |  | [optional] 
 **BoundsDiameter** | Pointer to **float64** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ClosedConstituentPartData** | Pointer to [**BTClosedConstituentPartData2911**](BTClosedConstituentPartData2911.md) |  | [optional] 
 **CoarsePlanarFaceTriangleCount** | Pointer to **int32** |  | [optional] 
 **CoarseTriangleCount** | Pointer to **int32** |  | [optional] 

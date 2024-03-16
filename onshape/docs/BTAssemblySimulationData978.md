@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ContactBehavior** | Pointer to [**GBTSimulationContactBehavior**](GBTSimulationContactBehavior.md) |  | [optional] 
 **Loads** | Pointer to [**[]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
 **LoadsByNodeId** | Pointer to [**map[string]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 

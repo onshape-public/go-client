@@ -296,6 +296,7 @@ func (v *NullableBTCurveGeometry114) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTCurveGeometry114 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

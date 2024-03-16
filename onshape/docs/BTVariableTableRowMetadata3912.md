@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CrossHighlightData** | Pointer to [**BTTableBaseCrossHighlightData2609**](BTTableBaseCrossHighlightData2609.md) |  | [optional] 
 **Info** | Pointer to **string** |  | [optional] 
 **IsFullyEditable** | Pointer to **bool** |  | [optional] 

@@ -16,7 +16,8 @@ import (
 
 // BTImport struct for BTImport
 type BTImport struct {
-	ForExport          *bool   `json:"forExport,omitempty"`
+	ForExport *bool `json:"forExport,omitempty"`
+	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 }
 

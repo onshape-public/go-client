@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefaultPurpose** | Pointer to [**BTElementLibraryPurpose3353**](BTElementLibraryPurpose3353.md) |  | [optional] 
 
 ## Methods

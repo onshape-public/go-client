@@ -16,29 +16,31 @@ import (
 
 // BTAssemblyInstance947 struct for BTAssemblyInstance947
 type BTAssemblyInstance947 struct {
-	BtType                                  *string                                     `json:"btType,omitempty"`
-	ImportMicroversion                      *string                                     `json:"importMicroversion,omitempty"`
-	NodeId                                  *string                                     `json:"nodeId,omitempty"`
-	AssemblyInstance                        *bool                                       `json:"assemblyInstance,omitempty"`
-	AssemblyPattern                         *bool                                       `json:"assemblyPattern,omitempty"`
-	AssemblyReplicate                       *bool                                       `json:"assemblyReplicate,omitempty"`
-	ClonedInstance                          *bool                                       `json:"clonedInstance,omitempty"`
-	CustomData                              *map[string]BTReferenceCustomData1551       `json:"customData,omitempty"`
-	InstanceFolder                          *bool                                       `json:"instanceFolder,omitempty"`
-	InstanceName                            *string                                     `json:"instanceName,omitempty"`
-	IsFlattenedPart                         *bool                                       `json:"isFlattenedPart,omitempty"`
-	Locked                                  *bool                                       `json:"locked,omitempty"`
-	ParametricInstance                      *bool                                       `json:"parametricInstance,omitempty"`
-	ParametricOutputInstance                *bool                                       `json:"parametricOutputInstance,omitempty"`
-	ParametricPartStudioChildInstance       *bool                                       `json:"parametricPartStudioChildInstance,omitempty"`
-	ParametricPartStudioInstance            *bool                                       `json:"parametricPartStudioInstance,omitempty"`
-	PartInstance                            *bool                                       `json:"partInstance,omitempty"`
-	Releasable                              *bool                                       `json:"releasable,omitempty"`
-	RevisionCustomData                      *BTRevisionCustomData2090                   `json:"revisionCustomData,omitempty"`
-	StandardContent                         *bool                                       `json:"standardContent,omitempty"`
-	StandardContentParametersId             *string                                     `json:"standardContentParametersId,omitempty"`
-	Suppressed                              *bool                                       `json:"suppressed,omitempty"`
-	SuppressedFieldIndex                    *int32                                      `json:"suppressedFieldIndex,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
+	NodeId                            *string                               `json:"nodeId,omitempty"`
+	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
+	AssemblyPattern                   *bool                                 `json:"assemblyPattern,omitempty"`
+	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
+	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
+	CustomData                        *map[string]BTReferenceCustomData1551 `json:"customData,omitempty"`
+	InstanceFolder                    *bool                                 `json:"instanceFolder,omitempty"`
+	InstanceName                      *string                               `json:"instanceName,omitempty"`
+	IsFlattenedPart                   *bool                                 `json:"isFlattenedPart,omitempty"`
+	Locked                            *bool                                 `json:"locked,omitempty"`
+	ParametricInstance                *bool                                 `json:"parametricInstance,omitempty"`
+	ParametricOutputInstance          *bool                                 `json:"parametricOutputInstance,omitempty"`
+	ParametricPartStudioChildInstance *bool                                 `json:"parametricPartStudioChildInstance,omitempty"`
+	ParametricPartStudioInstance      *bool                                 `json:"parametricPartStudioInstance,omitempty"`
+	PartInstance                      *bool                                 `json:"partInstance,omitempty"`
+	Releasable                        *bool                                 `json:"releasable,omitempty"`
+	RevisionCustomData                *BTRevisionCustomData2090             `json:"revisionCustomData,omitempty"`
+	StandardContent                   *bool                                 `json:"standardContent,omitempty"`
+	StandardContentParametersId       *string                               `json:"standardContentParametersId,omitempty"`
+	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
+	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured                   *bool                                       `json:"suppressionConfigured,omitempty"`
 	SuppressionState                        *BTMSuppressionState1924                    `json:"suppressionState,omitempty"`
 	ValidRevisionReference                  *bool                                       `json:"validRevisionReference,omitempty"`

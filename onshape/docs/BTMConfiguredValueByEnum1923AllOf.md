@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **EnumName** | Pointer to **string** |  | [optional] 
 **EnumValue** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetEnumValue sets EnumValue field to given value.
 `func (o *BTMConfiguredValueByEnum1923AllOf) HasEnumValue() bool`
 
 HasEnumValue returns a boolean if a field has been set.
+
+### GetImportMicroversion
+
+`func (o *BTMConfiguredValueByEnum1923AllOf) GetImportMicroversion() string`
+
+GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
+
+### GetImportMicroversionOk
+
+`func (o *BTMConfiguredValueByEnum1923AllOf) GetImportMicroversionOk() (*string, bool)`
+
+GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportMicroversion
+
+`func (o *BTMConfiguredValueByEnum1923AllOf) SetImportMicroversion(v string)`
+
+SetImportMicroversion sets ImportMicroversion field to given value.
+
+### HasImportMicroversion
+
+`func (o *BTMConfiguredValueByEnum1923AllOf) HasImportMicroversion() bool`
+
+HasImportMicroversion returns a boolean if a field has been set.
 
 ### GetNamespace
 

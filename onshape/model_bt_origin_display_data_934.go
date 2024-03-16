@@ -16,6 +16,7 @@ import (
 
 // BTOriginDisplayData934 struct for BTOriginDisplayData934
 type BTOriginDisplayData934 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 	Hidden *bool   `json:"hidden,omitempty"`
 }

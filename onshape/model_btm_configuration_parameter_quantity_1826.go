@@ -16,17 +16,18 @@ import (
 
 // BTMConfigurationParameterQuantity1826 struct for BTMConfigurationParameterQuantity1826
 type BTMConfigurationParameterQuantity1826 struct {
-	BtType               *string                        `json:"btType,omitempty"`
-	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
-	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
-	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
-	NodeId               *string                        `json:"nodeId,omitempty"`
-	ParameterId          *string                        `json:"parameterId,omitempty"`
-	ParameterName        *string                        `json:"parameterName,omitempty"`
-	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid                *bool                          `json:"valid,omitempty"`
-	QuantityType         *GBTQuantityType               `json:"quantityType,omitempty"`
-	RangeAndDefault      *BTQuantityRange181            `json:"rangeAndDefault,omitempty"`
+	BtType               *string       `json:"btType,omitempty"`
+	GeneratedParameterId *BTTreeNode20 `json:"generatedParameterId,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                        `json:"importMicroversion,omitempty"`
+	IsCosmetic         *bool                          `json:"isCosmetic,omitempty"`
+	NodeId             *string                        `json:"nodeId,omitempty"`
+	ParameterId        *string                        `json:"parameterId,omitempty"`
+	ParameterName      *string                        `json:"parameterName,omitempty"`
+	ParameterType      *GBTConfigurationParameterType `json:"parameterType,omitempty"`
+	Valid              *bool                          `json:"valid,omitempty"`
+	QuantityType       *GBTQuantityType               `json:"quantityType,omitempty"`
+	RangeAndDefault    *BTQuantityRange181            `json:"rangeAndDefault,omitempty"`
 }
 
 // NewBTMConfigurationParameterQuantity1826 instantiates a new BTMConfigurationParameterQuantity1826 object

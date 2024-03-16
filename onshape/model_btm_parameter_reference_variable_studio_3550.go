@@ -24,11 +24,14 @@ type BTMParameterReferenceVariableStudio3550 struct {
 	ElementLibraryData *BTElementLibraryReferenceData3133 `json:"elementLibraryData,omitempty"`
 	FeatureScriptType  *string                            `json:"featureScriptType,omitempty"`
 	Ids                []string                           `json:"ids,omitempty"`
-	ImportMicroversion *string                            `json:"importMicroversion,omitempty"`
-	MicroversioId      *string                            `json:"microversioId,omitempty"`
-	Namespace          *string                            `json:"namespace,omitempty"`
-	NodeId             *string                            `json:"nodeId,omitempty"`
-	ParameterId        *string                            `json:"parameterId,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	MicroversioId      *string `json:"microversioId,omitempty"`
+	Namespace          *string `json:"namespace,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string `json:"parameterId,omitempty"`
 }
 
 // NewBTMParameterReferenceVariableStudio3550 instantiates a new BTMParameterReferenceVariableStudio3550 object

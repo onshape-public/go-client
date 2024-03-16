@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AppearancePropertyNodeId** | Pointer to **string** | Identifies the application of the appearance. Faces that share a value were assigned an appearance together. | [optional] 
 **Area** | Pointer to **float64** |  | [optional] 
 **Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FaceProperties** | Pointer to [**BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Loops** | Pointer to [**[]BTExportModelLoop1182**](BTExportModelLoop1182.md) |  | [optional] 

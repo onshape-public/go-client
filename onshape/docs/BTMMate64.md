@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **MateConnectorQueryList** | Pointer to [**BTMParameterQueryWithOccurrenceList67**](BTMParameterQueryWithOccurrenceList67.md) |  | [optional] 
 **MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **MateType** | Pointer to [**GBTMateType**](GBTMateType.md) |  | [optional] 

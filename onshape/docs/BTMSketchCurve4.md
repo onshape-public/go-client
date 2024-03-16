@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CenterId** | Pointer to **string** |  | [optional] 
 **Geometry** | Pointer to [**BTCurveGeometry114**](BTCurveGeometry114.md) |  | [optional] 
 **InternalIds** | Pointer to **[]string** |  | [optional] 

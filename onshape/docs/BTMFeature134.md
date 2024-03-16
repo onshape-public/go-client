@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
-**FeatureId** | Pointer to **string** |  | [optional] 
-**FeatureType** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
-**ReturnAfterSubfeatures** | Pointer to **bool** |  | [optional] 
-**SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
-**Suppressed** | Pointer to **bool** |  | [optional] 
-**SuppressionConfigured** | Pointer to **bool** |  | [optional] 
-**VariableStudioReference** | Pointer to **bool** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**FeatureId** | Pointer to **string** | Unique ID of the feature instance within this Part Studio. | [optional] 
+**FeatureType** | Pointer to **string** | The name of the feature spec that this feature instantiates. | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
+**Name** | Pointer to **string** | User-visible name of the feature. | [optional] 
+**Namespace** | Pointer to **string** | Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of &#x60;\&quot;\&quot;&#x60;. Custom features identify the Feature Studio that contains the definition. | [optional] 
+**NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
+**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) | A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation. | [optional] 
+**ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
+**SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
+**Suppressed** | Pointer to **bool** | If &#x60;true&#x60;, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list. | [optional] 
+**SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
+**VariableStudioReference** | Pointer to **bool** | If &#x60;true&#x60;, the feature references a Variable Studio. | [optional] 
 
 ## Methods
 

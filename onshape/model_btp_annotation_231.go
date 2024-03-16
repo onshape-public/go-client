@@ -16,7 +16,8 @@ import (
 
 // BTPAnnotation231 struct for BTPAnnotation231
 type BTPAnnotation231 struct {
-	Atomic              *bool               `json:"atomic,omitempty"`
+	Atomic *bool `json:"atomic,omitempty"`
+	// Type of JSON object.
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ExpressionErrorInfo** | Pointer to [**BTParameterExpressionErrorInfo2037**](BTParameterExpressionErrorInfo2037.md) |  | [optional] 
 **Level** | Pointer to [**GBTNoticeLevel**](GBTNoticeLevel.md) |  | [optional] 
 **LocationInfos** | Pointer to [**[]BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 

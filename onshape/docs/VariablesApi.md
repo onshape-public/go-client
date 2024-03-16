@@ -271,7 +271,7 @@ func main() {
     wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string |  (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
     includeValuesAndReferencedVariables := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** |  | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
  **includeValuesAndReferencedVariables** | **bool** |  | [default to false]
 
 ### Return type

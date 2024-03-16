@@ -16,7 +16,8 @@ import (
 
 // BTBillOfMaterialsUniqueItemId2029 struct for BTBillOfMaterialsUniqueItemId2029
 type BTBillOfMaterialsUniqueItemId2029 struct {
-	ApiConfiguration                       *string                `json:"apiConfiguration,omitempty"`
+	ApiConfiguration *string `json:"apiConfiguration,omitempty"`
+	// Type of JSON object.
 	BtType                                 *string                `json:"btType,omitempty"`
 	IsStandardContent                      *bool                  `json:"isStandardContent,omitempty"`
 	ItemDefinitionId                       *string                `json:"itemDefinitionId,omitempty"`

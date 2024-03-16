@@ -16,6 +16,7 @@ import (
 
 // BTMicroversionIdInterval367 struct for BTMicroversionIdInterval367
 type BTMicroversionIdInterval367 struct {
+	// Type of JSON object.
 	BtType  *string              `json:"btType,omitempty"`
 	From    *BTMicroversionId366 `json:"from,omitempty"`
 	To      *BTMicroversionId366 `json:"to,omitempty"`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Ascent** | Pointer to **float64** |  | [optional] 
 **BaselineDirectionX** | Pointer to **float64** |  | [optional] 
 **BaselineDirectionY** | Pointer to **float64** |  | [optional] 

@@ -20,6 +20,7 @@ type BTDocumentMergeInfo struct {
 	OverwrittenElements          []BTDocumentElementInfo `json:"overwrittenElements,omitempty"`
 	ParentDocumentMicroversionId *string                 `json:"parentDocumentMicroversionId,omitempty"`
 	ResultDocumentMicroversionId *string                 `json:"resultDocumentMicroversionId,omitempty"`
+	SourceDocumentMicroversionId *string                 `json:"sourceDocumentMicroversionId,omitempty"`
 }
 
 // NewBTDocumentMergeInfo instantiates a new BTDocumentMergeInfo object
@@ -167,6 +168,38 @@ func (o *BTDocumentMergeInfo) SetResultDocumentMicroversionId(v string) {
 	o.ResultDocumentMicroversionId = &v
 }
 
+// GetSourceDocumentMicroversionId returns the SourceDocumentMicroversionId field value if set, zero value otherwise.
+func (o *BTDocumentMergeInfo) GetSourceDocumentMicroversionId() string {
+	if o == nil || o.SourceDocumentMicroversionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceDocumentMicroversionId
+}
+
+// GetSourceDocumentMicroversionIdOk returns a tuple with the SourceDocumentMicroversionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentMergeInfo) GetSourceDocumentMicroversionIdOk() (*string, bool) {
+	if o == nil || o.SourceDocumentMicroversionId == nil {
+		return nil, false
+	}
+	return o.SourceDocumentMicroversionId, true
+}
+
+// HasSourceDocumentMicroversionId returns a boolean if a field has been set.
+func (o *BTDocumentMergeInfo) HasSourceDocumentMicroversionId() bool {
+	if o != nil && o.SourceDocumentMicroversionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceDocumentMicroversionId gets a reference to the given string and assigns it to the SourceDocumentMicroversionId field.
+func (o *BTDocumentMergeInfo) SetSourceDocumentMicroversionId(v string) {
+	o.SourceDocumentMicroversionId = &v
+}
+
 func (o BTDocumentMergeInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.LibraryVersionMismatch != nil {
@@ -180,6 +213,9 @@ func (o BTDocumentMergeInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ResultDocumentMicroversionId != nil {
 		toSerialize["resultDocumentMicroversionId"] = o.ResultDocumentMicroversionId
+	}
+	if o.SourceDocumentMicroversionId != nil {
+		toSerialize["sourceDocumentMicroversionId"] = o.SourceDocumentMicroversionId
 	}
 	return json.Marshal(toSerialize)
 }

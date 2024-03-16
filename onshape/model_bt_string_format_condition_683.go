@@ -339,6 +339,7 @@ func (v *NullableBTStringFormatCondition683) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTStringFormatCondition683 struct {
+	// Type of JSON object.
 	BtType                        *string `json:"btType,omitempty"`
 	ErrorMessage                  *string `json:"errorMessage,omitempty"`
 	ShouldResetValueWhenConfirmed *bool   `json:"shouldResetValueWhenConfirmed,omitempty"`

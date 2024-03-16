@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Configuration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 

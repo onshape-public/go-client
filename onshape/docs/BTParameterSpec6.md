@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ColumnName** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **IconUri** | Pointer to **string** |  | [optional] 

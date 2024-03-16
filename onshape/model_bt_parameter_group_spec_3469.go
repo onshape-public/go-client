@@ -16,16 +16,17 @@ import (
 
 // BTParameterGroupSpec3469 struct for BTParameterGroupSpec3469
 type BTParameterGroupSpec3469 struct {
-	AdditionalLocalizedStrings *int32   `json:"additionalLocalizedStrings,omitempty"`
-	BtType                     *string  `json:"btType,omitempty"`
-	CollapsedByDefault         *bool    `json:"collapsedByDefault,omitempty"`
-	DrivingParameterId         *string  `json:"drivingParameterId,omitempty"`
-	GroupId                    *string  `json:"groupId,omitempty"`
-	GroupName                  *string  `json:"groupName,omitempty"`
-	GroupOrParameterIds        []string `json:"groupOrParameterIds,omitempty"`
-	LocalizableName            *string  `json:"localizableName,omitempty"`
-	LocalizedName              *string  `json:"localizedName,omitempty"`
-	StringsToLocalize          []string `json:"stringsToLocalize,omitempty"`
+	AdditionalLocalizedStrings *int32 `json:"additionalLocalizedStrings,omitempty"`
+	// Type of JSON object.
+	BtType              *string  `json:"btType,omitempty"`
+	CollapsedByDefault  *bool    `json:"collapsedByDefault,omitempty"`
+	DrivingParameterId  *string  `json:"drivingParameterId,omitempty"`
+	GroupId             *string  `json:"groupId,omitempty"`
+	GroupName           *string  `json:"groupName,omitempty"`
+	GroupOrParameterIds []string `json:"groupOrParameterIds,omitempty"`
+	LocalizableName     *string  `json:"localizableName,omitempty"`
+	LocalizedName       *string  `json:"localizedName,omitempty"`
+	StringsToLocalize   []string `json:"stringsToLocalize,omitempty"`
 }
 
 // NewBTParameterGroupSpec3469 instantiates a new BTParameterGroupSpec3469 object

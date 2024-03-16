@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
@@ -103,6 +104,31 @@ SetEntityIdAndReplaceInDependentFields sets EntityIdAndReplaceInDependentFields 
 `func (o *BTMSketchEntity3AllOf) HasEntityIdAndReplaceInDependentFields() bool`
 
 HasEntityIdAndReplaceInDependentFields returns a boolean if a field has been set.
+
+### GetImportMicroversion
+
+`func (o *BTMSketchEntity3AllOf) GetImportMicroversion() string`
+
+GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
+
+### GetImportMicroversionOk
+
+`func (o *BTMSketchEntity3AllOf) GetImportMicroversionOk() (*string, bool)`
+
+GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportMicroversion
+
+`func (o *BTMSketchEntity3AllOf) SetImportMicroversion(v string)`
+
+SetImportMicroversion sets ImportMicroversion field to given value.
+
+### HasImportMicroversion
+
+`func (o *BTMSketchEntity3AllOf) HasImportMicroversion() bool`
+
+HasImportMicroversion returns a boolean if a field has been set.
 
 ### GetNamespace
 

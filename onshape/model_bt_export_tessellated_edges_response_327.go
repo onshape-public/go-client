@@ -16,9 +16,10 @@ import (
 
 // BTExportTessellatedEdgesResponse327 struct for BTExportTessellatedEdgesResponse327
 type BTExportTessellatedEdgesResponse327 struct {
-	Bodies    []BTExportTessellatedBody3398 `json:"bodies,omitempty"`
-	BtType    *string                       `json:"btType,omitempty"`
-	ErrorEnum *GBTErrorStringEnum           `json:"errorEnum,omitempty"`
+	Bodies []BTExportTessellatedBody3398 `json:"bodies,omitempty"`
+	// Type of JSON object.
+	BtType    *string             `json:"btType,omitempty"`
+	ErrorEnum *GBTErrorStringEnum `json:"errorEnum,omitempty"`
 }
 
 // NewBTExportTessellatedEdgesResponse327 instantiates a new BTExportTessellatedEdgesResponse327 object

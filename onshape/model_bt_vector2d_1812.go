@@ -16,6 +16,7 @@ import (
 
 // BTVector2d1812 struct for BTVector2d1812
 type BTVector2d1812 struct {
+	// Type of JSON object.
 	BtType *string  `json:"btType,omitempty"`
 	X      *float64 `json:"x,omitempty"`
 	Y      *float64 `json:"y,omitempty"`

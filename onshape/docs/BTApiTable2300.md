@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Columns** | Pointer to [**[]BTApiTableColumn3141**](BTApiTableColumn3141.md) |  | [optional] 
 **EntityIds** | Pointer to **[]string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 

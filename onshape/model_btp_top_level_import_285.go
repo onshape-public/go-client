@@ -34,11 +34,12 @@ type BTPTopLevelImport285 struct {
 	SpaceAfterExport                *BTPSpace10                 `json:"spaceAfterExport,omitempty"`
 	SymbolName                      *BTPIdentifier8             `json:"symbolName,omitempty"`
 	CombinedNamespacePathAndVersion *string                     `json:"combinedNamespacePathAndVersion,omitempty"`
-	ImportMicroversion              *string                     `json:"importMicroversion,omitempty"`
-	ModuleId                        *BTPModuleId235             `json:"moduleId,omitempty"`
-	Namespace                       []BTPIdentifier8            `json:"namespace,omitempty"`
-	NamespaceString                 *string                     `json:"namespaceString,omitempty"`
-	SpaceBeforeImport               *BTPSpace10                 `json:"spaceBeforeImport,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string          `json:"importMicroversion,omitempty"`
+	ModuleId           *BTPModuleId235  `json:"moduleId,omitempty"`
+	Namespace          []BTPIdentifier8 `json:"namespace,omitempty"`
+	NamespaceString    *string          `json:"namespaceString,omitempty"`
+	SpaceBeforeImport  *BTPSpace10      `json:"spaceBeforeImport,omitempty"`
 }
 
 // NewBTPTopLevelImport285 instantiates a new BTPTopLevelImport285 object

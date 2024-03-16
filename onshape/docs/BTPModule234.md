@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DeepImports** | Pointer to [**map[string][]BTImport**](array.md) |  | [optional] 
 **Imports** | Pointer to [**[]BTPTopLevelImport285**](BTPTopLevelImport285.md) |  | [optional] 
 **IsBlob** | Pointer to **bool** |  | [optional] 

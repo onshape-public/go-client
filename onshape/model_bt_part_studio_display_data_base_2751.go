@@ -801,6 +801,7 @@ func (v *NullableBTPartStudioDisplayDataBase2751) UnmarshalJSON(src []byte) erro
 }
 
 type base_BTPartStudioDisplayDataBase2751 struct {
+	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
 	FromFullElementId                      *BTFullElementId756                           `json:"fromFullElementId,omitempty"`

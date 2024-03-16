@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **BuildDurationMillis** | Pointer to **float64** |  | [optional] 
 **DeletedGeometryMateIds** | Pointer to **[]string** |  | [optional] 
 **DeletedLoads** | Pointer to **[]string** |  | [optional] 

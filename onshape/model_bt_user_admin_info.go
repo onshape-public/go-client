@@ -52,6 +52,7 @@ type BTUserAdminInfo struct {
 	DefaultCompanyName        *string                  `json:"defaultCompanyName,omitempty"`
 	Description               *string                  `json:"description,omitempty"`
 	DeviceInfo                *BTDeviceLoginSecretInfo `json:"deviceInfo,omitempty"`
+	Discounts                 []BTDiscountInfo         `json:"discounts,omitempty"`
 	Enterprise                *bool                    `json:"enterprise,omitempty"`
 	EulaId                    *string                  `json:"eulaId,omitempty"`
 	EulaRequired              *bool                    `json:"eulaRequired,omitempty"`
@@ -1123,6 +1124,38 @@ func (o *BTUserAdminInfo) SetDeviceInfo(v BTDeviceLoginSecretInfo) {
 	o.DeviceInfo = &v
 }
 
+// GetDiscounts returns the Discounts field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetDiscounts() []BTDiscountInfo {
+	if o == nil || o.Discounts == nil {
+		var ret []BTDiscountInfo
+		return ret
+	}
+	return o.Discounts
+}
+
+// GetDiscountsOk returns a tuple with the Discounts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetDiscountsOk() ([]BTDiscountInfo, bool) {
+	if o == nil || o.Discounts == nil {
+		return nil, false
+	}
+	return o.Discounts, true
+}
+
+// HasDiscounts returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasDiscounts() bool {
+	if o != nil && o.Discounts != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDiscounts gets a reference to the given []BTDiscountInfo and assigns it to the Discounts field.
+func (o *BTUserAdminInfo) SetDiscounts(v []BTDiscountInfo) {
+	o.Discounts = v
+}
+
 // GetEnterprise returns the Enterprise field value if set, zero value otherwise.
 func (o *BTUserAdminInfo) GetEnterprise() bool {
 	if o == nil || o.Enterprise == nil {
@@ -2116,6 +2149,9 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeviceInfo != nil {
 		toSerialize["deviceInfo"] = o.DeviceInfo
+	}
+	if o.Discounts != nil {
+		toSerialize["discounts"] = o.Discounts
 	}
 	if o.Enterprise != nil {
 		toSerialize["enterprise"] = o.Enterprise

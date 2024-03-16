@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
+**BtType** | **string** | Type of JSON object. | 
 **UnitToPower** | Pointer to **map[string]int32** |  | [optional] 
 **Value** | Pointer to **float64** |  | [optional] 
 

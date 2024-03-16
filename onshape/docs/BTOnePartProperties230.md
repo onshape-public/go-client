@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
 **AppearanceForNewCell** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ChangedPropertiesSet** | Pointer to **[]string** |  | [optional] 
 **CustomProperties** | Pointer to [**BTPartCustomProperties1338**](BTPartCustomProperties1338.md) |  | [optional] 
 **Material** | Pointer to [**BTPartMaterial1445**](BTPartMaterial1445.md) |  | [optional] 

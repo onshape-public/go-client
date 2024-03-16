@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FeatureStates** | Pointer to [**map[string]BTFeatureState1688**](BTFeatureState1688.md) |  | [optional] 
 **Features** | Pointer to [**[]BTMAssemblyFeature887**](BTMAssemblyFeature887.md) |  | [optional] 
 **IsComplete** | Pointer to **bool** |  | [optional] 

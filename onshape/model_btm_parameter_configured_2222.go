@@ -16,9 +16,12 @@ import (
 
 // BTMParameterConfigured2222 struct for BTMParameterConfigured2222
 type BTMParameterConfigured2222 struct {
-	BtType                             *string                  `json:"btType,omitempty"`
-	ImportMicroversion                 *string                  `json:"importMicroversion,omitempty"`
-	NodeId                             *string                  `json:"nodeId,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
 	ParameterId                        *string                  `json:"parameterId,omitempty"`
 	ConfigurationParameterId           *string                  `json:"configurationParameterId,omitempty"`
 	ConfigurationParameterIdFieldIndex *int32                   `json:"configurationParameterIdFieldIndex,omitempty"`

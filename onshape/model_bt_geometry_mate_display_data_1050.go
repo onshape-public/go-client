@@ -16,6 +16,7 @@ import (
 
 // BTGeometryMateDisplayData1050 struct for BTGeometryMateDisplayData1050
 type BTGeometryMateDisplayData1050 struct {
+	// Type of JSON object.
 	BtType                *string                          `json:"btType,omitempty"`
 	FirstDeterministicId  *string                          `json:"firstDeterministicId,omitempty"`
 	FirstOccurrence       *BTOccurrence74                  `json:"firstOccurrence,omitempty"`

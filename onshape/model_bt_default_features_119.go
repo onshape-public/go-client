@@ -16,6 +16,7 @@ import (
 
 // BTDefaultFeatures119 struct for BTDefaultFeatures119
 type BTDefaultFeatures119 struct {
+	// Type of JSON object.
 	BtType   *string         `json:"btType,omitempty"`
 	Children []BTMFeature134 `json:"children,omitempty"`
 }

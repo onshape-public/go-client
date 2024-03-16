@@ -16,6 +16,7 @@ import (
 
 // BTMSketchConstraint2 struct for BTMSketchConstraint2
 type BTMSketchConstraint2 struct {
+	// Type of JSON object.
 	BtType                              *string            `json:"btType,omitempty"`
 	ConstraintType                      *GBTConstraintType `json:"constraintType,omitempty"`
 	DrivenDimension                     *bool              `json:"drivenDimension,omitempty"`
@@ -25,15 +26,16 @@ type BTMSketchConstraint2 struct {
 	HasOffsetData2                      *bool              `json:"hasOffsetData2,omitempty"`
 	HasPierceParameter_                 *bool              `json:"hasPierceParameter,omitempty"`
 	HelpParameters                      []float64          `json:"helpParameters,omitempty"`
-	ImportMicroversion                  *string            `json:"importMicroversion,omitempty"`
-	Namespace                           *string            `json:"namespace,omitempty"`
-	NodeId                              *string            `json:"nodeId,omitempty"`
-	OffsetDistance1                     *float64           `json:"offsetDistance1,omitempty"`
-	OffsetDistance2                     *float64           `json:"offsetDistance2,omitempty"`
-	OffsetOrientation1                  *bool              `json:"offsetOrientation1,omitempty"`
-	OffsetOrientation2                  *bool              `json:"offsetOrientation2,omitempty"`
-	Parameters                          []BTMParameter1    `json:"parameters,omitempty"`
-	PierceParameter                     *float64           `json:"pierceParameter,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string         `json:"importMicroversion,omitempty"`
+	Namespace          *string         `json:"namespace,omitempty"`
+	NodeId             *string         `json:"nodeId,omitempty"`
+	OffsetDistance1    *float64        `json:"offsetDistance1,omitempty"`
+	OffsetDistance2    *float64        `json:"offsetDistance2,omitempty"`
+	OffsetOrientation1 *bool           `json:"offsetOrientation1,omitempty"`
+	OffsetOrientation2 *bool           `json:"offsetOrientation2,omitempty"`
+	Parameters         []BTMParameter1 `json:"parameters,omitempty"`
+	PierceParameter    *float64        `json:"pierceParameter,omitempty"`
 }
 
 // NewBTMSketchConstraint2 instantiates a new BTMSketchConstraint2 object

@@ -2941,6 +2941,14 @@
 
 * `GBTErrorStringEnumBodyDraftInvalidPartReference` (value: `"BODY_DRAFT_INVALID_PART_REFERENCE"`)
 
+* `GBTErrorStringEnumHoleCannotDetermineTappedBody` (value: `"HOLE_CANNOT_DETERMINE_TAPPED_BODY"`)
+
+* `GBTErrorStringEnumHoleParamsOverriddenInfo` (value: `"HOLE_PARAMS_OVERRIDDEN_INFO"`)
+
+* `GBTErrorStringEnumHoleTapDiaTooLargeOrEqual` (value: `"HOLE_TAP_DIA_TOO_LARGE_OR_EQUAL"`)
+
+* `GBTErrorStringEnumSplitAsModificationMultipleResults` (value: `"SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

@@ -22,12 +22,13 @@ type BTMIndividualOccurrenceQuery626 struct {
 	FullPathAsString           *string                    `json:"fullPathAsString,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
-	NodeId                     *string                    `json:"nodeId,omitempty"`
-	Occurrence                 *BTOccurrence74            `json:"occurrence,omitempty"`
-	Path                       []string                   `json:"path,omitempty"`
-	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString                *string                    `json:"queryString,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
+	NodeId             *string                    `json:"nodeId,omitempty"`
+	Occurrence         *BTOccurrence74            `json:"occurrence,omitempty"`
+	Path               []string                   `json:"path,omitempty"`
+	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString        *string                    `json:"queryString,omitempty"`
 }
 
 // NewBTMIndividualOccurrenceQuery626 instantiates a new BTMIndividualOccurrenceQuery626 object

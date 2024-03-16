@@ -1672,7 +1672,8 @@ func (v *NullableBTInstanceBase2263) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTInstanceBase2263 struct {
-	BtType                            *string                               `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
@@ -1695,10 +1696,11 @@ type base_BTInstanceBase2263 struct {
 	StandardContentParametersId       *string                               `json:"standardContentParametersId,omitempty"`
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
-	SuppressionConfigured             *bool                                 `json:"suppressionConfigured,omitempty"`
-	SuppressionState                  *BTMSuppressionState1924              `json:"suppressionState,omitempty"`
-	ValidRevisionReference            *bool                                 `json:"validRevisionReference,omitempty"`
-	Version                           *int32                                `json:"version,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
+	SuppressionConfigured  *bool                    `json:"suppressionConfigured,omitempty"`
+	SuppressionState       *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
+	ValidRevisionReference *bool                    `json:"validRevisionReference,omitempty"`
+	Version                *int32                   `json:"version,omitempty"`
 }
 
 // Newbase_BTInstanceBase2263 instantiates a new base_BTInstanceBase2263 object

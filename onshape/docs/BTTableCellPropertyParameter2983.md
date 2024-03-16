@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **IsUnchanged** | Pointer to **bool** |  | [optional] 
 **OverrideStatusType** | Pointer to [**GBTMetadataOverrideStatusType**](GBTMetadataOverrideStatusType.md) |  | [optional] 
 **PropertySourceType** | Pointer to [**GBTMetadataSourceType**](GBTMetadataSourceType.md) |  | [optional] 

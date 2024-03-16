@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
+**BtType** | **string** | Type of JSON object. | 
 **Value** | Pointer to **bool** |  | [optional] 
 
 ## Methods

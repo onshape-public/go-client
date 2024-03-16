@@ -283,8 +283,9 @@ func (v *NullableBTExportModelProperties3216) UnmarshalJSON(src []byte) error {
 
 type base_BTExportModelProperties3216 struct {
 	Appearance *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
-	BtType     *string                   `json:"btType,omitempty"`
-	Name       *string                   `json:"name,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
+	Name   *string `json:"name,omitempty"`
 }
 
 // Newbase_BTExportModelProperties3216 instantiates a new base_BTExportModelProperties3216 object

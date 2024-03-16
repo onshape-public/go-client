@@ -1838,7 +1838,7 @@ func (r ApiGetDocumentsRequest) Execute() (*BTGlobalTreeNodeListResponse, *http.
 }
 
 /*
-GetDocuments Retrieve a document.
+GetDocuments Get a list of documents that meet the criteria you specify.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetDocumentsRequest
@@ -3676,7 +3676,7 @@ func (a *DocumentApiService) ShareWithSupportExecute(r ApiShareWithSupportReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSyncApplicationElementsRequest struct {
+type ApiSyncAppElementsRequest struct {
 	ctx                    context.Context
 	ApiService             *DocumentApiService
 	did                    string
@@ -3684,25 +3684,25 @@ type ApiSyncApplicationElementsRequest struct {
 	bTSyncAppElementParams *BTSyncAppElementParams
 }
 
-func (r ApiSyncApplicationElementsRequest) BTSyncAppElementParams(bTSyncAppElementParams BTSyncAppElementParams) ApiSyncApplicationElementsRequest {
+func (r ApiSyncAppElementsRequest) BTSyncAppElementParams(bTSyncAppElementParams BTSyncAppElementParams) ApiSyncAppElementsRequest {
 	r.bTSyncAppElementParams = &bTSyncAppElementParams
 	return r
 }
 
-func (r ApiSyncApplicationElementsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.SyncApplicationElementsExecute(r)
+func (r ApiSyncAppElementsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.SyncAppElementsExecute(r)
 }
 
 /*
-SyncApplicationElements Method for SyncApplicationElements
+SyncAppElements Method for SyncAppElements
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
  @param wid
- @return ApiSyncApplicationElementsRequest
+ @return ApiSyncAppElementsRequest
 */
-func (a *DocumentApiService) SyncApplicationElements(ctx context.Context, did string, wid string) ApiSyncApplicationElementsRequest {
-	return ApiSyncApplicationElementsRequest{
+func (a *DocumentApiService) SyncAppElements(ctx context.Context, did string, wid string) ApiSyncAppElementsRequest {
+	return ApiSyncAppElementsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		did:        did,
@@ -3712,7 +3712,7 @@ func (a *DocumentApiService) SyncApplicationElements(ctx context.Context, did st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DocumentApiService) SyncApplicationElementsExecute(r ApiSyncApplicationElementsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentApiService) SyncAppElementsExecute(r ApiSyncAppElementsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3720,7 +3720,7 @@ func (a *DocumentApiService) SyncApplicationElementsExecute(r ApiSyncApplication
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.SyncApplicationElements")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.SyncAppElements")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

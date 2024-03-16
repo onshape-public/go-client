@@ -1751,38 +1751,39 @@ func (v *NullableBTFeatureSpec129) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTFeatureSpec129 struct {
-	AdditionalLocalizedStrings *int32                       `json:"additionalLocalizedStrings,omitempty"`
-	AllParameters              []BTParameterSpec6           `json:"allParameters,omitempty"`
-	BtType                     *string                      `json:"btType,omitempty"`
-	ComputedPartPropertySpec   *bool                        `json:"computedPartPropertySpec,omitempty"`
-	DescriptionImageUri        *string                      `json:"descriptionImageUri,omitempty"`
-	EditingLogic               *BTEditingLogic2350          `json:"editingLogic,omitempty"`
-	FeatureNameTemplate        *string                      `json:"featureNameTemplate,omitempty"`
-	FeatureType                *string                      `json:"featureType,omitempty"`
-	FeatureTypeDescription     *string                      `json:"featureTypeDescription,omitempty"`
-	FeatureTypeName            *string                      `json:"featureTypeName,omitempty"`
-	FilterSelectors            []string                     `json:"filterSelectors,omitempty"`
-	FullFeatureType            *string                      `json:"fullFeatureType,omitempty"`
-	Groups                     []BTParameterGroupSpec3469   `json:"groups,omitempty"`
-	IconUri                    *string                      `json:"iconUri,omitempty"`
-	LanguageVersion            *int32                       `json:"languageVersion,omitempty"`
-	LinkedLocationName         *string                      `json:"linkedLocationName,omitempty"`
-	LocalizableName            *string                      `json:"localizableName,omitempty"`
-	LocalizedName              *string                      `json:"localizedName,omitempty"`
-	LocationInfos              []BTLocationInfo226          `json:"locationInfos,omitempty"`
-	ManipulatorChangeFunction  *string                      `json:"manipulatorChangeFunction,omitempty"`
-	Namespace                  *string                      `json:"namespace,omitempty"`
-	NamespaceIncludingEnums    *string                      `json:"namespaceIncludingEnums,omitempty"`
-	NamespaceTheSource         *bool                        `json:"namespaceTheSource,omitempty"`
-	ParameterIdToSpec          *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
-	Parameters                 []BTParameterSpec6           `json:"parameters,omitempty"`
-	Signature                  *string                      `json:"signature,omitempty"`
-	SourceLocation             *BTLocationInfo226           `json:"sourceLocation,omitempty"`
-	SourceMicroversionId       *string                      `json:"sourceMicroversionId,omitempty"`
-	StringsToLocalize          []string                     `json:"stringsToLocalize,omitempty"`
-	TableSpec                  *bool                        `json:"tableSpec,omitempty"`
-	TooltipTemplate            *string                      `json:"tooltipTemplate,omitempty"`
-	UiHints                    []GBTUIHint                  `json:"uiHints,omitempty"`
+	AdditionalLocalizedStrings *int32             `json:"additionalLocalizedStrings,omitempty"`
+	AllParameters              []BTParameterSpec6 `json:"allParameters,omitempty"`
+	// Type of JSON object.
+	BtType                    *string                      `json:"btType,omitempty"`
+	ComputedPartPropertySpec  *bool                        `json:"computedPartPropertySpec,omitempty"`
+	DescriptionImageUri       *string                      `json:"descriptionImageUri,omitempty"`
+	EditingLogic              *BTEditingLogic2350          `json:"editingLogic,omitempty"`
+	FeatureNameTemplate       *string                      `json:"featureNameTemplate,omitempty"`
+	FeatureType               *string                      `json:"featureType,omitempty"`
+	FeatureTypeDescription    *string                      `json:"featureTypeDescription,omitempty"`
+	FeatureTypeName           *string                      `json:"featureTypeName,omitempty"`
+	FilterSelectors           []string                     `json:"filterSelectors,omitempty"`
+	FullFeatureType           *string                      `json:"fullFeatureType,omitempty"`
+	Groups                    []BTParameterGroupSpec3469   `json:"groups,omitempty"`
+	IconUri                   *string                      `json:"iconUri,omitempty"`
+	LanguageVersion           *int32                       `json:"languageVersion,omitempty"`
+	LinkedLocationName        *string                      `json:"linkedLocationName,omitempty"`
+	LocalizableName           *string                      `json:"localizableName,omitempty"`
+	LocalizedName             *string                      `json:"localizedName,omitempty"`
+	LocationInfos             []BTLocationInfo226          `json:"locationInfos,omitempty"`
+	ManipulatorChangeFunction *string                      `json:"manipulatorChangeFunction,omitempty"`
+	Namespace                 *string                      `json:"namespace,omitempty"`
+	NamespaceIncludingEnums   *string                      `json:"namespaceIncludingEnums,omitempty"`
+	NamespaceTheSource        *bool                        `json:"namespaceTheSource,omitempty"`
+	ParameterIdToSpec         *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
+	Parameters                []BTParameterSpec6           `json:"parameters,omitempty"`
+	Signature                 *string                      `json:"signature,omitempty"`
+	SourceLocation            *BTLocationInfo226           `json:"sourceLocation,omitempty"`
+	SourceMicroversionId      *string                      `json:"sourceMicroversionId,omitempty"`
+	StringsToLocalize         []string                     `json:"stringsToLocalize,omitempty"`
+	TableSpec                 *bool                        `json:"tableSpec,omitempty"`
+	TooltipTemplate           *string                      `json:"tooltipTemplate,omitempty"`
+	UiHints                   []GBTUIHint                  `json:"uiHints,omitempty"`
 }
 
 // Newbase_BTFeatureSpec129 instantiates a new base_BTFeatureSpec129 object

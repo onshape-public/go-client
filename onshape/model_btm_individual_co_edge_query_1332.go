@@ -21,15 +21,16 @@ type BTMIndividualCoEdgeQuery1332 struct {
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
-	NodeId                     *string                    `json:"nodeId,omitempty"`
-	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString                *string                    `json:"queryString,omitempty"`
-	PersistentQuery            *BTPStatement269           `json:"persistentQuery,omitempty"`
-	QueryStatement             *BTPStatement269           `json:"queryStatement,omitempty"`
-	VariableName               *BTMIndividualQuery138     `json:"variableName,omitempty"`
-	EdgeQuery                  *BTMIndividualQuery138     `json:"edgeQuery,omitempty"`
-	FaceQuery                  *BTMIndividualQuery138     `json:"faceQuery,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
+	NodeId             *string                    `json:"nodeId,omitempty"`
+	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString        *string                    `json:"queryString,omitempty"`
+	PersistentQuery    *BTPStatement269           `json:"persistentQuery,omitempty"`
+	QueryStatement     *BTPStatement269           `json:"queryStatement,omitempty"`
+	VariableName       *BTMIndividualQuery138     `json:"variableName,omitempty"`
+	EdgeQuery          *BTMIndividualQuery138     `json:"edgeQuery,omitempty"`
+	FaceQuery          *BTMIndividualQuery138     `json:"faceQuery,omitempty"`
 }
 
 // NewBTMIndividualCoEdgeQuery1332 instantiates a new BTMIndividualCoEdgeQuery1332 object

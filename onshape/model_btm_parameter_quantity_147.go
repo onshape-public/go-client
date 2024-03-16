@@ -532,14 +532,17 @@ func (v *NullableBTMParameterQuantity147) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMParameterQuantity147 struct {
-	BtType             *string  `json:"btType,omitempty"`
-	ImportMicroversion *string  `json:"importMicroversion,omitempty"`
-	NodeId             *string  `json:"nodeId,omitempty"`
-	ParameterId        *string  `json:"parameterId,omitempty"`
-	Expression         *string  `json:"expression,omitempty"`
-	IsInteger          *bool    `json:"isInteger,omitempty"`
-	Units              *string  `json:"units,omitempty"`
-	Value              *float64 `json:"value,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string  `json:"parameterId,omitempty"`
+	Expression  *string  `json:"expression,omitempty"`
+	IsInteger   *bool    `json:"isInteger,omitempty"`
+	Units       *string  `json:"units,omitempty"`
+	Value       *float64 `json:"value,omitempty"`
 }
 
 // Newbase_BTMParameterQuantity147 instantiates a new base_BTMParameterQuantity147 object

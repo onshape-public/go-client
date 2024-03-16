@@ -16,6 +16,7 @@ import (
 
 // BTTreeEdit13 struct for BTTreeEdit13
 type BTTreeEdit13 struct {
+	// Type of JSON object.
 	BtType   *string        `json:"btType,omitempty"`
 	EditType *EditType      `json:"editType,omitempty"`
 	NewNodes []BTTreeNode20 `json:"newNodes,omitempty"`

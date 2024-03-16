@@ -21,11 +21,12 @@ type BTMInContextQuery2254 struct {
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
-	NodeId                     *string                    `json:"nodeId,omitempty"`
-	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString                *string                    `json:"queryString,omitempty"`
-	Path                       []string                   `json:"path,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
+	NodeId             *string                    `json:"nodeId,omitempty"`
+	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString        *string                    `json:"queryString,omitempty"`
+	Path               []string                   `json:"path,omitempty"`
 }
 
 // NewBTMInContextQuery2254 instantiates a new BTMInContextQuery2254 object

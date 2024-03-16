@@ -16,7 +16,8 @@ import (
 
 // BTAssemblyPattern1974 struct for BTAssemblyPattern1974
 type BTAssemblyPattern1974 struct {
-	BtType                            *string                               `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
@@ -39,14 +40,15 @@ type BTAssemblyPattern1974 struct {
 	StandardContentParametersId       *string                               `json:"standardContentParametersId,omitempty"`
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
-	SuppressionConfigured             *bool                                 `json:"suppressionConfigured,omitempty"`
-	SuppressionState                  *BTMSuppressionState1924              `json:"suppressionState,omitempty"`
-	ValidRevisionReference            *bool                                 `json:"validRevisionReference,omitempty"`
-	Version                           *int32                                `json:"version,omitempty"`
-	Feature                           *BTMAssemblyFeature887                `json:"feature,omitempty"`
-	FeatureId                         *string                               `json:"featureId,omitempty"`
-	InstanceControlNodes              []BTInstanceControlNode750            `json:"instanceControlNodes,omitempty"`
-	PatternFeature                    *BTMAssemblyPatternFeature2241        `json:"patternFeature,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
+	SuppressionConfigured  *bool                          `json:"suppressionConfigured,omitempty"`
+	SuppressionState       *BTMSuppressionState1924       `json:"suppressionState,omitempty"`
+	ValidRevisionReference *bool                          `json:"validRevisionReference,omitempty"`
+	Version                *int32                         `json:"version,omitempty"`
+	Feature                *BTMAssemblyFeature887         `json:"feature,omitempty"`
+	FeatureId              *string                        `json:"featureId,omitempty"`
+	InstanceControlNodes   []BTInstanceControlNode750     `json:"instanceControlNodes,omitempty"`
+	PatternFeature         *BTMAssemblyPatternFeature2241 `json:"patternFeature,omitempty"`
 }
 
 // NewBTAssemblyPattern1974 instantiates a new BTAssemblyPattern1974 object

@@ -301,6 +301,7 @@ func (v *NullableBTImageMapping3821) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTImageMapping3821 struct {
+	// Type of JSON object.
 	BtType           *string         `json:"btType,omitempty"`
 	DeterministicIds []string        `json:"deterministicIds,omitempty"`
 	UvTransform      *BTMatrix3x3340 `json:"uvTransform,omitempty"`

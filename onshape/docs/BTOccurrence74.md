@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FullPathAsString** | Pointer to **string** |  | [optional] 
 **HeadInstanceId** | Pointer to **string** |  | [optional] 
 **OccurrenceWithoutHead** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 

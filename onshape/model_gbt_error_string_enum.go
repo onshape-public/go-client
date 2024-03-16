@@ -1489,6 +1489,10 @@ const (
 	GBTErrorStringEnumBodyDraftInvalidFaceReference                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_FACE_REFERENCE"
 	GBTErrorStringEnumBodyDraftInvalidEdgeReference                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_EDGE_REFERENCE"
 	GBTErrorStringEnumBodyDraftInvalidPartReference                         GBTErrorStringEnum = "BODY_DRAFT_INVALID_PART_REFERENCE"
+	GBTErrorStringEnumHoleCannotDetermineTappedBody                         GBTErrorStringEnum = "HOLE_CANNOT_DETERMINE_TAPPED_BODY"
+	GBTErrorStringEnumHoleParamsOverriddenInfo                              GBTErrorStringEnum = "HOLE_PARAMS_OVERRIDDEN_INFO"
+	GBTErrorStringEnumHoleTapDiaTooLargeOrEqual                             GBTErrorStringEnum = "HOLE_TAP_DIA_TOO_LARGE_OR_EQUAL"
+	GBTErrorStringEnumSplitAsModificationMultipleResults                    GBTErrorStringEnum = "SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2963,6 +2967,10 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"BODY_DRAFT_INVALID_FACE_REFERENCE",
 	"BODY_DRAFT_INVALID_EDGE_REFERENCE",
 	"BODY_DRAFT_INVALID_PART_REFERENCE",
+	"HOLE_CANNOT_DETERMINE_TAPPED_BODY",
+	"HOLE_PARAMS_OVERRIDDEN_INFO",
+	"HOLE_TAP_DIA_TOO_LARGE_OR_EQUAL",
+	"SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS",
 	"UNKNOWN",
 }
 

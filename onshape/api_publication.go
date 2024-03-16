@@ -375,6 +375,124 @@ func (a *PublicationApiService) CreatePublicationExecute(r ApiCreatePublicationR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiDeletePublicationRequest struct {
+	ctx        context.Context
+	ApiService *PublicationApiService
+	pid        string
+	forever    *bool
+}
+
+// If true, publication is deleted forever.
+func (r ApiDeletePublicationRequest) Forever(forever bool) ApiDeletePublicationRequest {
+	r.forever = &forever
+	return r
+}
+
+func (r ApiDeletePublicationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeletePublicationExecute(r)
+}
+
+/*
+DeletePublication Delete a publication.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param pid Publication ID.
+ @return ApiDeletePublicationRequest
+*/
+func (a *PublicationApiService) DeletePublication(ctx context.Context, pid string) ApiDeletePublicationRequest {
+	return ApiDeletePublicationRequest{
+		ApiService: a,
+		ctx:        ctx,
+		pid:        pid,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *PublicationApiService) DeletePublicationExecute(r ApiDeletePublicationRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.DeletePublication")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/publications/{pid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"pid"+"}", url.PathEscape(parameterToString(r.pid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.forever != nil {
+		localVarQueryParams.Add("forever", parameterToString(*r.forever, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]interface{}
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiDeletePublicationItemRequest struct {
 	ctx        context.Context
 	ApiService *PublicationApiService

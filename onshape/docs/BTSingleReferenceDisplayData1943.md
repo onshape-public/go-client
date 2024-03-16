@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ContextWorkspaceId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **Error** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 

@@ -771,6 +771,7 @@ func (v *NullableBTQueryFilter183) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTQueryFilter183 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FailedMetadataRepresentativeOccurrences** | Pointer to **[]string** |  | [optional] 
 **Indented** | Pointer to **bool** |  | [optional] 
 **IsShowingTopLevelAssemblyRow** | Pointer to **bool** |  | [optional] 

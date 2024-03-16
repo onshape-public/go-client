@@ -16,6 +16,7 @@ import (
 
 // BTBaseEntityAppearanceSettings1391 struct for BTBaseEntityAppearanceSettings1391
 type BTBaseEntityAppearanceSettings1391 struct {
+	// Type of JSON object.
 	BtType                             *string                                     `json:"btType,omitempty"`
 	ColorIdToBaseEntityAppearanceEntry *map[string]BTBaseEntityAppearanceEntry3607 `json:"colorIdToBaseEntityAppearanceEntry,omitempty"`
 	IsNoop                             *bool                                       `json:"isNoop,omitempty"`

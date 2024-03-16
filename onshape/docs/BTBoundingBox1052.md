@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **MaxCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **MinCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 

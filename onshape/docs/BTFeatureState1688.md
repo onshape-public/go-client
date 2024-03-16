@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FeatureStatus** | Pointer to [**GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
 **Inactive** | Pointer to **bool** |  | [optional] 
 

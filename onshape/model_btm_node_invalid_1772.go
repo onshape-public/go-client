@@ -16,7 +16,8 @@ import (
 
 // BTMNodeInvalid1772 struct for BTMNodeInvalid1772
 type BTMNodeInvalid1772 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 }

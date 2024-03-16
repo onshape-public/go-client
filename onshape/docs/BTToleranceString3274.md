@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Classification** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **Lower** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Upper** | Pointer to **string** |  | [optional] 

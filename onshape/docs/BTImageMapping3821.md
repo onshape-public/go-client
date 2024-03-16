@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DeterministicIds** | Pointer to **[]string** |  | [optional] 
 **UvTransform** | Pointer to [**BTMatrix3x3340**](BTMatrix3x3340.md) |  | [optional] 
 

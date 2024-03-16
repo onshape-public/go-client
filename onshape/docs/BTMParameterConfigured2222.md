@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConfigurationParameterId** | Pointer to **string** |  | [optional] 
 **ConfigurationParameterIdFieldIndex** | Pointer to **int32** |  | [optional] 
 **Values** | Pointer to [**[]BTMConfiguredValue1341**](BTMConfiguredValue1341.md) |  | [optional] 

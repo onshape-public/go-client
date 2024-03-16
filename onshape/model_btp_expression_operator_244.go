@@ -16,28 +16,29 @@ import (
 
 // BTPExpressionOperator244 struct for BTPExpressionOperator244
 type BTPExpressionOperator244 struct {
-	Atomic                *bool               `json:"atomic,omitempty"`
-	BtType                *string             `json:"btType,omitempty"`
-	DocumentationType     *GBTPDefinitionType `json:"documentationType,omitempty"`
-	EndSourceLocation     *int32              `json:"endSourceLocation,omitempty"`
-	NodeId                *string             `json:"nodeId,omitempty"`
-	ShortDescriptor       *string             `json:"shortDescriptor,omitempty"`
-	SpaceAfter            *BTPSpace10         `json:"spaceAfter,omitempty"`
-	SpaceBefore           *BTPSpace10         `json:"spaceBefore,omitempty"`
-	SpaceDefault          *bool               `json:"spaceDefault,omitempty"`
-	StartSourceLocation   *int32              `json:"startSourceLocation,omitempty"`
-	ForExport             *bool               `json:"forExport,omitempty"`
-	GlobalNamespace       *bool               `json:"globalNamespace,omitempty"`
-	ImportMicroversion    *string             `json:"importMicroversion,omitempty"`
-	Namespace             []BTPIdentifier8    `json:"namespace,omitempty"`
-	Operand1              *BTPExpression9     `json:"operand1,omitempty"`
-	Operand2              *BTPExpression9     `json:"operand2,omitempty"`
-	Operand3              *BTPExpression9     `json:"operand3,omitempty"`
-	Operator              *GBTPOperator       `json:"operator,omitempty"`
-	SpaceAfterNamespace   *BTPSpace10         `json:"spaceAfterNamespace,omitempty"`
-	SpaceAfterOperator    *BTPSpace10         `json:"spaceAfterOperator,omitempty"`
-	SpaceBeforeOperator   *BTPSpace10         `json:"spaceBeforeOperator,omitempty"`
-	WrittenAsFunctionCall *bool               `json:"writtenAsFunctionCall,omitempty"`
+	Atomic              *bool               `json:"atomic,omitempty"`
+	BtType              *string             `json:"btType,omitempty"`
+	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
+	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
+	NodeId              *string             `json:"nodeId,omitempty"`
+	ShortDescriptor     *string             `json:"shortDescriptor,omitempty"`
+	SpaceAfter          *BTPSpace10         `json:"spaceAfter,omitempty"`
+	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
+	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
+	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	ForExport           *bool               `json:"forExport,omitempty"`
+	GlobalNamespace     *bool               `json:"globalNamespace,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion    *string          `json:"importMicroversion,omitempty"`
+	Namespace             []BTPIdentifier8 `json:"namespace,omitempty"`
+	Operand1              *BTPExpression9  `json:"operand1,omitempty"`
+	Operand2              *BTPExpression9  `json:"operand2,omitempty"`
+	Operand3              *BTPExpression9  `json:"operand3,omitempty"`
+	Operator              *GBTPOperator    `json:"operator,omitempty"`
+	SpaceAfterNamespace   *BTPSpace10      `json:"spaceAfterNamespace,omitempty"`
+	SpaceAfterOperator    *BTPSpace10      `json:"spaceAfterOperator,omitempty"`
+	SpaceBeforeOperator   *BTPSpace10      `json:"spaceBeforeOperator,omitempty"`
+	WrittenAsFunctionCall *bool            `json:"writtenAsFunctionCall,omitempty"`
 }
 
 // NewBTPExpressionOperator244 instantiates a new BTPExpressionOperator244 object

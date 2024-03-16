@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
 **AppearanceSourceId** | Pointer to **string** |  | [optional] 
 **AppearanceSourceName** | Pointer to **string** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
 **Facets** | Pointer to [**[]BTExportTessellatedFacesFacet1417**](BTExportTessellatedFacesFacet1417.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 

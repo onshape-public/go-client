@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssemblyReferences** | Pointer to [**[]BTSingleReferenceDisplayData1943**](BTSingleReferenceDisplayData1943.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **FromFullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 

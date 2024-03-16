@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **EnumName** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
@@ -77,6 +78,31 @@ SetEnumName sets EnumName field to given value.
 `func (o *BTMParameterEnum145) HasEnumName() bool`
 
 HasEnumName returns a boolean if a field has been set.
+
+### GetImportMicroversion
+
+`func (o *BTMParameterEnum145) GetImportMicroversion() string`
+
+GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
+
+### GetImportMicroversionOk
+
+`func (o *BTMParameterEnum145) GetImportMicroversionOk() (*string, bool)`
+
+GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportMicroversion
+
+`func (o *BTMParameterEnum145) SetImportMicroversion(v string)`
+
+SetImportMicroversion sets ImportMicroversion field to given value.
+
+### HasImportMicroversion
+
+`func (o *BTMParameterEnum145) HasImportMicroversion() bool`
+
+HasImportMicroversion returns a boolean if a field has been set.
 
 ### GetNamespace
 

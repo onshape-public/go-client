@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ColumnIdToCell** | Pointer to [**map[string]BTTableCell1114**](BTTableCell1114.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **MetaData** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 

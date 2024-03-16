@@ -16,21 +16,23 @@ import (
 
 // BTPName261 struct for BTPName261
 type BTPName261 struct {
-	Atomic              *bool               `json:"atomic,omitempty"`
-	BtType              *string             `json:"btType,omitempty"`
-	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
-	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
-	ForExport           *bool               `json:"forExport,omitempty"`
-	GlobalNamespace     *bool               `json:"globalNamespace,omitempty"`
-	Identifier          *BTPIdentifier8     `json:"identifier,omitempty"`
-	ImportMicroversion  *string             `json:"importMicroversion,omitempty"`
-	Namespace           []BTPIdentifier8    `json:"namespace,omitempty"`
-	NodeId              *string             `json:"nodeId,omitempty"`
-	ShortDescriptor     *string             `json:"shortDescriptor,omitempty"`
-	SpaceAfter          *BTPSpace10         `json:"spaceAfter,omitempty"`
-	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
-	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
-	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	Atomic *bool `json:"atomic,omitempty"`
+	// Type of JSON object.
+	BtType            *string             `json:"btType,omitempty"`
+	DocumentationType *GBTPDefinitionType `json:"documentationType,omitempty"`
+	EndSourceLocation *int32              `json:"endSourceLocation,omitempty"`
+	ForExport         *bool               `json:"forExport,omitempty"`
+	GlobalNamespace   *bool               `json:"globalNamespace,omitempty"`
+	Identifier        *BTPIdentifier8     `json:"identifier,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion  *string          `json:"importMicroversion,omitempty"`
+	Namespace           []BTPIdentifier8 `json:"namespace,omitempty"`
+	NodeId              *string          `json:"nodeId,omitempty"`
+	ShortDescriptor     *string          `json:"shortDescriptor,omitempty"`
+	SpaceAfter          *BTPSpace10      `json:"spaceAfter,omitempty"`
+	SpaceBefore         *BTPSpace10      `json:"spaceBefore,omitempty"`
+	SpaceDefault        *bool            `json:"spaceDefault,omitempty"`
+	StartSourceLocation *int32           `json:"startSourceLocation,omitempty"`
 }
 
 // NewBTPName261 instantiates a new BTPName261 object

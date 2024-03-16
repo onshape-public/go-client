@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ReplicateFeature** | Pointer to [**BTMAssemblyReplicateFeature1351**](BTMAssemblyReplicateFeature1351.md) |  | [optional] 
 
 ## Methods

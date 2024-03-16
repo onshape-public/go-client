@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddItemToPublication**](PublicationApi.md#AddItemToPublication) | **Post** /publications/{pid}/item | Add an item in a publication.
 [**AddItemsToPublication**](PublicationApi.md#AddItemsToPublication) | **Post** /publications/{pid}/items | Add publication items in bulk.
 [**CreatePublication**](PublicationApi.md#CreatePublication) | **Post** /publications | Create a new publication.
+[**DeletePublication**](PublicationApi.md#DeletePublication) | **Delete** /publications/{pid} | Delete a publication.
 [**DeletePublicationItem**](PublicationApi.md#DeletePublicationItem) | **Delete** /publications/{pid}/item/{iid} | Remove an item from a publication.
 [**GetPublicationItems**](PublicationApi.md#GetPublicationItems) | **Get** /publications/{pid}/items | Get all items in a publication.
 [**UpdatePublicationAttributes**](PublicationApi.md#UpdatePublicationAttributes) | **Post** /publications/{pid} | Update publication&#39;s attributes name, description, and notes.
@@ -71,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -141,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -205,11 +206,81 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeletePublication
+
+> map[string]interface{} DeletePublication(ctx, pid).Forever(forever).Execute()
+
+Delete a publication.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pid := "pid_example" // string | Publication ID.
+    forever := true // bool | If true, publication is deleted forever. (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicationApi.DeletePublication(context.Background(), pid).Forever(forever).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.DeletePublication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeletePublication`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `PublicationApi.DeletePublication`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**pid** | **string** | Publication ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeletePublicationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **forever** | **bool** | If true, publication is deleted forever. | [default to false]
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -276,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -414,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

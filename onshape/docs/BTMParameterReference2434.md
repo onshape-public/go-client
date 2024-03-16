@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentVersionId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementLibraryData** | Pointer to [**BTElementLibraryReferenceData3133**](BTElementLibraryReferenceData3133.md) |  | [optional] 
 **FeatureScriptType** | Pointer to **string** |  | [optional] 
 **Ids** | Pointer to **[]string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **MicroversioId** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
@@ -207,6 +208,31 @@ SetIds sets Ids field to given value.
 `func (o *BTMParameterReference2434) HasIds() bool`
 
 HasIds returns a boolean if a field has been set.
+
+### GetImportMicroversion
+
+`func (o *BTMParameterReference2434) GetImportMicroversion() string`
+
+GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
+
+### GetImportMicroversionOk
+
+`func (o *BTMParameterReference2434) GetImportMicroversionOk() (*string, bool)`
+
+GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportMicroversion
+
+`func (o *BTMParameterReference2434) SetImportMicroversion(v string)`
+
+SetImportMicroversion sets ImportMicroversion field to given value.
+
+### HasImportMicroversion
+
+`func (o *BTMParameterReference2434) HasImportMicroversion() bool`
+
+HasImportMicroversion returns a boolean if a field has been set.
 
 ### GetMicroversioId
 

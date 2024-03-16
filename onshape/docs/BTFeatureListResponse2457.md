@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
-**DefaultFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
-**FeatureStates** | Pointer to [**map[string]BTFeatureState1688**](BTFeatureState1688.md) |  | [optional] 
-**Features** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
-**Imports** | Pointer to [**[]BTMImport136**](BTMImport136.md) |  | [optional] 
-**IsComplete** | Pointer to **bool** |  | [optional] 
-**LibraryVersion** | Pointer to **int32** |  | [optional] 
-**MicroversionSkew** | Pointer to **bool** |  | [optional] 
-**RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 
-**RollbackIndex** | Pointer to **int32** |  | [optional] 
-**SerializationVersion** | Pointer to **string** |  | [optional] 
-**SourceMicroversion** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**DefaultFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of Onshape-defined features instantiated within the Part Studio. | [optional] 
+**FeatureStates** | Pointer to [**map[string]BTFeatureState1688**](BTFeatureState1688.md) | State of each feature, indicating if the feature is valid. Incorrectly defined features will still appear in the Feature list. | [optional] 
+**Features** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of user-defined features instantiated within the Part Studio. | [optional] 
+**Imports** | Pointer to [**[]BTMImport136**](BTMImport136.md) | Internal only. Do not modify. | [optional] 
+**IsComplete** | Pointer to **bool** | &#x60;true&#x60; if the features represent the entire part studio or &#x60;false&#x60; for a filtered subset. | [optional] 
+**LibraryVersion** | Pointer to **int32** | FeatureScript version used in the Part Studio. Do not modify. | [optional] 
+**MicroversionSkew** | Pointer to **bool** | On output, &#x60;true&#x60; indicates a microversion mismatch was encountered. | [optional] 
+**RejectMicroversionSkew** | Pointer to **bool** | If &#x60;true&#x60;, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If &#x60;false&#x60;, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion. | [optional] 
+**RollbackIndex** | Pointer to **int32** | Index of the rollback bar location. &#x60;-1&#x60; indicates the bar is at the end of the Feature List. | [optional] 
+**SerializationVersion** | Pointer to **string** | Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates. | [optional] 
+**SourceMicroversion** | Pointer to **string** | The document microversion from which the result was extracted. Part, face, edge, and vertex IDs are only valid for the same microversion. | [optional] 
 
 ## Methods
 

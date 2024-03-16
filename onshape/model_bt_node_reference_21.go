@@ -16,6 +16,7 @@ import (
 
 // BTNodeReference21 struct for BTNodeReference21
 type BTNodeReference21 struct {
+	// Type of JSON object.
 	BtType    *string     `json:"btType,omitempty"`
 	NodeId    *string     `json:"nodeId,omitempty"`
 	NodeIdRaw *BTObjectId `json:"nodeIdRaw,omitempty"`

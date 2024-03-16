@@ -439,6 +439,7 @@ func (v *NullableBTCurveDescription1583) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTCurveDescription1583 struct {
+	// Type of JSON object.
 	BtType                    *string           `json:"btType,omitempty"`
 	Direction                 *BTVector3d389    `json:"direction,omitempty"`
 	DirectionOrientedWithFace *BTVector3d389    `json:"directionOrientedWithFace,omitempty"`

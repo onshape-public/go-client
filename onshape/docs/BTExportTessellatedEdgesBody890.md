@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Edges** | Pointer to [**[]BTExportTessellatedEdgesEdge1364**](BTExportTessellatedEdgesEdge1364.md) |  | [optional] 
 
 ## Methods

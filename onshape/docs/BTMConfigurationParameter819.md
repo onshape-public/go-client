@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **GeneratedParameterId** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **IsCosmetic** | Pointer to **bool** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 

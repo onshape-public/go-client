@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **EdgeQuery** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 
 **FaceQuery** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 
 

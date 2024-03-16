@@ -16,23 +16,26 @@ import (
 
 // BTMParameterReferencePartStudio3302 struct for BTMParameterReferencePartStudio3302
 type BTMParameterReferencePartStudio3302 struct {
-	BtType                      *string                            `json:"btType,omitempty"`
-	Configuration               []BTMParameter1                    `json:"configuration,omitempty"`
-	DocumentId                  *string                            `json:"documentId,omitempty"`
-	DocumentVersionId           *string                            `json:"documentVersionId,omitempty"`
-	ElementId                   *string                            `json:"elementId,omitempty"`
-	ElementLibraryData          *BTElementLibraryReferenceData3133 `json:"elementLibraryData,omitempty"`
-	FeatureScriptType           *string                            `json:"featureScriptType,omitempty"`
-	Ids                         []string                           `json:"ids,omitempty"`
-	ImportMicroversion          *string                            `json:"importMicroversion,omitempty"`
-	MicroversioId               *string                            `json:"microversioId,omitempty"`
-	Namespace                   *string                            `json:"namespace,omitempty"`
-	NodeId                      *string                            `json:"nodeId,omitempty"`
-	ParameterId                 *string                            `json:"parameterId,omitempty"`
-	BlockBuildFunctionAccess    *bool                              `json:"blockBuildFunctionAccess,omitempty"`
-	PartIdentity                *BTPSOIdentity2741                 `json:"partIdentity,omitempty"`
-	PartQuery                   *BTMParameterQueryList148          `json:"partQuery,omitempty"`
-	StandardContentParametersId *string                            `json:"standardContentParametersId,omitempty"`
+	BtType             *string                            `json:"btType,omitempty"`
+	Configuration      []BTMParameter1                    `json:"configuration,omitempty"`
+	DocumentId         *string                            `json:"documentId,omitempty"`
+	DocumentVersionId  *string                            `json:"documentVersionId,omitempty"`
+	ElementId          *string                            `json:"elementId,omitempty"`
+	ElementLibraryData *BTElementLibraryReferenceData3133 `json:"elementLibraryData,omitempty"`
+	FeatureScriptType  *string                            `json:"featureScriptType,omitempty"`
+	Ids                []string                           `json:"ids,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	MicroversioId      *string `json:"microversioId,omitempty"`
+	Namespace          *string `json:"namespace,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId                 *string                   `json:"parameterId,omitempty"`
+	BlockBuildFunctionAccess    *bool                     `json:"blockBuildFunctionAccess,omitempty"`
+	PartIdentity                *BTPSOIdentity2741        `json:"partIdentity,omitempty"`
+	PartQuery                   *BTMParameterQueryList148 `json:"partQuery,omitempty"`
+	StandardContentParametersId *string                   `json:"standardContentParametersId,omitempty"`
 }
 
 // NewBTMParameterReferencePartStudio3302 instantiates a new BTMParameterReferencePartStudio3302 object

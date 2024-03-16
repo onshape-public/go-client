@@ -16,6 +16,7 @@ import (
 
 // BTPartProperties293 struct for BTPartProperties293
 type BTPartProperties293 struct {
+	// Type of JSON object.
 	BtType                 *string                         `json:"btType,omitempty"`
 	ConfiguredParts        *BTConfiguredPartProperties2645 `json:"configuredParts,omitempty"`
 	IdentityIdToQueryIndex *map[string]int32               `json:"identityIdToQueryIndex,omitempty"`

@@ -16,11 +16,14 @@ import (
 
 // BTMDatabaseParameter2229 struct for BTMDatabaseParameter2229
 type BTMDatabaseParameter2229 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
-	NodeId             *string `json:"nodeId,omitempty"`
-	ParameterId        *string `json:"parameterId,omitempty"`
-	DatabaseId         *string `json:"databaseId,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string `json:"parameterId,omitempty"`
+	DatabaseId  *string `json:"databaseId,omitempty"`
 }
 
 // NewBTMDatabaseParameter2229 instantiates a new BTMDatabaseParameter2229 object

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefiniteJsonPath** | Pointer to **string** |  | [optional] 
 **Node** | Pointer to [**BTJsonMatch2290Node**](BTJsonMatch2290Node.md) |  | [optional] 
 

@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **BlobImport** | Pointer to [**BTMImport136**](BTMImport136.md) |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetBlobImport sets BlobImport field to given value.
 `func (o *BTMParameterBlobReference1679) HasBlobImport() bool`
 
 HasBlobImport returns a boolean if a field has been set.
+
+### GetImportMicroversion
+
+`func (o *BTMParameterBlobReference1679) GetImportMicroversion() string`
+
+GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
+
+### GetImportMicroversionOk
+
+`func (o *BTMParameterBlobReference1679) GetImportMicroversionOk() (*string, bool)`
+
+GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportMicroversion
+
+`func (o *BTMParameterBlobReference1679) SetImportMicroversion(v string)`
+
+SetImportMicroversion sets ImportMicroversion field to given value.
+
+### HasImportMicroversion
+
+`func (o *BTMParameterBlobReference1679) HasImportMicroversion() bool`
+
+HasImportMicroversion returns a boolean if a field has been set.
 
 ### GetNamespace
 

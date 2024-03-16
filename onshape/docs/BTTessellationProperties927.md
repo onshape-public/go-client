@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AngularTolerance** | Pointer to **float64** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ChordalTolerance** | Pointer to **float64** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **TessellationBudget** | Pointer to **int32** |  | [optional] 

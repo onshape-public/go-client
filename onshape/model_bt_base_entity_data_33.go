@@ -615,6 +615,7 @@ func (v *NullableBTBaseEntityData33) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTBaseEntityData33 struct {
+	// Type of JSON object.
 	BtType              *string              `json:"btType,omitempty"`
 	CopyWithoutGeometry *BTBaseEntityData33  `json:"copyWithoutGeometry,omitempty"`
 	Decompressed        *BTBaseEntityData33  `json:"decompressed,omitempty"`

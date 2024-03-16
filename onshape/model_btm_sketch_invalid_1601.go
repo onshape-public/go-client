@@ -16,7 +16,8 @@ import (
 
 // BTMSketchInvalid1601 struct for BTMSketchInvalid1601
 type BTMSketchInvalid1601 struct {
-	BtType                              *string         `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Element microversion that is being imported.
 	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
 	NodeId                              *string         `json:"nodeId,omitempty"`
 	EntityId                            *string         `json:"entityId,omitempty"`

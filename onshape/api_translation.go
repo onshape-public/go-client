@@ -52,6 +52,7 @@ type ApiCreateTranslationRequest struct {
 	uploadId                             *string
 	versionString                        *string
 	importAppearances                    *bool
+	importMaterialDensity                *bool
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
@@ -184,6 +185,12 @@ func (r ApiCreateTranslationRequest) VersionString(versionString string) ApiCrea
 // Face appearances defined on models will be imported.
 func (r ApiCreateTranslationRequest) ImportAppearances(importAppearances bool) ApiCreateTranslationRequest {
 	r.importAppearances = &importAppearances
+	return r
+}
+
+// Material density defined on models will be imported.
+func (r ApiCreateTranslationRequest) ImportMaterialDensity(importMaterialDensity bool) ApiCreateTranslationRequest {
+	r.importMaterialDensity = &importMaterialDensity
 	return r
 }
 
@@ -345,6 +352,9 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 	}
 	if r.importAppearances != nil {
 		localVarFormParams.Add("importAppearances", parameterToString(*r.importAppearances, ""))
+	}
+	if r.importMaterialDensity != nil {
+		localVarFormParams.Add("importMaterialDensity", parameterToString(*r.importMaterialDensity, ""))
 	}
 	if r.yAxisIsUp != nil {
 		localVarFormParams.Add("yAxisIsUp", parameterToString(*r.yAxisIsUp, ""))

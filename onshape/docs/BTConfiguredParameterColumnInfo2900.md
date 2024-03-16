@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **InnerParameterLocation** | Pointer to [**BTInnerParameterLocation1715**](BTInnerParameterLocation1715.md) |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 

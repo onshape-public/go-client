@@ -16,6 +16,7 @@ import (
 
 // BTDiffJsonResponse2725 struct for BTDiffJsonResponse2725
 type BTDiffJsonResponse2725 struct {
+	// Type of JSON object.
 	BtType         *string                      `json:"btType,omitempty"`
 	Change         *BTJEdit3734                 `json:"change,omitempty"`
 	Patch          *BTDiffJsonResponse2725Patch `json:"patch,omitempty"`

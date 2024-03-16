@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ColorIdToBaseEntityAppearanceEntry** | Pointer to [**map[string]BTBaseEntityAppearanceEntry3607**](BTBaseEntityAppearanceEntry3607.md) |  | [optional] 
 **IsNoop** | Pointer to **bool** |  | [optional] 
 

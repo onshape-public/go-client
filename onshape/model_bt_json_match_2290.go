@@ -16,6 +16,7 @@ import (
 
 // BTJsonMatch2290 struct for BTJsonMatch2290
 type BTJsonMatch2290 struct {
+	// Type of JSON object.
 	BtType           *string              `json:"btType,omitempty"`
 	DefiniteJsonPath *string              `json:"definiteJsonPath,omitempty"`
 	Node             *BTJsonMatch2290Node `json:"node,omitempty"`

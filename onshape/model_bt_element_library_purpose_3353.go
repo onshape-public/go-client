@@ -16,6 +16,7 @@ import (
 
 // BTElementLibraryPurpose3353 struct for BTElementLibraryPurpose3353
 type BTElementLibraryPurpose3353 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

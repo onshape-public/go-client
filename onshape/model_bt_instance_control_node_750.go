@@ -16,11 +16,13 @@ import (
 
 // BTInstanceControlNode750 struct for BTInstanceControlNode750
 type BTInstanceControlNode750 struct {
-	BtType                *string                  `json:"btType,omitempty"`
-	ImportMicroversion    *string                  `json:"importMicroversion,omitempty"`
-	NodeId                *string                  `json:"nodeId,omitempty"`
-	Suppressed            *bool                    `json:"suppressed,omitempty"`
-	SuppressedFieldIndex  *int32                   `json:"suppressedFieldIndex,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion   *string `json:"importMicroversion,omitempty"`
+	NodeId               *string `json:"nodeId,omitempty"`
+	Suppressed           *bool   `json:"suppressed,omitempty"`
+	SuppressedFieldIndex *int32  `json:"suppressedFieldIndex,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
 	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
 }

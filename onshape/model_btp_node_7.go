@@ -1031,7 +1031,8 @@ func (v *NullableBTPNode7) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPNode7 struct {
-	Atomic              *bool               `json:"atomic,omitempty"`
+	Atomic *bool `json:"atomic,omitempty"`
+	// Type of JSON object.
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`

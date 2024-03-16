@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **IsAscending** | Pointer to **bool** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **SortingColumnId** | Pointer to **string** |  | [optional] 

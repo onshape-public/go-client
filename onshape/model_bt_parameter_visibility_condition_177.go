@@ -239,6 +239,7 @@ func (v *NullableBTParameterVisibilityCondition177) UnmarshalJSON(src []byte) er
 }
 
 type base_BTParameterVisibilityCondition177 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

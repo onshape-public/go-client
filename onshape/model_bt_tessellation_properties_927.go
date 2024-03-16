@@ -16,7 +16,8 @@ import (
 
 // BTTessellationProperties927 struct for BTTessellationProperties927
 type BTTessellationProperties927 struct {
-	AngularTolerance   *float64 `json:"angularTolerance,omitempty"`
+	AngularTolerance *float64 `json:"angularTolerance,omitempty"`
+	// Type of JSON object.
 	BtType             *string  `json:"btType,omitempty"`
 	ChordalTolerance   *float64 `json:"chordalTolerance,omitempty"`
 	NodeId             *string  `json:"nodeId,omitempty"`

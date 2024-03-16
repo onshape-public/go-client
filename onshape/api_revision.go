@@ -812,6 +812,7 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) LinkDocumentId(linkDoc
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) Configuration(configuration string) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	r.configuration = &configuration
 	return r

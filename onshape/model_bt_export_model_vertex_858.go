@@ -16,6 +16,7 @@ import (
 
 // BTExportModelVertex858 struct for BTExportModelVertex858
 type BTExportModelVertex858 struct {
+	// Type of JSON object.
 	BtType *string        `json:"btType,omitempty"`
 	Id     *string        `json:"id,omitempty"`
 	Point  *BTVector3d389 `json:"point,omitempty"`

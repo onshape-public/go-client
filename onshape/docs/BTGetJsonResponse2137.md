@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ChangeId** | Pointer to **string** |  | [optional] 
 **Tree** | Pointer to [**BTGetJsonResponse2137Tree**](BTGetJsonResponse2137Tree.md) |  | [optional] 
 

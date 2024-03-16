@@ -632,6 +632,7 @@ func (v *NullableBTSingleReferenceDisplayData1943) UnmarshalJSON(src []byte) err
 }
 
 type base_BTSingleReferenceDisplayData1943 struct {
+	// Type of JSON object.
 	BtType             *string                 `json:"btType,omitempty"`
 	ContextWorkspaceId *string                 `json:"contextWorkspaceId,omitempty"`
 	DocumentId         *string                 `json:"documentId,omitempty"`

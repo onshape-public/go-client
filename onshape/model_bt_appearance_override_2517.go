@@ -16,8 +16,9 @@ import (
 
 // BTAppearanceOverride2517 struct for BTAppearanceOverride2517
 type BTAppearanceOverride2517 struct {
-	Appearance             *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
-	AppearanceReset        *bool                     `json:"appearanceReset,omitempty"`
+	Appearance      *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
+	AppearanceReset *bool                     `json:"appearanceReset,omitempty"`
+	// Type of JSON object.
 	BtType                 *string                   `json:"btType,omitempty"`
 	CopyWithoutEntities    *BTAppearanceOverride2517 `json:"copyWithoutEntities,omitempty"`
 	EntityDeterministicIds []string                  `json:"entityDeterministicIds,omitempty"`

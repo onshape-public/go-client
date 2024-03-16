@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ControlBoxIds** | Pointer to **[]string** |  | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **IsConstruction** | Pointer to **bool** |  | [optional] 
 **IsFromEndpointSplineHandle** | Pointer to **bool** |  | [optional] 
 **IsFromSplineControlPolygon** | Pointer to **bool** |  | [optional] 

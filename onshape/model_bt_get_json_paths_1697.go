@@ -16,6 +16,7 @@ import (
 
 // BTGetJsonPaths1697 struct for BTGetJsonPaths1697
 type BTGetJsonPaths1697 struct {
+	// Type of JSON object.
 	BtType *string  `json:"btType,omitempty"`
 	Paths  []string `json:"paths,omitempty"`
 }

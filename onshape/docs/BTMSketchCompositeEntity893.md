@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **SubEntities** | Pointer to [**[]BTMSketchEntity3**](BTMSketchEntity3.md) |  | [optional] 
 
 ## Methods

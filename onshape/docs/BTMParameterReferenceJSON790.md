@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentVersionId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementLibraryData** | Pointer to [**BTElementLibraryReferenceData3133**](BTElementLibraryReferenceData3133.md) |  | [optional] 
 **FeatureScriptType** | Pointer to **string** |  | [optional] 
 **Ids** | Pointer to **[]string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **MicroversioId** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
-**ParameterId** | Pointer to **string** |  | [optional] 
+**NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
+**ParameterId** | Pointer to **string** | Unique ID of the parameter. | [optional] 
 
 ## Methods
 

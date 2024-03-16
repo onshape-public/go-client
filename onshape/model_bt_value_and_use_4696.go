@@ -16,6 +16,7 @@ import (
 
 // BTValueAndUse4696 struct for BTValueAndUse4696
 type BTValueAndUse4696 struct {
+	// Type of JSON object.
 	BtType *string        `json:"btType,omitempty"`
 	Use    *GBTValueUse   `json:"use,omitempty"`
 	Value  *BTFSValue1888 `json:"value,omitempty"`

@@ -201,6 +201,7 @@ func (v *NullableBTJPathElement2297) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTJPathElement2297 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

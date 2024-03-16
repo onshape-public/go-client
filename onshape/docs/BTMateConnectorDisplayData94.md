@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **EntityIds** | Pointer to **[]string** |  | [optional] 
 **Hidden** | Pointer to **bool** |  | [optional] 

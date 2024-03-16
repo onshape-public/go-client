@@ -16,13 +16,16 @@ import (
 
 // BTMParameterMultiEnum3411 struct for BTMParameterMultiEnum3411
 type BTMParameterMultiEnum3411 struct {
-	BtType             *string  `json:"btType,omitempty"`
-	ImportMicroversion *string  `json:"importMicroversion,omitempty"`
-	NodeId             *string  `json:"nodeId,omitempty"`
-	ParameterId        *string  `json:"parameterId,omitempty"`
-	EnumName           *string  `json:"enumName,omitempty"`
-	Namespace          *string  `json:"namespace,omitempty"`
-	Values             []string `json:"values,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string  `json:"parameterId,omitempty"`
+	EnumName    *string  `json:"enumName,omitempty"`
+	Namespace   *string  `json:"namespace,omitempty"`
+	Values      []string `json:"values,omitempty"`
 }
 
 // NewBTMParameterMultiEnum3411 instantiates a new BTMParameterMultiEnum3411 object

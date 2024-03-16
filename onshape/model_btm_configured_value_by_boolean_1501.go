@@ -16,12 +16,13 @@ import (
 
 // BTMConfiguredValueByBoolean1501 struct for BTMConfiguredValueByBoolean1501
 type BTMConfiguredValueByBoolean1501 struct {
-	BtType                   *string        `json:"btType,omitempty"`
-	ConfigurationValueString *string        `json:"configurationValueString,omitempty"`
-	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
-	NodeId                   *string        `json:"nodeId,omitempty"`
-	Value                    *BTMParameter1 `json:"value,omitempty"`
-	BooleanValue             *bool          `json:"booleanValue,omitempty"`
+	BtType                   *string `json:"btType,omitempty"`
+	ConfigurationValueString *string `json:"configurationValueString,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string        `json:"importMicroversion,omitempty"`
+	NodeId             *string        `json:"nodeId,omitempty"`
+	Value              *BTMParameter1 `json:"value,omitempty"`
+	BooleanValue       *bool          `json:"booleanValue,omitempty"`
 }
 
 // NewBTMConfiguredValueByBoolean1501 instantiates a new BTMConfiguredValueByBoolean1501 object

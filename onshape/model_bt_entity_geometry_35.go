@@ -646,6 +646,7 @@ func (v *NullableBTEntityGeometry35) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTEntityGeometry35 struct {
+	// Type of JSON object.
 	BtType                      *string             `json:"btType,omitempty"`
 	Compressed                  *bool               `json:"compressed,omitempty"`
 	Decompressed                *BTEntityGeometry35 `json:"decompressed,omitempty"`

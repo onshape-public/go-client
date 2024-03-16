@@ -16,6 +16,7 @@ import (
 
 // BTPSpace10 struct for BTPSpace10
 type BTPSpace10 struct {
+	// Type of JSON object.
 	BtType *string  `json:"btType,omitempty"`
 	Lines  []string `json:"lines,omitempty"`
 	NodeId *string  `json:"nodeId,omitempty"`

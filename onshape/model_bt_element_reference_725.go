@@ -582,6 +582,7 @@ func (v *NullableBTElementReference725) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTElementReference725 struct {
+	// Type of JSON object.
 	BtType                                  *string                               `json:"btType,omitempty"`
 	Configured                              *bool                                 `json:"configured,omitempty"`
 	ElementId                               *string                               `json:"elementId,omitempty"`

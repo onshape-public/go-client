@@ -16,18 +16,30 @@ import (
 
 // BTMAssemblyFeatureFolder2543 struct for BTMAssemblyFeatureFolder2543
 type BTMAssemblyFeatureFolder2543 struct {
-	BtType                                 *string                                   `json:"btType,omitempty"`
-	FeatureId                              *string                                   `json:"featureId,omitempty"`
-	FeatureType                            *string                                   `json:"featureType,omitempty"`
-	ImportMicroversion                     *string                                   `json:"importMicroversion,omitempty"`
-	Name                                   *string                                   `json:"name,omitempty"`
-	Namespace                              *string                                   `json:"namespace,omitempty"`
-	NodeId                                 *string                                   `json:"nodeId,omitempty"`
-	Parameters                             []BTMParameter1                           `json:"parameters,omitempty"`
-	ReturnAfterSubfeatures                 *bool                                     `json:"returnAfterSubfeatures,omitempty"`
-	SubFeatures                            []BTMFeature134                           `json:"subFeatures,omitempty"`
-	Suppressed                             *bool                                     `json:"suppressed,omitempty"`
-	SuppressionConfigured                  *bool                                     `json:"suppressionConfigured,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Unique ID of the feature instance within this Part Studio.
+	FeatureId *string `json:"featureId,omitempty"`
+	// The name of the feature spec that this feature instantiates.
+	FeatureType *string `json:"featureType,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// User-visible name of the feature.
+	Name *string `json:"name,omitempty"`
+	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
+	Namespace *string `json:"namespace,omitempty"`
+	// ID for the feature node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
+	Parameters []BTMParameter1 `json:"parameters,omitempty"`
+	// For internal use only. Should always be `false`.
+	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
+	// List of subfeatures belonging to the feature.
+	SubFeatures []BTMFeature134 `json:"subFeatures,omitempty"`
+	// If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
+	Suppressed *bool `json:"suppressed,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
+	SuppressionConfigured *bool `json:"suppressionConfigured,omitempty"`
+	// If `true`, the feature references a Variable Studio.
 	VariableStudioReference                *bool                                     `json:"variableStudioReference,omitempty"`
 	AuxiliaryTreeFeature                   *bool                                     `json:"auxiliaryTreeFeature,omitempty"`
 	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`

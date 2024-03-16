@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CompressedPoints** | Pointer to [**BTImmutableByteArray**](BTImmutableByteArray.md) |  | [optional] 
 **EdgeSmoothnessStatus** | Pointer to [**GBTEntityEdgeSmoothnessStatus**](GBTEntityEdgeSmoothnessStatus.md) |  | [optional] 
 **EdgeType** | Pointer to [**GBTEdgeType**](GBTEdgeType.md) |  | [optional] 

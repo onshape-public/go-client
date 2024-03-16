@@ -16,13 +16,14 @@ import (
 
 // BTExportTessellatedFacesFace1192 struct for BTExportTessellatedFacesFace1192
 type BTExportTessellatedFacesFace1192 struct {
-	Appearance           *BTGraphicsAppearance1152           `json:"appearance,omitempty"`
-	AppearanceSourceId   *string                             `json:"appearanceSourceId,omitempty"`
-	AppearanceSourceName *string                             `json:"appearanceSourceName,omitempty"`
-	BtType               *string                             `json:"btType,omitempty"`
-	ErrorMessage         *string                             `json:"errorMessage,omitempty"`
-	Facets               []BTExportTessellatedFacesFacet1417 `json:"facets,omitempty"`
-	Id                   *string                             `json:"id,omitempty"`
+	Appearance           *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
+	AppearanceSourceId   *string                   `json:"appearanceSourceId,omitempty"`
+	AppearanceSourceName *string                   `json:"appearanceSourceName,omitempty"`
+	// Type of JSON object.
+	BtType       *string                             `json:"btType,omitempty"`
+	ErrorMessage *string                             `json:"errorMessage,omitempty"`
+	Facets       []BTExportTessellatedFacesFacet1417 `json:"facets,omitempty"`
+	Id           *string                             `json:"id,omitempty"`
 }
 
 // NewBTExportTessellatedFacesFace1192 instantiates a new BTExportTessellatedFacesFace1192 object

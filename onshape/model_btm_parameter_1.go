@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// BTMParameter1 - struct for BTMParameter1
+// BTMParameter1 - A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
 type BTMParameter1 struct {
 	implBTMParameter1 interface{}
 }
@@ -826,10 +826,14 @@ func (v *NullableBTMParameter1) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMParameter1 struct {
-	BtType             *string `json:"btType,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
-	NodeId             *string `json:"nodeId,omitempty"`
-	ParameterId        *string `json:"parameterId,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string `json:"parameterId,omitempty"`
 }
 
 // Newbase_BTMParameter1 instantiates a new base_BTMParameter1 object

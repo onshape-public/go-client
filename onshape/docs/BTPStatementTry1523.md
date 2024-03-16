@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
 **CatchBlock** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
 **CatchVariable** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 

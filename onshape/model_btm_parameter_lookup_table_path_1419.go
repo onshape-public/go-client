@@ -16,11 +16,14 @@ import (
 
 // BTMParameterLookupTablePath1419 struct for BTMParameterLookupTablePath1419
 type BTMParameterLookupTablePath1419 struct {
-	BtType             *string            `json:"btType,omitempty"`
-	ImportMicroversion *string            `json:"importMicroversion,omitempty"`
-	NodeId             *string            `json:"nodeId,omitempty"`
-	ParameterId        *string            `json:"parameterId,omitempty"`
-	Value              *map[string]string `json:"value,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string            `json:"parameterId,omitempty"`
+	Value       *map[string]string `json:"value,omitempty"`
 }
 
 // NewBTMParameterLookupTablePath1419 instantiates a new BTMParameterLookupTablePath1419 object

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **BucketName** | Pointer to **string** |  | [optional] 
 **BucketPath** | Pointer to **string** |  | [optional] 
 **CacheChunkList** | Pointer to **[]string** |  | [optional] 

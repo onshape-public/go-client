@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CombinedNamespacePathAndVersion** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **ModuleId** | Pointer to [**BTPModuleId235**](BTPModuleId235.md) |  | [optional] 
 **Namespace** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **NamespaceString** | Pointer to **string** |  | [optional] 

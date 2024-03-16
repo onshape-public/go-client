@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **From** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
 **MicroversionIdInterval** | Pointer to [**BTMicroversionIdInterval367**](BTMicroversionIdInterval367.md) |  | [optional] 
 **To** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 

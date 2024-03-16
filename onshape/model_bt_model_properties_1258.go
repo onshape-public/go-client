@@ -16,6 +16,7 @@ import (
 
 // BTModelProperties1258 struct for BTModelProperties1258
 type BTModelProperties1258 struct {
+	// Type of JSON object.
 	BtType            *string                  `json:"btType,omitempty"`
 	NodeId            *string                  `json:"nodeId,omitempty"`
 	SubPartProperties []BTOnePartProperties230 `json:"subPartProperties,omitempty"`

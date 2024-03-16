@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **ImageWidth** | Pointer to **int32** |  | [optional] 
 **ImportAppearances** | Pointer to **bool** |  | [optional] 
 **ImportInBackground** | Pointer to **bool** |  | [optional] 
+**ImportMaterialDensity** | Pointer to **bool** |  | [optional] 
 **ImportWithinDocument** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
 **JoinAdjacentSurfaces** | Pointer to **bool** |  | [optional] 
@@ -919,6 +920,31 @@ SetImportInBackground sets ImportInBackground field to given value.
 `func (o *BTTranslateFormatParams) HasImportInBackground() bool`
 
 HasImportInBackground returns a boolean if a field has been set.
+
+### GetImportMaterialDensity
+
+`func (o *BTTranslateFormatParams) GetImportMaterialDensity() bool`
+
+GetImportMaterialDensity returns the ImportMaterialDensity field if non-nil, zero value otherwise.
+
+### GetImportMaterialDensityOk
+
+`func (o *BTTranslateFormatParams) GetImportMaterialDensityOk() (*bool, bool)`
+
+GetImportMaterialDensityOk returns a tuple with the ImportMaterialDensity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportMaterialDensity
+
+`func (o *BTTranslateFormatParams) SetImportMaterialDensity(v bool)`
+
+SetImportMaterialDensity sets ImportMaterialDensity field to given value.
+
+### HasImportMaterialDensity
+
+`func (o *BTTranslateFormatParams) HasImportMaterialDensity() bool`
+
+HasImportMaterialDensity returns a boolean if a field has been set.
 
 ### GetImportWithinDocument
 

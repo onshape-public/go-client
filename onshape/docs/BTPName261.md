@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Atomic** | Pointer to **bool** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DocumentationType** | Pointer to [**GBTPDefinitionType**](GBTPDefinitionType.md) |  | [optional] 
 **EndSourceLocation** | Pointer to **int32** |  | [optional] 
 **ForExport** | Pointer to **bool** |  | [optional] 
 **GlobalNamespace** | Pointer to **bool** |  | [optional] 
 **Identifier** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **ShortDescriptor** | Pointer to **string** |  | [optional] 
