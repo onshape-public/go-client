@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Closed** | Pointer to **bool** | If type &#x3D;&#x3D; COMPOSITE, indicates whether it is open or closed. | [optional] 
 **ConstituentBodyIds** | Pointer to **[]string** |  | [optional] 
 **ConsumedByComposite** | Pointer to **bool** | Indicates if there is a closed composite that consumes this body. | [optional] 

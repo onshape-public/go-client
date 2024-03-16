@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **StandardContentParametersId** | Pointer to **string** |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
 **SuppressedFieldIndex** | Pointer to **int32** |  | [optional] 
-**SuppressionConfigured** | Pointer to **bool** |  | [optional] 
+**SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
 **SuppressionState** | Pointer to [**BTMSuppressionState1924**](BTMSuppressionState1924.md) |  | [optional] 
 **ValidRevisionReference** | Pointer to **bool** |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 

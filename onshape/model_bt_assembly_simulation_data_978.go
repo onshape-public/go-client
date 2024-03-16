@@ -16,7 +16,8 @@ import (
 
 // BTAssemblySimulationData978 struct for BTAssemblySimulationData978
 type BTAssemblySimulationData978 struct {
-	BtType             *string                       `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string                       `json:"importMicroversion,omitempty"`
 	NodeId             *string                       `json:"nodeId,omitempty"`
 	ContactBehavior    *GBTSimulationContactBehavior `json:"contactBehavior,omitempty"`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Ranges** | Pointer to [**[]BTQuantityRange181**](BTQuantityRange181.md) |  | [optional] 
 
 ## Methods

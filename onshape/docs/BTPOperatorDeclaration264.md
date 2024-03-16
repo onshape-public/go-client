@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Operator** | Pointer to [**GBTPOperator**](GBTPOperator.md) |  | [optional] 
 **SpaceAfterOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 **SpaceBeforeOperator** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 

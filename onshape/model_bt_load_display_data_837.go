@@ -16,6 +16,7 @@ import (
 
 // BTLoadDisplayData837 struct for BTLoadDisplayData837
 type BTLoadDisplayData837 struct {
+	// Type of JSON object.
 	BtType                   *string                          `json:"btType,omitempty"`
 	ComponentValues          *BTVector3d389                   `json:"componentValues,omitempty"`
 	DirectionMateConnectorId *string                          `json:"directionMateConnectorId,omitempty"`

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **IsActiveSheetMetal** | Pointer to **bool** |  | [optional] 
 **IsMesh** | Pointer to **bool** |  | [optional] 
 **MeshState** | Pointer to [**GBTMeshState**](GBTMeshState.md) |  | [optional] 

@@ -16,10 +16,13 @@ import (
 
 // BTMParameterInvalid1664 struct for BTMParameterInvalid1664
 type BTMParameterInvalid1664 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
-	NodeId             *string `json:"nodeId,omitempty"`
-	ParameterId        *string `json:"parameterId,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string `json:"parameterId,omitempty"`
 }
 
 // NewBTMParameterInvalid1664 instantiates a new BTMParameterInvalid1664 object

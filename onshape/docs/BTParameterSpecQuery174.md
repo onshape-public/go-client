@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **AdditionalBoxSelectFilter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **Filter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 

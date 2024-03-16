@@ -16,12 +16,15 @@ import (
 
 // BTMParameterBlobReference1679 struct for BTMParameterBlobReference1679
 type BTMParameterBlobReference1679 struct {
-	BtType             *string       `json:"btType,omitempty"`
-	ImportMicroversion *string       `json:"importMicroversion,omitempty"`
-	NodeId             *string       `json:"nodeId,omitempty"`
-	ParameterId        *string       `json:"parameterId,omitempty"`
-	BlobImport         *BTMImport136 `json:"blobImport,omitempty"`
-	Namespace          *string       `json:"namespace,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string       `json:"parameterId,omitempty"`
+	BlobImport  *BTMImport136 `json:"blobImport,omitempty"`
+	Namespace   *string       `json:"namespace,omitempty"`
 }
 
 // NewBTMParameterBlobReference1679 instantiates a new BTMParameterBlobReference1679 object

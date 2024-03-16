@@ -16,12 +16,16 @@ import (
 
 // BTMParameterQueryWithOccurrenceList67 struct for BTMParameterQueryWithOccurrenceList67
 type BTMParameterQueryWithOccurrenceList67 struct {
-	BtType             *string                                   `json:"btType,omitempty"`
-	ImportMicroversion *string                                   `json:"importMicroversion,omitempty"`
-	NodeId             *string                                   `json:"nodeId,omitempty"`
-	Occurrences        []BTOccurrence74                          `json:"occurrences,omitempty"`
-	ParameterId        *string                                   `json:"parameterId,omitempty"`
-	Queries            []BTMIndividualQueryWithOccurrenceBase904 `json:"queries,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId      *string          `json:"nodeId,omitempty"`
+	Occurrences []BTOccurrence74 `json:"occurrences,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string                                   `json:"parameterId,omitempty"`
+	Queries     []BTMIndividualQueryWithOccurrenceBase904 `json:"queries,omitempty"`
 }
 
 // NewBTMParameterQueryWithOccurrenceList67 instantiates a new BTMParameterQueryWithOccurrenceList67 object

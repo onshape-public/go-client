@@ -16,7 +16,8 @@ import (
 
 // BTExportModelBodiesResponse734 struct for BTExportModelBodiesResponse734
 type BTExportModelBodiesResponse734 struct {
-	Bodies                     []BTExportModelBody1272                 `json:"bodies,omitempty"`
+	Bodies []BTExportModelBody1272 `json:"bodies,omitempty"`
+	// Type of JSON object.
 	BtType                     *string                                 `json:"btType,omitempty"`
 	ErrorEnum                  *GBTErrorStringEnum                     `json:"errorEnum,omitempty"`
 	MicroversionId             *BTMicroversionId366                    `json:"microversionId,omitempty"`

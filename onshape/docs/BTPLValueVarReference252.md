@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Name** | Pointer to [**BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 
 ## Methods

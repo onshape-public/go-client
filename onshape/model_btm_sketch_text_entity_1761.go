@@ -16,25 +16,26 @@ import (
 
 // BTMSketchTextEntity1761 struct for BTMSketchTextEntity1761
 type BTMSketchTextEntity1761 struct {
-	BtType                              *string         `json:"btType,omitempty"`
-	ControlBoxIds                       []string        `json:"controlBoxIds,omitempty"`
-	EntityId                            *string         `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
-	IsConstruction                      *bool           `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool           `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool           `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool           `json:"isFromSplineHandle,omitempty"`
-	Namespace                           *string         `json:"namespace,omitempty"`
-	NodeId                              *string         `json:"nodeId,omitempty"`
-	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
-	Ascent                              *float64        `json:"ascent,omitempty"`
-	BaselineDirectionX                  *float64        `json:"baselineDirectionX,omitempty"`
-	BaselineDirectionY                  *float64        `json:"baselineDirectionY,omitempty"`
-	BaselineStartX                      *float64        `json:"baselineStartX,omitempty"`
-	BaselineStartY                      *float64        `json:"baselineStartY,omitempty"`
-	FontName                            *string         `json:"fontName,omitempty"`
-	Text                                *string         `json:"text,omitempty"`
+	BtType                              *string  `json:"btType,omitempty"`
+	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
+	EntityId                            *string  `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string  `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion         *string         `json:"importMicroversion,omitempty"`
+	IsConstruction             *bool           `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle *bool           `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon *bool           `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle         *bool           `json:"isFromSplineHandle,omitempty"`
+	Namespace                  *string         `json:"namespace,omitempty"`
+	NodeId                     *string         `json:"nodeId,omitempty"`
+	Parameters                 []BTMParameter1 `json:"parameters,omitempty"`
+	Ascent                     *float64        `json:"ascent,omitempty"`
+	BaselineDirectionX         *float64        `json:"baselineDirectionX,omitempty"`
+	BaselineDirectionY         *float64        `json:"baselineDirectionY,omitempty"`
+	BaselineStartX             *float64        `json:"baselineStartX,omitempty"`
+	BaselineStartY             *float64        `json:"baselineStartY,omitempty"`
+	FontName                   *string         `json:"fontName,omitempty"`
+	Text                       *string         `json:"text,omitempty"`
 }
 
 // NewBTMSketchTextEntity1761 instantiates a new BTMSketchTextEntity1761 object

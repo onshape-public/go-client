@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Feature** | Pointer to [**BTMAssemblyFeature887**](BTMAssemblyFeature887.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **InstanceControlNodes** | Pointer to [**[]BTInstanceControlNode750**](BTInstanceControlNode750.md) |  | [optional] 

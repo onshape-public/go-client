@@ -820,6 +820,7 @@ func (v *NullableBTMParameterReferenceWithConfiguration3028) UnmarshalJSON(src [
 }
 
 type base_BTMParameterReferenceWithConfiguration3028 struct {
+	// Type of JSON object.
 	BtType             *string                            `json:"btType,omitempty"`
 	Configuration      []BTMParameter1                    `json:"configuration,omitempty"`
 	DocumentId         *string                            `json:"documentId,omitempty"`
@@ -828,11 +829,14 @@ type base_BTMParameterReferenceWithConfiguration3028 struct {
 	ElementLibraryData *BTElementLibraryReferenceData3133 `json:"elementLibraryData,omitempty"`
 	FeatureScriptType  *string                            `json:"featureScriptType,omitempty"`
 	Ids                []string                           `json:"ids,omitempty"`
-	ImportMicroversion *string                            `json:"importMicroversion,omitempty"`
-	MicroversioId      *string                            `json:"microversioId,omitempty"`
-	Namespace          *string                            `json:"namespace,omitempty"`
-	NodeId             *string                            `json:"nodeId,omitempty"`
-	ParameterId        *string                            `json:"parameterId,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	MicroversioId      *string `json:"microversioId,omitempty"`
+	Namespace          *string `json:"namespace,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string `json:"parameterId,omitempty"`
 }
 
 // Newbase_BTMParameterReferenceWithConfiguration3028 instantiates a new base_BTMParameterReferenceWithConfiguration3028 object

@@ -16,6 +16,7 @@ import (
 
 // BTDocumentVersionElementIds1897 struct for BTDocumentVersionElementIds1897
 type BTDocumentVersionElementIds1897 struct {
+	// Type of JSON object.
 	BtType     *string `json:"btType,omitempty"`
 	DocumentId *string `json:"documentId,omitempty"`
 	ElementId  *string `json:"elementId,omitempty"`

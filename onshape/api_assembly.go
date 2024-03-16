@@ -655,6 +655,7 @@ func (r ApiGetAssemblyBoundingBoxesRequest) LinkDocumentId(linkDocumentId string
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetAssemblyBoundingBoxesRequest) Configuration(configuration string) ApiGetAssemblyBoundingBoxesRequest {
 	r.configuration = &configuration
 	return r
@@ -839,6 +840,7 @@ func (r ApiGetAssemblyDefinitionRequest) LinkDocumentId(linkDocumentId string) A
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetAssemblyDefinitionRequest) Configuration(configuration string) ApiGetAssemblyDefinitionRequest {
 	r.configuration = &configuration
 	return r
@@ -1021,6 +1023,7 @@ func (r ApiGetAssemblyMassPropertiesRequest) LinkDocumentId(linkDocumentId strin
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetAssemblyMassPropertiesRequest) Configuration(configuration string) ApiGetAssemblyMassPropertiesRequest {
 	r.configuration = &configuration
 	return r
@@ -1174,6 +1177,7 @@ func (r ApiGetAssemblyShadedViewsRequest) LinkDocumentId(linkDocumentId string) 
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetAssemblyShadedViewsRequest) Configuration(configuration string) ApiGetAssemblyShadedViewsRequest {
 	r.configuration = &configuration
 	return r
@@ -1420,6 +1424,7 @@ func (r ApiGetBillOfMaterialsRequest) LinkDocumentId(linkDocumentId string) ApiG
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetBillOfMaterialsRequest) Configuration(configuration string) ApiGetBillOfMaterialsRequest {
 	r.configuration = &configuration
 	return r
@@ -1669,6 +1674,7 @@ func (r ApiGetExplodedViewsRequest) LinkDocumentId(linkDocumentId string) ApiGet
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetExplodedViewsRequest) Configuration(configuration string) ApiGetExplodedViewsRequest {
 	r.configuration = &configuration
 	return r
@@ -1938,6 +1944,7 @@ func (r ApiGetFeaturesRequest) LinkDocumentId(linkDocumentId string) ApiGetFeatu
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetFeaturesRequest) Configuration(configuration string) ApiGetFeaturesRequest {
 	r.configuration = &configuration
 	return r
@@ -2095,6 +2102,7 @@ func (r ApiGetNamedPositionsRequest) LinkDocumentId(linkDocumentId string) ApiGe
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetNamedPositionsRequest) Configuration(configuration string) ApiGetNamedPositionsRequest {
 	r.configuration = &configuration
 	return r

@@ -16,7 +16,8 @@ import (
 
 // BTClosedConstituentPartData2911 struct for BTClosedConstituentPartData2911
 type BTClosedConstituentPartData2911 struct {
-	BodyType           *GBTBodyType  `json:"bodyType,omitempty"`
+	BodyType *GBTBodyType `json:"bodyType,omitempty"`
+	// Type of JSON object.
 	BtType             *string       `json:"btType,omitempty"`
 	IsActiveSheetMetal *bool         `json:"isActiveSheetMetal,omitempty"`
 	IsMesh             *bool         `json:"isMesh,omitempty"`

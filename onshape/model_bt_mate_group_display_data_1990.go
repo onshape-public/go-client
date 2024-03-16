@@ -16,6 +16,7 @@ import (
 
 // BTMateGroupDisplayData1990 struct for BTMateGroupDisplayData1990
 type BTMateGroupDisplayData1990 struct {
+	// Type of JSON object.
 	BtType           *string                          `json:"btType,omitempty"`
 	Hidden           *bool                            `json:"hidden,omitempty"`
 	IsDerivedFeature *bool                            `json:"isDerivedFeature,omitempty"`

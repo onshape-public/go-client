@@ -16,7 +16,8 @@ import (
 
 // BTPBuiltinIdentifier233 struct for BTPBuiltinIdentifier233
 type BTPBuiltinIdentifier233 struct {
-	Atomic              *bool               `json:"atomic,omitempty"`
+	Atomic *bool `json:"atomic,omitempty"`
+	// Type of JSON object.
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`

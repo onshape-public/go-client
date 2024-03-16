@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
-**ParameterId** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
+**NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
+**ParameterId** | Pointer to **string** | Unique ID of the parameter. | [optional] 
 
 ## Methods
 

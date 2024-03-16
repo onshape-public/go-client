@@ -16,7 +16,8 @@ import (
 
 // BTMConfigurationData1560 struct for BTMConfigurationData1560
 type BTMConfigurationData1560 struct {
-	BtType                     *string                   `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion         *string                   `json:"importMicroversion,omitempty"`
 	NodeId                     *string                   `json:"nodeId,omitempty"`
 	CurrentConfiguration       []BTMParameter1           `json:"currentConfiguration,omitempty"`

@@ -16,6 +16,7 @@ import (
 
 // BTExportModelEdge1782 struct for BTExportModelEdge1782
 type BTExportModelEdge1782 struct {
+	// Type of JSON object.
 	BtType   *string                        `json:"btType,omitempty"`
 	Curve    *BTCurveDescription1583        `json:"curve,omitempty"`
 	Geometry *BTExportModelEdgeGeometry1125 `json:"geometry,omitempty"`

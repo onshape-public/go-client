@@ -16,6 +16,7 @@ import (
 
 // BTTableCrossHighlightData1753 struct for BTTableCrossHighlightData1753
 type BTTableCrossHighlightData1753 struct {
+	// Type of JSON object.
 	BtType              *string  `json:"btType,omitempty"`
 	DeterministicIdList []string `json:"deterministicIdList,omitempty"`
 	FeatureIdList       []string `json:"featureIdList,omitempty"`

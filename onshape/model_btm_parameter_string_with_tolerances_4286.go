@@ -16,11 +16,14 @@ import (
 
 // BTMParameterStringWithTolerances4286 struct for BTMParameterStringWithTolerances4286
 type BTMParameterStringWithTolerances4286 struct {
-	BtType             *string                 `json:"btType,omitempty"`
-	ImportMicroversion *string                 `json:"importMicroversion,omitempty"`
-	NodeId             *string                 `json:"nodeId,omitempty"`
-	ParameterId        *string                 `json:"parameterId,omitempty"`
-	Components         []BTToleranceString3274 `json:"components,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string                 `json:"parameterId,omitempty"`
+	Components  []BTToleranceString3274 `json:"components,omitempty"`
 }
 
 // NewBTMParameterStringWithTolerances4286 instantiates a new BTMParameterStringWithTolerances4286 object

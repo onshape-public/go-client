@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Curve** | Pointer to [**BTCurveDescription1583**](BTCurveDescription1583.md) |  | [optional] 
 **Geometry** | Pointer to [**BTExportModelEdgeGeometry1125**](BTExportModelEdgeGeometry1125.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 

@@ -483,6 +483,7 @@ type ApiUploadFileCreateElementRequest struct {
 	uploadId                             *string
 	versionString                        *string
 	importAppearances                    *bool
+	importMaterialDensity                *bool
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
@@ -621,6 +622,12 @@ func (r ApiUploadFileCreateElementRequest) VersionString(versionString string) A
 // Face appearances defined on models will be imported.
 func (r ApiUploadFileCreateElementRequest) ImportAppearances(importAppearances bool) ApiUploadFileCreateElementRequest {
 	r.importAppearances = &importAppearances
+	return r
+}
+
+// Material density defined on models will be imported.
+func (r ApiUploadFileCreateElementRequest) ImportMaterialDensity(importMaterialDensity bool) ApiUploadFileCreateElementRequest {
+	r.importMaterialDensity = &importMaterialDensity
 	return r
 }
 
@@ -786,6 +793,9 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.importAppearances != nil {
 		localVarFormParams.Add("importAppearances", parameterToString(*r.importAppearances, ""))
 	}
+	if r.importMaterialDensity != nil {
+		localVarFormParams.Add("importMaterialDensity", parameterToString(*r.importMaterialDensity, ""))
+	}
 	if r.yAxisIsUp != nil {
 		localVarFormParams.Add("yAxisIsUp", parameterToString(*r.yAxisIsUp, ""))
 	}
@@ -872,6 +882,7 @@ type ApiUploadFileUpdateElementRequest struct {
 	uploadId                             *string
 	versionString                        *string
 	importAppearances                    *bool
+	importMaterialDensity                *bool
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
@@ -1016,6 +1027,12 @@ func (r ApiUploadFileUpdateElementRequest) VersionString(versionString string) A
 // Face appearances defined on models will be imported.
 func (r ApiUploadFileUpdateElementRequest) ImportAppearances(importAppearances bool) ApiUploadFileUpdateElementRequest {
 	r.importAppearances = &importAppearances
+	return r
+}
+
+// Material density defined on models will be imported.
+func (r ApiUploadFileUpdateElementRequest) ImportMaterialDensity(importMaterialDensity bool) ApiUploadFileUpdateElementRequest {
+	r.importMaterialDensity = &importMaterialDensity
 	return r
 }
 
@@ -1186,6 +1203,9 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	}
 	if r.importAppearances != nil {
 		localVarFormParams.Add("importAppearances", parameterToString(*r.importAppearances, ""))
+	}
+	if r.importMaterialDensity != nil {
+		localVarFormParams.Add("importMaterialDensity", parameterToString(*r.importMaterialDensity, ""))
 	}
 	if r.yAxisIsUp != nil {
 		localVarFormParams.Add("yAxisIsUp", parameterToString(*r.yAxisIsUp, ""))

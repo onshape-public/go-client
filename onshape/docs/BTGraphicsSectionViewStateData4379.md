@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **IsExcluding** | Pointer to **bool** |  | [optional] 
 **SectionPlanes** | Pointer to [**[]BTGraphicsSectionPlaneData1429**](BTGraphicsSectionPlaneData1429.md) |  | [optional] 

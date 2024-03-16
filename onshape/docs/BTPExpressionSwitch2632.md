@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Choices** | Pointer to [**BTPLiteralMap256**](BTPLiteralMap256.md) |  | [optional] 
 **Selector** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **SpaceAfterSwitch** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 

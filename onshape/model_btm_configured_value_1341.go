@@ -401,11 +401,13 @@ func (v *NullableBTMConfiguredValue1341) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMConfiguredValue1341 struct {
-	BtType                   *string        `json:"btType,omitempty"`
-	ConfigurationValueString *string        `json:"configurationValueString,omitempty"`
-	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
-	NodeId                   *string        `json:"nodeId,omitempty"`
-	Value                    *BTMParameter1 `json:"value,omitempty"`
+	// Type of JSON object.
+	BtType                   *string `json:"btType,omitempty"`
+	ConfigurationValueString *string `json:"configurationValueString,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string        `json:"importMicroversion,omitempty"`
+	NodeId             *string        `json:"nodeId,omitempty"`
+	Value              *BTMParameter1 `json:"value,omitempty"`
 }
 
 // Newbase_BTMConfiguredValue1341 instantiates a new base_BTMConfiguredValue1341 object

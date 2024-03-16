@@ -18,8 +18,9 @@ import (
 type BTBaseEntityAppearanceEntry3607 struct {
 	AffectedDeterministicIds []string                  `json:"affectedDeterministicIds,omitempty"`
 	Appearance               *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
-	BtType                   *string                   `json:"btType,omitempty"`
-	Source                   *BTPartMetadataSource2895 `json:"source,omitempty"`
+	// Type of JSON object.
+	BtType *string                   `json:"btType,omitempty"`
+	Source *BTPartMetadataSource2895 `json:"source,omitempty"`
 }
 
 // NewBTBaseEntityAppearanceEntry3607 instantiates a new BTBaseEntityAppearanceEntry3607 object

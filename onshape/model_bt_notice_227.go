@@ -16,6 +16,7 @@ import (
 
 // BTNotice227 struct for BTNotice227
 type BTNotice227 struct {
+	// Type of JSON object.
 	BtType              *string                             `json:"btType,omitempty"`
 	ExpressionErrorInfo *BTParameterExpressionErrorInfo2037 `json:"expressionErrorInfo,omitempty"`
 	Level               *GBTNoticeLevel                     `json:"level,omitempty"`

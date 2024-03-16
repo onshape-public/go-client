@@ -432,6 +432,7 @@ func (v *NullableBTQuantityRange181) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTQuantityRange181 struct {
+	// Type of JSON object.
 	BtType       *string            `json:"btType,omitempty"`
 	DefaultValue *float64           `json:"defaultValue,omitempty"`
 	Location     *BTLocationInfo226 `json:"location,omitempty"`

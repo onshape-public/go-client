@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllRowValues** | Pointer to **[][]string** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ColumnCount** | Pointer to **int32** |  | [optional] 
 **FrozenColumns** | Pointer to **int32** |  | [optional] 
 **IsFailed** | Pointer to **bool** |  | [optional] 

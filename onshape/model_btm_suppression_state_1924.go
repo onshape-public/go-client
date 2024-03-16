@@ -282,7 +282,8 @@ func (v *NullableBTMSuppressionState1924) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSuppressionState1924 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 }

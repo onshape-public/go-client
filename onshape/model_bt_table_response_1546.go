@@ -16,6 +16,7 @@ import (
 
 // BTTableResponse1546 struct for BTTableResponse1546
 type BTTableResponse1546 struct {
+	// Type of JSON object.
 	BtType             *string      `json:"btType,omitempty"`
 	SourceMicroversion *string      `json:"sourceMicroversion,omitempty"`
 	Table              *BTTable1825 `json:"table,omitempty"`

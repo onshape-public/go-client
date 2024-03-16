@@ -16,6 +16,7 @@ import (
 
 // BTGraphicsSectionPlaneData1429 struct for BTGraphicsSectionPlaneData1429
 type BTGraphicsSectionPlaneData1429 struct {
+	// Type of JSON object.
 	BtType  *string        `json:"btType,omitempty"`
 	Center  *BTVector3d389 `json:"center,omitempty"`
 	Normal  *BTVector3d389 `json:"normal,omitempty"`

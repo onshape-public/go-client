@@ -16,41 +16,42 @@ import (
 
 // BTPartStudioDisplayData346 struct for BTPartStudioDisplayData346
 type BTPartStudioDisplayData346 struct {
-	AppearanceIdToAppearanceOverride        *map[string]BTAppearanceOverride2517                `json:"appearanceIdToAppearanceOverride,omitempty"`
-	AssemblyReferenceDisplayData            *BTAssemblyReferencesDisplayData1562                `json:"assemblyReferenceDisplayData,omitempty"`
-	BodyIdToEntityAppearanceSettings        *map[string]BTBaseEntityAppearanceSettings1391      `json:"bodyIdToEntityAppearanceSettings,omitempty"`
-	BodyIdToEntityAppearanceSettingsChanged *bool                                               `json:"bodyIdToEntityAppearanceSettingsChanged,omitempty"`
-	BtType                                  *string                                             `json:"btType,omitempty"`
-	CacheablePartStudioDisplayDataVersion   *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
-	DecalIdToDecal                          *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
-	DeterministicIdToAssociatedFeatureIds   *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
-	DeterministicIdToEntity                 *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
-	DeterministicIdToPartDisplayData        *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
-	DeterministicPartIdToData               *map[string]BTPartData16                            `json:"deterministicPartIdToData,omitempty"`
-	Dimensions                              []BTDimensionDisplayData323                         `json:"dimensions,omitempty"`
-	DisplayStateId                          *string                                             `json:"displayStateId,omitempty"`
-	ElementId                               *string                                             `json:"elementId,omitempty"`
-	FeatureIdToOperationIndices             *map[string][]int32                                 `json:"featureIdToOperationIndices,omitempty"`
-	FromCache                               *bool                                               `json:"fromCache,omitempty"`
-	FromFullElementId                       *BTFullElementId756                                 `json:"fromFullElementId,omitempty"`
-	FullElementId                           *BTFullElementId756                                 `json:"fullElementId,omitempty"`
-	Incremental                             *bool                                               `json:"incremental,omitempty"`
-	InstanceCount                           *int32                                              `json:"instanceCount,omitempty"`
-	IsBase                                  *bool                                               `json:"isBase,omitempty"`
-	IsExternal                              *bool                                               `json:"isExternal,omitempty"`
-	IsNoop                                  *bool                                               `json:"isNoop,omitempty"`
-	KeepFromMicroversion                    *bool                                               `json:"keepFromMicroversion,omitempty"`
-	MicroversionId                          *BTMicroversionId366                                `json:"microversionId,omitempty"`
-	MicroversionIdAndConfigurationInterval  *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
-	MicroversionInterval                    *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
-	NumberOfSketchEntities                  *int32                                              `json:"numberOfSketchEntities,omitempty"`
-	PartColorCycle                          *BTBasePartColorCycle2614                           `json:"partColorCycle,omitempty"`
-	PartDisplayData                         []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
-	SketchImages                            *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
-	UpdatedParts                            []string                                            `json:"updatedParts,omitempty"`
-	Usage                                   *GBTDisplayDataUsage                                `json:"usage,omitempty"`
-	UsesMultipleTessellationSettings        *bool                                               `json:"usesMultipleTessellationSettings,omitempty"`
-	VersionForRasterization                 *BTElementDisplayData326                            `json:"versionForRasterization,omitempty"`
+	AppearanceIdToAppearanceOverride        *map[string]BTAppearanceOverride2517           `json:"appearanceIdToAppearanceOverride,omitempty"`
+	AssemblyReferenceDisplayData            *BTAssemblyReferencesDisplayData1562           `json:"assemblyReferenceDisplayData,omitempty"`
+	BodyIdToEntityAppearanceSettings        *map[string]BTBaseEntityAppearanceSettings1391 `json:"bodyIdToEntityAppearanceSettings,omitempty"`
+	BodyIdToEntityAppearanceSettingsChanged *bool                                          `json:"bodyIdToEntityAppearanceSettingsChanged,omitempty"`
+	// Type of JSON object.
+	BtType                                 *string                                             `json:"btType,omitempty"`
+	CacheablePartStudioDisplayDataVersion  *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
+	DecalIdToDecal                         *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
+	DeterministicIdToAssociatedFeatureIds  *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
+	DeterministicIdToEntity                *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
+	DeterministicIdToPartDisplayData       *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
+	DeterministicPartIdToData              *map[string]BTPartData16                            `json:"deterministicPartIdToData,omitempty"`
+	Dimensions                             []BTDimensionDisplayData323                         `json:"dimensions,omitempty"`
+	DisplayStateId                         *string                                             `json:"displayStateId,omitempty"`
+	ElementId                              *string                                             `json:"elementId,omitempty"`
+	FeatureIdToOperationIndices            *map[string][]int32                                 `json:"featureIdToOperationIndices,omitempty"`
+	FromCache                              *bool                                               `json:"fromCache,omitempty"`
+	FromFullElementId                      *BTFullElementId756                                 `json:"fromFullElementId,omitempty"`
+	FullElementId                          *BTFullElementId756                                 `json:"fullElementId,omitempty"`
+	Incremental                            *bool                                               `json:"incremental,omitempty"`
+	InstanceCount                          *int32                                              `json:"instanceCount,omitempty"`
+	IsBase                                 *bool                                               `json:"isBase,omitempty"`
+	IsExternal                             *bool                                               `json:"isExternal,omitempty"`
+	IsNoop                                 *bool                                               `json:"isNoop,omitempty"`
+	KeepFromMicroversion                   *bool                                               `json:"keepFromMicroversion,omitempty"`
+	MicroversionId                         *BTMicroversionId366                                `json:"microversionId,omitempty"`
+	MicroversionIdAndConfigurationInterval *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
+	MicroversionInterval                   *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
+	NumberOfSketchEntities                 *int32                                              `json:"numberOfSketchEntities,omitempty"`
+	PartColorCycle                         *BTBasePartColorCycle2614                           `json:"partColorCycle,omitempty"`
+	PartDisplayData                        []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
+	SketchImages                           *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
+	UpdatedParts                           []string                                            `json:"updatedParts,omitempty"`
+	Usage                                  *GBTDisplayDataUsage                                `json:"usage,omitempty"`
+	UsesMultipleTessellationSettings       *bool                                               `json:"usesMultipleTessellationSettings,omitempty"`
+	VersionForRasterization                *BTElementDisplayData326                            `json:"versionForRasterization,omitempty"`
 }
 
 // NewBTPartStudioDisplayData346 instantiates a new BTPartStudioDisplayData346 object

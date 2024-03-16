@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bodies** | Pointer to [**[]BTExportTessellatedBody3398**](BTExportTessellatedBody3398.md) |  | [optional] 
 **BodiesInfo** | Pointer to [**BTExportModelBodiesResponse734**](BTExportModelBodiesResponse734.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CombineCompositePartConstituents** | Pointer to **bool** |  | [optional] 
 **DisplayData** | Pointer to [**BTPartStudioDisplayData346**](BTPartStudioDisplayData346.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 

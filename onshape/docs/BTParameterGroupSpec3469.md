@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CollapsedByDefault** | Pointer to **bool** |  | [optional] 
 **DrivingParameterId** | Pointer to **string** |  | [optional] 
 **GroupId** | Pointer to **string** |  | [optional] 

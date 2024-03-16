@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Ranges** | Pointer to [**[]BTNullableQuantityRange1340**](BTNullableQuantityRange1340.md) |  | [optional] 
 
 ## Methods

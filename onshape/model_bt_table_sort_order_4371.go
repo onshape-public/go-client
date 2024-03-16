@@ -16,6 +16,7 @@ import (
 
 // BTTableSortOrder4371 struct for BTTableSortOrder4371
 type BTTableSortOrder4371 struct {
+	// Type of JSON object.
 	BtType          *string `json:"btType,omitempty"`
 	IsAscending     *bool   `json:"isAscending,omitempty"`
 	NodeId          *string `json:"nodeId,omitempty"`

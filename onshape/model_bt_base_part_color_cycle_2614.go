@@ -182,6 +182,7 @@ func (v *NullableBTBasePartColorCycle2614) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTBasePartColorCycle2614 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

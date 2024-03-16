@@ -16,6 +16,7 @@ import (
 
 // BTTableColumnSpec1967 struct for BTTableColumnSpec1967
 type BTTableColumnSpec1967 struct {
+	// Type of JSON object.
 	BtType                  *string                   `json:"btType,omitempty"`
 	DefaultCellSpec         *BTParameterSpec6         `json:"defaultCellSpec,omitempty"`
 	DefaultColumnWidthUnits *GBTTableColumnWidthUnits `json:"defaultColumnWidthUnits,omitempty"`

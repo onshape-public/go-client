@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CompressedUvs** | Pointer to [**BTImmutableByteArray**](BTImmutableByteArray.md) |  | [optional] 
 **FlipComputedNormals** | Pointer to **bool** |  | [optional] 
 **Indices** | Pointer to [**BTImmutableIntArray**](BTImmutableIntArray.md) |  | [optional] 

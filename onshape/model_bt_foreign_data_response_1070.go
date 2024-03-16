@@ -16,6 +16,7 @@ import (
 
 // BTForeignDataResponse1070 struct for BTForeignDataResponse1070
 type BTForeignDataResponse1070 struct {
+	// Type of JSON object.
 	BtType          *string            `json:"btType,omitempty"`
 	BucketName      *string            `json:"bucketName,omitempty"`
 	BucketPath      *string            `json:"bucketPath,omitempty"`

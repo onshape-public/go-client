@@ -16,6 +16,7 @@ import (
 
 // BTEditingLogic2350 struct for BTEditingLogic2350
 type BTEditingLogic2350 struct {
+	// Type of JSON object.
 	BtType                   *string `json:"btType,omitempty"`
 	FunctionName             *string `json:"functionName,omitempty"`
 	WantsHiddenBodies        *bool   `json:"wantsHiddenBodies,omitempty"`

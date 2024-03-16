@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bodies** | Pointer to [**[]BTExportModelBody1272**](BTExportModelBody1272.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ErrorEnum** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **NodeIdToReferencedProperty** | Pointer to [**map[string]BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 

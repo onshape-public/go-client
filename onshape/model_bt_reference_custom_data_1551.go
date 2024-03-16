@@ -201,6 +201,7 @@ func (v *NullableBTReferenceCustomData1551) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTReferenceCustomData1551 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

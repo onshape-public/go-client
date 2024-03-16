@@ -858,7 +858,8 @@ func (v *NullableBTTable1825) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTTable1825 struct {
-	AllRowValues  [][]string              `json:"allRowValues,omitempty"`
+	AllRowValues [][]string `json:"allRowValues,omitempty"`
+	// Type of JSON object.
 	BtType        *string                 `json:"btType,omitempty"`
 	ColumnCount   *int32                  `json:"columnCount,omitempty"`
 	FrozenColumns *int32                  `json:"frozenColumns,omitempty"`

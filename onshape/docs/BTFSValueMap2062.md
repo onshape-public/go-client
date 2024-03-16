@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **TypeTag** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to [**[]BTFSValueMapEntry2077**](BTFSValueMapEntry2077.md) |  | [optional] 
 

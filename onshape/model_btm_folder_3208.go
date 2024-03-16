@@ -16,7 +16,8 @@ import (
 
 // BTMFolder3208 struct for BTMFolder3208
 type BTMFolder3208 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 	FolderId           *string `json:"folderId,omitempty"`

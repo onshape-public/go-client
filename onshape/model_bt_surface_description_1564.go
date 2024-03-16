@@ -496,6 +496,7 @@ func (v *NullableBTSurfaceDescription1564) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTSurfaceDescription1564 struct {
+	// Type of JSON object.
 	BtType                    *string             `json:"btType,omitempty"`
 	Direction                 *BTVector3d389      `json:"direction,omitempty"`
 	DirectionOrientedWithFace *BTVector3d389      `json:"directionOrientedWithFace,omitempty"`

@@ -482,13 +482,14 @@ func (v *NullableBTParameterLookupTableEntry1667) UnmarshalJSON(src []byte) erro
 }
 
 type base_BTParameterLookupTableEntry1667 struct {
-	AdditionalLocalizedStrings *int32   `json:"additionalLocalizedStrings,omitempty"`
-	BtType                     *string  `json:"btType,omitempty"`
-	Label                      *string  `json:"label,omitempty"`
-	LocalizableName            *string  `json:"localizableName,omitempty"`
-	LocalizedLabel             *string  `json:"localizedLabel,omitempty"`
-	LocalizedName              *string  `json:"localizedName,omitempty"`
-	StringsToLocalize          []string `json:"stringsToLocalize,omitempty"`
+	AdditionalLocalizedStrings *int32 `json:"additionalLocalizedStrings,omitempty"`
+	// Type of JSON object.
+	BtType            *string  `json:"btType,omitempty"`
+	Label             *string  `json:"label,omitempty"`
+	LocalizableName   *string  `json:"localizableName,omitempty"`
+	LocalizedLabel    *string  `json:"localizedLabel,omitempty"`
+	LocalizedName     *string  `json:"localizedName,omitempty"`
+	StringsToLocalize []string `json:"stringsToLocalize,omitempty"`
 }
 
 // Newbase_BTParameterLookupTableEntry1667 instantiates a new base_BTParameterLookupTableEntry1667 object

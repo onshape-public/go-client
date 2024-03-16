@@ -29,6 +29,7 @@ type BTActiveWorkflowInfo struct {
 	DocumentId                                  *string                   `json:"documentId,omitempty"`
 	DrawingCanDuplicatePartNumber               *bool                     `json:"drawingCanDuplicatePartNumber,omitempty"`
 	EnabledActiveMultipleWorkflows              *bool                     `json:"enabledActiveMultipleWorkflows,omitempty"`
+	HasInactiveCustomWorkflows                  *bool                     `json:"hasInactiveCustomWorkflows,omitempty"`
 	ObsoletionWorkflow                          *BTPublishedWorkflowInfo  `json:"obsoletionWorkflow,omitempty"`
 	ObsoletionWorkflowId                        *string                   `json:"obsoletionWorkflowId,omitempty"`
 	PartNumberingSchemeId                       *string                   `json:"partNumberingSchemeId,omitempty"`
@@ -475,6 +476,38 @@ func (o *BTActiveWorkflowInfo) HasEnabledActiveMultipleWorkflows() bool {
 // SetEnabledActiveMultipleWorkflows gets a reference to the given bool and assigns it to the EnabledActiveMultipleWorkflows field.
 func (o *BTActiveWorkflowInfo) SetEnabledActiveMultipleWorkflows(v bool) {
 	o.EnabledActiveMultipleWorkflows = &v
+}
+
+// GetHasInactiveCustomWorkflows returns the HasInactiveCustomWorkflows field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetHasInactiveCustomWorkflows() bool {
+	if o == nil || o.HasInactiveCustomWorkflows == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasInactiveCustomWorkflows
+}
+
+// GetHasInactiveCustomWorkflowsOk returns a tuple with the HasInactiveCustomWorkflows field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetHasInactiveCustomWorkflowsOk() (*bool, bool) {
+	if o == nil || o.HasInactiveCustomWorkflows == nil {
+		return nil, false
+	}
+	return o.HasInactiveCustomWorkflows, true
+}
+
+// HasHasInactiveCustomWorkflows returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasHasInactiveCustomWorkflows() bool {
+	if o != nil && o.HasInactiveCustomWorkflows != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasInactiveCustomWorkflows gets a reference to the given bool and assigns it to the HasInactiveCustomWorkflows field.
+func (o *BTActiveWorkflowInfo) SetHasInactiveCustomWorkflows(v bool) {
+	o.HasInactiveCustomWorkflows = &v
 }
 
 // GetObsoletionWorkflow returns the ObsoletionWorkflow field value if set, zero value otherwise.
@@ -933,6 +966,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.EnabledActiveMultipleWorkflows != nil {
 		toSerialize["enabledActiveMultipleWorkflows"] = o.EnabledActiveMultipleWorkflows
+	}
+	if o.HasInactiveCustomWorkflows != nil {
+		toSerialize["hasInactiveCustomWorkflows"] = o.HasInactiveCustomWorkflows
 	}
 	if o.ObsoletionWorkflow != nil {
 		toSerialize["obsoletionWorkflow"] = o.ObsoletionWorkflow

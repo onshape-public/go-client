@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
 **SuppressedFieldIndex** | Pointer to **int32** |  | [optional] 
-**SuppressionConfigured** | Pointer to **bool** |  | [optional] 
+**SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
 **SuppressionState** | Pointer to [**BTMSuppressionState1924**](BTMSuppressionState1924.md) |  | [optional] 
 
 ## Methods

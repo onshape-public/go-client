@@ -16,6 +16,7 @@ import (
 
 // BTElementLibraryReferenceData3133 struct for BTElementLibraryReferenceData3133
 type BTElementLibraryReferenceData3133 struct {
+	// Type of JSON object.
 	BtType                      *string      `json:"btType,omitempty"`
 	ElementLibraryId            *string      `json:"elementLibraryId,omitempty"`
 	ElementLibraryIdRaw         *BTObjectId  `json:"elementLibraryIdRaw,omitempty"`

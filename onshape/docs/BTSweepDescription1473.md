@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Profile** | Pointer to [**BTSplineDescription2118**](BTSplineDescription2118.md) |  | [optional] 
 
 ## Methods

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ArgumentsToDocument** | Pointer to [**[]BTPArgumentDeclaration232**](BTPArgumentDeclaration232.md) |  | [optional] 
 **Atomic** | Pointer to **bool** |  | [optional] 
 **Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Deprecated** | Pointer to **bool** |  | [optional] 
 **DeprecatedExplanation** | Pointer to **string** |  | [optional] 
 **DocumentationType** | Pointer to [**GBTPDefinitionType**](GBTPDefinitionType.md) |  | [optional] 

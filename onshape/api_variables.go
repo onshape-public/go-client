@@ -433,6 +433,7 @@ func (r ApiGetVariablesRequest) LinkDocumentId(linkDocumentId string) ApiGetVari
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetVariablesRequest) Configuration(configuration string) ApiGetVariablesRequest {
 	r.configuration = &configuration
 	return r

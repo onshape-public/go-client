@@ -16,6 +16,7 @@ import (
 
 // BTPartMetadataSource2895 struct for BTPartMetadataSource2895
 type BTPartMetadataSource2895 struct {
+	// Type of JSON object.
 	BtType     *string                `json:"btType,omitempty"`
 	SourceId   *string                `json:"sourceId,omitempty"`
 	SourceType *GBTMetadataSourceType `json:"sourceType,omitempty"`

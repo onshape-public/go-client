@@ -16,13 +16,16 @@ import (
 
 // BTMParameterForeignId146 struct for BTMParameterForeignId146
 type BTMParameterForeignId146 struct {
-	BtType             *string                    `json:"btType,omitempty"`
-	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
-	NodeId             *string                    `json:"nodeId,omitempty"`
-	ParameterId        *string                    `json:"parameterId,omitempty"`
-	ForeignId          *string                    `json:"foreignId,omitempty"`
-	ForeignName        *string                    `json:"foreignName,omitempty"`
-	LocationInfo       *BTForeignDataResponse1070 `json:"locationInfo,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId  *string                    `json:"parameterId,omitempty"`
+	ForeignId    *string                    `json:"foreignId,omitempty"`
+	ForeignName  *string                    `json:"foreignName,omitempty"`
+	LocationInfo *BTForeignDataResponse1070 `json:"locationInfo,omitempty"`
 }
 
 // NewBTMParameterForeignId146 instantiates a new BTMParameterForeignId146 object

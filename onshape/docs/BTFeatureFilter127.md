@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Exclusion** | Pointer to [**GBTFeatureFilterExclusion**](GBTFeatureFilterExclusion.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Parts** | Pointer to [**[]BTPartWithConfiguredProperties2163**](BTPartWithConfiguredProperties2163.md) |  | [optional] 
 **PropertyIdToConfiguredTable** | Pointer to [**map[string]BTPartWithConfiguredProperties2163**](BTPartWithConfiguredProperties2163.md) |  | [optional] 

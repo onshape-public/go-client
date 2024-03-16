@@ -332,6 +332,7 @@ func (v *NullableBTBoundingBox1052) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTBoundingBox1052 struct {
+	// Type of JSON object.
 	BtType    *string        `json:"btType,omitempty"`
 	MaxCorner *BTVector3d389 `json:"maxCorner,omitempty"`
 	MinCorner *BTVector3d389 `json:"minCorner,omitempty"`

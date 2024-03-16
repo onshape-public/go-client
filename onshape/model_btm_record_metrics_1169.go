@@ -16,7 +16,8 @@ import (
 
 // BTMRecordMetrics1169 struct for BTMRecordMetrics1169
 type BTMRecordMetrics1169 struct {
-	BtType             *string                 `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string                 `json:"importMicroversion,omitempty"`
 	NodeId             *string                 `json:"nodeId,omitempty"`
 	DoBodyValidation   *bool                   `json:"doBodyValidation,omitempty"`

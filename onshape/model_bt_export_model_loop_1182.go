@@ -16,6 +16,7 @@ import (
 
 // BTExportModelLoop1182 struct for BTExportModelLoop1182
 type BTExportModelLoop1182 struct {
+	// Type of JSON object.
 	BtType  *string                   `json:"btType,omitempty"`
 	Coedges []BTExportModelCoedge1342 `json:"coedges,omitempty"`
 	IsInner *bool                     `json:"isInner,omitempty"`

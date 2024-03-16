@@ -582,6 +582,7 @@ func (v *NullableBTOccurrence74) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTOccurrence74 struct {
+	// Type of JSON object.
 	BtType                *string         `json:"btType,omitempty"`
 	FullPathAsString      *string         `json:"fullPathAsString,omitempty"`
 	HeadInstanceId        *string         `json:"headInstanceId,omitempty"`

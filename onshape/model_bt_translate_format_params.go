@@ -54,6 +54,7 @@ type BTTranslateFormatParams struct {
 	ImageWidth                   *int32  `json:"imageWidth,omitempty"`
 	ImportAppearances            *bool   `json:"importAppearances,omitempty"`
 	ImportInBackground           *bool   `json:"importInBackground,omitempty"`
+	ImportMaterialDensity        *bool   `json:"importMaterialDensity,omitempty"`
 	ImportWithinDocument         *bool   `json:"importWithinDocument,omitempty"`
 	IncludeExportIds             *bool   `json:"includeExportIds,omitempty"`
 	JoinAdjacentSurfaces         *bool   `json:"joinAdjacentSurfaces,omitempty"`
@@ -1165,6 +1166,38 @@ func (o *BTTranslateFormatParams) HasImportInBackground() bool {
 // SetImportInBackground gets a reference to the given bool and assigns it to the ImportInBackground field.
 func (o *BTTranslateFormatParams) SetImportInBackground(v bool) {
 	o.ImportInBackground = &v
+}
+
+// GetImportMaterialDensity returns the ImportMaterialDensity field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetImportMaterialDensity() bool {
+	if o == nil || o.ImportMaterialDensity == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ImportMaterialDensity
+}
+
+// GetImportMaterialDensityOk returns a tuple with the ImportMaterialDensity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetImportMaterialDensityOk() (*bool, bool) {
+	if o == nil || o.ImportMaterialDensity == nil {
+		return nil, false
+	}
+	return o.ImportMaterialDensity, true
+}
+
+// HasImportMaterialDensity returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasImportMaterialDensity() bool {
+	if o != nil && o.ImportMaterialDensity != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImportMaterialDensity gets a reference to the given bool and assigns it to the ImportMaterialDensity field.
+func (o *BTTranslateFormatParams) SetImportMaterialDensity(v bool) {
+	o.ImportMaterialDensity = &v
 }
 
 // GetImportWithinDocument returns the ImportWithinDocument field value if set, zero value otherwise.
@@ -2643,6 +2676,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImportInBackground != nil {
 		toSerialize["importInBackground"] = o.ImportInBackground
+	}
+	if o.ImportMaterialDensity != nil {
+		toSerialize["importMaterialDensity"] = o.ImportMaterialDensity
 	}
 	if o.ImportWithinDocument != nil {
 		toSerialize["importWithinDocument"] = o.ImportWithinDocument

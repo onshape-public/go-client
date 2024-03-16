@@ -16,6 +16,7 @@ import (
 
 // BTFSValueMap2062 struct for BTFSValueMap2062
 type BTFSValueMap2062 struct {
+	// Type of JSON object.
 	BtType  *string                 `json:"btType,omitempty"`
 	TypeTag *string                 `json:"typeTag,omitempty"`
 	Value   []BTFSValueMapEntry2077 `json:"value,omitempty"`

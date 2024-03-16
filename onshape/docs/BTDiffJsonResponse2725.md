@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Change** | Pointer to [**BTJEdit3734**](BTJEdit3734.md) |  | [optional] 
 **Patch** | Pointer to [**BTDiffJsonResponse2725Patch**](BTDiffJsonResponse2725Patch.md) |  | [optional] 
 **SourceChangeId** | Pointer to **string** |  | [optional] 

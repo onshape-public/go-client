@@ -432,6 +432,7 @@ func (v *NullableBTTableRow1054) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTTableRow1054 struct {
+	// Type of JSON object.
 	BtType         *string                     `json:"btType,omitempty"`
 	ColumnIdToCell *map[string]BTTableCell1114 `json:"columnIdToCell,omitempty"`
 	Id             *string                     `json:"id,omitempty"`

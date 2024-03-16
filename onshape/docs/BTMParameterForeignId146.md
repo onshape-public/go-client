@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ForeignId** | Pointer to **string** |  | [optional] 
 **ForeignName** | Pointer to **string** |  | [optional] 
 **LocationInfo** | Pointer to [**BTForeignDataResponse1070**](BTForeignDataResponse1070.md) |  | [optional] 

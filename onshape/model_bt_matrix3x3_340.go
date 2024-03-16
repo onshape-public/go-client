@@ -16,6 +16,7 @@ import (
 
 // BTMatrix3x3340 struct for BTMatrix3x3340
 type BTMatrix3x3340 struct {
+	// Type of JSON object.
 	BtType *string  `json:"btType,omitempty"`
 	M00    *float64 `json:"m00,omitempty"`
 	M01    *float64 `json:"m01,omitempty"`

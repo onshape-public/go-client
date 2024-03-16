@@ -639,15 +639,17 @@ func (v *NullableBTMConfigurationParameter819) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMConfigurationParameter819 struct {
-	BtType               *string                        `json:"btType,omitempty"`
-	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
-	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
-	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
-	NodeId               *string                        `json:"nodeId,omitempty"`
-	ParameterId          *string                        `json:"parameterId,omitempty"`
-	ParameterName        *string                        `json:"parameterName,omitempty"`
-	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid                *bool                          `json:"valid,omitempty"`
+	// Type of JSON object.
+	BtType               *string       `json:"btType,omitempty"`
+	GeneratedParameterId *BTTreeNode20 `json:"generatedParameterId,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                        `json:"importMicroversion,omitempty"`
+	IsCosmetic         *bool                          `json:"isCosmetic,omitempty"`
+	NodeId             *string                        `json:"nodeId,omitempty"`
+	ParameterId        *string                        `json:"parameterId,omitempty"`
+	ParameterName      *string                        `json:"parameterName,omitempty"`
+	ParameterType      *GBTConfigurationParameterType `json:"parameterType,omitempty"`
+	Valid              *bool                          `json:"valid,omitempty"`
 }
 
 // Newbase_BTMConfigurationParameter819 instantiates a new base_BTMConfigurationParameter819 object

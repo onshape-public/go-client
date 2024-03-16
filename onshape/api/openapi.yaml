@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.177.32386-009f57335fc6
+  version: 1.178.32726-06a27ee766e8
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -3609,7 +3609,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -3731,7 +3733,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -3915,7 +3919,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -4031,7 +4037,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -4120,7 +4128,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -4322,7 +4332,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -4402,7 +4414,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -4491,7 +4505,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -5801,7 +5817,7 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Retrieve a document.
+      summary: Get a list of documents that meet the criteria you specify.
       tags:
       - Document
       x-BTVisibility: PRODUCTION
@@ -6150,7 +6166,7 @@ paths:
   /documents/d/{did}/w/{wid}/syncAppElements:
     post:
       deprecated: false
-      operationId: syncApplicationElements
+      operationId: syncAppElements
       parameters:
       - explode: false
         in: path
@@ -9004,7 +9020,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -9125,7 +9143,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -9280,7 +9300,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -10162,7 +10184,8 @@ paths:
         schema:
           type: boolean
         style: form
-      - description: Configuration string.
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
         explode: true
         in: query
         name: configuration
@@ -10255,7 +10278,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -10451,7 +10476,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -10623,7 +10650,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -11159,7 +11188,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -11298,7 +11329,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -11556,6 +11589,8 @@ paths:
   /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid}:
     delete:
       deprecated: false
+      description: "See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/)\
+        \ for additional information."
       operationId: deletePartStudioFeature
       parameters:
       - description: Document ID.
@@ -11609,6 +11644,9 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: "Replaces an existing feature in the location of the existing feature.\
+        \ See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/)\
+        \ for additional information."
       operationId: updatePartStudioFeature
       parameters:
       - description: Document ID.
@@ -11726,7 +11764,12 @@ paths:
   /partstudios/d/{did}/w/{wid}/e/{eid}/features/updates:
     post:
       deprecated: false
-      description: You can update multiple features with a single call.
+      description: "This API accepts a list of features (that must already exist in\
+        \ the Part Studio) to update. This call does not fully redefine the features;\
+        \ it updates only the parameters supplied in the top-level feature structure,\
+        \ and optionally can update feature suppression attributes. \nSee the [Features\
+        \ API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/)\
+        \ for additional information."
       operationId: updateFeatures
       parameters:
       - description: Document ID.
@@ -11771,7 +11814,7 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Update existing features' parameters.
+      summary: Update multiple features in a Part Studio
       tags:
       - PartStudio
       x-BTVisibility: PRODUCTION
@@ -11831,7 +11874,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -11968,7 +12013,8 @@ paths:
           default: true
           type: boolean
         style: form
-      - description: Configuration string.
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
         explode: true
         in: query
         name: configuration
@@ -12101,6 +12147,8 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features:
     get:
       deprecated: false
+      description: "See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/)\
+        \ for additional information."
       operationId: getPartStudioFeatures
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -12154,7 +12202,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -12181,7 +12231,9 @@ paths:
         schema:
           type: string
         style: form
-      - explode: true
+      - description: "If true, include the underlying geometry IDs in the feature\
+          \ definition."
+        explode: true
         in: query
         name: includeGeometryIds
         required: false
@@ -12220,14 +12272,15 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve a feature list of parts or a Part Studio by document ID,\
-        \ workspace or version or microversion ID, and tab ID."
+      summary: Get a list of features instantiated in the Part Studio.
       tags:
       - PartStudio
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
-      description: "See Feature List APIs in the [developer documentation](https://onshape-public.github.io/docs/api-adv/featureaccess/)\
+      description: "The feature is added immediately before the rollback bar. Any\
+        \ geometry IDs specified in the feature must be valid at that point in the\
+        \ feature tree. \n \nSee the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/)\
         \ for additional information."
       operationId: addPartStudioFeature
       parameters:
@@ -12336,7 +12389,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -12440,7 +12495,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -12486,6 +12543,9 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs:
     get:
       deprecated: false
+      description: Returns a list of feature specs available within the Part Studio.
+        A feature spec provides a data description of the feature's interface to a
+        feature.
       operationId: getPartStudioFeatureSpecs
       parameters:
       - description: Document ID.
@@ -12685,7 +12745,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -12923,7 +12985,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -13063,7 +13127,8 @@ paths:
           default: false
           type: boolean
         style: form
-      - description: Configuration string.
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
         explode: true
         in: query
         name: configuration
@@ -13243,7 +13308,8 @@ paths:
           default: false
           type: boolean
         style: form
-      - description: Configuration string.
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
         explode: true
         in: query
         name: configuration
@@ -13676,7 +13742,8 @@ paths:
           format: double
           type: number
         style: form
-      - description: Configuration string.
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
         explode: true
         in: query
         name: configuration
@@ -13764,7 +13831,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -13905,7 +13974,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -14136,11 +14207,53 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTPublicationInfo'
           description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
       summary: Create a new publication.
       tags:
       - Publication
       x-BTVisibility: PRODUCTION
   /publications/{pid}:
+    delete:
+      deprecated: false
+      operationId: deletePublication
+      parameters:
+      - description: Publication ID.
+        explode: false
+        in: path
+        name: pid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "If true, publication is deleted forever."
+        explode: true
+        in: query
+        name: forever
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Delete
+        BasicAuth:
+        - OAuth2Delete
+      summary: Delete a publication.
+      tags:
+      - Publication
+      x-BTVisibility: PRODUCTION
     post:
       deprecated: false
       operationId: updatePublicationAttributes
@@ -14166,6 +14279,11 @@ paths:
               schema:
                 type: object
           description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
       summary: "Update publication's attributes name, description, and notes."
       tags:
       - Publication
@@ -14196,6 +14314,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTPublicationInfo'
           description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
       summary: Add an item in a publication.
       tags:
       - Publication
@@ -14228,6 +14351,11 @@ paths:
               schema:
                 type: object
           description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
       summary: Remove an item from a publication.
       tags:
       - Publication
@@ -14286,6 +14414,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BTPublicationInfo'
           description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
       summary: Add publication items in bulk.
       tags:
       - Publication
@@ -14680,7 +14813,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -16746,7 +16881,9 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: URL-encoded string of configuration values (separated by `;`)
+          for the feature definition.
+        explode: true
         in: query
         name: configuration
         required: false
@@ -18814,6 +18951,7 @@ components:
       - $ref: '#/components/schemas/BTActiveSheetMetalFilter_2944_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTActiveWorkflowInfo:
@@ -18866,6 +19004,7 @@ components:
           documentId: documentId
           id: id
           publishedDate: 2000-01-23T04:56:07.000+00:00
+        hasInactiveCustomWorkflows: true
         drawingCanDuplicatePartNumber: true
         canCurrentUserCreateReleases: true
         canCurrentUserSyncRevisionsToArena: true
@@ -18932,6 +19071,8 @@ components:
         drawingCanDuplicatePartNumber:
           type: boolean
         enabledActiveMultipleWorkflows:
+          type: boolean
+        hasInactiveCustomWorkflows:
           type: boolean
         obsoletionWorkflow:
           $ref: '#/components/schemas/BTPublishedWorkflowInfo'
@@ -19317,6 +19458,7 @@ components:
       - $ref: '#/components/schemas/BTAllowEdgePointFilter_2371_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAllowFlattenedGeometryFilter-2140:
@@ -19325,6 +19467,7 @@ components:
       - $ref: '#/components/schemas/BTAllowFlattenedGeometryFilter_2140_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAllowMeshGeometryFilter-1026:
@@ -19333,6 +19476,7 @@ components:
       - $ref: '#/components/schemas/BTAllowMeshGeometryFilter_1026_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAllowedMateTypeFilter-1511:
@@ -19341,6 +19485,7 @@ components:
       - $ref: '#/components/schemas/BTAllowedMateTypeFilter_1511_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAndFilter-110:
@@ -19349,6 +19494,7 @@ components:
       - $ref: '#/components/schemas/BTAndFilter_110_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAngularDimensionDisplayData-320:
@@ -19361,6 +19507,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTApiConfiguration:
@@ -19414,6 +19561,7 @@ components:
         - entityIds
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         columns:
           items:
@@ -19440,6 +19588,7 @@ components:
         id: id
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         header:
           type: string
@@ -19514,6 +19663,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         tables:
           items:
@@ -19531,6 +19681,7 @@ components:
         - entityIds
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         callout:
           type: string
@@ -20509,6 +20660,7 @@ components:
         appearanceReset:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         copyWithoutEntities:
           $ref: '#/components/schemas/BTAppearanceOverride-2517'
@@ -20594,6 +20746,7 @@ components:
       - $ref: '#/components/schemas/BTArcLengthDimensionDisplayData_1018_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblyDefinitionInfo:
@@ -20975,6 +21128,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblyInsertTransformedInstancesResponse:
@@ -21047,6 +21201,7 @@ components:
       - $ref: '#/components/schemas/BTAssemblyInstance_947_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblyInstanceDefinitionParams:
@@ -21406,6 +21561,7 @@ components:
       - $ref: '#/components/schemas/BTAssemblyPattern_1974_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblyPatternInfo:
@@ -21760,6 +21916,7 @@ components:
             $ref: '#/components/schemas/BTSingleReferenceDisplayData-1943'
           type: array
         btType:
+          description: Type of JSON object.
           type: string
         elementId:
           type: string
@@ -21789,6 +21946,7 @@ components:
       - $ref: '#/components/schemas/BTAssemblyReplicate_2774_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblySimulation-2246:
@@ -21797,6 +21955,7 @@ components:
       - $ref: '#/components/schemas/BTAssemblySimulation_2246_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblySimulationData-978:
@@ -21805,6 +21964,7 @@ components:
       - $ref: '#/components/schemas/BTAssemblySimulationData_978_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblySimulationStructuralLoadsTable-3867:
@@ -21813,6 +21973,7 @@ components:
       - $ref: '#/components/schemas/BTAssemblySimulationStructuralLoadsTable_3867_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblySimulationTable-3236:
@@ -21821,6 +21982,7 @@ components:
       - $ref: '#/components/schemas/BTAssemblySimulationTable_3236_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTAssemblyTransformDefinitionParams:
@@ -22205,6 +22367,7 @@ components:
         isNormalized: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         fullTransformation:
           items:
@@ -22287,6 +22450,7 @@ components:
         appearance:
           $ref: '#/components/schemas/BTGraphicsAppearance-1152'
         btType:
+          description: Type of JSON object.
           type: string
         source:
           $ref: '#/components/schemas/BTPartMetadataSource-2895'
@@ -22320,6 +22484,7 @@ components:
         isNoop: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         colorIdToBaseEntityAppearanceEntry:
           additionalProperties:
@@ -22362,6 +22527,7 @@ components:
         fromSketch: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         copyWithoutGeometry:
           $ref: '#/components/schemas/BTBaseEntityData-33'
@@ -22406,6 +22572,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTBaseSMJointTableRowMetadata-2232:
@@ -22419,6 +22586,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTBillOfMaterialsElementInfo:
@@ -23184,6 +23352,7 @@ components:
       - $ref: '#/components/schemas/BTBillOfMaterialsTable_1073_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTBillOfMaterialsTableRow-1425:
@@ -23192,6 +23361,7 @@ components:
       - $ref: '#/components/schemas/BTBillOfMaterialsTableRow_1425_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTBillOfMaterialsTableRowMetadata-1300:
@@ -23200,6 +23370,7 @@ components:
       - $ref: '#/components/schemas/BTBillOfMaterialsTableRowMetadata_1300_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTBillOfMaterialsUniqueItemId-2029:
@@ -23207,6 +23378,7 @@ components:
         apiConfiguration:
           type: string
         btType:
+          description: Type of JSON object.
           type: string
         isStandardContent:
           type: boolean
@@ -23313,6 +23485,7 @@ components:
       - $ref: '#/components/schemas/BTBodyEntity_26_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTBodyTypeFilter-112:
@@ -23321,6 +23494,7 @@ components:
       - $ref: '#/components/schemas/BTBodyTypeFilter_112_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTBoundingBox-1052:
@@ -23344,6 +23518,7 @@ components:
           z: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         maxCorner:
           $ref: '#/components/schemas/BTVector3d-389'
@@ -23383,6 +23558,7 @@ components:
     BTCacheDataPath-191:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         documentId:
           type: string
@@ -23707,6 +23883,7 @@ components:
       - $ref: '#/components/schemas/BTCenterlineDimensionDisplayData_1798_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCircleDescription-1145:
@@ -23715,6 +23892,7 @@ components:
       - $ref: '#/components/schemas/BTCircleDescription_1145_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTClassroomInfo:
@@ -23728,6 +23906,7 @@ components:
       - $ref: '#/components/schemas/BTClonedInstance_2505_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTClosedConstituentPartData-2911:
@@ -23741,6 +23920,7 @@ components:
         bodyType:
           $ref: '#/components/schemas/GBTBodyType'
         btType:
+          description: Type of JSON object.
           type: string
         isActiveSheetMetal:
           type: boolean
@@ -23755,6 +23935,7 @@ components:
       - $ref: '#/components/schemas/BTClosedCurveFilter_1206_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCloudStorageAccountInfo:
@@ -24897,6 +25078,7 @@ components:
     BTComputedConfigurationInputSpec-2525:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         inputId:
           type: string
@@ -24924,6 +25106,7 @@ components:
       - $ref: '#/components/schemas/BTComputedPartPropertySpec_1746_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConeDescription-860:
@@ -24932,6 +25115,7 @@ components:
       - $ref: '#/components/schemas/BTConeDescription_860_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConfigurationInfo:
@@ -25018,6 +25202,7 @@ components:
           nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configurationParameters:
           items:
@@ -25028,20 +25213,31 @@ components:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTConfigurationUpdateCall-2933:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configurationParameters:
           items:
@@ -25052,15 +25248,25 @@ components:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTConfiguredDimensionColumnInfo-2168:
@@ -25069,6 +25275,7 @@ components:
       - $ref: '#/components/schemas/BTConfiguredDimensionColumnInfo_2168_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConfiguredFeatureColumnInfo-1014:
@@ -25077,6 +25284,7 @@ components:
       - $ref: '#/components/schemas/BTConfiguredFeatureColumnInfo_1014_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConfiguredParameterColumnInfo-2900:
@@ -25085,11 +25293,13 @@ components:
       - $ref: '#/components/schemas/BTConfiguredParameterColumnInfo_2900_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConfiguredPartProperties-2645:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         nodeId:
           type: string
@@ -25110,6 +25320,7 @@ components:
       - $ref: '#/components/schemas/BTConfiguredPartPropertiesTable_2740_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConfiguredSuppressionColumnInfo-2498:
@@ -25118,6 +25329,7 @@ components:
       - $ref: '#/components/schemas/BTConfiguredSuppressionColumnInfo_2498_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConfiguredValuesColumnInfo-1025:
@@ -25133,6 +25345,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConstructionObjectFilter-113:
@@ -25141,6 +25354,7 @@ components:
       - $ref: '#/components/schemas/BTConstructionObjectFilter_113_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTConstructionPlaneEntity-27:
@@ -25149,11 +25363,13 @@ components:
       - $ref: '#/components/schemas/BTConstructionPlaneEntity_27_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCoordinateSystem-387:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         matrix:
           $ref: '#/components/schemas/BTBSMatrix-386'
@@ -25263,6 +25479,7 @@ components:
       - $ref: '#/components/schemas/BTCountDimensionDisplayData_1778_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveDescription-1583:
@@ -25293,6 +25510,7 @@ components:
           z: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         direction:
           $ref: '#/components/schemas/BTVector3d-389'
@@ -25314,6 +25532,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveGeometryCircle-115:
@@ -25326,6 +25545,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveGeometryConic-2284:
@@ -25334,6 +25554,7 @@ components:
       - $ref: '#/components/schemas/BTCurveGeometryConic_2284_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveGeometryControlPointSpline-2197:
@@ -25342,6 +25563,7 @@ components:
       - $ref: '#/components/schemas/BTCurveGeometryControlPointSpline_2197_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveGeometryEllipse-1189:
@@ -25350,6 +25572,7 @@ components:
       - $ref: '#/components/schemas/BTCurveGeometryEllipse_1189_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveGeometryInterpolatedSpline-116:
@@ -25358,6 +25581,7 @@ components:
       - $ref: '#/components/schemas/BTCurveGeometryInterpolatedSpline_116_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveGeometryLine-117:
@@ -25366,6 +25590,7 @@ components:
       - $ref: '#/components/schemas/BTCurveGeometryLine_117_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveGeometrySpline-118:
@@ -25378,6 +25603,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCurveLengthDimensionDisplayData-322:
@@ -25386,6 +25612,7 @@ components:
       - $ref: '#/components/schemas/BTCurveLengthDimensionDisplayData_322_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCylinderDescription-686:
@@ -25394,6 +25621,7 @@ components:
       - $ref: '#/components/schemas/BTCylinderDescription_686_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTCylindricalImageMapping-1640:
@@ -25402,6 +25630,7 @@ components:
       - $ref: '#/components/schemas/BTCylindricalImageMapping_1640_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTDebugGeometry-2059:
@@ -25410,6 +25639,7 @@ components:
       - $ref: '#/components/schemas/BTDebugGeometry_2059_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTDecal-2404:
@@ -25451,6 +25681,7 @@ components:
         isDeletion: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         imageForeignId:
           type: string
@@ -25466,6 +25697,7 @@ components:
     BTDefaultFeatures-119:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         children:
           items:
@@ -25569,6 +25801,7 @@ components:
         sourceChangeId: sourceChangeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         change:
           $ref: '#/components/schemas/BTJEdit-3734'
@@ -25640,6 +25873,7 @@ components:
         featureId: featureId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         coordinateSystem:
           $ref: '#/components/schemas/BTMatrix3x3-340'
@@ -26174,6 +26408,7 @@ components:
       example:
         resultDocumentMicroversionId: resultDocumentMicroversionId
         parentDocumentMicroversionId: parentDocumentMicroversionId
+        sourceDocumentMicroversionId: sourceDocumentMicroversionId
         libraryVersionMismatch: true
         overwrittenElements:
         - energyUnits: energyUnits
@@ -26350,6 +26585,8 @@ components:
         parentDocumentMicroversionId:
           type: string
         resultDocumentMicroversionId:
+          type: string
+        sourceDocumentMicroversionId:
           type: string
       type: object
     BTDocumentMessageBody:
@@ -26688,6 +26925,7 @@ components:
         documentId: documentId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         documentId:
           type: string
@@ -26751,6 +26989,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTDrawingHiddenLineOption:
@@ -27053,6 +27292,7 @@ components:
       - $ref: '#/components/schemas/BTEdgeTopologyFilter_122_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEditingLogic-2350:
@@ -27064,6 +27304,7 @@ components:
         wantsSpecifiedParameters: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         functionName:
           type: string
@@ -27212,6 +27453,7 @@ components:
           theId: theId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         elementId:
           type: string
@@ -27238,11 +27480,13 @@ components:
     BTElementLibraryPurpose-3353:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTElementLibraryReferenceData-3133:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         elementLibraryId:
           type: string
@@ -27467,6 +27711,7 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configured:
           type: boolean
@@ -27513,6 +27758,7 @@ components:
       - $ref: '#/components/schemas/BTEllipseDescription_866_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEllipseDiameterDimensionDisplayData-1301:
@@ -27521,6 +27767,7 @@ components:
       - $ref: '#/components/schemas/BTEllipseDiameterDimensionDisplayData_1301_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEncodedConfigurationInfo:
@@ -27539,6 +27786,7 @@ components:
       - $ref: '#/components/schemas/BTEntityDegenerateEdge_1129_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEntityDeletion-24:
@@ -27547,6 +27795,7 @@ components:
       - $ref: '#/components/schemas/BTEntityDeletion_24_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEntityEdge-30:
@@ -27555,6 +27804,7 @@ components:
       - $ref: '#/components/schemas/BTEntityEdge_30_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEntityFace-31:
@@ -27567,6 +27817,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEntityGeometry-35:
@@ -27586,6 +27837,7 @@ components:
         decompressed: null
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         compressed:
           type: boolean
@@ -27611,6 +27863,7 @@ components:
       - $ref: '#/components/schemas/BTEntityPoint_29_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTEntityTypeFilter-124:
@@ -27619,6 +27872,7 @@ components:
       - $ref: '#/components/schemas/BTEntityTypeFilter_124_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTExplosion-2754:
@@ -27627,6 +27881,7 @@ components:
       - $ref: '#/components/schemas/BTExplosion_2754_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTExplosionStepFeature-3008:
@@ -27635,6 +27890,7 @@ components:
       - $ref: '#/components/schemas/BTExplosionStepFeature_3008_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTExportBodyProperties-3559:
@@ -27645,6 +27901,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTExportModelArcEdgeGeometry-1257:
@@ -27653,6 +27910,7 @@ components:
       - $ref: '#/components/schemas/BTExportModelArcEdgeGeometry_1257_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTExportModelBodiesResponse-734:
@@ -28257,6 +28515,7 @@ components:
             $ref: '#/components/schemas/BTExportModelBody-1272'
           type: array
         btType:
+          description: Type of JSON object.
           type: string
         errorEnum:
           $ref: '#/components/schemas/GBTErrorStringEnum'
@@ -28556,6 +28815,7 @@ components:
           btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         closed:
           description: "If type == COMPOSITE, indicates whether it is open or closed."
@@ -28596,6 +28856,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         edgeId:
           type: string
@@ -28662,6 +28923,7 @@ components:
         id: id
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         curve:
           $ref: '#/components/schemas/BTCurveDescription-1583'
@@ -28714,6 +28976,7 @@ components:
           z: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         endPoint:
           $ref: '#/components/schemas/BTVector3d-389'
@@ -28817,6 +29080,7 @@ components:
         box:
           $ref: '#/components/schemas/BTBoundingBox-1052'
         btType:
+          description: Type of JSON object.
           type: string
         faceProperties:
           $ref: '#/components/schemas/BTExportModelProperties-3216'
@@ -28845,6 +29109,7 @@ components:
         isInner: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         coedges:
           items:
@@ -28880,6 +29145,7 @@ components:
         appearance:
           $ref: '#/components/schemas/BTGraphicsAppearance-1152'
         btType:
+          description: Type of JSON object.
           type: string
         name:
           type: string
@@ -28895,6 +29161,7 @@ components:
           z: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         id:
           type: string
@@ -28976,6 +29243,7 @@ components:
         - constituents
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         constituents:
           items:
@@ -28992,11 +29260,13 @@ components:
       - $ref: '#/components/schemas/BTExportTessellatedEdgesBody_890_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTExportTessellatedEdgesEdge-1364:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         id:
           type: string
@@ -29028,6 +29298,7 @@ components:
             $ref: '#/components/schemas/BTExportTessellatedBody-3398'
           type: array
         btType:
+          description: Type of JSON object.
           type: string
         errorEnum:
           $ref: '#/components/schemas/GBTErrorStringEnum'
@@ -29038,6 +29309,7 @@ components:
       - $ref: '#/components/schemas/BTExportTessellatedFacesBody_1321_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTExportTessellatedFacesFace-1192:
@@ -29049,6 +29321,7 @@ components:
         appearanceSourceName:
           type: string
         btType:
+          description: Type of JSON object.
           type: string
         errorMessage:
           type: string
@@ -29062,6 +29335,7 @@ components:
     BTExportTessellatedFacesFacet-1417:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         indices:
           items:
@@ -31356,6 +31630,7 @@ components:
         bodiesInfo:
           $ref: '#/components/schemas/BTExportModelBodiesResponse-734'
         btType:
+          description: Type of JSON object.
           type: string
         combineCompositePartConstituents:
           type: boolean
@@ -31400,6 +31675,7 @@ components:
       - $ref: '#/components/schemas/BTExternalReference_1936_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFSTable-953:
@@ -31408,6 +31684,7 @@ components:
       - $ref: '#/components/schemas/BTFSTable_953_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFSTableColumnInfo-623:
@@ -31416,6 +31693,7 @@ components:
       - $ref: '#/components/schemas/BTFSTableColumnInfo_623_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFSTableRowMetadata-2262:
@@ -31424,6 +31702,7 @@ components:
       - $ref: '#/components/schemas/BTFSTableRowMetadata_2262_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFSValue-1888:
@@ -31444,6 +31723,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         typeTag:
           type: string
@@ -31456,6 +31736,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueArray_1499_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31466,6 +31747,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueBoolean_1195_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31473,6 +31755,7 @@ components:
     BTFSValueMap-2062:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         typeTag:
           type: string
@@ -31484,6 +31767,7 @@ components:
     BTFSValueMapEntry-2077:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         key:
           $ref: '#/components/schemas/BTFSValue-1888'
@@ -31496,6 +31780,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueNumber_772_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31506,6 +31791,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueOther_1124_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31516,6 +31802,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueString_1422_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31526,6 +31813,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueTooBig_1247_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31536,6 +31824,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueUndefined_2003_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31546,6 +31835,7 @@ components:
       - $ref: '#/components/schemas/BTFSValueWithUnits_1817_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - btType
@@ -31577,35 +31867,57 @@ components:
         microversionSkew: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTFeatureDefinitionCall-1406:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         feature:
           $ref: '#/components/schemas/BTMFeature-134'
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTFeatureDefinitionResponse-1617:
@@ -31646,21 +31958,32 @@ components:
         microversionSkew: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         feature:
           $ref: '#/components/schemas/BTMFeature-134'
         featureState:
           $ref: '#/components/schemas/BTFeatureState-1688'
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTFeatureEntity-34:
@@ -31678,6 +32001,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFeatureFilter-127:
@@ -31686,9 +32010,11 @@ components:
       - $ref: '#/components/schemas/BTFeatureFilter_127_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFeatureListResponse-2457:
+      description: List of features instantiated within the Part Studio.
       example:
         serializationVersion: serializationVersion
         features:
@@ -31816,38 +32142,60 @@ components:
         isComplete: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         defaultFeatures:
+          description: List of Onshape-defined features instantiated within the Part
+            Studio.
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
         featureStates:
           additionalProperties:
             $ref: '#/components/schemas/BTFeatureState-1688'
+          description: "State of each feature, indicating if the feature is valid.\
+            \ Incorrectly defined features will still appear in the Feature list."
           type: object
         features:
+          description: List of user-defined features instantiated within the Part
+            Studio.
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
         imports:
+          description: Internal only. Do not modify.
           items:
             $ref: '#/components/schemas/BTMImport-136'
           type: array
         isComplete:
+          description: '`true` if the features represent the entire part studio or
+            `false` for a filtered subset.'
           type: boolean
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         rollbackIndex:
+          description: Index of the rollback bar location. `-1` indicates the bar
+            is at the end of the Feature List.
           format: int32
           type: integer
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: "The document microversion from which the result was extracted.\
+            \ Part, face, edge, and vertex IDs are only valid for the same microversion."
           type: string
       type: object
     BTFeatureOccurrenceData-775:
@@ -31857,6 +32205,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         visibility:
           $ref: '#/components/schemas/GBTBSFeatureVisibility'
@@ -31864,11 +32213,14 @@ components:
     BTFeatureScriptEvalCall-2377:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         queries:
           additionalProperties:
@@ -31877,12 +32229,20 @@ components:
             type: array
           type: object
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         script:
           type: string
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTFeatureScriptEvalResponse-1859:
@@ -32314,25 +32674,36 @@ components:
         microversionSkew: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         console:
           type: string
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         notices:
           items:
             $ref: '#/components/schemas/BTNotice-227'
           type: array
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         result:
           $ref: '#/components/schemas/BTFSValue-1888'
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTFeatureSpec-129:
@@ -32679,6 +33050,7 @@ components:
             $ref: '#/components/schemas/BTParameterSpec-6'
           type: array
         btType:
+          description: Type of JSON object.
           type: string
         computedPartPropertySpec:
           type: boolean
@@ -33421,21 +33793,32 @@ components:
         microversionSkew: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         featureSpecs:
           items:
             $ref: '#/components/schemas/BTFeatureSpec-129'
           type: array
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTFeatureState-1688:
@@ -33445,6 +33828,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         featureStatus:
           $ref: '#/components/schemas/GBTNodeStatusType'
@@ -33459,6 +33843,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFeatureTypeFilter-962:
@@ -33467,6 +33852,7 @@ components:
       - $ref: '#/components/schemas/BTFeatureTypeFilter_962_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFlatSheetMetalFilter-3018:
@@ -33475,6 +33861,7 @@ components:
       - $ref: '#/components/schemas/BTFlatSheetMetalFilter_3018_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFolderInfo:
@@ -33492,6 +33879,7 @@ components:
     BTForeignDataResponse-1070:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         bucketName:
           type: string
@@ -33558,6 +33946,7 @@ components:
             theId: theId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configured:
           type: boolean
@@ -33576,6 +33965,7 @@ components:
       - $ref: '#/components/schemas/BTFullElementIdAndPartId_643_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTFullElementIdWithDocument-1729:
@@ -33585,6 +33975,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configured:
           type: boolean
@@ -33605,6 +33996,7 @@ components:
       - $ref: '#/components/schemas/BTGeneratedGraphicsAppearance_4159_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTGeometryFilter-130:
@@ -33613,11 +34005,13 @@ components:
       - $ref: '#/components/schemas/BTGeometryFilter_130_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTGeometryMateDisplayData-1050:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         firstDeterministicId:
           type: string
@@ -33643,6 +34037,7 @@ components:
     BTGetJsonPaths-1697:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         paths:
           items:
@@ -33672,6 +34067,7 @@ components:
             definiteJsonPath: definiteJsonPath
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         changeId:
           type: string
@@ -33690,6 +34086,7 @@ components:
         changeId: changeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         changeId:
           type: string
@@ -33927,6 +34324,7 @@ components:
         usableAppearance: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         color:
           items:
@@ -33970,6 +34368,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         center:
           $ref: '#/components/schemas/BTVector3d-389'
@@ -34096,6 +34495,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         elementId:
           type: string
@@ -34249,6 +34649,7 @@ components:
       - $ref: '#/components/schemas/BTImageFilter_853_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTImageMapping-3821:
@@ -34275,6 +34676,7 @@ components:
           m12: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         deterministicIds:
           items:
@@ -34308,6 +34710,7 @@ components:
         forExport:
           type: boolean
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
       type: object
@@ -34317,11 +34720,13 @@ components:
       - $ref: '#/components/schemas/BTInContextObjectFilter_3810_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTIndividualTableProperties-3760:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         hiddenColumns:
           items:
@@ -34432,6 +34837,7 @@ components:
       - $ref: '#/components/schemas/BTInnerArrayParameterLocation_2368_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTInnerDerivedParameterLocation-591:
@@ -34440,6 +34846,7 @@ components:
       - $ref: '#/components/schemas/BTInnerDerivedParameterLocation_591_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTInnerParameterLocation-1715:
@@ -34450,6 +34857,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTInsertableInfo:
@@ -34764,6 +35172,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTInstanceBase-2263:
@@ -34779,6 +35188,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTInstanceControlNode-750:
@@ -34787,6 +35197,7 @@ components:
       - $ref: '#/components/schemas/BTInstanceControlNode_750_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTInstanceFolder-3627:
@@ -34795,6 +35206,7 @@ components:
       - $ref: '#/components/schemas/BTInstanceFolder_3627_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTInstanceStandardContentData-2081:
@@ -34803,6 +35215,7 @@ components:
       - $ref: '#/components/schemas/BTInstanceStandardContentData_2081_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJEdit-3734:
@@ -34820,6 +35233,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJEditChange-2636:
@@ -34833,6 +35247,7 @@ components:
         \ 'BTJPathKey-3221', 'key': 'stringKey' } ] }, 'value': 'baz' }"
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       required:
       - value
@@ -34848,6 +35263,7 @@ components:
         \ '', 'path': [ { 'btType': 'BTJPathKey-3221', 'key': 'stringKey' } ] } }"
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJEditInsert-2523:
@@ -34862,6 +35278,7 @@ components:
         \ 'BTJPathIndex-1871', 'index': -1 } ] }, 'value': 4 }"
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJEditList-2707:
@@ -34871,6 +35288,7 @@ components:
       description: A list of edits that will be applied in order.
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJEditMove-3245:
@@ -34887,12 +35305,14 @@ components:
         \ [ { 'btType': 'BTJPathKey-3221', 'key': 'newKey' } ] } }"
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJPath-3073:
       description: Identifies a value in the json data to be operated upon.
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         path:
           items:
@@ -34914,6 +35334,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJPathIndex-1871:
@@ -34924,6 +35345,7 @@ components:
         \ -1 can be used to indicate 'end'."
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJPathKey-3221:
@@ -34933,6 +35355,7 @@ components:
       description: Identifies a subtree of the json structure by field name.
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTJsonMatch-2290:
@@ -34943,6 +35366,7 @@ components:
         definiteJsonPath: definiteJsonPath
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         definiteJsonPath:
           type: string
@@ -35025,6 +35449,7 @@ components:
       - $ref: '#/components/schemas/BTLineDescription_1559_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTLinearDimensionDisplayData-330:
@@ -35038,6 +35463,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTLinkToLatestDocumentInfo:
@@ -38763,6 +39189,7 @@ components:
     BTLoadDisplayData-837:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         componentValues:
           $ref: '#/components/schemas/BTVector3d-389'
@@ -38838,6 +39265,7 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         character:
           format: int32
@@ -38943,12 +39371,18 @@ components:
     BTMArrayParameterItem-1843:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         nodeId:
           type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/BTMParameter-1'
+          type: array
       type: object
     BTMAssemblyFeature-887:
       allOf:
@@ -38976,6 +39410,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMAssemblyFeature1-2218:
@@ -38984,6 +39419,7 @@ components:
       - $ref: '#/components/schemas/BTMAssemblyFeature1_2218_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMAssemblyFeature2-1022:
@@ -38992,6 +39428,7 @@ components:
       - $ref: '#/components/schemas/BTMAssemblyFeature2_1022_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMAssemblyFeatureFolder-2543:
@@ -39000,6 +39437,7 @@ components:
       - $ref: '#/components/schemas/BTMAssemblyFeatureFolder_2543_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMAssemblyPatternFeature-2241:
@@ -39008,6 +39446,7 @@ components:
       - $ref: '#/components/schemas/BTMAssemblyPatternFeature_2241_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMAssemblyReplicateFeature-1351:
@@ -39016,6 +39455,7 @@ components:
       - $ref: '#/components/schemas/BTMAssemblyReplicateFeature_1351_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMConfigurationData-1560:
@@ -39024,6 +39464,7 @@ components:
       - $ref: '#/components/schemas/BTMConfigurationData_1560_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMConfigurationParameter-819:
@@ -39048,10 +39489,12 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         generatedParameterId:
           $ref: '#/components/schemas/BTTreeNode-20'
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         isCosmetic:
@@ -39073,6 +39516,7 @@ components:
       - $ref: '#/components/schemas/BTMConfigurationParameterBoolean_2550_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMConfigurationParameterEnum-105:
@@ -39081,6 +39525,7 @@ components:
       - $ref: '#/components/schemas/BTMConfigurationParameterEnum_105_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMConfigurationParameterQuantity-1826:
@@ -39089,6 +39534,7 @@ components:
       - $ref: '#/components/schemas/BTMConfigurationParameterQuantity_1826_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMConfigurationParameterString-872:
@@ -39097,6 +39543,7 @@ components:
       - $ref: '#/components/schemas/BTMConfigurationParameterString_872_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMConfiguredValue-1341:
@@ -39107,10 +39554,12 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configurationValueString:
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         nodeId:
@@ -39124,6 +39573,7 @@ components:
       - $ref: '#/components/schemas/BTMConfiguredValueByBoolean_1501_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMConfiguredValueByEnum-1923:
@@ -39132,6 +39582,7 @@ components:
       - $ref: '#/components/schemas/BTMConfiguredValueByEnum_1923_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMDatabaseParameter-2229:
@@ -39140,6 +39591,7 @@ components:
       - $ref: '#/components/schemas/BTMDatabaseParameter_2229_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMEnumOption-592:
@@ -39148,6 +39600,7 @@ components:
       - $ref: '#/components/schemas/BTMEnumOption_592_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMFeature-134:
@@ -39184,35 +39637,53 @@ components:
         featureId: featureId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         featureId:
+          description: Unique ID of the feature instance within this Part Studio.
           type: string
         featureType:
+          description: The name of the feature spec that this feature instantiates.
           type: string
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         name:
+          description: User-visible name of the feature.
           type: string
         namespace:
+          description: Indicates where the feature definition lives. Features in the
+            FeatureScript standard library have a namespace value of `""`. Custom
+            features identify the Feature Studio that contains the definition.
           type: string
         nodeId:
+          description: ID for the feature node.
           type: string
         parameters:
+          description: "A list of parameter values for instantiation of the feature\
+            \ spec. Parameters are present for all defined parameters, even if not\
+            \ used in a specific instantiation."
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
         returnAfterSubfeatures:
+          description: For internal use only. Should always be `false`.
           type: boolean
         subFeatures:
+          description: List of subfeatures belonging to the feature.
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
         suppressed:
+          description: "If `true`, the feature is suppressed. It will skip regeneration,\
+            \ denoted by a line through the name in the Feature list."
           type: boolean
         suppressionConfigured:
+          description: '`true` if the suppression is configured in the Part Studio.'
           type: boolean
         variableStudioReference:
+          description: "If `true`, the feature references a Variable Studio."
           type: boolean
       type: object
     BTMFeatureInvalid-1031:
@@ -39221,6 +39692,7 @@ components:
       - $ref: '#/components/schemas/BTMFeatureInvalid_1031_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMFeatureQueryWithOccurrence-157:
@@ -39233,6 +39705,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMFolder-3208:
@@ -39241,6 +39714,7 @@ components:
       - $ref: '#/components/schemas/BTMFolder_3208_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMGenerativeDesignFeature-3195:
@@ -39249,6 +39723,7 @@ components:
       - $ref: '#/components/schemas/BTMGenerativeDesignFeature_3195_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMGeometryMate-1260:
@@ -39257,6 +39732,7 @@ components:
       - $ref: '#/components/schemas/BTMGeometryMate_1260_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMImport-136:
@@ -39271,10 +39747,12 @@ components:
         version: version
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         elementImport:
           type: boolean
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         importedExternalDocumentId:
@@ -39294,6 +39772,7 @@ components:
       - $ref: '#/components/schemas/BTMInContextQuery_2254_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMIndividualCoEdgeQuery-1332:
@@ -39302,6 +39781,7 @@ components:
       - $ref: '#/components/schemas/BTMIndividualCoEdgeQuery_1332_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMIndividualCreatedByQuery-137:
@@ -39310,6 +39790,7 @@ components:
       - $ref: '#/components/schemas/BTMIndividualCreatedByQuery_137_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMIndividualOccurrenceQuery-626:
@@ -39318,6 +39799,7 @@ components:
       - $ref: '#/components/schemas/BTMIndividualOccurrenceQuery_626_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMIndividualQuery-138:
@@ -39333,6 +39815,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMIndividualQueryBase-139:
@@ -39344,6 +39827,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         deterministicIdList:
           $ref: '#/components/schemas/BTMIndividualQueryBase-139'
@@ -39356,6 +39840,7 @@ components:
         generatedSectionQueryId:
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         nodeId:
@@ -39375,6 +39860,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMIndividualQueryWithOccurrenceBase-904:
@@ -39387,6 +39873,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         deterministicIdList:
           $ref: '#/components/schemas/BTMIndividualQueryBase-139'
@@ -39401,6 +39888,7 @@ components:
         generatedSectionQueryId:
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         nodeId:
@@ -39422,6 +39910,7 @@ components:
       - $ref: '#/components/schemas/BTMIndividualSketchRegionQuery_140_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMIndividualSketchUniqueVerticesQuery-1472:
@@ -39430,6 +39919,7 @@ components:
       - $ref: '#/components/schemas/BTMIndividualSketchUniqueVerticesQuery_1472_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMInferenceQueryWithOccurrence-1083:
@@ -39438,6 +39928,7 @@ components:
       - $ref: '#/components/schemas/BTMInferenceQueryWithOccurrence_1083_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMLoad-3538:
@@ -39446,6 +39937,7 @@ components:
       - $ref: '#/components/schemas/BTMLoad_3538_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMMate-64:
@@ -39454,6 +39946,7 @@ components:
       - $ref: '#/components/schemas/BTMMate_64_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMMateConnector-66:
@@ -39462,6 +39955,7 @@ components:
       - $ref: '#/components/schemas/BTMMateConnector_66_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMMateGroup-65:
@@ -39470,6 +39964,7 @@ components:
       - $ref: '#/components/schemas/BTMMateGroup_65_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMMateRelation-1412:
@@ -39478,6 +39973,7 @@ components:
       - $ref: '#/components/schemas/BTMMateRelation_1412_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMMeshPointQuery-1183:
@@ -39486,6 +39982,7 @@ components:
       - $ref: '#/components/schemas/BTMMeshPointQuery_1183_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMModel-141:
@@ -39503,6 +40000,7 @@ components:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
         btType:
+          description: Type of JSON object.
           type: string
         children:
           items:
@@ -39532,6 +40030,7 @@ components:
           format: int32
           type: integer
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         importSet:
@@ -39595,8 +40094,10 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         nodeId:
@@ -39608,6 +40109,7 @@ components:
       - $ref: '#/components/schemas/BTMNodeInvalid_1772_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMNonGeometricItem-1864:
@@ -39616,9 +40118,13 @@ components:
       - $ref: '#/components/schemas/BTMNonGeometricItem_1864_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameter-1:
+      description: "A list of parameter values for instantiation of the feature spec.\
+        \ Parameters are present for all defined parameters, even if not used in a\
+        \ specific instantiation."
       discriminator:
         mapping:
           BTMDatabaseParameter-2229: '#/components/schemas/BTMDatabaseParameter-2229'
@@ -39649,13 +40155,17 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         nodeId:
+          description: ID of the parameter's node.
           type: string
         parameterId:
+          description: Unique ID of the parameter.
           type: string
       type: object
     BTMParameterAppearance-627:
@@ -39664,6 +40174,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterAppearance_627_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterArray-2025:
@@ -39672,6 +40183,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterArray_2025_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterBlobReference-1679:
@@ -39680,6 +40192,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterBlobReference_1679_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterBoolean-144:
@@ -39688,6 +40201,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterBoolean_144_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterConfigured-2222:
@@ -39696,6 +40210,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterConfigured_2222_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterDerived-864:
@@ -39704,6 +40219,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterDerived_864_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterEnum-145:
@@ -39712,6 +40228,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterEnum_145_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterFeatureList-1749:
@@ -39720,6 +40237,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterFeatureList_1749_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterForeignId-146:
@@ -39728,6 +40246,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterForeignId_146_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterInvalid-1664:
@@ -39736,6 +40255,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterInvalid_1664_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterLookupTablePath-1419:
@@ -39744,6 +40264,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterLookupTablePath_1419_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterMaterial-1388:
@@ -39752,6 +40273,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterMaterial_1388_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterMultiEnum-3411:
@@ -39760,6 +40282,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterMultiEnum_3411_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterNullableQuantity-807:
@@ -39768,6 +40291,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterNullableQuantity_807_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterProgress-3232:
@@ -39776,6 +40300,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterProgress_3232_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterQuantity-147:
@@ -39788,6 +40313,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterQueryList-148:
@@ -39796,22 +40322,27 @@ components:
       - $ref: '#/components/schemas/BTMParameterQueryList_148_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterQueryWithOccurrenceList-67:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         nodeId:
+          description: ID of the parameter's node.
           type: string
         occurrences:
           items:
             $ref: '#/components/schemas/BTOccurrence-74'
           type: array
         parameterId:
+          description: Unique ID of the parameter.
           type: string
         queries:
           items:
@@ -39829,6 +40360,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceAssembly-938:
@@ -39837,6 +40369,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterReferenceAssembly_938_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceBlob-3281:
@@ -39852,6 +40385,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceCADImport-2016:
@@ -39860,6 +40394,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterReferenceCADImport_2016_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceImage-2014:
@@ -39868,11 +40403,13 @@ components:
       - $ref: '#/components/schemas/BTMParameterReferenceImage_2014_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceJSON-790:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         documentId:
           type: string
@@ -39889,6 +40426,7 @@ components:
             type: string
           type: array
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         microversioId:
@@ -39896,8 +40434,10 @@ components:
         namespace:
           type: string
         nodeId:
+          description: ID of the parameter's node.
           type: string
         parameterId:
+          description: Unique ID of the parameter.
           type: string
       type: object
     BTMParameterReferencePartStudio-3302:
@@ -39906,6 +40446,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterReferencePartStudio_3302_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceTable-917:
@@ -39914,6 +40455,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterReferenceTable_917_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceVariableStudio-3550:
@@ -39922,6 +40464,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterReferenceVariableStudio_3550_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterReferenceWithConfiguration-3028:
@@ -39933,6 +40476,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configuration:
           items:
@@ -39953,6 +40497,7 @@ components:
             type: string
           type: array
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         microversioId:
@@ -39960,8 +40505,10 @@ components:
         namespace:
           type: string
         nodeId:
+          description: ID of the parameter's node.
           type: string
         parameterId:
+          description: Unique ID of the parameter.
           type: string
       type: object
     BTMParameterString-149:
@@ -39970,6 +40517,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterString_149_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParameterStringWithTolerances-4286:
@@ -39978,6 +40526,7 @@ components:
       - $ref: '#/components/schemas/BTMParameterStringWithTolerances_4286_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMParametricPartStudioFeature-3883:
@@ -39986,6 +40535,7 @@ components:
       - $ref: '#/components/schemas/BTMParametricPartStudioFeature_3883_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMPartStudioMateConnectorQuery-1324:
@@ -39994,6 +40544,7 @@ components:
       - $ref: '#/components/schemas/BTMPartStudioMateConnectorQuery_1324_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMReadOnlyParameter-3800:
@@ -40007,6 +40558,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMRecordMetrics-1169:
@@ -40015,6 +40567,7 @@ components:
       - $ref: '#/components/schemas/BTMRecordMetrics_1169_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMRollback-150:
@@ -40023,6 +40576,7 @@ components:
       - $ref: '#/components/schemas/BTMRollback_150_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketch-151:
@@ -40031,6 +40585,7 @@ components:
       - $ref: '#/components/schemas/BTMSketch_151_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchCompositeEntity-893:
@@ -40039,11 +40594,13 @@ components:
       - $ref: '#/components/schemas/BTMSketchCompositeEntity_893_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchConstraint-2:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         constraintType:
           $ref: '#/components/schemas/GBTConstraintType'
@@ -40066,6 +40623,7 @@ components:
             type: number
           type: array
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         namespace:
@@ -40100,6 +40658,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchCurveSegment-155:
@@ -40108,6 +40667,7 @@ components:
       - $ref: '#/components/schemas/BTMSketchCurveSegment_155_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchEntity-3:
@@ -40123,6 +40683,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchGeomEntity-5:
@@ -40135,6 +40696,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         controlBoxIds:
           items:
@@ -40146,6 +40708,7 @@ components:
           type: string
           writeOnly: true
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         isConstruction:
@@ -40171,6 +40734,7 @@ components:
       - $ref: '#/components/schemas/BTMSketchImageEntity_763_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchInvalid-1601:
@@ -40179,6 +40743,7 @@ components:
       - $ref: '#/components/schemas/BTMSketchInvalid_1601_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchPoint-158:
@@ -40187,6 +40752,7 @@ components:
       - $ref: '#/components/schemas/BTMSketchPoint_158_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSketchTextEntity-1761:
@@ -40195,6 +40761,7 @@ components:
       - $ref: '#/components/schemas/BTMSketchTextEntity_1761_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSuppressionState-1924:
@@ -40207,6 +40774,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMSuppressionStateConfigured-2598:
@@ -40215,6 +40783,7 @@ components:
       - $ref: '#/components/schemas/BTMSuppressionStateConfigured_2598_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMUnitsDefault-160:
@@ -40223,6 +40792,7 @@ components:
       - $ref: '#/components/schemas/BTMUnitsDefault_160_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMUserCode-161:
@@ -40231,6 +40801,7 @@ components:
       - $ref: '#/components/schemas/BTMUserCode_161_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMVariableStudioReference-2764:
@@ -40239,6 +40810,7 @@ components:
       - $ref: '#/components/schemas/BTMVariableStudioReference_2764_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMassPropertiesBulkInfo:
@@ -40394,6 +40966,7 @@ components:
     BTMateConnectorDisplayData-94:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         elementId:
           type: string
@@ -40424,6 +40997,7 @@ components:
       - $ref: '#/components/schemas/BTMateConnectorEntity_28_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMateConnectorFilter-163:
@@ -40432,11 +41006,13 @@ components:
       - $ref: '#/components/schemas/BTMateConnectorFilter_163_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMateDisplayData-1358:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         hidden:
           type: boolean
@@ -40465,11 +41041,13 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMateGroupDisplayData-1990:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         hidden:
           type: boolean
@@ -40492,6 +41070,7 @@ components:
       - $ref: '#/components/schemas/BTMateOccurrenceData_1671_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMaterialLibraryMetadataInfo:
@@ -40582,6 +41161,7 @@ components:
         m12: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         m00:
           format: double
@@ -41170,6 +41750,7 @@ components:
         theId: theId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         deleted:
           type: boolean
@@ -41192,6 +41773,7 @@ components:
           theId: theId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         cacheKey:
           type: string
@@ -41248,6 +41830,7 @@ components:
             theId: theId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         from:
           $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
@@ -41270,6 +41853,7 @@ components:
           theId: theId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         from:
           $ref: '#/components/schemas/BTMicroversionId-366'
@@ -41327,6 +41911,7 @@ components:
     BTModelProperties-1258:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         nodeId:
           type: string
@@ -41341,6 +41926,7 @@ components:
       - $ref: '#/components/schemas/BTModifiableEntityOnlyFilter_1593_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTMoveElementInfo:
@@ -41493,6 +42079,7 @@ components:
       - $ref: '#/components/schemas/BTNamedPositionValuesColumnInfo_816_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTNamedViewInfo:
@@ -41952,6 +42539,7 @@ components:
           empty: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         nodeId:
           type: string
@@ -41964,6 +42552,7 @@ components:
       - $ref: '#/components/schemas/BTNonAlignedBoundingBox_4180_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTNotFilter-165:
@@ -41972,6 +42561,7 @@ components:
       - $ref: '#/components/schemas/BTNotFilter_165_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTNotice-227:
@@ -42185,6 +42775,7 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         expressionErrorInfo:
           $ref: '#/components/schemas/BTParameterExpressionErrorInfo-2037'
@@ -42215,6 +42806,7 @@ components:
       - $ref: '#/components/schemas/BTNullableQuantityRange_1340_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTObjectId:
@@ -42296,6 +42888,7 @@ components:
         occurrenceWithoutTail: null
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         fullPathAsString:
           type: string
@@ -42319,6 +42912,7 @@ components:
     BTOccurrenceData-75:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         featureData:
           additionalProperties:
@@ -42342,6 +42936,7 @@ components:
     BTOccurrenceDisplayData-95:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         elementId:
           type: string
@@ -42366,6 +42961,7 @@ components:
       - $ref: '#/components/schemas/BTOccurrenceFilter_166_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTOccurrenceWithFullPartIds-1464:
@@ -42374,6 +42970,7 @@ components:
       - $ref: '#/components/schemas/BTOccurrenceWithFullPartIds_1464_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTOldPermission:
@@ -42391,6 +42988,7 @@ components:
     BTOneConfigurationPartProperties-1661:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configuration:
           additionalProperties:
@@ -42417,6 +43015,7 @@ components:
         appearanceForNewCell:
           $ref: '#/components/schemas/BTGraphicsAppearance-1152'
         btType:
+          description: Type of JSON object.
           type: string
         changedPropertiesSet:
           items:
@@ -42458,11 +43057,13 @@ components:
       - $ref: '#/components/schemas/BTOrFilter_167_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTOriginDisplayData-934:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         hidden:
           type: boolean
@@ -42473,6 +43074,7 @@ components:
       - $ref: '#/components/schemas/BTOriginEntity_935_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTOtherDocumentSelectorParametersInfo:
@@ -42517,6 +43119,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -42544,6 +43147,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -42579,6 +43183,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -42607,6 +43212,7 @@ components:
       - $ref: '#/components/schemas/BTPConversionFunction_1362_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpression-9:
@@ -42630,6 +43236,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -42656,6 +43263,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionAccess_237_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionAs-238:
@@ -42664,6 +43272,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionAs_238_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionBuiltinCall-239:
@@ -42672,6 +43281,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionBuiltinCall_239_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionCall-240:
@@ -42680,6 +43290,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionCall_240_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionFunction-1325:
@@ -42688,6 +43299,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionFunction_1325_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionGroup-241:
@@ -42696,6 +43308,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionGroup_241_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionIs-242:
@@ -42704,6 +43317,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionIs_242_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionNew-243:
@@ -42712,6 +43326,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionNew_243_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionOperator-244:
@@ -42720,6 +43335,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionOperator_244_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionSwitch-2632:
@@ -42728,6 +43344,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionSwitch_2632_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionTry-1271:
@@ -42736,6 +43353,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionTry_1271_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPExpressionVarReference-245:
@@ -42744,6 +43362,7 @@ components:
       - $ref: '#/components/schemas/BTPExpressionVarReference_245_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPFunctionDeclaration-246:
@@ -42763,6 +43382,7 @@ components:
         body:
           $ref: '#/components/schemas/BTPStatementBlock-271'
         btType:
+          description: Type of JSON object.
           type: string
         deprecated:
           type: boolean
@@ -42814,6 +43434,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPIdentifier-8:
@@ -42822,6 +43443,7 @@ components:
       - $ref: '#/components/schemas/BTPIdentifier_8_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLValue-249:
@@ -42835,6 +43457,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -42861,6 +43484,7 @@ components:
       - $ref: '#/components/schemas/BTPLValueAccess_250_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLValueBoxDereference-251:
@@ -42869,6 +43493,7 @@ components:
       - $ref: '#/components/schemas/BTPLValueBoxDereference_251_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLValueVarReference-252:
@@ -42877,6 +43502,7 @@ components:
       - $ref: '#/components/schemas/BTPLValueVarReference_252_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLiteral-253:
@@ -42894,6 +43520,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLiteralArray-254:
@@ -42902,6 +43529,7 @@ components:
       - $ref: '#/components/schemas/BTPLiteralArray_254_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLiteralBoolean-255:
@@ -42910,6 +43538,7 @@ components:
       - $ref: '#/components/schemas/BTPLiteralBoolean_255_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLiteralMap-256:
@@ -42917,6 +43546,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -42950,6 +43580,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -42980,6 +43611,7 @@ components:
       - $ref: '#/components/schemas/BTPLiteralNumber_258_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLiteralString-259:
@@ -42988,6 +43620,7 @@ components:
       - $ref: '#/components/schemas/BTPLiteralString_259_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPLiteralUndefined-260:
@@ -42996,6 +43629,7 @@ components:
       - $ref: '#/components/schemas/BTPLiteralUndefined_260_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPModule-234:
@@ -43006,6 +43640,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPModuleId-235:
@@ -43013,6 +43648,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         dbimportString:
           type: string
@@ -43091,6 +43727,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -43104,6 +43741,7 @@ components:
         identifier:
           $ref: '#/components/schemas/BTPIdentifier-8'
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         namespace:
@@ -43167,6 +43805,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -43193,6 +43832,7 @@ components:
       - $ref: '#/components/schemas/BTPOperatorDeclaration_264_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPPredicateDeclaration-265:
@@ -43201,6 +43841,7 @@ components:
       - $ref: '#/components/schemas/BTPPredicateDeclaration_265_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPProcedureDeclarationBase-266:
@@ -43215,6 +43856,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPPropertyAccessor-23:
@@ -43227,6 +43869,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -43250,6 +43893,7 @@ components:
     BTPSOIdentity-2741:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         theId:
           type: string
@@ -43264,6 +43908,7 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         lines:
           items:
@@ -43297,6 +43942,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -43323,6 +43969,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementAssignment_270_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementBlock-271:
@@ -43331,6 +43978,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementBlock_271_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementBreak-272:
@@ -43339,6 +43987,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementBreak_272_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementCompressedQuery-1237:
@@ -43347,6 +43996,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementCompressedQuery_1237_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementConstantDeclaration-273:
@@ -43355,6 +44005,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementConstantDeclaration_273_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementContinue-274:
@@ -43363,6 +44014,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementContinue_274_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementExpression-275:
@@ -43371,6 +44023,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementExpression_275_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementIf-276:
@@ -43379,6 +44032,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementIf_276_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementLoop-277:
@@ -43393,6 +44047,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementLoopFor3-278:
@@ -43401,6 +44056,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementLoopFor3_278_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementLoopForIn-279:
@@ -43409,6 +44065,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementLoopForIn_279_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementLoopWhile-280:
@@ -43417,6 +44074,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementLoopWhile_280_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementReturn-281:
@@ -43425,6 +44083,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementReturn_281_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementThrow-1080:
@@ -43433,6 +44092,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementThrow_1080_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementTry-1523:
@@ -43441,6 +44101,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementTry_1523_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPStatementVarDeclaration-282:
@@ -43449,6 +44110,7 @@ components:
       - $ref: '#/components/schemas/BTPStatementVarDeclaration_282_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTopLevelConstantDeclaration-283:
@@ -43457,6 +44119,7 @@ components:
       - $ref: '#/components/schemas/BTPTopLevelConstantDeclaration_283_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTopLevelEnumDeclaration-284:
@@ -43465,6 +44128,7 @@ components:
       - $ref: '#/components/schemas/BTPTopLevelEnumDeclaration_284_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTopLevelImport-285:
@@ -43473,6 +44137,7 @@ components:
       - $ref: '#/components/schemas/BTPTopLevelImport_285_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTopLevelNode-286:
@@ -43488,6 +44153,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTopLevelTypeDeclaration-287:
@@ -43501,6 +44167,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTopLevelUserTypeDeclaration-288:
@@ -43509,6 +44176,7 @@ components:
       - $ref: '#/components/schemas/BTPTopLevelUserTypeDeclaration_288_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTypeName-290:
@@ -43521,6 +44189,7 @@ components:
         atomic:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         documentationType:
           $ref: '#/components/schemas/GBTPDefinitionType'
@@ -43547,6 +44216,7 @@ components:
       - $ref: '#/components/schemas/BTPTypeNameStandard_291_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPTypeNameUser-292:
@@ -43555,6 +44225,7 @@ components:
       - $ref: '#/components/schemas/BTPTypeNameUser_292_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterExpressionErrorInfo-2037:
@@ -43574,6 +44245,7 @@ components:
         errorMessageIdentifier: null
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         errorMessageIdentifier:
           $ref: '#/components/schemas/GBTErrorStringEnum'
@@ -43604,6 +44276,7 @@ components:
           type: integer
           writeOnly: true
         btType:
+          description: Type of JSON object.
           type: string
         collapsedByDefault:
           type: boolean
@@ -43638,6 +44311,7 @@ components:
           type: integer
           writeOnly: true
         btType:
+          description: Type of JSON object.
           type: string
         label:
           type: string
@@ -43660,6 +44334,7 @@ components:
           type: integer
           writeOnly: true
         btType:
+          description: Type of JSON object.
           type: string
         defaultIndex:
           format: int32
@@ -43738,6 +44413,7 @@ components:
           type: integer
           writeOnly: true
         btType:
+          description: Type of JSON object.
           type: string
         columnName:
           type: string
@@ -43777,6 +44453,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecAppearance_1740_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecArray-2600:
@@ -43785,6 +44462,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecArray_2600_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecBoolean-170:
@@ -43793,6 +44471,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecBoolean_170_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecCategories-4083:
@@ -43801,6 +44480,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecCategories_4083_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecDatabase-1071:
@@ -43809,6 +44489,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecDatabase_1071_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecDerived-736:
@@ -43817,6 +44498,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecDerived_736_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecEnum-171:
@@ -43825,6 +44507,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecEnum_171_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecFeatureList-703:
@@ -43833,6 +44516,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecFeatureList_703_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecForeignId-172:
@@ -43841,6 +44525,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecForeignId_172_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecLookupTablePath-761:
@@ -43849,6 +44534,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecLookupTablePath_761_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecMaterial-2700:
@@ -43857,6 +44543,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecMaterial_2700_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecMultiEnum-3118:
@@ -43869,6 +44556,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecNullableQuantity-715:
@@ -43877,6 +44565,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecNullableQuantity_715_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecProgress-3078:
@@ -43885,6 +44574,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecProgress_3078_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecQuantity-173:
@@ -43893,6 +44583,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecQuantity_173_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecQuery-174:
@@ -43901,6 +44592,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecQuery_174_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReference-2789:
@@ -43916,6 +44608,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferenceAssembly-2821:
@@ -43924,6 +44617,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecReferenceAssembly_2821_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferenceBlob-1367:
@@ -43939,6 +44633,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferenceCADImport-1792:
@@ -43947,6 +44642,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecReferenceCADImport_1792_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferenceImage-1722:
@@ -43955,6 +44651,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecReferenceImage_1722_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferenceJSON-1816:
@@ -43963,6 +44660,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecReferenceJSON_1816_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferencePartStudio-1256:
@@ -43971,6 +44669,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecReferencePartStudio_1256_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferenceTable-1520:
@@ -43979,6 +44678,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecReferenceTable_1520_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecReferenceWithConfiguration-2950:
@@ -43987,6 +44687,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecReferenceWithConfiguration_2950_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecString-175:
@@ -43995,6 +44696,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecString_175_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterSpecStringWithTolerances-2535:
@@ -44003,6 +44705,7 @@ components:
       - $ref: '#/components/schemas/BTParameterSpecStringWithTolerances_2535_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterVisibilityAlwaysHidden-176:
@@ -44011,6 +44714,7 @@ components:
       - $ref: '#/components/schemas/BTParameterVisibilityAlwaysHidden_176_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterVisibilityCondition-177:
@@ -44024,6 +44728,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterVisibilityLogical-178:
@@ -44032,6 +44737,7 @@ components:
       - $ref: '#/components/schemas/BTParameterVisibilityLogical_178_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterVisibilityOnEqual-180:
@@ -44044,6 +44750,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParameterVisibilityOnMateDOFType-2114:
@@ -44052,6 +44759,7 @@ components:
       - $ref: '#/components/schemas/BTParameterVisibilityOnMateDOFType_2114_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParametricInstance-2641:
@@ -44066,6 +44774,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParametricOutputInstance-2288:
@@ -44079,6 +44788,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParametricPartStudioChildInstance-3696:
@@ -44087,6 +44797,7 @@ components:
       - $ref: '#/components/schemas/BTParametricPartStudioChildInstance_3696_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTParametricPartStudioInstance-4374:
@@ -44095,6 +44806,7 @@ components:
       - $ref: '#/components/schemas/BTParametricPartStudioInstance_4374_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPartAppearanceInfo:
@@ -44131,6 +44843,7 @@ components:
         revision: revision
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         description:
           type: string
@@ -44217,6 +44930,7 @@ components:
           format: double
           type: number
         btType:
+          description: Type of JSON object.
           type: string
         closedConstituentPartData:
           $ref: '#/components/schemas/BTClosedConstituentPartData-2911'
@@ -44542,6 +45256,7 @@ components:
         appearanceForNewCell:
           $ref: '#/components/schemas/BTGraphicsAppearance-1152'
         btType:
+          description: Type of JSON object.
           type: string
         customProperties:
           $ref: '#/components/schemas/BTPartCustomProperties-1338'
@@ -44601,6 +45316,7 @@ components:
       - $ref: '#/components/schemas/BTPartInstance_81_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPartMaterial-1445:
@@ -44693,6 +45409,7 @@ components:
             value: value
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         id:
           type: string
@@ -44761,6 +45478,7 @@ components:
         value: value
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         category:
           type: string
@@ -45006,6 +45724,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         sourceId:
           type: string
@@ -45015,6 +45734,7 @@ components:
     BTPartProperties-293:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configuredParts:
           $ref: '#/components/schemas/BTConfiguredPartProperties-2645'
@@ -46655,6 +47375,7 @@ components:
         bodyIdToEntityAppearanceSettingsChanged:
           type: boolean
         btType:
+          description: Type of JSON object.
           type: string
         cacheablePartStudioDisplayDataVersion:
           $ref: '#/components/schemas/GBTPartStudioDisplayDataVersion'
@@ -46754,6 +47475,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         elementId:
           type: string
@@ -46788,11 +47510,13 @@ components:
       - $ref: '#/components/schemas/BTPartStudioDisplayDataReference_4360_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPartWithConfiguredProperties-2163:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         configurationProperties:
           items:
@@ -46853,6 +47577,7 @@ components:
       - $ref: '#/components/schemas/BTPlanarImageMapping_4398_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPlaneDescription-692:
@@ -46861,6 +47586,7 @@ components:
       - $ref: '#/components/schemas/BTPlaneDescription_692_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPlaneOrientationFilter-1700:
@@ -46869,6 +47595,7 @@ components:
       - $ref: '#/components/schemas/BTPlaneOrientationFilter_1700_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPointEntity-1439:
@@ -46877,6 +47604,7 @@ components:
       - $ref: '#/components/schemas/BTPointEntity_1439_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPrivacyConsentInfo:
@@ -46997,6 +47725,7 @@ components:
       - $ref: '#/components/schemas/BTPropertyTableColumnInfo_2161_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTPropertyUpdateInfo:
@@ -47851,6 +48580,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         defaultValue:
           format: double
@@ -47903,6 +48633,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTRadialDimensionDisplayData-348:
@@ -47911,6 +48642,7 @@ components:
       - $ref: '#/components/schemas/BTRadialDimensionDisplayData_348_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTRbacPermissionSchemeInfo:
@@ -47984,6 +48716,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTReferenceCustomData-1551:
@@ -47994,6 +48727,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTReleaseCommentListInfo:
@@ -49567,6 +50301,7 @@ components:
       - $ref: '#/components/schemas/BTRevisionCustomData_2090_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTRevisionInfo:
@@ -49845,6 +50580,7 @@ components:
       - $ref: '#/components/schemas/BTRhoDimensionDisplayData_2892_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTRole:
@@ -49861,6 +50597,7 @@ components:
     BTRootAssemblyDisplayData-96:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         buildDurationMillis:
           format: double
@@ -50180,6 +50917,7 @@ components:
       - $ref: '#/components/schemas/BTSMBendTableRowMetadata_1705_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSMDefinitionEntityTypeFilter-1651:
@@ -50188,6 +50926,7 @@ components:
       - $ref: '#/components/schemas/BTSMDefinitionEntityTypeFilter_1651_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSMOtherJointTableRowMetadata-2640:
@@ -50196,6 +50935,7 @@ components:
       - $ref: '#/components/schemas/BTSMOtherJointTableRowMetadata_2640_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSMSpecificMetadata-1315:
@@ -50204,6 +50944,7 @@ components:
       - $ref: '#/components/schemas/BTSMSpecificMetadata_1315_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSearchEntityType:
@@ -50229,6 +50970,7 @@ components:
       - $ref: '#/components/schemas/BTSectionGeometryFilter_4161_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSectionPlaneInfo:
@@ -50293,6 +51035,7 @@ components:
       - $ref: '#/components/schemas/BTSetFeatureRollbackCall_1899_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSetFeatureRollbackResponse-1042:
@@ -50310,22 +51053,33 @@ components:
           theId: theId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionId:
           $ref: '#/components/schemas/BTMicroversionId-366'
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         rollbackIndex:
           format: int32
           type: integer
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTSettingInfo:
@@ -50467,6 +51221,7 @@ components:
       - $ref: '#/components/schemas/BTSimulationFace_2147_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSimulationInstance-3093:
@@ -50475,6 +51230,7 @@ components:
       - $ref: '#/components/schemas/BTSimulationInstance_3093_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSimulationTableColumnInfo-1785:
@@ -50483,6 +51239,7 @@ components:
       - $ref: '#/components/schemas/BTSimulationTableColumnInfo_1785_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSingleAssemblyReferenceDisplayData-1557:
@@ -50491,6 +51248,7 @@ components:
       - $ref: '#/components/schemas/BTSingleAssemblyReferenceDisplayData_1557_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSingleReferenceDisplayData-1943:
@@ -50511,6 +51269,7 @@ components:
         referenceName: referenceName
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         contextWorkspaceId:
           type: string
@@ -50537,6 +51296,7 @@ components:
       - $ref: '#/components/schemas/BTSketchArcDisplayData_349_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchCircleDisplayData-350:
@@ -50545,6 +51305,7 @@ components:
       - $ref: '#/components/schemas/BTSketchCircleDisplayData_350_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchCompositeEntityDisplayData-1093:
@@ -50558,6 +51319,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchConicDisplayData-1085:
@@ -50566,6 +51328,7 @@ components:
       - $ref: '#/components/schemas/BTSketchConicDisplayData_1085_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchEllipseDisplayData-712:
@@ -50574,6 +51337,7 @@ components:
       - $ref: '#/components/schemas/BTSketchEllipseDisplayData_712_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchEllipticalArcDisplayData-892:
@@ -50582,6 +51346,7 @@ components:
       - $ref: '#/components/schemas/BTSketchEllipticalArcDisplayData_892_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchEntity-25:
@@ -50590,6 +51355,7 @@ components:
       - $ref: '#/components/schemas/BTSketchEntity_25_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchEntityDisplayData-354:
@@ -50612,6 +51378,7 @@ components:
         - 4.652396432933246
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         points:
           items:
@@ -50658,6 +51425,7 @@ components:
         bottomRightCorner:
           $ref: '#/components/schemas/BTVector3d-389'
         btType:
+          description: Type of JSON object.
           type: string
         entities:
           items:
@@ -50683,6 +51451,7 @@ components:
       - $ref: '#/components/schemas/BTSketchLineDisplayData_357_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchObjectFilter-184:
@@ -50691,6 +51460,7 @@ components:
       - $ref: '#/components/schemas/BTSketchObjectFilter_184_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchPointDisplayData-358:
@@ -50699,6 +51469,7 @@ components:
       - $ref: '#/components/schemas/BTSketchPointDisplayData_358_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchSolveStatusFilter-3657:
@@ -50707,6 +51478,7 @@ components:
       - $ref: '#/components/schemas/BTSketchSolveStatusFilter_3657_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchSplineDisplayData-359:
@@ -50715,6 +51487,7 @@ components:
       - $ref: '#/components/schemas/BTSketchSplineDisplayData_359_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSketchTextDisplayData-1707:
@@ -50723,6 +51496,7 @@ components:
       - $ref: '#/components/schemas/BTSketchTextDisplayData_1707_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSphereDescription-1263:
@@ -50731,6 +51505,7 @@ components:
       - $ref: '#/components/schemas/BTSphereDescription_1263_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSplineControlPolygonFilter-1130:
@@ -50739,6 +51514,7 @@ components:
       - $ref: '#/components/schemas/BTSplineControlPolygonFilter_1130_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSplineDescription-2118:
@@ -50747,6 +51523,7 @@ components:
       - $ref: '#/components/schemas/BTSplineDescription_2118_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSplineHandleFilter-2971:
@@ -50755,6 +51532,7 @@ components:
       - $ref: '#/components/schemas/BTSplineHandleFilter_2971_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSpunDescription-657:
@@ -50763,6 +51541,7 @@ components:
       - $ref: '#/components/schemas/BTSpunDescription_657_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTStringFormatBlockPattern-1755:
@@ -50771,6 +51550,7 @@ components:
       - $ref: '#/components/schemas/BTStringFormatBlockPattern_1755_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTStringFormatCondition-683:
@@ -50783,6 +51563,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         errorMessage:
           type: string
@@ -50795,6 +51576,7 @@ components:
       - $ref: '#/components/schemas/BTStringFormatMatchPattern_2446_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTStringMaximumLengthPattern-2593:
@@ -50803,6 +51585,7 @@ components:
       - $ref: '#/components/schemas/BTStringMaximumLengthPattern_2593_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTStringMinimumLengthPattern-895:
@@ -50811,11 +51594,13 @@ components:
       - $ref: '#/components/schemas/BTStringMinimumLengthPattern_895_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTStringNodeWrapper-4224:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         nodeId:
           type: string
@@ -51006,6 +51791,7 @@ components:
           z: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         direction:
           $ref: '#/components/schemas/BTVector3d-389'
@@ -51022,6 +51808,7 @@ components:
       - $ref: '#/components/schemas/BTSweepDescription_1473_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTSyncAppElementParams:
@@ -51044,6 +51831,7 @@ components:
       - $ref: '#/components/schemas/BTSystemPartColorCycle_1580_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTable-1825:
@@ -51185,6 +51973,7 @@ components:
             type: array
           type: array
         btType:
+          description: Type of JSON object.
           type: string
         columnCount:
           format: int32
@@ -51222,11 +52011,13 @@ components:
       - $ref: '#/components/schemas/BTTableAssemblyCrossHighlightData_2675_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableAssemblyCrossHighlightDataItem-2659:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         occurrencePathId:
           type: string
@@ -51241,6 +52032,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableBaseRowMetadata-3181:
@@ -51257,6 +52049,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         crossHighlightDataIfAny:
           $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
@@ -51274,6 +52067,7 @@ components:
         btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         isEverVisible:
           type: boolean
@@ -51291,6 +52085,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableCellParameterWithValue-2122:
@@ -51299,6 +52094,7 @@ components:
       - $ref: '#/components/schemas/BTTableCellParameterWithValue_2122_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableCellPropertyParameter-2983:
@@ -51307,6 +52103,7 @@ components:
       - $ref: '#/components/schemas/BTTableCellPropertyParameter_2983_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableColumnInfo-1222:
@@ -51356,6 +52153,7 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         id:
           type: string
@@ -51399,6 +52197,7 @@ components:
         defaultColumnWidthUnits: null
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         defaultCellSpec:
           $ref: '#/components/schemas/BTParameterSpec-6'
@@ -51420,6 +52219,7 @@ components:
       - $ref: '#/components/schemas/BTTableCrossHighlightData_1753_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableResponse-1546:
@@ -51550,6 +52350,7 @@ components:
                 btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         sourceMicroversion:
           type: string
@@ -51579,6 +52380,7 @@ components:
             btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         columnIdToCell:
           additionalProperties:
@@ -51601,6 +52403,7 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         isAscending:
           type: boolean
@@ -51615,6 +52418,7 @@ components:
       - $ref: '#/components/schemas/BTTableSpec_915_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableTestCellDouble-2509:
@@ -51623,6 +52427,7 @@ components:
       - $ref: '#/components/schemas/BTTableTestCellDouble_2509_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTableTestCellString-2112:
@@ -51631,6 +52436,7 @@ components:
       - $ref: '#/components/schemas/BTTableTestCellString_2112_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTeamInfo:
@@ -51801,6 +52607,7 @@ components:
         propertyName: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTessellationProperties-927:
@@ -51809,6 +52616,7 @@ components:
           format: double
           type: number
         btType:
+          description: Type of JSON object.
           type: string
         chordalTolerance:
           format: double
@@ -51825,6 +52633,7 @@ components:
       - $ref: '#/components/schemas/BTTextObjectFilter_1515_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTextStrokeFilter-461:
@@ -51833,6 +52642,7 @@ components:
       - $ref: '#/components/schemas/BTTextStrokeFilter_461_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTThumbnailInfo:
@@ -51929,10 +52739,12 @@ components:
     BTToleranceString-3274:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         classification:
           type: string
         importMicroversion:
+          description: Microversion that resulted from the import.
           type: string
           writeOnly: true
         lower:
@@ -51950,6 +52762,7 @@ components:
       - $ref: '#/components/schemas/BTTorusDescription_1834_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTTransitionType:
@@ -51968,6 +52781,7 @@ components:
       example:
         splitAssembliesIntoMultipleDocuments: true
         originalForeignId: originalForeignId
+        importMaterialDensity: true
         proxyDocumentId: proxyDocumentId
         textAsGeometry: true
         sheetIndices:
@@ -52133,6 +52947,8 @@ components:
         importAppearances:
           type: boolean
         importInBackground:
+          type: boolean
+        importMaterialDensity:
           type: boolean
         importWithinDocument:
           type: boolean
@@ -52306,6 +53122,7 @@ components:
     BTTreeEdit-13:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         editType:
           $ref: '#/components/schemas/EditType'
@@ -52322,6 +53139,7 @@ components:
         nodeId: nodeId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         nodeId:
           type: string
@@ -52350,6 +53168,7 @@ components:
     BTUiFeatureStudioChecksum-2438:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         crc32:
           format: int32
@@ -52380,6 +53199,7 @@ components:
         tableRowId: tableRowId
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         deterministicIdList:
           items:
@@ -52629,21 +53449,32 @@ components:
     BTUpdateFeaturesCall-1748:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         features:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
         updateSuppressionAttributes:
           type: boolean
@@ -52710,6 +53541,7 @@ components:
         microversionSkew: true
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         featureStates:
           additionalProperties:
@@ -52720,15 +53552,25 @@ components:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
         libraryVersion:
+          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
           type: integer
         microversionSkew:
+          description: "On output, `true` indicates a microversion mismatch was encountered."
           type: boolean
         rejectMicroversionSkew:
+          description: "If `true`, the call will refuse to make the addition if the\
+            \ current microversion for the document does not match the source microversion.\
+            \ If `false`, a best-effort attempt is made to re-interpret the feature\
+            \ addition in the context of a newer document microversion."
           type: boolean
         serializationVersion:
+          description: Version of the structure serialization rules used to encode
+            the output. This enables incompatibility detection during software updates.
           type: string
         sourceMicroversion:
+          description: The state from which the result was extracted. Geometry ID
+            interpretation is dependent on this document microversion.
           type: string
       type: object
     BTUpdateMeshUnitsParams:
@@ -53372,6 +54214,7 @@ components:
           btType: btType
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         use:
           $ref: '#/components/schemas/GBTValueUse'
@@ -53540,11 +54383,13 @@ components:
       - $ref: '#/components/schemas/BTVariableTableRowMetadata_3912_allOf'
       properties:
         btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTVector2d-1812:
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         x:
           format: double
@@ -53561,6 +54406,7 @@ components:
         z: 9.301444243932576
       properties:
         btType:
+          description: Type of JSON object.
           type: string
         x:
           format: double
@@ -68283,6 +69129,10 @@ components:
       - BODY_DRAFT_INVALID_FACE_REFERENCE
       - BODY_DRAFT_INVALID_EDGE_REFERENCE
       - BODY_DRAFT_INVALID_PART_REFERENCE
+      - HOLE_CANNOT_DETERMINE_TAPPED_BODY
+      - HOLE_PARAMS_OVERRIDDEN_INFO
+      - HOLE_TAP_DIA_TOO_LARGE_OR_EQUAL
+      - SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -100324,6 +101174,10 @@ components:
           default: true
           description: Face appearances defined on models will be imported.
           type: boolean
+        importMaterialDensity:
+          default: false
+          description: Material density defined on models will be imported.
+          type: boolean
         yAxisIsUp:
           description: "If the file was created in a system that orients with Y Axis\
             \ Up, the models would by default be brought into Onshape (a Z Axis Up\
@@ -100409,6 +101263,10 @@ components:
         importAppearances:
           default: true
           description: Face appearances defined on models will be imported.
+          type: boolean
+        importMaterialDensity:
+          default: false
+          description: Material density defined on models will be imported.
           type: boolean
         yAxisIsUp:
           description: "If the file was created in a system that orients with Y Axis\
@@ -100503,6 +101361,10 @@ components:
         importAppearances:
           default: true
           description: Face appearances defined on models will be imported.
+          type: boolean
+        importMaterialDensity:
+          default: false
+          description: Material density defined on models will be imported.
           type: boolean
         yAxisIsUp:
           description: "If the file was created in a system that orients with Y Axis\
@@ -101962,6 +102824,7 @@ components:
           format: int32
           type: integer
         suppressionConfigured:
+          description: '`true` if the suppression is configured in the Part Studio.'
           type: boolean
         suppressionState:
           $ref: '#/components/schemas/BTMSuppressionState-1924'
@@ -101982,6 +102845,7 @@ components:
           format: int32
           type: integer
         suppressionConfigured:
+          description: '`true` if the suppression is configured in the Part Studio.'
           type: boolean
         suppressionState:
           $ref: '#/components/schemas/BTMSuppressionState-1924'
@@ -102273,6 +103137,10 @@ components:
           type: string
         enumValue:
           type: string
+        importMicroversion:
+          description: Element microversion that is being imported.
+          type: string
+          writeOnly: true
         namespace:
           type: string
       type: object
@@ -102568,6 +103436,10 @@ components:
           $ref: '#/components/schemas/BTMImport-136'
         btType:
           type: string
+        importMicroversion:
+          description: Element microversion that is being imported.
+          type: string
+          writeOnly: true
         namespace:
           type: string
       type: object
@@ -102602,6 +103474,10 @@ components:
       properties:
         btType:
           type: string
+        importMicroversion:
+          description: Element microversion that is being imported.
+          type: string
+          writeOnly: true
         imports:
           items:
             $ref: '#/components/schemas/BTMImport-136'
@@ -102618,6 +103494,10 @@ components:
           type: string
         enumName:
           type: string
+        importMicroversion:
+          description: Element microversion that is being imported.
+          type: string
+          writeOnly: true
         namespace:
           type: string
         value:
@@ -102750,6 +103630,10 @@ components:
           items:
             type: string
           type: array
+        importMicroversion:
+          description: Element microversion that is being imported.
+          type: string
+          writeOnly: true
         microversioId:
           type: string
         namespace:
@@ -102931,6 +103815,10 @@ components:
         entityId:
           type: string
         entityIdAndReplaceInDependentFields:
+          type: string
+          writeOnly: true
+        importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         namespace:
@@ -103418,6 +104306,7 @@ components:
         globalNamespace:
           type: boolean
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         namespace:
@@ -103892,6 +104781,7 @@ components:
         combinedNamespacePathAndVersion:
           type: string
         importMicroversion:
+          description: Element microversion that is being imported.
           type: string
           writeOnly: true
         moduleId:
@@ -105113,6 +106003,10 @@ components:
           type: string
         deviceInfo:
           $ref: '#/components/schemas/BTDeviceLoginSecretInfo'
+        discounts:
+          items:
+            $ref: '#/components/schemas/BTDiscountInfo'
+          type: array
         enterprise:
           type: boolean
         eulaId:

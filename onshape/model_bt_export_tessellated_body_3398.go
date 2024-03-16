@@ -351,6 +351,7 @@ func (v *NullableBTExportTessellatedBody3398) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTExportTessellatedBody3398 struct {
+	// Type of JSON object.
 	BtType       *string  `json:"btType,omitempty"`
 	Constituents []string `json:"constituents,omitempty"`
 	Id           *string  `json:"id,omitempty"`

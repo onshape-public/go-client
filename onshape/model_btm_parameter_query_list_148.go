@@ -16,11 +16,14 @@ import (
 
 // BTMParameterQueryList148 struct for BTMParameterQueryList148
 type BTMParameterQueryList148 struct {
-	BtType             *string                     `json:"btType,omitempty"`
-	ImportMicroversion *string                     `json:"importMicroversion,omitempty"`
-	NodeId             *string                     `json:"nodeId,omitempty"`
-	ParameterId        *string                     `json:"parameterId,omitempty"`
-	Queries            []BTMIndividualQueryBase139 `json:"queries,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string                     `json:"parameterId,omitempty"`
+	Queries     []BTMIndividualQueryBase139 `json:"queries,omitempty"`
 }
 
 // NewBTMParameterQueryList148 instantiates a new BTMParameterQueryList148 object

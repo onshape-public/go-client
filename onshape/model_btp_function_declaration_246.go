@@ -16,30 +16,31 @@ import (
 
 // BTPFunctionDeclaration246 struct for BTPFunctionDeclaration246
 type BTPFunctionDeclaration246 struct {
-	Annotation            *BTPAnnotation231           `json:"annotation,omitempty"`
-	Arguments             []BTPArgumentDeclaration232 `json:"arguments,omitempty"`
-	ArgumentsToDocument   []BTPArgumentDeclaration232 `json:"argumentsToDocument,omitempty"`
-	Atomic                *bool                       `json:"atomic,omitempty"`
-	Body                  *BTPStatementBlock271       `json:"body,omitempty"`
-	BtType                *string                     `json:"btType,omitempty"`
-	Deprecated            *bool                       `json:"deprecated,omitempty"`
-	DeprecatedExplanation *string                     `json:"deprecatedExplanation,omitempty"`
-	DocumentationType     *GBTPDefinitionType         `json:"documentationType,omitempty"`
-	EndSourceLocation     *int32                      `json:"endSourceLocation,omitempty"`
-	ForExport             *bool                       `json:"forExport,omitempty"`
-	Name                  *BTPIdentifier8             `json:"name,omitempty"`
-	NodeId                *string                     `json:"nodeId,omitempty"`
-	Precondition          *BTPStatement269            `json:"precondition,omitempty"`
-	ReturnType            *BTPTypeName290             `json:"returnType,omitempty"`
-	ShortDescriptor       *string                     `json:"shortDescriptor,omitempty"`
-	SpaceAfter            *BTPSpace10                 `json:"spaceAfter,omitempty"`
-	SpaceAfterArglist     *BTPSpace10                 `json:"spaceAfterArglist,omitempty"`
-	SpaceAfterExport      *BTPSpace10                 `json:"spaceAfterExport,omitempty"`
-	SpaceBefore           *BTPSpace10                 `json:"spaceBefore,omitempty"`
-	SpaceDefault          *bool                       `json:"spaceDefault,omitempty"`
-	SpaceInEmptyList      *BTPSpace10                 `json:"spaceInEmptyList,omitempty"`
-	StartSourceLocation   *int32                      `json:"startSourceLocation,omitempty"`
-	SymbolName            *BTPIdentifier8             `json:"symbolName,omitempty"`
+	Annotation          *BTPAnnotation231           `json:"annotation,omitempty"`
+	Arguments           []BTPArgumentDeclaration232 `json:"arguments,omitempty"`
+	ArgumentsToDocument []BTPArgumentDeclaration232 `json:"argumentsToDocument,omitempty"`
+	Atomic              *bool                       `json:"atomic,omitempty"`
+	Body                *BTPStatementBlock271       `json:"body,omitempty"`
+	// Type of JSON object.
+	BtType                *string             `json:"btType,omitempty"`
+	Deprecated            *bool               `json:"deprecated,omitempty"`
+	DeprecatedExplanation *string             `json:"deprecatedExplanation,omitempty"`
+	DocumentationType     *GBTPDefinitionType `json:"documentationType,omitempty"`
+	EndSourceLocation     *int32              `json:"endSourceLocation,omitempty"`
+	ForExport             *bool               `json:"forExport,omitempty"`
+	Name                  *BTPIdentifier8     `json:"name,omitempty"`
+	NodeId                *string             `json:"nodeId,omitempty"`
+	Precondition          *BTPStatement269    `json:"precondition,omitempty"`
+	ReturnType            *BTPTypeName290     `json:"returnType,omitempty"`
+	ShortDescriptor       *string             `json:"shortDescriptor,omitempty"`
+	SpaceAfter            *BTPSpace10         `json:"spaceAfter,omitempty"`
+	SpaceAfterArglist     *BTPSpace10         `json:"spaceAfterArglist,omitempty"`
+	SpaceAfterExport      *BTPSpace10         `json:"spaceAfterExport,omitempty"`
+	SpaceBefore           *BTPSpace10         `json:"spaceBefore,omitempty"`
+	SpaceDefault          *bool               `json:"spaceDefault,omitempty"`
+	SpaceInEmptyList      *BTPSpace10         `json:"spaceInEmptyList,omitempty"`
+	StartSourceLocation   *int32              `json:"startSourceLocation,omitempty"`
+	SymbolName            *BTPIdentifier8     `json:"symbolName,omitempty"`
 }
 
 // NewBTPFunctionDeclaration246 instantiates a new BTPFunctionDeclaration246 object

@@ -16,6 +16,7 @@ import (
 
 // BTUiSelection1185 struct for BTUiSelection1185
 type BTUiSelection1185 struct {
+	// Type of JSON object.
 	BtType              *string             `json:"btType,omitempty"`
 	DeterministicIdList []string            `json:"deterministicIdList,omitempty"`
 	Id                  *string             `json:"id,omitempty"`

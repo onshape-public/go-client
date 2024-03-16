@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Path** | Pointer to [**[]BTJPathElement2297**](BTJPathElement2297.md) |  | [optional] 
 **StartNode** | **string** | Either empty (root) or the nodeId of a node in the tree. | 
 

@@ -327,6 +327,7 @@ func (v *NullableBTTableBaseRowMetadata3181) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTTableBaseRowMetadata3181 struct {
+	// Type of JSON object.
 	BtType                  *string                            `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 }

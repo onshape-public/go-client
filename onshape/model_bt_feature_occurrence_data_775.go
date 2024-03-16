@@ -232,6 +232,7 @@ func (v *NullableBTFeatureOccurrenceData775) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTFeatureOccurrenceData775 struct {
+	// Type of JSON object.
 	BtType     *string                 `json:"btType,omitempty"`
 	Visibility *GBTBSFeatureVisibility `json:"visibility,omitempty"`
 }

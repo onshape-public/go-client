@@ -16,14 +16,15 @@ import (
 
 // BTMConfiguredValueByEnum1923 struct for BTMConfiguredValueByEnum1923
 type BTMConfiguredValueByEnum1923 struct {
-	BtType                   *string        `json:"btType,omitempty"`
-	ConfigurationValueString *string        `json:"configurationValueString,omitempty"`
-	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
-	NodeId                   *string        `json:"nodeId,omitempty"`
-	Value                    *BTMParameter1 `json:"value,omitempty"`
-	EnumName                 *string        `json:"enumName,omitempty"`
-	EnumValue                *string        `json:"enumValue,omitempty"`
-	Namespace                *string        `json:"namespace,omitempty"`
+	BtType                   *string `json:"btType,omitempty"`
+	ConfigurationValueString *string `json:"configurationValueString,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string        `json:"importMicroversion,omitempty"`
+	NodeId             *string        `json:"nodeId,omitempty"`
+	Value              *BTMParameter1 `json:"value,omitempty"`
+	EnumName           *string        `json:"enumName,omitempty"`
+	EnumValue          *string        `json:"enumValue,omitempty"`
+	Namespace          *string        `json:"namespace,omitempty"`
 }
 
 // NewBTMConfiguredValueByEnum1923 instantiates a new BTMConfiguredValueByEnum1923 object

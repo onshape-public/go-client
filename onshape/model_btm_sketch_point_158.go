@@ -16,21 +16,22 @@ import (
 
 // BTMSketchPoint158 struct for BTMSketchPoint158
 type BTMSketchPoint158 struct {
-	BtType                              *string         `json:"btType,omitempty"`
-	ControlBoxIds                       []string        `json:"controlBoxIds,omitempty"`
-	EntityId                            *string         `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
-	IsConstruction                      *bool           `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool           `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool           `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool           `json:"isFromSplineHandle,omitempty"`
-	Namespace                           *string         `json:"namespace,omitempty"`
-	NodeId                              *string         `json:"nodeId,omitempty"`
-	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
-	IsUserPoint                         *bool           `json:"isUserPoint,omitempty"`
-	X                                   *float64        `json:"x,omitempty"`
-	Y                                   *float64        `json:"y,omitempty"`
+	BtType                              *string  `json:"btType,omitempty"`
+	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
+	EntityId                            *string  `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string  `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion         *string         `json:"importMicroversion,omitempty"`
+	IsConstruction             *bool           `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle *bool           `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon *bool           `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle         *bool           `json:"isFromSplineHandle,omitempty"`
+	Namespace                  *string         `json:"namespace,omitempty"`
+	NodeId                     *string         `json:"nodeId,omitempty"`
+	Parameters                 []BTMParameter1 `json:"parameters,omitempty"`
+	IsUserPoint                *bool           `json:"isUserPoint,omitempty"`
+	X                          *float64        `json:"x,omitempty"`
+	Y                          *float64        `json:"y,omitempty"`
 }
 
 // NewBTMSketchPoint158 instantiates a new BTMSketchPoint158 object

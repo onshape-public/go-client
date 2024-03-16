@@ -16,6 +16,7 @@ import (
 
 // BTBSMatrix386 struct for BTBSMatrix386
 type BTBSMatrix386 struct {
+	// Type of JSON object.
 	BtType                        *string        `json:"btType,omitempty"`
 	FullTransformation            []float64      `json:"fullTransformation,omitempty"`
 	IsNormalized                  *bool          `json:"isNormalized,omitempty"`

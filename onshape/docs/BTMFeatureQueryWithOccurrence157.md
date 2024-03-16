@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **FeatureIdWithOccurrence** | Pointer to **string** |  | [optional] 
 **PartStudioMateConnectorQuery** | Pointer to **bool** |  | [optional] 

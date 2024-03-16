@@ -16,31 +16,33 @@ import (
 
 // BTMModel141 struct for BTMModel141
 type BTMModel141 struct {
-	AllFeatures                   []BTMFeature134                  `json:"allFeatures,omitempty"`
-	AllFeaturesAndOtherReferences []BTMFeature134                  `json:"allFeaturesAndOtherReferences,omitempty"`
-	AllFeaturesAndSubFeatures     []BTMFeature134                  `json:"allFeaturesAndSubFeatures,omitempty"`
-	BtType                        *string                          `json:"btType,omitempty"`
-	Children                      []BTMNode19                      `json:"children,omitempty"`
-	ConfigurationData             *BTMConfigurationData1560        `json:"configurationData,omitempty"`
-	Configured                    *bool                            `json:"configured,omitempty"`
-	DeepImports                   *map[string][]BTImport           `json:"deepImports,omitempty"`
-	DefaultFeatures               *BTDefaultFeatures119            `json:"defaultFeatures,omitempty"`
-	DefaultUnits                  *BTMUnitsDefault160              `json:"defaultUnits,omitempty"`
-	FeatureImports                *map[string][]BTImport           `json:"featureImports,omitempty"`
-	FirstRollbackIndex            *int32                           `json:"firstRollbackIndex,omitempty"`
-	ImportMicroversion            *string                          `json:"importMicroversion,omitempty"`
-	ImportSet                     []BTPModuleId235                 `json:"importSet,omitempty"`
-	Imports                       []BTMImport136                   `json:"imports,omitempty"`
-	IsVariableStudio              *bool                            `json:"isVariableStudio,omitempty"`
-	LastFeatureBeforeRollBack     *BTMFeature134                   `json:"lastFeatureBeforeRollBack,omitempty"`
-	Name                          *string                          `json:"name,omitempty"`
-	NodeId                        *string                          `json:"nodeId,omitempty"`
-	PartProperties                *BTPartProperties293             `json:"partProperties,omitempty"`
-	PathToCache                   *BTCacheDataPath191              `json:"pathToCache,omitempty"`
-	Properties                    *BTModelProperties1258           `json:"properties,omitempty"`
-	RollbackBar                   *BTMRollback150                  `json:"rollbackBar,omitempty"`
-	RolledBackToEnd               *bool                            `json:"rolledBackToEnd,omitempty"`
-	VariableStudios               []BTMVariableStudioReference2764 `json:"variableStudios,omitempty"`
+	AllFeatures                   []BTMFeature134 `json:"allFeatures,omitempty"`
+	AllFeaturesAndOtherReferences []BTMFeature134 `json:"allFeaturesAndOtherReferences,omitempty"`
+	AllFeaturesAndSubFeatures     []BTMFeature134 `json:"allFeaturesAndSubFeatures,omitempty"`
+	// Type of JSON object.
+	BtType             *string                   `json:"btType,omitempty"`
+	Children           []BTMNode19               `json:"children,omitempty"`
+	ConfigurationData  *BTMConfigurationData1560 `json:"configurationData,omitempty"`
+	Configured         *bool                     `json:"configured,omitempty"`
+	DeepImports        *map[string][]BTImport    `json:"deepImports,omitempty"`
+	DefaultFeatures    *BTDefaultFeatures119     `json:"defaultFeatures,omitempty"`
+	DefaultUnits       *BTMUnitsDefault160       `json:"defaultUnits,omitempty"`
+	FeatureImports     *map[string][]BTImport    `json:"featureImports,omitempty"`
+	FirstRollbackIndex *int32                    `json:"firstRollbackIndex,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion        *string                          `json:"importMicroversion,omitempty"`
+	ImportSet                 []BTPModuleId235                 `json:"importSet,omitempty"`
+	Imports                   []BTMImport136                   `json:"imports,omitempty"`
+	IsVariableStudio          *bool                            `json:"isVariableStudio,omitempty"`
+	LastFeatureBeforeRollBack *BTMFeature134                   `json:"lastFeatureBeforeRollBack,omitempty"`
+	Name                      *string                          `json:"name,omitempty"`
+	NodeId                    *string                          `json:"nodeId,omitempty"`
+	PartProperties            *BTPartProperties293             `json:"partProperties,omitempty"`
+	PathToCache               *BTCacheDataPath191              `json:"pathToCache,omitempty"`
+	Properties                *BTModelProperties1258           `json:"properties,omitempty"`
+	RollbackBar               *BTMRollback150                  `json:"rollbackBar,omitempty"`
+	RolledBackToEnd           *bool                            `json:"rolledBackToEnd,omitempty"`
+	VariableStudios           []BTMVariableStudioReference2764 `json:"variableStudios,omitempty"`
 }
 
 // NewBTMModel141 instantiates a new BTMModel141 object

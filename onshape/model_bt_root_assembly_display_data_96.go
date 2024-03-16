@@ -16,6 +16,7 @@ import (
 
 // BTRootAssemblyDisplayData96 struct for BTRootAssemblyDisplayData96
 type BTRootAssemblyDisplayData96 struct {
+	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	BuildDurationMillis                    *float64                                      `json:"buildDurationMillis,omitempty"`
 	DeletedGeometryMateIds                 []string                                      `json:"deletedGeometryMateIds,omitempty"`

@@ -16,6 +16,7 @@ import (
 
 // BTApiTableRow2915 struct for BTApiTableRow2915
 type BTApiTableRow2915 struct {
+	// Type of JSON object.
 	BtType          *string            `json:"btType,omitempty"`
 	Callout         *string            `json:"callout,omitempty"`
 	ColumnIdToValue *map[string]string `json:"columnIdToValue,omitempty"`

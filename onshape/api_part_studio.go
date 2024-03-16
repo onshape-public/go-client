@@ -45,7 +45,9 @@ func (r ApiAddPartStudioFeatureRequest) Execute() (*BTFeatureDefinitionResponse1
 /*
 AddPartStudioFeature Add a feature to the Part Studio's Feature List.
 
-See Feature List APIs in the [developer documentation](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
+The feature is added immediately before the rollback bar. Any geometry IDs specified in the feature must be valid at that point in the feature tree.
+
+See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did
@@ -601,6 +603,8 @@ func (r ApiDeletePartStudioFeatureRequest) Execute() (*BTFeatureApiBase1430, *ht
 /*
 DeletePartStudioFeature Delete a Part Studio feature.
 
+See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
+
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
  @param wid Workspace ID.
@@ -725,6 +729,7 @@ func (r ApiEvalFeatureScriptRequest) LinkDocumentId(linkDocumentId string) ApiEv
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiEvalFeatureScriptRequest) Configuration(configuration string) ApiEvalFeatureScriptRequest {
 	r.configuration = &configuration
 	return r
@@ -905,7 +910,7 @@ func (r ApiExportParasolidRequest) IncludeExportIds(includeExportIds bool) ApiEx
 	return r
 }
 
-// Configuration string.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiExportParasolidRequest) Configuration(configuration string) ApiExportParasolidRequest {
 	r.configuration = &configuration
 	return r
@@ -1060,6 +1065,7 @@ func (r ApiExportPartStudioGltfRequest) LinkDocumentId(linkDocumentId string) Ap
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiExportPartStudioGltfRequest) Configuration(configuration string) ApiExportPartStudioGltfRequest {
 	r.configuration = &configuration
 	return r
@@ -1349,7 +1355,7 @@ func (r ApiExportPartStudioStlRequest) MinFacetWidth(minFacetWidth float64) ApiE
 	return r
 }
 
-// Configuration string.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiExportPartStudioStlRequest) Configuration(configuration string) ApiExportPartStudioStlRequest {
 	r.configuration = &configuration
 	return r
@@ -1505,6 +1511,7 @@ func (r ApiGetFeatureScriptRepresentationRequest) LinkDocumentId(linkDocumentId 
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetFeatureScriptRepresentationRequest) Configuration(configuration string) ApiGetFeatureScriptRepresentationRequest {
 	r.configuration = &configuration
 	return r
@@ -1843,6 +1850,7 @@ func (r ApiGetPartStudioBodyDetailsRequest) LinkDocumentId(linkDocumentId string
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetPartStudioBodyDetailsRequest) Configuration(configuration string) ApiGetPartStudioBodyDetailsRequest {
 	r.configuration = &configuration
 	return r
@@ -2052,7 +2060,7 @@ func (r ApiGetPartStudioBoundingBoxesRequest) IncludeWireBodies(includeWireBodie
 	return r
 }
 
-// Configuration string.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetPartStudioBoundingBoxesRequest) Configuration(configuration string) ApiGetPartStudioBoundingBoxesRequest {
 	r.configuration = &configuration
 	return r
@@ -2211,6 +2219,7 @@ func (r ApiGetPartStudioEdgesRequest) LinkDocumentId(linkDocumentId string) ApiG
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetPartStudioEdgesRequest) Configuration(configuration string) ApiGetPartStudioEdgesRequest {
 	r.configuration = &configuration
 	return r
@@ -2442,6 +2451,7 @@ func (r ApiGetPartStudioFacesRequest) LinkDocumentId(linkDocumentId string) ApiG
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetPartStudioFacesRequest) Configuration(configuration string) ApiGetPartStudioFacesRequest {
 	r.configuration = &configuration
 	return r
@@ -2720,6 +2730,8 @@ func (r ApiGetPartStudioFeatureSpecsRequest) Execute() (*BTFeatureSpecsResponse6
 /*
 GetPartStudioFeatureSpecs Get the specs for a Part Studio feature.
 
+Returns a list of feature specs available within the Part Studio. A feature spec provides a data description of the feature's interface to a feature.
+
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
  @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
@@ -2846,6 +2858,7 @@ func (r ApiGetPartStudioFeaturesRequest) LinkDocumentId(linkDocumentId string) A
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetPartStudioFeaturesRequest) Configuration(configuration string) ApiGetPartStudioFeaturesRequest {
 	r.configuration = &configuration
 	return r
@@ -2863,6 +2876,7 @@ func (r ApiGetPartStudioFeaturesRequest) ElementMicroversionId(elementMicroversi
 	return r
 }
 
+// If true, include the underlying geometry IDs in the feature definition.
 func (r ApiGetPartStudioFeaturesRequest) IncludeGeometryIds(includeGeometryIds bool) ApiGetPartStudioFeaturesRequest {
 	r.includeGeometryIds = &includeGeometryIds
 	return r
@@ -2885,7 +2899,9 @@ func (r ApiGetPartStudioFeaturesRequest) Execute() (*BTFeatureListResponse2457, 
 }
 
 /*
-GetPartStudioFeatures Retrieve a feature list of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.
+GetPartStudioFeatures Get a list of features instantiated in the Part Studio.
+
+See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did The id of the document in which to perform the operation.
@@ -3042,6 +3058,7 @@ func (r ApiGetPartStudioMassPropertiesRequest) LinkDocumentId(linkDocumentId str
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetPartStudioMassPropertiesRequest) Configuration(configuration string) ApiGetPartStudioMassPropertiesRequest {
 	r.configuration = &configuration
 	return r
@@ -3433,7 +3450,7 @@ func (r ApiGetPartStudioShadedViewsRequest) IncludeWires(includeWires bool) ApiG
 	return r
 }
 
-// Configuration string.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetPartStudioShadedViewsRequest) Configuration(configuration string) ApiGetPartStudioShadedViewsRequest {
 	r.configuration = &configuration
 	return r
@@ -3743,9 +3760,10 @@ func (r ApiUpdateFeaturesRequest) Execute() (*BTUpdateFeaturesResponse1333, *htt
 }
 
 /*
-UpdateFeatures Update existing features' parameters.
+UpdateFeatures Update multiple features in a Part Studio
 
-You can update multiple features with a single call.
+This API accepts a list of features (that must already exist in the Part Studio) to update. This call does not fully redefine the features; it updates only the parameters supplied in the top-level feature structure, and optionally can update feature suppression attributes.
+See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.
@@ -3872,6 +3890,8 @@ func (r ApiUpdatePartStudioFeatureRequest) Execute() (*BTFeatureDefinitionRespon
 
 /*
 UpdatePartStudioFeature Update the definition of a Part Studio feature.
+
+Replaces an existing feature in the location of the existing feature. See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param did Document ID.

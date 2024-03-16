@@ -16,6 +16,7 @@ import (
 
 // BTLocationInfo226 struct for BTLocationInfo226
 type BTLocationInfo226 struct {
+	// Type of JSON object.
 	BtType              *string                          `json:"btType,omitempty"`
 	Character           *int32                           `json:"character,omitempty"`
 	Column              *int32                           `json:"column,omitempty"`

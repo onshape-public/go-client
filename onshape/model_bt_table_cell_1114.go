@@ -358,6 +358,7 @@ func (v *NullableBTTableCell1114) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTTableCell1114 struct {
+	// Type of JSON object.
 	BtType        *string `json:"btType,omitempty"`
 	IsEverVisible *bool   `json:"isEverVisible,omitempty"`
 	IsReadOnly    *bool   `json:"isReadOnly,omitempty"`

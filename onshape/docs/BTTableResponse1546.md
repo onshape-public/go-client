@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **SourceMicroversion** | Pointer to **string** |  | [optional] 
 **Table** | Pointer to [**BTTable1825**](BTTable1825.md) |  | [optional] 
 

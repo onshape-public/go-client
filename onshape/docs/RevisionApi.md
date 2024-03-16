@@ -495,7 +495,7 @@ func main() {
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     elementType := "elementType_example" // string | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string |  (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
     fillApprovers := true // bool |  (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
  **elementType** | **string** |  | 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** |  | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
  **fillApprovers** | **bool** |  | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
 

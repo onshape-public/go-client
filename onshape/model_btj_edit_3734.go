@@ -258,6 +258,7 @@ func (v *NullableBTJEdit3734) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTJEdit3734 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **AllowedInsertableTypes** | Pointer to [**[]GBTPartStudioItemType**](GBTPartStudioItemType.md) |  | [optional] 
 **ComputedConfigurationInputs** | Pointer to [**[]BTComputedConfigurationInputSpec2525**](BTComputedConfigurationInputSpec2525.md) |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 

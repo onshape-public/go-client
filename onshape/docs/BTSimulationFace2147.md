@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Bounds** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
 **SampleTrianglePointIndices** | Pointer to [**BTImmutableIntArray**](BTImmutableIntArray.md) |  | [optional] 
 **TriangleNormalIndices** | Pointer to [**BTImmutableIntArray**](BTImmutableIntArray.md) |  | [optional] 

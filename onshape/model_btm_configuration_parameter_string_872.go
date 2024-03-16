@@ -16,16 +16,17 @@ import (
 
 // BTMConfigurationParameterString872 struct for BTMConfigurationParameterString872
 type BTMConfigurationParameterString872 struct {
-	BtType               *string                        `json:"btType,omitempty"`
-	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
-	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
-	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
-	NodeId               *string                        `json:"nodeId,omitempty"`
-	ParameterId          *string                        `json:"parameterId,omitempty"`
-	ParameterName        *string                        `json:"parameterName,omitempty"`
-	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid                *bool                          `json:"valid,omitempty"`
-	DefaultValue         *string                        `json:"defaultValue,omitempty"`
+	BtType               *string       `json:"btType,omitempty"`
+	GeneratedParameterId *BTTreeNode20 `json:"generatedParameterId,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                        `json:"importMicroversion,omitempty"`
+	IsCosmetic         *bool                          `json:"isCosmetic,omitempty"`
+	NodeId             *string                        `json:"nodeId,omitempty"`
+	ParameterId        *string                        `json:"parameterId,omitempty"`
+	ParameterName      *string                        `json:"parameterName,omitempty"`
+	ParameterType      *GBTConfigurationParameterType `json:"parameterType,omitempty"`
+	Valid              *bool                          `json:"valid,omitempty"`
+	DefaultValue       *string                        `json:"defaultValue,omitempty"`
 }
 
 // NewBTMConfigurationParameterString872 instantiates a new BTMConfigurationParameterString872 object

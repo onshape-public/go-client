@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ComputedPartPropertySpecId** | Pointer to **string** |  | [optional] 
 **PropertyFunctionReturnType** | Pointer to **string** |  | [optional] 
 

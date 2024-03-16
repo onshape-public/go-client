@@ -16,6 +16,7 @@ import (
 
 // BTExportModelCoedge1342 struct for BTExportModelCoedge1342
 type BTExportModelCoedge1342 struct {
+	// Type of JSON object.
 	BtType      *string `json:"btType,omitempty"`
 	EdgeId      *string `json:"edgeId,omitempty"`
 	Orientation *bool   `json:"orientation,omitempty"`

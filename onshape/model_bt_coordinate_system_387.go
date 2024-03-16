@@ -16,6 +16,7 @@ import (
 
 // BTCoordinateSystem387 struct for BTCoordinateSystem387
 type BTCoordinateSystem387 struct {
+	// Type of JSON object.
 	BtType *string        `json:"btType,omitempty"`
 	Matrix *BTBSMatrix386 `json:"matrix,omitempty"`
 	Origin *BTVector3d389 `json:"origin,omitempty"`

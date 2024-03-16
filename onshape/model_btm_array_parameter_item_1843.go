@@ -16,9 +16,12 @@ import (
 
 // BTMArrayParameterItem1843 struct for BTMArrayParameterItem1843
 type BTMArrayParameterItem1843 struct {
-	BtType             *string `json:"btType,omitempty"`
-	ImportMicroversion *string `json:"importMicroversion,omitempty"`
-	NodeId             *string `json:"nodeId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string         `json:"importMicroversion,omitempty"`
+	NodeId             *string         `json:"nodeId,omitempty"`
+	Parameters         []BTMParameter1 `json:"parameters,omitempty"`
 }
 
 // NewBTMArrayParameterItem1843 instantiates a new BTMArrayParameterItem1843 object
@@ -134,6 +137,38 @@ func (o *BTMArrayParameterItem1843) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetParameters returns the Parameters field value if set, zero value otherwise.
+func (o *BTMArrayParameterItem1843) GetParameters() []BTMParameter1 {
+	if o == nil || o.Parameters == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.Parameters
+}
+
+// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMArrayParameterItem1843) GetParametersOk() ([]BTMParameter1, bool) {
+	if o == nil || o.Parameters == nil {
+		return nil, false
+	}
+	return o.Parameters, true
+}
+
+// HasParameters returns a boolean if a field has been set.
+func (o *BTMArrayParameterItem1843) HasParameters() bool {
+	if o != nil && o.Parameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
+func (o *BTMArrayParameterItem1843) SetParameters(v []BTMParameter1) {
+	o.Parameters = v
+}
+
 func (o BTMArrayParameterItem1843) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -144,6 +179,9 @@ func (o BTMArrayParameterItem1843) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.Parameters != nil {
+		toSerialize["parameters"] = o.Parameters
 	}
 	return json.Marshal(toSerialize)
 }

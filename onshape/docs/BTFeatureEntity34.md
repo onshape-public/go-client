@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DomainSpecificMetadata** | Pointer to [**[]BTDomainSpecificMetadata961**](BTDomainSpecificMetadata961.md) |  | [optional] 
 **FirstGeometry** | Pointer to [**BTEntityGeometry35**](BTEntityGeometry35.md) |  | [optional] 
 
