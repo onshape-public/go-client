@@ -16,15 +16,16 @@ import (
 
 // BTSketchImageDisplayData1379 struct for BTSketchImageDisplayData1379
 type BTSketchImageDisplayData1379 struct {
-	BottomLeftCorner  *BTVector3d389                 `json:"bottomLeftCorner,omitempty"`
-	BottomRightCorner *BTVector3d389                 `json:"bottomRightCorner,omitempty"`
-	BtType            *string                        `json:"btType,omitempty"`
-	Entities          []BTSketchEntityDisplayData354 `json:"entities,omitempty"`
-	FeatureId         *string                        `json:"featureId,omitempty"`
-	IsOnFlat          *bool                          `json:"isOnFlat,omitempty"`
-	Points            []float64                      `json:"points,omitempty"`
-	SourceId          *string                        `json:"sourceId,omitempty"`
-	TopLeftCorner     *BTVector3d389                 `json:"topLeftCorner,omitempty"`
+	BottomLeftCorner  *BTVector3d389 `json:"bottomLeftCorner,omitempty"`
+	BottomRightCorner *BTVector3d389 `json:"bottomRightCorner,omitempty"`
+	// Type of JSON object.
+	BtType        *string                        `json:"btType,omitempty"`
+	Entities      []BTSketchEntityDisplayData354 `json:"entities,omitempty"`
+	FeatureId     *string                        `json:"featureId,omitempty"`
+	IsOnFlat      *bool                          `json:"isOnFlat,omitempty"`
+	Points        []float64                      `json:"points,omitempty"`
+	SourceId      *string                        `json:"sourceId,omitempty"`
+	TopLeftCorner *BTVector3d389                 `json:"topLeftCorner,omitempty"`
 }
 
 // NewBTSketchImageDisplayData1379 instantiates a new BTSketchImageDisplayData1379 object

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Modal** | Pointer to **bool** |  | [optional] 
 **NumberOfModes** | Pointer to **float64** |  | [optional] 
 **Type** | Pointer to [**GBTAssemblySimulationType**](GBTAssemblySimulationType.md) |  | [optional] 

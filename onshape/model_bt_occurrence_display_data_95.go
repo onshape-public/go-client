@@ -16,6 +16,7 @@ import (
 
 // BTOccurrenceDisplayData95 struct for BTOccurrenceDisplayData95
 type BTOccurrenceDisplayData95 struct {
+	// Type of JSON object.
 	BtType                          *string             `json:"btType,omitempty"`
 	ElementId                       *string             `json:"elementId,omitempty"`
 	ForceHighestQualityTessellation *bool               `json:"forceHighestQualityTessellation,omitempty"`

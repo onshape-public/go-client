@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
 **AppearanceReset** | Pointer to **bool** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CopyWithoutEntities** | Pointer to [**BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **EntityDeterministicIds** | Pointer to **[]string** |  | [optional] 
 **IsDeletion** | Pointer to **bool** |  | [optional] 

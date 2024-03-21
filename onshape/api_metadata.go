@@ -409,6 +409,7 @@ func (r ApiGetWMVEPMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGet
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetWMVEPMetadataRequest) Configuration(configuration string) ApiGetWMVEPMetadataRequest {
 	r.configuration = &configuration
 	return r
@@ -615,6 +616,7 @@ func (r ApiGetWMVEPsMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGe
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiGetWMVEPsMetadataRequest) Configuration(configuration string) ApiGetWMVEPsMetadataRequest {
 	r.configuration = &configuration
 	return r
@@ -1431,6 +1433,7 @@ func (r ApiUpdateWVEPMetadataRequest) LinkDocumentId(linkDocumentId string) ApiU
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
 func (r ApiUpdateWVEPMetadataRequest) Configuration(configuration string) ApiUpdateWVEPMetadataRequest {
 	r.configuration = &configuration
 	return r

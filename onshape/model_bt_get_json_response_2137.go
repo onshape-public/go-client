@@ -16,6 +16,7 @@ import (
 
 // BTGetJsonResponse2137 struct for BTGetJsonResponse2137
 type BTGetJsonResponse2137 struct {
+	// Type of JSON object.
 	BtType   *string                    `json:"btType,omitempty"`
 	ChangeId *string                    `json:"changeId,omitempty"`
 	Tree     *BTGetJsonResponse2137Tree `json:"tree,omitempty"`

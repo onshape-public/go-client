@@ -16,7 +16,8 @@ import (
 
 // BTParametricPartStudioChildInstance3696 struct for BTParametricPartStudioChildInstance3696
 type BTParametricPartStudioChildInstance3696 struct {
-	BtType                            *string                               `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
@@ -39,13 +40,14 @@ type BTParametricPartStudioChildInstance3696 struct {
 	StandardContentParametersId       *string                               `json:"standardContentParametersId,omitempty"`
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
-	SuppressionConfigured             *bool                                 `json:"suppressionConfigured,omitempty"`
-	SuppressionState                  *BTMSuppressionState1924              `json:"suppressionState,omitempty"`
-	ValidRevisionReference            *bool                                 `json:"validRevisionReference,omitempty"`
-	Version                           *int32                                `json:"version,omitempty"`
-	PartIdentity                      *BTPSOIdentity2741                    `json:"partIdentity,omitempty"`
-	SketchFeatureId                   *string                               `json:"sketchFeatureId,omitempty"`
-	Type                              *GBTPartStudioInstanceType            `json:"type,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
+	SuppressionConfigured  *bool                      `json:"suppressionConfigured,omitempty"`
+	SuppressionState       *BTMSuppressionState1924   `json:"suppressionState,omitempty"`
+	ValidRevisionReference *bool                      `json:"validRevisionReference,omitempty"`
+	Version                *int32                     `json:"version,omitempty"`
+	PartIdentity           *BTPSOIdentity2741         `json:"partIdentity,omitempty"`
+	SketchFeatureId        *string                    `json:"sketchFeatureId,omitempty"`
+	Type                   *GBTPartStudioInstanceType `json:"type,omitempty"`
 }
 
 // NewBTParametricPartStudioChildInstance3696 instantiates a new BTParametricPartStudioChildInstance3696 object

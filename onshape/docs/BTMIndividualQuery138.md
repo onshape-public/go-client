@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **PersistentQuery** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
 **QueryStatement** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
 **VariableName** | Pointer to [**BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 

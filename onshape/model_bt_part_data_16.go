@@ -16,8 +16,9 @@ import (
 
 // BTPartData16 struct for BTPartData16
 type BTPartData16 struct {
-	BestAvailableTessellationSetting          *GBTTessellationSettingEnum      `json:"bestAvailableTessellationSetting,omitempty"`
-	BoundsDiameter                            *float64                         `json:"boundsDiameter,omitempty"`
+	BestAvailableTessellationSetting *GBTTessellationSettingEnum `json:"bestAvailableTessellationSetting,omitempty"`
+	BoundsDiameter                   *float64                    `json:"boundsDiameter,omitempty"`
+	// Type of JSON object.
 	BtType                                    *string                          `json:"btType,omitempty"`
 	ClosedConstituentPartData                 *BTClosedConstituentPartData2911 `json:"closedConstituentPartData,omitempty"`
 	CoarsePlanarFaceTriangleCount             *int32                           `json:"coarsePlanarFaceTriangleCount,omitempty"`

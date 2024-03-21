@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **SubPartProperties** | Pointer to [**[]BTOnePartProperties230**](BTOnePartProperties230.md) |  | [optional] 
 

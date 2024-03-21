@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefinedByComponents** | Pointer to **bool** |  | [optional] 
 **DirectionFlipped** | Pointer to **bool** |  | [optional] 
 **FgsBaseUnits** | Pointer to **string** |  | [optional] 

@@ -371,6 +371,7 @@ func (v *NullableBTFSValue1888) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTFSValue1888 struct {
+	// Type of JSON object.
 	BtType  string  `json:"btType"`
 	TypeTag *string `json:"typeTag,omitempty"`
 }

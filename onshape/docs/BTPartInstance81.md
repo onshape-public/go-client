@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **PartIdentity** | Pointer to [**BTPSOIdentity2741**](BTPSOIdentity2741.md) |  | [optional] 
 **PartQuery** | Pointer to **string** |  | [optional] 
 **PartReference** | Pointer to [**BTMParameterReferencePartStudio3302**](BTMParameterReferencePartStudio3302.md) |  | [optional] 

@@ -16,23 +16,24 @@ import (
 
 // BTMSketchImageEntity763 struct for BTMSketchImageEntity763
 type BTMSketchImageEntity763 struct {
-	BtType                              *string         `json:"btType,omitempty"`
-	ControlBoxIds                       []string        `json:"controlBoxIds,omitempty"`
-	EntityId                            *string         `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
-	IsConstruction                      *bool           `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool           `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool           `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool           `json:"isFromSplineHandle,omitempty"`
-	Namespace                           *string         `json:"namespace,omitempty"`
-	NodeId                              *string         `json:"nodeId,omitempty"`
-	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
-	AspectRatio                         *float64        `json:"aspectRatio,omitempty"`
-	OriginX                             *float64        `json:"originX,omitempty"`
-	OriginY                             *float64        `json:"originY,omitempty"`
-	XaxisX                              *float64        `json:"xaxisX,omitempty"`
-	XaxisY                              *float64        `json:"xaxisY,omitempty"`
+	BtType                              *string  `json:"btType,omitempty"`
+	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
+	EntityId                            *string  `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string  `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion         *string         `json:"importMicroversion,omitempty"`
+	IsConstruction             *bool           `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle *bool           `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon *bool           `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle         *bool           `json:"isFromSplineHandle,omitempty"`
+	Namespace                  *string         `json:"namespace,omitempty"`
+	NodeId                     *string         `json:"nodeId,omitempty"`
+	Parameters                 []BTMParameter1 `json:"parameters,omitempty"`
+	AspectRatio                *float64        `json:"aspectRatio,omitempty"`
+	OriginX                    *float64        `json:"originX,omitempty"`
+	OriginY                    *float64        `json:"originY,omitempty"`
+	XaxisX                     *float64        `json:"xaxisX,omitempty"`
+	XaxisY                     *float64        `json:"xaxisY,omitempty"`
 }
 
 // NewBTMSketchImageEntity763 instantiates a new BTMSketchImageEntity763 object

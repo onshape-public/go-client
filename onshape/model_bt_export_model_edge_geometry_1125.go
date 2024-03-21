@@ -532,6 +532,7 @@ func (v *NullableBTExportModelEdgeGeometry1125) UnmarshalJSON(src []byte) error 
 }
 
 type base_BTExportModelEdgeGeometry1125 struct {
+	// Type of JSON object.
 	BtType       *string        `json:"btType,omitempty"`
 	EndPoint     *BTVector3d389 `json:"endPoint,omitempty"`
 	EndVector    *BTVector3d389 `json:"endVector,omitempty"`

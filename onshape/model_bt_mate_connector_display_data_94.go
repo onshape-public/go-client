@@ -16,6 +16,7 @@ import (
 
 // BTMateConnectorDisplayData94 struct for BTMateConnectorDisplayData94
 type BTMateConnectorDisplayData94 struct {
+	// Type of JSON object.
 	BtType           *string                `json:"btType,omitempty"`
 	ElementId        *string                `json:"elementId,omitempty"`
 	EntityIds        []string               `json:"entityIds,omitempty"`

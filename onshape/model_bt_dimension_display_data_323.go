@@ -984,6 +984,7 @@ func (v *NullableBTDimensionDisplayData323) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTDimensionDisplayData323 struct {
+	// Type of JSON object.
 	BtType               *string         `json:"btType,omitempty"`
 	CoordinateSystem     *BTMatrix3x3340 `json:"coordinateSystem,omitempty"`
 	FeatureId            *string         `json:"featureId,omitempty"`

@@ -1642,6 +1642,56 @@ func (o *BTUserInfo) SetDeviceInfo(v BTDeviceLoginSecretInfo) {
 	o.GetActualInstance().(getResult).SetDeviceInfo(v)
 }
 
+// GetDiscounts returns the Discounts field value if set, zero value otherwise.
+func (o *BTUserInfo) GetDiscounts() []BTDiscountInfo {
+	type getResult interface {
+		GetDiscounts() []BTDiscountInfo
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDiscounts()
+	} else {
+		var de []BTDiscountInfo
+		return de
+	}
+}
+
+// GetDiscountsOk returns a tuple with the Discounts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetDiscountsOk() ([]BTDiscountInfo, bool) {
+	type getResult interface {
+		GetDiscountsOk() ([]BTDiscountInfo, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDiscountsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDiscounts returns a boolean if a field has been set.
+func (o *BTUserInfo) HasDiscounts() bool {
+	type getResult interface {
+		HasDiscounts() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDiscounts()
+	} else {
+		return false
+	}
+}
+
+// SetDiscounts gets a reference to the given []BTDiscountInfo and assigns it to the Discounts field.
+func (o *BTUserInfo) SetDiscounts(v []BTDiscountInfo) {
+	type getResult interface {
+		SetDiscounts(v []BTDiscountInfo)
+	}
+
+	o.GetActualInstance().(getResult).SetDiscounts(v)
+}
+
 // GetEnterprise returns the Enterprise field value if set, zero value otherwise.
 func (o *BTUserInfo) GetEnterprise() bool {
 	type getResult interface {
@@ -2818,6 +2868,7 @@ type base_BTUserInfo struct {
 	DefaultCompanyName        *string                  `json:"defaultCompanyName,omitempty"`
 	Description               *string                  `json:"description,omitempty"`
 	DeviceInfo                *BTDeviceLoginSecretInfo `json:"deviceInfo,omitempty"`
+	Discounts                 []BTDiscountInfo         `json:"discounts,omitempty"`
 	Enterprise                *bool                    `json:"enterprise,omitempty"`
 	EulaId                    *string                  `json:"eulaId,omitempty"`
 	EulaRequired              *bool                    `json:"eulaRequired,omitempty"`
@@ -3882,6 +3933,38 @@ func (o *base_BTUserInfo) SetDeviceInfo(v BTDeviceLoginSecretInfo) {
 	o.DeviceInfo = &v
 }
 
+// GetDiscounts returns the Discounts field value if set, zero value otherwise.
+func (o *base_BTUserInfo) GetDiscounts() []BTDiscountInfo {
+	if o == nil || o.Discounts == nil {
+		var ret []BTDiscountInfo
+		return ret
+	}
+	return o.Discounts
+}
+
+// GetDiscountsOk returns a tuple with the Discounts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetDiscountsOk() ([]BTDiscountInfo, bool) {
+	if o == nil || o.Discounts == nil {
+		return nil, false
+	}
+	return o.Discounts, true
+}
+
+// HasDiscounts returns a boolean if a field has been set.
+func (o *base_BTUserInfo) HasDiscounts() bool {
+	if o != nil && o.Discounts != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDiscounts gets a reference to the given []BTDiscountInfo and assigns it to the Discounts field.
+func (o *base_BTUserInfo) SetDiscounts(v []BTDiscountInfo) {
+	o.Discounts = v
+}
+
 // GetEnterprise returns the Enterprise field value if set, zero value otherwise.
 func (o *base_BTUserInfo) GetEnterprise() bool {
 	if o == nil || o.Enterprise == nil {
@@ -4651,6 +4734,9 @@ func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeviceInfo != nil {
 		toSerialize["deviceInfo"] = o.DeviceInfo
+	}
+	if o.Discounts != nil {
+		toSerialize["discounts"] = o.Discounts
 	}
 	if o.Enterprise != nil {
 		toSerialize["enterprise"] = o.Enterprise

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **IsConstruction** | Pointer to **bool** |  | [optional] 
 **IsFromSplineControlPolygon** | Pointer to **bool** |  | [optional] 
 **IsFromSplineHandle** | Pointer to **bool** |  | [optional] 

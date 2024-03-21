@@ -201,6 +201,7 @@ func (v *NullableBTTableBaseCrossHighlightData2609) UnmarshalJSON(src []byte) er
 }
 
 type base_BTTableBaseCrossHighlightData2609 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

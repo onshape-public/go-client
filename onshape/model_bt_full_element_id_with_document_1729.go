@@ -482,6 +482,7 @@ func (v *NullableBTFullElementIdWithDocument1729) UnmarshalJSON(src []byte) erro
 }
 
 type base_BTFullElementIdWithDocument1729 struct {
+	// Type of JSON object.
 	BtType                         *string                               `json:"btType,omitempty"`
 	Configured                     *bool                                 `json:"configured,omitempty"`
 	DocumentId                     *string                               `json:"documentId,omitempty"`

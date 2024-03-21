@@ -16,6 +16,7 @@ import (
 
 // BTPSOIdentity2741 struct for BTPSOIdentity2741
 type BTPSOIdentity2741 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 	TheId  *string `json:"theId,omitempty"`
 }

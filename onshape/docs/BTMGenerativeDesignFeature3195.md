@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **AdditiveSupportsOccurrences** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **DraftOccurrences** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **ExtrusionOccurrences** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 

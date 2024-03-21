@@ -16,18 +16,19 @@ import (
 
 // BTExportTessellatedFacesResponse898 struct for BTExportTessellatedFacesResponse898
 type BTExportTessellatedFacesResponse898 struct {
-	Bodies                           []BTExportTessellatedBody3398   `json:"bodies,omitempty"`
-	BodiesInfo                       *BTExportModelBodiesResponse734 `json:"bodiesInfo,omitempty"`
-	BtType                           *string                         `json:"btType,omitempty"`
-	CombineCompositePartConstituents *bool                           `json:"combineCompositePartConstituents,omitempty"`
-	DisplayData                      *BTPartStudioDisplayData346     `json:"displayData,omitempty"`
-	DocumentId                       *string                         `json:"documentId,omitempty"`
-	ElementId                        *string                         `json:"elementId,omitempty"`
-	ErrorEnum                        *GBTErrorStringEnum             `json:"errorEnum,omitempty"`
-	FacetPoints                      []BTVector3d389                 `json:"facetPoints,omitempty"`
-	FullElementId                    *BTFullElementId756             `json:"fullElementId,omitempty"`
-	OutputFaceAppearances            *bool                           `json:"outputFaceAppearances,omitempty"`
-	OutputSeparateFaceNodes          *bool                           `json:"outputSeparateFaceNodes,omitempty"`
+	Bodies     []BTExportTessellatedBody3398   `json:"bodies,omitempty"`
+	BodiesInfo *BTExportModelBodiesResponse734 `json:"bodiesInfo,omitempty"`
+	// Type of JSON object.
+	BtType                           *string                     `json:"btType,omitempty"`
+	CombineCompositePartConstituents *bool                       `json:"combineCompositePartConstituents,omitempty"`
+	DisplayData                      *BTPartStudioDisplayData346 `json:"displayData,omitempty"`
+	DocumentId                       *string                     `json:"documentId,omitempty"`
+	ElementId                        *string                     `json:"elementId,omitempty"`
+	ErrorEnum                        *GBTErrorStringEnum         `json:"errorEnum,omitempty"`
+	FacetPoints                      []BTVector3d389             `json:"facetPoints,omitempty"`
+	FullElementId                    *BTFullElementId756         `json:"fullElementId,omitempty"`
+	OutputFaceAppearances            *bool                       `json:"outputFaceAppearances,omitempty"`
+	OutputSeparateFaceNodes          *bool                       `json:"outputSeparateFaceNodes,omitempty"`
 }
 
 // NewBTExportTessellatedFacesResponse898 instantiates a new BTExportTessellatedFacesResponse898 object

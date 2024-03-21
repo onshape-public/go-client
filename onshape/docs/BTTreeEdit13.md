@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **EditType** | Pointer to [**EditType**](EditType.md) |  | [optional] 
 **NewNodes** | Pointer to [**[]BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
 **Nothing** | Pointer to **bool** |  | [optional] 

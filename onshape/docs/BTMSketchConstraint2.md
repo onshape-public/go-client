@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConstraintType** | Pointer to [**GBTConstraintType**](GBTConstraintType.md) |  | [optional] 
 **DrivenDimension** | Pointer to **bool** |  | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **HasOffsetData2** | Pointer to **bool** |  | [optional] 
 **HasPierceParameter** | Pointer to **bool** |  | [optional] 
 **HelpParameters** | Pointer to **[]float64** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **OffsetDistance1** | Pointer to **float64** |  | [optional] 

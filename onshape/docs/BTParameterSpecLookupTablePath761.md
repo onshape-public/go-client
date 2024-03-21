@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **LookupTable** | Pointer to [**BTParameterLookupTableListEntry1916**](BTParameterLookupTableListEntry1916.md) |  | [optional] 
 
 ## Methods

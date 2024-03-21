@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Coedges** | Pointer to [**[]BTExportModelCoedge1342**](BTExportModelCoedge1342.md) |  | [optional] 
 **IsInner** | Pointer to **bool** |  | [optional] 
 **IsOuter** | Pointer to **bool** |  | [optional] 

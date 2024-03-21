@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BottomLeftCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **BottomRightCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Entities** | Pointer to [**[]BTSketchEntityDisplayData354**](BTSketchEntityDisplayData354.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **IsOnFlat** | Pointer to **bool** |  | [optional] 

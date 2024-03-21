@@ -16,7 +16,8 @@ import (
 
 // BTMUnitsDefault160 struct for BTMUnitsDefault160
 type BTMUnitsDefault160 struct {
-	BtType             *string            `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string            `json:"importMicroversion,omitempty"`
 	NodeId             *string            `json:"nodeId,omitempty"`
 	Units              *map[string]string `json:"units,omitempty"`

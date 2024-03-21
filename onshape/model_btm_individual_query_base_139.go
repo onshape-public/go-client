@@ -696,15 +696,17 @@ func (v *NullableBTMIndividualQueryBase139) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMIndividualQueryBase139 struct {
+	// Type of JSON object.
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
-	NodeId                     *string                    `json:"nodeId,omitempty"`
-	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString                *string                    `json:"queryString,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
+	NodeId             *string                    `json:"nodeId,omitempty"`
+	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString        *string                    `json:"queryString,omitempty"`
 }
 
 // Newbase_BTMIndividualQueryBase139 instantiates a new base_BTMIndividualQueryBase139 object

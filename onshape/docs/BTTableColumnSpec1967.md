@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefaultCellSpec** | Pointer to [**BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 **DefaultColumnWidthUnits** | Pointer to [**GBTTableColumnWidthUnits**](GBTTableColumnWidthUnits.md) |  | [optional] 
 **DefaultColumnWidthValue** | Pointer to **int32** |  | [optional] 

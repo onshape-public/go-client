@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**GetDocumentPermissionSet**](DocumentApi.md#GetDocumentPermissionSet) | **Get** /documents/{did}/permissionset | Retrieve Document permissions by document ID.
 [**GetDocumentVersions**](DocumentApi.md#GetDocumentVersions) | **Get** /documents/d/{did}/versions | Retrieve versions by document ID.
 [**GetDocumentWorkspaces**](DocumentApi.md#GetDocumentWorkspaces) | **Get** /documents/d/{did}/workspaces | Retrieve workspaces by document ID.
-[**GetDocuments**](DocumentApi.md#GetDocuments) | **Get** /documents | Retrieve a document.
+[**GetDocuments**](DocumentApi.md#GetDocuments) | **Get** /documents | Get a list of documents that meet the criteria you specify.
 [**GetElementsInDocument**](DocumentApi.md#GetElementsInDocument) | **Get** /documents/d/{did}/{wvm}/{wvmid}/elements | Retrieve tabs by document ID and workspace or version or microversion ID.
 [**GetInsertables**](DocumentApi.md#GetInsertables) | **Get** /documents/d/{did}/{wv}/{wvid}/insertables | Retrieve insertables by document ID and workspace or version ID.
 [**GetUnitInfo**](DocumentApi.md#GetUnitInfo) | **Get** /documents/d/{did}/{wvm}/{wvmid}/unitinfo | Get the selected units and precision by document ID and workspace or version or microversion ID.
@@ -32,7 +32,7 @@ Method | HTTP request | Description
 [**Search**](DocumentApi.md#Search) | **Post** /documents/search | Search document.
 [**ShareDocument**](DocumentApi.md#ShareDocument) | **Post** /documents/{did}/share | Share document by document ID.
 [**ShareWithSupport**](DocumentApi.md#ShareWithSupport) | **Post** /documents/{did}/shareWithSupport | Share document by document ID with Onshape support.
-[**SyncApplicationElements**](DocumentApi.md#SyncApplicationElements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
+[**SyncAppElements**](DocumentApi.md#SyncAppElements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
 [**UnShareDocument**](DocumentApi.md#UnShareDocument) | **Delete** /documents/{did}/share/{eid} | Unshare document by document ID and tab ID.
 [**UnshareFromSupport**](DocumentApi.md#UnshareFromSupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
 [**UpdateDocumentAttributes**](DocumentApi.md#UpdateDocumentAttributes) | **Post** /documents/{did} | Update document attributes by document ID.
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 
 > BTGlobalTreeNodeListResponse GetDocuments(ctx).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Label(label).Project(project).ParentId(parentId).Execute()
 
-Retrieve a document.
+Get a list of documents that meet the criteria you specify.
 
 ### Example
 
@@ -2128,9 +2128,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SyncApplicationElements
+## SyncAppElements
 
-> map[string]interface{} SyncApplicationElements(ctx, did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
+> map[string]interface{} SyncAppElements(ctx, did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
 
 
 
@@ -2153,13 +2153,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DocumentApi.SyncApplicationElements(context.Background(), did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
+    resp, r, err := apiClient.DocumentApi.SyncAppElements(context.Background(), did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.SyncApplicationElements``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.SyncAppElements``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SyncApplicationElements`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.SyncApplicationElements`: %v\n", resp)
+    // response from `SyncAppElements`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.SyncAppElements`: %v\n", resp)
 }
 ```
 
@@ -2174,7 +2174,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSyncApplicationElementsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSyncAppElementsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

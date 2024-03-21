@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ElementLibraryId** | Pointer to **string** |  | [optional] 
 **ElementLibraryIdRaw** | Pointer to [**BTObjectId**](BTObjectId.md) |  | [optional] 
 **ElementLibrarySelectionPath** | Pointer to [**[]BTObjectId**](BTObjectId.md) |  | [optional] 

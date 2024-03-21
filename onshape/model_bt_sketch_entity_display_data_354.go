@@ -403,6 +403,7 @@ func (v *NullableBTSketchEntityDisplayData354) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTSketchEntityDisplayData354 struct {
+	// Type of JSON object.
 	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
 }

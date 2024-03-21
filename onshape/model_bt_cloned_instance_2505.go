@@ -16,7 +16,8 @@ import (
 
 // BTClonedInstance2505 struct for BTClonedInstance2505
 type BTClonedInstance2505 struct {
-	BtType                            *string                               `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
@@ -39,11 +40,12 @@ type BTClonedInstance2505 struct {
 	StandardContentParametersId       *string                               `json:"standardContentParametersId,omitempty"`
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
-	SuppressionConfigured             *bool                                 `json:"suppressionConfigured,omitempty"`
-	SuppressionState                  *BTMSuppressionState1924              `json:"suppressionState,omitempty"`
-	ValidRevisionReference            *bool                                 `json:"validRevisionReference,omitempty"`
-	Version                           *int32                                `json:"version,omitempty"`
-	SeedOccurrence                    *BTOccurrence74                       `json:"seedOccurrence,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
+	SuppressionConfigured  *bool                    `json:"suppressionConfigured,omitempty"`
+	SuppressionState       *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
+	ValidRevisionReference *bool                    `json:"validRevisionReference,omitempty"`
+	Version                *int32                   `json:"version,omitempty"`
+	SeedOccurrence         *BTOccurrence74          `json:"seedOccurrence,omitempty"`
 }
 
 // NewBTClonedInstance2505 instantiates a new BTClonedInstance2505 object

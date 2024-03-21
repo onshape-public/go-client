@@ -16,13 +16,16 @@ import (
 
 // BTMParameterProgress3232 struct for BTMParameterProgress3232
 type BTMParameterProgress3232 struct {
-	BtType             *string           `json:"btType,omitempty"`
-	ImportMicroversion *string           `json:"importMicroversion,omitempty"`
-	NodeId             *string           `json:"nodeId,omitempty"`
-	ParameterId        *string           `json:"parameterId,omitempty"`
-	PercentDone        *float64          `json:"percentDone,omitempty"`
-	Status             *GBTComputeStatus `json:"status,omitempty"`
-	StatusMessage      *string           `json:"statusMessage,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId   *string           `json:"parameterId,omitempty"`
+	PercentDone   *float64          `json:"percentDone,omitempty"`
+	Status        *GBTComputeStatus `json:"status,omitempty"`
+	StatusMessage *string           `json:"statusMessage,omitempty"`
 }
 
 // NewBTMParameterProgress3232 instantiates a new BTMParameterProgress3232 object

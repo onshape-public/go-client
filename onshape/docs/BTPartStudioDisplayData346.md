@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AssemblyReferenceDisplayData** | Pointer to [**BTAssemblyReferencesDisplayData1562**](BTAssemblyReferencesDisplayData1562.md) |  | [optional] 
 **BodyIdToEntityAppearanceSettings** | Pointer to [**map[string]BTBaseEntityAppearanceSettings1391**](BTBaseEntityAppearanceSettings1391.md) |  | [optional] 
 **BodyIdToEntityAppearanceSettingsChanged** | Pointer to **bool** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CacheablePartStudioDisplayDataVersion** | Pointer to [**GBTPartStudioDisplayDataVersion**](GBTPartStudioDisplayDataVersion.md) |  | [optional] 
 **DecalIdToDecal** | Pointer to [**map[string]BTDecal2404**](BTDecal2404.md) |  | [optional] 
 **DeterministicIdToAssociatedFeatureIds** | Pointer to **map[string][]string** |  | [optional] 

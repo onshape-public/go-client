@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefaultIndex** | Pointer to **int32** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Entries** | Pointer to [**[]BTParameterLookupTableEntry1667**](BTParameterLookupTableEntry1667.md) |  | [optional] 

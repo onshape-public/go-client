@@ -16,8 +16,10 @@ import (
 
 // BTMImport136 struct for BTMImport136
 type BTMImport136 struct {
-	BtType                     *string `json:"btType,omitempty"`
-	ElementImport              *bool   `json:"elementImport,omitempty"`
+	// Type of JSON object.
+	BtType        *string `json:"btType,omitempty"`
+	ElementImport *bool   `json:"elementImport,omitempty"`
+	// Element microversion that is being imported.
 	ImportMicroversion         *string `json:"importMicroversion,omitempty"`
 	ImportedExternalDocumentId *string `json:"importedExternalDocumentId,omitempty"`
 	Namespace                  *string `json:"namespace,omitempty"`

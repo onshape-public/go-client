@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Imports** | Pointer to [**[]BTMImport136**](BTMImport136.md) |  | [optional] 
 **ModuleId** | Pointer to [**BTPModuleId235**](BTPModuleId235.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
@@ -52,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMParameterDerived864AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetImportMicroversion
+
+`func (o *BTMParameterDerived864AllOf) GetImportMicroversion() string`
+
+GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
+
+### GetImportMicroversionOk
+
+`func (o *BTMParameterDerived864AllOf) GetImportMicroversionOk() (*string, bool)`
+
+GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportMicroversion
+
+`func (o *BTMParameterDerived864AllOf) SetImportMicroversion(v string)`
+
+SetImportMicroversion sets ImportMicroversion field to given value.
+
+### HasImportMicroversion
+
+`func (o *BTMParameterDerived864AllOf) HasImportMicroversion() bool`
+
+HasImportMicroversion returns a boolean if a field has been set.
 
 ### GetImports
 

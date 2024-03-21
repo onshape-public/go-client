@@ -532,6 +532,7 @@ func (v *NullableBTGraphicsAppearance1152) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTGraphicsAppearance1152 struct {
+	// Type of JSON object.
 	BtType           *string            `json:"btType,omitempty"`
 	Color            []string           `json:"color,omitempty"`
 	NonTrivial       *bool              `json:"nonTrivial,omitempty"`

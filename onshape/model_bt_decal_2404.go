@@ -16,6 +16,7 @@ import (
 
 // BTDecal2404 struct for BTDecal2404
 type BTDecal2404 struct {
+	// Type of JSON object.
 	BtType         *string              `json:"btType,omitempty"`
 	ImageForeignId *string              `json:"imageForeignId,omitempty"`
 	ImageSourceId  *string              `json:"imageSourceId,omitempty"`

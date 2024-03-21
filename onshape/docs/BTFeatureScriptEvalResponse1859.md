@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Console** | Pointer to **string** |  | [optional] 
-**LibraryVersion** | Pointer to **int32** |  | [optional] 
-**MicroversionSkew** | Pointer to **bool** |  | [optional] 
+**LibraryVersion** | Pointer to **int32** | FeatureScript version used in the Part Studio. Do not modify. | [optional] 
+**MicroversionSkew** | Pointer to **bool** | On output, &#x60;true&#x60; indicates a microversion mismatch was encountered. | [optional] 
 **Notices** | Pointer to [**[]BTNotice227**](BTNotice227.md) |  | [optional] 
-**RejectMicroversionSkew** | Pointer to **bool** |  | [optional] 
+**RejectMicroversionSkew** | Pointer to **bool** | If &#x60;true&#x60;, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If &#x60;false&#x60;, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion. | [optional] 
 **Result** | Pointer to [**BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
-**SerializationVersion** | Pointer to **string** |  | [optional] 
-**SourceMicroversion** | Pointer to **string** |  | [optional] 
+**SerializationVersion** | Pointer to **string** | Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates. | [optional] 
+**SourceMicroversion** | Pointer to **string** | The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion. | [optional] 
 
 ## Methods
 

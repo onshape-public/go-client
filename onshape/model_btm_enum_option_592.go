@@ -16,7 +16,8 @@ import (
 
 // BTMEnumOption592 struct for BTMEnumOption592
 type BTMEnumOption592 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 	Option             *string `json:"option,omitempty"`

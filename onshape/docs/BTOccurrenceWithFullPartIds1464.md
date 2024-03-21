@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FullElementId** | Pointer to [**BTFullElementIdWithDocument1729**](BTFullElementIdWithDocument1729.md) |  | [optional] 
 **PartIds** | Pointer to **[]string** |  | [optional] 
 **Transform** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 

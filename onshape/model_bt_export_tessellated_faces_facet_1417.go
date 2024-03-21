@@ -16,6 +16,7 @@ import (
 
 // BTExportTessellatedFacesFacet1417 struct for BTExportTessellatedFacesFacet1417
 type BTExportTessellatedFacesFacet1417 struct {
+	// Type of JSON object.
 	BtType             *string          `json:"btType,omitempty"`
 	Indices            []int32          `json:"indices,omitempty"`
 	Normal             *BTVector3d389   `json:"normal,omitempty"`

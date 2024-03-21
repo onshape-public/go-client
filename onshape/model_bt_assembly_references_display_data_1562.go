@@ -16,7 +16,8 @@ import (
 
 // BTAssemblyReferencesDisplayData1562 struct for BTAssemblyReferencesDisplayData1562
 type BTAssemblyReferencesDisplayData1562 struct {
-	AssemblyReferences                     []BTSingleReferenceDisplayData1943            `json:"assemblyReferences,omitempty"`
+	AssemblyReferences []BTSingleReferenceDisplayData1943 `json:"assemblyReferences,omitempty"`
+	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
 	FromFullElementId                      *BTFullElementId756                           `json:"fromFullElementId,omitempty"`

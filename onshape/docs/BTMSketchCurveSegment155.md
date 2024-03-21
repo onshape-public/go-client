@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **EndParam** | Pointer to **float64** |  | [optional] 
 **EndPointId** | Pointer to **string** |  | [optional] 
 **OffsetCurveExtensions** | Pointer to **[]float64** |  | [optional] 

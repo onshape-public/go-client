@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AffectedDeterministicIds** | Pointer to **[]string** |  | [optional] 
 **Appearance** | Pointer to [**BTGraphicsAppearance1152**](BTGraphicsAppearance1152.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Source** | Pointer to [**BTPartMetadataSource2895**](BTPartMetadataSource2895.md) |  | [optional] 
 
 ## Methods

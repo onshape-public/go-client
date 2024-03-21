@@ -16,7 +16,8 @@ import (
 
 // BTPModuleId235 struct for BTPModuleId235
 type BTPModuleId235 struct {
-	Atomic                                  *bool                              `json:"atomic,omitempty"`
+	Atomic *bool `json:"atomic,omitempty"`
+	// Type of JSON object.
 	BtType                                  *string                            `json:"btType,omitempty"`
 	DbimportString                          *string                            `json:"dbimportString,omitempty"`
 	DocumentationType                       *GBTPDefinitionType                `json:"documentationType,omitempty"`

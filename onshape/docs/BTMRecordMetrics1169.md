@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DoBodyValidation** | Pointer to **bool** |  | [optional] 
 **PreviousFeatureId** | Pointer to **string** |  | [optional] 
 **References** | Pointer to [**[]BTMIndividualQuery138**](BTMIndividualQuery138.md) |  | [optional] 

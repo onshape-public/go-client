@@ -16,8 +16,10 @@ import (
 
 // BTToleranceString3274 struct for BTToleranceString3274
 type BTToleranceString3274 struct {
-	BtType             *string `json:"btType,omitempty"`
-	Classification     *string `json:"classification,omitempty"`
+	// Type of JSON object.
+	BtType         *string `json:"btType,omitempty"`
+	Classification *string `json:"classification,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	Lower              *string `json:"lower,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`

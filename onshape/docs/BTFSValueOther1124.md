@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
+**BtType** | **string** | Type of JSON object. | 
 **Type** | Pointer to [**GBTPType**](GBTPType.md) |  | [optional] 
 
 ## Methods

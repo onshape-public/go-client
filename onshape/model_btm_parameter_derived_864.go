@@ -16,13 +16,16 @@ import (
 
 // BTMParameterDerived864 struct for BTMParameterDerived864
 type BTMParameterDerived864 struct {
-	BtType             *string         `json:"btType,omitempty"`
-	ImportMicroversion *string         `json:"importMicroversion,omitempty"`
-	NodeId             *string         `json:"nodeId,omitempty"`
-	ParameterId        *string         `json:"parameterId,omitempty"`
-	Imports            []BTMImport136  `json:"imports,omitempty"`
-	ModuleId           *BTPModuleId235 `json:"moduleId,omitempty"`
-	Namespace          *string         `json:"namespace,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string         `json:"parameterId,omitempty"`
+	Imports     []BTMImport136  `json:"imports,omitempty"`
+	ModuleId    *BTPModuleId235 `json:"moduleId,omitempty"`
+	Namespace   *string         `json:"namespace,omitempty"`
 }
 
 // NewBTMParameterDerived864 instantiates a new BTMParameterDerived864 object

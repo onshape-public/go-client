@@ -16,6 +16,7 @@ import (
 
 // BTJPath3073 Identifies a value in the json data to be operated upon.
 type BTJPath3073 struct {
+	// Type of JSON object.
 	BtType *string              `json:"btType,omitempty"`
 	Path   []BTJPathElement2297 `json:"path,omitempty"`
 	// Either empty (root) or the nodeId of a node in the tree.

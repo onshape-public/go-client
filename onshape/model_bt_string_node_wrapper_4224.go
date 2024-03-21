@@ -16,6 +16,7 @@ import (
 
 // BTStringNodeWrapper4224 struct for BTStringNodeWrapper4224
 type BTStringNodeWrapper4224 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 	NodeId *string `json:"nodeId,omitempty"`
 	String *string `json:"string,omitempty"`

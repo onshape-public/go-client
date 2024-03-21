@@ -1395,21 +1395,22 @@ func (v *NullableBTParameterSpec6) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTParameterSpec6 struct {
-	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
-	BtType                     *string                            `json:"btType,omitempty"`
-	ColumnName                 *string                            `json:"columnName,omitempty"`
-	DefaultValue               *BTMParameter1                     `json:"defaultValue,omitempty"`
-	IconUri                    *string                            `json:"iconUri,omitempty"`
-	LocalizableName            *string                            `json:"localizableName,omitempty"`
-	LocalizedName              *string                            `json:"localizedName,omitempty"`
-	ParameterDescription       *string                            `json:"parameterDescription,omitempty"`
-	ParameterId                *string                            `json:"parameterId,omitempty"`
-	ParameterName              *string                            `json:"parameterName,omitempty"`
-	QuantityType               *GBTQuantityType                   `json:"quantityType,omitempty"`
-	StringsToLocalize          []string                           `json:"stringsToLocalize,omitempty"`
-	UiHint                     *string                            `json:"uiHint,omitempty"`
-	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
-	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	AdditionalLocalizedStrings *int32 `json:"additionalLocalizedStrings,omitempty"`
+	// Type of JSON object.
+	BtType               *string                            `json:"btType,omitempty"`
+	ColumnName           *string                            `json:"columnName,omitempty"`
+	DefaultValue         *BTMParameter1                     `json:"defaultValue,omitempty"`
+	IconUri              *string                            `json:"iconUri,omitempty"`
+	LocalizableName      *string                            `json:"localizableName,omitempty"`
+	LocalizedName        *string                            `json:"localizedName,omitempty"`
+	ParameterDescription *string                            `json:"parameterDescription,omitempty"`
+	ParameterId          *string                            `json:"parameterId,omitempty"`
+	ParameterName        *string                            `json:"parameterName,omitempty"`
+	QuantityType         *GBTQuantityType                   `json:"quantityType,omitempty"`
+	StringsToLocalize    []string                           `json:"stringsToLocalize,omitempty"`
+	UiHint               *string                            `json:"uiHint,omitempty"`
+	UiHints              []GBTUIHint                        `json:"uiHints,omitempty"`
+	VisibilityCondition  *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 }
 
 // Newbase_BTParameterSpec6 instantiates a new base_BTParameterSpec6 object

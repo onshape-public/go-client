@@ -16,6 +16,7 @@ import (
 
 // BTExportTessellatedEdgesEdge1364 struct for BTExportTessellatedEdgesEdge1364
 type BTExportTessellatedEdgesEdge1364 struct {
+	// Type of JSON object.
 	BtType   *string         `json:"btType,omitempty"`
 	Id       *string         `json:"id,omitempty"`
 	Vertices []BTVector3d389 `json:"vertices,omitempty"`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ExplodeSteps** | Pointer to [**[]BTExplosionStepFeature3008**](BTExplosionStepFeature3008.md) |  | [optional] 
 **StartingPositionId** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
 

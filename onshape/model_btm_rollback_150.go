@@ -16,7 +16,8 @@ import (
 
 // BTMRollback150 struct for BTMRollback150
 type BTMRollback150 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 }

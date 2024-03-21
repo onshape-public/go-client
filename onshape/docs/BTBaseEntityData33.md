@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CopyWithoutGeometry** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **Decompressed** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **Deletion** | Pointer to **bool** |  | [optional] 

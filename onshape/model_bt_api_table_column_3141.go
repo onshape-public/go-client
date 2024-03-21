@@ -16,6 +16,7 @@ import (
 
 // BTApiTableColumn3141 struct for BTApiTableColumn3141
 type BTApiTableColumn3141 struct {
+	// Type of JSON object.
 	BtType        *string                `json:"btType,omitempty"`
 	Header        *string                `json:"header,omitempty"`
 	Id            *string                `json:"id,omitempty"`

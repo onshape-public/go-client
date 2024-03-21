@@ -16,6 +16,7 @@ import (
 
 // BTPartMaterial1445 struct for BTPartMaterial1445
 type BTPartMaterial1445 struct {
+	// Type of JSON object.
 	BtType           *string                                `json:"btType,omitempty"`
 	Id               *string                                `json:"id,omitempty"`
 	LibraryName      *string                                `json:"libraryName,omitempty"`

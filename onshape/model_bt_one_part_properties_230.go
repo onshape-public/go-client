@@ -16,8 +16,9 @@ import (
 
 // BTOnePartProperties230 struct for BTOnePartProperties230
 type BTOnePartProperties230 struct {
-	Appearance                   *BTGraphicsAppearance1152   `json:"appearance,omitempty"`
-	AppearanceForNewCell         *BTGraphicsAppearance1152   `json:"appearanceForNewCell,omitempty"`
+	Appearance           *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
+	AppearanceForNewCell *BTGraphicsAppearance1152 `json:"appearanceForNewCell,omitempty"`
+	// Type of JSON object.
 	BtType                       *string                     `json:"btType,omitempty"`
 	ChangedPropertiesSet         []string                    `json:"changedPropertiesSet,omitempty"`
 	CustomProperties             *BTPartCustomProperties1338 `json:"customProperties,omitempty"`

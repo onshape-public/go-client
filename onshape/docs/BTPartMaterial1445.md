@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **LibraryName** | Pointer to **string** |  | [optional] 
 **LibraryReference** | Pointer to [**BTElementReference725**](BTElementReference725.md) |  | [optional] 

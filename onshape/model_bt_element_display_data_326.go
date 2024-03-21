@@ -720,6 +720,7 @@ func (v *NullableBTElementDisplayData326) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTElementDisplayData326 struct {
+	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
 	FromFullElementId                      *BTFullElementId756                           `json:"fromFullElementId,omitempty"`

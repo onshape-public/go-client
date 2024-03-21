@@ -16,6 +16,7 @@ import (
 
 // BTFeatureState1688 struct for BTFeatureState1688
 type BTFeatureState1688 struct {
+	// Type of JSON object.
 	BtType        *string            `json:"btType,omitempty"`
 	FeatureStatus *GBTNodeStatusType `json:"featureStatus,omitempty"`
 	Inactive      *bool              `json:"inactive,omitempty"`

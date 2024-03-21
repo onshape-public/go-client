@@ -14,20 +14,32 @@ import (
 	"encoding/json"
 )
 
-// BTFeatureListResponse2457 struct for BTFeatureListResponse2457
+// BTFeatureListResponse2457 List of features instantiated within the Part Studio.
 type BTFeatureListResponse2457 struct {
-	BtType                 *string                        `json:"btType,omitempty"`
-	DefaultFeatures        []BTMFeature134                `json:"defaultFeatures,omitempty"`
-	FeatureStates          *map[string]BTFeatureState1688 `json:"featureStates,omitempty"`
-	Features               []BTMFeature134                `json:"features,omitempty"`
-	Imports                []BTMImport136                 `json:"imports,omitempty"`
-	IsComplete             *bool                          `json:"isComplete,omitempty"`
-	LibraryVersion         *int32                         `json:"libraryVersion,omitempty"`
-	MicroversionSkew       *bool                          `json:"microversionSkew,omitempty"`
-	RejectMicroversionSkew *bool                          `json:"rejectMicroversionSkew,omitempty"`
-	RollbackIndex          *int32                         `json:"rollbackIndex,omitempty"`
-	SerializationVersion   *string                        `json:"serializationVersion,omitempty"`
-	SourceMicroversion     *string                        `json:"sourceMicroversion,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
+	// List of Onshape-defined features instantiated within the Part Studio.
+	DefaultFeatures []BTMFeature134 `json:"defaultFeatures,omitempty"`
+	// State of each feature, indicating if the feature is valid. Incorrectly defined features will still appear in the Feature list.
+	FeatureStates *map[string]BTFeatureState1688 `json:"featureStates,omitempty"`
+	// List of user-defined features instantiated within the Part Studio.
+	Features []BTMFeature134 `json:"features,omitempty"`
+	// Internal only. Do not modify.
+	Imports []BTMImport136 `json:"imports,omitempty"`
+	// `true` if the features represent the entire part studio or `false` for a filtered subset.
+	IsComplete *bool `json:"isComplete,omitempty"`
+	// FeatureScript version used in the Part Studio. Do not modify.
+	LibraryVersion *int32 `json:"libraryVersion,omitempty"`
+	// On output, `true` indicates a microversion mismatch was encountered.
+	MicroversionSkew *bool `json:"microversionSkew,omitempty"`
+	// If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
+	RejectMicroversionSkew *bool `json:"rejectMicroversionSkew,omitempty"`
+	// Index of the rollback bar location. `-1` indicates the bar is at the end of the Feature List.
+	RollbackIndex *int32 `json:"rollbackIndex,omitempty"`
+	// Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
+	SerializationVersion *string `json:"serializationVersion,omitempty"`
+	// The document microversion from which the result was extracted. Part, face, edge, and vertex IDs are only valid for the same microversion.
+	SourceMicroversion *string `json:"sourceMicroversion,omitempty"`
 }
 
 // NewBTFeatureListResponse2457 instantiates a new BTFeatureListResponse2457 object

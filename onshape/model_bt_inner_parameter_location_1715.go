@@ -201,6 +201,7 @@ func (v *NullableBTInnerParameterLocation1715) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTInnerParameterLocation1715 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

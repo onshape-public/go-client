@@ -967,8 +967,9 @@ func (v *NullableBTPStatement269) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPStatement269 struct {
-	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
-	Atomic              *bool               `json:"atomic,omitempty"`
+	Annotation *BTPAnnotation231 `json:"annotation,omitempty"`
+	Atomic     *bool             `json:"atomic,omitempty"`
+	// Type of JSON object.
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`

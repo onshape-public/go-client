@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CylinderSystem** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
 **Radius** | Pointer to **float32** |  | [optional] 
 

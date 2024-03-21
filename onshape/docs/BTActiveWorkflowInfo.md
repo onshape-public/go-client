@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DrawingCanDuplicatePartNumber** | Pointer to **bool** |  | [optional] 
 **EnabledActiveMultipleWorkflows** | Pointer to **bool** |  | [optional] 
+**HasInactiveCustomWorkflows** | Pointer to **bool** |  | [optional] 
 **ObsoletionWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ObsoletionWorkflowId** | Pointer to **string** |  | [optional] 
 **PartNumberingSchemeId** | Pointer to **string** |  | [optional] 
@@ -374,6 +375,31 @@ SetEnabledActiveMultipleWorkflows sets EnabledActiveMultipleWorkflows field to g
 `func (o *BTActiveWorkflowInfo) HasEnabledActiveMultipleWorkflows() bool`
 
 HasEnabledActiveMultipleWorkflows returns a boolean if a field has been set.
+
+### GetHasInactiveCustomWorkflows
+
+`func (o *BTActiveWorkflowInfo) GetHasInactiveCustomWorkflows() bool`
+
+GetHasInactiveCustomWorkflows returns the HasInactiveCustomWorkflows field if non-nil, zero value otherwise.
+
+### GetHasInactiveCustomWorkflowsOk
+
+`func (o *BTActiveWorkflowInfo) GetHasInactiveCustomWorkflowsOk() (*bool, bool)`
+
+GetHasInactiveCustomWorkflowsOk returns a tuple with the HasInactiveCustomWorkflows field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasInactiveCustomWorkflows
+
+`func (o *BTActiveWorkflowInfo) SetHasInactiveCustomWorkflows(v bool)`
+
+SetHasInactiveCustomWorkflows sets HasInactiveCustomWorkflows field to given value.
+
+### HasHasInactiveCustomWorkflows
+
+`func (o *BTActiveWorkflowInfo) HasHasInactiveCustomWorkflows() bool`
+
+HasHasInactiveCustomWorkflows returns a boolean if a field has been set.
 
 ### GetObsoletionWorkflow
 

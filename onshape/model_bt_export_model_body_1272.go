@@ -16,6 +16,7 @@ import (
 
 // BTExportModelBody1272 struct for BTExportModelBody1272
 type BTExportModelBody1272 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 	// If type == COMPOSITE, indicates whether it is open or closed.
 	Closed             *bool    `json:"closed,omitempty"`

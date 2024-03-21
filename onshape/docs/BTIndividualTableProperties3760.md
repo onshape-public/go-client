@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **HiddenColumns** | Pointer to [**[]BTStringNodeWrapper4224**](BTStringNodeWrapper4224.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Order** | Pointer to [**[]BTStringNodeWrapper4224**](BTStringNodeWrapper4224.md) |  | [optional] 

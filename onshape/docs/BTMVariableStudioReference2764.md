@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ApiConfiguration** | Pointer to [**BTApiConfiguration**](BTApiConfiguration.md) |  | [optional] 
 **Configuration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 

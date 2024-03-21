@@ -22,13 +22,14 @@ type BTMMeshPointQuery1183 struct {
 	FullPathAsString           *string                    `json:"fullPathAsString,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
-	NodeId                     *string                    `json:"nodeId,omitempty"`
-	Occurrence                 *BTOccurrence74            `json:"occurrence,omitempty"`
-	Path                       []string                   `json:"path,omitempty"`
-	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString                *string                    `json:"queryString,omitempty"`
-	Origin                     *BTVector3d389             `json:"origin,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
+	NodeId             *string                    `json:"nodeId,omitempty"`
+	Occurrence         *BTOccurrence74            `json:"occurrence,omitempty"`
+	Path               []string                   `json:"path,omitempty"`
+	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString        *string                    `json:"queryString,omitempty"`
+	Origin             *BTVector3d389             `json:"origin,omitempty"`
 }
 
 // NewBTMMeshPointQuery1183 instantiates a new BTMMeshPointQuery1183 object

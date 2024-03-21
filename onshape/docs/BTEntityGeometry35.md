@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Compressed** | Pointer to **bool** |  | [optional] 
 **Decompressed** | Pointer to [**BTEntityGeometry35**](BTEntityGeometry35.md) |  | [optional] 
 **ErrorCode** | Pointer to **int32** |  | [optional] 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **PercentDone** | Pointer to **float64** |  | [optional] 
 **Status** | Pointer to [**GBTComputeStatus**](GBTComputeStatus.md) |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 

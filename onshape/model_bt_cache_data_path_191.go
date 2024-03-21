@@ -16,6 +16,7 @@ import (
 
 // BTCacheDataPath191 struct for BTCacheDataPath191
 type BTCacheDataPath191 struct {
+	// Type of JSON object.
 	BtType                           *string `json:"btType,omitempty"`
 	DocumentId                       *string `json:"documentId,omitempty"`
 	ElementId                        *string `json:"elementId,omitempty"`

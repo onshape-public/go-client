@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CurrentConfiguration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **CurrentFSValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 **DefaultConfigurationValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 

@@ -16,9 +16,12 @@ import (
 
 // BTMParameterReferenceImage2014 struct for BTMParameterReferenceImage2014
 type BTMParameterReferenceImage2014 struct {
-	BtType             *string                            `json:"btType,omitempty"`
-	ImportMicroversion *string                            `json:"importMicroversion,omitempty"`
-	NodeId             *string                            `json:"nodeId,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
 	ParameterId        *string                            `json:"parameterId,omitempty"`
 	DocumentId         *string                            `json:"documentId,omitempty"`
 	DocumentVersionId  *string                            `json:"documentVersionId,omitempty"`

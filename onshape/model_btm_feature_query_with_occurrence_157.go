@@ -932,12 +932,13 @@ func (v *NullableBTMFeatureQueryWithOccurrence157) UnmarshalJSON(src []byte) err
 }
 
 type base_BTMFeatureQueryWithOccurrence157 struct {
-	BtType                       *string                    `json:"btType,omitempty"`
-	DeterministicIdList          *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
-	DeterministicIds             []string                   `json:"deterministicIds,omitempty"`
-	FullPathAsString             *string                    `json:"fullPathAsString,omitempty"`
-	GenerateSectionEntityQuery   *bool                      `json:"generateSectionEntityQuery,omitempty"`
-	GeneratedSectionQueryId      *string                    `json:"generatedSectionQueryId,omitempty"`
+	BtType                     *string                    `json:"btType,omitempty"`
+	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
+	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
+	FullPathAsString           *string                    `json:"fullPathAsString,omitempty"`
+	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
+	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion           *string                    `json:"importMicroversion,omitempty"`
 	NodeId                       *string                    `json:"nodeId,omitempty"`
 	Occurrence                   *BTOccurrence74            `json:"occurrence,omitempty"`

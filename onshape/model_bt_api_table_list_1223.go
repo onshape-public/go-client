@@ -16,6 +16,7 @@ import (
 
 // BTApiTableList1223 struct for BTApiTableList1223
 type BTApiTableList1223 struct {
+	// Type of JSON object.
 	BtType *string          `json:"btType,omitempty"`
 	Tables []BTApiTable2300 `json:"tables,omitempty"`
 }

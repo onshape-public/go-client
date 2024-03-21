@@ -16,6 +16,7 @@ import (
 
 // BTIndividualTableProperties3760 struct for BTIndividualTableProperties3760
 type BTIndividualTableProperties3760 struct {
+	// Type of JSON object.
 	BtType        *string                   `json:"btType,omitempty"`
 	HiddenColumns []BTStringNodeWrapper4224 `json:"hiddenColumns,omitempty"`
 	NodeId        *string                   `json:"nodeId,omitempty"`

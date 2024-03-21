@@ -16,7 +16,8 @@ import (
 
 // BTMSketchCompositeEntity893 struct for BTMSketchCompositeEntity893
 type BTMSketchCompositeEntity893 struct {
-	BtType                              *string            `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Element microversion that is being imported.
 	ImportMicroversion                  *string            `json:"importMicroversion,omitempty"`
 	NodeId                              *string            `json:"nodeId,omitempty"`
 	EntityId                            *string            `json:"entityId,omitempty"`

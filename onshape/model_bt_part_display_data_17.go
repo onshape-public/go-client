@@ -16,8 +16,9 @@ import (
 
 // BTPartDisplayData17 struct for BTPartDisplayData17
 type BTPartDisplayData17 struct {
-	Appearance                       *BTGraphicsAppearance1152            `json:"appearance,omitempty"`
-	AppearanceForNewCell             *BTGraphicsAppearance1152            `json:"appearanceForNewCell,omitempty"`
+	Appearance           *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
+	AppearanceForNewCell *BTGraphicsAppearance1152 `json:"appearanceForNewCell,omitempty"`
+	// Type of JSON object.
 	BtType                           *string                              `json:"btType,omitempty"`
 	CustomProperties                 *BTPartCustomProperties1338          `json:"customProperties,omitempty"`
 	DefaultColorHash                 *string                              `json:"defaultColorHash,omitempty"`

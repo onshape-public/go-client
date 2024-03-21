@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **LocalizableName** | Pointer to **string** |  | [optional] 
 **LocalizedLabel** | Pointer to **string** |  | [optional] 

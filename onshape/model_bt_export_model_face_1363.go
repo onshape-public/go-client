@@ -17,15 +17,16 @@ import (
 // BTExportModelFace1363 struct for BTExportModelFace1363
 type BTExportModelFace1363 struct {
 	// Identifies the application of the appearance. Faces that share a value were assigned an appearance together.
-	AppearancePropertyNodeId *string                      `json:"appearancePropertyNodeId,omitempty"`
-	Area                     *float64                     `json:"area,omitempty"`
-	Box                      *BTBoundingBox1052           `json:"box,omitempty"`
-	BtType                   *string                      `json:"btType,omitempty"`
-	FaceProperties           *BTExportModelProperties3216 `json:"faceProperties,omitempty"`
-	Id                       *string                      `json:"id,omitempty"`
-	Loops                    []BTExportModelLoop1182      `json:"loops,omitempty"`
-	Orientation              *bool                        `json:"orientation,omitempty"`
-	Surface                  *BTSurfaceDescription1564    `json:"surface,omitempty"`
+	AppearancePropertyNodeId *string            `json:"appearancePropertyNodeId,omitempty"`
+	Area                     *float64           `json:"area,omitempty"`
+	Box                      *BTBoundingBox1052 `json:"box,omitempty"`
+	// Type of JSON object.
+	BtType         *string                      `json:"btType,omitempty"`
+	FaceProperties *BTExportModelProperties3216 `json:"faceProperties,omitempty"`
+	Id             *string                      `json:"id,omitempty"`
+	Loops          []BTExportModelLoop1182      `json:"loops,omitempty"`
+	Orientation    *bool                        `json:"orientation,omitempty"`
+	Surface        *BTSurfaceDescription1564    `json:"surface,omitempty"`
 }
 
 // NewBTExportModelFace1363 instantiates a new BTExportModelFace1363 object

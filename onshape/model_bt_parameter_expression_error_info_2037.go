@@ -16,6 +16,7 @@ import (
 
 // BTParameterExpressionErrorInfo2037 struct for BTParameterExpressionErrorInfo2037
 type BTParameterExpressionErrorInfo2037 struct {
+	// Type of JSON object.
 	BtType                 *string             `json:"btType,omitempty"`
 	ErrorMessageIdentifier *GBTErrorStringEnum `json:"errorMessageIdentifier,omitempty"`
 	MessageArguments       []BTValueAndUse4696 `json:"messageArguments,omitempty"`

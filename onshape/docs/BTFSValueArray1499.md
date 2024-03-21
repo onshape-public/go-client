@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | **string** |  | 
+**BtType** | **string** | Type of JSON object. | 
 **Value** | Pointer to [**[]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 
 ## Methods

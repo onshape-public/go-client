@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DisallowsEmptyStrings** | Pointer to **string** |  | [optional] 
 **DisallowsHtml** | Pointer to **string** |  | [optional] 
 **FormatConditions** | Pointer to [**[]BTStringFormatCondition683**](BTStringFormatCondition683.md) |  | [optional] 

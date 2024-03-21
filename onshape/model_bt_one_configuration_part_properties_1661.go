@@ -16,6 +16,7 @@ import (
 
 // BTOneConfigurationPartProperties1661 struct for BTOneConfigurationPartProperties1661
 type BTOneConfigurationPartProperties1661 struct {
+	// Type of JSON object.
 	BtType        *string                   `json:"btType,omitempty"`
 	Configuration *map[string]BTFSValue1888 `json:"configuration,omitempty"`
 	Merged        *BTOnePartProperties230   `json:"merged,omitempty"`

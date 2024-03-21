@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **ForExport** | Pointer to **bool** |  | [optional] 
 **GlobalNamespace** | Pointer to **bool** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to [**[]BTPIdentifier8**](BTPIdentifier8.md) |  | [optional] 
 **Operand1** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **Operand2** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 

@@ -966,7 +966,9 @@ func (v *NullableBTMNode19) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMNode19 struct {
-	BtType             *string `json:"btType,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 }

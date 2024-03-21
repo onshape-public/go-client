@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalLocalizedStrings** | Pointer to **int32** |  | [optional] 
 **AllParameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ComputedPartPropertySpec** | Pointer to **bool** |  | [optional] 
 **DescriptionImageUri** | Pointer to **string** |  | [optional] 
 **EditingLogic** | Pointer to [**BTEditingLogic2350**](BTEditingLogic2350.md) |  | [optional] 

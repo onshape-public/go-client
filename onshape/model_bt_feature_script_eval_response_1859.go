@@ -16,15 +16,21 @@ import (
 
 // BTFeatureScriptEvalResponse1859 struct for BTFeatureScriptEvalResponse1859
 type BTFeatureScriptEvalResponse1859 struct {
-	BtType                 *string        `json:"btType,omitempty"`
-	Console                *string        `json:"console,omitempty"`
-	LibraryVersion         *int32         `json:"libraryVersion,omitempty"`
-	MicroversionSkew       *bool          `json:"microversionSkew,omitempty"`
-	Notices                []BTNotice227  `json:"notices,omitempty"`
+	// Type of JSON object.
+	BtType  *string `json:"btType,omitempty"`
+	Console *string `json:"console,omitempty"`
+	// FeatureScript version used in the Part Studio. Do not modify.
+	LibraryVersion *int32 `json:"libraryVersion,omitempty"`
+	// On output, `true` indicates a microversion mismatch was encountered.
+	MicroversionSkew *bool         `json:"microversionSkew,omitempty"`
+	Notices          []BTNotice227 `json:"notices,omitempty"`
+	// If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
 	RejectMicroversionSkew *bool          `json:"rejectMicroversionSkew,omitempty"`
 	Result                 *BTFSValue1888 `json:"result,omitempty"`
-	SerializationVersion   *string        `json:"serializationVersion,omitempty"`
-	SourceMicroversion     *string        `json:"sourceMicroversion,omitempty"`
+	// Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
+	SerializationVersion *string `json:"serializationVersion,omitempty"`
+	// The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
+	SourceMicroversion *string `json:"sourceMicroversion,omitempty"`
 }
 
 // NewBTFeatureScriptEvalResponse1859 instantiates a new BTFeatureScriptEvalResponse1859 object

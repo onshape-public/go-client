@@ -16,6 +16,7 @@ import (
 
 // BTMParameterReferenceJSON790 struct for BTMParameterReferenceJSON790
 type BTMParameterReferenceJSON790 struct {
+	// Type of JSON object.
 	BtType             *string                            `json:"btType,omitempty"`
 	DocumentId         *string                            `json:"documentId,omitempty"`
 	DocumentVersionId  *string                            `json:"documentVersionId,omitempty"`
@@ -23,11 +24,14 @@ type BTMParameterReferenceJSON790 struct {
 	ElementLibraryData *BTElementLibraryReferenceData3133 `json:"elementLibraryData,omitempty"`
 	FeatureScriptType  *string                            `json:"featureScriptType,omitempty"`
 	Ids                []string                           `json:"ids,omitempty"`
-	ImportMicroversion *string                            `json:"importMicroversion,omitempty"`
-	MicroversioId      *string                            `json:"microversioId,omitempty"`
-	Namespace          *string                            `json:"namespace,omitempty"`
-	NodeId             *string                            `json:"nodeId,omitempty"`
-	ParameterId        *string                            `json:"parameterId,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	MicroversioId      *string `json:"microversioId,omitempty"`
+	Namespace          *string `json:"namespace,omitempty"`
+	// ID of the parameter's node.
+	NodeId *string `json:"nodeId,omitempty"`
+	// Unique ID of the parameter.
+	ParameterId *string `json:"parameterId,omitempty"`
 }
 
 // NewBTMParameterReferenceJSON790 instantiates a new BTMParameterReferenceJSON790 object

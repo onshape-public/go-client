@@ -182,6 +182,7 @@ func (v *NullableBTDomainSpecificMetadata961) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTDomainSpecificMetadata961 struct {
+	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
 

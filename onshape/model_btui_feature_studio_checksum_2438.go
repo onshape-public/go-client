@@ -16,6 +16,7 @@ import (
 
 // BTUiFeatureStudioChecksum2438 struct for BTUiFeatureStudioChecksum2438
 type BTUiFeatureStudioChecksum2438 struct {
+	// Type of JSON object.
 	BtType       *string              `json:"btType,omitempty"`
 	Crc32        *int32               `json:"crc32,omitempty"`
 	Microversion *BTMicroversionId366 `json:"microversion,omitempty"`

@@ -16,6 +16,7 @@ import (
 
 // BTGraphicsSectionViewStateData4379 struct for BTGraphicsSectionViewStateData4379
 type BTGraphicsSectionViewStateData4379 struct {
+	// Type of JSON object.
 	BtType              *string                          `json:"btType,omitempty"`
 	ElementId           *string                          `json:"elementId,omitempty"`
 	IsExcluding         *bool                            `json:"isExcluding,omitempty"`

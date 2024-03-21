@@ -16,6 +16,7 @@ import (
 
 // BTMicroversionIdAndConfiguration2338 struct for BTMicroversionIdAndConfiguration2338
 type BTMicroversionIdAndConfiguration2338 struct {
+	// Type of JSON object.
 	BtType                          *string                   `json:"btType,omitempty"`
 	CacheKey                        *string                   `json:"cacheKey,omitempty"`
 	ConfigurationParameterIdToValue *map[string]BTFSValue1888 `json:"configurationParameterIdToValue,omitempty"`

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **OverwrittenElements** | Pointer to [**[]BTDocumentElementInfo**](BTDocumentElementInfo.md) |  | [optional] 
 **ParentDocumentMicroversionId** | Pointer to **string** |  | [optional] 
 **ResultDocumentMicroversionId** | Pointer to **string** |  | [optional] 
+**SourceDocumentMicroversionId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetResultDocumentMicroversionId sets ResultDocumentMicroversionId field to given
 `func (o *BTDocumentMergeInfo) HasResultDocumentMicroversionId() bool`
 
 HasResultDocumentMicroversionId returns a boolean if a field has been set.
+
+### GetSourceDocumentMicroversionId
+
+`func (o *BTDocumentMergeInfo) GetSourceDocumentMicroversionId() string`
+
+GetSourceDocumentMicroversionId returns the SourceDocumentMicroversionId field if non-nil, zero value otherwise.
+
+### GetSourceDocumentMicroversionIdOk
+
+`func (o *BTDocumentMergeInfo) GetSourceDocumentMicroversionIdOk() (*string, bool)`
+
+GetSourceDocumentMicroversionIdOk returns a tuple with the SourceDocumentMicroversionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceDocumentMicroversionId
+
+`func (o *BTDocumentMergeInfo) SetSourceDocumentMicroversionId(v string)`
+
+SetSourceDocumentMicroversionId sets SourceDocumentMicroversionId field to given value.
+
+### HasSourceDocumentMicroversionId
+
+`func (o *BTDocumentMergeInfo) HasSourceDocumentMicroversionId() bool`
+
+HasSourceDocumentMicroversionId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

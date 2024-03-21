@@ -16,6 +16,7 @@ import (
 
 // BTTableAssemblyCrossHighlightData2675 struct for BTTableAssemblyCrossHighlightData2675
 type BTTableAssemblyCrossHighlightData2675 struct {
+	// Type of JSON object.
 	BtType                      *string                                     `json:"btType,omitempty"`
 	AssemblyCrossHighlightItems []BTTableAssemblyCrossHighlightDataItem2659 `json:"assemblyCrossHighlightItems,omitempty"`
 }

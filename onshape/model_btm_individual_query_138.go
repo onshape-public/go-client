@@ -794,13 +794,14 @@ type base_BTMIndividualQuery138 struct {
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
-	NodeId                     *string                    `json:"nodeId,omitempty"`
-	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString                *string                    `json:"queryString,omitempty"`
-	PersistentQuery            *BTPStatement269           `json:"persistentQuery,omitempty"`
-	QueryStatement             *BTPStatement269           `json:"queryStatement,omitempty"`
-	VariableName               *BTMIndividualQuery138     `json:"variableName,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
+	NodeId             *string                    `json:"nodeId,omitempty"`
+	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString        *string                    `json:"queryString,omitempty"`
+	PersistentQuery    *BTPStatement269           `json:"persistentQuery,omitempty"`
+	QueryStatement     *BTPStatement269           `json:"queryStatement,omitempty"`
+	VariableName       *BTMIndividualQuery138     `json:"variableName,omitempty"`
 }
 
 // Newbase_BTMIndividualQuery138 instantiates a new base_BTMIndividualQuery138 object

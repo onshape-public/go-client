@@ -16,7 +16,8 @@ import (
 
 // BTSimulationInstance3093 struct for BTSimulationInstance3093
 type BTSimulationInstance3093 struct {
-	BtType             *string `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 	IsModal            *bool   `json:"isModal,omitempty"`

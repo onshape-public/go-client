@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **DefaultCompanyName** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DeviceInfo** | Pointer to [**BTDeviceLoginSecretInfo**](BTDeviceLoginSecretInfo.md) |  | [optional] 
+**Discounts** | Pointer to [**[]BTDiscountInfo**](BTDiscountInfo.md) |  | [optional] 
 **Enterprise** | Pointer to **bool** |  | [optional] 
 **EulaId** | Pointer to **string** |  | [optional] 
 **EulaRequired** | Pointer to **bool** |  | [optional] 
@@ -382,6 +383,31 @@ SetDeviceInfo sets DeviceInfo field to given value.
 `func (o *BTUserInfoAllOf) HasDeviceInfo() bool`
 
 HasDeviceInfo returns a boolean if a field has been set.
+
+### GetDiscounts
+
+`func (o *BTUserInfoAllOf) GetDiscounts() []BTDiscountInfo`
+
+GetDiscounts returns the Discounts field if non-nil, zero value otherwise.
+
+### GetDiscountsOk
+
+`func (o *BTUserInfoAllOf) GetDiscountsOk() (*[]BTDiscountInfo, bool)`
+
+GetDiscountsOk returns a tuple with the Discounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscounts
+
+`func (o *BTUserInfoAllOf) SetDiscounts(v []BTDiscountInfo)`
+
+SetDiscounts sets Discounts field to given value.
+
+### HasDiscounts
+
+`func (o *BTUserInfoAllOf) HasDiscounts() bool`
+
+HasDiscounts returns a boolean if a field has been set.
 
 ### GetEnterprise
 

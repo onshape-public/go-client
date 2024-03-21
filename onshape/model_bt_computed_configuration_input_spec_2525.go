@@ -16,6 +16,7 @@ import (
 
 // BTComputedConfigurationInputSpec2525 struct for BTComputedConfigurationInputSpec2525
 type BTComputedConfigurationInputSpec2525 struct {
+	// Type of JSON object.
 	BtType  *string `json:"btType,omitempty"`
 	InputId *string `json:"inputId,omitempty"`
 }

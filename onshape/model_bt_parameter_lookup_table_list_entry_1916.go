@@ -16,17 +16,18 @@ import (
 
 // BTParameterLookupTableListEntry1916 struct for BTParameterLookupTableListEntry1916
 type BTParameterLookupTableListEntry1916 struct {
-	AdditionalLocalizedStrings *int32                            `json:"additionalLocalizedStrings,omitempty"`
-	BtType                     *string                           `json:"btType,omitempty"`
-	DefaultIndex               *int32                            `json:"defaultIndex,omitempty"`
-	DisplayName                *string                           `json:"displayName,omitempty"`
-	Entries                    []BTParameterLookupTableEntry1667 `json:"entries,omitempty"`
-	Label                      *string                           `json:"label,omitempty"`
-	LocalizableName            *string                           `json:"localizableName,omitempty"`
-	LocalizedLabel             *string                           `json:"localizedLabel,omitempty"`
-	LocalizedName              *string                           `json:"localizedName,omitempty"`
-	Name                       *string                           `json:"name,omitempty"`
-	StringsToLocalize          []string                          `json:"stringsToLocalize,omitempty"`
+	AdditionalLocalizedStrings *int32 `json:"additionalLocalizedStrings,omitempty"`
+	// Type of JSON object.
+	BtType            *string                           `json:"btType,omitempty"`
+	DefaultIndex      *int32                            `json:"defaultIndex,omitempty"`
+	DisplayName       *string                           `json:"displayName,omitempty"`
+	Entries           []BTParameterLookupTableEntry1667 `json:"entries,omitempty"`
+	Label             *string                           `json:"label,omitempty"`
+	LocalizableName   *string                           `json:"localizableName,omitempty"`
+	LocalizedLabel    *string                           `json:"localizedLabel,omitempty"`
+	LocalizedName     *string                           `json:"localizedName,omitempty"`
+	Name              *string                           `json:"name,omitempty"`
+	StringsToLocalize []string                          `json:"stringsToLocalize,omitempty"`
 }
 
 // NewBTParameterLookupTableListEntry1916 instantiates a new BTParameterLookupTableListEntry1916 object

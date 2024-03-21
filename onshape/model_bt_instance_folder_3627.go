@@ -16,7 +16,8 @@ import (
 
 // BTInstanceFolder3627 struct for BTInstanceFolder3627
 type BTInstanceFolder3627 struct {
-	BtType                            *string                               `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
@@ -39,17 +40,18 @@ type BTInstanceFolder3627 struct {
 	StandardContentParametersId       *string                               `json:"standardContentParametersId,omitempty"`
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
-	SuppressionConfigured             *bool                                 `json:"suppressionConfigured,omitempty"`
-	SuppressionState                  *BTMSuppressionState1924              `json:"suppressionState,omitempty"`
-	ValidRevisionReference            *bool                                 `json:"validRevisionReference,omitempty"`
-	Version                           *int32                                `json:"version,omitempty"`
-	FeatureFolder                     *bool                                 `json:"featureFolder,omitempty"`
-	FolderEnd                         *bool                                 `json:"folderEnd,omitempty"`
-	FolderStart                       *bool                                 `json:"folderStart,omitempty"`
-	Name                              *string                               `json:"name,omitempty"`
-	Parameters                        []BTMParameter1                       `json:"parameters,omitempty"`
-	StartNodeId                       *string                               `json:"startNodeId,omitempty"`
-	StartNodeIdRaw                    *BTObjectId                           `json:"startNodeIdRaw,omitempty"`
+	// `true` if the suppression is configured in the Part Studio.
+	SuppressionConfigured  *bool                    `json:"suppressionConfigured,omitempty"`
+	SuppressionState       *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
+	ValidRevisionReference *bool                    `json:"validRevisionReference,omitempty"`
+	Version                *int32                   `json:"version,omitempty"`
+	FeatureFolder          *bool                    `json:"featureFolder,omitempty"`
+	FolderEnd              *bool                    `json:"folderEnd,omitempty"`
+	FolderStart            *bool                    `json:"folderStart,omitempty"`
+	Name                   *string                  `json:"name,omitempty"`
+	Parameters             []BTMParameter1          `json:"parameters,omitempty"`
+	StartNodeId            *string                  `json:"startNodeId,omitempty"`
+	StartNodeIdRaw         *BTObjectId              `json:"startNodeIdRaw,omitempty"`
 }
 
 // NewBTInstanceFolder3627 instantiates a new BTInstanceFolder3627 object

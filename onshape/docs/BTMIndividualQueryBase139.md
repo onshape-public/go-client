@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **DeterministicIds** | Pointer to **[]string** |  | [optional] 
 **GenerateSectionEntityQuery** | Pointer to **bool** |  | [optional] 
 **GeneratedSectionQueryId** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **QueryString** | Pointer to **string** |  | [optional] 

@@ -16,7 +16,8 @@ import (
 
 // BTMUserCode161 struct for BTMUserCode161
 type BTMUserCode161 struct {
-	BtType             *string          `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
 	ImportMicroversion *string          `json:"importMicroversion,omitempty"`
 	NodeId             *string          `json:"nodeId,omitempty"`
 	Parsed             *BTPStatement269 `json:"parsed,omitempty"`

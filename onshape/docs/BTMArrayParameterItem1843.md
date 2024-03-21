@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** |  | [optional] 
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
+**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetNodeId sets NodeId field to given value.
 `func (o *BTMArrayParameterItem1843) HasNodeId() bool`
 
 HasNodeId returns a boolean if a field has been set.
+
+### GetParameters
+
+`func (o *BTMArrayParameterItem1843) GetParameters() []BTMParameter1`
+
+GetParameters returns the Parameters field if non-nil, zero value otherwise.
+
+### GetParametersOk
+
+`func (o *BTMArrayParameterItem1843) GetParametersOk() (*[]BTMParameter1, bool)`
+
+GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameters
+
+`func (o *BTMArrayParameterItem1843) SetParameters(v []BTMParameter1)`
+
+SetParameters sets Parameters field to given value.
+
+### HasParameters
+
+`func (o *BTMArrayParameterItem1843) HasParameters() bool`
+
+HasParameters returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
