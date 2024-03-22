@@ -15,13 +15,34 @@
         "value": "string"
       },
       {
-        "key": "paths['/comments/{cid}/attachment'].post.requestBody.content['multipart/form-data'].schema.properties.file",
+        "key": "paths['/comments/{cid}/attachment'].post.requestBody.content['multipart/form-data'].schema.properties",
         "type": "update",
         "value": {
-          "type" : "array",
-          "items" : {
+          "fileContentLength" : {
+            "type" : "integer"
+          },
+          "file" : {
             "type" : "string",
-            "format" : "binary"
+            "format" : "binary",
+            "description" : "The file to upload."
+          }
+        }
+      },
+      {
+        "key": "paths['/comments/{cid}/attachment/{fdid}.{ext}'].get.responses.default.content",
+        "type": "update",
+        "value": {
+          "application/octet-stream" : {
+            "schema" : {
+              "type" : "string",
+              "format" : "binary"
+            }
+          },
+          "image/*" : {
+            "schema" :{
+              "type" : "string",
+              "format" : "binary"
+            }
           }
         }
       },
