@@ -66,7 +66,19 @@ func populateDefaultResultMapper() {
 			"eid": o.GetElementId(),
 			"tid": o.GetTransactionId(),
 		}
+	})).Add(MapFields(func(o *onshape.BTCommentInfo) TestingContext {
+		return TestingContext{
+			"cid":  o.GetId(),
+			"fdid": getAttachmentId(o.GetAttachment()),
+		}
 	}))
+}
+
+func getAttachmentId(attachment onshape.BTCommentAttachmentInfo) string {
+	if attachment.Id == nil {
+		return ""
+	}
+	return *attachment.Id
 }
 
 type TestingInstance struct {
