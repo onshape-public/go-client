@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## AddAttachment
 
-> BTCommentInfo AddAttachment(ctx, cid).File(file).Execute()
+> BTCommentInfo AddAttachment(ctx, cid).File(file).FileContentLength(fileContentLength).Execute()
 
 Add an attachment to a comment.
 
@@ -37,11 +37,12 @@ import (
 
 func main() {
     cid := "cid_example" // string | 
-    file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload.
+    file := os.NewFile(1234, "some_file") // HttpFile | The file to upload.
+    fileContentLength := int32(56) // int32 |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CommentApi.AddAttachment(context.Background(), cid).File(file).Execute()
+    resp, r, err := apiClient.CommentApi.AddAttachment(context.Background(), cid).File(file).FileContentLength(fileContentLength).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.AddAttachment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +68,8 @@ Other parameters are passed through a pointer to a apiAddAttachmentRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
+ **file** | **HttpFile** | The file to upload. | 
+ **fileContentLength** | **int32** |  | 
 
 ### Return type
 
@@ -289,7 +291,7 @@ Name | Type | Description  | Notes
 
 ## GetAttachment
 
-> map[string]interface{} GetAttachment(ctx, cid, fdid, ext).Execute()
+> HttpFile GetAttachment(ctx, cid, fdid, ext).Execute()
 
 Get the attachment with the specified file extension that is associated with the specified comment.
 
@@ -319,7 +321,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.GetAttachment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAttachment`: map[string]interface{}
+    // response from `GetAttachment`: HttpFile
     fmt.Fprintf(os.Stdout, "Response from `CommentApi.GetAttachment`: %v\n", resp)
 }
 ```
@@ -347,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+[**HttpFile**](HttpFile.md)
 
 ### Authorization
 

@@ -5386,10 +5386,12 @@ paths:
           content:
             application/octet-stream:
               schema:
-                type: object
+                format: binary
+                type: string
             image/*:
               schema:
-                type: object
+                format: binary
+                type: string
           description: default response
       security:
       - OAuth2:
@@ -101284,9 +101286,12 @@ components:
       type: object
     addAttachment_request:
       properties:
+        fileContentLength:
+          type: integer
         file:
           description: The file to upload.
-          type: object
+          format: binary
+          type: string
       required:
       - file
       type: object

@@ -23,15 +23,21 @@ import (
 type CommentApiService service
 
 type ApiAddAttachmentRequest struct {
-	ctx        context.Context
-	ApiService *CommentApiService
-	cid        string
-	file       *map[string]interface{}
+	ctx               context.Context
+	ApiService        *CommentApiService
+	cid               string
+	file              *HttpFile
+	fileContentLength *int32
 }
 
 // The file to upload.
-func (r ApiAddAttachmentRequest) File(file map[string]interface{}) ApiAddAttachmentRequest {
+func (r ApiAddAttachmentRequest) File(file HttpFile) ApiAddAttachmentRequest {
 	r.file = &file
+	return r
+}
+
+func (r ApiAddAttachmentRequest) FileContentLength(fileContentLength int32) ApiAddAttachmentRequest {
+	r.fileContentLength = &fileContentLength
 	return r
 }
 
@@ -96,7 +102,19 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	localVarFormParams.Add("file", parameterToString(*r.file, ""))
+	if r.fileContentLength != nil {
+		localVarFormParams.Add("fileContentLength", parameterToString(*r.fileContentLength, ""))
+	}
+	var fileLocalVarFormFileName string
+	var fileLocalVarFileName string
+	var fileLocalVarFileBytes io.Reader
+
+	fileLocalVarFormFileName = "file"
+
+	fileLocalVarFile := *r.file
+	fileLocalVarFileBytes = fileLocalVarFile.Data
+	fileLocalVarFileName = fileLocalVarFile.Name
+	formFiles = append(formFiles, formFile{fileData: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -480,7 +498,7 @@ type ApiGetAttachmentRequest struct {
 	ext        string
 }
 
-func (r ApiGetAttachmentRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetAttachmentRequest) Execute() (*HttpFile, *http.Response, error) {
 	return r.ApiService.GetAttachmentExecute(r)
 }
 
@@ -506,13 +524,13 @@ func (a *CommentApiService) GetAttachment(ctx context.Context, cid string, fdid 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (map[string]interface{}, *http.Response, error) {
+//  @return HttpFile
+func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue map[string]interface{}
+		localVarReturnValue *HttpFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.GetAttachment")
@@ -565,7 +583,7 @@ func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (map
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v map[string]interface{}
+		var v HttpFile
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
