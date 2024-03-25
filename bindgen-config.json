@@ -15,6 +15,38 @@
         "value": "string"
       },
       {
+        "key": "paths['/comments/{cid}/attachment'].post.requestBody.content['multipart/form-data'].schema.properties",
+        "type": "update",
+        "value": {
+          "fileContentLength" : {
+            "type" : "integer"
+          },
+          "file" : {
+            "type" : "string",
+            "format" : "binary",
+            "description" : "The file to upload."
+          }
+        }
+      },
+      {
+        "key": "paths['/comments/{cid}/attachment/{fdid}.{ext}'].get.responses.default.content",
+        "type": "update",
+        "value": {
+          "application/octet-stream" : {
+            "schema" : {
+              "type" : "string",
+              "format" : "binary"
+            }
+          },
+          "image/*" : {
+            "schema" :{
+              "type" : "string",
+              "format" : "binary"
+            }
+          }
+        }
+      },
+      {
         "key": "components.schemas['BTMetadataPropertyInfo'].properties.value",
         "type": "update",
         "value": {}
