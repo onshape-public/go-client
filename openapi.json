@@ -43458,44 +43458,42 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
-          },
-          "controlPoints" : {
-            "type" : "array",
-            "items" : {
-              "type" : "number",
-              "format" : "double"
-            }
-          },
-          "degree" : {
-            "type" : "integer",
-            "format" : "int32"
-          },
-          "direction" : {
-            "$ref" : "#/components/schemas/BTVector3d-389"
-          },
-          "directionOrientedWithFace" : {
-            "$ref" : "#/components/schemas/BTVector3d-389"
-          },
-          "isPeriodic" : {
-            "type" : "boolean"
-          },
-          "isRational" : {
-            "type" : "boolean"
-          },
-          "knots" : {
-            "type" : "array",
-            "items" : {
-              "type" : "number",
-              "format" : "double"
-            }
-          },
-          "origin" : {
-            "$ref" : "#/components/schemas/BTVector3d-389"
-          },
-          "type" : {
-            "$ref" : "#/components/schemas/GBTCurveTypeEnum"
           }
-        }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/BTCurveDescription-1583"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "btType" : {
+              "type" : "string"
+            },
+            "controlPoints" : {
+              "type" : "array",
+              "items" : {
+                "type" : "number",
+                "format" : "double"
+              }
+            },
+            "degree" : {
+              "type" : "integer",
+              "format" : "int32"
+            },
+            "isPeriodic" : {
+              "type" : "boolean"
+            },
+            "isRational" : {
+              "type" : "boolean"
+            },
+            "knots" : {
+              "type" : "array",
+              "items" : {
+                "type" : "number",
+                "format" : "double"
+              }
+            }
+          }
+        } ]
       },
       "BTSplineHandleFilter-2971" : {
         "type" : "object",
