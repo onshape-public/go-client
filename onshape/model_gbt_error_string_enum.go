@@ -1493,6 +1493,14 @@ const (
 	GBTErrorStringEnumHoleParamsOverriddenInfo                              GBTErrorStringEnum = "HOLE_PARAMS_OVERRIDDEN_INFO"
 	GBTErrorStringEnumHoleTapDiaTooLargeOrEqual                             GBTErrorStringEnum = "HOLE_TAP_DIA_TOO_LARGE_OR_EQUAL"
 	GBTErrorStringEnumSplitAsModificationMultipleResults                    GBTErrorStringEnum = "SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS"
+	GBTErrorStringEnumFormedTagFormNoFeaturePattern                         GBTErrorStringEnum = "FORMED_TAG_FORM_NO_FEATURE_PATTERN"
+	GBTErrorStringEnumFormedTagFormSelectDifferentParts                     GBTErrorStringEnum = "FORMED_TAG_FORM_SELECT_DIFFERENT_PARTS"
+	GBTErrorStringEnumFormedTagFormSelectSketch                             GBTErrorStringEnum = "FORMED_TAG_FORM_SELECT_SKETCH"
+	GBTErrorStringEnumFormedTagFormSelectSomething                          GBTErrorStringEnum = "FORMED_TAG_FORM_SELECT_SOMETHING"
+	GBTErrorStringEnumIsoparametricCurveSelectFace                          GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_SELECT_FACE"
+	GBTErrorStringEnumIsoparametricCurveSelectPoint                         GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_SELECT_POINT"
+	GBTErrorStringEnumIsoparametricCurveSelectPosition                      GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_SELECT_POSITION"
+	GBTErrorStringEnumIsoparametricCurvePointNotOnFace                      GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2971,6 +2979,14 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"HOLE_PARAMS_OVERRIDDEN_INFO",
 	"HOLE_TAP_DIA_TOO_LARGE_OR_EQUAL",
 	"SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS",
+	"FORMED_TAG_FORM_NO_FEATURE_PATTERN",
+	"FORMED_TAG_FORM_SELECT_DIFFERENT_PARTS",
+	"FORMED_TAG_FORM_SELECT_SKETCH",
+	"FORMED_TAG_FORM_SELECT_SOMETHING",
+	"ISOPARAMETRIC_CURVE_SELECT_FACE",
+	"ISOPARAMETRIC_CURVE_SELECT_POINT",
+	"ISOPARAMETRIC_CURVE_SELECT_POSITION",
+	"ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE",
 	"UNKNOWN",
 }
 

@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.178.33446-d52794ca7a08
+  version: 1.179.34076-6109300b1c62
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -2746,6 +2746,174 @@ paths:
       summary: Resolves bulk app element references.
       tags:
       - AppElement
+      x-BTVisibility: PRODUCTION
+  /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/views:
+    get:
+      deprecated: false
+      operationId: getDrawingViews
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
+        explode: false
+        in: path
+        name: wvm
+        required: true
+        schema:
+          enum:
+          - w
+          - v
+          - m
+          type: string
+        style: simple
+      - description: "The id of the workspace, version or document microversion in\
+          \ which the operation should be performed."
+        explode: false
+        in: path
+        name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the element in which to perform the operation.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: transactionId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: changeId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTAppArrayInfoBTAppDrawingViewInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Get details of all drawing views.
+      tags:
+      - AppDrawingView
+      x-BTVisibility: PRODUCTION
+  /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/views/{viewid}/jsongeometry:
+    get:
+      deprecated: false
+      operationId: getDrawingViewJsonGeometry
+      parameters:
+      - explode: false
+        in: path
+        name: viewid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: wvm
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: transactionId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: changeId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: scale
+        required: false
+        schema:
+          format: double
+          type: number
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Get view geometry of a drawing view in JSON format.
+      tags:
+      - AppDrawingView
       x-BTVisibility: PRODUCTION
   /applications/clients/{cid}/settings/companies/{cpid}:
     delete:
@@ -8670,8 +8838,9 @@ paths:
   /metadata/d/{did}/{wvm}/{wvmid}/e:
     get:
       deprecated: false
-      description: "* You can specify the optional `depth` query parameter to get\
-        \ multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId`\
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* You can specify the optional `depth` query parameter to\
+        \ get multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId`\
         \ can be specified where applicable. Combined with `inferMetadataOwner` (default\
         \ value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties`\
         \ can be used to include or omit computed properties. Default value is `true`.\
@@ -8767,13 +8936,14 @@ paths:
   /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}:
     get:
       deprecated: false
-      description: "* `linkDocumentId` can be specified where applicable and this\
-        \ combined with the query param `inferMetadataOwner` (default value is `false`)\
-        \ will be used to infer metadata owner. \n* `configuration` optional query\
-        \ parameter defaults to default configuration. \n* You can specify an optional\
-        \ `depth` query parameter to get multiple levels in an assembly. Default `depth`\
-        \ is `1`. \n* `includeComputedProperties` can be used to include or omit computed\
-        \ properties. Default value is `true`. \n* `includeComputedAssemblyProperties`\
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* `linkDocumentId` can be specified where applicable and\
+        \ this combined with the query param `inferMetadataOwner` (default value is\
+        \ `false`) will be used to infer metadata owner. \n* `configuration` optional\
+        \ query parameter defaults to default configuration. \n* You can specify an\
+        \ optional `depth` query parameter to get multiple levels in an assembly.\
+        \ Default `depth` is `1`. \n* `includeComputedProperties` can be used to include\
+        \ or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties`\
         \ can be used to query computed assembly properties which are generally expensive.\
         \ Default value is `false`. \n* You can also choose to include a `thumbnail`.\
         \ Default value is `false`."
@@ -8895,8 +9065,9 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
-      description: "* Microversion (`m`) in `wvm` path parameter option is not supported.\
-        \ \n* Specify the property metadata to update in the Request body."
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* Microversion (`m`) in `wvm` path parameter option is not\
+        \ supported. \n* Specify the property metadata to update in the Request body."
       operationId: updateWVEMetadata
       parameters:
       - explode: false
@@ -8959,7 +9130,8 @@ paths:
   /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p:
     get:
       deprecated: false
-      description: "* The `configuration` optional query parameter uses the default\
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* The `configuration` optional query parameter uses the default\
         \ configuration unless otherwise specified. \n* You can specify an optional\
         \ `depth` query parameter to get multiple levels in an assembly. Default `depth`\
         \ is `1`. \n* `linkDocumentId` can be specified where applicable. Combined\
@@ -9083,8 +9255,9 @@ paths:
   /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid}:
     get:
       deprecated: false
-      description: "* Specify the part in the `iden` or `pid` path parameter. \n*\
-        \ The `configuration` optional query parameter uses the default configuration\
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* Specify the part in the `iden` or `pid` path parameter.\
+        \ \n* The `configuration` optional query parameter uses the default configuration\
         \ unless otherwise specified. \n* `linkDocumentId` can be specified where\
         \ applicable. Combined with `inferMetadataOwner` (default value is `false`),\
         \ this is used to infer metadata owner. \n* `includeComputedProperties` can\
@@ -9243,8 +9416,9 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
-      description: "* Specify the part in the `iden` or `pid` path parameter. \n*\
-        \ The `configuration` optional query parameter uses the default configuration\
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* Specify the part in the `iden` or `pid` path parameter.\
+        \ \n* The `configuration` optional query parameter uses the default configuration\
         \ unless otherwise specified. \n* `linkDocumentId` can be specified where\
         \ applicable. Combined with `inferMetadataOwner` (default value is `false`),\
         \ this is used to infer metadata owner. \n* Specify the property metadata\
@@ -9375,7 +9549,8 @@ paths:
   /metadata/d/{did}/{wv}/{wvid}:
     get:
       deprecated: false
-      description: "* `linkDocumentId` can be specified where applicable. Combined\
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* `linkDocumentId` can be specified where applicable. Combined\
         \ with `inferMetadataOwner` (default value is `false`), this is used to infer\
         \ metadata owner. \n* You can specify an optional `depth` query parameter\
         \ to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedProperties`\
@@ -9471,7 +9646,8 @@ paths:
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
-      description: Specify the property metadata to update in the Request body.
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details."
       operationId: updateWVMetadata
       parameters:
       - explode: false
@@ -9520,10 +9696,11 @@ paths:
   /metadata/standardcontent/d/{did}:
     post:
       deprecated: false
-      description: "* Specify the document ID to update in the `did` path param. \n\
-        * Specify the document in which you have inserted the standard content part\
-        \ in the `linkDocumentId` query param. \n* Specify the property metadata to\
-        \ update in the Request body."
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* Specify the document ID to update in the `did` path param.\
+        \ \n* Specify the document in which you have inserted the standard content\
+        \ part in the `linkDocumentId` query param. \n* Specify the property metadata\
+        \ to update in the Request body."
       operationId: updateVEOPStandardContentPartMetadata
       parameters:
       - explode: false
@@ -9565,7 +9742,8 @@ paths:
   /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid}:
     get:
       deprecated: false
-      description: "* Specify the part in the `pid` path parameter. \n* The `configuration`\
+      description: "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/)\
+        \ for details. \n* Specify the part in the `pid` path parameter. \n* The `configuration`\
         \ and `linkDocumentId` query parameters are required. \n* `includeComputedProperties`\
         \ can be used to include or omit computed properties. Default value is `true`.\
         \ \n* `includeComputedAssemblyProperties` can be used to query computed assembly\
@@ -19706,6 +19884,247 @@ components:
       - V5_BODY_DETAILS_COMPOSITE_REFERENCE
       - V6_JSON_EDIT_RESPONSE_BUGFIX
       type: string
+    BTAppArrayInfoBTAppDrawingViewInfo:
+      example:
+        errorDescription: errorDescription
+        parentChangeId: parentChangeId
+        errorValue: null
+        errorCode: 0
+        changeId: changeId
+        items:
+        - includeSurfaces: true
+          useParentViewSectionData: true
+          errorCode: 3
+          parentViewId: parentViewId
+          changeId: changeId
+          showTangentLines: true
+          showThreads: true
+          isCropView: true
+          viewVersion: 6
+          qualityOption: 4
+          explodedViewId: explodedViewId
+          namedPositionId: namedPositionId
+          ignoreFaultyParts: true
+          isSectionOfAlignedSection: true
+          simplificationOption: 7
+          isCopiedView: true
+          isAlignedSection: true
+          isPartialSection: true
+          brokenOutPointNumbers:
+          - 7
+          - 7
+          showAutoCentermarks: true
+          bomReferenceId: bomReferenceId
+          renderSketches: true
+          modelReferenceId: modelReferenceId
+          projectionAngle: projectionAngle
+          isSectionOfSectionOnBase: true
+          cutPoint:
+          - 9.301444243932576
+          - 9.301444243932576
+          errorValue: null
+          errorDescription: errorDescription
+          associativityChangeId: associativityChangeId
+          computeIntersection: true
+          displayStateId: displayStateId
+          includeWires: true
+          modificationId: modificationId
+          hiddenLines: hiddenLines
+          offsetSectionPoints:
+          - 2.027123023002322
+          - 2.027123023002322
+          isSurface: true
+          perspective: true
+          occurrenceOrQueryToGeometryProperties:
+            key:
+              btType: btType
+              propertyToValue:
+                key: propertyToValue
+          showAutoCenterlines: true
+          brokenOutEndConditions:
+            key:
+              offsetDistance: 5.637376656633329
+              hasOffset: true
+              hasUptoPoint: true
+              uptoPoint:
+              - 2.3021358869347655
+              - 2.3021358869347655
+              uptoPoint3d:
+                x: 6.027456183070403
+                btType: btType
+                "y": 1.4658129805029452
+                z: 5.962133916683182
+              btType: btType
+              offsetOppositeDirection: true
+          parentChangeId: parentChangeId
+          viewDirection:
+          - 1.0246457001441578
+          - 1.0246457001441578
+          isBrokenOutSection: true
+          sectionId: sectionId
+          viewId: viewId
+          simplificationThreshold: 1.2315135367772556
+          depthSectionEndCondition:
+            offsetDistance: 5.637376656633329
+            hasOffset: true
+            hasUptoPoint: true
+            uptoPoint:
+            - 2.3021358869347655
+            - 2.3021358869347655
+            uptoPoint3d:
+              x: 6.027456183070403
+              btType: btType
+              "y": 1.4658129805029452
+              z: 5.962133916683182
+            btType: btType
+            offsetOppositeDirection: true
+          includeHiddenInstances: true
+          showCutGeomOnly: true
+          showViewingPlane: true
+          brokenOutBBoxes:
+            key:
+              valid: true
+              minCorner:
+                x: 6.027456183070403
+                btType: btType
+                "y": 1.4658129805029452
+                z: 5.962133916683182
+              btType: btType
+              maxCorner:
+                x: 6.027456183070403
+                btType: btType
+                "y": 1.4658129805029452
+                z: 5.962133916683182
+          viewMatrix:
+          - 1.4894159098541704
+          - 1.4894159098541704
+        - includeSurfaces: true
+          useParentViewSectionData: true
+          errorCode: 3
+          parentViewId: parentViewId
+          changeId: changeId
+          showTangentLines: true
+          showThreads: true
+          isCropView: true
+          viewVersion: 6
+          qualityOption: 4
+          explodedViewId: explodedViewId
+          namedPositionId: namedPositionId
+          ignoreFaultyParts: true
+          isSectionOfAlignedSection: true
+          simplificationOption: 7
+          isCopiedView: true
+          isAlignedSection: true
+          isPartialSection: true
+          brokenOutPointNumbers:
+          - 7
+          - 7
+          showAutoCentermarks: true
+          bomReferenceId: bomReferenceId
+          renderSketches: true
+          modelReferenceId: modelReferenceId
+          projectionAngle: projectionAngle
+          isSectionOfSectionOnBase: true
+          cutPoint:
+          - 9.301444243932576
+          - 9.301444243932576
+          errorValue: null
+          errorDescription: errorDescription
+          associativityChangeId: associativityChangeId
+          computeIntersection: true
+          displayStateId: displayStateId
+          includeWires: true
+          modificationId: modificationId
+          hiddenLines: hiddenLines
+          offsetSectionPoints:
+          - 2.027123023002322
+          - 2.027123023002322
+          isSurface: true
+          perspective: true
+          occurrenceOrQueryToGeometryProperties:
+            key:
+              btType: btType
+              propertyToValue:
+                key: propertyToValue
+          showAutoCenterlines: true
+          brokenOutEndConditions:
+            key:
+              offsetDistance: 5.637376656633329
+              hasOffset: true
+              hasUptoPoint: true
+              uptoPoint:
+              - 2.3021358869347655
+              - 2.3021358869347655
+              uptoPoint3d:
+                x: 6.027456183070403
+                btType: btType
+                "y": 1.4658129805029452
+                z: 5.962133916683182
+              btType: btType
+              offsetOppositeDirection: true
+          parentChangeId: parentChangeId
+          viewDirection:
+          - 1.0246457001441578
+          - 1.0246457001441578
+          isBrokenOutSection: true
+          sectionId: sectionId
+          viewId: viewId
+          simplificationThreshold: 1.2315135367772556
+          depthSectionEndCondition:
+            offsetDistance: 5.637376656633329
+            hasOffset: true
+            hasUptoPoint: true
+            uptoPoint:
+            - 2.3021358869347655
+            - 2.3021358869347655
+            uptoPoint3d:
+              x: 6.027456183070403
+              btType: btType
+              "y": 1.4658129805029452
+              z: 5.962133916683182
+            btType: btType
+            offsetOppositeDirection: true
+          includeHiddenInstances: true
+          showCutGeomOnly: true
+          showViewingPlane: true
+          brokenOutBBoxes:
+            key:
+              valid: true
+              minCorner:
+                x: 6.027456183070403
+                btType: btType
+                "y": 1.4658129805029452
+                z: 5.962133916683182
+              btType: btType
+              maxCorner:
+                x: 6.027456183070403
+                btType: btType
+                "y": 1.4658129805029452
+                z: 5.962133916683182
+          viewMatrix:
+          - 1.4894159098541704
+          - 1.4894159098541704
+      properties:
+        changeId:
+          type: string
+        errorCode:
+          description: "The numeric code identifying the error that occurred, if one\
+            \ occurred."
+          format: int32
+          type: integer
+        errorDescription:
+          description: "A human-readable value for the error that occurred, if one\
+            \ occurred."
+          type: string
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+        items:
+          items:
+            $ref: '#/components/schemas/BTAppDrawingViewInfo'
+          type: array
+        parentChangeId:
+          type: string
+      type: object
     BTAppAssociativeDataArrayInfo:
       example:
         errorDescription: errorDescription
@@ -19764,6 +20183,250 @@ components:
           type: array
         parentChangeId:
           type: string
+      type: object
+    BTAppDrawingViewInfo:
+      example:
+        includeSurfaces: true
+        useParentViewSectionData: true
+        errorCode: 3
+        parentViewId: parentViewId
+        changeId: changeId
+        showTangentLines: true
+        showThreads: true
+        isCropView: true
+        viewVersion: 6
+        qualityOption: 4
+        explodedViewId: explodedViewId
+        namedPositionId: namedPositionId
+        ignoreFaultyParts: true
+        isSectionOfAlignedSection: true
+        simplificationOption: 7
+        isCopiedView: true
+        isAlignedSection: true
+        isPartialSection: true
+        brokenOutPointNumbers:
+        - 7
+        - 7
+        showAutoCentermarks: true
+        bomReferenceId: bomReferenceId
+        renderSketches: true
+        modelReferenceId: modelReferenceId
+        projectionAngle: projectionAngle
+        isSectionOfSectionOnBase: true
+        cutPoint:
+        - 9.301444243932576
+        - 9.301444243932576
+        errorValue: null
+        errorDescription: errorDescription
+        associativityChangeId: associativityChangeId
+        computeIntersection: true
+        displayStateId: displayStateId
+        includeWires: true
+        modificationId: modificationId
+        hiddenLines: hiddenLines
+        offsetSectionPoints:
+        - 2.027123023002322
+        - 2.027123023002322
+        isSurface: true
+        perspective: true
+        occurrenceOrQueryToGeometryProperties:
+          key:
+            btType: btType
+            propertyToValue:
+              key: propertyToValue
+        showAutoCenterlines: true
+        brokenOutEndConditions:
+          key:
+            offsetDistance: 5.637376656633329
+            hasOffset: true
+            hasUptoPoint: true
+            uptoPoint:
+            - 2.3021358869347655
+            - 2.3021358869347655
+            uptoPoint3d:
+              x: 6.027456183070403
+              btType: btType
+              "y": 1.4658129805029452
+              z: 5.962133916683182
+            btType: btType
+            offsetOppositeDirection: true
+        parentChangeId: parentChangeId
+        viewDirection:
+        - 1.0246457001441578
+        - 1.0246457001441578
+        isBrokenOutSection: true
+        sectionId: sectionId
+        viewId: viewId
+        simplificationThreshold: 1.2315135367772556
+        depthSectionEndCondition:
+          offsetDistance: 5.637376656633329
+          hasOffset: true
+          hasUptoPoint: true
+          uptoPoint:
+          - 2.3021358869347655
+          - 2.3021358869347655
+          uptoPoint3d:
+            x: 6.027456183070403
+            btType: btType
+            "y": 1.4658129805029452
+            z: 5.962133916683182
+          btType: btType
+          offsetOppositeDirection: true
+        includeHiddenInstances: true
+        showCutGeomOnly: true
+        showViewingPlane: true
+        brokenOutBBoxes:
+          key:
+            valid: true
+            minCorner:
+              x: 6.027456183070403
+              btType: btType
+              "y": 1.4658129805029452
+              z: 5.962133916683182
+            btType: btType
+            maxCorner:
+              x: 6.027456183070403
+              btType: btType
+              "y": 1.4658129805029452
+              z: 5.962133916683182
+        viewMatrix:
+        - 1.4894159098541704
+        - 1.4894159098541704
+      properties:
+        associativityChangeId:
+          type: string
+        bomReferenceId:
+          type: string
+        brokenOutBBoxes:
+          additionalProperties:
+            $ref: '#/components/schemas/BTBoundingBox-1052'
+          type: object
+        brokenOutEndConditions:
+          additionalProperties:
+            $ref: '#/components/schemas/BTBrokenOutEndCondition-1107'
+          type: object
+        brokenOutPointNumbers:
+          items:
+            format: int32
+            type: integer
+          type: array
+        changeId:
+          type: string
+        computeIntersection:
+          type: boolean
+        cutPoint:
+          items:
+            format: double
+            type: number
+          type: array
+        depthSectionEndCondition:
+          $ref: '#/components/schemas/BTBrokenOutEndCondition-1107'
+        displayStateId:
+          type: string
+        errorCode:
+          description: "The numeric code identifying the error that occurred, if one\
+            \ occurred."
+          format: int32
+          type: integer
+        errorDescription:
+          description: "A human-readable value for the error that occurred, if one\
+            \ occurred."
+          type: string
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+        explodedViewId:
+          type: string
+        hiddenLines:
+          type: string
+        ignoreFaultyParts:
+          type: boolean
+        includeHiddenInstances:
+          type: boolean
+        includeSurfaces:
+          type: boolean
+        includeWires:
+          type: boolean
+        isAlignedSection:
+          type: boolean
+        isBrokenOutSection:
+          type: boolean
+        isCopiedView:
+          type: boolean
+        isCropView:
+          type: boolean
+        isPartialSection:
+          type: boolean
+        isSectionOfAlignedSection:
+          type: boolean
+        isSectionOfSectionOnBase:
+          type: boolean
+        isSurface:
+          type: boolean
+        modelReferenceId:
+          type: string
+        modificationId:
+          type: string
+        namedPositionId:
+          type: string
+        occurrenceOrQueryToGeometryProperties:
+          additionalProperties:
+            $ref: '#/components/schemas/BTAppElementViewGeometryProperties-1100'
+          type: object
+        offsetSectionPoints:
+          items:
+            format: double
+            type: number
+          type: array
+        parentChangeId:
+          type: string
+        parentViewId:
+          type: string
+        perspective:
+          type: boolean
+        projectionAngle:
+          type: string
+        qualityOption:
+          format: int32
+          type: integer
+        renderSketches:
+          type: boolean
+        sectionId:
+          type: string
+        showAutoCenterlines:
+          type: boolean
+        showAutoCentermarks:
+          type: boolean
+        showCutGeomOnly:
+          type: boolean
+        showTangentLines:
+          type: boolean
+        showThreads:
+          type: boolean
+        showViewingPlane:
+          type: boolean
+        simplificationOption:
+          format: int32
+          type: integer
+        simplificationThreshold:
+          format: double
+          type: number
+        useParentViewSectionData:
+          type: boolean
+        viewDirection:
+          items:
+            format: double
+            type: number
+          type: array
+        viewId:
+          type: string
+        viewMatrix:
+          items:
+            format: double
+            type: number
+          type: array
+        viewVersion:
+          format: int32
+          type: integer
       type: object
     BTAppElementBasicInfo:
       example:
@@ -20575,6 +21238,20 @@ components:
             place. Transaction ids can be generated through the AppElement startTransaction
             API.
           type: string
+      type: object
+    BTAppElementViewGeometryProperties-1100:
+      example:
+        btType: btType
+        propertyToValue:
+          key: propertyToValue
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+        propertyToValue:
+          additionalProperties:
+            type: string
+          type: object
       type: object
     BTAppModificationRequestInfo:
       example:
@@ -22361,10 +23038,10 @@ components:
         - 9.018348186070783
         m03: 1.284659006116532
         translation:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         rigid: true
         isNormalized: true
       properties:
@@ -23508,16 +24185,16 @@ components:
       example:
         valid: true
         minCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         btType: btType
         maxCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
       properties:
         btType:
           description: Type of JSON object.
@@ -23556,6 +24233,42 @@ components:
         lowZ:
           format: double
           type: number
+      type: object
+    BTBrokenOutEndCondition-1107:
+      example:
+        offsetDistance: 5.637376656633329
+        hasOffset: true
+        hasUptoPoint: true
+        uptoPoint:
+        - 2.3021358869347655
+        - 2.3021358869347655
+        uptoPoint3d:
+          x: 6.027456183070403
+          btType: btType
+          "y": 1.4658129805029452
+          z: 5.962133916683182
+        btType: btType
+        offsetOppositeDirection: true
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+        hasOffset:
+          type: boolean
+        hasUptoPoint:
+          type: boolean
+        offsetDistance:
+          format: double
+          type: number
+        offsetOppositeDirection:
+          type: boolean
+        uptoPoint:
+          items:
+            format: double
+            type: number
+          type: array
+        uptoPoint3d:
+          $ref: '#/components/schemas/BTVector3d-389'
       type: object
     BTCacheDataPath-191:
       properties:
@@ -25494,22 +26207,22 @@ components:
         propertyName: btType
       example:
         directionOrientedWithFace:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         origin:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         btType: btType
         type: null
         direction:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
       properties:
         btType:
           description: Type of JSON object.
@@ -25865,10 +26578,10 @@ components:
           - 9.018348186070783
           m03: 1.284659006116532
           translation:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           rigid: true
           isNormalized: true
         value: 0.8851374739011653
@@ -27513,6 +28226,9 @@ components:
         id:
           description: Id of the resource.
           type: string
+        libraryDefinitionId:
+          description: The ID of the definition of the element library.
+          type: string
         libraryId:
           description: The Id of the library -- unique across Onshape.
           pattern: "[0-9a-fA-F]{24}"
@@ -27533,9 +28249,6 @@ components:
           description: "The type of library owner, Onshape, user, or company"
           format: int32
           type: integer
-        purpose:
-          description: The purpose string identifying the type of element library.
-          type: string
         sourceFolderId:
           description: The id of the root folder of the library
           type: string
@@ -27940,129 +28653,129 @@ components:
           - btType: btType
             id: id
             point:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           - btType: btType
             id: id
             point:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           edges:
           - curve:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             vertices:
             - vertices
             - vertices
             btType: btType
             geometry:
               endPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               endVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               midPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               length: 0.8008281904610115
               startPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               quarterPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               startVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           - curve:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             vertices:
             - vertices
             - vertices
             btType: btType
             geometry:
               endPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               endVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               midPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               length: 0.8008281904610115
               startPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               quarterPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               startVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           btType: btType
           closed: true
@@ -28091,22 +28804,22 @@ components:
             orientation: true
             surface:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             appearancePropertyNodeId: appearancePropertyNodeId
             btType: btType
             loops:
@@ -28133,16 +28846,16 @@ components:
             box:
               valid: true
               minCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               maxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           - area: 6.027456183070403
             faceProperties:
@@ -28164,22 +28877,22 @@ components:
             orientation: true
             surface:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             appearancePropertyNodeId: appearancePropertyNodeId
             btType: btType
             loops:
@@ -28206,16 +28919,16 @@ components:
             box:
               valid: true
               minCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               maxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           type: null
           consumedByComposite: true
@@ -28225,129 +28938,129 @@ components:
           - btType: btType
             id: id
             point:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           - btType: btType
             id: id
             point:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           edges:
           - curve:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             vertices:
             - vertices
             - vertices
             btType: btType
             geometry:
               endPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               endVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               midPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               length: 0.8008281904610115
               startPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               quarterPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               startVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           - curve:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             vertices:
             - vertices
             - vertices
             btType: btType
             geometry:
               endPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               endVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               midPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               length: 0.8008281904610115
               startPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               quarterPoint:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               startVector:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           btType: btType
           closed: true
@@ -28376,22 +29089,22 @@ components:
             orientation: true
             surface:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             appearancePropertyNodeId: appearancePropertyNodeId
             btType: btType
             loops:
@@ -28418,16 +29131,16 @@ components:
             box:
               valid: true
               minCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               maxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           - area: 6.027456183070403
             faceProperties:
@@ -28449,22 +29162,22 @@ components:
             orientation: true
             surface:
               directionOrientedWithFace:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               origin:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               type: null
               direction:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             appearancePropertyNodeId: appearancePropertyNodeId
             btType: btType
             loops:
@@ -28491,16 +29204,16 @@ components:
             box:
               valid: true
               minCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               maxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             id: id
           type: null
           consumedByComposite: true
@@ -28534,129 +29247,129 @@ components:
         - btType: btType
           id: id
           point:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
         - btType: btType
           id: id
           point:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
         edges:
         - curve:
             directionOrientedWithFace:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             origin:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             type: null
             direction:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           vertices:
           - vertices
           - vertices
           btType: btType
           geometry:
             endPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             endVector:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             midPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             length: 0.8008281904610115
             startPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             quarterPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             startVector:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           id: id
         - curve:
             directionOrientedWithFace:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             origin:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             type: null
             direction:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           vertices:
           - vertices
           - vertices
           btType: btType
           geometry:
             endPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             endVector:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             midPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             length: 0.8008281904610115
             startPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             quarterPoint:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             startVector:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           id: id
         btType: btType
         closed: true
@@ -28685,22 +29398,22 @@ components:
           orientation: true
           surface:
             directionOrientedWithFace:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             origin:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             type: null
             direction:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           appearancePropertyNodeId: appearancePropertyNodeId
           btType: btType
           loops:
@@ -28727,16 +29440,16 @@ components:
           box:
             valid: true
             minCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             maxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           id: id
         - area: 6.027456183070403
           faceProperties:
@@ -28758,22 +29471,22 @@ components:
           orientation: true
           surface:
             directionOrientedWithFace:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             origin:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             type: null
             direction:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           appearancePropertyNodeId: appearancePropertyNodeId
           btType: btType
           loops:
@@ -28800,16 +29513,16 @@ components:
           box:
             valid: true
             minCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
             maxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
           id: id
         type: null
         consumedByComposite: true
@@ -28869,59 +29582,59 @@ components:
       example:
         curve:
           directionOrientedWithFace:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           origin:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           btType: btType
           type: null
           direction:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
         vertices:
         - vertices
         - vertices
         btType: btType
         geometry:
           endPoint:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           endVector:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           midPoint:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           length: 0.8008281904610115
           startPoint:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           btType: btType
           quarterPoint:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           startVector:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
         id: id
       properties:
         btType:
@@ -28945,37 +29658,37 @@ components:
         propertyName: btType
       example:
         endPoint:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         endVector:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         midPoint:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         length: 0.8008281904610115
         startPoint:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         btType: btType
         quarterPoint:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         startVector:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
       properties:
         btType:
           description: Type of JSON object.
@@ -29018,22 +29731,22 @@ components:
         orientation: true
         surface:
           directionOrientedWithFace:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           origin:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           btType: btType
           type: null
           direction:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
         appearancePropertyNodeId: appearancePropertyNodeId
         btType: btType
         loops:
@@ -29060,16 +29773,16 @@ components:
         box:
           valid: true
           minCorner:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           btType: btType
           maxCorner:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
         id: id
       properties:
         appearancePropertyNodeId:
@@ -29157,10 +29870,10 @@ components:
         btType: btType
         id: id
         point:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
       properties:
         btType:
           description: Type of JSON object.
@@ -29385,129 +30098,129 @@ components:
             - btType: btType
               id: id
               point:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             - btType: btType
               id: id
               point:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             edges:
             - curve:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               vertices:
               - vertices
               - vertices
               btType: btType
               geometry:
                 endPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 endVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 midPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 length: 0.8008281904610115
                 startPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 quarterPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 startVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             - curve:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               vertices:
               - vertices
               - vertices
               btType: btType
               geometry:
                 endPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 endVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 midPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 length: 0.8008281904610115
                 startPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 quarterPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 startVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             btType: btType
             closed: true
@@ -29536,22 +30249,22 @@ components:
               orientation: true
               surface:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               appearancePropertyNodeId: appearancePropertyNodeId
               btType: btType
               loops:
@@ -29578,16 +30291,16 @@ components:
               box:
                 valid: true
                 minCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 maxCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             - area: 6.027456183070403
               faceProperties:
@@ -29609,22 +30322,22 @@ components:
               orientation: true
               surface:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               appearancePropertyNodeId: appearancePropertyNodeId
               btType: btType
               loops:
@@ -29651,16 +30364,16 @@ components:
               box:
                 valid: true
                 minCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 maxCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             type: null
             consumedByComposite: true
@@ -29670,129 +30383,129 @@ components:
             - btType: btType
               id: id
               point:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             - btType: btType
               id: id
               point:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
             edges:
             - curve:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               vertices:
               - vertices
               - vertices
               btType: btType
               geometry:
                 endPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 endVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 midPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 length: 0.8008281904610115
                 startPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 quarterPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 startVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             - curve:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               vertices:
               - vertices
               - vertices
               btType: btType
               geometry:
                 endPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 endVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 midPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 length: 0.8008281904610115
                 startPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 quarterPoint:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 startVector:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             btType: btType
             closed: true
@@ -29821,22 +30534,22 @@ components:
               orientation: true
               surface:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               appearancePropertyNodeId: appearancePropertyNodeId
               btType: btType
               loops:
@@ -29863,16 +30576,16 @@ components:
               box:
                 valid: true
                 minCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 maxCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             - area: 6.027456183070403
               faceProperties:
@@ -29894,22 +30607,22 @@ components:
               orientation: true
               surface:
                 directionOrientedWithFace:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 origin:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 type: null
                 direction:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               appearancePropertyNodeId: appearancePropertyNodeId
               btType: btType
               loops:
@@ -29936,16 +30649,16 @@ components:
               box:
                 valid: true
                 minCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 maxCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
               id: id
             type: null
             consumedByComposite: true
@@ -30424,10 +31137,10 @@ components:
               isActiveSheetMetal: true
               isMesh: true
               lowBoxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               propertyIdToSource:
                 key:
                   sourceId: sourceId
@@ -30465,10 +31178,10 @@ components:
                   key: properties
                 revision: revision
               highBoxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               material:
                 libraryName: libraryName
                 libraryReference:
@@ -30912,10 +31625,10 @@ components:
             isActiveSheetMetal: true
             isMesh: true
             lowBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             propertyIdToSource:
               key:
                 sourceId: sourceId
@@ -30953,10 +31666,10 @@ components:
                 key: properties
               revision: revision
             highBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             material:
               libraryName: libraryName
               libraryReference:
@@ -31161,10 +31874,10 @@ components:
             isActiveSheetMetal: true
             isMesh: true
             lowBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             propertyIdToSource:
               key:
                 sourceId: sourceId
@@ -31202,10 +31915,10 @@ components:
                 key: properties
               revision: revision
             highBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             material:
               libraryName: libraryName
               libraryReference:
@@ -31372,10 +32085,10 @@ components:
               isBendCenterLineBody: true
               coarsePlanarFaceTriangleCount: 4
               lowBoxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               isAssociatedWithFlat: true
               coarseTriangleCount: 5
               totalEntityCount: 9
@@ -31393,10 +32106,10 @@ components:
               copyWithoutEntities: null
               isComposite: true
               highBoxCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               userTessellationSetting: null
               bestAvailableTessellationSetting: null
               isFlattenedSheetMetalBody: true
@@ -31485,10 +32198,10 @@ components:
               - 9.018348186070783
               m03: 1.284659006116532
               translation:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               rigid: true
               isNormalized: true
             value: 0.8851374739011653
@@ -31533,10 +32246,10 @@ components:
               - 9.018348186070783
               m03: 1.284659006116532
               translation:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               rigid: true
               isNormalized: true
             value: 0.8851374739011653
@@ -31551,10 +32264,10 @@ components:
               key:
                 sourceId: sourceId
                 topLeftCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 isOnFlat: true
                 entities:
                 - btType: btType
@@ -31566,16 +32279,16 @@ components:
                   - 4.652396432933246
                   - 4.652396432933246
                 bottomRightCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
                 bottomLeftCorner:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 featureId: featureId
                 points:
                 - 8.969578798196912
@@ -31615,14 +32328,14 @@ components:
               btType: btType
               theId: theId
         facetPoints:
-        - x: 2.3021358869347655
+        - x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
-        - x: 2.3021358869347655
+          "y": 1.4658129805029452
+          z: 5.962133916683182
+        - x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         outputFaceAppearances: true
       properties:
         bodies:
@@ -34353,20 +35066,20 @@ components:
     BTGraphicsSectionPlaneData-1429:
       example:
         normal:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         tangent:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         center:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         btType: btType
       properties:
         btType:
@@ -34424,36 +35137,36 @@ components:
         isExcluding: true
         sectionPlanes:
         - normal:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           tangent:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           center:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           btType: btType
         - normal:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           tangent:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           center:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           btType: btType
         selectionsToExclude:
         - btType: btType
@@ -40840,14 +41553,14 @@ components:
             - 5.637376656633329
             - 5.637376656633329
             principalAxes:
-            - x: 2.3021358869347655
+            - x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
-            - x: 2.3021358869347655
+              "y": 1.4658129805029452
+              z: 5.962133916683182
+            - x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
         microversionId: microversionId
       properties:
         bodies:
@@ -40880,14 +41593,14 @@ components:
         - 5.637376656633329
         - 5.637376656633329
         principalAxes:
-        - x: 2.3021358869347655
+        - x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
-        - x: 2.3021358869347655
+          "y": 1.4658129805029452
+          z: 5.962133916683182
+        - x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
       properties:
         centroid:
           items:
@@ -42152,36 +42865,36 @@ components:
           isExcluding: true
           sectionPlanes:
           - normal:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             tangent:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             center:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
           - normal:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             tangent:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             center:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             btType: btType
           selectionsToExclude:
           - btType: btType
@@ -42226,8 +42939,8 @@ components:
         angle: 0.8008281904610115
         perspective: true
         viewMatrix:
-        - 3.616076749251911
-        - 3.616076749251911
+        - 2.3021358869347655
+        - 2.3021358869347655
       properties:
         angle:
           format: double
@@ -42321,36 +43034,36 @@ components:
               isExcluding: true
               sectionPlanes:
               - normal:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 tangent:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 center:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
               - normal:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 tangent:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 center:
-                  x: 2.3021358869347655
+                  x: 6.027456183070403
                   btType: btType
-                  "y": 7.061401241503109
-                  z: 9.301444243932576
+                  "y": 1.4658129805029452
+                  z: 5.962133916683182
                 btType: btType
               selectionsToExclude:
               - btType: btType
@@ -42395,8 +43108,8 @@ components:
             angle: 0.8008281904610115
             perspective: true
             viewMatrix:
-            - 3.616076749251911
-            - 3.616076749251911
+            - 2.3021358869347655
+            - 2.3021358869347655
       properties:
         namedViews:
           additionalProperties:
@@ -44897,10 +45610,10 @@ components:
         isBendCenterLineBody: true
         coarsePlanarFaceTriangleCount: 4
         lowBoxCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         isAssociatedWithFlat: true
         coarseTriangleCount: 5
         totalEntityCount: 9
@@ -44918,10 +45631,10 @@ components:
         copyWithoutEntities: null
         isComposite: true
         highBoxCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         userTessellationSetting: null
         bestAvailableTessellationSetting: null
         isFlattenedSheetMetalBody: true
@@ -45104,10 +45817,10 @@ components:
         isActiveSheetMetal: true
         isMesh: true
         lowBoxCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         propertyIdToSource:
           key:
             sourceId: sourceId
@@ -45145,10 +45858,10 @@ components:
             key: properties
           revision: revision
         highBoxCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         material:
           libraryName: libraryName
           libraryReference:
@@ -46207,10 +46920,10 @@ components:
             isActiveSheetMetal: true
             isMesh: true
             lowBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             propertyIdToSource:
               key:
                 sourceId: sourceId
@@ -46248,10 +46961,10 @@ components:
                 key: properties
               revision: revision
             highBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             material:
               libraryName: libraryName
               libraryReference:
@@ -46695,10 +47408,10 @@ components:
           isActiveSheetMetal: true
           isMesh: true
           lowBoxCorner:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           propertyIdToSource:
             key:
               sourceId: sourceId
@@ -46736,10 +47449,10 @@ components:
               key: properties
             revision: revision
           highBoxCorner:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           material:
             libraryName: libraryName
             libraryReference:
@@ -46944,10 +47657,10 @@ components:
           isActiveSheetMetal: true
           isMesh: true
           lowBoxCorner:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           propertyIdToSource:
             key:
               sourceId: sourceId
@@ -46985,10 +47698,10 @@ components:
               key: properties
             revision: revision
           highBoxCorner:
-            x: 2.3021358869347655
+            x: 6.027456183070403
             btType: btType
-            "y": 7.061401241503109
-            z: 9.301444243932576
+            "y": 1.4658129805029452
+            z: 5.962133916683182
           material:
             libraryName: libraryName
             libraryReference:
@@ -47155,10 +47868,10 @@ components:
             isBendCenterLineBody: true
             coarsePlanarFaceTriangleCount: 4
             lowBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             isAssociatedWithFlat: true
             coarseTriangleCount: 5
             totalEntityCount: 9
@@ -47176,10 +47889,10 @@ components:
             copyWithoutEntities: null
             isComposite: true
             highBoxCorner:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             userTessellationSetting: null
             bestAvailableTessellationSetting: null
             isFlattenedSheetMetalBody: true
@@ -47268,10 +47981,10 @@ components:
             - 9.018348186070783
             m03: 1.284659006116532
             translation:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             rigid: true
             isNormalized: true
           value: 0.8851374739011653
@@ -47316,10 +48029,10 @@ components:
             - 9.018348186070783
             m03: 1.284659006116532
             translation:
-              x: 2.3021358869347655
+              x: 6.027456183070403
               btType: btType
-              "y": 7.061401241503109
-              z: 9.301444243932576
+              "y": 1.4658129805029452
+              z: 5.962133916683182
             rigid: true
             isNormalized: true
           value: 0.8851374739011653
@@ -47334,10 +48047,10 @@ components:
             key:
               sourceId: sourceId
               topLeftCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               isOnFlat: true
               entities:
               - btType: btType
@@ -47349,16 +48062,16 @@ components:
                 - 4.652396432933246
                 - 4.652396432933246
               bottomRightCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               btType: btType
               bottomLeftCorner:
-                x: 2.3021358869347655
+                x: 6.027456183070403
                 btType: btType
-                "y": 7.061401241503109
-                z: 9.301444243932576
+                "y": 1.4658129805029452
+                z: 5.962133916683182
               featureId: featureId
               points:
               - 8.969578798196912
@@ -51392,10 +52105,10 @@ components:
       example:
         sourceId: sourceId
         topLeftCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         isOnFlat: true
         entities:
         - btType: btType
@@ -51407,16 +52120,16 @@ components:
           - 4.652396432933246
           - 4.652396432933246
         bottomRightCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         btType: btType
         bottomLeftCorner:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         featureId: featureId
         points:
         - 8.969578798196912
@@ -51775,22 +52488,22 @@ components:
         propertyName: btType
       example:
         directionOrientedWithFace:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         origin:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
         btType: btType
         type: null
         direction:
-          x: 2.3021358869347655
+          x: 6.027456183070403
           btType: btType
-          "y": 7.061401241503109
-          z: 9.301444243932576
+          "y": 1.4658129805029452
+          z: 5.962133916683182
       properties:
         btType:
           description: Type of JSON object.
@@ -52825,6 +53538,7 @@ components:
         configuration: configuration
         linkDocumentId: linkDocumentId
         emailSubject: emailSubject
+        specifyMaterialData: true
         allowFaultyParts: false
         elementIds:
         - elementIds
@@ -53019,6 +53733,8 @@ components:
           type: boolean
         sourceName:
           type: string
+        specifyMaterialData:
+          type: boolean
         specifyUnits:
           type: boolean
         splinesAsPolylines:
@@ -54402,10 +55118,10 @@ components:
       type: object
     BTVector3d-389:
       example:
-        x: 2.3021358869347655
+        x: 6.027456183070403
         btType: btType
-        "y": 7.061401241503109
-        z: 9.301444243932576
+        "y": 1.4658129805029452
+        z: 5.962133916683182
       properties:
         btType:
           description: Type of JSON object.
@@ -69135,6 +69851,14 @@ components:
       - HOLE_PARAMS_OVERRIDDEN_INFO
       - HOLE_TAP_DIA_TOO_LARGE_OR_EQUAL
       - SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS
+      - FORMED_TAG_FORM_NO_FEATURE_PATTERN
+      - FORMED_TAG_FORM_SELECT_DIFFERENT_PARTS
+      - FORMED_TAG_FORM_SELECT_SKETCH
+      - FORMED_TAG_FORM_SELECT_SOMETHING
+      - ISOPARAMETRIC_CURVE_SELECT_FACE
+      - ISOPARAMETRIC_CURVE_SELECT_POINT
+      - ISOPARAMETRIC_CURVE_SELECT_POSITION
+      - ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -101613,6 +102337,8 @@ components:
           type: string
         excludeIsEditable:
           type: boolean
+        excludeIsOverridden:
+          type: boolean
         exclusionStatus:
           $ref: '#/components/schemas/GBTBillOfMaterialsExclusionStatus'
         expansionStatus:
@@ -105036,6 +105762,8 @@ components:
           type: string
         defaultPurpose:
           $ref: '#/components/schemas/BTElementLibraryPurpose-3353'
+        libraryDefinitionId:
+          type: string
       type: object
       example: null
     BTParameterSpecReferenceAssembly_2821_allOf:
@@ -106050,6 +106778,8 @@ components:
             $ref: '#/components/schemas/BTRole'
           type: array
           uniqueItems: true
+        rumEnabled:
+          type: boolean
         showRenewStudentPages:
           type: boolean
         startupPage:

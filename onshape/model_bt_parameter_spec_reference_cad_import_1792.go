@@ -32,6 +32,7 @@ type BTParameterSpecReferenceCADImport1792 struct {
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 	DefaultPurpose             *BTElementLibraryPurpose3353       `json:"defaultPurpose,omitempty"`
+	LibraryDefinitionId        *string                            `json:"libraryDefinitionId,omitempty"`
 }
 
 // NewBTParameterSpecReferenceCADImport1792 instantiates a new BTParameterSpecReferenceCADImport1792 object
@@ -563,6 +564,38 @@ func (o *BTParameterSpecReferenceCADImport1792) SetDefaultPurpose(v BTElementLib
 	o.DefaultPurpose = &v
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *BTParameterSpecReferenceCADImport1792) GetLibraryDefinitionId() string {
+	if o == nil || o.LibraryDefinitionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.LibraryDefinitionId
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferenceCADImport1792) GetLibraryDefinitionIdOk() (*string, bool) {
+	if o == nil || o.LibraryDefinitionId == nil {
+		return nil, false
+	}
+	return o.LibraryDefinitionId, true
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *BTParameterSpecReferenceCADImport1792) HasLibraryDefinitionId() bool {
+	if o != nil && o.LibraryDefinitionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *BTParameterSpecReferenceCADImport1792) SetLibraryDefinitionId(v string) {
+	o.LibraryDefinitionId = &v
+}
+
 func (o BTParameterSpecReferenceCADImport1792) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AdditionalLocalizedStrings != nil {
@@ -612,6 +645,9 @@ func (o BTParameterSpecReferenceCADImport1792) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultPurpose != nil {
 		toSerialize["defaultPurpose"] = o.DefaultPurpose
+	}
+	if o.LibraryDefinitionId != nil {
+		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
 	}
 	return json.Marshal(toSerialize)
 }
