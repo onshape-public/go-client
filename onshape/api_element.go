@@ -42,10 +42,10 @@ func (r ApiCopyElementFromSourceDocumentRequest) Execute() (*BTDocumentElementIn
 /*
 CopyElementFromSourceDocument Copy tab by document ID and workspace ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiCopyElementFromSourceDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiCopyElementFromSourceDocumentRequest
 */
 func (a *ElementApiService) CopyElementFromSourceDocument(ctx context.Context, did string, wid string) ApiCopyElementFromSourceDocumentRequest {
 	return ApiCopyElementFromSourceDocumentRequest{
@@ -57,7 +57,8 @@ func (a *ElementApiService) CopyElementFromSourceDocument(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *ElementApiService) CopyElementFromSourceDocumentExecute(r ApiCopyElementFromSourceDocumentRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -180,13 +181,13 @@ func (r ApiDecodeConfigurationRequest) Execute() (*BTConfigurationInfo, *http.Re
 /*
 DecodeConfiguration Decode configuration string by documentation ID, workspace or version or microversion ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @param cid
- @return ApiDecodeConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@param cid
+	@return ApiDecodeConfigurationRequest
 */
 func (a *ElementApiService) DecodeConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string, cid string) ApiDecodeConfigurationRequest {
 	return ApiDecodeConfigurationRequest{
@@ -201,7 +202,8 @@ func (a *ElementApiService) DecodeConfiguration(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTConfigurationInfo
+//
+//	@return BTConfigurationInfo
 func (a *ElementApiService) DecodeConfigurationExecute(r ApiDecodeConfigurationRequest) (*BTConfigurationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -311,11 +313,11 @@ func (r ApiDeleteElementRequest) Execute() (map[string]interface{}, *http.Respon
 /*
 DeleteElement Method for DeleteElement
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiDeleteElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiDeleteElementRequest
 */
 func (a *ElementApiService) DeleteElement(ctx context.Context, did string, wid string, eid string) ApiDeleteElementRequest {
 	return ApiDeleteElementRequest{
@@ -328,7 +330,8 @@ func (a *ElementApiService) DeleteElement(ctx context.Context, did string, wid s
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ElementApiService) DeleteElementExecute(r ApiDeleteElementRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -444,10 +447,10 @@ func (r ApiEncodeConfigurationMapRequest) Execute() (*BTEncodedConfigurationInfo
 /*
 EncodeConfigurationMap Encode configuration by documentation ID and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @return ApiEncodeConfigurationMapRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@return ApiEncodeConfigurationMapRequest
 */
 func (a *ElementApiService) EncodeConfigurationMap(ctx context.Context, did string, eid string) ApiEncodeConfigurationMapRequest {
 	return ApiEncodeConfigurationMapRequest{
@@ -459,7 +462,8 @@ func (a *ElementApiService) EncodeConfigurationMap(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return BTEncodedConfigurationInfo
+//
+//	@return BTEncodedConfigurationInfo
 func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurationMapRequest) (*BTEncodedConfigurationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -569,12 +573,12 @@ func (r ApiGetConfigurationRequest) Execute() (*BTConfigurationResponse2019, *ht
 /*
 GetConfiguration Retrieve configuration by document ID, workspace or version or microversion ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiGetConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiGetConfigurationRequest
 */
 func (a *ElementApiService) GetConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetConfigurationRequest {
 	return ApiGetConfigurationRequest{
@@ -588,7 +592,8 @@ func (a *ElementApiService) GetConfiguration(ctx context.Context, did string, wv
 }
 
 // Execute executes the request
-//  @return BTConfigurationResponse2019
+//
+//	@return BTConfigurationResponse2019
 func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -708,12 +713,12 @@ func (r ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest) Execute() ([]
 /*
 GetElementTranslatorFormatsByVersionOrWorkspace Method for GetElementTranslatorFormatsByVersionOrWorkspace
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest
 */
 func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspace(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest {
 	return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest{
@@ -727,7 +732,8 @@ func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspace(ctx 
 }
 
 // Execute executes the request
-//  @return []BTModelFormatInfo
+//
+//	@return []BTModelFormatInfo
 func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspaceExecute(r ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest) ([]BTModelFormatInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -843,12 +849,12 @@ func (r ApiUpdateConfigurationRequest) Execute() (*BTConfigurationResponse2019, 
 /*
 UpdateConfiguration Update configuration by document ID, workspace or microversion ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiUpdateConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiUpdateConfigurationRequest
 */
 func (a *ElementApiService) UpdateConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateConfigurationRequest {
 	return ApiUpdateConfigurationRequest{
@@ -862,7 +868,8 @@ func (a *ElementApiService) UpdateConfiguration(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTConfigurationResponse2019
+//
+//	@return BTConfigurationResponse2019
 func (a *ElementApiService) UpdateConfigurationExecute(r ApiUpdateConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -970,11 +977,11 @@ func (r ApiUpdateReferencesRequest) Execute() (map[string]interface{}, *http.Res
 /*
 UpdateReferences Update or replace node references by document ID, workspace ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiUpdateReferencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiUpdateReferencesRequest
 */
 func (a *ElementApiService) UpdateReferences(ctx context.Context, did string, wid string, eid string) ApiUpdateReferencesRequest {
 	return ApiUpdateReferencesRequest{
@@ -987,7 +994,8 @@ func (a *ElementApiService) UpdateReferences(ctx context.Context, did string, wi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ElementApiService) UpdateReferencesExecute(r ApiUpdateReferencesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

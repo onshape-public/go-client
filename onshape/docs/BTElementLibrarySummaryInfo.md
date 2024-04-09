@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
+**LibraryDefinitionId** | Pointer to **string** | The ID of the definition of the element library. | [optional] 
 **LibraryId** | Pointer to **string** | The Id of the library -- unique across Onshape. | [optional] 
 **LibraryVersion** | Pointer to **string** | The current version Id of the library. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **OwnerId** | Pointer to **string** | The owner Id of an element library (either Onshape, company, or user). | [optional] 
 **OwnerType** | Pointer to **int32** | The type of library owner, Onshape, user, or company | [optional] 
-**Purpose** | Pointer to **string** | The purpose string identifying the type of element library. | [optional] 
 **SourceFolderId** | Pointer to **string** | The id of the root folder of the library | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
@@ -83,6 +83,31 @@ SetId sets Id field to given value.
 `func (o *BTElementLibrarySummaryInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetLibraryDefinitionId
+
+`func (o *BTElementLibrarySummaryInfo) GetLibraryDefinitionId() string`
+
+GetLibraryDefinitionId returns the LibraryDefinitionId field if non-nil, zero value otherwise.
+
+### GetLibraryDefinitionIdOk
+
+`func (o *BTElementLibrarySummaryInfo) GetLibraryDefinitionIdOk() (*string, bool)`
+
+GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibraryDefinitionId
+
+`func (o *BTElementLibrarySummaryInfo) SetLibraryDefinitionId(v string)`
+
+SetLibraryDefinitionId sets LibraryDefinitionId field to given value.
+
+### HasLibraryDefinitionId
+
+`func (o *BTElementLibrarySummaryInfo) HasLibraryDefinitionId() bool`
+
+HasLibraryDefinitionId returns a boolean if a field has been set.
 
 ### GetLibraryId
 
@@ -208,31 +233,6 @@ SetOwnerType sets OwnerType field to given value.
 `func (o *BTElementLibrarySummaryInfo) HasOwnerType() bool`
 
 HasOwnerType returns a boolean if a field has been set.
-
-### GetPurpose
-
-`func (o *BTElementLibrarySummaryInfo) GetPurpose() string`
-
-GetPurpose returns the Purpose field if non-nil, zero value otherwise.
-
-### GetPurposeOk
-
-`func (o *BTElementLibrarySummaryInfo) GetPurposeOk() (*string, bool)`
-
-GetPurposeOk returns a tuple with the Purpose field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPurpose
-
-`func (o *BTElementLibrarySummaryInfo) SetPurpose(v string)`
-
-SetPurpose sets Purpose field to given value.
-
-### HasPurpose
-
-`func (o *BTElementLibrarySummaryInfo) HasPurpose() bool`
-
-HasPurpose returns a boolean if a field has been set.
 
 ### GetSourceFolderId
 

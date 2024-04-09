@@ -45,12 +45,12 @@ func (r ApiAddFeatureRequest) Execute() (*BTFeatureDefinitionResponse1617, *http
 /*
 AddFeature Add a feature to the assembly feature list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiAddFeatureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiAddFeatureRequest
 */
 func (a *AssemblyApiService) AddFeature(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiAddFeatureRequest {
 	return ApiAddFeatureRequest{
@@ -64,7 +64,8 @@ func (a *AssemblyApiService) AddFeature(ctx context.Context, did string, wvm str
 }
 
 // Execute executes the request
-//  @return BTFeatureDefinitionResponse1617
+//
+//	@return BTFeatureDefinitionResponse1617
 func (a *AssemblyApiService) AddFeatureExecute(r ApiAddFeatureRequest) (*BTFeatureDefinitionResponse1617, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -171,10 +172,10 @@ func (r ApiCreateAssemblyRequest) Execute() (*BTDocumentElementInfo, *http.Respo
 /*
 CreateAssembly Create a new assembly tab in the document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiCreateAssemblyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiCreateAssemblyRequest
 */
 func (a *AssemblyApiService) CreateAssembly(ctx context.Context, did string, wid string) ApiCreateAssemblyRequest {
 	return ApiCreateAssemblyRequest{
@@ -186,7 +187,8 @@ func (a *AssemblyApiService) CreateAssembly(ctx context.Context, did string, wid
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *AssemblyApiService) CreateAssemblyExecute(r ApiCreateAssemblyRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -297,11 +299,11 @@ CreateInstance Insert an instance of a part, sketch, assembly, or Part Studio in
 
 Part Studio instances may include multiple parts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiCreateInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiCreateInstanceRequest
 */
 func (a *AssemblyApiService) CreateInstance(ctx context.Context, did string, wid string, eid string) ApiCreateInstanceRequest {
 	return ApiCreateInstanceRequest{
@@ -314,7 +316,8 @@ func (a *AssemblyApiService) CreateInstance(ctx context.Context, did string, wid
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AssemblyApiService) CreateInstanceExecute(r ApiCreateInstanceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -416,12 +419,12 @@ func (r ApiDeleteFeatureRequest) Execute() (*BTFeatureApiBase1430, *http.Respons
 /*
 DeleteFeature Delete a feature from an assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @param fid
- @return ApiDeleteFeatureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@param fid
+	@return ApiDeleteFeatureRequest
 */
 func (a *AssemblyApiService) DeleteFeature(ctx context.Context, did string, wid string, eid string, fid string) ApiDeleteFeatureRequest {
 	return ApiDeleteFeatureRequest{
@@ -435,7 +438,8 @@ func (a *AssemblyApiService) DeleteFeature(ctx context.Context, did string, wid 
 }
 
 // Execute executes the request
-//  @return BTFeatureApiBase1430
+//
+//	@return BTFeatureApiBase1430
 func (a *AssemblyApiService) DeleteFeatureExecute(r ApiDeleteFeatureRequest) (*BTFeatureApiBase1430, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -529,12 +533,12 @@ func (r ApiDeleteInstanceRequest) Execute() (map[string]interface{}, *http.Respo
 /*
 DeleteInstance Delete an instance of an assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
- @param nid
- @return ApiDeleteInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wid
+	@param nid
+	@return ApiDeleteInstanceRequest
 */
 func (a *AssemblyApiService) DeleteInstance(ctx context.Context, did string, eid string, wid string, nid string) ApiDeleteInstanceRequest {
 	return ApiDeleteInstanceRequest{
@@ -548,7 +552,8 @@ func (a *AssemblyApiService) DeleteInstance(ctx context.Context, did string, eid
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AssemblyApiService) DeleteInstanceExecute(r ApiDeleteInstanceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -693,12 +698,12 @@ func (r ApiGetAssemblyBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *http
 /*
 GetAssemblyBoundingBoxes Get bounding box information for the specified assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetAssemblyBoundingBoxesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetAssemblyBoundingBoxesRequest
 */
 func (a *AssemblyApiService) GetAssemblyBoundingBoxes(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssemblyBoundingBoxesRequest {
 	return ApiGetAssemblyBoundingBoxesRequest{
@@ -712,7 +717,8 @@ func (a *AssemblyApiService) GetAssemblyBoundingBoxes(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return BTBoundingBoxInfo
+//
+//	@return BTBoundingBoxInfo
 func (a *AssemblyApiService) GetAssemblyBoundingBoxesExecute(r ApiGetAssemblyBoundingBoxesRequest) (*BTBoundingBoxInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -881,12 +887,12 @@ GetAssemblyDefinition Get definition information for the specified assembly.
 
 All coordinates and translation matrix components are in meters (m).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetAssemblyDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetAssemblyDefinitionRequest
 */
 func (a *AssemblyApiService) GetAssemblyDefinition(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssemblyDefinitionRequest {
 	return ApiGetAssemblyDefinitionRequest{
@@ -900,7 +906,8 @@ func (a *AssemblyApiService) GetAssemblyDefinition(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return BTAssemblyDefinitionInfo
+//
+//	@return BTAssemblyDefinitionInfo
 func (a *AssemblyApiService) GetAssemblyDefinitionExecute(r ApiGetAssemblyDefinitionRequest) (*BTAssemblyDefinitionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1038,12 +1045,12 @@ GetAssemblyMassProperties Get the mass properties for the assembly.
 
 The assembly must contain parts that have assigned density or are globally overridden. If three mass properties are returned: the first is the calculated mass, and the second and third are the minimum and maximum possible values, considering tolerance.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetAssemblyMassPropertiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetAssemblyMassPropertiesRequest
 */
 func (a *AssemblyApiService) GetAssemblyMassProperties(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssemblyMassPropertiesRequest {
 	return ApiGetAssemblyMassPropertiesRequest{
@@ -1057,7 +1064,8 @@ func (a *AssemblyApiService) GetAssemblyMassProperties(ctx context.Context, did 
 }
 
 // Execute executes the request
-//  @return BTMassPropertiesInfo
+//
+//	@return BTMassPropertiesInfo
 func (a *AssemblyApiService) GetAssemblyMassPropertiesExecute(r ApiGetAssemblyMassPropertiesRequest) (*BTMassPropertiesInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1250,12 +1258,12 @@ func (r ApiGetAssemblyShadedViewsRequest) Execute() (*BTShadedViewsInfo, *http.R
 /*
 GetAssemblyShadedViews Get an array of shaded view images for the document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetAssemblyShadedViewsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetAssemblyShadedViewsRequest
 */
 func (a *AssemblyApiService) GetAssemblyShadedViews(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssemblyShadedViewsRequest {
 	return ApiGetAssemblyShadedViewsRequest{
@@ -1269,7 +1277,8 @@ func (a *AssemblyApiService) GetAssemblyShadedViews(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTShadedViewsInfo
+//
+//	@return BTShadedViewsInfo
 func (a *AssemblyApiService) GetAssemblyShadedViewsExecute(r ApiGetAssemblyShadedViewsRequest) (*BTShadedViewsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1505,12 +1514,12 @@ GetBillOfMaterials Get the Bill Of Materials (BOM) content for the specified ass
 
 Returns the BOM in JSON in the Onshape BOM Standard format.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetBillOfMaterialsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetBillOfMaterialsRequest
 */
 func (a *AssemblyApiService) GetBillOfMaterials(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetBillOfMaterialsRequest {
 	return ApiGetBillOfMaterialsRequest{
@@ -1524,7 +1533,8 @@ func (a *AssemblyApiService) GetBillOfMaterials(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTBillOfMaterialsInfo
+//
+//	@return BTBillOfMaterialsInfo
 func (a *AssemblyApiService) GetBillOfMaterialsExecute(r ApiGetBillOfMaterialsRequest) (*BTBillOfMaterialsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1692,12 +1702,12 @@ func (r ApiGetExplodedViewsRequest) Execute() ([]BTViewFeatureBaseInfo, *http.Re
 /*
 GetExplodedViews Get a list of exploded views for the specified assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetExplodedViewsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetExplodedViewsRequest
 */
 func (a *AssemblyApiService) GetExplodedViews(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetExplodedViewsRequest {
 	return ApiGetExplodedViewsRequest{
@@ -1711,7 +1721,8 @@ func (a *AssemblyApiService) GetExplodedViews(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return []BTViewFeatureBaseInfo
+//
+//	@return []BTViewFeatureBaseInfo
 func (a *AssemblyApiService) GetExplodedViewsExecute(r ApiGetExplodedViewsRequest) ([]BTViewFeatureBaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1821,12 +1832,12 @@ func (r ApiGetFeatureSpecsRequest) Execute() (*BTFeatureSpecsResponse664, *http.
 /*
 GetFeatureSpecs Get the feature spec definitions for an assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiGetFeatureSpecsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiGetFeatureSpecsRequest
 */
 func (a *AssemblyApiService) GetFeatureSpecs(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureSpecsRequest {
 	return ApiGetFeatureSpecsRequest{
@@ -1840,7 +1851,8 @@ func (a *AssemblyApiService) GetFeatureSpecs(ctx context.Context, did string, wv
 }
 
 // Execute executes the request
-//  @return BTFeatureSpecsResponse664
+//
+//	@return BTFeatureSpecsResponse664
 func (a *AssemblyApiService) GetFeatureSpecsExecute(r ApiGetFeatureSpecsRequest) (*BTFeatureSpecsResponse664, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1967,12 +1979,12 @@ func (r ApiGetFeaturesRequest) Execute() (*BTAssemblyFeatureListResponse1174, *h
 /*
 GetFeatures Get the definitions of the specified features in an assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetFeaturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetFeaturesRequest
 */
 func (a *AssemblyApiService) GetFeatures(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeaturesRequest {
 	return ApiGetFeaturesRequest{
@@ -1986,7 +1998,8 @@ func (a *AssemblyApiService) GetFeatures(ctx context.Context, did string, wvm st
 }
 
 // Execute executes the request
-//  @return BTAssemblyFeatureListResponse1174
+//
+//	@return BTAssemblyFeatureListResponse1174
 func (a *AssemblyApiService) GetFeaturesExecute(r ApiGetFeaturesRequest) (*BTAssemblyFeatureListResponse1174, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2120,12 +2133,12 @@ func (r ApiGetNamedPositionsRequest) Execute() ([]BTViewFeatureBaseInfo, *http.R
 /*
 GetNamedPositions Get a list of all named positions for the assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetNamedPositionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetNamedPositionsRequest
 */
 func (a *AssemblyApiService) GetNamedPositions(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetNamedPositionsRequest {
 	return ApiGetNamedPositionsRequest{
@@ -2139,7 +2152,8 @@ func (a *AssemblyApiService) GetNamedPositions(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return []BTViewFeatureBaseInfo
+//
+//	@return []BTViewFeatureBaseInfo
 func (a *AssemblyApiService) GetNamedPositionsExecute(r ApiGetNamedPositionsRequest) ([]BTViewFeatureBaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2266,10 +2280,10 @@ func (r ApiGetNamedViewsRequest) Execute() (*BTNamedViewsInfo, *http.Response, e
 /*
 GetNamedViews Get the view data for all named views for the specified element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param eid
- @return ApiGetNamedViewsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param eid
+	@return ApiGetNamedViewsRequest
 */
 func (a *AssemblyApiService) GetNamedViews(ctx context.Context, did string, eid string) ApiGetNamedViewsRequest {
 	return ApiGetNamedViewsRequest{
@@ -2281,7 +2295,8 @@ func (a *AssemblyApiService) GetNamedViews(ctx context.Context, did string, eid 
 }
 
 // Execute executes the request
-//  @return BTNamedViewsInfo
+//
+//	@return BTNamedViewsInfo
 func (a *AssemblyApiService) GetNamedViewsExecute(r ApiGetNamedViewsRequest) (*BTNamedViewsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2388,11 +2403,11 @@ func (r ApiGetOrCreateBillOfMaterialsElementRequest) Execute() (*BTDocumentEleme
 /*
 GetOrCreateBillOfMaterialsElement Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiGetOrCreateBillOfMaterialsElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiGetOrCreateBillOfMaterialsElementRequest
 */
 func (a *AssemblyApiService) GetOrCreateBillOfMaterialsElement(ctx context.Context, did string, wid string, eid string) ApiGetOrCreateBillOfMaterialsElementRequest {
 	return ApiGetOrCreateBillOfMaterialsElementRequest{
@@ -2405,7 +2420,8 @@ func (a *AssemblyApiService) GetOrCreateBillOfMaterialsElement(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *AssemblyApiService) GetOrCreateBillOfMaterialsElementExecute(r ApiGetOrCreateBillOfMaterialsElementRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -2510,11 +2526,11 @@ func (r ApiInsertTransformedInstancesRequest) Execute() (*BTAssemblyInsertTransf
 /*
 InsertTransformedInstances Create new instances with transformation.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
- @return ApiInsertTransformedInstancesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wid
+	@return ApiInsertTransformedInstancesRequest
 */
 func (a *AssemblyApiService) InsertTransformedInstances(ctx context.Context, did string, eid string, wid string) ApiInsertTransformedInstancesRequest {
 	return ApiInsertTransformedInstancesRequest{
@@ -2527,7 +2543,8 @@ func (a *AssemblyApiService) InsertTransformedInstances(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return BTAssemblyInsertTransformedInstancesResponse
+//
+//	@return BTAssemblyInsertTransformedInstancesResponse
 func (a *AssemblyApiService) InsertTransformedInstancesExecute(r ApiInsertTransformedInstancesRequest) (*BTAssemblyInsertTransformedInstancesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -2646,11 +2663,11 @@ Modify Modify an assembly.
 
 This endpoint can include multiple modifications to an assembly with one change. For example, it can delete/suppress/unsuppress/transform multiple instances. It creates one history entry in the document history list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid The id of the element in which to perform the operation.
- @return ApiModifyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiModifyRequest
 */
 func (a *AssemblyApiService) Modify(ctx context.Context, did string, wid string, eid string) ApiModifyRequest {
 	return ApiModifyRequest{
@@ -2663,7 +2680,8 @@ func (a *AssemblyApiService) Modify(ctx context.Context, did string, wid string,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AssemblyApiService) ModifyExecute(r ApiModifyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -2773,11 +2791,11 @@ func (r ApiTransformOccurrencesRequest) Execute() (map[string]interface{}, *http
 /*
 TransformOccurrences Transform a list of assembly occurrences.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
- @return ApiTransformOccurrencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wid
+	@return ApiTransformOccurrencesRequest
 */
 func (a *AssemblyApiService) TransformOccurrences(ctx context.Context, did string, eid string, wid string) ApiTransformOccurrencesRequest {
 	return ApiTransformOccurrencesRequest{
@@ -2790,7 +2808,8 @@ func (a *AssemblyApiService) TransformOccurrences(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AssemblyApiService) TransformOccurrencesExecute(r ApiTransformOccurrencesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -2902,12 +2921,12 @@ TranslateFormat Export the assembly to another format.
 * Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document.
 * See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @param eid
- @return ApiTranslateFormatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@param eid
+	@return ApiTranslateFormatRequest
 */
 func (a *AssemblyApiService) TranslateFormat(ctx context.Context, did string, wv string, wvid string, eid string) ApiTranslateFormatRequest {
 	return ApiTranslateFormatRequest{
@@ -2921,7 +2940,8 @@ func (a *AssemblyApiService) TranslateFormat(ctx context.Context, did string, wv
 }
 
 // Execute executes the request
-//  @return BTTranslationRequestInfo
+//
+//	@return BTTranslationRequestInfo
 func (a *AssemblyApiService) TranslateFormatExecute(r ApiTranslateFormatRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3033,12 +3053,12 @@ func (r ApiUpdateFeatureRequest) Execute() (*BTFeatureDefinitionResponse1617, *h
 /*
 UpdateFeature Update an existing feature for an Assembly.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @param fid
- @return ApiUpdateFeatureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@param fid
+	@return ApiUpdateFeatureRequest
 */
 func (a *AssemblyApiService) UpdateFeature(ctx context.Context, did string, wid string, eid string, fid string) ApiUpdateFeatureRequest {
 	return ApiUpdateFeatureRequest{
@@ -3052,7 +3072,8 @@ func (a *AssemblyApiService) UpdateFeature(ctx context.Context, did string, wid 
 }
 
 // Execute executes the request
-//  @return BTFeatureDefinitionResponse1617
+//
+//	@return BTFeatureDefinitionResponse1617
 func (a *AssemblyApiService) UpdateFeatureExecute(r ApiUpdateFeatureRequest) (*BTFeatureDefinitionResponse1617, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

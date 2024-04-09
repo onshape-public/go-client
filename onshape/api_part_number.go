@@ -51,8 +51,8 @@ func (r ApiUpdateNextNumbersRequest) Execute() (*map[string][]BTNextPartNumber, 
 /*
 UpdateNextNumbers Send the items to generate numbers for, and return the next valid available part numbers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateNextNumbersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateNextNumbersRequest
 */
 func (a *PartNumberApiService) UpdateNextNumbers(ctx context.Context) ApiUpdateNextNumbersRequest {
 	return ApiUpdateNextNumbersRequest{
@@ -62,7 +62,8 @@ func (a *PartNumberApiService) UpdateNextNumbers(ctx context.Context) ApiUpdateN
 }
 
 // Execute executes the request
-//  @return map[string][]BTNextPartNumber
+//
+//	@return map[string][]BTNextPartNumber
 func (a *PartNumberApiService) UpdateNextNumbersExecute(r ApiUpdateNextNumbersRequest) (*map[string][]BTNextPartNumber, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

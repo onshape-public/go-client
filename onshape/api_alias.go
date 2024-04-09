@@ -42,8 +42,8 @@ CreateAlias Create an alias in your enterprise.
 
 `Manage users and teams` global permission is required to call this API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateAliasRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateAliasRequest
 */
 func (a *AliasApiService) CreateAlias(ctx context.Context) ApiCreateAliasRequest {
 	return ApiCreateAliasRequest{
@@ -53,7 +53,8 @@ func (a *AliasApiService) CreateAlias(ctx context.Context) ApiCreateAliasRequest
 }
 
 // Execute executes the request
-//  @return BTAliasInfo
+//
+//	@return BTAliasInfo
 func (a *AliasApiService) CreateAliasExecute(r ApiCreateAliasRequest) (*BTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -154,9 +155,9 @@ DeleteAlias Delete an alias from your enterprise.
 
 `Manage users and teams` global permission is required to call this API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aid
- @return ApiDeleteAliasRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param aid
+	@return ApiDeleteAliasRequest
 */
 func (a *AliasApiService) DeleteAlias(ctx context.Context, aid string) ApiDeleteAliasRequest {
 	return ApiDeleteAliasRequest{
@@ -167,7 +168,8 @@ func (a *AliasApiService) DeleteAlias(ctx context.Context, aid string) ApiDelete
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AliasApiService) DeleteAliasExecute(r ApiDeleteAliasRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -264,9 +266,9 @@ GetAlias Get an alias by ID.
 
 Get the information for an alias ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aid
- @return ApiGetAliasRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param aid
+	@return ApiGetAliasRequest
 */
 func (a *AliasApiService) GetAlias(ctx context.Context, aid string) ApiGetAliasRequest {
 	return ApiGetAliasRequest{
@@ -277,7 +279,8 @@ func (a *AliasApiService) GetAlias(ctx context.Context, aid string) ApiGetAliasR
 }
 
 // Execute executes the request
-//  @return BTAliasInfo
+//
+//	@return BTAliasInfo
 func (a *AliasApiService) GetAliasExecute(r ApiGetAliasRequest) (*BTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -404,9 +407,9 @@ GetAliasMembers Get all users and teams assigned to an alias.
 
 This is a search-like endpoint that returns a subset of the member list. Use `getAlias` to return all members every time it's called.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aid
- @return ApiGetAliasMembersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param aid
+	@return ApiGetAliasMembersRequest
 */
 func (a *AliasApiService) GetAliasMembers(ctx context.Context, aid string) ApiGetAliasMembersRequest {
 	return ApiGetAliasMembersRequest{
@@ -417,7 +420,8 @@ func (a *AliasApiService) GetAliasMembers(ctx context.Context, aid string) ApiGe
 }
 
 // Execute executes the request
-//  @return BTListResponseBTAliasEntryInfo
+//
+//	@return BTListResponseBTAliasEntryInfo
 func (a *AliasApiService) GetAliasMembersExecute(r ApiGetAliasMembersRequest) (*BTListResponseBTAliasEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -556,8 +560,8 @@ func (r ApiGetAliasesInCompanyRequest) Execute() (*BTListResponseBTAliasInfo, *h
 /*
 GetAliasesInCompany Get a list of all aliases that exist for your enterprise.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAliasesInCompanyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAliasesInCompanyRequest
 */
 func (a *AliasApiService) GetAliasesInCompany(ctx context.Context) ApiGetAliasesInCompanyRequest {
 	return ApiGetAliasesInCompanyRequest{
@@ -567,7 +571,8 @@ func (a *AliasApiService) GetAliasesInCompany(ctx context.Context) ApiGetAliases
 }
 
 // Execute executes the request
-//  @return BTListResponseBTAliasInfo
+//
+//	@return BTListResponseBTAliasInfo
 func (a *AliasApiService) GetAliasesInCompanyExecute(r ApiGetAliasesInCompanyRequest) (*BTListResponseBTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -692,9 +697,9 @@ For example, given an Alias with members userA and userB:
 * `removals: [userB]` results in [userA]
 * `entries: [userC, user D]` results in [userC, userD]
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aid
- @return ApiUpdateAliasRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param aid
+	@return ApiUpdateAliasRequest
 */
 func (a *AliasApiService) UpdateAlias(ctx context.Context, aid string) ApiUpdateAliasRequest {
 	return ApiUpdateAliasRequest{
@@ -705,7 +710,8 @@ func (a *AliasApiService) UpdateAlias(ctx context.Context, aid string) ApiUpdate
 }
 
 // Execute executes the request
-//  @return BTAliasInfo
+//
+//	@return BTAliasInfo
 func (a *AliasApiService) UpdateAliasExecute(r ApiUpdateAliasRequest) (*BTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

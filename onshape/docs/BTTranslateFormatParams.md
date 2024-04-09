@@ -65,6 +65,7 @@ Name | Type | Description | Notes
 **ShowOverriddenDimensions** | Pointer to **bool** |  | [optional] 
 **SkipBodyshop** | Pointer to **bool** |  | [optional] 
 **SourceName** | Pointer to **string** |  | [optional] 
+**SpecifyMaterialData** | Pointer to **bool** |  | [optional] 
 **SpecifyUnits** | Pointer to **bool** |  | [optional] 
 **SplinesAsPolylines** | Pointer to **bool** |  | [optional] 
 **SplitAssembliesIntoMultipleDocuments** | Pointer to **bool** |  | [optional] 
@@ -1620,6 +1621,31 @@ SetSourceName sets SourceName field to given value.
 `func (o *BTTranslateFormatParams) HasSourceName() bool`
 
 HasSourceName returns a boolean if a field has been set.
+
+### GetSpecifyMaterialData
+
+`func (o *BTTranslateFormatParams) GetSpecifyMaterialData() bool`
+
+GetSpecifyMaterialData returns the SpecifyMaterialData field if non-nil, zero value otherwise.
+
+### GetSpecifyMaterialDataOk
+
+`func (o *BTTranslateFormatParams) GetSpecifyMaterialDataOk() (*bool, bool)`
+
+GetSpecifyMaterialDataOk returns a tuple with the SpecifyMaterialData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecifyMaterialData
+
+`func (o *BTTranslateFormatParams) SetSpecifyMaterialData(v bool)`
+
+SetSpecifyMaterialData sets SpecifyMaterialData field to given value.
+
+### HasSpecifyMaterialData
+
+`func (o *BTTranslateFormatParams) HasSpecifyMaterialData() bool`
+
+HasSpecifyMaterialData returns a boolean if a field has been set.
 
 ### GetSpecifyUnits
 

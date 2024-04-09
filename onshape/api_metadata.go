@@ -68,18 +68,19 @@ func (r ApiGetVEOPStandardContentMetadataRequest) Execute() (*BTMetadataObjectIn
 /*
 GetVEOPStandardContentMetadata Get the metadata for a standard content part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the part in the `pid` path parameter.
 * The `configuration` and `linkDocumentId` query parameters are required.
 * `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param vid
- @param eid
- @param pid
- @return ApiGetVEOPStandardContentMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param vid
+	@param eid
+	@param pid
+	@return ApiGetVEOPStandardContentMetadataRequest
 */
 func (a *MetadataApiService) GetVEOPStandardContentMetadata(ctx context.Context, did string, vid string, eid string, pid string) ApiGetVEOPStandardContentMetadataRequest {
 	return ApiGetVEOPStandardContentMetadataRequest{
@@ -93,7 +94,8 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadata(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPStandardContentMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -252,6 +254,7 @@ func (r ApiGetWMVEMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Respo
 /*
 GetWMVEMetadata Get the metadata for an element.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner.
 * `configuration` optional query parameter defaults to default configuration.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
@@ -259,12 +262,12 @@ GetWMVEMetadata Get the metadata for an element.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetWMVEMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetWMVEMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetWMVEMetadataRequest {
 	return ApiGetWMVEMetadataRequest{
@@ -278,7 +281,8 @@ func (a *MetadataApiService) GetWMVEMetadata(ctx context.Context, did string, wv
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetWMVEMetadataExecute(r ApiGetWMVEMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -454,6 +458,7 @@ func (r ApiGetWMVEPMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Resp
 /*
 GetWMVEPMetadata Get the metadata for a part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the part in the `iden` or `pid` path parameter.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
@@ -461,14 +466,14 @@ GetWMVEPMetadata Get the metadata for a part.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
- @param pid
- @return ApiGetWMVEPMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
+	@param pid
+	@return ApiGetWMVEPMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEPMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string, iden string, pid string) ApiGetWMVEPMetadataRequest {
 	return ApiGetWMVEPMetadataRequest{
@@ -484,7 +489,8 @@ func (a *MetadataApiService) GetWMVEPMetadata(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetWMVEPMetadataExecute(r ApiGetWMVEPMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -649,6 +655,7 @@ func (r ApiGetWMVEPsMetadataRequest) Execute() (*BTMetadataObjectListInfoBTMetad
 /*
 GetWMVEPsMetadata Get the metadata for all parts in a document.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
@@ -656,12 +663,12 @@ GetWMVEPsMetadata Get the metadata for all parts in a document.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetWMVEPsMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetWMVEPsMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEPsMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetWMVEPsMetadataRequest {
 	return ApiGetWMVEPsMetadataRequest{
@@ -675,7 +682,8 @@ func (a *MetadataApiService) GetWMVEPsMetadata(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectListInfoBTMetadataPartInfo
+//
+//	@return BTMetadataObjectListInfoBTMetadataPartInfo
 func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequest) (*BTMetadataObjectListInfoBTMetadataPartInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -829,17 +837,18 @@ func (r ApiGetWMVEsMetadataRequest) Execute() (*BTMetadataObjectListInfoBTMetada
 /*
 GetWMVEsMetadata Get the metadata for all elements in a document.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * You can specify the optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
 * `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @return ApiGetWMVEsMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@return ApiGetWMVEsMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEsMetadata(ctx context.Context, did string, wvm string, wvmid string) ApiGetWMVEsMetadataRequest {
 	return ApiGetWMVEsMetadataRequest{
@@ -852,7 +861,8 @@ func (a *MetadataApiService) GetWMVEsMetadata(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectListInfoBTMetadataElementInfo
+//
+//	@return BTMetadataObjectListInfoBTMetadataElementInfo
 func (a *MetadataApiService) GetWMVEsMetadataExecute(r ApiGetWMVEsMetadataRequest) (*BTMetadataObjectListInfoBTMetadataElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1005,17 +1015,18 @@ func (r ApiGetWVMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Respons
 /*
 GetWVMetadata Get the metadata for a workspace or version.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
 * `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @return ApiGetWVMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@return ApiGetWVMetadataRequest
 */
 func (a *MetadataApiService) GetWVMetadata(ctx context.Context, did string, wv string, wvid string) ApiGetWVMetadataRequest {
 	return ApiGetWVMetadataRequest{
@@ -1028,7 +1039,8 @@ func (a *MetadataApiService) GetWVMetadata(ctx context.Context, did string, wv s
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetWVMetadataExecute(r ApiGetWVMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1155,13 +1167,14 @@ func (r ApiUpdateVEOPStandardContentPartMetadataRequest) Execute() (map[string]i
 /*
 UpdateVEOPStandardContentPartMetadata Update the metadata for a standard content part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the document ID to update in the `did` path param.
 * Specify the document in which you have inserted the standard content part in the `linkDocumentId` query param.
 * Specify the property metadata to update in the Request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiUpdateVEOPStandardContentPartMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiUpdateVEOPStandardContentPartMetadataRequest
 */
 func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadata(ctx context.Context, did string) ApiUpdateVEOPStandardContentPartMetadataRequest {
 	return ApiUpdateVEOPStandardContentPartMetadataRequest{
@@ -1172,7 +1185,8 @@ func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadata(ctx context.C
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadataExecute(r ApiUpdateVEOPStandardContentPartMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1291,15 +1305,16 @@ func (r ApiUpdateWVEMetadataRequest) Execute() (map[string]interface{}, *http.Re
 /*
 UpdateWVEMetadata Update the metadata for an element.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Microversion (`m`) in `wvm` path parameter option is not supported.
 * Specify the property metadata to update in the Request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiUpdateWVEMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiUpdateWVEMetadataRequest
 */
 func (a *MetadataApiService) UpdateWVEMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateWVEMetadataRequest {
 	return ApiUpdateWVEMetadataRequest{
@@ -1313,7 +1328,8 @@ func (a *MetadataApiService) UpdateWVEMetadata(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateWVEMetadataExecute(r ApiUpdateWVEMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1458,19 +1474,20 @@ func (r ApiUpdateWVEPMetadataRequest) Execute() (map[string]interface{}, *http.R
 /*
 UpdateWVEPMetadata Update the metadata for a part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the part in the `iden` or `pid` path parameter.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
 * Specify the property metadata to update in the Request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
- @param pid
- @return ApiUpdateWVEPMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
+	@param pid
+	@return ApiUpdateWVEPMetadataRequest
 */
 func (a *MetadataApiService) UpdateWVEPMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string, iden string, pid string) ApiUpdateWVEPMetadataRequest {
 	return ApiUpdateWVEPMetadataRequest{
@@ -1486,7 +1503,8 @@ func (a *MetadataApiService) UpdateWVEPMetadata(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateWVEPMetadataExecute(r ApiUpdateWVEPMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1611,13 +1629,13 @@ func (r ApiUpdateWVMetadataRequest) Execute() (map[string]interface{}, *http.Res
 /*
 UpdateWVMetadata Update the metadata for a workspace or version.
 
-Specify the property metadata to update in the Request body.
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @return ApiUpdateWVMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@return ApiUpdateWVMetadataRequest
 */
 func (a *MetadataApiService) UpdateWVMetadata(ctx context.Context, did string, wv string, wvid string) ApiUpdateWVMetadataRequest {
 	return ApiUpdateWVMetadataRequest{
@@ -1630,7 +1648,8 @@ func (a *MetadataApiService) UpdateWVMetadata(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateWVMetadataExecute(r ApiUpdateWVMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

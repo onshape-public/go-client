@@ -37,27 +37,38 @@ GetFolderAcl Get the Access Control List (ACL) for a folder to view permissions.
 
 Returns the ACL of permission objects. Each object contains:
 * The type of entity
-    * 0 (User)
-    * 1 (Company)
-    * 2 (Team)
-    * 3 (Document)
-    * 4 (Application)
- * The ID of the entity for the specified type.
-* The permissions for that entity.
-    *  OWNER (100): All permissions, including those not listed, such as permission to transfer ownership.
-    * DELETE (90)
-    * RESHARE (80)
-    * WRITE (70)
-    * READ (60)
-    * LINK (50)
-    * COPY (30): Can copy workspace
-    * EXPORT (20): Can export geometry
-    * COMMENT (10)
-    * ANONYMOUS_ACCESS (5): Special, restricted read access
+  - 0 (User)
+  - 1 (Company)
+  - 2 (Team)
+  - 3 (Document)
+  - 4 (Application)
+  - The ID of the entity for the specified type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fid
- @return ApiGetFolderAclRequest
+* The permissions for that entity.
+
+  - OWNER (100): All permissions, including those not listed, such as permission to transfer ownership.
+
+  - DELETE (90)
+
+  - RESHARE (80)
+
+  - WRITE (70)
+
+  - READ (60)
+
+  - LINK (50)
+
+  - COPY (30): Can copy workspace
+
+  - EXPORT (20): Can export geometry
+
+  - COMMENT (10)
+
+  - ANONYMOUS_ACCESS (5): Special, restricted read access
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @param fid
+    @return ApiGetFolderAclRequest
 */
 func (a *FolderApiService) GetFolderAcl(ctx context.Context, fid string) ApiGetFolderAclRequest {
 	return ApiGetFolderAclRequest{
@@ -68,7 +79,8 @@ func (a *FolderApiService) GetFolderAcl(ctx context.Context, fid string) ApiGetF
 }
 
 // Execute executes the request
-//  @return BTAclInfo
+//
+//	@return BTAclInfo
 func (a *FolderApiService) GetFolderAclExecute(r ApiGetFolderAclRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -170,28 +182,41 @@ func (r ApiShareRequest) Execute() (*BTAclInfo, *http.Response, error) {
 Share Share folder with an entity.
 
 * Specify the type of entity to share with using `entries.entryType`:
-    * 0 (User)
-    * 1 (Company)
-    * 2 (Team)
-    * 3 (Document)
-    * 4 (Application)
-* Provide one of the identifiers in the `entries` object in the request body.
-    * You can share with non-Onshape users with the `email` field when `entryType=0`.
- * Provide the string for the permission set. Do not include the integer in parentheses:
-    * OWNER (100): Object owner. Implies all permissions including those not listed such as permission to transfer ownership.
-    * DELETE (90)
-    * RESHARE (80)
-    * WRITE (70)
-    * READ (60)
-    * LINK (50)
-    * COPY (30): Can copy workspace
-    * EXPORT (20): Can export geometry
-    * COMMENT (10)
-    * ANONYMOUS_ACCESS (5): Special, restricted read access
+  - 0 (User)
+  - 1 (Company)
+  - 2 (Team)
+  - 3 (Document)
+  - 4 (Application)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fid
- @return ApiShareRequest
+* Provide one of the identifiers in the `entries` object in the request body.
+
+  - You can share with non-Onshape users with the `email` field when `entryType=0`.
+
+  - Provide the string for the permission set. Do not include the integer in parentheses:
+
+  - OWNER (100): Object owner. Implies all permissions including those not listed such as permission to transfer ownership.
+
+  - DELETE (90)
+
+  - RESHARE (80)
+
+  - WRITE (70)
+
+  - READ (60)
+
+  - LINK (50)
+
+  - COPY (30): Can copy workspace
+
+  - EXPORT (20): Can export geometry
+
+  - COMMENT (10)
+
+  - ANONYMOUS_ACCESS (5): Special, restricted read access
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @param fid
+    @return ApiShareRequest
 */
 func (a *FolderApiService) Share(ctx context.Context, fid string) ApiShareRequest {
 	return ApiShareRequest{
@@ -202,7 +227,8 @@ func (a *FolderApiService) Share(ctx context.Context, fid string) ApiShareReques
 }
 
 // Execute executes the request
-//  @return BTAclInfo
+//
+//	@return BTAclInfo
 func (a *FolderApiService) ShareExecute(r ApiShareRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -310,18 +336,19 @@ func (r ApiUnShareRequest) Execute() (map[string]interface{}, *http.Response, er
 UnShare Remove permissions from the folder for the specified Access Control List (ACL) entry.
 
 * Provide the folder ID for the folder to unshare.
- * Provide the `entityType` for the type of entity to remove.
-    * 0 (User)
-    * 1 (Company)
-    * 2 (Team)
-    * 3 (Document)
-    * 4 (Application)
+  - Provide the `entityType` for the type of entity to remove.
+  - 0 (User)
+  - 1 (Company)
+  - 2 (Team)
+  - 3 (Document)
+  - 4 (Application)
+
 * Provide the entity ID in the `eid` param.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fid
- @param eid
- @return ApiUnShareRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fid
+	@param eid
+	@return ApiUnShareRequest
 */
 func (a *FolderApiService) UnShare(ctx context.Context, fid string, eid string) ApiUnShareRequest {
 	return ApiUnShareRequest{
@@ -333,7 +360,8 @@ func (a *FolderApiService) UnShare(ctx context.Context, fid string, eid string) 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *FolderApiService) UnShareExecute(r ApiUnShareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
