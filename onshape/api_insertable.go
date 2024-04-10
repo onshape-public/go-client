@@ -177,9 +177,9 @@ GetLatestInDocument Get a list of things in this document that can be inserted e
 * Use the document ID (`did`) parameter to specify the source document, not the insertion target.
 * For example, you can insert a custom Feature library into another custom Feature library, insert Parts into an Assembly or a Drawing, etc.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetLatestInDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetLatestInDocumentRequest
 */
 func (a *InsertableApiService) GetLatestInDocument(ctx context.Context, did string) ApiGetLatestInDocumentRequest {
 	return ApiGetLatestInDocumentRequest{
@@ -190,7 +190,8 @@ func (a *InsertableApiService) GetLatestInDocument(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return BTListResponseBTInsertableInfo
+//
+//	@return BTListResponseBTInsertableInfo
 func (a *InsertableApiService) GetLatestInDocumentExecute(r ApiGetLatestInDocumentRequest) (*BTListResponseBTInsertableInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

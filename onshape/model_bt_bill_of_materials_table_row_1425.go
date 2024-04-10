@@ -23,6 +23,7 @@ type BTBillOfMaterialsTableRow1425 struct {
 	NodeId                 *string                            `json:"nodeId,omitempty"`
 	RowMetadata            *BTTableBaseRowMetadata3181        `json:"rowMetadata,omitempty"`
 	ExcludeIsEditable      *bool                              `json:"excludeIsEditable,omitempty"`
+	ExcludeIsOverridden    *bool                              `json:"excludeIsOverridden,omitempty"`
 	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus `json:"exclusionStatus,omitempty"`
 	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus `json:"expansionStatus,omitempty"`
 	IndentLevel            *int32                             `json:"indentLevel,omitempty"`
@@ -273,6 +274,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsEditable(v bool) {
 	o.ExcludeIsEditable = &v
 }
 
+// GetExcludeIsOverridden returns the ExcludeIsOverridden field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverridden() bool {
+	if o == nil || o.ExcludeIsOverridden == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeIsOverridden
+}
+
+// GetExcludeIsOverriddenOk returns a tuple with the ExcludeIsOverridden field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverriddenOk() (*bool, bool) {
+	if o == nil || o.ExcludeIsOverridden == nil {
+		return nil, false
+	}
+	return o.ExcludeIsOverridden, true
+}
+
+// HasExcludeIsOverridden returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasExcludeIsOverridden() bool {
+	if o != nil && o.ExcludeIsOverridden != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeIsOverridden gets a reference to the given bool and assigns it to the ExcludeIsOverridden field.
+func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsOverridden(v bool) {
+	o.ExcludeIsOverridden = &v
+}
+
 // GetExclusionStatus returns the ExclusionStatus field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() GBTBillOfMaterialsExclusionStatus {
 	if o == nil || o.ExclusionStatus == nil {
@@ -519,6 +552,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExcludeIsEditable != nil {
 		toSerialize["excludeIsEditable"] = o.ExcludeIsEditable
+	}
+	if o.ExcludeIsOverridden != nil {
+		toSerialize["excludeIsOverridden"] = o.ExcludeIsOverridden
 	}
 	if o.ExclusionStatus != nil {
 		toSerialize["exclusionStatus"] = o.ExclusionStatus

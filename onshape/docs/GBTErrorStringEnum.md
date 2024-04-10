@@ -2949,6 +2949,22 @@
 
 * `GBTErrorStringEnumSplitAsModificationMultipleResults` (value: `"SPLIT_AS_MODIFICATION_MULTIPLE_RESULTS"`)
 
+* `GBTErrorStringEnumFormedTagFormNoFeaturePattern` (value: `"FORMED_TAG_FORM_NO_FEATURE_PATTERN"`)
+
+* `GBTErrorStringEnumFormedTagFormSelectDifferentParts` (value: `"FORMED_TAG_FORM_SELECT_DIFFERENT_PARTS"`)
+
+* `GBTErrorStringEnumFormedTagFormSelectSketch` (value: `"FORMED_TAG_FORM_SELECT_SKETCH"`)
+
+* `GBTErrorStringEnumFormedTagFormSelectSomething` (value: `"FORMED_TAG_FORM_SELECT_SOMETHING"`)
+
+* `GBTErrorStringEnumIsoparametricCurveSelectFace` (value: `"ISOPARAMETRIC_CURVE_SELECT_FACE"`)
+
+* `GBTErrorStringEnumIsoparametricCurveSelectPoint` (value: `"ISOPARAMETRIC_CURVE_SELECT_POINT"`)
+
+* `GBTErrorStringEnumIsoparametricCurveSelectPosition` (value: `"ISOPARAMETRIC_CURVE_SELECT_POSITION"`)
+
+* `GBTErrorStringEnumIsoparametricCurvePointNotOnFace` (value: `"ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

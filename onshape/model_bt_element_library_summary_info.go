@@ -20,6 +20,8 @@ type BTElementLibrarySummaryInfo struct {
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
 	Id *string `json:"id,omitempty"`
+	// The ID of the definition of the element library.
+	LibraryDefinitionId *string `json:"libraryDefinitionId,omitempty"`
 	// The Id of the library -- unique across Onshape.
 	LibraryId *string `json:"libraryId,omitempty"`
 	// The current version Id of the library.
@@ -30,8 +32,6 @@ type BTElementLibrarySummaryInfo struct {
 	OwnerId *string `json:"ownerId,omitempty"`
 	// The type of library owner, Onshape, user, or company
 	OwnerType *int32 `json:"ownerType,omitempty"`
-	// The purpose string identifying the type of element library.
-	Purpose *string `json:"purpose,omitempty"`
 	// The id of the root folder of the library
 	SourceFolderId *string `json:"sourceFolderId,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
@@ -117,6 +117,38 @@ func (o *BTElementLibrarySummaryInfo) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *BTElementLibrarySummaryInfo) SetId(v string) {
 	o.Id = &v
+}
+
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *BTElementLibrarySummaryInfo) GetLibraryDefinitionId() string {
+	if o == nil || o.LibraryDefinitionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.LibraryDefinitionId
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementLibrarySummaryInfo) GetLibraryDefinitionIdOk() (*string, bool) {
+	if o == nil || o.LibraryDefinitionId == nil {
+		return nil, false
+	}
+	return o.LibraryDefinitionId, true
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *BTElementLibrarySummaryInfo) HasLibraryDefinitionId() bool {
+	if o != nil && o.LibraryDefinitionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *BTElementLibrarySummaryInfo) SetLibraryDefinitionId(v string) {
+	o.LibraryDefinitionId = &v
 }
 
 // GetLibraryId returns the LibraryId field value if set, zero value otherwise.
@@ -279,38 +311,6 @@ func (o *BTElementLibrarySummaryInfo) SetOwnerType(v int32) {
 	o.OwnerType = &v
 }
 
-// GetPurpose returns the Purpose field value if set, zero value otherwise.
-func (o *BTElementLibrarySummaryInfo) GetPurpose() string {
-	if o == nil || o.Purpose == nil {
-		var ret string
-		return ret
-	}
-	return *o.Purpose
-}
-
-// GetPurposeOk returns a tuple with the Purpose field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTElementLibrarySummaryInfo) GetPurposeOk() (*string, bool) {
-	if o == nil || o.Purpose == nil {
-		return nil, false
-	}
-	return o.Purpose, true
-}
-
-// HasPurpose returns a boolean if a field has been set.
-func (o *BTElementLibrarySummaryInfo) HasPurpose() bool {
-	if o != nil && o.Purpose != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPurpose gets a reference to the given string and assigns it to the Purpose field.
-func (o *BTElementLibrarySummaryInfo) SetPurpose(v string) {
-	o.Purpose = &v
-}
-
 // GetSourceFolderId returns the SourceFolderId field value if set, zero value otherwise.
 func (o *BTElementLibrarySummaryInfo) GetSourceFolderId() string {
 	if o == nil || o.SourceFolderId == nil {
@@ -383,6 +383,9 @@ func (o BTElementLibrarySummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
+	if o.LibraryDefinitionId != nil {
+		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
+	}
 	if o.LibraryId != nil {
 		toSerialize["libraryId"] = o.LibraryId
 	}
@@ -397,9 +400,6 @@ func (o BTElementLibrarySummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.OwnerType != nil {
 		toSerialize["ownerType"] = o.OwnerType
-	}
-	if o.Purpose != nil {
-		toSerialize["purpose"] = o.Purpose
 	}
 	if o.SourceFolderId != nil {
 		toSerialize["sourceFolderId"] = o.SourceFolderId

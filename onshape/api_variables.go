@@ -49,10 +49,10 @@ func (r ApiCreateVariableStudioRequest) Execute() (*BTDocumentElementInfo, *http
 /*
 CreateVariableStudio Create a new Variable Studio in a document and workspace.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @return ApiCreateVariableStudioRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@return ApiCreateVariableStudioRequest
 */
 func (a *VariablesApiService) CreateVariableStudio(ctx context.Context, did string, wid string) ApiCreateVariableStudioRequest {
 	return ApiCreateVariableStudioRequest{
@@ -64,7 +64,8 @@ func (a *VariablesApiService) CreateVariableStudio(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *VariablesApiService) CreateVariableStudioExecute(r ApiCreateVariableStudioRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -178,12 +179,12 @@ func (r ApiGetVariableStudioReferencesRequest) Execute() (*BTVariableStudioRefer
 /*
 GetVariableStudioReferences Get the Variable Studio references for an element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetVariableStudioReferencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetVariableStudioReferencesRequest
 */
 func (a *VariablesApiService) GetVariableStudioReferences(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariableStudioReferencesRequest {
 	return ApiGetVariableStudioReferencesRequest{
@@ -197,7 +198,8 @@ func (a *VariablesApiService) GetVariableStudioReferences(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return BTVariableStudioReferenceListInfo
+//
+//	@return BTVariableStudioReferenceListInfo
 func (a *VariablesApiService) GetVariableStudioReferencesExecute(r ApiGetVariableStudioReferencesRequest) (*BTVariableStudioReferenceListInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -308,12 +310,12 @@ func (r ApiGetVariableStudioScopeRequest) Execute() (*BTVariableStudioScopeInfo,
 /*
 GetVariableStudioScope Get the scope of a Variable Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetVariableStudioScopeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetVariableStudioScopeRequest
 */
 func (a *VariablesApiService) GetVariableStudioScope(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariableStudioScopeRequest {
 	return ApiGetVariableStudioScopeRequest{
@@ -327,7 +329,8 @@ func (a *VariablesApiService) GetVariableStudioScope(ctx context.Context, did st
 }
 
 // Execute executes the request
-//  @return BTVariableStudioScopeInfo
+//
+//	@return BTVariableStudioScopeInfo
 func (a *VariablesApiService) GetVariableStudioScopeExecute(r ApiGetVariableStudioScopeRequest) (*BTVariableStudioScopeInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -451,12 +454,12 @@ func (r ApiGetVariablesRequest) Execute() (*BTVariableTableInfo, *http.Response,
 /*
 GetVariables Get the contents of all variable tables in an element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetVariablesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetVariablesRequest
 */
 func (a *VariablesApiService) GetVariables(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariablesRequest {
 	return ApiGetVariablesRequest{
@@ -470,7 +473,8 @@ func (a *VariablesApiService) GetVariables(ctx context.Context, did string, wv s
 }
 
 // Execute executes the request
-//  @return BTVariableTableInfo
+//
+//	@return BTVariableTableInfo
 func (a *VariablesApiService) GetVariablesExecute(r ApiGetVariablesRequest) (*BTVariableTableInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -592,11 +596,11 @@ func (r ApiSetVariableStudioReferencesRequest) Execute() (map[string]interface{}
 /*
 SetVariableStudioReferences Set the Variable Studio references for an element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid
- @return ApiSetVariableStudioReferencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid
+	@return ApiSetVariableStudioReferencesRequest
 */
 func (a *VariablesApiService) SetVariableStudioReferences(ctx context.Context, did string, wid string, eid string) ApiSetVariableStudioReferencesRequest {
 	return ApiSetVariableStudioReferencesRequest{
@@ -609,7 +613,8 @@ func (a *VariablesApiService) SetVariableStudioReferences(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *VariablesApiService) SetVariableStudioReferencesExecute(r ApiSetVariableStudioReferencesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -729,11 +734,11 @@ func (r ApiSetVariableStudioScopeRequest) Execute() (map[string]interface{}, *ht
 /*
 SetVariableStudioScope Set the scope the Variable Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid
- @return ApiSetVariableStudioScopeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid
+	@return ApiSetVariableStudioScopeRequest
 */
 func (a *VariablesApiService) SetVariableStudioScope(ctx context.Context, did string, wid string, eid string) ApiSetVariableStudioScopeRequest {
 	return ApiSetVariableStudioScopeRequest{
@@ -746,7 +751,8 @@ func (a *VariablesApiService) SetVariableStudioScope(ctx context.Context, did st
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *VariablesApiService) SetVariableStudioScopeExecute(r ApiSetVariableStudioScopeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -866,11 +872,11 @@ func (r ApiSetVariablesRequest) Execute() (map[string]interface{}, *http.Respons
 /*
 SetVariables Assign variables to a Variable Studio
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid
- @return ApiSetVariablesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid
+	@return ApiSetVariablesRequest
 */
 func (a *VariablesApiService) SetVariables(ctx context.Context, did string, wid string, eid string) ApiSetVariablesRequest {
 	return ApiSetVariablesRequest{
@@ -883,7 +889,8 @@ func (a *VariablesApiService) SetVariables(ctx context.Context, did string, wid 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *VariablesApiService) SetVariablesExecute(r ApiSetVariablesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -44,10 +44,10 @@ CreateFeatureStudio Create a new Feature Studio tab in a document.
 
 Specify the name for the new tab in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiCreateFeatureStudioRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiCreateFeatureStudioRequest
 */
 func (a *FeatureStudioApiService) CreateFeatureStudio(ctx context.Context, did string, wid string) ApiCreateFeatureStudioRequest {
 	return ApiCreateFeatureStudioRequest{
@@ -59,7 +59,8 @@ func (a *FeatureStudioApiService) CreateFeatureStudio(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *FeatureStudioApiService) CreateFeatureStudioExecute(r ApiCreateFeatureStudioRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -163,12 +164,12 @@ func (r ApiGetFeatureStudioContentsRequest) Execute() (*BTFeatureStudioContents2
 /*
 GetFeatureStudioContents Get the text for a Feature Studio element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiGetFeatureStudioContentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiGetFeatureStudioContentsRequest
 */
 func (a *FeatureStudioApiService) GetFeatureStudioContents(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureStudioContentsRequest {
 	return ApiGetFeatureStudioContentsRequest{
@@ -182,7 +183,8 @@ func (a *FeatureStudioApiService) GetFeatureStudioContents(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return BTFeatureStudioContents2239
+//
+//	@return BTFeatureStudioContents2239
 func (a *FeatureStudioApiService) GetFeatureStudioContentsExecute(r ApiGetFeatureStudioContentsRequest) (*BTFeatureStudioContents2239, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -283,12 +285,12 @@ func (r ApiGetFeatureStudioSpecsRequest) Execute() (*BTFeatureSpecsResponse664, 
 /*
 GetFeatureStudioSpecs Get the feature specs for a Feature Studio element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiGetFeatureStudioSpecsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiGetFeatureStudioSpecsRequest
 */
 func (a *FeatureStudioApiService) GetFeatureStudioSpecs(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureStudioSpecsRequest {
 	return ApiGetFeatureStudioSpecsRequest{
@@ -302,7 +304,8 @@ func (a *FeatureStudioApiService) GetFeatureStudioSpecs(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return BTFeatureSpecsResponse664
+//
+//	@return BTFeatureSpecsResponse664
 func (a *FeatureStudioApiService) GetFeatureStudioSpecsExecute(r ApiGetFeatureStudioSpecsRequest) (*BTFeatureSpecsResponse664, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -409,12 +412,12 @@ func (r ApiUpdateFeatureStudioContentsRequest) Execute() (*BTFeatureStudioConten
 /*
 UpdateFeatureStudioContents Update the text for a Feature Studio element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiUpdateFeatureStudioContentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiUpdateFeatureStudioContentsRequest
 */
 func (a *FeatureStudioApiService) UpdateFeatureStudioContents(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateFeatureStudioContentsRequest {
 	return ApiUpdateFeatureStudioContentsRequest{
@@ -428,7 +431,8 @@ func (a *FeatureStudioApiService) UpdateFeatureStudioContents(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return BTFeatureStudioContents2239
+//
+//	@return BTFeatureStudioContents2239
 func (a *FeatureStudioApiService) UpdateFeatureStudioContentsExecute(r ApiUpdateFeatureStudioContentsRequest) (*BTFeatureStudioContents2239, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

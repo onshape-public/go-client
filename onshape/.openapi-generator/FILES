@@ -6,6 +6,7 @@ api_account.go
 api_alias.go
 api_api_application.go
 api_app_associative_data.go
+api_app_drawing_view.go
 api_app_element.go
 api_assembly.go
 api_billing.go
@@ -59,6 +60,7 @@ docs/AnimationSampler.md
 docs/ApiResponse.md
 docs/ApiResponseContent.md
 docs/AppAssociativeDataApi.md
+docs/AppDrawingViewApi.md
 docs/AppElementApi.md
 docs/AssemblyApi.md
 docs/Asset.md
@@ -93,7 +95,9 @@ docs/BTApiTableColumn3141.md
 docs/BTApiTableList1223.md
 docs/BTApiTableRow2915.md
 docs/BTApiVersion.md
+docs/BTAppArrayInfoBTAppDrawingViewInfo.md
 docs/BTAppAssociativeDataArrayInfo.md
+docs/BTAppDrawingViewInfo.md
 docs/BTAppElementBasicInfo.md
 docs/BTAppElementBulkCreateInfo.md
 docs/BTAppElementBulkCreateParams.md
@@ -116,6 +120,7 @@ docs/BTAppElementReferencesResolveInfo.md
 docs/BTAppElementStartTransactionParams.md
 docs/BTAppElementTransactionsInfo.md
 docs/BTAppElementUpdateParams.md
+docs/BTAppElementViewGeometryProperties1100.md
 docs/BTAppModificationRequestInfo.md
 docs/BTAppModificationRequestState.md
 docs/BTAppearanceOverride2517.md
@@ -192,6 +197,7 @@ docs/BTBodyTypeFilter112.md
 docs/BTBodyTypeFilter112AllOf.md
 docs/BTBoundingBox1052.md
 docs/BTBoundingBoxInfo.md
+docs/BTBrokenOutEndCondition1107.md
 docs/BTCacheDataPath191.md
 docs/BTCardInfo.md
 docs/BTCategoryParam.md
@@ -1525,7 +1531,9 @@ model_bt_api_table_column_3141.go
 model_bt_api_table_list_1223.go
 model_bt_api_table_row_2915.go
 model_bt_api_version.go
+model_bt_app_array_info_bt_app_drawing_view_info.go
 model_bt_app_associative_data_array_info.go
+model_bt_app_drawing_view_info.go
 model_bt_app_element_basic_info.go
 model_bt_app_element_bulk_create_info.go
 model_bt_app_element_bulk_create_params.go
@@ -1548,6 +1556,7 @@ model_bt_app_element_references_resolve_info.go
 model_bt_app_element_start_transaction_params.go
 model_bt_app_element_transactions_info.go
 model_bt_app_element_update_params.go
+model_bt_app_element_view_geometry_properties_1100.go
 model_bt_app_modification_request_info.go
 model_bt_app_modification_request_state.go
 model_bt_appearance_override_2517.go
@@ -1606,6 +1615,7 @@ model_bt_body_entity_26.go
 model_bt_body_type_filter_112.go
 model_bt_bounding_box_1052.go
 model_bt_bounding_box_info.go
+model_bt_broken_out_end_condition_1107.go
 model_bt_cache_data_path_191.go
 model_bt_card_info.go
 model_bt_category_param.go

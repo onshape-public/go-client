@@ -877,6 +877,56 @@ func (o *BTParameterSpecReference2789) SetDefaultPurpose(v BTElementLibraryPurpo
 	o.GetActualInstance().(getResult).SetDefaultPurpose(v)
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *BTParameterSpecReference2789) GetLibraryDefinitionId() string {
+	type getResult interface {
+		GetLibraryDefinitionId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryDefinitionId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReference2789) GetLibraryDefinitionIdOk() (*string, bool) {
+	type getResult interface {
+		GetLibraryDefinitionIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryDefinitionIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *BTParameterSpecReference2789) HasLibraryDefinitionId() bool {
+	type getResult interface {
+		HasLibraryDefinitionId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLibraryDefinitionId()
+	} else {
+		return false
+	}
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *BTParameterSpecReference2789) SetLibraryDefinitionId(v string) {
+	type getResult interface {
+		SetLibraryDefinitionId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetLibraryDefinitionId(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1081,6 +1131,7 @@ type base_BTParameterSpecReference2789 struct {
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 	DefaultPurpose             *BTElementLibraryPurpose3353       `json:"defaultPurpose,omitempty"`
+	LibraryDefinitionId        *string                            `json:"libraryDefinitionId,omitempty"`
 }
 
 // Newbase_BTParameterSpecReference2789 instantiates a new base_BTParameterSpecReference2789 object
@@ -1612,6 +1663,38 @@ func (o *base_BTParameterSpecReference2789) SetDefaultPurpose(v BTElementLibrary
 	o.DefaultPurpose = &v
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *base_BTParameterSpecReference2789) GetLibraryDefinitionId() string {
+	if o == nil || o.LibraryDefinitionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.LibraryDefinitionId
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterSpecReference2789) GetLibraryDefinitionIdOk() (*string, bool) {
+	if o == nil || o.LibraryDefinitionId == nil {
+		return nil, false
+	}
+	return o.LibraryDefinitionId, true
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *base_BTParameterSpecReference2789) HasLibraryDefinitionId() bool {
+	if o != nil && o.LibraryDefinitionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *base_BTParameterSpecReference2789) SetLibraryDefinitionId(v string) {
+	o.LibraryDefinitionId = &v
+}
+
 func (o base_BTParameterSpecReference2789) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AdditionalLocalizedStrings != nil {
@@ -1661,6 +1744,9 @@ func (o base_BTParameterSpecReference2789) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultPurpose != nil {
 		toSerialize["defaultPurpose"] = o.DefaultPurpose
+	}
+	if o.LibraryDefinitionId != nil {
+		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
 	}
 	return json.Marshal(toSerialize)
 }

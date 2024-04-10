@@ -32,6 +32,7 @@ type BTParameterSpecReferenceWithConfiguration2950 struct {
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 	DefaultPurpose             *BTElementLibraryPurpose3353       `json:"defaultPurpose,omitempty"`
+	LibraryDefinitionId        *string                            `json:"libraryDefinitionId,omitempty"`
 	AllowAssemblies            *bool                              `json:"allowAssemblies,omitempty"`
 	AllowedInsertableTypes     []GBTPartStudioItemType            `json:"allowedInsertableTypes,omitempty"`
 	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
@@ -566,6 +567,38 @@ func (o *BTParameterSpecReferenceWithConfiguration2950) SetDefaultPurpose(v BTEl
 	o.DefaultPurpose = &v
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *BTParameterSpecReferenceWithConfiguration2950) GetLibraryDefinitionId() string {
+	if o == nil || o.LibraryDefinitionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.LibraryDefinitionId
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferenceWithConfiguration2950) GetLibraryDefinitionIdOk() (*string, bool) {
+	if o == nil || o.LibraryDefinitionId == nil {
+		return nil, false
+	}
+	return o.LibraryDefinitionId, true
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *BTParameterSpecReferenceWithConfiguration2950) HasLibraryDefinitionId() bool {
+	if o != nil && o.LibraryDefinitionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *BTParameterSpecReferenceWithConfiguration2950) SetLibraryDefinitionId(v string) {
+	o.LibraryDefinitionId = &v
+}
+
 // GetAllowAssemblies returns the AllowAssemblies field value if set, zero value otherwise.
 func (o *BTParameterSpecReferenceWithConfiguration2950) GetAllowAssemblies() bool {
 	if o == nil || o.AllowAssemblies == nil {
@@ -711,6 +744,9 @@ func (o BTParameterSpecReferenceWithConfiguration2950) MarshalJSON() ([]byte, er
 	}
 	if o.DefaultPurpose != nil {
 		toSerialize["defaultPurpose"] = o.DefaultPurpose
+	}
+	if o.LibraryDefinitionId != nil {
+		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
 	}
 	if o.AllowAssemblies != nil {
 		toSerialize["allowAssemblies"] = o.AllowAssemblies
