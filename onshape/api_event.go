@@ -39,8 +39,8 @@ func (r ApiFireEventRequest) Execute() (map[string]interface{}, *http.Response, 
 /*
 FireEvent Fire an asynchronous event.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiFireEventRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiFireEventRequest
 */
 func (a *EventApiService) FireEvent(ctx context.Context) ApiFireEventRequest {
 	return ApiFireEventRequest{
@@ -50,7 +50,8 @@ func (a *EventApiService) FireEvent(ctx context.Context) ApiFireEventRequest {
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *EventApiService) FireEventExecute(r ApiFireEventRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

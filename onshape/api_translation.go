@@ -220,10 +220,10 @@ CreateTranslation Upload a foreign file into Onshape and translate the data into
 
 The API call may complete before the translation is finished. If `requestState = ACTIVE`, the translation can be polled until the state is either `DONE` or `FAILED`. Alternatively, a webhook callback can be registered for notification of translation completion (requires `Write` scope if `storeInDocument` is `true`). See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiCreateTranslationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiCreateTranslationRequest
 */
 func (a *TranslationApiService) CreateTranslation(ctx context.Context, did string, wid string) ApiCreateTranslationRequest {
 	return ApiCreateTranslationRequest{
@@ -235,7 +235,8 @@ func (a *TranslationApiService) CreateTranslation(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return BTTranslationRequestInfo
+//
+//	@return BTTranslationRequestInfo
 func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -422,9 +423,9 @@ func (r ApiDeleteTranslationRequest) Execute() (map[string]interface{}, *http.Re
 /*
 DeleteTranslation Delete a translation request.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tid
- @return ApiDeleteTranslationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tid
+	@return ApiDeleteTranslationRequest
 */
 func (a *TranslationApiService) DeleteTranslation(ctx context.Context, tid string) ApiDeleteTranslationRequest {
 	return ApiDeleteTranslationRequest{
@@ -435,7 +436,8 @@ func (a *TranslationApiService) DeleteTranslation(ctx context.Context, tid strin
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *TranslationApiService) DeleteTranslationExecute(r ApiDeleteTranslationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -531,8 +533,8 @@ GetAllTranslatorFormats Get a list of formats this translation can use.
 
 Note that we don't necessarily support both import and export for any given format. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllTranslatorFormatsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllTranslatorFormatsRequest
 */
 func (a *TranslationApiService) GetAllTranslatorFormats(ctx context.Context) ApiGetAllTranslatorFormatsRequest {
 	return ApiGetAllTranslatorFormatsRequest{
@@ -542,7 +544,8 @@ func (a *TranslationApiService) GetAllTranslatorFormats(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return []BTModelFormatFullInfo
+//
+//	@return []BTModelFormatFullInfo
 func (a *TranslationApiService) GetAllTranslatorFormatsExecute(r ApiGetAllTranslatorFormatsRequest) ([]BTModelFormatFullInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -648,9 +651,9 @@ func (r ApiGetDocumentTranslationsRequest) Execute() (*BTListResponseBTTranslati
 /*
 GetDocumentTranslations Get information on an in-progress or completed translation by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetDocumentTranslationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetDocumentTranslationsRequest
 */
 func (a *TranslationApiService) GetDocumentTranslations(ctx context.Context, did string) ApiGetDocumentTranslationsRequest {
 	return ApiGetDocumentTranslationsRequest{
@@ -661,7 +664,8 @@ func (a *TranslationApiService) GetDocumentTranslations(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return BTListResponseBTTranslationRequestInfo
+//
+//	@return BTListResponseBTTranslationRequestInfo
 func (a *TranslationApiService) GetDocumentTranslationsExecute(r ApiGetDocumentTranslationsRequest) (*BTListResponseBTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -764,9 +768,9 @@ GetTranslation Get information on an in-progress or completed translation by tra
 
 When the translation is complete, `requestState` changes from `ACTIVE` to `DONE` or `FAILED`. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tid
- @return ApiGetTranslationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tid
+	@return ApiGetTranslationRequest
 */
 func (a *TranslationApiService) GetTranslation(ctx context.Context, tid string) ApiGetTranslationRequest {
 	return ApiGetTranslationRequest{
@@ -777,7 +781,8 @@ func (a *TranslationApiService) GetTranslation(ctx context.Context, tid string) 
 }
 
 // Execute executes the request
-//  @return BTTranslationRequestInfo
+//
+//	@return BTTranslationRequestInfo
 func (a *TranslationApiService) GetTranslationExecute(r ApiGetTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

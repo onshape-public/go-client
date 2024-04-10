@@ -47,9 +47,9 @@ func (r ApiCreateObsoletionPackageRequest) Execute() (map[string]interface{}, *h
 /*
 CreateObsoletionPackage Create an obsoletion package to make an existing revision obsolete.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param wfid
- @return ApiCreateObsoletionPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param wfid
+	@return ApiCreateObsoletionPackageRequest
 */
 func (a *ReleasePackageApiService) CreateObsoletionPackage(ctx context.Context, wfid string) ApiCreateObsoletionPackageRequest {
 	return ApiCreateObsoletionPackageRequest{
@@ -60,7 +60,8 @@ func (a *ReleasePackageApiService) CreateObsoletionPackage(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ReleasePackageApiService) CreateObsoletionPackageExecute(r ApiCreateObsoletionPackageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -176,9 +177,9 @@ CreateReleasePackage Create a new release package for one or more items.
 
 All revisionable items must be from the same document. Once a release package is successfully created, use `updateReleasePackage` to update all desired item/package properties, and transition it to the desired state.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param wfid
- @return ApiCreateReleasePackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param wfid
+	@return ApiCreateReleasePackageRequest
 */
 func (a *ReleasePackageApiService) CreateReleasePackage(ctx context.Context, wfid string) ApiCreateReleasePackageRequest {
 	return ApiCreateReleasePackageRequest{
@@ -189,7 +190,8 @@ func (a *ReleasePackageApiService) CreateReleasePackage(ctx context.Context, wfi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ReleasePackageApiService) CreateReleasePackageExecute(r ApiCreateReleasePackageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -297,8 +299,8 @@ func (r ApiGetCompanyReleaseWorkflowRequest) Execute() (*BTActiveWorkflowInfo, *
 /*
 GetCompanyReleaseWorkflow Get information about the release/obsoletion workflow for a company-owned document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCompanyReleaseWorkflowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCompanyReleaseWorkflowRequest
 */
 func (a *ReleasePackageApiService) GetCompanyReleaseWorkflow(ctx context.Context) ApiGetCompanyReleaseWorkflowRequest {
 	return ApiGetCompanyReleaseWorkflowRequest{
@@ -308,7 +310,8 @@ func (a *ReleasePackageApiService) GetCompanyReleaseWorkflow(ctx context.Context
 }
 
 // Execute executes the request
-//  @return BTActiveWorkflowInfo
+//
+//	@return BTActiveWorkflowInfo
 func (a *ReleasePackageApiService) GetCompanyReleaseWorkflowExecute(r ApiGetCompanyReleaseWorkflowRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -411,9 +414,9 @@ func (r ApiGetReleasePackageRequest) Execute() (*BTReleasePackageInfo, *http.Res
 /*
 GetReleasePackage Get details about the specified release package.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param rpid
- @return ApiGetReleasePackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param rpid
+	@return ApiGetReleasePackageRequest
 */
 func (a *ReleasePackageApiService) GetReleasePackage(ctx context.Context, rpid string) ApiGetReleasePackageRequest {
 	return ApiGetReleasePackageRequest{
@@ -424,7 +427,8 @@ func (a *ReleasePackageApiService) GetReleasePackage(ctx context.Context, rpid s
 }
 
 // Execute executes the request
-//  @return BTReleasePackageInfo
+//
+//	@return BTReleasePackageInfo
 func (a *ReleasePackageApiService) GetReleasePackageExecute(r ApiGetReleasePackageRequest) (*BTReleasePackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -542,9 +546,9 @@ UpdateReleasePackage Update the release/obsoletion package/item properties.
 
 Use the `wfaction` query param to also perform a workflow transition.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param rpid
- @return ApiUpdateReleasePackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param rpid
+	@return ApiUpdateReleasePackageRequest
 */
 func (a *ReleasePackageApiService) UpdateReleasePackage(ctx context.Context, rpid string) ApiUpdateReleasePackageRequest {
 	return ApiUpdateReleasePackageRequest{
@@ -555,7 +559,8 @@ func (a *ReleasePackageApiService) UpdateReleasePackage(ctx context.Context, rpi
 }
 
 // Execute executes the request
-//  @return BTReleasePackageInfo
+//
+//	@return BTReleasePackageInfo
 func (a *ReleasePackageApiService) UpdateReleasePackageExecute(r ApiUpdateReleasePackageRequest) (*BTReleasePackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -32,6 +32,7 @@ type BTParameterSpecReferenceTable1520 struct {
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 	DefaultPurpose             *BTElementLibraryPurpose3353       `json:"defaultPurpose,omitempty"`
+	LibraryDefinitionId        *string                            `json:"libraryDefinitionId,omitempty"`
 }
 
 // NewBTParameterSpecReferenceTable1520 instantiates a new BTParameterSpecReferenceTable1520 object
@@ -563,6 +564,38 @@ func (o *BTParameterSpecReferenceTable1520) SetDefaultPurpose(v BTElementLibrary
 	o.DefaultPurpose = &v
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *BTParameterSpecReferenceTable1520) GetLibraryDefinitionId() string {
+	if o == nil || o.LibraryDefinitionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.LibraryDefinitionId
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferenceTable1520) GetLibraryDefinitionIdOk() (*string, bool) {
+	if o == nil || o.LibraryDefinitionId == nil {
+		return nil, false
+	}
+	return o.LibraryDefinitionId, true
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *BTParameterSpecReferenceTable1520) HasLibraryDefinitionId() bool {
+	if o != nil && o.LibraryDefinitionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *BTParameterSpecReferenceTable1520) SetLibraryDefinitionId(v string) {
+	o.LibraryDefinitionId = &v
+}
+
 func (o BTParameterSpecReferenceTable1520) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AdditionalLocalizedStrings != nil {
@@ -612,6 +645,9 @@ func (o BTParameterSpecReferenceTable1520) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultPurpose != nil {
 		toSerialize["defaultPurpose"] = o.DefaultPurpose
+	}
+	if o.LibraryDefinitionId != nil {
+		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
 	}
 	return json.Marshal(toSerialize)
 }

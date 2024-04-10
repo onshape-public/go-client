@@ -47,9 +47,9 @@ GetUserSettings Get the user settings for any user in your organization (admins 
 * Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`.
 * Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uid
- @return ApiGetUserSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uid
+	@return ApiGetUserSettingsRequest
 */
 func (a *UserApiService) GetUserSettings(ctx context.Context, uid string) ApiGetUserSettingsRequest {
 	return ApiGetUserSettingsRequest{
@@ -60,7 +60,8 @@ func (a *UserApiService) GetUserSettings(ctx context.Context, uid string) ApiGet
 }
 
 // Execute executes the request
-//  @return BTUserSettingsInfo
+//
+//	@return BTUserSettingsInfo
 func (a *UserApiService) GetUserSettingsExecute(r ApiGetUserSettingsRequest) (*BTUserSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -170,8 +171,8 @@ GetUserSettingsCurrentLoggedInUser Get the user settings for the signed-in user 
 * Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`.
 * Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUserSettingsCurrentLoggedInUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetUserSettingsCurrentLoggedInUserRequest
 */
 func (a *UserApiService) GetUserSettingsCurrentLoggedInUser(ctx context.Context) ApiGetUserSettingsCurrentLoggedInUserRequest {
 	return ApiGetUserSettingsCurrentLoggedInUserRequest{
@@ -181,7 +182,8 @@ func (a *UserApiService) GetUserSettingsCurrentLoggedInUser(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return BTUserSettingsInfo
+//
+//	@return BTUserSettingsInfo
 func (a *UserApiService) GetUserSettingsCurrentLoggedInUserExecute(r ApiGetUserSettingsCurrentLoggedInUserRequest) (*BTUserSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -285,8 +287,8 @@ Session Authenticate a user's Onshape credentials, and create a session.
 
 Returned information depends on caller's `OAuth2ReadPll` scope.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSessionRequest
 */
 func (a *UserApiService) Session(ctx context.Context) ApiSessionRequest {
 	return ApiSessionRequest{
@@ -296,7 +298,8 @@ func (a *UserApiService) Session(ctx context.Context) ApiSessionRequest {
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *UserApiService) SessionExecute(r ApiSessionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -396,8 +399,8 @@ SessionInfo Get the session information for an authenticated (signed-in) user.
 
 Returned information depends on caller's `OAuth2ReadPll` scope.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSessionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSessionInfoRequest
 */
 func (a *UserApiService) SessionInfo(ctx context.Context) ApiSessionInfoRequest {
 	return ApiSessionInfoRequest{
@@ -407,7 +410,8 @@ func (a *UserApiService) SessionInfo(ctx context.Context) ApiSessionInfoRequest 
 }
 
 // Execute executes the request
-//  @return BTUserOAuth2SummaryInfo
+//
+//	@return BTUserOAuth2SummaryInfo
 func (a *UserApiService) SessionInfoExecute(r ApiSessionInfoRequest) (*BTUserOAuth2SummaryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

@@ -45,11 +45,11 @@ DeleteRevisionHistory Delete all revisions for a part number.
 
 Only company admins can call this API. All documents that contain or use the part number must be deleted first. This operation cannot be undone.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @param pnum
- @param et
- @return ApiDeleteRevisionHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@param pnum
+	@param et
+	@return ApiDeleteRevisionHistoryRequest
 */
 func (a *RevisionApiService) DeleteRevisionHistory(ctx context.Context, cid string, pnum string, et string) ApiDeleteRevisionHistoryRequest {
 	return ApiDeleteRevisionHistoryRequest{
@@ -62,7 +62,8 @@ func (a *RevisionApiService) DeleteRevisionHistory(ctx context.Context, cid stri
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RevisionApiService) DeleteRevisionHistoryExecute(r ApiDeleteRevisionHistoryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -194,9 +195,9 @@ EnumerateRevisions Enumerate all of a company's revisions.
 * To get the next set of results, use the `next` URL from the response body.
 * This API can only be called by company admins.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid The company or enterprise ID that owns the resource.
- @return ApiEnumerateRevisionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid The company or enterprise ID that owns the resource.
+	@return ApiEnumerateRevisionsRequest
 */
 func (a *RevisionApiService) EnumerateRevisions(ctx context.Context, cid string) ApiEnumerateRevisionsRequest {
 	return ApiEnumerateRevisionsRequest{
@@ -207,7 +208,8 @@ func (a *RevisionApiService) EnumerateRevisions(ctx context.Context, cid string)
 }
 
 // Execute executes the request
-//  @return BTListResponseBTRevisionInfo
+//
+//	@return BTListResponseBTRevisionInfo
 func (a *RevisionApiService) EnumerateRevisionsExecute(r ApiEnumerateRevisionsRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -316,9 +318,9 @@ GetAllInDocument Get all revisions for the specified document.
 
 Retrieve a list of all revisions that exist in a document and are owned by the document's owning company.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetAllInDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetAllInDocumentRequest
 */
 func (a *RevisionApiService) GetAllInDocument(ctx context.Context, did string) ApiGetAllInDocumentRequest {
 	return ApiGetAllInDocumentRequest{
@@ -329,7 +331,8 @@ func (a *RevisionApiService) GetAllInDocument(ctx context.Context, did string) A
 }
 
 // Execute executes the request
-//  @return BTListResponseBTRevisionInfo
+//
+//	@return BTListResponseBTRevisionInfo
 func (a *RevisionApiService) GetAllInDocumentExecute(r ApiGetAllInDocumentRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -427,10 +430,10 @@ GetAllInDocumentVersion Get all revisions for a version.
 
 Retrieve a list of all revisions that exist in a document version and are owned by the document's owning company.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param vid
- @return ApiGetAllInDocumentVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param vid
+	@return ApiGetAllInDocumentVersionRequest
 */
 func (a *RevisionApiService) GetAllInDocumentVersion(ctx context.Context, did string, vid string) ApiGetAllInDocumentVersionRequest {
 	return ApiGetAllInDocumentVersionRequest{
@@ -442,7 +445,8 @@ func (a *RevisionApiService) GetAllInDocumentVersion(ctx context.Context, did st
 }
 
 // Execute executes the request
-//  @return BTListResponseBTRevisionInfo
+//
+//	@return BTListResponseBTRevisionInfo
 func (a *RevisionApiService) GetAllInDocumentVersionExecute(r ApiGetAllInDocumentVersionRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -549,11 +553,11 @@ GetLatestInDocumentOrCompany Get the latest revision for a part number in a docu
 
 Returns 204 if no revisions are found.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cd
- @param cdid
- @param pnum
- @return ApiGetLatestInDocumentOrCompanyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cd
+	@param cdid
+	@param pnum
+	@return ApiGetLatestInDocumentOrCompanyRequest
 */
 func (a *RevisionApiService) GetLatestInDocumentOrCompany(ctx context.Context, cd string, cdid string, pnum string) ApiGetLatestInDocumentOrCompanyRequest {
 	return ApiGetLatestInDocumentOrCompanyRequest{
@@ -566,7 +570,8 @@ func (a *RevisionApiService) GetLatestInDocumentOrCompany(ctx context.Context, c
 }
 
 // Execute executes the request
-//  @return BTRevisionInfo
+//
+//	@return BTRevisionInfo
 func (a *RevisionApiService) GetLatestInDocumentOrCompanyExecute(r ApiGetLatestInDocumentOrCompanyRequest) (*BTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -682,10 +687,10 @@ func (r ApiGetRevisionByPartNumberRequest) Execute() (*BTRevisionInfo, *http.Res
 /*
 GetRevisionByPartNumber Get a list of revisions by part number.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid Company id
- @param pnum Part Number
- @return ApiGetRevisionByPartNumberRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid Company id
+	@param pnum Part Number
+	@return ApiGetRevisionByPartNumberRequest
 */
 func (a *RevisionApiService) GetRevisionByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionByPartNumberRequest {
 	return ApiGetRevisionByPartNumberRequest{
@@ -697,7 +702,8 @@ func (a *RevisionApiService) GetRevisionByPartNumber(ctx context.Context, cid st
 }
 
 // Execute executes the request
-//  @return BTRevisionInfo
+//
+//	@return BTRevisionInfo
 func (a *RevisionApiService) GetRevisionByPartNumberExecute(r ApiGetRevisionByPartNumberRequest) (*BTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -835,13 +841,13 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) Execute() (*BTRevision
 /*
 GetRevisionHistoryInCompanyByElementId Get a list of all revisions for an element in a company-owned document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetRevisionHistoryInCompanyByElementIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetRevisionHistoryInCompanyByElementIdRequest
 */
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementId(ctx context.Context, cid string, did string, wv string, wvid string, eid string) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	return ApiGetRevisionHistoryInCompanyByElementIdRequest{
@@ -856,7 +862,8 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementId(ctx context.
 }
 
 // Execute executes the request
-//  @return BTRevisionListResponse
+//
+//	@return BTRevisionListResponse
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementIdExecute(r ApiGetRevisionHistoryInCompanyByElementIdRequest) (*BTRevisionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1000,14 +1007,14 @@ func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) Execute() (*BTRevisionLis
 /*
 GetRevisionHistoryInCompanyByPartId Get a list of all revisions for a part in a company-owned document by part ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @param did
- @param wv
- @param wvid
- @param eid
- @param pid
- @return ApiGetRevisionHistoryInCompanyByPartIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@param did
+	@param wv
+	@param wvid
+	@param eid
+	@param pid
+	@return ApiGetRevisionHistoryInCompanyByPartIdRequest
 */
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartId(ctx context.Context, cid string, did string, wv string, wvid string, eid string, pid string) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	return ApiGetRevisionHistoryInCompanyByPartIdRequest{
@@ -1023,7 +1030,8 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return BTRevisionListResponse
+//
+//	@return BTRevisionListResponse
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartIdExecute(r ApiGetRevisionHistoryInCompanyByPartIdRequest) (*BTRevisionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1156,10 +1164,10 @@ GetRevisionHistoryInCompanyByPartNumber Get a list of all revisions for a part o
 
 You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @param pnum
- @return ApiGetRevisionHistoryInCompanyByPartNumberRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@param pnum
+	@return ApiGetRevisionHistoryInCompanyByPartNumberRequest
 */
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
 	return ApiGetRevisionHistoryInCompanyByPartNumberRequest{
@@ -1171,7 +1179,8 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumber(ctx context
 }
 
 // Execute executes the request
-//  @return BTRevisionListResponse
+//
+//	@return BTRevisionListResponse
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumberExecute(r ApiGetRevisionHistoryInCompanyByPartNumberRequest) (*BTRevisionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

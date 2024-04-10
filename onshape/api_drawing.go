@@ -44,10 +44,10 @@ CreateDrawingAppElement Create a new drawing in a document.
 
 This endpoint takes a JSON Schema as input. See the schema docs below for details, and see [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did ID of the document in which to create the drawing.
- @param wid ID of the workspace in which to create the drawing.
- @return ApiCreateDrawingAppElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did ID of the document in which to create the drawing.
+	@param wid ID of the workspace in which to create the drawing.
+	@return ApiCreateDrawingAppElementRequest
 */
 func (a *DrawingApiService) CreateDrawingAppElement(ctx context.Context, did string, wid string) ApiCreateDrawingAppElementRequest {
 	return ApiCreateDrawingAppElementRequest{
@@ -59,7 +59,8 @@ func (a *DrawingApiService) CreateDrawingAppElement(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *DrawingApiService) CreateDrawingAppElementExecute(r ApiCreateDrawingAppElementRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -171,12 +172,12 @@ CreateDrawingTranslation Translate (export) a drawing to a different format.
 
 Export a drawing to a different format within a document. Use `getDrawingTranslatorFormats` for a list of supported translation (i.e., import/export) formats.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @param eid
- @return ApiCreateDrawingTranslationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@param eid
+	@return ApiCreateDrawingTranslationRequest
 */
 func (a *DrawingApiService) CreateDrawingTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateDrawingTranslationRequest {
 	return ApiCreateDrawingTranslationRequest{
@@ -190,7 +191,8 @@ func (a *DrawingApiService) CreateDrawingTranslation(ctx context.Context, did st
 }
 
 // Execute executes the request
-//  @return BTTranslationRequestInfo
+//
+//	@return BTTranslationRequestInfo
 func (a *DrawingApiService) CreateDrawingTranslationExecute(r ApiCreateDrawingTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -295,11 +297,11 @@ func (r ApiGetDrawingTranslatorFormatsRequest) Execute() ([]BTModelFormatInfo, *
 /*
 GetDrawingTranslatorFormats Get a list of all valid formats the drawing can be translated (exported) to.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiGetDrawingTranslatorFormatsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiGetDrawingTranslatorFormatsRequest
 */
 func (a *DrawingApiService) GetDrawingTranslatorFormats(ctx context.Context, did string, wid string, eid string) ApiGetDrawingTranslatorFormatsRequest {
 	return ApiGetDrawingTranslatorFormatsRequest{
@@ -312,7 +314,8 @@ func (a *DrawingApiService) GetDrawingTranslatorFormats(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return []BTModelFormatInfo
+//
+//	@return []BTModelFormatInfo
 func (a *DrawingApiService) GetDrawingTranslatorFormatsExecute(r ApiGetDrawingTranslatorFormatsRequest) ([]BTModelFormatInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -409,9 +412,9 @@ func (r ApiGetModificationStatusRequest) Execute() (*BTAppModificationRequestInf
 /*
 GetModificationStatus Get the status of a drawing modification operation.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mrid
- @return ApiGetModificationStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mrid
+	@return ApiGetModificationStatusRequest
 */
 func (a *DrawingApiService) GetModificationStatus(ctx context.Context, mrid string) ApiGetModificationStatusRequest {
 	return ApiGetModificationStatusRequest{
@@ -422,7 +425,8 @@ func (a *DrawingApiService) GetModificationStatus(ctx context.Context, mrid stri
 }
 
 // Execute executes the request
-//  @return BTAppModificationRequestInfo
+//
+//	@return BTAppModificationRequestInfo
 func (a *DrawingApiService) GetModificationStatusExecute(r ApiGetModificationStatusRequest) (*BTAppModificationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -532,11 +536,11 @@ func (r ApiModifyDrawingRequest) Execute() (*BTAppModificationRequestInfo, *http
 /*
 ModifyDrawing Modify a drawing via JSON payload.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid The id of the element in which to perform the operation.
- @return ApiModifyDrawingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiModifyDrawingRequest
 */
 func (a *DrawingApiService) ModifyDrawing(ctx context.Context, did string, wid string, eid string) ApiModifyDrawingRequest {
 	return ApiModifyDrawingRequest{
@@ -549,7 +553,8 @@ func (a *DrawingApiService) ModifyDrawing(ctx context.Context, did string, wid s
 }
 
 // Execute executes the request
-//  @return BTAppModificationRequestInfo
+//
+//	@return BTAppModificationRequestInfo
 func (a *DrawingApiService) ModifyDrawingExecute(r ApiModifyDrawingRequest) (*BTAppModificationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

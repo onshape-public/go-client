@@ -84,6 +84,7 @@ type BTTranslateFormatParams struct {
 	ShowOverriddenDimensions             *bool                         `json:"showOverriddenDimensions,omitempty"`
 	SkipBodyshop                         *bool                         `json:"skipBodyshop,omitempty"`
 	SourceName                           *string                       `json:"sourceName,omitempty"`
+	SpecifyMaterialData                  *bool                         `json:"specifyMaterialData,omitempty"`
 	SpecifyUnits                         *bool                         `json:"specifyUnits,omitempty"`
 	SplinesAsPolylines                   *bool                         `json:"splinesAsPolylines,omitempty"`
 	SplitAssembliesIntoMultipleDocuments *bool                         `json:"splitAssembliesIntoMultipleDocuments,omitempty"`
@@ -2064,6 +2065,38 @@ func (o *BTTranslateFormatParams) SetSourceName(v string) {
 	o.SourceName = &v
 }
 
+// GetSpecifyMaterialData returns the SpecifyMaterialData field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetSpecifyMaterialData() bool {
+	if o == nil || o.SpecifyMaterialData == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SpecifyMaterialData
+}
+
+// GetSpecifyMaterialDataOk returns a tuple with the SpecifyMaterialData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetSpecifyMaterialDataOk() (*bool, bool) {
+	if o == nil || o.SpecifyMaterialData == nil {
+		return nil, false
+	}
+	return o.SpecifyMaterialData, true
+}
+
+// HasSpecifyMaterialData returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasSpecifyMaterialData() bool {
+	if o != nil && o.SpecifyMaterialData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSpecifyMaterialData gets a reference to the given bool and assigns it to the SpecifyMaterialData field.
+func (o *BTTranslateFormatParams) SetSpecifyMaterialData(v bool) {
+	o.SpecifyMaterialData = &v
+}
+
 // GetSpecifyUnits returns the SpecifyUnits field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetSpecifyUnits() bool {
 	if o == nil || o.SpecifyUnits == nil {
@@ -2760,6 +2793,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.SourceName != nil {
 		toSerialize["sourceName"] = o.SourceName
+	}
+	if o.SpecifyMaterialData != nil {
+		toSerialize["specifyMaterialData"] = o.SpecifyMaterialData
 	}
 	if o.SpecifyUnits != nil {
 		toSerialize["specifyUnits"] = o.SpecifyUnits

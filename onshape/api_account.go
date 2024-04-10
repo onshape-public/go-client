@@ -42,10 +42,10 @@ func (r ApiCancelPurchaseNewRequest) Execute() (map[string]interface{}, *http.Re
 /*
 CancelPurchaseNew Cancel a recurring subscription for the specified account ID and purchase ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aid
- @param pid
- @return ApiCancelPurchaseNewRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param aid
+	@param pid
+	@return ApiCancelPurchaseNewRequest
 */
 func (a *AccountApiService) CancelPurchaseNew(ctx context.Context, aid string, pid string) ApiCancelPurchaseNewRequest {
 	return ApiCancelPurchaseNewRequest{
@@ -57,7 +57,8 @@ func (a *AccountApiService) CancelPurchaseNew(ctx context.Context, aid string, p
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -162,9 +163,9 @@ func (r ApiConsumePurchaseRequest) Execute() (*BTPurchaseInfo, *http.Response, e
 /*
 ConsumePurchase Mark a purchase as consumed by the current user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid
- @return ApiConsumePurchaseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pid
+	@return ApiConsumePurchaseRequest
 */
 func (a *AccountApiService) ConsumePurchase(ctx context.Context, pid string) ApiConsumePurchaseRequest {
 	return ApiConsumePurchaseRequest{
@@ -175,7 +176,8 @@ func (a *AccountApiService) ConsumePurchase(ctx context.Context, pid string) Api
 }
 
 // Execute executes the request
-//  @return BTPurchaseInfo
+//
+//	@return BTPurchaseInfo
 func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) (*BTPurchaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -284,9 +286,9 @@ func (r ApiGetPlanPurchasesRequest) Execute() (*BTListResponseBTPurchaseInfo, *h
 /*
 GetPlanPurchases Get a list of all app purchases made for the specified plan.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param planId
- @return ApiGetPlanPurchasesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param planId
+	@return ApiGetPlanPurchasesRequest
 */
 func (a *AccountApiService) GetPlanPurchases(ctx context.Context, planId string) ApiGetPlanPurchasesRequest {
 	return ApiGetPlanPurchasesRequest{
@@ -297,7 +299,8 @@ func (a *AccountApiService) GetPlanPurchases(ctx context.Context, planId string)
 }
 
 // Execute executes the request
-//  @return BTListResponseBTPurchaseInfo
+//
+//	@return BTListResponseBTPurchaseInfo
 func (a *AccountApiService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest) (*BTListResponseBTPurchaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -417,8 +420,8 @@ GetPurchases Get a list of all app purchases made by the current user.
 
 This API should be used within the context of an OAuth-enabled application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPurchasesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPurchasesRequest
 */
 func (a *AccountApiService) GetPurchases(ctx context.Context) ApiGetPurchasesRequest {
 	return ApiGetPurchasesRequest{
@@ -428,7 +431,8 @@ func (a *AccountApiService) GetPurchases(ctx context.Context) ApiGetPurchasesReq
 }
 
 // Execute executes the request
-//  @return []BTPurchaseInfo
+//
+//	@return []BTPurchaseInfo
 func (a *AccountApiService) GetPurchasesExecute(r ApiGetPurchasesRequest) ([]BTPurchaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

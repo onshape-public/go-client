@@ -41,9 +41,9 @@ func (r ApiAddItemToPublicationRequest) Execute() (*BTPublicationInfo, *http.Res
 /*
 AddItemToPublication Add an item in a publication.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid Publication ID.
- @return ApiAddItemToPublicationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pid Publication ID.
+	@return ApiAddItemToPublicationRequest
 */
 func (a *PublicationApiService) AddItemToPublication(ctx context.Context, pid string) ApiAddItemToPublicationRequest {
 	return ApiAddItemToPublicationRequest{
@@ -54,7 +54,8 @@ func (a *PublicationApiService) AddItemToPublication(ctx context.Context, pid st
 }
 
 // Execute executes the request
-//  @return BTPublicationInfo
+//
+//	@return BTPublicationInfo
 func (a *PublicationApiService) AddItemToPublicationExecute(r ApiAddItemToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -160,9 +161,9 @@ func (r ApiAddItemsToPublicationRequest) Execute() (*BTPublicationInfo, *http.Re
 /*
 AddItemsToPublication Add publication items in bulk.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid Publication ID.
- @return ApiAddItemsToPublicationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pid Publication ID.
+	@return ApiAddItemsToPublicationRequest
 */
 func (a *PublicationApiService) AddItemsToPublication(ctx context.Context, pid string) ApiAddItemsToPublicationRequest {
 	return ApiAddItemsToPublicationRequest{
@@ -173,7 +174,8 @@ func (a *PublicationApiService) AddItemsToPublication(ctx context.Context, pid s
 }
 
 // Execute executes the request
-//  @return BTPublicationInfo
+//
+//	@return BTPublicationInfo
 func (a *PublicationApiService) AddItemsToPublicationExecute(r ApiAddItemsToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -278,8 +280,8 @@ func (r ApiCreatePublicationRequest) Execute() (*BTPublicationInfo, *http.Respon
 /*
 CreatePublication Create a new publication.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePublicationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreatePublicationRequest
 */
 func (a *PublicationApiService) CreatePublication(ctx context.Context) ApiCreatePublicationRequest {
 	return ApiCreatePublicationRequest{
@@ -289,7 +291,8 @@ func (a *PublicationApiService) CreatePublication(ctx context.Context) ApiCreate
 }
 
 // Execute executes the request
-//  @return BTPublicationInfo
+//
+//	@return BTPublicationInfo
 func (a *PublicationApiService) CreatePublicationExecute(r ApiCreatePublicationRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -395,9 +398,9 @@ func (r ApiDeletePublicationRequest) Execute() (map[string]interface{}, *http.Re
 /*
 DeletePublication Delete a publication.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid Publication ID.
- @return ApiDeletePublicationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pid Publication ID.
+	@return ApiDeletePublicationRequest
 */
 func (a *PublicationApiService) DeletePublication(ctx context.Context, pid string) ApiDeletePublicationRequest {
 	return ApiDeletePublicationRequest{
@@ -408,7 +411,8 @@ func (a *PublicationApiService) DeletePublication(ctx context.Context, pid strin
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *PublicationApiService) DeletePublicationExecute(r ApiDeletePublicationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -507,10 +511,10 @@ func (r ApiDeletePublicationItemRequest) Execute() (map[string]interface{}, *htt
 /*
 DeletePublicationItem Remove an item from a publication.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid Publication ID.
- @param iid Publication item ID.
- @return ApiDeletePublicationItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pid Publication ID.
+	@param iid Publication item ID.
+	@return ApiDeletePublicationItemRequest
 */
 func (a *PublicationApiService) DeletePublicationItem(ctx context.Context, pid string, iid string) ApiDeletePublicationItemRequest {
 	return ApiDeletePublicationItemRequest{
@@ -522,7 +526,8 @@ func (a *PublicationApiService) DeletePublicationItem(ctx context.Context, pid s
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *PublicationApiService) DeletePublicationItemExecute(r ApiDeletePublicationItemRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -618,9 +623,9 @@ func (r ApiGetPublicationItemsRequest) Execute() (*BTPublicationInfo, *http.Resp
 /*
 GetPublicationItems Get all items in a publication.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid Publication ID.
- @return ApiGetPublicationItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pid Publication ID.
+	@return ApiGetPublicationItemsRequest
 */
 func (a *PublicationApiService) GetPublicationItems(ctx context.Context, pid string) ApiGetPublicationItemsRequest {
 	return ApiGetPublicationItemsRequest{
@@ -631,7 +636,8 @@ func (a *PublicationApiService) GetPublicationItems(ctx context.Context, pid str
 }
 
 // Execute executes the request
-//  @return BTPublicationInfo
+//
+//	@return BTPublicationInfo
 func (a *PublicationApiService) GetPublicationItemsExecute(r ApiGetPublicationItemsRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -732,9 +738,9 @@ func (r ApiUpdatePublicationAttributesRequest) Execute() (map[string]interface{}
 /*
 UpdatePublicationAttributes Update publication's attributes name, description, and notes.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pid Publication ID.
- @return ApiUpdatePublicationAttributesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pid Publication ID.
+	@return ApiUpdatePublicationAttributesRequest
 */
 func (a *PublicationApiService) UpdatePublicationAttributes(ctx context.Context, pid string) ApiUpdatePublicationAttributesRequest {
 	return ApiUpdatePublicationAttributesRequest{
@@ -745,7 +751,8 @@ func (a *PublicationApiService) UpdatePublicationAttributes(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *PublicationApiService) UpdatePublicationAttributesExecute(r ApiUpdatePublicationAttributesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

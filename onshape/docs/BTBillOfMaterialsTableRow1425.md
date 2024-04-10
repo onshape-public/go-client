@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ExcludeIsEditable** | Pointer to **bool** |  | [optional] 
+**ExcludeIsOverridden** | Pointer to **bool** |  | [optional] 
 **ExclusionStatus** | Pointer to [**GBTBillOfMaterialsExclusionStatus**](GBTBillOfMaterialsExclusionStatus.md) |  | [optional] 
 **ExpansionStatus** | Pointer to [**GBTBillOfMaterialsExpansionStatus**](GBTBillOfMaterialsExpansionStatus.md) |  | [optional] 
 **IndentLevel** | Pointer to **int32** |  | [optional] 
@@ -82,6 +83,31 @@ SetExcludeIsEditable sets ExcludeIsEditable field to given value.
 `func (o *BTBillOfMaterialsTableRow1425) HasExcludeIsEditable() bool`
 
 HasExcludeIsEditable returns a boolean if a field has been set.
+
+### GetExcludeIsOverridden
+
+`func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverridden() bool`
+
+GetExcludeIsOverridden returns the ExcludeIsOverridden field if non-nil, zero value otherwise.
+
+### GetExcludeIsOverriddenOk
+
+`func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverriddenOk() (*bool, bool)`
+
+GetExcludeIsOverriddenOk returns a tuple with the ExcludeIsOverridden field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeIsOverridden
+
+`func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsOverridden(v bool)`
+
+SetExcludeIsOverridden sets ExcludeIsOverridden field to given value.
+
+### HasExcludeIsOverridden
+
+`func (o *BTBillOfMaterialsTableRow1425) HasExcludeIsOverridden() bool`
+
+HasExcludeIsOverridden returns a boolean if a field has been set.
 
 ### GetExclusionStatus
 
