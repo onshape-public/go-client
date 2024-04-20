@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.179.34484-bd00eab6a799",
+    "version" : "1.179.34911-f6e17e872327",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green.svg",
       "backgroundColor" : "#ffffff",
@@ -24832,10 +24832,13 @@
       "BTDiffInfo" : {
         "type" : "object",
         "properties" : {
-          "changes" : {
+          "collectionChanges" : {
             "type" : "object",
             "additionalProperties" : {
-              "$ref" : "#/components/schemas/BTDiffInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BTDiffInfo"
+              }
             }
           },
           "entityType" : {
@@ -29073,6 +29076,12 @@
             "properties" : {
               "empty" : {
                 "type" : "boolean"
+              },
+              "first" : {
+                "$ref" : "#/components/schemas/BTGlobalTreeNodeInfo"
+              },
+              "last" : {
+                "$ref" : "#/components/schemas/BTGlobalTreeNodeInfo"
               }
             },
             "description" : "Document Items array. Array entries are the same as that returned from \"/api/documents/{did}\".",
@@ -29105,6 +29114,12 @@
             "properties" : {
               "empty" : {
                 "type" : "boolean"
+              },
+              "first" : {
+                "$ref" : "#/components/schemas/BTTeamInfo"
+              },
+              "last" : {
+                "$ref" : "#/components/schemas/BTTeamInfo"
               }
             },
             "description" : "Document Items array. Array entries are the same as that returned from \"/api/documents/{did}\".",
