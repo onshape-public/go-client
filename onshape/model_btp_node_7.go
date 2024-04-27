@@ -654,7 +654,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTPAnnotation-231'
@@ -667,7 +667,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPAnnotation231: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPAnnotation231: %s", err.Error())
 		}
 	}
 
@@ -681,7 +681,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPArgumentDeclaration232: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPArgumentDeclaration232: %s", err.Error())
 		}
 	}
 
@@ -695,7 +695,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPBuiltinIdentifier233: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPBuiltinIdentifier233: %s", err.Error())
 		}
 	}
 
@@ -709,7 +709,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPConversionFunction1362: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPConversionFunction1362: %s", err.Error())
 		}
 	}
 
@@ -723,7 +723,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPFunctionOrPredicateDeclaration247: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPFunctionOrPredicateDeclaration247: %s", err.Error())
 		}
 	}
 
@@ -737,7 +737,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPLValue249: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLValue249: %s", err.Error())
 		}
 	}
 
@@ -751,7 +751,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPLiteralMapEntry257: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLiteralMapEntry257: %s", err.Error())
 		}
 	}
 
@@ -765,7 +765,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPModule234: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPModule234: %s", err.Error())
 		}
 	}
 
@@ -779,7 +779,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPModuleId235: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPModuleId235: %s", err.Error())
 		}
 	}
 
@@ -793,7 +793,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPName261: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPName261: %s", err.Error())
 		}
 	}
 
@@ -807,7 +807,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPOperatorDeclaration264: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPOperatorDeclaration264: %s", err.Error())
 		}
 	}
 
@@ -821,7 +821,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPPredicateDeclaration265: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPPredicateDeclaration265: %s", err.Error())
 		}
 	}
 
@@ -835,7 +835,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPProcedureDeclarationBase266: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPProcedureDeclarationBase266: %s", err.Error())
 		}
 	}
 
@@ -849,7 +849,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPPropertyAccessor23: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPPropertyAccessor23: %s", err.Error())
 		}
 	}
 
@@ -863,7 +863,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPStatement269: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatement269: %s", err.Error())
 		}
 	}
 
@@ -877,7 +877,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPTopLevelConstantDeclaration283: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTopLevelConstantDeclaration283: %s", err.Error())
 		}
 	}
 
@@ -891,7 +891,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPTopLevelEnumDeclaration284: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTopLevelEnumDeclaration284: %s", err.Error())
 		}
 	}
 
@@ -905,7 +905,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPTopLevelImport285: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTopLevelImport285: %s", err.Error())
 		}
 	}
 
@@ -919,7 +919,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPTopLevelNode286: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTopLevelNode286: %s", err.Error())
 		}
 	}
 
@@ -933,7 +933,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPTopLevelTypeDeclaration287: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTopLevelTypeDeclaration287: %s", err.Error())
 		}
 	}
 
@@ -947,7 +947,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPTopLevelUserTypeDeclaration288: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTopLevelUserTypeDeclaration288: %s", err.Error())
 		}
 	}
 
@@ -961,7 +961,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPNode7 = nil
-			return fmt.Errorf("Failed to unmarshal BTPNode7 as BTPTypeName290: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTypeName290: %s", err.Error())
 		}
 	}
 
@@ -972,7 +972,7 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTPNode7, return on the first match
 	} else {
 		dst.implBTPNode7 = nil
-		return fmt.Errorf("Failed to unmarshal BTPNode7 as base_BTPNode7: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTPNode7 as base_BTPNode7: %s", err.Error())
 	}
 }
 

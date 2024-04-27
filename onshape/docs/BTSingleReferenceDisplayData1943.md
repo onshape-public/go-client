@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **Error** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
+**FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **IsTransient** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ReferenceName** | Pointer to **string** |  | [optional] 
@@ -158,6 +159,31 @@ SetErrorMessage sets ErrorMessage field to given value.
 `func (o *BTSingleReferenceDisplayData1943) HasErrorMessage() bool`
 
 HasErrorMessage returns a boolean if a field has been set.
+
+### GetFullElementId
+
+`func (o *BTSingleReferenceDisplayData1943) GetFullElementId() BTFullElementId756`
+
+GetFullElementId returns the FullElementId field if non-nil, zero value otherwise.
+
+### GetFullElementIdOk
+
+`func (o *BTSingleReferenceDisplayData1943) GetFullElementIdOk() (*BTFullElementId756, bool)`
+
+GetFullElementIdOk returns a tuple with the FullElementId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullElementId
+
+`func (o *BTSingleReferenceDisplayData1943) SetFullElementId(v BTFullElementId756)`
+
+SetFullElementId sets FullElementId field to given value.
+
+### HasFullElementId
+
+`func (o *BTSingleReferenceDisplayData1943) HasFullElementId() bool`
+
+HasFullElementId returns a boolean if a field has been set.
 
 ### GetIsTransient
 

@@ -399,7 +399,7 @@ func (dst *BTCurveGeometrySpline118) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTCurveGeometryControlPointSpline-2197'
@@ -412,7 +412,7 @@ func (dst *BTCurveGeometrySpline118) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometrySpline118 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometrySpline118 as BTCurveGeometryControlPointSpline2197: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometrySpline118 as BTCurveGeometryControlPointSpline2197: %s", err.Error())
 		}
 	}
 
@@ -423,7 +423,7 @@ func (dst *BTCurveGeometrySpline118) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTCurveGeometrySpline118, return on the first match
 	} else {
 		dst.implBTCurveGeometrySpline118 = nil
-		return fmt.Errorf("Failed to unmarshal BTCurveGeometrySpline118 as base_BTCurveGeometrySpline118: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTCurveGeometrySpline118 as base_BTCurveGeometrySpline118: %s", err.Error())
 	}
 }
 

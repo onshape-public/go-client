@@ -59,6 +59,8 @@
 
 * `GBTUIHintShowTolerance` (value: `"SHOW_TOLERANCE"`)
 
+* `GBTUIHintAllowArrayFocus` (value: `"ALLOW_ARRAY_FOCUS"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

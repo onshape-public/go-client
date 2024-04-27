@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -121,7 +120,7 @@ func (a *APIApplicationApiService) DeleteAppSettingsExecute(r ApiDeleteAppSettin
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -234,7 +233,7 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -253,7 +252,7 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -356,7 +355,7 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r Api
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -375,7 +374,7 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r Api
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -498,7 +497,7 @@ func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyA
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -517,7 +516,7 @@ func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyA
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -630,7 +629,7 @@ func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSett
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -649,7 +648,7 @@ func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSett
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -756,7 +755,7 @@ func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -775,7 +774,7 @@ func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -882,7 +881,7 @@ func (a *APIApplicationApiService) UpdateAppSettingsExecute(r ApiUpdateAppSettin
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -901,7 +900,7 @@ func (a *APIApplicationApiService) UpdateAppSettingsExecute(r ApiUpdateAppSettin
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

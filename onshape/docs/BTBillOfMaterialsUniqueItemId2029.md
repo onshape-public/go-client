@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ItemDefinitionId** | Pointer to **string** |  | [optional] 
 **MetadataObjectType** | Pointer to [**BTMetadataObjectType**](BTMetadataObjectType.md) |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to [**BTPSOIdentity2741**](BTPSOIdentity2741.md) |  | [optional] 
 **SourceElement** | Pointer to [**BTElementReference725**](BTElementReference725.md) |  | [optional] 
 **VersionMetadataWorkspaceId** | Pointer to **string** |  | [optional] 
 **VersionMetadataWorkspaceMicroversionId** | Pointer to **string** |  | [optional] 
@@ -182,6 +183,31 @@ SetPartId sets PartId field to given value.
 `func (o *BTBillOfMaterialsUniqueItemId2029) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) GetPartIdentity() BTPSOIdentity2741`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) GetPartIdentityOk() (*BTPSOIdentity2741, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) SetPartIdentity(v BTPSOIdentity2741)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTBillOfMaterialsUniqueItemId2029) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetSourceElement
 

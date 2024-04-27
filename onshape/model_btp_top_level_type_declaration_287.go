@@ -1054,7 +1054,7 @@ func (dst *BTPTopLevelTypeDeclaration287) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTPTopLevelEnumDeclaration-284'
@@ -1067,7 +1067,7 @@ func (dst *BTPTopLevelTypeDeclaration287) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPTopLevelTypeDeclaration287 = nil
-			return fmt.Errorf("Failed to unmarshal BTPTopLevelTypeDeclaration287 as BTPTopLevelEnumDeclaration284: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPTopLevelTypeDeclaration287 as BTPTopLevelEnumDeclaration284: %s", err.Error())
 		}
 	}
 
@@ -1081,7 +1081,7 @@ func (dst *BTPTopLevelTypeDeclaration287) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPTopLevelTypeDeclaration287 = nil
-			return fmt.Errorf("Failed to unmarshal BTPTopLevelTypeDeclaration287 as BTPTopLevelUserTypeDeclaration288: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPTopLevelTypeDeclaration287 as BTPTopLevelUserTypeDeclaration288: %s", err.Error())
 		}
 	}
 
@@ -1092,7 +1092,7 @@ func (dst *BTPTopLevelTypeDeclaration287) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTPTopLevelTypeDeclaration287, return on the first match
 	} else {
 		dst.implBTPTopLevelTypeDeclaration287 = nil
-		return fmt.Errorf("Failed to unmarshal BTPTopLevelTypeDeclaration287 as base_BTPTopLevelTypeDeclaration287: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTPTopLevelTypeDeclaration287 as base_BTPTopLevelTypeDeclaration287: %s", err.Error())
 	}
 }
 

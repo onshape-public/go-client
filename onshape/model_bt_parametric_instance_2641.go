@@ -1559,7 +1559,7 @@ func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblyPattern-1974'
@@ -1572,7 +1572,7 @@ func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParametricInstance2641 = nil
-			return fmt.Errorf("Failed to unmarshal BTParametricInstance2641 as BTAssemblyPattern1974: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParametricInstance2641 as BTAssemblyPattern1974: %s", err.Error())
 		}
 	}
 
@@ -1586,7 +1586,7 @@ func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParametricInstance2641 = nil
-			return fmt.Errorf("Failed to unmarshal BTParametricInstance2641 as BTAssemblyReplicate2774: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParametricInstance2641 as BTAssemblyReplicate2774: %s", err.Error())
 		}
 	}
 
@@ -1600,7 +1600,7 @@ func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParametricInstance2641 = nil
-			return fmt.Errorf("Failed to unmarshal BTParametricInstance2641 as BTParametricPartStudioInstance4374: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParametricInstance2641 as BTParametricPartStudioInstance4374: %s", err.Error())
 		}
 	}
 
@@ -1611,7 +1611,7 @@ func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParametricInstance2641, return on the first match
 	} else {
 		dst.implBTParametricInstance2641 = nil
-		return fmt.Errorf("Failed to unmarshal BTParametricInstance2641 as base_BTParametricInstance2641: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParametricInstance2641 as base_BTParametricInstance2641: %s", err.Error())
 	}
 }
 

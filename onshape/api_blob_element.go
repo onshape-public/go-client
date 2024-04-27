@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -137,7 +136,7 @@ func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTran
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -156,7 +155,7 @@ func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTran
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -286,7 +285,7 @@ func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -305,7 +304,7 @@ func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -424,7 +423,7 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -443,7 +442,7 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -822,7 +821,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -841,7 +840,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1234,7 +1233,7 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1253,7 +1252,7 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

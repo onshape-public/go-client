@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -150,7 +149,7 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -169,7 +168,7 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -306,7 +305,7 @@ func (a *TeamApiService) GetMembersExecute(r ApiGetMembersRequest) (*BTListRespo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -325,7 +324,7 @@ func (a *TeamApiService) GetMembersExecute(r ApiGetMembersRequest) (*BTListRespo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -415,7 +414,7 @@ func (a *TeamApiService) GetTeamExecute(r ApiGetTeamRequest) (*BTTeamInfo, *http
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -434,7 +433,7 @@ func (a *TeamApiService) GetTeamExecute(r ApiGetTeamRequest) (*BTTeamInfo, *http
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

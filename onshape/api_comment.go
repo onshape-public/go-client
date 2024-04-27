@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -129,7 +128,7 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -148,7 +147,7 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -245,7 +244,7 @@ func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -264,7 +263,7 @@ func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -354,7 +353,7 @@ func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsReque
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -373,7 +372,7 @@ func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsReque
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -463,7 +462,7 @@ func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -482,7 +481,7 @@ func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -582,7 +581,7 @@ func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*Ht
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -601,7 +600,7 @@ func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*Ht
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -691,7 +690,7 @@ func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommen
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -710,7 +709,7 @@ func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommen
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -886,7 +885,7 @@ func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTList
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -905,7 +904,7 @@ func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTList
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -995,7 +994,7 @@ func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1014,7 +1013,7 @@ func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1104,7 +1103,7 @@ func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo,
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1123,7 +1122,7 @@ func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo,
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1224,7 +1223,7 @@ func (a *CommentApiService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1243,7 +1242,7 @@ func (a *CommentApiService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

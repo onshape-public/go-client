@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -119,7 +118,7 @@ func (a *ReleasePackageApiService) CreateObsoletionPackageExecute(r ApiCreateObs
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -138,7 +137,7 @@ func (a *ReleasePackageApiService) CreateObsoletionPackageExecute(r ApiCreateObs
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -250,7 +249,7 @@ func (a *ReleasePackageApiService) CreateReleasePackageExecute(r ApiCreateReleas
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -269,7 +268,7 @@ func (a *ReleasePackageApiService) CreateReleasePackageExecute(r ApiCreateReleas
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -364,7 +363,7 @@ func (a *ReleasePackageApiService) GetCompanyReleaseWorkflowExecute(r ApiGetComp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -383,7 +382,7 @@ func (a *ReleasePackageApiService) GetCompanyReleaseWorkflowExecute(r ApiGetComp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -482,7 +481,7 @@ func (a *ReleasePackageApiService) GetReleasePackageExecute(r ApiGetReleasePacka
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -501,7 +500,7 @@ func (a *ReleasePackageApiService) GetReleasePackageExecute(r ApiGetReleasePacka
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -622,7 +621,7 @@ func (a *ReleasePackageApiService) UpdateReleasePackageExecute(r ApiUpdateReleas
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -641,7 +640,7 @@ func (a *ReleasePackageApiService) UpdateReleasePackageExecute(r ApiUpdateReleas
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

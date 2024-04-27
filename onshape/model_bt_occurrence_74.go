@@ -499,7 +499,7 @@ func (dst *BTOccurrence74) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTOccurrenceWithFullPartIds-1464'
@@ -512,7 +512,7 @@ func (dst *BTOccurrence74) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTOccurrence74 = nil
-			return fmt.Errorf("Failed to unmarshal BTOccurrence74 as BTOccurrenceWithFullPartIds1464: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTOccurrence74 as BTOccurrenceWithFullPartIds1464: %s", err.Error())
 		}
 	}
 
@@ -523,7 +523,7 @@ func (dst *BTOccurrence74) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTOccurrence74, return on the first match
 	} else {
 		dst.implBTOccurrence74 = nil
-		return fmt.Errorf("Failed to unmarshal BTOccurrence74 as base_BTOccurrence74: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTOccurrence74 as base_BTOccurrence74: %s", err.Error())
 	}
 }
 

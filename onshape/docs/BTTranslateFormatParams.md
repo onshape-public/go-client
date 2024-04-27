@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **ProxyElementId** | Pointer to **string** |  | [optional] 
 **ProxyWorkspaceVersion** | Pointer to **string** |  | [optional] 
 **ProxyWorkspaceVersionId** | Pointer to **string** |  | [optional] 
+**Resolution** | Pointer to **string** | Determines export resolution of fine, medium, or coarse | [optional] 
 **SelectablePdfText** | Pointer to **bool** |  | [optional] 
 **SendCopyToMe** | Pointer to **bool** |  | [optional] 
 **SheetIndices** | Pointer to **[]int32** |  | [optional] 
@@ -1471,6 +1472,31 @@ SetProxyWorkspaceVersionId sets ProxyWorkspaceVersionId field to given value.
 `func (o *BTTranslateFormatParams) HasProxyWorkspaceVersionId() bool`
 
 HasProxyWorkspaceVersionId returns a boolean if a field has been set.
+
+### GetResolution
+
+`func (o *BTTranslateFormatParams) GetResolution() string`
+
+GetResolution returns the Resolution field if non-nil, zero value otherwise.
+
+### GetResolutionOk
+
+`func (o *BTTranslateFormatParams) GetResolutionOk() (*string, bool)`
+
+GetResolutionOk returns a tuple with the Resolution field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResolution
+
+`func (o *BTTranslateFormatParams) SetResolution(v string)`
+
+SetResolution sets Resolution field to given value.
+
+### HasResolution
+
+`func (o *BTTranslateFormatParams) HasResolution() bool`
+
+HasResolution returns a boolean if a field has been set.
 
 ### GetSelectablePdfText
 

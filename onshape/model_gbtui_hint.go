@@ -48,6 +48,7 @@ const (
 	GBTUIHintVariableName                     GBTUIHint = "VARIABLE_NAME"
 	GBTUIHintFocusInnerQuery                  GBTUIHint = "FOCUS_INNER_QUERY"
 	GBTUIHintShowTolerance                    GBTUIHint = "SHOW_TOLERANCE"
+	GBTUIHintAllowArrayFocus                  GBTUIHint = "ALLOW_ARRAY_FOCUS"
 	GBTUIHintUnknown                          GBTUIHint = "UNKNOWN"
 )
 
@@ -81,6 +82,7 @@ var AllowedGBTUIHintEnumValues = []GBTUIHint{
 	"VARIABLE_NAME",
 	"FOCUS_INNER_QUERY",
 	"SHOW_TOLERANCE",
+	"ALLOW_ARRAY_FOCUS",
 	"UNKNOWN",
 }
 

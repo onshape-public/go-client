@@ -1299,7 +1299,7 @@ func (dst *BTAngularDimensionDisplayData320) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTArcLengthDimensionDisplayData-1018'
@@ -1312,7 +1312,7 @@ func (dst *BTAngularDimensionDisplayData320) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTAngularDimensionDisplayData320 = nil
-			return fmt.Errorf("Failed to unmarshal BTAngularDimensionDisplayData320 as BTArcLengthDimensionDisplayData1018: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTAngularDimensionDisplayData320 as BTArcLengthDimensionDisplayData1018: %s", err.Error())
 		}
 	}
 
@@ -1323,7 +1323,7 @@ func (dst *BTAngularDimensionDisplayData320) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTAngularDimensionDisplayData320, return on the first match
 	} else {
 		dst.implBTAngularDimensionDisplayData320 = nil
-		return fmt.Errorf("Failed to unmarshal BTAngularDimensionDisplayData320 as base_BTAngularDimensionDisplayData320: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTAngularDimensionDisplayData320 as base_BTAngularDimensionDisplayData320: %s", err.Error())
 	}
 }
 

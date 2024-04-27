@@ -254,7 +254,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTActiveSheetMetalFilter-2944'
@@ -267,7 +267,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTActiveSheetMetalFilter2944: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTActiveSheetMetalFilter2944: %s", err.Error())
 		}
 	}
 
@@ -281,7 +281,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTAllowEdgePointFilter2371: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAllowEdgePointFilter2371: %s", err.Error())
 		}
 	}
 
@@ -295,7 +295,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTAllowFlattenedGeometryFilter2140: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAllowFlattenedGeometryFilter2140: %s", err.Error())
 		}
 	}
 
@@ -309,7 +309,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTAllowMeshGeometryFilter1026: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAllowMeshGeometryFilter1026: %s", err.Error())
 		}
 	}
 
@@ -323,7 +323,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTAllowedMateTypeFilter1511: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAllowedMateTypeFilter1511: %s", err.Error())
 		}
 	}
 
@@ -337,7 +337,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTAndFilter110: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAndFilter110: %s", err.Error())
 		}
 	}
 
@@ -351,7 +351,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTBodyTypeFilter112: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTBodyTypeFilter112: %s", err.Error())
 		}
 	}
 
@@ -365,7 +365,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTClosedCurveFilter1206: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTClosedCurveFilter1206: %s", err.Error())
 		}
 	}
 
@@ -379,7 +379,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTConstructionObjectFilter113: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTConstructionObjectFilter113: %s", err.Error())
 		}
 	}
 
@@ -393,7 +393,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTEdgeTopologyFilter122: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTEdgeTopologyFilter122: %s", err.Error())
 		}
 	}
 
@@ -407,7 +407,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTEntityTypeFilter124: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTEntityTypeFilter124: %s", err.Error())
 		}
 	}
 
@@ -421,7 +421,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTFeatureFilter127: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTFeatureFilter127: %s", err.Error())
 		}
 	}
 
@@ -435,7 +435,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTFeatureTypeFilter962: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTFeatureTypeFilter962: %s", err.Error())
 		}
 	}
 
@@ -449,7 +449,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTFlatSheetMetalFilter3018: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTFlatSheetMetalFilter3018: %s", err.Error())
 		}
 	}
 
@@ -463,7 +463,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTGeometryFilter130: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTGeometryFilter130: %s", err.Error())
 		}
 	}
 
@@ -477,7 +477,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTImageFilter853: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTImageFilter853: %s", err.Error())
 		}
 	}
 
@@ -491,7 +491,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTInContextObjectFilter3810: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTInContextObjectFilter3810: %s", err.Error())
 		}
 	}
 
@@ -505,7 +505,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTMateConnectorFilter163: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTMateConnectorFilter163: %s", err.Error())
 		}
 	}
 
@@ -519,7 +519,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTMateFilter162: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTMateFilter162: %s", err.Error())
 		}
 	}
 
@@ -533,7 +533,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTModifiableEntityOnlyFilter1593: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTModifiableEntityOnlyFilter1593: %s", err.Error())
 		}
 	}
 
@@ -547,7 +547,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTNotFilter165: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTNotFilter165: %s", err.Error())
 		}
 	}
 
@@ -561,7 +561,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTOccurrenceFilter166: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTOccurrenceFilter166: %s", err.Error())
 		}
 	}
 
@@ -575,7 +575,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTOrFilter167: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTOrFilter167: %s", err.Error())
 		}
 	}
 
@@ -589,7 +589,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTPlaneOrientationFilter1700: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTPlaneOrientationFilter1700: %s", err.Error())
 		}
 	}
 
@@ -603,7 +603,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSMDefinitionEntityTypeFilter1651: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSMDefinitionEntityTypeFilter1651: %s", err.Error())
 		}
 	}
 
@@ -617,7 +617,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSectionGeometryFilter4161: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSectionGeometryFilter4161: %s", err.Error())
 		}
 	}
 
@@ -631,7 +631,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSketchObjectFilter184: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSketchObjectFilter184: %s", err.Error())
 		}
 	}
 
@@ -645,7 +645,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSketchSolveStatusFilter3657: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSketchSolveStatusFilter3657: %s", err.Error())
 		}
 	}
 
@@ -659,7 +659,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSplineControlPolygonFilter1130: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSplineControlPolygonFilter1130: %s", err.Error())
 		}
 	}
 
@@ -673,7 +673,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTSplineHandleFilter2971: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSplineHandleFilter2971: %s", err.Error())
 		}
 	}
 
@@ -687,7 +687,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTTextObjectFilter1515: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTTextObjectFilter1515: %s", err.Error())
 		}
 	}
 
@@ -701,7 +701,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as BTTextStrokeFilter461: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTTextStrokeFilter461: %s", err.Error())
 		}
 	}
 
@@ -712,7 +712,7 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTQueryFilter183, return on the first match
 	} else {
 		dst.implBTQueryFilter183 = nil
-		return fmt.Errorf("Failed to unmarshal BTQueryFilter183 as base_BTQueryFilter183: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTQueryFilter183 as base_BTQueryFilter183: %s", err.Error())
 	}
 }
 

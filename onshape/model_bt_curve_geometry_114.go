@@ -129,7 +129,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTCurveGeometryCircle-115'
@@ -142,7 +142,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryCircle115: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryCircle115: %s", err.Error())
 		}
 	}
 
@@ -156,7 +156,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryConic2284: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryConic2284: %s", err.Error())
 		}
 	}
 
@@ -170,7 +170,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryControlPointSpline2197: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryControlPointSpline2197: %s", err.Error())
 		}
 	}
 
@@ -184,7 +184,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryEllipse1189: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryEllipse1189: %s", err.Error())
 		}
 	}
 
@@ -198,7 +198,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryInterpolatedSpline116: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryInterpolatedSpline116: %s", err.Error())
 		}
 	}
 
@@ -212,7 +212,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometryLine117: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryLine117: %s", err.Error())
 		}
 	}
 
@@ -226,7 +226,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as BTCurveGeometrySpline118: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometrySpline118: %s", err.Error())
 		}
 	}
 
@@ -237,7 +237,7 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTCurveGeometry114, return on the first match
 	} else {
 		dst.implBTCurveGeometry114 = nil
-		return fmt.Errorf("Failed to unmarshal BTCurveGeometry114 as base_BTCurveGeometry114: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as base_BTCurveGeometry114: %s", err.Error())
 	}
 }
 

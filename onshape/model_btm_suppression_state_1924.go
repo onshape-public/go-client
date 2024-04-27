@@ -199,7 +199,7 @@ func (dst *BTMSuppressionState1924) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMSuppressionStateConfigured-2598'
@@ -212,7 +212,7 @@ func (dst *BTMSuppressionState1924) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSuppressionState1924 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSuppressionState1924 as BTMSuppressionStateConfigured2598: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSuppressionState1924 as BTMSuppressionStateConfigured2598: %s", err.Error())
 		}
 	}
 
@@ -223,7 +223,7 @@ func (dst *BTMSuppressionState1924) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMSuppressionState1924, return on the first match
 	} else {
 		dst.implBTMSuppressionState1924 = nil
-		return fmt.Errorf("Failed to unmarshal BTMSuppressionState1924 as base_BTMSuppressionState1924: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMSuppressionState1924 as base_BTMSuppressionState1924: %s", err.Error())
 	}
 }
 

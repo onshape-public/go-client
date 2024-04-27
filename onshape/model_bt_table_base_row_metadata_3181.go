@@ -174,7 +174,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTBaseSMJointTableRowMetadata-2232'
@@ -187,7 +187,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseRowMetadata3181 as BTBaseSMJointTableRowMetadata2232: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTBaseSMJointTableRowMetadata2232: %s", err.Error())
 		}
 	}
 
@@ -201,7 +201,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseRowMetadata3181 as BTBillOfMaterialsTableRowMetadata1300: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTBillOfMaterialsTableRowMetadata1300: %s", err.Error())
 		}
 	}
 
@@ -215,7 +215,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseRowMetadata3181 as BTFSTableRowMetadata2262: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTFSTableRowMetadata2262: %s", err.Error())
 		}
 	}
 
@@ -229,7 +229,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseRowMetadata3181 as BTSMBendTableRowMetadata1705: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTSMBendTableRowMetadata1705: %s", err.Error())
 		}
 	}
 
@@ -243,7 +243,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseRowMetadata3181 as BTSMOtherJointTableRowMetadata2640: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTSMOtherJointTableRowMetadata2640: %s", err.Error())
 		}
 	}
 
@@ -257,7 +257,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseRowMetadata3181 as BTVariableTableRowMetadata3912: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTVariableTableRowMetadata3912: %s", err.Error())
 		}
 	}
 
@@ -268,7 +268,7 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTableBaseRowMetadata3181, return on the first match
 	} else {
 		dst.implBTTableBaseRowMetadata3181 = nil
-		return fmt.Errorf("Failed to unmarshal BTTableBaseRowMetadata3181 as base_BTTableBaseRowMetadata3181: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as base_BTTableBaseRowMetadata3181: %s", err.Error())
 	}
 }
 

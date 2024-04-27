@@ -29,6 +29,7 @@ type BTBillOfMaterialsTableRow1425 struct {
 	IndentLevel            *int32                             `json:"indentLevel,omitempty"`
 	MetadataObjectType     *int32                             `json:"metadataObjectType,omitempty"`
 	MetadataUpdateHref     *string                            `json:"metadataUpdateHref,omitempty"`
+	Name                   *string                            `json:"name,omitempty"`
 	RelatedOccurrencePaths []string                           `json:"relatedOccurrencePaths,omitempty"`
 	UniqueItemId           *BTBillOfMaterialsUniqueItemId2029 `json:"uniqueItemId,omitempty"`
 }
@@ -466,6 +467,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetMetadataUpdateHref(v string) {
 	o.MetadataUpdateHref = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTBillOfMaterialsTableRow1425) SetName(v string) {
+	o.Name = &v
+}
+
 // GetRelatedOccurrencePaths returns the RelatedOccurrencePaths field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetRelatedOccurrencePaths() []string {
 	if o == nil || o.RelatedOccurrencePaths == nil {
@@ -570,6 +603,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.MetadataUpdateHref != nil {
 		toSerialize["metadataUpdateHref"] = o.MetadataUpdateHref
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.RelatedOccurrencePaths != nil {
 		toSerialize["relatedOccurrencePaths"] = o.RelatedOccurrencePaths

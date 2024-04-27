@@ -574,7 +574,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTPLiteralArray-254'
@@ -587,7 +587,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLiteral253 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLiteral253 as BTPLiteralArray254: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLiteral253 as BTPLiteralArray254: %s", err.Error())
 		}
 	}
 
@@ -601,7 +601,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLiteral253 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLiteral253 as BTPLiteralBoolean255: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLiteral253 as BTPLiteralBoolean255: %s", err.Error())
 		}
 	}
 
@@ -615,7 +615,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLiteral253 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLiteral253 as BTPLiteralMap256: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLiteral253 as BTPLiteralMap256: %s", err.Error())
 		}
 	}
 
@@ -629,7 +629,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLiteral253 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLiteral253 as BTPLiteralNumber258: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLiteral253 as BTPLiteralNumber258: %s", err.Error())
 		}
 	}
 
@@ -643,7 +643,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLiteral253 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLiteral253 as BTPLiteralString259: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLiteral253 as BTPLiteralString259: %s", err.Error())
 		}
 	}
 
@@ -657,7 +657,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLiteral253 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLiteral253 as BTPLiteralUndefined260: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLiteral253 as BTPLiteralUndefined260: %s", err.Error())
 		}
 	}
 
@@ -668,7 +668,7 @@ func (dst *BTPLiteral253) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTPLiteral253, return on the first match
 	} else {
 		dst.implBTPLiteral253 = nil
-		return fmt.Errorf("Failed to unmarshal BTPLiteral253 as base_BTPLiteral253: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTPLiteral253 as base_BTPLiteral253: %s", err.Error())
 	}
 }
 

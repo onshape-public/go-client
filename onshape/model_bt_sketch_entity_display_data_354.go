@@ -194,7 +194,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTSketchArcDisplayData-349'
@@ -207,7 +207,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchArcDisplayData349: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchArcDisplayData349: %s", err.Error())
 		}
 	}
 
@@ -221,7 +221,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchCircleDisplayData350: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchCircleDisplayData350: %s", err.Error())
 		}
 	}
 
@@ -235,7 +235,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchCompositeEntityDisplayData1093: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchCompositeEntityDisplayData1093: %s", err.Error())
 		}
 	}
 
@@ -249,7 +249,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchConicDisplayData1085: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchConicDisplayData1085: %s", err.Error())
 		}
 	}
 
@@ -263,7 +263,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchEllipseDisplayData712: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchEllipseDisplayData712: %s", err.Error())
 		}
 	}
 
@@ -277,7 +277,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchEllipticalArcDisplayData892: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchEllipticalArcDisplayData892: %s", err.Error())
 		}
 	}
 
@@ -291,7 +291,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchLineDisplayData357: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchLineDisplayData357: %s", err.Error())
 		}
 	}
 
@@ -305,7 +305,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchPointDisplayData358: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchPointDisplayData358: %s", err.Error())
 		}
 	}
 
@@ -319,7 +319,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchSplineDisplayData359: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchSplineDisplayData359: %s", err.Error())
 		}
 	}
 
@@ -333,7 +333,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchEntityDisplayData354 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as BTSketchTextDisplayData1707: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as BTSketchTextDisplayData1707: %s", err.Error())
 		}
 	}
 
@@ -344,7 +344,7 @@ func (dst *BTSketchEntityDisplayData354) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTSketchEntityDisplayData354, return on the first match
 	} else {
 		dst.implBTSketchEntityDisplayData354 = nil
-		return fmt.Errorf("Failed to unmarshal BTSketchEntityDisplayData354 as base_BTSketchEntityDisplayData354: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTSketchEntityDisplayData354 as base_BTSketchEntityDisplayData354: %s", err.Error())
 	}
 }
 

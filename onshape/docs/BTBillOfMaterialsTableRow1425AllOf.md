@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **IndentLevel** | Pointer to **int32** |  | [optional] 
 **MetadataObjectType** | Pointer to **int32** |  | [optional] 
 **MetadataUpdateHref** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **RelatedOccurrencePaths** | Pointer to **[]string** |  | [optional] 
 **UniqueItemId** | Pointer to [**BTBillOfMaterialsUniqueItemId2029**](BTBillOfMaterialsUniqueItemId2029.md) |  | [optional] 
 
@@ -233,6 +234,31 @@ SetMetadataUpdateHref sets MetadataUpdateHref field to given value.
 `func (o *BTBillOfMaterialsTableRow1425AllOf) HasMetadataUpdateHref() bool`
 
 HasMetadataUpdateHref returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *BTBillOfMaterialsTableRow1425AllOf) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRelatedOccurrencePaths
 

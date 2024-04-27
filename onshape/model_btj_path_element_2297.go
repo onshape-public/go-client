@@ -104,7 +104,7 @@ func (dst *BTJPathElement2297) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTJPathIndex-1871'
@@ -117,7 +117,7 @@ func (dst *BTJPathElement2297) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTJPathElement2297 = nil
-			return fmt.Errorf("Failed to unmarshal BTJPathElement2297 as BTJPathIndex1871: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTJPathElement2297 as BTJPathIndex1871: %s", err.Error())
 		}
 	}
 
@@ -131,7 +131,7 @@ func (dst *BTJPathElement2297) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTJPathElement2297 = nil
-			return fmt.Errorf("Failed to unmarshal BTJPathElement2297 as BTJPathKey3221: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTJPathElement2297 as BTJPathKey3221: %s", err.Error())
 		}
 	}
 
@@ -142,7 +142,7 @@ func (dst *BTJPathElement2297) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTJPathElement2297, return on the first match
 	} else {
 		dst.implBTJPathElement2297 = nil
-		return fmt.Errorf("Failed to unmarshal BTJPathElement2297 as base_BTJPathElement2297: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTJPathElement2297 as base_BTJPathElement2297: %s", err.Error())
 	}
 }
 

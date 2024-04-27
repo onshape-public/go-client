@@ -793,6 +793,7 @@ docs/BTNotice227.md
 docs/BTNullableQuantityRange1340.md
 docs/BTNullableQuantityRange1340AllOf.md
 docs/BTObjectId.md
+docs/BTObjectState.md
 docs/BTObjectWorkflowInfo.md
 docs/BTOccurrence74.md
 docs/BTOccurrenceData75.md
@@ -1052,8 +1053,8 @@ docs/BTPublicationItemParams.md
 docs/BTPublicationParams.md
 docs/BTPublishedWorkflowId.md
 docs/BTPublishedWorkflowInfo.md
+docs/BTPurchaseIdentityParams.md
 docs/BTPurchaseInfo.md
-docs/BTPurchaseUserParams.md
 docs/BTQuantityRange181.md
 docs/BTQueryFilter183.md
 docs/BTRadialDimensionDisplayData348.md
@@ -1898,6 +1899,7 @@ model_bt_not_filter_165.go
 model_bt_notice_227.go
 model_bt_nullable_quantity_range_1340.go
 model_bt_object_id.go
+model_bt_object_state.go
 model_bt_object_workflow_info.go
 model_bt_occurrence_74.go
 model_bt_occurrence_data_75.go
@@ -1987,8 +1989,8 @@ model_bt_publication_item_params.go
 model_bt_publication_params.go
 model_bt_published_workflow_id.go
 model_bt_published_workflow_info.go
+model_bt_purchase_identity_params.go
 model_bt_purchase_info.go
-model_bt_purchase_user_params.go
 model_bt_quantity_range_181.go
 model_bt_query_filter_183.go
 model_bt_radial_dimension_display_data_348.go

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ItemName** | Pointer to **string** |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
 **Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
+**ShowLabelsOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetParameters sets Parameters field to given value.
 `func (o *BTParameterSpecArray2600) HasParameters() bool`
 
 HasParameters returns a boolean if a field has been set.
+
+### GetShowLabelsOnly
+
+`func (o *BTParameterSpecArray2600) GetShowLabelsOnly() bool`
+
+GetShowLabelsOnly returns the ShowLabelsOnly field if non-nil, zero value otherwise.
+
+### GetShowLabelsOnlyOk
+
+`func (o *BTParameterSpecArray2600) GetShowLabelsOnlyOk() (*bool, bool)`
+
+GetShowLabelsOnlyOk returns a tuple with the ShowLabelsOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowLabelsOnly
+
+`func (o *BTParameterSpecArray2600) SetShowLabelsOnly(v bool)`
+
+SetShowLabelsOnly sets ShowLabelsOnly field to given value.
+
+### HasShowLabelsOnly
+
+`func (o *BTParameterSpecArray2600) HasShowLabelsOnly() bool`
+
+HasShowLabelsOnly returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

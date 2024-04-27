@@ -379,7 +379,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblyInstance-947'
@@ -392,7 +392,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTAssemblyInstance947: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyInstance947: %s", err.Error())
 		}
 	}
 
@@ -406,7 +406,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTAssemblyPattern1974: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyPattern1974: %s", err.Error())
 		}
 	}
 
@@ -420,7 +420,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTAssemblyReplicate2774: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyReplicate2774: %s", err.Error())
 		}
 	}
 
@@ -434,7 +434,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTAssemblySimulationData978: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblySimulationData978: %s", err.Error())
 		}
 	}
 
@@ -448,7 +448,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTClonedInstance2505: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTClonedInstance2505: %s", err.Error())
 		}
 	}
 
@@ -462,7 +462,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTInstance642: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstance642: %s", err.Error())
 		}
 	}
 
@@ -476,7 +476,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTInstanceBase2263: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstanceBase2263: %s", err.Error())
 		}
 	}
 
@@ -490,7 +490,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTInstanceControlNode750: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstanceControlNode750: %s", err.Error())
 		}
 	}
 
@@ -504,7 +504,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTInstanceFolder3627: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstanceFolder3627: %s", err.Error())
 		}
 	}
 
@@ -518,7 +518,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMArrayParameterItem1843: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMArrayParameterItem1843: %s", err.Error())
 		}
 	}
 
@@ -532,7 +532,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMConfigurationData1560: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationData1560: %s", err.Error())
 		}
 	}
 
@@ -546,7 +546,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMConfigurationParameter819: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationParameter819: %s", err.Error())
 		}
 	}
 
@@ -560,7 +560,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMConfiguredValue1341: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfiguredValue1341: %s", err.Error())
 		}
 	}
 
@@ -574,7 +574,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMEnumOption592: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMEnumOption592: %s", err.Error())
 		}
 	}
 
@@ -588,7 +588,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMFeature134: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMFeature134: %s", err.Error())
 		}
 	}
 
@@ -602,7 +602,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMFolder3208: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMFolder3208: %s", err.Error())
 		}
 	}
 
@@ -616,7 +616,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMImport136: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMImport136: %s", err.Error())
 		}
 	}
 
@@ -630,7 +630,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMIndividualQueryBase139: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMIndividualQueryBase139: %s", err.Error())
 		}
 	}
 
@@ -644,7 +644,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMModel141: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMModel141: %s", err.Error())
 		}
 	}
 
@@ -658,7 +658,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMNodeInvalid1772: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMNodeInvalid1772: %s", err.Error())
 		}
 	}
 
@@ -672,7 +672,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMParameter1: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMParameter1: %s", err.Error())
 		}
 	}
 
@@ -686,7 +686,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMRecordMetrics1169: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMRecordMetrics1169: %s", err.Error())
 		}
 	}
 
@@ -700,7 +700,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMRollback150: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMRollback150: %s", err.Error())
 		}
 	}
 
@@ -714,7 +714,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMSketchCompositeEntity893: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchCompositeEntity893: %s", err.Error())
 		}
 	}
 
@@ -728,7 +728,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMSketchEntity3: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchEntity3: %s", err.Error())
 		}
 	}
 
@@ -742,7 +742,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMSketchInvalid1601: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchInvalid1601: %s", err.Error())
 		}
 	}
 
@@ -756,7 +756,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMSuppressionState1924: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionState1924: %s", err.Error())
 		}
 	}
 
@@ -770,7 +770,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMSuppressionStateConfigured2598: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionStateConfigured2598: %s", err.Error())
 		}
 	}
 
@@ -784,7 +784,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMUnitsDefault160: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMUnitsDefault160: %s", err.Error())
 		}
 	}
 
@@ -798,7 +798,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTMUserCode161: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMUserCode161: %s", err.Error())
 		}
 	}
 
@@ -812,7 +812,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricInstance2641: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTParametricInstance2641: %s", err.Error())
 		}
 	}
 
@@ -826,7 +826,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricOutputInstance2288: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTParametricOutputInstance2288: %s", err.Error())
 		}
 	}
 
@@ -840,7 +840,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricPartStudioChildInstance3696: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTParametricPartStudioChildInstance3696: %s", err.Error())
 		}
 	}
 
@@ -854,7 +854,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTParametricPartStudioInstance4374: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTParametricPartStudioInstance4374: %s", err.Error())
 		}
 	}
 
@@ -868,7 +868,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTPartInstance81: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTPartInstance81: %s", err.Error())
 		}
 	}
 
@@ -882,7 +882,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTSimulationInstance3093: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTSimulationInstance3093: %s", err.Error())
 		}
 	}
 
@@ -896,7 +896,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMNode19 = nil
-			return fmt.Errorf("Failed to unmarshal BTMNode19 as BTToleranceString3274: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTToleranceString3274: %s", err.Error())
 		}
 	}
 
@@ -907,7 +907,7 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMNode19, return on the first match
 	} else {
 		dst.implBTMNode19 = nil
-		return fmt.Errorf("Failed to unmarshal BTMNode19 as base_BTMNode19: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMNode19 as base_BTMNode19: %s", err.Error())
 	}
 }
 

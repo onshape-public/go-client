@@ -934,7 +934,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterSpecReferenceAssembly-2821'
@@ -947,7 +947,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceAssembly2821: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceAssembly2821: %s", err.Error())
 		}
 	}
 
@@ -961,7 +961,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceBlob1367: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceBlob1367: %s", err.Error())
 		}
 	}
 
@@ -975,7 +975,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceCADImport1792: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceCADImport1792: %s", err.Error())
 		}
 	}
 
@@ -989,7 +989,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceImage1722: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceImage1722: %s", err.Error())
 		}
 	}
 
@@ -1003,7 +1003,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceJSON1816: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceJSON1816: %s", err.Error())
 		}
 	}
 
@@ -1017,7 +1017,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
 		}
 	}
 
@@ -1031,7 +1031,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceTable1520: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceTable1520: %s", err.Error())
 		}
 	}
 
@@ -1045,7 +1045,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
 		}
 	}
 
@@ -1056,7 +1056,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParameterSpecReference2789, return on the first match
 	} else {
 		dst.implBTParameterSpecReference2789 = nil
-		return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as base_BTParameterSpecReference2789: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as base_BTParameterSpecReference2789: %s", err.Error())
 	}
 }
 

@@ -2965,6 +2965,32 @@
 
 * `GBTErrorStringEnumIsoparametricCurvePointNotOnFace` (value: `"ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE"`)
 
+* `GBTErrorStringEnumThinSweep3DProfileTrimWarning` (value: `"THIN_SWEEP_3D_PROFILE_TRIM_WARNING"`)
+
+* `GBTErrorStringEnumThinSweepFailedToFindTrimPlanesWarning` (value: `"THIN_SWEEP_FAILED_TO_FIND_TRIM_PLANES_WARNING"`)
+
+* `GBTErrorStringEnumThinSweepTrimFailed` (value: `"THIN_SWEEP_TRIM_FAILED"`)
+
+* `GBTErrorStringEnumIsoparametricCurveSelectSingleFace` (value: `"ISOPARAMETRIC_CURVE_SELECT_SINGLE_FACE"`)
+
+* `GBTErrorStringEnumHoleFastenerFitIsNotApplicable` (value: `"HOLE_FASTENER_FIT_IS_NOT_APPLICABLE"`)
+
+* `GBTErrorStringEnumPatternSkippedInstancesSeedIndex` (value: `"PATTERN_SKIPPED_INSTANCES_SEED_INDEX"`)
+
+* `GBTErrorStringEnumPatternSkippedInstancesOutOfRangeIndex` (value: `"PATTERN_SKIPPED_INSTANCES_OUT_OF_RANGE_INDEX"`)
+
+* `GBTErrorStringEnumFormedSelectLocation` (value: `"FORMED_SELECT_LOCATION"`)
+
+* `GBTErrorStringEnumFormedNoPartStudioSelected` (value: `"FORMED_NO_PART_STUDIO_SELECTED"`)
+
+* `GBTErrorStringEnumFormedSelectLocationOnActiveFace` (value: `"FORMED_SELECT_LOCATION_ON_ACTIVE_FACE"`)
+
+* `GBTErrorStringEnumFormedLocationOnMultipleFaces` (value: `"FORMED_LOCATION_ON_MULTIPLE_FACES"`)
+
+* `GBTErrorStringEnumFormedNotOnHoleFormedFace` (value: `"FORMED_NOT_ON_HOLE_FORMED_FACE"`)
+
+* `GBTErrorStringEnumThinSweepThickenFailed` (value: `"THIN_SWEEP_THICKEN_FAILED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

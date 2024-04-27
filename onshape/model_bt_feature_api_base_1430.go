@@ -414,7 +414,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblyFeatureListResponse-1174'
@@ -427,7 +427,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTAssemblyFeatureListResponse1174: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTAssemblyFeatureListResponse1174: %s", err.Error())
 		}
 	}
 
@@ -441,7 +441,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTConfigurationResponse2019: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTConfigurationResponse2019: %s", err.Error())
 		}
 	}
 
@@ -455,7 +455,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTConfigurationUpdateCall2933: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTConfigurationUpdateCall2933: %s", err.Error())
 		}
 	}
 
@@ -469,7 +469,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTFeatureDefinitionCall1406: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTFeatureDefinitionCall1406: %s", err.Error())
 		}
 	}
 
@@ -483,7 +483,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTFeatureDefinitionResponse1617: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTFeatureDefinitionResponse1617: %s", err.Error())
 		}
 	}
 
@@ -497,7 +497,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTFeatureListResponse2457: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTFeatureListResponse2457: %s", err.Error())
 		}
 	}
 
@@ -511,7 +511,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTFeatureScriptEvalCall2377: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTFeatureScriptEvalCall2377: %s", err.Error())
 		}
 	}
 
@@ -525,7 +525,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTFeatureScriptEvalResponse1859: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTFeatureScriptEvalResponse1859: %s", err.Error())
 		}
 	}
 
@@ -539,7 +539,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTFeatureSpecsResponse664: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTFeatureSpecsResponse664: %s", err.Error())
 		}
 	}
 
@@ -553,7 +553,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTFeatureStudioContents2239: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTFeatureStudioContents2239: %s", err.Error())
 		}
 	}
 
@@ -567,7 +567,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTSetFeatureRollbackCall1899: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTSetFeatureRollbackCall1899: %s", err.Error())
 		}
 	}
 
@@ -581,7 +581,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTSetFeatureRollbackResponse1042: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTSetFeatureRollbackResponse1042: %s", err.Error())
 		}
 	}
 
@@ -595,7 +595,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTUpdateFeaturesCall1748: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTUpdateFeaturesCall1748: %s", err.Error())
 		}
 	}
 
@@ -609,7 +609,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureApiBase1430 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as BTUpdateFeaturesResponse1333: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as BTUpdateFeaturesResponse1333: %s", err.Error())
 		}
 	}
 
@@ -620,7 +620,7 @@ func (dst *BTFeatureApiBase1430) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTFeatureApiBase1430, return on the first match
 	} else {
 		dst.implBTFeatureApiBase1430 = nil
-		return fmt.Errorf("Failed to unmarshal BTFeatureApiBase1430 as base_BTFeatureApiBase1430: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTFeatureApiBase1430 as base_BTFeatureApiBase1430: %s", err.Error())
 	}
 }
 

@@ -104,7 +104,7 @@ func (dst *BTReferenceCustomData1551) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTInstanceStandardContentData-2081'
@@ -117,7 +117,7 @@ func (dst *BTReferenceCustomData1551) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTReferenceCustomData1551 = nil
-			return fmt.Errorf("Failed to unmarshal BTReferenceCustomData1551 as BTInstanceStandardContentData2081: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTReferenceCustomData1551 as BTInstanceStandardContentData2081: %s", err.Error())
 		}
 	}
 
@@ -131,7 +131,7 @@ func (dst *BTReferenceCustomData1551) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTReferenceCustomData1551 = nil
-			return fmt.Errorf("Failed to unmarshal BTReferenceCustomData1551 as BTRevisionCustomData2090: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTReferenceCustomData1551 as BTRevisionCustomData2090: %s", err.Error())
 		}
 	}
 
@@ -142,7 +142,7 @@ func (dst *BTReferenceCustomData1551) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTReferenceCustomData1551, return on the first match
 	} else {
 		dst.implBTReferenceCustomData1551 = nil
-		return fmt.Errorf("Failed to unmarshal BTReferenceCustomData1551 as base_BTReferenceCustomData1551: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTReferenceCustomData1551 as base_BTReferenceCustomData1551: %s", err.Error())
 	}
 }
 

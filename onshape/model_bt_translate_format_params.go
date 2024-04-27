@@ -63,21 +63,23 @@ type BTTranslateFormatParams struct {
 	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
 	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
 	// Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-	MaximumChordLength                   *float64                      `json:"maximumChordLength,omitempty"`
-	NotifyUser                           *bool                         `json:"notifyUser,omitempty"`
-	OnePartPerDoc                        *bool                         `json:"onePartPerDoc,omitempty"`
-	OriginalForeignId                    *string                       `json:"originalForeignId,omitempty"`
-	ParentId                             *string                       `json:"parentId,omitempty"`
-	PartIds                              *string                       `json:"partIds,omitempty"`
-	Password                             *string                       `json:"password,omitempty"`
-	PasswordRequired                     *bool                         `json:"passwordRequired,omitempty"`
-	PdfVersion                           *string                       `json:"pdfVersion,omitempty"`
-	ProcessedForeignId                   *string                       `json:"processedForeignId,omitempty"`
-	ProjectId                            *string                       `json:"projectId,omitempty"`
-	ProxyDocumentId                      *string                       `json:"proxyDocumentId,omitempty"`
-	ProxyElementId                       *string                       `json:"proxyElementId,omitempty"`
-	ProxyWorkspaceVersion                *string                       `json:"proxyWorkspaceVersion,omitempty"`
-	ProxyWorkspaceVersionId              *string                       `json:"proxyWorkspaceVersionId,omitempty"`
+	MaximumChordLength      *float64 `json:"maximumChordLength,omitempty"`
+	NotifyUser              *bool    `json:"notifyUser,omitempty"`
+	OnePartPerDoc           *bool    `json:"onePartPerDoc,omitempty"`
+	OriginalForeignId       *string  `json:"originalForeignId,omitempty"`
+	ParentId                *string  `json:"parentId,omitempty"`
+	PartIds                 *string  `json:"partIds,omitempty"`
+	Password                *string  `json:"password,omitempty"`
+	PasswordRequired        *bool    `json:"passwordRequired,omitempty"`
+	PdfVersion              *string  `json:"pdfVersion,omitempty"`
+	ProcessedForeignId      *string  `json:"processedForeignId,omitempty"`
+	ProjectId               *string  `json:"projectId,omitempty"`
+	ProxyDocumentId         *string  `json:"proxyDocumentId,omitempty"`
+	ProxyElementId          *string  `json:"proxyElementId,omitempty"`
+	ProxyWorkspaceVersion   *string  `json:"proxyWorkspaceVersion,omitempty"`
+	ProxyWorkspaceVersionId *string  `json:"proxyWorkspaceVersionId,omitempty"`
+	// Determines export resolution of fine, medium, or coarse
+	Resolution                           *string                       `json:"resolution,omitempty"`
 	SelectablePdfText                    *bool                         `json:"selectablePdfText,omitempty"`
 	SendCopyToMe                         *bool                         `json:"sendCopyToMe,omitempty"`
 	SheetIndices                         []int32                       `json:"sheetIndices,omitempty"`
@@ -1873,6 +1875,38 @@ func (o *BTTranslateFormatParams) SetProxyWorkspaceVersionId(v string) {
 	o.ProxyWorkspaceVersionId = &v
 }
 
+// GetResolution returns the Resolution field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetResolution() string {
+	if o == nil || o.Resolution == nil {
+		var ret string
+		return ret
+	}
+	return *o.Resolution
+}
+
+// GetResolutionOk returns a tuple with the Resolution field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetResolutionOk() (*string, bool) {
+	if o == nil || o.Resolution == nil {
+		return nil, false
+	}
+	return o.Resolution, true
+}
+
+// HasResolution returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasResolution() bool {
+	if o != nil && o.Resolution != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetResolution gets a reference to the given string and assigns it to the Resolution field.
+func (o *BTTranslateFormatParams) SetResolution(v string) {
+	o.Resolution = &v
+}
+
 // GetSelectablePdfText returns the SelectablePdfText field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetSelectablePdfText() bool {
 	if o == nil || o.SelectablePdfText == nil {
@@ -2775,6 +2809,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ProxyWorkspaceVersionId != nil {
 		toSerialize["proxyWorkspaceVersionId"] = o.ProxyWorkspaceVersionId
+	}
+	if o.Resolution != nil {
+		toSerialize["resolution"] = o.Resolution
 	}
 	if o.SelectablePdfText != nil {
 		toSerialize["selectablePdfText"] = o.SelectablePdfText

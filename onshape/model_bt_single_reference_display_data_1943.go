@@ -292,6 +292,56 @@ func (o *BTSingleReferenceDisplayData1943) SetErrorMessage(v string) {
 	o.GetActualInstance().(getResult).SetErrorMessage(v)
 }
 
+// GetFullElementId returns the FullElementId field value if set, zero value otherwise.
+func (o *BTSingleReferenceDisplayData1943) GetFullElementId() BTFullElementId756 {
+	type getResult interface {
+		GetFullElementId() BTFullElementId756
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFullElementId()
+	} else {
+		var de BTFullElementId756
+		return de
+	}
+}
+
+// GetFullElementIdOk returns a tuple with the FullElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSingleReferenceDisplayData1943) GetFullElementIdOk() (*BTFullElementId756, bool) {
+	type getResult interface {
+		GetFullElementIdOk() (*BTFullElementId756, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFullElementIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasFullElementId returns a boolean if a field has been set.
+func (o *BTSingleReferenceDisplayData1943) HasFullElementId() bool {
+	type getResult interface {
+		HasFullElementId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasFullElementId()
+	} else {
+		return false
+	}
+}
+
+// SetFullElementId gets a reference to the given BTFullElementId756 and assigns it to the FullElementId field.
+func (o *BTSingleReferenceDisplayData1943) SetFullElementId(v BTFullElementId756) {
+	type getResult interface {
+		SetFullElementId(v BTFullElementId756)
+	}
+
+	o.GetActualInstance().(getResult).SetFullElementId(v)
+}
+
 // GetIsTransient returns the IsTransient field value if set, zero value otherwise.
 func (o *BTSingleReferenceDisplayData1943) GetIsTransient() bool {
 	type getResult interface {
@@ -549,7 +599,7 @@ func (dst *BTSingleReferenceDisplayData1943) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTSingleAssemblyReferenceDisplayData-1557'
@@ -562,7 +612,7 @@ func (dst *BTSingleReferenceDisplayData1943) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSingleReferenceDisplayData1943 = nil
-			return fmt.Errorf("Failed to unmarshal BTSingleReferenceDisplayData1943 as BTSingleAssemblyReferenceDisplayData1557: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSingleReferenceDisplayData1943 as BTSingleAssemblyReferenceDisplayData1557: %s", err.Error())
 		}
 	}
 
@@ -573,7 +623,7 @@ func (dst *BTSingleReferenceDisplayData1943) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTSingleReferenceDisplayData1943, return on the first match
 	} else {
 		dst.implBTSingleReferenceDisplayData1943 = nil
-		return fmt.Errorf("Failed to unmarshal BTSingleReferenceDisplayData1943 as base_BTSingleReferenceDisplayData1943: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTSingleReferenceDisplayData1943 as base_BTSingleReferenceDisplayData1943: %s", err.Error())
 	}
 }
 
@@ -638,6 +688,7 @@ type base_BTSingleReferenceDisplayData1943 struct {
 	DocumentId         *string                 `json:"documentId,omitempty"`
 	Error              *GBTErrorStringEnum     `json:"error,omitempty"`
 	ErrorMessage       *string                 `json:"errorMessage,omitempty"`
+	FullElementId      *BTFullElementId756     `json:"fullElementId,omitempty"`
 	IsTransient        *bool                   `json:"isTransient,omitempty"`
 	Name               *string                 `json:"name,omitempty"`
 	ReferenceName      *string                 `json:"referenceName,omitempty"`
@@ -822,6 +873,38 @@ func (o *base_BTSingleReferenceDisplayData1943) SetErrorMessage(v string) {
 	o.ErrorMessage = &v
 }
 
+// GetFullElementId returns the FullElementId field value if set, zero value otherwise.
+func (o *base_BTSingleReferenceDisplayData1943) GetFullElementId() BTFullElementId756 {
+	if o == nil || o.FullElementId == nil {
+		var ret BTFullElementId756
+		return ret
+	}
+	return *o.FullElementId
+}
+
+// GetFullElementIdOk returns a tuple with the FullElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTSingleReferenceDisplayData1943) GetFullElementIdOk() (*BTFullElementId756, bool) {
+	if o == nil || o.FullElementId == nil {
+		return nil, false
+	}
+	return o.FullElementId, true
+}
+
+// HasFullElementId returns a boolean if a field has been set.
+func (o *base_BTSingleReferenceDisplayData1943) HasFullElementId() bool {
+	if o != nil && o.FullElementId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFullElementId gets a reference to the given BTFullElementId756 and assigns it to the FullElementId field.
+func (o *base_BTSingleReferenceDisplayData1943) SetFullElementId(v BTFullElementId756) {
+	o.FullElementId = &v
+}
+
 // GetIsTransient returns the IsTransient field value if set, zero value otherwise.
 func (o *base_BTSingleReferenceDisplayData1943) GetIsTransient() bool {
 	if o == nil || o.IsTransient == nil {
@@ -998,6 +1081,9 @@ func (o base_BTSingleReferenceDisplayData1943) MarshalJSON() ([]byte, error) {
 	}
 	if o.ErrorMessage != nil {
 		toSerialize["errorMessage"] = o.ErrorMessage
+	}
+	if o.FullElementId != nil {
+		toSerialize["fullElementId"] = o.FullElementId
 	}
 	if o.IsTransient != nil {
 		toSerialize["isTransient"] = o.IsTransient

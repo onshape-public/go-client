@@ -86,7 +86,7 @@ func (dst *BTDocumentSelectorParametersInfo) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'other-documents'
@@ -99,7 +99,7 @@ func (dst *BTDocumentSelectorParametersInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDocumentSelectorParametersInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTDocumentSelectorParametersInfo as BTOtherDocumentSelectorParametersInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDocumentSelectorParametersInfo as BTOtherDocumentSelectorParametersInfo: %s", err.Error())
 		}
 	}
 
@@ -110,7 +110,7 @@ func (dst *BTDocumentSelectorParametersInfo) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTDocumentSelectorParametersInfo, return on the first match
 	} else {
 		dst.implBTDocumentSelectorParametersInfo = nil
-		return fmt.Errorf("Failed to unmarshal BTDocumentSelectorParametersInfo as base_BTDocumentSelectorParametersInfo: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTDocumentSelectorParametersInfo as base_BTDocumentSelectorParametersInfo: %s", err.Error())
 	}
 }
 

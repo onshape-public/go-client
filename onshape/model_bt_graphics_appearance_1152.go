@@ -449,7 +449,7 @@ func (dst *BTGraphicsAppearance1152) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTGeneratedGraphicsAppearance-4159'
@@ -462,7 +462,7 @@ func (dst *BTGraphicsAppearance1152) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGraphicsAppearance1152 = nil
-			return fmt.Errorf("Failed to unmarshal BTGraphicsAppearance1152 as BTGeneratedGraphicsAppearance4159: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGraphicsAppearance1152 as BTGeneratedGraphicsAppearance4159: %s", err.Error())
 		}
 	}
 
@@ -473,7 +473,7 @@ func (dst *BTGraphicsAppearance1152) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTGraphicsAppearance1152, return on the first match
 	} else {
 		dst.implBTGraphicsAppearance1152 = nil
-		return fmt.Errorf("Failed to unmarshal BTGraphicsAppearance1152 as base_BTGraphicsAppearance1152: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTGraphicsAppearance1152 as base_BTGraphicsAppearance1152: %s", err.Error())
 	}
 }
 

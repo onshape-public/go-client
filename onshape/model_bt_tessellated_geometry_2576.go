@@ -469,7 +469,7 @@ func (dst *BTTessellatedGeometry2576) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTEntityDegenerateEdge-1129'
@@ -482,7 +482,7 @@ func (dst *BTTessellatedGeometry2576) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTessellatedGeometry2576 = nil
-			return fmt.Errorf("Failed to unmarshal BTTessellatedGeometry2576 as BTEntityDegenerateEdge1129: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTessellatedGeometry2576 as BTEntityDegenerateEdge1129: %s", err.Error())
 		}
 	}
 
@@ -496,7 +496,7 @@ func (dst *BTTessellatedGeometry2576) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTessellatedGeometry2576 = nil
-			return fmt.Errorf("Failed to unmarshal BTTessellatedGeometry2576 as BTEntityEdge30: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTessellatedGeometry2576 as BTEntityEdge30: %s", err.Error())
 		}
 	}
 
@@ -510,7 +510,7 @@ func (dst *BTTessellatedGeometry2576) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTessellatedGeometry2576 = nil
-			return fmt.Errorf("Failed to unmarshal BTTessellatedGeometry2576 as BTEntityFace31: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTessellatedGeometry2576 as BTEntityFace31: %s", err.Error())
 		}
 	}
 
@@ -524,7 +524,7 @@ func (dst *BTTessellatedGeometry2576) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTessellatedGeometry2576 = nil
-			return fmt.Errorf("Failed to unmarshal BTTessellatedGeometry2576 as BTEntityPoint29: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTessellatedGeometry2576 as BTEntityPoint29: %s", err.Error())
 		}
 	}
 
@@ -538,7 +538,7 @@ func (dst *BTTessellatedGeometry2576) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTessellatedGeometry2576 = nil
-			return fmt.Errorf("Failed to unmarshal BTTessellatedGeometry2576 as BTSimulationFace2147: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTessellatedGeometry2576 as BTSimulationFace2147: %s", err.Error())
 		}
 	}
 
@@ -549,7 +549,7 @@ func (dst *BTTessellatedGeometry2576) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTessellatedGeometry2576, return on the first match
 	} else {
 		dst.implBTTessellatedGeometry2576 = nil
-		return fmt.Errorf("Failed to unmarshal BTTessellatedGeometry2576 as base_BTTessellatedGeometry2576: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTessellatedGeometry2576 as base_BTTessellatedGeometry2576: %s", err.Error())
 	}
 }
 

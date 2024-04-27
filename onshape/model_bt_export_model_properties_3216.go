@@ -199,7 +199,7 @@ func (dst *BTExportModelProperties3216) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTExportBodyProperties-3559'
@@ -212,7 +212,7 @@ func (dst *BTExportModelProperties3216) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTExportModelProperties3216 = nil
-			return fmt.Errorf("Failed to unmarshal BTExportModelProperties3216 as BTExportBodyProperties3559: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTExportModelProperties3216 as BTExportBodyProperties3559: %s", err.Error())
 		}
 	}
 
@@ -223,7 +223,7 @@ func (dst *BTExportModelProperties3216) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTExportModelProperties3216, return on the first match
 	} else {
 		dst.implBTExportModelProperties3216 = nil
-		return fmt.Errorf("Failed to unmarshal BTExportModelProperties3216 as base_BTExportModelProperties3216: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTExportModelProperties3216 as base_BTExportModelProperties3216: %s", err.Error())
 	}
 }
 

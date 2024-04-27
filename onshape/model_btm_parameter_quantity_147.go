@@ -449,7 +449,7 @@ func (dst *BTMParameterQuantity147) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMParameterNullableQuantity-807'
@@ -462,7 +462,7 @@ func (dst *BTMParameterQuantity147) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterQuantity147 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterQuantity147 as BTMParameterNullableQuantity807: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterQuantity147 as BTMParameterNullableQuantity807: %s", err.Error())
 		}
 	}
 
@@ -473,7 +473,7 @@ func (dst *BTMParameterQuantity147) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMParameterQuantity147, return on the first match
 	} else {
 		dst.implBTMParameterQuantity147 = nil
-		return fmt.Errorf("Failed to unmarshal BTMParameterQuantity147 as base_BTMParameterQuantity147: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMParameterQuantity147 as base_BTMParameterQuantity147: %s", err.Error())
 	}
 }
 

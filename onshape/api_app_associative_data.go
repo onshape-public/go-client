@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -119,7 +118,7 @@ func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssoc
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -138,7 +137,7 @@ func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssoc
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -160,6 +159,7 @@ type ApiDeleteAssociativeDataRequest struct {
 	transactionId        *string
 	parentChangeId       *string
 	associativeDataId    *[]string
+	externalDocumentId   *string
 	elementId            *string
 	viewId               *string
 	microversionId       *string
@@ -183,6 +183,11 @@ func (r ApiDeleteAssociativeDataRequest) ParentChangeId(parentChangeId string) A
 
 func (r ApiDeleteAssociativeDataRequest) AssociativeDataId(associativeDataId []string) ApiDeleteAssociativeDataRequest {
 	r.associativeDataId = &associativeDataId
+	return r
+}
+
+func (r ApiDeleteAssociativeDataRequest) ExternalDocumentId(externalDocumentId string) ApiDeleteAssociativeDataRequest {
+	r.externalDocumentId = &externalDocumentId
 	return r
 }
 
@@ -301,6 +306,9 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteA
 			localVarQueryParams.Add("associativeDataId", parameterToString(t, "multi"))
 		}
 	}
+	if r.externalDocumentId != nil {
+		localVarQueryParams.Add("externalDocumentId", parameterToString(*r.externalDocumentId, ""))
+	}
 	if r.elementId != nil {
 		localVarQueryParams.Add("elementId", parameterToString(*r.elementId, ""))
 	}
@@ -358,7 +366,7 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteA
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -377,7 +385,7 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteA
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -400,6 +408,7 @@ type ApiGetAssociativeDataRequest struct {
 	transactionId        *string
 	changeId             *string
 	associativeDataId    *[]string
+	externalDocumentId   *string
 	elementId            *string
 	viewId               *string
 	microversionId       *string
@@ -430,6 +439,11 @@ func (r ApiGetAssociativeDataRequest) ChangeId(changeId string) ApiGetAssociativ
 
 func (r ApiGetAssociativeDataRequest) AssociativeDataId(associativeDataId []string) ApiGetAssociativeDataRequest {
 	r.associativeDataId = &associativeDataId
+	return r
+}
+
+func (r ApiGetAssociativeDataRequest) ExternalDocumentId(externalDocumentId string) ApiGetAssociativeDataRequest {
+	r.externalDocumentId = &externalDocumentId
 	return r
 }
 
@@ -556,6 +570,9 @@ func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssocia
 			localVarQueryParams.Add("associativeDataId", parameterToString(t, "multi"))
 		}
 	}
+	if r.externalDocumentId != nil {
+		localVarQueryParams.Add("externalDocumentId", parameterToString(*r.externalDocumentId, ""))
+	}
 	if r.elementId != nil {
 		localVarQueryParams.Add("elementId", parameterToString(*r.elementId, ""))
 	}
@@ -616,7 +633,7 @@ func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssocia
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -635,7 +652,7 @@ func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssocia
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -750,7 +767,7 @@ func (a *AppAssociativeDataApiService) PostAssociativeDataExecute(r ApiPostAssoc
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -769,7 +786,7 @@ func (a *AppAssociativeDataApiService) PostAssociativeDataExecute(r ApiPostAssoc
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

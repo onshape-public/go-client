@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**ShareDocument**](DocumentApi.md#ShareDocument) | **Post** /documents/{did}/share | Share document by document ID.
 [**ShareWithSupport**](DocumentApi.md#ShareWithSupport) | **Post** /documents/{did}/shareWithSupport | Share document by document ID with Onshape support.
 [**SyncAppElements**](DocumentApi.md#SyncAppElements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
-[**UnShareDocument**](DocumentApi.md#UnShareDocument) | **Delete** /documents/{did}/share/{eid} | Unshare document by document ID and tab ID.
+[**UnShareDocument**](DocumentApi.md#UnShareDocument) | **Delete** /documents/{did}/share/{eid} | Remove document View permissions from a user or other entity.
 [**UnshareFromSupport**](DocumentApi.md#UnshareFromSupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
 [**UpdateDocumentAttributes**](DocumentApi.md#UpdateDocumentAttributes) | **Post** /documents/{did} | Update document attributes by document ID.
 [**UpdateExternalReferencesToLatestDocuments**](DocumentApi.md#UpdateExternalReferencesToLatestDocuments) | **Post** /documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences | Update external references to latest by document ID, workspace ID, and tab ID.
@@ -2205,7 +2205,9 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UnShareDocument(ctx, did, eid).EntryType(entryType).Execute()
 
-Unshare document by document ID and tab ID.
+Remove document View permissions from a user or other entity.
+
+
 
 ### Example
 
@@ -2220,9 +2222,9 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    eid := "eid_example" // string | 
-    entryType := int32(56) // int32 |  (optional) (default to 0)
+    did := "did_example" // string | ID of the document to unshare.
+    eid := "eid_example" // string | ID of the entity to remove permissions for. Uses `userId`, `companyId`, `teamId`, `documentId`, or `applicationId`, depending on the `entryType` value.
+    entryType := int32(56) // int32 | `0` (user) | `1` (company) | `2` (team) | `3` (document) | `4` (application) (optional) (default to 0)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -2242,8 +2244,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | ID of the document to unshare. | 
+**eid** | **string** | ID of the entity to remove permissions for. Uses &#x60;userId&#x60;, &#x60;companyId&#x60;, &#x60;teamId&#x60;, &#x60;documentId&#x60;, or &#x60;applicationId&#x60;, depending on the &#x60;entryType&#x60; value. | 
 
 ### Other Parameters
 
@@ -2254,7 +2256,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **entryType** | **int32** |  | [default to 0]
+ **entryType** | **int32** | &#x60;0&#x60; (user) | &#x60;1&#x60; (company) | &#x60;2&#x60; (team) | &#x60;3&#x60; (document) | &#x60;4&#x60; (application) | [default to 0]
 
 ### Return type
 

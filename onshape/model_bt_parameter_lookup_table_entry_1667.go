@@ -399,7 +399,7 @@ func (dst *BTParameterLookupTableEntry1667) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterLookupTableListEntry-1916'
@@ -412,7 +412,7 @@ func (dst *BTParameterLookupTableEntry1667) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterLookupTableEntry1667 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterLookupTableEntry1667 as BTParameterLookupTableListEntry1916: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterLookupTableEntry1667 as BTParameterLookupTableListEntry1916: %s", err.Error())
 		}
 	}
 
@@ -423,7 +423,7 @@ func (dst *BTParameterLookupTableEntry1667) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParameterLookupTableEntry1667, return on the first match
 	} else {
 		dst.implBTParameterLookupTableEntry1667 = nil
-		return fmt.Errorf("Failed to unmarshal BTParameterLookupTableEntry1667 as base_BTParameterLookupTableEntry1667: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParameterLookupTableEntry1667 as base_BTParameterLookupTableEntry1667: %s", err.Error())
 	}
 }
 

@@ -1449,7 +1449,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblyInstance-947'
@@ -1462,7 +1462,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTAssemblyInstance947: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTAssemblyInstance947: %s", err.Error())
 		}
 	}
 
@@ -1476,7 +1476,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTAssemblyPattern1974: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTAssemblyPattern1974: %s", err.Error())
 		}
 	}
 
@@ -1490,7 +1490,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTAssemblyReplicate2774: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTAssemblyReplicate2774: %s", err.Error())
 		}
 	}
 
@@ -1504,7 +1504,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTClonedInstance2505: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTClonedInstance2505: %s", err.Error())
 		}
 	}
 
@@ -1518,7 +1518,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTInstance642: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTInstance642: %s", err.Error())
 		}
 	}
 
@@ -1532,7 +1532,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTInstanceFolder3627: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTInstanceFolder3627: %s", err.Error())
 		}
 	}
 
@@ -1546,7 +1546,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTParametricInstance2641: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricInstance2641: %s", err.Error())
 		}
 	}
 
@@ -1560,7 +1560,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTParametricOutputInstance2288: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricOutputInstance2288: %s", err.Error())
 		}
 	}
 
@@ -1574,7 +1574,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTParametricPartStudioChildInstance3696: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricPartStudioChildInstance3696: %s", err.Error())
 		}
 	}
 
@@ -1588,7 +1588,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTParametricPartStudioInstance4374: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricPartStudioInstance4374: %s", err.Error())
 		}
 	}
 
@@ -1602,7 +1602,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as BTPartInstance81: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTPartInstance81: %s", err.Error())
 		}
 	}
 
@@ -1613,7 +1613,7 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTInstanceBase2263, return on the first match
 	} else {
 		dst.implBTInstanceBase2263 = nil
-		return fmt.Errorf("Failed to unmarshal BTInstanceBase2263 as base_BTInstanceBase2263: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as base_BTInstanceBase2263: %s", err.Error())
 	}
 }
 
