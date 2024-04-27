@@ -254,7 +254,7 @@ func (dst *BTExportTessellatedBody3398) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTExportTessellatedEdgesBody-890'
@@ -267,7 +267,7 @@ func (dst *BTExportTessellatedBody3398) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTExportTessellatedBody3398 = nil
-			return fmt.Errorf("Failed to unmarshal BTExportTessellatedBody3398 as BTExportTessellatedEdgesBody890: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTExportTessellatedBody3398 as BTExportTessellatedEdgesBody890: %s", err.Error())
 		}
 	}
 
@@ -281,7 +281,7 @@ func (dst *BTExportTessellatedBody3398) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTExportTessellatedBody3398 = nil
-			return fmt.Errorf("Failed to unmarshal BTExportTessellatedBody3398 as BTExportTessellatedFacesBody1321: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTExportTessellatedBody3398 as BTExportTessellatedFacesBody1321: %s", err.Error())
 		}
 	}
 
@@ -292,7 +292,7 @@ func (dst *BTExportTessellatedBody3398) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTExportTessellatedBody3398, return on the first match
 	} else {
 		dst.implBTExportTessellatedBody3398 = nil
-		return fmt.Errorf("Failed to unmarshal BTExportTessellatedBody3398 as base_BTExportTessellatedBody3398: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTExportTessellatedBody3398 as base_BTExportTessellatedBody3398: %s", err.Error())
 	}
 }
 

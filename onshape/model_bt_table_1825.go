@@ -719,7 +719,7 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblySimulationStructuralLoadsTable-3867'
@@ -732,7 +732,7 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTable1825 = nil
-			return fmt.Errorf("Failed to unmarshal BTTable1825 as BTAssemblySimulationStructuralLoadsTable3867: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTable1825 as BTAssemblySimulationStructuralLoadsTable3867: %s", err.Error())
 		}
 	}
 
@@ -746,7 +746,7 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTable1825 = nil
-			return fmt.Errorf("Failed to unmarshal BTTable1825 as BTAssemblySimulationTable3236: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTable1825 as BTAssemblySimulationTable3236: %s", err.Error())
 		}
 	}
 
@@ -760,7 +760,7 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTable1825 = nil
-			return fmt.Errorf("Failed to unmarshal BTTable1825 as BTBillOfMaterialsTable1073: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTable1825 as BTBillOfMaterialsTable1073: %s", err.Error())
 		}
 	}
 
@@ -774,7 +774,7 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTable1825 = nil
-			return fmt.Errorf("Failed to unmarshal BTTable1825 as BTConfiguredPartPropertiesTable2740: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTable1825 as BTConfiguredPartPropertiesTable2740: %s", err.Error())
 		}
 	}
 
@@ -788,7 +788,7 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTable1825 = nil
-			return fmt.Errorf("Failed to unmarshal BTTable1825 as BTFSTable953: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTable1825 as BTFSTable953: %s", err.Error())
 		}
 	}
 
@@ -799,7 +799,7 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTable1825, return on the first match
 	} else {
 		dst.implBTTable1825 = nil
-		return fmt.Errorf("Failed to unmarshal BTTable1825 as base_BTTable1825: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTable1825 as base_BTTable1825: %s", err.Error())
 	}
 }
 

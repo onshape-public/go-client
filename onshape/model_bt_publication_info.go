@@ -1226,7 +1226,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'classroom'
@@ -1239,7 +1239,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTClassroomInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTClassroomInfo: %s", err.Error())
 		}
 	}
 
@@ -1253,7 +1253,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTCloudStorageAccountInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTCloudStorageAccountInfo: %s", err.Error())
 		}
 	}
 
@@ -1267,7 +1267,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTDocumentSummaryInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTDocumentSummaryInfo: %s", err.Error())
 		}
 	}
 
@@ -1281,7 +1281,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTFolderInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTFolderInfo: %s", err.Error())
 		}
 	}
 
@@ -1295,7 +1295,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTDocumentLabelInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTDocumentLabelInfo: %s", err.Error())
 		}
 	}
 
@@ -1309,7 +1309,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTGlobalTreeMagicNodeInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTGlobalTreeMagicNodeInfo: %s", err.Error())
 		}
 	}
 
@@ -1323,7 +1323,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTProjectInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTProjectInfo: %s", err.Error())
 		}
 	}
 
@@ -1337,7 +1337,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTResourceOwnerInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTResourceOwnerInfo: %s", err.Error())
 		}
 	}
 
@@ -1351,7 +1351,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPublicationInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTPublicationInfo as BTTeamSummaryInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTTeamSummaryInfo: %s", err.Error())
 		}
 	}
 
@@ -1362,7 +1362,7 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTPublicationInfo, return on the first match
 	} else {
 		dst.implBTPublicationInfo = nil
-		return fmt.Errorf("Failed to unmarshal BTPublicationInfo as base_BTPublicationInfo: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTPublicationInfo as base_BTPublicationInfo: %s", err.Error())
 	}
 }
 

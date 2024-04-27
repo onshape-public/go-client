@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -113,7 +112,7 @@ func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewReque
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -132,7 +131,7 @@ func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewReque
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -145,14 +144,14 @@ func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewReque
 }
 
 type ApiConsumePurchaseRequest struct {
-	ctx                  context.Context
-	ApiService           *AccountApiService
-	pid                  string
-	bTPurchaseUserParams *BTPurchaseUserParams
+	ctx                      context.Context
+	ApiService               *AccountApiService
+	pid                      string
+	bTPurchaseIdentityParams *BTPurchaseIdentityParams
 }
 
-func (r ApiConsumePurchaseRequest) BTPurchaseUserParams(bTPurchaseUserParams BTPurchaseUserParams) ApiConsumePurchaseRequest {
-	r.bTPurchaseUserParams = &bTPurchaseUserParams
+func (r ApiConsumePurchaseRequest) BTPurchaseIdentityParams(bTPurchaseIdentityParams BTPurchaseIdentityParams) ApiConsumePurchaseRequest {
+	r.bTPurchaseIdentityParams = &bTPurchaseIdentityParams
 	return r
 }
 
@@ -216,7 +215,7 @@ func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.bTPurchaseUserParams
+	localVarPostBody = r.bTPurchaseIdentityParams
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -230,7 +229,7 @@ func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) 
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -249,7 +248,7 @@ func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) 
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -357,7 +356,7 @@ func (a *AccountApiService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -376,7 +375,7 @@ func (a *AccountApiService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -491,7 +490,7 @@ func (a *AccountApiService) GetPurchasesExecute(r ApiGetPurchasesRequest) ([]BTP
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -510,7 +509,7 @@ func (a *AccountApiService) GetPurchasesExecute(r ApiGetPurchasesRequest) ([]BTP
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

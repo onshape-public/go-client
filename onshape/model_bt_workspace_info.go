@@ -35,6 +35,7 @@ type BTWorkspaceInfo struct {
 	Parent         *string                           `json:"parent,omitempty"`
 	Parents        []BTVersionInfo                   `json:"parents,omitempty"`
 	ProtectionRule *BTWorkspaceProtectionRuleOptions `json:"protectionRule,omitempty"`
+	State          *BTObjectState                    `json:"state,omitempty"`
 	Thumbnail      *BTThumbnailInfo                  `json:"thumbnail,omitempty"`
 	Type           *string                           `json:"type,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
@@ -570,6 +571,38 @@ func (o *BTWorkspaceInfo) SetProtectionRule(v BTWorkspaceProtectionRuleOptions) 
 	o.ProtectionRule = &v
 }
 
+// GetState returns the State field value if set, zero value otherwise.
+func (o *BTWorkspaceInfo) GetState() BTObjectState {
+	if o == nil || o.State == nil {
+		var ret BTObjectState
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceInfo) GetStateOk() (*BTObjectState, bool) {
+	if o == nil || o.State == nil {
+		return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *BTWorkspaceInfo) HasState() bool {
+	if o != nil && o.State != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given BTObjectState and assigns it to the State field.
+func (o *BTWorkspaceInfo) SetState(v BTObjectState) {
+	o.State = &v
+}
+
 // GetThumbnail returns the Thumbnail field value if set, zero value otherwise.
 func (o *BTWorkspaceInfo) GetThumbnail() BTThumbnailInfo {
 	if o == nil || o.Thumbnail == nil {
@@ -715,6 +748,9 @@ func (o BTWorkspaceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ProtectionRule != nil {
 		toSerialize["protectionRule"] = o.ProtectionRule
+	}
+	if o.State != nil {
+		toSerialize["state"] = o.State
 	}
 	if o.Thumbnail != nil {
 		toSerialize["thumbnail"] = o.Thumbnail

@@ -1254,7 +1254,7 @@ func (dst *BTPFunctionOrPredicateDeclaration247) UnmarshalJSON(data []byte) erro
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTPFunctionDeclaration-246'
@@ -1267,7 +1267,7 @@ func (dst *BTPFunctionOrPredicateDeclaration247) UnmarshalJSON(data []byte) erro
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPFunctionOrPredicateDeclaration247 = nil
-			return fmt.Errorf("Failed to unmarshal BTPFunctionOrPredicateDeclaration247 as BTPFunctionDeclaration246: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPFunctionOrPredicateDeclaration247 as BTPFunctionDeclaration246: %s", err.Error())
 		}
 	}
 
@@ -1281,7 +1281,7 @@ func (dst *BTPFunctionOrPredicateDeclaration247) UnmarshalJSON(data []byte) erro
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPFunctionOrPredicateDeclaration247 = nil
-			return fmt.Errorf("Failed to unmarshal BTPFunctionOrPredicateDeclaration247 as BTPPredicateDeclaration265: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPFunctionOrPredicateDeclaration247 as BTPPredicateDeclaration265: %s", err.Error())
 		}
 	}
 
@@ -1292,7 +1292,7 @@ func (dst *BTPFunctionOrPredicateDeclaration247) UnmarshalJSON(data []byte) erro
 		return nil // data stored in dst.base_BTPFunctionOrPredicateDeclaration247, return on the first match
 	} else {
 		dst.implBTPFunctionOrPredicateDeclaration247 = nil
-		return fmt.Errorf("Failed to unmarshal BTPFunctionOrPredicateDeclaration247 as base_BTPFunctionOrPredicateDeclaration247: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTPFunctionOrPredicateDeclaration247 as base_BTPFunctionOrPredicateDeclaration247: %s", err.Error())
 	}
 }
 

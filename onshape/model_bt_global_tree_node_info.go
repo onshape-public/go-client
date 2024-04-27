@@ -1046,7 +1046,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTDocumentInfo'
@@ -1059,7 +1059,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentInfo: %s", err.Error())
 		}
 	}
 
@@ -1073,7 +1073,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentProcessingInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentProcessingInfo: %s", err.Error())
 		}
 	}
 
@@ -1087,7 +1087,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummarySearchInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummarySearchInfo: %s", err.Error())
 		}
 	}
 
@@ -1101,7 +1101,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTPublicationInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTPublicationInfo: %s", err.Error())
 		}
 	}
 
@@ -1115,7 +1115,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTClassroomInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTClassroomInfo: %s", err.Error())
 		}
 	}
 
@@ -1129,7 +1129,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTCloudStorageAccountInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTCloudStorageAccountInfo: %s", err.Error())
 		}
 	}
 
@@ -1143,7 +1143,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummaryInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummaryInfo: %s", err.Error())
 		}
 	}
 
@@ -1157,7 +1157,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTFolderInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTFolderInfo: %s", err.Error())
 		}
 	}
 
@@ -1171,7 +1171,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentLabelInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentLabelInfo: %s", err.Error())
 		}
 	}
 
@@ -1185,7 +1185,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTGlobalTreeMagicNodeInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTGlobalTreeMagicNodeInfo: %s", err.Error())
 		}
 	}
 
@@ -1199,7 +1199,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTProjectInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTProjectInfo: %s", err.Error())
 		}
 	}
 
@@ -1213,7 +1213,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTResourceOwnerInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTResourceOwnerInfo: %s", err.Error())
 		}
 	}
 
@@ -1227,7 +1227,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as BTTeamSummaryInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTTeamSummaryInfo: %s", err.Error())
 		}
 	}
 
@@ -1238,7 +1238,7 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTGlobalTreeNodeInfo, return on the first match
 	} else {
 		dst.implBTGlobalTreeNodeInfo = nil
-		return fmt.Errorf("Failed to unmarshal BTGlobalTreeNodeInfo as base_BTGlobalTreeNodeInfo: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as base_BTGlobalTreeNodeInfo: %s", err.Error())
 	}
 }
 

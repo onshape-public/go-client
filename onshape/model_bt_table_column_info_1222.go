@@ -289,7 +289,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTConfiguredDimensionColumnInfo-2168'
@@ -302,7 +302,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredDimensionColumnInfo2168: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredDimensionColumnInfo2168: %s", err.Error())
 		}
 	}
 
@@ -316,7 +316,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredFeatureColumnInfo1014: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredFeatureColumnInfo1014: %s", err.Error())
 		}
 	}
 
@@ -330,7 +330,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredParameterColumnInfo2900: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredParameterColumnInfo2900: %s", err.Error())
 		}
 	}
 
@@ -344,7 +344,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredSuppressionColumnInfo2498: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredSuppressionColumnInfo2498: %s", err.Error())
 		}
 	}
 
@@ -358,7 +358,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredValuesColumnInfo1025: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredValuesColumnInfo1025: %s", err.Error())
 		}
 	}
 
@@ -372,7 +372,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTFSTableColumnInfo623: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTFSTableColumnInfo623: %s", err.Error())
 		}
 	}
 
@@ -386,7 +386,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTNamedPositionValuesColumnInfo816: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTNamedPositionValuesColumnInfo816: %s", err.Error())
 		}
 	}
 
@@ -400,7 +400,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTPropertyTableColumnInfo2161: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTPropertyTableColumnInfo2161: %s", err.Error())
 		}
 	}
 
@@ -414,7 +414,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTSimulationTableColumnInfo1785: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTSimulationTableColumnInfo1785: %s", err.Error())
 		}
 	}
 
@@ -425,7 +425,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTableColumnInfo1222, return on the first match
 	} else {
 		dst.implBTTableColumnInfo1222 = nil
-		return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as base_BTTableColumnInfo1222: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as base_BTTableColumnInfo1222: %s", err.Error())
 	}
 }
 

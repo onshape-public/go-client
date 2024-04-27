@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAssociativeData
 
-> BTAppElementBasicInfo DeleteAssociativeData(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReferenceId(referenceId).Execute()
+> BTAppElementBasicInfo DeleteAssociativeData(ctx, did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ExternalDocumentId(externalDocumentId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReferenceId(referenceId).Execute()
 
 Delete the associative data from the specified app element.
 
@@ -117,6 +117,7 @@ func main() {
     transactionId := "transactionId_example" // string |  (optional) (default to "")
     parentChangeId := "parentChangeId_example" // string |  (optional) (default to "")
     associativeDataId := []string{"Inner_example"} // []string |  (optional)
+    externalDocumentId := "externalDocumentId_example" // string |  (optional) (default to "")
     elementId := "elementId_example" // string |  (optional) (default to "")
     viewId := "viewId_example" // string |  (optional) (default to "")
     microversionId := "microversionId_example" // string |  (optional) (default to "")
@@ -129,7 +130,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppAssociativeDataApi.DeleteAssociativeData(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReferenceId(referenceId).Execute()
+    resp, r, err := apiClient.AppAssociativeDataApi.DeleteAssociativeData(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ExternalDocumentId(externalDocumentId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReferenceId(referenceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.DeleteAssociativeData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -164,6 +165,7 @@ Name | Type | Description  | Notes
  **transactionId** | **string** |  | [default to &quot;&quot;]
  **parentChangeId** | **string** |  | [default to &quot;&quot;]
  **associativeDataId** | **[]string** |  | 
+ **externalDocumentId** | **string** |  | [default to &quot;&quot;]
  **elementId** | **string** |  | [default to &quot;&quot;]
  **viewId** | **string** |  | [default to &quot;&quot;]
  **microversionId** | **string** |  | [default to &quot;&quot;]
@@ -194,7 +196,7 @@ Name | Type | Description  | Notes
 
 ## GetAssociativeData
 
-> BTAppAssociativeDataArrayInfo GetAssociativeData(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).ReferenceId(referenceId).Execute()
+> BTAppAssociativeDataArrayInfo GetAssociativeData(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ExternalDocumentId(externalDocumentId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).ReferenceId(referenceId).Execute()
 
 Get the associative data for the specified app element.
 
@@ -221,6 +223,7 @@ func main() {
     transactionId := "transactionId_example" // string |  (optional) (default to "")
     changeId := "changeId_example" // string |  (optional) (default to "")
     associativeDataId := []string{"Inner_example"} // []string |  (optional)
+    externalDocumentId := "externalDocumentId_example" // string |  (optional) (default to "")
     elementId := "elementId_example" // string |  (optional) (default to "")
     viewId := "viewId_example" // string |  (optional) (default to "")
     microversionId := "microversionId_example" // string |  (optional) (default to "")
@@ -234,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppAssociativeDataApi.GetAssociativeData(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).ReferenceId(referenceId).Execute()
+    resp, r, err := apiClient.AppAssociativeDataApi.GetAssociativeData(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ExternalDocumentId(externalDocumentId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).ReferenceId(referenceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.GetAssociativeData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -270,6 +273,7 @@ Name | Type | Description  | Notes
  **transactionId** | **string** |  | [default to &quot;&quot;]
  **changeId** | **string** |  | [default to &quot;&quot;]
  **associativeDataId** | **[]string** |  | 
+ **externalDocumentId** | **string** |  | [default to &quot;&quot;]
  **elementId** | **string** |  | [default to &quot;&quot;]
  **viewId** | **string** |  | [default to &quot;&quot;]
  **microversionId** | **string** |  | [default to &quot;&quot;]

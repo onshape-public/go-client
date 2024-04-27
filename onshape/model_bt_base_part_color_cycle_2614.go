@@ -99,7 +99,7 @@ func (dst *BTBasePartColorCycle2614) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTSystemPartColorCycle-1580'
@@ -112,7 +112,7 @@ func (dst *BTBasePartColorCycle2614) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBasePartColorCycle2614 = nil
-			return fmt.Errorf("Failed to unmarshal BTBasePartColorCycle2614 as BTSystemPartColorCycle1580: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBasePartColorCycle2614 as BTSystemPartColorCycle1580: %s", err.Error())
 		}
 	}
 
@@ -123,7 +123,7 @@ func (dst *BTBasePartColorCycle2614) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTBasePartColorCycle2614, return on the first match
 	} else {
 		dst.implBTBasePartColorCycle2614 = nil
-		return fmt.Errorf("Failed to unmarshal BTBasePartColorCycle2614 as base_BTBasePartColorCycle2614: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTBasePartColorCycle2614 as base_BTBasePartColorCycle2614: %s", err.Error())
 	}
 }
 

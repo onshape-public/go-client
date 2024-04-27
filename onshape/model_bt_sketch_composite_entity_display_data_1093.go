@@ -154,7 +154,7 @@ func (dst *BTSketchCompositeEntityDisplayData1093) UnmarshalJSON(data []byte) er
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTSketchImageDisplayData-1379'
@@ -167,7 +167,7 @@ func (dst *BTSketchCompositeEntityDisplayData1093) UnmarshalJSON(data []byte) er
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchCompositeEntityDisplayData1093 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchCompositeEntityDisplayData1093 as BTSketchImageDisplayData1379: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchCompositeEntityDisplayData1093 as BTSketchImageDisplayData1379: %s", err.Error())
 		}
 	}
 
@@ -181,7 +181,7 @@ func (dst *BTSketchCompositeEntityDisplayData1093) UnmarshalJSON(data []byte) er
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSketchCompositeEntityDisplayData1093 = nil
-			return fmt.Errorf("Failed to unmarshal BTSketchCompositeEntityDisplayData1093 as BTSketchTextDisplayData1707: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSketchCompositeEntityDisplayData1093 as BTSketchTextDisplayData1707: %s", err.Error())
 		}
 	}
 
@@ -192,7 +192,7 @@ func (dst *BTSketchCompositeEntityDisplayData1093) UnmarshalJSON(data []byte) er
 		return nil // data stored in dst.base_BTSketchCompositeEntityDisplayData1093, return on the first match
 	} else {
 		dst.implBTSketchCompositeEntityDisplayData1093 = nil
-		return fmt.Errorf("Failed to unmarshal BTSketchCompositeEntityDisplayData1093 as base_BTSketchCompositeEntityDisplayData1093: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTSketchCompositeEntityDisplayData1093 as base_BTSketchCompositeEntityDisplayData1093: %s", err.Error())
 	}
 }
 

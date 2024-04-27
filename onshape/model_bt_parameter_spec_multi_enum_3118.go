@@ -1099,7 +1099,7 @@ func (dst *BTParameterSpecMultiEnum3118) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterSpecCategories-4083'
@@ -1112,7 +1112,7 @@ func (dst *BTParameterSpecMultiEnum3118) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecMultiEnum3118 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecMultiEnum3118 as BTParameterSpecCategories4083: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecMultiEnum3118 as BTParameterSpecCategories4083: %s", err.Error())
 		}
 	}
 
@@ -1123,7 +1123,7 @@ func (dst *BTParameterSpecMultiEnum3118) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParameterSpecMultiEnum3118, return on the first match
 	} else {
 		dst.implBTParameterSpecMultiEnum3118 = nil
-		return fmt.Errorf("Failed to unmarshal BTParameterSpecMultiEnum3118 as base_BTParameterSpecMultiEnum3118: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParameterSpecMultiEnum3118 as base_BTParameterSpecMultiEnum3118: %s", err.Error())
 	}
 }
 

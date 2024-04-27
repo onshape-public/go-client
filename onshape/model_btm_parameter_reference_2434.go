@@ -669,7 +669,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMParameterReferenceBlob-3281'
@@ -682,7 +682,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceBlob3281: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceBlob3281: %s", err.Error())
 		}
 	}
 
@@ -696,7 +696,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceCADImport2016: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceCADImport2016: %s", err.Error())
 		}
 	}
 
@@ -710,7 +710,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceImage2014: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceImage2014: %s", err.Error())
 		}
 	}
 
@@ -724,7 +724,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceTable917: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceTable917: %s", err.Error())
 		}
 	}
 
@@ -738,7 +738,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceWithConfiguration3028: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceWithConfiguration3028: %s", err.Error())
 		}
 	}
 
@@ -749,7 +749,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMParameterReference2434, return on the first match
 	} else {
 		dst.implBTMParameterReference2434 = nil
-		return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as base_BTMParameterReference2434: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as base_BTMParameterReference2434: %s", err.Error())
 	}
 }
 

@@ -836,7 +836,7 @@ func (dst *Item) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'publication-blob-item'
@@ -849,7 +849,7 @@ func (dst *Item) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implItem = nil
-			return fmt.Errorf("Failed to unmarshal Item as BlobItem: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal Item as BlobItem: %s", err.Error())
 		}
 	}
 
@@ -860,7 +860,7 @@ func (dst *Item) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_Item, return on the first match
 	} else {
 		dst.implItem = nil
-		return fmt.Errorf("Failed to unmarshal Item as base_Item: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal Item as base_Item: %s", err.Error())
 	}
 }
 

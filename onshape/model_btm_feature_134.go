@@ -799,7 +799,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblySimulation-2246'
@@ -812,7 +812,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTAssemblySimulation2246: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTAssemblySimulation2246: %s", err.Error())
 		}
 	}
 
@@ -826,7 +826,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTExplosion2754: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTExplosion2754: %s", err.Error())
 		}
 	}
 
@@ -840,7 +840,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTExplosionStepFeature3008: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTExplosionStepFeature3008: %s", err.Error())
 		}
 	}
 
@@ -854,7 +854,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeature887: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeature887: %s", err.Error())
 		}
 	}
 
@@ -868,7 +868,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeature12218: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeature12218: %s", err.Error())
 		}
 	}
 
@@ -882,7 +882,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeature21022: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeature21022: %s", err.Error())
 		}
 	}
 
@@ -896,7 +896,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeatureFolder2543: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeatureFolder2543: %s", err.Error())
 		}
 	}
 
@@ -910,7 +910,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyPatternFeature2241: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyPatternFeature2241: %s", err.Error())
 		}
 	}
 
@@ -924,7 +924,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyReplicateFeature1351: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyReplicateFeature1351: %s", err.Error())
 		}
 	}
 
@@ -938,7 +938,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMFeatureInvalid1031: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMFeatureInvalid1031: %s", err.Error())
 		}
 	}
 
@@ -952,7 +952,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMGenerativeDesignFeature3195: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMGenerativeDesignFeature3195: %s", err.Error())
 		}
 	}
 
@@ -966,7 +966,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMGeometryMate1260: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMGeometryMate1260: %s", err.Error())
 		}
 	}
 
@@ -980,7 +980,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMLoad3538: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMLoad3538: %s", err.Error())
 		}
 	}
 
@@ -994,7 +994,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMate64: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMate64: %s", err.Error())
 		}
 	}
 
@@ -1008,7 +1008,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMateConnector66: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMateConnector66: %s", err.Error())
 		}
 	}
 
@@ -1022,7 +1022,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMateGroup65: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMateGroup65: %s", err.Error())
 		}
 	}
 
@@ -1036,7 +1036,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMateRelation1412: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMateRelation1412: %s", err.Error())
 		}
 	}
 
@@ -1050,7 +1050,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMNonGeometricItem1864: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMNonGeometricItem1864: %s", err.Error())
 		}
 	}
 
@@ -1064,7 +1064,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMParametricPartStudioFeature3883: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMParametricPartStudioFeature3883: %s", err.Error())
 		}
 	}
 
@@ -1078,7 +1078,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMSketch151: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMSketch151: %s", err.Error())
 		}
 	}
 
@@ -1092,7 +1092,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMVariableStudioReference2764: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMVariableStudioReference2764: %s", err.Error())
 		}
 	}
 
@@ -1103,7 +1103,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMFeature134, return on the first match
 	} else {
 		dst.implBTMFeature134 = nil
-		return fmt.Errorf("Failed to unmarshal BTMFeature134 as base_BTMFeature134: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMFeature134 as base_BTMFeature134: %s", err.Error())
 	}
 }
 

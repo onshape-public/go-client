@@ -314,7 +314,7 @@ func (dst *BTCurveDescription1583) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTCircleDescription-1145'
@@ -327,7 +327,7 @@ func (dst *BTCurveDescription1583) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveDescription1583 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveDescription1583 as BTCircleDescription1145: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveDescription1583 as BTCircleDescription1145: %s", err.Error())
 		}
 	}
 
@@ -341,7 +341,7 @@ func (dst *BTCurveDescription1583) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveDescription1583 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveDescription1583 as BTEllipseDescription866: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveDescription1583 as BTEllipseDescription866: %s", err.Error())
 		}
 	}
 
@@ -355,7 +355,7 @@ func (dst *BTCurveDescription1583) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveDescription1583 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveDescription1583 as BTLineDescription1559: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveDescription1583 as BTLineDescription1559: %s", err.Error())
 		}
 	}
 
@@ -369,7 +369,7 @@ func (dst *BTCurveDescription1583) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTCurveDescription1583 = nil
-			return fmt.Errorf("Failed to unmarshal BTCurveDescription1583 as BTSplineDescription2118: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTCurveDescription1583 as BTSplineDescription2118: %s", err.Error())
 		}
 	}
 
@@ -380,7 +380,7 @@ func (dst *BTCurveDescription1583) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTCurveDescription1583, return on the first match
 	} else {
 		dst.implBTCurveDescription1583 = nil
-		return fmt.Errorf("Failed to unmarshal BTCurveDescription1583 as base_BTCurveDescription1583: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTCurveDescription1583 as base_BTCurveDescription1583: %s", err.Error())
 	}
 }
 

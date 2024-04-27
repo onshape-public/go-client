@@ -119,7 +119,7 @@ func (dst *BTJEdit3734) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTJEditChange-2636'
@@ -132,7 +132,7 @@ func (dst *BTJEdit3734) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTJEdit3734 = nil
-			return fmt.Errorf("Failed to unmarshal BTJEdit3734 as BTJEditChange2636: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTJEdit3734 as BTJEditChange2636: %s", err.Error())
 		}
 	}
 
@@ -146,7 +146,7 @@ func (dst *BTJEdit3734) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTJEdit3734 = nil
-			return fmt.Errorf("Failed to unmarshal BTJEdit3734 as BTJEditDelete1992: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTJEdit3734 as BTJEditDelete1992: %s", err.Error())
 		}
 	}
 
@@ -160,7 +160,7 @@ func (dst *BTJEdit3734) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTJEdit3734 = nil
-			return fmt.Errorf("Failed to unmarshal BTJEdit3734 as BTJEditInsert2523: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTJEdit3734 as BTJEditInsert2523: %s", err.Error())
 		}
 	}
 
@@ -174,7 +174,7 @@ func (dst *BTJEdit3734) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTJEdit3734 = nil
-			return fmt.Errorf("Failed to unmarshal BTJEdit3734 as BTJEditList2707: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTJEdit3734 as BTJEditList2707: %s", err.Error())
 		}
 	}
 
@@ -188,7 +188,7 @@ func (dst *BTJEdit3734) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTJEdit3734 = nil
-			return fmt.Errorf("Failed to unmarshal BTJEdit3734 as BTJEditMove3245: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTJEdit3734 as BTJEditMove3245: %s", err.Error())
 		}
 	}
 
@@ -199,7 +199,7 @@ func (dst *BTJEdit3734) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTJEdit3734, return on the first match
 	} else {
 		dst.implBTJEdit3734 = nil
-		return fmt.Errorf("Failed to unmarshal BTJEdit3734 as base_BTJEdit3734: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTJEdit3734 as base_BTJEdit3734: %s", err.Error())
 	}
 }
 

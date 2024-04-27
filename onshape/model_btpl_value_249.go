@@ -559,7 +559,7 @@ func (dst *BTPLValue249) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTPLValueAccess-250'
@@ -572,7 +572,7 @@ func (dst *BTPLValue249) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLValue249 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLValue249 as BTPLValueAccess250: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLValue249 as BTPLValueAccess250: %s", err.Error())
 		}
 	}
 
@@ -586,7 +586,7 @@ func (dst *BTPLValue249) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLValue249 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLValue249 as BTPLValueBoxDereference251: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLValue249 as BTPLValueBoxDereference251: %s", err.Error())
 		}
 	}
 
@@ -600,7 +600,7 @@ func (dst *BTPLValue249) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPLValue249 = nil
-			return fmt.Errorf("Failed to unmarshal BTPLValue249 as BTPLValueVarReference252: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPLValue249 as BTPLValueVarReference252: %s", err.Error())
 		}
 	}
 
@@ -611,7 +611,7 @@ func (dst *BTPLValue249) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTPLValue249, return on the first match
 	} else {
 		dst.implBTPLValue249 = nil
-		return fmt.Errorf("Failed to unmarshal BTPLValue249 as base_BTPLValue249: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTPLValue249 as base_BTPLValue249: %s", err.Error())
 	}
 }
 

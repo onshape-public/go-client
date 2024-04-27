@@ -149,7 +149,7 @@ func (dst *BTFeatureOccurrenceData775) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMateOccurrenceData-1671'
@@ -162,7 +162,7 @@ func (dst *BTFeatureOccurrenceData775) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureOccurrenceData775 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureOccurrenceData775 as BTMateOccurrenceData1671: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureOccurrenceData775 as BTMateOccurrenceData1671: %s", err.Error())
 		}
 	}
 
@@ -173,7 +173,7 @@ func (dst *BTFeatureOccurrenceData775) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTFeatureOccurrenceData775, return on the first match
 	} else {
 		dst.implBTFeatureOccurrenceData775 = nil
-		return fmt.Errorf("Failed to unmarshal BTFeatureOccurrenceData775 as base_BTFeatureOccurrenceData775: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTFeatureOccurrenceData775 as base_BTFeatureOccurrenceData775: %s", err.Error())
 	}
 }
 

@@ -349,7 +349,7 @@ func (dst *BTQuantityRange181) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTNullableQuantityRange-1340'
@@ -362,7 +362,7 @@ func (dst *BTQuantityRange181) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTQuantityRange181 = nil
-			return fmt.Errorf("Failed to unmarshal BTQuantityRange181 as BTNullableQuantityRange1340: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTQuantityRange181 as BTNullableQuantityRange1340: %s", err.Error())
 		}
 	}
 
@@ -373,7 +373,7 @@ func (dst *BTQuantityRange181) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTQuantityRange181, return on the first match
 	} else {
 		dst.implBTQuantityRange181 = nil
-		return fmt.Errorf("Failed to unmarshal BTQuantityRange181 as base_BTQuantityRange181: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTQuantityRange181 as base_BTQuantityRange181: %s", err.Error())
 	}
 }
 

@@ -36,6 +36,7 @@ type BTParameterSpecArray2600 struct {
 	ItemName                   *string                            `json:"itemName,omitempty"`
 	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
 	Parameters                 []BTParameterSpec6                 `json:"parameters,omitempty"`
+	ShowLabelsOnly             *bool                              `json:"showLabelsOnly,omitempty"`
 }
 
 // NewBTParameterSpecArray2600 instantiates a new BTParameterSpecArray2600 object
@@ -695,6 +696,38 @@ func (o *BTParameterSpecArray2600) SetParameters(v []BTParameterSpec6) {
 	o.Parameters = v
 }
 
+// GetShowLabelsOnly returns the ShowLabelsOnly field value if set, zero value otherwise.
+func (o *BTParameterSpecArray2600) GetShowLabelsOnly() bool {
+	if o == nil || o.ShowLabelsOnly == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowLabelsOnly
+}
+
+// GetShowLabelsOnlyOk returns a tuple with the ShowLabelsOnly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecArray2600) GetShowLabelsOnlyOk() (*bool, bool) {
+	if o == nil || o.ShowLabelsOnly == nil {
+		return nil, false
+	}
+	return o.ShowLabelsOnly, true
+}
+
+// HasShowLabelsOnly returns a boolean if a field has been set.
+func (o *BTParameterSpecArray2600) HasShowLabelsOnly() bool {
+	if o != nil && o.ShowLabelsOnly != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowLabelsOnly gets a reference to the given bool and assigns it to the ShowLabelsOnly field.
+func (o *BTParameterSpecArray2600) SetShowLabelsOnly(v bool) {
+	o.ShowLabelsOnly = &v
+}
+
 func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AdditionalLocalizedStrings != nil {
@@ -756,6 +789,9 @@ func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters
+	}
+	if o.ShowLabelsOnly != nil {
+		toSerialize["showLabelsOnly"] = o.ShowLabelsOnly
 	}
 	return json.Marshal(toSerialize)
 }

@@ -199,7 +199,7 @@ func (dst *BTMateFilter162) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAllowedMateTypeFilter-1511'
@@ -212,7 +212,7 @@ func (dst *BTMateFilter162) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMateFilter162 = nil
-			return fmt.Errorf("Failed to unmarshal BTMateFilter162 as BTAllowedMateTypeFilter1511: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMateFilter162 as BTAllowedMateTypeFilter1511: %s", err.Error())
 		}
 	}
 
@@ -223,7 +223,7 @@ func (dst *BTMateFilter162) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMateFilter162, return on the first match
 	} else {
 		dst.implBTMateFilter162 = nil
-		return fmt.Errorf("Failed to unmarshal BTMateFilter162 as base_BTMateFilter162: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMateFilter162 as base_BTMateFilter162: %s", err.Error())
 	}
 }
 

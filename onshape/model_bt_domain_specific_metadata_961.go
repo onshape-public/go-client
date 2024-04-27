@@ -99,7 +99,7 @@ func (dst *BTDomainSpecificMetadata961) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTSMSpecificMetadata-1315'
@@ -112,7 +112,7 @@ func (dst *BTDomainSpecificMetadata961) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDomainSpecificMetadata961 = nil
-			return fmt.Errorf("Failed to unmarshal BTDomainSpecificMetadata961 as BTSMSpecificMetadata1315: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDomainSpecificMetadata961 as BTSMSpecificMetadata1315: %s", err.Error())
 		}
 	}
 
@@ -123,7 +123,7 @@ func (dst *BTDomainSpecificMetadata961) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTDomainSpecificMetadata961, return on the first match
 	} else {
 		dst.implBTDomainSpecificMetadata961 = nil
-		return fmt.Errorf("Failed to unmarshal BTDomainSpecificMetadata961 as base_BTDomainSpecificMetadata961: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTDomainSpecificMetadata961 as base_BTDomainSpecificMetadata961: %s", err.Error())
 	}
 }
 

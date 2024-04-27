@@ -1501,6 +1501,19 @@ const (
 	GBTErrorStringEnumIsoparametricCurveSelectPoint                         GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_SELECT_POINT"
 	GBTErrorStringEnumIsoparametricCurveSelectPosition                      GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_SELECT_POSITION"
 	GBTErrorStringEnumIsoparametricCurvePointNotOnFace                      GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE"
+	GBTErrorStringEnumThinSweep3DProfileTrimWarning                         GBTErrorStringEnum = "THIN_SWEEP_3D_PROFILE_TRIM_WARNING"
+	GBTErrorStringEnumThinSweepFailedToFindTrimPlanesWarning                GBTErrorStringEnum = "THIN_SWEEP_FAILED_TO_FIND_TRIM_PLANES_WARNING"
+	GBTErrorStringEnumThinSweepTrimFailed                                   GBTErrorStringEnum = "THIN_SWEEP_TRIM_FAILED"
+	GBTErrorStringEnumIsoparametricCurveSelectSingleFace                    GBTErrorStringEnum = "ISOPARAMETRIC_CURVE_SELECT_SINGLE_FACE"
+	GBTErrorStringEnumHoleFastenerFitIsNotApplicable                        GBTErrorStringEnum = "HOLE_FASTENER_FIT_IS_NOT_APPLICABLE"
+	GBTErrorStringEnumPatternSkippedInstancesSeedIndex                      GBTErrorStringEnum = "PATTERN_SKIPPED_INSTANCES_SEED_INDEX"
+	GBTErrorStringEnumPatternSkippedInstancesOutOfRangeIndex                GBTErrorStringEnum = "PATTERN_SKIPPED_INSTANCES_OUT_OF_RANGE_INDEX"
+	GBTErrorStringEnumFormedSelectLocation                                  GBTErrorStringEnum = "FORMED_SELECT_LOCATION"
+	GBTErrorStringEnumFormedNoPartStudioSelected                            GBTErrorStringEnum = "FORMED_NO_PART_STUDIO_SELECTED"
+	GBTErrorStringEnumFormedSelectLocationOnActiveFace                      GBTErrorStringEnum = "FORMED_SELECT_LOCATION_ON_ACTIVE_FACE"
+	GBTErrorStringEnumFormedLocationOnMultipleFaces                         GBTErrorStringEnum = "FORMED_LOCATION_ON_MULTIPLE_FACES"
+	GBTErrorStringEnumFormedNotOnHoleFormedFace                             GBTErrorStringEnum = "FORMED_NOT_ON_HOLE_FORMED_FACE"
+	GBTErrorStringEnumThinSweepThickenFailed                                GBTErrorStringEnum = "THIN_SWEEP_THICKEN_FAILED"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -2987,6 +3000,19 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"ISOPARAMETRIC_CURVE_SELECT_POINT",
 	"ISOPARAMETRIC_CURVE_SELECT_POSITION",
 	"ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE",
+	"THIN_SWEEP_3D_PROFILE_TRIM_WARNING",
+	"THIN_SWEEP_FAILED_TO_FIND_TRIM_PLANES_WARNING",
+	"THIN_SWEEP_TRIM_FAILED",
+	"ISOPARAMETRIC_CURVE_SELECT_SINGLE_FACE",
+	"HOLE_FASTENER_FIT_IS_NOT_APPLICABLE",
+	"PATTERN_SKIPPED_INSTANCES_SEED_INDEX",
+	"PATTERN_SKIPPED_INSTANCES_OUT_OF_RANGE_INDEX",
+	"FORMED_SELECT_LOCATION",
+	"FORMED_NO_PART_STUDIO_SELECTED",
+	"FORMED_SELECT_LOCATION_ON_ACTIVE_FACE",
+	"FORMED_LOCATION_ON_MULTIPLE_FACES",
+	"FORMED_NOT_ON_HOLE_FORMED_FACE",
+	"THIN_SWEEP_THICKEN_FAILED",
 	"UNKNOWN",
 }
 

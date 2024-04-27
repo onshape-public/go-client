@@ -204,7 +204,7 @@ func (dst *BTImageMapping3821) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTCylindricalImageMapping-1640'
@@ -217,7 +217,7 @@ func (dst *BTImageMapping3821) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTImageMapping3821 = nil
-			return fmt.Errorf("Failed to unmarshal BTImageMapping3821 as BTCylindricalImageMapping1640: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTImageMapping3821 as BTCylindricalImageMapping1640: %s", err.Error())
 		}
 	}
 
@@ -231,7 +231,7 @@ func (dst *BTImageMapping3821) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTImageMapping3821 = nil
-			return fmt.Errorf("Failed to unmarshal BTImageMapping3821 as BTPlanarImageMapping4398: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTImageMapping3821 as BTPlanarImageMapping4398: %s", err.Error())
 		}
 	}
 
@@ -242,7 +242,7 @@ func (dst *BTImageMapping3821) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTImageMapping3821, return on the first match
 	} else {
 		dst.implBTImageMapping3821 = nil
-		return fmt.Errorf("Failed to unmarshal BTImageMapping3821 as base_BTImageMapping3821: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTImageMapping3821 as base_BTImageMapping3821: %s", err.Error())
 	}
 }
 

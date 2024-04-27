@@ -1404,7 +1404,7 @@ func (dst *BTParametricOutputInstance2288) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTClonedInstance-2505'
@@ -1417,7 +1417,7 @@ func (dst *BTParametricOutputInstance2288) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParametricOutputInstance2288 = nil
-			return fmt.Errorf("Failed to unmarshal BTParametricOutputInstance2288 as BTClonedInstance2505: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParametricOutputInstance2288 as BTClonedInstance2505: %s", err.Error())
 		}
 	}
 
@@ -1431,7 +1431,7 @@ func (dst *BTParametricOutputInstance2288) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParametricOutputInstance2288 = nil
-			return fmt.Errorf("Failed to unmarshal BTParametricOutputInstance2288 as BTParametricPartStudioChildInstance3696: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParametricOutputInstance2288 as BTParametricPartStudioChildInstance3696: %s", err.Error())
 		}
 	}
 
@@ -1442,7 +1442,7 @@ func (dst *BTParametricOutputInstance2288) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParametricOutputInstance2288, return on the first match
 	} else {
 		dst.implBTParametricOutputInstance2288 = nil
-		return fmt.Errorf("Failed to unmarshal BTParametricOutputInstance2288 as base_BTParametricOutputInstance2288: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParametricOutputInstance2288 as base_BTParametricOutputInstance2288: %s", err.Error())
 	}
 }
 

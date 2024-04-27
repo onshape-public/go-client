@@ -934,7 +934,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterSpecAppearance-1740'
@@ -947,7 +947,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecAppearance1740: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecAppearance1740: %s", err.Error())
 		}
 	}
 
@@ -961,7 +961,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecArray2600: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecArray2600: %s", err.Error())
 		}
 	}
 
@@ -975,7 +975,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecBoolean170: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecBoolean170: %s", err.Error())
 		}
 	}
 
@@ -989,7 +989,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecCategories4083: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecCategories4083: %s", err.Error())
 		}
 	}
 
@@ -1003,7 +1003,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecDatabase1071: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecDatabase1071: %s", err.Error())
 		}
 	}
 
@@ -1017,7 +1017,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecDerived736: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecDerived736: %s", err.Error())
 		}
 	}
 
@@ -1031,7 +1031,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecEnum171: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecEnum171: %s", err.Error())
 		}
 	}
 
@@ -1045,7 +1045,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecFeatureList703: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecFeatureList703: %s", err.Error())
 		}
 	}
 
@@ -1059,7 +1059,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecForeignId172: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecForeignId172: %s", err.Error())
 		}
 	}
 
@@ -1073,7 +1073,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecLookupTablePath761: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecLookupTablePath761: %s", err.Error())
 		}
 	}
 
@@ -1087,7 +1087,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecMaterial2700: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecMaterial2700: %s", err.Error())
 		}
 	}
 
@@ -1101,7 +1101,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecMultiEnum3118: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecMultiEnum3118: %s", err.Error())
 		}
 	}
 
@@ -1115,7 +1115,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecNullableQuantity715: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecNullableQuantity715: %s", err.Error())
 		}
 	}
 
@@ -1129,7 +1129,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecProgress3078: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecProgress3078: %s", err.Error())
 		}
 	}
 
@@ -1143,7 +1143,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecQuantity173: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecQuantity173: %s", err.Error())
 		}
 	}
 
@@ -1157,7 +1157,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecQuery174: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecQuery174: %s", err.Error())
 		}
 	}
 
@@ -1171,7 +1171,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReference2789: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReference2789: %s", err.Error())
 		}
 	}
 
@@ -1185,7 +1185,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceAssembly2821: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceAssembly2821: %s", err.Error())
 		}
 	}
 
@@ -1199,7 +1199,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceBlob1367: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceBlob1367: %s", err.Error())
 		}
 	}
 
@@ -1213,7 +1213,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceCADImport1792: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceCADImport1792: %s", err.Error())
 		}
 	}
 
@@ -1227,7 +1227,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceImage1722: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceImage1722: %s", err.Error())
 		}
 	}
 
@@ -1241,7 +1241,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceJSON1816: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceJSON1816: %s", err.Error())
 		}
 	}
 
@@ -1255,7 +1255,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
 		}
 	}
 
@@ -1269,7 +1269,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceTable1520: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceTable1520: %s", err.Error())
 		}
 	}
 
@@ -1283,7 +1283,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
 		}
 	}
 
@@ -1297,7 +1297,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecString175: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecString175: %s", err.Error())
 		}
 	}
 
@@ -1311,7 +1311,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTParameterSpecStringWithTolerances2535: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecStringWithTolerances2535: %s", err.Error())
 		}
 	}
 
@@ -1325,7 +1325,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as BTReadOnlyParameterSpec1889: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTReadOnlyParameterSpec1889: %s", err.Error())
 		}
 	}
 
@@ -1336,7 +1336,7 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParameterSpec6, return on the first match
 	} else {
 		dst.implBTParameterSpec6 = nil
-		return fmt.Errorf("Failed to unmarshal BTParameterSpec6 as base_BTParameterSpec6: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParameterSpec6 as base_BTParameterSpec6: %s", err.Error())
 	}
 }
 

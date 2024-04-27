@@ -304,7 +304,7 @@ func (dst *BTMConfiguredValue1341) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMConfiguredValueByBoolean-1501'
@@ -317,7 +317,7 @@ func (dst *BTMConfiguredValue1341) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMConfiguredValue1341 = nil
-			return fmt.Errorf("Failed to unmarshal BTMConfiguredValue1341 as BTMConfiguredValueByBoolean1501: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMConfiguredValue1341 as BTMConfiguredValueByBoolean1501: %s", err.Error())
 		}
 	}
 
@@ -331,7 +331,7 @@ func (dst *BTMConfiguredValue1341) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMConfiguredValue1341 = nil
-			return fmt.Errorf("Failed to unmarshal BTMConfiguredValue1341 as BTMConfiguredValueByEnum1923: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMConfiguredValue1341 as BTMConfiguredValueByEnum1923: %s", err.Error())
 		}
 	}
 
@@ -342,7 +342,7 @@ func (dst *BTMConfiguredValue1341) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMConfiguredValue1341, return on the first match
 	} else {
 		dst.implBTMConfiguredValue1341 = nil
-		return fmt.Errorf("Failed to unmarshal BTMConfiguredValue1341 as base_BTMConfiguredValue1341: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMConfiguredValue1341 as base_BTMConfiguredValue1341: %s", err.Error())
 	}
 }
 

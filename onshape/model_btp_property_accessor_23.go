@@ -554,7 +554,7 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTPExpression-9'
@@ -567,7 +567,7 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPPropertyAccessor23 = nil
-			return fmt.Errorf("Failed to unmarshal BTPPropertyAccessor23 as BTPExpression9: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpression9: %s", err.Error())
 		}
 	}
 
@@ -581,7 +581,7 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTPPropertyAccessor23 = nil
-			return fmt.Errorf("Failed to unmarshal BTPPropertyAccessor23 as BTPIdentifier8: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPIdentifier8: %s", err.Error())
 		}
 	}
 
@@ -592,7 +592,7 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTPPropertyAccessor23, return on the first match
 	} else {
 		dst.implBTPPropertyAccessor23 = nil
-		return fmt.Errorf("Failed to unmarshal BTPPropertyAccessor23 as base_BTPPropertyAccessor23: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as base_BTPPropertyAccessor23: %s", err.Error())
 	}
 }
 

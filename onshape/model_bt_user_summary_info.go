@@ -1024,7 +1024,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTCompanyUserSummaryAdminInfo'
@@ -1037,7 +1037,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTUserSummaryInfo as BTCompanyUserSummaryAdminInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTCompanyUserSummaryAdminInfo: %s", err.Error())
 		}
 	}
 
@@ -1051,7 +1051,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTUserSummaryInfo as BTUserAdminInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTUserAdminInfo: %s", err.Error())
 		}
 	}
 
@@ -1065,7 +1065,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTUserSummaryInfo as BTUserAdminSummaryInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTUserAdminSummaryInfo: %s", err.Error())
 		}
 	}
 
@@ -1079,7 +1079,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTUserSummaryInfo as BTUserOAuth2SummaryInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTUserOAuth2SummaryInfo: %s", err.Error())
 		}
 	}
 
@@ -1093,7 +1093,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTUserSummaryInfo as BTCompanyUserSummaryInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTCompanyUserSummaryInfo: %s", err.Error())
 		}
 	}
 
@@ -1107,7 +1107,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTUserSummaryInfo as BTUserInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTUserInfo: %s", err.Error())
 		}
 	}
 
@@ -1118,7 +1118,7 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTUserSummaryInfo, return on the first match
 	} else {
 		dst.implBTUserSummaryInfo = nil
-		return fmt.Errorf("Failed to unmarshal BTUserSummaryInfo as base_BTUserSummaryInfo: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as base_BTUserSummaryInfo: %s", err.Error())
 	}
 }
 

@@ -2104,7 +2104,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblyInstance-947'
@@ -2117,7 +2117,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstance642 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstance642 as BTAssemblyInstance947: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstance642 as BTAssemblyInstance947: %s", err.Error())
 		}
 	}
 
@@ -2131,7 +2131,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstance642 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstance642 as BTPartInstance81: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstance642 as BTPartInstance81: %s", err.Error())
 		}
 	}
 
@@ -2142,7 +2142,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTInstance642, return on the first match
 	} else {
 		dst.implBTInstance642 = nil
-		return fmt.Errorf("Failed to unmarshal BTInstance642 as base_BTInstance642: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTInstance642 as base_BTInstance642: %s", err.Error())
 	}
 }
 

@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.179.34911-f6e17e872327
+  version: 1.180.35272-1b36f3860ce1
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -70,6 +70,8 @@ tags:
   name: Drawing
 - description: Access and manage Elements.
   name: Element
+- description: Fire events.
+  name: Event
 - description: Access valid export rules.
   name: ExportRule
 - description: Access and manage Feature Studio Elements.
@@ -224,7 +226,7 @@ paths:
         content:
           application/json;charset=UTF-8; qs=0.09:
             schema:
-              $ref: '#/components/schemas/BTPurchaseUserParams'
+              $ref: '#/components/schemas/BTPurchaseIdentityParams'
       responses:
         default:
           content:
@@ -1282,6 +1284,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: externalDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
         name: elementId
         required: false
         schema:
@@ -1448,6 +1458,14 @@ paths:
           items:
             type: string
           type: array
+        style: form
+      - explode: true
+        in: query
+        name: externalDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
         style: form
       - explode: true
         in: query
@@ -7248,23 +7266,33 @@ paths:
   /documents/{did}/share/{eid}:
     delete:
       deprecated: false
+      description: "Specify the ID of the entity to unshare with in the `eid` field,\
+        \ and specify the type of entity being identified in the `entryType` field.\
+        \ For example, to unshare a document with a company, you would use `1` as\
+        \ the `entryType` value and the `companyId` as the `entityId`."
       operationId: unShareDocument
       parameters:
-      - explode: false
+      - description: ID of the document to unshare.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "ID of the entity to remove permissions for. Uses `userId`, `companyId`,\
+          \ `teamId`, `documentId`, or `applicationId`, depending on the `entryType`\
+          \ value."
+        explode: false
         in: path
         name: eid
         required: true
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: '`0` (user) | `1` (company) | `2` (team) | `3` (document) | `4`
+          (application)'
+        explode: true
         in: query
         name: entryType
         required: false
@@ -7289,7 +7317,7 @@ paths:
         BasicAuth:
         - OAuth2Read
         - OAuth2Share
-      summary: Unshare document by document ID and tab ID.
+      summary: Remove document View permissions from a user or other entity.
       tags:
       - Document
       x-BTVisibility: PRODUCTION
@@ -17084,7 +17112,9 @@ paths:
           content:
             application/json;charset=UTF-8; qs=0.09:
               schema:
-                $ref: '#/components/schemas/BTVariableTableInfo'
+                items:
+                  $ref: '#/components/schemas/BTVariableTableInfo'
+                type: array
           description: default response
       security:
       - OAuth2:
@@ -22333,6 +22363,40 @@ components:
           documentId: documentId
           error: null
           isTransient: true
+          fullElementId:
+            configured: true
+            elementId: elementId
+            btType: btType
+            microversionIdAndConfiguration:
+              configurationParameterIdToValue:
+                key:
+                  typeTag: typeTag
+                  btType: btType
+              deleted: true
+              cacheKey: cacheKey
+              btType: btType
+              description: description
+              microversion:
+                deleted: true
+                btType: btType
+                theId: theId
+            microversionId:
+              deleted: true
+              btType: btType
+              theId: theId
+            target:
+              configurationParameterIdToValue:
+                key:
+                  typeTag: typeTag
+                  btType: btType
+              deleted: true
+              cacheKey: cacheKey
+              btType: btType
+              description: description
+              microversion:
+                deleted: true
+                btType: btType
+                theId: theId
           contextWorkspaceId: contextWorkspaceId
           referenceName: referenceName
         - referenceNodeId: referenceNodeId
@@ -22343,6 +22407,40 @@ components:
           documentId: documentId
           error: null
           isTransient: true
+          fullElementId:
+            configured: true
+            elementId: elementId
+            btType: btType
+            microversionIdAndConfiguration:
+              configurationParameterIdToValue:
+                key:
+                  typeTag: typeTag
+                  btType: btType
+              deleted: true
+              cacheKey: cacheKey
+              btType: btType
+              description: description
+              microversion:
+                deleted: true
+                btType: btType
+                theId: theId
+            microversionId:
+              deleted: true
+              btType: btType
+              theId: theId
+            target:
+              configurationParameterIdToValue:
+                key:
+                  typeTag: typeTag
+                  btType: btType
+              deleted: true
+              cacheKey: cacheKey
+              btType: btType
+              description: description
+              microversion:
+                deleted: true
+                btType: btType
+                theId: theId
           contextWorkspaceId: contextWorkspaceId
           referenceName: referenceName
         versionForRasterization:
@@ -24067,6 +24165,8 @@ components:
           $ref: '#/components/schemas/BTMetadataObjectType'
         partId:
           type: string
+        partIdentity:
+          $ref: '#/components/schemas/BTPSOIdentity-2741'
         sourceElement:
           $ref: '#/components/schemas/BTElementReference-725'
         versionMetadataWorkspaceId:
@@ -26465,22 +26565,18 @@ components:
         sourceId: sourceId
         targetId: targetId
         entityType: null
+        changes:
+          key: null
         targetValue: targetValue
         geometryChangeMessages:
         - geometryChangeMessages
         - geometryChangeMessages
         sourceValue: sourceValue
         type: null
-        collectionChanges:
-          key:
-          - null
-          - null
       properties:
-        collectionChanges:
+        changes:
           additionalProperties:
-            items:
-              $ref: '#/components/schemas/BTDiffInfo'
-            type: array
+            $ref: '#/components/schemas/BTDiffInfo'
           type: object
         entityType:
           $ref: '#/components/schemas/BTDiffInfoCollectionType'
@@ -30739,6 +30835,40 @@ components:
               documentId: documentId
               error: null
               isTransient: true
+              fullElementId:
+                configured: true
+                elementId: elementId
+                btType: btType
+                microversionIdAndConfiguration:
+                  configurationParameterIdToValue:
+                    key:
+                      typeTag: typeTag
+                      btType: btType
+                  deleted: true
+                  cacheKey: cacheKey
+                  btType: btType
+                  description: description
+                  microversion:
+                    deleted: true
+                    btType: btType
+                    theId: theId
+                microversionId:
+                  deleted: true
+                  btType: btType
+                  theId: theId
+                target:
+                  configurationParameterIdToValue:
+                    key:
+                      typeTag: typeTag
+                      btType: btType
+                  deleted: true
+                  cacheKey: cacheKey
+                  btType: btType
+                  description: description
+                  microversion:
+                    deleted: true
+                    btType: btType
+                    theId: theId
               contextWorkspaceId: contextWorkspaceId
               referenceName: referenceName
             - referenceNodeId: referenceNodeId
@@ -30749,6 +30879,40 @@ components:
               documentId: documentId
               error: null
               isTransient: true
+              fullElementId:
+                configured: true
+                elementId: elementId
+                btType: btType
+                microversionIdAndConfiguration:
+                  configurationParameterIdToValue:
+                    key:
+                      typeTag: typeTag
+                      btType: btType
+                  deleted: true
+                  cacheKey: cacheKey
+                  btType: btType
+                  description: description
+                  microversion:
+                    deleted: true
+                    btType: btType
+                    theId: theId
+                microversionId:
+                  deleted: true
+                  btType: btType
+                  theId: theId
+                target:
+                  configurationParameterIdToValue:
+                    key:
+                      typeTag: typeTag
+                      btType: btType
+                  deleted: true
+                  cacheKey: cacheKey
+                  btType: btType
+                  description: description
+                  microversion:
+                    deleted: true
+                    btType: btType
+                    theId: theId
               contextWorkspaceId: contextWorkspaceId
               referenceName: referenceName
             versionForRasterization:
@@ -43535,6 +43699,13 @@ components:
         empty:
           type: boolean
       type: object
+    BTObjectState:
+      enum:
+      - DELETED
+      - TRASH
+      - ACTIVE
+      - INACTIVE
+      type: string
     BTObjectWorkflowInfo:
       description: An workflowable object like Release or Task that supports states
         and transitions.
@@ -46522,6 +46693,40 @@ components:
             documentId: documentId
             error: null
             isTransient: true
+            fullElementId:
+              configured: true
+              elementId: elementId
+              btType: btType
+              microversionIdAndConfiguration:
+                configurationParameterIdToValue:
+                  key:
+                    typeTag: typeTag
+                    btType: btType
+                deleted: true
+                cacheKey: cacheKey
+                btType: btType
+                description: description
+                microversion:
+                  deleted: true
+                  btType: btType
+                  theId: theId
+              microversionId:
+                deleted: true
+                btType: btType
+                theId: theId
+              target:
+                configurationParameterIdToValue:
+                  key:
+                    typeTag: typeTag
+                    btType: btType
+                deleted: true
+                cacheKey: cacheKey
+                btType: btType
+                description: description
+                microversion:
+                  deleted: true
+                  btType: btType
+                  theId: theId
             contextWorkspaceId: contextWorkspaceId
             referenceName: referenceName
           - referenceNodeId: referenceNodeId
@@ -46532,6 +46737,40 @@ components:
             documentId: documentId
             error: null
             isTransient: true
+            fullElementId:
+              configured: true
+              elementId: elementId
+              btType: btType
+              microversionIdAndConfiguration:
+                configurationParameterIdToValue:
+                  key:
+                    typeTag: typeTag
+                    btType: btType
+                deleted: true
+                cacheKey: cacheKey
+                btType: btType
+                description: description
+                microversion:
+                  deleted: true
+                  btType: btType
+                  theId: theId
+              microversionId:
+                deleted: true
+                btType: btType
+                theId: theId
+              target:
+                configurationParameterIdToValue:
+                  key:
+                    typeTag: typeTag
+                    btType: btType
+                deleted: true
+                cacheKey: cacheKey
+                btType: btType
+                description: description
+                microversion:
+                  deleted: true
+                  btType: btType
+                  theId: theId
             contextWorkspaceId: contextWorkspaceId
             referenceName: referenceName
           versionForRasterization:
@@ -48700,6 +48939,24 @@ components:
         versionId:
           type: string
       type: object
+    BTPurchaseIdentityParams:
+      example:
+        identityType: 6
+        identityId: identityId
+        purchaseId: purchaseId
+        consumedQuantity: 0
+      properties:
+        consumedQuantity:
+          format: int32
+          type: integer
+        identityId:
+          type: string
+        identityType:
+          format: int32
+          type: integer
+        purchaseId:
+          type: string
+      type: object
     BTPurchaseInfo:
       example:
         durationMonths: 3
@@ -49276,20 +49533,6 @@ components:
         viewRef:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-          type: string
-      type: object
-    BTPurchaseUserParams:
-      example:
-        purchaseId: purchaseId
-        userId: userId
-        consumedQuantity: 0
-      properties:
-        consumedQuantity:
-          format: int32
-          type: integer
-        purchaseId:
-          type: string
-        userId:
           type: string
       type: object
     BTQuantityRange-181:
@@ -51543,16 +51786,14 @@ components:
             sourceId: sourceId
             targetId: targetId
             entityType: null
+            changes:
+              key: null
             targetValue: targetValue
             geometryChangeMessages:
             - geometryChangeMessages
             - geometryChangeMessages
             sourceValue: sourceValue
             type: null
-            collectionChanges:
-              key:
-              - null
-              - null
         geometryChangeMessages:
         - geometryChangeMessages
         - geometryChangeMessages
@@ -51562,29 +51803,25 @@ components:
           - sourceId: sourceId
             targetId: targetId
             entityType: null
+            changes:
+              key: null
             targetValue: targetValue
             geometryChangeMessages:
             - geometryChangeMessages
             - geometryChangeMessages
             sourceValue: sourceValue
             type: null
-            collectionChanges:
-              key:
-              - null
-              - null
           - sourceId: sourceId
             targetId: targetId
             entityType: null
+            changes:
+              key: null
             targetValue: targetValue
             geometryChangeMessages:
             - geometryChangeMessages
             - geometryChangeMessages
             sourceValue: sourceValue
             type: null
-            collectionChanges:
-              key:
-              - null
-              - null
         sourceVersionId: sourceVersionId
         sourceConfiguration: sourceConfiguration
         targetConfiguration: targetConfiguration
@@ -51990,6 +52227,40 @@ components:
         documentId: documentId
         error: null
         isTransient: true
+        fullElementId:
+          configured: true
+          elementId: elementId
+          btType: btType
+          microversionIdAndConfiguration:
+            configurationParameterIdToValue:
+              key:
+                typeTag: typeTag
+                btType: btType
+            deleted: true
+            cacheKey: cacheKey
+            btType: btType
+            description: description
+            microversion:
+              deleted: true
+              btType: btType
+              theId: theId
+          microversionId:
+            deleted: true
+            btType: btType
+            theId: theId
+          target:
+            configurationParameterIdToValue:
+              key:
+                typeTag: typeTag
+                btType: btType
+            deleted: true
+            cacheKey: cacheKey
+            btType: btType
+            description: description
+            microversion:
+              deleted: true
+              btType: btType
+              theId: theId
         contextWorkspaceId: contextWorkspaceId
         referenceName: referenceName
       properties:
@@ -52004,6 +52275,8 @@ components:
           $ref: '#/components/schemas/GBTErrorStringEnum'
         errorMessage:
           type: string
+        fullElementId:
+          $ref: '#/components/schemas/BTFullElementId-756'
         isTransient:
           type: boolean
         name:
@@ -53509,6 +53782,7 @@ components:
         importMaterialDensity: true
         proxyDocumentId: proxyDocumentId
         textAsGeometry: true
+        resolution: fine
         sheetIndices:
         - 5
         - 5
@@ -53727,6 +54001,14 @@ components:
         proxyWorkspaceVersion:
           type: string
         proxyWorkspaceVersionId:
+          type: string
+        resolution:
+          description: "Determines export resolution of fine, medium, or coarse"
+          enum:
+          - fine
+          - medium
+          - coarse
+          example: fine
           type: string
         selectablePdfText:
           type: boolean
@@ -56705,6 +56987,7 @@ components:
         protectionRule: null
         href: https://openapi-generator.tech
         id: id
+        state: null
         microversion: microversion
         viewRef: https://openapi-generator.tech
         parents:
@@ -56880,6 +57163,8 @@ components:
           type: array
         protectionRule:
           $ref: '#/components/schemas/BTWorkspaceProtectionRuleOptions'
+        state:
+          $ref: '#/components/schemas/BTObjectState'
         thumbnail:
           $ref: '#/components/schemas/BTThumbnailInfo'
         type:
@@ -69869,6 +70154,19 @@ components:
       - ISOPARAMETRIC_CURVE_SELECT_POINT
       - ISOPARAMETRIC_CURVE_SELECT_POSITION
       - ISOPARAMETRIC_CURVE_POINT_NOT_ON_FACE
+      - THIN_SWEEP_3D_PROFILE_TRIM_WARNING
+      - THIN_SWEEP_FAILED_TO_FIND_TRIM_PLANES_WARNING
+      - THIN_SWEEP_TRIM_FAILED
+      - ISOPARAMETRIC_CURVE_SELECT_SINGLE_FACE
+      - HOLE_FASTENER_FIT_IS_NOT_APPLICABLE
+      - PATTERN_SKIPPED_INSTANCES_SEED_INDEX
+      - PATTERN_SKIPPED_INSTANCES_OUT_OF_RANGE_INDEX
+      - FORMED_SELECT_LOCATION
+      - FORMED_NO_PART_STUDIO_SELECTED
+      - FORMED_SELECT_LOCATION_ON_ACTIVE_FACE
+      - FORMED_LOCATION_ON_MULTIPLE_FACES
+      - FORMED_NOT_ON_HOLE_FORMED_FACE
+      - THIN_SWEEP_THICKEN_FAILED
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -70262,6 +70560,7 @@ components:
       - VARIABLE_NAME
       - FOCUS_INNER_QUERY
       - SHOW_TOLERANCE
+      - ALLOW_ARRAY_FOCUS
       - UNKNOWN
       type: string
     GBTUiSelectionType:
@@ -102361,6 +102660,8 @@ components:
           type: integer
         metadataUpdateHref:
           type: string
+        name:
+          type: string
         relatedOccurrencePaths:
           items:
             type: string
@@ -105618,6 +105919,8 @@ components:
           items:
             $ref: '#/components/schemas/BTParameterSpec-6'
           type: array
+        showLabelsOnly:
+          type: boolean
       type: object
       example: null
     BTParameterSpecBoolean_170_allOf:

@@ -104,7 +104,7 @@ func (dst *BTTableBaseCrossHighlightData2609) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTTableAssemblyCrossHighlightData-2675'
@@ -117,7 +117,7 @@ func (dst *BTTableBaseCrossHighlightData2609) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseCrossHighlightData2609 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseCrossHighlightData2609 as BTTableAssemblyCrossHighlightData2675: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseCrossHighlightData2609 as BTTableAssemblyCrossHighlightData2675: %s", err.Error())
 		}
 	}
 
@@ -131,7 +131,7 @@ func (dst *BTTableBaseCrossHighlightData2609) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableBaseCrossHighlightData2609 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableBaseCrossHighlightData2609 as BTTableCrossHighlightData1753: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableBaseCrossHighlightData2609 as BTTableCrossHighlightData1753: %s", err.Error())
 		}
 	}
 
@@ -142,7 +142,7 @@ func (dst *BTTableBaseCrossHighlightData2609) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTableBaseCrossHighlightData2609, return on the first match
 	} else {
 		dst.implBTTableBaseCrossHighlightData2609 = nil
-		return fmt.Errorf("Failed to unmarshal BTTableBaseCrossHighlightData2609 as base_BTTableBaseCrossHighlightData2609: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTableBaseCrossHighlightData2609 as base_BTTableBaseCrossHighlightData2609: %s", err.Error())
 	}
 }
 

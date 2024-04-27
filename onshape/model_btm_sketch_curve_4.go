@@ -799,7 +799,7 @@ func (dst *BTMSketchCurve4) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMSketchCurveSegment-155'
@@ -812,7 +812,7 @@ func (dst *BTMSketchCurve4) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchCurve4 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchCurve4 as BTMSketchCurveSegment155: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchCurve4 as BTMSketchCurveSegment155: %s", err.Error())
 		}
 	}
 
@@ -823,7 +823,7 @@ func (dst *BTMSketchCurve4) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMSketchCurve4, return on the first match
 	} else {
 		dst.implBTMSketchCurve4 = nil
-		return fmt.Errorf("Failed to unmarshal BTMSketchCurve4 as base_BTMSketchCurve4: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMSketchCurve4 as base_BTMSketchCurve4: %s", err.Error())
 	}
 }
 

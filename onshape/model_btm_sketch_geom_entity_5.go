@@ -669,7 +669,7 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMSketchCurve-4'
@@ -682,7 +682,7 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchGeomEntity5 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurve4: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurve4: %s", err.Error())
 		}
 	}
 
@@ -696,7 +696,7 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchGeomEntity5 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurveSegment155: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurveSegment155: %s", err.Error())
 		}
 	}
 
@@ -710,7 +710,7 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchGeomEntity5 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchGeomEntity5 as BTMSketchImageEntity763: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchImageEntity763: %s", err.Error())
 		}
 	}
 
@@ -724,7 +724,7 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchGeomEntity5 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchGeomEntity5 as BTMSketchPoint158: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchPoint158: %s", err.Error())
 		}
 	}
 
@@ -738,7 +738,7 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchGeomEntity5 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchGeomEntity5 as BTMSketchTextEntity1761: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchTextEntity1761: %s", err.Error())
 		}
 	}
 
@@ -749,7 +749,7 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMSketchGeomEntity5, return on the first match
 	} else {
 		dst.implBTMSketchGeomEntity5 = nil
-		return fmt.Errorf("Failed to unmarshal BTMSketchGeomEntity5 as base_BTMSketchGeomEntity5: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as base_BTMSketchGeomEntity5: %s", err.Error())
 	}
 }
 

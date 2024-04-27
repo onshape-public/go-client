@@ -241,7 +241,7 @@ func (dst *BTMetadataObjectInfo) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMetadataElementInfo'
@@ -254,7 +254,7 @@ func (dst *BTMetadataObjectInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMetadataObjectInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTMetadataObjectInfo as BTMetadataElementInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMetadataObjectInfo as BTMetadataElementInfo: %s", err.Error())
 		}
 	}
 
@@ -268,7 +268,7 @@ func (dst *BTMetadataObjectInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMetadataObjectInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTMetadataObjectInfo as BTMetadataPartInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMetadataObjectInfo as BTMetadataPartInfo: %s", err.Error())
 		}
 	}
 
@@ -279,7 +279,7 @@ func (dst *BTMetadataObjectInfo) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMetadataObjectInfo, return on the first match
 	} else {
 		dst.implBTMetadataObjectInfo = nil
-		return fmt.Errorf("Failed to unmarshal BTMetadataObjectInfo as base_BTMetadataObjectInfo: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMetadataObjectInfo as base_BTMetadataObjectInfo: %s", err.Error())
 	}
 }
 

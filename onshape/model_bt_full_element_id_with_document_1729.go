@@ -399,7 +399,7 @@ func (dst *BTFullElementIdWithDocument1729) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTFullElementIdAndPartId-643'
@@ -412,7 +412,7 @@ func (dst *BTFullElementIdWithDocument1729) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFullElementIdWithDocument1729 = nil
-			return fmt.Errorf("Failed to unmarshal BTFullElementIdWithDocument1729 as BTFullElementIdAndPartId643: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFullElementIdWithDocument1729 as BTFullElementIdAndPartId643: %s", err.Error())
 		}
 	}
 
@@ -423,7 +423,7 @@ func (dst *BTFullElementIdWithDocument1729) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTFullElementIdWithDocument1729, return on the first match
 	} else {
 		dst.implBTFullElementIdWithDocument1729 = nil
-		return fmt.Errorf("Failed to unmarshal BTFullElementIdWithDocument1729 as base_BTFullElementIdWithDocument1729: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTFullElementIdWithDocument1729 as base_BTFullElementIdWithDocument1729: %s", err.Error())
 	}
 }
 

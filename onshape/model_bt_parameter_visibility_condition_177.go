@@ -114,7 +114,7 @@ func (dst *BTParameterVisibilityCondition177) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterVisibilityAlwaysHidden-176'
@@ -127,7 +127,7 @@ func (dst *BTParameterVisibilityCondition177) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterVisibilityCondition177 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityAlwaysHidden176: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityAlwaysHidden176: %s", err.Error())
 		}
 	}
 
@@ -141,7 +141,7 @@ func (dst *BTParameterVisibilityCondition177) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterVisibilityCondition177 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityLogical178: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityLogical178: %s", err.Error())
 		}
 	}
 
@@ -155,7 +155,7 @@ func (dst *BTParameterVisibilityCondition177) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterVisibilityCondition177 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityOnEqual180: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityOnEqual180: %s", err.Error())
 		}
 	}
 
@@ -169,7 +169,7 @@ func (dst *BTParameterVisibilityCondition177) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterVisibilityCondition177 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityOnMateDOFType2114: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityOnMateDOFType2114: %s", err.Error())
 		}
 	}
 
@@ -180,7 +180,7 @@ func (dst *BTParameterVisibilityCondition177) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParameterVisibilityCondition177, return on the first match
 	} else {
 		dst.implBTParameterVisibilityCondition177 = nil
-		return fmt.Errorf("Failed to unmarshal BTParameterVisibilityCondition177 as base_BTParameterVisibilityCondition177: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParameterVisibilityCondition177 as base_BTParameterVisibilityCondition177: %s", err.Error())
 	}
 }
 
