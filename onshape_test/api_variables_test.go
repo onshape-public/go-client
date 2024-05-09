@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/onshape-public/go-client/onshape"
+	"github.com/stretchr/testify/require"
 )
 
 func TestVariablesAPI(t *testing.T) {
@@ -51,8 +52,7 @@ func TestVariablesAPI(t *testing.T) {
 func TestGetVariablesExecute(t *testing.T) {
     InitializeTester[*onshape.VariablesApiService](t)
     obj, r, err := Context()["client"].(*onshape.APIClient).VariablesApi.GetVariablesExecute(onshape.ApiGetVariablesRequest{})
-    // obj, r, err := Context()["client"].(*onshape.APIClient).VariablesApi.GetVariablesExecute(onshape.ApiGetVariablesRequest{})
-
+    require.Error(t, err)
     // Check if the returned values are of the expected types
     type objOnshape []onshape.BTVariableTableInfo 
     if reflect.TypeOf(obj).Kind() != reflect.TypeOf(objOnshape{}).Kind()  {
