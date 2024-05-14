@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -37,9 +36,9 @@ GetClientPlans Get all billing plans and their information for an application by
 
 This API should be used within the context of an OAuth-enabled application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiGetClientPlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiGetClientPlansRequest
 */
 func (a *BillingApiService) GetClientPlans(ctx context.Context, cid string) ApiGetClientPlansRequest {
 	return ApiGetClientPlansRequest{
@@ -99,7 +98,7 @@ func (a *BillingApiService) GetClientPlansExecute(r ApiGetClientPlansRequest) (*
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

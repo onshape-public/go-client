@@ -549,7 +549,7 @@ func (dst *BTSingleReferenceDisplayData1943) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTSingleAssemblyReferenceDisplayData-1557'
@@ -562,7 +562,7 @@ func (dst *BTSingleReferenceDisplayData1943) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSingleReferenceDisplayData1943 = nil
-			return fmt.Errorf("Failed to unmarshal BTSingleReferenceDisplayData1943 as BTSingleAssemblyReferenceDisplayData1557: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSingleReferenceDisplayData1943 as BTSingleAssemblyReferenceDisplayData1557: %s", err.Error())
 		}
 	}
 
@@ -573,7 +573,7 @@ func (dst *BTSingleReferenceDisplayData1943) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTSingleReferenceDisplayData1943, return on the first match
 	} else {
 		dst.implBTSingleReferenceDisplayData1943 = nil
-		return fmt.Errorf("Failed to unmarshal BTSingleReferenceDisplayData1943 as base_BTSingleReferenceDisplayData1943: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTSingleReferenceDisplayData1943 as base_BTSingleReferenceDisplayData1943: %s", err.Error())
 	}
 }
 

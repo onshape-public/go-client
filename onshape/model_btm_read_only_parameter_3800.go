@@ -254,7 +254,7 @@ func (dst *BTMReadOnlyParameter3800) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMParameterProgress-3232'
@@ -267,7 +267,7 @@ func (dst *BTMReadOnlyParameter3800) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMReadOnlyParameter3800 = nil
-			return fmt.Errorf("Failed to unmarshal BTMReadOnlyParameter3800 as BTMParameterProgress3232: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMReadOnlyParameter3800 as BTMParameterProgress3232: %s", err.Error())
 		}
 	}
 
@@ -281,7 +281,7 @@ func (dst *BTMReadOnlyParameter3800) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMReadOnlyParameter3800 = nil
-			return fmt.Errorf("Failed to unmarshal BTMReadOnlyParameter3800 as BTMParameterStringWithTolerances4286: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMReadOnlyParameter3800 as BTMParameterStringWithTolerances4286: %s", err.Error())
 		}
 	}
 
@@ -292,7 +292,7 @@ func (dst *BTMReadOnlyParameter3800) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMReadOnlyParameter3800, return on the first match
 	} else {
 		dst.implBTMReadOnlyParameter3800 = nil
-		return fmt.Errorf("Failed to unmarshal BTMReadOnlyParameter3800 as base_BTMReadOnlyParameter3800: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMReadOnlyParameter3800 as base_BTMReadOnlyParameter3800: %s", err.Error())
 	}
 }
 
@@ -351,6 +351,7 @@ func (v *NullableBTMReadOnlyParameter3800) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMReadOnlyParameter3800 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -507,6 +508,14 @@ func (o *base_BTMReadOnlyParameter3800) SetParameterId(v string) {
 
 func (o base_BTMReadOnlyParameter3800) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

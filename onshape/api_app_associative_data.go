@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -46,11 +45,11 @@ CopyAssociativeData Copy associative data from one view to another.
 
 Can only be copied between tabs in the same document. You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiCopyAssociativeDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiCopyAssociativeDataRequest
 */
 func (a *AppAssociativeDataApiService) CopyAssociativeData(ctx context.Context, did string, wid string, eid string) ApiCopyAssociativeDataRequest {
 	return ApiCopyAssociativeDataRequest{
@@ -63,7 +62,8 @@ func (a *AppAssociativeDataApiService) CopyAssociativeData(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return BTAppAssociativeDataArrayInfo
+//
+//	@return BTAppAssociativeDataArrayInfo
 func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -118,7 +118,7 @@ func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssoc
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -137,7 +137,7 @@ func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssoc
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -239,12 +239,12 @@ DeleteAssociativeData Delete the associative data from the specified app element
 
 You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiDeleteAssociativeDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiDeleteAssociativeDataRequest
 */
 func (a *AppAssociativeDataApiService) DeleteAssociativeData(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiDeleteAssociativeDataRequest {
 	return ApiDeleteAssociativeDataRequest{
@@ -258,7 +258,8 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeData(ctx context.Context
 }
 
 // Execute executes the request
-//  @return BTAppElementBasicInfo
+//
+//	@return BTAppElementBasicInfo
 func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteAssociativeDataRequest) (*BTAppElementBasicInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -356,7 +357,7 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteA
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -375,7 +376,7 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteA
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -490,12 +491,12 @@ GetAssociativeData Get the associative data for the specified app element.
 
 You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetAssociativeDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetAssociativeDataRequest
 */
 func (a *AppAssociativeDataApiService) GetAssociativeData(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssociativeDataRequest {
 	return ApiGetAssociativeDataRequest{
@@ -509,7 +510,8 @@ func (a *AppAssociativeDataApiService) GetAssociativeData(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return BTAppAssociativeDataArrayInfo
+//
+//	@return BTAppAssociativeDataArrayInfo
 func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -613,7 +615,7 @@ func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssocia
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -632,7 +634,7 @@ func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssocia
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -668,12 +670,12 @@ PostAssociativeData Set the associative data for the specified app element.
 
 You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiPostAssociativeDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiPostAssociativeDataRequest
 */
 func (a *AppAssociativeDataApiService) PostAssociativeData(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiPostAssociativeDataRequest {
 	return ApiPostAssociativeDataRequest{
@@ -687,7 +689,8 @@ func (a *AppAssociativeDataApiService) PostAssociativeData(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return BTAppAssociativeDataArrayInfo
+//
+//	@return BTAppAssociativeDataArrayInfo
 func (a *AppAssociativeDataApiService) PostAssociativeDataExecute(r ApiPostAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -746,7 +749,7 @@ func (a *AppAssociativeDataApiService) PostAssociativeDataExecute(r ApiPostAssoc
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -765,7 +768,7 @@ func (a *AppAssociativeDataApiService) PostAssociativeDataExecute(r ApiPostAssoc
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

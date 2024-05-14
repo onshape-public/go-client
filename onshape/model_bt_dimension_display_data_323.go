@@ -789,7 +789,7 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAngularDimensionDisplayData-320'
@@ -802,35 +802,7 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTAngularDimensionDisplayData320: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTArcLengthDimensionDisplayData-1018'
-	if jsonDict["btType"] == "BTArcLengthDimensionDisplayData-1018" {
-		// try to unmarshal JSON data into BTArcLengthDimensionDisplayData1018
-		var qr *BTArcLengthDimensionDisplayData1018
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTDimensionDisplayData323 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTArcLengthDimensionDisplayData1018: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTCenterlineDimensionDisplayData-1798'
-	if jsonDict["btType"] == "BTCenterlineDimensionDisplayData-1798" {
-		// try to unmarshal JSON data into BTCenterlineDimensionDisplayData1798
-		var qr *BTCenterlineDimensionDisplayData1798
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTDimensionDisplayData323 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTCenterlineDimensionDisplayData1798: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTAngularDimensionDisplayData320: %s", err.Error())
 		}
 	}
 
@@ -844,7 +816,7 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTCountDimensionDisplayData1778: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTCountDimensionDisplayData1778: %s", err.Error())
 		}
 	}
 
@@ -858,21 +830,7 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTCurveLengthDimensionDisplayData322: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTEllipseDiameterDimensionDisplayData-1301'
-	if jsonDict["btType"] == "BTEllipseDiameterDimensionDisplayData-1301" {
-		// try to unmarshal JSON data into BTEllipseDiameterDimensionDisplayData1301
-		var qr *BTEllipseDiameterDimensionDisplayData1301
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTDimensionDisplayData323 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTEllipseDiameterDimensionDisplayData1301: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTCurveLengthDimensionDisplayData322: %s", err.Error())
 		}
 	}
 
@@ -886,7 +844,7 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTLinearDimensionDisplayData330: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTLinearDimensionDisplayData330: %s", err.Error())
 		}
 	}
 
@@ -900,7 +858,7 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTRadialDimensionDisplayData348: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTRadialDimensionDisplayData348: %s", err.Error())
 		}
 	}
 
@@ -914,7 +872,49 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
-			return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as BTRhoDimensionDisplayData2892: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTRhoDimensionDisplayData2892: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTArcLengthDimensionDisplayData-1018'
+	if jsonDict["btType"] == "BTArcLengthDimensionDisplayData-1018" {
+		// try to unmarshal JSON data into BTArcLengthDimensionDisplayData1018
+		var qr *BTArcLengthDimensionDisplayData1018
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTDimensionDisplayData323 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTDimensionDisplayData323 = nil
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTArcLengthDimensionDisplayData1018: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTCenterlineDimensionDisplayData-1798'
+	if jsonDict["btType"] == "BTCenterlineDimensionDisplayData-1798" {
+		// try to unmarshal JSON data into BTCenterlineDimensionDisplayData1798
+		var qr *BTCenterlineDimensionDisplayData1798
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTDimensionDisplayData323 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTDimensionDisplayData323 = nil
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTCenterlineDimensionDisplayData1798: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTEllipseDiameterDimensionDisplayData-1301'
+	if jsonDict["btType"] == "BTEllipseDiameterDimensionDisplayData-1301" {
+		// try to unmarshal JSON data into BTEllipseDiameterDimensionDisplayData1301
+		var qr *BTEllipseDiameterDimensionDisplayData1301
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTDimensionDisplayData323 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTDimensionDisplayData323 = nil
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTEllipseDiameterDimensionDisplayData1301: %s", err.Error())
 		}
 	}
 
@@ -925,7 +925,7 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTDimensionDisplayData323, return on the first match
 	} else {
 		dst.implBTDimensionDisplayData323 = nil
-		return fmt.Errorf("Failed to unmarshal BTDimensionDisplayData323 as base_BTDimensionDisplayData323: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as base_BTDimensionDisplayData323: %s", err.Error())
 	}
 }
 

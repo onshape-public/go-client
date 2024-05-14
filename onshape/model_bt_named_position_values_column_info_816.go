@@ -16,6 +16,7 @@ import (
 
 // BTNamedPositionValuesColumnInfo816 struct for BTNamedPositionValuesColumnInfo816
 type BTNamedPositionValuesColumnInfo816 struct {
+	BTTableColumnInfo1222
 	BtType         *string                `json:"btType,omitempty"`
 	Id             *string                `json:"id,omitempty"`
 	NodeId         *string                `json:"nodeId,omitempty"`
@@ -301,6 +302,14 @@ func (o *BTNamedPositionValuesColumnInfo816) SetParentName(v string) {
 
 func (o BTNamedPositionValuesColumnInfo816) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
+	errBTTableColumnInfo1222 = json.Unmarshal([]byte(serializedBTTableColumnInfo1222), &toSerialize)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

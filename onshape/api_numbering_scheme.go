@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -51,8 +50,8 @@ func (r ApiNextNumbersRequest) Execute() (*map[string][]BTNextPartNumber, *http.
 /*
 NextNumbers Send the items to generate numbers for, and return the next valid available part numbers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiNextNumbersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiNextNumbersRequest
 */
 func (a *NumberingSchemeApiService) NextNumbers(ctx context.Context) ApiNextNumbersRequest {
 	return ApiNextNumbersRequest{
@@ -62,7 +61,8 @@ func (a *NumberingSchemeApiService) NextNumbers(ctx context.Context) ApiNextNumb
 }
 
 // Execute executes the request
-//  @return map[string][]BTNextPartNumber
+//
+//	@return map[string][]BTNextPartNumber
 func (a *NumberingSchemeApiService) NextNumbersExecute(r ApiNextNumbersRequest) (*map[string][]BTNextPartNumber, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -123,7 +123,7 @@ func (a *NumberingSchemeApiService) NextNumbersExecute(r ApiNextNumbersRequest) 
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -142,7 +142,7 @@ func (a *NumberingSchemeApiService) NextNumbersExecute(r ApiNextNumbersRequest) 
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

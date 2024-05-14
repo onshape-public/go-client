@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -55,12 +54,12 @@ CreateBlobTranslation Export a blob element to another format.
 * Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document.
 * See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiCreateBlobTranslationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiCreateBlobTranslationRequest
 */
 func (a *BlobElementApiService) CreateBlobTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateBlobTranslationRequest {
 	return ApiCreateBlobTranslationRequest{
@@ -74,7 +73,8 @@ func (a *BlobElementApiService) CreateBlobTranslation(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return BTTranslationRequestInfo
+//
+//	@return BTTranslationRequestInfo
 func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -136,7 +136,7 @@ func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTran
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -155,7 +155,7 @@ func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTran
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -205,11 +205,11 @@ DownloadFileWorkspace Download a file from a blob element for the specified work
 
 See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid The id of the element in which to perform the operation.
- @return ApiDownloadFileWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiDownloadFileWorkspaceRequest
 */
 func (a *BlobElementApiService) DownloadFileWorkspace(ctx context.Context, did string, wid string, eid string) ApiDownloadFileWorkspaceRequest {
 	return ApiDownloadFileWorkspaceRequest{
@@ -222,7 +222,8 @@ func (a *BlobElementApiService) DownloadFileWorkspace(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return HttpFile
+//
+//	@return HttpFile
 func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWorkspaceRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -284,7 +285,7 @@ func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -303,7 +304,7 @@ func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -343,11 +344,11 @@ func (r ApiUpdateUnitsRequest) Execute() (*BTDocumentElementProcessingInfo, *htt
 /*
 UpdateUnits Change the measurement units for the blob element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid The id of the element in which to perform the operation.
- @return ApiUpdateUnitsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiUpdateUnitsRequest
 */
 func (a *BlobElementApiService) UpdateUnits(ctx context.Context, did string, wid string, eid string) ApiUpdateUnitsRequest {
 	return ApiUpdateUnitsRequest{
@@ -360,7 +361,8 @@ func (a *BlobElementApiService) UpdateUnits(ctx context.Context, did string, wid
 }
 
 // Execute executes the request
-//  @return BTDocumentElementProcessingInfo
+//
+//	@return BTDocumentElementProcessingInfo
 func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -421,7 +423,7 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -440,7 +442,7 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -657,10 +659,10 @@ UploadFileCreateElement Upload a file and create a blob element from it.
 
 Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"` in the request header.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @return ApiUploadFileCreateElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@return ApiUploadFileCreateElementRequest
 */
 func (a *BlobElementApiService) UploadFileCreateElement(ctx context.Context, did string, wid string) ApiUploadFileCreateElementRequest {
 	return ApiUploadFileCreateElementRequest{
@@ -672,7 +674,8 @@ func (a *BlobElementApiService) UploadFileCreateElement(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return BTDocumentElementProcessingInfo
+//
+//	@return BTDocumentElementProcessingInfo
 func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCreateElementRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -715,11 +718,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.file != nil {
-		paramJson, err := parameterToJson(*r.file)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("file", paramJson)
+		localVarFormParams.Add("file", parameterToString(*r.file, ""))
 	}
 	if r.allowFaultyParts != nil {
 		localVarFormParams.Add("allowFaultyParts", parameterToString(*r.allowFaultyParts, ""))
@@ -818,7 +817,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -837,7 +836,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1062,11 +1061,11 @@ UploadFileUpdateElement Update a blob element by uploading a file.
 
 Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"` in the request header.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param eid The id of the element in which to perform the operation.
- @return ApiUploadFileUpdateElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiUploadFileUpdateElementRequest
 */
 func (a *BlobElementApiService) UploadFileUpdateElement(ctx context.Context, did string, wid string, eid string) ApiUploadFileUpdateElementRequest {
 	return ApiUploadFileUpdateElementRequest{
@@ -1079,7 +1078,8 @@ func (a *BlobElementApiService) UploadFileUpdateElement(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return BTDocumentElementProcessingInfo
+//
+//	@return BTDocumentElementProcessingInfo
 func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUpdateElementRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1126,11 +1126,7 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.file != nil {
-		paramJson, err := parameterToJson(*r.file)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("file", paramJson)
+		localVarFormParams.Add("file", parameterToString(*r.file, ""))
 	}
 	if r.allowFaultyParts != nil {
 		localVarFormParams.Add("allowFaultyParts", parameterToString(*r.allowFaultyParts, ""))
@@ -1229,7 +1225,7 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1248,7 +1244,7 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

@@ -16,6 +16,7 @@ import (
 
 // BTRadialDimensionDisplayData348 struct for BTRadialDimensionDisplayData348
 type BTRadialDimensionDisplayData348 struct {
+	BTDimensionDisplayData323
 	BtType               *string           `json:"btType,omitempty"`
 	CoordinateSystem     *BTMatrix3x3340   `json:"coordinateSystem,omitempty"`
 	FeatureId            *string           `json:"featureId,omitempty"`
@@ -763,6 +764,14 @@ func (o *BTRadialDimensionDisplayData348) SetWitnessEndPoint1t(v float64) {
 
 func (o BTRadialDimensionDisplayData348) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTDimensionDisplayData323, errBTDimensionDisplayData323 := json.Marshal(o.BTDimensionDisplayData323)
+	if errBTDimensionDisplayData323 != nil {
+		return []byte{}, errBTDimensionDisplayData323
+	}
+	errBTDimensionDisplayData323 = json.Unmarshal([]byte(serializedBTDimensionDisplayData323), &toSerialize)
+	if errBTDimensionDisplayData323 != nil {
+		return []byte{}, errBTDimensionDisplayData323
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

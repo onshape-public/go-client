@@ -799,49 +799,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
-	}
-
-	// check if the discriminator value is 'BTAssemblySimulation-2246'
-	if jsonDict["btType"] == "BTAssemblySimulation-2246" {
-		// try to unmarshal JSON data into BTAssemblySimulation2246
-		var qr *BTAssemblySimulation2246
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTAssemblySimulation2246: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTExplosion-2754'
-	if jsonDict["btType"] == "BTExplosion-2754" {
-		// try to unmarshal JSON data into BTExplosion2754
-		var qr *BTExplosion2754
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTExplosion2754: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTExplosionStepFeature-3008'
-	if jsonDict["btType"] == "BTExplosionStepFeature-3008" {
-		// try to unmarshal JSON data into BTExplosionStepFeature3008
-		var qr *BTExplosionStepFeature3008
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTExplosionStepFeature3008: %s", err.Error())
-		}
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMAssemblyFeature-887'
@@ -854,77 +812,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeature887: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyFeature1-2218'
-	if jsonDict["btType"] == "BTMAssemblyFeature1-2218" {
-		// try to unmarshal JSON data into BTMAssemblyFeature12218
-		var qr *BTMAssemblyFeature12218
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeature12218: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyFeature2-1022'
-	if jsonDict["btType"] == "BTMAssemblyFeature2-1022" {
-		// try to unmarshal JSON data into BTMAssemblyFeature21022
-		var qr *BTMAssemblyFeature21022
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeature21022: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyFeatureFolder-2543'
-	if jsonDict["btType"] == "BTMAssemblyFeatureFolder-2543" {
-		// try to unmarshal JSON data into BTMAssemblyFeatureFolder2543
-		var qr *BTMAssemblyFeatureFolder2543
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyFeatureFolder2543: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyPatternFeature-2241'
-	if jsonDict["btType"] == "BTMAssemblyPatternFeature-2241" {
-		// try to unmarshal JSON data into BTMAssemblyPatternFeature2241
-		var qr *BTMAssemblyPatternFeature2241
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyPatternFeature2241: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyReplicateFeature-1351'
-	if jsonDict["btType"] == "BTMAssemblyReplicateFeature-1351" {
-		// try to unmarshal JSON data into BTMAssemblyReplicateFeature1351
-		var qr *BTMAssemblyReplicateFeature1351
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMAssemblyReplicateFeature1351: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeature887: %s", err.Error())
 		}
 	}
 
@@ -938,133 +826,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMFeatureInvalid1031: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMGenerativeDesignFeature-3195'
-	if jsonDict["btType"] == "BTMGenerativeDesignFeature-3195" {
-		// try to unmarshal JSON data into BTMGenerativeDesignFeature3195
-		var qr *BTMGenerativeDesignFeature3195
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMGenerativeDesignFeature3195: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMGeometryMate-1260'
-	if jsonDict["btType"] == "BTMGeometryMate-1260" {
-		// try to unmarshal JSON data into BTMGeometryMate1260
-		var qr *BTMGeometryMate1260
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMGeometryMate1260: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMLoad-3538'
-	if jsonDict["btType"] == "BTMLoad-3538" {
-		// try to unmarshal JSON data into BTMLoad3538
-		var qr *BTMLoad3538
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMLoad3538: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMMate-64'
-	if jsonDict["btType"] == "BTMMate-64" {
-		// try to unmarshal JSON data into BTMMate64
-		var qr *BTMMate64
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMate64: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMMateConnector-66'
-	if jsonDict["btType"] == "BTMMateConnector-66" {
-		// try to unmarshal JSON data into BTMMateConnector66
-		var qr *BTMMateConnector66
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMateConnector66: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMMateGroup-65'
-	if jsonDict["btType"] == "BTMMateGroup-65" {
-		// try to unmarshal JSON data into BTMMateGroup65
-		var qr *BTMMateGroup65
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMateGroup65: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMMateRelation-1412'
-	if jsonDict["btType"] == "BTMMateRelation-1412" {
-		// try to unmarshal JSON data into BTMMateRelation1412
-		var qr *BTMMateRelation1412
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMMateRelation1412: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMNonGeometricItem-1864'
-	if jsonDict["btType"] == "BTMNonGeometricItem-1864" {
-		// try to unmarshal JSON data into BTMNonGeometricItem1864
-		var qr *BTMNonGeometricItem1864
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMNonGeometricItem1864: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMParametricPartStudioFeature-3883'
-	if jsonDict["btType"] == "BTMParametricPartStudioFeature-3883" {
-		// try to unmarshal JSON data into BTMParametricPartStudioFeature3883
-		var qr *BTMParametricPartStudioFeature3883
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMParametricPartStudioFeature3883: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMFeatureInvalid1031: %s", err.Error())
 		}
 	}
 
@@ -1078,7 +840,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMSketch151: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMSketch151: %s", err.Error())
 		}
 	}
 
@@ -1092,7 +854,245 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeature134 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeature134 as BTMVariableStudioReference2764: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMVariableStudioReference2764: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTAssemblySimulation-2246'
+	if jsonDict["btType"] == "BTAssemblySimulation-2246" {
+		// try to unmarshal JSON data into BTAssemblySimulation2246
+		var qr *BTAssemblySimulation2246
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTAssemblySimulation2246: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTExplosion-2754'
+	if jsonDict["btType"] == "BTExplosion-2754" {
+		// try to unmarshal JSON data into BTExplosion2754
+		var qr *BTExplosion2754
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTExplosion2754: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTExplosionStepFeature-3008'
+	if jsonDict["btType"] == "BTExplosionStepFeature-3008" {
+		// try to unmarshal JSON data into BTExplosionStepFeature3008
+		var qr *BTExplosionStepFeature3008
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTExplosionStepFeature3008: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMAssemblyFeature1-2218'
+	if jsonDict["btType"] == "BTMAssemblyFeature1-2218" {
+		// try to unmarshal JSON data into BTMAssemblyFeature12218
+		var qr *BTMAssemblyFeature12218
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeature12218: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMAssemblyFeature2-1022'
+	if jsonDict["btType"] == "BTMAssemblyFeature2-1022" {
+		// try to unmarshal JSON data into BTMAssemblyFeature21022
+		var qr *BTMAssemblyFeature21022
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeature21022: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMAssemblyFeatureFolder-2543'
+	if jsonDict["btType"] == "BTMAssemblyFeatureFolder-2543" {
+		// try to unmarshal JSON data into BTMAssemblyFeatureFolder2543
+		var qr *BTMAssemblyFeatureFolder2543
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyFeatureFolder2543: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMAssemblyPatternFeature-2241'
+	if jsonDict["btType"] == "BTMAssemblyPatternFeature-2241" {
+		// try to unmarshal JSON data into BTMAssemblyPatternFeature2241
+		var qr *BTMAssemblyPatternFeature2241
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyPatternFeature2241: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMAssemblyReplicateFeature-1351'
+	if jsonDict["btType"] == "BTMAssemblyReplicateFeature-1351" {
+		// try to unmarshal JSON data into BTMAssemblyReplicateFeature1351
+		var qr *BTMAssemblyReplicateFeature1351
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyReplicateFeature1351: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMGenerativeDesignFeature-3195'
+	if jsonDict["btType"] == "BTMGenerativeDesignFeature-3195" {
+		// try to unmarshal JSON data into BTMGenerativeDesignFeature3195
+		var qr *BTMGenerativeDesignFeature3195
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMGenerativeDesignFeature3195: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMGeometryMate-1260'
+	if jsonDict["btType"] == "BTMGeometryMate-1260" {
+		// try to unmarshal JSON data into BTMGeometryMate1260
+		var qr *BTMGeometryMate1260
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMGeometryMate1260: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMLoad-3538'
+	if jsonDict["btType"] == "BTMLoad-3538" {
+		// try to unmarshal JSON data into BTMLoad3538
+		var qr *BTMLoad3538
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMLoad3538: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMMate-64'
+	if jsonDict["btType"] == "BTMMate-64" {
+		// try to unmarshal JSON data into BTMMate64
+		var qr *BTMMate64
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMate64: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMMateConnector-66'
+	if jsonDict["btType"] == "BTMMateConnector-66" {
+		// try to unmarshal JSON data into BTMMateConnector66
+		var qr *BTMMateConnector66
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMateConnector66: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMMateGroup-65'
+	if jsonDict["btType"] == "BTMMateGroup-65" {
+		// try to unmarshal JSON data into BTMMateGroup65
+		var qr *BTMMateGroup65
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMateGroup65: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMMateRelation-1412'
+	if jsonDict["btType"] == "BTMMateRelation-1412" {
+		// try to unmarshal JSON data into BTMMateRelation1412
+		var qr *BTMMateRelation1412
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMMateRelation1412: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMNonGeometricItem-1864'
+	if jsonDict["btType"] == "BTMNonGeometricItem-1864" {
+		// try to unmarshal JSON data into BTMNonGeometricItem1864
+		var qr *BTMNonGeometricItem1864
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMNonGeometricItem1864: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParametricPartStudioFeature-3883'
+	if jsonDict["btType"] == "BTMParametricPartStudioFeature-3883" {
+		// try to unmarshal JSON data into BTMParametricPartStudioFeature3883
+		var qr *BTMParametricPartStudioFeature3883
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMParametricPartStudioFeature3883: %s", err.Error())
 		}
 	}
 
@@ -1103,7 +1103,7 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMFeature134, return on the first match
 	} else {
 		dst.implBTMFeature134 = nil
-		return fmt.Errorf("Failed to unmarshal BTMFeature134 as base_BTMFeature134: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMFeature134 as base_BTMFeature134: %s", err.Error())
 	}
 }
 

@@ -40,13 +40,13 @@ func (o *BTEntityEdge30) AsBTEntityGeometry35() *BTEntityGeometry35 {
 	return &BTEntityGeometry35{o}
 }
 
-// BTSimulationFace2147AsBTEntityGeometry35 is a convenience function that returns BTSimulationFace2147 wrapped in BTEntityGeometry35
-func (o *BTSimulationFace2147) AsBTEntityGeometry35() *BTEntityGeometry35 {
+// BTTessellatedGeometry2576AsBTEntityGeometry35 is a convenience function that returns BTTessellatedGeometry2576 wrapped in BTEntityGeometry35
+func (o *BTTessellatedGeometry2576) AsBTEntityGeometry35() *BTEntityGeometry35 {
 	return &BTEntityGeometry35{o}
 }
 
-// BTTessellatedGeometry2576AsBTEntityGeometry35 is a convenience function that returns BTTessellatedGeometry2576 wrapped in BTEntityGeometry35
-func (o *BTTessellatedGeometry2576) AsBTEntityGeometry35() *BTEntityGeometry35 {
+// BTSimulationFace2147AsBTEntityGeometry35 is a convenience function that returns BTSimulationFace2147 wrapped in BTEntityGeometry35
+func (o *BTSimulationFace2147) AsBTEntityGeometry35() *BTEntityGeometry35 {
 	return &BTEntityGeometry35{o}
 }
 
@@ -479,7 +479,7 @@ func (dst *BTEntityGeometry35) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTDebugGeometry-2059'
@@ -492,77 +492,7 @@ func (dst *BTEntityGeometry35) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTEntityGeometry35 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as BTDebugGeometry2059: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTEntityDegenerateEdge-1129'
-	if jsonDict["btType"] == "BTEntityDegenerateEdge-1129" {
-		// try to unmarshal JSON data into BTEntityDegenerateEdge1129
-		var qr *BTEntityDegenerateEdge1129
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTEntityGeometry35 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTEntityGeometry35 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as BTEntityDegenerateEdge1129: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTEntityEdge-30'
-	if jsonDict["btType"] == "BTEntityEdge-30" {
-		// try to unmarshal JSON data into BTEntityEdge30
-		var qr *BTEntityEdge30
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTEntityGeometry35 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTEntityGeometry35 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as BTEntityEdge30: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTEntityFace-31'
-	if jsonDict["btType"] == "BTEntityFace-31" {
-		// try to unmarshal JSON data into BTEntityFace31
-		var qr *BTEntityFace31
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTEntityGeometry35 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTEntityGeometry35 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as BTEntityFace31: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTEntityPoint-29'
-	if jsonDict["btType"] == "BTEntityPoint-29" {
-		// try to unmarshal JSON data into BTEntityPoint29
-		var qr *BTEntityPoint29
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTEntityGeometry35 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTEntityGeometry35 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as BTEntityPoint29: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTSimulationFace-2147'
-	if jsonDict["btType"] == "BTSimulationFace-2147" {
-		// try to unmarshal JSON data into BTSimulationFace2147
-		var qr *BTSimulationFace2147
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTEntityGeometry35 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTEntityGeometry35 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as BTSimulationFace2147: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as BTDebugGeometry2059: %s", err.Error())
 		}
 	}
 
@@ -576,7 +506,77 @@ func (dst *BTEntityGeometry35) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTEntityGeometry35 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as BTTessellatedGeometry2576: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as BTTessellatedGeometry2576: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTEntityDegenerateEdge-1129'
+	if jsonDict["btType"] == "BTEntityDegenerateEdge-1129" {
+		// try to unmarshal JSON data into BTEntityDegenerateEdge1129
+		var qr *BTEntityDegenerateEdge1129
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTEntityGeometry35 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTEntityGeometry35 = nil
+			return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as BTEntityDegenerateEdge1129: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTEntityEdge-30'
+	if jsonDict["btType"] == "BTEntityEdge-30" {
+		// try to unmarshal JSON data into BTEntityEdge30
+		var qr *BTEntityEdge30
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTEntityGeometry35 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTEntityGeometry35 = nil
+			return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as BTEntityEdge30: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTEntityFace-31'
+	if jsonDict["btType"] == "BTEntityFace-31" {
+		// try to unmarshal JSON data into BTEntityFace31
+		var qr *BTEntityFace31
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTEntityGeometry35 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTEntityGeometry35 = nil
+			return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as BTEntityFace31: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTEntityPoint-29'
+	if jsonDict["btType"] == "BTEntityPoint-29" {
+		// try to unmarshal JSON data into BTEntityPoint29
+		var qr *BTEntityPoint29
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTEntityGeometry35 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTEntityGeometry35 = nil
+			return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as BTEntityPoint29: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTSimulationFace-2147'
+	if jsonDict["btType"] == "BTSimulationFace-2147" {
+		// try to unmarshal JSON data into BTSimulationFace2147
+		var qr *BTSimulationFace2147
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTEntityGeometry35 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTEntityGeometry35 = nil
+			return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as BTSimulationFace2147: %s", err.Error())
 		}
 	}
 
@@ -587,7 +587,7 @@ func (dst *BTEntityGeometry35) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTEntityGeometry35, return on the first match
 	} else {
 		dst.implBTEntityGeometry35 = nil
-		return fmt.Errorf("Failed to unmarshal BTEntityGeometry35 as base_BTEntityGeometry35: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTEntityGeometry35 as base_BTEntityGeometry35: %s", err.Error())
 	}
 }
 

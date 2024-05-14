@@ -16,6 +16,7 @@ import (
 
 // BTCurveGeometryControlPointSpline2197 struct for BTCurveGeometryControlPointSpline2197
 type BTCurveGeometryControlPointSpline2197 struct {
+	BTCurveGeometrySpline118
 	BtType            *string   `json:"btType,omitempty"`
 	ControlPointCount *int32    `json:"controlPointCount,omitempty"`
 	ControlPoints     []float64 `json:"controlPoints,omitempty"`
@@ -301,6 +302,14 @@ func (o *BTCurveGeometryControlPointSpline2197) SetIsBezier(v bool) {
 
 func (o BTCurveGeometryControlPointSpline2197) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveGeometrySpline118, errBTCurveGeometrySpline118 := json.Marshal(o.BTCurveGeometrySpline118)
+	if errBTCurveGeometrySpline118 != nil {
+		return []byte{}, errBTCurveGeometrySpline118
+	}
+	errBTCurveGeometrySpline118 = json.Unmarshal([]byte(serializedBTCurveGeometrySpline118), &toSerialize)
+	if errBTCurveGeometrySpline118 != nil {
+		return []byte{}, errBTCurveGeometrySpline118
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

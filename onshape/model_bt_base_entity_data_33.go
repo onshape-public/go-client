@@ -434,35 +434,7 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
-	}
-
-	// check if the discriminator value is 'BTBodyEntity-26'
-	if jsonDict["btType"] == "BTBodyEntity-26" {
-		// try to unmarshal JSON data into BTBodyEntity26
-		var qr *BTBodyEntity26
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTBaseEntityData33 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTBodyEntity26: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTConstructionPlaneEntity-27'
-	if jsonDict["btType"] == "BTConstructionPlaneEntity-27" {
-		// try to unmarshal JSON data into BTConstructionPlaneEntity27
-		var qr *BTConstructionPlaneEntity27
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTBaseEntityData33 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTConstructionPlaneEntity27: %s", err.Error())
-		}
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTEntityDeletion-24'
@@ -475,7 +447,7 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTEntityDeletion24: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTEntityDeletion24: %s", err.Error())
 		}
 	}
 
@@ -489,7 +461,35 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTFeatureEntity34: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTFeatureEntity34: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTBodyEntity-26'
+	if jsonDict["btType"] == "BTBodyEntity-26" {
+		// try to unmarshal JSON data into BTBodyEntity26
+		var qr *BTBodyEntity26
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTBaseEntityData33 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTBaseEntityData33 = nil
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTBodyEntity26: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTConstructionPlaneEntity-27'
+	if jsonDict["btType"] == "BTConstructionPlaneEntity-27" {
+		// try to unmarshal JSON data into BTConstructionPlaneEntity27
+		var qr *BTConstructionPlaneEntity27
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTBaseEntityData33 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTBaseEntityData33 = nil
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTConstructionPlaneEntity27: %s", err.Error())
 		}
 	}
 
@@ -503,7 +503,7 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTMateConnectorEntity28: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTMateConnectorEntity28: %s", err.Error())
 		}
 	}
 
@@ -517,7 +517,7 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTOriginEntity935: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTOriginEntity935: %s", err.Error())
 		}
 	}
 
@@ -531,7 +531,7 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTPointEntity1439: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTPointEntity1439: %s", err.Error())
 		}
 	}
 
@@ -545,7 +545,7 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBaseEntityData33 = nil
-			return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as BTSketchEntity25: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as BTSketchEntity25: %s", err.Error())
 		}
 	}
 
@@ -556,7 +556,7 @@ func (dst *BTBaseEntityData33) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTBaseEntityData33, return on the first match
 	} else {
 		dst.implBTBaseEntityData33 = nil
-		return fmt.Errorf("Failed to unmarshal BTBaseEntityData33 as base_BTBaseEntityData33: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTBaseEntityData33 as base_BTBaseEntityData33: %s", err.Error())
 	}
 }
 

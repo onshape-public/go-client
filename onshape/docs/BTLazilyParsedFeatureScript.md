@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Checksum** | Pointer to [**BTUiFeatureStudioChecksum2438**](BTUiFeatureStudioChecksum2438.md) |  | [optional] 
 **LanguageVersion** | Pointer to **int32** |  | [optional] 
-**Lines** | Pointer to **map[string]interface{}** |  | [optional] 
+**Lines** | Pointer to [**Lines**](Lines.md) |  | [optional] 
 **Model** | Pointer to [**BTMModel141**](BTMModel141.md) |  | [optional] 
 **Module** | Pointer to [**BTPModule234**](BTPModule234.md) |  | [optional] 
 **ModuleId** | Pointer to [**BTPModuleId235**](BTPModuleId235.md) |  | [optional] 
@@ -86,20 +86,20 @@ HasLanguageVersion returns a boolean if a field has been set.
 
 ### GetLines
 
-`func (o *BTLazilyParsedFeatureScript) GetLines() map[string]interface{}`
+`func (o *BTLazilyParsedFeatureScript) GetLines() Lines`
 
 GetLines returns the Lines field if non-nil, zero value otherwise.
 
 ### GetLinesOk
 
-`func (o *BTLazilyParsedFeatureScript) GetLinesOk() (*map[string]interface{}, bool)`
+`func (o *BTLazilyParsedFeatureScript) GetLinesOk() (*Lines, bool)`
 
 GetLinesOk returns a tuple with the Lines field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLines
 
-`func (o *BTLazilyParsedFeatureScript) SetLines(v map[string]interface{})`
+`func (o *BTLazilyParsedFeatureScript) SetLines(v Lines)`
 
 SetLines sets Lines field to given value.
 

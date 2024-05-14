@@ -16,6 +16,7 @@ import (
 
 // BTPropertyTableColumnInfo2161 struct for BTPropertyTableColumnInfo2161
 type BTPropertyTableColumnInfo2161 struct {
+	BTTableColumnInfo1222
 	BtType                     *string                `json:"btType,omitempty"`
 	Id                         *string                `json:"id,omitempty"`
 	NodeId                     *string                `json:"nodeId,omitempty"`
@@ -268,6 +269,14 @@ func (o *BTPropertyTableColumnInfo2161) SetPropertyValueType(v int32) {
 
 func (o BTPropertyTableColumnInfo2161) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
+	errBTTableColumnInfo1222 = json.Unmarshal([]byte(serializedBTTableColumnInfo1222), &toSerialize)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

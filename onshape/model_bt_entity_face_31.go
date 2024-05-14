@@ -1099,7 +1099,7 @@ func (dst *BTEntityFace31) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTSimulationFace-2147'
@@ -1112,7 +1112,7 @@ func (dst *BTEntityFace31) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTEntityFace31 = nil
-			return fmt.Errorf("Failed to unmarshal BTEntityFace31 as BTSimulationFace2147: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTEntityFace31 as BTSimulationFace2147: %s", err.Error())
 		}
 	}
 
@@ -1123,7 +1123,7 @@ func (dst *BTEntityFace31) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTEntityFace31, return on the first match
 	} else {
 		dst.implBTEntityFace31 = nil
-		return fmt.Errorf("Failed to unmarshal BTEntityFace31 as base_BTEntityFace31: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTEntityFace31 as base_BTEntityFace31: %s", err.Error())
 	}
 }
 
@@ -1182,6 +1182,7 @@ func (v *NullableBTEntityFace31) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTEntityFace31 struct {
+	BTTessellatedGeometry2576
 	BtType                          *string                 `json:"btType,omitempty"`
 	Compressed                      *bool                   `json:"compressed,omitempty"`
 	Decompressed                    *BTEntityGeometry35     `json:"decompressed,omitempty"`
@@ -1896,6 +1897,14 @@ func (o *base_BTEntityFace31) SetTriangleCount(v int32) {
 
 func (o base_BTEntityFace31) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTessellatedGeometry2576, errBTTessellatedGeometry2576 := json.Marshal(o.BTTessellatedGeometry2576)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
+	errBTTessellatedGeometry2576 = json.Unmarshal([]byte(serializedBTTessellatedGeometry2576), &toSerialize)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

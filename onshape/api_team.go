@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -70,8 +69,8 @@ func (r ApiFindRequest) Execute() (*BTGlobalTreeNodeListResponseBTTeamInfo, *htt
 /*
 Find Get a list of all teams the current user belongs to.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiFindRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiFindRequest
 */
 func (a *TeamApiService) Find(ctx context.Context) ApiFindRequest {
 	return ApiFindRequest{
@@ -81,7 +80,8 @@ func (a *TeamApiService) Find(ctx context.Context) ApiFindRequest {
 }
 
 // Execute executes the request
-//  @return BTGlobalTreeNodeListResponseBTTeamInfo
+//
+//	@return BTGlobalTreeNodeListResponseBTTeamInfo
 func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListResponseBTTeamInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -149,7 +149,7 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -168,7 +168,7 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -225,9 +225,9 @@ GetMembers Get a list of a team's members.
 
 Returns a maximum of 20 per page.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tid
- @return ApiGetMembersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tid
+	@return ApiGetMembersRequest
 */
 func (a *TeamApiService) GetMembers(ctx context.Context, tid string) ApiGetMembersRequest {
 	return ApiGetMembersRequest{
@@ -238,7 +238,8 @@ func (a *TeamApiService) GetMembers(ctx context.Context, tid string) ApiGetMembe
 }
 
 // Execute executes the request
-//  @return BTListResponseBTTeamMemberInfo
+//
+//	@return BTListResponseBTTeamMemberInfo
 func (a *TeamApiService) GetMembersExecute(r ApiGetMembersRequest) (*BTListResponseBTTeamMemberInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -304,7 +305,7 @@ func (a *TeamApiService) GetMembersExecute(r ApiGetMembersRequest) (*BTListRespo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -323,7 +324,7 @@ func (a *TeamApiService) GetMembersExecute(r ApiGetMembersRequest) (*BTListRespo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -348,9 +349,9 @@ func (r ApiGetTeamRequest) Execute() (*BTTeamInfo, *http.Response, error) {
 /*
 GetTeam Get team information by team ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tid
- @return ApiGetTeamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tid
+	@return ApiGetTeamRequest
 */
 func (a *TeamApiService) GetTeam(ctx context.Context, tid string) ApiGetTeamRequest {
 	return ApiGetTeamRequest{
@@ -361,7 +362,8 @@ func (a *TeamApiService) GetTeam(ctx context.Context, tid string) ApiGetTeamRequ
 }
 
 // Execute executes the request
-//  @return BTTeamInfo
+//
+//	@return BTTeamInfo
 func (a *TeamApiService) GetTeamExecute(r ApiGetTeamRequest) (*BTTeamInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -412,7 +414,7 @@ func (a *TeamApiService) GetTeamExecute(r ApiGetTeamRequest) (*BTTeamInfo, *http
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -431,7 +433,7 @@ func (a *TeamApiService) GetTeamExecute(r ApiGetTeamRequest) (*BTTeamInfo, *http
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

@@ -82,7 +82,7 @@ func TestAppElementAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
-			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
+			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
 		}),
 	}.Execute()
 
@@ -95,7 +95,7 @@ func TestAppElementAPI(t *testing.T) {
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
 			nm := make(map[string]interface{})
-			for k, v := range *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
+			for k, v := range Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
 				nm[k] = v
 			}
 
@@ -223,7 +223,7 @@ func GetDefaultAppElementParams() *onshape.BTAppElementParams {
 	return &onshape.BTAppElementParams{
 		Name:     Ptr("Test-element-1"),
 		FormatId: "String",
-		JsonTree: Ptr(map[string]interface{}{
+		JsonTree: map[string]interface{}{
 			"name":    "p.prt",
 			"_nodeId": "master",
 			"masterProperties": map[string]interface{}{
@@ -237,7 +237,7 @@ func GetDefaultAppElementParams() *onshape.BTAppElementParams {
 				"attr3":   "v33",
 				"_nodeId": "versionProperties",
 			},
-		}),
+		},
 	}
 }
 

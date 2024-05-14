@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -68,9 +67,9 @@ EnumerateObjectWorkflows Enumerate all of a company's workflowable objects.
 * Caller must be a company admin.
 * Specify `modifiedAfter` and use the `next` URI for complete enumeration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid The company or enterprise ID that owns the resource.
- @return ApiEnumerateObjectWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid The company or enterprise ID that owns the resource.
+	@return ApiEnumerateObjectWorkflowsRequest
 */
 func (a *WorkflowApiService) EnumerateObjectWorkflows(ctx context.Context, cid string) ApiEnumerateObjectWorkflowsRequest {
 	return ApiEnumerateObjectWorkflowsRequest{
@@ -81,7 +80,8 @@ func (a *WorkflowApiService) EnumerateObjectWorkflows(ctx context.Context, cid s
 }
 
 // Execute executes the request
-//  @return BTListResponseBTObjectWorkflowInfo
+//
+//	@return BTListResponseBTObjectWorkflowInfo
 func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjectWorkflowsRequest) (*BTListResponseBTObjectWorkflowInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -160,7 +160,7 @@ func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjec
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -179,7 +179,7 @@ func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjec
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -211,8 +211,8 @@ GetActiveWorkflows Get all active workflows for the currently logged in user's c
 
 Optionally takes a document ID to return all workflows for that document's owning company.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetActiveWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetActiveWorkflowsRequest
 */
 func (a *WorkflowApiService) GetActiveWorkflows(ctx context.Context) ApiGetActiveWorkflowsRequest {
 	return ApiGetActiveWorkflowsRequest{
@@ -222,7 +222,8 @@ func (a *WorkflowApiService) GetActiveWorkflows(ctx context.Context) ApiGetActiv
 }
 
 // Execute executes the request
-//  @return BTActiveWorkflowInfo
+//
+//	@return BTActiveWorkflowInfo
 func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -275,7 +276,7 @@ func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -294,7 +295,7 @@ func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -342,9 +343,9 @@ GetAllowedApprovers Get all identities allowed to be approvers on a workflow obj
 * Not object- or property-specific.
 * Used for delegation and company settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param companyId
- @return ApiGetAllowedApproversRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param companyId
+	@return ApiGetAllowedApproversRequest
 */
 func (a *WorkflowApiService) GetAllowedApprovers(ctx context.Context, companyId string) ApiGetAllowedApproversRequest {
 	return ApiGetAllowedApproversRequest{
@@ -355,7 +356,8 @@ func (a *WorkflowApiService) GetAllowedApprovers(ctx context.Context, companyId 
 }
 
 // Execute executes the request
-//  @return BTListResponseBTWorkflowObserverOptionInfo
+//
+//	@return BTListResponseBTWorkflowObserverOptionInfo
 func (a *WorkflowApiService) GetAllowedApproversExecute(r ApiGetAllowedApproversRequest) (*BTListResponseBTWorkflowObserverOptionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -415,7 +417,7 @@ func (a *WorkflowApiService) GetAllowedApproversExecute(r ApiGetAllowedApprovers
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -434,7 +436,7 @@ func (a *WorkflowApiService) GetAllowedApproversExecute(r ApiGetAllowedApprovers
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -461,9 +463,9 @@ GetAuditLog Get all audit log entries for a workflowable object.
 
 Get identities (users and/or teams) allowed to be approvers on a workflow object for the company. Not object- or property-specific; used for delegation and company settings
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectId
- @return ApiGetAuditLogRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId
+	@return ApiGetAuditLogRequest
 */
 func (a *WorkflowApiService) GetAuditLog(ctx context.Context, objectId string) ApiGetAuditLogRequest {
 	return ApiGetAuditLogRequest{
@@ -474,7 +476,8 @@ func (a *WorkflowApiService) GetAuditLog(ctx context.Context, objectId string) A
 }
 
 // Execute executes the request
-//  @return BTWorkflowAuditLogInfo
+//
+//	@return BTWorkflowAuditLogInfo
 func (a *WorkflowApiService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWorkflowAuditLogInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -525,7 +528,7 @@ func (a *WorkflowApiService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWor
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -544,7 +547,7 @@ func (a *WorkflowApiService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWor
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

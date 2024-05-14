@@ -16,6 +16,7 @@ import (
 
 // BTParameterVisibilityLogical178 struct for BTParameterVisibilityLogical178
 type BTParameterVisibilityLogical178 struct {
+	BTParameterVisibilityCondition177
 	BtType    *string                             `json:"btType,omitempty"`
 	Children  []BTParameterVisibilityCondition177 `json:"children,omitempty"`
 	Operation *GBTParameterVisibilityLogicalOp    `json:"operation,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTParameterVisibilityLogical178) SetOperation(v GBTParameterVisibilityL
 
 func (o BTParameterVisibilityLogical178) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityCondition177, errBTParameterVisibilityCondition177 := json.Marshal(o.BTParameterVisibilityCondition177)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
+	errBTParameterVisibilityCondition177 = json.Unmarshal([]byte(serializedBTParameterVisibilityCondition177), &toSerialize)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

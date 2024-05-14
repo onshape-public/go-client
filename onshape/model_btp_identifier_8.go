@@ -16,6 +16,7 @@ import (
 
 // BTPIdentifier8 struct for BTPIdentifier8
 type BTPIdentifier8 struct {
+	BTPPropertyAccessor23
 	Atomic                   *bool               `json:"atomic,omitempty"`
 	BtType                   *string             `json:"btType,omitempty"`
 	DocumentationType        *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -433,6 +434,14 @@ func (o *BTPIdentifier8) SetInvalidIdentifierForTest(v string) {
 
 func (o BTPIdentifier8) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPPropertyAccessor23, errBTPPropertyAccessor23 := json.Marshal(o.BTPPropertyAccessor23)
+	if errBTPPropertyAccessor23 != nil {
+		return []byte{}, errBTPPropertyAccessor23
+	}
+	errBTPPropertyAccessor23 = json.Unmarshal([]byte(serializedBTPPropertyAccessor23), &toSerialize)
+	if errBTPPropertyAccessor23 != nil {
+		return []byte{}, errBTPPropertyAccessor23
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

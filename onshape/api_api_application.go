@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -45,10 +44,10 @@ DeleteAppSettings Delete a user's application preference settings.
 
 This API is only usable with an OAuth token and only by the current user or admin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uid
- @param cid
- @return ApiDeleteAppSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uid
+	@param cid
+	@return ApiDeleteAppSettingsRequest
 */
 func (a *APIApplicationApiService) DeleteAppSettings(ctx context.Context, uid string, cid string) ApiDeleteAppSettingsRequest {
 	return ApiDeleteAppSettingsRequest{
@@ -121,7 +120,7 @@ func (a *APIApplicationApiService) DeleteAppSettingsExecute(r ApiDeleteAppSettin
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -155,10 +154,10 @@ DeleteCompanyAppSettings Delete a company's application preference settings.
 
 This API is only usable with an OAuth token and only by the current user or admin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cpid
- @param cid
- @return ApiDeleteCompanyAppSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cpid
+	@param cid
+	@return ApiDeleteCompanyAppSettingsRequest
 */
 func (a *APIApplicationApiService) DeleteCompanyAppSettings(ctx context.Context, cpid string, cid string) ApiDeleteCompanyAppSettingsRequest {
 	return ApiDeleteCompanyAppSettingsRequest{
@@ -170,7 +169,8 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettings(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCompanyAppSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -233,7 +233,7 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -252,7 +252,7 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -284,10 +284,10 @@ func (r ApiGetApplicableExtensionsForClientRequest) Execute() ([]BTAPIApplicatio
 /*
 GetApplicableExtensionsForClient Get a list of the client extensions the specified user has granted/accepted terms for.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uid
- @param cid
- @return ApiGetApplicableExtensionsForClientRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uid
+	@param cid
+	@return ApiGetApplicableExtensionsForClientRequest
 */
 func (a *APIApplicationApiService) GetApplicableExtensionsForClient(ctx context.Context, uid string, cid string) ApiGetApplicableExtensionsForClientRequest {
 	return ApiGetApplicableExtensionsForClientRequest{
@@ -299,7 +299,8 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClient(ctx context.
 }
 
 // Execute executes the request
-//  @return []BTAPIApplicationExtensionInfo
+//
+//	@return []BTAPIApplicationExtensionInfo
 func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r ApiGetApplicableExtensionsForClientRequest) ([]BTAPIApplicationExtensionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -354,7 +355,7 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r Api
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -373,7 +374,7 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r Api
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -414,10 +415,10 @@ GetCompanyAppSettings Get company-level preference settings for an application.
 
 This API is only usable with an OAuth token and only by the current user or admin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cpid
- @param cid
- @return ApiGetCompanyAppSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cpid
+	@param cid
+	@return ApiGetCompanyAppSettingsRequest
 */
 func (a *APIApplicationApiService) GetCompanyAppSettings(ctx context.Context, cpid string, cid string) ApiGetCompanyAppSettingsRequest {
 	return ApiGetCompanyAppSettingsRequest{
@@ -429,7 +430,8 @@ func (a *APIApplicationApiService) GetCompanyAppSettings(ctx context.Context, cp
 }
 
 // Execute executes the request
-//  @return BTUserAppSettingsInfo
+//
+//	@return BTUserAppSettingsInfo
 func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyAppSettingsRequest) (*BTUserAppSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -495,7 +497,7 @@ func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyA
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -514,7 +516,7 @@ func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyA
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -548,10 +550,10 @@ GetUserAppSettings Get user-level preference settings for an application.
 
 This API is only usable with an OAuth token and only by the current user or admin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uid
- @param cid
- @return ApiGetUserAppSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uid
+	@param cid
+	@return ApiGetUserAppSettingsRequest
 */
 func (a *APIApplicationApiService) GetUserAppSettings(ctx context.Context, uid string, cid string) ApiGetUserAppSettingsRequest {
 	return ApiGetUserAppSettingsRequest{
@@ -563,7 +565,8 @@ func (a *APIApplicationApiService) GetUserAppSettings(ctx context.Context, uid s
 }
 
 // Execute executes the request
-//  @return BTUserAppSettingsInfo
+//
+//	@return BTUserAppSettingsInfo
 func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSettingsRequest) (*BTUserAppSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -626,7 +629,7 @@ func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSett
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -645,7 +648,7 @@ func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSett
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -679,10 +682,10 @@ UpdateAppCompanySettings Update company preference settings for an application.
 
 This API is only usable with an OAuth token and only by the current user or admin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cpid
- @param cid
- @return ApiUpdateAppCompanySettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cpid
+	@param cid
+	@return ApiUpdateAppCompanySettingsRequest
 */
 func (a *APIApplicationApiService) UpdateAppCompanySettings(ctx context.Context, cpid string, cid string) ApiUpdateAppCompanySettingsRequest {
 	return ApiUpdateAppCompanySettingsRequest{
@@ -694,7 +697,8 @@ func (a *APIApplicationApiService) UpdateAppCompanySettings(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAppCompanySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -751,7 +755,7 @@ func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -770,7 +774,7 @@ func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -804,10 +808,10 @@ UpdateAppSettings Update a user's application preference settings.
 
 This API is only usable with an OAuth token and only by the current user or admin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uid
- @param cid
- @return ApiUpdateAppSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uid
+	@param cid
+	@return ApiUpdateAppSettingsRequest
 */
 func (a *APIApplicationApiService) UpdateAppSettings(ctx context.Context, uid string, cid string) ApiUpdateAppSettingsRequest {
 	return ApiUpdateAppSettingsRequest{
@@ -819,7 +823,8 @@ func (a *APIApplicationApiService) UpdateAppSettings(ctx context.Context, uid st
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *APIApplicationApiService) UpdateAppSettingsExecute(r ApiUpdateAppSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -876,7 +881,7 @@ func (a *APIApplicationApiService) UpdateAppSettingsExecute(r ApiUpdateAppSettin
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -895,7 +900,7 @@ func (a *APIApplicationApiService) UpdateAppSettingsExecute(r ApiUpdateAppSettin
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

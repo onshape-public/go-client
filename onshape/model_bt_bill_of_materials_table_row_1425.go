@@ -16,6 +16,7 @@ import (
 
 // BTBillOfMaterialsTableRow1425 struct for BTBillOfMaterialsTableRow1425
 type BTBillOfMaterialsTableRow1425 struct {
+	BTTableRow1054
 	BtType                 *string                            `json:"btType,omitempty"`
 	ColumnIdToCell         *map[string]BTTableCell1114        `json:"columnIdToCell,omitempty"`
 	Id                     *string                            `json:"id,omitempty"`
@@ -499,6 +500,14 @@ func (o *BTBillOfMaterialsTableRow1425) SetUniqueItemId(v BTBillOfMaterialsUniqu
 
 func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableRow1054, errBTTableRow1054 := json.Marshal(o.BTTableRow1054)
+	if errBTTableRow1054 != nil {
+		return []byte{}, errBTTableRow1054
+	}
+	errBTTableRow1054 = json.Unmarshal([]byte(serializedBTTableRow1054), &toSerialize)
+	if errBTTableRow1054 != nil {
+		return []byte{}, errBTTableRow1054
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

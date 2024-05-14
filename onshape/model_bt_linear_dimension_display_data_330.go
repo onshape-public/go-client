@@ -1054,7 +1054,7 @@ func (dst *BTLinearDimensionDisplayData330) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTCenterlineDimensionDisplayData-1798'
@@ -1067,7 +1067,7 @@ func (dst *BTLinearDimensionDisplayData330) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTLinearDimensionDisplayData330 = nil
-			return fmt.Errorf("Failed to unmarshal BTLinearDimensionDisplayData330 as BTCenterlineDimensionDisplayData1798: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTLinearDimensionDisplayData330 as BTCenterlineDimensionDisplayData1798: %s", err.Error())
 		}
 	}
 
@@ -1081,7 +1081,7 @@ func (dst *BTLinearDimensionDisplayData330) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTLinearDimensionDisplayData330 = nil
-			return fmt.Errorf("Failed to unmarshal BTLinearDimensionDisplayData330 as BTEllipseDiameterDimensionDisplayData1301: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTLinearDimensionDisplayData330 as BTEllipseDiameterDimensionDisplayData1301: %s", err.Error())
 		}
 	}
 
@@ -1092,7 +1092,7 @@ func (dst *BTLinearDimensionDisplayData330) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTLinearDimensionDisplayData330, return on the first match
 	} else {
 		dst.implBTLinearDimensionDisplayData330 = nil
-		return fmt.Errorf("Failed to unmarshal BTLinearDimensionDisplayData330 as base_BTLinearDimensionDisplayData330: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTLinearDimensionDisplayData330 as base_BTLinearDimensionDisplayData330: %s", err.Error())
 	}
 }
 
@@ -1151,6 +1151,7 @@ func (v *NullableBTLinearDimensionDisplayData330) UnmarshalJSON(src []byte) erro
 }
 
 type base_BTLinearDimensionDisplayData330 struct {
+	BTDimensionDisplayData323
 	BtType               *string         `json:"btType,omitempty"`
 	CoordinateSystem     *BTMatrix3x3340 `json:"coordinateSystem,omitempty"`
 	FeatureId            *string         `json:"featureId,omitempty"`
@@ -1832,6 +1833,14 @@ func (o *base_BTLinearDimensionDisplayData330) SetWitnessEndPoint1Y(v float64) {
 
 func (o base_BTLinearDimensionDisplayData330) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTDimensionDisplayData323, errBTDimensionDisplayData323 := json.Marshal(o.BTDimensionDisplayData323)
+	if errBTDimensionDisplayData323 != nil {
+		return []byte{}, errBTDimensionDisplayData323
+	}
+	errBTDimensionDisplayData323 = json.Unmarshal([]byte(serializedBTDimensionDisplayData323), &toSerialize)
+	if errBTDimensionDisplayData323 != nil {
+		return []byte{}, errBTDimensionDisplayData323
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

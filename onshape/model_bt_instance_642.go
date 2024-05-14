@@ -2104,7 +2104,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTAssemblyInstance-947'
@@ -2117,7 +2117,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstance642 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstance642 as BTAssemblyInstance947: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstance642 as BTAssemblyInstance947: %s", err.Error())
 		}
 	}
 
@@ -2131,7 +2131,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInstance642 = nil
-			return fmt.Errorf("Failed to unmarshal BTInstance642 as BTPartInstance81: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInstance642 as BTPartInstance81: %s", err.Error())
 		}
 	}
 
@@ -2142,7 +2142,7 @@ func (dst *BTInstance642) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTInstance642, return on the first match
 	} else {
 		dst.implBTInstance642 = nil
-		return fmt.Errorf("Failed to unmarshal BTInstance642 as base_BTInstance642: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTInstance642 as base_BTInstance642: %s", err.Error())
 	}
 }
 
@@ -2201,6 +2201,7 @@ func (v *NullableBTInstance642) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTInstance642 struct {
+	BTInstanceBase2263
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -3577,6 +3578,14 @@ func (o *base_BTInstance642) SetVersionIdIfExternal(v string) {
 
 func (o base_BTInstance642) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInstanceBase2263, errBTInstanceBase2263 := json.Marshal(o.BTInstanceBase2263)
+	if errBTInstanceBase2263 != nil {
+		return []byte{}, errBTInstanceBase2263
+	}
+	errBTInstanceBase2263 = json.Unmarshal([]byte(serializedBTInstanceBase2263), &toSerialize)
+	if errBTInstanceBase2263 != nil {
+		return []byte{}, errBTInstanceBase2263
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

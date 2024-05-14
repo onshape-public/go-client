@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -102,8 +101,8 @@ GetCategoryProperties Get properties associated with the specified metadata cate
 
 An object's category specifies its type: Part, Assembly, Drawing, etc. Available properties depend on the object's category.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCategoryPropertiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCategoryPropertiesRequest
 */
 func (a *MetadataCategoryApiService) GetCategoryProperties(ctx context.Context) ApiGetCategoryPropertiesRequest {
 	return ApiGetCategoryPropertiesRequest{
@@ -113,7 +112,8 @@ func (a *MetadataCategoryApiService) GetCategoryProperties(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return BTListResponseBTCategoryPropertyInfo
+//
+//	@return BTListResponseBTCategoryPropertyInfo
 func (a *MetadataCategoryApiService) GetCategoryPropertiesExecute(r ApiGetCategoryPropertiesRequest) (*BTListResponseBTCategoryPropertyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -204,7 +204,7 @@ func (a *MetadataCategoryApiService) GetCategoryPropertiesExecute(r ApiGetCatego
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -223,7 +223,7 @@ func (a *MetadataCategoryApiService) GetCategoryPropertiesExecute(r ApiGetCatego
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

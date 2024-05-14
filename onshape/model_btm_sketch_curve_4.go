@@ -799,7 +799,7 @@ func (dst *BTMSketchCurve4) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMSketchCurveSegment-155'
@@ -812,7 +812,7 @@ func (dst *BTMSketchCurve4) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchCurve4 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchCurve4 as BTMSketchCurveSegment155: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchCurve4 as BTMSketchCurveSegment155: %s", err.Error())
 		}
 	}
 
@@ -823,7 +823,7 @@ func (dst *BTMSketchCurve4) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMSketchCurve4, return on the first match
 	} else {
 		dst.implBTMSketchCurve4 = nil
-		return fmt.Errorf("Failed to unmarshal BTMSketchCurve4 as base_BTMSketchCurve4: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMSketchCurve4 as base_BTMSketchCurve4: %s", err.Error())
 	}
 }
 
@@ -882,6 +882,7 @@ func (v *NullableBTMSketchCurve4) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSketchCurve4 struct {
+	BTMSketchGeomEntity5
 	BtType                              *string  `json:"btType,omitempty"`
 	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
 	EntityId                            *string  `json:"entityId,omitempty"`
@@ -1399,6 +1400,14 @@ func (o *base_BTMSketchCurve4) SetInternalIds(v []string) {
 
 func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchGeomEntity5, errBTMSketchGeomEntity5 := json.Marshal(o.BTMSketchGeomEntity5)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
+	errBTMSketchGeomEntity5 = json.Unmarshal([]byte(serializedBTMSketchGeomEntity5), &toSerialize)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

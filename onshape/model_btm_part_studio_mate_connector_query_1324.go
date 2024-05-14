@@ -16,6 +16,7 @@ import (
 
 // BTMPartStudioMateConnectorQuery1324 struct for BTMPartStudioMateConnectorQuery1324
 type BTMPartStudioMateConnectorQuery1324 struct {
+	BTMFeatureQueryWithOccurrence157
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -566,6 +567,14 @@ func (o *BTMPartStudioMateConnectorQuery1324) SetQueryData(v string) {
 
 func (o BTMPartStudioMateConnectorQuery1324) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMFeatureQueryWithOccurrence157, errBTMFeatureQueryWithOccurrence157 := json.Marshal(o.BTMFeatureQueryWithOccurrence157)
+	if errBTMFeatureQueryWithOccurrence157 != nil {
+		return []byte{}, errBTMFeatureQueryWithOccurrence157
+	}
+	errBTMFeatureQueryWithOccurrence157 = json.Unmarshal([]byte(serializedBTMFeatureQueryWithOccurrence157), &toSerialize)
+	if errBTMFeatureQueryWithOccurrence157 != nil {
+		return []byte{}, errBTMFeatureQueryWithOccurrence157
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

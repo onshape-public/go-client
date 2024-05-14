@@ -514,7 +514,7 @@ func (dst *BTMConfigurationParameter819) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMConfigurationParameterBoolean-2550'
@@ -527,7 +527,7 @@ func (dst *BTMConfigurationParameter819) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMConfigurationParameter819 = nil
-			return fmt.Errorf("Failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterBoolean2550: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterBoolean2550: %s", err.Error())
 		}
 	}
 
@@ -541,7 +541,7 @@ func (dst *BTMConfigurationParameter819) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMConfigurationParameter819 = nil
-			return fmt.Errorf("Failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterEnum105: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterEnum105: %s", err.Error())
 		}
 	}
 
@@ -555,7 +555,7 @@ func (dst *BTMConfigurationParameter819) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMConfigurationParameter819 = nil
-			return fmt.Errorf("Failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterQuantity1826: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterQuantity1826: %s", err.Error())
 		}
 	}
 
@@ -569,7 +569,7 @@ func (dst *BTMConfigurationParameter819) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMConfigurationParameter819 = nil
-			return fmt.Errorf("Failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterString872: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMConfigurationParameter819 as BTMConfigurationParameterString872: %s", err.Error())
 		}
 	}
 
@@ -580,7 +580,7 @@ func (dst *BTMConfigurationParameter819) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMConfigurationParameter819, return on the first match
 	} else {
 		dst.implBTMConfigurationParameter819 = nil
-		return fmt.Errorf("Failed to unmarshal BTMConfigurationParameter819 as base_BTMConfigurationParameter819: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMConfigurationParameter819 as base_BTMConfigurationParameter819: %s", err.Error())
 	}
 }
 

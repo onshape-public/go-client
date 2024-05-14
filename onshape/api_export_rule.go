@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -38,10 +37,10 @@ GetValidRuleOptions  Get a list of valid export rule options for the user or com
 
 Does NOT get the rules themselves; it gets the information used to create them.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cu Indicates which of company (c) or user (u) id is specified below.
- @param cuid The id of the company or user in which the operation should be performed.
- @return ApiGetValidRuleOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cu Indicates which of company (c) or user (u) id is specified below.
+	@param cuid The id of the company or user in which the operation should be performed.
+	@return ApiGetValidRuleOptionsRequest
 */
 func (a *ExportRuleApiService) GetValidRuleOptions(ctx context.Context, cu string, cuid string) ApiGetValidRuleOptionsRequest {
 	return ApiGetValidRuleOptionsRequest{
@@ -53,7 +52,8 @@ func (a *ExportRuleApiService) GetValidRuleOptions(ctx context.Context, cu strin
 }
 
 // Execute executes the request
-//  @return BTExportRuleValidOptionsInfo
+//
+//	@return BTExportRuleValidOptionsInfo
 func (a *ExportRuleApiService) GetValidRuleOptionsExecute(r ApiGetValidRuleOptionsRequest) (*BTExportRuleValidOptionsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -105,7 +105,7 @@ func (a *ExportRuleApiService) GetValidRuleOptionsExecute(r ApiGetValidRuleOptio
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -124,7 +124,7 @@ func (a *ExportRuleApiService) GetValidRuleOptionsExecute(r ApiGetValidRuleOptio
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

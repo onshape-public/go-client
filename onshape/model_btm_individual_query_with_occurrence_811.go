@@ -699,7 +699,7 @@ func (dst *BTMIndividualQueryWithOccurrence811) UnmarshalJSON(data []byte) error
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMInferenceQueryWithOccurrence-1083'
@@ -712,7 +712,7 @@ func (dst *BTMIndividualQueryWithOccurrence811) UnmarshalJSON(data []byte) error
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQueryWithOccurrence811 = nil
-			return fmt.Errorf("Failed to unmarshal BTMIndividualQueryWithOccurrence811 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrence811 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
 		}
 	}
 
@@ -723,7 +723,7 @@ func (dst *BTMIndividualQueryWithOccurrence811) UnmarshalJSON(data []byte) error
 		return nil // data stored in dst.base_BTMIndividualQueryWithOccurrence811, return on the first match
 	} else {
 		dst.implBTMIndividualQueryWithOccurrence811 = nil
-		return fmt.Errorf("Failed to unmarshal BTMIndividualQueryWithOccurrence811 as base_BTMIndividualQueryWithOccurrence811: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrence811 as base_BTMIndividualQueryWithOccurrence811: %s", err.Error())
 	}
 }
 
@@ -782,6 +782,7 @@ func (v *NullableBTMIndividualQueryWithOccurrence811) UnmarshalJSON(src []byte) 
 }
 
 type base_BTMIndividualQueryWithOccurrence811 struct {
+	BTMIndividualQueryWithOccurrenceBase904
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -1233,6 +1234,14 @@ func (o *base_BTMIndividualQueryWithOccurrence811) SetEntityQuery(v string) {
 
 func (o base_BTMIndividualQueryWithOccurrence811) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryWithOccurrenceBase904, errBTMIndividualQueryWithOccurrenceBase904 := json.Marshal(o.BTMIndividualQueryWithOccurrenceBase904)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
+	errBTMIndividualQueryWithOccurrenceBase904 = json.Unmarshal([]byte(serializedBTMIndividualQueryWithOccurrenceBase904), &toSerialize)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

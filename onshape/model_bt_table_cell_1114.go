@@ -219,7 +219,7 @@ func (dst *BTTableCell1114) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTTableCellParameter-2399'
@@ -232,35 +232,7 @@ func (dst *BTTableCell1114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableCell1114 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableCell1114 as BTTableCellParameter2399: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTTableCellParameterWithValue-2122'
-	if jsonDict["btType"] == "BTTableCellParameterWithValue-2122" {
-		// try to unmarshal JSON data into BTTableCellParameterWithValue2122
-		var qr *BTTableCellParameterWithValue2122
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTTableCell1114 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTTableCell1114 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableCell1114 as BTTableCellParameterWithValue2122: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTTableCellPropertyParameter-2983'
-	if jsonDict["btType"] == "BTTableCellPropertyParameter-2983" {
-		// try to unmarshal JSON data into BTTableCellPropertyParameter2983
-		var qr *BTTableCellPropertyParameter2983
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTTableCell1114 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTTableCell1114 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableCell1114 as BTTableCellPropertyParameter2983: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableCell1114 as BTTableCellParameter2399: %s", err.Error())
 		}
 	}
 
@@ -274,7 +246,7 @@ func (dst *BTTableCell1114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableCell1114 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableCell1114 as BTTableTestCellDouble2509: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableCell1114 as BTTableTestCellDouble2509: %s", err.Error())
 		}
 	}
 
@@ -288,7 +260,35 @@ func (dst *BTTableCell1114) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableCell1114 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableCell1114 as BTTableTestCellString2112: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableCell1114 as BTTableTestCellString2112: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTTableCellParameterWithValue-2122'
+	if jsonDict["btType"] == "BTTableCellParameterWithValue-2122" {
+		// try to unmarshal JSON data into BTTableCellParameterWithValue2122
+		var qr *BTTableCellParameterWithValue2122
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableCell1114 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableCell1114 = nil
+			return fmt.Errorf("failed to unmarshal BTTableCell1114 as BTTableCellParameterWithValue2122: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTTableCellPropertyParameter-2983'
+	if jsonDict["btType"] == "BTTableCellPropertyParameter-2983" {
+		// try to unmarshal JSON data into BTTableCellPropertyParameter2983
+		var qr *BTTableCellPropertyParameter2983
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableCell1114 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableCell1114 = nil
+			return fmt.Errorf("failed to unmarshal BTTableCell1114 as BTTableCellPropertyParameter2983: %s", err.Error())
 		}
 	}
 
@@ -299,7 +299,7 @@ func (dst *BTTableCell1114) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTableCell1114, return on the first match
 	} else {
 		dst.implBTTableCell1114 = nil
-		return fmt.Errorf("Failed to unmarshal BTTableCell1114 as base_BTTableCell1114: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTableCell1114 as base_BTTableCell1114: %s", err.Error())
 	}
 }
 

@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -48,9 +47,9 @@ func (r ApiAddAttachmentRequest) Execute() (*BTCommentInfo, *http.Response, erro
 /*
 AddAttachment Add an attachment to a comment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiAddAttachmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiAddAttachmentRequest
 */
 func (a *CommentApiService) AddAttachment(ctx context.Context, cid string) ApiAddAttachmentRequest {
 	return ApiAddAttachmentRequest{
@@ -61,7 +60,8 @@ func (a *CommentApiService) AddAttachment(ctx context.Context, cid string) ApiAd
 }
 
 // Execute executes the request
-//  @return BTCommentInfo
+//
+//	@return BTCommentInfo
 func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -128,7 +128,7 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -147,7 +147,7 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -177,8 +177,8 @@ func (r ApiCreateCommentRequest) Execute() (*BTCommentInfo, *http.Response, erro
 /*
 CreateComment Update a document with a new comment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateCommentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateCommentRequest
 */
 func (a *CommentApiService) CreateComment(ctx context.Context) ApiCreateCommentRequest {
 	return ApiCreateCommentRequest{
@@ -188,7 +188,8 @@ func (a *CommentApiService) CreateComment(ctx context.Context) ApiCreateCommentR
 }
 
 // Execute executes the request
-//  @return BTCommentInfo
+//
+//	@return BTCommentInfo
 func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -243,7 +244,7 @@ func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -262,7 +263,7 @@ func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -287,9 +288,9 @@ func (r ApiDeleteAttachmentsRequest) Execute() (map[string]interface{}, *http.Re
 /*
 DeleteAttachments Delete all attachments from a comment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiDeleteAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiDeleteAttachmentsRequest
 */
 func (a *CommentApiService) DeleteAttachments(ctx context.Context, cid string) ApiDeleteAttachmentsRequest {
 	return ApiDeleteAttachmentsRequest{
@@ -300,7 +301,8 @@ func (a *CommentApiService) DeleteAttachments(ctx context.Context, cid string) A
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -351,7 +353,7 @@ func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsReque
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -370,7 +372,7 @@ func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsReque
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -395,9 +397,9 @@ func (r ApiDeleteCommentRequest) Execute() (map[string]interface{}, *http.Respon
 /*
 DeleteComment Delete a comment from a document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiDeleteCommentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiDeleteCommentRequest
 */
 func (a *CommentApiService) DeleteComment(ctx context.Context, cid string) ApiDeleteCommentRequest {
 	return ApiDeleteCommentRequest{
@@ -408,7 +410,8 @@ func (a *CommentApiService) DeleteComment(ctx context.Context, cid string) ApiDe
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -459,7 +462,7 @@ func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -478,7 +481,7 @@ func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -507,11 +510,11 @@ GetAttachment Get the attachment with the specified file extension that is assoc
 
 Returns only a single attachment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @param fdid
- @param ext
- @return ApiGetAttachmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@param fdid
+	@param ext
+	@return ApiGetAttachmentRequest
 */
 func (a *CommentApiService) GetAttachment(ctx context.Context, cid string, fdid string, ext string) ApiGetAttachmentRequest {
 	return ApiGetAttachmentRequest{
@@ -524,7 +527,8 @@ func (a *CommentApiService) GetAttachment(ctx context.Context, cid string, fdid 
 }
 
 // Execute executes the request
-//  @return HttpFile
+//
+//	@return HttpFile
 func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -577,7 +581,7 @@ func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*Ht
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -596,7 +600,7 @@ func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*Ht
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -621,9 +625,9 @@ func (r ApiGetCommentRequest) Execute() (*BTCommentInfo, *http.Response, error) 
 /*
 GetComment Get details for a comment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiGetCommentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiGetCommentRequest
 */
 func (a *CommentApiService) GetComment(ctx context.Context, cid string) ApiGetCommentRequest {
 	return ApiGetCommentRequest{
@@ -634,7 +638,8 @@ func (a *CommentApiService) GetComment(ctx context.Context, cid string) ApiGetCo
 }
 
 // Execute executes the request
-//  @return BTCommentInfo
+//
+//	@return BTCommentInfo
 func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -685,7 +690,7 @@ func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommen
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -704,7 +709,7 @@ func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommen
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -788,8 +793,8 @@ func (r ApiGetCommentsRequest) Execute() (*BTListResponseBTCommentInfo, *http.Re
 /*
 GetComments Get a list of comments in a document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCommentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCommentsRequest
 */
 func (a *CommentApiService) GetComments(ctx context.Context) ApiGetCommentsRequest {
 	return ApiGetCommentsRequest{
@@ -799,7 +804,8 @@ func (a *CommentApiService) GetComments(ctx context.Context) ApiGetCommentsReque
 }
 
 // Execute executes the request
-//  @return BTListResponseBTCommentInfo
+//
+//	@return BTListResponseBTCommentInfo
 func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTListResponseBTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -879,7 +885,7 @@ func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTList
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -898,7 +904,7 @@ func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTList
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -923,9 +929,9 @@ func (r ApiReopenRequest) Execute() (*BTCommentInfo, *http.Response, error) {
 /*
 Reopen Reopen a resolved comment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiReopenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiReopenRequest
 */
 func (a *CommentApiService) Reopen(ctx context.Context, cid string) ApiReopenRequest {
 	return ApiReopenRequest{
@@ -936,7 +942,8 @@ func (a *CommentApiService) Reopen(ctx context.Context, cid string) ApiReopenReq
 }
 
 // Execute executes the request
-//  @return BTCommentInfo
+//
+//	@return BTCommentInfo
 func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -987,7 +994,7 @@ func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1006,7 +1013,7 @@ func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1031,9 +1038,9 @@ func (r ApiResolveRequest) Execute() (*BTCommentInfo, *http.Response, error) {
 /*
 Resolve Resolve a comment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiResolveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiResolveRequest
 */
 func (a *CommentApiService) Resolve(ctx context.Context, cid string) ApiResolveRequest {
 	return ApiResolveRequest{
@@ -1044,7 +1051,8 @@ func (a *CommentApiService) Resolve(ctx context.Context, cid string) ApiResolveR
 }
 
 // Execute executes the request
-//  @return BTCommentInfo
+//
+//	@return BTCommentInfo
 func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1095,7 +1103,7 @@ func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo,
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1114,7 +1122,7 @@ func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo,
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1145,9 +1153,9 @@ func (r ApiUpdateCommentRequest) Execute() (*BTCommentInfo, *http.Response, erro
 /*
 UpdateComment Update the content of an existing comment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiUpdateCommentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiUpdateCommentRequest
 */
 func (a *CommentApiService) UpdateComment(ctx context.Context, cid string) ApiUpdateCommentRequest {
 	return ApiUpdateCommentRequest{
@@ -1158,7 +1166,8 @@ func (a *CommentApiService) UpdateComment(ctx context.Context, cid string) ApiUp
 }
 
 // Execute executes the request
-//  @return BTCommentInfo
+//
+//	@return BTCommentInfo
 func (a *CommentApiService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1214,7 +1223,7 @@ func (a *CommentApiService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1233,7 +1242,7 @@ func (a *CommentApiService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

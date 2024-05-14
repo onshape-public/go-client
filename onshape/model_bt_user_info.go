@@ -29,8 +29,8 @@ func (o *BTUserAdminInfo) AsBTUserInfo() *BTUserInfo {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTUserInfo() *BTUserInfo {
-	this := BTUserInfo{Newbase_BTUserInfo()}
+func NewBTUserInfo(jsonType string) *BTUserInfo {
+	this := BTUserInfo{Newbase_BTUserInfo(jsonType)}
 	return &this
 }
 
@@ -40,6 +40,43 @@ func NewBTUserInfo() *BTUserInfo {
 func NewBTUserInfoWithDefaults() *BTUserInfo {
 	this := BTUserInfo{Newbase_BTUserInfoWithDefaults()}
 	return &this
+}
+
+// GetJsonType returns the JsonType field value
+func (o *BTUserInfo) GetJsonType() string {
+	type getResult interface {
+		GetJsonType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetJsonType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetJsonTypeOk() (*string, bool) {
+	type getResult interface {
+		GetJsonTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetJsonTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// SetJsonType sets field value
+func (o *BTUserInfo) SetJsonType(v string) {
+	type getResult interface {
+		SetJsonType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetJsonType(v)
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -2749,7 +2786,7 @@ func (dst *BTUserInfo) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTUserAdminInfo'
@@ -2762,7 +2799,7 @@ func (dst *BTUserInfo) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTUserInfo = nil
-			return fmt.Errorf("Failed to unmarshal BTUserInfo as BTUserAdminInfo: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTUserInfo as BTUserAdminInfo: %s", err.Error())
 		}
 	}
 
@@ -2773,7 +2810,7 @@ func (dst *BTUserInfo) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTUserInfo, return on the first match
 	} else {
 		dst.implBTUserInfo = nil
-		return fmt.Errorf("Failed to unmarshal BTUserInfo as base_BTUserInfo: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTUserInfo as base_BTUserInfo: %s", err.Error())
 	}
 }
 
@@ -2832,6 +2869,7 @@ func (v *NullableBTUserInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTUserInfo struct {
+	JsonType string `json:"jsonType"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -2896,8 +2934,9 @@ type base_BTUserInfo struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func Newbase_BTUserInfo() *base_BTUserInfo {
+func Newbase_BTUserInfo(jsonType string) *base_BTUserInfo {
 	this := base_BTUserInfo{}
+	this.JsonType = jsonType
 	return &this
 }
 
@@ -2907,6 +2946,30 @@ func Newbase_BTUserInfo() *base_BTUserInfo {
 func Newbase_BTUserInfoWithDefaults() *base_BTUserInfo {
 	this := base_BTUserInfo{}
 	return &this
+}
+
+// GetJsonType returns the JsonType field value
+func (o *base_BTUserInfo) GetJsonType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.JsonType
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetJsonTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JsonType, true
+}
+
+// SetJsonType sets field value
+func (o *base_BTUserInfo) SetJsonType(v string) {
+	o.JsonType = v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -4639,6 +4702,9 @@ func (o *base_BTUserInfo) SetTrialInfos(v []BTTrialInfo) {
 
 func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["jsonType"] = o.JsonType
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}

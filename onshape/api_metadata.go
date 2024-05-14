@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -74,12 +73,12 @@ GetVEOPStandardContentMetadata Get the metadata for a standard content part.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param vid
- @param eid
- @param pid
- @return ApiGetVEOPStandardContentMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param vid
+	@param eid
+	@param pid
+	@return ApiGetVEOPStandardContentMetadataRequest
 */
 func (a *MetadataApiService) GetVEOPStandardContentMetadata(ctx context.Context, did string, vid string, eid string, pid string) ApiGetVEOPStandardContentMetadataRequest {
 	return ApiGetVEOPStandardContentMetadataRequest{
@@ -93,7 +92,8 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadata(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPStandardContentMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -162,7 +162,7 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPS
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -181,7 +181,7 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPS
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -259,12 +259,12 @@ GetWMVEMetadata Get the metadata for an element.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetWMVEMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetWMVEMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetWMVEMetadataRequest {
 	return ApiGetWMVEMetadataRequest{
@@ -278,7 +278,8 @@ func (a *MetadataApiService) GetWMVEMetadata(ctx context.Context, did string, wv
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetWMVEMetadataExecute(r ApiGetWMVEMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -353,7 +354,7 @@ func (a *MetadataApiService) GetWMVEMetadataExecute(r ApiGetWMVEMetadataRequest)
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -372,7 +373,7 @@ func (a *MetadataApiService) GetWMVEMetadataExecute(r ApiGetWMVEMetadataRequest)
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -461,14 +462,14 @@ GetWMVEPMetadata Get the metadata for a part.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
- @param pid
- @return ApiGetWMVEPMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
+	@param pid
+	@return ApiGetWMVEPMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEPMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string, iden string, pid string) ApiGetWMVEPMetadataRequest {
 	return ApiGetWMVEPMetadataRequest{
@@ -484,7 +485,8 @@ func (a *MetadataApiService) GetWMVEPMetadata(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetWMVEPMetadataExecute(r ApiGetWMVEPMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -564,7 +566,7 @@ func (a *MetadataApiService) GetWMVEPMetadataExecute(r ApiGetWMVEPMetadataReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -583,7 +585,7 @@ func (a *MetadataApiService) GetWMVEPMetadataExecute(r ApiGetWMVEPMetadataReques
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -656,12 +658,12 @@ GetWMVEPsMetadata Get the metadata for all parts in a document.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetWMVEPsMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetWMVEPsMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEPsMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetWMVEPsMetadataRequest {
 	return ApiGetWMVEPsMetadataRequest{
@@ -675,7 +677,8 @@ func (a *MetadataApiService) GetWMVEPsMetadata(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectListInfoBTMetadataPartInfo
+//
+//	@return BTMetadataObjectListInfoBTMetadataPartInfo
 func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequest) (*BTMetadataObjectListInfoBTMetadataPartInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -747,7 +750,7 @@ func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -766,7 +769,7 @@ func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -835,11 +838,11 @@ GetWMVEsMetadata Get the metadata for all elements in a document.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @return ApiGetWMVEsMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@return ApiGetWMVEsMetadataRequest
 */
 func (a *MetadataApiService) GetWMVEsMetadata(ctx context.Context, did string, wvm string, wvmid string) ApiGetWMVEsMetadataRequest {
 	return ApiGetWMVEsMetadataRequest{
@@ -852,7 +855,8 @@ func (a *MetadataApiService) GetWMVEsMetadata(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectListInfoBTMetadataElementInfo
+//
+//	@return BTMetadataObjectListInfoBTMetadataElementInfo
 func (a *MetadataApiService) GetWMVEsMetadataExecute(r ApiGetWMVEsMetadataRequest) (*BTMetadataObjectListInfoBTMetadataElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -923,7 +927,7 @@ func (a *MetadataApiService) GetWMVEsMetadataExecute(r ApiGetWMVEsMetadataReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -942,7 +946,7 @@ func (a *MetadataApiService) GetWMVEsMetadataExecute(r ApiGetWMVEsMetadataReques
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1011,11 +1015,11 @@ GetWVMetadata Get the metadata for a workspace or version.
 * `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
 * You can also choose to include a `thumbnail`. Default value is `false`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @return ApiGetWVMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@return ApiGetWVMetadataRequest
 */
 func (a *MetadataApiService) GetWVMetadata(ctx context.Context, did string, wv string, wvid string) ApiGetWVMetadataRequest {
 	return ApiGetWVMetadataRequest{
@@ -1028,7 +1032,8 @@ func (a *MetadataApiService) GetWVMetadata(ctx context.Context, did string, wv s
 }
 
 // Execute executes the request
-//  @return BTMetadataObjectInfo
+//
+//	@return BTMetadataObjectInfo
 func (a *MetadataApiService) GetWVMetadataExecute(r ApiGetWVMetadataRequest) (*BTMetadataObjectInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1099,7 +1104,7 @@ func (a *MetadataApiService) GetWVMetadataExecute(r ApiGetWVMetadataRequest) (*B
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1118,7 +1123,7 @@ func (a *MetadataApiService) GetWVMetadataExecute(r ApiGetWVMetadataRequest) (*B
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1159,9 +1164,9 @@ UpdateVEOPStandardContentPartMetadata Update the metadata for a standard content
 * Specify the document in which you have inserted the standard content part in the `linkDocumentId` query param.
 * Specify the property metadata to update in the Request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiUpdateVEOPStandardContentPartMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiUpdateVEOPStandardContentPartMetadataRequest
 */
 func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadata(ctx context.Context, did string) ApiUpdateVEOPStandardContentPartMetadataRequest {
 	return ApiUpdateVEOPStandardContentPartMetadataRequest{
@@ -1172,7 +1177,8 @@ func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadata(ctx context.C
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadataExecute(r ApiUpdateVEOPStandardContentPartMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1232,7 +1238,7 @@ func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadataExecute(r ApiU
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1251,7 +1257,7 @@ func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadataExecute(r ApiU
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1294,12 +1300,12 @@ UpdateWVEMetadata Update the metadata for an element.
 * Microversion (`m`) in `wvm` path parameter option is not supported.
 * Specify the property metadata to update in the Request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiUpdateWVEMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiUpdateWVEMetadataRequest
 */
 func (a *MetadataApiService) UpdateWVEMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateWVEMetadataRequest {
 	return ApiUpdateWVEMetadataRequest{
@@ -1313,7 +1319,8 @@ func (a *MetadataApiService) UpdateWVEMetadata(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateWVEMetadataExecute(r ApiUpdateWVEMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1375,7 +1382,7 @@ func (a *MetadataApiService) UpdateWVEMetadataExecute(r ApiUpdateWVEMetadataRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1394,7 +1401,7 @@ func (a *MetadataApiService) UpdateWVEMetadataExecute(r ApiUpdateWVEMetadataRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1463,14 +1470,14 @@ UpdateWVEPMetadata Update the metadata for a part.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
 * Specify the property metadata to update in the Request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
- @param pid
- @return ApiUpdateWVEPMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@param iden Denotes whether the pid specified is a part id (p) or a part identity (pi).
+	@param pid
+	@return ApiUpdateWVEPMetadataRequest
 */
 func (a *MetadataApiService) UpdateWVEPMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string, iden string, pid string) ApiUpdateWVEPMetadataRequest {
 	return ApiUpdateWVEPMetadataRequest{
@@ -1486,7 +1493,8 @@ func (a *MetadataApiService) UpdateWVEPMetadata(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateWVEPMetadataExecute(r ApiUpdateWVEPMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1559,7 +1567,7 @@ func (a *MetadataApiService) UpdateWVEPMetadataExecute(r ApiUpdateWVEPMetadataRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1578,7 +1586,7 @@ func (a *MetadataApiService) UpdateWVEPMetadataExecute(r ApiUpdateWVEPMetadataRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1613,11 +1621,11 @@ UpdateWVMetadata Update the metadata for a workspace or version.
 
 Specify the property metadata to update in the Request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @return ApiUpdateWVMetadataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@return ApiUpdateWVMetadataRequest
 */
 func (a *MetadataApiService) UpdateWVMetadata(ctx context.Context, did string, wv string, wvid string) ApiUpdateWVMetadataRequest {
 	return ApiUpdateWVMetadataRequest{
@@ -1630,7 +1638,8 @@ func (a *MetadataApiService) UpdateWVMetadata(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *MetadataApiService) UpdateWVMetadataExecute(r ApiUpdateWVMetadataRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1688,7 +1697,7 @@ func (a *MetadataApiService) UpdateWVMetadataExecute(r ApiUpdateWVMetadataReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1707,7 +1716,7 @@ func (a *MetadataApiService) UpdateWVMetadataExecute(r ApiUpdateWVMetadataReques
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

@@ -16,6 +16,7 @@ import (
 
 // BTTableAssemblyCrossHighlightData2675 struct for BTTableAssemblyCrossHighlightData2675
 type BTTableAssemblyCrossHighlightData2675 struct {
+	BTTableBaseCrossHighlightData2609
 	// Type of JSON object.
 	BtType                      *string                                     `json:"btType,omitempty"`
 	AssemblyCrossHighlightItems []BTTableAssemblyCrossHighlightDataItem2659 `json:"assemblyCrossHighlightItems,omitempty"`
@@ -104,6 +105,14 @@ func (o *BTTableAssemblyCrossHighlightData2675) SetAssemblyCrossHighlightItems(v
 
 func (o BTTableAssemblyCrossHighlightData2675) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableBaseCrossHighlightData2609, errBTTableBaseCrossHighlightData2609 := json.Marshal(o.BTTableBaseCrossHighlightData2609)
+	if errBTTableBaseCrossHighlightData2609 != nil {
+		return []byte{}, errBTTableBaseCrossHighlightData2609
+	}
+	errBTTableBaseCrossHighlightData2609 = json.Unmarshal([]byte(serializedBTTableBaseCrossHighlightData2609), &toSerialize)
+	if errBTTableBaseCrossHighlightData2609 != nil {
+		return []byte{}, errBTTableBaseCrossHighlightData2609
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -52,13 +51,13 @@ func (r ApiGetSketchBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *http.R
 /*
 GetSketchBoundingBoxes Get all bounding boxes for a sketch.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @param sid
- @return ApiGetSketchBoundingBoxesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@param sid
+	@return ApiGetSketchBoundingBoxesRequest
 */
 func (a *SketchApiService) GetSketchBoundingBoxes(ctx context.Context, did string, wvm string, wvmid string, eid string, sid string) ApiGetSketchBoundingBoxesRequest {
 	return ApiGetSketchBoundingBoxesRequest{
@@ -73,7 +72,8 @@ func (a *SketchApiService) GetSketchBoundingBoxes(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return BTBoundingBoxInfo
+//
+//	@return BTBoundingBoxInfo
 func (a *SketchApiService) GetSketchBoundingBoxesExecute(r ApiGetSketchBoundingBoxesRequest) (*BTBoundingBoxInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -134,7 +134,7 @@ func (a *SketchApiService) GetSketchBoundingBoxesExecute(r ApiGetSketchBoundingB
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -153,7 +153,7 @@ func (a *SketchApiService) GetSketchBoundingBoxesExecute(r ApiGetSketchBoundingB
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -217,12 +217,12 @@ func (r ApiGetSketchInfoRequest) Execute() (map[string]interface{}, *http.Respon
 /*
 GetSketchInfo Get information for all sketches in Part Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiGetSketchInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiGetSketchInfoRequest
 */
 func (a *SketchApiService) GetSketchInfo(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetSketchInfoRequest {
 	return ApiGetSketchInfoRequest{
@@ -236,7 +236,8 @@ func (a *SketchApiService) GetSketchInfo(ctx context.Context, did string, wvm st
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *SketchApiService) GetSketchInfoExecute(r ApiGetSketchInfoRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -316,7 +317,7 @@ func (a *SketchApiService) GetSketchInfoExecute(r ApiGetSketchInfoRequest) (map[
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -335,7 +336,7 @@ func (a *SketchApiService) GetSketchInfoExecute(r ApiGetSketchInfoRequest) (map[
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -396,13 +397,13 @@ GetTessellatedEntities Get the tessellations of a sketch in a Part Studio.
 
 The accuracy of the tessellation to exact geometry is controlled by the `angleTolerance` and `chordTolerance` parameters. The tessellation points are computed closely enough so that neither the angle tolerance nor the chord tolerance are exceeded. For most parts, the angular tolerance is the most restrictive of the two default tolerances.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @param sid
- @return ApiGetTessellatedEntitiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@param sid
+	@return ApiGetTessellatedEntitiesRequest
 */
 func (a *SketchApiService) GetTessellatedEntities(ctx context.Context, did string, wvm string, wvmid string, eid string, sid string) ApiGetTessellatedEntitiesRequest {
 	return ApiGetTessellatedEntitiesRequest{
@@ -417,7 +418,8 @@ func (a *SketchApiService) GetTessellatedEntities(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *SketchApiService) GetTessellatedEntitiesExecute(r ApiGetTessellatedEntitiesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -495,7 +497,7 @@ func (a *SketchApiService) GetTessellatedEntitiesExecute(r ApiGetTessellatedEnti
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -514,7 +516,7 @@ func (a *SketchApiService) GetTessellatedEntitiesExecute(r ApiGetTessellatedEnti
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

@@ -16,6 +16,7 @@ import (
 
 // BTMMeshPointQuery1183 struct for BTMMeshPointQuery1183
 type BTMMeshPointQuery1183 struct {
+	BTMIndividualQueryWithOccurrenceBase904
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -467,6 +468,14 @@ func (o *BTMMeshPointQuery1183) SetOrigin(v BTVector3d389) {
 
 func (o BTMMeshPointQuery1183) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryWithOccurrenceBase904, errBTMIndividualQueryWithOccurrenceBase904 := json.Marshal(o.BTMIndividualQueryWithOccurrenceBase904)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
+	errBTMIndividualQueryWithOccurrenceBase904 = json.Unmarshal([]byte(serializedBTMIndividualQueryWithOccurrenceBase904), &toSerialize)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

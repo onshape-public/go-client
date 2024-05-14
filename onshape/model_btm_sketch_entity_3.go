@@ -414,7 +414,7 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMSketchCompositeEntity-893'
@@ -427,7 +427,7 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchEntity3 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchEntity3 as BTMSketchCompositeEntity893: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchCompositeEntity893: %s", err.Error())
 		}
 	}
 
@@ -441,7 +441,7 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchEntity3 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchEntity3 as BTMSketchConstraint2: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchConstraint2: %s", err.Error())
 		}
 	}
 
@@ -455,7 +455,7 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchEntity3 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchEntity3 as BTMSketchGeomEntity5: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchGeomEntity5: %s", err.Error())
 		}
 	}
 
@@ -469,7 +469,7 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMSketchEntity3 = nil
-			return fmt.Errorf("Failed to unmarshal BTMSketchEntity3 as BTMSketchInvalid1601: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchInvalid1601: %s", err.Error())
 		}
 	}
 
@@ -480,7 +480,7 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMSketchEntity3, return on the first match
 	} else {
 		dst.implBTMSketchEntity3 = nil
-		return fmt.Errorf("Failed to unmarshal BTMSketchEntity3 as base_BTMSketchEntity3: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as base_BTMSketchEntity3: %s", err.Error())
 	}
 }
 
@@ -539,6 +539,7 @@ func (v *NullableBTMSketchEntity3) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSketchEntity3 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
@@ -792,6 +793,14 @@ func (o *base_BTMSketchEntity3) SetParameters(v []BTMParameter1) {
 
 func (o base_BTMSketchEntity3) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

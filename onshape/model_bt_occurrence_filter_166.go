@@ -16,6 +16,7 @@ import (
 
 // BTOccurrenceFilter166 struct for BTOccurrenceFilter166
 type BTOccurrenceFilter166 struct {
+	BTQueryFilter183
 	BtType                                   *string `json:"btType,omitempty"`
 	ExcludeFlattenedParts                    *bool   `json:"excludeFlattenedParts,omitempty"`
 	ExcludeParametricPartStudioChildInstance *bool   `json:"excludeParametricPartStudioChildInstance,omitempty"`
@@ -565,6 +566,14 @@ func (o *BTOccurrenceFilter166) SetTopLevelOnly(v bool) {
 
 func (o BTOccurrenceFilter166) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

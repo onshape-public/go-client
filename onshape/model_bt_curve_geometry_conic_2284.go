@@ -16,6 +16,7 @@ import (
 
 // BTCurveGeometryConic2284 struct for BTCurveGeometryConic2284
 type BTCurveGeometryConic2284 struct {
+	BTCurveGeometry114
 	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
 	Rho    *float64  `json:"rho,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTCurveGeometryConic2284) SetRho(v float64) {
 
 func (o BTCurveGeometryConic2284) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveGeometry114, errBTCurveGeometry114 := json.Marshal(o.BTCurveGeometry114)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
+	errBTCurveGeometry114 = json.Unmarshal([]byte(serializedBTCurveGeometry114), &toSerialize)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

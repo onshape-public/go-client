@@ -18,7 +18,7 @@ import (
 type BTLazilyParsedFeatureScript struct {
 	Checksum              *BTUiFeatureStudioChecksum2438  `json:"checksum,omitempty"`
 	LanguageVersion       *int32                          `json:"languageVersion,omitempty"`
-	Lines                 *map[string]interface{}         `json:"lines,omitempty"`
+	Lines                 *Lines                          `json:"lines,omitempty"`
 	Model                 *BTMModel141                    `json:"model,omitempty"`
 	Module                *BTPModule234                   `json:"module,omitempty"`
 	ModuleId              *BTPModuleId235                 `json:"moduleId,omitempty"`
@@ -110,9 +110,9 @@ func (o *BTLazilyParsedFeatureScript) SetLanguageVersion(v int32) {
 }
 
 // GetLines returns the Lines field value if set, zero value otherwise.
-func (o *BTLazilyParsedFeatureScript) GetLines() map[string]interface{} {
+func (o *BTLazilyParsedFeatureScript) GetLines() Lines {
 	if o == nil || o.Lines == nil {
-		var ret map[string]interface{}
+		var ret Lines
 		return ret
 	}
 	return *o.Lines
@@ -120,7 +120,7 @@ func (o *BTLazilyParsedFeatureScript) GetLines() map[string]interface{} {
 
 // GetLinesOk returns a tuple with the Lines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTLazilyParsedFeatureScript) GetLinesOk() (*map[string]interface{}, bool) {
+func (o *BTLazilyParsedFeatureScript) GetLinesOk() (*Lines, bool) {
 	if o == nil || o.Lines == nil {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *BTLazilyParsedFeatureScript) HasLines() bool {
 	return false
 }
 
-// SetLines gets a reference to the given map[string]interface{} and assigns it to the Lines field.
-func (o *BTLazilyParsedFeatureScript) SetLines(v map[string]interface{}) {
+// SetLines gets a reference to the given Lines and assigns it to the Lines field.
+func (o *BTLazilyParsedFeatureScript) SetLines(v Lines) {
 	o.Lines = &v
 }
 

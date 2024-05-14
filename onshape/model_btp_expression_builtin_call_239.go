@@ -16,6 +16,7 @@ import (
 
 // BTPExpressionBuiltinCall239 struct for BTPExpressionBuiltinCall239
 type BTPExpressionBuiltinCall239 struct {
+	BTPExpression9
 	Atomic              *bool                    `json:"atomic,omitempty"`
 	BtType              *string                  `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType      `json:"documentationType,omitempty"`
@@ -466,6 +467,14 @@ func (o *BTPExpressionBuiltinCall239) SetSpaceInEmptyList(v BTPSpace10) {
 
 func (o BTPExpressionBuiltinCall239) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPExpression9, errBTPExpression9 := json.Marshal(o.BTPExpression9)
+	if errBTPExpression9 != nil {
+		return []byte{}, errBTPExpression9
+	}
+	errBTPExpression9 = json.Unmarshal([]byte(serializedBTPExpression9), &toSerialize)
+	if errBTPExpression9 != nil {
+		return []byte{}, errBTPExpression9
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

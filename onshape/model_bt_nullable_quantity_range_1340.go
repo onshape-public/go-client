@@ -16,6 +16,7 @@ import (
 
 // BTNullableQuantityRange1340 struct for BTNullableQuantityRange1340
 type BTNullableQuantityRange1340 struct {
+	BTQuantityRange181
 	BtType           *string            `json:"btType,omitempty"`
 	DefaultValue     *float64           `json:"defaultValue,omitempty"`
 	Location         *BTLocationInfo226 `json:"location,omitempty"`
@@ -334,6 +335,14 @@ func (o *BTNullableQuantityRange1340) SetHasMinValue_(v bool) {
 
 func (o BTNullableQuantityRange1340) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQuantityRange181, errBTQuantityRange181 := json.Marshal(o.BTQuantityRange181)
+	if errBTQuantityRange181 != nil {
+		return []byte{}, errBTQuantityRange181
+	}
+	errBTQuantityRange181 = json.Unmarshal([]byte(serializedBTQuantityRange181), &toSerialize)
+	if errBTQuantityRange181 != nil {
+		return []byte{}, errBTQuantityRange181
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

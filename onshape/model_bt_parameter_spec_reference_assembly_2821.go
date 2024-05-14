@@ -16,8 +16,9 @@ import (
 
 // BTParameterSpecReferenceAssembly2821 struct for BTParameterSpecReferenceAssembly2821
 type BTParameterSpecReferenceAssembly2821 struct {
-	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
+	BTParameterSpecReference2789
 	BtType                     *string                            `json:"btType,omitempty"`
+	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
 	DefaultValue               *BTMParameter1                     `json:"defaultValue,omitempty"`
 	IconUri                    *string                            `json:"iconUri,omitempty"`
@@ -51,38 +52,6 @@ func NewBTParameterSpecReferenceAssembly2821WithDefaults() *BTParameterSpecRefer
 	return &this
 }
 
-// GetAdditionalLocalizedStrings returns the AdditionalLocalizedStrings field value if set, zero value otherwise.
-func (o *BTParameterSpecReferenceAssembly2821) GetAdditionalLocalizedStrings() int32 {
-	if o == nil || o.AdditionalLocalizedStrings == nil {
-		var ret int32
-		return ret
-	}
-	return *o.AdditionalLocalizedStrings
-}
-
-// GetAdditionalLocalizedStringsOk returns a tuple with the AdditionalLocalizedStrings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecReferenceAssembly2821) GetAdditionalLocalizedStringsOk() (*int32, bool) {
-	if o == nil || o.AdditionalLocalizedStrings == nil {
-		return nil, false
-	}
-	return o.AdditionalLocalizedStrings, true
-}
-
-// HasAdditionalLocalizedStrings returns a boolean if a field has been set.
-func (o *BTParameterSpecReferenceAssembly2821) HasAdditionalLocalizedStrings() bool {
-	if o != nil && o.AdditionalLocalizedStrings != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
-func (o *BTParameterSpecReferenceAssembly2821) SetAdditionalLocalizedStrings(v int32) {
-	o.AdditionalLocalizedStrings = &v
-}
-
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTParameterSpecReferenceAssembly2821) GetBtType() string {
 	if o == nil || o.BtType == nil {
@@ -113,6 +82,38 @@ func (o *BTParameterSpecReferenceAssembly2821) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTParameterSpecReferenceAssembly2821) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAdditionalLocalizedStrings returns the AdditionalLocalizedStrings field value if set, zero value otherwise.
+func (o *BTParameterSpecReferenceAssembly2821) GetAdditionalLocalizedStrings() int32 {
+	if o == nil || o.AdditionalLocalizedStrings == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AdditionalLocalizedStrings
+}
+
+// GetAdditionalLocalizedStringsOk returns a tuple with the AdditionalLocalizedStrings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferenceAssembly2821) GetAdditionalLocalizedStringsOk() (*int32, bool) {
+	if o == nil || o.AdditionalLocalizedStrings == nil {
+		return nil, false
+	}
+	return o.AdditionalLocalizedStrings, true
+}
+
+// HasAdditionalLocalizedStrings returns a boolean if a field has been set.
+func (o *BTParameterSpecReferenceAssembly2821) HasAdditionalLocalizedStrings() bool {
+	if o != nil && o.AdditionalLocalizedStrings != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
+func (o *BTParameterSpecReferenceAssembly2821) SetAdditionalLocalizedStrings(v int32) {
+	o.AdditionalLocalizedStrings = &v
 }
 
 // GetColumnName returns the ColumnName field value if set, zero value otherwise.
@@ -565,11 +566,19 @@ func (o *BTParameterSpecReferenceAssembly2821) SetDefaultPurpose(v BTElementLibr
 
 func (o BTParameterSpecReferenceAssembly2821) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AdditionalLocalizedStrings != nil {
-		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
+	serializedBTParameterSpecReference2789, errBTParameterSpecReference2789 := json.Marshal(o.BTParameterSpecReference2789)
+	if errBTParameterSpecReference2789 != nil {
+		return []byte{}, errBTParameterSpecReference2789
+	}
+	errBTParameterSpecReference2789 = json.Unmarshal([]byte(serializedBTParameterSpecReference2789), &toSerialize)
+	if errBTParameterSpecReference2789 != nil {
+		return []byte{}, errBTParameterSpecReference2789
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.AdditionalLocalizedStrings != nil {
+		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
 	if o.ColumnName != nil {
 		toSerialize["columnName"] = o.ColumnName

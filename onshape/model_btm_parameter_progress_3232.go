@@ -16,6 +16,7 @@ import (
 
 // BTMParameterProgress3232 struct for BTMParameterProgress3232
 type BTMParameterProgress3232 struct {
+	BTMReadOnlyParameter3800
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -271,6 +272,14 @@ func (o *BTMParameterProgress3232) SetStatusMessage(v string) {
 
 func (o BTMParameterProgress3232) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMReadOnlyParameter3800, errBTMReadOnlyParameter3800 := json.Marshal(o.BTMReadOnlyParameter3800)
+	if errBTMReadOnlyParameter3800 != nil {
+		return []byte{}, errBTMReadOnlyParameter3800
+	}
+	errBTMReadOnlyParameter3800 = json.Unmarshal([]byte(serializedBTMReadOnlyParameter3800), &toSerialize)
+	if errBTMReadOnlyParameter3800 != nil {
+		return []byte{}, errBTMReadOnlyParameter3800
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

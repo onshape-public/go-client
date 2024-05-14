@@ -16,6 +16,7 @@ import (
 
 // BTSectionGeometryFilter4161 struct for BTSectionGeometryFilter4161
 type BTSectionGeometryFilter4161 struct {
+	BTQueryFilter183
 	BtType            *string `json:"btType,omitempty"`
 	IsSectionGeometry *bool   `json:"isSectionGeometry,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTSectionGeometryFilter4161) SetIsSectionGeometry(v bool) {
 
 func (o BTSectionGeometryFilter4161) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

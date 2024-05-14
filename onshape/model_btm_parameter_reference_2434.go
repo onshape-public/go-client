@@ -669,7 +669,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMParameterReferenceBlob-3281'
@@ -682,49 +682,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceBlob3281: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMParameterReferenceCADImport-2016'
-	if jsonDict["btType"] == "BTMParameterReferenceCADImport-2016" {
-		// try to unmarshal JSON data into BTMParameterReferenceCADImport2016
-		var qr *BTMParameterReferenceCADImport2016
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameterReference2434 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceCADImport2016: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMParameterReferenceImage-2014'
-	if jsonDict["btType"] == "BTMParameterReferenceImage-2014" {
-		// try to unmarshal JSON data into BTMParameterReferenceImage2014
-		var qr *BTMParameterReferenceImage2014
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameterReference2434 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceImage2014: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMParameterReferenceTable-917'
-	if jsonDict["btType"] == "BTMParameterReferenceTable-917" {
-		// try to unmarshal JSON data into BTMParameterReferenceTable917
-		var qr *BTMParameterReferenceTable917
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameterReference2434 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceTable917: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceBlob3281: %s", err.Error())
 		}
 	}
 
@@ -738,7 +696,49 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceWithConfiguration3028: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceWithConfiguration3028: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterReferenceCADImport-2016'
+	if jsonDict["btType"] == "BTMParameterReferenceCADImport-2016" {
+		// try to unmarshal JSON data into BTMParameterReferenceCADImport2016
+		var qr *BTMParameterReferenceCADImport2016
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameterReference2434 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameterReference2434 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceCADImport2016: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterReferenceImage-2014'
+	if jsonDict["btType"] == "BTMParameterReferenceImage-2014" {
+		// try to unmarshal JSON data into BTMParameterReferenceImage2014
+		var qr *BTMParameterReferenceImage2014
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameterReference2434 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameterReference2434 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceImage2014: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterReferenceTable-917'
+	if jsonDict["btType"] == "BTMParameterReferenceTable-917" {
+		// try to unmarshal JSON data into BTMParameterReferenceTable917
+		var qr *BTMParameterReferenceTable917
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameterReference2434 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameterReference2434 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceTable917: %s", err.Error())
 		}
 	}
 
@@ -749,7 +749,7 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMParameterReference2434, return on the first match
 	} else {
 		dst.implBTMParameterReference2434 = nil
-		return fmt.Errorf("Failed to unmarshal BTMParameterReference2434 as base_BTMParameterReference2434: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as base_BTMParameterReference2434: %s", err.Error())
 	}
 }
 
@@ -808,6 +808,7 @@ func (v *NullableBTMParameterReference2434) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMParameterReference2434 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -1228,6 +1229,14 @@ func (o *base_BTMParameterReference2434) SetNamespace(v string) {
 
 func (o base_BTMParameterReference2434) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

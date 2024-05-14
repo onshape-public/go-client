@@ -16,6 +16,7 @@ import (
 
 // BTMateConnectorEntity28 struct for BTMateConnectorEntity28
 type BTMateConnectorEntity28 struct {
+	BTFeatureEntity34
 	BtType                 *string                       `json:"btType,omitempty"`
 	CopyWithoutGeometry    *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
 	Decompressed           *BTBaseEntityData33           `json:"decompressed,omitempty"`
@@ -400,6 +401,14 @@ func (o *BTMateConnectorEntity28) SetPartId(v string) {
 
 func (o BTMateConnectorEntity28) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureEntity34, errBTFeatureEntity34 := json.Marshal(o.BTFeatureEntity34)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
+	errBTFeatureEntity34 = json.Unmarshal([]byte(serializedBTFeatureEntity34), &toSerialize)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

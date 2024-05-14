@@ -16,6 +16,7 @@ import (
 
 // BTCurveGeometryLine117 struct for BTCurveGeometryLine117
 type BTCurveGeometryLine117 struct {
+	BTCurveGeometry114
 	BtType *string  `json:"btType,omitempty"`
 	DirX   *float64 `json:"dirX,omitempty"`
 	DirY   *float64 `json:"dirY,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTCurveGeometryLine117) SetPntY(v float64) {
 
 func (o BTCurveGeometryLine117) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveGeometry114, errBTCurveGeometry114 := json.Marshal(o.BTCurveGeometry114)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
+	errBTCurveGeometry114 = json.Unmarshal([]byte(serializedBTCurveGeometry114), &toSerialize)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -46,8 +45,8 @@ func (r ApiCreateTableTemplateRequest) Execute() (*BTPropertiesTableTemplateInfo
 /*
 CreateTableTemplate Create a new properties table template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateTableTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateTableTemplateRequest
 */
 func (a *PropertiesTableTemplateApiService) CreateTableTemplate(ctx context.Context) ApiCreateTableTemplateRequest {
 	return ApiCreateTableTemplateRequest{
@@ -57,7 +56,8 @@ func (a *PropertiesTableTemplateApiService) CreateTableTemplate(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return BTPropertiesTableTemplateInfo
+//
+//	@return BTPropertiesTableTemplateInfo
 func (a *PropertiesTableTemplateApiService) CreateTableTemplateExecute(r ApiCreateTableTemplateRequest) (*BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -115,7 +115,7 @@ func (a *PropertiesTableTemplateApiService) CreateTableTemplateExecute(r ApiCrea
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -134,7 +134,7 @@ func (a *PropertiesTableTemplateApiService) CreateTableTemplateExecute(r ApiCrea
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -159,9 +159,9 @@ func (r ApiDeleteTableTemplateRequest) Execute() (map[string]interface{}, *http.
 /*
 DeleteTableTemplate Delete a properties table template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tid The id of the template in which to perform the operation.
- @return ApiDeleteTableTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tid The id of the template in which to perform the operation.
+	@return ApiDeleteTableTemplateRequest
 */
 func (a *PropertiesTableTemplateApiService) DeleteTableTemplate(ctx context.Context, tid string) ApiDeleteTableTemplateRequest {
 	return ApiDeleteTableTemplateRequest{
@@ -172,7 +172,8 @@ func (a *PropertiesTableTemplateApiService) DeleteTableTemplate(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *PropertiesTableTemplateApiService) DeleteTableTemplateExecute(r ApiDeleteTableTemplateRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -223,7 +224,7 @@ func (a *PropertiesTableTemplateApiService) DeleteTableTemplateExecute(r ApiDele
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -242,7 +243,7 @@ func (a *PropertiesTableTemplateApiService) DeleteTableTemplateExecute(r ApiDele
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -286,9 +287,9 @@ func (r ApiGetByCompanyIdRequest) Execute() ([]BTPropertiesTableTemplateInfo, *h
 /*
 GetByCompanyId Get all properties table templates available for a company.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid The id of the company in which to perform the operation.
- @return ApiGetByCompanyIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid The id of the company in which to perform the operation.
+	@return ApiGetByCompanyIdRequest
 */
 func (a *PropertiesTableTemplateApiService) GetByCompanyId(ctx context.Context, cid string) ApiGetByCompanyIdRequest {
 	return ApiGetByCompanyIdRequest{
@@ -299,7 +300,8 @@ func (a *PropertiesTableTemplateApiService) GetByCompanyId(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return []BTPropertiesTableTemplateInfo
+//
+//	@return []BTPropertiesTableTemplateInfo
 func (a *PropertiesTableTemplateApiService) GetByCompanyIdExecute(r ApiGetByCompanyIdRequest) ([]BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -359,7 +361,7 @@ func (a *PropertiesTableTemplateApiService) GetByCompanyIdExecute(r ApiGetByComp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -378,7 +380,7 @@ func (a *PropertiesTableTemplateApiService) GetByCompanyIdExecute(r ApiGetByComp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -422,9 +424,9 @@ func (r ApiGetByDocumentIdRequest) Execute() ([]BTPropertiesTableTemplateInfo, *
 /*
 GetByDocumentId Get all table templates that are available to use on the provided document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @return ApiGetByDocumentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@return ApiGetByDocumentIdRequest
 */
 func (a *PropertiesTableTemplateApiService) GetByDocumentId(ctx context.Context, did string) ApiGetByDocumentIdRequest {
 	return ApiGetByDocumentIdRequest{
@@ -435,7 +437,8 @@ func (a *PropertiesTableTemplateApiService) GetByDocumentId(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return []BTPropertiesTableTemplateInfo
+//
+//	@return []BTPropertiesTableTemplateInfo
 func (a *PropertiesTableTemplateApiService) GetByDocumentIdExecute(r ApiGetByDocumentIdRequest) ([]BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -495,7 +498,7 @@ func (a *PropertiesTableTemplateApiService) GetByDocumentIdExecute(r ApiGetByDoc
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -514,7 +517,7 @@ func (a *PropertiesTableTemplateApiService) GetByDocumentIdExecute(r ApiGetByDoc
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -539,9 +542,9 @@ func (r ApiGetTableTemplateRequest) Execute() (*BTPropertiesTableTemplateInfo, *
 /*
 GetTableTemplate Get a properties table template by template ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tid The id of the template in which to perform the operation.
- @return ApiGetTableTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tid The id of the template in which to perform the operation.
+	@return ApiGetTableTemplateRequest
 */
 func (a *PropertiesTableTemplateApiService) GetTableTemplate(ctx context.Context, tid string) ApiGetTableTemplateRequest {
 	return ApiGetTableTemplateRequest{
@@ -552,7 +555,8 @@ func (a *PropertiesTableTemplateApiService) GetTableTemplate(ctx context.Context
 }
 
 // Execute executes the request
-//  @return BTPropertiesTableTemplateInfo
+//
+//	@return BTPropertiesTableTemplateInfo
 func (a *PropertiesTableTemplateApiService) GetTableTemplateExecute(r ApiGetTableTemplateRequest) (*BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -603,7 +607,7 @@ func (a *PropertiesTableTemplateApiService) GetTableTemplateExecute(r ApiGetTabl
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -622,7 +626,7 @@ func (a *PropertiesTableTemplateApiService) GetTableTemplateExecute(r ApiGetTabl
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

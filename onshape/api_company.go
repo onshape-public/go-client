@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -43,9 +42,9 @@ AddUserToCompany Add a user to a company.
 
 Returns the company user info.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiAddUserToCompanyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiAddUserToCompanyRequest
 */
 func (a *CompanyApiService) AddUserToCompany(ctx context.Context, cid string) ApiAddUserToCompanyRequest {
 	return ApiAddUserToCompanyRequest{
@@ -56,7 +55,8 @@ func (a *CompanyApiService) AddUserToCompany(ctx context.Context, cid string) Ap
 }
 
 // Execute executes the request
-//  @return BTCompanyUserInfo
+//
+//	@return BTCompanyUserInfo
 func (a *CompanyApiService) AddUserToCompanyExecute(r ApiAddUserToCompanyRequest) (*BTCompanyUserInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -112,7 +112,7 @@ func (a *CompanyApiService) AddUserToCompanyExecute(r ApiAddUserToCompanyRequest
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -131,7 +131,7 @@ func (a *CompanyApiService) AddUserToCompanyExecute(r ApiAddUserToCompanyRequest
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -175,8 +175,8 @@ FindCompany Get all companies to which the specified user belongs.
 
 If no user is specified, will return all companies associated with the current user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiFindCompanyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiFindCompanyRequest
 */
 func (a *CompanyApiService) FindCompany(ctx context.Context) ApiFindCompanyRequest {
 	return ApiFindCompanyRequest{
@@ -186,7 +186,8 @@ func (a *CompanyApiService) FindCompany(ctx context.Context) ApiFindCompanyReque
 }
 
 // Execute executes the request
-//  @return BTListResponseBTCompanyInfo
+//
+//	@return BTListResponseBTCompanyInfo
 func (a *CompanyApiService) FindCompanyExecute(r ApiFindCompanyRequest) (*BTListResponseBTCompanyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -245,7 +246,7 @@ func (a *CompanyApiService) FindCompanyExecute(r ApiFindCompanyRequest) (*BTList
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -264,7 +265,7 @@ func (a *CompanyApiService) FindCompanyExecute(r ApiFindCompanyRequest) (*BTList
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -289,9 +290,9 @@ func (r ApiGetCompanyRequest) Execute() (*BTCompanyInfo, *http.Response, error) 
 /*
 GetCompany Get company information by company ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiGetCompanyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiGetCompanyRequest
 */
 func (a *CompanyApiService) GetCompany(ctx context.Context, cid string) ApiGetCompanyRequest {
 	return ApiGetCompanyRequest{
@@ -302,7 +303,8 @@ func (a *CompanyApiService) GetCompany(ctx context.Context, cid string) ApiGetCo
 }
 
 // Execute executes the request
-//  @return BTCompanyInfo
+//
+//	@return BTCompanyInfo
 func (a *CompanyApiService) GetCompanyExecute(r ApiGetCompanyRequest) (*BTCompanyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -353,7 +355,7 @@ func (a *CompanyApiService) GetCompanyExecute(r ApiGetCompanyRequest) (*BTCompan
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -372,7 +374,7 @@ func (a *CompanyApiService) GetCompanyExecute(r ApiGetCompanyRequest) (*BTCompan
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -405,9 +407,9 @@ GetDocumentsByName Get document by exact document name.
 
 This API can only be called by company admins. Use the `name` field for the exact document name string.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @return ApiGetDocumentsByNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@return ApiGetDocumentsByNameRequest
 */
 func (a *CompanyApiService) GetDocumentsByName(ctx context.Context, cid string) ApiGetDocumentsByNameRequest {
 	return ApiGetDocumentsByNameRequest{
@@ -418,7 +420,8 @@ func (a *CompanyApiService) GetDocumentsByName(ctx context.Context, cid string) 
 }
 
 // Execute executes the request
-//  @return []BTDocumentSummaryInfo
+//
+//	@return []BTDocumentSummaryInfo
 func (a *CompanyApiService) GetDocumentsByNameExecute(r ApiGetDocumentsByNameRequest) ([]BTDocumentSummaryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -473,7 +476,7 @@ func (a *CompanyApiService) GetDocumentsByNameExecute(r ApiGetDocumentsByNameReq
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -492,7 +495,7 @@ func (a *CompanyApiService) GetDocumentsByNameExecute(r ApiGetDocumentsByNameReq
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -530,10 +533,10 @@ func (r ApiRemoveUserFromCompanyRequest) Execute() (map[string]interface{}, *htt
 /*
 RemoveUserFromCompany Remove a user from a company, company teams, and all the direct shares.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @param uid
- @return ApiRemoveUserFromCompanyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@param uid
+	@return ApiRemoveUserFromCompanyRequest
 */
 func (a *CompanyApiService) RemoveUserFromCompany(ctx context.Context, cid string, uid string) ApiRemoveUserFromCompanyRequest {
 	return ApiRemoveUserFromCompanyRequest{
@@ -545,7 +548,8 @@ func (a *CompanyApiService) RemoveUserFromCompany(ctx context.Context, cid strin
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *CompanyApiService) RemoveUserFromCompanyExecute(r ApiRemoveUserFromCompanyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -603,7 +607,7 @@ func (a *CompanyApiService) RemoveUserFromCompanyExecute(r ApiRemoveUserFromComp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -622,7 +626,7 @@ func (a *CompanyApiService) RemoveUserFromCompanyExecute(r ApiRemoveUserFromComp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -656,10 +660,10 @@ UpdateCompanyUser Update the company's information for a user.
 
 Returns updated company user info. Global permissions can only be updated by the company admin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cid
- @param uid
- @return ApiUpdateCompanyUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid
+	@param uid
+	@return ApiUpdateCompanyUserRequest
 */
 func (a *CompanyApiService) UpdateCompanyUser(ctx context.Context, cid string, uid string) ApiUpdateCompanyUserRequest {
 	return ApiUpdateCompanyUserRequest{
@@ -671,7 +675,8 @@ func (a *CompanyApiService) UpdateCompanyUser(ctx context.Context, cid string, u
 }
 
 // Execute executes the request
-//  @return BTCompanyUserInfo
+//
+//	@return BTCompanyUserInfo
 func (a *CompanyApiService) UpdateCompanyUserExecute(r ApiUpdateCompanyUserRequest) (*BTCompanyUserInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -728,7 +733,7 @@ func (a *CompanyApiService) UpdateCompanyUserExecute(r ApiUpdateCompanyUserReque
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -747,7 +752,7 @@ func (a *CompanyApiService) UpdateCompanyUserExecute(r ApiUpdateCompanyUserReque
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

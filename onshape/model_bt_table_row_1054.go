@@ -349,7 +349,7 @@ func (dst *BTTableRow1054) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTBillOfMaterialsTableRow-1425'
@@ -362,7 +362,7 @@ func (dst *BTTableRow1054) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableRow1054 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableRow1054 as BTBillOfMaterialsTableRow1425: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableRow1054 as BTBillOfMaterialsTableRow1425: %s", err.Error())
 		}
 	}
 
@@ -373,7 +373,7 @@ func (dst *BTTableRow1054) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTableRow1054, return on the first match
 	} else {
 		dst.implBTTableRow1054 = nil
-		return fmt.Errorf("Failed to unmarshal BTTableRow1054 as base_BTTableRow1054: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTableRow1054 as base_BTTableRow1054: %s", err.Error())
 	}
 }
 

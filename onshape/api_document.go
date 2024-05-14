@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -42,10 +41,10 @@ func (r ApiCopyWorkspaceRequest) Execute() (*BTCopyDocumentInfo, *http.Response,
 /*
 CopyWorkspace Copy workspace by document ID and workspace ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiCopyWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiCopyWorkspaceRequest
 */
 func (a *DocumentApiService) CopyWorkspace(ctx context.Context, did string, wid string) ApiCopyWorkspaceRequest {
 	return ApiCopyWorkspaceRequest{
@@ -57,7 +56,8 @@ func (a *DocumentApiService) CopyWorkspace(ctx context.Context, did string, wid 
 }
 
 // Execute executes the request
-//  @return BTCopyDocumentInfo
+//
+//	@return BTCopyDocumentInfo
 func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*BTCopyDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -114,7 +114,7 @@ func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*B
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -126,7 +126,7 @@ func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*B
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -158,8 +158,8 @@ CreateDocument Create and upload a document.
 
 The `name` field is required in the `BTDocumentParams` schema when creating a new document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateDocumentRequest
 */
 func (a *DocumentApiService) CreateDocument(ctx context.Context) ApiCreateDocumentRequest {
 	return ApiCreateDocumentRequest{
@@ -169,7 +169,8 @@ func (a *DocumentApiService) CreateDocument(ctx context.Context) ApiCreateDocume
 }
 
 // Execute executes the request
-//  @return BTDocumentInfo
+//
+//	@return BTDocumentInfo
 func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (*BTDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -224,7 +225,7 @@ func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -243,7 +244,7 @@ func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -274,9 +275,9 @@ func (r ApiCreateVersionRequest) Execute() (*BTVersionInfo, *http.Response, erro
 /*
 CreateVersion Create version by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiCreateVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiCreateVersionRequest
 */
 func (a *DocumentApiService) CreateVersion(ctx context.Context, did string) ApiCreateVersionRequest {
 	return ApiCreateVersionRequest{
@@ -287,7 +288,8 @@ func (a *DocumentApiService) CreateVersion(ctx context.Context, did string) ApiC
 }
 
 // Execute executes the request
-//  @return BTVersionInfo
+//
+//	@return BTVersionInfo
 func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*BTVersionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -343,7 +345,7 @@ func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*B
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -362,7 +364,7 @@ func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*B
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -393,9 +395,9 @@ func (r ApiCreateWorkspaceRequest) Execute() (*BTWorkspaceInfo, *http.Response, 
 /*
 CreateWorkspace Create workspace by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiCreateWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiCreateWorkspaceRequest
 */
 func (a *DocumentApiService) CreateWorkspace(ctx context.Context, did string) ApiCreateWorkspaceRequest {
 	return ApiCreateWorkspaceRequest{
@@ -406,7 +408,8 @@ func (a *DocumentApiService) CreateWorkspace(ctx context.Context, did string) Ap
 }
 
 // Execute executes the request
-//  @return BTWorkspaceInfo
+//
+//	@return BTWorkspaceInfo
 func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest) (*BTWorkspaceInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -459,7 +462,7 @@ func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest)
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -478,7 +481,7 @@ func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest)
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -509,9 +512,9 @@ func (r ApiDeleteDocumentRequest) Execute() (map[string]interface{}, *http.Respo
 /*
 DeleteDocument Delete document by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiDeleteDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiDeleteDocumentRequest
 */
 func (a *DocumentApiService) DeleteDocument(ctx context.Context, did string) ApiDeleteDocumentRequest {
 	return ApiDeleteDocumentRequest{
@@ -522,7 +525,8 @@ func (a *DocumentApiService) DeleteDocument(ctx context.Context, did string) Api
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -576,7 +580,7 @@ func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -595,7 +599,7 @@ func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -621,10 +625,10 @@ func (r ApiDeleteWorkspaceRequest) Execute() (map[string]interface{}, *http.Resp
 /*
 DeleteWorkspace Delete workspace by document ID and workspace ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiDeleteWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiDeleteWorkspaceRequest
 */
 func (a *DocumentApiService) DeleteWorkspace(ctx context.Context, did string, wid string) ApiDeleteWorkspaceRequest {
 	return ApiDeleteWorkspaceRequest{
@@ -636,7 +640,8 @@ func (a *DocumentApiService) DeleteWorkspace(ctx context.Context, did string, wi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -688,7 +693,7 @@ func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest)
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -707,7 +712,7 @@ func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest)
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -743,10 +748,10 @@ DownloadExternalData Download external data file(s) associated with the document
 * If downloading an exported file, poll the `requestState` in the translation response and wait for a result of `DONE` before attempting to download the file.
 * Use the `resultExternalDataIds` from the translation response as the foreign id (`{fid}`) in this API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param fid
- @return ApiDownloadExternalDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param fid
+	@return ApiDownloadExternalDataRequest
 */
 func (a *DocumentApiService) DownloadExternalData(ctx context.Context, did string, fid string) ApiDownloadExternalDataRequest {
 	return ApiDownloadExternalDataRequest{
@@ -758,7 +763,8 @@ func (a *DocumentApiService) DownloadExternalData(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return HttpFile
+//
+//	@return HttpFile
 func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDataRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -813,7 +819,7 @@ func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDa
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -825,7 +831,7 @@ func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDa
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -866,12 +872,12 @@ func (r ApiExport2JsonRequest) Execute() (map[string]interface{}, *http.Response
 /*
 Export2Json Export document by document ID, workspace or version ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiExport2JsonRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiExport2JsonRequest
 */
 func (a *DocumentApiService) Export2Json(ctx context.Context, did string, wv string, wvid string, eid string) ApiExport2JsonRequest {
 	return ApiExport2JsonRequest{
@@ -885,7 +891,8 @@ func (a *DocumentApiService) Export2Json(ctx context.Context, did string, wv str
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -944,7 +951,7 @@ func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[st
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -963,7 +970,7 @@ func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[st
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -990,11 +997,11 @@ func (r ApiGetCurrentMicroversionRequest) Execute() (*BTMicroversionInfo, *http.
 /*
 GetCurrentMicroversion Retrieve current microversion by document ID and workspace or version ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @return ApiGetCurrentMicroversionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@return ApiGetCurrentMicroversionRequest
 */
 func (a *DocumentApiService) GetCurrentMicroversion(ctx context.Context, did string, wv string, wvid string) ApiGetCurrentMicroversionRequest {
 	return ApiGetCurrentMicroversionRequest{
@@ -1007,7 +1014,8 @@ func (a *DocumentApiService) GetCurrentMicroversion(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTMicroversionInfo
+//
+//	@return BTMicroversionInfo
 func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicroversionRequest) (*BTMicroversionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1060,7 +1068,7 @@ func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicrov
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1079,7 +1087,7 @@ func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicrov
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1104,9 +1112,9 @@ func (r ApiGetDocumentRequest) Execute() (*BTDocumentInfo, *http.Response, error
 /*
 GetDocument Retrieve document by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetDocumentRequest
 */
 func (a *DocumentApiService) GetDocument(ctx context.Context, did string) ApiGetDocumentRequest {
 	return ApiGetDocumentRequest{
@@ -1117,7 +1125,8 @@ func (a *DocumentApiService) GetDocument(ctx context.Context, did string) ApiGet
 }
 
 // Execute executes the request
-//  @return BTDocumentInfo
+//
+//	@return BTDocumentInfo
 func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1168,7 +1177,7 @@ func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDoc
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1180,7 +1189,7 @@ func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDoc
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1205,9 +1214,9 @@ func (r ApiGetDocumentAclRequest) Execute() (*BTAclInfo, *http.Response, error) 
 /*
 GetDocumentAcl Retrieve access control list by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetDocumentAclRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetDocumentAclRequest
 */
 func (a *DocumentApiService) GetDocumentAcl(ctx context.Context, did string) ApiGetDocumentAclRequest {
 	return ApiGetDocumentAclRequest{
@@ -1218,7 +1227,8 @@ func (a *DocumentApiService) GetDocumentAcl(ctx context.Context, did string) Api
 }
 
 // Execute executes the request
-//  @return BTAclInfo
+//
+//	@return BTAclInfo
 func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1269,7 +1279,7 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1288,7 +1298,7 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1315,11 +1325,11 @@ func (r ApiGetDocumentHistoryRequest) Execute() ([]BTDocumentHistoryInfo, *http.
 /*
 GetDocumentHistory Retrieve document history by document ID and workspace or microversion ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wm
- @param wmid
- @return ApiGetDocumentHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wm
+	@param wmid
+	@return ApiGetDocumentHistoryRequest
 */
 func (a *DocumentApiService) GetDocumentHistory(ctx context.Context, did string, wm string, wmid string) ApiGetDocumentHistoryRequest {
 	return ApiGetDocumentHistoryRequest{
@@ -1332,7 +1342,8 @@ func (a *DocumentApiService) GetDocumentHistory(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return []BTDocumentHistoryInfo
+//
+//	@return []BTDocumentHistoryInfo
 func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRequest) ([]BTDocumentHistoryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1385,7 +1396,7 @@ func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1404,7 +1415,7 @@ func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1429,9 +1440,9 @@ func (r ApiGetDocumentPermissionSetRequest) Execute() ([]string, *http.Response,
 /*
 GetDocumentPermissionSet Retrieve Document permissions by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetDocumentPermissionSetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetDocumentPermissionSetRequest
 */
 func (a *DocumentApiService) GetDocumentPermissionSet(ctx context.Context, did string) ApiGetDocumentPermissionSetRequest {
 	return ApiGetDocumentPermissionSetRequest{
@@ -1442,7 +1453,8 @@ func (a *DocumentApiService) GetDocumentPermissionSet(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPermissionSetRequest) ([]string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1493,7 +1505,7 @@ func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPer
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1505,7 +1517,7 @@ func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPer
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1542,9 +1554,9 @@ func (r ApiGetDocumentVersionsRequest) Execute() ([]BTVersionInfo, *http.Respons
 /*
 GetDocumentVersions Retrieve versions by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetDocumentVersionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetDocumentVersionsRequest
 */
 func (a *DocumentApiService) GetDocumentVersions(ctx context.Context, did string) ApiGetDocumentVersionsRequest {
 	return ApiGetDocumentVersionsRequest{
@@ -1555,7 +1567,8 @@ func (a *DocumentApiService) GetDocumentVersions(ctx context.Context, did string
 }
 
 // Execute executes the request
-//  @return []BTVersionInfo
+//
+//	@return []BTVersionInfo
 func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersionsRequest) ([]BTVersionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1612,7 +1625,7 @@ func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersions
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1631,7 +1644,7 @@ func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersions
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1656,9 +1669,9 @@ func (r ApiGetDocumentWorkspacesRequest) Execute() ([]BTWorkspaceInfo, *http.Res
 /*
 GetDocumentWorkspaces Retrieve workspaces by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetDocumentWorkspacesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetDocumentWorkspacesRequest
 */
 func (a *DocumentApiService) GetDocumentWorkspaces(ctx context.Context, did string) ApiGetDocumentWorkspacesRequest {
 	return ApiGetDocumentWorkspacesRequest{
@@ -1669,7 +1682,8 @@ func (a *DocumentApiService) GetDocumentWorkspaces(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return []BTWorkspaceInfo
+//
+//	@return []BTWorkspaceInfo
 func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorkspacesRequest) ([]BTWorkspaceInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1720,7 +1734,7 @@ func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorksp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1739,7 +1753,7 @@ func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorksp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1840,8 +1854,8 @@ func (r ApiGetDocumentsRequest) Execute() (*BTGlobalTreeNodeListResponse, *http.
 /*
 GetDocuments Get a list of documents that meet the criteria you specify.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDocumentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDocumentsRequest
 */
 func (a *DocumentApiService) GetDocuments(ctx context.Context) ApiGetDocumentsRequest {
 	return ApiGetDocumentsRequest{
@@ -1851,7 +1865,8 @@ func (a *DocumentApiService) GetDocuments(ctx context.Context) ApiGetDocumentsRe
 }
 
 // Execute executes the request
-//  @return BTGlobalTreeNodeListResponse
+//
+//	@return BTGlobalTreeNodeListResponse
 func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTGlobalTreeNodeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1934,7 +1949,7 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1946,7 +1961,7 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1998,11 +2013,11 @@ func (r ApiGetElementsInDocumentRequest) Execute() ([]BTDocumentElementInfo, *ht
 /*
 GetElementsInDocument Retrieve tabs by document ID and workspace or version or microversion ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @return ApiGetElementsInDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@return ApiGetElementsInDocumentRequest
 */
 func (a *DocumentApiService) GetElementsInDocument(ctx context.Context, did string, wvm string, wvmid string) ApiGetElementsInDocumentRequest {
 	return ApiGetElementsInDocumentRequest{
@@ -2015,7 +2030,8 @@ func (a *DocumentApiService) GetElementsInDocument(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return []BTDocumentElementInfo
+//
+//	@return []BTDocumentElementInfo
 func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocumentRequest) ([]BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2080,7 +2096,7 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2092,7 +2108,7 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2269,11 +2285,11 @@ func (r ApiGetInsertablesRequest) Execute() (*BTInsertablesListResponse, *http.R
 /*
 GetInsertables Retrieve insertables by document ID and workspace or version ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wv
- @param wvid
- @return ApiGetInsertablesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wv
+	@param wvid
+	@return ApiGetInsertablesRequest
 */
 func (a *DocumentApiService) GetInsertables(ctx context.Context, did string, wv string, wvid string) ApiGetInsertablesRequest {
 	return ApiGetInsertablesRequest{
@@ -2286,7 +2302,8 @@ func (a *DocumentApiService) GetInsertables(ctx context.Context, did string, wv 
 }
 
 // Execute executes the request
-//  @return BTInsertablesListResponse
+//
+//	@return BTInsertablesListResponse
 func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (*BTInsertablesListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2414,7 +2431,7 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2433,7 +2450,7 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2467,11 +2484,11 @@ func (r ApiGetUnitInfoRequest) Execute() (*BTUnitInfo, *http.Response, error) {
 /*
 GetUnitInfo Get the selected units and precision by document ID and workspace or version or microversion ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @return ApiGetUnitInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@return ApiGetUnitInfoRequest
 */
 func (a *DocumentApiService) GetUnitInfo(ctx context.Context, did string, wvm string, wvmid string) ApiGetUnitInfoRequest {
 	return ApiGetUnitInfoRequest{
@@ -2484,7 +2501,8 @@ func (a *DocumentApiService) GetUnitInfo(ctx context.Context, did string, wvm st
 }
 
 // Execute executes the request
-//  @return BTUnitInfo
+//
+//	@return BTUnitInfo
 func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUnitInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2540,7 +2558,7 @@ func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUni
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2559,7 +2577,7 @@ func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUni
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2597,10 +2615,10 @@ func (r ApiGetVersionRequest) Execute() (*BTVersionInfo, *http.Response, error) 
 /*
 GetVersion Retrieve version by document ID and version ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param vid
- @return ApiGetVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param vid
+	@return ApiGetVersionRequest
 */
 func (a *DocumentApiService) GetVersion(ctx context.Context, did string, vid string) ApiGetVersionRequest {
 	return ApiGetVersionRequest{
@@ -2612,7 +2630,8 @@ func (a *DocumentApiService) GetVersion(ctx context.Context, did string, vid str
 }
 
 // Execute executes the request
-//  @return BTVersionInfo
+//
+//	@return BTVersionInfo
 func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2670,7 +2689,7 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2682,7 +2701,7 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2714,10 +2733,10 @@ func (r ApiMergeIntoWorkspaceRequest) Execute() (*BTDocumentMergeInfo, *http.Res
 /*
 MergeIntoWorkspace Merge into workspace by document ID and workspace ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiMergeIntoWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiMergeIntoWorkspaceRequest
 */
 func (a *DocumentApiService) MergeIntoWorkspace(ctx context.Context, did string, wid string) ApiMergeIntoWorkspaceRequest {
 	return ApiMergeIntoWorkspaceRequest{
@@ -2729,7 +2748,8 @@ func (a *DocumentApiService) MergeIntoWorkspace(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTDocumentMergeInfo
+//
+//	@return BTDocumentMergeInfo
 func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRequest) (*BTDocumentMergeInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -2786,7 +2806,7 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2805,7 +2825,7 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2850,10 +2870,10 @@ func (r ApiMergePreviewRequest) Execute() (*BTMergePreviewInfo, *http.Response, 
 /*
 MergePreview Merge preview of changes that will occur based on document ID, workspace ID and source workspace/version ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @return ApiMergePreviewRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@return ApiMergePreviewRequest
 */
 func (a *DocumentApiService) MergePreview(ctx context.Context, did string, wid string) ApiMergePreviewRequest {
 	return ApiMergePreviewRequest{
@@ -2865,7 +2885,8 @@ func (a *DocumentApiService) MergePreview(ctx context.Context, did string, wid s
 }
 
 // Execute executes the request
-//  @return BTMergePreviewInfo
+//
+//	@return BTMergePreviewInfo
 func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTMergePreviewInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2928,7 +2949,7 @@ func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTM
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2947,7 +2968,7 @@ func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTM
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2979,10 +3000,10 @@ func (r ApiMoveElementsToDocumentRequest) Execute() (*BTMoveElementInfo, *http.R
 /*
 MoveElementsToDocument Move tab by document ID and workspace ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiMoveElementsToDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiMoveElementsToDocumentRequest
 */
 func (a *DocumentApiService) MoveElementsToDocument(ctx context.Context, did string, wid string) ApiMoveElementsToDocumentRequest {
 	return ApiMoveElementsToDocumentRequest{
@@ -2994,7 +3015,8 @@ func (a *DocumentApiService) MoveElementsToDocument(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTMoveElementInfo
+//
+//	@return BTMoveElementInfo
 func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDocumentRequest) (*BTMoveElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3051,7 +3073,7 @@ func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3070,7 +3092,7 @@ func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3105,12 +3127,12 @@ func (r ApiRestoreFromHistoryRequest) Execute() (*BTRestoreFromHistoryInfo, *htt
 /*
 RestoreFromHistory Restore version or microversion to workspace by document ID, workspace ID, and version or microversion ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @param vm
- @param vmid
- @return ApiRestoreFromHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param vm
+	@param vmid
+	@return ApiRestoreFromHistoryRequest
 */
 func (a *DocumentApiService) RestoreFromHistory(ctx context.Context, did string, wid string, vm string, vmid string) ApiRestoreFromHistoryRequest {
 	return ApiRestoreFromHistoryRequest{
@@ -3124,7 +3146,8 @@ func (a *DocumentApiService) RestoreFromHistory(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTRestoreFromHistoryInfo
+//
+//	@return BTRestoreFromHistoryInfo
 func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRequest) (*BTRestoreFromHistoryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3181,7 +3204,7 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3200,7 +3223,7 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3232,10 +3255,10 @@ func (r ApiRevertUnchangedToRevisionsRequest) Execute() ([]BTUnchangedElementInf
 /*
 RevertUnchangedToRevisions Method for RevertUnchangedToRevisions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiRevertUnchangedToRevisionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiRevertUnchangedToRevisionsRequest
 */
 func (a *DocumentApiService) RevertUnchangedToRevisions(ctx context.Context, did string, wid string) ApiRevertUnchangedToRevisionsRequest {
 	return ApiRevertUnchangedToRevisionsRequest{
@@ -3247,7 +3270,8 @@ func (a *DocumentApiService) RevertUnchangedToRevisions(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return []BTUnchangedElementInfo
+//
+//	@return []BTUnchangedElementInfo
 func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchangedToRevisionsRequest) ([]BTUnchangedElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3301,7 +3325,7 @@ func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchan
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3320,7 +3344,7 @@ func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchan
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3352,8 +3376,8 @@ Search Search document.
 
 This returns list of documents based on search parameters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSearchRequest
 */
 func (a *DocumentApiService) Search(ctx context.Context) ApiSearchRequest {
 	return ApiSearchRequest{
@@ -3363,7 +3387,8 @@ func (a *DocumentApiService) Search(ctx context.Context) ApiSearchRequest {
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3418,7 +3443,7 @@ func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]inter
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3437,7 +3462,7 @@ func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]inter
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3468,9 +3493,9 @@ func (r ApiShareDocumentRequest) Execute() (*BTAclInfo, *http.Response, error) {
 /*
 ShareDocument Share document by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiShareDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiShareDocumentRequest
 */
 func (a *DocumentApiService) ShareDocument(ctx context.Context, did string) ApiShareDocumentRequest {
 	return ApiShareDocumentRequest{
@@ -3481,7 +3506,8 @@ func (a *DocumentApiService) ShareDocument(ctx context.Context, did string) ApiS
 }
 
 // Execute executes the request
-//  @return BTAclInfo
+//
+//	@return BTAclInfo
 func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3537,7 +3563,7 @@ func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*B
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3556,7 +3582,7 @@ func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*B
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3581,9 +3607,9 @@ func (r ApiShareWithSupportRequest) Execute() (map[string]interface{}, *http.Res
 /*
 ShareWithSupport Share document by document ID with Onshape support.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @return ApiShareWithSupportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@return ApiShareWithSupportRequest
 */
 func (a *DocumentApiService) ShareWithSupport(ctx context.Context, did string) ApiShareWithSupportRequest {
 	return ApiShareWithSupportRequest{
@@ -3594,7 +3620,8 @@ func (a *DocumentApiService) ShareWithSupport(ctx context.Context, did string) A
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) ShareWithSupportExecute(r ApiShareWithSupportRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3645,7 +3672,7 @@ func (a *DocumentApiService) ShareWithSupportExecute(r ApiShareWithSupportReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3664,7 +3691,7 @@ func (a *DocumentApiService) ShareWithSupportExecute(r ApiShareWithSupportReques
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3696,10 +3723,10 @@ func (r ApiSyncAppElementsRequest) Execute() (map[string]interface{}, *http.Resp
 /*
 SyncAppElements Method for SyncAppElements
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiSyncAppElementsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiSyncAppElementsRequest
 */
 func (a *DocumentApiService) SyncAppElements(ctx context.Context, did string, wid string) ApiSyncAppElementsRequest {
 	return ApiSyncAppElementsRequest{
@@ -3711,7 +3738,8 @@ func (a *DocumentApiService) SyncAppElements(ctx context.Context, did string, wi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) SyncAppElementsExecute(r ApiSyncAppElementsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3768,7 +3796,7 @@ func (a *DocumentApiService) SyncAppElementsExecute(r ApiSyncAppElementsRequest)
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3787,7 +3815,7 @@ func (a *DocumentApiService) SyncAppElementsExecute(r ApiSyncAppElementsRequest)
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3819,10 +3847,10 @@ func (r ApiUnShareDocumentRequest) Execute() (map[string]interface{}, *http.Resp
 /*
 UnShareDocument Unshare document by document ID and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @return ApiUnShareDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@return ApiUnShareDocumentRequest
 */
 func (a *DocumentApiService) UnShareDocument(ctx context.Context, did string, eid string) ApiUnShareDocumentRequest {
 	return ApiUnShareDocumentRequest{
@@ -3834,7 +3862,8 @@ func (a *DocumentApiService) UnShareDocument(ctx context.Context, did string, ei
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -3889,7 +3918,7 @@ func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest)
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3908,7 +3937,7 @@ func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest)
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3933,9 +3962,9 @@ func (r ApiUnshareFromSupportRequest) Execute() (map[string]interface{}, *http.R
 /*
 UnshareFromSupport Unshare document with support.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @return ApiUnshareFromSupportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@return ApiUnshareFromSupportRequest
 */
 func (a *DocumentApiService) UnshareFromSupport(ctx context.Context, did string) ApiUnshareFromSupportRequest {
 	return ApiUnshareFromSupportRequest{
@@ -3946,7 +3975,8 @@ func (a *DocumentApiService) UnshareFromSupport(ctx context.Context, did string)
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) UnshareFromSupportExecute(r ApiUnshareFromSupportRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -3997,7 +4027,7 @@ func (a *DocumentApiService) UnshareFromSupportExecute(r ApiUnshareFromSupportRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -4016,7 +4046,7 @@ func (a *DocumentApiService) UnshareFromSupportExecute(r ApiUnshareFromSupportRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -4047,9 +4077,9 @@ func (r ApiUpdateDocumentAttributesRequest) Execute() (map[string]interface{}, *
 /*
 UpdateDocumentAttributes Update document attributes by document ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiUpdateDocumentAttributesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiUpdateDocumentAttributesRequest
 */
 func (a *DocumentApiService) UpdateDocumentAttributes(ctx context.Context, did string) ApiUpdateDocumentAttributesRequest {
 	return ApiUpdateDocumentAttributesRequest{
@@ -4060,7 +4090,8 @@ func (a *DocumentApiService) UpdateDocumentAttributes(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocumentAttributesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -4116,7 +4147,7 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -4135,7 +4166,7 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -4168,11 +4199,11 @@ func (r ApiUpdateExternalReferencesToLatestDocumentsRequest) Execute() (*BTLinkT
 /*
 UpdateExternalReferencesToLatestDocuments Update external references to latest by document ID, workspace ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiUpdateExternalReferencesToLatestDocumentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiUpdateExternalReferencesToLatestDocumentsRequest
 */
 func (a *DocumentApiService) UpdateExternalReferencesToLatestDocuments(ctx context.Context, did string, wid string, eid string) ApiUpdateExternalReferencesToLatestDocumentsRequest {
 	return ApiUpdateExternalReferencesToLatestDocumentsRequest{
@@ -4185,7 +4216,8 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocuments(ctx conte
 }
 
 // Execute executes the request
-//  @return BTLinkToLatestDocumentInfo
+//
+//	@return BTLinkToLatestDocumentInfo
 func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r ApiUpdateExternalReferencesToLatestDocumentsRequest) (*BTLinkToLatestDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -4240,7 +4272,7 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r 
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -4252,7 +4284,7 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r 
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

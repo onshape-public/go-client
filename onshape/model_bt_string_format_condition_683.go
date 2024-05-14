@@ -214,7 +214,7 @@ func (dst *BTStringFormatCondition683) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTStringFormatBlockPattern-1755'
@@ -227,7 +227,7 @@ func (dst *BTStringFormatCondition683) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTStringFormatCondition683 = nil
-			return fmt.Errorf("Failed to unmarshal BTStringFormatCondition683 as BTStringFormatBlockPattern1755: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTStringFormatCondition683 as BTStringFormatBlockPattern1755: %s", err.Error())
 		}
 	}
 
@@ -241,7 +241,7 @@ func (dst *BTStringFormatCondition683) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTStringFormatCondition683 = nil
-			return fmt.Errorf("Failed to unmarshal BTStringFormatCondition683 as BTStringFormatMatchPattern2446: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTStringFormatCondition683 as BTStringFormatMatchPattern2446: %s", err.Error())
 		}
 	}
 
@@ -255,7 +255,7 @@ func (dst *BTStringFormatCondition683) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTStringFormatCondition683 = nil
-			return fmt.Errorf("Failed to unmarshal BTStringFormatCondition683 as BTStringMaximumLengthPattern2593: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTStringFormatCondition683 as BTStringMaximumLengthPattern2593: %s", err.Error())
 		}
 	}
 
@@ -269,7 +269,7 @@ func (dst *BTStringFormatCondition683) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTStringFormatCondition683 = nil
-			return fmt.Errorf("Failed to unmarshal BTStringFormatCondition683 as BTStringMinimumLengthPattern895: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTStringFormatCondition683 as BTStringMinimumLengthPattern895: %s", err.Error())
 		}
 	}
 
@@ -280,7 +280,7 @@ func (dst *BTStringFormatCondition683) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTStringFormatCondition683, return on the first match
 	} else {
 		dst.implBTStringFormatCondition683 = nil
-		return fmt.Errorf("Failed to unmarshal BTStringFormatCondition683 as base_BTStringFormatCondition683: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTStringFormatCondition683 as base_BTStringFormatCondition683: %s", err.Error())
 	}
 }
 

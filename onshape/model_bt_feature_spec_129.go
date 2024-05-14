@@ -1654,7 +1654,7 @@ func (dst *BTFeatureSpec129) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTComputedPartPropertySpec-1746'
@@ -1667,7 +1667,7 @@ func (dst *BTFeatureSpec129) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureSpec129 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureSpec129 as BTComputedPartPropertySpec1746: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureSpec129 as BTComputedPartPropertySpec1746: %s", err.Error())
 		}
 	}
 
@@ -1681,7 +1681,7 @@ func (dst *BTFeatureSpec129) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureSpec129 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureSpec129 as BTTableSpec915: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureSpec129 as BTTableSpec915: %s", err.Error())
 		}
 	}
 
@@ -1692,7 +1692,7 @@ func (dst *BTFeatureSpec129) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTFeatureSpec129, return on the first match
 	} else {
 		dst.implBTFeatureSpec129 = nil
-		return fmt.Errorf("Failed to unmarshal BTFeatureSpec129 as base_BTFeatureSpec129: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTFeatureSpec129 as base_BTFeatureSpec129: %s", err.Error())
 	}
 }
 

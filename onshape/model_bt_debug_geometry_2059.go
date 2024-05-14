@@ -16,6 +16,7 @@ import (
 
 // BTDebugGeometry2059 struct for BTDebugGeometry2059
 type BTDebugGeometry2059 struct {
+	BTEntityGeometry35
 	BtType                           *string                    `json:"btType,omitempty"`
 	Compressed                       *bool                      `json:"compressed,omitempty"`
 	Decompressed                     *BTEntityGeometry35        `json:"decompressed,omitempty"`
@@ -565,6 +566,14 @@ func (o *BTDebugGeometry2059) SetTessellation(v BTTessellatedGeometry2576) {
 
 func (o BTDebugGeometry2059) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTEntityGeometry35, errBTEntityGeometry35 := json.Marshal(o.BTEntityGeometry35)
+	if errBTEntityGeometry35 != nil {
+		return []byte{}, errBTEntityGeometry35
+	}
+	errBTEntityGeometry35 = json.Unmarshal([]byte(serializedBTEntityGeometry35), &toSerialize)
+	if errBTEntityGeometry35 != nil {
+		return []byte{}, errBTEntityGeometry35
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

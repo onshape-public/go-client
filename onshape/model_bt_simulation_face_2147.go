@@ -16,6 +16,7 @@ import (
 
 // BTSimulationFace2147 struct for BTSimulationFace2147
 type BTSimulationFace2147 struct {
+	BTEntityFace31
 	BtType                          *string                 `json:"btType,omitempty"`
 	Compressed                      *bool                   `json:"compressed,omitempty"`
 	Decompressed                    *BTEntityGeometry35     `json:"decompressed,omitempty"`
@@ -862,6 +863,14 @@ func (o *BTSimulationFace2147) SetTrianglePointIndices(v BTImmutableIntArray) {
 
 func (o BTSimulationFace2147) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTEntityFace31, errBTEntityFace31 := json.Marshal(o.BTEntityFace31)
+	if errBTEntityFace31 != nil {
+		return []byte{}, errBTEntityFace31
+	}
+	errBTEntityFace31 = json.Unmarshal([]byte(serializedBTEntityFace31), &toSerialize)
+	if errBTEntityFace31 != nil {
+		return []byte{}, errBTEntityFace31
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

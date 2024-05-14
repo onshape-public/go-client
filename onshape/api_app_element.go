@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -47,12 +46,12 @@ AbortTransaction Abort a transaction.
 
 Deletes a microbranch (i.e., the branch with the microversion for the transaction).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
- @param tid
- @return ApiAbortTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wid
+	@param tid
+	@return ApiAbortTransactionRequest
 */
 func (a *AppElementApiService) AbortTransaction(ctx context.Context, did string, eid string, wid string, tid string) ApiAbortTransactionRequest {
 	return ApiAbortTransactionRequest{
@@ -66,7 +65,8 @@ func (a *AppElementApiService) AbortTransaction(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AppElementApiService) AbortTransactionExecute(r ApiAbortTransactionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -123,7 +123,7 @@ func (a *AppElementApiService) AbortTransactionExecute(r ApiAbortTransactionRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -142,7 +142,7 @@ func (a *AppElementApiService) AbortTransactionExecute(r ApiAbortTransactionRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -183,10 +183,10 @@ BulkCreateElement Create multiple empty application elements at once.
 
 Call this faster API instead of creating multiple app elements one at a time or in parallel.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @return ApiBulkCreateElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@return ApiBulkCreateElementRequest
 */
 func (a *AppElementApiService) BulkCreateElement(ctx context.Context, did string, wid string) ApiBulkCreateElementRequest {
 	return ApiBulkCreateElementRequest{
@@ -198,7 +198,8 @@ func (a *AppElementApiService) BulkCreateElement(ctx context.Context, did string
 }
 
 // Execute executes the request
-//  @return BTAppElementBulkCreateInfo
+//
+//	@return BTAppElementBulkCreateInfo
 func (a *AppElementApiService) BulkCreateElementExecute(r ApiBulkCreateElementRequest) (*BTAppElementBulkCreateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -258,7 +259,7 @@ func (a *AppElementApiService) BulkCreateElementExecute(r ApiBulkCreateElementRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -277,7 +278,7 @@ func (a *AppElementApiService) BulkCreateElementExecute(r ApiBulkCreateElementRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -318,10 +319,10 @@ CommitTransactions Merge multiple transactions into one microversion.
 
 If successful, all transactions will be committed to a single microversion. If the call raises an error, nothing will be committed.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @return ApiCommitTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@return ApiCommitTransactionsRequest
 */
 func (a *AppElementApiService) CommitTransactions(ctx context.Context, did string, wid string) ApiCommitTransactionsRequest {
 	return ApiCommitTransactionsRequest{
@@ -333,7 +334,8 @@ func (a *AppElementApiService) CommitTransactions(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) CommitTransactionsExecute(r ApiCommitTransactionsRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -393,7 +395,7 @@ func (a *AppElementApiService) CommitTransactionsExecute(r ApiCommitTransactions
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -412,7 +414,7 @@ func (a *AppElementApiService) CommitTransactionsExecute(r ApiCommitTransactions
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -472,12 +474,12 @@ CompareAppElementJson Compare app element JSON trees between workspaces/versions
 
 Specify the source workspace/version/microversion in the URL and specify the target workspace/version/microversion in the query parameters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiCompareAppElementJsonRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiCompareAppElementJsonRequest
 */
 func (a *AppElementApiService) CompareAppElementJson(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiCompareAppElementJsonRequest {
 	return ApiCompareAppElementJsonRequest{
@@ -491,7 +493,8 @@ func (a *AppElementApiService) CompareAppElementJson(ctx context.Context, did st
 }
 
 // Execute executes the request
-//  @return BTDiffJsonResponse2725
+//
+//	@return BTDiffJsonResponse2725
 func (a *AppElementApiService) CompareAppElementJsonExecute(r ApiCompareAppElementJsonRequest) (*BTDiffJsonResponse2725, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -560,7 +563,7 @@ func (a *AppElementApiService) CompareAppElementJsonExecute(r ApiCompareAppEleme
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -579,7 +582,7 @@ func (a *AppElementApiService) CompareAppElementJsonExecute(r ApiCompareAppEleme
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -618,10 +621,10 @@ func (r ApiCreateElementRequest) Execute() (*BTAppElementModifyInfo, *http.Respo
 /*
 CreateElement Create a new application element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wid The id of the workspace in which to perform the operation.
- @return ApiCreateElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@return ApiCreateElementRequest
 */
 func (a *AppElementApiService) CreateElement(ctx context.Context, did string, wid string) ApiCreateElementRequest {
 	return ApiCreateElementRequest{
@@ -633,7 +636,8 @@ func (a *AppElementApiService) CreateElement(ctx context.Context, did string, wi
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) CreateElementExecute(r ApiCreateElementRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -693,7 +697,7 @@ func (a *AppElementApiService) CreateElementExecute(r ApiCreateElementRequest) (
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -712,7 +716,7 @@ func (a *AppElementApiService) CreateElementExecute(r ApiCreateElementRequest) (
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -746,12 +750,12 @@ func (r ApiCreateReferenceRequest) Execute() (*BTAppElementReferenceInfo, *http.
 /*
 CreateReference Creates a reference to an app element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiCreateReferenceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiCreateReferenceRequest
 */
 func (a *AppElementApiService) CreateReference(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiCreateReferenceRequest {
 	return ApiCreateReferenceRequest{
@@ -765,7 +769,8 @@ func (a *AppElementApiService) CreateReference(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return BTAppElementReferenceInfo
+//
+//	@return BTAppElementReferenceInfo
 func (a *AppElementApiService) CreateReferenceExecute(r ApiCreateReferenceRequest) (*BTAppElementReferenceInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -824,7 +829,7 @@ func (a *AppElementApiService) CreateReferenceExecute(r ApiCreateReferenceReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -843,7 +848,7 @@ func (a *AppElementApiService) CreateReferenceExecute(r ApiCreateReferenceReques
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -890,13 +895,13 @@ func (r ApiDeleteAppElementContentRequest) Execute() (*BTAppElementModifyInfo, *
 /*
 DeleteAppElementContent Deletes the content from the specified app element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @param sid
- @return ApiDeleteAppElementContentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@param sid
+	@return ApiDeleteAppElementContentRequest
 */
 func (a *AppElementApiService) DeleteAppElementContent(ctx context.Context, did string, eid string, wvm string, wvmid string, sid string) ApiDeleteAppElementContentRequest {
 	return ApiDeleteAppElementContentRequest{
@@ -911,7 +916,8 @@ func (a *AppElementApiService) DeleteAppElementContent(ctx context.Context, did 
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) DeleteAppElementContentExecute(r ApiDeleteAppElementContentRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -975,7 +981,7 @@ func (a *AppElementApiService) DeleteAppElementContentExecute(r ApiDeleteAppElem
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -994,7 +1000,7 @@ func (a *AppElementApiService) DeleteAppElementContentExecute(r ApiDeleteAppElem
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1046,12 +1052,12 @@ func (r ApiDeleteAppElementContentBatchRequest) Execute() (*BTAppElementModifyIn
 /*
 DeleteAppElementContentBatch Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiDeleteAppElementContentBatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiDeleteAppElementContentBatchRequest
 */
 func (a *AppElementApiService) DeleteAppElementContentBatch(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiDeleteAppElementContentBatchRequest {
 	return ApiDeleteAppElementContentBatchRequest{
@@ -1065,7 +1071,8 @@ func (a *AppElementApiService) DeleteAppElementContentBatch(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) DeleteAppElementContentBatchExecute(r ApiDeleteAppElementContentBatchRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -1139,7 +1146,7 @@ func (a *AppElementApiService) DeleteAppElementContentBatchExecute(r ApiDeleteAp
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1158,7 +1165,7 @@ func (a *AppElementApiService) DeleteAppElementContentBatchExecute(r ApiDeleteAp
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1198,12 +1205,12 @@ func (r ApiDeleteBlobSubelementRequest) Execute() (*BTAppElementModifyInfo, *htt
 /*
 DeleteBlobSubelement Delete a blob subelement from an app element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @param bid
- @return ApiDeleteBlobSubelementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@param bid
+	@return ApiDeleteBlobSubelementRequest
 */
 func (a *AppElementApiService) DeleteBlobSubelement(ctx context.Context, did string, wid string, eid string, bid string) ApiDeleteBlobSubelementRequest {
 	return ApiDeleteBlobSubelementRequest{
@@ -1217,7 +1224,8 @@ func (a *AppElementApiService) DeleteBlobSubelement(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) DeleteBlobSubelementExecute(r ApiDeleteBlobSubelementRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -1277,7 +1285,7 @@ func (a *AppElementApiService) DeleteBlobSubelementExecute(r ApiDeleteBlobSubele
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1296,7 +1304,7 @@ func (a *AppElementApiService) DeleteBlobSubelementExecute(r ApiDeleteBlobSubele
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1343,13 +1351,13 @@ func (r ApiDeleteReferenceRequest) Execute() (*BTAppElementReferenceInfo, *http.
 /*
 DeleteReference Delete an app element reference.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @param rid
- @return ApiDeleteReferenceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@param rid
+	@return ApiDeleteReferenceRequest
 */
 func (a *AppElementApiService) DeleteReference(ctx context.Context, did string, eid string, wvm string, wvmid string, rid string) ApiDeleteReferenceRequest {
 	return ApiDeleteReferenceRequest{
@@ -1364,7 +1372,8 @@ func (a *AppElementApiService) DeleteReference(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return BTAppElementReferenceInfo
+//
+//	@return BTAppElementReferenceInfo
 func (a *AppElementApiService) DeleteReferenceExecute(r ApiDeleteReferenceRequest) (*BTAppElementReferenceInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -1428,7 +1437,7 @@ func (a *AppElementApiService) DeleteReferenceExecute(r ApiDeleteReferenceReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1447,7 +1456,7 @@ func (a *AppElementApiService) DeleteReferenceExecute(r ApiDeleteReferenceReques
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1508,13 +1517,13 @@ DownloadBlobSubelement Download a blob subelement from the specified app element
 
 Download a blob subelement as a file.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param vm
- @param vmid
- @param eid
- @param bid
- @return ApiDownloadBlobSubelementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param vm
+	@param vmid
+	@param eid
+	@param bid
+	@return ApiDownloadBlobSubelementRequest
 */
 func (a *AppElementApiService) DownloadBlobSubelement(ctx context.Context, did string, vm string, vmid string, eid string, bid string) ApiDownloadBlobSubelementRequest {
 	return ApiDownloadBlobSubelementRequest{
@@ -1529,7 +1538,8 @@ func (a *AppElementApiService) DownloadBlobSubelement(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return HttpFile
+//
+//	@return HttpFile
 func (a *AppElementApiService) DownloadBlobSubelementExecute(r ApiDownloadBlobSubelementRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1599,7 +1609,7 @@ func (a *AppElementApiService) DownloadBlobSubelementExecute(r ApiDownloadBlobSu
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1618,7 +1628,7 @@ func (a *AppElementApiService) DownloadBlobSubelementExecute(r ApiDownloadBlobSu
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1672,12 +1682,12 @@ DownloadBlobSubelementWorkspace Download the blob element (i.e., a file) stored 
 
 The downloaded file can be used to retrieve stored subelements.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @param bid
- @return ApiDownloadBlobSubelementWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@param bid
+	@return ApiDownloadBlobSubelementWorkspaceRequest
 */
 func (a *AppElementApiService) DownloadBlobSubelementWorkspace(ctx context.Context, did string, wid string, eid string, bid string) ApiDownloadBlobSubelementWorkspaceRequest {
 	return ApiDownloadBlobSubelementWorkspaceRequest{
@@ -1691,7 +1701,8 @@ func (a *AppElementApiService) DownloadBlobSubelementWorkspace(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return HttpFile
+//
+//	@return HttpFile
 func (a *AppElementApiService) DownloadBlobSubelementWorkspaceExecute(r ApiDownloadBlobSubelementWorkspaceRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1757,7 +1768,7 @@ func (a *AppElementApiService) DownloadBlobSubelementWorkspaceExecute(r ApiDownl
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1776,7 +1787,7 @@ func (a *AppElementApiService) DownloadBlobSubelementWorkspaceExecute(r ApiDownl
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1804,12 +1815,12 @@ func (r ApiGetAppElementHistoryRequest) Execute() (*BTAppElementHistoryInfo, *ht
 /*
 GetAppElementHistory Get the history of the specified all element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiGetAppElementHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiGetAppElementHistoryRequest
 */
 func (a *AppElementApiService) GetAppElementHistory(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiGetAppElementHistoryRequest {
 	return ApiGetAppElementHistoryRequest{
@@ -1823,7 +1834,8 @@ func (a *AppElementApiService) GetAppElementHistory(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTAppElementHistoryInfo
+//
+//	@return BTAppElementHistoryInfo
 func (a *AppElementApiService) GetAppElementHistoryExecute(r ApiGetAppElementHistoryRequest) (*BTAppElementHistoryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1877,7 +1889,7 @@ func (a *AppElementApiService) GetAppElementHistoryExecute(r ApiGetAppElementHis
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1896,7 +1908,7 @@ func (a *AppElementApiService) GetAppElementHistoryExecute(r ApiGetAppElementHis
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1936,12 +1948,12 @@ func (r ApiGetBlobSubelementIdsRequest) Execute() (*BTAppElementIdsInfo, *http.R
 /*
 GetBlobSubelementIds Get a list of all blob subelement IDs for the specified workspace, version, or microversion.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiGetBlobSubelementIdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiGetBlobSubelementIdsRequest
 */
 func (a *AppElementApiService) GetBlobSubelementIds(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiGetBlobSubelementIdsRequest {
 	return ApiGetBlobSubelementIdsRequest{
@@ -1955,7 +1967,8 @@ func (a *AppElementApiService) GetBlobSubelementIds(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTAppElementIdsInfo
+//
+//	@return BTAppElementIdsInfo
 func (a *AppElementApiService) GetBlobSubelementIdsExecute(r ApiGetBlobSubelementIdsRequest) (*BTAppElementIdsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2015,7 +2028,7 @@ func (a *AppElementApiService) GetBlobSubelementIdsExecute(r ApiGetBlobSubelemen
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2034,7 +2047,7 @@ func (a *AppElementApiService) GetBlobSubelementIdsExecute(r ApiGetBlobSubelemen
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2061,11 +2074,11 @@ func (r ApiGetElementTransactionsRequest) Execute() (*BTAppElementTransactionsIn
 /*
 GetElementTransactions Get a list of all transactions performed on an element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
- @return ApiGetElementTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wid
+	@return ApiGetElementTransactionsRequest
 */
 func (a *AppElementApiService) GetElementTransactions(ctx context.Context, did string, eid string, wid string) ApiGetElementTransactionsRequest {
 	return ApiGetElementTransactionsRequest{
@@ -2078,7 +2091,8 @@ func (a *AppElementApiService) GetElementTransactions(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return BTAppElementTransactionsInfo
+//
+//	@return BTAppElementTransactionsInfo
 func (a *AppElementApiService) GetElementTransactionsExecute(r ApiGetElementTransactionsRequest) (*BTAppElementTransactionsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2131,7 +2145,7 @@ func (a *AppElementApiService) GetElementTransactionsExecute(r ApiGetElementTran
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2150,7 +2164,7 @@ func (a *AppElementApiService) GetElementTransactionsExecute(r ApiGetElementTran
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2199,12 +2213,12 @@ func (r ApiGetJsonRequest) Execute() (*BTGetJsonResponse2137, *http.Response, er
 /*
 GetJson Get the full JSON tree for the specified workspace/version/microversion.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetJsonRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetJsonRequest
 */
 func (a *AppElementApiService) GetJson(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetJsonRequest {
 	return ApiGetJsonRequest{
@@ -2218,7 +2232,8 @@ func (a *AppElementApiService) GetJson(ctx context.Context, did string, wvm stri
 }
 
 // Execute executes the request
-//  @return BTGetJsonResponse2137
+//
+//	@return BTGetJsonResponse2137
 func (a *AppElementApiService) GetJsonExecute(r ApiGetJsonRequest) (*BTGetJsonResponse2137, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2281,7 +2296,7 @@ func (a *AppElementApiService) GetJsonExecute(r ApiGetJsonRequest) (*BTGetJsonRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2300,7 +2315,7 @@ func (a *AppElementApiService) GetJsonExecute(r ApiGetJsonRequest) (*BTGetJsonRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2355,12 +2370,12 @@ GetJsonPaths Get the JSON at specified paths for an element.
 
 Use this endpoint to return the JSON at the specified path instead of returning the entire JSON for the element. This POST endpoint does not write any information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetJsonPathsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetJsonPathsRequest
 */
 func (a *AppElementApiService) GetJsonPaths(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetJsonPathsRequest {
 	return ApiGetJsonPathsRequest{
@@ -2374,7 +2389,8 @@ func (a *AppElementApiService) GetJsonPaths(ctx context.Context, did string, wvm
 }
 
 // Execute executes the request
-//  @return BTGetJsonPathsResponse1544
+//
+//	@return BTGetJsonPathsResponse1544
 func (a *AppElementApiService) GetJsonPathsExecute(r ApiGetJsonPathsRequest) (*BTGetJsonPathsResponse1544, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -2439,7 +2455,7 @@ func (a *AppElementApiService) GetJsonPathsExecute(r ApiGetJsonPathsRequest) (*B
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2458,7 +2474,7 @@ func (a *AppElementApiService) GetJsonPathsExecute(r ApiGetJsonPathsRequest) (*B
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2517,12 +2533,12 @@ func (r ApiGetSubElementContentRequest) Execute() (*BTAppElementContentInfo, *ht
 /*
 GetSubElementContent Get a list of all subelement IDs in a specified workspace/version/microversion.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetSubElementContentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetSubElementContentRequest
 */
 func (a *AppElementApiService) GetSubElementContent(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetSubElementContentRequest {
 	return ApiGetSubElementContentRequest{
@@ -2536,7 +2552,8 @@ func (a *AppElementApiService) GetSubElementContent(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTAppElementContentInfo
+//
+//	@return BTAppElementContentInfo
 func (a *AppElementApiService) GetSubElementContentExecute(r ApiGetSubElementContentRequest) (*BTAppElementContentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2605,7 +2622,7 @@ func (a *AppElementApiService) GetSubElementContentExecute(r ApiGetSubElementCon
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2624,7 +2641,7 @@ func (a *AppElementApiService) GetSubElementContentExecute(r ApiGetSubElementCon
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2664,12 +2681,12 @@ func (r ApiGetSubelementIdsRequest) Execute() (*BTAppElementIdsInfo, *http.Respo
 /*
 GetSubelementIds Get a list of all subelement IDs in a specified workspace/version/microversion.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiGetSubelementIdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiGetSubelementIdsRequest
 */
 func (a *AppElementApiService) GetSubelementIds(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiGetSubelementIdsRequest {
 	return ApiGetSubelementIdsRequest{
@@ -2683,7 +2700,8 @@ func (a *AppElementApiService) GetSubelementIds(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTAppElementIdsInfo
+//
+//	@return BTAppElementIdsInfo
 func (a *AppElementApiService) GetSubelementIdsExecute(r ApiGetSubelementIdsRequest) (*BTAppElementIdsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2743,7 +2761,7 @@ func (a *AppElementApiService) GetSubelementIdsExecute(r ApiGetSubelementIdsRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2762,7 +2780,7 @@ func (a *AppElementApiService) GetSubelementIdsExecute(r ApiGetSubelementIdsRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2817,13 +2835,13 @@ ResolveReference Resolves a single reference to an app element.
 
 For single operations only. Use `resolveReferences` for bulk operations.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @param rid
- @return ApiResolveReferenceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@param rid
+	@return ApiResolveReferenceRequest
 */
 func (a *AppElementApiService) ResolveReference(ctx context.Context, did string, eid string, wvm string, wvmid string, rid string) ApiResolveReferenceRequest {
 	return ApiResolveReferenceRequest{
@@ -2838,7 +2856,8 @@ func (a *AppElementApiService) ResolveReference(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTAppElementReferenceResolveInfo
+//
+//	@return BTAppElementReferenceResolveInfo
 func (a *AppElementApiService) ResolveReferenceExecute(r ApiResolveReferenceRequest) (*BTAppElementReferenceResolveInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2905,7 +2924,7 @@ func (a *AppElementApiService) ResolveReferenceExecute(r ApiResolveReferenceRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2924,7 +2943,7 @@ func (a *AppElementApiService) ResolveReferenceExecute(r ApiResolveReferenceRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2985,12 +3004,12 @@ ResolveReferences Resolves bulk app element references.
 
 For bulk operations only. Use `resolveReference` for a single operation.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiResolveReferencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiResolveReferencesRequest
 */
 func (a *AppElementApiService) ResolveReferences(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiResolveReferencesRequest {
 	return ApiResolveReferencesRequest{
@@ -3004,7 +3023,8 @@ func (a *AppElementApiService) ResolveReferences(ctx context.Context, did string
 }
 
 // Execute executes the request
-//  @return BTAppElementReferencesResolveInfo
+//
+//	@return BTAppElementReferencesResolveInfo
 func (a *AppElementApiService) ResolveReferencesExecute(r ApiResolveReferencesRequest) (*BTAppElementReferencesResolveInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -3073,7 +3093,7 @@ func (a *AppElementApiService) ResolveReferencesExecute(r ApiResolveReferencesRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3092,7 +3112,7 @@ func (a *AppElementApiService) ResolveReferencesExecute(r ApiResolveReferencesRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3127,11 +3147,11 @@ StartTransaction Start a transaction
 
 Creates a microbranch (i.e., a branch for a new microversion).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wid
- @return ApiStartTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wid
+	@return ApiStartTransactionRequest
 */
 func (a *AppElementApiService) StartTransaction(ctx context.Context, did string, eid string, wid string) ApiStartTransactionRequest {
 	return ApiStartTransactionRequest{
@@ -3144,7 +3164,8 @@ func (a *AppElementApiService) StartTransaction(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) StartTransactionExecute(r ApiStartTransactionRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3202,7 +3223,7 @@ func (a *AppElementApiService) StartTransactionExecute(r ApiStartTransactionRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3221,7 +3242,7 @@ func (a *AppElementApiService) StartTransactionExecute(r ApiStartTransactionRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3255,12 +3276,12 @@ func (r ApiUpdateAppElementRequest) Execute() (*BTAppElementModifyInfo, *http.Re
 /*
 UpdateAppElement Update the content for the specified app element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @return ApiUpdateAppElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@return ApiUpdateAppElementRequest
 */
 func (a *AppElementApiService) UpdateAppElement(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiUpdateAppElementRequest {
 	return ApiUpdateAppElementRequest{
@@ -3274,7 +3295,8 @@ func (a *AppElementApiService) UpdateAppElement(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) UpdateAppElementExecute(r ApiUpdateAppElementRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3330,7 +3352,7 @@ func (a *AppElementApiService) UpdateAppElementExecute(r ApiUpdateAppElementRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3349,7 +3371,7 @@ func (a *AppElementApiService) UpdateAppElementExecute(r ApiUpdateAppElementRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3384,13 +3406,13 @@ func (r ApiUpdateReferenceRequest) Execute() (*BTAppElementReferenceInfo, *http.
 /*
 UpdateReference Update an app element reference.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @param wvm
- @param wvmid
- @param rid
- @return ApiUpdateReferenceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@param wvm
+	@param wvmid
+	@param rid
+	@return ApiUpdateReferenceRequest
 */
 func (a *AppElementApiService) UpdateReference(ctx context.Context, did string, eid string, wvm string, wvmid string, rid string) ApiUpdateReferenceRequest {
 	return ApiUpdateReferenceRequest{
@@ -3405,7 +3427,8 @@ func (a *AppElementApiService) UpdateReference(ctx context.Context, did string, 
 }
 
 // Execute executes the request
-//  @return BTAppElementReferenceInfo
+//
+//	@return BTAppElementReferenceInfo
 func (a *AppElementApiService) UpdateReferenceExecute(r ApiUpdateReferenceRequest) (*BTAppElementReferenceInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3465,7 +3488,7 @@ func (a *AppElementApiService) UpdateReferenceExecute(r ApiUpdateReferenceReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3484,7 +3507,7 @@ func (a *AppElementApiService) UpdateReferenceExecute(r ApiUpdateReferenceReques
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3545,12 +3568,12 @@ UploadBlobSubelement Create a new blob subelement from an uploaded file.
 
 Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"` in the request header.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @param bid
- @return ApiUploadBlobSubelementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@param bid
+	@return ApiUploadBlobSubelementRequest
 */
 func (a *AppElementApiService) UploadBlobSubelement(ctx context.Context, did string, wid string, eid string, bid string) ApiUploadBlobSubelementRequest {
 	return ApiUploadBlobSubelementRequest{
@@ -3564,7 +3587,8 @@ func (a *AppElementApiService) UploadBlobSubelement(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTAppElementModifyInfo
+//
+//	@return BTAppElementModifyInfo
 func (a *AppElementApiService) UploadBlobSubelementExecute(r ApiUploadBlobSubelementRequest) (*BTAppElementModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3642,7 +3666,7 @@ func (a *AppElementApiService) UploadBlobSubelementExecute(r ApiUploadBlobSubele
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3661,7 +3685,7 @@ func (a *AppElementApiService) UploadBlobSubelementExecute(r ApiUploadBlobSubele
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

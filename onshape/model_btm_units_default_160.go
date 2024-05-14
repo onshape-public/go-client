@@ -16,6 +16,7 @@ import (
 
 // BTMUnitsDefault160 struct for BTMUnitsDefault160
 type BTMUnitsDefault160 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string            `json:"importMicroversion,omitempty"`
@@ -170,6 +171,14 @@ func (o *BTMUnitsDefault160) SetUnits(v map[string]string) {
 
 func (o BTMUnitsDefault160) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

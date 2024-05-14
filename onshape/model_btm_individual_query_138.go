@@ -664,7 +664,7 @@ func (dst *BTMIndividualQuery138) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMIndividualCoEdgeQuery-1332'
@@ -677,7 +677,7 @@ func (dst *BTMIndividualQuery138) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQuery138 = nil
-			return fmt.Errorf("Failed to unmarshal BTMIndividualQuery138 as BTMIndividualCoEdgeQuery1332: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQuery138 as BTMIndividualCoEdgeQuery1332: %s", err.Error())
 		}
 	}
 
@@ -691,7 +691,7 @@ func (dst *BTMIndividualQuery138) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQuery138 = nil
-			return fmt.Errorf("Failed to unmarshal BTMIndividualQuery138 as BTMIndividualCreatedByQuery137: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQuery138 as BTMIndividualCreatedByQuery137: %s", err.Error())
 		}
 	}
 
@@ -705,7 +705,7 @@ func (dst *BTMIndividualQuery138) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQuery138 = nil
-			return fmt.Errorf("Failed to unmarshal BTMIndividualQuery138 as BTMIndividualSketchRegionQuery140: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQuery138 as BTMIndividualSketchRegionQuery140: %s", err.Error())
 		}
 	}
 
@@ -719,7 +719,7 @@ func (dst *BTMIndividualQuery138) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQuery138 = nil
-			return fmt.Errorf("Failed to unmarshal BTMIndividualQuery138 as BTMIndividualSketchUniqueVerticesQuery1472: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQuery138 as BTMIndividualSketchUniqueVerticesQuery1472: %s", err.Error())
 		}
 	}
 
@@ -730,7 +730,7 @@ func (dst *BTMIndividualQuery138) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMIndividualQuery138, return on the first match
 	} else {
 		dst.implBTMIndividualQuery138 = nil
-		return fmt.Errorf("Failed to unmarshal BTMIndividualQuery138 as base_BTMIndividualQuery138: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMIndividualQuery138 as base_BTMIndividualQuery138: %s", err.Error())
 	}
 }
 
@@ -789,6 +789,7 @@ func (v *NullableBTMIndividualQuery138) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMIndividualQuery138 struct {
+	BTMIndividualQueryBase139
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -1207,6 +1208,14 @@ func (o *base_BTMIndividualQuery138) SetVariableName(v BTMIndividualQuery138) {
 
 func (o base_BTMIndividualQuery138) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryBase139, errBTMIndividualQueryBase139 := json.Marshal(o.BTMIndividualQueryBase139)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
+	errBTMIndividualQueryBase139 = json.Unmarshal([]byte(serializedBTMIndividualQueryBase139), &toSerialize)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

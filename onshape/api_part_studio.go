@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -49,12 +48,12 @@ The feature is added immediately before the rollback bar. Any geometry IDs speci
 
 See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiAddPartStudioFeatureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiAddPartStudioFeatureRequest
 */
 func (a *PartStudioApiService) AddPartStudioFeature(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiAddPartStudioFeatureRequest {
 	return ApiAddPartStudioFeatureRequest{
@@ -68,7 +67,8 @@ func (a *PartStudioApiService) AddPartStudioFeature(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return BTFeatureDefinitionResponse1617
+//
+//	@return BTFeatureDefinitionResponse1617
 func (a *PartStudioApiService) AddPartStudioFeatureExecute(r ApiAddPartStudioFeatureRequest) (*BTFeatureDefinitionResponse1617, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -124,7 +124,7 @@ func (a *PartStudioApiService) AddPartStudioFeatureExecute(r ApiAddPartStudioFea
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -143,7 +143,7 @@ func (a *PartStudioApiService) AddPartStudioFeatureExecute(r ApiAddPartStudioFea
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -207,12 +207,12 @@ func (r ApiComparePartStudiosRequest) Execute() (*BTRootDiffInfo, *http.Response
 /*
 ComparePartStudios Get the differences between two Part Studios in a single document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
- @return ApiComparePartStudiosRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
+	@return ApiComparePartStudiosRequest
 */
 func (a *PartStudioApiService) ComparePartStudios(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiComparePartStudiosRequest {
 	return ApiComparePartStudiosRequest{
@@ -226,7 +226,8 @@ func (a *PartStudioApiService) ComparePartStudios(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return BTRootDiffInfo
+//
+//	@return BTRootDiffInfo
 func (a *PartStudioApiService) ComparePartStudiosExecute(r ApiComparePartStudiosRequest) (*BTRootDiffInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -298,7 +299,7 @@ func (a *PartStudioApiService) ComparePartStudiosExecute(r ApiComparePartStudios
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -317,7 +318,7 @@ func (a *PartStudioApiService) ComparePartStudiosExecute(r ApiComparePartStudios
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -349,10 +350,10 @@ func (r ApiCreatePartStudioRequest) Execute() (*BTDocumentElementInfo, *http.Res
 /*
 CreatePartStudio Create a new Part Studio in a document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wid Workspace ID.
- @return ApiCreatePartStudioRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wid Workspace ID.
+	@return ApiCreatePartStudioRequest
 */
 func (a *PartStudioApiService) CreatePartStudio(ctx context.Context, did string, wid string) ApiCreatePartStudioRequest {
 	return ApiCreatePartStudioRequest{
@@ -364,7 +365,8 @@ func (a *PartStudioApiService) CreatePartStudio(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *PartStudioApiService) CreatePartStudioExecute(r ApiCreatePartStudioRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -421,7 +423,7 @@ func (a *PartStudioApiService) CreatePartStudioExecute(r ApiCreatePartStudioRequ
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -440,7 +442,7 @@ func (a *PartStudioApiService) CreatePartStudioExecute(r ApiCreatePartStudioRequ
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -478,12 +480,12 @@ CreatePartStudioTranslation Export a Part Studio to another format.
 * Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document.
 * See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wv One of w or v corresponding to whether a workspace or version was specified.
- @param wvid Workspace (w) or Version (v) ID.
- @param eid Element ID.
- @return ApiCreatePartStudioTranslationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreatePartStudioTranslationRequest
 */
 func (a *PartStudioApiService) CreatePartStudioTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreatePartStudioTranslationRequest {
 	return ApiCreatePartStudioTranslationRequest{
@@ -497,7 +499,8 @@ func (a *PartStudioApiService) CreatePartStudioTranslation(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return BTTranslationRequestInfo
+//
+//	@return BTTranslationRequestInfo
 func (a *PartStudioApiService) CreatePartStudioTranslationExecute(r ApiCreatePartStudioTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -556,7 +559,7 @@ func (a *PartStudioApiService) CreatePartStudioTranslationExecute(r ApiCreatePar
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -575,7 +578,7 @@ func (a *PartStudioApiService) CreatePartStudioTranslationExecute(r ApiCreatePar
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -605,12 +608,12 @@ DeletePartStudioFeature Delete a Part Studio feature.
 
 See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wid Workspace ID.
- @param eid Element ID.
- @param fid The id of the feature being updated. This id should be URL encoded and must match the featureId found in the serialized structure
- @return ApiDeletePartStudioFeatureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wid Workspace ID.
+	@param eid Element ID.
+	@param fid The id of the feature being updated. This id should be URL encoded and must match the featureId found in the serialized structure
+	@return ApiDeletePartStudioFeatureRequest
 */
 func (a *PartStudioApiService) DeletePartStudioFeature(ctx context.Context, did string, wid string, eid string, fid string) ApiDeletePartStudioFeatureRequest {
 	return ApiDeletePartStudioFeatureRequest{
@@ -624,7 +627,8 @@ func (a *PartStudioApiService) DeletePartStudioFeature(ctx context.Context, did 
 }
 
 // Execute executes the request
-//  @return BTFeatureApiBase1430
+//
+//	@return BTFeatureApiBase1430
 func (a *PartStudioApiService) DeletePartStudioFeatureExecute(r ApiDeletePartStudioFeatureRequest) (*BTFeatureApiBase1430, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -678,7 +682,7 @@ func (a *PartStudioApiService) DeletePartStudioFeatureExecute(r ApiDeletePartStu
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -697,7 +701,7 @@ func (a *PartStudioApiService) DeletePartStudioFeatureExecute(r ApiDeletePartStu
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -759,12 +763,12 @@ func (r ApiEvalFeatureScriptRequest) Execute() (*BTFeatureScriptEvalResponse1859
 /*
 EvalFeatureScript Evaluate the FeatureScript snippet for a Part Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiEvalFeatureScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiEvalFeatureScriptRequest
 */
 func (a *PartStudioApiService) EvalFeatureScript(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiEvalFeatureScriptRequest {
 	return ApiEvalFeatureScriptRequest{
@@ -778,7 +782,8 @@ func (a *PartStudioApiService) EvalFeatureScript(ctx context.Context, did string
 }
 
 // Execute executes the request
-//  @return BTFeatureScriptEvalResponse1859
+//
+//	@return BTFeatureScriptEvalResponse1859
 func (a *PartStudioApiService) EvalFeatureScriptExecute(r ApiEvalFeatureScriptRequest) (*BTFeatureScriptEvalResponse1859, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -846,7 +851,7 @@ func (a *PartStudioApiService) EvalFeatureScriptExecute(r ApiEvalFeatureScriptRe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -865,7 +870,7 @@ func (a *PartStudioApiService) EvalFeatureScriptExecute(r ApiEvalFeatureScriptRe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -937,12 +942,12 @@ ExportParasolid Export the Part Studio as a Parasolid file.
 
 Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
- @return ApiExportParasolidRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
+	@return ApiExportParasolidRequest
 */
 func (a *PartStudioApiService) ExportParasolid(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiExportParasolidRequest {
 	return ApiExportParasolidRequest{
@@ -1026,7 +1031,7 @@ func (a *PartStudioApiService) ExportParasolidExecute(r ApiExportParasolidReques
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1132,12 +1137,12 @@ ExportPartStudioGltf Export the Part Studio as a glTF file.
 
 Returns the glTF representation. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiExportPartStudioGltfRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiExportPartStudioGltfRequest
 */
 func (a *PartStudioApiService) ExportPartStudioGltf(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiExportPartStudioGltfRequest {
 	return ApiExportPartStudioGltfRequest{
@@ -1151,7 +1156,8 @@ func (a *PartStudioApiService) ExportPartStudioGltf(ctx context.Context, did str
 }
 
 // Execute executes the request
-//  @return GlTF
+//
+//	@return GlTF
 func (a *PartStudioApiService) ExportPartStudioGltfExecute(r ApiExportPartStudioGltfRequest) (*GlTF, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1257,7 +1263,7 @@ func (a *PartStudioApiService) ExportPartStudioGltfExecute(r ApiExportPartStudio
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1269,7 +1275,7 @@ func (a *PartStudioApiService) ExportPartStudioGltfExecute(r ApiExportPartStudio
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1376,12 +1382,12 @@ ExportPartStudioStl Export the Part Studio as an STL file.
 
 Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
- @return ApiExportPartStudioStlRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
+	@return ApiExportPartStudioStlRequest
 */
 func (a *PartStudioApiService) ExportPartStudioStl(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiExportPartStudioStlRequest {
 	return ApiExportPartStudioStlRequest{
@@ -1480,7 +1486,7 @@ func (a *PartStudioApiService) ExportPartStudioStlExecute(r ApiExportPartStudioS
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1536,12 +1542,12 @@ func (r ApiGetFeatureScriptRepresentationRequest) Execute() (*BTPModule234, *htt
 /*
 GetFeatureScriptRepresentation Get the FeatureScript representation of a Part Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetFeatureScriptRepresentationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetFeatureScriptRepresentationRequest
 */
 func (a *PartStudioApiService) GetFeatureScriptRepresentation(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureScriptRepresentationRequest {
 	return ApiGetFeatureScriptRepresentationRequest{
@@ -1555,7 +1561,8 @@ func (a *PartStudioApiService) GetFeatureScriptRepresentation(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return BTPModule234
+//
+//	@return BTPModule234
 func (a *PartStudioApiService) GetFeatureScriptRepresentationExecute(r ApiGetFeatureScriptRepresentationRequest) (*BTPModule234, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1621,7 +1628,7 @@ func (a *PartStudioApiService) GetFeatureScriptRepresentationExecute(r ApiGetFea
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1640,7 +1647,7 @@ func (a *PartStudioApiService) GetFeatureScriptRepresentationExecute(r ApiGetFea
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1704,12 +1711,12 @@ func (r ApiGetFeatureScriptTableRequest) Execute() (*BTApiTableList1223, *http.R
 /*
 GetFeatureScriptTable Compute and return a FeatureScript table for a Part Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiGetFeatureScriptTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiGetFeatureScriptTableRequest
 */
 func (a *PartStudioApiService) GetFeatureScriptTable(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureScriptTableRequest {
 	return ApiGetFeatureScriptTableRequest{
@@ -1723,7 +1730,8 @@ func (a *PartStudioApiService) GetFeatureScriptTable(ctx context.Context, did st
 }
 
 // Execute executes the request
-//  @return BTApiTableList1223
+//
+//	@return BTApiTableList1223
 func (a *PartStudioApiService) GetFeatureScriptTableExecute(r ApiGetFeatureScriptTableRequest) (*BTApiTableList1223, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1796,7 +1804,7 @@ func (a *PartStudioApiService) GetFeatureScriptTableExecute(r ApiGetFeatureScrip
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1815,7 +1823,7 @@ func (a *PartStudioApiService) GetFeatureScriptTableExecute(r ApiGetFeatureScrip
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1899,12 +1907,12 @@ func (r ApiGetPartStudioBodyDetailsRequest) Execute() (*BTExportModelBodiesRespo
 /*
 GetPartStudioBodyDetails Get the body details for a Part Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetPartStudioBodyDetailsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetPartStudioBodyDetailsRequest
 */
 func (a *PartStudioApiService) GetPartStudioBodyDetails(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioBodyDetailsRequest {
 	return ApiGetPartStudioBodyDetailsRequest{
@@ -1918,7 +1926,8 @@ func (a *PartStudioApiService) GetPartStudioBodyDetails(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return BTExportModelBodiesResponse734
+//
+//	@return BTExportModelBodiesResponse734
 func (a *PartStudioApiService) GetPartStudioBodyDetailsExecute(r ApiGetPartStudioBodyDetailsRequest) (*BTExportModelBodiesResponse734, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2004,7 +2013,7 @@ func (a *PartStudioApiService) GetPartStudioBodyDetailsExecute(r ApiGetPartStudi
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2023,7 +2032,7 @@ func (a *PartStudioApiService) GetPartStudioBodyDetailsExecute(r ApiGetPartStudi
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2079,12 +2088,12 @@ func (r ApiGetPartStudioBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *ht
 /*
 GetPartStudioBoundingBoxes Get the bounding boxes for a Part Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
- @return ApiGetPartStudioBoundingBoxesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
+	@return ApiGetPartStudioBoundingBoxesRequest
 */
 func (a *PartStudioApiService) GetPartStudioBoundingBoxes(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioBoundingBoxesRequest {
 	return ApiGetPartStudioBoundingBoxesRequest{
@@ -2098,7 +2107,8 @@ func (a *PartStudioApiService) GetPartStudioBoundingBoxes(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return BTBoundingBoxInfo
+//
+//	@return BTBoundingBoxInfo
 func (a *PartStudioApiService) GetPartStudioBoundingBoxesExecute(r ApiGetPartStudioBoundingBoxesRequest) (*BTBoundingBoxInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2164,7 +2174,7 @@ func (a *PartStudioApiService) GetPartStudioBoundingBoxesExecute(r ApiGetPartStu
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2183,7 +2193,7 @@ func (a *PartStudioApiService) GetPartStudioBoundingBoxesExecute(r ApiGetPartStu
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2272,12 +2282,12 @@ GetPartStudioEdges Get a list of all edges in a Part Studio.
 Returns the edges as tessellated data and includes display data.
 Coordinates are in meters (m).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetPartStudioEdgesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetPartStudioEdgesRequest
 */
 func (a *PartStudioApiService) GetPartStudioEdges(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioEdgesRequest {
 	return ApiGetPartStudioEdgesRequest{
@@ -2291,7 +2301,8 @@ func (a *PartStudioApiService) GetPartStudioEdges(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return BTExportTessellatedEdgesResponse327
+//
+//	@return BTExportTessellatedEdgesResponse327
 func (a *PartStudioApiService) GetPartStudioEdgesExecute(r ApiGetPartStudioEdgesRequest) (*BTExportTessellatedEdgesResponse327, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2388,7 +2399,7 @@ func (a *PartStudioApiService) GetPartStudioEdgesExecute(r ApiGetPartStudioEdges
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2407,7 +2418,7 @@ func (a *PartStudioApiService) GetPartStudioEdgesExecute(r ApiGetPartStudioEdges
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2543,12 +2554,12 @@ GetPartStudioFaces Get a list of all faces in a Part Studio.
 
 Coordinates are in meters (m).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetPartStudioFacesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetPartStudioFacesRequest
 */
 func (a *PartStudioApiService) GetPartStudioFaces(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioFacesRequest {
 	return ApiGetPartStudioFacesRequest{
@@ -2562,7 +2573,8 @@ func (a *PartStudioApiService) GetPartStudioFaces(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return BTExportTessellatedFacesResponse898
+//
+//	@return BTExportTessellatedFacesResponse898
 func (a *PartStudioApiService) GetPartStudioFacesExecute(r ApiGetPartStudioFacesRequest) (*BTExportTessellatedFacesResponse898, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2683,7 +2695,7 @@ func (a *PartStudioApiService) GetPartStudioFacesExecute(r ApiGetPartStudioFaces
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2702,7 +2714,7 @@ func (a *PartStudioApiService) GetPartStudioFacesExecute(r ApiGetPartStudioFaces
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2732,12 +2744,12 @@ GetPartStudioFeatureSpecs Get the specs for a Part Studio feature.
 
 Returns a list of feature specs available within the Part Studio. A feature spec provides a data description of the feature's interface to a feature.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
- @return ApiGetPartStudioFeatureSpecsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
+	@return ApiGetPartStudioFeatureSpecsRequest
 */
 func (a *PartStudioApiService) GetPartStudioFeatureSpecs(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioFeatureSpecsRequest {
 	return ApiGetPartStudioFeatureSpecsRequest{
@@ -2751,7 +2763,8 @@ func (a *PartStudioApiService) GetPartStudioFeatureSpecs(ctx context.Context, di
 }
 
 // Execute executes the request
-//  @return BTFeatureSpecsResponse664
+//
+//	@return BTFeatureSpecsResponse664
 func (a *PartStudioApiService) GetPartStudioFeatureSpecsExecute(r ApiGetPartStudioFeatureSpecsRequest) (*BTFeatureSpecsResponse664, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -2805,7 +2818,7 @@ func (a *PartStudioApiService) GetPartStudioFeatureSpecsExecute(r ApiGetPartStud
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2824,7 +2837,7 @@ func (a *PartStudioApiService) GetPartStudioFeatureSpecsExecute(r ApiGetPartStud
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -2903,12 +2916,12 @@ GetPartStudioFeatures Get a list of features instantiated in the Part Studio.
 
 See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetPartStudioFeaturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetPartStudioFeaturesRequest
 */
 func (a *PartStudioApiService) GetPartStudioFeatures(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioFeaturesRequest {
 	return ApiGetPartStudioFeaturesRequest{
@@ -2922,7 +2935,8 @@ func (a *PartStudioApiService) GetPartStudioFeatures(ctx context.Context, did st
 }
 
 // Execute executes the request
-//  @return BTFeatureListResponse2457
+//
+//	@return BTFeatureListResponse2457
 func (a *PartStudioApiService) GetPartStudioFeaturesExecute(r ApiGetPartStudioFeaturesRequest) (*BTFeatureListResponse2457, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -3005,7 +3019,7 @@ func (a *PartStudioApiService) GetPartStudioFeaturesExecute(r ApiGetPartStudioFe
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3024,7 +3038,7 @@ func (a *PartStudioApiService) GetPartStudioFeaturesExecute(r ApiGetPartStudioFe
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3102,12 +3116,12 @@ GetPartStudioMassProperties Get the mass properties for a Part Studio.
 
 If three mass properties are returned, the first is the calculated mass; the second and third are the minimum and maximum possible values considering tolerance.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
- @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetPartStudioMassPropertiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetPartStudioMassPropertiesRequest
 */
 func (a *PartStudioApiService) GetPartStudioMassProperties(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioMassPropertiesRequest {
 	return ApiGetPartStudioMassPropertiesRequest{
@@ -3121,7 +3135,8 @@ func (a *PartStudioApiService) GetPartStudioMassProperties(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return BTMassPropertiesBulkInfo
+//
+//	@return BTMassPropertiesBulkInfo
 func (a *PartStudioApiService) GetPartStudioMassPropertiesExecute(r ApiGetPartStudioMassPropertiesRequest) (*BTMassPropertiesBulkInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -3204,7 +3219,7 @@ func (a *PartStudioApiService) GetPartStudioMassPropertiesExecute(r ApiGetPartSt
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3223,7 +3238,7 @@ func (a *PartStudioApiService) GetPartStudioMassPropertiesExecute(r ApiGetPartSt
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3270,10 +3285,10 @@ GetPartStudioNamedViews Get a list of all named views that exist in the Part Stu
 
 Returns a map from view name to view data for the given element
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param eid
- @return ApiGetPartStudioNamedViewsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param eid
+	@return ApiGetPartStudioNamedViewsRequest
 */
 func (a *PartStudioApiService) GetPartStudioNamedViews(ctx context.Context, did string, eid string) ApiGetPartStudioNamedViewsRequest {
 	return ApiGetPartStudioNamedViewsRequest{
@@ -3285,7 +3300,8 @@ func (a *PartStudioApiService) GetPartStudioNamedViews(ctx context.Context, did 
 }
 
 // Execute executes the request
-//  @return BTNamedViewsInfo
+//
+//	@return BTNamedViewsInfo
 func (a *PartStudioApiService) GetPartStudioNamedViewsExecute(r ApiGetPartStudioNamedViewsRequest) (*BTNamedViewsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -3346,7 +3362,7 @@ func (a *PartStudioApiService) GetPartStudioNamedViewsExecute(r ApiGetPartStudio
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3365,7 +3381,7 @@ func (a *PartStudioApiService) GetPartStudioNamedViewsExecute(r ApiGetPartStudio
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3469,12 +3485,12 @@ func (r ApiGetPartStudioShadedViewsRequest) Execute() (*BTShadedViewsInfo, *http
 /*
 GetPartStudioShadedViews Get a list of shaded views for a Part Studio.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
- @return ApiGetPartStudioShadedViewsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
+	@return ApiGetPartStudioShadedViewsRequest
 */
 func (a *PartStudioApiService) GetPartStudioShadedViews(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetPartStudioShadedViewsRequest {
 	return ApiGetPartStudioShadedViewsRequest{
@@ -3488,7 +3504,8 @@ func (a *PartStudioApiService) GetPartStudioShadedViews(ctx context.Context, did
 }
 
 // Execute executes the request
-//  @return BTShadedViewsInfo
+//
+//	@return BTShadedViewsInfo
 func (a *PartStudioApiService) GetPartStudioShadedViewsExecute(r ApiGetPartStudioShadedViewsRequest) (*BTShadedViewsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -3575,7 +3592,7 @@ func (a *PartStudioApiService) GetPartStudioShadedViewsExecute(r ApiGetPartStudi
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3594,7 +3611,7 @@ func (a *PartStudioApiService) GetPartStudioShadedViewsExecute(r ApiGetPartStudi
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3631,12 +3648,12 @@ TranslateIds Find corresponding deterministic IDs from a source document microve
 * Deterministic IDs are only valid for one microversion.
 * This maps deterministic IDs between microversions in an attempt to find the corresponding entities in each version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
- @param wvmid Workspace (w), Version (v) or Microversion (m) ID.
- @param eid Element ID.
- @return ApiTranslateIdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
+	@return ApiTranslateIdsRequest
 */
 func (a *PartStudioApiService) TranslateIds(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiTranslateIdsRequest {
 	return ApiTranslateIdsRequest{
@@ -3650,7 +3667,8 @@ func (a *PartStudioApiService) TranslateIds(ctx context.Context, did string, wvm
 }
 
 // Execute executes the request
-//  @return BTIdTranslationInfo
+//
+//	@return BTIdTranslationInfo
 func (a *PartStudioApiService) TranslateIdsExecute(r ApiTranslateIdsRequest) (*BTIdTranslationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3709,7 +3727,7 @@ func (a *PartStudioApiService) TranslateIdsExecute(r ApiTranslateIdsRequest) (*B
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3728,7 +3746,7 @@ func (a *PartStudioApiService) TranslateIdsExecute(r ApiTranslateIdsRequest) (*B
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3765,11 +3783,11 @@ UpdateFeatures Update multiple features in a Part Studio
 This API accepts a list of features (that must already exist in the Part Studio) to update. This call does not fully redefine the features; it updates only the parameters supplied in the top-level feature structure, and optionally can update feature suppression attributes.
 See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wid Workspace ID.
- @param eid Element ID.
- @return ApiUpdateFeaturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wid Workspace ID.
+	@param eid Element ID.
+	@return ApiUpdateFeaturesRequest
 */
 func (a *PartStudioApiService) UpdateFeatures(ctx context.Context, did string, wid string, eid string) ApiUpdateFeaturesRequest {
 	return ApiUpdateFeaturesRequest{
@@ -3782,7 +3800,8 @@ func (a *PartStudioApiService) UpdateFeatures(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return BTUpdateFeaturesResponse1333
+//
+//	@return BTUpdateFeaturesResponse1333
 func (a *PartStudioApiService) UpdateFeaturesExecute(r ApiUpdateFeaturesRequest) (*BTUpdateFeaturesResponse1333, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3837,7 +3856,7 @@ func (a *PartStudioApiService) UpdateFeaturesExecute(r ApiUpdateFeaturesRequest)
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3856,7 +3875,7 @@ func (a *PartStudioApiService) UpdateFeaturesExecute(r ApiUpdateFeaturesRequest)
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3893,12 +3912,12 @@ UpdatePartStudioFeature Update the definition of a Part Studio feature.
 
 Replaces an existing feature in the location of the existing feature. See the [Features API Guide](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wid Workspace ID.
- @param eid Element ID.
- @param fid The id of the feature being updated. This id should be URL encoded and must match the featureId found in the serialized structure
- @return ApiUpdatePartStudioFeatureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wid Workspace ID.
+	@param eid Element ID.
+	@param fid The id of the feature being updated. This id should be URL encoded and must match the featureId found in the serialized structure
+	@return ApiUpdatePartStudioFeatureRequest
 */
 func (a *PartStudioApiService) UpdatePartStudioFeature(ctx context.Context, did string, wid string, eid string, fid string) ApiUpdatePartStudioFeatureRequest {
 	return ApiUpdatePartStudioFeatureRequest{
@@ -3912,7 +3931,8 @@ func (a *PartStudioApiService) UpdatePartStudioFeature(ctx context.Context, did 
 }
 
 // Execute executes the request
-//  @return BTFeatureDefinitionResponse1617
+//
+//	@return BTFeatureDefinitionResponse1617
 func (a *PartStudioApiService) UpdatePartStudioFeatureExecute(r ApiUpdatePartStudioFeatureRequest) (*BTFeatureDefinitionResponse1617, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -3968,7 +3988,7 @@ func (a *PartStudioApiService) UpdatePartStudioFeatureExecute(r ApiUpdatePartStu
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -3987,7 +4007,7 @@ func (a *PartStudioApiService) UpdatePartStudioFeatureExecute(r ApiUpdatePartStu
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -4023,11 +4043,11 @@ UpdateRollback Move the Feature List rollback bar in the Part Studio.
 
 Set to -1 to move the rollback bar to the end of the list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did Document ID.
- @param wid Workspace ID.
- @param eid Element ID.
- @return ApiUpdateRollbackRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wid Workspace ID.
+	@param eid Element ID.
+	@return ApiUpdateRollbackRequest
 */
 func (a *PartStudioApiService) UpdateRollback(ctx context.Context, did string, wid string, eid string) ApiUpdateRollbackRequest {
 	return ApiUpdateRollbackRequest{
@@ -4040,7 +4060,8 @@ func (a *PartStudioApiService) UpdateRollback(ctx context.Context, did string, w
 }
 
 // Execute executes the request
-//  @return BTSetFeatureRollbackResponse1042
+//
+//	@return BTSetFeatureRollbackResponse1042
 func (a *PartStudioApiService) UpdateRollbackExecute(r ApiUpdateRollbackRequest) (*BTSetFeatureRollbackResponse1042, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -4098,7 +4119,7 @@ func (a *PartStudioApiService) UpdateRollbackExecute(r ApiUpdateRollbackRequest)
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -4117,7 +4138,7 @@ func (a *PartStudioApiService) UpdateRollbackExecute(r ApiUpdateRollbackRequest)
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -40,8 +39,8 @@ func (r ApiCreateWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, erro
 /*
 CreateWebhook Create a new webhook.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateWebhookRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateWebhookRequest
 */
 func (a *WebhookApiService) CreateWebhook(ctx context.Context) ApiCreateWebhookRequest {
 	return ApiCreateWebhookRequest{
@@ -51,7 +50,8 @@ func (a *WebhookApiService) CreateWebhook(ctx context.Context) ApiCreateWebhookR
 }
 
 // Execute executes the request
-//  @return BTWebhookInfo
+//
+//	@return BTWebhookInfo
 func (a *WebhookApiService) CreateWebhookExecute(r ApiCreateWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -103,7 +103,7 @@ func (a *WebhookApiService) CreateWebhookExecute(r ApiCreateWebhookRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -122,7 +122,7 @@ func (a *WebhookApiService) CreateWebhookExecute(r ApiCreateWebhookRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -147,9 +147,9 @@ func (r ApiGetWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, error) 
 /*
 GetWebhook Get webhook info by webhook ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookid
- @return ApiGetWebhookRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookid
+	@return ApiGetWebhookRequest
 */
 func (a *WebhookApiService) GetWebhook(ctx context.Context, webhookid string) ApiGetWebhookRequest {
 	return ApiGetWebhookRequest{
@@ -160,7 +160,8 @@ func (a *WebhookApiService) GetWebhook(ctx context.Context, webhookid string) Ap
 }
 
 // Execute executes the request
-//  @return BTWebhookInfo
+//
+//	@return BTWebhookInfo
 func (a *WebhookApiService) GetWebhookExecute(r ApiGetWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -211,7 +212,7 @@ func (a *WebhookApiService) GetWebhookExecute(r ApiGetWebhookRequest) (*BTWebhoo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -230,7 +231,7 @@ func (a *WebhookApiService) GetWebhookExecute(r ApiGetWebhookRequest) (*BTWebhoo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -278,8 +279,8 @@ func (r ApiGetWebhooksRequest) Execute() (*BTListResponseBTWebhookInfo, *http.Re
 /*
 GetWebhooks Get a list of all webhooks registered by a user or company.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetWebhooksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetWebhooksRequest
 */
 func (a *WebhookApiService) GetWebhooks(ctx context.Context) ApiGetWebhooksRequest {
 	return ApiGetWebhooksRequest{
@@ -289,7 +290,8 @@ func (a *WebhookApiService) GetWebhooks(ctx context.Context) ApiGetWebhooksReque
 }
 
 // Execute executes the request
-//  @return BTListResponseBTWebhookInfo
+//
+//	@return BTListResponseBTWebhookInfo
 func (a *WebhookApiService) GetWebhooksExecute(r ApiGetWebhooksRequest) (*BTListResponseBTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -351,7 +353,7 @@ func (a *WebhookApiService) GetWebhooksExecute(r ApiGetWebhooksRequest) (*BTList
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -370,7 +372,7 @@ func (a *WebhookApiService) GetWebhooksExecute(r ApiGetWebhooksRequest) (*BTList
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -395,9 +397,9 @@ func (r ApiPingWebhookRequest) Execute() (map[string]interface{}, *http.Response
 /*
 PingWebhook Ping a webhook.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookid
- @return ApiPingWebhookRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookid
+	@return ApiPingWebhookRequest
 */
 func (a *WebhookApiService) PingWebhook(ctx context.Context, webhookid string) ApiPingWebhookRequest {
 	return ApiPingWebhookRequest{
@@ -408,7 +410,8 @@ func (a *WebhookApiService) PingWebhook(ctx context.Context, webhookid string) A
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *WebhookApiService) PingWebhookExecute(r ApiPingWebhookRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -459,7 +462,7 @@ func (a *WebhookApiService) PingWebhookExecute(r ApiPingWebhookRequest) (map[str
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -478,7 +481,7 @@ func (a *WebhookApiService) PingWebhookExecute(r ApiPingWebhookRequest) (map[str
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -509,9 +512,9 @@ func (r ApiUnregisterWebhookRequest) Execute() (map[string]interface{}, *http.Re
 /*
 UnregisterWebhook Unregister a webhook.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookid
- @return ApiUnregisterWebhookRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookid
+	@return ApiUnregisterWebhookRequest
 */
 func (a *WebhookApiService) UnregisterWebhook(ctx context.Context, webhookid string) ApiUnregisterWebhookRequest {
 	return ApiUnregisterWebhookRequest{
@@ -522,7 +525,8 @@ func (a *WebhookApiService) UnregisterWebhook(ctx context.Context, webhookid str
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *WebhookApiService) UnregisterWebhookExecute(r ApiUnregisterWebhookRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -576,7 +580,7 @@ func (a *WebhookApiService) UnregisterWebhookExecute(r ApiUnregisterWebhookReque
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -595,7 +599,7 @@ func (a *WebhookApiService) UnregisterWebhookExecute(r ApiUnregisterWebhookReque
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -628,9 +632,9 @@ UpdateWebhook Update a webhook.
 
 Update a webhook
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookid
- @return ApiUpdateWebhookRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookid
+	@return ApiUpdateWebhookRequest
 */
 func (a *WebhookApiService) UpdateWebhook(ctx context.Context, webhookid string) ApiUpdateWebhookRequest {
 	return ApiUpdateWebhookRequest{
@@ -641,7 +645,8 @@ func (a *WebhookApiService) UpdateWebhook(ctx context.Context, webhookid string)
 }
 
 // Execute executes the request
-//  @return BTWebhookInfo
+//
+//	@return BTWebhookInfo
 func (a *WebhookApiService) UpdateWebhookExecute(r ApiUpdateWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -694,7 +699,7 @@ func (a *WebhookApiService) UpdateWebhookExecute(r ApiUpdateWebhookRequest) (*BT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -713,7 +718,7 @@ func (a *WebhookApiService) UpdateWebhookExecute(r ApiUpdateWebhookRequest) (*BT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

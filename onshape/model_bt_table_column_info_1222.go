@@ -30,13 +30,13 @@ func (o *BTConfiguredParameterColumnInfo2900) AsBTTableColumnInfo1222() *BTTable
 	return &BTTableColumnInfo1222{o}
 }
 
-// BTConfiguredSuppressionColumnInfo2498AsBTTableColumnInfo1222 is a convenience function that returns BTConfiguredSuppressionColumnInfo2498 wrapped in BTTableColumnInfo1222
-func (o *BTConfiguredSuppressionColumnInfo2498) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
+// BTPropertyTableColumnInfo2161AsBTTableColumnInfo1222 is a convenience function that returns BTPropertyTableColumnInfo2161 wrapped in BTTableColumnInfo1222
+func (o *BTPropertyTableColumnInfo2161) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
 	return &BTTableColumnInfo1222{o}
 }
 
-// BTPropertyTableColumnInfo2161AsBTTableColumnInfo1222 is a convenience function that returns BTPropertyTableColumnInfo2161 wrapped in BTTableColumnInfo1222
-func (o *BTPropertyTableColumnInfo2161) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
+// BTConfiguredSuppressionColumnInfo2498AsBTTableColumnInfo1222 is a convenience function that returns BTConfiguredSuppressionColumnInfo2498 wrapped in BTTableColumnInfo1222
+func (o *BTConfiguredSuppressionColumnInfo2498) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
 	return &BTTableColumnInfo1222{o}
 }
 
@@ -50,13 +50,13 @@ func (o *BTConfiguredFeatureColumnInfo1014) AsBTTableColumnInfo1222() *BTTableCo
 	return &BTTableColumnInfo1222{o}
 }
 
-// BTConfiguredDimensionColumnInfo2168AsBTTableColumnInfo1222 is a convenience function that returns BTConfiguredDimensionColumnInfo2168 wrapped in BTTableColumnInfo1222
-func (o *BTConfiguredDimensionColumnInfo2168) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
+// BTSimulationTableColumnInfo1785AsBTTableColumnInfo1222 is a convenience function that returns BTSimulationTableColumnInfo1785 wrapped in BTTableColumnInfo1222
+func (o *BTSimulationTableColumnInfo1785) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
 	return &BTTableColumnInfo1222{o}
 }
 
-// BTSimulationTableColumnInfo1785AsBTTableColumnInfo1222 is a convenience function that returns BTSimulationTableColumnInfo1785 wrapped in BTTableColumnInfo1222
-func (o *BTSimulationTableColumnInfo1785) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
+// BTConfiguredDimensionColumnInfo2168AsBTTableColumnInfo1222 is a convenience function that returns BTConfiguredDimensionColumnInfo2168 wrapped in BTTableColumnInfo1222
+func (o *BTConfiguredDimensionColumnInfo2168) AsBTTableColumnInfo1222() *BTTableColumnInfo1222 {
 	return &BTTableColumnInfo1222{o}
 }
 
@@ -289,63 +289,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
-	}
-
-	// check if the discriminator value is 'BTConfiguredDimensionColumnInfo-2168'
-	if jsonDict["btType"] == "BTConfiguredDimensionColumnInfo-2168" {
-		// try to unmarshal JSON data into BTConfiguredDimensionColumnInfo2168
-		var qr *BTConfiguredDimensionColumnInfo2168
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTTableColumnInfo1222 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredDimensionColumnInfo2168: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTConfiguredFeatureColumnInfo-1014'
-	if jsonDict["btType"] == "BTConfiguredFeatureColumnInfo-1014" {
-		// try to unmarshal JSON data into BTConfiguredFeatureColumnInfo1014
-		var qr *BTConfiguredFeatureColumnInfo1014
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTTableColumnInfo1222 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredFeatureColumnInfo1014: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTConfiguredParameterColumnInfo-2900'
-	if jsonDict["btType"] == "BTConfiguredParameterColumnInfo-2900" {
-		// try to unmarshal JSON data into BTConfiguredParameterColumnInfo2900
-		var qr *BTConfiguredParameterColumnInfo2900
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTTableColumnInfo1222 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredParameterColumnInfo2900: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTConfiguredSuppressionColumnInfo-2498'
-	if jsonDict["btType"] == "BTConfiguredSuppressionColumnInfo-2498" {
-		// try to unmarshal JSON data into BTConfiguredSuppressionColumnInfo2498
-		var qr *BTConfiguredSuppressionColumnInfo2498
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTTableColumnInfo1222 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredSuppressionColumnInfo2498: %s", err.Error())
-		}
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTConfiguredValuesColumnInfo-1025'
@@ -358,7 +302,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTConfiguredValuesColumnInfo1025: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredValuesColumnInfo1025: %s", err.Error())
 		}
 	}
 
@@ -372,7 +316,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTFSTableColumnInfo623: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTFSTableColumnInfo623: %s", err.Error())
 		}
 	}
 
@@ -386,7 +330,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTNamedPositionValuesColumnInfo816: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTNamedPositionValuesColumnInfo816: %s", err.Error())
 		}
 	}
 
@@ -400,7 +344,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTPropertyTableColumnInfo2161: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTPropertyTableColumnInfo2161: %s", err.Error())
 		}
 	}
 
@@ -414,7 +358,63 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableColumnInfo1222 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as BTSimulationTableColumnInfo1785: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTSimulationTableColumnInfo1785: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTConfiguredDimensionColumnInfo-2168'
+	if jsonDict["btType"] == "BTConfiguredDimensionColumnInfo-2168" {
+		// try to unmarshal JSON data into BTConfiguredDimensionColumnInfo2168
+		var qr *BTConfiguredDimensionColumnInfo2168
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableColumnInfo1222 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableColumnInfo1222 = nil
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredDimensionColumnInfo2168: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTConfiguredFeatureColumnInfo-1014'
+	if jsonDict["btType"] == "BTConfiguredFeatureColumnInfo-1014" {
+		// try to unmarshal JSON data into BTConfiguredFeatureColumnInfo1014
+		var qr *BTConfiguredFeatureColumnInfo1014
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableColumnInfo1222 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableColumnInfo1222 = nil
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredFeatureColumnInfo1014: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTConfiguredParameterColumnInfo-2900'
+	if jsonDict["btType"] == "BTConfiguredParameterColumnInfo-2900" {
+		// try to unmarshal JSON data into BTConfiguredParameterColumnInfo2900
+		var qr *BTConfiguredParameterColumnInfo2900
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableColumnInfo1222 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableColumnInfo1222 = nil
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredParameterColumnInfo2900: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTConfiguredSuppressionColumnInfo-2498'
+	if jsonDict["btType"] == "BTConfiguredSuppressionColumnInfo-2498" {
+		// try to unmarshal JSON data into BTConfiguredSuppressionColumnInfo2498
+		var qr *BTConfiguredSuppressionColumnInfo2498
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableColumnInfo1222 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableColumnInfo1222 = nil
+			return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as BTConfiguredSuppressionColumnInfo2498: %s", err.Error())
 		}
 	}
 
@@ -425,7 +425,7 @@ func (dst *BTTableColumnInfo1222) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTableColumnInfo1222, return on the first match
 	} else {
 		dst.implBTTableColumnInfo1222 = nil
-		return fmt.Errorf("Failed to unmarshal BTTableColumnInfo1222 as base_BTTableColumnInfo1222: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTableColumnInfo1222 as base_BTTableColumnInfo1222: %s", err.Error())
 	}
 }
 

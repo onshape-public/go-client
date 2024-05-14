@@ -16,6 +16,7 @@ import (
 
 // BTPTypeNameUser292 struct for BTPTypeNameUser292
 type BTPTypeNameUser292 struct {
+	BTPTypeName290
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -400,6 +401,14 @@ func (o *BTPTypeNameUser292) SetType(v BTPName261) {
 
 func (o BTPTypeNameUser292) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPTypeName290, errBTPTypeName290 := json.Marshal(o.BTPTypeName290)
+	if errBTPTypeName290 != nil {
+		return []byte{}, errBTPTypeName290
+	}
+	errBTPTypeName290 = json.Unmarshal([]byte(serializedBTPTypeName290), &toSerialize)
+	if errBTPTypeName290 != nil {
+		return []byte{}, errBTPTypeName290
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

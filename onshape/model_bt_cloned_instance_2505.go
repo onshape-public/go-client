@@ -16,6 +16,7 @@ import (
 
 // BTClonedInstance2505 struct for BTClonedInstance2505
 type BTClonedInstance2505 struct {
+	BTParametricOutputInstance2288
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -963,6 +964,14 @@ func (o *BTClonedInstance2505) SetSeedOccurrence(v BTOccurrence74) {
 
 func (o BTClonedInstance2505) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParametricOutputInstance2288, errBTParametricOutputInstance2288 := json.Marshal(o.BTParametricOutputInstance2288)
+	if errBTParametricOutputInstance2288 != nil {
+		return []byte{}, errBTParametricOutputInstance2288
+	}
+	errBTParametricOutputInstance2288 = json.Unmarshal([]byte(serializedBTParametricOutputInstance2288), &toSerialize)
+	if errBTParametricOutputInstance2288 != nil {
+		return []byte{}, errBTParametricOutputInstance2288
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

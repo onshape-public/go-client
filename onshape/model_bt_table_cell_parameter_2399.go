@@ -354,7 +354,7 @@ func (dst *BTTableCellParameter2399) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTTableCellParameterWithValue-2122'
@@ -367,7 +367,7 @@ func (dst *BTTableCellParameter2399) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableCellParameter2399 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableCellParameter2399 as BTTableCellParameterWithValue2122: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableCellParameter2399 as BTTableCellParameterWithValue2122: %s", err.Error())
 		}
 	}
 
@@ -381,7 +381,7 @@ func (dst *BTTableCellParameter2399) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTTableCellParameter2399 = nil
-			return fmt.Errorf("Failed to unmarshal BTTableCellParameter2399 as BTTableCellPropertyParameter2983: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTTableCellParameter2399 as BTTableCellPropertyParameter2983: %s", err.Error())
 		}
 	}
 
@@ -392,7 +392,7 @@ func (dst *BTTableCellParameter2399) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTTableCellParameter2399, return on the first match
 	} else {
 		dst.implBTTableCellParameter2399 = nil
-		return fmt.Errorf("Failed to unmarshal BTTableCellParameter2399 as base_BTTableCellParameter2399: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTTableCellParameter2399 as base_BTTableCellParameter2399: %s", err.Error())
 	}
 }
 
@@ -451,6 +451,7 @@ func (v *NullableBTTableCellParameter2399) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTTableCellParameter2399 struct {
+	BTTableCell1114
 	BtType        *string           `json:"btType,omitempty"`
 	IsEverVisible *bool             `json:"isEverVisible,omitempty"`
 	IsReadOnly    *bool             `json:"isReadOnly,omitempty"`
@@ -670,6 +671,14 @@ func (o *base_BTTableCellParameter2399) SetParameter(v BTMParameter1) {
 
 func (o base_BTTableCellParameter2399) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableCell1114, errBTTableCell1114 := json.Marshal(o.BTTableCell1114)
+	if errBTTableCell1114 != nil {
+		return []byte{}, errBTTableCell1114
+	}
+	errBTTableCell1114 = json.Unmarshal([]byte(serializedBTTableCell1114), &toSerialize)
+	if errBTTableCell1114 != nil {
+		return []byte{}, errBTTableCell1114
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

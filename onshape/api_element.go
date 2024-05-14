@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -42,10 +41,10 @@ func (r ApiCopyElementFromSourceDocumentRequest) Execute() (*BTDocumentElementIn
 /*
 CopyElementFromSourceDocument Copy tab by document ID and workspace ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiCopyElementFromSourceDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiCopyElementFromSourceDocumentRequest
 */
 func (a *ElementApiService) CopyElementFromSourceDocument(ctx context.Context, did string, wid string) ApiCopyElementFromSourceDocumentRequest {
 	return ApiCopyElementFromSourceDocumentRequest{
@@ -57,7 +56,8 @@ func (a *ElementApiService) CopyElementFromSourceDocument(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return BTDocumentElementInfo
+//
+//	@return BTDocumentElementInfo
 func (a *ElementApiService) CopyElementFromSourceDocumentExecute(r ApiCopyElementFromSourceDocumentRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -114,7 +114,7 @@ func (a *ElementApiService) CopyElementFromSourceDocumentExecute(r ApiCopyElemen
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -133,7 +133,7 @@ func (a *ElementApiService) CopyElementFromSourceDocumentExecute(r ApiCopyElemen
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -180,13 +180,13 @@ func (r ApiDecodeConfigurationRequest) Execute() (*BTConfigurationInfo, *http.Re
 /*
 DecodeConfiguration Decode configuration string by documentation ID, workspace or version or microversion ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @param cid
- @return ApiDecodeConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@param cid
+	@return ApiDecodeConfigurationRequest
 */
 func (a *ElementApiService) DecodeConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string, cid string) ApiDecodeConfigurationRequest {
 	return ApiDecodeConfigurationRequest{
@@ -201,7 +201,8 @@ func (a *ElementApiService) DecodeConfiguration(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTConfigurationInfo
+//
+//	@return BTConfigurationInfo
 func (a *ElementApiService) DecodeConfigurationExecute(r ApiDecodeConfigurationRequest) (*BTConfigurationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -265,7 +266,7 @@ func (a *ElementApiService) DecodeConfigurationExecute(r ApiDecodeConfigurationR
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -284,7 +285,7 @@ func (a *ElementApiService) DecodeConfigurationExecute(r ApiDecodeConfigurationR
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -311,11 +312,11 @@ func (r ApiDeleteElementRequest) Execute() (map[string]interface{}, *http.Respon
 /*
 DeleteElement Method for DeleteElement
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiDeleteElementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiDeleteElementRequest
 */
 func (a *ElementApiService) DeleteElement(ctx context.Context, did string, wid string, eid string) ApiDeleteElementRequest {
 	return ApiDeleteElementRequest{
@@ -328,7 +329,8 @@ func (a *ElementApiService) DeleteElement(ctx context.Context, did string, wid s
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ElementApiService) DeleteElementExecute(r ApiDeleteElementRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -381,7 +383,7 @@ func (a *ElementApiService) DeleteElementExecute(r ApiDeleteElementRequest) (map
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -400,7 +402,7 @@ func (a *ElementApiService) DeleteElementExecute(r ApiDeleteElementRequest) (map
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -444,10 +446,10 @@ func (r ApiEncodeConfigurationMapRequest) Execute() (*BTEncodedConfigurationInfo
 /*
 EncodeConfigurationMap Encode configuration by documentation ID and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param eid
- @return ApiEncodeConfigurationMapRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param eid
+	@return ApiEncodeConfigurationMapRequest
 */
 func (a *ElementApiService) EncodeConfigurationMap(ctx context.Context, did string, eid string) ApiEncodeConfigurationMapRequest {
 	return ApiEncodeConfigurationMapRequest{
@@ -459,7 +461,8 @@ func (a *ElementApiService) EncodeConfigurationMap(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return BTEncodedConfigurationInfo
+//
+//	@return BTEncodedConfigurationInfo
 func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurationMapRequest) (*BTEncodedConfigurationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -522,7 +525,7 @@ func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurati
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -541,7 +544,7 @@ func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurati
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -569,12 +572,12 @@ func (r ApiGetConfigurationRequest) Execute() (*BTConfigurationResponse2019, *ht
 /*
 GetConfiguration Retrieve configuration by document ID, workspace or version or microversion ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiGetConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiGetConfigurationRequest
 */
 func (a *ElementApiService) GetConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetConfigurationRequest {
 	return ApiGetConfigurationRequest{
@@ -588,7 +591,8 @@ func (a *ElementApiService) GetConfiguration(ctx context.Context, did string, wv
 }
 
 // Execute executes the request
-//  @return BTConfigurationResponse2019
+//
+//	@return BTConfigurationResponse2019
 func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -642,7 +646,7 @@ func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -661,7 +665,7 @@ func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -708,12 +712,12 @@ func (r ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest) Execute() ([]
 /*
 GetElementTranslatorFormatsByVersionOrWorkspace Method for GetElementTranslatorFormatsByVersionOrWorkspace
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest
 */
 func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspace(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest {
 	return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest{
@@ -727,7 +731,8 @@ func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspace(ctx 
 }
 
 // Execute executes the request
-//  @return []BTModelFormatInfo
+//
+//	@return []BTModelFormatInfo
 func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspaceExecute(r ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest) ([]BTModelFormatInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -790,7 +795,7 @@ func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspaceExecu
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -809,7 +814,7 @@ func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspaceExecu
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -843,12 +848,12 @@ func (r ApiUpdateConfigurationRequest) Execute() (*BTConfigurationResponse2019, 
 /*
 UpdateConfiguration Update configuration by document ID, workspace or microversion ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wvm
- @param wvmid
- @param eid
- @return ApiUpdateConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wvm
+	@param wvmid
+	@param eid
+	@return ApiUpdateConfigurationRequest
 */
 func (a *ElementApiService) UpdateConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateConfigurationRequest {
 	return ApiUpdateConfigurationRequest{
@@ -862,7 +867,8 @@ func (a *ElementApiService) UpdateConfiguration(ctx context.Context, did string,
 }
 
 // Execute executes the request
-//  @return BTConfigurationResponse2019
+//
+//	@return BTConfigurationResponse2019
 func (a *ElementApiService) UpdateConfigurationExecute(r ApiUpdateConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -918,7 +924,7 @@ func (a *ElementApiService) UpdateConfigurationExecute(r ApiUpdateConfigurationR
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -937,7 +943,7 @@ func (a *ElementApiService) UpdateConfigurationExecute(r ApiUpdateConfigurationR
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -970,11 +976,11 @@ func (r ApiUpdateReferencesRequest) Execute() (map[string]interface{}, *http.Res
 /*
 UpdateReferences Update or replace node references by document ID, workspace ID, and tab ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @return ApiUpdateReferencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@return ApiUpdateReferencesRequest
 */
 func (a *ElementApiService) UpdateReferences(ctx context.Context, did string, wid string, eid string) ApiUpdateReferencesRequest {
 	return ApiUpdateReferencesRequest{
@@ -987,7 +993,8 @@ func (a *ElementApiService) UpdateReferences(ctx context.Context, did string, wi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ElementApiService) UpdateReferencesExecute(r ApiUpdateReferencesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1045,7 +1052,7 @@ func (a *ElementApiService) UpdateReferencesExecute(r ApiUpdateReferencesRequest
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1064,7 +1071,7 @@ func (a *ElementApiService) UpdateReferencesExecute(r ApiUpdateReferencesRequest
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

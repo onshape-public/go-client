@@ -16,6 +16,7 @@ import (
 
 // BTStringFormatBlockPattern1755 struct for BTStringFormatBlockPattern1755
 type BTStringFormatBlockPattern1755 struct {
+	BTStringFormatCondition683
 	BtType                        *string `json:"btType,omitempty"`
 	ErrorMessage                  *string `json:"errorMessage,omitempty"`
 	ShouldResetValueWhenConfirmed *bool   `json:"shouldResetValueWhenConfirmed,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTStringFormatBlockPattern1755) SetRegExpToBlock(v string) {
 
 func (o BTStringFormatBlockPattern1755) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTStringFormatCondition683, errBTStringFormatCondition683 := json.Marshal(o.BTStringFormatCondition683)
+	if errBTStringFormatCondition683 != nil {
+		return []byte{}, errBTStringFormatCondition683
+	}
+	errBTStringFormatCondition683 = json.Unmarshal([]byte(serializedBTStringFormatCondition683), &toSerialize)
+	if errBTStringFormatCondition683 != nil {
+		return []byte{}, errBTStringFormatCondition683
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -47,12 +46,12 @@ DeleteApplicationThumbnails Delete an element's thumbnail.
 
 Deletes an application element's thumbnail and images for the given document, workspace or version, and element combination.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiDeleteApplicationThumbnailsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiDeleteApplicationThumbnailsRequest
 */
 func (a *ThumbnailApiService) DeleteApplicationThumbnails(ctx context.Context, did string, wv string, wvid string, eid string) ApiDeleteApplicationThumbnailsRequest {
 	return ApiDeleteApplicationThumbnailsRequest{
@@ -66,7 +65,8 @@ func (a *ThumbnailApiService) DeleteApplicationThumbnails(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ThumbnailApiService) DeleteApplicationThumbnailsExecute(r ApiDeleteApplicationThumbnailsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
@@ -123,7 +123,7 @@ func (a *ThumbnailApiService) DeleteApplicationThumbnailsExecute(r ApiDeleteAppl
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -142,7 +142,7 @@ func (a *ThumbnailApiService) DeleteApplicationThumbnailsExecute(r ApiDeleteAppl
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -171,10 +171,10 @@ GetDocumentThumbnail Get the thumbnail info for a workspace.
 * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
 * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @return ApiGetDocumentThumbnailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@return ApiGetDocumentThumbnailRequest
 */
 func (a *ThumbnailApiService) GetDocumentThumbnail(ctx context.Context, did string, wid string) ApiGetDocumentThumbnailRequest {
 	return ApiGetDocumentThumbnailRequest{
@@ -186,7 +186,8 @@ func (a *ThumbnailApiService) GetDocumentThumbnail(ctx context.Context, did stri
 }
 
 // Execute executes the request
-//  @return BTThumbnailInfo
+//
+//	@return BTThumbnailInfo
 func (a *ThumbnailApiService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbnailRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -238,7 +239,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbn
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -257,7 +258,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbn
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -301,11 +302,11 @@ GetDocumentThumbnailWithSize Get the thumbnail image with the given size for a d
 * By default, returns thumbnail image for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
 * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param sz the generated thumbnail size in pixels, widthxheigth
- @return ApiGetDocumentThumbnailWithSizeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param sz the generated thumbnail size in pixels, widthxheigth
+	@return ApiGetDocumentThumbnailWithSizeRequest
 */
 func (a *ThumbnailApiService) GetDocumentThumbnailWithSize(ctx context.Context, did string, wid string, sz string) ApiGetDocumentThumbnailWithSizeRequest {
 	return ApiGetDocumentThumbnailWithSizeRequest{
@@ -318,7 +319,8 @@ func (a *ThumbnailApiService) GetDocumentThumbnailWithSize(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ThumbnailApiService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocumentThumbnailWithSizeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -377,7 +379,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocume
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -396,7 +398,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocume
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -433,12 +435,12 @@ GetElementThumbnail Get the thumbnail info structure for an element.
 
 Returns thumbnail info for the given document, workspace or version, and element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiGetElementThumbnailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetElementThumbnailRequest
 */
 func (a *ThumbnailApiService) GetElementThumbnail(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetElementThumbnailRequest {
 	return ApiGetElementThumbnailRequest{
@@ -452,7 +454,8 @@ func (a *ThumbnailApiService) GetElementThumbnail(ctx context.Context, did strin
 }
 
 // Execute executes the request
-//  @return BTThumbnailInfo
+//
+//	@return BTThumbnailInfo
 func (a *ThumbnailApiService) GetElementThumbnailExecute(r ApiGetElementThumbnailRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -509,7 +512,7 @@ func (a *ThumbnailApiService) GetElementThumbnailExecute(r ApiGetElementThumbnai
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -528,7 +531,7 @@ func (a *ThumbnailApiService) GetElementThumbnailExecute(r ApiGetElementThumbnai
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -585,13 +588,13 @@ GetElementThumbnailWithApiConfiguration Get the thumbnail image with the given c
 
 Returns the thumbnail image for an element at a specified version, with the given configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param wid
- @param eid
- @param cid
- @param sz the generated thumbnail size in pixels, widthxheigth
- @return ApiGetElementThumbnailWithApiConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param wid
+	@param eid
+	@param cid
+	@param sz the generated thumbnail size in pixels, widthxheigth
+	@return ApiGetElementThumbnailWithApiConfigurationRequest
 */
 func (a *ThumbnailApiService) GetElementThumbnailWithApiConfiguration(ctx context.Context, did string, wid string, eid string, cid string, sz string) ApiGetElementThumbnailWithApiConfigurationRequest {
 	return ApiGetElementThumbnailWithApiConfigurationRequest{
@@ -606,7 +609,8 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfiguration(ctx contex
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r ApiGetElementThumbnailWithApiConfigurationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -673,7 +677,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r A
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -692,7 +696,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r A
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -748,13 +752,13 @@ func (r ApiGetElementThumbnailWithSizeRequest) Execute() (map[string]interface{}
 /*
 GetElementThumbnailWithSize Get the thumbnail image with the given size for an element.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @param sz the generated thumbnail size in pixels, widthxheigth
- @return ApiGetElementThumbnailWithSizeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@param sz the generated thumbnail size in pixels, widthxheigth
+	@return ApiGetElementThumbnailWithSizeRequest
 */
 func (a *ThumbnailApiService) GetElementThumbnailWithSize(ctx context.Context, did string, wv string, wvid string, eid string, sz string) ApiGetElementThumbnailWithSizeRequest {
 	return ApiGetElementThumbnailWithSizeRequest{
@@ -769,7 +773,8 @@ func (a *ThumbnailApiService) GetElementThumbnailWithSize(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ThumbnailApiService) GetElementThumbnailWithSizeExecute(r ApiGetElementThumbnailWithSizeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -836,7 +841,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithSizeExecute(r ApiGetElement
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -855,7 +860,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithSizeExecute(r ApiGetElement
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -884,9 +889,9 @@ GetThumbnailForDocument Get the thumbnail info for a document in the default wor
 * The default workspace may vary by user; the image served depends on the signed-in user.
 * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetThumbnailForDocumentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetThumbnailForDocumentRequest
 */
 func (a *ThumbnailApiService) GetThumbnailForDocument(ctx context.Context, did string) ApiGetThumbnailForDocumentRequest {
 	return ApiGetThumbnailForDocumentRequest{
@@ -897,7 +902,8 @@ func (a *ThumbnailApiService) GetThumbnailForDocument(ctx context.Context, did s
 }
 
 // Execute executes the request
-//  @return BTThumbnailInfo
+//
+//	@return BTThumbnailInfo
 func (a *ThumbnailApiService) GetThumbnailForDocumentExecute(r ApiGetThumbnailForDocumentRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -948,7 +954,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentExecute(r ApiGetThumbnailFo
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -967,7 +973,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentExecute(r ApiGetThumbnailFo
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1002,10 +1008,10 @@ GetThumbnailForDocumentAndVersion Get the thumbnail info for a version of a docu
 * By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
 * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param vid
- @return ApiGetThumbnailForDocumentAndVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param vid
+	@return ApiGetThumbnailForDocumentAndVersionRequest
 */
 func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersion(ctx context.Context, did string, vid string) ApiGetThumbnailForDocumentAndVersionRequest {
 	return ApiGetThumbnailForDocumentAndVersionRequest{
@@ -1017,7 +1023,8 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersion(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return BTThumbnailInfo
+//
+//	@return BTThumbnailInfo
 func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionExecute(r ApiGetThumbnailForDocumentAndVersionRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1072,7 +1079,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionExecute(r ApiGetT
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1091,7 +1098,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionExecute(r ApiGetT
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1119,10 +1126,10 @@ GetThumbnailForDocumentAndVersionOld This endpoint will be deprecated soon. Use 
 
 This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @param vid
- @return ApiGetThumbnailForDocumentAndVersionOldRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@param vid
+	@return ApiGetThumbnailForDocumentAndVersionOldRequest
 */
 func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOld(ctx context.Context, did string, vid string) ApiGetThumbnailForDocumentAndVersionOldRequest {
 	return ApiGetThumbnailForDocumentAndVersionOldRequest{
@@ -1134,7 +1141,8 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOld(ctx context.C
 }
 
 // Execute executes the request
-//  @return BTThumbnailInfo
+//
+//	@return BTThumbnailInfo
 func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOldExecute(r ApiGetThumbnailForDocumentAndVersionOldRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1186,7 +1194,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOldExecute(r ApiG
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1205,7 +1213,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOldExecute(r ApiG
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1232,9 +1240,9 @@ GetThumbnailForDocumentOld This endpoint will be deprecated soon. Use `getThumbn
 
 This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did
- @return ApiGetThumbnailForDocumentOldRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiGetThumbnailForDocumentOldRequest
 */
 func (a *ThumbnailApiService) GetThumbnailForDocumentOld(ctx context.Context, did string) ApiGetThumbnailForDocumentOldRequest {
 	return ApiGetThumbnailForDocumentOldRequest{
@@ -1245,7 +1253,8 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentOld(ctx context.Context, di
 }
 
 // Execute executes the request
-//  @return BTThumbnailInfo
+//
+//	@return BTThumbnailInfo
 func (a *ThumbnailApiService) GetThumbnailForDocumentOldExecute(r ApiGetThumbnailForDocumentOldRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1296,7 +1305,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentOldExecute(r ApiGetThumbnai
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1315,7 +1324,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentOldExecute(r ApiGetThumbnai
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1366,12 +1375,12 @@ SetApplicationElementThumbnail Set the thumbnail image for an application elemen
 * Application elements can have both primary and secondary thumbnails. A primary thumbnail represents the top-level of the element. A secondary thumbnail can represent sub-components of the element (e.g., a drawing sheet).
 * To update one or more thumbnails, you must set the overwrite query param to `true` and supply the entire set of thumbnails. All previous thumbnails will be deleted prior to updating the element with the latest images.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param did The id of the document in which to perform the operation.
- @param wv Indicates which of workspace (w) or version (v) id is specified below.
- @param wvid The id of the workspace, version in which the operation should be performed.
- @param eid The id of the element in which to perform the operation.
- @return ApiSetApplicationElementThumbnailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wv Indicates which of workspace (w) or version (v) id is specified below.
+	@param wvid The id of the workspace, version in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiSetApplicationElementThumbnailRequest
 */
 func (a *ThumbnailApiService) SetApplicationElementThumbnail(ctx context.Context, did string, wv string, wvid string, eid string) ApiSetApplicationElementThumbnailRequest {
 	return ApiSetApplicationElementThumbnailRequest{
@@ -1385,7 +1394,8 @@ func (a *ThumbnailApiService) SetApplicationElementThumbnail(ctx context.Context
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *ThumbnailApiService) SetApplicationElementThumbnailExecute(r ApiSetApplicationElementThumbnailRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1450,7 +1460,7 @@ func (a *ThumbnailApiService) SetApplicationElementThumbnailExecute(r ApiSetAppl
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -1469,7 +1479,7 @@ func (a *ThumbnailApiService) SetApplicationElementThumbnailExecute(r ApiSetAppl
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

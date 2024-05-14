@@ -16,6 +16,7 @@ import (
 
 // BTSMSpecificMetadata1315 struct for BTSMSpecificMetadata1315
 type BTSMSpecificMetadata1315 struct {
+	BTDomainSpecificMetadata961
 	BtType               *string        `json:"btType,omitempty"`
 	DefinitionEntityType *GBTEntityType `json:"definitionEntityType,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTSMSpecificMetadata1315) SetDefinitionEntityType(v GBTEntityType) {
 
 func (o BTSMSpecificMetadata1315) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTDomainSpecificMetadata961, errBTDomainSpecificMetadata961 := json.Marshal(o.BTDomainSpecificMetadata961)
+	if errBTDomainSpecificMetadata961 != nil {
+		return []byte{}, errBTDomainSpecificMetadata961
+	}
+	errBTDomainSpecificMetadata961 = json.Unmarshal([]byte(serializedBTDomainSpecificMetadata961), &toSerialize)
+	if errBTDomainSpecificMetadata961 != nil {
+		return []byte{}, errBTDomainSpecificMetadata961
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

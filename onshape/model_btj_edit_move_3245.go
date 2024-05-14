@@ -16,6 +16,7 @@ import (
 
 // BTJEditMove3245 Move an existing node from one path to another.
 type BTJEditMove3245 struct {
+	BTJEdit3734
 	BtType          *string      `json:"btType,omitempty"`
 	DestinationPath *BTJPath3073 `json:"destinationPath,omitempty"`
 	SourcePath      *BTJPath3073 `json:"sourcePath,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTJEditMove3245) SetSourcePath(v BTJPath3073) {
 
 func (o BTJEditMove3245) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJEdit3734, errBTJEdit3734 := json.Marshal(o.BTJEdit3734)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
+	errBTJEdit3734 = json.Unmarshal([]byte(serializedBTJEdit3734), &toSerialize)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

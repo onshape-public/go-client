@@ -104,7 +104,7 @@ func (dst *BTInnerParameterLocation1715) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTInnerArrayParameterLocation-2368'
@@ -117,7 +117,7 @@ func (dst *BTInnerParameterLocation1715) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInnerParameterLocation1715 = nil
-			return fmt.Errorf("Failed to unmarshal BTInnerParameterLocation1715 as BTInnerArrayParameterLocation2368: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInnerParameterLocation1715 as BTInnerArrayParameterLocation2368: %s", err.Error())
 		}
 	}
 
@@ -131,7 +131,7 @@ func (dst *BTInnerParameterLocation1715) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTInnerParameterLocation1715 = nil
-			return fmt.Errorf("Failed to unmarshal BTInnerParameterLocation1715 as BTInnerDerivedParameterLocation591: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTInnerParameterLocation1715 as BTInnerDerivedParameterLocation591: %s", err.Error())
 		}
 	}
 
@@ -142,7 +142,7 @@ func (dst *BTInnerParameterLocation1715) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTInnerParameterLocation1715, return on the first match
 	} else {
 		dst.implBTInnerParameterLocation1715 = nil
-		return fmt.Errorf("Failed to unmarshal BTInnerParameterLocation1715 as base_BTInnerParameterLocation1715: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTInnerParameterLocation1715 as base_BTInnerParameterLocation1715: %s", err.Error())
 	}
 }
 

@@ -16,6 +16,7 @@ import (
 
 // BTPStatementContinue274 struct for BTPStatementContinue274
 type BTPStatementContinue274 struct {
+	BTPStatement269
 	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
@@ -433,6 +434,14 @@ func (o *BTPStatementContinue274) SetSpaceAfterContinue(v BTPSpace10) {
 
 func (o BTPStatementContinue274) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPStatement269, errBTPStatement269 := json.Marshal(o.BTPStatement269)
+	if errBTPStatement269 != nil {
+		return []byte{}, errBTPStatement269
+	}
+	errBTPStatement269 = json.Unmarshal([]byte(serializedBTPStatement269), &toSerialize)
+	if errBTPStatement269 != nil {
+		return []byte{}, errBTPStatement269
+	}
 	if o.Annotation != nil {
 		toSerialize["annotation"] = o.Annotation
 	}

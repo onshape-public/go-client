@@ -176,7 +176,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTFSValueArray-1499'
@@ -189,7 +189,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueArray1499: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueArray1499: %s", err.Error())
 		}
 	}
 
@@ -203,7 +203,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueBoolean1195: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueBoolean1195: %s", err.Error())
 		}
 	}
 
@@ -217,7 +217,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueMap2062: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueMap2062: %s", err.Error())
 		}
 	}
 
@@ -231,7 +231,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueNumber772: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueNumber772: %s", err.Error())
 		}
 	}
 
@@ -245,7 +245,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueOther1124: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueOther1124: %s", err.Error())
 		}
 	}
 
@@ -259,7 +259,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueString1422: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueString1422: %s", err.Error())
 		}
 	}
 
@@ -273,7 +273,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueTooBig1247: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueTooBig1247: %s", err.Error())
 		}
 	}
 
@@ -287,7 +287,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueUndefined2003: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueUndefined2003: %s", err.Error())
 		}
 	}
 
@@ -301,7 +301,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFSValue1888 = nil
-			return fmt.Errorf("Failed to unmarshal BTFSValue1888 as BTFSValueWithUnits1817: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFSValue1888 as BTFSValueWithUnits1817: %s", err.Error())
 		}
 	}
 
@@ -312,7 +312,7 @@ func (dst *BTFSValue1888) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTFSValue1888, return on the first match
 	} else {
 		dst.implBTFSValue1888 = nil
-		return fmt.Errorf("Failed to unmarshal BTFSValue1888 as base_BTFSValue1888: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTFSValue1888 as base_BTFSValue1888: %s", err.Error())
 	}
 }
 

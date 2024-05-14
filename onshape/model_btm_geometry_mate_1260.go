@@ -16,6 +16,7 @@ import (
 
 // BTMGeometryMate1260 struct for BTMGeometryMate1260
 type BTMGeometryMate1260 struct {
+	BTMAssemblyFeature887
 	BtType *string `json:"btType,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
 	FeatureId *string `json:"featureId,omitempty"`
@@ -709,6 +710,14 @@ func (o *BTMGeometryMate1260) SetVersion(v int32) {
 
 func (o BTMGeometryMate1260) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMAssemblyFeature887, errBTMAssemblyFeature887 := json.Marshal(o.BTMAssemblyFeature887)
+	if errBTMAssemblyFeature887 != nil {
+		return []byte{}, errBTMAssemblyFeature887
+	}
+	errBTMAssemblyFeature887 = json.Unmarshal([]byte(serializedBTMAssemblyFeature887), &toSerialize)
+	if errBTMAssemblyFeature887 != nil {
+		return []byte{}, errBTMAssemblyFeature887
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

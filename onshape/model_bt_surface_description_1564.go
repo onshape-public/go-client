@@ -329,7 +329,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTConeDescription-860'
@@ -342,7 +342,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSurfaceDescription1564 = nil
-			return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as BTConeDescription860: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as BTConeDescription860: %s", err.Error())
 		}
 	}
 
@@ -356,7 +356,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSurfaceDescription1564 = nil
-			return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as BTCylinderDescription686: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as BTCylinderDescription686: %s", err.Error())
 		}
 	}
 
@@ -370,7 +370,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSurfaceDescription1564 = nil
-			return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as BTPlaneDescription692: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as BTPlaneDescription692: %s", err.Error())
 		}
 	}
 
@@ -384,7 +384,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSurfaceDescription1564 = nil
-			return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as BTSphereDescription1263: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as BTSphereDescription1263: %s", err.Error())
 		}
 	}
 
@@ -398,7 +398,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSurfaceDescription1564 = nil
-			return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as BTSpunDescription657: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as BTSpunDescription657: %s", err.Error())
 		}
 	}
 
@@ -412,7 +412,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSurfaceDescription1564 = nil
-			return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as BTSweepDescription1473: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as BTSweepDescription1473: %s", err.Error())
 		}
 	}
 
@@ -426,7 +426,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTSurfaceDescription1564 = nil
-			return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as BTTorusDescription1834: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as BTTorusDescription1834: %s", err.Error())
 		}
 	}
 
@@ -437,7 +437,7 @@ func (dst *BTSurfaceDescription1564) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTSurfaceDescription1564, return on the first match
 	} else {
 		dst.implBTSurfaceDescription1564 = nil
-		return fmt.Errorf("Failed to unmarshal BTSurfaceDescription1564 as base_BTSurfaceDescription1564: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTSurfaceDescription1564 as base_BTSurfaceDescription1564: %s", err.Error())
 	}
 }
 

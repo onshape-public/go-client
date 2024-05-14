@@ -16,9 +16,10 @@ import (
 
 // BTPStatementLoopForIn279 struct for BTPStatementLoopForIn279
 type BTPStatementLoopForIn279 struct {
+	BTPStatementLoop277
+	BtType              *string             `json:"btType,omitempty"`
 	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Atomic              *bool               `json:"atomic,omitempty"`
-	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
 	NodeId              *string             `json:"nodeId,omitempty"`
@@ -54,6 +55,38 @@ func NewBTPStatementLoopForIn279() *BTPStatementLoopForIn279 {
 func NewBTPStatementLoopForIn279WithDefaults() *BTPStatementLoopForIn279 {
 	this := BTPStatementLoopForIn279{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPStatementLoopForIn279) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPStatementLoopForIn279) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPStatementLoopForIn279) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPStatementLoopForIn279) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetAnnotation returns the Annotation field value if set, zero value otherwise.
@@ -118,38 +151,6 @@ func (o *BTPStatementLoopForIn279) HasAtomic() bool {
 // SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
 func (o *BTPStatementLoopForIn279) SetAtomic(v bool) {
 	o.Atomic = &v
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTPStatementLoopForIn279) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPStatementLoopForIn279) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTPStatementLoopForIn279) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTPStatementLoopForIn279) SetBtType(v string) {
-	o.BtType = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -730,14 +731,22 @@ func (o *BTPStatementLoopForIn279) SetVar(v BTPIdentifier8) {
 
 func (o BTPStatementLoopForIn279) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPStatementLoop277, errBTPStatementLoop277 := json.Marshal(o.BTPStatementLoop277)
+	if errBTPStatementLoop277 != nil {
+		return []byte{}, errBTPStatementLoop277
+	}
+	errBTPStatementLoop277 = json.Unmarshal([]byte(serializedBTPStatementLoop277), &toSerialize)
+	if errBTPStatementLoop277 != nil {
+		return []byte{}, errBTPStatementLoop277
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
 	if o.Annotation != nil {
 		toSerialize["annotation"] = o.Annotation
 	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType

@@ -16,6 +16,7 @@ import (
 
 // BTSingleAssemblyReferenceDisplayData1557 struct for BTSingleAssemblyReferenceDisplayData1557
 type BTSingleAssemblyReferenceDisplayData1557 struct {
+	BTSingleReferenceDisplayData1943
 	BtType               *string                      `json:"btType,omitempty"`
 	ContextWorkspaceId   *string                      `json:"contextWorkspaceId,omitempty"`
 	DocumentId           *string                      `json:"documentId,omitempty"`
@@ -499,6 +500,14 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) SetTransform(v BTBSMatrix386)
 
 func (o BTSingleAssemblyReferenceDisplayData1557) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSingleReferenceDisplayData1943, errBTSingleReferenceDisplayData1943 := json.Marshal(o.BTSingleReferenceDisplayData1943)
+	if errBTSingleReferenceDisplayData1943 != nil {
+		return []byte{}, errBTSingleReferenceDisplayData1943
+	}
+	errBTSingleReferenceDisplayData1943 = json.Unmarshal([]byte(serializedBTSingleReferenceDisplayData1943), &toSerialize)
+	if errBTSingleReferenceDisplayData1943 != nil {
+		return []byte{}, errBTSingleReferenceDisplayData1943
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

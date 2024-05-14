@@ -249,7 +249,7 @@ func (dst *BTParameterVisibilityOnEqual180) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterVisibilityOnMateDOFType-2114'
@@ -262,7 +262,7 @@ func (dst *BTParameterVisibilityOnEqual180) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterVisibilityOnEqual180 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterVisibilityOnEqual180 as BTParameterVisibilityOnMateDOFType2114: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterVisibilityOnEqual180 as BTParameterVisibilityOnMateDOFType2114: %s", err.Error())
 		}
 	}
 
@@ -273,7 +273,7 @@ func (dst *BTParameterVisibilityOnEqual180) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParameterVisibilityOnEqual180, return on the first match
 	} else {
 		dst.implBTParameterVisibilityOnEqual180 = nil
-		return fmt.Errorf("Failed to unmarshal BTParameterVisibilityOnEqual180 as base_BTParameterVisibilityOnEqual180: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParameterVisibilityOnEqual180 as base_BTParameterVisibilityOnEqual180: %s", err.Error())
 	}
 }
 
@@ -332,6 +332,7 @@ func (v *NullableBTParameterVisibilityOnEqual180) UnmarshalJSON(src []byte) erro
 }
 
 type base_BTParameterVisibilityOnEqual180 struct {
+	BTParameterVisibilityCondition177
 	BtType      *string `json:"btType,omitempty"`
 	InArray     *bool   `json:"inArray,omitempty"`
 	ParameterId *string `json:"parameterId,omitempty"`
@@ -485,6 +486,14 @@ func (o *base_BTParameterVisibilityOnEqual180) SetValue(v string) {
 
 func (o base_BTParameterVisibilityOnEqual180) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityCondition177, errBTParameterVisibilityCondition177 := json.Marshal(o.BTParameterVisibilityCondition177)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
+	errBTParameterVisibilityCondition177 = json.Unmarshal([]byte(serializedBTParameterVisibilityCondition177), &toSerialize)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -20,13 +20,13 @@ type BTParameterSpecReference2789 struct {
 	implBTParameterSpecReference2789 interface{}
 }
 
-// BTParameterSpecReferenceCADImport1792AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferenceCADImport1792 wrapped in BTParameterSpecReference2789
-func (o *BTParameterSpecReferenceCADImport1792) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
+// BTParameterSpecReferencePartStudio1256AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferencePartStudio1256 wrapped in BTParameterSpecReference2789
+func (o *BTParameterSpecReferencePartStudio1256) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
 	return &BTParameterSpecReference2789{o}
 }
 
-// BTParameterSpecReferencePartStudio1256AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferencePartStudio1256 wrapped in BTParameterSpecReference2789
-func (o *BTParameterSpecReferencePartStudio1256) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
+// BTParameterSpecReferenceCADImport1792AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferenceCADImport1792 wrapped in BTParameterSpecReference2789
+func (o *BTParameterSpecReferenceCADImport1792) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
 	return &BTParameterSpecReference2789{o}
 }
 
@@ -884,7 +884,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterSpecReferenceAssembly-2821'
@@ -897,7 +897,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceAssembly2821: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceAssembly2821: %s", err.Error())
 		}
 	}
 
@@ -911,49 +911,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceBlob1367: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTParameterSpecReferenceCADImport-1792'
-	if jsonDict["btType"] == "BTParameterSpecReferenceCADImport-1792" {
-		// try to unmarshal JSON data into BTParameterSpecReferenceCADImport1792
-		var qr *BTParameterSpecReferenceCADImport1792
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpecReference2789 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceCADImport1792: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTParameterSpecReferenceImage-1722'
-	if jsonDict["btType"] == "BTParameterSpecReferenceImage-1722" {
-		// try to unmarshal JSON data into BTParameterSpecReferenceImage1722
-		var qr *BTParameterSpecReferenceImage1722
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpecReference2789 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceImage1722: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTParameterSpecReferenceJSON-1816'
-	if jsonDict["btType"] == "BTParameterSpecReferenceJSON-1816" {
-		// try to unmarshal JSON data into BTParameterSpecReferenceJSON1816
-		var qr *BTParameterSpecReferenceJSON1816
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpecReference2789 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceJSON1816: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceBlob1367: %s", err.Error())
 		}
 	}
 
@@ -967,21 +925,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTParameterSpecReferenceTable-1520'
-	if jsonDict["btType"] == "BTParameterSpecReferenceTable-1520" {
-		// try to unmarshal JSON data into BTParameterSpecReferenceTable1520
-		var qr *BTParameterSpecReferenceTable1520
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpecReference2789 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceTable1520: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
 		}
 	}
 
@@ -995,7 +939,63 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceCADImport-1792'
+	if jsonDict["btType"] == "BTParameterSpecReferenceCADImport-1792" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceCADImport1792
+		var qr *BTParameterSpecReferenceCADImport1792
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReference2789 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReference2789 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceCADImport1792: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceImage-1722'
+	if jsonDict["btType"] == "BTParameterSpecReferenceImage-1722" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceImage1722
+		var qr *BTParameterSpecReferenceImage1722
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReference2789 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReference2789 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceImage1722: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceJSON-1816'
+	if jsonDict["btType"] == "BTParameterSpecReferenceJSON-1816" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceJSON1816
+		var qr *BTParameterSpecReferenceJSON1816
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReference2789 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReference2789 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceJSON1816: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceTable-1520'
+	if jsonDict["btType"] == "BTParameterSpecReferenceTable-1520" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceTable1520
+		var qr *BTParameterSpecReferenceTable1520
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReference2789 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReference2789 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceTable1520: %s", err.Error())
 		}
 	}
 
@@ -1006,7 +1006,7 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTParameterSpecReference2789, return on the first match
 	} else {
 		dst.implBTParameterSpecReference2789 = nil
-		return fmt.Errorf("Failed to unmarshal BTParameterSpecReference2789 as base_BTParameterSpecReference2789: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as base_BTParameterSpecReference2789: %s", err.Error())
 	}
 }
 
@@ -1065,6 +1065,7 @@ func (v *NullableBTParameterSpecReference2789) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTParameterSpecReference2789 struct {
+	BTParameterSpec6
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
@@ -1614,6 +1615,14 @@ func (o *base_BTParameterSpecReference2789) SetDefaultPurpose(v BTElementLibrary
 
 func (o base_BTParameterSpecReference2789) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
+	errBTParameterSpec6 = json.Unmarshal([]byte(serializedBTParameterSpec6), &toSerialize)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}

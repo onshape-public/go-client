@@ -414,7 +414,7 @@ func (dst *BTConfiguredValuesColumnInfo1025) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTConfiguredDimensionColumnInfo-2168'
@@ -427,7 +427,7 @@ func (dst *BTConfiguredValuesColumnInfo1025) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTConfiguredValuesColumnInfo1025 = nil
-			return fmt.Errorf("Failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredDimensionColumnInfo2168: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredDimensionColumnInfo2168: %s", err.Error())
 		}
 	}
 
@@ -441,7 +441,7 @@ func (dst *BTConfiguredValuesColumnInfo1025) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTConfiguredValuesColumnInfo1025 = nil
-			return fmt.Errorf("Failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredFeatureColumnInfo1014: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredFeatureColumnInfo1014: %s", err.Error())
 		}
 	}
 
@@ -455,7 +455,7 @@ func (dst *BTConfiguredValuesColumnInfo1025) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTConfiguredValuesColumnInfo1025 = nil
-			return fmt.Errorf("Failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredParameterColumnInfo2900: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredParameterColumnInfo2900: %s", err.Error())
 		}
 	}
 
@@ -469,7 +469,7 @@ func (dst *BTConfiguredValuesColumnInfo1025) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTConfiguredValuesColumnInfo1025 = nil
-			return fmt.Errorf("Failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredSuppressionColumnInfo2498: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTConfiguredValuesColumnInfo1025 as BTConfiguredSuppressionColumnInfo2498: %s", err.Error())
 		}
 	}
 
@@ -480,7 +480,7 @@ func (dst *BTConfiguredValuesColumnInfo1025) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTConfiguredValuesColumnInfo1025, return on the first match
 	} else {
 		dst.implBTConfiguredValuesColumnInfo1025 = nil
-		return fmt.Errorf("Failed to unmarshal BTConfiguredValuesColumnInfo1025 as base_BTConfiguredValuesColumnInfo1025: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTConfiguredValuesColumnInfo1025 as base_BTConfiguredValuesColumnInfo1025: %s", err.Error())
 	}
 }
 
@@ -539,6 +539,7 @@ func (v *NullableBTConfiguredValuesColumnInfo1025) UnmarshalJSON(src []byte) err
 }
 
 type base_BTConfiguredValuesColumnInfo1025 struct {
+	BTTableColumnInfo1222
 	BtType        *string                  `json:"btType,omitempty"`
 	Id            *string                  `json:"id,omitempty"`
 	NodeId        *string                  `json:"nodeId,omitempty"`
@@ -791,6 +792,14 @@ func (o *base_BTConfiguredValuesColumnInfo1025) SetParentType(v GBTConfiguredPar
 
 func (o base_BTConfiguredValuesColumnInfo1025) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
+	errBTTableColumnInfo1222 = json.Unmarshal([]byte(serializedBTTableColumnInfo1222), &toSerialize)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

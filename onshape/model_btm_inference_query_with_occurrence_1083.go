@@ -16,6 +16,7 @@ import (
 
 // BTMInferenceQueryWithOccurrence1083 struct for BTMInferenceQueryWithOccurrence1083
 type BTMInferenceQueryWithOccurrence1083 struct {
+	BTMIndividualQueryWithOccurrence811
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -566,6 +567,14 @@ func (o *BTMInferenceQueryWithOccurrence1083) SetSecondEntityQuery(v string) {
 
 func (o BTMInferenceQueryWithOccurrence1083) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryWithOccurrence811, errBTMIndividualQueryWithOccurrence811 := json.Marshal(o.BTMIndividualQueryWithOccurrence811)
+	if errBTMIndividualQueryWithOccurrence811 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrence811
+	}
+	errBTMIndividualQueryWithOccurrence811 = json.Unmarshal([]byte(serializedBTMIndividualQueryWithOccurrence811), &toSerialize)
+	if errBTMIndividualQueryWithOccurrence811 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrence811
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

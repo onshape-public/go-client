@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -33,8 +32,8 @@ func (r ApiGetAllVersionsRequest) Execute() (*Versions, *http.Response, error) {
 /*
 GetAllVersions Get all versions of the Onshape REST APIs.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllVersionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllVersionsRequest
 */
 func (a *VersionApiService) GetAllVersions(ctx context.Context) ApiGetAllVersionsRequest {
 	return ApiGetAllVersionsRequest{
@@ -44,7 +43,8 @@ func (a *VersionApiService) GetAllVersions(ctx context.Context) ApiGetAllVersion
 }
 
 // Execute executes the request
-//  @return Versions
+//
+//	@return Versions
 func (a *VersionApiService) GetAllVersionsExecute(r ApiGetAllVersionsRequest) (*Versions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -94,7 +94,7 @@ func (a *VersionApiService) GetAllVersionsExecute(r ApiGetAllVersionsRequest) (*
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -113,7 +113,7 @@ func (a *VersionApiService) GetAllVersionsExecute(r ApiGetAllVersionsRequest) (*
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

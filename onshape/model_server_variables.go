@@ -16,9 +16,12 @@ import (
 
 // ServerVariables struct for ServerVariables
 type ServerVariables struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Empty      *bool                             `json:"empty,omitempty"`
+	Extensions           map[string]map[string]interface{} `json:"extensions,omitempty"`
+	Empty                *bool                             `json:"empty,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ServerVariables ServerVariables
 
 // NewServerVariables instantiates a new ServerVariables object
 // This constructor will assign default values to properties that have it defined,
@@ -109,7 +112,30 @@ func (o ServerVariables) MarshalJSON() ([]byte, error) {
 	if o.Empty != nil {
 		toSerialize["empty"] = o.Empty
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return json.Marshal(toSerialize)
+}
+
+func (o *ServerVariables) UnmarshalJSON(bytes []byte) (err error) {
+	varServerVariables := _ServerVariables{}
+
+	if err = json.Unmarshal(bytes, &varServerVariables); err == nil {
+		*o = ServerVariables(varServerVariables)
+	}
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "extensions")
+		delete(additionalProperties, "empty")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableServerVariables struct {

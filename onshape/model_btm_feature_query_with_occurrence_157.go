@@ -849,7 +849,7 @@ func (dst *BTMFeatureQueryWithOccurrence157) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTMPartStudioMateConnectorQuery-1324'
@@ -862,7 +862,7 @@ func (dst *BTMFeatureQueryWithOccurrence157) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMFeatureQueryWithOccurrence157 = nil
-			return fmt.Errorf("Failed to unmarshal BTMFeatureQueryWithOccurrence157 as BTMPartStudioMateConnectorQuery1324: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMFeatureQueryWithOccurrence157 as BTMPartStudioMateConnectorQuery1324: %s", err.Error())
 		}
 	}
 
@@ -873,7 +873,7 @@ func (dst *BTMFeatureQueryWithOccurrence157) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTMFeatureQueryWithOccurrence157, return on the first match
 	} else {
 		dst.implBTMFeatureQueryWithOccurrence157 = nil
-		return fmt.Errorf("Failed to unmarshal BTMFeatureQueryWithOccurrence157 as base_BTMFeatureQueryWithOccurrence157: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTMFeatureQueryWithOccurrence157 as base_BTMFeatureQueryWithOccurrence157: %s", err.Error())
 	}
 }
 
@@ -932,6 +932,7 @@ func (v *NullableBTMFeatureQueryWithOccurrence157) UnmarshalJSON(src []byte) err
 }
 
 type base_BTMFeatureQueryWithOccurrence157 struct {
+	BTMIndividualQueryWithOccurrenceBase904
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -1482,6 +1483,14 @@ func (o *base_BTMFeatureQueryWithOccurrence157) SetQueryData(v string) {
 
 func (o base_BTMFeatureQueryWithOccurrence157) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryWithOccurrenceBase904, errBTMIndividualQueryWithOccurrenceBase904 := json.Marshal(o.BTMIndividualQueryWithOccurrenceBase904)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
+	errBTMIndividualQueryWithOccurrenceBase904 = json.Unmarshal([]byte(serializedBTMIndividualQueryWithOccurrenceBase904), &toSerialize)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

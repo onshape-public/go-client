@@ -524,7 +524,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTBodyEntity-26'
@@ -537,7 +537,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureEntity34 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureEntity34 as BTBodyEntity26: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureEntity34 as BTBodyEntity26: %s", err.Error())
 		}
 	}
 
@@ -551,7 +551,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureEntity34 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureEntity34 as BTConstructionPlaneEntity27: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureEntity34 as BTConstructionPlaneEntity27: %s", err.Error())
 		}
 	}
 
@@ -565,7 +565,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureEntity34 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureEntity34 as BTMateConnectorEntity28: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureEntity34 as BTMateConnectorEntity28: %s", err.Error())
 		}
 	}
 
@@ -579,7 +579,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureEntity34 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureEntity34 as BTOriginEntity935: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureEntity34 as BTOriginEntity935: %s", err.Error())
 		}
 	}
 
@@ -593,7 +593,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureEntity34 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureEntity34 as BTPointEntity1439: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureEntity34 as BTPointEntity1439: %s", err.Error())
 		}
 	}
 
@@ -607,7 +607,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTFeatureEntity34 = nil
-			return fmt.Errorf("Failed to unmarshal BTFeatureEntity34 as BTSketchEntity25: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTFeatureEntity34 as BTSketchEntity25: %s", err.Error())
 		}
 	}
 
@@ -618,7 +618,7 @@ func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTFeatureEntity34, return on the first match
 	} else {
 		dst.implBTFeatureEntity34 = nil
-		return fmt.Errorf("Failed to unmarshal BTFeatureEntity34 as base_BTFeatureEntity34: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTFeatureEntity34 as base_BTFeatureEntity34: %s", err.Error())
 	}
 }
 
@@ -677,6 +677,7 @@ func (v *NullableBTFeatureEntity34) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTFeatureEntity34 struct {
+	BTBaseEntityData33
 	BtType                 *string                       `json:"btType,omitempty"`
 	CopyWithoutGeometry    *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
 	Decompressed           *BTBaseEntityData33           `json:"decompressed,omitempty"`
@@ -995,6 +996,14 @@ func (o *base_BTFeatureEntity34) SetFirstGeometry(v BTEntityGeometry35) {
 
 func (o base_BTFeatureEntity34) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTBaseEntityData33, errBTBaseEntityData33 := json.Marshal(o.BTBaseEntityData33)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
+	errBTBaseEntityData33 = json.Unmarshal([]byte(serializedBTBaseEntityData33), &toSerialize)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

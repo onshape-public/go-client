@@ -804,7 +804,7 @@ func (dst *BTReadOnlyParameterSpec1889) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTParameterSpecProgress-3078'
@@ -817,7 +817,7 @@ func (dst *BTReadOnlyParameterSpec1889) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTReadOnlyParameterSpec1889 = nil
-			return fmt.Errorf("Failed to unmarshal BTReadOnlyParameterSpec1889 as BTParameterSpecProgress3078: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTReadOnlyParameterSpec1889 as BTParameterSpecProgress3078: %s", err.Error())
 		}
 	}
 
@@ -831,7 +831,7 @@ func (dst *BTReadOnlyParameterSpec1889) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTReadOnlyParameterSpec1889 = nil
-			return fmt.Errorf("Failed to unmarshal BTReadOnlyParameterSpec1889 as BTParameterSpecStringWithTolerances2535: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTReadOnlyParameterSpec1889 as BTParameterSpecStringWithTolerances2535: %s", err.Error())
 		}
 	}
 
@@ -842,7 +842,7 @@ func (dst *BTReadOnlyParameterSpec1889) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTReadOnlyParameterSpec1889, return on the first match
 	} else {
 		dst.implBTReadOnlyParameterSpec1889 = nil
-		return fmt.Errorf("Failed to unmarshal BTReadOnlyParameterSpec1889 as base_BTReadOnlyParameterSpec1889: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTReadOnlyParameterSpec1889 as base_BTReadOnlyParameterSpec1889: %s", err.Error())
 	}
 }
 
@@ -901,6 +901,7 @@ func (v *NullableBTReadOnlyParameterSpec1889) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTReadOnlyParameterSpec1889 struct {
+	BTParameterSpec6
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
@@ -1417,6 +1418,14 @@ func (o *base_BTReadOnlyParameterSpec1889) SetVisibilityCondition(v BTParameterV
 
 func (o base_BTReadOnlyParameterSpec1889) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
+	errBTParameterSpec6 = json.Unmarshal([]byte(serializedBTParameterSpec6), &toSerialize)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}

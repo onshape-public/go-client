@@ -16,6 +16,7 @@ import (
 
 // BTSketchTextDisplayData1707 struct for BTSketchTextDisplayData1707
 type BTSketchTextDisplayData1707 struct {
+	BTSketchCompositeEntityDisplayData1093
 	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTSketchTextDisplayData1707) SetPoints(v []float64) {
 
 func (o BTSketchTextDisplayData1707) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSketchCompositeEntityDisplayData1093, errBTSketchCompositeEntityDisplayData1093 := json.Marshal(o.BTSketchCompositeEntityDisplayData1093)
+	if errBTSketchCompositeEntityDisplayData1093 != nil {
+		return []byte{}, errBTSketchCompositeEntityDisplayData1093
+	}
+	errBTSketchCompositeEntityDisplayData1093 = json.Unmarshal([]byte(serializedBTSketchCompositeEntityDisplayData1093), &toSerialize)
+	if errBTSketchCompositeEntityDisplayData1093 != nil {
+		return []byte{}, errBTSketchCompositeEntityDisplayData1093
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -13,7 +13,6 @@ package onshape
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -120,8 +119,8 @@ GetOpenApi Get the OpenAPI specification for the Onshape REST API.
 
 The Onshape API OpenAPI specification is returned in the JSON format.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetOpenApiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetOpenApiRequest
 */
 func (a *OpenApiApiService) GetOpenApi(ctx context.Context) ApiGetOpenApiRequest {
 	return ApiGetOpenApiRequest{
@@ -131,7 +130,8 @@ func (a *OpenApiApiService) GetOpenApi(ctx context.Context) ApiGetOpenApiRequest
 }
 
 // Execute executes the request
-//  @return OpenAPI
+//
+//	@return OpenAPI
 func (a *OpenApiApiService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -257,7 +257,7 @@ func (a *OpenApiApiService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI,
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -276,7 +276,7 @@ func (a *OpenApiApiService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI,
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -302,8 +302,8 @@ GetTags Get the list of tags in the Onshape OpenAPI specification.
 
 Tags are used to group operations. For example, `Document` groups operations on documents.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTagsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTagsRequest
 */
 func (a *OpenApiApiService) GetTags(ctx context.Context) ApiGetTagsRequest {
 	return ApiGetTagsRequest{
@@ -313,7 +313,8 @@ func (a *OpenApiApiService) GetTags(ctx context.Context) ApiGetTagsRequest {
 }
 
 // Execute executes the request
-//  @return []Tag
+//
+//	@return []Tag
 func (a *OpenApiApiService) GetTagsExecute(r ApiGetTagsRequest) ([]Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -363,7 +364,7 @@ func (a *OpenApiApiService) GetTagsExecute(r ApiGetTagsRequest) ([]Tag, *http.Re
 	var _ io.Reader
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
@@ -382,7 +383,7 @@ func (a *OpenApiApiService) GetTagsExecute(r ApiGetTagsRequest) ([]Tag, *http.Re
 	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 
 	if err != nil {
-		localVarBody, _ := ioutil.ReadAll(localVarHTTPResponse.Body)
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
 
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,

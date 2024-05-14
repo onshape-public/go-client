@@ -249,7 +249,7 @@ func (dst *BTBoundingBox1052) UnmarshalJSON(data []byte) error {
 	var jsonDict map[string]interface{}
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
-		return fmt.Errorf("Failed to unmarshal JSON into map for the discriminator lookup.")
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
 	// check if the discriminator value is 'BTNonAlignedBoundingBox-4180'
@@ -262,7 +262,7 @@ func (dst *BTBoundingBox1052) UnmarshalJSON(data []byte) error {
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTBoundingBox1052 = nil
-			return fmt.Errorf("Failed to unmarshal BTBoundingBox1052 as BTNonAlignedBoundingBox4180: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTBoundingBox1052 as BTNonAlignedBoundingBox4180: %s", err.Error())
 		}
 	}
 
@@ -273,7 +273,7 @@ func (dst *BTBoundingBox1052) UnmarshalJSON(data []byte) error {
 		return nil // data stored in dst.base_BTBoundingBox1052, return on the first match
 	} else {
 		dst.implBTBoundingBox1052 = nil
-		return fmt.Errorf("Failed to unmarshal BTBoundingBox1052 as base_BTBoundingBox1052: %s", err.Error())
+		return fmt.Errorf("failed to unmarshal BTBoundingBox1052 as base_BTBoundingBox1052: %s", err.Error())
 	}
 }
 
