@@ -7,7 +7,7 @@ import (
 )
 
 func TestPartStudioAPI(t *testing.T) {
-    InitializeTester[*onshape.PartStudioApiService](t)
+    InitializeTester[*onshape.PartStudioAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetPartStudioNamedViewsRequest{},

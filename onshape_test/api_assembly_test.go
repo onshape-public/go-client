@@ -7,7 +7,7 @@ import (
 )
 
 func TestAssemblyAPI(t *testing.T) {
-    InitializeTester[*onshape.AssemblyApiService](t)
+    InitializeTester[*onshape.AssemblyAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetNamedViewsRequest{},

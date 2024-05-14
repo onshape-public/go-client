@@ -7,7 +7,7 @@ import (
 )
 
 func TestBlobElementAPI(t *testing.T) {
-    InitializeTester[*onshape.BlobElementApiService](t)
+    InitializeTester[*onshape.BlobElementAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiUploadFileCreateElementRequest{},

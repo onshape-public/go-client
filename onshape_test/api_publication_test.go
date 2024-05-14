@@ -7,7 +7,7 @@ import (
 )
 
 func TestPublicationAPI(t *testing.T) {
-    InitializeTester[*onshape.PublicationApiService](t)
+    InitializeTester[*onshape.PublicationAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetPublicationItemsRequest{},

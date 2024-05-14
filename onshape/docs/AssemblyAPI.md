@@ -1,0 +1,1761 @@
+# \AssemblyAPI
+
+All URIs are relative to *https://cad.onshape.com/api/v6*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**AddFeature**](AssemblyAPI.md#AddFeature) | **Post** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the assembly feature list.
+[**CreateAssembly**](AssemblyAPI.md#CreateAssembly) | **Post** /assemblies/d/{did}/w/{wid} | Create a new assembly tab in the document.
+[**CreateInstance**](AssemblyAPI.md#CreateInstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
+[**DeleteFeature**](AssemblyAPI.md#DeleteFeature) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a feature from an assembly.
+[**DeleteInstance**](AssemblyAPI.md#DeleteInstance) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid} | Delete an instance of an assembly.
+[**GetAssemblyBoundingBoxes**](AssemblyAPI.md#GetAssemblyBoundingBoxes) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get bounding box information for the specified assembly.
+[**GetAssemblyDefinition**](AssemblyAPI.md#GetAssemblyDefinition) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid} | Get definition information for the specified assembly.
+[**GetAssemblyMassProperties**](AssemblyAPI.md#GetAssemblyMassProperties) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for the assembly.
+[**GetAssemblyShadedViews**](AssemblyAPI.md#GetAssemblyShadedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get an array of shaded view images for the document.
+[**GetBillOfMaterials**](AssemblyAPI.md#GetBillOfMaterials) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom | Get the Bill Of Materials (BOM) content for the specified assembly.
+[**GetExplodedViews**](AssemblyAPI.md#GetExplodedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | Get a list of exploded views for the specified assembly.
+[**GetFeatureSpecs**](AssemblyAPI.md#GetFeatureSpecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature spec definitions for an assembly.
+[**GetFeatures**](AssemblyAPI.md#GetFeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get the definitions of the specified features in an assembly.
+[**GetNamedPositions**](AssemblyAPI.md#GetNamedPositions) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions | Get a list of all named positions for the assembly.
+[**GetNamedViews**](AssemblyAPI.md#GetNamedViews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | Get the view data for all named views for the specified element.
+[**GetOrCreateBillOfMaterialsElement**](AssemblyAPI.md#GetOrCreateBillOfMaterialsElement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
+[**InsertTransformedInstances**](AssemblyAPI.md#InsertTransformedInstances) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/transformedinstances | Create new instances with transformation.
+[**Modify**](AssemblyAPI.md#Modify) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/modify | Modify an assembly.
+[**TransformOccurrences**](AssemblyAPI.md#TransformOccurrences) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms | Transform a list of assembly occurrences.
+[**TranslateFormat**](AssemblyAPI.md#TranslateFormat) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export the assembly to another format.
+[**UpdateFeature**](AssemblyAPI.md#UpdateFeature) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update an existing feature for an Assembly.
+
+
+
+## AddFeature
+
+> BTFeatureDefinitionResponse1617 AddFeature(ctx, did, wvm, wvmid, eid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
+
+Add a feature to the assembly feature list.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wvm := "wvm_example" // string | 
+    wvmid := "wvmid_example" // string | 
+    eid := "eid_example" // string | 
+    bTFeatureDefinitionCall1406 := *openapiclient.NewBTFeatureDefinitionCall1406() // BTFeatureDefinitionCall1406 |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.AddFeature(context.Background(), did, wvm, wvmid, eid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.AddFeature``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AddFeature`: BTFeatureDefinitionResponse1617
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.AddFeature`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wvm** | **string** |  | 
+**wvmid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAddFeatureRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTFeatureDefinitionCall1406** | [**BTFeatureDefinitionCall1406**](BTFeatureDefinitionCall1406.md) |  | 
+
+### Return type
+
+[**BTFeatureDefinitionResponse1617**](BTFeatureDefinitionResponse1617.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAssembly
+
+> BTDocumentElementInfo CreateAssembly(ctx, did, wid).BTModelElementParams(bTModelElementParams).Execute()
+
+Create a new assembly tab in the document.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    bTModelElementParams := *openapiclient.NewBTModelElementParams() // BTModelElementParams | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.CreateAssembly(context.Background(), did, wid).BTModelElementParams(bTModelElementParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.CreateAssembly``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateAssembly`: BTDocumentElementInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.CreateAssembly`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAssemblyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **bTModelElementParams** | [**BTModelElementParams**](BTModelElementParams.md) |  | 
+
+### Return type
+
+[**BTDocumentElementInfo**](BTDocumentElementInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateInstance
+
+> map[string]interface{} CreateInstance(ctx, did, wid, eid).BTAssemblyInstanceDefinitionParams(bTAssemblyInstanceDefinitionParams).Execute()
+
+Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    eid := "eid_example" // string | 
+    bTAssemblyInstanceDefinitionParams := *openapiclient.NewBTAssemblyInstanceDefinitionParams("DocumentId_example") // BTAssemblyInstanceDefinitionParams |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.CreateInstance(context.Background(), did, wid, eid).BTAssemblyInstanceDefinitionParams(bTAssemblyInstanceDefinitionParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.CreateInstance``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateInstance`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.CreateInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateInstanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTAssemblyInstanceDefinitionParams** | [**BTAssemblyInstanceDefinitionParams**](BTAssemblyInstanceDefinitionParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteFeature
+
+> BTFeatureApiBase1430 DeleteFeature(ctx, did, wid, eid, fid).Execute()
+
+Delete a feature from an assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    eid := "eid_example" // string | 
+    fid := "fid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.DeleteFeature(context.Background(), did, wid, eid, fid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.DeleteFeature``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteFeature`: BTFeatureApiBase1430
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.DeleteFeature`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+**eid** | **string** |  | 
+**fid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteFeatureRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**BTFeatureApiBase1430**](BTFeatureApiBase1430.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteInstance
+
+> map[string]interface{} DeleteInstance(ctx, did, eid, wid, nid).Execute()
+
+Delete an instance of an assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    eid := "eid_example" // string | 
+    wid := "wid_example" // string | 
+    nid := "nid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.DeleteInstance(context.Background(), did, eid, wid, nid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.DeleteInstance``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteInstance`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.DeleteInstance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**eid** | **string** |  | 
+**wid** | **string** |  | 
+**nid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteInstanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAssemblyBoundingBoxes
+
+> BTBoundingBoxInfo GetAssemblyBoundingBoxes(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).IncludeHidden(includeHidden).DisplayStateId(displayStateId).NamedPositionId(namedPositionId).IncludeSketches(includeSketches).Execute()
+
+Get bounding box information for the specified assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    explodedViewId := "explodedViewId_example" // string |  (optional)
+    includeHidden := true // bool |  (optional)
+    displayStateId := "displayStateId_example" // string |  (optional)
+    namedPositionId := "namedPositionId_example" // string |  (optional)
+    includeSketches := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetAssemblyBoundingBoxes(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).IncludeHidden(includeHidden).DisplayStateId(displayStateId).NamedPositionId(namedPositionId).IncludeSketches(includeSketches).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetAssemblyBoundingBoxes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAssemblyBoundingBoxes`: BTBoundingBoxInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetAssemblyBoundingBoxes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAssemblyBoundingBoxesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **explodedViewId** | **string** |  | 
+ **includeHidden** | **bool** |  | 
+ **displayStateId** | **string** |  | 
+ **namedPositionId** | **string** |  | 
+ **includeSketches** | **bool** |  | [default to false]
+
+### Return type
+
+[**BTBoundingBoxInfo**](BTBoundingBoxInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAssemblyDefinition
+
+> BTAssemblyDefinitionInfo GetAssemblyDefinition(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).IncludeMateFeatures(includeMateFeatures).IncludeNonSolids(includeNonSolids).IncludeMateConnectors(includeMateConnectors).ExcludeSuppressed(excludeSuppressed).Execute()
+
+Get definition information for the specified assembly.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    explodedViewId := "explodedViewId_example" // string |  (optional)
+    includeMateFeatures := true // bool |  (optional) (default to false)
+    includeNonSolids := true // bool |  (optional) (default to false)
+    includeMateConnectors := true // bool |  (optional) (default to false)
+    excludeSuppressed := true // bool | Whether or not to exclude suppressed instances/mate features in response (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetAssemblyDefinition(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).IncludeMateFeatures(includeMateFeatures).IncludeNonSolids(includeNonSolids).IncludeMateConnectors(includeMateConnectors).ExcludeSuppressed(excludeSuppressed).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetAssemblyDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAssemblyDefinition`: BTAssemblyDefinitionInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetAssemblyDefinition`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAssemblyDefinitionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **explodedViewId** | **string** |  | 
+ **includeMateFeatures** | **bool** |  | [default to false]
+ **includeNonSolids** | **bool** |  | [default to false]
+ **includeMateConnectors** | **bool** |  | [default to false]
+ **excludeSuppressed** | **bool** | Whether or not to exclude suppressed instances/mate features in response | [default to false]
+
+### Return type
+
+[**BTAssemblyDefinitionInfo**](BTAssemblyDefinitionInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAssemblyMassProperties
+
+> BTMassPropertiesInfo GetAssemblyMassProperties(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).Execute()
+
+Get the mass properties for the assembly.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetAssemblyMassProperties(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetAssemblyMassProperties``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAssemblyMassProperties`: BTMassPropertiesInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetAssemblyMassProperties`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAssemblyMassPropertiesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+
+### Return type
+
+[**BTMassPropertiesInfo**](BTMassPropertiesInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAssemblyShadedViews
+
+> BTShadedViewsInfo GetAssemblyShadedViews(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).ViewMatrix(viewMatrix).OutputHeight(outputHeight).OutputWidth(outputWidth).PixelSize(pixelSize).Edges(edges).ShowAllParts(showAllParts).IncludeSurfaces(includeSurfaces).UseAntiAliasing(useAntiAliasing).IncludeWires(includeWires).DisplayStateId(displayStateId).NamedPositionId(namedPositionId).Execute()
+
+Get an array of shaded view images for the document.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    explodedViewId := "explodedViewId_example" // string |  (optional)
+    viewMatrix := "viewMatrix_example" // string |  (optional) (default to "front")
+    outputHeight := int32(56) // int32 |  (optional) (default to 500)
+    outputWidth := int32(56) // int32 |  (optional) (default to 500)
+    pixelSize := float64(1.2) // float64 |  (optional) (default to 0.003)
+    edges := "edges_example" // string |  (optional) (default to "show")
+    showAllParts := true // bool |  (optional) (default to false)
+    includeSurfaces := true // bool |  (optional) (default to true)
+    useAntiAliasing := true // bool |  (optional) (default to false)
+    includeWires := true // bool |  (optional) (default to false)
+    displayStateId := "displayStateId_example" // string |  (optional)
+    namedPositionId := "namedPositionId_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetAssemblyShadedViews(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).ViewMatrix(viewMatrix).OutputHeight(outputHeight).OutputWidth(outputWidth).PixelSize(pixelSize).Edges(edges).ShowAllParts(showAllParts).IncludeSurfaces(includeSurfaces).UseAntiAliasing(useAntiAliasing).IncludeWires(includeWires).DisplayStateId(displayStateId).NamedPositionId(namedPositionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetAssemblyShadedViews``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAssemblyShadedViews`: BTShadedViewsInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetAssemblyShadedViews`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAssemblyShadedViewsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **explodedViewId** | **string** |  | 
+ **viewMatrix** | **string** |  | [default to &quot;front&quot;]
+ **outputHeight** | **int32** |  | [default to 500]
+ **outputWidth** | **int32** |  | [default to 500]
+ **pixelSize** | **float64** |  | [default to 0.003]
+ **edges** | **string** |  | [default to &quot;show&quot;]
+ **showAllParts** | **bool** |  | [default to false]
+ **includeSurfaces** | **bool** |  | [default to true]
+ **useAntiAliasing** | **bool** |  | [default to false]
+ **includeWires** | **bool** |  | [default to false]
+ **displayStateId** | **string** |  | 
+ **namedPositionId** | **string** |  | 
+
+### Return type
+
+[**BTShadedViewsInfo**](BTShadedViewsInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBillOfMaterials
+
+> BTBillOfMaterialsInfo GetBillOfMaterials(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Thumbnail(thumbnail).Execute()
+
+Get the Bill Of Materials (BOM) content for the specified assembly.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    bomColumnIds := []string{"Inner_example"} // []string | Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids. (optional)
+    indented := true // bool | Return the Structured BOM table with all rows collapsed, otherwise returns the Flattened BOM. (optional) (default to true)
+    multiLevel := true // bool | Return the Structured BOM table with all rows expanded. Ignored if indented is false. (optional) (default to false)
+    generateIfAbsent := true // bool | Return the BOM table data even if the BOM does not exist. If this is false and the BOM does not exist, a 404 status code will be returned. This option is highly recommended. (optional) (default to false)
+    templateId := "templateId_example" // string | The id of the BOM table template to use when generating the table. (optional)
+    includeExcluded := true // bool | Include items that have been excluded from the BOM table. (optional)
+    onlyVisibleColumns := true // bool | Only return data for visible columns, instead of all possible columns. (optional)
+    ignoreSubassemblyBomBehavior := true // bool | Ignore the 'Subassembly BOM behavior' property when constructing the BOM table. (optional)
+    includeItemMicroversions := true // bool | Include element microversions and version metadata microversions in the JSON. (optional) (default to false)
+    includeTopLevelAssemblyRow := true // bool | Include top-level assembly row when constructing the BOM table. (optional) (default to false)
+    thumbnail := true // bool | Return thumbnail info (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetBillOfMaterials(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).BomColumnIds(bomColumnIds).Indented(indented).MultiLevel(multiLevel).GenerateIfAbsent(generateIfAbsent).TemplateId(templateId).IncludeExcluded(includeExcluded).OnlyVisibleColumns(onlyVisibleColumns).IgnoreSubassemblyBomBehavior(ignoreSubassemblyBomBehavior).IncludeItemMicroversions(includeItemMicroversions).IncludeTopLevelAssemblyRow(includeTopLevelAssemblyRow).Thumbnail(thumbnail).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetBillOfMaterials``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetBillOfMaterials`: BTBillOfMaterialsInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetBillOfMaterials`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBillOfMaterialsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **bomColumnIds** | **[]string** | Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids. | 
+ **indented** | **bool** | Return the Structured BOM table with all rows collapsed, otherwise returns the Flattened BOM. | [default to true]
+ **multiLevel** | **bool** | Return the Structured BOM table with all rows expanded. Ignored if indented is false. | [default to false]
+ **generateIfAbsent** | **bool** | Return the BOM table data even if the BOM does not exist. If this is false and the BOM does not exist, a 404 status code will be returned. This option is highly recommended. | [default to false]
+ **templateId** | **string** | The id of the BOM table template to use when generating the table. | 
+ **includeExcluded** | **bool** | Include items that have been excluded from the BOM table. | 
+ **onlyVisibleColumns** | **bool** | Only return data for visible columns, instead of all possible columns. | 
+ **ignoreSubassemblyBomBehavior** | **bool** | Ignore the &#39;Subassembly BOM behavior&#39; property when constructing the BOM table. | 
+ **includeItemMicroversions** | **bool** | Include element microversions and version metadata microversions in the JSON. | [default to false]
+ **includeTopLevelAssemblyRow** | **bool** | Include top-level assembly row when constructing the BOM table. | [default to false]
+ **thumbnail** | **bool** | Return thumbnail info | [default to false]
+
+### Return type
+
+[**BTBillOfMaterialsInfo**](BTBillOfMaterialsInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetExplodedViews
+
+> []BTViewFeatureBaseInfo GetExplodedViews(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).Execute()
+
+Get a list of exploded views for the specified assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    explodedViewId := "explodedViewId_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetExplodedViews(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetExplodedViews``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetExplodedViews`: []BTViewFeatureBaseInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetExplodedViews`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetExplodedViewsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **explodedViewId** | **string** |  | 
+
+### Return type
+
+[**[]BTViewFeatureBaseInfo**](BTViewFeatureBaseInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetFeatureSpecs
+
+> BTFeatureSpecsResponse664 GetFeatureSpecs(ctx, did, wvm, wvmid, eid).Execute()
+
+Get the feature spec definitions for an assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wvm := "wvm_example" // string | 
+    wvmid := "wvmid_example" // string | 
+    eid := "eid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetFeatureSpecs(context.Background(), did, wvm, wvmid, eid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetFeatureSpecs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetFeatureSpecs`: BTFeatureSpecsResponse664
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetFeatureSpecs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wvm** | **string** |  | 
+**wvmid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFeatureSpecsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**BTFeatureSpecsResponse664**](BTFeatureSpecsResponse664.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetFeatures
+
+> BTAssemblyFeatureListResponse1174 GetFeatures(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).FeatureId(featureId).Execute()
+
+Get the definitions of the specified features in an assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    explodedViewId := "explodedViewId_example" // string |  (optional)
+    featureId := []string{"Inner_example"} // []string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetFeatures(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).FeatureId(featureId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetFeatures``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetFeatures`: BTAssemblyFeatureListResponse1174
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetFeatures`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFeaturesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **explodedViewId** | **string** |  | 
+ **featureId** | **[]string** |  | 
+
+### Return type
+
+[**BTAssemblyFeatureListResponse1174**](BTAssemblyFeatureListResponse1174.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetNamedPositions
+
+> []BTViewFeatureBaseInfo GetNamedPositions(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).Execute()
+
+Get a list of all named positions for the assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    explodedViewId := "explodedViewId_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetNamedPositions(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetNamedPositions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNamedPositions`: []BTViewFeatureBaseInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetNamedPositions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNamedPositionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **explodedViewId** | **string** |  | 
+
+### Return type
+
+[**[]BTViewFeatureBaseInfo**](BTViewFeatureBaseInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetNamedViews
+
+> BTNamedViewsInfo GetNamedViews(ctx, did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
+
+Get the view data for all named views for the specified element.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    eid := "eid_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    skipPerspective := true // bool |  (optional) (default to true)
+    includeSectionCutViews := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetNamedViews(context.Background(), did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetNamedViews``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNamedViews`: BTNamedViewsInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetNamedViews`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNamedViewsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **skipPerspective** | **bool** |  | [default to true]
+ **includeSectionCutViews** | **bool** |  | [default to false]
+
+### Return type
+
+[**BTNamedViewsInfo**](BTNamedViewsInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetOrCreateBillOfMaterialsElement
+
+> BTDocumentElementInfo GetOrCreateBillOfMaterialsElement(ctx, did, wid, eid).Execute()
+
+Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    eid := "eid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.GetOrCreateBillOfMaterialsElement(context.Background(), did, wid, eid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.GetOrCreateBillOfMaterialsElement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetOrCreateBillOfMaterialsElement`: BTDocumentElementInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.GetOrCreateBillOfMaterialsElement`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOrCreateBillOfMaterialsElementRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**BTDocumentElementInfo**](BTDocumentElementInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InsertTransformedInstances
+
+> BTAssemblyInsertTransformedInstancesResponse InsertTransformedInstances(ctx, did, eid, wid).BTAssemblyTransformedInstancesDefinitionParams(bTAssemblyTransformedInstancesDefinitionParams).Execute()
+
+Create new instances with transformation.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    eid := "eid_example" // string | 
+    wid := "wid_example" // string | 
+    bTAssemblyTransformedInstancesDefinitionParams := *openapiclient.NewBTAssemblyTransformedInstancesDefinitionParams() // BTAssemblyTransformedInstancesDefinitionParams | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.InsertTransformedInstances(context.Background(), did, eid, wid).BTAssemblyTransformedInstancesDefinitionParams(bTAssemblyTransformedInstancesDefinitionParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.InsertTransformedInstances``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `InsertTransformedInstances`: BTAssemblyInsertTransformedInstancesResponse
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.InsertTransformedInstances`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**eid** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInsertTransformedInstancesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTAssemblyTransformedInstancesDefinitionParams** | [**BTAssemblyTransformedInstancesDefinitionParams**](BTAssemblyTransformedInstancesDefinitionParams.md) |  | 
+
+### Return type
+
+[**BTAssemblyInsertTransformedInstancesResponse**](BTAssemblyInsertTransformedInstancesResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Modify
+
+> map[string]interface{} Modify(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).BTAssemblyModificationParams(bTAssemblyModificationParams).Execute()
+
+Modify an assembly.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    bTAssemblyModificationParams := *openapiclient.NewBTAssemblyModificationParams() // BTAssemblyModificationParams |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.Modify(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).BTAssemblyModificationParams(bTAssemblyModificationParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.Modify``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `Modify`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.Modify`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **bTAssemblyModificationParams** | [**BTAssemblyModificationParams**](BTAssemblyModificationParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TransformOccurrences
+
+> map[string]interface{} TransformOccurrences(ctx, did, eid, wid).BTAssemblyTransformDefinitionParams(bTAssemblyTransformDefinitionParams).Execute()
+
+Transform a list of assembly occurrences.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    eid := "eid_example" // string | 
+    wid := "wid_example" // string | 
+    bTAssemblyTransformDefinitionParams := *openapiclient.NewBTAssemblyTransformDefinitionParams() // BTAssemblyTransformDefinitionParams |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.TransformOccurrences(context.Background(), did, eid, wid).BTAssemblyTransformDefinitionParams(bTAssemblyTransformDefinitionParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.TransformOccurrences``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `TransformOccurrences`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.TransformOccurrences`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**eid** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTransformOccurrencesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTAssemblyTransformDefinitionParams** | [**BTAssemblyTransformDefinitionParams**](BTAssemblyTransformDefinitionParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TranslateFormat
+
+> BTTranslationRequestInfo TranslateFormat(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
+
+Export the assembly to another format.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wv := "wv_example" // string | 
+    wvid := "wvid_example" // string | 
+    eid := "eid_example" // string | 
+    bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams("FormatName_example") // BTTranslateFormatParams | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.TranslateFormat(context.Background(), did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.TranslateFormat``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `TranslateFormat`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.TranslateFormat`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wv** | **string** |  | 
+**wvid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTranslateFormatRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTTranslateFormatParams** | [**BTTranslateFormatParams**](BTTranslateFormatParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateFeature
+
+> BTFeatureDefinitionResponse1617 UpdateFeature(ctx, did, wid, eid, fid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
+
+Update an existing feature for an Assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    eid := "eid_example" // string | 
+    fid := "fid_example" // string | 
+    bTFeatureDefinitionCall1406 := *openapiclient.NewBTFeatureDefinitionCall1406() // BTFeatureDefinitionCall1406 |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyAPI.UpdateFeature(context.Background(), did, wid, eid, fid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyAPI.UpdateFeature``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateFeature`: BTFeatureDefinitionResponse1617
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyAPI.UpdateFeature`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+**eid** | **string** |  | 
+**fid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateFeatureRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTFeatureDefinitionCall1406** | [**BTFeatureDefinitionCall1406**](BTFeatureDefinitionCall1406.md) |  | 
+
+### Return type
+
+[**BTFeatureDefinitionResponse1617**](BTFeatureDefinitionResponse1617.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

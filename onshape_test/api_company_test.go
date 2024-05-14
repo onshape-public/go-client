@@ -7,7 +7,7 @@ import (
 )
 
 func TestCompanyAPI(t *testing.T) {
-    InitializeTester[*onshape.CompanyApiService](t)
+    InitializeTester[*onshape.CompanyAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiFindCompanyRequest{},

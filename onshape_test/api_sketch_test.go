@@ -7,7 +7,7 @@ import (
 )
 
 func TestSketchAPI(t *testing.T) {
-    InitializeTester[*onshape.SketchApiService](t)
+    InitializeTester[*onshape.SketchAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetSketchInfoRequest{},

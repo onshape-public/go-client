@@ -8,7 +8,7 @@ import (
 )
 
 func TestElementAPI(t *testing.T) {
-	InitializeTester[*onshape.ElementApiService](t)
+	InitializeTester[*onshape.ElementAPIService](t)
 
 	SetContext(TestingContext{
 		"wvm": "w",
@@ -16,7 +16,7 @@ func TestElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiCreateDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,
@@ -27,7 +27,7 @@ func TestElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiCreateElementRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).AppElementApi,
+			ApiService: Context()["client"].(*onshape.APIClient).AppElementAPI,
 		}.BTAppElementParams(*GetDefaultAppElementParams()),
 		Expect: NoAPIError(),
 	}.Execute()
@@ -79,7 +79,7 @@ func TestElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiDeleteDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		},
 		Expect: NoAPIError(),
 	}.Execute()

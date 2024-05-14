@@ -7,7 +7,7 @@ import (
 )
 
 func TestPartAPI(t *testing.T) {
-	InitializeTester[*onshape.PartApiService](t)
+	InitializeTester[*onshape.PartAPIService](t)
 
 	OpenAPITest{
 		Call:   onshape.ApiGetPartsWMVRequest{},

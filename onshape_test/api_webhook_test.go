@@ -7,7 +7,7 @@ import (
 )
 
 func TestWebhookAPI(t *testing.T) {
-    InitializeTester[*onshape.WebhookApiService](t)
+    InitializeTester[*onshape.WebhookAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetWebhooksRequest{},

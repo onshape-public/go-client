@@ -7,7 +7,7 @@ import (
 )
 
 func TestUserAPI(t *testing.T) {
-    InitializeTester[*onshape.UserApiService](t)
+    InitializeTester[*onshape.UserAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiSessionRequest{},

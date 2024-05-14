@@ -53,7 +53,7 @@ func TestTxnWorkflow(t *testing.T) {
 			//create a branch (workspace)
 			branchCreateParams := onshape.NewBTVersionOrWorkspaceParams()
 			branchCreateParams.SetName(tt.args.branch_name)
-			wkspInfo, rawResp, err := client.DocumentApi.CreateWorkspace(ctx, did).BTVersionOrWorkspaceParams(*branchCreateParams).Execute()
+			wkspInfo, rawResp, err := client.DocumentAPI.CreateWorkspace(ctx, did).BTVersionOrWorkspaceParams(*branchCreateParams).Execute()
 			require.NoErrorf(t, err, "Response status %d", rawResp.StatusCode)
 			wid = wkspInfo.GetId()
 
@@ -61,7 +61,7 @@ func TestTxnWorkflow(t *testing.T) {
 			asmAppElementParams := onshape.NewBTAppElementParams("String")
 			asmAppElementParams.SetName(tt.args.elementName)
 			appElementModifyInfo, rawResp, err :=
-				client.AppElementApi.CreateElement(ctx, did, wid).BTAppElementParams(*asmAppElementParams).Execute()
+				client.AppElementAPI.CreateElement(ctx, did, wid).BTAppElementParams(*asmAppElementParams).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 			eid := appElementModifyInfo.GetElementId()
 			fmt.Printf("Created Element with id:%s", eid)
@@ -70,7 +70,7 @@ func TestTxnWorkflow(t *testing.T) {
 			btAppElementStartTransactionParams := onshape.NewBTAppElementStartTransactionParams()
 			btAppElementStartTransactionParams.SetDescription("Transaction to populate Assembly w/Data")
 			btAppElementStartTransactionParams.SetParentChangeId(appElementModifyInfo.GetChangeId())
-			btAppElementModifyInfo, rawResp, err := client.AppElementApi.StartTransaction(ctx, did, eid, wid).BTAppElementStartTransactionParams(*btAppElementStartTransactionParams).Execute()
+			btAppElementModifyInfo, rawResp, err := client.AppElementAPI.StartTransaction(ctx, did, eid, wid).BTAppElementStartTransactionParams(*btAppElementStartTransactionParams).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 			txnID := btAppElementModifyInfo.TransactionId
 
@@ -84,7 +84,7 @@ func TestTxnWorkflow(t *testing.T) {
 				btAppElementUpdateParams.SetChanges([]onshape.BTAppElementChangeParams{*btAppElementChangeParams})
 				btAppElementUpdateParams.SetTransactionId(*txnID)
 
-				btAppElementModifyInfo, rawResp, err = client.AppElementApi.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*btAppElementUpdateParams).Execute()
+				btAppElementModifyInfo, rawResp, err = client.AppElementAPI.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*btAppElementUpdateParams).Execute()
 				require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 				require.Equal(t, *txnID, btAppElementModifyInfo.GetTransactionId())
 			}
@@ -111,23 +111,23 @@ func TestTxnWorkflow(t *testing.T) {
 			btjEditInsert.SetValue(value)
 			bTAppElementUpdateParams.SetJsonTreeEdit(*btjEditInsert.AsBTJEdit3734())
 			bTAppElementUpdateParams.SetTransactionId(*txnID)
-			client.AppElementApi.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*bTAppElementUpdateParams).Execute()
+			client.AppElementAPI.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*bTAppElementUpdateParams).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 
 			//Commit Transaction
 			btAppElementCommitTransactionParams := onshape.NewBTAppElementCommitTransactionParams()
 			btAppElementCommitTransactionParams.SetDescription("Done Updating the Assembly")
 			btAppElementCommitTransactionParams.SetTransactionIds([]string{*txnID})
-			_, rawResp, err = client.AppElementApi.CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(*btAppElementCommitTransactionParams).Execute()
+			_, rawResp, err = client.AppElementAPI.CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(*btAppElementCommitTransactionParams).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 
 			//Verify we only have two microversions
-			btDocumentHistoryInfos, rawResp, err := client.DocumentApi.GetDocumentHistory(ctx, did, "w", wid).Execute()
+			btDocumentHistoryInfos, rawResp, err := client.DocumentAPI.GetDocumentHistory(ctx, did, "w", wid).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 			require.LessOrEqual(t, 3, len(btDocumentHistoryInfos))
 			latestCommit := btDocumentHistoryInfos[0].GetMicroversionId()
 
-			btAppElementIdsInfo, rawResp, err := client.AppElementApi.GetSubelementIds(ctx, did, eid, "m", latestCommit).Execute()
+			btAppElementIdsInfo, rawResp, err := client.AppElementAPI.GetSubelementIds(ctx, did, eid, "m", latestCommit).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
 			require.Equal(t, 3, len(btAppElementIdsInfo.GetSubelementIds()))
 		})

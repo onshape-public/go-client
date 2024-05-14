@@ -11,7 +11,7 @@ import (
 )
 
 func TestCommentAPI(t *testing.T) {
-	InitializeTester[*onshape.CommentApiService](t)
+	InitializeTester[*onshape.CommentAPIService](t)
 	message := "test comment"
 	updatedMessage := "updated test comment"
 	fileName := "spider-man-1.jpg"
@@ -21,11 +21,11 @@ func TestCommentAPI(t *testing.T) {
 	file := onshape.NewHttpFileFromOsFile(osFile)
 
 	onshapeAPIClient := Context()["client"].(*onshape.APIClient)
-	commentApi := onshapeAPIClient.CommentApi
+	commentApi := onshapeAPIClient.CommentAPI
 
 	OpenAPITest{
 		Call: onshape.ApiCreateDocumentRequest{
-			ApiService: onshapeAPIClient.DocumentApi,
+			ApiService: onshapeAPIClient.DocumentAPI,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,

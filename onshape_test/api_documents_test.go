@@ -59,7 +59,7 @@ func TestCreateAndGetDocument(t *testing.T) {
 			docParams.SetIsPublic(false)
 
 			t.Log("Creating document")
-			docInfo, rawResp, err := client.DocumentApi.CreateDocument(ctx).BTDocumentParams(*docParams).Execute()
+			docInfo, rawResp, err := client.DocumentAPI.CreateDocument(ctx).BTDocumentParams(*docParams).Execute()
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			} else {
@@ -74,7 +74,7 @@ func TestCreateAndGetDocument(t *testing.T) {
 			}
 
 			t.Log("Getting a document")
-			getDocInfo, rawResp, err := client.DocumentApi.GetDocument(ctx, docInfo.GetId()).Execute()
+			getDocInfo, rawResp, err := client.DocumentAPI.GetDocument(ctx, docInfo.GetId()).Execute()
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			} else {
@@ -84,7 +84,7 @@ func TestCreateAndGetDocument(t *testing.T) {
 			}
 
 			t.Log("Deleting a document")
-			_, rawResp, err = client.DocumentApi.DeleteDocument(ctx, getDocInfo.GetId()).Execute()
+			_, rawResp, err = client.DocumentAPI.DeleteDocument(ctx, getDocInfo.GetId()).Execute()
 
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
@@ -117,7 +117,7 @@ func TestGetDocument(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			ctx := context.Background()
 
-			resp, _, err := client.DocumentApi.GetDocuments(ctx).Filter(6).Owner("5ecd79b2a3e6eb1251369b10").SortColumn("modifiedAt").SortOrder("desc").Execute()
+			resp, _, err := client.DocumentAPI.GetDocuments(ctx).Filter(6).Owner("5ecd79b2a3e6eb1251369b10").SortColumn("modifiedAt").SortOrder("desc").Execute()
 			require.NoError(t, err)
 			require.NotNil(t, resp)
 			//require.True(t, len(*resp.Items) == 20)

@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// DocumentApiService DocumentApi service
-type DocumentApiService service
+// DocumentAPIService DocumentAPI service
+type DocumentAPIService service
 
 type ApiCopyWorkspaceRequest struct {
 	ctx                  context.Context
-	ApiService           *DocumentApiService
+	ApiService           *DocumentAPIService
 	did                  string
 	wid                  string
 	bTCopyDocumentParams *BTCopyDocumentParams
@@ -46,7 +46,7 @@ CopyWorkspace Copy workspace by document ID and workspace ID.
 	@param wid
 	@return ApiCopyWorkspaceRequest
 */
-func (a *DocumentApiService) CopyWorkspace(ctx context.Context, did string, wid string) ApiCopyWorkspaceRequest {
+func (a *DocumentAPIService) CopyWorkspace(ctx context.Context, did string, wid string) ApiCopyWorkspaceRequest {
 	return ApiCopyWorkspaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -58,7 +58,7 @@ func (a *DocumentApiService) CopyWorkspace(ctx context.Context, did string, wid 
 // Execute executes the request
 //
 //	@return BTCopyDocumentInfo
-func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*BTCopyDocumentInfo, *http.Response, error) {
+func (a *DocumentAPIService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*BTCopyDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -66,7 +66,7 @@ func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*B
 		localVarReturnValue *BTCopyDocumentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.CopyWorkspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.CopyWorkspace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *DocumentApiService) CopyWorkspaceExecute(r ApiCopyWorkspaceRequest) (*B
 
 type ApiCreateDocumentRequest struct {
 	ctx              context.Context
-	ApiService       *DocumentApiService
+	ApiService       *DocumentAPIService
 	bTDocumentParams *BTDocumentParams
 }
 
@@ -161,7 +161,7 @@ The `name` field is required in the `BTDocumentParams` schema when creating a ne
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateDocumentRequest
 */
-func (a *DocumentApiService) CreateDocument(ctx context.Context) ApiCreateDocumentRequest {
+func (a *DocumentAPIService) CreateDocument(ctx context.Context) ApiCreateDocumentRequest {
 	return ApiCreateDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -171,7 +171,7 @@ func (a *DocumentApiService) CreateDocument(ctx context.Context) ApiCreateDocume
 // Execute executes the request
 //
 //	@return BTDocumentInfo
-func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (*BTDocumentInfo, *http.Response, error) {
+func (a *DocumentAPIService) CreateDocumentExecute(r ApiCreateDocumentRequest) (*BTDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -179,7 +179,7 @@ func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (
 		localVarReturnValue *BTDocumentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.CreateDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.CreateDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,7 +258,7 @@ func (a *DocumentApiService) CreateDocumentExecute(r ApiCreateDocumentRequest) (
 
 type ApiCreateVersionRequest struct {
 	ctx                        context.Context
-	ApiService                 *DocumentApiService
+	ApiService                 *DocumentAPIService
 	did                        string
 	bTVersionOrWorkspaceParams *BTVersionOrWorkspaceParams
 }
@@ -279,7 +279,7 @@ CreateVersion Create version by document ID.
 	@param did
 	@return ApiCreateVersionRequest
 */
-func (a *DocumentApiService) CreateVersion(ctx context.Context, did string) ApiCreateVersionRequest {
+func (a *DocumentAPIService) CreateVersion(ctx context.Context, did string) ApiCreateVersionRequest {
 	return ApiCreateVersionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -290,7 +290,7 @@ func (a *DocumentApiService) CreateVersion(ctx context.Context, did string) ApiC
 // Execute executes the request
 //
 //	@return BTVersionInfo
-func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*BTVersionInfo, *http.Response, error) {
+func (a *DocumentAPIService) CreateVersionExecute(r ApiCreateVersionRequest) (*BTVersionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -298,7 +298,7 @@ func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*B
 		localVarReturnValue *BTVersionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.CreateVersion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.CreateVersion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,7 +378,7 @@ func (a *DocumentApiService) CreateVersionExecute(r ApiCreateVersionRequest) (*B
 
 type ApiCreateWorkspaceRequest struct {
 	ctx                        context.Context
-	ApiService                 *DocumentApiService
+	ApiService                 *DocumentAPIService
 	did                        string
 	bTVersionOrWorkspaceParams *BTVersionOrWorkspaceParams
 }
@@ -399,7 +399,7 @@ CreateWorkspace Create workspace by document ID.
 	@param did
 	@return ApiCreateWorkspaceRequest
 */
-func (a *DocumentApiService) CreateWorkspace(ctx context.Context, did string) ApiCreateWorkspaceRequest {
+func (a *DocumentAPIService) CreateWorkspace(ctx context.Context, did string) ApiCreateWorkspaceRequest {
 	return ApiCreateWorkspaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -410,7 +410,7 @@ func (a *DocumentApiService) CreateWorkspace(ctx context.Context, did string) Ap
 // Execute executes the request
 //
 //	@return BTWorkspaceInfo
-func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest) (*BTWorkspaceInfo, *http.Response, error) {
+func (a *DocumentAPIService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest) (*BTWorkspaceInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -418,7 +418,7 @@ func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest)
 		localVarReturnValue *BTWorkspaceInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.CreateWorkspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.CreateWorkspace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -495,7 +495,7 @@ func (a *DocumentApiService) CreateWorkspaceExecute(r ApiCreateWorkspaceRequest)
 
 type ApiDeleteDocumentRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 	forever    *bool
 }
@@ -516,7 +516,7 @@ DeleteDocument Delete document by document ID.
 	@param did
 	@return ApiDeleteDocumentRequest
 */
-func (a *DocumentApiService) DeleteDocument(ctx context.Context, did string) ApiDeleteDocumentRequest {
+func (a *DocumentAPIService) DeleteDocument(ctx context.Context, did string) ApiDeleteDocumentRequest {
 	return ApiDeleteDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -527,7 +527,7 @@ func (a *DocumentApiService) DeleteDocument(ctx context.Context, did string) Api
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -535,7 +535,7 @@ func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.DeleteDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.DeleteDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -613,7 +613,7 @@ func (a *DocumentApiService) DeleteDocumentExecute(r ApiDeleteDocumentRequest) (
 
 type ApiDeleteWorkspaceRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 	wid        string
 }
@@ -630,7 +630,7 @@ DeleteWorkspace Delete workspace by document ID and workspace ID.
 	@param wid
 	@return ApiDeleteWorkspaceRequest
 */
-func (a *DocumentApiService) DeleteWorkspace(ctx context.Context, did string, wid string) ApiDeleteWorkspaceRequest {
+func (a *DocumentAPIService) DeleteWorkspace(ctx context.Context, did string, wid string) ApiDeleteWorkspaceRequest {
 	return ApiDeleteWorkspaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -642,7 +642,7 @@ func (a *DocumentApiService) DeleteWorkspace(ctx context.Context, did string, wi
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -650,7 +650,7 @@ func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest)
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.DeleteWorkspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.DeleteWorkspace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -726,7 +726,7 @@ func (a *DocumentApiService) DeleteWorkspaceExecute(r ApiDeleteWorkspaceRequest)
 
 type ApiDownloadExternalDataRequest struct {
 	ctx         context.Context
-	ApiService  *DocumentApiService
+	ApiService  *DocumentAPIService
 	did         string
 	fid         string
 	ifNoneMatch *string
@@ -753,7 +753,7 @@ DownloadExternalData Download external data file(s) associated with the document
 	@param fid
 	@return ApiDownloadExternalDataRequest
 */
-func (a *DocumentApiService) DownloadExternalData(ctx context.Context, did string, fid string) ApiDownloadExternalDataRequest {
+func (a *DocumentAPIService) DownloadExternalData(ctx context.Context, did string, fid string) ApiDownloadExternalDataRequest {
 	return ApiDownloadExternalDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -765,7 +765,7 @@ func (a *DocumentApiService) DownloadExternalData(ctx context.Context, did strin
 // Execute executes the request
 //
 //	@return HttpFile
-func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDataRequest) (*HttpFile, *http.Response, error) {
+func (a *DocumentAPIService) DownloadExternalDataExecute(r ApiDownloadExternalDataRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -773,7 +773,7 @@ func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDa
 		localVarReturnValue *HttpFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.DownloadExternalData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.DownloadExternalData")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -845,7 +845,7 @@ func (a *DocumentApiService) DownloadExternalDataExecute(r ApiDownloadExternalDa
 
 type ApiExport2JsonRequest struct {
 	ctx                  context.Context
-	ApiService           *DocumentApiService
+	ApiService           *DocumentAPIService
 	did                  string
 	wv                   string
 	wvid                 string
@@ -879,7 +879,7 @@ Export2Json Export document by document ID, workspace or version ID, and tab ID.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiExport2JsonRequest
 */
-func (a *DocumentApiService) Export2Json(ctx context.Context, did string, wv string, wvid string, eid string) ApiExport2JsonRequest {
+func (a *DocumentAPIService) Export2Json(ctx context.Context, did string, wv string, wvid string, eid string) ApiExport2JsonRequest {
 	return ApiExport2JsonRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -893,7 +893,7 @@ func (a *DocumentApiService) Export2Json(ctx context.Context, did string, wv str
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) Export2JsonExecute(r ApiExport2JsonRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -901,7 +901,7 @@ func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[st
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.Export2Json")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.Export2Json")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -984,7 +984,7 @@ func (a *DocumentApiService) Export2JsonExecute(r ApiExport2JsonRequest) (map[st
 
 type ApiGetCurrentMicroversionRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 	wv         string
 	wvid       string
@@ -1003,7 +1003,7 @@ GetCurrentMicroversion Retrieve current microversion by document ID and workspac
 	@param wvid
 	@return ApiGetCurrentMicroversionRequest
 */
-func (a *DocumentApiService) GetCurrentMicroversion(ctx context.Context, did string, wv string, wvid string) ApiGetCurrentMicroversionRequest {
+func (a *DocumentAPIService) GetCurrentMicroversion(ctx context.Context, did string, wv string, wvid string) ApiGetCurrentMicroversionRequest {
 	return ApiGetCurrentMicroversionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1016,7 +1016,7 @@ func (a *DocumentApiService) GetCurrentMicroversion(ctx context.Context, did str
 // Execute executes the request
 //
 //	@return BTMicroversionInfo
-func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicroversionRequest) (*BTMicroversionInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetCurrentMicroversionExecute(r ApiGetCurrentMicroversionRequest) (*BTMicroversionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1024,7 +1024,7 @@ func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicrov
 		localVarReturnValue *BTMicroversionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetCurrentMicroversion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetCurrentMicroversion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1101,7 +1101,7 @@ func (a *DocumentApiService) GetCurrentMicroversionExecute(r ApiGetCurrentMicrov
 
 type ApiGetDocumentRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 }
 
@@ -1116,7 +1116,7 @@ GetDocument Retrieve document by document ID.
 	@param did
 	@return ApiGetDocumentRequest
 */
-func (a *DocumentApiService) GetDocument(ctx context.Context, did string) ApiGetDocumentRequest {
+func (a *DocumentAPIService) GetDocument(ctx context.Context, did string) ApiGetDocumentRequest {
 	return ApiGetDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1127,7 +1127,7 @@ func (a *DocumentApiService) GetDocument(ctx context.Context, did string) ApiGet
 // Execute executes the request
 //
 //	@return BTDocumentInfo
-func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDocumentInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1135,7 +1135,7 @@ func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDoc
 		localVarReturnValue *BTDocumentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1203,7 +1203,7 @@ func (a *DocumentApiService) GetDocumentExecute(r ApiGetDocumentRequest) (*BTDoc
 
 type ApiGetDocumentAclRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 }
 
@@ -1218,7 +1218,7 @@ GetDocumentAcl Retrieve access control list by document ID.
 	@param did
 	@return ApiGetDocumentAclRequest
 */
-func (a *DocumentApiService) GetDocumentAcl(ctx context.Context, did string) ApiGetDocumentAclRequest {
+func (a *DocumentAPIService) GetDocumentAcl(ctx context.Context, did string) ApiGetDocumentAclRequest {
 	return ApiGetDocumentAclRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1229,7 +1229,7 @@ func (a *DocumentApiService) GetDocumentAcl(ctx context.Context, did string) Api
 // Execute executes the request
 //
 //	@return BTAclInfo
-func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (*BTAclInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1237,7 +1237,7 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 		localVarReturnValue *BTAclInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocumentAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetDocumentAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1312,7 +1312,7 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 
 type ApiGetDocumentHistoryRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 	wm         string
 	wmid       string
@@ -1331,7 +1331,7 @@ GetDocumentHistory Retrieve document history by document ID and workspace or mic
 	@param wmid
 	@return ApiGetDocumentHistoryRequest
 */
-func (a *DocumentApiService) GetDocumentHistory(ctx context.Context, did string, wm string, wmid string) ApiGetDocumentHistoryRequest {
+func (a *DocumentAPIService) GetDocumentHistory(ctx context.Context, did string, wm string, wmid string) ApiGetDocumentHistoryRequest {
 	return ApiGetDocumentHistoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1344,7 +1344,7 @@ func (a *DocumentApiService) GetDocumentHistory(ctx context.Context, did string,
 // Execute executes the request
 //
 //	@return []BTDocumentHistoryInfo
-func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRequest) ([]BTDocumentHistoryInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRequest) ([]BTDocumentHistoryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1352,7 +1352,7 @@ func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRe
 		localVarReturnValue []BTDocumentHistoryInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocumentHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetDocumentHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1429,7 +1429,7 @@ func (a *DocumentApiService) GetDocumentHistoryExecute(r ApiGetDocumentHistoryRe
 
 type ApiGetDocumentPermissionSetRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 }
 
@@ -1444,7 +1444,7 @@ GetDocumentPermissionSet Retrieve Document permissions by document ID.
 	@param did
 	@return ApiGetDocumentPermissionSetRequest
 */
-func (a *DocumentApiService) GetDocumentPermissionSet(ctx context.Context, did string) ApiGetDocumentPermissionSetRequest {
+func (a *DocumentAPIService) GetDocumentPermissionSet(ctx context.Context, did string) ApiGetDocumentPermissionSetRequest {
 	return ApiGetDocumentPermissionSetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1455,7 +1455,7 @@ func (a *DocumentApiService) GetDocumentPermissionSet(ctx context.Context, did s
 // Execute executes the request
 //
 //	@return []string
-func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPermissionSetRequest) ([]string, *http.Response, error) {
+func (a *DocumentAPIService) GetDocumentPermissionSetExecute(r ApiGetDocumentPermissionSetRequest) ([]string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1463,7 +1463,7 @@ func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPer
 		localVarReturnValue []string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocumentPermissionSet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetDocumentPermissionSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1531,7 +1531,7 @@ func (a *DocumentApiService) GetDocumentPermissionSetExecute(r ApiGetDocumentPer
 
 type ApiGetDocumentVersionsRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 	offset     *int32
 	limit      *int32
@@ -1558,7 +1558,7 @@ GetDocumentVersions Retrieve versions by document ID.
 	@param did
 	@return ApiGetDocumentVersionsRequest
 */
-func (a *DocumentApiService) GetDocumentVersions(ctx context.Context, did string) ApiGetDocumentVersionsRequest {
+func (a *DocumentAPIService) GetDocumentVersions(ctx context.Context, did string) ApiGetDocumentVersionsRequest {
 	return ApiGetDocumentVersionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1569,7 +1569,7 @@ func (a *DocumentApiService) GetDocumentVersions(ctx context.Context, did string
 // Execute executes the request
 //
 //	@return []BTVersionInfo
-func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersionsRequest) ([]BTVersionInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetDocumentVersionsExecute(r ApiGetDocumentVersionsRequest) ([]BTVersionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1577,7 +1577,7 @@ func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersions
 		localVarReturnValue []BTVersionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocumentVersions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetDocumentVersions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1658,7 +1658,7 @@ func (a *DocumentApiService) GetDocumentVersionsExecute(r ApiGetDocumentVersions
 
 type ApiGetDocumentWorkspacesRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 }
 
@@ -1673,7 +1673,7 @@ GetDocumentWorkspaces Retrieve workspaces by document ID.
 	@param did
 	@return ApiGetDocumentWorkspacesRequest
 */
-func (a *DocumentApiService) GetDocumentWorkspaces(ctx context.Context, did string) ApiGetDocumentWorkspacesRequest {
+func (a *DocumentAPIService) GetDocumentWorkspaces(ctx context.Context, did string) ApiGetDocumentWorkspacesRequest {
 	return ApiGetDocumentWorkspacesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1684,7 +1684,7 @@ func (a *DocumentApiService) GetDocumentWorkspaces(ctx context.Context, did stri
 // Execute executes the request
 //
 //	@return []BTWorkspaceInfo
-func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorkspacesRequest) ([]BTWorkspaceInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorkspacesRequest) ([]BTWorkspaceInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1692,7 +1692,7 @@ func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorksp
 		localVarReturnValue []BTWorkspaceInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocumentWorkspaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetDocumentWorkspaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1767,7 +1767,7 @@ func (a *DocumentApiService) GetDocumentWorkspacesExecute(r ApiGetDocumentWorksp
 
 type ApiGetDocumentsRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	q          *string
 	filter     *int32
 	owner      *string
@@ -1857,7 +1857,7 @@ GetDocuments Get a list of documents that meet the criteria you specify.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetDocumentsRequest
 */
-func (a *DocumentApiService) GetDocuments(ctx context.Context) ApiGetDocumentsRequest {
+func (a *DocumentAPIService) GetDocuments(ctx context.Context) ApiGetDocumentsRequest {
 	return ApiGetDocumentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1867,7 +1867,7 @@ func (a *DocumentApiService) GetDocuments(ctx context.Context) ApiGetDocumentsRe
 // Execute executes the request
 //
 //	@return BTGlobalTreeNodeListResponse
-func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTGlobalTreeNodeListResponse, *http.Response, error) {
+func (a *DocumentAPIService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTGlobalTreeNodeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1875,7 +1875,7 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 		localVarReturnValue *BTGlobalTreeNodeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocuments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetDocuments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1975,7 +1975,7 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 
 type ApiGetElementsInDocumentRequest struct {
 	ctx            context.Context
-	ApiService     *DocumentApiService
+	ApiService     *DocumentAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -2019,7 +2019,7 @@ GetElementsInDocument Retrieve tabs by document ID and workspace or version or m
 	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
 	@return ApiGetElementsInDocumentRequest
 */
-func (a *DocumentApiService) GetElementsInDocument(ctx context.Context, did string, wvm string, wvmid string) ApiGetElementsInDocumentRequest {
+func (a *DocumentAPIService) GetElementsInDocument(ctx context.Context, did string, wvm string, wvmid string) ApiGetElementsInDocumentRequest {
 	return ApiGetElementsInDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2032,7 +2032,7 @@ func (a *DocumentApiService) GetElementsInDocument(ctx context.Context, did stri
 // Execute executes the request
 //
 //	@return []BTDocumentElementInfo
-func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocumentRequest) ([]BTDocumentElementInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetElementsInDocumentExecute(r ApiGetElementsInDocumentRequest) ([]BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -2040,7 +2040,7 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 		localVarReturnValue []BTDocumentElementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetElementsInDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetElementsInDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2122,7 +2122,7 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 
 type ApiGetInsertablesRequest struct {
 	ctx                                    context.Context
-	ApiService                             *DocumentApiService
+	ApiService                             *DocumentAPIService
 	did                                    string
 	wv                                     string
 	wvid                                   string
@@ -2291,7 +2291,7 @@ GetInsertables Retrieve insertables by document ID and workspace or version ID.
 	@param wvid
 	@return ApiGetInsertablesRequest
 */
-func (a *DocumentApiService) GetInsertables(ctx context.Context, did string, wv string, wvid string) ApiGetInsertablesRequest {
+func (a *DocumentAPIService) GetInsertables(ctx context.Context, did string, wv string, wvid string) ApiGetInsertablesRequest {
 	return ApiGetInsertablesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2304,7 +2304,7 @@ func (a *DocumentApiService) GetInsertables(ctx context.Context, did string, wv 
 // Execute executes the request
 //
 //	@return BTInsertablesListResponse
-func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (*BTInsertablesListResponse, *http.Response, error) {
+func (a *DocumentAPIService) GetInsertablesExecute(r ApiGetInsertablesRequest) (*BTInsertablesListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -2312,7 +2312,7 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 		localVarReturnValue *BTInsertablesListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetInsertables")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetInsertables")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2464,7 +2464,7 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 
 type ApiGetUnitInfoRequest struct {
 	ctx            context.Context
-	ApiService     *DocumentApiService
+	ApiService     *DocumentAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -2490,7 +2490,7 @@ GetUnitInfo Get the selected units and precision by document ID and workspace or
 	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
 	@return ApiGetUnitInfoRequest
 */
-func (a *DocumentApiService) GetUnitInfo(ctx context.Context, did string, wvm string, wvmid string) ApiGetUnitInfoRequest {
+func (a *DocumentAPIService) GetUnitInfo(ctx context.Context, did string, wvm string, wvmid string) ApiGetUnitInfoRequest {
 	return ApiGetUnitInfoRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2503,7 +2503,7 @@ func (a *DocumentApiService) GetUnitInfo(ctx context.Context, did string, wvm st
 // Execute executes the request
 //
 //	@return BTUnitInfo
-func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUnitInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUnitInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -2511,7 +2511,7 @@ func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUni
 		localVarReturnValue *BTUnitInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetUnitInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetUnitInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2591,7 +2591,7 @@ func (a *DocumentApiService) GetUnitInfoExecute(r ApiGetUnitInfoRequest) (*BTUni
 
 type ApiGetVersionRequest struct {
 	ctx            context.Context
-	ApiService     *DocumentApiService
+	ApiService     *DocumentAPIService
 	did            string
 	vid            string
 	parents        *bool
@@ -2620,7 +2620,7 @@ GetVersion Retrieve version by document ID and version ID.
 	@param vid
 	@return ApiGetVersionRequest
 */
-func (a *DocumentApiService) GetVersion(ctx context.Context, did string, vid string) ApiGetVersionRequest {
+func (a *DocumentAPIService) GetVersion(ctx context.Context, did string, vid string) ApiGetVersionRequest {
 	return ApiGetVersionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2632,7 +2632,7 @@ func (a *DocumentApiService) GetVersion(ctx context.Context, did string, vid str
 // Execute executes the request
 //
 //	@return BTVersionInfo
-func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersionInfo, *http.Response, error) {
+func (a *DocumentAPIService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -2640,7 +2640,7 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 		localVarReturnValue *BTVersionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetVersion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.GetVersion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2715,7 +2715,7 @@ func (a *DocumentApiService) GetVersionExecute(r ApiGetVersionRequest) (*BTVersi
 
 type ApiMergeIntoWorkspaceRequest struct {
 	ctx                           context.Context
-	ApiService                    *DocumentApiService
+	ApiService                    *DocumentAPIService
 	did                           string
 	wid                           string
 	bTVersionOrWorkspaceMergeInfo *BTVersionOrWorkspaceMergeInfo
@@ -2738,7 +2738,7 @@ MergeIntoWorkspace Merge into workspace by document ID and workspace ID.
 	@param wid
 	@return ApiMergeIntoWorkspaceRequest
 */
-func (a *DocumentApiService) MergeIntoWorkspace(ctx context.Context, did string, wid string) ApiMergeIntoWorkspaceRequest {
+func (a *DocumentAPIService) MergeIntoWorkspace(ctx context.Context, did string, wid string) ApiMergeIntoWorkspaceRequest {
 	return ApiMergeIntoWorkspaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2750,7 +2750,7 @@ func (a *DocumentApiService) MergeIntoWorkspace(ctx context.Context, did string,
 // Execute executes the request
 //
 //	@return BTDocumentMergeInfo
-func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRequest) (*BTDocumentMergeInfo, *http.Response, error) {
+func (a *DocumentAPIService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRequest) (*BTDocumentMergeInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -2758,7 +2758,7 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 		localVarReturnValue *BTDocumentMergeInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.MergeIntoWorkspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.MergeIntoWorkspace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2839,7 +2839,7 @@ func (a *DocumentApiService) MergeIntoWorkspaceExecute(r ApiMergeIntoWorkspaceRe
 
 type ApiMergePreviewRequest struct {
 	ctx            context.Context
-	ApiService     *DocumentApiService
+	ApiService     *DocumentAPIService
 	did            string
 	wid            string
 	sourceType     *string
@@ -2875,7 +2875,7 @@ MergePreview Merge preview of changes that will occur based on document ID, work
 	@param wid The id of the workspace in which to perform the operation.
 	@return ApiMergePreviewRequest
 */
-func (a *DocumentApiService) MergePreview(ctx context.Context, did string, wid string) ApiMergePreviewRequest {
+func (a *DocumentAPIService) MergePreview(ctx context.Context, did string, wid string) ApiMergePreviewRequest {
 	return ApiMergePreviewRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2887,7 +2887,7 @@ func (a *DocumentApiService) MergePreview(ctx context.Context, did string, wid s
 // Execute executes the request
 //
 //	@return BTMergePreviewInfo
-func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTMergePreviewInfo, *http.Response, error) {
+func (a *DocumentAPIService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTMergePreviewInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -2895,7 +2895,7 @@ func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTM
 		localVarReturnValue *BTMergePreviewInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.MergePreview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.MergePreview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2982,7 +2982,7 @@ func (a *DocumentApiService) MergePreviewExecute(r ApiMergePreviewRequest) (*BTM
 
 type ApiMoveElementsToDocumentRequest struct {
 	ctx                 context.Context
-	ApiService          *DocumentApiService
+	ApiService          *DocumentAPIService
 	did                 string
 	wid                 string
 	bTMoveElementParams *BTMoveElementParams
@@ -3005,7 +3005,7 @@ MoveElementsToDocument Move tab by document ID and workspace ID.
 	@param wid
 	@return ApiMoveElementsToDocumentRequest
 */
-func (a *DocumentApiService) MoveElementsToDocument(ctx context.Context, did string, wid string) ApiMoveElementsToDocumentRequest {
+func (a *DocumentAPIService) MoveElementsToDocument(ctx context.Context, did string, wid string) ApiMoveElementsToDocumentRequest {
 	return ApiMoveElementsToDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3017,7 +3017,7 @@ func (a *DocumentApiService) MoveElementsToDocument(ctx context.Context, did str
 // Execute executes the request
 //
 //	@return BTMoveElementInfo
-func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDocumentRequest) (*BTMoveElementInfo, *http.Response, error) {
+func (a *DocumentAPIService) MoveElementsToDocumentExecute(r ApiMoveElementsToDocumentRequest) (*BTMoveElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3025,7 +3025,7 @@ func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDo
 		localVarReturnValue *BTMoveElementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.MoveElementsToDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.MoveElementsToDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3106,7 +3106,7 @@ func (a *DocumentApiService) MoveElementsToDocumentExecute(r ApiMoveElementsToDo
 
 type ApiRestoreFromHistoryRequest struct {
 	ctx            context.Context
-	ApiService     *DocumentApiService
+	ApiService     *DocumentAPIService
 	did            string
 	wid            string
 	vm             string
@@ -3134,7 +3134,7 @@ RestoreFromHistory Restore version or microversion to workspace by document ID, 
 	@param vmid
 	@return ApiRestoreFromHistoryRequest
 */
-func (a *DocumentApiService) RestoreFromHistory(ctx context.Context, did string, wid string, vm string, vmid string) ApiRestoreFromHistoryRequest {
+func (a *DocumentAPIService) RestoreFromHistory(ctx context.Context, did string, wid string, vm string, vmid string) ApiRestoreFromHistoryRequest {
 	return ApiRestoreFromHistoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3148,7 +3148,7 @@ func (a *DocumentApiService) RestoreFromHistory(ctx context.Context, did string,
 // Execute executes the request
 //
 //	@return BTRestoreFromHistoryInfo
-func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRequest) (*BTRestoreFromHistoryInfo, *http.Response, error) {
+func (a *DocumentAPIService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRequest) (*BTRestoreFromHistoryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3156,7 +3156,7 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 		localVarReturnValue *BTRestoreFromHistoryInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.RestoreFromHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.RestoreFromHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3237,7 +3237,7 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 
 type ApiRevertUnchangedToRevisionsRequest struct {
 	ctx                     context.Context
-	ApiService              *DocumentApiService
+	ApiService              *DocumentAPIService
 	did                     string
 	wid                     string
 	bTRevertUnchangedParams *BTRevertUnchangedParams
@@ -3260,7 +3260,7 @@ RevertUnchangedToRevisions Method for RevertUnchangedToRevisions
 	@param wid
 	@return ApiRevertUnchangedToRevisionsRequest
 */
-func (a *DocumentApiService) RevertUnchangedToRevisions(ctx context.Context, did string, wid string) ApiRevertUnchangedToRevisionsRequest {
+func (a *DocumentAPIService) RevertUnchangedToRevisions(ctx context.Context, did string, wid string) ApiRevertUnchangedToRevisionsRequest {
 	return ApiRevertUnchangedToRevisionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3272,7 +3272,7 @@ func (a *DocumentApiService) RevertUnchangedToRevisions(ctx context.Context, did
 // Execute executes the request
 //
 //	@return []BTUnchangedElementInfo
-func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchangedToRevisionsRequest) ([]BTUnchangedElementInfo, *http.Response, error) {
+func (a *DocumentAPIService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchangedToRevisionsRequest) ([]BTUnchangedElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3280,7 +3280,7 @@ func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchan
 		localVarReturnValue []BTUnchangedElementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.RevertUnchangedToRevisions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.RevertUnchangedToRevisions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3358,7 +3358,7 @@ func (a *DocumentApiService) RevertUnchangedToRevisionsExecute(r ApiRevertUnchan
 
 type ApiSearchRequest struct {
 	ctx                    context.Context
-	ApiService             *DocumentApiService
+	ApiService             *DocumentAPIService
 	bTDocumentSearchParams *BTDocumentSearchParams
 }
 
@@ -3379,7 +3379,7 @@ This returns list of documents based on search parameters.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiSearchRequest
 */
-func (a *DocumentApiService) Search(ctx context.Context) ApiSearchRequest {
+func (a *DocumentAPIService) Search(ctx context.Context) ApiSearchRequest {
 	return ApiSearchRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3389,7 +3389,7 @@ func (a *DocumentApiService) Search(ctx context.Context) ApiSearchRequest {
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) SearchExecute(r ApiSearchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3397,7 +3397,7 @@ func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]inter
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.Search")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.Search")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3476,7 +3476,7 @@ func (a *DocumentApiService) SearchExecute(r ApiSearchRequest) (map[string]inter
 
 type ApiShareDocumentRequest struct {
 	ctx           context.Context
-	ApiService    *DocumentApiService
+	ApiService    *DocumentAPIService
 	did           string
 	bTShareParams *BTShareParams
 }
@@ -3497,7 +3497,7 @@ ShareDocument Share document by document ID.
 	@param did
 	@return ApiShareDocumentRequest
 */
-func (a *DocumentApiService) ShareDocument(ctx context.Context, did string) ApiShareDocumentRequest {
+func (a *DocumentAPIService) ShareDocument(ctx context.Context, did string) ApiShareDocumentRequest {
 	return ApiShareDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3508,7 +3508,7 @@ func (a *DocumentApiService) ShareDocument(ctx context.Context, did string) ApiS
 // Execute executes the request
 //
 //	@return BTAclInfo
-func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*BTAclInfo, *http.Response, error) {
+func (a *DocumentAPIService) ShareDocumentExecute(r ApiShareDocumentRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3516,7 +3516,7 @@ func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*B
 		localVarReturnValue *BTAclInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.ShareDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.ShareDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3596,7 +3596,7 @@ func (a *DocumentApiService) ShareDocumentExecute(r ApiShareDocumentRequest) (*B
 
 type ApiShareWithSupportRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 }
 
@@ -3611,7 +3611,7 @@ ShareWithSupport Share document by document ID with Onshape support.
 	@param did Document ID.
 	@return ApiShareWithSupportRequest
 */
-func (a *DocumentApiService) ShareWithSupport(ctx context.Context, did string) ApiShareWithSupportRequest {
+func (a *DocumentAPIService) ShareWithSupport(ctx context.Context, did string) ApiShareWithSupportRequest {
 	return ApiShareWithSupportRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3622,7 +3622,7 @@ func (a *DocumentApiService) ShareWithSupport(ctx context.Context, did string) A
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) ShareWithSupportExecute(r ApiShareWithSupportRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) ShareWithSupportExecute(r ApiShareWithSupportRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3630,7 +3630,7 @@ func (a *DocumentApiService) ShareWithSupportExecute(r ApiShareWithSupportReques
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.ShareWithSupport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.ShareWithSupport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3705,7 +3705,7 @@ func (a *DocumentApiService) ShareWithSupportExecute(r ApiShareWithSupportReques
 
 type ApiSyncAppElementsRequest struct {
 	ctx                    context.Context
-	ApiService             *DocumentApiService
+	ApiService             *DocumentAPIService
 	did                    string
 	wid                    string
 	bTSyncAppElementParams *BTSyncAppElementParams
@@ -3728,7 +3728,7 @@ SyncAppElements Method for SyncAppElements
 	@param wid
 	@return ApiSyncAppElementsRequest
 */
-func (a *DocumentApiService) SyncAppElements(ctx context.Context, did string, wid string) ApiSyncAppElementsRequest {
+func (a *DocumentAPIService) SyncAppElements(ctx context.Context, did string, wid string) ApiSyncAppElementsRequest {
 	return ApiSyncAppElementsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3740,7 +3740,7 @@ func (a *DocumentApiService) SyncAppElements(ctx context.Context, did string, wi
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) SyncAppElementsExecute(r ApiSyncAppElementsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) SyncAppElementsExecute(r ApiSyncAppElementsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -3748,7 +3748,7 @@ func (a *DocumentApiService) SyncAppElementsExecute(r ApiSyncAppElementsRequest)
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.SyncAppElements")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.SyncAppElements")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3829,7 +3829,7 @@ func (a *DocumentApiService) SyncAppElementsExecute(r ApiSyncAppElementsRequest)
 
 type ApiUnShareDocumentRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 	eid        string
 	entryType  *int32
@@ -3855,7 +3855,7 @@ Specify the ID of the entity to unshare with in the `eid` field, and specify the
 	@param eid ID of the entity to remove permissions for. Uses `userId`, `companyId`, `teamId`, `documentId`, or `applicationId`, depending on the `entryType` value.
 	@return ApiUnShareDocumentRequest
 */
-func (a *DocumentApiService) UnShareDocument(ctx context.Context, did string, eid string) ApiUnShareDocumentRequest {
+func (a *DocumentAPIService) UnShareDocument(ctx context.Context, did string, eid string) ApiUnShareDocumentRequest {
 	return ApiUnShareDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3867,7 +3867,7 @@ func (a *DocumentApiService) UnShareDocument(ctx context.Context, did string, ei
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) UnShareDocumentExecute(r ApiUnShareDocumentRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -3875,7 +3875,7 @@ func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest)
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UnShareDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.UnShareDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3954,7 +3954,7 @@ func (a *DocumentApiService) UnShareDocumentExecute(r ApiUnShareDocumentRequest)
 
 type ApiUnshareFromSupportRequest struct {
 	ctx        context.Context
-	ApiService *DocumentApiService
+	ApiService *DocumentAPIService
 	did        string
 }
 
@@ -3969,7 +3969,7 @@ UnshareFromSupport Unshare document with support.
 	@param did Document ID.
 	@return ApiUnshareFromSupportRequest
 */
-func (a *DocumentApiService) UnshareFromSupport(ctx context.Context, did string) ApiUnshareFromSupportRequest {
+func (a *DocumentAPIService) UnshareFromSupport(ctx context.Context, did string) ApiUnshareFromSupportRequest {
 	return ApiUnshareFromSupportRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3980,7 +3980,7 @@ func (a *DocumentApiService) UnshareFromSupport(ctx context.Context, did string)
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) UnshareFromSupportExecute(r ApiUnshareFromSupportRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) UnshareFromSupportExecute(r ApiUnshareFromSupportRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -3988,7 +3988,7 @@ func (a *DocumentApiService) UnshareFromSupportExecute(r ApiUnshareFromSupportRe
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UnshareFromSupport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.UnshareFromSupport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4063,7 +4063,7 @@ func (a *DocumentApiService) UnshareFromSupportExecute(r ApiUnshareFromSupportRe
 
 type ApiUpdateDocumentAttributesRequest struct {
 	ctx              context.Context
-	ApiService       *DocumentApiService
+	ApiService       *DocumentAPIService
 	did              string
 	bTDocumentParams *BTDocumentParams
 }
@@ -4084,7 +4084,7 @@ UpdateDocumentAttributes Update document attributes by document ID.
 	@param did
 	@return ApiUpdateDocumentAttributesRequest
 */
-func (a *DocumentApiService) UpdateDocumentAttributes(ctx context.Context, did string) ApiUpdateDocumentAttributesRequest {
+func (a *DocumentAPIService) UpdateDocumentAttributes(ctx context.Context, did string) ApiUpdateDocumentAttributesRequest {
 	return ApiUpdateDocumentAttributesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4095,7 +4095,7 @@ func (a *DocumentApiService) UpdateDocumentAttributes(ctx context.Context, did s
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocumentAttributesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DocumentAPIService) UpdateDocumentAttributesExecute(r ApiUpdateDocumentAttributesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -4103,7 +4103,7 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UpdateDocumentAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.UpdateDocumentAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4183,7 +4183,7 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 
 type ApiUpdateExternalReferencesToLatestDocumentsRequest struct {
 	ctx                          context.Context
-	ApiService                   *DocumentApiService
+	ApiService                   *DocumentAPIService
 	did                          string
 	wid                          string
 	eid                          string
@@ -4208,7 +4208,7 @@ UpdateExternalReferencesToLatestDocuments Update external references to latest b
 	@param eid
 	@return ApiUpdateExternalReferencesToLatestDocumentsRequest
 */
-func (a *DocumentApiService) UpdateExternalReferencesToLatestDocuments(ctx context.Context, did string, wid string, eid string) ApiUpdateExternalReferencesToLatestDocumentsRequest {
+func (a *DocumentAPIService) UpdateExternalReferencesToLatestDocuments(ctx context.Context, did string, wid string, eid string) ApiUpdateExternalReferencesToLatestDocumentsRequest {
 	return ApiUpdateExternalReferencesToLatestDocumentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4221,7 +4221,7 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocuments(ctx conte
 // Execute executes the request
 //
 //	@return BTLinkToLatestDocumentInfo
-func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r ApiUpdateExternalReferencesToLatestDocumentsRequest) (*BTLinkToLatestDocumentInfo, *http.Response, error) {
+func (a *DocumentAPIService) UpdateExternalReferencesToLatestDocumentsExecute(r ApiUpdateExternalReferencesToLatestDocumentsRequest) (*BTLinkToLatestDocumentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -4229,7 +4229,7 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r 
 		localVarReturnValue *BTLinkToLatestDocumentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UpdateExternalReferencesToLatestDocuments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentAPIService.UpdateExternalReferencesToLatestDocuments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

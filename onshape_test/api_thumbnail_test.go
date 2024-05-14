@@ -7,7 +7,7 @@ import (
 )
 
 func TestThumbnailAPI(t *testing.T) {
-    InitializeTester[*onshape.ThumbnailApiService](t)
+    InitializeTester[*onshape.ThumbnailAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetThumbnailForDocumentRequest{},

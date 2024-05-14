@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// ReleasePackageApiService ReleasePackageApi service
-type ReleasePackageApiService service
+// ReleasePackageAPIService ReleasePackageAPI service
+type ReleasePackageAPIService service
 
 type ApiCreateObsoletionPackageRequest struct {
 	ctx        context.Context
-	ApiService *ReleasePackageApiService
+	ApiService *ReleasePackageAPIService
 	wfid       string
 	revisionId *string
 	debugMode  *bool
@@ -50,7 +50,7 @@ CreateObsoletionPackage Create an obsoletion package to make an existing revisio
 	@param wfid
 	@return ApiCreateObsoletionPackageRequest
 */
-func (a *ReleasePackageApiService) CreateObsoletionPackage(ctx context.Context, wfid string) ApiCreateObsoletionPackageRequest {
+func (a *ReleasePackageAPIService) CreateObsoletionPackage(ctx context.Context, wfid string) ApiCreateObsoletionPackageRequest {
 	return ApiCreateObsoletionPackageRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *ReleasePackageApiService) CreateObsoletionPackage(ctx context.Context, 
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ReleasePackageApiService) CreateObsoletionPackageExecute(r ApiCreateObsoletionPackageRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ReleasePackageAPIService) CreateObsoletionPackageExecute(r ApiCreateObsoletionPackageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *ReleasePackageApiService) CreateObsoletionPackageExecute(r ApiCreateObs
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageApiService.CreateObsoletionPackage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageAPIService.CreateObsoletionPackage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,7 +151,7 @@ func (a *ReleasePackageApiService) CreateObsoletionPackageExecute(r ApiCreateObs
 
 type ApiCreateReleasePackageRequest struct {
 	ctx                    context.Context
-	ApiService             *ReleasePackageApiService
+	ApiService             *ReleasePackageAPIService
 	wfid                   string
 	bTReleasePackageParams *BTReleasePackageParams
 	debugMode              *bool
@@ -180,7 +180,7 @@ All revisionable items must be from the same document. Once a release package is
 	@param wfid
 	@return ApiCreateReleasePackageRequest
 */
-func (a *ReleasePackageApiService) CreateReleasePackage(ctx context.Context, wfid string) ApiCreateReleasePackageRequest {
+func (a *ReleasePackageAPIService) CreateReleasePackage(ctx context.Context, wfid string) ApiCreateReleasePackageRequest {
 	return ApiCreateReleasePackageRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -191,7 +191,7 @@ func (a *ReleasePackageApiService) CreateReleasePackage(ctx context.Context, wfi
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ReleasePackageApiService) CreateReleasePackageExecute(r ApiCreateReleasePackageRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ReleasePackageAPIService) CreateReleasePackageExecute(r ApiCreateReleasePackageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -199,7 +199,7 @@ func (a *ReleasePackageApiService) CreateReleasePackageExecute(r ApiCreateReleas
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageApiService.CreateReleasePackage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageAPIService.CreateReleasePackage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -282,7 +282,7 @@ func (a *ReleasePackageApiService) CreateReleasePackageExecute(r ApiCreateReleas
 
 type ApiGetCompanyReleaseWorkflowRequest struct {
 	ctx        context.Context
-	ApiService *ReleasePackageApiService
+	ApiService *ReleasePackageAPIService
 	documentId *string
 }
 
@@ -301,7 +301,7 @@ GetCompanyReleaseWorkflow Get information about the release/obsoletion workflow 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCompanyReleaseWorkflowRequest
 */
-func (a *ReleasePackageApiService) GetCompanyReleaseWorkflow(ctx context.Context) ApiGetCompanyReleaseWorkflowRequest {
+func (a *ReleasePackageAPIService) GetCompanyReleaseWorkflow(ctx context.Context) ApiGetCompanyReleaseWorkflowRequest {
 	return ApiGetCompanyReleaseWorkflowRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -311,7 +311,7 @@ func (a *ReleasePackageApiService) GetCompanyReleaseWorkflow(ctx context.Context
 // Execute executes the request
 //
 //	@return BTActiveWorkflowInfo
-func (a *ReleasePackageApiService) GetCompanyReleaseWorkflowExecute(r ApiGetCompanyReleaseWorkflowRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
+func (a *ReleasePackageAPIService) GetCompanyReleaseWorkflowExecute(r ApiGetCompanyReleaseWorkflowRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -319,7 +319,7 @@ func (a *ReleasePackageApiService) GetCompanyReleaseWorkflowExecute(r ApiGetComp
 		localVarReturnValue *BTActiveWorkflowInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageApiService.GetCompanyReleaseWorkflow")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageAPIService.GetCompanyReleaseWorkflow")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -396,7 +396,7 @@ func (a *ReleasePackageApiService) GetCompanyReleaseWorkflowExecute(r ApiGetComp
 
 type ApiGetReleasePackageRequest struct {
 	ctx        context.Context
-	ApiService *ReleasePackageApiService
+	ApiService *ReleasePackageAPIService
 	rpid       string
 	detailed   *bool
 }
@@ -417,7 +417,7 @@ GetReleasePackage Get details about the specified release package.
 	@param rpid
 	@return ApiGetReleasePackageRequest
 */
-func (a *ReleasePackageApiService) GetReleasePackage(ctx context.Context, rpid string) ApiGetReleasePackageRequest {
+func (a *ReleasePackageAPIService) GetReleasePackage(ctx context.Context, rpid string) ApiGetReleasePackageRequest {
 	return ApiGetReleasePackageRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -428,7 +428,7 @@ func (a *ReleasePackageApiService) GetReleasePackage(ctx context.Context, rpid s
 // Execute executes the request
 //
 //	@return BTReleasePackageInfo
-func (a *ReleasePackageApiService) GetReleasePackageExecute(r ApiGetReleasePackageRequest) (*BTReleasePackageInfo, *http.Response, error) {
+func (a *ReleasePackageAPIService) GetReleasePackageExecute(r ApiGetReleasePackageRequest) (*BTReleasePackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -436,7 +436,7 @@ func (a *ReleasePackageApiService) GetReleasePackageExecute(r ApiGetReleasePacka
 		localVarReturnValue *BTReleasePackageInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageApiService.GetReleasePackage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageAPIService.GetReleasePackage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -514,7 +514,7 @@ func (a *ReleasePackageApiService) GetReleasePackageExecute(r ApiGetReleasePacka
 
 type ApiUpdateReleasePackageRequest struct {
 	ctx                          context.Context
-	ApiService                   *ReleasePackageApiService
+	ApiService                   *ReleasePackageAPIService
 	rpid                         string
 	bTUpdateReleasePackageParams *BTUpdateReleasePackageParams
 	action                       *string
@@ -549,7 +549,7 @@ Use the `wfaction` query param to also perform a workflow transition.
 	@param rpid
 	@return ApiUpdateReleasePackageRequest
 */
-func (a *ReleasePackageApiService) UpdateReleasePackage(ctx context.Context, rpid string) ApiUpdateReleasePackageRequest {
+func (a *ReleasePackageAPIService) UpdateReleasePackage(ctx context.Context, rpid string) ApiUpdateReleasePackageRequest {
 	return ApiUpdateReleasePackageRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -560,7 +560,7 @@ func (a *ReleasePackageApiService) UpdateReleasePackage(ctx context.Context, rpi
 // Execute executes the request
 //
 //	@return BTReleasePackageInfo
-func (a *ReleasePackageApiService) UpdateReleasePackageExecute(r ApiUpdateReleasePackageRequest) (*BTReleasePackageInfo, *http.Response, error) {
+func (a *ReleasePackageAPIService) UpdateReleasePackageExecute(r ApiUpdateReleasePackageRequest) (*BTReleasePackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -568,7 +568,7 @@ func (a *ReleasePackageApiService) UpdateReleasePackageExecute(r ApiUpdateReleas
 		localVarReturnValue *BTReleasePackageInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageApiService.UpdateReleasePackage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePackageAPIService.UpdateReleasePackage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

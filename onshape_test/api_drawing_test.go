@@ -7,7 +7,7 @@ import (
 )
 
 func TestDrawingAPI(t *testing.T) {
-    InitializeTester[*onshape.DrawingApiService](t)
+    InitializeTester[*onshape.DrawingAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiCreateDrawingAppElementRequest{},

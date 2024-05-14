@@ -7,7 +7,7 @@ import (
 )
 
 func TestWorkflowAPI(t *testing.T) {
-    InitializeTester[*onshape.WorkflowApiService](t)
+    InitializeTester[*onshape.WorkflowAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetActiveWorkflowsRequest{},

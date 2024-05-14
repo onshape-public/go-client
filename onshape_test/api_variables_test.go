@@ -7,7 +7,7 @@ import (
 )
 
 func TestVariablesAPI(t *testing.T) {
-    InitializeTester[*onshape.VariablesApiService](t)
+    InitializeTester[*onshape.VariablesAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiSetVariablesRequest{},

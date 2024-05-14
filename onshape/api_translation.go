@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// TranslationApiService TranslationApi service
-type TranslationApiService service
+// TranslationAPIService TranslationAPI service
+type TranslationAPIService service
 
 type ApiCreateTranslationRequest struct {
 	ctx                                  context.Context
-	ApiService                           *TranslationApiService
+	ApiService                           *TranslationAPIService
 	did                                  string
 	wid                                  string
 	file                                 *map[string]interface{}
@@ -224,7 +224,7 @@ The API call may complete before the translation is finished. If `requestState =
 	@param wid
 	@return ApiCreateTranslationRequest
 */
-func (a *TranslationApiService) CreateTranslation(ctx context.Context, did string, wid string) ApiCreateTranslationRequest {
+func (a *TranslationAPIService) CreateTranslation(ctx context.Context, did string, wid string) ApiCreateTranslationRequest {
 	return ApiCreateTranslationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -236,7 +236,7 @@ func (a *TranslationApiService) CreateTranslation(ctx context.Context, did strin
 // Execute executes the request
 //
 //	@return BTTranslationRequestInfo
-func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+func (a *TranslationAPIService) CreateTranslationExecute(r ApiCreateTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -244,7 +244,7 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 		localVarReturnValue *BTTranslationRequestInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationApiService.CreateTranslation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationAPIService.CreateTranslation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -407,7 +407,7 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 
 type ApiDeleteTranslationRequest struct {
 	ctx        context.Context
-	ApiService *TranslationApiService
+	ApiService *TranslationAPIService
 	tid        string
 }
 
@@ -422,7 +422,7 @@ DeleteTranslation Delete a translation request.
 	@param tid
 	@return ApiDeleteTranslationRequest
 */
-func (a *TranslationApiService) DeleteTranslation(ctx context.Context, tid string) ApiDeleteTranslationRequest {
+func (a *TranslationAPIService) DeleteTranslation(ctx context.Context, tid string) ApiDeleteTranslationRequest {
 	return ApiDeleteTranslationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -433,7 +433,7 @@ func (a *TranslationApiService) DeleteTranslation(ctx context.Context, tid strin
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *TranslationApiService) DeleteTranslationExecute(r ApiDeleteTranslationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TranslationAPIService) DeleteTranslationExecute(r ApiDeleteTranslationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -441,7 +441,7 @@ func (a *TranslationApiService) DeleteTranslationExecute(r ApiDeleteTranslationR
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationApiService.DeleteTranslation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationAPIService.DeleteTranslation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -516,7 +516,7 @@ func (a *TranslationApiService) DeleteTranslationExecute(r ApiDeleteTranslationR
 
 type ApiGetAllTranslatorFormatsRequest struct {
 	ctx        context.Context
-	ApiService *TranslationApiService
+	ApiService *TranslationAPIService
 }
 
 func (r ApiGetAllTranslatorFormatsRequest) Execute() ([]BTModelFormatFullInfo, *http.Response, error) {
@@ -531,7 +531,7 @@ Note that we don't necessarily support both import and export for any given form
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAllTranslatorFormatsRequest
 */
-func (a *TranslationApiService) GetAllTranslatorFormats(ctx context.Context) ApiGetAllTranslatorFormatsRequest {
+func (a *TranslationAPIService) GetAllTranslatorFormats(ctx context.Context) ApiGetAllTranslatorFormatsRequest {
 	return ApiGetAllTranslatorFormatsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -541,7 +541,7 @@ func (a *TranslationApiService) GetAllTranslatorFormats(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return []BTModelFormatFullInfo
-func (a *TranslationApiService) GetAllTranslatorFormatsExecute(r ApiGetAllTranslatorFormatsRequest) ([]BTModelFormatFullInfo, *http.Response, error) {
+func (a *TranslationAPIService) GetAllTranslatorFormatsExecute(r ApiGetAllTranslatorFormatsRequest) ([]BTModelFormatFullInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -549,7 +549,7 @@ func (a *TranslationApiService) GetAllTranslatorFormatsExecute(r ApiGetAllTransl
 		localVarReturnValue []BTModelFormatFullInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationApiService.GetAllTranslatorFormats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationAPIService.GetAllTranslatorFormats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -623,7 +623,7 @@ func (a *TranslationApiService) GetAllTranslatorFormatsExecute(r ApiGetAllTransl
 
 type ApiGetDocumentTranslationsRequest struct {
 	ctx        context.Context
-	ApiService *TranslationApiService
+	ApiService *TranslationAPIService
 	did        string
 	offset     *int32
 	limit      *int32
@@ -650,7 +650,7 @@ GetDocumentTranslations Get information on an in-progress or completed translati
 	@param did
 	@return ApiGetDocumentTranslationsRequest
 */
-func (a *TranslationApiService) GetDocumentTranslations(ctx context.Context, did string) ApiGetDocumentTranslationsRequest {
+func (a *TranslationAPIService) GetDocumentTranslations(ctx context.Context, did string) ApiGetDocumentTranslationsRequest {
 	return ApiGetDocumentTranslationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -661,7 +661,7 @@ func (a *TranslationApiService) GetDocumentTranslations(ctx context.Context, did
 // Execute executes the request
 //
 //	@return BTListResponseBTTranslationRequestInfo
-func (a *TranslationApiService) GetDocumentTranslationsExecute(r ApiGetDocumentTranslationsRequest) (*BTListResponseBTTranslationRequestInfo, *http.Response, error) {
+func (a *TranslationAPIService) GetDocumentTranslationsExecute(r ApiGetDocumentTranslationsRequest) (*BTListResponseBTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -669,7 +669,7 @@ func (a *TranslationApiService) GetDocumentTranslationsExecute(r ApiGetDocumentT
 		localVarReturnValue *BTListResponseBTTranslationRequestInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationApiService.GetDocumentTranslations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationAPIService.GetDocumentTranslations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -750,7 +750,7 @@ func (a *TranslationApiService) GetDocumentTranslationsExecute(r ApiGetDocumentT
 
 type ApiGetTranslationRequest struct {
 	ctx        context.Context
-	ApiService *TranslationApiService
+	ApiService *TranslationAPIService
 	tid        string
 }
 
@@ -767,7 +767,7 @@ When the translation is complete, `requestState` changes from `ACTIVE` to `DONE`
 	@param tid
 	@return ApiGetTranslationRequest
 */
-func (a *TranslationApiService) GetTranslation(ctx context.Context, tid string) ApiGetTranslationRequest {
+func (a *TranslationAPIService) GetTranslation(ctx context.Context, tid string) ApiGetTranslationRequest {
 	return ApiGetTranslationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -778,7 +778,7 @@ func (a *TranslationApiService) GetTranslation(ctx context.Context, tid string) 
 // Execute executes the request
 //
 //	@return BTTranslationRequestInfo
-func (a *TranslationApiService) GetTranslationExecute(r ApiGetTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+func (a *TranslationAPIService) GetTranslationExecute(r ApiGetTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -786,7 +786,7 @@ func (a *TranslationApiService) GetTranslationExecute(r ApiGetTranslationRequest
 		localVarReturnValue *BTTranslationRequestInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationApiService.GetTranslation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationAPIService.GetTranslation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

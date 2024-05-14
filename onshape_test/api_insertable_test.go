@@ -7,7 +7,7 @@ import (
 )
 
 func TestInsertableAPI(t *testing.T) {
-    InitializeTester[*onshape.InsertableApiService](t)
+    InitializeTester[*onshape.InsertableAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetLatestInDocumentRequest{},

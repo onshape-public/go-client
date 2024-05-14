@@ -7,7 +7,7 @@ import (
 )
 
 func TestFolderAPI(t *testing.T) {
-    InitializeTester[*onshape.FolderApiService](t)
+    InitializeTester[*onshape.FolderAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetFolderAclRequest{},

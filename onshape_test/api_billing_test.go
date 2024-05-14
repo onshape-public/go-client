@@ -7,7 +7,7 @@ import (
 )
 
 func TestBillingAPI(t *testing.T) {
-    InitializeTester[*onshape.BillingApiService](t)
+    InitializeTester[*onshape.BillingAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetClientPlansRequest{},

@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// RevisionApiService RevisionApi service
-type RevisionApiService service
+// RevisionAPIService RevisionAPI service
+type RevisionAPIService service
 
 type ApiDeleteRevisionHistoryRequest struct {
 	ctx                   context.Context
-	ApiService            *RevisionApiService
+	ApiService            *RevisionAPIService
 	cid                   string
 	pnum                  string
 	et                    string
@@ -50,7 +50,7 @@ Only company admins can call this API. All documents that contain or use the par
 	@param et
 	@return ApiDeleteRevisionHistoryRequest
 */
-func (a *RevisionApiService) DeleteRevisionHistory(ctx context.Context, cid string, pnum string, et string) ApiDeleteRevisionHistoryRequest {
+func (a *RevisionAPIService) DeleteRevisionHistory(ctx context.Context, cid string, pnum string, et string) ApiDeleteRevisionHistoryRequest {
 	return ApiDeleteRevisionHistoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *RevisionApiService) DeleteRevisionHistory(ctx context.Context, cid stri
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *RevisionApiService) DeleteRevisionHistoryExecute(r ApiDeleteRevisionHistoryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RevisionAPIService) DeleteRevisionHistoryExecute(r ApiDeleteRevisionHistoryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *RevisionApiService) DeleteRevisionHistoryExecute(r ApiDeleteRevisionHis
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.DeleteRevisionHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.DeleteRevisionHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,7 +151,7 @@ func (a *RevisionApiService) DeleteRevisionHistoryExecute(r ApiDeleteRevisionHis
 
 type ApiEnumerateRevisionsRequest struct {
 	ctx         context.Context
-	ApiService  *RevisionApiService
+	ApiService  *RevisionAPIService
 	cid         string
 	elementType *int32
 	limit       *int32
@@ -198,7 +198,7 @@ EnumerateRevisions Enumerate all of a company's revisions.
 	@param cid The company or enterprise ID that owns the resource.
 	@return ApiEnumerateRevisionsRequest
 */
-func (a *RevisionApiService) EnumerateRevisions(ctx context.Context, cid string) ApiEnumerateRevisionsRequest {
+func (a *RevisionAPIService) EnumerateRevisions(ctx context.Context, cid string) ApiEnumerateRevisionsRequest {
 	return ApiEnumerateRevisionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -209,7 +209,7 @@ func (a *RevisionApiService) EnumerateRevisions(ctx context.Context, cid string)
 // Execute executes the request
 //
 //	@return BTListResponseBTRevisionInfo
-func (a *RevisionApiService) EnumerateRevisionsExecute(r ApiEnumerateRevisionsRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
+func (a *RevisionAPIService) EnumerateRevisionsExecute(r ApiEnumerateRevisionsRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -217,7 +217,7 @@ func (a *RevisionApiService) EnumerateRevisionsExecute(r ApiEnumerateRevisionsRe
 		localVarReturnValue *BTListResponseBTRevisionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.EnumerateRevisions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.EnumerateRevisions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -304,7 +304,7 @@ func (a *RevisionApiService) EnumerateRevisionsExecute(r ApiEnumerateRevisionsRe
 
 type ApiGetAllInDocumentRequest struct {
 	ctx        context.Context
-	ApiService *RevisionApiService
+	ApiService *RevisionAPIService
 	did        string
 }
 
@@ -321,7 +321,7 @@ Retrieve a list of all revisions that exist in a document and are owned by the d
 	@param did
 	@return ApiGetAllInDocumentRequest
 */
-func (a *RevisionApiService) GetAllInDocument(ctx context.Context, did string) ApiGetAllInDocumentRequest {
+func (a *RevisionAPIService) GetAllInDocument(ctx context.Context, did string) ApiGetAllInDocumentRequest {
 	return ApiGetAllInDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -332,7 +332,7 @@ func (a *RevisionApiService) GetAllInDocument(ctx context.Context, did string) A
 // Execute executes the request
 //
 //	@return BTListResponseBTRevisionInfo
-func (a *RevisionApiService) GetAllInDocumentExecute(r ApiGetAllInDocumentRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
+func (a *RevisionAPIService) GetAllInDocumentExecute(r ApiGetAllInDocumentRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -340,7 +340,7 @@ func (a *RevisionApiService) GetAllInDocumentExecute(r ApiGetAllInDocumentReques
 		localVarReturnValue *BTListResponseBTRevisionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetAllInDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.GetAllInDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -415,7 +415,7 @@ func (a *RevisionApiService) GetAllInDocumentExecute(r ApiGetAllInDocumentReques
 
 type ApiGetAllInDocumentVersionRequest struct {
 	ctx        context.Context
-	ApiService *RevisionApiService
+	ApiService *RevisionAPIService
 	did        string
 	vid        string
 }
@@ -434,7 +434,7 @@ Retrieve a list of all revisions that exist in a document version and are owned 
 	@param vid
 	@return ApiGetAllInDocumentVersionRequest
 */
-func (a *RevisionApiService) GetAllInDocumentVersion(ctx context.Context, did string, vid string) ApiGetAllInDocumentVersionRequest {
+func (a *RevisionAPIService) GetAllInDocumentVersion(ctx context.Context, did string, vid string) ApiGetAllInDocumentVersionRequest {
 	return ApiGetAllInDocumentVersionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -446,7 +446,7 @@ func (a *RevisionApiService) GetAllInDocumentVersion(ctx context.Context, did st
 // Execute executes the request
 //
 //	@return BTListResponseBTRevisionInfo
-func (a *RevisionApiService) GetAllInDocumentVersionExecute(r ApiGetAllInDocumentVersionRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
+func (a *RevisionAPIService) GetAllInDocumentVersionExecute(r ApiGetAllInDocumentVersionRequest) (*BTListResponseBTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -454,7 +454,7 @@ func (a *RevisionApiService) GetAllInDocumentVersionExecute(r ApiGetAllInDocumen
 		localVarReturnValue *BTListResponseBTRevisionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetAllInDocumentVersion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.GetAllInDocumentVersion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -530,7 +530,7 @@ func (a *RevisionApiService) GetAllInDocumentVersionExecute(r ApiGetAllInDocumen
 
 type ApiGetLatestInDocumentOrCompanyRequest struct {
 	ctx        context.Context
-	ApiService *RevisionApiService
+	ApiService *RevisionAPIService
 	cd         string
 	cdid       string
 	pnum       string
@@ -558,7 +558,7 @@ Returns 204 if no revisions are found.
 	@param pnum
 	@return ApiGetLatestInDocumentOrCompanyRequest
 */
-func (a *RevisionApiService) GetLatestInDocumentOrCompany(ctx context.Context, cd string, cdid string, pnum string) ApiGetLatestInDocumentOrCompanyRequest {
+func (a *RevisionAPIService) GetLatestInDocumentOrCompany(ctx context.Context, cd string, cdid string, pnum string) ApiGetLatestInDocumentOrCompanyRequest {
 	return ApiGetLatestInDocumentOrCompanyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -571,7 +571,7 @@ func (a *RevisionApiService) GetLatestInDocumentOrCompany(ctx context.Context, c
 // Execute executes the request
 //
 //	@return BTRevisionInfo
-func (a *RevisionApiService) GetLatestInDocumentOrCompanyExecute(r ApiGetLatestInDocumentOrCompanyRequest) (*BTRevisionInfo, *http.Response, error) {
+func (a *RevisionAPIService) GetLatestInDocumentOrCompanyExecute(r ApiGetLatestInDocumentOrCompanyRequest) (*BTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -579,7 +579,7 @@ func (a *RevisionApiService) GetLatestInDocumentOrCompanyExecute(r ApiGetLatestI
 		localVarReturnValue *BTRevisionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetLatestInDocumentOrCompany")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.GetLatestInDocumentOrCompany")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -660,7 +660,7 @@ func (a *RevisionApiService) GetLatestInDocumentOrCompanyExecute(r ApiGetLatestI
 
 type ApiGetRevisionByPartNumberRequest struct {
 	ctx         context.Context
-	ApiService  *RevisionApiService
+	ApiService  *RevisionAPIService
 	cid         string
 	pnum        string
 	revision    *string
@@ -691,7 +691,7 @@ GetRevisionByPartNumber Get a list of revisions by part number.
 	@param pnum Part Number
 	@return ApiGetRevisionByPartNumberRequest
 */
-func (a *RevisionApiService) GetRevisionByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionByPartNumberRequest {
+func (a *RevisionAPIService) GetRevisionByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionByPartNumberRequest {
 	return ApiGetRevisionByPartNumberRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -703,7 +703,7 @@ func (a *RevisionApiService) GetRevisionByPartNumber(ctx context.Context, cid st
 // Execute executes the request
 //
 //	@return BTRevisionInfo
-func (a *RevisionApiService) GetRevisionByPartNumberExecute(r ApiGetRevisionByPartNumberRequest) (*BTRevisionInfo, *http.Response, error) {
+func (a *RevisionAPIService) GetRevisionByPartNumberExecute(r ApiGetRevisionByPartNumberRequest) (*BTRevisionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -711,7 +711,7 @@ func (a *RevisionApiService) GetRevisionByPartNumberExecute(r ApiGetRevisionByPa
 		localVarReturnValue *BTRevisionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetRevisionByPartNumber")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.GetRevisionByPartNumber")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -793,7 +793,7 @@ func (a *RevisionApiService) GetRevisionByPartNumberExecute(r ApiGetRevisionByPa
 
 type ApiGetRevisionHistoryInCompanyByElementIdRequest struct {
 	ctx                  context.Context
-	ApiService           *RevisionApiService
+	ApiService           *RevisionAPIService
 	cid                  string
 	did                  string
 	wv                   string
@@ -848,7 +848,7 @@ GetRevisionHistoryInCompanyByElementId Get a list of all revisions for an elemen
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetRevisionHistoryInCompanyByElementIdRequest
 */
-func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementId(ctx context.Context, cid string, did string, wv string, wvid string, eid string) ApiGetRevisionHistoryInCompanyByElementIdRequest {
+func (a *RevisionAPIService) GetRevisionHistoryInCompanyByElementId(ctx context.Context, cid string, did string, wv string, wvid string, eid string) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	return ApiGetRevisionHistoryInCompanyByElementIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -863,7 +863,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementId(ctx context.
 // Execute executes the request
 //
 //	@return BTRevisionListResponse
-func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementIdExecute(r ApiGetRevisionHistoryInCompanyByElementIdRequest) (*BTRevisionListResponse, *http.Response, error) {
+func (a *RevisionAPIService) GetRevisionHistoryInCompanyByElementIdExecute(r ApiGetRevisionHistoryInCompanyByElementIdRequest) (*BTRevisionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -871,7 +871,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementIdExecute(r Api
 		localVarReturnValue *BTRevisionListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetRevisionHistoryInCompanyByElementId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.GetRevisionHistoryInCompanyByElementId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -966,7 +966,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementIdExecute(r Api
 
 type ApiGetRevisionHistoryInCompanyByPartIdRequest struct {
 	ctx                  context.Context
-	ApiService           *RevisionApiService
+	ApiService           *RevisionAPIService
 	cid                  string
 	did                  string
 	wv                   string
@@ -1015,7 +1015,7 @@ GetRevisionHistoryInCompanyByPartId Get a list of all revisions for a part in a 
 	@param pid
 	@return ApiGetRevisionHistoryInCompanyByPartIdRequest
 */
-func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartId(ctx context.Context, cid string, did string, wv string, wvid string, eid string, pid string) ApiGetRevisionHistoryInCompanyByPartIdRequest {
+func (a *RevisionAPIService) GetRevisionHistoryInCompanyByPartId(ctx context.Context, cid string, did string, wv string, wvid string, eid string, pid string) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	return ApiGetRevisionHistoryInCompanyByPartIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1031,7 +1031,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartId(ctx context.Con
 // Execute executes the request
 //
 //	@return BTRevisionListResponse
-func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartIdExecute(r ApiGetRevisionHistoryInCompanyByPartIdRequest) (*BTRevisionListResponse, *http.Response, error) {
+func (a *RevisionAPIService) GetRevisionHistoryInCompanyByPartIdExecute(r ApiGetRevisionHistoryInCompanyByPartIdRequest) (*BTRevisionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1039,7 +1039,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartIdExecute(r ApiGet
 		localVarReturnValue *BTRevisionListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetRevisionHistoryInCompanyByPartId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.GetRevisionHistoryInCompanyByPartId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1131,7 +1131,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartIdExecute(r ApiGet
 
 type ApiGetRevisionHistoryInCompanyByPartNumberRequest struct {
 	ctx                  context.Context
-	ApiService           *RevisionApiService
+	ApiService           *RevisionAPIService
 	cid                  string
 	pnum                 string
 	elementType          *string
@@ -1168,7 +1168,7 @@ You can also request `elementType` in addition to `partNumber` since companies m
 	@param pnum
 	@return ApiGetRevisionHistoryInCompanyByPartNumberRequest
 */
-func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
+func (a *RevisionAPIService) GetRevisionHistoryInCompanyByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
 	return ApiGetRevisionHistoryInCompanyByPartNumberRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1180,7 +1180,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumber(ctx context
 // Execute executes the request
 //
 //	@return BTRevisionListResponse
-func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumberExecute(r ApiGetRevisionHistoryInCompanyByPartNumberRequest) (*BTRevisionListResponse, *http.Response, error) {
+func (a *RevisionAPIService) GetRevisionHistoryInCompanyByPartNumberExecute(r ApiGetRevisionHistoryInCompanyByPartNumberRequest) (*BTRevisionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1188,7 +1188,7 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumberExecute(r Ap
 		localVarReturnValue *BTRevisionListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionApiService.GetRevisionHistoryInCompanyByPartNumber")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RevisionAPIService.GetRevisionHistoryInCompanyByPartNumber")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
