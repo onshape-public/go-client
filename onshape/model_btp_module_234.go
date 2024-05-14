@@ -37,8 +37,6 @@ type BTPModule234 struct {
 	TopLevel               []BTPTopLevelNode286            `json:"topLevel,omitempty"`
 	Version                *BTPLiteralNumber258            `json:"version,omitempty"`
 	VersionNumber          *int32                          `json:"versionNumber,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPModule234 instantiates a new BTPModule234 object
@@ -698,38 +696,6 @@ func (o *BTPModule234) SetVersionNumber(v int32) {
 	o.VersionNumber = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTPModule234) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModule234) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTPModule234) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTPModule234) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTPModule234) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
@@ -799,9 +765,6 @@ func (o BTPModule234) MarshalJSON() ([]byte, error) {
 	}
 	if o.VersionNumber != nil {
 		toSerialize["versionNumber"] = o.VersionNumber
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

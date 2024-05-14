@@ -20,8 +20,6 @@ type BTJEditChange2636 struct {
 	BtType *string                `json:"btType,omitempty"`
 	Path   *BTJPath3073           `json:"path,omitempty"`
 	Value  map[string]interface{} `json:"value"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTJEditChange2636 instantiates a new BTJEditChange2636 object
@@ -130,38 +128,6 @@ func (o *BTJEditChange2636) SetValue(v map[string]interface{}) {
 	o.Value = v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTJEditChange2636) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTJEditChange2636) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJEditChange2636) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTJEditChange2636) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTJEditChange2636) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTJEdit3734, errBTJEdit3734 := json.Marshal(o.BTJEdit3734)
@@ -180,9 +146,6 @@ func (o BTJEditChange2636) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["value"] = o.Value
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

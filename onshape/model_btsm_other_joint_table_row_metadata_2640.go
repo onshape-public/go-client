@@ -20,8 +20,6 @@ type BTSMOtherJointTableRowMetadata2640 struct {
 	BtType                  *string                        `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableCrossHighlightData1753 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSMOtherJointTableRowMetadata2640 instantiates a new BTSMOtherJointTableRowMetadata2640 object
@@ -137,38 +135,6 @@ func (o *BTSMOtherJointTableRowMetadata2640) SetCrossHighlightData(v BTTableCros
 	o.CrossHighlightData = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTSMOtherJointTableRowMetadata2640) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSMOtherJointTableRowMetadata2640) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTSMOtherJointTableRowMetadata2640) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTSMOtherJointTableRowMetadata2640) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTSMOtherJointTableRowMetadata2640) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTBaseSMJointTableRowMetadata2232, errBTBaseSMJointTableRowMetadata2232 := json.Marshal(o.BTBaseSMJointTableRowMetadata2232)
@@ -187,9 +153,6 @@ func (o BTSMOtherJointTableRowMetadata2640) MarshalJSON() ([]byte, error) {
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

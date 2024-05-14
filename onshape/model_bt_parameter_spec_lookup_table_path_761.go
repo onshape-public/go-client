@@ -33,8 +33,6 @@ type BTParameterSpecLookupTablePath761 struct {
 	UiHints                    []GBTUIHint                          `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177   `json:"visibilityCondition,omitempty"`
 	LookupTable                *BTParameterLookupTableListEntry1916 `json:"lookupTable,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecLookupTablePath761 instantiates a new BTParameterSpecLookupTablePath761 object
@@ -566,38 +564,6 @@ func (o *BTParameterSpecLookupTablePath761) SetLookupTable(v BTParameterLookupTa
 	o.LookupTable = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTParameterSpecLookupTablePath761) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecLookupTablePath761) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTParameterSpecLookupTablePath761) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTParameterSpecLookupTablePath761) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTParameterSpecLookupTablePath761) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
@@ -655,9 +621,6 @@ func (o BTParameterSpecLookupTablePath761) MarshalJSON() ([]byte, error) {
 	}
 	if o.LookupTable != nil {
 		toSerialize["lookupTable"] = o.LookupTable
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -1092,56 +1092,6 @@ func (o *BTParameterSpecMultiEnum3118) SetOptions(v []string) {
 	o.GetActualInstance().(getResult).SetOptions(v)
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTParameterSpecMultiEnum3118) GetBtType() string {
-	type getResult interface {
-		GetBtType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecMultiEnum3118) GetBtTypeOk() (*string, bool) {
-	type getResult interface {
-		GetBtTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTParameterSpecMultiEnum3118) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTParameterSpecMultiEnum3118) SetBtType(v string) {
-	type getResult interface {
-		SetBtType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetBtType(v)
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTParameterSpecMultiEnum3118) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1254,8 +1204,6 @@ type base_BTParameterSpecMultiEnum3118 struct {
 	Namespace                      *string                                       `json:"namespace,omitempty"`
 	OptionNames                    []string                                      `json:"optionNames,omitempty"`
 	Options                        []string                                      `json:"options,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTParameterSpecMultiEnum3118 instantiates a new base_BTParameterSpecMultiEnum3118 object
@@ -1947,38 +1895,6 @@ func (o *base_BTParameterSpecMultiEnum3118) SetOptions(v []string) {
 	o.Options = v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *base_BTParameterSpecMultiEnum3118) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTParameterSpecMultiEnum3118) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTParameterSpecMultiEnum3118) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *base_BTParameterSpecMultiEnum3118) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o base_BTParameterSpecMultiEnum3118) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
@@ -2051,9 +1967,6 @@ func (o base_BTParameterSpecMultiEnum3118) MarshalJSON() ([]byte, error) {
 	}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

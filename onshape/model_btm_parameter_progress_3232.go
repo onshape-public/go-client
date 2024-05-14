@@ -27,8 +27,6 @@ type BTMParameterProgress3232 struct {
 	PercentDone   *float64          `json:"percentDone,omitempty"`
 	Status        *GBTComputeStatus `json:"status,omitempty"`
 	StatusMessage *string           `json:"statusMessage,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMParameterProgress3232 instantiates a new BTMParameterProgress3232 object
@@ -272,38 +270,6 @@ func (o *BTMParameterProgress3232) SetStatusMessage(v string) {
 	o.StatusMessage = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMParameterProgress3232) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParameterProgress3232) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMParameterProgress3232) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMParameterProgress3232) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTMParameterProgress3232) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMReadOnlyParameter3800, errBTMReadOnlyParameter3800 := json.Marshal(o.BTMReadOnlyParameter3800)
@@ -334,9 +300,6 @@ func (o BTMParameterProgress3232) MarshalJSON() ([]byte, error) {
 	}
 	if o.StatusMessage != nil {
 		toSerialize["statusMessage"] = o.StatusMessage
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

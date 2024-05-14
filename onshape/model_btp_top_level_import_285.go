@@ -41,8 +41,6 @@ type BTPTopLevelImport285 struct {
 	Namespace          []BTPIdentifier8 `json:"namespace,omitempty"`
 	NamespaceString    *string          `json:"namespaceString,omitempty"`
 	SpaceBeforeImport  *BTPSpace10      `json:"spaceBeforeImport,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPTopLevelImport285 instantiates a new BTPTopLevelImport285 object
@@ -798,38 +796,6 @@ func (o *BTPTopLevelImport285) SetSpaceBeforeImport(v BTPSpace10) {
 	o.SpaceBeforeImport = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTPTopLevelImport285) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPTopLevelImport285) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTPTopLevelImport285) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTPTopLevelImport285) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTPTopLevelImport285) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPTopLevelNode286, errBTPTopLevelNode286 := json.Marshal(o.BTPTopLevelNode286)
@@ -908,9 +874,6 @@ func (o BTPTopLevelImport285) MarshalJSON() ([]byte, error) {
 	}
 	if o.SpaceBeforeImport != nil {
 		toSerialize["spaceBeforeImport"] = o.SpaceBeforeImport
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

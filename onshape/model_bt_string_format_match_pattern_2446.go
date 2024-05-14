@@ -21,8 +21,6 @@ type BTStringFormatMatchPattern2446 struct {
 	ErrorMessage                  *string `json:"errorMessage,omitempty"`
 	ShouldResetValueWhenConfirmed *bool   `json:"shouldResetValueWhenConfirmed,omitempty"`
 	RegExpToMatch                 *string `json:"regExpToMatch,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTStringFormatMatchPattern2446 instantiates a new BTStringFormatMatchPattern2446 object
@@ -170,38 +168,6 @@ func (o *BTStringFormatMatchPattern2446) SetRegExpToMatch(v string) {
 	o.RegExpToMatch = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTStringFormatMatchPattern2446) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTStringFormatMatchPattern2446) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTStringFormatMatchPattern2446) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTStringFormatMatchPattern2446) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTStringFormatMatchPattern2446) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTStringFormatCondition683, errBTStringFormatCondition683 := json.Marshal(o.BTStringFormatCondition683)
@@ -223,9 +189,6 @@ func (o BTStringFormatMatchPattern2446) MarshalJSON() ([]byte, error) {
 	}
 	if o.RegExpToMatch != nil {
 		toSerialize["regExpToMatch"] = o.RegExpToMatch
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

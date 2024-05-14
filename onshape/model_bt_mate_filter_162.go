@@ -192,56 +192,6 @@ func (o *BTMateFilter162) SetTopLevelMateOnly(v bool) {
 	o.GetActualInstance().(getResult).SetTopLevelMateOnly(v)
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMateFilter162) GetBtType() string {
-	type getResult interface {
-		GetBtType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMateFilter162) GetBtTypeOk() (*string, bool) {
-	type getResult interface {
-		GetBtTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMateFilter162) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMateFilter162) SetBtType(v string) {
-	type getResult interface {
-		SetBtType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetBtType(v)
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMateFilter162) UnmarshalJSON(data []byte) error {
 	var err error
@@ -336,8 +286,6 @@ type base_BTMateFilter162 struct {
 	BtType               *string `json:"btType,omitempty"`
 	RequireMateQueryData *bool   `json:"requireMateQueryData,omitempty"`
 	TopLevelMateOnly     *bool   `json:"topLevelMateOnly,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTMateFilter162 instantiates a new base_BTMateFilter162 object
@@ -453,38 +401,6 @@ func (o *base_BTMateFilter162) SetTopLevelMateOnly(v bool) {
 	o.TopLevelMateOnly = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *base_BTMateFilter162) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMateFilter162) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTMateFilter162) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *base_BTMateFilter162) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o base_BTMateFilter162) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
@@ -503,9 +419,6 @@ func (o base_BTMateFilter162) MarshalJSON() ([]byte, error) {
 	}
 	if o.TopLevelMateOnly != nil {
 		toSerialize["topLevelMateOnly"] = o.TopLevelMateOnly
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -30,8 +30,6 @@ type BTPExpressionAccess237 struct {
 	Accessor            *BTPPropertyAccessor23 `json:"accessor,omitempty"`
 	Base                *BTPExpression9        `json:"base,omitempty"`
 	SpaceInAccessor     *BTPSpace10            `json:"spaceInAccessor,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPExpressionAccess237 instantiates a new BTPExpressionAccess237 object
@@ -467,38 +465,6 @@ func (o *BTPExpressionAccess237) SetSpaceInAccessor(v BTPSpace10) {
 	o.SpaceInAccessor = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTPExpressionAccess237) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPExpressionAccess237) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTPExpressionAccess237) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTPExpressionAccess237) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTPExpressionAccess237) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPExpression9, errBTPExpression9 := json.Marshal(o.BTPExpression9)
@@ -547,9 +513,6 @@ func (o BTPExpressionAccess237) MarshalJSON() ([]byte, error) {
 	}
 	if o.SpaceInAccessor != nil {
 		toSerialize["spaceInAccessor"] = o.SpaceInAccessor
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

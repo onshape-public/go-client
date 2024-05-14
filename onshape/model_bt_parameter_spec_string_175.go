@@ -35,8 +35,6 @@ type BTParameterSpecString175 struct {
 	DisallowsEmptyStrings      *string                            `json:"disallowsEmptyStrings,omitempty"`
 	DisallowsHtml              *string                            `json:"disallowsHtml,omitempty"`
 	FormatConditions           []BTStringFormatCondition683       `json:"formatConditions,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecString175 instantiates a new BTParameterSpecString175 object
@@ -632,38 +630,6 @@ func (o *BTParameterSpecString175) SetFormatConditions(v []BTStringFormatConditi
 	o.FormatConditions = v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTParameterSpecString175) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecString175) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTParameterSpecString175) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTParameterSpecString175) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTParameterSpecString175) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
@@ -727,9 +693,6 @@ func (o BTParameterSpecString175) MarshalJSON() ([]byte, error) {
 	}
 	if o.FormatConditions != nil {
 		toSerialize["formatConditions"] = o.FormatConditions
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

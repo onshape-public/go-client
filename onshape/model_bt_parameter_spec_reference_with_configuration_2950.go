@@ -37,8 +37,6 @@ type BTParameterSpecReferenceWithConfiguration2950 struct {
 	AllowAssemblies            *bool                              `json:"allowAssemblies,omitempty"`
 	AllowedInsertableTypes     []GBTPartStudioItemType            `json:"allowedInsertableTypes,omitempty"`
 	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecReferenceWithConfiguration2950 instantiates a new BTParameterSpecReferenceWithConfiguration2950 object
@@ -698,38 +696,6 @@ func (o *BTParameterSpecReferenceWithConfiguration2950) SetMaxNumberOfPicks(v in
 	o.MaxNumberOfPicks = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTParameterSpecReferenceWithConfiguration2950) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecReferenceWithConfiguration2950) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTParameterSpecReferenceWithConfiguration2950) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTParameterSpecReferenceWithConfiguration2950) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTParameterSpecReferenceWithConfiguration2950) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParameterSpecReference2789, errBTParameterSpecReference2789 := json.Marshal(o.BTParameterSpecReference2789)
@@ -799,9 +765,6 @@ func (o BTParameterSpecReferenceWithConfiguration2950) MarshalJSON() ([]byte, er
 	}
 	if o.MaxNumberOfPicks != nil {
 		toSerialize["maxNumberOfPicks"] = o.MaxNumberOfPicks
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -28,8 +28,6 @@ type BTMConfigurationParameterBoolean2550 struct {
 	ParameterType      *GBTConfigurationParameterType `json:"parameterType,omitempty"`
 	Valid              *bool                          `json:"valid,omitempty"`
 	DefaultValue       *bool                          `json:"defaultValue,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMConfigurationParameterBoolean2550 instantiates a new BTMConfigurationParameterBoolean2550 object
@@ -369,38 +367,6 @@ func (o *BTMConfigurationParameterBoolean2550) SetDefaultValue(v bool) {
 	o.DefaultValue = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMConfigurationParameterBoolean2550) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMConfigurationParameterBoolean2550) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMConfigurationParameterBoolean2550) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMConfigurationParameterBoolean2550) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTMConfigurationParameterBoolean2550) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMConfigurationParameter819, errBTMConfigurationParameter819 := json.Marshal(o.BTMConfigurationParameter819)
@@ -440,9 +406,6 @@ func (o BTMConfigurationParameterBoolean2550) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultValue != nil {
 		toSerialize["defaultValue"] = o.DefaultValue
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

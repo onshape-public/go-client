@@ -25,8 +25,6 @@ type BTNamedPositionValuesColumnInfo816 struct {
 	ParameterId    *string                `json:"parameterId,omitempty"`
 	ParentId       *string                `json:"parentId,omitempty"`
 	ParentName     *string                `json:"parentName,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTNamedPositionValuesColumnInfo816 instantiates a new BTNamedPositionValuesColumnInfo816 object
@@ -302,38 +300,6 @@ func (o *BTNamedPositionValuesColumnInfo816) SetParentName(v string) {
 	o.ParentName = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTNamedPositionValuesColumnInfo816) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTNamedPositionValuesColumnInfo816) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTNamedPositionValuesColumnInfo816) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTNamedPositionValuesColumnInfo816) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTNamedPositionValuesColumnInfo816) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
@@ -367,9 +333,6 @@ func (o BTNamedPositionValuesColumnInfo816) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParentName != nil {
 		toSerialize["parentName"] = o.ParentName
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

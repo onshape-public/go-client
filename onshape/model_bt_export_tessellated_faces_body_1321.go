@@ -25,8 +25,6 @@ type BTExportTessellatedFacesBody1321 struct {
 	BodyType     *GBTBodyType                       `json:"bodyType,omitempty"`
 	Faces        []BTExportTessellatedFacesFace1192 `json:"faces,omitempty"`
 	FacetPoints  []BTVector3d389                    `json:"facetPoints,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTExportTessellatedFacesBody1321 instantiates a new BTExportTessellatedFacesBody1321 object
@@ -302,38 +300,6 @@ func (o *BTExportTessellatedFacesBody1321) SetFacetPoints(v []BTVector3d389) {
 	o.FacetPoints = v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTExportTessellatedFacesBody1321) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTExportTessellatedFacesBody1321) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTExportTessellatedFacesBody1321) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTExportTessellatedFacesBody1321) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTExportTessellatedFacesBody1321) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTExportTessellatedBody3398, errBTExportTessellatedBody3398 := json.Marshal(o.BTExportTessellatedBody3398)
@@ -367,9 +333,6 @@ func (o BTExportTessellatedFacesBody1321) MarshalJSON() ([]byte, error) {
 	}
 	if o.FacetPoints != nil {
 		toSerialize["facetPoints"] = o.FacetPoints
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

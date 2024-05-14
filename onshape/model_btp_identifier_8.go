@@ -29,8 +29,6 @@ type BTPIdentifier8 struct {
 	StartSourceLocation      *int32              `json:"startSourceLocation,omitempty"`
 	Identifier               *string             `json:"identifier,omitempty"`
 	InvalidIdentifierForTest *string             `json:"invalidIdentifierForTest,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPIdentifier8 instantiates a new BTPIdentifier8 object
@@ -434,38 +432,6 @@ func (o *BTPIdentifier8) SetInvalidIdentifierForTest(v string) {
 	o.InvalidIdentifierForTest = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTPIdentifier8) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPIdentifier8) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTPIdentifier8) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTPIdentifier8) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTPIdentifier8) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPPropertyAccessor23, errBTPPropertyAccessor23 := json.Marshal(o.BTPPropertyAccessor23)
@@ -511,9 +477,6 @@ func (o BTPIdentifier8) MarshalJSON() ([]byte, error) {
 	}
 	if o.InvalidIdentifierForTest != nil {
 		toSerialize["invalidIdentifierForTest"] = o.InvalidIdentifierForTest
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

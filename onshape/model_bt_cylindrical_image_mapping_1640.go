@@ -22,8 +22,6 @@ type BTCylindricalImageMapping1640 struct {
 	UvTransform      *BTMatrix3x3340        `json:"uvTransform,omitempty"`
 	CylinderSystem   *BTCoordinateSystem387 `json:"cylinderSystem,omitempty"`
 	Radius           *float32               `json:"radius,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTCylindricalImageMapping1640 instantiates a new BTCylindricalImageMapping1640 object
@@ -203,38 +201,6 @@ func (o *BTCylindricalImageMapping1640) SetRadius(v float32) {
 	o.Radius = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTCylindricalImageMapping1640) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTCylindricalImageMapping1640) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTCylindricalImageMapping1640) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTCylindricalImageMapping1640) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTCylindricalImageMapping1640) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTImageMapping3821, errBTImageMapping3821 := json.Marshal(o.BTImageMapping3821)
@@ -259,9 +225,6 @@ func (o BTCylindricalImageMapping1640) MarshalJSON() ([]byte, error) {
 	}
 	if o.Radius != nil {
 		toSerialize["radius"] = o.Radius
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -31,8 +31,6 @@ type BTMMeshPointQuery1183 struct {
 	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryString        *string                    `json:"queryString,omitempty"`
 	Origin             *BTVector3d389             `json:"origin,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMMeshPointQuery1183 instantiates a new BTMMeshPointQuery1183 object
@@ -468,38 +466,6 @@ func (o *BTMMeshPointQuery1183) SetOrigin(v BTVector3d389) {
 	o.Origin = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMMeshPointQuery1183) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMMeshPointQuery1183) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMMeshPointQuery1183) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMMeshPointQuery1183) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTMMeshPointQuery1183) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMIndividualQueryWithOccurrenceBase904, errBTMIndividualQueryWithOccurrenceBase904 := json.Marshal(o.BTMIndividualQueryWithOccurrenceBase904)
@@ -548,9 +514,6 @@ func (o BTMMeshPointQuery1183) MarshalJSON() ([]byte, error) {
 	}
 	if o.Origin != nil {
 		toSerialize["origin"] = o.Origin
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

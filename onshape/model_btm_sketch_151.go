@@ -44,8 +44,6 @@ type BTMSketch151 struct {
 	VariableStudioReference *bool                  `json:"variableStudioReference,omitempty"`
 	Constraints             []BTMSketchConstraint2 `json:"constraints,omitempty"`
 	Entities                []BTMSketchGeomEntity5 `json:"entities,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMSketch151 instantiates a new BTMSketch151 object
@@ -545,38 +543,6 @@ func (o *BTMSketch151) SetEntities(v []BTMSketchGeomEntity5) {
 	o.Entities = v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMSketch151) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketch151) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMSketch151) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMSketch151) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTMSketch151) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMFeature134, errBTMFeature134 := json.Marshal(o.BTMFeature134)
@@ -631,9 +597,6 @@ func (o BTMSketch151) MarshalJSON() ([]byte, error) {
 	}
 	if o.Entities != nil {
 		toSerialize["entities"] = o.Entities
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

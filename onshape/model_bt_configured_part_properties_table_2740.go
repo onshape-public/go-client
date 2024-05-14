@@ -33,8 +33,6 @@ type BTConfiguredPartPropertiesTable2740 struct {
 	PartDeterministicId  *string                 `json:"partDeterministicId,omitempty"`
 	PartDeterministicIds []string                `json:"partDeterministicIds,omitempty"`
 	PropertyNodeId       *string                 `json:"propertyNodeId,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTConfiguredPartPropertiesTable2740 instantiates a new BTConfiguredPartPropertiesTable2740 object
@@ -566,38 +564,6 @@ func (o *BTConfiguredPartPropertiesTable2740) SetPropertyNodeId(v string) {
 	o.PropertyNodeId = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTConfiguredPartPropertiesTable2740) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTConfiguredPartPropertiesTable2740) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTConfiguredPartPropertiesTable2740) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTConfiguredPartPropertiesTable2740) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTConfiguredPartPropertiesTable2740) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTable1825, errBTTable1825 := json.Marshal(o.BTTable1825)
@@ -655,9 +621,6 @@ func (o BTConfiguredPartPropertiesTable2740) MarshalJSON() ([]byte, error) {
 	}
 	if o.PropertyNodeId != nil {
 		toSerialize["propertyNodeId"] = o.PropertyNodeId
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

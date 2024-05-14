@@ -31,8 +31,6 @@ type BTMIndividualSketchUniqueVerticesQuery1472 struct {
 	QueryStatement     *BTPStatement269           `json:"queryStatement,omitempty"`
 	VariableName       *BTMIndividualQuery138     `json:"variableName,omitempty"`
 	FeatureId          *string                    `json:"featureId,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMIndividualSketchUniqueVerticesQuery1472 instantiates a new BTMIndividualSketchUniqueVerticesQuery1472 object
@@ -468,38 +466,6 @@ func (o *BTMIndividualSketchUniqueVerticesQuery1472) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMIndividualSketchUniqueVerticesQuery1472) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMIndividualSketchUniqueVerticesQuery1472) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMIndividualSketchUniqueVerticesQuery1472) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMIndividualSketchUniqueVerticesQuery1472) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTMIndividualSketchUniqueVerticesQuery1472) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMIndividualQuery138, errBTMIndividualQuery138 := json.Marshal(o.BTMIndividualQuery138)
@@ -548,9 +514,6 @@ func (o BTMIndividualSketchUniqueVerticesQuery1472) MarshalJSON() ([]byte, error
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

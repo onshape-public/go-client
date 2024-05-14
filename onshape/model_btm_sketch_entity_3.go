@@ -407,56 +407,6 @@ func (o *BTMSketchEntity3) SetParameters(v []BTMParameter1) {
 	o.GetActualInstance().(getResult).SetParameters(v)
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMSketchEntity3) GetBtType() string {
-	type getResult interface {
-		GetBtType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchEntity3) GetBtTypeOk() (*string, bool) {
-	type getResult interface {
-		GetBtTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMSketchEntity3) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMSketchEntity3) SetBtType(v string) {
-	type getResult interface {
-		SetBtType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetBtType(v)
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 	var err error
@@ -598,8 +548,6 @@ type base_BTMSketchEntity3 struct {
 	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
 	Namespace                           *string         `json:"namespace,omitempty"`
 	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTMSketchEntity3 instantiates a new base_BTMSketchEntity3 object
@@ -843,38 +791,6 @@ func (o *base_BTMSketchEntity3) SetParameters(v []BTMParameter1) {
 	o.Parameters = v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *base_BTMSketchEntity3) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchEntity3) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTMSketchEntity3) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *base_BTMSketchEntity3) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o base_BTMSketchEntity3) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
@@ -905,9 +821,6 @@ func (o base_BTMSketchEntity3) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

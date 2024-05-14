@@ -27,8 +27,6 @@ type BTConstructionPlaneEntity27 struct {
 	DomainSpecificMetadata []BTDomainSpecificMetadata961 `json:"domainSpecificMetadata,omitempty"`
 	FirstGeometry          *BTEntityGeometry35           `json:"firstGeometry,omitempty"`
 	IsDefault              *bool                         `json:"isDefault,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTConstructionPlaneEntity27 instantiates a new BTConstructionPlaneEntity27 object
@@ -368,38 +366,6 @@ func (o *BTConstructionPlaneEntity27) SetIsDefault(v bool) {
 	o.IsDefault = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTConstructionPlaneEntity27) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTConstructionPlaneEntity27) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTConstructionPlaneEntity27) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTConstructionPlaneEntity27) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTConstructionPlaneEntity27) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTFeatureEntity34, errBTFeatureEntity34 := json.Marshal(o.BTFeatureEntity34)
@@ -439,9 +405,6 @@ func (o BTConstructionPlaneEntity27) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDefault != nil {
 		toSerialize["isDefault"] = o.IsDefault
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

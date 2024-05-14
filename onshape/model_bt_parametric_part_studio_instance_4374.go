@@ -61,8 +61,6 @@ type BTParametricPartStudioInstance4374 struct {
 	ReferenceParameter                      *BTMParameterReferencePartStudio3302 `json:"referenceParameter,omitempty"`
 	VersionId                               *string                              `json:"versionId,omitempty"`
 	VersionIdIfExternal                     *string                              `json:"versionIdIfExternal,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParametricPartStudioInstance4374 instantiates a new BTParametricPartStudioInstance4374 object
@@ -1426,38 +1424,6 @@ func (o *BTParametricPartStudioInstance4374) SetVersionIdIfExternal(v string) {
 	o.VersionIdIfExternal = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTParametricPartStudioInstance4374) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParametricPartStudioInstance4374) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTParametricPartStudioInstance4374) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTParametricPartStudioInstance4374) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTParametricPartStudioInstance4374) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParametricInstance2641, errBTParametricInstance2641 := json.Marshal(o.BTParametricInstance2641)
@@ -1593,9 +1559,6 @@ func (o BTParametricPartStudioInstance4374) MarshalJSON() ([]byte, error) {
 	}
 	if o.VersionIdIfExternal != nil {
 		toSerialize["versionIdIfExternal"] = o.VersionIdIfExternal
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

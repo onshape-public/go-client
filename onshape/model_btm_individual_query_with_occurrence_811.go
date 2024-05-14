@@ -692,56 +692,6 @@ func (o *BTMIndividualQueryWithOccurrence811) SetEntityQuery(v string) {
 	o.GetActualInstance().(getResult).SetEntityQuery(v)
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMIndividualQueryWithOccurrence811) GetBtType() string {
-	type getResult interface {
-		GetBtType() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtType()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMIndividualQueryWithOccurrence811) GetBtTypeOk() (*string, bool) {
-	type getResult interface {
-		GetBtTypeOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetBtTypeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMIndividualQueryWithOccurrence811) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMIndividualQueryWithOccurrence811) SetBtType(v string) {
-	type getResult interface {
-		SetBtType(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetBtType(v)
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMIndividualQueryWithOccurrence811) UnmarshalJSON(data []byte) error {
 	var err error
@@ -847,8 +797,6 @@ type base_BTMIndividualQueryWithOccurrence811 struct {
 	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryString        *string                    `json:"queryString,omitempty"`
 	EntityQuery        *string                    `json:"entityQuery,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTMIndividualQueryWithOccurrence811 instantiates a new base_BTMIndividualQueryWithOccurrence811 object
@@ -1284,38 +1232,6 @@ func (o *base_BTMIndividualQueryWithOccurrence811) SetEntityQuery(v string) {
 	o.EntityQuery = &v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *base_BTMIndividualQueryWithOccurrence811) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMIndividualQueryWithOccurrence811) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTMIndividualQueryWithOccurrence811) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *base_BTMIndividualQueryWithOccurrence811) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o base_BTMIndividualQueryWithOccurrence811) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMIndividualQueryWithOccurrenceBase904, errBTMIndividualQueryWithOccurrenceBase904 := json.Marshal(o.BTMIndividualQueryWithOccurrenceBase904)
@@ -1364,9 +1280,6 @@ func (o base_BTMIndividualQueryWithOccurrence811) MarshalJSON() ([]byte, error) 
 	}
 	if o.EntityQuery != nil {
 		toSerialize["entityQuery"] = o.EntityQuery
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

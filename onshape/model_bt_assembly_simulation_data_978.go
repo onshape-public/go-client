@@ -26,8 +26,6 @@ type BTAssemblySimulationData978 struct {
 	LoadsByNodeId      *map[string]BTMLoad3538       `json:"loadsByNodeId,omitempty"`
 	Simulations        []BTAssemblySimulation2246    `json:"simulations,omitempty"`
 	StructuralLoads    []BTMLoad3538                 `json:"structuralLoads,omitempty"`
-	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTAssemblySimulationData978 instantiates a new BTAssemblySimulationData978 object
@@ -303,38 +301,6 @@ func (o *BTAssemblySimulationData978) SetStructuralLoads(v []BTMLoad3538) {
 	o.StructuralLoads = v
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTAssemblySimulationData978) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulationData978) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTAssemblySimulationData978) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTAssemblySimulationData978) SetBtType(v string) {
-	o.BtType = &v
-}
-
 func (o BTAssemblySimulationData978) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
@@ -368,9 +334,6 @@ func (o BTAssemblySimulationData978) MarshalJSON() ([]byte, error) {
 	}
 	if o.StructuralLoads != nil {
 		toSerialize["structuralLoads"] = o.StructuralLoads
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
