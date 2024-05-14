@@ -21,6 +21,8 @@ type BTFSTableRowMetadata2262 struct {
 	CrossHighlightDataIfAny *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	Callout                 *string                            `json:"callout,omitempty"`
 	CrossHighlightData      *BTTableBaseCrossHighlightData2609 `json:"crossHighlightData,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTFSTableRowMetadata2262 instantiates a new BTFSTableRowMetadata2262 object
@@ -168,6 +170,38 @@ func (o *BTFSTableRowMetadata2262) SetCrossHighlightData(v BTTableBaseCrossHighl
 	o.CrossHighlightData = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTFSTableRowMetadata2262) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTFSTableRowMetadata2262) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTFSTableRowMetadata2262) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTFSTableRowMetadata2262) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTFSTableRowMetadata2262) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
@@ -189,6 +223,9 @@ func (o BTFSTableRowMetadata2262) MarshalJSON() ([]byte, error) {
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

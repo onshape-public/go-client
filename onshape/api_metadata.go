@@ -67,6 +67,7 @@ func (r ApiGetVEOPStandardContentMetadataRequest) Execute() (*BTMetadataObjectIn
 /*
 GetVEOPStandardContentMetadata Get the metadata for a standard content part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the part in the `pid` path parameter.
 * The `configuration` and `linkDocumentId` query parameters are required.
 * `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`.
@@ -252,6 +253,7 @@ func (r ApiGetWMVEMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Respo
 /*
 GetWMVEMetadata Get the metadata for an element.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner.
 * `configuration` optional query parameter defaults to default configuration.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
@@ -455,6 +457,7 @@ func (r ApiGetWMVEPMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Resp
 /*
 GetWMVEPMetadata Get the metadata for a part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the part in the `iden` or `pid` path parameter.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
@@ -651,6 +654,7 @@ func (r ApiGetWMVEPsMetadataRequest) Execute() (*BTMetadataObjectListInfoBTMetad
 /*
 GetWMVEPsMetadata Get the metadata for all parts in a document.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
@@ -832,6 +836,7 @@ func (r ApiGetWMVEsMetadataRequest) Execute() (*BTMetadataObjectListInfoBTMetada
 /*
 GetWMVEsMetadata Get the metadata for all elements in a document.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * You can specify the optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
 * `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`.
@@ -1009,6 +1014,7 @@ func (r ApiGetWVMetadataRequest) Execute() (*BTMetadataObjectInfo, *http.Respons
 /*
 GetWVMetadata Get the metadata for a workspace or version.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
 * You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`.
 * `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`.
@@ -1160,6 +1166,7 @@ func (r ApiUpdateVEOPStandardContentPartMetadataRequest) Execute() (map[string]i
 /*
 UpdateVEOPStandardContentPartMetadata Update the metadata for a standard content part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the document ID to update in the `did` path param.
 * Specify the document in which you have inserted the standard content part in the `linkDocumentId` query param.
 * Specify the property metadata to update in the Request body.
@@ -1297,6 +1304,7 @@ func (r ApiUpdateWVEMetadataRequest) Execute() (map[string]interface{}, *http.Re
 /*
 UpdateWVEMetadata Update the metadata for an element.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Microversion (`m`) in `wvm` path parameter option is not supported.
 * Specify the property metadata to update in the Request body.
 
@@ -1465,6 +1473,7 @@ func (r ApiUpdateWVEPMetadataRequest) Execute() (map[string]interface{}, *http.R
 /*
 UpdateWVEPMetadata Update the metadata for a part.
 
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 * Specify the part in the `iden` or `pid` path parameter.
 * The `configuration` optional query parameter uses the default configuration unless otherwise specified.
 * `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner.
@@ -1619,7 +1628,7 @@ func (r ApiUpdateWVMetadataRequest) Execute() (map[string]interface{}, *http.Res
 /*
 UpdateWVMetadata Update the metadata for a workspace or version.
 
-Specify the property metadata to update in the Request body.
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did

@@ -22,6 +22,8 @@ type BTCurveGeometryLine117 struct {
 	DirY   *float64 `json:"dirY,omitempty"`
 	PntX   *float64 `json:"pntX,omitempty"`
 	PntY   *float64 `json:"pntY,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTCurveGeometryLine117 instantiates a new BTCurveGeometryLine117 object
@@ -201,6 +203,38 @@ func (o *BTCurveGeometryLine117) SetPntY(v float64) {
 	o.PntY = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTCurveGeometryLine117) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveGeometryLine117) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTCurveGeometryLine117) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTCurveGeometryLine117) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTCurveGeometryLine117) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTCurveGeometry114, errBTCurveGeometry114 := json.Marshal(o.BTCurveGeometry114)
@@ -225,6 +259,9 @@ func (o BTCurveGeometryLine117) MarshalJSON() ([]byte, error) {
 	}
 	if o.PntY != nil {
 		toSerialize["pntY"] = o.PntY
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

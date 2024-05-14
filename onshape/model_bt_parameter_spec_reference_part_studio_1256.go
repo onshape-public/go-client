@@ -33,9 +33,12 @@ type BTParameterSpecReferencePartStudio1256 struct {
 	UiHints                     []GBTUIHint                            `json:"uiHints,omitempty"`
 	VisibilityCondition         *BTParameterVisibilityCondition177     `json:"visibilityCondition,omitempty"`
 	DefaultPurpose              *BTElementLibraryPurpose3353           `json:"defaultPurpose,omitempty"`
+	LibraryDefinitionId         *string                                `json:"libraryDefinitionId,omitempty"`
 	AllowedInsertableTypes      []GBTPartStudioItemType                `json:"allowedInsertableTypes,omitempty"`
 	ComputedConfigurationInputs []BTComputedConfigurationInputSpec2525 `json:"computedConfigurationInputs,omitempty"`
 	MaxNumberOfPicks            *int32                                 `json:"maxNumberOfPicks,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecReferencePartStudio1256 instantiates a new BTParameterSpecReferencePartStudio1256 object
@@ -567,6 +570,38 @@ func (o *BTParameterSpecReferencePartStudio1256) SetDefaultPurpose(v BTElementLi
 	o.DefaultPurpose = &v
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *BTParameterSpecReferencePartStudio1256) GetLibraryDefinitionId() string {
+	if o == nil || o.LibraryDefinitionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.LibraryDefinitionId
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferencePartStudio1256) GetLibraryDefinitionIdOk() (*string, bool) {
+	if o == nil || o.LibraryDefinitionId == nil {
+		return nil, false
+	}
+	return o.LibraryDefinitionId, true
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *BTParameterSpecReferencePartStudio1256) HasLibraryDefinitionId() bool {
+	if o != nil && o.LibraryDefinitionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *BTParameterSpecReferencePartStudio1256) SetLibraryDefinitionId(v string) {
+	o.LibraryDefinitionId = &v
+}
+
 // GetAllowedInsertableTypes returns the AllowedInsertableTypes field value if set, zero value otherwise.
 func (o *BTParameterSpecReferencePartStudio1256) GetAllowedInsertableTypes() []GBTPartStudioItemType {
 	if o == nil || o.AllowedInsertableTypes == nil {
@@ -663,6 +698,38 @@ func (o *BTParameterSpecReferencePartStudio1256) SetMaxNumberOfPicks(v int32) {
 	o.MaxNumberOfPicks = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecReferencePartStudio1256) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferencePartStudio1256) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecReferencePartStudio1256) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecReferencePartStudio1256) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterSpecReferencePartStudio1256) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParameterSpecReference2789, errBTParameterSpecReference2789 := json.Marshal(o.BTParameterSpecReference2789)
@@ -721,6 +788,9 @@ func (o BTParameterSpecReferencePartStudio1256) MarshalJSON() ([]byte, error) {
 	if o.DefaultPurpose != nil {
 		toSerialize["defaultPurpose"] = o.DefaultPurpose
 	}
+	if o.LibraryDefinitionId != nil {
+		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
+	}
 	if o.AllowedInsertableTypes != nil {
 		toSerialize["allowedInsertableTypes"] = o.AllowedInsertableTypes
 	}
@@ -729,6 +799,9 @@ func (o BTParameterSpecReferencePartStudio1256) MarshalJSON() ([]byte, error) {
 	}
 	if o.MaxNumberOfPicks != nil {
 		toSerialize["maxNumberOfPicks"] = o.MaxNumberOfPicks
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

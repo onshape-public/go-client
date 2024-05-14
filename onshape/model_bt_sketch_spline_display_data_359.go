@@ -27,6 +27,8 @@ type BTSketchSplineDisplayData359 struct {
 	MinimumParameter   *float64  `json:"minimumParameter,omitempty"`
 	Rational           *bool     `json:"rational,omitempty"`
 	Segment            *bool     `json:"segment,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSketchSplineDisplayData359 instantiates a new BTSketchSplineDisplayData359 object
@@ -366,6 +368,38 @@ func (o *BTSketchSplineDisplayData359) SetSegment(v bool) {
 	o.Segment = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSketchSplineDisplayData359) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchSplineDisplayData359) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSketchSplineDisplayData359) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSketchSplineDisplayData359) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSketchSplineDisplayData359) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTSketchEntityDisplayData354, errBTSketchEntityDisplayData354 := json.Marshal(o.BTSketchEntityDisplayData354)
@@ -405,6 +439,9 @@ func (o BTSketchSplineDisplayData359) MarshalJSON() ([]byte, error) {
 	}
 	if o.Segment != nil {
 		toSerialize["segment"] = o.Segment
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -20,6 +20,8 @@ type BTAndFilter110 struct {
 	BtType   *string           `json:"btType,omitempty"`
 	Operand1 *BTQueryFilter183 `json:"operand1,omitempty"`
 	Operand2 *BTQueryFilter183 `json:"operand2,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTAndFilter110 instantiates a new BTAndFilter110 object
@@ -135,6 +137,38 @@ func (o *BTAndFilter110) SetOperand2(v BTQueryFilter183) {
 	o.Operand2 = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTAndFilter110) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAndFilter110) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTAndFilter110) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTAndFilter110) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTAndFilter110) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
@@ -153,6 +187,9 @@ func (o BTAndFilter110) MarshalJSON() ([]byte, error) {
 	}
 	if o.Operand2 != nil {
 		toSerialize["operand2"] = o.Operand2
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

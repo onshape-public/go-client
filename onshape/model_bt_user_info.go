@@ -2479,6 +2479,56 @@ func (o *BTUserInfo) SetRoles(v []BTRole) {
 	o.GetActualInstance().(getResult).SetRoles(v)
 }
 
+// GetRumEnabled returns the RumEnabled field value if set, zero value otherwise.
+func (o *BTUserInfo) GetRumEnabled() bool {
+	type getResult interface {
+		GetRumEnabled() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRumEnabled()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetRumEnabledOk returns a tuple with the RumEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetRumEnabledOk() (*bool, bool) {
+	type getResult interface {
+		GetRumEnabledOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetRumEnabledOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasRumEnabled returns a boolean if a field has been set.
+func (o *BTUserInfo) HasRumEnabled() bool {
+	type getResult interface {
+		HasRumEnabled() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasRumEnabled()
+	} else {
+		return false
+	}
+}
+
+// SetRumEnabled gets a reference to the given bool and assigns it to the RumEnabled field.
+func (o *BTUserInfo) SetRumEnabled(v bool) {
+	type getResult interface {
+		SetRumEnabled(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetRumEnabled(v)
+}
+
 // GetShowRenewStudentPages returns the ShowRenewStudentPages field value if set, zero value otherwise.
 func (o *BTUserInfo) GetShowRenewStudentPages() bool {
 	type getResult interface {
@@ -2922,6 +2972,7 @@ type base_BTUserInfo struct {
 	RedirectUrl               *string                  `json:"redirectUrl,omitempty"`
 	Role                      *int32                   `json:"role,omitempty"`
 	Roles                     []BTRole                 `json:"roles,omitempty"`
+	RumEnabled                *bool                    `json:"rumEnabled,omitempty"`
 	ShowRenewStudentPages     *bool                    `json:"showRenewStudentPages,omitempty"`
 	StartupPage               *int32                   `json:"startupPage,omitempty"`
 	SystemUser                *bool                    `json:"systemUser,omitempty"`
@@ -4508,6 +4559,38 @@ func (o *base_BTUserInfo) SetRoles(v []BTRole) {
 	o.Roles = v
 }
 
+// GetRumEnabled returns the RumEnabled field value if set, zero value otherwise.
+func (o *base_BTUserInfo) GetRumEnabled() bool {
+	if o == nil || o.RumEnabled == nil {
+		var ret bool
+		return ret
+	}
+	return *o.RumEnabled
+}
+
+// GetRumEnabledOk returns a tuple with the RumEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetRumEnabledOk() (*bool, bool) {
+	if o == nil || o.RumEnabled == nil {
+		return nil, false
+	}
+	return o.RumEnabled, true
+}
+
+// HasRumEnabled returns a boolean if a field has been set.
+func (o *base_BTUserInfo) HasRumEnabled() bool {
+	if o != nil && o.RumEnabled != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRumEnabled gets a reference to the given bool and assigns it to the RumEnabled field.
+func (o *base_BTUserInfo) SetRumEnabled(v bool) {
+	o.RumEnabled = &v
+}
+
 // GetShowRenewStudentPages returns the ShowRenewStudentPages field value if set, zero value otherwise.
 func (o *base_BTUserInfo) GetShowRenewStudentPages() bool {
 	if o == nil || o.ShowRenewStudentPages == nil {
@@ -4848,6 +4931,9 @@ func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Roles != nil {
 		toSerialize["roles"] = o.Roles
+	}
+	if o.RumEnabled != nil {
+		toSerialize["rumEnabled"] = o.RumEnabled
 	}
 	if o.ShowRenewStudentPages != nil {
 		toSerialize["showRenewStudentPages"] = o.ShowRenewStudentPages

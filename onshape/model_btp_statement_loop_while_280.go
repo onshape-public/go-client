@@ -31,6 +31,8 @@ type BTPStatementLoopWhile280 struct {
 	Body                *BTPStatement269    `json:"body,omitempty"`
 	SpaceAfterLoopType  *BTPSpace10         `json:"spaceAfterLoopType,omitempty"`
 	Condition           *BTPExpression9     `json:"condition,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPStatementLoopWhile280 instantiates a new BTPStatementLoopWhile280 object
@@ -498,6 +500,38 @@ func (o *BTPStatementLoopWhile280) SetCondition(v BTPExpression9) {
 	o.Condition = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPStatementLoopWhile280) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPStatementLoopWhile280) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPStatementLoopWhile280) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPStatementLoopWhile280) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPStatementLoopWhile280) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPStatementLoop277, errBTPStatementLoop277 := json.Marshal(o.BTPStatementLoop277)
@@ -549,6 +583,9 @@ func (o BTPStatementLoopWhile280) MarshalJSON() ([]byte, error) {
 	}
 	if o.Condition != nil {
 		toSerialize["condition"] = o.Condition
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

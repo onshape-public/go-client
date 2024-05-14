@@ -27,6 +27,8 @@ type BTMParameterForeignId146 struct {
 	ForeignId    *string                    `json:"foreignId,omitempty"`
 	ForeignName  *string                    `json:"foreignName,omitempty"`
 	LocationInfo *BTForeignDataResponse1070 `json:"locationInfo,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMParameterForeignId146 instantiates a new BTMParameterForeignId146 object
@@ -270,6 +272,38 @@ func (o *BTMParameterForeignId146) SetLocationInfo(v BTForeignDataResponse1070) 
 	o.LocationInfo = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMParameterForeignId146) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterForeignId146) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMParameterForeignId146) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMParameterForeignId146) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMParameterForeignId146) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
@@ -300,6 +334,9 @@ func (o BTMParameterForeignId146) MarshalJSON() ([]byte, error) {
 	}
 	if o.LocationInfo != nil {
 		toSerialize["locationInfo"] = o.LocationInfo
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

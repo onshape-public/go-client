@@ -25,6 +25,8 @@ type BTGeneratedGraphicsAppearance4159 struct {
 	RgbaColor        []string           `json:"rgbaColor,omitempty"`
 	Type             *GBTAppearanceType `json:"type,omitempty"`
 	UsableAppearance *bool              `json:"usableAppearance,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTGeneratedGraphicsAppearance4159 instantiates a new BTGeneratedGraphicsAppearance4159 object
@@ -300,6 +302,38 @@ func (o *BTGeneratedGraphicsAppearance4159) SetUsableAppearance(v bool) {
 	o.UsableAppearance = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTGeneratedGraphicsAppearance4159) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGeneratedGraphicsAppearance4159) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTGeneratedGraphicsAppearance4159) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTGeneratedGraphicsAppearance4159) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTGeneratedGraphicsAppearance4159) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTGraphicsAppearance1152, errBTGraphicsAppearance1152 := json.Marshal(o.BTGraphicsAppearance1152)
@@ -333,6 +367,9 @@ func (o BTGeneratedGraphicsAppearance4159) MarshalJSON() ([]byte, error) {
 	}
 	if o.UsableAppearance != nil {
 		toSerialize["usableAppearance"] = o.UsableAppearance
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

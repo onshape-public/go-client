@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Parent** | Pointer to **string** |  | [optional] 
 **Parents** | Pointer to [**[]BTVersionInfo**](BTVersionInfo.md) |  | [optional] 
 **ProtectionRule** | Pointer to [**BTWorkspaceProtectionRuleOptions**](BTWorkspaceProtectionRuleOptions.md) |  | [optional] 
+**State** | Pointer to [**BTObjectState**](BTObjectState.md) |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -442,6 +443,31 @@ SetProtectionRule sets ProtectionRule field to given value.
 `func (o *BTWorkspaceInfo) HasProtectionRule() bool`
 
 HasProtectionRule returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *BTWorkspaceInfo) GetState() BTObjectState`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *BTWorkspaceInfo) GetStateOk() (*BTObjectState, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *BTWorkspaceInfo) SetState(v BTObjectState)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *BTWorkspaceInfo) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetThumbnail
 

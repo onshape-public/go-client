@@ -26,6 +26,8 @@ type BTNullableQuantityRange1340 struct {
 	HasDefaultValue_ *bool              `json:"hasDefaultValue,omitempty"`
 	HasMaxValue_     *bool              `json:"hasMaxValue,omitempty"`
 	HasMinValue_     *bool              `json:"hasMinValue,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTNullableQuantityRange1340 instantiates a new BTNullableQuantityRange1340 object
@@ -333,6 +335,38 @@ func (o *BTNullableQuantityRange1340) SetHasMinValue_(v bool) {
 	o.HasMinValue_ = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTNullableQuantityRange1340) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTNullableQuantityRange1340) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTNullableQuantityRange1340) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTNullableQuantityRange1340) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTNullableQuantityRange1340) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTQuantityRange181, errBTQuantityRange181 := json.Marshal(o.BTQuantityRange181)
@@ -369,6 +403,9 @@ func (o BTNullableQuantityRange1340) MarshalJSON() ([]byte, error) {
 	}
 	if o.HasMinValue_ != nil {
 		toSerialize["hasMinValue"] = o.HasMinValue_
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

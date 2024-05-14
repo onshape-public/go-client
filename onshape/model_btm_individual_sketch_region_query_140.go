@@ -32,6 +32,8 @@ type BTMIndividualSketchRegionQuery140 struct {
 	VariableName       *BTMIndividualQuery138     `json:"variableName,omitempty"`
 	FeatureId          *string                    `json:"featureId,omitempty"`
 	FilterInnerLoops   *bool                      `json:"filterInnerLoops,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMIndividualSketchRegionQuery140 instantiates a new BTMIndividualSketchRegionQuery140 object
@@ -499,6 +501,38 @@ func (o *BTMIndividualSketchRegionQuery140) SetFilterInnerLoops(v bool) {
 	o.FilterInnerLoops = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMIndividualSketchRegionQuery140) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualSketchRegionQuery140) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMIndividualSketchRegionQuery140) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMIndividualSketchRegionQuery140) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMIndividualSketchRegionQuery140) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMIndividualQuery138, errBTMIndividualQuery138 := json.Marshal(o.BTMIndividualQuery138)
@@ -550,6 +584,9 @@ func (o BTMIndividualSketchRegionQuery140) MarshalJSON() ([]byte, error) {
 	}
 	if o.FilterInnerLoops != nil {
 		toSerialize["filterInnerLoops"] = o.FilterInnerLoops
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

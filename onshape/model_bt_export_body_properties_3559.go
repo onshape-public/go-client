@@ -22,6 +22,8 @@ type BTExportBodyProperties3559 struct {
 	Name       *string                   `json:"name,omitempty"`
 	Material   *BTPartMaterial1445       `json:"material,omitempty"`
 	Visibility *GBTPartVisibility        `json:"visibility,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTExportBodyProperties3559 instantiates a new BTExportBodyProperties3559 object
@@ -201,6 +203,38 @@ func (o *BTExportBodyProperties3559) SetVisibility(v GBTPartVisibility) {
 	o.Visibility = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTExportBodyProperties3559) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportBodyProperties3559) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTExportBodyProperties3559) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTExportBodyProperties3559) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTExportBodyProperties3559) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTExportModelProperties3216, errBTExportModelProperties3216 := json.Marshal(o.BTExportModelProperties3216)
@@ -225,6 +259,9 @@ func (o BTExportBodyProperties3559) MarshalJSON() ([]byte, error) {
 	}
 	if o.Visibility != nil {
 		toSerialize["visibility"] = o.Visibility
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

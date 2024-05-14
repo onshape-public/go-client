@@ -29,6 +29,8 @@ type BTPExpressionAs238 struct {
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
 	Operand             *BTPExpression9     `json:"operand,omitempty"`
 	TypeName            *BTPTypeName290     `json:"typeName,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPExpressionAs238 instantiates a new BTPExpressionAs238 object
@@ -432,6 +434,38 @@ func (o *BTPExpressionAs238) SetTypeName(v BTPTypeName290) {
 	o.TypeName = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPExpressionAs238) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpressionAs238) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPExpressionAs238) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPExpressionAs238) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPExpressionAs238) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPExpression9, errBTPExpression9 := json.Marshal(o.BTPExpression9)
@@ -477,6 +511,9 @@ func (o BTPExpressionAs238) MarshalJSON() ([]byte, error) {
 	}
 	if o.TypeName != nil {
 		toSerialize["typeName"] = o.TypeName
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

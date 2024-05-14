@@ -24,13 +24,17 @@ type BTBillOfMaterialsTableRow1425 struct {
 	NodeId                 *string                            `json:"nodeId,omitempty"`
 	RowMetadata            *BTTableBaseRowMetadata3181        `json:"rowMetadata,omitempty"`
 	ExcludeIsEditable      *bool                              `json:"excludeIsEditable,omitempty"`
+	ExcludeIsOverridden    *bool                              `json:"excludeIsOverridden,omitempty"`
 	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus `json:"exclusionStatus,omitempty"`
 	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus `json:"expansionStatus,omitempty"`
 	IndentLevel            *int32                             `json:"indentLevel,omitempty"`
 	MetadataObjectType     *int32                             `json:"metadataObjectType,omitempty"`
 	MetadataUpdateHref     *string                            `json:"metadataUpdateHref,omitempty"`
+	Name                   *string                            `json:"name,omitempty"`
 	RelatedOccurrencePaths []string                           `json:"relatedOccurrencePaths,omitempty"`
 	UniqueItemId           *BTBillOfMaterialsUniqueItemId2029 `json:"uniqueItemId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTBillOfMaterialsTableRow1425 instantiates a new BTBillOfMaterialsTableRow1425 object
@@ -274,6 +278,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsEditable(v bool) {
 	o.ExcludeIsEditable = &v
 }
 
+// GetExcludeIsOverridden returns the ExcludeIsOverridden field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverridden() bool {
+	if o == nil || o.ExcludeIsOverridden == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeIsOverridden
+}
+
+// GetExcludeIsOverriddenOk returns a tuple with the ExcludeIsOverridden field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverriddenOk() (*bool, bool) {
+	if o == nil || o.ExcludeIsOverridden == nil {
+		return nil, false
+	}
+	return o.ExcludeIsOverridden, true
+}
+
+// HasExcludeIsOverridden returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasExcludeIsOverridden() bool {
+	if o != nil && o.ExcludeIsOverridden != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeIsOverridden gets a reference to the given bool and assigns it to the ExcludeIsOverridden field.
+func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsOverridden(v bool) {
+	o.ExcludeIsOverridden = &v
+}
+
 // GetExclusionStatus returns the ExclusionStatus field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() GBTBillOfMaterialsExclusionStatus {
 	if o == nil || o.ExclusionStatus == nil {
@@ -434,6 +470,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetMetadataUpdateHref(v string) {
 	o.MetadataUpdateHref = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTBillOfMaterialsTableRow1425) SetName(v string) {
+	o.Name = &v
+}
+
 // GetRelatedOccurrencePaths returns the RelatedOccurrencePaths field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetRelatedOccurrencePaths() []string {
 	if o == nil || o.RelatedOccurrencePaths == nil {
@@ -498,6 +566,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetUniqueItemId(v BTBillOfMaterialsUniqu
 	o.UniqueItemId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTBillOfMaterialsTableRow1425) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableRow1054, errBTTableRow1054 := json.Marshal(o.BTTableRow1054)
@@ -529,6 +629,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	if o.ExcludeIsEditable != nil {
 		toSerialize["excludeIsEditable"] = o.ExcludeIsEditable
 	}
+	if o.ExcludeIsOverridden != nil {
+		toSerialize["excludeIsOverridden"] = o.ExcludeIsOverridden
+	}
 	if o.ExclusionStatus != nil {
 		toSerialize["exclusionStatus"] = o.ExclusionStatus
 	}
@@ -544,11 +647,17 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	if o.MetadataUpdateHref != nil {
 		toSerialize["metadataUpdateHref"] = o.MetadataUpdateHref
 	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
 	if o.RelatedOccurrencePaths != nil {
 		toSerialize["relatedOccurrencePaths"] = o.RelatedOccurrencePaths
 	}
 	if o.UniqueItemId != nil {
 		toSerialize["uniqueItemId"] = o.UniqueItemId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -31,6 +31,8 @@ type BTEntityEdge30 struct {
 	IsClosed                    *bool                          `json:"isClosed,omitempty"`
 	IsInternalEdge              *bool                          `json:"isInternalEdge,omitempty"`
 	Points                      *BTImmutableFloatArray         `json:"points,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTEntityEdge30 instantiates a new BTEntityEdge30 object
@@ -498,6 +500,38 @@ func (o *BTEntityEdge30) SetPoints(v BTImmutableFloatArray) {
 	o.Points = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTEntityEdge30) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityEdge30) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTEntityEdge30) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTEntityEdge30) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTessellatedGeometry2576, errBTTessellatedGeometry2576 := json.Marshal(o.BTTessellatedGeometry2576)
@@ -549,6 +583,9 @@ func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	}
 	if o.Points != nil {
 		toSerialize["points"] = o.Points
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

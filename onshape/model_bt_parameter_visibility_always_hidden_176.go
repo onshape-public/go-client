@@ -18,6 +18,8 @@ import (
 type BTParameterVisibilityAlwaysHidden176 struct {
 	BTParameterVisibilityCondition177
 	BtType *string `json:"btType,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterVisibilityAlwaysHidden176 instantiates a new BTParameterVisibilityAlwaysHidden176 object
@@ -69,6 +71,38 @@ func (o *BTParameterVisibilityAlwaysHidden176) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterVisibilityAlwaysHidden176) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterVisibilityAlwaysHidden176) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterVisibilityAlwaysHidden176) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterVisibilityAlwaysHidden176) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterVisibilityAlwaysHidden176) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParameterVisibilityCondition177, errBTParameterVisibilityCondition177 := json.Marshal(o.BTParameterVisibilityCondition177)
@@ -78,6 +112,9 @@ func (o BTParameterVisibilityAlwaysHidden176) MarshalJSON() ([]byte, error) {
 	errBTParameterVisibilityCondition177 = json.Unmarshal([]byte(serializedBTParameterVisibilityCondition177), &toSerialize)
 	if errBTParameterVisibilityCondition177 != nil {
 		return []byte{}, errBTParameterVisibilityCondition177
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType

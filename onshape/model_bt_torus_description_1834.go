@@ -25,6 +25,8 @@ type BTTorusDescription1834 struct {
 	Axis                      *BTVector3d389      `json:"axis,omitempty"`
 	MajorRadius               *float64            `json:"majorRadius,omitempty"`
 	MinorRadius               *float64            `json:"minorRadius,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTTorusDescription1834 instantiates a new BTTorusDescription1834 object
@@ -300,6 +302,38 @@ func (o *BTTorusDescription1834) SetMinorRadius(v float64) {
 	o.MinorRadius = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTTorusDescription1834) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTorusDescription1834) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTTorusDescription1834) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTTorusDescription1834) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTTorusDescription1834) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTSurfaceDescription1564, errBTSurfaceDescription1564 := json.Marshal(o.BTSurfaceDescription1564)
@@ -333,6 +367,9 @@ func (o BTTorusDescription1834) MarshalJSON() ([]byte, error) {
 	}
 	if o.MinorRadius != nil {
 		toSerialize["minorRadius"] = o.MinorRadius
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -3835,6 +3835,7 @@ type ApiUnShareDocumentRequest struct {
 	entryType  *int32
 }
 
+// &#x60;0&#x60; (user) | &#x60;1&#x60; (company) | &#x60;2&#x60; (team) | &#x60;3&#x60; (document) | &#x60;4&#x60; (application)
 func (r ApiUnShareDocumentRequest) EntryType(entryType int32) ApiUnShareDocumentRequest {
 	r.entryType = &entryType
 	return r
@@ -3845,11 +3846,13 @@ func (r ApiUnShareDocumentRequest) Execute() (map[string]interface{}, *http.Resp
 }
 
 /*
-UnShareDocument Unshare document by document ID and tab ID.
+UnShareDocument Remove document View permissions from a user or other entity.
+
+Specify the ID of the entity to unshare with in the `eid` field, and specify the type of entity being identified in the `entryType` field. For example, to unshare a document with a company, you would use `1` as the `entryType` value and the `companyId` as the `entityId`.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did
-	@param eid
+	@param did ID of the document to unshare.
+	@param eid ID of the entity to remove permissions for. Uses `userId`, `companyId`, `teamId`, `documentId`, or `applicationId`, depending on the `entryType` value.
 	@return ApiUnShareDocumentRequest
 */
 func (a *DocumentApiService) UnShareDocument(ctx context.Context, did string, eid string) ApiUnShareDocumentRequest {

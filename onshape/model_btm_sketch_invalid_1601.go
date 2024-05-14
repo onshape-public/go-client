@@ -25,6 +25,8 @@ type BTMSketchInvalid1601 struct {
 	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
 	Namespace                           *string         `json:"namespace,omitempty"`
 	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMSketchInvalid1601 instantiates a new BTMSketchInvalid1601 object
@@ -268,6 +270,38 @@ func (o *BTMSketchInvalid1601) SetParameters(v []BTMParameter1) {
 	o.Parameters = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMSketchInvalid1601) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchInvalid1601) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMSketchInvalid1601) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMSketchInvalid1601) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMSketchInvalid1601) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMSketchEntity3, errBTMSketchEntity3 := json.Marshal(o.BTMSketchEntity3)
@@ -298,6 +332,9 @@ func (o BTMSketchInvalid1601) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

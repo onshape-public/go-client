@@ -27,6 +27,8 @@ type BTExternalReference1936 struct {
 	MicroversionIdAndConfiguration          *BTMicroversionIdAndConfiguration2338 `json:"microversionIdAndConfiguration,omitempty"`
 	NodeId                                  *string                               `json:"nodeId,omitempty"`
 	DocumentVersionId                       *string                               `json:"documentVersionId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTExternalReference1936 instantiates a new BTExternalReference1936 object
@@ -366,6 +368,38 @@ func (o *BTExternalReference1936) SetDocumentVersionId(v string) {
 	o.DocumentVersionId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTExternalReference1936) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalReference1936) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTExternalReference1936) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTExternalReference1936) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTExternalReference1936) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTElementReference725, errBTElementReference725 := json.Marshal(o.BTElementReference725)
@@ -405,6 +439,9 @@ func (o BTExternalReference1936) MarshalJSON() ([]byte, error) {
 	}
 	if o.DocumentVersionId != nil {
 		toSerialize["documentVersionId"] = o.DocumentVersionId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

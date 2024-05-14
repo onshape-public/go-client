@@ -21,6 +21,8 @@ type BTStringMaximumLengthPattern2593 struct {
 	ErrorMessage                  *string `json:"errorMessage,omitempty"`
 	ShouldResetValueWhenConfirmed *bool   `json:"shouldResetValueWhenConfirmed,omitempty"`
 	MaximumLength                 *int32  `json:"maximumLength,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTStringMaximumLengthPattern2593 instantiates a new BTStringMaximumLengthPattern2593 object
@@ -168,6 +170,38 @@ func (o *BTStringMaximumLengthPattern2593) SetMaximumLength(v int32) {
 	o.MaximumLength = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTStringMaximumLengthPattern2593) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTStringMaximumLengthPattern2593) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTStringMaximumLengthPattern2593) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTStringMaximumLengthPattern2593) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTStringMaximumLengthPattern2593) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTStringFormatCondition683, errBTStringFormatCondition683 := json.Marshal(o.BTStringFormatCondition683)
@@ -189,6 +223,9 @@ func (o BTStringMaximumLengthPattern2593) MarshalJSON() ([]byte, error) {
 	}
 	if o.MaximumLength != nil {
 		toSerialize["maximumLength"] = o.MaximumLength
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

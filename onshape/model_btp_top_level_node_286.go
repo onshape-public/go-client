@@ -937,6 +937,56 @@ func (o *BTPTopLevelNode286) SetSymbolName(v BTPIdentifier8) {
 	o.GetActualInstance().(getResult).SetSymbolName(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPTopLevelNode286) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPTopLevelNode286) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPTopLevelNode286) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPTopLevelNode286) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTPTopLevelNode286) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1171,6 +1221,8 @@ type base_BTPTopLevelNode286 struct {
 	ForExport             *bool                       `json:"forExport,omitempty"`
 	SpaceAfterExport      *BTPSpace10                 `json:"spaceAfterExport,omitempty"`
 	SymbolName            *BTPIdentifier8             `json:"symbolName,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTPTopLevelNode286 instantiates a new base_BTPTopLevelNode286 object
@@ -1734,6 +1786,38 @@ func (o *base_BTPTopLevelNode286) SetSymbolName(v BTPIdentifier8) {
 	o.SymbolName = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTPTopLevelNode286) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPTopLevelNode286) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTPTopLevelNode286) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTPTopLevelNode286) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTPTopLevelNode286) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
@@ -1794,6 +1878,9 @@ func (o base_BTPTopLevelNode286) MarshalJSON() ([]byte, error) {
 	}
 	if o.SymbolName != nil {
 		toSerialize["symbolName"] = o.SymbolName
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

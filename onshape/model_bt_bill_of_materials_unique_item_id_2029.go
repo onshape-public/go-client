@@ -23,6 +23,7 @@ type BTBillOfMaterialsUniqueItemId2029 struct {
 	ItemDefinitionId                       *string                `json:"itemDefinitionId,omitempty"`
 	MetadataObjectType                     *BTMetadataObjectType  `json:"metadataObjectType,omitempty"`
 	PartId                                 *string                `json:"partId,omitempty"`
+	PartIdentity                           *BTPSOIdentity2741     `json:"partIdentity,omitempty"`
 	SourceElement                          *BTElementReference725 `json:"sourceElement,omitempty"`
 	VersionMetadataWorkspaceId             *string                `json:"versionMetadataWorkspaceId,omitempty"`
 	VersionMetadataWorkspaceMicroversionId *string                `json:"versionMetadataWorkspaceMicroversionId,omitempty"`
@@ -237,6 +238,38 @@ func (o *BTBillOfMaterialsUniqueItemId2029) SetPartId(v string) {
 	o.PartId = &v
 }
 
+// GetPartIdentity returns the PartIdentity field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsUniqueItemId2029) GetPartIdentity() BTPSOIdentity2741 {
+	if o == nil || o.PartIdentity == nil {
+		var ret BTPSOIdentity2741
+		return ret
+	}
+	return *o.PartIdentity
+}
+
+// GetPartIdentityOk returns a tuple with the PartIdentity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsUniqueItemId2029) GetPartIdentityOk() (*BTPSOIdentity2741, bool) {
+	if o == nil || o.PartIdentity == nil {
+		return nil, false
+	}
+	return o.PartIdentity, true
+}
+
+// HasPartIdentity returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsUniqueItemId2029) HasPartIdentity() bool {
+	if o != nil && o.PartIdentity != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartIdentity gets a reference to the given BTPSOIdentity2741 and assigns it to the PartIdentity field.
+func (o *BTBillOfMaterialsUniqueItemId2029) SetPartIdentity(v BTPSOIdentity2741) {
+	o.PartIdentity = &v
+}
+
 // GetSourceElement returns the SourceElement field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsUniqueItemId2029) GetSourceElement() BTElementReference725 {
 	if o == nil || o.SourceElement == nil {
@@ -352,6 +385,9 @@ func (o BTBillOfMaterialsUniqueItemId2029) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId
+	}
+	if o.PartIdentity != nil {
+		toSerialize["partIdentity"] = o.PartIdentity
 	}
 	if o.SourceElement != nil {
 		toSerialize["sourceElement"] = o.SourceElement

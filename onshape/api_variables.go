@@ -446,7 +446,7 @@ func (r ApiGetVariablesRequest) IncludeValuesAndReferencedVariables(includeValue
 	return r
 }
 
-func (r ApiGetVariablesRequest) Execute() (*BTVariableTableInfo, *http.Response, error) {
+func (r ApiGetVariablesRequest) Execute() ([]BTVariableTableInfo, *http.Response, error) {
 	return r.ApiService.GetVariablesExecute(r)
 }
 
@@ -473,13 +473,13 @@ func (a *VariablesApiService) GetVariables(ctx context.Context, did string, wv s
 
 // Execute executes the request
 //
-//	@return BTVariableTableInfo
-func (a *VariablesApiService) GetVariablesExecute(r ApiGetVariablesRequest) (*BTVariableTableInfo, *http.Response, error) {
+//	@return []BTVariableTableInfo
+func (a *VariablesApiService) GetVariablesExecute(r ApiGetVariablesRequest) ([]BTVariableTableInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BTVariableTableInfo
+		localVarReturnValue []BTVariableTableInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.GetVariables")
@@ -542,7 +542,7 @@ func (a *VariablesApiService) GetVariablesExecute(r ApiGetVariablesRequest) (*BT
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v BTVariableTableInfo
+		var v []BTVariableTableInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

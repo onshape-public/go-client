@@ -47,6 +47,8 @@ type BTClonedInstance2505 struct {
 	ValidRevisionReference *bool                    `json:"validRevisionReference,omitempty"`
 	Version                *int32                   `json:"version,omitempty"`
 	SeedOccurrence         *BTOccurrence74          `json:"seedOccurrence,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTClonedInstance2505 instantiates a new BTClonedInstance2505 object
@@ -962,6 +964,38 @@ func (o *BTClonedInstance2505) SetSeedOccurrence(v BTOccurrence74) {
 	o.SeedOccurrence = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTClonedInstance2505) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTClonedInstance2505) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTClonedInstance2505) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTClonedInstance2505) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTClonedInstance2505) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParametricOutputInstance2288, errBTParametricOutputInstance2288 := json.Marshal(o.BTParametricOutputInstance2288)
@@ -1055,6 +1089,9 @@ func (o BTClonedInstance2505) MarshalJSON() ([]byte, error) {
 	}
 	if o.SeedOccurrence != nil {
 		toSerialize["seedOccurrence"] = o.SeedOccurrence
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

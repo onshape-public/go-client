@@ -50,6 +50,8 @@ type BTAssemblyReplicate2774 struct {
 	FeatureId              *string                          `json:"featureId,omitempty"`
 	InstanceControlNodes   []BTInstanceControlNode750       `json:"instanceControlNodes,omitempty"`
 	ReplicateFeature       *BTMAssemblyReplicateFeature1351 `json:"replicateFeature,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTAssemblyReplicate2774 instantiates a new BTAssemblyReplicate2774 object
@@ -1061,6 +1063,38 @@ func (o *BTAssemblyReplicate2774) SetReplicateFeature(v BTMAssemblyReplicateFeat
 	o.ReplicateFeature = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTAssemblyReplicate2774) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyReplicate2774) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTAssemblyReplicate2774) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTAssemblyReplicate2774) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParametricInstance2641, errBTParametricInstance2641 := json.Marshal(o.BTParametricInstance2641)
@@ -1163,6 +1197,9 @@ func (o BTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
 	}
 	if o.ReplicateFeature != nil {
 		toSerialize["replicateFeature"] = o.ReplicateFeature
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -32,6 +32,8 @@ type BTMIndividualCoEdgeQuery1332 struct {
 	VariableName       *BTMIndividualQuery138     `json:"variableName,omitempty"`
 	EdgeQuery          *BTMIndividualQuery138     `json:"edgeQuery,omitempty"`
 	FaceQuery          *BTMIndividualQuery138     `json:"faceQuery,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMIndividualCoEdgeQuery1332 instantiates a new BTMIndividualCoEdgeQuery1332 object
@@ -499,6 +501,38 @@ func (o *BTMIndividualCoEdgeQuery1332) SetFaceQuery(v BTMIndividualQuery138) {
 	o.FaceQuery = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMIndividualCoEdgeQuery1332) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualCoEdgeQuery1332) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMIndividualCoEdgeQuery1332) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMIndividualCoEdgeQuery1332) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMIndividualCoEdgeQuery1332) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMIndividualQuery138, errBTMIndividualQuery138 := json.Marshal(o.BTMIndividualQuery138)
@@ -550,6 +584,9 @@ func (o BTMIndividualCoEdgeQuery1332) MarshalJSON() ([]byte, error) {
 	}
 	if o.FaceQuery != nil {
 		toSerialize["faceQuery"] = o.FaceQuery
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

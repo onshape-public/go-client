@@ -144,14 +144,14 @@ func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewReque
 }
 
 type ApiConsumePurchaseRequest struct {
-	ctx                  context.Context
-	ApiService           *AccountApiService
-	pid                  string
-	bTPurchaseUserParams *BTPurchaseUserParams
+	ctx                      context.Context
+	ApiService               *AccountApiService
+	pid                      string
+	bTPurchaseIdentityParams *BTPurchaseIdentityParams
 }
 
-func (r ApiConsumePurchaseRequest) BTPurchaseUserParams(bTPurchaseUserParams BTPurchaseUserParams) ApiConsumePurchaseRequest {
-	r.bTPurchaseUserParams = &bTPurchaseUserParams
+func (r ApiConsumePurchaseRequest) BTPurchaseIdentityParams(bTPurchaseIdentityParams BTPurchaseIdentityParams) ApiConsumePurchaseRequest {
+	r.bTPurchaseIdentityParams = &bTPurchaseIdentityParams
 	return r
 }
 
@@ -215,7 +215,7 @@ func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.bTPurchaseUserParams
+	localVarPostBody = r.bTPurchaseIdentityParams
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

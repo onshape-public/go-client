@@ -26,6 +26,8 @@ type BTInstanceControlNode750 struct {
 	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
 	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTInstanceControlNode750 instantiates a new BTInstanceControlNode750 object
@@ -269,6 +271,38 @@ func (o *BTInstanceControlNode750) SetSuppressionState(v BTMSuppressionState1924
 	o.SuppressionState = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTInstanceControlNode750) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceControlNode750) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTInstanceControlNode750) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTInstanceControlNode750) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTInstanceControlNode750) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
@@ -299,6 +333,9 @@ func (o BTInstanceControlNode750) MarshalJSON() ([]byte, error) {
 	}
 	if o.SuppressionState != nil {
 		toSerialize["suppressionState"] = o.SuppressionState
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

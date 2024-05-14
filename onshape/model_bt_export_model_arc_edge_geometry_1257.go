@@ -27,6 +27,8 @@ type BTExportModelArcEdgeGeometry1257 struct {
 	StartVector    *BTVector3d389 `json:"startVector,omitempty"`
 	ArcIsClockwise *bool          `json:"arcIsClockwise,omitempty"`
 	ArcSweep       *float64       `json:"arcSweep,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTExportModelArcEdgeGeometry1257 instantiates a new BTExportModelArcEdgeGeometry1257 object
@@ -366,6 +368,38 @@ func (o *BTExportModelArcEdgeGeometry1257) SetArcSweep(v float64) {
 	o.ArcSweep = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTExportModelArcEdgeGeometry1257) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelArcEdgeGeometry1257) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTExportModelArcEdgeGeometry1257) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTExportModelArcEdgeGeometry1257) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTExportModelArcEdgeGeometry1257) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTExportModelEdgeGeometry1125, errBTExportModelEdgeGeometry1125 := json.Marshal(o.BTExportModelEdgeGeometry1125)
@@ -405,6 +439,9 @@ func (o BTExportModelArcEdgeGeometry1257) MarshalJSON() ([]byte, error) {
 	}
 	if o.ArcSweep != nil {
 		toSerialize["arcSweep"] = o.ArcSweep
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **DefaultPurpose** | Pointer to [**BTElementLibraryPurpose3353**](BTElementLibraryPurpose3353.md) |  | [optional] 
+**LibraryDefinitionId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetDefaultPurpose sets DefaultPurpose field to given value.
 `func (o *BTParameterSpecReference2789AllOf) HasDefaultPurpose() bool`
 
 HasDefaultPurpose returns a boolean if a field has been set.
+
+### GetLibraryDefinitionId
+
+`func (o *BTParameterSpecReference2789AllOf) GetLibraryDefinitionId() string`
+
+GetLibraryDefinitionId returns the LibraryDefinitionId field if non-nil, zero value otherwise.
+
+### GetLibraryDefinitionIdOk
+
+`func (o *BTParameterSpecReference2789AllOf) GetLibraryDefinitionIdOk() (*string, bool)`
+
+GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibraryDefinitionId
+
+`func (o *BTParameterSpecReference2789AllOf) SetLibraryDefinitionId(v string)`
+
+SetLibraryDefinitionId sets LibraryDefinitionId field to given value.
+
+### HasLibraryDefinitionId
+
+`func (o *BTParameterSpecReference2789AllOf) HasLibraryDefinitionId() bool`
+
+HasLibraryDefinitionId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

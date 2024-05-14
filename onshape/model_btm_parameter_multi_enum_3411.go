@@ -27,6 +27,8 @@ type BTMParameterMultiEnum3411 struct {
 	EnumName    *string  `json:"enumName,omitempty"`
 	Namespace   *string  `json:"namespace,omitempty"`
 	Values      []string `json:"values,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMParameterMultiEnum3411 instantiates a new BTMParameterMultiEnum3411 object
@@ -270,6 +272,38 @@ func (o *BTMParameterMultiEnum3411) SetValues(v []string) {
 	o.Values = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMParameterMultiEnum3411) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterMultiEnum3411) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMParameterMultiEnum3411) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMParameterMultiEnum3411) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMParameterMultiEnum3411) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
@@ -300,6 +334,9 @@ func (o BTMParameterMultiEnum3411) MarshalJSON() ([]byte, error) {
 	}
 	if o.Values != nil {
 		toSerialize["values"] = o.Values
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

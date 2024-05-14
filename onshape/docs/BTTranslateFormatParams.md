@@ -59,12 +59,14 @@ Name | Type | Description | Notes
 **ProxyElementId** | Pointer to **string** |  | [optional] 
 **ProxyWorkspaceVersion** | Pointer to **string** |  | [optional] 
 **ProxyWorkspaceVersionId** | Pointer to **string** |  | [optional] 
+**Resolution** | Pointer to **string** | Determines export resolution of fine, medium, or coarse | [optional] 
 **SelectablePdfText** | Pointer to **bool** |  | [optional] 
 **SendCopyToMe** | Pointer to **bool** |  | [optional] 
 **SheetIndices** | Pointer to **[]int32** |  | [optional] 
 **ShowOverriddenDimensions** | Pointer to **bool** |  | [optional] 
 **SkipBodyshop** | Pointer to **bool** |  | [optional] 
 **SourceName** | Pointer to **string** |  | [optional] 
+**SpecifyMaterialData** | Pointer to **bool** |  | [optional] 
 **SpecifyUnits** | Pointer to **bool** |  | [optional] 
 **SplinesAsPolylines** | Pointer to **bool** |  | [optional] 
 **SplitAssembliesIntoMultipleDocuments** | Pointer to **bool** |  | [optional] 
@@ -1471,6 +1473,31 @@ SetProxyWorkspaceVersionId sets ProxyWorkspaceVersionId field to given value.
 
 HasProxyWorkspaceVersionId returns a boolean if a field has been set.
 
+### GetResolution
+
+`func (o *BTTranslateFormatParams) GetResolution() string`
+
+GetResolution returns the Resolution field if non-nil, zero value otherwise.
+
+### GetResolutionOk
+
+`func (o *BTTranslateFormatParams) GetResolutionOk() (*string, bool)`
+
+GetResolutionOk returns a tuple with the Resolution field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResolution
+
+`func (o *BTTranslateFormatParams) SetResolution(v string)`
+
+SetResolution sets Resolution field to given value.
+
+### HasResolution
+
+`func (o *BTTranslateFormatParams) HasResolution() bool`
+
+HasResolution returns a boolean if a field has been set.
+
 ### GetSelectablePdfText
 
 `func (o *BTTranslateFormatParams) GetSelectablePdfText() bool`
@@ -1620,6 +1647,31 @@ SetSourceName sets SourceName field to given value.
 `func (o *BTTranslateFormatParams) HasSourceName() bool`
 
 HasSourceName returns a boolean if a field has been set.
+
+### GetSpecifyMaterialData
+
+`func (o *BTTranslateFormatParams) GetSpecifyMaterialData() bool`
+
+GetSpecifyMaterialData returns the SpecifyMaterialData field if non-nil, zero value otherwise.
+
+### GetSpecifyMaterialDataOk
+
+`func (o *BTTranslateFormatParams) GetSpecifyMaterialDataOk() (*bool, bool)`
+
+GetSpecifyMaterialDataOk returns a tuple with the SpecifyMaterialData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecifyMaterialData
+
+`func (o *BTTranslateFormatParams) SetSpecifyMaterialData(v bool)`
+
+SetSpecifyMaterialData sets SpecifyMaterialData field to given value.
+
+### HasSpecifyMaterialData
+
+`func (o *BTTranslateFormatParams) HasSpecifyMaterialData() bool`
+
+HasSpecifyMaterialData returns a boolean if a field has been set.
 
 ### GetSpecifyUnits
 

@@ -19,6 +19,8 @@ type BTInstanceStandardContentData2081 struct {
 	BTReferenceCustomData1551
 	BtType       *string `json:"btType,omitempty"`
 	ParametersId *string `json:"parametersId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTInstanceStandardContentData2081 instantiates a new BTInstanceStandardContentData2081 object
@@ -102,6 +104,38 @@ func (o *BTInstanceStandardContentData2081) SetParametersId(v string) {
 	o.ParametersId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTInstanceStandardContentData2081) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceStandardContentData2081) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTInstanceStandardContentData2081) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTInstanceStandardContentData2081) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTInstanceStandardContentData2081) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTReferenceCustomData1551, errBTReferenceCustomData1551 := json.Marshal(o.BTReferenceCustomData1551)
@@ -117,6 +151,9 @@ func (o BTInstanceStandardContentData2081) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametersId != nil {
 		toSerialize["parametersId"] = o.ParametersId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -29,6 +29,8 @@ type BTOccurrenceWithFullPartIds1464 struct {
 	FullElementId         *BTFullElementIdWithDocument1729 `json:"fullElementId,omitempty"`
 	PartIds               []string                         `json:"partIds,omitempty"`
 	Transform             *BTBSMatrix386                   `json:"transform,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTOccurrenceWithFullPartIds1464 instantiates a new BTOccurrenceWithFullPartIds1464 object
@@ -432,6 +434,38 @@ func (o *BTOccurrenceWithFullPartIds1464) SetTransform(v BTBSMatrix386) {
 	o.Transform = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTOccurrenceWithFullPartIds1464) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrenceWithFullPartIds1464) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTOccurrenceWithFullPartIds1464) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTOccurrenceWithFullPartIds1464) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTOccurrenceWithFullPartIds1464) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTOccurrence74, errBTOccurrence74 := json.Marshal(o.BTOccurrence74)
@@ -477,6 +511,9 @@ func (o BTOccurrenceWithFullPartIds1464) MarshalJSON() ([]byte, error) {
 	}
 	if o.Transform != nil {
 		toSerialize["transform"] = o.Transform
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

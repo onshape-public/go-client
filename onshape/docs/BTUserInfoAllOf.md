@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **RedirectUrl** | Pointer to **string** |  | [optional] 
 **Role** | Pointer to **int32** |  | [optional] 
 **Roles** | Pointer to [**[]BTRole**](BTRole.md) |  | [optional] 
+**RumEnabled** | Pointer to **bool** |  | [optional] 
 **ShowRenewStudentPages** | Pointer to **bool** |  | [optional] 
 **StartupPage** | Pointer to **int32** |  | [optional] 
 **SystemUser** | Pointer to **bool** |  | [optional] 
@@ -783,6 +784,31 @@ SetRoles sets Roles field to given value.
 `func (o *BTUserInfoAllOf) HasRoles() bool`
 
 HasRoles returns a boolean if a field has been set.
+
+### GetRumEnabled
+
+`func (o *BTUserInfoAllOf) GetRumEnabled() bool`
+
+GetRumEnabled returns the RumEnabled field if non-nil, zero value otherwise.
+
+### GetRumEnabledOk
+
+`func (o *BTUserInfoAllOf) GetRumEnabledOk() (*bool, bool)`
+
+GetRumEnabledOk returns a tuple with the RumEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRumEnabled
+
+`func (o *BTUserInfoAllOf) SetRumEnabled(v bool)`
+
+SetRumEnabled sets RumEnabled field to given value.
+
+### HasRumEnabled
+
+`func (o *BTUserInfoAllOf) HasRumEnabled() bool`
+
+HasRumEnabled returns a boolean if a field has been set.
 
 ### GetShowRenewStudentPages
 

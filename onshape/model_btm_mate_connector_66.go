@@ -53,6 +53,8 @@ type BTMMateConnector66 struct {
 	IsAuxiliaryTreeMateConnector           *bool                                     `json:"isAuxiliaryTreeMateConnector,omitempty"`
 	IsHidden                               *bool                                     `json:"isHidden,omitempty"`
 	SavedFeatureType                       *string                                   `json:"savedFeatureType,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMMateConnector66 instantiates a new BTMMateConnector66 object
@@ -840,6 +842,38 @@ func (o *BTMMateConnector66) SetSavedFeatureType(v string) {
 	o.SavedFeatureType = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMMateConnector66) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMMateConnector66) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMMateConnector66) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMMateConnector66) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMMateConnector66) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMAssemblyFeature887, errBTMAssemblyFeature887 := json.Marshal(o.BTMAssemblyFeature887)
@@ -921,6 +955,9 @@ func (o BTMMateConnector66) MarshalJSON() ([]byte, error) {
 	}
 	if o.SavedFeatureType != nil {
 		toSerialize["savedFeatureType"] = o.SavedFeatureType
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

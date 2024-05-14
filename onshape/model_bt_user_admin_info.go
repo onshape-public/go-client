@@ -69,6 +69,7 @@ type BTUserAdminInfo struct {
 	RedirectUrl               *string                  `json:"redirectUrl,omitempty"`
 	Role                      *int32                   `json:"role,omitempty"`
 	Roles                     []BTRole                 `json:"roles,omitempty"`
+	RumEnabled                *bool                    `json:"rumEnabled,omitempty"`
 	ShowRenewStudentPages     *bool                    `json:"showRenewStudentPages,omitempty"`
 	StartupPage               *int32                   `json:"startupPage,omitempty"`
 	SystemUser                *bool                    `json:"systemUser,omitempty"`
@@ -1662,6 +1663,38 @@ func (o *BTUserAdminInfo) SetRoles(v []BTRole) {
 	o.Roles = v
 }
 
+// GetRumEnabled returns the RumEnabled field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetRumEnabled() bool {
+	if o == nil || o.RumEnabled == nil {
+		var ret bool
+		return ret
+	}
+	return *o.RumEnabled
+}
+
+// GetRumEnabledOk returns a tuple with the RumEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetRumEnabledOk() (*bool, bool) {
+	if o == nil || o.RumEnabled == nil {
+		return nil, false
+	}
+	return o.RumEnabled, true
+}
+
+// HasRumEnabled returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasRumEnabled() bool {
+	if o != nil && o.RumEnabled != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRumEnabled gets a reference to the given bool and assigns it to the RumEnabled field.
+func (o *BTUserAdminInfo) SetRumEnabled(v bool) {
+	o.RumEnabled = &v
+}
+
 // GetShowRenewStudentPages returns the ShowRenewStudentPages field value if set, zero value otherwise.
 func (o *BTUserAdminInfo) GetShowRenewStudentPages() bool {
 	if o == nil || o.ShowRenewStudentPages == nil {
@@ -2226,6 +2259,9 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Roles != nil {
 		toSerialize["roles"] = o.Roles
+	}
+	if o.RumEnabled != nil {
+		toSerialize["rumEnabled"] = o.RumEnabled
 	}
 	if o.ShowRenewStudentPages != nil {
 		toSerialize["showRenewStudentPages"] = o.ShowRenewStudentPages

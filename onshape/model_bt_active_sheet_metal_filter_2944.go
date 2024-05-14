@@ -19,6 +19,8 @@ type BTActiveSheetMetalFilter2944 struct {
 	BTQueryFilter183
 	BtType                 *string `json:"btType,omitempty"`
 	IsFromActiveSheetMetal *bool   `json:"isFromActiveSheetMetal,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTActiveSheetMetalFilter2944 instantiates a new BTActiveSheetMetalFilter2944 object
@@ -102,6 +104,38 @@ func (o *BTActiveSheetMetalFilter2944) SetIsFromActiveSheetMetal(v bool) {
 	o.IsFromActiveSheetMetal = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTActiveSheetMetalFilter2944) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveSheetMetalFilter2944) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTActiveSheetMetalFilter2944) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTActiveSheetMetalFilter2944) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTActiveSheetMetalFilter2944) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
@@ -117,6 +151,9 @@ func (o BTActiveSheetMetalFilter2944) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsFromActiveSheetMetal != nil {
 		toSerialize["isFromActiveSheetMetal"] = o.IsFromActiveSheetMetal
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

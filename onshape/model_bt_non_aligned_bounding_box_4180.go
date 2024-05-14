@@ -22,6 +22,8 @@ type BTNonAlignedBoundingBox4180 struct {
 	MinCorner        *BTVector3d389         `json:"minCorner,omitempty"`
 	Valid            *bool                  `json:"valid,omitempty"`
 	CoordinateSystem *BTCoordinateSystem387 `json:"coordinateSystem,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTNonAlignedBoundingBox4180 instantiates a new BTNonAlignedBoundingBox4180 object
@@ -201,6 +203,38 @@ func (o *BTNonAlignedBoundingBox4180) SetCoordinateSystem(v BTCoordinateSystem38
 	o.CoordinateSystem = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTNonAlignedBoundingBox4180) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTNonAlignedBoundingBox4180) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTNonAlignedBoundingBox4180) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTNonAlignedBoundingBox4180) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTNonAlignedBoundingBox4180) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTBoundingBox1052, errBTBoundingBox1052 := json.Marshal(o.BTBoundingBox1052)
@@ -225,6 +259,9 @@ func (o BTNonAlignedBoundingBox4180) MarshalJSON() ([]byte, error) {
 	}
 	if o.CoordinateSystem != nil {
 		toSerialize["coordinateSystem"] = o.CoordinateSystem
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

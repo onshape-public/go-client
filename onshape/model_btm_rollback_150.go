@@ -21,6 +21,8 @@ type BTMRollback150 struct {
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMRollback150 instantiates a new BTMRollback150 object
@@ -136,6 +138,38 @@ func (o *BTMRollback150) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMRollback150) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMRollback150) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMRollback150) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMRollback150) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMRollback150) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
@@ -154,6 +188,9 @@ func (o BTMRollback150) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

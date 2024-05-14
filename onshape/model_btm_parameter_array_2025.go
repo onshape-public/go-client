@@ -25,6 +25,8 @@ type BTMParameterArray2025 struct {
 	// Unique ID of the parameter.
 	ParameterId *string                     `json:"parameterId,omitempty"`
 	Items       []BTMArrayParameterItem1843 `json:"items,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMParameterArray2025 instantiates a new BTMParameterArray2025 object
@@ -204,6 +206,38 @@ func (o *BTMParameterArray2025) SetItems(v []BTMArrayParameterItem1843) {
 	o.Items = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMParameterArray2025) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterArray2025) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMParameterArray2025) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMParameterArray2025) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMParameterArray2025) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
@@ -228,6 +262,9 @@ func (o BTMParameterArray2025) MarshalJSON() ([]byte, error) {
 	}
 	if o.Items != nil {
 		toSerialize["items"] = o.Items
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

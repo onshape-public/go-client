@@ -857,6 +857,106 @@ func (o *BTParameterSpecReferenceBlob1367) SetDefaultPurpose(v BTElementLibraryP
 	o.GetActualInstance().(getResult).SetDefaultPurpose(v)
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *BTParameterSpecReferenceBlob1367) GetLibraryDefinitionId() string {
+	type getResult interface {
+		GetLibraryDefinitionId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryDefinitionId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferenceBlob1367) GetLibraryDefinitionIdOk() (*string, bool) {
+	type getResult interface {
+		GetLibraryDefinitionIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryDefinitionIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *BTParameterSpecReferenceBlob1367) HasLibraryDefinitionId() bool {
+	type getResult interface {
+		HasLibraryDefinitionId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLibraryDefinitionId()
+	} else {
+		return false
+	}
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *BTParameterSpecReferenceBlob1367) SetLibraryDefinitionId(v string) {
+	type getResult interface {
+		SetLibraryDefinitionId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetLibraryDefinitionId(v)
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecReferenceBlob1367) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferenceBlob1367) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecReferenceBlob1367) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecReferenceBlob1367) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTParameterSpecReferenceBlob1367) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1006,6 +1106,9 @@ type base_BTParameterSpecReferenceBlob1367 struct {
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 	DefaultPurpose             *BTElementLibraryPurpose3353       `json:"defaultPurpose,omitempty"`
+	LibraryDefinitionId        *string                            `json:"libraryDefinitionId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTParameterSpecReferenceBlob1367 instantiates a new base_BTParameterSpecReferenceBlob1367 object
@@ -1537,6 +1640,70 @@ func (o *base_BTParameterSpecReferenceBlob1367) SetDefaultPurpose(v BTElementLib
 	o.DefaultPurpose = &v
 }
 
+// GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
+func (o *base_BTParameterSpecReferenceBlob1367) GetLibraryDefinitionId() string {
+	if o == nil || o.LibraryDefinitionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.LibraryDefinitionId
+}
+
+// GetLibraryDefinitionIdOk returns a tuple with the LibraryDefinitionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterSpecReferenceBlob1367) GetLibraryDefinitionIdOk() (*string, bool) {
+	if o == nil || o.LibraryDefinitionId == nil {
+		return nil, false
+	}
+	return o.LibraryDefinitionId, true
+}
+
+// HasLibraryDefinitionId returns a boolean if a field has been set.
+func (o *base_BTParameterSpecReferenceBlob1367) HasLibraryDefinitionId() bool {
+	if o != nil && o.LibraryDefinitionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryDefinitionId gets a reference to the given string and assigns it to the LibraryDefinitionId field.
+func (o *base_BTParameterSpecReferenceBlob1367) SetLibraryDefinitionId(v string) {
+	o.LibraryDefinitionId = &v
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTParameterSpecReferenceBlob1367) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterSpecReferenceBlob1367) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTParameterSpecReferenceBlob1367) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTParameterSpecReferenceBlob1367) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTParameterSpecReferenceBlob1367) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTParameterSpecReference2789, errBTParameterSpecReference2789 := json.Marshal(o.BTParameterSpecReference2789)
@@ -1594,6 +1761,12 @@ func (o base_BTParameterSpecReferenceBlob1367) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultPurpose != nil {
 		toSerialize["defaultPurpose"] = o.DefaultPurpose
+	}
+	if o.LibraryDefinitionId != nil {
+		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

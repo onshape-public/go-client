@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## ConsumePurchase
 
-> BTPurchaseInfo ConsumePurchase(ctx, pid).BTPurchaseUserParams(bTPurchaseUserParams).Execute()
+> BTPurchaseInfo ConsumePurchase(ctx, pid).BTPurchaseIdentityParams(bTPurchaseIdentityParams).Execute()
 
 Mark a purchase as consumed by the current user.
 
@@ -104,11 +104,11 @@ import (
 
 func main() {
     pid := "pid_example" // string | 
-    bTPurchaseUserParams := *openapiclient.NewBTPurchaseUserParams() // BTPurchaseUserParams |  (optional)
+    bTPurchaseIdentityParams := *openapiclient.NewBTPurchaseIdentityParams() // BTPurchaseIdentityParams |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountApi.ConsumePurchase(context.Background(), pid).BTPurchaseUserParams(bTPurchaseUserParams).Execute()
+    resp, r, err := apiClient.AccountApi.ConsumePurchase(context.Background(), pid).BTPurchaseIdentityParams(bTPurchaseIdentityParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountApi.ConsumePurchase``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -134,7 +134,7 @@ Other parameters are passed through a pointer to a apiConsumePurchaseRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **bTPurchaseUserParams** | [**BTPurchaseUserParams**](BTPurchaseUserParams.md) |  | 
+ **bTPurchaseIdentityParams** | [**BTPurchaseIdentityParams**](BTPurchaseIdentityParams.md) |  | 
 
 ### Return type
 
