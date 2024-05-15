@@ -7,7 +7,7 @@ import (
 )
 
 func TestAppAssociativeDataAPI(t *testing.T) {
-    InitializeTester[*onshape.AppAssociativeDataApiService](t)
+    InitializeTester[*onshape.AppAssociativeDataAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiCopyAssociativeDataRequest{},

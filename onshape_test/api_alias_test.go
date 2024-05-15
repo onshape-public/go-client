@@ -7,7 +7,7 @@ import (
 )
 
 func TestAliasAPI(t *testing.T) {
-    InitializeTester[*onshape.AliasApiService](t)
+    InitializeTester[*onshape.AliasAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetAliasesInCompanyRequest{},
