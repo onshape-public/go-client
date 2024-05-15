@@ -18,7 +18,7 @@ import (
 type Asset struct {
 	Copyright  *string                           `json:"copyright,omitempty"`
 	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     *map[string]interface{}           `json:"extras,omitempty"`
+	Extras     map[string]interface{}            `json:"extras,omitempty"`
 	Generator  *string                           `json:"generator,omitempty"`
 	MinVersion *string                           `json:"minVersion,omitempty"`
 	Version    *string                           `json:"version,omitempty"`
@@ -111,12 +111,12 @@ func (o *Asset) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Asset) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *Asset) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -134,7 +134,7 @@ func (o *Asset) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *Asset) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetGenerator returns the Generator field value if set, zero value otherwise.

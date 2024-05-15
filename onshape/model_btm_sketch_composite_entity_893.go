@@ -16,6 +16,7 @@ import (
 
 // BTMSketchCompositeEntity893 struct for BTMSketchCompositeEntity893
 type BTMSketchCompositeEntity893 struct {
+	BTMSketchEntity3
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion                  *string            `json:"importMicroversion,omitempty"`
@@ -302,6 +303,14 @@ func (o *BTMSketchCompositeEntity893) SetSubEntities(v []BTMSketchEntity3) {
 
 func (o BTMSketchCompositeEntity893) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchEntity3, errBTMSketchEntity3 := json.Marshal(o.BTMSketchEntity3)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
+	errBTMSketchEntity3 = json.Unmarshal([]byte(serializedBTMSketchEntity3), &toSerialize)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

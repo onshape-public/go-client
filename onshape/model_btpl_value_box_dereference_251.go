@@ -16,6 +16,7 @@ import (
 
 // BTPLValueBoxDereference251 struct for BTPLValueBoxDereference251
 type BTPLValueBoxDereference251 struct {
+	BTPLValue249
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -433,6 +434,14 @@ func (o *BTPLValueBoxDereference251) SetSpaceInside(v BTPSpace10) {
 
 func (o BTPLValueBoxDereference251) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPLValue249, errBTPLValue249 := json.Marshal(o.BTPLValue249)
+	if errBTPLValue249 != nil {
+		return []byte{}, errBTPLValue249
+	}
+	errBTPLValue249 = json.Unmarshal([]byte(serializedBTPLValue249), &toSerialize)
+	if errBTPLValue249 != nil {
+		return []byte{}, errBTPLValue249
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// AccountApiService AccountApi service
-type AccountApiService service
+// AccountAPIService AccountAPI service
+type AccountAPIService service
 
 type ApiCancelPurchaseNewRequest struct {
 	ctx               context.Context
-	ApiService        *AccountApiService
+	ApiService        *AccountAPIService
 	aid               string
 	pid               string
 	cancelImmediately *bool
@@ -46,7 +46,7 @@ CancelPurchaseNew Cancel a recurring subscription for the specified account ID a
 	@param pid
 	@return ApiCancelPurchaseNewRequest
 */
-func (a *AccountApiService) CancelPurchaseNew(ctx context.Context, aid string, pid string) ApiCancelPurchaseNewRequest {
+func (a *AccountAPIService) CancelPurchaseNew(ctx context.Context, aid string, pid string) ApiCancelPurchaseNewRequest {
 	return ApiCancelPurchaseNewRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -58,7 +58,7 @@ func (a *AccountApiService) CancelPurchaseNew(ctx context.Context, aid string, p
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AccountAPIService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -66,7 +66,7 @@ func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewReque
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountApiService.CancelPurchaseNew")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAPIService.CancelPurchaseNew")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -145,7 +145,7 @@ func (a *AccountApiService) CancelPurchaseNewExecute(r ApiCancelPurchaseNewReque
 
 type ApiConsumePurchaseRequest struct {
 	ctx                      context.Context
-	ApiService               *AccountApiService
+	ApiService               *AccountAPIService
 	pid                      string
 	bTPurchaseIdentityParams *BTPurchaseIdentityParams
 }
@@ -166,7 +166,7 @@ ConsumePurchase Mark a purchase as consumed by the current user.
 	@param pid
 	@return ApiConsumePurchaseRequest
 */
-func (a *AccountApiService) ConsumePurchase(ctx context.Context, pid string) ApiConsumePurchaseRequest {
+func (a *AccountAPIService) ConsumePurchase(ctx context.Context, pid string) ApiConsumePurchaseRequest {
 	return ApiConsumePurchaseRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -177,7 +177,7 @@ func (a *AccountApiService) ConsumePurchase(ctx context.Context, pid string) Api
 // Execute executes the request
 //
 //	@return BTPurchaseInfo
-func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) (*BTPurchaseInfo, *http.Response, error) {
+func (a *AccountAPIService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) (*BTPurchaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -185,7 +185,7 @@ func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) 
 		localVarReturnValue *BTPurchaseInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountApiService.ConsumePurchase")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAPIService.ConsumePurchase")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -262,7 +262,7 @@ func (a *AccountApiService) ConsumePurchaseExecute(r ApiConsumePurchaseRequest) 
 
 type ApiGetPlanPurchasesRequest struct {
 	ctx        context.Context
-	ApiService *AccountApiService
+	ApiService *AccountAPIService
 	planId     string
 	offset     *int32
 	limit      *int32
@@ -289,7 +289,7 @@ GetPlanPurchases Get a list of all app purchases made for the specified plan.
 	@param planId
 	@return ApiGetPlanPurchasesRequest
 */
-func (a *AccountApiService) GetPlanPurchases(ctx context.Context, planId string) ApiGetPlanPurchasesRequest {
+func (a *AccountAPIService) GetPlanPurchases(ctx context.Context, planId string) ApiGetPlanPurchasesRequest {
 	return ApiGetPlanPurchasesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -300,7 +300,7 @@ func (a *AccountApiService) GetPlanPurchases(ctx context.Context, planId string)
 // Execute executes the request
 //
 //	@return BTListResponseBTPurchaseInfo
-func (a *AccountApiService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest) (*BTListResponseBTPurchaseInfo, *http.Response, error) {
+func (a *AccountAPIService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest) (*BTListResponseBTPurchaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -308,7 +308,7 @@ func (a *AccountApiService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest
 		localVarReturnValue *BTListResponseBTPurchaseInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountApiService.GetPlanPurchases")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAPIService.GetPlanPurchases")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -389,7 +389,7 @@ func (a *AccountApiService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest
 
 type ApiGetPurchasesRequest struct {
 	ctx                           context.Context
-	ApiService                    *AccountApiService
+	ApiService                    *AccountAPIService
 	all                           *bool
 	ownPurchaseOnly               *bool
 	includeGoDEnabledAppPurchases *bool
@@ -422,7 +422,7 @@ This API should be used within the context of an OAuth-enabled application.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPurchasesRequest
 */
-func (a *AccountApiService) GetPurchases(ctx context.Context) ApiGetPurchasesRequest {
+func (a *AccountAPIService) GetPurchases(ctx context.Context) ApiGetPurchasesRequest {
 	return ApiGetPurchasesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -432,7 +432,7 @@ func (a *AccountApiService) GetPurchases(ctx context.Context) ApiGetPurchasesReq
 // Execute executes the request
 //
 //	@return []BTPurchaseInfo
-func (a *AccountApiService) GetPurchasesExecute(r ApiGetPurchasesRequest) ([]BTPurchaseInfo, *http.Response, error) {
+func (a *AccountAPIService) GetPurchasesExecute(r ApiGetPurchasesRequest) ([]BTPurchaseInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -440,7 +440,7 @@ func (a *AccountApiService) GetPurchasesExecute(r ApiGetPurchasesRequest) ([]BTP
 		localVarReturnValue []BTPurchaseInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountApiService.GetPurchases")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAPIService.GetPurchases")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

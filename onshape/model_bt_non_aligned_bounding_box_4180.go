@@ -16,6 +16,7 @@ import (
 
 // BTNonAlignedBoundingBox4180 struct for BTNonAlignedBoundingBox4180
 type BTNonAlignedBoundingBox4180 struct {
+	BTBoundingBox1052
 	BtType           *string                `json:"btType,omitempty"`
 	MaxCorner        *BTVector3d389         `json:"maxCorner,omitempty"`
 	MinCorner        *BTVector3d389         `json:"minCorner,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTNonAlignedBoundingBox4180) SetCoordinateSystem(v BTCoordinateSystem38
 
 func (o BTNonAlignedBoundingBox4180) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTBoundingBox1052, errBTBoundingBox1052 := json.Marshal(o.BTBoundingBox1052)
+	if errBTBoundingBox1052 != nil {
+		return []byte{}, errBTBoundingBox1052
+	}
+	errBTBoundingBox1052 = json.Unmarshal([]byte(serializedBTBoundingBox1052), &toSerialize)
+	if errBTBoundingBox1052 != nil {
+		return []byte{}, errBTBoundingBox1052
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

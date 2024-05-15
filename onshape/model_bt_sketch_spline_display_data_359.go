@@ -16,6 +16,7 @@ import (
 
 // BTSketchSplineDisplayData359 struct for BTSketchSplineDisplayData359
 type BTSketchSplineDisplayData359 struct {
+	BTSketchEntityDisplayData354
 	BtType             *string   `json:"btType,omitempty"`
 	Points             []float64 `json:"points,omitempty"`
 	Closed             *bool     `json:"closed,omitempty"`
@@ -367,6 +368,14 @@ func (o *BTSketchSplineDisplayData359) SetSegment(v bool) {
 
 func (o BTSketchSplineDisplayData359) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSketchEntityDisplayData354, errBTSketchEntityDisplayData354 := json.Marshal(o.BTSketchEntityDisplayData354)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
+	errBTSketchEntityDisplayData354 = json.Unmarshal([]byte(serializedBTSketchEntityDisplayData354), &toSerialize)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

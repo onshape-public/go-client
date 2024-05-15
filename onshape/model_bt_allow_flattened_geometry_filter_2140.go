@@ -16,6 +16,7 @@ import (
 
 // BTAllowFlattenedGeometryFilter2140 struct for BTAllowFlattenedGeometryFilter2140
 type BTAllowFlattenedGeometryFilter2140 struct {
+	BTQueryFilter183
 	BtType                  *string `json:"btType,omitempty"`
 	AllowsFlattenedGeometry *bool   `json:"allowsFlattenedGeometry,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTAllowFlattenedGeometryFilter2140) SetAllowsFlattenedGeometry(v bool) 
 
 func (o BTAllowFlattenedGeometryFilter2140) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -16,6 +16,7 @@ import (
 
 // BTExternalReference1936 struct for BTExternalReference1936
 type BTExternalReference1936 struct {
+	BTElementReference725
 	BtType                                  *string                               `json:"btType,omitempty"`
 	Configured                              *bool                                 `json:"configured,omitempty"`
 	ElementId                               *string                               `json:"elementId,omitempty"`
@@ -367,6 +368,14 @@ func (o *BTExternalReference1936) SetDocumentVersionId(v string) {
 
 func (o BTExternalReference1936) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTElementReference725, errBTElementReference725 := json.Marshal(o.BTElementReference725)
+	if errBTElementReference725 != nil {
+		return []byte{}, errBTElementReference725
+	}
+	errBTElementReference725 = json.Unmarshal([]byte(serializedBTElementReference725), &toSerialize)
+	if errBTElementReference725 != nil {
+		return []byte{}, errBTElementReference725
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

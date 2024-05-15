@@ -16,6 +16,7 @@ import (
 
 // BTSimulationTableColumnInfo1785 struct for BTSimulationTableColumnInfo1785
 type BTSimulationTableColumnInfo1785 struct {
+	BTTableColumnInfo1222
 	BtType             *string                                `json:"btType,omitempty"`
 	Id                 *string                                `json:"id,omitempty"`
 	NodeId             *string                                `json:"nodeId,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTSimulationTableColumnInfo1785) SetCrossHighlightData(v BTTableAssembl
 
 func (o BTSimulationTableColumnInfo1785) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
+	errBTTableColumnInfo1222 = json.Unmarshal([]byte(serializedBTTableColumnInfo1222), &toSerialize)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -332,6 +332,7 @@ func (v *NullableBTParameterVisibilityOnEqual180) UnmarshalJSON(src []byte) erro
 }
 
 type base_BTParameterVisibilityOnEqual180 struct {
+	BTParameterVisibilityCondition177
 	BtType      *string `json:"btType,omitempty"`
 	InArray     *bool   `json:"inArray,omitempty"`
 	ParameterId *string `json:"parameterId,omitempty"`
@@ -485,6 +486,14 @@ func (o *base_BTParameterVisibilityOnEqual180) SetValue(v string) {
 
 func (o base_BTParameterVisibilityOnEqual180) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityCondition177, errBTParameterVisibilityCondition177 := json.Marshal(o.BTParameterVisibilityCondition177)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
+	errBTParameterVisibilityCondition177 = json.Unmarshal([]byte(serializedBTParameterVisibilityCondition177), &toSerialize)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

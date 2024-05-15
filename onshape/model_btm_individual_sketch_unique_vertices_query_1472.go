@@ -16,6 +16,7 @@ import (
 
 // BTMIndividualSketchUniqueVerticesQuery1472 struct for BTMIndividualSketchUniqueVerticesQuery1472
 type BTMIndividualSketchUniqueVerticesQuery1472 struct {
+	BTMIndividualQuery138
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -467,6 +468,14 @@ func (o *BTMIndividualSketchUniqueVerticesQuery1472) SetFeatureId(v string) {
 
 func (o BTMIndividualSketchUniqueVerticesQuery1472) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQuery138, errBTMIndividualQuery138 := json.Marshal(o.BTMIndividualQuery138)
+	if errBTMIndividualQuery138 != nil {
+		return []byte{}, errBTMIndividualQuery138
+	}
+	errBTMIndividualQuery138 = json.Unmarshal([]byte(serializedBTMIndividualQuery138), &toSerialize)
+	if errBTMIndividualQuery138 != nil {
+		return []byte{}, errBTMIndividualQuery138
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

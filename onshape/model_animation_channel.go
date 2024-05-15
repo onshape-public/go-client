@@ -17,7 +17,7 @@ import (
 // AnimationChannel struct for AnimationChannel
 type AnimationChannel struct {
 	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     *map[string]interface{}           `json:"extras,omitempty"`
+	Extras     map[string]interface{}            `json:"extras,omitempty"`
 	Sampler    *int32                            `json:"sampler,omitempty"`
 	Target     *AnimationChannelTarget           `json:"target,omitempty"`
 }
@@ -77,12 +77,12 @@ func (o *AnimationChannel) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AnimationChannel) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *AnimationChannel) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -100,7 +100,7 @@ func (o *AnimationChannel) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *AnimationChannel) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetSampler returns the Sampler field value if set, zero value otherwise.

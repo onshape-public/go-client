@@ -16,6 +16,7 @@ import (
 
 // BTMParameterReferencePartStudio3302 struct for BTMParameterReferencePartStudio3302
 type BTMParameterReferencePartStudio3302 struct {
+	BTMParameterReferenceWithConfiguration3028
 	BtType             *string                            `json:"btType,omitempty"`
 	Configuration      []BTMParameter1                    `json:"configuration,omitempty"`
 	DocumentId         *string                            `json:"documentId,omitempty"`
@@ -601,6 +602,14 @@ func (o *BTMParameterReferencePartStudio3302) SetStandardContentParametersId(v s
 
 func (o BTMParameterReferencePartStudio3302) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameterReferenceWithConfiguration3028, errBTMParameterReferenceWithConfiguration3028 := json.Marshal(o.BTMParameterReferenceWithConfiguration3028)
+	if errBTMParameterReferenceWithConfiguration3028 != nil {
+		return []byte{}, errBTMParameterReferenceWithConfiguration3028
+	}
+	errBTMParameterReferenceWithConfiguration3028 = json.Unmarshal([]byte(serializedBTMParameterReferenceWithConfiguration3028), &toSerialize)
+	if errBTMParameterReferenceWithConfiguration3028 != nil {
+		return []byte{}, errBTMParameterReferenceWithConfiguration3028
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

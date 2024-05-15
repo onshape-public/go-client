@@ -90,274 +90,274 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*APIApplicationApi* | [**DeleteAppSettings**](docs/APIApplicationApi.md#deleteappsettings) | **Delete** /applications/clients/{cid}/settings/users/{uid} | Delete a user&#39;s application preference settings.
-*APIApplicationApi* | [**DeleteCompanyAppSettings**](docs/APIApplicationApi.md#deletecompanyappsettings) | **Delete** /applications/clients/{cid}/settings/companies/{cpid} | Delete a company&#39;s application preference settings.
-*APIApplicationApi* | [**GetApplicableExtensionsForClient**](docs/APIApplicationApi.md#getapplicableextensionsforclient) | **Get** /applications/extensions/user/{uid}/client/{cid} | Get a list of the client extensions the specified user has granted/accepted terms for.
-*APIApplicationApi* | [**GetCompanyAppSettings**](docs/APIApplicationApi.md#getcompanyappsettings) | **Get** /applications/clients/{cid}/settings/companies/{cpid} | Get company-level preference settings for an application.
-*APIApplicationApi* | [**GetUserAppSettings**](docs/APIApplicationApi.md#getuserappsettings) | **Get** /applications/clients/{cid}/settings/users/{uid} | Get user-level preference settings for an application.
-*APIApplicationApi* | [**UpdateAppCompanySettings**](docs/APIApplicationApi.md#updateappcompanysettings) | **Post** /applications/clients/{cid}/settings/companies/{cpid} | Update company preference settings for an application.
-*APIApplicationApi* | [**UpdateAppSettings**](docs/APIApplicationApi.md#updateappsettings) | **Post** /applications/clients/{cid}/settings/users/{uid} | Update a user&#39;s application preference settings.
-*AccountApi* | [**CancelPurchaseNew**](docs/AccountApi.md#cancelpurchasenew) | **Delete** /accounts/{aid}/purchases/{pid} | Cancel a recurring subscription for the specified account ID and purchase ID.
-*AccountApi* | [**ConsumePurchase**](docs/AccountApi.md#consumepurchase) | **Post** /accounts/purchases/{pid}/consume | Mark a purchase as consumed by the current user.
-*AccountApi* | [**GetPlanPurchases**](docs/AccountApi.md#getplanpurchases) | **Get** /accounts/plans/{planId}/purchases | Get a list of all app purchases made for the specified plan.
-*AccountApi* | [**GetPurchases**](docs/AccountApi.md#getpurchases) | **Get** /accounts/purchases | Get a list of all app purchases made by the current user.
-*AliasApi* | [**CreateAlias**](docs/AliasApi.md#createalias) | **Post** /aliases | Create an alias in your enterprise.
-*AliasApi* | [**DeleteAlias**](docs/AliasApi.md#deletealias) | **Delete** /aliases/{aid} | Delete an alias from your enterprise.
-*AliasApi* | [**GetAlias**](docs/AliasApi.md#getalias) | **Get** /aliases/{aid} | Get an alias by ID.
-*AliasApi* | [**GetAliasMembers**](docs/AliasApi.md#getaliasmembers) | **Get** /aliases/{aid}/members | Get all users and teams assigned to an alias.
-*AliasApi* | [**GetAliasesInCompany**](docs/AliasApi.md#getaliasesincompany) | **Get** /aliases | Get a list of all aliases that exist for your enterprise.
-*AliasApi* | [**UpdateAlias**](docs/AliasApi.md#updatealias) | **Post** /aliases/{aid} | Add, remove, replace, or rename entries in an alias list.
-*AppAssociativeDataApi* | [**CopyAssociativeData**](docs/AppAssociativeDataApi.md#copyassociativedata) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata | Copy associative data from one view to another.
-*AppAssociativeDataApi* | [**DeleteAssociativeData**](docs/AppAssociativeDataApi.md#deleteassociativedata) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Delete the associative data from the specified app element.
-*AppAssociativeDataApi* | [**GetAssociativeData**](docs/AppAssociativeDataApi.md#getassociativedata) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Get the associative data for the specified app element.
-*AppAssociativeDataApi* | [**PostAssociativeData**](docs/AppAssociativeDataApi.md#postassociativedata) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Set the associative data for the specified app element.
-*AppDrawingViewApi* | [**GetDrawingViewJsonGeometry**](docs/AppDrawingViewApi.md#getdrawingviewjsongeometry) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/views/{viewid}/jsongeometry | Get view geometry of a drawing view in JSON format.
-*AppDrawingViewApi* | [**GetDrawingViews**](docs/AppDrawingViewApi.md#getdrawingviews) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/views | Get details of all drawing views.
-*AppElementApi* | [**AbortTransaction**](docs/AppElementApi.md#aborttransaction) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/transactions/{tid} | Abort a transaction.
-*AppElementApi* | [**BulkCreateElement**](docs/AppElementApi.md#bulkcreateelement) | **Post** /appelements/d/{did}/w/{wid}/bulkcreate | Create multiple empty application elements at once.
-*AppElementApi* | [**CommitTransactions**](docs/AppElementApi.md#committransactions) | **Post** /appelements/d/{did}/w/{wid}/transactions | Merge multiple transactions into one microversion.
-*AppElementApi* | [**CompareAppElementJson**](docs/AppElementApi.md#compareappelementjson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Compare app element JSON trees between workspaces/versions/microversions in a document.
-*AppElementApi* | [**CreateElement**](docs/AppElementApi.md#createelement) | **Post** /appelements/d/{did}/w/{wid} | Create a new application element.
-*AppElementApi* | [**CreateReference**](docs/AppElementApi.md#createreference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references | Creates a reference to an app element.
-*AppElementApi* | [**DeleteAppElementContent**](docs/AppElementApi.md#deleteappelementcontent) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements/{sid} | Deletes the content from the specified app element.
-*AppElementApi* | [**DeleteAppElementContentBatch**](docs/AppElementApi.md#deleteappelementcontentbatch) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements | Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
-*AppElementApi* | [**DeleteBlobSubelement**](docs/AppElementApi.md#deleteblobsubelement) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Delete a blob subelement from an app element.
-*AppElementApi* | [**DeleteReference**](docs/AppElementApi.md#deletereference) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Delete an app element reference.
-*AppElementApi* | [**DownloadBlobSubelement**](docs/AppElementApi.md#downloadblobsubelement) | **Get** /appelements/d/{did}/{vm}/{vmid}/e/{eid}/blob/{bid} | Download a blob subelement from the specified app element.
-*AppElementApi* | [**DownloadBlobSubelementWorkspace**](docs/AppElementApi.md#downloadblobsubelementworkspace) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Download the blob element (i.e., a file) stored in an app element in a document&#39;s workspace.
-*AppElementApi* | [**GetAppElementHistory**](docs/AppElementApi.md#getappelementhistory) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/history | Get the history of the specified all element.
-*AppElementApi* | [**GetBlobSubelementIds**](docs/AppElementApi.md#getblobsubelementids) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/blob | Get a list of all blob subelement IDs for the specified workspace, version, or microversion.
-*AppElementApi* | [**GetElementTransactions**](docs/AppElementApi.md#getelementtransactions) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Get a list of all transactions performed on an element.
-*AppElementApi* | [**GetJson**](docs/AppElementApi.md#getjson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/json | Get the full JSON tree for the specified workspace/version/microversion.
-*AppElementApi* | [**GetJsonPaths**](docs/AppElementApi.md#getjsonpaths) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/jsonpaths | Get the JSON at specified paths for an element.
-*AppElementApi* | [**GetSubElementContent**](docs/AppElementApi.md#getsubelementcontent) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Get a list of all subelement IDs in a specified workspace/version/microversion.
-*AppElementApi* | [**GetSubelementIds**](docs/AppElementApi.md#getsubelementids) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/ids | Get a list of all subelement IDs in a specified workspace/version/microversion.
-*AppElementApi* | [**ResolveReference**](docs/AppElementApi.md#resolvereference) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Resolves a single reference to an app element.
-*AppElementApi* | [**ResolveReferences**](docs/AppElementApi.md#resolvereferences) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/resolvereferences | Resolves bulk app element references.
-*AppElementApi* | [**StartTransaction**](docs/AppElementApi.md#starttransaction) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Start a transaction
-*AppElementApi* | [**UpdateAppElement**](docs/AppElementApi.md#updateappelement) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Update the content for the specified app element.
-*AppElementApi* | [**UpdateReference**](docs/AppElementApi.md#updatereference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Update an app element reference.
-*AppElementApi* | [**UploadBlobSubelement**](docs/AppElementApi.md#uploadblobsubelement) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Create a new blob subelement from an uploaded file.
-*AssemblyApi* | [**AddFeature**](docs/AssemblyApi.md#addfeature) | **Post** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the assembly feature list.
-*AssemblyApi* | [**CreateAssembly**](docs/AssemblyApi.md#createassembly) | **Post** /assemblies/d/{did}/w/{wid} | Create a new assembly tab in the document.
-*AssemblyApi* | [**CreateInstance**](docs/AssemblyApi.md#createinstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
-*AssemblyApi* | [**DeleteFeature**](docs/AssemblyApi.md#deletefeature) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a feature from an assembly.
-*AssemblyApi* | [**DeleteInstance**](docs/AssemblyApi.md#deleteinstance) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid} | Delete an instance of an assembly.
-*AssemblyApi* | [**GetAssemblyBoundingBoxes**](docs/AssemblyApi.md#getassemblyboundingboxes) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get bounding box information for the specified assembly.
-*AssemblyApi* | [**GetAssemblyDefinition**](docs/AssemblyApi.md#getassemblydefinition) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid} | Get definition information for the specified assembly.
-*AssemblyApi* | [**GetAssemblyMassProperties**](docs/AssemblyApi.md#getassemblymassproperties) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for the assembly.
-*AssemblyApi* | [**GetAssemblyShadedViews**](docs/AssemblyApi.md#getassemblyshadedviews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get an array of shaded view images for the document.
-*AssemblyApi* | [**GetBillOfMaterials**](docs/AssemblyApi.md#getbillofmaterials) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom | Get the Bill Of Materials (BOM) content for the specified assembly.
-*AssemblyApi* | [**GetExplodedViews**](docs/AssemblyApi.md#getexplodedviews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | Get a list of exploded views for the specified assembly.
-*AssemblyApi* | [**GetFeatureSpecs**](docs/AssemblyApi.md#getfeaturespecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature spec definitions for an assembly.
-*AssemblyApi* | [**GetFeatures**](docs/AssemblyApi.md#getfeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get the definitions of the specified features in an assembly.
-*AssemblyApi* | [**GetNamedPositions**](docs/AssemblyApi.md#getnamedpositions) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions | Get a list of all named positions for the assembly.
-*AssemblyApi* | [**GetNamedViews**](docs/AssemblyApi.md#getnamedviews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | Get the view data for all named views for the specified element.
-*AssemblyApi* | [**GetOrCreateBillOfMaterialsElement**](docs/AssemblyApi.md#getorcreatebillofmaterialselement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
-*AssemblyApi* | [**InsertTransformedInstances**](docs/AssemblyApi.md#inserttransformedinstances) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/transformedinstances | Create new instances with transformation.
-*AssemblyApi* | [**Modify**](docs/AssemblyApi.md#modify) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/modify | Modify an assembly.
-*AssemblyApi* | [**TransformOccurrences**](docs/AssemblyApi.md#transformoccurrences) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms | Transform a list of assembly occurrences.
-*AssemblyApi* | [**TranslateFormat**](docs/AssemblyApi.md#translateformat) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export the assembly to another format.
-*AssemblyApi* | [**UpdateFeature**](docs/AssemblyApi.md#updatefeature) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update an existing feature for an Assembly.
-*BillingApi* | [**GetClientPlans**](docs/BillingApi.md#getclientplans) | **Get** /billing/plans/client/{cid} | Get all billing plans and their information for an application by client ID.
-*BlobElementApi* | [**CreateBlobTranslation**](docs/BlobElementApi.md#createblobtranslation) | **Post** /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a blob element to another format.
-*BlobElementApi* | [**DownloadFileWorkspace**](docs/BlobElementApi.md#downloadfileworkspace) | **Get** /blobelements/d/{did}/w/{wid}/e/{eid} | Download a file from a blob element for the specified workspace/version/microversion.
-*BlobElementApi* | [**UpdateUnits**](docs/BlobElementApi.md#updateunits) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid}/units | Change the measurement units for the blob element.
-*BlobElementApi* | [**UploadFileCreateElement**](docs/BlobElementApi.md#uploadfilecreateelement) | **Post** /blobelements/d/{did}/w/{wid} | Upload a file and create a blob element from it.
-*BlobElementApi* | [**UploadFileUpdateElement**](docs/BlobElementApi.md#uploadfileupdateelement) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid} | Update a blob element by uploading a file.
-*CommentApi* | [**AddAttachment**](docs/CommentApi.md#addattachment) | **Post** /comments/{cid}/attachment | Add an attachment to a comment.
-*CommentApi* | [**CreateComment**](docs/CommentApi.md#createcomment) | **Post** /comments | Update a document with a new comment.
-*CommentApi* | [**DeleteAttachments**](docs/CommentApi.md#deleteattachments) | **Delete** /comments/{cid}/attachment | Delete all attachments from a comment.
-*CommentApi* | [**DeleteComment**](docs/CommentApi.md#deletecomment) | **Delete** /comments/{cid} | Delete a comment from a document.
-*CommentApi* | [**GetAttachment**](docs/CommentApi.md#getattachment) | **Get** /comments/{cid}/attachment/{fdid}.{ext} | Get the attachment with the specified file extension that is associated with the specified comment.
-*CommentApi* | [**GetComment**](docs/CommentApi.md#getcomment) | **Get** /comments/{cid} | Get details for a comment.
-*CommentApi* | [**GetComments**](docs/CommentApi.md#getcomments) | **Get** /comments | Get a list of comments in a document.
-*CommentApi* | [**Reopen**](docs/CommentApi.md#reopen) | **Post** /comments/{cid}/reopen | Reopen a resolved comment.
-*CommentApi* | [**Resolve**](docs/CommentApi.md#resolve) | **Post** /comments/{cid}/resolve | Resolve a comment.
-*CommentApi* | [**UpdateComment**](docs/CommentApi.md#updatecomment) | **Post** /comments/{cid} | Update the content of an existing comment.
-*CompanyApi* | [**AddUserToCompany**](docs/CompanyApi.md#addusertocompany) | **Post** /companies/{cid}/users | Add a user to a company.
-*CompanyApi* | [**FindCompany**](docs/CompanyApi.md#findcompany) | **Get** /companies | Get all companies to which the specified user belongs.
-*CompanyApi* | [**GetCompany**](docs/CompanyApi.md#getcompany) | **Get** /companies/{cid} | Get company information by company ID.
-*CompanyApi* | [**GetDocumentsByName**](docs/CompanyApi.md#getdocumentsbyname) | **Get** /companies/{cid}/documentsbyname | Get document by exact document name.
-*CompanyApi* | [**RemoveUserFromCompany**](docs/CompanyApi.md#removeuserfromcompany) | **Delete** /companies/{cid}/users/{uid} | Remove a user from a company, company teams, and all the direct shares.
-*CompanyApi* | [**UpdateCompanyUser**](docs/CompanyApi.md#updatecompanyuser) | **Post** /companies/{cid}/users/{uid} | Update the company&#39;s information for a user.
-*DocumentApi* | [**CopyWorkspace**](docs/DocumentApi.md#copyworkspace) | **Post** /documents/{did}/workspaces/{wid}/copy | Copy workspace by document ID and workspace ID.
-*DocumentApi* | [**CreateDocument**](docs/DocumentApi.md#createdocument) | **Post** /documents | Create and upload a document.
-*DocumentApi* | [**CreateVersion**](docs/DocumentApi.md#createversion) | **Post** /documents/d/{did}/versions | Create version by document ID.
-*DocumentApi* | [**CreateWorkspace**](docs/DocumentApi.md#createworkspace) | **Post** /documents/d/{did}/workspaces | Create workspace by document ID.
-*DocumentApi* | [**DeleteDocument**](docs/DocumentApi.md#deletedocument) | **Delete** /documents/{did} | Delete document by document ID.
-*DocumentApi* | [**DeleteWorkspace**](docs/DocumentApi.md#deleteworkspace) | **Delete** /documents/d/{did}/workspaces/{wid} | Delete workspace by document ID and workspace ID.
-*DocumentApi* | [**DownloadExternalData**](docs/DocumentApi.md#downloadexternaldata) | **Get** /documents/d/{did}/externaldata/{fid} | Download external data file(s) associated with the document.
-*DocumentApi* | [**Export2Json**](docs/DocumentApi.md#export2json) | **Post** /documents/d/{did}/{wv}/{wvid}/e/{eid}/export | Export document by document ID, workspace or version ID, and tab ID.
-*DocumentApi* | [**GetCurrentMicroversion**](docs/DocumentApi.md#getcurrentmicroversion) | **Get** /documents/d/{did}/{wv}/{wvid}/currentmicroversion | Retrieve current microversion by document ID and workspace or version ID.
-*DocumentApi* | [**GetDocument**](docs/DocumentApi.md#getdocument) | **Get** /documents/{did} | Retrieve document by document ID.
-*DocumentApi* | [**GetDocumentAcl**](docs/DocumentApi.md#getdocumentacl) | **Get** /documents/{did}/acl | Retrieve access control list by document ID.
-*DocumentApi* | [**GetDocumentHistory**](docs/DocumentApi.md#getdocumenthistory) | **Get** /documents/d/{did}/{wm}/{wmid}/documenthistory | Retrieve document history by document ID and workspace or microversion ID.
-*DocumentApi* | [**GetDocumentPermissionSet**](docs/DocumentApi.md#getdocumentpermissionset) | **Get** /documents/{did}/permissionset | Retrieve Document permissions by document ID.
-*DocumentApi* | [**GetDocumentVersions**](docs/DocumentApi.md#getdocumentversions) | **Get** /documents/d/{did}/versions | Retrieve versions by document ID.
-*DocumentApi* | [**GetDocumentWorkspaces**](docs/DocumentApi.md#getdocumentworkspaces) | **Get** /documents/d/{did}/workspaces | Retrieve workspaces by document ID.
-*DocumentApi* | [**GetDocuments**](docs/DocumentApi.md#getdocuments) | **Get** /documents | Get a list of documents that meet the criteria you specify.
-*DocumentApi* | [**GetElementsInDocument**](docs/DocumentApi.md#getelementsindocument) | **Get** /documents/d/{did}/{wvm}/{wvmid}/elements | Retrieve tabs by document ID and workspace or version or microversion ID.
-*DocumentApi* | [**GetInsertables**](docs/DocumentApi.md#getinsertables) | **Get** /documents/d/{did}/{wv}/{wvid}/insertables | Retrieve insertables by document ID and workspace or version ID.
-*DocumentApi* | [**GetUnitInfo**](docs/DocumentApi.md#getunitinfo) | **Get** /documents/d/{did}/{wvm}/{wvmid}/unitinfo | Get the selected units and precision by document ID and workspace or version or microversion ID.
-*DocumentApi* | [**GetVersion**](docs/DocumentApi.md#getversion) | **Get** /documents/d/{did}/versions/{vid} | Retrieve version by document ID and version ID.
-*DocumentApi* | [**MergeIntoWorkspace**](docs/DocumentApi.md#mergeintoworkspace) | **Post** /documents/{did}/workspaces/{wid}/merge | Merge into workspace by document ID and workspace ID.
-*DocumentApi* | [**MergePreview**](docs/DocumentApi.md#mergepreview) | **Get** /documents/{did}/w/{wid}/mergePreview | Merge preview of changes that will occur based on document ID, workspace ID and source workspace/version ID
-*DocumentApi* | [**MoveElementsToDocument**](docs/DocumentApi.md#moveelementstodocument) | **Post** /documents/d/{did}/w/{wid}/moveelement | Move tab by document ID and workspace ID.
-*DocumentApi* | [**RestoreFromHistory**](docs/DocumentApi.md#restorefromhistory) | **Post** /documents/{did}/w/{wid}/restore/{vm}/{vmid} | Restore version or microversion to workspace by document ID, workspace ID, and version or microversion ID.
-*DocumentApi* | [**RevertUnchangedToRevisions**](docs/DocumentApi.md#revertunchangedtorevisions) | **Post** /documents/d/{did}/w/{wid}/revertunchangedtorevisions | 
-*DocumentApi* | [**Search**](docs/DocumentApi.md#search) | **Post** /documents/search | Search document.
-*DocumentApi* | [**ShareDocument**](docs/DocumentApi.md#sharedocument) | **Post** /documents/{did}/share | Share document by document ID.
-*DocumentApi* | [**ShareWithSupport**](docs/DocumentApi.md#sharewithsupport) | **Post** /documents/{did}/shareWithSupport | Share document by document ID with Onshape support.
-*DocumentApi* | [**SyncAppElements**](docs/DocumentApi.md#syncappelements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
-*DocumentApi* | [**UnShareDocument**](docs/DocumentApi.md#unsharedocument) | **Delete** /documents/{did}/share/{eid} | Remove document View permissions from a user or other entity.
-*DocumentApi* | [**UnshareFromSupport**](docs/DocumentApi.md#unsharefromsupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
-*DocumentApi* | [**UpdateDocumentAttributes**](docs/DocumentApi.md#updatedocumentattributes) | **Post** /documents/{did} | Update document attributes by document ID.
-*DocumentApi* | [**UpdateExternalReferencesToLatestDocuments**](docs/DocumentApi.md#updateexternalreferencestolatestdocuments) | **Post** /documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences | Update external references to latest by document ID, workspace ID, and tab ID.
-*DrawingApi* | [**CreateDrawingAppElement**](docs/DrawingApi.md#createdrawingappelement) | **Post** /drawings/d/{did}/w/{wid}/create | Create a new drawing in a document.
-*DrawingApi* | [**CreateDrawingTranslation**](docs/DrawingApi.md#createdrawingtranslation) | **Post** /drawings/d/{did}/{wv}/{wvid}/e/{eid}/translations | Translate (export) a drawing to a different format.
-*DrawingApi* | [**GetDrawingTranslatorFormats**](docs/DrawingApi.md#getdrawingtranslatorformats) | **Get** /drawings/d/{did}/w/{wid}/e/{eid}/translationformats | Get a list of all valid formats the drawing can be translated (exported) to.
-*DrawingApi* | [**GetModificationStatus**](docs/DrawingApi.md#getmodificationstatus) | **Get** /drawings/modify/status/{mrid} | Get the status of a drawing modification operation.
-*DrawingApi* | [**ModifyDrawing**](docs/DrawingApi.md#modifydrawing) | **Post** /drawings/d/{did}/w/{wid}/e/{eid}/modify | Modify a drawing via JSON payload.
-*ElementApi* | [**CopyElementFromSourceDocument**](docs/ElementApi.md#copyelementfromsourcedocument) | **Post** /elements/copyelement/{did}/workspace/{wid} | Copy tab by document ID and workspace ID.
-*ElementApi* | [**DecodeConfiguration**](docs/ElementApi.md#decodeconfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configurationencodings/{cid} | Decode configuration string by documentation ID, workspace or version or microversion ID, and tab ID.
-*ElementApi* | [**DeleteElement**](docs/ElementApi.md#deleteelement) | **Delete** /elements/d/{did}/w/{wid}/e/{eid} | 
-*ElementApi* | [**EncodeConfigurationMap**](docs/ElementApi.md#encodeconfigurationmap) | **Post** /elements/d/{did}/e/{eid}/configurationencodings | Encode configuration by documentation ID and tab ID.
-*ElementApi* | [**GetConfiguration**](docs/ElementApi.md#getconfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Retrieve configuration by document ID, workspace or version or microversion ID, and tab ID.
-*ElementApi* | [**GetElementTranslatorFormatsByVersionOrWorkspace**](docs/ElementApi.md#getelementtranslatorformatsbyversionorworkspace) | **Get** /elements/translatorFormats/{did}/{wv}/{wvid}/{eid} | 
-*ElementApi* | [**UpdateConfiguration**](docs/ElementApi.md#updateconfiguration) | **Post** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Update configuration by document ID, workspace or microversion ID, and tab ID.
-*ElementApi* | [**UpdateReferences**](docs/ElementApi.md#updatereferences) | **Post** /elements/d/{did}/w/{wid}/e/{eid}/updatereferences | Update or replace node references by document ID, workspace ID, and tab ID.
-*EventApi* | [**FireEvent**](docs/EventApi.md#fireevent) | **Post** /events | Fire an asynchronous event.
-*ExportRuleApi* | [**GetValidRuleOptions**](docs/ExportRuleApi.md#getvalidruleoptions) | **Get** /exportrules/options/{cu}/{cuid} |  Get a list of valid export rule options for the user or company.
-*FeatureStudioApi* | [**CreateFeatureStudio**](docs/FeatureStudioApi.md#createfeaturestudio) | **Post** /featurestudios/d/{did}/w/{wid} | Create a new Feature Studio tab in a document.
-*FeatureStudioApi* | [**GetFeatureStudioContents**](docs/FeatureStudioApi.md#getfeaturestudiocontents) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | Get the text for a Feature Studio element.
-*FeatureStudioApi* | [**GetFeatureStudioSpecs**](docs/FeatureStudioApi.md#getfeaturestudiospecs) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature specs for a Feature Studio element.
-*FeatureStudioApi* | [**UpdateFeatureStudioContents**](docs/FeatureStudioApi.md#updatefeaturestudiocontents) | **Post** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | Update the text for a Feature Studio element.
-*FolderApi* | [**GetFolderAcl**](docs/FolderApi.md#getfolderacl) | **Get** /folders/{fid}/acl | Get the Access Control List (ACL) for a folder to view permissions.
-*FolderApi* | [**Share**](docs/FolderApi.md#share) | **Post** /folders/{fid}/share | Share folder with an entity.
-*FolderApi* | [**UnShare**](docs/FolderApi.md#unshare) | **Delete** /folders/{fid}/share/{eid} | Remove permissions from the folder for the specified Access Control List (ACL) entry.
-*InsertableApi* | [**GetLatestInDocument**](docs/InsertableApi.md#getlatestindocument) | **Get** /insertables/d/{did}/latest | Get a list of things in this document that can be inserted elsewhere.
-*MetadataApi* | [**GetVEOPStandardContentMetadata**](docs/MetadataApi.md#getveopstandardcontentmetadata) | **Get** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid} | Get the metadata for a standard content part.
-*MetadataApi* | [**GetWMVEMetadata**](docs/MetadataApi.md#getwmvemetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Get the metadata for an element.
-*MetadataApi* | [**GetWMVEPMetadata**](docs/MetadataApi.md#getwmvepmetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Get the metadata for a part.
-*MetadataApi* | [**GetWMVEPsMetadata**](docs/MetadataApi.md#getwmvepsmetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p | Get the metadata for all parts in a document.
-*MetadataApi* | [**GetWMVEsMetadata**](docs/MetadataApi.md#getwmvesmetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e | Get the metadata for all elements in a document.
-*MetadataApi* | [**GetWVMetadata**](docs/MetadataApi.md#getwvmetadata) | **Get** /metadata/d/{did}/{wv}/{wvid} | Get the metadata for a workspace or version.
-*MetadataApi* | [**UpdateVEOPStandardContentPartMetadata**](docs/MetadataApi.md#updateveopstandardcontentpartmetadata) | **Post** /metadata/standardcontent/d/{did} | Update the metadata for a standard content part.
-*MetadataApi* | [**UpdateWVEMetadata**](docs/MetadataApi.md#updatewvemetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Update the metadata for an element.
-*MetadataApi* | [**UpdateWVEPMetadata**](docs/MetadataApi.md#updatewvepmetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Update the metadata for a part.
-*MetadataApi* | [**UpdateWVMetadata**](docs/MetadataApi.md#updatewvmetadata) | **Post** /metadata/d/{did}/{wv}/{wvid} | Update the metadata for a workspace or version.
-*MetadataCategoryApi* | [**GetCategoryProperties**](docs/MetadataCategoryApi.md#getcategoryproperties) | **Get** /metadatacategory/categoryproperties | Get properties associated with the specified metadata categories.
-*NumberingSchemeApi* | [**NextNumbers**](docs/NumberingSchemeApi.md#nextnumbers) | **Post** /numberingscheme/nextnumbers | Send the items to generate numbers for, and return the next valid available part numbers.
-*OpenApiApi* | [**GetOpenApi**](docs/OpenApiApi.md#getopenapi) | **Get** /openapi | Get the OpenAPI specification for the Onshape REST API.
-*OpenApiApi* | [**GetTags**](docs/OpenApiApi.md#gettags) | **Get** /openapi/tags | Get the list of tags in the Onshape OpenAPI specification.
-*PartApi* | [**ExportPS**](docs/PartApi.md#exportps) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid | Export a part as a Parasolid file.
-*PartApi* | [**ExportPartGltf**](docs/PartApi.md#exportpartgltf) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf | Export a part as a glTF file.
-*PartApi* | [**ExportStl**](docs/PartApi.md#exportstl) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl | Export a part as an STL file.
-*PartApi* | [**GetBendTable**](docs/PartApi.md#getbendtable) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/sheetmetal/bendtable | Get a part&#39;s sheet metal bend table.
-*PartApi* | [**GetBodyDetails**](docs/PartApi.md#getbodydetails) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails | Get a part&#39;s body details.
-*PartApi* | [**GetBoundingBoxes**](docs/PartApi.md#getboundingboxes) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/boundingboxes | Get a part&#39;s bounding box details.
-*PartApi* | [**GetEdges**](docs/PartApi.md#getedges) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatededges | Get a list of a part&#39;s tessellation edges.
-*PartApi* | [**GetFaces1**](docs/PartApi.md#getfaces1) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces | Get a list of a part&#39;s tessellation faces.
-*PartApi* | [**GetMassProperties**](docs/PartApi.md#getmassproperties) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/massproperties | Get a part&#39;s mass properties.
-*PartApi* | [**GetPartShadedViews**](docs/PartApi.md#getpartshadedviews) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/shadedviews | Get a part&#39;s shaded views.
-*PartApi* | [**GetPartsWMV**](docs/PartApi.md#getpartswmv) | **Get** /parts/d/{did}/{wvm}/{wvmid} | Get all parts in a workspace, version, or microversion.
-*PartApi* | [**GetPartsWMVE**](docs/PartApi.md#getpartswmve) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid} | Get all parts in an element.
-*PartNumberApi* | [**UpdateNextNumbers**](docs/PartNumberApi.md#updatenextnumbers) | **Post** /partnumber/nextnumbers | Send the items to generate numbers for, and return the next valid available part numbers.
-*PartStudioApi* | [**AddPartStudioFeature**](docs/PartStudioApi.md#addpartstudiofeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the Part Studio&#39;s Feature List.
-*PartStudioApi* | [**ComparePartStudios**](docs/PartStudioApi.md#comparepartstudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Get the differences between two Part Studios in a single document.
-*PartStudioApi* | [**CreatePartStudio**](docs/PartStudioApi.md#createpartstudio) | **Post** /partstudios/d/{did}/w/{wid} | Create a new Part Studio in a document.
-*PartStudioApi* | [**CreatePartStudioTranslation**](docs/PartStudioApi.md#createpartstudiotranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a Part Studio to another format.
-*PartStudioApi* | [**DeletePartStudioFeature**](docs/PartStudioApi.md#deletepartstudiofeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a Part Studio feature.
-*PartStudioApi* | [**EvalFeatureScript**](docs/PartStudioApi.md#evalfeaturescript) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript | Evaluate the FeatureScript snippet for a Part Studio.
-*PartStudioApi* | [**ExportParasolid**](docs/PartStudioApi.md#exportparasolid) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid | Export the Part Studio as a Parasolid file.
-*PartStudioApi* | [**ExportPartStudioGltf**](docs/PartStudioApi.md#exportpartstudiogltf) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf | Export the Part Studio as a glTF file.
-*PartStudioApi* | [**ExportPartStudioStl**](docs/PartStudioApi.md#exportpartstudiostl) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl | Export the Part Studio as an STL file.
-*PartStudioApi* | [**GetFeatureScriptRepresentation**](docs/PartStudioApi.md#getfeaturescriptrepresentation) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescriptrepresentation | Get the FeatureScript representation of a Part Studio.
-*PartStudioApi* | [**GetFeatureScriptTable**](docs/PartStudioApi.md#getfeaturescripttable) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/fstable | Compute and return a FeatureScript table for a Part Studio.
-*PartStudioApi* | [**GetPartStudioBodyDetails**](docs/PartStudioApi.md#getpartstudiobodydetails) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/bodydetails | Get the body details for a Part Studio.
-*PartStudioApi* | [**GetPartStudioBoundingBoxes**](docs/PartStudioApi.md#getpartstudioboundingboxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get the bounding boxes for a Part Studio.
-*PartStudioApi* | [**GetPartStudioEdges**](docs/PartStudioApi.md#getpartstudioedges) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatededges | Get a list of all edges in a Part Studio.
-*PartStudioApi* | [**GetPartStudioFaces**](docs/PartStudioApi.md#getpartstudiofaces) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatedfaces | Get a list of all faces in a Part Studio.
-*PartStudioApi* | [**GetPartStudioFeatureSpecs**](docs/PartStudioApi.md#getpartstudiofeaturespecs) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the specs for a Part Studio feature.
-*PartStudioApi* | [**GetPartStudioFeatures**](docs/PartStudioApi.md#getpartstudiofeatures) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get a list of features instantiated in the Part Studio.
-*PartStudioApi* | [**GetPartStudioMassProperties**](docs/PartStudioApi.md#getpartstudiomassproperties) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for a Part Studio.
-*PartStudioApi* | [**GetPartStudioNamedViews**](docs/PartStudioApi.md#getpartstudionamedviews) | **Get** /partstudios/d/{did}/e/{eid}/namedViews | Get a list of all named views that exist in the Part Studio.
-*PartStudioApi* | [**GetPartStudioShadedViews**](docs/PartStudioApi.md#getpartstudioshadedviews) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get a list of shaded views for a Part Studio.
-*PartStudioApi* | [**TranslateIds**](docs/PartStudioApi.md#translateids) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/idtranslations | Find corresponding deterministic IDs from a source document microversion at the target version.
-*PartStudioApi* | [**UpdateFeatures**](docs/PartStudioApi.md#updatefeatures) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/updates | Update multiple features in a Part Studio
-*PartStudioApi* | [**UpdatePartStudioFeature**](docs/PartStudioApi.md#updatepartstudiofeature) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update the definition of a Part Studio feature.
-*PartStudioApi* | [**UpdateRollback**](docs/PartStudioApi.md#updaterollback) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/rollback | Move the Feature List rollback bar in the Part Studio.
-*PropertiesTableTemplateApi* | [**CreateTableTemplate**](docs/PropertiesTableTemplateApi.md#createtabletemplate) | **Post** /tabletemplates | Create a new properties table template.
-*PropertiesTableTemplateApi* | [**DeleteTableTemplate**](docs/PropertiesTableTemplateApi.md#deletetabletemplate) | **Delete** /tabletemplates/{tid} | Delete a properties table template.
-*PropertiesTableTemplateApi* | [**GetByCompanyId**](docs/PropertiesTableTemplateApi.md#getbycompanyid) | **Get** /tabletemplates/companies/{cid} | Get all properties table templates available for a company.
-*PropertiesTableTemplateApi* | [**GetByDocumentId**](docs/PropertiesTableTemplateApi.md#getbydocumentid) | **Get** /tabletemplates/d/{did} | Get all table templates that are available to use on the provided document.
-*PropertiesTableTemplateApi* | [**GetTableTemplate**](docs/PropertiesTableTemplateApi.md#gettabletemplate) | **Get** /tabletemplates/{tid} | Get a properties table template by template ID.
-*PublicationApi* | [**AddItemToPublication**](docs/PublicationApi.md#additemtopublication) | **Post** /publications/{pid}/item | Add an item in a publication.
-*PublicationApi* | [**AddItemsToPublication**](docs/PublicationApi.md#additemstopublication) | **Post** /publications/{pid}/items | Add publication items in bulk.
-*PublicationApi* | [**CreatePublication**](docs/PublicationApi.md#createpublication) | **Post** /publications | Create a new publication.
-*PublicationApi* | [**DeletePublication**](docs/PublicationApi.md#deletepublication) | **Delete** /publications/{pid} | Delete a publication.
-*PublicationApi* | [**DeletePublicationItem**](docs/PublicationApi.md#deletepublicationitem) | **Delete** /publications/{pid}/item/{iid} | Remove an item from a publication.
-*PublicationApi* | [**GetPublicationItems**](docs/PublicationApi.md#getpublicationitems) | **Get** /publications/{pid}/items | Get all items in a publication.
-*PublicationApi* | [**UpdatePublicationAttributes**](docs/PublicationApi.md#updatepublicationattributes) | **Post** /publications/{pid} | Update publication&#39;s attributes name, description, and notes.
-*ReleasePackageApi* | [**CreateObsoletionPackage**](docs/ReleasePackageApi.md#createobsoletionpackage) | **Post** /releasepackages/obsoletion/{wfid} | Create an obsoletion package to make an existing revision obsolete.
-*ReleasePackageApi* | [**CreateReleasePackage**](docs/ReleasePackageApi.md#createreleasepackage) | **Post** /releasepackages/release/{wfid} | Create a new release package for one or more items.
-*ReleasePackageApi* | [**GetCompanyReleaseWorkflow**](docs/ReleasePackageApi.md#getcompanyreleaseworkflow) | **Get** /releasepackages/companyreleaseworkflow | Get information about the release/obsoletion workflow for a company-owned document.
-*ReleasePackageApi* | [**GetReleasePackage**](docs/ReleasePackageApi.md#getreleasepackage) | **Get** /releasepackages/{rpid} | Get details about the specified release package.
-*ReleasePackageApi* | [**UpdateReleasePackage**](docs/ReleasePackageApi.md#updatereleasepackage) | **Post** /releasepackages/{rpid} | Update the release/obsoletion package/item properties.
-*RevisionApi* | [**DeleteRevisionHistory**](docs/RevisionApi.md#deleterevisionhistory) | **Delete** /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et} | Delete all revisions for a part number.
-*RevisionApi* | [**EnumerateRevisions**](docs/RevisionApi.md#enumeraterevisions) | **Get** /revisions/companies/{cid} | Enumerate all of a company&#39;s revisions.
-*RevisionApi* | [**GetAllInDocument**](docs/RevisionApi.md#getallindocument) | **Get** /revisions/d/{did} | Get all revisions for the specified document.
-*RevisionApi* | [**GetAllInDocumentVersion**](docs/RevisionApi.md#getallindocumentversion) | **Get** /revisions/d/{did}/v/{vid} | Get all revisions for a version.
-*RevisionApi* | [**GetLatestInDocumentOrCompany**](docs/RevisionApi.md#getlatestindocumentorcompany) | **Get** /revisions/{cd}/{cdid}/p/{pnum}/latest | Get the latest revision for a part number in a document or company.
-*RevisionApi* | [**GetRevisionByPartNumber**](docs/RevisionApi.md#getrevisionbypartnumber) | **Get** /revisions/c/{cid}/partnumber/{pnum} | Get a list of revisions by part number.
-*RevisionApi* | [**GetRevisionHistoryInCompanyByElementId**](docs/RevisionApi.md#getrevisionhistoryincompanybyelementid) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid} | Get a list of all revisions for an element in a company-owned document.
-*RevisionApi* | [**GetRevisionHistoryInCompanyByPartId**](docs/RevisionApi.md#getrevisionhistoryincompanybypartid) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}/p/{pid} | Get a list of all revisions for a part in a company-owned document by part ID.
-*RevisionApi* | [**GetRevisionHistoryInCompanyByPartNumber**](docs/RevisionApi.md#getrevisionhistoryincompanybypartnumber) | **Get** /revisions/companies/{cid}/partnumber/{pnum} | Get a list of all revisions for a part or element in a company-owned document by part number.
-*SketchApi* | [**GetSketchBoundingBoxes**](docs/SketchApi.md#getsketchboundingboxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes | Get all bounding boxes for a sketch.
-*SketchApi* | [**GetSketchInfo**](docs/SketchApi.md#getsketchinfo) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches | Get information for all sketches in Part Studio.
-*SketchApi* | [**GetTessellatedEntities**](docs/SketchApi.md#gettessellatedentities) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities | Get the tessellations of a sketch in a Part Studio.
-*TeamApi* | [**Find**](docs/TeamApi.md#find) | **Get** /teams | Get a list of all teams the current user belongs to.
-*TeamApi* | [**GetMembers**](docs/TeamApi.md#getmembers) | **Get** /teams/{tid}/members | Get a list of a team&#39;s members.
-*TeamApi* | [**GetTeam**](docs/TeamApi.md#getteam) | **Get** /teams/{tid} | Get team information by team ID.
-*ThumbnailApi* | [**DeleteApplicationThumbnails**](docs/ThumbnailApi.md#deleteapplicationthumbnails) | **Delete** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Delete an element&#39;s thumbnail.
-*ThumbnailApi* | [**GetDocumentThumbnail**](docs/ThumbnailApi.md#getdocumentthumbnail) | **Get** /thumbnails/d/{did}/w/{wid} | Get the thumbnail info for a workspace.
-*ThumbnailApi* | [**GetDocumentThumbnailWithSize**](docs/ThumbnailApi.md#getdocumentthumbnailwithsize) | **Get** /thumbnails/d/{did}/w/{wid}/s/{sz} | Get the thumbnail image with the given size for a document.
-*ThumbnailApi* | [**GetElementThumbnail**](docs/ThumbnailApi.md#getelementthumbnail) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Get the thumbnail info structure for an element.
-*ThumbnailApi* | [**GetElementThumbnailWithApiConfiguration**](docs/ThumbnailApi.md#getelementthumbnailwithapiconfiguration) | **Get** /thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz} | Get the thumbnail image with the given configuration for an element.
-*ThumbnailApi* | [**GetElementThumbnailWithSize**](docs/ThumbnailApi.md#getelementthumbnailwithsize) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid}/s/{sz} | Get the thumbnail image with the given size for an element.
-*ThumbnailApi* | [**GetThumbnailForDocument**](docs/ThumbnailApi.md#getthumbnailfordocument) | **Get** /thumbnails/d/{did} | Get the thumbnail info for a document in the default workspace.
-*ThumbnailApi* | [**GetThumbnailForDocumentAndVersion**](docs/ThumbnailApi.md#getthumbnailfordocumentandversion) | **Get** /thumbnails/d/{did}/v/{vid} | Get the thumbnail info for a version of a document.
-*ThumbnailApi* | [**GetThumbnailForDocumentAndVersionOld**](docs/ThumbnailApi.md#getthumbnailfordocumentandversionold) | **Get** /thumbnails/document/{did}/version/{vid} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocumentAndVersion&#x60; instead.
-*ThumbnailApi* | [**GetThumbnailForDocumentOld**](docs/ThumbnailApi.md#getthumbnailfordocumentold) | **Get** /thumbnails/document/{did} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocument&#x60; instead.
-*ThumbnailApi* | [**SetApplicationElementThumbnail**](docs/ThumbnailApi.md#setapplicationelementthumbnail) | **Post** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Set the thumbnail image for an application element.
-*TranslationApi* | [**CreateTranslation**](docs/TranslationApi.md#createtranslation) | **Post** /translations/d/{did}/w/{wid} | Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.
-*TranslationApi* | [**DeleteTranslation**](docs/TranslationApi.md#deletetranslation) | **Delete** /translations/{tid} | Delete a translation request.
-*TranslationApi* | [**GetAllTranslatorFormats**](docs/TranslationApi.md#getalltranslatorformats) | **Get** /translations/translationformats | Get a list of formats this translation can use.
-*TranslationApi* | [**GetDocumentTranslations**](docs/TranslationApi.md#getdocumenttranslations) | **Get** /translations/d/{did} | Get information on an in-progress or completed translation by document ID.
-*TranslationApi* | [**GetTranslation**](docs/TranslationApi.md#gettranslation) | **Get** /translations/{tid} | Get information on an in-progress or completed translation by translation ID.
-*UserApi* | [**GetUserSettings**](docs/UserApi.md#getusersettings) | **Get** /users/{uid}/settings | Get the user settings for any user in your organization (admins only).
-*UserApi* | [**GetUserSettingsCurrentLoggedInUser**](docs/UserApi.md#getusersettingscurrentloggedinuser) | **Get** /users/settings | Get the user settings for the signed-in user (i.e., you) for the current session.
-*UserApi* | [**Session**](docs/UserApi.md#session) | **Post** /users/session | Authenticate a user&#39;s Onshape credentials, and create a session.
-*UserApi* | [**SessionInfo**](docs/UserApi.md#sessioninfo) | **Get** /users/sessioninfo | Get the session information for an authenticated (signed-in) user.
-*VariablesApi* | [**CreateVariableStudio**](docs/VariablesApi.md#createvariablestudio) | **Post** /variables/d/{did}/w/{wid}/variablestudio | Create a new Variable Studio in a document and workspace.
-*VariablesApi* | [**GetVariableStudioReferences**](docs/VariablesApi.md#getvariablestudioreferences) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioreferences | Get the Variable Studio references for an element.
-*VariablesApi* | [**GetVariableStudioScope**](docs/VariablesApi.md#getvariablestudioscope) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioscope | Get the scope of a Variable Studio.
-*VariablesApi* | [**GetVariables**](docs/VariablesApi.md#getvariables) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variables | Get the contents of all variable tables in an element.
-*VariablesApi* | [**SetVariableStudioReferences**](docs/VariablesApi.md#setvariablestudioreferences) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioreferences | Set the Variable Studio references for an element.
-*VariablesApi* | [**SetVariableStudioScope**](docs/VariablesApi.md#setvariablestudioscope) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioscope | Set the scope the Variable Studio.
-*VariablesApi* | [**SetVariables**](docs/VariablesApi.md#setvariables) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variables | Assign variables to a Variable Studio
-*VersionApi* | [**GetAllVersions**](docs/VersionApi.md#getallversions) | **Get** /versions | Get all versions of the Onshape REST APIs.
-*WebhookApi* | [**CreateWebhook**](docs/WebhookApi.md#createwebhook) | **Post** /webhooks | Create a new webhook.
-*WebhookApi* | [**GetWebhook**](docs/WebhookApi.md#getwebhook) | **Get** /webhooks/{webhookid} | Get webhook info by webhook ID.
-*WebhookApi* | [**GetWebhooks**](docs/WebhookApi.md#getwebhooks) | **Get** /webhooks | Get a list of all webhooks registered by a user or company.
-*WebhookApi* | [**PingWebhook**](docs/WebhookApi.md#pingwebhook) | **Post** /webhooks/{webhookid}/ping | Ping a webhook.
-*WebhookApi* | [**UnregisterWebhook**](docs/WebhookApi.md#unregisterwebhook) | **Delete** /webhooks/{webhookid} | Unregister a webhook.
-*WebhookApi* | [**UpdateWebhook**](docs/WebhookApi.md#updatewebhook) | **Post** /webhooks/{webhookid} | Update a webhook.
-*WorkflowApi* | [**EnumerateObjectWorkflows**](docs/WorkflowApi.md#enumerateobjectworkflows) | **Get** /workflow/companies/{cid}/objects | Enumerate all of a company&#39;s workflowable objects.
-*WorkflowApi* | [**GetActiveWorkflows**](docs/WorkflowApi.md#getactiveworkflows) | **Get** /workflow/active | Get all active workflows for the currently logged in user&#39;s company.
-*WorkflowApi* | [**GetAllowedApprovers**](docs/WorkflowApi.md#getallowedapprovers) | **Get** /workflow/c/{companyId}/approvers | Get all identities allowed to be approvers on a workflow object.
-*WorkflowApi* | [**GetAuditLog**](docs/WorkflowApi.md#getauditlog) | **Get** /workflow/obj/{objectId}/auditlog | Get all audit log entries for a workflowable object.
+*APIApplicationAPI* | [**DeleteAppSettings**](docs/APIApplicationAPI.md#deleteappsettings) | **Delete** /applications/clients/{cid}/settings/users/{uid} | Delete a user&#39;s application preference settings.
+*APIApplicationAPI* | [**DeleteCompanyAppSettings**](docs/APIApplicationAPI.md#deletecompanyappsettings) | **Delete** /applications/clients/{cid}/settings/companies/{cpid} | Delete a company&#39;s application preference settings.
+*APIApplicationAPI* | [**GetApplicableExtensionsForClient**](docs/APIApplicationAPI.md#getapplicableextensionsforclient) | **Get** /applications/extensions/user/{uid}/client/{cid} | Get a list of the client extensions the specified user has granted/accepted terms for.
+*APIApplicationAPI* | [**GetCompanyAppSettings**](docs/APIApplicationAPI.md#getcompanyappsettings) | **Get** /applications/clients/{cid}/settings/companies/{cpid} | Get company-level preference settings for an application.
+*APIApplicationAPI* | [**GetUserAppSettings**](docs/APIApplicationAPI.md#getuserappsettings) | **Get** /applications/clients/{cid}/settings/users/{uid} | Get user-level preference settings for an application.
+*APIApplicationAPI* | [**UpdateAppCompanySettings**](docs/APIApplicationAPI.md#updateappcompanysettings) | **Post** /applications/clients/{cid}/settings/companies/{cpid} | Update company preference settings for an application.
+*APIApplicationAPI* | [**UpdateAppSettings**](docs/APIApplicationAPI.md#updateappsettings) | **Post** /applications/clients/{cid}/settings/users/{uid} | Update a user&#39;s application preference settings.
+*AccountAPI* | [**CancelPurchaseNew**](docs/AccountAPI.md#cancelpurchasenew) | **Delete** /accounts/{aid}/purchases/{pid} | Cancel a recurring subscription for the specified account ID and purchase ID.
+*AccountAPI* | [**ConsumePurchase**](docs/AccountAPI.md#consumepurchase) | **Post** /accounts/purchases/{pid}/consume | Mark a purchase as consumed by the current user.
+*AccountAPI* | [**GetPlanPurchases**](docs/AccountAPI.md#getplanpurchases) | **Get** /accounts/plans/{planId}/purchases | Get a list of all app purchases made for the specified plan.
+*AccountAPI* | [**GetPurchases**](docs/AccountAPI.md#getpurchases) | **Get** /accounts/purchases | Get a list of all app purchases made by the current user.
+*AliasAPI* | [**CreateAlias**](docs/AliasAPI.md#createalias) | **Post** /aliases | Create an alias in your enterprise.
+*AliasAPI* | [**DeleteAlias**](docs/AliasAPI.md#deletealias) | **Delete** /aliases/{aid} | Delete an alias from your enterprise.
+*AliasAPI* | [**GetAlias**](docs/AliasAPI.md#getalias) | **Get** /aliases/{aid} | Get an alias by ID.
+*AliasAPI* | [**GetAliasMembers**](docs/AliasAPI.md#getaliasmembers) | **Get** /aliases/{aid}/members | Get all users and teams assigned to an alias.
+*AliasAPI* | [**GetAliasesInCompany**](docs/AliasAPI.md#getaliasesincompany) | **Get** /aliases | Get a list of all aliases that exist for your enterprise.
+*AliasAPI* | [**UpdateAlias**](docs/AliasAPI.md#updatealias) | **Post** /aliases/{aid} | Add, remove, replace, or rename entries in an alias list.
+*AppAssociativeDataAPI* | [**CopyAssociativeData**](docs/AppAssociativeDataAPI.md#copyassociativedata) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata | Copy associative data from one view to another.
+*AppAssociativeDataAPI* | [**DeleteAssociativeData**](docs/AppAssociativeDataAPI.md#deleteassociativedata) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Delete the associative data from the specified app element.
+*AppAssociativeDataAPI* | [**GetAssociativeData**](docs/AppAssociativeDataAPI.md#getassociativedata) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Get the associative data for the specified app element.
+*AppAssociativeDataAPI* | [**PostAssociativeData**](docs/AppAssociativeDataAPI.md#postassociativedata) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata | Set the associative data for the specified app element.
+*AppDrawingViewAPI* | [**GetDrawingViewJsonGeometry**](docs/AppDrawingViewAPI.md#getdrawingviewjsongeometry) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/views/{viewid}/jsongeometry | Get view geometry of a drawing view in JSON format.
+*AppDrawingViewAPI* | [**GetDrawingViews**](docs/AppDrawingViewAPI.md#getdrawingviews) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/views | Get details of all drawing views.
+*AppElementAPI* | [**AbortTransaction**](docs/AppElementAPI.md#aborttransaction) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/transactions/{tid} | Abort a transaction.
+*AppElementAPI* | [**BulkCreateElement**](docs/AppElementAPI.md#bulkcreateelement) | **Post** /appelements/d/{did}/w/{wid}/bulkcreate | Create multiple empty application elements at once.
+*AppElementAPI* | [**CommitTransactions**](docs/AppElementAPI.md#committransactions) | **Post** /appelements/d/{did}/w/{wid}/transactions | Merge multiple transactions into one microversion.
+*AppElementAPI* | [**CompareAppElementJson**](docs/AppElementAPI.md#compareappelementjson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Compare app element JSON trees between workspaces/versions/microversions in a document.
+*AppElementAPI* | [**CreateElement**](docs/AppElementAPI.md#createelement) | **Post** /appelements/d/{did}/w/{wid} | Create a new application element.
+*AppElementAPI* | [**CreateReference**](docs/AppElementAPI.md#createreference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references | Creates a reference to an app element.
+*AppElementAPI* | [**DeleteAppElementContent**](docs/AppElementAPI.md#deleteappelementcontent) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements/{sid} | Deletes the content from the specified app element.
+*AppElementAPI* | [**DeleteAppElementContentBatch**](docs/AppElementAPI.md#deleteappelementcontentbatch) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements | Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+*AppElementAPI* | [**DeleteBlobSubelement**](docs/AppElementAPI.md#deleteblobsubelement) | **Delete** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Delete a blob subelement from an app element.
+*AppElementAPI* | [**DeleteReference**](docs/AppElementAPI.md#deletereference) | **Delete** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Delete an app element reference.
+*AppElementAPI* | [**DownloadBlobSubelement**](docs/AppElementAPI.md#downloadblobsubelement) | **Get** /appelements/d/{did}/{vm}/{vmid}/e/{eid}/blob/{bid} | Download a blob subelement from the specified app element.
+*AppElementAPI* | [**DownloadBlobSubelementWorkspace**](docs/AppElementAPI.md#downloadblobsubelementworkspace) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Download the blob element (i.e., a file) stored in an app element in a document&#39;s workspace.
+*AppElementAPI* | [**GetAppElementHistory**](docs/AppElementAPI.md#getappelementhistory) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/history | Get the history of the specified all element.
+*AppElementAPI* | [**GetBlobSubelementIds**](docs/AppElementAPI.md#getblobsubelementids) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/blob | Get a list of all blob subelement IDs for the specified workspace, version, or microversion.
+*AppElementAPI* | [**GetElementTransactions**](docs/AppElementAPI.md#getelementtransactions) | **Get** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Get a list of all transactions performed on an element.
+*AppElementAPI* | [**GetJson**](docs/AppElementAPI.md#getjson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/json | Get the full JSON tree for the specified workspace/version/microversion.
+*AppElementAPI* | [**GetJsonPaths**](docs/AppElementAPI.md#getjsonpaths) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/jsonpaths | Get the JSON at specified paths for an element.
+*AppElementAPI* | [**GetSubElementContent**](docs/AppElementAPI.md#getsubelementcontent) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Get a list of all subelement IDs in a specified workspace/version/microversion.
+*AppElementAPI* | [**GetSubelementIds**](docs/AppElementAPI.md#getsubelementids) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/ids | Get a list of all subelement IDs in a specified workspace/version/microversion.
+*AppElementAPI* | [**ResolveReference**](docs/AppElementAPI.md#resolvereference) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Resolves a single reference to an app element.
+*AppElementAPI* | [**ResolveReferences**](docs/AppElementAPI.md#resolvereferences) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/resolvereferences | Resolves bulk app element references.
+*AppElementAPI* | [**StartTransaction**](docs/AppElementAPI.md#starttransaction) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Start a transaction
+*AppElementAPI* | [**UpdateAppElement**](docs/AppElementAPI.md#updateappelement) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Update the content for the specified app element.
+*AppElementAPI* | [**UpdateReference**](docs/AppElementAPI.md#updatereference) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Update an app element reference.
+*AppElementAPI* | [**UploadBlobSubelement**](docs/AppElementAPI.md#uploadblobsubelement) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid} | Create a new blob subelement from an uploaded file.
+*AssemblyAPI* | [**AddFeature**](docs/AssemblyAPI.md#addfeature) | **Post** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the assembly feature list.
+*AssemblyAPI* | [**CreateAssembly**](docs/AssemblyAPI.md#createassembly) | **Post** /assemblies/d/{did}/w/{wid} | Create a new assembly tab in the document.
+*AssemblyAPI* | [**CreateInstance**](docs/AssemblyAPI.md#createinstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
+*AssemblyAPI* | [**DeleteFeature**](docs/AssemblyAPI.md#deletefeature) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a feature from an assembly.
+*AssemblyAPI* | [**DeleteInstance**](docs/AssemblyAPI.md#deleteinstance) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid} | Delete an instance of an assembly.
+*AssemblyAPI* | [**GetAssemblyBoundingBoxes**](docs/AssemblyAPI.md#getassemblyboundingboxes) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get bounding box information for the specified assembly.
+*AssemblyAPI* | [**GetAssemblyDefinition**](docs/AssemblyAPI.md#getassemblydefinition) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid} | Get definition information for the specified assembly.
+*AssemblyAPI* | [**GetAssemblyMassProperties**](docs/AssemblyAPI.md#getassemblymassproperties) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for the assembly.
+*AssemblyAPI* | [**GetAssemblyShadedViews**](docs/AssemblyAPI.md#getassemblyshadedviews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get an array of shaded view images for the document.
+*AssemblyAPI* | [**GetBillOfMaterials**](docs/AssemblyAPI.md#getbillofmaterials) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom | Get the Bill Of Materials (BOM) content for the specified assembly.
+*AssemblyAPI* | [**GetExplodedViews**](docs/AssemblyAPI.md#getexplodedviews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | Get a list of exploded views for the specified assembly.
+*AssemblyAPI* | [**GetFeatureSpecs**](docs/AssemblyAPI.md#getfeaturespecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature spec definitions for an assembly.
+*AssemblyAPI* | [**GetFeatures**](docs/AssemblyAPI.md#getfeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get the definitions of the specified features in an assembly.
+*AssemblyAPI* | [**GetNamedPositions**](docs/AssemblyAPI.md#getnamedpositions) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions | Get a list of all named positions for the assembly.
+*AssemblyAPI* | [**GetNamedViews**](docs/AssemblyAPI.md#getnamedviews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | Get the view data for all named views for the specified element.
+*AssemblyAPI* | [**GetOrCreateBillOfMaterialsElement**](docs/AssemblyAPI.md#getorcreatebillofmaterialselement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
+*AssemblyAPI* | [**InsertTransformedInstances**](docs/AssemblyAPI.md#inserttransformedinstances) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/transformedinstances | Create new instances with transformation.
+*AssemblyAPI* | [**Modify**](docs/AssemblyAPI.md#modify) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/modify | Modify an assembly.
+*AssemblyAPI* | [**TransformOccurrences**](docs/AssemblyAPI.md#transformoccurrences) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms | Transform a list of assembly occurrences.
+*AssemblyAPI* | [**TranslateFormat**](docs/AssemblyAPI.md#translateformat) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export the assembly to another format.
+*AssemblyAPI* | [**UpdateFeature**](docs/AssemblyAPI.md#updatefeature) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update an existing feature for an Assembly.
+*BillingAPI* | [**GetClientPlans**](docs/BillingAPI.md#getclientplans) | **Get** /billing/plans/client/{cid} | Get all billing plans and their information for an application by client ID.
+*BlobElementAPI* | [**CreateBlobTranslation**](docs/BlobElementAPI.md#createblobtranslation) | **Post** /blobelements/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a blob element to another format.
+*BlobElementAPI* | [**DownloadFileWorkspace**](docs/BlobElementAPI.md#downloadfileworkspace) | **Get** /blobelements/d/{did}/w/{wid}/e/{eid} | Download a file from a blob element for the specified workspace/version/microversion.
+*BlobElementAPI* | [**UpdateUnits**](docs/BlobElementAPI.md#updateunits) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid}/units | Change the measurement units for the blob element.
+*BlobElementAPI* | [**UploadFileCreateElement**](docs/BlobElementAPI.md#uploadfilecreateelement) | **Post** /blobelements/d/{did}/w/{wid} | Upload a file and create a blob element from it.
+*BlobElementAPI* | [**UploadFileUpdateElement**](docs/BlobElementAPI.md#uploadfileupdateelement) | **Post** /blobelements/d/{did}/w/{wid}/e/{eid} | Update a blob element by uploading a file.
+*CommentAPI* | [**AddAttachment**](docs/CommentAPI.md#addattachment) | **Post** /comments/{cid}/attachment | Add an attachment to a comment.
+*CommentAPI* | [**CreateComment**](docs/CommentAPI.md#createcomment) | **Post** /comments | Update a document with a new comment.
+*CommentAPI* | [**DeleteAttachments**](docs/CommentAPI.md#deleteattachments) | **Delete** /comments/{cid}/attachment | Delete all attachments from a comment.
+*CommentAPI* | [**DeleteComment**](docs/CommentAPI.md#deletecomment) | **Delete** /comments/{cid} | Delete a comment from a document.
+*CommentAPI* | [**GetAttachment**](docs/CommentAPI.md#getattachment) | **Get** /comments/{cid}/attachment/{fdid}.{ext} | Get the attachment with the specified file extension that is associated with the specified comment.
+*CommentAPI* | [**GetComment**](docs/CommentAPI.md#getcomment) | **Get** /comments/{cid} | Get details for a comment.
+*CommentAPI* | [**GetComments**](docs/CommentAPI.md#getcomments) | **Get** /comments | Get a list of comments in a document.
+*CommentAPI* | [**Reopen**](docs/CommentAPI.md#reopen) | **Post** /comments/{cid}/reopen | Reopen a resolved comment.
+*CommentAPI* | [**Resolve**](docs/CommentAPI.md#resolve) | **Post** /comments/{cid}/resolve | Resolve a comment.
+*CommentAPI* | [**UpdateComment**](docs/CommentAPI.md#updatecomment) | **Post** /comments/{cid} | Update the content of an existing comment.
+*CompanyAPI* | [**AddUserToCompany**](docs/CompanyAPI.md#addusertocompany) | **Post** /companies/{cid}/users | Add a user to a company.
+*CompanyAPI* | [**FindCompany**](docs/CompanyAPI.md#findcompany) | **Get** /companies | Get all companies to which the specified user belongs.
+*CompanyAPI* | [**GetCompany**](docs/CompanyAPI.md#getcompany) | **Get** /companies/{cid} | Get company information by company ID.
+*CompanyAPI* | [**GetDocumentsByName**](docs/CompanyAPI.md#getdocumentsbyname) | **Get** /companies/{cid}/documentsbyname | Get document by exact document name.
+*CompanyAPI* | [**RemoveUserFromCompany**](docs/CompanyAPI.md#removeuserfromcompany) | **Delete** /companies/{cid}/users/{uid} | Remove a user from a company, company teams, and all the direct shares.
+*CompanyAPI* | [**UpdateCompanyUser**](docs/CompanyAPI.md#updatecompanyuser) | **Post** /companies/{cid}/users/{uid} | Update the company&#39;s information for a user.
+*DocumentAPI* | [**CopyWorkspace**](docs/DocumentAPI.md#copyworkspace) | **Post** /documents/{did}/workspaces/{wid}/copy | Copy workspace by document ID and workspace ID.
+*DocumentAPI* | [**CreateDocument**](docs/DocumentAPI.md#createdocument) | **Post** /documents | Create and upload a document.
+*DocumentAPI* | [**CreateVersion**](docs/DocumentAPI.md#createversion) | **Post** /documents/d/{did}/versions | Create version by document ID.
+*DocumentAPI* | [**CreateWorkspace**](docs/DocumentAPI.md#createworkspace) | **Post** /documents/d/{did}/workspaces | Create workspace by document ID.
+*DocumentAPI* | [**DeleteDocument**](docs/DocumentAPI.md#deletedocument) | **Delete** /documents/{did} | Delete document by document ID.
+*DocumentAPI* | [**DeleteWorkspace**](docs/DocumentAPI.md#deleteworkspace) | **Delete** /documents/d/{did}/workspaces/{wid} | Delete workspace by document ID and workspace ID.
+*DocumentAPI* | [**DownloadExternalData**](docs/DocumentAPI.md#downloadexternaldata) | **Get** /documents/d/{did}/externaldata/{fid} | Download external data file(s) associated with the document.
+*DocumentAPI* | [**Export2Json**](docs/DocumentAPI.md#export2json) | **Post** /documents/d/{did}/{wv}/{wvid}/e/{eid}/export | Export document by document ID, workspace or version ID, and tab ID.
+*DocumentAPI* | [**GetCurrentMicroversion**](docs/DocumentAPI.md#getcurrentmicroversion) | **Get** /documents/d/{did}/{wv}/{wvid}/currentmicroversion | Retrieve current microversion by document ID and workspace or version ID.
+*DocumentAPI* | [**GetDocument**](docs/DocumentAPI.md#getdocument) | **Get** /documents/{did} | Retrieve document by document ID.
+*DocumentAPI* | [**GetDocumentAcl**](docs/DocumentAPI.md#getdocumentacl) | **Get** /documents/{did}/acl | Retrieve access control list by document ID.
+*DocumentAPI* | [**GetDocumentHistory**](docs/DocumentAPI.md#getdocumenthistory) | **Get** /documents/d/{did}/{wm}/{wmid}/documenthistory | Retrieve document history by document ID and workspace or microversion ID.
+*DocumentAPI* | [**GetDocumentPermissionSet**](docs/DocumentAPI.md#getdocumentpermissionset) | **Get** /documents/{did}/permissionset | Retrieve Document permissions by document ID.
+*DocumentAPI* | [**GetDocumentVersions**](docs/DocumentAPI.md#getdocumentversions) | **Get** /documents/d/{did}/versions | Retrieve versions by document ID.
+*DocumentAPI* | [**GetDocumentWorkspaces**](docs/DocumentAPI.md#getdocumentworkspaces) | **Get** /documents/d/{did}/workspaces | Retrieve workspaces by document ID.
+*DocumentAPI* | [**GetDocuments**](docs/DocumentAPI.md#getdocuments) | **Get** /documents | Get a list of documents that meet the criteria you specify.
+*DocumentAPI* | [**GetElementsInDocument**](docs/DocumentAPI.md#getelementsindocument) | **Get** /documents/d/{did}/{wvm}/{wvmid}/elements | Retrieve tabs by document ID and workspace or version or microversion ID.
+*DocumentAPI* | [**GetInsertables**](docs/DocumentAPI.md#getinsertables) | **Get** /documents/d/{did}/{wv}/{wvid}/insertables | Retrieve insertables by document ID and workspace or version ID.
+*DocumentAPI* | [**GetUnitInfo**](docs/DocumentAPI.md#getunitinfo) | **Get** /documents/d/{did}/{wvm}/{wvmid}/unitinfo | Get the selected units and precision by document ID and workspace or version or microversion ID.
+*DocumentAPI* | [**GetVersion**](docs/DocumentAPI.md#getversion) | **Get** /documents/d/{did}/versions/{vid} | Retrieve version by document ID and version ID.
+*DocumentAPI* | [**MergeIntoWorkspace**](docs/DocumentAPI.md#mergeintoworkspace) | **Post** /documents/{did}/workspaces/{wid}/merge | Merge into workspace by document ID and workspace ID.
+*DocumentAPI* | [**MergePreview**](docs/DocumentAPI.md#mergepreview) | **Get** /documents/{did}/w/{wid}/mergePreview | Merge preview of changes that will occur based on document ID, workspace ID and source workspace/version ID
+*DocumentAPI* | [**MoveElementsToDocument**](docs/DocumentAPI.md#moveelementstodocument) | **Post** /documents/d/{did}/w/{wid}/moveelement | Move tab by document ID and workspace ID.
+*DocumentAPI* | [**RestoreFromHistory**](docs/DocumentAPI.md#restorefromhistory) | **Post** /documents/{did}/w/{wid}/restore/{vm}/{vmid} | Restore version or microversion to workspace by document ID, workspace ID, and version or microversion ID.
+*DocumentAPI* | [**RevertUnchangedToRevisions**](docs/DocumentAPI.md#revertunchangedtorevisions) | **Post** /documents/d/{did}/w/{wid}/revertunchangedtorevisions | 
+*DocumentAPI* | [**Search**](docs/DocumentAPI.md#search) | **Post** /documents/search | Search document.
+*DocumentAPI* | [**ShareDocument**](docs/DocumentAPI.md#sharedocument) | **Post** /documents/{did}/share | Share document by document ID.
+*DocumentAPI* | [**ShareWithSupport**](docs/DocumentAPI.md#sharewithsupport) | **Post** /documents/{did}/shareWithSupport | Share document by document ID with Onshape support.
+*DocumentAPI* | [**SyncAppElements**](docs/DocumentAPI.md#syncappelements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
+*DocumentAPI* | [**UnShareDocument**](docs/DocumentAPI.md#unsharedocument) | **Delete** /documents/{did}/share/{eid} | Remove document View permissions from a user or other entity.
+*DocumentAPI* | [**UnshareFromSupport**](docs/DocumentAPI.md#unsharefromsupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
+*DocumentAPI* | [**UpdateDocumentAttributes**](docs/DocumentAPI.md#updatedocumentattributes) | **Post** /documents/{did} | Update document attributes by document ID.
+*DocumentAPI* | [**UpdateExternalReferencesToLatestDocuments**](docs/DocumentAPI.md#updateexternalreferencestolatestdocuments) | **Post** /documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences | Update external references to latest by document ID, workspace ID, and tab ID.
+*DrawingAPI* | [**CreateDrawingAppElement**](docs/DrawingAPI.md#createdrawingappelement) | **Post** /drawings/d/{did}/w/{wid}/create | Create a new drawing in a document.
+*DrawingAPI* | [**CreateDrawingTranslation**](docs/DrawingAPI.md#createdrawingtranslation) | **Post** /drawings/d/{did}/{wv}/{wvid}/e/{eid}/translations | Translate (export) a drawing to a different format.
+*DrawingAPI* | [**GetDrawingTranslatorFormats**](docs/DrawingAPI.md#getdrawingtranslatorformats) | **Get** /drawings/d/{did}/w/{wid}/e/{eid}/translationformats | Get a list of all valid formats the drawing can be translated (exported) to.
+*DrawingAPI* | [**GetModificationStatus**](docs/DrawingAPI.md#getmodificationstatus) | **Get** /drawings/modify/status/{mrid} | Get the status of a drawing modification operation.
+*DrawingAPI* | [**ModifyDrawing**](docs/DrawingAPI.md#modifydrawing) | **Post** /drawings/d/{did}/w/{wid}/e/{eid}/modify | Modify a drawing via JSON payload.
+*ElementAPI* | [**CopyElementFromSourceDocument**](docs/ElementAPI.md#copyelementfromsourcedocument) | **Post** /elements/copyelement/{did}/workspace/{wid} | Copy tab by document ID and workspace ID.
+*ElementAPI* | [**DecodeConfiguration**](docs/ElementAPI.md#decodeconfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configurationencodings/{cid} | Decode configuration string by documentation ID, workspace or version or microversion ID, and tab ID.
+*ElementAPI* | [**DeleteElement**](docs/ElementAPI.md#deleteelement) | **Delete** /elements/d/{did}/w/{wid}/e/{eid} | 
+*ElementAPI* | [**EncodeConfigurationMap**](docs/ElementAPI.md#encodeconfigurationmap) | **Post** /elements/d/{did}/e/{eid}/configurationencodings | Encode configuration by documentation ID and tab ID.
+*ElementAPI* | [**GetConfiguration**](docs/ElementAPI.md#getconfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Retrieve configuration by document ID, workspace or version or microversion ID, and tab ID.
+*ElementAPI* | [**GetElementTranslatorFormatsByVersionOrWorkspace**](docs/ElementAPI.md#getelementtranslatorformatsbyversionorworkspace) | **Get** /elements/translatorFormats/{did}/{wv}/{wvid}/{eid} | 
+*ElementAPI* | [**UpdateConfiguration**](docs/ElementAPI.md#updateconfiguration) | **Post** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Update configuration by document ID, workspace or microversion ID, and tab ID.
+*ElementAPI* | [**UpdateReferences**](docs/ElementAPI.md#updatereferences) | **Post** /elements/d/{did}/w/{wid}/e/{eid}/updatereferences | Update or replace node references by document ID, workspace ID, and tab ID.
+*EventAPI* | [**FireEvent**](docs/EventAPI.md#fireevent) | **Post** /events | Fire an asynchronous event.
+*ExportRuleAPI* | [**GetValidRuleOptions**](docs/ExportRuleAPI.md#getvalidruleoptions) | **Get** /exportrules/options/{cu}/{cuid} |  Get a list of valid export rule options for the user or company.
+*FeatureStudioAPI* | [**CreateFeatureStudio**](docs/FeatureStudioAPI.md#createfeaturestudio) | **Post** /featurestudios/d/{did}/w/{wid} | Create a new Feature Studio tab in a document.
+*FeatureStudioAPI* | [**GetFeatureStudioContents**](docs/FeatureStudioAPI.md#getfeaturestudiocontents) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | Get the text for a Feature Studio element.
+*FeatureStudioAPI* | [**GetFeatureStudioSpecs**](docs/FeatureStudioAPI.md#getfeaturestudiospecs) | **Get** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature specs for a Feature Studio element.
+*FeatureStudioAPI* | [**UpdateFeatureStudioContents**](docs/FeatureStudioAPI.md#updatefeaturestudiocontents) | **Post** /featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid} | Update the text for a Feature Studio element.
+*FolderAPI* | [**GetFolderAcl**](docs/FolderAPI.md#getfolderacl) | **Get** /folders/{fid}/acl | Get the Access Control List (ACL) for a folder to view permissions.
+*FolderAPI* | [**Share**](docs/FolderAPI.md#share) | **Post** /folders/{fid}/share | Share folder with an entity.
+*FolderAPI* | [**UnShare**](docs/FolderAPI.md#unshare) | **Delete** /folders/{fid}/share/{eid} | Remove permissions from the folder for the specified Access Control List (ACL) entry.
+*InsertableAPI* | [**GetLatestInDocument**](docs/InsertableAPI.md#getlatestindocument) | **Get** /insertables/d/{did}/latest | Get a list of things in this document that can be inserted elsewhere.
+*MetadataAPI* | [**GetVEOPStandardContentMetadata**](docs/MetadataAPI.md#getveopstandardcontentmetadata) | **Get** /metadata/standardcontent/d/{did}/v/{vid}/e/{eid}/p/{pid} | Get the metadata for a standard content part.
+*MetadataAPI* | [**GetWMVEMetadata**](docs/MetadataAPI.md#getwmvemetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Get the metadata for an element.
+*MetadataAPI* | [**GetWMVEPMetadata**](docs/MetadataAPI.md#getwmvepmetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Get the metadata for a part.
+*MetadataAPI* | [**GetWMVEPsMetadata**](docs/MetadataAPI.md#getwmvepsmetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p | Get the metadata for all parts in a document.
+*MetadataAPI* | [**GetWMVEsMetadata**](docs/MetadataAPI.md#getwmvesmetadata) | **Get** /metadata/d/{did}/{wvm}/{wvmid}/e | Get the metadata for all elements in a document.
+*MetadataAPI* | [**GetWVMetadata**](docs/MetadataAPI.md#getwvmetadata) | **Get** /metadata/d/{did}/{wv}/{wvid} | Get the metadata for a workspace or version.
+*MetadataAPI* | [**UpdateVEOPStandardContentPartMetadata**](docs/MetadataAPI.md#updateveopstandardcontentpartmetadata) | **Post** /metadata/standardcontent/d/{did} | Update the metadata for a standard content part.
+*MetadataAPI* | [**UpdateWVEMetadata**](docs/MetadataAPI.md#updatewvemetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid} | Update the metadata for an element.
+*MetadataAPI* | [**UpdateWVEPMetadata**](docs/MetadataAPI.md#updatewvepmetadata) | **Post** /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/{iden}/{pid} | Update the metadata for a part.
+*MetadataAPI* | [**UpdateWVMetadata**](docs/MetadataAPI.md#updatewvmetadata) | **Post** /metadata/d/{did}/{wv}/{wvid} | Update the metadata for a workspace or version.
+*MetadataCategoryAPI* | [**GetCategoryProperties**](docs/MetadataCategoryAPI.md#getcategoryproperties) | **Get** /metadatacategory/categoryproperties | Get properties associated with the specified metadata categories.
+*NumberingSchemeAPI* | [**NextNumbers**](docs/NumberingSchemeAPI.md#nextnumbers) | **Post** /numberingscheme/nextnumbers | Send the items to generate numbers for, and return the next valid available part numbers.
+*OpenApiAPI* | [**GetOpenApi**](docs/OpenApiAPI.md#getopenapi) | **Get** /openapi | Get the OpenAPI specification for the Onshape REST API.
+*OpenApiAPI* | [**GetTags**](docs/OpenApiAPI.md#gettags) | **Get** /openapi/tags | Get the list of tags in the Onshape OpenAPI specification.
+*PartAPI* | [**ExportPS**](docs/PartAPI.md#exportps) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid | Export a part as a Parasolid file.
+*PartAPI* | [**ExportPartGltf**](docs/PartAPI.md#exportpartgltf) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf | Export a part as a glTF file.
+*PartAPI* | [**ExportStl**](docs/PartAPI.md#exportstl) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl | Export a part as an STL file.
+*PartAPI* | [**GetBendTable**](docs/PartAPI.md#getbendtable) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/sheetmetal/bendtable | Get a part&#39;s sheet metal bend table.
+*PartAPI* | [**GetBodyDetails**](docs/PartAPI.md#getbodydetails) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails | Get a part&#39;s body details.
+*PartAPI* | [**GetBoundingBoxes**](docs/PartAPI.md#getboundingboxes) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/boundingboxes | Get a part&#39;s bounding box details.
+*PartAPI* | [**GetEdges**](docs/PartAPI.md#getedges) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatededges | Get a list of a part&#39;s tessellation edges.
+*PartAPI* | [**GetFaces1**](docs/PartAPI.md#getfaces1) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/tessellatedfaces | Get a list of a part&#39;s tessellation faces.
+*PartAPI* | [**GetMassProperties**](docs/PartAPI.md#getmassproperties) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/massproperties | Get a part&#39;s mass properties.
+*PartAPI* | [**GetPartShadedViews**](docs/PartAPI.md#getpartshadedviews) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/shadedviews | Get a part&#39;s shaded views.
+*PartAPI* | [**GetPartsWMV**](docs/PartAPI.md#getpartswmv) | **Get** /parts/d/{did}/{wvm}/{wvmid} | Get all parts in a workspace, version, or microversion.
+*PartAPI* | [**GetPartsWMVE**](docs/PartAPI.md#getpartswmve) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid} | Get all parts in an element.
+*PartNumberAPI* | [**UpdateNextNumbers**](docs/PartNumberAPI.md#updatenextnumbers) | **Post** /partnumber/nextnumbers | Send the items to generate numbers for, and return the next valid available part numbers.
+*PartStudioAPI* | [**AddPartStudioFeature**](docs/PartStudioAPI.md#addpartstudiofeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the Part Studio&#39;s Feature List.
+*PartStudioAPI* | [**ComparePartStudios**](docs/PartStudioAPI.md#comparepartstudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Get the differences between two Part Studios in a single document.
+*PartStudioAPI* | [**CreatePartStudio**](docs/PartStudioAPI.md#createpartstudio) | **Post** /partstudios/d/{did}/w/{wid} | Create a new Part Studio in a document.
+*PartStudioAPI* | [**CreatePartStudioTranslation**](docs/PartStudioAPI.md#createpartstudiotranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a Part Studio to another format.
+*PartStudioAPI* | [**DeletePartStudioFeature**](docs/PartStudioAPI.md#deletepartstudiofeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a Part Studio feature.
+*PartStudioAPI* | [**EvalFeatureScript**](docs/PartStudioAPI.md#evalfeaturescript) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript | Evaluate the FeatureScript snippet for a Part Studio.
+*PartStudioAPI* | [**ExportParasolid**](docs/PartStudioAPI.md#exportparasolid) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid | Export the Part Studio as a Parasolid file.
+*PartStudioAPI* | [**ExportPartStudioGltf**](docs/PartStudioAPI.md#exportpartstudiogltf) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf | Export the Part Studio as a glTF file.
+*PartStudioAPI* | [**ExportPartStudioStl**](docs/PartStudioAPI.md#exportpartstudiostl) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl | Export the Part Studio as an STL file.
+*PartStudioAPI* | [**GetFeatureScriptRepresentation**](docs/PartStudioAPI.md#getfeaturescriptrepresentation) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescriptrepresentation | Get the FeatureScript representation of a Part Studio.
+*PartStudioAPI* | [**GetFeatureScriptTable**](docs/PartStudioAPI.md#getfeaturescripttable) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/fstable | Compute and return a FeatureScript table for a Part Studio.
+*PartStudioAPI* | [**GetPartStudioBodyDetails**](docs/PartStudioAPI.md#getpartstudiobodydetails) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/bodydetails | Get the body details for a Part Studio.
+*PartStudioAPI* | [**GetPartStudioBoundingBoxes**](docs/PartStudioAPI.md#getpartstudioboundingboxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes | Get the bounding boxes for a Part Studio.
+*PartStudioAPI* | [**GetPartStudioEdges**](docs/PartStudioAPI.md#getpartstudioedges) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatededges | Get a list of all edges in a Part Studio.
+*PartStudioAPI* | [**GetPartStudioFaces**](docs/PartStudioAPI.md#getpartstudiofaces) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/tessellatedfaces | Get a list of all faces in a Part Studio.
+*PartStudioAPI* | [**GetPartStudioFeatureSpecs**](docs/PartStudioAPI.md#getpartstudiofeaturespecs) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the specs for a Part Studio feature.
+*PartStudioAPI* | [**GetPartStudioFeatures**](docs/PartStudioAPI.md#getpartstudiofeatures) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get a list of features instantiated in the Part Studio.
+*PartStudioAPI* | [**GetPartStudioMassProperties**](docs/PartStudioAPI.md#getpartstudiomassproperties) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for a Part Studio.
+*PartStudioAPI* | [**GetPartStudioNamedViews**](docs/PartStudioAPI.md#getpartstudionamedviews) | **Get** /partstudios/d/{did}/e/{eid}/namedViews | Get a list of all named views that exist in the Part Studio.
+*PartStudioAPI* | [**GetPartStudioShadedViews**](docs/PartStudioAPI.md#getpartstudioshadedviews) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get a list of shaded views for a Part Studio.
+*PartStudioAPI* | [**TranslateIds**](docs/PartStudioAPI.md#translateids) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/idtranslations | Find corresponding deterministic IDs from a source document microversion at the target version.
+*PartStudioAPI* | [**UpdateFeatures**](docs/PartStudioAPI.md#updatefeatures) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/updates | Update multiple features in a Part Studio
+*PartStudioAPI* | [**UpdatePartStudioFeature**](docs/PartStudioAPI.md#updatepartstudiofeature) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update the definition of a Part Studio feature.
+*PartStudioAPI* | [**UpdateRollback**](docs/PartStudioAPI.md#updaterollback) | **Post** /partstudios/d/{did}/w/{wid}/e/{eid}/features/rollback | Move the Feature List rollback bar in the Part Studio.
+*PropertiesTableTemplateAPI* | [**CreateTableTemplate**](docs/PropertiesTableTemplateAPI.md#createtabletemplate) | **Post** /tabletemplates | Create a new properties table template.
+*PropertiesTableTemplateAPI* | [**DeleteTableTemplate**](docs/PropertiesTableTemplateAPI.md#deletetabletemplate) | **Delete** /tabletemplates/{tid} | Delete a properties table template.
+*PropertiesTableTemplateAPI* | [**GetByCompanyId**](docs/PropertiesTableTemplateAPI.md#getbycompanyid) | **Get** /tabletemplates/companies/{cid} | Get all properties table templates available for a company.
+*PropertiesTableTemplateAPI* | [**GetByDocumentId**](docs/PropertiesTableTemplateAPI.md#getbydocumentid) | **Get** /tabletemplates/d/{did} | Get all table templates that are available to use on the provided document.
+*PropertiesTableTemplateAPI* | [**GetTableTemplate**](docs/PropertiesTableTemplateAPI.md#gettabletemplate) | **Get** /tabletemplates/{tid} | Get a properties table template by template ID.
+*PublicationAPI* | [**AddItemToPublication**](docs/PublicationAPI.md#additemtopublication) | **Post** /publications/{pid}/item | Add an item in a publication.
+*PublicationAPI* | [**AddItemsToPublication**](docs/PublicationAPI.md#additemstopublication) | **Post** /publications/{pid}/items | Add publication items in bulk.
+*PublicationAPI* | [**CreatePublication**](docs/PublicationAPI.md#createpublication) | **Post** /publications | Create a new publication.
+*PublicationAPI* | [**DeletePublication**](docs/PublicationAPI.md#deletepublication) | **Delete** /publications/{pid} | Delete a publication.
+*PublicationAPI* | [**DeletePublicationItem**](docs/PublicationAPI.md#deletepublicationitem) | **Delete** /publications/{pid}/item/{iid} | Remove an item from a publication.
+*PublicationAPI* | [**GetPublicationItems**](docs/PublicationAPI.md#getpublicationitems) | **Get** /publications/{pid}/items | Get all items in a publication.
+*PublicationAPI* | [**UpdatePublicationAttributes**](docs/PublicationAPI.md#updatepublicationattributes) | **Post** /publications/{pid} | Update publication&#39;s attributes name, description, and notes.
+*ReleasePackageAPI* | [**CreateObsoletionPackage**](docs/ReleasePackageAPI.md#createobsoletionpackage) | **Post** /releasepackages/obsoletion/{wfid} | Create an obsoletion package to make an existing revision obsolete.
+*ReleasePackageAPI* | [**CreateReleasePackage**](docs/ReleasePackageAPI.md#createreleasepackage) | **Post** /releasepackages/release/{wfid} | Create a new release package for one or more items.
+*ReleasePackageAPI* | [**GetCompanyReleaseWorkflow**](docs/ReleasePackageAPI.md#getcompanyreleaseworkflow) | **Get** /releasepackages/companyreleaseworkflow | Get information about the release/obsoletion workflow for a company-owned document.
+*ReleasePackageAPI* | [**GetReleasePackage**](docs/ReleasePackageAPI.md#getreleasepackage) | **Get** /releasepackages/{rpid} | Get details about the specified release package.
+*ReleasePackageAPI* | [**UpdateReleasePackage**](docs/ReleasePackageAPI.md#updatereleasepackage) | **Post** /releasepackages/{rpid} | Update the release/obsoletion package/item properties.
+*RevisionAPI* | [**DeleteRevisionHistory**](docs/RevisionAPI.md#deleterevisionhistory) | **Delete** /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et} | Delete all revisions for a part number.
+*RevisionAPI* | [**EnumerateRevisions**](docs/RevisionAPI.md#enumeraterevisions) | **Get** /revisions/companies/{cid} | Enumerate all of a company&#39;s revisions.
+*RevisionAPI* | [**GetAllInDocument**](docs/RevisionAPI.md#getallindocument) | **Get** /revisions/d/{did} | Get all revisions for the specified document.
+*RevisionAPI* | [**GetAllInDocumentVersion**](docs/RevisionAPI.md#getallindocumentversion) | **Get** /revisions/d/{did}/v/{vid} | Get all revisions for a version.
+*RevisionAPI* | [**GetLatestInDocumentOrCompany**](docs/RevisionAPI.md#getlatestindocumentorcompany) | **Get** /revisions/{cd}/{cdid}/p/{pnum}/latest | Get the latest revision for a part number in a document or company.
+*RevisionAPI* | [**GetRevisionByPartNumber**](docs/RevisionAPI.md#getrevisionbypartnumber) | **Get** /revisions/c/{cid}/partnumber/{pnum} | Get a list of revisions by part number.
+*RevisionAPI* | [**GetRevisionHistoryInCompanyByElementId**](docs/RevisionAPI.md#getrevisionhistoryincompanybyelementid) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid} | Get a list of all revisions for an element in a company-owned document.
+*RevisionAPI* | [**GetRevisionHistoryInCompanyByPartId**](docs/RevisionAPI.md#getrevisionhistoryincompanybypartid) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}/p/{pid} | Get a list of all revisions for a part in a company-owned document by part ID.
+*RevisionAPI* | [**GetRevisionHistoryInCompanyByPartNumber**](docs/RevisionAPI.md#getrevisionhistoryincompanybypartnumber) | **Get** /revisions/companies/{cid}/partnumber/{pnum} | Get a list of all revisions for a part or element in a company-owned document by part number.
+*SketchAPI* | [**GetSketchBoundingBoxes**](docs/SketchAPI.md#getsketchboundingboxes) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes | Get all bounding boxes for a sketch.
+*SketchAPI* | [**GetSketchInfo**](docs/SketchAPI.md#getsketchinfo) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches | Get information for all sketches in Part Studio.
+*SketchAPI* | [**GetTessellatedEntities**](docs/SketchAPI.md#gettessellatedentities) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities | Get the tessellations of a sketch in a Part Studio.
+*TeamAPI* | [**Find**](docs/TeamAPI.md#find) | **Get** /teams | Get a list of all teams the current user belongs to.
+*TeamAPI* | [**GetMembers**](docs/TeamAPI.md#getmembers) | **Get** /teams/{tid}/members | Get a list of a team&#39;s members.
+*TeamAPI* | [**GetTeam**](docs/TeamAPI.md#getteam) | **Get** /teams/{tid} | Get team information by team ID.
+*ThumbnailAPI* | [**DeleteApplicationThumbnails**](docs/ThumbnailAPI.md#deleteapplicationthumbnails) | **Delete** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Delete an element&#39;s thumbnail.
+*ThumbnailAPI* | [**GetDocumentThumbnail**](docs/ThumbnailAPI.md#getdocumentthumbnail) | **Get** /thumbnails/d/{did}/w/{wid} | Get the thumbnail info for a workspace.
+*ThumbnailAPI* | [**GetDocumentThumbnailWithSize**](docs/ThumbnailAPI.md#getdocumentthumbnailwithsize) | **Get** /thumbnails/d/{did}/w/{wid}/s/{sz} | Get the thumbnail image with the given size for a document.
+*ThumbnailAPI* | [**GetElementThumbnail**](docs/ThumbnailAPI.md#getelementthumbnail) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Get the thumbnail info structure for an element.
+*ThumbnailAPI* | [**GetElementThumbnailWithApiConfiguration**](docs/ThumbnailAPI.md#getelementthumbnailwithapiconfiguration) | **Get** /thumbnails/d/{did}/w/{wid}/e/{eid}/ac/{cid}/s/{sz} | Get the thumbnail image with the given configuration for an element.
+*ThumbnailAPI* | [**GetElementThumbnailWithSize**](docs/ThumbnailAPI.md#getelementthumbnailwithsize) | **Get** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid}/s/{sz} | Get the thumbnail image with the given size for an element.
+*ThumbnailAPI* | [**GetThumbnailForDocument**](docs/ThumbnailAPI.md#getthumbnailfordocument) | **Get** /thumbnails/d/{did} | Get the thumbnail info for a document in the default workspace.
+*ThumbnailAPI* | [**GetThumbnailForDocumentAndVersion**](docs/ThumbnailAPI.md#getthumbnailfordocumentandversion) | **Get** /thumbnails/d/{did}/v/{vid} | Get the thumbnail info for a version of a document.
+*ThumbnailAPI* | [**GetThumbnailForDocumentAndVersionOld**](docs/ThumbnailAPI.md#getthumbnailfordocumentandversionold) | **Get** /thumbnails/document/{did}/version/{vid} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocumentAndVersion&#x60; instead.
+*ThumbnailAPI* | [**GetThumbnailForDocumentOld**](docs/ThumbnailAPI.md#getthumbnailfordocumentold) | **Get** /thumbnails/document/{did} | This endpoint will be deprecated soon. Use &#x60;getThumbnailForDocument&#x60; instead.
+*ThumbnailAPI* | [**SetApplicationElementThumbnail**](docs/ThumbnailAPI.md#setapplicationelementthumbnail) | **Post** /thumbnails/d/{did}/{wv}/{wvid}/e/{eid} | Set the thumbnail image for an application element.
+*TranslationAPI* | [**CreateTranslation**](docs/TranslationAPI.md#createtranslation) | **Post** /translations/d/{did}/w/{wid} | Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.
+*TranslationAPI* | [**DeleteTranslation**](docs/TranslationAPI.md#deletetranslation) | **Delete** /translations/{tid} | Delete a translation request.
+*TranslationAPI* | [**GetAllTranslatorFormats**](docs/TranslationAPI.md#getalltranslatorformats) | **Get** /translations/translationformats | Get a list of formats this translation can use.
+*TranslationAPI* | [**GetDocumentTranslations**](docs/TranslationAPI.md#getdocumenttranslations) | **Get** /translations/d/{did} | Get information on an in-progress or completed translation by document ID.
+*TranslationAPI* | [**GetTranslation**](docs/TranslationAPI.md#gettranslation) | **Get** /translations/{tid} | Get information on an in-progress or completed translation by translation ID.
+*UserAPI* | [**GetUserSettings**](docs/UserAPI.md#getusersettings) | **Get** /users/{uid}/settings | Get the user settings for any user in your organization (admins only).
+*UserAPI* | [**GetUserSettingsCurrentLoggedInUser**](docs/UserAPI.md#getusersettingscurrentloggedinuser) | **Get** /users/settings | Get the user settings for the signed-in user (i.e., you) for the current session.
+*UserAPI* | [**Session**](docs/UserAPI.md#session) | **Post** /users/session | Authenticate a user&#39;s Onshape credentials, and create a session.
+*UserAPI* | [**SessionInfo**](docs/UserAPI.md#sessioninfo) | **Get** /users/sessioninfo | Get the session information for an authenticated (signed-in) user.
+*VariablesAPI* | [**CreateVariableStudio**](docs/VariablesAPI.md#createvariablestudio) | **Post** /variables/d/{did}/w/{wid}/variablestudio | Create a new Variable Studio in a document and workspace.
+*VariablesAPI* | [**GetVariableStudioReferences**](docs/VariablesAPI.md#getvariablestudioreferences) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioreferences | Get the Variable Studio references for an element.
+*VariablesAPI* | [**GetVariableStudioScope**](docs/VariablesAPI.md#getvariablestudioscope) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioscope | Get the scope of a Variable Studio.
+*VariablesAPI* | [**GetVariables**](docs/VariablesAPI.md#getvariables) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variables | Get the contents of all variable tables in an element.
+*VariablesAPI* | [**SetVariableStudioReferences**](docs/VariablesAPI.md#setvariablestudioreferences) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioreferences | Set the Variable Studio references for an element.
+*VariablesAPI* | [**SetVariableStudioScope**](docs/VariablesAPI.md#setvariablestudioscope) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioscope | Set the scope the Variable Studio.
+*VariablesAPI* | [**SetVariables**](docs/VariablesAPI.md#setvariables) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variables | Assign variables to a Variable Studio
+*VersionAPI* | [**GetAllVersions**](docs/VersionAPI.md#getallversions) | **Get** /versions | Get all versions of the Onshape REST APIs.
+*WebhookAPI* | [**CreateWebhook**](docs/WebhookAPI.md#createwebhook) | **Post** /webhooks | Create a new webhook.
+*WebhookAPI* | [**GetWebhook**](docs/WebhookAPI.md#getwebhook) | **Get** /webhooks/{webhookid} | Get webhook info by webhook ID.
+*WebhookAPI* | [**GetWebhooks**](docs/WebhookAPI.md#getwebhooks) | **Get** /webhooks | Get a list of all webhooks registered by a user or company.
+*WebhookAPI* | [**PingWebhook**](docs/WebhookAPI.md#pingwebhook) | **Post** /webhooks/{webhookid}/ping | Ping a webhook.
+*WebhookAPI* | [**UnregisterWebhook**](docs/WebhookAPI.md#unregisterwebhook) | **Delete** /webhooks/{webhookid} | Unregister a webhook.
+*WebhookAPI* | [**UpdateWebhook**](docs/WebhookAPI.md#updatewebhook) | **Post** /webhooks/{webhookid} | Update a webhook.
+*WorkflowAPI* | [**EnumerateObjectWorkflows**](docs/WorkflowAPI.md#enumerateobjectworkflows) | **Get** /workflow/companies/{cid}/objects | Enumerate all of a company&#39;s workflowable objects.
+*WorkflowAPI* | [**GetActiveWorkflows**](docs/WorkflowAPI.md#getactiveworkflows) | **Get** /workflow/active | Get all active workflows for the currently logged in user&#39;s company.
+*WorkflowAPI* | [**GetAllowedApprovers**](docs/WorkflowAPI.md#getallowedapprovers) | **Get** /workflow/c/{companyId}/approvers | Get all identities allowed to be approvers on a workflow object.
+*WorkflowAPI* | [**GetAuditLog**](docs/WorkflowAPI.md#getauditlog) | **Get** /workflow/obj/{objectId}/auditlog | Get all audit log entries for a workflowable object.
 
 
 ## Documentation For Models

@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// ExportRuleApiService ExportRuleApi service
-type ExportRuleApiService service
+// ExportRuleAPIService ExportRuleAPI service
+type ExportRuleAPIService service
 
 type ApiGetValidRuleOptionsRequest struct {
 	ctx        context.Context
-	ApiService *ExportRuleApiService
+	ApiService *ExportRuleAPIService
 	cu         string
 	cuid       string
 }
@@ -42,7 +42,7 @@ Does NOT get the rules themselves; it gets the information used to create them.
 	@param cuid The id of the company or user in which the operation should be performed.
 	@return ApiGetValidRuleOptionsRequest
 */
-func (a *ExportRuleApiService) GetValidRuleOptions(ctx context.Context, cu string, cuid string) ApiGetValidRuleOptionsRequest {
+func (a *ExportRuleAPIService) GetValidRuleOptions(ctx context.Context, cu string, cuid string) ApiGetValidRuleOptionsRequest {
 	return ApiGetValidRuleOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ExportRuleApiService) GetValidRuleOptions(ctx context.Context, cu strin
 // Execute executes the request
 //
 //	@return BTExportRuleValidOptionsInfo
-func (a *ExportRuleApiService) GetValidRuleOptionsExecute(r ApiGetValidRuleOptionsRequest) (*BTExportRuleValidOptionsInfo, *http.Response, error) {
+func (a *ExportRuleAPIService) GetValidRuleOptionsExecute(r ApiGetValidRuleOptionsRequest) (*BTExportRuleValidOptionsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ExportRuleApiService) GetValidRuleOptionsExecute(r ApiGetValidRuleOptio
 		localVarReturnValue *BTExportRuleValidOptionsInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExportRuleApiService.GetValidRuleOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExportRuleAPIService.GetValidRuleOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

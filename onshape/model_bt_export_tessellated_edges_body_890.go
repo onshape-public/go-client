@@ -16,6 +16,7 @@ import (
 
 // BTExportTessellatedEdgesBody890 struct for BTExportTessellatedEdgesBody890
 type BTExportTessellatedEdgesBody890 struct {
+	BTExportTessellatedBody3398
 	BtType       *string                            `json:"btType,omitempty"`
 	Constituents []string                           `json:"constituents,omitempty"`
 	Id           *string                            `json:"id,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTExportTessellatedEdgesBody890) SetEdges(v []BTExportTessellatedEdgesE
 
 func (o BTExportTessellatedEdgesBody890) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTExportTessellatedBody3398, errBTExportTessellatedBody3398 := json.Marshal(o.BTExportTessellatedBody3398)
+	if errBTExportTessellatedBody3398 != nil {
+		return []byte{}, errBTExportTessellatedBody3398
+	}
+	errBTExportTessellatedBody3398 = json.Unmarshal([]byte(serializedBTExportTessellatedBody3398), &toSerialize)
+	if errBTExportTessellatedBody3398 != nil {
+		return []byte{}, errBTExportTessellatedBody3398
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

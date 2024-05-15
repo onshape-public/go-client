@@ -16,6 +16,7 @@ import (
 
 // BTLineDescription1559 struct for BTLineDescription1559
 type BTLineDescription1559 struct {
+	BTCurveDescription1583
 	BtType                    *string           `json:"btType,omitempty"`
 	Direction                 *BTVector3d389    `json:"direction,omitempty"`
 	DirectionOrientedWithFace *BTVector3d389    `json:"directionOrientedWithFace,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTLineDescription1559) SetType(v GBTCurveTypeEnum) {
 
 func (o BTLineDescription1559) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveDescription1583, errBTCurveDescription1583 := json.Marshal(o.BTCurveDescription1583)
+	if errBTCurveDescription1583 != nil {
+		return []byte{}, errBTCurveDescription1583
+	}
+	errBTCurveDescription1583 = json.Unmarshal([]byte(serializedBTCurveDescription1583), &toSerialize)
+	if errBTCurveDescription1583 != nil {
+		return []byte{}, errBTCurveDescription1583
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

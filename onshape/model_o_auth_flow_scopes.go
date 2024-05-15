@@ -16,9 +16,12 @@ import (
 
 // OAuthFlowScopes struct for OAuthFlowScopes
 type OAuthFlowScopes struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Empty      *bool                             `json:"empty,omitempty"`
+	Extensions           map[string]map[string]interface{} `json:"extensions,omitempty"`
+	Empty                *bool                             `json:"empty,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OAuthFlowScopes OAuthFlowScopes
 
 // NewOAuthFlowScopes instantiates a new OAuthFlowScopes object
 // This constructor will assign default values to properties that have it defined,
@@ -109,7 +112,30 @@ func (o OAuthFlowScopes) MarshalJSON() ([]byte, error) {
 	if o.Empty != nil {
 		toSerialize["empty"] = o.Empty
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return json.Marshal(toSerialize)
+}
+
+func (o *OAuthFlowScopes) UnmarshalJSON(bytes []byte) (err error) {
+	varOAuthFlowScopes := _OAuthFlowScopes{}
+
+	if err = json.Unmarshal(bytes, &varOAuthFlowScopes); err == nil {
+		*o = OAuthFlowScopes(varOAuthFlowScopes)
+	}
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "extensions")
+		delete(additionalProperties, "empty")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOAuthFlowScopes struct {

@@ -16,6 +16,7 @@ import (
 
 // BTCenterlineDimensionDisplayData1798 struct for BTCenterlineDimensionDisplayData1798
 type BTCenterlineDimensionDisplayData1798 struct {
+	BTLinearDimensionDisplayData330
 	BtType               *string         `json:"btType,omitempty"`
 	CoordinateSystem     *BTMatrix3x3340 `json:"coordinateSystem,omitempty"`
 	FeatureId            *string         `json:"featureId,omitempty"`
@@ -697,6 +698,14 @@ func (o *BTCenterlineDimensionDisplayData1798) SetWitnessEndPoint1Y(v float64) {
 
 func (o BTCenterlineDimensionDisplayData1798) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTLinearDimensionDisplayData330, errBTLinearDimensionDisplayData330 := json.Marshal(o.BTLinearDimensionDisplayData330)
+	if errBTLinearDimensionDisplayData330 != nil {
+		return []byte{}, errBTLinearDimensionDisplayData330
+	}
+	errBTLinearDimensionDisplayData330 = json.Unmarshal([]byte(serializedBTLinearDimensionDisplayData330), &toSerialize)
+	if errBTLinearDimensionDisplayData330 != nil {
+		return []byte{}, errBTLinearDimensionDisplayData330
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

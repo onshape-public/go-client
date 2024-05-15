@@ -16,6 +16,7 @@ import (
 
 // BTJEditDelete1992 Deletes the specified node.
 type BTJEditDelete1992 struct {
+	BTJEdit3734
 	BtType *string      `json:"btType,omitempty"`
 	Path   *BTJPath3073 `json:"path,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTJEditDelete1992) SetPath(v BTJPath3073) {
 
 func (o BTJEditDelete1992) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJEdit3734, errBTJEdit3734 := json.Marshal(o.BTJEdit3734)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
+	errBTJEdit3734 = json.Unmarshal([]byte(serializedBTJEdit3734), &toSerialize)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

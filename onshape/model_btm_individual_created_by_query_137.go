@@ -16,6 +16,7 @@ import (
 
 // BTMIndividualCreatedByQuery137 struct for BTMIndividualCreatedByQuery137
 type BTMIndividualCreatedByQuery137 struct {
+	BTMIndividualQuery138
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -566,6 +567,14 @@ func (o *BTMIndividualCreatedByQuery137) SetFilterConstruction(v bool) {
 
 func (o BTMIndividualCreatedByQuery137) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQuery138, errBTMIndividualQuery138 := json.Marshal(o.BTMIndividualQuery138)
+	if errBTMIndividualQuery138 != nil {
+		return []byte{}, errBTMIndividualQuery138
+	}
+	errBTMIndividualQuery138 = json.Unmarshal([]byte(serializedBTMIndividualQuery138), &toSerialize)
+	if errBTMIndividualQuery138 != nil {
+		return []byte{}, errBTMIndividualQuery138
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -16,23 +16,23 @@ import (
 
 // BTWorkflowAuditLogEntryInfo struct for BTWorkflowAuditLogEntryInfo
 type BTWorkflowAuditLogEntryInfo struct {
-	ApprovalOverride      *bool                   `json:"approvalOverride,omitempty"`
-	ApproverIds           []string                `json:"approverIds,omitempty"`
-	CommentId             *string                 `json:"commentId,omitempty"`
-	Date                  *JSONTime               `json:"date,omitempty"`
-	EntryType             *int32                  `json:"entryType,omitempty"`
-	ErrorMessage          *string                 `json:"errorMessage,omitempty"`
-	FeatureScriptConsole  *string                 `json:"featureScriptConsole,omitempty"`
-	FeatureScriptNotices  []string                `json:"featureScriptNotices,omitempty"`
-	FeatureScriptResponse *map[string]interface{} `json:"featureScriptResponse,omitempty"`
-	Id                    *string                 `json:"id,omitempty"`
-	ObjectId              *string                 `json:"objectId,omitempty"`
-	PropertyUpdates       []BTPropertyUpdateInfo  `json:"propertyUpdates,omitempty"`
-	SupportCode           *string                 `json:"supportCode,omitempty"`
-	UserId                *string                 `json:"userId,omitempty"`
-	WorkflowAction        *string                 `json:"workflowAction,omitempty"`
-	WorkflowState         *string                 `json:"workflowState,omitempty"`
-	WorkflowTransition    *string                 `json:"workflowTransition,omitempty"`
+	ApprovalOverride      *bool                  `json:"approvalOverride,omitempty"`
+	ApproverIds           []string               `json:"approverIds,omitempty"`
+	CommentId             *string                `json:"commentId,omitempty"`
+	Date                  *JSONTime              `json:"date,omitempty"`
+	EntryType             *int32                 `json:"entryType,omitempty"`
+	ErrorMessage          *string                `json:"errorMessage,omitempty"`
+	FeatureScriptConsole  *string                `json:"featureScriptConsole,omitempty"`
+	FeatureScriptNotices  []string               `json:"featureScriptNotices,omitempty"`
+	FeatureScriptResponse map[string]interface{} `json:"featureScriptResponse,omitempty"`
+	Id                    *string                `json:"id,omitempty"`
+	ObjectId              *string                `json:"objectId,omitempty"`
+	PropertyUpdates       []BTPropertyUpdateInfo `json:"propertyUpdates,omitempty"`
+	SupportCode           *string                `json:"supportCode,omitempty"`
+	UserId                *string                `json:"userId,omitempty"`
+	WorkflowAction        *string                `json:"workflowAction,omitempty"`
+	WorkflowState         *string                `json:"workflowState,omitempty"`
+	WorkflowTransition    *string                `json:"workflowTransition,omitempty"`
 }
 
 // NewBTWorkflowAuditLogEntryInfo instantiates a new BTWorkflowAuditLogEntryInfo object
@@ -314,12 +314,12 @@ func (o *BTWorkflowAuditLogEntryInfo) GetFeatureScriptResponse() map[string]inte
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.FeatureScriptResponse
+	return o.FeatureScriptResponse
 }
 
 // GetFeatureScriptResponseOk returns a tuple with the FeatureScriptResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTWorkflowAuditLogEntryInfo) GetFeatureScriptResponseOk() (*map[string]interface{}, bool) {
+func (o *BTWorkflowAuditLogEntryInfo) GetFeatureScriptResponseOk() (map[string]interface{}, bool) {
 	if o == nil || o.FeatureScriptResponse == nil {
 		return nil, false
 	}
@@ -337,7 +337,7 @@ func (o *BTWorkflowAuditLogEntryInfo) HasFeatureScriptResponse() bool {
 
 // SetFeatureScriptResponse gets a reference to the given map[string]interface{} and assigns it to the FeatureScriptResponse field.
 func (o *BTWorkflowAuditLogEntryInfo) SetFeatureScriptResponse(v map[string]interface{}) {
-	o.FeatureScriptResponse = &v
+	o.FeatureScriptResponse = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.

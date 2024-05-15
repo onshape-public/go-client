@@ -16,6 +16,7 @@ import (
 
 // BTAssemblyFeatureListResponse1174 struct for BTAssemblyFeatureListResponse1174
 type BTAssemblyFeatureListResponse1174 struct {
+	BTFeatureApiBase1430
 	BtType *string `json:"btType,omitempty"`
 	// FeatureScript version used in the Part Studio. Do not modify.
 	LibraryVersion *int32 `json:"libraryVersion,omitempty"`
@@ -339,6 +340,14 @@ func (o *BTAssemblyFeatureListResponse1174) SetIsComplete(v bool) {
 
 func (o BTAssemblyFeatureListResponse1174) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureApiBase1430, errBTFeatureApiBase1430 := json.Marshal(o.BTFeatureApiBase1430)
+	if errBTFeatureApiBase1430 != nil {
+		return []byte{}, errBTFeatureApiBase1430
+	}
+	errBTFeatureApiBase1430 = json.Unmarshal([]byte(serializedBTFeatureApiBase1430), &toSerialize)
+	if errBTFeatureApiBase1430 != nil {
+		return []byte{}, errBTFeatureApiBase1430
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

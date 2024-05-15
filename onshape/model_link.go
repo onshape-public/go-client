@@ -23,7 +23,7 @@ type Link struct {
 	OperationId  *string                           `json:"operationId,omitempty"`
 	OperationRef *string                           `json:"operationRef,omitempty"`
 	Parameters   *map[string]string                `json:"parameters,omitempty"`
-	RequestBody  *map[string]interface{}           `json:"requestBody,omitempty"`
+	RequestBody  map[string]interface{}            `json:"requestBody,omitempty"`
 	Server       *Server                           `json:"server,omitempty"`
 }
 
@@ -274,12 +274,12 @@ func (o *Link) GetRequestBody() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.RequestBody
+	return o.RequestBody
 }
 
 // GetRequestBodyOk returns a tuple with the RequestBody field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Link) GetRequestBodyOk() (*map[string]interface{}, bool) {
+func (o *Link) GetRequestBodyOk() (map[string]interface{}, bool) {
 	if o == nil || o.RequestBody == nil {
 		return nil, false
 	}
@@ -297,7 +297,7 @@ func (o *Link) HasRequestBody() bool {
 
 // SetRequestBody gets a reference to the given map[string]interface{} and assigns it to the RequestBody field.
 func (o *Link) SetRequestBody(v map[string]interface{}) {
-	o.RequestBody = &v
+	o.RequestBody = v
 }
 
 // GetServer returns the Server field value if set, zero value otherwise.

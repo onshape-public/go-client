@@ -16,6 +16,7 @@ import (
 
 // BTPlaneOrientationFilter1700 struct for BTPlaneOrientationFilter1700
 type BTPlaneOrientationFilter1700 struct {
+	BTQueryFilter183
 	BtType *string        `json:"btType,omitempty"`
 	Normal *BTVector3d389 `json:"normal,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTPlaneOrientationFilter1700) SetNormal(v BTVector3d389) {
 
 func (o BTPlaneOrientationFilter1700) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

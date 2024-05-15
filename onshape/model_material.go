@@ -22,7 +22,7 @@ type Material struct {
 	EmissiveFactor       []float32                         `json:"emissiveFactor,omitempty"`
 	EmissiveTexture      *TextureInfo                      `json:"emissiveTexture,omitempty"`
 	Extensions           map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras               *map[string]interface{}           `json:"extras,omitempty"`
+	Extras               map[string]interface{}            `json:"extras,omitempty"`
 	Name                 *string                           `json:"name,omitempty"`
 	NormalTexture        *MaterialNormalTextureInfo        `json:"normalTexture,omitempty"`
 	OcclusionTexture     *MaterialOcclusionTextureInfo     `json:"occlusionTexture,omitempty"`
@@ -244,12 +244,12 @@ func (o *Material) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Material) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *Material) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -267,7 +267,7 @@ func (o *Material) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *Material) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.

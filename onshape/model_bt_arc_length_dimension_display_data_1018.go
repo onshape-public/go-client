@@ -16,6 +16,7 @@ import (
 
 // BTArcLengthDimensionDisplayData1018 struct for BTArcLengthDimensionDisplayData1018
 type BTArcLengthDimensionDisplayData1018 struct {
+	BTAngularDimensionDisplayData320
 	BtType               *string         `json:"btType,omitempty"`
 	CoordinateSystem     *BTMatrix3x3340 `json:"coordinateSystem,omitempty"`
 	FeatureId            *string         `json:"featureId,omitempty"`
@@ -862,6 +863,14 @@ func (o *BTArcLengthDimensionDisplayData1018) SetWitnessMinPoint1r(v float64) {
 
 func (o BTArcLengthDimensionDisplayData1018) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTAngularDimensionDisplayData320, errBTAngularDimensionDisplayData320 := json.Marshal(o.BTAngularDimensionDisplayData320)
+	if errBTAngularDimensionDisplayData320 != nil {
+		return []byte{}, errBTAngularDimensionDisplayData320
+	}
+	errBTAngularDimensionDisplayData320 = json.Unmarshal([]byte(serializedBTAngularDimensionDisplayData320), &toSerialize)
+	if errBTAngularDimensionDisplayData320 != nil {
+		return []byte{}, errBTAngularDimensionDisplayData320
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

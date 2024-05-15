@@ -16,6 +16,7 @@ import (
 
 // BTParameterVisibilityOnMateDOFType2114 struct for BTParameterVisibilityOnMateDOFType2114
 type BTParameterVisibilityOnMateDOFType2114 struct {
+	BTParameterVisibilityOnEqual180
 	BtType      *string `json:"btType,omitempty"`
 	InArray     *bool   `json:"inArray,omitempty"`
 	ParameterId *string `json:"parameterId,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTParameterVisibilityOnMateDOFType2114) SetValue(v string) {
 
 func (o BTParameterVisibilityOnMateDOFType2114) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityOnEqual180, errBTParameterVisibilityOnEqual180 := json.Marshal(o.BTParameterVisibilityOnEqual180)
+	if errBTParameterVisibilityOnEqual180 != nil {
+		return []byte{}, errBTParameterVisibilityOnEqual180
+	}
+	errBTParameterVisibilityOnEqual180 = json.Unmarshal([]byte(serializedBTParameterVisibilityOnEqual180), &toSerialize)
+	if errBTParameterVisibilityOnEqual180 != nil {
+		return []byte{}, errBTParameterVisibilityOnEqual180
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

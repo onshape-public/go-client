@@ -789,6 +789,7 @@ func (v *NullableBTMIndividualQuery138) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMIndividualQuery138 struct {
+	BTMIndividualQueryBase139
 	BtType                     *string                    `json:"btType,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
@@ -1207,6 +1208,14 @@ func (o *base_BTMIndividualQuery138) SetVariableName(v BTMIndividualQuery138) {
 
 func (o base_BTMIndividualQuery138) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryBase139, errBTMIndividualQueryBase139 := json.Marshal(o.BTMIndividualQueryBase139)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
+	errBTMIndividualQueryBase139 = json.Unmarshal([]byte(serializedBTMIndividualQueryBase139), &toSerialize)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

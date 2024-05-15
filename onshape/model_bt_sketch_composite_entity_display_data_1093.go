@@ -251,6 +251,7 @@ func (v *NullableBTSketchCompositeEntityDisplayData1093) UnmarshalJSON(src []byt
 }
 
 type base_BTSketchCompositeEntityDisplayData1093 struct {
+	BTSketchEntityDisplayData354
 	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
 }
@@ -338,6 +339,14 @@ func (o *base_BTSketchCompositeEntityDisplayData1093) SetPoints(v []float64) {
 
 func (o base_BTSketchCompositeEntityDisplayData1093) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSketchEntityDisplayData354, errBTSketchEntityDisplayData354 := json.Marshal(o.BTSketchEntityDisplayData354)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
+	errBTSketchEntityDisplayData354 = json.Unmarshal([]byte(serializedBTSketchEntityDisplayData354), &toSerialize)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

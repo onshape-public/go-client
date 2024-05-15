@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// VariablesApiService VariablesApi service
-type VariablesApiService service
+// VariablesAPIService VariablesAPI service
+type VariablesAPIService service
 
 type ApiCreateVariableStudioRequest struct {
 	ctx                  context.Context
-	ApiService           *VariablesApiService
+	ApiService           *VariablesAPIService
 	did                  string
 	wid                  string
 	bTModelElementParams *BTModelElementParams
@@ -53,7 +53,7 @@ CreateVariableStudio Create a new Variable Studio in a document and workspace.
 	@param wid The id of the workspace in which to perform the operation.
 	@return ApiCreateVariableStudioRequest
 */
-func (a *VariablesApiService) CreateVariableStudio(ctx context.Context, did string, wid string) ApiCreateVariableStudioRequest {
+func (a *VariablesAPIService) CreateVariableStudio(ctx context.Context, did string, wid string) ApiCreateVariableStudioRequest {
 	return ApiCreateVariableStudioRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -65,7 +65,7 @@ func (a *VariablesApiService) CreateVariableStudio(ctx context.Context, did stri
 // Execute executes the request
 //
 //	@return BTDocumentElementInfo
-func (a *VariablesApiService) CreateVariableStudioExecute(r ApiCreateVariableStudioRequest) (*BTDocumentElementInfo, *http.Response, error) {
+func (a *VariablesAPIService) CreateVariableStudioExecute(r ApiCreateVariableStudioRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -73,7 +73,7 @@ func (a *VariablesApiService) CreateVariableStudioExecute(r ApiCreateVariableStu
 		localVarReturnValue *BTDocumentElementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.CreateVariableStudio")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesAPIService.CreateVariableStudio")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -157,7 +157,7 @@ func (a *VariablesApiService) CreateVariableStudioExecute(r ApiCreateVariableStu
 
 type ApiGetVariableStudioReferencesRequest struct {
 	ctx            context.Context
-	ApiService     *VariablesApiService
+	ApiService     *VariablesAPIService
 	did            string
 	wv             string
 	wvid           string
@@ -185,7 +185,7 @@ GetVariableStudioReferences Get the Variable Studio references for an element.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetVariableStudioReferencesRequest
 */
-func (a *VariablesApiService) GetVariableStudioReferences(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariableStudioReferencesRequest {
+func (a *VariablesAPIService) GetVariableStudioReferences(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariableStudioReferencesRequest {
 	return ApiGetVariableStudioReferencesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -199,7 +199,7 @@ func (a *VariablesApiService) GetVariableStudioReferences(ctx context.Context, d
 // Execute executes the request
 //
 //	@return BTVariableStudioReferenceListInfo
-func (a *VariablesApiService) GetVariableStudioReferencesExecute(r ApiGetVariableStudioReferencesRequest) (*BTVariableStudioReferenceListInfo, *http.Response, error) {
+func (a *VariablesAPIService) GetVariableStudioReferencesExecute(r ApiGetVariableStudioReferencesRequest) (*BTVariableStudioReferenceListInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -207,7 +207,7 @@ func (a *VariablesApiService) GetVariableStudioReferencesExecute(r ApiGetVariabl
 		localVarReturnValue *BTVariableStudioReferenceListInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.GetVariableStudioReferences")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesAPIService.GetVariableStudioReferences")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -288,7 +288,7 @@ func (a *VariablesApiService) GetVariableStudioReferencesExecute(r ApiGetVariabl
 
 type ApiGetVariableStudioScopeRequest struct {
 	ctx            context.Context
-	ApiService     *VariablesApiService
+	ApiService     *VariablesAPIService
 	did            string
 	wv             string
 	wvid           string
@@ -316,7 +316,7 @@ GetVariableStudioScope Get the scope of a Variable Studio.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetVariableStudioScopeRequest
 */
-func (a *VariablesApiService) GetVariableStudioScope(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariableStudioScopeRequest {
+func (a *VariablesAPIService) GetVariableStudioScope(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariableStudioScopeRequest {
 	return ApiGetVariableStudioScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -330,7 +330,7 @@ func (a *VariablesApiService) GetVariableStudioScope(ctx context.Context, did st
 // Execute executes the request
 //
 //	@return BTVariableStudioScopeInfo
-func (a *VariablesApiService) GetVariableStudioScopeExecute(r ApiGetVariableStudioScopeRequest) (*BTVariableStudioScopeInfo, *http.Response, error) {
+func (a *VariablesAPIService) GetVariableStudioScopeExecute(r ApiGetVariableStudioScopeRequest) (*BTVariableStudioScopeInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -338,7 +338,7 @@ func (a *VariablesApiService) GetVariableStudioScopeExecute(r ApiGetVariableStud
 		localVarReturnValue *BTVariableStudioScopeInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.GetVariableStudioScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesAPIService.GetVariableStudioScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -419,7 +419,7 @@ func (a *VariablesApiService) GetVariableStudioScopeExecute(r ApiGetVariableStud
 
 type ApiGetVariablesRequest struct {
 	ctx                                 context.Context
-	ApiService                          *VariablesApiService
+	ApiService                          *VariablesAPIService
 	did                                 string
 	wv                                  string
 	wvid                                string
@@ -460,7 +460,7 @@ GetVariables Get the contents of all variable tables in an element.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetVariablesRequest
 */
-func (a *VariablesApiService) GetVariables(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariablesRequest {
+func (a *VariablesAPIService) GetVariables(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetVariablesRequest {
 	return ApiGetVariablesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -474,7 +474,7 @@ func (a *VariablesApiService) GetVariables(ctx context.Context, did string, wv s
 // Execute executes the request
 //
 //	@return []BTVariableTableInfo
-func (a *VariablesApiService) GetVariablesExecute(r ApiGetVariablesRequest) ([]BTVariableTableInfo, *http.Response, error) {
+func (a *VariablesAPIService) GetVariablesExecute(r ApiGetVariablesRequest) ([]BTVariableTableInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -482,7 +482,7 @@ func (a *VariablesApiService) GetVariablesExecute(r ApiGetVariablesRequest) ([]B
 		localVarReturnValue []BTVariableTableInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.GetVariables")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesAPIService.GetVariables")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -569,7 +569,7 @@ func (a *VariablesApiService) GetVariablesExecute(r ApiGetVariablesRequest) ([]B
 
 type ApiSetVariableStudioReferencesRequest struct {
 	ctx                               context.Context
-	ApiService                        *VariablesApiService
+	ApiService                        *VariablesAPIService
 	did                               string
 	wid                               string
 	eid                               string
@@ -601,7 +601,7 @@ SetVariableStudioReferences Set the Variable Studio references for an element.
 	@param eid
 	@return ApiSetVariableStudioReferencesRequest
 */
-func (a *VariablesApiService) SetVariableStudioReferences(ctx context.Context, did string, wid string, eid string) ApiSetVariableStudioReferencesRequest {
+func (a *VariablesAPIService) SetVariableStudioReferences(ctx context.Context, did string, wid string, eid string) ApiSetVariableStudioReferencesRequest {
 	return ApiSetVariableStudioReferencesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -614,7 +614,7 @@ func (a *VariablesApiService) SetVariableStudioReferences(ctx context.Context, d
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *VariablesApiService) SetVariableStudioReferencesExecute(r ApiSetVariableStudioReferencesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VariablesAPIService) SetVariableStudioReferencesExecute(r ApiSetVariableStudioReferencesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -622,7 +622,7 @@ func (a *VariablesApiService) SetVariableStudioReferencesExecute(r ApiSetVariabl
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.SetVariableStudioReferences")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesAPIService.SetVariableStudioReferences")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -707,7 +707,7 @@ func (a *VariablesApiService) SetVariableStudioReferencesExecute(r ApiSetVariabl
 
 type ApiSetVariableStudioScopeRequest struct {
 	ctx                       context.Context
-	ApiService                *VariablesApiService
+	ApiService                *VariablesAPIService
 	did                       string
 	wid                       string
 	eid                       string
@@ -739,7 +739,7 @@ SetVariableStudioScope Set the scope the Variable Studio.
 	@param eid
 	@return ApiSetVariableStudioScopeRequest
 */
-func (a *VariablesApiService) SetVariableStudioScope(ctx context.Context, did string, wid string, eid string) ApiSetVariableStudioScopeRequest {
+func (a *VariablesAPIService) SetVariableStudioScope(ctx context.Context, did string, wid string, eid string) ApiSetVariableStudioScopeRequest {
 	return ApiSetVariableStudioScopeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -752,7 +752,7 @@ func (a *VariablesApiService) SetVariableStudioScope(ctx context.Context, did st
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *VariablesApiService) SetVariableStudioScopeExecute(r ApiSetVariableStudioScopeRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VariablesAPIService) SetVariableStudioScopeExecute(r ApiSetVariableStudioScopeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -760,7 +760,7 @@ func (a *VariablesApiService) SetVariableStudioScopeExecute(r ApiSetVariableStud
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.SetVariableStudioScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesAPIService.SetVariableStudioScope")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -845,7 +845,7 @@ func (a *VariablesApiService) SetVariableStudioScopeExecute(r ApiSetVariableStud
 
 type ApiSetVariablesRequest struct {
 	ctx              context.Context
-	ApiService       *VariablesApiService
+	ApiService       *VariablesAPIService
 	did              string
 	wid              string
 	eid              string
@@ -877,7 +877,7 @@ SetVariables Assign variables to a Variable Studio
 	@param eid
 	@return ApiSetVariablesRequest
 */
-func (a *VariablesApiService) SetVariables(ctx context.Context, did string, wid string, eid string) ApiSetVariablesRequest {
+func (a *VariablesAPIService) SetVariables(ctx context.Context, did string, wid string, eid string) ApiSetVariablesRequest {
 	return ApiSetVariablesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -890,7 +890,7 @@ func (a *VariablesApiService) SetVariables(ctx context.Context, did string, wid 
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *VariablesApiService) SetVariablesExecute(r ApiSetVariablesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VariablesAPIService) SetVariablesExecute(r ApiSetVariablesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -898,7 +898,7 @@ func (a *VariablesApiService) SetVariablesExecute(r ApiSetVariablesRequest) (map
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesApiService.SetVariables")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VariablesAPIService.SetVariables")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

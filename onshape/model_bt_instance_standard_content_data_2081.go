@@ -16,6 +16,7 @@ import (
 
 // BTInstanceStandardContentData2081 struct for BTInstanceStandardContentData2081
 type BTInstanceStandardContentData2081 struct {
+	BTReferenceCustomData1551
 	BtType       *string `json:"btType,omitempty"`
 	ParametersId *string `json:"parametersId,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTInstanceStandardContentData2081) SetParametersId(v string) {
 
 func (o BTInstanceStandardContentData2081) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTReferenceCustomData1551, errBTReferenceCustomData1551 := json.Marshal(o.BTReferenceCustomData1551)
+	if errBTReferenceCustomData1551 != nil {
+		return []byte{}, errBTReferenceCustomData1551
+	}
+	errBTReferenceCustomData1551 = json.Unmarshal([]byte(serializedBTReferenceCustomData1551), &toSerialize)
+	if errBTReferenceCustomData1551 != nil {
+		return []byte{}, errBTReferenceCustomData1551
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

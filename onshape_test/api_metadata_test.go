@@ -35,7 +35,7 @@ type WVMetadataResponse struct {
 }
 
 func TestMetadataAPI(t *testing.T) {
-	InitializeTester[*onshape.MetadataApiService](t)
+	InitializeTester[*onshape.MetadataAPIService](t)
 
 	SetContext(TestingContext{
 		"wv": "w",
@@ -43,7 +43,7 @@ func TestMetadataAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiCreateDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,
@@ -135,7 +135,7 @@ func TestMetadataAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiDeleteDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		},
 		Expect: NoAPIError(),
 	}.Execute()

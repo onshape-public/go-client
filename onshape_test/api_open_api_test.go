@@ -7,7 +7,7 @@ import (
 )
 
 func TestOpenApiAPI(t *testing.T) {
-    InitializeTester[*onshape.OpenApiApiService](t)
+    InitializeTester[*onshape.OpenApiAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetOpenApiRequest{},

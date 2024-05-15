@@ -18,12 +18,12 @@ import (
 	"reflect"
 )
 
-// MetadataCategoryApiService MetadataCategoryApi service
-type MetadataCategoryApiService service
+// MetadataCategoryAPIService MetadataCategoryAPI service
+type MetadataCategoryAPIService service
 
 type ApiGetCategoryPropertiesRequest struct {
 	ctx                                      context.Context
-	ApiService                               *MetadataCategoryApiService
+	ApiService                               *MetadataCategoryAPIService
 	ownerId                                  *string
 	ownerType                                *int32
 	documentId                               *string
@@ -104,7 +104,7 @@ An object's category specifies its type: Part, Assembly, Drawing, etc. Available
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCategoryPropertiesRequest
 */
-func (a *MetadataCategoryApiService) GetCategoryProperties(ctx context.Context) ApiGetCategoryPropertiesRequest {
+func (a *MetadataCategoryAPIService) GetCategoryProperties(ctx context.Context) ApiGetCategoryPropertiesRequest {
 	return ApiGetCategoryPropertiesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -114,7 +114,7 @@ func (a *MetadataCategoryApiService) GetCategoryProperties(ctx context.Context) 
 // Execute executes the request
 //
 //	@return BTListResponseBTCategoryPropertyInfo
-func (a *MetadataCategoryApiService) GetCategoryPropertiesExecute(r ApiGetCategoryPropertiesRequest) (*BTListResponseBTCategoryPropertyInfo, *http.Response, error) {
+func (a *MetadataCategoryAPIService) GetCategoryPropertiesExecute(r ApiGetCategoryPropertiesRequest) (*BTListResponseBTCategoryPropertyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -122,7 +122,7 @@ func (a *MetadataCategoryApiService) GetCategoryPropertiesExecute(r ApiGetCatego
 		localVarReturnValue *BTListResponseBTCategoryPropertyInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataCategoryApiService.GetCategoryProperties")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataCategoryAPIService.GetCategoryProperties")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

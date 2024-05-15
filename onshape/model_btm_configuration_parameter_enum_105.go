@@ -16,6 +16,7 @@ import (
 
 // BTMConfigurationParameterEnum105 struct for BTMConfigurationParameterEnum105
 type BTMConfigurationParameterEnum105 struct {
+	BTMConfigurationParameter819
 	BtType               *string       `json:"btType,omitempty"`
 	GeneratedParameterId *BTTreeNode20 `json:"generatedParameterId,omitempty"`
 	// Microversion that resulted from the import.
@@ -500,6 +501,14 @@ func (o *BTMConfigurationParameterEnum105) SetOptions(v []BTMEnumOption592) {
 
 func (o BTMConfigurationParameterEnum105) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMConfigurationParameter819, errBTMConfigurationParameter819 := json.Marshal(o.BTMConfigurationParameter819)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
+	errBTMConfigurationParameter819 = json.Unmarshal([]byte(serializedBTMConfigurationParameter819), &toSerialize)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

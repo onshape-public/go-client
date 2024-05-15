@@ -16,6 +16,7 @@ import (
 
 // BTEdgeTopologyFilter122 struct for BTEdgeTopologyFilter122
 type BTEdgeTopologyFilter122 struct {
+	BTQueryFilter183
 	BtType         *string          `json:"btType,omitempty"`
 	EdgeTopology   *GBTEdgeTopology `json:"edgeTopology,omitempty"`
 	IsInternalEdge *bool            `json:"isInternalEdge,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTEdgeTopologyFilter122) SetIsInternalEdge(v bool) {
 
 func (o BTEdgeTopologyFilter122) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

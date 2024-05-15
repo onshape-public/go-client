@@ -282,6 +282,7 @@ func (v *NullableBTMateFilter162) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMateFilter162 struct {
+	BTQueryFilter183
 	BtType               *string `json:"btType,omitempty"`
 	RequireMateQueryData *bool   `json:"requireMateQueryData,omitempty"`
 	TopLevelMateOnly     *bool   `json:"topLevelMateOnly,omitempty"`
@@ -402,6 +403,14 @@ func (o *base_BTMateFilter162) SetTopLevelMateOnly(v bool) {
 
 func (o base_BTMateFilter162) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

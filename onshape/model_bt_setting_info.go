@@ -16,8 +16,8 @@ import (
 
 // BTSettingInfo struct for BTSettingInfo
 type BTSettingInfo struct {
-	Key   *string                 `json:"key,omitempty"`
-	Value *map[string]interface{} `json:"value,omitempty"`
+	Key   *string                `json:"key,omitempty"`
+	Value map[string]interface{} `json:"value,omitempty"`
 }
 
 // NewBTSettingInfo instantiates a new BTSettingInfo object
@@ -75,12 +75,12 @@ func (o *BTSettingInfo) GetValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Value
+	return o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTSettingInfo) GetValueOk() (*map[string]interface{}, bool) {
+func (o *BTSettingInfo) GetValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *BTSettingInfo) HasValue() bool {
 
 // SetValue gets a reference to the given map[string]interface{} and assigns it to the Value field.
 func (o *BTSettingInfo) SetValue(v map[string]interface{}) {
-	o.Value = &v
+	o.Value = v
 }
 
 func (o BTSettingInfo) MarshalJSON() ([]byte, error) {

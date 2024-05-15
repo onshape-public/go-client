@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// CommentApiService CommentApi service
-type CommentApiService service
+// CommentAPIService CommentAPI service
+type CommentAPIService service
 
 type ApiAddAttachmentRequest struct {
 	ctx               context.Context
-	ApiService        *CommentApiService
+	ApiService        *CommentAPIService
 	cid               string
 	file              *HttpFile
 	fileContentLength *int32
@@ -51,7 +51,7 @@ AddAttachment Add an attachment to a comment.
 	@param cid
 	@return ApiAddAttachmentRequest
 */
-func (a *CommentApiService) AddAttachment(ctx context.Context, cid string) ApiAddAttachmentRequest {
+func (a *CommentAPIService) AddAttachment(ctx context.Context, cid string) ApiAddAttachmentRequest {
 	return ApiAddAttachmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -62,7 +62,7 @@ func (a *CommentApiService) AddAttachment(ctx context.Context, cid string) ApiAd
 // Execute executes the request
 //
 //	@return BTCommentInfo
-func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BTCommentInfo, *http.Response, error) {
+func (a *CommentAPIService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -70,7 +70,7 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 		localVarReturnValue *BTCommentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.AddAttachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.AddAttachment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -161,7 +161,7 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 
 type ApiCreateCommentRequest struct {
 	ctx             context.Context
-	ApiService      *CommentApiService
+	ApiService      *CommentAPIService
 	bTCommentParams *BTCommentParams
 }
 
@@ -180,7 +180,7 @@ CreateComment Update a document with a new comment.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCommentRequest
 */
-func (a *CommentApiService) CreateComment(ctx context.Context) ApiCreateCommentRequest {
+func (a *CommentAPIService) CreateComment(ctx context.Context) ApiCreateCommentRequest {
 	return ApiCreateCommentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -190,7 +190,7 @@ func (a *CommentApiService) CreateComment(ctx context.Context) ApiCreateCommentR
 // Execute executes the request
 //
 //	@return BTCommentInfo
-func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BTCommentInfo, *http.Response, error) {
+func (a *CommentAPIService) CreateCommentExecute(r ApiCreateCommentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -198,7 +198,7 @@ func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BT
 		localVarReturnValue *BTCommentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.CreateComment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.CreateComment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -277,7 +277,7 @@ func (a *CommentApiService) CreateCommentExecute(r ApiCreateCommentRequest) (*BT
 
 type ApiDeleteAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService *CommentApiService
+	ApiService *CommentAPIService
 	cid        string
 }
 
@@ -292,7 +292,7 @@ DeleteAttachments Delete all attachments from a comment.
 	@param cid
 	@return ApiDeleteAttachmentsRequest
 */
-func (a *CommentApiService) DeleteAttachments(ctx context.Context, cid string) ApiDeleteAttachmentsRequest {
+func (a *CommentAPIService) DeleteAttachments(ctx context.Context, cid string) ApiDeleteAttachmentsRequest {
 	return ApiDeleteAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -303,7 +303,7 @@ func (a *CommentApiService) DeleteAttachments(ctx context.Context, cid string) A
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CommentAPIService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -311,7 +311,7 @@ func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsReque
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.DeleteAttachments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.DeleteAttachments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -386,7 +386,7 @@ func (a *CommentApiService) DeleteAttachmentsExecute(r ApiDeleteAttachmentsReque
 
 type ApiDeleteCommentRequest struct {
 	ctx        context.Context
-	ApiService *CommentApiService
+	ApiService *CommentAPIService
 	cid        string
 }
 
@@ -401,7 +401,7 @@ DeleteComment Delete a comment from a document.
 	@param cid
 	@return ApiDeleteCommentRequest
 */
-func (a *CommentApiService) DeleteComment(ctx context.Context, cid string) ApiDeleteCommentRequest {
+func (a *CommentAPIService) DeleteComment(ctx context.Context, cid string) ApiDeleteCommentRequest {
 	return ApiDeleteCommentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -412,7 +412,7 @@ func (a *CommentApiService) DeleteComment(ctx context.Context, cid string) ApiDe
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CommentAPIService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -420,7 +420,7 @@ func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.DeleteComment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.DeleteComment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -495,7 +495,7 @@ func (a *CommentApiService) DeleteCommentExecute(r ApiDeleteCommentRequest) (map
 
 type ApiGetAttachmentRequest struct {
 	ctx        context.Context
-	ApiService *CommentApiService
+	ApiService *CommentAPIService
 	cid        string
 	fdid       string
 	ext        string
@@ -516,7 +516,7 @@ Returns only a single attachment.
 	@param ext
 	@return ApiGetAttachmentRequest
 */
-func (a *CommentApiService) GetAttachment(ctx context.Context, cid string, fdid string, ext string) ApiGetAttachmentRequest {
+func (a *CommentAPIService) GetAttachment(ctx context.Context, cid string, fdid string, ext string) ApiGetAttachmentRequest {
 	return ApiGetAttachmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -529,7 +529,7 @@ func (a *CommentApiService) GetAttachment(ctx context.Context, cid string, fdid 
 // Execute executes the request
 //
 //	@return HttpFile
-func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*HttpFile, *http.Response, error) {
+func (a *CommentAPIService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -537,7 +537,7 @@ func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*Ht
 		localVarReturnValue *HttpFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.GetAttachment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.GetAttachment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -614,7 +614,7 @@ func (a *CommentApiService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*Ht
 
 type ApiGetCommentRequest struct {
 	ctx        context.Context
-	ApiService *CommentApiService
+	ApiService *CommentAPIService
 	cid        string
 }
 
@@ -629,7 +629,7 @@ GetComment Get details for a comment.
 	@param cid
 	@return ApiGetCommentRequest
 */
-func (a *CommentApiService) GetComment(ctx context.Context, cid string) ApiGetCommentRequest {
+func (a *CommentAPIService) GetComment(ctx context.Context, cid string) ApiGetCommentRequest {
 	return ApiGetCommentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -640,7 +640,7 @@ func (a *CommentApiService) GetComment(ctx context.Context, cid string) ApiGetCo
 // Execute executes the request
 //
 //	@return BTCommentInfo
-func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommentInfo, *http.Response, error) {
+func (a *CommentAPIService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -648,7 +648,7 @@ func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommen
 		localVarReturnValue *BTCommentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.GetComment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.GetComment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -723,7 +723,7 @@ func (a *CommentApiService) GetCommentExecute(r ApiGetCommentRequest) (*BTCommen
 
 type ApiGetCommentsRequest struct {
 	ctx        context.Context
-	ApiService *CommentApiService
+	ApiService *CommentAPIService
 	did        *string
 	objectType *int32
 	pid        *string
@@ -796,7 +796,7 @@ GetComments Get a list of comments in a document.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCommentsRequest
 */
-func (a *CommentApiService) GetComments(ctx context.Context) ApiGetCommentsRequest {
+func (a *CommentAPIService) GetComments(ctx context.Context) ApiGetCommentsRequest {
 	return ApiGetCommentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -806,7 +806,7 @@ func (a *CommentApiService) GetComments(ctx context.Context) ApiGetCommentsReque
 // Execute executes the request
 //
 //	@return BTListResponseBTCommentInfo
-func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTListResponseBTCommentInfo, *http.Response, error) {
+func (a *CommentAPIService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTListResponseBTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -814,7 +814,7 @@ func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTList
 		localVarReturnValue *BTListResponseBTCommentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.GetComments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.GetComments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -918,7 +918,7 @@ func (a *CommentApiService) GetCommentsExecute(r ApiGetCommentsRequest) (*BTList
 
 type ApiReopenRequest struct {
 	ctx        context.Context
-	ApiService *CommentApiService
+	ApiService *CommentAPIService
 	cid        string
 }
 
@@ -933,7 +933,7 @@ Reopen Reopen a resolved comment.
 	@param cid
 	@return ApiReopenRequest
 */
-func (a *CommentApiService) Reopen(ctx context.Context, cid string) ApiReopenRequest {
+func (a *CommentAPIService) Reopen(ctx context.Context, cid string) ApiReopenRequest {
 	return ApiReopenRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -944,7 +944,7 @@ func (a *CommentApiService) Reopen(ctx context.Context, cid string) ApiReopenReq
 // Execute executes the request
 //
 //	@return BTCommentInfo
-func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *http.Response, error) {
+func (a *CommentAPIService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -952,7 +952,7 @@ func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *
 		localVarReturnValue *BTCommentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.Reopen")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.Reopen")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1027,7 +1027,7 @@ func (a *CommentApiService) ReopenExecute(r ApiReopenRequest) (*BTCommentInfo, *
 
 type ApiResolveRequest struct {
 	ctx        context.Context
-	ApiService *CommentApiService
+	ApiService *CommentAPIService
 	cid        string
 }
 
@@ -1042,7 +1042,7 @@ Resolve Resolve a comment.
 	@param cid
 	@return ApiResolveRequest
 */
-func (a *CommentApiService) Resolve(ctx context.Context, cid string) ApiResolveRequest {
+func (a *CommentAPIService) Resolve(ctx context.Context, cid string) ApiResolveRequest {
 	return ApiResolveRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1053,7 +1053,7 @@ func (a *CommentApiService) Resolve(ctx context.Context, cid string) ApiResolveR
 // Execute executes the request
 //
 //	@return BTCommentInfo
-func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo, *http.Response, error) {
+func (a *CommentAPIService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1061,7 +1061,7 @@ func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo,
 		localVarReturnValue *BTCommentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.Resolve")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.Resolve")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1136,7 +1136,7 @@ func (a *CommentApiService) ResolveExecute(r ApiResolveRequest) (*BTCommentInfo,
 
 type ApiUpdateCommentRequest struct {
 	ctx             context.Context
-	ApiService      *CommentApiService
+	ApiService      *CommentAPIService
 	cid             string
 	bTCommentParams *BTCommentParams
 }
@@ -1157,7 +1157,7 @@ UpdateComment Update the content of an existing comment.
 	@param cid
 	@return ApiUpdateCommentRequest
 */
-func (a *CommentApiService) UpdateComment(ctx context.Context, cid string) ApiUpdateCommentRequest {
+func (a *CommentAPIService) UpdateComment(ctx context.Context, cid string) ApiUpdateCommentRequest {
 	return ApiUpdateCommentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1168,7 +1168,7 @@ func (a *CommentApiService) UpdateComment(ctx context.Context, cid string) ApiUp
 // Execute executes the request
 //
 //	@return BTCommentInfo
-func (a *CommentApiService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BTCommentInfo, *http.Response, error) {
+func (a *CommentAPIService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BTCommentInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1176,7 +1176,7 @@ func (a *CommentApiService) UpdateCommentExecute(r ApiUpdateCommentRequest) (*BT
 		localVarReturnValue *BTCommentInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentApiService.UpdateComment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommentAPIService.UpdateComment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

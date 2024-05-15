@@ -16,6 +16,7 @@ import (
 
 // BTMDatabaseParameter2229 struct for BTMDatabaseParameter2229
 type BTMDatabaseParameter2229 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -205,6 +206,14 @@ func (o *BTMDatabaseParameter2229) SetDatabaseId(v string) {
 
 func (o BTMDatabaseParameter2229) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

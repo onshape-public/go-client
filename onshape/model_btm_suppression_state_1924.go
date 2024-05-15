@@ -282,6 +282,7 @@ func (v *NullableBTMSuppressionState1924) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSuppressionState1924 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -403,6 +404,14 @@ func (o *base_BTMSuppressionState1924) SetNodeId(v string) {
 
 func (o base_BTMSuppressionState1924) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

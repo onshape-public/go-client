@@ -16,6 +16,7 @@ import (
 
 // BTConfiguredSuppressionColumnInfo2498 struct for BTConfiguredSuppressionColumnInfo2498
 type BTConfiguredSuppressionColumnInfo2498 struct {
+	BTConfiguredValuesColumnInfo1025
 	BtType        *string                  `json:"btType,omitempty"`
 	Id            *string                  `json:"id,omitempty"`
 	NodeId        *string                  `json:"nodeId,omitempty"`
@@ -268,6 +269,14 @@ func (o *BTConfiguredSuppressionColumnInfo2498) SetParentType(v GBTConfiguredPar
 
 func (o BTConfiguredSuppressionColumnInfo2498) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTConfiguredValuesColumnInfo1025, errBTConfiguredValuesColumnInfo1025 := json.Marshal(o.BTConfiguredValuesColumnInfo1025)
+	if errBTConfiguredValuesColumnInfo1025 != nil {
+		return []byte{}, errBTConfiguredValuesColumnInfo1025
+	}
+	errBTConfiguredValuesColumnInfo1025 = json.Unmarshal([]byte(serializedBTConfiguredValuesColumnInfo1025), &toSerialize)
+	if errBTConfiguredValuesColumnInfo1025 != nil {
+		return []byte{}, errBTConfiguredValuesColumnInfo1025
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

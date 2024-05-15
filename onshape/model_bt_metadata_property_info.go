@@ -25,7 +25,7 @@ type BTMetadataPropertyInfo struct {
 	Editable                 *bool                     `json:"editable,omitempty"`
 	EditableInUi             *bool                     `json:"editableInUi,omitempty"`
 	EnumValues               []BTMetadataEnumValueInfo `json:"enumValues,omitempty"`
-	InitialValue             *map[string]interface{}   `json:"initialValue,omitempty"`
+	InitialValue             map[string]interface{}    `json:"initialValue,omitempty"`
 	Multivalued              *bool                     `json:"multivalued,omitempty"`
 	Name                     *string                   `json:"name,omitempty"`
 	PropertyId               *string                   `json:"propertyId,omitempty"`
@@ -352,12 +352,12 @@ func (o *BTMetadataPropertyInfo) GetInitialValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.InitialValue
+	return o.InitialValue
 }
 
 // GetInitialValueOk returns a tuple with the InitialValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMetadataPropertyInfo) GetInitialValueOk() (*map[string]interface{}, bool) {
+func (o *BTMetadataPropertyInfo) GetInitialValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.InitialValue == nil {
 		return nil, false
 	}
@@ -375,7 +375,7 @@ func (o *BTMetadataPropertyInfo) HasInitialValue() bool {
 
 // SetInitialValue gets a reference to the given map[string]interface{} and assigns it to the InitialValue field.
 func (o *BTMetadataPropertyInfo) SetInitialValue(v map[string]interface{}) {
-	o.InitialValue = &v
+	o.InitialValue = v
 }
 
 // GetMultivalued returns the Multivalued field value if set, zero value otherwise.

@@ -16,6 +16,7 @@ import (
 
 // BTCompanyUserSummaryAdminInfo struct for BTCompanyUserSummaryAdminInfo
 type BTCompanyUserSummaryAdminInfo struct {
+	JsonType string `json:"jsonType"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -48,8 +49,9 @@ type BTCompanyUserSummaryAdminInfo struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTCompanyUserSummaryAdminInfo() *BTCompanyUserSummaryAdminInfo {
+func NewBTCompanyUserSummaryAdminInfo(jsonType string) *BTCompanyUserSummaryAdminInfo {
 	this := BTCompanyUserSummaryAdminInfo{}
+	this.JsonType = jsonType
 	return &this
 }
 
@@ -59,6 +61,30 @@ func NewBTCompanyUserSummaryAdminInfo() *BTCompanyUserSummaryAdminInfo {
 func NewBTCompanyUserSummaryAdminInfoWithDefaults() *BTCompanyUserSummaryAdminInfo {
 	this := BTCompanyUserSummaryAdminInfo{}
 	return &this
+}
+
+// GetJsonType returns the JsonType field value
+func (o *BTCompanyUserSummaryAdminInfo) GetJsonType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.JsonType
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserSummaryAdminInfo) GetJsonTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JsonType, true
+}
+
+// SetJsonType sets field value
+func (o *BTCompanyUserSummaryAdminInfo) SetJsonType(v string) {
+	o.JsonType = v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -767,6 +793,9 @@ func (o *BTCompanyUserSummaryAdminInfo) SetTotpEnabled(v bool) {
 
 func (o BTCompanyUserSummaryAdminInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["jsonType"] = o.JsonType
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}

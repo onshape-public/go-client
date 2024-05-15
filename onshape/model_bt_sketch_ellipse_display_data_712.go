@@ -16,6 +16,7 @@ import (
 
 // BTSketchEllipseDisplayData712 struct for BTSketchEllipseDisplayData712
 type BTSketchEllipseDisplayData712 struct {
+	BTSketchEntityDisplayData354
 	BtType      *string   `json:"btType,omitempty"`
 	Points      []float64 `json:"points,omitempty"`
 	MinorRadius *float64  `json:"minorRadius,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTSketchEllipseDisplayData712) SetRadius(v float64) {
 
 func (o BTSketchEllipseDisplayData712) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSketchEntityDisplayData354, errBTSketchEntityDisplayData354 := json.Marshal(o.BTSketchEntityDisplayData354)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
+	errBTSketchEntityDisplayData354 = json.Unmarshal([]byte(serializedBTSketchEntityDisplayData354), &toSerialize)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

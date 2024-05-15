@@ -7,7 +7,7 @@ import (
 )
 
 func TestTranslationAPI(t *testing.T) {
-    InitializeTester[*onshape.TranslationApiService](t)
+    InitializeTester[*onshape.TranslationAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetDocumentTranslationsRequest{},

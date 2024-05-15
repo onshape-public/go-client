@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// WorkflowApiService WorkflowApi service
-type WorkflowApiService service
+// WorkflowAPIService WorkflowAPI service
+type WorkflowAPIService service
 
 type ApiEnumerateObjectWorkflowsRequest struct {
 	ctx           context.Context
-	ApiService    *WorkflowApiService
+	ApiService    *WorkflowAPIService
 	cid           string
 	objectTypes   *[]BTAPIWorkflowableType
 	states        *[]string
@@ -71,7 +71,7 @@ EnumerateObjectWorkflows Enumerate all of a company's workflowable objects.
 	@param cid The company or enterprise ID that owns the resource.
 	@return ApiEnumerateObjectWorkflowsRequest
 */
-func (a *WorkflowApiService) EnumerateObjectWorkflows(ctx context.Context, cid string) ApiEnumerateObjectWorkflowsRequest {
+func (a *WorkflowAPIService) EnumerateObjectWorkflows(ctx context.Context, cid string) ApiEnumerateObjectWorkflowsRequest {
 	return ApiEnumerateObjectWorkflowsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -82,7 +82,7 @@ func (a *WorkflowApiService) EnumerateObjectWorkflows(ctx context.Context, cid s
 // Execute executes the request
 //
 //	@return BTListResponseBTObjectWorkflowInfo
-func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjectWorkflowsRequest) (*BTListResponseBTObjectWorkflowInfo, *http.Response, error) {
+func (a *WorkflowAPIService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjectWorkflowsRequest) (*BTListResponseBTObjectWorkflowInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -90,7 +90,7 @@ func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjec
 		localVarReturnValue *BTListResponseBTObjectWorkflowInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.EnumerateObjectWorkflows")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowAPIService.EnumerateObjectWorkflows")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -193,7 +193,7 @@ func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjec
 
 type ApiGetActiveWorkflowsRequest struct {
 	ctx        context.Context
-	ApiService *WorkflowApiService
+	ApiService *WorkflowAPIService
 	documentId *string
 }
 
@@ -214,7 +214,7 @@ Optionally takes a document ID to return all workflows for that document's ownin
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetActiveWorkflowsRequest
 */
-func (a *WorkflowApiService) GetActiveWorkflows(ctx context.Context) ApiGetActiveWorkflowsRequest {
+func (a *WorkflowAPIService) GetActiveWorkflows(ctx context.Context) ApiGetActiveWorkflowsRequest {
 	return ApiGetActiveWorkflowsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -224,7 +224,7 @@ func (a *WorkflowApiService) GetActiveWorkflows(ctx context.Context) ApiGetActiv
 // Execute executes the request
 //
 //	@return BTActiveWorkflowInfo
-func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
+func (a *WorkflowAPIService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -232,7 +232,7 @@ func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRe
 		localVarReturnValue *BTActiveWorkflowInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.GetActiveWorkflows")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowAPIService.GetActiveWorkflows")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -309,7 +309,7 @@ func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRe
 
 type ApiGetAllowedApproversRequest struct {
 	ctx         context.Context
-	ApiService  *WorkflowApiService
+	ApiService  *WorkflowAPIService
 	companyId   string
 	q           *string
 	expandTeams *bool
@@ -347,7 +347,7 @@ GetAllowedApprovers Get all identities allowed to be approvers on a workflow obj
 	@param companyId
 	@return ApiGetAllowedApproversRequest
 */
-func (a *WorkflowApiService) GetAllowedApprovers(ctx context.Context, companyId string) ApiGetAllowedApproversRequest {
+func (a *WorkflowAPIService) GetAllowedApprovers(ctx context.Context, companyId string) ApiGetAllowedApproversRequest {
 	return ApiGetAllowedApproversRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -358,7 +358,7 @@ func (a *WorkflowApiService) GetAllowedApprovers(ctx context.Context, companyId 
 // Execute executes the request
 //
 //	@return BTListResponseBTWorkflowObserverOptionInfo
-func (a *WorkflowApiService) GetAllowedApproversExecute(r ApiGetAllowedApproversRequest) (*BTListResponseBTWorkflowObserverOptionInfo, *http.Response, error) {
+func (a *WorkflowAPIService) GetAllowedApproversExecute(r ApiGetAllowedApproversRequest) (*BTListResponseBTWorkflowObserverOptionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -366,7 +366,7 @@ func (a *WorkflowApiService) GetAllowedApproversExecute(r ApiGetAllowedApprovers
 		localVarReturnValue *BTListResponseBTWorkflowObserverOptionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.GetAllowedApprovers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowAPIService.GetAllowedApprovers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *WorkflowApiService) GetAllowedApproversExecute(r ApiGetAllowedApprovers
 
 type ApiGetAuditLogRequest struct {
 	ctx        context.Context
-	ApiService *WorkflowApiService
+	ApiService *WorkflowAPIService
 	objectId   string
 }
 
@@ -467,7 +467,7 @@ Get identities (users and/or teams) allowed to be approvers on a workflow object
 	@param objectId
 	@return ApiGetAuditLogRequest
 */
-func (a *WorkflowApiService) GetAuditLog(ctx context.Context, objectId string) ApiGetAuditLogRequest {
+func (a *WorkflowAPIService) GetAuditLog(ctx context.Context, objectId string) ApiGetAuditLogRequest {
 	return ApiGetAuditLogRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -478,7 +478,7 @@ func (a *WorkflowApiService) GetAuditLog(ctx context.Context, objectId string) A
 // Execute executes the request
 //
 //	@return BTWorkflowAuditLogInfo
-func (a *WorkflowApiService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWorkflowAuditLogInfo, *http.Response, error) {
+func (a *WorkflowAPIService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWorkflowAuditLogInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -486,7 +486,7 @@ func (a *WorkflowApiService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWor
 		localVarReturnValue *BTWorkflowAuditLogInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.GetAuditLog")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowAPIService.GetAuditLog")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

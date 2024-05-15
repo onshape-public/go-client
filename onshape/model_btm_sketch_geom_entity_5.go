@@ -686,20 +686,6 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMSketchCurveSegment-155'
-	if jsonDict["btType"] == "BTMSketchCurveSegment-155" {
-		// try to unmarshal JSON data into BTMSketchCurveSegment155
-		var qr *BTMSketchCurveSegment155
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMSketchGeomEntity5 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMSketchGeomEntity5 = nil
-			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurveSegment155: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMSketchImageEntity-763'
 	if jsonDict["btType"] == "BTMSketchImageEntity-763" {
 		// try to unmarshal JSON data into BTMSketchImageEntity763
@@ -739,6 +725,20 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMSketchGeomEntity5 = nil
 			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchTextEntity1761: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchCurveSegment-155'
+	if jsonDict["btType"] == "BTMSketchCurveSegment-155" {
+		// try to unmarshal JSON data into BTMSketchCurveSegment155
+		var qr *BTMSketchCurveSegment155
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSketchGeomEntity5 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSketchGeomEntity5 = nil
+			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurveSegment155: %s", err.Error())
 		}
 	}
 

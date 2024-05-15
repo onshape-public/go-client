@@ -16,6 +16,7 @@ import (
 
 // BTSketchSolveStatusFilter3657 struct for BTSketchSolveStatusFilter3657
 type BTSketchSolveStatusFilter3657 struct {
+	BTQueryFilter183
 	BtType      *string         `json:"btType,omitempty"`
 	SolveStatus *GBTMGeomStatus `json:"solveStatus,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTSketchSolveStatusFilter3657) SetSolveStatus(v GBTMGeomStatus) {
 
 func (o BTSketchSolveStatusFilter3657) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

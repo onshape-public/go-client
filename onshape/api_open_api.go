@@ -18,12 +18,12 @@ import (
 	"reflect"
 )
 
-// OpenApiApiService OpenApiApi service
-type OpenApiApiService service
+// OpenApiAPIService OpenApiAPI service
+type OpenApiAPIService service
 
 type ApiGetOpenApiRequest struct {
 	ctx                   context.Context
-	ApiService            *OpenApiApiService
+	ApiService            *OpenApiAPIService
 	forceReload           *bool
 	version               *string
 	versionAlias          *VersionAlias
@@ -122,7 +122,7 @@ The Onshape API OpenAPI specification is returned in the JSON format.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOpenApiRequest
 */
-func (a *OpenApiApiService) GetOpenApi(ctx context.Context) ApiGetOpenApiRequest {
+func (a *OpenApiAPIService) GetOpenApi(ctx context.Context) ApiGetOpenApiRequest {
 	return ApiGetOpenApiRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -132,7 +132,7 @@ func (a *OpenApiApiService) GetOpenApi(ctx context.Context) ApiGetOpenApiRequest
 // Execute executes the request
 //
 //	@return OpenAPI
-func (a *OpenApiApiService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI, *http.Response, error) {
+func (a *OpenApiAPIService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -140,7 +140,7 @@ func (a *OpenApiApiService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI,
 		localVarReturnValue *OpenAPI
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OpenApiApiService.GetOpenApi")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OpenApiAPIService.GetOpenApi")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -290,7 +290,7 @@ func (a *OpenApiApiService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI,
 
 type ApiGetTagsRequest struct {
 	ctx        context.Context
-	ApiService *OpenApiApiService
+	ApiService *OpenApiAPIService
 }
 
 func (r ApiGetTagsRequest) Execute() ([]Tag, *http.Response, error) {
@@ -305,7 +305,7 @@ Tags are used to group operations. For example, `Document` groups operations on 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTagsRequest
 */
-func (a *OpenApiApiService) GetTags(ctx context.Context) ApiGetTagsRequest {
+func (a *OpenApiAPIService) GetTags(ctx context.Context) ApiGetTagsRequest {
 	return ApiGetTagsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -315,7 +315,7 @@ func (a *OpenApiApiService) GetTags(ctx context.Context) ApiGetTagsRequest {
 // Execute executes the request
 //
 //	@return []Tag
-func (a *OpenApiApiService) GetTagsExecute(r ApiGetTagsRequest) ([]Tag, *http.Response, error) {
+func (a *OpenApiAPIService) GetTagsExecute(r ApiGetTagsRequest) ([]Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -323,7 +323,7 @@ func (a *OpenApiApiService) GetTagsExecute(r ApiGetTagsRequest) ([]Tag, *http.Re
 		localVarReturnValue []Tag
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OpenApiApiService.GetTags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OpenApiAPIService.GetTags")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

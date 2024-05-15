@@ -24,12 +24,12 @@ func SetupDocument(ctx context.Context, client *onshape.APIClient, name string) 
 	//create document
 	var rawResp *h.Response
 	var err error
-	docInfo, rawResp, err := client.DocumentApi.CreateDocument(ctx).BTDocumentParams(*docParams).Execute()
+	docInfo, rawResp, err := client.DocumentAPI.CreateDocument(ctx).BTDocumentParams(*docParams).Execute()
 	if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 		log.Fatal("err: ", err, " -- Response status: ", rawResp)
 	}
 	return docInfo.GetId(), *docInfo.GetDefaultWorkspace().Id, func() (int, error) {
-		_, rawResp, err := client.DocumentApi.DeleteDocument(ctx, docInfo.GetId()).Execute()
+		_, rawResp, err := client.DocumentAPI.DeleteDocument(ctx, docInfo.GetId()).Execute()
 		return rawResp.StatusCode, err
 	}
 }

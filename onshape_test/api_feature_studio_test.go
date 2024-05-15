@@ -7,7 +7,7 @@ import (
 )
 
 func TestFeatureStudioAPI(t *testing.T) {
-    InitializeTester[*onshape.FeatureStudioApiService](t)
+    InitializeTester[*onshape.FeatureStudioAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiCreateFeatureStudioRequest{},

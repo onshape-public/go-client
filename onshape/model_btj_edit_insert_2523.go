@@ -16,6 +16,7 @@ import (
 
 // BTJEditInsert2523 Inserts a value using the specified path.
 type BTJEditInsert2523 struct {
+	BTJEdit3734
 	BtType *string                 `json:"btType,omitempty"`
 	Path   *BTJPath3073            `json:"path,omitempty"`
 	Value  *map[string]interface{} `json:"value,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTJEditInsert2523) SetValue(v map[string]interface{}) {
 
 func (o BTJEditInsert2523) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJEdit3734, errBTJEdit3734 := json.Marshal(o.BTJEdit3734)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
+	errBTJEdit3734 = json.Unmarshal([]byte(serializedBTJEdit3734), &toSerialize)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

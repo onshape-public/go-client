@@ -16,6 +16,7 @@ import (
 
 // BTJPathIndex1871 Identifies a value in a json array. For insert and move edit destinations, -1 can be used to indicate 'end'.
 type BTJPathIndex1871 struct {
+	BTJPathElement2297
 	BtType *string `json:"btType,omitempty"`
 	Index  *int32  `json:"index,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTJPathIndex1871) SetIndex(v int32) {
 
 func (o BTJPathIndex1871) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJPathElement2297, errBTJPathElement2297 := json.Marshal(o.BTJPathElement2297)
+	if errBTJPathElement2297 != nil {
+		return []byte{}, errBTJPathElement2297
+	}
+	errBTJPathElement2297 = json.Unmarshal([]byte(serializedBTJPathElement2297), &toSerialize)
+	if errBTJPathElement2297 != nil {
+		return []byte{}, errBTJPathElement2297
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

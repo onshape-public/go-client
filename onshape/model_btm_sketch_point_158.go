@@ -16,6 +16,7 @@ import (
 
 // BTMSketchPoint158 struct for BTMSketchPoint158
 type BTMSketchPoint158 struct {
+	BTMSketchGeomEntity5
 	BtType                              *string  `json:"btType,omitempty"`
 	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
 	EntityId                            *string  `json:"entityId,omitempty"`
@@ -533,6 +534,14 @@ func (o *BTMSketchPoint158) SetY(v float64) {
 
 func (o BTMSketchPoint158) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchGeomEntity5, errBTMSketchGeomEntity5 := json.Marshal(o.BTMSketchGeomEntity5)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
+	errBTMSketchGeomEntity5 = json.Unmarshal([]byte(serializedBTMSketchGeomEntity5), &toSerialize)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

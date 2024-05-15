@@ -7,7 +7,7 @@ import (
 )
 
 func TestRevisionAPI(t *testing.T) {
-	InitializeTester[*onshape.RevisionApiService](t)
+	InitializeTester[*onshape.RevisionAPIService](t)
 
 	OpenAPITest{
 		Call:   onshape.ApiGetRevisionByPartNumberRequest{},

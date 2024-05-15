@@ -16,6 +16,7 @@ import (
 
 // BTParametricPartStudioChildInstance3696 struct for BTParametricPartStudioChildInstance3696
 type BTParametricPartStudioChildInstance3696 struct {
+	BTParametricOutputInstance2288
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -1029,6 +1030,14 @@ func (o *BTParametricPartStudioChildInstance3696) SetType(v GBTPartStudioInstanc
 
 func (o BTParametricPartStudioChildInstance3696) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParametricOutputInstance2288, errBTParametricOutputInstance2288 := json.Marshal(o.BTParametricOutputInstance2288)
+	if errBTParametricOutputInstance2288 != nil {
+		return []byte{}, errBTParametricOutputInstance2288
+	}
+	errBTParametricOutputInstance2288 = json.Unmarshal([]byte(serializedBTParametricOutputInstance2288), &toSerialize)
+	if errBTParametricOutputInstance2288 != nil {
+		return []byte{}, errBTParametricOutputInstance2288
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

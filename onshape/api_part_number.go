@@ -17,12 +17,12 @@ import (
 	"net/url"
 )
 
-// PartNumberApiService PartNumberApi service
-type PartNumberApiService service
+// PartNumberAPIService PartNumberAPI service
+type PartNumberAPIService service
 
 type ApiUpdateNextNumbersRequest struct {
 	ctx                    context.Context
-	ApiService             *PartNumberApiService
+	ApiService             *PartNumberAPIService
 	bTNextPartNumbersParam *BTNextPartNumbersParam
 	cid                    *string
 	did                    *string
@@ -53,7 +53,7 @@ UpdateNextNumbers Send the items to generate numbers for, and return the next va
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateNextNumbersRequest
 */
-func (a *PartNumberApiService) UpdateNextNumbers(ctx context.Context) ApiUpdateNextNumbersRequest {
+func (a *PartNumberAPIService) UpdateNextNumbers(ctx context.Context) ApiUpdateNextNumbersRequest {
 	return ApiUpdateNextNumbersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -63,7 +63,7 @@ func (a *PartNumberApiService) UpdateNextNumbers(ctx context.Context) ApiUpdateN
 // Execute executes the request
 //
 //	@return map[string][]BTNextPartNumber
-func (a *PartNumberApiService) UpdateNextNumbersExecute(r ApiUpdateNextNumbersRequest) (*map[string][]BTNextPartNumber, *http.Response, error) {
+func (a *PartNumberAPIService) UpdateNextNumbersExecute(r ApiUpdateNextNumbersRequest) (*map[string][]BTNextPartNumber, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -71,7 +71,7 @@ func (a *PartNumberApiService) UpdateNextNumbersExecute(r ApiUpdateNextNumbersRe
 		localVarReturnValue *map[string][]BTNextPartNumber
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartNumberApiService.UpdateNextNumbers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartNumberAPIService.UpdateNextNumbers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

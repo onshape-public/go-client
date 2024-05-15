@@ -15,7 +15,7 @@ const (
 )
 
 func TestDocumentAPI(t *testing.T) {
-	InitializeTester[*onshape.DocumentApiService](t)
+	InitializeTester[*onshape.DocumentAPIService](t)
 
 	SetContext(TestingContext{
 		"label":     &testhelper.DocumentName,

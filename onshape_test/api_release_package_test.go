@@ -7,7 +7,7 @@ import (
 )
 
 func TestReleasePackageAPI(t *testing.T) {
-    InitializeTester[*onshape.ReleasePackageApiService](t)
+    InitializeTester[*onshape.ReleasePackageAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetCompanyReleaseWorkflowRequest{},

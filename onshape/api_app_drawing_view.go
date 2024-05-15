@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// AppDrawingViewApiService AppDrawingViewApi service
-type AppDrawingViewApiService service
+// AppDrawingViewAPIService AppDrawingViewAPI service
+type AppDrawingViewAPIService service
 
 type ApiGetDrawingViewJsonGeometryRequest struct {
 	ctx           context.Context
-	ApiService    *AppDrawingViewApiService
+	ApiService    *AppDrawingViewAPIService
 	viewid        string
 	did           string
 	wvm           string
@@ -64,7 +64,7 @@ GetDrawingViewJsonGeometry Get view geometry of a drawing view in JSON format.
 	@param eid
 	@return ApiGetDrawingViewJsonGeometryRequest
 */
-func (a *AppDrawingViewApiService) GetDrawingViewJsonGeometry(ctx context.Context, viewid string, did string, wvm string, wvmid string, eid string) ApiGetDrawingViewJsonGeometryRequest {
+func (a *AppDrawingViewAPIService) GetDrawingViewJsonGeometry(ctx context.Context, viewid string, did string, wvm string, wvmid string, eid string) ApiGetDrawingViewJsonGeometryRequest {
 	return ApiGetDrawingViewJsonGeometryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -79,7 +79,7 @@ func (a *AppDrawingViewApiService) GetDrawingViewJsonGeometry(ctx context.Contex
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *AppDrawingViewApiService) GetDrawingViewJsonGeometryExecute(r ApiGetDrawingViewJsonGeometryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AppDrawingViewAPIService) GetDrawingViewJsonGeometryExecute(r ApiGetDrawingViewJsonGeometryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -87,7 +87,7 @@ func (a *AppDrawingViewApiService) GetDrawingViewJsonGeometryExecute(r ApiGetDra
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppDrawingViewApiService.GetDrawingViewJsonGeometry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppDrawingViewAPIService.GetDrawingViewJsonGeometry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -175,7 +175,7 @@ func (a *AppDrawingViewApiService) GetDrawingViewJsonGeometryExecute(r ApiGetDra
 
 type ApiGetDrawingViewsRequest struct {
 	ctx            context.Context
-	ApiService     *AppDrawingViewApiService
+	ApiService     *AppDrawingViewAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -215,7 +215,7 @@ GetDrawingViews Get details of all drawing views.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetDrawingViewsRequest
 */
-func (a *AppDrawingViewApiService) GetDrawingViews(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetDrawingViewsRequest {
+func (a *AppDrawingViewAPIService) GetDrawingViews(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetDrawingViewsRequest {
 	return ApiGetDrawingViewsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -229,7 +229,7 @@ func (a *AppDrawingViewApiService) GetDrawingViews(ctx context.Context, did stri
 // Execute executes the request
 //
 //	@return BTAppArrayInfoBTAppDrawingViewInfo
-func (a *AppDrawingViewApiService) GetDrawingViewsExecute(r ApiGetDrawingViewsRequest) (*BTAppArrayInfoBTAppDrawingViewInfo, *http.Response, error) {
+func (a *AppDrawingViewAPIService) GetDrawingViewsExecute(r ApiGetDrawingViewsRequest) (*BTAppArrayInfoBTAppDrawingViewInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -237,7 +237,7 @@ func (a *AppDrawingViewApiService) GetDrawingViewsExecute(r ApiGetDrawingViewsRe
 		localVarReturnValue *BTAppArrayInfoBTAppDrawingViewInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppDrawingViewApiService.GetDrawingViews")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppDrawingViewAPIService.GetDrawingViews")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

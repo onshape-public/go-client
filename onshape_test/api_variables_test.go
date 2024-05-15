@@ -10,7 +10,7 @@ import (
 )
 
 func TestVariablesAPI(t *testing.T) {
-    InitializeTester[*onshape.VariablesApiService](t)
+    InitializeTester[*onshape.VariablesAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiSetVariablesRequest{},
@@ -50,8 +50,8 @@ func TestVariablesAPI(t *testing.T) {
 }
 
 func TestGetVariablesExecute(t *testing.T) {
-    InitializeTester[*onshape.VariablesApiService](t)
-    obj, r, err := Context()["client"].(*onshape.APIClient).VariablesApi.GetVariablesExecute(onshape.ApiGetVariablesRequest{})
+    InitializeTester[*onshape.VariablesAPIService](t)
+    obj, r, err := Context()["client"].(*onshape.APIClient).VariablesAPI.GetVariablesExecute(onshape.ApiGetVariablesRequest{})
     require.Error(t, err)
     // Check if the returned values are of the expected types
     type objOnshape []onshape.BTVariableTableInfo 

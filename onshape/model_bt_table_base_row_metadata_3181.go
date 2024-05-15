@@ -219,6 +219,20 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTVariableTableRowMetadata-3912'
+	if jsonDict["btType"] == "BTVariableTableRowMetadata-3912" {
+		// try to unmarshal JSON data into BTVariableTableRowMetadata3912
+		var qr *BTVariableTableRowMetadata3912
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableBaseRowMetadata3181 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableBaseRowMetadata3181 = nil
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTVariableTableRowMetadata3912: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTSMBendTableRowMetadata-1705'
 	if jsonDict["btType"] == "BTSMBendTableRowMetadata-1705" {
 		// try to unmarshal JSON data into BTSMBendTableRowMetadata1705
@@ -244,20 +258,6 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
 			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTSMOtherJointTableRowMetadata2640: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTVariableTableRowMetadata-3912'
-	if jsonDict["btType"] == "BTVariableTableRowMetadata-3912" {
-		// try to unmarshal JSON data into BTVariableTableRowMetadata3912
-		var qr *BTVariableTableRowMetadata3912
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTTableBaseRowMetadata3181 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTTableBaseRowMetadata3181 = nil
-			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTVariableTableRowMetadata3912: %s", err.Error())
 		}
 	}
 

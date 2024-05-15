@@ -16,6 +16,7 @@ import (
 
 // BTMParameterReferenceCADImport2016 struct for BTMParameterReferenceCADImport2016
 type BTMParameterReferenceCADImport2016 struct {
+	BTMParameterReferenceBlob3281
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -436,6 +437,14 @@ func (o *BTMParameterReferenceCADImport2016) SetNamespace(v string) {
 
 func (o BTMParameterReferenceCADImport2016) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameterReferenceBlob3281, errBTMParameterReferenceBlob3281 := json.Marshal(o.BTMParameterReferenceBlob3281)
+	if errBTMParameterReferenceBlob3281 != nil {
+		return []byte{}, errBTMParameterReferenceBlob3281
+	}
+	errBTMParameterReferenceBlob3281 = json.Unmarshal([]byte(serializedBTMParameterReferenceBlob3281), &toSerialize)
+	if errBTMParameterReferenceBlob3281 != nil {
+		return []byte{}, errBTMParameterReferenceBlob3281
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

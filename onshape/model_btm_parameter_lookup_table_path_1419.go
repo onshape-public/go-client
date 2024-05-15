@@ -16,6 +16,7 @@ import (
 
 // BTMParameterLookupTablePath1419 struct for BTMParameterLookupTablePath1419
 type BTMParameterLookupTablePath1419 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -205,6 +206,14 @@ func (o *BTMParameterLookupTablePath1419) SetValue(v map[string]string) {
 
 func (o BTMParameterLookupTablePath1419) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

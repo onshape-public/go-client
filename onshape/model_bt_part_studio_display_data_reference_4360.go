@@ -16,6 +16,7 @@ import (
 
 // BTPartStudioDisplayDataReference4360 struct for BTPartStudioDisplayDataReference4360
 type BTPartStudioDisplayDataReference4360 struct {
+	BTPartStudioDisplayDataBase2751
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
 	FromFullElementId                      *BTFullElementId756                           `json:"fromFullElementId,omitempty"`
@@ -532,6 +533,14 @@ func (o *BTPartStudioDisplayDataReference4360) SetTessellationSettings(v map[str
 
 func (o BTPartStudioDisplayDataReference4360) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPartStudioDisplayDataBase2751, errBTPartStudioDisplayDataBase2751 := json.Marshal(o.BTPartStudioDisplayDataBase2751)
+	if errBTPartStudioDisplayDataBase2751 != nil {
+		return []byte{}, errBTPartStudioDisplayDataBase2751
+	}
+	errBTPartStudioDisplayDataBase2751 = json.Unmarshal([]byte(serializedBTPartStudioDisplayDataBase2751), &toSerialize)
+	if errBTPartStudioDisplayDataBase2751 != nil {
+		return []byte{}, errBTPartStudioDisplayDataBase2751
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -14,11 +14,11 @@ import (
 )
 
 func TestEventAPI(t *testing.T) {
-	InitializeTester[*onshape.EventApiService](t)
+	InitializeTester[*onshape.EventAPIService](t)
 
 	OpenAPITest{
 		Call: onshape.ApiCreateDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,
@@ -53,7 +53,7 @@ func TestEventAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiDeleteDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		},
 		Expect: NoAPIError(),
 	}.Execute()

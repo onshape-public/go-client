@@ -16,6 +16,7 @@ import (
 
 // BTFSTableColumnInfo623 struct for BTFSTableColumnInfo623
 type BTFSTableColumnInfo623 struct {
+	BTTableColumnInfo1222
 	BtType             *string                            `json:"btType,omitempty"`
 	Id                 *string                            `json:"id,omitempty"`
 	NodeId             *string                            `json:"nodeId,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTFSTableColumnInfo623) SetCrossHighlightData(v BTTableBaseCrossHighlig
 
 func (o BTFSTableColumnInfo623) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
+	errBTTableColumnInfo1222 = json.Unmarshal([]byte(serializedBTTableColumnInfo1222), &toSerialize)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

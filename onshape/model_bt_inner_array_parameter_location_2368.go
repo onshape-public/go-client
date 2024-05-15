@@ -16,6 +16,7 @@ import (
 
 // BTInnerArrayParameterLocation2368 struct for BTInnerArrayParameterLocation2368
 type BTInnerArrayParameterLocation2368 struct {
+	BTInnerParameterLocation1715
 	BtType           *string `json:"btType,omitempty"`
 	Index            *int32  `json:"index,omitempty"`
 	OuterParameterId *string `json:"outerParameterId,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTInnerArrayParameterLocation2368) SetOuterParameterId(v string) {
 
 func (o BTInnerArrayParameterLocation2368) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInnerParameterLocation1715, errBTInnerParameterLocation1715 := json.Marshal(o.BTInnerParameterLocation1715)
+	if errBTInnerParameterLocation1715 != nil {
+		return []byte{}, errBTInnerParameterLocation1715
+	}
+	errBTInnerParameterLocation1715 = json.Unmarshal([]byte(serializedBTInnerParameterLocation1715), &toSerialize)
+	if errBTInnerParameterLocation1715 != nil {
+		return []byte{}, errBTInnerParameterLocation1715
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

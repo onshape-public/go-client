@@ -16,6 +16,7 @@ import (
 
 // BTFullElementIdAndPartId643 struct for BTFullElementIdAndPartId643
 type BTFullElementIdAndPartId643 struct {
+	BTFullElementIdWithDocument1729
 	BtType                         *string                               `json:"btType,omitempty"`
 	Configured                     *bool                                 `json:"configured,omitempty"`
 	DocumentId                     *string                               `json:"documentId,omitempty"`
@@ -301,6 +302,14 @@ func (o *BTFullElementIdAndPartId643) SetPartId(v string) {
 
 func (o BTFullElementIdAndPartId643) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFullElementIdWithDocument1729, errBTFullElementIdWithDocument1729 := json.Marshal(o.BTFullElementIdWithDocument1729)
+	if errBTFullElementIdWithDocument1729 != nil {
+		return []byte{}, errBTFullElementIdWithDocument1729
+	}
+	errBTFullElementIdWithDocument1729 = json.Unmarshal([]byte(serializedBTFullElementIdWithDocument1729), &toSerialize)
+	if errBTFullElementIdWithDocument1729 != nil {
+		return []byte{}, errBTFullElementIdWithDocument1729
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

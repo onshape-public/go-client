@@ -16,6 +16,7 @@ import (
 
 // BTMConfigurationData1560 struct for BTMConfigurationData1560
 type BTMConfigurationData1560 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion         *string                   `json:"importMicroversion,omitempty"`
@@ -236,6 +237,14 @@ func (o *BTMConfigurationData1560) SetDefaultConfigurationValues(v map[string]BT
 
 func (o BTMConfigurationData1560) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -16,6 +16,7 @@ import (
 
 // BTJPathKey3221 Identifies a subtree of the json structure by field name.
 type BTJPathKey3221 struct {
+	BTJPathElement2297
 	BtType *string `json:"btType,omitempty"`
 	Key    *string `json:"key,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTJPathKey3221) SetKey(v string) {
 
 func (o BTJPathKey3221) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJPathElement2297, errBTJPathElement2297 := json.Marshal(o.BTJPathElement2297)
+	if errBTJPathElement2297 != nil {
+		return []byte{}, errBTJPathElement2297
+	}
+	errBTJPathElement2297 = json.Unmarshal([]byte(serializedBTJPathElement2297), &toSerialize)
+	if errBTJPathElement2297 != nil {
+		return []byte{}, errBTJPathElement2297
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

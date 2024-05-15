@@ -1501,6 +1501,7 @@ func (v *NullableBTParametricOutputInstance2288) UnmarshalJSON(src []byte) error
 }
 
 type base_BTParametricOutputInstance2288 struct {
+	BTInstanceBase2263
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -2415,6 +2416,14 @@ func (o *base_BTParametricOutputInstance2288) SetVersion(v int32) {
 
 func (o base_BTParametricOutputInstance2288) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInstanceBase2263, errBTInstanceBase2263 := json.Marshal(o.BTInstanceBase2263)
+	if errBTInstanceBase2263 != nil {
+		return []byte{}, errBTInstanceBase2263
+	}
+	errBTInstanceBase2263 = json.Unmarshal([]byte(serializedBTInstanceBase2263), &toSerialize)
+	if errBTInstanceBase2263 != nil {
+		return []byte{}, errBTInstanceBase2263
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

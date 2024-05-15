@@ -482,6 +482,7 @@ func (v *NullableBTCurveGeometryCircle115) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTCurveGeometryCircle115 struct {
+	BTCurveGeometry114
 	BtType    *string  `json:"btType,omitempty"`
 	Clockwise *bool    `json:"clockwise,omitempty"`
 	Radius    *float64 `json:"radius,omitempty"`
@@ -734,6 +735,14 @@ func (o *base_BTCurveGeometryCircle115) SetYdir(v float64) {
 
 func (o base_BTCurveGeometryCircle115) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveGeometry114, errBTCurveGeometry114 := json.Marshal(o.BTCurveGeometry114)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
+	errBTCurveGeometry114 = json.Unmarshal([]byte(serializedBTCurveGeometry114), &toSerialize)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -16,8 +16,11 @@ import (
 
 // ApiResponseContent struct for ApiResponseContent
 type ApiResponseContent struct {
-	Empty *bool `json:"empty,omitempty"`
+	Empty                *bool `json:"empty,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ApiResponseContent ApiResponseContent
 
 // NewApiResponseContent instantiates a new ApiResponseContent object
 // This constructor will assign default values to properties that have it defined,
@@ -73,7 +76,29 @@ func (o ApiResponseContent) MarshalJSON() ([]byte, error) {
 	if o.Empty != nil {
 		toSerialize["empty"] = o.Empty
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return json.Marshal(toSerialize)
+}
+
+func (o *ApiResponseContent) UnmarshalJSON(bytes []byte) (err error) {
+	varApiResponseContent := _ApiResponseContent{}
+
+	if err = json.Unmarshal(bytes, &varApiResponseContent); err == nil {
+		*o = ApiResponseContent(varApiResponseContent)
+	}
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "empty")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApiResponseContent struct {

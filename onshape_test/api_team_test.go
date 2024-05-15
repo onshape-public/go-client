@@ -7,7 +7,7 @@ import (
 )
 
 func TestTeamAPI(t *testing.T) {
-    InitializeTester[*onshape.TeamApiService](t)
+    InitializeTester[*onshape.TeamAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiFindRequest{},

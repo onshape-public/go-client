@@ -17,7 +17,7 @@ import (
 // Skin struct for Skin
 type Skin struct {
 	Extensions          map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras              *map[string]interface{}           `json:"extras,omitempty"`
+	Extras              map[string]interface{}            `json:"extras,omitempty"`
 	InverseBindMatrices *int32                            `json:"inverseBindMatrices,omitempty"`
 	Joints              []int32                           `json:"joints,omitempty"`
 	Name                *string                           `json:"name,omitempty"`
@@ -79,12 +79,12 @@ func (o *Skin) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Skin) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *Skin) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -102,7 +102,7 @@ func (o *Skin) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *Skin) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetInverseBindMatrices returns the InverseBindMatrices field value if set, zero value otherwise.

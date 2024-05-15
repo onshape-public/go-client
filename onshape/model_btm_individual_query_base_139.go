@@ -546,34 +546,6 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMIndividualCoEdgeQuery-1332'
-	if jsonDict["btType"] == "BTMIndividualCoEdgeQuery-1332" {
-		// try to unmarshal JSON data into BTMIndividualCoEdgeQuery1332
-		var qr *BTMIndividualCoEdgeQuery1332
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryBase139 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualCoEdgeQuery1332: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMIndividualCreatedByQuery-137'
-	if jsonDict["btType"] == "BTMIndividualCreatedByQuery-137" {
-		// try to unmarshal JSON data into BTMIndividualCreatedByQuery137
-		var qr *BTMIndividualCreatedByQuery137
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryBase139 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualCreatedByQuery137: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMIndividualQuery-138'
 	if jsonDict["btType"] == "BTMIndividualQuery-138" {
 		// try to unmarshal JSON data into BTMIndividualQuery138
@@ -599,6 +571,34 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMIndividualQueryBase139 = nil
 			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualQueryWithOccurrenceBase904: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualCoEdgeQuery-1332'
+	if jsonDict["btType"] == "BTMIndividualCoEdgeQuery-1332" {
+		// try to unmarshal JSON data into BTMIndividualCoEdgeQuery1332
+		var qr *BTMIndividualCoEdgeQuery1332
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualCoEdgeQuery1332: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualCreatedByQuery-137'
+	if jsonDict["btType"] == "BTMIndividualCreatedByQuery-137" {
+		// try to unmarshal JSON data into BTMIndividualCreatedByQuery137
+		var qr *BTMIndividualCreatedByQuery137
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualCreatedByQuery137: %s", err.Error())
 		}
 	}
 

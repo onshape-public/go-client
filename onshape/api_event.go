@@ -17,12 +17,12 @@ import (
 	"net/url"
 )
 
-// EventApiService EventApi service
-type EventApiService service
+// EventAPIService EventAPI service
+type EventAPIService service
 
 type ApiFireEventRequest struct {
 	ctx           context.Context
-	ApiService    *EventApiService
+	ApiService    *EventAPIService
 	bTEventParams *BTEventParams
 }
 
@@ -41,7 +41,7 @@ FireEvent Fire an asynchronous event.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiFireEventRequest
 */
-func (a *EventApiService) FireEvent(ctx context.Context) ApiFireEventRequest {
+func (a *EventAPIService) FireEvent(ctx context.Context) ApiFireEventRequest {
 	return ApiFireEventRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -51,7 +51,7 @@ func (a *EventApiService) FireEvent(ctx context.Context) ApiFireEventRequest {
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *EventApiService) FireEventExecute(r ApiFireEventRequest) (map[string]interface{}, *http.Response, error) {
+func (a *EventAPIService) FireEventExecute(r ApiFireEventRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -59,7 +59,7 @@ func (a *EventApiService) FireEventExecute(r ApiFireEventRequest) (map[string]in
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventApiService.FireEvent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventAPIService.FireEvent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -16,6 +16,7 @@ import (
 
 // BTSplineControlPolygonFilter1130 struct for BTSplineControlPolygonFilter1130
 type BTSplineControlPolygonFilter1130 struct {
+	BTQueryFilter183
 	BtType                     *string `json:"btType,omitempty"`
 	AllowsSplineControlPolygon *bool   `json:"allowsSplineControlPolygon,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTSplineControlPolygonFilter1130) SetAllowsSplineControlPolygon(v bool)
 
 func (o BTSplineControlPolygonFilter1130) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

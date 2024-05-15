@@ -12,7 +12,7 @@ import (
 )
 
 func TestAppElementAPI(t *testing.T) {
-	InitializeTester[*onshape.AppElementApiService](t)
+	InitializeTester[*onshape.AppElementAPIService](t)
 
 	fileName := "./test_data/hf.txt"
 	osFile, err := os.Open(fileName)
@@ -34,7 +34,7 @@ func TestAppElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiCreateDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,
@@ -82,7 +82,7 @@ func TestAppElementAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
-			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
+			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
 		}),
 	}.Execute()
 
@@ -95,7 +95,7 @@ func TestAppElementAPI(t *testing.T) {
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
 			nm := make(map[string]interface{})
-			for k, v := range *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
+			for k, v := range Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
 				nm[k] = v
 			}
 
@@ -108,14 +108,14 @@ func TestAppElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiDeleteDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		},
 		Expect: NoAPIError(),
 	}.Execute()
 }
 
 func TestTransactionAppElementAPI(t *testing.T) {
-	InitializeTester[*onshape.AppElementApiService](t)
+	InitializeTester[*onshape.AppElementAPIService](t)
 
 	SetContext(TestingContext{
 		"bTVersionOrWorkspaceParams": &onshape.BTVersionOrWorkspaceParams{
@@ -131,7 +131,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiCreateDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		}.BTDocumentParams(onshape.BTDocumentParams{
 			Name:        &testhelper.DocumentName,
 			Description: &testhelper.DocumentDescription,
@@ -142,7 +142,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiCreateWorkspaceRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		},
 		Expect: NoAPIError(),
 	}.Execute()
@@ -185,7 +185,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiGetDocumentHistoryRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
 			require.LessOrEqual(Tester(), 3, len(r))
@@ -213,7 +213,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 
 	OpenAPITest{
 		Call: onshape.ApiDeleteDocumentRequest{
-			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
+			ApiService: Context()["client"].(*onshape.APIClient).DocumentAPI,
 		},
 		Expect: NoAPIError(),
 	}.Execute()
@@ -223,7 +223,7 @@ func GetDefaultAppElementParams() *onshape.BTAppElementParams {
 	return &onshape.BTAppElementParams{
 		Name:     Ptr("Test-element-1"),
 		FormatId: "String",
-		JsonTree: Ptr(map[string]interface{}{
+		JsonTree: map[string]interface{}{
 			"name":    "p.prt",
 			"_nodeId": "master",
 			"masterProperties": map[string]interface{}{
@@ -237,7 +237,7 @@ func GetDefaultAppElementParams() *onshape.BTAppElementParams {
 				"attr3":   "v33",
 				"_nodeId": "versionProperties",
 			},
-		}),
+		},
 	}
 }
 

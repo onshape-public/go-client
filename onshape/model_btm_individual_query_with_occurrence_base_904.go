@@ -719,20 +719,6 @@ func (dst *BTMIndividualQueryWithOccurrenceBase904) UnmarshalJSON(data []byte) e
 		}
 	}
 
-	// check if the discriminator value is 'BTMInferenceQueryWithOccurrence-1083'
-	if jsonDict["btType"] == "BTMInferenceQueryWithOccurrence-1083" {
-		// try to unmarshal JSON data into BTMInferenceQueryWithOccurrence1083
-		var qr *BTMInferenceQueryWithOccurrence1083
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryWithOccurrenceBase904 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryWithOccurrenceBase904 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrenceBase904 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMMeshPointQuery-1183'
 	if jsonDict["btType"] == "BTMMeshPointQuery-1183" {
 		// try to unmarshal JSON data into BTMMeshPointQuery1183
@@ -744,6 +730,20 @@ func (dst *BTMIndividualQueryWithOccurrenceBase904) UnmarshalJSON(data []byte) e
 		} else {
 			dst.implBTMIndividualQueryWithOccurrenceBase904 = nil
 			return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrenceBase904 as BTMMeshPointQuery1183: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMInferenceQueryWithOccurrence-1083'
+	if jsonDict["btType"] == "BTMInferenceQueryWithOccurrence-1083" {
+		// try to unmarshal JSON data into BTMInferenceQueryWithOccurrence1083
+		var qr *BTMInferenceQueryWithOccurrence1083
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryWithOccurrenceBase904 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryWithOccurrenceBase904 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrenceBase904 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
 		}
 	}
 

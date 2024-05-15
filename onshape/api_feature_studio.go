@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// FeatureStudioApiService FeatureStudioApi service
-type FeatureStudioApiService service
+// FeatureStudioAPIService FeatureStudioAPI service
+type FeatureStudioAPIService service
 
 type ApiCreateFeatureStudioRequest struct {
 	ctx                  context.Context
-	ApiService           *FeatureStudioApiService
+	ApiService           *FeatureStudioAPIService
 	did                  string
 	wid                  string
 	bTModelElementParams *BTModelElementParams
@@ -48,7 +48,7 @@ Specify the name for the new tab in the request body.
 	@param wid
 	@return ApiCreateFeatureStudioRequest
 */
-func (a *FeatureStudioApiService) CreateFeatureStudio(ctx context.Context, did string, wid string) ApiCreateFeatureStudioRequest {
+func (a *FeatureStudioAPIService) CreateFeatureStudio(ctx context.Context, did string, wid string) ApiCreateFeatureStudioRequest {
 	return ApiCreateFeatureStudioRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -60,7 +60,7 @@ func (a *FeatureStudioApiService) CreateFeatureStudio(ctx context.Context, did s
 // Execute executes the request
 //
 //	@return BTDocumentElementInfo
-func (a *FeatureStudioApiService) CreateFeatureStudioExecute(r ApiCreateFeatureStudioRequest) (*BTDocumentElementInfo, *http.Response, error) {
+func (a *FeatureStudioAPIService) CreateFeatureStudioExecute(r ApiCreateFeatureStudioRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -68,7 +68,7 @@ func (a *FeatureStudioApiService) CreateFeatureStudioExecute(r ApiCreateFeatureS
 		localVarReturnValue *BTDocumentElementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioApiService.CreateFeatureStudio")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioAPIService.CreateFeatureStudio")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -149,7 +149,7 @@ func (a *FeatureStudioApiService) CreateFeatureStudioExecute(r ApiCreateFeatureS
 
 type ApiGetFeatureStudioContentsRequest struct {
 	ctx        context.Context
-	ApiService *FeatureStudioApiService
+	ApiService *FeatureStudioAPIService
 	did        string
 	wvm        string
 	wvmid      string
@@ -170,7 +170,7 @@ GetFeatureStudioContents Get the text for a Feature Studio element.
 	@param eid
 	@return ApiGetFeatureStudioContentsRequest
 */
-func (a *FeatureStudioApiService) GetFeatureStudioContents(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureStudioContentsRequest {
+func (a *FeatureStudioAPIService) GetFeatureStudioContents(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureStudioContentsRequest {
 	return ApiGetFeatureStudioContentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -184,7 +184,7 @@ func (a *FeatureStudioApiService) GetFeatureStudioContents(ctx context.Context, 
 // Execute executes the request
 //
 //	@return BTFeatureStudioContents2239
-func (a *FeatureStudioApiService) GetFeatureStudioContentsExecute(r ApiGetFeatureStudioContentsRequest) (*BTFeatureStudioContents2239, *http.Response, error) {
+func (a *FeatureStudioAPIService) GetFeatureStudioContentsExecute(r ApiGetFeatureStudioContentsRequest) (*BTFeatureStudioContents2239, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -192,7 +192,7 @@ func (a *FeatureStudioApiService) GetFeatureStudioContentsExecute(r ApiGetFeatur
 		localVarReturnValue *BTFeatureStudioContents2239
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioApiService.GetFeatureStudioContents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioAPIService.GetFeatureStudioContents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -270,7 +270,7 @@ func (a *FeatureStudioApiService) GetFeatureStudioContentsExecute(r ApiGetFeatur
 
 type ApiGetFeatureStudioSpecsRequest struct {
 	ctx        context.Context
-	ApiService *FeatureStudioApiService
+	ApiService *FeatureStudioAPIService
 	did        string
 	wvm        string
 	wvmid      string
@@ -291,7 +291,7 @@ GetFeatureStudioSpecs Get the feature specs for a Feature Studio element.
 	@param eid
 	@return ApiGetFeatureStudioSpecsRequest
 */
-func (a *FeatureStudioApiService) GetFeatureStudioSpecs(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureStudioSpecsRequest {
+func (a *FeatureStudioAPIService) GetFeatureStudioSpecs(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureStudioSpecsRequest {
 	return ApiGetFeatureStudioSpecsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -305,7 +305,7 @@ func (a *FeatureStudioApiService) GetFeatureStudioSpecs(ctx context.Context, did
 // Execute executes the request
 //
 //	@return BTFeatureSpecsResponse664
-func (a *FeatureStudioApiService) GetFeatureStudioSpecsExecute(r ApiGetFeatureStudioSpecsRequest) (*BTFeatureSpecsResponse664, *http.Response, error) {
+func (a *FeatureStudioAPIService) GetFeatureStudioSpecsExecute(r ApiGetFeatureStudioSpecsRequest) (*BTFeatureSpecsResponse664, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -313,7 +313,7 @@ func (a *FeatureStudioApiService) GetFeatureStudioSpecsExecute(r ApiGetFeatureSt
 		localVarReturnValue *BTFeatureSpecsResponse664
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioApiService.GetFeatureStudioSpecs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioAPIService.GetFeatureStudioSpecs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -391,7 +391,7 @@ func (a *FeatureStudioApiService) GetFeatureStudioSpecsExecute(r ApiGetFeatureSt
 
 type ApiUpdateFeatureStudioContentsRequest struct {
 	ctx                         context.Context
-	ApiService                  *FeatureStudioApiService
+	ApiService                  *FeatureStudioAPIService
 	did                         string
 	wvm                         string
 	wvmid                       string
@@ -418,7 +418,7 @@ UpdateFeatureStudioContents Update the text for a Feature Studio element.
 	@param eid
 	@return ApiUpdateFeatureStudioContentsRequest
 */
-func (a *FeatureStudioApiService) UpdateFeatureStudioContents(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateFeatureStudioContentsRequest {
+func (a *FeatureStudioAPIService) UpdateFeatureStudioContents(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateFeatureStudioContentsRequest {
 	return ApiUpdateFeatureStudioContentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -432,7 +432,7 @@ func (a *FeatureStudioApiService) UpdateFeatureStudioContents(ctx context.Contex
 // Execute executes the request
 //
 //	@return BTFeatureStudioContents2239
-func (a *FeatureStudioApiService) UpdateFeatureStudioContentsExecute(r ApiUpdateFeatureStudioContentsRequest) (*BTFeatureStudioContents2239, *http.Response, error) {
+func (a *FeatureStudioAPIService) UpdateFeatureStudioContentsExecute(r ApiUpdateFeatureStudioContentsRequest) (*BTFeatureStudioContents2239, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -440,7 +440,7 @@ func (a *FeatureStudioApiService) UpdateFeatureStudioContentsExecute(r ApiUpdate
 		localVarReturnValue *BTFeatureStudioContents2239
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioApiService.UpdateFeatureStudioContents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FeatureStudioAPIService.UpdateFeatureStudioContents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

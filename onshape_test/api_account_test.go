@@ -7,7 +7,7 @@ import (
 )
 
 func TestAccountAPI(t *testing.T) {
-    InitializeTester[*onshape.AccountApiService](t)
+    InitializeTester[*onshape.AccountAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetPlanPurchasesRequest{},

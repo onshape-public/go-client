@@ -68,7 +68,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			appElementParams.SetJsonTree(propMap)
 
 			appElementModifyInfo, rawResp, err :=
-				client.AppElementApi.CreateElement(ctx, did, wid).BTAppElementParams(*appElementParams).Execute()
+				client.AppElementAPI.CreateElement(ctx, did, wid).BTAppElementParams(*appElementParams).Execute()
 
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
@@ -77,7 +77,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			}
 			eid := appElementModifyInfo.GetElementId()
 
-			appElementContentInfo, rawResp, err := client.AppElementApi.GetSubElementContent(ctx, did, "w", wid, eid).Execute()
+			appElementContentInfo, rawResp, err := client.AppElementAPI.GetSubElementContent(ctx, did, "w", wid, eid).Execute()
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			}
@@ -87,7 +87,7 @@ func TestCreateAndGetAppElement(t *testing.T) {
 				}
 			}
 			//Check the JSONTreeContent
-			jsonResponse, rawResp, err := client.AppElementApi.GetJson(ctx, did, "w", wid, eid).Execute()
+			jsonResponse, rawResp, err := client.AppElementAPI.GetJson(ctx, did, "w", wid, eid).Execute()
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			}
@@ -127,10 +127,10 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			}
 			btjEditInsert.SetValue(value)
 			bTAppElementUpdateParams.SetJsonTreeEdit(*btjEditInsert.AsBTJEdit3734())
-			client.AppElementApi.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*bTAppElementUpdateParams).Execute()
+			client.AppElementAPI.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*bTAppElementUpdateParams).Execute()
 
 			//Now get the JSONTree data again and see if the "chapterProperties" are there ...
-			jsonResponse, rawResp, err = client.AppElementApi.GetJson(ctx, did, "w", wid, eid).Execute()
+			jsonResponse, rawResp, err = client.AppElementAPI.GetJson(ctx, did, "w", wid, eid).Execute()
 			if err != nil || (rawResp != nil && rawResp.StatusCode >= 300) {
 				t.Error("err: ", err, " -- Response status: ", rawResp)
 			}
@@ -148,11 +148,11 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			require.NoError(t, err, "Can't stat file")
 			hf := onshape.NewHttpFileFromOsFile(f)
 
-			_, _, err = client.AppElementApi.UploadBlobSubelement(ctx, did, wid, eid, "blob0001").Description("Test Blob Element").File(hf).Execute()
+			_, _, err = client.AppElementAPI.UploadBlobSubelement(ctx, did, wid, eid, "blob0001").Description("Test Blob Element").File(hf).Execute()
 			require.NoError(t, err, "Error Uploading Blob ...")
 
 			//Read Blob data ...
-			_, resp, err := client.AppElementApi.DownloadBlobSubelementWorkspace(ctx, did, wid, eid, "blob0001").Execute()
+			_, resp, err := client.AppElementAPI.DownloadBlobSubelementWorkspace(ctx, did, wid, eid, "blob0001").Execute()
 			if err != nil {
 				//openapi-generator 5.1.1 is trying to be smart and create a decode call for xml and json but we have neither
 				//so check the error and move on ...
@@ -202,7 +202,7 @@ func TestCreateBulkAppElement(t *testing.T) {
 			bulkAppElementParams.SetDescription("bulk test creation")
 
 			appElementBulkCreateInfo, rawResp, err :=
-				client.AppElementApi.BulkCreateElement(ctx, did, wid).BTAppElementBulkCreateParams(*bulkAppElementParams).Execute()
+				client.AppElementAPI.BulkCreateElement(ctx, did, wid).BTAppElementBulkCreateParams(*bulkAppElementParams).Execute()
 			require.NoError(t, err, "Error Creating Bulk App Element")
 			require.NotNil(t, rawResp, "Response should not be nil")
 			require.True(t, rawResp.StatusCode < 300, "Status code should be less than 300")

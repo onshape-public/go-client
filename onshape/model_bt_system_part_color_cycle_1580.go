@@ -16,6 +16,7 @@ import (
 
 // BTSystemPartColorCycle1580 struct for BTSystemPartColorCycle1580
 type BTSystemPartColorCycle1580 struct {
+	BTBasePartColorCycle2614
 	BtType  *string                   `json:"btType,omitempty"`
 	Version *GBTPartColorCycleVersion `json:"version,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTSystemPartColorCycle1580) SetVersion(v GBTPartColorCycleVersion) {
 
 func (o BTSystemPartColorCycle1580) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTBasePartColorCycle2614, errBTBasePartColorCycle2614 := json.Marshal(o.BTBasePartColorCycle2614)
+	if errBTBasePartColorCycle2614 != nil {
+		return []byte{}, errBTBasePartColorCycle2614
+	}
+	errBTBasePartColorCycle2614 = json.Unmarshal([]byte(serializedBTBasePartColorCycle2614), &toSerialize)
+	if errBTBasePartColorCycle2614 != nil {
+		return []byte{}, errBTBasePartColorCycle2614
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

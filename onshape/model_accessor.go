@@ -21,7 +21,7 @@ type Accessor struct {
 	ComponentType *int32                            `json:"componentType,omitempty"`
 	Count         *int32                            `json:"count,omitempty"`
 	Extensions    map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras        *map[string]interface{}           `json:"extras,omitempty"`
+	Extras        map[string]interface{}            `json:"extras,omitempty"`
 	Max           []float32                         `json:"max,omitempty"`
 	Min           []float32                         `json:"min,omitempty"`
 	Name          *string                           `json:"name,omitempty"`
@@ -213,12 +213,12 @@ func (o *Accessor) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Accessor) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *Accessor) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -236,7 +236,7 @@ func (o *Accessor) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *Accessor) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetMax returns the Max field value if set, zero value otherwise.

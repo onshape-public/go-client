@@ -16,6 +16,7 @@ import (
 
 // BTMSuppressionStateConfigured2598 struct for BTMSuppressionStateConfigured2598
 type BTMSuppressionStateConfigured2598 struct {
+	BTMSuppressionState1924
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                 *string                  `json:"importMicroversion,omitempty"`
@@ -269,6 +270,14 @@ func (o *BTMSuppressionStateConfigured2598) SetValuesFieldIndex(v int32) {
 
 func (o BTMSuppressionStateConfigured2598) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSuppressionState1924, errBTMSuppressionState1924 := json.Marshal(o.BTMSuppressionState1924)
+	if errBTMSuppressionState1924 != nil {
+		return []byte{}, errBTMSuppressionState1924
+	}
+	errBTMSuppressionState1924 = json.Unmarshal([]byte(serializedBTMSuppressionState1924), &toSerialize)
+	if errBTMSuppressionState1924 != nil {
+		return []byte{}, errBTMSuppressionState1924
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

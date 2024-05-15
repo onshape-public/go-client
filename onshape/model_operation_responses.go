@@ -16,10 +16,13 @@ import (
 
 // OperationResponses struct for OperationResponses
 type OperationResponses struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Default    *ApiResponse                      `json:"default,omitempty"`
-	Empty      *bool                             `json:"empty,omitempty"`
+	Extensions           map[string]map[string]interface{} `json:"extensions,omitempty"`
+	Default              *ApiResponse                      `json:"default,omitempty"`
+	Empty                *bool                             `json:"empty,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OperationResponses OperationResponses
 
 // NewOperationResponses instantiates a new OperationResponses object
 // This constructor will assign default values to properties that have it defined,
@@ -145,7 +148,31 @@ func (o OperationResponses) MarshalJSON() ([]byte, error) {
 	if o.Empty != nil {
 		toSerialize["empty"] = o.Empty
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return json.Marshal(toSerialize)
+}
+
+func (o *OperationResponses) UnmarshalJSON(bytes []byte) (err error) {
+	varOperationResponses := _OperationResponses{}
+
+	if err = json.Unmarshal(bytes, &varOperationResponses); err == nil {
+		*o = OperationResponses(varOperationResponses)
+	}
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "extensions")
+		delete(additionalProperties, "default")
+		delete(additionalProperties, "empty")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOperationResponses struct {

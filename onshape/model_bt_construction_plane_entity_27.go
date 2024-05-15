@@ -16,6 +16,7 @@ import (
 
 // BTConstructionPlaneEntity27 struct for BTConstructionPlaneEntity27
 type BTConstructionPlaneEntity27 struct {
+	BTFeatureEntity34
 	BtType                 *string                       `json:"btType,omitempty"`
 	CopyWithoutGeometry    *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
 	Decompressed           *BTBaseEntityData33           `json:"decompressed,omitempty"`
@@ -367,6 +368,14 @@ func (o *BTConstructionPlaneEntity27) SetIsDefault(v bool) {
 
 func (o BTConstructionPlaneEntity27) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureEntity34, errBTFeatureEntity34 := json.Marshal(o.BTFeatureEntity34)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
+	errBTFeatureEntity34 = json.Unmarshal([]byte(serializedBTFeatureEntity34), &toSerialize)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

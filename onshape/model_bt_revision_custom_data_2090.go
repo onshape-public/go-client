@@ -16,6 +16,7 @@ import (
 
 // BTRevisionCustomData2090 struct for BTRevisionCustomData2090
 type BTRevisionCustomData2090 struct {
+	BTReferenceCustomData1551
 	BtType                 *string `json:"btType,omitempty"`
 	PartNumber             *string `json:"partNumber,omitempty"`
 	Revision               *string `json:"revision,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTRevisionCustomData2090) SetValidRevisionReference(v bool) {
 
 func (o BTRevisionCustomData2090) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTReferenceCustomData1551, errBTReferenceCustomData1551 := json.Marshal(o.BTReferenceCustomData1551)
+	if errBTReferenceCustomData1551 != nil {
+		return []byte{}, errBTReferenceCustomData1551
+	}
+	errBTReferenceCustomData1551 = json.Unmarshal([]byte(serializedBTReferenceCustomData1551), &toSerialize)
+	if errBTReferenceCustomData1551 != nil {
+		return []byte{}, errBTReferenceCustomData1551
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

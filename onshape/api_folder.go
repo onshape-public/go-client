@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// FolderApiService FolderApi service
-type FolderApiService service
+// FolderAPIService FolderAPI service
+type FolderAPIService service
 
 type ApiGetFolderAclRequest struct {
 	ctx        context.Context
-	ApiService *FolderApiService
+	ApiService *FolderAPIService
 	fid        string
 }
 
@@ -69,7 +69,7 @@ Returns the ACL of permission objects. Each object contains:
     @param fid
     @return ApiGetFolderAclRequest
 */
-func (a *FolderApiService) GetFolderAcl(ctx context.Context, fid string) ApiGetFolderAclRequest {
+func (a *FolderAPIService) GetFolderAcl(ctx context.Context, fid string) ApiGetFolderAclRequest {
 	return ApiGetFolderAclRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -80,7 +80,7 @@ func (a *FolderApiService) GetFolderAcl(ctx context.Context, fid string) ApiGetF
 // Execute executes the request
 //
 //	@return BTAclInfo
-func (a *FolderApiService) GetFolderAclExecute(r ApiGetFolderAclRequest) (*BTAclInfo, *http.Response, error) {
+func (a *FolderAPIService) GetFolderAclExecute(r ApiGetFolderAclRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -88,7 +88,7 @@ func (a *FolderApiService) GetFolderAclExecute(r ApiGetFolderAclRequest) (*BTAcl
 		localVarReturnValue *BTAclInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FolderApiService.GetFolderAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FolderAPIService.GetFolderAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -163,7 +163,7 @@ func (a *FolderApiService) GetFolderAclExecute(r ApiGetFolderAclRequest) (*BTAcl
 
 type ApiShareRequest struct {
 	ctx           context.Context
-	ApiService    *FolderApiService
+	ApiService    *FolderAPIService
 	fid           string
 	bTShareParams *BTShareParams
 }
@@ -217,7 +217,7 @@ Share Share folder with an entity.
     @param fid
     @return ApiShareRequest
 */
-func (a *FolderApiService) Share(ctx context.Context, fid string) ApiShareRequest {
+func (a *FolderAPIService) Share(ctx context.Context, fid string) ApiShareRequest {
 	return ApiShareRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -228,7 +228,7 @@ func (a *FolderApiService) Share(ctx context.Context, fid string) ApiShareReques
 // Execute executes the request
 //
 //	@return BTAclInfo
-func (a *FolderApiService) ShareExecute(r ApiShareRequest) (*BTAclInfo, *http.Response, error) {
+func (a *FolderAPIService) ShareExecute(r ApiShareRequest) (*BTAclInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -236,7 +236,7 @@ func (a *FolderApiService) ShareExecute(r ApiShareRequest) (*BTAclInfo, *http.Re
 		localVarReturnValue *BTAclInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FolderApiService.Share")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FolderAPIService.Share")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -316,7 +316,7 @@ func (a *FolderApiService) ShareExecute(r ApiShareRequest) (*BTAclInfo, *http.Re
 
 type ApiUnShareRequest struct {
 	ctx        context.Context
-	ApiService *FolderApiService
+	ApiService *FolderAPIService
 	fid        string
 	eid        string
 	entryType  *int32
@@ -349,7 +349,7 @@ UnShare Remove permissions from the folder for the specified Access Control List
 	@param eid
 	@return ApiUnShareRequest
 */
-func (a *FolderApiService) UnShare(ctx context.Context, fid string, eid string) ApiUnShareRequest {
+func (a *FolderAPIService) UnShare(ctx context.Context, fid string, eid string) ApiUnShareRequest {
 	return ApiUnShareRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -361,7 +361,7 @@ func (a *FolderApiService) UnShare(ctx context.Context, fid string, eid string) 
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *FolderApiService) UnShareExecute(r ApiUnShareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *FolderAPIService) UnShareExecute(r ApiUnShareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -369,7 +369,7 @@ func (a *FolderApiService) UnShareExecute(r ApiUnShareRequest) (map[string]inter
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FolderApiService.UnShare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FolderAPIService.UnShare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

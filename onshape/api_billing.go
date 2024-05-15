@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// BillingApiService BillingApi service
-type BillingApiService service
+// BillingAPIService BillingAPI service
+type BillingAPIService service
 
 type ApiGetClientPlansRequest struct {
 	ctx        context.Context
-	ApiService *BillingApiService
+	ApiService *BillingAPIService
 	cid        string
 }
 
@@ -40,7 +40,7 @@ This API should be used within the context of an OAuth-enabled application.
 	@param cid
 	@return ApiGetClientPlansRequest
 */
-func (a *BillingApiService) GetClientPlans(ctx context.Context, cid string) ApiGetClientPlansRequest {
+func (a *BillingAPIService) GetClientPlans(ctx context.Context, cid string) ApiGetClientPlansRequest {
 	return ApiGetClientPlansRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -49,14 +49,14 @@ func (a *BillingApiService) GetClientPlans(ctx context.Context, cid string) ApiG
 }
 
 // Execute executes the request
-func (a *BillingApiService) GetClientPlansExecute(r ApiGetClientPlansRequest) (*http.Response, error) {
+func (a *BillingAPIService) GetClientPlansExecute(r ApiGetClientPlansRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingApiService.GetClientPlans")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetClientPlans")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

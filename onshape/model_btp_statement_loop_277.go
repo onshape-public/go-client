@@ -820,6 +820,7 @@ func (v *NullableBTPStatementLoop277) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPStatementLoop277 struct {
+	BTPStatement269
 	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
@@ -1270,6 +1271,14 @@ func (o *base_BTPStatementLoop277) SetSpaceAfterLoopType(v BTPSpace10) {
 
 func (o base_BTPStatementLoop277) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPStatement269, errBTPStatement269 := json.Marshal(o.BTPStatement269)
+	if errBTPStatement269 != nil {
+		return []byte{}, errBTPStatement269
+	}
+	errBTPStatement269 = json.Unmarshal([]byte(serializedBTPStatement269), &toSerialize)
+	if errBTPStatement269 != nil {
+		return []byte{}, errBTPStatement269
+	}
 	if o.Annotation != nil {
 		toSerialize["annotation"] = o.Annotation
 	}

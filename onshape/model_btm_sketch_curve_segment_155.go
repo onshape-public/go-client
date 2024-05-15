@@ -16,6 +16,7 @@ import (
 
 // BTMSketchCurveSegment155 struct for BTMSketchCurveSegment155
 type BTMSketchCurveSegment155 struct {
+	BTMSketchCurve4
 	BtType                              *string  `json:"btType,omitempty"`
 	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
 	EntityId                            *string  `json:"entityId,omitempty"`
@@ -698,6 +699,14 @@ func (o *BTMSketchCurveSegment155) SetStartPointId(v string) {
 
 func (o BTMSketchCurveSegment155) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchCurve4, errBTMSketchCurve4 := json.Marshal(o.BTMSketchCurve4)
+	if errBTMSketchCurve4 != nil {
+		return []byte{}, errBTMSketchCurve4
+	}
+	errBTMSketchCurve4 = json.Unmarshal([]byte(serializedBTMSketchCurve4), &toSerialize)
+	if errBTMSketchCurve4 != nil {
+		return []byte{}, errBTMSketchCurve4
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

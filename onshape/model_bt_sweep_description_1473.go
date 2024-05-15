@@ -16,6 +16,7 @@ import (
 
 // BTSweepDescription1473 struct for BTSweepDescription1473
 type BTSweepDescription1473 struct {
+	BTSurfaceDescription1564
 	BtType                    *string                  `json:"btType,omitempty"`
 	Direction                 *BTVector3d389           `json:"direction,omitempty"`
 	DirectionOrientedWithFace *BTVector3d389           `json:"directionOrientedWithFace,omitempty"`
@@ -235,6 +236,14 @@ func (o *BTSweepDescription1473) SetProfile(v BTSplineDescription2118) {
 
 func (o BTSweepDescription1473) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSurfaceDescription1564, errBTSurfaceDescription1564 := json.Marshal(o.BTSurfaceDescription1564)
+	if errBTSurfaceDescription1564 != nil {
+		return []byte{}, errBTSurfaceDescription1564
+	}
+	errBTSurfaceDescription1564 = json.Unmarshal([]byte(serializedBTSurfaceDescription1564), &toSerialize)
+	if errBTSurfaceDescription1564 != nil {
+		return []byte{}, errBTSurfaceDescription1564
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

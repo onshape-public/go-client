@@ -16,6 +16,7 @@ import (
 
 // BTTableCrossHighlightData1753 struct for BTTableCrossHighlightData1753
 type BTTableCrossHighlightData1753 struct {
+	BTTableBaseCrossHighlightData2609
 	// Type of JSON object.
 	BtType              *string  `json:"btType,omitempty"`
 	DeterministicIdList []string `json:"deterministicIdList,omitempty"`
@@ -137,6 +138,14 @@ func (o *BTTableCrossHighlightData1753) SetFeatureIdList(v []string) {
 
 func (o BTTableCrossHighlightData1753) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableBaseCrossHighlightData2609, errBTTableBaseCrossHighlightData2609 := json.Marshal(o.BTTableBaseCrossHighlightData2609)
+	if errBTTableBaseCrossHighlightData2609 != nil {
+		return []byte{}, errBTTableBaseCrossHighlightData2609
+	}
+	errBTTableBaseCrossHighlightData2609 = json.Unmarshal([]byte(serializedBTTableBaseCrossHighlightData2609), &toSerialize)
+	if errBTTableBaseCrossHighlightData2609 != nil {
+		return []byte{}, errBTTableBaseCrossHighlightData2609
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

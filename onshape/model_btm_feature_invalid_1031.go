@@ -16,6 +16,7 @@ import (
 
 // BTMFeatureInvalid1031 struct for BTMFeatureInvalid1031
 type BTMFeatureInvalid1031 struct {
+	BTMFeature134
 	BtType *string `json:"btType,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
 	FeatureId *string `json:"featureId,omitempty"`
@@ -478,6 +479,14 @@ func (o *BTMFeatureInvalid1031) SetVariableStudioReference(v bool) {
 
 func (o BTMFeatureInvalid1031) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMFeature134, errBTMFeature134 := json.Marshal(o.BTMFeature134)
+	if errBTMFeature134 != nil {
+		return []byte{}, errBTMFeature134
+	}
+	errBTMFeature134 = json.Unmarshal([]byte(serializedBTMFeature134), &toSerialize)
+	if errBTMFeature134 != nil {
+		return []byte{}, errBTMFeature134
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

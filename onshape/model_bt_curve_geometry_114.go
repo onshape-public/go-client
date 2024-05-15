@@ -160,34 +160,6 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTCurveGeometryControlPointSpline-2197'
-	if jsonDict["btType"] == "BTCurveGeometryControlPointSpline-2197" {
-		// try to unmarshal JSON data into BTCurveGeometryControlPointSpline2197
-		var qr *BTCurveGeometryControlPointSpline2197
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTCurveGeometry114 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryControlPointSpline2197: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTCurveGeometryEllipse-1189'
-	if jsonDict["btType"] == "BTCurveGeometryEllipse-1189" {
-		// try to unmarshal JSON data into BTCurveGeometryEllipse1189
-		var qr *BTCurveGeometryEllipse1189
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTCurveGeometry114 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTCurveGeometry114 = nil
-			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryEllipse1189: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTCurveGeometryInterpolatedSpline-116'
 	if jsonDict["btType"] == "BTCurveGeometryInterpolatedSpline-116" {
 		// try to unmarshal JSON data into BTCurveGeometryInterpolatedSpline116
@@ -227,6 +199,34 @@ func (dst *BTCurveGeometry114) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTCurveGeometry114 = nil
 			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometrySpline118: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTCurveGeometryControlPointSpline-2197'
+	if jsonDict["btType"] == "BTCurveGeometryControlPointSpline-2197" {
+		// try to unmarshal JSON data into BTCurveGeometryControlPointSpline2197
+		var qr *BTCurveGeometryControlPointSpline2197
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTCurveGeometry114 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTCurveGeometry114 = nil
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryControlPointSpline2197: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTCurveGeometryEllipse-1189'
+	if jsonDict["btType"] == "BTCurveGeometryEllipse-1189" {
+		// try to unmarshal JSON data into BTCurveGeometryEllipse1189
+		var qr *BTCurveGeometryEllipse1189
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTCurveGeometry114 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTCurveGeometry114 = nil
+			return fmt.Errorf("failed to unmarshal BTCurveGeometry114 as BTCurveGeometryEllipse1189: %s", err.Error())
 		}
 	}
 

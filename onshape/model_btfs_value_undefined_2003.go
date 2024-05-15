@@ -16,6 +16,7 @@ import (
 
 // BTFSValueUndefined2003 struct for BTFSValueUndefined2003
 type BTFSValueUndefined2003 struct {
+	BTFSValue1888
 	BtType  string  `json:"btType"`
 	TypeTag *string `json:"typeTag,omitempty"`
 }
@@ -96,6 +97,14 @@ func (o *BTFSValueUndefined2003) SetTypeTag(v string) {
 
 func (o BTFSValueUndefined2003) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFSValue1888, errBTFSValue1888 := json.Marshal(o.BTFSValue1888)
+	if errBTFSValue1888 != nil {
+		return []byte{}, errBTFSValue1888
+	}
+	errBTFSValue1888 = json.Unmarshal([]byte(serializedBTFSValue1888), &toSerialize)
+	if errBTFSValue1888 != nil {
+		return []byte{}, errBTFSValue1888
+	}
 	if true {
 		toSerialize["btType"] = o.BtType
 	}

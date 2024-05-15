@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// PublicationApiService PublicationApi service
-type PublicationApiService service
+// PublicationAPIService PublicationAPI service
+type PublicationAPIService service
 
 type ApiAddItemToPublicationRequest struct {
 	ctx                     context.Context
-	ApiService              *PublicationApiService
+	ApiService              *PublicationAPIService
 	pid                     string
 	bTPublicationItemParams *BTPublicationItemParams
 }
@@ -44,7 +44,7 @@ AddItemToPublication Add an item in a publication.
 	@param pid Publication ID.
 	@return ApiAddItemToPublicationRequest
 */
-func (a *PublicationApiService) AddItemToPublication(ctx context.Context, pid string) ApiAddItemToPublicationRequest {
+func (a *PublicationAPIService) AddItemToPublication(ctx context.Context, pid string) ApiAddItemToPublicationRequest {
 	return ApiAddItemToPublicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -55,7 +55,7 @@ func (a *PublicationApiService) AddItemToPublication(ctx context.Context, pid st
 // Execute executes the request
 //
 //	@return BTPublicationInfo
-func (a *PublicationApiService) AddItemToPublicationExecute(r ApiAddItemToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
+func (a *PublicationAPIService) AddItemToPublicationExecute(r ApiAddItemToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -63,7 +63,7 @@ func (a *PublicationApiService) AddItemToPublicationExecute(r ApiAddItemToPublic
 		localVarReturnValue *BTPublicationInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.AddItemToPublication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationAPIService.AddItemToPublication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -143,7 +143,7 @@ func (a *PublicationApiService) AddItemToPublicationExecute(r ApiAddItemToPublic
 
 type ApiAddItemsToPublicationRequest struct {
 	ctx                         context.Context
-	ApiService                  *PublicationApiService
+	ApiService                  *PublicationAPIService
 	pid                         string
 	bTPublicationBulkItemParams *BTPublicationBulkItemParams
 }
@@ -164,7 +164,7 @@ AddItemsToPublication Add publication items in bulk.
 	@param pid Publication ID.
 	@return ApiAddItemsToPublicationRequest
 */
-func (a *PublicationApiService) AddItemsToPublication(ctx context.Context, pid string) ApiAddItemsToPublicationRequest {
+func (a *PublicationAPIService) AddItemsToPublication(ctx context.Context, pid string) ApiAddItemsToPublicationRequest {
 	return ApiAddItemsToPublicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -175,7 +175,7 @@ func (a *PublicationApiService) AddItemsToPublication(ctx context.Context, pid s
 // Execute executes the request
 //
 //	@return BTPublicationInfo
-func (a *PublicationApiService) AddItemsToPublicationExecute(r ApiAddItemsToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
+func (a *PublicationAPIService) AddItemsToPublicationExecute(r ApiAddItemsToPublicationRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -183,7 +183,7 @@ func (a *PublicationApiService) AddItemsToPublicationExecute(r ApiAddItemsToPubl
 		localVarReturnValue *BTPublicationInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.AddItemsToPublication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationAPIService.AddItemsToPublication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -263,7 +263,7 @@ func (a *PublicationApiService) AddItemsToPublicationExecute(r ApiAddItemsToPubl
 
 type ApiCreatePublicationRequest struct {
 	ctx                 context.Context
-	ApiService          *PublicationApiService
+	ApiService          *PublicationAPIService
 	bTPublicationParams *BTPublicationParams
 }
 
@@ -282,7 +282,7 @@ CreatePublication Create a new publication.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreatePublicationRequest
 */
-func (a *PublicationApiService) CreatePublication(ctx context.Context) ApiCreatePublicationRequest {
+func (a *PublicationAPIService) CreatePublication(ctx context.Context) ApiCreatePublicationRequest {
 	return ApiCreatePublicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -292,7 +292,7 @@ func (a *PublicationApiService) CreatePublication(ctx context.Context) ApiCreate
 // Execute executes the request
 //
 //	@return BTPublicationInfo
-func (a *PublicationApiService) CreatePublicationExecute(r ApiCreatePublicationRequest) (*BTPublicationInfo, *http.Response, error) {
+func (a *PublicationAPIService) CreatePublicationExecute(r ApiCreatePublicationRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -300,7 +300,7 @@ func (a *PublicationApiService) CreatePublicationExecute(r ApiCreatePublicationR
 		localVarReturnValue *BTPublicationInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.CreatePublication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationAPIService.CreatePublication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -379,7 +379,7 @@ func (a *PublicationApiService) CreatePublicationExecute(r ApiCreatePublicationR
 
 type ApiDeletePublicationRequest struct {
 	ctx        context.Context
-	ApiService *PublicationApiService
+	ApiService *PublicationAPIService
 	pid        string
 	forever    *bool
 }
@@ -401,7 +401,7 @@ DeletePublication Delete a publication.
 	@param pid Publication ID.
 	@return ApiDeletePublicationRequest
 */
-func (a *PublicationApiService) DeletePublication(ctx context.Context, pid string) ApiDeletePublicationRequest {
+func (a *PublicationAPIService) DeletePublication(ctx context.Context, pid string) ApiDeletePublicationRequest {
 	return ApiDeletePublicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -412,7 +412,7 @@ func (a *PublicationApiService) DeletePublication(ctx context.Context, pid strin
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *PublicationApiService) DeletePublicationExecute(r ApiDeletePublicationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PublicationAPIService) DeletePublicationExecute(r ApiDeletePublicationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -420,7 +420,7 @@ func (a *PublicationApiService) DeletePublicationExecute(r ApiDeletePublicationR
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.DeletePublication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationAPIService.DeletePublication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -498,7 +498,7 @@ func (a *PublicationApiService) DeletePublicationExecute(r ApiDeletePublicationR
 
 type ApiDeletePublicationItemRequest struct {
 	ctx        context.Context
-	ApiService *PublicationApiService
+	ApiService *PublicationAPIService
 	pid        string
 	iid        string
 }
@@ -515,7 +515,7 @@ DeletePublicationItem Remove an item from a publication.
 	@param iid Publication item ID.
 	@return ApiDeletePublicationItemRequest
 */
-func (a *PublicationApiService) DeletePublicationItem(ctx context.Context, pid string, iid string) ApiDeletePublicationItemRequest {
+func (a *PublicationAPIService) DeletePublicationItem(ctx context.Context, pid string, iid string) ApiDeletePublicationItemRequest {
 	return ApiDeletePublicationItemRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -527,7 +527,7 @@ func (a *PublicationApiService) DeletePublicationItem(ctx context.Context, pid s
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *PublicationApiService) DeletePublicationItemExecute(r ApiDeletePublicationItemRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PublicationAPIService) DeletePublicationItemExecute(r ApiDeletePublicationItemRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -535,7 +535,7 @@ func (a *PublicationApiService) DeletePublicationItemExecute(r ApiDeletePublicat
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.DeletePublicationItem")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationAPIService.DeletePublicationItem")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -611,7 +611,7 @@ func (a *PublicationApiService) DeletePublicationItemExecute(r ApiDeletePublicat
 
 type ApiGetPublicationItemsRequest struct {
 	ctx        context.Context
-	ApiService *PublicationApiService
+	ApiService *PublicationAPIService
 	pid        string
 }
 
@@ -626,7 +626,7 @@ GetPublicationItems Get all items in a publication.
 	@param pid Publication ID.
 	@return ApiGetPublicationItemsRequest
 */
-func (a *PublicationApiService) GetPublicationItems(ctx context.Context, pid string) ApiGetPublicationItemsRequest {
+func (a *PublicationAPIService) GetPublicationItems(ctx context.Context, pid string) ApiGetPublicationItemsRequest {
 	return ApiGetPublicationItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -637,7 +637,7 @@ func (a *PublicationApiService) GetPublicationItems(ctx context.Context, pid str
 // Execute executes the request
 //
 //	@return BTPublicationInfo
-func (a *PublicationApiService) GetPublicationItemsExecute(r ApiGetPublicationItemsRequest) (*BTPublicationInfo, *http.Response, error) {
+func (a *PublicationAPIService) GetPublicationItemsExecute(r ApiGetPublicationItemsRequest) (*BTPublicationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -645,7 +645,7 @@ func (a *PublicationApiService) GetPublicationItemsExecute(r ApiGetPublicationIt
 		localVarReturnValue *BTPublicationInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.GetPublicationItems")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationAPIService.GetPublicationItems")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -720,7 +720,7 @@ func (a *PublicationApiService) GetPublicationItemsExecute(r ApiGetPublicationIt
 
 type ApiUpdatePublicationAttributesRequest struct {
 	ctx                 context.Context
-	ApiService          *PublicationApiService
+	ApiService          *PublicationAPIService
 	pid                 string
 	bTPublicationParams *BTPublicationParams
 }
@@ -741,7 +741,7 @@ UpdatePublicationAttributes Update publication's attributes name, description, a
 	@param pid Publication ID.
 	@return ApiUpdatePublicationAttributesRequest
 */
-func (a *PublicationApiService) UpdatePublicationAttributes(ctx context.Context, pid string) ApiUpdatePublicationAttributesRequest {
+func (a *PublicationAPIService) UpdatePublicationAttributes(ctx context.Context, pid string) ApiUpdatePublicationAttributesRequest {
 	return ApiUpdatePublicationAttributesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -752,7 +752,7 @@ func (a *PublicationApiService) UpdatePublicationAttributes(ctx context.Context,
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *PublicationApiService) UpdatePublicationAttributesExecute(r ApiUpdatePublicationAttributesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PublicationAPIService) UpdatePublicationAttributesExecute(r ApiUpdatePublicationAttributesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -760,7 +760,7 @@ func (a *PublicationApiService) UpdatePublicationAttributesExecute(r ApiUpdatePu
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationApiService.UpdatePublicationAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicationAPIService.UpdatePublicationAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

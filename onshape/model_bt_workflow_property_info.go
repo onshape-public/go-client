@@ -20,13 +20,13 @@ type BTWorkflowPropertyInfo struct {
 	ComputedProperty         *bool                          `json:"computedProperty,omitempty"`
 	ComputedPropertyError    *string                        `json:"computedPropertyError,omitempty"`
 	DateFormat               *string                        `json:"dateFormat,omitempty"`
-	DefaultValue             *map[string]interface{}        `json:"defaultValue,omitempty"`
+	DefaultValue             map[string]interface{}         `json:"defaultValue,omitempty"`
 	Dirty                    *bool                          `json:"dirty,omitempty"`
 	Editable                 *bool                          `json:"editable,omitempty"`
 	EditableInUi             *bool                          `json:"editableInUi,omitempty"`
 	EnumValues               []BTMetadataEnumValueInfo      `json:"enumValues,omitempty"`
 	HideInUi                 *bool                          `json:"hideInUi,omitempty"`
-	InitialValue             *map[string]interface{}        `json:"initialValue,omitempty"`
+	InitialValue             map[string]interface{}         `json:"initialValue,omitempty"`
 	IsApproverProperty       *bool                          `json:"isApproverProperty,omitempty"`
 	IsNotifierProperty       *bool                          `json:"isNotifierProperty,omitempty"`
 	Multivalued              *bool                          `json:"multivalued,omitempty"`
@@ -42,7 +42,7 @@ type BTWorkflowPropertyInfo struct {
 	UiHints                *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
 	UsersOnly              *bool                            `json:"usersOnly,omitempty"`
 	Validator              *BTMetadataPropertyValidatorInfo `json:"validator,omitempty"`
-	Value                  *map[string]interface{}          `json:"value,omitempty"`
+	Value                  map[string]interface{}           `json:"value,omitempty"`
 	ValueType              *string                          `json:"valueType,omitempty"`
 }
 
@@ -197,12 +197,12 @@ func (o *BTWorkflowPropertyInfo) GetDefaultValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.DefaultValue
+	return o.DefaultValue
 }
 
 // GetDefaultValueOk returns a tuple with the DefaultValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTWorkflowPropertyInfo) GetDefaultValueOk() (*map[string]interface{}, bool) {
+func (o *BTWorkflowPropertyInfo) GetDefaultValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.DefaultValue == nil {
 		return nil, false
 	}
@@ -220,7 +220,7 @@ func (o *BTWorkflowPropertyInfo) HasDefaultValue() bool {
 
 // SetDefaultValue gets a reference to the given map[string]interface{} and assigns it to the DefaultValue field.
 func (o *BTWorkflowPropertyInfo) SetDefaultValue(v map[string]interface{}) {
-	o.DefaultValue = &v
+	o.DefaultValue = v
 }
 
 // GetDirty returns the Dirty field value if set, zero value otherwise.
@@ -389,12 +389,12 @@ func (o *BTWorkflowPropertyInfo) GetInitialValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.InitialValue
+	return o.InitialValue
 }
 
 // GetInitialValueOk returns a tuple with the InitialValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTWorkflowPropertyInfo) GetInitialValueOk() (*map[string]interface{}, bool) {
+func (o *BTWorkflowPropertyInfo) GetInitialValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.InitialValue == nil {
 		return nil, false
 	}
@@ -412,7 +412,7 @@ func (o *BTWorkflowPropertyInfo) HasInitialValue() bool {
 
 // SetInitialValue gets a reference to the given map[string]interface{} and assigns it to the InitialValue field.
 func (o *BTWorkflowPropertyInfo) SetInitialValue(v map[string]interface{}) {
-	o.InitialValue = &v
+	o.InitialValue = v
 }
 
 // GetIsApproverProperty returns the IsApproverProperty field value if set, zero value otherwise.
@@ -869,12 +869,12 @@ func (o *BTWorkflowPropertyInfo) GetValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Value
+	return o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTWorkflowPropertyInfo) GetValueOk() (*map[string]interface{}, bool) {
+func (o *BTWorkflowPropertyInfo) GetValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -892,7 +892,7 @@ func (o *BTWorkflowPropertyInfo) HasValue() bool {
 
 // SetValue gets a reference to the given map[string]interface{} and assigns it to the Value field.
 func (o *BTWorkflowPropertyInfo) SetValue(v map[string]interface{}) {
-	o.Value = &v
+	o.Value = v
 }
 
 // GetValueType returns the ValueType field value if set, zero value otherwise.

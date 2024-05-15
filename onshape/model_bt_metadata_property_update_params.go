@@ -19,7 +19,7 @@ type BTMetadataPropertyUpdateParams struct {
 	// The id of the property that should be edited. This can be retrieved from MetadataCategory:getCategoryProperties.
 	PropertyId *string `json:"propertyId,omitempty"`
 	// The new value for the property.
-	Value *map[string]interface{} `json:"value,omitempty"`
+	Value map[string]interface{} `json:"value,omitempty"`
 }
 
 // NewBTMetadataPropertyUpdateParams instantiates a new BTMetadataPropertyUpdateParams object
@@ -77,12 +77,12 @@ func (o *BTMetadataPropertyUpdateParams) GetValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Value
+	return o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMetadataPropertyUpdateParams) GetValueOk() (*map[string]interface{}, bool) {
+func (o *BTMetadataPropertyUpdateParams) GetValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -100,7 +100,7 @@ func (o *BTMetadataPropertyUpdateParams) HasValue() bool {
 
 // SetValue gets a reference to the given map[string]interface{} and assigns it to the Value field.
 func (o *BTMetadataPropertyUpdateParams) SetValue(v map[string]interface{}) {
-	o.Value = &v
+	o.Value = v
 }
 
 func (o BTMetadataPropertyUpdateParams) MarshalJSON() ([]byte, error) {

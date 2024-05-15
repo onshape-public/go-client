@@ -17,16 +17,16 @@ import (
 // Schema struct for Schema
 type Schema struct {
 	AdditionalItems           *Schema                           `json:"additionalItems,omitempty"`
-	AdditionalPropertiesField *map[string]interface{}           `json:"additionalProperties,omitempty"`
+	AdditionalPropertiesField map[string]interface{}            `json:"additionalProperties,omitempty"`
 	AllOf                     []Schema                          `json:"allOf,omitempty"`
 	AnyOf                     []Schema                          `json:"anyOf,omitempty"`
 	BooleanSchemaValue        *bool                             `json:"booleanSchemaValue,omitempty"`
-	Const                     *map[string]interface{}           `json:"const,omitempty"`
+	Const                     map[string]interface{}            `json:"const,omitempty"`
 	Contains                  *Schema                           `json:"contains,omitempty"`
 	ContentEncoding           *string                           `json:"contentEncoding,omitempty"`
 	ContentMediaType          *string                           `json:"contentMediaType,omitempty"`
 	ContentSchema             *Schema                           `json:"contentSchema,omitempty"`
-	Default                   *map[string]interface{}           `json:"default,omitempty"`
+	Default                   map[string]interface{}            `json:"default,omitempty"`
 	DependentRequired         *map[string][]string              `json:"dependentRequired,omitempty"`
 	DependentSchemas          *map[string]Schema                `json:"dependentSchemas,omitempty"`
 	Deprecated                *bool                             `json:"deprecated,omitempty"`
@@ -34,7 +34,7 @@ type Schema struct {
 	Discriminator             *Discriminator                    `json:"discriminator,omitempty"`
 	Else                      *Schema                           `json:"else,omitempty"`
 	Enum                      []map[string]interface{}          `json:"enum,omitempty"`
-	Example                   *map[string]interface{}           `json:"example,omitempty"`
+	Example                   map[string]interface{}            `json:"example,omitempty"`
 	ExampleSetFlag            *bool                             `json:"exampleSetFlag,omitempty"`
 	Examples                  []map[string]interface{}          `json:"examples,omitempty"`
 	ExclusiveMaximum          *bool                             `json:"exclusiveMaximum,omitempty"`
@@ -52,7 +52,7 @@ type Schema struct {
 	If                        *Schema                           `json:"if,omitempty"`
 	Items                     *SchemaObject                     `json:"items,omitempty"`
 	JsonSchema                map[string]map[string]interface{} `json:"jsonSchema,omitempty"`
-	JsonSchemaImpl            *map[string]interface{}           `json:"jsonSchemaImpl,omitempty"`
+	JsonSchemaImpl            map[string]interface{}            `json:"jsonSchemaImpl,omitempty"`
 	MaxContains               *int32                            `json:"maxContains,omitempty"`
 	MaxItems                  *int32                            `json:"maxItems,omitempty"`
 	MaxLength                 *int32                            `json:"maxLength,omitempty"`
@@ -140,12 +140,12 @@ func (o *Schema) GetAdditionalPropertiesField() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.AdditionalPropertiesField
+	return o.AdditionalPropertiesField
 }
 
 // GetAdditionalPropertiesFieldOk returns a tuple with the AdditionalPropertiesField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Schema) GetAdditionalPropertiesFieldOk() (*map[string]interface{}, bool) {
+func (o *Schema) GetAdditionalPropertiesFieldOk() (map[string]interface{}, bool) {
 	if o == nil || o.AdditionalPropertiesField == nil {
 		return nil, false
 	}
@@ -163,7 +163,7 @@ func (o *Schema) HasAdditionalPropertiesField() bool {
 
 // SetAdditionalPropertiesField gets a reference to the given map[string]interface{} and assigns it to the AdditionalPropertiesField field.
 func (o *Schema) SetAdditionalPropertiesField(v map[string]interface{}) {
-	o.AdditionalPropertiesField = &v
+	o.AdditionalPropertiesField = v
 }
 
 // GetAllOf returns the AllOf field value if set, zero value otherwise.
@@ -268,12 +268,12 @@ func (o *Schema) GetConst() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Const
+	return o.Const
 }
 
 // GetConstOk returns a tuple with the Const field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Schema) GetConstOk() (*map[string]interface{}, bool) {
+func (o *Schema) GetConstOk() (map[string]interface{}, bool) {
 	if o == nil || o.Const == nil {
 		return nil, false
 	}
@@ -291,7 +291,7 @@ func (o *Schema) HasConst() bool {
 
 // SetConst gets a reference to the given map[string]interface{} and assigns it to the Const field.
 func (o *Schema) SetConst(v map[string]interface{}) {
-	o.Const = &v
+	o.Const = v
 }
 
 // GetContains returns the Contains field value if set, zero value otherwise.
@@ -428,12 +428,12 @@ func (o *Schema) GetDefault() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Default
+	return o.Default
 }
 
 // GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Schema) GetDefaultOk() (*map[string]interface{}, bool) {
+func (o *Schema) GetDefaultOk() (map[string]interface{}, bool) {
 	if o == nil || o.Default == nil {
 		return nil, false
 	}
@@ -451,7 +451,7 @@ func (o *Schema) HasDefault() bool {
 
 // SetDefault gets a reference to the given map[string]interface{} and assigns it to the Default field.
 func (o *Schema) SetDefault(v map[string]interface{}) {
-	o.Default = &v
+	o.Default = v
 }
 
 // GetDependentRequired returns the DependentRequired field value if set, zero value otherwise.
@@ -684,12 +684,12 @@ func (o *Schema) GetExample() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Example
+	return o.Example
 }
 
 // GetExampleOk returns a tuple with the Example field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Schema) GetExampleOk() (*map[string]interface{}, bool) {
+func (o *Schema) GetExampleOk() (map[string]interface{}, bool) {
 	if o == nil || o.Example == nil {
 		return nil, false
 	}
@@ -707,7 +707,7 @@ func (o *Schema) HasExample() bool {
 
 // SetExample gets a reference to the given map[string]interface{} and assigns it to the Example field.
 func (o *Schema) SetExample(v map[string]interface{}) {
-	o.Example = &v
+	o.Example = v
 }
 
 // GetExampleSetFlag returns the ExampleSetFlag field value if set, zero value otherwise.
@@ -1260,12 +1260,12 @@ func (o *Schema) GetJsonSchemaImpl() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.JsonSchemaImpl
+	return o.JsonSchemaImpl
 }
 
 // GetJsonSchemaImplOk returns a tuple with the JsonSchemaImpl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Schema) GetJsonSchemaImplOk() (*map[string]interface{}, bool) {
+func (o *Schema) GetJsonSchemaImplOk() (map[string]interface{}, bool) {
 	if o == nil || o.JsonSchemaImpl == nil {
 		return nil, false
 	}
@@ -1283,7 +1283,7 @@ func (o *Schema) HasJsonSchemaImpl() bool {
 
 // SetJsonSchemaImpl gets a reference to the given map[string]interface{} and assigns it to the JsonSchemaImpl field.
 func (o *Schema) SetJsonSchemaImpl(v map[string]interface{}) {
-	o.JsonSchemaImpl = &v
+	o.JsonSchemaImpl = v
 }
 
 // GetMaxContains returns the MaxContains field value if set, zero value otherwise.

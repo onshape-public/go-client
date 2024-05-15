@@ -539,6 +539,7 @@ func (v *NullableBTMSketchEntity3) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSketchEntity3 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
@@ -792,6 +793,14 @@ func (o *base_BTMSketchEntity3) SetParameters(v []BTMParameter1) {
 
 func (o base_BTMSketchEntity3) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

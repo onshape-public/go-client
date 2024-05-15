@@ -16,6 +16,7 @@ import (
 
 // BTCurveGeometryEllipse1189 struct for BTCurveGeometryEllipse1189
 type BTCurveGeometryEllipse1189 struct {
+	BTCurveGeometryCircle115
 	BtType      *string  `json:"btType,omitempty"`
 	Clockwise   *bool    `json:"clockwise,omitempty"`
 	Radius      *float64 `json:"radius,omitempty"`
@@ -301,6 +302,14 @@ func (o *BTCurveGeometryEllipse1189) SetMinorRadius(v float64) {
 
 func (o BTCurveGeometryEllipse1189) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveGeometryCircle115, errBTCurveGeometryCircle115 := json.Marshal(o.BTCurveGeometryCircle115)
+	if errBTCurveGeometryCircle115 != nil {
+		return []byte{}, errBTCurveGeometryCircle115
+	}
+	errBTCurveGeometryCircle115 = json.Unmarshal([]byte(serializedBTCurveGeometryCircle115), &toSerialize)
+	if errBTCurveGeometryCircle115 != nil {
+		return []byte{}, errBTCurveGeometryCircle115
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

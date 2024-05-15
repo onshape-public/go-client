@@ -16,6 +16,7 @@ import (
 
 // BTPExpressionVarReference245 struct for BTPExpressionVarReference245
 type BTPExpressionVarReference245 struct {
+	BTPExpression9
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -400,6 +401,14 @@ func (o *BTPExpressionVarReference245) SetName(v BTPName261) {
 
 func (o BTPExpressionVarReference245) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPExpression9, errBTPExpression9 := json.Marshal(o.BTPExpression9)
+	if errBTPExpression9 != nil {
+		return []byte{}, errBTPExpression9
+	}
+	errBTPExpression9 = json.Unmarshal([]byte(serializedBTPExpression9), &toSerialize)
+	if errBTPExpression9 != nil {
+		return []byte{}, errBTPExpression9
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

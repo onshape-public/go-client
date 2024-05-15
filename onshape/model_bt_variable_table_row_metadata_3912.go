@@ -16,6 +16,7 @@ import (
 
 // BTVariableTableRowMetadata3912 struct for BTVariableTableRowMetadata3912
 type BTVariableTableRowMetadata3912 struct {
+	BTTableBaseRowMetadata3181
 	BtType                   *string                            `json:"btType,omitempty"`
 	CrossHighlightDataIfAny  *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData       *BTTableBaseCrossHighlightData2609 `json:"crossHighlightData,omitempty"`
@@ -268,6 +269,14 @@ func (o *BTVariableTableRowMetadata3912) SetLastWritingFeatureNodeId(v string) {
 
 func (o BTVariableTableRowMetadata3912) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
+	if errBTTableBaseRowMetadata3181 != nil {
+		return []byte{}, errBTTableBaseRowMetadata3181
+	}
+	errBTTableBaseRowMetadata3181 = json.Unmarshal([]byte(serializedBTTableBaseRowMetadata3181), &toSerialize)
+	if errBTTableBaseRowMetadata3181 != nil {
+		return []byte{}, errBTTableBaseRowMetadata3181
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

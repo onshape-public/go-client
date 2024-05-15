@@ -7,7 +7,7 @@ import (
 )
 
 func TestVersionAPI(t *testing.T) {
-    InitializeTester[*onshape.VersionApiService](t)
+    InitializeTester[*onshape.VersionAPIService](t)
 
     OpenAPITest{
         Call: onshape.ApiGetAllVersionsRequest{},

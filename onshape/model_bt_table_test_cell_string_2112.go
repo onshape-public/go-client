@@ -16,6 +16,7 @@ import (
 
 // BTTableTestCellString2112 struct for BTTableTestCellString2112
 type BTTableTestCellString2112 struct {
+	BTTableCell1114
 	BtType        *string `json:"btType,omitempty"`
 	IsEverVisible *bool   `json:"isEverVisible,omitempty"`
 	IsReadOnly    *bool   `json:"isReadOnly,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTTableTestCellString2112) SetCellValue(v string) {
 
 func (o BTTableTestCellString2112) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableCell1114, errBTTableCell1114 := json.Marshal(o.BTTableCell1114)
+	if errBTTableCell1114 != nil {
+		return []byte{}, errBTTableCell1114
+	}
+	errBTTableCell1114 = json.Unmarshal([]byte(serializedBTTableCell1114), &toSerialize)
+	if errBTTableCell1114 != nil {
+		return []byte{}, errBTTableCell1114
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

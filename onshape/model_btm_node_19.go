@@ -30,11 +30,6 @@ func (o *BTInstanceControlNode750) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTAssemblyPattern1974AsBTMNode19 is a convenience function that returns BTAssemblyPattern1974 wrapped in BTMNode19
-func (o *BTAssemblyPattern1974) AsBTMNode19() *BTMNode19 {
-	return &BTMNode19{o}
-}
-
 // BTMFeature134AsBTMNode19 is a convenience function that returns BTMFeature134 wrapped in BTMNode19
 func (o *BTMFeature134) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -47,6 +42,11 @@ func (o *BTMIndividualQueryBase139) AsBTMNode19() *BTMNode19 {
 
 // BTMParameter1AsBTMNode19 is a convenience function that returns BTMParameter1 wrapped in BTMNode19
 func (o *BTMParameter1) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTAssemblyPattern1974AsBTMNode19 is a convenience function that returns BTAssemblyPattern1974 wrapped in BTMNode19
+func (o *BTAssemblyPattern1974) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -125,13 +125,13 @@ func (o *BTMImport136) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTInstanceFolder3627AsBTMNode19 is a convenience function that returns BTInstanceFolder3627 wrapped in BTMNode19
-func (o *BTInstanceFolder3627) AsBTMNode19() *BTMNode19 {
+// BTToleranceString3274AsBTMNode19 is a convenience function that returns BTToleranceString3274 wrapped in BTMNode19
+func (o *BTToleranceString3274) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTToleranceString3274AsBTMNode19 is a convenience function that returns BTToleranceString3274 wrapped in BTMNode19
-func (o *BTToleranceString3274) AsBTMNode19() *BTMNode19 {
+// BTInstanceFolder3627AsBTMNode19 is a convenience function that returns BTInstanceFolder3627 wrapped in BTMNode19
+func (o *BTInstanceFolder3627) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -185,6 +185,11 @@ func (o *BTParametricPartStudioChildInstance3696) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
+// BTMSketchEntity3AsBTMNode19 is a convenience function that returns BTMSketchEntity3 wrapped in BTMNode19
+func (o *BTMSketchEntity3) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
 // BTAssemblyReplicate2774AsBTMNode19 is a convenience function that returns BTAssemblyReplicate2774 wrapped in BTMNode19
 func (o *BTAssemblyReplicate2774) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -197,11 +202,6 @@ func (o *BTInstance642) AsBTMNode19() *BTMNode19 {
 
 // BTMSketchCompositeEntity893AsBTMNode19 is a convenience function that returns BTMSketchCompositeEntity893 wrapped in BTMNode19
 func (o *BTMSketchCompositeEntity893) AsBTMNode19() *BTMNode19 {
-	return &BTMNode19{o}
-}
-
-// BTMSketchEntity3AsBTMNode19 is a convenience function that returns BTMSketchEntity3 wrapped in BTMNode19
-func (o *BTMSketchEntity3) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -382,48 +382,6 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
-	// check if the discriminator value is 'BTAssemblyInstance-947'
-	if jsonDict["btType"] == "BTAssemblyInstance-947" {
-		// try to unmarshal JSON data into BTAssemblyInstance947
-		var qr *BTAssemblyInstance947
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyInstance947: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTAssemblyPattern-1974'
-	if jsonDict["btType"] == "BTAssemblyPattern-1974" {
-		// try to unmarshal JSON data into BTAssemblyPattern1974
-		var qr *BTAssemblyPattern1974
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyPattern1974: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTAssemblyReplicate-2774'
-	if jsonDict["btType"] == "BTAssemblyReplicate-2774" {
-		// try to unmarshal JSON data into BTAssemblyReplicate2774
-		var qr *BTAssemblyReplicate2774
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyReplicate2774: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTAssemblySimulationData-978'
 	if jsonDict["btType"] == "BTAssemblySimulationData-978" {
 		// try to unmarshal JSON data into BTAssemblySimulationData978
@@ -435,34 +393,6 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblySimulationData978: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTClonedInstance-2505'
-	if jsonDict["btType"] == "BTClonedInstance-2505" {
-		// try to unmarshal JSON data into BTClonedInstance2505
-		var qr *BTClonedInstance2505
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTClonedInstance2505: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTInstance-642'
-	if jsonDict["btType"] == "BTInstance-642" {
-		// try to unmarshal JSON data into BTInstance642
-		var qr *BTInstance642
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstance642: %s", err.Error())
 		}
 	}
 
@@ -491,20 +421,6 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstanceControlNode750: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTInstanceFolder-3627'
-	if jsonDict["btType"] == "BTInstanceFolder-3627" {
-		// try to unmarshal JSON data into BTInstanceFolder3627
-		var qr *BTInstanceFolder3627
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstanceFolder3627: %s", err.Error())
 		}
 	}
 
@@ -704,20 +620,6 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMSketchCompositeEntity-893'
-	if jsonDict["btType"] == "BTMSketchCompositeEntity-893" {
-		// try to unmarshal JSON data into BTMSketchCompositeEntity893
-		var qr *BTMSketchCompositeEntity893
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchCompositeEntity893: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMSketchEntity-3'
 	if jsonDict["btType"] == "BTMSketchEntity-3" {
 		// try to unmarshal JSON data into BTMSketchEntity3
@@ -732,20 +634,6 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMSketchInvalid-1601'
-	if jsonDict["btType"] == "BTMSketchInvalid-1601" {
-		// try to unmarshal JSON data into BTMSketchInvalid1601
-		var qr *BTMSketchInvalid1601
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchInvalid1601: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMSuppressionState-1924'
 	if jsonDict["btType"] == "BTMSuppressionState-1924" {
 		// try to unmarshal JSON data into BTMSuppressionState1924
@@ -757,20 +645,6 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionState1924: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMSuppressionStateConfigured-2598'
-	if jsonDict["btType"] == "BTMSuppressionStateConfigured-2598" {
-		// try to unmarshal JSON data into BTMSuppressionStateConfigured2598
-		var qr *BTMSuppressionStateConfigured2598
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionStateConfigured2598: %s", err.Error())
 		}
 	}
 
@@ -799,6 +673,160 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMUserCode161: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTSimulationInstance-3093'
+	if jsonDict["btType"] == "BTSimulationInstance-3093" {
+		// try to unmarshal JSON data into BTSimulationInstance3093
+		var qr *BTSimulationInstance3093
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTSimulationInstance3093: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTToleranceString-3274'
+	if jsonDict["btType"] == "BTToleranceString-3274" {
+		// try to unmarshal JSON data into BTToleranceString3274
+		var qr *BTToleranceString3274
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTToleranceString3274: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTAssemblyInstance-947'
+	if jsonDict["btType"] == "BTAssemblyInstance-947" {
+		// try to unmarshal JSON data into BTAssemblyInstance947
+		var qr *BTAssemblyInstance947
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyInstance947: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTAssemblyPattern-1974'
+	if jsonDict["btType"] == "BTAssemblyPattern-1974" {
+		// try to unmarshal JSON data into BTAssemblyPattern1974
+		var qr *BTAssemblyPattern1974
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyPattern1974: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTAssemblyReplicate-2774'
+	if jsonDict["btType"] == "BTAssemblyReplicate-2774" {
+		// try to unmarshal JSON data into BTAssemblyReplicate2774
+		var qr *BTAssemblyReplicate2774
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyReplicate2774: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTClonedInstance-2505'
+	if jsonDict["btType"] == "BTClonedInstance-2505" {
+		// try to unmarshal JSON data into BTClonedInstance2505
+		var qr *BTClonedInstance2505
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTClonedInstance2505: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTInstance-642'
+	if jsonDict["btType"] == "BTInstance-642" {
+		// try to unmarshal JSON data into BTInstance642
+		var qr *BTInstance642
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstance642: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTInstanceFolder-3627'
+	if jsonDict["btType"] == "BTInstanceFolder-3627" {
+		// try to unmarshal JSON data into BTInstanceFolder3627
+		var qr *BTInstanceFolder3627
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTInstanceFolder3627: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchCompositeEntity-893'
+	if jsonDict["btType"] == "BTMSketchCompositeEntity-893" {
+		// try to unmarshal JSON data into BTMSketchCompositeEntity893
+		var qr *BTMSketchCompositeEntity893
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchCompositeEntity893: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchInvalid-1601'
+	if jsonDict["btType"] == "BTMSketchInvalid-1601" {
+		// try to unmarshal JSON data into BTMSketchInvalid1601
+		var qr *BTMSketchInvalid1601
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchInvalid1601: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSuppressionStateConfigured-2598'
+	if jsonDict["btType"] == "BTMSuppressionStateConfigured-2598" {
+		// try to unmarshal JSON data into BTMSuppressionStateConfigured2598
+		var qr *BTMSuppressionStateConfigured2598
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionStateConfigured2598: %s", err.Error())
 		}
 	}
 
@@ -869,34 +897,6 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTPartInstance81: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTSimulationInstance-3093'
-	if jsonDict["btType"] == "BTSimulationInstance-3093" {
-		// try to unmarshal JSON data into BTSimulationInstance3093
-		var qr *BTSimulationInstance3093
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTSimulationInstance3093: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTToleranceString-3274'
-	if jsonDict["btType"] == "BTToleranceString-3274" {
-		// try to unmarshal JSON data into BTToleranceString3274
-		var qr *BTToleranceString3274
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMNode19 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMNode19 = nil
-			return fmt.Errorf("failed to unmarshal BTMNode19 as BTToleranceString3274: %s", err.Error())
 		}
 	}
 

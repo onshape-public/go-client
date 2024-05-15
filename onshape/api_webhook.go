@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// WebhookApiService WebhookApi service
-type WebhookApiService service
+// WebhookAPIService WebhookAPI service
+type WebhookAPIService service
 
 type ApiCreateWebhookRequest struct {
 	ctx             context.Context
-	ApiService      *WebhookApiService
+	ApiService      *WebhookAPIService
 	bTWebhookParams *BTWebhookParams
 }
 
@@ -42,7 +42,7 @@ CreateWebhook Create a new webhook.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateWebhookRequest
 */
-func (a *WebhookApiService) CreateWebhook(ctx context.Context) ApiCreateWebhookRequest {
+func (a *WebhookAPIService) CreateWebhook(ctx context.Context) ApiCreateWebhookRequest {
 	return ApiCreateWebhookRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -52,7 +52,7 @@ func (a *WebhookApiService) CreateWebhook(ctx context.Context) ApiCreateWebhookR
 // Execute executes the request
 //
 //	@return BTWebhookInfo
-func (a *WebhookApiService) CreateWebhookExecute(r ApiCreateWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
+func (a *WebhookAPIService) CreateWebhookExecute(r ApiCreateWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -60,7 +60,7 @@ func (a *WebhookApiService) CreateWebhookExecute(r ApiCreateWebhookRequest) (*BT
 		localVarReturnValue *BTWebhookInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookApiService.CreateWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.CreateWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -136,7 +136,7 @@ func (a *WebhookApiService) CreateWebhookExecute(r ApiCreateWebhookRequest) (*BT
 
 type ApiGetWebhookRequest struct {
 	ctx        context.Context
-	ApiService *WebhookApiService
+	ApiService *WebhookAPIService
 	webhookid  string
 }
 
@@ -151,7 +151,7 @@ GetWebhook Get webhook info by webhook ID.
 	@param webhookid
 	@return ApiGetWebhookRequest
 */
-func (a *WebhookApiService) GetWebhook(ctx context.Context, webhookid string) ApiGetWebhookRequest {
+func (a *WebhookAPIService) GetWebhook(ctx context.Context, webhookid string) ApiGetWebhookRequest {
 	return ApiGetWebhookRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -162,7 +162,7 @@ func (a *WebhookApiService) GetWebhook(ctx context.Context, webhookid string) Ap
 // Execute executes the request
 //
 //	@return BTWebhookInfo
-func (a *WebhookApiService) GetWebhookExecute(r ApiGetWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
+func (a *WebhookAPIService) GetWebhookExecute(r ApiGetWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -170,7 +170,7 @@ func (a *WebhookApiService) GetWebhookExecute(r ApiGetWebhookRequest) (*BTWebhoo
 		localVarReturnValue *BTWebhookInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookApiService.GetWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.GetWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -245,7 +245,7 @@ func (a *WebhookApiService) GetWebhookExecute(r ApiGetWebhookRequest) (*BTWebhoo
 
 type ApiGetWebhooksRequest struct {
 	ctx        context.Context
-	ApiService *WebhookApiService
+	ApiService *WebhookAPIService
 	company    *string
 	user       *string
 	offset     *int32
@@ -282,7 +282,7 @@ GetWebhooks Get a list of all webhooks registered by a user or company.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWebhooksRequest
 */
-func (a *WebhookApiService) GetWebhooks(ctx context.Context) ApiGetWebhooksRequest {
+func (a *WebhookAPIService) GetWebhooks(ctx context.Context) ApiGetWebhooksRequest {
 	return ApiGetWebhooksRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -292,7 +292,7 @@ func (a *WebhookApiService) GetWebhooks(ctx context.Context) ApiGetWebhooksReque
 // Execute executes the request
 //
 //	@return BTListResponseBTWebhookInfo
-func (a *WebhookApiService) GetWebhooksExecute(r ApiGetWebhooksRequest) (*BTListResponseBTWebhookInfo, *http.Response, error) {
+func (a *WebhookAPIService) GetWebhooksExecute(r ApiGetWebhooksRequest) (*BTListResponseBTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -300,7 +300,7 @@ func (a *WebhookApiService) GetWebhooksExecute(r ApiGetWebhooksRequest) (*BTList
 		localVarReturnValue *BTListResponseBTWebhookInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookApiService.GetWebhooks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.GetWebhooks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -386,7 +386,7 @@ func (a *WebhookApiService) GetWebhooksExecute(r ApiGetWebhooksRequest) (*BTList
 
 type ApiPingWebhookRequest struct {
 	ctx        context.Context
-	ApiService *WebhookApiService
+	ApiService *WebhookAPIService
 	webhookid  string
 }
 
@@ -401,7 +401,7 @@ PingWebhook Ping a webhook.
 	@param webhookid
 	@return ApiPingWebhookRequest
 */
-func (a *WebhookApiService) PingWebhook(ctx context.Context, webhookid string) ApiPingWebhookRequest {
+func (a *WebhookAPIService) PingWebhook(ctx context.Context, webhookid string) ApiPingWebhookRequest {
 	return ApiPingWebhookRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -412,7 +412,7 @@ func (a *WebhookApiService) PingWebhook(ctx context.Context, webhookid string) A
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *WebhookApiService) PingWebhookExecute(r ApiPingWebhookRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WebhookAPIService) PingWebhookExecute(r ApiPingWebhookRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -420,7 +420,7 @@ func (a *WebhookApiService) PingWebhookExecute(r ApiPingWebhookRequest) (map[str
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookApiService.PingWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.PingWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -495,7 +495,7 @@ func (a *WebhookApiService) PingWebhookExecute(r ApiPingWebhookRequest) (map[str
 
 type ApiUnregisterWebhookRequest struct {
 	ctx               context.Context
-	ApiService        *WebhookApiService
+	ApiService        *WebhookAPIService
 	webhookid         string
 	blockNotification *bool
 }
@@ -516,7 +516,7 @@ UnregisterWebhook Unregister a webhook.
 	@param webhookid
 	@return ApiUnregisterWebhookRequest
 */
-func (a *WebhookApiService) UnregisterWebhook(ctx context.Context, webhookid string) ApiUnregisterWebhookRequest {
+func (a *WebhookAPIService) UnregisterWebhook(ctx context.Context, webhookid string) ApiUnregisterWebhookRequest {
 	return ApiUnregisterWebhookRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -527,7 +527,7 @@ func (a *WebhookApiService) UnregisterWebhook(ctx context.Context, webhookid str
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *WebhookApiService) UnregisterWebhookExecute(r ApiUnregisterWebhookRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WebhookAPIService) UnregisterWebhookExecute(r ApiUnregisterWebhookRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -535,7 +535,7 @@ func (a *WebhookApiService) UnregisterWebhookExecute(r ApiUnregisterWebhookReque
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookApiService.UnregisterWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.UnregisterWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -613,7 +613,7 @@ func (a *WebhookApiService) UnregisterWebhookExecute(r ApiUnregisterWebhookReque
 
 type ApiUpdateWebhookRequest struct {
 	ctx             context.Context
-	ApiService      *WebhookApiService
+	ApiService      *WebhookAPIService
 	webhookid       string
 	bTWebhookParams *BTWebhookParams
 }
@@ -636,7 +636,7 @@ Update a webhook
 	@param webhookid
 	@return ApiUpdateWebhookRequest
 */
-func (a *WebhookApiService) UpdateWebhook(ctx context.Context, webhookid string) ApiUpdateWebhookRequest {
+func (a *WebhookAPIService) UpdateWebhook(ctx context.Context, webhookid string) ApiUpdateWebhookRequest {
 	return ApiUpdateWebhookRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -647,7 +647,7 @@ func (a *WebhookApiService) UpdateWebhook(ctx context.Context, webhookid string)
 // Execute executes the request
 //
 //	@return BTWebhookInfo
-func (a *WebhookApiService) UpdateWebhookExecute(r ApiUpdateWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
+func (a *WebhookAPIService) UpdateWebhookExecute(r ApiUpdateWebhookRequest) (*BTWebhookInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -655,7 +655,7 @@ func (a *WebhookApiService) UpdateWebhookExecute(r ApiUpdateWebhookRequest) (*BT
 		localVarReturnValue *BTWebhookInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookApiService.UpdateWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookAPIService.UpdateWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

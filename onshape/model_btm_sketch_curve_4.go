@@ -882,6 +882,7 @@ func (v *NullableBTMSketchCurve4) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSketchCurve4 struct {
+	BTMSketchGeomEntity5
 	BtType                              *string  `json:"btType,omitempty"`
 	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
 	EntityId                            *string  `json:"entityId,omitempty"`
@@ -1399,6 +1400,14 @@ func (o *base_BTMSketchCurve4) SetInternalIds(v []string) {
 
 func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchGeomEntity5, errBTMSketchGeomEntity5 := json.Marshal(o.BTMSketchGeomEntity5)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
+	errBTMSketchGeomEntity5 = json.Unmarshal([]byte(serializedBTMSketchGeomEntity5), &toSerialize)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

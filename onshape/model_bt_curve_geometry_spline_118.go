@@ -482,6 +482,7 @@ func (v *NullableBTCurveGeometrySpline118) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTCurveGeometrySpline118 struct {
+	BTCurveGeometry114
 	BtType            *string   `json:"btType,omitempty"`
 	ControlPointCount *int32    `json:"controlPointCount,omitempty"`
 	ControlPoints     []float64 `json:"controlPoints,omitempty"`
@@ -734,6 +735,14 @@ func (o *base_BTCurveGeometrySpline118) SetKnots(v []float64) {
 
 func (o base_BTCurveGeometrySpline118) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveGeometry114, errBTCurveGeometry114 := json.Marshal(o.BTCurveGeometry114)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
+	errBTCurveGeometry114 = json.Unmarshal([]byte(serializedBTCurveGeometry114), &toSerialize)
+	if errBTCurveGeometry114 != nil {
+		return []byte{}, errBTCurveGeometry114
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

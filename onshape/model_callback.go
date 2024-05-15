@@ -16,10 +16,13 @@ import (
 
 // Callback struct for Callback
 type Callback struct {
-	Empty      *bool                             `json:"empty,omitempty"`
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Getref     *string                           `json:"get$ref,omitempty"`
+	Empty                *bool                             `json:"empty,omitempty"`
+	Extensions           map[string]map[string]interface{} `json:"extensions,omitempty"`
+	Getref               *string                           `json:"get$ref,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Callback Callback
 
 // NewCallback instantiates a new Callback object
 // This constructor will assign default values to properties that have it defined,
@@ -145,7 +148,31 @@ func (o Callback) MarshalJSON() ([]byte, error) {
 	if o.Getref != nil {
 		toSerialize["get$ref"] = o.Getref
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return json.Marshal(toSerialize)
+}
+
+func (o *Callback) UnmarshalJSON(bytes []byte) (err error) {
+	varCallback := _Callback{}
+
+	if err = json.Unmarshal(bytes, &varCallback); err == nil {
+		*o = Callback(varCallback)
+	}
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "empty")
+		delete(additionalProperties, "extensions")
+		delete(additionalProperties, "get$ref")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCallback struct {
