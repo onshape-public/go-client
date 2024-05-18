@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **HasInactiveCustomWorkflows** | Pointer to **bool** |  | [optional] 
 **ObsoletionWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ObsoletionWorkflowId** | Pointer to **string** |  | [optional] 
+**OsCategoryIdToArenaNumberFormatId** | Pointer to **map[string]string** |  | [optional] 
 **PartNumberingSchemeId** | Pointer to **string** |  | [optional] 
 **PickableWorkflows** | Pointer to [**[]BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ReleaseWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
@@ -450,6 +451,31 @@ SetObsoletionWorkflowId sets ObsoletionWorkflowId field to given value.
 `func (o *BTActiveWorkflowInfo) HasObsoletionWorkflowId() bool`
 
 HasObsoletionWorkflowId returns a boolean if a field has been set.
+
+### GetOsCategoryIdToArenaNumberFormatId
+
+`func (o *BTActiveWorkflowInfo) GetOsCategoryIdToArenaNumberFormatId() map[string]string`
+
+GetOsCategoryIdToArenaNumberFormatId returns the OsCategoryIdToArenaNumberFormatId field if non-nil, zero value otherwise.
+
+### GetOsCategoryIdToArenaNumberFormatIdOk
+
+`func (o *BTActiveWorkflowInfo) GetOsCategoryIdToArenaNumberFormatIdOk() (*map[string]string, bool)`
+
+GetOsCategoryIdToArenaNumberFormatIdOk returns a tuple with the OsCategoryIdToArenaNumberFormatId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOsCategoryIdToArenaNumberFormatId
+
+`func (o *BTActiveWorkflowInfo) SetOsCategoryIdToArenaNumberFormatId(v map[string]string)`
+
+SetOsCategoryIdToArenaNumberFormatId sets OsCategoryIdToArenaNumberFormatId field to given value.
+
+### HasOsCategoryIdToArenaNumberFormatId
+
+`func (o *BTActiveWorkflowInfo) HasOsCategoryIdToArenaNumberFormatId() bool`
+
+HasOsCategoryIdToArenaNumberFormatId returns a boolean if a field has been set.
 
 ### GetPartNumberingSchemeId
 

@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.180.35923-2bd547d6a9fe
+  version: 1.181.36493-a1421b68575d
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -68,7 +68,8 @@ tags:
   name: Document
 - description: "Access, create, and translate drawings."
   name: Drawing
-- description: Access and manage Elements.
+- description: Access and manage Elements. Every Element in an Onshape document is
+    represented by a tab.
   name: Element
 - description: Fire events.
   name: Event
@@ -4461,10 +4462,12 @@ paths:
   /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties:
     get:
       deprecated: false
-      description: "The assembly must contain parts that have assigned density or\
-        \ are globally overridden. If three mass properties are returned: the first\
-        \ is the calculated mass, and the second and third are the minimum and maximum\
-        \ possible values, considering tolerance."
+      description: "The assembly must contain parts that have density. The returned\
+        \ schema includes the same information as in the Onshape [Mass Properties\
+        \ Tool](https://cad.onshape.com/help/Content/massprops-asmb.htm). \nWhen three\
+        \ values are returned: \n * The first is the calculated value. \n * The second\
+        \ is the minimum possible value, considering tolerance. \n * The third is\
+        \ the maximum possible value, considering tolerance."
       operationId: getAssemblyMassProperties
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -7821,6 +7824,11 @@ paths:
   /elements/copyelement/{did}/workspace/{wid}:
     post:
       deprecated: false
+      description: "Specify the target document and workspace in the URL. Specify\
+        \ the source document, workspace, and element in the request body. \nIf `anchorElementId`\
+        \ is specified, the copied element will be inserted after the anchor element.\
+        \ If not specified, the copied element will be inserted at the end of the\
+        \ tab list. \n"
       operationId: copyElementFromSourceDocument
       parameters:
       - explode: false
@@ -7855,13 +7863,17 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: Copy tab by document ID and workspace ID.
+      summary: Copy an element from a source document.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
   /elements/d/{did}/e/{eid}/configurationencodings:
     post:
       deprecated: false
+      description: "Returns a configuration string in the following form: \n`configuration=parameterId%3DparameterValue`\
+        \ \nThe configuration string can be used in other Onshape API calls to specify\
+        \ which configuration option to use. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+        \ for additional details. \n"
       operationId: encodeConfigurationMap
       parameters:
       - explode: false
@@ -7910,13 +7922,15 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: Encode configuration by documentation ID and tab ID.
+      summary: Encode a configuration option for use in other API calls.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
   /elements/d/{did}/w/{wid}/e/{eid}:
     delete:
       deprecated: false
+      description: Attempting to delete the last element in a document will result
+        in an error.
       operationId: deleteElement
       parameters:
       - explode: false
@@ -7952,6 +7966,7 @@ paths:
         - OAuth2Delete
         BasicAuth:
         - OAuth2Delete
+      summary: Delete an element from a document.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
@@ -8001,38 +8016,66 @@ paths:
         BasicAuth:
         - OAuth2Read
         - OAuth2Write
-      summary: "Update or replace node references by document ID, workspace ID, and\
-        \ tab ID."
+      summary: Update or replace references in an element.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
   /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration:
     get:
       deprecated: false
+      description: "Use Configurations to create variations of elements. You can configure\
+        \ feature and parameter values, part properties, custom part properties, face\
+        \ and part appearances, and sketch text. Each Part Studio can have only one\
+        \ Configuration, but it can contain multiple Configuration inputs. \nSee the\
+        \ [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+        \ for additional details. "
       operationId: getConfiguration
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
+        explode: false
         in: path
         name: wvm
         required: true
         schema:
+          enum:
+          - w
+          - v
+          - m
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the workspace, version or document microversion in\
+          \ which the operation should be performed."
+        explode: false
         in: path
         name: wvmid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
         required: true
@@ -8051,13 +8094,14 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Retrieve configuration by document ID, workspace or version or microversion\
-        \ ID, and tab ID."
+      summary: Get the configuration definition for a Part Studio or Assembly.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
     post:
       deprecated: false
+      description: "See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+        \ for additional details"
       operationId: updateConfiguration
       parameters:
       - explode: false
@@ -8105,14 +8149,16 @@ paths:
         - OAuth2Write
         BasicAuth:
         - OAuth2Write
-      summary: "Update configuration by document ID, workspace or microversion ID,\
-        \ and tab ID."
+      summary: Update the configuration definition for a Part Studio or Assembly.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
   /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configurationencodings/{cid}:
     get:
       deprecated: false
+      description: "Decode a configuration string into its original JSON form to obtain\
+        \ configuration parameter ID and value. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+        \ for additional details.  "
       operationId: decodeConfiguration
       parameters:
       - explode: false
@@ -8185,14 +8231,15 @@ paths:
         - OAuth2Read
         BasicAuth:
         - OAuth2Read
-      summary: "Decode configuration string by documentation ID, workspace or version\
-        \ or microversion ID, and tab ID."
+      summary: Decode a configuration string.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
   /elements/translatorFormats/{did}/{wv}/{wvid}/{eid}:
     get:
       deprecated: false
+      description: "See the [Translation API Guide](https://onshape-public.github.io/docs/api-adv/translation/)\
+        \ for additional details. "
       operationId: getElementTranslatorFormatsByVersionOrWorkspace
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -8270,6 +8317,7 @@ paths:
                   $ref: '#/components/schemas/BTModelFormatInfo'
                 type: array
           description: default response
+      summary: Gets the list of formats an element can be translated to or from.
       tags:
       - Element
       x-BTVisibility: PRODUCTION
@@ -10802,9 +10850,11 @@ paths:
   /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/massproperties:
     get:
       deprecated: false
-      description: "Parts must have density. If three mass properties are returned,\
-        \ the first is the calculated mass; the second and third are the minimum and\
-        \ maximum possible values considering tolerance."
+      description: "Parts must have density. The returned schema includes the same\
+        \ information as in the Onshape [Mass Properties Tool](https://cad.onshape.com/help/Content/massprops-ps.htm).\
+        \ \nWhen three values are returned: \n * The first is the calculated value.\
+        \ \n * The second is the minimum possible value, considering tolerance. \n\
+        \ * The third is the maximum possible value, considering tolerance."
       operationId: getMassProperties
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -13137,9 +13187,11 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties:
     get:
       deprecated: false
-      description: "If three mass properties are returned, the first is the calculated\
-        \ mass; the second and third are the minimum and maximum possible values considering\
-        \ tolerance."
+      description: "Parts must have density. The returned schema includes the same\
+        \ information as in the Onshape [Mass Properties Tool](https://cad.onshape.com/help/Content/massprops-ps.htm).\
+        \ \nWhen three values are returned: \n * The first is the calculated value.\
+        \ \n * The second is the minimum possible value, considering tolerance. \n\
+        \ * The third is the maximum possible value, considering tolerance."
       operationId: getPartStudioMassProperties
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -19222,6 +19274,8 @@ components:
         canCurrentUserManageWorkflows: true
         obsoletionWorkflowId: obsoletionWorkflowId
         usingAutoPartNumbering: true
+        osCategoryIdToArenaNumberFormatId:
+          key: osCategoryIdToArenaNumberFormatId
         canCurrentUserSyncBomToArena: true
         canCurrentUserSyncStandardContentToArena: true
         releaseableApplications:
@@ -19288,6 +19342,10 @@ components:
           $ref: '#/components/schemas/BTPublishedWorkflowInfo'
         obsoletionWorkflowId:
           type: string
+        osCategoryIdToArenaNumberFormatId:
+          additionalProperties:
+            type: string
+          type: object
         partNumberingSchemeId:
           type: string
         pickableWorkflows:
@@ -19970,6 +20028,7 @@ components:
               btType: btType
               propertyToValue:
                 key: propertyToValue
+          hasSecondaryViewDefinition: true
           showAutoCenterlines: true
           brokenOutEndConditions:
             key:
@@ -20076,6 +20135,7 @@ components:
               btType: btType
               propertyToValue:
                 key: propertyToValue
+          hasSecondaryViewDefinition: true
           showAutoCenterlines: true
           brokenOutEndConditions:
             key:
@@ -20264,6 +20324,7 @@ components:
             btType: btType
             propertyToValue:
               key: propertyToValue
+        hasSecondaryViewDefinition: true
         showAutoCenterlines: true
         brokenOutEndConditions:
           key:
@@ -20366,6 +20427,8 @@ components:
           $ref: '#/components/schemas/BTAppElementErrorCode'
         explodedViewId:
           type: string
+        hasSecondaryViewDefinition:
+          type: boolean
         hiddenLines:
           type: string
         ignoreFaultyParts:
@@ -22076,6 +22139,15 @@ components:
         mateConnectorCS:
           $ref: '#/components/schemas/BTMateConnectorCSInfo'
       type: object
+    BTAssemblyMirror-2996:
+      allOf:
+      - $ref: '#/components/schemas/BTParametricInstance-2641'
+      - $ref: '#/components/schemas/BTAssemblyMirror_2996_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
     BTAssemblyModificationParams:
       example:
         unsuppressInstances:
@@ -22981,6 +23053,7 @@ components:
         includeExportIds: true
         cloudObjectId: cloudObjectId
         workspaceId: workspaceId
+        occurrencesToExport: occurrencesToExport
         featureIds: featureIds
         fromUserId: fromUserId
         includeSketches: true
@@ -23071,6 +23144,8 @@ components:
           format: double
           type: number
         mode:
+          type: string
+        occurrencesToExport:
           type: string
         partIds:
           type: string
@@ -24884,16 +24959,16 @@ components:
         elementOccurrences:
         - elementOccurrences
         - elementOccurrences
-        objectType: 0
+        objectType: 5
         viewData:
           cameraViewport:
-          - 5.637376656633329
-          - 5.637376656633329
-          angle: 5.962133916683182
+          - 9.301444243932576
+          - 9.301444243932576
+          angle: 7.061401241503109
           isPerspective: true
           viewMatrix:
-          - 2.3021358869347655
-          - 2.3021358869347655
+          - 3.616076749251911
+          - 3.616076749251911
         createdAt: 2000-01-23T04:56:07.000+00:00
         releasePackageId: releasePackageId
         attachment:
@@ -24908,7 +24983,7 @@ components:
         canDelete: true
         href: https://openapi-generator.tech
         id: id
-        state: 1
+        state: 2
         objectId: objectId
         workspaceId: workspaceId
         elementId: elementId
@@ -24921,9 +24996,13 @@ components:
           mimeType: mimeType
           viewRef: https://openapi-generator.tech
         resolvedAt: 2000-01-23T04:56:07.000+00:00
+        coordinates:
+          x: 0.8008282
+          "y": 6.0274563
+          z: 1.4658129
         message: message
         parentId: parentId
-        replyCount: 6
+        replyCount: 5
         versionId: versionId
         reopenedBy: null
         canResolveOrReopen: true
@@ -24953,6 +25032,8 @@ components:
           type: boolean
         canResolveOrReopen:
           type: boolean
+        coordinates:
+          $ref: '#/components/schemas/CoordinatesInfo'
         createdAt:
           format: date-time
           type: string
@@ -25025,20 +25106,24 @@ components:
     BTCommentParams:
       example:
         elementId: elementId
+        coordinates:
+          x: 0.8008282
+          "y": 6.0274563
+          z: 1.4658129
         assemblyFeature: assemblyFeature
         message: message
         parentId: parentId
         elementOccurrence: elementOccurrence
-        objectType: 0
+        objectType: 5
         viewData:
           cameraViewport:
-          - 1.4658129805029452
-          - 1.4658129805029452
-          angle: 6.027456183070403
+          - 2.3021358869347655
+          - 2.3021358869347655
+          angle: 5.637376656633329
           isPerspective: true
           viewMatrix:
-          - 5.962133916683182
-          - 5.962133916683182
+          - 7.061401241503109
+          - 7.061401241503109
         versionId: versionId
         elementFeature: elementFeature
         documentId: documentId
@@ -25052,6 +25137,8 @@ components:
           type: string
         assignee:
           type: string
+        coordinates:
+          $ref: '#/components/schemas/CoordinatesParams'
         documentId:
           type: string
         elementFeature:
@@ -28396,6 +28483,8 @@ components:
         - sourceElementPath
         targetModifiedBy:
           jsonType: jsonType
+        targetLibraryVersion: 6
+        sourceLibraryVersion: 0
         sourceModifiedAt: 2000-01-23T04:56:07.000+00:00
         dependentElementMergeInfo: null
         mergeable: true
@@ -28403,6 +28492,7 @@ components:
         sourceElementStatus: null
         targetModifiedAt: 2000-01-23T04:56:07.000+00:00
         elementType: null
+        versionCompatible: true
         elementDataType: elementDataType
       properties:
         branchPointElementName:
@@ -28429,6 +28519,9 @@ components:
           type: array
         sourceElementStatus:
           $ref: '#/components/schemas/GBTElementBranchStatus'
+        sourceLibraryVersion:
+          format: int32
+          type: integer
         sourceModifiedAt:
           format: date-time
           type: string
@@ -28442,11 +28535,16 @@ components:
           type: array
         targetElementStatus:
           $ref: '#/components/schemas/GBTElementBranchStatus'
+        targetLibraryVersion:
+          format: int32
+          type: integer
         targetModifiedAt:
           format: date-time
           type: string
         targetModifiedBy:
           $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        versionCompatible:
+          type: boolean
       type: object
     BTElementReference-725:
       discriminator:
@@ -37052,16 +37150,16 @@ components:
           elementOccurrences:
           - elementOccurrences
           - elementOccurrences
-          objectType: 0
+          objectType: 5
           viewData:
             cameraViewport:
-            - 5.637376656633329
-            - 5.637376656633329
-            angle: 5.962133916683182
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
             isPerspective: true
             viewMatrix:
-            - 2.3021358869347655
-            - 2.3021358869347655
+            - 3.616076749251911
+            - 3.616076749251911
           createdAt: 2000-01-23T04:56:07.000+00:00
           releasePackageId: releasePackageId
           attachment:
@@ -37076,7 +37174,7 @@ components:
           canDelete: true
           href: https://openapi-generator.tech
           id: id
-          state: 1
+          state: 2
           objectId: objectId
           workspaceId: workspaceId
           elementId: elementId
@@ -37089,9 +37187,13 @@ components:
             mimeType: mimeType
             viewRef: https://openapi-generator.tech
           resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
           message: message
           parentId: parentId
-          replyCount: 6
+          replyCount: 5
           versionId: versionId
           reopenedBy: null
           canResolveOrReopen: true
@@ -37111,16 +37213,16 @@ components:
           elementOccurrences:
           - elementOccurrences
           - elementOccurrences
-          objectType: 0
+          objectType: 5
           viewData:
             cameraViewport:
-            - 5.637376656633329
-            - 5.637376656633329
-            angle: 5.962133916683182
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
             isPerspective: true
             viewMatrix:
-            - 2.3021358869347655
-            - 2.3021358869347655
+            - 3.616076749251911
+            - 3.616076749251911
           createdAt: 2000-01-23T04:56:07.000+00:00
           releasePackageId: releasePackageId
           attachment:
@@ -37135,7 +37237,7 @@ components:
           canDelete: true
           href: https://openapi-generator.tech
           id: id
-          state: 1
+          state: 2
           objectId: objectId
           workspaceId: workspaceId
           elementId: elementId
@@ -37148,9 +37250,13 @@ components:
             mimeType: mimeType
             viewRef: https://openapi-generator.tech
           resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
           message: message
           parentId: parentId
-          replyCount: 6
+          replyCount: 5
           versionId: versionId
           reopenedBy: null
           canResolveOrReopen: true
@@ -40279,6 +40385,7 @@ components:
           BTMAssemblyFeature1-2218: '#/components/schemas/BTMAssemblyFeature1-2218'
           BTMAssemblyFeature2-1022: '#/components/schemas/BTMAssemblyFeature2-1022'
           BTMAssemblyFeatureFolder-2543: '#/components/schemas/BTMAssemblyFeatureFolder-2543'
+          BTMAssemblyMirrorFeature-3037: '#/components/schemas/BTMAssemblyMirrorFeature-3037'
           BTMAssemblyPatternFeature-2241: '#/components/schemas/BTMAssemblyPatternFeature-2241'
           BTMAssemblyReplicateFeature-1351: '#/components/schemas/BTMAssemblyReplicateFeature-1351'
           BTMGenerativeDesignFeature-3195: '#/components/schemas/BTMGenerativeDesignFeature-3195'
@@ -40318,6 +40425,15 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTMAssemblyFeature-887'
       - $ref: '#/components/schemas/BTMAssemblyFeatureFolder_2543_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTMAssemblyMirrorFeature-3037:
+      allOf:
+      - $ref: '#/components/schemas/BTMAssemblyFeature-887'
+      - $ref: '#/components/schemas/BTMAssemblyMirrorFeature_3037_allOf'
       properties:
         btType:
           description: Type of JSON object.
@@ -41739,6 +41855,7 @@ components:
           type: string
       type: object
     BTMassPropertiesInfo:
+      description: Mass properties information.
       example:
         volume:
         - 7.061401241503109
@@ -41771,41 +41888,57 @@ components:
           z: 5.962133916683182
       properties:
         centroid:
+          description: "Centroid, center of gravity, center of mass"
           items:
+            description: "Centroid, center of gravity, center of mass"
             format: double
             type: number
           type: array
         hasMass:
+          description: '`true` if the part has mass.'
           type: boolean
         inertia:
+          description: Mass moments of inertia
           items:
+            description: Mass moments of inertia
             format: double
             type: number
           type: array
         mass:
+          description: Mass
           items:
+            description: Mass
             format: double
             type: number
           type: array
         massMissingCount:
+          description: Number of parts without mass.
           format: int32
           type: integer
         periphery:
+          description: Surface area
           items:
+            description: Surface area
             format: double
             type: number
           type: array
         principalAxes:
+          description: Vector coordinates of the principal axes. Use `BTVector3d-389`
+            as the `btType`.
           items:
             $ref: '#/components/schemas/BTVector3d-389'
           type: array
         principalInertia:
+          description: Principal moments of inertia
           items:
+            description: Principal moments of inertia
             format: double
             type: number
           type: array
         volume:
+          description: Volume
           items:
+            description: Volume
             format: double
             type: number
           type: array
@@ -42077,6 +42210,15 @@ components:
     BTMergePreviewInfo:
       example:
         targetMicroversionId: targetMicroversionId
+        upgradeInfo:
+          recommendedVersion: 5
+          pendingTargetUpgrade:
+            scheduledTime: 2000-01-23T04:56:07.000+00:00
+            version: 1
+          pendingSourceUpgrade:
+            scheduledTime: 2000-01-23T04:56:07.000+00:00
+            version: 1
+          type: null
         changes:
         - elementId: elementId
           sourceElementName: sourceElementName
@@ -42095,6 +42237,8 @@ components:
           - sourceElementPath
           targetModifiedBy:
             jsonType: jsonType
+          targetLibraryVersion: 6
+          sourceLibraryVersion: 0
           sourceModifiedAt: 2000-01-23T04:56:07.000+00:00
           dependentElementMergeInfo: null
           mergeable: true
@@ -42102,6 +42246,7 @@ components:
           sourceElementStatus: null
           targetModifiedAt: 2000-01-23T04:56:07.000+00:00
           elementType: null
+          versionCompatible: true
           elementDataType: elementDataType
         - elementId: elementId
           sourceElementName: sourceElementName
@@ -42120,6 +42265,8 @@ components:
           - sourceElementPath
           targetModifiedBy:
             jsonType: jsonType
+          targetLibraryVersion: 6
+          sourceLibraryVersion: 0
           sourceModifiedAt: 2000-01-23T04:56:07.000+00:00
           dependentElementMergeInfo: null
           mergeable: true
@@ -42127,6 +42274,7 @@ components:
           sourceElementStatus: null
           targetModifiedAt: 2000-01-23T04:56:07.000+00:00
           elementType: null
+          versionCompatible: true
           elementDataType: elementDataType
         isBranchPointAtStart: true
         branchPointWorkspaceId: branchPointWorkspaceId
@@ -42150,12 +42298,41 @@ components:
           type: string
         targetMicroversionId:
           type: string
+        upgradeInfo:
+          $ref: '#/components/schemas/BTMergeUpgradeInfo'
       type: object
     BTMergeStrategy:
       enum:
       - MERGE
       - KEEP
       - REPLACE
+      type: string
+    BTMergeUpgradeInfo:
+      example:
+        recommendedVersion: 5
+        pendingTargetUpgrade:
+          scheduledTime: 2000-01-23T04:56:07.000+00:00
+          version: 1
+        pendingSourceUpgrade:
+          scheduledTime: 2000-01-23T04:56:07.000+00:00
+          version: 1
+        type: null
+      properties:
+        pendingSourceUpgrade:
+          $ref: '#/components/schemas/BTPendingUpgradeInfo'
+        pendingTargetUpgrade:
+          $ref: '#/components/schemas/BTPendingUpgradeInfo'
+        recommendedVersion:
+          format: int32
+          type: integer
+        type:
+          $ref: '#/components/schemas/BTMergeUpgradeType'
+      type: object
+    BTMergeUpgradeType:
+      enum:
+      - SOURCE
+      - TARGET
+      - SOURCE_AND_TARGET
       type: string
     BTMetadataCategorySummaryInfo:
       example:
@@ -42292,7 +42469,8 @@ components:
         href: href
         jsonType: jsonType
         properties:
-        - dirty: true
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          dirty: true
           editableInUi: true
           dateFormat: dateFormat
           defaultValue: ""
@@ -42330,7 +42508,8 @@ components:
           - label: label
             state: 0
             value: value
-        - dirty: true
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          dirty: true
           editableInUi: true
           dateFormat: dateFormat
           defaultValue: ""
@@ -42451,6 +42630,7 @@ components:
       type: object
     BTMetadataPropertyInfo:
       example:
+        computedPropertyEvalInfo: computedPropertyEvalInfo
         dirty: true
         editableInUi: true
         dateFormat: dateFormat
@@ -42495,6 +42675,8 @@ components:
         computedProperty:
           type: boolean
         computedPropertyError:
+          type: string
+        computedPropertyEvalInfo:
           type: string
         dateFormat:
           type: string
@@ -45658,6 +45840,7 @@ components:
       - $ref: '#/components/schemas/BTParametricInstance_2641_allOf'
       discriminator:
         mapping:
+          BTAssemblyMirror-2996: '#/components/schemas/BTAssemblyMirror-2996'
           BTAssemblyPattern-1974: '#/components/schemas/BTAssemblyPattern-1974'
           BTAssemblyReplicate-2774: '#/components/schemas/BTAssemblyReplicate-2774'
           BTParametricPartStudioInstance-4374: '#/components/schemas/BTParametricPartStudioInstance-4374'
@@ -48491,6 +48674,18 @@ components:
         query:
           type: string
       type: object
+    BTPendingUpgradeInfo:
+      example:
+        scheduledTime: 2000-01-23T04:56:07.000+00:00
+        version: 1
+      properties:
+        scheduledTime:
+          format: date-time
+          type: string
+        version:
+          format: int32
+          type: integer
+      type: object
     BTPlanSubscriberInfo:
       example:
         firstName: firstName
@@ -49701,16 +49896,16 @@ components:
           elementOccurrences:
           - elementOccurrences
           - elementOccurrences
-          objectType: 0
+          objectType: 5
           viewData:
             cameraViewport:
-            - 5.637376656633329
-            - 5.637376656633329
-            angle: 5.962133916683182
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
             isPerspective: true
             viewMatrix:
-            - 2.3021358869347655
-            - 2.3021358869347655
+            - 3.616076749251911
+            - 3.616076749251911
           createdAt: 2000-01-23T04:56:07.000+00:00
           releasePackageId: releasePackageId
           attachment:
@@ -49725,7 +49920,7 @@ components:
           canDelete: true
           href: https://openapi-generator.tech
           id: id
-          state: 1
+          state: 2
           objectId: objectId
           workspaceId: workspaceId
           elementId: elementId
@@ -49738,9 +49933,13 @@ components:
             mimeType: mimeType
             viewRef: https://openapi-generator.tech
           resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
           message: message
           parentId: parentId
-          replyCount: 6
+          replyCount: 5
           versionId: versionId
           reopenedBy: null
           canResolveOrReopen: true
@@ -49760,16 +49959,16 @@ components:
           elementOccurrences:
           - elementOccurrences
           - elementOccurrences
-          objectType: 0
+          objectType: 5
           viewData:
             cameraViewport:
-            - 5.637376656633329
-            - 5.637376656633329
-            angle: 5.962133916683182
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
             isPerspective: true
             viewMatrix:
-            - 2.3021358869347655
-            - 2.3021358869347655
+            - 3.616076749251911
+            - 3.616076749251911
           createdAt: 2000-01-23T04:56:07.000+00:00
           releasePackageId: releasePackageId
           attachment:
@@ -49784,7 +49983,7 @@ components:
           canDelete: true
           href: https://openapi-generator.tech
           id: id
-          state: 1
+          state: 2
           objectId: objectId
           workspaceId: workspaceId
           elementId: elementId
@@ -49797,9 +49996,13 @@ components:
             mimeType: mimeType
             viewRef: https://openapi-generator.tech
           resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
           message: message
           parentId: parentId
-          replyCount: 6
+          replyCount: 5
           versionId: versionId
           reopenedBy: null
           canResolveOrReopen: true
@@ -49895,16 +50098,16 @@ components:
           elementOccurrences:
           - elementOccurrences
           - elementOccurrences
-          objectType: 0
+          objectType: 5
           viewData:
             cameraViewport:
-            - 5.637376656633329
-            - 5.637376656633329
-            angle: 5.962133916683182
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
             isPerspective: true
             viewMatrix:
-            - 2.3021358869347655
-            - 2.3021358869347655
+            - 3.616076749251911
+            - 3.616076749251911
           createdAt: 2000-01-23T04:56:07.000+00:00
           releasePackageId: releasePackageId
           attachment:
@@ -49919,7 +50122,7 @@ components:
           canDelete: true
           href: https://openapi-generator.tech
           id: id
-          state: 1
+          state: 2
           objectId: objectId
           workspaceId: workspaceId
           elementId: elementId
@@ -49932,9 +50135,13 @@ components:
             mimeType: mimeType
             viewRef: https://openapi-generator.tech
           resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
           message: message
           parentId: parentId
-          replyCount: 6
+          replyCount: 5
           versionId: versionId
           reopenedBy: null
           canResolveOrReopen: true
@@ -49954,16 +50161,16 @@ components:
           elementOccurrences:
           - elementOccurrences
           - elementOccurrences
-          objectType: 0
+          objectType: 5
           viewData:
             cameraViewport:
-            - 5.637376656633329
-            - 5.637376656633329
-            angle: 5.962133916683182
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
             isPerspective: true
             viewMatrix:
-            - 2.3021358869347655
-            - 2.3021358869347655
+            - 3.616076749251911
+            - 3.616076749251911
           createdAt: 2000-01-23T04:56:07.000+00:00
           releasePackageId: releasePackageId
           attachment:
@@ -49978,7 +50185,7 @@ components:
           canDelete: true
           href: https://openapi-generator.tech
           id: id
-          state: 1
+          state: 2
           objectId: objectId
           workspaceId: workspaceId
           elementId: elementId
@@ -49991,9 +50198,13 @@ components:
             mimeType: mimeType
             viewRef: https://openapi-generator.tech
           resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
           message: message
           parentId: parentId
-          replyCount: 6
+          replyCount: 5
           versionId: versionId
           reopenedBy: null
           canResolveOrReopen: true
@@ -50091,16 +50302,16 @@ components:
             elementOccurrences:
             - elementOccurrences
             - elementOccurrences
-            objectType: 0
+            objectType: 5
             viewData:
               cameraViewport:
-              - 5.637376656633329
-              - 5.637376656633329
-              angle: 5.962133916683182
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
               isPerspective: true
               viewMatrix:
-              - 2.3021358869347655
-              - 2.3021358869347655
+              - 3.616076749251911
+              - 3.616076749251911
             createdAt: 2000-01-23T04:56:07.000+00:00
             releasePackageId: releasePackageId
             attachment:
@@ -50115,7 +50326,7 @@ components:
             canDelete: true
             href: https://openapi-generator.tech
             id: id
-            state: 1
+            state: 2
             objectId: objectId
             workspaceId: workspaceId
             elementId: elementId
@@ -50128,9 +50339,13 @@ components:
               mimeType: mimeType
               viewRef: https://openapi-generator.tech
             resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
             message: message
             parentId: parentId
-            replyCount: 6
+            replyCount: 5
             versionId: versionId
             reopenedBy: null
             canResolveOrReopen: true
@@ -50150,16 +50365,16 @@ components:
             elementOccurrences:
             - elementOccurrences
             - elementOccurrences
-            objectType: 0
+            objectType: 5
             viewData:
               cameraViewport:
-              - 5.637376656633329
-              - 5.637376656633329
-              angle: 5.962133916683182
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
               isPerspective: true
               viewMatrix:
-              - 2.3021358869347655
-              - 2.3021358869347655
+              - 3.616076749251911
+              - 3.616076749251911
             createdAt: 2000-01-23T04:56:07.000+00:00
             releasePackageId: releasePackageId
             attachment:
@@ -50174,7 +50389,7 @@ components:
             canDelete: true
             href: https://openapi-generator.tech
             id: id
-            state: 1
+            state: 2
             objectId: objectId
             workspaceId: workspaceId
             elementId: elementId
@@ -50187,9 +50402,13 @@ components:
               mimeType: mimeType
               viewRef: https://openapi-generator.tech
             resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
             message: message
             parentId: parentId
-            replyCount: 6
+            replyCount: 5
             versionId: versionId
             reopenedBy: null
             canResolveOrReopen: true
@@ -50212,16 +50431,16 @@ components:
             elementOccurrences:
             - elementOccurrences
             - elementOccurrences
-            objectType: 0
+            objectType: 5
             viewData:
               cameraViewport:
-              - 5.637376656633329
-              - 5.637376656633329
-              angle: 5.962133916683182
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
               isPerspective: true
               viewMatrix:
-              - 2.3021358869347655
-              - 2.3021358869347655
+              - 3.616076749251911
+              - 3.616076749251911
             createdAt: 2000-01-23T04:56:07.000+00:00
             releasePackageId: releasePackageId
             attachment:
@@ -50236,7 +50455,7 @@ components:
             canDelete: true
             href: https://openapi-generator.tech
             id: id
-            state: 1
+            state: 2
             objectId: objectId
             workspaceId: workspaceId
             elementId: elementId
@@ -50249,9 +50468,13 @@ components:
               mimeType: mimeType
               viewRef: https://openapi-generator.tech
             resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
             message: message
             parentId: parentId
-            replyCount: 6
+            replyCount: 5
             versionId: versionId
             reopenedBy: null
             canResolveOrReopen: true
@@ -50271,16 +50494,16 @@ components:
             elementOccurrences:
             - elementOccurrences
             - elementOccurrences
-            objectType: 0
+            objectType: 5
             viewData:
               cameraViewport:
-              - 5.637376656633329
-              - 5.637376656633329
-              angle: 5.962133916683182
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
               isPerspective: true
               viewMatrix:
-              - 2.3021358869347655
-              - 2.3021358869347655
+              - 3.616076749251911
+              - 3.616076749251911
             createdAt: 2000-01-23T04:56:07.000+00:00
             releasePackageId: releasePackageId
             attachment:
@@ -50295,7 +50518,7 @@ components:
             canDelete: true
             href: https://openapi-generator.tech
             id: id
-            state: 1
+            state: 2
             objectId: objectId
             workspaceId: workspaceId
             elementId: elementId
@@ -50308,9 +50531,13 @@ components:
               mimeType: mimeType
               viewRef: https://openapi-generator.tech
             resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
             message: message
             parentId: parentId
-            replyCount: 6
+            replyCount: 5
             versionId: versionId
             reopenedBy: null
             canResolveOrReopen: true
@@ -50386,7 +50613,8 @@ components:
             ordinal: 1
             workspaceId: workspaceId
           properties:
-          - dirty: true
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
             editableInUi: true
             dateFormat: dateFormat
             defaultValue: ""
@@ -50424,7 +50652,8 @@ components:
             - label: label
               state: 0
               value: value
-          - dirty: true
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
             editableInUi: true
             dateFormat: dateFormat
             defaultValue: ""
@@ -50520,7 +50749,8 @@ components:
             ordinal: 1
             workspaceId: workspaceId
           properties:
-          - dirty: true
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
             editableInUi: true
             dateFormat: dateFormat
             defaultValue: ""
@@ -50558,7 +50788,8 @@ components:
             - label: label
               state: 0
               value: value
-          - dirty: true
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
             editableInUi: true
             dateFormat: dateFormat
             defaultValue: ""
@@ -50598,7 +50829,8 @@ components:
               value: value
           diffThumbnailConfigurationKey: diffThumbnailConfigurationKey
         properties:
-        - isNotifierProperty: true
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          isNotifierProperty: true
           hideInUi: true
           dateFormat: dateFormat
           defaultValue: "{}"
@@ -50686,7 +50918,8 @@ components:
             propertyId: propertyId
             associatedStates: associatedStates
             objectId: objectId
-        - isNotifierProperty: true
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          isNotifierProperty: true
           hideInUi: true
           dateFormat: dateFormat
           defaultValue: "{}"
@@ -50929,7 +51162,8 @@ components:
           ordinal: 1
           workspaceId: workspaceId
         properties:
-        - dirty: true
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          dirty: true
           editableInUi: true
           dateFormat: dateFormat
           defaultValue: ""
@@ -50967,7 +51201,8 @@ components:
           - label: label
             state: 0
             value: value
-        - dirty: true
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          dirty: true
           editableInUi: true
           dateFormat: dateFormat
           defaultValue: ""
@@ -51925,6 +52160,9 @@ components:
       - workspace
       - project
       - publication
+      - comment_task
+      - generic_task
+      - release_task
       type: string
     BTSectionGeometryFilter-4161:
       allOf:
@@ -53838,6 +54076,7 @@ components:
         colorMethod: colorMethod
         proxyWorkspaceVersion: proxyWorkspaceVersion
         currentSheetOnly: true
+        occurrencesToExport: occurrencesToExport
         selectablePdfText: true
         fromUserId: fromUserId
         storeInDocument: true
@@ -53976,6 +54215,8 @@ components:
           type: number
         notifyUser:
           type: boolean
+        occurrencesToExport:
+          type: string
         onePartPerDoc:
           type: boolean
         originalForeignId:
@@ -55433,6 +55674,7 @@ components:
       - ALL_BRANCHES
       - ACTIVE_BRANCH
       - ALL_BRANCHES_WITH_WORKSPACES
+      - ACTIVE_BRANCH_WITH_PARENTS
       type: string
     BTVersionInfo:
       example:
@@ -55613,13 +55855,13 @@ components:
     BTViewDataInfo:
       example:
         cameraViewport:
-        - 5.637376656633329
-        - 5.637376656633329
-        angle: 5.962133916683182
+        - 9.301444243932576
+        - 9.301444243932576
+        angle: 7.061401241503109
         isPerspective: true
         viewMatrix:
-        - 2.3021358869347655
-        - 2.3021358869347655
+        - 3.616076749251911
+        - 3.616076749251911
       properties:
         angle:
           format: double
@@ -55640,13 +55882,13 @@ components:
     BTViewDataParams:
       example:
         cameraViewport:
-        - 1.4658129805029452
-        - 1.4658129805029452
-        angle: 6.027456183070403
+        - 2.3021358869347655
+        - 2.3021358869347655
+        angle: 5.637376656633329
         isPerspective: true
         viewMatrix:
-        - 5.962133916683182
-        - 5.962133916683182
+        - 7.061401241503109
+        - 7.061401241503109
       properties:
         angle:
           format: double
@@ -56538,6 +56780,7 @@ components:
       type: string
     BTWorkflowPropertyInfo:
       example:
+        computedPropertyEvalInfo: computedPropertyEvalInfo
         isNotifierProperty: true
         hideInUi: true
         dateFormat: dateFormat
@@ -56632,6 +56875,8 @@ components:
         computedProperty:
           type: boolean
         computedPropertyError:
+          type: string
+        computedPropertyEvalInfo:
           type: string
         dateFormat:
           type: string
@@ -67667,6 +67912,38 @@ components:
         url:
           type: string
       type: object
+    CoordinatesInfo:
+      example:
+        x: 0.8008282
+        "y": 6.0274563
+        z: 1.4658129
+      properties:
+        x:
+          format: float
+          type: number
+        "y":
+          format: float
+          type: number
+        z:
+          format: float
+          type: number
+      type: object
+    CoordinatesParams:
+      example:
+        x: 0.8008282
+        "y": 6.0274563
+        z: 1.4658129
+      properties:
+        x:
+          format: float
+          type: number
+        "y":
+          format: float
+          type: number
+        z:
+          format: float
+          type: number
+      type: object
     Coupon:
       example:
         metadata:
@@ -70167,6 +70444,19 @@ components:
       - FORMED_LOCATION_ON_MULTIPLE_FACES
       - FORMED_NOT_ON_HOLE_FORMED_FACE
       - THIN_SWEEP_THICKEN_FAILED
+      - DERIVED_NO_PARTS
+      - DERIVED_NO_INSTANCING
+      - DERIVED_NO_SAME_SOURCE
+      - DERIVED_FULL_FEATURE_PATTERN
+      - THIN_LOFT_3D_PROFILE_TRIM_WARNING
+      - THIN_LOFT_FAILED_TO_FIND_TRIM_PLANES_WARNING
+      - THIN_LOFT_THICKEN_FAILED
+      - FGS_MODAL_SIMULATION_MAXIMUM_RIGID_MODES_REACHED
+      - ASSEMBLY_MIRROR_PLANE_ERROR
+      - POLYLINE_CONSECUTIVE_EQUAL_POINTS
+      - POLYLINE_ZERO_ANGLE
+      - POLYLINE_BEND_RADII_INVALID_SIZE
+      - POLYLINE_INVALID_BEND
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -70561,6 +70851,7 @@ components:
       - FOCUS_INNER_QUERY
       - SHOW_TOLERANCE
       - ALLOW_ARRAY_FOCUS
+      - SHOW_INLINE_CONFIG_INPUTS
       - UNKNOWN
       type: string
     GBTUiSelectionType:
@@ -101357,12 +101648,8 @@ components:
       type: object
     Status:
       enum:
-      - DEVELOPMENT
-      - PRODUCTION
-      - STAGING
-      - EVP
-      - UNSET
-      - INTERNAL
+      - DB_TIMEOUT
+      - DB_MAX_NUMBER_ITEMS_EXCEEDED
       type: string
     StyleEnum:
       enum:
@@ -102543,6 +102830,14 @@ components:
       properties:
         btType:
           type: string
+      type: object
+      example: null
+    BTAssemblyMirror_2996_allOf:
+      properties:
+        btType:
+          type: string
+        mirrorFeature:
+          $ref: '#/components/schemas/BTMAssemblyMirrorFeature-3037'
       type: object
       example: null
     BTAssemblyPattern_1974_allOf:
@@ -103822,6 +104117,8 @@ components:
       properties:
         assemblyInstance:
           type: boolean
+        assemblyMirror:
+          type: boolean
         assemblyPattern:
           type: boolean
         assemblyReplicate:
@@ -104082,6 +104379,12 @@ components:
           type: string
         startNodeIdRaw:
           $ref: '#/components/schemas/BTObjectId'
+      type: object
+      example: null
+    BTMAssemblyMirrorFeature_3037_allOf:
+      properties:
+        btType:
+          type: string
       type: object
       example: null
     BTMAssemblyPatternFeature_2241_allOf:

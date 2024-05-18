@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **IsBranchPointAtStart** | Pointer to **bool** |  | [optional] 
 **SourceMicroversionId** | Pointer to **string** |  | [optional] 
 **TargetMicroversionId** | Pointer to **string** |  | [optional] 
+**UpgradeInfo** | Pointer to [**BTMergeUpgradeInfo**](BTMergeUpgradeInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetTargetMicroversionId sets TargetMicroversionId field to given value.
 `func (o *BTMergePreviewInfo) HasTargetMicroversionId() bool`
 
 HasTargetMicroversionId returns a boolean if a field has been set.
+
+### GetUpgradeInfo
+
+`func (o *BTMergePreviewInfo) GetUpgradeInfo() BTMergeUpgradeInfo`
+
+GetUpgradeInfo returns the UpgradeInfo field if non-nil, zero value otherwise.
+
+### GetUpgradeInfoOk
+
+`func (o *BTMergePreviewInfo) GetUpgradeInfoOk() (*BTMergeUpgradeInfo, bool)`
+
+GetUpgradeInfoOk returns a tuple with the UpgradeInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeInfo
+
+`func (o *BTMergePreviewInfo) SetUpgradeInfo(v BTMergeUpgradeInfo)`
+
+SetUpgradeInfo sets UpgradeInfo field to given value.
+
+### HasUpgradeInfo
+
+`func (o *BTMergePreviewInfo) HasUpgradeInfo() bool`
+
+HasUpgradeInfo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

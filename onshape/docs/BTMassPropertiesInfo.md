@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Centroid** | Pointer to **[]float64** |  | [optional] 
-**HasMass** | Pointer to **bool** |  | [optional] 
-**Inertia** | Pointer to **[]float64** |  | [optional] 
-**Mass** | Pointer to **[]float64** |  | [optional] 
-**MassMissingCount** | Pointer to **int32** |  | [optional] 
-**Periphery** | Pointer to **[]float64** |  | [optional] 
-**PrincipalAxes** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) |  | [optional] 
-**PrincipalInertia** | Pointer to **[]float64** |  | [optional] 
-**Volume** | Pointer to **[]float64** |  | [optional] 
+**Centroid** | Pointer to **[]float64** | Centroid, center of gravity, center of mass | [optional] 
+**HasMass** | Pointer to **bool** | &#x60;true&#x60; if the part has mass. | [optional] 
+**Inertia** | Pointer to **[]float64** | Mass moments of inertia | [optional] 
+**Mass** | Pointer to **[]float64** | Mass | [optional] 
+**MassMissingCount** | Pointer to **int32** | Number of parts without mass. | [optional] 
+**Periphery** | Pointer to **[]float64** | Surface area | [optional] 
+**PrincipalAxes** | Pointer to [**[]BTVector3d389**](BTVector3d389.md) | Vector coordinates of the principal axes. Use &#x60;BTVector3d-389&#x60; as the &#x60;btType&#x60;. | [optional] 
+**PrincipalInertia** | Pointer to **[]float64** | Principal moments of inertia | [optional] 
+**Volume** | Pointer to **[]float64** | Volume | [optional] 
 
 ## Methods
 

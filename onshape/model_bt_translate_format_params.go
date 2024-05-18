@@ -65,6 +65,7 @@ type BTTranslateFormatParams struct {
 	// Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
 	MaximumChordLength      *float64 `json:"maximumChordLength,omitempty"`
 	NotifyUser              *bool    `json:"notifyUser,omitempty"`
+	OccurrencesToExport     *string  `json:"occurrencesToExport,omitempty"`
 	OnePartPerDoc           *bool    `json:"onePartPerDoc,omitempty"`
 	OriginalForeignId       *string  `json:"originalForeignId,omitempty"`
 	ParentId                *string  `json:"parentId,omitempty"`
@@ -1459,6 +1460,38 @@ func (o *BTTranslateFormatParams) SetNotifyUser(v bool) {
 	o.NotifyUser = &v
 }
 
+// GetOccurrencesToExport returns the OccurrencesToExport field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetOccurrencesToExport() string {
+	if o == nil || o.OccurrencesToExport == nil {
+		var ret string
+		return ret
+	}
+	return *o.OccurrencesToExport
+}
+
+// GetOccurrencesToExportOk returns a tuple with the OccurrencesToExport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetOccurrencesToExportOk() (*string, bool) {
+	if o == nil || o.OccurrencesToExport == nil {
+		return nil, false
+	}
+	return o.OccurrencesToExport, true
+}
+
+// HasOccurrencesToExport returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasOccurrencesToExport() bool {
+	if o != nil && o.OccurrencesToExport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrencesToExport gets a reference to the given string and assigns it to the OccurrencesToExport field.
+func (o *BTTranslateFormatParams) SetOccurrencesToExport(v string) {
+	o.OccurrencesToExport = &v
+}
+
 // GetOnePartPerDoc returns the OnePartPerDoc field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetOnePartPerDoc() bool {
 	if o == nil || o.OnePartPerDoc == nil {
@@ -2770,6 +2803,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.NotifyUser != nil {
 		toSerialize["notifyUser"] = o.NotifyUser
+	}
+	if o.OccurrencesToExport != nil {
+		toSerialize["occurrencesToExport"] = o.OccurrencesToExport
 	}
 	if o.OnePartPerDoc != nil {
 		toSerialize["onePartPerDoc"] = o.OnePartPerDoc

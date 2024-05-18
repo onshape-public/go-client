@@ -14,8 +14,8 @@ import (
 	"encoding/json"
 )
 
-// BTClonedInstance2505 struct for BTClonedInstance2505
-type BTClonedInstance2505 struct {
+// BTAssemblyMirror2996 struct for BTAssemblyMirror2996
+type BTAssemblyMirror2996 struct {
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -42,32 +42,35 @@ type BTClonedInstance2505 struct {
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured  *bool                    `json:"suppressionConfigured,omitempty"`
-	SuppressionState       *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
-	ValidRevisionReference *bool                    `json:"validRevisionReference,omitempty"`
-	Version                *int32                   `json:"version,omitempty"`
-	SeedOccurrence         *BTOccurrence74          `json:"seedOccurrence,omitempty"`
+	SuppressionConfigured  *bool                         `json:"suppressionConfigured,omitempty"`
+	SuppressionState       *BTMSuppressionState1924      `json:"suppressionState,omitempty"`
+	ValidRevisionReference *bool                         `json:"validRevisionReference,omitempty"`
+	Version                *int32                        `json:"version,omitempty"`
+	Feature                *BTMAssemblyFeature887        `json:"feature,omitempty"`
+	FeatureId              *string                       `json:"featureId,omitempty"`
+	InstanceControlNodes   []BTInstanceControlNode750    `json:"instanceControlNodes,omitempty"`
+	MirrorFeature          *BTMAssemblyMirrorFeature3037 `json:"mirrorFeature,omitempty"`
 }
 
-// NewBTClonedInstance2505 instantiates a new BTClonedInstance2505 object
+// NewBTAssemblyMirror2996 instantiates a new BTAssemblyMirror2996 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTClonedInstance2505() *BTClonedInstance2505 {
-	this := BTClonedInstance2505{}
+func NewBTAssemblyMirror2996() *BTAssemblyMirror2996 {
+	this := BTAssemblyMirror2996{}
 	return &this
 }
 
-// NewBTClonedInstance2505WithDefaults instantiates a new BTClonedInstance2505 object
+// NewBTAssemblyMirror2996WithDefaults instantiates a new BTAssemblyMirror2996 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBTClonedInstance2505WithDefaults() *BTClonedInstance2505 {
-	this := BTClonedInstance2505{}
+func NewBTAssemblyMirror2996WithDefaults() *BTAssemblyMirror2996 {
+	this := BTAssemblyMirror2996{}
 	return &this
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetBtType() string {
+func (o *BTAssemblyMirror2996) GetBtType() string {
 	if o == nil || o.BtType == nil {
 		var ret string
 		return ret
@@ -77,7 +80,7 @@ func (o *BTClonedInstance2505) GetBtType() string {
 
 // GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetBtTypeOk() (*string, bool) {
+func (o *BTAssemblyMirror2996) GetBtTypeOk() (*string, bool) {
 	if o == nil || o.BtType == nil {
 		return nil, false
 	}
@@ -85,7 +88,7 @@ func (o *BTClonedInstance2505) GetBtTypeOk() (*string, bool) {
 }
 
 // HasBtType returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasBtType() bool {
+func (o *BTAssemblyMirror2996) HasBtType() bool {
 	if o != nil && o.BtType != nil {
 		return true
 	}
@@ -94,12 +97,12 @@ func (o *BTClonedInstance2505) HasBtType() bool {
 }
 
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTClonedInstance2505) SetBtType(v string) {
+func (o *BTAssemblyMirror2996) SetBtType(v string) {
 	o.BtType = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetImportMicroversion() string {
+func (o *BTAssemblyMirror2996) GetImportMicroversion() string {
 	if o == nil || o.ImportMicroversion == nil {
 		var ret string
 		return ret
@@ -109,7 +112,7 @@ func (o *BTClonedInstance2505) GetImportMicroversion() string {
 
 // GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetImportMicroversionOk() (*string, bool) {
+func (o *BTAssemblyMirror2996) GetImportMicroversionOk() (*string, bool) {
 	if o == nil || o.ImportMicroversion == nil {
 		return nil, false
 	}
@@ -117,7 +120,7 @@ func (o *BTClonedInstance2505) GetImportMicroversionOk() (*string, bool) {
 }
 
 // HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasImportMicroversion() bool {
+func (o *BTAssemblyMirror2996) HasImportMicroversion() bool {
 	if o != nil && o.ImportMicroversion != nil {
 		return true
 	}
@@ -126,12 +129,12 @@ func (o *BTClonedInstance2505) HasImportMicroversion() bool {
 }
 
 // SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTClonedInstance2505) SetImportMicroversion(v string) {
+func (o *BTAssemblyMirror2996) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetNodeId() string {
+func (o *BTAssemblyMirror2996) GetNodeId() string {
 	if o == nil || o.NodeId == nil {
 		var ret string
 		return ret
@@ -141,7 +144,7 @@ func (o *BTClonedInstance2505) GetNodeId() string {
 
 // GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetNodeIdOk() (*string, bool) {
+func (o *BTAssemblyMirror2996) GetNodeIdOk() (*string, bool) {
 	if o == nil || o.NodeId == nil {
 		return nil, false
 	}
@@ -149,7 +152,7 @@ func (o *BTClonedInstance2505) GetNodeIdOk() (*string, bool) {
 }
 
 // HasNodeId returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasNodeId() bool {
+func (o *BTAssemblyMirror2996) HasNodeId() bool {
 	if o != nil && o.NodeId != nil {
 		return true
 	}
@@ -158,12 +161,12 @@ func (o *BTClonedInstance2505) HasNodeId() bool {
 }
 
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTClonedInstance2505) SetNodeId(v string) {
+func (o *BTAssemblyMirror2996) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
 // GetAssemblyInstance returns the AssemblyInstance field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetAssemblyInstance() bool {
+func (o *BTAssemblyMirror2996) GetAssemblyInstance() bool {
 	if o == nil || o.AssemblyInstance == nil {
 		var ret bool
 		return ret
@@ -173,7 +176,7 @@ func (o *BTClonedInstance2505) GetAssemblyInstance() bool {
 
 // GetAssemblyInstanceOk returns a tuple with the AssemblyInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetAssemblyInstanceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetAssemblyInstanceOk() (*bool, bool) {
 	if o == nil || o.AssemblyInstance == nil {
 		return nil, false
 	}
@@ -181,7 +184,7 @@ func (o *BTClonedInstance2505) GetAssemblyInstanceOk() (*bool, bool) {
 }
 
 // HasAssemblyInstance returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasAssemblyInstance() bool {
+func (o *BTAssemblyMirror2996) HasAssemblyInstance() bool {
 	if o != nil && o.AssemblyInstance != nil {
 		return true
 	}
@@ -190,12 +193,12 @@ func (o *BTClonedInstance2505) HasAssemblyInstance() bool {
 }
 
 // SetAssemblyInstance gets a reference to the given bool and assigns it to the AssemblyInstance field.
-func (o *BTClonedInstance2505) SetAssemblyInstance(v bool) {
+func (o *BTAssemblyMirror2996) SetAssemblyInstance(v bool) {
 	o.AssemblyInstance = &v
 }
 
 // GetAssemblyMirror returns the AssemblyMirror field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetAssemblyMirror() bool {
+func (o *BTAssemblyMirror2996) GetAssemblyMirror() bool {
 	if o == nil || o.AssemblyMirror == nil {
 		var ret bool
 		return ret
@@ -205,7 +208,7 @@ func (o *BTClonedInstance2505) GetAssemblyMirror() bool {
 
 // GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetAssemblyMirrorOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetAssemblyMirrorOk() (*bool, bool) {
 	if o == nil || o.AssemblyMirror == nil {
 		return nil, false
 	}
@@ -213,7 +216,7 @@ func (o *BTClonedInstance2505) GetAssemblyMirrorOk() (*bool, bool) {
 }
 
 // HasAssemblyMirror returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasAssemblyMirror() bool {
+func (o *BTAssemblyMirror2996) HasAssemblyMirror() bool {
 	if o != nil && o.AssemblyMirror != nil {
 		return true
 	}
@@ -222,12 +225,12 @@ func (o *BTClonedInstance2505) HasAssemblyMirror() bool {
 }
 
 // SetAssemblyMirror gets a reference to the given bool and assigns it to the AssemblyMirror field.
-func (o *BTClonedInstance2505) SetAssemblyMirror(v bool) {
+func (o *BTAssemblyMirror2996) SetAssemblyMirror(v bool) {
 	o.AssemblyMirror = &v
 }
 
 // GetAssemblyPattern returns the AssemblyPattern field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetAssemblyPattern() bool {
+func (o *BTAssemblyMirror2996) GetAssemblyPattern() bool {
 	if o == nil || o.AssemblyPattern == nil {
 		var ret bool
 		return ret
@@ -237,7 +240,7 @@ func (o *BTClonedInstance2505) GetAssemblyPattern() bool {
 
 // GetAssemblyPatternOk returns a tuple with the AssemblyPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetAssemblyPatternOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetAssemblyPatternOk() (*bool, bool) {
 	if o == nil || o.AssemblyPattern == nil {
 		return nil, false
 	}
@@ -245,7 +248,7 @@ func (o *BTClonedInstance2505) GetAssemblyPatternOk() (*bool, bool) {
 }
 
 // HasAssemblyPattern returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasAssemblyPattern() bool {
+func (o *BTAssemblyMirror2996) HasAssemblyPattern() bool {
 	if o != nil && o.AssemblyPattern != nil {
 		return true
 	}
@@ -254,12 +257,12 @@ func (o *BTClonedInstance2505) HasAssemblyPattern() bool {
 }
 
 // SetAssemblyPattern gets a reference to the given bool and assigns it to the AssemblyPattern field.
-func (o *BTClonedInstance2505) SetAssemblyPattern(v bool) {
+func (o *BTAssemblyMirror2996) SetAssemblyPattern(v bool) {
 	o.AssemblyPattern = &v
 }
 
 // GetAssemblyReplicate returns the AssemblyReplicate field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetAssemblyReplicate() bool {
+func (o *BTAssemblyMirror2996) GetAssemblyReplicate() bool {
 	if o == nil || o.AssemblyReplicate == nil {
 		var ret bool
 		return ret
@@ -269,7 +272,7 @@ func (o *BTClonedInstance2505) GetAssemblyReplicate() bool {
 
 // GetAssemblyReplicateOk returns a tuple with the AssemblyReplicate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetAssemblyReplicateOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetAssemblyReplicateOk() (*bool, bool) {
 	if o == nil || o.AssemblyReplicate == nil {
 		return nil, false
 	}
@@ -277,7 +280,7 @@ func (o *BTClonedInstance2505) GetAssemblyReplicateOk() (*bool, bool) {
 }
 
 // HasAssemblyReplicate returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasAssemblyReplicate() bool {
+func (o *BTAssemblyMirror2996) HasAssemblyReplicate() bool {
 	if o != nil && o.AssemblyReplicate != nil {
 		return true
 	}
@@ -286,12 +289,12 @@ func (o *BTClonedInstance2505) HasAssemblyReplicate() bool {
 }
 
 // SetAssemblyReplicate gets a reference to the given bool and assigns it to the AssemblyReplicate field.
-func (o *BTClonedInstance2505) SetAssemblyReplicate(v bool) {
+func (o *BTAssemblyMirror2996) SetAssemblyReplicate(v bool) {
 	o.AssemblyReplicate = &v
 }
 
 // GetClonedInstance returns the ClonedInstance field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetClonedInstance() bool {
+func (o *BTAssemblyMirror2996) GetClonedInstance() bool {
 	if o == nil || o.ClonedInstance == nil {
 		var ret bool
 		return ret
@@ -301,7 +304,7 @@ func (o *BTClonedInstance2505) GetClonedInstance() bool {
 
 // GetClonedInstanceOk returns a tuple with the ClonedInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetClonedInstanceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetClonedInstanceOk() (*bool, bool) {
 	if o == nil || o.ClonedInstance == nil {
 		return nil, false
 	}
@@ -309,7 +312,7 @@ func (o *BTClonedInstance2505) GetClonedInstanceOk() (*bool, bool) {
 }
 
 // HasClonedInstance returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasClonedInstance() bool {
+func (o *BTAssemblyMirror2996) HasClonedInstance() bool {
 	if o != nil && o.ClonedInstance != nil {
 		return true
 	}
@@ -318,12 +321,12 @@ func (o *BTClonedInstance2505) HasClonedInstance() bool {
 }
 
 // SetClonedInstance gets a reference to the given bool and assigns it to the ClonedInstance field.
-func (o *BTClonedInstance2505) SetClonedInstance(v bool) {
+func (o *BTAssemblyMirror2996) SetClonedInstance(v bool) {
 	o.ClonedInstance = &v
 }
 
 // GetCustomData returns the CustomData field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetCustomData() map[string]BTReferenceCustomData1551 {
+func (o *BTAssemblyMirror2996) GetCustomData() map[string]BTReferenceCustomData1551 {
 	if o == nil || o.CustomData == nil {
 		var ret map[string]BTReferenceCustomData1551
 		return ret
@@ -333,7 +336,7 @@ func (o *BTClonedInstance2505) GetCustomData() map[string]BTReferenceCustomData1
 
 // GetCustomDataOk returns a tuple with the CustomData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetCustomDataOk() (*map[string]BTReferenceCustomData1551, bool) {
+func (o *BTAssemblyMirror2996) GetCustomDataOk() (*map[string]BTReferenceCustomData1551, bool) {
 	if o == nil || o.CustomData == nil {
 		return nil, false
 	}
@@ -341,7 +344,7 @@ func (o *BTClonedInstance2505) GetCustomDataOk() (*map[string]BTReferenceCustomD
 }
 
 // HasCustomData returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasCustomData() bool {
+func (o *BTAssemblyMirror2996) HasCustomData() bool {
 	if o != nil && o.CustomData != nil {
 		return true
 	}
@@ -350,12 +353,12 @@ func (o *BTClonedInstance2505) HasCustomData() bool {
 }
 
 // SetCustomData gets a reference to the given map[string]BTReferenceCustomData1551 and assigns it to the CustomData field.
-func (o *BTClonedInstance2505) SetCustomData(v map[string]BTReferenceCustomData1551) {
+func (o *BTAssemblyMirror2996) SetCustomData(v map[string]BTReferenceCustomData1551) {
 	o.CustomData = &v
 }
 
 // GetInstanceFolder returns the InstanceFolder field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetInstanceFolder() bool {
+func (o *BTAssemblyMirror2996) GetInstanceFolder() bool {
 	if o == nil || o.InstanceFolder == nil {
 		var ret bool
 		return ret
@@ -365,7 +368,7 @@ func (o *BTClonedInstance2505) GetInstanceFolder() bool {
 
 // GetInstanceFolderOk returns a tuple with the InstanceFolder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetInstanceFolderOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetInstanceFolderOk() (*bool, bool) {
 	if o == nil || o.InstanceFolder == nil {
 		return nil, false
 	}
@@ -373,7 +376,7 @@ func (o *BTClonedInstance2505) GetInstanceFolderOk() (*bool, bool) {
 }
 
 // HasInstanceFolder returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasInstanceFolder() bool {
+func (o *BTAssemblyMirror2996) HasInstanceFolder() bool {
 	if o != nil && o.InstanceFolder != nil {
 		return true
 	}
@@ -382,12 +385,12 @@ func (o *BTClonedInstance2505) HasInstanceFolder() bool {
 }
 
 // SetInstanceFolder gets a reference to the given bool and assigns it to the InstanceFolder field.
-func (o *BTClonedInstance2505) SetInstanceFolder(v bool) {
+func (o *BTAssemblyMirror2996) SetInstanceFolder(v bool) {
 	o.InstanceFolder = &v
 }
 
 // GetInstanceName returns the InstanceName field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetInstanceName() string {
+func (o *BTAssemblyMirror2996) GetInstanceName() string {
 	if o == nil || o.InstanceName == nil {
 		var ret string
 		return ret
@@ -397,7 +400,7 @@ func (o *BTClonedInstance2505) GetInstanceName() string {
 
 // GetInstanceNameOk returns a tuple with the InstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetInstanceNameOk() (*string, bool) {
+func (o *BTAssemblyMirror2996) GetInstanceNameOk() (*string, bool) {
 	if o == nil || o.InstanceName == nil {
 		return nil, false
 	}
@@ -405,7 +408,7 @@ func (o *BTClonedInstance2505) GetInstanceNameOk() (*string, bool) {
 }
 
 // HasInstanceName returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasInstanceName() bool {
+func (o *BTAssemblyMirror2996) HasInstanceName() bool {
 	if o != nil && o.InstanceName != nil {
 		return true
 	}
@@ -414,12 +417,12 @@ func (o *BTClonedInstance2505) HasInstanceName() bool {
 }
 
 // SetInstanceName gets a reference to the given string and assigns it to the InstanceName field.
-func (o *BTClonedInstance2505) SetInstanceName(v string) {
+func (o *BTAssemblyMirror2996) SetInstanceName(v string) {
 	o.InstanceName = &v
 }
 
 // GetIsFlattenedPart returns the IsFlattenedPart field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetIsFlattenedPart() bool {
+func (o *BTAssemblyMirror2996) GetIsFlattenedPart() bool {
 	if o == nil || o.IsFlattenedPart == nil {
 		var ret bool
 		return ret
@@ -429,7 +432,7 @@ func (o *BTClonedInstance2505) GetIsFlattenedPart() bool {
 
 // GetIsFlattenedPartOk returns a tuple with the IsFlattenedPart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetIsFlattenedPartOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetIsFlattenedPartOk() (*bool, bool) {
 	if o == nil || o.IsFlattenedPart == nil {
 		return nil, false
 	}
@@ -437,7 +440,7 @@ func (o *BTClonedInstance2505) GetIsFlattenedPartOk() (*bool, bool) {
 }
 
 // HasIsFlattenedPart returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasIsFlattenedPart() bool {
+func (o *BTAssemblyMirror2996) HasIsFlattenedPart() bool {
 	if o != nil && o.IsFlattenedPart != nil {
 		return true
 	}
@@ -446,12 +449,12 @@ func (o *BTClonedInstance2505) HasIsFlattenedPart() bool {
 }
 
 // SetIsFlattenedPart gets a reference to the given bool and assigns it to the IsFlattenedPart field.
-func (o *BTClonedInstance2505) SetIsFlattenedPart(v bool) {
+func (o *BTAssemblyMirror2996) SetIsFlattenedPart(v bool) {
 	o.IsFlattenedPart = &v
 }
 
 // GetLocked returns the Locked field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetLocked() bool {
+func (o *BTAssemblyMirror2996) GetLocked() bool {
 	if o == nil || o.Locked == nil {
 		var ret bool
 		return ret
@@ -461,7 +464,7 @@ func (o *BTClonedInstance2505) GetLocked() bool {
 
 // GetLockedOk returns a tuple with the Locked field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetLockedOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetLockedOk() (*bool, bool) {
 	if o == nil || o.Locked == nil {
 		return nil, false
 	}
@@ -469,7 +472,7 @@ func (o *BTClonedInstance2505) GetLockedOk() (*bool, bool) {
 }
 
 // HasLocked returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasLocked() bool {
+func (o *BTAssemblyMirror2996) HasLocked() bool {
 	if o != nil && o.Locked != nil {
 		return true
 	}
@@ -478,12 +481,12 @@ func (o *BTClonedInstance2505) HasLocked() bool {
 }
 
 // SetLocked gets a reference to the given bool and assigns it to the Locked field.
-func (o *BTClonedInstance2505) SetLocked(v bool) {
+func (o *BTAssemblyMirror2996) SetLocked(v bool) {
 	o.Locked = &v
 }
 
 // GetParametricInstance returns the ParametricInstance field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetParametricInstance() bool {
+func (o *BTAssemblyMirror2996) GetParametricInstance() bool {
 	if o == nil || o.ParametricInstance == nil {
 		var ret bool
 		return ret
@@ -493,7 +496,7 @@ func (o *BTClonedInstance2505) GetParametricInstance() bool {
 
 // GetParametricInstanceOk returns a tuple with the ParametricInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetParametricInstanceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetParametricInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricInstance == nil {
 		return nil, false
 	}
@@ -501,7 +504,7 @@ func (o *BTClonedInstance2505) GetParametricInstanceOk() (*bool, bool) {
 }
 
 // HasParametricInstance returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasParametricInstance() bool {
+func (o *BTAssemblyMirror2996) HasParametricInstance() bool {
 	if o != nil && o.ParametricInstance != nil {
 		return true
 	}
@@ -510,12 +513,12 @@ func (o *BTClonedInstance2505) HasParametricInstance() bool {
 }
 
 // SetParametricInstance gets a reference to the given bool and assigns it to the ParametricInstance field.
-func (o *BTClonedInstance2505) SetParametricInstance(v bool) {
+func (o *BTAssemblyMirror2996) SetParametricInstance(v bool) {
 	o.ParametricInstance = &v
 }
 
 // GetParametricOutputInstance returns the ParametricOutputInstance field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetParametricOutputInstance() bool {
+func (o *BTAssemblyMirror2996) GetParametricOutputInstance() bool {
 	if o == nil || o.ParametricOutputInstance == nil {
 		var ret bool
 		return ret
@@ -525,7 +528,7 @@ func (o *BTClonedInstance2505) GetParametricOutputInstance() bool {
 
 // GetParametricOutputInstanceOk returns a tuple with the ParametricOutputInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetParametricOutputInstanceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetParametricOutputInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricOutputInstance == nil {
 		return nil, false
 	}
@@ -533,7 +536,7 @@ func (o *BTClonedInstance2505) GetParametricOutputInstanceOk() (*bool, bool) {
 }
 
 // HasParametricOutputInstance returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasParametricOutputInstance() bool {
+func (o *BTAssemblyMirror2996) HasParametricOutputInstance() bool {
 	if o != nil && o.ParametricOutputInstance != nil {
 		return true
 	}
@@ -542,12 +545,12 @@ func (o *BTClonedInstance2505) HasParametricOutputInstance() bool {
 }
 
 // SetParametricOutputInstance gets a reference to the given bool and assigns it to the ParametricOutputInstance field.
-func (o *BTClonedInstance2505) SetParametricOutputInstance(v bool) {
+func (o *BTAssemblyMirror2996) SetParametricOutputInstance(v bool) {
 	o.ParametricOutputInstance = &v
 }
 
 // GetParametricPartStudioChildInstance returns the ParametricPartStudioChildInstance field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetParametricPartStudioChildInstance() bool {
+func (o *BTAssemblyMirror2996) GetParametricPartStudioChildInstance() bool {
 	if o == nil || o.ParametricPartStudioChildInstance == nil {
 		var ret bool
 		return ret
@@ -557,7 +560,7 @@ func (o *BTClonedInstance2505) GetParametricPartStudioChildInstance() bool {
 
 // GetParametricPartStudioChildInstanceOk returns a tuple with the ParametricPartStudioChildInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetParametricPartStudioChildInstanceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetParametricPartStudioChildInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricPartStudioChildInstance == nil {
 		return nil, false
 	}
@@ -565,7 +568,7 @@ func (o *BTClonedInstance2505) GetParametricPartStudioChildInstanceOk() (*bool, 
 }
 
 // HasParametricPartStudioChildInstance returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasParametricPartStudioChildInstance() bool {
+func (o *BTAssemblyMirror2996) HasParametricPartStudioChildInstance() bool {
 	if o != nil && o.ParametricPartStudioChildInstance != nil {
 		return true
 	}
@@ -574,12 +577,12 @@ func (o *BTClonedInstance2505) HasParametricPartStudioChildInstance() bool {
 }
 
 // SetParametricPartStudioChildInstance gets a reference to the given bool and assigns it to the ParametricPartStudioChildInstance field.
-func (o *BTClonedInstance2505) SetParametricPartStudioChildInstance(v bool) {
+func (o *BTAssemblyMirror2996) SetParametricPartStudioChildInstance(v bool) {
 	o.ParametricPartStudioChildInstance = &v
 }
 
 // GetParametricPartStudioInstance returns the ParametricPartStudioInstance field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetParametricPartStudioInstance() bool {
+func (o *BTAssemblyMirror2996) GetParametricPartStudioInstance() bool {
 	if o == nil || o.ParametricPartStudioInstance == nil {
 		var ret bool
 		return ret
@@ -589,7 +592,7 @@ func (o *BTClonedInstance2505) GetParametricPartStudioInstance() bool {
 
 // GetParametricPartStudioInstanceOk returns a tuple with the ParametricPartStudioInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetParametricPartStudioInstanceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetParametricPartStudioInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricPartStudioInstance == nil {
 		return nil, false
 	}
@@ -597,7 +600,7 @@ func (o *BTClonedInstance2505) GetParametricPartStudioInstanceOk() (*bool, bool)
 }
 
 // HasParametricPartStudioInstance returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasParametricPartStudioInstance() bool {
+func (o *BTAssemblyMirror2996) HasParametricPartStudioInstance() bool {
 	if o != nil && o.ParametricPartStudioInstance != nil {
 		return true
 	}
@@ -606,12 +609,12 @@ func (o *BTClonedInstance2505) HasParametricPartStudioInstance() bool {
 }
 
 // SetParametricPartStudioInstance gets a reference to the given bool and assigns it to the ParametricPartStudioInstance field.
-func (o *BTClonedInstance2505) SetParametricPartStudioInstance(v bool) {
+func (o *BTAssemblyMirror2996) SetParametricPartStudioInstance(v bool) {
 	o.ParametricPartStudioInstance = &v
 }
 
 // GetPartInstance returns the PartInstance field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetPartInstance() bool {
+func (o *BTAssemblyMirror2996) GetPartInstance() bool {
 	if o == nil || o.PartInstance == nil {
 		var ret bool
 		return ret
@@ -621,7 +624,7 @@ func (o *BTClonedInstance2505) GetPartInstance() bool {
 
 // GetPartInstanceOk returns a tuple with the PartInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetPartInstanceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetPartInstanceOk() (*bool, bool) {
 	if o == nil || o.PartInstance == nil {
 		return nil, false
 	}
@@ -629,7 +632,7 @@ func (o *BTClonedInstance2505) GetPartInstanceOk() (*bool, bool) {
 }
 
 // HasPartInstance returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasPartInstance() bool {
+func (o *BTAssemblyMirror2996) HasPartInstance() bool {
 	if o != nil && o.PartInstance != nil {
 		return true
 	}
@@ -638,12 +641,12 @@ func (o *BTClonedInstance2505) HasPartInstance() bool {
 }
 
 // SetPartInstance gets a reference to the given bool and assigns it to the PartInstance field.
-func (o *BTClonedInstance2505) SetPartInstance(v bool) {
+func (o *BTAssemblyMirror2996) SetPartInstance(v bool) {
 	o.PartInstance = &v
 }
 
 // GetReleasable returns the Releasable field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetReleasable() bool {
+func (o *BTAssemblyMirror2996) GetReleasable() bool {
 	if o == nil || o.Releasable == nil {
 		var ret bool
 		return ret
@@ -653,7 +656,7 @@ func (o *BTClonedInstance2505) GetReleasable() bool {
 
 // GetReleasableOk returns a tuple with the Releasable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetReleasableOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetReleasableOk() (*bool, bool) {
 	if o == nil || o.Releasable == nil {
 		return nil, false
 	}
@@ -661,7 +664,7 @@ func (o *BTClonedInstance2505) GetReleasableOk() (*bool, bool) {
 }
 
 // HasReleasable returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasReleasable() bool {
+func (o *BTAssemblyMirror2996) HasReleasable() bool {
 	if o != nil && o.Releasable != nil {
 		return true
 	}
@@ -670,12 +673,12 @@ func (o *BTClonedInstance2505) HasReleasable() bool {
 }
 
 // SetReleasable gets a reference to the given bool and assigns it to the Releasable field.
-func (o *BTClonedInstance2505) SetReleasable(v bool) {
+func (o *BTAssemblyMirror2996) SetReleasable(v bool) {
 	o.Releasable = &v
 }
 
 // GetRevisionCustomData returns the RevisionCustomData field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetRevisionCustomData() BTRevisionCustomData2090 {
+func (o *BTAssemblyMirror2996) GetRevisionCustomData() BTRevisionCustomData2090 {
 	if o == nil || o.RevisionCustomData == nil {
 		var ret BTRevisionCustomData2090
 		return ret
@@ -685,7 +688,7 @@ func (o *BTClonedInstance2505) GetRevisionCustomData() BTRevisionCustomData2090 
 
 // GetRevisionCustomDataOk returns a tuple with the RevisionCustomData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetRevisionCustomDataOk() (*BTRevisionCustomData2090, bool) {
+func (o *BTAssemblyMirror2996) GetRevisionCustomDataOk() (*BTRevisionCustomData2090, bool) {
 	if o == nil || o.RevisionCustomData == nil {
 		return nil, false
 	}
@@ -693,7 +696,7 @@ func (o *BTClonedInstance2505) GetRevisionCustomDataOk() (*BTRevisionCustomData2
 }
 
 // HasRevisionCustomData returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasRevisionCustomData() bool {
+func (o *BTAssemblyMirror2996) HasRevisionCustomData() bool {
 	if o != nil && o.RevisionCustomData != nil {
 		return true
 	}
@@ -702,12 +705,12 @@ func (o *BTClonedInstance2505) HasRevisionCustomData() bool {
 }
 
 // SetRevisionCustomData gets a reference to the given BTRevisionCustomData2090 and assigns it to the RevisionCustomData field.
-func (o *BTClonedInstance2505) SetRevisionCustomData(v BTRevisionCustomData2090) {
+func (o *BTAssemblyMirror2996) SetRevisionCustomData(v BTRevisionCustomData2090) {
 	o.RevisionCustomData = &v
 }
 
 // GetStandardContent returns the StandardContent field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetStandardContent() bool {
+func (o *BTAssemblyMirror2996) GetStandardContent() bool {
 	if o == nil || o.StandardContent == nil {
 		var ret bool
 		return ret
@@ -717,7 +720,7 @@ func (o *BTClonedInstance2505) GetStandardContent() bool {
 
 // GetStandardContentOk returns a tuple with the StandardContent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetStandardContentOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetStandardContentOk() (*bool, bool) {
 	if o == nil || o.StandardContent == nil {
 		return nil, false
 	}
@@ -725,7 +728,7 @@ func (o *BTClonedInstance2505) GetStandardContentOk() (*bool, bool) {
 }
 
 // HasStandardContent returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasStandardContent() bool {
+func (o *BTAssemblyMirror2996) HasStandardContent() bool {
 	if o != nil && o.StandardContent != nil {
 		return true
 	}
@@ -734,12 +737,12 @@ func (o *BTClonedInstance2505) HasStandardContent() bool {
 }
 
 // SetStandardContent gets a reference to the given bool and assigns it to the StandardContent field.
-func (o *BTClonedInstance2505) SetStandardContent(v bool) {
+func (o *BTAssemblyMirror2996) SetStandardContent(v bool) {
 	o.StandardContent = &v
 }
 
 // GetStandardContentParametersId returns the StandardContentParametersId field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetStandardContentParametersId() string {
+func (o *BTAssemblyMirror2996) GetStandardContentParametersId() string {
 	if o == nil || o.StandardContentParametersId == nil {
 		var ret string
 		return ret
@@ -749,7 +752,7 @@ func (o *BTClonedInstance2505) GetStandardContentParametersId() string {
 
 // GetStandardContentParametersIdOk returns a tuple with the StandardContentParametersId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetStandardContentParametersIdOk() (*string, bool) {
+func (o *BTAssemblyMirror2996) GetStandardContentParametersIdOk() (*string, bool) {
 	if o == nil || o.StandardContentParametersId == nil {
 		return nil, false
 	}
@@ -757,7 +760,7 @@ func (o *BTClonedInstance2505) GetStandardContentParametersIdOk() (*string, bool
 }
 
 // HasStandardContentParametersId returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasStandardContentParametersId() bool {
+func (o *BTAssemblyMirror2996) HasStandardContentParametersId() bool {
 	if o != nil && o.StandardContentParametersId != nil {
 		return true
 	}
@@ -766,12 +769,12 @@ func (o *BTClonedInstance2505) HasStandardContentParametersId() bool {
 }
 
 // SetStandardContentParametersId gets a reference to the given string and assigns it to the StandardContentParametersId field.
-func (o *BTClonedInstance2505) SetStandardContentParametersId(v string) {
+func (o *BTAssemblyMirror2996) SetStandardContentParametersId(v string) {
 	o.StandardContentParametersId = &v
 }
 
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetSuppressed() bool {
+func (o *BTAssemblyMirror2996) GetSuppressed() bool {
 	if o == nil || o.Suppressed == nil {
 		var ret bool
 		return ret
@@ -781,7 +784,7 @@ func (o *BTClonedInstance2505) GetSuppressed() bool {
 
 // GetSuppressedOk returns a tuple with the Suppressed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetSuppressedOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetSuppressedOk() (*bool, bool) {
 	if o == nil || o.Suppressed == nil {
 		return nil, false
 	}
@@ -789,7 +792,7 @@ func (o *BTClonedInstance2505) GetSuppressedOk() (*bool, bool) {
 }
 
 // HasSuppressed returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasSuppressed() bool {
+func (o *BTAssemblyMirror2996) HasSuppressed() bool {
 	if o != nil && o.Suppressed != nil {
 		return true
 	}
@@ -798,12 +801,12 @@ func (o *BTClonedInstance2505) HasSuppressed() bool {
 }
 
 // SetSuppressed gets a reference to the given bool and assigns it to the Suppressed field.
-func (o *BTClonedInstance2505) SetSuppressed(v bool) {
+func (o *BTAssemblyMirror2996) SetSuppressed(v bool) {
 	o.Suppressed = &v
 }
 
 // GetSuppressedFieldIndex returns the SuppressedFieldIndex field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetSuppressedFieldIndex() int32 {
+func (o *BTAssemblyMirror2996) GetSuppressedFieldIndex() int32 {
 	if o == nil || o.SuppressedFieldIndex == nil {
 		var ret int32
 		return ret
@@ -813,7 +816,7 @@ func (o *BTClonedInstance2505) GetSuppressedFieldIndex() int32 {
 
 // GetSuppressedFieldIndexOk returns a tuple with the SuppressedFieldIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetSuppressedFieldIndexOk() (*int32, bool) {
+func (o *BTAssemblyMirror2996) GetSuppressedFieldIndexOk() (*int32, bool) {
 	if o == nil || o.SuppressedFieldIndex == nil {
 		return nil, false
 	}
@@ -821,7 +824,7 @@ func (o *BTClonedInstance2505) GetSuppressedFieldIndexOk() (*int32, bool) {
 }
 
 // HasSuppressedFieldIndex returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasSuppressedFieldIndex() bool {
+func (o *BTAssemblyMirror2996) HasSuppressedFieldIndex() bool {
 	if o != nil && o.SuppressedFieldIndex != nil {
 		return true
 	}
@@ -830,12 +833,12 @@ func (o *BTClonedInstance2505) HasSuppressedFieldIndex() bool {
 }
 
 // SetSuppressedFieldIndex gets a reference to the given int32 and assigns it to the SuppressedFieldIndex field.
-func (o *BTClonedInstance2505) SetSuppressedFieldIndex(v int32) {
+func (o *BTAssemblyMirror2996) SetSuppressedFieldIndex(v int32) {
 	o.SuppressedFieldIndex = &v
 }
 
 // GetSuppressionConfigured returns the SuppressionConfigured field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetSuppressionConfigured() bool {
+func (o *BTAssemblyMirror2996) GetSuppressionConfigured() bool {
 	if o == nil || o.SuppressionConfigured == nil {
 		var ret bool
 		return ret
@@ -845,7 +848,7 @@ func (o *BTClonedInstance2505) GetSuppressionConfigured() bool {
 
 // GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetSuppressionConfiguredOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetSuppressionConfiguredOk() (*bool, bool) {
 	if o == nil || o.SuppressionConfigured == nil {
 		return nil, false
 	}
@@ -853,7 +856,7 @@ func (o *BTClonedInstance2505) GetSuppressionConfiguredOk() (*bool, bool) {
 }
 
 // HasSuppressionConfigured returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasSuppressionConfigured() bool {
+func (o *BTAssemblyMirror2996) HasSuppressionConfigured() bool {
 	if o != nil && o.SuppressionConfigured != nil {
 		return true
 	}
@@ -862,12 +865,12 @@ func (o *BTClonedInstance2505) HasSuppressionConfigured() bool {
 }
 
 // SetSuppressionConfigured gets a reference to the given bool and assigns it to the SuppressionConfigured field.
-func (o *BTClonedInstance2505) SetSuppressionConfigured(v bool) {
+func (o *BTAssemblyMirror2996) SetSuppressionConfigured(v bool) {
 	o.SuppressionConfigured = &v
 }
 
 // GetSuppressionState returns the SuppressionState field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetSuppressionState() BTMSuppressionState1924 {
+func (o *BTAssemblyMirror2996) GetSuppressionState() BTMSuppressionState1924 {
 	if o == nil || o.SuppressionState == nil {
 		var ret BTMSuppressionState1924
 		return ret
@@ -877,7 +880,7 @@ func (o *BTClonedInstance2505) GetSuppressionState() BTMSuppressionState1924 {
 
 // GetSuppressionStateOk returns a tuple with the SuppressionState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
+func (o *BTAssemblyMirror2996) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
 	if o == nil || o.SuppressionState == nil {
 		return nil, false
 	}
@@ -885,7 +888,7 @@ func (o *BTClonedInstance2505) GetSuppressionStateOk() (*BTMSuppressionState1924
 }
 
 // HasSuppressionState returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasSuppressionState() bool {
+func (o *BTAssemblyMirror2996) HasSuppressionState() bool {
 	if o != nil && o.SuppressionState != nil {
 		return true
 	}
@@ -894,12 +897,12 @@ func (o *BTClonedInstance2505) HasSuppressionState() bool {
 }
 
 // SetSuppressionState gets a reference to the given BTMSuppressionState1924 and assigns it to the SuppressionState field.
-func (o *BTClonedInstance2505) SetSuppressionState(v BTMSuppressionState1924) {
+func (o *BTAssemblyMirror2996) SetSuppressionState(v BTMSuppressionState1924) {
 	o.SuppressionState = &v
 }
 
 // GetValidRevisionReference returns the ValidRevisionReference field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetValidRevisionReference() bool {
+func (o *BTAssemblyMirror2996) GetValidRevisionReference() bool {
 	if o == nil || o.ValidRevisionReference == nil {
 		var ret bool
 		return ret
@@ -909,7 +912,7 @@ func (o *BTClonedInstance2505) GetValidRevisionReference() bool {
 
 // GetValidRevisionReferenceOk returns a tuple with the ValidRevisionReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetValidRevisionReferenceOk() (*bool, bool) {
+func (o *BTAssemblyMirror2996) GetValidRevisionReferenceOk() (*bool, bool) {
 	if o == nil || o.ValidRevisionReference == nil {
 		return nil, false
 	}
@@ -917,7 +920,7 @@ func (o *BTClonedInstance2505) GetValidRevisionReferenceOk() (*bool, bool) {
 }
 
 // HasValidRevisionReference returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasValidRevisionReference() bool {
+func (o *BTAssemblyMirror2996) HasValidRevisionReference() bool {
 	if o != nil && o.ValidRevisionReference != nil {
 		return true
 	}
@@ -926,12 +929,12 @@ func (o *BTClonedInstance2505) HasValidRevisionReference() bool {
 }
 
 // SetValidRevisionReference gets a reference to the given bool and assigns it to the ValidRevisionReference field.
-func (o *BTClonedInstance2505) SetValidRevisionReference(v bool) {
+func (o *BTAssemblyMirror2996) SetValidRevisionReference(v bool) {
 	o.ValidRevisionReference = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetVersion() int32 {
+func (o *BTAssemblyMirror2996) GetVersion() int32 {
 	if o == nil || o.Version == nil {
 		var ret int32
 		return ret
@@ -941,7 +944,7 @@ func (o *BTClonedInstance2505) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetVersionOk() (*int32, bool) {
+func (o *BTAssemblyMirror2996) GetVersionOk() (*int32, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -949,7 +952,7 @@ func (o *BTClonedInstance2505) GetVersionOk() (*int32, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasVersion() bool {
+func (o *BTAssemblyMirror2996) HasVersion() bool {
 	if o != nil && o.Version != nil {
 		return true
 	}
@@ -958,43 +961,139 @@ func (o *BTClonedInstance2505) HasVersion() bool {
 }
 
 // SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *BTClonedInstance2505) SetVersion(v int32) {
+func (o *BTAssemblyMirror2996) SetVersion(v int32) {
 	o.Version = &v
 }
 
-// GetSeedOccurrence returns the SeedOccurrence field value if set, zero value otherwise.
-func (o *BTClonedInstance2505) GetSeedOccurrence() BTOccurrence74 {
-	if o == nil || o.SeedOccurrence == nil {
-		var ret BTOccurrence74
+// GetFeature returns the Feature field value if set, zero value otherwise.
+func (o *BTAssemblyMirror2996) GetFeature() BTMAssemblyFeature887 {
+	if o == nil || o.Feature == nil {
+		var ret BTMAssemblyFeature887
 		return ret
 	}
-	return *o.SeedOccurrence
+	return *o.Feature
 }
 
-// GetSeedOccurrenceOk returns a tuple with the SeedOccurrence field value if set, nil otherwise
+// GetFeatureOk returns a tuple with the Feature field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTClonedInstance2505) GetSeedOccurrenceOk() (*BTOccurrence74, bool) {
-	if o == nil || o.SeedOccurrence == nil {
+func (o *BTAssemblyMirror2996) GetFeatureOk() (*BTMAssemblyFeature887, bool) {
+	if o == nil || o.Feature == nil {
 		return nil, false
 	}
-	return o.SeedOccurrence, true
+	return o.Feature, true
 }
 
-// HasSeedOccurrence returns a boolean if a field has been set.
-func (o *BTClonedInstance2505) HasSeedOccurrence() bool {
-	if o != nil && o.SeedOccurrence != nil {
+// HasFeature returns a boolean if a field has been set.
+func (o *BTAssemblyMirror2996) HasFeature() bool {
+	if o != nil && o.Feature != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSeedOccurrence gets a reference to the given BTOccurrence74 and assigns it to the SeedOccurrence field.
-func (o *BTClonedInstance2505) SetSeedOccurrence(v BTOccurrence74) {
-	o.SeedOccurrence = &v
+// SetFeature gets a reference to the given BTMAssemblyFeature887 and assigns it to the Feature field.
+func (o *BTAssemblyMirror2996) SetFeature(v BTMAssemblyFeature887) {
+	o.Feature = &v
 }
 
-func (o BTClonedInstance2505) MarshalJSON() ([]byte, error) {
+// GetFeatureId returns the FeatureId field value if set, zero value otherwise.
+func (o *BTAssemblyMirror2996) GetFeatureId() string {
+	if o == nil || o.FeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.FeatureId
+}
+
+// GetFeatureIdOk returns a tuple with the FeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyMirror2996) GetFeatureIdOk() (*string, bool) {
+	if o == nil || o.FeatureId == nil {
+		return nil, false
+	}
+	return o.FeatureId, true
+}
+
+// HasFeatureId returns a boolean if a field has been set.
+func (o *BTAssemblyMirror2996) HasFeatureId() bool {
+	if o != nil && o.FeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
+func (o *BTAssemblyMirror2996) SetFeatureId(v string) {
+	o.FeatureId = &v
+}
+
+// GetInstanceControlNodes returns the InstanceControlNodes field value if set, zero value otherwise.
+func (o *BTAssemblyMirror2996) GetInstanceControlNodes() []BTInstanceControlNode750 {
+	if o == nil || o.InstanceControlNodes == nil {
+		var ret []BTInstanceControlNode750
+		return ret
+	}
+	return o.InstanceControlNodes
+}
+
+// GetInstanceControlNodesOk returns a tuple with the InstanceControlNodes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyMirror2996) GetInstanceControlNodesOk() ([]BTInstanceControlNode750, bool) {
+	if o == nil || o.InstanceControlNodes == nil {
+		return nil, false
+	}
+	return o.InstanceControlNodes, true
+}
+
+// HasInstanceControlNodes returns a boolean if a field has been set.
+func (o *BTAssemblyMirror2996) HasInstanceControlNodes() bool {
+	if o != nil && o.InstanceControlNodes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceControlNodes gets a reference to the given []BTInstanceControlNode750 and assigns it to the InstanceControlNodes field.
+func (o *BTAssemblyMirror2996) SetInstanceControlNodes(v []BTInstanceControlNode750) {
+	o.InstanceControlNodes = v
+}
+
+// GetMirrorFeature returns the MirrorFeature field value if set, zero value otherwise.
+func (o *BTAssemblyMirror2996) GetMirrorFeature() BTMAssemblyMirrorFeature3037 {
+	if o == nil || o.MirrorFeature == nil {
+		var ret BTMAssemblyMirrorFeature3037
+		return ret
+	}
+	return *o.MirrorFeature
+}
+
+// GetMirrorFeatureOk returns a tuple with the MirrorFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyMirror2996) GetMirrorFeatureOk() (*BTMAssemblyMirrorFeature3037, bool) {
+	if o == nil || o.MirrorFeature == nil {
+		return nil, false
+	}
+	return o.MirrorFeature, true
+}
+
+// HasMirrorFeature returns a boolean if a field has been set.
+func (o *BTAssemblyMirror2996) HasMirrorFeature() bool {
+	if o != nil && o.MirrorFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMirrorFeature gets a reference to the given BTMAssemblyMirrorFeature3037 and assigns it to the MirrorFeature field.
+func (o *BTAssemblyMirror2996) SetMirrorFeature(v BTMAssemblyMirrorFeature3037) {
+	o.MirrorFeature = &v
+}
+
+func (o BTAssemblyMirror2996) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
@@ -1080,44 +1179,53 @@ func (o BTClonedInstance2505) MarshalJSON() ([]byte, error) {
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
 	}
-	if o.SeedOccurrence != nil {
-		toSerialize["seedOccurrence"] = o.SeedOccurrence
+	if o.Feature != nil {
+		toSerialize["feature"] = o.Feature
+	}
+	if o.FeatureId != nil {
+		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.InstanceControlNodes != nil {
+		toSerialize["instanceControlNodes"] = o.InstanceControlNodes
+	}
+	if o.MirrorFeature != nil {
+		toSerialize["mirrorFeature"] = o.MirrorFeature
 	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableBTClonedInstance2505 struct {
-	value *BTClonedInstance2505
+type NullableBTAssemblyMirror2996 struct {
+	value *BTAssemblyMirror2996
 	isSet bool
 }
 
-func (v NullableBTClonedInstance2505) Get() *BTClonedInstance2505 {
+func (v NullableBTAssemblyMirror2996) Get() *BTAssemblyMirror2996 {
 	return v.value
 }
 
-func (v *NullableBTClonedInstance2505) Set(val *BTClonedInstance2505) {
+func (v *NullableBTAssemblyMirror2996) Set(val *BTAssemblyMirror2996) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBTClonedInstance2505) IsSet() bool {
+func (v NullableBTAssemblyMirror2996) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBTClonedInstance2505) Unset() {
+func (v *NullableBTAssemblyMirror2996) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBTClonedInstance2505(val *BTClonedInstance2505) *NullableBTClonedInstance2505 {
-	return &NullableBTClonedInstance2505{value: val, isSet: true}
+func NewNullableBTAssemblyMirror2996(val *BTAssemblyMirror2996) *NullableBTAssemblyMirror2996 {
+	return &NullableBTAssemblyMirror2996{value: val, isSet: true}
 }
 
-func (v NullableBTClonedInstance2505) MarshalJSON() ([]byte, error) {
+func (v NullableBTAssemblyMirror2996) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBTClonedInstance2505) UnmarshalJSON(src []byte) error {
+func (v *NullableBTAssemblyMirror2996) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

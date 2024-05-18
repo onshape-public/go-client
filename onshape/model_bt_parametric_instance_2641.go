@@ -30,6 +30,11 @@ func (o *BTParametricPartStudioInstance4374) AsBTParametricInstance2641() *BTPar
 	return &BTParametricInstance2641{o}
 }
 
+// BTAssemblyMirror2996AsBTParametricInstance2641 is a convenience function that returns BTAssemblyMirror2996 wrapped in BTParametricInstance2641
+func (o *BTAssemblyMirror2996) AsBTParametricInstance2641() *BTParametricInstance2641 {
+	return &BTParametricInstance2641{o}
+}
+
 // BTAssemblyReplicate2774AsBTParametricInstance2641 is a convenience function that returns BTAssemblyReplicate2774 wrapped in BTParametricInstance2641
 func (o *BTAssemblyReplicate2774) AsBTParametricInstance2641() *BTParametricInstance2641 {
 	return &BTParametricInstance2641{o}
@@ -250,6 +255,56 @@ func (o *BTParametricInstance2641) SetAssemblyInstance(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetAssemblyInstance(v)
+}
+
+// GetAssemblyMirror returns the AssemblyMirror field value if set, zero value otherwise.
+func (o *BTParametricInstance2641) GetAssemblyMirror() bool {
+	type getResult interface {
+		GetAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAssemblyMirror()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricInstance2641) GetAssemblyMirrorOk() (*bool, bool) {
+	type getResult interface {
+		GetAssemblyMirrorOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAssemblyMirrorOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAssemblyMirror returns a boolean if a field has been set.
+func (o *BTParametricInstance2641) HasAssemblyMirror() bool {
+	type getResult interface {
+		HasAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAssemblyMirror()
+	} else {
+		return false
+	}
+}
+
+// SetAssemblyMirror gets a reference to the given bool and assigns it to the AssemblyMirror field.
+func (o *BTParametricInstance2641) SetAssemblyMirror(v bool) {
+	type getResult interface {
+		SetAssemblyMirror(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAssemblyMirror(v)
 }
 
 // GetAssemblyPattern returns the AssemblyPattern field value if set, zero value otherwise.
@@ -1562,6 +1617,20 @@ func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
+	// check if the discriminator value is 'BTAssemblyMirror-2996'
+	if jsonDict["btType"] == "BTAssemblyMirror-2996" {
+		// try to unmarshal JSON data into BTAssemblyMirror2996
+		var qr *BTAssemblyMirror2996
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParametricInstance2641 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParametricInstance2641 = nil
+			return fmt.Errorf("failed to unmarshal BTParametricInstance2641 as BTAssemblyMirror2996: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTAssemblyPattern-1974'
 	if jsonDict["btType"] == "BTAssemblyPattern-1974" {
 		// try to unmarshal JSON data into BTAssemblyPattern1974
@@ -1675,6 +1744,7 @@ type base_BTParametricInstance2641 struct {
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
+	AssemblyMirror                    *bool                                 `json:"assemblyMirror,omitempty"`
 	AssemblyPattern                   *bool                                 `json:"assemblyPattern,omitempty"`
 	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
 	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
@@ -1847,6 +1917,38 @@ func (o *base_BTParametricInstance2641) HasAssemblyInstance() bool {
 // SetAssemblyInstance gets a reference to the given bool and assigns it to the AssemblyInstance field.
 func (o *base_BTParametricInstance2641) SetAssemblyInstance(v bool) {
 	o.AssemblyInstance = &v
+}
+
+// GetAssemblyMirror returns the AssemblyMirror field value if set, zero value otherwise.
+func (o *base_BTParametricInstance2641) GetAssemblyMirror() bool {
+	if o == nil || o.AssemblyMirror == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AssemblyMirror
+}
+
+// GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParametricInstance2641) GetAssemblyMirrorOk() (*bool, bool) {
+	if o == nil || o.AssemblyMirror == nil {
+		return nil, false
+	}
+	return o.AssemblyMirror, true
+}
+
+// HasAssemblyMirror returns a boolean if a field has been set.
+func (o *base_BTParametricInstance2641) HasAssemblyMirror() bool {
+	if o != nil && o.AssemblyMirror != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssemblyMirror gets a reference to the given bool and assigns it to the AssemblyMirror field.
+func (o *base_BTParametricInstance2641) SetAssemblyMirror(v bool) {
+	o.AssemblyMirror = &v
 }
 
 // GetAssemblyPattern returns the AssemblyPattern field value if set, zero value otherwise.
@@ -2694,6 +2796,9 @@ func (o base_BTParametricInstance2641) MarshalJSON() ([]byte, error) {
 	}
 	if o.AssemblyInstance != nil {
 		toSerialize["assemblyInstance"] = o.AssemblyInstance
+	}
+	if o.AssemblyMirror != nil {
+		toSerialize["assemblyMirror"] = o.AssemblyMirror
 	}
 	if o.AssemblyPattern != nil {
 		toSerialize["assemblyPattern"] = o.AssemblyPattern

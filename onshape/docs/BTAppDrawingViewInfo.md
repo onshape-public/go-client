@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
 **ErrorValue** | Pointer to [**BTAppElementErrorCode**](BTAppElementErrorCode.md) |  | [optional] 
 **ExplodedViewId** | Pointer to **string** |  | [optional] 
+**HasSecondaryViewDefinition** | Pointer to **bool** |  | [optional] 
 **HiddenLines** | Pointer to **string** |  | [optional] 
 **IgnoreFaultyParts** | Pointer to **bool** |  | [optional] 
 **IncludeHiddenInstances** | Pointer to **bool** |  | [optional] 
@@ -425,6 +426,31 @@ SetExplodedViewId sets ExplodedViewId field to given value.
 `func (o *BTAppDrawingViewInfo) HasExplodedViewId() bool`
 
 HasExplodedViewId returns a boolean if a field has been set.
+
+### GetHasSecondaryViewDefinition
+
+`func (o *BTAppDrawingViewInfo) GetHasSecondaryViewDefinition() bool`
+
+GetHasSecondaryViewDefinition returns the HasSecondaryViewDefinition field if non-nil, zero value otherwise.
+
+### GetHasSecondaryViewDefinitionOk
+
+`func (o *BTAppDrawingViewInfo) GetHasSecondaryViewDefinitionOk() (*bool, bool)`
+
+GetHasSecondaryViewDefinitionOk returns a tuple with the HasSecondaryViewDefinition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasSecondaryViewDefinition
+
+`func (o *BTAppDrawingViewInfo) SetHasSecondaryViewDefinition(v bool)`
+
+SetHasSecondaryViewDefinition sets HasSecondaryViewDefinition field to given value.
+
+### HasHasSecondaryViewDefinition
+
+`func (o *BTAppDrawingViewInfo) HasHasSecondaryViewDefinition() bool`
+
+HasHasSecondaryViewDefinition returns a boolean if a field has been set.
 
 ### GetHiddenLines
 

@@ -14,13 +14,16 @@ Name | Type | Description | Notes
 **SourceElementName** | Pointer to **string** |  | [optional] 
 **SourceElementPath** | Pointer to **[]string** |  | [optional] 
 **SourceElementStatus** | Pointer to [**GBTElementBranchStatus**](GBTElementBranchStatus.md) |  | [optional] 
+**SourceLibraryVersion** | Pointer to **int32** |  | [optional] 
 **SourceModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **SourceModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **TargetElementName** | Pointer to **string** |  | [optional] 
 **TargetElementPath** | Pointer to **[]string** |  | [optional] 
 **TargetElementStatus** | Pointer to [**GBTElementBranchStatus**](GBTElementBranchStatus.md) |  | [optional] 
+**TargetLibraryVersion** | Pointer to **int32** |  | [optional] 
 **TargetModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **TargetModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
+**VersionCompatible** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -291,6 +294,31 @@ SetSourceElementStatus sets SourceElementStatus field to given value.
 
 HasSourceElementStatus returns a boolean if a field has been set.
 
+### GetSourceLibraryVersion
+
+`func (o *BTElementMergeInfo) GetSourceLibraryVersion() int32`
+
+GetSourceLibraryVersion returns the SourceLibraryVersion field if non-nil, zero value otherwise.
+
+### GetSourceLibraryVersionOk
+
+`func (o *BTElementMergeInfo) GetSourceLibraryVersionOk() (*int32, bool)`
+
+GetSourceLibraryVersionOk returns a tuple with the SourceLibraryVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceLibraryVersion
+
+`func (o *BTElementMergeInfo) SetSourceLibraryVersion(v int32)`
+
+SetSourceLibraryVersion sets SourceLibraryVersion field to given value.
+
+### HasSourceLibraryVersion
+
+`func (o *BTElementMergeInfo) HasSourceLibraryVersion() bool`
+
+HasSourceLibraryVersion returns a boolean if a field has been set.
+
 ### GetSourceModifiedAt
 
 `func (o *BTElementMergeInfo) GetSourceModifiedAt() JSONTime`
@@ -416,6 +444,31 @@ SetTargetElementStatus sets TargetElementStatus field to given value.
 
 HasTargetElementStatus returns a boolean if a field has been set.
 
+### GetTargetLibraryVersion
+
+`func (o *BTElementMergeInfo) GetTargetLibraryVersion() int32`
+
+GetTargetLibraryVersion returns the TargetLibraryVersion field if non-nil, zero value otherwise.
+
+### GetTargetLibraryVersionOk
+
+`func (o *BTElementMergeInfo) GetTargetLibraryVersionOk() (*int32, bool)`
+
+GetTargetLibraryVersionOk returns a tuple with the TargetLibraryVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetLibraryVersion
+
+`func (o *BTElementMergeInfo) SetTargetLibraryVersion(v int32)`
+
+SetTargetLibraryVersion sets TargetLibraryVersion field to given value.
+
+### HasTargetLibraryVersion
+
+`func (o *BTElementMergeInfo) HasTargetLibraryVersion() bool`
+
+HasTargetLibraryVersion returns a boolean if a field has been set.
+
 ### GetTargetModifiedAt
 
 `func (o *BTElementMergeInfo) GetTargetModifiedAt() JSONTime`
@@ -465,6 +518,31 @@ SetTargetModifiedBy sets TargetModifiedBy field to given value.
 `func (o *BTElementMergeInfo) HasTargetModifiedBy() bool`
 
 HasTargetModifiedBy returns a boolean if a field has been set.
+
+### GetVersionCompatible
+
+`func (o *BTElementMergeInfo) GetVersionCompatible() bool`
+
+GetVersionCompatible returns the VersionCompatible field if non-nil, zero value otherwise.
+
+### GetVersionCompatibleOk
+
+`func (o *BTElementMergeInfo) GetVersionCompatibleOk() (*bool, bool)`
+
+GetVersionCompatibleOk returns a tuple with the VersionCompatible field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersionCompatible
+
+`func (o *BTElementMergeInfo) SetVersionCompatible(v bool)`
+
+SetVersionCompatible sets VersionCompatible field to given value.
+
+### HasVersionCompatible
+
+`func (o *BTElementMergeInfo) HasVersionCompatible() bool`
+
+HasVersionCompatible returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

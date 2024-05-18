@@ -38,7 +38,7 @@ func main() {
     excludedTags := []string{"Inner_example"} // []string | If an operation contains an excluded tag, it is not returned from this endpoint. (optional)
     includeDeprecated := true // bool | Include deprecated endpoints. (optional) (default to false)
     onlyDeprecated := true // bool | Only include deprecated endpoints. (optional) (default to false)
-    documentationStatuses := []openapiclient.Status{openapiclient.Status("DEVELOPMENT")} // []Status | Only return endpoints that have the specified documentation status. Default is to return all the endpoints the user should have access to. (optional)
+    documentationStatuses := []openapiclient.Status{openapiclient.Status("DB_TIMEOUT")} // []Status | Only return endpoints that have the specified documentation status. Default is to return all the endpoints the user should have access to. (optional)
     restUserRole := openapiclient.BTRestUserRole("PUBLIC") // BTRestUserRole | The REST user role for which this spec is requested. (optional)
     operationIds := []string{"Inner_example"} // []string | Only return operations with specified ids. (optional)
     excludedOperationIds := []string{"Inner_example"} // []string | Do not return operations with specified ids. (optional)

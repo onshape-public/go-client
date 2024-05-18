@@ -2991,6 +2991,32 @@
 
 * `GBTErrorStringEnumThinSweepThickenFailed` (value: `"THIN_SWEEP_THICKEN_FAILED"`)
 
+* `GBTErrorStringEnumDerivedNoParts` (value: `"DERIVED_NO_PARTS"`)
+
+* `GBTErrorStringEnumDerivedNoInstancing` (value: `"DERIVED_NO_INSTANCING"`)
+
+* `GBTErrorStringEnumDerivedNoSameSource` (value: `"DERIVED_NO_SAME_SOURCE"`)
+
+* `GBTErrorStringEnumDerivedFullFeaturePattern` (value: `"DERIVED_FULL_FEATURE_PATTERN"`)
+
+* `GBTErrorStringEnumThinLoft3DProfileTrimWarning` (value: `"THIN_LOFT_3D_PROFILE_TRIM_WARNING"`)
+
+* `GBTErrorStringEnumThinLoftFailedToFindTrimPlanesWarning` (value: `"THIN_LOFT_FAILED_TO_FIND_TRIM_PLANES_WARNING"`)
+
+* `GBTErrorStringEnumThinLoftThickenFailed` (value: `"THIN_LOFT_THICKEN_FAILED"`)
+
+* `GBTErrorStringEnumFgsModalSimulationMaximumRigidModesReached` (value: `"FGS_MODAL_SIMULATION_MAXIMUM_RIGID_MODES_REACHED"`)
+
+* `GBTErrorStringEnumAssemblyMirrorPlaneError` (value: `"ASSEMBLY_MIRROR_PLANE_ERROR"`)
+
+* `GBTErrorStringEnumPolylineConsecutiveEqualPoints` (value: `"POLYLINE_CONSECUTIVE_EQUAL_POINTS"`)
+
+* `GBTErrorStringEnumPolylineZeroAngle` (value: `"POLYLINE_ZERO_ANGLE"`)
+
+* `GBTErrorStringEnumPolylineBendRadiiInvalidSize` (value: `"POLYLINE_BEND_RADII_INVALID_SIZE"`)
+
+* `GBTErrorStringEnumPolylineInvalidBend` (value: `"POLYLINE_INVALID_BEND"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

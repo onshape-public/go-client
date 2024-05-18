@@ -4,14 +4,14 @@ All URIs are relative to *https://cad.onshape.com/api/v6*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CopyElementFromSourceDocument**](ElementApi.md#CopyElementFromSourceDocument) | **Post** /elements/copyelement/{did}/workspace/{wid} | Copy tab by document ID and workspace ID.
-[**DecodeConfiguration**](ElementApi.md#DecodeConfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configurationencodings/{cid} | Decode configuration string by documentation ID, workspace or version or microversion ID, and tab ID.
-[**DeleteElement**](ElementApi.md#DeleteElement) | **Delete** /elements/d/{did}/w/{wid}/e/{eid} | 
-[**EncodeConfigurationMap**](ElementApi.md#EncodeConfigurationMap) | **Post** /elements/d/{did}/e/{eid}/configurationencodings | Encode configuration by documentation ID and tab ID.
-[**GetConfiguration**](ElementApi.md#GetConfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Retrieve configuration by document ID, workspace or version or microversion ID, and tab ID.
-[**GetElementTranslatorFormatsByVersionOrWorkspace**](ElementApi.md#GetElementTranslatorFormatsByVersionOrWorkspace) | **Get** /elements/translatorFormats/{did}/{wv}/{wvid}/{eid} | 
-[**UpdateConfiguration**](ElementApi.md#UpdateConfiguration) | **Post** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Update configuration by document ID, workspace or microversion ID, and tab ID.
-[**UpdateReferences**](ElementApi.md#UpdateReferences) | **Post** /elements/d/{did}/w/{wid}/e/{eid}/updatereferences | Update or replace node references by document ID, workspace ID, and tab ID.
+[**CopyElementFromSourceDocument**](ElementApi.md#CopyElementFromSourceDocument) | **Post** /elements/copyelement/{did}/workspace/{wid} | Copy an element from a source document.
+[**DecodeConfiguration**](ElementApi.md#DecodeConfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configurationencodings/{cid} | Decode a configuration string.
+[**DeleteElement**](ElementApi.md#DeleteElement) | **Delete** /elements/d/{did}/w/{wid}/e/{eid} | Delete an element from a document.
+[**EncodeConfigurationMap**](ElementApi.md#EncodeConfigurationMap) | **Post** /elements/d/{did}/e/{eid}/configurationencodings | Encode a configuration option for use in other API calls.
+[**GetConfiguration**](ElementApi.md#GetConfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Get the configuration definition for a Part Studio or Assembly.
+[**GetElementTranslatorFormatsByVersionOrWorkspace**](ElementApi.md#GetElementTranslatorFormatsByVersionOrWorkspace) | **Get** /elements/translatorFormats/{did}/{wv}/{wvid}/{eid} | Gets the list of formats an element can be translated to or from.
+[**UpdateConfiguration**](ElementApi.md#UpdateConfiguration) | **Post** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Update the configuration definition for a Part Studio or Assembly.
+[**UpdateReferences**](ElementApi.md#UpdateReferences) | **Post** /elements/d/{did}/w/{wid}/e/{eid}/updatereferences | Update or replace references in an element.
 
 
 
@@ -19,7 +19,9 @@ Method | HTTP request | Description
 
 > BTDocumentElementInfo CopyElementFromSourceDocument(ctx, did, wid).BTCopyElementParams(bTCopyElementParams).Execute()
 
-Copy tab by document ID and workspace ID.
+Copy an element from a source document.
+
+
 
 ### Example
 
@@ -92,7 +94,9 @@ Name | Type | Description  | Notes
 
 > BTConfigurationInfo DecodeConfiguration(ctx, did, wvm, wvmid, eid, cid).LinkDocumentId(linkDocumentId).IncludeDisplay(includeDisplay).ConfigurationIsId(configurationIsId).Execute()
 
-Decode configuration string by documentation ID, workspace or version or microversion ID, and tab ID.
+Decode a configuration string.
+
+
 
 ### Example
 
@@ -178,6 +182,8 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} DeleteElement(ctx, did, wid, eid).Execute()
 
+Delete an element from a document.
+
 
 
 ### Example
@@ -252,7 +258,9 @@ Name | Type | Description  | Notes
 
 > BTEncodedConfigurationInfo EncodeConfigurationMap(ctx, did, eid).BTConfigurationParams(bTConfigurationParams).VersionId(versionId).LinkDocumentId(linkDocumentId).Execute()
 
-Encode configuration by documentation ID and tab ID.
+Encode a configuration option for use in other API calls.
+
+
 
 ### Example
 
@@ -327,9 +335,11 @@ Name | Type | Description  | Notes
 
 ## GetConfiguration
 
-> BTConfigurationResponse2019 GetConfiguration(ctx, did, wvm, wvmid, eid).Execute()
+> BTConfigurationResponse2019 GetConfiguration(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Execute()
 
-Retrieve configuration by document ID, workspace or version or microversion ID, and tab ID.
+Get the configuration definition for a Part Studio or Assembly.
+
+
 
 ### Example
 
@@ -344,14 +354,15 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wvm := "wvm_example" // string | 
-    wvmid := "wvmid_example" // string | 
-    eid := "eid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ElementApi.GetConfiguration(context.Background(), did, wvm, wvmid, eid).Execute()
+    resp, r, err := apiClient.ElementApi.GetConfiguration(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.GetConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,10 +378,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wvm** | **string** |  | 
-**wvmid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 
 ### Other Parameters
 
@@ -383,6 +394,7 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
 
 ### Return type
 
@@ -405,6 +417,8 @@ Name | Type | Description  | Notes
 ## GetElementTranslatorFormatsByVersionOrWorkspace
 
 > []BTModelFormatInfo GetElementTranslatorFormatsByVersionOrWorkspace(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).CheckContent(checkContent).Configuration(configuration).Execute()
+
+Gets the list of formats an element can be translated to or from.
 
 
 
@@ -489,7 +503,9 @@ Name | Type | Description  | Notes
 
 > BTConfigurationResponse2019 UpdateConfiguration(ctx, did, wvm, wvmid, eid).BTConfigurationUpdateCall2933(bTConfigurationUpdateCall2933).Execute()
 
-Update configuration by document ID, workspace or microversion ID, and tab ID.
+Update the configuration definition for a Part Studio or Assembly.
+
+
 
 ### Example
 
@@ -568,7 +584,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} UpdateReferences(ctx, did, wid, eid).BTUpdateReferenceParams(bTUpdateReferenceParams).Execute()
 
-Update or replace node references by document ID, workspace ID, and tab ID.
+Update or replace references in an element.
 
 ### Example
 

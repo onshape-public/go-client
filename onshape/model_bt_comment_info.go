@@ -22,6 +22,7 @@ type BTCommentInfo struct {
 	Attachment         *BTCommentAttachmentInfo `json:"attachment,omitempty"`
 	CanDelete          *bool                    `json:"canDelete,omitempty"`
 	CanResolveOrReopen *bool                    `json:"canResolveOrReopen,omitempty"`
+	Coordinates        *CoordinatesInfo         `json:"coordinates,omitempty"`
 	CreatedAt          *JSONTime                `json:"createdAt,omitempty"`
 	DocumentId         *string                  `json:"documentId,omitempty"`
 	ElementFeature     *string                  `json:"elementFeature,omitempty"`
@@ -262,6 +263,38 @@ func (o *BTCommentInfo) HasCanResolveOrReopen() bool {
 // SetCanResolveOrReopen gets a reference to the given bool and assigns it to the CanResolveOrReopen field.
 func (o *BTCommentInfo) SetCanResolveOrReopen(v bool) {
 	o.CanResolveOrReopen = &v
+}
+
+// GetCoordinates returns the Coordinates field value if set, zero value otherwise.
+func (o *BTCommentInfo) GetCoordinates() CoordinatesInfo {
+	if o == nil || o.Coordinates == nil {
+		var ret CoordinatesInfo
+		return ret
+	}
+	return *o.Coordinates
+}
+
+// GetCoordinatesOk returns a tuple with the Coordinates field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentInfo) GetCoordinatesOk() (*CoordinatesInfo, bool) {
+	if o == nil || o.Coordinates == nil {
+		return nil, false
+	}
+	return o.Coordinates, true
+}
+
+// HasCoordinates returns a boolean if a field has been set.
+func (o *BTCommentInfo) HasCoordinates() bool {
+	if o != nil && o.Coordinates != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCoordinates gets a reference to the given CoordinatesInfo and assigns it to the Coordinates field.
+func (o *BTCommentInfo) SetCoordinates(v CoordinatesInfo) {
+	o.Coordinates = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -1147,6 +1180,9 @@ func (o BTCommentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CanResolveOrReopen != nil {
 		toSerialize["canResolveOrReopen"] = o.CanResolveOrReopen
+	}
+	if o.Coordinates != nil {
+		toSerialize["coordinates"] = o.Coordinates
 	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt

@@ -23,6 +23,7 @@ type BTMergePreviewInfo struct {
 	IsBranchPointAtStart      *bool                `json:"isBranchPointAtStart,omitempty"`
 	SourceMicroversionId      *string              `json:"sourceMicroversionId,omitempty"`
 	TargetMicroversionId      *string              `json:"targetMicroversionId,omitempty"`
+	UpgradeInfo               *BTMergeUpgradeInfo  `json:"upgradeInfo,omitempty"`
 }
 
 // NewBTMergePreviewInfo instantiates a new BTMergePreviewInfo object
@@ -266,6 +267,38 @@ func (o *BTMergePreviewInfo) SetTargetMicroversionId(v string) {
 	o.TargetMicroversionId = &v
 }
 
+// GetUpgradeInfo returns the UpgradeInfo field value if set, zero value otherwise.
+func (o *BTMergePreviewInfo) GetUpgradeInfo() BTMergeUpgradeInfo {
+	if o == nil || o.UpgradeInfo == nil {
+		var ret BTMergeUpgradeInfo
+		return ret
+	}
+	return *o.UpgradeInfo
+}
+
+// GetUpgradeInfoOk returns a tuple with the UpgradeInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMergePreviewInfo) GetUpgradeInfoOk() (*BTMergeUpgradeInfo, bool) {
+	if o == nil || o.UpgradeInfo == nil {
+		return nil, false
+	}
+	return o.UpgradeInfo, true
+}
+
+// HasUpgradeInfo returns a boolean if a field has been set.
+func (o *BTMergePreviewInfo) HasUpgradeInfo() bool {
+	if o != nil && o.UpgradeInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpgradeInfo gets a reference to the given BTMergeUpgradeInfo and assigns it to the UpgradeInfo field.
+func (o *BTMergePreviewInfo) SetUpgradeInfo(v BTMergeUpgradeInfo) {
+	o.UpgradeInfo = &v
+}
+
 func (o BTMergePreviewInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BranchPointMicroversionId != nil {
@@ -288,6 +321,9 @@ func (o BTMergePreviewInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TargetMicroversionId != nil {
 		toSerialize["targetMicroversionId"] = o.TargetMicroversionId
+	}
+	if o.UpgradeInfo != nil {
+		toSerialize["upgradeInfo"] = o.UpgradeInfo
 	}
 	return json.Marshal(toSerialize)
 }

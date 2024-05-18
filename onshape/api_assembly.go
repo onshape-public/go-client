@@ -1042,14 +1042,21 @@ func (r ApiGetAssemblyMassPropertiesRequest) Execute() (*BTMassPropertiesInfo, *
 /*
 GetAssemblyMassProperties Get the mass properties for the assembly.
 
-The assembly must contain parts that have assigned density or are globally overridden. If three mass properties are returned: the first is the calculated mass, and the second and third are the minimum and maximum possible values, considering tolerance.
+The assembly must contain parts that have density. The returned schema includes the same information as in the Onshape [Mass Properties Tool](https://cad.onshape.com/help/Content/massprops-asmb.htm).
+When three values are returned:
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did The id of the document in which to perform the operation.
-	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
-	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
-	@param eid The id of the element in which to perform the operation.
-	@return ApiGetAssemblyMassPropertiesRequest
+  - The first is the calculated value.
+
+  - The second is the minimum possible value, considering tolerance.
+
+  - The third is the maximum possible value, considering tolerance.
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @param did The id of the document in which to perform the operation.
+    @param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    @param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+    @param eid The id of the element in which to perform the operation.
+    @return ApiGetAssemblyMassPropertiesRequest
 */
 func (a *AssemblyApiService) GetAssemblyMassProperties(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssemblyMassPropertiesRequest {
 	return ApiGetAssemblyMassPropertiesRequest{

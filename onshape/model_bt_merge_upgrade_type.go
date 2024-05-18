@@ -15,56 +15,54 @@ import (
 	"fmt"
 )
 
-// BTVersionGraphMode the model 'BTVersionGraphMode'
-type BTVersionGraphMode string
+// BTMergeUpgradeType the model 'BTMergeUpgradeType'
+type BTMergeUpgradeType string
 
-// List of BTVersionGraphMode
+// List of BTMergeUpgradeType
 const (
-	BTVersionGraphModeAllBranches               BTVersionGraphMode = "ALL_BRANCHES"
-	BTVersionGraphModeActiveBranch              BTVersionGraphMode = "ACTIVE_BRANCH"
-	BTVersionGraphModeAllBranchesWithWorkspaces BTVersionGraphMode = "ALL_BRANCHES_WITH_WORKSPACES"
-	BTVersionGraphModeActiveBranchWithParents   BTVersionGraphMode = "ACTIVE_BRANCH_WITH_PARENTS"
+	BTMergeUpgradeTypeSource          BTMergeUpgradeType = "SOURCE"
+	BTMergeUpgradeTypeTarget          BTMergeUpgradeType = "TARGET"
+	BTMergeUpgradeTypeSourceAndTarget BTMergeUpgradeType = "SOURCE_AND_TARGET"
 )
 
-// All allowed values of BTVersionGraphMode enum
-var AllowedBTVersionGraphModeEnumValues = []BTVersionGraphMode{
-	"ALL_BRANCHES",
-	"ACTIVE_BRANCH",
-	"ALL_BRANCHES_WITH_WORKSPACES",
-	"ACTIVE_BRANCH_WITH_PARENTS",
+// All allowed values of BTMergeUpgradeType enum
+var AllowedBTMergeUpgradeTypeEnumValues = []BTMergeUpgradeType{
+	"SOURCE",
+	"TARGET",
+	"SOURCE_AND_TARGET",
 }
 
-func (v *BTVersionGraphMode) UnmarshalJSON(src []byte) error {
+func (v *BTMergeUpgradeType) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := BTVersionGraphMode(value)
-	for _, existing := range AllowedBTVersionGraphModeEnumValues {
+	enumTypeValue := BTMergeUpgradeType(value)
+	for _, existing := range AllowedBTMergeUpgradeTypeEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid BTVersionGraphMode", value)
+	return fmt.Errorf("%+v is not a valid BTMergeUpgradeType", value)
 }
 
-// NewBTVersionGraphModeFromValue returns a pointer to a valid BTVersionGraphMode
+// NewBTMergeUpgradeTypeFromValue returns a pointer to a valid BTMergeUpgradeType
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewBTVersionGraphModeFromValue(v string) (*BTVersionGraphMode, error) {
-	ev := BTVersionGraphMode(v)
+func NewBTMergeUpgradeTypeFromValue(v string) (*BTMergeUpgradeType, error) {
+	ev := BTMergeUpgradeType(v)
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for BTVersionGraphMode: valid values are %v", v, AllowedBTVersionGraphModeEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for BTMergeUpgradeType: valid values are %v", v, AllowedBTMergeUpgradeTypeEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v BTVersionGraphMode) IsValid() bool {
-	for _, existing := range AllowedBTVersionGraphModeEnumValues {
+func (v BTMergeUpgradeType) IsValid() bool {
+	for _, existing := range AllowedBTMergeUpgradeTypeEnumValues {
 		if existing == v {
 			return true
 		}
@@ -72,43 +70,43 @@ func (v BTVersionGraphMode) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to BTVersionGraphMode value
-func (v BTVersionGraphMode) Ptr() *BTVersionGraphMode {
+// Ptr returns reference to BTMergeUpgradeType value
+func (v BTMergeUpgradeType) Ptr() *BTMergeUpgradeType {
 	return &v
 }
 
-type NullableBTVersionGraphMode struct {
-	value *BTVersionGraphMode
+type NullableBTMergeUpgradeType struct {
+	value *BTMergeUpgradeType
 	isSet bool
 }
 
-func (v NullableBTVersionGraphMode) Get() *BTVersionGraphMode {
+func (v NullableBTMergeUpgradeType) Get() *BTMergeUpgradeType {
 	return v.value
 }
 
-func (v *NullableBTVersionGraphMode) Set(val *BTVersionGraphMode) {
+func (v *NullableBTMergeUpgradeType) Set(val *BTMergeUpgradeType) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBTVersionGraphMode) IsSet() bool {
+func (v NullableBTMergeUpgradeType) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBTVersionGraphMode) Unset() {
+func (v *NullableBTMergeUpgradeType) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBTVersionGraphMode(val *BTVersionGraphMode) *NullableBTVersionGraphMode {
-	return &NullableBTVersionGraphMode{value: val, isSet: true}
+func NewNullableBTMergeUpgradeType(val *BTMergeUpgradeType) *NullableBTMergeUpgradeType {
+	return &NullableBTMergeUpgradeType{value: val, isSet: true}
 }
 
-func (v NullableBTVersionGraphMode) MarshalJSON() ([]byte, error) {
+func (v NullableBTMergeUpgradeType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBTVersionGraphMode) UnmarshalJSON(src []byte) error {
+func (v *NullableBTMergeUpgradeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

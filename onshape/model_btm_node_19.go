@@ -145,6 +145,11 @@ func (o *BTMSketchInvalid1601) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
+// BTAssemblyMirror2996AsBTMNode19 is a convenience function that returns BTAssemblyMirror2996 wrapped in BTMNode19
+func (o *BTAssemblyMirror2996) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
 // BTMSuppressionState1924AsBTMNode19 is a convenience function that returns BTMSuppressionState1924 wrapped in BTMNode19
 func (o *BTMSuppressionState1924) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -393,6 +398,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyInstance947: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTAssemblyMirror-2996'
+	if jsonDict["btType"] == "BTAssemblyMirror-2996" {
+		// try to unmarshal JSON data into BTAssemblyMirror2996
+		var qr *BTAssemblyMirror2996
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTAssemblyMirror2996: %s", err.Error())
 		}
 	}
 

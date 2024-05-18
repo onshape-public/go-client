@@ -19,6 +19,7 @@ type BTWorkflowPropertyInfo struct {
 	ComputedAssemblyProperty *bool                          `json:"computedAssemblyProperty,omitempty"`
 	ComputedProperty         *bool                          `json:"computedProperty,omitempty"`
 	ComputedPropertyError    *string                        `json:"computedPropertyError,omitempty"`
+	ComputedPropertyEvalInfo *string                        `json:"computedPropertyEvalInfo,omitempty"`
 	DateFormat               *string                        `json:"dateFormat,omitempty"`
 	DefaultValue             *map[string]interface{}        `json:"defaultValue,omitempty"`
 	Dirty                    *bool                          `json:"dirty,omitempty"`
@@ -157,6 +158,38 @@ func (o *BTWorkflowPropertyInfo) HasComputedPropertyError() bool {
 // SetComputedPropertyError gets a reference to the given string and assigns it to the ComputedPropertyError field.
 func (o *BTWorkflowPropertyInfo) SetComputedPropertyError(v string) {
 	o.ComputedPropertyError = &v
+}
+
+// GetComputedPropertyEvalInfo returns the ComputedPropertyEvalInfo field value if set, zero value otherwise.
+func (o *BTWorkflowPropertyInfo) GetComputedPropertyEvalInfo() string {
+	if o == nil || o.ComputedPropertyEvalInfo == nil {
+		var ret string
+		return ret
+	}
+	return *o.ComputedPropertyEvalInfo
+}
+
+// GetComputedPropertyEvalInfoOk returns a tuple with the ComputedPropertyEvalInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowPropertyInfo) GetComputedPropertyEvalInfoOk() (*string, bool) {
+	if o == nil || o.ComputedPropertyEvalInfo == nil {
+		return nil, false
+	}
+	return o.ComputedPropertyEvalInfo, true
+}
+
+// HasComputedPropertyEvalInfo returns a boolean if a field has been set.
+func (o *BTWorkflowPropertyInfo) HasComputedPropertyEvalInfo() bool {
+	if o != nil && o.ComputedPropertyEvalInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedPropertyEvalInfo gets a reference to the given string and assigns it to the ComputedPropertyEvalInfo field.
+func (o *BTWorkflowPropertyInfo) SetComputedPropertyEvalInfo(v string) {
+	o.ComputedPropertyEvalInfo = &v
 }
 
 // GetDateFormat returns the DateFormat field value if set, zero value otherwise.
@@ -937,6 +970,9 @@ func (o BTWorkflowPropertyInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ComputedPropertyError != nil {
 		toSerialize["computedPropertyError"] = o.ComputedPropertyError
+	}
+	if o.ComputedPropertyEvalInfo != nil {
+		toSerialize["computedPropertyEvalInfo"] = o.ComputedPropertyEvalInfo
 	}
 	if o.DateFormat != nil {
 		toSerialize["dateFormat"] = o.DateFormat

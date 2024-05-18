@@ -39,7 +39,10 @@ func (r ApiCopyElementFromSourceDocumentRequest) Execute() (*BTDocumentElementIn
 }
 
 /*
-CopyElementFromSourceDocument Copy tab by document ID and workspace ID.
+CopyElementFromSourceDocument Copy an element from a source document.
+
+Specify the target document and workspace in the URL. Specify the source document, workspace, and element in the request body.
+If `anchorElementId` is specified, the copied element will be inserted after the anchor element. If not specified, the copied element will be inserted at the end of the tab list.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -178,7 +181,9 @@ func (r ApiDecodeConfigurationRequest) Execute() (*BTConfigurationInfo, *http.Re
 }
 
 /*
-DecodeConfiguration Decode configuration string by documentation ID, workspace or version or microversion ID, and tab ID.
+DecodeConfiguration Decode a configuration string.
+
+Decode a configuration string into its original JSON form to obtain configuration parameter ID and value. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -310,7 +315,9 @@ func (r ApiDeleteElementRequest) Execute() (map[string]interface{}, *http.Respon
 }
 
 /*
-DeleteElement Method for DeleteElement
+DeleteElement Delete an element from a document.
+
+Attempting to delete the last element in a document will result in an error.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -444,7 +451,11 @@ func (r ApiEncodeConfigurationMapRequest) Execute() (*BTEncodedConfigurationInfo
 }
 
 /*
-EncodeConfigurationMap Encode configuration by documentation ID and tab ID.
+EncodeConfigurationMap Encode a configuration option for use in other API calls.
+
+Returns a configuration string in the following form:
+`configuration=parameterId%3DparameterValue`
+The configuration string can be used in other Onshape API calls to specify which configuration option to use. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -557,12 +568,19 @@ func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurati
 }
 
 type ApiGetConfigurationRequest struct {
-	ctx        context.Context
-	ApiService *ElementApiService
-	did        string
-	wvm        string
-	wvmid      string
-	eid        string
+	ctx            context.Context
+	ApiService     *ElementApiService
+	did            string
+	wvm            string
+	wvmid          string
+	eid            string
+	linkDocumentId *string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetConfigurationRequest) LinkDocumentId(linkDocumentId string) ApiGetConfigurationRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
 }
 
 func (r ApiGetConfigurationRequest) Execute() (*BTConfigurationResponse2019, *http.Response, error) {
@@ -570,13 +588,16 @@ func (r ApiGetConfigurationRequest) Execute() (*BTConfigurationResponse2019, *ht
 }
 
 /*
-GetConfiguration Retrieve configuration by document ID, workspace or version or microversion ID, and tab ID.
+GetConfiguration Get the configuration definition for a Part Studio or Assembly.
+
+Use Configurations to create variations of elements. You can configure feature and parameter values, part properties, custom part properties, face and part appearances, and sketch text. Each Part Studio can have only one Configuration, but it can contain multiple Configuration inputs.
+See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did
-	@param wvm
-	@param wvmid
-	@param eid
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
 	@return ApiGetConfigurationRequest
 */
 func (a *ElementApiService) GetConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetConfigurationRequest {
@@ -616,6 +637,9 @@ func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -710,7 +734,9 @@ func (r ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest) Execute() ([]
 }
 
 /*
-GetElementTranslatorFormatsByVersionOrWorkspace Method for GetElementTranslatorFormatsByVersionOrWorkspace
+GetElementTranslatorFormatsByVersionOrWorkspace Gets the list of formats an element can be translated to or from.
+
+See the [Translation API Guide](https://onshape-public.github.io/docs/api-adv/translation/) for additional details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did The id of the document in which to perform the operation.
@@ -846,7 +872,9 @@ func (r ApiUpdateConfigurationRequest) Execute() (*BTConfigurationResponse2019, 
 }
 
 /*
-UpdateConfiguration Update configuration by document ID, workspace or microversion ID, and tab ID.
+UpdateConfiguration Update the configuration definition for a Part Studio or Assembly.
+
+See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -974,7 +1002,7 @@ func (r ApiUpdateReferencesRequest) Execute() (map[string]interface{}, *http.Res
 }
 
 /*
-UpdateReferences Update or replace node references by document ID, workspace ID, and tab ID.
+UpdateReferences Update or replace references in an element.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did

@@ -1514,6 +1514,19 @@ const (
 	GBTErrorStringEnumFormedLocationOnMultipleFaces                         GBTErrorStringEnum = "FORMED_LOCATION_ON_MULTIPLE_FACES"
 	GBTErrorStringEnumFormedNotOnHoleFormedFace                             GBTErrorStringEnum = "FORMED_NOT_ON_HOLE_FORMED_FACE"
 	GBTErrorStringEnumThinSweepThickenFailed                                GBTErrorStringEnum = "THIN_SWEEP_THICKEN_FAILED"
+	GBTErrorStringEnumDerivedNoParts                                        GBTErrorStringEnum = "DERIVED_NO_PARTS"
+	GBTErrorStringEnumDerivedNoInstancing                                   GBTErrorStringEnum = "DERIVED_NO_INSTANCING"
+	GBTErrorStringEnumDerivedNoSameSource                                   GBTErrorStringEnum = "DERIVED_NO_SAME_SOURCE"
+	GBTErrorStringEnumDerivedFullFeaturePattern                             GBTErrorStringEnum = "DERIVED_FULL_FEATURE_PATTERN"
+	GBTErrorStringEnumThinLoft3DProfileTrimWarning                          GBTErrorStringEnum = "THIN_LOFT_3D_PROFILE_TRIM_WARNING"
+	GBTErrorStringEnumThinLoftFailedToFindTrimPlanesWarning                 GBTErrorStringEnum = "THIN_LOFT_FAILED_TO_FIND_TRIM_PLANES_WARNING"
+	GBTErrorStringEnumThinLoftThickenFailed                                 GBTErrorStringEnum = "THIN_LOFT_THICKEN_FAILED"
+	GBTErrorStringEnumFgsModalSimulationMaximumRigidModesReached            GBTErrorStringEnum = "FGS_MODAL_SIMULATION_MAXIMUM_RIGID_MODES_REACHED"
+	GBTErrorStringEnumAssemblyMirrorPlaneError                              GBTErrorStringEnum = "ASSEMBLY_MIRROR_PLANE_ERROR"
+	GBTErrorStringEnumPolylineConsecutiveEqualPoints                        GBTErrorStringEnum = "POLYLINE_CONSECUTIVE_EQUAL_POINTS"
+	GBTErrorStringEnumPolylineZeroAngle                                     GBTErrorStringEnum = "POLYLINE_ZERO_ANGLE"
+	GBTErrorStringEnumPolylineBendRadiiInvalidSize                          GBTErrorStringEnum = "POLYLINE_BEND_RADII_INVALID_SIZE"
+	GBTErrorStringEnumPolylineInvalidBend                                   GBTErrorStringEnum = "POLYLINE_INVALID_BEND"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3013,6 +3026,19 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"FORMED_LOCATION_ON_MULTIPLE_FACES",
 	"FORMED_NOT_ON_HOLE_FORMED_FACE",
 	"THIN_SWEEP_THICKEN_FAILED",
+	"DERIVED_NO_PARTS",
+	"DERIVED_NO_INSTANCING",
+	"DERIVED_NO_SAME_SOURCE",
+	"DERIVED_FULL_FEATURE_PATTERN",
+	"THIN_LOFT_3D_PROFILE_TRIM_WARNING",
+	"THIN_LOFT_FAILED_TO_FIND_TRIM_PLANES_WARNING",
+	"THIN_LOFT_THICKEN_FAILED",
+	"FGS_MODAL_SIMULATION_MAXIMUM_RIGID_MODES_REACHED",
+	"ASSEMBLY_MIRROR_PLANE_ERROR",
+	"POLYLINE_CONSECUTIVE_EQUAL_POINTS",
+	"POLYLINE_ZERO_ANGLE",
+	"POLYLINE_BEND_RADII_INVALID_SIZE",
+	"POLYLINE_INVALID_BEND",
 	"UNKNOWN",
 }
 
