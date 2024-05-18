@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 **LinkDocumentWorkspaceId** | Pointer to **string** |  | [optional] 
 **MaximumChordLength** | Pointer to **float64** | Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry. | [optional] 
 **NotifyUser** | Pointer to **bool** |  | [optional] 
+**OccurrencesToExport** | Pointer to **string** |  | [optional] 
 **OnePartPerDoc** | Pointer to **bool** |  | [optional] 
 **OriginalForeignId** | Pointer to **string** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
@@ -1147,6 +1148,31 @@ SetNotifyUser sets NotifyUser field to given value.
 `func (o *BTTranslateFormatParams) HasNotifyUser() bool`
 
 HasNotifyUser returns a boolean if a field has been set.
+
+### GetOccurrencesToExport
+
+`func (o *BTTranslateFormatParams) GetOccurrencesToExport() string`
+
+GetOccurrencesToExport returns the OccurrencesToExport field if non-nil, zero value otherwise.
+
+### GetOccurrencesToExportOk
+
+`func (o *BTTranslateFormatParams) GetOccurrencesToExportOk() (*string, bool)`
+
+GetOccurrencesToExportOk returns a tuple with the OccurrencesToExport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOccurrencesToExport
+
+`func (o *BTTranslateFormatParams) SetOccurrencesToExport(v string)`
+
+SetOccurrencesToExport sets OccurrencesToExport field to given value.
+
+### HasOccurrencesToExport
+
+`func (o *BTTranslateFormatParams) HasOccurrencesToExport() bool`
+
+HasOccurrencesToExport returns a boolean if a field has been set.
 
 ### GetOnePartPerDoc
 

@@ -49,6 +49,7 @@ type BTBExportModelParams struct {
 	Microversion                 *string  `json:"microversion,omitempty"`
 	MinFacetWidth                *float64 `json:"minFacetWidth,omitempty"`
 	Mode                         *string  `json:"mode,omitempty"`
+	OccurrencesToExport          *string  `json:"occurrencesToExport,omitempty"`
 	PartIds                      *string  `json:"partIds,omitempty"`
 	PartQuery                    *string  `json:"partQuery,omitempty"`
 	Password                     *string  `json:"password,omitempty"`
@@ -1129,6 +1130,38 @@ func (o *BTBExportModelParams) SetMode(v string) {
 	o.Mode = &v
 }
 
+// GetOccurrencesToExport returns the OccurrencesToExport field value if set, zero value otherwise.
+func (o *BTBExportModelParams) GetOccurrencesToExport() string {
+	if o == nil || o.OccurrencesToExport == nil {
+		var ret string
+		return ret
+	}
+	return *o.OccurrencesToExport
+}
+
+// GetOccurrencesToExportOk returns a tuple with the OccurrencesToExport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBExportModelParams) GetOccurrencesToExportOk() (*string, bool) {
+	if o == nil || o.OccurrencesToExport == nil {
+		return nil, false
+	}
+	return o.OccurrencesToExport, true
+}
+
+// HasOccurrencesToExport returns a boolean if a field has been set.
+func (o *BTBExportModelParams) HasOccurrencesToExport() bool {
+	if o != nil && o.OccurrencesToExport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrencesToExport gets a reference to the given string and assigns it to the OccurrencesToExport field.
+func (o *BTBExportModelParams) SetOccurrencesToExport(v string) {
+	o.OccurrencesToExport = &v
+}
+
 // GetPartIds returns the PartIds field value if set, zero value otherwise.
 func (o *BTBExportModelParams) GetPartIds() string {
 	if o == nil || o.PartIds == nil {
@@ -1837,6 +1870,9 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Mode != nil {
 		toSerialize["mode"] = o.Mode
+	}
+	if o.OccurrencesToExport != nil {
+		toSerialize["occurrencesToExport"] = o.OccurrencesToExport
 	}
 	if o.PartIds != nil {
 		toSerialize["partIds"] = o.PartIds

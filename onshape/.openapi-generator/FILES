@@ -144,6 +144,8 @@ docs/BTAssemblyInstanceOccurrenceInfo.md
 docs/BTAssemblyInstanceStatus.md
 docs/BTAssemblyInstanceType.md
 docs/BTAssemblyMateConnectorInfo.md
+docs/BTAssemblyMirror2996.md
+docs/BTAssemblyMirror2996AllOf.md
 docs/BTAssemblyModificationParams.md
 docs/BTAssemblyOccurrenceInfo.md
 docs/BTAssemblyPartBodyType.md
@@ -555,6 +557,8 @@ docs/BTMAssemblyFeature887.md
 docs/BTMAssemblyFeature887AllOf.md
 docs/BTMAssemblyFeatureFolder2543.md
 docs/BTMAssemblyFeatureFolder2543AllOf.md
+docs/BTMAssemblyMirrorFeature3037.md
+docs/BTMAssemblyMirrorFeature3037AllOf.md
 docs/BTMAssemblyPatternFeature2241.md
 docs/BTMAssemblyPatternFeature2241AllOf.md
 docs/BTMAssemblyReplicateFeature1351.md
@@ -746,6 +750,8 @@ docs/BTMaterialLibrarySettingsInfo.md
 docs/BTMatrix3x3340.md
 docs/BTMergePreviewInfo.md
 docs/BTMergeStrategy.md
+docs/BTMergeUpgradeInfo.md
+docs/BTMergeUpgradeType.md
 docs/BTMetadataCategorySummaryInfo.md
 docs/BTMetadataElementInfo.md
 docs/BTMetadataElementInfoAllOf.md
@@ -1027,6 +1033,7 @@ docs/BTPartStudioDisplayDataBase2751.md
 docs/BTPartStudioDisplayDataReference4360.md
 docs/BTPartStudioDisplayDataReference4360AllOf.md
 docs/BTPartWithConfiguredProperties2163.md
+docs/BTPendingUpgradeInfo.md
 docs/BTPlanSubscriberInfo.md
 docs/BTPlanarImageMapping4398.md
 docs/BTPlanarImageMapping4398AllOf.md
@@ -1324,6 +1331,8 @@ docs/Components.md
 docs/ConfigurationEntry.md
 docs/ConfigurationInfoEntry.md
 docs/Contact.md
+docs/CoordinatesInfo.md
+docs/CoordinatesParams.md
 docs/Coupon.md
 docs/Customer.md
 docs/CustomerCardCollection.md
@@ -1578,6 +1587,7 @@ model_bt_assembly_instance_occurrence_info.go
 model_bt_assembly_instance_status.go
 model_bt_assembly_instance_type.go
 model_bt_assembly_mate_connector_info.go
+model_bt_assembly_mirror_2996.go
 model_bt_assembly_modification_params.go
 model_bt_assembly_occurrence_info.go
 model_bt_assembly_part_body_type.go
@@ -1859,6 +1869,8 @@ model_bt_material_library_settings_info.go
 model_bt_matrix3x3_340.go
 model_bt_merge_preview_info.go
 model_bt_merge_strategy.go
+model_bt_merge_upgrade_info.go
+model_bt_merge_upgrade_type.go
 model_bt_metadata_category_summary_info.go
 model_bt_metadata_element_info.go
 model_bt_metadata_enum_value.go
@@ -1970,6 +1982,7 @@ model_bt_part_studio_display_data_346.go
 model_bt_part_studio_display_data_base_2751.go
 model_bt_part_studio_display_data_reference_4360.go
 model_bt_part_with_configured_properties_2163.go
+model_bt_pending_upgrade_info.go
 model_bt_plan_subscriber_info.go
 model_bt_planar_image_mapping_4398.go
 model_bt_plane_description_692.go
@@ -2209,6 +2222,7 @@ model_btm_assembly_feature1_2218.go
 model_btm_assembly_feature2_1022.go
 model_btm_assembly_feature_887.go
 model_btm_assembly_feature_folder_2543.go
+model_btm_assembly_mirror_feature_3037.go
 model_btm_assembly_pattern_feature_2241.go
 model_btm_assembly_replicate_feature_1351.go
 model_btm_configuration_data_1560.go
@@ -2394,6 +2408,8 @@ model_components.go
 model_configuration_entry.go
 model_configuration_info_entry.go
 model_contact.go
+model_coordinates_info.go
+model_coordinates_params.go
 model_coupon.go
 model_customer.go
 model_customer_card_collection.go

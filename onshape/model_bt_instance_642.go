@@ -247,6 +247,56 @@ func (o *BTInstance642) SetAssemblyInstance(v bool) {
 	o.GetActualInstance().(getResult).SetAssemblyInstance(v)
 }
 
+// GetAssemblyMirror returns the AssemblyMirror field value if set, zero value otherwise.
+func (o *BTInstance642) GetAssemblyMirror() bool {
+	type getResult interface {
+		GetAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAssemblyMirror()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstance642) GetAssemblyMirrorOk() (*bool, bool) {
+	type getResult interface {
+		GetAssemblyMirrorOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAssemblyMirrorOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAssemblyMirror returns a boolean if a field has been set.
+func (o *BTInstance642) HasAssemblyMirror() bool {
+	type getResult interface {
+		HasAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAssemblyMirror()
+	} else {
+		return false
+	}
+}
+
+// SetAssemblyMirror gets a reference to the given bool and assigns it to the AssemblyMirror field.
+func (o *BTInstance642) SetAssemblyMirror(v bool) {
+	type getResult interface {
+		SetAssemblyMirror(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAssemblyMirror(v)
+}
+
 // GetAssemblyPattern returns the AssemblyPattern field value if set, zero value otherwise.
 func (o *BTInstance642) GetAssemblyPattern() bool {
 	type getResult interface {
@@ -2206,6 +2256,7 @@ type base_BTInstance642 struct {
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
+	AssemblyMirror                    *bool                                 `json:"assemblyMirror,omitempty"`
 	AssemblyPattern                   *bool                                 `json:"assemblyPattern,omitempty"`
 	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
 	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
@@ -2389,6 +2440,38 @@ func (o *base_BTInstance642) HasAssemblyInstance() bool {
 // SetAssemblyInstance gets a reference to the given bool and assigns it to the AssemblyInstance field.
 func (o *base_BTInstance642) SetAssemblyInstance(v bool) {
 	o.AssemblyInstance = &v
+}
+
+// GetAssemblyMirror returns the AssemblyMirror field value if set, zero value otherwise.
+func (o *base_BTInstance642) GetAssemblyMirror() bool {
+	if o == nil || o.AssemblyMirror == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AssemblyMirror
+}
+
+// GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTInstance642) GetAssemblyMirrorOk() (*bool, bool) {
+	if o == nil || o.AssemblyMirror == nil {
+		return nil, false
+	}
+	return o.AssemblyMirror, true
+}
+
+// HasAssemblyMirror returns a boolean if a field has been set.
+func (o *base_BTInstance642) HasAssemblyMirror() bool {
+	if o != nil && o.AssemblyMirror != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssemblyMirror gets a reference to the given bool and assigns it to the AssemblyMirror field.
+func (o *base_BTInstance642) SetAssemblyMirror(v bool) {
+	o.AssemblyMirror = &v
 }
 
 // GetAssemblyPattern returns the AssemblyPattern field value if set, zero value otherwise.
@@ -3588,6 +3671,9 @@ func (o base_BTInstance642) MarshalJSON() ([]byte, error) {
 	}
 	if o.AssemblyInstance != nil {
 		toSerialize["assemblyInstance"] = o.AssemblyInstance
+	}
+	if o.AssemblyMirror != nil {
+		toSerialize["assemblyMirror"] = o.AssemblyMirror
 	}
 	if o.AssemblyPattern != nil {
 		toSerialize["assemblyPattern"] = o.AssemblyPattern

@@ -61,6 +61,8 @@
 
 * `GBTUIHintAllowArrayFocus` (value: `"ALLOW_ARRAY_FOCUS"`)
 
+* `GBTUIHintShowInlineConfigInputs` (value: `"SHOW_INLINE_CONFIG_INPUTS"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

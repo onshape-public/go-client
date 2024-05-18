@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **Microversion** | Pointer to **string** |  | [optional] 
 **MinFacetWidth** | Pointer to **float64** |  | [optional] 
 **Mode** | Pointer to **string** |  | [optional] 
+**OccurrencesToExport** | Pointer to **string** |  | [optional] 
 **PartIds** | Pointer to **string** |  | [optional] 
 **PartQuery** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
@@ -890,6 +891,31 @@ SetMode sets Mode field to given value.
 `func (o *BTBExportModelParams) HasMode() bool`
 
 HasMode returns a boolean if a field has been set.
+
+### GetOccurrencesToExport
+
+`func (o *BTBExportModelParams) GetOccurrencesToExport() string`
+
+GetOccurrencesToExport returns the OccurrencesToExport field if non-nil, zero value otherwise.
+
+### GetOccurrencesToExportOk
+
+`func (o *BTBExportModelParams) GetOccurrencesToExportOk() (*string, bool)`
+
+GetOccurrencesToExportOk returns a tuple with the OccurrencesToExport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOccurrencesToExport
+
+`func (o *BTBExportModelParams) SetOccurrencesToExport(v string)`
+
+SetOccurrencesToExport sets OccurrencesToExport field to given value.
+
+### HasOccurrencesToExport
+
+`func (o *BTBExportModelParams) HasOccurrencesToExport() bool`
+
+HasOccurrencesToExport returns a boolean if a field has been set.
 
 ### GetPartIds
 

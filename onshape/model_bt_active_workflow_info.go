@@ -32,6 +32,7 @@ type BTActiveWorkflowInfo struct {
 	HasInactiveCustomWorkflows                  *bool                     `json:"hasInactiveCustomWorkflows,omitempty"`
 	ObsoletionWorkflow                          *BTPublishedWorkflowInfo  `json:"obsoletionWorkflow,omitempty"`
 	ObsoletionWorkflowId                        *string                   `json:"obsoletionWorkflowId,omitempty"`
+	OsCategoryIdToArenaNumberFormatId           *map[string]string        `json:"osCategoryIdToArenaNumberFormatId,omitempty"`
 	PartNumberingSchemeId                       *string                   `json:"partNumberingSchemeId,omitempty"`
 	PickableWorkflows                           []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
 	ReleaseWorkflow                             *BTPublishedWorkflowInfo  `json:"releaseWorkflow,omitempty"`
@@ -574,6 +575,38 @@ func (o *BTActiveWorkflowInfo) SetObsoletionWorkflowId(v string) {
 	o.ObsoletionWorkflowId = &v
 }
 
+// GetOsCategoryIdToArenaNumberFormatId returns the OsCategoryIdToArenaNumberFormatId field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetOsCategoryIdToArenaNumberFormatId() map[string]string {
+	if o == nil || o.OsCategoryIdToArenaNumberFormatId == nil {
+		var ret map[string]string
+		return ret
+	}
+	return *o.OsCategoryIdToArenaNumberFormatId
+}
+
+// GetOsCategoryIdToArenaNumberFormatIdOk returns a tuple with the OsCategoryIdToArenaNumberFormatId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetOsCategoryIdToArenaNumberFormatIdOk() (*map[string]string, bool) {
+	if o == nil || o.OsCategoryIdToArenaNumberFormatId == nil {
+		return nil, false
+	}
+	return o.OsCategoryIdToArenaNumberFormatId, true
+}
+
+// HasOsCategoryIdToArenaNumberFormatId returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasOsCategoryIdToArenaNumberFormatId() bool {
+	if o != nil && o.OsCategoryIdToArenaNumberFormatId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOsCategoryIdToArenaNumberFormatId gets a reference to the given map[string]string and assigns it to the OsCategoryIdToArenaNumberFormatId field.
+func (o *BTActiveWorkflowInfo) SetOsCategoryIdToArenaNumberFormatId(v map[string]string) {
+	o.OsCategoryIdToArenaNumberFormatId = &v
+}
+
 // GetPartNumberingSchemeId returns the PartNumberingSchemeId field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetPartNumberingSchemeId() string {
 	if o == nil || o.PartNumberingSchemeId == nil {
@@ -975,6 +1008,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ObsoletionWorkflowId != nil {
 		toSerialize["obsoletionWorkflowId"] = o.ObsoletionWorkflowId
+	}
+	if o.OsCategoryIdToArenaNumberFormatId != nil {
+		toSerialize["osCategoryIdToArenaNumberFormatId"] = o.OsCategoryIdToArenaNumberFormatId
 	}
 	if o.PartNumberingSchemeId != nil {
 		toSerialize["partNumberingSchemeId"] = o.PartNumberingSchemeId

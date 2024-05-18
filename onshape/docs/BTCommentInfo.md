@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Attachment** | Pointer to [**BTCommentAttachmentInfo**](BTCommentAttachmentInfo.md) |  | [optional] 
 **CanDelete** | Pointer to **bool** |  | [optional] 
 **CanResolveOrReopen** | Pointer to **bool** |  | [optional] 
+**Coordinates** | Pointer to [**CoordinatesInfo**](CoordinatesInfo.md) |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementFeature** | Pointer to **string** |  | [optional] 
@@ -206,6 +207,31 @@ SetCanResolveOrReopen sets CanResolveOrReopen field to given value.
 `func (o *BTCommentInfo) HasCanResolveOrReopen() bool`
 
 HasCanResolveOrReopen returns a boolean if a field has been set.
+
+### GetCoordinates
+
+`func (o *BTCommentInfo) GetCoordinates() CoordinatesInfo`
+
+GetCoordinates returns the Coordinates field if non-nil, zero value otherwise.
+
+### GetCoordinatesOk
+
+`func (o *BTCommentInfo) GetCoordinatesOk() (*CoordinatesInfo, bool)`
+
+GetCoordinatesOk returns a tuple with the Coordinates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCoordinates
+
+`func (o *BTCommentInfo) SetCoordinates(v CoordinatesInfo)`
+
+SetCoordinates sets Coordinates field to given value.
+
+### HasCoordinates
+
+`func (o *BTCommentInfo) HasCoordinates() bool`
+
+HasCoordinates returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

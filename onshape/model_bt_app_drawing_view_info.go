@@ -32,6 +32,7 @@ type BTAppDrawingViewInfo struct {
 	ErrorDescription                      *string                                            `json:"errorDescription,omitempty"`
 	ErrorValue                            *BTAppElementErrorCode                             `json:"errorValue,omitempty"`
 	ExplodedViewId                        *string                                            `json:"explodedViewId,omitempty"`
+	HasSecondaryViewDefinition            *bool                                              `json:"hasSecondaryViewDefinition,omitempty"`
 	HiddenLines                           *string                                            `json:"hiddenLines,omitempty"`
 	IgnoreFaultyParts                     *bool                                              `json:"ignoreFaultyParts,omitempty"`
 	IncludeHiddenInstances                *bool                                              `json:"includeHiddenInstances,omitempty"`
@@ -535,6 +536,38 @@ func (o *BTAppDrawingViewInfo) HasExplodedViewId() bool {
 // SetExplodedViewId gets a reference to the given string and assigns it to the ExplodedViewId field.
 func (o *BTAppDrawingViewInfo) SetExplodedViewId(v string) {
 	o.ExplodedViewId = &v
+}
+
+// GetHasSecondaryViewDefinition returns the HasSecondaryViewDefinition field value if set, zero value otherwise.
+func (o *BTAppDrawingViewInfo) GetHasSecondaryViewDefinition() bool {
+	if o == nil || o.HasSecondaryViewDefinition == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasSecondaryViewDefinition
+}
+
+// GetHasSecondaryViewDefinitionOk returns a tuple with the HasSecondaryViewDefinition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAppDrawingViewInfo) GetHasSecondaryViewDefinitionOk() (*bool, bool) {
+	if o == nil || o.HasSecondaryViewDefinition == nil {
+		return nil, false
+	}
+	return o.HasSecondaryViewDefinition, true
+}
+
+// HasHasSecondaryViewDefinition returns a boolean if a field has been set.
+func (o *BTAppDrawingViewInfo) HasHasSecondaryViewDefinition() bool {
+	if o != nil && o.HasSecondaryViewDefinition != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasSecondaryViewDefinition gets a reference to the given bool and assigns it to the HasSecondaryViewDefinition field.
+func (o *BTAppDrawingViewInfo) SetHasSecondaryViewDefinition(v bool) {
+	o.HasSecondaryViewDefinition = &v
 }
 
 // GetHiddenLines returns the HiddenLines field value if set, zero value otherwise.
@@ -1796,6 +1829,9 @@ func (o BTAppDrawingViewInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExplodedViewId != nil {
 		toSerialize["explodedViewId"] = o.ExplodedViewId
+	}
+	if o.HasSecondaryViewDefinition != nil {
+		toSerialize["hasSecondaryViewDefinition"] = o.HasSecondaryViewDefinition
 	}
 	if o.HiddenLines != nil {
 		toSerialize["hiddenLines"] = o.HiddenLines

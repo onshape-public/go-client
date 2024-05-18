@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssemblyInstance** | Pointer to **bool** |  | [optional] 
+**AssemblyMirror** | Pointer to **bool** |  | [optional] 
 **AssemblyPattern** | Pointer to **bool** |  | [optional] 
 **AssemblyReplicate** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
@@ -73,6 +74,31 @@ SetAssemblyInstance sets AssemblyInstance field to given value.
 `func (o *BTInstanceBase2263AllOf) HasAssemblyInstance() bool`
 
 HasAssemblyInstance returns a boolean if a field has been set.
+
+### GetAssemblyMirror
+
+`func (o *BTInstanceBase2263AllOf) GetAssemblyMirror() bool`
+
+GetAssemblyMirror returns the AssemblyMirror field if non-nil, zero value otherwise.
+
+### GetAssemblyMirrorOk
+
+`func (o *BTInstanceBase2263AllOf) GetAssemblyMirrorOk() (*bool, bool)`
+
+GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssemblyMirror
+
+`func (o *BTInstanceBase2263AllOf) SetAssemblyMirror(v bool)`
+
+SetAssemblyMirror sets AssemblyMirror field to given value.
+
+### HasAssemblyMirror
+
+`func (o *BTInstanceBase2263AllOf) HasAssemblyMirror() bool`
+
+HasAssemblyMirror returns a boolean if a field has been set.
 
 ### GetAssemblyPattern
 

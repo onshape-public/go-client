@@ -21,6 +21,7 @@ type BTAssemblyReplicate2774 struct {
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
 	NodeId                            *string                               `json:"nodeId,omitempty"`
 	AssemblyInstance                  *bool                                 `json:"assemblyInstance,omitempty"`
+	AssemblyMirror                    *bool                                 `json:"assemblyMirror,omitempty"`
 	AssemblyPattern                   *bool                                 `json:"assemblyPattern,omitempty"`
 	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
 	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
@@ -194,6 +195,38 @@ func (o *BTAssemblyReplicate2774) HasAssemblyInstance() bool {
 // SetAssemblyInstance gets a reference to the given bool and assigns it to the AssemblyInstance field.
 func (o *BTAssemblyReplicate2774) SetAssemblyInstance(v bool) {
 	o.AssemblyInstance = &v
+}
+
+// GetAssemblyMirror returns the AssemblyMirror field value if set, zero value otherwise.
+func (o *BTAssemblyReplicate2774) GetAssemblyMirror() bool {
+	if o == nil || o.AssemblyMirror == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AssemblyMirror
+}
+
+// GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyReplicate2774) GetAssemblyMirrorOk() (*bool, bool) {
+	if o == nil || o.AssemblyMirror == nil {
+		return nil, false
+	}
+	return o.AssemblyMirror, true
+}
+
+// HasAssemblyMirror returns a boolean if a field has been set.
+func (o *BTAssemblyReplicate2774) HasAssemblyMirror() bool {
+	if o != nil && o.AssemblyMirror != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssemblyMirror gets a reference to the given bool and assigns it to the AssemblyMirror field.
+func (o *BTAssemblyReplicate2774) SetAssemblyMirror(v bool) {
+	o.AssemblyMirror = &v
 }
 
 // GetAssemblyPattern returns the AssemblyPattern field value if set, zero value otherwise.
@@ -1073,6 +1106,9 @@ func (o BTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
 	}
 	if o.AssemblyInstance != nil {
 		toSerialize["assemblyInstance"] = o.AssemblyInstance
+	}
+	if o.AssemblyMirror != nil {
+		toSerialize["assemblyMirror"] = o.AssemblyMirror
 	}
 	if o.AssemblyPattern != nil {
 		toSerialize["assemblyPattern"] = o.AssemblyPattern

@@ -26,13 +26,16 @@ type BTElementMergeInfo struct {
 	SourceElementName         *string                 `json:"sourceElementName,omitempty"`
 	SourceElementPath         []string                `json:"sourceElementPath,omitempty"`
 	SourceElementStatus       *GBTElementBranchStatus `json:"sourceElementStatus,omitempty"`
+	SourceLibraryVersion      *int32                  `json:"sourceLibraryVersion,omitempty"`
 	SourceModifiedAt          *JSONTime               `json:"sourceModifiedAt,omitempty"`
 	SourceModifiedBy          *BTUserBasicSummaryInfo `json:"sourceModifiedBy,omitempty"`
 	TargetElementName         *string                 `json:"targetElementName,omitempty"`
 	TargetElementPath         []string                `json:"targetElementPath,omitempty"`
 	TargetElementStatus       *GBTElementBranchStatus `json:"targetElementStatus,omitempty"`
+	TargetLibraryVersion      *int32                  `json:"targetLibraryVersion,omitempty"`
 	TargetModifiedAt          *JSONTime               `json:"targetModifiedAt,omitempty"`
 	TargetModifiedBy          *BTUserBasicSummaryInfo `json:"targetModifiedBy,omitempty"`
+	VersionCompatible         *bool                   `json:"versionCompatible,omitempty"`
 }
 
 // NewBTElementMergeInfo instantiates a new BTElementMergeInfo object
@@ -372,6 +375,38 @@ func (o *BTElementMergeInfo) SetSourceElementStatus(v GBTElementBranchStatus) {
 	o.SourceElementStatus = &v
 }
 
+// GetSourceLibraryVersion returns the SourceLibraryVersion field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetSourceLibraryVersion() int32 {
+	if o == nil || o.SourceLibraryVersion == nil {
+		var ret int32
+		return ret
+	}
+	return *o.SourceLibraryVersion
+}
+
+// GetSourceLibraryVersionOk returns a tuple with the SourceLibraryVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetSourceLibraryVersionOk() (*int32, bool) {
+	if o == nil || o.SourceLibraryVersion == nil {
+		return nil, false
+	}
+	return o.SourceLibraryVersion, true
+}
+
+// HasSourceLibraryVersion returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasSourceLibraryVersion() bool {
+	if o != nil && o.SourceLibraryVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceLibraryVersion gets a reference to the given int32 and assigns it to the SourceLibraryVersion field.
+func (o *BTElementMergeInfo) SetSourceLibraryVersion(v int32) {
+	o.SourceLibraryVersion = &v
+}
+
 // GetSourceModifiedAt returns the SourceModifiedAt field value if set, zero value otherwise.
 func (o *BTElementMergeInfo) GetSourceModifiedAt() JSONTime {
 	if o == nil || o.SourceModifiedAt == nil {
@@ -532,6 +567,38 @@ func (o *BTElementMergeInfo) SetTargetElementStatus(v GBTElementBranchStatus) {
 	o.TargetElementStatus = &v
 }
 
+// GetTargetLibraryVersion returns the TargetLibraryVersion field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetTargetLibraryVersion() int32 {
+	if o == nil || o.TargetLibraryVersion == nil {
+		var ret int32
+		return ret
+	}
+	return *o.TargetLibraryVersion
+}
+
+// GetTargetLibraryVersionOk returns a tuple with the TargetLibraryVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetTargetLibraryVersionOk() (*int32, bool) {
+	if o == nil || o.TargetLibraryVersion == nil {
+		return nil, false
+	}
+	return o.TargetLibraryVersion, true
+}
+
+// HasTargetLibraryVersion returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasTargetLibraryVersion() bool {
+	if o != nil && o.TargetLibraryVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTargetLibraryVersion gets a reference to the given int32 and assigns it to the TargetLibraryVersion field.
+func (o *BTElementMergeInfo) SetTargetLibraryVersion(v int32) {
+	o.TargetLibraryVersion = &v
+}
+
 // GetTargetModifiedAt returns the TargetModifiedAt field value if set, zero value otherwise.
 func (o *BTElementMergeInfo) GetTargetModifiedAt() JSONTime {
 	if o == nil || o.TargetModifiedAt == nil {
@@ -596,6 +663,38 @@ func (o *BTElementMergeInfo) SetTargetModifiedBy(v BTUserBasicSummaryInfo) {
 	o.TargetModifiedBy = &v
 }
 
+// GetVersionCompatible returns the VersionCompatible field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetVersionCompatible() bool {
+	if o == nil || o.VersionCompatible == nil {
+		var ret bool
+		return ret
+	}
+	return *o.VersionCompatible
+}
+
+// GetVersionCompatibleOk returns a tuple with the VersionCompatible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetVersionCompatibleOk() (*bool, bool) {
+	if o == nil || o.VersionCompatible == nil {
+		return nil, false
+	}
+	return o.VersionCompatible, true
+}
+
+// HasVersionCompatible returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasVersionCompatible() bool {
+	if o != nil && o.VersionCompatible != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersionCompatible gets a reference to the given bool and assigns it to the VersionCompatible field.
+func (o *BTElementMergeInfo) SetVersionCompatible(v bool) {
+	o.VersionCompatible = &v
+}
+
 func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BranchPointElementName != nil {
@@ -628,6 +727,9 @@ func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	if o.SourceElementStatus != nil {
 		toSerialize["sourceElementStatus"] = o.SourceElementStatus
 	}
+	if o.SourceLibraryVersion != nil {
+		toSerialize["sourceLibraryVersion"] = o.SourceLibraryVersion
+	}
 	if o.SourceModifiedAt != nil {
 		toSerialize["sourceModifiedAt"] = o.SourceModifiedAt
 	}
@@ -643,11 +745,17 @@ func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	if o.TargetElementStatus != nil {
 		toSerialize["targetElementStatus"] = o.TargetElementStatus
 	}
+	if o.TargetLibraryVersion != nil {
+		toSerialize["targetLibraryVersion"] = o.TargetLibraryVersion
+	}
 	if o.TargetModifiedAt != nil {
 		toSerialize["targetModifiedAt"] = o.TargetModifiedAt
 	}
 	if o.TargetModifiedBy != nil {
 		toSerialize["targetModifiedBy"] = o.TargetModifiedBy
+	}
+	if o.VersionCompatible != nil {
+		toSerialize["versionCompatible"] = o.VersionCompatible
 	}
 	return json.Marshal(toSerialize)
 }

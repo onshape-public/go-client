@@ -20,22 +20,14 @@ type Status string
 
 // List of Status
 const (
-	StatusDevelopment Status = "DEVELOPMENT"
-	StatusProduction  Status = "PRODUCTION"
-	StatusStaging     Status = "STAGING"
-	StatusEvp         Status = "EVP"
-	StatusUnset       Status = "UNSET"
-	StatusInternal    Status = "INTERNAL"
+	StatusTimeout                Status = "DB_TIMEOUT"
+	StatusMaxNumberItemsExceeded Status = "DB_MAX_NUMBER_ITEMS_EXCEEDED"
 )
 
 // All allowed values of Status enum
 var AllowedStatusEnumValues = []Status{
-	"DEVELOPMENT",
-	"PRODUCTION",
-	"STAGING",
-	"EVP",
-	"UNSET",
-	"INTERNAL",
+	"DB_TIMEOUT",
+	"DB_MAX_NUMBER_ITEMS_EXCEEDED",
 }
 
 func (v *Status) UnmarshalJSON(src []byte) error {

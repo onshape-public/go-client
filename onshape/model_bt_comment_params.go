@@ -16,21 +16,22 @@ import (
 
 // BTCommentParams struct for BTCommentParams
 type BTCommentParams struct {
-	AssemblyFeature   *string           `json:"assemblyFeature,omitempty"`
-	Assignee          *string           `json:"assignee,omitempty"`
-	DocumentId        *string           `json:"documentId,omitempty"`
-	ElementFeature    *string           `json:"elementFeature,omitempty"`
-	ElementId         *string           `json:"elementId,omitempty"`
-	ElementOccurrence *string           `json:"elementOccurrence,omitempty"`
-	ElementQuery      *string           `json:"elementQuery,omitempty"`
-	Id                *string           `json:"id,omitempty"`
-	Message           *string           `json:"message,omitempty"`
-	ObjectId          *string           `json:"objectId,omitempty"`
-	ObjectType        *int32            `json:"objectType,omitempty"`
-	ParentId          *string           `json:"parentId,omitempty"`
-	VersionId         *string           `json:"versionId,omitempty"`
-	ViewData          *BTViewDataParams `json:"viewData,omitempty"`
-	WorkspaceId       *string           `json:"workspaceId,omitempty"`
+	AssemblyFeature   *string            `json:"assemblyFeature,omitempty"`
+	Assignee          *string            `json:"assignee,omitempty"`
+	Coordinates       *CoordinatesParams `json:"coordinates,omitempty"`
+	DocumentId        *string            `json:"documentId,omitempty"`
+	ElementFeature    *string            `json:"elementFeature,omitempty"`
+	ElementId         *string            `json:"elementId,omitempty"`
+	ElementOccurrence *string            `json:"elementOccurrence,omitempty"`
+	ElementQuery      *string            `json:"elementQuery,omitempty"`
+	Id                *string            `json:"id,omitempty"`
+	Message           *string            `json:"message,omitempty"`
+	ObjectId          *string            `json:"objectId,omitempty"`
+	ObjectType        *int32             `json:"objectType,omitempty"`
+	ParentId          *string            `json:"parentId,omitempty"`
+	VersionId         *string            `json:"versionId,omitempty"`
+	ViewData          *BTViewDataParams  `json:"viewData,omitempty"`
+	WorkspaceId       *string            `json:"workspaceId,omitempty"`
 }
 
 // NewBTCommentParams instantiates a new BTCommentParams object
@@ -112,6 +113,38 @@ func (o *BTCommentParams) HasAssignee() bool {
 // SetAssignee gets a reference to the given string and assigns it to the Assignee field.
 func (o *BTCommentParams) SetAssignee(v string) {
 	o.Assignee = &v
+}
+
+// GetCoordinates returns the Coordinates field value if set, zero value otherwise.
+func (o *BTCommentParams) GetCoordinates() CoordinatesParams {
+	if o == nil || o.Coordinates == nil {
+		var ret CoordinatesParams
+		return ret
+	}
+	return *o.Coordinates
+}
+
+// GetCoordinatesOk returns a tuple with the Coordinates field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetCoordinatesOk() (*CoordinatesParams, bool) {
+	if o == nil || o.Coordinates == nil {
+		return nil, false
+	}
+	return o.Coordinates, true
+}
+
+// HasCoordinates returns a boolean if a field has been set.
+func (o *BTCommentParams) HasCoordinates() bool {
+	if o != nil && o.Coordinates != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCoordinates gets a reference to the given CoordinatesParams and assigns it to the Coordinates field.
+func (o *BTCommentParams) SetCoordinates(v CoordinatesParams) {
+	o.Coordinates = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -537,6 +570,9 @@ func (o BTCommentParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Assignee != nil {
 		toSerialize["assignee"] = o.Assignee
+	}
+	if o.Coordinates != nil {
+		toSerialize["coordinates"] = o.Coordinates
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId

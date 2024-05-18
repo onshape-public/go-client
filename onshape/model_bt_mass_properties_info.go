@@ -14,17 +14,26 @@ import (
 	"encoding/json"
 )
 
-// BTMassPropertiesInfo struct for BTMassPropertiesInfo
+// BTMassPropertiesInfo Mass properties information.
 type BTMassPropertiesInfo struct {
-	Centroid         []float64       `json:"centroid,omitempty"`
-	HasMass_         *bool           `json:"hasMass,omitempty"`
-	Inertia          []float64       `json:"inertia,omitempty"`
-	Mass             []float64       `json:"mass,omitempty"`
-	MassMissingCount *int32          `json:"massMissingCount,omitempty"`
-	Periphery        []float64       `json:"periphery,omitempty"`
-	PrincipalAxes    []BTVector3d389 `json:"principalAxes,omitempty"`
-	PrincipalInertia []float64       `json:"principalInertia,omitempty"`
-	Volume           []float64       `json:"volume,omitempty"`
+	// Centroid, center of gravity, center of mass
+	Centroid []float64 `json:"centroid,omitempty"`
+	// `true` if the part has mass.
+	HasMass_ *bool `json:"hasMass,omitempty"`
+	// Mass moments of inertia
+	Inertia []float64 `json:"inertia,omitempty"`
+	// Mass
+	Mass []float64 `json:"mass,omitempty"`
+	// Number of parts without mass.
+	MassMissingCount *int32 `json:"massMissingCount,omitempty"`
+	// Surface area
+	Periphery []float64 `json:"periphery,omitempty"`
+	// Vector coordinates of the principal axes. Use `BTVector3d-389` as the `btType`.
+	PrincipalAxes []BTVector3d389 `json:"principalAxes,omitempty"`
+	// Principal moments of inertia
+	PrincipalInertia []float64 `json:"principalInertia,omitempty"`
+	// Volume
+	Volume []float64 `json:"volume,omitempty"`
 }
 
 // NewBTMassPropertiesInfo instantiates a new BTMassPropertiesInfo object

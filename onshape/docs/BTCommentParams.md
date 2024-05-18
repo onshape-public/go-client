@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssemblyFeature** | Pointer to **string** |  | [optional] 
 **Assignee** | Pointer to **string** |  | [optional] 
+**Coordinates** | Pointer to [**CoordinatesParams**](CoordinatesParams.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementFeature** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -88,6 +89,31 @@ SetAssignee sets Assignee field to given value.
 `func (o *BTCommentParams) HasAssignee() bool`
 
 HasAssignee returns a boolean if a field has been set.
+
+### GetCoordinates
+
+`func (o *BTCommentParams) GetCoordinates() CoordinatesParams`
+
+GetCoordinates returns the Coordinates field if non-nil, zero value otherwise.
+
+### GetCoordinatesOk
+
+`func (o *BTCommentParams) GetCoordinatesOk() (*CoordinatesParams, bool)`
+
+GetCoordinatesOk returns a tuple with the Coordinates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCoordinates
+
+`func (o *BTCommentParams) SetCoordinates(v CoordinatesParams)`
+
+SetCoordinates sets Coordinates field to given value.
+
+### HasCoordinates
+
+`func (o *BTCommentParams) HasCoordinates() bool`
+
+HasCoordinates returns a boolean if a field has been set.
 
 ### GetDocumentId
 

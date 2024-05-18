@@ -31,6 +31,12 @@
 
 * `BTSearchEntityTypePublication` (value: `"publication"`)
 
+* `BTSearchEntityTypeCommentTask` (value: `"comment_task"`)
+
+* `BTSearchEntityTypeGenericTask` (value: `"generic_task"`)
+
+* `BTSearchEntityTypeReleaseTask` (value: `"release_task"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

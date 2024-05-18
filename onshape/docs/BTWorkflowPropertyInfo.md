@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ComputedAssemblyProperty** | Pointer to **bool** |  | [optional] 
 **ComputedProperty** | Pointer to **bool** |  | [optional] 
 **ComputedPropertyError** | Pointer to **string** |  | [optional] 
+**ComputedPropertyEvalInfo** | Pointer to **string** |  | [optional] 
 **DateFormat** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **map[string]interface{}** |  | [optional] 
 **Dirty** | Pointer to **bool** |  | [optional] 
@@ -125,6 +126,31 @@ SetComputedPropertyError sets ComputedPropertyError field to given value.
 `func (o *BTWorkflowPropertyInfo) HasComputedPropertyError() bool`
 
 HasComputedPropertyError returns a boolean if a field has been set.
+
+### GetComputedPropertyEvalInfo
+
+`func (o *BTWorkflowPropertyInfo) GetComputedPropertyEvalInfo() string`
+
+GetComputedPropertyEvalInfo returns the ComputedPropertyEvalInfo field if non-nil, zero value otherwise.
+
+### GetComputedPropertyEvalInfoOk
+
+`func (o *BTWorkflowPropertyInfo) GetComputedPropertyEvalInfoOk() (*string, bool)`
+
+GetComputedPropertyEvalInfoOk returns a tuple with the ComputedPropertyEvalInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedPropertyEvalInfo
+
+`func (o *BTWorkflowPropertyInfo) SetComputedPropertyEvalInfo(v string)`
+
+SetComputedPropertyEvalInfo sets ComputedPropertyEvalInfo field to given value.
+
+### HasComputedPropertyEvalInfo
+
+`func (o *BTWorkflowPropertyInfo) HasComputedPropertyEvalInfo() bool`
+
+HasComputedPropertyEvalInfo returns a boolean if a field has been set.
 
 ### GetDateFormat
 
