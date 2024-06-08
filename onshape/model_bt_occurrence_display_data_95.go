@@ -25,6 +25,7 @@ type BTOccurrenceDisplayData95 struct {
 	IsPatternDescendant             *bool               `json:"isPatternDescendant,omitempty"`
 	OccurrenceData                  *BTOccurrenceData75 `json:"occurrenceData,omitempty"`
 	PartIds                         []string            `json:"partIds,omitempty"`
+	SketchFeatureId                 *string             `json:"sketchFeatureId,omitempty"`
 }
 
 // NewBTOccurrenceDisplayData95 instantiates a new BTOccurrenceDisplayData95 object
@@ -300,6 +301,38 @@ func (o *BTOccurrenceDisplayData95) SetPartIds(v []string) {
 	o.PartIds = v
 }
 
+// GetSketchFeatureId returns the SketchFeatureId field value if set, zero value otherwise.
+func (o *BTOccurrenceDisplayData95) GetSketchFeatureId() string {
+	if o == nil || o.SketchFeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SketchFeatureId
+}
+
+// GetSketchFeatureIdOk returns a tuple with the SketchFeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrenceDisplayData95) GetSketchFeatureIdOk() (*string, bool) {
+	if o == nil || o.SketchFeatureId == nil {
+		return nil, false
+	}
+	return o.SketchFeatureId, true
+}
+
+// HasSketchFeatureId returns a boolean if a field has been set.
+func (o *BTOccurrenceDisplayData95) HasSketchFeatureId() bool {
+	if o != nil && o.SketchFeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSketchFeatureId gets a reference to the given string and assigns it to the SketchFeatureId field.
+func (o *BTOccurrenceDisplayData95) SetSketchFeatureId(v string) {
+	o.SketchFeatureId = &v
+}
+
 func (o BTOccurrenceDisplayData95) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -325,6 +358,9 @@ func (o BTOccurrenceDisplayData95) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartIds != nil {
 		toSerialize["partIds"] = o.PartIds
+	}
+	if o.SketchFeatureId != nil {
+		toSerialize["sketchFeatureId"] = o.SketchFeatureId
 	}
 	return json.Marshal(toSerialize)
 }

@@ -7,10 +7,12 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Compressed** | Pointer to **bool** |  | [optional] 
 **Decompressed** | Pointer to [**BTEntityGeometry35**](BTEntityGeometry35.md) |  | [optional] 
+**Edge** | Pointer to **bool** |  | [optional] 
 **ErrorCode** | Pointer to **int32** |  | [optional] 
 **EstimatedMemoryUsageInBytes** | Pointer to **int32** |  | [optional] 
 **Face** | Pointer to **bool** |  | [optional] 
 **HasTessellationError** | Pointer to **bool** |  | [optional] 
+**Point** | Pointer to **bool** |  | [optional] 
 **SettingIndex** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -106,6 +108,31 @@ SetDecompressed sets Decompressed field to given value.
 `func (o *BTEntityGeometry35) HasDecompressed() bool`
 
 HasDecompressed returns a boolean if a field has been set.
+
+### GetEdge
+
+`func (o *BTEntityGeometry35) GetEdge() bool`
+
+GetEdge returns the Edge field if non-nil, zero value otherwise.
+
+### GetEdgeOk
+
+`func (o *BTEntityGeometry35) GetEdgeOk() (*bool, bool)`
+
+GetEdgeOk returns a tuple with the Edge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEdge
+
+`func (o *BTEntityGeometry35) SetEdge(v bool)`
+
+SetEdge sets Edge field to given value.
+
+### HasEdge
+
+`func (o *BTEntityGeometry35) HasEdge() bool`
+
+HasEdge returns a boolean if a field has been set.
 
 ### GetErrorCode
 
@@ -206,6 +233,31 @@ SetHasTessellationError sets HasTessellationError field to given value.
 `func (o *BTEntityGeometry35) HasHasTessellationError() bool`
 
 HasHasTessellationError returns a boolean if a field has been set.
+
+### GetPoint
+
+`func (o *BTEntityGeometry35) GetPoint() bool`
+
+GetPoint returns the Point field if non-nil, zero value otherwise.
+
+### GetPointOk
+
+`func (o *BTEntityGeometry35) GetPointOk() (*bool, bool)`
+
+GetPointOk returns a tuple with the Point field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPoint
+
+`func (o *BTEntityGeometry35) SetPoint(v bool)`
+
+SetPoint sets Point field to given value.
+
+### HasPoint
+
+`func (o *BTEntityGeometry35) HasPoint() bool`
+
+HasPoint returns a boolean if a field has been set.
 
 ### GetSettingIndex
 

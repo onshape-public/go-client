@@ -1527,6 +1527,14 @@ const (
 	GBTErrorStringEnumPolylineZeroAngle                                     GBTErrorStringEnum = "POLYLINE_ZERO_ANGLE"
 	GBTErrorStringEnumPolylineBendRadiiInvalidSize                          GBTErrorStringEnum = "POLYLINE_BEND_RADII_INVALID_SIZE"
 	GBTErrorStringEnumPolylineInvalidBend                                   GBTErrorStringEnum = "POLYLINE_INVALID_BEND"
+	GBTErrorStringEnumSketchMissingLocalReference                           GBTErrorStringEnum = "SKETCH_MISSING_LOCAL_REFERENCE"
+	GBTErrorStringEnumSketchDimensionMissingParameter                       GBTErrorStringEnum = "SKETCH_DIMENSION_MISSING_PARAMETER"
+	GBTErrorStringEnumMateconnectorQuerySecondaryAxisConflict               GBTErrorStringEnum = "MATECONNECTOR_QUERY_SECONDARY_AXIS_CONFLICT"
+	GBTErrorStringEnumMateconnectorNormalResolutionFailed                   GBTErrorStringEnum = "MATECONNECTOR_NORMAL_RESOLUTION_FAILED"
+	GBTErrorStringEnumLoftPlanarGuideNotFound                               GBTErrorStringEnum = "LOFT_PLANAR_GUIDE_NOT_FOUND"
+	GBTErrorStringEnumPartStudioDoesNotExistInMoment                        GBTErrorStringEnum = "PART_STUDIO_DOES_NOT_EXIST_IN_MOMENT"
+	GBTErrorStringEnumSomeBodiesWereRemovedFromExport                       GBTErrorStringEnum = "SOME_BODIES_WERE_REMOVED_FROM_EXPORT"
+	GBTErrorStringEnumAllBodiesWereRemovedFromExport                        GBTErrorStringEnum = "ALL_BODIES_WERE_REMOVED_FROM_EXPORT"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3039,6 +3047,14 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"POLYLINE_ZERO_ANGLE",
 	"POLYLINE_BEND_RADII_INVALID_SIZE",
 	"POLYLINE_INVALID_BEND",
+	"SKETCH_MISSING_LOCAL_REFERENCE",
+	"SKETCH_DIMENSION_MISSING_PARAMETER",
+	"MATECONNECTOR_QUERY_SECONDARY_AXIS_CONFLICT",
+	"MATECONNECTOR_NORMAL_RESOLUTION_FAILED",
+	"LOFT_PLANAR_GUIDE_NOT_FOUND",
+	"PART_STUDIO_DOES_NOT_EXIST_IN_MOMENT",
+	"SOME_BODIES_WERE_REMOVED_FROM_EXPORT",
+	"ALL_BODIES_WERE_REMOVED_FROM_EXPORT",
 	"UNKNOWN",
 }
 

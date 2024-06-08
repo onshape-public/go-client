@@ -16,42 +16,45 @@ import (
 
 // BTPartStudioDisplayData346 struct for BTPartStudioDisplayData346
 type BTPartStudioDisplayData346 struct {
-	AppearanceIdToAppearanceOverride        *map[string]BTAppearanceOverride2517           `json:"appearanceIdToAppearanceOverride,omitempty"`
-	AssemblyReferenceDisplayData            *BTAssemblyReferencesDisplayData1562           `json:"assemblyReferenceDisplayData,omitempty"`
-	BodyIdToEntityAppearanceSettings        *map[string]BTBaseEntityAppearanceSettings1391 `json:"bodyIdToEntityAppearanceSettings,omitempty"`
-	BodyIdToEntityAppearanceSettingsChanged *bool                                          `json:"bodyIdToEntityAppearanceSettingsChanged,omitempty"`
+	AllInsertableDisplayData                *map[string]map[string]BTInsertableDisplayData2405 `json:"allInsertableDisplayData,omitempty"`
+	AppearanceIdToAppearanceOverride        *map[string]BTAppearanceOverride2517               `json:"appearanceIdToAppearanceOverride,omitempty"`
+	AssemblyReferenceDisplayData            *BTAssemblyReferencesDisplayData1562               `json:"assemblyReferenceDisplayData,omitempty"`
+	BodyIdToEntityAppearanceSettings        *map[string]BTBaseEntityAppearanceSettings1391     `json:"bodyIdToEntityAppearanceSettings,omitempty"`
+	BodyIdToEntityAppearanceSettingsChanged *bool                                              `json:"bodyIdToEntityAppearanceSettingsChanged,omitempty"`
 	// Type of JSON object.
-	BtType                                 *string                                             `json:"btType,omitempty"`
-	CacheablePartStudioDisplayDataVersion  *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
-	DecalIdToDecal                         *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
-	DeterministicIdToAssociatedFeatureIds  *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
-	DeterministicIdToEntity                *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
-	DeterministicIdToPartDisplayData       *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
-	DeterministicPartIdToData              *map[string]BTPartData16                            `json:"deterministicPartIdToData,omitempty"`
-	Dimensions                             []BTDimensionDisplayData323                         `json:"dimensions,omitempty"`
-	DisplayStateId                         *string                                             `json:"displayStateId,omitempty"`
-	ElementId                              *string                                             `json:"elementId,omitempty"`
-	FeatureIdToOperationIndices            *map[string][]int32                                 `json:"featureIdToOperationIndices,omitempty"`
-	FromCache                              *bool                                               `json:"fromCache,omitempty"`
-	FromFullElementId                      *BTFullElementId756                                 `json:"fromFullElementId,omitempty"`
-	FullElementId                          *BTFullElementId756                                 `json:"fullElementId,omitempty"`
-	Incremental                            *bool                                               `json:"incremental,omitempty"`
-	InstanceCount                          *int32                                              `json:"instanceCount,omitempty"`
-	IsBase                                 *bool                                               `json:"isBase,omitempty"`
-	IsExternal                             *bool                                               `json:"isExternal,omitempty"`
-	IsNoop                                 *bool                                               `json:"isNoop,omitempty"`
-	KeepFromMicroversion                   *bool                                               `json:"keepFromMicroversion,omitempty"`
-	MicroversionId                         *BTMicroversionId366                                `json:"microversionId,omitempty"`
-	MicroversionIdAndConfigurationInterval *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
-	MicroversionInterval                   *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
-	NumberOfSketchEntities                 *int32                                              `json:"numberOfSketchEntities,omitempty"`
-	PartColorCycle                         *BTBasePartColorCycle2614                           `json:"partColorCycle,omitempty"`
-	PartDisplayData                        []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
-	SketchImages                           *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
-	UpdatedParts                           []string                                            `json:"updatedParts,omitempty"`
-	Usage                                  *GBTDisplayDataUsage                                `json:"usage,omitempty"`
-	UsesMultipleTessellationSettings       *bool                                               `json:"usesMultipleTessellationSettings,omitempty"`
-	VersionForRasterization                *BTElementDisplayData326                            `json:"versionForRasterization,omitempty"`
+	BtType                                         *string                                             `json:"btType,omitempty"`
+	CacheablePartStudioDisplayDataVersion          *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
+	DecalIdToDecal                                 *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
+	DeterministicIdToAssociatedFeatureIds          *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
+	DeterministicIdToEntity                        *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
+	DeterministicIdToPartDisplayData               *map[string]BTPartDisplayData17                     `json:"deterministicIdToPartDisplayData,omitempty"`
+	DeterministicPartIdToData                      *map[string]BTPartData16                            `json:"deterministicPartIdToData,omitempty"`
+	Dimensions                                     []BTDimensionDisplayData323                         `json:"dimensions,omitempty"`
+	DisplayStateId                                 *string                                             `json:"displayStateId,omitempty"`
+	ElementId                                      *string                                             `json:"elementId,omitempty"`
+	FeatureIdToOperationIndices                    *map[string][]int32                                 `json:"featureIdToOperationIndices,omitempty"`
+	FromCache                                      *bool                                               `json:"fromCache,omitempty"`
+	FromFullElementId                              *BTFullElementId756                                 `json:"fromFullElementId,omitempty"`
+	FullElementId                                  *BTFullElementId756                                 `json:"fullElementId,omitempty"`
+	Incremental                                    *bool                                               `json:"incremental,omitempty"`
+	InstanceCount                                  *int32                                              `json:"instanceCount,omitempty"`
+	IsBase                                         *bool                                               `json:"isBase,omitempty"`
+	IsExternal                                     *bool                                               `json:"isExternal,omitempty"`
+	IsNoop                                         *bool                                               `json:"isNoop,omitempty"`
+	KeepFromMicroversion                           *bool                                               `json:"keepFromMicroversion,omitempty"`
+	MicroversionId                                 *BTMicroversionId366                                `json:"microversionId,omitempty"`
+	MicroversionIdAndConfigurationInterval         *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
+	MicroversionInterval                           *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
+	NumberOfSketchEntities                         *int32                                              `json:"numberOfSketchEntities,omitempty"`
+	PartColorCycle                                 *BTBasePartColorCycle2614                           `json:"partColorCycle,omitempty"`
+	PartDisplayData                                []BTPartDisplayData17                               `json:"partDisplayData,omitempty"`
+	PartIdAndTessellationSettingToBuffers          *map[string]map[string]BTInsertableDisplayData2405  `json:"partIdAndTessellationSettingToBuffers,omitempty"`
+	SketchFeatureIdAndTessellationSettingToBuffers *map[string]map[string]BTInsertableDisplayData2405  `json:"sketchFeatureIdAndTessellationSettingToBuffers,omitempty"`
+	SketchImages                                   *map[string]map[string]BTSketchImageDisplayData1379 `json:"sketchImages,omitempty"`
+	UpdatedParts                                   []string                                            `json:"updatedParts,omitempty"`
+	Usage                                          *GBTDisplayDataUsage                                `json:"usage,omitempty"`
+	UsesMultipleTessellationSettings               *bool                                               `json:"usesMultipleTessellationSettings,omitempty"`
+	VersionForRasterization                        *BTElementDisplayData326                            `json:"versionForRasterization,omitempty"`
 }
 
 // NewBTPartStudioDisplayData346 instantiates a new BTPartStudioDisplayData346 object
@@ -69,6 +72,38 @@ func NewBTPartStudioDisplayData346() *BTPartStudioDisplayData346 {
 func NewBTPartStudioDisplayData346WithDefaults() *BTPartStudioDisplayData346 {
 	this := BTPartStudioDisplayData346{}
 	return &this
+}
+
+// GetAllInsertableDisplayData returns the AllInsertableDisplayData field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetAllInsertableDisplayData() map[string]map[string]BTInsertableDisplayData2405 {
+	if o == nil || o.AllInsertableDisplayData == nil {
+		var ret map[string]map[string]BTInsertableDisplayData2405
+		return ret
+	}
+	return *o.AllInsertableDisplayData
+}
+
+// GetAllInsertableDisplayDataOk returns a tuple with the AllInsertableDisplayData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetAllInsertableDisplayDataOk() (*map[string]map[string]BTInsertableDisplayData2405, bool) {
+	if o == nil || o.AllInsertableDisplayData == nil {
+		return nil, false
+	}
+	return o.AllInsertableDisplayData, true
+}
+
+// HasAllInsertableDisplayData returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasAllInsertableDisplayData() bool {
+	if o != nil && o.AllInsertableDisplayData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllInsertableDisplayData gets a reference to the given map[string]map[string]BTInsertableDisplayData2405 and assigns it to the AllInsertableDisplayData field.
+func (o *BTPartStudioDisplayData346) SetAllInsertableDisplayData(v map[string]map[string]BTInsertableDisplayData2405) {
+	o.AllInsertableDisplayData = &v
 }
 
 // GetAppearanceIdToAppearanceOverride returns the AppearanceIdToAppearanceOverride field value if set, zero value otherwise.
@@ -1031,6 +1066,70 @@ func (o *BTPartStudioDisplayData346) SetPartDisplayData(v []BTPartDisplayData17)
 	o.PartDisplayData = v
 }
 
+// GetPartIdAndTessellationSettingToBuffers returns the PartIdAndTessellationSettingToBuffers field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetPartIdAndTessellationSettingToBuffers() map[string]map[string]BTInsertableDisplayData2405 {
+	if o == nil || o.PartIdAndTessellationSettingToBuffers == nil {
+		var ret map[string]map[string]BTInsertableDisplayData2405
+		return ret
+	}
+	return *o.PartIdAndTessellationSettingToBuffers
+}
+
+// GetPartIdAndTessellationSettingToBuffersOk returns a tuple with the PartIdAndTessellationSettingToBuffers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetPartIdAndTessellationSettingToBuffersOk() (*map[string]map[string]BTInsertableDisplayData2405, bool) {
+	if o == nil || o.PartIdAndTessellationSettingToBuffers == nil {
+		return nil, false
+	}
+	return o.PartIdAndTessellationSettingToBuffers, true
+}
+
+// HasPartIdAndTessellationSettingToBuffers returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasPartIdAndTessellationSettingToBuffers() bool {
+	if o != nil && o.PartIdAndTessellationSettingToBuffers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartIdAndTessellationSettingToBuffers gets a reference to the given map[string]map[string]BTInsertableDisplayData2405 and assigns it to the PartIdAndTessellationSettingToBuffers field.
+func (o *BTPartStudioDisplayData346) SetPartIdAndTessellationSettingToBuffers(v map[string]map[string]BTInsertableDisplayData2405) {
+	o.PartIdAndTessellationSettingToBuffers = &v
+}
+
+// GetSketchFeatureIdAndTessellationSettingToBuffers returns the SketchFeatureIdAndTessellationSettingToBuffers field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetSketchFeatureIdAndTessellationSettingToBuffers() map[string]map[string]BTInsertableDisplayData2405 {
+	if o == nil || o.SketchFeatureIdAndTessellationSettingToBuffers == nil {
+		var ret map[string]map[string]BTInsertableDisplayData2405
+		return ret
+	}
+	return *o.SketchFeatureIdAndTessellationSettingToBuffers
+}
+
+// GetSketchFeatureIdAndTessellationSettingToBuffersOk returns a tuple with the SketchFeatureIdAndTessellationSettingToBuffers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetSketchFeatureIdAndTessellationSettingToBuffersOk() (*map[string]map[string]BTInsertableDisplayData2405, bool) {
+	if o == nil || o.SketchFeatureIdAndTessellationSettingToBuffers == nil {
+		return nil, false
+	}
+	return o.SketchFeatureIdAndTessellationSettingToBuffers, true
+}
+
+// HasSketchFeatureIdAndTessellationSettingToBuffers returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasSketchFeatureIdAndTessellationSettingToBuffers() bool {
+	if o != nil && o.SketchFeatureIdAndTessellationSettingToBuffers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSketchFeatureIdAndTessellationSettingToBuffers gets a reference to the given map[string]map[string]BTInsertableDisplayData2405 and assigns it to the SketchFeatureIdAndTessellationSettingToBuffers field.
+func (o *BTPartStudioDisplayData346) SetSketchFeatureIdAndTessellationSettingToBuffers(v map[string]map[string]BTInsertableDisplayData2405) {
+	o.SketchFeatureIdAndTessellationSettingToBuffers = &v
+}
+
 // GetSketchImages returns the SketchImages field value if set, zero value otherwise.
 func (o *BTPartStudioDisplayData346) GetSketchImages() map[string]map[string]BTSketchImageDisplayData1379 {
 	if o == nil || o.SketchImages == nil {
@@ -1193,6 +1292,9 @@ func (o *BTPartStudioDisplayData346) SetVersionForRasterization(v BTElementDispl
 
 func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AllInsertableDisplayData != nil {
+		toSerialize["allInsertableDisplayData"] = o.AllInsertableDisplayData
+	}
 	if o.AppearanceIdToAppearanceOverride != nil {
 		toSerialize["appearanceIdToAppearanceOverride"] = o.AppearanceIdToAppearanceOverride
 	}
@@ -1282,6 +1384,12 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartDisplayData != nil {
 		toSerialize["partDisplayData"] = o.PartDisplayData
+	}
+	if o.PartIdAndTessellationSettingToBuffers != nil {
+		toSerialize["partIdAndTessellationSettingToBuffers"] = o.PartIdAndTessellationSettingToBuffers
+	}
+	if o.SketchFeatureIdAndTessellationSettingToBuffers != nil {
+		toSerialize["sketchFeatureIdAndTessellationSettingToBuffers"] = o.SketchFeatureIdAndTessellationSettingToBuffers
 	}
 	if o.SketchImages != nil {
 		toSerialize["sketchImages"] = o.SketchImages

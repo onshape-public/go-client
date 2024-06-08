@@ -35,6 +35,7 @@ type BTMParameterReferencePartStudio3302 struct {
 	BlockBuildFunctionAccess    *bool                     `json:"blockBuildFunctionAccess,omitempty"`
 	PartIdentity                *BTPSOIdentity2741        `json:"partIdentity,omitempty"`
 	PartQuery                   *BTMParameterQueryList148 `json:"partQuery,omitempty"`
+	QueryDataKey                *string                   `json:"queryDataKey,omitempty"`
 	StandardContentParametersId *string                   `json:"standardContentParametersId,omitempty"`
 }
 
@@ -567,6 +568,38 @@ func (o *BTMParameterReferencePartStudio3302) SetPartQuery(v BTMParameterQueryLi
 	o.PartQuery = &v
 }
 
+// GetQueryDataKey returns the QueryDataKey field value if set, zero value otherwise.
+func (o *BTMParameterReferencePartStudio3302) GetQueryDataKey() string {
+	if o == nil || o.QueryDataKey == nil {
+		var ret string
+		return ret
+	}
+	return *o.QueryDataKey
+}
+
+// GetQueryDataKeyOk returns a tuple with the QueryDataKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferencePartStudio3302) GetQueryDataKeyOk() (*string, bool) {
+	if o == nil || o.QueryDataKey == nil {
+		return nil, false
+	}
+	return o.QueryDataKey, true
+}
+
+// HasQueryDataKey returns a boolean if a field has been set.
+func (o *BTMParameterReferencePartStudio3302) HasQueryDataKey() bool {
+	if o != nil && o.QueryDataKey != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryDataKey gets a reference to the given string and assigns it to the QueryDataKey field.
+func (o *BTMParameterReferencePartStudio3302) SetQueryDataKey(v string) {
+	o.QueryDataKey = &v
+}
+
 // GetStandardContentParametersId returns the StandardContentParametersId field value if set, zero value otherwise.
 func (o *BTMParameterReferencePartStudio3302) GetStandardContentParametersId() string {
 	if o == nil || o.StandardContentParametersId == nil {
@@ -648,6 +681,9 @@ func (o BTMParameterReferencePartStudio3302) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartQuery != nil {
 		toSerialize["partQuery"] = o.PartQuery
+	}
+	if o.QueryDataKey != nil {
+		toSerialize["queryDataKey"] = o.QueryDataKey
 	}
 	if o.StandardContentParametersId != nil {
 		toSerialize["standardContentParametersId"] = o.StandardContentParametersId

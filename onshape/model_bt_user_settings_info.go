@@ -38,6 +38,7 @@ type BTUserSettingsInfo struct {
 	SelectItemViewStateInfos        []BTSelectItemViewStateInfo            `json:"selectItemViewStateInfos,omitempty"`
 	StartupPage                     *int32                                 `json:"startupPage,omitempty"`
 	SubstituteApprovers             []BTSubstituteApproverInfo             `json:"substituteApprovers,omitempty"`
+	Theme                           *int32                                 `json:"theme,omitempty"`
 	UnitsDisplayPrecision           *map[string]int32                      `json:"unitsDisplayPrecision,omitempty"`
 	UnitsMaximumDisplayPrecision    *BTUnitsMaximumDisplayPrecisionInfo    `json:"unitsMaximumDisplayPrecision,omitempty"`
 	Use24HourTime                   *bool                                  `json:"use24HourTime,omitempty"`
@@ -767,6 +768,38 @@ func (o *BTUserSettingsInfo) SetSubstituteApprovers(v []BTSubstituteApproverInfo
 	o.SubstituteApprovers = v
 }
 
+// GetTheme returns the Theme field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetTheme() int32 {
+	if o == nil || o.Theme == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Theme
+}
+
+// GetThemeOk returns a tuple with the Theme field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetThemeOk() (*int32, bool) {
+	if o == nil || o.Theme == nil {
+		return nil, false
+	}
+	return o.Theme, true
+}
+
+// HasTheme returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasTheme() bool {
+	if o != nil && o.Theme != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTheme gets a reference to the given int32 and assigns it to the Theme field.
+func (o *BTUserSettingsInfo) SetTheme(v int32) {
+	o.Theme = &v
+}
+
 // GetUnitsDisplayPrecision returns the UnitsDisplayPrecision field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetUnitsDisplayPrecision() map[string]int32 {
 	if o == nil || o.UnitsDisplayPrecision == nil {
@@ -1026,6 +1059,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SubstituteApprovers != nil {
 		toSerialize["substituteApprovers"] = o.SubstituteApprovers
+	}
+	if o.Theme != nil {
+		toSerialize["theme"] = o.Theme
 	}
 	if o.UnitsDisplayPrecision != nil {
 		toSerialize["unitsDisplayPrecision"] = o.UnitsDisplayPrecision

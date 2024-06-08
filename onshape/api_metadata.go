@@ -21,6 +21,153 @@ import (
 // MetadataApiService MetadataApi service
 type MetadataApiService service
 
+type ApiGetFullAssemblyMetadataRequest struct {
+	ctx            context.Context
+	ApiService     *MetadataApiService
+	did            string
+	wvm            string
+	wvmid          string
+	eid            string
+	linkDocumentId *string
+	configuration  *string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetFullAssemblyMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGetFullAssemblyMetadataRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiGetFullAssemblyMetadataRequest) Configuration(configuration string) ApiGetFullAssemblyMetadataRequest {
+	r.configuration = &configuration
+	return r
+}
+
+func (r ApiGetFullAssemblyMetadataRequest) Execute() (*BTAssemblyItemMetadataInfo, *http.Response, error) {
+	return r.ApiService.GetFullAssemblyMetadataExecute(r)
+}
+
+/*
+GetFullAssemblyMetadata Get the metadata for an assembly, including supporting metadata.
+
+See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
+* `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner.
+* `configuration` optional query parameter defaults to default configuration.
+* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`.
+* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`.
+* You can also choose to include a `thumbnail`. Default value is `false`.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetFullAssemblyMetadataRequest
+*/
+func (a *MetadataApiService) GetFullAssemblyMetadata(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFullAssemblyMetadataRequest {
+	return ApiGetFullAssemblyMetadataRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTAssemblyItemMetadataInfo
+func (a *MetadataApiService) GetFullAssemblyMetadataExecute(r ApiGetFullAssemblyMetadataRequest) (*BTAssemblyItemMetadataInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTAssemblyItemMetadataInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.GetFullAssemblyMetadata")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/assembly-debug"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.configuration != nil {
+		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTAssemblyItemMetadataInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiGetVEOPStandardContentMetadataRequest struct {
 	ctx                               context.Context
 	ApiService                        *MetadataApiService

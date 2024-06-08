@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **OriginalForeignId** | Pointer to **string** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **PartIds** | Pointer to **string** |  | [optional] 
+**PartsExportFilter** | Pointer to [**BTPartsExportFilter4308**](BTPartsExportFilter4308.md) |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **PasswordRequired** | Pointer to **bool** |  | [optional] 
 **PdfVersion** | Pointer to **string** |  | [optional] 
@@ -1273,6 +1274,31 @@ SetPartIds sets PartIds field to given value.
 `func (o *BTTranslateFormatParams) HasPartIds() bool`
 
 HasPartIds returns a boolean if a field has been set.
+
+### GetPartsExportFilter
+
+`func (o *BTTranslateFormatParams) GetPartsExportFilter() BTPartsExportFilter4308`
+
+GetPartsExportFilter returns the PartsExportFilter field if non-nil, zero value otherwise.
+
+### GetPartsExportFilterOk
+
+`func (o *BTTranslateFormatParams) GetPartsExportFilterOk() (*BTPartsExportFilter4308, bool)`
+
+GetPartsExportFilterOk returns a tuple with the PartsExportFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartsExportFilter
+
+`func (o *BTTranslateFormatParams) SetPartsExportFilter(v BTPartsExportFilter4308)`
+
+SetPartsExportFilter sets PartsExportFilter field to given value.
+
+### HasPartsExportFilter
+
+`func (o *BTTranslateFormatParams) HasPartsExportFilter() bool`
+
+HasPartsExportFilter returns a boolean if a field has been set.
 
 ### GetPassword
 

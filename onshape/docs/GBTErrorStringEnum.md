@@ -3017,6 +3017,22 @@
 
 * `GBTErrorStringEnumPolylineInvalidBend` (value: `"POLYLINE_INVALID_BEND"`)
 
+* `GBTErrorStringEnumSketchMissingLocalReference` (value: `"SKETCH_MISSING_LOCAL_REFERENCE"`)
+
+* `GBTErrorStringEnumSketchDimensionMissingParameter` (value: `"SKETCH_DIMENSION_MISSING_PARAMETER"`)
+
+* `GBTErrorStringEnumMateconnectorQuerySecondaryAxisConflict` (value: `"MATECONNECTOR_QUERY_SECONDARY_AXIS_CONFLICT"`)
+
+* `GBTErrorStringEnumMateconnectorNormalResolutionFailed` (value: `"MATECONNECTOR_NORMAL_RESOLUTION_FAILED"`)
+
+* `GBTErrorStringEnumLoftPlanarGuideNotFound` (value: `"LOFT_PLANAR_GUIDE_NOT_FOUND"`)
+
+* `GBTErrorStringEnumPartStudioDoesNotExistInMoment` (value: `"PART_STUDIO_DOES_NOT_EXIST_IN_MOMENT"`)
+
+* `GBTErrorStringEnumSomeBodiesWereRemovedFromExport` (value: `"SOME_BODIES_WERE_REMOVED_FROM_EXPORT"`)
+
+* `GBTErrorStringEnumAllBodiesWereRemovedFromExport` (value: `"ALL_BODIES_WERE_REMOVED_FROM_EXPORT"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

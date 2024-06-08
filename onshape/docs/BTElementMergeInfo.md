@@ -17,12 +17,14 @@ Name | Type | Description | Notes
 **SourceLibraryVersion** | Pointer to **int32** |  | [optional] 
 **SourceModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **SourceModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
+**SourceOutOfDate** | Pointer to **bool** |  | [optional] 
 **TargetElementName** | Pointer to **string** |  | [optional] 
 **TargetElementPath** | Pointer to **[]string** |  | [optional] 
 **TargetElementStatus** | Pointer to [**GBTElementBranchStatus**](GBTElementBranchStatus.md) |  | [optional] 
 **TargetLibraryVersion** | Pointer to **int32** |  | [optional] 
 **TargetModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **TargetModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
+**TargetOutOfDate** | Pointer to **bool** |  | [optional] 
 **VersionCompatible** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -369,6 +371,31 @@ SetSourceModifiedBy sets SourceModifiedBy field to given value.
 
 HasSourceModifiedBy returns a boolean if a field has been set.
 
+### GetSourceOutOfDate
+
+`func (o *BTElementMergeInfo) GetSourceOutOfDate() bool`
+
+GetSourceOutOfDate returns the SourceOutOfDate field if non-nil, zero value otherwise.
+
+### GetSourceOutOfDateOk
+
+`func (o *BTElementMergeInfo) GetSourceOutOfDateOk() (*bool, bool)`
+
+GetSourceOutOfDateOk returns a tuple with the SourceOutOfDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceOutOfDate
+
+`func (o *BTElementMergeInfo) SetSourceOutOfDate(v bool)`
+
+SetSourceOutOfDate sets SourceOutOfDate field to given value.
+
+### HasSourceOutOfDate
+
+`func (o *BTElementMergeInfo) HasSourceOutOfDate() bool`
+
+HasSourceOutOfDate returns a boolean if a field has been set.
+
 ### GetTargetElementName
 
 `func (o *BTElementMergeInfo) GetTargetElementName() string`
@@ -518,6 +545,31 @@ SetTargetModifiedBy sets TargetModifiedBy field to given value.
 `func (o *BTElementMergeInfo) HasTargetModifiedBy() bool`
 
 HasTargetModifiedBy returns a boolean if a field has been set.
+
+### GetTargetOutOfDate
+
+`func (o *BTElementMergeInfo) GetTargetOutOfDate() bool`
+
+GetTargetOutOfDate returns the TargetOutOfDate field if non-nil, zero value otherwise.
+
+### GetTargetOutOfDateOk
+
+`func (o *BTElementMergeInfo) GetTargetOutOfDateOk() (*bool, bool)`
+
+GetTargetOutOfDateOk returns a tuple with the TargetOutOfDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetOutOfDate
+
+`func (o *BTElementMergeInfo) SetTargetOutOfDate(v bool)`
+
+SetTargetOutOfDate sets TargetOutOfDate field to given value.
+
+### HasTargetOutOfDate
+
+`func (o *BTElementMergeInfo) HasTargetOutOfDate() bool`
+
+HasTargetOutOfDate returns a boolean if a field has been set.
 
 ### GetVersionCompatible
 

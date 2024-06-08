@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 Create a new webhook.
 
+
+
 ### Example
 
 ```go
@@ -82,6 +84,8 @@ Name | Type | Description  | Notes
 > BTWebhookInfo GetWebhook(ctx, webhookid).Execute()
 
 Get webhook info by webhook ID.
+
+
 
 ### Example
 
@@ -150,6 +154,8 @@ Name | Type | Description  | Notes
 > BTListResponseBTWebhookInfo GetWebhooks(ctx).Company(company).User(user).Offset(offset).Limit(limit).Execute()
 
 Get a list of all webhooks registered by a user or company.
+
+
 
 ### Example
 
@@ -221,6 +227,8 @@ Name | Type | Description  | Notes
 
 Ping a webhook.
 
+
+
 ### Example
 
 ```go
@@ -288,6 +296,8 @@ Name | Type | Description  | Notes
 > map[string]interface{} UnregisterWebhook(ctx, webhookid).BlockNotification(blockNotification).Execute()
 
 Unregister a webhook.
+
+
 
 ### Example
 

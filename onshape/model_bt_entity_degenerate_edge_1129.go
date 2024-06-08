@@ -19,12 +19,13 @@ type BTEntityDegenerateEdge1129 struct {
 	BtType                      *string             `json:"btType,omitempty"`
 	Compressed                  *bool               `json:"compressed,omitempty"`
 	Decompressed                *BTEntityGeometry35 `json:"decompressed,omitempty"`
+	Edge                        *bool               `json:"edge,omitempty"`
 	ErrorCode                   *int32              `json:"errorCode,omitempty"`
 	EstimatedMemoryUsageInBytes *int32              `json:"estimatedMemoryUsageInBytes,omitempty"`
 	Face                        *bool               `json:"face,omitempty"`
 	HasTessellationError        *bool               `json:"hasTessellationError,omitempty"`
-	SettingIndex                *int32              `json:"settingIndex,omitempty"`
 	Point                       []float32           `json:"point,omitempty"`
+	SettingIndex                *int32              `json:"settingIndex,omitempty"`
 }
 
 // NewBTEntityDegenerateEdge1129 instantiates a new BTEntityDegenerateEdge1129 object
@@ -138,6 +139,38 @@ func (o *BTEntityDegenerateEdge1129) HasDecompressed() bool {
 // SetDecompressed gets a reference to the given BTEntityGeometry35 and assigns it to the Decompressed field.
 func (o *BTEntityDegenerateEdge1129) SetDecompressed(v BTEntityGeometry35) {
 	o.Decompressed = &v
+}
+
+// GetEdge returns the Edge field value if set, zero value otherwise.
+func (o *BTEntityDegenerateEdge1129) GetEdge() bool {
+	if o == nil || o.Edge == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Edge
+}
+
+// GetEdgeOk returns a tuple with the Edge field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityDegenerateEdge1129) GetEdgeOk() (*bool, bool) {
+	if o == nil || o.Edge == nil {
+		return nil, false
+	}
+	return o.Edge, true
+}
+
+// HasEdge returns a boolean if a field has been set.
+func (o *BTEntityDegenerateEdge1129) HasEdge() bool {
+	if o != nil && o.Edge != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEdge gets a reference to the given bool and assigns it to the Edge field.
+func (o *BTEntityDegenerateEdge1129) SetEdge(v bool) {
+	o.Edge = &v
 }
 
 // GetErrorCode returns the ErrorCode field value if set, zero value otherwise.
@@ -268,38 +301,6 @@ func (o *BTEntityDegenerateEdge1129) SetHasTessellationError(v bool) {
 	o.HasTessellationError = &v
 }
 
-// GetSettingIndex returns the SettingIndex field value if set, zero value otherwise.
-func (o *BTEntityDegenerateEdge1129) GetSettingIndex() int32 {
-	if o == nil || o.SettingIndex == nil {
-		var ret int32
-		return ret
-	}
-	return *o.SettingIndex
-}
-
-// GetSettingIndexOk returns a tuple with the SettingIndex field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTEntityDegenerateEdge1129) GetSettingIndexOk() (*int32, bool) {
-	if o == nil || o.SettingIndex == nil {
-		return nil, false
-	}
-	return o.SettingIndex, true
-}
-
-// HasSettingIndex returns a boolean if a field has been set.
-func (o *BTEntityDegenerateEdge1129) HasSettingIndex() bool {
-	if o != nil && o.SettingIndex != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSettingIndex gets a reference to the given int32 and assigns it to the SettingIndex field.
-func (o *BTEntityDegenerateEdge1129) SetSettingIndex(v int32) {
-	o.SettingIndex = &v
-}
-
 // GetPoint returns the Point field value if set, zero value otherwise.
 func (o *BTEntityDegenerateEdge1129) GetPoint() []float32 {
 	if o == nil || o.Point == nil {
@@ -332,6 +333,38 @@ func (o *BTEntityDegenerateEdge1129) SetPoint(v []float32) {
 	o.Point = v
 }
 
+// GetSettingIndex returns the SettingIndex field value if set, zero value otherwise.
+func (o *BTEntityDegenerateEdge1129) GetSettingIndex() int32 {
+	if o == nil || o.SettingIndex == nil {
+		var ret int32
+		return ret
+	}
+	return *o.SettingIndex
+}
+
+// GetSettingIndexOk returns a tuple with the SettingIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityDegenerateEdge1129) GetSettingIndexOk() (*int32, bool) {
+	if o == nil || o.SettingIndex == nil {
+		return nil, false
+	}
+	return o.SettingIndex, true
+}
+
+// HasSettingIndex returns a boolean if a field has been set.
+func (o *BTEntityDegenerateEdge1129) HasSettingIndex() bool {
+	if o != nil && o.SettingIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSettingIndex gets a reference to the given int32 and assigns it to the SettingIndex field.
+func (o *BTEntityDegenerateEdge1129) SetSettingIndex(v int32) {
+	o.SettingIndex = &v
+}
+
 func (o BTEntityDegenerateEdge1129) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -342,6 +375,9 @@ func (o BTEntityDegenerateEdge1129) MarshalJSON() ([]byte, error) {
 	}
 	if o.Decompressed != nil {
 		toSerialize["decompressed"] = o.Decompressed
+	}
+	if o.Edge != nil {
+		toSerialize["edge"] = o.Edge
 	}
 	if o.ErrorCode != nil {
 		toSerialize["errorCode"] = o.ErrorCode
@@ -355,11 +391,11 @@ func (o BTEntityDegenerateEdge1129) MarshalJSON() ([]byte, error) {
 	if o.HasTessellationError != nil {
 		toSerialize["hasTessellationError"] = o.HasTessellationError
 	}
-	if o.SettingIndex != nil {
-		toSerialize["settingIndex"] = o.SettingIndex
-	}
 	if o.Point != nil {
 		toSerialize["point"] = o.Point
+	}
+	if o.SettingIndex != nil {
+		toSerialize["settingIndex"] = o.SettingIndex
 	}
 	return json.Marshal(toSerialize)
 }

@@ -5,12 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**ConstructionPlane** | Pointer to **bool** |  | [optional] 
 **CopyWithoutGeometry** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **Decompressed** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **Deletion** | Pointer to **bool** |  | [optional] 
 **FeatureIds** | Pointer to **[]string** |  | [optional] 
 **FromSketch** | Pointer to **bool** |  | [optional] 
 **Geometries** | Pointer to [**[]BTEntityGeometry35**](BTEntityGeometry35.md) |  | [optional] 
+**Origin** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -55,6 +57,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTBaseEntityData33) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetConstructionPlane
+
+`func (o *BTBaseEntityData33) GetConstructionPlane() bool`
+
+GetConstructionPlane returns the ConstructionPlane field if non-nil, zero value otherwise.
+
+### GetConstructionPlaneOk
+
+`func (o *BTBaseEntityData33) GetConstructionPlaneOk() (*bool, bool)`
+
+GetConstructionPlaneOk returns a tuple with the ConstructionPlane field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConstructionPlane
+
+`func (o *BTBaseEntityData33) SetConstructionPlane(v bool)`
+
+SetConstructionPlane sets ConstructionPlane field to given value.
+
+### HasConstructionPlane
+
+`func (o *BTBaseEntityData33) HasConstructionPlane() bool`
+
+HasConstructionPlane returns a boolean if a field has been set.
 
 ### GetCopyWithoutGeometry
 
@@ -205,6 +232,31 @@ SetGeometries sets Geometries field to given value.
 `func (o *BTBaseEntityData33) HasGeometries() bool`
 
 HasGeometries returns a boolean if a field has been set.
+
+### GetOrigin
+
+`func (o *BTBaseEntityData33) GetOrigin() bool`
+
+GetOrigin returns the Origin field if non-nil, zero value otherwise.
+
+### GetOriginOk
+
+`func (o *BTBaseEntityData33) GetOriginOk() (*bool, bool)`
+
+GetOriginOk returns a tuple with the Origin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrigin
+
+`func (o *BTBaseEntityData33) SetOrigin(v bool)`
+
+SetOrigin sets Origin field to given value.
+
+### HasOrigin
+
+`func (o *BTBaseEntityData33) HasOrigin() bool`
+
+HasOrigin returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

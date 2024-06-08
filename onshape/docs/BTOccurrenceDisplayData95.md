@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **IsPatternDescendant** | Pointer to **bool** |  | [optional] 
 **OccurrenceData** | Pointer to [**BTOccurrenceData75**](BTOccurrenceData75.md) |  | [optional] 
 **PartIds** | Pointer to **[]string** |  | [optional] 
+**SketchFeatureId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -231,6 +232,31 @@ SetPartIds sets PartIds field to given value.
 `func (o *BTOccurrenceDisplayData95) HasPartIds() bool`
 
 HasPartIds returns a boolean if a field has been set.
+
+### GetSketchFeatureId
+
+`func (o *BTOccurrenceDisplayData95) GetSketchFeatureId() string`
+
+GetSketchFeatureId returns the SketchFeatureId field if non-nil, zero value otherwise.
+
+### GetSketchFeatureIdOk
+
+`func (o *BTOccurrenceDisplayData95) GetSketchFeatureIdOk() (*string, bool)`
+
+GetSketchFeatureIdOk returns a tuple with the SketchFeatureId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSketchFeatureId
+
+`func (o *BTOccurrenceDisplayData95) SetSketchFeatureId(v string)`
+
+SetSketchFeatureId sets SketchFeatureId field to given value.
+
+### HasSketchFeatureId
+
+`func (o *BTOccurrenceDisplayData95) HasSketchFeatureId() bool`
+
+HasSketchFeatureId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

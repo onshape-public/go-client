@@ -398,6 +398,322 @@ func (a *DrawingApiService) GetDrawingTranslatorFormatsExecute(r ApiGetDrawingTr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiGetDrawingViewJsonGeometry1Request struct {
+	ctx            context.Context
+	ApiService     *DrawingApiService
+	did            string
+	wvm            string
+	wvmid          string
+	eid            string
+	viewid         string
+	linkDocumentId *string
+	transactionId  *string
+	changeId       *string
+	scale          *float64
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetDrawingViewJsonGeometry1Request) LinkDocumentId(linkDocumentId string) ApiGetDrawingViewJsonGeometry1Request {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API.
+func (r ApiGetDrawingViewJsonGeometry1Request) TransactionId(transactionId string) ApiGetDrawingViewJsonGeometry1Request {
+	r.transactionId = &transactionId
+	return r
+}
+
+// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
+func (r ApiGetDrawingViewJsonGeometry1Request) ChangeId(changeId string) ApiGetDrawingViewJsonGeometry1Request {
+	r.changeId = &changeId
+	return r
+}
+
+// Scale for measurements.
+func (r ApiGetDrawingViewJsonGeometry1Request) Scale(scale float64) ApiGetDrawingViewJsonGeometry1Request {
+	r.scale = &scale
+	return r
+}
+
+func (r ApiGetDrawingViewJsonGeometry1Request) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.GetDrawingViewJsonGeometry1Execute(r)
+}
+
+/*
+GetDrawingViewJsonGeometry1 Get view geometry of a drawing view in JSON format.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@param viewid The id of the view in which to perform the operation.
+	@return ApiGetDrawingViewJsonGeometry1Request
+*/
+func (a *DrawingApiService) GetDrawingViewJsonGeometry1(ctx context.Context, did string, wvm string, wvmid string, eid string, viewid string) ApiGetDrawingViewJsonGeometry1Request {
+	return ApiGetDrawingViewJsonGeometry1Request{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+		eid:        eid,
+		viewid:     viewid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return map[string]interface{}
+func (a *DrawingApiService) GetDrawingViewJsonGeometry1Execute(r ApiGetDrawingViewJsonGeometry1Request) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.GetDrawingViewJsonGeometry1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/drawings/d/{did}/{wvm}/{wvmid}/e/{eid}/views/{viewid}/jsongeometry"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterToString(r.viewid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.transactionId != nil {
+		localVarQueryParams.Add("transactionId", parameterToString(*r.transactionId, ""))
+	}
+	if r.changeId != nil {
+		localVarQueryParams.Add("changeId", parameterToString(*r.changeId, ""))
+	}
+	if r.scale != nil {
+		localVarQueryParams.Add("scale", parameterToString(*r.scale, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]interface{}
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetDrawingViews1Request struct {
+	ctx            context.Context
+	ApiService     *DrawingApiService
+	did            string
+	wvm            string
+	wvmid          string
+	eid            string
+	linkDocumentId *string
+	transactionId  *string
+	changeId       *string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetDrawingViews1Request) LinkDocumentId(linkDocumentId string) ApiGetDrawingViews1Request {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API.
+func (r ApiGetDrawingViews1Request) TransactionId(transactionId string) ApiGetDrawingViews1Request {
+	r.transactionId = &transactionId
+	return r
+}
+
+// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
+func (r ApiGetDrawingViews1Request) ChangeId(changeId string) ApiGetDrawingViews1Request {
+	r.changeId = &changeId
+	return r
+}
+
+func (r ApiGetDrawingViews1Request) Execute() (*BTAppArrayInfoBTAppDrawingViewInfo, *http.Response, error) {
+	return r.ApiService.GetDrawingViews1Execute(r)
+}
+
+/*
+GetDrawingViews1 Get details of all drawing views.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetDrawingViews1Request
+*/
+func (a *DrawingApiService) GetDrawingViews1(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetDrawingViews1Request {
+	return ApiGetDrawingViews1Request{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTAppArrayInfoBTAppDrawingViewInfo
+func (a *DrawingApiService) GetDrawingViews1Execute(r ApiGetDrawingViews1Request) (*BTAppArrayInfoBTAppDrawingViewInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTAppArrayInfoBTAppDrawingViewInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.GetDrawingViews1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/drawings/d/{did}/{wvm}/{wvmid}/e/{eid}/views"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.transactionId != nil {
+		localVarQueryParams.Add("transactionId", parameterToString(*r.transactionId, ""))
+	}
+	if r.changeId != nil {
+		localVarQueryParams.Add("changeId", parameterToString(*r.changeId, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTAppArrayInfoBTAppDrawingViewInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiGetModificationStatusRequest struct {
 	ctx        context.Context
 	ApiService *DrawingApiService

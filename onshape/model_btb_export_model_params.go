@@ -14,27 +14,29 @@ import (
 	"encoding/json"
 )
 
-// BTBExportModelParams struct for BTBExportModelParams
+// BTBExportModelParams Onshape document export schema
 type BTBExportModelParams struct {
-	AngleTolerance               *float64 `json:"angleTolerance,omitempty"`
-	BatchAllFlatPatterns         *bool    `json:"batchAllFlatPatterns,omitempty"`
-	BatchFlatPatterns            *bool    `json:"batchFlatPatterns,omitempty"`
-	ChordTolerance               *float64 `json:"chordTolerance,omitempty"`
-	CloudObjectId                *string  `json:"cloudObjectId,omitempty"`
-	CloudStorageAccountId        *string  `json:"cloudStorageAccountId,omitempty"`
-	Configuration                *string  `json:"configuration,omitempty"`
-	DestinationName              *string  `json:"destinationName,omitempty"`
-	DocumentId                   string   `json:"documentId"`
-	DocumentVersionId            *string  `json:"documentVersionId,omitempty"`
-	ElementId                    *string  `json:"elementId,omitempty"`
-	ElementIds                   *string  `json:"elementIds,omitempty"`
-	EmailLink                    *bool    `json:"emailLink,omitempty"`
-	EmailMessage                 *string  `json:"emailMessage,omitempty"`
-	EmailSubject                 *string  `json:"emailSubject,omitempty"`
-	EmailTo                      *string  `json:"emailTo,omitempty"`
-	FeatureIds                   *string  `json:"featureIds,omitempty"`
-	Flatten                      *bool    `json:"flatten,omitempty"`
-	Format                       string   `json:"format"`
+	AngleTolerance        *float64 `json:"angleTolerance,omitempty"`
+	BatchAllFlatPatterns  *bool    `json:"batchAllFlatPatterns,omitempty"`
+	BatchFlatPatterns     *bool    `json:"batchFlatPatterns,omitempty"`
+	ChordTolerance        *float64 `json:"chordTolerance,omitempty"`
+	CloudObjectId         *string  `json:"cloudObjectId,omitempty"`
+	CloudStorageAccountId *string  `json:"cloudStorageAccountId,omitempty"`
+	Configuration         *string  `json:"configuration,omitempty"`
+	DestinationName       *string  `json:"destinationName,omitempty"`
+	DocumentId            string   `json:"documentId"`
+	DocumentVersionId     *string  `json:"documentVersionId,omitempty"`
+	ElementId             *string  `json:"elementId,omitempty"`
+	ElementIds            *string  `json:"elementIds,omitempty"`
+	EmailLink             *bool    `json:"emailLink,omitempty"`
+	EmailMessage          *string  `json:"emailMessage,omitempty"`
+	EmailSubject          *string  `json:"emailSubject,omitempty"`
+	// Base64-encoded email address. When sending an email, the `fromUserId` parameter is also required.
+	EmailTo    *string `json:"emailTo,omitempty"`
+	FeatureIds *string `json:"featureIds,omitempty"`
+	Flatten    *bool   `json:"flatten,omitempty"`
+	Format     string  `json:"format"`
+	// Your user ID. Required when providing the `emailTo` parameter.
 	FromUserId                   *string  `json:"fromUserId,omitempty"`
 	Grouping                     *string  `json:"grouping,omitempty"`
 	IgnoreExportRulesForContents *bool    `json:"ignoreExportRulesForContents,omitempty"`
@@ -62,13 +64,14 @@ type BTBExportModelParams struct {
 	StoreInDocument              *bool    `json:"storeInDocument,omitempty"`
 	TriggerAutoDownload          *bool    `json:"triggerAutoDownload,omitempty"`
 	Units                        *string  `json:"units,omitempty"`
-	UseYAxisAsUp                 *bool    `json:"useYAxisAsUp,omitempty"`
-	UserId                       *string  `json:"userId,omitempty"`
-	ValidForDays                 *int32   `json:"validForDays,omitempty"`
-	Version                      *string  `json:"version,omitempty"`
-	View                         *string  `json:"view,omitempty"`
-	WorkspaceId                  *string  `json:"workspaceId,omitempty"`
-	ZipSingleFileOutput          *bool    `json:"zipSingleFileOutput,omitempty"`
+	// If `true`, the exported file will have all the parts and assemblies reoriented such that the Z-axis within Onshape becomes the Y-axis in the exported file.
+	UseYAxisAsUp        *bool   `json:"useYAxisAsUp,omitempty"`
+	UserId              *string `json:"userId,omitempty"`
+	ValidForDays        *int32  `json:"validForDays,omitempty"`
+	Version             *string `json:"version,omitempty"`
+	View                *string `json:"view,omitempty"`
+	WorkspaceId         *string `json:"workspaceId,omitempty"`
+	ZipSingleFileOutput *bool   `json:"zipSingleFileOutput,omitempty"`
 }
 
 // NewBTBExportModelParams instantiates a new BTBExportModelParams object

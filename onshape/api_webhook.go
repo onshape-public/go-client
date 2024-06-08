@@ -39,6 +39,8 @@ func (r ApiCreateWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, erro
 /*
 CreateWebhook Create a new webhook.
 
+Click **Callbacks** below for a list of events your app can subscribe to. See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateWebhookRequest
 */
@@ -146,6 +148,8 @@ func (r ApiGetWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, error) 
 
 /*
 GetWebhook Get webhook info by webhook ID.
+
+See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param webhookid
@@ -279,6 +283,8 @@ func (r ApiGetWebhooksRequest) Execute() (*BTListResponseBTWebhookInfo, *http.Re
 /*
 GetWebhooks Get a list of all webhooks registered by a user or company.
 
+See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWebhooksRequest
 */
@@ -397,6 +403,8 @@ func (r ApiPingWebhookRequest) Execute() (map[string]interface{}, *http.Response
 /*
 PingWebhook Ping a webhook.
 
+See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param webhookid
 	@return ApiPingWebhookRequest
@@ -511,6 +519,8 @@ func (r ApiUnregisterWebhookRequest) Execute() (map[string]interface{}, *http.Re
 
 /*
 UnregisterWebhook Unregister a webhook.
+
+See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param webhookid
@@ -630,7 +640,7 @@ func (r ApiUpdateWebhookRequest) Execute() (*BTWebhookInfo, *http.Response, erro
 /*
 UpdateWebhook Update a webhook.
 
-Update a webhook
+See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param webhookid

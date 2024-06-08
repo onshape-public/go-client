@@ -39,6 +39,7 @@ type BTResourceOwnerInfo struct {
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef         *string `json:"viewRef,omitempty"`
+	Icon            *string `json:"icon,omitempty"`
 	IsEnterpriseEdu *bool   `json:"isEnterpriseEdu,omitempty"`
 	State           *int32  `json:"state,omitempty"`
 }
@@ -661,6 +662,38 @@ func (o *BTResourceOwnerInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetIcon returns the Icon field value if set, zero value otherwise.
+func (o *BTResourceOwnerInfo) GetIcon() string {
+	if o == nil || o.Icon == nil {
+		var ret string
+		return ret
+	}
+	return *o.Icon
+}
+
+// GetIconOk returns a tuple with the Icon field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTResourceOwnerInfo) GetIconOk() (*string, bool) {
+	if o == nil || o.Icon == nil {
+		return nil, false
+	}
+	return o.Icon, true
+}
+
+// HasIcon returns a boolean if a field has been set.
+func (o *BTResourceOwnerInfo) HasIcon() bool {
+	if o != nil && o.Icon != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIcon gets a reference to the given string and assigns it to the Icon field.
+func (o *BTResourceOwnerInfo) SetIcon(v string) {
+	o.Icon = &v
+}
+
 // GetIsEnterpriseEdu returns the IsEnterpriseEdu field value if set, zero value otherwise.
 func (o *BTResourceOwnerInfo) GetIsEnterpriseEdu() bool {
 	if o == nil || o.IsEnterpriseEdu == nil {
@@ -783,6 +816,9 @@ func (o BTResourceOwnerInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
+	}
+	if o.Icon != nil {
+		toSerialize["icon"] = o.Icon
 	}
 	if o.IsEnterpriseEdu != nil {
 		toSerialize["isEnterpriseEdu"] = o.IsEnterpriseEdu

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Area** | Pointer to **float64** |  | [optional] 
 **Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**DecalIdToDecal** | Pointer to [**map[string]BTDecal2404**](BTDecal2404.md) |  | [optional] 
 **FaceProperties** | Pointer to [**BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Loops** | Pointer to [**[]BTExportModelLoop1182**](BTExportModelLoop1182.md) |  | [optional] 
@@ -132,6 +133,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTExportModelFace1363) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetDecalIdToDecal
+
+`func (o *BTExportModelFace1363) GetDecalIdToDecal() map[string]BTDecal2404`
+
+GetDecalIdToDecal returns the DecalIdToDecal field if non-nil, zero value otherwise.
+
+### GetDecalIdToDecalOk
+
+`func (o *BTExportModelFace1363) GetDecalIdToDecalOk() (*map[string]BTDecal2404, bool)`
+
+GetDecalIdToDecalOk returns a tuple with the DecalIdToDecal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDecalIdToDecal
+
+`func (o *BTExportModelFace1363) SetDecalIdToDecal(v map[string]BTDecal2404)`
+
+SetDecalIdToDecal sets DecalIdToDecal field to given value.
+
+### HasDecalIdToDecal
+
+`func (o *BTExportModelFace1363) HasDecalIdToDecal() bool`
+
+HasDecalIdToDecal returns a boolean if a field has been set.
 
 ### GetFaceProperties
 
