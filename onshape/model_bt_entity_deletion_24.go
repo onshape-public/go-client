@@ -17,12 +17,14 @@ import (
 // BTEntityDeletion24 struct for BTEntityDeletion24
 type BTEntityDeletion24 struct {
 	BtType              *string              `json:"btType,omitempty"`
+	ConstructionPlane   *bool                `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry *BTBaseEntityData33  `json:"copyWithoutGeometry,omitempty"`
 	Decompressed        *BTBaseEntityData33  `json:"decompressed,omitempty"`
 	Deletion            *bool                `json:"deletion,omitempty"`
 	FeatureIds          []string             `json:"featureIds,omitempty"`
 	FromSketch          *bool                `json:"fromSketch,omitempty"`
 	Geometries          []BTEntityGeometry35 `json:"geometries,omitempty"`
+	Origin              *bool                `json:"origin,omitempty"`
 }
 
 // NewBTEntityDeletion24 instantiates a new BTEntityDeletion24 object
@@ -72,6 +74,38 @@ func (o *BTEntityDeletion24) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTEntityDeletion24) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetConstructionPlane returns the ConstructionPlane field value if set, zero value otherwise.
+func (o *BTEntityDeletion24) GetConstructionPlane() bool {
+	if o == nil || o.ConstructionPlane == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ConstructionPlane
+}
+
+// GetConstructionPlaneOk returns a tuple with the ConstructionPlane field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityDeletion24) GetConstructionPlaneOk() (*bool, bool) {
+	if o == nil || o.ConstructionPlane == nil {
+		return nil, false
+	}
+	return o.ConstructionPlane, true
+}
+
+// HasConstructionPlane returns a boolean if a field has been set.
+func (o *BTEntityDeletion24) HasConstructionPlane() bool {
+	if o != nil && o.ConstructionPlane != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConstructionPlane gets a reference to the given bool and assigns it to the ConstructionPlane field.
+func (o *BTEntityDeletion24) SetConstructionPlane(v bool) {
+	o.ConstructionPlane = &v
 }
 
 // GetCopyWithoutGeometry returns the CopyWithoutGeometry field value if set, zero value otherwise.
@@ -266,10 +300,45 @@ func (o *BTEntityDeletion24) SetGeometries(v []BTEntityGeometry35) {
 	o.Geometries = v
 }
 
+// GetOrigin returns the Origin field value if set, zero value otherwise.
+func (o *BTEntityDeletion24) GetOrigin() bool {
+	if o == nil || o.Origin == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Origin
+}
+
+// GetOriginOk returns a tuple with the Origin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityDeletion24) GetOriginOk() (*bool, bool) {
+	if o == nil || o.Origin == nil {
+		return nil, false
+	}
+	return o.Origin, true
+}
+
+// HasOrigin returns a boolean if a field has been set.
+func (o *BTEntityDeletion24) HasOrigin() bool {
+	if o != nil && o.Origin != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOrigin gets a reference to the given bool and assigns it to the Origin field.
+func (o *BTEntityDeletion24) SetOrigin(v bool) {
+	o.Origin = &v
+}
+
 func (o BTEntityDeletion24) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.ConstructionPlane != nil {
+		toSerialize["constructionPlane"] = o.ConstructionPlane
 	}
 	if o.CopyWithoutGeometry != nil {
 		toSerialize["copyWithoutGeometry"] = o.CopyWithoutGeometry
@@ -288,6 +357,9 @@ func (o BTEntityDeletion24) MarshalJSON() ([]byte, error) {
 	}
 	if o.Geometries != nil {
 		toSerialize["geometries"] = o.Geometries
+	}
+	if o.Origin != nil {
+		toSerialize["origin"] = o.Origin
 	}
 	return json.Marshal(toSerialize)
 }

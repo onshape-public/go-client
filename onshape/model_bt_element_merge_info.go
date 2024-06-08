@@ -29,12 +29,14 @@ type BTElementMergeInfo struct {
 	SourceLibraryVersion      *int32                  `json:"sourceLibraryVersion,omitempty"`
 	SourceModifiedAt          *JSONTime               `json:"sourceModifiedAt,omitempty"`
 	SourceModifiedBy          *BTUserBasicSummaryInfo `json:"sourceModifiedBy,omitempty"`
+	SourceOutOfDate           *bool                   `json:"sourceOutOfDate,omitempty"`
 	TargetElementName         *string                 `json:"targetElementName,omitempty"`
 	TargetElementPath         []string                `json:"targetElementPath,omitempty"`
 	TargetElementStatus       *GBTElementBranchStatus `json:"targetElementStatus,omitempty"`
 	TargetLibraryVersion      *int32                  `json:"targetLibraryVersion,omitempty"`
 	TargetModifiedAt          *JSONTime               `json:"targetModifiedAt,omitempty"`
 	TargetModifiedBy          *BTUserBasicSummaryInfo `json:"targetModifiedBy,omitempty"`
+	TargetOutOfDate           *bool                   `json:"targetOutOfDate,omitempty"`
 	VersionCompatible         *bool                   `json:"versionCompatible,omitempty"`
 }
 
@@ -471,6 +473,38 @@ func (o *BTElementMergeInfo) SetSourceModifiedBy(v BTUserBasicSummaryInfo) {
 	o.SourceModifiedBy = &v
 }
 
+// GetSourceOutOfDate returns the SourceOutOfDate field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetSourceOutOfDate() bool {
+	if o == nil || o.SourceOutOfDate == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SourceOutOfDate
+}
+
+// GetSourceOutOfDateOk returns a tuple with the SourceOutOfDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetSourceOutOfDateOk() (*bool, bool) {
+	if o == nil || o.SourceOutOfDate == nil {
+		return nil, false
+	}
+	return o.SourceOutOfDate, true
+}
+
+// HasSourceOutOfDate returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasSourceOutOfDate() bool {
+	if o != nil && o.SourceOutOfDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceOutOfDate gets a reference to the given bool and assigns it to the SourceOutOfDate field.
+func (o *BTElementMergeInfo) SetSourceOutOfDate(v bool) {
+	o.SourceOutOfDate = &v
+}
+
 // GetTargetElementName returns the TargetElementName field value if set, zero value otherwise.
 func (o *BTElementMergeInfo) GetTargetElementName() string {
 	if o == nil || o.TargetElementName == nil {
@@ -663,6 +697,38 @@ func (o *BTElementMergeInfo) SetTargetModifiedBy(v BTUserBasicSummaryInfo) {
 	o.TargetModifiedBy = &v
 }
 
+// GetTargetOutOfDate returns the TargetOutOfDate field value if set, zero value otherwise.
+func (o *BTElementMergeInfo) GetTargetOutOfDate() bool {
+	if o == nil || o.TargetOutOfDate == nil {
+		var ret bool
+		return ret
+	}
+	return *o.TargetOutOfDate
+}
+
+// GetTargetOutOfDateOk returns a tuple with the TargetOutOfDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementMergeInfo) GetTargetOutOfDateOk() (*bool, bool) {
+	if o == nil || o.TargetOutOfDate == nil {
+		return nil, false
+	}
+	return o.TargetOutOfDate, true
+}
+
+// HasTargetOutOfDate returns a boolean if a field has been set.
+func (o *BTElementMergeInfo) HasTargetOutOfDate() bool {
+	if o != nil && o.TargetOutOfDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTargetOutOfDate gets a reference to the given bool and assigns it to the TargetOutOfDate field.
+func (o *BTElementMergeInfo) SetTargetOutOfDate(v bool) {
+	o.TargetOutOfDate = &v
+}
+
 // GetVersionCompatible returns the VersionCompatible field value if set, zero value otherwise.
 func (o *BTElementMergeInfo) GetVersionCompatible() bool {
 	if o == nil || o.VersionCompatible == nil {
@@ -736,6 +802,9 @@ func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	if o.SourceModifiedBy != nil {
 		toSerialize["sourceModifiedBy"] = o.SourceModifiedBy
 	}
+	if o.SourceOutOfDate != nil {
+		toSerialize["sourceOutOfDate"] = o.SourceOutOfDate
+	}
 	if o.TargetElementName != nil {
 		toSerialize["targetElementName"] = o.TargetElementName
 	}
@@ -753,6 +822,9 @@ func (o BTElementMergeInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TargetModifiedBy != nil {
 		toSerialize["targetModifiedBy"] = o.TargetModifiedBy
+	}
+	if o.TargetOutOfDate != nil {
+		toSerialize["targetOutOfDate"] = o.TargetOutOfDate
 	}
 	if o.VersionCompatible != nil {
 		toSerialize["versionCompatible"] = o.VersionCompatible

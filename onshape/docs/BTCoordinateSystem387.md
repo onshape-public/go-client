@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Matrix** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
 **Origin** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
-**Xaxis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
-**Yaxis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
-**Zaxis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**XAxis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**YAxis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
+**ZAxis** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 
 ## Methods
 
@@ -105,80 +105,80 @@ SetOrigin sets Origin field to given value.
 
 HasOrigin returns a boolean if a field has been set.
 
-### GetXaxis
+### GetXAxis
 
-`func (o *BTCoordinateSystem387) GetXaxis() BTVector3d389`
+`func (o *BTCoordinateSystem387) GetXAxis() BTVector3d389`
 
-GetXaxis returns the Xaxis field if non-nil, zero value otherwise.
+GetXAxis returns the XAxis field if non-nil, zero value otherwise.
 
-### GetXaxisOk
+### GetXAxisOk
 
-`func (o *BTCoordinateSystem387) GetXaxisOk() (*BTVector3d389, bool)`
+`func (o *BTCoordinateSystem387) GetXAxisOk() (*BTVector3d389, bool)`
 
-GetXaxisOk returns a tuple with the Xaxis field if it's non-nil, zero value otherwise
+GetXAxisOk returns a tuple with the XAxis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetXaxis
+### SetXAxis
 
-`func (o *BTCoordinateSystem387) SetXaxis(v BTVector3d389)`
+`func (o *BTCoordinateSystem387) SetXAxis(v BTVector3d389)`
 
-SetXaxis sets Xaxis field to given value.
+SetXAxis sets XAxis field to given value.
 
-### HasXaxis
+### HasXAxis
 
-`func (o *BTCoordinateSystem387) HasXaxis() bool`
+`func (o *BTCoordinateSystem387) HasXAxis() bool`
 
-HasXaxis returns a boolean if a field has been set.
+HasXAxis returns a boolean if a field has been set.
 
-### GetYaxis
+### GetYAxis
 
-`func (o *BTCoordinateSystem387) GetYaxis() BTVector3d389`
+`func (o *BTCoordinateSystem387) GetYAxis() BTVector3d389`
 
-GetYaxis returns the Yaxis field if non-nil, zero value otherwise.
+GetYAxis returns the YAxis field if non-nil, zero value otherwise.
 
-### GetYaxisOk
+### GetYAxisOk
 
-`func (o *BTCoordinateSystem387) GetYaxisOk() (*BTVector3d389, bool)`
+`func (o *BTCoordinateSystem387) GetYAxisOk() (*BTVector3d389, bool)`
 
-GetYaxisOk returns a tuple with the Yaxis field if it's non-nil, zero value otherwise
+GetYAxisOk returns a tuple with the YAxis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetYaxis
+### SetYAxis
 
-`func (o *BTCoordinateSystem387) SetYaxis(v BTVector3d389)`
+`func (o *BTCoordinateSystem387) SetYAxis(v BTVector3d389)`
 
-SetYaxis sets Yaxis field to given value.
+SetYAxis sets YAxis field to given value.
 
-### HasYaxis
+### HasYAxis
 
-`func (o *BTCoordinateSystem387) HasYaxis() bool`
+`func (o *BTCoordinateSystem387) HasYAxis() bool`
 
-HasYaxis returns a boolean if a field has been set.
+HasYAxis returns a boolean if a field has been set.
 
-### GetZaxis
+### GetZAxis
 
-`func (o *BTCoordinateSystem387) GetZaxis() BTVector3d389`
+`func (o *BTCoordinateSystem387) GetZAxis() BTVector3d389`
 
-GetZaxis returns the Zaxis field if non-nil, zero value otherwise.
+GetZAxis returns the ZAxis field if non-nil, zero value otherwise.
 
-### GetZaxisOk
+### GetZAxisOk
 
-`func (o *BTCoordinateSystem387) GetZaxisOk() (*BTVector3d389, bool)`
+`func (o *BTCoordinateSystem387) GetZAxisOk() (*BTVector3d389, bool)`
 
-GetZaxisOk returns a tuple with the Zaxis field if it's non-nil, zero value otherwise
+GetZAxisOk returns a tuple with the ZAxis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetZaxis
+### SetZAxis
 
-`func (o *BTCoordinateSystem387) SetZaxis(v BTVector3d389)`
+`func (o *BTCoordinateSystem387) SetZAxis(v BTVector3d389)`
 
-SetZaxis sets Zaxis field to given value.
+SetZAxis sets ZAxis field to given value.
 
-### HasZaxis
+### HasZAxis
 
-`func (o *BTCoordinateSystem387) HasZaxis() bool`
+`func (o *BTCoordinateSystem387) HasZAxis() bool`
 
-HasZaxis returns a boolean if a field has been set.
+HasZAxis returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

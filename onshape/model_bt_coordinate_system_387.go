@@ -20,9 +20,9 @@ type BTCoordinateSystem387 struct {
 	BtType *string        `json:"btType,omitempty"`
 	Matrix *BTBSMatrix386 `json:"matrix,omitempty"`
 	Origin *BTVector3d389 `json:"origin,omitempty"`
-	Xaxis  *BTVector3d389 `json:"xaxis,omitempty"`
-	Yaxis  *BTVector3d389 `json:"yaxis,omitempty"`
-	Zaxis  *BTVector3d389 `json:"zaxis,omitempty"`
+	XAxis  *BTVector3d389 `json:"xAxis,omitempty"`
+	YAxis  *BTVector3d389 `json:"yAxis,omitempty"`
+	ZAxis  *BTVector3d389 `json:"zAxis,omitempty"`
 }
 
 // NewBTCoordinateSystem387 instantiates a new BTCoordinateSystem387 object
@@ -138,100 +138,100 @@ func (o *BTCoordinateSystem387) SetOrigin(v BTVector3d389) {
 	o.Origin = &v
 }
 
-// GetXaxis returns the Xaxis field value if set, zero value otherwise.
-func (o *BTCoordinateSystem387) GetXaxis() BTVector3d389 {
-	if o == nil || o.Xaxis == nil {
+// GetXAxis returns the XAxis field value if set, zero value otherwise.
+func (o *BTCoordinateSystem387) GetXAxis() BTVector3d389 {
+	if o == nil || o.XAxis == nil {
 		var ret BTVector3d389
 		return ret
 	}
-	return *o.Xaxis
+	return *o.XAxis
 }
 
-// GetXaxisOk returns a tuple with the Xaxis field value if set, nil otherwise
+// GetXAxisOk returns a tuple with the XAxis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTCoordinateSystem387) GetXaxisOk() (*BTVector3d389, bool) {
-	if o == nil || o.Xaxis == nil {
+func (o *BTCoordinateSystem387) GetXAxisOk() (*BTVector3d389, bool) {
+	if o == nil || o.XAxis == nil {
 		return nil, false
 	}
-	return o.Xaxis, true
+	return o.XAxis, true
 }
 
-// HasXaxis returns a boolean if a field has been set.
-func (o *BTCoordinateSystem387) HasXaxis() bool {
-	if o != nil && o.Xaxis != nil {
+// HasXAxis returns a boolean if a field has been set.
+func (o *BTCoordinateSystem387) HasXAxis() bool {
+	if o != nil && o.XAxis != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetXaxis gets a reference to the given BTVector3d389 and assigns it to the Xaxis field.
-func (o *BTCoordinateSystem387) SetXaxis(v BTVector3d389) {
-	o.Xaxis = &v
+// SetXAxis gets a reference to the given BTVector3d389 and assigns it to the XAxis field.
+func (o *BTCoordinateSystem387) SetXAxis(v BTVector3d389) {
+	o.XAxis = &v
 }
 
-// GetYaxis returns the Yaxis field value if set, zero value otherwise.
-func (o *BTCoordinateSystem387) GetYaxis() BTVector3d389 {
-	if o == nil || o.Yaxis == nil {
+// GetYAxis returns the YAxis field value if set, zero value otherwise.
+func (o *BTCoordinateSystem387) GetYAxis() BTVector3d389 {
+	if o == nil || o.YAxis == nil {
 		var ret BTVector3d389
 		return ret
 	}
-	return *o.Yaxis
+	return *o.YAxis
 }
 
-// GetYaxisOk returns a tuple with the Yaxis field value if set, nil otherwise
+// GetYAxisOk returns a tuple with the YAxis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTCoordinateSystem387) GetYaxisOk() (*BTVector3d389, bool) {
-	if o == nil || o.Yaxis == nil {
+func (o *BTCoordinateSystem387) GetYAxisOk() (*BTVector3d389, bool) {
+	if o == nil || o.YAxis == nil {
 		return nil, false
 	}
-	return o.Yaxis, true
+	return o.YAxis, true
 }
 
-// HasYaxis returns a boolean if a field has been set.
-func (o *BTCoordinateSystem387) HasYaxis() bool {
-	if o != nil && o.Yaxis != nil {
+// HasYAxis returns a boolean if a field has been set.
+func (o *BTCoordinateSystem387) HasYAxis() bool {
+	if o != nil && o.YAxis != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetYaxis gets a reference to the given BTVector3d389 and assigns it to the Yaxis field.
-func (o *BTCoordinateSystem387) SetYaxis(v BTVector3d389) {
-	o.Yaxis = &v
+// SetYAxis gets a reference to the given BTVector3d389 and assigns it to the YAxis field.
+func (o *BTCoordinateSystem387) SetYAxis(v BTVector3d389) {
+	o.YAxis = &v
 }
 
-// GetZaxis returns the Zaxis field value if set, zero value otherwise.
-func (o *BTCoordinateSystem387) GetZaxis() BTVector3d389 {
-	if o == nil || o.Zaxis == nil {
+// GetZAxis returns the ZAxis field value if set, zero value otherwise.
+func (o *BTCoordinateSystem387) GetZAxis() BTVector3d389 {
+	if o == nil || o.ZAxis == nil {
 		var ret BTVector3d389
 		return ret
 	}
-	return *o.Zaxis
+	return *o.ZAxis
 }
 
-// GetZaxisOk returns a tuple with the Zaxis field value if set, nil otherwise
+// GetZAxisOk returns a tuple with the ZAxis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTCoordinateSystem387) GetZaxisOk() (*BTVector3d389, bool) {
-	if o == nil || o.Zaxis == nil {
+func (o *BTCoordinateSystem387) GetZAxisOk() (*BTVector3d389, bool) {
+	if o == nil || o.ZAxis == nil {
 		return nil, false
 	}
-	return o.Zaxis, true
+	return o.ZAxis, true
 }
 
-// HasZaxis returns a boolean if a field has been set.
-func (o *BTCoordinateSystem387) HasZaxis() bool {
-	if o != nil && o.Zaxis != nil {
+// HasZAxis returns a boolean if a field has been set.
+func (o *BTCoordinateSystem387) HasZAxis() bool {
+	if o != nil && o.ZAxis != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetZaxis gets a reference to the given BTVector3d389 and assigns it to the Zaxis field.
-func (o *BTCoordinateSystem387) SetZaxis(v BTVector3d389) {
-	o.Zaxis = &v
+// SetZAxis gets a reference to the given BTVector3d389 and assigns it to the ZAxis field.
+func (o *BTCoordinateSystem387) SetZAxis(v BTVector3d389) {
+	o.ZAxis = &v
 }
 
 func (o BTCoordinateSystem387) MarshalJSON() ([]byte, error) {
@@ -245,14 +245,14 @@ func (o BTCoordinateSystem387) MarshalJSON() ([]byte, error) {
 	if o.Origin != nil {
 		toSerialize["origin"] = o.Origin
 	}
-	if o.Xaxis != nil {
-		toSerialize["xaxis"] = o.Xaxis
+	if o.XAxis != nil {
+		toSerialize["xAxis"] = o.XAxis
 	}
-	if o.Yaxis != nil {
-		toSerialize["yaxis"] = o.Yaxis
+	if o.YAxis != nil {
+		toSerialize["yAxis"] = o.YAxis
 	}
-	if o.Zaxis != nil {
-		toSerialize["zaxis"] = o.Zaxis
+	if o.ZAxis != nil {
+		toSerialize["zAxis"] = o.ZAxis
 	}
 	return json.Marshal(toSerialize)
 }

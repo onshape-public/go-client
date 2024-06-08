@@ -63,22 +63,23 @@ type BTTranslateFormatParams struct {
 	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
 	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
 	// Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-	MaximumChordLength      *float64 `json:"maximumChordLength,omitempty"`
-	NotifyUser              *bool    `json:"notifyUser,omitempty"`
-	OccurrencesToExport     *string  `json:"occurrencesToExport,omitempty"`
-	OnePartPerDoc           *bool    `json:"onePartPerDoc,omitempty"`
-	OriginalForeignId       *string  `json:"originalForeignId,omitempty"`
-	ParentId                *string  `json:"parentId,omitempty"`
-	PartIds                 *string  `json:"partIds,omitempty"`
-	Password                *string  `json:"password,omitempty"`
-	PasswordRequired        *bool    `json:"passwordRequired,omitempty"`
-	PdfVersion              *string  `json:"pdfVersion,omitempty"`
-	ProcessedForeignId      *string  `json:"processedForeignId,omitempty"`
-	ProjectId               *string  `json:"projectId,omitempty"`
-	ProxyDocumentId         *string  `json:"proxyDocumentId,omitempty"`
-	ProxyElementId          *string  `json:"proxyElementId,omitempty"`
-	ProxyWorkspaceVersion   *string  `json:"proxyWorkspaceVersion,omitempty"`
-	ProxyWorkspaceVersionId *string  `json:"proxyWorkspaceVersionId,omitempty"`
+	MaximumChordLength      *float64                 `json:"maximumChordLength,omitempty"`
+	NotifyUser              *bool                    `json:"notifyUser,omitempty"`
+	OccurrencesToExport     *string                  `json:"occurrencesToExport,omitempty"`
+	OnePartPerDoc           *bool                    `json:"onePartPerDoc,omitempty"`
+	OriginalForeignId       *string                  `json:"originalForeignId,omitempty"`
+	ParentId                *string                  `json:"parentId,omitempty"`
+	PartIds                 *string                  `json:"partIds,omitempty"`
+	PartsExportFilter       *BTPartsExportFilter4308 `json:"partsExportFilter,omitempty"`
+	Password                *string                  `json:"password,omitempty"`
+	PasswordRequired        *bool                    `json:"passwordRequired,omitempty"`
+	PdfVersion              *string                  `json:"pdfVersion,omitempty"`
+	ProcessedForeignId      *string                  `json:"processedForeignId,omitempty"`
+	ProjectId               *string                  `json:"projectId,omitempty"`
+	ProxyDocumentId         *string                  `json:"proxyDocumentId,omitempty"`
+	ProxyElementId          *string                  `json:"proxyElementId,omitempty"`
+	ProxyWorkspaceVersion   *string                  `json:"proxyWorkspaceVersion,omitempty"`
+	ProxyWorkspaceVersionId *string                  `json:"proxyWorkspaceVersionId,omitempty"`
 	// Determines export resolution of fine, medium, or coarse
 	Resolution                           *string                       `json:"resolution,omitempty"`
 	SelectablePdfText                    *bool                         `json:"selectablePdfText,omitempty"`
@@ -1620,6 +1621,38 @@ func (o *BTTranslateFormatParams) SetPartIds(v string) {
 	o.PartIds = &v
 }
 
+// GetPartsExportFilter returns the PartsExportFilter field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetPartsExportFilter() BTPartsExportFilter4308 {
+	if o == nil || o.PartsExportFilter == nil {
+		var ret BTPartsExportFilter4308
+		return ret
+	}
+	return *o.PartsExportFilter
+}
+
+// GetPartsExportFilterOk returns a tuple with the PartsExportFilter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetPartsExportFilterOk() (*BTPartsExportFilter4308, bool) {
+	if o == nil || o.PartsExportFilter == nil {
+		return nil, false
+	}
+	return o.PartsExportFilter, true
+}
+
+// HasPartsExportFilter returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasPartsExportFilter() bool {
+	if o != nil && o.PartsExportFilter != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartsExportFilter gets a reference to the given BTPartsExportFilter4308 and assigns it to the PartsExportFilter field.
+func (o *BTTranslateFormatParams) SetPartsExportFilter(v BTPartsExportFilter4308) {
+	o.PartsExportFilter = &v
+}
+
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetPassword() string {
 	if o == nil || o.Password == nil {
@@ -2818,6 +2851,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartIds != nil {
 		toSerialize["partIds"] = o.PartIds
+	}
+	if o.PartsExportFilter != nil {
+		toSerialize["partsExportFilter"] = o.PartsExportFilter
 	}
 	if o.Password != nil {
 		toSerialize["password"] = o.Password

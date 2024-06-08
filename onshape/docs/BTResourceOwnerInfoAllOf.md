@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Icon** | Pointer to **string** |  | [optional] 
 **IsEnterpriseEdu** | Pointer to **bool** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBTResourceOwnerInfoAllOfWithDefaults instantiates a new BTResourceOwnerInfoAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetIcon
+
+`func (o *BTResourceOwnerInfoAllOf) GetIcon() string`
+
+GetIcon returns the Icon field if non-nil, zero value otherwise.
+
+### GetIconOk
+
+`func (o *BTResourceOwnerInfoAllOf) GetIconOk() (*string, bool)`
+
+GetIconOk returns a tuple with the Icon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIcon
+
+`func (o *BTResourceOwnerInfoAllOf) SetIcon(v string)`
+
+SetIcon sets Icon field to given value.
+
+### HasIcon
+
+`func (o *BTResourceOwnerInfoAllOf) HasIcon() bool`
+
+HasIcon returns a boolean if a field has been set.
 
 ### GetIsEnterpriseEdu
 

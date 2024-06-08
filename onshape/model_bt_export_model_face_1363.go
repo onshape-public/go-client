@@ -22,6 +22,7 @@ type BTExportModelFace1363 struct {
 	Box                      *BTBoundingBox1052 `json:"box,omitempty"`
 	// Type of JSON object.
 	BtType         *string                      `json:"btType,omitempty"`
+	DecalIdToDecal *map[string]BTDecal2404      `json:"decalIdToDecal,omitempty"`
 	FaceProperties *BTExportModelProperties3216 `json:"faceProperties,omitempty"`
 	Id             *string                      `json:"id,omitempty"`
 	Loops          []BTExportModelLoop1182      `json:"loops,omitempty"`
@@ -172,6 +173,38 @@ func (o *BTExportModelFace1363) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTExportModelFace1363) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetDecalIdToDecal returns the DecalIdToDecal field value if set, zero value otherwise.
+func (o *BTExportModelFace1363) GetDecalIdToDecal() map[string]BTDecal2404 {
+	if o == nil || o.DecalIdToDecal == nil {
+		var ret map[string]BTDecal2404
+		return ret
+	}
+	return *o.DecalIdToDecal
+}
+
+// GetDecalIdToDecalOk returns a tuple with the DecalIdToDecal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelFace1363) GetDecalIdToDecalOk() (*map[string]BTDecal2404, bool) {
+	if o == nil || o.DecalIdToDecal == nil {
+		return nil, false
+	}
+	return o.DecalIdToDecal, true
+}
+
+// HasDecalIdToDecal returns a boolean if a field has been set.
+func (o *BTExportModelFace1363) HasDecalIdToDecal() bool {
+	if o != nil && o.DecalIdToDecal != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDecalIdToDecal gets a reference to the given map[string]BTDecal2404 and assigns it to the DecalIdToDecal field.
+func (o *BTExportModelFace1363) SetDecalIdToDecal(v map[string]BTDecal2404) {
+	o.DecalIdToDecal = &v
 }
 
 // GetFaceProperties returns the FaceProperties field value if set, zero value otherwise.
@@ -347,6 +380,9 @@ func (o BTExportModelFace1363) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.DecalIdToDecal != nil {
+		toSerialize["decalIdToDecal"] = o.DecalIdToDecal
 	}
 	if o.FaceProperties != nil {
 		toSerialize["faceProperties"] = o.FaceProperties

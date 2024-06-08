@@ -17,12 +17,14 @@ import (
 // BTSketchEntity25 struct for BTSketchEntity25
 type BTSketchEntity25 struct {
 	BtType                     *string                       `json:"btType,omitempty"`
+	ConstructionPlane          *bool                         `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry        *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
 	Decompressed               *BTBaseEntityData33           `json:"decompressed,omitempty"`
 	Deletion                   *bool                         `json:"deletion,omitempty"`
 	FeatureIds                 []string                      `json:"featureIds,omitempty"`
 	FromSketch                 *bool                         `json:"fromSketch,omitempty"`
 	Geometries                 []BTEntityGeometry35          `json:"geometries,omitempty"`
+	Origin                     *bool                         `json:"origin,omitempty"`
 	DomainSpecificMetadata     []BTDomainSpecificMetadata961 `json:"domainSpecificMetadata,omitempty"`
 	FirstGeometry              *BTEntityGeometry35           `json:"firstGeometry,omitempty"`
 	IsConstruction             *bool                         `json:"isConstruction,omitempty"`
@@ -82,6 +84,38 @@ func (o *BTSketchEntity25) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTSketchEntity25) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetConstructionPlane returns the ConstructionPlane field value if set, zero value otherwise.
+func (o *BTSketchEntity25) GetConstructionPlane() bool {
+	if o == nil || o.ConstructionPlane == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ConstructionPlane
+}
+
+// GetConstructionPlaneOk returns a tuple with the ConstructionPlane field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchEntity25) GetConstructionPlaneOk() (*bool, bool) {
+	if o == nil || o.ConstructionPlane == nil {
+		return nil, false
+	}
+	return o.ConstructionPlane, true
+}
+
+// HasConstructionPlane returns a boolean if a field has been set.
+func (o *BTSketchEntity25) HasConstructionPlane() bool {
+	if o != nil && o.ConstructionPlane != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConstructionPlane gets a reference to the given bool and assigns it to the ConstructionPlane field.
+func (o *BTSketchEntity25) SetConstructionPlane(v bool) {
+	o.ConstructionPlane = &v
 }
 
 // GetCopyWithoutGeometry returns the CopyWithoutGeometry field value if set, zero value otherwise.
@@ -274,6 +308,38 @@ func (o *BTSketchEntity25) HasGeometries() bool {
 // SetGeometries gets a reference to the given []BTEntityGeometry35 and assigns it to the Geometries field.
 func (o *BTSketchEntity25) SetGeometries(v []BTEntityGeometry35) {
 	o.Geometries = v
+}
+
+// GetOrigin returns the Origin field value if set, zero value otherwise.
+func (o *BTSketchEntity25) GetOrigin() bool {
+	if o == nil || o.Origin == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Origin
+}
+
+// GetOriginOk returns a tuple with the Origin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchEntity25) GetOriginOk() (*bool, bool) {
+	if o == nil || o.Origin == nil {
+		return nil, false
+	}
+	return o.Origin, true
+}
+
+// HasOrigin returns a boolean if a field has been set.
+func (o *BTSketchEntity25) HasOrigin() bool {
+	if o != nil && o.Origin != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOrigin gets a reference to the given bool and assigns it to the Origin field.
+func (o *BTSketchEntity25) SetOrigin(v bool) {
+	o.Origin = &v
 }
 
 // GetDomainSpecificMetadata returns the DomainSpecificMetadata field value if set, zero value otherwise.
@@ -601,6 +667,9 @@ func (o BTSketchEntity25) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.ConstructionPlane != nil {
+		toSerialize["constructionPlane"] = o.ConstructionPlane
+	}
 	if o.CopyWithoutGeometry != nil {
 		toSerialize["copyWithoutGeometry"] = o.CopyWithoutGeometry
 	}
@@ -618,6 +687,9 @@ func (o BTSketchEntity25) MarshalJSON() ([]byte, error) {
 	}
 	if o.Geometries != nil {
 		toSerialize["geometries"] = o.Geometries
+	}
+	if o.Origin != nil {
+		toSerialize["origin"] = o.Origin
 	}
 	if o.DomainSpecificMetadata != nil {
 		toSerialize["domainSpecificMetadata"] = o.DomainSpecificMetadata

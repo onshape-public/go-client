@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **SelectItemViewStateInfos** | Pointer to [**[]BTSelectItemViewStateInfo**](BTSelectItemViewStateInfo.md) |  | [optional] 
 **StartupPage** | Pointer to **int32** |  | [optional] 
 **SubstituteApprovers** | Pointer to [**[]BTSubstituteApproverInfo**](BTSubstituteApproverInfo.md) |  | [optional] 
+**Theme** | Pointer to **int32** |  | [optional] 
 **UnitsDisplayPrecision** | Pointer to **map[string]int32** |  | [optional] 
 **UnitsMaximumDisplayPrecision** | Pointer to [**BTUnitsMaximumDisplayPrecisionInfo**](BTUnitsMaximumDisplayPrecisionInfo.md) |  | [optional] 
 **Use24HourTime** | Pointer to **bool** |  | [optional] 
@@ -601,6 +602,31 @@ SetSubstituteApprovers sets SubstituteApprovers field to given value.
 `func (o *BTUserSettingsInfo) HasSubstituteApprovers() bool`
 
 HasSubstituteApprovers returns a boolean if a field has been set.
+
+### GetTheme
+
+`func (o *BTUserSettingsInfo) GetTheme() int32`
+
+GetTheme returns the Theme field if non-nil, zero value otherwise.
+
+### GetThemeOk
+
+`func (o *BTUserSettingsInfo) GetThemeOk() (*int32, bool)`
+
+GetThemeOk returns a tuple with the Theme field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTheme
+
+`func (o *BTUserSettingsInfo) SetTheme(v int32)`
+
+SetTheme sets Theme field to given value.
+
+### HasTheme
+
+`func (o *BTUserSettingsInfo) HasTheme() bool`
+
+HasTheme returns a boolean if a field has been set.
 
 ### GetUnitsDisplayPrecision
 

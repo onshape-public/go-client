@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllInsertableDisplayData** | Pointer to [**map[string]map[string]BTInsertableDisplayData2405**](map.md) |  | [optional] 
 **AppearanceIdToAppearanceOverride** | Pointer to [**map[string]BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **AssemblyReferenceDisplayData** | Pointer to [**BTAssemblyReferencesDisplayData1562**](BTAssemblyReferencesDisplayData1562.md) |  | [optional] 
 **BodyIdToEntityAppearanceSettings** | Pointer to [**map[string]BTBaseEntityAppearanceSettings1391**](BTBaseEntityAppearanceSettings1391.md) |  | [optional] 
@@ -34,6 +35,8 @@ Name | Type | Description | Notes
 **NumberOfSketchEntities** | Pointer to **int32** |  | [optional] 
 **PartColorCycle** | Pointer to [**BTBasePartColorCycle2614**](BTBasePartColorCycle2614.md) |  | [optional] 
 **PartDisplayData** | Pointer to [**[]BTPartDisplayData17**](BTPartDisplayData17.md) |  | [optional] 
+**PartIdAndTessellationSettingToBuffers** | Pointer to [**map[string]map[string]BTInsertableDisplayData2405**](map.md) |  | [optional] 
+**SketchFeatureIdAndTessellationSettingToBuffers** | Pointer to [**map[string]map[string]BTInsertableDisplayData2405**](map.md) |  | [optional] 
 **SketchImages** | Pointer to [**map[string]map[string]BTSketchImageDisplayData1379**](map.md) |  | [optional] 
 **UpdatedParts** | Pointer to **[]string** |  | [optional] 
 **Usage** | Pointer to [**GBTDisplayDataUsage**](GBTDisplayDataUsage.md) |  | [optional] 
@@ -58,6 +61,31 @@ will change when the set of required properties is changed
 NewBTPartStudioDisplayData346WithDefaults instantiates a new BTPartStudioDisplayData346 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllInsertableDisplayData
+
+`func (o *BTPartStudioDisplayData346) GetAllInsertableDisplayData() map[string]map[string]BTInsertableDisplayData2405`
+
+GetAllInsertableDisplayData returns the AllInsertableDisplayData field if non-nil, zero value otherwise.
+
+### GetAllInsertableDisplayDataOk
+
+`func (o *BTPartStudioDisplayData346) GetAllInsertableDisplayDataOk() (*map[string]map[string]BTInsertableDisplayData2405, bool)`
+
+GetAllInsertableDisplayDataOk returns a tuple with the AllInsertableDisplayData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllInsertableDisplayData
+
+`func (o *BTPartStudioDisplayData346) SetAllInsertableDisplayData(v map[string]map[string]BTInsertableDisplayData2405)`
+
+SetAllInsertableDisplayData sets AllInsertableDisplayData field to given value.
+
+### HasAllInsertableDisplayData
+
+`func (o *BTPartStudioDisplayData346) HasAllInsertableDisplayData() bool`
+
+HasAllInsertableDisplayData returns a boolean if a field has been set.
 
 ### GetAppearanceIdToAppearanceOverride
 
@@ -808,6 +836,56 @@ SetPartDisplayData sets PartDisplayData field to given value.
 `func (o *BTPartStudioDisplayData346) HasPartDisplayData() bool`
 
 HasPartDisplayData returns a boolean if a field has been set.
+
+### GetPartIdAndTessellationSettingToBuffers
+
+`func (o *BTPartStudioDisplayData346) GetPartIdAndTessellationSettingToBuffers() map[string]map[string]BTInsertableDisplayData2405`
+
+GetPartIdAndTessellationSettingToBuffers returns the PartIdAndTessellationSettingToBuffers field if non-nil, zero value otherwise.
+
+### GetPartIdAndTessellationSettingToBuffersOk
+
+`func (o *BTPartStudioDisplayData346) GetPartIdAndTessellationSettingToBuffersOk() (*map[string]map[string]BTInsertableDisplayData2405, bool)`
+
+GetPartIdAndTessellationSettingToBuffersOk returns a tuple with the PartIdAndTessellationSettingToBuffers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdAndTessellationSettingToBuffers
+
+`func (o *BTPartStudioDisplayData346) SetPartIdAndTessellationSettingToBuffers(v map[string]map[string]BTInsertableDisplayData2405)`
+
+SetPartIdAndTessellationSettingToBuffers sets PartIdAndTessellationSettingToBuffers field to given value.
+
+### HasPartIdAndTessellationSettingToBuffers
+
+`func (o *BTPartStudioDisplayData346) HasPartIdAndTessellationSettingToBuffers() bool`
+
+HasPartIdAndTessellationSettingToBuffers returns a boolean if a field has been set.
+
+### GetSketchFeatureIdAndTessellationSettingToBuffers
+
+`func (o *BTPartStudioDisplayData346) GetSketchFeatureIdAndTessellationSettingToBuffers() map[string]map[string]BTInsertableDisplayData2405`
+
+GetSketchFeatureIdAndTessellationSettingToBuffers returns the SketchFeatureIdAndTessellationSettingToBuffers field if non-nil, zero value otherwise.
+
+### GetSketchFeatureIdAndTessellationSettingToBuffersOk
+
+`func (o *BTPartStudioDisplayData346) GetSketchFeatureIdAndTessellationSettingToBuffersOk() (*map[string]map[string]BTInsertableDisplayData2405, bool)`
+
+GetSketchFeatureIdAndTessellationSettingToBuffersOk returns a tuple with the SketchFeatureIdAndTessellationSettingToBuffers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSketchFeatureIdAndTessellationSettingToBuffers
+
+`func (o *BTPartStudioDisplayData346) SetSketchFeatureIdAndTessellationSettingToBuffers(v map[string]map[string]BTInsertableDisplayData2405)`
+
+SetSketchFeatureIdAndTessellationSettingToBuffers sets SketchFeatureIdAndTessellationSettingToBuffers field to given value.
+
+### HasSketchFeatureIdAndTessellationSettingToBuffers
+
+`func (o *BTPartStudioDisplayData346) HasSketchFeatureIdAndTessellationSettingToBuffers() bool`
+
+HasSketchFeatureIdAndTessellationSettingToBuffers returns a boolean if a field has been set.
 
 ### GetSketchImages
 

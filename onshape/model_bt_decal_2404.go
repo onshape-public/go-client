@@ -17,11 +17,9 @@ import (
 // BTDecal2404 struct for BTDecal2404
 type BTDecal2404 struct {
 	// Type of JSON object.
-	BtType         *string              `json:"btType,omitempty"`
-	ImageForeignId *string              `json:"imageForeignId,omitempty"`
-	ImageSourceId  *string              `json:"imageSourceId,omitempty"`
-	IsDeletion     *bool                `json:"isDeletion,omitempty"`
-	Mappings       []BTImageMapping3821 `json:"mappings,omitempty"`
+	BtType        *string              `json:"btType,omitempty"`
+	ImageSourceId *string              `json:"imageSourceId,omitempty"`
+	Mappings      []BTImageMapping3821 `json:"mappings,omitempty"`
 }
 
 // NewBTDecal2404 instantiates a new BTDecal2404 object
@@ -73,38 +71,6 @@ func (o *BTDecal2404) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetImageForeignId returns the ImageForeignId field value if set, zero value otherwise.
-func (o *BTDecal2404) GetImageForeignId() string {
-	if o == nil || o.ImageForeignId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImageForeignId
-}
-
-// GetImageForeignIdOk returns a tuple with the ImageForeignId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDecal2404) GetImageForeignIdOk() (*string, bool) {
-	if o == nil || o.ImageForeignId == nil {
-		return nil, false
-	}
-	return o.ImageForeignId, true
-}
-
-// HasImageForeignId returns a boolean if a field has been set.
-func (o *BTDecal2404) HasImageForeignId() bool {
-	if o != nil && o.ImageForeignId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImageForeignId gets a reference to the given string and assigns it to the ImageForeignId field.
-func (o *BTDecal2404) SetImageForeignId(v string) {
-	o.ImageForeignId = &v
-}
-
 // GetImageSourceId returns the ImageSourceId field value if set, zero value otherwise.
 func (o *BTDecal2404) GetImageSourceId() string {
 	if o == nil || o.ImageSourceId == nil {
@@ -135,38 +101,6 @@ func (o *BTDecal2404) HasImageSourceId() bool {
 // SetImageSourceId gets a reference to the given string and assigns it to the ImageSourceId field.
 func (o *BTDecal2404) SetImageSourceId(v string) {
 	o.ImageSourceId = &v
-}
-
-// GetIsDeletion returns the IsDeletion field value if set, zero value otherwise.
-func (o *BTDecal2404) GetIsDeletion() bool {
-	if o == nil || o.IsDeletion == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsDeletion
-}
-
-// GetIsDeletionOk returns a tuple with the IsDeletion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDecal2404) GetIsDeletionOk() (*bool, bool) {
-	if o == nil || o.IsDeletion == nil {
-		return nil, false
-	}
-	return o.IsDeletion, true
-}
-
-// HasIsDeletion returns a boolean if a field has been set.
-func (o *BTDecal2404) HasIsDeletion() bool {
-	if o != nil && o.IsDeletion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsDeletion gets a reference to the given bool and assigns it to the IsDeletion field.
-func (o *BTDecal2404) SetIsDeletion(v bool) {
-	o.IsDeletion = &v
 }
 
 // GetMappings returns the Mappings field value if set, zero value otherwise.
@@ -206,14 +140,8 @@ func (o BTDecal2404) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.ImageForeignId != nil {
-		toSerialize["imageForeignId"] = o.ImageForeignId
-	}
 	if o.ImageSourceId != nil {
 		toSerialize["imageSourceId"] = o.ImageSourceId
-	}
-	if o.IsDeletion != nil {
-		toSerialize["isDeletion"] = o.IsDeletion
 	}
 	if o.Mappings != nil {
 		toSerialize["mappings"] = o.Mappings

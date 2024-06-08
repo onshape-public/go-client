@@ -19,10 +19,12 @@ type BTEntityEdge30 struct {
 	BtType                      *string                        `json:"btType,omitempty"`
 	Compressed                  *bool                          `json:"compressed,omitempty"`
 	Decompressed                *BTEntityGeometry35            `json:"decompressed,omitempty"`
+	Edge                        *bool                          `json:"edge,omitempty"`
 	ErrorCode                   *int32                         `json:"errorCode,omitempty"`
 	EstimatedMemoryUsageInBytes *int32                         `json:"estimatedMemoryUsageInBytes,omitempty"`
 	Face                        *bool                          `json:"face,omitempty"`
 	HasTessellationError        *bool                          `json:"hasTessellationError,omitempty"`
+	Point                       *bool                          `json:"point,omitempty"`
 	SettingIndex                *int32                         `json:"settingIndex,omitempty"`
 	CompressedPoints            *BTImmutableByteArray          `json:"compressedPoints,omitempty"`
 	EdgeSmoothnessStatus        *GBTEntityEdgeSmoothnessStatus `json:"edgeSmoothnessStatus,omitempty"`
@@ -143,6 +145,38 @@ func (o *BTEntityEdge30) HasDecompressed() bool {
 // SetDecompressed gets a reference to the given BTEntityGeometry35 and assigns it to the Decompressed field.
 func (o *BTEntityEdge30) SetDecompressed(v BTEntityGeometry35) {
 	o.Decompressed = &v
+}
+
+// GetEdge returns the Edge field value if set, zero value otherwise.
+func (o *BTEntityEdge30) GetEdge() bool {
+	if o == nil || o.Edge == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Edge
+}
+
+// GetEdgeOk returns a tuple with the Edge field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityEdge30) GetEdgeOk() (*bool, bool) {
+	if o == nil || o.Edge == nil {
+		return nil, false
+	}
+	return o.Edge, true
+}
+
+// HasEdge returns a boolean if a field has been set.
+func (o *BTEntityEdge30) HasEdge() bool {
+	if o != nil && o.Edge != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEdge gets a reference to the given bool and assigns it to the Edge field.
+func (o *BTEntityEdge30) SetEdge(v bool) {
+	o.Edge = &v
 }
 
 // GetErrorCode returns the ErrorCode field value if set, zero value otherwise.
@@ -271,6 +305,38 @@ func (o *BTEntityEdge30) HasHasTessellationError() bool {
 // SetHasTessellationError gets a reference to the given bool and assigns it to the HasTessellationError field.
 func (o *BTEntityEdge30) SetHasTessellationError(v bool) {
 	o.HasTessellationError = &v
+}
+
+// GetPoint returns the Point field value if set, zero value otherwise.
+func (o *BTEntityEdge30) GetPoint() bool {
+	if o == nil || o.Point == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Point
+}
+
+// GetPointOk returns a tuple with the Point field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityEdge30) GetPointOk() (*bool, bool) {
+	if o == nil || o.Point == nil {
+		return nil, false
+	}
+	return o.Point, true
+}
+
+// HasPoint returns a boolean if a field has been set.
+func (o *BTEntityEdge30) HasPoint() bool {
+	if o != nil && o.Point != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPoint gets a reference to the given bool and assigns it to the Point field.
+func (o *BTEntityEdge30) SetPoint(v bool) {
+	o.Point = &v
 }
 
 // GetSettingIndex returns the SettingIndex field value if set, zero value otherwise.
@@ -508,6 +574,9 @@ func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	if o.Decompressed != nil {
 		toSerialize["decompressed"] = o.Decompressed
 	}
+	if o.Edge != nil {
+		toSerialize["edge"] = o.Edge
+	}
 	if o.ErrorCode != nil {
 		toSerialize["errorCode"] = o.ErrorCode
 	}
@@ -519,6 +588,9 @@ func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	}
 	if o.HasTessellationError != nil {
 		toSerialize["hasTessellationError"] = o.HasTessellationError
+	}
+	if o.Point != nil {
+		toSerialize["point"] = o.Point
 	}
 	if o.SettingIndex != nil {
 		toSerialize["settingIndex"] = o.SettingIndex

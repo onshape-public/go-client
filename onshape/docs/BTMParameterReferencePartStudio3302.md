@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **BlockBuildFunctionAccess** | Pointer to **bool** |  | [optional] 
 **PartIdentity** | Pointer to [**BTPSOIdentity2741**](BTPSOIdentity2741.md) |  | [optional] 
 **PartQuery** | Pointer to [**BTMParameterQueryList148**](BTMParameterQueryList148.md) |  | [optional] 
+**QueryDataKey** | Pointer to **string** |  | [optional] 
 **StandardContentParametersId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetPartQuery sets PartQuery field to given value.
 `func (o *BTMParameterReferencePartStudio3302) HasPartQuery() bool`
 
 HasPartQuery returns a boolean if a field has been set.
+
+### GetQueryDataKey
+
+`func (o *BTMParameterReferencePartStudio3302) GetQueryDataKey() string`
+
+GetQueryDataKey returns the QueryDataKey field if non-nil, zero value otherwise.
+
+### GetQueryDataKeyOk
+
+`func (o *BTMParameterReferencePartStudio3302) GetQueryDataKeyOk() (*string, bool)`
+
+GetQueryDataKeyOk returns a tuple with the QueryDataKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueryDataKey
+
+`func (o *BTMParameterReferencePartStudio3302) SetQueryDataKey(v string)`
+
+SetQueryDataKey sets QueryDataKey field to given value.
+
+### HasQueryDataKey
+
+`func (o *BTMParameterReferencePartStudio3302) HasQueryDataKey() bool`
+
+HasQueryDataKey returns a boolean if a field has been set.
 
 ### GetStandardContentParametersId
 
