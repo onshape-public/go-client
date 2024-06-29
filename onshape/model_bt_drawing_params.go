@@ -123,6 +123,30 @@ type BTDrawingParams struct {
 // will change when the set of required properties is changed
 func NewBTDrawingParams() *BTDrawingParams {
 	this := BTDrawingParams{}
+	var border bool = false
+	this.Border = &border
+	var computeIntersection bool = false
+	this.ComputeIntersection = &computeIntersection
+	var decimalSeparator string = "PERIOD"
+	this.DecimalSeparator = &decimalSeparator
+	var includeSurfaces bool = false
+	this.IncludeSurfaces = &includeSurfaces
+	var includeWires bool = false
+	this.IncludeWires = &includeWires
+	var isFlattenedPart bool = false
+	this.IsFlattenedPart = &isFlattenedPart
+	var isSketchOnly bool = false
+	this.IsSketchOnly = &isSketchOnly
+	var isSurface bool = false
+	this.IsSurface = &isSurface
+	var language string = "en-us"
+	this.Language = &language
+	var pureSketch bool = false
+	this.PureSketch = &pureSketch
+	var showCutGeomOnly bool = false
+	this.ShowCutGeomOnly = &showCutGeomOnly
+	var titleblock bool = false
+	this.Titleblock = &titleblock
 	return &this
 }
 
@@ -131,6 +155,30 @@ func NewBTDrawingParams() *BTDrawingParams {
 // but it doesn't guarantee that properties required by API are set
 func NewBTDrawingParamsWithDefaults() *BTDrawingParams {
 	this := BTDrawingParams{}
+	var border bool = false
+	this.Border = &border
+	var computeIntersection bool = false
+	this.ComputeIntersection = &computeIntersection
+	var decimalSeparator string = "PERIOD"
+	this.DecimalSeparator = &decimalSeparator
+	var includeSurfaces bool = false
+	this.IncludeSurfaces = &includeSurfaces
+	var includeWires bool = false
+	this.IncludeWires = &includeWires
+	var isFlattenedPart bool = false
+	this.IsFlattenedPart = &isFlattenedPart
+	var isSketchOnly bool = false
+	this.IsSketchOnly = &isSketchOnly
+	var isSurface bool = false
+	this.IsSurface = &isSurface
+	var language string = "en-us"
+	this.Language = &language
+	var pureSketch bool = false
+	this.PureSketch = &pureSketch
+	var showCutGeomOnly bool = false
+	this.ShowCutGeomOnly = &showCutGeomOnly
+	var titleblock bool = false
+	this.Titleblock = &titleblock
 	return &this
 }
 

@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.182.38509-017a6964b4f0
+  version: 1.183.38553-2c9a958ef804
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -39,7 +39,7 @@ info:
   x-filter-info: ?restUserRole=PUBLIC
 servers:
 - description: Current
-  url: https://cad.onshape.com/api/v6
+  url: https://cad.onshape.com/api/v7
 security:
 - BasicAuth: []
 tags:
@@ -3628,8 +3628,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -3752,8 +3753,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -3938,8 +3940,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -4056,8 +4059,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -4147,8 +4151,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -4353,8 +4358,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -4435,8 +4441,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -4526,8 +4533,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -9393,8 +9401,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -9517,8 +9526,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -9675,8 +9685,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -10563,8 +10574,9 @@ paths:
         schema:
           type: boolean
         style: form
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -10657,8 +10669,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -10855,8 +10868,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -11031,8 +11045,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -11569,8 +11584,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -11710,8 +11726,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -12255,8 +12272,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -12394,8 +12412,9 @@ paths:
           default: true
           type: boolean
         style: form
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -12583,8 +12602,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -12770,8 +12790,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -12876,8 +12897,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -13126,8 +13148,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -13368,8 +13391,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -13510,8 +13534,9 @@ paths:
           default: false
           type: boolean
         style: form
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -13691,8 +13716,9 @@ paths:
           default: false
           type: boolean
         style: form
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -13759,7 +13785,10 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
+        explode: true
         in: query
         name: configuration
         required: false
@@ -13799,7 +13828,10 @@ paths:
           default: true
           type: boolean
         style: form
-      - explode: true
+      - description: Id of document that links to the document being accessed. This
+          may provide additional access rights to the document. Allowed only with
+          version (v) path parameter.
+        explode: true
         in: query
         name: linkDocumentId
         required: false
@@ -14125,8 +14157,9 @@ paths:
           format: double
           type: number
         style: form
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -14214,8 +14247,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -14357,8 +14391,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -15196,8 +15231,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -17264,8 +17300,9 @@ paths:
         schema:
           type: string
         style: simple
-      - description: URL-encoded string of configuration values (separated by `;`)
-          for the feature definition.
+      - description: "URL-encoded string of configuration values (separated by `;`).\
+          \ See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/)\
+          \ for details."
         explode: true
         in: query
         name: configuration
@@ -20106,6 +20143,7 @@ components:
       - V4_TRANSACTIONS_NO_NEW
       - V5_BODY_DETAILS_COMPOSITE_REFERENCE
       - V6_JSON_EDIT_RESPONSE_BUGFIX
+      - V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS
       type: string
     BTAppArrayInfoBTAppDrawingViewInfo:
       example:
@@ -23580,25 +23618,19 @@ components:
         - featureIds
         geometries:
         - hasTessellationError: true
-          edge: true
-          face: true
           settingIndex: 7
           btType: btType
           errorCode: 5
           estimatedMemoryUsageInBytes: 2
           compressed: true
           decompressed: null
-          point: true
         - hasTessellationError: true
-          edge: true
-          face: true
           settingIndex: 7
           btType: btType
           errorCode: 5
           estimatedMemoryUsageInBytes: 2
           compressed: true
           decompressed: null
-          point: true
         origin: true
         btType: btType
         constructionPlane: true
@@ -26259,6 +26291,7 @@ components:
         - explicit: true
           parameterType: 0
           parameterId: parameterId
+          isCosmetic: true
           parameterAbbreviatedDisplayValue: parameterAbbreviatedDisplayValue
           parameterName: parameterName
           parameterDisplayValue: parameterDisplayValue
@@ -26266,6 +26299,7 @@ components:
         - explicit: true
           parameterType: 0
           parameterId: parameterId
+          isCosmetic: true
           parameterAbbreviatedDisplayValue: parameterAbbreviatedDisplayValue
           parameterName: parameterName
           parameterDisplayValue: parameterDisplayValue
@@ -27787,7 +27821,7 @@ components:
     BTDocumentParams:
       description: Parameters for creating and updating documents.
       example:
-        ownerType: 0
+        ownerType: 6
         isEmptyContent: true
         forceExportRules: true
         description: description
@@ -27834,7 +27868,7 @@ components:
               \ { 'subKey': false } }"
           elementType: 0
         generateUnknownMessages: true
-        name: myDocument
+        name: name
         isPublic: true
         projectId: projectId
       properties:
@@ -27861,7 +27895,6 @@ components:
           type: boolean
         name:
           description: Document name.
-          example: myDocument
           type: string
         notRevisionManaged:
           description: Set to `true` to indicate that revisions are not managed for
@@ -27875,8 +27908,8 @@ components:
             \ this is the company ID."
           type: string
         ownerType:
+          default: 0
           description: The document's owner type. `USER=0` | `COMPANY=1` | `ONSHAPE=2`
-          example: 0
           format: int32
           type: integer
         parentId:
@@ -27935,9 +27968,9 @@ components:
     BTDocumentSearchParams:
       example:
         documentFilter: 0
-        sortColumn: sortColumn
-        offset: 0
-        sortOrder: sortOrder
+        sortColumn: createdAt
+        offset: 6
+        sortOrder: desc
         limit: 1
         ownerId: ownerId
         type: type
@@ -27955,15 +27988,15 @@ components:
         foundIn:
           $ref: '#/components/schemas/BTESVersionWorkspaceChoice'
         limit:
-          description: Number of results to return per page. Default value is 20 (also
-            the maximum).
+          default: 20
+          description: Number of results to return per page.
           example: 1
           format: int32
+          maximum: 20
           type: integer
         offset:
-          description: Offset. Determines where search results begin. Default value
-            is 0.
-          example: 0
+          default: 0
+          description: Offset. Determines where search results begin.
           format: int32
           type: integer
         ownerId:
@@ -27979,12 +28012,13 @@ components:
             Search is not case-sensitive.
           type: string
         sortColumn:
-          description: "Column by which to sort search results. Options are name,\
-            \ modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt."
+          default: createdAt
+          description: Column by which to sort search results. `name | modifiedAt
+            | createdAt | email | modifiedBy | promotedAt`
           type: string
         sortOrder:
-          description: "Sort order. Options are desc (descending, the default), or\
-            \ asc (ascending)."
+          default: desc
+          description: Sort order. `desc (descending) | asc (ascending)`
           type: string
         type:
           description: "Type of owner. Options are 0 (user), 1 (company), 2 (onshape).\
@@ -28207,17 +28241,17 @@ components:
         pureSketch: false
       properties:
         border:
+          default: false
           description: Set to `true` to include a border in the drawing.
-          example: false
           type: boolean
         computeIntersection:
+          default: false
           description: Set to `true` to compute and display virtual edges (curves
             drawn where parts intersect). Leave as `false` to improve performance.
-          example: false
           type: boolean
         decimalSeparator:
+          default: PERIOD
           description: '`PERIOD` | `COMMA`'
-          example: PERIOD
           type: string
         displayStateId:
           description: Apply this display state's properties to the drawing.
@@ -28255,29 +28289,29 @@ components:
         hiddenLines:
           $ref: '#/components/schemas/BTDrawingHiddenLineOption'
         includeSurfaces:
+          default: false
           description: Set to `true` to include surfaces in the drawing.
-          example: false
           type: boolean
         includeWires:
+          default: false
           description: Set to `true` to include wires in the drawing.
-          example: false
           type: boolean
         isFlattenedPart:
+          default: false
           description: Set to `true` if creating a drawing from a flattened part.
-          example: false
           type: boolean
         isSketchOnly:
+          default: false
           description: Set to `true` if creating a drawing of a sketch.
-          example: false
           type: boolean
         isSurface:
+          default: false
           description: Set to `true` if creating a drawing from a surface.
-          example: false
           type: boolean
         language:
+          default: en-us
           description: Set the language for the drawing. Accepts any ISO 639-1 standard
             language code.
-          example: en-us
           type: string
         location:
           $ref: '#/components/schemas/BTElementLocationParams'
@@ -28313,8 +28347,8 @@ components:
           description: Apply this projection to the drawing.
           type: string
         pureSketch:
+          default: false
           description: Set to `true` if creating the drawing of an empty sketch.
-          example: false
           type: boolean
         qualityOption:
           description: '`BEST_PERFORMANCE` | `BEST_QUALITY` | `BALANCED` | `ADAPTIVE`'
@@ -28332,8 +28366,8 @@ components:
           description: Create the drawing from this specific revision.
           type: string
         showCutGeomOnly:
+          default: false
           description: Set to `true` to show only cut geometry in the drawing.
-          example: false
           type: boolean
         simplificationOption:
           description: '`NONE` | `ABSOLUTE` | `RATIO_TO_MODEL` | `RATIO_TO_BODY` |
@@ -28384,8 +28418,8 @@ components:
           description: Apply the template from this workspace to the drawing.
           type: string
         titleblock:
+          default: false
           description: Set to `true` to include a title block in the drawing.
-          example: false
           type: boolean
         units:
           description: "Units for the element: `METER` | `CENTIMETER` | `MILLIMETER`\
@@ -28427,6 +28461,7 @@ components:
       example:
         wantsHiddenBodies: true
         functionName: functionName
+        wantsClickedButton: true
         btType: btType
         wantsIsCreating: true
         wantsSpecifiedParameters: true
@@ -28436,6 +28471,8 @@ components:
           type: string
         functionName:
           type: string
+        wantsClickedButton:
+          type: boolean
         wantsHiddenBodies:
           type: boolean
         wantsIsCreating:
@@ -28973,15 +29010,12 @@ components:
         propertyName: btType
       example:
         hasTessellationError: true
-        edge: true
-        face: true
         settingIndex: 7
         btType: btType
         errorCode: 5
         estimatedMemoryUsageInBytes: 2
         compressed: true
         decompressed: null
-        point: true
       properties:
         btType:
           description: Type of JSON object.
@@ -28990,19 +29024,13 @@ components:
           type: boolean
         decompressed:
           $ref: '#/components/schemas/BTEntityGeometry-35'
-        edge:
-          type: boolean
         errorCode:
           format: int32
           type: integer
         estimatedMemoryUsageInBytes:
           format: int32
           type: integer
-        face:
-          type: boolean
         hasTessellationError:
-          type: boolean
-        point:
           type: boolean
         settingIndex:
           format: int32
@@ -33182,25 +33210,19 @@ components:
               - featureIds
               geometries:
               - hasTessellationError: true
-                edge: true
-                face: true
                 settingIndex: 7
                 btType: btType
                 errorCode: 5
                 estimatedMemoryUsageInBytes: 2
                 compressed: true
                 decompressed: null
-                point: true
               - hasTessellationError: true
-                edge: true
-                face: true
                 settingIndex: 7
                 btType: btType
                 errorCode: 5
                 estimatedMemoryUsageInBytes: 2
                 compressed: true
                 decompressed: null
-                point: true
               origin: true
               btType: btType
               constructionPlane: true
@@ -34571,6 +34593,7 @@ components:
         editingLogic:
           wantsHiddenBodies: true
           functionName: functionName
+          wantsClickedButton: true
           btType: btType
           wantsIsCreating: true
           wantsSpecifiedParameters: true
@@ -34991,6 +35014,7 @@ components:
           editingLogic:
             wantsHiddenBodies: true
             functionName: functionName
+            wantsClickedButton: true
             btType: btType
             wantsIsCreating: true
             wantsSpecifiedParameters: true
@@ -35318,6 +35342,7 @@ components:
           editingLogic:
             wantsHiddenBodies: true
             functionName: functionName
+            wantsClickedButton: true
             btType: btType
             wantsIsCreating: true
             wantsSpecifiedParameters: true
@@ -42034,6 +42059,7 @@ components:
           BTMParameterArray-2025: '#/components/schemas/BTMParameterArray-2025'
           BTMParameterBlobReference-1679: '#/components/schemas/BTMParameterBlobReference-1679'
           BTMParameterBoolean-144: '#/components/schemas/BTMParameterBoolean-144'
+          BTMParameterButton-5169: '#/components/schemas/BTMParameterButton-5169'
           BTMParameterConfigured-2222: '#/components/schemas/BTMParameterConfigured-2222'
           BTMParameterDerived-864: '#/components/schemas/BTMParameterDerived-864'
           BTMParameterEnum-145: '#/components/schemas/BTMParameterEnum-145'
@@ -42101,6 +42127,15 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTMParameter-1'
       - $ref: '#/components/schemas/BTMParameterBoolean_144_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTMParameterButton-5169:
+      allOf:
+      - $ref: '#/components/schemas/BTMParameter-1'
+      - $ref: '#/components/schemas/BTMParameterButton_5169_allOf'
       properties:
         btType:
           description: Type of JSON object.
@@ -42609,6 +42644,8 @@ components:
         entityIdAndReplaceInDependentFields:
           type: string
           writeOnly: true
+        functionName:
+          type: string
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
@@ -46348,6 +46385,7 @@ components:
           BTParameterSpecAppearance-1740: '#/components/schemas/BTParameterSpecAppearance-1740'
           BTParameterSpecArray-2600: '#/components/schemas/BTParameterSpecArray-2600'
           BTParameterSpecBoolean-170: '#/components/schemas/BTParameterSpecBoolean-170'
+          BTParameterSpecButton-4111: '#/components/schemas/BTParameterSpecButton-4111'
           BTParameterSpecDatabase-1071: '#/components/schemas/BTParameterSpecDatabase-1071'
           BTParameterSpecDerived-736: '#/components/schemas/BTParameterSpecDerived-736'
           BTParameterSpecEnum-171: '#/components/schemas/BTParameterSpecEnum-171'
@@ -46450,6 +46488,15 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpec-6'
       - $ref: '#/components/schemas/BTParameterSpecBoolean_170_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTParameterSpecButton-4111:
+      allOf:
+      - $ref: '#/components/schemas/BTParameterSpec-6'
+      - $ref: '#/components/schemas/BTParameterSpecButton_4111_allOf'
       properties:
         btType:
           description: Type of JSON object.
@@ -49407,25 +49454,19 @@ components:
             - featureIds
             geometries:
             - hasTessellationError: true
-              edge: true
-              face: true
               settingIndex: 7
               btType: btType
               errorCode: 5
               estimatedMemoryUsageInBytes: 2
               compressed: true
               decompressed: null
-              point: true
             - hasTessellationError: true
-              edge: true
-              face: true
               settingIndex: 7
               btType: btType
               errorCode: 5
               estimatedMemoryUsageInBytes: 2
               compressed: true
               decompressed: null
-              point: true
             origin: true
             btType: btType
             constructionPlane: true
@@ -55209,9 +55250,9 @@ components:
         splinesAsPolylines: true
       properties:
         allowFaultyParts:
+          default: false
           description: "If true, parts with faults are imported. If false, faulty\
             \ parts are omitted."
-          example: false
           type: boolean
         angularTolerance:
           description: "Determines the maximum angular deviation, between the analytical\
@@ -57271,6 +57312,7 @@ components:
           description: Id of the resource.
           type: string
         isTransient:
+          default: true
           description: Transient webhooks are automatically cleaned up after a period
             of inactivity.
           type: boolean
@@ -57375,6 +57417,7 @@ components:
         id:
           type: string
         isTransient:
+          default: true
           description: Transient webhooks are automatically cleaned up after a period
             of inactivity.
           type: boolean
@@ -68984,12 +69027,15 @@ components:
         explicit: true
         parameterType: 0
         parameterId: parameterId
+        isCosmetic: true
         parameterAbbreviatedDisplayValue: parameterAbbreviatedDisplayValue
         parameterName: parameterName
         parameterDisplayValue: parameterDisplayValue
         parameterValue: parameterValue
       properties:
         explicit:
+          type: boolean
+        isCosmetic:
           type: boolean
         parameterAbbreviatedDisplayValue:
           type: string
@@ -71577,6 +71623,10 @@ components:
       - PART_STUDIO_DOES_NOT_EXIST_IN_MOMENT
       - SOME_BODIES_WERE_REMOVED_FROM_EXPORT
       - ALL_BODIES_WERE_REMOVED_FROM_EXPORT
+      - CONFIG_NO_PARAMETERS_FOUND
+      - CONFIG_INCORRECT_PARAMETER_TYPE
+      - CONFIG_TOO_MANY_PARAMETERS
+      - REFERENCE_REPAIR_MISSING_CONFIGURATION
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -104867,6 +104917,11 @@ components:
       properties:
         btType:
           type: string
+        point:
+          items:
+            format: float
+            type: number
+          type: array
       type: object
       example: null
     BTEntityTypeFilter_124_allOf:
@@ -105943,6 +105998,12 @@ components:
           type: string
         value:
           type: boolean
+      type: object
+      example: null
+    BTMParameterButton_5169_allOf:
+      properties:
+        btType:
+          type: string
       type: object
       example: null
     BTMParameterConfigured_2222_allOf:
@@ -107368,15 +107429,17 @@ components:
         maxNumberOfPicks:
           format: int32
           type: integer
-        parameters:
-          items:
-            $ref: '#/components/schemas/BTParameterSpec-6'
-          type: array
         showLabelsOnly:
           type: boolean
       type: object
       example: null
     BTParameterSpecBoolean_170_allOf:
+      properties:
+        btType:
+          type: string
+      type: object
+      example: null
+    BTParameterSpecButton_4111_allOf:
       properties:
         btType:
           type: string

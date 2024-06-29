@@ -19,6 +19,7 @@ type BTEditingLogic2350 struct {
 	// Type of JSON object.
 	BtType                   *string `json:"btType,omitempty"`
 	FunctionName             *string `json:"functionName,omitempty"`
+	WantsClickedButton       *bool   `json:"wantsClickedButton,omitempty"`
 	WantsHiddenBodies        *bool   `json:"wantsHiddenBodies,omitempty"`
 	WantsIsCreating          *bool   `json:"wantsIsCreating,omitempty"`
 	WantsSpecifiedParameters *bool   `json:"wantsSpecifiedParameters,omitempty"`
@@ -103,6 +104,38 @@ func (o *BTEditingLogic2350) HasFunctionName() bool {
 // SetFunctionName gets a reference to the given string and assigns it to the FunctionName field.
 func (o *BTEditingLogic2350) SetFunctionName(v string) {
 	o.FunctionName = &v
+}
+
+// GetWantsClickedButton returns the WantsClickedButton field value if set, zero value otherwise.
+func (o *BTEditingLogic2350) GetWantsClickedButton() bool {
+	if o == nil || o.WantsClickedButton == nil {
+		var ret bool
+		return ret
+	}
+	return *o.WantsClickedButton
+}
+
+// GetWantsClickedButtonOk returns a tuple with the WantsClickedButton field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEditingLogic2350) GetWantsClickedButtonOk() (*bool, bool) {
+	if o == nil || o.WantsClickedButton == nil {
+		return nil, false
+	}
+	return o.WantsClickedButton, true
+}
+
+// HasWantsClickedButton returns a boolean if a field has been set.
+func (o *BTEditingLogic2350) HasWantsClickedButton() bool {
+	if o != nil && o.WantsClickedButton != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWantsClickedButton gets a reference to the given bool and assigns it to the WantsClickedButton field.
+func (o *BTEditingLogic2350) SetWantsClickedButton(v bool) {
+	o.WantsClickedButton = &v
 }
 
 // GetWantsHiddenBodies returns the WantsHiddenBodies field value if set, zero value otherwise.
@@ -208,6 +241,9 @@ func (o BTEditingLogic2350) MarshalJSON() ([]byte, error) {
 	}
 	if o.FunctionName != nil {
 		toSerialize["functionName"] = o.FunctionName
+	}
+	if o.WantsClickedButton != nil {
+		toSerialize["wantsClickedButton"] = o.WantsClickedButton
 	}
 	if o.WantsHiddenBodies != nil {
 		toSerialize["wantsHiddenBodies"] = o.WantsHiddenBodies

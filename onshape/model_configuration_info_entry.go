@@ -17,6 +17,7 @@ import (
 // ConfigurationInfoEntry struct for ConfigurationInfoEntry
 type ConfigurationInfoEntry struct {
 	Explicit                         *bool   `json:"explicit,omitempty"`
+	IsCosmetic                       *bool   `json:"isCosmetic,omitempty"`
 	ParameterAbbreviatedDisplayValue *string `json:"parameterAbbreviatedDisplayValue,omitempty"`
 	ParameterDisplayValue            *string `json:"parameterDisplayValue,omitempty"`
 	ParameterId                      *string `json:"parameterId,omitempty"`
@@ -72,6 +73,38 @@ func (o *ConfigurationInfoEntry) HasExplicit() bool {
 // SetExplicit gets a reference to the given bool and assigns it to the Explicit field.
 func (o *ConfigurationInfoEntry) SetExplicit(v bool) {
 	o.Explicit = &v
+}
+
+// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
+func (o *ConfigurationInfoEntry) GetIsCosmetic() bool {
+	if o == nil || o.IsCosmetic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsCosmetic
+}
+
+// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConfigurationInfoEntry) GetIsCosmeticOk() (*bool, bool) {
+	if o == nil || o.IsCosmetic == nil {
+		return nil, false
+	}
+	return o.IsCosmetic, true
+}
+
+// HasIsCosmetic returns a boolean if a field has been set.
+func (o *ConfigurationInfoEntry) HasIsCosmetic() bool {
+	if o != nil && o.IsCosmetic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
+func (o *ConfigurationInfoEntry) SetIsCosmetic(v bool) {
+	o.IsCosmetic = &v
 }
 
 // GetParameterAbbreviatedDisplayValue returns the ParameterAbbreviatedDisplayValue field value if set, zero value otherwise.
@@ -270,6 +303,9 @@ func (o ConfigurationInfoEntry) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Explicit != nil {
 		toSerialize["explicit"] = o.Explicit
+	}
+	if o.IsCosmetic != nil {
+		toSerialize["isCosmetic"] = o.IsCosmetic
 	}
 	if o.ParameterAbbreviatedDisplayValue != nil {
 		toSerialize["parameterAbbreviatedDisplayValue"] = o.ParameterAbbreviatedDisplayValue

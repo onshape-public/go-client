@@ -1,6 +1,6 @@
 # \AssemblyApi
 
-All URIs are relative to *https://cad.onshape.com/api/v6*
+All URIs are relative to *https://cad.onshape.com/api/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -436,7 +436,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
     includeHidden := true // bool |  (optional)
     displayStateId := "displayStateId_example" // string |  (optional)
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
  **includeHidden** | **bool** |  | 
  **displayStateId** | **string** |  | 
@@ -529,7 +529,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
     includeMateFeatures := true // bool |  (optional) (default to false)
     includeNonSolids := true // bool |  (optional) (default to false)
@@ -571,7 +571,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
  **includeMateFeatures** | **bool** |  | [default to false]
  **includeNonSolids** | **bool** |  | [default to false]
@@ -622,7 +622,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
 
 ### Return type
 
@@ -703,7 +703,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
     viewMatrix := "viewMatrix_example" // string |  (optional) (default to "front")
     outputHeight := int32(56) // int32 |  (optional) (default to 500)
@@ -752,7 +752,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
  **viewMatrix** | **string** |  | [default to &quot;front&quot;]
  **outputHeight** | **int32** |  | [default to 500]
@@ -810,7 +810,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     bomColumnIds := []string{"Inner_example"} // []string | Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids. (optional)
     indented := true // bool | Return the Structured BOM table with all rows collapsed, otherwise returns the Flattened BOM. (optional) (default to true)
     multiLevel := true // bool | Return the Structured BOM table with all rows expanded. Ignored if indented is false. (optional) (default to false)
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **bomColumnIds** | **[]string** | Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids. | 
  **indented** | **bool** | Return the Structured BOM table with all rows collapsed, otherwise returns the Flattened BOM. | [default to true]
  **multiLevel** | **bool** | Return the Structured BOM table with all rows expanded. Ignored if indented is false. | [default to false]
@@ -913,7 +913,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
 
 ### Return type
@@ -1073,7 +1073,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
     featureId := []string{"Inner_example"} // []string |  (optional)
 
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
  **featureId** | **[]string** |  | 
 
@@ -1158,7 +1158,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -1196,7 +1196,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
 
 ### Return type

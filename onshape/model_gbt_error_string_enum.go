@@ -1535,6 +1535,10 @@ const (
 	GBTErrorStringEnumPartStudioDoesNotExistInMoment                        GBTErrorStringEnum = "PART_STUDIO_DOES_NOT_EXIST_IN_MOMENT"
 	GBTErrorStringEnumSomeBodiesWereRemovedFromExport                       GBTErrorStringEnum = "SOME_BODIES_WERE_REMOVED_FROM_EXPORT"
 	GBTErrorStringEnumAllBodiesWereRemovedFromExport                        GBTErrorStringEnum = "ALL_BODIES_WERE_REMOVED_FROM_EXPORT"
+	GBTErrorStringEnumConfigNoParametersFound                               GBTErrorStringEnum = "CONFIG_NO_PARAMETERS_FOUND"
+	GBTErrorStringEnumConfigIncorrectParameterType                          GBTErrorStringEnum = "CONFIG_INCORRECT_PARAMETER_TYPE"
+	GBTErrorStringEnumConfigTooManyParameters                               GBTErrorStringEnum = "CONFIG_TOO_MANY_PARAMETERS"
+	GBTErrorStringEnumReferenceRepairMissingConfiguration                   GBTErrorStringEnum = "REFERENCE_REPAIR_MISSING_CONFIGURATION"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3055,6 +3059,10 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"PART_STUDIO_DOES_NOT_EXIST_IN_MOMENT",
 	"SOME_BODIES_WERE_REMOVED_FROM_EXPORT",
 	"ALL_BODIES_WERE_REMOVED_FROM_EXPORT",
+	"CONFIG_NO_PARAMETERS_FOUND",
+	"CONFIG_INCORRECT_PARAMETER_TYPE",
+	"CONFIG_TOO_MANY_PARAMETERS",
+	"REFERENCE_REPAIR_MISSING_CONFIGURATION",
 	"UNKNOWN",
 }
 

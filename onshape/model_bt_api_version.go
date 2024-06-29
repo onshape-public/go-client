@@ -20,13 +20,14 @@ type BTApiVersion string
 
 // List of BTApiVersion
 const (
-	BTApiVersionUndefined                       BTApiVersion = "UNDEFINED"
-	BTApiVersionV1Start                         BTApiVersion = "V1_START"
-	BTApiVersionV2SerializationUnification      BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
-	BTApiVersionV3NewBomFormat                  BTApiVersion = "V3_NEW_BOM_FORMAT"
-	BTApiVersionV4TransactionsNoNew             BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
-	BTApiVersionV5BodyDetailsCompositeReference BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
-	BTApiVersionV6JsonEditResponseBugfix        BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
+	BTApiVersionUndefined                           BTApiVersion = "UNDEFINED"
+	BTApiVersionV1Start                             BTApiVersion = "V1_START"
+	BTApiVersionV2SerializationUnification          BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
+	BTApiVersionV3NewBomFormat                      BTApiVersion = "V3_NEW_BOM_FORMAT"
+	BTApiVersionV4TransactionsNoNew                 BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
+	BTApiVersionV5BodyDetailsCompositeReference     BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
+	BTApiVersionV6JsonEditResponseBugfix            BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
+	BTApiVersionV7SketchEndpointIncludesSolveStatus BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
 )
 
 // All allowed values of BTApiVersion enum
@@ -38,6 +39,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V4_TRANSACTIONS_NO_NEW",
 	"V5_BODY_DETAILS_COMPOSITE_REFERENCE",
 	"V6_JSON_EDIT_RESPONSE_BUGFIX",
+	"V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

@@ -733,7 +733,7 @@ func (r ApiEvalFeatureScriptRequest) LinkDocumentId(linkDocumentId string) ApiEv
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiEvalFeatureScriptRequest) Configuration(configuration string) ApiEvalFeatureScriptRequest {
 	r.configuration = &configuration
 	return r
@@ -915,7 +915,7 @@ func (r ApiExportParasolidRequest) IncludeExportIds(includeExportIds bool) ApiEx
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiExportParasolidRequest) Configuration(configuration string) ApiExportParasolidRequest {
 	r.configuration = &configuration
 	return r
@@ -1070,7 +1070,7 @@ func (r ApiExportPartStudioGltfRequest) LinkDocumentId(linkDocumentId string) Ap
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiExportPartStudioGltfRequest) Configuration(configuration string) ApiExportPartStudioGltfRequest {
 	r.configuration = &configuration
 	return r
@@ -1361,7 +1361,7 @@ func (r ApiExportPartStudioStlRequest) MinFacetWidth(minFacetWidth float64) ApiE
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiExportPartStudioStlRequest) Configuration(configuration string) ApiExportPartStudioStlRequest {
 	r.configuration = &configuration
 	return r
@@ -1517,7 +1517,7 @@ func (r ApiGetFeatureScriptRepresentationRequest) LinkDocumentId(linkDocumentId 
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetFeatureScriptRepresentationRequest) Configuration(configuration string) ApiGetFeatureScriptRepresentationRequest {
 	r.configuration = &configuration
 	return r
@@ -1858,7 +1858,7 @@ func (r ApiGetPartStudioBodyDetailsRequest) LinkDocumentId(linkDocumentId string
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartStudioBodyDetailsRequest) Configuration(configuration string) ApiGetPartStudioBodyDetailsRequest {
 	r.configuration = &configuration
 	return r
@@ -2069,7 +2069,7 @@ func (r ApiGetPartStudioBoundingBoxesRequest) IncludeWireBodies(includeWireBodie
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartStudioBoundingBoxesRequest) Configuration(configuration string) ApiGetPartStudioBoundingBoxesRequest {
 	r.configuration = &configuration
 	return r
@@ -2229,7 +2229,7 @@ func (r ApiGetPartStudioEdgesRequest) LinkDocumentId(linkDocumentId string) ApiG
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartStudioEdgesRequest) Configuration(configuration string) ApiGetPartStudioEdgesRequest {
 	r.configuration = &configuration
 	return r
@@ -2462,7 +2462,7 @@ func (r ApiGetPartStudioFacesRequest) LinkDocumentId(linkDocumentId string) ApiG
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartStudioFacesRequest) Configuration(configuration string) ApiGetPartStudioFacesRequest {
 	r.configuration = &configuration
 	return r
@@ -2871,7 +2871,7 @@ func (r ApiGetPartStudioFeaturesRequest) LinkDocumentId(linkDocumentId string) A
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartStudioFeaturesRequest) Configuration(configuration string) ApiGetPartStudioFeaturesRequest {
 	r.configuration = &configuration
 	return r
@@ -3072,7 +3072,7 @@ func (r ApiGetPartStudioMassPropertiesRequest) LinkDocumentId(linkDocumentId str
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartStudioMassPropertiesRequest) Configuration(configuration string) ApiGetPartStudioMassPropertiesRequest {
 	r.configuration = &configuration
 	return r
@@ -3473,7 +3473,7 @@ func (r ApiGetPartStudioShadedViewsRequest) IncludeWires(includeWires bool) ApiG
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartStudioShadedViewsRequest) Configuration(configuration string) ApiGetPartStudioShadedViewsRequest {
 	r.configuration = &configuration
 	return r

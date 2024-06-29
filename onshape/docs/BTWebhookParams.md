@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Filter** | Pointer to **string** |  | [optional] 
 **FolderId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**IsTransient** | Pointer to **bool** | Transient webhooks are automatically cleaned up after a period of inactivity. | [optional] 
+**IsTransient** | Pointer to **bool** | Transient webhooks are automatically cleaned up after a period of inactivity. | [optional] [default to true]
 **LinkDocumentId** | Pointer to **string** |  | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 

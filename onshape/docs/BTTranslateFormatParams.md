@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowFaultyParts** | Pointer to **bool** | If true, parts with faults are imported. If false, faulty parts are omitted. | [optional] 
+**AllowFaultyParts** | Pointer to **bool** | If true, parts with faults are imported. If false, faulty parts are omitted. | [optional] [default to false]
 **AngularTolerance** | Pointer to **float64** | Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry. | [optional] 
 **BlobElementId** | Pointer to **string** |  | [optional] 
 **BlobMicroversionId** | Pointer to **string** |  | [optional] 

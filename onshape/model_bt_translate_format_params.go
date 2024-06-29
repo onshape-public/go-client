@@ -113,6 +113,8 @@ type BTTranslateFormatParams struct {
 // will change when the set of required properties is changed
 func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 	this := BTTranslateFormatParams{}
+	var allowFaultyParts bool = false
+	this.AllowFaultyParts = &allowFaultyParts
 	this.FormatName = formatName
 	return &this
 }
@@ -122,6 +124,8 @@ func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 // but it doesn't guarantee that properties required by API are set
 func NewBTTranslateFormatParamsWithDefaults() *BTTranslateFormatParams {
 	this := BTTranslateFormatParams{}
+	var allowFaultyParts bool = false
+	this.AllowFaultyParts = &allowFaultyParts
 	return &this
 }
 

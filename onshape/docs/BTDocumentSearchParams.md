@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentFilter** | Pointer to **int32** | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). | [optional] 
 **FoundIn** | Pointer to [**BTESVersionWorkspaceChoice**](BTESVersionWorkspaceChoice.md) |  | [optional] 
-**Limit** | Pointer to **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [optional] 
-**Offset** | Pointer to **int32** | Offset. Determines where search results begin. Default value is 0. | [optional] 
+**Limit** | Pointer to **int32** | Number of results to return per page. | [optional] [default to 20]
+**Offset** | Pointer to **int32** | Offset. Determines where search results begin. | [optional] [default to 0]
 **OwnerId** | Pointer to **string** | Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  | [optional] 
 **ParentId** | Pointer to **string** | Search document parent Id  | [optional] 
 **RawQuery** | Pointer to **string** | Search for documents that contain the given string in the name. Search is not case-sensitive. | [optional] 
-**SortColumn** | Pointer to **string** | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. | [optional] 
-**SortOrder** | Pointer to **string** | Sort order. Options are desc (descending, the default), or asc (ascending). | [optional] 
+**SortColumn** | Pointer to **string** | Column by which to sort search results. &#x60;name | modifiedAt | createdAt | email | modifiedBy | promotedAt&#x60; | [optional] [default to "createdAt"]
+**SortOrder** | Pointer to **string** | Sort order. &#x60;desc (descending) | asc (ascending)&#x60; | [optional] [default to "desc"]
 **Type** | Pointer to **string** | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. | [optional] 
 **When** | Pointer to [**BTESResultsFilter**](BTESResultsFilter.md) |  | [optional] 
 

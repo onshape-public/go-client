@@ -3033,6 +3033,14 @@
 
 * `GBTErrorStringEnumAllBodiesWereRemovedFromExport` (value: `"ALL_BODIES_WERE_REMOVED_FROM_EXPORT"`)
 
+* `GBTErrorStringEnumConfigNoParametersFound` (value: `"CONFIG_NO_PARAMETERS_FOUND"`)
+
+* `GBTErrorStringEnumConfigIncorrectParameterType` (value: `"CONFIG_INCORRECT_PARAMETER_TYPE"`)
+
+* `GBTErrorStringEnumConfigTooManyParameters` (value: `"CONFIG_TOO_MANY_PARAMETERS"`)
+
+* `GBTErrorStringEnumReferenceRepairMissingConfiguration` (value: `"REFERENCE_REPAIR_MISSING_CONFIGURATION"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

@@ -648,6 +648,8 @@ docs/BTMParameterBlobReference1679.md
 docs/BTMParameterBlobReference1679AllOf.md
 docs/BTMParameterBoolean144.md
 docs/BTMParameterBoolean144AllOf.md
+docs/BTMParameterButton5169.md
+docs/BTMParameterButton5169AllOf.md
 docs/BTMParameterConfigured2222.md
 docs/BTMParameterConfigured2222AllOf.md
 docs/BTMParameterDerived864.md
@@ -956,6 +958,8 @@ docs/BTParameterSpecArray2600.md
 docs/BTParameterSpecArray2600AllOf.md
 docs/BTParameterSpecBoolean170.md
 docs/BTParameterSpecBoolean170AllOf.md
+docs/BTParameterSpecButton4111.md
+docs/BTParameterSpecButton4111AllOf.md
 docs/BTParameterSpecCategories4083.md
 docs/BTParameterSpecCategories4083AllOf.md
 docs/BTParameterSpecDatabase1071.md
@@ -1947,6 +1951,7 @@ model_bt_parameter_spec_6.go
 model_bt_parameter_spec_appearance_1740.go
 model_bt_parameter_spec_array_2600.go
 model_bt_parameter_spec_boolean_170.go
+model_bt_parameter_spec_button_4111.go
 model_bt_parameter_spec_categories_4083.go
 model_bt_parameter_spec_database_1071.go
 model_bt_parameter_spec_derived_736.go
@@ -2283,6 +2288,7 @@ model_btm_parameter_appearance_627.go
 model_btm_parameter_array_2025.go
 model_btm_parameter_blob_reference_1679.go
 model_btm_parameter_boolean_144.go
+model_btm_parameter_button_5169.go
 model_btm_parameter_configured_2222.go
 model_btm_parameter_derived_864.go
 model_btm_parameter_enum_145.go
