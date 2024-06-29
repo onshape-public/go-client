@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ControlBoxIds** | Pointer to **[]string** |  | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
+**FunctionName** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **IsConstruction** | Pointer to **bool** |  | [optional] 
 **IsFromEndpointSplineHandle** | Pointer to **bool** |  | [optional] 
@@ -135,6 +136,31 @@ SetEntityIdAndReplaceInDependentFields sets EntityIdAndReplaceInDependentFields 
 `func (o *BTMSketchGeomEntity5) HasEntityIdAndReplaceInDependentFields() bool`
 
 HasEntityIdAndReplaceInDependentFields returns a boolean if a field has been set.
+
+### GetFunctionName
+
+`func (o *BTMSketchGeomEntity5) GetFunctionName() string`
+
+GetFunctionName returns the FunctionName field if non-nil, zero value otherwise.
+
+### GetFunctionNameOk
+
+`func (o *BTMSketchGeomEntity5) GetFunctionNameOk() (*string, bool)`
+
+GetFunctionNameOk returns a tuple with the FunctionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFunctionName
+
+`func (o *BTMSketchGeomEntity5) SetFunctionName(v string)`
+
+SetFunctionName sets FunctionName field to given value.
+
+### HasFunctionName
+
+`func (o *BTMSketchGeomEntity5) HasFunctionName() bool`
+
+HasFunctionName returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 

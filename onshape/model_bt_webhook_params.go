@@ -48,6 +48,8 @@ type BTWebhookParams struct {
 // will change when the set of required properties is changed
 func NewBTWebhookParams() *BTWebhookParams {
 	this := BTWebhookParams{}
+	var isTransient bool = true
+	this.IsTransient = &isTransient
 	return &this
 }
 
@@ -56,6 +58,8 @@ func NewBTWebhookParams() *BTWebhookParams {
 // but it doesn't guarantee that properties required by API are set
 func NewBTWebhookParamsWithDefaults() *BTWebhookParams {
 	this := BTWebhookParams{}
+	var isTransient bool = true
+	this.IsTransient = &isTransient
 	return &this
 }
 

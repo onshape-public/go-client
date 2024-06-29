@@ -14,8 +14,8 @@ import (
 	"encoding/json"
 )
 
-// BTParameterSpecArray2600 struct for BTParameterSpecArray2600
-type BTParameterSpecArray2600 struct {
+// BTParameterSpecButton4111 struct for BTParameterSpecButton4111
+type BTParameterSpecButton4111 struct {
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
@@ -31,32 +31,27 @@ type BTParameterSpecArray2600 struct {
 	UiHint                     *string                            `json:"uiHint,omitempty"`
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
-	DrivenQuery                *string                            `json:"drivenQuery,omitempty"`
-	ItemLabelTemplate          *string                            `json:"itemLabelTemplate,omitempty"`
-	ItemName                   *string                            `json:"itemName,omitempty"`
-	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
-	ShowLabelsOnly             *bool                              `json:"showLabelsOnly,omitempty"`
 }
 
-// NewBTParameterSpecArray2600 instantiates a new BTParameterSpecArray2600 object
+// NewBTParameterSpecButton4111 instantiates a new BTParameterSpecButton4111 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTParameterSpecArray2600() *BTParameterSpecArray2600 {
-	this := BTParameterSpecArray2600{}
+func NewBTParameterSpecButton4111() *BTParameterSpecButton4111 {
+	this := BTParameterSpecButton4111{}
 	return &this
 }
 
-// NewBTParameterSpecArray2600WithDefaults instantiates a new BTParameterSpecArray2600 object
+// NewBTParameterSpecButton4111WithDefaults instantiates a new BTParameterSpecButton4111 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBTParameterSpecArray2600WithDefaults() *BTParameterSpecArray2600 {
-	this := BTParameterSpecArray2600{}
+func NewBTParameterSpecButton4111WithDefaults() *BTParameterSpecButton4111 {
+	this := BTParameterSpecButton4111{}
 	return &this
 }
 
 // GetAdditionalLocalizedStrings returns the AdditionalLocalizedStrings field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetAdditionalLocalizedStrings() int32 {
+func (o *BTParameterSpecButton4111) GetAdditionalLocalizedStrings() int32 {
 	if o == nil || o.AdditionalLocalizedStrings == nil {
 		var ret int32
 		return ret
@@ -66,7 +61,7 @@ func (o *BTParameterSpecArray2600) GetAdditionalLocalizedStrings() int32 {
 
 // GetAdditionalLocalizedStringsOk returns a tuple with the AdditionalLocalizedStrings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetAdditionalLocalizedStringsOk() (*int32, bool) {
+func (o *BTParameterSpecButton4111) GetAdditionalLocalizedStringsOk() (*int32, bool) {
 	if o == nil || o.AdditionalLocalizedStrings == nil {
 		return nil, false
 	}
@@ -74,7 +69,7 @@ func (o *BTParameterSpecArray2600) GetAdditionalLocalizedStringsOk() (*int32, bo
 }
 
 // HasAdditionalLocalizedStrings returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasAdditionalLocalizedStrings() bool {
+func (o *BTParameterSpecButton4111) HasAdditionalLocalizedStrings() bool {
 	if o != nil && o.AdditionalLocalizedStrings != nil {
 		return true
 	}
@@ -83,12 +78,12 @@ func (o *BTParameterSpecArray2600) HasAdditionalLocalizedStrings() bool {
 }
 
 // SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
-func (o *BTParameterSpecArray2600) SetAdditionalLocalizedStrings(v int32) {
+func (o *BTParameterSpecButton4111) SetAdditionalLocalizedStrings(v int32) {
 	o.AdditionalLocalizedStrings = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetBtType() string {
+func (o *BTParameterSpecButton4111) GetBtType() string {
 	if o == nil || o.BtType == nil {
 		var ret string
 		return ret
@@ -98,7 +93,7 @@ func (o *BTParameterSpecArray2600) GetBtType() string {
 
 // GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetBtTypeOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetBtTypeOk() (*string, bool) {
 	if o == nil || o.BtType == nil {
 		return nil, false
 	}
@@ -106,7 +101,7 @@ func (o *BTParameterSpecArray2600) GetBtTypeOk() (*string, bool) {
 }
 
 // HasBtType returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasBtType() bool {
+func (o *BTParameterSpecButton4111) HasBtType() bool {
 	if o != nil && o.BtType != nil {
 		return true
 	}
@@ -115,12 +110,12 @@ func (o *BTParameterSpecArray2600) HasBtType() bool {
 }
 
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTParameterSpecArray2600) SetBtType(v string) {
+func (o *BTParameterSpecButton4111) SetBtType(v string) {
 	o.BtType = &v
 }
 
 // GetColumnName returns the ColumnName field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetColumnName() string {
+func (o *BTParameterSpecButton4111) GetColumnName() string {
 	if o == nil || o.ColumnName == nil {
 		var ret string
 		return ret
@@ -130,7 +125,7 @@ func (o *BTParameterSpecArray2600) GetColumnName() string {
 
 // GetColumnNameOk returns a tuple with the ColumnName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetColumnNameOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetColumnNameOk() (*string, bool) {
 	if o == nil || o.ColumnName == nil {
 		return nil, false
 	}
@@ -138,7 +133,7 @@ func (o *BTParameterSpecArray2600) GetColumnNameOk() (*string, bool) {
 }
 
 // HasColumnName returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasColumnName() bool {
+func (o *BTParameterSpecButton4111) HasColumnName() bool {
 	if o != nil && o.ColumnName != nil {
 		return true
 	}
@@ -147,12 +142,12 @@ func (o *BTParameterSpecArray2600) HasColumnName() bool {
 }
 
 // SetColumnName gets a reference to the given string and assigns it to the ColumnName field.
-func (o *BTParameterSpecArray2600) SetColumnName(v string) {
+func (o *BTParameterSpecButton4111) SetColumnName(v string) {
 	o.ColumnName = &v
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetDefaultValue() BTMParameter1 {
+func (o *BTParameterSpecButton4111) GetDefaultValue() BTMParameter1 {
 	if o == nil || o.DefaultValue == nil {
 		var ret BTMParameter1
 		return ret
@@ -162,7 +157,7 @@ func (o *BTParameterSpecArray2600) GetDefaultValue() BTMParameter1 {
 
 // GetDefaultValueOk returns a tuple with the DefaultValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetDefaultValueOk() (*BTMParameter1, bool) {
+func (o *BTParameterSpecButton4111) GetDefaultValueOk() (*BTMParameter1, bool) {
 	if o == nil || o.DefaultValue == nil {
 		return nil, false
 	}
@@ -170,7 +165,7 @@ func (o *BTParameterSpecArray2600) GetDefaultValueOk() (*BTMParameter1, bool) {
 }
 
 // HasDefaultValue returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasDefaultValue() bool {
+func (o *BTParameterSpecButton4111) HasDefaultValue() bool {
 	if o != nil && o.DefaultValue != nil {
 		return true
 	}
@@ -179,12 +174,12 @@ func (o *BTParameterSpecArray2600) HasDefaultValue() bool {
 }
 
 // SetDefaultValue gets a reference to the given BTMParameter1 and assigns it to the DefaultValue field.
-func (o *BTParameterSpecArray2600) SetDefaultValue(v BTMParameter1) {
+func (o *BTParameterSpecButton4111) SetDefaultValue(v BTMParameter1) {
 	o.DefaultValue = &v
 }
 
 // GetIconUri returns the IconUri field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetIconUri() string {
+func (o *BTParameterSpecButton4111) GetIconUri() string {
 	if o == nil || o.IconUri == nil {
 		var ret string
 		return ret
@@ -194,7 +189,7 @@ func (o *BTParameterSpecArray2600) GetIconUri() string {
 
 // GetIconUriOk returns a tuple with the IconUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetIconUriOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetIconUriOk() (*string, bool) {
 	if o == nil || o.IconUri == nil {
 		return nil, false
 	}
@@ -202,7 +197,7 @@ func (o *BTParameterSpecArray2600) GetIconUriOk() (*string, bool) {
 }
 
 // HasIconUri returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasIconUri() bool {
+func (o *BTParameterSpecButton4111) HasIconUri() bool {
 	if o != nil && o.IconUri != nil {
 		return true
 	}
@@ -211,12 +206,12 @@ func (o *BTParameterSpecArray2600) HasIconUri() bool {
 }
 
 // SetIconUri gets a reference to the given string and assigns it to the IconUri field.
-func (o *BTParameterSpecArray2600) SetIconUri(v string) {
+func (o *BTParameterSpecButton4111) SetIconUri(v string) {
 	o.IconUri = &v
 }
 
 // GetLocalizableName returns the LocalizableName field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetLocalizableName() string {
+func (o *BTParameterSpecButton4111) GetLocalizableName() string {
 	if o == nil || o.LocalizableName == nil {
 		var ret string
 		return ret
@@ -226,7 +221,7 @@ func (o *BTParameterSpecArray2600) GetLocalizableName() string {
 
 // GetLocalizableNameOk returns a tuple with the LocalizableName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetLocalizableNameOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetLocalizableNameOk() (*string, bool) {
 	if o == nil || o.LocalizableName == nil {
 		return nil, false
 	}
@@ -234,7 +229,7 @@ func (o *BTParameterSpecArray2600) GetLocalizableNameOk() (*string, bool) {
 }
 
 // HasLocalizableName returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasLocalizableName() bool {
+func (o *BTParameterSpecButton4111) HasLocalizableName() bool {
 	if o != nil && o.LocalizableName != nil {
 		return true
 	}
@@ -243,12 +238,12 @@ func (o *BTParameterSpecArray2600) HasLocalizableName() bool {
 }
 
 // SetLocalizableName gets a reference to the given string and assigns it to the LocalizableName field.
-func (o *BTParameterSpecArray2600) SetLocalizableName(v string) {
+func (o *BTParameterSpecButton4111) SetLocalizableName(v string) {
 	o.LocalizableName = &v
 }
 
 // GetLocalizedName returns the LocalizedName field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetLocalizedName() string {
+func (o *BTParameterSpecButton4111) GetLocalizedName() string {
 	if o == nil || o.LocalizedName == nil {
 		var ret string
 		return ret
@@ -258,7 +253,7 @@ func (o *BTParameterSpecArray2600) GetLocalizedName() string {
 
 // GetLocalizedNameOk returns a tuple with the LocalizedName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetLocalizedNameOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetLocalizedNameOk() (*string, bool) {
 	if o == nil || o.LocalizedName == nil {
 		return nil, false
 	}
@@ -266,7 +261,7 @@ func (o *BTParameterSpecArray2600) GetLocalizedNameOk() (*string, bool) {
 }
 
 // HasLocalizedName returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasLocalizedName() bool {
+func (o *BTParameterSpecButton4111) HasLocalizedName() bool {
 	if o != nil && o.LocalizedName != nil {
 		return true
 	}
@@ -275,12 +270,12 @@ func (o *BTParameterSpecArray2600) HasLocalizedName() bool {
 }
 
 // SetLocalizedName gets a reference to the given string and assigns it to the LocalizedName field.
-func (o *BTParameterSpecArray2600) SetLocalizedName(v string) {
+func (o *BTParameterSpecButton4111) SetLocalizedName(v string) {
 	o.LocalizedName = &v
 }
 
 // GetParameterDescription returns the ParameterDescription field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetParameterDescription() string {
+func (o *BTParameterSpecButton4111) GetParameterDescription() string {
 	if o == nil || o.ParameterDescription == nil {
 		var ret string
 		return ret
@@ -290,7 +285,7 @@ func (o *BTParameterSpecArray2600) GetParameterDescription() string {
 
 // GetParameterDescriptionOk returns a tuple with the ParameterDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetParameterDescriptionOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetParameterDescriptionOk() (*string, bool) {
 	if o == nil || o.ParameterDescription == nil {
 		return nil, false
 	}
@@ -298,7 +293,7 @@ func (o *BTParameterSpecArray2600) GetParameterDescriptionOk() (*string, bool) {
 }
 
 // HasParameterDescription returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasParameterDescription() bool {
+func (o *BTParameterSpecButton4111) HasParameterDescription() bool {
 	if o != nil && o.ParameterDescription != nil {
 		return true
 	}
@@ -307,12 +302,12 @@ func (o *BTParameterSpecArray2600) HasParameterDescription() bool {
 }
 
 // SetParameterDescription gets a reference to the given string and assigns it to the ParameterDescription field.
-func (o *BTParameterSpecArray2600) SetParameterDescription(v string) {
+func (o *BTParameterSpecButton4111) SetParameterDescription(v string) {
 	o.ParameterDescription = &v
 }
 
 // GetParameterId returns the ParameterId field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetParameterId() string {
+func (o *BTParameterSpecButton4111) GetParameterId() string {
 	if o == nil || o.ParameterId == nil {
 		var ret string
 		return ret
@@ -322,7 +317,7 @@ func (o *BTParameterSpecArray2600) GetParameterId() string {
 
 // GetParameterIdOk returns a tuple with the ParameterId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetParameterIdOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetParameterIdOk() (*string, bool) {
 	if o == nil || o.ParameterId == nil {
 		return nil, false
 	}
@@ -330,7 +325,7 @@ func (o *BTParameterSpecArray2600) GetParameterIdOk() (*string, bool) {
 }
 
 // HasParameterId returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasParameterId() bool {
+func (o *BTParameterSpecButton4111) HasParameterId() bool {
 	if o != nil && o.ParameterId != nil {
 		return true
 	}
@@ -339,12 +334,12 @@ func (o *BTParameterSpecArray2600) HasParameterId() bool {
 }
 
 // SetParameterId gets a reference to the given string and assigns it to the ParameterId field.
-func (o *BTParameterSpecArray2600) SetParameterId(v string) {
+func (o *BTParameterSpecButton4111) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
 // GetParameterName returns the ParameterName field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetParameterName() string {
+func (o *BTParameterSpecButton4111) GetParameterName() string {
 	if o == nil || o.ParameterName == nil {
 		var ret string
 		return ret
@@ -354,7 +349,7 @@ func (o *BTParameterSpecArray2600) GetParameterName() string {
 
 // GetParameterNameOk returns a tuple with the ParameterName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetParameterNameOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetParameterNameOk() (*string, bool) {
 	if o == nil || o.ParameterName == nil {
 		return nil, false
 	}
@@ -362,7 +357,7 @@ func (o *BTParameterSpecArray2600) GetParameterNameOk() (*string, bool) {
 }
 
 // HasParameterName returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasParameterName() bool {
+func (o *BTParameterSpecButton4111) HasParameterName() bool {
 	if o != nil && o.ParameterName != nil {
 		return true
 	}
@@ -371,12 +366,12 @@ func (o *BTParameterSpecArray2600) HasParameterName() bool {
 }
 
 // SetParameterName gets a reference to the given string and assigns it to the ParameterName field.
-func (o *BTParameterSpecArray2600) SetParameterName(v string) {
+func (o *BTParameterSpecButton4111) SetParameterName(v string) {
 	o.ParameterName = &v
 }
 
 // GetQuantityType returns the QuantityType field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetQuantityType() GBTQuantityType {
+func (o *BTParameterSpecButton4111) GetQuantityType() GBTQuantityType {
 	if o == nil || o.QuantityType == nil {
 		var ret GBTQuantityType
 		return ret
@@ -386,7 +381,7 @@ func (o *BTParameterSpecArray2600) GetQuantityType() GBTQuantityType {
 
 // GetQuantityTypeOk returns a tuple with the QuantityType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetQuantityTypeOk() (*GBTQuantityType, bool) {
+func (o *BTParameterSpecButton4111) GetQuantityTypeOk() (*GBTQuantityType, bool) {
 	if o == nil || o.QuantityType == nil {
 		return nil, false
 	}
@@ -394,7 +389,7 @@ func (o *BTParameterSpecArray2600) GetQuantityTypeOk() (*GBTQuantityType, bool) 
 }
 
 // HasQuantityType returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasQuantityType() bool {
+func (o *BTParameterSpecButton4111) HasQuantityType() bool {
 	if o != nil && o.QuantityType != nil {
 		return true
 	}
@@ -403,12 +398,12 @@ func (o *BTParameterSpecArray2600) HasQuantityType() bool {
 }
 
 // SetQuantityType gets a reference to the given GBTQuantityType and assigns it to the QuantityType field.
-func (o *BTParameterSpecArray2600) SetQuantityType(v GBTQuantityType) {
+func (o *BTParameterSpecButton4111) SetQuantityType(v GBTQuantityType) {
 	o.QuantityType = &v
 }
 
 // GetStringsToLocalize returns the StringsToLocalize field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetStringsToLocalize() []string {
+func (o *BTParameterSpecButton4111) GetStringsToLocalize() []string {
 	if o == nil || o.StringsToLocalize == nil {
 		var ret []string
 		return ret
@@ -418,7 +413,7 @@ func (o *BTParameterSpecArray2600) GetStringsToLocalize() []string {
 
 // GetStringsToLocalizeOk returns a tuple with the StringsToLocalize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetStringsToLocalizeOk() ([]string, bool) {
+func (o *BTParameterSpecButton4111) GetStringsToLocalizeOk() ([]string, bool) {
 	if o == nil || o.StringsToLocalize == nil {
 		return nil, false
 	}
@@ -426,7 +421,7 @@ func (o *BTParameterSpecArray2600) GetStringsToLocalizeOk() ([]string, bool) {
 }
 
 // HasStringsToLocalize returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasStringsToLocalize() bool {
+func (o *BTParameterSpecButton4111) HasStringsToLocalize() bool {
 	if o != nil && o.StringsToLocalize != nil {
 		return true
 	}
@@ -435,12 +430,12 @@ func (o *BTParameterSpecArray2600) HasStringsToLocalize() bool {
 }
 
 // SetStringsToLocalize gets a reference to the given []string and assigns it to the StringsToLocalize field.
-func (o *BTParameterSpecArray2600) SetStringsToLocalize(v []string) {
+func (o *BTParameterSpecButton4111) SetStringsToLocalize(v []string) {
 	o.StringsToLocalize = v
 }
 
 // GetUiHint returns the UiHint field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetUiHint() string {
+func (o *BTParameterSpecButton4111) GetUiHint() string {
 	if o == nil || o.UiHint == nil {
 		var ret string
 		return ret
@@ -450,7 +445,7 @@ func (o *BTParameterSpecArray2600) GetUiHint() string {
 
 // GetUiHintOk returns a tuple with the UiHint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetUiHintOk() (*string, bool) {
+func (o *BTParameterSpecButton4111) GetUiHintOk() (*string, bool) {
 	if o == nil || o.UiHint == nil {
 		return nil, false
 	}
@@ -458,7 +453,7 @@ func (o *BTParameterSpecArray2600) GetUiHintOk() (*string, bool) {
 }
 
 // HasUiHint returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasUiHint() bool {
+func (o *BTParameterSpecButton4111) HasUiHint() bool {
 	if o != nil && o.UiHint != nil {
 		return true
 	}
@@ -467,12 +462,12 @@ func (o *BTParameterSpecArray2600) HasUiHint() bool {
 }
 
 // SetUiHint gets a reference to the given string and assigns it to the UiHint field.
-func (o *BTParameterSpecArray2600) SetUiHint(v string) {
+func (o *BTParameterSpecButton4111) SetUiHint(v string) {
 	o.UiHint = &v
 }
 
 // GetUiHints returns the UiHints field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetUiHints() []GBTUIHint {
+func (o *BTParameterSpecButton4111) GetUiHints() []GBTUIHint {
 	if o == nil || o.UiHints == nil {
 		var ret []GBTUIHint
 		return ret
@@ -482,7 +477,7 @@ func (o *BTParameterSpecArray2600) GetUiHints() []GBTUIHint {
 
 // GetUiHintsOk returns a tuple with the UiHints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetUiHintsOk() ([]GBTUIHint, bool) {
+func (o *BTParameterSpecButton4111) GetUiHintsOk() ([]GBTUIHint, bool) {
 	if o == nil || o.UiHints == nil {
 		return nil, false
 	}
@@ -490,7 +485,7 @@ func (o *BTParameterSpecArray2600) GetUiHintsOk() ([]GBTUIHint, bool) {
 }
 
 // HasUiHints returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasUiHints() bool {
+func (o *BTParameterSpecButton4111) HasUiHints() bool {
 	if o != nil && o.UiHints != nil {
 		return true
 	}
@@ -499,12 +494,12 @@ func (o *BTParameterSpecArray2600) HasUiHints() bool {
 }
 
 // SetUiHints gets a reference to the given []GBTUIHint and assigns it to the UiHints field.
-func (o *BTParameterSpecArray2600) SetUiHints(v []GBTUIHint) {
+func (o *BTParameterSpecButton4111) SetUiHints(v []GBTUIHint) {
 	o.UiHints = v
 }
 
 // GetVisibilityCondition returns the VisibilityCondition field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetVisibilityCondition() BTParameterVisibilityCondition177 {
+func (o *BTParameterSpecButton4111) GetVisibilityCondition() BTParameterVisibilityCondition177 {
 	if o == nil || o.VisibilityCondition == nil {
 		var ret BTParameterVisibilityCondition177
 		return ret
@@ -514,7 +509,7 @@ func (o *BTParameterSpecArray2600) GetVisibilityCondition() BTParameterVisibilit
 
 // GetVisibilityConditionOk returns a tuple with the VisibilityCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool) {
+func (o *BTParameterSpecButton4111) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool) {
 	if o == nil || o.VisibilityCondition == nil {
 		return nil, false
 	}
@@ -522,7 +517,7 @@ func (o *BTParameterSpecArray2600) GetVisibilityConditionOk() (*BTParameterVisib
 }
 
 // HasVisibilityCondition returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasVisibilityCondition() bool {
+func (o *BTParameterSpecButton4111) HasVisibilityCondition() bool {
 	if o != nil && o.VisibilityCondition != nil {
 		return true
 	}
@@ -531,171 +526,11 @@ func (o *BTParameterSpecArray2600) HasVisibilityCondition() bool {
 }
 
 // SetVisibilityCondition gets a reference to the given BTParameterVisibilityCondition177 and assigns it to the VisibilityCondition field.
-func (o *BTParameterSpecArray2600) SetVisibilityCondition(v BTParameterVisibilityCondition177) {
+func (o *BTParameterSpecButton4111) SetVisibilityCondition(v BTParameterVisibilityCondition177) {
 	o.VisibilityCondition = &v
 }
 
-// GetDrivenQuery returns the DrivenQuery field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetDrivenQuery() string {
-	if o == nil || o.DrivenQuery == nil {
-		var ret string
-		return ret
-	}
-	return *o.DrivenQuery
-}
-
-// GetDrivenQueryOk returns a tuple with the DrivenQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetDrivenQueryOk() (*string, bool) {
-	if o == nil || o.DrivenQuery == nil {
-		return nil, false
-	}
-	return o.DrivenQuery, true
-}
-
-// HasDrivenQuery returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasDrivenQuery() bool {
-	if o != nil && o.DrivenQuery != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDrivenQuery gets a reference to the given string and assigns it to the DrivenQuery field.
-func (o *BTParameterSpecArray2600) SetDrivenQuery(v string) {
-	o.DrivenQuery = &v
-}
-
-// GetItemLabelTemplate returns the ItemLabelTemplate field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetItemLabelTemplate() string {
-	if o == nil || o.ItemLabelTemplate == nil {
-		var ret string
-		return ret
-	}
-	return *o.ItemLabelTemplate
-}
-
-// GetItemLabelTemplateOk returns a tuple with the ItemLabelTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetItemLabelTemplateOk() (*string, bool) {
-	if o == nil || o.ItemLabelTemplate == nil {
-		return nil, false
-	}
-	return o.ItemLabelTemplate, true
-}
-
-// HasItemLabelTemplate returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasItemLabelTemplate() bool {
-	if o != nil && o.ItemLabelTemplate != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetItemLabelTemplate gets a reference to the given string and assigns it to the ItemLabelTemplate field.
-func (o *BTParameterSpecArray2600) SetItemLabelTemplate(v string) {
-	o.ItemLabelTemplate = &v
-}
-
-// GetItemName returns the ItemName field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetItemName() string {
-	if o == nil || o.ItemName == nil {
-		var ret string
-		return ret
-	}
-	return *o.ItemName
-}
-
-// GetItemNameOk returns a tuple with the ItemName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetItemNameOk() (*string, bool) {
-	if o == nil || o.ItemName == nil {
-		return nil, false
-	}
-	return o.ItemName, true
-}
-
-// HasItemName returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasItemName() bool {
-	if o != nil && o.ItemName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetItemName gets a reference to the given string and assigns it to the ItemName field.
-func (o *BTParameterSpecArray2600) SetItemName(v string) {
-	o.ItemName = &v
-}
-
-// GetMaxNumberOfPicks returns the MaxNumberOfPicks field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetMaxNumberOfPicks() int32 {
-	if o == nil || o.MaxNumberOfPicks == nil {
-		var ret int32
-		return ret
-	}
-	return *o.MaxNumberOfPicks
-}
-
-// GetMaxNumberOfPicksOk returns a tuple with the MaxNumberOfPicks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetMaxNumberOfPicksOk() (*int32, bool) {
-	if o == nil || o.MaxNumberOfPicks == nil {
-		return nil, false
-	}
-	return o.MaxNumberOfPicks, true
-}
-
-// HasMaxNumberOfPicks returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasMaxNumberOfPicks() bool {
-	if o != nil && o.MaxNumberOfPicks != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxNumberOfPicks gets a reference to the given int32 and assigns it to the MaxNumberOfPicks field.
-func (o *BTParameterSpecArray2600) SetMaxNumberOfPicks(v int32) {
-	o.MaxNumberOfPicks = &v
-}
-
-// GetShowLabelsOnly returns the ShowLabelsOnly field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetShowLabelsOnly() bool {
-	if o == nil || o.ShowLabelsOnly == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ShowLabelsOnly
-}
-
-// GetShowLabelsOnlyOk returns a tuple with the ShowLabelsOnly field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetShowLabelsOnlyOk() (*bool, bool) {
-	if o == nil || o.ShowLabelsOnly == nil {
-		return nil, false
-	}
-	return o.ShowLabelsOnly, true
-}
-
-// HasShowLabelsOnly returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasShowLabelsOnly() bool {
-	if o != nil && o.ShowLabelsOnly != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetShowLabelsOnly gets a reference to the given bool and assigns it to the ShowLabelsOnly field.
-func (o *BTParameterSpecArray2600) SetShowLabelsOnly(v bool) {
-	o.ShowLabelsOnly = &v
-}
-
-func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
+func (o BTParameterSpecButton4111) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
@@ -742,56 +577,41 @@ func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
 	}
-	if o.DrivenQuery != nil {
-		toSerialize["drivenQuery"] = o.DrivenQuery
-	}
-	if o.ItemLabelTemplate != nil {
-		toSerialize["itemLabelTemplate"] = o.ItemLabelTemplate
-	}
-	if o.ItemName != nil {
-		toSerialize["itemName"] = o.ItemName
-	}
-	if o.MaxNumberOfPicks != nil {
-		toSerialize["maxNumberOfPicks"] = o.MaxNumberOfPicks
-	}
-	if o.ShowLabelsOnly != nil {
-		toSerialize["showLabelsOnly"] = o.ShowLabelsOnly
-	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableBTParameterSpecArray2600 struct {
-	value *BTParameterSpecArray2600
+type NullableBTParameterSpecButton4111 struct {
+	value *BTParameterSpecButton4111
 	isSet bool
 }
 
-func (v NullableBTParameterSpecArray2600) Get() *BTParameterSpecArray2600 {
+func (v NullableBTParameterSpecButton4111) Get() *BTParameterSpecButton4111 {
 	return v.value
 }
 
-func (v *NullableBTParameterSpecArray2600) Set(val *BTParameterSpecArray2600) {
+func (v *NullableBTParameterSpecButton4111) Set(val *BTParameterSpecButton4111) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBTParameterSpecArray2600) IsSet() bool {
+func (v NullableBTParameterSpecButton4111) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBTParameterSpecArray2600) Unset() {
+func (v *NullableBTParameterSpecButton4111) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBTParameterSpecArray2600(val *BTParameterSpecArray2600) *NullableBTParameterSpecArray2600 {
-	return &NullableBTParameterSpecArray2600{value: val, isSet: true}
+func NewNullableBTParameterSpecButton4111(val *BTParameterSpecButton4111) *NullableBTParameterSpecButton4111 {
+	return &NullableBTParameterSpecButton4111{value: val, isSet: true}
 }
 
-func (v NullableBTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
+func (v NullableBTParameterSpecButton4111) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBTParameterSpecArray2600) UnmarshalJSON(src []byte) error {
+func (v *NullableBTParameterSpecButton4111) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

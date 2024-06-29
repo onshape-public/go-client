@@ -180,6 +180,7 @@ type ApiGetSketchInfoRequest struct {
 	linkDocumentId  *string
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetSketchInfoRequest) Configuration(configuration string) ApiGetSketchInfoRequest {
 	r.configuration = &configuration
 	return r
@@ -205,6 +206,7 @@ func (r ApiGetSketchInfoRequest) IncludeGeometry(includeGeometry bool) ApiGetSke
 	return r
 }
 
+// Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter.
 func (r ApiGetSketchInfoRequest) LinkDocumentId(linkDocumentId string) ApiGetSketchInfoRequest {
 	r.linkDocumentId = &linkDocumentId
 	return r

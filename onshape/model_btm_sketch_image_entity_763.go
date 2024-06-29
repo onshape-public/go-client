@@ -20,6 +20,7 @@ type BTMSketchImageEntity763 struct {
 	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
 	EntityId                            *string  `json:"entityId,omitempty"`
 	EntityIdAndReplaceInDependentFields *string  `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	FunctionName                        *string  `json:"functionName,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion         *string         `json:"importMicroversion,omitempty"`
 	IsConstruction             *bool           `json:"isConstruction,omitempty"`
@@ -179,6 +180,38 @@ func (o *BTMSketchImageEntity763) HasEntityIdAndReplaceInDependentFields() bool 
 // SetEntityIdAndReplaceInDependentFields gets a reference to the given string and assigns it to the EntityIdAndReplaceInDependentFields field.
 func (o *BTMSketchImageEntity763) SetEntityIdAndReplaceInDependentFields(v string) {
 	o.EntityIdAndReplaceInDependentFields = &v
+}
+
+// GetFunctionName returns the FunctionName field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetFunctionName() string {
+	if o == nil || o.FunctionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.FunctionName
+}
+
+// GetFunctionNameOk returns a tuple with the FunctionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetFunctionNameOk() (*string, bool) {
+	if o == nil || o.FunctionName == nil {
+		return nil, false
+	}
+	return o.FunctionName, true
+}
+
+// HasFunctionName returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasFunctionName() bool {
+	if o != nil && o.FunctionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFunctionName gets a reference to the given string and assigns it to the FunctionName field.
+func (o *BTMSketchImageEntity763) SetFunctionName(v string) {
+	o.FunctionName = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -610,6 +643,9 @@ func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	}
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
+	}
+	if o.FunctionName != nil {
+		toSerialize["functionName"] = o.FunctionName
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion

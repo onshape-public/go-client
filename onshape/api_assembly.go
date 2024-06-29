@@ -659,7 +659,7 @@ func (r ApiGetAssemblyBoundingBoxesRequest) LinkDocumentId(linkDocumentId string
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetAssemblyBoundingBoxesRequest) Configuration(configuration string) ApiGetAssemblyBoundingBoxesRequest {
 	r.configuration = &configuration
 	return r
@@ -845,7 +845,7 @@ func (r ApiGetAssemblyDefinitionRequest) LinkDocumentId(linkDocumentId string) A
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetAssemblyDefinitionRequest) Configuration(configuration string) ApiGetAssemblyDefinitionRequest {
 	r.configuration = &configuration
 	return r
@@ -1029,7 +1029,7 @@ func (r ApiGetAssemblyMassPropertiesRequest) LinkDocumentId(linkDocumentId strin
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetAssemblyMassPropertiesRequest) Configuration(configuration string) ApiGetAssemblyMassPropertiesRequest {
 	r.configuration = &configuration
 	return r
@@ -1191,7 +1191,7 @@ func (r ApiGetAssemblyShadedViewsRequest) LinkDocumentId(linkDocumentId string) 
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetAssemblyShadedViewsRequest) Configuration(configuration string) ApiGetAssemblyShadedViewsRequest {
 	r.configuration = &configuration
 	return r
@@ -1439,7 +1439,7 @@ func (r ApiGetBillOfMaterialsRequest) LinkDocumentId(linkDocumentId string) ApiG
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetBillOfMaterialsRequest) Configuration(configuration string) ApiGetBillOfMaterialsRequest {
 	r.configuration = &configuration
 	return r
@@ -1690,7 +1690,7 @@ func (r ApiGetExplodedViewsRequest) LinkDocumentId(linkDocumentId string) ApiGet
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetExplodedViewsRequest) Configuration(configuration string) ApiGetExplodedViewsRequest {
 	r.configuration = &configuration
 	return r
@@ -1962,7 +1962,7 @@ func (r ApiGetFeaturesRequest) LinkDocumentId(linkDocumentId string) ApiGetFeatu
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetFeaturesRequest) Configuration(configuration string) ApiGetFeaturesRequest {
 	r.configuration = &configuration
 	return r
@@ -2121,7 +2121,7 @@ func (r ApiGetNamedPositionsRequest) LinkDocumentId(linkDocumentId string) ApiGe
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetNamedPositionsRequest) Configuration(configuration string) ApiGetNamedPositionsRequest {
 	r.configuration = &configuration
 	return r

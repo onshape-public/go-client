@@ -817,7 +817,7 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) LinkDocumentId(linkDoc
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) Configuration(configuration string) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	r.configuration = &configuration
 	return r

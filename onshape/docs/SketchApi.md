@@ -1,6 +1,6 @@
 # \SketchApi
 
-All URIs are relative to *https://cad.onshape.com/api/v6*
+All URIs are relative to *https://cad.onshape.com/api/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -117,12 +117,12 @@ func main() {
     wvm := "wvm_example" // string | 
     wvmid := "wvmid_example" // string | 
     eid := "eid_example" // string | 
-    configuration := "configuration_example" // string |  (optional)
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     sketchId := []string{"Inner_example"} // []string |  (optional)
     output3D := true // bool |  (optional) (default to false)
     curvePoints := true // bool |  (optional) (default to false)
     includeGeometry := true // bool |  (optional) (default to true)
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -158,12 +158,12 @@ Name | Type | Description  | Notes
 
 
 
- **configuration** | **string** |  | 
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | 
  **sketchId** | **[]string** |  | 
  **output3D** | **bool** |  | [default to false]
  **curvePoints** | **bool** |  | [default to false]
  **includeGeometry** | **bool** |  | [default to true]
- **linkDocumentId** | **string** |  | 
+ **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
 
 ### Return type
 

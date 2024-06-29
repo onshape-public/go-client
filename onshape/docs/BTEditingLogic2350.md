@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FunctionName** | Pointer to **string** |  | [optional] 
+**WantsClickedButton** | Pointer to **bool** |  | [optional] 
 **WantsHiddenBodies** | Pointer to **bool** |  | [optional] 
 **WantsIsCreating** | Pointer to **bool** |  | [optional] 
 **WantsSpecifiedParameters** | Pointer to **bool** |  | [optional] 
@@ -78,6 +79,31 @@ SetFunctionName sets FunctionName field to given value.
 `func (o *BTEditingLogic2350) HasFunctionName() bool`
 
 HasFunctionName returns a boolean if a field has been set.
+
+### GetWantsClickedButton
+
+`func (o *BTEditingLogic2350) GetWantsClickedButton() bool`
+
+GetWantsClickedButton returns the WantsClickedButton field if non-nil, zero value otherwise.
+
+### GetWantsClickedButtonOk
+
+`func (o *BTEditingLogic2350) GetWantsClickedButtonOk() (*bool, bool)`
+
+GetWantsClickedButtonOk returns a tuple with the WantsClickedButton field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWantsClickedButton
+
+`func (o *BTEditingLogic2350) SetWantsClickedButton(v bool)`
+
+SetWantsClickedButton sets WantsClickedButton field to given value.
+
+### HasWantsClickedButton
+
+`func (o *BTEditingLogic2350) HasWantsClickedButton() bool`
+
+HasWantsClickedButton returns a boolean if a field has been set.
 
 ### GetWantsHiddenBodies
 

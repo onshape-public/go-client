@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Explicit** | Pointer to **bool** |  | [optional] 
+**IsCosmetic** | Pointer to **bool** |  | [optional] 
 **ParameterAbbreviatedDisplayValue** | Pointer to **string** |  | [optional] 
 **ParameterDisplayValue** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
@@ -55,6 +56,31 @@ SetExplicit sets Explicit field to given value.
 `func (o *ConfigurationInfoEntry) HasExplicit() bool`
 
 HasExplicit returns a boolean if a field has been set.
+
+### GetIsCosmetic
+
+`func (o *ConfigurationInfoEntry) GetIsCosmetic() bool`
+
+GetIsCosmetic returns the IsCosmetic field if non-nil, zero value otherwise.
+
+### GetIsCosmeticOk
+
+`func (o *ConfigurationInfoEntry) GetIsCosmeticOk() (*bool, bool)`
+
+GetIsCosmeticOk returns a tuple with the IsCosmetic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCosmetic
+
+`func (o *ConfigurationInfoEntry) SetIsCosmetic(v bool)`
+
+SetIsCosmetic sets IsCosmetic field to given value.
+
+### HasIsCosmetic
+
+`func (o *ConfigurationInfoEntry) HasIsCosmetic() bool`
+
+HasIsCosmetic returns a boolean if a field has been set.
 
 ### GetParameterAbbreviatedDisplayValue
 

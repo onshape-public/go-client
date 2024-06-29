@@ -52,6 +52,8 @@ type BTDocumentParams struct {
 // will change when the set of required properties is changed
 func NewBTDocumentParams() *BTDocumentParams {
 	this := BTDocumentParams{}
+	var ownerType int32 = 0
+	this.OwnerType = &ownerType
 	return &this
 }
 
@@ -60,6 +62,8 @@ func NewBTDocumentParams() *BTDocumentParams {
 // but it doesn't guarantee that properties required by API are set
 func NewBTDocumentParamsWithDefaults() *BTDocumentParams {
 	this := BTDocumentParams{}
+	var ownerType int32 = 0
+	this.OwnerType = &ownerType
 	return &this
 }
 

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **NotRevisionManaged** | Pointer to **bool** | Set to &#x60;true&#x60; to indicate that revisions are not managed for this document. | [optional] 
 **OwnerEmail** | Pointer to **string** | The document owner&#39;s email address. | [optional] 
 **OwnerId** | Pointer to **string** | If &#x60;ownerType&#x3D;USER&#x60;, this is the user ID. If &#x60;ownerType&#x3D;COMPANY&#x60;, this is the company ID. | [optional] 
-**OwnerType** | Pointer to **int32** | The document&#39;s owner type. &#x60;USER&#x3D;0&#x60; | &#x60;COMPANY&#x3D;1&#x60; | &#x60;ONSHAPE&#x3D;2&#x60; | [optional] 
+**OwnerType** | Pointer to **int32** | The document&#39;s owner type. &#x60;USER&#x3D;0&#x60; | &#x60;COMPANY&#x3D;1&#x60; | &#x60;ONSHAPE&#x3D;2&#x60; | [optional] [default to 0]
 **ParentId** | Pointer to **string** | Document ID of this document&#39;s parent. | [optional] 
 **ProjectId** | Pointer to **string** | ID of the project this document belongs to. | [optional] 
 **Tags** | Pointer to **[]string** | Array of strings to set as tags for the document. | [optional] 

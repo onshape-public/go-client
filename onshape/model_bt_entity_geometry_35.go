@@ -222,56 +222,6 @@ func (o *BTEntityGeometry35) SetDecompressed(v BTEntityGeometry35) {
 	o.GetActualInstance().(getResult).SetDecompressed(v)
 }
 
-// GetEdge returns the Edge field value if set, zero value otherwise.
-func (o *BTEntityGeometry35) GetEdge() bool {
-	type getResult interface {
-		GetEdge() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetEdge()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetEdgeOk returns a tuple with the Edge field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTEntityGeometry35) GetEdgeOk() (*bool, bool) {
-	type getResult interface {
-		GetEdgeOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetEdgeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasEdge returns a boolean if a field has been set.
-func (o *BTEntityGeometry35) HasEdge() bool {
-	type getResult interface {
-		HasEdge() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasEdge()
-	} else {
-		return false
-	}
-}
-
-// SetEdge gets a reference to the given bool and assigns it to the Edge field.
-func (o *BTEntityGeometry35) SetEdge(v bool) {
-	type getResult interface {
-		SetEdge(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetEdge(v)
-}
-
 // GetErrorCode returns the ErrorCode field value if set, zero value otherwise.
 func (o *BTEntityGeometry35) GetErrorCode() int32 {
 	type getResult interface {
@@ -372,56 +322,6 @@ func (o *BTEntityGeometry35) SetEstimatedMemoryUsageInBytes(v int32) {
 	o.GetActualInstance().(getResult).SetEstimatedMemoryUsageInBytes(v)
 }
 
-// GetFace returns the Face field value if set, zero value otherwise.
-func (o *BTEntityGeometry35) GetFace() bool {
-	type getResult interface {
-		GetFace() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFace()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetFaceOk returns a tuple with the Face field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTEntityGeometry35) GetFaceOk() (*bool, bool) {
-	type getResult interface {
-		GetFaceOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFaceOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasFace returns a boolean if a field has been set.
-func (o *BTEntityGeometry35) HasFace() bool {
-	type getResult interface {
-		HasFace() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasFace()
-	} else {
-		return false
-	}
-}
-
-// SetFace gets a reference to the given bool and assigns it to the Face field.
-func (o *BTEntityGeometry35) SetFace(v bool) {
-	type getResult interface {
-		SetFace(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetFace(v)
-}
-
 // GetHasTessellationError returns the HasTessellationError field value if set, zero value otherwise.
 func (o *BTEntityGeometry35) GetHasTessellationError() bool {
 	type getResult interface {
@@ -470,56 +370,6 @@ func (o *BTEntityGeometry35) SetHasTessellationError(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetHasTessellationError(v)
-}
-
-// GetPoint returns the Point field value if set, zero value otherwise.
-func (o *BTEntityGeometry35) GetPoint() bool {
-	type getResult interface {
-		GetPoint() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetPoint()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetPointOk returns a tuple with the Point field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTEntityGeometry35) GetPointOk() (*bool, bool) {
-	type getResult interface {
-		GetPointOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetPointOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasPoint returns a boolean if a field has been set.
-func (o *BTEntityGeometry35) HasPoint() bool {
-	type getResult interface {
-		HasPoint() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasPoint()
-	} else {
-		return false
-	}
-}
-
-// SetPoint gets a reference to the given bool and assigns it to the Point field.
-func (o *BTEntityGeometry35) SetPoint(v bool) {
-	type getResult interface {
-		SetPoint(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetPoint(v)
 }
 
 // GetSettingIndex returns the SettingIndex field value if set, zero value otherwise.
@@ -750,12 +600,9 @@ type base_BTEntityGeometry35 struct {
 	BtType                      *string             `json:"btType,omitempty"`
 	Compressed                  *bool               `json:"compressed,omitempty"`
 	Decompressed                *BTEntityGeometry35 `json:"decompressed,omitempty"`
-	Edge                        *bool               `json:"edge,omitempty"`
 	ErrorCode                   *int32              `json:"errorCode,omitempty"`
 	EstimatedMemoryUsageInBytes *int32              `json:"estimatedMemoryUsageInBytes,omitempty"`
-	Face                        *bool               `json:"face,omitempty"`
 	HasTessellationError        *bool               `json:"hasTessellationError,omitempty"`
-	Point                       *bool               `json:"point,omitempty"`
 	SettingIndex                *int32              `json:"settingIndex,omitempty"`
 }
 
@@ -872,38 +719,6 @@ func (o *base_BTEntityGeometry35) SetDecompressed(v BTEntityGeometry35) {
 	o.Decompressed = &v
 }
 
-// GetEdge returns the Edge field value if set, zero value otherwise.
-func (o *base_BTEntityGeometry35) GetEdge() bool {
-	if o == nil || o.Edge == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Edge
-}
-
-// GetEdgeOk returns a tuple with the Edge field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTEntityGeometry35) GetEdgeOk() (*bool, bool) {
-	if o == nil || o.Edge == nil {
-		return nil, false
-	}
-	return o.Edge, true
-}
-
-// HasEdge returns a boolean if a field has been set.
-func (o *base_BTEntityGeometry35) HasEdge() bool {
-	if o != nil && o.Edge != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetEdge gets a reference to the given bool and assigns it to the Edge field.
-func (o *base_BTEntityGeometry35) SetEdge(v bool) {
-	o.Edge = &v
-}
-
 // GetErrorCode returns the ErrorCode field value if set, zero value otherwise.
 func (o *base_BTEntityGeometry35) GetErrorCode() int32 {
 	if o == nil || o.ErrorCode == nil {
@@ -968,38 +783,6 @@ func (o *base_BTEntityGeometry35) SetEstimatedMemoryUsageInBytes(v int32) {
 	o.EstimatedMemoryUsageInBytes = &v
 }
 
-// GetFace returns the Face field value if set, zero value otherwise.
-func (o *base_BTEntityGeometry35) GetFace() bool {
-	if o == nil || o.Face == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Face
-}
-
-// GetFaceOk returns a tuple with the Face field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTEntityGeometry35) GetFaceOk() (*bool, bool) {
-	if o == nil || o.Face == nil {
-		return nil, false
-	}
-	return o.Face, true
-}
-
-// HasFace returns a boolean if a field has been set.
-func (o *base_BTEntityGeometry35) HasFace() bool {
-	if o != nil && o.Face != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFace gets a reference to the given bool and assigns it to the Face field.
-func (o *base_BTEntityGeometry35) SetFace(v bool) {
-	o.Face = &v
-}
-
 // GetHasTessellationError returns the HasTessellationError field value if set, zero value otherwise.
 func (o *base_BTEntityGeometry35) GetHasTessellationError() bool {
 	if o == nil || o.HasTessellationError == nil {
@@ -1030,38 +813,6 @@ func (o *base_BTEntityGeometry35) HasHasTessellationError() bool {
 // SetHasTessellationError gets a reference to the given bool and assigns it to the HasTessellationError field.
 func (o *base_BTEntityGeometry35) SetHasTessellationError(v bool) {
 	o.HasTessellationError = &v
-}
-
-// GetPoint returns the Point field value if set, zero value otherwise.
-func (o *base_BTEntityGeometry35) GetPoint() bool {
-	if o == nil || o.Point == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Point
-}
-
-// GetPointOk returns a tuple with the Point field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTEntityGeometry35) GetPointOk() (*bool, bool) {
-	if o == nil || o.Point == nil {
-		return nil, false
-	}
-	return o.Point, true
-}
-
-// HasPoint returns a boolean if a field has been set.
-func (o *base_BTEntityGeometry35) HasPoint() bool {
-	if o != nil && o.Point != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPoint gets a reference to the given bool and assigns it to the Point field.
-func (o *base_BTEntityGeometry35) SetPoint(v bool) {
-	o.Point = &v
 }
 
 // GetSettingIndex returns the SettingIndex field value if set, zero value otherwise.
@@ -1107,23 +858,14 @@ func (o base_BTEntityGeometry35) MarshalJSON() ([]byte, error) {
 	if o.Decompressed != nil {
 		toSerialize["decompressed"] = o.Decompressed
 	}
-	if o.Edge != nil {
-		toSerialize["edge"] = o.Edge
-	}
 	if o.ErrorCode != nil {
 		toSerialize["errorCode"] = o.ErrorCode
 	}
 	if o.EstimatedMemoryUsageInBytes != nil {
 		toSerialize["estimatedMemoryUsageInBytes"] = o.EstimatedMemoryUsageInBytes
 	}
-	if o.Face != nil {
-		toSerialize["face"] = o.Face
-	}
 	if o.HasTessellationError != nil {
 		toSerialize["hasTessellationError"] = o.HasTessellationError
-	}
-	if o.Point != nil {
-		toSerialize["point"] = o.Point
 	}
 	if o.SettingIndex != nil {
 		toSerialize["settingIndex"] = o.SettingIndex

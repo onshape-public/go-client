@@ -19,9 +19,9 @@ type BTDocumentSearchParams struct {
 	// Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team).
 	DocumentFilter *int32                      `json:"documentFilter,omitempty"`
 	FoundIn        *BTESVersionWorkspaceChoice `json:"foundIn,omitempty"`
-	// Number of results to return per page. Default value is 20 (also the maximum).
+	// Number of results to return per page.
 	Limit *int32 `json:"limit,omitempty"`
-	// Offset. Determines where search results begin. Default value is 0.
+	// Offset. Determines where search results begin.
 	Offset *int32 `json:"offset,omitempty"`
 	// Document owner's ID (if the filter is 6 or 7), or Team Id (if the filter is 9)
 	OwnerId *string `json:"ownerId,omitempty"`
@@ -29,9 +29,9 @@ type BTDocumentSearchParams struct {
 	ParentId *string `json:"parentId,omitempty"`
 	// Search for documents that contain the given string in the name. Search is not case-sensitive.
 	RawQuery *string `json:"rawQuery,omitempty"`
-	// Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt.
+	// Column by which to sort search results. `name | modifiedAt | createdAt | email | modifiedBy | promotedAt`
 	SortColumn *string `json:"sortColumn,omitempty"`
-	// Sort order. Options are desc (descending, the default), or asc (ascending).
+	// Sort order. `desc (descending) | asc (ascending)`
 	SortOrder *string `json:"sortOrder,omitempty"`
 	// Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified.
 	Type *string            `json:"type,omitempty"`
@@ -44,6 +44,14 @@ type BTDocumentSearchParams struct {
 // will change when the set of required properties is changed
 func NewBTDocumentSearchParams() *BTDocumentSearchParams {
 	this := BTDocumentSearchParams{}
+	var limit int32 = 20
+	this.Limit = &limit
+	var offset int32 = 0
+	this.Offset = &offset
+	var sortColumn string = "createdAt"
+	this.SortColumn = &sortColumn
+	var sortOrder string = "desc"
+	this.SortOrder = &sortOrder
 	return &this
 }
 
@@ -52,6 +60,14 @@ func NewBTDocumentSearchParams() *BTDocumentSearchParams {
 // but it doesn't guarantee that properties required by API are set
 func NewBTDocumentSearchParamsWithDefaults() *BTDocumentSearchParams {
 	this := BTDocumentSearchParams{}
+	var limit int32 = 20
+	this.Limit = &limit
+	var offset int32 = 0
+	this.Offset = &offset
+	var sortColumn string = "createdAt"
+	this.SortColumn = &sortColumn
+	var sortOrder string = "desc"
+	this.SortOrder = &sortOrder
 	return &this
 }
 

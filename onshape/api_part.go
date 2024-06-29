@@ -190,7 +190,7 @@ func (r ApiExportPartGltfRequest) LinkDocumentId(linkDocumentId string) ApiExpor
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiExportPartGltfRequest) Configuration(configuration string) ApiExportPartGltfRequest {
 	r.configuration = &configuration
 	return r
@@ -766,7 +766,7 @@ func (r ApiGetBodyDetailsRequest) LinkDocumentId(linkDocumentId string) ApiGetBo
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetBodyDetailsRequest) Configuration(configuration string) ApiGetBodyDetailsRequest {
 	r.configuration = &configuration
 	return r
@@ -1098,7 +1098,7 @@ func (r ApiGetEdgesRequest) LinkDocumentId(linkDocumentId string) ApiGetEdgesReq
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetEdgesRequest) Configuration(configuration string) ApiGetEdgesRequest {
 	r.configuration = &configuration
 	return r
@@ -1317,7 +1317,7 @@ func (r ApiGetFaces1Request) LinkDocumentId(linkDocumentId string) ApiGetFaces1R
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetFaces1Request) Configuration(configuration string) ApiGetFaces1Request {
 	r.configuration = &configuration
 	return r
@@ -1590,7 +1590,7 @@ func (r ApiGetMassPropertiesRequest) LinkDocumentId(linkDocumentId string) ApiGe
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetMassPropertiesRequest) Configuration(configuration string) ApiGetMassPropertiesRequest {
 	r.configuration = &configuration
 	return r
@@ -2165,7 +2165,7 @@ func (r ApiGetPartsWMVERequest) IncludeFlatParts(includeFlatParts bool) ApiGetPa
 	return r
 }
 
-// URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition.
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetPartsWMVERequest) Configuration(configuration string) ApiGetPartsWMVERequest {
 	r.configuration = &configuration
 	return r

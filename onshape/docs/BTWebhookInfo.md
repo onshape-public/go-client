@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **FolderId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
-**IsTransient** | Pointer to **bool** | Transient webhooks are automatically cleaned up after a period of inactivity. | [optional] 
+**IsTransient** | Pointer to **bool** | Transient webhooks are automatically cleaned up after a period of inactivity. | [optional] [default to true]
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 

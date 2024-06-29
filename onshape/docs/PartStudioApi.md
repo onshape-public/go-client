@@ -1,6 +1,6 @@
 # \PartStudioApi
 
-All URIs are relative to *https://cad.onshape.com/api/v6*
+All URIs are relative to *https://cad.onshape.com/api/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -458,7 +458,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     bTFeatureScriptEvalCall2377 := *openapiclient.NewBTFeatureScriptEvalCall2377() // BTFeatureScriptEvalCall2377 |  (optional)
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **bTFeatureScriptEvalCall2377** | [**BTFeatureScriptEvalCall2377**](BTFeatureScriptEvalCall2377.md) |  | 
@@ -549,7 +549,7 @@ func main() {
     partIds := "partIds_example" // string | IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds=JHK,JHD). (optional)
     version := "version_example" // string | Parasolid version (optional) (default to "0")
     includeExportIds := true // bool | Whether topology ids should be exported as parasolid attributes (optional) (default to false)
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional)
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
     binaryExport := true // bool | Whether to use binary parasolid format instead of text (optional) (default to false)
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
  **partIds** | **string** | IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds&#x3D;JHK,JHD). | 
  **version** | **string** | Parasolid version | [default to &quot;0&quot;]
  **includeExportIds** | **bool** | Whether topology ids should be exported as parasolid attributes | [default to false]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | 
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | 
  **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
  **binaryExport** | **bool** | Whether to use binary parasolid format instead of text | [default to false]
 
@@ -636,7 +636,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     partId := []string{"Inner_example"} // []string |  (optional)
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **partId** | **[]string** |  | 
@@ -747,7 +747,7 @@ func main() {
     chordTolerance := float64(1.2) // float64 | Chord tolerance (in meters). This specifies the limit on the maximum deviation of a tessellation chord from the true surface/edge. This parameter currently has a default value chosen based on the size and complexity of the parts being tessellated. (optional)
     maxFacetWidth := float64(1.2) // float64 | Max facet width. This specifies the limit on the size of any side of a tessellation facet. (optional)
     minFacetWidth := float64(1.2) // float64 | Max facet width. This specifies the limit on the size of any side of a tessellation facet. (optional)
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional)
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
  **chordTolerance** | **float64** | Chord tolerance (in meters). This specifies the limit on the maximum deviation of a tessellation chord from the true surface/edge. This parameter currently has a default value chosen based on the size and complexity of the parts being tessellated. | 
  **maxFacetWidth** | **float64** | Max facet width. This specifies the limit on the size of any side of a tessellation facet. | 
  **minFacetWidth** | **float64** | Max facet width. This specifies the limit on the size of any side of a tessellation facet. | 
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | 
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | 
  **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
 
 ### Return type
@@ -836,7 +836,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
 
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
 
@@ -1010,7 +1010,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     partIds := []string{"Inner_example"} // []string | If specified, the response will only include body details for the specific parts as indicated here by their corresponding Id (optional)
@@ -1053,7 +1053,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **partIds** | **[]string** | If specified, the response will only include body details for the specific parts as indicated here by their corresponding Id | 
@@ -1104,7 +1104,7 @@ func main() {
     eid := "eid_example" // string | Element ID.
     includeHidden := true // bool | Whether or not to include bounding boxes for hidden parts. (optional) (default to false)
     includeWireBodies := true // bool | Whether to include wire bodies in the bounding box. (optional) (default to true)
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional)
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -1143,7 +1143,7 @@ Name | Type | Description  | Notes
 
  **includeHidden** | **bool** | Whether or not to include bounding boxes for hidden parts. | [default to false]
  **includeWireBodies** | **bool** | Whether to include wire bodies in the bounding box. | [default to true]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | 
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | 
  **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
 
 ### Return type
@@ -1190,7 +1190,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     partId := []string{"Inner_example"} // []string |  (optional)
@@ -1234,7 +1234,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **partId** | **[]string** |  | 
@@ -1287,7 +1287,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     partId := []string{"Inner_example"} // []string |  (optional)
@@ -1339,7 +1339,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **partId** | **[]string** |  | 
@@ -1479,7 +1479,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     includeGeometryIds := true // bool | If true, include the underlying geometry IDs in the feature definition. (optional) (default to true)
@@ -1521,7 +1521,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **includeGeometryIds** | **bool** | If true, include the underlying geometry IDs in the feature definition. | [default to true]
@@ -1572,7 +1572,7 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     partId := []string{"Inner_example"} // []string |  (optional)
@@ -1614,7 +1614,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **rollbackBarIndex** | **int32** | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. | [default to -1]
  **elementMicroversionId** | **string** | A specific element microversion in which to evaluate the request. | 
  **partId** | **[]string** |  | 
@@ -1750,7 +1750,7 @@ func main() {
     includeSurfaces := true // bool | Whether or not surfaces should be shown in the element. It is applicable only when showAllParts is true. If false, surfaces will be excluded. If true, all surfaces will be shown. (optional) (default to false)
     useAntiAliasing := true // bool | If true, an anti-aliasing factor will be used to smooth model boundaries in the final image result. If false, the image will be rasterized at the given resolution. Setting to true can have negative performance implications with respect to rendering time and memory usage. If a high-resolution image is requested and anti-aliasing is turned on, the server may not be able to fulfill the request. (optional) (default to false)
     includeWires := true // bool |  (optional) (default to false)
-    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`) for the feature definition. (optional)
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -1796,7 +1796,7 @@ Name | Type | Description  | Notes
  **includeSurfaces** | **bool** | Whether or not surfaces should be shown in the element. It is applicable only when showAllParts is true. If false, surfaces will be excluded. If true, all surfaces will be shown. | [default to false]
  **useAntiAliasing** | **bool** | If true, an anti-aliasing factor will be used to smooth model boundaries in the final image result. If false, the image will be rasterized at the given resolution. Setting to true can have negative performance implications with respect to rendering time and memory usage. If a high-resolution image is requested and anti-aliasing is turned on, the server may not be able to fulfill the request. | [default to false]
  **includeWires** | **bool** |  | [default to false]
- **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;) for the feature definition. | 
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | 
  **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
 
 ### Return type
