@@ -40,7 +40,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Onshape REST API API v1.183.38954-76487f8616b2
+// APIClient manages communication with the Onshape REST API API v1.183.39039-a68612a2e36c
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
