@@ -16,6 +16,7 @@ import (
 
 // BTPartStudioDisplayDataReference4360 struct for BTPartStudioDisplayDataReference4360
 type BTPartStudioDisplayDataReference4360 struct {
+	AnnotationsForElement                  *BTAnnotationElementDisplayData894            `json:"annotationsForElement,omitempty"`
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
 	FromFullElementId                      *BTFullElementId756                           `json:"fromFullElementId,omitempty"`
@@ -48,6 +49,38 @@ func NewBTPartStudioDisplayDataReference4360() *BTPartStudioDisplayDataReference
 func NewBTPartStudioDisplayDataReference4360WithDefaults() *BTPartStudioDisplayDataReference4360 {
 	this := BTPartStudioDisplayDataReference4360{}
 	return &this
+}
+
+// GetAnnotationsForElement returns the AnnotationsForElement field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayDataReference4360) GetAnnotationsForElement() BTAnnotationElementDisplayData894 {
+	if o == nil || o.AnnotationsForElement == nil {
+		var ret BTAnnotationElementDisplayData894
+		return ret
+	}
+	return *o.AnnotationsForElement
+}
+
+// GetAnnotationsForElementOk returns a tuple with the AnnotationsForElement field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayDataReference4360) GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool) {
+	if o == nil || o.AnnotationsForElement == nil {
+		return nil, false
+	}
+	return o.AnnotationsForElement, true
+}
+
+// HasAnnotationsForElement returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayDataReference4360) HasAnnotationsForElement() bool {
+	if o != nil && o.AnnotationsForElement != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationsForElement gets a reference to the given BTAnnotationElementDisplayData894 and assigns it to the AnnotationsForElement field.
+func (o *BTPartStudioDisplayDataReference4360) SetAnnotationsForElement(v BTAnnotationElementDisplayData894) {
+	o.AnnotationsForElement = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -532,6 +565,9 @@ func (o *BTPartStudioDisplayDataReference4360) SetTessellationSettings(v map[str
 
 func (o BTPartStudioDisplayDataReference4360) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AnnotationsForElement != nil {
+		toSerialize["annotationsForElement"] = o.AnnotationsForElement
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

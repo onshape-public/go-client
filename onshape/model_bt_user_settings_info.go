@@ -27,12 +27,14 @@ type BTUserSettingsInfo struct {
 	ExportSolidOptions              *string                                `json:"exportSolidOptions,omitempty"`
 	GraphicsRenderMode              *string                                `json:"graphicsRenderMode,omitempty"`
 	GraphicsSmoothEdge              *string                                `json:"graphicsSmoothEdge,omitempty"`
+	HighlightLaminarEdges           *string                                `json:"highlightLaminarEdges,omitempty"`
 	Id                              *string                                `json:"id,omitempty"`
 	ImportOptions                   *string                                `json:"importOptions,omitempty"`
 	Locale                          *string                                `json:"locale,omitempty"`
 	MaterialLibrarySettings         *BTMaterialLibrarySettingsInfo         `json:"materialLibrarySettings,omitempty"`
 	MiniToolbarSettings             *string                                `json:"miniToolbarSettings,omitempty"`
 	MouseActions                    *string                                `json:"mouseActions,omitempty"`
+	PerspectiveModeOn               *string                                `json:"perspectiveModeOn,omitempty"`
 	PreviousSketchFont              *string                                `json:"previousSketchFont,omitempty"`
 	ReverseScrollWheelZoomDirection *bool                                  `json:"reverseScrollWheelZoomDirection,omitempty"`
 	SelectItemViewStateInfos        []BTSelectItemViewStateInfo            `json:"selectItemViewStateInfos,omitempty"`
@@ -416,6 +418,38 @@ func (o *BTUserSettingsInfo) SetGraphicsSmoothEdge(v string) {
 	o.GraphicsSmoothEdge = &v
 }
 
+// GetHighlightLaminarEdges returns the HighlightLaminarEdges field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetHighlightLaminarEdges() string {
+	if o == nil || o.HighlightLaminarEdges == nil {
+		var ret string
+		return ret
+	}
+	return *o.HighlightLaminarEdges
+}
+
+// GetHighlightLaminarEdgesOk returns a tuple with the HighlightLaminarEdges field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetHighlightLaminarEdgesOk() (*string, bool) {
+	if o == nil || o.HighlightLaminarEdges == nil {
+		return nil, false
+	}
+	return o.HighlightLaminarEdges, true
+}
+
+// HasHighlightLaminarEdges returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasHighlightLaminarEdges() bool {
+	if o != nil && o.HighlightLaminarEdges != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHighlightLaminarEdges gets a reference to the given string and assigns it to the HighlightLaminarEdges field.
+func (o *BTUserSettingsInfo) SetHighlightLaminarEdges(v string) {
+	o.HighlightLaminarEdges = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetId() string {
 	if o == nil || o.Id == nil {
@@ -606,6 +640,38 @@ func (o *BTUserSettingsInfo) HasMouseActions() bool {
 // SetMouseActions gets a reference to the given string and assigns it to the MouseActions field.
 func (o *BTUserSettingsInfo) SetMouseActions(v string) {
 	o.MouseActions = &v
+}
+
+// GetPerspectiveModeOn returns the PerspectiveModeOn field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetPerspectiveModeOn() string {
+	if o == nil || o.PerspectiveModeOn == nil {
+		var ret string
+		return ret
+	}
+	return *o.PerspectiveModeOn
+}
+
+// GetPerspectiveModeOnOk returns a tuple with the PerspectiveModeOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetPerspectiveModeOnOk() (*string, bool) {
+	if o == nil || o.PerspectiveModeOn == nil {
+		return nil, false
+	}
+	return o.PerspectiveModeOn, true
+}
+
+// HasPerspectiveModeOn returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasPerspectiveModeOn() bool {
+	if o != nil && o.PerspectiveModeOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPerspectiveModeOn gets a reference to the given string and assigns it to the PerspectiveModeOn field.
+func (o *BTUserSettingsInfo) SetPerspectiveModeOn(v string) {
+	o.PerspectiveModeOn = &v
 }
 
 // GetPreviousSketchFont returns the PreviousSketchFont field value if set, zero value otherwise.
@@ -1027,6 +1093,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	if o.GraphicsSmoothEdge != nil {
 		toSerialize["graphicsSmoothEdge"] = o.GraphicsSmoothEdge
 	}
+	if o.HighlightLaminarEdges != nil {
+		toSerialize["highlightLaminarEdges"] = o.HighlightLaminarEdges
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
@@ -1044,6 +1113,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.MouseActions != nil {
 		toSerialize["mouseActions"] = o.MouseActions
+	}
+	if o.PerspectiveModeOn != nil {
+		toSerialize["perspectiveModeOn"] = o.PerspectiveModeOn
 	}
 	if o.PreviousSketchFont != nil {
 		toSerialize["previousSketchFont"] = o.PreviousSketchFont

@@ -15,12 +15,14 @@ Name | Type | Description | Notes
 **ExportSolidOptions** | Pointer to **string** |  | [optional] 
 **GraphicsRenderMode** | Pointer to **string** |  | [optional] 
 **GraphicsSmoothEdge** | Pointer to **string** |  | [optional] 
+**HighlightLaminarEdges** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **ImportOptions** | Pointer to **string** |  | [optional] 
 **Locale** | Pointer to **string** |  | [optional] 
 **MaterialLibrarySettings** | Pointer to [**BTMaterialLibrarySettingsInfo**](BTMaterialLibrarySettingsInfo.md) |  | [optional] 
 **MiniToolbarSettings** | Pointer to **string** |  | [optional] 
 **MouseActions** | Pointer to **string** |  | [optional] 
+**PerspectiveModeOn** | Pointer to **string** |  | [optional] 
 **PreviousSketchFont** | Pointer to **string** |  | [optional] 
 **ReverseScrollWheelZoomDirection** | Pointer to **bool** |  | [optional] 
 **SelectItemViewStateInfos** | Pointer to [**[]BTSelectItemViewStateInfo**](BTSelectItemViewStateInfo.md) |  | [optional] 
@@ -328,6 +330,31 @@ SetGraphicsSmoothEdge sets GraphicsSmoothEdge field to given value.
 
 HasGraphicsSmoothEdge returns a boolean if a field has been set.
 
+### GetHighlightLaminarEdges
+
+`func (o *BTUserSettingsInfo) GetHighlightLaminarEdges() string`
+
+GetHighlightLaminarEdges returns the HighlightLaminarEdges field if non-nil, zero value otherwise.
+
+### GetHighlightLaminarEdgesOk
+
+`func (o *BTUserSettingsInfo) GetHighlightLaminarEdgesOk() (*string, bool)`
+
+GetHighlightLaminarEdgesOk returns a tuple with the HighlightLaminarEdges field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHighlightLaminarEdges
+
+`func (o *BTUserSettingsInfo) SetHighlightLaminarEdges(v string)`
+
+SetHighlightLaminarEdges sets HighlightLaminarEdges field to given value.
+
+### HasHighlightLaminarEdges
+
+`func (o *BTUserSettingsInfo) HasHighlightLaminarEdges() bool`
+
+HasHighlightLaminarEdges returns a boolean if a field has been set.
+
 ### GetId
 
 `func (o *BTUserSettingsInfo) GetId() string`
@@ -477,6 +504,31 @@ SetMouseActions sets MouseActions field to given value.
 `func (o *BTUserSettingsInfo) HasMouseActions() bool`
 
 HasMouseActions returns a boolean if a field has been set.
+
+### GetPerspectiveModeOn
+
+`func (o *BTUserSettingsInfo) GetPerspectiveModeOn() string`
+
+GetPerspectiveModeOn returns the PerspectiveModeOn field if non-nil, zero value otherwise.
+
+### GetPerspectiveModeOnOk
+
+`func (o *BTUserSettingsInfo) GetPerspectiveModeOnOk() (*string, bool)`
+
+GetPerspectiveModeOnOk returns a tuple with the PerspectiveModeOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPerspectiveModeOn
+
+`func (o *BTUserSettingsInfo) SetPerspectiveModeOn(v string)`
+
+SetPerspectiveModeOn sets PerspectiveModeOn field to given value.
+
+### HasPerspectiveModeOn
+
+`func (o *BTUserSettingsInfo) HasPerspectiveModeOn() bool`
+
+HasPerspectiveModeOn returns a boolean if a field has been set.
 
 ### GetPreviousSketchFont
 

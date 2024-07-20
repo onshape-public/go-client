@@ -3041,6 +3041,8 @@
 
 * `GBTErrorStringEnumReferenceRepairMissingConfiguration` (value: `"REFERENCE_REPAIR_MISSING_CONFIGURATION"`)
 
+* `GBTErrorStringEnumSketchCannotMake2PointsBezier` (value: `"SKETCH_CANNOT_MAKE_2_POINTS_BEZIER"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

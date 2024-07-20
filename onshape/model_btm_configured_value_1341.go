@@ -97,56 +97,6 @@ func (o *BTMConfiguredValue1341) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
-// GetConfigurationValueString returns the ConfigurationValueString field value if set, zero value otherwise.
-func (o *BTMConfiguredValue1341) GetConfigurationValueString() string {
-	type getResult interface {
-		GetConfigurationValueString() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetConfigurationValueString()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetConfigurationValueStringOk returns a tuple with the ConfigurationValueString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMConfiguredValue1341) GetConfigurationValueStringOk() (*string, bool) {
-	type getResult interface {
-		GetConfigurationValueStringOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetConfigurationValueStringOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasConfigurationValueString returns a boolean if a field has been set.
-func (o *BTMConfiguredValue1341) HasConfigurationValueString() bool {
-	type getResult interface {
-		HasConfigurationValueString() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasConfigurationValueString()
-	} else {
-		return false
-	}
-}
-
-// SetConfigurationValueString gets a reference to the given string and assigns it to the ConfigurationValueString field.
-func (o *BTMConfiguredValue1341) SetConfigurationValueString(v string) {
-	type getResult interface {
-		SetConfigurationValueString(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetConfigurationValueString(v)
-}
-
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
 func (o *BTMConfiguredValue1341) GetImportMicroversion() string {
 	type getResult interface {
@@ -245,6 +195,56 @@ func (o *BTMConfiguredValue1341) SetNodeId(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetNodeId(v)
+}
+
+// GetConfigurationValueString returns the ConfigurationValueString field value if set, zero value otherwise.
+func (o *BTMConfiguredValue1341) GetConfigurationValueString() string {
+	type getResult interface {
+		GetConfigurationValueString() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConfigurationValueString()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetConfigurationValueStringOk returns a tuple with the ConfigurationValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfiguredValue1341) GetConfigurationValueStringOk() (*string, bool) {
+	type getResult interface {
+		GetConfigurationValueStringOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConfigurationValueStringOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasConfigurationValueString returns a boolean if a field has been set.
+func (o *BTMConfiguredValue1341) HasConfigurationValueString() bool {
+	type getResult interface {
+		HasConfigurationValueString() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasConfigurationValueString()
+	} else {
+		return false
+	}
+}
+
+// SetConfigurationValueString gets a reference to the given string and assigns it to the ConfigurationValueString field.
+func (o *BTMConfiguredValue1341) SetConfigurationValueString(v string) {
+	type getResult interface {
+		SetConfigurationValueString(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetConfigurationValueString(v)
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -401,13 +401,12 @@ func (v *NullableBTMConfiguredValue1341) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMConfiguredValue1341 struct {
-	// Type of JSON object.
-	BtType                   *string `json:"btType,omitempty"`
-	ConfigurationValueString *string `json:"configurationValueString,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion *string        `json:"importMicroversion,omitempty"`
-	NodeId             *string        `json:"nodeId,omitempty"`
-	Value              *BTMParameter1 `json:"value,omitempty"`
+	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
+	NodeId                   *string        `json:"nodeId,omitempty"`
+	ConfigurationValueString *string        `json:"configurationValueString,omitempty"`
+	Value                    *BTMParameter1 `json:"value,omitempty"`
 }
 
 // Newbase_BTMConfiguredValue1341 instantiates a new base_BTMConfiguredValue1341 object
@@ -457,38 +456,6 @@ func (o *base_BTMConfiguredValue1341) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTMConfiguredValue1341) SetBtType(v string) {
 	o.BtType = &v
-}
-
-// GetConfigurationValueString returns the ConfigurationValueString field value if set, zero value otherwise.
-func (o *base_BTMConfiguredValue1341) GetConfigurationValueString() string {
-	if o == nil || o.ConfigurationValueString == nil {
-		var ret string
-		return ret
-	}
-	return *o.ConfigurationValueString
-}
-
-// GetConfigurationValueStringOk returns a tuple with the ConfigurationValueString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMConfiguredValue1341) GetConfigurationValueStringOk() (*string, bool) {
-	if o == nil || o.ConfigurationValueString == nil {
-		return nil, false
-	}
-	return o.ConfigurationValueString, true
-}
-
-// HasConfigurationValueString returns a boolean if a field has been set.
-func (o *base_BTMConfiguredValue1341) HasConfigurationValueString() bool {
-	if o != nil && o.ConfigurationValueString != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetConfigurationValueString gets a reference to the given string and assigns it to the ConfigurationValueString field.
-func (o *base_BTMConfiguredValue1341) SetConfigurationValueString(v string) {
-	o.ConfigurationValueString = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -555,6 +522,38 @@ func (o *base_BTMConfiguredValue1341) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetConfigurationValueString returns the ConfigurationValueString field value if set, zero value otherwise.
+func (o *base_BTMConfiguredValue1341) GetConfigurationValueString() string {
+	if o == nil || o.ConfigurationValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConfigurationValueString
+}
+
+// GetConfigurationValueStringOk returns a tuple with the ConfigurationValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMConfiguredValue1341) GetConfigurationValueStringOk() (*string, bool) {
+	if o == nil || o.ConfigurationValueString == nil {
+		return nil, false
+	}
+	return o.ConfigurationValueString, true
+}
+
+// HasConfigurationValueString returns a boolean if a field has been set.
+func (o *base_BTMConfiguredValue1341) HasConfigurationValueString() bool {
+	if o != nil && o.ConfigurationValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigurationValueString gets a reference to the given string and assigns it to the ConfigurationValueString field.
+func (o *base_BTMConfiguredValue1341) SetConfigurationValueString(v string) {
+	o.ConfigurationValueString = &v
+}
+
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *base_BTMConfiguredValue1341) GetValue() BTMParameter1 {
 	if o == nil || o.Value == nil {
@@ -592,14 +591,14 @@ func (o base_BTMConfiguredValue1341) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.ConfigurationValueString != nil {
-		toSerialize["configurationValueString"] = o.ConfigurationValueString
-	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.ConfigurationValueString != nil {
+		toSerialize["configurationValueString"] = o.ConfigurationValueString
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value

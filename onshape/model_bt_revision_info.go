@@ -20,7 +20,9 @@ type BTRevisionInfo struct {
 	Approvers                 []BTRevisionApproverInfo `json:"approvers,omitempty"`
 	AutoObsoletionReleaseId   *string                  `json:"autoObsoletionReleaseId,omitempty"`
 	AutoObsoletionReleaseName *string                  `json:"autoObsoletionReleaseName,omitempty"`
-	CanExport                 *bool                    `json:"canExport,omitempty"`
+	// Whether the revision can change object type. Used in reuse part number flow
+	CanChangeType *bool `json:"canChangeType,omitempty"`
+	CanExport     *bool `json:"canExport,omitempty"`
 	// The company or enterprise ID that owns the resource.
 	CompanyId     *string   `json:"companyId,omitempty"`
 	Configuration *string   `json:"configuration,omitempty"`
@@ -82,6 +84,8 @@ type BTRevisionInfo struct {
 // will change when the set of required properties is changed
 func NewBTRevisionInfo() *BTRevisionInfo {
 	this := BTRevisionInfo{}
+	var canChangeType bool = false
+	this.CanChangeType = &canChangeType
 	return &this
 }
 
@@ -90,6 +94,8 @@ func NewBTRevisionInfo() *BTRevisionInfo {
 // but it doesn't guarantee that properties required by API are set
 func NewBTRevisionInfoWithDefaults() *BTRevisionInfo {
 	this := BTRevisionInfo{}
+	var canChangeType bool = false
+	this.CanChangeType = &canChangeType
 	return &this
 }
 
@@ -187,6 +193,38 @@ func (o *BTRevisionInfo) HasAutoObsoletionReleaseName() bool {
 // SetAutoObsoletionReleaseName gets a reference to the given string and assigns it to the AutoObsoletionReleaseName field.
 func (o *BTRevisionInfo) SetAutoObsoletionReleaseName(v string) {
 	o.AutoObsoletionReleaseName = &v
+}
+
+// GetCanChangeType returns the CanChangeType field value if set, zero value otherwise.
+func (o *BTRevisionInfo) GetCanChangeType() bool {
+	if o == nil || o.CanChangeType == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanChangeType
+}
+
+// GetCanChangeTypeOk returns a tuple with the CanChangeType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRevisionInfo) GetCanChangeTypeOk() (*bool, bool) {
+	if o == nil || o.CanChangeType == nil {
+		return nil, false
+	}
+	return o.CanChangeType, true
+}
+
+// HasCanChangeType returns a boolean if a field has been set.
+func (o *BTRevisionInfo) HasCanChangeType() bool {
+	if o != nil && o.CanChangeType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanChangeType gets a reference to the given bool and assigns it to the CanChangeType field.
+func (o *BTRevisionInfo) SetCanChangeType(v bool) {
+	o.CanChangeType = &v
 }
 
 // GetCanExport returns the CanExport field value if set, zero value otherwise.
@@ -1255,6 +1293,9 @@ func (o BTRevisionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.AutoObsoletionReleaseName != nil {
 		toSerialize["autoObsoletionReleaseName"] = o.AutoObsoletionReleaseName
+	}
+	if o.CanChangeType != nil {
+		toSerialize["canChangeType"] = o.CanChangeType
 	}
 	if o.CanExport != nil {
 		toSerialize["canExport"] = o.CanExport

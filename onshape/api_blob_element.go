@@ -509,6 +509,7 @@ func (r ApiUploadFileCreateElementRequest) AllowFaultyParts(allowFaultyParts boo
 	return r
 }
 
+// Not supported for importing into a single part studio.
 func (r ApiUploadFileCreateElementRequest) CreateComposite(createComposite bool) ApiUploadFileCreateElementRequest {
 	r.createComposite = &createComposite
 	return r
@@ -915,6 +916,7 @@ func (r ApiUploadFileUpdateElementRequest) AllowFaultyParts(allowFaultyParts boo
 	return r
 }
 
+// Not supported for importing into a single part studio.
 func (r ApiUploadFileUpdateElementRequest) CreateComposite(createComposite bool) ApiUploadFileUpdateElementRequest {
 	r.createComposite = &createComposite
 	return r

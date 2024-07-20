@@ -69,6 +69,7 @@ func (r ApiCreateTranslationRequest) AllowFaultyParts(allowFaultyParts bool) Api
 	return r
 }
 
+// Not supported for importing into a single part studio.
 func (r ApiCreateTranslationRequest) CreateComposite(createComposite bool) ApiCreateTranslationRequest {
 	r.createComposite = &createComposite
 	return r

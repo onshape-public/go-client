@@ -17,6 +17,7 @@ import (
 // BTPartStudioDisplayData346 struct for BTPartStudioDisplayData346
 type BTPartStudioDisplayData346 struct {
 	AllInsertableDisplayData                *map[string]map[string]BTInsertableDisplayData2405 `json:"allInsertableDisplayData,omitempty"`
+	AnnotationsForElement                   *BTAnnotationElementDisplayData894                 `json:"annotationsForElement,omitempty"`
 	AppearanceIdToAppearanceOverride        *map[string]BTAppearanceOverride2517               `json:"appearanceIdToAppearanceOverride,omitempty"`
 	AssemblyReferenceDisplayData            *BTAssemblyReferencesDisplayData1562               `json:"assemblyReferenceDisplayData,omitempty"`
 	BodyIdToEntityAppearanceSettings        *map[string]BTBaseEntityAppearanceSettings1391     `json:"bodyIdToEntityAppearanceSettings,omitempty"`
@@ -104,6 +105,38 @@ func (o *BTPartStudioDisplayData346) HasAllInsertableDisplayData() bool {
 // SetAllInsertableDisplayData gets a reference to the given map[string]map[string]BTInsertableDisplayData2405 and assigns it to the AllInsertableDisplayData field.
 func (o *BTPartStudioDisplayData346) SetAllInsertableDisplayData(v map[string]map[string]BTInsertableDisplayData2405) {
 	o.AllInsertableDisplayData = &v
+}
+
+// GetAnnotationsForElement returns the AnnotationsForElement field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetAnnotationsForElement() BTAnnotationElementDisplayData894 {
+	if o == nil || o.AnnotationsForElement == nil {
+		var ret BTAnnotationElementDisplayData894
+		return ret
+	}
+	return *o.AnnotationsForElement
+}
+
+// GetAnnotationsForElementOk returns a tuple with the AnnotationsForElement field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool) {
+	if o == nil || o.AnnotationsForElement == nil {
+		return nil, false
+	}
+	return o.AnnotationsForElement, true
+}
+
+// HasAnnotationsForElement returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasAnnotationsForElement() bool {
+	if o != nil && o.AnnotationsForElement != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationsForElement gets a reference to the given BTAnnotationElementDisplayData894 and assigns it to the AnnotationsForElement field.
+func (o *BTPartStudioDisplayData346) SetAnnotationsForElement(v BTAnnotationElementDisplayData894) {
+	o.AnnotationsForElement = &v
 }
 
 // GetAppearanceIdToAppearanceOverride returns the AppearanceIdToAppearanceOverride field value if set, zero value otherwise.
@@ -1294,6 +1327,9 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AllInsertableDisplayData != nil {
 		toSerialize["allInsertableDisplayData"] = o.AllInsertableDisplayData
+	}
+	if o.AnnotationsForElement != nil {
+		toSerialize["annotationsForElement"] = o.AnnotationsForElement
 	}
 	if o.AppearanceIdToAppearanceOverride != nil {
 		toSerialize["appearanceIdToAppearanceOverride"] = o.AppearanceIdToAppearanceOverride

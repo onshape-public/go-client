@@ -100,6 +100,7 @@ type BTTranslateFormatParams struct {
 	TriggerAutoDownload                  *bool                         `json:"triggerAutoDownload,omitempty"`
 	Unit                                 *string                       `json:"unit,omitempty"`
 	UploadId                             *string                       `json:"uploadId,omitempty"`
+	UseFileNameToSetSinglePartName       *bool                         `json:"useFileNameToSetSinglePartName,omitempty"`
 	UseGltfCompression                   *bool                         `json:"useGltfCompression,omitempty"`
 	UseIGESImportPostProcessing          *bool                         `json:"useIGESImportPostProcessing,omitempty"`
 	UseIgesCompatibilityMode             *bool                         `json:"useIgesCompatibilityMode,omitempty"`
@@ -2553,6 +2554,38 @@ func (o *BTTranslateFormatParams) SetUploadId(v string) {
 	o.UploadId = &v
 }
 
+// GetUseFileNameToSetSinglePartName returns the UseFileNameToSetSinglePartName field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetUseFileNameToSetSinglePartName() bool {
+	if o == nil || o.UseFileNameToSetSinglePartName == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UseFileNameToSetSinglePartName
+}
+
+// GetUseFileNameToSetSinglePartNameOk returns a tuple with the UseFileNameToSetSinglePartName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetUseFileNameToSetSinglePartNameOk() (*bool, bool) {
+	if o == nil || o.UseFileNameToSetSinglePartName == nil {
+		return nil, false
+	}
+	return o.UseFileNameToSetSinglePartName, true
+}
+
+// HasUseFileNameToSetSinglePartName returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasUseFileNameToSetSinglePartName() bool {
+	if o != nil && o.UseFileNameToSetSinglePartName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUseFileNameToSetSinglePartName gets a reference to the given bool and assigns it to the UseFileNameToSetSinglePartName field.
+func (o *BTTranslateFormatParams) SetUseFileNameToSetSinglePartName(v bool) {
+	o.UseFileNameToSetSinglePartName = &v
+}
+
 // GetUseGltfCompression returns the UseGltfCompression field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetUseGltfCompression() bool {
 	if o == nil || o.UseGltfCompression == nil {
@@ -2942,6 +2975,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.UploadId != nil {
 		toSerialize["uploadId"] = o.UploadId
+	}
+	if o.UseFileNameToSetSinglePartName != nil {
+		toSerialize["useFileNameToSetSinglePartName"] = o.UseFileNameToSetSinglePartName
 	}
 	if o.UseGltfCompression != nil {
 		toSerialize["useGltfCompression"] = o.UseGltfCompression

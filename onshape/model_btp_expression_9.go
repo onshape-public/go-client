@@ -100,11 +100,6 @@ func (o *BTPExpressionIs242) AsBTPExpression9() *BTPExpression9 {
 	return &BTPExpression9{o}
 }
 
-// BTPLiteralNumber258AsBTPExpression9 is a convenience function that returns BTPLiteralNumber258 wrapped in BTPExpression9
-func (o *BTPLiteralNumber258) AsBTPExpression9() *BTPExpression9 {
-	return &BTPExpression9{o}
-}
-
 // BTPExpressionTry1271AsBTPExpression9 is a convenience function that returns BTPExpressionTry1271 wrapped in BTPExpression9
 func (o *BTPExpressionTry1271) AsBTPExpression9() *BTPExpression9 {
 	return &BTPExpression9{o}
@@ -847,20 +842,6 @@ func (dst *BTPExpression9) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTPLiteralNumber-258'
-	if jsonDict["btType"] == "BTPLiteralNumber-258" {
-		// try to unmarshal JSON data into BTPLiteralNumber258
-		var qr *BTPLiteralNumber258
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPExpression9 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPExpression9 = nil
-			return fmt.Errorf("failed to unmarshal BTPExpression9 as BTPLiteralNumber258: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTPLiteralString-259'
 	if jsonDict["btType"] == "BTPLiteralString-259" {
 		// try to unmarshal JSON data into BTPLiteralString259
@@ -955,8 +936,7 @@ func (v *NullableBTPExpression9) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPExpression9 struct {
-	Atomic *bool `json:"atomic,omitempty"`
-	// Type of JSON object.
+	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Accessor** | Pointer to [**BTPPropertyAccessor23**](BTPPropertyAccessor23.md) |  | [optional] 
 **Base** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**IsSafeNavigation** | Pointer to **bool** |  | [optional] 
 **SpaceInAccessor** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPExpressionAccess237AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetIsSafeNavigation
+
+`func (o *BTPExpressionAccess237AllOf) GetIsSafeNavigation() bool`
+
+GetIsSafeNavigation returns the IsSafeNavigation field if non-nil, zero value otherwise.
+
+### GetIsSafeNavigationOk
+
+`func (o *BTPExpressionAccess237AllOf) GetIsSafeNavigationOk() (*bool, bool)`
+
+GetIsSafeNavigationOk returns a tuple with the IsSafeNavigation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSafeNavigation
+
+`func (o *BTPExpressionAccess237AllOf) SetIsSafeNavigation(v bool)`
+
+SetIsSafeNavigation sets IsSafeNavigation field to given value.
+
+### HasIsSafeNavigation
+
+`func (o *BTPExpressionAccess237AllOf) HasIsSafeNavigation() bool`
+
+HasIsSafeNavigation returns a boolean if a field has been set.
 
 ### GetSpaceInAccessor
 

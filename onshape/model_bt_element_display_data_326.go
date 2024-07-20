@@ -52,6 +52,56 @@ func NewBTElementDisplayData326WithDefaults() *BTElementDisplayData326 {
 	return &this
 }
 
+// GetAnnotationsForElement returns the AnnotationsForElement field value if set, zero value otherwise.
+func (o *BTElementDisplayData326) GetAnnotationsForElement() BTAnnotationElementDisplayData894 {
+	type getResult interface {
+		GetAnnotationsForElement() BTAnnotationElementDisplayData894
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotationsForElement()
+	} else {
+		var de BTAnnotationElementDisplayData894
+		return de
+	}
+}
+
+// GetAnnotationsForElementOk returns a tuple with the AnnotationsForElement field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementDisplayData326) GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool) {
+	type getResult interface {
+		GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotationsForElementOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAnnotationsForElement returns a boolean if a field has been set.
+func (o *BTElementDisplayData326) HasAnnotationsForElement() bool {
+	type getResult interface {
+		HasAnnotationsForElement() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAnnotationsForElement()
+	} else {
+		return false
+	}
+}
+
+// SetAnnotationsForElement gets a reference to the given BTAnnotationElementDisplayData894 and assigns it to the AnnotationsForElement field.
+func (o *BTElementDisplayData326) SetAnnotationsForElement(v BTAnnotationElementDisplayData894) {
+	type getResult interface {
+		SetAnnotationsForElement(v BTAnnotationElementDisplayData894)
+	}
+
+	o.GetActualInstance().(getResult).SetAnnotationsForElement(v)
+}
+
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTElementDisplayData326) GetBtType() string {
 	type getResult interface {
@@ -720,6 +770,7 @@ func (v *NullableBTElementDisplayData326) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTElementDisplayData326 struct {
+	AnnotationsForElement *BTAnnotationElementDisplayData894 `json:"annotationsForElement,omitempty"`
 	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
@@ -749,6 +800,38 @@ func Newbase_BTElementDisplayData326() *base_BTElementDisplayData326 {
 func Newbase_BTElementDisplayData326WithDefaults() *base_BTElementDisplayData326 {
 	this := base_BTElementDisplayData326{}
 	return &this
+}
+
+// GetAnnotationsForElement returns the AnnotationsForElement field value if set, zero value otherwise.
+func (o *base_BTElementDisplayData326) GetAnnotationsForElement() BTAnnotationElementDisplayData894 {
+	if o == nil || o.AnnotationsForElement == nil {
+		var ret BTAnnotationElementDisplayData894
+		return ret
+	}
+	return *o.AnnotationsForElement
+}
+
+// GetAnnotationsForElementOk returns a tuple with the AnnotationsForElement field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTElementDisplayData326) GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool) {
+	if o == nil || o.AnnotationsForElement == nil {
+		return nil, false
+	}
+	return o.AnnotationsForElement, true
+}
+
+// HasAnnotationsForElement returns a boolean if a field has been set.
+func (o *base_BTElementDisplayData326) HasAnnotationsForElement() bool {
+	if o != nil && o.AnnotationsForElement != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationsForElement gets a reference to the given BTAnnotationElementDisplayData894 and assigns it to the AnnotationsForElement field.
+func (o *base_BTElementDisplayData326) SetAnnotationsForElement(v BTAnnotationElementDisplayData894) {
+	o.AnnotationsForElement = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -1105,6 +1188,9 @@ func (o *base_BTElementDisplayData326) SetVersionForRasterization(v BTElementDis
 
 func (o base_BTElementDisplayData326) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AnnotationsForElement != nil {
+		toSerialize["annotationsForElement"] = o.AnnotationsForElement
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -16,33 +16,32 @@ import (
 
 // BTMModel141 struct for BTMModel141
 type BTMModel141 struct {
-	AllFeatures                   []BTMFeature134 `json:"allFeatures,omitempty"`
-	AllFeaturesAndOtherReferences []BTMFeature134 `json:"allFeaturesAndOtherReferences,omitempty"`
-	AllFeaturesAndSubFeatures     []BTMFeature134 `json:"allFeaturesAndSubFeatures,omitempty"`
-	// Type of JSON object.
-	BtType             *string                   `json:"btType,omitempty"`
-	Children           []BTMNode19               `json:"children,omitempty"`
-	ConfigurationData  *BTMConfigurationData1560 `json:"configurationData,omitempty"`
-	Configured         *bool                     `json:"configured,omitempty"`
-	DeepImports        *map[string][]BTImport    `json:"deepImports,omitempty"`
-	DefaultFeatures    *BTDefaultFeatures119     `json:"defaultFeatures,omitempty"`
-	DefaultUnits       *BTMUnitsDefault160       `json:"defaultUnits,omitempty"`
-	FeatureImports     *map[string][]BTImport    `json:"featureImports,omitempty"`
-	FirstRollbackIndex *int32                    `json:"firstRollbackIndex,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion        *string                          `json:"importMicroversion,omitempty"`
-	ImportSet                 []BTPModuleId235                 `json:"importSet,omitempty"`
-	Imports                   []BTMImport136                   `json:"imports,omitempty"`
-	IsVariableStudio          *bool                            `json:"isVariableStudio,omitempty"`
-	LastFeatureBeforeRollBack *BTMFeature134                   `json:"lastFeatureBeforeRollBack,omitempty"`
-	Name                      *string                          `json:"name,omitempty"`
-	NodeId                    *string                          `json:"nodeId,omitempty"`
-	PartProperties            *BTPartProperties293             `json:"partProperties,omitempty"`
-	PathToCache               *BTCacheDataPath191              `json:"pathToCache,omitempty"`
-	Properties                *BTModelProperties1258           `json:"properties,omitempty"`
-	RollbackBar               *BTMRollback150                  `json:"rollbackBar,omitempty"`
-	RolledBackToEnd           *bool                            `json:"rolledBackToEnd,omitempty"`
-	VariableStudios           []BTMVariableStudioReference2764 `json:"variableStudios,omitempty"`
+	ImportMicroversion            *string                          `json:"importMicroversion,omitempty"`
+	NodeId                        *string                          `json:"nodeId,omitempty"`
+	AllFeatures                   []BTMFeature134                  `json:"allFeatures,omitempty"`
+	AllFeaturesAndOtherReferences []BTMFeature134                  `json:"allFeaturesAndOtherReferences,omitempty"`
+	AllFeaturesAndSubFeatures     []BTMFeature134                  `json:"allFeaturesAndSubFeatures,omitempty"`
+	ConfigurationData             *BTMConfigurationData1560        `json:"configurationData,omitempty"`
+	Configured                    *bool                            `json:"configured,omitempty"`
+	DeepImports                   *map[string][]BTImport           `json:"deepImports,omitempty"`
+	DefaultFeatures               *BTDefaultFeatures119            `json:"defaultFeatures,omitempty"`
+	DefaultUnits                  *BTMUnitsDefault160              `json:"defaultUnits,omitempty"`
+	FeatureImports                *map[string][]BTImport           `json:"featureImports,omitempty"`
+	FirstRollbackIndex            *int32                           `json:"firstRollbackIndex,omitempty"`
+	ImportSet                     []BTPModuleId235                 `json:"importSet,omitempty"`
+	Imports                       []BTMImport136                   `json:"imports,omitempty"`
+	IsVariableStudio              *bool                            `json:"isVariableStudio,omitempty"`
+	LastFeatureBeforeRollBack     *BTMFeature134                   `json:"lastFeatureBeforeRollBack,omitempty"`
+	ModelAnnotations              *BTModelAnnotations3945          `json:"modelAnnotations,omitempty"`
+	Name                          *string                          `json:"name,omitempty"`
+	PartProperties                *BTPartProperties293             `json:"partProperties,omitempty"`
+	PathToCache                   *BTCacheDataPath191              `json:"pathToCache,omitempty"`
+	Properties                    *BTModelProperties1258           `json:"properties,omitempty"`
+	RollbackBar                   *BTMRollback150                  `json:"rollbackBar,omitempty"`
+	RolledBackToEnd               *bool                            `json:"rolledBackToEnd,omitempty"`
+	VariableStudios               []BTMVariableStudioReference2764 `json:"variableStudios,omitempty"`
 }
 
 // NewBTMModel141 instantiates a new BTMModel141 object
@@ -60,6 +59,102 @@ func NewBTMModel141() *BTMModel141 {
 func NewBTMModel141WithDefaults() *BTMModel141 {
 	this := BTMModel141{}
 	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMModel141) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMModel141) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMModel141) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMModel141) SetBtType(v string) {
+	o.BtType = &v
+}
+
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMModel141) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImportMicroversion
+}
+
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMModel141) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
+		return nil, false
+	}
+	return o.ImportMicroversion, true
+}
+
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMModel141) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMModel141) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMModel141) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMModel141) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMModel141) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMModel141) SetNodeId(v string) {
+	o.NodeId = &v
 }
 
 // GetAllFeatures returns the AllFeatures field value if set, zero value otherwise.
@@ -156,70 +251,6 @@ func (o *BTMModel141) HasAllFeaturesAndSubFeatures() bool {
 // SetAllFeaturesAndSubFeatures gets a reference to the given []BTMFeature134 and assigns it to the AllFeaturesAndSubFeatures field.
 func (o *BTMModel141) SetAllFeaturesAndSubFeatures(v []BTMFeature134) {
 	o.AllFeaturesAndSubFeatures = v
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMModel141) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMModel141) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMModel141) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMModel141) SetBtType(v string) {
-	o.BtType = &v
-}
-
-// GetChildren returns the Children field value if set, zero value otherwise.
-func (o *BTMModel141) GetChildren() []BTMNode19 {
-	if o == nil || o.Children == nil {
-		var ret []BTMNode19
-		return ret
-	}
-	return o.Children
-}
-
-// GetChildrenOk returns a tuple with the Children field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMModel141) GetChildrenOk() ([]BTMNode19, bool) {
-	if o == nil || o.Children == nil {
-		return nil, false
-	}
-	return o.Children, true
-}
-
-// HasChildren returns a boolean if a field has been set.
-func (o *BTMModel141) HasChildren() bool {
-	if o != nil && o.Children != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetChildren gets a reference to the given []BTMNode19 and assigns it to the Children field.
-func (o *BTMModel141) SetChildren(v []BTMNode19) {
-	o.Children = v
 }
 
 // GetConfigurationData returns the ConfigurationData field value if set, zero value otherwise.
@@ -446,38 +477,6 @@ func (o *BTMModel141) SetFirstRollbackIndex(v int32) {
 	o.FirstRollbackIndex = &v
 }
 
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMModel141) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMModel141) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMModel141) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMModel141) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
-}
-
 // GetImportSet returns the ImportSet field value if set, zero value otherwise.
 func (o *BTMModel141) GetImportSet() []BTPModuleId235 {
 	if o == nil || o.ImportSet == nil {
@@ -606,6 +605,38 @@ func (o *BTMModel141) SetLastFeatureBeforeRollBack(v BTMFeature134) {
 	o.LastFeatureBeforeRollBack = &v
 }
 
+// GetModelAnnotations returns the ModelAnnotations field value if set, zero value otherwise.
+func (o *BTMModel141) GetModelAnnotations() BTModelAnnotations3945 {
+	if o == nil || o.ModelAnnotations == nil {
+		var ret BTModelAnnotations3945
+		return ret
+	}
+	return *o.ModelAnnotations
+}
+
+// GetModelAnnotationsOk returns a tuple with the ModelAnnotations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMModel141) GetModelAnnotationsOk() (*BTModelAnnotations3945, bool) {
+	if o == nil || o.ModelAnnotations == nil {
+		return nil, false
+	}
+	return o.ModelAnnotations, true
+}
+
+// HasModelAnnotations returns a boolean if a field has been set.
+func (o *BTMModel141) HasModelAnnotations() bool {
+	if o != nil && o.ModelAnnotations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModelAnnotations gets a reference to the given BTModelAnnotations3945 and assigns it to the ModelAnnotations field.
+func (o *BTMModel141) SetModelAnnotations(v BTModelAnnotations3945) {
+	o.ModelAnnotations = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTMModel141) GetName() string {
 	if o == nil || o.Name == nil {
@@ -636,38 +667,6 @@ func (o *BTMModel141) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BTMModel141) SetName(v string) {
 	o.Name = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMModel141) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMModel141) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMModel141) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMModel141) SetNodeId(v string) {
-	o.NodeId = &v
 }
 
 // GetPartProperties returns the PartProperties field value if set, zero value otherwise.
@@ -864,6 +863,15 @@ func (o *BTMModel141) SetVariableStudios(v []BTMVariableStudioReference2764) {
 
 func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
 	if o.AllFeatures != nil {
 		toSerialize["allFeatures"] = o.AllFeatures
 	}
@@ -872,12 +880,6 @@ func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	}
 	if o.AllFeaturesAndSubFeatures != nil {
 		toSerialize["allFeaturesAndSubFeatures"] = o.AllFeaturesAndSubFeatures
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
-	}
-	if o.Children != nil {
-		toSerialize["children"] = o.Children
 	}
 	if o.ConfigurationData != nil {
 		toSerialize["configurationData"] = o.ConfigurationData
@@ -900,9 +902,6 @@ func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	if o.FirstRollbackIndex != nil {
 		toSerialize["firstRollbackIndex"] = o.FirstRollbackIndex
 	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
-	}
 	if o.ImportSet != nil {
 		toSerialize["importSet"] = o.ImportSet
 	}
@@ -915,11 +914,11 @@ func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	if o.LastFeatureBeforeRollBack != nil {
 		toSerialize["lastFeatureBeforeRollBack"] = o.LastFeatureBeforeRollBack
 	}
+	if o.ModelAnnotations != nil {
+		toSerialize["modelAnnotations"] = o.ModelAnnotations
+	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
 	}
 	if o.PartProperties != nil {
 		toSerialize["partProperties"] = o.PartProperties

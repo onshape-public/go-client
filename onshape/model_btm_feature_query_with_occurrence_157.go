@@ -92,6 +92,106 @@ func (o *BTMFeatureQueryWithOccurrence157) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMFeatureQueryWithOccurrence157) GetImportMicroversion() string {
+	type getResult interface {
+		GetImportMicroversion() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetImportMicroversion()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMFeatureQueryWithOccurrence157) GetImportMicroversionOk() (*string, bool) {
+	type getResult interface {
+		GetImportMicroversionOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetImportMicroversionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMFeatureQueryWithOccurrence157) HasImportMicroversion() bool {
+	type getResult interface {
+		HasImportMicroversion() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasImportMicroversion()
+	} else {
+		return false
+	}
+}
+
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMFeatureQueryWithOccurrence157) SetImportMicroversion(v string) {
+	type getResult interface {
+		SetImportMicroversion(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetImportMicroversion(v)
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMFeatureQueryWithOccurrence157) GetNodeId() string {
+	type getResult interface {
+		GetNodeId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMFeatureQueryWithOccurrence157) GetNodeIdOk() (*string, bool) {
+	type getResult interface {
+		GetNodeIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMFeatureQueryWithOccurrence157) HasNodeId() bool {
+	type getResult interface {
+		HasNodeId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNodeId()
+	} else {
+		return false
+	}
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMFeatureQueryWithOccurrence157) SetNodeId(v string) {
+	type getResult interface {
+		SetNodeId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetNodeId(v)
+}
+
 // GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
 func (o *BTMFeatureQueryWithOccurrence157) GetDeterministicIdList() BTMIndividualQueryBase139 {
 	type getResult interface {
@@ -190,56 +290,6 @@ func (o *BTMFeatureQueryWithOccurrence157) SetDeterministicIds(v []string) {
 	}
 
 	o.GetActualInstance().(getResult).SetDeterministicIds(v)
-}
-
-// GetFullPathAsString returns the FullPathAsString field value if set, zero value otherwise.
-func (o *BTMFeatureQueryWithOccurrence157) GetFullPathAsString() string {
-	type getResult interface {
-		GetFullPathAsString() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFullPathAsString()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetFullPathAsStringOk returns a tuple with the FullPathAsString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMFeatureQueryWithOccurrence157) GetFullPathAsStringOk() (*string, bool) {
-	type getResult interface {
-		GetFullPathAsStringOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFullPathAsStringOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasFullPathAsString returns a boolean if a field has been set.
-func (o *BTMFeatureQueryWithOccurrence157) HasFullPathAsString() bool {
-	type getResult interface {
-		HasFullPathAsString() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasFullPathAsString()
-	} else {
-		return false
-	}
-}
-
-// SetFullPathAsString gets a reference to the given string and assigns it to the FullPathAsString field.
-func (o *BTMFeatureQueryWithOccurrence157) SetFullPathAsString(v string) {
-	type getResult interface {
-		SetFullPathAsString(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetFullPathAsString(v)
 }
 
 // GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field value if set, zero value otherwise.
@@ -342,104 +392,154 @@ func (o *BTMFeatureQueryWithOccurrence157) SetGeneratedSectionQueryId(v string) 
 	o.GetActualInstance().(getResult).SetGeneratedSectionQueryId(v)
 }
 
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMFeatureQueryWithOccurrence157) GetImportMicroversion() string {
+// GetQuery returns the Query field value if set, zero value otherwise.
+func (o *BTMFeatureQueryWithOccurrence157) GetQuery() BTMIndividualQueryBase139 {
 	type getResult interface {
-		GetImportMicroversion() string
+		GetQuery() BTMIndividualQueryBase139
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetImportMicroversion()
+		return tx.GetQuery()
+	} else {
+		var de BTMIndividualQueryBase139
+		return de
+	}
+}
+
+// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMFeatureQueryWithOccurrence157) GetQueryOk() (*BTMIndividualQueryBase139, bool) {
+	type getResult interface {
+		GetQueryOk() (*BTMIndividualQueryBase139, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetQueryOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasQuery returns a boolean if a field has been set.
+func (o *BTMFeatureQueryWithOccurrence157) HasQuery() bool {
+	type getResult interface {
+		HasQuery() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasQuery()
+	} else {
+		return false
+	}
+}
+
+// SetQuery gets a reference to the given BTMIndividualQueryBase139 and assigns it to the Query field.
+func (o *BTMFeatureQueryWithOccurrence157) SetQuery(v BTMIndividualQueryBase139) {
+	type getResult interface {
+		SetQuery(v BTMIndividualQueryBase139)
+	}
+
+	o.GetActualInstance().(getResult).SetQuery(v)
+}
+
+// GetQueryString returns the QueryString field value if set, zero value otherwise.
+func (o *BTMFeatureQueryWithOccurrence157) GetQueryString() string {
+	type getResult interface {
+		GetQueryString() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetQueryString()
 	} else {
 		var de string
 		return de
 	}
 }
 
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// GetQueryStringOk returns a tuple with the QueryString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMFeatureQueryWithOccurrence157) GetImportMicroversionOk() (*string, bool) {
+func (o *BTMFeatureQueryWithOccurrence157) GetQueryStringOk() (*string, bool) {
 	type getResult interface {
-		GetImportMicroversionOk() (*string, bool)
+		GetQueryStringOk() (*string, bool)
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetImportMicroversionOk()
+		return tx.GetQueryStringOk()
 	} else {
 		return nil, false
 	}
 }
 
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMFeatureQueryWithOccurrence157) HasImportMicroversion() bool {
+// HasQueryString returns a boolean if a field has been set.
+func (o *BTMFeatureQueryWithOccurrence157) HasQueryString() bool {
 	type getResult interface {
-		HasImportMicroversion() bool
+		HasQueryString() bool
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasImportMicroversion()
+		return tx.HasQueryString()
 	} else {
 		return false
 	}
 }
 
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMFeatureQueryWithOccurrence157) SetImportMicroversion(v string) {
+// SetQueryString gets a reference to the given string and assigns it to the QueryString field.
+func (o *BTMFeatureQueryWithOccurrence157) SetQueryString(v string) {
 	type getResult interface {
-		SetImportMicroversion(v string)
+		SetQueryString(v string)
 	}
 
-	o.GetActualInstance().(getResult).SetImportMicroversion(v)
+	o.GetActualInstance().(getResult).SetQueryString(v)
 }
 
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMFeatureQueryWithOccurrence157) GetNodeId() string {
+// GetFullPathAsString returns the FullPathAsString field value if set, zero value otherwise.
+func (o *BTMFeatureQueryWithOccurrence157) GetFullPathAsString() string {
 	type getResult interface {
-		GetNodeId() string
+		GetFullPathAsString() string
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNodeId()
+		return tx.GetFullPathAsString()
 	} else {
 		var de string
 		return de
 	}
 }
 
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// GetFullPathAsStringOk returns a tuple with the FullPathAsString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMFeatureQueryWithOccurrence157) GetNodeIdOk() (*string, bool) {
+func (o *BTMFeatureQueryWithOccurrence157) GetFullPathAsStringOk() (*string, bool) {
 	type getResult interface {
-		GetNodeIdOk() (*string, bool)
+		GetFullPathAsStringOk() (*string, bool)
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNodeIdOk()
+		return tx.GetFullPathAsStringOk()
 	} else {
 		return nil, false
 	}
 }
 
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMFeatureQueryWithOccurrence157) HasNodeId() bool {
+// HasFullPathAsString returns a boolean if a field has been set.
+func (o *BTMFeatureQueryWithOccurrence157) HasFullPathAsString() bool {
 	type getResult interface {
-		HasNodeId() bool
+		HasFullPathAsString() bool
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasNodeId()
+		return tx.HasFullPathAsString()
 	} else {
 		return false
 	}
 }
 
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMFeatureQueryWithOccurrence157) SetNodeId(v string) {
+// SetFullPathAsString gets a reference to the given string and assigns it to the FullPathAsString field.
+func (o *BTMFeatureQueryWithOccurrence157) SetFullPathAsString(v string) {
 	type getResult interface {
-		SetNodeId(v string)
+		SetFullPathAsString(v string)
 	}
 
-	o.GetActualInstance().(getResult).SetNodeId(v)
+	o.GetActualInstance().(getResult).SetFullPathAsString(v)
 }
 
 // GetOccurrence returns the Occurrence field value if set, zero value otherwise.
@@ -540,106 +640,6 @@ func (o *BTMFeatureQueryWithOccurrence157) SetPath(v []string) {
 	}
 
 	o.GetActualInstance().(getResult).SetPath(v)
-}
-
-// GetQuery returns the Query field value if set, zero value otherwise.
-func (o *BTMFeatureQueryWithOccurrence157) GetQuery() BTMIndividualQueryBase139 {
-	type getResult interface {
-		GetQuery() BTMIndividualQueryBase139
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetQuery()
-	} else {
-		var de BTMIndividualQueryBase139
-		return de
-	}
-}
-
-// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMFeatureQueryWithOccurrence157) GetQueryOk() (*BTMIndividualQueryBase139, bool) {
-	type getResult interface {
-		GetQueryOk() (*BTMIndividualQueryBase139, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetQueryOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasQuery returns a boolean if a field has been set.
-func (o *BTMFeatureQueryWithOccurrence157) HasQuery() bool {
-	type getResult interface {
-		HasQuery() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasQuery()
-	} else {
-		return false
-	}
-}
-
-// SetQuery gets a reference to the given BTMIndividualQueryBase139 and assigns it to the Query field.
-func (o *BTMFeatureQueryWithOccurrence157) SetQuery(v BTMIndividualQueryBase139) {
-	type getResult interface {
-		SetQuery(v BTMIndividualQueryBase139)
-	}
-
-	o.GetActualInstance().(getResult).SetQuery(v)
-}
-
-// GetQueryString returns the QueryString field value if set, zero value otherwise.
-func (o *BTMFeatureQueryWithOccurrence157) GetQueryString() string {
-	type getResult interface {
-		GetQueryString() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetQueryString()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetQueryStringOk returns a tuple with the QueryString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMFeatureQueryWithOccurrence157) GetQueryStringOk() (*string, bool) {
-	type getResult interface {
-		GetQueryStringOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetQueryStringOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasQueryString returns a boolean if a field has been set.
-func (o *BTMFeatureQueryWithOccurrence157) HasQueryString() bool {
-	type getResult interface {
-		HasQueryString() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasQueryString()
-	} else {
-		return false
-	}
-}
-
-// SetQueryString gets a reference to the given string and assigns it to the QueryString field.
-func (o *BTMFeatureQueryWithOccurrence157) SetQueryString(v string) {
-	type getResult interface {
-		SetQueryString(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetQueryString(v)
 }
 
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
@@ -932,19 +932,19 @@ func (v *NullableBTMFeatureQueryWithOccurrence157) UnmarshalJSON(src []byte) err
 }
 
 type base_BTMFeatureQueryWithOccurrence157 struct {
-	BtType                     *string                    `json:"btType,omitempty"`
-	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
-	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
-	FullPathAsString           *string                    `json:"fullPathAsString,omitempty"`
-	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
-	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion           *string                    `json:"importMicroversion,omitempty"`
 	NodeId                       *string                    `json:"nodeId,omitempty"`
-	Occurrence                   *BTOccurrence74            `json:"occurrence,omitempty"`
-	Path                         []string                   `json:"path,omitempty"`
+	DeterministicIdList          *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
+	DeterministicIds             []string                   `json:"deterministicIds,omitempty"`
+	GenerateSectionEntityQuery   *bool                      `json:"generateSectionEntityQuery,omitempty"`
+	GeneratedSectionQueryId      *string                    `json:"generatedSectionQueryId,omitempty"`
 	Query                        *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryString                  *string                    `json:"queryString,omitempty"`
+	FullPathAsString             *string                    `json:"fullPathAsString,omitempty"`
+	Occurrence                   *BTOccurrence74            `json:"occurrence,omitempty"`
+	Path                         []string                   `json:"path,omitempty"`
 	FeatureId                    *string                    `json:"featureId,omitempty"`
 	FeatureIdWithOccurrence      *string                    `json:"featureIdWithOccurrence,omitempty"`
 	PartStudioMateConnectorQuery *bool                      `json:"partStudioMateConnectorQuery,omitempty"`
@@ -998,166 +998,6 @@ func (o *base_BTMFeatureQueryWithOccurrence157) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTMFeatureQueryWithOccurrence157) SetBtType(v string) {
 	o.BtType = &v
-}
-
-// GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIdList() BTMIndividualQueryBase139 {
-	if o == nil || o.DeterministicIdList == nil {
-		var ret BTMIndividualQueryBase139
-		return ret
-	}
-	return *o.DeterministicIdList
-}
-
-// GetDeterministicIdListOk returns a tuple with the DeterministicIdList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIdListOk() (*BTMIndividualQueryBase139, bool) {
-	if o == nil || o.DeterministicIdList == nil {
-		return nil, false
-	}
-	return o.DeterministicIdList, true
-}
-
-// HasDeterministicIdList returns a boolean if a field has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) HasDeterministicIdList() bool {
-	if o != nil && o.DeterministicIdList != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDeterministicIdList gets a reference to the given BTMIndividualQueryBase139 and assigns it to the DeterministicIdList field.
-func (o *base_BTMFeatureQueryWithOccurrence157) SetDeterministicIdList(v BTMIndividualQueryBase139) {
-	o.DeterministicIdList = &v
-}
-
-// GetDeterministicIds returns the DeterministicIds field value if set, zero value otherwise.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIds() []string {
-	if o == nil || o.DeterministicIds == nil {
-		var ret []string
-		return ret
-	}
-	return o.DeterministicIds
-}
-
-// GetDeterministicIdsOk returns a tuple with the DeterministicIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIdsOk() ([]string, bool) {
-	if o == nil || o.DeterministicIds == nil {
-		return nil, false
-	}
-	return o.DeterministicIds, true
-}
-
-// HasDeterministicIds returns a boolean if a field has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) HasDeterministicIds() bool {
-	if o != nil && o.DeterministicIds != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDeterministicIds gets a reference to the given []string and assigns it to the DeterministicIds field.
-func (o *base_BTMFeatureQueryWithOccurrence157) SetDeterministicIds(v []string) {
-	o.DeterministicIds = v
-}
-
-// GetFullPathAsString returns the FullPathAsString field value if set, zero value otherwise.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetFullPathAsString() string {
-	if o == nil || o.FullPathAsString == nil {
-		var ret string
-		return ret
-	}
-	return *o.FullPathAsString
-}
-
-// GetFullPathAsStringOk returns a tuple with the FullPathAsString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetFullPathAsStringOk() (*string, bool) {
-	if o == nil || o.FullPathAsString == nil {
-		return nil, false
-	}
-	return o.FullPathAsString, true
-}
-
-// HasFullPathAsString returns a boolean if a field has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) HasFullPathAsString() bool {
-	if o != nil && o.FullPathAsString != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFullPathAsString gets a reference to the given string and assigns it to the FullPathAsString field.
-func (o *base_BTMFeatureQueryWithOccurrence157) SetFullPathAsString(v string) {
-	o.FullPathAsString = &v
-}
-
-// GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field value if set, zero value otherwise.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetGenerateSectionEntityQuery() bool {
-	if o == nil || o.GenerateSectionEntityQuery == nil {
-		var ret bool
-		return ret
-	}
-	return *o.GenerateSectionEntityQuery
-}
-
-// GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetGenerateSectionEntityQueryOk() (*bool, bool) {
-	if o == nil || o.GenerateSectionEntityQuery == nil {
-		return nil, false
-	}
-	return o.GenerateSectionEntityQuery, true
-}
-
-// HasGenerateSectionEntityQuery returns a boolean if a field has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) HasGenerateSectionEntityQuery() bool {
-	if o != nil && o.GenerateSectionEntityQuery != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGenerateSectionEntityQuery gets a reference to the given bool and assigns it to the GenerateSectionEntityQuery field.
-func (o *base_BTMFeatureQueryWithOccurrence157) SetGenerateSectionEntityQuery(v bool) {
-	o.GenerateSectionEntityQuery = &v
-}
-
-// GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field value if set, zero value otherwise.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetGeneratedSectionQueryId() string {
-	if o == nil || o.GeneratedSectionQueryId == nil {
-		var ret string
-		return ret
-	}
-	return *o.GeneratedSectionQueryId
-}
-
-// GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetGeneratedSectionQueryIdOk() (*string, bool) {
-	if o == nil || o.GeneratedSectionQueryId == nil {
-		return nil, false
-	}
-	return o.GeneratedSectionQueryId, true
-}
-
-// HasGeneratedSectionQueryId returns a boolean if a field has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) HasGeneratedSectionQueryId() bool {
-	if o != nil && o.GeneratedSectionQueryId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGeneratedSectionQueryId gets a reference to the given string and assigns it to the GeneratedSectionQueryId field.
-func (o *base_BTMFeatureQueryWithOccurrence157) SetGeneratedSectionQueryId(v string) {
-	o.GeneratedSectionQueryId = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -1224,68 +1064,132 @@ func (o *base_BTMFeatureQueryWithOccurrence157) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetOccurrence returns the Occurrence field value if set, zero value otherwise.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetOccurrence() BTOccurrence74 {
-	if o == nil || o.Occurrence == nil {
-		var ret BTOccurrence74
+// GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIdList() BTMIndividualQueryBase139 {
+	if o == nil || o.DeterministicIdList == nil {
+		var ret BTMIndividualQueryBase139
 		return ret
 	}
-	return *o.Occurrence
+	return *o.DeterministicIdList
 }
 
-// GetOccurrenceOk returns a tuple with the Occurrence field value if set, nil otherwise
+// GetDeterministicIdListOk returns a tuple with the DeterministicIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetOccurrenceOk() (*BTOccurrence74, bool) {
-	if o == nil || o.Occurrence == nil {
+func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIdListOk() (*BTMIndividualQueryBase139, bool) {
+	if o == nil || o.DeterministicIdList == nil {
 		return nil, false
 	}
-	return o.Occurrence, true
+	return o.DeterministicIdList, true
 }
 
-// HasOccurrence returns a boolean if a field has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) HasOccurrence() bool {
-	if o != nil && o.Occurrence != nil {
+// HasDeterministicIdList returns a boolean if a field has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) HasDeterministicIdList() bool {
+	if o != nil && o.DeterministicIdList != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOccurrence gets a reference to the given BTOccurrence74 and assigns it to the Occurrence field.
-func (o *base_BTMFeatureQueryWithOccurrence157) SetOccurrence(v BTOccurrence74) {
-	o.Occurrence = &v
+// SetDeterministicIdList gets a reference to the given BTMIndividualQueryBase139 and assigns it to the DeterministicIdList field.
+func (o *base_BTMFeatureQueryWithOccurrence157) SetDeterministicIdList(v BTMIndividualQueryBase139) {
+	o.DeterministicIdList = &v
 }
 
-// GetPath returns the Path field value if set, zero value otherwise.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetPath() []string {
-	if o == nil || o.Path == nil {
+// GetDeterministicIds returns the DeterministicIds field value if set, zero value otherwise.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIds() []string {
+	if o == nil || o.DeterministicIds == nil {
 		var ret []string
 		return ret
 	}
-	return o.Path
+	return o.DeterministicIds
 }
 
-// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// GetDeterministicIdsOk returns a tuple with the DeterministicIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) GetPathOk() ([]string, bool) {
-	if o == nil || o.Path == nil {
+func (o *base_BTMFeatureQueryWithOccurrence157) GetDeterministicIdsOk() ([]string, bool) {
+	if o == nil || o.DeterministicIds == nil {
 		return nil, false
 	}
-	return o.Path, true
+	return o.DeterministicIds, true
 }
 
-// HasPath returns a boolean if a field has been set.
-func (o *base_BTMFeatureQueryWithOccurrence157) HasPath() bool {
-	if o != nil && o.Path != nil {
+// HasDeterministicIds returns a boolean if a field has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) HasDeterministicIds() bool {
+	if o != nil && o.DeterministicIds != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPath gets a reference to the given []string and assigns it to the Path field.
-func (o *base_BTMFeatureQueryWithOccurrence157) SetPath(v []string) {
-	o.Path = v
+// SetDeterministicIds gets a reference to the given []string and assigns it to the DeterministicIds field.
+func (o *base_BTMFeatureQueryWithOccurrence157) SetDeterministicIds(v []string) {
+	o.DeterministicIds = v
+}
+
+// GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field value if set, zero value otherwise.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetGenerateSectionEntityQuery() bool {
+	if o == nil || o.GenerateSectionEntityQuery == nil {
+		var ret bool
+		return ret
+	}
+	return *o.GenerateSectionEntityQuery
+}
+
+// GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetGenerateSectionEntityQueryOk() (*bool, bool) {
+	if o == nil || o.GenerateSectionEntityQuery == nil {
+		return nil, false
+	}
+	return o.GenerateSectionEntityQuery, true
+}
+
+// HasGenerateSectionEntityQuery returns a boolean if a field has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) HasGenerateSectionEntityQuery() bool {
+	if o != nil && o.GenerateSectionEntityQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGenerateSectionEntityQuery gets a reference to the given bool and assigns it to the GenerateSectionEntityQuery field.
+func (o *base_BTMFeatureQueryWithOccurrence157) SetGenerateSectionEntityQuery(v bool) {
+	o.GenerateSectionEntityQuery = &v
+}
+
+// GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field value if set, zero value otherwise.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetGeneratedSectionQueryId() string {
+	if o == nil || o.GeneratedSectionQueryId == nil {
+		var ret string
+		return ret
+	}
+	return *o.GeneratedSectionQueryId
+}
+
+// GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetGeneratedSectionQueryIdOk() (*string, bool) {
+	if o == nil || o.GeneratedSectionQueryId == nil {
+		return nil, false
+	}
+	return o.GeneratedSectionQueryId, true
+}
+
+// HasGeneratedSectionQueryId returns a boolean if a field has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) HasGeneratedSectionQueryId() bool {
+	if o != nil && o.GeneratedSectionQueryId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeneratedSectionQueryId gets a reference to the given string and assigns it to the GeneratedSectionQueryId field.
+func (o *base_BTMFeatureQueryWithOccurrence157) SetGeneratedSectionQueryId(v string) {
+	o.GeneratedSectionQueryId = &v
 }
 
 // GetQuery returns the Query field value if set, zero value otherwise.
@@ -1350,6 +1254,102 @@ func (o *base_BTMFeatureQueryWithOccurrence157) HasQueryString() bool {
 // SetQueryString gets a reference to the given string and assigns it to the QueryString field.
 func (o *base_BTMFeatureQueryWithOccurrence157) SetQueryString(v string) {
 	o.QueryString = &v
+}
+
+// GetFullPathAsString returns the FullPathAsString field value if set, zero value otherwise.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetFullPathAsString() string {
+	if o == nil || o.FullPathAsString == nil {
+		var ret string
+		return ret
+	}
+	return *o.FullPathAsString
+}
+
+// GetFullPathAsStringOk returns a tuple with the FullPathAsString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetFullPathAsStringOk() (*string, bool) {
+	if o == nil || o.FullPathAsString == nil {
+		return nil, false
+	}
+	return o.FullPathAsString, true
+}
+
+// HasFullPathAsString returns a boolean if a field has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) HasFullPathAsString() bool {
+	if o != nil && o.FullPathAsString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFullPathAsString gets a reference to the given string and assigns it to the FullPathAsString field.
+func (o *base_BTMFeatureQueryWithOccurrence157) SetFullPathAsString(v string) {
+	o.FullPathAsString = &v
+}
+
+// GetOccurrence returns the Occurrence field value if set, zero value otherwise.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetOccurrence() BTOccurrence74 {
+	if o == nil || o.Occurrence == nil {
+		var ret BTOccurrence74
+		return ret
+	}
+	return *o.Occurrence
+}
+
+// GetOccurrenceOk returns a tuple with the Occurrence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetOccurrenceOk() (*BTOccurrence74, bool) {
+	if o == nil || o.Occurrence == nil {
+		return nil, false
+	}
+	return o.Occurrence, true
+}
+
+// HasOccurrence returns a boolean if a field has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) HasOccurrence() bool {
+	if o != nil && o.Occurrence != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrence gets a reference to the given BTOccurrence74 and assigns it to the Occurrence field.
+func (o *base_BTMFeatureQueryWithOccurrence157) SetOccurrence(v BTOccurrence74) {
+	o.Occurrence = &v
+}
+
+// GetPath returns the Path field value if set, zero value otherwise.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetPath() []string {
+	if o == nil || o.Path == nil {
+		var ret []string
+		return ret
+	}
+	return o.Path
+}
+
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) GetPathOk() ([]string, bool) {
+	if o == nil || o.Path == nil {
+		return nil, false
+	}
+	return o.Path, true
+}
+
+// HasPath returns a boolean if a field has been set.
+func (o *base_BTMFeatureQueryWithOccurrence157) HasPath() bool {
+	if o != nil && o.Path != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given []string and assigns it to the Path field.
+func (o *base_BTMFeatureQueryWithOccurrence157) SetPath(v []string) {
+	o.Path = v
 }
 
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
@@ -1485,14 +1485,17 @@ func (o base_BTMFeatureQueryWithOccurrence157) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
 	if o.DeterministicIdList != nil {
 		toSerialize["deterministicIdList"] = o.DeterministicIdList
 	}
 	if o.DeterministicIds != nil {
 		toSerialize["deterministicIds"] = o.DeterministicIds
-	}
-	if o.FullPathAsString != nil {
-		toSerialize["fullPathAsString"] = o.FullPathAsString
 	}
 	if o.GenerateSectionEntityQuery != nil {
 		toSerialize["generateSectionEntityQuery"] = o.GenerateSectionEntityQuery
@@ -1500,23 +1503,20 @@ func (o base_BTMFeatureQueryWithOccurrence157) MarshalJSON() ([]byte, error) {
 	if o.GeneratedSectionQueryId != nil {
 		toSerialize["generatedSectionQueryId"] = o.GeneratedSectionQueryId
 	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
+	if o.Query != nil {
+		toSerialize["query"] = o.Query
 	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
+	if o.QueryString != nil {
+		toSerialize["queryString"] = o.QueryString
+	}
+	if o.FullPathAsString != nil {
+		toSerialize["fullPathAsString"] = o.FullPathAsString
 	}
 	if o.Occurrence != nil {
 		toSerialize["occurrence"] = o.Occurrence
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
-	}
-	if o.Query != nil {
-		toSerialize["query"] = o.Query
-	}
-	if o.QueryString != nil {
-		toSerialize["queryString"] = o.QueryString
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId

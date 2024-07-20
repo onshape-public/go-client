@@ -112,54 +112,104 @@ func (o *BTMSketchGeomEntity5) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
-// GetControlBoxIds returns the ControlBoxIds field value if set, zero value otherwise.
-func (o *BTMSketchGeomEntity5) GetControlBoxIds() []string {
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMSketchGeomEntity5) GetImportMicroversion() string {
 	type getResult interface {
-		GetControlBoxIds() []string
+		GetImportMicroversion() string
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetControlBoxIds()
+		return tx.GetImportMicroversion()
 	} else {
-		var de []string
+		var de string
 		return de
 	}
 }
 
-// GetControlBoxIdsOk returns a tuple with the ControlBoxIds field value if set, nil otherwise
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMSketchGeomEntity5) GetControlBoxIdsOk() ([]string, bool) {
+func (o *BTMSketchGeomEntity5) GetImportMicroversionOk() (*string, bool) {
 	type getResult interface {
-		GetControlBoxIdsOk() ([]string, bool)
+		GetImportMicroversionOk() (*string, bool)
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetControlBoxIdsOk()
+		return tx.GetImportMicroversionOk()
 	} else {
 		return nil, false
 	}
 }
 
-// HasControlBoxIds returns a boolean if a field has been set.
-func (o *BTMSketchGeomEntity5) HasControlBoxIds() bool {
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMSketchGeomEntity5) HasImportMicroversion() bool {
 	type getResult interface {
-		HasControlBoxIds() bool
+		HasImportMicroversion() bool
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasControlBoxIds()
+		return tx.HasImportMicroversion()
 	} else {
 		return false
 	}
 }
 
-// SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
-func (o *BTMSketchGeomEntity5) SetControlBoxIds(v []string) {
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMSketchGeomEntity5) SetImportMicroversion(v string) {
 	type getResult interface {
-		SetControlBoxIds(v []string)
+		SetImportMicroversion(v string)
 	}
 
-	o.GetActualInstance().(getResult).SetControlBoxIds(v)
+	o.GetActualInstance().(getResult).SetImportMicroversion(v)
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMSketchGeomEntity5) GetNodeId() string {
+	type getResult interface {
+		GetNodeId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchGeomEntity5) GetNodeIdOk() (*string, bool) {
+	type getResult interface {
+		GetNodeIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMSketchGeomEntity5) HasNodeId() bool {
+	type getResult interface {
+		HasNodeId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNodeId()
+	} else {
+		return false
+	}
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMSketchGeomEntity5) SetNodeId(v string) {
+	type getResult interface {
+		SetNodeId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetNodeId(v)
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -262,6 +312,156 @@ func (o *BTMSketchGeomEntity5) SetEntityIdAndReplaceInDependentFields(v string) 
 	o.GetActualInstance().(getResult).SetEntityIdAndReplaceInDependentFields(v)
 }
 
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *BTMSketchGeomEntity5) GetNamespace() string {
+	type getResult interface {
+		GetNamespace() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNamespace()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchGeomEntity5) GetNamespaceOk() (*string, bool) {
+	type getResult interface {
+		GetNamespaceOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNamespaceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *BTMSketchGeomEntity5) HasNamespace() bool {
+	type getResult interface {
+		HasNamespace() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNamespace()
+	} else {
+		return false
+	}
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *BTMSketchGeomEntity5) SetNamespace(v string) {
+	type getResult interface {
+		SetNamespace(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetNamespace(v)
+}
+
+// GetParameters returns the Parameters field value if set, zero value otherwise.
+func (o *BTMSketchGeomEntity5) GetParameters() []BTMParameter1 {
+	type getResult interface {
+		GetParameters() []BTMParameter1
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParameters()
+	} else {
+		var de []BTMParameter1
+		return de
+	}
+}
+
+// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchGeomEntity5) GetParametersOk() ([]BTMParameter1, bool) {
+	type getResult interface {
+		GetParametersOk() ([]BTMParameter1, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParametersOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParameters returns a boolean if a field has been set.
+func (o *BTMSketchGeomEntity5) HasParameters() bool {
+	type getResult interface {
+		HasParameters() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParameters()
+	} else {
+		return false
+	}
+}
+
+// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
+func (o *BTMSketchGeomEntity5) SetParameters(v []BTMParameter1) {
+	type getResult interface {
+		SetParameters(v []BTMParameter1)
+	}
+
+	o.GetActualInstance().(getResult).SetParameters(v)
+}
+
+// GetControlBoxIds returns the ControlBoxIds field value if set, zero value otherwise.
+func (o *BTMSketchGeomEntity5) GetControlBoxIds() []string {
+	type getResult interface {
+		GetControlBoxIds() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetControlBoxIds()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetControlBoxIdsOk returns a tuple with the ControlBoxIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchGeomEntity5) GetControlBoxIdsOk() ([]string, bool) {
+	type getResult interface {
+		GetControlBoxIdsOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetControlBoxIdsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasControlBoxIds returns a boolean if a field has been set.
+func (o *BTMSketchGeomEntity5) HasControlBoxIds() bool {
+	type getResult interface {
+		HasControlBoxIds() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasControlBoxIds()
+	} else {
+		return false
+	}
+}
+
+// SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
+func (o *BTMSketchGeomEntity5) SetControlBoxIds(v []string) {
+	type getResult interface {
+		SetControlBoxIds(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetControlBoxIds(v)
+}
+
 // GetFunctionName returns the FunctionName field value if set, zero value otherwise.
 func (o *BTMSketchGeomEntity5) GetFunctionName() string {
 	type getResult interface {
@@ -310,56 +510,6 @@ func (o *BTMSketchGeomEntity5) SetFunctionName(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetFunctionName(v)
-}
-
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMSketchGeomEntity5) GetImportMicroversion() string {
-	type getResult interface {
-		GetImportMicroversion() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetImportMicroversion()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchGeomEntity5) GetImportMicroversionOk() (*string, bool) {
-	type getResult interface {
-		GetImportMicroversionOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetImportMicroversionOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMSketchGeomEntity5) HasImportMicroversion() bool {
-	type getResult interface {
-		HasImportMicroversion() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasImportMicroversion()
-	} else {
-		return false
-	}
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMSketchGeomEntity5) SetImportMicroversion(v string) {
-	type getResult interface {
-		SetImportMicroversion(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetImportMicroversion(v)
 }
 
 // GetIsConstruction returns the IsConstruction field value if set, zero value otherwise.
@@ -562,156 +712,6 @@ func (o *BTMSketchGeomEntity5) SetIsFromSplineHandle(v bool) {
 	o.GetActualInstance().(getResult).SetIsFromSplineHandle(v)
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *BTMSketchGeomEntity5) GetNamespace() string {
-	type getResult interface {
-		GetNamespace() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNamespace()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchGeomEntity5) GetNamespaceOk() (*string, bool) {
-	type getResult interface {
-		GetNamespaceOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNamespaceOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *BTMSketchGeomEntity5) HasNamespace() bool {
-	type getResult interface {
-		HasNamespace() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasNamespace()
-	} else {
-		return false
-	}
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *BTMSketchGeomEntity5) SetNamespace(v string) {
-	type getResult interface {
-		SetNamespace(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetNamespace(v)
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMSketchGeomEntity5) GetNodeId() string {
-	type getResult interface {
-		GetNodeId() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNodeId()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchGeomEntity5) GetNodeIdOk() (*string, bool) {
-	type getResult interface {
-		GetNodeIdOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNodeIdOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMSketchGeomEntity5) HasNodeId() bool {
-	type getResult interface {
-		HasNodeId() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasNodeId()
-	} else {
-		return false
-	}
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMSketchGeomEntity5) SetNodeId(v string) {
-	type getResult interface {
-		SetNodeId(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetNodeId(v)
-}
-
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *BTMSketchGeomEntity5) GetParameters() []BTMParameter1 {
-	type getResult interface {
-		GetParameters() []BTMParameter1
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParameters()
-	} else {
-		var de []BTMParameter1
-		return de
-	}
-}
-
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchGeomEntity5) GetParametersOk() ([]BTMParameter1, bool) {
-	type getResult interface {
-		GetParametersOk() ([]BTMParameter1, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParametersOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasParameters returns a boolean if a field has been set.
-func (o *BTMSketchGeomEntity5) HasParameters() bool {
-	type getResult interface {
-		HasParameters() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasParameters()
-	} else {
-		return false
-	}
-}
-
-// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
-func (o *BTMSketchGeomEntity5) SetParameters(v []BTMParameter1) {
-	type getResult interface {
-		SetParameters(v []BTMParameter1)
-	}
-
-	o.GetActualInstance().(getResult).SetParameters(v)
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 	var err error
@@ -858,21 +858,20 @@ func (v *NullableBTMSketchGeomEntity5) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSketchGeomEntity5 struct {
-	// Type of JSON object.
-	BtType                              *string  `json:"btType,omitempty"`
-	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
-	EntityId                            *string  `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string  `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	FunctionName                        *string  `json:"functionName,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion         *string         `json:"importMicroversion,omitempty"`
-	IsConstruction             *bool           `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle *bool           `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon *bool           `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle         *bool           `json:"isFromSplineHandle,omitempty"`
-	Namespace                  *string         `json:"namespace,omitempty"`
-	NodeId                     *string         `json:"nodeId,omitempty"`
-	Parameters                 []BTMParameter1 `json:"parameters,omitempty"`
+	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
+	NodeId                              *string         `json:"nodeId,omitempty"`
+	EntityId                            *string         `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Namespace                           *string         `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
+	ControlBoxIds                       []string        `json:"controlBoxIds,omitempty"`
+	FunctionName                        *string         `json:"functionName,omitempty"`
+	IsConstruction                      *bool           `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle          *bool           `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon          *bool           `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle                  *bool           `json:"isFromSplineHandle,omitempty"`
 }
 
 // Newbase_BTMSketchGeomEntity5 instantiates a new base_BTMSketchGeomEntity5 object
@@ -924,36 +923,68 @@ func (o *base_BTMSketchGeomEntity5) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetControlBoxIds returns the ControlBoxIds field value if set, zero value otherwise.
-func (o *base_BTMSketchGeomEntity5) GetControlBoxIds() []string {
-	if o == nil || o.ControlBoxIds == nil {
-		var ret []string
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *base_BTMSketchGeomEntity5) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
 		return ret
 	}
-	return o.ControlBoxIds
+	return *o.ImportMicroversion
 }
 
-// GetControlBoxIdsOk returns a tuple with the ControlBoxIds field value if set, nil otherwise
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_BTMSketchGeomEntity5) GetControlBoxIdsOk() ([]string, bool) {
-	if o == nil || o.ControlBoxIds == nil {
+func (o *base_BTMSketchGeomEntity5) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
 		return nil, false
 	}
-	return o.ControlBoxIds, true
+	return o.ImportMicroversion, true
 }
 
-// HasControlBoxIds returns a boolean if a field has been set.
-func (o *base_BTMSketchGeomEntity5) HasControlBoxIds() bool {
-	if o != nil && o.ControlBoxIds != nil {
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *base_BTMSketchGeomEntity5) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
-func (o *base_BTMSketchGeomEntity5) SetControlBoxIds(v []string) {
-	o.ControlBoxIds = v
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *base_BTMSketchGeomEntity5) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *base_BTMSketchGeomEntity5) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchGeomEntity5) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *base_BTMSketchGeomEntity5) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *base_BTMSketchGeomEntity5) SetNodeId(v string) {
+	o.NodeId = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -1020,6 +1051,102 @@ func (o *base_BTMSketchGeomEntity5) SetEntityIdAndReplaceInDependentFields(v str
 	o.EntityIdAndReplaceInDependentFields = &v
 }
 
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *base_BTMSketchGeomEntity5) GetNamespace() string {
+	if o == nil || o.Namespace == nil {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchGeomEntity5) GetNamespaceOk() (*string, bool) {
+	if o == nil || o.Namespace == nil {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *base_BTMSketchGeomEntity5) HasNamespace() bool {
+	if o != nil && o.Namespace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *base_BTMSketchGeomEntity5) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
+// GetParameters returns the Parameters field value if set, zero value otherwise.
+func (o *base_BTMSketchGeomEntity5) GetParameters() []BTMParameter1 {
+	if o == nil || o.Parameters == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.Parameters
+}
+
+// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchGeomEntity5) GetParametersOk() ([]BTMParameter1, bool) {
+	if o == nil || o.Parameters == nil {
+		return nil, false
+	}
+	return o.Parameters, true
+}
+
+// HasParameters returns a boolean if a field has been set.
+func (o *base_BTMSketchGeomEntity5) HasParameters() bool {
+	if o != nil && o.Parameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
+func (o *base_BTMSketchGeomEntity5) SetParameters(v []BTMParameter1) {
+	o.Parameters = v
+}
+
+// GetControlBoxIds returns the ControlBoxIds field value if set, zero value otherwise.
+func (o *base_BTMSketchGeomEntity5) GetControlBoxIds() []string {
+	if o == nil || o.ControlBoxIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.ControlBoxIds
+}
+
+// GetControlBoxIdsOk returns a tuple with the ControlBoxIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchGeomEntity5) GetControlBoxIdsOk() ([]string, bool) {
+	if o == nil || o.ControlBoxIds == nil {
+		return nil, false
+	}
+	return o.ControlBoxIds, true
+}
+
+// HasControlBoxIds returns a boolean if a field has been set.
+func (o *base_BTMSketchGeomEntity5) HasControlBoxIds() bool {
+	if o != nil && o.ControlBoxIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
+func (o *base_BTMSketchGeomEntity5) SetControlBoxIds(v []string) {
+	o.ControlBoxIds = v
+}
+
 // GetFunctionName returns the FunctionName field value if set, zero value otherwise.
 func (o *base_BTMSketchGeomEntity5) GetFunctionName() string {
 	if o == nil || o.FunctionName == nil {
@@ -1050,38 +1177,6 @@ func (o *base_BTMSketchGeomEntity5) HasFunctionName() bool {
 // SetFunctionName gets a reference to the given string and assigns it to the FunctionName field.
 func (o *base_BTMSketchGeomEntity5) SetFunctionName(v string) {
 	o.FunctionName = &v
-}
-
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *base_BTMSketchGeomEntity5) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchGeomEntity5) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *base_BTMSketchGeomEntity5) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *base_BTMSketchGeomEntity5) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
 }
 
 // GetIsConstruction returns the IsConstruction field value if set, zero value otherwise.
@@ -1212,109 +1307,16 @@ func (o *base_BTMSketchGeomEntity5) SetIsFromSplineHandle(v bool) {
 	o.IsFromSplineHandle = &v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *base_BTMSketchGeomEntity5) GetNamespace() string {
-	if o == nil || o.Namespace == nil {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchGeomEntity5) GetNamespaceOk() (*string, bool) {
-	if o == nil || o.Namespace == nil {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *base_BTMSketchGeomEntity5) HasNamespace() bool {
-	if o != nil && o.Namespace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *base_BTMSketchGeomEntity5) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *base_BTMSketchGeomEntity5) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchGeomEntity5) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *base_BTMSketchGeomEntity5) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *base_BTMSketchGeomEntity5) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *base_BTMSketchGeomEntity5) GetParameters() []BTMParameter1 {
-	if o == nil || o.Parameters == nil {
-		var ret []BTMParameter1
-		return ret
-	}
-	return o.Parameters
-}
-
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchGeomEntity5) GetParametersOk() ([]BTMParameter1, bool) {
-	if o == nil || o.Parameters == nil {
-		return nil, false
-	}
-	return o.Parameters, true
-}
-
-// HasParameters returns a boolean if a field has been set.
-func (o *base_BTMSketchGeomEntity5) HasParameters() bool {
-	if o != nil && o.Parameters != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
-func (o *base_BTMSketchGeomEntity5) SetParameters(v []BTMParameter1) {
-	o.Parameters = v
-}
-
 func (o base_BTMSketchGeomEntity5) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.ControlBoxIds != nil {
-		toSerialize["controlBoxIds"] = o.ControlBoxIds
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId
@@ -1322,11 +1324,17 @@ func (o base_BTMSketchGeomEntity5) MarshalJSON() ([]byte, error) {
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
 	}
+	if o.Namespace != nil {
+		toSerialize["namespace"] = o.Namespace
+	}
+	if o.Parameters != nil {
+		toSerialize["parameters"] = o.Parameters
+	}
+	if o.ControlBoxIds != nil {
+		toSerialize["controlBoxIds"] = o.ControlBoxIds
+	}
 	if o.FunctionName != nil {
 		toSerialize["functionName"] = o.FunctionName
-	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
 	if o.IsConstruction != nil {
 		toSerialize["isConstruction"] = o.IsConstruction
@@ -1339,15 +1347,6 @@ func (o base_BTMSketchGeomEntity5) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsFromSplineHandle != nil {
 		toSerialize["isFromSplineHandle"] = o.IsFromSplineHandle
-	}
-	if o.Namespace != nil {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
-	}
-	if o.Parameters != nil {
-		toSerialize["parameters"] = o.Parameters
 	}
 	return json.Marshal(toSerialize)
 }

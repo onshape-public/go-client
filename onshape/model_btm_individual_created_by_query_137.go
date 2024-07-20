@@ -24,10 +24,10 @@ type BTMIndividualCreatedByQuery137 struct {
 	// Microversion that resulted from the import.
 	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
 	NodeId             *string                    `json:"nodeId,omitempty"`
-	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString        *string                    `json:"queryString,omitempty"`
 	PersistentQuery    *BTPStatement269           `json:"persistentQuery,omitempty"`
+	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryStatement     *BTPStatement269           `json:"queryStatement,omitempty"`
+	QueryString        *string                    `json:"queryString,omitempty"`
 	VariableName       *BTMIndividualQuery138     `json:"variableName,omitempty"`
 	BodyType           *GBTBodyType               `json:"bodyType,omitempty"`
 	EntityType         *GBTEntityType             `json:"entityType,omitempty"`
@@ -276,70 +276,6 @@ func (o *BTMIndividualCreatedByQuery137) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetQuery returns the Query field value if set, zero value otherwise.
-func (o *BTMIndividualCreatedByQuery137) GetQuery() BTMIndividualQueryBase139 {
-	if o == nil || o.Query == nil {
-		var ret BTMIndividualQueryBase139
-		return ret
-	}
-	return *o.Query
-}
-
-// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMIndividualCreatedByQuery137) GetQueryOk() (*BTMIndividualQueryBase139, bool) {
-	if o == nil || o.Query == nil {
-		return nil, false
-	}
-	return o.Query, true
-}
-
-// HasQuery returns a boolean if a field has been set.
-func (o *BTMIndividualCreatedByQuery137) HasQuery() bool {
-	if o != nil && o.Query != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetQuery gets a reference to the given BTMIndividualQueryBase139 and assigns it to the Query field.
-func (o *BTMIndividualCreatedByQuery137) SetQuery(v BTMIndividualQueryBase139) {
-	o.Query = &v
-}
-
-// GetQueryString returns the QueryString field value if set, zero value otherwise.
-func (o *BTMIndividualCreatedByQuery137) GetQueryString() string {
-	if o == nil || o.QueryString == nil {
-		var ret string
-		return ret
-	}
-	return *o.QueryString
-}
-
-// GetQueryStringOk returns a tuple with the QueryString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMIndividualCreatedByQuery137) GetQueryStringOk() (*string, bool) {
-	if o == nil || o.QueryString == nil {
-		return nil, false
-	}
-	return o.QueryString, true
-}
-
-// HasQueryString returns a boolean if a field has been set.
-func (o *BTMIndividualCreatedByQuery137) HasQueryString() bool {
-	if o != nil && o.QueryString != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetQueryString gets a reference to the given string and assigns it to the QueryString field.
-func (o *BTMIndividualCreatedByQuery137) SetQueryString(v string) {
-	o.QueryString = &v
-}
-
 // GetPersistentQuery returns the PersistentQuery field value if set, zero value otherwise.
 func (o *BTMIndividualCreatedByQuery137) GetPersistentQuery() BTPStatement269 {
 	if o == nil || o.PersistentQuery == nil {
@@ -372,6 +308,38 @@ func (o *BTMIndividualCreatedByQuery137) SetPersistentQuery(v BTPStatement269) {
 	o.PersistentQuery = &v
 }
 
+// GetQuery returns the Query field value if set, zero value otherwise.
+func (o *BTMIndividualCreatedByQuery137) GetQuery() BTMIndividualQueryBase139 {
+	if o == nil || o.Query == nil {
+		var ret BTMIndividualQueryBase139
+		return ret
+	}
+	return *o.Query
+}
+
+// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualCreatedByQuery137) GetQueryOk() (*BTMIndividualQueryBase139, bool) {
+	if o == nil || o.Query == nil {
+		return nil, false
+	}
+	return o.Query, true
+}
+
+// HasQuery returns a boolean if a field has been set.
+func (o *BTMIndividualCreatedByQuery137) HasQuery() bool {
+	if o != nil && o.Query != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQuery gets a reference to the given BTMIndividualQueryBase139 and assigns it to the Query field.
+func (o *BTMIndividualCreatedByQuery137) SetQuery(v BTMIndividualQueryBase139) {
+	o.Query = &v
+}
+
 // GetQueryStatement returns the QueryStatement field value if set, zero value otherwise.
 func (o *BTMIndividualCreatedByQuery137) GetQueryStatement() BTPStatement269 {
 	if o == nil || o.QueryStatement == nil {
@@ -402,6 +370,38 @@ func (o *BTMIndividualCreatedByQuery137) HasQueryStatement() bool {
 // SetQueryStatement gets a reference to the given BTPStatement269 and assigns it to the QueryStatement field.
 func (o *BTMIndividualCreatedByQuery137) SetQueryStatement(v BTPStatement269) {
 	o.QueryStatement = &v
+}
+
+// GetQueryString returns the QueryString field value if set, zero value otherwise.
+func (o *BTMIndividualCreatedByQuery137) GetQueryString() string {
+	if o == nil || o.QueryString == nil {
+		var ret string
+		return ret
+	}
+	return *o.QueryString
+}
+
+// GetQueryStringOk returns a tuple with the QueryString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualCreatedByQuery137) GetQueryStringOk() (*string, bool) {
+	if o == nil || o.QueryString == nil {
+		return nil, false
+	}
+	return o.QueryString, true
+}
+
+// HasQueryString returns a boolean if a field has been set.
+func (o *BTMIndividualCreatedByQuery137) HasQueryString() bool {
+	if o != nil && o.QueryString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryString gets a reference to the given string and assigns it to the QueryString field.
+func (o *BTMIndividualCreatedByQuery137) SetQueryString(v string) {
+	o.QueryString = &v
 }
 
 // GetVariableName returns the VariableName field value if set, zero value otherwise.
@@ -587,17 +587,17 @@ func (o BTMIndividualCreatedByQuery137) MarshalJSON() ([]byte, error) {
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
-	if o.Query != nil {
-		toSerialize["query"] = o.Query
-	}
-	if o.QueryString != nil {
-		toSerialize["queryString"] = o.QueryString
-	}
 	if o.PersistentQuery != nil {
 		toSerialize["persistentQuery"] = o.PersistentQuery
 	}
+	if o.Query != nil {
+		toSerialize["query"] = o.Query
+	}
 	if o.QueryStatement != nil {
 		toSerialize["queryStatement"] = o.QueryStatement
+	}
+	if o.QueryString != nil {
+		toSerialize["queryString"] = o.QueryString
 	}
 	if o.VariableName != nil {
 		toSerialize["variableName"] = o.VariableName

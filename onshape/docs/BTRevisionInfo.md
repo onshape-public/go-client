@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Approvers** | Pointer to [**[]BTRevisionApproverInfo**](BTRevisionApproverInfo.md) | The users who approved the release package that created this revision. | [optional] 
 **AutoObsoletionReleaseId** | Pointer to **string** |  | [optional] 
 **AutoObsoletionReleaseName** | Pointer to **string** |  | [optional] 
+**CanChangeType** | Pointer to **bool** | Whether the revision can change object type. Used in reuse part number flow | [optional] [default to false]
 **CanExport** | Pointer to **bool** |  | [optional] 
 **CompanyId** | Pointer to **string** | The company or enterprise ID that owns the resource. | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
@@ -134,6 +135,31 @@ SetAutoObsoletionReleaseName sets AutoObsoletionReleaseName field to given value
 `func (o *BTRevisionInfo) HasAutoObsoletionReleaseName() bool`
 
 HasAutoObsoletionReleaseName returns a boolean if a field has been set.
+
+### GetCanChangeType
+
+`func (o *BTRevisionInfo) GetCanChangeType() bool`
+
+GetCanChangeType returns the CanChangeType field if non-nil, zero value otherwise.
+
+### GetCanChangeTypeOk
+
+`func (o *BTRevisionInfo) GetCanChangeTypeOk() (*bool, bool)`
+
+GetCanChangeTypeOk returns a tuple with the CanChangeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanChangeType
+
+`func (o *BTRevisionInfo) SetCanChangeType(v bool)`
+
+SetCanChangeType sets CanChangeType field to given value.
+
+### HasCanChangeType
+
+`func (o *BTRevisionInfo) HasCanChangeType() bool`
+
+HasCanChangeType returns a boolean if a field has been set.
 
 ### GetCanExport
 

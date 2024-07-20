@@ -16,13 +16,18 @@ import (
 
 // BTPModuleId235 struct for BTPModuleId235
 type BTPModuleId235 struct {
-	Atomic *bool `json:"atomic,omitempty"`
-	// Type of JSON object.
+	Atomic                                  *bool                              `json:"atomic,omitempty"`
 	BtType                                  *string                            `json:"btType,omitempty"`
-	DbimportString                          *string                            `json:"dbimportString,omitempty"`
 	DocumentationType                       *GBTPDefinitionType                `json:"documentationType,omitempty"`
-	ElementImport                           *bool                              `json:"elementImport,omitempty"`
 	EndSourceLocation                       *int32                             `json:"endSourceLocation,omitempty"`
+	NodeId                                  *string                            `json:"nodeId,omitempty"`
+	ShortDescriptor                         *string                            `json:"shortDescriptor,omitempty"`
+	SpaceAfter                              *BTPSpace10                        `json:"spaceAfter,omitempty"`
+	SpaceBefore                             *BTPSpace10                        `json:"spaceBefore,omitempty"`
+	SpaceDefault                            *bool                              `json:"spaceDefault,omitempty"`
+	StartSourceLocation                     *int32                             `json:"startSourceLocation,omitempty"`
+	DbimportString                          *string                            `json:"dbimportString,omitempty"`
+	ElementImport                           *bool                              `json:"elementImport,omitempty"`
 	ExternalDocumentWithVersion             *BTDocumentWithVersionId           `json:"externalDocumentWithVersion,omitempty"`
 	ExternalDocumentWithVersionAndElementId *BTDocumentWithVersionAndElementId `json:"externalDocumentWithVersionAndElementId,omitempty"`
 	ExternalImport                          *bool                              `json:"externalImport,omitempty"`
@@ -33,22 +38,16 @@ type BTPModuleId235 struct {
 	LegacyElementName                       *string                            `json:"legacyElementName,omitempty"`
 	LegacyVersionNumber                     *int32                             `json:"legacyVersionNumber,omitempty"`
 	Microversion                            *string                            `json:"microversion,omitempty"`
-	NodeId                                  *string                            `json:"nodeId,omitempty"`
 	Path                                    *BTPLiteralString259               `json:"path,omitempty"`
 	PathPotentiallyValid                    *bool                              `json:"pathPotentiallyValid,omitempty"`
 	PathVersion                             *string                            `json:"pathVersion,omitempty"`
 	PotentiallyValid                        *bool                              `json:"potentiallyValid,omitempty"`
-	ShortDescriptor                         *string                            `json:"shortDescriptor,omitempty"`
-	SpaceAfter                              *BTPSpace10                        `json:"spaceAfter,omitempty"`
 	SpaceAfterPath                          *BTPSpace10                        `json:"spaceAfterPath,omitempty"`
 	SpaceAfterVersion                       *BTPSpace10                        `json:"spaceAfterVersion,omitempty"`
-	SpaceBefore                             *BTPSpace10                        `json:"spaceBefore,omitempty"`
 	SpaceBeforePath                         *BTPSpace10                        `json:"spaceBeforePath,omitempty"`
 	SpaceBeforeVersion                      *BTPSpace10                        `json:"spaceBeforeVersion,omitempty"`
-	SpaceDefault                            *bool                              `json:"spaceDefault,omitempty"`
 	StandardLibrary                         *bool                              `json:"standardLibrary,omitempty"`
 	StandardLibraryCommon                   *bool                              `json:"standardLibraryCommon,omitempty"`
-	StartSourceLocation                     *int32                             `json:"startSourceLocation,omitempty"`
 	ValidLegacyVersion                      *bool                              `json:"validLegacyVersion,omitempty"`
 	Version                                 *BTPLiteralString259               `json:"version,omitempty"`
 	VersionAndMicroversion                  *string                            `json:"versionAndMicroversion,omitempty"`
@@ -136,38 +135,6 @@ func (o *BTPModuleId235) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetDbimportString returns the DbimportString field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetDbimportString() string {
-	if o == nil || o.DbimportString == nil {
-		var ret string
-		return ret
-	}
-	return *o.DbimportString
-}
-
-// GetDbimportStringOk returns a tuple with the DbimportString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetDbimportStringOk() (*string, bool) {
-	if o == nil || o.DbimportString == nil {
-		return nil, false
-	}
-	return o.DbimportString, true
-}
-
-// HasDbimportString returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasDbimportString() bool {
-	if o != nil && o.DbimportString != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDbimportString gets a reference to the given string and assigns it to the DbimportString field.
-func (o *BTPModuleId235) SetDbimportString(v string) {
-	o.DbimportString = &v
-}
-
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
 func (o *BTPModuleId235) GetDocumentationType() GBTPDefinitionType {
 	if o == nil || o.DocumentationType == nil {
@@ -200,38 +167,6 @@ func (o *BTPModuleId235) SetDocumentationType(v GBTPDefinitionType) {
 	o.DocumentationType = &v
 }
 
-// GetElementImport returns the ElementImport field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetElementImport() bool {
-	if o == nil || o.ElementImport == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ElementImport
-}
-
-// GetElementImportOk returns a tuple with the ElementImport field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetElementImportOk() (*bool, bool) {
-	if o == nil || o.ElementImport == nil {
-		return nil, false
-	}
-	return o.ElementImport, true
-}
-
-// HasElementImport returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasElementImport() bool {
-	if o != nil && o.ElementImport != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetElementImport gets a reference to the given bool and assigns it to the ElementImport field.
-func (o *BTPModuleId235) SetElementImport(v bool) {
-	o.ElementImport = &v
-}
-
 // GetEndSourceLocation returns the EndSourceLocation field value if set, zero value otherwise.
 func (o *BTPModuleId235) GetEndSourceLocation() int32 {
 	if o == nil || o.EndSourceLocation == nil {
@@ -262,6 +197,262 @@ func (o *BTPModuleId235) HasEndSourceLocation() bool {
 // SetEndSourceLocation gets a reference to the given int32 and assigns it to the EndSourceLocation field.
 func (o *BTPModuleId235) SetEndSourceLocation(v int32) {
 	o.EndSourceLocation = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTPModuleId235) SetNodeId(v string) {
+	o.NodeId = &v
+}
+
+// GetShortDescriptor returns the ShortDescriptor field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetShortDescriptor() string {
+	if o == nil || o.ShortDescriptor == nil {
+		var ret string
+		return ret
+	}
+	return *o.ShortDescriptor
+}
+
+// GetShortDescriptorOk returns a tuple with the ShortDescriptor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetShortDescriptorOk() (*string, bool) {
+	if o == nil || o.ShortDescriptor == nil {
+		return nil, false
+	}
+	return o.ShortDescriptor, true
+}
+
+// HasShortDescriptor returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasShortDescriptor() bool {
+	if o != nil && o.ShortDescriptor != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShortDescriptor gets a reference to the given string and assigns it to the ShortDescriptor field.
+func (o *BTPModuleId235) SetShortDescriptor(v string) {
+	o.ShortDescriptor = &v
+}
+
+// GetSpaceAfter returns the SpaceAfter field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetSpaceAfter() BTPSpace10 {
+	if o == nil || o.SpaceAfter == nil {
+		var ret BTPSpace10
+		return ret
+	}
+	return *o.SpaceAfter
+}
+
+// GetSpaceAfterOk returns a tuple with the SpaceAfter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetSpaceAfterOk() (*BTPSpace10, bool) {
+	if o == nil || o.SpaceAfter == nil {
+		return nil, false
+	}
+	return o.SpaceAfter, true
+}
+
+// HasSpaceAfter returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasSpaceAfter() bool {
+	if o != nil && o.SpaceAfter != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSpaceAfter gets a reference to the given BTPSpace10 and assigns it to the SpaceAfter field.
+func (o *BTPModuleId235) SetSpaceAfter(v BTPSpace10) {
+	o.SpaceAfter = &v
+}
+
+// GetSpaceBefore returns the SpaceBefore field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetSpaceBefore() BTPSpace10 {
+	if o == nil || o.SpaceBefore == nil {
+		var ret BTPSpace10
+		return ret
+	}
+	return *o.SpaceBefore
+}
+
+// GetSpaceBeforeOk returns a tuple with the SpaceBefore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetSpaceBeforeOk() (*BTPSpace10, bool) {
+	if o == nil || o.SpaceBefore == nil {
+		return nil, false
+	}
+	return o.SpaceBefore, true
+}
+
+// HasSpaceBefore returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasSpaceBefore() bool {
+	if o != nil && o.SpaceBefore != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSpaceBefore gets a reference to the given BTPSpace10 and assigns it to the SpaceBefore field.
+func (o *BTPModuleId235) SetSpaceBefore(v BTPSpace10) {
+	o.SpaceBefore = &v
+}
+
+// GetSpaceDefault returns the SpaceDefault field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetSpaceDefault() bool {
+	if o == nil || o.SpaceDefault == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SpaceDefault
+}
+
+// GetSpaceDefaultOk returns a tuple with the SpaceDefault field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetSpaceDefaultOk() (*bool, bool) {
+	if o == nil || o.SpaceDefault == nil {
+		return nil, false
+	}
+	return o.SpaceDefault, true
+}
+
+// HasSpaceDefault returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasSpaceDefault() bool {
+	if o != nil && o.SpaceDefault != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSpaceDefault gets a reference to the given bool and assigns it to the SpaceDefault field.
+func (o *BTPModuleId235) SetSpaceDefault(v bool) {
+	o.SpaceDefault = &v
+}
+
+// GetStartSourceLocation returns the StartSourceLocation field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetStartSourceLocation() int32 {
+	if o == nil || o.StartSourceLocation == nil {
+		var ret int32
+		return ret
+	}
+	return *o.StartSourceLocation
+}
+
+// GetStartSourceLocationOk returns a tuple with the StartSourceLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetStartSourceLocationOk() (*int32, bool) {
+	if o == nil || o.StartSourceLocation == nil {
+		return nil, false
+	}
+	return o.StartSourceLocation, true
+}
+
+// HasStartSourceLocation returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasStartSourceLocation() bool {
+	if o != nil && o.StartSourceLocation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStartSourceLocation gets a reference to the given int32 and assigns it to the StartSourceLocation field.
+func (o *BTPModuleId235) SetStartSourceLocation(v int32) {
+	o.StartSourceLocation = &v
+}
+
+// GetDbimportString returns the DbimportString field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetDbimportString() string {
+	if o == nil || o.DbimportString == nil {
+		var ret string
+		return ret
+	}
+	return *o.DbimportString
+}
+
+// GetDbimportStringOk returns a tuple with the DbimportString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetDbimportStringOk() (*string, bool) {
+	if o == nil || o.DbimportString == nil {
+		return nil, false
+	}
+	return o.DbimportString, true
+}
+
+// HasDbimportString returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasDbimportString() bool {
+	if o != nil && o.DbimportString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDbimportString gets a reference to the given string and assigns it to the DbimportString field.
+func (o *BTPModuleId235) SetDbimportString(v string) {
+	o.DbimportString = &v
+}
+
+// GetElementImport returns the ElementImport field value if set, zero value otherwise.
+func (o *BTPModuleId235) GetElementImport() bool {
+	if o == nil || o.ElementImport == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ElementImport
+}
+
+// GetElementImportOk returns a tuple with the ElementImport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModuleId235) GetElementImportOk() (*bool, bool) {
+	if o == nil || o.ElementImport == nil {
+		return nil, false
+	}
+	return o.ElementImport, true
+}
+
+// HasElementImport returns a boolean if a field has been set.
+func (o *BTPModuleId235) HasElementImport() bool {
+	if o != nil && o.ElementImport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementImport gets a reference to the given bool and assigns it to the ElementImport field.
+func (o *BTPModuleId235) SetElementImport(v bool) {
+	o.ElementImport = &v
 }
 
 // GetExternalDocumentWithVersion returns the ExternalDocumentWithVersion field value if set, zero value otherwise.
@@ -584,38 +775,6 @@ func (o *BTPModuleId235) SetMicroversion(v string) {
 	o.Microversion = &v
 }
 
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTPModuleId235) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
 // GetPath returns the Path field value if set, zero value otherwise.
 func (o *BTPModuleId235) GetPath() BTPLiteralString259 {
 	if o == nil || o.Path == nil {
@@ -744,70 +903,6 @@ func (o *BTPModuleId235) SetPotentiallyValid(v bool) {
 	o.PotentiallyValid = &v
 }
 
-// GetShortDescriptor returns the ShortDescriptor field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetShortDescriptor() string {
-	if o == nil || o.ShortDescriptor == nil {
-		var ret string
-		return ret
-	}
-	return *o.ShortDescriptor
-}
-
-// GetShortDescriptorOk returns a tuple with the ShortDescriptor field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetShortDescriptorOk() (*string, bool) {
-	if o == nil || o.ShortDescriptor == nil {
-		return nil, false
-	}
-	return o.ShortDescriptor, true
-}
-
-// HasShortDescriptor returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasShortDescriptor() bool {
-	if o != nil && o.ShortDescriptor != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetShortDescriptor gets a reference to the given string and assigns it to the ShortDescriptor field.
-func (o *BTPModuleId235) SetShortDescriptor(v string) {
-	o.ShortDescriptor = &v
-}
-
-// GetSpaceAfter returns the SpaceAfter field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetSpaceAfter() BTPSpace10 {
-	if o == nil || o.SpaceAfter == nil {
-		var ret BTPSpace10
-		return ret
-	}
-	return *o.SpaceAfter
-}
-
-// GetSpaceAfterOk returns a tuple with the SpaceAfter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetSpaceAfterOk() (*BTPSpace10, bool) {
-	if o == nil || o.SpaceAfter == nil {
-		return nil, false
-	}
-	return o.SpaceAfter, true
-}
-
-// HasSpaceAfter returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasSpaceAfter() bool {
-	if o != nil && o.SpaceAfter != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSpaceAfter gets a reference to the given BTPSpace10 and assigns it to the SpaceAfter field.
-func (o *BTPModuleId235) SetSpaceAfter(v BTPSpace10) {
-	o.SpaceAfter = &v
-}
-
 // GetSpaceAfterPath returns the SpaceAfterPath field value if set, zero value otherwise.
 func (o *BTPModuleId235) GetSpaceAfterPath() BTPSpace10 {
 	if o == nil || o.SpaceAfterPath == nil {
@@ -870,38 +965,6 @@ func (o *BTPModuleId235) HasSpaceAfterVersion() bool {
 // SetSpaceAfterVersion gets a reference to the given BTPSpace10 and assigns it to the SpaceAfterVersion field.
 func (o *BTPModuleId235) SetSpaceAfterVersion(v BTPSpace10) {
 	o.SpaceAfterVersion = &v
-}
-
-// GetSpaceBefore returns the SpaceBefore field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetSpaceBefore() BTPSpace10 {
-	if o == nil || o.SpaceBefore == nil {
-		var ret BTPSpace10
-		return ret
-	}
-	return *o.SpaceBefore
-}
-
-// GetSpaceBeforeOk returns a tuple with the SpaceBefore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetSpaceBeforeOk() (*BTPSpace10, bool) {
-	if o == nil || o.SpaceBefore == nil {
-		return nil, false
-	}
-	return o.SpaceBefore, true
-}
-
-// HasSpaceBefore returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasSpaceBefore() bool {
-	if o != nil && o.SpaceBefore != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSpaceBefore gets a reference to the given BTPSpace10 and assigns it to the SpaceBefore field.
-func (o *BTPModuleId235) SetSpaceBefore(v BTPSpace10) {
-	o.SpaceBefore = &v
 }
 
 // GetSpaceBeforePath returns the SpaceBeforePath field value if set, zero value otherwise.
@@ -968,38 +1031,6 @@ func (o *BTPModuleId235) SetSpaceBeforeVersion(v BTPSpace10) {
 	o.SpaceBeforeVersion = &v
 }
 
-// GetSpaceDefault returns the SpaceDefault field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetSpaceDefault() bool {
-	if o == nil || o.SpaceDefault == nil {
-		var ret bool
-		return ret
-	}
-	return *o.SpaceDefault
-}
-
-// GetSpaceDefaultOk returns a tuple with the SpaceDefault field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetSpaceDefaultOk() (*bool, bool) {
-	if o == nil || o.SpaceDefault == nil {
-		return nil, false
-	}
-	return o.SpaceDefault, true
-}
-
-// HasSpaceDefault returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasSpaceDefault() bool {
-	if o != nil && o.SpaceDefault != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSpaceDefault gets a reference to the given bool and assigns it to the SpaceDefault field.
-func (o *BTPModuleId235) SetSpaceDefault(v bool) {
-	o.SpaceDefault = &v
-}
-
 // GetStandardLibrary returns the StandardLibrary field value if set, zero value otherwise.
 func (o *BTPModuleId235) GetStandardLibrary() bool {
 	if o == nil || o.StandardLibrary == nil {
@@ -1062,38 +1093,6 @@ func (o *BTPModuleId235) HasStandardLibraryCommon() bool {
 // SetStandardLibraryCommon gets a reference to the given bool and assigns it to the StandardLibraryCommon field.
 func (o *BTPModuleId235) SetStandardLibraryCommon(v bool) {
 	o.StandardLibraryCommon = &v
-}
-
-// GetStartSourceLocation returns the StartSourceLocation field value if set, zero value otherwise.
-func (o *BTPModuleId235) GetStartSourceLocation() int32 {
-	if o == nil || o.StartSourceLocation == nil {
-		var ret int32
-		return ret
-	}
-	return *o.StartSourceLocation
-}
-
-// GetStartSourceLocationOk returns a tuple with the StartSourceLocation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPModuleId235) GetStartSourceLocationOk() (*int32, bool) {
-	if o == nil || o.StartSourceLocation == nil {
-		return nil, false
-	}
-	return o.StartSourceLocation, true
-}
-
-// HasStartSourceLocation returns a boolean if a field has been set.
-func (o *BTPModuleId235) HasStartSourceLocation() bool {
-	if o != nil && o.StartSourceLocation != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStartSourceLocation gets a reference to the given int32 and assigns it to the StartSourceLocation field.
-func (o *BTPModuleId235) SetStartSourceLocation(v int32) {
-	o.StartSourceLocation = &v
 }
 
 // GetValidLegacyVersion returns the ValidLegacyVersion field value if set, zero value otherwise.
@@ -1232,17 +1231,35 @@ func (o BTPModuleId235) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.DbimportString != nil {
-		toSerialize["dbimportString"] = o.DbimportString
-	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType
 	}
-	if o.ElementImport != nil {
-		toSerialize["elementImport"] = o.ElementImport
-	}
 	if o.EndSourceLocation != nil {
 		toSerialize["endSourceLocation"] = o.EndSourceLocation
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.ShortDescriptor != nil {
+		toSerialize["shortDescriptor"] = o.ShortDescriptor
+	}
+	if o.SpaceAfter != nil {
+		toSerialize["spaceAfter"] = o.SpaceAfter
+	}
+	if o.SpaceBefore != nil {
+		toSerialize["spaceBefore"] = o.SpaceBefore
+	}
+	if o.SpaceDefault != nil {
+		toSerialize["spaceDefault"] = o.SpaceDefault
+	}
+	if o.StartSourceLocation != nil {
+		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.DbimportString != nil {
+		toSerialize["dbimportString"] = o.DbimportString
+	}
+	if o.ElementImport != nil {
+		toSerialize["elementImport"] = o.ElementImport
 	}
 	if o.ExternalDocumentWithVersion != nil {
 		toSerialize["externalDocumentWithVersion"] = o.ExternalDocumentWithVersion
@@ -1274,9 +1291,6 @@ func (o BTPModuleId235) MarshalJSON() ([]byte, error) {
 	if o.Microversion != nil {
 		toSerialize["microversion"] = o.Microversion
 	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
-	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
 	}
@@ -1289,20 +1303,11 @@ func (o BTPModuleId235) MarshalJSON() ([]byte, error) {
 	if o.PotentiallyValid != nil {
 		toSerialize["potentiallyValid"] = o.PotentiallyValid
 	}
-	if o.ShortDescriptor != nil {
-		toSerialize["shortDescriptor"] = o.ShortDescriptor
-	}
-	if o.SpaceAfter != nil {
-		toSerialize["spaceAfter"] = o.SpaceAfter
-	}
 	if o.SpaceAfterPath != nil {
 		toSerialize["spaceAfterPath"] = o.SpaceAfterPath
 	}
 	if o.SpaceAfterVersion != nil {
 		toSerialize["spaceAfterVersion"] = o.SpaceAfterVersion
-	}
-	if o.SpaceBefore != nil {
-		toSerialize["spaceBefore"] = o.SpaceBefore
 	}
 	if o.SpaceBeforePath != nil {
 		toSerialize["spaceBeforePath"] = o.SpaceBeforePath
@@ -1310,17 +1315,11 @@ func (o BTPModuleId235) MarshalJSON() ([]byte, error) {
 	if o.SpaceBeforeVersion != nil {
 		toSerialize["spaceBeforeVersion"] = o.SpaceBeforeVersion
 	}
-	if o.SpaceDefault != nil {
-		toSerialize["spaceDefault"] = o.SpaceDefault
-	}
 	if o.StandardLibrary != nil {
 		toSerialize["standardLibrary"] = o.StandardLibrary
 	}
 	if o.StandardLibraryCommon != nil {
 		toSerialize["standardLibraryCommon"] = o.StandardLibraryCommon
-	}
-	if o.StartSourceLocation != nil {
-		toSerialize["startSourceLocation"] = o.StartSourceLocation
 	}
 	if o.ValidLegacyVersion != nil {
 		toSerialize["validLegacyVersion"] = o.ValidLegacyVersion

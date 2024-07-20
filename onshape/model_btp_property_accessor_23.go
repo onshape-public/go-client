@@ -20,13 +20,98 @@ type BTPPropertyAccessor23 struct {
 	implBTPPropertyAccessor23 interface{}
 }
 
+// BTPLiteral253AsBTPPropertyAccessor23 is a convenience function that returns BTPLiteral253 wrapped in BTPPropertyAccessor23
+func (o *BTPLiteral253) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionAccess237AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionAccess237 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionAccess237) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionBuiltinCall239AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionBuiltinCall239 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionBuiltinCall239) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionCall240AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionCall240 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionCall240) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionFunction1325AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionFunction1325 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionFunction1325) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionSwitch2632AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionSwitch2632 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionSwitch2632) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionVarReference245AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionVarReference245 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionVarReference245) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPLiteralUndefined260AsBTPPropertyAccessor23 is a convenience function that returns BTPLiteralUndefined260 wrapped in BTPPropertyAccessor23
+func (o *BTPLiteralUndefined260) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPLiteralString259AsBTPPropertyAccessor23 is a convenience function that returns BTPLiteralString259 wrapped in BTPPropertyAccessor23
+func (o *BTPLiteralString259) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
 // BTPExpression9AsBTPPropertyAccessor23 is a convenience function that returns BTPExpression9 wrapped in BTPPropertyAccessor23
 func (o *BTPExpression9) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
 	return &BTPPropertyAccessor23{o}
 }
 
+// BTPExpressionAs238AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionAs238 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionAs238) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
 // BTPIdentifier8AsBTPPropertyAccessor23 is a convenience function that returns BTPIdentifier8 wrapped in BTPPropertyAccessor23
 func (o *BTPIdentifier8) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPLiteralBoolean255AsBTPPropertyAccessor23 is a convenience function that returns BTPLiteralBoolean255 wrapped in BTPPropertyAccessor23
+func (o *BTPLiteralBoolean255) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionGroup241AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionGroup241 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionGroup241) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionNew243AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionNew243 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionNew243) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionOperator244AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionOperator244 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionOperator244) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPLiteralArray254AsBTPPropertyAccessor23 is a convenience function that returns BTPLiteralArray254 wrapped in BTPPropertyAccessor23
+func (o *BTPLiteralArray254) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionIs242AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionIs242 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionIs242) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
+	return &BTPPropertyAccessor23{o}
+}
+
+// BTPExpressionTry1271AsBTPPropertyAccessor23 is a convenience function that returns BTPExpressionTry1271 wrapped in BTPPropertyAccessor23
+func (o *BTPExpressionTry1271) AsBTPPropertyAccessor23() *BTPPropertyAccessor23 {
 	return &BTPPropertyAccessor23{o}
 }
 
@@ -571,6 +656,174 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTPExpressionAccess-237'
+	if jsonDict["btType"] == "BTPExpressionAccess-237" {
+		// try to unmarshal JSON data into BTPExpressionAccess237
+		var qr *BTPExpressionAccess237
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionAccess237: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionAs-238'
+	if jsonDict["btType"] == "BTPExpressionAs-238" {
+		// try to unmarshal JSON data into BTPExpressionAs238
+		var qr *BTPExpressionAs238
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionAs238: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionBuiltinCall-239'
+	if jsonDict["btType"] == "BTPExpressionBuiltinCall-239" {
+		// try to unmarshal JSON data into BTPExpressionBuiltinCall239
+		var qr *BTPExpressionBuiltinCall239
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionBuiltinCall239: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionCall-240'
+	if jsonDict["btType"] == "BTPExpressionCall-240" {
+		// try to unmarshal JSON data into BTPExpressionCall240
+		var qr *BTPExpressionCall240
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionCall240: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionFunction-1325'
+	if jsonDict["btType"] == "BTPExpressionFunction-1325" {
+		// try to unmarshal JSON data into BTPExpressionFunction1325
+		var qr *BTPExpressionFunction1325
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionFunction1325: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionGroup-241'
+	if jsonDict["btType"] == "BTPExpressionGroup-241" {
+		// try to unmarshal JSON data into BTPExpressionGroup241
+		var qr *BTPExpressionGroup241
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionGroup241: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionIs-242'
+	if jsonDict["btType"] == "BTPExpressionIs-242" {
+		// try to unmarshal JSON data into BTPExpressionIs242
+		var qr *BTPExpressionIs242
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionIs242: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionNew-243'
+	if jsonDict["btType"] == "BTPExpressionNew-243" {
+		// try to unmarshal JSON data into BTPExpressionNew243
+		var qr *BTPExpressionNew243
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionNew243: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionOperator-244'
+	if jsonDict["btType"] == "BTPExpressionOperator-244" {
+		// try to unmarshal JSON data into BTPExpressionOperator244
+		var qr *BTPExpressionOperator244
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionOperator244: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionSwitch-2632'
+	if jsonDict["btType"] == "BTPExpressionSwitch-2632" {
+		// try to unmarshal JSON data into BTPExpressionSwitch2632
+		var qr *BTPExpressionSwitch2632
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionSwitch2632: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionTry-1271'
+	if jsonDict["btType"] == "BTPExpressionTry-1271" {
+		// try to unmarshal JSON data into BTPExpressionTry1271
+		var qr *BTPExpressionTry1271
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionTry1271: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionVarReference-245'
+	if jsonDict["btType"] == "BTPExpressionVarReference-245" {
+		// try to unmarshal JSON data into BTPExpressionVarReference245
+		var qr *BTPExpressionVarReference245
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPExpressionVarReference245: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTPIdentifier-8'
 	if jsonDict["btType"] == "BTPIdentifier-8" {
 		// try to unmarshal JSON data into BTPIdentifier8
@@ -582,6 +835,76 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPPropertyAccessor23 = nil
 			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPIdentifier8: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteral-253'
+	if jsonDict["btType"] == "BTPLiteral-253" {
+		// try to unmarshal JSON data into BTPLiteral253
+		var qr *BTPLiteral253
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPLiteral253: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralArray-254'
+	if jsonDict["btType"] == "BTPLiteralArray-254" {
+		// try to unmarshal JSON data into BTPLiteralArray254
+		var qr *BTPLiteralArray254
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPLiteralArray254: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralBoolean-255'
+	if jsonDict["btType"] == "BTPLiteralBoolean-255" {
+		// try to unmarshal JSON data into BTPLiteralBoolean255
+		var qr *BTPLiteralBoolean255
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPLiteralBoolean255: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralString-259'
+	if jsonDict["btType"] == "BTPLiteralString-259" {
+		// try to unmarshal JSON data into BTPLiteralString259
+		var qr *BTPLiteralString259
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPLiteralString259: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralUndefined-260'
+	if jsonDict["btType"] == "BTPLiteralUndefined-260" {
+		// try to unmarshal JSON data into BTPLiteralUndefined260
+		var qr *BTPLiteralUndefined260
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPLiteralUndefined260: %s", err.Error())
 		}
 	}
 
@@ -651,8 +974,7 @@ func (v *NullableBTPPropertyAccessor23) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPPropertyAccessor23 struct {
-	Atomic *bool `json:"atomic,omitempty"`
-	// Type of JSON object.
+	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`

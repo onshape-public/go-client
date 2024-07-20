@@ -1,6 +1,6 @@
 # \BlobElementApi
 
-All URIs are relative to *https://cad.onshape.com/api/v7*
+All URIs are relative to *https://cad.onshape.com/api/v8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -281,7 +281,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
     allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
-    createComposite := true // bool |  (optional)
+    createComposite := true // bool | Not supported for importing into a single part studio. (optional)
     createDrawingIfPossible := true // bool |  (optional)
     encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
  **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
- **createComposite** | **bool** |  | 
+ **createComposite** | **bool** | Not supported for importing into a single part studio. | 
  **createDrawingIfPossible** | **bool** |  | 
  **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
  **extractAssemblyHierarchy** | **bool** |  | 
@@ -416,7 +416,7 @@ func main() {
     parentChangeId := "parentChangeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional)
     file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
     allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
-    createComposite := true // bool |  (optional)
+    createComposite := true // bool | Not supported for importing into a single part studio. (optional)
     createDrawingIfPossible := true // bool |  (optional)
     encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
  **parentChangeId** | **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | 
  **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
  **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
- **createComposite** | **bool** |  | 
+ **createComposite** | **bool** | Not supported for importing into a single part studio. | 
  **createDrawingIfPossible** | **bool** |  | 
  **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
  **extractAssemblyHierarchy** | **bool** |  | 

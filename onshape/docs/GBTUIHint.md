@@ -63,6 +63,8 @@
 
 * `GBTUIHintShowInlineConfigInputs` (value: `"SHOW_INLINE_CONFIG_INPUTS"`)
 
+* `GBTUIHintFocusOnVisible` (value: `"FOCUS_ON_VISIBLE"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

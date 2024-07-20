@@ -28,6 +28,7 @@ type BTPExpressionAccess237 struct {
 	StartSourceLocation *int32                 `json:"startSourceLocation,omitempty"`
 	Accessor            *BTPPropertyAccessor23 `json:"accessor,omitempty"`
 	Base                *BTPExpression9        `json:"base,omitempty"`
+	IsSafeNavigation    *bool                  `json:"isSafeNavigation,omitempty"`
 	SpaceInAccessor     *BTPSpace10            `json:"spaceInAccessor,omitempty"`
 }
 
@@ -432,6 +433,38 @@ func (o *BTPExpressionAccess237) SetBase(v BTPExpression9) {
 	o.Base = &v
 }
 
+// GetIsSafeNavigation returns the IsSafeNavigation field value if set, zero value otherwise.
+func (o *BTPExpressionAccess237) GetIsSafeNavigation() bool {
+	if o == nil || o.IsSafeNavigation == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsSafeNavigation
+}
+
+// GetIsSafeNavigationOk returns a tuple with the IsSafeNavigation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpressionAccess237) GetIsSafeNavigationOk() (*bool, bool) {
+	if o == nil || o.IsSafeNavigation == nil {
+		return nil, false
+	}
+	return o.IsSafeNavigation, true
+}
+
+// HasIsSafeNavigation returns a boolean if a field has been set.
+func (o *BTPExpressionAccess237) HasIsSafeNavigation() bool {
+	if o != nil && o.IsSafeNavigation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsSafeNavigation gets a reference to the given bool and assigns it to the IsSafeNavigation field.
+func (o *BTPExpressionAccess237) SetIsSafeNavigation(v bool) {
+	o.IsSafeNavigation = &v
+}
+
 // GetSpaceInAccessor returns the SpaceInAccessor field value if set, zero value otherwise.
 func (o *BTPExpressionAccess237) GetSpaceInAccessor() BTPSpace10 {
 	if o == nil || o.SpaceInAccessor == nil {
@@ -501,6 +534,9 @@ func (o BTPExpressionAccess237) MarshalJSON() ([]byte, error) {
 	}
 	if o.Base != nil {
 		toSerialize["base"] = o.Base
+	}
+	if o.IsSafeNavigation != nil {
+		toSerialize["isSafeNavigation"] = o.IsSafeNavigation
 	}
 	if o.SpaceInAccessor != nil {
 		toSerialize["spaceInAccessor"] = o.SpaceInAccessor

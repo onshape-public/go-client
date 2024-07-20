@@ -20,13 +20,8 @@ type BTPNode7 struct {
 	implBTPNode7 interface{}
 }
 
-// BTPAnnotation231AsBTPNode7 is a convenience function that returns BTPAnnotation231 wrapped in BTPNode7
-func (o *BTPAnnotation231) AsBTPNode7() *BTPNode7 {
-	return &BTPNode7{o}
-}
-
-// BTPBuiltinIdentifier233AsBTPNode7 is a convenience function that returns BTPBuiltinIdentifier233 wrapped in BTPNode7
-func (o *BTPBuiltinIdentifier233) AsBTPNode7() *BTPNode7 {
+// BTPStatementBreak272AsBTPNode7 is a convenience function that returns BTPStatementBreak272 wrapped in BTPNode7
+func (o *BTPStatementBreak272) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
@@ -35,23 +30,13 @@ func (o *BTPProcedureDeclarationBase266) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
-// BTPArgumentDeclaration232AsBTPNode7 is a convenience function that returns BTPArgumentDeclaration232 wrapped in BTPNode7
-func (o *BTPArgumentDeclaration232) AsBTPNode7() *BTPNode7 {
+// BTPStatementLoopForIn279AsBTPNode7 is a convenience function that returns BTPStatementLoopForIn279 wrapped in BTPNode7
+func (o *BTPStatementLoopForIn279) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
-// BTPConversionFunction1362AsBTPNode7 is a convenience function that returns BTPConversionFunction1362 wrapped in BTPNode7
-func (o *BTPConversionFunction1362) AsBTPNode7() *BTPNode7 {
-	return &BTPNode7{o}
-}
-
-// BTPPropertyAccessor23AsBTPNode7 is a convenience function that returns BTPPropertyAccessor23 wrapped in BTPNode7
-func (o *BTPPropertyAccessor23) AsBTPNode7() *BTPNode7 {
-	return &BTPNode7{o}
-}
-
-// BTPLiteralMapEntry257AsBTPNode7 is a convenience function that returns BTPLiteralMapEntry257 wrapped in BTPNode7
-func (o *BTPLiteralMapEntry257) AsBTPNode7() *BTPNode7 {
+// BTPExpressionAccess237AsBTPNode7 is a convenience function that returns BTPExpressionAccess237 wrapped in BTPNode7
+func (o *BTPExpressionAccess237) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
@@ -65,28 +50,8 @@ func (o *BTPTopLevelEnumDeclaration284) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
-// BTPModuleId235AsBTPNode7 is a convenience function that returns BTPModuleId235 wrapped in BTPNode7
-func (o *BTPModuleId235) AsBTPNode7() *BTPNode7 {
-	return &BTPNode7{o}
-}
-
-// BTPTopLevelUserTypeDeclaration288AsBTPNode7 is a convenience function that returns BTPTopLevelUserTypeDeclaration288 wrapped in BTPNode7
-func (o *BTPTopLevelUserTypeDeclaration288) AsBTPNode7() *BTPNode7 {
-	return &BTPNode7{o}
-}
-
-// BTPModule234AsBTPNode7 is a convenience function that returns BTPModule234 wrapped in BTPNode7
-func (o *BTPModule234) AsBTPNode7() *BTPNode7 {
-	return &BTPNode7{o}
-}
-
-// BTPStatement269AsBTPNode7 is a convenience function that returns BTPStatement269 wrapped in BTPNode7
-func (o *BTPStatement269) AsBTPNode7() *BTPNode7 {
-	return &BTPNode7{o}
-}
-
-// BTPFunctionOrPredicateDeclaration247AsBTPNode7 is a convenience function that returns BTPFunctionOrPredicateDeclaration247 wrapped in BTPNode7
-func (o *BTPFunctionOrPredicateDeclaration247) AsBTPNode7() *BTPNode7 {
+// BTPExpressionFunction1325AsBTPNode7 is a convenience function that returns BTPExpressionFunction1325 wrapped in BTPNode7
+func (o *BTPExpressionFunction1325) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
@@ -95,13 +60,83 @@ func (o *BTPOperatorDeclaration264) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
-// BTPLValue249AsBTPNode7 is a convenience function that returns BTPLValue249 wrapped in BTPNode7
-func (o *BTPLValue249) AsBTPNode7() *BTPNode7 {
+// BTPExpression9AsBTPNode7 is a convenience function that returns BTPExpression9 wrapped in BTPNode7
+func (o *BTPExpression9) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
-// BTPTopLevelTypeDeclaration287AsBTPNode7 is a convenience function that returns BTPTopLevelTypeDeclaration287 wrapped in BTPNode7
-func (o *BTPTopLevelTypeDeclaration287) AsBTPNode7() *BTPNode7 {
+// BTPStatementVarDeclaration282AsBTPNode7 is a convenience function that returns BTPStatementVarDeclaration282 wrapped in BTPNode7
+func (o *BTPStatementVarDeclaration282) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPTopLevelConstantDeclaration283AsBTPNode7 is a convenience function that returns BTPTopLevelConstantDeclaration283 wrapped in BTPNode7
+func (o *BTPTopLevelConstantDeclaration283) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionGroup241AsBTPNode7 is a convenience function that returns BTPExpressionGroup241 wrapped in BTPNode7
+func (o *BTPExpressionGroup241) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionNew243AsBTPNode7 is a convenience function that returns BTPExpressionNew243 wrapped in BTPNode7
+func (o *BTPExpressionNew243) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementCompressedQuery1237AsBTPNode7 is a convenience function that returns BTPStatementCompressedQuery1237 wrapped in BTPNode7
+func (o *BTPStatementCompressedQuery1237) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionTry1271AsBTPNode7 is a convenience function that returns BTPExpressionTry1271 wrapped in BTPNode7
+func (o *BTPExpressionTry1271) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPAnnotation231AsBTPNode7 is a convenience function that returns BTPAnnotation231 wrapped in BTPNode7
+func (o *BTPAnnotation231) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPArgumentDeclaration232AsBTPNode7 is a convenience function that returns BTPArgumentDeclaration232 wrapped in BTPNode7
+func (o *BTPArgumentDeclaration232) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPPropertyAccessor23AsBTPNode7 is a convenience function that returns BTPPropertyAccessor23 wrapped in BTPNode7
+func (o *BTPPropertyAccessor23) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementLoopFor3278AsBTPNode7 is a convenience function that returns BTPStatementLoopFor3278 wrapped in BTPNode7
+func (o *BTPStatementLoopFor3278) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLiteralMapEntry257AsBTPNode7 is a convenience function that returns BTPLiteralMapEntry257 wrapped in BTPNode7
+func (o *BTPLiteralMapEntry257) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementLoop277AsBTPNode7 is a convenience function that returns BTPStatementLoop277 wrapped in BTPNode7
+func (o *BTPStatementLoop277) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionSwitch2632AsBTPNode7 is a convenience function that returns BTPExpressionSwitch2632 wrapped in BTPNode7
+func (o *BTPExpressionSwitch2632) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPModule234AsBTPNode7 is a convenience function that returns BTPModule234 wrapped in BTPNode7
+func (o *BTPModule234) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementBlock271AsBTPNode7 is a convenience function that returns BTPStatementBlock271 wrapped in BTPNode7
+func (o *BTPStatementBlock271) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
@@ -115,18 +150,183 @@ func (o *BTPPredicateDeclaration265) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
-// BTPName261AsBTPNode7 is a convenience function that returns BTPName261 wrapped in BTPNode7
-func (o *BTPName261) AsBTPNode7() *BTPNode7 {
+// BTPIdentifier8AsBTPNode7 is a convenience function that returns BTPIdentifier8 wrapped in BTPNode7
+func (o *BTPIdentifier8) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
-// BTPTopLevelConstantDeclaration283AsBTPNode7 is a convenience function that returns BTPTopLevelConstantDeclaration283 wrapped in BTPNode7
-func (o *BTPTopLevelConstantDeclaration283) AsBTPNode7() *BTPNode7 {
+// BTPStatementTry1523AsBTPNode7 is a convenience function that returns BTPStatementTry1523 wrapped in BTPNode7
+func (o *BTPStatementTry1523) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementThrow1080AsBTPNode7 is a convenience function that returns BTPStatementThrow1080 wrapped in BTPNode7
+func (o *BTPStatementThrow1080) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPBuiltinIdentifier233AsBTPNode7 is a convenience function that returns BTPBuiltinIdentifier233 wrapped in BTPNode7
+func (o *BTPBuiltinIdentifier233) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPTypeNameUser292AsBTPNode7 is a convenience function that returns BTPTypeNameUser292 wrapped in BTPNode7
+func (o *BTPTypeNameUser292) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLiteral253AsBTPNode7 is a convenience function that returns BTPLiteral253 wrapped in BTPNode7
+func (o *BTPLiteral253) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionBuiltinCall239AsBTPNode7 is a convenience function that returns BTPExpressionBuiltinCall239 wrapped in BTPNode7
+func (o *BTPExpressionBuiltinCall239) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementReturn281AsBTPNode7 is a convenience function that returns BTPStatementReturn281 wrapped in BTPNode7
+func (o *BTPStatementReturn281) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPModuleId235AsBTPNode7 is a convenience function that returns BTPModuleId235 wrapped in BTPNode7
+func (o *BTPModuleId235) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPTopLevelUserTypeDeclaration288AsBTPNode7 is a convenience function that returns BTPTopLevelUserTypeDeclaration288 wrapped in BTPNode7
+func (o *BTPTopLevelUserTypeDeclaration288) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatement269AsBTPNode7 is a convenience function that returns BTPStatement269 wrapped in BTPNode7
+func (o *BTPStatement269) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLiteralString259AsBTPNode7 is a convenience function that returns BTPLiteralString259 wrapped in BTPNode7
+func (o *BTPLiteralString259) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPTopLevelTypeDeclaration287AsBTPNode7 is a convenience function that returns BTPTopLevelTypeDeclaration287 wrapped in BTPNode7
+func (o *BTPTopLevelTypeDeclaration287) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionAs238AsBTPNode7 is a convenience function that returns BTPExpressionAs238 wrapped in BTPNode7
+func (o *BTPExpressionAs238) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLiteralBoolean255AsBTPNode7 is a convenience function that returns BTPLiteralBoolean255 wrapped in BTPNode7
+func (o *BTPLiteralBoolean255) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLiteralArray254AsBTPNode7 is a convenience function that returns BTPLiteralArray254 wrapped in BTPNode7
+func (o *BTPLiteralArray254) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
 // BTPTopLevelNode286AsBTPNode7 is a convenience function that returns BTPTopLevelNode286 wrapped in BTPNode7
 func (o *BTPTopLevelNode286) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLValueVarReference252AsBTPNode7 is a convenience function that returns BTPLValueVarReference252 wrapped in BTPNode7
+func (o *BTPLValueVarReference252) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementExpression275AsBTPNode7 is a convenience function that returns BTPStatementExpression275 wrapped in BTPNode7
+func (o *BTPStatementExpression275) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPConversionFunction1362AsBTPNode7 is a convenience function that returns BTPConversionFunction1362 wrapped in BTPNode7
+func (o *BTPConversionFunction1362) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPTypeNameStandard291AsBTPNode7 is a convenience function that returns BTPTypeNameStandard291 wrapped in BTPNode7
+func (o *BTPTypeNameStandard291) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionCall240AsBTPNode7 is a convenience function that returns BTPExpressionCall240 wrapped in BTPNode7
+func (o *BTPExpressionCall240) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLValueAccess250AsBTPNode7 is a convenience function that returns BTPLValueAccess250 wrapped in BTPNode7
+func (o *BTPLValueAccess250) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementConstantDeclaration273AsBTPNode7 is a convenience function that returns BTPStatementConstantDeclaration273 wrapped in BTPNode7
+func (o *BTPStatementConstantDeclaration273) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionVarReference245AsBTPNode7 is a convenience function that returns BTPExpressionVarReference245 wrapped in BTPNode7
+func (o *BTPExpressionVarReference245) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPFunctionOrPredicateDeclaration247AsBTPNode7 is a convenience function that returns BTPFunctionOrPredicateDeclaration247 wrapped in BTPNode7
+func (o *BTPFunctionOrPredicateDeclaration247) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLiteralUndefined260AsBTPNode7 is a convenience function that returns BTPLiteralUndefined260 wrapped in BTPNode7
+func (o *BTPLiteralUndefined260) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLValue249AsBTPNode7 is a convenience function that returns BTPLValue249 wrapped in BTPNode7
+func (o *BTPLValue249) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementAssignment270AsBTPNode7 is a convenience function that returns BTPStatementAssignment270 wrapped in BTPNode7
+func (o *BTPStatementAssignment270) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPName261AsBTPNode7 is a convenience function that returns BTPName261 wrapped in BTPNode7
+func (o *BTPName261) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionOperator244AsBTPNode7 is a convenience function that returns BTPExpressionOperator244 wrapped in BTPNode7
+func (o *BTPExpressionOperator244) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementContinue274AsBTPNode7 is a convenience function that returns BTPStatementContinue274 wrapped in BTPNode7
+func (o *BTPStatementContinue274) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPLValueBoxDereference251AsBTPNode7 is a convenience function that returns BTPLValueBoxDereference251 wrapped in BTPNode7
+func (o *BTPLValueBoxDereference251) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPExpressionIs242AsBTPNode7 is a convenience function that returns BTPExpressionIs242 wrapped in BTPNode7
+func (o *BTPExpressionIs242) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementIf276AsBTPNode7 is a convenience function that returns BTPStatementIf276 wrapped in BTPNode7
+func (o *BTPStatementIf276) AsBTPNode7() *BTPNode7 {
+	return &BTPNode7{o}
+}
+
+// BTPStatementLoopWhile280AsBTPNode7 is a convenience function that returns BTPStatementLoopWhile280 wrapped in BTPNode7
+func (o *BTPStatementLoopWhile280) AsBTPNode7() *BTPNode7 {
 	return &BTPNode7{o}
 }
 
@@ -713,6 +913,188 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTPExpression-9'
+	if jsonDict["btType"] == "BTPExpression-9" {
+		// try to unmarshal JSON data into BTPExpression9
+		var qr *BTPExpression9
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpression9: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionAccess-237'
+	if jsonDict["btType"] == "BTPExpressionAccess-237" {
+		// try to unmarshal JSON data into BTPExpressionAccess237
+		var qr *BTPExpressionAccess237
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionAccess237: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionAs-238'
+	if jsonDict["btType"] == "BTPExpressionAs-238" {
+		// try to unmarshal JSON data into BTPExpressionAs238
+		var qr *BTPExpressionAs238
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionAs238: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionBuiltinCall-239'
+	if jsonDict["btType"] == "BTPExpressionBuiltinCall-239" {
+		// try to unmarshal JSON data into BTPExpressionBuiltinCall239
+		var qr *BTPExpressionBuiltinCall239
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionBuiltinCall239: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionCall-240'
+	if jsonDict["btType"] == "BTPExpressionCall-240" {
+		// try to unmarshal JSON data into BTPExpressionCall240
+		var qr *BTPExpressionCall240
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionCall240: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionFunction-1325'
+	if jsonDict["btType"] == "BTPExpressionFunction-1325" {
+		// try to unmarshal JSON data into BTPExpressionFunction1325
+		var qr *BTPExpressionFunction1325
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionFunction1325: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionGroup-241'
+	if jsonDict["btType"] == "BTPExpressionGroup-241" {
+		// try to unmarshal JSON data into BTPExpressionGroup241
+		var qr *BTPExpressionGroup241
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionGroup241: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionIs-242'
+	if jsonDict["btType"] == "BTPExpressionIs-242" {
+		// try to unmarshal JSON data into BTPExpressionIs242
+		var qr *BTPExpressionIs242
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionIs242: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionNew-243'
+	if jsonDict["btType"] == "BTPExpressionNew-243" {
+		// try to unmarshal JSON data into BTPExpressionNew243
+		var qr *BTPExpressionNew243
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionNew243: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionOperator-244'
+	if jsonDict["btType"] == "BTPExpressionOperator-244" {
+		// try to unmarshal JSON data into BTPExpressionOperator244
+		var qr *BTPExpressionOperator244
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionOperator244: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionSwitch-2632'
+	if jsonDict["btType"] == "BTPExpressionSwitch-2632" {
+		// try to unmarshal JSON data into BTPExpressionSwitch2632
+		var qr *BTPExpressionSwitch2632
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionSwitch2632: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionTry-1271'
+	if jsonDict["btType"] == "BTPExpressionTry-1271" {
+		// try to unmarshal JSON data into BTPExpressionTry1271
+		var qr *BTPExpressionTry1271
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionTry1271: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPExpressionVarReference-245'
+	if jsonDict["btType"] == "BTPExpressionVarReference-245" {
+		// try to unmarshal JSON data into BTPExpressionVarReference245
+		var qr *BTPExpressionVarReference245
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPExpressionVarReference245: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTPFunctionOrPredicateDeclaration-247'
 	if jsonDict["btType"] == "BTPFunctionOrPredicateDeclaration-247" {
 		// try to unmarshal JSON data into BTPFunctionOrPredicateDeclaration247
@@ -724,6 +1106,20 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPNode7 = nil
 			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPFunctionOrPredicateDeclaration247: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPIdentifier-8'
+	if jsonDict["btType"] == "BTPIdentifier-8" {
+		// try to unmarshal JSON data into BTPIdentifier8
+		var qr *BTPIdentifier8
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPIdentifier8: %s", err.Error())
 		}
 	}
 
@@ -741,6 +1137,90 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTPLValueAccess-250'
+	if jsonDict["btType"] == "BTPLValueAccess-250" {
+		// try to unmarshal JSON data into BTPLValueAccess250
+		var qr *BTPLValueAccess250
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLValueAccess250: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLValueBoxDereference-251'
+	if jsonDict["btType"] == "BTPLValueBoxDereference-251" {
+		// try to unmarshal JSON data into BTPLValueBoxDereference251
+		var qr *BTPLValueBoxDereference251
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLValueBoxDereference251: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLValueVarReference-252'
+	if jsonDict["btType"] == "BTPLValueVarReference-252" {
+		// try to unmarshal JSON data into BTPLValueVarReference252
+		var qr *BTPLValueVarReference252
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLValueVarReference252: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteral-253'
+	if jsonDict["btType"] == "BTPLiteral-253" {
+		// try to unmarshal JSON data into BTPLiteral253
+		var qr *BTPLiteral253
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLiteral253: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralArray-254'
+	if jsonDict["btType"] == "BTPLiteralArray-254" {
+		// try to unmarshal JSON data into BTPLiteralArray254
+		var qr *BTPLiteralArray254
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLiteralArray254: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralBoolean-255'
+	if jsonDict["btType"] == "BTPLiteralBoolean-255" {
+		// try to unmarshal JSON data into BTPLiteralBoolean255
+		var qr *BTPLiteralBoolean255
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLiteralBoolean255: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTPLiteralMapEntry-257'
 	if jsonDict["btType"] == "BTPLiteralMapEntry-257" {
 		// try to unmarshal JSON data into BTPLiteralMapEntry257
@@ -752,6 +1232,34 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPNode7 = nil
 			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLiteralMapEntry257: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralString-259'
+	if jsonDict["btType"] == "BTPLiteralString-259" {
+		// try to unmarshal JSON data into BTPLiteralString259
+		var qr *BTPLiteralString259
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLiteralString259: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPLiteralUndefined-260'
+	if jsonDict["btType"] == "BTPLiteralUndefined-260" {
+		// try to unmarshal JSON data into BTPLiteralUndefined260
+		var qr *BTPLiteralUndefined260
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPLiteralUndefined260: %s", err.Error())
 		}
 	}
 
@@ -867,6 +1375,230 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTPStatementAssignment-270'
+	if jsonDict["btType"] == "BTPStatementAssignment-270" {
+		// try to unmarshal JSON data into BTPStatementAssignment270
+		var qr *BTPStatementAssignment270
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementAssignment270: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementBlock-271'
+	if jsonDict["btType"] == "BTPStatementBlock-271" {
+		// try to unmarshal JSON data into BTPStatementBlock271
+		var qr *BTPStatementBlock271
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementBlock271: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementBreak-272'
+	if jsonDict["btType"] == "BTPStatementBreak-272" {
+		// try to unmarshal JSON data into BTPStatementBreak272
+		var qr *BTPStatementBreak272
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementBreak272: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementCompressedQuery-1237'
+	if jsonDict["btType"] == "BTPStatementCompressedQuery-1237" {
+		// try to unmarshal JSON data into BTPStatementCompressedQuery1237
+		var qr *BTPStatementCompressedQuery1237
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementCompressedQuery1237: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementConstantDeclaration-273'
+	if jsonDict["btType"] == "BTPStatementConstantDeclaration-273" {
+		// try to unmarshal JSON data into BTPStatementConstantDeclaration273
+		var qr *BTPStatementConstantDeclaration273
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementConstantDeclaration273: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementContinue-274'
+	if jsonDict["btType"] == "BTPStatementContinue-274" {
+		// try to unmarshal JSON data into BTPStatementContinue274
+		var qr *BTPStatementContinue274
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementContinue274: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementExpression-275'
+	if jsonDict["btType"] == "BTPStatementExpression-275" {
+		// try to unmarshal JSON data into BTPStatementExpression275
+		var qr *BTPStatementExpression275
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementExpression275: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementIf-276'
+	if jsonDict["btType"] == "BTPStatementIf-276" {
+		// try to unmarshal JSON data into BTPStatementIf276
+		var qr *BTPStatementIf276
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementIf276: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementLoop-277'
+	if jsonDict["btType"] == "BTPStatementLoop-277" {
+		// try to unmarshal JSON data into BTPStatementLoop277
+		var qr *BTPStatementLoop277
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementLoop277: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementLoopFor3-278'
+	if jsonDict["btType"] == "BTPStatementLoopFor3-278" {
+		// try to unmarshal JSON data into BTPStatementLoopFor3278
+		var qr *BTPStatementLoopFor3278
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementLoopFor3278: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementLoopForIn-279'
+	if jsonDict["btType"] == "BTPStatementLoopForIn-279" {
+		// try to unmarshal JSON data into BTPStatementLoopForIn279
+		var qr *BTPStatementLoopForIn279
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementLoopForIn279: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementLoopWhile-280'
+	if jsonDict["btType"] == "BTPStatementLoopWhile-280" {
+		// try to unmarshal JSON data into BTPStatementLoopWhile280
+		var qr *BTPStatementLoopWhile280
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementLoopWhile280: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementReturn-281'
+	if jsonDict["btType"] == "BTPStatementReturn-281" {
+		// try to unmarshal JSON data into BTPStatementReturn281
+		var qr *BTPStatementReturn281
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementReturn281: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementThrow-1080'
+	if jsonDict["btType"] == "BTPStatementThrow-1080" {
+		// try to unmarshal JSON data into BTPStatementThrow1080
+		var qr *BTPStatementThrow1080
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementThrow1080: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementTry-1523'
+	if jsonDict["btType"] == "BTPStatementTry-1523" {
+		// try to unmarshal JSON data into BTPStatementTry1523
+		var qr *BTPStatementTry1523
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementTry1523: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementVarDeclaration-282'
+	if jsonDict["btType"] == "BTPStatementVarDeclaration-282" {
+		// try to unmarshal JSON data into BTPStatementVarDeclaration282
+		var qr *BTPStatementVarDeclaration282
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPStatementVarDeclaration282: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTPTopLevelConstantDeclaration-283'
 	if jsonDict["btType"] == "BTPTopLevelConstantDeclaration-283" {
 		// try to unmarshal JSON data into BTPTopLevelConstantDeclaration283
@@ -962,6 +1694,34 @@ func (dst *BTPNode7) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPNode7 = nil
 			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTypeName290: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPTypeNameStandard-291'
+	if jsonDict["btType"] == "BTPTypeNameStandard-291" {
+		// try to unmarshal JSON data into BTPTypeNameStandard291
+		var qr *BTPTypeNameStandard291
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTypeNameStandard291: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPTypeNameUser-292'
+	if jsonDict["btType"] == "BTPTypeNameUser-292" {
+		// try to unmarshal JSON data into BTPTypeNameUser292
+		var qr *BTPTypeNameUser292
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPNode7 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPNode7 = nil
+			return fmt.Errorf("failed to unmarshal BTPNode7 as BTPTypeNameUser292: %s", err.Error())
 		}
 	}
 

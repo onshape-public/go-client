@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**ConfigurationParameters** | Pointer to [**[]BTMConfigurationParameter819**](BTMConfigurationParameter819.md) |  | [optional] 
 **CurrentConfiguration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **CurrentFSValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 **DefaultConfigurationValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
@@ -52,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMConfigurationData1560AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetConfigurationParameters
+
+`func (o *BTMConfigurationData1560AllOf) GetConfigurationParameters() []BTMConfigurationParameter819`
+
+GetConfigurationParameters returns the ConfigurationParameters field if non-nil, zero value otherwise.
+
+### GetConfigurationParametersOk
+
+`func (o *BTMConfigurationData1560AllOf) GetConfigurationParametersOk() (*[]BTMConfigurationParameter819, bool)`
+
+GetConfigurationParametersOk returns a tuple with the ConfigurationParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigurationParameters
+
+`func (o *BTMConfigurationData1560AllOf) SetConfigurationParameters(v []BTMConfigurationParameter819)`
+
+SetConfigurationParameters sets ConfigurationParameters field to given value.
+
+### HasConfigurationParameters
+
+`func (o *BTMConfigurationData1560AllOf) HasConfigurationParameters() bool`
+
+HasConfigurationParameters returns a boolean if a field has been set.
 
 ### GetCurrentConfiguration
 

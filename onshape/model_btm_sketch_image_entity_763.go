@@ -16,25 +16,25 @@ import (
 
 // BTMSketchImageEntity763 struct for BTMSketchImageEntity763
 type BTMSketchImageEntity763 struct {
-	BtType                              *string  `json:"btType,omitempty"`
-	ControlBoxIds                       []string `json:"controlBoxIds,omitempty"`
-	EntityId                            *string  `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string  `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	FunctionName                        *string  `json:"functionName,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion         *string         `json:"importMicroversion,omitempty"`
-	IsConstruction             *bool           `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle *bool           `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon *bool           `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle         *bool           `json:"isFromSplineHandle,omitempty"`
-	Namespace                  *string         `json:"namespace,omitempty"`
-	NodeId                     *string         `json:"nodeId,omitempty"`
-	Parameters                 []BTMParameter1 `json:"parameters,omitempty"`
-	AspectRatio                *float64        `json:"aspectRatio,omitempty"`
-	OriginX                    *float64        `json:"originX,omitempty"`
-	OriginY                    *float64        `json:"originY,omitempty"`
-	XaxisX                     *float64        `json:"xaxisX,omitempty"`
-	XaxisY                     *float64        `json:"xaxisY,omitempty"`
+	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
+	NodeId                              *string         `json:"nodeId,omitempty"`
+	EntityId                            *string         `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Namespace                           *string         `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
+	ControlBoxIds                       []string        `json:"controlBoxIds,omitempty"`
+	FunctionName                        *string         `json:"functionName,omitempty"`
+	IsConstruction                      *bool           `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle          *bool           `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon          *bool           `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle                  *bool           `json:"isFromSplineHandle,omitempty"`
+	AspectRatio                         *float64        `json:"aspectRatio,omitempty"`
+	OriginX                             *float64        `json:"originX,omitempty"`
+	OriginY                             *float64        `json:"originY,omitempty"`
+	XaxisX                              *float64        `json:"xaxisX,omitempty"`
+	XaxisY                              *float64        `json:"xaxisY,omitempty"`
 }
 
 // NewBTMSketchImageEntity763 instantiates a new BTMSketchImageEntity763 object
@@ -86,36 +86,68 @@ func (o *BTMSketchImageEntity763) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetControlBoxIds returns the ControlBoxIds field value if set, zero value otherwise.
-func (o *BTMSketchImageEntity763) GetControlBoxIds() []string {
-	if o == nil || o.ControlBoxIds == nil {
-		var ret []string
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
 		return ret
 	}
-	return o.ControlBoxIds
+	return *o.ImportMicroversion
 }
 
-// GetControlBoxIdsOk returns a tuple with the ControlBoxIds field value if set, nil otherwise
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMSketchImageEntity763) GetControlBoxIdsOk() ([]string, bool) {
-	if o == nil || o.ControlBoxIds == nil {
+func (o *BTMSketchImageEntity763) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
 		return nil, false
 	}
-	return o.ControlBoxIds, true
+	return o.ImportMicroversion, true
 }
 
-// HasControlBoxIds returns a boolean if a field has been set.
-func (o *BTMSketchImageEntity763) HasControlBoxIds() bool {
-	if o != nil && o.ControlBoxIds != nil {
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
-func (o *BTMSketchImageEntity763) SetControlBoxIds(v []string) {
-	o.ControlBoxIds = v
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMSketchImageEntity763) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMSketchImageEntity763) SetNodeId(v string) {
+	o.NodeId = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -182,6 +214,102 @@ func (o *BTMSketchImageEntity763) SetEntityIdAndReplaceInDependentFields(v strin
 	o.EntityIdAndReplaceInDependentFields = &v
 }
 
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetNamespace() string {
+	if o == nil || o.Namespace == nil {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetNamespaceOk() (*string, bool) {
+	if o == nil || o.Namespace == nil {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasNamespace() bool {
+	if o != nil && o.Namespace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *BTMSketchImageEntity763) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
+// GetParameters returns the Parameters field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetParameters() []BTMParameter1 {
+	if o == nil || o.Parameters == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.Parameters
+}
+
+// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetParametersOk() ([]BTMParameter1, bool) {
+	if o == nil || o.Parameters == nil {
+		return nil, false
+	}
+	return o.Parameters, true
+}
+
+// HasParameters returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasParameters() bool {
+	if o != nil && o.Parameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
+func (o *BTMSketchImageEntity763) SetParameters(v []BTMParameter1) {
+	o.Parameters = v
+}
+
+// GetControlBoxIds returns the ControlBoxIds field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetControlBoxIds() []string {
+	if o == nil || o.ControlBoxIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.ControlBoxIds
+}
+
+// GetControlBoxIdsOk returns a tuple with the ControlBoxIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetControlBoxIdsOk() ([]string, bool) {
+	if o == nil || o.ControlBoxIds == nil {
+		return nil, false
+	}
+	return o.ControlBoxIds, true
+}
+
+// HasControlBoxIds returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasControlBoxIds() bool {
+	if o != nil && o.ControlBoxIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
+func (o *BTMSketchImageEntity763) SetControlBoxIds(v []string) {
+	o.ControlBoxIds = v
+}
+
 // GetFunctionName returns the FunctionName field value if set, zero value otherwise.
 func (o *BTMSketchImageEntity763) GetFunctionName() string {
 	if o == nil || o.FunctionName == nil {
@@ -212,38 +340,6 @@ func (o *BTMSketchImageEntity763) HasFunctionName() bool {
 // SetFunctionName gets a reference to the given string and assigns it to the FunctionName field.
 func (o *BTMSketchImageEntity763) SetFunctionName(v string) {
 	o.FunctionName = &v
-}
-
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMSketchImageEntity763) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchImageEntity763) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMSketchImageEntity763) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMSketchImageEntity763) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
 }
 
 // GetIsConstruction returns the IsConstruction field value if set, zero value otherwise.
@@ -372,102 +468,6 @@ func (o *BTMSketchImageEntity763) HasIsFromSplineHandle() bool {
 // SetIsFromSplineHandle gets a reference to the given bool and assigns it to the IsFromSplineHandle field.
 func (o *BTMSketchImageEntity763) SetIsFromSplineHandle(v bool) {
 	o.IsFromSplineHandle = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *BTMSketchImageEntity763) GetNamespace() string {
-	if o == nil || o.Namespace == nil {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchImageEntity763) GetNamespaceOk() (*string, bool) {
-	if o == nil || o.Namespace == nil {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *BTMSketchImageEntity763) HasNamespace() bool {
-	if o != nil && o.Namespace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *BTMSketchImageEntity763) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMSketchImageEntity763) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchImageEntity763) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMSketchImageEntity763) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMSketchImageEntity763) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *BTMSketchImageEntity763) GetParameters() []BTMParameter1 {
-	if o == nil || o.Parameters == nil {
-		var ret []BTMParameter1
-		return ret
-	}
-	return o.Parameters
-}
-
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchImageEntity763) GetParametersOk() ([]BTMParameter1, bool) {
-	if o == nil || o.Parameters == nil {
-		return nil, false
-	}
-	return o.Parameters, true
-}
-
-// HasParameters returns a boolean if a field has been set.
-func (o *BTMSketchImageEntity763) HasParameters() bool {
-	if o != nil && o.Parameters != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
-func (o *BTMSketchImageEntity763) SetParameters(v []BTMParameter1) {
-	o.Parameters = v
 }
 
 // GetAspectRatio returns the AspectRatio field value if set, zero value otherwise.
@@ -635,8 +635,11 @@ func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.ControlBoxIds != nil {
-		toSerialize["controlBoxIds"] = o.ControlBoxIds
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId
@@ -644,11 +647,17 @@ func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
 	}
+	if o.Namespace != nil {
+		toSerialize["namespace"] = o.Namespace
+	}
+	if o.Parameters != nil {
+		toSerialize["parameters"] = o.Parameters
+	}
+	if o.ControlBoxIds != nil {
+		toSerialize["controlBoxIds"] = o.ControlBoxIds
+	}
 	if o.FunctionName != nil {
 		toSerialize["functionName"] = o.FunctionName
-	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
 	if o.IsConstruction != nil {
 		toSerialize["isConstruction"] = o.IsConstruction
@@ -661,15 +670,6 @@ func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsFromSplineHandle != nil {
 		toSerialize["isFromSplineHandle"] = o.IsFromSplineHandle
-	}
-	if o.Namespace != nil {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
-	}
-	if o.Parameters != nil {
-		toSerialize["parameters"] = o.Parameters
 	}
 	if o.AspectRatio != nil {
 		toSerialize["aspectRatio"] = o.AspectRatio

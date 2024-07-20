@@ -1161,7 +1161,7 @@ func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) Execute() (*BTRevisio
 /*
 GetRevisionHistoryInCompanyByPartNumber Get a list of all revisions for a part or element in a company-owned document by part number.
 
-You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies.
+You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies. To perform search without `elementType`, use `elementType` = -1 | UNKNOWN. Available element types are: -1: Unknown, 0: Part Studio, 1: Assembly, 2: Drawing, 4: Blob, 5: Application, 8: Variable Studio 10: Unknown
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param cid

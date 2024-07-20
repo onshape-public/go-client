@@ -16,26 +16,25 @@ import (
 
 // BTMSketchConstraint2 struct for BTMSketchConstraint2
 type BTMSketchConstraint2 struct {
-	// Type of JSON object.
-	BtType                              *string            `json:"btType,omitempty"`
-	ConstraintType                      *GBTConstraintType `json:"constraintType,omitempty"`
-	DrivenDimension                     *bool              `json:"drivenDimension,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Element microversion that is being imported.
+	ImportMicroversion                  *string            `json:"importMicroversion,omitempty"`
+	NodeId                              *string            `json:"nodeId,omitempty"`
 	EntityId                            *string            `json:"entityId,omitempty"`
 	EntityIdAndReplaceInDependentFields *string            `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Namespace                           *string            `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1    `json:"parameters,omitempty"`
+	ConstraintType                      *GBTConstraintType `json:"constraintType,omitempty"`
+	DrivenDimension                     *bool              `json:"drivenDimension,omitempty"`
 	HasOffsetData1                      *bool              `json:"hasOffsetData1,omitempty"`
 	HasOffsetData2                      *bool              `json:"hasOffsetData2,omitempty"`
 	HasPierceParameter_                 *bool              `json:"hasPierceParameter,omitempty"`
 	HelpParameters                      []float64          `json:"helpParameters,omitempty"`
-	// Element microversion that is being imported.
-	ImportMicroversion *string         `json:"importMicroversion,omitempty"`
-	Namespace          *string         `json:"namespace,omitempty"`
-	NodeId             *string         `json:"nodeId,omitempty"`
-	OffsetDistance1    *float64        `json:"offsetDistance1,omitempty"`
-	OffsetDistance2    *float64        `json:"offsetDistance2,omitempty"`
-	OffsetOrientation1 *bool           `json:"offsetOrientation1,omitempty"`
-	OffsetOrientation2 *bool           `json:"offsetOrientation2,omitempty"`
-	Parameters         []BTMParameter1 `json:"parameters,omitempty"`
-	PierceParameter    *float64        `json:"pierceParameter,omitempty"`
+	OffsetDistance1                     *float64           `json:"offsetDistance1,omitempty"`
+	OffsetDistance2                     *float64           `json:"offsetDistance2,omitempty"`
+	OffsetOrientation1                  *bool              `json:"offsetOrientation1,omitempty"`
+	OffsetOrientation2                  *bool              `json:"offsetOrientation2,omitempty"`
+	PierceParameter                     *float64           `json:"pierceParameter,omitempty"`
 }
 
 // NewBTMSketchConstraint2 instantiates a new BTMSketchConstraint2 object
@@ -87,68 +86,68 @@ func (o *BTMSketchConstraint2) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetConstraintType returns the ConstraintType field value if set, zero value otherwise.
-func (o *BTMSketchConstraint2) GetConstraintType() GBTConstraintType {
-	if o == nil || o.ConstraintType == nil {
-		var ret GBTConstraintType
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMSketchConstraint2) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
 		return ret
 	}
-	return *o.ConstraintType
+	return *o.ImportMicroversion
 }
 
-// GetConstraintTypeOk returns a tuple with the ConstraintType field value if set, nil otherwise
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMSketchConstraint2) GetConstraintTypeOk() (*GBTConstraintType, bool) {
-	if o == nil || o.ConstraintType == nil {
+func (o *BTMSketchConstraint2) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
 		return nil, false
 	}
-	return o.ConstraintType, true
+	return o.ImportMicroversion, true
 }
 
-// HasConstraintType returns a boolean if a field has been set.
-func (o *BTMSketchConstraint2) HasConstraintType() bool {
-	if o != nil && o.ConstraintType != nil {
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMSketchConstraint2) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetConstraintType gets a reference to the given GBTConstraintType and assigns it to the ConstraintType field.
-func (o *BTMSketchConstraint2) SetConstraintType(v GBTConstraintType) {
-	o.ConstraintType = &v
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMSketchConstraint2) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
 }
 
-// GetDrivenDimension returns the DrivenDimension field value if set, zero value otherwise.
-func (o *BTMSketchConstraint2) GetDrivenDimension() bool {
-	if o == nil || o.DrivenDimension == nil {
-		var ret bool
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMSketchConstraint2) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
 		return ret
 	}
-	return *o.DrivenDimension
+	return *o.NodeId
 }
 
-// GetDrivenDimensionOk returns a tuple with the DrivenDimension field value if set, nil otherwise
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMSketchConstraint2) GetDrivenDimensionOk() (*bool, bool) {
-	if o == nil || o.DrivenDimension == nil {
+func (o *BTMSketchConstraint2) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
 		return nil, false
 	}
-	return o.DrivenDimension, true
+	return o.NodeId, true
 }
 
-// HasDrivenDimension returns a boolean if a field has been set.
-func (o *BTMSketchConstraint2) HasDrivenDimension() bool {
-	if o != nil && o.DrivenDimension != nil {
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMSketchConstraint2) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDrivenDimension gets a reference to the given bool and assigns it to the DrivenDimension field.
-func (o *BTMSketchConstraint2) SetDrivenDimension(v bool) {
-	o.DrivenDimension = &v
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMSketchConstraint2) SetNodeId(v string) {
+	o.NodeId = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -213,6 +212,134 @@ func (o *BTMSketchConstraint2) HasEntityIdAndReplaceInDependentFields() bool {
 // SetEntityIdAndReplaceInDependentFields gets a reference to the given string and assigns it to the EntityIdAndReplaceInDependentFields field.
 func (o *BTMSketchConstraint2) SetEntityIdAndReplaceInDependentFields(v string) {
 	o.EntityIdAndReplaceInDependentFields = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *BTMSketchConstraint2) GetNamespace() string {
+	if o == nil || o.Namespace == nil {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchConstraint2) GetNamespaceOk() (*string, bool) {
+	if o == nil || o.Namespace == nil {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *BTMSketchConstraint2) HasNamespace() bool {
+	if o != nil && o.Namespace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *BTMSketchConstraint2) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
+// GetParameters returns the Parameters field value if set, zero value otherwise.
+func (o *BTMSketchConstraint2) GetParameters() []BTMParameter1 {
+	if o == nil || o.Parameters == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.Parameters
+}
+
+// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchConstraint2) GetParametersOk() ([]BTMParameter1, bool) {
+	if o == nil || o.Parameters == nil {
+		return nil, false
+	}
+	return o.Parameters, true
+}
+
+// HasParameters returns a boolean if a field has been set.
+func (o *BTMSketchConstraint2) HasParameters() bool {
+	if o != nil && o.Parameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
+func (o *BTMSketchConstraint2) SetParameters(v []BTMParameter1) {
+	o.Parameters = v
+}
+
+// GetConstraintType returns the ConstraintType field value if set, zero value otherwise.
+func (o *BTMSketchConstraint2) GetConstraintType() GBTConstraintType {
+	if o == nil || o.ConstraintType == nil {
+		var ret GBTConstraintType
+		return ret
+	}
+	return *o.ConstraintType
+}
+
+// GetConstraintTypeOk returns a tuple with the ConstraintType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchConstraint2) GetConstraintTypeOk() (*GBTConstraintType, bool) {
+	if o == nil || o.ConstraintType == nil {
+		return nil, false
+	}
+	return o.ConstraintType, true
+}
+
+// HasConstraintType returns a boolean if a field has been set.
+func (o *BTMSketchConstraint2) HasConstraintType() bool {
+	if o != nil && o.ConstraintType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConstraintType gets a reference to the given GBTConstraintType and assigns it to the ConstraintType field.
+func (o *BTMSketchConstraint2) SetConstraintType(v GBTConstraintType) {
+	o.ConstraintType = &v
+}
+
+// GetDrivenDimension returns the DrivenDimension field value if set, zero value otherwise.
+func (o *BTMSketchConstraint2) GetDrivenDimension() bool {
+	if o == nil || o.DrivenDimension == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DrivenDimension
+}
+
+// GetDrivenDimensionOk returns a tuple with the DrivenDimension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchConstraint2) GetDrivenDimensionOk() (*bool, bool) {
+	if o == nil || o.DrivenDimension == nil {
+		return nil, false
+	}
+	return o.DrivenDimension, true
+}
+
+// HasDrivenDimension returns a boolean if a field has been set.
+func (o *BTMSketchConstraint2) HasDrivenDimension() bool {
+	if o != nil && o.DrivenDimension != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDrivenDimension gets a reference to the given bool and assigns it to the DrivenDimension field.
+func (o *BTMSketchConstraint2) SetDrivenDimension(v bool) {
+	o.DrivenDimension = &v
 }
 
 // GetHasOffsetData1 returns the HasOffsetData1 field value if set, zero value otherwise.
@@ -343,102 +470,6 @@ func (o *BTMSketchConstraint2) SetHelpParameters(v []float64) {
 	o.HelpParameters = v
 }
 
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMSketchConstraint2) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchConstraint2) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMSketchConstraint2) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMSketchConstraint2) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *BTMSketchConstraint2) GetNamespace() string {
-	if o == nil || o.Namespace == nil {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchConstraint2) GetNamespaceOk() (*string, bool) {
-	if o == nil || o.Namespace == nil {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *BTMSketchConstraint2) HasNamespace() bool {
-	if o != nil && o.Namespace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *BTMSketchConstraint2) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMSketchConstraint2) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchConstraint2) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMSketchConstraint2) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMSketchConstraint2) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
 // GetOffsetDistance1 returns the OffsetDistance1 field value if set, zero value otherwise.
 func (o *BTMSketchConstraint2) GetOffsetDistance1() float64 {
 	if o == nil || o.OffsetDistance1 == nil {
@@ -567,38 +598,6 @@ func (o *BTMSketchConstraint2) SetOffsetOrientation2(v bool) {
 	o.OffsetOrientation2 = &v
 }
 
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *BTMSketchConstraint2) GetParameters() []BTMParameter1 {
-	if o == nil || o.Parameters == nil {
-		var ret []BTMParameter1
-		return ret
-	}
-	return o.Parameters
-}
-
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchConstraint2) GetParametersOk() ([]BTMParameter1, bool) {
-	if o == nil || o.Parameters == nil {
-		return nil, false
-	}
-	return o.Parameters, true
-}
-
-// HasParameters returns a boolean if a field has been set.
-func (o *BTMSketchConstraint2) HasParameters() bool {
-	if o != nil && o.Parameters != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
-func (o *BTMSketchConstraint2) SetParameters(v []BTMParameter1) {
-	o.Parameters = v
-}
-
 // GetPierceParameter returns the PierceParameter field value if set, zero value otherwise.
 func (o *BTMSketchConstraint2) GetPierceParameter() float64 {
 	if o == nil || o.PierceParameter == nil {
@@ -636,17 +635,29 @@ func (o BTMSketchConstraint2) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.ConstraintType != nil {
-		toSerialize["constraintType"] = o.ConstraintType
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
-	if o.DrivenDimension != nil {
-		toSerialize["drivenDimension"] = o.DrivenDimension
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId
 	}
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
+	}
+	if o.Namespace != nil {
+		toSerialize["namespace"] = o.Namespace
+	}
+	if o.Parameters != nil {
+		toSerialize["parameters"] = o.Parameters
+	}
+	if o.ConstraintType != nil {
+		toSerialize["constraintType"] = o.ConstraintType
+	}
+	if o.DrivenDimension != nil {
+		toSerialize["drivenDimension"] = o.DrivenDimension
 	}
 	if o.HasOffsetData1 != nil {
 		toSerialize["hasOffsetData1"] = o.HasOffsetData1
@@ -660,15 +671,6 @@ func (o BTMSketchConstraint2) MarshalJSON() ([]byte, error) {
 	if o.HelpParameters != nil {
 		toSerialize["helpParameters"] = o.HelpParameters
 	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
-	}
-	if o.Namespace != nil {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
-	}
 	if o.OffsetDistance1 != nil {
 		toSerialize["offsetDistance1"] = o.OffsetDistance1
 	}
@@ -680,9 +682,6 @@ func (o BTMSketchConstraint2) MarshalJSON() ([]byte, error) {
 	}
 	if o.OffsetOrientation2 != nil {
 		toSerialize["offsetOrientation2"] = o.OffsetOrientation2
-	}
-	if o.Parameters != nil {
-		toSerialize["parameters"] = o.Parameters
 	}
 	if o.PierceParameter != nil {
 		toSerialize["pierceParameter"] = o.PierceParameter

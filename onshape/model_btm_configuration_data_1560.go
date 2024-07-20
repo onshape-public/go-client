@@ -18,11 +18,12 @@ import (
 type BTMConfigurationData1560 struct {
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion         *string                   `json:"importMicroversion,omitempty"`
-	NodeId                     *string                   `json:"nodeId,omitempty"`
-	CurrentConfiguration       []BTMParameter1           `json:"currentConfiguration,omitempty"`
-	CurrentFSValues            *map[string]BTFSValue1888 `json:"currentFSValues,omitempty"`
-	DefaultConfigurationValues *map[string]BTFSValue1888 `json:"defaultConfigurationValues,omitempty"`
+	ImportMicroversion         *string                        `json:"importMicroversion,omitempty"`
+	NodeId                     *string                        `json:"nodeId,omitempty"`
+	ConfigurationParameters    []BTMConfigurationParameter819 `json:"configurationParameters,omitempty"`
+	CurrentConfiguration       []BTMParameter1                `json:"currentConfiguration,omitempty"`
+	CurrentFSValues            *map[string]BTFSValue1888      `json:"currentFSValues,omitempty"`
+	DefaultConfigurationValues *map[string]BTFSValue1888      `json:"defaultConfigurationValues,omitempty"`
 }
 
 // NewBTMConfigurationData1560 instantiates a new BTMConfigurationData1560 object
@@ -138,6 +139,38 @@ func (o *BTMConfigurationData1560) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetConfigurationParameters returns the ConfigurationParameters field value if set, zero value otherwise.
+func (o *BTMConfigurationData1560) GetConfigurationParameters() []BTMConfigurationParameter819 {
+	if o == nil || o.ConfigurationParameters == nil {
+		var ret []BTMConfigurationParameter819
+		return ret
+	}
+	return o.ConfigurationParameters
+}
+
+// GetConfigurationParametersOk returns a tuple with the ConfigurationParameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationData1560) GetConfigurationParametersOk() ([]BTMConfigurationParameter819, bool) {
+	if o == nil || o.ConfigurationParameters == nil {
+		return nil, false
+	}
+	return o.ConfigurationParameters, true
+}
+
+// HasConfigurationParameters returns a boolean if a field has been set.
+func (o *BTMConfigurationData1560) HasConfigurationParameters() bool {
+	if o != nil && o.ConfigurationParameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigurationParameters gets a reference to the given []BTMConfigurationParameter819 and assigns it to the ConfigurationParameters field.
+func (o *BTMConfigurationData1560) SetConfigurationParameters(v []BTMConfigurationParameter819) {
+	o.ConfigurationParameters = v
+}
+
 // GetCurrentConfiguration returns the CurrentConfiguration field value if set, zero value otherwise.
 func (o *BTMConfigurationData1560) GetCurrentConfiguration() []BTMParameter1 {
 	if o == nil || o.CurrentConfiguration == nil {
@@ -244,6 +277,9 @@ func (o BTMConfigurationData1560) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.ConfigurationParameters != nil {
+		toSerialize["configurationParameters"] = o.ConfigurationParameters
 	}
 	if o.CurrentConfiguration != nil {
 		toSerialize["currentConfiguration"] = o.CurrentConfiguration

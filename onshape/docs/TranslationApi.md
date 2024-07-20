@@ -1,6 +1,6 @@
 # \TranslationApi
 
-All URIs are relative to *https://cad.onshape.com/api/v7*
+All URIs are relative to *https://cad.onshape.com/api/v8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,7 +37,7 @@ func main() {
     wid := "wid_example" // string | 
     file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
     allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
-    createComposite := true // bool |  (optional)
+    createComposite := true // bool | Not supported for importing into a single part studio. (optional)
     createDrawingIfPossible := true // bool |  (optional)
     encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
  **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
  **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
- **createComposite** | **bool** |  | 
+ **createComposite** | **bool** | Not supported for importing into a single part studio. | 
  **createDrawingIfPossible** | **bool** |  | 
  **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
  **extractAssemblyHierarchy** | **bool** |  | 

@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **DeterministicIds** | Pointer to **[]string** |  | [optional] 
 **GenerateSectionEntityQuery** | Pointer to **bool** |  | [optional] 
 **GeneratedSectionQueryId** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 **QueryString** | Pointer to **string** |  | [optional] 
 
@@ -157,56 +155,6 @@ SetGeneratedSectionQueryId sets GeneratedSectionQueryId field to given value.
 `func (o *BTMIndividualQueryBase139) HasGeneratedSectionQueryId() bool`
 
 HasGeneratedSectionQueryId returns a boolean if a field has been set.
-
-### GetImportMicroversion
-
-`func (o *BTMIndividualQueryBase139) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMIndividualQueryBase139) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMIndividualQueryBase139) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMIndividualQueryBase139) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMIndividualQueryBase139) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMIndividualQueryBase139) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMIndividualQueryBase139) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMIndividualQueryBase139) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetQuery
 

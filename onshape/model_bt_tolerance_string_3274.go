@@ -16,13 +16,12 @@ import (
 
 // BTToleranceString3274 struct for BTToleranceString3274
 type BTToleranceString3274 struct {
-	// Type of JSON object.
-	BtType         *string `json:"btType,omitempty"`
-	Classification *string `json:"classification,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
-	Lower              *string `json:"lower,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
+	Classification     *string `json:"classification,omitempty"`
+	Lower              *string `json:"lower,omitempty"`
 	Upper              *string `json:"upper,omitempty"`
 	Value              *string `json:"value,omitempty"`
 }
@@ -76,38 +75,6 @@ func (o *BTToleranceString3274) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetClassification returns the Classification field value if set, zero value otherwise.
-func (o *BTToleranceString3274) GetClassification() string {
-	if o == nil || o.Classification == nil {
-		var ret string
-		return ret
-	}
-	return *o.Classification
-}
-
-// GetClassificationOk returns a tuple with the Classification field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTToleranceString3274) GetClassificationOk() (*string, bool) {
-	if o == nil || o.Classification == nil {
-		return nil, false
-	}
-	return o.Classification, true
-}
-
-// HasClassification returns a boolean if a field has been set.
-func (o *BTToleranceString3274) HasClassification() bool {
-	if o != nil && o.Classification != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetClassification gets a reference to the given string and assigns it to the Classification field.
-func (o *BTToleranceString3274) SetClassification(v string) {
-	o.Classification = &v
-}
-
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
 func (o *BTToleranceString3274) GetImportMicroversion() string {
 	if o == nil || o.ImportMicroversion == nil {
@@ -140,38 +107,6 @@ func (o *BTToleranceString3274) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
 }
 
-// GetLower returns the Lower field value if set, zero value otherwise.
-func (o *BTToleranceString3274) GetLower() string {
-	if o == nil || o.Lower == nil {
-		var ret string
-		return ret
-	}
-	return *o.Lower
-}
-
-// GetLowerOk returns a tuple with the Lower field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTToleranceString3274) GetLowerOk() (*string, bool) {
-	if o == nil || o.Lower == nil {
-		return nil, false
-	}
-	return o.Lower, true
-}
-
-// HasLower returns a boolean if a field has been set.
-func (o *BTToleranceString3274) HasLower() bool {
-	if o != nil && o.Lower != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLower gets a reference to the given string and assigns it to the Lower field.
-func (o *BTToleranceString3274) SetLower(v string) {
-	o.Lower = &v
-}
-
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *BTToleranceString3274) GetNodeId() string {
 	if o == nil || o.NodeId == nil {
@@ -202,6 +137,70 @@ func (o *BTToleranceString3274) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTToleranceString3274) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetClassification returns the Classification field value if set, zero value otherwise.
+func (o *BTToleranceString3274) GetClassification() string {
+	if o == nil || o.Classification == nil {
+		var ret string
+		return ret
+	}
+	return *o.Classification
+}
+
+// GetClassificationOk returns a tuple with the Classification field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTToleranceString3274) GetClassificationOk() (*string, bool) {
+	if o == nil || o.Classification == nil {
+		return nil, false
+	}
+	return o.Classification, true
+}
+
+// HasClassification returns a boolean if a field has been set.
+func (o *BTToleranceString3274) HasClassification() bool {
+	if o != nil && o.Classification != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetClassification gets a reference to the given string and assigns it to the Classification field.
+func (o *BTToleranceString3274) SetClassification(v string) {
+	o.Classification = &v
+}
+
+// GetLower returns the Lower field value if set, zero value otherwise.
+func (o *BTToleranceString3274) GetLower() string {
+	if o == nil || o.Lower == nil {
+		var ret string
+		return ret
+	}
+	return *o.Lower
+}
+
+// GetLowerOk returns a tuple with the Lower field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTToleranceString3274) GetLowerOk() (*string, bool) {
+	if o == nil || o.Lower == nil {
+		return nil, false
+	}
+	return o.Lower, true
+}
+
+// HasLower returns a boolean if a field has been set.
+func (o *BTToleranceString3274) HasLower() bool {
+	if o != nil && o.Lower != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLower gets a reference to the given string and assigns it to the Lower field.
+func (o *BTToleranceString3274) SetLower(v string) {
+	o.Lower = &v
 }
 
 // GetUpper returns the Upper field value if set, zero value otherwise.
@@ -273,17 +272,17 @@ func (o BTToleranceString3274) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.Classification != nil {
-		toSerialize["classification"] = o.Classification
-	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
-	if o.Lower != nil {
-		toSerialize["lower"] = o.Lower
-	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.Classification != nil {
+		toSerialize["classification"] = o.Classification
+	}
+	if o.Lower != nil {
+		toSerialize["lower"] = o.Lower
 	}
 	if o.Upper != nil {
 		toSerialize["upper"] = o.Upper

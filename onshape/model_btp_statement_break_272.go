@@ -16,7 +16,6 @@ import (
 
 // BTPStatementBreak272 struct for BTPStatementBreak272
 type BTPStatementBreak272 struct {
-	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -27,6 +26,7 @@ type BTPStatementBreak272 struct {
 	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
 	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	SpaceAfterBreak     *BTPSpace10         `json:"spaceAfterBreak,omitempty"`
 }
 
@@ -45,38 +45,6 @@ func NewBTPStatementBreak272() *BTPStatementBreak272 {
 func NewBTPStatementBreak272WithDefaults() *BTPStatementBreak272 {
 	this := BTPStatementBreak272{}
 	return &this
-}
-
-// GetAnnotation returns the Annotation field value if set, zero value otherwise.
-func (o *BTPStatementBreak272) GetAnnotation() BTPAnnotation231 {
-	if o == nil || o.Annotation == nil {
-		var ret BTPAnnotation231
-		return ret
-	}
-	return *o.Annotation
-}
-
-// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPStatementBreak272) GetAnnotationOk() (*BTPAnnotation231, bool) {
-	if o == nil || o.Annotation == nil {
-		return nil, false
-	}
-	return o.Annotation, true
-}
-
-// HasAnnotation returns a boolean if a field has been set.
-func (o *BTPStatementBreak272) HasAnnotation() bool {
-	if o != nil && o.Annotation != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
-func (o *BTPStatementBreak272) SetAnnotation(v BTPAnnotation231) {
-	o.Annotation = &v
 }
 
 // GetAtomic returns the Atomic field value if set, zero value otherwise.
@@ -399,6 +367,38 @@ func (o *BTPStatementBreak272) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
 }
 
+// GetAnnotation returns the Annotation field value if set, zero value otherwise.
+func (o *BTPStatementBreak272) GetAnnotation() BTPAnnotation231 {
+	if o == nil || o.Annotation == nil {
+		var ret BTPAnnotation231
+		return ret
+	}
+	return *o.Annotation
+}
+
+// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPStatementBreak272) GetAnnotationOk() (*BTPAnnotation231, bool) {
+	if o == nil || o.Annotation == nil {
+		return nil, false
+	}
+	return o.Annotation, true
+}
+
+// HasAnnotation returns a boolean if a field has been set.
+func (o *BTPStatementBreak272) HasAnnotation() bool {
+	if o != nil && o.Annotation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
+func (o *BTPStatementBreak272) SetAnnotation(v BTPAnnotation231) {
+	o.Annotation = &v
+}
+
 // GetSpaceAfterBreak returns the SpaceAfterBreak field value if set, zero value otherwise.
 func (o *BTPStatementBreak272) GetSpaceAfterBreak() BTPSpace10 {
 	if o == nil || o.SpaceAfterBreak == nil {
@@ -433,9 +433,6 @@ func (o *BTPStatementBreak272) SetSpaceAfterBreak(v BTPSpace10) {
 
 func (o BTPStatementBreak272) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Annotation != nil {
-		toSerialize["annotation"] = o.Annotation
-	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}
@@ -465,6 +462,9 @@ func (o BTPStatementBreak272) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.Annotation != nil {
+		toSerialize["annotation"] = o.Annotation
 	}
 	if o.SpaceAfterBreak != nil {
 		toSerialize["spaceAfterBreak"] = o.SpaceAfterBreak

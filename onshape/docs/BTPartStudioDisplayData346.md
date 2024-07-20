@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllInsertableDisplayData** | Pointer to [**map[string]map[string]BTInsertableDisplayData2405**](map.md) |  | [optional] 
+**AnnotationsForElement** | Pointer to [**BTAnnotationElementDisplayData894**](BTAnnotationElementDisplayData894.md) |  | [optional] 
 **AppearanceIdToAppearanceOverride** | Pointer to [**map[string]BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **AssemblyReferenceDisplayData** | Pointer to [**BTAssemblyReferencesDisplayData1562**](BTAssemblyReferencesDisplayData1562.md) |  | [optional] 
 **BodyIdToEntityAppearanceSettings** | Pointer to [**map[string]BTBaseEntityAppearanceSettings1391**](BTBaseEntityAppearanceSettings1391.md) |  | [optional] 
@@ -86,6 +87,31 @@ SetAllInsertableDisplayData sets AllInsertableDisplayData field to given value.
 `func (o *BTPartStudioDisplayData346) HasAllInsertableDisplayData() bool`
 
 HasAllInsertableDisplayData returns a boolean if a field has been set.
+
+### GetAnnotationsForElement
+
+`func (o *BTPartStudioDisplayData346) GetAnnotationsForElement() BTAnnotationElementDisplayData894`
+
+GetAnnotationsForElement returns the AnnotationsForElement field if non-nil, zero value otherwise.
+
+### GetAnnotationsForElementOk
+
+`func (o *BTPartStudioDisplayData346) GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool)`
+
+GetAnnotationsForElementOk returns a tuple with the AnnotationsForElement field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationsForElement
+
+`func (o *BTPartStudioDisplayData346) SetAnnotationsForElement(v BTAnnotationElementDisplayData894)`
+
+SetAnnotationsForElement sets AnnotationsForElement field to given value.
+
+### HasAnnotationsForElement
+
+`func (o *BTPartStudioDisplayData346) HasAnnotationsForElement() bool`
+
+HasAnnotationsForElement returns a boolean if a field has been set.
 
 ### GetAppearanceIdToAppearanceOverride
 

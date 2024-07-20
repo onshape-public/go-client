@@ -16,18 +16,17 @@ import (
 
 // BTPBuiltinIdentifier233 struct for BTPBuiltinIdentifier233
 type BTPBuiltinIdentifier233 struct {
-	Atomic *bool `json:"atomic,omitempty"`
-	// Type of JSON object.
+	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
-	Identifier          *string             `json:"identifier,omitempty"`
 	NodeId              *string             `json:"nodeId,omitempty"`
 	ShortDescriptor     *string             `json:"shortDescriptor,omitempty"`
 	SpaceAfter          *BTPSpace10         `json:"spaceAfter,omitempty"`
 	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
 	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	Identifier          *string             `json:"identifier,omitempty"`
 }
 
 // NewBTPBuiltinIdentifier233 instantiates a new BTPBuiltinIdentifier233 object
@@ -173,38 +172,6 @@ func (o *BTPBuiltinIdentifier233) HasEndSourceLocation() bool {
 // SetEndSourceLocation gets a reference to the given int32 and assigns it to the EndSourceLocation field.
 func (o *BTPBuiltinIdentifier233) SetEndSourceLocation(v int32) {
 	o.EndSourceLocation = &v
-}
-
-// GetIdentifier returns the Identifier field value if set, zero value otherwise.
-func (o *BTPBuiltinIdentifier233) GetIdentifier() string {
-	if o == nil || o.Identifier == nil {
-		var ret string
-		return ret
-	}
-	return *o.Identifier
-}
-
-// GetIdentifierOk returns a tuple with the Identifier field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPBuiltinIdentifier233) GetIdentifierOk() (*string, bool) {
-	if o == nil || o.Identifier == nil {
-		return nil, false
-	}
-	return o.Identifier, true
-}
-
-// HasIdentifier returns a boolean if a field has been set.
-func (o *BTPBuiltinIdentifier233) HasIdentifier() bool {
-	if o != nil && o.Identifier != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIdentifier gets a reference to the given string and assigns it to the Identifier field.
-func (o *BTPBuiltinIdentifier233) SetIdentifier(v string) {
-	o.Identifier = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
@@ -399,6 +366,38 @@ func (o *BTPBuiltinIdentifier233) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
 }
 
+// GetIdentifier returns the Identifier field value if set, zero value otherwise.
+func (o *BTPBuiltinIdentifier233) GetIdentifier() string {
+	if o == nil || o.Identifier == nil {
+		var ret string
+		return ret
+	}
+	return *o.Identifier
+}
+
+// GetIdentifierOk returns a tuple with the Identifier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPBuiltinIdentifier233) GetIdentifierOk() (*string, bool) {
+	if o == nil || o.Identifier == nil {
+		return nil, false
+	}
+	return o.Identifier, true
+}
+
+// HasIdentifier returns a boolean if a field has been set.
+func (o *BTPBuiltinIdentifier233) HasIdentifier() bool {
+	if o != nil && o.Identifier != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIdentifier gets a reference to the given string and assigns it to the Identifier field.
+func (o *BTPBuiltinIdentifier233) SetIdentifier(v string) {
+	o.Identifier = &v
+}
+
 func (o BTPBuiltinIdentifier233) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Atomic != nil {
@@ -412,9 +411,6 @@ func (o BTPBuiltinIdentifier233) MarshalJSON() ([]byte, error) {
 	}
 	if o.EndSourceLocation != nil {
 		toSerialize["endSourceLocation"] = o.EndSourceLocation
-	}
-	if o.Identifier != nil {
-		toSerialize["identifier"] = o.Identifier
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
@@ -433,6 +429,9 @@ func (o BTPBuiltinIdentifier233) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.Identifier != nil {
+		toSerialize["identifier"] = o.Identifier
 	}
 	return json.Marshal(toSerialize)
 }

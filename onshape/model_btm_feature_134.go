@@ -60,11 +60,6 @@ func (o *BTMMateRelation1412) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
-// BTMParametricPartStudioFeature3883AsBTMFeature134 is a convenience function that returns BTMParametricPartStudioFeature3883 wrapped in BTMFeature134
-func (o *BTMParametricPartStudioFeature3883) AsBTMFeature134() *BTMFeature134 {
-	return &BTMFeature134{o}
-}
-
 // BTMVariableStudioReference2764AsBTMFeature134 is a convenience function that returns BTMVariableStudioReference2764 wrapped in BTMFeature134
 func (o *BTMVariableStudioReference2764) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
@@ -82,16 +77,6 @@ func (o *BTExplosion2754) AsBTMFeature134() *BTMFeature134 {
 
 // BTExplosionStepFeature3008AsBTMFeature134 is a convenience function that returns BTExplosionStepFeature3008 wrapped in BTMFeature134
 func (o *BTExplosionStepFeature3008) AsBTMFeature134() *BTMFeature134 {
-	return &BTMFeature134{o}
-}
-
-// BTMAssemblyMirrorFeature3037AsBTMFeature134 is a convenience function that returns BTMAssemblyMirrorFeature3037 wrapped in BTMFeature134
-func (o *BTMAssemblyMirrorFeature3037) AsBTMFeature134() *BTMFeature134 {
-	return &BTMFeature134{o}
-}
-
-// BTMAssemblyPatternFeature2241AsBTMFeature134 is a convenience function that returns BTMAssemblyPatternFeature2241 wrapped in BTMFeature134
-func (o *BTMAssemblyPatternFeature2241) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
@@ -117,11 +102,6 @@ func (o *BTMMateGroup65) AsBTMFeature134() *BTMFeature134 {
 
 // BTMNonGeometricItem1864AsBTMFeature134 is a convenience function that returns BTMNonGeometricItem1864 wrapped in BTMFeature134
 func (o *BTMNonGeometricItem1864) AsBTMFeature134() *BTMFeature134 {
-	return &BTMFeature134{o}
-}
-
-// BTMAssemblyReplicateFeature1351AsBTMFeature134 is a convenience function that returns BTMAssemblyReplicateFeature1351 wrapped in BTMFeature134
-func (o *BTMAssemblyReplicateFeature1351) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
@@ -905,48 +885,6 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMAssemblyMirrorFeature-3037'
-	if jsonDict["btType"] == "BTMAssemblyMirrorFeature-3037" {
-		// try to unmarshal JSON data into BTMAssemblyMirrorFeature3037
-		var qr *BTMAssemblyMirrorFeature3037
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyMirrorFeature3037: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyPatternFeature-2241'
-	if jsonDict["btType"] == "BTMAssemblyPatternFeature-2241" {
-		// try to unmarshal JSON data into BTMAssemblyPatternFeature2241
-		var qr *BTMAssemblyPatternFeature2241
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyPatternFeature2241: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyReplicateFeature-1351'
-	if jsonDict["btType"] == "BTMAssemblyReplicateFeature-1351" {
-		// try to unmarshal JSON data into BTMAssemblyReplicateFeature1351
-		var qr *BTMAssemblyReplicateFeature1351
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyReplicateFeature1351: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMFeatureInvalid-1031'
 	if jsonDict["btType"] == "BTMFeatureInvalid-1031" {
 		// try to unmarshal JSON data into BTMFeatureInvalid1031
@@ -1070,20 +1008,6 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMFeature134 = nil
 			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMNonGeometricItem1864: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMParametricPartStudioFeature-3883'
-	if jsonDict["btType"] == "BTMParametricPartStudioFeature-3883" {
-		// try to unmarshal JSON data into BTMParametricPartStudioFeature3883
-		var qr *BTMParametricPartStudioFeature3883
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMParametricPartStudioFeature3883: %s", err.Error())
 		}
 	}
 

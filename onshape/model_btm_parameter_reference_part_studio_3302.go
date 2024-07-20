@@ -16,6 +16,8 @@ import (
 
 // BTMParameterReferencePartStudio3302 struct for BTMParameterReferencePartStudio3302
 type BTMParameterReferencePartStudio3302 struct {
+	BlockBuildFunctionAccess *bool `json:"blockBuildFunctionAccess,omitempty"`
+	// Type of JSON object.
 	BtType             *string                            `json:"btType,omitempty"`
 	Configuration      []BTMParameter1                    `json:"configuration,omitempty"`
 	DocumentId         *string                            `json:"documentId,omitempty"`
@@ -32,7 +34,6 @@ type BTMParameterReferencePartStudio3302 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId                 *string                   `json:"parameterId,omitempty"`
-	BlockBuildFunctionAccess    *bool                     `json:"blockBuildFunctionAccess,omitempty"`
 	PartIdentity                *BTPSOIdentity2741        `json:"partIdentity,omitempty"`
 	PartQuery                   *BTMParameterQueryList148 `json:"partQuery,omitempty"`
 	QueryDataKey                *string                   `json:"queryDataKey,omitempty"`
@@ -54,6 +55,38 @@ func NewBTMParameterReferencePartStudio3302() *BTMParameterReferencePartStudio33
 func NewBTMParameterReferencePartStudio3302WithDefaults() *BTMParameterReferencePartStudio3302 {
 	this := BTMParameterReferencePartStudio3302{}
 	return &this
+}
+
+// GetBlockBuildFunctionAccess returns the BlockBuildFunctionAccess field value if set, zero value otherwise.
+func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccess() bool {
+	if o == nil || o.BlockBuildFunctionAccess == nil {
+		var ret bool
+		return ret
+	}
+	return *o.BlockBuildFunctionAccess
+}
+
+// GetBlockBuildFunctionAccessOk returns a tuple with the BlockBuildFunctionAccess field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccessOk() (*bool, bool) {
+	if o == nil || o.BlockBuildFunctionAccess == nil {
+		return nil, false
+	}
+	return o.BlockBuildFunctionAccess, true
+}
+
+// HasBlockBuildFunctionAccess returns a boolean if a field has been set.
+func (o *BTMParameterReferencePartStudio3302) HasBlockBuildFunctionAccess() bool {
+	if o != nil && o.BlockBuildFunctionAccess != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBlockBuildFunctionAccess gets a reference to the given bool and assigns it to the BlockBuildFunctionAccess field.
+func (o *BTMParameterReferencePartStudio3302) SetBlockBuildFunctionAccess(v bool) {
+	o.BlockBuildFunctionAccess = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -472,38 +505,6 @@ func (o *BTMParameterReferencePartStudio3302) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
-// GetBlockBuildFunctionAccess returns the BlockBuildFunctionAccess field value if set, zero value otherwise.
-func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccess() bool {
-	if o == nil || o.BlockBuildFunctionAccess == nil {
-		var ret bool
-		return ret
-	}
-	return *o.BlockBuildFunctionAccess
-}
-
-// GetBlockBuildFunctionAccessOk returns a tuple with the BlockBuildFunctionAccess field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParameterReferencePartStudio3302) GetBlockBuildFunctionAccessOk() (*bool, bool) {
-	if o == nil || o.BlockBuildFunctionAccess == nil {
-		return nil, false
-	}
-	return o.BlockBuildFunctionAccess, true
-}
-
-// HasBlockBuildFunctionAccess returns a boolean if a field has been set.
-func (o *BTMParameterReferencePartStudio3302) HasBlockBuildFunctionAccess() bool {
-	if o != nil && o.BlockBuildFunctionAccess != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBlockBuildFunctionAccess gets a reference to the given bool and assigns it to the BlockBuildFunctionAccess field.
-func (o *BTMParameterReferencePartStudio3302) SetBlockBuildFunctionAccess(v bool) {
-	o.BlockBuildFunctionAccess = &v
-}
-
 // GetPartIdentity returns the PartIdentity field value if set, zero value otherwise.
 func (o *BTMParameterReferencePartStudio3302) GetPartIdentity() BTPSOIdentity2741 {
 	if o == nil || o.PartIdentity == nil {
@@ -634,6 +635,9 @@ func (o *BTMParameterReferencePartStudio3302) SetStandardContentParametersId(v s
 
 func (o BTMParameterReferencePartStudio3302) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.BlockBuildFunctionAccess != nil {
+		toSerialize["blockBuildFunctionAccess"] = o.BlockBuildFunctionAccess
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -672,9 +676,6 @@ func (o BTMParameterReferencePartStudio3302) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
-	}
-	if o.BlockBuildFunctionAccess != nil {
-		toSerialize["blockBuildFunctionAccess"] = o.BlockBuildFunctionAccess
 	}
 	if o.PartIdentity != nil {
 		toSerialize["partIdentity"] = o.PartIdentity

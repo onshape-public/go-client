@@ -39,6 +39,7 @@ const (
 	GBTUiSelectionTypeProperty              GBTUiSelectionType = "PROPERTY"
 	GBTUiSelectionTypeSimulationLoad        GBTUiSelectionType = "SIMULATION_LOAD"
 	GBTUiSelectionTypePersistentQueryString GBTUiSelectionType = "PERSISTENT_QUERY_STRING"
+	GBTUiSelectionTypeGenerativeDesignItem  GBTUiSelectionType = "GENERATIVE_DESIGN_ITEM"
 	GBTUiSelectionTypeUnknown               GBTUiSelectionType = "UNKNOWN"
 )
 
@@ -63,6 +64,7 @@ var AllowedGBTUiSelectionTypeEnumValues = []GBTUiSelectionType{
 	"PROPERTY",
 	"SIMULATION_LOAD",
 	"PERSISTENT_QUERY_STRING",
+	"GENERATIVE_DESIGN_ITEM",
 	"UNKNOWN",
 }
 

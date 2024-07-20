@@ -6,9 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Classification** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **Lower** | Pointer to **string** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **Upper** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
@@ -81,31 +79,6 @@ SetClassification sets Classification field to given value.
 
 HasClassification returns a boolean if a field has been set.
 
-### GetImportMicroversion
-
-`func (o *BTToleranceString3274) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTToleranceString3274) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTToleranceString3274) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTToleranceString3274) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
 ### GetLower
 
 `func (o *BTToleranceString3274) GetLower() string`
@@ -130,31 +103,6 @@ SetLower sets Lower field to given value.
 `func (o *BTToleranceString3274) HasLower() bool`
 
 HasLower returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTToleranceString3274) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTToleranceString3274) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTToleranceString3274) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTToleranceString3274) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetUpper
 

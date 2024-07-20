@@ -20,8 +20,8 @@ type BTMIndividualQueryBase139 struct {
 	implBTMIndividualQueryBase139 interface{}
 }
 
-// BTMIndividualCreatedByQuery137AsBTMIndividualQueryBase139 is a convenience function that returns BTMIndividualCreatedByQuery137 wrapped in BTMIndividualQueryBase139
-func (o *BTMIndividualCreatedByQuery137) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
+// BTMIndividualQueryWithOccurrence811AsBTMIndividualQueryBase139 is a convenience function that returns BTMIndividualQueryWithOccurrence811 wrapped in BTMIndividualQueryBase139
+func (o *BTMIndividualQueryWithOccurrence811) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
 	return &BTMIndividualQueryBase139{o}
 }
 
@@ -30,8 +30,13 @@ func (o *BTMInContextQuery2254) AsBTMIndividualQueryBase139() *BTMIndividualQuer
 	return &BTMIndividualQueryBase139{o}
 }
 
-// BTMIndividualSketchRegionQuery140AsBTMIndividualQueryBase139 is a convenience function that returns BTMIndividualSketchRegionQuery140 wrapped in BTMIndividualQueryBase139
-func (o *BTMIndividualSketchRegionQuery140) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
+// BTMIndividualOccurrenceQuery626AsBTMIndividualQueryBase139 is a convenience function that returns BTMIndividualOccurrenceQuery626 wrapped in BTMIndividualQueryBase139
+func (o *BTMIndividualOccurrenceQuery626) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
+	return &BTMIndividualQueryBase139{o}
+}
+
+// BTMMeshPointQuery1183AsBTMIndividualQueryBase139 is a convenience function that returns BTMMeshPointQuery1183 wrapped in BTMIndividualQueryBase139
+func (o *BTMMeshPointQuery1183) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
 	return &BTMIndividualQueryBase139{o}
 }
 
@@ -45,13 +50,18 @@ func (o *BTMIndividualQuery138) AsBTMIndividualQueryBase139() *BTMIndividualQuer
 	return &BTMIndividualQueryBase139{o}
 }
 
-// BTMIndividualCoEdgeQuery1332AsBTMIndividualQueryBase139 is a convenience function that returns BTMIndividualCoEdgeQuery1332 wrapped in BTMIndividualQueryBase139
-func (o *BTMIndividualCoEdgeQuery1332) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
+// BTMFeatureQueryWithOccurrence157AsBTMIndividualQueryBase139 is a convenience function that returns BTMFeatureQueryWithOccurrence157 wrapped in BTMIndividualQueryBase139
+func (o *BTMFeatureQueryWithOccurrence157) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
 	return &BTMIndividualQueryBase139{o}
 }
 
-// BTMIndividualSketchUniqueVerticesQuery1472AsBTMIndividualQueryBase139 is a convenience function that returns BTMIndividualSketchUniqueVerticesQuery1472 wrapped in BTMIndividualQueryBase139
-func (o *BTMIndividualSketchUniqueVerticesQuery1472) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
+// BTMPartStudioMateConnectorQuery1324AsBTMIndividualQueryBase139 is a convenience function that returns BTMPartStudioMateConnectorQuery1324 wrapped in BTMIndividualQueryBase139
+func (o *BTMPartStudioMateConnectorQuery1324) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
+	return &BTMIndividualQueryBase139{o}
+}
+
+// BTMInferenceQueryWithOccurrence1083AsBTMIndividualQueryBase139 is a convenience function that returns BTMInferenceQueryWithOccurrence1083 wrapped in BTMIndividualQueryBase139
+func (o *BTMInferenceQueryWithOccurrence1083) AsBTMIndividualQueryBase139() *BTMIndividualQueryBase139 {
 	return &BTMIndividualQueryBase139{o}
 }
 
@@ -120,6 +130,106 @@ func (o *BTMIndividualQueryBase139) SetBtType(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMIndividualQueryBase139) GetImportMicroversion() string {
+	type getResult interface {
+		GetImportMicroversion() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetImportMicroversion()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualQueryBase139) GetImportMicroversionOk() (*string, bool) {
+	type getResult interface {
+		GetImportMicroversionOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetImportMicroversionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMIndividualQueryBase139) HasImportMicroversion() bool {
+	type getResult interface {
+		HasImportMicroversion() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasImportMicroversion()
+	} else {
+		return false
+	}
+}
+
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMIndividualQueryBase139) SetImportMicroversion(v string) {
+	type getResult interface {
+		SetImportMicroversion(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetImportMicroversion(v)
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMIndividualQueryBase139) GetNodeId() string {
+	type getResult interface {
+		GetNodeId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualQueryBase139) GetNodeIdOk() (*string, bool) {
+	type getResult interface {
+		GetNodeIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMIndividualQueryBase139) HasNodeId() bool {
+	type getResult interface {
+		HasNodeId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNodeId()
+	} else {
+		return false
+	}
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMIndividualQueryBase139) SetNodeId(v string) {
+	type getResult interface {
+		SetNodeId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetNodeId(v)
 }
 
 // GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
@@ -322,106 +432,6 @@ func (o *BTMIndividualQueryBase139) SetGeneratedSectionQueryId(v string) {
 	o.GetActualInstance().(getResult).SetGeneratedSectionQueryId(v)
 }
 
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMIndividualQueryBase139) GetImportMicroversion() string {
-	type getResult interface {
-		GetImportMicroversion() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetImportMicroversion()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMIndividualQueryBase139) GetImportMicroversionOk() (*string, bool) {
-	type getResult interface {
-		GetImportMicroversionOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetImportMicroversionOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMIndividualQueryBase139) HasImportMicroversion() bool {
-	type getResult interface {
-		HasImportMicroversion() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasImportMicroversion()
-	} else {
-		return false
-	}
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMIndividualQueryBase139) SetImportMicroversion(v string) {
-	type getResult interface {
-		SetImportMicroversion(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetImportMicroversion(v)
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMIndividualQueryBase139) GetNodeId() string {
-	type getResult interface {
-		GetNodeId() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNodeId()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMIndividualQueryBase139) GetNodeIdOk() (*string, bool) {
-	type getResult interface {
-		GetNodeIdOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetNodeIdOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMIndividualQueryBase139) HasNodeId() bool {
-	type getResult interface {
-		HasNodeId() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasNodeId()
-	} else {
-		return false
-	}
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMIndividualQueryBase139) SetNodeId(v string) {
-	type getResult interface {
-		SetNodeId(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetNodeId(v)
-}
-
 // GetQuery returns the Query field value if set, zero value otherwise.
 func (o *BTMIndividualQueryBase139) GetQuery() BTMIndividualQueryBase139 {
 	type getResult interface {
@@ -532,6 +542,20 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
+	// check if the discriminator value is 'BTMFeatureQueryWithOccurrence-157'
+	if jsonDict["btType"] == "BTMFeatureQueryWithOccurrence-157" {
+		// try to unmarshal JSON data into BTMFeatureQueryWithOccurrence157
+		var qr *BTMFeatureQueryWithOccurrence157
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMFeatureQueryWithOccurrence157: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMInContextQuery-2254'
 	if jsonDict["btType"] == "BTMInContextQuery-2254" {
 		// try to unmarshal JSON data into BTMInContextQuery2254
@@ -546,31 +570,17 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMIndividualCoEdgeQuery-1332'
-	if jsonDict["btType"] == "BTMIndividualCoEdgeQuery-1332" {
-		// try to unmarshal JSON data into BTMIndividualCoEdgeQuery1332
-		var qr *BTMIndividualCoEdgeQuery1332
+	// check if the discriminator value is 'BTMIndividualOccurrenceQuery-626'
+	if jsonDict["btType"] == "BTMIndividualOccurrenceQuery-626" {
+		// try to unmarshal JSON data into BTMIndividualOccurrenceQuery626
+		var qr *BTMIndividualOccurrenceQuery626
 		err = json.Unmarshal(data, &qr)
 		if err == nil {
 			dst.implBTMIndividualQueryBase139 = qr
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualCoEdgeQuery1332: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMIndividualCreatedByQuery-137'
-	if jsonDict["btType"] == "BTMIndividualCreatedByQuery-137" {
-		// try to unmarshal JSON data into BTMIndividualCreatedByQuery137
-		var qr *BTMIndividualCreatedByQuery137
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryBase139 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualCreatedByQuery137: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualOccurrenceQuery626: %s", err.Error())
 		}
 	}
 
@@ -588,6 +598,20 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMIndividualQueryWithOccurrence-811'
+	if jsonDict["btType"] == "BTMIndividualQueryWithOccurrence-811" {
+		// try to unmarshal JSON data into BTMIndividualQueryWithOccurrence811
+		var qr *BTMIndividualQueryWithOccurrence811
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualQueryWithOccurrence811: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMIndividualQueryWithOccurrenceBase-904'
 	if jsonDict["btType"] == "BTMIndividualQueryWithOccurrenceBase-904" {
 		// try to unmarshal JSON data into BTMIndividualQueryWithOccurrenceBase904
@@ -602,31 +626,45 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMIndividualSketchRegionQuery-140'
-	if jsonDict["btType"] == "BTMIndividualSketchRegionQuery-140" {
-		// try to unmarshal JSON data into BTMIndividualSketchRegionQuery140
-		var qr *BTMIndividualSketchRegionQuery140
+	// check if the discriminator value is 'BTMInferenceQueryWithOccurrence-1083'
+	if jsonDict["btType"] == "BTMInferenceQueryWithOccurrence-1083" {
+		// try to unmarshal JSON data into BTMInferenceQueryWithOccurrence1083
+		var qr *BTMInferenceQueryWithOccurrence1083
 		err = json.Unmarshal(data, &qr)
 		if err == nil {
 			dst.implBTMIndividualQueryBase139 = qr
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualSketchRegionQuery140: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
 		}
 	}
 
-	// check if the discriminator value is 'BTMIndividualSketchUniqueVerticesQuery-1472'
-	if jsonDict["btType"] == "BTMIndividualSketchUniqueVerticesQuery-1472" {
-		// try to unmarshal JSON data into BTMIndividualSketchUniqueVerticesQuery1472
-		var qr *BTMIndividualSketchUniqueVerticesQuery1472
+	// check if the discriminator value is 'BTMMeshPointQuery-1183'
+	if jsonDict["btType"] == "BTMMeshPointQuery-1183" {
+		// try to unmarshal JSON data into BTMMeshPointQuery1183
+		var qr *BTMMeshPointQuery1183
 		err = json.Unmarshal(data, &qr)
 		if err == nil {
 			dst.implBTMIndividualQueryBase139 = qr
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualSketchUniqueVerticesQuery1472: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMMeshPointQuery1183: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMPartStudioMateConnectorQuery-1324'
+	if jsonDict["btType"] == "BTMPartStudioMateConnectorQuery-1324" {
+		// try to unmarshal JSON data into BTMPartStudioMateConnectorQuery1324
+		var qr *BTMPartStudioMateConnectorQuery1324
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMPartStudioMateConnectorQuery1324: %s", err.Error())
 		}
 	}
 
@@ -696,17 +734,16 @@ func (v *NullableBTMIndividualQueryBase139) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMIndividualQueryBase139 struct {
-	// Type of JSON object.
-	BtType                     *string                    `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
+	NodeId                     *string                    `json:"nodeId,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	// Microversion that resulted from the import.
-	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
-	NodeId             *string                    `json:"nodeId,omitempty"`
-	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString        *string                    `json:"queryString,omitempty"`
+	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString                *string                    `json:"queryString,omitempty"`
 }
 
 // Newbase_BTMIndividualQueryBase139 instantiates a new base_BTMIndividualQueryBase139 object
@@ -756,6 +793,70 @@ func (o *base_BTMIndividualQueryBase139) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTMIndividualQueryBase139) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *base_BTMIndividualQueryBase139) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImportMicroversion
+}
+
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMIndividualQueryBase139) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
+		return nil, false
+	}
+	return o.ImportMicroversion, true
+}
+
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *base_BTMIndividualQueryBase139) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *base_BTMIndividualQueryBase139) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *base_BTMIndividualQueryBase139) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMIndividualQueryBase139) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *base_BTMIndividualQueryBase139) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *base_BTMIndividualQueryBase139) SetNodeId(v string) {
+	o.NodeId = &v
 }
 
 // GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
@@ -886,70 +987,6 @@ func (o *base_BTMIndividualQueryBase139) SetGeneratedSectionQueryId(v string) {
 	o.GeneratedSectionQueryId = &v
 }
 
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *base_BTMIndividualQueryBase139) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMIndividualQueryBase139) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *base_BTMIndividualQueryBase139) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *base_BTMIndividualQueryBase139) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *base_BTMIndividualQueryBase139) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMIndividualQueryBase139) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *base_BTMIndividualQueryBase139) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *base_BTMIndividualQueryBase139) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
 // GetQuery returns the Query field value if set, zero value otherwise.
 func (o *base_BTMIndividualQueryBase139) GetQuery() BTMIndividualQueryBase139 {
 	if o == nil || o.Query == nil {
@@ -1019,6 +1056,12 @@ func (o base_BTMIndividualQueryBase139) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
 	if o.DeterministicIdList != nil {
 		toSerialize["deterministicIdList"] = o.DeterministicIdList
 	}
@@ -1030,12 +1073,6 @@ func (o base_BTMIndividualQueryBase139) MarshalJSON() ([]byte, error) {
 	}
 	if o.GeneratedSectionQueryId != nil {
 		toSerialize["generatedSectionQueryId"] = o.GeneratedSectionQueryId
-	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
 	}
 	if o.Query != nil {
 		toSerialize["query"] = o.Query

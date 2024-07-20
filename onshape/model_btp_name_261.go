@@ -16,23 +16,22 @@ import (
 
 // BTPName261 struct for BTPName261
 type BTPName261 struct {
-	Atomic *bool `json:"atomic,omitempty"`
-	// Type of JSON object.
-	BtType            *string             `json:"btType,omitempty"`
-	DocumentationType *GBTPDefinitionType `json:"documentationType,omitempty"`
-	EndSourceLocation *int32              `json:"endSourceLocation,omitempty"`
-	ForExport         *bool               `json:"forExport,omitempty"`
-	GlobalNamespace   *bool               `json:"globalNamespace,omitempty"`
-	Identifier        *BTPIdentifier8     `json:"identifier,omitempty"`
+	Atomic              *bool               `json:"atomic,omitempty"`
+	BtType              *string             `json:"btType,omitempty"`
+	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
+	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
+	NodeId              *string             `json:"nodeId,omitempty"`
+	ShortDescriptor     *string             `json:"shortDescriptor,omitempty"`
+	SpaceAfter          *BTPSpace10         `json:"spaceAfter,omitempty"`
+	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
+	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
+	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	ForExport           *bool               `json:"forExport,omitempty"`
+	GlobalNamespace     *bool               `json:"globalNamespace,omitempty"`
+	Identifier          *BTPIdentifier8     `json:"identifier,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion  *string          `json:"importMicroversion,omitempty"`
-	Namespace           []BTPIdentifier8 `json:"namespace,omitempty"`
-	NodeId              *string          `json:"nodeId,omitempty"`
-	ShortDescriptor     *string          `json:"shortDescriptor,omitempty"`
-	SpaceAfter          *BTPSpace10      `json:"spaceAfter,omitempty"`
-	SpaceBefore         *BTPSpace10      `json:"spaceBefore,omitempty"`
-	SpaceDefault        *bool            `json:"spaceDefault,omitempty"`
-	StartSourceLocation *int32           `json:"startSourceLocation,omitempty"`
+	ImportMicroversion *string          `json:"importMicroversion,omitempty"`
+	Namespace          []BTPIdentifier8 `json:"namespace,omitempty"`
 }
 
 // NewBTPName261 instantiates a new BTPName261 object
@@ -178,166 +177,6 @@ func (o *BTPName261) HasEndSourceLocation() bool {
 // SetEndSourceLocation gets a reference to the given int32 and assigns it to the EndSourceLocation field.
 func (o *BTPName261) SetEndSourceLocation(v int32) {
 	o.EndSourceLocation = &v
-}
-
-// GetForExport returns the ForExport field value if set, zero value otherwise.
-func (o *BTPName261) GetForExport() bool {
-	if o == nil || o.ForExport == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ForExport
-}
-
-// GetForExportOk returns a tuple with the ForExport field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPName261) GetForExportOk() (*bool, bool) {
-	if o == nil || o.ForExport == nil {
-		return nil, false
-	}
-	return o.ForExport, true
-}
-
-// HasForExport returns a boolean if a field has been set.
-func (o *BTPName261) HasForExport() bool {
-	if o != nil && o.ForExport != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetForExport gets a reference to the given bool and assigns it to the ForExport field.
-func (o *BTPName261) SetForExport(v bool) {
-	o.ForExport = &v
-}
-
-// GetGlobalNamespace returns the GlobalNamespace field value if set, zero value otherwise.
-func (o *BTPName261) GetGlobalNamespace() bool {
-	if o == nil || o.GlobalNamespace == nil {
-		var ret bool
-		return ret
-	}
-	return *o.GlobalNamespace
-}
-
-// GetGlobalNamespaceOk returns a tuple with the GlobalNamespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPName261) GetGlobalNamespaceOk() (*bool, bool) {
-	if o == nil || o.GlobalNamespace == nil {
-		return nil, false
-	}
-	return o.GlobalNamespace, true
-}
-
-// HasGlobalNamespace returns a boolean if a field has been set.
-func (o *BTPName261) HasGlobalNamespace() bool {
-	if o != nil && o.GlobalNamespace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGlobalNamespace gets a reference to the given bool and assigns it to the GlobalNamespace field.
-func (o *BTPName261) SetGlobalNamespace(v bool) {
-	o.GlobalNamespace = &v
-}
-
-// GetIdentifier returns the Identifier field value if set, zero value otherwise.
-func (o *BTPName261) GetIdentifier() BTPIdentifier8 {
-	if o == nil || o.Identifier == nil {
-		var ret BTPIdentifier8
-		return ret
-	}
-	return *o.Identifier
-}
-
-// GetIdentifierOk returns a tuple with the Identifier field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPName261) GetIdentifierOk() (*BTPIdentifier8, bool) {
-	if o == nil || o.Identifier == nil {
-		return nil, false
-	}
-	return o.Identifier, true
-}
-
-// HasIdentifier returns a boolean if a field has been set.
-func (o *BTPName261) HasIdentifier() bool {
-	if o != nil && o.Identifier != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIdentifier gets a reference to the given BTPIdentifier8 and assigns it to the Identifier field.
-func (o *BTPName261) SetIdentifier(v BTPIdentifier8) {
-	o.Identifier = &v
-}
-
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTPName261) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPName261) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTPName261) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTPName261) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *BTPName261) GetNamespace() []BTPIdentifier8 {
-	if o == nil || o.Namespace == nil {
-		var ret []BTPIdentifier8
-		return ret
-	}
-	return o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPName261) GetNamespaceOk() ([]BTPIdentifier8, bool) {
-	if o == nil || o.Namespace == nil {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *BTPName261) HasNamespace() bool {
-	if o != nil && o.Namespace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given []BTPIdentifier8 and assigns it to the Namespace field.
-func (o *BTPName261) SetNamespace(v []BTPIdentifier8) {
-	o.Namespace = v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
@@ -532,6 +371,166 @@ func (o *BTPName261) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
 }
 
+// GetForExport returns the ForExport field value if set, zero value otherwise.
+func (o *BTPName261) GetForExport() bool {
+	if o == nil || o.ForExport == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ForExport
+}
+
+// GetForExportOk returns a tuple with the ForExport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPName261) GetForExportOk() (*bool, bool) {
+	if o == nil || o.ForExport == nil {
+		return nil, false
+	}
+	return o.ForExport, true
+}
+
+// HasForExport returns a boolean if a field has been set.
+func (o *BTPName261) HasForExport() bool {
+	if o != nil && o.ForExport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetForExport gets a reference to the given bool and assigns it to the ForExport field.
+func (o *BTPName261) SetForExport(v bool) {
+	o.ForExport = &v
+}
+
+// GetGlobalNamespace returns the GlobalNamespace field value if set, zero value otherwise.
+func (o *BTPName261) GetGlobalNamespace() bool {
+	if o == nil || o.GlobalNamespace == nil {
+		var ret bool
+		return ret
+	}
+	return *o.GlobalNamespace
+}
+
+// GetGlobalNamespaceOk returns a tuple with the GlobalNamespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPName261) GetGlobalNamespaceOk() (*bool, bool) {
+	if o == nil || o.GlobalNamespace == nil {
+		return nil, false
+	}
+	return o.GlobalNamespace, true
+}
+
+// HasGlobalNamespace returns a boolean if a field has been set.
+func (o *BTPName261) HasGlobalNamespace() bool {
+	if o != nil && o.GlobalNamespace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGlobalNamespace gets a reference to the given bool and assigns it to the GlobalNamespace field.
+func (o *BTPName261) SetGlobalNamespace(v bool) {
+	o.GlobalNamespace = &v
+}
+
+// GetIdentifier returns the Identifier field value if set, zero value otherwise.
+func (o *BTPName261) GetIdentifier() BTPIdentifier8 {
+	if o == nil || o.Identifier == nil {
+		var ret BTPIdentifier8
+		return ret
+	}
+	return *o.Identifier
+}
+
+// GetIdentifierOk returns a tuple with the Identifier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPName261) GetIdentifierOk() (*BTPIdentifier8, bool) {
+	if o == nil || o.Identifier == nil {
+		return nil, false
+	}
+	return o.Identifier, true
+}
+
+// HasIdentifier returns a boolean if a field has been set.
+func (o *BTPName261) HasIdentifier() bool {
+	if o != nil && o.Identifier != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIdentifier gets a reference to the given BTPIdentifier8 and assigns it to the Identifier field.
+func (o *BTPName261) SetIdentifier(v BTPIdentifier8) {
+	o.Identifier = &v
+}
+
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTPName261) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImportMicroversion
+}
+
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPName261) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
+		return nil, false
+	}
+	return o.ImportMicroversion, true
+}
+
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTPName261) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTPName261) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *BTPName261) GetNamespace() []BTPIdentifier8 {
+	if o == nil || o.Namespace == nil {
+		var ret []BTPIdentifier8
+		return ret
+	}
+	return o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPName261) GetNamespaceOk() ([]BTPIdentifier8, bool) {
+	if o == nil || o.Namespace == nil {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *BTPName261) HasNamespace() bool {
+	if o != nil && o.Namespace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given []BTPIdentifier8 and assigns it to the Namespace field.
+func (o *BTPName261) SetNamespace(v []BTPIdentifier8) {
+	o.Namespace = v
+}
+
 func (o BTPName261) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Atomic != nil {
@@ -545,21 +544,6 @@ func (o BTPName261) MarshalJSON() ([]byte, error) {
 	}
 	if o.EndSourceLocation != nil {
 		toSerialize["endSourceLocation"] = o.EndSourceLocation
-	}
-	if o.ForExport != nil {
-		toSerialize["forExport"] = o.ForExport
-	}
-	if o.GlobalNamespace != nil {
-		toSerialize["globalNamespace"] = o.GlobalNamespace
-	}
-	if o.Identifier != nil {
-		toSerialize["identifier"] = o.Identifier
-	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
-	}
-	if o.Namespace != nil {
-		toSerialize["namespace"] = o.Namespace
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
@@ -578,6 +562,21 @@ func (o BTPName261) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.ForExport != nil {
+		toSerialize["forExport"] = o.ForExport
+	}
+	if o.GlobalNamespace != nil {
+		toSerialize["globalNamespace"] = o.GlobalNamespace
+	}
+	if o.Identifier != nil {
+		toSerialize["identifier"] = o.Identifier
+	}
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.Namespace != nil {
+		toSerialize["namespace"] = o.Namespace
 	}
 	return json.Marshal(toSerialize)
 }

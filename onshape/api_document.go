@@ -3112,11 +3112,17 @@ type ApiRestoreFromHistoryRequest struct {
 	vm             string
 	vmid           string
 	linkDocumentId *string
+	bTRestoreInfo  *BTRestoreInfo
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
 func (r ApiRestoreFromHistoryRequest) LinkDocumentId(linkDocumentId string) ApiRestoreFromHistoryRequest {
 	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiRestoreFromHistoryRequest) BTRestoreInfo(bTRestoreInfo BTRestoreInfo) ApiRestoreFromHistoryRequest {
+	r.bTRestoreInfo = &bTRestoreInfo
 	return r
 }
 
@@ -3175,7 +3181,7 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -3191,6 +3197,8 @@ func (a *DocumentApiService) RestoreFromHistoryExecute(r ApiRestoreFromHistoryRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.bTRestoreInfo
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConfigurationValueString** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
 ## Methods
@@ -78,56 +76,6 @@ SetConfigurationValueString sets ConfigurationValueString field to given value.
 `func (o *BTMConfiguredValue1341) HasConfigurationValueString() bool`
 
 HasConfigurationValueString returns a boolean if a field has been set.
-
-### GetImportMicroversion
-
-`func (o *BTMConfiguredValue1341) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMConfiguredValue1341) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMConfiguredValue1341) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMConfiguredValue1341) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMConfiguredValue1341) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMConfiguredValue1341) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMConfiguredValue1341) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMConfiguredValue1341) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetValue
 
