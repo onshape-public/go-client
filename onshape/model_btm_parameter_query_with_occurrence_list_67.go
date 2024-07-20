@@ -16,15 +16,14 @@ import (
 
 // BTMParameterQueryWithOccurrenceList67 struct for BTMParameterQueryWithOccurrenceList67
 type BTMParameterQueryWithOccurrenceList67 struct {
-	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	// ID of the parameter's node.
-	NodeId      *string          `json:"nodeId,omitempty"`
-	Occurrences []BTOccurrence74 `json:"occurrences,omitempty"`
+	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string                                   `json:"parameterId,omitempty"`
+	Occurrences []BTOccurrence74                          `json:"occurrences,omitempty"`
 	Queries     []BTMIndividualQueryWithOccurrenceBase904 `json:"queries,omitempty"`
 }
 
@@ -141,38 +140,6 @@ func (o *BTMParameterQueryWithOccurrenceList67) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetOccurrences returns the Occurrences field value if set, zero value otherwise.
-func (o *BTMParameterQueryWithOccurrenceList67) GetOccurrences() []BTOccurrence74 {
-	if o == nil || o.Occurrences == nil {
-		var ret []BTOccurrence74
-		return ret
-	}
-	return o.Occurrences
-}
-
-// GetOccurrencesOk returns a tuple with the Occurrences field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParameterQueryWithOccurrenceList67) GetOccurrencesOk() ([]BTOccurrence74, bool) {
-	if o == nil || o.Occurrences == nil {
-		return nil, false
-	}
-	return o.Occurrences, true
-}
-
-// HasOccurrences returns a boolean if a field has been set.
-func (o *BTMParameterQueryWithOccurrenceList67) HasOccurrences() bool {
-	if o != nil && o.Occurrences != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrences gets a reference to the given []BTOccurrence74 and assigns it to the Occurrences field.
-func (o *BTMParameterQueryWithOccurrenceList67) SetOccurrences(v []BTOccurrence74) {
-	o.Occurrences = v
-}
-
 // GetParameterId returns the ParameterId field value if set, zero value otherwise.
 func (o *BTMParameterQueryWithOccurrenceList67) GetParameterId() string {
 	if o == nil || o.ParameterId == nil {
@@ -203,6 +170,38 @@ func (o *BTMParameterQueryWithOccurrenceList67) HasParameterId() bool {
 // SetParameterId gets a reference to the given string and assigns it to the ParameterId field.
 func (o *BTMParameterQueryWithOccurrenceList67) SetParameterId(v string) {
 	o.ParameterId = &v
+}
+
+// GetOccurrences returns the Occurrences field value if set, zero value otherwise.
+func (o *BTMParameterQueryWithOccurrenceList67) GetOccurrences() []BTOccurrence74 {
+	if o == nil || o.Occurrences == nil {
+		var ret []BTOccurrence74
+		return ret
+	}
+	return o.Occurrences
+}
+
+// GetOccurrencesOk returns a tuple with the Occurrences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterQueryWithOccurrenceList67) GetOccurrencesOk() ([]BTOccurrence74, bool) {
+	if o == nil || o.Occurrences == nil {
+		return nil, false
+	}
+	return o.Occurrences, true
+}
+
+// HasOccurrences returns a boolean if a field has been set.
+func (o *BTMParameterQueryWithOccurrenceList67) HasOccurrences() bool {
+	if o != nil && o.Occurrences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrences gets a reference to the given []BTOccurrence74 and assigns it to the Occurrences field.
+func (o *BTMParameterQueryWithOccurrenceList67) SetOccurrences(v []BTOccurrence74) {
+	o.Occurrences = v
 }
 
 // GetQueries returns the Queries field value if set, zero value otherwise.
@@ -248,11 +247,11 @@ func (o BTMParameterQueryWithOccurrenceList67) MarshalJSON() ([]byte, error) {
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
-	if o.Occurrences != nil {
-		toSerialize["occurrences"] = o.Occurrences
-	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.Occurrences != nil {
+		toSerialize["occurrences"] = o.Occurrences
 	}
 	if o.Queries != nil {
 		toSerialize["queries"] = o.Queries

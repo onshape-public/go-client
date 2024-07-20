@@ -25,6 +25,16 @@ func (o *BTMSketchGeomEntity5) AsBTMSketchEntity3() *BTMSketchEntity3 {
 	return &BTMSketchEntity3{o}
 }
 
+// BTMSketchTextEntity1761AsBTMSketchEntity3 is a convenience function that returns BTMSketchTextEntity1761 wrapped in BTMSketchEntity3
+func (o *BTMSketchTextEntity1761) AsBTMSketchEntity3() *BTMSketchEntity3 {
+	return &BTMSketchEntity3{o}
+}
+
+// BTMSketchCurveSegment155AsBTMSketchEntity3 is a convenience function that returns BTMSketchCurveSegment155 wrapped in BTMSketchEntity3
+func (o *BTMSketchCurveSegment155) AsBTMSketchEntity3() *BTMSketchEntity3 {
+	return &BTMSketchEntity3{o}
+}
+
 // BTMSketchConstraint2AsBTMSketchEntity3 is a convenience function that returns BTMSketchConstraint2 wrapped in BTMSketchEntity3
 func (o *BTMSketchConstraint2) AsBTMSketchEntity3() *BTMSketchEntity3 {
 	return &BTMSketchEntity3{o}
@@ -35,8 +45,23 @@ func (o *BTMSketchInvalid1601) AsBTMSketchEntity3() *BTMSketchEntity3 {
 	return &BTMSketchEntity3{o}
 }
 
+// BTMSketchPoint158AsBTMSketchEntity3 is a convenience function that returns BTMSketchPoint158 wrapped in BTMSketchEntity3
+func (o *BTMSketchPoint158) AsBTMSketchEntity3() *BTMSketchEntity3 {
+	return &BTMSketchEntity3{o}
+}
+
 // BTMSketchCompositeEntity893AsBTMSketchEntity3 is a convenience function that returns BTMSketchCompositeEntity893 wrapped in BTMSketchEntity3
 func (o *BTMSketchCompositeEntity893) AsBTMSketchEntity3() *BTMSketchEntity3 {
+	return &BTMSketchEntity3{o}
+}
+
+// BTMSketchImageEntity763AsBTMSketchEntity3 is a convenience function that returns BTMSketchImageEntity763 wrapped in BTMSketchEntity3
+func (o *BTMSketchImageEntity763) AsBTMSketchEntity3() *BTMSketchEntity3 {
+	return &BTMSketchEntity3{o}
+}
+
+// BTMSketchCurve4AsBTMSketchEntity3 is a convenience function that returns BTMSketchCurve4 wrapped in BTMSketchEntity3
+func (o *BTMSketchCurve4) AsBTMSketchEntity3() *BTMSketchEntity3 {
 	return &BTMSketchEntity3{o}
 }
 
@@ -445,6 +470,34 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMSketchCurve-4'
+	if jsonDict["btType"] == "BTMSketchCurve-4" {
+		// try to unmarshal JSON data into BTMSketchCurve4
+		var qr *BTMSketchCurve4
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSketchEntity3 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSketchEntity3 = nil
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchCurve4: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchCurveSegment-155'
+	if jsonDict["btType"] == "BTMSketchCurveSegment-155" {
+		// try to unmarshal JSON data into BTMSketchCurveSegment155
+		var qr *BTMSketchCurveSegment155
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSketchEntity3 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSketchEntity3 = nil
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchCurveSegment155: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMSketchGeomEntity-5'
 	if jsonDict["btType"] == "BTMSketchGeomEntity-5" {
 		// try to unmarshal JSON data into BTMSketchGeomEntity5
@@ -459,6 +512,20 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMSketchImageEntity-763'
+	if jsonDict["btType"] == "BTMSketchImageEntity-763" {
+		// try to unmarshal JSON data into BTMSketchImageEntity763
+		var qr *BTMSketchImageEntity763
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSketchEntity3 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSketchEntity3 = nil
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchImageEntity763: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMSketchInvalid-1601'
 	if jsonDict["btType"] == "BTMSketchInvalid-1601" {
 		// try to unmarshal JSON data into BTMSketchInvalid1601
@@ -470,6 +537,34 @@ func (dst *BTMSketchEntity3) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMSketchEntity3 = nil
 			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchInvalid1601: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchPoint-158'
+	if jsonDict["btType"] == "BTMSketchPoint-158" {
+		// try to unmarshal JSON data into BTMSketchPoint158
+		var qr *BTMSketchPoint158
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSketchEntity3 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSketchEntity3 = nil
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchPoint158: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchTextEntity-1761'
+	if jsonDict["btType"] == "BTMSketchTextEntity-1761" {
+		// try to unmarshal JSON data into BTMSketchTextEntity1761
+		var qr *BTMSketchTextEntity1761
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSketchEntity3 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSketchEntity3 = nil
+			return fmt.Errorf("failed to unmarshal BTMSketchEntity3 as BTMSketchTextEntity1761: %s", err.Error())
 		}
 	}
 

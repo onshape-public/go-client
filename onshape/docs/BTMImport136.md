@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **ImportedExternalDocumentId** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
 
@@ -156,31 +155,6 @@ SetNamespace sets Namespace field to given value.
 `func (o *BTMImport136) HasNamespace() bool`
 
 HasNamespace returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMImport136) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMImport136) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMImport136) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMImport136) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetPath
 

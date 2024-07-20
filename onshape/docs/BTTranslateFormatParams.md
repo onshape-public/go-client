@@ -80,6 +80,7 @@ Name | Type | Description | Notes
 **TriggerAutoDownload** | Pointer to **bool** |  | [optional] 
 **Unit** | Pointer to **string** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
+**UseFileNameToSetSinglePartName** | Pointer to **bool** |  | [optional] 
 **UseGltfCompression** | Pointer to **bool** |  | [optional] 
 **UseIGESImportPostProcessing** | Pointer to **bool** |  | [optional] 
 **UseIgesCompatibilityMode** | Pointer to **bool** |  | [optional] 
@@ -1999,6 +2000,31 @@ SetUploadId sets UploadId field to given value.
 `func (o *BTTranslateFormatParams) HasUploadId() bool`
 
 HasUploadId returns a boolean if a field has been set.
+
+### GetUseFileNameToSetSinglePartName
+
+`func (o *BTTranslateFormatParams) GetUseFileNameToSetSinglePartName() bool`
+
+GetUseFileNameToSetSinglePartName returns the UseFileNameToSetSinglePartName field if non-nil, zero value otherwise.
+
+### GetUseFileNameToSetSinglePartNameOk
+
+`func (o *BTTranslateFormatParams) GetUseFileNameToSetSinglePartNameOk() (*bool, bool)`
+
+GetUseFileNameToSetSinglePartNameOk returns a tuple with the UseFileNameToSetSinglePartName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseFileNameToSetSinglePartName
+
+`func (o *BTTranslateFormatParams) SetUseFileNameToSetSinglePartName(v bool)`
+
+SetUseFileNameToSetSinglePartName sets UseFileNameToSetSinglePartName field to given value.
+
+### HasUseFileNameToSetSinglePartName
+
+`func (o *BTTranslateFormatParams) HasUseFileNameToSetSinglePartName() bool`
+
+HasUseFileNameToSetSinglePartName returns a boolean if a field has been set.
 
 ### GetUseGltfCompression
 

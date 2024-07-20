@@ -107,56 +107,6 @@ func (o *BTMConfigurationParameter819) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
-// GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
-func (o *BTMConfigurationParameter819) GetGeneratedParameterId() BTTreeNode20 {
-	type getResult interface {
-		GetGeneratedParameterId() BTTreeNode20
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeneratedParameterId()
-	} else {
-		var de BTTreeNode20
-		return de
-	}
-}
-
-// GetGeneratedParameterIdOk returns a tuple with the GeneratedParameterId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMConfigurationParameter819) GetGeneratedParameterIdOk() (*BTTreeNode20, bool) {
-	type getResult interface {
-		GetGeneratedParameterIdOk() (*BTTreeNode20, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeneratedParameterIdOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasGeneratedParameterId returns a boolean if a field has been set.
-func (o *BTMConfigurationParameter819) HasGeneratedParameterId() bool {
-	type getResult interface {
-		HasGeneratedParameterId() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasGeneratedParameterId()
-	} else {
-		return false
-	}
-}
-
-// SetGeneratedParameterId gets a reference to the given BTTreeNode20 and assigns it to the GeneratedParameterId field.
-func (o *BTMConfigurationParameter819) SetGeneratedParameterId(v BTTreeNode20) {
-	type getResult interface {
-		SetGeneratedParameterId(v BTTreeNode20)
-	}
-
-	o.GetActualInstance().(getResult).SetGeneratedParameterId(v)
-}
-
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
 func (o *BTMConfigurationParameter819) GetImportMicroversion() string {
 	type getResult interface {
@@ -207,56 +157,6 @@ func (o *BTMConfigurationParameter819) SetImportMicroversion(v string) {
 	o.GetActualInstance().(getResult).SetImportMicroversion(v)
 }
 
-// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
-func (o *BTMConfigurationParameter819) GetIsCosmetic() bool {
-	type getResult interface {
-		GetIsCosmetic() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetIsCosmetic()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMConfigurationParameter819) GetIsCosmeticOk() (*bool, bool) {
-	type getResult interface {
-		GetIsCosmeticOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetIsCosmeticOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasIsCosmetic returns a boolean if a field has been set.
-func (o *BTMConfigurationParameter819) HasIsCosmetic() bool {
-	type getResult interface {
-		HasIsCosmetic() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasIsCosmetic()
-	} else {
-		return false
-	}
-}
-
-// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
-func (o *BTMConfigurationParameter819) SetIsCosmetic(v bool) {
-	type getResult interface {
-		SetIsCosmetic(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetIsCosmetic(v)
-}
-
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *BTMConfigurationParameter819) GetNodeId() string {
 	type getResult interface {
@@ -305,6 +205,106 @@ func (o *BTMConfigurationParameter819) SetNodeId(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetNodeId(v)
+}
+
+// GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
+func (o *BTMConfigurationParameter819) GetGeneratedParameterId() BTTreeNode20 {
+	type getResult interface {
+		GetGeneratedParameterId() BTTreeNode20
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeneratedParameterId()
+	} else {
+		var de BTTreeNode20
+		return de
+	}
+}
+
+// GetGeneratedParameterIdOk returns a tuple with the GeneratedParameterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameter819) GetGeneratedParameterIdOk() (*BTTreeNode20, bool) {
+	type getResult interface {
+		GetGeneratedParameterIdOk() (*BTTreeNode20, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeneratedParameterIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasGeneratedParameterId returns a boolean if a field has been set.
+func (o *BTMConfigurationParameter819) HasGeneratedParameterId() bool {
+	type getResult interface {
+		HasGeneratedParameterId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasGeneratedParameterId()
+	} else {
+		return false
+	}
+}
+
+// SetGeneratedParameterId gets a reference to the given BTTreeNode20 and assigns it to the GeneratedParameterId field.
+func (o *BTMConfigurationParameter819) SetGeneratedParameterId(v BTTreeNode20) {
+	type getResult interface {
+		SetGeneratedParameterId(v BTTreeNode20)
+	}
+
+	o.GetActualInstance().(getResult).SetGeneratedParameterId(v)
+}
+
+// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
+func (o *BTMConfigurationParameter819) GetIsCosmetic() bool {
+	type getResult interface {
+		GetIsCosmetic() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsCosmetic()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameter819) GetIsCosmeticOk() (*bool, bool) {
+	type getResult interface {
+		GetIsCosmeticOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsCosmeticOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsCosmetic returns a boolean if a field has been set.
+func (o *BTMConfigurationParameter819) HasIsCosmetic() bool {
+	type getResult interface {
+		HasIsCosmetic() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsCosmetic()
+	} else {
+		return false
+	}
+}
+
+// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
+func (o *BTMConfigurationParameter819) SetIsCosmetic(v bool) {
+	type getResult interface {
+		SetIsCosmetic(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsCosmetic(v)
 }
 
 // GetParameterId returns the ParameterId field value if set, zero value otherwise.
@@ -639,17 +639,16 @@ func (v *NullableBTMConfigurationParameter819) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMConfigurationParameter819 struct {
-	// Type of JSON object.
-	BtType               *string       `json:"btType,omitempty"`
-	GeneratedParameterId *BTTreeNode20 `json:"generatedParameterId,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion *string                        `json:"importMicroversion,omitempty"`
-	IsCosmetic         *bool                          `json:"isCosmetic,omitempty"`
-	NodeId             *string                        `json:"nodeId,omitempty"`
-	ParameterId        *string                        `json:"parameterId,omitempty"`
-	ParameterName      *string                        `json:"parameterName,omitempty"`
-	ParameterType      *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid              *bool                          `json:"valid,omitempty"`
+	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
+	NodeId               *string                        `json:"nodeId,omitempty"`
+	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
+	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
+	ParameterId          *string                        `json:"parameterId,omitempty"`
+	ParameterName        *string                        `json:"parameterName,omitempty"`
+	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
+	Valid                *bool                          `json:"valid,omitempty"`
 }
 
 // Newbase_BTMConfigurationParameter819 instantiates a new base_BTMConfigurationParameter819 object
@@ -701,38 +700,6 @@ func (o *base_BTMConfigurationParameter819) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
-func (o *base_BTMConfigurationParameter819) GetGeneratedParameterId() BTTreeNode20 {
-	if o == nil || o.GeneratedParameterId == nil {
-		var ret BTTreeNode20
-		return ret
-	}
-	return *o.GeneratedParameterId
-}
-
-// GetGeneratedParameterIdOk returns a tuple with the GeneratedParameterId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMConfigurationParameter819) GetGeneratedParameterIdOk() (*BTTreeNode20, bool) {
-	if o == nil || o.GeneratedParameterId == nil {
-		return nil, false
-	}
-	return o.GeneratedParameterId, true
-}
-
-// HasGeneratedParameterId returns a boolean if a field has been set.
-func (o *base_BTMConfigurationParameter819) HasGeneratedParameterId() bool {
-	if o != nil && o.GeneratedParameterId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGeneratedParameterId gets a reference to the given BTTreeNode20 and assigns it to the GeneratedParameterId field.
-func (o *base_BTMConfigurationParameter819) SetGeneratedParameterId(v BTTreeNode20) {
-	o.GeneratedParameterId = &v
-}
-
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
 func (o *base_BTMConfigurationParameter819) GetImportMicroversion() string {
 	if o == nil || o.ImportMicroversion == nil {
@@ -765,38 +732,6 @@ func (o *base_BTMConfigurationParameter819) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
 }
 
-// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
-func (o *base_BTMConfigurationParameter819) GetIsCosmetic() bool {
-	if o == nil || o.IsCosmetic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsCosmetic
-}
-
-// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMConfigurationParameter819) GetIsCosmeticOk() (*bool, bool) {
-	if o == nil || o.IsCosmetic == nil {
-		return nil, false
-	}
-	return o.IsCosmetic, true
-}
-
-// HasIsCosmetic returns a boolean if a field has been set.
-func (o *base_BTMConfigurationParameter819) HasIsCosmetic() bool {
-	if o != nil && o.IsCosmetic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
-func (o *base_BTMConfigurationParameter819) SetIsCosmetic(v bool) {
-	o.IsCosmetic = &v
-}
-
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *base_BTMConfigurationParameter819) GetNodeId() string {
 	if o == nil || o.NodeId == nil {
@@ -827,6 +762,70 @@ func (o *base_BTMConfigurationParameter819) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *base_BTMConfigurationParameter819) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
+func (o *base_BTMConfigurationParameter819) GetGeneratedParameterId() BTTreeNode20 {
+	if o == nil || o.GeneratedParameterId == nil {
+		var ret BTTreeNode20
+		return ret
+	}
+	return *o.GeneratedParameterId
+}
+
+// GetGeneratedParameterIdOk returns a tuple with the GeneratedParameterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMConfigurationParameter819) GetGeneratedParameterIdOk() (*BTTreeNode20, bool) {
+	if o == nil || o.GeneratedParameterId == nil {
+		return nil, false
+	}
+	return o.GeneratedParameterId, true
+}
+
+// HasGeneratedParameterId returns a boolean if a field has been set.
+func (o *base_BTMConfigurationParameter819) HasGeneratedParameterId() bool {
+	if o != nil && o.GeneratedParameterId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeneratedParameterId gets a reference to the given BTTreeNode20 and assigns it to the GeneratedParameterId field.
+func (o *base_BTMConfigurationParameter819) SetGeneratedParameterId(v BTTreeNode20) {
+	o.GeneratedParameterId = &v
+}
+
+// GetIsCosmetic returns the IsCosmetic field value if set, zero value otherwise.
+func (o *base_BTMConfigurationParameter819) GetIsCosmetic() bool {
+	if o == nil || o.IsCosmetic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsCosmetic
+}
+
+// GetIsCosmeticOk returns a tuple with the IsCosmetic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMConfigurationParameter819) GetIsCosmeticOk() (*bool, bool) {
+	if o == nil || o.IsCosmetic == nil {
+		return nil, false
+	}
+	return o.IsCosmetic, true
+}
+
+// HasIsCosmetic returns a boolean if a field has been set.
+func (o *base_BTMConfigurationParameter819) HasIsCosmetic() bool {
+	if o != nil && o.IsCosmetic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCosmetic gets a reference to the given bool and assigns it to the IsCosmetic field.
+func (o *base_BTMConfigurationParameter819) SetIsCosmetic(v bool) {
+	o.IsCosmetic = &v
 }
 
 // GetParameterId returns the ParameterId field value if set, zero value otherwise.
@@ -962,17 +961,17 @@ func (o base_BTMConfigurationParameter819) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.GeneratedParameterId != nil {
-		toSerialize["generatedParameterId"] = o.GeneratedParameterId
-	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
-	if o.IsCosmetic != nil {
-		toSerialize["isCosmetic"] = o.IsCosmetic
-	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.GeneratedParameterId != nil {
+		toSerialize["generatedParameterId"] = o.GeneratedParameterId
+	}
+	if o.IsCosmetic != nil {
+		toSerialize["isCosmetic"] = o.IsCosmetic
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId

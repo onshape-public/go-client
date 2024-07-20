@@ -41,7 +41,6 @@ Name | Type | Description | Notes
 **Subscribers** | Pointer to [**[]BTPlanSubscriberInfo**](BTPlanSubscriberInfo.md) |  | [optional] 
 **SubscriptionBeginAt** | Pointer to **JSONTime** |  | [optional] 
 **SubscriptionEndAt** | Pointer to **JSONTime** |  | [optional] 
-**SubscriptionFields** | Pointer to [**Subscription**](Subscription.md) |  | [optional] 
 **SubscriptionId** | Pointer to **string** |  | [optional] 
 **SubscriptionType** | Pointer to **int32** |  | [optional] 
 **TaxAmountCents** | Pointer to **int64** |  | [optional] 
@@ -992,31 +991,6 @@ SetSubscriptionEndAt sets SubscriptionEndAt field to given value.
 `func (o *BTPurchaseInfo) HasSubscriptionEndAt() bool`
 
 HasSubscriptionEndAt returns a boolean if a field has been set.
-
-### GetSubscriptionFields
-
-`func (o *BTPurchaseInfo) GetSubscriptionFields() Subscription`
-
-GetSubscriptionFields returns the SubscriptionFields field if non-nil, zero value otherwise.
-
-### GetSubscriptionFieldsOk
-
-`func (o *BTPurchaseInfo) GetSubscriptionFieldsOk() (*Subscription, bool)`
-
-GetSubscriptionFieldsOk returns a tuple with the SubscriptionFields field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubscriptionFields
-
-`func (o *BTPurchaseInfo) SetSubscriptionFields(v Subscription)`
-
-SetSubscriptionFields sets SubscriptionFields field to given value.
-
-### HasSubscriptionFields
-
-`func (o *BTPurchaseInfo) HasSubscriptionFields() bool`
-
-HasSubscriptionFields returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

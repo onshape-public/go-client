@@ -4,11 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **AllFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndOtherReferences** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndSubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
-**Children** | Pointer to [**[]BTMNode19**](BTMNode19.md) |  | [optional] 
 **ConfigurationData** | Pointer to [**BTMConfigurationData1560**](BTMConfigurationData1560.md) |  | [optional] 
 **Configured** | Pointer to **bool** |  | [optional] 
 **DeepImports** | Pointer to [**map[string][]BTImport**](array.md) |  | [optional] 
@@ -16,13 +15,12 @@ Name | Type | Description | Notes
 **DefaultUnits** | Pointer to [**BTMUnitsDefault160**](BTMUnitsDefault160.md) |  | [optional] 
 **FeatureImports** | Pointer to [**map[string][]BTImport**](array.md) |  | [optional] 
 **FirstRollbackIndex** | Pointer to **int32** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **ImportSet** | Pointer to [**[]BTPModuleId235**](BTPModuleId235.md) |  | [optional] 
 **Imports** | Pointer to [**[]BTMImport136**](BTMImport136.md) |  | [optional] 
 **IsVariableStudio** | Pointer to **bool** |  | [optional] 
 **LastFeatureBeforeRollBack** | Pointer to [**BTMFeature134**](BTMFeature134.md) |  | [optional] 
+**ModelAnnotations** | Pointer to [**BTModelAnnotations3945**](BTModelAnnotations3945.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **PartProperties** | Pointer to [**BTPartProperties293**](BTPartProperties293.md) |  | [optional] 
 **PathToCache** | Pointer to [**BTCacheDataPath191**](BTCacheDataPath191.md) |  | [optional] 
 **Properties** | Pointer to [**BTModelProperties1258**](BTModelProperties1258.md) |  | [optional] 
@@ -48,6 +46,31 @@ will change when the set of required properties is changed
 NewBTMModel141WithDefaults instantiates a new BTMModel141 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTMModel141) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTMModel141) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTMModel141) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTMModel141) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
 
 ### GetAllFeatures
 
@@ -123,56 +146,6 @@ SetAllFeaturesAndSubFeatures sets AllFeaturesAndSubFeatures field to given value
 `func (o *BTMModel141) HasAllFeaturesAndSubFeatures() bool`
 
 HasAllFeaturesAndSubFeatures returns a boolean if a field has been set.
-
-### GetBtType
-
-`func (o *BTMModel141) GetBtType() string`
-
-GetBtType returns the BtType field if non-nil, zero value otherwise.
-
-### GetBtTypeOk
-
-`func (o *BTMModel141) GetBtTypeOk() (*string, bool)`
-
-GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBtType
-
-`func (o *BTMModel141) SetBtType(v string)`
-
-SetBtType sets BtType field to given value.
-
-### HasBtType
-
-`func (o *BTMModel141) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
-
-### GetChildren
-
-`func (o *BTMModel141) GetChildren() []BTMNode19`
-
-GetChildren returns the Children field if non-nil, zero value otherwise.
-
-### GetChildrenOk
-
-`func (o *BTMModel141) GetChildrenOk() (*[]BTMNode19, bool)`
-
-GetChildrenOk returns a tuple with the Children field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChildren
-
-`func (o *BTMModel141) SetChildren(v []BTMNode19)`
-
-SetChildren sets Children field to given value.
-
-### HasChildren
-
-`func (o *BTMModel141) HasChildren() bool`
-
-HasChildren returns a boolean if a field has been set.
 
 ### GetConfigurationData
 
@@ -349,31 +322,6 @@ SetFirstRollbackIndex sets FirstRollbackIndex field to given value.
 
 HasFirstRollbackIndex returns a boolean if a field has been set.
 
-### GetImportMicroversion
-
-`func (o *BTMModel141) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMModel141) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMModel141) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMModel141) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
 ### GetImportSet
 
 `func (o *BTMModel141) GetImportSet() []BTPModuleId235`
@@ -474,6 +422,31 @@ SetLastFeatureBeforeRollBack sets LastFeatureBeforeRollBack field to given value
 
 HasLastFeatureBeforeRollBack returns a boolean if a field has been set.
 
+### GetModelAnnotations
+
+`func (o *BTMModel141) GetModelAnnotations() BTModelAnnotations3945`
+
+GetModelAnnotations returns the ModelAnnotations field if non-nil, zero value otherwise.
+
+### GetModelAnnotationsOk
+
+`func (o *BTMModel141) GetModelAnnotationsOk() (*BTModelAnnotations3945, bool)`
+
+GetModelAnnotationsOk returns a tuple with the ModelAnnotations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModelAnnotations
+
+`func (o *BTMModel141) SetModelAnnotations(v BTModelAnnotations3945)`
+
+SetModelAnnotations sets ModelAnnotations field to given value.
+
+### HasModelAnnotations
+
+`func (o *BTMModel141) HasModelAnnotations() bool`
+
+HasModelAnnotations returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *BTMModel141) GetName() string`
@@ -498,31 +471,6 @@ SetName sets Name field to given value.
 `func (o *BTMModel141) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMModel141) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMModel141) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMModel141) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMModel141) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetPartProperties
 

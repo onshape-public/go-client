@@ -16,14 +16,13 @@ import (
 
 // BTMImport136 struct for BTMImport136
 type BTMImport136 struct {
-	// Type of JSON object.
-	BtType        *string `json:"btType,omitempty"`
-	ElementImport *bool   `json:"elementImport,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion         *string `json:"importMicroversion,omitempty"`
+	NodeId                     *string `json:"nodeId,omitempty"`
+	ElementImport              *bool   `json:"elementImport,omitempty"`
 	ImportedExternalDocumentId *string `json:"importedExternalDocumentId,omitempty"`
 	Namespace                  *string `json:"namespace,omitempty"`
-	NodeId                     *string `json:"nodeId,omitempty"`
 	Path                       *string `json:"path,omitempty"`
 	Version                    *string `json:"version,omitempty"`
 }
@@ -77,38 +76,6 @@ func (o *BTMImport136) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetElementImport returns the ElementImport field value if set, zero value otherwise.
-func (o *BTMImport136) GetElementImport() bool {
-	if o == nil || o.ElementImport == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ElementImport
-}
-
-// GetElementImportOk returns a tuple with the ElementImport field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMImport136) GetElementImportOk() (*bool, bool) {
-	if o == nil || o.ElementImport == nil {
-		return nil, false
-	}
-	return o.ElementImport, true
-}
-
-// HasElementImport returns a boolean if a field has been set.
-func (o *BTMImport136) HasElementImport() bool {
-	if o != nil && o.ElementImport != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetElementImport gets a reference to the given bool and assigns it to the ElementImport field.
-func (o *BTMImport136) SetElementImport(v bool) {
-	o.ElementImport = &v
-}
-
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
 func (o *BTMImport136) GetImportMicroversion() string {
 	if o == nil || o.ImportMicroversion == nil {
@@ -139,6 +106,70 @@ func (o *BTMImport136) HasImportMicroversion() bool {
 // SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
 func (o *BTMImport136) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMImport136) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMImport136) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMImport136) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMImport136) SetNodeId(v string) {
+	o.NodeId = &v
+}
+
+// GetElementImport returns the ElementImport field value if set, zero value otherwise.
+func (o *BTMImport136) GetElementImport() bool {
+	if o == nil || o.ElementImport == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ElementImport
+}
+
+// GetElementImportOk returns a tuple with the ElementImport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMImport136) GetElementImportOk() (*bool, bool) {
+	if o == nil || o.ElementImport == nil {
+		return nil, false
+	}
+	return o.ElementImport, true
+}
+
+// HasElementImport returns a boolean if a field has been set.
+func (o *BTMImport136) HasElementImport() bool {
+	if o != nil && o.ElementImport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementImport gets a reference to the given bool and assigns it to the ElementImport field.
+func (o *BTMImport136) SetElementImport(v bool) {
+	o.ElementImport = &v
 }
 
 // GetImportedExternalDocumentId returns the ImportedExternalDocumentId field value if set, zero value otherwise.
@@ -203,38 +234,6 @@ func (o *BTMImport136) HasNamespace() bool {
 // SetNamespace gets a reference to the given string and assigns it to the Namespace field.
 func (o *BTMImport136) SetNamespace(v string) {
 	o.Namespace = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMImport136) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMImport136) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMImport136) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMImport136) SetNodeId(v string) {
-	o.NodeId = &v
 }
 
 // GetPath returns the Path field value if set, zero value otherwise.
@@ -306,20 +305,20 @@ func (o BTMImport136) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.ElementImport != nil {
-		toSerialize["elementImport"] = o.ElementImport
-	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.ElementImport != nil {
+		toSerialize["elementImport"] = o.ElementImport
 	}
 	if o.ImportedExternalDocumentId != nil {
 		toSerialize["importedExternalDocumentId"] = o.ImportedExternalDocumentId
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path

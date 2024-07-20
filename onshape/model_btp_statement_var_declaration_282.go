@@ -16,7 +16,6 @@ import (
 
 // BTPStatementVarDeclaration282 struct for BTPStatementVarDeclaration282
 type BTPStatementVarDeclaration282 struct {
-	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -27,6 +26,7 @@ type BTPStatementVarDeclaration282 struct {
 	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
 	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Identifier          *BTPIdentifier8     `json:"identifier,omitempty"`
 	Name                *BTPIdentifier8     `json:"name,omitempty"`
 	StandardType        *GBTPType           `json:"standardType,omitempty"`
@@ -50,38 +50,6 @@ func NewBTPStatementVarDeclaration282() *BTPStatementVarDeclaration282 {
 func NewBTPStatementVarDeclaration282WithDefaults() *BTPStatementVarDeclaration282 {
 	this := BTPStatementVarDeclaration282{}
 	return &this
-}
-
-// GetAnnotation returns the Annotation field value if set, zero value otherwise.
-func (o *BTPStatementVarDeclaration282) GetAnnotation() BTPAnnotation231 {
-	if o == nil || o.Annotation == nil {
-		var ret BTPAnnotation231
-		return ret
-	}
-	return *o.Annotation
-}
-
-// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPStatementVarDeclaration282) GetAnnotationOk() (*BTPAnnotation231, bool) {
-	if o == nil || o.Annotation == nil {
-		return nil, false
-	}
-	return o.Annotation, true
-}
-
-// HasAnnotation returns a boolean if a field has been set.
-func (o *BTPStatementVarDeclaration282) HasAnnotation() bool {
-	if o != nil && o.Annotation != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
-func (o *BTPStatementVarDeclaration282) SetAnnotation(v BTPAnnotation231) {
-	o.Annotation = &v
 }
 
 // GetAtomic returns the Atomic field value if set, zero value otherwise.
@@ -404,6 +372,38 @@ func (o *BTPStatementVarDeclaration282) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
 }
 
+// GetAnnotation returns the Annotation field value if set, zero value otherwise.
+func (o *BTPStatementVarDeclaration282) GetAnnotation() BTPAnnotation231 {
+	if o == nil || o.Annotation == nil {
+		var ret BTPAnnotation231
+		return ret
+	}
+	return *o.Annotation
+}
+
+// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPStatementVarDeclaration282) GetAnnotationOk() (*BTPAnnotation231, bool) {
+	if o == nil || o.Annotation == nil {
+		return nil, false
+	}
+	return o.Annotation, true
+}
+
+// HasAnnotation returns a boolean if a field has been set.
+func (o *BTPStatementVarDeclaration282) HasAnnotation() bool {
+	if o != nil && o.Annotation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
+func (o *BTPStatementVarDeclaration282) SetAnnotation(v BTPAnnotation231) {
+	o.Annotation = &v
+}
+
 // GetIdentifier returns the Identifier field value if set, zero value otherwise.
 func (o *BTPStatementVarDeclaration282) GetIdentifier() BTPIdentifier8 {
 	if o == nil || o.Identifier == nil {
@@ -598,9 +598,6 @@ func (o *BTPStatementVarDeclaration282) SetValue(v BTPExpression9) {
 
 func (o BTPStatementVarDeclaration282) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Annotation != nil {
-		toSerialize["annotation"] = o.Annotation
-	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}
@@ -630,6 +627,9 @@ func (o BTPStatementVarDeclaration282) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.Annotation != nil {
+		toSerialize["annotation"] = o.Annotation
 	}
 	if o.Identifier != nil {
 		toSerialize["identifier"] = o.Identifier

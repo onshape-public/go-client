@@ -16,20 +16,19 @@ import (
 
 // BTPArgumentDeclaration232 struct for BTPArgumentDeclaration232
 type BTPArgumentDeclaration232 struct {
-	Atomic *bool `json:"atomic,omitempty"`
-	// Type of JSON object.
+	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
-	Identifier          *BTPIdentifier8     `json:"identifier,omitempty"`
-	Name                *BTPIdentifier8     `json:"name,omitempty"`
 	NodeId              *string             `json:"nodeId,omitempty"`
 	ShortDescriptor     *string             `json:"shortDescriptor,omitempty"`
 	SpaceAfter          *BTPSpace10         `json:"spaceAfter,omitempty"`
 	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
 	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
-	StandardType        *GBTPType           `json:"standardType,omitempty"`
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	Identifier          *BTPIdentifier8     `json:"identifier,omitempty"`
+	Name                *BTPIdentifier8     `json:"name,omitempty"`
+	StandardType        *GBTPType           `json:"standardType,omitempty"`
 	Type                *BTPTypeName290     `json:"type,omitempty"`
 	TypeName            *string             `json:"typeName,omitempty"`
 }
@@ -177,70 +176,6 @@ func (o *BTPArgumentDeclaration232) HasEndSourceLocation() bool {
 // SetEndSourceLocation gets a reference to the given int32 and assigns it to the EndSourceLocation field.
 func (o *BTPArgumentDeclaration232) SetEndSourceLocation(v int32) {
 	o.EndSourceLocation = &v
-}
-
-// GetIdentifier returns the Identifier field value if set, zero value otherwise.
-func (o *BTPArgumentDeclaration232) GetIdentifier() BTPIdentifier8 {
-	if o == nil || o.Identifier == nil {
-		var ret BTPIdentifier8
-		return ret
-	}
-	return *o.Identifier
-}
-
-// GetIdentifierOk returns a tuple with the Identifier field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPArgumentDeclaration232) GetIdentifierOk() (*BTPIdentifier8, bool) {
-	if o == nil || o.Identifier == nil {
-		return nil, false
-	}
-	return o.Identifier, true
-}
-
-// HasIdentifier returns a boolean if a field has been set.
-func (o *BTPArgumentDeclaration232) HasIdentifier() bool {
-	if o != nil && o.Identifier != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIdentifier gets a reference to the given BTPIdentifier8 and assigns it to the Identifier field.
-func (o *BTPArgumentDeclaration232) SetIdentifier(v BTPIdentifier8) {
-	o.Identifier = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *BTPArgumentDeclaration232) GetName() BTPIdentifier8 {
-	if o == nil || o.Name == nil {
-		var ret BTPIdentifier8
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPArgumentDeclaration232) GetNameOk() (*BTPIdentifier8, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *BTPArgumentDeclaration232) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given BTPIdentifier8 and assigns it to the Name field.
-func (o *BTPArgumentDeclaration232) SetName(v BTPIdentifier8) {
-	o.Name = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
@@ -403,38 +338,6 @@ func (o *BTPArgumentDeclaration232) SetSpaceDefault(v bool) {
 	o.SpaceDefault = &v
 }
 
-// GetStandardType returns the StandardType field value if set, zero value otherwise.
-func (o *BTPArgumentDeclaration232) GetStandardType() GBTPType {
-	if o == nil || o.StandardType == nil {
-		var ret GBTPType
-		return ret
-	}
-	return *o.StandardType
-}
-
-// GetStandardTypeOk returns a tuple with the StandardType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPArgumentDeclaration232) GetStandardTypeOk() (*GBTPType, bool) {
-	if o == nil || o.StandardType == nil {
-		return nil, false
-	}
-	return o.StandardType, true
-}
-
-// HasStandardType returns a boolean if a field has been set.
-func (o *BTPArgumentDeclaration232) HasStandardType() bool {
-	if o != nil && o.StandardType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStandardType gets a reference to the given GBTPType and assigns it to the StandardType field.
-func (o *BTPArgumentDeclaration232) SetStandardType(v GBTPType) {
-	o.StandardType = &v
-}
-
 // GetStartSourceLocation returns the StartSourceLocation field value if set, zero value otherwise.
 func (o *BTPArgumentDeclaration232) GetStartSourceLocation() int32 {
 	if o == nil || o.StartSourceLocation == nil {
@@ -465,6 +368,102 @@ func (o *BTPArgumentDeclaration232) HasStartSourceLocation() bool {
 // SetStartSourceLocation gets a reference to the given int32 and assigns it to the StartSourceLocation field.
 func (o *BTPArgumentDeclaration232) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
+}
+
+// GetIdentifier returns the Identifier field value if set, zero value otherwise.
+func (o *BTPArgumentDeclaration232) GetIdentifier() BTPIdentifier8 {
+	if o == nil || o.Identifier == nil {
+		var ret BTPIdentifier8
+		return ret
+	}
+	return *o.Identifier
+}
+
+// GetIdentifierOk returns a tuple with the Identifier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPArgumentDeclaration232) GetIdentifierOk() (*BTPIdentifier8, bool) {
+	if o == nil || o.Identifier == nil {
+		return nil, false
+	}
+	return o.Identifier, true
+}
+
+// HasIdentifier returns a boolean if a field has been set.
+func (o *BTPArgumentDeclaration232) HasIdentifier() bool {
+	if o != nil && o.Identifier != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIdentifier gets a reference to the given BTPIdentifier8 and assigns it to the Identifier field.
+func (o *BTPArgumentDeclaration232) SetIdentifier(v BTPIdentifier8) {
+	o.Identifier = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTPArgumentDeclaration232) GetName() BTPIdentifier8 {
+	if o == nil || o.Name == nil {
+		var ret BTPIdentifier8
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPArgumentDeclaration232) GetNameOk() (*BTPIdentifier8, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTPArgumentDeclaration232) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given BTPIdentifier8 and assigns it to the Name field.
+func (o *BTPArgumentDeclaration232) SetName(v BTPIdentifier8) {
+	o.Name = &v
+}
+
+// GetStandardType returns the StandardType field value if set, zero value otherwise.
+func (o *BTPArgumentDeclaration232) GetStandardType() GBTPType {
+	if o == nil || o.StandardType == nil {
+		var ret GBTPType
+		return ret
+	}
+	return *o.StandardType
+}
+
+// GetStandardTypeOk returns a tuple with the StandardType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPArgumentDeclaration232) GetStandardTypeOk() (*GBTPType, bool) {
+	if o == nil || o.StandardType == nil {
+		return nil, false
+	}
+	return o.StandardType, true
+}
+
+// HasStandardType returns a boolean if a field has been set.
+func (o *BTPArgumentDeclaration232) HasStandardType() bool {
+	if o != nil && o.StandardType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStandardType gets a reference to the given GBTPType and assigns it to the StandardType field.
+func (o *BTPArgumentDeclaration232) SetStandardType(v GBTPType) {
+	o.StandardType = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -545,12 +544,6 @@ func (o BTPArgumentDeclaration232) MarshalJSON() ([]byte, error) {
 	if o.EndSourceLocation != nil {
 		toSerialize["endSourceLocation"] = o.EndSourceLocation
 	}
-	if o.Identifier != nil {
-		toSerialize["identifier"] = o.Identifier
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
@@ -566,11 +559,17 @@ func (o BTPArgumentDeclaration232) MarshalJSON() ([]byte, error) {
 	if o.SpaceDefault != nil {
 		toSerialize["spaceDefault"] = o.SpaceDefault
 	}
-	if o.StandardType != nil {
-		toSerialize["standardType"] = o.StandardType
-	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.Identifier != nil {
+		toSerialize["identifier"] = o.Identifier
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
+	if o.StandardType != nil {
+		toSerialize["standardType"] = o.StandardType
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

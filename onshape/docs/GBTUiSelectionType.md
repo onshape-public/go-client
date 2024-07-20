@@ -41,6 +41,8 @@
 
 * `GBTUiSelectionTypePersistentQueryString` (value: `"PERSISTENT_QUERY_STRING"`)
 
+* `GBTUiSelectionTypeGenerativeDesignItem` (value: `"GENERATIVE_DESIGN_ITEM"`)
+
 * `GBTUiSelectionTypeUnknown` (value: `"UNKNOWN"`)
 
 

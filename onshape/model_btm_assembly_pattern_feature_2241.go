@@ -16,11 +16,16 @@ import (
 
 // BTMAssemblyPatternFeature2241 struct for BTMAssemblyPatternFeature2241
 type BTMAssemblyPatternFeature2241 struct {
-	BtType *string `json:"btType,omitempty"`
+	AuxiliaryTreeFeature *bool `json:"auxiliaryTreeFeature,omitempty"`
+	// Type of JSON object.
+	BtType        *string `json:"btType,omitempty"`
+	FeatureFolder *bool   `json:"featureFolder,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
-	FeatureId *string `json:"featureId,omitempty"`
+	FeatureId             *string `json:"featureId,omitempty"`
+	FeatureListFieldIndex *int32  `json:"featureListFieldIndex,omitempty"`
 	// The name of the feature spec that this feature instantiates.
-	FeatureType *string `json:"featureType,omitempty"`
+	FeatureType                      *string `json:"featureType,omitempty"`
+	FieldIndexForOwnedMateConnectors *int32  `json:"fieldIndexForOwnedMateConnectors,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	// User-visible name of the feature.
@@ -28,9 +33,10 @@ type BTMAssemblyPatternFeature2241 struct {
 	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
 	Namespace *string `json:"namespace,omitempty"`
 	// ID for the feature node.
-	NodeId *string `json:"nodeId,omitempty"`
-	// A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-	Parameters []BTMParameter1 `json:"parameters,omitempty"`
+	NodeId                                 *string                                   `json:"nodeId,omitempty"`
+	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
+	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
+	PatternType                            *GBTPatternType                           `json:"patternType,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
 	// List of subfeatures belonging to the feature.
@@ -40,15 +46,8 @@ type BTMAssemblyPatternFeature2241 struct {
 	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured *bool `json:"suppressionConfigured,omitempty"`
 	// If `true`, the feature references a Variable Studio.
-	VariableStudioReference                *bool                                     `json:"variableStudioReference,omitempty"`
-	AuxiliaryTreeFeature                   *bool                                     `json:"auxiliaryTreeFeature,omitempty"`
-	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
-	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
-	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
-	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
-	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
-	Version                                *int32                                    `json:"version,omitempty"`
-	PatternType                            *GBTPatternType                           `json:"patternType,omitempty"`
+	VariableStudioReference *bool  `json:"variableStudioReference,omitempty"`
+	Version                 *int32 `json:"version,omitempty"`
 }
 
 // NewBTMAssemblyPatternFeature2241 instantiates a new BTMAssemblyPatternFeature2241 object
@@ -66,6 +65,38 @@ func NewBTMAssemblyPatternFeature2241() *BTMAssemblyPatternFeature2241 {
 func NewBTMAssemblyPatternFeature2241WithDefaults() *BTMAssemblyPatternFeature2241 {
 	this := BTMAssemblyPatternFeature2241{}
 	return &this
+}
+
+// GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetAuxiliaryTreeFeature() bool {
+	if o == nil || o.AuxiliaryTreeFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AuxiliaryTreeFeature
+}
+
+// GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetAuxiliaryTreeFeatureOk() (*bool, bool) {
+	if o == nil || o.AuxiliaryTreeFeature == nil {
+		return nil, false
+	}
+	return o.AuxiliaryTreeFeature, true
+}
+
+// HasAuxiliaryTreeFeature returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasAuxiliaryTreeFeature() bool {
+	if o != nil && o.AuxiliaryTreeFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAuxiliaryTreeFeature gets a reference to the given bool and assigns it to the AuxiliaryTreeFeature field.
+func (o *BTMAssemblyPatternFeature2241) SetAuxiliaryTreeFeature(v bool) {
+	o.AuxiliaryTreeFeature = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -100,6 +131,38 @@ func (o *BTMAssemblyPatternFeature2241) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetFeatureFolder() bool {
+	if o == nil || o.FeatureFolder == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FeatureFolder
+}
+
+// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetFeatureFolderOk() (*bool, bool) {
+	if o == nil || o.FeatureFolder == nil {
+		return nil, false
+	}
+	return o.FeatureFolder, true
+}
+
+// HasFeatureFolder returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasFeatureFolder() bool {
+	if o != nil && o.FeatureFolder != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
+func (o *BTMAssemblyPatternFeature2241) SetFeatureFolder(v bool) {
+	o.FeatureFolder = &v
+}
+
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
 func (o *BTMAssemblyPatternFeature2241) GetFeatureId() string {
 	if o == nil || o.FeatureId == nil {
@@ -132,6 +195,38 @@ func (o *BTMAssemblyPatternFeature2241) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
+// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetFeatureListFieldIndex() int32 {
+	if o == nil || o.FeatureListFieldIndex == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FeatureListFieldIndex
+}
+
+// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetFeatureListFieldIndexOk() (*int32, bool) {
+	if o == nil || o.FeatureListFieldIndex == nil {
+		return nil, false
+	}
+	return o.FeatureListFieldIndex, true
+}
+
+// HasFeatureListFieldIndex returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasFeatureListFieldIndex() bool {
+	if o != nil && o.FeatureListFieldIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
+func (o *BTMAssemblyPatternFeature2241) SetFeatureListFieldIndex(v int32) {
+	o.FeatureListFieldIndex = &v
+}
+
 // GetFeatureType returns the FeatureType field value if set, zero value otherwise.
 func (o *BTMAssemblyPatternFeature2241) GetFeatureType() string {
 	if o == nil || o.FeatureType == nil {
@@ -162,6 +257,38 @@ func (o *BTMAssemblyPatternFeature2241) HasFeatureType() bool {
 // SetFeatureType gets a reference to the given string and assigns it to the FeatureType field.
 func (o *BTMAssemblyPatternFeature2241) SetFeatureType(v string) {
 	o.FeatureType = &v
+}
+
+// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetFieldIndexForOwnedMateConnectors() int32 {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FieldIndexForOwnedMateConnectors
+}
+
+// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		return nil, false
+	}
+	return o.FieldIndexForOwnedMateConnectors, true
+}
+
+// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasFieldIndexForOwnedMateConnectors() bool {
+	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
+func (o *BTMAssemblyPatternFeature2241) SetFieldIndexForOwnedMateConnectors(v int32) {
+	o.FieldIndexForOwnedMateConnectors = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -292,36 +419,100 @@ func (o *BTMAssemblyPatternFeature2241) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetParameters() []BTMParameter1 {
-	if o == nil || o.Parameters == nil {
-		var ret []BTMParameter1
+// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
+	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
+		var ret []BTMIndividualQueryWithOccurrenceBase904
 		return ret
 	}
-	return o.Parameters
+	return o.OccurrenceQueriesFromAllConfigurations
 }
 
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetParametersOk() ([]BTMParameter1, bool) {
-	if o == nil || o.Parameters == nil {
+func (o *BTMAssemblyPatternFeature2241) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
+	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
 		return nil, false
 	}
-	return o.Parameters, true
+	return o.OccurrenceQueriesFromAllConfigurations, true
 }
 
-// HasParameters returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasParameters() bool {
-	if o != nil && o.Parameters != nil {
+// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasOccurrenceQueriesFromAllConfigurations() bool {
+	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
-func (o *BTMAssemblyPatternFeature2241) SetParameters(v []BTMParameter1) {
-	o.Parameters = v
+// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
+func (o *BTMAssemblyPatternFeature2241) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
+	o.OccurrenceQueriesFromAllConfigurations = v
+}
+
+// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetParametricInstanceFeature() bool {
+	if o == nil || o.ParametricInstanceFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParametricInstanceFeature
+}
+
+// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetParametricInstanceFeatureOk() (*bool, bool) {
+	if o == nil || o.ParametricInstanceFeature == nil {
+		return nil, false
+	}
+	return o.ParametricInstanceFeature, true
+}
+
+// HasParametricInstanceFeature returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasParametricInstanceFeature() bool {
+	if o != nil && o.ParametricInstanceFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
+func (o *BTMAssemblyPatternFeature2241) SetParametricInstanceFeature(v bool) {
+	o.ParametricInstanceFeature = &v
+}
+
+// GetPatternType returns the PatternType field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetPatternType() GBTPatternType {
+	if o == nil || o.PatternType == nil {
+		var ret GBTPatternType
+		return ret
+	}
+	return *o.PatternType
+}
+
+// GetPatternTypeOk returns a tuple with the PatternType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetPatternTypeOk() (*GBTPatternType, bool) {
+	if o == nil || o.PatternType == nil {
+		return nil, false
+	}
+	return o.PatternType, true
+}
+
+// HasPatternType returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasPatternType() bool {
+	if o != nil && o.PatternType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPatternType gets a reference to the given GBTPatternType and assigns it to the PatternType field.
+func (o *BTMAssemblyPatternFeature2241) SetPatternType(v GBTPatternType) {
+	o.PatternType = &v
 }
 
 // GetReturnAfterSubfeatures returns the ReturnAfterSubfeatures field value if set, zero value otherwise.
@@ -484,198 +675,6 @@ func (o *BTMAssemblyPatternFeature2241) SetVariableStudioReference(v bool) {
 	o.VariableStudioReference = &v
 }
 
-// GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetAuxiliaryTreeFeature() bool {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.AuxiliaryTreeFeature
-}
-
-// GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetAuxiliaryTreeFeatureOk() (*bool, bool) {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		return nil, false
-	}
-	return o.AuxiliaryTreeFeature, true
-}
-
-// HasAuxiliaryTreeFeature returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasAuxiliaryTreeFeature() bool {
-	if o != nil && o.AuxiliaryTreeFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAuxiliaryTreeFeature gets a reference to the given bool and assigns it to the AuxiliaryTreeFeature field.
-func (o *BTMAssemblyPatternFeature2241) SetAuxiliaryTreeFeature(v bool) {
-	o.AuxiliaryTreeFeature = &v
-}
-
-// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetFeatureFolder() bool {
-	if o == nil || o.FeatureFolder == nil {
-		var ret bool
-		return ret
-	}
-	return *o.FeatureFolder
-}
-
-// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetFeatureFolderOk() (*bool, bool) {
-	if o == nil || o.FeatureFolder == nil {
-		return nil, false
-	}
-	return o.FeatureFolder, true
-}
-
-// HasFeatureFolder returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasFeatureFolder() bool {
-	if o != nil && o.FeatureFolder != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
-func (o *BTMAssemblyPatternFeature2241) SetFeatureFolder(v bool) {
-	o.FeatureFolder = &v
-}
-
-// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetFeatureListFieldIndex() int32 {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FeatureListFieldIndex
-}
-
-// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetFeatureListFieldIndexOk() (*int32, bool) {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		return nil, false
-	}
-	return o.FeatureListFieldIndex, true
-}
-
-// HasFeatureListFieldIndex returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasFeatureListFieldIndex() bool {
-	if o != nil && o.FeatureListFieldIndex != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
-func (o *BTMAssemblyPatternFeature2241) SetFeatureListFieldIndex(v int32) {
-	o.FeatureListFieldIndex = &v
-}
-
-// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetFieldIndexForOwnedMateConnectors() int32 {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FieldIndexForOwnedMateConnectors
-}
-
-// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		return nil, false
-	}
-	return o.FieldIndexForOwnedMateConnectors, true
-}
-
-// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasFieldIndexForOwnedMateConnectors() bool {
-	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
-func (o *BTMAssemblyPatternFeature2241) SetFieldIndexForOwnedMateConnectors(v int32) {
-	o.FieldIndexForOwnedMateConnectors = &v
-}
-
-// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		var ret []BTMIndividualQueryWithOccurrenceBase904
-		return ret
-	}
-	return o.OccurrenceQueriesFromAllConfigurations
-}
-
-// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		return nil, false
-	}
-	return o.OccurrenceQueriesFromAllConfigurations, true
-}
-
-// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasOccurrenceQueriesFromAllConfigurations() bool {
-	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
-func (o *BTMAssemblyPatternFeature2241) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
-	o.OccurrenceQueriesFromAllConfigurations = v
-}
-
-// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetParametricInstanceFeature() bool {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ParametricInstanceFeature
-}
-
-// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetParametricInstanceFeatureOk() (*bool, bool) {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		return nil, false
-	}
-	return o.ParametricInstanceFeature, true
-}
-
-// HasParametricInstanceFeature returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasParametricInstanceFeature() bool {
-	if o != nil && o.ParametricInstanceFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
-func (o *BTMAssemblyPatternFeature2241) SetParametricInstanceFeature(v bool) {
-	o.ParametricInstanceFeature = &v
-}
-
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *BTMAssemblyPatternFeature2241) GetVersion() int32 {
 	if o == nil || o.Version == nil {
@@ -708,48 +707,28 @@ func (o *BTMAssemblyPatternFeature2241) SetVersion(v int32) {
 	o.Version = &v
 }
 
-// GetPatternType returns the PatternType field value if set, zero value otherwise.
-func (o *BTMAssemblyPatternFeature2241) GetPatternType() GBTPatternType {
-	if o == nil || o.PatternType == nil {
-		var ret GBTPatternType
-		return ret
-	}
-	return *o.PatternType
-}
-
-// GetPatternTypeOk returns a tuple with the PatternType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyPatternFeature2241) GetPatternTypeOk() (*GBTPatternType, bool) {
-	if o == nil || o.PatternType == nil {
-		return nil, false
-	}
-	return o.PatternType, true
-}
-
-// HasPatternType returns a boolean if a field has been set.
-func (o *BTMAssemblyPatternFeature2241) HasPatternType() bool {
-	if o != nil && o.PatternType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPatternType gets a reference to the given GBTPatternType and assigns it to the PatternType field.
-func (o *BTMAssemblyPatternFeature2241) SetPatternType(v GBTPatternType) {
-	o.PatternType = &v
-}
-
 func (o BTMAssemblyPatternFeature2241) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AuxiliaryTreeFeature != nil {
+		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.FeatureFolder != nil {
+		toSerialize["featureFolder"] = o.FeatureFolder
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
 	}
+	if o.FeatureListFieldIndex != nil {
+		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
+	}
 	if o.FeatureType != nil {
 		toSerialize["featureType"] = o.FeatureType
+	}
+	if o.FieldIndexForOwnedMateConnectors != nil {
+		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
@@ -763,8 +742,14 @@ func (o BTMAssemblyPatternFeature2241) MarshalJSON() ([]byte, error) {
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
-	if o.Parameters != nil {
-		toSerialize["parameters"] = o.Parameters
+	if o.OccurrenceQueriesFromAllConfigurations != nil {
+		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
+	}
+	if o.ParametricInstanceFeature != nil {
+		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
+	}
+	if o.PatternType != nil {
+		toSerialize["patternType"] = o.PatternType
 	}
 	if o.ReturnAfterSubfeatures != nil {
 		toSerialize["returnAfterSubfeatures"] = o.ReturnAfterSubfeatures
@@ -781,29 +766,8 @@ func (o BTMAssemblyPatternFeature2241) MarshalJSON() ([]byte, error) {
 	if o.VariableStudioReference != nil {
 		toSerialize["variableStudioReference"] = o.VariableStudioReference
 	}
-	if o.AuxiliaryTreeFeature != nil {
-		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
-	}
-	if o.FeatureFolder != nil {
-		toSerialize["featureFolder"] = o.FeatureFolder
-	}
-	if o.FeatureListFieldIndex != nil {
-		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
-	}
-	if o.FieldIndexForOwnedMateConnectors != nil {
-		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
-	}
-	if o.OccurrenceQueriesFromAllConfigurations != nil {
-		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
-	}
-	if o.ParametricInstanceFeature != nil {
-		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
-	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
-	}
-	if o.PatternType != nil {
-		toSerialize["patternType"] = o.PatternType
 	}
 	return json.Marshal(toSerialize)
 }

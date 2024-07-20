@@ -5,8 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
 ## Methods
@@ -52,56 +50,6 @@ SetBtType sets BtType field to given value.
 `func (o *BTMArrayParameterItem1843) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
-
-### GetImportMicroversion
-
-`func (o *BTMArrayParameterItem1843) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMArrayParameterItem1843) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMArrayParameterItem1843) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMArrayParameterItem1843) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMArrayParameterItem1843) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMArrayParameterItem1843) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMArrayParameterItem1843) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMArrayParameterItem1843) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetParameters
 

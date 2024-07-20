@@ -28,6 +28,7 @@ const (
 	BTApiVersionV5BodyDetailsCompositeReference     BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
 	BTApiVersionV6JsonEditResponseBugfix            BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
 	BTApiVersionV7SketchEndpointIncludesSolveStatus BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
+	BTApiVersionV8RestoreNoopNoNewMicroversion      BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
 )
 
 // All allowed values of BTApiVersion enum
@@ -40,6 +41,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V5_BODY_DETAILS_COMPOSITE_REFERENCE",
 	"V6_JSON_EDIT_RESPONSE_BUGFIX",
 	"V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS",
+	"V8_RESTORE_NOOP_NO_NEW_MICROVERSION",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

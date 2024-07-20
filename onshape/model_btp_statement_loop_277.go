@@ -52,56 +52,6 @@ func NewBTPStatementLoop277WithDefaults() *BTPStatementLoop277 {
 	return &this
 }
 
-// GetAnnotation returns the Annotation field value if set, zero value otherwise.
-func (o *BTPStatementLoop277) GetAnnotation() BTPAnnotation231 {
-	type getResult interface {
-		GetAnnotation() BTPAnnotation231
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAnnotation()
-	} else {
-		var de BTPAnnotation231
-		return de
-	}
-}
-
-// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPStatementLoop277) GetAnnotationOk() (*BTPAnnotation231, bool) {
-	type getResult interface {
-		GetAnnotationOk() (*BTPAnnotation231, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAnnotationOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasAnnotation returns a boolean if a field has been set.
-func (o *BTPStatementLoop277) HasAnnotation() bool {
-	type getResult interface {
-		HasAnnotation() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasAnnotation()
-	} else {
-		return false
-	}
-}
-
-// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
-func (o *BTPStatementLoop277) SetAnnotation(v BTPAnnotation231) {
-	type getResult interface {
-		SetAnnotation(v BTPAnnotation231)
-	}
-
-	o.GetActualInstance().(getResult).SetAnnotation(v)
-}
-
 // GetAtomic returns the Atomic field value if set, zero value otherwise.
 func (o *BTPStatementLoop277) GetAtomic() bool {
 	type getResult interface {
@@ -602,6 +552,56 @@ func (o *BTPStatementLoop277) SetStartSourceLocation(v int32) {
 	o.GetActualInstance().(getResult).SetStartSourceLocation(v)
 }
 
+// GetAnnotation returns the Annotation field value if set, zero value otherwise.
+func (o *BTPStatementLoop277) GetAnnotation() BTPAnnotation231 {
+	type getResult interface {
+		GetAnnotation() BTPAnnotation231
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotation()
+	} else {
+		var de BTPAnnotation231
+		return de
+	}
+}
+
+// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPStatementLoop277) GetAnnotationOk() (*BTPAnnotation231, bool) {
+	type getResult interface {
+		GetAnnotationOk() (*BTPAnnotation231, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotationOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAnnotation returns a boolean if a field has been set.
+func (o *BTPStatementLoop277) HasAnnotation() bool {
+	type getResult interface {
+		HasAnnotation() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAnnotation()
+	} else {
+		return false
+	}
+}
+
+// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
+func (o *BTPStatementLoop277) SetAnnotation(v BTPAnnotation231) {
+	type getResult interface {
+		SetAnnotation(v BTPAnnotation231)
+	}
+
+	o.GetActualInstance().(getResult).SetAnnotation(v)
+}
+
 // GetBody returns the Body field value if set, zero value otherwise.
 func (o *BTPStatementLoop277) GetBody() BTPStatement269 {
 	type getResult interface {
@@ -820,7 +820,6 @@ func (v *NullableBTPStatementLoop277) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPStatementLoop277 struct {
-	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -831,6 +830,7 @@ type base_BTPStatementLoop277 struct {
 	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
 	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
+	Annotation          *BTPAnnotation231   `json:"annotation,omitempty"`
 	Body                *BTPStatement269    `json:"body,omitempty"`
 	SpaceAfterLoopType  *BTPSpace10         `json:"spaceAfterLoopType,omitempty"`
 }
@@ -850,38 +850,6 @@ func Newbase_BTPStatementLoop277() *base_BTPStatementLoop277 {
 func Newbase_BTPStatementLoop277WithDefaults() *base_BTPStatementLoop277 {
 	this := base_BTPStatementLoop277{}
 	return &this
-}
-
-// GetAnnotation returns the Annotation field value if set, zero value otherwise.
-func (o *base_BTPStatementLoop277) GetAnnotation() BTPAnnotation231 {
-	if o == nil || o.Annotation == nil {
-		var ret BTPAnnotation231
-		return ret
-	}
-	return *o.Annotation
-}
-
-// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTPStatementLoop277) GetAnnotationOk() (*BTPAnnotation231, bool) {
-	if o == nil || o.Annotation == nil {
-		return nil, false
-	}
-	return o.Annotation, true
-}
-
-// HasAnnotation returns a boolean if a field has been set.
-func (o *base_BTPStatementLoop277) HasAnnotation() bool {
-	if o != nil && o.Annotation != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
-func (o *base_BTPStatementLoop277) SetAnnotation(v BTPAnnotation231) {
-	o.Annotation = &v
 }
 
 // GetAtomic returns the Atomic field value if set, zero value otherwise.
@@ -1204,6 +1172,38 @@ func (o *base_BTPStatementLoop277) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
 }
 
+// GetAnnotation returns the Annotation field value if set, zero value otherwise.
+func (o *base_BTPStatementLoop277) GetAnnotation() BTPAnnotation231 {
+	if o == nil || o.Annotation == nil {
+		var ret BTPAnnotation231
+		return ret
+	}
+	return *o.Annotation
+}
+
+// GetAnnotationOk returns a tuple with the Annotation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPStatementLoop277) GetAnnotationOk() (*BTPAnnotation231, bool) {
+	if o == nil || o.Annotation == nil {
+		return nil, false
+	}
+	return o.Annotation, true
+}
+
+// HasAnnotation returns a boolean if a field has been set.
+func (o *base_BTPStatementLoop277) HasAnnotation() bool {
+	if o != nil && o.Annotation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotation gets a reference to the given BTPAnnotation231 and assigns it to the Annotation field.
+func (o *base_BTPStatementLoop277) SetAnnotation(v BTPAnnotation231) {
+	o.Annotation = &v
+}
+
 // GetBody returns the Body field value if set, zero value otherwise.
 func (o *base_BTPStatementLoop277) GetBody() BTPStatement269 {
 	if o == nil || o.Body == nil {
@@ -1270,9 +1270,6 @@ func (o *base_BTPStatementLoop277) SetSpaceAfterLoopType(v BTPSpace10) {
 
 func (o base_BTPStatementLoop277) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Annotation != nil {
-		toSerialize["annotation"] = o.Annotation
-	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}
@@ -1302,6 +1299,9 @@ func (o base_BTPStatementLoop277) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.Annotation != nil {
+		toSerialize["annotation"] = o.Annotation
 	}
 	if o.Body != nil {
 		toSerialize["body"] = o.Body

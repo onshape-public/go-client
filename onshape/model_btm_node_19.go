@@ -20,8 +20,8 @@ type BTMNode19 struct {
 	implBTMNode19 interface{}
 }
 
-// BTMUnitsDefault160AsBTMNode19 is a convenience function that returns BTMUnitsDefault160 wrapped in BTMNode19
-func (o *BTMUnitsDefault160) AsBTMNode19() *BTMNode19 {
+// BTMInContextQuery2254AsBTMNode19 is a convenience function that returns BTMInContextQuery2254 wrapped in BTMNode19
+func (o *BTMInContextQuery2254) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -45,33 +45,33 @@ func (o *BTMIndividualQueryBase139) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTMParameter1AsBTMNode19 is a convenience function that returns BTMParameter1 wrapped in BTMNode19
-func (o *BTMParameter1) AsBTMNode19() *BTMNode19 {
-	return &BTMNode19{o}
-}
-
 // BTMArrayParameterItem1843AsBTMNode19 is a convenience function that returns BTMArrayParameterItem1843 wrapped in BTMNode19
 func (o *BTMArrayParameterItem1843) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTMEnumOption592AsBTMNode19 is a convenience function that returns BTMEnumOption592 wrapped in BTMNode19
-func (o *BTMEnumOption592) AsBTMNode19() *BTMNode19 {
+// BTMSketchPoint158AsBTMNode19 is a convenience function that returns BTMSketchPoint158 wrapped in BTMNode19
+func (o *BTMSketchPoint158) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTMNodeInvalid1772AsBTMNode19 is a convenience function that returns BTMNodeInvalid1772 wrapped in BTMNode19
-func (o *BTMNodeInvalid1772) AsBTMNode19() *BTMNode19 {
+// BTMFeatureQueryWithOccurrence157AsBTMNode19 is a convenience function that returns BTMFeatureQueryWithOccurrence157 wrapped in BTMNode19
+func (o *BTMFeatureQueryWithOccurrence157) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTParametricOutputInstance2288AsBTMNode19 is a convenience function that returns BTParametricOutputInstance2288 wrapped in BTMNode19
-func (o *BTParametricOutputInstance2288) AsBTMNode19() *BTMNode19 {
+// BTMPartStudioMateConnectorQuery1324AsBTMNode19 is a convenience function that returns BTMPartStudioMateConnectorQuery1324 wrapped in BTMNode19
+func (o *BTMPartStudioMateConnectorQuery1324) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTMConfigurationData1560AsBTMNode19 is a convenience function that returns BTMConfigurationData1560 wrapped in BTMNode19
-func (o *BTMConfigurationData1560) AsBTMNode19() *BTMNode19 {
+// BTMConfiguredValueByEnum1923AsBTMNode19 is a convenience function that returns BTMConfiguredValueByEnum1923 wrapped in BTMNode19
+func (o *BTMConfiguredValueByEnum1923) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMMeshPointQuery1183AsBTMNode19 is a convenience function that returns BTMMeshPointQuery1183 wrapped in BTMNode19
+func (o *BTMMeshPointQuery1183) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -105,8 +105,18 @@ func (o *BTParametricInstance2641) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
+// BTMConfigurationParameterBoolean2550AsBTMNode19 is a convenience function that returns BTMConfigurationParameterBoolean2550 wrapped in BTMNode19
+func (o *BTMConfigurationParameterBoolean2550) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
 // BTAssemblySimulationData978AsBTMNode19 is a convenience function that returns BTAssemblySimulationData978 wrapped in BTMNode19
 func (o *BTAssemblySimulationData978) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMIndividualOccurrenceQuery626AsBTMNode19 is a convenience function that returns BTMIndividualOccurrenceQuery626 wrapped in BTMNode19
+func (o *BTMIndividualOccurrenceQuery626) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -120,16 +130,6 @@ func (o *BTClonedInstance2505) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTMImport136AsBTMNode19 is a convenience function that returns BTMImport136 wrapped in BTMNode19
-func (o *BTMImport136) AsBTMNode19() *BTMNode19 {
-	return &BTMNode19{o}
-}
-
-// BTInstanceFolder3627AsBTMNode19 is a convenience function that returns BTInstanceFolder3627 wrapped in BTMNode19
-func (o *BTInstanceFolder3627) AsBTMNode19() *BTMNode19 {
-	return &BTMNode19{o}
-}
-
 // BTToleranceString3274AsBTMNode19 is a convenience function that returns BTToleranceString3274 wrapped in BTMNode19
 func (o *BTToleranceString3274) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -137,11 +137,6 @@ func (o *BTToleranceString3274) AsBTMNode19() *BTMNode19 {
 
 // BTMConfigurationParameter819AsBTMNode19 is a convenience function that returns BTMConfigurationParameter819 wrapped in BTMNode19
 func (o *BTMConfigurationParameter819) AsBTMNode19() *BTMNode19 {
-	return &BTMNode19{o}
-}
-
-// BTMSketchInvalid1601AsBTMNode19 is a convenience function that returns BTMSketchInvalid1601 wrapped in BTMNode19
-func (o *BTMSketchInvalid1601) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -165,8 +160,8 @@ func (o *BTMUserCode161) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTMFolder3208AsBTMNode19 is a convenience function that returns BTMFolder3208 wrapped in BTMNode19
-func (o *BTMFolder3208) AsBTMNode19() *BTMNode19 {
+// BTMSketchGeomEntity5AsBTMNode19 is a convenience function that returns BTMSketchGeomEntity5 wrapped in BTMNode19
+func (o *BTMSketchGeomEntity5) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -175,18 +170,143 @@ func (o *BTMRollback150) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTPartInstance81AsBTMNode19 is a convenience function that returns BTPartInstance81 wrapped in BTMNode19
-func (o *BTPartInstance81) AsBTMNode19() *BTMNode19 {
+// BTMSketchCurveSegment155AsBTMNode19 is a convenience function that returns BTMSketchCurveSegment155 wrapped in BTMNode19
+func (o *BTMSketchCurveSegment155) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
-// BTParametricPartStudioInstance4374AsBTMNode19 is a convenience function that returns BTParametricPartStudioInstance4374 wrapped in BTMNode19
-func (o *BTParametricPartStudioInstance4374) AsBTMNode19() *BTMNode19 {
+// BTMConfigurationParameterString872AsBTMNode19 is a convenience function that returns BTMConfigurationParameterString872 wrapped in BTMNode19
+func (o *BTMConfigurationParameterString872) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMSketchConstraint2AsBTMNode19 is a convenience function that returns BTMSketchConstraint2 wrapped in BTMNode19
+func (o *BTMSketchConstraint2) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMConfigurationParameterEnum105AsBTMNode19 is a convenience function that returns BTMConfigurationParameterEnum105 wrapped in BTMNode19
+func (o *BTMConfigurationParameterEnum105) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
 // BTParametricPartStudioChildInstance3696AsBTMNode19 is a convenience function that returns BTParametricPartStudioChildInstance3696 wrapped in BTMNode19
 func (o *BTParametricPartStudioChildInstance3696) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMSketchEntity3AsBTMNode19 is a convenience function that returns BTMSketchEntity3 wrapped in BTMNode19
+func (o *BTMSketchEntity3) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMConfigurationParameterQuantity1826AsBTMNode19 is a convenience function that returns BTMConfigurationParameterQuantity1826 wrapped in BTMNode19
+func (o *BTMConfigurationParameterQuantity1826) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMUnitsDefault160AsBTMNode19 is a convenience function that returns BTMUnitsDefault160 wrapped in BTMNode19
+func (o *BTMUnitsDefault160) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMParameter1AsBTMNode19 is a convenience function that returns BTMParameter1 wrapped in BTMNode19
+func (o *BTMParameter1) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMIndividualQueryWithOccurrenceBase904AsBTMNode19 is a convenience function that returns BTMIndividualQueryWithOccurrenceBase904 wrapped in BTMNode19
+func (o *BTMIndividualQueryWithOccurrenceBase904) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMEnumOption592AsBTMNode19 is a convenience function that returns BTMEnumOption592 wrapped in BTMNode19
+func (o *BTMEnumOption592) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMSketchCurve4AsBTMNode19 is a convenience function that returns BTMSketchCurve4 wrapped in BTMNode19
+func (o *BTMSketchCurve4) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMNodeInvalid1772AsBTMNode19 is a convenience function that returns BTMNodeInvalid1772 wrapped in BTMNode19
+func (o *BTMNodeInvalid1772) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMSketchTextEntity1761AsBTMNode19 is a convenience function that returns BTMSketchTextEntity1761 wrapped in BTMNode19
+func (o *BTMSketchTextEntity1761) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTParametricOutputInstance2288AsBTMNode19 is a convenience function that returns BTParametricOutputInstance2288 wrapped in BTMNode19
+func (o *BTParametricOutputInstance2288) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMConfigurationData1560AsBTMNode19 is a convenience function that returns BTMConfigurationData1560 wrapped in BTMNode19
+func (o *BTMConfigurationData1560) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMInferenceQueryWithOccurrence1083AsBTMNode19 is a convenience function that returns BTMInferenceQueryWithOccurrence1083 wrapped in BTMNode19
+func (o *BTMInferenceQueryWithOccurrence1083) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMIndividualQueryWithOccurrence811AsBTMNode19 is a convenience function that returns BTMIndividualQueryWithOccurrence811 wrapped in BTMNode19
+func (o *BTMIndividualQueryWithOccurrence811) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMImport136AsBTMNode19 is a convenience function that returns BTMImport136 wrapped in BTMNode19
+func (o *BTMImport136) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTInstanceFolder3627AsBTMNode19 is a convenience function that returns BTInstanceFolder3627 wrapped in BTMNode19
+func (o *BTInstanceFolder3627) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMConfiguredValueByBoolean1501AsBTMNode19 is a convenience function that returns BTMConfiguredValueByBoolean1501 wrapped in BTMNode19
+func (o *BTMConfiguredValueByBoolean1501) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMSketchInvalid1601AsBTMNode19 is a convenience function that returns BTMSketchInvalid1601 wrapped in BTMNode19
+func (o *BTMSketchInvalid1601) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMSketchImageEntity763AsBTMNode19 is a convenience function that returns BTMSketchImageEntity763 wrapped in BTMNode19
+func (o *BTMSketchImageEntity763) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMFolder3208AsBTMNode19 is a convenience function that returns BTMFolder3208 wrapped in BTMNode19
+func (o *BTMFolder3208) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTPartInstance81AsBTMNode19 is a convenience function that returns BTPartInstance81 wrapped in BTMNode19
+func (o *BTPartInstance81) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTMAnnotation4664AsBTMNode19 is a convenience function that returns BTMAnnotation4664 wrapped in BTMNode19
+func (o *BTMAnnotation4664) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTModelAnnotations3945AsBTMNode19 is a convenience function that returns BTModelAnnotations3945 wrapped in BTMNode19
+func (o *BTModelAnnotations3945) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
+// BTParametricPartStudioInstance4374AsBTMNode19 is a convenience function that returns BTParametricPartStudioInstance4374 wrapped in BTMNode19
+func (o *BTParametricPartStudioInstance4374) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -202,11 +322,6 @@ func (o *BTInstance642) AsBTMNode19() *BTMNode19 {
 
 // BTMSketchCompositeEntity893AsBTMNode19 is a convenience function that returns BTMSketchCompositeEntity893 wrapped in BTMNode19
 func (o *BTMSketchCompositeEntity893) AsBTMNode19() *BTMNode19 {
-	return &BTMNode19{o}
-}
-
-// BTMSketchEntity3AsBTMNode19 is a convenience function that returns BTMSketchEntity3 wrapped in BTMNode19
-func (o *BTMSketchEntity3) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
@@ -527,6 +642,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMAnnotation-4664'
+	if jsonDict["btType"] == "BTMAnnotation-4664" {
+		// try to unmarshal JSON data into BTMAnnotation4664
+		var qr *BTMAnnotation4664
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMAnnotation4664: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMArrayParameterItem-1843'
 	if jsonDict["btType"] == "BTMArrayParameterItem-1843" {
 		// try to unmarshal JSON data into BTMArrayParameterItem1843
@@ -569,6 +698,62 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMConfigurationParameterBoolean-2550'
+	if jsonDict["btType"] == "BTMConfigurationParameterBoolean-2550" {
+		// try to unmarshal JSON data into BTMConfigurationParameterBoolean2550
+		var qr *BTMConfigurationParameterBoolean2550
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationParameterBoolean2550: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMConfigurationParameterEnum-105'
+	if jsonDict["btType"] == "BTMConfigurationParameterEnum-105" {
+		// try to unmarshal JSON data into BTMConfigurationParameterEnum105
+		var qr *BTMConfigurationParameterEnum105
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationParameterEnum105: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMConfigurationParameterQuantity-1826'
+	if jsonDict["btType"] == "BTMConfigurationParameterQuantity-1826" {
+		// try to unmarshal JSON data into BTMConfigurationParameterQuantity1826
+		var qr *BTMConfigurationParameterQuantity1826
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationParameterQuantity1826: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMConfigurationParameterString-872'
+	if jsonDict["btType"] == "BTMConfigurationParameterString-872" {
+		// try to unmarshal JSON data into BTMConfigurationParameterString872
+		var qr *BTMConfigurationParameterString872
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationParameterString872: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMConfiguredValue-1341'
 	if jsonDict["btType"] == "BTMConfiguredValue-1341" {
 		// try to unmarshal JSON data into BTMConfiguredValue1341
@@ -580,6 +765,34 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfiguredValue1341: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMConfiguredValueByBoolean-1501'
+	if jsonDict["btType"] == "BTMConfiguredValueByBoolean-1501" {
+		// try to unmarshal JSON data into BTMConfiguredValueByBoolean1501
+		var qr *BTMConfiguredValueByBoolean1501
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfiguredValueByBoolean1501: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMConfiguredValueByEnum-1923'
+	if jsonDict["btType"] == "BTMConfiguredValueByEnum-1923" {
+		// try to unmarshal JSON data into BTMConfiguredValueByEnum1923
+		var qr *BTMConfiguredValueByEnum1923
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfiguredValueByEnum1923: %s", err.Error())
 		}
 	}
 
@@ -611,6 +824,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMFeatureQueryWithOccurrence-157'
+	if jsonDict["btType"] == "BTMFeatureQueryWithOccurrence-157" {
+		// try to unmarshal JSON data into BTMFeatureQueryWithOccurrence157
+		var qr *BTMFeatureQueryWithOccurrence157
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMFeatureQueryWithOccurrence157: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMFolder-3208'
 	if jsonDict["btType"] == "BTMFolder-3208" {
 		// try to unmarshal JSON data into BTMFolder3208
@@ -639,6 +866,34 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMInContextQuery-2254'
+	if jsonDict["btType"] == "BTMInContextQuery-2254" {
+		// try to unmarshal JSON data into BTMInContextQuery2254
+		var qr *BTMInContextQuery2254
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMInContextQuery2254: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualOccurrenceQuery-626'
+	if jsonDict["btType"] == "BTMIndividualOccurrenceQuery-626" {
+		// try to unmarshal JSON data into BTMIndividualOccurrenceQuery626
+		var qr *BTMIndividualOccurrenceQuery626
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMIndividualOccurrenceQuery626: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMIndividualQueryBase-139'
 	if jsonDict["btType"] == "BTMIndividualQueryBase-139" {
 		// try to unmarshal JSON data into BTMIndividualQueryBase139
@@ -650,6 +905,62 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMIndividualQueryBase139: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualQueryWithOccurrence-811'
+	if jsonDict["btType"] == "BTMIndividualQueryWithOccurrence-811" {
+		// try to unmarshal JSON data into BTMIndividualQueryWithOccurrence811
+		var qr *BTMIndividualQueryWithOccurrence811
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMIndividualQueryWithOccurrence811: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualQueryWithOccurrenceBase-904'
+	if jsonDict["btType"] == "BTMIndividualQueryWithOccurrenceBase-904" {
+		// try to unmarshal JSON data into BTMIndividualQueryWithOccurrenceBase904
+		var qr *BTMIndividualQueryWithOccurrenceBase904
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMIndividualQueryWithOccurrenceBase904: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMInferenceQueryWithOccurrence-1083'
+	if jsonDict["btType"] == "BTMInferenceQueryWithOccurrence-1083" {
+		// try to unmarshal JSON data into BTMInferenceQueryWithOccurrence1083
+		var qr *BTMInferenceQueryWithOccurrence1083
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMMeshPointQuery-1183'
+	if jsonDict["btType"] == "BTMMeshPointQuery-1183" {
+		// try to unmarshal JSON data into BTMMeshPointQuery1183
+		var qr *BTMMeshPointQuery1183
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMMeshPointQuery1183: %s", err.Error())
 		}
 	}
 
@@ -695,6 +1006,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMPartStudioMateConnectorQuery-1324'
+	if jsonDict["btType"] == "BTMPartStudioMateConnectorQuery-1324" {
+		// try to unmarshal JSON data into BTMPartStudioMateConnectorQuery1324
+		var qr *BTMPartStudioMateConnectorQuery1324
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMPartStudioMateConnectorQuery1324: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMRecordMetrics-1169'
 	if jsonDict["btType"] == "BTMRecordMetrics-1169" {
 		// try to unmarshal JSON data into BTMRecordMetrics1169
@@ -737,6 +1062,48 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMSketchConstraint-2'
+	if jsonDict["btType"] == "BTMSketchConstraint-2" {
+		// try to unmarshal JSON data into BTMSketchConstraint2
+		var qr *BTMSketchConstraint2
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchConstraint2: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchCurve-4'
+	if jsonDict["btType"] == "BTMSketchCurve-4" {
+		// try to unmarshal JSON data into BTMSketchCurve4
+		var qr *BTMSketchCurve4
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchCurve4: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchCurveSegment-155'
+	if jsonDict["btType"] == "BTMSketchCurveSegment-155" {
+		// try to unmarshal JSON data into BTMSketchCurveSegment155
+		var qr *BTMSketchCurveSegment155
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchCurveSegment155: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMSketchEntity-3'
 	if jsonDict["btType"] == "BTMSketchEntity-3" {
 		// try to unmarshal JSON data into BTMSketchEntity3
@@ -751,6 +1118,34 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMSketchGeomEntity-5'
+	if jsonDict["btType"] == "BTMSketchGeomEntity-5" {
+		// try to unmarshal JSON data into BTMSketchGeomEntity5
+		var qr *BTMSketchGeomEntity5
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchGeomEntity5: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchImageEntity-763'
+	if jsonDict["btType"] == "BTMSketchImageEntity-763" {
+		// try to unmarshal JSON data into BTMSketchImageEntity763
+		var qr *BTMSketchImageEntity763
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchImageEntity763: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMSketchInvalid-1601'
 	if jsonDict["btType"] == "BTMSketchInvalid-1601" {
 		// try to unmarshal JSON data into BTMSketchInvalid1601
@@ -762,6 +1157,34 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchInvalid1601: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchPoint-158'
+	if jsonDict["btType"] == "BTMSketchPoint-158" {
+		// try to unmarshal JSON data into BTMSketchPoint158
+		var qr *BTMSketchPoint158
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchPoint158: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchTextEntity-1761'
+	if jsonDict["btType"] == "BTMSketchTextEntity-1761" {
+		// try to unmarshal JSON data into BTMSketchTextEntity1761
+		var qr *BTMSketchTextEntity1761
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSketchTextEntity1761: %s", err.Error())
 		}
 	}
 
@@ -818,6 +1241,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMUserCode161: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTModelAnnotations-3945'
+	if jsonDict["btType"] == "BTModelAnnotations-3945" {
+		// try to unmarshal JSON data into BTModelAnnotations3945
+		var qr *BTModelAnnotations3945
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTModelAnnotations3945: %s", err.Error())
 		}
 	}
 

@@ -141,6 +141,10 @@ func NewBTDrawingParams() *BTDrawingParams {
 	this.IsSurface = &isSurface
 	var language string = "en-us"
 	this.Language = &language
+	var numberHorizontalZones int32 = 0
+	this.NumberHorizontalZones = &numberHorizontalZones
+	var numberVerticalZones int32 = 0
+	this.NumberVerticalZones = &numberVerticalZones
 	var pureSketch bool = false
 	this.PureSketch = &pureSketch
 	var showCutGeomOnly bool = false
@@ -173,6 +177,10 @@ func NewBTDrawingParamsWithDefaults() *BTDrawingParams {
 	this.IsSurface = &isSurface
 	var language string = "en-us"
 	this.Language = &language
+	var numberHorizontalZones int32 = 0
+	this.NumberHorizontalZones = &numberHorizontalZones
+	var numberVerticalZones int32 = 0
+	this.NumberVerticalZones = &numberVerticalZones
 	var pureSketch bool = false
 	this.PureSketch = &pureSketch
 	var showCutGeomOnly bool = false

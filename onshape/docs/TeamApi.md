@@ -1,6 +1,6 @@
 # \TeamApi
 
-All URIs are relative to *https://cad.onshape.com/api/v7*
+All URIs are relative to *https://cad.onshape.com/api/v8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

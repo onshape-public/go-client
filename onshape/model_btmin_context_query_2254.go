@@ -16,17 +16,17 @@ import (
 
 // BTMInContextQuery2254 struct for BTMInContextQuery2254
 type BTMInContextQuery2254 struct {
-	BtType                     *string                    `json:"btType,omitempty"`
+	BtType *string `json:"btType,omitempty"`
+	// Microversion that resulted from the import.
+	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
+	NodeId                     *string                    `json:"nodeId,omitempty"`
 	DeterministicIdList        *BTMIndividualQueryBase139 `json:"deterministicIdList,omitempty"`
 	DeterministicIds           []string                   `json:"deterministicIds,omitempty"`
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
-	// Microversion that resulted from the import.
-	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
-	NodeId             *string                    `json:"nodeId,omitempty"`
-	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryString        *string                    `json:"queryString,omitempty"`
-	Path               []string                   `json:"path,omitempty"`
+	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryString                *string                    `json:"queryString,omitempty"`
+	Path                       []string                   `json:"path,omitempty"`
 }
 
 // NewBTMInContextQuery2254 instantiates a new BTMInContextQuery2254 object
@@ -76,6 +76,70 @@ func (o *BTMInContextQuery2254) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTMInContextQuery2254) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMInContextQuery2254) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImportMicroversion
+}
+
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMInContextQuery2254) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
+		return nil, false
+	}
+	return o.ImportMicroversion, true
+}
+
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMInContextQuery2254) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMInContextQuery2254) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMInContextQuery2254) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMInContextQuery2254) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMInContextQuery2254) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMInContextQuery2254) SetNodeId(v string) {
+	o.NodeId = &v
 }
 
 // GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
@@ -206,70 +270,6 @@ func (o *BTMInContextQuery2254) SetGeneratedSectionQueryId(v string) {
 	o.GeneratedSectionQueryId = &v
 }
 
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMInContextQuery2254) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMInContextQuery2254) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMInContextQuery2254) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMInContextQuery2254) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMInContextQuery2254) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMInContextQuery2254) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMInContextQuery2254) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMInContextQuery2254) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
 // GetQuery returns the Query field value if set, zero value otherwise.
 func (o *BTMInContextQuery2254) GetQuery() BTMIndividualQueryBase139 {
 	if o == nil || o.Query == nil {
@@ -371,6 +371,12 @@ func (o BTMInContextQuery2254) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
 	if o.DeterministicIdList != nil {
 		toSerialize["deterministicIdList"] = o.DeterministicIdList
 	}
@@ -382,12 +388,6 @@ func (o BTMInContextQuery2254) MarshalJSON() ([]byte, error) {
 	}
 	if o.GeneratedSectionQueryId != nil {
 		toSerialize["generatedSectionQueryId"] = o.GeneratedSectionQueryId
-	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
 	}
 	if o.Query != nil {
 		toSerialize["query"] = o.Query

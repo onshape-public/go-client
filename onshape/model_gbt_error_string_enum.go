@@ -1539,6 +1539,7 @@ const (
 	GBTErrorStringEnumConfigIncorrectParameterType                          GBTErrorStringEnum = "CONFIG_INCORRECT_PARAMETER_TYPE"
 	GBTErrorStringEnumConfigTooManyParameters                               GBTErrorStringEnum = "CONFIG_TOO_MANY_PARAMETERS"
 	GBTErrorStringEnumReferenceRepairMissingConfiguration                   GBTErrorStringEnum = "REFERENCE_REPAIR_MISSING_CONFIGURATION"
+	GBTErrorStringEnumSketchCannotMake2PointsBezier                         GBTErrorStringEnum = "SKETCH_CANNOT_MAKE_2_POINTS_BEZIER"
 	GBTErrorStringEnumUnknown                                               GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3063,6 +3064,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"CONFIG_INCORRECT_PARAMETER_TYPE",
 	"CONFIG_TOO_MANY_PARAMETERS",
 	"REFERENCE_REPAIR_MISSING_CONFIGURATION",
+	"SKETCH_CANNOT_MAKE_2_POINTS_BEZIER",
 	"UNKNOWN",
 }
 

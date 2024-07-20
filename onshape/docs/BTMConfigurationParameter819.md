@@ -6,9 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **GeneratedParameterId** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **IsCosmetic** | Pointer to **bool** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **ParameterName** | Pointer to **string** |  | [optional] 
 **ParameterType** | Pointer to [**GBTConfigurationParameterType**](GBTConfigurationParameterType.md) |  | [optional] 
@@ -83,31 +81,6 @@ SetGeneratedParameterId sets GeneratedParameterId field to given value.
 
 HasGeneratedParameterId returns a boolean if a field has been set.
 
-### GetImportMicroversion
-
-`func (o *BTMConfigurationParameter819) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMConfigurationParameter819) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMConfigurationParameter819) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMConfigurationParameter819) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
 ### GetIsCosmetic
 
 `func (o *BTMConfigurationParameter819) GetIsCosmetic() bool`
@@ -132,31 +105,6 @@ SetIsCosmetic sets IsCosmetic field to given value.
 `func (o *BTMConfigurationParameter819) HasIsCosmetic() bool`
 
 HasIsCosmetic returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMConfigurationParameter819) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMConfigurationParameter819) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMConfigurationParameter819) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMConfigurationParameter819) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetParameterId
 

@@ -1,6 +1,6 @@
 # \DocumentApi
 
-All URIs are relative to *https://cad.onshape.com/api/v7*
+All URIs are relative to *https://cad.onshape.com/api/v8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1774,7 +1774,7 @@ Name | Type | Description  | Notes
 
 ## RestoreFromHistory
 
-> BTRestoreFromHistoryInfo RestoreFromHistory(ctx, did, wid, vm, vmid).LinkDocumentId(linkDocumentId).Execute()
+> BTRestoreFromHistoryInfo RestoreFromHistory(ctx, did, wid, vm, vmid).LinkDocumentId(linkDocumentId).BTRestoreInfo(bTRestoreInfo).Execute()
 
 Restore version or microversion to workspace by document ID, workspace ID, and version or microversion ID.
 
@@ -1796,10 +1796,11 @@ func main() {
     vm := "vm_example" // string | 
     vmid := "vmid_example" // string | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    bTRestoreInfo := *openapiclient.NewBTRestoreInfo() // BTRestoreInfo |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DocumentApi.RestoreFromHistory(context.Background(), did, wid, vm, vmid).LinkDocumentId(linkDocumentId).Execute()
+    resp, r, err := apiClient.DocumentApi.RestoreFromHistory(context.Background(), did, wid, vm, vmid).LinkDocumentId(linkDocumentId).BTRestoreInfo(bTRestoreInfo).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.RestoreFromHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1832,6 +1833,7 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **bTRestoreInfo** | [**BTRestoreInfo**](BTRestoreInfo.md) |  | 
 
 ### Return type
 
@@ -1843,7 +1845,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
 - **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

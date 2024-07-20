@@ -7,20 +7,14 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConstraintType** | Pointer to [**GBTConstraintType**](GBTConstraintType.md) |  | [optional] 
 **DrivenDimension** | Pointer to **bool** |  | [optional] 
-**EntityId** | Pointer to **string** |  | [optional] 
-**EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
 **HasOffsetData1** | Pointer to **bool** |  | [optional] 
 **HasOffsetData2** | Pointer to **bool** |  | [optional] 
 **HasPierceParameter** | Pointer to **bool** |  | [optional] 
 **HelpParameters** | Pointer to **[]float64** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **OffsetDistance1** | Pointer to **float64** |  | [optional] 
 **OffsetDistance2** | Pointer to **float64** |  | [optional] 
 **OffsetOrientation1** | Pointer to **bool** |  | [optional] 
 **OffsetOrientation2** | Pointer to **bool** |  | [optional] 
-**Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **PierceParameter** | Pointer to **float64** |  | [optional] 
 
 ## Methods
@@ -116,56 +110,6 @@ SetDrivenDimension sets DrivenDimension field to given value.
 `func (o *BTMSketchConstraint2) HasDrivenDimension() bool`
 
 HasDrivenDimension returns a boolean if a field has been set.
-
-### GetEntityId
-
-`func (o *BTMSketchConstraint2) GetEntityId() string`
-
-GetEntityId returns the EntityId field if non-nil, zero value otherwise.
-
-### GetEntityIdOk
-
-`func (o *BTMSketchConstraint2) GetEntityIdOk() (*string, bool)`
-
-GetEntityIdOk returns a tuple with the EntityId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEntityId
-
-`func (o *BTMSketchConstraint2) SetEntityId(v string)`
-
-SetEntityId sets EntityId field to given value.
-
-### HasEntityId
-
-`func (o *BTMSketchConstraint2) HasEntityId() bool`
-
-HasEntityId returns a boolean if a field has been set.
-
-### GetEntityIdAndReplaceInDependentFields
-
-`func (o *BTMSketchConstraint2) GetEntityIdAndReplaceInDependentFields() string`
-
-GetEntityIdAndReplaceInDependentFields returns the EntityIdAndReplaceInDependentFields field if non-nil, zero value otherwise.
-
-### GetEntityIdAndReplaceInDependentFieldsOk
-
-`func (o *BTMSketchConstraint2) GetEntityIdAndReplaceInDependentFieldsOk() (*string, bool)`
-
-GetEntityIdAndReplaceInDependentFieldsOk returns a tuple with the EntityIdAndReplaceInDependentFields field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEntityIdAndReplaceInDependentFields
-
-`func (o *BTMSketchConstraint2) SetEntityIdAndReplaceInDependentFields(v string)`
-
-SetEntityIdAndReplaceInDependentFields sets EntityIdAndReplaceInDependentFields field to given value.
-
-### HasEntityIdAndReplaceInDependentFields
-
-`func (o *BTMSketchConstraint2) HasEntityIdAndReplaceInDependentFields() bool`
-
-HasEntityIdAndReplaceInDependentFields returns a boolean if a field has been set.
 
 ### GetHasOffsetData1
 
@@ -267,81 +211,6 @@ SetHelpParameters sets HelpParameters field to given value.
 
 HasHelpParameters returns a boolean if a field has been set.
 
-### GetImportMicroversion
-
-`func (o *BTMSketchConstraint2) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMSketchConstraint2) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMSketchConstraint2) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMSketchConstraint2) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
-### GetNamespace
-
-`func (o *BTMSketchConstraint2) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *BTMSketchConstraint2) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *BTMSketchConstraint2) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *BTMSketchConstraint2) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMSketchConstraint2) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMSketchConstraint2) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMSketchConstraint2) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMSketchConstraint2) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
-
 ### GetOffsetDistance1
 
 `func (o *BTMSketchConstraint2) GetOffsetDistance1() float64`
@@ -441,31 +310,6 @@ SetOffsetOrientation2 sets OffsetOrientation2 field to given value.
 `func (o *BTMSketchConstraint2) HasOffsetOrientation2() bool`
 
 HasOffsetOrientation2 returns a boolean if a field has been set.
-
-### GetParameters
-
-`func (o *BTMSketchConstraint2) GetParameters() []BTMParameter1`
-
-GetParameters returns the Parameters field if non-nil, zero value otherwise.
-
-### GetParametersOk
-
-`func (o *BTMSketchConstraint2) GetParametersOk() (*[]BTMParameter1, bool)`
-
-GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParameters
-
-`func (o *BTMSketchConstraint2) SetParameters(v []BTMParameter1)`
-
-SetParameters sets Parameters field to given value.
-
-### HasParameters
-
-`func (o *BTMSketchConstraint2) HasParameters() bool`
-
-HasParameters returns a boolean if a field has been set.
 
 ### GetPierceParameter
 

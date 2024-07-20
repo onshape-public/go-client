@@ -56,7 +56,6 @@ type BTPurchaseInfo struct {
 	Subscribers         []BTPlanSubscriberInfo `json:"subscribers,omitempty"`
 	SubscriptionBeginAt *JSONTime              `json:"subscriptionBeginAt,omitempty"`
 	SubscriptionEndAt   *JSONTime              `json:"subscriptionEndAt,omitempty"`
-	SubscriptionFields  *Subscription          `json:"subscriptionFields,omitempty"`
 	SubscriptionId      *string                `json:"subscriptionId,omitempty"`
 	SubscriptionType    *int32                 `json:"subscriptionType,omitempty"`
 	TaxAmountCents      *int64                 `json:"taxAmountCents,omitempty"`
@@ -1267,38 +1266,6 @@ func (o *BTPurchaseInfo) SetSubscriptionEndAt(v JSONTime) {
 	o.SubscriptionEndAt = &v
 }
 
-// GetSubscriptionFields returns the SubscriptionFields field value if set, zero value otherwise.
-func (o *BTPurchaseInfo) GetSubscriptionFields() Subscription {
-	if o == nil || o.SubscriptionFields == nil {
-		var ret Subscription
-		return ret
-	}
-	return *o.SubscriptionFields
-}
-
-// GetSubscriptionFieldsOk returns a tuple with the SubscriptionFields field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPurchaseInfo) GetSubscriptionFieldsOk() (*Subscription, bool) {
-	if o == nil || o.SubscriptionFields == nil {
-		return nil, false
-	}
-	return o.SubscriptionFields, true
-}
-
-// HasSubscriptionFields returns a boolean if a field has been set.
-func (o *BTPurchaseInfo) HasSubscriptionFields() bool {
-	if o != nil && o.SubscriptionFields != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSubscriptionFields gets a reference to the given Subscription and assigns it to the SubscriptionFields field.
-func (o *BTPurchaseInfo) SetSubscriptionFields(v Subscription) {
-	o.SubscriptionFields = &v
-}
-
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *BTPurchaseInfo) GetSubscriptionId() string {
 	if o == nil || o.SubscriptionId == nil {
@@ -1603,9 +1570,6 @@ func (o BTPurchaseInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SubscriptionEndAt != nil {
 		toSerialize["subscriptionEndAt"] = o.SubscriptionEndAt
-	}
-	if o.SubscriptionFields != nil {
-		toSerialize["subscriptionFields"] = o.SubscriptionFields
 	}
 	if o.SubscriptionId != nil {
 		toSerialize["subscriptionId"] = o.SubscriptionId

@@ -50,6 +50,7 @@ const (
 	GBTUIHintShowTolerance                    GBTUIHint = "SHOW_TOLERANCE"
 	GBTUIHintAllowArrayFocus                  GBTUIHint = "ALLOW_ARRAY_FOCUS"
 	GBTUIHintShowInlineConfigInputs           GBTUIHint = "SHOW_INLINE_CONFIG_INPUTS"
+	GBTUIHintFocusOnVisible                   GBTUIHint = "FOCUS_ON_VISIBLE"
 	GBTUIHintUnknown                          GBTUIHint = "UNKNOWN"
 )
 
@@ -85,6 +86,7 @@ var AllowedGBTUIHintEnumValues = []GBTUIHint{
 	"SHOW_TOLERANCE",
 	"ALLOW_ARRAY_FOCUS",
 	"SHOW_INLINE_CONFIG_INPUTS",
+	"FOCUS_ON_VISIBLE",
 	"UNKNOWN",
 }
 

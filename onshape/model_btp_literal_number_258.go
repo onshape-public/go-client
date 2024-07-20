@@ -16,17 +16,18 @@ import (
 
 // BTPLiteralNumber258 struct for BTPLiteralNumber258
 type BTPLiteralNumber258 struct {
-	Atomic              *bool               `json:"atomic,omitempty"`
+	Atomic *bool `json:"atomic,omitempty"`
+	// Type of JSON object.
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
+	Integer             *bool               `json:"integer,omitempty"`
 	NodeId              *string             `json:"nodeId,omitempty"`
 	ShortDescriptor     *string             `json:"shortDescriptor,omitempty"`
 	SpaceAfter          *BTPSpace10         `json:"spaceAfter,omitempty"`
 	SpaceBefore         *BTPSpace10         `json:"spaceBefore,omitempty"`
 	SpaceDefault        *bool               `json:"spaceDefault,omitempty"`
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
-	Integer             *bool               `json:"integer,omitempty"`
 	Text                *string             `json:"text,omitempty"`
 	Value               *float64            `json:"value,omitempty"`
 }
@@ -174,6 +175,38 @@ func (o *BTPLiteralNumber258) HasEndSourceLocation() bool {
 // SetEndSourceLocation gets a reference to the given int32 and assigns it to the EndSourceLocation field.
 func (o *BTPLiteralNumber258) SetEndSourceLocation(v int32) {
 	o.EndSourceLocation = &v
+}
+
+// GetInteger returns the Integer field value if set, zero value otherwise.
+func (o *BTPLiteralNumber258) GetInteger() bool {
+	if o == nil || o.Integer == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Integer
+}
+
+// GetIntegerOk returns a tuple with the Integer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPLiteralNumber258) GetIntegerOk() (*bool, bool) {
+	if o == nil || o.Integer == nil {
+		return nil, false
+	}
+	return o.Integer, true
+}
+
+// HasInteger returns a boolean if a field has been set.
+func (o *BTPLiteralNumber258) HasInteger() bool {
+	if o != nil && o.Integer != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInteger gets a reference to the given bool and assigns it to the Integer field.
+func (o *BTPLiteralNumber258) SetInteger(v bool) {
+	o.Integer = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
@@ -368,38 +401,6 @@ func (o *BTPLiteralNumber258) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
 }
 
-// GetInteger returns the Integer field value if set, zero value otherwise.
-func (o *BTPLiteralNumber258) GetInteger() bool {
-	if o == nil || o.Integer == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Integer
-}
-
-// GetIntegerOk returns a tuple with the Integer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPLiteralNumber258) GetIntegerOk() (*bool, bool) {
-	if o == nil || o.Integer == nil {
-		return nil, false
-	}
-	return o.Integer, true
-}
-
-// HasInteger returns a boolean if a field has been set.
-func (o *BTPLiteralNumber258) HasInteger() bool {
-	if o != nil && o.Integer != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetInteger gets a reference to the given bool and assigns it to the Integer field.
-func (o *BTPLiteralNumber258) SetInteger(v bool) {
-	o.Integer = &v
-}
-
 // GetText returns the Text field value if set, zero value otherwise.
 func (o *BTPLiteralNumber258) GetText() string {
 	if o == nil || o.Text == nil {
@@ -478,6 +479,9 @@ func (o BTPLiteralNumber258) MarshalJSON() ([]byte, error) {
 	if o.EndSourceLocation != nil {
 		toSerialize["endSourceLocation"] = o.EndSourceLocation
 	}
+	if o.Integer != nil {
+		toSerialize["integer"] = o.Integer
+	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
@@ -495,9 +499,6 @@ func (o BTPLiteralNumber258) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
-	}
-	if o.Integer != nil {
-		toSerialize["integer"] = o.Integer
 	}
 	if o.Text != nil {
 		toSerialize["text"] = o.Text

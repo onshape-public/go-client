@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AnnotationsForElement** | Pointer to [**BTAnnotationElementDisplayData894**](BTAnnotationElementDisplayData894.md) |  | [optional] 
 **AssemblyReferences** | Pointer to [**[]BTSingleReferenceDisplayData1943**](BTSingleReferenceDisplayData1943.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -35,6 +36,31 @@ will change when the set of required properties is changed
 NewBTAssemblyReferencesDisplayData1562WithDefaults instantiates a new BTAssemblyReferencesDisplayData1562 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAnnotationsForElement
+
+`func (o *BTAssemblyReferencesDisplayData1562) GetAnnotationsForElement() BTAnnotationElementDisplayData894`
+
+GetAnnotationsForElement returns the AnnotationsForElement field if non-nil, zero value otherwise.
+
+### GetAnnotationsForElementOk
+
+`func (o *BTAssemblyReferencesDisplayData1562) GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool)`
+
+GetAnnotationsForElementOk returns a tuple with the AnnotationsForElement field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationsForElement
+
+`func (o *BTAssemblyReferencesDisplayData1562) SetAnnotationsForElement(v BTAnnotationElementDisplayData894)`
+
+SetAnnotationsForElement sets AnnotationsForElement field to given value.
+
+### HasAnnotationsForElement
+
+`func (o *BTAssemblyReferencesDisplayData1562) HasAnnotationsForElement() bool`
+
+HasAnnotationsForElement returns a boolean if a field has been set.
 
 ### GetAssemblyReferences
 

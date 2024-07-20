@@ -16,15 +16,15 @@ import (
 
 // BTMConfiguredValueByEnum1923 struct for BTMConfiguredValueByEnum1923
 type BTMConfiguredValueByEnum1923 struct {
-	BtType                   *string `json:"btType,omitempty"`
-	ConfigurationValueString *string `json:"configurationValueString,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion *string        `json:"importMicroversion,omitempty"`
-	NodeId             *string        `json:"nodeId,omitempty"`
-	Value              *BTMParameter1 `json:"value,omitempty"`
-	EnumName           *string        `json:"enumName,omitempty"`
-	EnumValue          *string        `json:"enumValue,omitempty"`
-	Namespace          *string        `json:"namespace,omitempty"`
+	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
+	NodeId                   *string        `json:"nodeId,omitempty"`
+	ConfigurationValueString *string        `json:"configurationValueString,omitempty"`
+	Value                    *BTMParameter1 `json:"value,omitempty"`
+	EnumName                 *string        `json:"enumName,omitempty"`
+	EnumValue                *string        `json:"enumValue,omitempty"`
+	Namespace                *string        `json:"namespace,omitempty"`
 }
 
 // NewBTMConfiguredValueByEnum1923 instantiates a new BTMConfiguredValueByEnum1923 object
@@ -74,38 +74,6 @@ func (o *BTMConfiguredValueByEnum1923) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTMConfiguredValueByEnum1923) SetBtType(v string) {
 	o.BtType = &v
-}
-
-// GetConfigurationValueString returns the ConfigurationValueString field value if set, zero value otherwise.
-func (o *BTMConfiguredValueByEnum1923) GetConfigurationValueString() string {
-	if o == nil || o.ConfigurationValueString == nil {
-		var ret string
-		return ret
-	}
-	return *o.ConfigurationValueString
-}
-
-// GetConfigurationValueStringOk returns a tuple with the ConfigurationValueString field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMConfiguredValueByEnum1923) GetConfigurationValueStringOk() (*string, bool) {
-	if o == nil || o.ConfigurationValueString == nil {
-		return nil, false
-	}
-	return o.ConfigurationValueString, true
-}
-
-// HasConfigurationValueString returns a boolean if a field has been set.
-func (o *BTMConfiguredValueByEnum1923) HasConfigurationValueString() bool {
-	if o != nil && o.ConfigurationValueString != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetConfigurationValueString gets a reference to the given string and assigns it to the ConfigurationValueString field.
-func (o *BTMConfiguredValueByEnum1923) SetConfigurationValueString(v string) {
-	o.ConfigurationValueString = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -170,6 +138,38 @@ func (o *BTMConfiguredValueByEnum1923) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTMConfiguredValueByEnum1923) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetConfigurationValueString returns the ConfigurationValueString field value if set, zero value otherwise.
+func (o *BTMConfiguredValueByEnum1923) GetConfigurationValueString() string {
+	if o == nil || o.ConfigurationValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConfigurationValueString
+}
+
+// GetConfigurationValueStringOk returns a tuple with the ConfigurationValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfiguredValueByEnum1923) GetConfigurationValueStringOk() (*string, bool) {
+	if o == nil || o.ConfigurationValueString == nil {
+		return nil, false
+	}
+	return o.ConfigurationValueString, true
+}
+
+// HasConfigurationValueString returns a boolean if a field has been set.
+func (o *BTMConfiguredValueByEnum1923) HasConfigurationValueString() bool {
+	if o != nil && o.ConfigurationValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigurationValueString gets a reference to the given string and assigns it to the ConfigurationValueString field.
+func (o *BTMConfiguredValueByEnum1923) SetConfigurationValueString(v string) {
+	o.ConfigurationValueString = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -305,14 +305,14 @@ func (o BTMConfiguredValueByEnum1923) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
-	if o.ConfigurationValueString != nil {
-		toSerialize["configurationValueString"] = o.ConfigurationValueString
-	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.ConfigurationValueString != nil {
+		toSerialize["configurationValueString"] = o.ConfigurationValueString
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value

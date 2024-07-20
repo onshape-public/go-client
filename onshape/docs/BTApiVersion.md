@@ -19,6 +19,8 @@
 
 * `BTApiVersionV7SketchEndpointIncludesSolveStatus` (value: `"V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"`)
 
+* `BTApiVersionV8RestoreNoopNoNewMicroversion` (value: `"V8_RESTORE_NOOP_NO_NEW_MICROVERSION"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

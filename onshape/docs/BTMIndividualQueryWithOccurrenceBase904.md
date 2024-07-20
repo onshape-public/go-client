@@ -5,17 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
-**DeterministicIdList** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
-**DeterministicIds** | Pointer to **[]string** |  | [optional] 
 **FullPathAsString** | Pointer to **string** |  | [optional] 
-**GenerateSectionEntityQuery** | Pointer to **bool** |  | [optional] 
-**GeneratedSectionQueryId** | Pointer to **string** |  | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Path** | Pointer to **[]string** |  | [optional] 
-**Query** | Pointer to [**BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
-**QueryString** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -61,56 +53,6 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
-### GetDeterministicIdList
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetDeterministicIdList() BTMIndividualQueryBase139`
-
-GetDeterministicIdList returns the DeterministicIdList field if non-nil, zero value otherwise.
-
-### GetDeterministicIdListOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetDeterministicIdListOk() (*BTMIndividualQueryBase139, bool)`
-
-GetDeterministicIdListOk returns a tuple with the DeterministicIdList field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeterministicIdList
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetDeterministicIdList(v BTMIndividualQueryBase139)`
-
-SetDeterministicIdList sets DeterministicIdList field to given value.
-
-### HasDeterministicIdList
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasDeterministicIdList() bool`
-
-HasDeterministicIdList returns a boolean if a field has been set.
-
-### GetDeterministicIds
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetDeterministicIds() []string`
-
-GetDeterministicIds returns the DeterministicIds field if non-nil, zero value otherwise.
-
-### GetDeterministicIdsOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetDeterministicIdsOk() (*[]string, bool)`
-
-GetDeterministicIdsOk returns a tuple with the DeterministicIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeterministicIds
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetDeterministicIds(v []string)`
-
-SetDeterministicIds sets DeterministicIds field to given value.
-
-### HasDeterministicIds
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasDeterministicIds() bool`
-
-HasDeterministicIds returns a boolean if a field has been set.
-
 ### GetFullPathAsString
 
 `func (o *BTMIndividualQueryWithOccurrenceBase904) GetFullPathAsString() string`
@@ -135,106 +77,6 @@ SetFullPathAsString sets FullPathAsString field to given value.
 `func (o *BTMIndividualQueryWithOccurrenceBase904) HasFullPathAsString() bool`
 
 HasFullPathAsString returns a boolean if a field has been set.
-
-### GetGenerateSectionEntityQuery
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGenerateSectionEntityQuery() bool`
-
-GetGenerateSectionEntityQuery returns the GenerateSectionEntityQuery field if non-nil, zero value otherwise.
-
-### GetGenerateSectionEntityQueryOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGenerateSectionEntityQueryOk() (*bool, bool)`
-
-GetGenerateSectionEntityQueryOk returns a tuple with the GenerateSectionEntityQuery field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGenerateSectionEntityQuery
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetGenerateSectionEntityQuery(v bool)`
-
-SetGenerateSectionEntityQuery sets GenerateSectionEntityQuery field to given value.
-
-### HasGenerateSectionEntityQuery
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasGenerateSectionEntityQuery() bool`
-
-HasGenerateSectionEntityQuery returns a boolean if a field has been set.
-
-### GetGeneratedSectionQueryId
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGeneratedSectionQueryId() string`
-
-GetGeneratedSectionQueryId returns the GeneratedSectionQueryId field if non-nil, zero value otherwise.
-
-### GetGeneratedSectionQueryIdOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetGeneratedSectionQueryIdOk() (*string, bool)`
-
-GetGeneratedSectionQueryIdOk returns a tuple with the GeneratedSectionQueryId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGeneratedSectionQueryId
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetGeneratedSectionQueryId(v string)`
-
-SetGeneratedSectionQueryId sets GeneratedSectionQueryId field to given value.
-
-### HasGeneratedSectionQueryId
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasGeneratedSectionQueryId() bool`
-
-HasGeneratedSectionQueryId returns a boolean if a field has been set.
-
-### GetImportMicroversion
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
 
 ### GetOccurrence
 
@@ -285,56 +127,6 @@ SetPath sets Path field to given value.
 `func (o *BTMIndividualQueryWithOccurrenceBase904) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
-
-### GetQuery
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetQuery() BTMIndividualQueryBase139`
-
-GetQuery returns the Query field if non-nil, zero value otherwise.
-
-### GetQueryOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetQueryOk() (*BTMIndividualQueryBase139, bool)`
-
-GetQueryOk returns a tuple with the Query field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuery
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetQuery(v BTMIndividualQueryBase139)`
-
-SetQuery sets Query field to given value.
-
-### HasQuery
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasQuery() bool`
-
-HasQuery returns a boolean if a field has been set.
-
-### GetQueryString
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetQueryString() string`
-
-GetQueryString returns the QueryString field if non-nil, zero value otherwise.
-
-### GetQueryStringOk
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) GetQueryStringOk() (*string, bool)`
-
-GetQueryStringOk returns a tuple with the QueryString field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQueryString
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) SetQueryString(v string)`
-
-SetQueryString sets QueryString field to given value.
-
-### HasQueryString
-
-`func (o *BTMIndividualQueryWithOccurrenceBase904) HasQueryString() bool`
-
-HasQueryString returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

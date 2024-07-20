@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AnnotationsForElement** | Pointer to [**BTAnnotationElementDisplayData894**](BTAnnotationElementDisplayData894.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **FromFullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
@@ -36,6 +37,31 @@ will change when the set of required properties is changed
 NewBTPartStudioDisplayDataBase2751WithDefaults instantiates a new BTPartStudioDisplayDataBase2751 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAnnotationsForElement
+
+`func (o *BTPartStudioDisplayDataBase2751) GetAnnotationsForElement() BTAnnotationElementDisplayData894`
+
+GetAnnotationsForElement returns the AnnotationsForElement field if non-nil, zero value otherwise.
+
+### GetAnnotationsForElementOk
+
+`func (o *BTPartStudioDisplayDataBase2751) GetAnnotationsForElementOk() (*BTAnnotationElementDisplayData894, bool)`
+
+GetAnnotationsForElementOk returns a tuple with the AnnotationsForElement field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationsForElement
+
+`func (o *BTPartStudioDisplayDataBase2751) SetAnnotationsForElement(v BTAnnotationElementDisplayData894)`
+
+SetAnnotationsForElement sets AnnotationsForElement field to given value.
+
+### HasAnnotationsForElement
+
+`func (o *BTPartStudioDisplayDataBase2751) HasAnnotationsForElement() bool`
+
+HasAnnotationsForElement returns a boolean if a field has been set.
 
 ### GetBtType
 

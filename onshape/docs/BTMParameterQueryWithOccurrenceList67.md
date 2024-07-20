@@ -5,10 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
-**ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
-**NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
 **Occurrences** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**ParameterId** | Pointer to **string** | Unique ID of the parameter. | [optional] 
 **Queries** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
 
 ## Methods
@@ -55,56 +52,6 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
-### GetImportMicroversion
-
-`func (o *BTMParameterQueryWithOccurrenceList67) GetImportMicroversion() string`
-
-GetImportMicroversion returns the ImportMicroversion field if non-nil, zero value otherwise.
-
-### GetImportMicroversionOk
-
-`func (o *BTMParameterQueryWithOccurrenceList67) GetImportMicroversionOk() (*string, bool)`
-
-GetImportMicroversionOk returns a tuple with the ImportMicroversion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportMicroversion
-
-`func (o *BTMParameterQueryWithOccurrenceList67) SetImportMicroversion(v string)`
-
-SetImportMicroversion sets ImportMicroversion field to given value.
-
-### HasImportMicroversion
-
-`func (o *BTMParameterQueryWithOccurrenceList67) HasImportMicroversion() bool`
-
-HasImportMicroversion returns a boolean if a field has been set.
-
-### GetNodeId
-
-`func (o *BTMParameterQueryWithOccurrenceList67) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTMParameterQueryWithOccurrenceList67) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTMParameterQueryWithOccurrenceList67) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTMParameterQueryWithOccurrenceList67) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
-
 ### GetOccurrences
 
 `func (o *BTMParameterQueryWithOccurrenceList67) GetOccurrences() []BTOccurrence74`
@@ -129,31 +76,6 @@ SetOccurrences sets Occurrences field to given value.
 `func (o *BTMParameterQueryWithOccurrenceList67) HasOccurrences() bool`
 
 HasOccurrences returns a boolean if a field has been set.
-
-### GetParameterId
-
-`func (o *BTMParameterQueryWithOccurrenceList67) GetParameterId() string`
-
-GetParameterId returns the ParameterId field if non-nil, zero value otherwise.
-
-### GetParameterIdOk
-
-`func (o *BTMParameterQueryWithOccurrenceList67) GetParameterIdOk() (*string, bool)`
-
-GetParameterIdOk returns a tuple with the ParameterId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParameterId
-
-`func (o *BTMParameterQueryWithOccurrenceList67) SetParameterId(v string)`
-
-SetParameterId sets ParameterId field to given value.
-
-### HasParameterId
-
-`func (o *BTMParameterQueryWithOccurrenceList67) HasParameterId() bool`
-
-HasParameterId returns a boolean if a field has been set.
 
 ### GetQueries
 

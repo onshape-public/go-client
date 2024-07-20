@@ -16,18 +16,17 @@ import (
 
 // BTPLiteralMapEntry257 struct for BTPLiteralMapEntry257
 type BTPLiteralMapEntry257 struct {
-	Atomic *bool `json:"atomic,omitempty"`
-	// Type of JSON object.
+	Atomic              *bool                  `json:"atomic,omitempty"`
 	BtType              *string                `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType    `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32                 `json:"endSourceLocation,omitempty"`
-	Key                 *BTPPropertyAccessor23 `json:"key,omitempty"`
 	NodeId              *string                `json:"nodeId,omitempty"`
 	ShortDescriptor     *string                `json:"shortDescriptor,omitempty"`
 	SpaceAfter          *BTPSpace10            `json:"spaceAfter,omitempty"`
 	SpaceBefore         *BTPSpace10            `json:"spaceBefore,omitempty"`
 	SpaceDefault        *bool                  `json:"spaceDefault,omitempty"`
 	StartSourceLocation *int32                 `json:"startSourceLocation,omitempty"`
+	Key                 *BTPPropertyAccessor23 `json:"key,omitempty"`
 	Value               *BTPExpression9        `json:"value,omitempty"`
 }
 
@@ -174,38 +173,6 @@ func (o *BTPLiteralMapEntry257) HasEndSourceLocation() bool {
 // SetEndSourceLocation gets a reference to the given int32 and assigns it to the EndSourceLocation field.
 func (o *BTPLiteralMapEntry257) SetEndSourceLocation(v int32) {
 	o.EndSourceLocation = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *BTPLiteralMapEntry257) GetKey() BTPPropertyAccessor23 {
-	if o == nil || o.Key == nil {
-		var ret BTPPropertyAccessor23
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPLiteralMapEntry257) GetKeyOk() (*BTPPropertyAccessor23, bool) {
-	if o == nil || o.Key == nil {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// HasKey returns a boolean if a field has been set.
-func (o *BTPLiteralMapEntry257) HasKey() bool {
-	if o != nil && o.Key != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetKey gets a reference to the given BTPPropertyAccessor23 and assigns it to the Key field.
-func (o *BTPLiteralMapEntry257) SetKey(v BTPPropertyAccessor23) {
-	o.Key = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
@@ -400,6 +367,38 @@ func (o *BTPLiteralMapEntry257) SetStartSourceLocation(v int32) {
 	o.StartSourceLocation = &v
 }
 
+// GetKey returns the Key field value if set, zero value otherwise.
+func (o *BTPLiteralMapEntry257) GetKey() BTPPropertyAccessor23 {
+	if o == nil || o.Key == nil {
+		var ret BTPPropertyAccessor23
+		return ret
+	}
+	return *o.Key
+}
+
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPLiteralMapEntry257) GetKeyOk() (*BTPPropertyAccessor23, bool) {
+	if o == nil || o.Key == nil {
+		return nil, false
+	}
+	return o.Key, true
+}
+
+// HasKey returns a boolean if a field has been set.
+func (o *BTPLiteralMapEntry257) HasKey() bool {
+	if o != nil && o.Key != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetKey gets a reference to the given BTPPropertyAccessor23 and assigns it to the Key field.
+func (o *BTPLiteralMapEntry257) SetKey(v BTPPropertyAccessor23) {
+	o.Key = &v
+}
+
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *BTPLiteralMapEntry257) GetValue() BTPExpression9 {
 	if o == nil || o.Value == nil {
@@ -446,9 +445,6 @@ func (o BTPLiteralMapEntry257) MarshalJSON() ([]byte, error) {
 	if o.EndSourceLocation != nil {
 		toSerialize["endSourceLocation"] = o.EndSourceLocation
 	}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
@@ -466,6 +462,9 @@ func (o BTPLiteralMapEntry257) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartSourceLocation != nil {
 		toSerialize["startSourceLocation"] = o.StartSourceLocation
+	}
+	if o.Key != nil {
+		toSerialize["key"] = o.Key
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
