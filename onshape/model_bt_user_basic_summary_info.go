@@ -23,10 +23,11 @@ type BTUserBasicSummaryInfo struct {
 	// Name of the resource.
 	Name *string `json:"name,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef  *string `json:"viewRef,omitempty"`
-	Image    *string `json:"image,omitempty"`
-	State    *int32  `json:"state,omitempty"`
-	JsonType string  `json:"jsonType"`
+	ViewRef          *string `json:"viewRef,omitempty"`
+	Image            *string `json:"image,omitempty"`
+	IsOnshapeSupport *bool   `json:"isOnshapeSupport,omitempty"`
+	State            *int32  `json:"state,omitempty"`
+	JsonType         string  `json:"jsonType"`
 }
 
 // NewBTUserBasicSummaryInfo instantiates a new BTUserBasicSummaryInfo object
@@ -207,6 +208,38 @@ func (o *BTUserBasicSummaryInfo) SetImage(v string) {
 	o.Image = &v
 }
 
+// GetIsOnshapeSupport returns the IsOnshapeSupport field value if set, zero value otherwise.
+func (o *BTUserBasicSummaryInfo) GetIsOnshapeSupport() bool {
+	if o == nil || o.IsOnshapeSupport == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsOnshapeSupport
+}
+
+// GetIsOnshapeSupportOk returns a tuple with the IsOnshapeSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserBasicSummaryInfo) GetIsOnshapeSupportOk() (*bool, bool) {
+	if o == nil || o.IsOnshapeSupport == nil {
+		return nil, false
+	}
+	return o.IsOnshapeSupport, true
+}
+
+// HasIsOnshapeSupport returns a boolean if a field has been set.
+func (o *BTUserBasicSummaryInfo) HasIsOnshapeSupport() bool {
+	if o != nil && o.IsOnshapeSupport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsOnshapeSupport gets a reference to the given bool and assigns it to the IsOnshapeSupport field.
+func (o *BTUserBasicSummaryInfo) SetIsOnshapeSupport(v bool) {
+	o.IsOnshapeSupport = &v
+}
+
 // GetState returns the State field value if set, zero value otherwise.
 func (o *BTUserBasicSummaryInfo) GetState() int32 {
 	if o == nil || o.State == nil {
@@ -279,6 +312,9 @@ func (o BTUserBasicSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Image != nil {
 		toSerialize["image"] = o.Image
+	}
+	if o.IsOnshapeSupport != nil {
+		toSerialize["isOnshapeSupport"] = o.IsOnshapeSupport
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

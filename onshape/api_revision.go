@@ -977,6 +977,7 @@ type ApiGetRevisionHistoryInCompanyByPartIdRequest struct {
 	linkDocumentId       *string
 	fillApprovers        *bool
 	fillExportPermission *bool
+	supportChangeType    *bool
 }
 
 func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) Configuration(configuration string) ApiGetRevisionHistoryInCompanyByPartIdRequest {
@@ -996,6 +997,11 @@ func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) FillApprovers(fillApprove
 
 func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) FillExportPermission(fillExportPermission bool) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	r.fillExportPermission = &fillExportPermission
+	return r
+}
+
+func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) SupportChangeType(supportChangeType bool) ApiGetRevisionHistoryInCompanyByPartIdRequest {
+	r.supportChangeType = &supportChangeType
 	return r
 }
 
@@ -1067,6 +1073,9 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartIdExecute(r ApiGet
 	}
 	if r.fillExportPermission != nil {
 		localVarQueryParams.Add("fillExportPermission", parameterToString(*r.fillExportPermission, ""))
+	}
+	if r.supportChangeType != nil {
+		localVarQueryParams.Add("supportChangeType", parameterToString(*r.supportChangeType, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

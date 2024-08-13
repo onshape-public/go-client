@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.184.39944-2739b4d5158f
+  version: 1.185.40946-d4da1bcb7ec5
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -15364,6 +15364,14 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: supportChangeType
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         default:
           content:
@@ -16114,21 +16122,37 @@ paths:
         \ with the given configuration."
       operationId: getElementThumbnailWithApiConfiguration
       parameters:
-      - explode: false
+      - description: The id of the document in which to perform the operation.
+        explode: false
         in: path
         name: did
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: The id of the workspace in which to perform the operation.
+        explode: false
         in: path
         name: wid
         required: true
         schema:
           type: string
         style: simple
-      - explode: false
+      - description: The id of the element in which to perform the operation.
+        explode: false
         in: path
         name: eid
         required: true
@@ -38847,6 +38871,7 @@ components:
           configuration: configuration
           partId: partId
           releaseName: releaseName
+          partIdentity: partIdentity
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -38890,6 +38915,7 @@ components:
           configuration: configuration
           partId: partId
           releaseName: releaseName
+          partIdentity: partIdentity
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -39742,6 +39768,58 @@ components:
         topLevel:
           type: string
         version:
+          type: string
+      type: object
+    BTLockedAtCurrentPosition-4006:
+      allOf:
+      - $ref: '#/components/schemas/BTLockedSubAssembly-4590'
+      - $ref: '#/components/schemas/BTLockedAtCurrentPosition_4006_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTLockedAtNamedPosition-3201:
+      allOf:
+      - $ref: '#/components/schemas/BTLockedSubAssembly-4590'
+      - $ref: '#/components/schemas/BTLockedAtNamedPosition_3201_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTLockedAtSubAssemblyPosition-3885:
+      allOf:
+      - $ref: '#/components/schemas/BTLockedSubAssembly-4590'
+      - $ref: '#/components/schemas/BTLockedAtSubAssemblyPosition_3885_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTLockedSubAssembly-4590:
+      discriminator:
+        mapping:
+          BTLockedAtCurrentPosition-4006: '#/components/schemas/BTLockedAtCurrentPosition-4006'
+          BTLockedAtNamedPosition-3201: '#/components/schemas/BTLockedAtNamedPosition-3201'
+          BTLockedAtSubAssemblyPosition-3885: '#/components/schemas/BTLockedAtSubAssemblyPosition-3885'
+        propertyName: btType
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+        lockType:
+          $ref: '#/components/schemas/GBTSubAssemblyLockType'
+        lockedSubAssemblyOutputInfo:
+          $ref: '#/components/schemas/BTRigidOrLockedSubAssemblyOutputInfo-3860'
+      type: object
+    BTLockedSubAssemblyOutputInfo-3511:
+      allOf:
+      - $ref: '#/components/schemas/BTRigidOrLockedSubAssemblyOutputInfo-3860'
+      - $ref: '#/components/schemas/BTLockedSubAssemblyOutputInfo_3511_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTLoginParams:
@@ -43508,6 +43586,8 @@ components:
           type: boolean
         isHidden:
           type: boolean
+        lockInfo:
+          $ref: '#/components/schemas/BTLockedSubAssembly-4590'
         nodeId:
           type: string
         occurrence:
@@ -48365,6 +48445,7 @@ components:
         id: id
         isActive: true
         viewRef: https://openapi-generator.tech
+        isIndented: true
         templateGroupId: templateGroupId
       properties:
         companyId:
@@ -48379,6 +48460,8 @@ components:
         isActive:
           type: boolean
         isAllCaps:
+          type: boolean
+        isIndented:
           type: boolean
         name:
           description: Name of the resource.
@@ -48405,10 +48488,13 @@ components:
         - propertyColumns
         - propertyColumns
         name: name
+        isIndented: true
       properties:
         companyId:
           type: string
         isAllCaps:
+          type: boolean
+        isIndented:
           type: boolean
         name:
           type: string
@@ -50747,6 +50833,7 @@ components:
         configuration: configuration
         partId: partId
         releaseName: releaseName
+        partIdentity: partIdentity
         approvers:
         - date: 2000-01-23T04:56:07.000+00:00
           name: name
@@ -50864,6 +50951,8 @@ components:
           type: string
         partId:
           type: string
+        partIdentity:
+          type: string
         partNumber:
           description: The Part Number with which the item was revised.
           type: string
@@ -50910,6 +50999,7 @@ components:
           configuration: configuration
           partId: partId
           releaseName: releaseName
+          partIdentity: partIdentity
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -50953,6 +51043,7 @@ components:
           configuration: configuration
           partId: partId
           releaseName: releaseName
+          partIdentity: partIdentity
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -51025,6 +51116,22 @@ components:
         btType:
           description: Type of JSON object.
           type: string
+      type: object
+    BTRigidOrLockedSubAssemblyOutputInfo-3860:
+      discriminator:
+        mapping:
+          BTLockedSubAssemblyOutputInfo-3511: '#/components/schemas/BTLockedSubAssemblyOutputInfo-3511'
+        propertyName: btType
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+        locked:
+          type: boolean
+        rigid:
+          type: boolean
+        syncedOutputMVID:
+          $ref: '#/components/schemas/BTMicroversionId-366'
       type: object
     BTRole:
       enum:
@@ -51411,6 +51518,7 @@ components:
       - comment_task
       - generic_task
       - release_task
+      - app_store_entry
       type: string
     BTSectionGeometryFilter-4161:
       allOf:
@@ -53726,6 +53834,7 @@ components:
             configuration: configuration
             partId: partId
             releaseName: releaseName
+            partIdentity: partIdentity
             approvers:
             - date: 2000-01-23T04:56:07.000+00:00
               name: name
@@ -53774,6 +53883,7 @@ components:
             configuration: configuration
             partId: partId
             releaseName: releaseName
+            partIdentity: partIdentity
             approvers:
             - date: 2000-01-23T04:56:07.000+00:00
               name: name
@@ -53835,6 +53945,7 @@ components:
           configuration: configuration
           partId: partId
           releaseName: releaseName
+          partIdentity: partIdentity
           approvers:
           - date: 2000-01-23T04:56:07.000+00:00
             name: name
@@ -68990,6 +69101,15 @@ components:
       - CONFIG_TOO_MANY_PARAMETERS
       - REFERENCE_REPAIR_MISSING_CONFIGURATION
       - SKETCH_CANNOT_MAKE_2_POINTS_BEZIER
+      - PART_INSTANCE_SELECTED_IN_MULTIPLE_GENERATIVE_DESIGNS
+      - CURVE_PATTERN_LOCK_FACES_INTERSECTION_FAILED
+      - SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_DENSITY
+      - SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_POISSONS_RATIO
+      - SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_YOUNGS_MODULUS
+      - SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_TENSILE_YIELD_STRENGTH
+      - SIMULATION_ASSEMBLY_HAS_UNSUPPORTED_MATES
+      - ASSEMBLY_NAMED_POSITIONS_OUTSIDE_MATE_LIMIT
+      - ASSEMBLY_NAMED_POSITIONS_SUBASSEMBLY_OUTSIDE_MATE_LIMIT
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -69304,6 +69424,13 @@ components:
       - ANY_SKETCH_OBJECT
       - USER_ENTITY
       - WHOLE_SKETCH
+      - UNKNOWN
+      type: string
+    GBTSubAssemblyLockType:
+      enum:
+      - SUB_ASSEMBLY_POSITION
+      - CURRENT_POSITION
+      - NAMED_POSIITION
       - UNKNOWN
       type: string
     GBTSurfaceType:
@@ -102262,6 +102389,34 @@ components:
           type: number
       type: object
       example: null
+    BTLockedAtCurrentPosition_4006_allOf:
+      properties:
+        btType:
+          type: string
+      type: object
+      example: null
+    BTLockedAtNamedPosition_3201_allOf:
+      properties:
+        btType:
+          type: string
+        namedPositionId:
+          type: string
+      type: object
+      example: null
+    BTLockedAtSubAssemblyPosition_3885_allOf:
+      properties:
+        btType:
+          type: string
+      type: object
+      example: null
+    BTLockedSubAssemblyOutputInfo_3511_allOf:
+      properties:
+        btType:
+          type: string
+        lockInfo:
+          $ref: '#/components/schemas/BTLockedSubAssembly-4590'
+      type: object
+      example: null
     BTMAnnotation_4664_allOf:
       properties:
         annotationType:
@@ -102339,6 +102494,11 @@ components:
           items:
             $ref: '#/components/schemas/BTMConfigurationParameter-819'
           type: array
+        cosmeticParameterIds:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
         currentConfiguration:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
@@ -105588,6 +105748,8 @@ components:
           type: string
         image:
           type: string
+        isOnshapeSupport:
+          type: boolean
         name:
           description: Name of the resource.
           type: string

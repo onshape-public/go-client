@@ -23,6 +23,7 @@ type BTOccurrenceData75 struct {
 	Hidden                          *bool                                  `json:"hidden,omitempty"`
 	IsFixed                         *bool                                  `json:"isFixed,omitempty"`
 	IsHidden                        *bool                                  `json:"isHidden,omitempty"`
+	LockInfo                        *BTLockedSubAssembly4590               `json:"lockInfo,omitempty"`
 	NodeId                          *string                                `json:"nodeId,omitempty"`
 	Occurrence                      *BTOccurrence74                        `json:"occurrence,omitempty"`
 	Transform                       *BTBSMatrix386                         `json:"transform,omitempty"`
@@ -237,6 +238,38 @@ func (o *BTOccurrenceData75) SetIsHidden(v bool) {
 	o.IsHidden = &v
 }
 
+// GetLockInfo returns the LockInfo field value if set, zero value otherwise.
+func (o *BTOccurrenceData75) GetLockInfo() BTLockedSubAssembly4590 {
+	if o == nil || o.LockInfo == nil {
+		var ret BTLockedSubAssembly4590
+		return ret
+	}
+	return *o.LockInfo
+}
+
+// GetLockInfoOk returns a tuple with the LockInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrenceData75) GetLockInfoOk() (*BTLockedSubAssembly4590, bool) {
+	if o == nil || o.LockInfo == nil {
+		return nil, false
+	}
+	return o.LockInfo, true
+}
+
+// HasLockInfo returns a boolean if a field has been set.
+func (o *BTOccurrenceData75) HasLockInfo() bool {
+	if o != nil && o.LockInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLockInfo gets a reference to the given BTLockedSubAssembly4590 and assigns it to the LockInfo field.
+func (o *BTOccurrenceData75) SetLockInfo(v BTLockedSubAssembly4590) {
+	o.LockInfo = &v
+}
+
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *BTOccurrenceData75) GetNodeId() string {
 	if o == nil || o.NodeId == nil {
@@ -352,6 +385,9 @@ func (o BTOccurrenceData75) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsHidden != nil {
 		toSerialize["isHidden"] = o.IsHidden
+	}
+	if o.LockInfo != nil {
+		toSerialize["lockInfo"] = o.LockInfo
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId

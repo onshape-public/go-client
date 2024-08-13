@@ -20,23 +20,24 @@ type BTSearchEntityType string
 
 // List of BTSearchEntityType
 const (
-	BTSearchEntityTypeUnknown     BTSearchEntityType = "unknown"
-	BTSearchEntityTypeCapability  BTSearchEntityType = "capability"
-	BTSearchEntityTypeCompany     BTSearchEntityType = "company"
-	BTSearchEntityTypeDocument    BTSearchEntityType = "document"
-	BTSearchEntityTypeElement     BTSearchEntityType = "element"
-	BTSearchEntityTypeFriend      BTSearchEntityType = "friend"
-	BTSearchEntityTypeItem        BTSearchEntityType = "item"
-	BTSearchEntityTypePart        BTSearchEntityType = "part"
-	BTSearchEntityTypeTeam        BTSearchEntityType = "team"
-	BTSearchEntityTypeUser        BTSearchEntityType = "user"
-	BTSearchEntityTypeVersion     BTSearchEntityType = "version"
-	BTSearchEntityTypeWorkspace   BTSearchEntityType = "workspace"
-	BTSearchEntityTypeProject     BTSearchEntityType = "project"
-	BTSearchEntityTypePublication BTSearchEntityType = "publication"
-	BTSearchEntityTypeCommentTask BTSearchEntityType = "comment_task"
-	BTSearchEntityTypeGenericTask BTSearchEntityType = "generic_task"
-	BTSearchEntityTypeReleaseTask BTSearchEntityType = "release_task"
+	BTSearchEntityTypeUnknown       BTSearchEntityType = "unknown"
+	BTSearchEntityTypeCapability    BTSearchEntityType = "capability"
+	BTSearchEntityTypeCompany       BTSearchEntityType = "company"
+	BTSearchEntityTypeDocument      BTSearchEntityType = "document"
+	BTSearchEntityTypeElement       BTSearchEntityType = "element"
+	BTSearchEntityTypeFriend        BTSearchEntityType = "friend"
+	BTSearchEntityTypeItem          BTSearchEntityType = "item"
+	BTSearchEntityTypePart          BTSearchEntityType = "part"
+	BTSearchEntityTypeTeam          BTSearchEntityType = "team"
+	BTSearchEntityTypeUser          BTSearchEntityType = "user"
+	BTSearchEntityTypeVersion       BTSearchEntityType = "version"
+	BTSearchEntityTypeWorkspace     BTSearchEntityType = "workspace"
+	BTSearchEntityTypeProject       BTSearchEntityType = "project"
+	BTSearchEntityTypePublication   BTSearchEntityType = "publication"
+	BTSearchEntityTypeCommentTask   BTSearchEntityType = "comment_task"
+	BTSearchEntityTypeGenericTask   BTSearchEntityType = "generic_task"
+	BTSearchEntityTypeReleaseTask   BTSearchEntityType = "release_task"
+	BTSearchEntityTypeAppStoreEntry BTSearchEntityType = "app_store_entry"
 )
 
 // All allowed values of BTSearchEntityType enum
@@ -58,6 +59,7 @@ var AllowedBTSearchEntityTypeEnumValues = []BTSearchEntityType{
 	"comment_task",
 	"generic_task",
 	"release_task",
+	"app_store_entry",
 }
 
 func (v *BTSearchEntityType) UnmarshalJSON(src []byte) error {

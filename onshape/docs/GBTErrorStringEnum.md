@@ -3043,6 +3043,24 @@
 
 * `GBTErrorStringEnumSketchCannotMake2PointsBezier` (value: `"SKETCH_CANNOT_MAKE_2_POINTS_BEZIER"`)
 
+* `GBTErrorStringEnumPartInstanceSelectedInMultipleGenerativeDesigns` (value: `"PART_INSTANCE_SELECTED_IN_MULTIPLE_GENERATIVE_DESIGNS"`)
+
+* `GBTErrorStringEnumCurvePatternLockFacesIntersectionFailed` (value: `"CURVE_PATTERN_LOCK_FACES_INTERSECTION_FAILED"`)
+
+* `GBTErrorStringEnumSimulationMaterialLacksRequiredPropertyDensity` (value: `"SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_DENSITY"`)
+
+* `GBTErrorStringEnumSimulationMaterialLacksRequiredPropertyPoissonsRatio` (value: `"SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_POISSONS_RATIO"`)
+
+* `GBTErrorStringEnumSimulationMaterialLacksRequiredPropertyYoungsModulus` (value: `"SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_YOUNGS_MODULUS"`)
+
+* `GBTErrorStringEnumSimulationMaterialLacksRequiredPropertyTensileYieldStrength` (value: `"SIMULATION_MATERIAL_LACKS_REQUIRED_PROPERTY_TENSILE_YIELD_STRENGTH"`)
+
+* `GBTErrorStringEnumSimulationAssemblyHasUnsupportedMates` (value: `"SIMULATION_ASSEMBLY_HAS_UNSUPPORTED_MATES"`)
+
+* `GBTErrorStringEnumAssemblyNamedPositionsOutsideMateLimit` (value: `"ASSEMBLY_NAMED_POSITIONS_OUTSIDE_MATE_LIMIT"`)
+
+* `GBTErrorStringEnumAssemblyNamedPositionsSubassemblyOutsideMateLimit` (value: `"ASSEMBLY_NAMED_POSITIONS_SUBASSEMBLY_OUTSIDE_MATE_LIMIT"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

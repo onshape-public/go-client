@@ -18,6 +18,7 @@ import (
 type BTPropertiesTableTemplateParams struct {
 	CompanyId       *string                        `json:"companyId,omitempty"`
 	IsAllCaps       *bool                          `json:"isAllCaps,omitempty"`
+	IsIndented      *bool                          `json:"isIndented,omitempty"`
 	Name            *string                        `json:"name,omitempty"`
 	PropertyColumns []string                       `json:"propertyColumns,omitempty"`
 	TableType       *BTPropertiesTableTemplateType `json:"tableType,omitempty"`
@@ -102,6 +103,38 @@ func (o *BTPropertiesTableTemplateParams) HasIsAllCaps() bool {
 // SetIsAllCaps gets a reference to the given bool and assigns it to the IsAllCaps field.
 func (o *BTPropertiesTableTemplateParams) SetIsAllCaps(v bool) {
 	o.IsAllCaps = &v
+}
+
+// GetIsIndented returns the IsIndented field value if set, zero value otherwise.
+func (o *BTPropertiesTableTemplateParams) GetIsIndented() bool {
+	if o == nil || o.IsIndented == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsIndented
+}
+
+// GetIsIndentedOk returns a tuple with the IsIndented field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPropertiesTableTemplateParams) GetIsIndentedOk() (*bool, bool) {
+	if o == nil || o.IsIndented == nil {
+		return nil, false
+	}
+	return o.IsIndented, true
+}
+
+// HasIsIndented returns a boolean if a field has been set.
+func (o *BTPropertiesTableTemplateParams) HasIsIndented() bool {
+	if o != nil && o.IsIndented != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsIndented gets a reference to the given bool and assigns it to the IsIndented field.
+func (o *BTPropertiesTableTemplateParams) SetIsIndented(v bool) {
+	o.IsIndented = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -207,6 +240,9 @@ func (o BTPropertiesTableTemplateParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsAllCaps != nil {
 		toSerialize["isAllCaps"] = o.IsAllCaps
+	}
+	if o.IsIndented != nil {
+		toSerialize["isIndented"] = o.IsIndented
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

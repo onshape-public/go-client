@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConfigurationParameters** | Pointer to [**[]BTMConfigurationParameter819**](BTMConfigurationParameter819.md) |  | [optional] 
+**CosmeticParameterIds** | Pointer to **[]string** |  | [optional] 
 **CurrentConfiguration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **CurrentFSValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 **DefaultConfigurationValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
@@ -78,6 +79,31 @@ SetConfigurationParameters sets ConfigurationParameters field to given value.
 `func (o *BTMConfigurationData1560) HasConfigurationParameters() bool`
 
 HasConfigurationParameters returns a boolean if a field has been set.
+
+### GetCosmeticParameterIds
+
+`func (o *BTMConfigurationData1560) GetCosmeticParameterIds() []string`
+
+GetCosmeticParameterIds returns the CosmeticParameterIds field if non-nil, zero value otherwise.
+
+### GetCosmeticParameterIdsOk
+
+`func (o *BTMConfigurationData1560) GetCosmeticParameterIdsOk() (*[]string, bool)`
+
+GetCosmeticParameterIdsOk returns a tuple with the CosmeticParameterIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCosmeticParameterIds
+
+`func (o *BTMConfigurationData1560) SetCosmeticParameterIds(v []string)`
+
+SetCosmeticParameterIds sets CosmeticParameterIds field to given value.
+
+### HasCosmeticParameterIds
+
+`func (o *BTMConfigurationData1560) HasCosmeticParameterIds() bool`
+
+HasCosmeticParameterIds returns a boolean if a field has been set.
 
 ### GetCurrentConfiguration
 

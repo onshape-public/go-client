@@ -21,6 +21,7 @@ type BTMConfigurationData1560 struct {
 	ImportMicroversion         *string                        `json:"importMicroversion,omitempty"`
 	NodeId                     *string                        `json:"nodeId,omitempty"`
 	ConfigurationParameters    []BTMConfigurationParameter819 `json:"configurationParameters,omitempty"`
+	CosmeticParameterIds       []string                       `json:"cosmeticParameterIds,omitempty"`
 	CurrentConfiguration       []BTMParameter1                `json:"currentConfiguration,omitempty"`
 	CurrentFSValues            *map[string]BTFSValue1888      `json:"currentFSValues,omitempty"`
 	DefaultConfigurationValues *map[string]BTFSValue1888      `json:"defaultConfigurationValues,omitempty"`
@@ -171,6 +172,38 @@ func (o *BTMConfigurationData1560) SetConfigurationParameters(v []BTMConfigurati
 	o.ConfigurationParameters = v
 }
 
+// GetCosmeticParameterIds returns the CosmeticParameterIds field value if set, zero value otherwise.
+func (o *BTMConfigurationData1560) GetCosmeticParameterIds() []string {
+	if o == nil || o.CosmeticParameterIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.CosmeticParameterIds
+}
+
+// GetCosmeticParameterIdsOk returns a tuple with the CosmeticParameterIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationData1560) GetCosmeticParameterIdsOk() ([]string, bool) {
+	if o == nil || o.CosmeticParameterIds == nil {
+		return nil, false
+	}
+	return o.CosmeticParameterIds, true
+}
+
+// HasCosmeticParameterIds returns a boolean if a field has been set.
+func (o *BTMConfigurationData1560) HasCosmeticParameterIds() bool {
+	if o != nil && o.CosmeticParameterIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCosmeticParameterIds gets a reference to the given []string and assigns it to the CosmeticParameterIds field.
+func (o *BTMConfigurationData1560) SetCosmeticParameterIds(v []string) {
+	o.CosmeticParameterIds = v
+}
+
 // GetCurrentConfiguration returns the CurrentConfiguration field value if set, zero value otherwise.
 func (o *BTMConfigurationData1560) GetCurrentConfiguration() []BTMParameter1 {
 	if o == nil || o.CurrentConfiguration == nil {
@@ -280,6 +313,9 @@ func (o BTMConfigurationData1560) MarshalJSON() ([]byte, error) {
 	}
 	if o.ConfigurationParameters != nil {
 		toSerialize["configurationParameters"] = o.ConfigurationParameters
+	}
+	if o.CosmeticParameterIds != nil {
+		toSerialize["cosmeticParameterIds"] = o.CosmeticParameterIds
 	}
 	if o.CurrentConfiguration != nil {
 		toSerialize["currentConfiguration"] = o.CurrentConfiguration

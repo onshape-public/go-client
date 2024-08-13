@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **NextRevisionId** | Pointer to **string** | The next revision if applicable. null for the latest revision. | [optional] 
 **ObsoletionPackageId** | Pointer to **string** | The OBSOLETION release package that obsoleted this revision if applicable. | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** | The Part Number with which the item was revised. | [optional] 
 **PreviousRevisionId** | Pointer to **string** | The previous revision if applicable. null for first revision. | [optional] 
 **ReleaseCreatedDate** | Pointer to **JSONTime** |  | [optional] 
@@ -710,6 +711,31 @@ SetPartId sets PartId field to given value.
 `func (o *BTRevisionInfo) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTRevisionInfo) GetPartIdentity() string`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTRevisionInfo) GetPartIdentityOk() (*string, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTRevisionInfo) SetPartIdentity(v string)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTRevisionInfo) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetPartNumber
 
