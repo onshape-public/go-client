@@ -57,6 +57,7 @@ type BTRevisionInfo struct {
 	// The OBSOLETION release package that obsoleted this revision if applicable.
 	ObsoletionPackageId *string `json:"obsoletionPackageId,omitempty"`
 	PartId              *string `json:"partId,omitempty"`
+	PartIdentity        *string `json:"partIdentity,omitempty"`
 	// The Part Number with which the item was revised.
 	PartNumber *string `json:"partNumber,omitempty"`
 	// The previous revision if applicable. null for first revision.
@@ -931,6 +932,38 @@ func (o *BTRevisionInfo) SetPartId(v string) {
 	o.PartId = &v
 }
 
+// GetPartIdentity returns the PartIdentity field value if set, zero value otherwise.
+func (o *BTRevisionInfo) GetPartIdentity() string {
+	if o == nil || o.PartIdentity == nil {
+		var ret string
+		return ret
+	}
+	return *o.PartIdentity
+}
+
+// GetPartIdentityOk returns a tuple with the PartIdentity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRevisionInfo) GetPartIdentityOk() (*string, bool) {
+	if o == nil || o.PartIdentity == nil {
+		return nil, false
+	}
+	return o.PartIdentity, true
+}
+
+// HasPartIdentity returns a boolean if a field has been set.
+func (o *BTRevisionInfo) HasPartIdentity() bool {
+	if o != nil && o.PartIdentity != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartIdentity gets a reference to the given string and assigns it to the PartIdentity field.
+func (o *BTRevisionInfo) SetPartIdentity(v string) {
+	o.PartIdentity = &v
+}
+
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
 func (o *BTRevisionInfo) GetPartNumber() string {
 	if o == nil || o.PartNumber == nil {
@@ -1362,6 +1395,9 @@ func (o BTRevisionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId
+	}
+	if o.PartIdentity != nil {
+		toSerialize["partIdentity"] = o.PartIdentity
 	}
 	if o.PartNumber != nil {
 		toSerialize["partNumber"] = o.PartNumber

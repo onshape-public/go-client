@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
+**IsOnshapeSupport** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -104,6 +105,31 @@ SetImage sets Image field to given value.
 `func (o *BTUserBasicSummaryInfoAllOf) HasImage() bool`
 
 HasImage returns a boolean if a field has been set.
+
+### GetIsOnshapeSupport
+
+`func (o *BTUserBasicSummaryInfoAllOf) GetIsOnshapeSupport() bool`
+
+GetIsOnshapeSupport returns the IsOnshapeSupport field if non-nil, zero value otherwise.
+
+### GetIsOnshapeSupportOk
+
+`func (o *BTUserBasicSummaryInfoAllOf) GetIsOnshapeSupportOk() (*bool, bool)`
+
+GetIsOnshapeSupportOk returns a tuple with the IsOnshapeSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsOnshapeSupport
+
+`func (o *BTUserBasicSummaryInfoAllOf) SetIsOnshapeSupport(v bool)`
+
+SetIsOnshapeSupport sets IsOnshapeSupport field to given value.
+
+### HasIsOnshapeSupport
+
+`func (o *BTUserBasicSummaryInfoAllOf) HasIsOnshapeSupport() bool`
+
+HasIsOnshapeSupport returns a boolean if a field has been set.
 
 ### GetName
 

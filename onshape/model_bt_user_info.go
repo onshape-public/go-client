@@ -292,6 +292,56 @@ func (o *BTUserInfo) SetImage(v string) {
 	o.GetActualInstance().(getResult).SetImage(v)
 }
 
+// GetIsOnshapeSupport returns the IsOnshapeSupport field value if set, zero value otherwise.
+func (o *BTUserInfo) GetIsOnshapeSupport() bool {
+	type getResult interface {
+		GetIsOnshapeSupport() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsOnshapeSupport()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsOnshapeSupportOk returns a tuple with the IsOnshapeSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetIsOnshapeSupportOk() (*bool, bool) {
+	type getResult interface {
+		GetIsOnshapeSupportOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsOnshapeSupportOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsOnshapeSupport returns a boolean if a field has been set.
+func (o *BTUserInfo) HasIsOnshapeSupport() bool {
+	type getResult interface {
+		HasIsOnshapeSupport() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsOnshapeSupport()
+	} else {
+		return false
+	}
+}
+
+// SetIsOnshapeSupport gets a reference to the given bool and assigns it to the IsOnshapeSupport field.
+func (o *BTUserInfo) SetIsOnshapeSupport(v bool) {
+	type getResult interface {
+		SetIsOnshapeSupport(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsOnshapeSupport(v)
+}
+
 // GetState returns the State field value if set, zero value otherwise.
 func (o *BTUserInfo) GetState() int32 {
 	type getResult interface {
@@ -2891,6 +2941,7 @@ type base_BTUserInfo struct {
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef                   *string                  `json:"viewRef,omitempty"`
 	Image                     *string                  `json:"image,omitempty"`
+	IsOnshapeSupport          *bool                    `json:"isOnshapeSupport,omitempty"`
 	State                     *int32                   `json:"state,omitempty"`
 	DocumentationName         *string                  `json:"documentationName,omitempty"`
 	Email                     *string                  `json:"email,omitempty"`
@@ -3118,6 +3169,38 @@ func (o *base_BTUserInfo) HasImage() bool {
 // SetImage gets a reference to the given string and assigns it to the Image field.
 func (o *base_BTUserInfo) SetImage(v string) {
 	o.Image = &v
+}
+
+// GetIsOnshapeSupport returns the IsOnshapeSupport field value if set, zero value otherwise.
+func (o *base_BTUserInfo) GetIsOnshapeSupport() bool {
+	if o == nil || o.IsOnshapeSupport == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsOnshapeSupport
+}
+
+// GetIsOnshapeSupportOk returns a tuple with the IsOnshapeSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetIsOnshapeSupportOk() (*bool, bool) {
+	if o == nil || o.IsOnshapeSupport == nil {
+		return nil, false
+	}
+	return o.IsOnshapeSupport, true
+}
+
+// HasIsOnshapeSupport returns a boolean if a field has been set.
+func (o *base_BTUserInfo) HasIsOnshapeSupport() bool {
+	if o != nil && o.IsOnshapeSupport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsOnshapeSupport gets a reference to the given bool and assigns it to the IsOnshapeSupport field.
+func (o *base_BTUserInfo) SetIsOnshapeSupport(v bool) {
+	o.IsOnshapeSupport = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -4736,6 +4819,9 @@ func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Image != nil {
 		toSerialize["image"] = o.Image
+	}
+	if o.IsOnshapeSupport != nil {
+		toSerialize["isOnshapeSupport"] = o.IsOnshapeSupport
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

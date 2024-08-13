@@ -20,9 +20,10 @@ type BTPropertiesTableTemplateInfo struct {
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id        *string `json:"id,omitempty"`
-	IsActive  *bool   `json:"isActive,omitempty"`
-	IsAllCaps *bool   `json:"isAllCaps,omitempty"`
+	Id         *string `json:"id,omitempty"`
+	IsActive   *bool   `json:"isActive,omitempty"`
+	IsAllCaps  *bool   `json:"isAllCaps,omitempty"`
+	IsIndented *bool   `json:"isIndented,omitempty"`
 	// Name of the resource.
 	Name            *string                        `json:"name,omitempty"`
 	PropertyColumns []BTSimplePropertyInfo         `json:"propertyColumns,omitempty"`
@@ -209,6 +210,38 @@ func (o *BTPropertiesTableTemplateInfo) SetIsAllCaps(v bool) {
 	o.IsAllCaps = &v
 }
 
+// GetIsIndented returns the IsIndented field value if set, zero value otherwise.
+func (o *BTPropertiesTableTemplateInfo) GetIsIndented() bool {
+	if o == nil || o.IsIndented == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsIndented
+}
+
+// GetIsIndentedOk returns a tuple with the IsIndented field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPropertiesTableTemplateInfo) GetIsIndentedOk() (*bool, bool) {
+	if o == nil || o.IsIndented == nil {
+		return nil, false
+	}
+	return o.IsIndented, true
+}
+
+// HasIsIndented returns a boolean if a field has been set.
+func (o *BTPropertiesTableTemplateInfo) HasIsIndented() bool {
+	if o != nil && o.IsIndented != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsIndented gets a reference to the given bool and assigns it to the IsIndented field.
+func (o *BTPropertiesTableTemplateInfo) SetIsIndented(v bool) {
+	o.IsIndented = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTPropertiesTableTemplateInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -385,6 +418,9 @@ func (o BTPropertiesTableTemplateInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsAllCaps != nil {
 		toSerialize["isAllCaps"] = o.IsAllCaps
+	}
+	if o.IsIndented != nil {
+		toSerialize["isIndented"] = o.IsIndented
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

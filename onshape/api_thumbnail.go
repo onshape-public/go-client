@@ -551,10 +551,17 @@ type ApiGetElementThumbnailWithApiConfigurationRequest struct {
 	eid                string
 	cid                string
 	sz                 string
+	linkDocumentId     *string
 	t                  *string
 	skipDefaultImage   *string
 	rejectEmpty        *bool
 	requireConfigMatch *bool
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetElementThumbnailWithApiConfigurationRequest) LinkDocumentId(linkDocumentId string) ApiGetElementThumbnailWithApiConfigurationRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
 }
 
 // Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails.
@@ -589,9 +596,9 @@ GetElementThumbnailWithApiConfiguration Get the thumbnail image with the given c
 Returns the thumbnail image for an element at a specified version, with the given configuration.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did
-	@param wid
-	@param eid
+	@param did The id of the document in which to perform the operation.
+	@param wid The id of the workspace in which to perform the operation.
+	@param eid The id of the element in which to perform the operation.
 	@param cid
 	@param sz the generated thumbnail size in pixels, widthxheigth
 	@return ApiGetElementThumbnailWithApiConfigurationRequest
@@ -635,6 +642,9 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
 	if r.t != nil {
 		localVarQueryParams.Add("t", parameterToString(*r.t, ""))
 	}

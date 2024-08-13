@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Hidden** | Pointer to **bool** |  | [optional] 
 **IsFixed** | Pointer to **bool** |  | [optional] 
 **IsHidden** | Pointer to **bool** |  | [optional] 
+**LockInfo** | Pointer to [**BTLockedSubAssembly4590**](BTLockedSubAssembly4590.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Transform** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
@@ -182,6 +183,31 @@ SetIsHidden sets IsHidden field to given value.
 `func (o *BTOccurrenceData75) HasIsHidden() bool`
 
 HasIsHidden returns a boolean if a field has been set.
+
+### GetLockInfo
+
+`func (o *BTOccurrenceData75) GetLockInfo() BTLockedSubAssembly4590`
+
+GetLockInfo returns the LockInfo field if non-nil, zero value otherwise.
+
+### GetLockInfoOk
+
+`func (o *BTOccurrenceData75) GetLockInfoOk() (*BTLockedSubAssembly4590, bool)`
+
+GetLockInfoOk returns a tuple with the LockInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLockInfo
+
+`func (o *BTOccurrenceData75) SetLockInfo(v BTLockedSubAssembly4590)`
+
+SetLockInfo sets LockInfo field to given value.
+
+### HasLockInfo
+
+`func (o *BTOccurrenceData75) HasLockInfo() bool`
+
+HasLockInfo returns a boolean if a field has been set.
 
 ### GetNodeId
 

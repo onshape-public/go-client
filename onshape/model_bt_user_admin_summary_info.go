@@ -25,6 +25,7 @@ type BTUserAdminSummaryInfo struct {
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef                   *string               `json:"viewRef,omitempty"`
 	Image                     *string               `json:"image,omitempty"`
+	IsOnshapeSupport          *bool                 `json:"isOnshapeSupport,omitempty"`
 	State                     *int32                `json:"state,omitempty"`
 	DocumentationName         *string               `json:"documentationName,omitempty"`
 	Email                     *string               `json:"email,omitempty"`
@@ -223,6 +224,38 @@ func (o *BTUserAdminSummaryInfo) HasImage() bool {
 // SetImage gets a reference to the given string and assigns it to the Image field.
 func (o *BTUserAdminSummaryInfo) SetImage(v string) {
 	o.Image = &v
+}
+
+// GetIsOnshapeSupport returns the IsOnshapeSupport field value if set, zero value otherwise.
+func (o *BTUserAdminSummaryInfo) GetIsOnshapeSupport() bool {
+	if o == nil || o.IsOnshapeSupport == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsOnshapeSupport
+}
+
+// GetIsOnshapeSupportOk returns a tuple with the IsOnshapeSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminSummaryInfo) GetIsOnshapeSupportOk() (*bool, bool) {
+	if o == nil || o.IsOnshapeSupport == nil {
+		return nil, false
+	}
+	return o.IsOnshapeSupport, true
+}
+
+// HasIsOnshapeSupport returns a boolean if a field has been set.
+func (o *BTUserAdminSummaryInfo) HasIsOnshapeSupport() bool {
+	if o != nil && o.IsOnshapeSupport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsOnshapeSupport gets a reference to the given bool and assigns it to the IsOnshapeSupport field.
+func (o *BTUserAdminSummaryInfo) SetIsOnshapeSupport(v bool) {
+	o.IsOnshapeSupport = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -913,6 +946,9 @@ func (o BTUserAdminSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Image != nil {
 		toSerialize["image"] = o.Image
+	}
+	if o.IsOnshapeSupport != nil {
+		toSerialize["isOnshapeSupport"] = o.IsOnshapeSupport
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

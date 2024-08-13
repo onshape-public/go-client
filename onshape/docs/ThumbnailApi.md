@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ## GetElementThumbnailWithApiConfiguration
 
-> map[string]interface{} GetElementThumbnailWithApiConfiguration(ctx, did, wid, eid, cid, sz).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
+> map[string]interface{} GetElementThumbnailWithApiConfiguration(ctx, did, wid, eid, cid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
 
 Get the thumbnail image with the given configuration for an element.
 
@@ -354,11 +354,12 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wid := "wid_example" // string | 
-    eid := "eid_example" // string | 
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
     cid := "cid_example" // string | 
     sz := "300x300" // string | the generated thumbnail size in pixels, widthxheigth
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     t := "t_example" // string | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. (optional)
     skipDefaultImage := "skipDefaultImage_example" // string | Controls the return of the default image, if thumbnail is not available (optional) (default to "")
     rejectEmpty := true // bool |  (optional) (default to false)
@@ -366,7 +367,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithApiConfiguration(context.Background(), did, wid, eid, cid, sz).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
+    resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithApiConfiguration(context.Background(), did, wid, eid, cid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetElementThumbnailWithApiConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,9 +383,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wid** | **string** |  | 
-**eid** | **string** |  | 
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
 **cid** | **string** |  | 
 **sz** | **string** | the generated thumbnail size in pixels, widthxheigth | 
 
@@ -400,6 +401,7 @@ Name | Type | Description  | Notes
 
 
 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **t** | **string** | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. | 
  **skipDefaultImage** | **string** | Controls the return of the default image, if thumbnail is not available | [default to &quot;&quot;]
  **rejectEmpty** | **bool** |  | [default to false]

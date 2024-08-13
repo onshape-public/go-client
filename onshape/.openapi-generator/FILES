@@ -556,6 +556,15 @@ docs/BTListResponseBTWebhookInfo.md
 docs/BTListResponseBTWorkflowObserverOptionInfo.md
 docs/BTLoadDisplayData837.md
 docs/BTLocationInfo226.md
+docs/BTLockedAtCurrentPosition4006.md
+docs/BTLockedAtCurrentPosition4006AllOf.md
+docs/BTLockedAtNamedPosition3201.md
+docs/BTLockedAtNamedPosition3201AllOf.md
+docs/BTLockedAtSubAssemblyPosition3885.md
+docs/BTLockedAtSubAssemblyPosition3885AllOf.md
+docs/BTLockedSubAssembly4590.md
+docs/BTLockedSubAssemblyOutputInfo3511.md
+docs/BTLockedSubAssemblyOutputInfo3511AllOf.md
 docs/BTLoginParams.md
 docs/BTMAnnotation4664.md
 docs/BTMAnnotation4664AllOf.md
@@ -1127,6 +1136,7 @@ docs/BTRevisionMessageBody.md
 docs/BTRevisionMessageBodyAllOf.md
 docs/BTRhoDimensionDisplayData2892.md
 docs/BTRhoDimensionDisplayData2892AllOf.md
+docs/BTRigidOrLockedSubAssemblyOutputInfo3860.md
 docs/BTRole.md
 docs/BTRootAssemblyDisplayData96.md
 docs/BTRootAssemblyInfo.md
@@ -1438,6 +1448,7 @@ docs/GBTRadiusDisplay.md
 docs/GBTSimulationContactBehavior.md
 docs/GBTSketchCurveType.md
 docs/GBTSketchObjectType.md
+docs/GBTSubAssemblyLockType.md
 docs/GBTSurfaceType.md
 docs/GBTSurfaceTypeEnum.md
 docs/GBTTableColumnWidthUnits.md
@@ -1881,6 +1892,11 @@ model_bt_list_response_bt_webhook_info.go
 model_bt_list_response_bt_workflow_observer_option_info.go
 model_bt_load_display_data_837.go
 model_bt_location_info_226.go
+model_bt_locked_at_current_position_4006.go
+model_bt_locked_at_named_position_3201.go
+model_bt_locked_at_sub_assembly_position_3885.go
+model_bt_locked_sub_assembly_4590.go
+model_bt_locked_sub_assembly_output_info_3511.go
 model_bt_login_params.go
 model_bt_mass_properties_bulk_info.go
 model_bt_mass_properties_info.go
@@ -2062,6 +2078,7 @@ model_bt_revision_info.go
 model_bt_revision_list_response.go
 model_bt_revision_message_body.go
 model_bt_rho_dimension_display_data_2892.go
+model_bt_rigid_or_locked_sub_assembly_output_info_3860.go
 model_bt_role.go
 model_bt_root_assembly_display_data_96.go
 model_bt_root_assembly_info.go
@@ -2504,6 +2521,7 @@ model_gbt_radius_display.go
 model_gbt_simulation_contact_behavior.go
 model_gbt_sketch_curve_type.go
 model_gbt_sketch_object_type.go
+model_gbt_sub_assembly_lock_type.go
 model_gbt_surface_type.go
 model_gbt_surface_type_enum.go
 model_gbt_table_column_width_units.go

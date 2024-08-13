@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CompanyId** | Pointer to **string** |  | [optional] 
 **IsAllCaps** | Pointer to **bool** |  | [optional] 
+**IsIndented** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PropertyColumns** | Pointer to **[]string** |  | [optional] 
 **TableType** | Pointer to [**BTPropertiesTableTemplateType**](BTPropertiesTableTemplateType.md) |  | [optional] 
@@ -78,6 +79,31 @@ SetIsAllCaps sets IsAllCaps field to given value.
 `func (o *BTPropertiesTableTemplateParams) HasIsAllCaps() bool`
 
 HasIsAllCaps returns a boolean if a field has been set.
+
+### GetIsIndented
+
+`func (o *BTPropertiesTableTemplateParams) GetIsIndented() bool`
+
+GetIsIndented returns the IsIndented field if non-nil, zero value otherwise.
+
+### GetIsIndentedOk
+
+`func (o *BTPropertiesTableTemplateParams) GetIsIndentedOk() (*bool, bool)`
+
+GetIsIndentedOk returns a tuple with the IsIndented field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsIndented
+
+`func (o *BTPropertiesTableTemplateParams) SetIsIndented(v bool)`
+
+SetIsIndented sets IsIndented field to given value.
+
+### HasIsIndented
+
+`func (o *BTPropertiesTableTemplateParams) HasIsIndented() bool`
+
+HasIsIndented returns a boolean if a field has been set.
 
 ### GetName
 

@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 ## GetRevisionHistoryInCompanyByPartId
 
-> BTRevisionListResponse GetRevisionHistoryInCompanyByPartId(ctx, cid, did, wv, wvid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+> BTRevisionListResponse GetRevisionHistoryInCompanyByPartId(ctx, cid, did, wv, wvid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
 
 Get a list of all revisions for a part in a company-owned document by part ID.
 
@@ -588,10 +588,11 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
     fillApprovers := true // bool |  (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
+    supportChangeType := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByPartId(context.Background(), cid, did, wv, wvid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByPartId(context.Background(), cid, did, wv, wvid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RevisionApi.GetRevisionHistoryInCompanyByPartId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -631,6 +632,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** |  | 
  **fillApprovers** | **bool** |  | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
+ **supportChangeType** | **bool** |  | [default to false]
 
 ### Return type
 
