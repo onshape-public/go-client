@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**AllowImplicitMateConnector** | Pointer to **bool** |  | [optional] 
 **RequiresOccurrence** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMateConnectorFilter163) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAllowImplicitMateConnector
+
+`func (o *BTMateConnectorFilter163) GetAllowImplicitMateConnector() bool`
+
+GetAllowImplicitMateConnector returns the AllowImplicitMateConnector field if non-nil, zero value otherwise.
+
+### GetAllowImplicitMateConnectorOk
+
+`func (o *BTMateConnectorFilter163) GetAllowImplicitMateConnectorOk() (*bool, bool)`
+
+GetAllowImplicitMateConnectorOk returns a tuple with the AllowImplicitMateConnector field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowImplicitMateConnector
+
+`func (o *BTMateConnectorFilter163) SetAllowImplicitMateConnector(v bool)`
+
+SetAllowImplicitMateConnector sets AllowImplicitMateConnector field to given value.
+
+### HasAllowImplicitMateConnector
+
+`func (o *BTMateConnectorFilter163) HasAllowImplicitMateConnector() bool`
+
+HasAllowImplicitMateConnector returns a boolean if a field has been set.
 
 ### GetRequiresOccurrence
 

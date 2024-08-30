@@ -3061,6 +3061,22 @@
 
 * `GBTErrorStringEnumAssemblyNamedPositionsSubassemblyOutsideMateLimit` (value: `"ASSEMBLY_NAMED_POSITIONS_SUBASSEMBLY_OUTSIDE_MATE_LIMIT"`)
 
+* `GBTErrorStringEnumGenerativeRunWasCanceled` (value: `"GENERATIVE_RUN_WAS_CANCELED"`)
+
+* `GBTErrorStringEnumSketchChamferInvalidPoint` (value: `"SKETCH_CHAMFER_INVALID_POINT"`)
+
+* `GBTErrorStringEnumSketchChamferParallel` (value: `"SKETCH_CHAMFER_PARALLEL"`)
+
+* `GBTErrorStringEnumSketchChamferFail` (value: `"SKETCH_CHAMFER_FAIL"`)
+
+* `GBTErrorStringEnumSketchChamferInvalidInputs` (value: `"SKETCH_CHAMFER_INVALID_INPUTS"`)
+
+* `GBTErrorStringEnumAssemblyFeatureMissingSelection` (value: `"ASSEMBLY_FEATURE_MISSING_SELECTION"`)
+
+* `GBTErrorStringEnumAssemblyNamedPositionsLockedSubassemblyFound` (value: `"ASSEMBLY_NAMED_POSITIONS_LOCKED_SUBASSEMBLY_FOUND"`)
+
+* `GBTErrorStringEnumCurvePatternMissingFaceSelection` (value: `"CURVE_PATTERN_MISSING_FACE_SELECTION"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

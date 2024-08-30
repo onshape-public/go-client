@@ -39,7 +39,8 @@ type BTMParametricPartStudioFeature3883 struct {
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
 	// List of subfeatures belonging to the feature.
-	SubFeatures []BTMFeature134 `json:"subFeatures,omitempty"`
+	SubFeatures               []BTMFeature134 `json:"subFeatures,omitempty"`
+	SubFeaturesNotUsedInQuery []BTMFeature134 `json:"subFeaturesNotUsedInQuery,omitempty"`
 	// If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
 	Suppressed *bool `json:"suppressed,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
@@ -546,6 +547,38 @@ func (o *BTMParametricPartStudioFeature3883) SetSubFeatures(v []BTMFeature134) {
 	o.SubFeatures = v
 }
 
+// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
+func (o *BTMParametricPartStudioFeature3883) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		var ret []BTMFeature134
+		return ret
+	}
+	return o.SubFeaturesNotUsedInQuery
+}
+
+// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParametricPartStudioFeature3883) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		return nil, false
+	}
+	return o.SubFeaturesNotUsedInQuery, true
+}
+
+// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
+func (o *BTMParametricPartStudioFeature3883) HasSubFeaturesNotUsedInQuery() bool {
+	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
+func (o *BTMParametricPartStudioFeature3883) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
+	o.SubFeaturesNotUsedInQuery = v
+}
+
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
 func (o *BTMParametricPartStudioFeature3883) GetSuppressed() bool {
 	if o == nil || o.Suppressed == nil {
@@ -720,6 +753,9 @@ func (o BTMParametricPartStudioFeature3883) MarshalJSON() ([]byte, error) {
 	}
 	if o.SubFeatures != nil {
 		toSerialize["subFeatures"] = o.SubFeatures
+	}
+	if o.SubFeaturesNotUsedInQuery != nil {
+		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed

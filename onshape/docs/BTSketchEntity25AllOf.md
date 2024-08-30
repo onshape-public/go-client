@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **IsUserPoint** | Pointer to **bool** |  | [optional] 
 **SketchCurveType** | Pointer to [**GBTSketchCurveType**](GBTSketchCurveType.md) |  | [optional] 
 **SketchEntityId** | Pointer to **string** |  | [optional] 
+**SketchFeatureId** | Pointer to **string** |  | [optional] 
 **SolveStatus** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetSketchEntityId sets SketchEntityId field to given value.
 `func (o *BTSketchEntity25AllOf) HasSketchEntityId() bool`
 
 HasSketchEntityId returns a boolean if a field has been set.
+
+### GetSketchFeatureId
+
+`func (o *BTSketchEntity25AllOf) GetSketchFeatureId() string`
+
+GetSketchFeatureId returns the SketchFeatureId field if non-nil, zero value otherwise.
+
+### GetSketchFeatureIdOk
+
+`func (o *BTSketchEntity25AllOf) GetSketchFeatureIdOk() (*string, bool)`
+
+GetSketchFeatureIdOk returns a tuple with the SketchFeatureId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSketchFeatureId
+
+`func (o *BTSketchEntity25AllOf) SetSketchFeatureId(v string)`
+
+SetSketchFeatureId sets SketchFeatureId field to given value.
+
+### HasSketchFeatureId
+
+`func (o *BTSketchEntity25AllOf) HasSketchFeatureId() bool`
+
+HasSketchFeatureId returns a boolean if a field has been set.
 
 ### GetSolveStatus
 

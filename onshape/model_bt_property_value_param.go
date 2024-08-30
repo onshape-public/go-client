@@ -16,8 +16,10 @@ import (
 
 // BTPropertyValueParam struct for BTPropertyValueParam
 type BTPropertyValueParam struct {
-	PropertyId *string                 `json:"propertyId,omitempty"`
-	Value      *map[string]interface{} `json:"value,omitempty"`
+	// Id of the property to set.
+	PropertyId *string `json:"propertyId,omitempty"`
+	// Value to set for the property.
+	Value *map[string]interface{} `json:"value,omitempty"`
 }
 
 // NewBTPropertyValueParam instantiates a new BTPropertyValueParam object

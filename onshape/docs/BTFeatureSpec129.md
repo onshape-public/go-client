@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **SourceMicroversionId** | Pointer to **string** |  | [optional] 
 **StringsToLocalize** | Pointer to **[]string** |  | [optional] 
 **TableSpec** | Pointer to **bool** |  | [optional] 
+**ToleranceSpec** | Pointer to **bool** |  | [optional] 
 **TooltipTemplate** | Pointer to **string** |  | [optional] 
 **UiHints** | Pointer to [**[]GBTUIHint**](GBTUIHint.md) |  | [optional] 
 
@@ -805,6 +806,31 @@ SetTableSpec sets TableSpec field to given value.
 `func (o *BTFeatureSpec129) HasTableSpec() bool`
 
 HasTableSpec returns a boolean if a field has been set.
+
+### GetToleranceSpec
+
+`func (o *BTFeatureSpec129) GetToleranceSpec() bool`
+
+GetToleranceSpec returns the ToleranceSpec field if non-nil, zero value otherwise.
+
+### GetToleranceSpecOk
+
+`func (o *BTFeatureSpec129) GetToleranceSpecOk() (*bool, bool)`
+
+GetToleranceSpecOk returns a tuple with the ToleranceSpec field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToleranceSpec
+
+`func (o *BTFeatureSpec129) SetToleranceSpec(v bool)`
+
+SetToleranceSpec sets ToleranceSpec field to given value.
+
+### HasToleranceSpec
+
+`func (o *BTFeatureSpec129) HasToleranceSpec() bool`
+
+HasToleranceSpec returns a boolean if a field has been set.
 
 ### GetTooltipTemplate
 

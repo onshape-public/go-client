@@ -20,25 +20,26 @@ type GBTPOperator string
 
 // List of GBTPOperator
 const (
-	GBTPOperatorNone           GBTPOperator = "NONE"
-	GBTPOperatorPlus           GBTPOperator = "PLUS"
-	GBTPOperatorMinus          GBTPOperator = "MINUS"
-	GBTPOperatorTimes          GBTPOperator = "TIMES"
-	GBTPOperatorDivide         GBTPOperator = "DIVIDE"
-	GBTPOperatorModulus        GBTPOperator = "MODULUS"
-	GBTPOperatorPower          GBTPOperator = "POWER"
-	GBTPOperatorNegate         GBTPOperator = "NEGATE"
-	GBTPOperatorOr             GBTPOperator = "OR"
-	GBTPOperatorAnd            GBTPOperator = "AND"
-	GBTPOperatorNot            GBTPOperator = "NOT"
-	GBTPOperatorEqualTo        GBTPOperator = "EQUAL_TO"
-	GBTPOperatorNotEqualTo     GBTPOperator = "NOT_EQUAL_TO"
-	GBTPOperatorGreater        GBTPOperator = "GREATER"
-	GBTPOperatorLess           GBTPOperator = "LESS"
-	GBTPOperatorGreaterOrEqual GBTPOperator = "GREATER_OR_EQUAL"
-	GBTPOperatorLessOrEqual    GBTPOperator = "LESS_OR_EQUAL"
-	GBTPOperatorConcatenate    GBTPOperator = "CONCATENATE"
-	GBTPOperatorConditional    GBTPOperator = "CONDITIONAL"
+	GBTPOperatorNone                GBTPOperator = "NONE"
+	GBTPOperatorPlus                GBTPOperator = "PLUS"
+	GBTPOperatorMinus               GBTPOperator = "MINUS"
+	GBTPOperatorTimes               GBTPOperator = "TIMES"
+	GBTPOperatorDivide              GBTPOperator = "DIVIDE"
+	GBTPOperatorModulus             GBTPOperator = "MODULUS"
+	GBTPOperatorPower               GBTPOperator = "POWER"
+	GBTPOperatorNegate              GBTPOperator = "NEGATE"
+	GBTPOperatorOr                  GBTPOperator = "OR"
+	GBTPOperatorAnd                 GBTPOperator = "AND"
+	GBTPOperatorNot                 GBTPOperator = "NOT"
+	GBTPOperatorEqualTo             GBTPOperator = "EQUAL_TO"
+	GBTPOperatorNotEqualTo          GBTPOperator = "NOT_EQUAL_TO"
+	GBTPOperatorGreater             GBTPOperator = "GREATER"
+	GBTPOperatorLess                GBTPOperator = "LESS"
+	GBTPOperatorGreaterOrEqual      GBTPOperator = "GREATER_OR_EQUAL"
+	GBTPOperatorLessOrEqual         GBTPOperator = "LESS_OR_EQUAL"
+	GBTPOperatorConcatenate         GBTPOperator = "CONCATENATE"
+	GBTPOperatorConditional         GBTPOperator = "CONDITIONAL"
+	GBTPOperatorUndefinedCoalescing GBTPOperator = "UNDEFINED_COALESCING"
 )
 
 // All allowed values of GBTPOperator enum
@@ -62,6 +63,7 @@ var AllowedGBTPOperatorEnumValues = []GBTPOperator{
 	"LESS_OR_EQUAL",
 	"CONCATENATE",
 	"CONDITIONAL",
+	"UNDEFINED_COALESCING",
 }
 
 func (v *GBTPOperator) UnmarshalJSON(src []byte) error {

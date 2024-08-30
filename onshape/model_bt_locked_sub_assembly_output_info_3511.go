@@ -21,6 +21,7 @@ type BTLockedSubAssemblyOutputInfo3511 struct {
 	Rigid            *bool                    `json:"rigid,omitempty"`
 	SyncedOutputMVID *BTMicroversionId366     `json:"syncedOutputMVID,omitempty"`
 	LockInfo         *BTLockedSubAssembly4590 `json:"lockInfo,omitempty"`
+	SyncError        *GBTErrorStringEnum      `json:"syncError,omitempty"`
 }
 
 // NewBTLockedSubAssemblyOutputInfo3511 instantiates a new BTLockedSubAssemblyOutputInfo3511 object
@@ -200,6 +201,38 @@ func (o *BTLockedSubAssemblyOutputInfo3511) SetLockInfo(v BTLockedSubAssembly459
 	o.LockInfo = &v
 }
 
+// GetSyncError returns the SyncError field value if set, zero value otherwise.
+func (o *BTLockedSubAssemblyOutputInfo3511) GetSyncError() GBTErrorStringEnum {
+	if o == nil || o.SyncError == nil {
+		var ret GBTErrorStringEnum
+		return ret
+	}
+	return *o.SyncError
+}
+
+// GetSyncErrorOk returns a tuple with the SyncError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLockedSubAssemblyOutputInfo3511) GetSyncErrorOk() (*GBTErrorStringEnum, bool) {
+	if o == nil || o.SyncError == nil {
+		return nil, false
+	}
+	return o.SyncError, true
+}
+
+// HasSyncError returns a boolean if a field has been set.
+func (o *BTLockedSubAssemblyOutputInfo3511) HasSyncError() bool {
+	if o != nil && o.SyncError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSyncError gets a reference to the given GBTErrorStringEnum and assigns it to the SyncError field.
+func (o *BTLockedSubAssemblyOutputInfo3511) SetSyncError(v GBTErrorStringEnum) {
+	o.SyncError = &v
+}
+
 func (o BTLockedSubAssemblyOutputInfo3511) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -216,6 +249,9 @@ func (o BTLockedSubAssemblyOutputInfo3511) MarshalJSON() ([]byte, error) {
 	}
 	if o.LockInfo != nil {
 		toSerialize["lockInfo"] = o.LockInfo
+	}
+	if o.SyncError != nil {
+		toSerialize["syncError"] = o.SyncError
 	}
 	return json.Marshal(toSerialize)
 }

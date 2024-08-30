@@ -1,6 +1,6 @@
 # \OpenApiApi
 
-All URIs are relative to *https://cad.onshape.com/api/v8*
+All URIs are relative to *https://cad.onshape.com/api/v9*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

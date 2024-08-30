@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **DocumentMicroversionId** | **string** | The latest document microversion, after the edit was committed. | 
 **ElementIds** | Pointer to **[]string** | The ids of the created elements. | [optional] 
 **ElementMicroversions** | Pointer to **[]string** | The microversion ids of the created elements, at creation time. | [optional] 
-**ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
+**ErrorCode** | Pointer to **int32** | &#x60;0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN&#x60; | [optional] 
 **ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
 **ErrorValue** | Pointer to [**BTAppElementErrorCode**](BTAppElementErrorCode.md) |  | [optional] 
 

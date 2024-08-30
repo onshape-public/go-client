@@ -46,6 +46,7 @@ type BTTableSpec915 struct {
 	SourceMicroversionId       *string                      `json:"sourceMicroversionId,omitempty"`
 	StringsToLocalize          []string                     `json:"stringsToLocalize,omitempty"`
 	TableSpec                  *bool                        `json:"tableSpec,omitempty"`
+	ToleranceSpec              *bool                        `json:"toleranceSpec,omitempty"`
 	TooltipTemplate            *string                      `json:"tooltipTemplate,omitempty"`
 	UiHints                    []GBTUIHint                  `json:"uiHints,omitempty"`
 	IsComputedPropertyTable    *bool                        `json:"isComputedPropertyTable,omitempty"`
@@ -1028,6 +1029,38 @@ func (o *BTTableSpec915) SetTableSpec(v bool) {
 	o.TableSpec = &v
 }
 
+// GetToleranceSpec returns the ToleranceSpec field value if set, zero value otherwise.
+func (o *BTTableSpec915) GetToleranceSpec() bool {
+	if o == nil || o.ToleranceSpec == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ToleranceSpec
+}
+
+// GetToleranceSpecOk returns a tuple with the ToleranceSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableSpec915) GetToleranceSpecOk() (*bool, bool) {
+	if o == nil || o.ToleranceSpec == nil {
+		return nil, false
+	}
+	return o.ToleranceSpec, true
+}
+
+// HasToleranceSpec returns a boolean if a field has been set.
+func (o *BTTableSpec915) HasToleranceSpec() bool {
+	if o != nil && o.ToleranceSpec != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToleranceSpec gets a reference to the given bool and assigns it to the ToleranceSpec field.
+func (o *BTTableSpec915) SetToleranceSpec(v bool) {
+	o.ToleranceSpec = &v
+}
+
 // GetTooltipTemplate returns the TooltipTemplate field value if set, zero value otherwise.
 func (o *BTTableSpec915) GetTooltipTemplate() string {
 	if o == nil || o.TooltipTemplate == nil {
@@ -1215,6 +1248,9 @@ func (o BTTableSpec915) MarshalJSON() ([]byte, error) {
 	}
 	if o.TableSpec != nil {
 		toSerialize["tableSpec"] = o.TableSpec
+	}
+	if o.ToleranceSpec != nil {
+		toSerialize["toleranceSpec"] = o.ToleranceSpec
 	}
 	if o.TooltipTemplate != nil {
 		toSerialize["tooltipTemplate"] = o.TooltipTemplate

@@ -33,6 +33,8 @@ type BTWebClientCapabilitiesParams struct {
 	Renderer                    *string  `json:"renderer,omitempty"`
 	ScreenHeight                *int32   `json:"screenHeight,omitempty"`
 	ScreenWidth                 *int32   `json:"screenWidth,omitempty"`
+	SupportsWebGL2              *bool    `json:"supportsWebGL2,omitempty"`
+	SupportsWebGPU              *bool    `json:"supportsWebGPU,omitempty"`
 	Vendor                      *string  `json:"vendor,omitempty"`
 }
 
@@ -597,6 +599,70 @@ func (o *BTWebClientCapabilitiesParams) SetScreenWidth(v int32) {
 	o.ScreenWidth = &v
 }
 
+// GetSupportsWebGL2 returns the SupportsWebGL2 field value if set, zero value otherwise.
+func (o *BTWebClientCapabilitiesParams) GetSupportsWebGL2() bool {
+	if o == nil || o.SupportsWebGL2 == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsWebGL2
+}
+
+// GetSupportsWebGL2Ok returns a tuple with the SupportsWebGL2 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWebClientCapabilitiesParams) GetSupportsWebGL2Ok() (*bool, bool) {
+	if o == nil || o.SupportsWebGL2 == nil {
+		return nil, false
+	}
+	return o.SupportsWebGL2, true
+}
+
+// HasSupportsWebGL2 returns a boolean if a field has been set.
+func (o *BTWebClientCapabilitiesParams) HasSupportsWebGL2() bool {
+	if o != nil && o.SupportsWebGL2 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsWebGL2 gets a reference to the given bool and assigns it to the SupportsWebGL2 field.
+func (o *BTWebClientCapabilitiesParams) SetSupportsWebGL2(v bool) {
+	o.SupportsWebGL2 = &v
+}
+
+// GetSupportsWebGPU returns the SupportsWebGPU field value if set, zero value otherwise.
+func (o *BTWebClientCapabilitiesParams) GetSupportsWebGPU() bool {
+	if o == nil || o.SupportsWebGPU == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsWebGPU
+}
+
+// GetSupportsWebGPUOk returns a tuple with the SupportsWebGPU field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWebClientCapabilitiesParams) GetSupportsWebGPUOk() (*bool, bool) {
+	if o == nil || o.SupportsWebGPU == nil {
+		return nil, false
+	}
+	return o.SupportsWebGPU, true
+}
+
+// HasSupportsWebGPU returns a boolean if a field has been set.
+func (o *BTWebClientCapabilitiesParams) HasSupportsWebGPU() bool {
+	if o != nil && o.SupportsWebGPU != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsWebGPU gets a reference to the given bool and assigns it to the SupportsWebGPU field.
+func (o *BTWebClientCapabilitiesParams) SetSupportsWebGPU(v bool) {
+	o.SupportsWebGPU = &v
+}
+
 // GetVendor returns the Vendor field value if set, zero value otherwise.
 func (o *BTWebClientCapabilitiesParams) GetVendor() string {
 	if o == nil || o.Vendor == nil {
@@ -681,6 +747,12 @@ func (o BTWebClientCapabilitiesParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ScreenWidth != nil {
 		toSerialize["screenWidth"] = o.ScreenWidth
+	}
+	if o.SupportsWebGL2 != nil {
+		toSerialize["supportsWebGL2"] = o.SupportsWebGL2
+	}
+	if o.SupportsWebGPU != nil {
+		toSerialize["supportsWebGPU"] = o.SupportsWebGPU
 	}
 	if o.Vendor != nil {
 		toSerialize["vendor"] = o.Vendor

@@ -1,6 +1,6 @@
 # \DrawingApi
 
-All URIs are relative to *https://cad.onshape.com/api/v8*
+All URIs are relative to *https://cad.onshape.com/api/v9*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -175,6 +175,8 @@ Name | Type | Description  | Notes
 > []BTModelFormatInfo GetDrawingTranslatorFormats(ctx, did, wid, eid).Execute()
 
 Get a list of all valid formats the drawing can be translated (exported) to.
+
+
 
 ### Example
 
@@ -488,6 +490,8 @@ Name | Type | Description  | Notes
 > BTAppModificationRequestInfo ModifyDrawing(ctx, did, wid, eid).BTDrawingModificationParams(bTDrawingModificationParams).LinkDocumentId(linkDocumentId).Execute()
 
 Modify a drawing via JSON payload.
+
+
 
 ### Example
 

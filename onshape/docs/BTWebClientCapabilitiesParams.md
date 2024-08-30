@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **Renderer** | Pointer to **string** |  | [optional] 
 **ScreenHeight** | Pointer to **int32** |  | [optional] 
 **ScreenWidth** | Pointer to **int32** |  | [optional] 
+**SupportsWebGL2** | Pointer to **bool** |  | [optional] 
+**SupportsWebGPU** | Pointer to **bool** |  | [optional] 
 **Vendor** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -466,6 +468,56 @@ SetScreenWidth sets ScreenWidth field to given value.
 `func (o *BTWebClientCapabilitiesParams) HasScreenWidth() bool`
 
 HasScreenWidth returns a boolean if a field has been set.
+
+### GetSupportsWebGL2
+
+`func (o *BTWebClientCapabilitiesParams) GetSupportsWebGL2() bool`
+
+GetSupportsWebGL2 returns the SupportsWebGL2 field if non-nil, zero value otherwise.
+
+### GetSupportsWebGL2Ok
+
+`func (o *BTWebClientCapabilitiesParams) GetSupportsWebGL2Ok() (*bool, bool)`
+
+GetSupportsWebGL2Ok returns a tuple with the SupportsWebGL2 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsWebGL2
+
+`func (o *BTWebClientCapabilitiesParams) SetSupportsWebGL2(v bool)`
+
+SetSupportsWebGL2 sets SupportsWebGL2 field to given value.
+
+### HasSupportsWebGL2
+
+`func (o *BTWebClientCapabilitiesParams) HasSupportsWebGL2() bool`
+
+HasSupportsWebGL2 returns a boolean if a field has been set.
+
+### GetSupportsWebGPU
+
+`func (o *BTWebClientCapabilitiesParams) GetSupportsWebGPU() bool`
+
+GetSupportsWebGPU returns the SupportsWebGPU field if non-nil, zero value otherwise.
+
+### GetSupportsWebGPUOk
+
+`func (o *BTWebClientCapabilitiesParams) GetSupportsWebGPUOk() (*bool, bool)`
+
+GetSupportsWebGPUOk returns a tuple with the SupportsWebGPU field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsWebGPU
+
+`func (o *BTWebClientCapabilitiesParams) SetSupportsWebGPU(v bool)`
+
+SetSupportsWebGPU sets SupportsWebGPU field to given value.
+
+### HasSupportsWebGPU
+
+`func (o *BTWebClientCapabilitiesParams) HasSupportsWebGPU() bool`
+
+HasSupportsWebGPU returns a boolean if a field has been set.
 
 ### GetVendor
 

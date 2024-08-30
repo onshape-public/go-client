@@ -34,6 +34,7 @@ type BTSketchEntity25 struct {
 	IsUserPoint                *bool                         `json:"isUserPoint,omitempty"`
 	SketchCurveType            *GBTSketchCurveType           `json:"sketchCurveType,omitempty"`
 	SketchEntityId             *string                       `json:"sketchEntityId,omitempty"`
+	SketchFeatureId            *string                       `json:"sketchFeatureId,omitempty"`
 	SolveStatus                *int32                        `json:"solveStatus,omitempty"`
 }
 
@@ -630,6 +631,38 @@ func (o *BTSketchEntity25) SetSketchEntityId(v string) {
 	o.SketchEntityId = &v
 }
 
+// GetSketchFeatureId returns the SketchFeatureId field value if set, zero value otherwise.
+func (o *BTSketchEntity25) GetSketchFeatureId() string {
+	if o == nil || o.SketchFeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SketchFeatureId
+}
+
+// GetSketchFeatureIdOk returns a tuple with the SketchFeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchEntity25) GetSketchFeatureIdOk() (*string, bool) {
+	if o == nil || o.SketchFeatureId == nil {
+		return nil, false
+	}
+	return o.SketchFeatureId, true
+}
+
+// HasSketchFeatureId returns a boolean if a field has been set.
+func (o *BTSketchEntity25) HasSketchFeatureId() bool {
+	if o != nil && o.SketchFeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSketchFeatureId gets a reference to the given string and assigns it to the SketchFeatureId field.
+func (o *BTSketchEntity25) SetSketchFeatureId(v string) {
+	o.SketchFeatureId = &v
+}
+
 // GetSolveStatus returns the SolveStatus field value if set, zero value otherwise.
 func (o *BTSketchEntity25) GetSolveStatus() int32 {
 	if o == nil || o.SolveStatus == nil {
@@ -717,6 +750,9 @@ func (o BTSketchEntity25) MarshalJSON() ([]byte, error) {
 	}
 	if o.SketchEntityId != nil {
 		toSerialize["sketchEntityId"] = o.SketchEntityId
+	}
+	if o.SketchFeatureId != nil {
+		toSerialize["sketchFeatureId"] = o.SketchFeatureId
 	}
 	if o.SolveStatus != nil {
 		toSerialize["solveStatus"] = o.SolveStatus

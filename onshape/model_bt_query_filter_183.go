@@ -160,6 +160,11 @@ func (o *BTTextStrokeFilter461) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
 }
 
+// BTSplineInternalPointFilter4101AsBTQueryFilter183 is a convenience function that returns BTSplineInternalPointFilter4101 wrapped in BTQueryFilter183
+func (o *BTSplineInternalPointFilter4101) AsBTQueryFilter183() *BTQueryFilter183 {
+	return &BTQueryFilter183{o}
+}
+
 // BTAllowEdgePointFilter2371AsBTQueryFilter183 is a convenience function that returns BTAllowEdgePointFilter2371 wrapped in BTQueryFilter183
 func (o *BTAllowEdgePointFilter2371) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
@@ -674,6 +679,20 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTQueryFilter183 = nil
 			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSplineHandleFilter2971: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTSplineInternalPointFilter-4101'
+	if jsonDict["btType"] == "BTSplineInternalPointFilter-4101" {
+		// try to unmarshal JSON data into BTSplineInternalPointFilter4101
+		var qr *BTSplineInternalPointFilter4101
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTQueryFilter183 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTQueryFilter183 = nil
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSplineInternalPointFilter4101: %s", err.Error())
 		}
 	}
 

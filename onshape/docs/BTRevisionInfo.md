@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | The Revision Description metadata property if revision is of a drawing. | [optional] 
 **DocumentId** | Pointer to **string** | The document that contains the item. | [optional] 
 **DocumentName** | Pointer to **string** | The name of the document that contains the item. | [optional] 
+**DocumentState** | Pointer to **int32** | The state of document containing this revision. Used in reuse part number flow | [optional] 
 **ElementId** | Pointer to **string** | The element that contains the item. | [optional] 
 **ElementType** | Pointer to **int32** | The type of item 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
@@ -336,6 +337,31 @@ SetDocumentName sets DocumentName field to given value.
 `func (o *BTRevisionInfo) HasDocumentName() bool`
 
 HasDocumentName returns a boolean if a field has been set.
+
+### GetDocumentState
+
+`func (o *BTRevisionInfo) GetDocumentState() int32`
+
+GetDocumentState returns the DocumentState field if non-nil, zero value otherwise.
+
+### GetDocumentStateOk
+
+`func (o *BTRevisionInfo) GetDocumentStateOk() (*int32, bool)`
+
+GetDocumentStateOk returns a tuple with the DocumentState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentState
+
+`func (o *BTRevisionInfo) SetDocumentState(v int32)`
+
+SetDocumentState sets DocumentState field to given value.
+
+### HasDocumentState
+
+`func (o *BTRevisionInfo) HasDocumentState() bool`
+
+HasDocumentState returns a boolean if a field has been set.
 
 ### GetElementId
 

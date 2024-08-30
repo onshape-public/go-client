@@ -65,6 +65,8 @@
 
 * `GBTUIHintFocusOnVisible` (value: `"FOCUS_ON_VISIBLE"`)
 
+* `GBTUIHintCanBeTolerant` (value: `"CAN_BE_TOLERANT"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

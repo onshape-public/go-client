@@ -38,13 +38,14 @@ type BTClassroomInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef             *string `json:"viewRef,omitempty"`
-	Educator            *bool   `json:"educator,omitempty"`
-	NumberOfAssignments *int64  `json:"numberOfAssignments,omitempty"`
-	NumberOfMembers     *int64  `json:"numberOfMembers,omitempty"`
-	State               *int32  `json:"state,omitempty"`
-	StateName           *string `json:"stateName,omitempty"`
-	Title               *string `json:"title,omitempty"`
+	ViewRef               *string            `json:"viewRef,omitempty"`
+	AssignmentsWithErrors *map[string]string `json:"assignmentsWithErrors,omitempty"`
+	Educator              *bool              `json:"educator,omitempty"`
+	NumberOfAssignments   *int64             `json:"numberOfAssignments,omitempty"`
+	NumberOfMembers       *int64             `json:"numberOfMembers,omitempty"`
+	State                 *int32             `json:"state,omitempty"`
+	StateName             *string            `json:"stateName,omitempty"`
+	Title                 *string            `json:"title,omitempty"`
 }
 
 // NewBTClassroomInfo instantiates a new BTClassroomInfo object
@@ -665,6 +666,38 @@ func (o *BTClassroomInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetAssignmentsWithErrors returns the AssignmentsWithErrors field value if set, zero value otherwise.
+func (o *BTClassroomInfo) GetAssignmentsWithErrors() map[string]string {
+	if o == nil || o.AssignmentsWithErrors == nil {
+		var ret map[string]string
+		return ret
+	}
+	return *o.AssignmentsWithErrors
+}
+
+// GetAssignmentsWithErrorsOk returns a tuple with the AssignmentsWithErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTClassroomInfo) GetAssignmentsWithErrorsOk() (*map[string]string, bool) {
+	if o == nil || o.AssignmentsWithErrors == nil {
+		return nil, false
+	}
+	return o.AssignmentsWithErrors, true
+}
+
+// HasAssignmentsWithErrors returns a boolean if a field has been set.
+func (o *BTClassroomInfo) HasAssignmentsWithErrors() bool {
+	if o != nil && o.AssignmentsWithErrors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssignmentsWithErrors gets a reference to the given map[string]string and assigns it to the AssignmentsWithErrors field.
+func (o *BTClassroomInfo) SetAssignmentsWithErrors(v map[string]string) {
+	o.AssignmentsWithErrors = &v
+}
+
 // GetEducator returns the Educator field value if set, zero value otherwise.
 func (o *BTClassroomInfo) GetEducator() bool {
 	if o == nil || o.Educator == nil {
@@ -915,6 +948,9 @@ func (o BTClassroomInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
+	}
+	if o.AssignmentsWithErrors != nil {
+		toSerialize["assignmentsWithErrors"] = o.AssignmentsWithErrors
 	}
 	if o.Educator != nil {
 		toSerialize["educator"] = o.Educator
