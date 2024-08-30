@@ -26,7 +26,7 @@ type BTAppDrawingViewInfo struct {
 	CutPoint                 []float64                               `json:"cutPoint,omitempty"`
 	DepthSectionEndCondition *BTBrokenOutEndCondition1107            `json:"depthSectionEndCondition,omitempty"`
 	DisplayStateId           *string                                 `json:"displayStateId,omitempty"`
-	// The numeric code identifying the error that occurred, if one occurred.
+	// `0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`
 	ErrorCode *int32 `json:"errorCode,omitempty"`
 	// A human-readable value for the error that occurred, if one occurred.
 	ErrorDescription                      *string                                            `json:"errorDescription,omitempty"`

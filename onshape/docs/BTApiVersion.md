@@ -21,6 +21,8 @@
 
 * `BTApiVersionV8RestoreNoopNoNewMicroversion` (value: `"V8_RESTORE_NOOP_NO_NEW_MICROVERSION"`)
 
+* `BTApiVersionV9IncludeDeterministicIdsToQueryResponses` (value: `"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

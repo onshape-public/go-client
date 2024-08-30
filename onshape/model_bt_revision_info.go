@@ -33,6 +33,8 @@ type BTRevisionInfo struct {
 	DocumentId *string `json:"documentId,omitempty"`
 	// The name of the document that contains the item.
 	DocumentName *string `json:"documentName,omitempty"`
+	// The state of document containing this revision. Used in reuse part number flow
+	DocumentState *int32 `json:"documentState,omitempty"`
 	// The element that contains the item.
 	ElementId *string `json:"elementId,omitempty"`
 	// The type of item 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
@@ -450,6 +452,38 @@ func (o *BTRevisionInfo) HasDocumentName() bool {
 // SetDocumentName gets a reference to the given string and assigns it to the DocumentName field.
 func (o *BTRevisionInfo) SetDocumentName(v string) {
 	o.DocumentName = &v
+}
+
+// GetDocumentState returns the DocumentState field value if set, zero value otherwise.
+func (o *BTRevisionInfo) GetDocumentState() int32 {
+	if o == nil || o.DocumentState == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DocumentState
+}
+
+// GetDocumentStateOk returns a tuple with the DocumentState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRevisionInfo) GetDocumentStateOk() (*int32, bool) {
+	if o == nil || o.DocumentState == nil {
+		return nil, false
+	}
+	return o.DocumentState, true
+}
+
+// HasDocumentState returns a boolean if a field has been set.
+func (o *BTRevisionInfo) HasDocumentState() bool {
+	if o != nil && o.DocumentState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentState gets a reference to the given int32 and assigns it to the DocumentState field.
+func (o *BTRevisionInfo) SetDocumentState(v int32) {
+	o.DocumentState = &v
 }
 
 // GetElementId returns the ElementId field value if set, zero value otherwise.
@@ -1350,6 +1384,9 @@ func (o BTRevisionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DocumentName != nil {
 		toSerialize["documentName"] = o.DocumentName
+	}
+	if o.DocumentState != nil {
+		toSerialize["documentState"] = o.DocumentState
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId

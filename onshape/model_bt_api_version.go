@@ -20,15 +20,16 @@ type BTApiVersion string
 
 // List of BTApiVersion
 const (
-	BTApiVersionUndefined                           BTApiVersion = "UNDEFINED"
-	BTApiVersionV1Start                             BTApiVersion = "V1_START"
-	BTApiVersionV2SerializationUnification          BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
-	BTApiVersionV3NewBomFormat                      BTApiVersion = "V3_NEW_BOM_FORMAT"
-	BTApiVersionV4TransactionsNoNew                 BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
-	BTApiVersionV5BodyDetailsCompositeReference     BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
-	BTApiVersionV6JsonEditResponseBugfix            BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
-	BTApiVersionV7SketchEndpointIncludesSolveStatus BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
-	BTApiVersionV8RestoreNoopNoNewMicroversion      BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
+	BTApiVersionUndefined                                 BTApiVersion = "UNDEFINED"
+	BTApiVersionV1Start                                   BTApiVersion = "V1_START"
+	BTApiVersionV2SerializationUnification                BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
+	BTApiVersionV3NewBomFormat                            BTApiVersion = "V3_NEW_BOM_FORMAT"
+	BTApiVersionV4TransactionsNoNew                       BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
+	BTApiVersionV5BodyDetailsCompositeReference           BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
+	BTApiVersionV6JsonEditResponseBugfix                  BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
+	BTApiVersionV7SketchEndpointIncludesSolveStatus       BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
+	BTApiVersionV8RestoreNoopNoNewMicroversion            BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
+	BTApiVersionV9IncludeDeterministicIdsToQueryResponses BTApiVersion = "V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"
 )
 
 // All allowed values of BTApiVersion enum
@@ -42,6 +43,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V6_JSON_EDIT_RESPONSE_BUGFIX",
 	"V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS",
 	"V8_RESTORE_NOOP_NO_NEW_MICROVERSION",
+	"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

@@ -16,41 +16,42 @@ import (
 
 // BTPartMetadataInfo struct for BTPartMetadataInfo
 type BTPartMetadataInfo struct {
-	Appearance                       *BTPartAppearanceInfo `json:"appearance,omitempty"`
-	BodyType                         *string               `json:"bodyType,omitempty"`
-	ConfigurationId                  *string               `json:"configurationId,omitempty"`
-	CustomProperties                 *map[string]string    `json:"customProperties,omitempty"`
-	DefaultColorHash                 *string               `json:"defaultColorHash,omitempty"`
-	Description                      *string               `json:"description,omitempty"`
-	ElementId                        *string               `json:"elementId,omitempty"`
-	Href                             *string               `json:"href,omitempty"`
-	Id                               *string               `json:"id,omitempty"`
-	IsFlattenedBody                  *bool                 `json:"isFlattenedBody,omitempty"`
-	IsHidden                         *bool                 `json:"isHidden,omitempty"`
-	IsMesh                           *bool                 `json:"isMesh,omitempty"`
-	Material                         *BTPartMaterialInfo   `json:"material,omitempty"`
-	MeshState                        *GBTMeshState         `json:"meshState,omitempty"`
-	MetadataMicroversion             *string               `json:"metadataMicroversion,omitempty"`
-	MicroversionId                   *string               `json:"microversionId,omitempty"`
-	Name                             *string               `json:"name,omitempty"`
-	Ordinal                          *int32                `json:"ordinal,omitempty"`
-	PartId                           *string               `json:"partId,omitempty"`
-	PartIdentity                     *string               `json:"partIdentity,omitempty"`
-	PartNumber                       *string               `json:"partNumber,omitempty"`
-	PartQuery                        *string               `json:"partQuery,omitempty"`
-	ProductLine                      *string               `json:"productLine,omitempty"`
-	Project                          *string               `json:"project,omitempty"`
-	PropertySourceTypes              *map[string]int32     `json:"propertySourceTypes,omitempty"`
-	ReferencingConfiguredPartNodeIds []string              `json:"referencingConfiguredPartNodeIds,omitempty"`
-	Revision                         *string               `json:"revision,omitempty"`
-	State                            *BTMetadataStateType  `json:"state,omitempty"`
-	ThumbnailConfigurationId         *string               `json:"thumbnailConfigurationId,omitempty"`
-	ThumbnailInfo                    *BTThumbnailInfo      `json:"thumbnailInfo,omitempty"`
-	Title1                           *string               `json:"title1,omitempty"`
-	Title2                           *string               `json:"title2,omitempty"`
-	Title3                           *string               `json:"title3,omitempty"`
-	UnflattenedPartId                *string               `json:"unflattenedPartId,omitempty"`
-	Vendor                           *string               `json:"vendor,omitempty"`
+	Appearance           *BTPartAppearanceInfo `json:"appearance,omitempty"`
+	BodyType             *string               `json:"bodyType,omitempty"`
+	ConfigurationId      *string               `json:"configurationId,omitempty"`
+	CustomProperties     *map[string]string    `json:"customProperties,omitempty"`
+	DefaultColorHash     *string               `json:"defaultColorHash,omitempty"`
+	Description          *string               `json:"description,omitempty"`
+	ElementId            *string               `json:"elementId,omitempty"`
+	Href                 *string               `json:"href,omitempty"`
+	Id                   *string               `json:"id,omitempty"`
+	IsFlattenedBody      *bool                 `json:"isFlattenedBody,omitempty"`
+	IsHidden             *bool                 `json:"isHidden,omitempty"`
+	IsMesh               *bool                 `json:"isMesh,omitempty"`
+	Material             *BTPartMaterialInfo   `json:"material,omitempty"`
+	MeshState            *GBTMeshState         `json:"meshState,omitempty"`
+	MetadataMicroversion *string               `json:"metadataMicroversion,omitempty"`
+	MicroversionId       *string               `json:"microversionId,omitempty"`
+	Name                 *string               `json:"name,omitempty"`
+	Ordinal              *int32                `json:"ordinal,omitempty"`
+	PartId               *string               `json:"partId,omitempty"`
+	PartIdentity         *string               `json:"partIdentity,omitempty"`
+	PartNumber           *string               `json:"partNumber,omitempty"`
+	PartQuery            *string               `json:"partQuery,omitempty"`
+	ProductLine          *string               `json:"productLine,omitempty"`
+	Project              *string               `json:"project,omitempty"`
+	// `0: AUTOMATIC` Set automatically, like a part name |  `1: MERGED` Merged from another Part Studio | `2: FEATURE` Custom feature | `3: UNCONFIGURED` | `4: CONFIGURED` |  `5: STANDARD_CONTENT` | `6: DEFAULT` Applied from metadata property configuration | `7: COMPUTED` Non-overriden, non-configured, computed property |  `8: COMPUTED_CONFIGURED` Property is computed in this configuration; may also be configured in other configurations  `9: IMPORT` Imported properties are handled separately
+	PropertySourceTypes              *map[string]int32    `json:"propertySourceTypes,omitempty"`
+	ReferencingConfiguredPartNodeIds []string             `json:"referencingConfiguredPartNodeIds,omitempty"`
+	Revision                         *string              `json:"revision,omitempty"`
+	State                            *BTMetadataStateType `json:"state,omitempty"`
+	ThumbnailConfigurationId         *string              `json:"thumbnailConfigurationId,omitempty"`
+	ThumbnailInfo                    *BTThumbnailInfo     `json:"thumbnailInfo,omitempty"`
+	Title1                           *string              `json:"title1,omitempty"`
+	Title2                           *string              `json:"title2,omitempty"`
+	Title3                           *string              `json:"title3,omitempty"`
+	UnflattenedPartId                *string              `json:"unflattenedPartId,omitempty"`
+	Vendor                           *string              `json:"vendor,omitempty"`
 }
 
 // NewBTPartMetadataInfo instantiates a new BTPartMetadataInfo object

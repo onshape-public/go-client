@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PropertyId** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **map[string]interface{}** |  | [optional] 
+**PropertyId** | Pointer to **string** | Id of the property to set. | [optional] 
+**Value** | Pointer to **map[string]interface{}** | Value to set for the property. | [optional] 
 
 ## Methods
 

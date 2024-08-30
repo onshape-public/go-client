@@ -17,7 +17,7 @@ import (
 // BTAppElementReferenceResolveInfo struct for BTAppElementReferenceResolveInfo
 type BTAppElementReferenceResolveInfo struct {
 	ChangeId *string `json:"changeId,omitempty"`
-	// The numeric code identifying the error that occurred, if one occurred.
+	// `0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`
 	ErrorCode *int32 `json:"errorCode,omitempty"`
 	// A human-readable value for the error that occurred, if one occurred.
 	ErrorDescription               *string                `json:"errorDescription,omitempty"`
@@ -42,8 +42,9 @@ type BTAppElementReferenceResolveInfo struct {
 	TargetDocumentMicroversionId   *string                `json:"targetDocumentMicroversionId,omitempty"`
 	TargetElementId                *string                `json:"targetElementId,omitempty"`
 	TargetElementMicroversionId    *string                `json:"targetElementMicroversionId,omitempty"`
-	TargetVersionId                *string                `json:"targetVersionId,omitempty"`
-	TrackNewVersions               *bool                  `json:"trackNewVersions,omitempty"`
+	// Reference to a part or assembly in a version; `NULL` when reference is in a workspace.
+	TargetVersionId  *string `json:"targetVersionId,omitempty"`
+	TrackNewVersions *bool   `json:"trackNewVersions,omitempty"`
 }
 
 // NewBTAppElementReferenceResolveInfo instantiates a new BTAppElementReferenceResolveInfo object

@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **PartQuery** | Pointer to **string** |  | [optional] 
 **ProductLine** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
-**PropertySourceTypes** | Pointer to **map[string]int32** |  | [optional] 
+**PropertySourceTypes** | Pointer to **map[string]int32** | &#x60;0: AUTOMATIC&#x60; Set automatically, like a part name |  &#x60;1: MERGED&#x60; Merged from another Part Studio | &#x60;2: FEATURE&#x60; Custom feature | &#x60;3: UNCONFIGURED&#x60; | &#x60;4: CONFIGURED&#x60; |  &#x60;5: STANDARD_CONTENT&#x60; | &#x60;6: DEFAULT&#x60; Applied from metadata property configuration | &#x60;7: COMPUTED&#x60; Non-overriden, non-configured, computed property |  &#x60;8: COMPUTED_CONFIGURED&#x60; Property is computed in this configuration; may also be configured in other configurations  &#x60;9: IMPORT&#x60; Imported properties are handled separately | [optional] 
 **ReferencingConfiguredPartNodeIds** | Pointer to **[]string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 **State** | Pointer to [**BTMetadataStateType**](BTMetadataStateType.md) |  | [optional] 

@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.185.41103-8d42b418e8db
+  version: 1.186.41986-43f194f2f0dc
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -40,7 +40,7 @@ info:
   x-filter-info: ?restUserRole=PUBLIC
 servers:
 - description: Current
-  url: https://cad.onshape.com/api/v8
+  url: https://cad.onshape.com/api/v9
 security:
 - BasicAuth: []
 tags:
@@ -106,6 +106,8 @@ tags:
   name: Revision
 - description: Access sketch information.
   name: Sketch
+- description: "Create, access, modify, and delete Tasks and Action Items."
+  name: Task
 - description: Access team information.
   name: Team
 - description: "Access, modify, and delete thumbnails."
@@ -7480,6 +7482,8 @@ paths:
   /drawings/d/{did}/w/{wid}/e/{eid}/modify:
     post:
       deprecated: false
+      description: "See [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/)\
+        \ for more information."
       operationId: modifyDrawing
       parameters:
       - description: The id of the document in which to perform the operation.
@@ -7544,6 +7548,8 @@ paths:
   /drawings/d/{did}/w/{wid}/e/{eid}/translationformats:
     get:
       deprecated: false
+      description: "See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json)\
+        \ for more information."
       operationId: getDrawingTranslatorFormats
       parameters:
       - explode: false
@@ -7789,7 +7795,8 @@ paths:
       deprecated: false
       description: "Export a drawing to a different format within a document. Use\
         \ `getDrawingTranslatorFormats` for a list of supported translation (i.e.,\
-        \ import/export) formats."
+        \ import/export) formats. See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json)\
+        \ for more information."
       operationId: createDrawingTranslation
       parameters:
       - explode: false
@@ -15271,6 +15278,14 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: supportChangeType
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         default:
           content:
@@ -15432,6 +15447,14 @@ paths:
       - explode: true
         in: query
         name: fillExportPermission
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: supportChangeType
         required: false
         schema:
           default: false
@@ -15826,6 +15849,222 @@ paths:
       summary: Get a properties table template by template ID.
       tags:
       - PropertiesTableTemplate
+      x-BTVisibility: PRODUCTION
+  /tasks:
+    get:
+      deprecated: false
+      description: Returns a list of tasks assigneed to the userId specified in the
+        request. Only company admins can view tasks that were not created by them
+        and are not assigned to them.
+      operationId: getActionItems
+      parameters:
+      - explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          format: int32
+          minimum: 0
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          default: 2
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: order
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: documentId
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTTaskListResponse'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Lists tasks assigned to the specified user
+      tags:
+      - Task
+      x-BTVisibility: PRODUCTION
+    post:
+      deprecated: false
+      operationId: createTask
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTCreateTaskParams'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTTaskInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: Create a new task in a draft state.
+      tags:
+      - Task
+      x-BTVisibility: PRODUCTION
+  /tasks/{tid}:
+    get:
+      deprecated: false
+      operationId: getTask
+      parameters:
+      - explode: false
+        in: path
+        name: tid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTTaskInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Get a task by id.
+      tags:
+      - Task
+      x-BTVisibility: PRODUCTION
+    post:
+      deprecated: false
+      operationId: updateTask
+      parameters:
+      - explode: false
+        in: path
+        name: tid
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=UTF-8; qs=0.09:
+            schema:
+              $ref: '#/components/schemas/BTUpdateTaskParams'
+        required: true
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTTaskInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: Update the task and its properties.
+      tags:
+      - Task
+      x-BTVisibility: PRODUCTION
+  /tasks/{tid}/{transition}:
+    post:
+      deprecated: false
+      operationId: transitionTask
+      parameters:
+      - explode: false
+        in: path
+        name: tid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: transition
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTTaskInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: Execute a workflow transition.
+      tags:
+      - Task
       x-BTVisibility: PRODUCTION
   /teams:
     get:
@@ -20232,6 +20471,7 @@ components:
       - V6_JSON_EDIT_RESPONSE_BUGFIX
       - V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS
       - V8_RESTORE_NOOP_NO_NEW_MICROVERSION
+      - V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES
       type: string
     BTAppArrayInfoBTAppDrawingViewInfo:
       example:
@@ -20459,8 +20699,8 @@ components:
         changeId:
           type: string
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -20518,8 +20758,8 @@ components:
         changeId:
           type: string
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -20676,8 +20916,8 @@ components:
         displayStateId:
           type: string
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -20793,8 +21033,8 @@ components:
         changeId:
           type: string
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -20837,8 +21077,8 @@ components:
             type: string
           type: array
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -20977,8 +21217,8 @@ components:
             $ref: '#/components/schemas/BTAppElementContentEntryInfo'
           type: array
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -21027,8 +21267,8 @@ components:
             $ref: '#/components/schemas/BTAppElementHistoryEntryInfo'
           type: array
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -21051,8 +21291,8 @@ components:
         changeId:
           type: string
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -21101,8 +21341,8 @@ components:
             type: string
           type: array
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -21217,8 +21457,8 @@ components:
           description: "The latest change id for the element, after the edit was committed."
           type: string
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -21345,8 +21585,8 @@ components:
         changeId:
           type: string
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -21399,6 +21639,8 @@ components:
         targetElementMicroversionId:
           type: string
         targetVersionId:
+          description: Reference to a part or assembly in a version; `NULL` when reference
+            is in a workspace.
           type: string
         trackNewVersions:
           type: boolean
@@ -21514,8 +21756,8 @@ components:
             $ref: '#/components/schemas/BTElementTransaction'
           type: array
         errorCode:
-          description: "The numeric code identifying the error that occurred, if one\
-            \ occurred."
+          description: "`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling\
+            \ or view generation call failed) | 4: UNKNOWN`"
           format: int32
           type: integer
         errorDescription:
@@ -26425,6 +26667,76 @@ components:
           description: Type of JSON object.
           type: string
       type: object
+    BTCreateTaskParams:
+      example:
+        companyId: companyId
+        nameParamValue: nameParamValue
+        itemParams:
+        - bodyType: bodyType
+          elementId: elementId
+          revisionId: revisionId
+          versionId: versionId
+          configuration: configuration
+          partId: partId
+          name: name
+          description: description
+          documentId: documentId
+          mimeType: mimeType
+          elementType: 0
+          workspaceId: workspaceId
+        - bodyType: bodyType
+          elementId: elementId
+          revisionId: revisionId
+          versionId: versionId
+          configuration: configuration
+          partId: partId
+          name: name
+          description: description
+          documentId: documentId
+          mimeType: mimeType
+          elementType: 0
+          workspaceId: workspaceId
+        name: name
+        description: description
+        documentId: documentId
+        propertyValues:
+        - propertyId: propertyId
+          value: "{}"
+        - propertyId: propertyId
+          value: "{}"
+        descriptionParamValue: descriptionParamValue
+      properties:
+        companyId:
+          description: Id of the company that owns the task.
+          type: string
+        description:
+          description: Description of the task.
+          type: string
+        descriptionParamValue:
+          type: string
+        documentId:
+          description: Id of a document to associate the task to.
+          type: string
+        itemParams:
+          description: References to include in the task.
+          items:
+            $ref: '#/components/schemas/BTTaskItemParams'
+          type: array
+        name:
+          description: Name of the task.
+          type: string
+        nameParamValue:
+          type: string
+        propertyValues:
+          description: Set Task metadata properties.
+          items:
+            $ref: '#/components/schemas/BTPropertyValueParam'
+          type: array
+      required:
+      - companyId
+      type: object
+      x-BTVisibility-properties:
+        workflowId: INTERNAL
     BTCurveDescription-1583:
       discriminator:
         mapping:
@@ -34362,6 +34674,7 @@ components:
         mapping:
           BTComputedPartPropertySpec-1746: '#/components/schemas/BTComputedPartPropertySpec-1746'
           BTTableSpec-915: '#/components/schemas/BTTableSpec-915'
+          BTToleranceSpec-3441: '#/components/schemas/BTToleranceSpec-3441'
         propertyName: btType
       example:
         linkedLocationName: linkedLocationName
@@ -34399,6 +34712,7 @@ components:
             additionalLocalizedStrings: 6
             iconUri: iconUri
             columnName: columnName
+        toleranceSpec: true
         namespaceIncludingEnums: namespaceIncludingEnums
         uiHints:
         - null
@@ -34773,6 +35087,8 @@ components:
           type: array
         tableSpec:
           type: boolean
+        toleranceSpec:
+          type: boolean
         tooltipTemplate:
           type: string
         uiHints:
@@ -34820,6 +35136,7 @@ components:
               additionalLocalizedStrings: 6
               iconUri: iconUri
               columnName: columnName
+          toleranceSpec: true
           namespaceIncludingEnums: namespaceIncludingEnums
           uiHints:
           - null
@@ -35148,6 +35465,7 @@ components:
               additionalLocalizedStrings: 6
               iconUri: iconUri
               columnName: columnName
+          toleranceSpec: true
           namespaceIncludingEnums: namespaceIncludingEnums
           uiHints:
           - null
@@ -38897,6 +39215,7 @@ components:
           errorMessage: errorMessage
           documentName: documentName
           isObsolete: true
+          documentState: 0
           autoObsoletionReleaseName: autoObsoletionReleaseName
           releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
           revision: revision
@@ -38908,7 +39227,7 @@ components:
           documentId: documentId
           partNumber: partNumber
           viewRef: https://openapi-generator.tech
-          elementType: 0
+          elementType: 6
           previousRevisionId: previousRevisionId
         - obsoletionPackageId: obsoletionPackageId
           canChangeType: false
@@ -38941,6 +39260,7 @@ components:
           errorMessage: errorMessage
           documentName: documentName
           isObsolete: true
+          documentState: 0
           autoObsoletionReleaseName: autoObsoletionReleaseName
           releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
           revision: revision
@@ -38952,7 +39272,7 @@ components:
           documentId: documentId
           partNumber: partNumber
           viewRef: https://openapi-generator.tech
-          elementType: 0
+          elementType: 6
           previousRevisionId: previousRevisionId
       properties:
         href:
@@ -39843,6 +40163,8 @@ components:
           drawBuffers: true
           oesStandardDerivatives: true
           oesTextureHalfFloatLinear: true
+          supportsWebGL2: true
+          supportsWebGPU: true
         rememberTotp: true
         totp: totp
         enableTotp: true
@@ -40006,6 +40328,10 @@ components:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
+        subFeaturesNotUsedInQuery:
+          items:
+            $ref: '#/components/schemas/BTMFeature-134'
+          type: array
         suppressed:
           description: "If `true`, the feature is suppressed. It will skip regeneration,\
             \ denoted by a line through the name in the Feature list."
@@ -40072,6 +40398,10 @@ components:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
+        subFeaturesNotUsedInQuery:
+          items:
+            $ref: '#/components/schemas/BTMFeature-134'
+          type: array
         suppressed:
           description: "If `true`, the feature is suppressed. It will skip regeneration,\
             \ denoted by a line through the name in the Feature list."
@@ -40133,6 +40463,10 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
+          items:
+            $ref: '#/components/schemas/BTMFeature-134'
+          type: array
+        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -40872,6 +41206,7 @@ components:
       discriminator:
         mapping:
           BTMParameterNullableQuantity-807: '#/components/schemas/BTMParameterNullableQuantity-807'
+          BTMParameterTolerantQuantity-2579: '#/components/schemas/BTMParameterTolerantQuantity-2579'
         propertyName: btType
       properties:
         btType:
@@ -41116,6 +41451,15 @@ components:
           description: Type of JSON object.
           type: string
       type: object
+    BTMParameterTolerantQuantity-2579:
+      allOf:
+      - $ref: '#/components/schemas/BTMParameterQuantity-147'
+      - $ref: '#/components/schemas/BTMParameterTolerantQuantity_2579_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
     BTMParametricPartStudioFeature-3883:
       properties:
         auxiliaryTreeFeature:
@@ -41163,6 +41507,10 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
+          items:
+            $ref: '#/components/schemas/BTMFeature-134'
+          type: array
+        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -46135,8 +46483,23 @@ components:
           type: string
         propertySourceTypes:
           additionalProperties:
+            description: "`0: AUTOMATIC` Set automatically, like a part name | \n\
+              `1: MERGED` Merged from another Part Studio | `2: FEATURE` Custom feature\
+              \ | `3: UNCONFIGURED` | `4: CONFIGURED` | \n`5: STANDARD_CONTENT` |\
+              \ `6: DEFAULT` Applied from metadata property configuration | `7: COMPUTED`\
+              \ Non-overriden, non-configured, computed property | \n`8: COMPUTED_CONFIGURED`\
+              \ Property is computed in this configuration; may also be configured\
+              \ in other configurations \n`9: IMPORT` Imported properties are handled\
+              \ separately"
             format: int32
             type: integer
+          description: "`0: AUTOMATIC` Set automatically, like a part name | \n`1:\
+            \ MERGED` Merged from another Part Studio | `2: FEATURE` Custom feature\
+            \ | `3: UNCONFIGURED` | `4: CONFIGURED` | \n`5: STANDARD_CONTENT` | `6:\
+            \ DEFAULT` Applied from metadata property configuration | `7: COMPUTED`\
+            \ Non-overriden, non-configured, computed property | \n`8: COMPUTED_CONFIGURED`\
+            \ Property is computed in this configuration; may also be configured in\
+            \ other configurations \n`9: IMPORT` Imported properties are handled separately"
           type: object
         referencingConfiguredPartNodeIds:
           items:
@@ -48545,8 +48908,10 @@ components:
         value: "{}"
       properties:
         propertyId:
+          description: Id of the property to set.
           type: string
         value:
+          description: Value to set for the property.
           type: object
       type: object
     BTPublicationBulkItemParams:
@@ -49091,6 +49456,7 @@ components:
           BTSketchSolveStatusFilter-3657: '#/components/schemas/BTSketchSolveStatusFilter-3657'
           BTSplineControlPolygonFilter-1130: '#/components/schemas/BTSplineControlPolygonFilter-1130'
           BTSplineHandleFilter-2971: '#/components/schemas/BTSplineHandleFilter-2971'
+          BTSplineInternalPointFilter-4101: '#/components/schemas/BTSplineInternalPointFilter-4101'
           BTTextObjectFilter-1515: '#/components/schemas/BTTextObjectFilter-1515'
           BTTextStrokeFilter-461: '#/components/schemas/BTTextStrokeFilter-461'
         propertyName: btType
@@ -50859,6 +51225,7 @@ components:
         errorMessage: errorMessage
         documentName: documentName
         isObsolete: true
+        documentState: 0
         autoObsoletionReleaseName: autoObsoletionReleaseName
         releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
         revision: revision
@@ -50870,7 +51237,7 @@ components:
         documentId: documentId
         partNumber: partNumber
         viewRef: https://openapi-generator.tech
-        elementType: 0
+        elementType: 6
         previousRevisionId: previousRevisionId
       properties:
         approvers:
@@ -50908,6 +51275,11 @@ components:
         documentName:
           description: The name of the document that contains the item.
           type: string
+        documentState:
+          description: The state of document containing this revision. Used in reuse
+            part number flow
+          format: int32
+          type: integer
         elementId:
           description: The element that contains the item.
           type: string
@@ -51025,6 +51397,7 @@ components:
           errorMessage: errorMessage
           documentName: documentName
           isObsolete: true
+          documentState: 0
           autoObsoletionReleaseName: autoObsoletionReleaseName
           releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
           revision: revision
@@ -51036,7 +51409,7 @@ components:
           documentId: documentId
           partNumber: partNumber
           viewRef: https://openapi-generator.tech
-          elementType: 0
+          elementType: 6
           previousRevisionId: previousRevisionId
         - obsoletionPackageId: obsoletionPackageId
           canChangeType: false
@@ -51069,6 +51442,7 @@ components:
           errorMessage: errorMessage
           documentName: documentName
           isObsolete: true
+          documentState: 0
           autoObsoletionReleaseName: autoObsoletionReleaseName
           releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
           revision: revision
@@ -51080,7 +51454,7 @@ components:
           documentId: documentId
           partNumber: partNumber
           viewRef: https://openapi-generator.tech
-          elementType: 0
+          elementType: 6
           previousRevisionId: previousRevisionId
       properties:
         href:
@@ -52127,6 +52501,15 @@ components:
           description: Type of JSON object.
           type: string
       type: object
+    BTSplineInternalPointFilter-4101:
+      allOf:
+      - $ref: '#/components/schemas/BTQueryFilter-183'
+      - $ref: '#/components/schemas/BTSplineInternalPointFilter_4101_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
     BTSpunDescription-657:
       allOf:
       - $ref: '#/components/schemas/BTSurfaceDescription-1564'
@@ -53031,6 +53414,3005 @@ components:
           description: Type of JSON object.
           type: string
       type: object
+    BTTaskInfo:
+      example:
+        workflowableObjectType: 4
+        documentType: 0
+        resolvedBy: null
+        roles:
+        - acted: true
+          name: name
+          active: true
+          description: description
+          predefinedRole: 6
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+        - acted: true
+          name: name
+          active: true
+          description: description
+          predefinedRole: 6
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+        deletable: true
+        description: description
+        taskTemplate: 2
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        taskType: taskType
+        action: action
+        approverRole: approverRole
+        href: https://openapi-generator.tech
+        id: id
+        state: state
+        objectId: objectId
+        sourceWorkspaceOrVersionName: sourceWorkspaceOrVersionName
+        workspaceId: workspaceId
+        elementId: elementId
+        creator: null
+        thumbnail:
+          secondarySizes:
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          - - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+          sizes:
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          - renderMode: renderMode
+            sheetName: sheetName
+            size: size
+            viewOrientation: viewOrientation
+            mediaType: mediaType
+            href: https://openapi-generator.tech
+            uniqueId: uniqueId
+          href: https://openapi-generator.tech
+          id: id
+        comments:
+        - assignedAt: 2000-01-23T04:56:07.000+00:00
+          resolvedBy: null
+          reopenedAt: 2000-01-23T04:56:07.000+00:00
+          elementOccurrences:
+          - elementOccurrences
+          - elementOccurrences
+          objectType: 5
+          viewData:
+            cameraViewport:
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
+            isPerspective: true
+            viewMatrix:
+            - 3.616076749251911
+            - 3.616076749251911
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          releasePackageId: releasePackageId
+          attachment:
+            thumbnailFor: thumbnailFor
+            fileName: fileName
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            mimeType: mimeType
+            viewRef: https://openapi-generator.tech
+          elementFeature: elementFeature
+          canDelete: true
+          href: https://openapi-generator.tech
+          id: id
+          state: 2
+          objectId: objectId
+          workspaceId: workspaceId
+          elementId: elementId
+          thumbnail:
+            thumbnailFor: thumbnailFor
+            fileName: fileName
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            mimeType: mimeType
+            viewRef: https://openapi-generator.tech
+          resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
+          message: message
+          parentId: parentId
+          replyCount: 5
+          versionId: versionId
+          reopenedBy: null
+          canResolveOrReopen: true
+          topLevel: true
+          assemblyFeatures:
+          - assemblyFeatures
+          - assemblyFeatures
+          name: name
+          documentId: documentId
+          assignee: null
+          viewRef: https://openapi-generator.tech
+          elementQuery: elementQuery
+          user: null
+        - assignedAt: 2000-01-23T04:56:07.000+00:00
+          resolvedBy: null
+          reopenedAt: 2000-01-23T04:56:07.000+00:00
+          elementOccurrences:
+          - elementOccurrences
+          - elementOccurrences
+          objectType: 5
+          viewData:
+            cameraViewport:
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
+            isPerspective: true
+            viewMatrix:
+            - 3.616076749251911
+            - 3.616076749251911
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          releasePackageId: releasePackageId
+          attachment:
+            thumbnailFor: thumbnailFor
+            fileName: fileName
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            mimeType: mimeType
+            viewRef: https://openapi-generator.tech
+          elementFeature: elementFeature
+          canDelete: true
+          href: https://openapi-generator.tech
+          id: id
+          state: 2
+          objectId: objectId
+          workspaceId: workspaceId
+          elementId: elementId
+          thumbnail:
+            thumbnailFor: thumbnailFor
+            fileName: fileName
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            mimeType: mimeType
+            viewRef: https://openapi-generator.tech
+          resolvedAt: 2000-01-23T04:56:07.000+00:00
+          coordinates:
+            x: 0.8008282
+            "y": 6.0274563
+            z: 1.4658129
+          message: message
+          parentId: parentId
+          replyCount: 5
+          versionId: versionId
+          reopenedBy: null
+          canResolveOrReopen: true
+          topLevel: true
+          assemblyFeatures:
+          - assemblyFeatures
+          - assemblyFeatures
+          name: name
+          documentId: documentId
+          assignee: null
+          viewRef: https://openapi-generator.tech
+          elementQuery: elementQuery
+          user: null
+        resolvedAt: 2000-01-23T04:56:07.000+00:00
+        teams:
+        - canMove: true
+          owner:
+            image: image
+            isEnterpriseOwnedResource: true
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            type: 6
+            viewRef: https://openapi-generator.tech
+          modifiedAt: 2000-01-23T04:56:07.000+00:00
+          isEnterpriseOwned: true
+          active: true
+          description: description
+          isContainer: true
+          treeHref: treeHref
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          isMutable: true
+          acted: true
+          unparentHref: unparentHref
+          createdBy:
+            jsonType: jsonType
+          predefinedTeam: 7
+          name: name
+          modifiedBy:
+            jsonType: jsonType
+          href: https://openapi-generator.tech
+          id: id
+          predefinedTeamMutable: true
+          viewRef: https://openapi-generator.tech
+          projectId: projectId
+          resourceType: resourceType
+        - canMove: true
+          owner:
+            image: image
+            isEnterpriseOwnedResource: true
+            name: name
+            href: https://openapi-generator.tech
+            id: id
+            type: 6
+            viewRef: https://openapi-generator.tech
+          modifiedAt: 2000-01-23T04:56:07.000+00:00
+          isEnterpriseOwned: true
+          active: true
+          description: description
+          isContainer: true
+          treeHref: treeHref
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          isMutable: true
+          acted: true
+          unparentHref: unparentHref
+          createdBy:
+            jsonType: jsonType
+          predefinedTeam: 7
+          name: name
+          modifiedBy:
+            jsonType: jsonType
+          href: https://openapi-generator.tech
+          id: id
+          predefinedTeamMutable: true
+          viewRef: https://openapi-generator.tech
+          projectId: projectId
+          resourceType: resourceType
+        editable: true
+        taskItems:
+        - bodyType: bodyType
+          elementId: elementId
+          fileName: fileName
+          configuration: configuration
+          partId: partId
+          dataType: dataType
+          mimeType: mimeType
+          elementOccurrences:
+          - elementOccurrences
+          - elementOccurrences
+          revisionId: revisionId
+          viewData:
+            cameraViewport:
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
+            isPerspective: true
+            viewMatrix:
+            - 3.616076749251911
+            - 3.616076749251911
+          versionId: versionId
+          assemblyFeatures:
+          - assemblyFeatures
+          - assemblyFeatures
+          elementFeature: elementFeature
+          name: name
+          documentId: documentId
+          href: https://openapi-generator.tech
+          id: id
+          releaseState: 5
+          viewRef: https://openapi-generator.tech
+          elementQuery: elementQuery
+          elementType: 5
+          workspaceId: workspaceId
+        - bodyType: bodyType
+          elementId: elementId
+          fileName: fileName
+          configuration: configuration
+          partId: partId
+          dataType: dataType
+          mimeType: mimeType
+          elementOccurrences:
+          - elementOccurrences
+          - elementOccurrences
+          revisionId: revisionId
+          viewData:
+            cameraViewport:
+            - 9.301444243932576
+            - 9.301444243932576
+            angle: 7.061401241503109
+            isPerspective: true
+            viewMatrix:
+            - 3.616076749251911
+            - 3.616076749251911
+          versionId: versionId
+          assemblyFeatures:
+          - assemblyFeatures
+          - assemblyFeatures
+          elementFeature: elementFeature
+          name: name
+          documentId: documentId
+          href: https://openapi-generator.tech
+          id: id
+          releaseState: 5
+          viewRef: https://openapi-generator.tech
+          elementQuery: elementQuery
+          elementType: 5
+          workspaceId: workspaceId
+        documentName: documentName
+        transition: transition
+        users:
+        - globalPermissions:
+            approveReleases: true
+            viewChangeOrders: true
+            createTasks: true
+            accessReports: true
+            transferDocumentsFromEnterprise: true
+            manageNonGeometricItems: true
+            createReleases: true
+            shareForAnonymousAccess: true
+            createProject: true
+            createChangeRequests: true
+            createDocumentsInRoot: true
+            manageStandardContentMetadata: true
+            manageUsers: true
+            manageWorkflows: true
+            allowPublicDocumentsAccess: true
+            branchLockPermissions: true
+            allowAppStoreAccess: true
+            createChangeOrders: true
+            manageGuestUsers: true
+            adminEnterprise: true
+            deletePermanently: true
+            manageRbac: true
+            viewChangeRequests: true
+          image: image
+          lastName: lastName
+          isGuest: true
+          isLight: true
+          invitationState: 9
+          isOnshapeSupport: true
+          source: 3
+          firstName: firstName
+          lastLoginTime: 2000-01-23T04:56:07.000+00:00
+          acted: true
+          personalMessageAllowed: true
+          name: name
+          company:
+            image: image
+            noPublicDocuments: true
+            admin: true
+            description: description
+            ownerId: ownerId
+            type: 1
+            domainPrefix: domainPrefix
+            secondaryDomainPrefixes:
+            - secondaryDomainPrefixes
+            - secondaryDomainPrefixes
+            name: name
+            enterpriseSubtype: 0
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+            enterpriseBaseUrl: enterpriseBaseUrl
+          documentationName: documentationName
+          href: https://openapi-generator.tech
+          id: id
+          state: 2
+          viewRef: https://openapi-generator.tech
+          documentationNameOverride: documentationNameOverride
+          email: email
+        - globalPermissions:
+            approveReleases: true
+            viewChangeOrders: true
+            createTasks: true
+            accessReports: true
+            transferDocumentsFromEnterprise: true
+            manageNonGeometricItems: true
+            createReleases: true
+            shareForAnonymousAccess: true
+            createProject: true
+            createChangeRequests: true
+            createDocumentsInRoot: true
+            manageStandardContentMetadata: true
+            manageUsers: true
+            manageWorkflows: true
+            allowPublicDocumentsAccess: true
+            branchLockPermissions: true
+            allowAppStoreAccess: true
+            createChangeOrders: true
+            manageGuestUsers: true
+            adminEnterprise: true
+            deletePermanently: true
+            manageRbac: true
+            viewChangeRequests: true
+          image: image
+          lastName: lastName
+          isGuest: true
+          isLight: true
+          invitationState: 9
+          isOnshapeSupport: true
+          source: 3
+          firstName: firstName
+          lastLoginTime: 2000-01-23T04:56:07.000+00:00
+          acted: true
+          personalMessageAllowed: true
+          name: name
+          company:
+            image: image
+            noPublicDocuments: true
+            admin: true
+            description: description
+            ownerId: ownerId
+            type: 1
+            domainPrefix: domainPrefix
+            secondaryDomainPrefixes:
+            - secondaryDomainPrefixes
+            - secondaryDomainPrefixes
+            name: name
+            enterpriseSubtype: 0
+            href: https://openapi-generator.tech
+            id: id
+            state: 6
+            viewRef: https://openapi-generator.tech
+            enterpriseBaseUrl: enterpriseBaseUrl
+          documentationName: documentationName
+          href: https://openapi-generator.tech
+          id: id
+          state: 2
+          viewRef: https://openapi-generator.tech
+          documentationNameOverride: documentationNameOverride
+          email: email
+        companyId: companyId
+        versionId: versionId
+        workflowInfo:
+          workflow:
+            approverIds:
+            - approverIds
+            - approverIds
+            metadataState: metadataState
+            errorMessage: errorMessage
+            canBeDiscarded: true
+            usesExternalPlm: true
+            debugMicroversionId: debugMicroversionId
+            isDiscarded: true
+            notifierIds:
+            - notifierIds
+            - notifierIds
+            state:
+              editableProperties:
+              - editableProperties
+              - editableProperties
+              nonEditableProperties:
+              - nonEditableProperties
+              - nonEditableProperties
+              requiredItemProperties:
+              - requiredItemProperties
+              - requiredItemProperties
+              requiredProperties:
+              - requiredProperties
+              - requiredProperties
+              displayName: displayName
+              editPermissions:
+              - editPermissions
+              - editPermissions
+              approverSourceProperty: approverSourceProperty
+              name: name
+              notifierSourceProperty: notifierSourceProperty
+            isFrozen: true
+            actions:
+            - alwaysAllow: true
+              isAdminOverride: true
+              requiredProperties:
+              - requiredProperties
+              - requiredProperties
+              allowIfApprovers: true
+              tooltip: tooltip
+              action: action
+              isApproverAction: true
+              label: label
+              uiHint: uiHint
+              type: null
+              allowIfNoApprovers: true
+            - alwaysAllow: true
+              isAdminOverride: true
+              requiredProperties:
+              - requiredProperties
+              - requiredProperties
+              allowIfApprovers: true
+              tooltip: tooltip
+              action: action
+              isApproverAction: true
+              label: label
+              uiHint: uiHint
+              type: null
+              allowIfNoApprovers: true
+            isCreator: true
+            isSetup: true
+          modifiedAt: 2000-01-23T04:56:07.000+00:00
+          description: description
+          workflowError: workflowError
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          companyId: companyId
+          createdBy:
+            jsonType: jsonType
+          name: name
+          documentId: documentId
+          modifiedBy:
+            jsonType: jsonType
+          href: https://openapi-generator.tech
+          id: id
+          viewRef: https://openapi-generator.tech
+          properties:
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            isNotifierProperty: true
+            hideInUi: true
+            dateFormat: dateFormat
+            defaultValue: "{}"
+            validator:
+              quantityType: 2
+              minDate: 2000-01-23T04:56:07.000+00:00
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
+              pattern: pattern
+              maxDate: 2000-01-23T04:56:07.000+00:00
+              minCount: 9
+              maxCount: 5
+              maxLength: 2
+            propertyOverrideStatus: 7
+            teamsOnly: true
+            required: true
+            usersOnly: true
+            uiHints:
+              multiline: true
+            valueType: valueType
+            initialValue: "{}"
+            isApproverProperty: true
+            propertyId: propertyId
+            value: "{}"
+            enumValues:
+            - label: label
+              state: 0
+              value: value
+            - label: label
+              state: 0
+              value: value
+            dirty: true
+            editableInUi: true
+            editable: true
+            multivalued: true
+            propertySource: 9
+            computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
+            schemaId: schemaId
+            name: name
+            computedProperty: true
+            observers:
+            - entryType: null
+              new: true
+              approvalDate: 2000-01-23T04:56:07.000+00:00
+              approverId: approverId
+              modifiedAt: 2000-01-23T04:56:07.000+00:00
+              approvalState: null
+              description: description
+              approverName: approverName
+              entryId: entryId
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              companyId: companyId
+              observationType: 2
+              createdBy: createdBy
+              removable: true
+              rejectionDate: 2000-01-23T04:56:07.000+00:00
+              name: name
+              adminOverride: true
+              modifiedBy: modifiedBy
+              id: id
+              propertyId: propertyId
+              associatedStates: associatedStates
+              objectId: objectId
+            - entryType: null
+              new: true
+              approvalDate: 2000-01-23T04:56:07.000+00:00
+              approverId: approverId
+              modifiedAt: 2000-01-23T04:56:07.000+00:00
+              approvalState: null
+              description: description
+              approverName: approverName
+              entryId: entryId
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              companyId: companyId
+              observationType: 2
+              createdBy: createdBy
+              removable: true
+              rejectionDate: 2000-01-23T04:56:07.000+00:00
+              name: name
+              adminOverride: true
+              modifiedBy: modifiedBy
+              id: id
+              propertyId: propertyId
+              associatedStates: associatedStates
+              objectId: objectId
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            isNotifierProperty: true
+            hideInUi: true
+            dateFormat: dateFormat
+            defaultValue: "{}"
+            validator:
+              quantityType: 2
+              minDate: 2000-01-23T04:56:07.000+00:00
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
+              pattern: pattern
+              maxDate: 2000-01-23T04:56:07.000+00:00
+              minCount: 9
+              maxCount: 5
+              maxLength: 2
+            propertyOverrideStatus: 7
+            teamsOnly: true
+            required: true
+            usersOnly: true
+            uiHints:
+              multiline: true
+            valueType: valueType
+            initialValue: "{}"
+            isApproverProperty: true
+            propertyId: propertyId
+            value: "{}"
+            enumValues:
+            - label: label
+              state: 0
+              value: value
+            - label: label
+              state: 0
+              value: value
+            dirty: true
+            editableInUi: true
+            editable: true
+            multivalued: true
+            propertySource: 9
+            computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
+            schemaId: schemaId
+            name: name
+            computedProperty: true
+            observers:
+            - entryType: null
+              new: true
+              approvalDate: 2000-01-23T04:56:07.000+00:00
+              approverId: approverId
+              modifiedAt: 2000-01-23T04:56:07.000+00:00
+              approvalState: null
+              description: description
+              approverName: approverName
+              entryId: entryId
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              companyId: companyId
+              observationType: 2
+              createdBy: createdBy
+              removable: true
+              rejectionDate: 2000-01-23T04:56:07.000+00:00
+              name: name
+              adminOverride: true
+              modifiedBy: modifiedBy
+              id: id
+              propertyId: propertyId
+              associatedStates: associatedStates
+              objectId: objectId
+            - entryType: null
+              new: true
+              approvalDate: 2000-01-23T04:56:07.000+00:00
+              approverId: approverId
+              modifiedAt: 2000-01-23T04:56:07.000+00:00
+              approvalState: null
+              description: description
+              approverName: approverName
+              entryId: entryId
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              companyId: companyId
+              observationType: 2
+              createdBy: createdBy
+              removable: true
+              rejectionDate: 2000-01-23T04:56:07.000+00:00
+              name: name
+              adminOverride: true
+              modifiedBy: modifiedBy
+              id: id
+              propertyId: propertyId
+              associatedStates: associatedStates
+              objectId: objectId
+          workflowId:
+            companyId: companyId
+            versionId: versionId
+            workflowId: workflowId
+        simpleName: simpleName
+        name: name
+        documentId: documentId
+        viewRef: https://openapi-generator.tech
+        properties:
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          dirty: true
+          editableInUi: true
+          dateFormat: dateFormat
+          defaultValue: ""
+          editable: true
+          multivalued: true
+          propertySource: 1
+          validator:
+            quantityType: 2
+            minDate: 2000-01-23T04:56:07.000+00:00
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
+            pattern: pattern
+            maxDate: 2000-01-23T04:56:07.000+00:00
+            minCount: 9
+            maxCount: 5
+            maxLength: 2
+          computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
+          propertyOverrideStatus: 6
+          required: true
+          uiHints:
+            multiline: true
+          schemaId: schemaId
+          valueType: valueType
+          name: name
+          initialValue: "{}"
+          propertyId: propertyId
+          value: ""
+          computedProperty: true
+          enumValues:
+          - label: label
+            state: 0
+            value: value
+          - label: label
+            state: 0
+            value: value
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          dirty: true
+          editableInUi: true
+          dateFormat: dateFormat
+          defaultValue: ""
+          editable: true
+          multivalued: true
+          propertySource: 1
+          validator:
+            quantityType: 2
+            minDate: 2000-01-23T04:56:07.000+00:00
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
+            pattern: pattern
+            maxDate: 2000-01-23T04:56:07.000+00:00
+            minCount: 9
+            maxCount: 5
+            maxLength: 2
+          computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
+          propertyOverrideStatus: 6
+          required: true
+          uiHints:
+            multiline: true
+          schemaId: schemaId
+          valueType: valueType
+          name: name
+          initialValue: "{}"
+          propertyId: propertyId
+          value: ""
+          computedProperty: true
+          enumValues:
+          - label: label
+            state: 0
+            value: value
+          - label: label
+            state: 0
+            value: value
+        status: 1
+      properties:
+        action:
+          type: string
+        approverRole:
+          type: string
+        comments:
+          items:
+            $ref: '#/components/schemas/BTCommentInfo'
+          type: array
+        companyId:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        creator:
+          $ref: '#/components/schemas/BTUserSummaryInfo'
+        deletable:
+          type: boolean
+        description:
+          type: string
+        documentId:
+          type: string
+        documentName:
+          type: string
+        documentType:
+          format: int32
+          type: integer
+        editable:
+          type: boolean
+        elementId:
+          type: string
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        name:
+          description: Name of the resource.
+          type: string
+        objectId:
+          type: string
+        properties:
+          items:
+            $ref: '#/components/schemas/BTMetadataPropertyInfo'
+          type: array
+        resolvedAt:
+          format: date-time
+          type: string
+        resolvedBy:
+          $ref: '#/components/schemas/BTUserSummaryInfo'
+        roles:
+          items:
+            $ref: '#/components/schemas/BTTaskRbacRoleInfo'
+          type: array
+        simpleName:
+          type: string
+        sourceWorkspaceOrVersionName:
+          type: string
+        state:
+          type: string
+        status:
+          format: int32
+          type: integer
+        taskItems:
+          items:
+            $ref: '#/components/schemas/BTTaskItemInfo'
+          type: array
+        taskTemplate:
+          format: int32
+          type: integer
+        taskType:
+          type: string
+        teams:
+          items:
+            $ref: '#/components/schemas/BTTaskTeamSummaryInfo'
+          type: array
+        thumbnail:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        transition:
+          type: string
+        users:
+          items:
+            $ref: '#/components/schemas/BTTaskUserSummaryInfo'
+          type: array
+        versionId:
+          type: string
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+        workflowInfo:
+          $ref: '#/components/schemas/BTWorkflowableObjectInfo'
+        workflowableObjectType:
+          format: int32
+          type: integer
+        workspaceId:
+          type: string
+      type: object
+    BTTaskItemInfo:
+      example:
+        bodyType: bodyType
+        elementId: elementId
+        fileName: fileName
+        configuration: configuration
+        partId: partId
+        dataType: dataType
+        mimeType: mimeType
+        elementOccurrences:
+        - elementOccurrences
+        - elementOccurrences
+        revisionId: revisionId
+        viewData:
+          cameraViewport:
+          - 9.301444243932576
+          - 9.301444243932576
+          angle: 7.061401241503109
+          isPerspective: true
+          viewMatrix:
+          - 3.616076749251911
+          - 3.616076749251911
+        versionId: versionId
+        assemblyFeatures:
+        - assemblyFeatures
+        - assemblyFeatures
+        elementFeature: elementFeature
+        name: name
+        documentId: documentId
+        href: https://openapi-generator.tech
+        id: id
+        releaseState: 5
+        viewRef: https://openapi-generator.tech
+        elementQuery: elementQuery
+        elementType: 5
+        workspaceId: workspaceId
+      properties:
+        assemblyFeatures:
+          items:
+            type: string
+          type: array
+        bodyType:
+          type: string
+        configuration:
+          type: string
+        dataType:
+          type: string
+        documentId:
+          type: string
+        elementFeature:
+          type: string
+        elementId:
+          type: string
+        elementOccurrences:
+          items:
+            type: string
+          type: array
+        elementQuery:
+          type: string
+        elementType:
+          format: int32
+          type: integer
+        fileName:
+          type: string
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        mimeType:
+          type: string
+        name:
+          description: Name of the resource.
+          type: string
+        partId:
+          type: string
+        releaseState:
+          format: int32
+          type: integer
+        revisionId:
+          type: string
+        versionId:
+          type: string
+        viewData:
+          $ref: '#/components/schemas/BTViewDataInfo'
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+        workspaceId:
+          type: string
+      type: object
+    BTTaskItemParams:
+      description: References to add to the task.
+      example:
+        bodyType: bodyType
+        elementId: elementId
+        revisionId: revisionId
+        versionId: versionId
+        configuration: configuration
+        partId: partId
+        name: name
+        description: description
+        documentId: documentId
+        mimeType: mimeType
+        elementType: 0
+        workspaceId: workspaceId
+      properties:
+        bodyType:
+          description: Body type to reference from a task.
+          type: string
+        configuration:
+          description: Configuration of reference. Used to restrict a reference to
+            a specific configuration of an element.
+          type: string
+        description:
+          description: Description of the reference.
+          type: string
+        documentId:
+          description: Id of a document. Required to reference a document or anything
+            contained within it.
+          type: string
+        elementId:
+          description: Id of an element reference. Used when referencing an element.
+          type: string
+        elementType:
+          description: "Type of element reference. Options are 0 (Part Studio), 1\
+            \ (Assembly), 2 (Drawing), 3 (Feature Studio), 4 (Blob), 5 (Application),\
+            \ 6 (Table), 7 (Bill of Materials),  8 (Variable Studio), or 9 (Publication\
+            \ Item)."
+          format: int32
+          type: integer
+        mimeType:
+          description: Mimetype of reference. Used when referencing blob elements.
+          type: string
+        name:
+          description: Name of the reference.
+          type: string
+        partId:
+          description: Determinstic Id of a part. Used when referencing parts.
+          type: string
+        revisionId:
+          description: Id of a revision to reference from a task.
+          type: string
+        versionId:
+          description: Id of a document version. Used when referencing the version
+            itself or an element or part in it.
+          type: string
+        workspaceId:
+          description: Id of a document workspace. Used when referencing the workspace
+            itself or an element or part in it.
+          type: string
+      type: object
+      x-BTVisibility-properties:
+        viewData: INTERNAL
+        dataType: INTERNAL
+        elementFeature: INTERNAL
+        id: INTERNAL
+        assemblyFeature: INTERNAL
+        elementQuery: INTERNAL
+        elementOccurrence: INTERNAL
+    BTTaskListResponse:
+      example:
+        next: https://openapi-generator.tech
+        previous: https://openapi-generator.tech
+        href: https://openapi-generator.tech
+        taskTypes:
+        - displayName: displayName
+          name: name
+          id: id
+        - displayName: displayName
+          name: name
+          id: id
+        items:
+        - workflowableObjectType: 4
+          documentType: 0
+          resolvedBy: null
+          roles:
+          - acted: true
+            name: name
+            active: true
+            description: description
+            predefinedRole: 6
+            href: https://openapi-generator.tech
+            id: id
+            viewRef: https://openapi-generator.tech
+          - acted: true
+            name: name
+            active: true
+            description: description
+            predefinedRole: 6
+            href: https://openapi-generator.tech
+            id: id
+            viewRef: https://openapi-generator.tech
+          deletable: true
+          description: description
+          taskTemplate: 2
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          taskType: taskType
+          action: action
+          approverRole: approverRole
+          href: https://openapi-generator.tech
+          id: id
+          state: state
+          objectId: objectId
+          sourceWorkspaceOrVersionName: sourceWorkspaceOrVersionName
+          workspaceId: workspaceId
+          elementId: elementId
+          creator: null
+          thumbnail:
+            secondarySizes:
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            sizes:
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            href: https://openapi-generator.tech
+            id: id
+          comments:
+          - assignedAt: 2000-01-23T04:56:07.000+00:00
+            resolvedBy: null
+            reopenedAt: 2000-01-23T04:56:07.000+00:00
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            objectType: 5
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            releasePackageId: releasePackageId
+            attachment:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            elementFeature: elementFeature
+            canDelete: true
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            objectId: objectId
+            workspaceId: workspaceId
+            elementId: elementId
+            thumbnail:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
+            message: message
+            parentId: parentId
+            replyCount: 5
+            versionId: versionId
+            reopenedBy: null
+            canResolveOrReopen: true
+            topLevel: true
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            name: name
+            documentId: documentId
+            assignee: null
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            user: null
+          - assignedAt: 2000-01-23T04:56:07.000+00:00
+            resolvedBy: null
+            reopenedAt: 2000-01-23T04:56:07.000+00:00
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            objectType: 5
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            releasePackageId: releasePackageId
+            attachment:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            elementFeature: elementFeature
+            canDelete: true
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            objectId: objectId
+            workspaceId: workspaceId
+            elementId: elementId
+            thumbnail:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
+            message: message
+            parentId: parentId
+            replyCount: 5
+            versionId: versionId
+            reopenedBy: null
+            canResolveOrReopen: true
+            topLevel: true
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            name: name
+            documentId: documentId
+            assignee: null
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            user: null
+          resolvedAt: 2000-01-23T04:56:07.000+00:00
+          teams:
+          - canMove: true
+            owner:
+              image: image
+              isEnterpriseOwnedResource: true
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              type: 6
+              viewRef: https://openapi-generator.tech
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            isEnterpriseOwned: true
+            active: true
+            description: description
+            isContainer: true
+            treeHref: treeHref
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            isMutable: true
+            acted: true
+            unparentHref: unparentHref
+            createdBy:
+              jsonType: jsonType
+            predefinedTeam: 7
+            name: name
+            modifiedBy:
+              jsonType: jsonType
+            href: https://openapi-generator.tech
+            id: id
+            predefinedTeamMutable: true
+            viewRef: https://openapi-generator.tech
+            projectId: projectId
+            resourceType: resourceType
+          - canMove: true
+            owner:
+              image: image
+              isEnterpriseOwnedResource: true
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              type: 6
+              viewRef: https://openapi-generator.tech
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            isEnterpriseOwned: true
+            active: true
+            description: description
+            isContainer: true
+            treeHref: treeHref
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            isMutable: true
+            acted: true
+            unparentHref: unparentHref
+            createdBy:
+              jsonType: jsonType
+            predefinedTeam: 7
+            name: name
+            modifiedBy:
+              jsonType: jsonType
+            href: https://openapi-generator.tech
+            id: id
+            predefinedTeamMutable: true
+            viewRef: https://openapi-generator.tech
+            projectId: projectId
+            resourceType: resourceType
+          editable: true
+          taskItems:
+          - bodyType: bodyType
+            elementId: elementId
+            fileName: fileName
+            configuration: configuration
+            partId: partId
+            dataType: dataType
+            mimeType: mimeType
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            revisionId: revisionId
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            versionId: versionId
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            elementFeature: elementFeature
+            name: name
+            documentId: documentId
+            href: https://openapi-generator.tech
+            id: id
+            releaseState: 5
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            elementType: 5
+            workspaceId: workspaceId
+          - bodyType: bodyType
+            elementId: elementId
+            fileName: fileName
+            configuration: configuration
+            partId: partId
+            dataType: dataType
+            mimeType: mimeType
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            revisionId: revisionId
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            versionId: versionId
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            elementFeature: elementFeature
+            name: name
+            documentId: documentId
+            href: https://openapi-generator.tech
+            id: id
+            releaseState: 5
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            elementType: 5
+            workspaceId: workspaceId
+          documentName: documentName
+          transition: transition
+          users:
+          - globalPermissions:
+              approveReleases: true
+              viewChangeOrders: true
+              createTasks: true
+              accessReports: true
+              transferDocumentsFromEnterprise: true
+              manageNonGeometricItems: true
+              createReleases: true
+              shareForAnonymousAccess: true
+              createProject: true
+              createChangeRequests: true
+              createDocumentsInRoot: true
+              manageStandardContentMetadata: true
+              manageUsers: true
+              manageWorkflows: true
+              allowPublicDocumentsAccess: true
+              branchLockPermissions: true
+              allowAppStoreAccess: true
+              createChangeOrders: true
+              manageGuestUsers: true
+              adminEnterprise: true
+              deletePermanently: true
+              manageRbac: true
+              viewChangeRequests: true
+            image: image
+            lastName: lastName
+            isGuest: true
+            isLight: true
+            invitationState: 9
+            isOnshapeSupport: true
+            source: 3
+            firstName: firstName
+            lastLoginTime: 2000-01-23T04:56:07.000+00:00
+            acted: true
+            personalMessageAllowed: true
+            name: name
+            company:
+              image: image
+              noPublicDocuments: true
+              admin: true
+              description: description
+              ownerId: ownerId
+              type: 1
+              domainPrefix: domainPrefix
+              secondaryDomainPrefixes:
+              - secondaryDomainPrefixes
+              - secondaryDomainPrefixes
+              name: name
+              enterpriseSubtype: 0
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+              enterpriseBaseUrl: enterpriseBaseUrl
+            documentationName: documentationName
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            viewRef: https://openapi-generator.tech
+            documentationNameOverride: documentationNameOverride
+            email: email
+          - globalPermissions:
+              approveReleases: true
+              viewChangeOrders: true
+              createTasks: true
+              accessReports: true
+              transferDocumentsFromEnterprise: true
+              manageNonGeometricItems: true
+              createReleases: true
+              shareForAnonymousAccess: true
+              createProject: true
+              createChangeRequests: true
+              createDocumentsInRoot: true
+              manageStandardContentMetadata: true
+              manageUsers: true
+              manageWorkflows: true
+              allowPublicDocumentsAccess: true
+              branchLockPermissions: true
+              allowAppStoreAccess: true
+              createChangeOrders: true
+              manageGuestUsers: true
+              adminEnterprise: true
+              deletePermanently: true
+              manageRbac: true
+              viewChangeRequests: true
+            image: image
+            lastName: lastName
+            isGuest: true
+            isLight: true
+            invitationState: 9
+            isOnshapeSupport: true
+            source: 3
+            firstName: firstName
+            lastLoginTime: 2000-01-23T04:56:07.000+00:00
+            acted: true
+            personalMessageAllowed: true
+            name: name
+            company:
+              image: image
+              noPublicDocuments: true
+              admin: true
+              description: description
+              ownerId: ownerId
+              type: 1
+              domainPrefix: domainPrefix
+              secondaryDomainPrefixes:
+              - secondaryDomainPrefixes
+              - secondaryDomainPrefixes
+              name: name
+              enterpriseSubtype: 0
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+              enterpriseBaseUrl: enterpriseBaseUrl
+            documentationName: documentationName
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            viewRef: https://openapi-generator.tech
+            documentationNameOverride: documentationNameOverride
+            email: email
+          companyId: companyId
+          versionId: versionId
+          workflowInfo:
+            workflow:
+              approverIds:
+              - approverIds
+              - approverIds
+              metadataState: metadataState
+              errorMessage: errorMessage
+              canBeDiscarded: true
+              usesExternalPlm: true
+              debugMicroversionId: debugMicroversionId
+              isDiscarded: true
+              notifierIds:
+              - notifierIds
+              - notifierIds
+              state:
+                editableProperties:
+                - editableProperties
+                - editableProperties
+                nonEditableProperties:
+                - nonEditableProperties
+                - nonEditableProperties
+                requiredItemProperties:
+                - requiredItemProperties
+                - requiredItemProperties
+                requiredProperties:
+                - requiredProperties
+                - requiredProperties
+                displayName: displayName
+                editPermissions:
+                - editPermissions
+                - editPermissions
+                approverSourceProperty: approverSourceProperty
+                name: name
+                notifierSourceProperty: notifierSourceProperty
+              isFrozen: true
+              actions:
+              - alwaysAllow: true
+                isAdminOverride: true
+                requiredProperties:
+                - requiredProperties
+                - requiredProperties
+                allowIfApprovers: true
+                tooltip: tooltip
+                action: action
+                isApproverAction: true
+                label: label
+                uiHint: uiHint
+                type: null
+                allowIfNoApprovers: true
+              - alwaysAllow: true
+                isAdminOverride: true
+                requiredProperties:
+                - requiredProperties
+                - requiredProperties
+                allowIfApprovers: true
+                tooltip: tooltip
+                action: action
+                isApproverAction: true
+                label: label
+                uiHint: uiHint
+                type: null
+                allowIfNoApprovers: true
+              isCreator: true
+              isSetup: true
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            description: description
+            workflowError: workflowError
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            companyId: companyId
+            createdBy:
+              jsonType: jsonType
+            name: name
+            documentId: documentId
+            modifiedBy:
+              jsonType: jsonType
+            href: https://openapi-generator.tech
+            id: id
+            viewRef: https://openapi-generator.tech
+            properties:
+            - computedPropertyEvalInfo: computedPropertyEvalInfo
+              isNotifierProperty: true
+              hideInUi: true
+              dateFormat: dateFormat
+              defaultValue: "{}"
+              validator:
+                quantityType: 2
+                minDate: 2000-01-23T04:56:07.000+00:00
+                min: 7.061401241503109
+                max: 5.962133916683182
+                minLength: 3
+                pattern: pattern
+                maxDate: 2000-01-23T04:56:07.000+00:00
+                minCount: 9
+                maxCount: 5
+                maxLength: 2
+              propertyOverrideStatus: 7
+              teamsOnly: true
+              required: true
+              usersOnly: true
+              uiHints:
+                multiline: true
+              valueType: valueType
+              initialValue: "{}"
+              isApproverProperty: true
+              propertyId: propertyId
+              value: "{}"
+              enumValues:
+              - label: label
+                state: 0
+                value: value
+              - label: label
+                state: 0
+                value: value
+              dirty: true
+              editableInUi: true
+              editable: true
+              multivalued: true
+              propertySource: 9
+              computedPropertyError: computedPropertyError
+              computedAssemblyProperty: true
+              schemaId: schemaId
+              name: name
+              computedProperty: true
+              observers:
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+            - computedPropertyEvalInfo: computedPropertyEvalInfo
+              isNotifierProperty: true
+              hideInUi: true
+              dateFormat: dateFormat
+              defaultValue: "{}"
+              validator:
+                quantityType: 2
+                minDate: 2000-01-23T04:56:07.000+00:00
+                min: 7.061401241503109
+                max: 5.962133916683182
+                minLength: 3
+                pattern: pattern
+                maxDate: 2000-01-23T04:56:07.000+00:00
+                minCount: 9
+                maxCount: 5
+                maxLength: 2
+              propertyOverrideStatus: 7
+              teamsOnly: true
+              required: true
+              usersOnly: true
+              uiHints:
+                multiline: true
+              valueType: valueType
+              initialValue: "{}"
+              isApproverProperty: true
+              propertyId: propertyId
+              value: "{}"
+              enumValues:
+              - label: label
+                state: 0
+                value: value
+              - label: label
+                state: 0
+                value: value
+              dirty: true
+              editableInUi: true
+              editable: true
+              multivalued: true
+              propertySource: 9
+              computedPropertyError: computedPropertyError
+              computedAssemblyProperty: true
+              schemaId: schemaId
+              name: name
+              computedProperty: true
+              observers:
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+            workflowId:
+              companyId: companyId
+              versionId: versionId
+              workflowId: workflowId
+          simpleName: simpleName
+          name: name
+          documentId: documentId
+          viewRef: https://openapi-generator.tech
+          properties:
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
+            editableInUi: true
+            dateFormat: dateFormat
+            defaultValue: ""
+            editable: true
+            multivalued: true
+            propertySource: 1
+            validator:
+              quantityType: 2
+              minDate: 2000-01-23T04:56:07.000+00:00
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
+              pattern: pattern
+              maxDate: 2000-01-23T04:56:07.000+00:00
+              minCount: 9
+              maxCount: 5
+              maxLength: 2
+            computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
+            propertyOverrideStatus: 6
+            required: true
+            uiHints:
+              multiline: true
+            schemaId: schemaId
+            valueType: valueType
+            name: name
+            initialValue: "{}"
+            propertyId: propertyId
+            value: ""
+            computedProperty: true
+            enumValues:
+            - label: label
+              state: 0
+              value: value
+            - label: label
+              state: 0
+              value: value
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
+            editableInUi: true
+            dateFormat: dateFormat
+            defaultValue: ""
+            editable: true
+            multivalued: true
+            propertySource: 1
+            validator:
+              quantityType: 2
+              minDate: 2000-01-23T04:56:07.000+00:00
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
+              pattern: pattern
+              maxDate: 2000-01-23T04:56:07.000+00:00
+              minCount: 9
+              maxCount: 5
+              maxLength: 2
+            computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
+            propertyOverrideStatus: 6
+            required: true
+            uiHints:
+              multiline: true
+            schemaId: schemaId
+            valueType: valueType
+            name: name
+            initialValue: "{}"
+            propertyId: propertyId
+            value: ""
+            computedProperty: true
+            enumValues:
+            - label: label
+              state: 0
+              value: value
+            - label: label
+              state: 0
+              value: value
+          status: 1
+        - workflowableObjectType: 4
+          documentType: 0
+          resolvedBy: null
+          roles:
+          - acted: true
+            name: name
+            active: true
+            description: description
+            predefinedRole: 6
+            href: https://openapi-generator.tech
+            id: id
+            viewRef: https://openapi-generator.tech
+          - acted: true
+            name: name
+            active: true
+            description: description
+            predefinedRole: 6
+            href: https://openapi-generator.tech
+            id: id
+            viewRef: https://openapi-generator.tech
+          deletable: true
+          description: description
+          taskTemplate: 2
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          taskType: taskType
+          action: action
+          approverRole: approverRole
+          href: https://openapi-generator.tech
+          id: id
+          state: state
+          objectId: objectId
+          sourceWorkspaceOrVersionName: sourceWorkspaceOrVersionName
+          workspaceId: workspaceId
+          elementId: elementId
+          creator: null
+          thumbnail:
+            secondarySizes:
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            - - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+              - renderMode: renderMode
+                sheetName: sheetName
+                size: size
+                viewOrientation: viewOrientation
+                mediaType: mediaType
+                href: https://openapi-generator.tech
+                uniqueId: uniqueId
+            sizes:
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            - renderMode: renderMode
+              sheetName: sheetName
+              size: size
+              viewOrientation: viewOrientation
+              mediaType: mediaType
+              href: https://openapi-generator.tech
+              uniqueId: uniqueId
+            href: https://openapi-generator.tech
+            id: id
+          comments:
+          - assignedAt: 2000-01-23T04:56:07.000+00:00
+            resolvedBy: null
+            reopenedAt: 2000-01-23T04:56:07.000+00:00
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            objectType: 5
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            releasePackageId: releasePackageId
+            attachment:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            elementFeature: elementFeature
+            canDelete: true
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            objectId: objectId
+            workspaceId: workspaceId
+            elementId: elementId
+            thumbnail:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
+            message: message
+            parentId: parentId
+            replyCount: 5
+            versionId: versionId
+            reopenedBy: null
+            canResolveOrReopen: true
+            topLevel: true
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            name: name
+            documentId: documentId
+            assignee: null
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            user: null
+          - assignedAt: 2000-01-23T04:56:07.000+00:00
+            resolvedBy: null
+            reopenedAt: 2000-01-23T04:56:07.000+00:00
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            objectType: 5
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            releasePackageId: releasePackageId
+            attachment:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            elementFeature: elementFeature
+            canDelete: true
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            objectId: objectId
+            workspaceId: workspaceId
+            elementId: elementId
+            thumbnail:
+              thumbnailFor: thumbnailFor
+              fileName: fileName
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              mimeType: mimeType
+              viewRef: https://openapi-generator.tech
+            resolvedAt: 2000-01-23T04:56:07.000+00:00
+            coordinates:
+              x: 0.8008282
+              "y": 6.0274563
+              z: 1.4658129
+            message: message
+            parentId: parentId
+            replyCount: 5
+            versionId: versionId
+            reopenedBy: null
+            canResolveOrReopen: true
+            topLevel: true
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            name: name
+            documentId: documentId
+            assignee: null
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            user: null
+          resolvedAt: 2000-01-23T04:56:07.000+00:00
+          teams:
+          - canMove: true
+            owner:
+              image: image
+              isEnterpriseOwnedResource: true
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              type: 6
+              viewRef: https://openapi-generator.tech
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            isEnterpriseOwned: true
+            active: true
+            description: description
+            isContainer: true
+            treeHref: treeHref
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            isMutable: true
+            acted: true
+            unparentHref: unparentHref
+            createdBy:
+              jsonType: jsonType
+            predefinedTeam: 7
+            name: name
+            modifiedBy:
+              jsonType: jsonType
+            href: https://openapi-generator.tech
+            id: id
+            predefinedTeamMutable: true
+            viewRef: https://openapi-generator.tech
+            projectId: projectId
+            resourceType: resourceType
+          - canMove: true
+            owner:
+              image: image
+              isEnterpriseOwnedResource: true
+              name: name
+              href: https://openapi-generator.tech
+              id: id
+              type: 6
+              viewRef: https://openapi-generator.tech
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            isEnterpriseOwned: true
+            active: true
+            description: description
+            isContainer: true
+            treeHref: treeHref
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            isMutable: true
+            acted: true
+            unparentHref: unparentHref
+            createdBy:
+              jsonType: jsonType
+            predefinedTeam: 7
+            name: name
+            modifiedBy:
+              jsonType: jsonType
+            href: https://openapi-generator.tech
+            id: id
+            predefinedTeamMutable: true
+            viewRef: https://openapi-generator.tech
+            projectId: projectId
+            resourceType: resourceType
+          editable: true
+          taskItems:
+          - bodyType: bodyType
+            elementId: elementId
+            fileName: fileName
+            configuration: configuration
+            partId: partId
+            dataType: dataType
+            mimeType: mimeType
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            revisionId: revisionId
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            versionId: versionId
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            elementFeature: elementFeature
+            name: name
+            documentId: documentId
+            href: https://openapi-generator.tech
+            id: id
+            releaseState: 5
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            elementType: 5
+            workspaceId: workspaceId
+          - bodyType: bodyType
+            elementId: elementId
+            fileName: fileName
+            configuration: configuration
+            partId: partId
+            dataType: dataType
+            mimeType: mimeType
+            elementOccurrences:
+            - elementOccurrences
+            - elementOccurrences
+            revisionId: revisionId
+            viewData:
+              cameraViewport:
+              - 9.301444243932576
+              - 9.301444243932576
+              angle: 7.061401241503109
+              isPerspective: true
+              viewMatrix:
+              - 3.616076749251911
+              - 3.616076749251911
+            versionId: versionId
+            assemblyFeatures:
+            - assemblyFeatures
+            - assemblyFeatures
+            elementFeature: elementFeature
+            name: name
+            documentId: documentId
+            href: https://openapi-generator.tech
+            id: id
+            releaseState: 5
+            viewRef: https://openapi-generator.tech
+            elementQuery: elementQuery
+            elementType: 5
+            workspaceId: workspaceId
+          documentName: documentName
+          transition: transition
+          users:
+          - globalPermissions:
+              approveReleases: true
+              viewChangeOrders: true
+              createTasks: true
+              accessReports: true
+              transferDocumentsFromEnterprise: true
+              manageNonGeometricItems: true
+              createReleases: true
+              shareForAnonymousAccess: true
+              createProject: true
+              createChangeRequests: true
+              createDocumentsInRoot: true
+              manageStandardContentMetadata: true
+              manageUsers: true
+              manageWorkflows: true
+              allowPublicDocumentsAccess: true
+              branchLockPermissions: true
+              allowAppStoreAccess: true
+              createChangeOrders: true
+              manageGuestUsers: true
+              adminEnterprise: true
+              deletePermanently: true
+              manageRbac: true
+              viewChangeRequests: true
+            image: image
+            lastName: lastName
+            isGuest: true
+            isLight: true
+            invitationState: 9
+            isOnshapeSupport: true
+            source: 3
+            firstName: firstName
+            lastLoginTime: 2000-01-23T04:56:07.000+00:00
+            acted: true
+            personalMessageAllowed: true
+            name: name
+            company:
+              image: image
+              noPublicDocuments: true
+              admin: true
+              description: description
+              ownerId: ownerId
+              type: 1
+              domainPrefix: domainPrefix
+              secondaryDomainPrefixes:
+              - secondaryDomainPrefixes
+              - secondaryDomainPrefixes
+              name: name
+              enterpriseSubtype: 0
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+              enterpriseBaseUrl: enterpriseBaseUrl
+            documentationName: documentationName
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            viewRef: https://openapi-generator.tech
+            documentationNameOverride: documentationNameOverride
+            email: email
+          - globalPermissions:
+              approveReleases: true
+              viewChangeOrders: true
+              createTasks: true
+              accessReports: true
+              transferDocumentsFromEnterprise: true
+              manageNonGeometricItems: true
+              createReleases: true
+              shareForAnonymousAccess: true
+              createProject: true
+              createChangeRequests: true
+              createDocumentsInRoot: true
+              manageStandardContentMetadata: true
+              manageUsers: true
+              manageWorkflows: true
+              allowPublicDocumentsAccess: true
+              branchLockPermissions: true
+              allowAppStoreAccess: true
+              createChangeOrders: true
+              manageGuestUsers: true
+              adminEnterprise: true
+              deletePermanently: true
+              manageRbac: true
+              viewChangeRequests: true
+            image: image
+            lastName: lastName
+            isGuest: true
+            isLight: true
+            invitationState: 9
+            isOnshapeSupport: true
+            source: 3
+            firstName: firstName
+            lastLoginTime: 2000-01-23T04:56:07.000+00:00
+            acted: true
+            personalMessageAllowed: true
+            name: name
+            company:
+              image: image
+              noPublicDocuments: true
+              admin: true
+              description: description
+              ownerId: ownerId
+              type: 1
+              domainPrefix: domainPrefix
+              secondaryDomainPrefixes:
+              - secondaryDomainPrefixes
+              - secondaryDomainPrefixes
+              name: name
+              enterpriseSubtype: 0
+              href: https://openapi-generator.tech
+              id: id
+              state: 6
+              viewRef: https://openapi-generator.tech
+              enterpriseBaseUrl: enterpriseBaseUrl
+            documentationName: documentationName
+            href: https://openapi-generator.tech
+            id: id
+            state: 2
+            viewRef: https://openapi-generator.tech
+            documentationNameOverride: documentationNameOverride
+            email: email
+          companyId: companyId
+          versionId: versionId
+          workflowInfo:
+            workflow:
+              approverIds:
+              - approverIds
+              - approverIds
+              metadataState: metadataState
+              errorMessage: errorMessage
+              canBeDiscarded: true
+              usesExternalPlm: true
+              debugMicroversionId: debugMicroversionId
+              isDiscarded: true
+              notifierIds:
+              - notifierIds
+              - notifierIds
+              state:
+                editableProperties:
+                - editableProperties
+                - editableProperties
+                nonEditableProperties:
+                - nonEditableProperties
+                - nonEditableProperties
+                requiredItemProperties:
+                - requiredItemProperties
+                - requiredItemProperties
+                requiredProperties:
+                - requiredProperties
+                - requiredProperties
+                displayName: displayName
+                editPermissions:
+                - editPermissions
+                - editPermissions
+                approverSourceProperty: approverSourceProperty
+                name: name
+                notifierSourceProperty: notifierSourceProperty
+              isFrozen: true
+              actions:
+              - alwaysAllow: true
+                isAdminOverride: true
+                requiredProperties:
+                - requiredProperties
+                - requiredProperties
+                allowIfApprovers: true
+                tooltip: tooltip
+                action: action
+                isApproverAction: true
+                label: label
+                uiHint: uiHint
+                type: null
+                allowIfNoApprovers: true
+              - alwaysAllow: true
+                isAdminOverride: true
+                requiredProperties:
+                - requiredProperties
+                - requiredProperties
+                allowIfApprovers: true
+                tooltip: tooltip
+                action: action
+                isApproverAction: true
+                label: label
+                uiHint: uiHint
+                type: null
+                allowIfNoApprovers: true
+              isCreator: true
+              isSetup: true
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            description: description
+            workflowError: workflowError
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            companyId: companyId
+            createdBy:
+              jsonType: jsonType
+            name: name
+            documentId: documentId
+            modifiedBy:
+              jsonType: jsonType
+            href: https://openapi-generator.tech
+            id: id
+            viewRef: https://openapi-generator.tech
+            properties:
+            - computedPropertyEvalInfo: computedPropertyEvalInfo
+              isNotifierProperty: true
+              hideInUi: true
+              dateFormat: dateFormat
+              defaultValue: "{}"
+              validator:
+                quantityType: 2
+                minDate: 2000-01-23T04:56:07.000+00:00
+                min: 7.061401241503109
+                max: 5.962133916683182
+                minLength: 3
+                pattern: pattern
+                maxDate: 2000-01-23T04:56:07.000+00:00
+                minCount: 9
+                maxCount: 5
+                maxLength: 2
+              propertyOverrideStatus: 7
+              teamsOnly: true
+              required: true
+              usersOnly: true
+              uiHints:
+                multiline: true
+              valueType: valueType
+              initialValue: "{}"
+              isApproverProperty: true
+              propertyId: propertyId
+              value: "{}"
+              enumValues:
+              - label: label
+                state: 0
+                value: value
+              - label: label
+                state: 0
+                value: value
+              dirty: true
+              editableInUi: true
+              editable: true
+              multivalued: true
+              propertySource: 9
+              computedPropertyError: computedPropertyError
+              computedAssemblyProperty: true
+              schemaId: schemaId
+              name: name
+              computedProperty: true
+              observers:
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+            - computedPropertyEvalInfo: computedPropertyEvalInfo
+              isNotifierProperty: true
+              hideInUi: true
+              dateFormat: dateFormat
+              defaultValue: "{}"
+              validator:
+                quantityType: 2
+                minDate: 2000-01-23T04:56:07.000+00:00
+                min: 7.061401241503109
+                max: 5.962133916683182
+                minLength: 3
+                pattern: pattern
+                maxDate: 2000-01-23T04:56:07.000+00:00
+                minCount: 9
+                maxCount: 5
+                maxLength: 2
+              propertyOverrideStatus: 7
+              teamsOnly: true
+              required: true
+              usersOnly: true
+              uiHints:
+                multiline: true
+              valueType: valueType
+              initialValue: "{}"
+              isApproverProperty: true
+              propertyId: propertyId
+              value: "{}"
+              enumValues:
+              - label: label
+                state: 0
+                value: value
+              - label: label
+                state: 0
+                value: value
+              dirty: true
+              editableInUi: true
+              editable: true
+              multivalued: true
+              propertySource: 9
+              computedPropertyError: computedPropertyError
+              computedAssemblyProperty: true
+              schemaId: schemaId
+              name: name
+              computedProperty: true
+              observers:
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+              - entryType: null
+                new: true
+                approvalDate: 2000-01-23T04:56:07.000+00:00
+                approverId: approverId
+                modifiedAt: 2000-01-23T04:56:07.000+00:00
+                approvalState: null
+                description: description
+                approverName: approverName
+                entryId: entryId
+                createdAt: 2000-01-23T04:56:07.000+00:00
+                companyId: companyId
+                observationType: 2
+                createdBy: createdBy
+                removable: true
+                rejectionDate: 2000-01-23T04:56:07.000+00:00
+                name: name
+                adminOverride: true
+                modifiedBy: modifiedBy
+                id: id
+                propertyId: propertyId
+                associatedStates: associatedStates
+                objectId: objectId
+            workflowId:
+              companyId: companyId
+              versionId: versionId
+              workflowId: workflowId
+          simpleName: simpleName
+          name: name
+          documentId: documentId
+          viewRef: https://openapi-generator.tech
+          properties:
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
+            editableInUi: true
+            dateFormat: dateFormat
+            defaultValue: ""
+            editable: true
+            multivalued: true
+            propertySource: 1
+            validator:
+              quantityType: 2
+              minDate: 2000-01-23T04:56:07.000+00:00
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
+              pattern: pattern
+              maxDate: 2000-01-23T04:56:07.000+00:00
+              minCount: 9
+              maxCount: 5
+              maxLength: 2
+            computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
+            propertyOverrideStatus: 6
+            required: true
+            uiHints:
+              multiline: true
+            schemaId: schemaId
+            valueType: valueType
+            name: name
+            initialValue: "{}"
+            propertyId: propertyId
+            value: ""
+            computedProperty: true
+            enumValues:
+            - label: label
+              state: 0
+              value: value
+            - label: label
+              state: 0
+              value: value
+          - computedPropertyEvalInfo: computedPropertyEvalInfo
+            dirty: true
+            editableInUi: true
+            dateFormat: dateFormat
+            defaultValue: ""
+            editable: true
+            multivalued: true
+            propertySource: 1
+            validator:
+              quantityType: 2
+              minDate: 2000-01-23T04:56:07.000+00:00
+              min: 7.061401241503109
+              max: 5.962133916683182
+              minLength: 3
+              pattern: pattern
+              maxDate: 2000-01-23T04:56:07.000+00:00
+              minCount: 9
+              maxCount: 5
+              maxLength: 2
+            computedPropertyError: computedPropertyError
+            computedAssemblyProperty: true
+            propertyOverrideStatus: 6
+            required: true
+            uiHints:
+              multiline: true
+            schemaId: schemaId
+            valueType: valueType
+            name: name
+            initialValue: "{}"
+            propertyId: propertyId
+            value: ""
+            computedProperty: true
+            enumValues:
+            - label: label
+              state: 0
+              value: value
+            - label: label
+              state: 0
+              value: value
+          status: 1
+      properties:
+        href:
+          description: URI for current page of resources.
+          format: uri
+          type: string
+        items:
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTTaskInfo'
+          type: array
+        next:
+          description: URI for next page of the resources if more are available.
+          format: uri
+          type: string
+        previous:
+          description: URI for previous page of the resources.
+          format: uri
+          type: string
+        taskTypes:
+          items:
+            $ref: '#/components/schemas/BTTaskTypeInfo'
+          type: array
+      type: object
+    BTTaskRbacRoleInfo:
+      example:
+        acted: true
+        name: name
+        active: true
+        description: description
+        predefinedRole: 6
+        href: https://openapi-generator.tech
+        id: id
+        viewRef: https://openapi-generator.tech
+      properties:
+        acted:
+          type: boolean
+        active:
+          type: boolean
+        description:
+          type: string
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        name:
+          description: Name of the resource.
+          type: string
+        predefinedRole:
+          format: int32
+          type: integer
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+      type: object
+    BTTaskTeamSummaryInfo:
+      example:
+        canMove: true
+        owner:
+          image: image
+          isEnterpriseOwnedResource: true
+          name: name
+          href: https://openapi-generator.tech
+          id: id
+          type: 6
+          viewRef: https://openapi-generator.tech
+        modifiedAt: 2000-01-23T04:56:07.000+00:00
+        isEnterpriseOwned: true
+        active: true
+        description: description
+        isContainer: true
+        treeHref: treeHref
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        isMutable: true
+        acted: true
+        unparentHref: unparentHref
+        createdBy:
+          jsonType: jsonType
+        predefinedTeam: 7
+        name: name
+        modifiedBy:
+          jsonType: jsonType
+        href: https://openapi-generator.tech
+        id: id
+        predefinedTeamMutable: true
+        viewRef: https://openapi-generator.tech
+        projectId: projectId
+        resourceType: resourceType
+      properties:
+        acted:
+          type: boolean
+        active:
+          type: boolean
+        canMove:
+          type: boolean
+        createdAt:
+          format: date-time
+          type: string
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        description:
+          type: string
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        isContainer:
+          type: boolean
+        isEnterpriseOwned:
+          type: boolean
+        isMutable:
+          type: boolean
+        modifiedAt:
+          format: date-time
+          type: string
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        name:
+          description: Name of the resource.
+          type: string
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        predefinedTeam:
+          format: int32
+          type: integer
+        predefinedTeamMutable:
+          type: boolean
+        projectId:
+          type: string
+        resourceType:
+          type: string
+        treeHref:
+          type: string
+        unparentHref:
+          type: string
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+      type: object
+    BTTaskTypeInfo:
+      example:
+        displayName: displayName
+        name: name
+        id: id
+      properties:
+        displayName:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+      type: object
+    BTTaskUserSummaryInfo:
+      example:
+        globalPermissions:
+          approveReleases: true
+          viewChangeOrders: true
+          createTasks: true
+          accessReports: true
+          transferDocumentsFromEnterprise: true
+          manageNonGeometricItems: true
+          createReleases: true
+          shareForAnonymousAccess: true
+          createProject: true
+          createChangeRequests: true
+          createDocumentsInRoot: true
+          manageStandardContentMetadata: true
+          manageUsers: true
+          manageWorkflows: true
+          allowPublicDocumentsAccess: true
+          branchLockPermissions: true
+          allowAppStoreAccess: true
+          createChangeOrders: true
+          manageGuestUsers: true
+          adminEnterprise: true
+          deletePermanently: true
+          manageRbac: true
+          viewChangeRequests: true
+        image: image
+        lastName: lastName
+        isGuest: true
+        isLight: true
+        invitationState: 9
+        isOnshapeSupport: true
+        source: 3
+        firstName: firstName
+        lastLoginTime: 2000-01-23T04:56:07.000+00:00
+        acted: true
+        personalMessageAllowed: true
+        name: name
+        company:
+          image: image
+          noPublicDocuments: true
+          admin: true
+          description: description
+          ownerId: ownerId
+          type: 1
+          domainPrefix: domainPrefix
+          secondaryDomainPrefixes:
+          - secondaryDomainPrefixes
+          - secondaryDomainPrefixes
+          name: name
+          enterpriseSubtype: 0
+          href: https://openapi-generator.tech
+          id: id
+          state: 6
+          viewRef: https://openapi-generator.tech
+          enterpriseBaseUrl: enterpriseBaseUrl
+        documentationName: documentationName
+        href: https://openapi-generator.tech
+        id: id
+        state: 2
+        viewRef: https://openapi-generator.tech
+        documentationNameOverride: documentationNameOverride
+        email: email
+      properties:
+        acted:
+          type: boolean
+        company:
+          $ref: '#/components/schemas/BTCompanySummaryInfo'
+        documentationName:
+          type: string
+        documentationNameOverride:
+          type: string
+        email:
+          type: string
+        firstName:
+          type: string
+        globalPermissions:
+          $ref: '#/components/schemas/GlobalPermissionInfo'
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        image:
+          type: string
+        invitationState:
+          format: int32
+          type: integer
+        isGuest:
+          type: boolean
+        isLight:
+          type: boolean
+        isOnshapeSupport:
+          type: boolean
+        lastLoginTime:
+          format: date-time
+          type: string
+        lastName:
+          type: string
+        name:
+          description: Name of the resource.
+          type: string
+        personalMessageAllowed:
+          type: boolean
+        source:
+          format: int32
+          type: integer
+        state:
+          format: int32
+          type: integer
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+      type: object
     BTTeamInfo:
       allOf:
       - $ref: '#/components/schemas/BTTeamSummaryInfo'
@@ -53326,6 +56708,15 @@ components:
         uniqueId:
           type: string
         viewOrientation:
+          type: string
+      type: object
+    BTToleranceSpec-3441:
+      allOf:
+      - $ref: '#/components/schemas/BTFeatureSpec-129'
+      - $ref: '#/components/schemas/BTToleranceSpec_3441_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
           type: string
       type: object
     BTToleranceString-3274:
@@ -53860,6 +57251,7 @@ components:
             errorMessage: errorMessage
             documentName: documentName
             isObsolete: true
+            documentState: 0
             autoObsoletionReleaseName: autoObsoletionReleaseName
             releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
             revision: revision
@@ -53871,7 +57263,7 @@ components:
             documentId: documentId
             partNumber: partNumber
             viewRef: https://openapi-generator.tech
-            elementType: 0
+            elementType: 6
             previousRevisionId: previousRevisionId
         - nodeIds:
           - nodeIds
@@ -53909,6 +57301,7 @@ components:
             errorMessage: errorMessage
             documentName: documentName
             isObsolete: true
+            documentState: 0
             autoObsoletionReleaseName: autoObsoletionReleaseName
             releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
             revision: revision
@@ -53920,7 +57313,7 @@ components:
             documentId: documentId
             partNumber: partNumber
             viewRef: https://openapi-generator.tech
-            elementType: 0
+            elementType: 6
             previousRevisionId: previousRevisionId
         connectionId: connectionId
       properties:
@@ -53971,6 +57364,7 @@ components:
           errorMessage: errorMessage
           documentName: documentName
           isObsolete: true
+          documentState: 0
           autoObsoletionReleaseName: autoObsoletionReleaseName
           releaseCreatedDate: 2000-01-23T04:56:07.000+00:00
           revision: revision
@@ -53982,7 +57376,7 @@ components:
           documentId: documentId
           partNumber: partNumber
           viewRef: https://openapi-generator.tech
-          elementType: 0
+          elementType: 6
           previousRevisionId: previousRevisionId
       properties:
         metadataUnchanged:
@@ -54311,6 +57705,70 @@ components:
             $ref: '#/components/schemas/BTReleasePackageItemParams'
           type: array
         properties:
+          items:
+            $ref: '#/components/schemas/BTPropertyValueParam'
+          type: array
+      type: object
+    BTUpdateTaskParams:
+      example:
+        companyId: companyId
+        nameParamValue: nameParamValue
+        itemParams:
+        - bodyType: bodyType
+          elementId: elementId
+          revisionId: revisionId
+          versionId: versionId
+          configuration: configuration
+          partId: partId
+          name: name
+          description: description
+          documentId: documentId
+          mimeType: mimeType
+          elementType: 0
+          workspaceId: workspaceId
+        - bodyType: bodyType
+          elementId: elementId
+          revisionId: revisionId
+          versionId: versionId
+          configuration: configuration
+          partId: partId
+          name: name
+          description: description
+          documentId: documentId
+          mimeType: mimeType
+          elementType: 0
+          workspaceId: workspaceId
+        deleteItemIds:
+        - deleteItemIds
+        - deleteItemIds
+        propertyValues:
+        - propertyId: propertyId
+          value: "{}"
+        - propertyId: propertyId
+          value: "{}"
+        descriptionParamValue: descriptionParamValue
+      properties:
+        companyId:
+          description: Use to transfer task ownership to the company.
+          type: string
+        deleteItemIds:
+          description: References to remove from the task.
+          items:
+            description: References to remove from the task.
+            type: string
+          type: array
+          uniqueItems: true
+        descriptionParamValue:
+          type: string
+        itemParams:
+          description: References to add to the task.
+          items:
+            $ref: '#/components/schemas/BTTaskItemParams'
+          type: array
+        nameParamValue:
+          type: string
+        propertyValues:
+          description: Task metadata properties.
           items:
             $ref: '#/components/schemas/BTPropertyValueParam'
           type: array
@@ -55413,6 +58871,8 @@ components:
         drawBuffers: true
         oesStandardDerivatives: true
         oesTextureHalfFloatLinear: true
+        supportsWebGL2: true
+        supportsWebGPU: true
       properties:
         angleInstancedArrays:
           type: boolean
@@ -55451,6 +58911,10 @@ components:
         screenWidth:
           format: int32
           type: integer
+        supportsWebGL2:
+          type: boolean
+        supportsWebGPU:
+          type: boolean
         vendor:
           type: string
       type: object
@@ -56463,6 +59927,311 @@ components:
             type: string
           type: array
           uniqueItems: true
+      type: object
+    BTWorkflowableObjectInfo:
+      example:
+        workflow:
+          approverIds:
+          - approverIds
+          - approverIds
+          metadataState: metadataState
+          errorMessage: errorMessage
+          canBeDiscarded: true
+          usesExternalPlm: true
+          debugMicroversionId: debugMicroversionId
+          isDiscarded: true
+          notifierIds:
+          - notifierIds
+          - notifierIds
+          state:
+            editableProperties:
+            - editableProperties
+            - editableProperties
+            nonEditableProperties:
+            - nonEditableProperties
+            - nonEditableProperties
+            requiredItemProperties:
+            - requiredItemProperties
+            - requiredItemProperties
+            requiredProperties:
+            - requiredProperties
+            - requiredProperties
+            displayName: displayName
+            editPermissions:
+            - editPermissions
+            - editPermissions
+            approverSourceProperty: approverSourceProperty
+            name: name
+            notifierSourceProperty: notifierSourceProperty
+          isFrozen: true
+          actions:
+          - alwaysAllow: true
+            isAdminOverride: true
+            requiredProperties:
+            - requiredProperties
+            - requiredProperties
+            allowIfApprovers: true
+            tooltip: tooltip
+            action: action
+            isApproverAction: true
+            label: label
+            uiHint: uiHint
+            type: null
+            allowIfNoApprovers: true
+          - alwaysAllow: true
+            isAdminOverride: true
+            requiredProperties:
+            - requiredProperties
+            - requiredProperties
+            allowIfApprovers: true
+            tooltip: tooltip
+            action: action
+            isApproverAction: true
+            label: label
+            uiHint: uiHint
+            type: null
+            allowIfNoApprovers: true
+          isCreator: true
+          isSetup: true
+        modifiedAt: 2000-01-23T04:56:07.000+00:00
+        description: description
+        workflowError: workflowError
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        companyId: companyId
+        createdBy:
+          jsonType: jsonType
+        name: name
+        documentId: documentId
+        modifiedBy:
+          jsonType: jsonType
+        href: https://openapi-generator.tech
+        id: id
+        viewRef: https://openapi-generator.tech
+        properties:
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          isNotifierProperty: true
+          hideInUi: true
+          dateFormat: dateFormat
+          defaultValue: "{}"
+          validator:
+            quantityType: 2
+            minDate: 2000-01-23T04:56:07.000+00:00
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
+            pattern: pattern
+            maxDate: 2000-01-23T04:56:07.000+00:00
+            minCount: 9
+            maxCount: 5
+            maxLength: 2
+          propertyOverrideStatus: 7
+          teamsOnly: true
+          required: true
+          usersOnly: true
+          uiHints:
+            multiline: true
+          valueType: valueType
+          initialValue: "{}"
+          isApproverProperty: true
+          propertyId: propertyId
+          value: "{}"
+          enumValues:
+          - label: label
+            state: 0
+            value: value
+          - label: label
+            state: 0
+            value: value
+          dirty: true
+          editableInUi: true
+          editable: true
+          multivalued: true
+          propertySource: 9
+          computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
+          schemaId: schemaId
+          name: name
+          computedProperty: true
+          observers:
+          - entryType: null
+            new: true
+            approvalDate: 2000-01-23T04:56:07.000+00:00
+            approverId: approverId
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            approvalState: null
+            description: description
+            approverName: approverName
+            entryId: entryId
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            companyId: companyId
+            observationType: 2
+            createdBy: createdBy
+            removable: true
+            rejectionDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            adminOverride: true
+            modifiedBy: modifiedBy
+            id: id
+            propertyId: propertyId
+            associatedStates: associatedStates
+            objectId: objectId
+          - entryType: null
+            new: true
+            approvalDate: 2000-01-23T04:56:07.000+00:00
+            approverId: approverId
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            approvalState: null
+            description: description
+            approverName: approverName
+            entryId: entryId
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            companyId: companyId
+            observationType: 2
+            createdBy: createdBy
+            removable: true
+            rejectionDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            adminOverride: true
+            modifiedBy: modifiedBy
+            id: id
+            propertyId: propertyId
+            associatedStates: associatedStates
+            objectId: objectId
+        - computedPropertyEvalInfo: computedPropertyEvalInfo
+          isNotifierProperty: true
+          hideInUi: true
+          dateFormat: dateFormat
+          defaultValue: "{}"
+          validator:
+            quantityType: 2
+            minDate: 2000-01-23T04:56:07.000+00:00
+            min: 7.061401241503109
+            max: 5.962133916683182
+            minLength: 3
+            pattern: pattern
+            maxDate: 2000-01-23T04:56:07.000+00:00
+            minCount: 9
+            maxCount: 5
+            maxLength: 2
+          propertyOverrideStatus: 7
+          teamsOnly: true
+          required: true
+          usersOnly: true
+          uiHints:
+            multiline: true
+          valueType: valueType
+          initialValue: "{}"
+          isApproverProperty: true
+          propertyId: propertyId
+          value: "{}"
+          enumValues:
+          - label: label
+            state: 0
+            value: value
+          - label: label
+            state: 0
+            value: value
+          dirty: true
+          editableInUi: true
+          editable: true
+          multivalued: true
+          propertySource: 9
+          computedPropertyError: computedPropertyError
+          computedAssemblyProperty: true
+          schemaId: schemaId
+          name: name
+          computedProperty: true
+          observers:
+          - entryType: null
+            new: true
+            approvalDate: 2000-01-23T04:56:07.000+00:00
+            approverId: approverId
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            approvalState: null
+            description: description
+            approverName: approverName
+            entryId: entryId
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            companyId: companyId
+            observationType: 2
+            createdBy: createdBy
+            removable: true
+            rejectionDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            adminOverride: true
+            modifiedBy: modifiedBy
+            id: id
+            propertyId: propertyId
+            associatedStates: associatedStates
+            objectId: objectId
+          - entryType: null
+            new: true
+            approvalDate: 2000-01-23T04:56:07.000+00:00
+            approverId: approverId
+            modifiedAt: 2000-01-23T04:56:07.000+00:00
+            approvalState: null
+            description: description
+            approverName: approverName
+            entryId: entryId
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            companyId: companyId
+            observationType: 2
+            createdBy: createdBy
+            removable: true
+            rejectionDate: 2000-01-23T04:56:07.000+00:00
+            name: name
+            adminOverride: true
+            modifiedBy: modifiedBy
+            id: id
+            propertyId: propertyId
+            associatedStates: associatedStates
+            objectId: objectId
+        workflowId:
+          companyId: companyId
+          versionId: versionId
+          workflowId: workflowId
+      properties:
+        companyId:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        description:
+          type: string
+        documentId:
+          type: string
+        href:
+          description: URI to fetch complete information of the resource.
+          format: uri
+          type: string
+        id:
+          description: Id of the resource.
+          type: string
+        modifiedAt:
+          format: date-time
+          type: string
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        name:
+          description: Name of the resource.
+          type: string
+        properties:
+          items:
+            $ref: '#/components/schemas/BTWorkflowPropertyInfo'
+          type: array
+        viewRef:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+          type: string
+        workflow:
+          $ref: '#/components/schemas/BTWorkflowSnapshotInfo'
+        workflowError:
+          type: string
+          writeOnly: true
+        workflowId:
+          $ref: '#/components/schemas/BTPublishedWorkflowId'
       type: object
     BTWorkflowableObjectObserver:
       example:
@@ -69110,6 +72879,14 @@ components:
       - SIMULATION_ASSEMBLY_HAS_UNSUPPORTED_MATES
       - ASSEMBLY_NAMED_POSITIONS_OUTSIDE_MATE_LIMIT
       - ASSEMBLY_NAMED_POSITIONS_SUBASSEMBLY_OUTSIDE_MATE_LIMIT
+      - GENERATIVE_RUN_WAS_CANCELED
+      - SKETCH_CHAMFER_INVALID_POINT
+      - SKETCH_CHAMFER_PARALLEL
+      - SKETCH_CHAMFER_FAIL
+      - SKETCH_CHAMFER_INVALID_INPUTS
+      - ASSEMBLY_FEATURE_MISSING_SELECTION
+      - ASSEMBLY_NAMED_POSITIONS_LOCKED_SUBASSEMBLY_FOUND
+      - CURVE_PATTERN_MISSING_FACE_SELECTION
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -69296,6 +73073,7 @@ components:
       - LESS_OR_EQUAL
       - CONCATENATE
       - CONDITIONAL
+      - UNDEFINED_COALESCING
       type: string
     GBTPType:
       enum:
@@ -69519,6 +73297,7 @@ components:
       - ALLOW_ARRAY_FOCUS
       - SHOW_INLINE_CONFIG_INPUTS
       - FOCUS_ON_VISIBLE
+      - CAN_BE_TOLERANT
       - UNKNOWN
       type: string
     GBTUiSelectionType:
@@ -69638,6 +73417,30 @@ components:
           type: array
       type: object
     GlobalPermissionInfo:
+      example:
+        approveReleases: true
+        viewChangeOrders: true
+        createTasks: true
+        accessReports: true
+        transferDocumentsFromEnterprise: true
+        manageNonGeometricItems: true
+        createReleases: true
+        shareForAnonymousAccess: true
+        createProject: true
+        createChangeRequests: true
+        createDocumentsInRoot: true
+        manageStandardContentMetadata: true
+        manageUsers: true
+        manageWorkflows: true
+        allowPublicDocumentsAccess: true
+        branchLockPermissions: true
+        allowAppStoreAccess: true
+        createChangeOrders: true
+        manageGuestUsers: true
+        adminEnterprise: true
+        deletePermanently: true
+        manageRbac: true
+        viewChangeRequests: true
       properties:
         accessReports:
           type: boolean
@@ -101036,6 +104839,10 @@ components:
       example: null
     BTClassroomInfo_allOf:
       properties:
+        assignmentsWithErrors:
+          additionalProperties:
+            type: string
+          type: object
         educator:
           type: boolean
         numberOfAssignments:
@@ -102415,6 +106222,8 @@ components:
           type: string
         lockInfo:
           $ref: '#/components/schemas/BTLockedSubAssembly-4590'
+        syncError:
+          $ref: '#/components/schemas/GBTErrorStringEnum'
       type: object
       example: null
     BTMAnnotation_4664_allOf:
@@ -103295,6 +107104,12 @@ components:
           type: array
       type: object
       example: null
+    BTMParameterTolerantQuantity_2579_allOf:
+      properties:
+        btType:
+          type: string
+      type: object
+      example: null
     BTMPartStudioMateConnectorQuery_1324_allOf:
       properties:
         btType:
@@ -103625,6 +107440,8 @@ components:
       example: null
     BTMateConnectorFilter_163_allOf:
       properties:
+        allowImplicitMateConnector:
+          type: boolean
         btType:
           type: string
         requiresOccurrence:
@@ -105385,6 +109202,8 @@ components:
           $ref: '#/components/schemas/GBTSketchCurveType'
         sketchEntityId:
           type: string
+        sketchFeatureId:
+          type: string
         solveStatus:
           format: int32
           type: integer
@@ -105495,6 +109314,14 @@ components:
     BTSplineHandleFilter_2971_allOf:
       properties:
         allowsSplineHandle:
+          type: boolean
+        btType:
+          type: string
+      type: object
+      example: null
+    BTSplineInternalPointFilter_4101_allOf:
+      properties:
+        allowsSplineInternalPoint:
           type: boolean
         btType:
           type: string
@@ -105666,6 +109493,12 @@ components:
           type: string
         isStroke:
           type: boolean
+      type: object
+      example: null
+    BTToleranceSpec_3441_allOf:
+      properties:
+        btType:
+          type: string
       type: object
       example: null
     BTToleranceString_3274_allOf:

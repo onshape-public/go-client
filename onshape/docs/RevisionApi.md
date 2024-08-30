@@ -1,6 +1,6 @@
 # \RevisionApi
 
-All URIs are relative to *https://cad.onshape.com/api/v8*
+All URIs are relative to *https://cad.onshape.com/api/v9*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ## GetRevisionHistoryInCompanyByElementId
 
-> BTRevisionListResponse GetRevisionHistoryInCompanyByElementId(ctx, cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+> BTRevisionListResponse GetRevisionHistoryInCompanyByElementId(ctx, cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
 
 Get a list of all revisions for an element in a company-owned document.
 
@@ -498,10 +498,11 @@ func main() {
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     fillApprovers := true // bool |  (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
+    supportChangeType := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByElementId(context.Background(), cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByElementId(context.Background(), cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RevisionApi.GetRevisionHistoryInCompanyByElementId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -540,6 +541,7 @@ Name | Type | Description  | Notes
  **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **fillApprovers** | **bool** |  | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
+ **supportChangeType** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -654,7 +656,7 @@ Name | Type | Description  | Notes
 
 ## GetRevisionHistoryInCompanyByPartNumber
 
-> BTRevisionListResponse GetRevisionHistoryInCompanyByPartNumber(ctx, cid, pnum).ElementType(elementType).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+> BTRevisionListResponse GetRevisionHistoryInCompanyByPartNumber(ctx, cid, pnum).ElementType(elementType).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
 
 Get a list of all revisions for a part or element in a company-owned document by part number.
 
@@ -678,10 +680,11 @@ func main() {
     elementType := "elementType_example" // string | 
     fillApprovers := true // bool |  (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
+    supportChangeType := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByPartNumber(context.Background(), cid, pnum).ElementType(elementType).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).Execute()
+    resp, r, err := apiClient.RevisionApi.GetRevisionHistoryInCompanyByPartNumber(context.Background(), cid, pnum).ElementType(elementType).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RevisionApi.GetRevisionHistoryInCompanyByPartNumber``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -712,6 +715,7 @@ Name | Type | Description  | Notes
  **elementType** | **string** |  | 
  **fillApprovers** | **bool** |  | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
+ **supportChangeType** | **bool** |  | [default to false]
 
 ### Return type
 

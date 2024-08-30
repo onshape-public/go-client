@@ -30,6 +30,11 @@ func (o *BTTableSpec915) AsBTFeatureSpec129() *BTFeatureSpec129 {
 	return &BTFeatureSpec129{o}
 }
 
+// BTToleranceSpec3441AsBTFeatureSpec129 is a convenience function that returns BTToleranceSpec3441 wrapped in BTFeatureSpec129
+func (o *BTToleranceSpec3441) AsBTFeatureSpec129() *BTFeatureSpec129 {
+	return &BTFeatureSpec129{o}
+}
+
 // NewBTFeatureSpec129 instantiates a new BTFeatureSpec129 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -1547,6 +1552,56 @@ func (o *BTFeatureSpec129) SetTableSpec(v bool) {
 	o.GetActualInstance().(getResult).SetTableSpec(v)
 }
 
+// GetToleranceSpec returns the ToleranceSpec field value if set, zero value otherwise.
+func (o *BTFeatureSpec129) GetToleranceSpec() bool {
+	type getResult interface {
+		GetToleranceSpec() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetToleranceSpec()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetToleranceSpecOk returns a tuple with the ToleranceSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTFeatureSpec129) GetToleranceSpecOk() (*bool, bool) {
+	type getResult interface {
+		GetToleranceSpecOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetToleranceSpecOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasToleranceSpec returns a boolean if a field has been set.
+func (o *BTFeatureSpec129) HasToleranceSpec() bool {
+	type getResult interface {
+		HasToleranceSpec() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasToleranceSpec()
+	} else {
+		return false
+	}
+}
+
+// SetToleranceSpec gets a reference to the given bool and assigns it to the ToleranceSpec field.
+func (o *BTFeatureSpec129) SetToleranceSpec(v bool) {
+	type getResult interface {
+		SetToleranceSpec(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetToleranceSpec(v)
+}
+
 // GetTooltipTemplate returns the TooltipTemplate field value if set, zero value otherwise.
 func (o *BTFeatureSpec129) GetTooltipTemplate() string {
 	type getResult interface {
@@ -1685,6 +1740,20 @@ func (dst *BTFeatureSpec129) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTToleranceSpec-3441'
+	if jsonDict["btType"] == "BTToleranceSpec-3441" {
+		// try to unmarshal JSON data into BTToleranceSpec3441
+		var qr *BTToleranceSpec3441
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTFeatureSpec129 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTFeatureSpec129 = nil
+			return fmt.Errorf("failed to unmarshal BTFeatureSpec129 as BTToleranceSpec3441: %s", err.Error())
+		}
+	}
+
 	var qtx *base_BTFeatureSpec129
 	err = json.Unmarshal(data, &qtx)
 	if err == nil {
@@ -1782,6 +1851,7 @@ type base_BTFeatureSpec129 struct {
 	SourceMicroversionId      *string                      `json:"sourceMicroversionId,omitempty"`
 	StringsToLocalize         []string                     `json:"stringsToLocalize,omitempty"`
 	TableSpec                 *bool                        `json:"tableSpec,omitempty"`
+	ToleranceSpec             *bool                        `json:"toleranceSpec,omitempty"`
 	TooltipTemplate           *string                      `json:"tooltipTemplate,omitempty"`
 	UiHints                   []GBTUIHint                  `json:"uiHints,omitempty"`
 }
@@ -2763,6 +2833,38 @@ func (o *base_BTFeatureSpec129) SetTableSpec(v bool) {
 	o.TableSpec = &v
 }
 
+// GetToleranceSpec returns the ToleranceSpec field value if set, zero value otherwise.
+func (o *base_BTFeatureSpec129) GetToleranceSpec() bool {
+	if o == nil || o.ToleranceSpec == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ToleranceSpec
+}
+
+// GetToleranceSpecOk returns a tuple with the ToleranceSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTFeatureSpec129) GetToleranceSpecOk() (*bool, bool) {
+	if o == nil || o.ToleranceSpec == nil {
+		return nil, false
+	}
+	return o.ToleranceSpec, true
+}
+
+// HasToleranceSpec returns a boolean if a field has been set.
+func (o *base_BTFeatureSpec129) HasToleranceSpec() bool {
+	if o != nil && o.ToleranceSpec != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToleranceSpec gets a reference to the given bool and assigns it to the ToleranceSpec field.
+func (o *base_BTFeatureSpec129) SetToleranceSpec(v bool) {
+	o.ToleranceSpec = &v
+}
+
 // GetTooltipTemplate returns the TooltipTemplate field value if set, zero value otherwise.
 func (o *base_BTFeatureSpec129) GetTooltipTemplate() string {
 	if o == nil || o.TooltipTemplate == nil {
@@ -2918,6 +3020,9 @@ func (o base_BTFeatureSpec129) MarshalJSON() ([]byte, error) {
 	}
 	if o.TableSpec != nil {
 		toSerialize["tableSpec"] = o.TableSpec
+	}
+	if o.ToleranceSpec != nil {
+		toSerialize["toleranceSpec"] = o.ToleranceSpec
 	}
 	if o.TooltipTemplate != nil {
 		toSerialize["tooltipTemplate"] = o.TooltipTemplate

@@ -16,8 +16,9 @@ import (
 
 // BTMateConnectorFilter163 struct for BTMateConnectorFilter163
 type BTMateConnectorFilter163 struct {
-	BtType             *string `json:"btType,omitempty"`
-	RequiresOccurrence *bool   `json:"requiresOccurrence,omitempty"`
+	BtType                     *string `json:"btType,omitempty"`
+	AllowImplicitMateConnector *bool   `json:"allowImplicitMateConnector,omitempty"`
+	RequiresOccurrence         *bool   `json:"requiresOccurrence,omitempty"`
 }
 
 // NewBTMateConnectorFilter163 instantiates a new BTMateConnectorFilter163 object
@@ -69,6 +70,38 @@ func (o *BTMateConnectorFilter163) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetAllowImplicitMateConnector returns the AllowImplicitMateConnector field value if set, zero value otherwise.
+func (o *BTMateConnectorFilter163) GetAllowImplicitMateConnector() bool {
+	if o == nil || o.AllowImplicitMateConnector == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllowImplicitMateConnector
+}
+
+// GetAllowImplicitMateConnectorOk returns a tuple with the AllowImplicitMateConnector field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMateConnectorFilter163) GetAllowImplicitMateConnectorOk() (*bool, bool) {
+	if o == nil || o.AllowImplicitMateConnector == nil {
+		return nil, false
+	}
+	return o.AllowImplicitMateConnector, true
+}
+
+// HasAllowImplicitMateConnector returns a boolean if a field has been set.
+func (o *BTMateConnectorFilter163) HasAllowImplicitMateConnector() bool {
+	if o != nil && o.AllowImplicitMateConnector != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowImplicitMateConnector gets a reference to the given bool and assigns it to the AllowImplicitMateConnector field.
+func (o *BTMateConnectorFilter163) SetAllowImplicitMateConnector(v bool) {
+	o.AllowImplicitMateConnector = &v
+}
+
 // GetRequiresOccurrence returns the RequiresOccurrence field value if set, zero value otherwise.
 func (o *BTMateConnectorFilter163) GetRequiresOccurrence() bool {
 	if o == nil || o.RequiresOccurrence == nil {
@@ -105,6 +138,9 @@ func (o BTMateConnectorFilter163) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.AllowImplicitMateConnector != nil {
+		toSerialize["allowImplicitMateConnector"] = o.AllowImplicitMateConnector
 	}
 	if o.RequiresOccurrence != nil {
 		toSerialize["requiresOccurrence"] = o.RequiresOccurrence

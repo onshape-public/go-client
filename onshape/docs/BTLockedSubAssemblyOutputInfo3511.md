@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **LockInfo** | Pointer to [**BTLockedSubAssembly4590**](BTLockedSubAssembly4590.md) |  | [optional] 
+**SyncError** | Pointer to [**GBTErrorStringEnum**](GBTErrorStringEnum.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetLockInfo sets LockInfo field to given value.
 `func (o *BTLockedSubAssemblyOutputInfo3511) HasLockInfo() bool`
 
 HasLockInfo returns a boolean if a field has been set.
+
+### GetSyncError
+
+`func (o *BTLockedSubAssemblyOutputInfo3511) GetSyncError() GBTErrorStringEnum`
+
+GetSyncError returns the SyncError field if non-nil, zero value otherwise.
+
+### GetSyncErrorOk
+
+`func (o *BTLockedSubAssemblyOutputInfo3511) GetSyncErrorOk() (*GBTErrorStringEnum, bool)`
+
+GetSyncErrorOk returns a tuple with the SyncError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSyncError
+
+`func (o *BTLockedSubAssemblyOutputInfo3511) SetSyncError(v GBTErrorStringEnum)`
+
+SetSyncError sets SyncError field to given value.
+
+### HasSyncError
+
+`func (o *BTLockedSubAssemblyOutputInfo3511) HasSyncError() bool`
+
+HasSyncError returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

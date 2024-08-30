@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ChangeId** | **string** | The latest change id for the element, after the edit was committed. | 
 **ElementId** | Pointer to **string** | The id of the edited element. | [optional] 
 **ElementIds** | Pointer to **[]string** | The ids of the edited elements, if multiple elements were edited. | [optional] 
-**ErrorCode** | Pointer to **int32** | The numeric code identifying the error that occurred, if one occurred. | [optional] 
+**ErrorCode** | Pointer to **int32** | &#x60;0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN&#x60; | [optional] 
 **ErrorDescription** | Pointer to **string** | A human-readable value for the error that occurred, if one occurred. | [optional] 
 **ErrorValue** | Pointer to [**BTAppElementErrorCode**](BTAppElementErrorCode.md) |  | [optional] 
 **JsonDifference** | Pointer to [**BTDiffJsonResponse2725**](BTDiffJsonResponse2725.md) |  | [optional] 

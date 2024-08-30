@@ -22,7 +22,7 @@ type BTAppElementModifyInfo struct {
 	ElementId *string `json:"elementId,omitempty"`
 	// The ids of the edited elements, if multiple elements were edited.
 	ElementIds []string `json:"elementIds,omitempty"`
-	// The numeric code identifying the error that occurred, if one occurred.
+	// `0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`
 	ErrorCode *int32 `json:"errorCode,omitempty"`
 	// A human-readable value for the error that occurred, if one occurred.
 	ErrorDescription *string                 `json:"errorDescription,omitempty"`

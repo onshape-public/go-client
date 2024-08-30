@@ -804,6 +804,7 @@ type ApiGetRevisionHistoryInCompanyByElementIdRequest struct {
 	configuration        *string
 	fillApprovers        *bool
 	fillExportPermission *bool
+	supportChangeType    *bool
 }
 
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) ElementType(elementType string) ApiGetRevisionHistoryInCompanyByElementIdRequest {
@@ -830,6 +831,11 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) FillApprovers(fillAppr
 
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) FillExportPermission(fillExportPermission bool) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	r.fillExportPermission = &fillExportPermission
+	return r
+}
+
+func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) SupportChangeType(supportChangeType bool) ApiGetRevisionHistoryInCompanyByElementIdRequest {
+	r.supportChangeType = &supportChangeType
 	return r
 }
 
@@ -902,6 +908,9 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByElementIdExecute(r Api
 	}
 	if r.fillExportPermission != nil {
 		localVarQueryParams.Add("fillExportPermission", parameterToString(*r.fillExportPermission, ""))
+	}
+	if r.supportChangeType != nil {
+		localVarQueryParams.Add("supportChangeType", parameterToString(*r.supportChangeType, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1146,6 +1155,7 @@ type ApiGetRevisionHistoryInCompanyByPartNumberRequest struct {
 	elementType          *string
 	fillApprovers        *bool
 	fillExportPermission *bool
+	supportChangeType    *bool
 }
 
 func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) ElementType(elementType string) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
@@ -1160,6 +1170,11 @@ func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) FillApprovers(fillApp
 
 func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) FillExportPermission(fillExportPermission bool) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
 	r.fillExportPermission = &fillExportPermission
+	return r
+}
+
+func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) SupportChangeType(supportChangeType bool) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
+	r.supportChangeType = &supportChangeType
 	return r
 }
 
@@ -1219,6 +1234,9 @@ func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumberExecute(r Ap
 	}
 	if r.fillExportPermission != nil {
 		localVarQueryParams.Add("fillExportPermission", parameterToString(*r.fillExportPermission, ""))
+	}
+	if r.supportChangeType != nil {
+		localVarQueryParams.Add("supportChangeType", parameterToString(*r.supportChangeType, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

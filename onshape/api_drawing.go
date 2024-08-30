@@ -169,7 +169,7 @@ func (r ApiCreateDrawingTranslationRequest) Execute() (*BTTranslationRequestInfo
 /*
 CreateDrawingTranslation Translate (export) a drawing to a different format.
 
-Export a drawing to a different format within a document. Use `getDrawingTranslatorFormats` for a list of supported translation (i.e., import/export) formats.
+Export a drawing to a different format within a document. Use `getDrawingTranslatorFormats` for a list of supported translation (i.e., import/export) formats. See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json) for more information.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -295,6 +295,8 @@ func (r ApiGetDrawingTranslatorFormatsRequest) Execute() ([]BTModelFormatInfo, *
 
 /*
 GetDrawingTranslatorFormats Get a list of all valid formats the drawing can be translated (exported) to.
+
+See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json) for more information.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -850,6 +852,8 @@ func (r ApiModifyDrawingRequest) Execute() (*BTAppModificationRequestInfo, *http
 
 /*
 ModifyDrawing Modify a drawing via JSON payload.
+
+See [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did The id of the document in which to perform the operation.

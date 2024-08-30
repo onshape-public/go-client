@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **PatternType** | Pointer to [**GBTPatternType**](GBTPatternType.md) |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
+**SubFeaturesNotUsedInQuery** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** | If &#x60;true&#x60;, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list. | [optional] 
 **SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
 **VariableStudioReference** | Pointer to **bool** | If &#x60;true&#x60;, the feature references a Variable Studio. | [optional] 
@@ -443,6 +444,31 @@ SetSubFeatures sets SubFeatures field to given value.
 `func (o *BTMAssemblyPatternFeature2241) HasSubFeatures() bool`
 
 HasSubFeatures returns a boolean if a field has been set.
+
+### GetSubFeaturesNotUsedInQuery
+
+`func (o *BTMAssemblyPatternFeature2241) GetSubFeaturesNotUsedInQuery() []BTMFeature134`
+
+GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field if non-nil, zero value otherwise.
+
+### GetSubFeaturesNotUsedInQueryOk
+
+`func (o *BTMAssemblyPatternFeature2241) GetSubFeaturesNotUsedInQueryOk() (*[]BTMFeature134, bool)`
+
+GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubFeaturesNotUsedInQuery
+
+`func (o *BTMAssemblyPatternFeature2241) SetSubFeaturesNotUsedInQuery(v []BTMFeature134)`
+
+SetSubFeaturesNotUsedInQuery sets SubFeaturesNotUsedInQuery field to given value.
+
+### HasSubFeaturesNotUsedInQuery
+
+`func (o *BTMAssemblyPatternFeature2241) HasSubFeaturesNotUsedInQuery() bool`
+
+HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
 
 ### GetSuppressed
 

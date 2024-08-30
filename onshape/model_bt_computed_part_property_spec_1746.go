@@ -46,6 +46,7 @@ type BTComputedPartPropertySpec1746 struct {
 	SourceMicroversionId       *string                      `json:"sourceMicroversionId,omitempty"`
 	StringsToLocalize          []string                     `json:"stringsToLocalize,omitempty"`
 	TableSpec                  *bool                        `json:"tableSpec,omitempty"`
+	ToleranceSpec              *bool                        `json:"toleranceSpec,omitempty"`
 	TooltipTemplate            *string                      `json:"tooltipTemplate,omitempty"`
 	UiHints                    []GBTUIHint                  `json:"uiHints,omitempty"`
 	ComputedPartPropertySpecId *string                      `json:"computedPartPropertySpecId,omitempty"`
@@ -1029,6 +1030,38 @@ func (o *BTComputedPartPropertySpec1746) SetTableSpec(v bool) {
 	o.TableSpec = &v
 }
 
+// GetToleranceSpec returns the ToleranceSpec field value if set, zero value otherwise.
+func (o *BTComputedPartPropertySpec1746) GetToleranceSpec() bool {
+	if o == nil || o.ToleranceSpec == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ToleranceSpec
+}
+
+// GetToleranceSpecOk returns a tuple with the ToleranceSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTComputedPartPropertySpec1746) GetToleranceSpecOk() (*bool, bool) {
+	if o == nil || o.ToleranceSpec == nil {
+		return nil, false
+	}
+	return o.ToleranceSpec, true
+}
+
+// HasToleranceSpec returns a boolean if a field has been set.
+func (o *BTComputedPartPropertySpec1746) HasToleranceSpec() bool {
+	if o != nil && o.ToleranceSpec != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToleranceSpec gets a reference to the given bool and assigns it to the ToleranceSpec field.
+func (o *BTComputedPartPropertySpec1746) SetToleranceSpec(v bool) {
+	o.ToleranceSpec = &v
+}
+
 // GetTooltipTemplate returns the TooltipTemplate field value if set, zero value otherwise.
 func (o *BTComputedPartPropertySpec1746) GetTooltipTemplate() string {
 	if o == nil || o.TooltipTemplate == nil {
@@ -1248,6 +1281,9 @@ func (o BTComputedPartPropertySpec1746) MarshalJSON() ([]byte, error) {
 	}
 	if o.TableSpec != nil {
 		toSerialize["tableSpec"] = o.TableSpec
+	}
+	if o.ToleranceSpec != nil {
+		toSerialize["toleranceSpec"] = o.ToleranceSpec
 	}
 	if o.TooltipTemplate != nil {
 		toSerialize["tooltipTemplate"] = o.TooltipTemplate

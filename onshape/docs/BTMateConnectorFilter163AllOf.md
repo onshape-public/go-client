@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllowImplicitMateConnector** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **RequiresOccurrence** | Pointer to **bool** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBTMateConnectorFilter163AllOfWithDefaults instantiates a new BTMateConnectorFilter163AllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllowImplicitMateConnector
+
+`func (o *BTMateConnectorFilter163AllOf) GetAllowImplicitMateConnector() bool`
+
+GetAllowImplicitMateConnector returns the AllowImplicitMateConnector field if non-nil, zero value otherwise.
+
+### GetAllowImplicitMateConnectorOk
+
+`func (o *BTMateConnectorFilter163AllOf) GetAllowImplicitMateConnectorOk() (*bool, bool)`
+
+GetAllowImplicitMateConnectorOk returns a tuple with the AllowImplicitMateConnector field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowImplicitMateConnector
+
+`func (o *BTMateConnectorFilter163AllOf) SetAllowImplicitMateConnector(v bool)`
+
+SetAllowImplicitMateConnector sets AllowImplicitMateConnector field to given value.
+
+### HasAllowImplicitMateConnector
+
+`func (o *BTMateConnectorFilter163AllOf) HasAllowImplicitMateConnector() bool`
+
+HasAllowImplicitMateConnector returns a boolean if a field has been set.
 
 ### GetBtType
 

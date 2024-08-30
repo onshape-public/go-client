@@ -1549,6 +1549,14 @@ const (
 	GBTErrorStringEnumSimulationAssemblyHasUnsupportedMates                       GBTErrorStringEnum = "SIMULATION_ASSEMBLY_HAS_UNSUPPORTED_MATES"
 	GBTErrorStringEnumAssemblyNamedPositionsOutsideMateLimit                      GBTErrorStringEnum = "ASSEMBLY_NAMED_POSITIONS_OUTSIDE_MATE_LIMIT"
 	GBTErrorStringEnumAssemblyNamedPositionsSubassemblyOutsideMateLimit           GBTErrorStringEnum = "ASSEMBLY_NAMED_POSITIONS_SUBASSEMBLY_OUTSIDE_MATE_LIMIT"
+	GBTErrorStringEnumGenerativeRunWasCanceled                                    GBTErrorStringEnum = "GENERATIVE_RUN_WAS_CANCELED"
+	GBTErrorStringEnumSketchChamferInvalidPoint                                   GBTErrorStringEnum = "SKETCH_CHAMFER_INVALID_POINT"
+	GBTErrorStringEnumSketchChamferParallel                                       GBTErrorStringEnum = "SKETCH_CHAMFER_PARALLEL"
+	GBTErrorStringEnumSketchChamferFail                                           GBTErrorStringEnum = "SKETCH_CHAMFER_FAIL"
+	GBTErrorStringEnumSketchChamferInvalidInputs                                  GBTErrorStringEnum = "SKETCH_CHAMFER_INVALID_INPUTS"
+	GBTErrorStringEnumAssemblyFeatureMissingSelection                             GBTErrorStringEnum = "ASSEMBLY_FEATURE_MISSING_SELECTION"
+	GBTErrorStringEnumAssemblyNamedPositionsLockedSubassemblyFound                GBTErrorStringEnum = "ASSEMBLY_NAMED_POSITIONS_LOCKED_SUBASSEMBLY_FOUND"
+	GBTErrorStringEnumCurvePatternMissingFaceSelection                            GBTErrorStringEnum = "CURVE_PATTERN_MISSING_FACE_SELECTION"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3083,6 +3091,14 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SIMULATION_ASSEMBLY_HAS_UNSUPPORTED_MATES",
 	"ASSEMBLY_NAMED_POSITIONS_OUTSIDE_MATE_LIMIT",
 	"ASSEMBLY_NAMED_POSITIONS_SUBASSEMBLY_OUTSIDE_MATE_LIMIT",
+	"GENERATIVE_RUN_WAS_CANCELED",
+	"SKETCH_CHAMFER_INVALID_POINT",
+	"SKETCH_CHAMFER_PARALLEL",
+	"SKETCH_CHAMFER_FAIL",
+	"SKETCH_CHAMFER_INVALID_INPUTS",
+	"ASSEMBLY_FEATURE_MISSING_SELECTION",
+	"ASSEMBLY_NAMED_POSITIONS_LOCKED_SUBASSEMBLY_FOUND",
+	"CURVE_PATTERN_MISSING_FACE_SELECTION",
 	"UNKNOWN",
 }
 

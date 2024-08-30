@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AssignmentsWithErrors** | Pointer to **map[string]string** |  | [optional] 
 **Educator** | Pointer to **bool** |  | [optional] 
 **NumberOfAssignments** | Pointer to **int64** |  | [optional] 
 **NumberOfMembers** | Pointer to **int64** |  | [optional] 
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewBTClassroomInfoWithDefaults instantiates a new BTClassroomInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAssignmentsWithErrors
+
+`func (o *BTClassroomInfo) GetAssignmentsWithErrors() map[string]string`
+
+GetAssignmentsWithErrors returns the AssignmentsWithErrors field if non-nil, zero value otherwise.
+
+### GetAssignmentsWithErrorsOk
+
+`func (o *BTClassroomInfo) GetAssignmentsWithErrorsOk() (*map[string]string, bool)`
+
+GetAssignmentsWithErrorsOk returns a tuple with the AssignmentsWithErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssignmentsWithErrors
+
+`func (o *BTClassroomInfo) SetAssignmentsWithErrors(v map[string]string)`
+
+SetAssignmentsWithErrors sets AssignmentsWithErrors field to given value.
+
+### HasAssignmentsWithErrors
+
+`func (o *BTClassroomInfo) HasAssignmentsWithErrors() bool`
+
+HasAssignmentsWithErrors returns a boolean if a field has been set.
 
 ### GetEducator
 

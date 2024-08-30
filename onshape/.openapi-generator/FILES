@@ -32,6 +32,7 @@ api_publication.go
 api_release_package.go
 api_revision.go
 api_sketch.go
+api_task.go
 api_team.go
 api_thumbnail.go
 api_translation.go
@@ -271,6 +272,7 @@ docs/BTCopyElementParams.md
 docs/BTCopyViewAssociativeDataParams.md
 docs/BTCountDimensionDisplayData1778.md
 docs/BTCountDimensionDisplayData1778AllOf.md
+docs/BTCreateTaskParams.md
 docs/BTCurveDescription1583.md
 docs/BTCurveGeometry114.md
 docs/BTCurveGeometryCircle115.md
@@ -716,6 +718,8 @@ docs/BTMParameterString149.md
 docs/BTMParameterString149AllOf.md
 docs/BTMParameterStringWithTolerances4286.md
 docs/BTMParameterStringWithTolerances4286AllOf.md
+docs/BTMParameterTolerantQuantity2579.md
+docs/BTMParameterTolerantQuantity2579AllOf.md
 docs/BTMParametricPartStudioFeature3883.md
 docs/BTMPartStudioMateConnectorQuery1324.md
 docs/BTMPartStudioMateConnectorQuery1324AllOf.md
@@ -1209,6 +1213,8 @@ docs/BTSplineDescription2118.md
 docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
+docs/BTSplineInternalPointFilter4101.md
+docs/BTSplineInternalPointFilter4101AllOf.md
 docs/BTSpunDescription657.md
 docs/BTSpunDescription657AllOf.md
 docs/BTStringFormatBlockPattern1755.md
@@ -1255,6 +1261,14 @@ docs/BTTableTestCellDouble2509.md
 docs/BTTableTestCellDouble2509AllOf.md
 docs/BTTableTestCellString2112.md
 docs/BTTableTestCellString2112AllOf.md
+docs/BTTaskInfo.md
+docs/BTTaskItemInfo.md
+docs/BTTaskItemParams.md
+docs/BTTaskListResponse.md
+docs/BTTaskRbacRoleInfo.md
+docs/BTTaskTeamSummaryInfo.md
+docs/BTTaskTypeInfo.md
+docs/BTTaskUserSummaryInfo.md
 docs/BTTeamInfo.md
 docs/BTTeamInfoAllOf.md
 docs/BTTeamMemberInfo.md
@@ -1268,6 +1282,8 @@ docs/BTTextStrokeFilter461.md
 docs/BTTextStrokeFilter461AllOf.md
 docs/BTThumbnailInfo.md
 docs/BTThumbnailSizeInfo.md
+docs/BTToleranceSpec3441.md
+docs/BTToleranceSpec3441AllOf.md
 docs/BTToleranceString3274.md
 docs/BTToleranceString3274AllOf.md
 docs/BTTorusDescription1834.md
@@ -1291,6 +1307,7 @@ docs/BTUpdateFeaturesResponse1333.md
 docs/BTUpdateMeshUnitsParams.md
 docs/BTUpdateReferenceParams.md
 docs/BTUpdateReleasePackageParams.md
+docs/BTUpdateTaskParams.md
 docs/BTUserAdminInfo.md
 docs/BTUserAdminInfoAllOf.md
 docs/BTUserAdminSummaryInfo.md
@@ -1346,6 +1363,7 @@ docs/BTWorkflowObserverState.md
 docs/BTWorkflowPropertyInfo.md
 docs/BTWorkflowSnapshotInfo.md
 docs/BTWorkflowStateInfo.md
+docs/BTWorkflowableObjectInfo.md
 docs/BTWorkflowableObjectObserver.md
 docs/BTWorkspaceInfo.md
 docs/BTWorkspaceMessageBody.md
@@ -1519,6 +1537,7 @@ docs/Skin.md
 docs/Status.md
 docs/StyleEnum.md
 docs/Tag.md
+docs/TaskApi.md
 docs/TeamApi.md
 docs/Texture.md
 docs/TextureInfo.md
@@ -1712,6 +1731,7 @@ model_bt_copy_document_params.go
 model_bt_copy_element_params.go
 model_bt_copy_view_associative_data_params.go
 model_bt_count_dimension_display_data_1778.go
+model_bt_create_task_params.go
 model_bt_curve_description_1583.go
 model_bt_curve_geometry_114.go
 model_bt_curve_geometry_circle_115.go
@@ -2120,6 +2140,7 @@ model_bt_sphere_description_1263.go
 model_bt_spline_control_polygon_filter_1130.go
 model_bt_spline_description_2118.go
 model_bt_spline_handle_filter_2971.go
+model_bt_spline_internal_point_filter_4101.go
 model_bt_spun_description_657.go
 model_bt_string_format_block_pattern_1755.go
 model_bt_string_format_condition_683.go
@@ -2151,6 +2172,14 @@ model_bt_table_sort_order_4371.go
 model_bt_table_spec_915.go
 model_bt_table_test_cell_double_2509.go
 model_bt_table_test_cell_string_2112.go
+model_bt_task_info.go
+model_bt_task_item_info.go
+model_bt_task_item_params.go
+model_bt_task_list_response.go
+model_bt_task_rbac_role_info.go
+model_bt_task_team_summary_info.go
+model_bt_task_type_info.go
+model_bt_task_user_summary_info.go
 model_bt_team_info.go
 model_bt_team_member_info.go
 model_bt_team_summary_info.go
@@ -2160,6 +2189,7 @@ model_bt_text_object_filter_1515.go
 model_bt_text_stroke_filter_461.go
 model_bt_thumbnail_info.go
 model_bt_thumbnail_size_info.go
+model_bt_tolerance_spec_3441.go
 model_bt_tolerance_string_3274.go
 model_bt_torus_description_1834.go
 model_bt_transition_type.go
@@ -2179,6 +2209,7 @@ model_bt_update_features_response_1333.go
 model_bt_update_mesh_units_params.go
 model_bt_update_reference_params.go
 model_bt_update_release_package_params.go
+model_bt_update_task_params.go
 model_bt_user_admin_info.go
 model_bt_user_admin_summary_info.go
 model_bt_user_app_message_body.go
@@ -2226,6 +2257,7 @@ model_bt_workflow_observer_state.go
 model_bt_workflow_property_info.go
 model_bt_workflow_snapshot_info.go
 model_bt_workflow_state_info.go
+model_bt_workflowable_object_info.go
 model_bt_workflowable_object_observer.go
 model_bt_workspace_info.go
 model_bt_workspace_message_body.go
@@ -2346,6 +2378,7 @@ model_btm_parameter_reference_variable_studio_3550.go
 model_btm_parameter_reference_with_configuration_3028.go
 model_btm_parameter_string_149.go
 model_btm_parameter_string_with_tolerances_4286.go
+model_btm_parameter_tolerant_quantity_2579.go
 model_btm_parametric_part_studio_feature_3883.go
 model_btm_part_studio_mate_connector_query_1324.go
 model_btm_read_only_parameter_3800.go
