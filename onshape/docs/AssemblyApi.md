@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**GetAssemblyMassProperties**](AssemblyApi.md#GetAssemblyMassProperties) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties | Get the mass properties for the assembly.
 [**GetAssemblyShadedViews**](AssemblyApi.md#GetAssemblyShadedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews | Get an array of shaded view images for the document.
 [**GetBillOfMaterials**](AssemblyApi.md#GetBillOfMaterials) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/bom | Get the Bill Of Materials (BOM) content for the specified assembly.
+[**GetDisplayStates**](AssemblyApi.md#GetDisplayStates) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/displaystates | Get a list of display states for the specified assembly.
 [**GetExplodedViews**](AssemblyApi.md#GetExplodedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | Get a list of exploded views for the specified assembly.
 [**GetFeatureSpecs**](AssemblyApi.md#GetFeatureSpecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature spec definitions for an assembly.
 [**GetFeatures**](AssemblyApi.md#GetFeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get the definitions of the specified features in an assembly.
@@ -439,7 +440,7 @@ func main() {
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
     includeHidden := true // bool |  (optional)
-    displayStateId := "displayStateId_example" // string |  (optional)
+    displayStateId := "displayStateId_example" // string | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). (optional)
     namedPositionId := "namedPositionId_example" // string |  (optional)
     includeSketches := true // bool |  (optional) (default to false)
 
@@ -481,7 +482,7 @@ Name | Type | Description  | Notes
  **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
  **includeHidden** | **bool** |  | 
- **displayStateId** | **string** |  | 
+ **displayStateId** | **string** | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). | 
  **namedPositionId** | **string** |  | 
  **includeSketches** | **bool** |  | [default to false]
 
@@ -714,7 +715,7 @@ func main() {
     includeSurfaces := true // bool |  (optional) (default to true)
     useAntiAliasing := true // bool |  (optional) (default to false)
     includeWires := true // bool |  (optional) (default to false)
-    displayStateId := "displayStateId_example" // string |  (optional)
+    displayStateId := "displayStateId_example" // string | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). (optional)
     namedPositionId := "namedPositionId_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -763,7 +764,7 @@ Name | Type | Description  | Notes
  **includeSurfaces** | **bool** |  | [default to true]
  **useAntiAliasing** | **bool** |  | [default to false]
  **includeWires** | **bool** |  | [default to false]
- **displayStateId** | **string** |  | 
+ **displayStateId** | **string** | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). | 
  **namedPositionId** | **string** |  | 
 
 ### Return type
@@ -874,6 +875,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTBillOfMaterialsInfo**](BTBillOfMaterialsInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDisplayStates
+
+> []BTDisplayStateInfo GetDisplayStates(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Execute()
+
+Get a list of display states for the specified assembly.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AssemblyApi.GetDisplayStates(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.GetDisplayStates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDisplayStates`: []BTDisplayStateInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.GetDisplayStates`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDisplayStatesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+[**[]BTDisplayStateInfo**](BTDisplayStateInfo.md)
 
 ### Authorization
 

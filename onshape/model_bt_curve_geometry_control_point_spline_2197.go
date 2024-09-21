@@ -16,14 +16,15 @@ import (
 
 // BTCurveGeometryControlPointSpline2197 struct for BTCurveGeometryControlPointSpline2197
 type BTCurveGeometryControlPointSpline2197 struct {
-	BtType            *string   `json:"btType,omitempty"`
-	ControlPointCount *int32    `json:"controlPointCount,omitempty"`
-	ControlPoints     []float64 `json:"controlPoints,omitempty"`
-	Degree            *int32    `json:"degree,omitempty"`
-	IsPeriodic        *bool     `json:"isPeriodic,omitempty"`
-	IsRational        *bool     `json:"isRational,omitempty"`
-	Knots             []float64 `json:"knots,omitempty"`
-	IsBezier          *bool     `json:"isBezier,omitempty"`
+	BtType            *string              `json:"btType,omitempty"`
+	EntityType        *GBTSketchEntityType `json:"entityType,omitempty"`
+	ControlPointCount *int32               `json:"controlPointCount,omitempty"`
+	ControlPoints     []float64            `json:"controlPoints,omitempty"`
+	Degree            *int32               `json:"degree,omitempty"`
+	IsPeriodic        *bool                `json:"isPeriodic,omitempty"`
+	IsRational        *bool                `json:"isRational,omitempty"`
+	Knots             []float64            `json:"knots,omitempty"`
+	IsBezier          *bool                `json:"isBezier,omitempty"`
 }
 
 // NewBTCurveGeometryControlPointSpline2197 instantiates a new BTCurveGeometryControlPointSpline2197 object
@@ -73,6 +74,38 @@ func (o *BTCurveGeometryControlPointSpline2197) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTCurveGeometryControlPointSpline2197) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTCurveGeometryControlPointSpline2197) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveGeometryControlPointSpline2197) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTCurveGeometryControlPointSpline2197) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTCurveGeometryControlPointSpline2197) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetControlPointCount returns the ControlPointCount field value if set, zero value otherwise.
@@ -303,6 +336,9 @@ func (o BTCurveGeometryControlPointSpline2197) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.ControlPointCount != nil {
 		toSerialize["controlPointCount"] = o.ControlPointCount

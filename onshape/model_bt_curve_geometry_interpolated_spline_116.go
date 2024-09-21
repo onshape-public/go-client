@@ -17,6 +17,7 @@ import (
 // BTCurveGeometryInterpolatedSpline116 struct for BTCurveGeometryInterpolatedSpline116
 type BTCurveGeometryInterpolatedSpline116 struct {
 	BtType              *string               `json:"btType,omitempty"`
+	EntityType          *GBTSketchEntityType  `json:"entityType,omitempty"`
 	Derivatives         *map[string][]float64 `json:"derivatives,omitempty"`
 	EndDerivativeX      *float64              `json:"endDerivativeX,omitempty"`
 	EndDerivativeY      *float64              `json:"endDerivativeY,omitempty"`
@@ -77,6 +78,38 @@ func (o *BTCurveGeometryInterpolatedSpline116) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTCurveGeometryInterpolatedSpline116) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTCurveGeometryInterpolatedSpline116) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveGeometryInterpolatedSpline116) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTCurveGeometryInterpolatedSpline116) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTCurveGeometryInterpolatedSpline116) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetDerivatives returns the Derivatives field value if set, zero value otherwise.
@@ -435,6 +468,9 @@ func (o BTCurveGeometryInterpolatedSpline116) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.Derivatives != nil {
 		toSerialize["derivatives"] = o.Derivatives

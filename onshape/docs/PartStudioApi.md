@@ -1085,6 +1085,8 @@ Name | Type | Description  | Notes
 
 Get the bounding boxes for a Part Studio.
 
+
+
 ### Example
 
 ```go

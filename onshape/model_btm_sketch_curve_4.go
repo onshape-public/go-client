@@ -292,6 +292,106 @@ func (o *BTMSketchCurve4) SetEntityIdAndReplaceInDependentFields(v string) {
 	o.GetActualInstance().(getResult).SetEntityIdAndReplaceInDependentFields(v)
 }
 
+// GetGeometry returns the Geometry field value if set, zero value otherwise.
+func (o *BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
+	type getResult interface {
+		GetGeometry() BTCurveGeometry114
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeometry()
+	} else {
+		var de BTCurveGeometry114
+		return de
+	}
+}
+
+// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
+	type getResult interface {
+		GetGeometryOk() (*BTCurveGeometry114, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeometryOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasGeometry returns a boolean if a field has been set.
+func (o *BTMSketchCurve4) HasGeometry() bool {
+	type getResult interface {
+		HasGeometry() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasGeometry()
+	} else {
+		return false
+	}
+}
+
+// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
+func (o *BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
+	type getResult interface {
+		SetGeometry(v BTCurveGeometry114)
+	}
+
+	o.GetActualInstance().(getResult).SetGeometry(v)
+}
+
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *BTMSketchCurve4) GetIndex() int32 {
+	type getResult interface {
+		GetIndex() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIndex()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurve4) GetIndexOk() (*int32, bool) {
+	type getResult interface {
+		GetIndexOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIndexOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *BTMSketchCurve4) HasIndex() bool {
+	type getResult interface {
+		HasIndex() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIndex()
+	} else {
+		return false
+	}
+}
+
+// SetIndex gets a reference to the given int32 and assigns it to the Index field.
+func (o *BTMSketchCurve4) SetIndex(v int32) {
+	type getResult interface {
+		SetIndex(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetIndex(v)
+}
+
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *BTMSketchCurve4) GetNamespace() string {
 	type getResult interface {
@@ -440,6 +540,56 @@ func (o *BTMSketchCurve4) SetControlBoxIds(v []string) {
 	}
 
 	o.GetActualInstance().(getResult).SetControlBoxIds(v)
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTMSketchCurve4) GetEntityType() GBTSketchEntityType {
+	type getResult interface {
+		GetEntityType() GBTSketchEntityType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEntityType()
+	} else {
+		var de GBTSketchEntityType
+		return de
+	}
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurve4) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	type getResult interface {
+		GetEntityTypeOk() (*GBTSketchEntityType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEntityTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTMSketchCurve4) HasEntityType() bool {
+	type getResult interface {
+		HasEntityType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEntityType()
+	} else {
+		return false
+	}
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTMSketchCurve4) SetEntityType(v GBTSketchEntityType) {
+	type getResult interface {
+		SetEntityType(v GBTSketchEntityType)
+	}
+
+	o.GetActualInstance().(getResult).SetEntityType(v)
 }
 
 // GetFunctionName returns the FunctionName field value if set, zero value otherwise.
@@ -742,56 +892,6 @@ func (o *BTMSketchCurve4) SetCenterId(v string) {
 	o.GetActualInstance().(getResult).SetCenterId(v)
 }
 
-// GetGeometry returns the Geometry field value if set, zero value otherwise.
-func (o *BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
-	type getResult interface {
-		GetGeometry() BTCurveGeometry114
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeometry()
-	} else {
-		var de BTCurveGeometry114
-		return de
-	}
-}
-
-// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
-	type getResult interface {
-		GetGeometryOk() (*BTCurveGeometry114, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeometryOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasGeometry returns a boolean if a field has been set.
-func (o *BTMSketchCurve4) HasGeometry() bool {
-	type getResult interface {
-		HasGeometry() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasGeometry()
-	} else {
-		return false
-	}
-}
-
-// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
-func (o *BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
-	type getResult interface {
-		SetGeometry(v BTCurveGeometry114)
-	}
-
-	o.GetActualInstance().(getResult).SetGeometry(v)
-}
-
 // GetInternalIds returns the InternalIds field value if set, zero value otherwise.
 func (o *BTMSketchCurve4) GetInternalIds() []string {
 	type getResult interface {
@@ -934,21 +1034,23 @@ func (v *NullableBTMSketchCurve4) UnmarshalJSON(src []byte) error {
 type base_BTMSketchCurve4 struct {
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion                  *string             `json:"importMicroversion,omitempty"`
-	NodeId                              *string             `json:"nodeId,omitempty"`
-	EntityId                            *string             `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string             `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Namespace                           *string             `json:"namespace,omitempty"`
-	Parameters                          []BTMParameter1     `json:"parameters,omitempty"`
-	ControlBoxIds                       []string            `json:"controlBoxIds,omitempty"`
-	FunctionName                        *string             `json:"functionName,omitempty"`
-	IsConstruction                      *bool               `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool               `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool               `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool               `json:"isFromSplineHandle,omitempty"`
-	CenterId                            *string             `json:"centerId,omitempty"`
-	Geometry                            *BTCurveGeometry114 `json:"geometry,omitempty"`
-	InternalIds                         []string            `json:"internalIds,omitempty"`
+	ImportMicroversion                  *string              `json:"importMicroversion,omitempty"`
+	NodeId                              *string              `json:"nodeId,omitempty"`
+	EntityId                            *string              `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string              `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Geometry                            *BTCurveGeometry114  `json:"geometry,omitempty"`
+	Index                               *int32               `json:"index,omitempty"`
+	Namespace                           *string              `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1      `json:"parameters,omitempty"`
+	ControlBoxIds                       []string             `json:"controlBoxIds,omitempty"`
+	EntityType                          *GBTSketchEntityType `json:"entityType,omitempty"`
+	FunctionName                        *string              `json:"functionName,omitempty"`
+	IsConstruction                      *bool                `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle          *bool                `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon          *bool                `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle                  *bool                `json:"isFromSplineHandle,omitempty"`
+	CenterId                            *string              `json:"centerId,omitempty"`
+	InternalIds                         []string             `json:"internalIds,omitempty"`
 }
 
 // Newbase_BTMSketchCurve4 instantiates a new base_BTMSketchCurve4 object
@@ -1128,6 +1230,70 @@ func (o *base_BTMSketchCurve4) SetEntityIdAndReplaceInDependentFields(v string) 
 	o.EntityIdAndReplaceInDependentFields = &v
 }
 
+// GetGeometry returns the Geometry field value if set, zero value otherwise.
+func (o *base_BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
+	if o == nil || o.Geometry == nil {
+		var ret BTCurveGeometry114
+		return ret
+	}
+	return *o.Geometry
+}
+
+// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
+	if o == nil || o.Geometry == nil {
+		return nil, false
+	}
+	return o.Geometry, true
+}
+
+// HasGeometry returns a boolean if a field has been set.
+func (o *base_BTMSketchCurve4) HasGeometry() bool {
+	if o != nil && o.Geometry != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
+func (o *base_BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
+	o.Geometry = &v
+}
+
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *base_BTMSketchCurve4) GetIndex() int32 {
+	if o == nil || o.Index == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchCurve4) GetIndexOk() (*int32, bool) {
+	if o == nil || o.Index == nil {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *base_BTMSketchCurve4) HasIndex() bool {
+	if o != nil && o.Index != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given int32 and assigns it to the Index field.
+func (o *base_BTMSketchCurve4) SetIndex(v int32) {
+	o.Index = &v
+}
+
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *base_BTMSketchCurve4) GetNamespace() string {
 	if o == nil || o.Namespace == nil {
@@ -1222,6 +1388,38 @@ func (o *base_BTMSketchCurve4) HasControlBoxIds() bool {
 // SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
 func (o *base_BTMSketchCurve4) SetControlBoxIds(v []string) {
 	o.ControlBoxIds = v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *base_BTMSketchCurve4) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchCurve4) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *base_BTMSketchCurve4) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *base_BTMSketchCurve4) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetFunctionName returns the FunctionName field value if set, zero value otherwise.
@@ -1416,38 +1614,6 @@ func (o *base_BTMSketchCurve4) SetCenterId(v string) {
 	o.CenterId = &v
 }
 
-// GetGeometry returns the Geometry field value if set, zero value otherwise.
-func (o *base_BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
-	if o == nil || o.Geometry == nil {
-		var ret BTCurveGeometry114
-		return ret
-	}
-	return *o.Geometry
-}
-
-// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
-	if o == nil || o.Geometry == nil {
-		return nil, false
-	}
-	return o.Geometry, true
-}
-
-// HasGeometry returns a boolean if a field has been set.
-func (o *base_BTMSketchCurve4) HasGeometry() bool {
-	if o != nil && o.Geometry != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
-func (o *base_BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
-	o.Geometry = &v
-}
-
 // GetInternalIds returns the InternalIds field value if set, zero value otherwise.
 func (o *base_BTMSketchCurve4) GetInternalIds() []string {
 	if o == nil || o.InternalIds == nil {
@@ -1497,6 +1663,12 @@ func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
 	}
+	if o.Geometry != nil {
+		toSerialize["geometry"] = o.Geometry
+	}
+	if o.Index != nil {
+		toSerialize["index"] = o.Index
+	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace
 	}
@@ -1505,6 +1677,9 @@ func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	}
 	if o.ControlBoxIds != nil {
 		toSerialize["controlBoxIds"] = o.ControlBoxIds
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.FunctionName != nil {
 		toSerialize["functionName"] = o.FunctionName
@@ -1523,9 +1698,6 @@ func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	}
 	if o.CenterId != nil {
 		toSerialize["centerId"] = o.CenterId
-	}
-	if o.Geometry != nil {
-		toSerialize["geometry"] = o.Geometry
 	}
 	if o.InternalIds != nil {
 		toSerialize["internalIds"] = o.InternalIds

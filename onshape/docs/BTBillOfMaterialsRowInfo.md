@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **IndentLevel** | Pointer to **int32** |  | [optional] 
 **ItemSource** | Pointer to [**BTBillOfMaterialsItemSourceInfo**](BTBillOfMaterialsItemSourceInfo.md) |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
-**RelatedOccurrences** | Pointer to **[]string** |  | [optional] 
+**RelatedOccurrences** | Pointer to **[]string** | Occurrence IDs in the assembly that refer to the part described by this BOM row. | [optional] 
 **RowId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 

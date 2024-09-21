@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **EmailMessage** | Pointer to **string** |  | [optional] 
 **EmailSubject** | Pointer to **string** |  | [optional] 
 **EmailTo** | Pointer to **string** | Base64-encoded email address. When sending an email, the &#x60;fromUserId&#x60; parameter is also required. | [optional] 
+**ExcludeHiddenEntities** | Pointer to **bool** | If &#x60;true&#x60;, the exported file won&#39;t have any parts and assemblies marked as hidden | [optional] 
+**ExcludeSuppressedEntities** | Pointer to **bool** | If &#x60;true&#x60;, the exported file won&#39;t have any parts and assemblies marked as suppressed | [optional] 
 **FeatureIds** | Pointer to **string** |  | [optional] 
 **Flatten** | Pointer to **bool** |  | [optional] 
 **Format** | **string** |  | 
@@ -471,6 +473,56 @@ SetEmailTo sets EmailTo field to given value.
 `func (o *BTBExportModelParams) HasEmailTo() bool`
 
 HasEmailTo returns a boolean if a field has been set.
+
+### GetExcludeHiddenEntities
+
+`func (o *BTBExportModelParams) GetExcludeHiddenEntities() bool`
+
+GetExcludeHiddenEntities returns the ExcludeHiddenEntities field if non-nil, zero value otherwise.
+
+### GetExcludeHiddenEntitiesOk
+
+`func (o *BTBExportModelParams) GetExcludeHiddenEntitiesOk() (*bool, bool)`
+
+GetExcludeHiddenEntitiesOk returns a tuple with the ExcludeHiddenEntities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeHiddenEntities
+
+`func (o *BTBExportModelParams) SetExcludeHiddenEntities(v bool)`
+
+SetExcludeHiddenEntities sets ExcludeHiddenEntities field to given value.
+
+### HasExcludeHiddenEntities
+
+`func (o *BTBExportModelParams) HasExcludeHiddenEntities() bool`
+
+HasExcludeHiddenEntities returns a boolean if a field has been set.
+
+### GetExcludeSuppressedEntities
+
+`func (o *BTBExportModelParams) GetExcludeSuppressedEntities() bool`
+
+GetExcludeSuppressedEntities returns the ExcludeSuppressedEntities field if non-nil, zero value otherwise.
+
+### GetExcludeSuppressedEntitiesOk
+
+`func (o *BTBExportModelParams) GetExcludeSuppressedEntitiesOk() (*bool, bool)`
+
+GetExcludeSuppressedEntitiesOk returns a tuple with the ExcludeSuppressedEntities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeSuppressedEntities
+
+`func (o *BTBExportModelParams) SetExcludeSuppressedEntities(v bool)`
+
+SetExcludeSuppressedEntities sets ExcludeSuppressedEntities field to given value.
+
+### HasExcludeSuppressedEntities
+
+`func (o *BTBExportModelParams) HasExcludeSuppressedEntities() bool`
+
+HasExcludeSuppressedEntities returns a boolean if a field has been set.
 
 ### GetFeatureIds
 

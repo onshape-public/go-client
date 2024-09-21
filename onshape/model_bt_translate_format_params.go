@@ -44,21 +44,22 @@ type BTTranslateFormatParams struct {
 	FlattenAssemblies        *bool    `json:"flattenAssemblies,omitempty"`
 	ForeignId                *string  `json:"foreignId,omitempty"`
 	// The name of the file format.
-	FormatName                   string  `json:"formatName"`
-	FromUserId                   *string `json:"fromUserId,omitempty"`
-	GetyAxisIsUp                 *bool   `json:"getyAxisIsUp,omitempty"`
-	Grouping                     *bool   `json:"grouping,omitempty"`
-	HideInspectionItems          *bool   `json:"hideInspectionItems,omitempty"`
-	IgnoreExportRulesForContents *bool   `json:"ignoreExportRulesForContents,omitempty"`
-	ImageHeight                  *int32  `json:"imageHeight,omitempty"`
-	ImageWidth                   *int32  `json:"imageWidth,omitempty"`
-	ImportAppearances            *bool   `json:"importAppearances,omitempty"`
-	ImportInBackground           *bool   `json:"importInBackground,omitempty"`
-	ImportMaterialDensity        *bool   `json:"importMaterialDensity,omitempty"`
-	ImportWithinDocument         *bool   `json:"importWithinDocument,omitempty"`
-	IncludeExportIds             *bool   `json:"includeExportIds,omitempty"`
-	JoinAdjacentSurfaces         *bool   `json:"joinAdjacentSurfaces,omitempty"`
-	Level                        *string `json:"level,omitempty"`
+	FormatName                    string                               `json:"formatName"`
+	FromUserId                    *string                              `json:"fromUserId,omitempty"`
+	GetyAxisIsUp                  *bool                                `json:"getyAxisIsUp,omitempty"`
+	Grouping                      *bool                                `json:"grouping,omitempty"`
+	HideInspectionItems           *bool                                `json:"hideInspectionItems,omitempty"`
+	IgnoreExportRulesForContents  *bool                                `json:"ignoreExportRulesForContents,omitempty"`
+	ImageHeight                   *int32                               `json:"imageHeight,omitempty"`
+	ImageWidth                    *int32                               `json:"imageWidth,omitempty"`
+	ImportAppearances             *bool                                `json:"importAppearances,omitempty"`
+	ImportInBackground            *bool                                `json:"importInBackground,omitempty"`
+	ImportMaterialDensity         *bool                                `json:"importMaterialDensity,omitempty"`
+	ImportWithinDocument          *bool                                `json:"importWithinDocument,omitempty"`
+	IncludeExportIds              *bool                                `json:"includeExportIds,omitempty"`
+	InvisibleEntitiesExportFilter *BTInvisibleEntitiesExportFilter2537 `json:"invisibleEntitiesExportFilter,omitempty"`
+	JoinAdjacentSurfaces          *bool                                `json:"joinAdjacentSurfaces,omitempty"`
+	Level                         *string                              `json:"level,omitempty"`
 	// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
 	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
 	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
@@ -1272,6 +1273,38 @@ func (o *BTTranslateFormatParams) HasIncludeExportIds() bool {
 // SetIncludeExportIds gets a reference to the given bool and assigns it to the IncludeExportIds field.
 func (o *BTTranslateFormatParams) SetIncludeExportIds(v bool) {
 	o.IncludeExportIds = &v
+}
+
+// GetInvisibleEntitiesExportFilter returns the InvisibleEntitiesExportFilter field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilter() BTInvisibleEntitiesExportFilter2537 {
+	if o == nil || o.InvisibleEntitiesExportFilter == nil {
+		var ret BTInvisibleEntitiesExportFilter2537
+		return ret
+	}
+	return *o.InvisibleEntitiesExportFilter
+}
+
+// GetInvisibleEntitiesExportFilterOk returns a tuple with the InvisibleEntitiesExportFilter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilterOk() (*BTInvisibleEntitiesExportFilter2537, bool) {
+	if o == nil || o.InvisibleEntitiesExportFilter == nil {
+		return nil, false
+	}
+	return o.InvisibleEntitiesExportFilter, true
+}
+
+// HasInvisibleEntitiesExportFilter returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasInvisibleEntitiesExportFilter() bool {
+	if o != nil && o.InvisibleEntitiesExportFilter != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInvisibleEntitiesExportFilter gets a reference to the given BTInvisibleEntitiesExportFilter2537 and assigns it to the InvisibleEntitiesExportFilter field.
+func (o *BTTranslateFormatParams) SetInvisibleEntitiesExportFilter(v BTInvisibleEntitiesExportFilter2537) {
+	o.InvisibleEntitiesExportFilter = &v
 }
 
 // GetJoinAdjacentSurfaces returns the JoinAdjacentSurfaces field value if set, zero value otherwise.
@@ -2855,6 +2888,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.IncludeExportIds != nil {
 		toSerialize["includeExportIds"] = o.IncludeExportIds
+	}
+	if o.InvisibleEntitiesExportFilter != nil {
+		toSerialize["invisibleEntitiesExportFilter"] = o.InvisibleEntitiesExportFilter
 	}
 	if o.JoinAdjacentSurfaces != nil {
 		toSerialize["joinAdjacentSurfaces"] = o.JoinAdjacentSurfaces

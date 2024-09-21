@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
+**Geometry** | Pointer to **bool** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
+**Index** | Pointer to **int32** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
@@ -105,6 +107,31 @@ SetEntityIdAndReplaceInDependentFields sets EntityIdAndReplaceInDependentFields 
 
 HasEntityIdAndReplaceInDependentFields returns a boolean if a field has been set.
 
+### GetGeometry
+
+`func (o *BTMSketchEntity3AllOf) GetGeometry() bool`
+
+GetGeometry returns the Geometry field if non-nil, zero value otherwise.
+
+### GetGeometryOk
+
+`func (o *BTMSketchEntity3AllOf) GetGeometryOk() (*bool, bool)`
+
+GetGeometryOk returns a tuple with the Geometry field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeometry
+
+`func (o *BTMSketchEntity3AllOf) SetGeometry(v bool)`
+
+SetGeometry sets Geometry field to given value.
+
+### HasGeometry
+
+`func (o *BTMSketchEntity3AllOf) HasGeometry() bool`
+
+HasGeometry returns a boolean if a field has been set.
+
 ### GetImportMicroversion
 
 `func (o *BTMSketchEntity3AllOf) GetImportMicroversion() string`
@@ -129,6 +156,31 @@ SetImportMicroversion sets ImportMicroversion field to given value.
 `func (o *BTMSketchEntity3AllOf) HasImportMicroversion() bool`
 
 HasImportMicroversion returns a boolean if a field has been set.
+
+### GetIndex
+
+`func (o *BTMSketchEntity3AllOf) GetIndex() int32`
+
+GetIndex returns the Index field if non-nil, zero value otherwise.
+
+### GetIndexOk
+
+`func (o *BTMSketchEntity3AllOf) GetIndexOk() (*int32, bool)`
+
+GetIndexOk returns a tuple with the Index field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndex
+
+`func (o *BTMSketchEntity3AllOf) SetIndex(v int32)`
+
+SetIndex sets Index field to given value.
+
+### HasIndex
+
+`func (o *BTMSketchEntity3AllOf) HasIndex() bool`
+
+HasIndex returns a boolean if a field has been set.
 
 ### GetNamespace
 

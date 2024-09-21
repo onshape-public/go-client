@@ -24,6 +24,7 @@ type BTNamedPositionValuesColumnInfo816 struct {
 	ParameterId    *string                `json:"parameterId,omitempty"`
 	ParentId       *string                `json:"parentId,omitempty"`
 	ParentName     *string                `json:"parentName,omitempty"`
+	Tooltip        *string                `json:"tooltip,omitempty"`
 }
 
 // NewBTNamedPositionValuesColumnInfo816 instantiates a new BTNamedPositionValuesColumnInfo816 object
@@ -299,6 +300,38 @@ func (o *BTNamedPositionValuesColumnInfo816) SetParentName(v string) {
 	o.ParentName = &v
 }
 
+// GetTooltip returns the Tooltip field value if set, zero value otherwise.
+func (o *BTNamedPositionValuesColumnInfo816) GetTooltip() string {
+	if o == nil || o.Tooltip == nil {
+		var ret string
+		return ret
+	}
+	return *o.Tooltip
+}
+
+// GetTooltipOk returns a tuple with the Tooltip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTNamedPositionValuesColumnInfo816) GetTooltipOk() (*string, bool) {
+	if o == nil || o.Tooltip == nil {
+		return nil, false
+	}
+	return o.Tooltip, true
+}
+
+// HasTooltip returns a boolean if a field has been set.
+func (o *BTNamedPositionValuesColumnInfo816) HasTooltip() bool {
+	if o != nil && o.Tooltip != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTooltip gets a reference to the given string and assigns it to the Tooltip field.
+func (o *BTNamedPositionValuesColumnInfo816) SetTooltip(v string) {
+	o.Tooltip = &v
+}
+
 func (o BTNamedPositionValuesColumnInfo816) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -324,6 +357,9 @@ func (o BTNamedPositionValuesColumnInfo816) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParentName != nil {
 		toSerialize["parentName"] = o.ParentName
+	}
+	if o.Tooltip != nil {
+		toSerialize["tooltip"] = o.Tooltip
 	}
 	return json.Marshal(toSerialize)
 }

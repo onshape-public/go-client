@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.186.42434-7e841a23d82c
+  version: 1.187.43146-8b8c8e8bebf3
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -106,7 +106,7 @@ tags:
   name: Revision
 - description: Access sketch information.
   name: Sketch
-- description: "Create, access, modify, and delete Tasks and Action Items."
+- description: "Create, access, and modify Tasks and Action Items."
   name: Task
 - description: Access team information.
   name: Team
@@ -3968,7 +3968,9 @@ paths:
         schema:
           type: boolean
         style: form
-      - explode: true
+      - description: "Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates)\
+          \ endpoint to get display state ID(s)."
+        explode: true
         in: query
         name: displayStateId
         required: false
@@ -4003,6 +4005,80 @@ paths:
         BasicAuth:
         - OAuth2Read
       summary: Get bounding box information for the specified assembly.
+      tags:
+      - Assembly
+      x-BTVisibility: PRODUCTION
+  /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/displaystates:
+    get:
+      deprecated: false
+      operationId: getDisplayStates
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
+        explode: false
+        in: path
+        name: wvm
+        required: true
+        schema:
+          enum:
+          - w
+          - v
+          - m
+          type: string
+        style: simple
+      - description: "The id of the workspace, version or document microversion in\
+          \ which the operation should be performed."
+        explode: false
+        in: path
+        name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the element in which to perform the operation.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                items:
+                  $ref: '#/components/schemas/BTDisplayStateInfo'
+                type: array
+          description: Success!
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Get a list of display states for the specified assembly.
       tags:
       - Assembly
       x-BTVisibility: PRODUCTION
@@ -4629,7 +4705,9 @@ paths:
           default: false
           type: boolean
         style: form
-      - explode: true
+      - description: "Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates)\
+          \ endpoint to get display state ID(s)."
+        explode: true
         in: query
         name: displayStateId
         required: false
@@ -12372,6 +12450,9 @@ paths:
   /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/boundingboxes:
     get:
       deprecated: false
+      description: "This endpoint does not result in a tight bounding box. The values\
+        \ returned are meant for graphics and visualization, and are approximate.\
+        \ \nTo calculate a tight bounding box, see the [FeatureScript API Guide](https://onshape-public.github.io/docs/api-adv/fs/#calculate-a-tight-bounding-box). "
       operationId: getPartStudioBoundingBoxes
       parameters:
       - description: Document ID.
@@ -23653,6 +23734,7 @@ components:
         ignoreExportRulesForContents: true
         password: password
         view: view
+        excludeHiddenEntities: true
         triggerAutoDownload: true
         elementId: elementId
         format: format
@@ -23671,6 +23753,7 @@ components:
         sheetMetalFlat: true
         elementIds: elementIds
         passwordRequired: true
+        excludeSuppressedEntities: true
         destinationName: destinationName
         includeExportIds: true
         cloudObjectId: cloudObjectId
@@ -23733,6 +23816,14 @@ components:
           description: "Base64-encoded email address. When sending an email, the `fromUserId`\
             \ parameter is also required."
           type: string
+        excludeHiddenEntities:
+          description: "If `true`, the exported file won't have any parts and assemblies\
+            \ marked as hidden"
+          type: boolean
+        excludeSuppressedEntities:
+          description: "If `true`, the exported file won't have any parts and assemblies\
+            \ marked as suppressed"
+          type: boolean
         featureIds:
           type: string
         flatten:
@@ -24068,6 +24159,15 @@ components:
           BTSMBendTableRowMetadata-1705: '#/components/schemas/BTSMBendTableRowMetadata-1705'
           BTSMOtherJointTableRowMetadata-2640: '#/components/schemas/BTSMOtherJointTableRowMetadata-2640'
         propertyName: btType
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTBezierDegreeDimensionDisplayData-2597:
+      allOf:
+      - $ref: '#/components/schemas/BTDimensionDisplayData-323'
+      - $ref: '#/components/schemas/BTBezierDegreeDimensionDisplayData_2597_allOf'
       properties:
         btType:
           description: Type of JSON object.
@@ -24715,7 +24815,11 @@ components:
           description: Name of the resource.
           type: string
         relatedOccurrences:
+          description: Occurrence IDs in the assembly that refer to the part described
+            by this BOM row.
           items:
+            description: Occurrence IDs in the assembly that refer to the part described
+              by this BOM row.
             type: string
           type: array
         rowId:
@@ -26789,6 +26893,8 @@ components:
         btType:
           description: Type of JSON object.
           type: string
+        entityType:
+          $ref: '#/components/schemas/GBTSketchEntityType'
       type: object
     BTCurveGeometryCircle-115:
       allOf:
@@ -27074,6 +27180,7 @@ components:
       discriminator:
         mapping:
           BTAngularDimensionDisplayData-320: '#/components/schemas/BTAngularDimensionDisplayData-320'
+          BTBezierDegreeDimensionDisplayData-2597: '#/components/schemas/BTBezierDegreeDimensionDisplayData-2597'
           BTCountDimensionDisplayData-1778: '#/components/schemas/BTCountDimensionDisplayData-1778'
           BTCurveLengthDimensionDisplayData-322: '#/components/schemas/BTCurveLengthDimensionDisplayData-322'
           BTLinearDimensionDisplayData-330: '#/components/schemas/BTLinearDimensionDisplayData-330'
@@ -27284,6 +27391,24 @@ components:
         ownerId:
           type: string
         planId:
+          type: string
+      type: object
+    BTDisplayStateInfo:
+      description: Describes a display state.
+      example:
+        name: name
+        isOnshapeDefault: true
+        id: id
+      properties:
+        id:
+          description: The ID of the view feature.
+          type: string
+        isOnshapeDefault:
+          description: '`True` if this display state is in all assemblies by default;
+            `false` if the display state is user-created.'
+          type: boolean
+        name:
+          description: The name of the view feature.
           type: string
       type: object
     BTDocumentElementCreationDescriptor:
@@ -27656,6 +27781,8 @@ components:
         defaultVersionGraphMode: INTERNAL
         totalWorkspacesScheduledForUpdate: INTERNAL
         isOrphaned: INTERNAL
+        defaultVersionGraphShowAutoVersions: INTERNAL
+        defaultVersionGraphShowMerges: INTERNAL
         tracingEnabled: INTERNAL
     BTDocumentLabelInfo:
       allOf:
@@ -28031,6 +28158,8 @@ components:
         defaultVersionGraphMode: INTERNAL
         totalWorkspacesScheduledForUpdate: INTERNAL
         isOrphaned: INTERNAL
+        defaultVersionGraphShowAutoVersions: INTERNAL
+        defaultVersionGraphShowMerges: INTERNAL
         tracingEnabled: INTERNAL
     BTDocumentSearchHitInfo:
       properties:
@@ -28165,6 +28294,8 @@ components:
         defaultVersionGraphMode: INTERNAL
         totalWorkspacesScheduledForUpdate: INTERNAL
         isOrphaned: INTERNAL
+        defaultVersionGraphShowAutoVersions: INTERNAL
+        defaultVersionGraphShowMerges: INTERNAL
     BTDocumentSummarySearchInfo:
       allOf:
       - $ref: '#/components/schemas/BTDocumentSummaryInfo'
@@ -28175,6 +28306,8 @@ components:
         defaultVersionGraphMode: INTERNAL
         totalWorkspacesScheduledForUpdate: INTERNAL
         isOrphaned: INTERNAL
+        defaultVersionGraphShowAutoVersions: INTERNAL
+        defaultVersionGraphShowMerges: INTERNAL
     BTDocumentVersionElementIds-1897:
       example:
         elementId: elementId
@@ -37309,6 +37442,20 @@ components:
           description: Type of JSON object.
           type: string
       type: object
+    BTInvisibleEntitiesExportFilter-2537:
+      example:
+        btType: btType
+        excludeSuppressed: true
+        excludeHidden: true
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+        excludeHidden:
+          type: boolean
+        excludeSuppressed:
+          type: boolean
+      type: object
     BTJEdit-3734:
       description: An edit that will be applied to the application element's json
         data.
@@ -41264,6 +41411,7 @@ components:
           BTMParameterReferenceImage-2014: '#/components/schemas/BTMParameterReferenceImage-2014'
           BTMParameterReferenceJSON-790: '#/components/schemas/BTMParameterReferenceJSON-790'
           BTMParameterReferenceTable-917: '#/components/schemas/BTMParameterReferenceTable-917'
+          BTMParameterReferenceText-2115: '#/components/schemas/BTMParameterReferenceText-2115'
         propertyName: btType
       properties:
         btType:
@@ -41375,6 +41523,15 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTMParameterReferenceBlob-3281'
       - $ref: '#/components/schemas/BTMParameterReferenceTable_917_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTMParameterReferenceText-2115:
+      allOf:
+      - $ref: '#/components/schemas/BTMParameterReferenceBlob-3281'
+      - $ref: '#/components/schemas/BTMParameterReferenceText_2115_allOf'
       properties:
         btType:
           description: Type of JSON object.
@@ -45421,6 +45578,7 @@ components:
           BTParameterSpecReferenceImage-1722: '#/components/schemas/BTParameterSpecReferenceImage-1722'
           BTParameterSpecReferenceJSON-1816: '#/components/schemas/BTParameterSpecReferenceJSON-1816'
           BTParameterSpecReferenceTable-1520: '#/components/schemas/BTParameterSpecReferenceTable-1520'
+          BTParameterSpecReferenceText-4945: '#/components/schemas/BTParameterSpecReferenceText-4945'
         propertyName: btType
       properties:
         btType:
@@ -45467,6 +45625,15 @@ components:
       allOf:
       - $ref: '#/components/schemas/BTParameterSpecReferenceBlob-1367'
       - $ref: '#/components/schemas/BTParameterSpecReferenceTable_1520_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
+    BTParameterSpecReferenceText-4945:
+      allOf:
+      - $ref: '#/components/schemas/BTParameterSpecReferenceBlob-1367'
+      - $ref: '#/components/schemas/BTParameterSpecReferenceText_4945_allOf'
       properties:
         btType:
           description: Type of JSON object.
@@ -56816,6 +56983,10 @@ components:
           skipPartialMesh: true
         cloudObjectId: cloudObjectId
         colorMethod: colorMethod
+        invisibleEntitiesExportFilter:
+          btType: btType
+          excludeSuppressed: true
+          excludeHidden: true
         proxyWorkspaceVersion: proxyWorkspaceVersion
         currentSheetOnly: true
         occurrencesToExport: occurrencesToExport
@@ -56935,6 +57106,8 @@ components:
           type: boolean
         includeExportIds:
           type: boolean
+        invisibleEntitiesExportFilter:
+          $ref: '#/components/schemas/BTInvisibleEntitiesExportFilter-2537'
         joinAdjacentSurfaces:
           type: boolean
         level:
@@ -58182,6 +58355,7 @@ components:
           quantityTypeToBaseUnits:
             key:
               key: 0
+        hideAhaAppOnboarding: true
         miniToolbarSettings: miniToolbarSettings
         mouseActions: mouseActions
         viewMappingId: 9
@@ -58211,6 +58385,8 @@ components:
           type: string
         graphicsSmoothEdge:
           type: string
+        hideAhaAppOnboarding:
+          type: boolean
         highlightLaminarEdges:
           type: string
         id:
@@ -58736,13 +58912,16 @@ components:
           type: array
       type: object
     BTViewFeatureBaseInfo:
+      description: Describes a view feature.
       example:
         name: name
         id: id
       properties:
         id:
+          description: The ID of the view feature.
           type: string
         name:
+          description: The name of the view feature.
           type: string
       type: object
     BTViewManipulationMouseKeyMappingInfo:
@@ -71207,6 +71386,7 @@ components:
       - INTERSECTED
       - RHO
       - EQUAL_CURVATURE
+      - BEZIER_DEGREE
       - UNKNOWN
       type: string
     GBTCurveTypeEnum:
@@ -72887,6 +73067,26 @@ components:
       - ASSEMBLY_FEATURE_MISSING_SELECTION
       - ASSEMBLY_NAMED_POSITIONS_LOCKED_SUBASSEMBLY_FOUND
       - CURVE_PATTERN_MISSING_FACE_SELECTION
+      - TL_CONNECTION_ON_ALL_PROFILES
+      - TL_FAILED
+      - TL_CONNECTIONS_CROSS
+      - TL_SELECT_PROFILES
+      - TL_TWO_PROFILES
+      - TL_CONSECUTIVE_ACORNS
+      - TL_MIXED_PROFILES
+      - TL_MIXED_PROFILE_TOPOLOGY
+      - TL_FAILED_TO_CREATE_PROFILES
+      - TL_CONNECTION_NOT_ON_PROFILE
+      - SHEET_METAL_FILLET_NO_VARIABLE
+      - PARTIALLY_INVALID_INPUT
+      - SKETCH_BEZIER_DEGREE_DIM_NOT_FOUND
+      - INVALID_BEZIER_DEGREE
+      - CANNOT_DELETE_BEZIER_DEGREE_DIMENSION
+      - DERIVED_NO_INSTANCING_SM
+      - DERIVED_SM_AUTO_INSERT
+      - ASSEMBLY_PATTERN_WRONG_REFERENCE_WAS_SELECTED
+      - ASSEMBLY_PATTERN_REFERENCE_COULD_NOT_BE_FOUND
+      - DERIVED_NO_ACTIVE_SM_COMPOSITE
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -73194,6 +73394,19 @@ components:
       - UNSET
       - INTERPOLATED_SPLINE
       - BEZIER_CURVE
+      - UNKNOWN
+      type: string
+    GBTSketchEntityType:
+      enum:
+      - CURVE
+      - IMAGE_ENTITY
+      - POINT
+      - TEXT
+      - CIRCLE
+      - CONIC
+      - SPLINE
+      - ELLIPSE
+      - LINE
       - UNKNOWN
       type: string
     GBTSketchObjectType:
@@ -104744,6 +104957,18 @@ components:
           $ref: '#/components/schemas/BTTableCrossHighlightData-1753'
       type: object
       example: null
+    BTBezierDegreeDimensionDisplayData_2597_allOf:
+      properties:
+        btType:
+          type: string
+        positionX:
+          format: double
+          type: number
+        positionY:
+          format: double
+          type: number
+      type: object
+      example: null
     BTBillOfMaterialsTable_1073_allOf:
       properties:
         btType:
@@ -105247,6 +105472,10 @@ components:
           type: string
         defaultVersionGraphMode:
           $ref: '#/components/schemas/BTVersionGraphMode'
+        defaultVersionGraphShowAutoVersions:
+          type: boolean
+        defaultVersionGraphShowMerges:
+          type: boolean
         defaultWorkspace:
           $ref: '#/components/schemas/BTWorkspaceInfo'
         description:
@@ -105395,6 +105624,10 @@ components:
           type: string
         defaultVersionGraphMode:
           $ref: '#/components/schemas/BTVersionGraphMode'
+        defaultVersionGraphShowAutoVersions:
+          type: boolean
+        defaultVersionGraphShowMerges:
+          type: boolean
         defaultWorkspace:
           $ref: '#/components/schemas/BTWorkspaceInfo'
         documentLabels:
@@ -107080,6 +107313,12 @@ components:
           type: string
       type: object
       example: null
+    BTMParameterReferenceText_2115_allOf:
+      properties:
+        btType:
+          type: string
+      type: object
+      example: null
     BTMParameterReferenceVariableStudio_3550_allOf:
       properties:
         btType:
@@ -107246,10 +107485,15 @@ components:
         entityIdAndReplaceInDependentFields:
           type: string
           writeOnly: true
+        geometry:
+          type: boolean
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
           writeOnly: true
+        index:
+          format: int32
+          type: integer
         namespace:
           type: string
         parameters:
@@ -107266,6 +107510,8 @@ components:
           items:
             type: string
           type: array
+        entityType:
+          $ref: '#/components/schemas/GBTSketchEntityType'
         functionName:
           type: string
         isConstruction:
@@ -107531,6 +107777,8 @@ components:
         parentId:
           type: string
         parentName:
+          type: string
+        tooltip:
           type: string
       type: object
       example: null
@@ -108468,10 +108716,6 @@ components:
         maxNumberOfPicks:
           format: int32
           type: integer
-        parameters:
-          items:
-            $ref: '#/components/schemas/BTParameterSpec-6'
-          type: array
         showLabelsOnly:
           type: boolean
       type: object
@@ -108686,6 +108930,12 @@ components:
       type: object
       example: null
     BTParameterSpecReferenceTable_1520_allOf:
+      properties:
+        btType:
+          type: string
+      type: object
+      example: null
+    BTParameterSpecReferenceText_4945_allOf:
       properties:
         btType:
           type: string

@@ -14,9 +14,11 @@ import (
 	"encoding/json"
 )
 
-// BTViewFeatureBaseInfo struct for BTViewFeatureBaseInfo
+// BTViewFeatureBaseInfo Describes a view feature.
 type BTViewFeatureBaseInfo struct {
-	Id   *string `json:"id,omitempty"`
+	// The ID of the view feature.
+	Id *string `json:"id,omitempty"`
+	// The name of the view feature.
 	Name *string `json:"name,omitempty"`
 }
 

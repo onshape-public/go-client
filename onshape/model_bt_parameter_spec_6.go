@@ -135,6 +135,11 @@ func (o *BTParameterSpecReferenceAssembly2821) AsBTParameterSpec6() *BTParameter
 	return &BTParameterSpec6{o}
 }
 
+// BTParameterSpecReferenceText4945AsBTParameterSpec6 is a convenience function that returns BTParameterSpecReferenceText4945 wrapped in BTParameterSpec6
+func (o *BTParameterSpecReferenceText4945) AsBTParameterSpec6() *BTParameterSpec6 {
+	return &BTParameterSpec6{o}
+}
+
 // BTParameterSpecReferenceCADImport1792AsBTParameterSpec6 is a convenience function that returns BTParameterSpecReferenceCADImport1792 wrapped in BTParameterSpec6
 func (o *BTParameterSpecReferenceCADImport1792) AsBTParameterSpec6() *BTParameterSpec6 {
 	return &BTParameterSpec6{o}
@@ -1289,6 +1294,20 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterSpec6 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceTable1520: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceText-4945'
+	if jsonDict["btType"] == "BTParameterSpecReferenceText-4945" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceText4945
+		var qr *BTParameterSpecReferenceText4945
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpec6 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpec6 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReferenceText4945: %s", err.Error())
 		}
 	}
 

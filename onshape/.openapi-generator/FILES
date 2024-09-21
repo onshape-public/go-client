@@ -180,6 +180,8 @@ docs/BTBaseInfo.md
 docs/BTBasePartColorCycle2614.md
 docs/BTBaseSMJointTableRowMetadata2232.md
 docs/BTBaseSMJointTableRowMetadata2232AllOf.md
+docs/BTBezierDegreeDimensionDisplayData2597.md
+docs/BTBezierDegreeDimensionDisplayData2597AllOf.md
 docs/BTBillOfMaterialsElementInfo.md
 docs/BTBillOfMaterialsHeaderInfo.md
 docs/BTBillOfMaterialsInfo.md
@@ -312,6 +314,7 @@ docs/BTDimensionDisplayData323.md
 docs/BTDiscount.md
 docs/BTDiscountInfo.md
 docs/BTDiscountOwnerIdPlanId.md
+docs/BTDisplayStateInfo.md
 docs/BTDocumentElementCreationDescriptor.md
 docs/BTDocumentElementInfo.md
 docs/BTDocumentElementProcessingInfo.md
@@ -515,6 +518,7 @@ docs/BTInstanceFolder3627.md
 docs/BTInstanceFolder3627AllOf.md
 docs/BTInstanceStandardContentData2081.md
 docs/BTInstanceStandardContentData2081AllOf.md
+docs/BTInvisibleEntitiesExportFilter2537.md
 docs/BTJEdit3734.md
 docs/BTJEditChange2636.md
 docs/BTJEditChange2636AllOf.md
@@ -711,6 +715,8 @@ docs/BTMParameterReferenceJSON790.md
 docs/BTMParameterReferencePartStudio3302.md
 docs/BTMParameterReferenceTable917.md
 docs/BTMParameterReferenceTable917AllOf.md
+docs/BTMParameterReferenceText2115.md
+docs/BTMParameterReferenceText2115AllOf.md
 docs/BTMParameterReferenceVariableStudio3550.md
 docs/BTMParameterReferenceVariableStudio3550AllOf.md
 docs/BTMParameterReferenceWithConfiguration3028.md
@@ -1035,6 +1041,8 @@ docs/BTParameterSpecReferencePartStudio1256.md
 docs/BTParameterSpecReferencePartStudio1256AllOf.md
 docs/BTParameterSpecReferenceTable1520.md
 docs/BTParameterSpecReferenceTable1520AllOf.md
+docs/BTParameterSpecReferenceText4945.md
+docs/BTParameterSpecReferenceText4945AllOf.md
 docs/BTParameterSpecReferenceWithConfiguration2950.md
 docs/BTParameterSpecReferenceWithConfiguration2950AllOf.md
 docs/BTParameterSpecString175.md
@@ -1465,6 +1473,7 @@ docs/GBTQuantityType.md
 docs/GBTRadiusDisplay.md
 docs/GBTSimulationContactBehavior.md
 docs/GBTSketchCurveType.md
+docs/GBTSketchEntityType.md
 docs/GBTSketchObjectType.md
 docs/GBTSubAssemblyLockType.md
 docs/GBTSurfaceType.md
@@ -1663,6 +1672,7 @@ model_bt_base_entity_data_33.go
 model_bt_base_info.go
 model_bt_base_part_color_cycle_2614.go
 model_bt_base_sm_joint_table_row_metadata_2232.go
+model_bt_bezier_degree_dimension_display_data_2597.go
 model_bt_bill_of_materials_element_info.go
 model_bt_bill_of_materials_header_info.go
 model_bt_bill_of_materials_info.go
@@ -1759,6 +1769,7 @@ model_bt_dimension_display_data_323.go
 model_bt_discount.go
 model_bt_discount_info.go
 model_bt_discount_owner_id_plan_id.go
+model_bt_display_state_info.go
 model_bt_document_element_creation_descriptor.go
 model_bt_document_element_info.go
 model_bt_document_element_processing_info.go
@@ -1888,6 +1899,7 @@ model_bt_instance_base_2263.go
 model_bt_instance_control_node_750.go
 model_bt_instance_folder_3627.go
 model_bt_instance_standard_content_data_2081.go
+model_bt_invisible_entities_export_filter_2537.go
 model_bt_json_match_2290.go
 model_bt_json_match_2290_node.go
 model_bt_key_mouse_values_info.go
@@ -2020,6 +2032,7 @@ model_bt_parameter_spec_reference_image_1722.go
 model_bt_parameter_spec_reference_json_1816.go
 model_bt_parameter_spec_reference_part_studio_1256.go
 model_bt_parameter_spec_reference_table_1520.go
+model_bt_parameter_spec_reference_text_4945.go
 model_bt_parameter_spec_reference_with_configuration_2950.go
 model_bt_parameter_spec_string_175.go
 model_bt_parameter_spec_string_with_tolerances_2535.go
@@ -2374,6 +2387,7 @@ model_btm_parameter_reference_image_2014.go
 model_btm_parameter_reference_json_790.go
 model_btm_parameter_reference_part_studio_3302.go
 model_btm_parameter_reference_table_917.go
+model_btm_parameter_reference_text_2115.go
 model_btm_parameter_reference_variable_studio_3550.go
 model_btm_parameter_reference_with_configuration_3028.go
 model_btm_parameter_string_149.go
@@ -2553,6 +2567,7 @@ model_gbt_quantity_type.go
 model_gbt_radius_display.go
 model_gbt_simulation_contact_behavior.go
 model_gbt_sketch_curve_type.go
+model_gbt_sketch_entity_type.go
 model_gbt_sketch_object_type.go
 model_gbt_sub_assembly_lock_type.go
 model_gbt_surface_type.go

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **string** | The ID of the view feature. | [optional] 
+**Name** | Pointer to **string** | The name of the view feature. | [optional] 
 
 ## Methods
 

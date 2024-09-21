@@ -3077,6 +3077,46 @@
 
 * `GBTErrorStringEnumCurvePatternMissingFaceSelection` (value: `"CURVE_PATTERN_MISSING_FACE_SELECTION"`)
 
+* `GBTErrorStringEnumTlConnectionOnAllProfiles` (value: `"TL_CONNECTION_ON_ALL_PROFILES"`)
+
+* `GBTErrorStringEnumTlFailed` (value: `"TL_FAILED"`)
+
+* `GBTErrorStringEnumTlConnectionsCross` (value: `"TL_CONNECTIONS_CROSS"`)
+
+* `GBTErrorStringEnumTlSelectProfiles` (value: `"TL_SELECT_PROFILES"`)
+
+* `GBTErrorStringEnumTlTwoProfiles` (value: `"TL_TWO_PROFILES"`)
+
+* `GBTErrorStringEnumTlConsecutiveAcorns` (value: `"TL_CONSECUTIVE_ACORNS"`)
+
+* `GBTErrorStringEnumTlMixedProfiles` (value: `"TL_MIXED_PROFILES"`)
+
+* `GBTErrorStringEnumTlMixedProfileTopology` (value: `"TL_MIXED_PROFILE_TOPOLOGY"`)
+
+* `GBTErrorStringEnumTlFailedToCreateProfiles` (value: `"TL_FAILED_TO_CREATE_PROFILES"`)
+
+* `GBTErrorStringEnumTlConnectionNotOnProfile` (value: `"TL_CONNECTION_NOT_ON_PROFILE"`)
+
+* `GBTErrorStringEnumSheetMetalFilletNoVariable` (value: `"SHEET_METAL_FILLET_NO_VARIABLE"`)
+
+* `GBTErrorStringEnumPartiallyInvalidInput` (value: `"PARTIALLY_INVALID_INPUT"`)
+
+* `GBTErrorStringEnumSketchBezierDegreeDimNotFound` (value: `"SKETCH_BEZIER_DEGREE_DIM_NOT_FOUND"`)
+
+* `GBTErrorStringEnumInvalidBezierDegree` (value: `"INVALID_BEZIER_DEGREE"`)
+
+* `GBTErrorStringEnumCannotDeleteBezierDegreeDimension` (value: `"CANNOT_DELETE_BEZIER_DEGREE_DIMENSION"`)
+
+* `GBTErrorStringEnumDerivedNoInstancingSm` (value: `"DERIVED_NO_INSTANCING_SM"`)
+
+* `GBTErrorStringEnumDerivedSmAutoInsert` (value: `"DERIVED_SM_AUTO_INSERT"`)
+
+* `GBTErrorStringEnumAssemblyPatternWrongReferenceWasSelected` (value: `"ASSEMBLY_PATTERN_WRONG_REFERENCE_WAS_SELECTED"`)
+
+* `GBTErrorStringEnumAssemblyPatternReferenceCouldNotBeFound` (value: `"ASSEMBLY_PATTERN_REFERENCE_COULD_NOT_BE_FOUND"`)
+
+* `GBTErrorStringEnumDerivedNoActiveSmComposite` (value: `"DERIVED_NO_ACTIVE_SM_COMPOSITE"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

@@ -20,6 +20,11 @@ type BTDimensionDisplayData323 struct {
 	implBTDimensionDisplayData323 interface{}
 }
 
+// BTBezierDegreeDimensionDisplayData2597AsBTDimensionDisplayData323 is a convenience function that returns BTBezierDegreeDimensionDisplayData2597 wrapped in BTDimensionDisplayData323
+func (o *BTBezierDegreeDimensionDisplayData2597) AsBTDimensionDisplayData323() *BTDimensionDisplayData323 {
+	return &BTDimensionDisplayData323{o}
+}
+
 // BTCountDimensionDisplayData1778AsBTDimensionDisplayData323 is a convenience function that returns BTCountDimensionDisplayData1778 wrapped in BTDimensionDisplayData323
 func (o *BTCountDimensionDisplayData1778) AsBTDimensionDisplayData323() *BTDimensionDisplayData323 {
 	return &BTDimensionDisplayData323{o}
@@ -817,6 +822,20 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
 			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTArcLengthDimensionDisplayData1018: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTBezierDegreeDimensionDisplayData-2597'
+	if jsonDict["btType"] == "BTBezierDegreeDimensionDisplayData-2597" {
+		// try to unmarshal JSON data into BTBezierDegreeDimensionDisplayData2597
+		var qr *BTBezierDegreeDimensionDisplayData2597
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTDimensionDisplayData323 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTDimensionDisplayData323 = nil
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTBezierDegreeDimensionDisplayData2597: %s", err.Error())
 		}
 	}
 

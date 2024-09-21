@@ -27,6 +27,7 @@ type BTUserSettingsInfo struct {
 	ExportSolidOptions              *string                                `json:"exportSolidOptions,omitempty"`
 	GraphicsRenderMode              *string                                `json:"graphicsRenderMode,omitempty"`
 	GraphicsSmoothEdge              *string                                `json:"graphicsSmoothEdge,omitempty"`
+	HideAhaAppOnboarding            *bool                                  `json:"hideAhaAppOnboarding,omitempty"`
 	HighlightLaminarEdges           *string                                `json:"highlightLaminarEdges,omitempty"`
 	Id                              *string                                `json:"id,omitempty"`
 	ImportOptions                   *string                                `json:"importOptions,omitempty"`
@@ -416,6 +417,38 @@ func (o *BTUserSettingsInfo) HasGraphicsSmoothEdge() bool {
 // SetGraphicsSmoothEdge gets a reference to the given string and assigns it to the GraphicsSmoothEdge field.
 func (o *BTUserSettingsInfo) SetGraphicsSmoothEdge(v string) {
 	o.GraphicsSmoothEdge = &v
+}
+
+// GetHideAhaAppOnboarding returns the HideAhaAppOnboarding field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetHideAhaAppOnboarding() bool {
+	if o == nil || o.HideAhaAppOnboarding == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HideAhaAppOnboarding
+}
+
+// GetHideAhaAppOnboardingOk returns a tuple with the HideAhaAppOnboarding field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetHideAhaAppOnboardingOk() (*bool, bool) {
+	if o == nil || o.HideAhaAppOnboarding == nil {
+		return nil, false
+	}
+	return o.HideAhaAppOnboarding, true
+}
+
+// HasHideAhaAppOnboarding returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasHideAhaAppOnboarding() bool {
+	if o != nil && o.HideAhaAppOnboarding != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHideAhaAppOnboarding gets a reference to the given bool and assigns it to the HideAhaAppOnboarding field.
+func (o *BTUserSettingsInfo) SetHideAhaAppOnboarding(v bool) {
+	o.HideAhaAppOnboarding = &v
 }
 
 // GetHighlightLaminarEdges returns the HighlightLaminarEdges field value if set, zero value otherwise.
@@ -1092,6 +1125,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.GraphicsSmoothEdge != nil {
 		toSerialize["graphicsSmoothEdge"] = o.GraphicsSmoothEdge
+	}
+	if o.HideAhaAppOnboarding != nil {
+		toSerialize["hideAhaAppOnboarding"] = o.HideAhaAppOnboarding
 	}
 	if o.HighlightLaminarEdges != nil {
 		toSerialize["highlightLaminarEdges"] = o.HighlightLaminarEdges

@@ -65,6 +65,8 @@
 
 * `GBTConstraintTypeEqualCurvature` (value: `"EQUAL_CURVATURE"`)
 
+* `GBTConstraintTypeBezierDegree` (value: `"BEZIER_DEGREE"`)
+
 * `GBTConstraintTypeUnknown` (value: `"UNKNOWN"`)
 
 
