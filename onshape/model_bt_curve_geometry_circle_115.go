@@ -92,6 +92,56 @@ func (o *BTCurveGeometryCircle115) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTCurveGeometryCircle115) GetEntityType() GBTSketchEntityType {
+	type getResult interface {
+		GetEntityType() GBTSketchEntityType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEntityType()
+	} else {
+		var de GBTSketchEntityType
+		return de
+	}
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveGeometryCircle115) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	type getResult interface {
+		GetEntityTypeOk() (*GBTSketchEntityType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEntityTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTCurveGeometryCircle115) HasEntityType() bool {
+	type getResult interface {
+		HasEntityType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEntityType()
+	} else {
+		return false
+	}
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTCurveGeometryCircle115) SetEntityType(v GBTSketchEntityType) {
+	type getResult interface {
+		SetEntityType(v GBTSketchEntityType)
+	}
+
+	o.GetActualInstance().(getResult).SetEntityType(v)
+}
+
 // GetClockwise returns the Clockwise field value if set, zero value otherwise.
 func (o *BTCurveGeometryCircle115) GetClockwise() bool {
 	type getResult interface {
@@ -482,13 +532,14 @@ func (v *NullableBTCurveGeometryCircle115) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTCurveGeometryCircle115 struct {
-	BtType    *string  `json:"btType,omitempty"`
-	Clockwise *bool    `json:"clockwise,omitempty"`
-	Radius    *float64 `json:"radius,omitempty"`
-	Xcenter   *float64 `json:"xcenter,omitempty"`
-	Xdir      *float64 `json:"xdir,omitempty"`
-	Ycenter   *float64 `json:"ycenter,omitempty"`
-	Ydir      *float64 `json:"ydir,omitempty"`
+	BtType     *string              `json:"btType,omitempty"`
+	EntityType *GBTSketchEntityType `json:"entityType,omitempty"`
+	Clockwise  *bool                `json:"clockwise,omitempty"`
+	Radius     *float64             `json:"radius,omitempty"`
+	Xcenter    *float64             `json:"xcenter,omitempty"`
+	Xdir       *float64             `json:"xdir,omitempty"`
+	Ycenter    *float64             `json:"ycenter,omitempty"`
+	Ydir       *float64             `json:"ydir,omitempty"`
 }
 
 // Newbase_BTCurveGeometryCircle115 instantiates a new base_BTCurveGeometryCircle115 object
@@ -538,6 +589,38 @@ func (o *base_BTCurveGeometryCircle115) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTCurveGeometryCircle115) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *base_BTCurveGeometryCircle115) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTCurveGeometryCircle115) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *base_BTCurveGeometryCircle115) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *base_BTCurveGeometryCircle115) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetClockwise returns the Clockwise field value if set, zero value otherwise.
@@ -736,6 +819,9 @@ func (o base_BTCurveGeometryCircle115) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.Clockwise != nil {
 		toSerialize["clockwise"] = o.Clockwise

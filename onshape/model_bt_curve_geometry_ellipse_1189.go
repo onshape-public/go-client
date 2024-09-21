@@ -16,14 +16,15 @@ import (
 
 // BTCurveGeometryEllipse1189 struct for BTCurveGeometryEllipse1189
 type BTCurveGeometryEllipse1189 struct {
-	BtType      *string  `json:"btType,omitempty"`
-	Clockwise   *bool    `json:"clockwise,omitempty"`
-	Radius      *float64 `json:"radius,omitempty"`
-	Xcenter     *float64 `json:"xcenter,omitempty"`
-	Xdir        *float64 `json:"xdir,omitempty"`
-	Ycenter     *float64 `json:"ycenter,omitempty"`
-	Ydir        *float64 `json:"ydir,omitempty"`
-	MinorRadius *float64 `json:"minorRadius,omitempty"`
+	BtType      *string              `json:"btType,omitempty"`
+	EntityType  *GBTSketchEntityType `json:"entityType,omitempty"`
+	Clockwise   *bool                `json:"clockwise,omitempty"`
+	Radius      *float64             `json:"radius,omitempty"`
+	Xcenter     *float64             `json:"xcenter,omitempty"`
+	Xdir        *float64             `json:"xdir,omitempty"`
+	Ycenter     *float64             `json:"ycenter,omitempty"`
+	Ydir        *float64             `json:"ydir,omitempty"`
+	MinorRadius *float64             `json:"minorRadius,omitempty"`
 }
 
 // NewBTCurveGeometryEllipse1189 instantiates a new BTCurveGeometryEllipse1189 object
@@ -73,6 +74,38 @@ func (o *BTCurveGeometryEllipse1189) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTCurveGeometryEllipse1189) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTCurveGeometryEllipse1189) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveGeometryEllipse1189) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTCurveGeometryEllipse1189) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTCurveGeometryEllipse1189) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetClockwise returns the Clockwise field value if set, zero value otherwise.
@@ -303,6 +336,9 @@ func (o BTCurveGeometryEllipse1189) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.Clockwise != nil {
 		toSerialize["clockwise"] = o.Clockwise

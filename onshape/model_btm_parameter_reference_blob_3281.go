@@ -35,6 +35,11 @@ func (o *BTMParameterReferenceImage2014) AsBTMParameterReferenceBlob3281() *BTMP
 	return &BTMParameterReferenceBlob3281{o}
 }
 
+// BTMParameterReferenceText2115AsBTMParameterReferenceBlob3281 is a convenience function that returns BTMParameterReferenceText2115 wrapped in BTMParameterReferenceBlob3281
+func (o *BTMParameterReferenceText2115) AsBTMParameterReferenceBlob3281() *BTMParameterReferenceBlob3281 {
+	return &BTMParameterReferenceBlob3281{o}
+}
+
 // BTMParameterReferenceJSON790AsBTMParameterReferenceBlob3281 is a convenience function that returns BTMParameterReferenceJSON790 wrapped in BTMParameterReferenceBlob3281
 func (o *BTMParameterReferenceJSON790) AsBTMParameterReferenceBlob3281() *BTMParameterReferenceBlob3281 {
 	return &BTMParameterReferenceBlob3281{o}
@@ -720,6 +725,20 @@ func (dst *BTMParameterReferenceBlob3281) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameterReferenceBlob3281 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameterReferenceBlob3281 as BTMParameterReferenceTable917: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterReferenceText-2115'
+	if jsonDict["btType"] == "BTMParameterReferenceText-2115" {
+		// try to unmarshal JSON data into BTMParameterReferenceText2115
+		var qr *BTMParameterReferenceText2115
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameterReferenceBlob3281 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameterReferenceBlob3281 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameterReferenceBlob3281 as BTMParameterReferenceText2115: %s", err.Error())
 		}
 	}
 

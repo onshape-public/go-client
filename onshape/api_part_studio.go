@@ -2088,6 +2088,9 @@ func (r ApiGetPartStudioBoundingBoxesRequest) Execute() (*BTBoundingBoxInfo, *ht
 /*
 GetPartStudioBoundingBoxes Get the bounding boxes for a Part Studio.
 
+This endpoint does not result in a tight bounding box. The values returned are meant for graphics and visualization, and are approximate.
+To calculate a tight bounding box, see the [FeatureScript API Guide](https://onshape-public.github.io/docs/api-adv/fs/#calculate-a-tight-bounding-box).
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did Document ID.
 	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.

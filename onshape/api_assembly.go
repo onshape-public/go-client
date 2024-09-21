@@ -675,6 +675,7 @@ func (r ApiGetAssemblyBoundingBoxesRequest) IncludeHidden(includeHidden bool) Ap
 	return r
 }
 
+// Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s).
 func (r ApiGetAssemblyBoundingBoxesRequest) DisplayStateId(displayStateId string) ApiGetAssemblyBoundingBoxesRequest {
 	r.displayStateId = &displayStateId
 	return r
@@ -1247,6 +1248,7 @@ func (r ApiGetAssemblyShadedViewsRequest) IncludeWires(includeWires bool) ApiGet
 	return r
 }
 
+// Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s).
 func (r ApiGetAssemblyShadedViewsRequest) DisplayStateId(displayStateId string) ApiGetAssemblyShadedViewsRequest {
 	r.displayStateId = &displayStateId
 	return r
@@ -1654,6 +1656,130 @@ func (a *AssemblyApiService) GetBillOfMaterialsExecute(r ApiGetBillOfMaterialsRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetDisplayStatesRequest struct {
+	ctx            context.Context
+	ApiService     *AssemblyApiService
+	did            string
+	wvm            string
+	wvmid          string
+	eid            string
+	linkDocumentId *string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetDisplayStatesRequest) LinkDocumentId(linkDocumentId string) ApiGetDisplayStatesRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiGetDisplayStatesRequest) Execute() ([]BTDisplayStateInfo, *http.Response, error) {
+	return r.ApiService.GetDisplayStatesExecute(r)
+}
+
+/*
+GetDisplayStates Get a list of display states for the specified assembly.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetDisplayStatesRequest
+*/
+func (a *AssemblyApiService) GetDisplayStates(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetDisplayStatesRequest {
+	return ApiGetDisplayStatesRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return []BTDisplayStateInfo
+func (a *AssemblyApiService) GetDisplayStatesExecute(r ApiGetDisplayStatesRequest) ([]BTDisplayStateInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []BTDisplayStateInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AssemblyApiService.GetDisplayStates")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/displaystates"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

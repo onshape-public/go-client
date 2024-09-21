@@ -51,6 +51,7 @@ const (
 	GBTConstraintTypeIntersected         GBTConstraintType = "INTERSECTED"
 	GBTConstraintTypeRho                 GBTConstraintType = "RHO"
 	GBTConstraintTypeEqualCurvature      GBTConstraintType = "EQUAL_CURVATURE"
+	GBTConstraintTypeBezierDegree        GBTConstraintType = "BEZIER_DEGREE"
 	GBTConstraintTypeUnknown             GBTConstraintType = "UNKNOWN"
 )
 
@@ -87,6 +88,7 @@ var AllowedGBTConstraintTypeEnumValues = []GBTConstraintType{
 	"INTERSECTED",
 	"RHO",
 	"EQUAL_CURVATURE",
+	"BEZIER_DEGREE",
 	"UNKNOWN",
 }
 

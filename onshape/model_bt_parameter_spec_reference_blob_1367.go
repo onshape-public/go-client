@@ -40,6 +40,11 @@ func (o *BTParameterSpecReferenceJSON1816) AsBTParameterSpecReferenceBlob1367() 
 	return &BTParameterSpecReferenceBlob1367{o}
 }
 
+// BTParameterSpecReferenceText4945AsBTParameterSpecReferenceBlob1367 is a convenience function that returns BTParameterSpecReferenceText4945 wrapped in BTParameterSpecReferenceBlob1367
+func (o *BTParameterSpecReferenceText4945) AsBTParameterSpecReferenceBlob1367() *BTParameterSpecReferenceBlob1367 {
+	return &BTParameterSpecReferenceBlob1367{o}
+}
+
 // NewBTParameterSpecReferenceBlob1367 instantiates a new BTParameterSpecReferenceBlob1367 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -970,6 +975,20 @@ func (dst *BTParameterSpecReferenceBlob1367) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterSpecReferenceBlob1367 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterSpecReferenceBlob1367 as BTParameterSpecReferenceTable1520: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceText-4945'
+	if jsonDict["btType"] == "BTParameterSpecReferenceText-4945" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceText4945
+		var qr *BTParameterSpecReferenceText4945
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReferenceBlob1367 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReferenceBlob1367 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReferenceBlob1367 as BTParameterSpecReferenceText4945: %s", err.Error())
 		}
 	}
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **ControlBoxIds** | Pointer to **[]string** |  | [optional] 
+**EntityType** | Pointer to [**GBTSketchEntityType**](GBTSketchEntityType.md) |  | [optional] 
 **FunctionName** | Pointer to **string** |  | [optional] 
 **IsConstruction** | Pointer to **bool** |  | [optional] 
 **IsFromEndpointSplineHandle** | Pointer to **bool** |  | [optional] 
@@ -80,6 +81,31 @@ SetControlBoxIds sets ControlBoxIds field to given value.
 `func (o *BTMSketchGeomEntity5AllOf) HasControlBoxIds() bool`
 
 HasControlBoxIds returns a boolean if a field has been set.
+
+### GetEntityType
+
+`func (o *BTMSketchGeomEntity5AllOf) GetEntityType() GBTSketchEntityType`
+
+GetEntityType returns the EntityType field if non-nil, zero value otherwise.
+
+### GetEntityTypeOk
+
+`func (o *BTMSketchGeomEntity5AllOf) GetEntityTypeOk() (*GBTSketchEntityType, bool)`
+
+GetEntityTypeOk returns a tuple with the EntityType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEntityType
+
+`func (o *BTMSketchGeomEntity5AllOf) SetEntityType(v GBTSketchEntityType)`
+
+SetEntityType sets EntityType field to given value.
+
+### HasEntityType
+
+`func (o *BTMSketchGeomEntity5AllOf) HasEntityType() bool`
+
+HasEntityType returns a boolean if a field has been set.
 
 ### GetFunctionName
 

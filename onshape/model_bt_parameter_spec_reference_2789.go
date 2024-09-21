@@ -60,6 +60,11 @@ func (o *BTParameterSpecReferenceAssembly2821) AsBTParameterSpecReference2789() 
 	return &BTParameterSpecReference2789{o}
 }
 
+// BTParameterSpecReferenceText4945AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferenceText4945 wrapped in BTParameterSpecReference2789
+func (o *BTParameterSpecReferenceText4945) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
+	return &BTParameterSpecReference2789{o}
+}
+
 // NewBTParameterSpecReference2789 instantiates a new BTParameterSpecReference2789 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -1032,6 +1037,20 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceTable1520: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceText-4945'
+	if jsonDict["btType"] == "BTParameterSpecReferenceText-4945" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceText4945
+		var qr *BTParameterSpecReferenceText4945
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReference2789 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReference2789 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceText4945: %s", err.Error())
 		}
 	}
 

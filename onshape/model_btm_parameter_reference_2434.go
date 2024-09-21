@@ -45,6 +45,11 @@ func (o *BTMParameterReferenceImage2014) AsBTMParameterReference2434() *BTMParam
 	return &BTMParameterReference2434{o}
 }
 
+// BTMParameterReferenceText2115AsBTMParameterReference2434 is a convenience function that returns BTMParameterReferenceText2115 wrapped in BTMParameterReference2434
+func (o *BTMParameterReferenceText2115) AsBTMParameterReference2434() *BTMParameterReference2434 {
+	return &BTMParameterReference2434{o}
+}
+
 // NewBTMParameterReference2434 instantiates a new BTMParameterReference2434 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -725,6 +730,20 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameterReference2434 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceTable917: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterReferenceText-2115'
+	if jsonDict["btType"] == "BTMParameterReferenceText-2115" {
+		// try to unmarshal JSON data into BTMParameterReferenceText2115
+		var qr *BTMParameterReferenceText2115
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameterReference2434 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameterReference2434 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceText2115: %s", err.Error())
 		}
 	}
 

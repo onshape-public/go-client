@@ -38,48 +38,50 @@ type BTDocumentProcessingInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                           *string               `json:"viewRef,omitempty"`
-	AnonymousAccessAllowed            *bool                 `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport             *bool                 `json:"anonymousAllowsExport,omitempty"`
-	CanUnshare                        *bool                 `json:"canUnshare,omitempty"`
-	CreatedWithEducationPlan          *bool                 `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                  *string               `json:"defaultElementId,omitempty"`
-	DefaultVersionGraphMode           *BTVersionGraphMode   `json:"defaultVersionGraphMode,omitempty"`
-	DefaultWorkspace                  *BTWorkspaceInfo      `json:"defaultWorkspace,omitempty"`
-	DocumentLabels                    []BTDocumentLabelInfo `json:"documentLabels,omitempty"`
-	DocumentType                      *int32                `json:"documentType,omitempty"`
-	ForceExportRules                  *bool                 `json:"forceExportRules,omitempty"`
-	HasReleaseRevisionableObjects     *bool                 `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables            *bool                 `json:"hasRelevantInsertables,omitempty"`
-	IsOrphaned                        *bool                 `json:"isOrphaned,omitempty"`
-	IsUsingManagedWorkflow            *bool                 `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                *bool                 `json:"likedByCurrentUser,omitempty"`
-	Likes                             *int64                `json:"likes,omitempty"`
-	NotRevisionManaged                *bool                 `json:"notRevisionManaged,omitempty"`
-	Notes                             *string               `json:"notes,omitempty"`
-	NumberOfTimesCopied               *int64                `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced           *int64                `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                          *string               `json:"parentId,omitempty"`
-	Permission                        *BTOldPermission      `json:"permission,omitempty"`
-	PermissionSet                     []string              `json:"permissionSet,omitempty"`
-	Public                            *bool                 `json:"public,omitempty"`
-	PublishedVersionId                *string               `json:"publishedVersionId,omitempty"`
-	RecentVersion                     *BTBaseInfo           `json:"recentVersion,omitempty"`
-	Sequence                          *string               `json:"sequence,omitempty"`
-	SupportTeamUserAndShared          *bool                 `json:"supportTeamUserAndShared,omitempty"`
-	Tags                              []string              `json:"tags,omitempty"`
-	Thumbnail                         *BTThumbnailInfo      `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate *int32                `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating           *int32                `json:"totalWorkspacesUpdating,omitempty"`
-	Trash                             *bool                 `json:"trash,omitempty"`
-	TrashedAt                         *JSONTime             `json:"trashedAt,omitempty"`
-	UserAccountLimitsBreached         *bool                 `json:"userAccountLimitsBreached,omitempty"`
-	DocumentThumbnailElementId        *string               `json:"documentThumbnailElementId,omitempty"`
-	DuplicateNameViolationError       *string               `json:"duplicateNameViolationError,omitempty"`
-	IsUpgradedToLatestVersion         *bool                 `json:"isUpgradedToLatestVersion,omitempty"`
-	TracingEnabled                    *bool                 `json:"tracingEnabled,omitempty"`
-	TranslationEventKey               *string               `json:"translationEventKey,omitempty"`
-	TranslationId                     *string               `json:"translationId,omitempty"`
+	ViewRef                             *string               `json:"viewRef,omitempty"`
+	AnonymousAccessAllowed              *bool                 `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport               *bool                 `json:"anonymousAllowsExport,omitempty"`
+	CanUnshare                          *bool                 `json:"canUnshare,omitempty"`
+	CreatedWithEducationPlan            *bool                 `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId                    *string               `json:"defaultElementId,omitempty"`
+	DefaultVersionGraphMode             *BTVersionGraphMode   `json:"defaultVersionGraphMode,omitempty"`
+	DefaultVersionGraphShowAutoVersions *bool                 `json:"defaultVersionGraphShowAutoVersions,omitempty"`
+	DefaultVersionGraphShowMerges       *bool                 `json:"defaultVersionGraphShowMerges,omitempty"`
+	DefaultWorkspace                    *BTWorkspaceInfo      `json:"defaultWorkspace,omitempty"`
+	DocumentLabels                      []BTDocumentLabelInfo `json:"documentLabels,omitempty"`
+	DocumentType                        *int32                `json:"documentType,omitempty"`
+	ForceExportRules                    *bool                 `json:"forceExportRules,omitempty"`
+	HasReleaseRevisionableObjects       *bool                 `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables              *bool                 `json:"hasRelevantInsertables,omitempty"`
+	IsOrphaned                          *bool                 `json:"isOrphaned,omitempty"`
+	IsUsingManagedWorkflow              *bool                 `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser                  *bool                 `json:"likedByCurrentUser,omitempty"`
+	Likes                               *int64                `json:"likes,omitempty"`
+	NotRevisionManaged                  *bool                 `json:"notRevisionManaged,omitempty"`
+	Notes                               *string               `json:"notes,omitempty"`
+	NumberOfTimesCopied                 *int64                `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced             *int64                `json:"numberOfTimesReferenced,omitempty"`
+	ParentId                            *string               `json:"parentId,omitempty"`
+	Permission                          *BTOldPermission      `json:"permission,omitempty"`
+	PermissionSet                       []string              `json:"permissionSet,omitempty"`
+	Public                              *bool                 `json:"public,omitempty"`
+	PublishedVersionId                  *string               `json:"publishedVersionId,omitempty"`
+	RecentVersion                       *BTBaseInfo           `json:"recentVersion,omitempty"`
+	Sequence                            *string               `json:"sequence,omitempty"`
+	SupportTeamUserAndShared            *bool                 `json:"supportTeamUserAndShared,omitempty"`
+	Tags                                []string              `json:"tags,omitempty"`
+	Thumbnail                           *BTThumbnailInfo      `json:"thumbnail,omitempty"`
+	TotalWorkspacesScheduledForUpdate   *int32                `json:"totalWorkspacesScheduledForUpdate,omitempty"`
+	TotalWorkspacesUpdating             *int32                `json:"totalWorkspacesUpdating,omitempty"`
+	Trash                               *bool                 `json:"trash,omitempty"`
+	TrashedAt                           *JSONTime             `json:"trashedAt,omitempty"`
+	UserAccountLimitsBreached           *bool                 `json:"userAccountLimitsBreached,omitempty"`
+	DocumentThumbnailElementId          *string               `json:"documentThumbnailElementId,omitempty"`
+	DuplicateNameViolationError         *string               `json:"duplicateNameViolationError,omitempty"`
+	IsUpgradedToLatestVersion           *bool                 `json:"isUpgradedToLatestVersion,omitempty"`
+	TracingEnabled                      *bool                 `json:"tracingEnabled,omitempty"`
+	TranslationEventKey                 *string               `json:"translationEventKey,omitempty"`
+	TranslationId                       *string               `json:"translationId,omitempty"`
 }
 
 // NewBTDocumentProcessingInfo instantiates a new BTDocumentProcessingInfo object
@@ -890,6 +892,70 @@ func (o *BTDocumentProcessingInfo) HasDefaultVersionGraphMode() bool {
 // SetDefaultVersionGraphMode gets a reference to the given BTVersionGraphMode and assigns it to the DefaultVersionGraphMode field.
 func (o *BTDocumentProcessingInfo) SetDefaultVersionGraphMode(v BTVersionGraphMode) {
 	o.DefaultVersionGraphMode = &v
+}
+
+// GetDefaultVersionGraphShowAutoVersions returns the DefaultVersionGraphShowAutoVersions field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetDefaultVersionGraphShowAutoVersions() bool {
+	if o == nil || o.DefaultVersionGraphShowAutoVersions == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultVersionGraphShowAutoVersions
+}
+
+// GetDefaultVersionGraphShowAutoVersionsOk returns a tuple with the DefaultVersionGraphShowAutoVersions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool) {
+	if o == nil || o.DefaultVersionGraphShowAutoVersions == nil {
+		return nil, false
+	}
+	return o.DefaultVersionGraphShowAutoVersions, true
+}
+
+// HasDefaultVersionGraphShowAutoVersions returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasDefaultVersionGraphShowAutoVersions() bool {
+	if o != nil && o.DefaultVersionGraphShowAutoVersions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultVersionGraphShowAutoVersions gets a reference to the given bool and assigns it to the DefaultVersionGraphShowAutoVersions field.
+func (o *BTDocumentProcessingInfo) SetDefaultVersionGraphShowAutoVersions(v bool) {
+	o.DefaultVersionGraphShowAutoVersions = &v
+}
+
+// GetDefaultVersionGraphShowMerges returns the DefaultVersionGraphShowMerges field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetDefaultVersionGraphShowMerges() bool {
+	if o == nil || o.DefaultVersionGraphShowMerges == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultVersionGraphShowMerges
+}
+
+// GetDefaultVersionGraphShowMergesOk returns a tuple with the DefaultVersionGraphShowMerges field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetDefaultVersionGraphShowMergesOk() (*bool, bool) {
+	if o == nil || o.DefaultVersionGraphShowMerges == nil {
+		return nil, false
+	}
+	return o.DefaultVersionGraphShowMerges, true
+}
+
+// HasDefaultVersionGraphShowMerges returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasDefaultVersionGraphShowMerges() bool {
+	if o != nil && o.DefaultVersionGraphShowMerges != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultVersionGraphShowMerges gets a reference to the given bool and assigns it to the DefaultVersionGraphShowMerges field.
+func (o *BTDocumentProcessingInfo) SetDefaultVersionGraphShowMerges(v bool) {
+	o.DefaultVersionGraphShowMerges = &v
 }
 
 // GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
@@ -2088,6 +2154,12 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultVersionGraphMode != nil {
 		toSerialize["defaultVersionGraphMode"] = o.DefaultVersionGraphMode
+	}
+	if o.DefaultVersionGraphShowAutoVersions != nil {
+		toSerialize["defaultVersionGraphShowAutoVersions"] = o.DefaultVersionGraphShowAutoVersions
+	}
+	if o.DefaultVersionGraphShowMerges != nil {
+		toSerialize["defaultVersionGraphShowMerges"] = o.DefaultVersionGraphShowMerges
 	}
 	if o.DefaultWorkspace != nil {
 		toSerialize["defaultWorkspace"] = o.DefaultWorkspace

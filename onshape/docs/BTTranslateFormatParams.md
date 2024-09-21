@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **ImportMaterialDensity** | Pointer to **bool** |  | [optional] 
 **ImportWithinDocument** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
+**InvisibleEntitiesExportFilter** | Pointer to [**BTInvisibleEntitiesExportFilter2537**](BTInvisibleEntitiesExportFilter2537.md) |  | [optional] 
 **JoinAdjacentSurfaces** | Pointer to **bool** |  | [optional] 
 **Level** | Pointer to **string** |  | [optional] 
 **LinkDocumentId** | Pointer to **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [optional] 
@@ -1000,6 +1001,31 @@ SetIncludeExportIds sets IncludeExportIds field to given value.
 `func (o *BTTranslateFormatParams) HasIncludeExportIds() bool`
 
 HasIncludeExportIds returns a boolean if a field has been set.
+
+### GetInvisibleEntitiesExportFilter
+
+`func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilter() BTInvisibleEntitiesExportFilter2537`
+
+GetInvisibleEntitiesExportFilter returns the InvisibleEntitiesExportFilter field if non-nil, zero value otherwise.
+
+### GetInvisibleEntitiesExportFilterOk
+
+`func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilterOk() (*BTInvisibleEntitiesExportFilter2537, bool)`
+
+GetInvisibleEntitiesExportFilterOk returns a tuple with the InvisibleEntitiesExportFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvisibleEntitiesExportFilter
+
+`func (o *BTTranslateFormatParams) SetInvisibleEntitiesExportFilter(v BTInvisibleEntitiesExportFilter2537)`
+
+SetInvisibleEntitiesExportFilter sets InvisibleEntitiesExportFilter field to given value.
+
+### HasInvisibleEntitiesExportFilter
+
+`func (o *BTTranslateFormatParams) HasInvisibleEntitiesExportFilter() bool`
+
+HasInvisibleEntitiesExportFilter returns a boolean if a field has been set.
 
 ### GetJoinAdjacentSurfaces
 

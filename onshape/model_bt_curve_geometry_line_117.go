@@ -16,11 +16,12 @@ import (
 
 // BTCurveGeometryLine117 struct for BTCurveGeometryLine117
 type BTCurveGeometryLine117 struct {
-	BtType *string  `json:"btType,omitempty"`
-	DirX   *float64 `json:"dirX,omitempty"`
-	DirY   *float64 `json:"dirY,omitempty"`
-	PntX   *float64 `json:"pntX,omitempty"`
-	PntY   *float64 `json:"pntY,omitempty"`
+	BtType     *string              `json:"btType,omitempty"`
+	EntityType *GBTSketchEntityType `json:"entityType,omitempty"`
+	DirX       *float64             `json:"dirX,omitempty"`
+	DirY       *float64             `json:"dirY,omitempty"`
+	PntX       *float64             `json:"pntX,omitempty"`
+	PntY       *float64             `json:"pntY,omitempty"`
 }
 
 // NewBTCurveGeometryLine117 instantiates a new BTCurveGeometryLine117 object
@@ -70,6 +71,38 @@ func (o *BTCurveGeometryLine117) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTCurveGeometryLine117) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTCurveGeometryLine117) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveGeometryLine117) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTCurveGeometryLine117) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTCurveGeometryLine117) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetDirX returns the DirX field value if set, zero value otherwise.
@@ -204,6 +237,9 @@ func (o BTCurveGeometryLine117) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.DirX != nil {
 		toSerialize["dirX"] = o.DirX

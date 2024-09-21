@@ -18,25 +18,28 @@ import (
 type BTMSketchTextEntity1761 struct {
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
-	NodeId                              *string         `json:"nodeId,omitempty"`
-	EntityId                            *string         `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Namespace                           *string         `json:"namespace,omitempty"`
-	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
-	ControlBoxIds                       []string        `json:"controlBoxIds,omitempty"`
-	FunctionName                        *string         `json:"functionName,omitempty"`
-	IsConstruction                      *bool           `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool           `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool           `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool           `json:"isFromSplineHandle,omitempty"`
-	Ascent                              *float64        `json:"ascent,omitempty"`
-	BaselineDirectionX                  *float64        `json:"baselineDirectionX,omitempty"`
-	BaselineDirectionY                  *float64        `json:"baselineDirectionY,omitempty"`
-	BaselineStartX                      *float64        `json:"baselineStartX,omitempty"`
-	BaselineStartY                      *float64        `json:"baselineStartY,omitempty"`
-	FontName                            *string         `json:"fontName,omitempty"`
-	Text                                *string         `json:"text,omitempty"`
+	ImportMicroversion                  *string              `json:"importMicroversion,omitempty"`
+	NodeId                              *string              `json:"nodeId,omitempty"`
+	EntityId                            *string              `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string              `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Geometry                            *bool                `json:"geometry,omitempty"`
+	Index                               *int32               `json:"index,omitempty"`
+	Namespace                           *string              `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1      `json:"parameters,omitempty"`
+	ControlBoxIds                       []string             `json:"controlBoxIds,omitempty"`
+	EntityType                          *GBTSketchEntityType `json:"entityType,omitempty"`
+	FunctionName                        *string              `json:"functionName,omitempty"`
+	IsConstruction                      *bool                `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle          *bool                `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon          *bool                `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle                  *bool                `json:"isFromSplineHandle,omitempty"`
+	Ascent                              *float64             `json:"ascent,omitempty"`
+	BaselineDirectionX                  *float64             `json:"baselineDirectionX,omitempty"`
+	BaselineDirectionY                  *float64             `json:"baselineDirectionY,omitempty"`
+	BaselineStartX                      *float64             `json:"baselineStartX,omitempty"`
+	BaselineStartY                      *float64             `json:"baselineStartY,omitempty"`
+	FontName                            *string              `json:"fontName,omitempty"`
+	Text                                *string              `json:"text,omitempty"`
 }
 
 // NewBTMSketchTextEntity1761 instantiates a new BTMSketchTextEntity1761 object
@@ -216,6 +219,70 @@ func (o *BTMSketchTextEntity1761) SetEntityIdAndReplaceInDependentFields(v strin
 	o.EntityIdAndReplaceInDependentFields = &v
 }
 
+// GetGeometry returns the Geometry field value if set, zero value otherwise.
+func (o *BTMSketchTextEntity1761) GetGeometry() bool {
+	if o == nil || o.Geometry == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Geometry
+}
+
+// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchTextEntity1761) GetGeometryOk() (*bool, bool) {
+	if o == nil || o.Geometry == nil {
+		return nil, false
+	}
+	return o.Geometry, true
+}
+
+// HasGeometry returns a boolean if a field has been set.
+func (o *BTMSketchTextEntity1761) HasGeometry() bool {
+	if o != nil && o.Geometry != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeometry gets a reference to the given bool and assigns it to the Geometry field.
+func (o *BTMSketchTextEntity1761) SetGeometry(v bool) {
+	o.Geometry = &v
+}
+
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *BTMSketchTextEntity1761) GetIndex() int32 {
+	if o == nil || o.Index == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchTextEntity1761) GetIndexOk() (*int32, bool) {
+	if o == nil || o.Index == nil {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *BTMSketchTextEntity1761) HasIndex() bool {
+	if o != nil && o.Index != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given int32 and assigns it to the Index field.
+func (o *BTMSketchTextEntity1761) SetIndex(v int32) {
+	o.Index = &v
+}
+
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *BTMSketchTextEntity1761) GetNamespace() string {
 	if o == nil || o.Namespace == nil {
@@ -310,6 +377,38 @@ func (o *BTMSketchTextEntity1761) HasControlBoxIds() bool {
 // SetControlBoxIds gets a reference to the given []string and assigns it to the ControlBoxIds field.
 func (o *BTMSketchTextEntity1761) SetControlBoxIds(v []string) {
 	o.ControlBoxIds = v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTMSketchTextEntity1761) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchTextEntity1761) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTMSketchTextEntity1761) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTMSketchTextEntity1761) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetFunctionName returns the FunctionName field value if set, zero value otherwise.
@@ -713,6 +812,12 @@ func (o BTMSketchTextEntity1761) MarshalJSON() ([]byte, error) {
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
 	}
+	if o.Geometry != nil {
+		toSerialize["geometry"] = o.Geometry
+	}
+	if o.Index != nil {
+		toSerialize["index"] = o.Index
+	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace
 	}
@@ -721,6 +826,9 @@ func (o BTMSketchTextEntity1761) MarshalJSON() ([]byte, error) {
 	}
 	if o.ControlBoxIds != nil {
 		toSerialize["controlBoxIds"] = o.ControlBoxIds
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.FunctionName != nil {
 		toSerialize["functionName"] = o.FunctionName

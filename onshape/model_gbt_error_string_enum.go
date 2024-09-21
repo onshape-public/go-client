@@ -1557,6 +1557,26 @@ const (
 	GBTErrorStringEnumAssemblyFeatureMissingSelection                             GBTErrorStringEnum = "ASSEMBLY_FEATURE_MISSING_SELECTION"
 	GBTErrorStringEnumAssemblyNamedPositionsLockedSubassemblyFound                GBTErrorStringEnum = "ASSEMBLY_NAMED_POSITIONS_LOCKED_SUBASSEMBLY_FOUND"
 	GBTErrorStringEnumCurvePatternMissingFaceSelection                            GBTErrorStringEnum = "CURVE_PATTERN_MISSING_FACE_SELECTION"
+	GBTErrorStringEnumTlConnectionOnAllProfiles                                   GBTErrorStringEnum = "TL_CONNECTION_ON_ALL_PROFILES"
+	GBTErrorStringEnumTlFailed                                                    GBTErrorStringEnum = "TL_FAILED"
+	GBTErrorStringEnumTlConnectionsCross                                          GBTErrorStringEnum = "TL_CONNECTIONS_CROSS"
+	GBTErrorStringEnumTlSelectProfiles                                            GBTErrorStringEnum = "TL_SELECT_PROFILES"
+	GBTErrorStringEnumTlTwoProfiles                                               GBTErrorStringEnum = "TL_TWO_PROFILES"
+	GBTErrorStringEnumTlConsecutiveAcorns                                         GBTErrorStringEnum = "TL_CONSECUTIVE_ACORNS"
+	GBTErrorStringEnumTlMixedProfiles                                             GBTErrorStringEnum = "TL_MIXED_PROFILES"
+	GBTErrorStringEnumTlMixedProfileTopology                                      GBTErrorStringEnum = "TL_MIXED_PROFILE_TOPOLOGY"
+	GBTErrorStringEnumTlFailedToCreateProfiles                                    GBTErrorStringEnum = "TL_FAILED_TO_CREATE_PROFILES"
+	GBTErrorStringEnumTlConnectionNotOnProfile                                    GBTErrorStringEnum = "TL_CONNECTION_NOT_ON_PROFILE"
+	GBTErrorStringEnumSheetMetalFilletNoVariable                                  GBTErrorStringEnum = "SHEET_METAL_FILLET_NO_VARIABLE"
+	GBTErrorStringEnumPartiallyInvalidInput                                       GBTErrorStringEnum = "PARTIALLY_INVALID_INPUT"
+	GBTErrorStringEnumSketchBezierDegreeDimNotFound                               GBTErrorStringEnum = "SKETCH_BEZIER_DEGREE_DIM_NOT_FOUND"
+	GBTErrorStringEnumInvalidBezierDegree                                         GBTErrorStringEnum = "INVALID_BEZIER_DEGREE"
+	GBTErrorStringEnumCannotDeleteBezierDegreeDimension                           GBTErrorStringEnum = "CANNOT_DELETE_BEZIER_DEGREE_DIMENSION"
+	GBTErrorStringEnumDerivedNoInstancingSm                                       GBTErrorStringEnum = "DERIVED_NO_INSTANCING_SM"
+	GBTErrorStringEnumDerivedSmAutoInsert                                         GBTErrorStringEnum = "DERIVED_SM_AUTO_INSERT"
+	GBTErrorStringEnumAssemblyPatternWrongReferenceWasSelected                    GBTErrorStringEnum = "ASSEMBLY_PATTERN_WRONG_REFERENCE_WAS_SELECTED"
+	GBTErrorStringEnumAssemblyPatternReferenceCouldNotBeFound                     GBTErrorStringEnum = "ASSEMBLY_PATTERN_REFERENCE_COULD_NOT_BE_FOUND"
+	GBTErrorStringEnumDerivedNoActiveSmComposite                                  GBTErrorStringEnum = "DERIVED_NO_ACTIVE_SM_COMPOSITE"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3099,6 +3119,26 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"ASSEMBLY_FEATURE_MISSING_SELECTION",
 	"ASSEMBLY_NAMED_POSITIONS_LOCKED_SUBASSEMBLY_FOUND",
 	"CURVE_PATTERN_MISSING_FACE_SELECTION",
+	"TL_CONNECTION_ON_ALL_PROFILES",
+	"TL_FAILED",
+	"TL_CONNECTIONS_CROSS",
+	"TL_SELECT_PROFILES",
+	"TL_TWO_PROFILES",
+	"TL_CONSECUTIVE_ACORNS",
+	"TL_MIXED_PROFILES",
+	"TL_MIXED_PROFILE_TOPOLOGY",
+	"TL_FAILED_TO_CREATE_PROFILES",
+	"TL_CONNECTION_NOT_ON_PROFILE",
+	"SHEET_METAL_FILLET_NO_VARIABLE",
+	"PARTIALLY_INVALID_INPUT",
+	"SKETCH_BEZIER_DEGREE_DIM_NOT_FOUND",
+	"INVALID_BEZIER_DEGREE",
+	"CANNOT_DELETE_BEZIER_DEGREE_DIMENSION",
+	"DERIVED_NO_INSTANCING_SM",
+	"DERIVED_SM_AUTO_INSERT",
+	"ASSEMBLY_PATTERN_WRONG_REFERENCE_WAS_SELECTED",
+	"ASSEMBLY_PATTERN_REFERENCE_COULD_NOT_BE_FOUND",
+	"DERIVED_NO_ACTIVE_SM_COMPOSITE",
 	"UNKNOWN",
 }
 

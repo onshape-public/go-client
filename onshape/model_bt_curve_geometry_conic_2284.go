@@ -16,9 +16,10 @@ import (
 
 // BTCurveGeometryConic2284 struct for BTCurveGeometryConic2284
 type BTCurveGeometryConic2284 struct {
-	BtType *string   `json:"btType,omitempty"`
-	Points []float64 `json:"points,omitempty"`
-	Rho    *float64  `json:"rho,omitempty"`
+	BtType     *string              `json:"btType,omitempty"`
+	EntityType *GBTSketchEntityType `json:"entityType,omitempty"`
+	Points     []float64            `json:"points,omitempty"`
+	Rho        *float64             `json:"rho,omitempty"`
 }
 
 // NewBTCurveGeometryConic2284 instantiates a new BTCurveGeometryConic2284 object
@@ -68,6 +69,38 @@ func (o *BTCurveGeometryConic2284) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTCurveGeometryConic2284) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetEntityType returns the EntityType field value if set, zero value otherwise.
+func (o *BTCurveGeometryConic2284) GetEntityType() GBTSketchEntityType {
+	if o == nil || o.EntityType == nil {
+		var ret GBTSketchEntityType
+		return ret
+	}
+	return *o.EntityType
+}
+
+// GetEntityTypeOk returns a tuple with the EntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveGeometryConic2284) GetEntityTypeOk() (*GBTSketchEntityType, bool) {
+	if o == nil || o.EntityType == nil {
+		return nil, false
+	}
+	return o.EntityType, true
+}
+
+// HasEntityType returns a boolean if a field has been set.
+func (o *BTCurveGeometryConic2284) HasEntityType() bool {
+	if o != nil && o.EntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntityType gets a reference to the given GBTSketchEntityType and assigns it to the EntityType field.
+func (o *BTCurveGeometryConic2284) SetEntityType(v GBTSketchEntityType) {
+	o.EntityType = &v
 }
 
 // GetPoints returns the Points field value if set, zero value otherwise.
@@ -138,6 +171,9 @@ func (o BTCurveGeometryConic2284) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.EntityType != nil {
+		toSerialize["entityType"] = o.EntityType
 	}
 	if o.Points != nil {
 		toSerialize["points"] = o.Points

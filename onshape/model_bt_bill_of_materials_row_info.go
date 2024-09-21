@@ -24,7 +24,8 @@ type BTBillOfMaterialsRowInfo struct {
 	IndentLevel *int32                           `json:"indentLevel,omitempty"`
 	ItemSource  *BTBillOfMaterialsItemSourceInfo `json:"itemSource,omitempty"`
 	// Name of the resource.
-	Name               *string  `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
+	// Occurrence IDs in the assembly that refer to the part described by this BOM row.
 	RelatedOccurrences []string `json:"relatedOccurrences,omitempty"`
 	RowId              *string  `json:"rowId,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.

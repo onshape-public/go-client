@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **CreatedWithEducationPlan** | Pointer to **bool** |  | [optional] 
 **DefaultElementId** | Pointer to **string** |  | [optional] 
 **DefaultVersionGraphMode** | Pointer to [**BTVersionGraphMode**](BTVersionGraphMode.md) |  | [optional] 
+**DefaultVersionGraphShowAutoVersions** | Pointer to **bool** |  | [optional] 
+**DefaultVersionGraphShowMerges** | Pointer to **bool** |  | [optional] 
 **DefaultWorkspace** | Pointer to [**BTWorkspaceInfo**](BTWorkspaceInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DocumentLabels** | Pointer to [**[]BTDocumentLabelInfo**](BTDocumentLabelInfo.md) |  | [optional] 
@@ -305,6 +307,56 @@ SetDefaultVersionGraphMode sets DefaultVersionGraphMode field to given value.
 `func (o *BTDocumentInfoAllOf) HasDefaultVersionGraphMode() bool`
 
 HasDefaultVersionGraphMode returns a boolean if a field has been set.
+
+### GetDefaultVersionGraphShowAutoVersions
+
+`func (o *BTDocumentInfoAllOf) GetDefaultVersionGraphShowAutoVersions() bool`
+
+GetDefaultVersionGraphShowAutoVersions returns the DefaultVersionGraphShowAutoVersions field if non-nil, zero value otherwise.
+
+### GetDefaultVersionGraphShowAutoVersionsOk
+
+`func (o *BTDocumentInfoAllOf) GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool)`
+
+GetDefaultVersionGraphShowAutoVersionsOk returns a tuple with the DefaultVersionGraphShowAutoVersions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultVersionGraphShowAutoVersions
+
+`func (o *BTDocumentInfoAllOf) SetDefaultVersionGraphShowAutoVersions(v bool)`
+
+SetDefaultVersionGraphShowAutoVersions sets DefaultVersionGraphShowAutoVersions field to given value.
+
+### HasDefaultVersionGraphShowAutoVersions
+
+`func (o *BTDocumentInfoAllOf) HasDefaultVersionGraphShowAutoVersions() bool`
+
+HasDefaultVersionGraphShowAutoVersions returns a boolean if a field has been set.
+
+### GetDefaultVersionGraphShowMerges
+
+`func (o *BTDocumentInfoAllOf) GetDefaultVersionGraphShowMerges() bool`
+
+GetDefaultVersionGraphShowMerges returns the DefaultVersionGraphShowMerges field if non-nil, zero value otherwise.
+
+### GetDefaultVersionGraphShowMergesOk
+
+`func (o *BTDocumentInfoAllOf) GetDefaultVersionGraphShowMergesOk() (*bool, bool)`
+
+GetDefaultVersionGraphShowMergesOk returns a tuple with the DefaultVersionGraphShowMerges field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultVersionGraphShowMerges
+
+`func (o *BTDocumentInfoAllOf) SetDefaultVersionGraphShowMerges(v bool)`
+
+SetDefaultVersionGraphShowMerges sets DefaultVersionGraphShowMerges field to given value.
+
+### HasDefaultVersionGraphShowMerges
+
+`func (o *BTDocumentInfoAllOf) HasDefaultVersionGraphShowMerges() bool`
+
+HasDefaultVersionGraphShowMerges returns a boolean if a field has been set.
 
 ### GetDefaultWorkspace
 
