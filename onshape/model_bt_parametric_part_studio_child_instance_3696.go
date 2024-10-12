@@ -26,6 +26,7 @@ type BTParametricPartStudioChildInstance3696 struct {
 	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
 	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
 	CustomData                        *map[string]BTReferenceCustomData1551 `json:"customData,omitempty"`
+	DerivedAssemblyMirror             *bool                                 `json:"derivedAssemblyMirror,omitempty"`
 	InstanceFolder                    *bool                                 `json:"instanceFolder,omitempty"`
 	InstanceName                      *string                               `json:"instanceName,omitempty"`
 	IsFlattenedPart                   *bool                                 `json:"isFlattenedPart,omitempty"`
@@ -354,6 +355,38 @@ func (o *BTParametricPartStudioChildInstance3696) HasCustomData() bool {
 // SetCustomData gets a reference to the given map[string]BTReferenceCustomData1551 and assigns it to the CustomData field.
 func (o *BTParametricPartStudioChildInstance3696) SetCustomData(v map[string]BTReferenceCustomData1551) {
 	o.CustomData = &v
+}
+
+// GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field value if set, zero value otherwise.
+func (o *BTParametricPartStudioChildInstance3696) GetDerivedAssemblyMirror() bool {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DerivedAssemblyMirror
+}
+
+// GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricPartStudioChildInstance3696) GetDerivedAssemblyMirrorOk() (*bool, bool) {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		return nil, false
+	}
+	return o.DerivedAssemblyMirror, true
+}
+
+// HasDerivedAssemblyMirror returns a boolean if a field has been set.
+func (o *BTParametricPartStudioChildInstance3696) HasDerivedAssemblyMirror() bool {
+	if o != nil && o.DerivedAssemblyMirror != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDerivedAssemblyMirror gets a reference to the given bool and assigns it to the DerivedAssemblyMirror field.
+func (o *BTParametricPartStudioChildInstance3696) SetDerivedAssemblyMirror(v bool) {
+	o.DerivedAssemblyMirror = &v
 }
 
 // GetInstanceFolder returns the InstanceFolder field value if set, zero value otherwise.
@@ -1088,6 +1121,9 @@ func (o BTParametricPartStudioChildInstance3696) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomData != nil {
 		toSerialize["customData"] = o.CustomData
+	}
+	if o.DerivedAssemblyMirror != nil {
+		toSerialize["derivedAssemblyMirror"] = o.DerivedAssemblyMirror
 	}
 	if o.InstanceFolder != nil {
 		toSerialize["instanceFolder"] = o.InstanceFolder

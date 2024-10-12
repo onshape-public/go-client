@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AggregationSkippedFilteredOutValues** | Pointer to **bool** |  | [optional] 
 **ComputedAssemblyProperty** | Pointer to **bool** |  | [optional] 
 **ComputedProperty** | Pointer to **bool** |  | [optional] 
 **ComputedPropertyError** | Pointer to **string** |  | [optional] 
@@ -51,6 +52,31 @@ will change when the set of required properties is changed
 NewBTWorkflowPropertyInfoWithDefaults instantiates a new BTWorkflowPropertyInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAggregationSkippedFilteredOutValues
+
+`func (o *BTWorkflowPropertyInfo) GetAggregationSkippedFilteredOutValues() bool`
+
+GetAggregationSkippedFilteredOutValues returns the AggregationSkippedFilteredOutValues field if non-nil, zero value otherwise.
+
+### GetAggregationSkippedFilteredOutValuesOk
+
+`func (o *BTWorkflowPropertyInfo) GetAggregationSkippedFilteredOutValuesOk() (*bool, bool)`
+
+GetAggregationSkippedFilteredOutValuesOk returns a tuple with the AggregationSkippedFilteredOutValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAggregationSkippedFilteredOutValues
+
+`func (o *BTWorkflowPropertyInfo) SetAggregationSkippedFilteredOutValues(v bool)`
+
+SetAggregationSkippedFilteredOutValues sets AggregationSkippedFilteredOutValues field to given value.
+
+### HasAggregationSkippedFilteredOutValues
+
+`func (o *BTWorkflowPropertyInfo) HasAggregationSkippedFilteredOutValues() bool`
+
+HasAggregationSkippedFilteredOutValues returns a boolean if a field has been set.
 
 ### GetComputedAssemblyProperty
 

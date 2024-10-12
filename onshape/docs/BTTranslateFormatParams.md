@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **EmailMessage** | Pointer to **string** |  | [optional] 
 **EmailSubject** | Pointer to **string** |  | [optional] 
 **EmailTo** | Pointer to **[]string** |  | [optional] 
+**EvaluateExportRule** | Pointer to **bool** | Set to &#x60;true&#x60; to evaluate the export rule for the given &#x60;formatName&#x60; and to include an &#x60;exportRuleFileName&#x60; value in the response. | [optional] [default to false]
+**ExcludeHiddenEntities** | Pointer to **bool** |  | [optional] 
 **ExtractAssemblyHierarchy** | Pointer to **bool** |  | [optional] 
 **Flatten** | Pointer to **bool** |  | [optional] 
 **FlattenAssemblies** | Pointer to **bool** |  | [optional] 
@@ -40,7 +42,6 @@ Name | Type | Description | Notes
 **ImportMaterialDensity** | Pointer to **bool** |  | [optional] 
 **ImportWithinDocument** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
-**InvisibleEntitiesExportFilter** | Pointer to [**BTInvisibleEntitiesExportFilter2537**](BTInvisibleEntitiesExportFilter2537.md) |  | [optional] 
 **JoinAdjacentSurfaces** | Pointer to **bool** |  | [optional] 
 **Level** | Pointer to **string** |  | [optional] 
 **LinkDocumentId** | Pointer to **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [optional] 
@@ -582,6 +583,56 @@ SetEmailTo sets EmailTo field to given value.
 
 HasEmailTo returns a boolean if a field has been set.
 
+### GetEvaluateExportRule
+
+`func (o *BTTranslateFormatParams) GetEvaluateExportRule() bool`
+
+GetEvaluateExportRule returns the EvaluateExportRule field if non-nil, zero value otherwise.
+
+### GetEvaluateExportRuleOk
+
+`func (o *BTTranslateFormatParams) GetEvaluateExportRuleOk() (*bool, bool)`
+
+GetEvaluateExportRuleOk returns a tuple with the EvaluateExportRule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvaluateExportRule
+
+`func (o *BTTranslateFormatParams) SetEvaluateExportRule(v bool)`
+
+SetEvaluateExportRule sets EvaluateExportRule field to given value.
+
+### HasEvaluateExportRule
+
+`func (o *BTTranslateFormatParams) HasEvaluateExportRule() bool`
+
+HasEvaluateExportRule returns a boolean if a field has been set.
+
+### GetExcludeHiddenEntities
+
+`func (o *BTTranslateFormatParams) GetExcludeHiddenEntities() bool`
+
+GetExcludeHiddenEntities returns the ExcludeHiddenEntities field if non-nil, zero value otherwise.
+
+### GetExcludeHiddenEntitiesOk
+
+`func (o *BTTranslateFormatParams) GetExcludeHiddenEntitiesOk() (*bool, bool)`
+
+GetExcludeHiddenEntitiesOk returns a tuple with the ExcludeHiddenEntities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeHiddenEntities
+
+`func (o *BTTranslateFormatParams) SetExcludeHiddenEntities(v bool)`
+
+SetExcludeHiddenEntities sets ExcludeHiddenEntities field to given value.
+
+### HasExcludeHiddenEntities
+
+`func (o *BTTranslateFormatParams) HasExcludeHiddenEntities() bool`
+
+HasExcludeHiddenEntities returns a boolean if a field has been set.
+
 ### GetExtractAssemblyHierarchy
 
 `func (o *BTTranslateFormatParams) GetExtractAssemblyHierarchy() bool`
@@ -1001,31 +1052,6 @@ SetIncludeExportIds sets IncludeExportIds field to given value.
 `func (o *BTTranslateFormatParams) HasIncludeExportIds() bool`
 
 HasIncludeExportIds returns a boolean if a field has been set.
-
-### GetInvisibleEntitiesExportFilter
-
-`func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilter() BTInvisibleEntitiesExportFilter2537`
-
-GetInvisibleEntitiesExportFilter returns the InvisibleEntitiesExportFilter field if non-nil, zero value otherwise.
-
-### GetInvisibleEntitiesExportFilterOk
-
-`func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilterOk() (*BTInvisibleEntitiesExportFilter2537, bool)`
-
-GetInvisibleEntitiesExportFilterOk returns a tuple with the InvisibleEntitiesExportFilter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvisibleEntitiesExportFilter
-
-`func (o *BTTranslateFormatParams) SetInvisibleEntitiesExportFilter(v BTInvisibleEntitiesExportFilter2537)`
-
-SetInvisibleEntitiesExportFilter sets InvisibleEntitiesExportFilter field to given value.
-
-### HasInvisibleEntitiesExportFilter
-
-`func (o *BTTranslateFormatParams) HasInvisibleEntitiesExportFilter() bool`
-
-HasInvisibleEntitiesExportFilter returns a boolean if a field has been set.
 
 ### GetJoinAdjacentSurfaces
 

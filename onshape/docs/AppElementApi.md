@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**GetJsonPaths**](AppElementApi.md#GetJsonPaths) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/jsonpaths | Get the JSON at specified paths for an element.
 [**GetSubElementContent**](AppElementApi.md#GetSubElementContent) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Get a list of all subelement IDs in a specified workspace/version/microversion.
 [**GetSubelementIds**](AppElementApi.md#GetSubelementIds) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/ids | Get a list of all subelement IDs in a specified workspace/version/microversion.
+[**ResolveAllElementReferences**](AppElementApi.md#ResolveAllElementReferences) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/resolvereferences | Resolves bulk app element references.
 [**ResolveReference**](AppElementApi.md#ResolveReference) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Resolves a single reference to an app element.
 [**ResolveReferences**](AppElementApi.md#ResolveReferences) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/resolvereferences | Resolves bulk app element references.
 [**StartTransaction**](AppElementApi.md#StartTransaction) | **Post** /appelements/d/{did}/w/{wid}/e/{eid}/transactions | Start a transaction
@@ -1582,6 +1583,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTAppElementIdsInfo**](BTAppElementIdsInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ResolveAllElementReferences
+
+> map[string]BTAppElementReferencesResolveInfo ResolveAllElementReferences(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ParentChangeId(parentChangeId).IncludeInternal(includeInternal).ReferenceIds(referenceIds).ElementIds(elementIds).DrawingsOnly(drawingsOnly).Execute()
+
+Resolves bulk app element references.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    transactionId := "transactionId_example" // string | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. (optional)
+    parentChangeId := "parentChangeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional)
+    includeInternal := true // bool | Whether to include references that have been deleted or inactivated. (optional) (default to false)
+    referenceIds := "referenceIds_example" // string | Comma separated string of reference ids find. (optional) (default to "")
+    elementIds := "elementIds_example" // string | Comma separated string of element ids to search for references in. (optional) (default to "")
+    drawingsOnly := true // bool | Whether to find references for only Onshape drawing app elements. (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AppElementApi.ResolveAllElementReferences(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ParentChangeId(parentChangeId).IncludeInternal(includeInternal).ReferenceIds(referenceIds).ElementIds(elementIds).DrawingsOnly(drawingsOnly).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.ResolveAllElementReferences``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ResolveAllElementReferences`: map[string]BTAppElementReferencesResolveInfo
+    fmt.Fprintf(os.Stdout, "Response from `AppElementApi.ResolveAllElementReferences`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiResolveAllElementReferencesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **transactionId** | **string** | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. | 
+ **parentChangeId** | **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | 
+ **includeInternal** | **bool** | Whether to include references that have been deleted or inactivated. | [default to false]
+ **referenceIds** | **string** | Comma separated string of reference ids find. | [default to &quot;&quot;]
+ **elementIds** | **string** | Comma separated string of element ids to search for references in. | [default to &quot;&quot;]
+ **drawingsOnly** | **bool** | Whether to find references for only Onshape drawing app elements. | [default to false]
+
+### Return type
+
+[**map[string]BTAppElementReferencesResolveInfo**](BTAppElementReferencesResolveInfo.md)
 
 ### Authorization
 

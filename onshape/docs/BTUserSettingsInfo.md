@@ -15,10 +15,10 @@ Name | Type | Description | Notes
 **ExportSolidOptions** | Pointer to **string** |  | [optional] 
 **GraphicsRenderMode** | Pointer to **string** |  | [optional] 
 **GraphicsSmoothEdge** | Pointer to **string** |  | [optional] 
-**HideAhaAppOnboarding** | Pointer to **bool** |  | [optional] 
 **HighlightLaminarEdges** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **ImportOptions** | Pointer to **string** |  | [optional] 
+**IsolateHideTransparent** | Pointer to **string** |  | [optional] 
 **Locale** | Pointer to **string** |  | [optional] 
 **MaterialLibrarySettings** | Pointer to [**BTMaterialLibrarySettingsInfo**](BTMaterialLibrarySettingsInfo.md) |  | [optional] 
 **MiniToolbarSettings** | Pointer to **string** |  | [optional] 
@@ -331,31 +331,6 @@ SetGraphicsSmoothEdge sets GraphicsSmoothEdge field to given value.
 
 HasGraphicsSmoothEdge returns a boolean if a field has been set.
 
-### GetHideAhaAppOnboarding
-
-`func (o *BTUserSettingsInfo) GetHideAhaAppOnboarding() bool`
-
-GetHideAhaAppOnboarding returns the HideAhaAppOnboarding field if non-nil, zero value otherwise.
-
-### GetHideAhaAppOnboardingOk
-
-`func (o *BTUserSettingsInfo) GetHideAhaAppOnboardingOk() (*bool, bool)`
-
-GetHideAhaAppOnboardingOk returns a tuple with the HideAhaAppOnboarding field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHideAhaAppOnboarding
-
-`func (o *BTUserSettingsInfo) SetHideAhaAppOnboarding(v bool)`
-
-SetHideAhaAppOnboarding sets HideAhaAppOnboarding field to given value.
-
-### HasHideAhaAppOnboarding
-
-`func (o *BTUserSettingsInfo) HasHideAhaAppOnboarding() bool`
-
-HasHideAhaAppOnboarding returns a boolean if a field has been set.
-
 ### GetHighlightLaminarEdges
 
 `func (o *BTUserSettingsInfo) GetHighlightLaminarEdges() string`
@@ -430,6 +405,31 @@ SetImportOptions sets ImportOptions field to given value.
 `func (o *BTUserSettingsInfo) HasImportOptions() bool`
 
 HasImportOptions returns a boolean if a field has been set.
+
+### GetIsolateHideTransparent
+
+`func (o *BTUserSettingsInfo) GetIsolateHideTransparent() string`
+
+GetIsolateHideTransparent returns the IsolateHideTransparent field if non-nil, zero value otherwise.
+
+### GetIsolateHideTransparentOk
+
+`func (o *BTUserSettingsInfo) GetIsolateHideTransparentOk() (*string, bool)`
+
+GetIsolateHideTransparentOk returns a tuple with the IsolateHideTransparent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsolateHideTransparent
+
+`func (o *BTUserSettingsInfo) SetIsolateHideTransparent(v string)`
+
+SetIsolateHideTransparent sets IsolateHideTransparent field to given value.
+
+### HasIsolateHideTransparent
+
+`func (o *BTUserSettingsInfo) HasIsolateHideTransparent() bool`
+
+HasIsolateHideTransparent returns a boolean if a field has been set.
 
 ### GetLocale
 

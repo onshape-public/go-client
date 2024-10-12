@@ -14,8 +14,8 @@ import (
 	"encoding/json"
 )
 
-// BTAssemblyReplicate2774 struct for BTAssemblyReplicate2774
-type BTAssemblyReplicate2774 struct {
+// BTDerivedAssemblyMirror4204 struct for BTDerivedAssemblyMirror4204
+type BTDerivedAssemblyMirror4204 struct {
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -43,35 +43,46 @@ type BTAssemblyReplicate2774 struct {
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured  *bool                            `json:"suppressionConfigured,omitempty"`
-	SuppressionState       *BTMSuppressionState1924         `json:"suppressionState,omitempty"`
-	ValidRevisionReference *bool                            `json:"validRevisionReference,omitempty"`
-	Version                *int32                           `json:"version,omitempty"`
-	Feature                *BTMAssemblyFeature887           `json:"feature,omitempty"`
-	FeatureId              *string                          `json:"featureId,omitempty"`
-	InstanceControlNodes   []BTInstanceControlNode750       `json:"instanceControlNodes,omitempty"`
-	ReplicateFeature       *BTMAssemblyReplicateFeature1351 `json:"replicateFeature,omitempty"`
+	SuppressionConfigured                   *bool                                       `json:"suppressionConfigured,omitempty"`
+	SuppressionState                        *BTMSuppressionState1924                    `json:"suppressionState,omitempty"`
+	ValidRevisionReference                  *bool                                       `json:"validRevisionReference,omitempty"`
+	Version                                 *int32                                      `json:"version,omitempty"`
+	Feature                                 *BTMAssemblyFeature887                      `json:"feature,omitempty"`
+	FeatureId                               *string                                     `json:"featureId,omitempty"`
+	InstanceControlNodes                    []BTInstanceControlNode750                  `json:"instanceControlNodes,omitempty"`
+	Configuration                           []BTMParameter1                             `json:"configuration,omitempty"`
+	DocumentId                              *string                                     `json:"documentId,omitempty"`
+	ElementId                               *string                                     `json:"elementId,omitempty"`
+	ElementReference                        *BTElementReference725                      `json:"elementReference,omitempty"`
+	ExternalDocumentWithVersion             *BTDocumentWithVersionId                    `json:"externalDocumentWithVersion,omitempty"`
+	ExternalDocumentWithVersionAndElementId *BTDocumentWithVersionAndElementId          `json:"externalDocumentWithVersionAndElementId,omitempty"`
+	LockedState                             *BTInstanceWithReference                    `json:"lockedState,omitempty"`
+	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
+	MirrorFeature                           *BTMDerivedAssemblyMirrorFeature5094        `json:"mirrorFeature,omitempty"`
+	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
+	VersionId                               *string                                     `json:"versionId,omitempty"`
+	VersionIdIfExternal                     *string                                     `json:"versionIdIfExternal,omitempty"`
 }
 
-// NewBTAssemblyReplicate2774 instantiates a new BTAssemblyReplicate2774 object
+// NewBTDerivedAssemblyMirror4204 instantiates a new BTDerivedAssemblyMirror4204 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTAssemblyReplicate2774() *BTAssemblyReplicate2774 {
-	this := BTAssemblyReplicate2774{}
+func NewBTDerivedAssemblyMirror4204() *BTDerivedAssemblyMirror4204 {
+	this := BTDerivedAssemblyMirror4204{}
 	return &this
 }
 
-// NewBTAssemblyReplicate2774WithDefaults instantiates a new BTAssemblyReplicate2774 object
+// NewBTDerivedAssemblyMirror4204WithDefaults instantiates a new BTDerivedAssemblyMirror4204 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBTAssemblyReplicate2774WithDefaults() *BTAssemblyReplicate2774 {
-	this := BTAssemblyReplicate2774{}
+func NewBTDerivedAssemblyMirror4204WithDefaults() *BTDerivedAssemblyMirror4204 {
+	this := BTDerivedAssemblyMirror4204{}
 	return &this
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetBtType() string {
+func (o *BTDerivedAssemblyMirror4204) GetBtType() string {
 	if o == nil || o.BtType == nil {
 		var ret string
 		return ret
@@ -81,7 +92,7 @@ func (o *BTAssemblyReplicate2774) GetBtType() string {
 
 // GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetBtTypeOk() (*string, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetBtTypeOk() (*string, bool) {
 	if o == nil || o.BtType == nil {
 		return nil, false
 	}
@@ -89,7 +100,7 @@ func (o *BTAssemblyReplicate2774) GetBtTypeOk() (*string, bool) {
 }
 
 // HasBtType returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasBtType() bool {
+func (o *BTDerivedAssemblyMirror4204) HasBtType() bool {
 	if o != nil && o.BtType != nil {
 		return true
 	}
@@ -98,12 +109,12 @@ func (o *BTAssemblyReplicate2774) HasBtType() bool {
 }
 
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTAssemblyReplicate2774) SetBtType(v string) {
+func (o *BTDerivedAssemblyMirror4204) SetBtType(v string) {
 	o.BtType = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetImportMicroversion() string {
+func (o *BTDerivedAssemblyMirror4204) GetImportMicroversion() string {
 	if o == nil || o.ImportMicroversion == nil {
 		var ret string
 		return ret
@@ -113,7 +124,7 @@ func (o *BTAssemblyReplicate2774) GetImportMicroversion() string {
 
 // GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetImportMicroversionOk() (*string, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetImportMicroversionOk() (*string, bool) {
 	if o == nil || o.ImportMicroversion == nil {
 		return nil, false
 	}
@@ -121,7 +132,7 @@ func (o *BTAssemblyReplicate2774) GetImportMicroversionOk() (*string, bool) {
 }
 
 // HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasImportMicroversion() bool {
+func (o *BTDerivedAssemblyMirror4204) HasImportMicroversion() bool {
 	if o != nil && o.ImportMicroversion != nil {
 		return true
 	}
@@ -130,12 +141,12 @@ func (o *BTAssemblyReplicate2774) HasImportMicroversion() bool {
 }
 
 // SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTAssemblyReplicate2774) SetImportMicroversion(v string) {
+func (o *BTDerivedAssemblyMirror4204) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetNodeId() string {
+func (o *BTDerivedAssemblyMirror4204) GetNodeId() string {
 	if o == nil || o.NodeId == nil {
 		var ret string
 		return ret
@@ -145,7 +156,7 @@ func (o *BTAssemblyReplicate2774) GetNodeId() string {
 
 // GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetNodeIdOk() (*string, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetNodeIdOk() (*string, bool) {
 	if o == nil || o.NodeId == nil {
 		return nil, false
 	}
@@ -153,7 +164,7 @@ func (o *BTAssemblyReplicate2774) GetNodeIdOk() (*string, bool) {
 }
 
 // HasNodeId returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasNodeId() bool {
+func (o *BTDerivedAssemblyMirror4204) HasNodeId() bool {
 	if o != nil && o.NodeId != nil {
 		return true
 	}
@@ -162,12 +173,12 @@ func (o *BTAssemblyReplicate2774) HasNodeId() bool {
 }
 
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTAssemblyReplicate2774) SetNodeId(v string) {
+func (o *BTDerivedAssemblyMirror4204) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
 // GetAssemblyInstance returns the AssemblyInstance field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetAssemblyInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyInstance() bool {
 	if o == nil || o.AssemblyInstance == nil {
 		var ret bool
 		return ret
@@ -177,7 +188,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyInstance() bool {
 
 // GetAssemblyInstanceOk returns a tuple with the AssemblyInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetAssemblyInstanceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyInstanceOk() (*bool, bool) {
 	if o == nil || o.AssemblyInstance == nil {
 		return nil, false
 	}
@@ -185,7 +196,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyInstanceOk() (*bool, bool) {
 }
 
 // HasAssemblyInstance returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasAssemblyInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) HasAssemblyInstance() bool {
 	if o != nil && o.AssemblyInstance != nil {
 		return true
 	}
@@ -194,12 +205,12 @@ func (o *BTAssemblyReplicate2774) HasAssemblyInstance() bool {
 }
 
 // SetAssemblyInstance gets a reference to the given bool and assigns it to the AssemblyInstance field.
-func (o *BTAssemblyReplicate2774) SetAssemblyInstance(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetAssemblyInstance(v bool) {
 	o.AssemblyInstance = &v
 }
 
 // GetAssemblyMirror returns the AssemblyMirror field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetAssemblyMirror() bool {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyMirror() bool {
 	if o == nil || o.AssemblyMirror == nil {
 		var ret bool
 		return ret
@@ -209,7 +220,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyMirror() bool {
 
 // GetAssemblyMirrorOk returns a tuple with the AssemblyMirror field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetAssemblyMirrorOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyMirrorOk() (*bool, bool) {
 	if o == nil || o.AssemblyMirror == nil {
 		return nil, false
 	}
@@ -217,7 +228,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyMirrorOk() (*bool, bool) {
 }
 
 // HasAssemblyMirror returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasAssemblyMirror() bool {
+func (o *BTDerivedAssemblyMirror4204) HasAssemblyMirror() bool {
 	if o != nil && o.AssemblyMirror != nil {
 		return true
 	}
@@ -226,12 +237,12 @@ func (o *BTAssemblyReplicate2774) HasAssemblyMirror() bool {
 }
 
 // SetAssemblyMirror gets a reference to the given bool and assigns it to the AssemblyMirror field.
-func (o *BTAssemblyReplicate2774) SetAssemblyMirror(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetAssemblyMirror(v bool) {
 	o.AssemblyMirror = &v
 }
 
 // GetAssemblyPattern returns the AssemblyPattern field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetAssemblyPattern() bool {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyPattern() bool {
 	if o == nil || o.AssemblyPattern == nil {
 		var ret bool
 		return ret
@@ -241,7 +252,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyPattern() bool {
 
 // GetAssemblyPatternOk returns a tuple with the AssemblyPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetAssemblyPatternOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyPatternOk() (*bool, bool) {
 	if o == nil || o.AssemblyPattern == nil {
 		return nil, false
 	}
@@ -249,7 +260,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyPatternOk() (*bool, bool) {
 }
 
 // HasAssemblyPattern returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasAssemblyPattern() bool {
+func (o *BTDerivedAssemblyMirror4204) HasAssemblyPattern() bool {
 	if o != nil && o.AssemblyPattern != nil {
 		return true
 	}
@@ -258,12 +269,12 @@ func (o *BTAssemblyReplicate2774) HasAssemblyPattern() bool {
 }
 
 // SetAssemblyPattern gets a reference to the given bool and assigns it to the AssemblyPattern field.
-func (o *BTAssemblyReplicate2774) SetAssemblyPattern(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetAssemblyPattern(v bool) {
 	o.AssemblyPattern = &v
 }
 
 // GetAssemblyReplicate returns the AssemblyReplicate field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetAssemblyReplicate() bool {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyReplicate() bool {
 	if o == nil || o.AssemblyReplicate == nil {
 		var ret bool
 		return ret
@@ -273,7 +284,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyReplicate() bool {
 
 // GetAssemblyReplicateOk returns a tuple with the AssemblyReplicate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetAssemblyReplicateOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyReplicateOk() (*bool, bool) {
 	if o == nil || o.AssemblyReplicate == nil {
 		return nil, false
 	}
@@ -281,7 +292,7 @@ func (o *BTAssemblyReplicate2774) GetAssemblyReplicateOk() (*bool, bool) {
 }
 
 // HasAssemblyReplicate returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasAssemblyReplicate() bool {
+func (o *BTDerivedAssemblyMirror4204) HasAssemblyReplicate() bool {
 	if o != nil && o.AssemblyReplicate != nil {
 		return true
 	}
@@ -290,12 +301,12 @@ func (o *BTAssemblyReplicate2774) HasAssemblyReplicate() bool {
 }
 
 // SetAssemblyReplicate gets a reference to the given bool and assigns it to the AssemblyReplicate field.
-func (o *BTAssemblyReplicate2774) SetAssemblyReplicate(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetAssemblyReplicate(v bool) {
 	o.AssemblyReplicate = &v
 }
 
 // GetClonedInstance returns the ClonedInstance field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetClonedInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) GetClonedInstance() bool {
 	if o == nil || o.ClonedInstance == nil {
 		var ret bool
 		return ret
@@ -305,7 +316,7 @@ func (o *BTAssemblyReplicate2774) GetClonedInstance() bool {
 
 // GetClonedInstanceOk returns a tuple with the ClonedInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetClonedInstanceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetClonedInstanceOk() (*bool, bool) {
 	if o == nil || o.ClonedInstance == nil {
 		return nil, false
 	}
@@ -313,7 +324,7 @@ func (o *BTAssemblyReplicate2774) GetClonedInstanceOk() (*bool, bool) {
 }
 
 // HasClonedInstance returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasClonedInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) HasClonedInstance() bool {
 	if o != nil && o.ClonedInstance != nil {
 		return true
 	}
@@ -322,12 +333,12 @@ func (o *BTAssemblyReplicate2774) HasClonedInstance() bool {
 }
 
 // SetClonedInstance gets a reference to the given bool and assigns it to the ClonedInstance field.
-func (o *BTAssemblyReplicate2774) SetClonedInstance(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetClonedInstance(v bool) {
 	o.ClonedInstance = &v
 }
 
 // GetCustomData returns the CustomData field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetCustomData() map[string]BTReferenceCustomData1551 {
+func (o *BTDerivedAssemblyMirror4204) GetCustomData() map[string]BTReferenceCustomData1551 {
 	if o == nil || o.CustomData == nil {
 		var ret map[string]BTReferenceCustomData1551
 		return ret
@@ -337,7 +348,7 @@ func (o *BTAssemblyReplicate2774) GetCustomData() map[string]BTReferenceCustomDa
 
 // GetCustomDataOk returns a tuple with the CustomData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetCustomDataOk() (*map[string]BTReferenceCustomData1551, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetCustomDataOk() (*map[string]BTReferenceCustomData1551, bool) {
 	if o == nil || o.CustomData == nil {
 		return nil, false
 	}
@@ -345,7 +356,7 @@ func (o *BTAssemblyReplicate2774) GetCustomDataOk() (*map[string]BTReferenceCust
 }
 
 // HasCustomData returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasCustomData() bool {
+func (o *BTDerivedAssemblyMirror4204) HasCustomData() bool {
 	if o != nil && o.CustomData != nil {
 		return true
 	}
@@ -354,12 +365,12 @@ func (o *BTAssemblyReplicate2774) HasCustomData() bool {
 }
 
 // SetCustomData gets a reference to the given map[string]BTReferenceCustomData1551 and assigns it to the CustomData field.
-func (o *BTAssemblyReplicate2774) SetCustomData(v map[string]BTReferenceCustomData1551) {
+func (o *BTDerivedAssemblyMirror4204) SetCustomData(v map[string]BTReferenceCustomData1551) {
 	o.CustomData = &v
 }
 
 // GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetDerivedAssemblyMirror() bool {
+func (o *BTDerivedAssemblyMirror4204) GetDerivedAssemblyMirror() bool {
 	if o == nil || o.DerivedAssemblyMirror == nil {
 		var ret bool
 		return ret
@@ -369,7 +380,7 @@ func (o *BTAssemblyReplicate2774) GetDerivedAssemblyMirror() bool {
 
 // GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetDerivedAssemblyMirrorOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetDerivedAssemblyMirrorOk() (*bool, bool) {
 	if o == nil || o.DerivedAssemblyMirror == nil {
 		return nil, false
 	}
@@ -377,7 +388,7 @@ func (o *BTAssemblyReplicate2774) GetDerivedAssemblyMirrorOk() (*bool, bool) {
 }
 
 // HasDerivedAssemblyMirror returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasDerivedAssemblyMirror() bool {
+func (o *BTDerivedAssemblyMirror4204) HasDerivedAssemblyMirror() bool {
 	if o != nil && o.DerivedAssemblyMirror != nil {
 		return true
 	}
@@ -386,12 +397,12 @@ func (o *BTAssemblyReplicate2774) HasDerivedAssemblyMirror() bool {
 }
 
 // SetDerivedAssemblyMirror gets a reference to the given bool and assigns it to the DerivedAssemblyMirror field.
-func (o *BTAssemblyReplicate2774) SetDerivedAssemblyMirror(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetDerivedAssemblyMirror(v bool) {
 	o.DerivedAssemblyMirror = &v
 }
 
 // GetInstanceFolder returns the InstanceFolder field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetInstanceFolder() bool {
+func (o *BTDerivedAssemblyMirror4204) GetInstanceFolder() bool {
 	if o == nil || o.InstanceFolder == nil {
 		var ret bool
 		return ret
@@ -401,7 +412,7 @@ func (o *BTAssemblyReplicate2774) GetInstanceFolder() bool {
 
 // GetInstanceFolderOk returns a tuple with the InstanceFolder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetInstanceFolderOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetInstanceFolderOk() (*bool, bool) {
 	if o == nil || o.InstanceFolder == nil {
 		return nil, false
 	}
@@ -409,7 +420,7 @@ func (o *BTAssemblyReplicate2774) GetInstanceFolderOk() (*bool, bool) {
 }
 
 // HasInstanceFolder returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasInstanceFolder() bool {
+func (o *BTDerivedAssemblyMirror4204) HasInstanceFolder() bool {
 	if o != nil && o.InstanceFolder != nil {
 		return true
 	}
@@ -418,12 +429,12 @@ func (o *BTAssemblyReplicate2774) HasInstanceFolder() bool {
 }
 
 // SetInstanceFolder gets a reference to the given bool and assigns it to the InstanceFolder field.
-func (o *BTAssemblyReplicate2774) SetInstanceFolder(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetInstanceFolder(v bool) {
 	o.InstanceFolder = &v
 }
 
 // GetInstanceName returns the InstanceName field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetInstanceName() string {
+func (o *BTDerivedAssemblyMirror4204) GetInstanceName() string {
 	if o == nil || o.InstanceName == nil {
 		var ret string
 		return ret
@@ -433,7 +444,7 @@ func (o *BTAssemblyReplicate2774) GetInstanceName() string {
 
 // GetInstanceNameOk returns a tuple with the InstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetInstanceNameOk() (*string, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetInstanceNameOk() (*string, bool) {
 	if o == nil || o.InstanceName == nil {
 		return nil, false
 	}
@@ -441,7 +452,7 @@ func (o *BTAssemblyReplicate2774) GetInstanceNameOk() (*string, bool) {
 }
 
 // HasInstanceName returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasInstanceName() bool {
+func (o *BTDerivedAssemblyMirror4204) HasInstanceName() bool {
 	if o != nil && o.InstanceName != nil {
 		return true
 	}
@@ -450,12 +461,12 @@ func (o *BTAssemblyReplicate2774) HasInstanceName() bool {
 }
 
 // SetInstanceName gets a reference to the given string and assigns it to the InstanceName field.
-func (o *BTAssemblyReplicate2774) SetInstanceName(v string) {
+func (o *BTDerivedAssemblyMirror4204) SetInstanceName(v string) {
 	o.InstanceName = &v
 }
 
 // GetIsFlattenedPart returns the IsFlattenedPart field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetIsFlattenedPart() bool {
+func (o *BTDerivedAssemblyMirror4204) GetIsFlattenedPart() bool {
 	if o == nil || o.IsFlattenedPart == nil {
 		var ret bool
 		return ret
@@ -465,7 +476,7 @@ func (o *BTAssemblyReplicate2774) GetIsFlattenedPart() bool {
 
 // GetIsFlattenedPartOk returns a tuple with the IsFlattenedPart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetIsFlattenedPartOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetIsFlattenedPartOk() (*bool, bool) {
 	if o == nil || o.IsFlattenedPart == nil {
 		return nil, false
 	}
@@ -473,7 +484,7 @@ func (o *BTAssemblyReplicate2774) GetIsFlattenedPartOk() (*bool, bool) {
 }
 
 // HasIsFlattenedPart returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasIsFlattenedPart() bool {
+func (o *BTDerivedAssemblyMirror4204) HasIsFlattenedPart() bool {
 	if o != nil && o.IsFlattenedPart != nil {
 		return true
 	}
@@ -482,12 +493,12 @@ func (o *BTAssemblyReplicate2774) HasIsFlattenedPart() bool {
 }
 
 // SetIsFlattenedPart gets a reference to the given bool and assigns it to the IsFlattenedPart field.
-func (o *BTAssemblyReplicate2774) SetIsFlattenedPart(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetIsFlattenedPart(v bool) {
 	o.IsFlattenedPart = &v
 }
 
 // GetLocked returns the Locked field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetLocked() bool {
+func (o *BTDerivedAssemblyMirror4204) GetLocked() bool {
 	if o == nil || o.Locked == nil {
 		var ret bool
 		return ret
@@ -497,7 +508,7 @@ func (o *BTAssemblyReplicate2774) GetLocked() bool {
 
 // GetLockedOk returns a tuple with the Locked field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetLockedOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetLockedOk() (*bool, bool) {
 	if o == nil || o.Locked == nil {
 		return nil, false
 	}
@@ -505,7 +516,7 @@ func (o *BTAssemblyReplicate2774) GetLockedOk() (*bool, bool) {
 }
 
 // HasLocked returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasLocked() bool {
+func (o *BTDerivedAssemblyMirror4204) HasLocked() bool {
 	if o != nil && o.Locked != nil {
 		return true
 	}
@@ -514,12 +525,12 @@ func (o *BTAssemblyReplicate2774) HasLocked() bool {
 }
 
 // SetLocked gets a reference to the given bool and assigns it to the Locked field.
-func (o *BTAssemblyReplicate2774) SetLocked(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetLocked(v bool) {
 	o.Locked = &v
 }
 
 // GetParametricInstance returns the ParametricInstance field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetParametricInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) GetParametricInstance() bool {
 	if o == nil || o.ParametricInstance == nil {
 		var ret bool
 		return ret
@@ -529,7 +540,7 @@ func (o *BTAssemblyReplicate2774) GetParametricInstance() bool {
 
 // GetParametricInstanceOk returns a tuple with the ParametricInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetParametricInstanceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetParametricInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricInstance == nil {
 		return nil, false
 	}
@@ -537,7 +548,7 @@ func (o *BTAssemblyReplicate2774) GetParametricInstanceOk() (*bool, bool) {
 }
 
 // HasParametricInstance returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasParametricInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) HasParametricInstance() bool {
 	if o != nil && o.ParametricInstance != nil {
 		return true
 	}
@@ -546,12 +557,12 @@ func (o *BTAssemblyReplicate2774) HasParametricInstance() bool {
 }
 
 // SetParametricInstance gets a reference to the given bool and assigns it to the ParametricInstance field.
-func (o *BTAssemblyReplicate2774) SetParametricInstance(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetParametricInstance(v bool) {
 	o.ParametricInstance = &v
 }
 
 // GetParametricOutputInstance returns the ParametricOutputInstance field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetParametricOutputInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) GetParametricOutputInstance() bool {
 	if o == nil || o.ParametricOutputInstance == nil {
 		var ret bool
 		return ret
@@ -561,7 +572,7 @@ func (o *BTAssemblyReplicate2774) GetParametricOutputInstance() bool {
 
 // GetParametricOutputInstanceOk returns a tuple with the ParametricOutputInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetParametricOutputInstanceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetParametricOutputInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricOutputInstance == nil {
 		return nil, false
 	}
@@ -569,7 +580,7 @@ func (o *BTAssemblyReplicate2774) GetParametricOutputInstanceOk() (*bool, bool) 
 }
 
 // HasParametricOutputInstance returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasParametricOutputInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) HasParametricOutputInstance() bool {
 	if o != nil && o.ParametricOutputInstance != nil {
 		return true
 	}
@@ -578,12 +589,12 @@ func (o *BTAssemblyReplicate2774) HasParametricOutputInstance() bool {
 }
 
 // SetParametricOutputInstance gets a reference to the given bool and assigns it to the ParametricOutputInstance field.
-func (o *BTAssemblyReplicate2774) SetParametricOutputInstance(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetParametricOutputInstance(v bool) {
 	o.ParametricOutputInstance = &v
 }
 
 // GetParametricPartStudioChildInstance returns the ParametricPartStudioChildInstance field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetParametricPartStudioChildInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) GetParametricPartStudioChildInstance() bool {
 	if o == nil || o.ParametricPartStudioChildInstance == nil {
 		var ret bool
 		return ret
@@ -593,7 +604,7 @@ func (o *BTAssemblyReplicate2774) GetParametricPartStudioChildInstance() bool {
 
 // GetParametricPartStudioChildInstanceOk returns a tuple with the ParametricPartStudioChildInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetParametricPartStudioChildInstanceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetParametricPartStudioChildInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricPartStudioChildInstance == nil {
 		return nil, false
 	}
@@ -601,7 +612,7 @@ func (o *BTAssemblyReplicate2774) GetParametricPartStudioChildInstanceOk() (*boo
 }
 
 // HasParametricPartStudioChildInstance returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasParametricPartStudioChildInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) HasParametricPartStudioChildInstance() bool {
 	if o != nil && o.ParametricPartStudioChildInstance != nil {
 		return true
 	}
@@ -610,12 +621,12 @@ func (o *BTAssemblyReplicate2774) HasParametricPartStudioChildInstance() bool {
 }
 
 // SetParametricPartStudioChildInstance gets a reference to the given bool and assigns it to the ParametricPartStudioChildInstance field.
-func (o *BTAssemblyReplicate2774) SetParametricPartStudioChildInstance(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetParametricPartStudioChildInstance(v bool) {
 	o.ParametricPartStudioChildInstance = &v
 }
 
 // GetParametricPartStudioInstance returns the ParametricPartStudioInstance field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetParametricPartStudioInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) GetParametricPartStudioInstance() bool {
 	if o == nil || o.ParametricPartStudioInstance == nil {
 		var ret bool
 		return ret
@@ -625,7 +636,7 @@ func (o *BTAssemblyReplicate2774) GetParametricPartStudioInstance() bool {
 
 // GetParametricPartStudioInstanceOk returns a tuple with the ParametricPartStudioInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetParametricPartStudioInstanceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetParametricPartStudioInstanceOk() (*bool, bool) {
 	if o == nil || o.ParametricPartStudioInstance == nil {
 		return nil, false
 	}
@@ -633,7 +644,7 @@ func (o *BTAssemblyReplicate2774) GetParametricPartStudioInstanceOk() (*bool, bo
 }
 
 // HasParametricPartStudioInstance returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasParametricPartStudioInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) HasParametricPartStudioInstance() bool {
 	if o != nil && o.ParametricPartStudioInstance != nil {
 		return true
 	}
@@ -642,12 +653,12 @@ func (o *BTAssemblyReplicate2774) HasParametricPartStudioInstance() bool {
 }
 
 // SetParametricPartStudioInstance gets a reference to the given bool and assigns it to the ParametricPartStudioInstance field.
-func (o *BTAssemblyReplicate2774) SetParametricPartStudioInstance(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetParametricPartStudioInstance(v bool) {
 	o.ParametricPartStudioInstance = &v
 }
 
 // GetPartInstance returns the PartInstance field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetPartInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) GetPartInstance() bool {
 	if o == nil || o.PartInstance == nil {
 		var ret bool
 		return ret
@@ -657,7 +668,7 @@ func (o *BTAssemblyReplicate2774) GetPartInstance() bool {
 
 // GetPartInstanceOk returns a tuple with the PartInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetPartInstanceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetPartInstanceOk() (*bool, bool) {
 	if o == nil || o.PartInstance == nil {
 		return nil, false
 	}
@@ -665,7 +676,7 @@ func (o *BTAssemblyReplicate2774) GetPartInstanceOk() (*bool, bool) {
 }
 
 // HasPartInstance returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasPartInstance() bool {
+func (o *BTDerivedAssemblyMirror4204) HasPartInstance() bool {
 	if o != nil && o.PartInstance != nil {
 		return true
 	}
@@ -674,12 +685,12 @@ func (o *BTAssemblyReplicate2774) HasPartInstance() bool {
 }
 
 // SetPartInstance gets a reference to the given bool and assigns it to the PartInstance field.
-func (o *BTAssemblyReplicate2774) SetPartInstance(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetPartInstance(v bool) {
 	o.PartInstance = &v
 }
 
 // GetReleasable returns the Releasable field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetReleasable() bool {
+func (o *BTDerivedAssemblyMirror4204) GetReleasable() bool {
 	if o == nil || o.Releasable == nil {
 		var ret bool
 		return ret
@@ -689,7 +700,7 @@ func (o *BTAssemblyReplicate2774) GetReleasable() bool {
 
 // GetReleasableOk returns a tuple with the Releasable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetReleasableOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetReleasableOk() (*bool, bool) {
 	if o == nil || o.Releasable == nil {
 		return nil, false
 	}
@@ -697,7 +708,7 @@ func (o *BTAssemblyReplicate2774) GetReleasableOk() (*bool, bool) {
 }
 
 // HasReleasable returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasReleasable() bool {
+func (o *BTDerivedAssemblyMirror4204) HasReleasable() bool {
 	if o != nil && o.Releasable != nil {
 		return true
 	}
@@ -706,12 +717,12 @@ func (o *BTAssemblyReplicate2774) HasReleasable() bool {
 }
 
 // SetReleasable gets a reference to the given bool and assigns it to the Releasable field.
-func (o *BTAssemblyReplicate2774) SetReleasable(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetReleasable(v bool) {
 	o.Releasable = &v
 }
 
 // GetRevisionCustomData returns the RevisionCustomData field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetRevisionCustomData() BTRevisionCustomData2090 {
+func (o *BTDerivedAssemblyMirror4204) GetRevisionCustomData() BTRevisionCustomData2090 {
 	if o == nil || o.RevisionCustomData == nil {
 		var ret BTRevisionCustomData2090
 		return ret
@@ -721,7 +732,7 @@ func (o *BTAssemblyReplicate2774) GetRevisionCustomData() BTRevisionCustomData20
 
 // GetRevisionCustomDataOk returns a tuple with the RevisionCustomData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetRevisionCustomDataOk() (*BTRevisionCustomData2090, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetRevisionCustomDataOk() (*BTRevisionCustomData2090, bool) {
 	if o == nil || o.RevisionCustomData == nil {
 		return nil, false
 	}
@@ -729,7 +740,7 @@ func (o *BTAssemblyReplicate2774) GetRevisionCustomDataOk() (*BTRevisionCustomDa
 }
 
 // HasRevisionCustomData returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasRevisionCustomData() bool {
+func (o *BTDerivedAssemblyMirror4204) HasRevisionCustomData() bool {
 	if o != nil && o.RevisionCustomData != nil {
 		return true
 	}
@@ -738,12 +749,12 @@ func (o *BTAssemblyReplicate2774) HasRevisionCustomData() bool {
 }
 
 // SetRevisionCustomData gets a reference to the given BTRevisionCustomData2090 and assigns it to the RevisionCustomData field.
-func (o *BTAssemblyReplicate2774) SetRevisionCustomData(v BTRevisionCustomData2090) {
+func (o *BTDerivedAssemblyMirror4204) SetRevisionCustomData(v BTRevisionCustomData2090) {
 	o.RevisionCustomData = &v
 }
 
 // GetStandardContent returns the StandardContent field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetStandardContent() bool {
+func (o *BTDerivedAssemblyMirror4204) GetStandardContent() bool {
 	if o == nil || o.StandardContent == nil {
 		var ret bool
 		return ret
@@ -753,7 +764,7 @@ func (o *BTAssemblyReplicate2774) GetStandardContent() bool {
 
 // GetStandardContentOk returns a tuple with the StandardContent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetStandardContentOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetStandardContentOk() (*bool, bool) {
 	if o == nil || o.StandardContent == nil {
 		return nil, false
 	}
@@ -761,7 +772,7 @@ func (o *BTAssemblyReplicate2774) GetStandardContentOk() (*bool, bool) {
 }
 
 // HasStandardContent returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasStandardContent() bool {
+func (o *BTDerivedAssemblyMirror4204) HasStandardContent() bool {
 	if o != nil && o.StandardContent != nil {
 		return true
 	}
@@ -770,12 +781,12 @@ func (o *BTAssemblyReplicate2774) HasStandardContent() bool {
 }
 
 // SetStandardContent gets a reference to the given bool and assigns it to the StandardContent field.
-func (o *BTAssemblyReplicate2774) SetStandardContent(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetStandardContent(v bool) {
 	o.StandardContent = &v
 }
 
 // GetStandardContentParametersId returns the StandardContentParametersId field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetStandardContentParametersId() string {
+func (o *BTDerivedAssemblyMirror4204) GetStandardContentParametersId() string {
 	if o == nil || o.StandardContentParametersId == nil {
 		var ret string
 		return ret
@@ -785,7 +796,7 @@ func (o *BTAssemblyReplicate2774) GetStandardContentParametersId() string {
 
 // GetStandardContentParametersIdOk returns a tuple with the StandardContentParametersId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetStandardContentParametersIdOk() (*string, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetStandardContentParametersIdOk() (*string, bool) {
 	if o == nil || o.StandardContentParametersId == nil {
 		return nil, false
 	}
@@ -793,7 +804,7 @@ func (o *BTAssemblyReplicate2774) GetStandardContentParametersIdOk() (*string, b
 }
 
 // HasStandardContentParametersId returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasStandardContentParametersId() bool {
+func (o *BTDerivedAssemblyMirror4204) HasStandardContentParametersId() bool {
 	if o != nil && o.StandardContentParametersId != nil {
 		return true
 	}
@@ -802,12 +813,12 @@ func (o *BTAssemblyReplicate2774) HasStandardContentParametersId() bool {
 }
 
 // SetStandardContentParametersId gets a reference to the given string and assigns it to the StandardContentParametersId field.
-func (o *BTAssemblyReplicate2774) SetStandardContentParametersId(v string) {
+func (o *BTDerivedAssemblyMirror4204) SetStandardContentParametersId(v string) {
 	o.StandardContentParametersId = &v
 }
 
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetSuppressed() bool {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressed() bool {
 	if o == nil || o.Suppressed == nil {
 		var ret bool
 		return ret
@@ -817,7 +828,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressed() bool {
 
 // GetSuppressedOk returns a tuple with the Suppressed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetSuppressedOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressedOk() (*bool, bool) {
 	if o == nil || o.Suppressed == nil {
 		return nil, false
 	}
@@ -825,7 +836,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressedOk() (*bool, bool) {
 }
 
 // HasSuppressed returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasSuppressed() bool {
+func (o *BTDerivedAssemblyMirror4204) HasSuppressed() bool {
 	if o != nil && o.Suppressed != nil {
 		return true
 	}
@@ -834,12 +845,12 @@ func (o *BTAssemblyReplicate2774) HasSuppressed() bool {
 }
 
 // SetSuppressed gets a reference to the given bool and assigns it to the Suppressed field.
-func (o *BTAssemblyReplicate2774) SetSuppressed(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetSuppressed(v bool) {
 	o.Suppressed = &v
 }
 
 // GetSuppressedFieldIndex returns the SuppressedFieldIndex field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetSuppressedFieldIndex() int32 {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressedFieldIndex() int32 {
 	if o == nil || o.SuppressedFieldIndex == nil {
 		var ret int32
 		return ret
@@ -849,7 +860,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressedFieldIndex() int32 {
 
 // GetSuppressedFieldIndexOk returns a tuple with the SuppressedFieldIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetSuppressedFieldIndexOk() (*int32, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressedFieldIndexOk() (*int32, bool) {
 	if o == nil || o.SuppressedFieldIndex == nil {
 		return nil, false
 	}
@@ -857,7 +868,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressedFieldIndexOk() (*int32, bool) {
 }
 
 // HasSuppressedFieldIndex returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasSuppressedFieldIndex() bool {
+func (o *BTDerivedAssemblyMirror4204) HasSuppressedFieldIndex() bool {
 	if o != nil && o.SuppressedFieldIndex != nil {
 		return true
 	}
@@ -866,12 +877,12 @@ func (o *BTAssemblyReplicate2774) HasSuppressedFieldIndex() bool {
 }
 
 // SetSuppressedFieldIndex gets a reference to the given int32 and assigns it to the SuppressedFieldIndex field.
-func (o *BTAssemblyReplicate2774) SetSuppressedFieldIndex(v int32) {
+func (o *BTDerivedAssemblyMirror4204) SetSuppressedFieldIndex(v int32) {
 	o.SuppressedFieldIndex = &v
 }
 
 // GetSuppressionConfigured returns the SuppressionConfigured field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetSuppressionConfigured() bool {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressionConfigured() bool {
 	if o == nil || o.SuppressionConfigured == nil {
 		var ret bool
 		return ret
@@ -881,7 +892,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressionConfigured() bool {
 
 // GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetSuppressionConfiguredOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressionConfiguredOk() (*bool, bool) {
 	if o == nil || o.SuppressionConfigured == nil {
 		return nil, false
 	}
@@ -889,7 +900,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressionConfiguredOk() (*bool, bool) {
 }
 
 // HasSuppressionConfigured returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasSuppressionConfigured() bool {
+func (o *BTDerivedAssemblyMirror4204) HasSuppressionConfigured() bool {
 	if o != nil && o.SuppressionConfigured != nil {
 		return true
 	}
@@ -898,12 +909,12 @@ func (o *BTAssemblyReplicate2774) HasSuppressionConfigured() bool {
 }
 
 // SetSuppressionConfigured gets a reference to the given bool and assigns it to the SuppressionConfigured field.
-func (o *BTAssemblyReplicate2774) SetSuppressionConfigured(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetSuppressionConfigured(v bool) {
 	o.SuppressionConfigured = &v
 }
 
 // GetSuppressionState returns the SuppressionState field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetSuppressionState() BTMSuppressionState1924 {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressionState() BTMSuppressionState1924 {
 	if o == nil || o.SuppressionState == nil {
 		var ret BTMSuppressionState1924
 		return ret
@@ -913,7 +924,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressionState() BTMSuppressionState1924 
 
 // GetSuppressionStateOk returns a tuple with the SuppressionState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
 	if o == nil || o.SuppressionState == nil {
 		return nil, false
 	}
@@ -921,7 +932,7 @@ func (o *BTAssemblyReplicate2774) GetSuppressionStateOk() (*BTMSuppressionState1
 }
 
 // HasSuppressionState returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasSuppressionState() bool {
+func (o *BTDerivedAssemblyMirror4204) HasSuppressionState() bool {
 	if o != nil && o.SuppressionState != nil {
 		return true
 	}
@@ -930,12 +941,12 @@ func (o *BTAssemblyReplicate2774) HasSuppressionState() bool {
 }
 
 // SetSuppressionState gets a reference to the given BTMSuppressionState1924 and assigns it to the SuppressionState field.
-func (o *BTAssemblyReplicate2774) SetSuppressionState(v BTMSuppressionState1924) {
+func (o *BTDerivedAssemblyMirror4204) SetSuppressionState(v BTMSuppressionState1924) {
 	o.SuppressionState = &v
 }
 
 // GetValidRevisionReference returns the ValidRevisionReference field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetValidRevisionReference() bool {
+func (o *BTDerivedAssemblyMirror4204) GetValidRevisionReference() bool {
 	if o == nil || o.ValidRevisionReference == nil {
 		var ret bool
 		return ret
@@ -945,7 +956,7 @@ func (o *BTAssemblyReplicate2774) GetValidRevisionReference() bool {
 
 // GetValidRevisionReferenceOk returns a tuple with the ValidRevisionReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetValidRevisionReferenceOk() (*bool, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetValidRevisionReferenceOk() (*bool, bool) {
 	if o == nil || o.ValidRevisionReference == nil {
 		return nil, false
 	}
@@ -953,7 +964,7 @@ func (o *BTAssemblyReplicate2774) GetValidRevisionReferenceOk() (*bool, bool) {
 }
 
 // HasValidRevisionReference returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasValidRevisionReference() bool {
+func (o *BTDerivedAssemblyMirror4204) HasValidRevisionReference() bool {
 	if o != nil && o.ValidRevisionReference != nil {
 		return true
 	}
@@ -962,12 +973,12 @@ func (o *BTAssemblyReplicate2774) HasValidRevisionReference() bool {
 }
 
 // SetValidRevisionReference gets a reference to the given bool and assigns it to the ValidRevisionReference field.
-func (o *BTAssemblyReplicate2774) SetValidRevisionReference(v bool) {
+func (o *BTDerivedAssemblyMirror4204) SetValidRevisionReference(v bool) {
 	o.ValidRevisionReference = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetVersion() int32 {
+func (o *BTDerivedAssemblyMirror4204) GetVersion() int32 {
 	if o == nil || o.Version == nil {
 		var ret int32
 		return ret
@@ -977,7 +988,7 @@ func (o *BTAssemblyReplicate2774) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetVersionOk() (*int32, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetVersionOk() (*int32, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -985,7 +996,7 @@ func (o *BTAssemblyReplicate2774) GetVersionOk() (*int32, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasVersion() bool {
+func (o *BTDerivedAssemblyMirror4204) HasVersion() bool {
 	if o != nil && o.Version != nil {
 		return true
 	}
@@ -994,12 +1005,12 @@ func (o *BTAssemblyReplicate2774) HasVersion() bool {
 }
 
 // SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *BTAssemblyReplicate2774) SetVersion(v int32) {
+func (o *BTDerivedAssemblyMirror4204) SetVersion(v int32) {
 	o.Version = &v
 }
 
 // GetFeature returns the Feature field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetFeature() BTMAssemblyFeature887 {
+func (o *BTDerivedAssemblyMirror4204) GetFeature() BTMAssemblyFeature887 {
 	if o == nil || o.Feature == nil {
 		var ret BTMAssemblyFeature887
 		return ret
@@ -1009,7 +1020,7 @@ func (o *BTAssemblyReplicate2774) GetFeature() BTMAssemblyFeature887 {
 
 // GetFeatureOk returns a tuple with the Feature field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetFeatureOk() (*BTMAssemblyFeature887, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetFeatureOk() (*BTMAssemblyFeature887, bool) {
 	if o == nil || o.Feature == nil {
 		return nil, false
 	}
@@ -1017,7 +1028,7 @@ func (o *BTAssemblyReplicate2774) GetFeatureOk() (*BTMAssemblyFeature887, bool) 
 }
 
 // HasFeature returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasFeature() bool {
+func (o *BTDerivedAssemblyMirror4204) HasFeature() bool {
 	if o != nil && o.Feature != nil {
 		return true
 	}
@@ -1026,12 +1037,12 @@ func (o *BTAssemblyReplicate2774) HasFeature() bool {
 }
 
 // SetFeature gets a reference to the given BTMAssemblyFeature887 and assigns it to the Feature field.
-func (o *BTAssemblyReplicate2774) SetFeature(v BTMAssemblyFeature887) {
+func (o *BTDerivedAssemblyMirror4204) SetFeature(v BTMAssemblyFeature887) {
 	o.Feature = &v
 }
 
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetFeatureId() string {
+func (o *BTDerivedAssemblyMirror4204) GetFeatureId() string {
 	if o == nil || o.FeatureId == nil {
 		var ret string
 		return ret
@@ -1041,7 +1052,7 @@ func (o *BTAssemblyReplicate2774) GetFeatureId() string {
 
 // GetFeatureIdOk returns a tuple with the FeatureId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetFeatureIdOk() (*string, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetFeatureIdOk() (*string, bool) {
 	if o == nil || o.FeatureId == nil {
 		return nil, false
 	}
@@ -1049,7 +1060,7 @@ func (o *BTAssemblyReplicate2774) GetFeatureIdOk() (*string, bool) {
 }
 
 // HasFeatureId returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasFeatureId() bool {
+func (o *BTDerivedAssemblyMirror4204) HasFeatureId() bool {
 	if o != nil && o.FeatureId != nil {
 		return true
 	}
@@ -1058,12 +1069,12 @@ func (o *BTAssemblyReplicate2774) HasFeatureId() bool {
 }
 
 // SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
-func (o *BTAssemblyReplicate2774) SetFeatureId(v string) {
+func (o *BTDerivedAssemblyMirror4204) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
 // GetInstanceControlNodes returns the InstanceControlNodes field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetInstanceControlNodes() []BTInstanceControlNode750 {
+func (o *BTDerivedAssemblyMirror4204) GetInstanceControlNodes() []BTInstanceControlNode750 {
 	if o == nil || o.InstanceControlNodes == nil {
 		var ret []BTInstanceControlNode750
 		return ret
@@ -1073,7 +1084,7 @@ func (o *BTAssemblyReplicate2774) GetInstanceControlNodes() []BTInstanceControlN
 
 // GetInstanceControlNodesOk returns a tuple with the InstanceControlNodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetInstanceControlNodesOk() ([]BTInstanceControlNode750, bool) {
+func (o *BTDerivedAssemblyMirror4204) GetInstanceControlNodesOk() ([]BTInstanceControlNode750, bool) {
 	if o == nil || o.InstanceControlNodes == nil {
 		return nil, false
 	}
@@ -1081,7 +1092,7 @@ func (o *BTAssemblyReplicate2774) GetInstanceControlNodesOk() ([]BTInstanceContr
 }
 
 // HasInstanceControlNodes returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasInstanceControlNodes() bool {
+func (o *BTDerivedAssemblyMirror4204) HasInstanceControlNodes() bool {
 	if o != nil && o.InstanceControlNodes != nil {
 		return true
 	}
@@ -1090,43 +1101,395 @@ func (o *BTAssemblyReplicate2774) HasInstanceControlNodes() bool {
 }
 
 // SetInstanceControlNodes gets a reference to the given []BTInstanceControlNode750 and assigns it to the InstanceControlNodes field.
-func (o *BTAssemblyReplicate2774) SetInstanceControlNodes(v []BTInstanceControlNode750) {
+func (o *BTDerivedAssemblyMirror4204) SetInstanceControlNodes(v []BTInstanceControlNode750) {
 	o.InstanceControlNodes = v
 }
 
-// GetReplicateFeature returns the ReplicateFeature field value if set, zero value otherwise.
-func (o *BTAssemblyReplicate2774) GetReplicateFeature() BTMAssemblyReplicateFeature1351 {
-	if o == nil || o.ReplicateFeature == nil {
-		var ret BTMAssemblyReplicateFeature1351
+// GetConfiguration returns the Configuration field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetConfiguration() []BTMParameter1 {
+	if o == nil || o.Configuration == nil {
+		var ret []BTMParameter1
 		return ret
 	}
-	return *o.ReplicateFeature
+	return o.Configuration
 }
 
-// GetReplicateFeatureOk returns a tuple with the ReplicateFeature field value if set, nil otherwise
+// GetConfigurationOk returns a tuple with the Configuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblyReplicate2774) GetReplicateFeatureOk() (*BTMAssemblyReplicateFeature1351, bool) {
-	if o == nil || o.ReplicateFeature == nil {
+func (o *BTDerivedAssemblyMirror4204) GetConfigurationOk() ([]BTMParameter1, bool) {
+	if o == nil || o.Configuration == nil {
 		return nil, false
 	}
-	return o.ReplicateFeature, true
+	return o.Configuration, true
 }
 
-// HasReplicateFeature returns a boolean if a field has been set.
-func (o *BTAssemblyReplicate2774) HasReplicateFeature() bool {
-	if o != nil && o.ReplicateFeature != nil {
+// HasConfiguration returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasConfiguration() bool {
+	if o != nil && o.Configuration != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetReplicateFeature gets a reference to the given BTMAssemblyReplicateFeature1351 and assigns it to the ReplicateFeature field.
-func (o *BTAssemblyReplicate2774) SetReplicateFeature(v BTMAssemblyReplicateFeature1351) {
-	o.ReplicateFeature = &v
+// SetConfiguration gets a reference to the given []BTMParameter1 and assigns it to the Configuration field.
+func (o *BTDerivedAssemblyMirror4204) SetConfiguration(v []BTMParameter1) {
+	o.Configuration = v
 }
 
-func (o BTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
+// GetDocumentId returns the DocumentId field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetDocumentId() string {
+	if o == nil || o.DocumentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DocumentId
+}
+
+// GetDocumentIdOk returns a tuple with the DocumentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetDocumentIdOk() (*string, bool) {
+	if o == nil || o.DocumentId == nil {
+		return nil, false
+	}
+	return o.DocumentId, true
+}
+
+// HasDocumentId returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasDocumentId() bool {
+	if o != nil && o.DocumentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentId gets a reference to the given string and assigns it to the DocumentId field.
+func (o *BTDerivedAssemblyMirror4204) SetDocumentId(v string) {
+	o.DocumentId = &v
+}
+
+// GetElementId returns the ElementId field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetElementId() string {
+	if o == nil || o.ElementId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ElementId
+}
+
+// GetElementIdOk returns a tuple with the ElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetElementIdOk() (*string, bool) {
+	if o == nil || o.ElementId == nil {
+		return nil, false
+	}
+	return o.ElementId, true
+}
+
+// HasElementId returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasElementId() bool {
+	if o != nil && o.ElementId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementId gets a reference to the given string and assigns it to the ElementId field.
+func (o *BTDerivedAssemblyMirror4204) SetElementId(v string) {
+	o.ElementId = &v
+}
+
+// GetElementReference returns the ElementReference field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetElementReference() BTElementReference725 {
+	if o == nil || o.ElementReference == nil {
+		var ret BTElementReference725
+		return ret
+	}
+	return *o.ElementReference
+}
+
+// GetElementReferenceOk returns a tuple with the ElementReference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetElementReferenceOk() (*BTElementReference725, bool) {
+	if o == nil || o.ElementReference == nil {
+		return nil, false
+	}
+	return o.ElementReference, true
+}
+
+// HasElementReference returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasElementReference() bool {
+	if o != nil && o.ElementReference != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementReference gets a reference to the given BTElementReference725 and assigns it to the ElementReference field.
+func (o *BTDerivedAssemblyMirror4204) SetElementReference(v BTElementReference725) {
+	o.ElementReference = &v
+}
+
+// GetExternalDocumentWithVersion returns the ExternalDocumentWithVersion field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetExternalDocumentWithVersion() BTDocumentWithVersionId {
+	if o == nil || o.ExternalDocumentWithVersion == nil {
+		var ret BTDocumentWithVersionId
+		return ret
+	}
+	return *o.ExternalDocumentWithVersion
+}
+
+// GetExternalDocumentWithVersionOk returns a tuple with the ExternalDocumentWithVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetExternalDocumentWithVersionOk() (*BTDocumentWithVersionId, bool) {
+	if o == nil || o.ExternalDocumentWithVersion == nil {
+		return nil, false
+	}
+	return o.ExternalDocumentWithVersion, true
+}
+
+// HasExternalDocumentWithVersion returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasExternalDocumentWithVersion() bool {
+	if o != nil && o.ExternalDocumentWithVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalDocumentWithVersion gets a reference to the given BTDocumentWithVersionId and assigns it to the ExternalDocumentWithVersion field.
+func (o *BTDerivedAssemblyMirror4204) SetExternalDocumentWithVersion(v BTDocumentWithVersionId) {
+	o.ExternalDocumentWithVersion = &v
+}
+
+// GetExternalDocumentWithVersionAndElementId returns the ExternalDocumentWithVersionAndElementId field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetExternalDocumentWithVersionAndElementId() BTDocumentWithVersionAndElementId {
+	if o == nil || o.ExternalDocumentWithVersionAndElementId == nil {
+		var ret BTDocumentWithVersionAndElementId
+		return ret
+	}
+	return *o.ExternalDocumentWithVersionAndElementId
+}
+
+// GetExternalDocumentWithVersionAndElementIdOk returns a tuple with the ExternalDocumentWithVersionAndElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetExternalDocumentWithVersionAndElementIdOk() (*BTDocumentWithVersionAndElementId, bool) {
+	if o == nil || o.ExternalDocumentWithVersionAndElementId == nil {
+		return nil, false
+	}
+	return o.ExternalDocumentWithVersionAndElementId, true
+}
+
+// HasExternalDocumentWithVersionAndElementId returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasExternalDocumentWithVersionAndElementId() bool {
+	if o != nil && o.ExternalDocumentWithVersionAndElementId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalDocumentWithVersionAndElementId gets a reference to the given BTDocumentWithVersionAndElementId and assigns it to the ExternalDocumentWithVersionAndElementId field.
+func (o *BTDerivedAssemblyMirror4204) SetExternalDocumentWithVersionAndElementId(v BTDocumentWithVersionAndElementId) {
+	o.ExternalDocumentWithVersionAndElementId = &v
+}
+
+// GetLockedState returns the LockedState field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetLockedState() BTInstanceWithReference {
+	if o == nil || o.LockedState == nil {
+		var ret BTInstanceWithReference
+		return ret
+	}
+	return *o.LockedState
+}
+
+// GetLockedStateOk returns a tuple with the LockedState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetLockedStateOk() (*BTInstanceWithReference, bool) {
+	if o == nil || o.LockedState == nil {
+		return nil, false
+	}
+	return o.LockedState, true
+}
+
+// HasLockedState returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasLockedState() bool {
+	if o != nil && o.LockedState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLockedState gets a reference to the given BTInstanceWithReference and assigns it to the LockedState field.
+func (o *BTDerivedAssemblyMirror4204) SetLockedState(v BTInstanceWithReference) {
+	o.LockedState = &v
+}
+
+// GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetMicroversionId() BTMicroversionId366 {
+	if o == nil || o.MicroversionId == nil {
+		var ret BTMicroversionId366
+		return ret
+	}
+	return *o.MicroversionId
+}
+
+// GetMicroversionIdOk returns a tuple with the MicroversionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetMicroversionIdOk() (*BTMicroversionId366, bool) {
+	if o == nil || o.MicroversionId == nil {
+		return nil, false
+	}
+	return o.MicroversionId, true
+}
+
+// HasMicroversionId returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasMicroversionId() bool {
+	if o != nil && o.MicroversionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMicroversionId gets a reference to the given BTMicroversionId366 and assigns it to the MicroversionId field.
+func (o *BTDerivedAssemblyMirror4204) SetMicroversionId(v BTMicroversionId366) {
+	o.MicroversionId = &v
+}
+
+// GetMirrorFeature returns the MirrorFeature field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetMirrorFeature() BTMDerivedAssemblyMirrorFeature5094 {
+	if o == nil || o.MirrorFeature == nil {
+		var ret BTMDerivedAssemblyMirrorFeature5094
+		return ret
+	}
+	return *o.MirrorFeature
+}
+
+// GetMirrorFeatureOk returns a tuple with the MirrorFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetMirrorFeatureOk() (*BTMDerivedAssemblyMirrorFeature5094, bool) {
+	if o == nil || o.MirrorFeature == nil {
+		return nil, false
+	}
+	return o.MirrorFeature, true
+}
+
+// HasMirrorFeature returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasMirrorFeature() bool {
+	if o != nil && o.MirrorFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMirrorFeature gets a reference to the given BTMDerivedAssemblyMirrorFeature5094 and assigns it to the MirrorFeature field.
+func (o *BTDerivedAssemblyMirror4204) SetMirrorFeature(v BTMDerivedAssemblyMirrorFeature5094) {
+	o.MirrorFeature = &v
+}
+
+// GetReferenceParameter returns the ReferenceParameter field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetReferenceParameter() BTMParameterReferenceWithConfiguration3028 {
+	if o == nil || o.ReferenceParameter == nil {
+		var ret BTMParameterReferenceWithConfiguration3028
+		return ret
+	}
+	return *o.ReferenceParameter
+}
+
+// GetReferenceParameterOk returns a tuple with the ReferenceParameter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetReferenceParameterOk() (*BTMParameterReferenceWithConfiguration3028, bool) {
+	if o == nil || o.ReferenceParameter == nil {
+		return nil, false
+	}
+	return o.ReferenceParameter, true
+}
+
+// HasReferenceParameter returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasReferenceParameter() bool {
+	if o != nil && o.ReferenceParameter != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetReferenceParameter gets a reference to the given BTMParameterReferenceWithConfiguration3028 and assigns it to the ReferenceParameter field.
+func (o *BTDerivedAssemblyMirror4204) SetReferenceParameter(v BTMParameterReferenceWithConfiguration3028) {
+	o.ReferenceParameter = &v
+}
+
+// GetVersionId returns the VersionId field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetVersionId() string {
+	if o == nil || o.VersionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.VersionId
+}
+
+// GetVersionIdOk returns a tuple with the VersionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetVersionIdOk() (*string, bool) {
+	if o == nil || o.VersionId == nil {
+		return nil, false
+	}
+	return o.VersionId, true
+}
+
+// HasVersionId returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasVersionId() bool {
+	if o != nil && o.VersionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersionId gets a reference to the given string and assigns it to the VersionId field.
+func (o *BTDerivedAssemblyMirror4204) SetVersionId(v string) {
+	o.VersionId = &v
+}
+
+// GetVersionIdIfExternal returns the VersionIdIfExternal field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetVersionIdIfExternal() string {
+	if o == nil || o.VersionIdIfExternal == nil {
+		var ret string
+		return ret
+	}
+	return *o.VersionIdIfExternal
+}
+
+// GetVersionIdIfExternalOk returns a tuple with the VersionIdIfExternal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetVersionIdIfExternalOk() (*string, bool) {
+	if o == nil || o.VersionIdIfExternal == nil {
+		return nil, false
+	}
+	return o.VersionIdIfExternal, true
+}
+
+// HasVersionIdIfExternal returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasVersionIdIfExternal() bool {
+	if o != nil && o.VersionIdIfExternal != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersionIdIfExternal gets a reference to the given string and assigns it to the VersionIdIfExternal field.
+func (o *BTDerivedAssemblyMirror4204) SetVersionIdIfExternal(v string) {
+	o.VersionIdIfExternal = &v
+}
+
+func (o BTDerivedAssemblyMirror4204) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
@@ -1224,44 +1587,77 @@ func (o BTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
 	if o.InstanceControlNodes != nil {
 		toSerialize["instanceControlNodes"] = o.InstanceControlNodes
 	}
-	if o.ReplicateFeature != nil {
-		toSerialize["replicateFeature"] = o.ReplicateFeature
+	if o.Configuration != nil {
+		toSerialize["configuration"] = o.Configuration
+	}
+	if o.DocumentId != nil {
+		toSerialize["documentId"] = o.DocumentId
+	}
+	if o.ElementId != nil {
+		toSerialize["elementId"] = o.ElementId
+	}
+	if o.ElementReference != nil {
+		toSerialize["elementReference"] = o.ElementReference
+	}
+	if o.ExternalDocumentWithVersion != nil {
+		toSerialize["externalDocumentWithVersion"] = o.ExternalDocumentWithVersion
+	}
+	if o.ExternalDocumentWithVersionAndElementId != nil {
+		toSerialize["externalDocumentWithVersionAndElementId"] = o.ExternalDocumentWithVersionAndElementId
+	}
+	if o.LockedState != nil {
+		toSerialize["lockedState"] = o.LockedState
+	}
+	if o.MicroversionId != nil {
+		toSerialize["microversionId"] = o.MicroversionId
+	}
+	if o.MirrorFeature != nil {
+		toSerialize["mirrorFeature"] = o.MirrorFeature
+	}
+	if o.ReferenceParameter != nil {
+		toSerialize["referenceParameter"] = o.ReferenceParameter
+	}
+	if o.VersionId != nil {
+		toSerialize["versionId"] = o.VersionId
+	}
+	if o.VersionIdIfExternal != nil {
+		toSerialize["versionIdIfExternal"] = o.VersionIdIfExternal
 	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableBTAssemblyReplicate2774 struct {
-	value *BTAssemblyReplicate2774
+type NullableBTDerivedAssemblyMirror4204 struct {
+	value *BTDerivedAssemblyMirror4204
 	isSet bool
 }
 
-func (v NullableBTAssemblyReplicate2774) Get() *BTAssemblyReplicate2774 {
+func (v NullableBTDerivedAssemblyMirror4204) Get() *BTDerivedAssemblyMirror4204 {
 	return v.value
 }
 
-func (v *NullableBTAssemblyReplicate2774) Set(val *BTAssemblyReplicate2774) {
+func (v *NullableBTDerivedAssemblyMirror4204) Set(val *BTDerivedAssemblyMirror4204) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBTAssemblyReplicate2774) IsSet() bool {
+func (v NullableBTDerivedAssemblyMirror4204) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBTAssemblyReplicate2774) Unset() {
+func (v *NullableBTDerivedAssemblyMirror4204) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBTAssemblyReplicate2774(val *BTAssemblyReplicate2774) *NullableBTAssemblyReplicate2774 {
-	return &NullableBTAssemblyReplicate2774{value: val, isSet: true}
+func NewNullableBTDerivedAssemblyMirror4204(val *BTDerivedAssemblyMirror4204) *NullableBTDerivedAssemblyMirror4204 {
+	return &NullableBTDerivedAssemblyMirror4204{value: val, isSet: true}
 }
 
-func (v NullableBTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
+func (v NullableBTDerivedAssemblyMirror4204) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBTAssemblyReplicate2774) UnmarshalJSON(src []byte) error {
+func (v *NullableBTDerivedAssemblyMirror4204) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

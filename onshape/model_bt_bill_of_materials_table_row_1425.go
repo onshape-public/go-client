@@ -16,22 +16,23 @@ import (
 
 // BTBillOfMaterialsTableRow1425 struct for BTBillOfMaterialsTableRow1425
 type BTBillOfMaterialsTableRow1425 struct {
-	BtType                 *string                            `json:"btType,omitempty"`
-	ColumnIdToCell         *map[string]BTTableCell1114        `json:"columnIdToCell,omitempty"`
-	Id                     *string                            `json:"id,omitempty"`
-	MetaData               *BTTreeNode20                      `json:"metaData,omitempty"`
-	NodeId                 *string                            `json:"nodeId,omitempty"`
-	RowMetadata            *BTTableBaseRowMetadata3181        `json:"rowMetadata,omitempty"`
-	ExcludeIsEditable      *bool                              `json:"excludeIsEditable,omitempty"`
-	ExcludeIsOverridden    *bool                              `json:"excludeIsOverridden,omitempty"`
-	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus `json:"exclusionStatus,omitempty"`
-	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus `json:"expansionStatus,omitempty"`
-	IndentLevel            *int32                             `json:"indentLevel,omitempty"`
-	MetadataObjectType     *int32                             `json:"metadataObjectType,omitempty"`
-	MetadataUpdateHref     *string                            `json:"metadataUpdateHref,omitempty"`
-	Name                   *string                            `json:"name,omitempty"`
-	RelatedOccurrencePaths []string                           `json:"relatedOccurrencePaths,omitempty"`
-	UniqueItemId           *BTBillOfMaterialsUniqueItemId2029 `json:"uniqueItemId,omitempty"`
+	BtType                 *string                              `json:"btType,omitempty"`
+	ColumnIdToCell         *map[string]BTTableCell1114          `json:"columnIdToCell,omitempty"`
+	Id                     *string                              `json:"id,omitempty"`
+	MetaData               *BTTreeNode20                        `json:"metaData,omitempty"`
+	NodeId                 *string                              `json:"nodeId,omitempty"`
+	RowMetadata            *BTTableBaseRowMetadata3181          `json:"rowMetadata,omitempty"`
+	ExcludeIsEditable      *bool                                `json:"excludeIsEditable,omitempty"`
+	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus   `json:"exclusionStatus,omitempty"`
+	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus   `json:"expansionStatus,omitempty"`
+	IndentLevel            *int32                               `json:"indentLevel,omitempty"`
+	IsSuppressed           *bool                                `json:"isSuppressed,omitempty"`
+	MetadataObjectType     *int32                               `json:"metadataObjectType,omitempty"`
+	MetadataUpdateHref     *string                              `json:"metadataUpdateHref,omitempty"`
+	Name                   *string                              `json:"name,omitempty"`
+	RelatedOccurrencePaths []string                             `json:"relatedOccurrencePaths,omitempty"`
+	SuppressionStatus      *GBTBillOfMaterialsSuppressionStatus `json:"suppressionStatus,omitempty"`
+	UniqueItemId           *BTBillOfMaterialsUniqueItemId2029   `json:"uniqueItemId,omitempty"`
 }
 
 // NewBTBillOfMaterialsTableRow1425 instantiates a new BTBillOfMaterialsTableRow1425 object
@@ -275,38 +276,6 @@ func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsEditable(v bool) {
 	o.ExcludeIsEditable = &v
 }
 
-// GetExcludeIsOverridden returns the ExcludeIsOverridden field value if set, zero value otherwise.
-func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverridden() bool {
-	if o == nil || o.ExcludeIsOverridden == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ExcludeIsOverridden
-}
-
-// GetExcludeIsOverriddenOk returns a tuple with the ExcludeIsOverridden field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverriddenOk() (*bool, bool) {
-	if o == nil || o.ExcludeIsOverridden == nil {
-		return nil, false
-	}
-	return o.ExcludeIsOverridden, true
-}
-
-// HasExcludeIsOverridden returns a boolean if a field has been set.
-func (o *BTBillOfMaterialsTableRow1425) HasExcludeIsOverridden() bool {
-	if o != nil && o.ExcludeIsOverridden != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetExcludeIsOverridden gets a reference to the given bool and assigns it to the ExcludeIsOverridden field.
-func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsOverridden(v bool) {
-	o.ExcludeIsOverridden = &v
-}
-
 // GetExclusionStatus returns the ExclusionStatus field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetExclusionStatus() GBTBillOfMaterialsExclusionStatus {
 	if o == nil || o.ExclusionStatus == nil {
@@ -401,6 +370,38 @@ func (o *BTBillOfMaterialsTableRow1425) HasIndentLevel() bool {
 // SetIndentLevel gets a reference to the given int32 and assigns it to the IndentLevel field.
 func (o *BTBillOfMaterialsTableRow1425) SetIndentLevel(v int32) {
 	o.IndentLevel = &v
+}
+
+// GetIsSuppressed returns the IsSuppressed field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetIsSuppressed() bool {
+	if o == nil || o.IsSuppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsSuppressed
+}
+
+// GetIsSuppressedOk returns a tuple with the IsSuppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetIsSuppressedOk() (*bool, bool) {
+	if o == nil || o.IsSuppressed == nil {
+		return nil, false
+	}
+	return o.IsSuppressed, true
+}
+
+// HasIsSuppressed returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasIsSuppressed() bool {
+	if o != nil && o.IsSuppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsSuppressed gets a reference to the given bool and assigns it to the IsSuppressed field.
+func (o *BTBillOfMaterialsTableRow1425) SetIsSuppressed(v bool) {
+	o.IsSuppressed = &v
 }
 
 // GetMetadataObjectType returns the MetadataObjectType field value if set, zero value otherwise.
@@ -531,6 +532,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetRelatedOccurrencePaths(v []string) {
 	o.RelatedOccurrencePaths = v
 }
 
+// GetSuppressionStatus returns the SuppressionStatus field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetSuppressionStatus() GBTBillOfMaterialsSuppressionStatus {
+	if o == nil || o.SuppressionStatus == nil {
+		var ret GBTBillOfMaterialsSuppressionStatus
+		return ret
+	}
+	return *o.SuppressionStatus
+}
+
+// GetSuppressionStatusOk returns a tuple with the SuppressionStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetSuppressionStatusOk() (*GBTBillOfMaterialsSuppressionStatus, bool) {
+	if o == nil || o.SuppressionStatus == nil {
+		return nil, false
+	}
+	return o.SuppressionStatus, true
+}
+
+// HasSuppressionStatus returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasSuppressionStatus() bool {
+	if o != nil && o.SuppressionStatus != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionStatus gets a reference to the given GBTBillOfMaterialsSuppressionStatus and assigns it to the SuppressionStatus field.
+func (o *BTBillOfMaterialsTableRow1425) SetSuppressionStatus(v GBTBillOfMaterialsSuppressionStatus) {
+	o.SuppressionStatus = &v
+}
+
 // GetUniqueItemId returns the UniqueItemId field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetUniqueItemId() BTBillOfMaterialsUniqueItemId2029 {
 	if o == nil || o.UniqueItemId == nil {
@@ -586,9 +619,6 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	if o.ExcludeIsEditable != nil {
 		toSerialize["excludeIsEditable"] = o.ExcludeIsEditable
 	}
-	if o.ExcludeIsOverridden != nil {
-		toSerialize["excludeIsOverridden"] = o.ExcludeIsOverridden
-	}
 	if o.ExclusionStatus != nil {
 		toSerialize["exclusionStatus"] = o.ExclusionStatus
 	}
@@ -597,6 +627,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.IndentLevel != nil {
 		toSerialize["indentLevel"] = o.IndentLevel
+	}
+	if o.IsSuppressed != nil {
+		toSerialize["isSuppressed"] = o.IsSuppressed
 	}
 	if o.MetadataObjectType != nil {
 		toSerialize["metadataObjectType"] = o.MetadataObjectType
@@ -609,6 +642,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.RelatedOccurrencePaths != nil {
 		toSerialize["relatedOccurrencePaths"] = o.RelatedOccurrencePaths
+	}
+	if o.SuppressionStatus != nil {
+		toSerialize["suppressionStatus"] = o.SuppressionStatus
 	}
 	if o.UniqueItemId != nil {
 		toSerialize["uniqueItemId"] = o.UniqueItemId

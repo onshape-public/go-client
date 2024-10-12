@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AggregationSkippedFilteredOutValues** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **IsUnchanged** | Pointer to **bool** |  | [optional] 
 **OverrideStatusType** | Pointer to [**GBTMetadataOverrideStatusType**](GBTMetadataOverrideStatusType.md) |  | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewBTTableCellPropertyParameter2983AllOfWithDefaults instantiates a new BTTableCellPropertyParameter2983AllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAggregationSkippedFilteredOutValues
+
+`func (o *BTTableCellPropertyParameter2983AllOf) GetAggregationSkippedFilteredOutValues() bool`
+
+GetAggregationSkippedFilteredOutValues returns the AggregationSkippedFilteredOutValues field if non-nil, zero value otherwise.
+
+### GetAggregationSkippedFilteredOutValuesOk
+
+`func (o *BTTableCellPropertyParameter2983AllOf) GetAggregationSkippedFilteredOutValuesOk() (*bool, bool)`
+
+GetAggregationSkippedFilteredOutValuesOk returns a tuple with the AggregationSkippedFilteredOutValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAggregationSkippedFilteredOutValues
+
+`func (o *BTTableCellPropertyParameter2983AllOf) SetAggregationSkippedFilteredOutValues(v bool)`
+
+SetAggregationSkippedFilteredOutValues sets AggregationSkippedFilteredOutValues field to given value.
+
+### HasAggregationSkippedFilteredOutValues
+
+`func (o *BTTableCellPropertyParameter2983AllOf) HasAggregationSkippedFilteredOutValues() bool`
+
+HasAggregationSkippedFilteredOutValues returns a boolean if a field has been set.
 
 ### GetBtType
 

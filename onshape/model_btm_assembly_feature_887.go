@@ -105,6 +105,11 @@ func (o *BTMAssemblyReplicateFeature1351) AsBTMAssemblyFeature887() *BTMAssembly
 	return &BTMAssemblyFeature887{o}
 }
 
+// BTMDerivedAssemblyMirrorFeature5094AsBTMAssemblyFeature887 is a convenience function that returns BTMDerivedAssemblyMirrorFeature5094 wrapped in BTMAssemblyFeature887
+func (o *BTMDerivedAssemblyMirrorFeature5094) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
+	return &BTMAssemblyFeature887{o}
+}
+
 // BTMGeometryMate1260AsBTMAssemblyFeature887 is a convenience function that returns BTMGeometryMate1260 wrapped in BTMAssemblyFeature887
 func (o *BTMGeometryMate1260) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
@@ -1260,6 +1265,20 @@ func (dst *BTMAssemblyFeature887) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMAssemblyFeature887 = nil
 			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMAssemblyReplicateFeature1351: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMDerivedAssemblyMirrorFeature-5094'
+	if jsonDict["btType"] == "BTMDerivedAssemblyMirrorFeature-5094" {
+		// try to unmarshal JSON data into BTMDerivedAssemblyMirrorFeature5094
+		var qr *BTMDerivedAssemblyMirrorFeature5094
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMAssemblyFeature887 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMAssemblyFeature887 = nil
+			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMDerivedAssemblyMirrorFeature5094: %s", err.Error())
 		}
 	}
 

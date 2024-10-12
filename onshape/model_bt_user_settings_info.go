@@ -27,10 +27,10 @@ type BTUserSettingsInfo struct {
 	ExportSolidOptions              *string                                `json:"exportSolidOptions,omitempty"`
 	GraphicsRenderMode              *string                                `json:"graphicsRenderMode,omitempty"`
 	GraphicsSmoothEdge              *string                                `json:"graphicsSmoothEdge,omitempty"`
-	HideAhaAppOnboarding            *bool                                  `json:"hideAhaAppOnboarding,omitempty"`
 	HighlightLaminarEdges           *string                                `json:"highlightLaminarEdges,omitempty"`
 	Id                              *string                                `json:"id,omitempty"`
 	ImportOptions                   *string                                `json:"importOptions,omitempty"`
+	IsolateHideTransparent          *string                                `json:"isolateHideTransparent,omitempty"`
 	Locale                          *string                                `json:"locale,omitempty"`
 	MaterialLibrarySettings         *BTMaterialLibrarySettingsInfo         `json:"materialLibrarySettings,omitempty"`
 	MiniToolbarSettings             *string                                `json:"miniToolbarSettings,omitempty"`
@@ -419,38 +419,6 @@ func (o *BTUserSettingsInfo) SetGraphicsSmoothEdge(v string) {
 	o.GraphicsSmoothEdge = &v
 }
 
-// GetHideAhaAppOnboarding returns the HideAhaAppOnboarding field value if set, zero value otherwise.
-func (o *BTUserSettingsInfo) GetHideAhaAppOnboarding() bool {
-	if o == nil || o.HideAhaAppOnboarding == nil {
-		var ret bool
-		return ret
-	}
-	return *o.HideAhaAppOnboarding
-}
-
-// GetHideAhaAppOnboardingOk returns a tuple with the HideAhaAppOnboarding field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTUserSettingsInfo) GetHideAhaAppOnboardingOk() (*bool, bool) {
-	if o == nil || o.HideAhaAppOnboarding == nil {
-		return nil, false
-	}
-	return o.HideAhaAppOnboarding, true
-}
-
-// HasHideAhaAppOnboarding returns a boolean if a field has been set.
-func (o *BTUserSettingsInfo) HasHideAhaAppOnboarding() bool {
-	if o != nil && o.HideAhaAppOnboarding != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetHideAhaAppOnboarding gets a reference to the given bool and assigns it to the HideAhaAppOnboarding field.
-func (o *BTUserSettingsInfo) SetHideAhaAppOnboarding(v bool) {
-	o.HideAhaAppOnboarding = &v
-}
-
 // GetHighlightLaminarEdges returns the HighlightLaminarEdges field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetHighlightLaminarEdges() string {
 	if o == nil || o.HighlightLaminarEdges == nil {
@@ -545,6 +513,38 @@ func (o *BTUserSettingsInfo) HasImportOptions() bool {
 // SetImportOptions gets a reference to the given string and assigns it to the ImportOptions field.
 func (o *BTUserSettingsInfo) SetImportOptions(v string) {
 	o.ImportOptions = &v
+}
+
+// GetIsolateHideTransparent returns the IsolateHideTransparent field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetIsolateHideTransparent() string {
+	if o == nil || o.IsolateHideTransparent == nil {
+		var ret string
+		return ret
+	}
+	return *o.IsolateHideTransparent
+}
+
+// GetIsolateHideTransparentOk returns a tuple with the IsolateHideTransparent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetIsolateHideTransparentOk() (*string, bool) {
+	if o == nil || o.IsolateHideTransparent == nil {
+		return nil, false
+	}
+	return o.IsolateHideTransparent, true
+}
+
+// HasIsolateHideTransparent returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasIsolateHideTransparent() bool {
+	if o != nil && o.IsolateHideTransparent != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsolateHideTransparent gets a reference to the given string and assigns it to the IsolateHideTransparent field.
+func (o *BTUserSettingsInfo) SetIsolateHideTransparent(v string) {
+	o.IsolateHideTransparent = &v
 }
 
 // GetLocale returns the Locale field value if set, zero value otherwise.
@@ -1126,9 +1126,6 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	if o.GraphicsSmoothEdge != nil {
 		toSerialize["graphicsSmoothEdge"] = o.GraphicsSmoothEdge
 	}
-	if o.HideAhaAppOnboarding != nil {
-		toSerialize["hideAhaAppOnboarding"] = o.HideAhaAppOnboarding
-	}
 	if o.HighlightLaminarEdges != nil {
 		toSerialize["highlightLaminarEdges"] = o.HighlightLaminarEdges
 	}
@@ -1137,6 +1134,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImportOptions != nil {
 		toSerialize["importOptions"] = o.ImportOptions
+	}
+	if o.IsolateHideTransparent != nil {
+		toSerialize["isolateHideTransparent"] = o.IsolateHideTransparent
 	}
 	if o.Locale != nil {
 		toSerialize["locale"] = o.Locale

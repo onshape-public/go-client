@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentId** | Pointer to **string** |  | [optional] 
+**ExportRuleFileName** | Pointer to **string** | The file name after evaluating a rule for the given &#x60;formatName&#x60;. &#x60;NULL&#x60; if &#x60;evaluateExportRule&#x3D;false&#x60; or if the export rule is not found. | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
@@ -62,6 +63,31 @@ SetDocumentId sets DocumentId field to given value.
 `func (o *BTTranslationRequestInfo) HasDocumentId() bool`
 
 HasDocumentId returns a boolean if a field has been set.
+
+### GetExportRuleFileName
+
+`func (o *BTTranslationRequestInfo) GetExportRuleFileName() string`
+
+GetExportRuleFileName returns the ExportRuleFileName field if non-nil, zero value otherwise.
+
+### GetExportRuleFileNameOk
+
+`func (o *BTTranslationRequestInfo) GetExportRuleFileNameOk() (*string, bool)`
+
+GetExportRuleFileNameOk returns a tuple with the ExportRuleFileName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExportRuleFileName
+
+`func (o *BTTranslationRequestInfo) SetExportRuleFileName(v string)`
+
+SetExportRuleFileName sets ExportRuleFileName field to given value.
+
+### HasExportRuleFileName
+
+`func (o *BTTranslationRequestInfo) HasExportRuleFileName() bool`
+
+HasExportRuleFileName returns a boolean if a field has been set.
 
 ### GetFailureReason
 

@@ -16,20 +16,21 @@ import (
 
 // BTMetadataPropertyInfo struct for BTMetadataPropertyInfo
 type BTMetadataPropertyInfo struct {
-	ComputedAssemblyProperty *bool                     `json:"computedAssemblyProperty,omitempty"`
-	ComputedProperty         *bool                     `json:"computedProperty,omitempty"`
-	ComputedPropertyError    *string                   `json:"computedPropertyError,omitempty"`
-	ComputedPropertyEvalInfo *string                   `json:"computedPropertyEvalInfo,omitempty"`
-	DateFormat               *string                   `json:"dateFormat,omitempty"`
-	DefaultValue             interface{}               `json:"defaultValue,omitempty"`
-	Dirty                    *bool                     `json:"dirty,omitempty"`
-	Editable                 *bool                     `json:"editable,omitempty"`
-	EditableInUi             *bool                     `json:"editableInUi,omitempty"`
-	EnumValues               []BTMetadataEnumValueInfo `json:"enumValues,omitempty"`
-	InitialValue             *map[string]interface{}   `json:"initialValue,omitempty"`
-	Multivalued              *bool                     `json:"multivalued,omitempty"`
-	Name                     *string                   `json:"name,omitempty"`
-	PropertyId               *string                   `json:"propertyId,omitempty"`
+	AggregationSkippedFilteredOutValues *bool                     `json:"aggregationSkippedFilteredOutValues,omitempty"`
+	ComputedAssemblyProperty            *bool                     `json:"computedAssemblyProperty,omitempty"`
+	ComputedProperty                    *bool                     `json:"computedProperty,omitempty"`
+	ComputedPropertyError               *string                   `json:"computedPropertyError,omitempty"`
+	ComputedPropertyEvalInfo            *string                   `json:"computedPropertyEvalInfo,omitempty"`
+	DateFormat                          *string                   `json:"dateFormat,omitempty"`
+	DefaultValue                        interface{}               `json:"defaultValue,omitempty"`
+	Dirty                               *bool                     `json:"dirty,omitempty"`
+	Editable                            *bool                     `json:"editable,omitempty"`
+	EditableInUi                        *bool                     `json:"editableInUi,omitempty"`
+	EnumValues                          []BTMetadataEnumValueInfo `json:"enumValues,omitempty"`
+	InitialValue                        *map[string]interface{}   `json:"initialValue,omitempty"`
+	Multivalued                         *bool                     `json:"multivalued,omitempty"`
+	Name                                *string                   `json:"name,omitempty"`
+	PropertyId                          *string                   `json:"propertyId,omitempty"`
 	// 0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden
 	PropertyOverrideStatus *int32                           `json:"propertyOverrideStatus,omitempty"`
 	PropertySource         *int32                           `json:"propertySource,omitempty"`
@@ -56,6 +57,38 @@ func NewBTMetadataPropertyInfo() *BTMetadataPropertyInfo {
 func NewBTMetadataPropertyInfoWithDefaults() *BTMetadataPropertyInfo {
 	this := BTMetadataPropertyInfo{}
 	return &this
+}
+
+// GetAggregationSkippedFilteredOutValues returns the AggregationSkippedFilteredOutValues field value if set, zero value otherwise.
+func (o *BTMetadataPropertyInfo) GetAggregationSkippedFilteredOutValues() bool {
+	if o == nil || o.AggregationSkippedFilteredOutValues == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AggregationSkippedFilteredOutValues
+}
+
+// GetAggregationSkippedFilteredOutValuesOk returns a tuple with the AggregationSkippedFilteredOutValues field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPropertyInfo) GetAggregationSkippedFilteredOutValuesOk() (*bool, bool) {
+	if o == nil || o.AggregationSkippedFilteredOutValues == nil {
+		return nil, false
+	}
+	return o.AggregationSkippedFilteredOutValues, true
+}
+
+// HasAggregationSkippedFilteredOutValues returns a boolean if a field has been set.
+func (o *BTMetadataPropertyInfo) HasAggregationSkippedFilteredOutValues() bool {
+	if o != nil && o.AggregationSkippedFilteredOutValues != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAggregationSkippedFilteredOutValues gets a reference to the given bool and assigns it to the AggregationSkippedFilteredOutValues field.
+func (o *BTMetadataPropertyInfo) SetAggregationSkippedFilteredOutValues(v bool) {
+	o.AggregationSkippedFilteredOutValues = &v
 }
 
 // GetComputedAssemblyProperty returns the ComputedAssemblyProperty field value if set, zero value otherwise.
@@ -766,6 +799,9 @@ func (o *BTMetadataPropertyInfo) SetValueType(v string) {
 
 func (o BTMetadataPropertyInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AggregationSkippedFilteredOutValues != nil {
+		toSerialize["aggregationSkippedFilteredOutValues"] = o.AggregationSkippedFilteredOutValues
+	}
 	if o.ComputedAssemblyProperty != nil {
 		toSerialize["computedAssemblyProperty"] = o.ComputedAssemblyProperty
 	}

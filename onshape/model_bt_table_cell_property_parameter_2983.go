@@ -16,15 +16,16 @@ import (
 
 // BTTableCellPropertyParameter2983 struct for BTTableCellPropertyParameter2983
 type BTTableCellPropertyParameter2983 struct {
-	BtType             *string                        `json:"btType,omitempty"`
-	IsEverVisible      *bool                          `json:"isEverVisible,omitempty"`
-	IsReadOnly         *bool                          `json:"isReadOnly,omitempty"`
-	Error              *string                        `json:"error,omitempty"`
-	OverrideSpec       *BTParameterSpec6              `json:"overrideSpec,omitempty"`
-	Parameter          *BTMParameter1                 `json:"parameter,omitempty"`
-	IsUnchanged        *bool                          `json:"isUnchanged,omitempty"`
-	OverrideStatusType *GBTMetadataOverrideStatusType `json:"overrideStatusType,omitempty"`
-	PropertySourceType *GBTMetadataSourceType         `json:"propertySourceType,omitempty"`
+	BtType                              *string                        `json:"btType,omitempty"`
+	IsEverVisible                       *bool                          `json:"isEverVisible,omitempty"`
+	IsReadOnly                          *bool                          `json:"isReadOnly,omitempty"`
+	Error                               *string                        `json:"error,omitempty"`
+	OverrideSpec                        *BTParameterSpec6              `json:"overrideSpec,omitempty"`
+	Parameter                           *BTMParameter1                 `json:"parameter,omitempty"`
+	AggregationSkippedFilteredOutValues *bool                          `json:"aggregationSkippedFilteredOutValues,omitempty"`
+	IsUnchanged                         *bool                          `json:"isUnchanged,omitempty"`
+	OverrideStatusType                  *GBTMetadataOverrideStatusType `json:"overrideStatusType,omitempty"`
+	PropertySourceType                  *GBTMetadataSourceType         `json:"propertySourceType,omitempty"`
 }
 
 // NewBTTableCellPropertyParameter2983 instantiates a new BTTableCellPropertyParameter2983 object
@@ -236,6 +237,38 @@ func (o *BTTableCellPropertyParameter2983) SetParameter(v BTMParameter1) {
 	o.Parameter = &v
 }
 
+// GetAggregationSkippedFilteredOutValues returns the AggregationSkippedFilteredOutValues field value if set, zero value otherwise.
+func (o *BTTableCellPropertyParameter2983) GetAggregationSkippedFilteredOutValues() bool {
+	if o == nil || o.AggregationSkippedFilteredOutValues == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AggregationSkippedFilteredOutValues
+}
+
+// GetAggregationSkippedFilteredOutValuesOk returns a tuple with the AggregationSkippedFilteredOutValues field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellPropertyParameter2983) GetAggregationSkippedFilteredOutValuesOk() (*bool, bool) {
+	if o == nil || o.AggregationSkippedFilteredOutValues == nil {
+		return nil, false
+	}
+	return o.AggregationSkippedFilteredOutValues, true
+}
+
+// HasAggregationSkippedFilteredOutValues returns a boolean if a field has been set.
+func (o *BTTableCellPropertyParameter2983) HasAggregationSkippedFilteredOutValues() bool {
+	if o != nil && o.AggregationSkippedFilteredOutValues != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAggregationSkippedFilteredOutValues gets a reference to the given bool and assigns it to the AggregationSkippedFilteredOutValues field.
+func (o *BTTableCellPropertyParameter2983) SetAggregationSkippedFilteredOutValues(v bool) {
+	o.AggregationSkippedFilteredOutValues = &v
+}
+
 // GetIsUnchanged returns the IsUnchanged field value if set, zero value otherwise.
 func (o *BTTableCellPropertyParameter2983) GetIsUnchanged() bool {
 	if o == nil || o.IsUnchanged == nil {
@@ -351,6 +384,9 @@ func (o BTTableCellPropertyParameter2983) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameter != nil {
 		toSerialize["parameter"] = o.Parameter
+	}
+	if o.AggregationSkippedFilteredOutValues != nil {
+		toSerialize["aggregationSkippedFilteredOutValues"] = o.AggregationSkippedFilteredOutValues
 	}
 	if o.IsUnchanged != nil {
 		toSerialize["isUnchanged"] = o.IsUnchanged

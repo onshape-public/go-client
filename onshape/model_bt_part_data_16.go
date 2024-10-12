@@ -27,6 +27,7 @@ type BTPartData16 struct {
 	CopyWithoutEntities                       *BTPartData16                    `json:"copyWithoutEntities,omitempty"`
 	EntityDIds                                []string                         `json:"entityDIds,omitempty"`
 	EntityDeterministicIds                    []string                         `json:"entityDeterministicIds,omitempty"`
+	FlattenedToUnflattenedEntitiesMapping     *map[string][]string             `json:"flattenedToUnflattenedEntitiesMapping,omitempty"`
 	FlattenedToUnflattenedMapping             *map[string]string               `json:"flattenedToUnflattenedMapping,omitempty"`
 	HighBoxCorner                             *BTVector3d389                   `json:"highBoxCorner,omitempty"`
 	IsACopyForTessellationSettings            *bool                            `json:"isACopyForTessellationSettings,omitempty"`
@@ -383,6 +384,38 @@ func (o *BTPartData16) HasEntityDeterministicIds() bool {
 // SetEntityDeterministicIds gets a reference to the given []string and assigns it to the EntityDeterministicIds field.
 func (o *BTPartData16) SetEntityDeterministicIds(v []string) {
 	o.EntityDeterministicIds = v
+}
+
+// GetFlattenedToUnflattenedEntitiesMapping returns the FlattenedToUnflattenedEntitiesMapping field value if set, zero value otherwise.
+func (o *BTPartData16) GetFlattenedToUnflattenedEntitiesMapping() map[string][]string {
+	if o == nil || o.FlattenedToUnflattenedEntitiesMapping == nil {
+		var ret map[string][]string
+		return ret
+	}
+	return *o.FlattenedToUnflattenedEntitiesMapping
+}
+
+// GetFlattenedToUnflattenedEntitiesMappingOk returns a tuple with the FlattenedToUnflattenedEntitiesMapping field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartData16) GetFlattenedToUnflattenedEntitiesMappingOk() (*map[string][]string, bool) {
+	if o == nil || o.FlattenedToUnflattenedEntitiesMapping == nil {
+		return nil, false
+	}
+	return o.FlattenedToUnflattenedEntitiesMapping, true
+}
+
+// HasFlattenedToUnflattenedEntitiesMapping returns a boolean if a field has been set.
+func (o *BTPartData16) HasFlattenedToUnflattenedEntitiesMapping() bool {
+	if o != nil && o.FlattenedToUnflattenedEntitiesMapping != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFlattenedToUnflattenedEntitiesMapping gets a reference to the given map[string][]string and assigns it to the FlattenedToUnflattenedEntitiesMapping field.
+func (o *BTPartData16) SetFlattenedToUnflattenedEntitiesMapping(v map[string][]string) {
+	o.FlattenedToUnflattenedEntitiesMapping = &v
 }
 
 // GetFlattenedToUnflattenedMapping returns the FlattenedToUnflattenedMapping field value if set, zero value otherwise.
@@ -1024,6 +1057,9 @@ func (o BTPartData16) MarshalJSON() ([]byte, error) {
 	}
 	if o.EntityDeterministicIds != nil {
 		toSerialize["entityDeterministicIds"] = o.EntityDeterministicIds
+	}
+	if o.FlattenedToUnflattenedEntitiesMapping != nil {
+		toSerialize["flattenedToUnflattenedEntitiesMapping"] = o.FlattenedToUnflattenedEntitiesMapping
 	}
 	if o.FlattenedToUnflattenedMapping != nil {
 		toSerialize["flattenedToUnflattenedMapping"] = o.FlattenedToUnflattenedMapping

@@ -6,14 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ExcludeIsEditable** | Pointer to **bool** |  | [optional] 
-**ExcludeIsOverridden** | Pointer to **bool** |  | [optional] 
 **ExclusionStatus** | Pointer to [**GBTBillOfMaterialsExclusionStatus**](GBTBillOfMaterialsExclusionStatus.md) |  | [optional] 
 **ExpansionStatus** | Pointer to [**GBTBillOfMaterialsExpansionStatus**](GBTBillOfMaterialsExpansionStatus.md) |  | [optional] 
 **IndentLevel** | Pointer to **int32** |  | [optional] 
+**IsSuppressed** | Pointer to **bool** |  | [optional] 
 **MetadataObjectType** | Pointer to **int32** |  | [optional] 
 **MetadataUpdateHref** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **RelatedOccurrencePaths** | Pointer to **[]string** |  | [optional] 
+**SuppressionStatus** | Pointer to [**GBTBillOfMaterialsSuppressionStatus**](GBTBillOfMaterialsSuppressionStatus.md) |  | [optional] 
 **UniqueItemId** | Pointer to [**BTBillOfMaterialsUniqueItemId2029**](BTBillOfMaterialsUniqueItemId2029.md) |  | [optional] 
 
 ## Methods
@@ -84,31 +85,6 @@ SetExcludeIsEditable sets ExcludeIsEditable field to given value.
 `func (o *BTBillOfMaterialsTableRow1425) HasExcludeIsEditable() bool`
 
 HasExcludeIsEditable returns a boolean if a field has been set.
-
-### GetExcludeIsOverridden
-
-`func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverridden() bool`
-
-GetExcludeIsOverridden returns the ExcludeIsOverridden field if non-nil, zero value otherwise.
-
-### GetExcludeIsOverriddenOk
-
-`func (o *BTBillOfMaterialsTableRow1425) GetExcludeIsOverriddenOk() (*bool, bool)`
-
-GetExcludeIsOverriddenOk returns a tuple with the ExcludeIsOverridden field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExcludeIsOverridden
-
-`func (o *BTBillOfMaterialsTableRow1425) SetExcludeIsOverridden(v bool)`
-
-SetExcludeIsOverridden sets ExcludeIsOverridden field to given value.
-
-### HasExcludeIsOverridden
-
-`func (o *BTBillOfMaterialsTableRow1425) HasExcludeIsOverridden() bool`
-
-HasExcludeIsOverridden returns a boolean if a field has been set.
 
 ### GetExclusionStatus
 
@@ -184,6 +160,31 @@ SetIndentLevel sets IndentLevel field to given value.
 `func (o *BTBillOfMaterialsTableRow1425) HasIndentLevel() bool`
 
 HasIndentLevel returns a boolean if a field has been set.
+
+### GetIsSuppressed
+
+`func (o *BTBillOfMaterialsTableRow1425) GetIsSuppressed() bool`
+
+GetIsSuppressed returns the IsSuppressed field if non-nil, zero value otherwise.
+
+### GetIsSuppressedOk
+
+`func (o *BTBillOfMaterialsTableRow1425) GetIsSuppressedOk() (*bool, bool)`
+
+GetIsSuppressedOk returns a tuple with the IsSuppressed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSuppressed
+
+`func (o *BTBillOfMaterialsTableRow1425) SetIsSuppressed(v bool)`
+
+SetIsSuppressed sets IsSuppressed field to given value.
+
+### HasIsSuppressed
+
+`func (o *BTBillOfMaterialsTableRow1425) HasIsSuppressed() bool`
+
+HasIsSuppressed returns a boolean if a field has been set.
 
 ### GetMetadataObjectType
 
@@ -284,6 +285,31 @@ SetRelatedOccurrencePaths sets RelatedOccurrencePaths field to given value.
 `func (o *BTBillOfMaterialsTableRow1425) HasRelatedOccurrencePaths() bool`
 
 HasRelatedOccurrencePaths returns a boolean if a field has been set.
+
+### GetSuppressionStatus
+
+`func (o *BTBillOfMaterialsTableRow1425) GetSuppressionStatus() GBTBillOfMaterialsSuppressionStatus`
+
+GetSuppressionStatus returns the SuppressionStatus field if non-nil, zero value otherwise.
+
+### GetSuppressionStatusOk
+
+`func (o *BTBillOfMaterialsTableRow1425) GetSuppressionStatusOk() (*GBTBillOfMaterialsSuppressionStatus, bool)`
+
+GetSuppressionStatusOk returns a tuple with the SuppressionStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressionStatus
+
+`func (o *BTBillOfMaterialsTableRow1425) SetSuppressionStatus(v GBTBillOfMaterialsSuppressionStatus)`
+
+SetSuppressionStatus sets SuppressionStatus field to given value.
+
+### HasSuppressionStatus
+
+`func (o *BTBillOfMaterialsTableRow1425) HasSuppressionStatus() bool`
+
+HasSuppressionStatus returns a boolean if a field has been set.
 
 ### GetUniqueItemId
 

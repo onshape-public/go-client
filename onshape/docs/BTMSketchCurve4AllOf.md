@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **CenterId** | Pointer to **string** |  | [optional] 
-**Geometry** | Pointer to [**BTCurveGeometry114**](BTCurveGeometry114.md) |  | [optional] 
 **InternalIds** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -77,31 +76,6 @@ SetCenterId sets CenterId field to given value.
 `func (o *BTMSketchCurve4AllOf) HasCenterId() bool`
 
 HasCenterId returns a boolean if a field has been set.
-
-### GetGeometry
-
-`func (o *BTMSketchCurve4AllOf) GetGeometry() BTCurveGeometry114`
-
-GetGeometry returns the Geometry field if non-nil, zero value otherwise.
-
-### GetGeometryOk
-
-`func (o *BTMSketchCurve4AllOf) GetGeometryOk() (*BTCurveGeometry114, bool)`
-
-GetGeometryOk returns a tuple with the Geometry field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGeometry
-
-`func (o *BTMSketchCurve4AllOf) SetGeometry(v BTCurveGeometry114)`
-
-SetGeometry sets Geometry field to given value.
-
-### HasGeometry
-
-`func (o *BTMSketchCurve4AllOf) HasGeometry() bool`
-
-HasGeometry returns a boolean if a field has been set.
 
 ### GetInternalIds
 

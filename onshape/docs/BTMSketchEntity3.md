@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
-**Geometry** | Pointer to **bool** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Index** | Pointer to **int32** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
@@ -106,31 +105,6 @@ SetEntityIdAndReplaceInDependentFields sets EntityIdAndReplaceInDependentFields 
 `func (o *BTMSketchEntity3) HasEntityIdAndReplaceInDependentFields() bool`
 
 HasEntityIdAndReplaceInDependentFields returns a boolean if a field has been set.
-
-### GetGeometry
-
-`func (o *BTMSketchEntity3) GetGeometry() bool`
-
-GetGeometry returns the Geometry field if non-nil, zero value otherwise.
-
-### GetGeometryOk
-
-`func (o *BTMSketchEntity3) GetGeometryOk() (*bool, bool)`
-
-GetGeometryOk returns a tuple with the Geometry field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGeometry
-
-`func (o *BTMSketchEntity3) SetGeometry(v bool)`
-
-SetGeometry sets Geometry field to given value.
-
-### HasGeometry
-
-`func (o *BTMSketchEntity3) HasGeometry() bool`
-
-HasGeometry returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 

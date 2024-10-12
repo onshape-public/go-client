@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**AggregationSkippedFilteredOutValues** | Pointer to **bool** |  | [optional] 
 **IsUnchanged** | Pointer to **bool** |  | [optional] 
 **OverrideStatusType** | Pointer to [**GBTMetadataOverrideStatusType**](GBTMetadataOverrideStatusType.md) |  | [optional] 
 **PropertySourceType** | Pointer to [**GBTMetadataSourceType**](GBTMetadataSourceType.md) |  | [optional] 
@@ -52,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTTableCellPropertyParameter2983) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAggregationSkippedFilteredOutValues
+
+`func (o *BTTableCellPropertyParameter2983) GetAggregationSkippedFilteredOutValues() bool`
+
+GetAggregationSkippedFilteredOutValues returns the AggregationSkippedFilteredOutValues field if non-nil, zero value otherwise.
+
+### GetAggregationSkippedFilteredOutValuesOk
+
+`func (o *BTTableCellPropertyParameter2983) GetAggregationSkippedFilteredOutValuesOk() (*bool, bool)`
+
+GetAggregationSkippedFilteredOutValuesOk returns a tuple with the AggregationSkippedFilteredOutValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAggregationSkippedFilteredOutValues
+
+`func (o *BTTableCellPropertyParameter2983) SetAggregationSkippedFilteredOutValues(v bool)`
+
+SetAggregationSkippedFilteredOutValues sets AggregationSkippedFilteredOutValues field to given value.
+
+### HasAggregationSkippedFilteredOutValues
+
+`func (o *BTTableCellPropertyParameter2983) HasAggregationSkippedFilteredOutValues() bool`
+
+HasAggregationSkippedFilteredOutValues returns a boolean if a field has been set.
 
 ### GetIsUnchanged
 

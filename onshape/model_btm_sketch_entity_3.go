@@ -332,56 +332,6 @@ func (o *BTMSketchEntity3) SetEntityIdAndReplaceInDependentFields(v string) {
 	o.GetActualInstance().(getResult).SetEntityIdAndReplaceInDependentFields(v)
 }
 
-// GetGeometry returns the Geometry field value if set, zero value otherwise.
-func (o *BTMSketchEntity3) GetGeometry() bool {
-	type getResult interface {
-		GetGeometry() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeometry()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchEntity3) GetGeometryOk() (*bool, bool) {
-	type getResult interface {
-		GetGeometryOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeometryOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasGeometry returns a boolean if a field has been set.
-func (o *BTMSketchEntity3) HasGeometry() bool {
-	type getResult interface {
-		HasGeometry() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasGeometry()
-	} else {
-		return false
-	}
-}
-
-// SetGeometry gets a reference to the given bool and assigns it to the Geometry field.
-func (o *BTMSketchEntity3) SetGeometry(v bool) {
-	type getResult interface {
-		SetGeometry(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetGeometry(v)
-}
-
 // GetIndex returns the Index field value if set, zero value otherwise.
 func (o *BTMSketchEntity3) GetIndex() int32 {
 	type getResult interface {
@@ -740,7 +690,6 @@ type base_BTMSketchEntity3 struct {
 	NodeId                              *string         `json:"nodeId,omitempty"`
 	EntityId                            *string         `json:"entityId,omitempty"`
 	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Geometry                            *bool           `json:"geometry,omitempty"`
 	Index                               *int32          `json:"index,omitempty"`
 	Namespace                           *string         `json:"namespace,omitempty"`
 	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
@@ -923,38 +872,6 @@ func (o *base_BTMSketchEntity3) SetEntityIdAndReplaceInDependentFields(v string)
 	o.EntityIdAndReplaceInDependentFields = &v
 }
 
-// GetGeometry returns the Geometry field value if set, zero value otherwise.
-func (o *base_BTMSketchEntity3) GetGeometry() bool {
-	if o == nil || o.Geometry == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Geometry
-}
-
-// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchEntity3) GetGeometryOk() (*bool, bool) {
-	if o == nil || o.Geometry == nil {
-		return nil, false
-	}
-	return o.Geometry, true
-}
-
-// HasGeometry returns a boolean if a field has been set.
-func (o *base_BTMSketchEntity3) HasGeometry() bool {
-	if o != nil && o.Geometry != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGeometry gets a reference to the given bool and assigns it to the Geometry field.
-func (o *base_BTMSketchEntity3) SetGeometry(v bool) {
-	o.Geometry = &v
-}
-
 // GetIndex returns the Index field value if set, zero value otherwise.
 func (o *base_BTMSketchEntity3) GetIndex() int32 {
 	if o == nil || o.Index == nil {
@@ -1067,9 +984,6 @@ func (o base_BTMSketchEntity3) MarshalJSON() ([]byte, error) {
 	}
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
-	}
-	if o.Geometry != nil {
-		toSerialize["geometry"] = o.Geometry
 	}
 	if o.Index != nil {
 		toSerialize["index"] = o.Index
