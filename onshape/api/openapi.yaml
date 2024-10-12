@@ -21,7 +21,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.187.44217-ad636413530f
+  version: 1.188.44393-3a7ece710077
   x-logo:
     url: images/logo-onshape-gray-green.svg
     backgroundColor: '#ffffff'
@@ -72,8 +72,6 @@ tags:
 - description: Access and manage Elements. Every Element in an Onshape document is
     represented by a tab.
   name: Element
-- description: Fire events.
-  name: Event
 - description: Access valid export rules.
   name: ExportRule
 - description: Access and manage Feature Studio Elements.
@@ -2433,10 +2431,8 @@ paths:
       security:
       - OAuth2:
         - OAuth2Write
-        - OAuth2Read
         BasicAuth:
         - OAuth2Write
-        - OAuth2Read
       summary: Creates a reference to an app element.
       tags:
       - AppElement
@@ -2658,10 +2654,8 @@ paths:
       security:
       - OAuth2:
         - OAuth2Write
-        - OAuth2Read
         BasicAuth:
         - OAuth2Write
-        - OAuth2Read
       summary: Update an app element reference.
       tags:
       - AppElement
@@ -2759,6 +2753,130 @@ paths:
             application/json;charset=UTF-8; qs=0.09:
               schema:
                 $ref: '#/components/schemas/BTAppElementReferencesResolveInfo'
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Resolves bulk app element references.
+      tags:
+      - AppElement
+      x-BTVisibility: PRODUCTION
+  /appelements/d/{did}/{wvm}/{wvmid}/resolvereferences:
+    get:
+      deprecated: false
+      description: Resolve all references for all workspace elements. For bulk operations  only.
+        Use `resolveReferences` for a single element.
+      operationId: resolveAllElementReferences
+      parameters:
+      - description: The id of the document in which to perform the operation.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The id of the document through which the above document should\
+          \ be accessed; only applicable when accessing a version of the document.\
+          \ This allows a user who has access to document a to see data from document\
+          \ b, as long as document b has been linked to document a by a user who has\
+          \ permission to both."
+        explode: true
+        in: query
+        name: linkDocumentId
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: "Indicates which of workspace (w), version (v), or document microversion\
+          \ (m) id is specified below."
+        explode: false
+        in: path
+        name: wvm
+        required: true
+        schema:
+          enum:
+          - w
+          - v
+          - m
+          type: string
+        style: simple
+      - description: "The id of the workspace, version or document microversion in\
+          \ which the operation should be performed."
+        explode: false
+        in: path
+        name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The id of the transaction in which this operation should take
+          place. Transaction ids can be generated through the AppElement startTransaction
+          API.
+        explode: true
+        in: query
+        name: transactionId
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The id of the last change made to this application element. This
+          can be retrieved from the response for any app element modification endpoint.
+        explode: true
+        in: query
+        name: parentChangeId
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Whether to include references that have been deleted or inactivated.
+        explode: true
+        in: query
+        name: includeInternal
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - description: Comma separated string of reference ids find.
+        explode: true
+        in: query
+        name: referenceIds
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: Comma separated string of element ids to search for references
+          in.
+        explode: true
+        in: query
+        name: elementIds
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - description: Whether to find references for only Onshape drawing app elements.
+        explode: true
+        in: query
+        name: drawingsOnly
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                additionalProperties:
+                  $ref: '#/components/schemas/BTAppElementReferencesResolveInfo'
+                type: object
           description: default response
       security:
       - OAuth2:
@@ -13141,7 +13259,8 @@ paths:
         schema:
           type: string
         style: form
-      - explode: true
+      - description: '`holeTable | cutlistTable`'
+        explode: true
         in: query
         name: tableType
         required: true
@@ -21656,6 +21775,7 @@ components:
         - sketchIds
         targetDocumentId: targetDocumentId
         revision: revision
+        sourceElementId: sourceElementId
         latestElementMicroversionId: latestElementMicroversionId
         targetElementId: targetElementId
         errorValue: null
@@ -21709,6 +21829,8 @@ components:
           items:
             type: string
           type: array
+        sourceElementId:
+          type: string
         targetConfiguration:
           type: string
         targetDocumentId:
@@ -21751,6 +21873,7 @@ components:
           - sketchIds
           targetDocumentId: targetDocumentId
           revision: revision
+          sourceElementId: sourceElementId
           latestElementMicroversionId: latestElementMicroversionId
           targetElementId: targetElementId
           errorValue: null
@@ -21779,6 +21902,7 @@ components:
           - sketchIds
           targetDocumentId: targetDocumentId
           revision: revision
+          sourceElementId: sourceElementId
           latestElementMicroversionId: latestElementMicroversionId
           targetElementId: targetElementId
           errorValue: null
@@ -23753,7 +23877,6 @@ components:
         sheetMetalFlat: true
         elementIds: elementIds
         passwordRequired: true
-        excludeSuppressedEntities: true
         destinationName: destinationName
         includeExportIds: true
         cloudObjectId: cloudObjectId
@@ -23819,10 +23942,6 @@ components:
         excludeHiddenEntities:
           description: "If `true`, the exported file won't have any parts and assemblies\
             \ marked as hidden"
-          type: boolean
-        excludeSuppressedEntities:
-          description: "If `true`, the exported file won't have any parts and assemblies\
-            \ marked as suppressed"
           type: boolean
         featureIds:
           type: string
@@ -26880,93 +26999,6 @@ components:
         type:
           $ref: '#/components/schemas/GBTCurveTypeEnum'
       type: object
-    BTCurveGeometry-114:
-      discriminator:
-        mapping:
-          BTCurveGeometryCircle-115: '#/components/schemas/BTCurveGeometryCircle-115'
-          BTCurveGeometryConic-2284: '#/components/schemas/BTCurveGeometryConic-2284'
-          BTCurveGeometryInterpolatedSpline-116: '#/components/schemas/BTCurveGeometryInterpolatedSpline-116'
-          BTCurveGeometryLine-117: '#/components/schemas/BTCurveGeometryLine-117'
-          BTCurveGeometrySpline-118: '#/components/schemas/BTCurveGeometrySpline-118'
-        propertyName: btType
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-        entityType:
-          $ref: '#/components/schemas/GBTSketchEntityType'
-      type: object
-    BTCurveGeometryCircle-115:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveGeometry-114'
-      - $ref: '#/components/schemas/BTCurveGeometryCircle_115_allOf'
-      discriminator:
-        mapping:
-          BTCurveGeometryEllipse-1189: '#/components/schemas/BTCurveGeometryEllipse-1189'
-        propertyName: btType
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-      type: object
-    BTCurveGeometryConic-2284:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveGeometry-114'
-      - $ref: '#/components/schemas/BTCurveGeometryConic_2284_allOf'
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-      type: object
-    BTCurveGeometryControlPointSpline-2197:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveGeometrySpline-118'
-      - $ref: '#/components/schemas/BTCurveGeometryControlPointSpline_2197_allOf'
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-      type: object
-    BTCurveGeometryEllipse-1189:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveGeometryCircle-115'
-      - $ref: '#/components/schemas/BTCurveGeometryEllipse_1189_allOf'
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-      type: object
-    BTCurveGeometryInterpolatedSpline-116:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveGeometry-114'
-      - $ref: '#/components/schemas/BTCurveGeometryInterpolatedSpline_116_allOf'
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-      type: object
-    BTCurveGeometryLine-117:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveGeometry-114'
-      - $ref: '#/components/schemas/BTCurveGeometryLine_117_allOf'
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-      type: object
-    BTCurveGeometrySpline-118:
-      allOf:
-      - $ref: '#/components/schemas/BTCurveGeometry-114'
-      - $ref: '#/components/schemas/BTCurveGeometrySpline_118_allOf'
-      discriminator:
-        mapping:
-          BTCurveGeometryControlPointSpline-2197: '#/components/schemas/BTCurveGeometryControlPointSpline-2197'
-        propertyName: btType
-      properties:
-        btType:
-          description: Type of JSON object.
-          type: string
-      type: object
     BTCurveLengthDimensionDisplayData-322:
       allOf:
       - $ref: '#/components/schemas/BTDimensionDisplayData-323'
@@ -27097,6 +27129,15 @@ components:
           items:
             $ref: '#/components/schemas/BTDefaultUnitInfo'
           type: array
+      type: object
+    BTDerivedAssemblyMirror-4204:
+      allOf:
+      - $ref: '#/components/schemas/BTParametricInstance-2641'
+      - $ref: '#/components/schemas/BTDerivedAssemblyMirror_4204_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
       type: object
     BTDeviceLoginSecretInfo:
       properties:
@@ -33405,6 +33446,10 @@ components:
                 z: 9.301444243932576
               userTessellationSetting: null
               bestAvailableTessellationSetting: null
+              flattenedToUnflattenedEntitiesMapping:
+                key:
+                - flattenedToUnflattenedEntitiesMapping
+                - flattenedToUnflattenedEntitiesMapping
               isFlattenedSheetMetalBody: true
           partIdAndTessellationSettingToBuffers:
             key:
@@ -37442,19 +37487,46 @@ components:
           description: Type of JSON object.
           type: string
       type: object
-    BTInvisibleEntitiesExportFilter-2537:
-      example:
-        btType: btType
-        excludeSuppressed: true
-        excludeHidden: true
+    BTInstanceWithReference:
       properties:
-        btType:
-          description: Type of JSON object.
+        configuration:
+          items:
+            $ref: '#/components/schemas/BTMParameter-1'
+          type: array
+        customData:
+          additionalProperties:
+            $ref: '#/components/schemas/BTReferenceCustomData-1551'
+          type: object
+        documentId:
           type: string
-        excludeHidden:
+        elementId:
+          type: string
+        elementReference:
+          $ref: '#/components/schemas/BTElementReference-725'
+        externalDocumentWithVersion:
+          $ref: '#/components/schemas/BTDocumentWithVersionId'
+        externalDocumentWithVersionAndElementId:
+          $ref: '#/components/schemas/BTDocumentWithVersionAndElementId'
+        locked:
           type: boolean
-        excludeSuppressed:
+        lockedState:
+          $ref: '#/components/schemas/BTInstanceWithReference'
+        microversionId:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+        nodeId:
+          type: string
+        referenceParameter:
+          $ref: '#/components/schemas/BTMParameterReferenceWithConfiguration-3028'
+        standardContent:
           type: boolean
+        standardContentParametersId:
+          type: string
+        validRevisionReference:
+          type: boolean
+        versionId:
+          type: string
+        versionIdIfExternal:
+          type: string
       type: object
     BTJEdit-3734:
       description: An edit that will be applied to the application element's json
@@ -39561,6 +39633,7 @@ components:
           - resultElementIds
           - resultElementIds
           documentId: documentId
+          exportRuleFileName: exportRuleFileName
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
@@ -39579,6 +39652,7 @@ components:
           - resultElementIds
           - resultElementIds
           documentId: documentId
+          exportRuleFileName: exportRuleFileName
           href: https://openapi-generator.tech
           id: id
           viewRef: https://openapi-generator.tech
@@ -40383,6 +40457,7 @@ components:
           BTMAssemblyMirrorFeature-3037: '#/components/schemas/BTMAssemblyMirrorFeature-3037'
           BTMAssemblyPatternFeature-2241: '#/components/schemas/BTMAssemblyPatternFeature-2241'
           BTMAssemblyReplicateFeature-1351: '#/components/schemas/BTMAssemblyReplicateFeature-1351'
+          BTMDerivedAssemblyMirrorFeature-5094: '#/components/schemas/BTMDerivedAssemblyMirrorFeature-5094'
           BTMGenerativeDesignFeature-3195: '#/components/schemas/BTMGenerativeDesignFeature-3195'
           BTMGeometryMate-1260: '#/components/schemas/BTMGeometryMate-1260'
           BTMLoad-3538: '#/components/schemas/BTMLoad-3538'
@@ -40734,6 +40809,76 @@ components:
         btType:
           description: Type of JSON object.
           type: string
+      type: object
+    BTMDerivedAssemblyMirrorFeature-5094:
+      properties:
+        auxiliaryTreeFeature:
+          type: boolean
+        btType:
+          description: Type of JSON object.
+          type: string
+        featureFolder:
+          type: boolean
+        featureId:
+          description: Unique ID of the feature instance within this Part Studio.
+          type: string
+        featureListFieldIndex:
+          format: int32
+          type: integer
+        featureType:
+          description: The name of the feature spec that this feature instantiates.
+          type: string
+        fieldIndexForOwnedMateConnectors:
+          format: int32
+          type: integer
+        importMicroversion:
+          description: Element microversion that is being imported.
+          type: string
+          writeOnly: true
+        name:
+          description: User-visible name of the feature.
+          type: string
+        namespace:
+          description: Indicates where the feature definition lives. Features in the
+            FeatureScript standard library have a namespace value of `""`. Custom
+            features identify the Feature Studio that contains the definition.
+          type: string
+        nodeId:
+          description: ID for the feature node.
+          type: string
+        occurrenceQueriesFromAllConfigurations:
+          items:
+            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
+          type: array
+        parametricInstanceFeature:
+          type: boolean
+        referenceParameter:
+          $ref: '#/components/schemas/BTMParameterReferenceWithConfiguration-3028'
+        returnAfterSubfeatures:
+          description: For internal use only. Should always be `false`.
+          type: boolean
+        subFeatures:
+          description: List of subfeatures belonging to the feature.
+          items:
+            $ref: '#/components/schemas/BTMFeature-134'
+          type: array
+        subFeaturesNotUsedInQuery:
+          items:
+            $ref: '#/components/schemas/BTMFeature-134'
+          type: array
+        suppressed:
+          description: "If `true`, the feature is suppressed. It will skip regeneration,\
+            \ denoted by a line through the name in the Feature list."
+          type: boolean
+        suppressionConfigured:
+          description: '`true` if the suppression is configured in the Part Studio.'
+          type: boolean
+        variableStudioReference:
+          description: "If `true`, the feature references a Variable Studio."
+          type: boolean
+        version:
+          format: int32
+          type: integer
       type: object
     BTMEnumOption-592:
       allOf:
@@ -42581,6 +42726,7 @@ components:
           schemaId: schemaId
           valueType: valueType
           name: name
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           propertyId: propertyId
           value: ""
@@ -42620,6 +42766,7 @@ components:
           schemaId: schemaId
           valueType: valueType
           name: name
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           propertyId: propertyId
           value: ""
@@ -42742,6 +42889,7 @@ components:
         schemaId: schemaId
         valueType: valueType
         name: name
+        aggregationSkippedFilteredOutValues: true
         initialValue: "{}"
         propertyId: propertyId
         value: ""
@@ -42754,6 +42902,8 @@ components:
           state: 0
           value: value
       properties:
+        aggregationSkippedFilteredOutValues:
+          type: boolean
         computedAssemblyProperty:
           type: boolean
         computedProperty:
@@ -45729,6 +45879,7 @@ components:
           BTAssemblyMirror-2996: '#/components/schemas/BTAssemblyMirror-2996'
           BTAssemblyPattern-1974: '#/components/schemas/BTAssemblyPattern-1974'
           BTAssemblyReplicate-2774: '#/components/schemas/BTAssemblyReplicate-2774'
+          BTDerivedAssemblyMirror-4204: '#/components/schemas/BTDerivedAssemblyMirror-4204'
           BTParametricPartStudioInstance-4374: '#/components/schemas/BTParametricPartStudioInstance-4374'
         propertyName: btType
       properties:
@@ -45881,6 +46032,10 @@ components:
           z: 9.301444243932576
         userTessellationSetting: null
         bestAvailableTessellationSetting: null
+        flattenedToUnflattenedEntitiesMapping:
+          key:
+          - flattenedToUnflattenedEntitiesMapping
+          - flattenedToUnflattenedEntitiesMapping
         isFlattenedSheetMetalBody: true
       properties:
         bestAvailableTessellationSetting:
@@ -45913,6 +46068,12 @@ components:
           items:
             type: string
           type: array
+        flattenedToUnflattenedEntitiesMapping:
+          additionalProperties:
+            items:
+              type: string
+            type: array
+          type: object
         flattenedToUnflattenedMapping:
           additionalProperties:
             type: string
@@ -48343,6 +48504,10 @@ components:
               z: 9.301444243932576
             userTessellationSetting: null
             bestAvailableTessellationSetting: null
+            flattenedToUnflattenedEntitiesMapping:
+              key:
+              - flattenedToUnflattenedEntitiesMapping
+              - flattenedToUnflattenedEntitiesMapping
             isFlattenedSheetMetalBody: true
         partIdAndTessellationSettingToBuffers:
           key:
@@ -50480,6 +50645,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -50519,6 +50685,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -50616,6 +50783,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -50655,6 +50823,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -50691,6 +50860,7 @@ components:
           uiHints:
             multiline: true
           valueType: valueType
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           isApproverProperty: true
           propertyId: propertyId
@@ -50780,6 +50950,7 @@ components:
           uiHints:
             multiline: true
           valueType: valueType
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           isApproverProperty: true
           propertyId: propertyId
@@ -51029,6 +51200,7 @@ components:
           schemaId: schemaId
           valueType: valueType
           name: name
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           propertyId: propertyId
           value: ""
@@ -51068,6 +51240,7 @@ components:
           schemaId: schemaId
           valueType: valueType
           name: name
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           propertyId: propertyId
           value: ""
@@ -54155,6 +54328,7 @@ components:
             uiHints:
               multiline: true
             valueType: valueType
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             isApproverProperty: true
             propertyId: propertyId
@@ -54244,6 +54418,7 @@ components:
             uiHints:
               multiline: true
             valueType: valueType
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             isApproverProperty: true
             propertyId: propertyId
@@ -54347,6 +54522,7 @@ components:
           schemaId: schemaId
           valueType: valueType
           name: name
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           propertyId: propertyId
           value: ""
@@ -54386,6 +54562,7 @@ components:
           schemaId: schemaId
           valueType: valueType
           name: name
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           propertyId: propertyId
           value: ""
@@ -55246,6 +55423,7 @@ components:
               uiHints:
                 multiline: true
               valueType: valueType
+              aggregationSkippedFilteredOutValues: true
               initialValue: "{}"
               isApproverProperty: true
               propertyId: propertyId
@@ -55335,6 +55513,7 @@ components:
               uiHints:
                 multiline: true
               valueType: valueType
+              aggregationSkippedFilteredOutValues: true
               initialValue: "{}"
               isApproverProperty: true
               propertyId: propertyId
@@ -55438,6 +55617,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -55477,6 +55657,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -56061,6 +56242,7 @@ components:
               uiHints:
                 multiline: true
               valueType: valueType
+              aggregationSkippedFilteredOutValues: true
               initialValue: "{}"
               isApproverProperty: true
               propertyId: propertyId
@@ -56150,6 +56332,7 @@ components:
               uiHints:
                 multiline: true
               valueType: valueType
+              aggregationSkippedFilteredOutValues: true
               initialValue: "{}"
               isApproverProperty: true
               propertyId: propertyId
@@ -56253,6 +56436,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -56292,6 +56476,7 @@ components:
             schemaId: schemaId
             valueType: valueType
             name: name
+            aggregationSkippedFilteredOutValues: true
             initialValue: "{}"
             propertyId: propertyId
             value: ""
@@ -56933,6 +57118,7 @@ components:
         proxyWorkspaceVersionId: proxyWorkspaceVersionId
         onePartPerDoc: true
         useGltfCompression: true
+        excludeHiddenEntities: true
         triggerAutoDownload: true
         elementId: elementId
         imageWidth: 1
@@ -56983,10 +57169,6 @@ components:
           skipPartialMesh: true
         cloudObjectId: cloudObjectId
         colorMethod: colorMethod
-        invisibleEntitiesExportFilter:
-          btType: btType
-          excludeSuppressed: true
-          excludeHidden: true
         proxyWorkspaceVersion: proxyWorkspaceVersion
         currentSheetOnly: true
         occurrencesToExport: occurrencesToExport
@@ -57012,6 +57194,7 @@ components:
         partIds: partIds
         blobMicroversionId: blobMicroversionId
         sourceName: sourceName
+        evaluateExportRule: false
         showOverriddenDimensions: true
         splinesAsPolylines: true
       properties:
@@ -57069,6 +57252,13 @@ components:
           items:
             type: string
           type: array
+        evaluateExportRule:
+          default: false
+          description: Set to `true` to evaluate the export rule for the given `formatName`
+            and to include an `exportRuleFileName` value in the response.
+          type: boolean
+        excludeHiddenEntities:
+          type: boolean
         extractAssemblyHierarchy:
           type: boolean
         flatten:
@@ -57106,8 +57296,6 @@ components:
           type: boolean
         includeExportIds:
           type: boolean
-        invisibleEntitiesExportFilter:
-          $ref: '#/components/schemas/BTInvisibleEntitiesExportFilter-2537'
         joinAdjacentSurfaces:
           type: boolean
         level:
@@ -57239,12 +57427,17 @@ components:
         - resultElementIds
         - resultElementIds
         documentId: documentId
+        exportRuleFileName: exportRuleFileName
         href: https://openapi-generator.tech
         id: id
         viewRef: https://openapi-generator.tech
         workspaceId: workspaceId
       properties:
         documentId:
+          type: string
+        exportRuleFileName:
+          description: The file name after evaluating a rule for the given `formatName`.
+            `NULL` if `evaluateExportRule=false` or if the export rule is not found.
           type: string
         failureReason:
           type: string
@@ -58299,6 +58492,7 @@ components:
         use24HourTime: true
         graphicsSmoothEdge: graphicsSmoothEdge
         useDecimalComma: true
+        isolateHideTransparent: isolateHideTransparent
         exportDrawingOptions: exportDrawingOptions
         materialLibrarySettings:
           companyLibraries:
@@ -58355,7 +58549,6 @@ components:
           quantityTypeToBaseUnits:
             key:
               key: 0
-        hideAhaAppOnboarding: true
         miniToolbarSettings: miniToolbarSettings
         mouseActions: mouseActions
         viewMappingId: 9
@@ -58385,13 +58578,13 @@ components:
           type: string
         graphicsSmoothEdge:
           type: string
-        hideAhaAppOnboarding:
-          type: boolean
         highlightLaminarEdges:
           type: string
         id:
           type: string
         importOptions:
+          type: string
+        isolateHideTransparent:
           type: string
         locale:
           type: string
@@ -58438,6 +58631,8 @@ components:
           format: int32
           type: integer
       type: object
+      x-BTVisibility-properties:
+        hideAhaAppOnboarding: INTERNAL
     BTUserState:
       enum:
       - DELETED
@@ -59819,6 +60014,7 @@ components:
         uiHints:
           multiline: true
         valueType: valueType
+        aggregationSkippedFilteredOutValues: true
         initialValue: "{}"
         isApproverProperty: true
         propertyId: propertyId
@@ -59886,6 +60082,8 @@ components:
           associatedStates: associatedStates
           objectId: objectId
       properties:
+        aggregationSkippedFilteredOutValues:
+          type: boolean
         computedAssemblyProperty:
           type: boolean
         computedProperty:
@@ -60210,6 +60408,7 @@ components:
           uiHints:
             multiline: true
           valueType: valueType
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           isApproverProperty: true
           propertyId: propertyId
@@ -60299,6 +60498,7 @@ components:
           uiHints:
             multiline: true
           valueType: valueType
+          aggregationSkippedFilteredOutValues: true
           initialValue: "{}"
           isApproverProperty: true
           propertyId: propertyId
@@ -71318,6 +71518,13 @@ components:
       - COLLAPSED
       - UNKNOWN
       type: string
+    GBTBillOfMaterialsSuppressionStatus:
+      enum:
+      - UNSET
+      - SUPPRESSED
+      - UNSUPPRESSED
+      - UNKNOWN
+      type: string
     GBTBodyType:
       enum:
       - SOLID
@@ -73087,6 +73294,13 @@ components:
       - ASSEMBLY_PATTERN_WRONG_REFERENCE_WAS_SELECTED
       - ASSEMBLY_PATTERN_REFERENCE_COULD_NOT_BE_FOUND
       - DERIVED_NO_ACTIVE_SM_COMPOSITE
+      - PARTIAL_FILLET_INVALID_BOUND_ENTITY
+      - FGS_THICKNESS_UNCLOSED_INPUT
+      - FGS_THICKNESS_INTERNAL_ERROR
+      - SKETCH_SPLIT_NO_BEZIER
+      - SKETCH_TRIM_NO_BEZIER
+      - EXPORT_NO_PARTS
+      - PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG
       - UNKNOWN
       type: string
     GBTFeatureFilterExclusion:
@@ -104995,8 +105209,6 @@ components:
           type: string
         excludeIsEditable:
           type: boolean
-        excludeIsOverridden:
-          type: boolean
         exclusionStatus:
           $ref: '#/components/schemas/GBTBillOfMaterialsExclusionStatus'
         expansionStatus:
@@ -105004,6 +105216,8 @@ components:
         indentLevel:
           format: int32
           type: integer
+        isSuppressed:
+          type: boolean
         metadataObjectType:
           format: int32
           type: integer
@@ -105015,6 +105229,8 @@ components:
           items:
             type: string
           type: array
+        suppressionStatus:
+          $ref: '#/components/schemas/GBTBillOfMaterialsSuppressionStatus'
         uniqueItemId:
           $ref: '#/components/schemas/BTBillOfMaterialsUniqueItemId-2029'
       type: object
@@ -105240,148 +105456,6 @@ components:
           type: number
       type: object
       example: null
-    BTCurveGeometryCircle_115_allOf:
-      properties:
-        btType:
-          type: string
-        clockwise:
-          type: boolean
-        radius:
-          format: double
-          type: number
-        xcenter:
-          format: double
-          type: number
-        xdir:
-          format: double
-          type: number
-        ycenter:
-          format: double
-          type: number
-        ydir:
-          format: double
-          type: number
-      type: object
-      example: null
-    BTCurveGeometryConic_2284_allOf:
-      properties:
-        btType:
-          type: string
-        points:
-          items:
-            format: double
-            type: number
-          type: array
-        rho:
-          format: double
-          type: number
-      type: object
-      example: null
-    BTCurveGeometryControlPointSpline_2197_allOf:
-      properties:
-        btType:
-          type: string
-        isBezier:
-          type: boolean
-      type: object
-      example: null
-    BTCurveGeometryEllipse_1189_allOf:
-      properties:
-        btType:
-          type: string
-        minorRadius:
-          format: double
-          type: number
-      type: object
-      example: null
-    BTCurveGeometryInterpolatedSpline_116_allOf:
-      properties:
-        btType:
-          type: string
-        derivatives:
-          additionalProperties:
-            items:
-              format: double
-              type: number
-            type: array
-          type: object
-        endDerivativeX:
-          format: double
-          type: number
-        endDerivativeY:
-          format: double
-          type: number
-        endHandleX:
-          format: double
-          type: number
-        endHandleY:
-          format: double
-          type: number
-        interpolationPoints:
-          items:
-            format: double
-            type: number
-          type: array
-        isPeriodic:
-          type: boolean
-        startDerivativeX:
-          format: double
-          type: number
-        startDerivativeY:
-          format: double
-          type: number
-        startHandleX:
-          format: double
-          type: number
-        startHandleY:
-          format: double
-          type: number
-      type: object
-      example: null
-    BTCurveGeometryLine_117_allOf:
-      properties:
-        btType:
-          type: string
-        dirX:
-          format: double
-          type: number
-        dirY:
-          format: double
-          type: number
-        pntX:
-          format: double
-          type: number
-        pntY:
-          format: double
-          type: number
-      type: object
-      example: null
-    BTCurveGeometrySpline_118_allOf:
-      properties:
-        btType:
-          type: string
-        controlPointCount:
-          format: int32
-          type: integer
-        controlPoints:
-          items:
-            format: double
-            type: number
-          type: array
-        degree:
-          format: int32
-          type: integer
-        isPeriodic:
-          type: boolean
-        isRational:
-          type: boolean
-        knots:
-          items:
-            format: double
-            type: number
-          type: array
-      type: object
-      example: null
     BTCurveLengthDimensionDisplayData_322_allOf:
       properties:
         btType:
@@ -105442,6 +105516,38 @@ components:
           $ref: '#/components/schemas/GBTDebugEntityStyle'
         tessellation:
           $ref: '#/components/schemas/BTTessellatedGeometry-2576'
+      type: object
+      example: null
+    BTDerivedAssemblyMirror_4204_allOf:
+      properties:
+        btType:
+          type: string
+        configuration:
+          items:
+            $ref: '#/components/schemas/BTMParameter-1'
+          type: array
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementReference:
+          $ref: '#/components/schemas/BTElementReference-725'
+        externalDocumentWithVersion:
+          $ref: '#/components/schemas/BTDocumentWithVersionId'
+        externalDocumentWithVersionAndElementId:
+          $ref: '#/components/schemas/BTDocumentWithVersionAndElementId'
+        lockedState:
+          $ref: '#/components/schemas/BTInstanceWithReference'
+        microversionId:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+        mirrorFeature:
+          $ref: '#/components/schemas/BTMDerivedAssemblyMirrorFeature-5094'
+        referenceParameter:
+          $ref: '#/components/schemas/BTMParameterReferenceWithConfiguration-3028'
+        versionId:
+          type: string
+        versionIdIfExternal:
+          type: string
       type: object
       example: null
     BTDiffJsonResponse_2725_patch:
@@ -106230,6 +106336,8 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/BTReferenceCustomData-1551'
           type: object
+        derivedAssemblyMirror:
+          type: boolean
         instanceFolder:
           type: boolean
         instanceName:
@@ -107447,8 +107555,6 @@ components:
           type: string
         centerId:
           type: string
-        geometry:
-          $ref: '#/components/schemas/BTCurveGeometry-114'
         internalIds:
           items:
             type: string
@@ -107485,8 +107591,6 @@ components:
         entityIdAndReplaceInDependentFields:
           type: string
           writeOnly: true
-        geometry:
-          type: boolean
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
@@ -109669,6 +109773,8 @@ components:
       example: null
     BTTableCellPropertyParameter_2983_allOf:
       properties:
+        aggregationSkippedFilteredOutValues:
+          type: boolean
         btType:
           type: string
         isUnchanged:

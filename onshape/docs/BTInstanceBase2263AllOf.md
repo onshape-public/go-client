@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **ClonedInstance** | Pointer to **bool** |  | [optional] 
 **CustomData** | Pointer to [**map[string]BTReferenceCustomData1551**](BTReferenceCustomData1551.md) |  | [optional] 
+**DerivedAssemblyMirror** | Pointer to **bool** |  | [optional] 
 **InstanceFolder** | Pointer to **bool** |  | [optional] 
 **InstanceName** | Pointer to **string** |  | [optional] 
 **IsFlattenedPart** | Pointer to **bool** |  | [optional] 
@@ -224,6 +225,31 @@ SetCustomData sets CustomData field to given value.
 `func (o *BTInstanceBase2263AllOf) HasCustomData() bool`
 
 HasCustomData returns a boolean if a field has been set.
+
+### GetDerivedAssemblyMirror
+
+`func (o *BTInstanceBase2263AllOf) GetDerivedAssemblyMirror() bool`
+
+GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field if non-nil, zero value otherwise.
+
+### GetDerivedAssemblyMirrorOk
+
+`func (o *BTInstanceBase2263AllOf) GetDerivedAssemblyMirrorOk() (*bool, bool)`
+
+GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDerivedAssemblyMirror
+
+`func (o *BTInstanceBase2263AllOf) SetDerivedAssemblyMirror(v bool)`
+
+SetDerivedAssemblyMirror sets DerivedAssemblyMirror field to given value.
+
+### HasDerivedAssemblyMirror
+
+`func (o *BTInstanceBase2263AllOf) HasDerivedAssemblyMirror() bool`
+
+HasDerivedAssemblyMirror returns a boolean if a field has been set.
 
 ### GetInstanceFolder
 

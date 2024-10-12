@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **CopyWithoutEntities** | Pointer to [**BTPartData16**](BTPartData16.md) |  | [optional] 
 **EntityDIds** | Pointer to **[]string** |  | [optional] 
 **EntityDeterministicIds** | Pointer to **[]string** |  | [optional] 
+**FlattenedToUnflattenedEntitiesMapping** | Pointer to **map[string][]string** |  | [optional] 
 **FlattenedToUnflattenedMapping** | Pointer to **map[string]string** |  | [optional] 
 **HighBoxCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **IsACopyForTessellationSettings** | Pointer to **bool** |  | [optional] 
@@ -302,6 +303,31 @@ SetEntityDeterministicIds sets EntityDeterministicIds field to given value.
 `func (o *BTPartData16) HasEntityDeterministicIds() bool`
 
 HasEntityDeterministicIds returns a boolean if a field has been set.
+
+### GetFlattenedToUnflattenedEntitiesMapping
+
+`func (o *BTPartData16) GetFlattenedToUnflattenedEntitiesMapping() map[string][]string`
+
+GetFlattenedToUnflattenedEntitiesMapping returns the FlattenedToUnflattenedEntitiesMapping field if non-nil, zero value otherwise.
+
+### GetFlattenedToUnflattenedEntitiesMappingOk
+
+`func (o *BTPartData16) GetFlattenedToUnflattenedEntitiesMappingOk() (*map[string][]string, bool)`
+
+GetFlattenedToUnflattenedEntitiesMappingOk returns a tuple with the FlattenedToUnflattenedEntitiesMapping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlattenedToUnflattenedEntitiesMapping
+
+`func (o *BTPartData16) SetFlattenedToUnflattenedEntitiesMapping(v map[string][]string)`
+
+SetFlattenedToUnflattenedEntitiesMapping sets FlattenedToUnflattenedEntitiesMapping field to given value.
+
+### HasFlattenedToUnflattenedEntitiesMapping
+
+`func (o *BTPartData16) HasFlattenedToUnflattenedEntitiesMapping() bool`
+
+HasFlattenedToUnflattenedEntitiesMapping returns a boolean if a field has been set.
 
 ### GetFlattenedToUnflattenedMapping
 

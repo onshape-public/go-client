@@ -3117,6 +3117,20 @@
 
 * `GBTErrorStringEnumDerivedNoActiveSmComposite` (value: `"DERIVED_NO_ACTIVE_SM_COMPOSITE"`)
 
+* `GBTErrorStringEnumPartialFilletInvalidBoundEntity` (value: `"PARTIAL_FILLET_INVALID_BOUND_ENTITY"`)
+
+* `GBTErrorStringEnumFgsThicknessUnclosedInput` (value: `"FGS_THICKNESS_UNCLOSED_INPUT"`)
+
+* `GBTErrorStringEnumFgsThicknessInternalError` (value: `"FGS_THICKNESS_INTERNAL_ERROR"`)
+
+* `GBTErrorStringEnumSketchSplitNoBezier` (value: `"SKETCH_SPLIT_NO_BEZIER"`)
+
+* `GBTErrorStringEnumSketchTrimNoBezier` (value: `"SKETCH_TRIM_NO_BEZIER"`)
+
+* `GBTErrorStringEnumExportNoParts` (value: `"EXPORT_NO_PARTS"`)
+
+* `GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarg` (value: `"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

@@ -2792,6 +2792,195 @@ func (a *AppElementApiService) GetSubelementIdsExecute(r ApiGetSubelementIdsRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiResolveAllElementReferencesRequest struct {
+	ctx             context.Context
+	ApiService      *AppElementApiService
+	did             string
+	wvm             string
+	wvmid           string
+	linkDocumentId  *string
+	transactionId   *string
+	parentChangeId  *string
+	includeInternal *bool
+	referenceIds    *string
+	elementIds      *string
+	drawingsOnly    *bool
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiResolveAllElementReferencesRequest) LinkDocumentId(linkDocumentId string) ApiResolveAllElementReferencesRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API.
+func (r ApiResolveAllElementReferencesRequest) TransactionId(transactionId string) ApiResolveAllElementReferencesRequest {
+	r.transactionId = &transactionId
+	return r
+}
+
+// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
+func (r ApiResolveAllElementReferencesRequest) ParentChangeId(parentChangeId string) ApiResolveAllElementReferencesRequest {
+	r.parentChangeId = &parentChangeId
+	return r
+}
+
+// Whether to include references that have been deleted or inactivated.
+func (r ApiResolveAllElementReferencesRequest) IncludeInternal(includeInternal bool) ApiResolveAllElementReferencesRequest {
+	r.includeInternal = &includeInternal
+	return r
+}
+
+// Comma separated string of reference ids find.
+func (r ApiResolveAllElementReferencesRequest) ReferenceIds(referenceIds string) ApiResolveAllElementReferencesRequest {
+	r.referenceIds = &referenceIds
+	return r
+}
+
+// Comma separated string of element ids to search for references in.
+func (r ApiResolveAllElementReferencesRequest) ElementIds(elementIds string) ApiResolveAllElementReferencesRequest {
+	r.elementIds = &elementIds
+	return r
+}
+
+// Whether to find references for only Onshape drawing app elements.
+func (r ApiResolveAllElementReferencesRequest) DrawingsOnly(drawingsOnly bool) ApiResolveAllElementReferencesRequest {
+	r.drawingsOnly = &drawingsOnly
+	return r
+}
+
+func (r ApiResolveAllElementReferencesRequest) Execute() (*map[string]BTAppElementReferencesResolveInfo, *http.Response, error) {
+	return r.ApiService.ResolveAllElementReferencesExecute(r)
+}
+
+/*
+ResolveAllElementReferences Resolves bulk app element references.
+
+Resolve all references for all workspace elements. For bulk operations  only. Use `resolveReferences` for a single element.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@return ApiResolveAllElementReferencesRequest
+*/
+func (a *AppElementApiService) ResolveAllElementReferences(ctx context.Context, did string, wvm string, wvmid string) ApiResolveAllElementReferencesRequest {
+	return ApiResolveAllElementReferencesRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return map[string]BTAppElementReferencesResolveInfo
+func (a *AppElementApiService) ResolveAllElementReferencesExecute(r ApiResolveAllElementReferencesRequest) (*map[string]BTAppElementReferencesResolveInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *map[string]BTAppElementReferencesResolveInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppElementApiService.ResolveAllElementReferences")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/appelements/d/{did}/{wvm}/{wvmid}/resolvereferences"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.transactionId != nil {
+		localVarQueryParams.Add("transactionId", parameterToString(*r.transactionId, ""))
+	}
+	if r.parentChangeId != nil {
+		localVarQueryParams.Add("parentChangeId", parameterToString(*r.parentChangeId, ""))
+	}
+	if r.includeInternal != nil {
+		localVarQueryParams.Add("includeInternal", parameterToString(*r.includeInternal, ""))
+	}
+	if r.referenceIds != nil {
+		localVarQueryParams.Add("referenceIds", parameterToString(*r.referenceIds, ""))
+	}
+	if r.elementIds != nil {
+		localVarQueryParams.Add("elementIds", parameterToString(*r.elementIds, ""))
+	}
+	if r.drawingsOnly != nil {
+		localVarQueryParams.Add("drawingsOnly", parameterToString(*r.drawingsOnly, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]BTAppElementReferencesResolveInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiResolveReferenceRequest struct {
 	ctx             context.Context
 	ApiService      *AppElementApiService

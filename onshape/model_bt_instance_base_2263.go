@@ -20,6 +20,11 @@ type BTInstanceBase2263 struct {
 	implBTInstanceBase2263 interface{}
 }
 
+// BTDerivedAssemblyMirror4204AsBTInstanceBase2263 is a convenience function that returns BTDerivedAssemblyMirror4204 wrapped in BTInstanceBase2263
+func (o *BTDerivedAssemblyMirror4204) AsBTInstanceBase2263() *BTInstanceBase2263 {
+	return &BTInstanceBase2263{o}
+}
+
 // BTClonedInstance2505AsBTInstanceBase2263 is a convenience function that returns BTClonedInstance2505 wrapped in BTInstanceBase2263
 func (o *BTClonedInstance2505) AsBTInstanceBase2263() *BTInstanceBase2263 {
 	return &BTInstanceBase2263{o}
@@ -545,6 +550,56 @@ func (o *BTInstanceBase2263) SetCustomData(v map[string]BTReferenceCustomData155
 	}
 
 	o.GetActualInstance().(getResult).SetCustomData(v)
+}
+
+// GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field value if set, zero value otherwise.
+func (o *BTInstanceBase2263) GetDerivedAssemblyMirror() bool {
+	type getResult interface {
+		GetDerivedAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDerivedAssemblyMirror()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceBase2263) GetDerivedAssemblyMirrorOk() (*bool, bool) {
+	type getResult interface {
+		GetDerivedAssemblyMirrorOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDerivedAssemblyMirrorOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDerivedAssemblyMirror returns a boolean if a field has been set.
+func (o *BTInstanceBase2263) HasDerivedAssemblyMirror() bool {
+	type getResult interface {
+		HasDerivedAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDerivedAssemblyMirror()
+	} else {
+		return false
+	}
+}
+
+// SetDerivedAssemblyMirror gets a reference to the given bool and assigns it to the DerivedAssemblyMirror field.
+func (o *BTInstanceBase2263) SetDerivedAssemblyMirror(v bool) {
+	type getResult interface {
+		SetDerivedAssemblyMirror(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetDerivedAssemblyMirror(v)
 }
 
 // GetInstanceFolder returns the InstanceFolder field value if set, zero value otherwise.
@@ -1577,6 +1632,20 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTDerivedAssemblyMirror-4204'
+	if jsonDict["btType"] == "BTDerivedAssemblyMirror-4204" {
+		// try to unmarshal JSON data into BTDerivedAssemblyMirror4204
+		var qr *BTDerivedAssemblyMirror4204
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTInstanceBase2263 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTInstanceBase2263 = nil
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTDerivedAssemblyMirror4204: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTInstance-642'
 	if jsonDict["btType"] == "BTInstance-642" {
 		// try to unmarshal JSON data into BTInstance642
@@ -1751,6 +1820,7 @@ type base_BTInstanceBase2263 struct {
 	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
 	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
 	CustomData                        *map[string]BTReferenceCustomData1551 `json:"customData,omitempty"`
+	DerivedAssemblyMirror             *bool                                 `json:"derivedAssemblyMirror,omitempty"`
 	InstanceFolder                    *bool                                 `json:"instanceFolder,omitempty"`
 	InstanceName                      *string                               `json:"instanceName,omitempty"`
 	IsFlattenedPart                   *bool                                 `json:"isFlattenedPart,omitempty"`
@@ -2076,6 +2146,38 @@ func (o *base_BTInstanceBase2263) HasCustomData() bool {
 // SetCustomData gets a reference to the given map[string]BTReferenceCustomData1551 and assigns it to the CustomData field.
 func (o *base_BTInstanceBase2263) SetCustomData(v map[string]BTReferenceCustomData1551) {
 	o.CustomData = &v
+}
+
+// GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field value if set, zero value otherwise.
+func (o *base_BTInstanceBase2263) GetDerivedAssemblyMirror() bool {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DerivedAssemblyMirror
+}
+
+// GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTInstanceBase2263) GetDerivedAssemblyMirrorOk() (*bool, bool) {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		return nil, false
+	}
+	return o.DerivedAssemblyMirror, true
+}
+
+// HasDerivedAssemblyMirror returns a boolean if a field has been set.
+func (o *base_BTInstanceBase2263) HasDerivedAssemblyMirror() bool {
+	if o != nil && o.DerivedAssemblyMirror != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDerivedAssemblyMirror gets a reference to the given bool and assigns it to the DerivedAssemblyMirror field.
+func (o *base_BTInstanceBase2263) SetDerivedAssemblyMirror(v bool) {
+	o.DerivedAssemblyMirror = &v
 }
 
 // GetInstanceFolder returns the InstanceFolder field value if set, zero value otherwise.
@@ -2714,6 +2816,9 @@ func (o base_BTInstanceBase2263) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomData != nil {
 		toSerialize["customData"] = o.CustomData
+	}
+	if o.DerivedAssemblyMirror != nil {
+		toSerialize["derivedAssemblyMirror"] = o.DerivedAssemblyMirror
 	}
 	if o.InstanceFolder != nil {
 		toSerialize["instanceFolder"] = o.InstanceFolder

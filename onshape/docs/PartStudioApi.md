@@ -920,7 +920,7 @@ func main() {
     wvm := "wvm_example" // string | 
     wvmid := "wvmid_example" // string | 
     eid := "eid_example" // string | 
-    tableType := "tableType_example" // string | 
+    tableType := "tableType_example" // string | `holeTable | cutlistTable`
     configuration := "configuration_example" // string |  (optional)
     tableNamespace := "tableNamespace_example" // string |  (optional)
     tableParameters := "tableParameters_example" // string |  (optional)
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 
 
- **tableType** | **string** |  | 
+ **tableType** | **string** | &#x60;holeTable | cutlistTable&#x60; | 
  **configuration** | **string** |  | 
  **tableNamespace** | **string** |  | 
  **tableParameters** | **string** |  | 

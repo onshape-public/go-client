@@ -292,56 +292,6 @@ func (o *BTMSketchCurve4) SetEntityIdAndReplaceInDependentFields(v string) {
 	o.GetActualInstance().(getResult).SetEntityIdAndReplaceInDependentFields(v)
 }
 
-// GetGeometry returns the Geometry field value if set, zero value otherwise.
-func (o *BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
-	type getResult interface {
-		GetGeometry() BTCurveGeometry114
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeometry()
-	} else {
-		var de BTCurveGeometry114
-		return de
-	}
-}
-
-// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
-	type getResult interface {
-		GetGeometryOk() (*BTCurveGeometry114, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetGeometryOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasGeometry returns a boolean if a field has been set.
-func (o *BTMSketchCurve4) HasGeometry() bool {
-	type getResult interface {
-		HasGeometry() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasGeometry()
-	} else {
-		return false
-	}
-}
-
-// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
-func (o *BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
-	type getResult interface {
-		SetGeometry(v BTCurveGeometry114)
-	}
-
-	o.GetActualInstance().(getResult).SetGeometry(v)
-}
-
 // GetIndex returns the Index field value if set, zero value otherwise.
 func (o *BTMSketchCurve4) GetIndex() int32 {
 	type getResult interface {
@@ -1038,7 +988,6 @@ type base_BTMSketchCurve4 struct {
 	NodeId                              *string              `json:"nodeId,omitempty"`
 	EntityId                            *string              `json:"entityId,omitempty"`
 	EntityIdAndReplaceInDependentFields *string              `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Geometry                            *BTCurveGeometry114  `json:"geometry,omitempty"`
 	Index                               *int32               `json:"index,omitempty"`
 	Namespace                           *string              `json:"namespace,omitempty"`
 	Parameters                          []BTMParameter1      `json:"parameters,omitempty"`
@@ -1228,38 +1177,6 @@ func (o *base_BTMSketchCurve4) HasEntityIdAndReplaceInDependentFields() bool {
 // SetEntityIdAndReplaceInDependentFields gets a reference to the given string and assigns it to the EntityIdAndReplaceInDependentFields field.
 func (o *base_BTMSketchCurve4) SetEntityIdAndReplaceInDependentFields(v string) {
 	o.EntityIdAndReplaceInDependentFields = &v
-}
-
-// GetGeometry returns the Geometry field value if set, zero value otherwise.
-func (o *base_BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
-	if o == nil || o.Geometry == nil {
-		var ret BTCurveGeometry114
-		return ret
-	}
-	return *o.Geometry
-}
-
-// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
-	if o == nil || o.Geometry == nil {
-		return nil, false
-	}
-	return o.Geometry, true
-}
-
-// HasGeometry returns a boolean if a field has been set.
-func (o *base_BTMSketchCurve4) HasGeometry() bool {
-	if o != nil && o.Geometry != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
-func (o *base_BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
-	o.Geometry = &v
 }
 
 // GetIndex returns the Index field value if set, zero value otherwise.
@@ -1662,9 +1579,6 @@ func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	}
 	if o.EntityIdAndReplaceInDependentFields != nil {
 		toSerialize["entityIdAndReplaceInDependentFields"] = o.EntityIdAndReplaceInDependentFields
-	}
-	if o.Geometry != nil {
-		toSerialize["geometry"] = o.Geometry
 	}
 	if o.Index != nil {
 		toSerialize["index"] = o.Index

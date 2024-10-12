@@ -16,8 +16,10 @@ import (
 
 // BTTranslationRequestInfo struct for BTTranslationRequestInfo
 type BTTranslationRequestInfo struct {
-	DocumentId    *string `json:"documentId,omitempty"`
-	FailureReason *string `json:"failureReason,omitempty"`
+	DocumentId *string `json:"documentId,omitempty"`
+	// The file name after evaluating a rule for the given `formatName`. `NULL` if `evaluateExportRule=false` or if the export rule is not found.
+	ExportRuleFileName *string `json:"exportRuleFileName,omitempty"`
+	FailureReason      *string `json:"failureReason,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -83,6 +85,38 @@ func (o *BTTranslationRequestInfo) HasDocumentId() bool {
 // SetDocumentId gets a reference to the given string and assigns it to the DocumentId field.
 func (o *BTTranslationRequestInfo) SetDocumentId(v string) {
 	o.DocumentId = &v
+}
+
+// GetExportRuleFileName returns the ExportRuleFileName field value if set, zero value otherwise.
+func (o *BTTranslationRequestInfo) GetExportRuleFileName() string {
+	if o == nil || o.ExportRuleFileName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ExportRuleFileName
+}
+
+// GetExportRuleFileNameOk returns a tuple with the ExportRuleFileName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslationRequestInfo) GetExportRuleFileNameOk() (*string, bool) {
+	if o == nil || o.ExportRuleFileName == nil {
+		return nil, false
+	}
+	return o.ExportRuleFileName, true
+}
+
+// HasExportRuleFileName returns a boolean if a field has been set.
+func (o *BTTranslationRequestInfo) HasExportRuleFileName() bool {
+	if o != nil && o.ExportRuleFileName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExportRuleFileName gets a reference to the given string and assigns it to the ExportRuleFileName field.
+func (o *BTTranslationRequestInfo) SetExportRuleFileName(v string) {
+	o.ExportRuleFileName = &v
 }
 
 // GetFailureReason returns the FailureReason field value if set, zero value otherwise.
@@ -505,6 +539,9 @@ func (o BTTranslationRequestInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
+	}
+	if o.ExportRuleFileName != nil {
+		toSerialize["exportRuleFileName"] = o.ExportRuleFileName
 	}
 	if o.FailureReason != nil {
 		toSerialize["failureReason"] = o.FailureReason

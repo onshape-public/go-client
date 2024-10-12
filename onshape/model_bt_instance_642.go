@@ -497,6 +497,56 @@ func (o *BTInstance642) SetCustomData(v map[string]BTReferenceCustomData1551) {
 	o.GetActualInstance().(getResult).SetCustomData(v)
 }
 
+// GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field value if set, zero value otherwise.
+func (o *BTInstance642) GetDerivedAssemblyMirror() bool {
+	type getResult interface {
+		GetDerivedAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDerivedAssemblyMirror()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstance642) GetDerivedAssemblyMirrorOk() (*bool, bool) {
+	type getResult interface {
+		GetDerivedAssemblyMirrorOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDerivedAssemblyMirrorOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDerivedAssemblyMirror returns a boolean if a field has been set.
+func (o *BTInstance642) HasDerivedAssemblyMirror() bool {
+	type getResult interface {
+		HasDerivedAssemblyMirror() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDerivedAssemblyMirror()
+	} else {
+		return false
+	}
+}
+
+// SetDerivedAssemblyMirror gets a reference to the given bool and assigns it to the DerivedAssemblyMirror field.
+func (o *BTInstance642) SetDerivedAssemblyMirror(v bool) {
+	type getResult interface {
+		SetDerivedAssemblyMirror(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetDerivedAssemblyMirror(v)
+}
+
 // GetInstanceFolder returns the InstanceFolder field value if set, zero value otherwise.
 func (o *BTInstance642) GetInstanceFolder() bool {
 	type getResult interface {
@@ -2261,6 +2311,7 @@ type base_BTInstance642 struct {
 	AssemblyReplicate                 *bool                                 `json:"assemblyReplicate,omitempty"`
 	ClonedInstance                    *bool                                 `json:"clonedInstance,omitempty"`
 	CustomData                        *map[string]BTReferenceCustomData1551 `json:"customData,omitempty"`
+	DerivedAssemblyMirror             *bool                                 `json:"derivedAssemblyMirror,omitempty"`
 	InstanceFolder                    *bool                                 `json:"instanceFolder,omitempty"`
 	InstanceName                      *string                               `json:"instanceName,omitempty"`
 	IsFlattenedPart                   *bool                                 `json:"isFlattenedPart,omitempty"`
@@ -2600,6 +2651,38 @@ func (o *base_BTInstance642) HasCustomData() bool {
 // SetCustomData gets a reference to the given map[string]BTReferenceCustomData1551 and assigns it to the CustomData field.
 func (o *base_BTInstance642) SetCustomData(v map[string]BTReferenceCustomData1551) {
 	o.CustomData = &v
+}
+
+// GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field value if set, zero value otherwise.
+func (o *base_BTInstance642) GetDerivedAssemblyMirror() bool {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DerivedAssemblyMirror
+}
+
+// GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTInstance642) GetDerivedAssemblyMirrorOk() (*bool, bool) {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		return nil, false
+	}
+	return o.DerivedAssemblyMirror, true
+}
+
+// HasDerivedAssemblyMirror returns a boolean if a field has been set.
+func (o *base_BTInstance642) HasDerivedAssemblyMirror() bool {
+	if o != nil && o.DerivedAssemblyMirror != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDerivedAssemblyMirror gets a reference to the given bool and assigns it to the DerivedAssemblyMirror field.
+func (o *base_BTInstance642) SetDerivedAssemblyMirror(v bool) {
+	o.DerivedAssemblyMirror = &v
 }
 
 // GetInstanceFolder returns the InstanceFolder field value if set, zero value otherwise.
@@ -3686,6 +3769,9 @@ func (o base_BTInstance642) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomData != nil {
 		toSerialize["customData"] = o.CustomData
+	}
+	if o.DerivedAssemblyMirror != nil {
+		toSerialize["derivedAssemblyMirror"] = o.DerivedAssemblyMirror
 	}
 	if o.InstanceFolder != nil {
 		toSerialize["instanceFolder"] = o.InstanceFolder

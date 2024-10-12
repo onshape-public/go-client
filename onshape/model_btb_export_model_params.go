@@ -34,12 +34,10 @@ type BTBExportModelParams struct {
 	// Base64-encoded email address. When sending an email, the `fromUserId` parameter is also required.
 	EmailTo *string `json:"emailTo,omitempty"`
 	// If `true`, the exported file won't have any parts and assemblies marked as hidden
-	ExcludeHiddenEntities *bool `json:"excludeHiddenEntities,omitempty"`
-	// If `true`, the exported file won't have any parts and assemblies marked as suppressed
-	ExcludeSuppressedEntities *bool   `json:"excludeSuppressedEntities,omitempty"`
-	FeatureIds                *string `json:"featureIds,omitempty"`
-	Flatten                   *bool   `json:"flatten,omitempty"`
-	Format                    string  `json:"format"`
+	ExcludeHiddenEntities *bool   `json:"excludeHiddenEntities,omitempty"`
+	FeatureIds            *string `json:"featureIds,omitempty"`
+	Flatten               *bool   `json:"flatten,omitempty"`
+	Format                string  `json:"format"`
 	// Your user ID. Required when providing the `emailTo` parameter.
 	FromUserId                   *string  `json:"fromUserId,omitempty"`
 	Grouping                     *string  `json:"grouping,omitempty"`
@@ -631,38 +629,6 @@ func (o *BTBExportModelParams) HasExcludeHiddenEntities() bool {
 // SetExcludeHiddenEntities gets a reference to the given bool and assigns it to the ExcludeHiddenEntities field.
 func (o *BTBExportModelParams) SetExcludeHiddenEntities(v bool) {
 	o.ExcludeHiddenEntities = &v
-}
-
-// GetExcludeSuppressedEntities returns the ExcludeSuppressedEntities field value if set, zero value otherwise.
-func (o *BTBExportModelParams) GetExcludeSuppressedEntities() bool {
-	if o == nil || o.ExcludeSuppressedEntities == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ExcludeSuppressedEntities
-}
-
-// GetExcludeSuppressedEntitiesOk returns a tuple with the ExcludeSuppressedEntities field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTBExportModelParams) GetExcludeSuppressedEntitiesOk() (*bool, bool) {
-	if o == nil || o.ExcludeSuppressedEntities == nil {
-		return nil, false
-	}
-	return o.ExcludeSuppressedEntities, true
-}
-
-// HasExcludeSuppressedEntities returns a boolean if a field has been set.
-func (o *BTBExportModelParams) HasExcludeSuppressedEntities() bool {
-	if o != nil && o.ExcludeSuppressedEntities != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetExcludeSuppressedEntities gets a reference to the given bool and assigns it to the ExcludeSuppressedEntities field.
-func (o *BTBExportModelParams) SetExcludeSuppressedEntities(v bool) {
-	o.ExcludeSuppressedEntities = &v
 }
 
 // GetFeatureIds returns the FeatureIds field value if set, zero value otherwise.
@@ -1893,9 +1859,6 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExcludeHiddenEntities != nil {
 		toSerialize["excludeHiddenEntities"] = o.ExcludeHiddenEntities
-	}
-	if o.ExcludeSuppressedEntities != nil {
-		toSerialize["excludeSuppressedEntities"] = o.ExcludeSuppressedEntities
 	}
 	if o.FeatureIds != nil {
 		toSerialize["featureIds"] = o.FeatureIds

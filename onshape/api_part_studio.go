@@ -1674,6 +1674,7 @@ type ApiGetFeatureScriptTableRequest struct {
 	linkDocumentId  *string
 }
 
+// &#x60;holeTable | cutlistTable&#x60;
 func (r ApiGetFeatureScriptTableRequest) TableType(tableType string) ApiGetFeatureScriptTableRequest {
 	r.tableType = &tableType
 	return r

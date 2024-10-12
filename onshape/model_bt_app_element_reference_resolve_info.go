@@ -37,6 +37,7 @@ type BTAppElementReferenceResolveInfo struct {
 	ResolvedElementMicroversionId  *string                `json:"resolvedElementMicroversionId,omitempty"`
 	Revision                       *string                `json:"revision,omitempty"`
 	SketchIds                      []string               `json:"sketchIds,omitempty"`
+	SourceElementId                *string                `json:"sourceElementId,omitempty"`
 	TargetConfiguration            *string                `json:"targetConfiguration,omitempty"`
 	TargetDocumentId               *string                `json:"targetDocumentId,omitempty"`
 	TargetDocumentMicroversionId   *string                `json:"targetDocumentMicroversionId,omitempty"`
@@ -672,6 +673,38 @@ func (o *BTAppElementReferenceResolveInfo) SetSketchIds(v []string) {
 	o.SketchIds = v
 }
 
+// GetSourceElementId returns the SourceElementId field value if set, zero value otherwise.
+func (o *BTAppElementReferenceResolveInfo) GetSourceElementId() string {
+	if o == nil || o.SourceElementId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceElementId
+}
+
+// GetSourceElementIdOk returns a tuple with the SourceElementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAppElementReferenceResolveInfo) GetSourceElementIdOk() (*string, bool) {
+	if o == nil || o.SourceElementId == nil {
+		return nil, false
+	}
+	return o.SourceElementId, true
+}
+
+// HasSourceElementId returns a boolean if a field has been set.
+func (o *BTAppElementReferenceResolveInfo) HasSourceElementId() bool {
+	if o != nil && o.SourceElementId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceElementId gets a reference to the given string and assigns it to the SourceElementId field.
+func (o *BTAppElementReferenceResolveInfo) SetSourceElementId(v string) {
+	o.SourceElementId = &v
+}
+
 // GetTargetConfiguration returns the TargetConfiguration field value if set, zero value otherwise.
 func (o *BTAppElementReferenceResolveInfo) GetTargetConfiguration() string {
 	if o == nil || o.TargetConfiguration == nil {
@@ -954,6 +987,9 @@ func (o BTAppElementReferenceResolveInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SketchIds != nil {
 		toSerialize["sketchIds"] = o.SketchIds
+	}
+	if o.SourceElementId != nil {
+		toSerialize["sourceElementId"] = o.SourceElementId
 	}
 	if o.TargetConfiguration != nil {
 		toSerialize["targetConfiguration"] = o.TargetConfiguration

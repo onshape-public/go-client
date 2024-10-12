@@ -1577,6 +1577,13 @@ const (
 	GBTErrorStringEnumAssemblyPatternWrongReferenceWasSelected                    GBTErrorStringEnum = "ASSEMBLY_PATTERN_WRONG_REFERENCE_WAS_SELECTED"
 	GBTErrorStringEnumAssemblyPatternReferenceCouldNotBeFound                     GBTErrorStringEnum = "ASSEMBLY_PATTERN_REFERENCE_COULD_NOT_BE_FOUND"
 	GBTErrorStringEnumDerivedNoActiveSmComposite                                  GBTErrorStringEnum = "DERIVED_NO_ACTIVE_SM_COMPOSITE"
+	GBTErrorStringEnumPartialFilletInvalidBoundEntity                             GBTErrorStringEnum = "PARTIAL_FILLET_INVALID_BOUND_ENTITY"
+	GBTErrorStringEnumFgsThicknessUnclosedInput                                   GBTErrorStringEnum = "FGS_THICKNESS_UNCLOSED_INPUT"
+	GBTErrorStringEnumFgsThicknessInternalError                                   GBTErrorStringEnum = "FGS_THICKNESS_INTERNAL_ERROR"
+	GBTErrorStringEnumSketchSplitNoBezier                                         GBTErrorStringEnum = "SKETCH_SPLIT_NO_BEZIER"
+	GBTErrorStringEnumSketchTrimNoBezier                                          GBTErrorStringEnum = "SKETCH_TRIM_NO_BEZIER"
+	GBTErrorStringEnumExportNoParts                                               GBTErrorStringEnum = "EXPORT_NO_PARTS"
+	GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarg                          GBTErrorStringEnum = "PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3139,6 +3146,13 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"ASSEMBLY_PATTERN_WRONG_REFERENCE_WAS_SELECTED",
 	"ASSEMBLY_PATTERN_REFERENCE_COULD_NOT_BE_FOUND",
 	"DERIVED_NO_ACTIVE_SM_COMPOSITE",
+	"PARTIAL_FILLET_INVALID_BOUND_ENTITY",
+	"FGS_THICKNESS_UNCLOSED_INPUT",
+	"FGS_THICKNESS_INTERNAL_ERROR",
+	"SKETCH_SPLIT_NO_BEZIER",
+	"SKETCH_TRIM_NO_BEZIER",
+	"EXPORT_NO_PARTS",
+	"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG",
 	"UNKNOWN",
 }
 

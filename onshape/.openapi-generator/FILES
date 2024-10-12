@@ -276,21 +276,6 @@ docs/BTCountDimensionDisplayData1778.md
 docs/BTCountDimensionDisplayData1778AllOf.md
 docs/BTCreateTaskParams.md
 docs/BTCurveDescription1583.md
-docs/BTCurveGeometry114.md
-docs/BTCurveGeometryCircle115.md
-docs/BTCurveGeometryCircle115AllOf.md
-docs/BTCurveGeometryConic2284.md
-docs/BTCurveGeometryConic2284AllOf.md
-docs/BTCurveGeometryControlPointSpline2197.md
-docs/BTCurveGeometryControlPointSpline2197AllOf.md
-docs/BTCurveGeometryEllipse1189.md
-docs/BTCurveGeometryEllipse1189AllOf.md
-docs/BTCurveGeometryInterpolatedSpline116.md
-docs/BTCurveGeometryInterpolatedSpline116AllOf.md
-docs/BTCurveGeometryLine117.md
-docs/BTCurveGeometryLine117AllOf.md
-docs/BTCurveGeometrySpline118.md
-docs/BTCurveGeometrySpline118AllOf.md
 docs/BTCurveLengthDimensionDisplayData322.md
 docs/BTCurveLengthDimensionDisplayData322AllOf.md
 docs/BTCylinderDescription686.md
@@ -305,6 +290,8 @@ docs/BTDecal2404.md
 docs/BTDefaultFeatures119.md
 docs/BTDefaultUnitInfo.md
 docs/BTDefaultUnitsInfo.md
+docs/BTDerivedAssemblyMirror4204.md
+docs/BTDerivedAssemblyMirror4204AllOf.md
 docs/BTDeviceLoginSecretInfo.md
 docs/BTDiffInfo.md
 docs/BTDiffInfoCollectionType.md
@@ -518,7 +505,7 @@ docs/BTInstanceFolder3627.md
 docs/BTInstanceFolder3627AllOf.md
 docs/BTInstanceStandardContentData2081.md
 docs/BTInstanceStandardContentData2081AllOf.md
-docs/BTInvisibleEntitiesExportFilter2537.md
+docs/BTInstanceWithReference.md
 docs/BTJEdit3734.md
 docs/BTJEditChange2636.md
 docs/BTJEditChange2636AllOf.md
@@ -607,6 +594,7 @@ docs/BTMConfiguredValueByEnum1923.md
 docs/BTMConfiguredValueByEnum1923AllOf.md
 docs/BTMDatabaseParameter2229.md
 docs/BTMDatabaseParameter2229AllOf.md
+docs/BTMDerivedAssemblyMirrorFeature5094.md
 docs/BTMEnumOption592.md
 docs/BTMEnumOption592AllOf.md
 docs/BTMFeature134.md
@@ -1425,6 +1413,7 @@ docs/GBTAssemblySimulationType.md
 docs/GBTBSFeatureVisibility.md
 docs/GBTBillOfMaterialsExclusionStatus.md
 docs/GBTBillOfMaterialsExpansionStatus.md
+docs/GBTBillOfMaterialsSuppressionStatus.md
 docs/GBTBodyType.md
 docs/GBTComputeStatus.md
 docs/GBTConfigurationParameterType.md
@@ -1743,14 +1732,6 @@ model_bt_copy_view_associative_data_params.go
 model_bt_count_dimension_display_data_1778.go
 model_bt_create_task_params.go
 model_bt_curve_description_1583.go
-model_bt_curve_geometry_114.go
-model_bt_curve_geometry_circle_115.go
-model_bt_curve_geometry_conic_2284.go
-model_bt_curve_geometry_control_point_spline_2197.go
-model_bt_curve_geometry_ellipse_1189.go
-model_bt_curve_geometry_interpolated_spline_116.go
-model_bt_curve_geometry_line_117.go
-model_bt_curve_geometry_spline_118.go
 model_bt_curve_length_dimension_display_data_322.go
 model_bt_cylinder_description_686.go
 model_bt_cylindrical_image_mapping_1640.go
@@ -1760,6 +1741,7 @@ model_bt_decal_2404.go
 model_bt_default_features_119.go
 model_bt_default_unit_info.go
 model_bt_default_units_info.go
+model_bt_derived_assembly_mirror_4204.go
 model_bt_device_login_secret_info.go
 model_bt_diff_info.go
 model_bt_diff_info_collection_type.go
@@ -1899,7 +1881,7 @@ model_bt_instance_base_2263.go
 model_bt_instance_control_node_750.go
 model_bt_instance_folder_3627.go
 model_bt_instance_standard_content_data_2081.go
-model_bt_invisible_entities_export_filter_2537.go
+model_bt_instance_with_reference.go
 model_bt_json_match_2290.go
 model_bt_json_match_2290_node.go
 model_bt_key_mouse_values_info.go
@@ -2331,6 +2313,7 @@ model_btm_configured_value_1341.go
 model_btm_configured_value_by_boolean_1501.go
 model_btm_configured_value_by_enum_1923.go
 model_btm_database_parameter_2229.go
+model_btm_derived_assembly_mirror_feature_5094.go
 model_btm_enum_option_592.go
 model_btm_feature_134.go
 model_btm_feature_invalid_1031.go
@@ -2523,6 +2506,7 @@ model_gbt_assembly_feature_display_status.go
 model_gbt_assembly_simulation_type.go
 model_gbt_bill_of_materials_exclusion_status.go
 model_gbt_bill_of_materials_expansion_status.go
+model_gbt_bill_of_materials_suppression_status.go
 model_gbt_body_type.go
 model_gbt_compute_status.go
 model_gbt_configuration_parameter_type.go

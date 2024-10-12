@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **ResolvedElementMicroversionId** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 **SketchIds** | Pointer to **[]string** |  | [optional] 
+**SourceElementId** | Pointer to **string** |  | [optional] 
 **TargetConfiguration** | Pointer to **string** |  | [optional] 
 **TargetDocumentId** | Pointer to **string** |  | [optional] 
 **TargetDocumentMicroversionId** | Pointer to **string** |  | [optional] 
@@ -524,6 +525,31 @@ SetSketchIds sets SketchIds field to given value.
 `func (o *BTAppElementReferenceResolveInfo) HasSketchIds() bool`
 
 HasSketchIds returns a boolean if a field has been set.
+
+### GetSourceElementId
+
+`func (o *BTAppElementReferenceResolveInfo) GetSourceElementId() string`
+
+GetSourceElementId returns the SourceElementId field if non-nil, zero value otherwise.
+
+### GetSourceElementIdOk
+
+`func (o *BTAppElementReferenceResolveInfo) GetSourceElementIdOk() (*string, bool)`
+
+GetSourceElementIdOk returns a tuple with the SourceElementId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceElementId
+
+`func (o *BTAppElementReferenceResolveInfo) SetSourceElementId(v string)`
+
+SetSourceElementId sets SourceElementId field to given value.
+
+### HasSourceElementId
+
+`func (o *BTAppElementReferenceResolveInfo) HasSourceElementId() bool`
+
+HasSourceElementId returns a boolean if a field has been set.
 
 ### GetTargetConfiguration
 

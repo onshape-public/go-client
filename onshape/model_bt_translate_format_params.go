@@ -34,32 +34,34 @@ type BTTranslateFormatParams struct {
 	// The id of the element in which to perform the operation.
 	ElementId *string `json:"elementId,omitempty"`
 	// An array of element ids.
-	ElementIds               []string `json:"elementIds,omitempty"`
-	EmailLink                *bool    `json:"emailLink,omitempty"`
-	EmailMessage             *string  `json:"emailMessage,omitempty"`
-	EmailSubject             *string  `json:"emailSubject,omitempty"`
-	EmailTo                  []string `json:"emailTo,omitempty"`
-	ExtractAssemblyHierarchy *bool    `json:"extractAssemblyHierarchy,omitempty"`
-	Flatten                  *bool    `json:"flatten,omitempty"`
-	FlattenAssemblies        *bool    `json:"flattenAssemblies,omitempty"`
-	ForeignId                *string  `json:"foreignId,omitempty"`
+	ElementIds   []string `json:"elementIds,omitempty"`
+	EmailLink    *bool    `json:"emailLink,omitempty"`
+	EmailMessage *string  `json:"emailMessage,omitempty"`
+	EmailSubject *string  `json:"emailSubject,omitempty"`
+	EmailTo      []string `json:"emailTo,omitempty"`
+	// Set to `true` to evaluate the export rule for the given `formatName` and to include an `exportRuleFileName` value in the response.
+	EvaluateExportRule       *bool   `json:"evaluateExportRule,omitempty"`
+	ExcludeHiddenEntities    *bool   `json:"excludeHiddenEntities,omitempty"`
+	ExtractAssemblyHierarchy *bool   `json:"extractAssemblyHierarchy,omitempty"`
+	Flatten                  *bool   `json:"flatten,omitempty"`
+	FlattenAssemblies        *bool   `json:"flattenAssemblies,omitempty"`
+	ForeignId                *string `json:"foreignId,omitempty"`
 	// The name of the file format.
-	FormatName                    string                               `json:"formatName"`
-	FromUserId                    *string                              `json:"fromUserId,omitempty"`
-	GetyAxisIsUp                  *bool                                `json:"getyAxisIsUp,omitempty"`
-	Grouping                      *bool                                `json:"grouping,omitempty"`
-	HideInspectionItems           *bool                                `json:"hideInspectionItems,omitempty"`
-	IgnoreExportRulesForContents  *bool                                `json:"ignoreExportRulesForContents,omitempty"`
-	ImageHeight                   *int32                               `json:"imageHeight,omitempty"`
-	ImageWidth                    *int32                               `json:"imageWidth,omitempty"`
-	ImportAppearances             *bool                                `json:"importAppearances,omitempty"`
-	ImportInBackground            *bool                                `json:"importInBackground,omitempty"`
-	ImportMaterialDensity         *bool                                `json:"importMaterialDensity,omitempty"`
-	ImportWithinDocument          *bool                                `json:"importWithinDocument,omitempty"`
-	IncludeExportIds              *bool                                `json:"includeExportIds,omitempty"`
-	InvisibleEntitiesExportFilter *BTInvisibleEntitiesExportFilter2537 `json:"invisibleEntitiesExportFilter,omitempty"`
-	JoinAdjacentSurfaces          *bool                                `json:"joinAdjacentSurfaces,omitempty"`
-	Level                         *string                              `json:"level,omitempty"`
+	FormatName                   string  `json:"formatName"`
+	FromUserId                   *string `json:"fromUserId,omitempty"`
+	GetyAxisIsUp                 *bool   `json:"getyAxisIsUp,omitempty"`
+	Grouping                     *bool   `json:"grouping,omitempty"`
+	HideInspectionItems          *bool   `json:"hideInspectionItems,omitempty"`
+	IgnoreExportRulesForContents *bool   `json:"ignoreExportRulesForContents,omitempty"`
+	ImageHeight                  *int32  `json:"imageHeight,omitempty"`
+	ImageWidth                   *int32  `json:"imageWidth,omitempty"`
+	ImportAppearances            *bool   `json:"importAppearances,omitempty"`
+	ImportInBackground           *bool   `json:"importInBackground,omitempty"`
+	ImportMaterialDensity        *bool   `json:"importMaterialDensity,omitempty"`
+	ImportWithinDocument         *bool   `json:"importWithinDocument,omitempty"`
+	IncludeExportIds             *bool   `json:"includeExportIds,omitempty"`
+	JoinAdjacentSurfaces         *bool   `json:"joinAdjacentSurfaces,omitempty"`
+	Level                        *string `json:"level,omitempty"`
 	// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
 	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
 	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
@@ -117,6 +119,8 @@ func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 	this := BTTranslateFormatParams{}
 	var allowFaultyParts bool = false
 	this.AllowFaultyParts = &allowFaultyParts
+	var evaluateExportRule bool = false
+	this.EvaluateExportRule = &evaluateExportRule
 	this.FormatName = formatName
 	return &this
 }
@@ -128,6 +132,8 @@ func NewBTTranslateFormatParamsWithDefaults() *BTTranslateFormatParams {
 	this := BTTranslateFormatParams{}
 	var allowFaultyParts bool = false
 	this.AllowFaultyParts = &allowFaultyParts
+	var evaluateExportRule bool = false
+	this.EvaluateExportRule = &evaluateExportRule
 	return &this
 }
 
@@ -739,6 +745,70 @@ func (o *BTTranslateFormatParams) SetEmailTo(v []string) {
 	o.EmailTo = v
 }
 
+// GetEvaluateExportRule returns the EvaluateExportRule field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetEvaluateExportRule() bool {
+	if o == nil || o.EvaluateExportRule == nil {
+		var ret bool
+		return ret
+	}
+	return *o.EvaluateExportRule
+}
+
+// GetEvaluateExportRuleOk returns a tuple with the EvaluateExportRule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetEvaluateExportRuleOk() (*bool, bool) {
+	if o == nil || o.EvaluateExportRule == nil {
+		return nil, false
+	}
+	return o.EvaluateExportRule, true
+}
+
+// HasEvaluateExportRule returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasEvaluateExportRule() bool {
+	if o != nil && o.EvaluateExportRule != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEvaluateExportRule gets a reference to the given bool and assigns it to the EvaluateExportRule field.
+func (o *BTTranslateFormatParams) SetEvaluateExportRule(v bool) {
+	o.EvaluateExportRule = &v
+}
+
+// GetExcludeHiddenEntities returns the ExcludeHiddenEntities field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetExcludeHiddenEntities() bool {
+	if o == nil || o.ExcludeHiddenEntities == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeHiddenEntities
+}
+
+// GetExcludeHiddenEntitiesOk returns a tuple with the ExcludeHiddenEntities field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetExcludeHiddenEntitiesOk() (*bool, bool) {
+	if o == nil || o.ExcludeHiddenEntities == nil {
+		return nil, false
+	}
+	return o.ExcludeHiddenEntities, true
+}
+
+// HasExcludeHiddenEntities returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasExcludeHiddenEntities() bool {
+	if o != nil && o.ExcludeHiddenEntities != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeHiddenEntities gets a reference to the given bool and assigns it to the ExcludeHiddenEntities field.
+func (o *BTTranslateFormatParams) SetExcludeHiddenEntities(v bool) {
+	o.ExcludeHiddenEntities = &v
+}
+
 // GetExtractAssemblyHierarchy returns the ExtractAssemblyHierarchy field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetExtractAssemblyHierarchy() bool {
 	if o == nil || o.ExtractAssemblyHierarchy == nil {
@@ -1273,38 +1343,6 @@ func (o *BTTranslateFormatParams) HasIncludeExportIds() bool {
 // SetIncludeExportIds gets a reference to the given bool and assigns it to the IncludeExportIds field.
 func (o *BTTranslateFormatParams) SetIncludeExportIds(v bool) {
 	o.IncludeExportIds = &v
-}
-
-// GetInvisibleEntitiesExportFilter returns the InvisibleEntitiesExportFilter field value if set, zero value otherwise.
-func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilter() BTInvisibleEntitiesExportFilter2537 {
-	if o == nil || o.InvisibleEntitiesExportFilter == nil {
-		var ret BTInvisibleEntitiesExportFilter2537
-		return ret
-	}
-	return *o.InvisibleEntitiesExportFilter
-}
-
-// GetInvisibleEntitiesExportFilterOk returns a tuple with the InvisibleEntitiesExportFilter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTTranslateFormatParams) GetInvisibleEntitiesExportFilterOk() (*BTInvisibleEntitiesExportFilter2537, bool) {
-	if o == nil || o.InvisibleEntitiesExportFilter == nil {
-		return nil, false
-	}
-	return o.InvisibleEntitiesExportFilter, true
-}
-
-// HasInvisibleEntitiesExportFilter returns a boolean if a field has been set.
-func (o *BTTranslateFormatParams) HasInvisibleEntitiesExportFilter() bool {
-	if o != nil && o.InvisibleEntitiesExportFilter != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetInvisibleEntitiesExportFilter gets a reference to the given BTInvisibleEntitiesExportFilter2537 and assigns it to the InvisibleEntitiesExportFilter field.
-func (o *BTTranslateFormatParams) SetInvisibleEntitiesExportFilter(v BTInvisibleEntitiesExportFilter2537) {
-	o.InvisibleEntitiesExportFilter = &v
 }
 
 // GetJoinAdjacentSurfaces returns the JoinAdjacentSurfaces field value if set, zero value otherwise.
@@ -2838,6 +2876,12 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.EmailTo != nil {
 		toSerialize["emailTo"] = o.EmailTo
 	}
+	if o.EvaluateExportRule != nil {
+		toSerialize["evaluateExportRule"] = o.EvaluateExportRule
+	}
+	if o.ExcludeHiddenEntities != nil {
+		toSerialize["excludeHiddenEntities"] = o.ExcludeHiddenEntities
+	}
 	if o.ExtractAssemblyHierarchy != nil {
 		toSerialize["extractAssemblyHierarchy"] = o.ExtractAssemblyHierarchy
 	}
@@ -2888,9 +2932,6 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.IncludeExportIds != nil {
 		toSerialize["includeExportIds"] = o.IncludeExportIds
-	}
-	if o.InvisibleEntitiesExportFilter != nil {
-		toSerialize["invisibleEntitiesExportFilter"] = o.InvisibleEntitiesExportFilter
 	}
 	if o.JoinAdjacentSurfaces != nil {
 		toSerialize["joinAdjacentSurfaces"] = o.JoinAdjacentSurfaces

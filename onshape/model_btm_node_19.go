@@ -205,6 +205,11 @@ func (o *BTMConfigurationParameterQuantity1826) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
+// BTDerivedAssemblyMirror4204AsBTMNode19 is a convenience function that returns BTDerivedAssemblyMirror4204 wrapped in BTMNode19
+func (o *BTDerivedAssemblyMirror4204) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
 // BTMUnitsDefault160AsBTMNode19 is a convenience function that returns BTMUnitsDefault160 wrapped in BTMNode19
 func (o *BTMUnitsDefault160) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -583,6 +588,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTClonedInstance2505: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDerivedAssemblyMirror-4204'
+	if jsonDict["btType"] == "BTDerivedAssemblyMirror-4204" {
+		// try to unmarshal JSON data into BTDerivedAssemblyMirror4204
+		var qr *BTDerivedAssemblyMirror4204
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTDerivedAssemblyMirror4204: %s", err.Error())
 		}
 	}
 
