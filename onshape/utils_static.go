@@ -178,9 +178,9 @@ func NewAPIClientFromEnv(hdrProcessors ...HdrProcFunc) (*APIClient, error) {
 }
 
 // GetDefaultConfig - creates default config
-func GetDefaultConfig() *Configuration {
+func GetDefaultConfig() *APIConfiguration {
 	baseURL := os.Getenv(BaseURL)
-	cfg := NewConfiguration()
+	cfg := NewAPIConfiguration()
 	if baseURL != "" {
 		if u, err := url.Parse(baseURL); err == nil {
 			if uCfg, err := url.Parse(cfg.Servers[0].URL); err == nil {
