@@ -33,8 +33,8 @@ import (
 func main() {
     fid := "fid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.FolderApi.GetFolderAcl(context.Background(), fid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FolderApi.GetFolderAcl``: %v\n", err)
@@ -104,8 +104,8 @@ func main() {
     fid := "fid_example" // string | 
     bTShareParams := *openapiclient.NewBTShareParams() // BTShareParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.FolderApi.Share(context.Background(), fid).BTShareParams(bTShareParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FolderApi.Share``: %v\n", err)
@@ -177,8 +177,8 @@ func main() {
     eid := "eid_example" // string | 
     entryType := int32(56) // int32 |  (optional) (default to 0)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.FolderApi.UnShare(context.Background(), fid, eid).EntryType(entryType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FolderApi.UnShare``: %v\n", err)

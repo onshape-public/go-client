@@ -40,8 +40,8 @@ func main() {
     file := os.NewFile(1234, "some_file") // HttpFile | The file to upload.
     fileContentLength := int32(56) // int32 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.AddAttachment(context.Background(), cid).File(file).FileContentLength(fileContentLength).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.AddAttachment``: %v\n", err)
@@ -110,8 +110,8 @@ import (
 func main() {
     bTCommentParams := *openapiclient.NewBTCommentParams() // BTCommentParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.CreateComment(context.Background()).BTCommentParams(bTCommentParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.CreateComment``: %v\n", err)
@@ -174,8 +174,8 @@ import (
 func main() {
     cid := "cid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.DeleteAttachments(context.Background(), cid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.DeleteAttachments``: %v\n", err)
@@ -242,8 +242,8 @@ import (
 func main() {
     cid := "cid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.DeleteComment(context.Background(), cid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.DeleteComment``: %v\n", err)
@@ -314,8 +314,8 @@ func main() {
     fdid := "fdid_example" // string | 
     ext := "ext_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.GetAttachment(context.Background(), cid, fdid, ext).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.GetAttachment``: %v\n", err)
@@ -386,8 +386,8 @@ import (
 func main() {
     cid := "cid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.GetComment(context.Background(), cid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.GetComment``: %v\n", err)
@@ -463,8 +463,8 @@ func main() {
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.GetComments(context.Background()).Did(did).ObjectType(objectType).Pid(pid).Eid(eid).Filter(filter).Resolved(resolved).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.GetComments``: %v\n", err)
@@ -536,8 +536,8 @@ import (
 func main() {
     cid := "cid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.Reopen(context.Background(), cid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.Reopen``: %v\n", err)
@@ -604,8 +604,8 @@ import (
 func main() {
     cid := "cid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.Resolve(context.Background(), cid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.Resolve``: %v\n", err)
@@ -673,8 +673,8 @@ func main() {
     cid := "cid_example" // string | 
     bTCommentParams := *openapiclient.NewBTCommentParams() // BTCommentParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CommentApi.UpdateComment(context.Background(), cid).BTCommentParams(bTCommentParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.UpdateComment``: %v\n", err)

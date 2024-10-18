@@ -60,8 +60,8 @@ func main() {
     tid := "tid_example" // string | 
     returnError := true // bool |  (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.AbortTransaction(context.Background(), did, eid, wid, tid).ReturnError(returnError).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.AbortTransaction``: %v\n", err)
@@ -140,8 +140,8 @@ func main() {
     bTAppElementBulkCreateParams := *openapiclient.NewBTAppElementBulkCreateParams("FormatId_example") // BTAppElementBulkCreateParams | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.BulkCreateElement(context.Background(), did, wid).BTAppElementBulkCreateParams(bTAppElementBulkCreateParams).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.BulkCreateElement``: %v\n", err)
@@ -217,8 +217,8 @@ func main() {
     bTAppElementCommitTransactionParams := *openapiclient.NewBTAppElementCommitTransactionParams() // BTAppElementCommitTransactionParams | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.CommitTransactions(context.Background(), did, wid).BTAppElementCommitTransactionParams(bTAppElementCommitTransactionParams).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.CommitTransactions``: %v\n", err)
@@ -299,8 +299,8 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
     jsonDifferenceFormat := "jsonDifferenceFormat_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.CompareAppElementJson(context.Background(), did, wvm, wvmid, eid).WorkspaceId(workspaceId).VersionId(versionId).MicroversionId(microversionId).LinkDocumentId(linkDocumentId).JsonDifferenceFormat(jsonDifferenceFormat).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.CompareAppElementJson``: %v\n", err)
@@ -381,8 +381,8 @@ func main() {
     bTAppElementParams := *openapiclient.NewBTAppElementParams("FormatId_example") // BTAppElementParams | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.CreateElement(context.Background(), did, wid).BTAppElementParams(bTAppElementParams).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.CreateElement``: %v\n", err)
@@ -457,8 +457,8 @@ func main() {
     wvmid := "wvmid_example" // string | 
     bTAppElementReferenceParams := *openapiclient.NewBTAppElementReferenceParams() // BTAppElementReferenceParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.CreateReference(context.Background(), did, eid, wvm, wvmid).BTAppElementReferenceParams(bTAppElementReferenceParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.CreateReference``: %v\n", err)
@@ -539,8 +539,8 @@ func main() {
     parentChangeId := "parentChangeId_example" // string |  (optional)
     description := "description_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.DeleteAppElementContent(context.Background(), did, eid, wvm, wvmid, sid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.DeleteAppElementContent``: %v\n", err)
@@ -625,8 +625,8 @@ func main() {
     parentChangeId := "parentChangeId_example" // string |  (optional)
     description := "description_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.DeleteAppElementContentBatch(context.Background(), did, eid, wvm, wvmid).SubelementIds(subelementIds).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.DeleteAppElementContentBatch``: %v\n", err)
@@ -708,8 +708,8 @@ func main() {
     transactionId := "transactionId_example" // string |  (optional)
     changeId := "changeId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.DeleteBlobSubelement(context.Background(), did, wid, eid, bid).TransactionId(transactionId).ChangeId(changeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.DeleteBlobSubelement``: %v\n", err)
@@ -791,8 +791,8 @@ func main() {
     parentChangeId := "parentChangeId_example" // string |  (optional)
     description := "description_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.DeleteReference(context.Background(), did, eid, wvm, wvmid, rid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.DeleteReference``: %v\n", err)
@@ -881,8 +881,8 @@ func main() {
     changeId := "changeId_example" // string |  (optional)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.DownloadBlobSubelement(context.Background(), did, vm, vmid, eid, bid).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).TransactionId(transactionId).ChangeId(changeId).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.DownloadBlobSubelement``: %v\n", err)
@@ -971,8 +971,8 @@ func main() {
     transactionId := "transactionId_example" // string |  (optional)
     changeId := "changeId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.DownloadBlobSubelementWorkspace(context.Background(), did, wid, eid, bid).ContentDisposition(contentDisposition).IfNoneMatch(ifNoneMatch).TransactionId(transactionId).ChangeId(changeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.DownloadBlobSubelementWorkspace``: %v\n", err)
@@ -1052,8 +1052,8 @@ func main() {
     wvm := "wvm_example" // string | 
     wvmid := "wvmid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.GetAppElementHistory(context.Background(), did, eid, wvm, wvmid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetAppElementHistory``: %v\n", err)
@@ -1131,8 +1131,8 @@ func main() {
     transactionId := "transactionId_example" // string |  (optional)
     changeId := "changeId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.GetBlobSubelementIds(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetBlobSubelementIds``: %v\n", err)
@@ -1209,8 +1209,8 @@ func main() {
     eid := "eid_example" // string | 
     wid := "wid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.GetElementTransactions(context.Background(), did, eid, wid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetElementTransactions``: %v\n", err)
@@ -1287,8 +1287,8 @@ func main() {
     transactionId := "transactionId_example" // string | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. (optional)
     changeId := "changeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.GetJson(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetJson``: %v\n", err)
@@ -1373,8 +1373,8 @@ func main() {
     changeId := "changeId_example" // string |  (optional)
     bTGetJsonPaths1697 := *openapiclient.NewBTGetJsonPaths1697() // BTGetJsonPaths1697 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.GetJsonPaths(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BTGetJsonPaths1697(bTGetJsonPaths1697).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetJsonPaths``: %v\n", err)
@@ -1459,8 +1459,8 @@ func main() {
     baseChangeId := "baseChangeId_example" // string |  (optional)
     subelementId := "subelementId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.GetSubElementContent(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BaseChangeId(baseChangeId).SubelementId(subelementId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetSubElementContent``: %v\n", err)
@@ -1543,8 +1543,8 @@ func main() {
     transactionId := "transactionId_example" // string |  (optional)
     changeId := "changeId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.GetSubelementIds(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ChangeId(changeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetSubelementIds``: %v\n", err)
@@ -1630,8 +1630,8 @@ func main() {
     elementIds := "elementIds_example" // string | Comma separated string of element ids to search for references in. (optional) (default to "")
     drawingsOnly := true // bool | Whether to find references for only Onshape drawing app elements. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.ResolveAllElementReferences(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ParentChangeId(parentChangeId).IncludeInternal(includeInternal).ReferenceIds(referenceIds).ElementIds(elementIds).DrawingsOnly(drawingsOnly).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.ResolveAllElementReferences``: %v\n", err)
@@ -1719,8 +1719,8 @@ func main() {
     includeInternal := true // bool |  (optional) (default to false)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.ResolveReference(context.Background(), did, eid, wvm, wvmid, rid).TransactionId(transactionId).ParentChangeId(parentChangeId).IncludeInternal(includeInternal).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.ResolveReference``: %v\n", err)
@@ -1809,8 +1809,8 @@ func main() {
     includeInternal := true // bool |  (optional) (default to false)
     referenceIds := "referenceIds_example" // string |  (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.ResolveReferences(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ParentChangeId(parentChangeId).IncludeInternal(includeInternal).ReferenceIds(referenceIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.ResolveReferences``: %v\n", err)
@@ -1893,8 +1893,8 @@ func main() {
     wid := "wid_example" // string | 
     bTAppElementStartTransactionParams := *openapiclient.NewBTAppElementStartTransactionParams() // BTAppElementStartTransactionParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.StartTransaction(context.Background(), did, eid, wid).BTAppElementStartTransactionParams(bTAppElementStartTransactionParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.StartTransaction``: %v\n", err)
@@ -1970,8 +1970,8 @@ func main() {
     wvmid := "wvmid_example" // string | 
     bTAppElementUpdateParams := *openapiclient.NewBTAppElementUpdateParams() // BTAppElementUpdateParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.UpdateAppElement(context.Background(), did, eid, wvm, wvmid).BTAppElementUpdateParams(bTAppElementUpdateParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.UpdateAppElement``: %v\n", err)
@@ -2050,8 +2050,8 @@ func main() {
     rid := "rid_example" // string | 
     bTAppElementReferenceParams := *openapiclient.NewBTAppElementReferenceParams() // BTAppElementReferenceParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.UpdateReference(context.Background(), did, eid, wvm, wvmid, rid).BTAppElementReferenceParams(bTAppElementReferenceParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.UpdateReference``: %v\n", err)
@@ -2137,8 +2137,8 @@ func main() {
     file := os.NewFile(1234, "some_file") // HttpFile | File to upload. (optional)
     fileContentLength := int64(789) // int64 |  (optional) (default to -1)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppElementApi.UploadBlobSubelement(context.Background(), did, wid, eid, bid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).File(file).FileContentLength(fileContentLength).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.UploadBlobSubelement``: %v\n", err)

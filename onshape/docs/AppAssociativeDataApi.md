@@ -37,8 +37,8 @@ func main() {
     eid := "eid_example" // string | 
     bTAppElementParamsArrayBTCopyViewAssociativeDataParams := *openapiclient.NewBTAppElementParamsArrayBTCopyViewAssociativeDataParams() // BTAppElementParamsArrayBTCopyViewAssociativeDataParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppAssociativeDataApi.CopyAssociativeData(context.Background(), did, wid, eid).BTAppElementParamsArrayBTCopyViewAssociativeDataParams(bTAppElementParamsArrayBTCopyViewAssociativeDataParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.CopyAssociativeData``: %v\n", err)
@@ -128,8 +128,8 @@ func main() {
     occurrenceId := "occurrenceId_example" // string |  (optional) (default to "")
     referenceId := "referenceId_example" // string |  (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppAssociativeDataApi.DeleteAssociativeData(context.Background(), did, eid, wvm, wvmid).TransactionId(transactionId).ParentChangeId(parentChangeId).AssociativeDataId(associativeDataId).ExternalDocumentId(externalDocumentId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReferenceId(referenceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.DeleteAssociativeData``: %v\n", err)
@@ -235,8 +235,8 @@ func main() {
     returnIdTags := true // bool |  (optional) (default to false)
     referenceId := "referenceId_example" // string |  (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppAssociativeDataApi.GetAssociativeData(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).AssociativeDataId(associativeDataId).ExternalDocumentId(externalDocumentId).ElementId(elementId).ViewId(viewId).MicroversionId(microversionId).DocumentMicroversion(documentMicroversion).DeterministicId(deterministicId).FeatureId(featureId).EntityId(entityId).OccurrenceId(occurrenceId).ReturnIdTags(returnIdTags).ReferenceId(referenceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.GetAssociativeData``: %v\n", err)
@@ -330,8 +330,8 @@ func main() {
     wvmid := "wvmid_example" // string | 
     body := "body_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AppAssociativeDataApi.PostAssociativeData(context.Background(), did, eid, wvm, wvmid).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppAssociativeDataApi.PostAssociativeData``: %v\n", err)

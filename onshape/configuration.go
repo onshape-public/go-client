@@ -85,8 +85,8 @@ type ServerConfiguration struct {
 // ServerConfigurations stores multiple ServerConfiguration items
 type ServerConfigurations []ServerConfiguration
 
-// Configuration stores the configuration of the API client
-type Configuration struct {
+// APIConfiguration stores the configuration of the API client
+type APIConfiguration struct {
 	Host             string            `json:"host,omitempty"`
 	Scheme           string            `json:"scheme,omitempty"`
 	DefaultHeader    map[string]string `json:"defaultHeader,omitempty"`
@@ -97,11 +97,11 @@ type Configuration struct {
 	HTTPClient       *http.Client
 }
 
-// NewConfiguration returns a new Configuration object
-func NewConfiguration() *Configuration {
-	cfg := &Configuration{
+// NewAPIConfiguration returns a new APIConfiguration object
+func NewAPIConfiguration() *APIConfiguration {
+	cfg := &APIConfiguration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "OpenAPI-Generator/1.188.44498-043b92518360/go",
+		UserAgent:     "OpenAPI-Generator/1.188.44694-a187f14b1bd9/go",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -115,7 +115,7 @@ func NewConfiguration() *Configuration {
 }
 
 // AddDefaultHeader adds a new HTTP header to the default header in the request
-func (c *Configuration) AddDefaultHeader(key string, value string) {
+func (c *APIConfiguration) AddDefaultHeader(key string, value string) {
 	c.DefaultHeader[key] = value
 }
 
@@ -148,7 +148,7 @@ func (sc ServerConfigurations) URL(index int, variables map[string]string) (stri
 }
 
 // ServerURL returns URL based on server settings
-func (c *Configuration) ServerURL(index int, variables map[string]string) (string, error) {
+func (c *APIConfiguration) ServerURL(index int, variables map[string]string) (string, error) {
 	return c.Servers.URL(index, variables)
 }
 
@@ -205,7 +205,7 @@ func getServerOperationVariables(ctx context.Context, endpoint string) (map[stri
 }
 
 // ServerURLWithContext returns a new server URL given an endpoint
-func (c *Configuration) ServerURLWithContext(ctx context.Context, endpoint string) (string, error) {
+func (c *APIConfiguration) ServerURLWithContext(ctx context.Context, endpoint string) (string, error) {
 	sc, ok := c.OperationServers[endpoint]
 	if !ok {
 		sc = c.Servers

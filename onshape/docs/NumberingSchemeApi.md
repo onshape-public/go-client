@@ -31,8 +31,8 @@ func main() {
     cid := "cid_example" // string |  (optional)
     did := "did_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.NumberingSchemeApi.NextNumbers(context.Background()).BTNextPartNumbersParam(bTNextPartNumbersParam).Cid(cid).Did(did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NumberingSchemeApi.NextNumbers``: %v\n", err)

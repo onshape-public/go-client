@@ -34,8 +34,8 @@ func main() {
     bTPropertiesTableTemplateParams := *openapiclient.NewBTPropertiesTableTemplateParams() // BTPropertiesTableTemplateParams | 
     templateGroupId := "templateGroupId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PropertiesTableTemplateApi.CreateTableTemplate(context.Background()).BTPropertiesTableTemplateParams(bTPropertiesTableTemplateParams).TemplateGroupId(templateGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PropertiesTableTemplateApi.CreateTableTemplate``: %v\n", err)
@@ -99,8 +99,8 @@ import (
 func main() {
     tid := "tid_example" // string | The id of the template in which to perform the operation.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PropertiesTableTemplateApi.DeleteTableTemplate(context.Background(), tid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PropertiesTableTemplateApi.DeleteTableTemplate``: %v\n", err)
@@ -170,8 +170,8 @@ func main() {
     onlyActive := true // bool |  (optional) (default to false)
     includeDefaults := true // bool |  (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PropertiesTableTemplateApi.GetByCompanyId(context.Background(), cid).TemplateType(templateType).OnlyActive(onlyActive).IncludeDefaults(includeDefaults).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PropertiesTableTemplateApi.GetByCompanyId``: %v\n", err)
@@ -244,8 +244,8 @@ func main() {
     onlyActive := true // bool |  (optional) (default to true)
     includeDefaults := true // bool |  (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PropertiesTableTemplateApi.GetByDocumentId(context.Background(), did).TemplateType(templateType).OnlyActive(onlyActive).IncludeDefaults(includeDefaults).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PropertiesTableTemplateApi.GetByDocumentId``: %v\n", err)
@@ -315,8 +315,8 @@ import (
 func main() {
     tid := "tid_example" // string | The id of the template in which to perform the operation.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PropertiesTableTemplateApi.GetTableTemplate(context.Background(), tid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PropertiesTableTemplateApi.GetTableTemplate``: %v\n", err)

@@ -40,10 +40,10 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Onshape REST API API v1.188.44498-043b92518360
+// APIClient manages communication with the Onshape REST API API v1.188.44694-a187f14b1bd9
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	cfg    *Configuration
+	cfg    *APIConfiguration
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
@@ -133,7 +133,7 @@ type service struct {
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
-func NewAPIClient(cfg *Configuration) *APIClient {
+func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	if cfg.HTTPClient == nil {
 		cfg.HTTPClient = http.DefaultClient
 	}
@@ -298,7 +298,7 @@ func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 
 // Allow modification of underlying config for alternate implementations and testing
 // Caution: modifying the configuration while live can cause data races and potentially unwanted behavior
-func (c *APIClient) GetConfig() *Configuration {
+func (c *APIClient) GetConfig() *APIConfiguration {
 	return c.cfg
 }
 

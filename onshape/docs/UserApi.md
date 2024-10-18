@@ -35,8 +35,8 @@ func main() {
     uid := "uid_example" // string | 
     includematerials := true // bool |  (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.UserApi.GetUserSettings(context.Background(), uid).Includematerials(includematerials).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUserSettings``: %v\n", err)
@@ -106,8 +106,8 @@ import (
 func main() {
     includematerials := true // bool |  (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.UserApi.GetUserSettingsCurrentLoggedInUser(context.Background()).Includematerials(includematerials).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.GetUserSettingsCurrentLoggedInUser``: %v\n", err)
@@ -172,8 +172,8 @@ import (
 func main() {
     bTLoginParams := *openapiclient.NewBTLoginParams() // BTLoginParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.UserApi.Session(context.Background()).BTLoginParams(bTLoginParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.Session``: %v\n", err)
@@ -237,8 +237,8 @@ import (
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.UserApi.SessionInfo(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.SessionInfo``: %v\n", err)

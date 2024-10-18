@@ -58,8 +58,8 @@ func main() {
     eid := "eid_example" // string | 
     bTFeatureDefinitionCall1406 := *openapiclient.NewBTFeatureDefinitionCall1406() // BTFeatureDefinitionCall1406 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.AddPartStudioFeature(context.Background(), did, wvm, wvmid, eid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.AddPartStudioFeature``: %v\n", err)
@@ -142,8 +142,8 @@ func main() {
     targetConfiguration := "targetConfiguration_example" // string |  (optional)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.ComparePartStudios(context.Background(), did, wvm, wvmid, eid).WorkspaceId(workspaceId).VersionId(versionId).MicroversionId(microversionId).SourceConfiguration(sourceConfiguration).TargetConfiguration(targetConfiguration).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.ComparePartStudios``: %v\n", err)
@@ -224,8 +224,8 @@ func main() {
     wid := "wid_example" // string | Workspace ID.
     bTModelElementParams := *openapiclient.NewBTModelElementParams() // BTModelElementParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.CreatePartStudio(context.Background(), did, wid).BTModelElementParams(bTModelElementParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.CreatePartStudio``: %v\n", err)
@@ -301,8 +301,8 @@ func main() {
     eid := "eid_example" // string | Element ID.
     bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams("FormatName_example") // BTTranslateFormatParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.CreatePartStudioTranslation(context.Background(), did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.CreatePartStudioTranslation``: %v\n", err)
@@ -381,8 +381,8 @@ func main() {
     eid := "eid_example" // string | Element ID.
     fid := "fid_example" // string | The id of the feature being updated. This id should be URL encoded and must match the featureId found in the serialized structure
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.DeletePartStudioFeature(context.Background(), did, wid, eid, fid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.DeletePartStudioFeature``: %v\n", err)
@@ -463,8 +463,8 @@ func main() {
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
     bTFeatureScriptEvalCall2377 := *openapiclient.NewBTFeatureScriptEvalCall2377() // BTFeatureScriptEvalCall2377 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.EvalFeatureScript(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).BTFeatureScriptEvalCall2377(bTFeatureScriptEvalCall2377).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.EvalFeatureScript``: %v\n", err)
@@ -553,8 +553,8 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
     binaryExport := true // bool | Whether to use binary parasolid format instead of text (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.ExportParasolid(context.Background(), did, wvm, wvmid, eid).PartIds(partIds).Version(version).IncludeExportIds(includeExportIds).Configuration(configuration).LinkDocumentId(linkDocumentId).BinaryExport(binaryExport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.ExportParasolid``: %v\n", err)
@@ -648,8 +648,8 @@ func main() {
     outputFaceAppearances := true // bool |  (optional) (default to false)
     maxFacetWidth := float64(1.2) // float64 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.ExportPartStudioGltf(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).OutputSeparateFaceNodes(outputSeparateFaceNodes).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.ExportPartStudioGltf``: %v\n", err)
@@ -750,8 +750,8 @@ func main() {
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.ExportPartStudioStl(context.Background(), did, wvm, wvmid, eid).PartIds(partIds).Mode(mode).Grouping(grouping).Scale(scale).Units(units).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).MaxFacetWidth(maxFacetWidth).MinFacetWidth(minFacetWidth).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.ExportPartStudioStl``: %v\n", err)
@@ -840,8 +840,8 @@ func main() {
     rollbackBarIndex := int32(56) // int32 | Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist. (optional) (default to -1)
     elementMicroversionId := "elementMicroversionId_example" // string | A specific element microversion in which to evaluate the request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetFeatureScriptRepresentation(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetFeatureScriptRepresentation``: %v\n", err)
@@ -927,8 +927,8 @@ func main() {
     partId := "partId_example" // string |  (optional)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetFeatureScriptTable(context.Background(), did, wvm, wvmid, eid).TableType(tableType).Configuration(configuration).TableNamespace(tableNamespace).TableParameters(tableParameters).PartId(partId).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetFeatureScriptTable``: %v\n", err)
@@ -1018,8 +1018,8 @@ func main() {
     includeCompositeParts := true // bool | Whether or not composite parts should be included in the response. (optional) (default to false)
     includeGeometricData := true // bool | Whether or not geometric data should be included in the response. (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioBodyDetails(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartIds(partIds).IncludeSurfaces(includeSurfaces).IncludeCompositeParts(includeCompositeParts).IncludeGeometricData(includeGeometricData).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioBodyDetails``: %v\n", err)
@@ -1109,8 +1109,8 @@ func main() {
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioBoundingBoxes(context.Background(), did, wvm, wvmid, eid).IncludeHidden(includeHidden).IncludeWireBodies(includeWireBodies).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioBoundingBoxes``: %v\n", err)
@@ -1201,8 +1201,8 @@ func main() {
     precomputedLevelOfDetail := "precomputedLevelOfDetail_example" // string |  (optional)
     edgeId := []string{"Inner_example"} // []string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioEdges(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).EdgeId(edgeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioEdges``: %v\n", err)
@@ -1306,8 +1306,8 @@ func main() {
     outputErrorFaces := true // bool |  (optional) (default to false)
     combineCompositePartConstituents := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioFaces(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).OutputVertexNormals(outputVertexNormals).OutputFacetNormals(outputFacetNormals).OutputTextureCoordinates(outputTextureCoordinates).OutputIndexTable(outputIndexTable).OutputErrorFaces(outputErrorFaces).CombineCompositePartConstituents(combineCompositePartConstituents).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioFaces``: %v\n", err)
@@ -1402,8 +1402,8 @@ func main() {
     wvmid := "wvmid_example" // string | Workspace (w), Version (v) or Microversion (m) ID.
     eid := "eid_example" // string | Element ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioFeatureSpecs(context.Background(), did, wvm, wvmid, eid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioFeatureSpecs``: %v\n", err)
@@ -1488,8 +1488,8 @@ func main() {
     featureId := []string{"Inner_example"} // []string | ID of a feature; repeat query param to add more than one (optional)
     noSketchGeometry := true // bool | Whether or not to output simple sketch info without geometry (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioFeatures(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).IncludeGeometryIds(includeGeometryIds).FeatureId(featureId).NoSketchGeometry(noSketchGeometry).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioFeatures``: %v\n", err)
@@ -1581,8 +1581,8 @@ func main() {
     massAsGroup := true // bool | If true, specified parts will be evaluated as a single object instead of individually (optional) (default to true)
     useMassPropertyOverrides := true // bool | If true, use the user mass property overrides when calculated mass properties (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioMassProperties(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).MassAsGroup(massAsGroup).UseMassPropertyOverrides(useMassPropertyOverrides).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioMassProperties``: %v\n", err)
@@ -1668,8 +1668,8 @@ func main() {
     skipPerspective := true // bool |  (optional) (default to true)
     includeSectionCutViews := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioNamedViews(context.Background(), did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioNamedViews``: %v\n", err)
@@ -1755,8 +1755,8 @@ func main() {
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.GetPartStudioShadedViews(context.Background(), did, wvm, wvmid, eid).ViewMatrix(viewMatrix).OutputHeight(outputHeight).OutputWidth(outputWidth).PixelSize(pixelSize).Edges(edges).ShowAllParts(showAllParts).IncludeSurfaces(includeSurfaces).UseAntiAliasing(useAntiAliasing).IncludeWires(includeWires).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioShadedViews``: %v\n", err)
@@ -1846,8 +1846,8 @@ func main() {
     eid := "eid_example" // string | Element ID.
     bTIdTranslationParams := *openapiclient.NewBTIdTranslationParams() // BTIdTranslationParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.TranslateIds(context.Background(), did, wvm, wvmid, eid).BTIdTranslationParams(bTIdTranslationParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.TranslateIds``: %v\n", err)
@@ -1926,8 +1926,8 @@ func main() {
     eid := "eid_example" // string | Element ID.
     bTUpdateFeaturesCall1748 := *openapiclient.NewBTUpdateFeaturesCall1748() // BTUpdateFeaturesCall1748 | feature The serialized feature definition (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.UpdateFeatures(context.Background(), did, wid, eid).BTUpdateFeaturesCall1748(bTUpdateFeaturesCall1748).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.UpdateFeatures``: %v\n", err)
@@ -2005,8 +2005,8 @@ func main() {
     fid := "fid_example" // string | The id of the feature being updated. This id should be URL encoded and must match the featureId found in the serialized structure
     bTFeatureDefinitionCall1406 := *openapiclient.NewBTFeatureDefinitionCall1406() // BTFeatureDefinitionCall1406 | feature The serialized feature definition (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.UpdatePartStudioFeature(context.Background(), did, wid, eid, fid).BTFeatureDefinitionCall1406(bTFeatureDefinitionCall1406).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.UpdatePartStudioFeature``: %v\n", err)
@@ -2085,8 +2085,8 @@ func main() {
     eid := "eid_example" // string | Element ID.
     body := "body_example" // string | The index at which the rollback index should be placed. Features  with entry index (0-based) higher than or equal to the value are rolled back. Value of -1 is treated  as an alias for \"end of feature list\". Otherwise the value must be in the range 0 to the number of  entries in the feature list
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PartStudioApi.UpdateRollback(context.Background(), did, wid, eid).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.UpdateRollback``: %v\n", err)

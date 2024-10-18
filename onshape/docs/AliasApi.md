@@ -36,8 +36,8 @@ import (
 func main() {
     bTAliasParams := *openapiclient.NewBTAliasParams() // BTAliasParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AliasApi.CreateAlias(context.Background()).BTAliasParams(bTAliasParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AliasApi.CreateAlias``: %v\n", err)
@@ -102,8 +102,8 @@ import (
 func main() {
     aid := "aid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AliasApi.DeleteAlias(context.Background(), aid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AliasApi.DeleteAlias``: %v\n", err)
@@ -172,8 +172,8 @@ import (
 func main() {
     aid := "aid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AliasApi.GetAlias(context.Background(), aid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AliasApi.GetAlias``: %v\n", err)
@@ -247,8 +247,8 @@ func main() {
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AliasApi.GetAliasMembers(context.Background(), aid).Prefix(prefix).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AliasApi.GetAliasMembers``: %v\n", err)
@@ -324,8 +324,8 @@ func main() {
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AliasApi.GetAliasesInCompany(context.Background()).Prefix(prefix).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AliasApi.GetAliasesInCompany``: %v\n", err)
@@ -395,8 +395,8 @@ func main() {
     aid := "aid_example" // string | 
     bTAliasParams := *openapiclient.NewBTAliasParams() // BTAliasParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AliasApi.UpdateAlias(context.Background(), aid).BTAliasParams(bTAliasParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AliasApi.UpdateAlias``: %v\n", err)

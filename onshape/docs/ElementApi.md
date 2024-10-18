@@ -40,8 +40,8 @@ func main() {
     wid := "wid_example" // string | 
     bTCopyElementParams := *openapiclient.NewBTCopyElementParams() // BTCopyElementParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.CopyElementFromSourceDocument(context.Background(), did, wid).BTCopyElementParams(bTCopyElementParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.CopyElementFromSourceDocument``: %v\n", err)
@@ -120,8 +120,8 @@ func main() {
     includeDisplay := true // bool |  (optional) (default to false)
     configurationIsId := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.DecodeConfiguration(context.Background(), did, wvm, wvmid, eid, cid).LinkDocumentId(linkDocumentId).IncludeDisplay(includeDisplay).ConfigurationIsId(configurationIsId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.DecodeConfiguration``: %v\n", err)
@@ -203,8 +203,8 @@ func main() {
     wid := "wid_example" // string | 
     eid := "eid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.DeleteElement(context.Background(), did, wid, eid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.DeleteElement``: %v\n", err)
@@ -281,8 +281,8 @@ func main() {
     versionId := "versionId_example" // string |  (optional)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.EncodeConfigurationMap(context.Background(), did, eid).BTConfigurationParams(bTConfigurationParams).VersionId(versionId).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.EncodeConfigurationMap``: %v\n", err)
@@ -360,8 +360,8 @@ func main() {
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.GetConfiguration(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.GetConfiguration``: %v\n", err)
@@ -443,8 +443,8 @@ func main() {
     checkContent := true // bool |  (optional) (default to true)
     configuration := "configuration_example" // string |  (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.GetElementTranslatorFormatsByVersionOrWorkspace(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).CheckContent(checkContent).Configuration(configuration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.GetElementTranslatorFormatsByVersionOrWorkspace``: %v\n", err)
@@ -526,8 +526,8 @@ func main() {
     eid := "eid_example" // string | 
     bTConfigurationUpdateCall2933 := *openapiclient.NewBTConfigurationUpdateCall2933() // BTConfigurationUpdateCall2933 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.UpdateConfiguration(context.Background(), did, wvm, wvmid, eid).BTConfigurationUpdateCall2933(bTConfigurationUpdateCall2933).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.UpdateConfiguration``: %v\n", err)
@@ -604,8 +604,8 @@ func main() {
     eid := "eid_example" // string | 
     bTUpdateReferenceParams := *openapiclient.NewBTUpdateReferenceParams() // BTUpdateReferenceParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ElementApi.UpdateReferences(context.Background(), did, wid, eid).BTUpdateReferenceParams(bTUpdateReferenceParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ElementApi.UpdateReferences``: %v\n", err)

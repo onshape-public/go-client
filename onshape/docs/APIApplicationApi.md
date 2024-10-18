@@ -39,8 +39,8 @@ func main() {
     cid := "cid_example" // string | 
     key := []string{"Inner_example"} // []string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.APIApplicationApi.DeleteAppSettings(context.Background(), uid, cid).Key(key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.DeleteAppSettings``: %v\n", err)
@@ -112,8 +112,8 @@ func main() {
     cid := "cid_example" // string | 
     key := []string{"Inner_example"} // []string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.APIApplicationApi.DeleteCompanyAppSettings(context.Background(), cpid, cid).Key(key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.DeleteCompanyAppSettings``: %v\n", err)
@@ -185,8 +185,8 @@ func main() {
     cid := "cid_example" // string | 
     validPurchases := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.APIApplicationApi.GetApplicableExtensionsForClient(context.Background(), uid, cid).ValidPurchases(validPurchases).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.GetApplicableExtensionsForClient``: %v\n", err)
@@ -261,8 +261,8 @@ func main() {
     documentId := "documentId_example" // string | A document owned by the company. Read access to this document allows read access to its owning company's settings. (optional)
     key := []string{"Inner_example"} // []string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.APIApplicationApi.GetCompanyAppSettings(context.Background(), cpid, cid).DocumentId(documentId).Key(key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.GetCompanyAppSettings``: %v\n", err)
@@ -337,8 +337,8 @@ func main() {
     cid := "cid_example" // string | 
     key := []string{"Inner_example"} // []string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.APIApplicationApi.GetUserAppSettings(context.Background(), uid, cid).Key(key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.GetUserAppSettings``: %v\n", err)
@@ -412,8 +412,8 @@ func main() {
     cid := "cid_example" // string | 
     bTUserAppSettingsParams := *openapiclient.NewBTUserAppSettingsParams() // BTUserAppSettingsParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.APIApplicationApi.UpdateAppCompanySettings(context.Background(), cpid, cid).BTUserAppSettingsParams(bTUserAppSettingsParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.UpdateAppCompanySettings``: %v\n", err)
@@ -487,8 +487,8 @@ func main() {
     cid := "cid_example" // string | 
     bTUserAppSettingsParams := *openapiclient.NewBTUserAppSettingsParams() // BTUserAppSettingsParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.APIApplicationApi.UpdateAppSettings(context.Background(), uid, cid).BTUserAppSettingsParams(bTUserAppSettingsParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `APIApplicationApi.UpdateAppSettings``: %v\n", err)

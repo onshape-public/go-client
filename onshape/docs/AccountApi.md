@@ -34,8 +34,8 @@ func main() {
     pid := "pid_example" // string | 
     cancelImmediately := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AccountApi.CancelPurchaseNew(context.Background(), aid, pid).CancelImmediately(cancelImmediately).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountApi.CancelPurchaseNew``: %v\n", err)
@@ -106,8 +106,8 @@ func main() {
     pid := "pid_example" // string | 
     bTPurchaseIdentityParams := *openapiclient.NewBTPurchaseIdentityParams() // BTPurchaseIdentityParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AccountApi.ConsumePurchase(context.Background(), pid).BTPurchaseIdentityParams(bTPurchaseIdentityParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountApi.ConsumePurchase``: %v\n", err)
@@ -177,8 +177,8 @@ func main() {
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AccountApi.GetPlanPurchases(context.Background(), planId).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountApi.GetPlanPurchases``: %v\n", err)
@@ -251,8 +251,8 @@ func main() {
     ownPurchaseOnly := true // bool |  (optional) (default to false)
     includeGoDEnabledAppPurchases := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.AccountApi.GetPurchases(context.Background()).All(all).OwnPurchaseOnly(ownPurchaseOnly).IncludeGoDEnabledAppPurchases(includeGoDEnabledAppPurchases).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountApi.GetPurchases``: %v\n", err)

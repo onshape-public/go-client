@@ -29,8 +29,8 @@ import (
 func main() {
     bTEventParams := openapiclient.BTEventParams{BTDocumentOpenEventParams: openapiclient.NewBTDocumentOpenEventParams()} // BTEventParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.EventApi.FireEvent(context.Background()).BTEventParams(bTEventParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventApi.FireEvent``: %v\n", err)

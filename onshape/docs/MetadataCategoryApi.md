@@ -41,8 +41,8 @@ func main() {
     onlyActive := true // bool |  (optional) (default to false)
     onlyObjectTypeDefaults := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.MetadataCategoryApi.GetCategoryProperties(context.Background()).OwnerId(ownerId).OwnerType(ownerType).DocumentId(documentId).CategoryIds(categoryIds).ObjectType(objectType).Strict(strict).IncludeObjectTypeDefaults(includeObjectTypeDefaults).IncludeComputedProperties(includeComputedProperties).IncludePartPropertiesTableOnlyProperties(includePartPropertiesTableOnlyProperties).OnlyActive(onlyActive).OnlyObjectTypeDefaults(onlyObjectTypeDefaults).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataCategoryApi.GetCategoryProperties``: %v\n", err)

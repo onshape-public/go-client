@@ -39,8 +39,8 @@ func main() {
     wid := "wid_example" // string | ID of the workspace in which to create the drawing.
     bTDrawingParams := *openapiclient.NewBTDrawingParams() // BTDrawingParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DrawingApi.CreateDrawingAppElement(context.Background(), did, wid).BTDrawingParams(bTDrawingParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.CreateDrawingAppElement``: %v\n", err)
@@ -116,8 +116,8 @@ func main() {
     eid := "eid_example" // string | 
     bTTranslateFormatParams := *openapiclient.NewBTTranslateFormatParams("FormatName_example") // BTTranslateFormatParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DrawingApi.CreateDrawingTranslation(context.Background(), did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.CreateDrawingTranslation``: %v\n", err)
@@ -195,8 +195,8 @@ func main() {
     wid := "wid_example" // string | 
     eid := "eid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DrawingApi.GetDrawingTranslatorFormats(context.Background(), did, wid, eid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.GetDrawingTranslatorFormats``: %v\n", err)
@@ -275,8 +275,8 @@ func main() {
     changeId := "changeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional) (default to "")
     scale := float64(1.2) // float64 | Scale for measurements. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DrawingApi.GetDrawingViewJsonGeometry1(context.Background(), did, wvm, wvmid, eid, viewid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).Scale(scale).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.GetDrawingViewJsonGeometry1``: %v\n", err)
@@ -361,8 +361,8 @@ func main() {
     transactionId := "transactionId_example" // string | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. (optional) (default to "")
     changeId := "changeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DrawingApi.GetDrawingViews1(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.GetDrawingViews1``: %v\n", err)
@@ -438,8 +438,8 @@ import (
 func main() {
     mrid := "mrid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DrawingApi.GetModificationStatus(context.Background(), mrid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.GetModificationStatus``: %v\n", err)
@@ -512,8 +512,8 @@ func main() {
     bTDrawingModificationParams := *openapiclient.NewBTDrawingModificationParams() // BTDrawingModificationParams | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DrawingApi.ModifyDrawing(context.Background(), did, wid, eid).BTDrawingModificationParams(bTDrawingModificationParams).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DrawingApi.ModifyDrawing``: %v\n", err)

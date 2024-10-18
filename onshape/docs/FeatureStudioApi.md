@@ -36,8 +36,8 @@ func main() {
     wid := "wid_example" // string | 
     bTModelElementParams := *openapiclient.NewBTModelElementParams() // BTModelElementParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.FeatureStudioApi.CreateFeatureStudio(context.Background(), did, wid).BTModelElementParams(bTModelElementParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FeatureStudioApi.CreateFeatureStudio``: %v\n", err)
@@ -110,8 +110,8 @@ func main() {
     wvmid := "wvmid_example" // string | 
     eid := "eid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.FeatureStudioApi.GetFeatureStudioContents(context.Background(), did, wvm, wvmid, eid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FeatureStudioApi.GetFeatureStudioContents``: %v\n", err)
@@ -187,8 +187,8 @@ func main() {
     wvmid := "wvmid_example" // string | 
     eid := "eid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.FeatureStudioApi.GetFeatureStudioSpecs(context.Background(), did, wvm, wvmid, eid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FeatureStudioApi.GetFeatureStudioSpecs``: %v\n", err)
@@ -265,8 +265,8 @@ func main() {
     eid := "eid_example" // string | 
     bTFeatureStudioContents2239 := *openapiclient.NewBTFeatureStudioContents2239() // BTFeatureStudioContents2239 |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.FeatureStudioApi.UpdateFeatureStudioContents(context.Background(), did, wvm, wvmid, eid).BTFeatureStudioContents2239(bTFeatureStudioContents2239).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FeatureStudioApi.UpdateFeatureStudioContents``: %v\n", err)
