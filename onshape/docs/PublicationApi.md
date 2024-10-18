@@ -36,8 +36,8 @@ func main() {
     pid := "pid_example" // string | Publication ID.
     bTPublicationItemParams := *openapiclient.NewBTPublicationItemParams() // BTPublicationItemParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PublicationApi.AddItemToPublication(context.Background(), pid).BTPublicationItemParams(bTPublicationItemParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.AddItemToPublication``: %v\n", err)
@@ -106,8 +106,8 @@ func main() {
     pid := "pid_example" // string | Publication ID.
     bTPublicationBulkItemParams := *openapiclient.NewBTPublicationBulkItemParams() // BTPublicationBulkItemParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PublicationApi.AddItemsToPublication(context.Background(), pid).BTPublicationBulkItemParams(bTPublicationBulkItemParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.AddItemsToPublication``: %v\n", err)
@@ -175,8 +175,8 @@ import (
 func main() {
     bTPublicationParams := *openapiclient.NewBTPublicationParams() // BTPublicationParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PublicationApi.CreatePublication(context.Background()).BTPublicationParams(bTPublicationParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.CreatePublication``: %v\n", err)
@@ -240,8 +240,8 @@ func main() {
     pid := "pid_example" // string | Publication ID.
     forever := true // bool | If true, publication is deleted forever. (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PublicationApi.DeletePublication(context.Background(), pid).Forever(forever).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.DeletePublication``: %v\n", err)
@@ -310,8 +310,8 @@ func main() {
     pid := "pid_example" // string | Publication ID.
     iid := "iid_example" // string | Publication item ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PublicationApi.DeletePublicationItem(context.Background(), pid, iid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.DeletePublicationItem``: %v\n", err)
@@ -380,8 +380,8 @@ import (
 func main() {
     pid := "pid_example" // string | Publication ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PublicationApi.GetPublicationItems(context.Background(), pid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.GetPublicationItems``: %v\n", err)
@@ -449,8 +449,8 @@ func main() {
     pid := "pid_example" // string | Publication ID.
     bTPublicationParams := *openapiclient.NewBTPublicationParams() // BTPublicationParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.PublicationApi.UpdatePublicationAttributes(context.Background(), pid).BTPublicationParams(bTPublicationParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationApi.UpdatePublicationAttributes``: %v\n", err)

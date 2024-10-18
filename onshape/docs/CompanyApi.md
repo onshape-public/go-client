@@ -37,8 +37,8 @@ func main() {
     cid := "cid_example" // string | 
     bTCompanyUserParams := *openapiclient.NewBTCompanyUserParams() // BTCompanyUserParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CompanyApi.AddUserToCompany(context.Background(), cid).BTCompanyUserParams(bTCompanyUserParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.AddUserToCompany``: %v\n", err)
@@ -110,8 +110,8 @@ func main() {
     activeOnly := true // bool |  (optional) (default to true)
     includeAll := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CompanyApi.FindCompany(context.Background()).Uid(uid).ActiveOnly(activeOnly).IncludeAll(includeAll).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.FindCompany``: %v\n", err)
@@ -176,8 +176,8 @@ import (
 func main() {
     cid := "cid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CompanyApi.GetCompany(context.Background(), cid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.GetCompany``: %v\n", err)
@@ -247,8 +247,8 @@ func main() {
     cid := "cid_example" // string | 
     name := "name_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CompanyApi.GetDocumentsByName(context.Background(), cid).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.GetDocumentsByName``: %v\n", err)
@@ -319,8 +319,8 @@ func main() {
     removeFromTeams := true // bool |  (optional) (default to true)
     removeDirectShares := true // bool |  (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CompanyApi.RemoveUserFromCompany(context.Background(), cid, uid).RemoveFromTeams(removeFromTeams).RemoveDirectShares(removeDirectShares).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.RemoveUserFromCompany``: %v\n", err)
@@ -395,8 +395,8 @@ func main() {
     uid := "uid_example" // string | 
     bTCompanyUserParams := *openapiclient.NewBTCompanyUserParams() // BTCompanyUserParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.CompanyApi.UpdateCompanyUser(context.Background(), cid, uid).BTCompanyUserParams(bTCompanyUserParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.UpdateCompanyUser``: %v\n", err)

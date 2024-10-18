@@ -63,8 +63,8 @@ func main() {
     wid := "wid_example" // string | 
     bTCopyDocumentParams := *openapiclient.NewBTCopyDocumentParams() // BTCopyDocumentParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.CopyWorkspace(context.Background(), did, wid).BTCopyDocumentParams(bTCopyDocumentParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.CopyWorkspace``: %v\n", err)
@@ -136,8 +136,8 @@ import (
 func main() {
     bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.CreateDocument(context.Background()).BTDocumentParams(bTDocumentParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.CreateDocument``: %v\n", err)
@@ -201,8 +201,8 @@ func main() {
     did := "did_example" // string | 
     bTVersionOrWorkspaceParams := *openapiclient.NewBTVersionOrWorkspaceParams() // BTVersionOrWorkspaceParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.CreateVersion(context.Background(), did).BTVersionOrWorkspaceParams(bTVersionOrWorkspaceParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.CreateVersion``: %v\n", err)
@@ -271,8 +271,8 @@ func main() {
     did := "did_example" // string | 
     bTVersionOrWorkspaceParams := *openapiclient.NewBTVersionOrWorkspaceParams() // BTVersionOrWorkspaceParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.CreateWorkspace(context.Background(), did).BTVersionOrWorkspaceParams(bTVersionOrWorkspaceParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.CreateWorkspace``: %v\n", err)
@@ -341,8 +341,8 @@ func main() {
     did := "did_example" // string | 
     forever := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.DeleteDocument(context.Background(), did).Forever(forever).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.DeleteDocument``: %v\n", err)
@@ -411,8 +411,8 @@ func main() {
     did := "did_example" // string | 
     wid := "wid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.DeleteWorkspace(context.Background(), did, wid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.DeleteWorkspace``: %v\n", err)
@@ -485,8 +485,8 @@ func main() {
     fid := "fid_example" // string | 
     ifNoneMatch := "ifNoneMatch_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.DownloadExternalData(context.Background(), did, fid).IfNoneMatch(ifNoneMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.DownloadExternalData``: %v\n", err)
@@ -561,8 +561,8 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     bTBExportModelParams := *openapiclient.NewBTBExportModelParams("DocumentId_example", "Format_example") // BTBExportModelParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.Export2Json(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).BTBExportModelParams(bTBExportModelParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.Export2Json``: %v\n", err)
@@ -639,8 +639,8 @@ func main() {
     wv := "wv_example" // string | 
     wvid := "wvid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetCurrentMicroversion(context.Background(), did, wv, wvid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetCurrentMicroversion``: %v\n", err)
@@ -711,8 +711,8 @@ import (
 func main() {
     did := "did_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetDocument(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocument``: %v\n", err)
@@ -779,8 +779,8 @@ import (
 func main() {
     did := "did_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetDocumentAcl(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocumentAcl``: %v\n", err)
@@ -849,8 +849,8 @@ func main() {
     wm := "wm_example" // string | 
     wmid := "wmid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetDocumentHistory(context.Background(), did, wm, wmid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocumentHistory``: %v\n", err)
@@ -921,8 +921,8 @@ import (
 func main() {
     did := "did_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetDocumentPermissionSet(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocumentPermissionSet``: %v\n", err)
@@ -991,8 +991,8 @@ func main() {
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 0)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetDocumentVersions(context.Background(), did).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocumentVersions``: %v\n", err)
@@ -1061,8 +1061,8 @@ import (
 func main() {
     did := "did_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetDocumentWorkspaces(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocumentWorkspaces``: %v\n", err)
@@ -1139,8 +1139,8 @@ func main() {
     project := "project_example" // string | Project (optional)
     parentId := "parentId_example" // string | Parent Id (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetDocuments(context.Background()).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Label(label).Project(project).ParentId(parentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocuments``: %v\n", err)
@@ -1219,8 +1219,8 @@ func main() {
     elementId := "elementId_example" // string |  (optional) (default to "")
     withThumbnails := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetElementsInDocument(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetElementsInDocument``: %v\n", err)
@@ -1322,8 +1322,8 @@ func main() {
     includeVariableStudios := true // bool |  (optional) (default to false)
     allowedBlobExtensions := "allowedBlobExtensions_example" // string |  (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetInsertables(context.Background(), did, wv, wvid).ElementId(elementId).Configuration(configuration).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetInsertables``: %v\n", err)
@@ -1422,8 +1422,8 @@ func main() {
     wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetUnitInfo(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetUnitInfo``: %v\n", err)
@@ -1498,8 +1498,8 @@ func main() {
     parents := true // bool |  (optional) (default to false)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.GetVersion(context.Background(), did, vid).Parents(parents).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetVersion``: %v\n", err)
@@ -1572,8 +1572,8 @@ func main() {
     wid := "wid_example" // string | 
     bTVersionOrWorkspaceMergeInfo := *openapiclient.NewBTVersionOrWorkspaceMergeInfo() // BTVersionOrWorkspaceMergeInfo | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.MergeIntoWorkspace(context.Background(), did, wid).BTVersionOrWorkspaceMergeInfo(bTVersionOrWorkspaceMergeInfo).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.MergeIntoWorkspace``: %v\n", err)
@@ -1647,8 +1647,8 @@ func main() {
     sourceId := "sourceId_example" // string | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.MergePreview(context.Background(), did, wid).SourceType(sourceType).SourceId(sourceId).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.MergePreview``: %v\n", err)
@@ -1722,8 +1722,8 @@ func main() {
     wid := "wid_example" // string | 
     bTMoveElementParams := *openapiclient.NewBTMoveElementParams() // BTMoveElementParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.MoveElementsToDocument(context.Background(), did, wid).BTMoveElementParams(bTMoveElementParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.MoveElementsToDocument``: %v\n", err)
@@ -1798,8 +1798,8 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     bTRestoreInfo := *openapiclient.NewBTRestoreInfo() // BTRestoreInfo |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.RestoreFromHistory(context.Background(), did, wid, vm, vmid).LinkDocumentId(linkDocumentId).BTRestoreInfo(bTRestoreInfo).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.RestoreFromHistory``: %v\n", err)
@@ -1876,8 +1876,8 @@ func main() {
     wid := "wid_example" // string | 
     bTRevertUnchangedParams := *openapiclient.NewBTRevertUnchangedParams() // BTRevertUnchangedParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.RevertUnchangedToRevisions(context.Background(), did, wid).BTRevertUnchangedParams(bTRevertUnchangedParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.RevertUnchangedToRevisions``: %v\n", err)
@@ -1949,8 +1949,8 @@ import (
 func main() {
     bTDocumentSearchParams := *openapiclient.NewBTDocumentSearchParams() // BTDocumentSearchParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.Search(context.Background()).BTDocumentSearchParams(bTDocumentSearchParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.Search``: %v\n", err)
@@ -2014,8 +2014,8 @@ func main() {
     did := "did_example" // string | 
     bTShareParams := *openapiclient.NewBTShareParams() // BTShareParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.ShareDocument(context.Background(), did).BTShareParams(bTShareParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.ShareDocument``: %v\n", err)
@@ -2083,8 +2083,8 @@ import (
 func main() {
     did := "did_example" // string | Document ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.ShareWithSupport(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.ShareWithSupport``: %v\n", err)
@@ -2153,8 +2153,8 @@ func main() {
     wid := "wid_example" // string | 
     bTSyncAppElementParams := *openapiclient.NewBTSyncAppElementParams() // BTSyncAppElementParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.SyncAppElements(context.Background(), did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.SyncAppElements``: %v\n", err)
@@ -2228,8 +2228,8 @@ func main() {
     eid := "eid_example" // string | ID of the entity to remove permissions for. Uses `userId`, `companyId`, `teamId`, `documentId`, or `applicationId`, depending on the `entryType` value.
     entryType := int32(56) // int32 | `0` (user) | `1` (company) | `2` (team) | `3` (document) | `4` (application) (optional) (default to 0)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.UnShareDocument(context.Background(), did, eid).EntryType(entryType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UnShareDocument``: %v\n", err)
@@ -2299,8 +2299,8 @@ import (
 func main() {
     did := "did_example" // string | Document ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.UnshareFromSupport(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UnshareFromSupport``: %v\n", err)
@@ -2368,8 +2368,8 @@ func main() {
     did := "did_example" // string | 
     bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.UpdateDocumentAttributes(context.Background(), did).BTDocumentParams(bTDocumentParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UpdateDocumentAttributes``: %v\n", err)
@@ -2440,8 +2440,8 @@ func main() {
     eid := "eid_example" // string | 
     bTLinkToLatestDocumentParams := *openapiclient.NewBTLinkToLatestDocumentParams() // BTLinkToLatestDocumentParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.DocumentApi.UpdateExternalReferencesToLatestDocuments(context.Background(), did, wid, eid).BTLinkToLatestDocumentParams(bTLinkToLatestDocumentParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UpdateExternalReferencesToLatestDocuments``: %v\n", err)

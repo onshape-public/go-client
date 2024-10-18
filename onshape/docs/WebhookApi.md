@@ -36,8 +36,8 @@ import (
 func main() {
     bTWebhookParams := *openapiclient.NewBTWebhookParams() // BTWebhookParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.WebhookApi.CreateWebhook(context.Background()).BTWebhookParams(bTWebhookParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhookApi.CreateWebhook``: %v\n", err)
@@ -102,8 +102,8 @@ import (
 func main() {
     webhookid := "webhookid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.WebhookApi.GetWebhook(context.Background(), webhookid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhookApi.GetWebhook``: %v\n", err)
@@ -175,8 +175,8 @@ func main() {
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.WebhookApi.GetWebhooks(context.Background()).Company(company).User(user).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhookApi.GetWebhooks``: %v\n", err)
@@ -244,8 +244,8 @@ import (
 func main() {
     webhookid := "webhookid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.WebhookApi.PingWebhook(context.Background(), webhookid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhookApi.PingWebhook``: %v\n", err)
@@ -315,8 +315,8 @@ func main() {
     webhookid := "webhookid_example" // string | 
     blockNotification := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.WebhookApi.UnregisterWebhook(context.Background(), webhookid).BlockNotification(blockNotification).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhookApi.UnregisterWebhook``: %v\n", err)
@@ -387,8 +387,8 @@ func main() {
     webhookid := "webhookid_example" // string | 
     bTWebhookParams := *openapiclient.NewBTWebhookParams() // BTWebhookParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.WebhookApi.UpdateWebhook(context.Background(), webhookid).BTWebhookParams(bTWebhookParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhookApi.UpdateWebhook``: %v\n", err)

@@ -43,8 +43,8 @@ func main() {
     operationIds := []string{"Inner_example"} // []string | Only return operations with specified ids. (optional)
     excludedOperationIds := []string{"Inner_example"} // []string | Do not return operations with specified ids. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.OpenApiApi.GetOpenApi(context.Background()).ForceReload(forceReload).Version(version).VersionAlias(versionAlias).NoFilter(noFilter).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OpenApiApi.GetOpenApi``: %v\n", err)
@@ -119,8 +119,8 @@ import (
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.OpenApiApi.GetTags(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OpenApiApi.GetTags``: %v\n", err)

@@ -35,8 +35,8 @@ func main() {
     revisionId := "revisionId_example" // string | 
     debugMode := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ReleasePackageApi.CreateObsoletionPackage(context.Background(), wfid).RevisionId(revisionId).DebugMode(debugMode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReleasePackageApi.CreateObsoletionPackage``: %v\n", err)
@@ -109,8 +109,8 @@ func main() {
     bTReleasePackageParams := *openapiclient.NewBTReleasePackageParams() // BTReleasePackageParams | 
     debugMode := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ReleasePackageApi.CreateReleasePackage(context.Background(), wfid).BTReleasePackageParams(bTReleasePackageParams).DebugMode(debugMode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReleasePackageApi.CreateReleasePackage``: %v\n", err)
@@ -179,8 +179,8 @@ import (
 func main() {
     documentId := "documentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ReleasePackageApi.GetCompanyReleaseWorkflow(context.Background()).DocumentId(documentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReleasePackageApi.GetCompanyReleaseWorkflow``: %v\n", err)
@@ -244,8 +244,8 @@ func main() {
     rpid := "rpid_example" // string | 
     detailed := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ReleasePackageApi.GetReleasePackage(context.Background(), rpid).Detailed(detailed).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReleasePackageApi.GetReleasePackage``: %v\n", err)
@@ -318,8 +318,8 @@ func main() {
     action := "action_example" // string |  (optional) (default to "UPDATE")
     wfaction := "wfaction_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ReleasePackageApi.UpdateReleasePackage(context.Background(), rpid).BTUpdateReleasePackageParams(bTUpdateReleasePackageParams).Action(action).Wfaction(wfaction).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReleasePackageApi.UpdateReleasePackage``: %v\n", err)

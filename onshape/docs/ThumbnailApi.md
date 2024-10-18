@@ -45,8 +45,8 @@ func main() {
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.DeleteApplicationThumbnails(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.DeleteApplicationThumbnails``: %v\n", err)
@@ -123,8 +123,8 @@ func main() {
     did := "did_example" // string | 
     wid := "wid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetDocumentThumbnail(context.Background(), did, wid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetDocumentThumbnail``: %v\n", err)
@@ -199,8 +199,8 @@ func main() {
     t := "t_example" // string | Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails. (optional)
     skipDefaultImage := "skipDefaultImage_example" // string | Controls the return of the default image, if thumbnail is not available (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetDocumentThumbnailWithSize(context.Background(), did, wid, sz).T(t).SkipDefaultImage(skipDefaultImage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetDocumentThumbnailWithSize``: %v\n", err)
@@ -279,8 +279,8 @@ func main() {
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetElementThumbnail(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetElementThumbnail``: %v\n", err)
@@ -365,8 +365,8 @@ func main() {
     rejectEmpty := true // bool |  (optional) (default to false)
     requireConfigMatch := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithApiConfiguration(context.Background(), did, wid, eid, cid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).RequireConfigMatch(requireConfigMatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetElementThumbnailWithApiConfiguration``: %v\n", err)
@@ -454,8 +454,8 @@ func main() {
     skipDefaultImage := "skipDefaultImage_example" // string | Controls the return of the default image, if thumbnail is not available (optional) (default to "")
     rejectEmpty := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetElementThumbnailWithSize(context.Background(), did, wv, wvid, eid, sz).LinkDocumentId(linkDocumentId).T(t).SkipDefaultImage(skipDefaultImage).RejectEmpty(rejectEmpty).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetElementThumbnailWithSize``: %v\n", err)
@@ -536,8 +536,8 @@ import (
 func main() {
     did := "did_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetThumbnailForDocument(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetThumbnailForDocument``: %v\n", err)
@@ -608,8 +608,8 @@ func main() {
     vid := "vid_example" // string | 
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetThumbnailForDocumentAndVersion(context.Background(), did, vid).LinkDocumentId(linkDocumentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetThumbnailForDocumentAndVersion``: %v\n", err)
@@ -682,8 +682,8 @@ func main() {
     did := "did_example" // string | 
     vid := "vid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetThumbnailForDocumentAndVersionOld(context.Background(), did, vid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetThumbnailForDocumentAndVersionOld``: %v\n", err)
@@ -754,8 +754,8 @@ import (
 func main() {
     did := "did_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.GetThumbnailForDocumentOld(context.Background(), did).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.GetThumbnailForDocumentOld``: %v\n", err)
@@ -830,8 +830,8 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     overwrite := true // bool |  (optional) (default to false)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ThumbnailApi.SetApplicationElementThumbnail(context.Background(), did, wv, wvid, eid).BTApplicationElementThumbnailParamsArray(bTApplicationElementThumbnailParamsArray).LinkDocumentId(linkDocumentId).Overwrite(overwrite).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ThumbnailApi.SetApplicationElementThumbnail``: %v\n", err)

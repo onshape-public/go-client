@@ -36,8 +36,8 @@ func main() {
     limit := int32(56) // int32 |  (optional) (default to 20)
     includeCompanyOwnedTeams := true // bool |  (optional) (default to true)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TeamApi.Find(context.Background()).Prefix(prefix).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TeamApi.Find``: %v\n", err)
@@ -112,8 +112,8 @@ func main() {
     limit := int32(56) // int32 |  (optional) (default to 20)
     q := "q_example" // string |  (optional) (default to "")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TeamApi.GetMembers(context.Background(), tid).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Q(q).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TeamApi.GetMembers``: %v\n", err)
@@ -185,8 +185,8 @@ import (
 func main() {
     tid := "tid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TeamApi.GetTeam(context.Background(), tid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TeamApi.GetTeam``: %v\n", err)

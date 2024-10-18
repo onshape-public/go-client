@@ -32,8 +32,8 @@ func main() {
     cu := "cu_example" // string | Indicates which of company (c) or user (u) id is specified below.
     cuid := "cuid_example" // string | The id of the company or user in which the operation should be performed.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.ExportRuleApi.GetValidRuleOptions(context.Background(), cu, cuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportRuleApi.GetValidRuleOptions``: %v\n", err)

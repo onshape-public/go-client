@@ -33,8 +33,8 @@ import (
 func main() {
     bTCreateTaskParams := *openapiclient.NewBTCreateTaskParams("CompanyId_example") // BTCreateTaskParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TaskApi.CreateTask(context.Background()).BTCreateTaskParams(bTCreateTaskParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.CreateTask``: %v\n", err)
@@ -106,8 +106,8 @@ func main() {
     type_ := []string{"Inner_example"} // []string |  (optional)
     documentId := "documentId_example" // string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TaskApi.GetActionItems(context.Background()).UserId(userId).Offset(offset).Limit(limit).Status(status).Role(role).Order(order).Type_(type_).DocumentId(documentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.GetActionItems``: %v\n", err)
@@ -177,8 +177,8 @@ import (
 func main() {
     tid := "tid_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TaskApi.GetTask(context.Background(), tid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.GetTask``: %v\n", err)
@@ -246,8 +246,8 @@ func main() {
     tid := "tid_example" // string | 
     transition := "transition_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TaskApi.TransitionTask(context.Background(), tid, transition).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.TransitionTask``: %v\n", err)
@@ -317,8 +317,8 @@ func main() {
     tid := "tid_example" // string | 
     bTUpdateTaskParams := *openapiclient.NewBTUpdateTaskParams() // BTUpdateTaskParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
     resp, r, err := apiClient.TaskApi.UpdateTask(context.Background(), tid).BTUpdateTaskParams(bTUpdateTaskParams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.UpdateTask``: %v\n", err)
