@@ -6,7 +6,7 @@
     "operationIds": null
   },
   "generate": {
-    "generatorUrl": "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.6.0/openapi-generator-cli-6.6.0.jar",
+    "generatorUrl": "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar",
     "customGeneratorUrl": "https://github.com/onshape-public/openapi-utilities/raw/main/go-oapi-codegen/release/go-oapi-codegen-latest.jar",
     "preprocess": [
       {
