@@ -16,6 +16,7 @@ import (
 
 // BTAssemblyPattern1974 struct for BTAssemblyPattern1974
 type BTAssemblyPattern1974 struct {
+	BTParametricInstance2641
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -51,6 +52,8 @@ type BTAssemblyPattern1974 struct {
 	FeatureId              *string                        `json:"featureId,omitempty"`
 	InstanceControlNodes   []BTInstanceControlNode750     `json:"instanceControlNodes,omitempty"`
 	PatternFeature         *BTMAssemblyPatternFeature2241 `json:"patternFeature,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTAssemblyPattern1974 instantiates a new BTAssemblyPattern1974 object
@@ -1126,8 +1129,48 @@ func (o *BTAssemblyPattern1974) SetPatternFeature(v BTMAssemblyPatternFeature224
 	o.PatternFeature = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTAssemblyPattern1974) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyPattern1974) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTAssemblyPattern1974) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTAssemblyPattern1974) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTAssemblyPattern1974) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParametricInstance2641, errBTParametricInstance2641 := json.Marshal(o.BTParametricInstance2641)
+	if errBTParametricInstance2641 != nil {
+		return []byte{}, errBTParametricInstance2641
+	}
+	errBTParametricInstance2641 = json.Unmarshal([]byte(serializedBTParametricInstance2641), &toSerialize)
+	if errBTParametricInstance2641 != nil {
+		return []byte{}, errBTParametricInstance2641
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -1226,6 +1269,9 @@ func (o BTAssemblyPattern1974) MarshalJSON() ([]byte, error) {
 	}
 	if o.PatternFeature != nil {
 		toSerialize["patternFeature"] = o.PatternFeature
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

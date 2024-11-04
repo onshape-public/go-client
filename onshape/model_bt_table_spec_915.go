@@ -16,6 +16,7 @@ import (
 
 // BTTableSpec915 struct for BTTableSpec915
 type BTTableSpec915 struct {
+	BTFeatureSpec129
 	AdditionalLocalizedStrings *int32                       `json:"additionalLocalizedStrings,omitempty"`
 	AllParameters              []BTParameterSpec6           `json:"allParameters,omitempty"`
 	BtType                     *string                      `json:"btType,omitempty"`
@@ -50,6 +51,8 @@ type BTTableSpec915 struct {
 	TooltipTemplate            *string                      `json:"tooltipTemplate,omitempty"`
 	UiHints                    []GBTUIHint                  `json:"uiHints,omitempty"`
 	IsComputedPropertyTable    *bool                        `json:"isComputedPropertyTable,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTTableSpec915 instantiates a new BTTableSpec915 object
@@ -1157,8 +1160,48 @@ func (o *BTTableSpec915) SetIsComputedPropertyTable(v bool) {
 	o.IsComputedPropertyTable = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTTableSpec915) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableSpec915) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTTableSpec915) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTTableSpec915) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTTableSpec915) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureSpec129, errBTFeatureSpec129 := json.Marshal(o.BTFeatureSpec129)
+	if errBTFeatureSpec129 != nil {
+		return []byte{}, errBTFeatureSpec129
+	}
+	errBTFeatureSpec129 = json.Unmarshal([]byte(serializedBTFeatureSpec129), &toSerialize)
+	if errBTFeatureSpec129 != nil {
+		return []byte{}, errBTFeatureSpec129
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
@@ -1260,6 +1303,9 @@ func (o BTTableSpec915) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsComputedPropertyTable != nil {
 		toSerialize["isComputedPropertyTable"] = o.IsComputedPropertyTable
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

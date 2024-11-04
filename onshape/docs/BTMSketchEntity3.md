@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**CombinedSketchEntityType** | Pointer to [**CombinedSketchEntityType**](CombinedSketchEntityType.md) |  | [optional] 
 **EntityId** | Pointer to **string** |  | [optional] 
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
@@ -55,6 +56,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMSketchEntity3) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetCombinedSketchEntityType
+
+`func (o *BTMSketchEntity3) GetCombinedSketchEntityType() CombinedSketchEntityType`
+
+GetCombinedSketchEntityType returns the CombinedSketchEntityType field if non-nil, zero value otherwise.
+
+### GetCombinedSketchEntityTypeOk
+
+`func (o *BTMSketchEntity3) GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool)`
+
+GetCombinedSketchEntityTypeOk returns a tuple with the CombinedSketchEntityType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCombinedSketchEntityType
+
+`func (o *BTMSketchEntity3) SetCombinedSketchEntityType(v CombinedSketchEntityType)`
+
+SetCombinedSketchEntityType sets CombinedSketchEntityType field to given value.
+
+### HasCombinedSketchEntityType
+
+`func (o *BTMSketchEntity3) HasCombinedSketchEntityType() bool`
+
+HasCombinedSketchEntityType returns a boolean if a field has been set.
 
 ### GetEntityId
 

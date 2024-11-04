@@ -16,6 +16,7 @@ import (
 
 // BTPArgumentDeclaration232 struct for BTPArgumentDeclaration232
 type BTPArgumentDeclaration232 struct {
+	BTPNode7
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -31,6 +32,8 @@ type BTPArgumentDeclaration232 struct {
 	StandardType        *GBTPType           `json:"standardType,omitempty"`
 	Type                *BTPTypeName290     `json:"type,omitempty"`
 	TypeName            *string             `json:"typeName,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPArgumentDeclaration232 instantiates a new BTPArgumentDeclaration232 object
@@ -530,8 +533,48 @@ func (o *BTPArgumentDeclaration232) SetTypeName(v string) {
 	o.TypeName = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPArgumentDeclaration232) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPArgumentDeclaration232) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPArgumentDeclaration232) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPArgumentDeclaration232) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPArgumentDeclaration232) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}
@@ -576,6 +619,9 @@ func (o BTPArgumentDeclaration232) MarshalJSON() ([]byte, error) {
 	}
 	if o.TypeName != nil {
 		toSerialize["typeName"] = o.TypeName
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

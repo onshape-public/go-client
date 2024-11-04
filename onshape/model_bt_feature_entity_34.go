@@ -617,6 +617,56 @@ func (o *BTFeatureEntity34) SetFirstGeometry(v BTEntityGeometry35) {
 	o.GetActualInstance().(getResult).SetFirstGeometry(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTFeatureEntity34) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTFeatureEntity34) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTFeatureEntity34) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTFeatureEntity34) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTFeatureEntity34) UnmarshalJSON(data []byte) error {
 	var err error
@@ -777,6 +827,7 @@ func (v *NullableBTFeatureEntity34) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTFeatureEntity34 struct {
+	BTBaseEntityData33
 	BtType                 *string                       `json:"btType,omitempty"`
 	ConstructionPlane      *bool                         `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry    *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
@@ -788,6 +839,8 @@ type base_BTFeatureEntity34 struct {
 	Origin                 *bool                         `json:"origin,omitempty"`
 	DomainSpecificMetadata []BTDomainSpecificMetadata961 `json:"domainSpecificMetadata,omitempty"`
 	FirstGeometry          *BTEntityGeometry35           `json:"firstGeometry,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTFeatureEntity34 instantiates a new base_BTFeatureEntity34 object
@@ -1159,8 +1212,48 @@ func (o *base_BTFeatureEntity34) SetFirstGeometry(v BTEntityGeometry35) {
 	o.FirstGeometry = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTFeatureEntity34) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTFeatureEntity34) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTFeatureEntity34) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTFeatureEntity34) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTFeatureEntity34) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTBaseEntityData33, errBTBaseEntityData33 := json.Marshal(o.BTBaseEntityData33)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
+	errBTBaseEntityData33 = json.Unmarshal([]byte(serializedBTBaseEntityData33), &toSerialize)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -1193,6 +1286,9 @@ func (o base_BTFeatureEntity34) MarshalJSON() ([]byte, error) {
 	}
 	if o.FirstGeometry != nil {
 		toSerialize["firstGeometry"] = o.FirstGeometry
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -36,7 +36,8 @@ type BTAPIApplicationExtensionInfo struct {
 	ParentAppPrimaryFormat *string `json:"parentAppPrimaryFormat,omitempty"`
 	ShowResponse           *bool   `json:"showResponse,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef *string `json:"viewRef,omitempty"`
+	ViewRef        *string `json:"viewRef,omitempty"`
+	VisibilityRule *string `json:"visibilityRule,omitempty"`
 }
 
 // NewBTAPIApplicationExtensionInfo instantiates a new BTAPIApplicationExtensionInfo object
@@ -600,6 +601,38 @@ func (o *BTAPIApplicationExtensionInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetVisibilityRule returns the VisibilityRule field value if set, zero value otherwise.
+func (o *BTAPIApplicationExtensionInfo) GetVisibilityRule() string {
+	if o == nil || o.VisibilityRule == nil {
+		var ret string
+		return ret
+	}
+	return *o.VisibilityRule
+}
+
+// GetVisibilityRuleOk returns a tuple with the VisibilityRule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAPIApplicationExtensionInfo) GetVisibilityRuleOk() (*string, bool) {
+	if o == nil || o.VisibilityRule == nil {
+		return nil, false
+	}
+	return o.VisibilityRule, true
+}
+
+// HasVisibilityRule returns a boolean if a field has been set.
+func (o *BTAPIApplicationExtensionInfo) HasVisibilityRule() bool {
+	if o != nil && o.VisibilityRule != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibilityRule gets a reference to the given string and assigns it to the VisibilityRule field.
+func (o *BTAPIApplicationExtensionInfo) SetVisibilityRule(v string) {
+	o.VisibilityRule = &v
+}
+
 func (o BTAPIApplicationExtensionInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ActionBody != nil {
@@ -652,6 +685,9 @@ func (o BTAPIApplicationExtensionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
+	}
+	if o.VisibilityRule != nil {
+		toSerialize["visibilityRule"] = o.VisibilityRule
 	}
 	return json.Marshal(toSerialize)
 }

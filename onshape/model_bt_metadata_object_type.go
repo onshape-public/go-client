@@ -39,6 +39,7 @@ const (
 	BTMetadataObjectTypeChangeTask         BTMetadataObjectType = "CHANGE_TASK"
 	BTMetadataObjectTypeVariableStudio     BTMetadataObjectType = "VARIABLE_STUDIO"
 	BTMetadataObjectTypeDrawingAnnotations BTMetadataObjectType = "DRAWING_ANNOTATIONS"
+	BTMetadataObjectTypeFolder             BTMetadataObjectType = "FOLDER"
 )
 
 // All allowed values of BTMetadataObjectType enum
@@ -62,6 +63,7 @@ var AllowedBTMetadataObjectTypeEnumValues = []BTMetadataObjectType{
 	"CHANGE_TASK",
 	"VARIABLE_STUDIO",
 	"DRAWING_ANNOTATIONS",
+	"FOLDER",
 }
 
 func (v *BTMetadataObjectType) UnmarshalJSON(src []byte) error {

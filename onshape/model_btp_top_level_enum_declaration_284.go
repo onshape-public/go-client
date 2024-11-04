@@ -16,8 +16,9 @@ import (
 
 // BTPTopLevelEnumDeclaration284 struct for BTPTopLevelEnumDeclaration284
 type BTPTopLevelEnumDeclaration284 struct {
-	Atomic                *bool                       `json:"atomic,omitempty"`
+	BTPTopLevelTypeDeclaration287
 	BtType                *string                     `json:"btType,omitempty"`
+	Atomic                *bool                       `json:"atomic,omitempty"`
 	DocumentationType     *GBTPDefinitionType         `json:"documentationType,omitempty"`
 	EndSourceLocation     *int32                      `json:"endSourceLocation,omitempty"`
 	NodeId                *string                     `json:"nodeId,omitempty"`
@@ -40,6 +41,8 @@ type BTPTopLevelEnumDeclaration284 struct {
 	SpaceInEmptyList      *BTPSpace10                 `json:"spaceInEmptyList,omitempty"`
 	TrailingComma         *bool                       `json:"trailingComma,omitempty"`
 	Values                []BTPIdentifier8            `json:"values,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPTopLevelEnumDeclaration284 instantiates a new BTPTopLevelEnumDeclaration284 object
@@ -57,38 +60,6 @@ func NewBTPTopLevelEnumDeclaration284() *BTPTopLevelEnumDeclaration284 {
 func NewBTPTopLevelEnumDeclaration284WithDefaults() *BTPTopLevelEnumDeclaration284 {
 	this := BTPTopLevelEnumDeclaration284{}
 	return &this
-}
-
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPTopLevelEnumDeclaration284) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPTopLevelEnumDeclaration284) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPTopLevelEnumDeclaration284) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPTopLevelEnumDeclaration284) SetAtomic(v bool) {
-	o.Atomic = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -121,6 +92,38 @@ func (o *BTPTopLevelEnumDeclaration284) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTPTopLevelEnumDeclaration284) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPTopLevelEnumDeclaration284) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPTopLevelEnumDeclaration284) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPTopLevelEnumDeclaration284) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPTopLevelEnumDeclaration284) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -827,13 +830,53 @@ func (o *BTPTopLevelEnumDeclaration284) SetValues(v []BTPIdentifier8) {
 	o.Values = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPTopLevelEnumDeclaration284) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPTopLevelEnumDeclaration284) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPTopLevelEnumDeclaration284) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPTopLevelEnumDeclaration284) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPTopLevelEnumDeclaration284) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPTopLevelTypeDeclaration287, errBTPTopLevelTypeDeclaration287 := json.Marshal(o.BTPTopLevelTypeDeclaration287)
+	if errBTPTopLevelTypeDeclaration287 != nil {
+		return []byte{}, errBTPTopLevelTypeDeclaration287
+	}
+	errBTPTopLevelTypeDeclaration287 = json.Unmarshal([]byte(serializedBTPTopLevelTypeDeclaration287), &toSerialize)
+	if errBTPTopLevelTypeDeclaration287 != nil {
+		return []byte{}, errBTPTopLevelTypeDeclaration287
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType
@@ -900,6 +943,9 @@ func (o BTPTopLevelEnumDeclaration284) MarshalJSON() ([]byte, error) {
 	}
 	if o.Values != nil {
 		toSerialize["values"] = o.Values
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

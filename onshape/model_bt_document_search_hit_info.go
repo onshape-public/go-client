@@ -21,6 +21,7 @@ type BTDocumentSearchHitInfo struct {
 	HighlightedFields      *map[string][]string              `json:"highlightedFields,omitempty"`
 	Hit                    *BTLegacySearchHit                `json:"hit,omitempty"`
 	HitId                  *string                           `json:"hitId,omitempty"`
+	MeshState              *int32                            `json:"meshState,omitempty"`
 	Name                   *string                           `json:"name,omitempty"`
 	ProjectId              *string                           `json:"projectId,omitempty"`
 	SourceMap              map[string]map[string]interface{} `json:"sourceMap,omitempty"`
@@ -205,6 +206,38 @@ func (o *BTDocumentSearchHitInfo) SetHitId(v string) {
 	o.HitId = &v
 }
 
+// GetMeshState returns the MeshState field value if set, zero value otherwise.
+func (o *BTDocumentSearchHitInfo) GetMeshState() int32 {
+	if o == nil || o.MeshState == nil {
+		var ret int32
+		return ret
+	}
+	return *o.MeshState
+}
+
+// GetMeshStateOk returns a tuple with the MeshState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSearchHitInfo) GetMeshStateOk() (*int32, bool) {
+	if o == nil || o.MeshState == nil {
+		return nil, false
+	}
+	return o.MeshState, true
+}
+
+// HasMeshState returns a boolean if a field has been set.
+func (o *BTDocumentSearchHitInfo) HasMeshState() bool {
+	if o != nil && o.MeshState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeshState gets a reference to the given int32 and assigns it to the MeshState field.
+func (o *BTDocumentSearchHitInfo) SetMeshState(v int32) {
+	o.MeshState = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTDocumentSearchHitInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -381,6 +414,9 @@ func (o BTDocumentSearchHitInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.HitId != nil {
 		toSerialize["hitId"] = o.HitId
+	}
+	if o.MeshState != nil {
+		toSerialize["meshState"] = o.MeshState
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

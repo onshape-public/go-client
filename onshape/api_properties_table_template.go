@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// PropertiesTableTemplateApiService PropertiesTableTemplateApi service
-type PropertiesTableTemplateApiService service
+// PropertiesTableTemplateAPIService PropertiesTableTemplateAPI service
+type PropertiesTableTemplateAPIService service
 
 type ApiCreateTableTemplateRequest struct {
 	ctx                             context.Context
-	ApiService                      *PropertiesTableTemplateApiService
+	ApiService                      *PropertiesTableTemplateAPIService
 	bTPropertiesTableTemplateParams *BTPropertiesTableTemplateParams
 	templateGroupId                 *string
 }
@@ -48,7 +48,7 @@ CreateTableTemplate Create a new properties table template.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateTableTemplateRequest
 */
-func (a *PropertiesTableTemplateApiService) CreateTableTemplate(ctx context.Context) ApiCreateTableTemplateRequest {
+func (a *PropertiesTableTemplateAPIService) CreateTableTemplate(ctx context.Context) ApiCreateTableTemplateRequest {
 	return ApiCreateTableTemplateRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -58,7 +58,7 @@ func (a *PropertiesTableTemplateApiService) CreateTableTemplate(ctx context.Cont
 // Execute executes the request
 //
 //	@return BTPropertiesTableTemplateInfo
-func (a *PropertiesTableTemplateApiService) CreateTableTemplateExecute(r ApiCreateTableTemplateRequest) (*BTPropertiesTableTemplateInfo, *http.Response, error) {
+func (a *PropertiesTableTemplateAPIService) CreateTableTemplateExecute(r ApiCreateTableTemplateRequest) (*BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -66,7 +66,7 @@ func (a *PropertiesTableTemplateApiService) CreateTableTemplateExecute(r ApiCrea
 		localVarReturnValue *BTPropertiesTableTemplateInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateApiService.CreateTableTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateAPIService.CreateTableTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,7 +148,7 @@ func (a *PropertiesTableTemplateApiService) CreateTableTemplateExecute(r ApiCrea
 
 type ApiDeleteTableTemplateRequest struct {
 	ctx        context.Context
-	ApiService *PropertiesTableTemplateApiService
+	ApiService *PropertiesTableTemplateAPIService
 	tid        string
 }
 
@@ -163,7 +163,7 @@ DeleteTableTemplate Delete a properties table template.
 	@param tid The id of the template in which to perform the operation.
 	@return ApiDeleteTableTemplateRequest
 */
-func (a *PropertiesTableTemplateApiService) DeleteTableTemplate(ctx context.Context, tid string) ApiDeleteTableTemplateRequest {
+func (a *PropertiesTableTemplateAPIService) DeleteTableTemplate(ctx context.Context, tid string) ApiDeleteTableTemplateRequest {
 	return ApiDeleteTableTemplateRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -174,7 +174,7 @@ func (a *PropertiesTableTemplateApiService) DeleteTableTemplate(ctx context.Cont
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *PropertiesTableTemplateApiService) DeleteTableTemplateExecute(r ApiDeleteTableTemplateRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PropertiesTableTemplateAPIService) DeleteTableTemplateExecute(r ApiDeleteTableTemplateRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -182,7 +182,7 @@ func (a *PropertiesTableTemplateApiService) DeleteTableTemplateExecute(r ApiDele
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateApiService.DeleteTableTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateAPIService.DeleteTableTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,7 +257,7 @@ func (a *PropertiesTableTemplateApiService) DeleteTableTemplateExecute(r ApiDele
 
 type ApiGetByCompanyIdRequest struct {
 	ctx             context.Context
-	ApiService      *PropertiesTableTemplateApiService
+	ApiService      *PropertiesTableTemplateAPIService
 	cid             string
 	templateType    *BTPropertiesTableTemplateType
 	onlyActive      *bool
@@ -291,7 +291,7 @@ GetByCompanyId Get all properties table templates available for a company.
 	@param cid The id of the company in which to perform the operation.
 	@return ApiGetByCompanyIdRequest
 */
-func (a *PropertiesTableTemplateApiService) GetByCompanyId(ctx context.Context, cid string) ApiGetByCompanyIdRequest {
+func (a *PropertiesTableTemplateAPIService) GetByCompanyId(ctx context.Context, cid string) ApiGetByCompanyIdRequest {
 	return ApiGetByCompanyIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -302,7 +302,7 @@ func (a *PropertiesTableTemplateApiService) GetByCompanyId(ctx context.Context, 
 // Execute executes the request
 //
 //	@return []BTPropertiesTableTemplateInfo
-func (a *PropertiesTableTemplateApiService) GetByCompanyIdExecute(r ApiGetByCompanyIdRequest) ([]BTPropertiesTableTemplateInfo, *http.Response, error) {
+func (a *PropertiesTableTemplateAPIService) GetByCompanyIdExecute(r ApiGetByCompanyIdRequest) ([]BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -310,7 +310,7 @@ func (a *PropertiesTableTemplateApiService) GetByCompanyIdExecute(r ApiGetByComp
 		localVarReturnValue []BTPropertiesTableTemplateInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateApiService.GetByCompanyId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateAPIService.GetByCompanyId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -394,7 +394,7 @@ func (a *PropertiesTableTemplateApiService) GetByCompanyIdExecute(r ApiGetByComp
 
 type ApiGetByDocumentIdRequest struct {
 	ctx             context.Context
-	ApiService      *PropertiesTableTemplateApiService
+	ApiService      *PropertiesTableTemplateAPIService
 	did             string
 	templateType    *BTPropertiesTableTemplateType
 	onlyActive      *bool
@@ -428,7 +428,7 @@ GetByDocumentId Get all table templates that are available to use on the provide
 	@param did The id of the document in which to perform the operation.
 	@return ApiGetByDocumentIdRequest
 */
-func (a *PropertiesTableTemplateApiService) GetByDocumentId(ctx context.Context, did string) ApiGetByDocumentIdRequest {
+func (a *PropertiesTableTemplateAPIService) GetByDocumentId(ctx context.Context, did string) ApiGetByDocumentIdRequest {
 	return ApiGetByDocumentIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -439,7 +439,7 @@ func (a *PropertiesTableTemplateApiService) GetByDocumentId(ctx context.Context,
 // Execute executes the request
 //
 //	@return []BTPropertiesTableTemplateInfo
-func (a *PropertiesTableTemplateApiService) GetByDocumentIdExecute(r ApiGetByDocumentIdRequest) ([]BTPropertiesTableTemplateInfo, *http.Response, error) {
+func (a *PropertiesTableTemplateAPIService) GetByDocumentIdExecute(r ApiGetByDocumentIdRequest) ([]BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -447,7 +447,7 @@ func (a *PropertiesTableTemplateApiService) GetByDocumentIdExecute(r ApiGetByDoc
 		localVarReturnValue []BTPropertiesTableTemplateInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateApiService.GetByDocumentId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateAPIService.GetByDocumentId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -531,7 +531,7 @@ func (a *PropertiesTableTemplateApiService) GetByDocumentIdExecute(r ApiGetByDoc
 
 type ApiGetTableTemplateRequest struct {
 	ctx        context.Context
-	ApiService *PropertiesTableTemplateApiService
+	ApiService *PropertiesTableTemplateAPIService
 	tid        string
 }
 
@@ -546,7 +546,7 @@ GetTableTemplate Get a properties table template by template ID.
 	@param tid The id of the template in which to perform the operation.
 	@return ApiGetTableTemplateRequest
 */
-func (a *PropertiesTableTemplateApiService) GetTableTemplate(ctx context.Context, tid string) ApiGetTableTemplateRequest {
+func (a *PropertiesTableTemplateAPIService) GetTableTemplate(ctx context.Context, tid string) ApiGetTableTemplateRequest {
 	return ApiGetTableTemplateRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -557,7 +557,7 @@ func (a *PropertiesTableTemplateApiService) GetTableTemplate(ctx context.Context
 // Execute executes the request
 //
 //	@return BTPropertiesTableTemplateInfo
-func (a *PropertiesTableTemplateApiService) GetTableTemplateExecute(r ApiGetTableTemplateRequest) (*BTPropertiesTableTemplateInfo, *http.Response, error) {
+func (a *PropertiesTableTemplateAPIService) GetTableTemplateExecute(r ApiGetTableTemplateRequest) (*BTPropertiesTableTemplateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -565,7 +565,7 @@ func (a *PropertiesTableTemplateApiService) GetTableTemplateExecute(r ApiGetTabl
 		localVarReturnValue *BTPropertiesTableTemplateInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateApiService.GetTableTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PropertiesTableTemplateAPIService.GetTableTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

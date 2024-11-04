@@ -16,6 +16,7 @@ import (
 
 // BTExplosion2754 struct for BTExplosion2754
 type BTExplosion2754 struct {
+	BTMAssemblyFeature887
 	BtType *string `json:"btType,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
 	FeatureId *string `json:"featureId,omitempty"`
@@ -50,6 +51,8 @@ type BTExplosion2754 struct {
 	Version                                *int32                                    `json:"version,omitempty"`
 	ExplodeSteps                           []BTExplosionStepFeature3008              `json:"explodeSteps,omitempty"`
 	StartingPositionId                     *BTMicroversionIdAndConfiguration2338     `json:"startingPositionId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTExplosion2754 instantiates a new BTExplosion2754 object
@@ -773,8 +776,48 @@ func (o *BTExplosion2754) SetStartingPositionId(v BTMicroversionIdAndConfigurati
 	o.StartingPositionId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTExplosion2754) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExplosion2754) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTExplosion2754) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTExplosion2754) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTExplosion2754) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMAssemblyFeature887, errBTMAssemblyFeature887 := json.Marshal(o.BTMAssemblyFeature887)
+	if errBTMAssemblyFeature887 != nil {
+		return []byte{}, errBTMAssemblyFeature887
+	}
+	errBTMAssemblyFeature887 = json.Unmarshal([]byte(serializedBTMAssemblyFeature887), &toSerialize)
+	if errBTMAssemblyFeature887 != nil {
+		return []byte{}, errBTMAssemblyFeature887
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -840,6 +883,9 @@ func (o BTExplosion2754) MarshalJSON() ([]byte, error) {
 	}
 	if o.StartingPositionId != nil {
 		toSerialize["startingPositionId"] = o.StartingPositionId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

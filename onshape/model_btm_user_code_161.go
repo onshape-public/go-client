@@ -16,12 +16,15 @@ import (
 
 // BTMUserCode161 struct for BTMUserCode161
 type BTMUserCode161 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string          `json:"importMicroversion,omitempty"`
 	NodeId             *string          `json:"nodeId,omitempty"`
 	Parsed             *BTPStatement269 `json:"parsed,omitempty"`
 	Statement          *string          `json:"statement,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMUserCode161 instantiates a new BTMUserCode161 object
@@ -201,8 +204,48 @@ func (o *BTMUserCode161) SetStatement(v string) {
 	o.Statement = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMUserCode161) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMUserCode161) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMUserCode161) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMUserCode161) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMUserCode161) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -217,6 +260,9 @@ func (o BTMUserCode161) MarshalJSON() ([]byte, error) {
 	}
 	if o.Statement != nil {
 		toSerialize["statement"] = o.Statement
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

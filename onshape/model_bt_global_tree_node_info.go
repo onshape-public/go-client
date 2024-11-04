@@ -40,13 +40,13 @@ func (o *BTDocumentProcessingInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInf
 	return &BTGlobalTreeNodeInfo{o}
 }
 
-// BTPublicationInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTPublicationInfo wrapped in BTGlobalTreeNodeInfo
-func (o *BTPublicationInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+// BTDocumentSummaryInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentSummaryInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTDocumentSummaryInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
 	return &BTGlobalTreeNodeInfo{o}
 }
 
-// BTDocumentSummaryInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentSummaryInfo wrapped in BTGlobalTreeNodeInfo
-func (o *BTDocumentSummaryInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+// BTPublicationInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTPublicationInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTPublicationInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
 	return &BTGlobalTreeNodeInfo{o}
 }
 
@@ -1049,62 +1049,6 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
-	// check if the discriminator value is 'BTDocumentInfo'
-	if jsonDict["jsonType"] == "BTDocumentInfo" {
-		// try to unmarshal JSON data into BTDocumentInfo
-		var qr *BTDocumentInfo
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTGlobalTreeNodeInfo = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentInfo: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTDocumentProcessingInfo'
-	if jsonDict["jsonType"] == "BTDocumentProcessingInfo" {
-		// try to unmarshal JSON data into BTDocumentProcessingInfo
-		var qr *BTDocumentProcessingInfo
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTGlobalTreeNodeInfo = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentProcessingInfo: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTDocumentSummarySearchInfo'
-	if jsonDict["jsonType"] == "BTDocumentSummarySearchInfo" {
-		// try to unmarshal JSON data into BTDocumentSummarySearchInfo
-		var qr *BTDocumentSummarySearchInfo
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTGlobalTreeNodeInfo = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummarySearchInfo: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTPublicationInfo'
-	if jsonDict["jsonType"] == "BTPublicationInfo" {
-		// try to unmarshal JSON data into BTPublicationInfo
-		var qr *BTPublicationInfo
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTGlobalTreeNodeInfo = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTGlobalTreeNodeInfo = nil
-			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTPublicationInfo: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'classroom'
 	if jsonDict["jsonType"] == "classroom" {
 		// try to unmarshal JSON data into BTClassroomInfo
@@ -1228,6 +1172,62 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
 			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTTeamSummaryInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDocumentInfo'
+	if jsonDict["jsonType"] == "BTDocumentInfo" {
+		// try to unmarshal JSON data into BTDocumentInfo
+		var qr *BTDocumentInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDocumentProcessingInfo'
+	if jsonDict["jsonType"] == "BTDocumentProcessingInfo" {
+		// try to unmarshal JSON data into BTDocumentProcessingInfo
+		var qr *BTDocumentProcessingInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentProcessingInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDocumentSummarySearchInfo'
+	if jsonDict["jsonType"] == "BTDocumentSummarySearchInfo" {
+		// try to unmarshal JSON data into BTDocumentSummarySearchInfo
+		var qr *BTDocumentSummarySearchInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummarySearchInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPublicationInfo'
+	if jsonDict["jsonType"] == "BTPublicationInfo" {
+		// try to unmarshal JSON data into BTPublicationInfo
+		var qr *BTPublicationInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTPublicationInfo: %s", err.Error())
 		}
 	}
 

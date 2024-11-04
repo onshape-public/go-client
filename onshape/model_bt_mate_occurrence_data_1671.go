@@ -16,10 +16,13 @@ import (
 
 // BTMateOccurrenceData1671 struct for BTMateOccurrenceData1671
 type BTMateOccurrenceData1671 struct {
+	BTFeatureOccurrenceData775
 	BtType     *string                 `json:"btType,omitempty"`
 	Visibility *GBTBSFeatureVisibility `json:"visibility,omitempty"`
 	ValueMap   *map[string]float64     `json:"valueMap,omitempty"`
 	Values     []float64               `json:"values,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMateOccurrenceData1671 instantiates a new BTMateOccurrenceData1671 object
@@ -167,8 +170,48 @@ func (o *BTMateOccurrenceData1671) SetValues(v []float64) {
 	o.Values = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMateOccurrenceData1671) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMateOccurrenceData1671) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMateOccurrenceData1671) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMateOccurrenceData1671) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMateOccurrenceData1671) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureOccurrenceData775, errBTFeatureOccurrenceData775 := json.Marshal(o.BTFeatureOccurrenceData775)
+	if errBTFeatureOccurrenceData775 != nil {
+		return []byte{}, errBTFeatureOccurrenceData775
+	}
+	errBTFeatureOccurrenceData775 = json.Unmarshal([]byte(serializedBTFeatureOccurrenceData775), &toSerialize)
+	if errBTFeatureOccurrenceData775 != nil {
+		return []byte{}, errBTFeatureOccurrenceData775
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -180,6 +223,9 @@ func (o BTMateOccurrenceData1671) MarshalJSON() ([]byte, error) {
 	}
 	if o.Values != nil {
 		toSerialize["values"] = o.Values
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

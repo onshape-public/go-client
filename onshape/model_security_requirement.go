@@ -16,8 +16,11 @@ import (
 
 // SecurityRequirement struct for SecurityRequirement
 type SecurityRequirement struct {
-	Empty *bool `json:"empty,omitempty"`
+	Empty                *bool `json:"empty,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityRequirement SecurityRequirement
 
 // NewSecurityRequirement instantiates a new SecurityRequirement object
 // This constructor will assign default values to properties that have it defined,
@@ -73,7 +76,29 @@ func (o SecurityRequirement) MarshalJSON() ([]byte, error) {
 	if o.Empty != nil {
 		toSerialize["empty"] = o.Empty
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return json.Marshal(toSerialize)
+}
+
+func (o *SecurityRequirement) UnmarshalJSON(bytes []byte) (err error) {
+	varSecurityRequirement := _SecurityRequirement{}
+
+	if err = json.Unmarshal(bytes, &varSecurityRequirement); err == nil {
+		*o = SecurityRequirement(varSecurityRequirement)
+	}
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "empty")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityRequirement struct {

@@ -16,6 +16,7 @@ import (
 
 // BTToleranceSpec3441 struct for BTToleranceSpec3441
 type BTToleranceSpec3441 struct {
+	BTFeatureSpec129
 	AdditionalLocalizedStrings *int32                       `json:"additionalLocalizedStrings,omitempty"`
 	AllParameters              []BTParameterSpec6           `json:"allParameters,omitempty"`
 	BtType                     *string                      `json:"btType,omitempty"`
@@ -49,6 +50,8 @@ type BTToleranceSpec3441 struct {
 	ToleranceSpec              *bool                        `json:"toleranceSpec,omitempty"`
 	TooltipTemplate            *string                      `json:"tooltipTemplate,omitempty"`
 	UiHints                    []GBTUIHint                  `json:"uiHints,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTToleranceSpec3441 instantiates a new BTToleranceSpec3441 object
@@ -1124,8 +1127,48 @@ func (o *BTToleranceSpec3441) SetUiHints(v []GBTUIHint) {
 	o.UiHints = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTToleranceSpec3441) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTToleranceSpec3441) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTToleranceSpec3441) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTToleranceSpec3441) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTToleranceSpec3441) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureSpec129, errBTFeatureSpec129 := json.Marshal(o.BTFeatureSpec129)
+	if errBTFeatureSpec129 != nil {
+		return []byte{}, errBTFeatureSpec129
+	}
+	errBTFeatureSpec129 = json.Unmarshal([]byte(serializedBTFeatureSpec129), &toSerialize)
+	if errBTFeatureSpec129 != nil {
+		return []byte{}, errBTFeatureSpec129
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
@@ -1224,6 +1267,9 @@ func (o BTToleranceSpec3441) MarshalJSON() ([]byte, error) {
 	}
 	if o.UiHints != nil {
 		toSerialize["uiHints"] = o.UiHints
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

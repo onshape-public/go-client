@@ -16,6 +16,7 @@ import (
 
 // BTMParameterReferenceText2115 struct for BTMParameterReferenceText2115
 type BTMParameterReferenceText2115 struct {
+	BTMParameterReferenceBlob3281
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -31,6 +32,8 @@ type BTMParameterReferenceText2115 struct {
 	Ids                []string                           `json:"ids,omitempty"`
 	MicroversioId      *string                            `json:"microversioId,omitempty"`
 	Namespace          *string                            `json:"namespace,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMParameterReferenceText2115 instantiates a new BTMParameterReferenceText2115 object
@@ -434,8 +437,48 @@ func (o *BTMParameterReferenceText2115) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMParameterReferenceText2115) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferenceText2115) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMParameterReferenceText2115) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMParameterReferenceText2115) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMParameterReferenceText2115) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameterReferenceBlob3281, errBTMParameterReferenceBlob3281 := json.Marshal(o.BTMParameterReferenceBlob3281)
+	if errBTMParameterReferenceBlob3281 != nil {
+		return []byte{}, errBTMParameterReferenceBlob3281
+	}
+	errBTMParameterReferenceBlob3281 = json.Unmarshal([]byte(serializedBTMParameterReferenceBlob3281), &toSerialize)
+	if errBTMParameterReferenceBlob3281 != nil {
+		return []byte{}, errBTMParameterReferenceBlob3281
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -471,6 +514,9 @@ func (o BTMParameterReferenceText2115) MarshalJSON() ([]byte, error) {
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

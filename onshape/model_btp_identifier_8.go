@@ -16,8 +16,9 @@ import (
 
 // BTPIdentifier8 struct for BTPIdentifier8
 type BTPIdentifier8 struct {
-	Atomic                   *bool               `json:"atomic,omitempty"`
+	BTPPropertyAccessor23
 	BtType                   *string             `json:"btType,omitempty"`
+	Atomic                   *bool               `json:"atomic,omitempty"`
 	DocumentationType        *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation        *int32              `json:"endSourceLocation,omitempty"`
 	NodeId                   *string             `json:"nodeId,omitempty"`
@@ -28,6 +29,8 @@ type BTPIdentifier8 struct {
 	StartSourceLocation      *int32              `json:"startSourceLocation,omitempty"`
 	Identifier               *string             `json:"identifier,omitempty"`
 	InvalidIdentifierForTest *string             `json:"invalidIdentifierForTest,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPIdentifier8 instantiates a new BTPIdentifier8 object
@@ -45,38 +48,6 @@ func NewBTPIdentifier8() *BTPIdentifier8 {
 func NewBTPIdentifier8WithDefaults() *BTPIdentifier8 {
 	this := BTPIdentifier8{}
 	return &this
-}
-
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPIdentifier8) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPIdentifier8) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPIdentifier8) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPIdentifier8) SetAtomic(v bool) {
-	o.Atomic = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -109,6 +80,38 @@ func (o *BTPIdentifier8) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTPIdentifier8) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPIdentifier8) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPIdentifier8) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPIdentifier8) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPIdentifier8) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -431,13 +434,53 @@ func (o *BTPIdentifier8) SetInvalidIdentifierForTest(v string) {
 	o.InvalidIdentifierForTest = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPIdentifier8) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPIdentifier8) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPIdentifier8) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPIdentifier8) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPIdentifier8) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPPropertyAccessor23, errBTPPropertyAccessor23 := json.Marshal(o.BTPPropertyAccessor23)
+	if errBTPPropertyAccessor23 != nil {
+		return []byte{}, errBTPPropertyAccessor23
+	}
+	errBTPPropertyAccessor23 = json.Unmarshal([]byte(serializedBTPPropertyAccessor23), &toSerialize)
+	if errBTPPropertyAccessor23 != nil {
+		return []byte{}, errBTPPropertyAccessor23
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType
@@ -468,6 +511,9 @@ func (o BTPIdentifier8) MarshalJSON() ([]byte, error) {
 	}
 	if o.InvalidIdentifierForTest != nil {
 		toSerialize["invalidIdentifierForTest"] = o.InvalidIdentifierForTest
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

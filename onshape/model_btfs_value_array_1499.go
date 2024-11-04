@@ -16,6 +16,7 @@ import (
 
 // BTFSValueArray1499 struct for BTFSValueArray1499
 type BTFSValueArray1499 struct {
+	BTFSValue1888
 	BtType  string          `json:"btType"`
 	TypeTag *string         `json:"typeTag,omitempty"`
 	Value   []BTFSValue1888 `json:"value,omitempty"`
@@ -129,6 +130,14 @@ func (o *BTFSValueArray1499) SetValue(v []BTFSValue1888) {
 
 func (o BTFSValueArray1499) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFSValue1888, errBTFSValue1888 := json.Marshal(o.BTFSValue1888)
+	if errBTFSValue1888 != nil {
+		return []byte{}, errBTFSValue1888
+	}
+	errBTFSValue1888 = json.Unmarshal([]byte(serializedBTFSValue1888), &toSerialize)
+	if errBTFSValue1888 != nil {
+		return []byte{}, errBTFSValue1888
+	}
 	if true {
 		toSerialize["btType"] = o.BtType
 	}

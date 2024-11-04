@@ -16,15 +16,19 @@ import (
 
 // BTMSketchInvalid1601 struct for BTMSketchInvalid1601
 type BTMSketchInvalid1601 struct {
+	BTMSketchEntity3
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion                  *string         `json:"importMicroversion,omitempty"`
-	NodeId                              *string         `json:"nodeId,omitempty"`
-	EntityId                            *string         `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string         `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Index                               *int32          `json:"index,omitempty"`
-	Namespace                           *string         `json:"namespace,omitempty"`
-	Parameters                          []BTMParameter1 `json:"parameters,omitempty"`
+	ImportMicroversion                  *string                   `json:"importMicroversion,omitempty"`
+	NodeId                              *string                   `json:"nodeId,omitempty"`
+	CombinedSketchEntityType            *CombinedSketchEntityType `json:"combinedSketchEntityType,omitempty"`
+	EntityId                            *string                   `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string                   `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Index                               *int32                    `json:"index,omitempty"`
+	Namespace                           *string                   `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1           `json:"parameters,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMSketchInvalid1601 instantiates a new BTMSketchInvalid1601 object
@@ -138,6 +142,38 @@ func (o *BTMSketchInvalid1601) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTMSketchInvalid1601) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetCombinedSketchEntityType returns the CombinedSketchEntityType field value if set, zero value otherwise.
+func (o *BTMSketchInvalid1601) GetCombinedSketchEntityType() CombinedSketchEntityType {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		var ret CombinedSketchEntityType
+		return ret
+	}
+	return *o.CombinedSketchEntityType
+}
+
+// GetCombinedSketchEntityTypeOk returns a tuple with the CombinedSketchEntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchInvalid1601) GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool) {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		return nil, false
+	}
+	return o.CombinedSketchEntityType, true
+}
+
+// HasCombinedSketchEntityType returns a boolean if a field has been set.
+func (o *BTMSketchInvalid1601) HasCombinedSketchEntityType() bool {
+	if o != nil && o.CombinedSketchEntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCombinedSketchEntityType gets a reference to the given CombinedSketchEntityType and assigns it to the CombinedSketchEntityType field.
+func (o *BTMSketchInvalid1601) SetCombinedSketchEntityType(v CombinedSketchEntityType) {
+	o.CombinedSketchEntityType = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -300,8 +336,48 @@ func (o *BTMSketchInvalid1601) SetParameters(v []BTMParameter1) {
 	o.Parameters = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMSketchInvalid1601) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchInvalid1601) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMSketchInvalid1601) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMSketchInvalid1601) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMSketchInvalid1601) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchEntity3, errBTMSketchEntity3 := json.Marshal(o.BTMSketchEntity3)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
+	errBTMSketchEntity3 = json.Unmarshal([]byte(serializedBTMSketchEntity3), &toSerialize)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -310,6 +386,9 @@ func (o BTMSketchInvalid1601) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.CombinedSketchEntityType != nil {
+		toSerialize["combinedSketchEntityType"] = o.CombinedSketchEntityType
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId
@@ -325,6 +404,9 @@ func (o BTMSketchInvalid1601) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
