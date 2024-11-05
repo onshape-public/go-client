@@ -16,6 +16,7 @@ import (
 
 // BTPropertyTableColumnInfo2161 struct for BTPropertyTableColumnInfo2161
 type BTPropertyTableColumnInfo2161 struct {
+	BTTableColumnInfo1222
 	BtType                     *string                `json:"btType,omitempty"`
 	Id                         *string                `json:"id,omitempty"`
 	NodeId                     *string                `json:"nodeId,omitempty"`
@@ -23,6 +24,8 @@ type BTPropertyTableColumnInfo2161 struct {
 	IsComputedAssemblyProperty *bool                  `json:"isComputedAssemblyProperty,omitempty"`
 	IsComputedProperty         *bool                  `json:"isComputedProperty,omitempty"`
 	PropertyValueType          *int32                 `json:"propertyValueType,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPropertyTableColumnInfo2161 instantiates a new BTPropertyTableColumnInfo2161 object
@@ -266,8 +269,48 @@ func (o *BTPropertyTableColumnInfo2161) SetPropertyValueType(v int32) {
 	o.PropertyValueType = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPropertyTableColumnInfo2161) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPropertyTableColumnInfo2161) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPropertyTableColumnInfo2161) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPropertyTableColumnInfo2161) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPropertyTableColumnInfo2161) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
+	errBTTableColumnInfo1222 = json.Unmarshal([]byte(serializedBTTableColumnInfo1222), &toSerialize)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -288,6 +331,9 @@ func (o BTPropertyTableColumnInfo2161) MarshalJSON() ([]byte, error) {
 	}
 	if o.PropertyValueType != nil {
 		toSerialize["propertyValueType"] = o.PropertyValueType
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

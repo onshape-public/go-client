@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// ThumbnailApiService ThumbnailApi service
-type ThumbnailApiService service
+// ThumbnailAPIService ThumbnailAPI service
+type ThumbnailAPIService service
 
 type ApiDeleteApplicationThumbnailsRequest struct {
 	ctx            context.Context
-	ApiService     *ThumbnailApiService
+	ApiService     *ThumbnailAPIService
 	did            string
 	wv             string
 	wvid           string
@@ -53,7 +53,7 @@ Deletes an application element's thumbnail and images for the given document, wo
 	@param eid The id of the element in which to perform the operation.
 	@return ApiDeleteApplicationThumbnailsRequest
 */
-func (a *ThumbnailApiService) DeleteApplicationThumbnails(ctx context.Context, did string, wv string, wvid string, eid string) ApiDeleteApplicationThumbnailsRequest {
+func (a *ThumbnailAPIService) DeleteApplicationThumbnails(ctx context.Context, did string, wv string, wvid string, eid string) ApiDeleteApplicationThumbnailsRequest {
 	return ApiDeleteApplicationThumbnailsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -67,7 +67,7 @@ func (a *ThumbnailApiService) DeleteApplicationThumbnails(ctx context.Context, d
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ThumbnailApiService) DeleteApplicationThumbnailsExecute(r ApiDeleteApplicationThumbnailsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ThumbnailAPIService) DeleteApplicationThumbnailsExecute(r ApiDeleteApplicationThumbnailsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -75,7 +75,7 @@ func (a *ThumbnailApiService) DeleteApplicationThumbnailsExecute(r ApiDeleteAppl
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.DeleteApplicationThumbnails")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.DeleteApplicationThumbnails")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *ThumbnailApiService) DeleteApplicationThumbnailsExecute(r ApiDeleteAppl
 
 type ApiGetDocumentThumbnailRequest struct {
 	ctx        context.Context
-	ApiService *ThumbnailApiService
+	ApiService *ThumbnailAPIService
 	did        string
 	wid        string
 }
@@ -176,7 +176,7 @@ GetDocumentThumbnail Get the thumbnail info for a workspace.
 	@param wid
 	@return ApiGetDocumentThumbnailRequest
 */
-func (a *ThumbnailApiService) GetDocumentThumbnail(ctx context.Context, did string, wid string) ApiGetDocumentThumbnailRequest {
+func (a *ThumbnailAPIService) GetDocumentThumbnail(ctx context.Context, did string, wid string) ApiGetDocumentThumbnailRequest {
 	return ApiGetDocumentThumbnailRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -188,7 +188,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnail(ctx context.Context, did stri
 // Execute executes the request
 //
 //	@return BTThumbnailInfo
-func (a *ThumbnailApiService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbnailRequest) (*BTThumbnailInfo, *http.Response, error) {
+func (a *ThumbnailAPIService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbnailRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -196,7 +196,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbn
 		localVarReturnValue *BTThumbnailInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetDocumentThumbnail")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetDocumentThumbnail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -272,7 +272,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailExecute(r ApiGetDocumentThumbn
 
 type ApiGetDocumentThumbnailWithSizeRequest struct {
 	ctx              context.Context
-	ApiService       *ThumbnailApiService
+	ApiService       *ThumbnailAPIService
 	did              string
 	wid              string
 	sz               string
@@ -308,7 +308,7 @@ GetDocumentThumbnailWithSize Get the thumbnail image with the given size for a d
 	@param sz the generated thumbnail size in pixels, widthxheigth
 	@return ApiGetDocumentThumbnailWithSizeRequest
 */
-func (a *ThumbnailApiService) GetDocumentThumbnailWithSize(ctx context.Context, did string, wid string, sz string) ApiGetDocumentThumbnailWithSizeRequest {
+func (a *ThumbnailAPIService) GetDocumentThumbnailWithSize(ctx context.Context, did string, wid string, sz string) ApiGetDocumentThumbnailWithSizeRequest {
 	return ApiGetDocumentThumbnailWithSizeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -321,7 +321,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailWithSize(ctx context.Context, 
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ThumbnailApiService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocumentThumbnailWithSizeRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ThumbnailAPIService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocumentThumbnailWithSizeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -329,7 +329,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocume
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetDocumentThumbnailWithSize")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetDocumentThumbnailWithSize")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -412,7 +412,7 @@ func (a *ThumbnailApiService) GetDocumentThumbnailWithSizeExecute(r ApiGetDocume
 
 type ApiGetElementThumbnailRequest struct {
 	ctx            context.Context
-	ApiService     *ThumbnailApiService
+	ApiService     *ThumbnailAPIService
 	did            string
 	wv             string
 	wvid           string
@@ -442,7 +442,7 @@ Returns thumbnail info for the given document, workspace or version, and element
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetElementThumbnailRequest
 */
-func (a *ThumbnailApiService) GetElementThumbnail(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetElementThumbnailRequest {
+func (a *ThumbnailAPIService) GetElementThumbnail(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetElementThumbnailRequest {
 	return ApiGetElementThumbnailRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -456,7 +456,7 @@ func (a *ThumbnailApiService) GetElementThumbnail(ctx context.Context, did strin
 // Execute executes the request
 //
 //	@return BTThumbnailInfo
-func (a *ThumbnailApiService) GetElementThumbnailExecute(r ApiGetElementThumbnailRequest) (*BTThumbnailInfo, *http.Response, error) {
+func (a *ThumbnailAPIService) GetElementThumbnailExecute(r ApiGetElementThumbnailRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -464,7 +464,7 @@ func (a *ThumbnailApiService) GetElementThumbnailExecute(r ApiGetElementThumbnai
 		localVarReturnValue *BTThumbnailInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetElementThumbnail")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetElementThumbnail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -545,7 +545,7 @@ func (a *ThumbnailApiService) GetElementThumbnailExecute(r ApiGetElementThumbnai
 
 type ApiGetElementThumbnailWithApiConfigurationRequest struct {
 	ctx                context.Context
-	ApiService         *ThumbnailApiService
+	ApiService         *ThumbnailAPIService
 	did                string
 	wid                string
 	eid                string
@@ -603,7 +603,7 @@ Returns the thumbnail image for an element at a specified version, with the give
 	@param sz the generated thumbnail size in pixels, widthxheigth
 	@return ApiGetElementThumbnailWithApiConfigurationRequest
 */
-func (a *ThumbnailApiService) GetElementThumbnailWithApiConfiguration(ctx context.Context, did string, wid string, eid string, cid string, sz string) ApiGetElementThumbnailWithApiConfigurationRequest {
+func (a *ThumbnailAPIService) GetElementThumbnailWithApiConfiguration(ctx context.Context, did string, wid string, eid string, cid string, sz string) ApiGetElementThumbnailWithApiConfigurationRequest {
 	return ApiGetElementThumbnailWithApiConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -618,7 +618,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfiguration(ctx contex
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r ApiGetElementThumbnailWithApiConfigurationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ThumbnailAPIService) GetElementThumbnailWithApiConfigurationExecute(r ApiGetElementThumbnailWithApiConfigurationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -626,7 +626,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r A
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetElementThumbnailWithApiConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetElementThumbnailWithApiConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -720,7 +720,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithApiConfigurationExecute(r A
 
 type ApiGetElementThumbnailWithSizeRequest struct {
 	ctx              context.Context
-	ApiService       *ThumbnailApiService
+	ApiService       *ThumbnailAPIService
 	did              string
 	wv               string
 	wvid             string
@@ -770,7 +770,7 @@ GetElementThumbnailWithSize Get the thumbnail image with the given size for an e
 	@param sz the generated thumbnail size in pixels, widthxheigth
 	@return ApiGetElementThumbnailWithSizeRequest
 */
-func (a *ThumbnailApiService) GetElementThumbnailWithSize(ctx context.Context, did string, wv string, wvid string, eid string, sz string) ApiGetElementThumbnailWithSizeRequest {
+func (a *ThumbnailAPIService) GetElementThumbnailWithSize(ctx context.Context, did string, wv string, wvid string, eid string, sz string) ApiGetElementThumbnailWithSizeRequest {
 	return ApiGetElementThumbnailWithSizeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -785,7 +785,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithSize(ctx context.Context, d
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ThumbnailApiService) GetElementThumbnailWithSizeExecute(r ApiGetElementThumbnailWithSizeRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ThumbnailAPIService) GetElementThumbnailWithSizeExecute(r ApiGetElementThumbnailWithSizeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -793,7 +793,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithSizeExecute(r ApiGetElement
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetElementThumbnailWithSize")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetElementThumbnailWithSize")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -884,7 +884,7 @@ func (a *ThumbnailApiService) GetElementThumbnailWithSizeExecute(r ApiGetElement
 
 type ApiGetThumbnailForDocumentRequest struct {
 	ctx        context.Context
-	ApiService *ThumbnailApiService
+	ApiService *ThumbnailAPIService
 	did        string
 }
 
@@ -903,7 +903,7 @@ GetThumbnailForDocument Get the thumbnail info for a document in the default wor
 	@param did
 	@return ApiGetThumbnailForDocumentRequest
 */
-func (a *ThumbnailApiService) GetThumbnailForDocument(ctx context.Context, did string) ApiGetThumbnailForDocumentRequest {
+func (a *ThumbnailAPIService) GetThumbnailForDocument(ctx context.Context, did string) ApiGetThumbnailForDocumentRequest {
 	return ApiGetThumbnailForDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -914,7 +914,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocument(ctx context.Context, did s
 // Execute executes the request
 //
 //	@return BTThumbnailInfo
-func (a *ThumbnailApiService) GetThumbnailForDocumentExecute(r ApiGetThumbnailForDocumentRequest) (*BTThumbnailInfo, *http.Response, error) {
+func (a *ThumbnailAPIService) GetThumbnailForDocumentExecute(r ApiGetThumbnailForDocumentRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -922,7 +922,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentExecute(r ApiGetThumbnailFo
 		localVarReturnValue *BTThumbnailInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetThumbnailForDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetThumbnailForDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -997,7 +997,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentExecute(r ApiGetThumbnailFo
 
 type ApiGetThumbnailForDocumentAndVersionRequest struct {
 	ctx            context.Context
-	ApiService     *ThumbnailApiService
+	ApiService     *ThumbnailAPIService
 	did            string
 	vid            string
 	linkDocumentId *string
@@ -1023,7 +1023,7 @@ GetThumbnailForDocumentAndVersion Get the thumbnail info for a version of a docu
 	@param vid
 	@return ApiGetThumbnailForDocumentAndVersionRequest
 */
-func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersion(ctx context.Context, did string, vid string) ApiGetThumbnailForDocumentAndVersionRequest {
+func (a *ThumbnailAPIService) GetThumbnailForDocumentAndVersion(ctx context.Context, did string, vid string) ApiGetThumbnailForDocumentAndVersionRequest {
 	return ApiGetThumbnailForDocumentAndVersionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1035,7 +1035,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersion(ctx context.Cont
 // Execute executes the request
 //
 //	@return BTThumbnailInfo
-func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionExecute(r ApiGetThumbnailForDocumentAndVersionRequest) (*BTThumbnailInfo, *http.Response, error) {
+func (a *ThumbnailAPIService) GetThumbnailForDocumentAndVersionExecute(r ApiGetThumbnailForDocumentAndVersionRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1043,7 +1043,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionExecute(r ApiGetT
 		localVarReturnValue *BTThumbnailInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetThumbnailForDocumentAndVersion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetThumbnailForDocumentAndVersion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1122,7 +1122,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionExecute(r ApiGetT
 
 type ApiGetThumbnailForDocumentAndVersionOldRequest struct {
 	ctx        context.Context
-	ApiService *ThumbnailApiService
+	ApiService *ThumbnailAPIService
 	did        string
 	vid        string
 }
@@ -1141,7 +1141,7 @@ This API exists for historical reasons. It uses `/document/` in the path, rather
 	@param vid
 	@return ApiGetThumbnailForDocumentAndVersionOldRequest
 */
-func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOld(ctx context.Context, did string, vid string) ApiGetThumbnailForDocumentAndVersionOldRequest {
+func (a *ThumbnailAPIService) GetThumbnailForDocumentAndVersionOld(ctx context.Context, did string, vid string) ApiGetThumbnailForDocumentAndVersionOldRequest {
 	return ApiGetThumbnailForDocumentAndVersionOldRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1153,7 +1153,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOld(ctx context.C
 // Execute executes the request
 //
 //	@return BTThumbnailInfo
-func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOldExecute(r ApiGetThumbnailForDocumentAndVersionOldRequest) (*BTThumbnailInfo, *http.Response, error) {
+func (a *ThumbnailAPIService) GetThumbnailForDocumentAndVersionOldExecute(r ApiGetThumbnailForDocumentAndVersionOldRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1161,7 +1161,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOldExecute(r ApiG
 		localVarReturnValue *BTThumbnailInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetThumbnailForDocumentAndVersionOld")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetThumbnailForDocumentAndVersionOld")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1237,7 +1237,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentAndVersionOldExecute(r ApiG
 
 type ApiGetThumbnailForDocumentOldRequest struct {
 	ctx        context.Context
-	ApiService *ThumbnailApiService
+	ApiService *ThumbnailAPIService
 	did        string
 }
 
@@ -1254,7 +1254,7 @@ This API exists for historical reasons. It uses `/document/` in the path, rather
 	@param did
 	@return ApiGetThumbnailForDocumentOldRequest
 */
-func (a *ThumbnailApiService) GetThumbnailForDocumentOld(ctx context.Context, did string) ApiGetThumbnailForDocumentOldRequest {
+func (a *ThumbnailAPIService) GetThumbnailForDocumentOld(ctx context.Context, did string) ApiGetThumbnailForDocumentOldRequest {
 	return ApiGetThumbnailForDocumentOldRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1265,7 +1265,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentOld(ctx context.Context, di
 // Execute executes the request
 //
 //	@return BTThumbnailInfo
-func (a *ThumbnailApiService) GetThumbnailForDocumentOldExecute(r ApiGetThumbnailForDocumentOldRequest) (*BTThumbnailInfo, *http.Response, error) {
+func (a *ThumbnailAPIService) GetThumbnailForDocumentOldExecute(r ApiGetThumbnailForDocumentOldRequest) (*BTThumbnailInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1273,7 +1273,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentOldExecute(r ApiGetThumbnai
 		localVarReturnValue *BTThumbnailInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.GetThumbnailForDocumentOld")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.GetThumbnailForDocumentOld")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1348,7 +1348,7 @@ func (a *ThumbnailApiService) GetThumbnailForDocumentOldExecute(r ApiGetThumbnai
 
 type ApiSetApplicationElementThumbnailRequest struct {
 	ctx                                      context.Context
-	ApiService                               *ThumbnailApiService
+	ApiService                               *ThumbnailAPIService
 	did                                      string
 	wv                                       string
 	wvid                                     string
@@ -1392,7 +1392,7 @@ SetApplicationElementThumbnail Set the thumbnail image for an application elemen
 	@param eid The id of the element in which to perform the operation.
 	@return ApiSetApplicationElementThumbnailRequest
 */
-func (a *ThumbnailApiService) SetApplicationElementThumbnail(ctx context.Context, did string, wv string, wvid string, eid string) ApiSetApplicationElementThumbnailRequest {
+func (a *ThumbnailAPIService) SetApplicationElementThumbnail(ctx context.Context, did string, wv string, wvid string, eid string) ApiSetApplicationElementThumbnailRequest {
 	return ApiSetApplicationElementThumbnailRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1406,7 +1406,7 @@ func (a *ThumbnailApiService) SetApplicationElementThumbnail(ctx context.Context
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ThumbnailApiService) SetApplicationElementThumbnailExecute(r ApiSetApplicationElementThumbnailRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ThumbnailAPIService) SetApplicationElementThumbnailExecute(r ApiSetApplicationElementThumbnailRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1414,7 +1414,7 @@ func (a *ThumbnailApiService) SetApplicationElementThumbnailExecute(r ApiSetAppl
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailApiService.SetApplicationElementThumbnail")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThumbnailAPIService.SetApplicationElementThumbnail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -16,6 +16,7 @@ import (
 
 // BTMParameterTolerantQuantity2579 struct for BTMParameterTolerantQuantity2579
 type BTMParameterTolerantQuantity2579 struct {
+	BTMParameterQuantity147
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -27,6 +28,8 @@ type BTMParameterTolerantQuantity2579 struct {
 	IsInteger   *bool    `json:"isInteger,omitempty"`
 	Units       *string  `json:"units,omitempty"`
 	Value       *float64 `json:"value,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMParameterTolerantQuantity2579 instantiates a new BTMParameterTolerantQuantity2579 object
@@ -302,8 +305,48 @@ func (o *BTMParameterTolerantQuantity2579) SetValue(v float64) {
 	o.Value = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMParameterTolerantQuantity2579) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterTolerantQuantity2579) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMParameterTolerantQuantity2579) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMParameterTolerantQuantity2579) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMParameterTolerantQuantity2579) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameterQuantity147, errBTMParameterQuantity147 := json.Marshal(o.BTMParameterQuantity147)
+	if errBTMParameterQuantity147 != nil {
+		return []byte{}, errBTMParameterQuantity147
+	}
+	errBTMParameterQuantity147 = json.Unmarshal([]byte(serializedBTMParameterQuantity147), &toSerialize)
+	if errBTMParameterQuantity147 != nil {
+		return []byte{}, errBTMParameterQuantity147
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -327,6 +370,9 @@ func (o BTMParameterTolerantQuantity2579) MarshalJSON() ([]byte, error) {
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

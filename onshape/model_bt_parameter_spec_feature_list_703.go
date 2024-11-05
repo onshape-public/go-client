@@ -16,6 +16,7 @@ import (
 
 // BTParameterSpecFeatureList703 struct for BTParameterSpecFeatureList703
 type BTParameterSpecFeatureList703 struct {
+	BTParameterSpec6
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
@@ -31,6 +32,8 @@ type BTParameterSpecFeatureList703 struct {
 	UiHint                     *string                            `json:"uiHint,omitempty"`
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecFeatureList703 instantiates a new BTParameterSpecFeatureList703 object
@@ -530,8 +533,48 @@ func (o *BTParameterSpecFeatureList703) SetVisibilityCondition(v BTParameterVisi
 	o.VisibilityCondition = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecFeatureList703) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecFeatureList703) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecFeatureList703) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecFeatureList703) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterSpecFeatureList703) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
+	errBTParameterSpec6 = json.Unmarshal([]byte(serializedBTParameterSpec6), &toSerialize)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
@@ -576,6 +619,9 @@ func (o BTParameterSpecFeatureList703) MarshalJSON() ([]byte, error) {
 	}
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

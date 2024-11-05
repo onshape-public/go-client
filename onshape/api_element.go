@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// ElementApiService ElementApi service
-type ElementApiService service
+// ElementAPIService ElementAPI service
+type ElementAPIService service
 
 type ApiCopyElementFromSourceDocumentRequest struct {
 	ctx                 context.Context
-	ApiService          *ElementApiService
+	ApiService          *ElementAPIService
 	did                 string
 	wid                 string
 	bTCopyElementParams *BTCopyElementParams
@@ -49,7 +49,7 @@ If `anchorElementId` is specified, the copied element will be inserted after the
 	@param wid
 	@return ApiCopyElementFromSourceDocumentRequest
 */
-func (a *ElementApiService) CopyElementFromSourceDocument(ctx context.Context, did string, wid string) ApiCopyElementFromSourceDocumentRequest {
+func (a *ElementAPIService) CopyElementFromSourceDocument(ctx context.Context, did string, wid string) ApiCopyElementFromSourceDocumentRequest {
 	return ApiCopyElementFromSourceDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *ElementApiService) CopyElementFromSourceDocument(ctx context.Context, d
 // Execute executes the request
 //
 //	@return BTDocumentElementInfo
-func (a *ElementApiService) CopyElementFromSourceDocumentExecute(r ApiCopyElementFromSourceDocumentRequest) (*BTDocumentElementInfo, *http.Response, error) {
+func (a *ElementAPIService) CopyElementFromSourceDocumentExecute(r ApiCopyElementFromSourceDocumentRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *ElementApiService) CopyElementFromSourceDocumentExecute(r ApiCopyElemen
 		localVarReturnValue *BTDocumentElementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.CopyElementFromSourceDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.CopyElementFromSourceDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -150,7 +150,7 @@ func (a *ElementApiService) CopyElementFromSourceDocumentExecute(r ApiCopyElemen
 
 type ApiDecodeConfigurationRequest struct {
 	ctx               context.Context
-	ApiService        *ElementApiService
+	ApiService        *ElementAPIService
 	did               string
 	wvm               string
 	wvmid             string
@@ -193,7 +193,7 @@ Decode a configuration string into its original JSON form to obtain configuratio
 	@param cid
 	@return ApiDecodeConfigurationRequest
 */
-func (a *ElementApiService) DecodeConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string, cid string) ApiDecodeConfigurationRequest {
+func (a *ElementAPIService) DecodeConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string, cid string) ApiDecodeConfigurationRequest {
 	return ApiDecodeConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -208,7 +208,7 @@ func (a *ElementApiService) DecodeConfiguration(ctx context.Context, did string,
 // Execute executes the request
 //
 //	@return BTConfigurationInfo
-func (a *ElementApiService) DecodeConfigurationExecute(r ApiDecodeConfigurationRequest) (*BTConfigurationInfo, *http.Response, error) {
+func (a *ElementAPIService) DecodeConfigurationExecute(r ApiDecodeConfigurationRequest) (*BTConfigurationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -216,7 +216,7 @@ func (a *ElementApiService) DecodeConfigurationExecute(r ApiDecodeConfigurationR
 		localVarReturnValue *BTConfigurationInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.DecodeConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.DecodeConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -304,7 +304,7 @@ func (a *ElementApiService) DecodeConfigurationExecute(r ApiDecodeConfigurationR
 
 type ApiDeleteElementRequest struct {
 	ctx        context.Context
-	ApiService *ElementApiService
+	ApiService *ElementAPIService
 	did        string
 	wid        string
 	eid        string
@@ -325,7 +325,7 @@ Attempting to delete the last element in a document will result in an error.
 	@param eid
 	@return ApiDeleteElementRequest
 */
-func (a *ElementApiService) DeleteElement(ctx context.Context, did string, wid string, eid string) ApiDeleteElementRequest {
+func (a *ElementAPIService) DeleteElement(ctx context.Context, did string, wid string, eid string) ApiDeleteElementRequest {
 	return ApiDeleteElementRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -338,7 +338,7 @@ func (a *ElementApiService) DeleteElement(ctx context.Context, did string, wid s
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ElementApiService) DeleteElementExecute(r ApiDeleteElementRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ElementAPIService) DeleteElementExecute(r ApiDeleteElementRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -346,7 +346,7 @@ func (a *ElementApiService) DeleteElementExecute(r ApiDeleteElementRequest) (map
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.DeleteElement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.DeleteElement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -423,7 +423,7 @@ func (a *ElementApiService) DeleteElementExecute(r ApiDeleteElementRequest) (map
 
 type ApiEncodeConfigurationMapRequest struct {
 	ctx                   context.Context
-	ApiService            *ElementApiService
+	ApiService            *ElementAPIService
 	did                   string
 	eid                   string
 	bTConfigurationParams *BTConfigurationParams
@@ -462,7 +462,7 @@ The configuration string can be used in other Onshape API calls to specify which
 	@param eid
 	@return ApiEncodeConfigurationMapRequest
 */
-func (a *ElementApiService) EncodeConfigurationMap(ctx context.Context, did string, eid string) ApiEncodeConfigurationMapRequest {
+func (a *ElementAPIService) EncodeConfigurationMap(ctx context.Context, did string, eid string) ApiEncodeConfigurationMapRequest {
 	return ApiEncodeConfigurationMapRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -474,7 +474,7 @@ func (a *ElementApiService) EncodeConfigurationMap(ctx context.Context, did stri
 // Execute executes the request
 //
 //	@return BTEncodedConfigurationInfo
-func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurationMapRequest) (*BTEncodedConfigurationInfo, *http.Response, error) {
+func (a *ElementAPIService) EncodeConfigurationMapExecute(r ApiEncodeConfigurationMapRequest) (*BTEncodedConfigurationInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -482,7 +482,7 @@ func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurati
 		localVarReturnValue *BTEncodedConfigurationInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.EncodeConfigurationMap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.EncodeConfigurationMap")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -569,7 +569,7 @@ func (a *ElementApiService) EncodeConfigurationMapExecute(r ApiEncodeConfigurati
 
 type ApiGetConfigurationRequest struct {
 	ctx            context.Context
-	ApiService     *ElementApiService
+	ApiService     *ElementAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -600,7 +600,7 @@ See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetConfigurationRequest
 */
-func (a *ElementApiService) GetConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetConfigurationRequest {
+func (a *ElementAPIService) GetConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetConfigurationRequest {
 	return ApiGetConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -614,7 +614,7 @@ func (a *ElementApiService) GetConfiguration(ctx context.Context, did string, wv
 // Execute executes the request
 //
 //	@return BTConfigurationResponse2019
-func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
+func (a *ElementAPIService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -622,7 +622,7 @@ func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest
 		localVarReturnValue *BTConfigurationResponse2019
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.GetConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.GetConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -703,7 +703,7 @@ func (a *ElementApiService) GetConfigurationExecute(r ApiGetConfigurationRequest
 
 type ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest struct {
 	ctx            context.Context
-	ApiService     *ElementApiService
+	ApiService     *ElementAPIService
 	did            string
 	wv             string
 	wvid           string
@@ -745,7 +745,7 @@ See the [Translation API Guide](https://onshape-public.github.io/docs/api-adv/tr
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest
 */
-func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspace(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest {
+func (a *ElementAPIService) GetElementTranslatorFormatsByVersionOrWorkspace(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest {
 	return ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -759,7 +759,7 @@ func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspace(ctx 
 // Execute executes the request
 //
 //	@return []BTModelFormatInfo
-func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspaceExecute(r ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest) ([]BTModelFormatInfo, *http.Response, error) {
+func (a *ElementAPIService) GetElementTranslatorFormatsByVersionOrWorkspaceExecute(r ApiGetElementTranslatorFormatsByVersionOrWorkspaceRequest) ([]BTModelFormatInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -767,7 +767,7 @@ func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspaceExecu
 		localVarReturnValue []BTModelFormatInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.GetElementTranslatorFormatsByVersionOrWorkspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.GetElementTranslatorFormatsByVersionOrWorkspace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -854,7 +854,7 @@ func (a *ElementApiService) GetElementTranslatorFormatsByVersionOrWorkspaceExecu
 
 type ApiUpdateConfigurationRequest struct {
 	ctx                           context.Context
-	ApiService                    *ElementApiService
+	ApiService                    *ElementAPIService
 	did                           string
 	wvm                           string
 	wvmid                         string
@@ -883,7 +883,7 @@ See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/
 	@param eid
 	@return ApiUpdateConfigurationRequest
 */
-func (a *ElementApiService) UpdateConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateConfigurationRequest {
+func (a *ElementAPIService) UpdateConfiguration(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiUpdateConfigurationRequest {
 	return ApiUpdateConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -897,7 +897,7 @@ func (a *ElementApiService) UpdateConfiguration(ctx context.Context, did string,
 // Execute executes the request
 //
 //	@return BTConfigurationResponse2019
-func (a *ElementApiService) UpdateConfigurationExecute(r ApiUpdateConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
+func (a *ElementAPIService) UpdateConfigurationExecute(r ApiUpdateConfigurationRequest) (*BTConfigurationResponse2019, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -905,7 +905,7 @@ func (a *ElementApiService) UpdateConfigurationExecute(r ApiUpdateConfigurationR
 		localVarReturnValue *BTConfigurationResponse2019
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.UpdateConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.UpdateConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -985,7 +985,7 @@ func (a *ElementApiService) UpdateConfigurationExecute(r ApiUpdateConfigurationR
 
 type ApiUpdateReferencesRequest struct {
 	ctx                     context.Context
-	ApiService              *ElementApiService
+	ApiService              *ElementAPIService
 	did                     string
 	wid                     string
 	eid                     string
@@ -1010,7 +1010,7 @@ UpdateReferences Update or replace references in an element.
 	@param eid
 	@return ApiUpdateReferencesRequest
 */
-func (a *ElementApiService) UpdateReferences(ctx context.Context, did string, wid string, eid string) ApiUpdateReferencesRequest {
+func (a *ElementAPIService) UpdateReferences(ctx context.Context, did string, wid string, eid string) ApiUpdateReferencesRequest {
 	return ApiUpdateReferencesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1023,7 +1023,7 @@ func (a *ElementApiService) UpdateReferences(ctx context.Context, did string, wi
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *ElementApiService) UpdateReferencesExecute(r ApiUpdateReferencesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ElementAPIService) UpdateReferencesExecute(r ApiUpdateReferencesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1031,7 +1031,7 @@ func (a *ElementApiService) UpdateReferencesExecute(r ApiUpdateReferencesRequest
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementApiService.UpdateReferences")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ElementAPIService.UpdateReferences")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

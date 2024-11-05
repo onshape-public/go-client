@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SketchApiService SketchApi service
-type SketchApiService service
+// SketchAPIService SketchAPI service
+type SketchAPIService service
 
 type ApiGetSketchBoundingBoxesRequest struct {
 	ctx            context.Context
-	ApiService     *SketchApiService
+	ApiService     *SketchAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -59,7 +59,7 @@ GetSketchBoundingBoxes Get all bounding boxes for a sketch.
 	@param sid
 	@return ApiGetSketchBoundingBoxesRequest
 */
-func (a *SketchApiService) GetSketchBoundingBoxes(ctx context.Context, did string, wvm string, wvmid string, eid string, sid string) ApiGetSketchBoundingBoxesRequest {
+func (a *SketchAPIService) GetSketchBoundingBoxes(ctx context.Context, did string, wvm string, wvmid string, eid string, sid string) ApiGetSketchBoundingBoxesRequest {
 	return ApiGetSketchBoundingBoxesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -74,7 +74,7 @@ func (a *SketchApiService) GetSketchBoundingBoxes(ctx context.Context, did strin
 // Execute executes the request
 //
 //	@return BTBoundingBoxInfo
-func (a *SketchApiService) GetSketchBoundingBoxesExecute(r ApiGetSketchBoundingBoxesRequest) (*BTBoundingBoxInfo, *http.Response, error) {
+func (a *SketchAPIService) GetSketchBoundingBoxesExecute(r ApiGetSketchBoundingBoxesRequest) (*BTBoundingBoxInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -82,7 +82,7 @@ func (a *SketchApiService) GetSketchBoundingBoxesExecute(r ApiGetSketchBoundingB
 		localVarReturnValue *BTBoundingBoxInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SketchApiService.GetSketchBoundingBoxes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SketchAPIService.GetSketchBoundingBoxes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -167,7 +167,7 @@ func (a *SketchApiService) GetSketchBoundingBoxesExecute(r ApiGetSketchBoundingB
 
 type ApiGetSketchInfoRequest struct {
 	ctx             context.Context
-	ApiService      *SketchApiService
+	ApiService      *SketchAPIService
 	did             string
 	wvm             string
 	wvmid           string
@@ -226,7 +226,7 @@ GetSketchInfo Get information for all sketches in Part Studio.
 	@param eid
 	@return ApiGetSketchInfoRequest
 */
-func (a *SketchApiService) GetSketchInfo(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetSketchInfoRequest {
+func (a *SketchAPIService) GetSketchInfo(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetSketchInfoRequest {
 	return ApiGetSketchInfoRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -240,7 +240,7 @@ func (a *SketchApiService) GetSketchInfo(ctx context.Context, did string, wvm st
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *SketchApiService) GetSketchInfoExecute(r ApiGetSketchInfoRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SketchAPIService) GetSketchInfoExecute(r ApiGetSketchInfoRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -248,7 +248,7 @@ func (a *SketchApiService) GetSketchInfoExecute(r ApiGetSketchInfoRequest) (map[
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SketchApiService.GetSketchInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SketchAPIService.GetSketchInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -352,7 +352,7 @@ func (a *SketchApiService) GetSketchInfoExecute(r ApiGetSketchInfoRequest) (map[
 
 type ApiGetTessellatedEntitiesRequest struct {
 	ctx            context.Context
-	ApiService     *SketchApiService
+	ApiService     *SketchAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -407,7 +407,7 @@ The accuracy of the tessellation to exact geometry is controlled by the `angleTo
 	@param sid
 	@return ApiGetTessellatedEntitiesRequest
 */
-func (a *SketchApiService) GetTessellatedEntities(ctx context.Context, did string, wvm string, wvmid string, eid string, sid string) ApiGetTessellatedEntitiesRequest {
+func (a *SketchAPIService) GetTessellatedEntities(ctx context.Context, did string, wvm string, wvmid string, eid string, sid string) ApiGetTessellatedEntitiesRequest {
 	return ApiGetTessellatedEntitiesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -422,7 +422,7 @@ func (a *SketchApiService) GetTessellatedEntities(ctx context.Context, did strin
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *SketchApiService) GetTessellatedEntitiesExecute(r ApiGetTessellatedEntitiesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SketchAPIService) GetTessellatedEntitiesExecute(r ApiGetTessellatedEntitiesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -430,7 +430,7 @@ func (a *SketchApiService) GetTessellatedEntitiesExecute(r ApiGetTessellatedEnti
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SketchApiService.GetTessellatedEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SketchAPIService.GetTessellatedEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

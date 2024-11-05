@@ -17,7 +17,7 @@ import (
 // MediaType struct for MediaType
 type MediaType struct {
 	Encoding       *map[string]Encoding              `json:"encoding,omitempty"`
-	Example        *map[string]interface{}           `json:"example,omitempty"`
+	Example        map[string]interface{}            `json:"example,omitempty"`
 	ExampleSetFlag *bool                             `json:"exampleSetFlag,omitempty"`
 	Examples       *map[string]Example               `json:"examples,omitempty"`
 	Extensions     map[string]map[string]interface{} `json:"extensions,omitempty"`
@@ -79,12 +79,12 @@ func (o *MediaType) GetExample() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Example
+	return o.Example
 }
 
 // GetExampleOk returns a tuple with the Example field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MediaType) GetExampleOk() (*map[string]interface{}, bool) {
+func (o *MediaType) GetExampleOk() (map[string]interface{}, bool) {
 	if o == nil || o.Example == nil {
 		return nil, false
 	}
@@ -102,7 +102,7 @@ func (o *MediaType) HasExample() bool {
 
 // SetExample gets a reference to the given map[string]interface{} and assigns it to the Example field.
 func (o *MediaType) SetExample(v map[string]interface{}) {
-	o.Example = &v
+	o.Example = v
 }
 
 // GetExampleSetFlag returns the ExampleSetFlag field value if set, zero value otherwise.

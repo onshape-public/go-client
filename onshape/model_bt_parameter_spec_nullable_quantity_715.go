@@ -16,6 +16,7 @@ import (
 
 // BTParameterSpecNullableQuantity715 struct for BTParameterSpecNullableQuantity715
 type BTParameterSpecNullableQuantity715 struct {
+	BTParameterSpec6
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
@@ -32,6 +33,8 @@ type BTParameterSpecNullableQuantity715 struct {
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 	Ranges                     []BTNullableQuantityRange1340      `json:"ranges,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecNullableQuantity715 instantiates a new BTParameterSpecNullableQuantity715 object
@@ -563,8 +566,48 @@ func (o *BTParameterSpecNullableQuantity715) SetRanges(v []BTNullableQuantityRan
 	o.Ranges = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecNullableQuantity715) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecNullableQuantity715) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecNullableQuantity715) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecNullableQuantity715) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterSpecNullableQuantity715) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
+	errBTParameterSpec6 = json.Unmarshal([]byte(serializedBTParameterSpec6), &toSerialize)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
@@ -612,6 +655,9 @@ func (o BTParameterSpecNullableQuantity715) MarshalJSON() ([]byte, error) {
 	}
 	if o.Ranges != nil {
 		toSerialize["ranges"] = o.Ranges
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

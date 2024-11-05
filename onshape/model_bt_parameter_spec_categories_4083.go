@@ -16,8 +16,9 @@ import (
 
 // BTParameterSpecCategories4083 struct for BTParameterSpecCategories4083
 type BTParameterSpecCategories4083 struct {
-	AdditionalLocalizedStrings     *int32                                        `json:"additionalLocalizedStrings,omitempty"`
+	BTParameterSpecMultiEnum3118
 	BtType                         *string                                       `json:"btType,omitempty"`
+	AdditionalLocalizedStrings     *int32                                        `json:"additionalLocalizedStrings,omitempty"`
 	ColumnName                     *string                                       `json:"columnName,omitempty"`
 	DefaultValue                   *BTMParameter1                                `json:"defaultValue,omitempty"`
 	IconUri                        *string                                       `json:"iconUri,omitempty"`
@@ -38,6 +39,8 @@ type BTParameterSpecCategories4083 struct {
 	OptionNames                    []string                                      `json:"optionNames,omitempty"`
 	Options                        []string                                      `json:"options,omitempty"`
 	CategoryIdToMetadataTypes      *map[string][]int32                           `json:"categoryIdToMetadataTypes,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecCategories4083 instantiates a new BTParameterSpecCategories4083 object
@@ -55,38 +58,6 @@ func NewBTParameterSpecCategories4083() *BTParameterSpecCategories4083 {
 func NewBTParameterSpecCategories4083WithDefaults() *BTParameterSpecCategories4083 {
 	this := BTParameterSpecCategories4083{}
 	return &this
-}
-
-// GetAdditionalLocalizedStrings returns the AdditionalLocalizedStrings field value if set, zero value otherwise.
-func (o *BTParameterSpecCategories4083) GetAdditionalLocalizedStrings() int32 {
-	if o == nil || o.AdditionalLocalizedStrings == nil {
-		var ret int32
-		return ret
-	}
-	return *o.AdditionalLocalizedStrings
-}
-
-// GetAdditionalLocalizedStringsOk returns a tuple with the AdditionalLocalizedStrings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecCategories4083) GetAdditionalLocalizedStringsOk() (*int32, bool) {
-	if o == nil || o.AdditionalLocalizedStrings == nil {
-		return nil, false
-	}
-	return o.AdditionalLocalizedStrings, true
-}
-
-// HasAdditionalLocalizedStrings returns a boolean if a field has been set.
-func (o *BTParameterSpecCategories4083) HasAdditionalLocalizedStrings() bool {
-	if o != nil && o.AdditionalLocalizedStrings != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
-func (o *BTParameterSpecCategories4083) SetAdditionalLocalizedStrings(v int32) {
-	o.AdditionalLocalizedStrings = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -119,6 +90,38 @@ func (o *BTParameterSpecCategories4083) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTParameterSpecCategories4083) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAdditionalLocalizedStrings returns the AdditionalLocalizedStrings field value if set, zero value otherwise.
+func (o *BTParameterSpecCategories4083) GetAdditionalLocalizedStrings() int32 {
+	if o == nil || o.AdditionalLocalizedStrings == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AdditionalLocalizedStrings
+}
+
+// GetAdditionalLocalizedStringsOk returns a tuple with the AdditionalLocalizedStrings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecCategories4083) GetAdditionalLocalizedStringsOk() (*int32, bool) {
+	if o == nil || o.AdditionalLocalizedStrings == nil {
+		return nil, false
+	}
+	return o.AdditionalLocalizedStrings, true
+}
+
+// HasAdditionalLocalizedStrings returns a boolean if a field has been set.
+func (o *BTParameterSpecCategories4083) HasAdditionalLocalizedStrings() bool {
+	if o != nil && o.AdditionalLocalizedStrings != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
+func (o *BTParameterSpecCategories4083) SetAdditionalLocalizedStrings(v int32) {
+	o.AdditionalLocalizedStrings = &v
 }
 
 // GetColumnName returns the ColumnName field value if set, zero value otherwise.
@@ -761,13 +764,53 @@ func (o *BTParameterSpecCategories4083) SetCategoryIdToMetadataTypes(v map[strin
 	o.CategoryIdToMetadataTypes = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecCategories4083) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecCategories4083) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecCategories4083) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecCategories4083) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterSpecCategories4083) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AdditionalLocalizedStrings != nil {
-		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
+	serializedBTParameterSpecMultiEnum3118, errBTParameterSpecMultiEnum3118 := json.Marshal(o.BTParameterSpecMultiEnum3118)
+	if errBTParameterSpecMultiEnum3118 != nil {
+		return []byte{}, errBTParameterSpecMultiEnum3118
+	}
+	errBTParameterSpecMultiEnum3118 = json.Unmarshal([]byte(serializedBTParameterSpecMultiEnum3118), &toSerialize)
+	if errBTParameterSpecMultiEnum3118 != nil {
+		return []byte{}, errBTParameterSpecMultiEnum3118
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.AdditionalLocalizedStrings != nil {
+		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
 	if o.ColumnName != nil {
 		toSerialize["columnName"] = o.ColumnName
@@ -828,6 +871,9 @@ func (o BTParameterSpecCategories4083) MarshalJSON() ([]byte, error) {
 	}
 	if o.CategoryIdToMetadataTypes != nil {
 		toSerialize["categoryIdToMetadataTypes"] = o.CategoryIdToMetadataTypes
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

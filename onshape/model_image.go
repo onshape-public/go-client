@@ -18,7 +18,7 @@ import (
 type Image struct {
 	BufferView *int32                            `json:"bufferView,omitempty"`
 	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     *map[string]interface{}           `json:"extras,omitempty"`
+	Extras     map[string]interface{}            `json:"extras,omitempty"`
 	MimeType   *string                           `json:"mimeType,omitempty"`
 	Name       *string                           `json:"name,omitempty"`
 	Uri        *string                           `json:"uri,omitempty"`
@@ -111,12 +111,12 @@ func (o *Image) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Image) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *Image) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -134,7 +134,7 @@ func (o *Image) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *Image) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetMimeType returns the MimeType field value if set, zero value otherwise.

@@ -16,8 +16,11 @@ import (
 
 // BTTextObjectFilter1515 struct for BTTextObjectFilter1515
 type BTTextObjectFilter1515 struct {
+	BTQueryFilter183
 	BtType *string `json:"btType,omitempty"`
 	IsText *bool   `json:"isText,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTTextObjectFilter1515 instantiates a new BTTextObjectFilter1515 object
@@ -101,13 +104,56 @@ func (o *BTTextObjectFilter1515) SetIsText(v bool) {
 	o.IsText = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTTextObjectFilter1515) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTextObjectFilter1515) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTTextObjectFilter1515) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTTextObjectFilter1515) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTTextObjectFilter1515) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.IsText != nil {
 		toSerialize["isText"] = o.IsText
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

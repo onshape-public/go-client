@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AppAssociativeDataApiService AppAssociativeDataApi service
-type AppAssociativeDataApiService service
+// AppAssociativeDataAPIService AppAssociativeDataAPI service
+type AppAssociativeDataAPIService service
 
 type ApiCopyAssociativeDataRequest struct {
 	ctx                                                    context.Context
-	ApiService                                             *AppAssociativeDataApiService
+	ApiService                                             *AppAssociativeDataAPIService
 	did                                                    string
 	wid                                                    string
 	eid                                                    string
@@ -51,7 +51,7 @@ Can only be copied between tabs in the same document. You can manage associativi
 	@param eid
 	@return ApiCopyAssociativeDataRequest
 */
-func (a *AppAssociativeDataApiService) CopyAssociativeData(ctx context.Context, did string, wid string, eid string) ApiCopyAssociativeDataRequest {
+func (a *AppAssociativeDataAPIService) CopyAssociativeData(ctx context.Context, did string, wid string, eid string) ApiCopyAssociativeDataRequest {
 	return ApiCopyAssociativeDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *AppAssociativeDataApiService) CopyAssociativeData(ctx context.Context, 
 // Execute executes the request
 //
 //	@return BTAppAssociativeDataArrayInfo
-func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
+func (a *AppAssociativeDataAPIService) CopyAssociativeDataExecute(r ApiCopyAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -72,7 +72,7 @@ func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssoc
 		localVarReturnValue *BTAppAssociativeDataArrayInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataApiService.CopyAssociativeData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataAPIService.CopyAssociativeData")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,7 +151,7 @@ func (a *AppAssociativeDataApiService) CopyAssociativeDataExecute(r ApiCopyAssoc
 
 type ApiDeleteAssociativeDataRequest struct {
 	ctx                  context.Context
-	ApiService           *AppAssociativeDataApiService
+	ApiService           *AppAssociativeDataAPIService
 	did                  string
 	eid                  string
 	wvm                  string
@@ -252,7 +252,7 @@ You can manage associativity with [translateIds](https://cad.onshape.com/glasswo
 	@param wvmid
 	@return ApiDeleteAssociativeDataRequest
 */
-func (a *AppAssociativeDataApiService) DeleteAssociativeData(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiDeleteAssociativeDataRequest {
+func (a *AppAssociativeDataAPIService) DeleteAssociativeData(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiDeleteAssociativeDataRequest {
 	return ApiDeleteAssociativeDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -266,7 +266,7 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeData(ctx context.Context
 // Execute executes the request
 //
 //	@return BTAppElementBasicInfo
-func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteAssociativeDataRequest) (*BTAppElementBasicInfo, *http.Response, error) {
+func (a *AppAssociativeDataAPIService) DeleteAssociativeDataExecute(r ApiDeleteAssociativeDataRequest) (*BTAppElementBasicInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -274,7 +274,7 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteA
 		localVarReturnValue *BTAppElementBasicInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataApiService.DeleteAssociativeData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataAPIService.DeleteAssociativeData")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -399,7 +399,7 @@ func (a *AppAssociativeDataApiService) DeleteAssociativeDataExecute(r ApiDeleteA
 
 type ApiGetAssociativeDataRequest struct {
 	ctx                  context.Context
-	ApiService           *AppAssociativeDataApiService
+	ApiService           *AppAssociativeDataAPIService
 	did                  string
 	wvm                  string
 	wvmid                string
@@ -513,7 +513,7 @@ You can manage associativity with [translateIds](https://cad.onshape.com/glasswo
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetAssociativeDataRequest
 */
-func (a *AppAssociativeDataApiService) GetAssociativeData(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssociativeDataRequest {
+func (a *AppAssociativeDataAPIService) GetAssociativeData(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetAssociativeDataRequest {
 	return ApiGetAssociativeDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -527,7 +527,7 @@ func (a *AppAssociativeDataApiService) GetAssociativeData(ctx context.Context, d
 // Execute executes the request
 //
 //	@return BTAppAssociativeDataArrayInfo
-func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
+func (a *AppAssociativeDataAPIService) GetAssociativeDataExecute(r ApiGetAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -535,7 +535,7 @@ func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssocia
 		localVarReturnValue *BTAppAssociativeDataArrayInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataApiService.GetAssociativeData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataAPIService.GetAssociativeData")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -666,7 +666,7 @@ func (a *AppAssociativeDataApiService) GetAssociativeDataExecute(r ApiGetAssocia
 
 type ApiPostAssociativeDataRequest struct {
 	ctx        context.Context
-	ApiService *AppAssociativeDataApiService
+	ApiService *AppAssociativeDataAPIService
 	did        string
 	eid        string
 	wvm        string
@@ -695,7 +695,7 @@ You can manage associativity with [translateIds](https://cad.onshape.com/glasswo
 	@param wvmid
 	@return ApiPostAssociativeDataRequest
 */
-func (a *AppAssociativeDataApiService) PostAssociativeData(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiPostAssociativeDataRequest {
+func (a *AppAssociativeDataAPIService) PostAssociativeData(ctx context.Context, did string, eid string, wvm string, wvmid string) ApiPostAssociativeDataRequest {
 	return ApiPostAssociativeDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -709,7 +709,7 @@ func (a *AppAssociativeDataApiService) PostAssociativeData(ctx context.Context, 
 // Execute executes the request
 //
 //	@return BTAppAssociativeDataArrayInfo
-func (a *AppAssociativeDataApiService) PostAssociativeDataExecute(r ApiPostAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
+func (a *AppAssociativeDataAPIService) PostAssociativeDataExecute(r ApiPostAssociativeDataRequest) (*BTAppAssociativeDataArrayInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -717,7 +717,7 @@ func (a *AppAssociativeDataApiService) PostAssociativeDataExecute(r ApiPostAssoc
 		localVarReturnValue *BTAppAssociativeDataArrayInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataApiService.PostAssociativeData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppAssociativeDataAPIService.PostAssociativeData")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **BaseNormal** | Pointer to **[]float32** |  | [optional] 
 **BasePoint** | Pointer to **[]float32** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**DeterministicId** | Pointer to **string** |  | [optional] 
 **DxdySegments** | Pointer to **[]float32** |  | [optional] 
 **NumberOfLeaderSegements** | Pointer to **int32** |  | [optional] 
 
@@ -129,6 +130,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTAnnotationDisplayData3225) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetDeterministicId
+
+`func (o *BTAnnotationDisplayData3225) GetDeterministicId() string`
+
+GetDeterministicId returns the DeterministicId field if non-nil, zero value otherwise.
+
+### GetDeterministicIdOk
+
+`func (o *BTAnnotationDisplayData3225) GetDeterministicIdOk() (*string, bool)`
+
+GetDeterministicIdOk returns a tuple with the DeterministicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeterministicId
+
+`func (o *BTAnnotationDisplayData3225) SetDeterministicId(v string)`
+
+SetDeterministicId sets DeterministicId field to given value.
+
+### HasDeterministicId
+
+`func (o *BTAnnotationDisplayData3225) HasDeterministicId() bool`
+
+HasDeterministicId returns a boolean if a field has been set.
 
 ### GetDxdySegments
 

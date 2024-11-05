@@ -16,9 +16,12 @@ import (
 
 // BTInnerArrayParameterLocation2368 struct for BTInnerArrayParameterLocation2368
 type BTInnerArrayParameterLocation2368 struct {
+	BTInnerParameterLocation1715
 	BtType           *string `json:"btType,omitempty"`
 	Index            *int32  `json:"index,omitempty"`
 	OuterParameterId *string `json:"outerParameterId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTInnerArrayParameterLocation2368 instantiates a new BTInnerArrayParameterLocation2368 object
@@ -134,8 +137,48 @@ func (o *BTInnerArrayParameterLocation2368) SetOuterParameterId(v string) {
 	o.OuterParameterId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTInnerArrayParameterLocation2368) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInnerArrayParameterLocation2368) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTInnerArrayParameterLocation2368) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTInnerArrayParameterLocation2368) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTInnerArrayParameterLocation2368) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInnerParameterLocation1715, errBTInnerParameterLocation1715 := json.Marshal(o.BTInnerParameterLocation1715)
+	if errBTInnerParameterLocation1715 != nil {
+		return []byte{}, errBTInnerParameterLocation1715
+	}
+	errBTInnerParameterLocation1715 = json.Unmarshal([]byte(serializedBTInnerParameterLocation1715), &toSerialize)
+	if errBTInnerParameterLocation1715 != nil {
+		return []byte{}, errBTInnerParameterLocation1715
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -144,6 +187,9 @@ func (o BTInnerArrayParameterLocation2368) MarshalJSON() ([]byte, error) {
 	}
 	if o.OuterParameterId != nil {
 		toSerialize["outerParameterId"] = o.OuterParameterId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -342,6 +342,56 @@ func (o *BTAngularDimensionDisplayData320) SetId(v string) {
 	o.GetActualInstance().(getResult).SetId(v)
 }
 
+// GetIsAnnotationDimension returns the IsAnnotationDimension field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetIsAnnotationDimension() bool {
+	type getResult interface {
+		GetIsAnnotationDimension() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsAnnotationDimension()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsAnnotationDimensionOk returns a tuple with the IsAnnotationDimension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetIsAnnotationDimensionOk() (*bool, bool) {
+	type getResult interface {
+		GetIsAnnotationDimensionOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsAnnotationDimensionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsAnnotationDimension returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasIsAnnotationDimension() bool {
+	type getResult interface {
+		HasIsAnnotationDimension() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsAnnotationDimension()
+	} else {
+		return false
+	}
+}
+
+// SetIsAnnotationDimension gets a reference to the given bool and assigns it to the IsAnnotationDimension field.
+func (o *BTAngularDimensionDisplayData320) SetIsAnnotationDimension(v bool) {
+	type getResult interface {
+		SetIsAnnotationDimension(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsAnnotationDimension(v)
+}
+
 // GetIsAssociatedWithFlat returns the IsAssociatedWithFlat field value if set, zero value otherwise.
 func (o *BTAngularDimensionDisplayData320) GetIsAssociatedWithFlat() bool {
 	type getResult interface {
@@ -490,6 +540,56 @@ func (o *BTAngularDimensionDisplayData320) SetIsOverDefined(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetIsOverDefined(v)
+}
+
+// GetLowerTolerance returns the LowerTolerance field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetLowerTolerance() float64 {
+	type getResult interface {
+		GetLowerTolerance() float64
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLowerTolerance()
+	} else {
+		var de float64
+		return de
+	}
+}
+
+// GetLowerToleranceOk returns a tuple with the LowerTolerance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetLowerToleranceOk() (*float64, bool) {
+	type getResult interface {
+		GetLowerToleranceOk() (*float64, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLowerToleranceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLowerTolerance returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasLowerTolerance() bool {
+	type getResult interface {
+		HasLowerTolerance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLowerTolerance()
+	} else {
+		return false
+	}
+}
+
+// SetLowerTolerance gets a reference to the given float64 and assigns it to the LowerTolerance field.
+func (o *BTAngularDimensionDisplayData320) SetLowerTolerance(v float64) {
+	type getResult interface {
+		SetLowerTolerance(v float64)
+	}
+
+	o.GetActualInstance().(getResult).SetLowerTolerance(v)
 }
 
 // GetMaximumLimit returns the MaximumLimit field value if set, zero value otherwise.
@@ -690,6 +790,106 @@ func (o *BTAngularDimensionDisplayData320) SetPlaneMatrix(v BTBSMatrix386) {
 	}
 
 	o.GetActualInstance().(getResult).SetPlaneMatrix(v)
+}
+
+// GetToleranceType returns the ToleranceType field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetToleranceType() GBTToleranceType {
+	type getResult interface {
+		GetToleranceType() GBTToleranceType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetToleranceType()
+	} else {
+		var de GBTToleranceType
+		return de
+	}
+}
+
+// GetToleranceTypeOk returns a tuple with the ToleranceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetToleranceTypeOk() (*GBTToleranceType, bool) {
+	type getResult interface {
+		GetToleranceTypeOk() (*GBTToleranceType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetToleranceTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasToleranceType returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasToleranceType() bool {
+	type getResult interface {
+		HasToleranceType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasToleranceType()
+	} else {
+		return false
+	}
+}
+
+// SetToleranceType gets a reference to the given GBTToleranceType and assigns it to the ToleranceType field.
+func (o *BTAngularDimensionDisplayData320) SetToleranceType(v GBTToleranceType) {
+	type getResult interface {
+		SetToleranceType(v GBTToleranceType)
+	}
+
+	o.GetActualInstance().(getResult).SetToleranceType(v)
+}
+
+// GetUpperTolerance returns the UpperTolerance field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetUpperTolerance() float64 {
+	type getResult interface {
+		GetUpperTolerance() float64
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetUpperTolerance()
+	} else {
+		var de float64
+		return de
+	}
+}
+
+// GetUpperToleranceOk returns a tuple with the UpperTolerance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetUpperToleranceOk() (*float64, bool) {
+	type getResult interface {
+		GetUpperToleranceOk() (*float64, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetUpperToleranceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasUpperTolerance returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasUpperTolerance() bool {
+	type getResult interface {
+		HasUpperTolerance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasUpperTolerance()
+	} else {
+		return false
+	}
+}
+
+// SetUpperTolerance gets a reference to the given float64 and assigns it to the UpperTolerance field.
+func (o *BTAngularDimensionDisplayData320) SetUpperTolerance(v float64) {
+	type getResult interface {
+		SetUpperTolerance(v float64)
+	}
+
+	o.GetActualInstance().(getResult).SetUpperTolerance(v)
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -1292,6 +1492,56 @@ func (o *BTAngularDimensionDisplayData320) SetWitnessMinPoint1r(v float64) {
 	o.GetActualInstance().(getResult).SetWitnessMinPoint1r(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTAngularDimensionDisplayData320) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTAngularDimensionDisplayData320) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1382,31 +1632,38 @@ func (v *NullableBTAngularDimensionDisplayData320) UnmarshalJSON(src []byte) err
 }
 
 type base_BTAngularDimensionDisplayData320 struct {
-	BtType               *string         `json:"btType,omitempty"`
-	CoordinateSystem     *BTMatrix3x3340 `json:"coordinateSystem,omitempty"`
-	FeatureId            *string         `json:"featureId,omitempty"`
-	HasMaximumLimit_     *bool           `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_     *bool           `json:"hasMinimumLimit,omitempty"`
-	Id                   *string         `json:"id,omitempty"`
-	IsAssociatedWithFlat *bool           `json:"isAssociatedWithFlat,omitempty"`
-	IsDriven             *bool           `json:"isDriven,omitempty"`
-	IsOverDefined        *bool           `json:"isOverDefined,omitempty"`
-	MaximumLimit         *float64        `json:"maximumLimit,omitempty"`
-	MinimumLimit         *float64        `json:"minimumLimit,omitempty"`
-	ParameterId          *string         `json:"parameterId,omitempty"`
-	PlaneMatrix          *BTBSMatrix386  `json:"planeMatrix,omitempty"`
-	Value                *float64        `json:"value,omitempty"`
-	Clockwise            *bool           `json:"clockwise,omitempty"`
-	PositionR            *float64        `json:"positionR,omitempty"`
-	PositionT            *float64        `json:"positionT,omitempty"`
-	WitnessEndPoint0r    *float64        `json:"witnessEndPoint0r,omitempty"`
-	WitnessEndPoint0t    *float64        `json:"witnessEndPoint0t,omitempty"`
-	WitnessEndPoint1r    *float64        `json:"witnessEndPoint1r,omitempty"`
-	WitnessEndPoint1t    *float64        `json:"witnessEndPoint1t,omitempty"`
-	WitnessMaxPoint0r    *float64        `json:"witnessMaxPoint0r,omitempty"`
-	WitnessMaxPoint1r    *float64        `json:"witnessMaxPoint1r,omitempty"`
-	WitnessMinPoint0r    *float64        `json:"witnessMinPoint0r,omitempty"`
-	WitnessMinPoint1r    *float64        `json:"witnessMinPoint1r,omitempty"`
+	BTDimensionDisplayData323
+	BtType                *string           `json:"btType,omitempty"`
+	CoordinateSystem      *BTMatrix3x3340   `json:"coordinateSystem,omitempty"`
+	FeatureId             *string           `json:"featureId,omitempty"`
+	HasMaximumLimit_      *bool             `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_      *bool             `json:"hasMinimumLimit,omitempty"`
+	Id                    *string           `json:"id,omitempty"`
+	IsAnnotationDimension *bool             `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat  *bool             `json:"isAssociatedWithFlat,omitempty"`
+	IsDriven              *bool             `json:"isDriven,omitempty"`
+	IsOverDefined         *bool             `json:"isOverDefined,omitempty"`
+	LowerTolerance        *float64          `json:"lowerTolerance,omitempty"`
+	MaximumLimit          *float64          `json:"maximumLimit,omitempty"`
+	MinimumLimit          *float64          `json:"minimumLimit,omitempty"`
+	ParameterId           *string           `json:"parameterId,omitempty"`
+	PlaneMatrix           *BTBSMatrix386    `json:"planeMatrix,omitempty"`
+	ToleranceType         *GBTToleranceType `json:"toleranceType,omitempty"`
+	UpperTolerance        *float64          `json:"upperTolerance,omitempty"`
+	Value                 *float64          `json:"value,omitempty"`
+	Clockwise             *bool             `json:"clockwise,omitempty"`
+	PositionR             *float64          `json:"positionR,omitempty"`
+	PositionT             *float64          `json:"positionT,omitempty"`
+	WitnessEndPoint0r     *float64          `json:"witnessEndPoint0r,omitempty"`
+	WitnessEndPoint0t     *float64          `json:"witnessEndPoint0t,omitempty"`
+	WitnessEndPoint1r     *float64          `json:"witnessEndPoint1r,omitempty"`
+	WitnessEndPoint1t     *float64          `json:"witnessEndPoint1t,omitempty"`
+	WitnessMaxPoint0r     *float64          `json:"witnessMaxPoint0r,omitempty"`
+	WitnessMaxPoint1r     *float64          `json:"witnessMaxPoint1r,omitempty"`
+	WitnessMinPoint0r     *float64          `json:"witnessMinPoint0r,omitempty"`
+	WitnessMinPoint1r     *float64          `json:"witnessMinPoint1r,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTAngularDimensionDisplayData320 instantiates a new base_BTAngularDimensionDisplayData320 object
@@ -1618,6 +1875,38 @@ func (o *base_BTAngularDimensionDisplayData320) SetId(v string) {
 	o.Id = &v
 }
 
+// GetIsAnnotationDimension returns the IsAnnotationDimension field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetIsAnnotationDimension() bool {
+	if o == nil || o.IsAnnotationDimension == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsAnnotationDimension
+}
+
+// GetIsAnnotationDimensionOk returns a tuple with the IsAnnotationDimension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetIsAnnotationDimensionOk() (*bool, bool) {
+	if o == nil || o.IsAnnotationDimension == nil {
+		return nil, false
+	}
+	return o.IsAnnotationDimension, true
+}
+
+// HasIsAnnotationDimension returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasIsAnnotationDimension() bool {
+	if o != nil && o.IsAnnotationDimension != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsAnnotationDimension gets a reference to the given bool and assigns it to the IsAnnotationDimension field.
+func (o *base_BTAngularDimensionDisplayData320) SetIsAnnotationDimension(v bool) {
+	o.IsAnnotationDimension = &v
+}
+
 // GetIsAssociatedWithFlat returns the IsAssociatedWithFlat field value if set, zero value otherwise.
 func (o *base_BTAngularDimensionDisplayData320) GetIsAssociatedWithFlat() bool {
 	if o == nil || o.IsAssociatedWithFlat == nil {
@@ -1712,6 +2001,38 @@ func (o *base_BTAngularDimensionDisplayData320) HasIsOverDefined() bool {
 // SetIsOverDefined gets a reference to the given bool and assigns it to the IsOverDefined field.
 func (o *base_BTAngularDimensionDisplayData320) SetIsOverDefined(v bool) {
 	o.IsOverDefined = &v
+}
+
+// GetLowerTolerance returns the LowerTolerance field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetLowerTolerance() float64 {
+	if o == nil || o.LowerTolerance == nil {
+		var ret float64
+		return ret
+	}
+	return *o.LowerTolerance
+}
+
+// GetLowerToleranceOk returns a tuple with the LowerTolerance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetLowerToleranceOk() (*float64, bool) {
+	if o == nil || o.LowerTolerance == nil {
+		return nil, false
+	}
+	return o.LowerTolerance, true
+}
+
+// HasLowerTolerance returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasLowerTolerance() bool {
+	if o != nil && o.LowerTolerance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLowerTolerance gets a reference to the given float64 and assigns it to the LowerTolerance field.
+func (o *base_BTAngularDimensionDisplayData320) SetLowerTolerance(v float64) {
+	o.LowerTolerance = &v
 }
 
 // GetMaximumLimit returns the MaximumLimit field value if set, zero value otherwise.
@@ -1840,6 +2161,70 @@ func (o *base_BTAngularDimensionDisplayData320) HasPlaneMatrix() bool {
 // SetPlaneMatrix gets a reference to the given BTBSMatrix386 and assigns it to the PlaneMatrix field.
 func (o *base_BTAngularDimensionDisplayData320) SetPlaneMatrix(v BTBSMatrix386) {
 	o.PlaneMatrix = &v
+}
+
+// GetToleranceType returns the ToleranceType field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetToleranceType() GBTToleranceType {
+	if o == nil || o.ToleranceType == nil {
+		var ret GBTToleranceType
+		return ret
+	}
+	return *o.ToleranceType
+}
+
+// GetToleranceTypeOk returns a tuple with the ToleranceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetToleranceTypeOk() (*GBTToleranceType, bool) {
+	if o == nil || o.ToleranceType == nil {
+		return nil, false
+	}
+	return o.ToleranceType, true
+}
+
+// HasToleranceType returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasToleranceType() bool {
+	if o != nil && o.ToleranceType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToleranceType gets a reference to the given GBTToleranceType and assigns it to the ToleranceType field.
+func (o *base_BTAngularDimensionDisplayData320) SetToleranceType(v GBTToleranceType) {
+	o.ToleranceType = &v
+}
+
+// GetUpperTolerance returns the UpperTolerance field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetUpperTolerance() float64 {
+	if o == nil || o.UpperTolerance == nil {
+		var ret float64
+		return ret
+	}
+	return *o.UpperTolerance
+}
+
+// GetUpperToleranceOk returns a tuple with the UpperTolerance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetUpperToleranceOk() (*float64, bool) {
+	if o == nil || o.UpperTolerance == nil {
+		return nil, false
+	}
+	return o.UpperTolerance, true
+}
+
+// HasUpperTolerance returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasUpperTolerance() bool {
+	if o != nil && o.UpperTolerance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpperTolerance gets a reference to the given float64 and assigns it to the UpperTolerance field.
+func (o *base_BTAngularDimensionDisplayData320) SetUpperTolerance(v float64) {
+	o.UpperTolerance = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -2226,8 +2611,48 @@ func (o *base_BTAngularDimensionDisplayData320) SetWitnessMinPoint1r(v float64) 
 	o.WitnessMinPoint1r = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTAngularDimensionDisplayData320) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTDimensionDisplayData323, errBTDimensionDisplayData323 := json.Marshal(o.BTDimensionDisplayData323)
+	if errBTDimensionDisplayData323 != nil {
+		return []byte{}, errBTDimensionDisplayData323
+	}
+	errBTDimensionDisplayData323 = json.Unmarshal([]byte(serializedBTDimensionDisplayData323), &toSerialize)
+	if errBTDimensionDisplayData323 != nil {
+		return []byte{}, errBTDimensionDisplayData323
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -2246,6 +2671,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
+	if o.IsAnnotationDimension != nil {
+		toSerialize["isAnnotationDimension"] = o.IsAnnotationDimension
+	}
 	if o.IsAssociatedWithFlat != nil {
 		toSerialize["isAssociatedWithFlat"] = o.IsAssociatedWithFlat
 	}
@@ -2254,6 +2682,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsOverDefined != nil {
 		toSerialize["isOverDefined"] = o.IsOverDefined
+	}
+	if o.LowerTolerance != nil {
+		toSerialize["lowerTolerance"] = o.LowerTolerance
 	}
 	if o.MaximumLimit != nil {
 		toSerialize["maximumLimit"] = o.MaximumLimit
@@ -2266,6 +2697,12 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	}
 	if o.PlaneMatrix != nil {
 		toSerialize["planeMatrix"] = o.PlaneMatrix
+	}
+	if o.ToleranceType != nil {
+		toSerialize["toleranceType"] = o.ToleranceType
+	}
+	if o.UpperTolerance != nil {
+		toSerialize["upperTolerance"] = o.UpperTolerance
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
@@ -2302,6 +2739,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	}
 	if o.WitnessMinPoint1r != nil {
 		toSerialize["witnessMinPoint1r"] = o.WitnessMinPoint1r
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
