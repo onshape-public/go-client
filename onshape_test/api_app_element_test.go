@@ -82,7 +82,7 @@ func TestAppElementAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
-			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
+			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
 		}),
 	}.Execute()
 
@@ -95,7 +95,7 @@ func TestAppElementAPI(t *testing.T) {
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
 			nm := make(map[string]interface{})
-			for k, v := range Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
+			for k, v := range *Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree {
 				nm[k] = v
 			}
 
@@ -223,7 +223,7 @@ func GetDefaultAppElementParams() *onshape.BTAppElementParams {
 	return &onshape.BTAppElementParams{
 		Name:     Ptr("Test-element-1"),
 		FormatId: "String",
-		JsonTree: map[string]interface{}{
+		JsonTree: Ptr(map[string]interface{}{
 			"name":    "p.prt",
 			"_nodeId": "master",
 			"masterProperties": map[string]interface{}{
@@ -237,7 +237,7 @@ func GetDefaultAppElementParams() *onshape.BTAppElementParams {
 				"attr3":   "v33",
 				"_nodeId": "versionProperties",
 			},
-		},
+		}),
 	}
 }
 
@@ -246,7 +246,6 @@ func GetDefaultAppUpdateParams() *onshape.BTAppElementUpdateParams {
 	//Top Level Edit Element
 	btjEditInsert := onshape.NewBTJEditInsert2523()
 	btjEditInsert.SetBtType("BTJEditInsert-2523")
-	btjEditInsert.BTJEdit3734 = *onshape.NewBTJEdit3734()
 	//Path Element of the Edit
 	path := onshape.NewBTJPath3073("master")
 	pathType := string("BTJPath-3073")
@@ -256,7 +255,6 @@ func GetDefaultAppUpdateParams() *onshape.BTAppElementUpdateParams {
 	pathKey := onshape.NewBTJPathKey3221()
 	pathKey.SetBtType("BTJPathKey-3221")
 	pathKey.SetKey("chapterProperties")
-	pathKey.BTJPathElement2297 = *onshape.NewBTJPathElement2297()
 	path.SetPath([]onshape.BTJPathElement2297{*pathKey.AsBTJPathElement2297()})
 	btjEditInsert.SetPath(*path)
 	value := map[string]interface{}{
