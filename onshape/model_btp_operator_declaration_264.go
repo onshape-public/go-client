@@ -16,8 +16,9 @@ import (
 
 // BTPOperatorDeclaration264 struct for BTPOperatorDeclaration264
 type BTPOperatorDeclaration264 struct {
-	Atomic                *bool                       `json:"atomic,omitempty"`
+	BTPProcedureDeclarationBase266
 	BtType                *string                     `json:"btType,omitempty"`
+	Atomic                *bool                       `json:"atomic,omitempty"`
 	DocumentationType     *GBTPDefinitionType         `json:"documentationType,omitempty"`
 	EndSourceLocation     *int32                      `json:"endSourceLocation,omitempty"`
 	NodeId                *string                     `json:"nodeId,omitempty"`
@@ -42,6 +43,8 @@ type BTPOperatorDeclaration264 struct {
 	Operator              *GBTPOperator               `json:"operator,omitempty"`
 	SpaceAfterOperator    *BTPSpace10                 `json:"spaceAfterOperator,omitempty"`
 	SpaceBeforeOperator   *BTPSpace10                 `json:"spaceBeforeOperator,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPOperatorDeclaration264 instantiates a new BTPOperatorDeclaration264 object
@@ -59,38 +62,6 @@ func NewBTPOperatorDeclaration264() *BTPOperatorDeclaration264 {
 func NewBTPOperatorDeclaration264WithDefaults() *BTPOperatorDeclaration264 {
 	this := BTPOperatorDeclaration264{}
 	return &this
-}
-
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPOperatorDeclaration264) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPOperatorDeclaration264) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPOperatorDeclaration264) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPOperatorDeclaration264) SetAtomic(v bool) {
-	o.Atomic = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -123,6 +94,38 @@ func (o *BTPOperatorDeclaration264) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTPOperatorDeclaration264) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPOperatorDeclaration264) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPOperatorDeclaration264) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPOperatorDeclaration264) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPOperatorDeclaration264) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -893,13 +896,53 @@ func (o *BTPOperatorDeclaration264) SetSpaceBeforeOperator(v BTPSpace10) {
 	o.SpaceBeforeOperator = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPOperatorDeclaration264) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPOperatorDeclaration264) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPOperatorDeclaration264) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPOperatorDeclaration264) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPOperatorDeclaration264) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPProcedureDeclarationBase266, errBTPProcedureDeclarationBase266 := json.Marshal(o.BTPProcedureDeclarationBase266)
+	if errBTPProcedureDeclarationBase266 != nil {
+		return []byte{}, errBTPProcedureDeclarationBase266
+	}
+	errBTPProcedureDeclarationBase266 = json.Unmarshal([]byte(serializedBTPProcedureDeclarationBase266), &toSerialize)
+	if errBTPProcedureDeclarationBase266 != nil {
+		return []byte{}, errBTPProcedureDeclarationBase266
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType
@@ -972,6 +1015,9 @@ func (o BTPOperatorDeclaration264) MarshalJSON() ([]byte, error) {
 	}
 	if o.SpaceBeforeOperator != nil {
 		toSerialize["spaceBeforeOperator"] = o.SpaceBeforeOperator
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

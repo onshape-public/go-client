@@ -16,6 +16,7 @@ import (
 
 // BTBillOfMaterialsTableRow1425 struct for BTBillOfMaterialsTableRow1425
 type BTBillOfMaterialsTableRow1425 struct {
+	BTTableRow1054
 	BtType                 *string                              `json:"btType,omitempty"`
 	ColumnIdToCell         *map[string]BTTableCell1114          `json:"columnIdToCell,omitempty"`
 	Id                     *string                              `json:"id,omitempty"`
@@ -33,6 +34,8 @@ type BTBillOfMaterialsTableRow1425 struct {
 	RelatedOccurrencePaths []string                             `json:"relatedOccurrencePaths,omitempty"`
 	SuppressionStatus      *GBTBillOfMaterialsSuppressionStatus `json:"suppressionStatus,omitempty"`
 	UniqueItemId           *BTBillOfMaterialsUniqueItemId2029   `json:"uniqueItemId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTBillOfMaterialsTableRow1425 instantiates a new BTBillOfMaterialsTableRow1425 object
@@ -596,8 +599,48 @@ func (o *BTBillOfMaterialsTableRow1425) SetUniqueItemId(v BTBillOfMaterialsUniqu
 	o.UniqueItemId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTBillOfMaterialsTableRow1425) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableRow1054, errBTTableRow1054 := json.Marshal(o.BTTableRow1054)
+	if errBTTableRow1054 != nil {
+		return []byte{}, errBTTableRow1054
+	}
+	errBTTableRow1054 = json.Unmarshal([]byte(serializedBTTableRow1054), &toSerialize)
+	if errBTTableRow1054 != nil {
+		return []byte{}, errBTTableRow1054
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -648,6 +691,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.UniqueItemId != nil {
 		toSerialize["uniqueItemId"] = o.UniqueItemId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

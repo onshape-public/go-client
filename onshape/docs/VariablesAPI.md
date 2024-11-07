@@ -1,0 +1,565 @@
+# \VariablesAPI
+
+All URIs are relative to *https://cad.onshape.com/api/v9*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**CreateVariableStudio**](VariablesAPI.md#CreateVariableStudio) | **Post** /variables/d/{did}/w/{wid}/variablestudio | Create a new Variable Studio in a document and workspace.
+[**GetVariableStudioReferences**](VariablesAPI.md#GetVariableStudioReferences) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioreferences | Get the Variable Studio references for an element.
+[**GetVariableStudioScope**](VariablesAPI.md#GetVariableStudioScope) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variablestudioscope | Get the scope of a Variable Studio.
+[**GetVariables**](VariablesAPI.md#GetVariables) | **Get** /variables/d/{did}/{wv}/{wvid}/e/{eid}/variables | Get the contents of all variable tables in an element.
+[**SetVariableStudioReferences**](VariablesAPI.md#SetVariableStudioReferences) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioreferences | Set the Variable Studio references for an element.
+[**SetVariableStudioScope**](VariablesAPI.md#SetVariableStudioScope) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variablestudioscope | Set the scope the Variable Studio.
+[**SetVariables**](VariablesAPI.md#SetVariables) | **Post** /variables/d/{did}/w/{wid}/e/{eid}/variables | Assign variables to a Variable Studio
+
+
+
+## CreateVariableStudio
+
+> BTDocumentElementInfo CreateVariableStudio(ctx, did, wid).BTModelElementParams(bTModelElementParams).LinkDocumentId(linkDocumentId).Execute()
+
+Create a new Variable Studio in a document and workspace.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    bTModelElementParams := *openapiclient.NewBTModelElementParams() // BTModelElementParams | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.VariablesAPI.CreateVariableStudio(context.Background(), did, wid).BTModelElementParams(bTModelElementParams).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VariablesAPI.CreateVariableStudio``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateVariableStudio`: BTDocumentElementInfo
+    fmt.Fprintf(os.Stdout, "Response from `VariablesAPI.CreateVariableStudio`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateVariableStudioRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **bTModelElementParams** | [**BTModelElementParams**](BTModelElementParams.md) |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+[**BTDocumentElementInfo**](BTDocumentElementInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVariableStudioReferences
+
+> BTVariableStudioReferenceListInfo GetVariableStudioReferences(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
+
+Get the Variable Studio references for an element.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.VariablesAPI.GetVariableStudioReferences(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VariablesAPI.GetVariableStudioReferences``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetVariableStudioReferences`: BTVariableStudioReferenceListInfo
+    fmt.Fprintf(os.Stdout, "Response from `VariablesAPI.GetVariableStudioReferences`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVariableStudioReferencesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+[**BTVariableStudioReferenceListInfo**](BTVariableStudioReferenceListInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVariableStudioScope
+
+> BTVariableStudioScopeInfo GetVariableStudioScope(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
+
+Get the scope of a Variable Studio.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.VariablesAPI.GetVariableStudioScope(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VariablesAPI.GetVariableStudioScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetVariableStudioScope`: BTVariableStudioScopeInfo
+    fmt.Fprintf(os.Stdout, "Response from `VariablesAPI.GetVariableStudioScope`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVariableStudioScopeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+[**BTVariableStudioScopeInfo**](BTVariableStudioScopeInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVariables
+
+> []BTVariableTableInfo GetVariables(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
+
+Get the contents of all variable tables in an element.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
+    includeValuesAndReferencedVariables := true // bool |  (optional) (default to false)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.VariablesAPI.GetVariables(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).IncludeValuesAndReferencedVariables(includeValuesAndReferencedVariables).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VariablesAPI.GetVariables``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetVariables`: []BTVariableTableInfo
+    fmt.Fprintf(os.Stdout, "Response from `VariablesAPI.GetVariables`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVariablesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
+ **includeValuesAndReferencedVariables** | **bool** |  | [default to false]
+
+### Return type
+
+[**[]BTVariableTableInfo**](BTVariableTableInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SetVariableStudioReferences
+
+> map[string]interface{} SetVariableStudioReferences(ctx, did, wid, eid).BTVariableStudioReferenceListInfo(bTVariableStudioReferenceListInfo).LinkDocumentId(linkDocumentId).Execute()
+
+Set the Variable Studio references for an element.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | 
+    bTVariableStudioReferenceListInfo := *openapiclient.NewBTVariableStudioReferenceListInfo() // BTVariableStudioReferenceListInfo | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.VariablesAPI.SetVariableStudioReferences(context.Background(), did, wid, eid).BTVariableStudioReferenceListInfo(bTVariableStudioReferenceListInfo).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VariablesAPI.SetVariableStudioReferences``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetVariableStudioReferences`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `VariablesAPI.SetVariableStudioReferences`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetVariableStudioReferencesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTVariableStudioReferenceListInfo** | [**BTVariableStudioReferenceListInfo**](BTVariableStudioReferenceListInfo.md) |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SetVariableStudioScope
+
+> map[string]interface{} SetVariableStudioScope(ctx, did, wid, eid).BTVariableStudioScopeInfo(bTVariableStudioScopeInfo).LinkDocumentId(linkDocumentId).Execute()
+
+Set the scope the Variable Studio.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | 
+    bTVariableStudioScopeInfo := *openapiclient.NewBTVariableStudioScopeInfo(false) // BTVariableStudioScopeInfo | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.VariablesAPI.SetVariableStudioScope(context.Background(), did, wid, eid).BTVariableStudioScopeInfo(bTVariableStudioScopeInfo).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VariablesAPI.SetVariableStudioScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetVariableStudioScope`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `VariablesAPI.SetVariableStudioScope`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetVariableStudioScopeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTVariableStudioScopeInfo** | [**BTVariableStudioScopeInfo**](BTVariableStudioScopeInfo.md) |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SetVariables
+
+> map[string]interface{} SetVariables(ctx, did, wid, eid).BTVariableParams(bTVariableParams).LinkDocumentId(linkDocumentId).Execute()
+
+Assign variables to a Variable Studio
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    eid := "eid_example" // string | 
+    bTVariableParams := []openapiclient.BTVariableParams{*openapiclient.NewBTVariableParams("Expression_example", "Name_example", "Type_example")} // []BTVariableParams | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.VariablesAPI.SetVariables(context.Background(), did, wid, eid).BTVariableParams(bTVariableParams).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VariablesAPI.SetVariables``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetVariables`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `VariablesAPI.SetVariables`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetVariablesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTVariableParams** | [**[]BTVariableParams**](BTVariableParams.md) |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// InsertableApiService InsertableApi service
-type InsertableApiService service
+// InsertableAPIService InsertableAPI service
+type InsertableAPIService service
 
 type ApiGetLatestInDocumentRequest struct {
 	ctx                                    context.Context
-	ApiService                             *InsertableApiService
+	ApiService                             *InsertableAPIService
 	did                                    string
 	includeParts                           *bool
 	includeSurfaces                        *bool
@@ -180,7 +180,7 @@ GetLatestInDocument Get a list of things in this document that can be inserted e
 	@param did
 	@return ApiGetLatestInDocumentRequest
 */
-func (a *InsertableApiService) GetLatestInDocument(ctx context.Context, did string) ApiGetLatestInDocumentRequest {
+func (a *InsertableAPIService) GetLatestInDocument(ctx context.Context, did string) ApiGetLatestInDocumentRequest {
 	return ApiGetLatestInDocumentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -191,7 +191,7 @@ func (a *InsertableApiService) GetLatestInDocument(ctx context.Context, did stri
 // Execute executes the request
 //
 //	@return BTListResponseBTInsertableInfo
-func (a *InsertableApiService) GetLatestInDocumentExecute(r ApiGetLatestInDocumentRequest) (*BTListResponseBTInsertableInfo, *http.Response, error) {
+func (a *InsertableAPIService) GetLatestInDocumentExecute(r ApiGetLatestInDocumentRequest) (*BTListResponseBTInsertableInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -199,7 +199,7 @@ func (a *InsertableApiService) GetLatestInDocumentExecute(r ApiGetLatestInDocume
 		localVarReturnValue *BTListResponseBTInsertableInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsertableApiService.GetLatestInDocument")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsertableAPIService.GetLatestInDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

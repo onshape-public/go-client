@@ -16,6 +16,7 @@ import (
 
 // BTPName261 struct for BTPName261
 type BTPName261 struct {
+	BTPNode7
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -32,6 +33,8 @@ type BTPName261 struct {
 	// Element microversion that is being imported.
 	ImportMicroversion *string          `json:"importMicroversion,omitempty"`
 	Namespace          []BTPIdentifier8 `json:"namespace,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPName261 instantiates a new BTPName261 object
@@ -531,8 +534,48 @@ func (o *BTPName261) SetNamespace(v []BTPIdentifier8) {
 	o.Namespace = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPName261) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPName261) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPName261) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPName261) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPName261) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}
@@ -577,6 +620,9 @@ func (o BTPName261) MarshalJSON() ([]byte, error) {
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

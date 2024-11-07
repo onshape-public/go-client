@@ -16,27 +16,31 @@ import (
 
 // BTMSketchImageEntity763 struct for BTMSketchImageEntity763
 type BTMSketchImageEntity763 struct {
+	BTMSketchGeomEntity5
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion                  *string              `json:"importMicroversion,omitempty"`
-	NodeId                              *string              `json:"nodeId,omitempty"`
-	EntityId                            *string              `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string              `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Index                               *int32               `json:"index,omitempty"`
-	Namespace                           *string              `json:"namespace,omitempty"`
-	Parameters                          []BTMParameter1      `json:"parameters,omitempty"`
-	ControlBoxIds                       []string             `json:"controlBoxIds,omitempty"`
-	EntityType                          *GBTSketchEntityType `json:"entityType,omitempty"`
-	FunctionName                        *string              `json:"functionName,omitempty"`
-	IsConstruction                      *bool                `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool                `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool                `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool                `json:"isFromSplineHandle,omitempty"`
-	AspectRatio                         *float64             `json:"aspectRatio,omitempty"`
-	OriginX                             *float64             `json:"originX,omitempty"`
-	OriginY                             *float64             `json:"originY,omitempty"`
-	XaxisX                              *float64             `json:"xaxisX,omitempty"`
-	XaxisY                              *float64             `json:"xaxisY,omitempty"`
+	ImportMicroversion                  *string                   `json:"importMicroversion,omitempty"`
+	NodeId                              *string                   `json:"nodeId,omitempty"`
+	CombinedSketchEntityType            *CombinedSketchEntityType `json:"combinedSketchEntityType,omitempty"`
+	EntityId                            *string                   `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string                   `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Index                               *int32                    `json:"index,omitempty"`
+	Namespace                           *string                   `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1           `json:"parameters,omitempty"`
+	ControlBoxIds                       []string                  `json:"controlBoxIds,omitempty"`
+	EntityType                          *GBTSketchEntityType      `json:"entityType,omitempty"`
+	FunctionName                        *string                   `json:"functionName,omitempty"`
+	IsConstruction                      *bool                     `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle          *bool                     `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon          *bool                     `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle                  *bool                     `json:"isFromSplineHandle,omitempty"`
+	AspectRatio                         *float64                  `json:"aspectRatio,omitempty"`
+	OriginX                             *float64                  `json:"originX,omitempty"`
+	OriginY                             *float64                  `json:"originY,omitempty"`
+	XaxisX                              *float64                  `json:"xaxisX,omitempty"`
+	XaxisY                              *float64                  `json:"xaxisY,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMSketchImageEntity763 instantiates a new BTMSketchImageEntity763 object
@@ -150,6 +154,38 @@ func (o *BTMSketchImageEntity763) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTMSketchImageEntity763) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetCombinedSketchEntityType returns the CombinedSketchEntityType field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetCombinedSketchEntityType() CombinedSketchEntityType {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		var ret CombinedSketchEntityType
+		return ret
+	}
+	return *o.CombinedSketchEntityType
+}
+
+// GetCombinedSketchEntityTypeOk returns a tuple with the CombinedSketchEntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool) {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		return nil, false
+	}
+	return o.CombinedSketchEntityType, true
+}
+
+// HasCombinedSketchEntityType returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasCombinedSketchEntityType() bool {
+	if o != nil && o.CombinedSketchEntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCombinedSketchEntityType gets a reference to the given CombinedSketchEntityType and assigns it to the CombinedSketchEntityType field.
+func (o *BTMSketchImageEntity763) SetCombinedSketchEntityType(v CombinedSketchEntityType) {
+	o.CombinedSketchEntityType = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -696,8 +732,48 @@ func (o *BTMSketchImageEntity763) SetXaxisY(v float64) {
 	o.XaxisY = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMSketchImageEntity763) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchGeomEntity5, errBTMSketchGeomEntity5 := json.Marshal(o.BTMSketchGeomEntity5)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
+	errBTMSketchGeomEntity5 = json.Unmarshal([]byte(serializedBTMSketchGeomEntity5), &toSerialize)
+	if errBTMSketchGeomEntity5 != nil {
+		return []byte{}, errBTMSketchGeomEntity5
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -706,6 +782,9 @@ func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.CombinedSketchEntityType != nil {
+		toSerialize["combinedSketchEntityType"] = o.CombinedSketchEntityType
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId
@@ -757,6 +836,9 @@ func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	}
 	if o.XaxisY != nil {
 		toSerialize["xaxisY"] = o.XaxisY
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

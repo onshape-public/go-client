@@ -16,12 +16,15 @@ import (
 
 // BTSimulationInstance3093 struct for BTSimulationInstance3093
 type BTSimulationInstance3093 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
 	NodeId             *string `json:"nodeId,omitempty"`
 	IsModal            *bool   `json:"isModal,omitempty"`
 	SimulationId       *string `json:"simulationId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSimulationInstance3093 instantiates a new BTSimulationInstance3093 object
@@ -201,8 +204,48 @@ func (o *BTSimulationInstance3093) SetSimulationId(v string) {
 	o.SimulationId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSimulationInstance3093) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSimulationInstance3093) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSimulationInstance3093) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSimulationInstance3093) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSimulationInstance3093) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -217,6 +260,9 @@ func (o BTSimulationInstance3093) MarshalJSON() ([]byte, error) {
 	}
 	if o.SimulationId != nil {
 		toSerialize["simulationId"] = o.SimulationId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

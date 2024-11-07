@@ -16,8 +16,9 @@ import (
 
 // BTPPredicateDeclaration265 struct for BTPPredicateDeclaration265
 type BTPPredicateDeclaration265 struct {
-	Atomic                *bool                       `json:"atomic,omitempty"`
+	BTPFunctionOrPredicateDeclaration247
 	BtType                *string                     `json:"btType,omitempty"`
+	Atomic                *bool                       `json:"atomic,omitempty"`
 	DocumentationType     *GBTPDefinitionType         `json:"documentationType,omitempty"`
 	EndSourceLocation     *int32                      `json:"endSourceLocation,omitempty"`
 	NodeId                *string                     `json:"nodeId,omitempty"`
@@ -40,6 +41,8 @@ type BTPPredicateDeclaration265 struct {
 	SpaceAfterArglist     *BTPSpace10                 `json:"spaceAfterArglist,omitempty"`
 	SpaceInEmptyList      *BTPSpace10                 `json:"spaceInEmptyList,omitempty"`
 	Name                  *BTPIdentifier8             `json:"name,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPPredicateDeclaration265 instantiates a new BTPPredicateDeclaration265 object
@@ -57,38 +60,6 @@ func NewBTPPredicateDeclaration265() *BTPPredicateDeclaration265 {
 func NewBTPPredicateDeclaration265WithDefaults() *BTPPredicateDeclaration265 {
 	this := BTPPredicateDeclaration265{}
 	return &this
-}
-
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPPredicateDeclaration265) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPPredicateDeclaration265) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPPredicateDeclaration265) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPPredicateDeclaration265) SetAtomic(v bool) {
-	o.Atomic = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -121,6 +92,38 @@ func (o *BTPPredicateDeclaration265) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTPPredicateDeclaration265) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPPredicateDeclaration265) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPPredicateDeclaration265) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPPredicateDeclaration265) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPPredicateDeclaration265) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -827,13 +830,53 @@ func (o *BTPPredicateDeclaration265) SetName(v BTPIdentifier8) {
 	o.Name = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPPredicateDeclaration265) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPPredicateDeclaration265) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPPredicateDeclaration265) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPPredicateDeclaration265) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPPredicateDeclaration265) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPFunctionOrPredicateDeclaration247, errBTPFunctionOrPredicateDeclaration247 := json.Marshal(o.BTPFunctionOrPredicateDeclaration247)
+	if errBTPFunctionOrPredicateDeclaration247 != nil {
+		return []byte{}, errBTPFunctionOrPredicateDeclaration247
+	}
+	errBTPFunctionOrPredicateDeclaration247 = json.Unmarshal([]byte(serializedBTPFunctionOrPredicateDeclaration247), &toSerialize)
+	if errBTPFunctionOrPredicateDeclaration247 != nil {
+		return []byte{}, errBTPFunctionOrPredicateDeclaration247
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType
@@ -900,6 +943,9 @@ func (o BTPPredicateDeclaration265) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

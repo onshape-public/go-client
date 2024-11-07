@@ -16,12 +16,15 @@ import (
 
 // BTSphereDescription1263 struct for BTSphereDescription1263
 type BTSphereDescription1263 struct {
+	BTSurfaceDescription1564
 	BtType                    *string             `json:"btType,omitempty"`
 	Direction                 *BTVector3d389      `json:"direction,omitempty"`
 	DirectionOrientedWithFace *BTVector3d389      `json:"directionOrientedWithFace,omitempty"`
 	Origin                    *BTVector3d389      `json:"origin,omitempty"`
 	Type                      *GBTSurfaceTypeEnum `json:"type,omitempty"`
 	Radius                    *float64            `json:"radius,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSphereDescription1263 instantiates a new BTSphereDescription1263 object
@@ -233,8 +236,48 @@ func (o *BTSphereDescription1263) SetRadius(v float64) {
 	o.Radius = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSphereDescription1263) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSphereDescription1263) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSphereDescription1263) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSphereDescription1263) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSphereDescription1263) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSurfaceDescription1564, errBTSurfaceDescription1564 := json.Marshal(o.BTSurfaceDescription1564)
+	if errBTSurfaceDescription1564 != nil {
+		return []byte{}, errBTSurfaceDescription1564
+	}
+	errBTSurfaceDescription1564 = json.Unmarshal([]byte(serializedBTSurfaceDescription1564), &toSerialize)
+	if errBTSurfaceDescription1564 != nil {
+		return []byte{}, errBTSurfaceDescription1564
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -252,6 +295,9 @@ func (o BTSphereDescription1263) MarshalJSON() ([]byte, error) {
 	}
 	if o.Radius != nil {
 		toSerialize["radius"] = o.Radius
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

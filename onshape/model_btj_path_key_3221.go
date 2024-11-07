@@ -16,8 +16,11 @@ import (
 
 // BTJPathKey3221 Identifies a subtree of the json structure by field name.
 type BTJPathKey3221 struct {
+	BTJPathElement2297
 	BtType *string `json:"btType,omitempty"`
 	Key    *string `json:"key,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTJPathKey3221 instantiates a new BTJPathKey3221 object
@@ -101,13 +104,56 @@ func (o *BTJPathKey3221) SetKey(v string) {
 	o.Key = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTJPathKey3221) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTJPathKey3221) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTJPathKey3221) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTJPathKey3221) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTJPathKey3221) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJPathElement2297, errBTJPathElement2297 := json.Marshal(o.BTJPathElement2297)
+	if errBTJPathElement2297 != nil {
+		return []byte{}, errBTJPathElement2297
+	}
+	errBTJPathElement2297 = json.Unmarshal([]byte(serializedBTJPathElement2297), &toSerialize)
+	if errBTJPathElement2297 != nil {
+		return []byte{}, errBTJPathElement2297
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.Key != nil {
 		toSerialize["key"] = o.Key
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,9 +16,12 @@ import (
 
 // BTParameterVisibilityLogical178 struct for BTParameterVisibilityLogical178
 type BTParameterVisibilityLogical178 struct {
+	BTParameterVisibilityCondition177
 	BtType    *string                             `json:"btType,omitempty"`
 	Children  []BTParameterVisibilityCondition177 `json:"children,omitempty"`
 	Operation *GBTParameterVisibilityLogicalOp    `json:"operation,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterVisibilityLogical178 instantiates a new BTParameterVisibilityLogical178 object
@@ -134,8 +137,48 @@ func (o *BTParameterVisibilityLogical178) SetOperation(v GBTParameterVisibilityL
 	o.Operation = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterVisibilityLogical178) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterVisibilityLogical178) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterVisibilityLogical178) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterVisibilityLogical178) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterVisibilityLogical178) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityCondition177, errBTParameterVisibilityCondition177 := json.Marshal(o.BTParameterVisibilityCondition177)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
+	errBTParameterVisibilityCondition177 = json.Unmarshal([]byte(serializedBTParameterVisibilityCondition177), &toSerialize)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -144,6 +187,9 @@ func (o BTParameterVisibilityLogical178) MarshalJSON() ([]byte, error) {
 	}
 	if o.Operation != nil {
 		toSerialize["operation"] = o.Operation
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

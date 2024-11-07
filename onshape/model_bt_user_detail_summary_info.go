@@ -16,6 +16,7 @@ import (
 
 // BTUserDetailSummaryInfo struct for BTUserDetailSummaryInfo
 type BTUserDetailSummaryInfo struct {
+	JsonType string `json:"jsonType"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -37,8 +38,9 @@ type BTUserDetailSummaryInfo struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTUserDetailSummaryInfo() *BTUserDetailSummaryInfo {
+func NewBTUserDetailSummaryInfo(jsonType string) *BTUserDetailSummaryInfo {
 	this := BTUserDetailSummaryInfo{}
+	this.JsonType = jsonType
 	return &this
 }
 
@@ -48,6 +50,30 @@ func NewBTUserDetailSummaryInfo() *BTUserDetailSummaryInfo {
 func NewBTUserDetailSummaryInfoWithDefaults() *BTUserDetailSummaryInfo {
 	this := BTUserDetailSummaryInfo{}
 	return &this
+}
+
+// GetJsonType returns the JsonType field value
+func (o *BTUserDetailSummaryInfo) GetJsonType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.JsonType
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *BTUserDetailSummaryInfo) GetJsonTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JsonType, true
+}
+
+// SetJsonType sets field value
+func (o *BTUserDetailSummaryInfo) SetJsonType(v string) {
+	o.JsonType = v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -404,6 +430,9 @@ func (o *BTUserDetailSummaryInfo) SetLastName(v string) {
 
 func (o BTUserDetailSummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["jsonType"] = o.JsonType
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}

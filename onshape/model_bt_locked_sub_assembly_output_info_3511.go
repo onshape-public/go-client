@@ -16,12 +16,15 @@ import (
 
 // BTLockedSubAssemblyOutputInfo3511 struct for BTLockedSubAssemblyOutputInfo3511
 type BTLockedSubAssemblyOutputInfo3511 struct {
+	BTRigidOrLockedSubAssemblyOutputInfo3860
 	BtType           *string                  `json:"btType,omitempty"`
 	Locked           *bool                    `json:"locked,omitempty"`
 	Rigid            *bool                    `json:"rigid,omitempty"`
 	SyncedOutputMVID *BTMicroversionId366     `json:"syncedOutputMVID,omitempty"`
 	LockInfo         *BTLockedSubAssembly4590 `json:"lockInfo,omitempty"`
 	SyncError        *GBTErrorStringEnum      `json:"syncError,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTLockedSubAssemblyOutputInfo3511 instantiates a new BTLockedSubAssemblyOutputInfo3511 object
@@ -233,8 +236,48 @@ func (o *BTLockedSubAssemblyOutputInfo3511) SetSyncError(v GBTErrorStringEnum) {
 	o.SyncError = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTLockedSubAssemblyOutputInfo3511) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLockedSubAssemblyOutputInfo3511) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTLockedSubAssemblyOutputInfo3511) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTLockedSubAssemblyOutputInfo3511) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTLockedSubAssemblyOutputInfo3511) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTRigidOrLockedSubAssemblyOutputInfo3860, errBTRigidOrLockedSubAssemblyOutputInfo3860 := json.Marshal(o.BTRigidOrLockedSubAssemblyOutputInfo3860)
+	if errBTRigidOrLockedSubAssemblyOutputInfo3860 != nil {
+		return []byte{}, errBTRigidOrLockedSubAssemblyOutputInfo3860
+	}
+	errBTRigidOrLockedSubAssemblyOutputInfo3860 = json.Unmarshal([]byte(serializedBTRigidOrLockedSubAssemblyOutputInfo3860), &toSerialize)
+	if errBTRigidOrLockedSubAssemblyOutputInfo3860 != nil {
+		return []byte{}, errBTRigidOrLockedSubAssemblyOutputInfo3860
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -252,6 +295,9 @@ func (o BTLockedSubAssemblyOutputInfo3511) MarshalJSON() ([]byte, error) {
 	}
 	if o.SyncError != nil {
 		toSerialize["syncError"] = o.SyncError
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

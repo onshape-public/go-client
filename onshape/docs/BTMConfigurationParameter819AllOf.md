@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ParameterName** | Pointer to **string** |  | [optional] 
 **ParameterType** | Pointer to [**GBTConfigurationParameterType**](GBTConfigurationParameterType.md) |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 
+**VisibilityCondition** | Pointer to [**BTParameterVisibilityCondition177**](BTParameterVisibilityCondition177.md) |  | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetValid sets Valid field to given value.
 `func (o *BTMConfigurationParameter819AllOf) HasValid() bool`
 
 HasValid returns a boolean if a field has been set.
+
+### GetVisibilityCondition
+
+`func (o *BTMConfigurationParameter819AllOf) GetVisibilityCondition() BTParameterVisibilityCondition177`
+
+GetVisibilityCondition returns the VisibilityCondition field if non-nil, zero value otherwise.
+
+### GetVisibilityConditionOk
+
+`func (o *BTMConfigurationParameter819AllOf) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool)`
+
+GetVisibilityConditionOk returns a tuple with the VisibilityCondition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVisibilityCondition
+
+`func (o *BTMConfigurationParameter819AllOf) SetVisibilityCondition(v BTParameterVisibilityCondition177)`
+
+SetVisibilityCondition sets VisibilityCondition field to given value.
+
+### HasVisibilityCondition
+
+`func (o *BTMConfigurationParameter819AllOf) HasVisibilityCondition() bool`
+
+HasVisibilityCondition returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

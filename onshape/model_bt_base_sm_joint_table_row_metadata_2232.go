@@ -197,6 +197,56 @@ func (o *BTBaseSMJointTableRowMetadata2232) SetCrossHighlightData(v BTTableCross
 	o.GetActualInstance().(getResult).SetCrossHighlightData(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTBaseSMJointTableRowMetadata2232) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBaseSMJointTableRowMetadata2232) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTBaseSMJointTableRowMetadata2232) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTBaseSMJointTableRowMetadata2232) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTBaseSMJointTableRowMetadata2232) UnmarshalJSON(data []byte) error {
 	var err error
@@ -301,9 +351,12 @@ func (v *NullableBTBaseSMJointTableRowMetadata2232) UnmarshalJSON(src []byte) er
 }
 
 type base_BTBaseSMJointTableRowMetadata2232 struct {
+	BTTableBaseRowMetadata3181
 	BtType                  *string                        `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableCrossHighlightData1753 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTBaseSMJointTableRowMetadata2232 instantiates a new base_BTBaseSMJointTableRowMetadata2232 object
@@ -419,8 +472,48 @@ func (o *base_BTBaseSMJointTableRowMetadata2232) SetCrossHighlightData(v BTTable
 	o.CrossHighlightData = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTBaseSMJointTableRowMetadata2232) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTBaseSMJointTableRowMetadata2232) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTBaseSMJointTableRowMetadata2232) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTBaseSMJointTableRowMetadata2232) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTBaseSMJointTableRowMetadata2232) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
+	if errBTTableBaseRowMetadata3181 != nil {
+		return []byte{}, errBTTableBaseRowMetadata3181
+	}
+	errBTTableBaseRowMetadata3181 = json.Unmarshal([]byte(serializedBTTableBaseRowMetadata3181), &toSerialize)
+	if errBTTableBaseRowMetadata3181 != nil {
+		return []byte{}, errBTTableBaseRowMetadata3181
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -429,6 +522,9 @@ func (o base_BTBaseSMJointTableRowMetadata2232) MarshalJSON() ([]byte, error) {
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

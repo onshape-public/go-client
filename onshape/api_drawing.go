@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// DrawingApiService DrawingApi service
-type DrawingApiService service
+// DrawingAPIService DrawingAPI service
+type DrawingAPIService service
 
 type ApiCreateDrawingAppElementRequest struct {
 	ctx             context.Context
-	ApiService      *DrawingApiService
+	ApiService      *DrawingAPIService
 	did             string
 	wid             string
 	bTDrawingParams *BTDrawingParams
@@ -48,7 +48,7 @@ This endpoint takes a JSON Schema as input. See the schema docs below for detail
 	@param wid ID of the workspace in which to create the drawing.
 	@return ApiCreateDrawingAppElementRequest
 */
-func (a *DrawingApiService) CreateDrawingAppElement(ctx context.Context, did string, wid string) ApiCreateDrawingAppElementRequest {
+func (a *DrawingAPIService) CreateDrawingAppElement(ctx context.Context, did string, wid string) ApiCreateDrawingAppElementRequest {
 	return ApiCreateDrawingAppElementRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -60,7 +60,7 @@ func (a *DrawingApiService) CreateDrawingAppElement(ctx context.Context, did str
 // Execute executes the request
 //
 //	@return BTDocumentElementInfo
-func (a *DrawingApiService) CreateDrawingAppElementExecute(r ApiCreateDrawingAppElementRequest) (*BTDocumentElementInfo, *http.Response, error) {
+func (a *DrawingAPIService) CreateDrawingAppElementExecute(r ApiCreateDrawingAppElementRequest) (*BTDocumentElementInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -68,7 +68,7 @@ func (a *DrawingApiService) CreateDrawingAppElementExecute(r ApiCreateDrawingApp
 		localVarReturnValue *BTDocumentElementInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.CreateDrawingAppElement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingAPIService.CreateDrawingAppElement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -149,7 +149,7 @@ func (a *DrawingApiService) CreateDrawingAppElementExecute(r ApiCreateDrawingApp
 
 type ApiCreateDrawingTranslationRequest struct {
 	ctx                     context.Context
-	ApiService              *DrawingApiService
+	ApiService              *DrawingAPIService
 	did                     string
 	wv                      string
 	wvid                    string
@@ -178,7 +178,7 @@ Export a drawing to a different format within a document. Use `getDrawingTransla
 	@param eid
 	@return ApiCreateDrawingTranslationRequest
 */
-func (a *DrawingApiService) CreateDrawingTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateDrawingTranslationRequest {
+func (a *DrawingAPIService) CreateDrawingTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateDrawingTranslationRequest {
 	return ApiCreateDrawingTranslationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -192,7 +192,7 @@ func (a *DrawingApiService) CreateDrawingTranslation(ctx context.Context, did st
 // Execute executes the request
 //
 //	@return BTTranslationRequestInfo
-func (a *DrawingApiService) CreateDrawingTranslationExecute(r ApiCreateDrawingTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+func (a *DrawingAPIService) CreateDrawingTranslationExecute(r ApiCreateDrawingTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -200,7 +200,7 @@ func (a *DrawingApiService) CreateDrawingTranslationExecute(r ApiCreateDrawingTr
 		localVarReturnValue *BTTranslationRequestInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.CreateDrawingTranslation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingAPIService.CreateDrawingTranslation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -283,7 +283,7 @@ func (a *DrawingApiService) CreateDrawingTranslationExecute(r ApiCreateDrawingTr
 
 type ApiGetDrawingTranslatorFormatsRequest struct {
 	ctx        context.Context
-	ApiService *DrawingApiService
+	ApiService *DrawingAPIService
 	did        string
 	wid        string
 	eid        string
@@ -304,7 +304,7 @@ See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/tran
 	@param eid
 	@return ApiGetDrawingTranslatorFormatsRequest
 */
-func (a *DrawingApiService) GetDrawingTranslatorFormats(ctx context.Context, did string, wid string, eid string) ApiGetDrawingTranslatorFormatsRequest {
+func (a *DrawingAPIService) GetDrawingTranslatorFormats(ctx context.Context, did string, wid string, eid string) ApiGetDrawingTranslatorFormatsRequest {
 	return ApiGetDrawingTranslatorFormatsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -317,7 +317,7 @@ func (a *DrawingApiService) GetDrawingTranslatorFormats(ctx context.Context, did
 // Execute executes the request
 //
 //	@return []BTModelFormatInfo
-func (a *DrawingApiService) GetDrawingTranslatorFormatsExecute(r ApiGetDrawingTranslatorFormatsRequest) ([]BTModelFormatInfo, *http.Response, error) {
+func (a *DrawingAPIService) GetDrawingTranslatorFormatsExecute(r ApiGetDrawingTranslatorFormatsRequest) ([]BTModelFormatInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -325,7 +325,7 @@ func (a *DrawingApiService) GetDrawingTranslatorFormatsExecute(r ApiGetDrawingTr
 		localVarReturnValue []BTModelFormatInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.GetDrawingTranslatorFormats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingAPIService.GetDrawingTranslatorFormats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -402,7 +402,7 @@ func (a *DrawingApiService) GetDrawingTranslatorFormatsExecute(r ApiGetDrawingTr
 
 type ApiGetDrawingViewJsonGeometry1Request struct {
 	ctx            context.Context
-	ApiService     *DrawingApiService
+	ApiService     *DrawingAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -453,7 +453,7 @@ GetDrawingViewJsonGeometry1 Get view geometry of a drawing view in JSON format.
 	@param viewid The id of the view in which to perform the operation.
 	@return ApiGetDrawingViewJsonGeometry1Request
 */
-func (a *DrawingApiService) GetDrawingViewJsonGeometry1(ctx context.Context, did string, wvm string, wvmid string, eid string, viewid string) ApiGetDrawingViewJsonGeometry1Request {
+func (a *DrawingAPIService) GetDrawingViewJsonGeometry1(ctx context.Context, did string, wvm string, wvmid string, eid string, viewid string) ApiGetDrawingViewJsonGeometry1Request {
 	return ApiGetDrawingViewJsonGeometry1Request{
 		ApiService: a,
 		ctx:        ctx,
@@ -468,7 +468,7 @@ func (a *DrawingApiService) GetDrawingViewJsonGeometry1(ctx context.Context, did
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *DrawingApiService) GetDrawingViewJsonGeometry1Execute(r ApiGetDrawingViewJsonGeometry1Request) (map[string]interface{}, *http.Response, error) {
+func (a *DrawingAPIService) GetDrawingViewJsonGeometry1Execute(r ApiGetDrawingViewJsonGeometry1Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -476,7 +476,7 @@ func (a *DrawingApiService) GetDrawingViewJsonGeometry1Execute(r ApiGetDrawingVi
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.GetDrawingViewJsonGeometry1")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingAPIService.GetDrawingViewJsonGeometry1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -567,7 +567,7 @@ func (a *DrawingApiService) GetDrawingViewJsonGeometry1Execute(r ApiGetDrawingVi
 
 type ApiGetDrawingViews1Request struct {
 	ctx            context.Context
-	ApiService     *DrawingApiService
+	ApiService     *DrawingAPIService
 	did            string
 	wvm            string
 	wvmid          string
@@ -609,7 +609,7 @@ GetDrawingViews1 Get details of all drawing views.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiGetDrawingViews1Request
 */
-func (a *DrawingApiService) GetDrawingViews1(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetDrawingViews1Request {
+func (a *DrawingAPIService) GetDrawingViews1(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetDrawingViews1Request {
 	return ApiGetDrawingViews1Request{
 		ApiService: a,
 		ctx:        ctx,
@@ -623,7 +623,7 @@ func (a *DrawingApiService) GetDrawingViews1(ctx context.Context, did string, wv
 // Execute executes the request
 //
 //	@return BTAppArrayInfoBTAppDrawingViewInfo
-func (a *DrawingApiService) GetDrawingViews1Execute(r ApiGetDrawingViews1Request) (*BTAppArrayInfoBTAppDrawingViewInfo, *http.Response, error) {
+func (a *DrawingAPIService) GetDrawingViews1Execute(r ApiGetDrawingViews1Request) (*BTAppArrayInfoBTAppDrawingViewInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -631,7 +631,7 @@ func (a *DrawingApiService) GetDrawingViews1Execute(r ApiGetDrawingViews1Request
 		localVarReturnValue *BTAppArrayInfoBTAppDrawingViewInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.GetDrawingViews1")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingAPIService.GetDrawingViews1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -718,7 +718,7 @@ func (a *DrawingApiService) GetDrawingViews1Execute(r ApiGetDrawingViews1Request
 
 type ApiGetModificationStatusRequest struct {
 	ctx        context.Context
-	ApiService *DrawingApiService
+	ApiService *DrawingAPIService
 	mrid       string
 }
 
@@ -733,7 +733,7 @@ GetModificationStatus Get the status of a drawing modification operation.
 	@param mrid
 	@return ApiGetModificationStatusRequest
 */
-func (a *DrawingApiService) GetModificationStatus(ctx context.Context, mrid string) ApiGetModificationStatusRequest {
+func (a *DrawingAPIService) GetModificationStatus(ctx context.Context, mrid string) ApiGetModificationStatusRequest {
 	return ApiGetModificationStatusRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -744,7 +744,7 @@ func (a *DrawingApiService) GetModificationStatus(ctx context.Context, mrid stri
 // Execute executes the request
 //
 //	@return BTAppModificationRequestInfo
-func (a *DrawingApiService) GetModificationStatusExecute(r ApiGetModificationStatusRequest) (*BTAppModificationRequestInfo, *http.Response, error) {
+func (a *DrawingAPIService) GetModificationStatusExecute(r ApiGetModificationStatusRequest) (*BTAppModificationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -752,7 +752,7 @@ func (a *DrawingApiService) GetModificationStatusExecute(r ApiGetModificationSta
 		localVarReturnValue *BTAppModificationRequestInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.GetModificationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingAPIService.GetModificationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -827,7 +827,7 @@ func (a *DrawingApiService) GetModificationStatusExecute(r ApiGetModificationSta
 
 type ApiModifyDrawingRequest struct {
 	ctx                         context.Context
-	ApiService                  *DrawingApiService
+	ApiService                  *DrawingAPIService
 	did                         string
 	wid                         string
 	eid                         string
@@ -861,7 +861,7 @@ See [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings
 	@param eid The id of the element in which to perform the operation.
 	@return ApiModifyDrawingRequest
 */
-func (a *DrawingApiService) ModifyDrawing(ctx context.Context, did string, wid string, eid string) ApiModifyDrawingRequest {
+func (a *DrawingAPIService) ModifyDrawing(ctx context.Context, did string, wid string, eid string) ApiModifyDrawingRequest {
 	return ApiModifyDrawingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -874,7 +874,7 @@ func (a *DrawingApiService) ModifyDrawing(ctx context.Context, did string, wid s
 // Execute executes the request
 //
 //	@return BTAppModificationRequestInfo
-func (a *DrawingApiService) ModifyDrawingExecute(r ApiModifyDrawingRequest) (*BTAppModificationRequestInfo, *http.Response, error) {
+func (a *DrawingAPIService) ModifyDrawingExecute(r ApiModifyDrawingRequest) (*BTAppModificationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -882,7 +882,7 @@ func (a *DrawingApiService) ModifyDrawingExecute(r ApiModifyDrawingRequest) (*BT
 		localVarReturnValue *BTAppModificationRequestInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingApiService.ModifyDrawing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DrawingAPIService.ModifyDrawing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

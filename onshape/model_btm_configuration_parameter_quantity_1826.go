@@ -16,18 +16,22 @@ import (
 
 // BTMConfigurationParameterQuantity1826 struct for BTMConfigurationParameterQuantity1826
 type BTMConfigurationParameterQuantity1826 struct {
+	BTMConfigurationParameter819
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
-	NodeId               *string                        `json:"nodeId,omitempty"`
-	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
-	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
-	ParameterId          *string                        `json:"parameterId,omitempty"`
-	ParameterName        *string                        `json:"parameterName,omitempty"`
-	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid                *bool                          `json:"valid,omitempty"`
-	QuantityType         *GBTQuantityType               `json:"quantityType,omitempty"`
-	RangeAndDefault      *BTQuantityRange181            `json:"rangeAndDefault,omitempty"`
+	ImportMicroversion   *string                            `json:"importMicroversion,omitempty"`
+	NodeId               *string                            `json:"nodeId,omitempty"`
+	GeneratedParameterId *BTTreeNode20                      `json:"generatedParameterId,omitempty"`
+	IsCosmetic           *bool                              `json:"isCosmetic,omitempty"`
+	ParameterId          *string                            `json:"parameterId,omitempty"`
+	ParameterName        *string                            `json:"parameterName,omitempty"`
+	ParameterType        *GBTConfigurationParameterType     `json:"parameterType,omitempty"`
+	Valid                *bool                              `json:"valid,omitempty"`
+	VisibilityCondition  *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	QuantityType         *GBTQuantityType                   `json:"quantityType,omitempty"`
+	RangeAndDefault      *BTQuantityRange181                `json:"rangeAndDefault,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMConfigurationParameterQuantity1826 instantiates a new BTMConfigurationParameterQuantity1826 object
@@ -335,6 +339,38 @@ func (o *BTMConfigurationParameterQuantity1826) SetValid(v bool) {
 	o.Valid = &v
 }
 
+// GetVisibilityCondition returns the VisibilityCondition field value if set, zero value otherwise.
+func (o *BTMConfigurationParameterQuantity1826) GetVisibilityCondition() BTParameterVisibilityCondition177 {
+	if o == nil || o.VisibilityCondition == nil {
+		var ret BTParameterVisibilityCondition177
+		return ret
+	}
+	return *o.VisibilityCondition
+}
+
+// GetVisibilityConditionOk returns a tuple with the VisibilityCondition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameterQuantity1826) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool) {
+	if o == nil || o.VisibilityCondition == nil {
+		return nil, false
+	}
+	return o.VisibilityCondition, true
+}
+
+// HasVisibilityCondition returns a boolean if a field has been set.
+func (o *BTMConfigurationParameterQuantity1826) HasVisibilityCondition() bool {
+	if o != nil && o.VisibilityCondition != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibilityCondition gets a reference to the given BTParameterVisibilityCondition177 and assigns it to the VisibilityCondition field.
+func (o *BTMConfigurationParameterQuantity1826) SetVisibilityCondition(v BTParameterVisibilityCondition177) {
+	o.VisibilityCondition = &v
+}
+
 // GetQuantityType returns the QuantityType field value if set, zero value otherwise.
 func (o *BTMConfigurationParameterQuantity1826) GetQuantityType() GBTQuantityType {
 	if o == nil || o.QuantityType == nil {
@@ -399,8 +435,48 @@ func (o *BTMConfigurationParameterQuantity1826) SetRangeAndDefault(v BTQuantityR
 	o.RangeAndDefault = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMConfigurationParameterQuantity1826) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameterQuantity1826) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMConfigurationParameterQuantity1826) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMConfigurationParameterQuantity1826) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMConfigurationParameterQuantity1826) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMConfigurationParameter819, errBTMConfigurationParameter819 := json.Marshal(o.BTMConfigurationParameter819)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
+	errBTMConfigurationParameter819 = json.Unmarshal([]byte(serializedBTMConfigurationParameter819), &toSerialize)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -428,11 +504,17 @@ func (o BTMConfigurationParameterQuantity1826) MarshalJSON() ([]byte, error) {
 	if o.Valid != nil {
 		toSerialize["valid"] = o.Valid
 	}
+	if o.VisibilityCondition != nil {
+		toSerialize["visibilityCondition"] = o.VisibilityCondition
+	}
 	if o.QuantityType != nil {
 		toSerialize["quantityType"] = o.QuantityType
 	}
 	if o.RangeAndDefault != nil {
 		toSerialize["rangeAndDefault"] = o.RangeAndDefault
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

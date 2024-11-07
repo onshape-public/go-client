@@ -16,11 +16,14 @@ import (
 
 // BTModelAnnotations3945 struct for BTModelAnnotations3945
 type BTModelAnnotations3945 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string             `json:"importMicroversion,omitempty"`
 	NodeId             *string             `json:"nodeId,omitempty"`
 	Annotations        []BTMAnnotation4664 `json:"annotations,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTModelAnnotations3945 instantiates a new BTModelAnnotations3945 object
@@ -168,8 +171,48 @@ func (o *BTModelAnnotations3945) SetAnnotations(v []BTMAnnotation4664) {
 	o.Annotations = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTModelAnnotations3945) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTModelAnnotations3945) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTModelAnnotations3945) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTModelAnnotations3945) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTModelAnnotations3945) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -181,6 +224,9 @@ func (o BTModelAnnotations3945) MarshalJSON() ([]byte, error) {
 	}
 	if o.Annotations != nil {
 		toSerialize["annotations"] = o.Annotations
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
