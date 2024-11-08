@@ -16,6 +16,7 @@ import (
 
 // BTParameterSpecArray2600 struct for BTParameterSpecArray2600
 type BTParameterSpecArray2600 struct {
+	BTParameterSpec6
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
@@ -35,7 +36,10 @@ type BTParameterSpecArray2600 struct {
 	ItemLabelTemplate          *string                            `json:"itemLabelTemplate,omitempty"`
 	ItemName                   *string                            `json:"itemName,omitempty"`
 	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
+	Parameters                 []BTParameterSpec6                 `json:"parameters,omitempty"`
 	ShowLabelsOnly             *bool                              `json:"showLabelsOnly,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecArray2600 instantiates a new BTParameterSpecArray2600 object
@@ -663,6 +667,38 @@ func (o *BTParameterSpecArray2600) SetMaxNumberOfPicks(v int32) {
 	o.MaxNumberOfPicks = &v
 }
 
+// GetParameters returns the Parameters field value if set, zero value otherwise.
+func (o *BTParameterSpecArray2600) GetParameters() []BTParameterSpec6 {
+	if o == nil || o.Parameters == nil {
+		var ret []BTParameterSpec6
+		return ret
+	}
+	return o.Parameters
+}
+
+// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecArray2600) GetParametersOk() ([]BTParameterSpec6, bool) {
+	if o == nil || o.Parameters == nil {
+		return nil, false
+	}
+	return o.Parameters, true
+}
+
+// HasParameters returns a boolean if a field has been set.
+func (o *BTParameterSpecArray2600) HasParameters() bool {
+	if o != nil && o.Parameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameters gets a reference to the given []BTParameterSpec6 and assigns it to the Parameters field.
+func (o *BTParameterSpecArray2600) SetParameters(v []BTParameterSpec6) {
+	o.Parameters = v
+}
+
 // GetShowLabelsOnly returns the ShowLabelsOnly field value if set, zero value otherwise.
 func (o *BTParameterSpecArray2600) GetShowLabelsOnly() bool {
 	if o == nil || o.ShowLabelsOnly == nil {
@@ -695,8 +731,48 @@ func (o *BTParameterSpecArray2600) SetShowLabelsOnly(v bool) {
 	o.ShowLabelsOnly = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecArray2600) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecArray2600) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecArray2600) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecArray2600) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
+	errBTParameterSpec6 = json.Unmarshal([]byte(serializedBTParameterSpec6), &toSerialize)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
@@ -754,8 +830,14 @@ func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	if o.MaxNumberOfPicks != nil {
 		toSerialize["maxNumberOfPicks"] = o.MaxNumberOfPicks
 	}
+	if o.Parameters != nil {
+		toSerialize["parameters"] = o.Parameters
+	}
 	if o.ShowLabelsOnly != nil {
 		toSerialize["showLabelsOnly"] = o.ShowLabelsOnly
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

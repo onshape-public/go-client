@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// AliasApiService AliasApi service
-type AliasApiService service
+// AliasAPIService AliasAPI service
+type AliasAPIService service
 
 type ApiCreateAliasRequest struct {
 	ctx           context.Context
-	ApiService    *AliasApiService
+	ApiService    *AliasAPIService
 	bTAliasParams *BTAliasParams
 }
 
@@ -44,7 +44,7 @@ CreateAlias Create an alias in your enterprise.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAliasRequest
 */
-func (a *AliasApiService) CreateAlias(ctx context.Context) ApiCreateAliasRequest {
+func (a *AliasAPIService) CreateAlias(ctx context.Context) ApiCreateAliasRequest {
 	return ApiCreateAliasRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *AliasApiService) CreateAlias(ctx context.Context) ApiCreateAliasRequest
 // Execute executes the request
 //
 //	@return BTAliasInfo
-func (a *AliasApiService) CreateAliasExecute(r ApiCreateAliasRequest) (*BTAliasInfo, *http.Response, error) {
+func (a *AliasAPIService) CreateAliasExecute(r ApiCreateAliasRequest) (*BTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *AliasApiService) CreateAliasExecute(r ApiCreateAliasRequest) (*BTAliasI
 		localVarReturnValue *BTAliasInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasApiService.CreateAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasAPIService.CreateAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,7 +141,7 @@ func (a *AliasApiService) CreateAliasExecute(r ApiCreateAliasRequest) (*BTAliasI
 
 type ApiDeleteAliasRequest struct {
 	ctx        context.Context
-	ApiService *AliasApiService
+	ApiService *AliasAPIService
 	aid        string
 }
 
@@ -158,7 +158,7 @@ DeleteAlias Delete an alias from your enterprise.
 	@param aid
 	@return ApiDeleteAliasRequest
 */
-func (a *AliasApiService) DeleteAlias(ctx context.Context, aid string) ApiDeleteAliasRequest {
+func (a *AliasAPIService) DeleteAlias(ctx context.Context, aid string) ApiDeleteAliasRequest {
 	return ApiDeleteAliasRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -169,7 +169,7 @@ func (a *AliasApiService) DeleteAlias(ctx context.Context, aid string) ApiDelete
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *AliasApiService) DeleteAliasExecute(r ApiDeleteAliasRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AliasAPIService) DeleteAliasExecute(r ApiDeleteAliasRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -177,7 +177,7 @@ func (a *AliasApiService) DeleteAliasExecute(r ApiDeleteAliasRequest) (map[strin
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasApiService.DeleteAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasAPIService.DeleteAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -252,7 +252,7 @@ func (a *AliasApiService) DeleteAliasExecute(r ApiDeleteAliasRequest) (map[strin
 
 type ApiGetAliasRequest struct {
 	ctx        context.Context
-	ApiService *AliasApiService
+	ApiService *AliasAPIService
 	aid        string
 }
 
@@ -269,7 +269,7 @@ Get the information for an alias ID.
 	@param aid
 	@return ApiGetAliasRequest
 */
-func (a *AliasApiService) GetAlias(ctx context.Context, aid string) ApiGetAliasRequest {
+func (a *AliasAPIService) GetAlias(ctx context.Context, aid string) ApiGetAliasRequest {
 	return ApiGetAliasRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -280,7 +280,7 @@ func (a *AliasApiService) GetAlias(ctx context.Context, aid string) ApiGetAliasR
 // Execute executes the request
 //
 //	@return BTAliasInfo
-func (a *AliasApiService) GetAliasExecute(r ApiGetAliasRequest) (*BTAliasInfo, *http.Response, error) {
+func (a *AliasAPIService) GetAliasExecute(r ApiGetAliasRequest) (*BTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -288,7 +288,7 @@ func (a *AliasApiService) GetAliasExecute(r ApiGetAliasRequest) (*BTAliasInfo, *
 		localVarReturnValue *BTAliasInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasApiService.GetAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasAPIService.GetAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -363,7 +363,7 @@ func (a *AliasApiService) GetAliasExecute(r ApiGetAliasRequest) (*BTAliasInfo, *
 
 type ApiGetAliasMembersRequest struct {
 	ctx        context.Context
-	ApiService *AliasApiService
+	ApiService *AliasAPIService
 	aid        string
 	prefix     *string
 	sortColumn *string
@@ -410,7 +410,7 @@ This is a search-like endpoint that returns a subset of the member list. Use `ge
 	@param aid
 	@return ApiGetAliasMembersRequest
 */
-func (a *AliasApiService) GetAliasMembers(ctx context.Context, aid string) ApiGetAliasMembersRequest {
+func (a *AliasAPIService) GetAliasMembers(ctx context.Context, aid string) ApiGetAliasMembersRequest {
 	return ApiGetAliasMembersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -421,7 +421,7 @@ func (a *AliasApiService) GetAliasMembers(ctx context.Context, aid string) ApiGe
 // Execute executes the request
 //
 //	@return BTListResponseBTAliasEntryInfo
-func (a *AliasApiService) GetAliasMembersExecute(r ApiGetAliasMembersRequest) (*BTListResponseBTAliasEntryInfo, *http.Response, error) {
+func (a *AliasAPIService) GetAliasMembersExecute(r ApiGetAliasMembersRequest) (*BTListResponseBTAliasEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -429,7 +429,7 @@ func (a *AliasApiService) GetAliasMembersExecute(r ApiGetAliasMembersRequest) (*
 		localVarReturnValue *BTListResponseBTAliasEntryInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasApiService.GetAliasMembers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasAPIService.GetAliasMembers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -519,7 +519,7 @@ func (a *AliasApiService) GetAliasMembersExecute(r ApiGetAliasMembersRequest) (*
 
 type ApiGetAliasesInCompanyRequest struct {
 	ctx        context.Context
-	ApiService *AliasApiService
+	ApiService *AliasAPIService
 	prefix     *string
 	sortColumn *string
 	sortOrder  *string
@@ -562,7 +562,7 @@ GetAliasesInCompany Get a list of all aliases that exist for your enterprise.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAliasesInCompanyRequest
 */
-func (a *AliasApiService) GetAliasesInCompany(ctx context.Context) ApiGetAliasesInCompanyRequest {
+func (a *AliasAPIService) GetAliasesInCompany(ctx context.Context) ApiGetAliasesInCompanyRequest {
 	return ApiGetAliasesInCompanyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -572,7 +572,7 @@ func (a *AliasApiService) GetAliasesInCompany(ctx context.Context) ApiGetAliases
 // Execute executes the request
 //
 //	@return BTListResponseBTAliasInfo
-func (a *AliasApiService) GetAliasesInCompanyExecute(r ApiGetAliasesInCompanyRequest) (*BTListResponseBTAliasInfo, *http.Response, error) {
+func (a *AliasAPIService) GetAliasesInCompanyExecute(r ApiGetAliasesInCompanyRequest) (*BTListResponseBTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -580,7 +580,7 @@ func (a *AliasApiService) GetAliasesInCompanyExecute(r ApiGetAliasesInCompanyReq
 		localVarReturnValue *BTListResponseBTAliasInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasApiService.GetAliasesInCompany")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasAPIService.GetAliasesInCompany")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -669,7 +669,7 @@ func (a *AliasApiService) GetAliasesInCompanyExecute(r ApiGetAliasesInCompanyReq
 
 type ApiUpdateAliasRequest struct {
 	ctx           context.Context
-	ApiService    *AliasApiService
+	ApiService    *AliasAPIService
 	aid           string
 	bTAliasParams *BTAliasParams
 }
@@ -700,7 +700,7 @@ For example, given an Alias with members userA and userB:
 	@param aid
 	@return ApiUpdateAliasRequest
 */
-func (a *AliasApiService) UpdateAlias(ctx context.Context, aid string) ApiUpdateAliasRequest {
+func (a *AliasAPIService) UpdateAlias(ctx context.Context, aid string) ApiUpdateAliasRequest {
 	return ApiUpdateAliasRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -711,7 +711,7 @@ func (a *AliasApiService) UpdateAlias(ctx context.Context, aid string) ApiUpdate
 // Execute executes the request
 //
 //	@return BTAliasInfo
-func (a *AliasApiService) UpdateAliasExecute(r ApiUpdateAliasRequest) (*BTAliasInfo, *http.Response, error) {
+func (a *AliasAPIService) UpdateAliasExecute(r ApiUpdateAliasRequest) (*BTAliasInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -719,7 +719,7 @@ func (a *AliasApiService) UpdateAliasExecute(r ApiUpdateAliasRequest) (*BTAliasI
 		localVarReturnValue *BTAliasInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasApiService.UpdateAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AliasAPIService.UpdateAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// TaskApiService TaskApi service
-type TaskApiService service
+// TaskAPIService TaskAPI service
+type TaskAPIService service
 
 type ApiCreateTaskRequest struct {
 	ctx                context.Context
-	ApiService         *TaskApiService
+	ApiService         *TaskAPIService
 	bTCreateTaskParams *BTCreateTaskParams
 }
 
@@ -43,7 +43,7 @@ CreateTask Create a new task in a draft state.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateTaskRequest
 */
-func (a *TaskApiService) CreateTask(ctx context.Context) ApiCreateTaskRequest {
+func (a *TaskAPIService) CreateTask(ctx context.Context) ApiCreateTaskRequest {
 	return ApiCreateTaskRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -53,7 +53,7 @@ func (a *TaskApiService) CreateTask(ctx context.Context) ApiCreateTaskRequest {
 // Execute executes the request
 //
 //	@return BTTaskInfo
-func (a *TaskApiService) CreateTaskExecute(r ApiCreateTaskRequest) (*BTTaskInfo, *http.Response, error) {
+func (a *TaskAPIService) CreateTaskExecute(r ApiCreateTaskRequest) (*BTTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -61,7 +61,7 @@ func (a *TaskApiService) CreateTaskExecute(r ApiCreateTaskRequest) (*BTTaskInfo,
 		localVarReturnValue *BTTaskInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.CreateTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.CreateTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *TaskApiService) CreateTaskExecute(r ApiCreateTaskRequest) (*BTTaskInfo,
 
 type ApiGetActionItemsRequest struct {
 	ctx        context.Context
-	ApiService *TaskApiService
+	ApiService *TaskAPIService
 	userId     *string
 	offset     *int32
 	limit      *int32
@@ -203,7 +203,7 @@ Returns a list of tasks assigneed to the userId specified in the request. Only c
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetActionItemsRequest
 */
-func (a *TaskApiService) GetActionItems(ctx context.Context) ApiGetActionItemsRequest {
+func (a *TaskAPIService) GetActionItems(ctx context.Context) ApiGetActionItemsRequest {
 	return ApiGetActionItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -213,7 +213,7 @@ func (a *TaskApiService) GetActionItems(ctx context.Context) ApiGetActionItemsRe
 // Execute executes the request
 //
 //	@return BTTaskListResponse
-func (a *TaskApiService) GetActionItemsExecute(r ApiGetActionItemsRequest) (*BTTaskListResponse, *http.Response, error) {
+func (a *TaskAPIService) GetActionItemsExecute(r ApiGetActionItemsRequest) (*BTTaskListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -221,7 +221,7 @@ func (a *TaskApiService) GetActionItemsExecute(r ApiGetActionItemsRequest) (*BTT
 		localVarReturnValue *BTTaskListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.GetActionItems")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.GetActionItems")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -327,7 +327,7 @@ func (a *TaskApiService) GetActionItemsExecute(r ApiGetActionItemsRequest) (*BTT
 
 type ApiGetTaskRequest struct {
 	ctx        context.Context
-	ApiService *TaskApiService
+	ApiService *TaskAPIService
 	tid        string
 }
 
@@ -342,7 +342,7 @@ GetTask Get a task by id.
 	@param tid
 	@return ApiGetTaskRequest
 */
-func (a *TaskApiService) GetTask(ctx context.Context, tid string) ApiGetTaskRequest {
+func (a *TaskAPIService) GetTask(ctx context.Context, tid string) ApiGetTaskRequest {
 	return ApiGetTaskRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -353,7 +353,7 @@ func (a *TaskApiService) GetTask(ctx context.Context, tid string) ApiGetTaskRequ
 // Execute executes the request
 //
 //	@return BTTaskInfo
-func (a *TaskApiService) GetTaskExecute(r ApiGetTaskRequest) (*BTTaskInfo, *http.Response, error) {
+func (a *TaskAPIService) GetTaskExecute(r ApiGetTaskRequest) (*BTTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -361,7 +361,7 @@ func (a *TaskApiService) GetTaskExecute(r ApiGetTaskRequest) (*BTTaskInfo, *http
 		localVarReturnValue *BTTaskInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.GetTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.GetTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -436,7 +436,7 @@ func (a *TaskApiService) GetTaskExecute(r ApiGetTaskRequest) (*BTTaskInfo, *http
 
 type ApiTransitionTaskRequest struct {
 	ctx        context.Context
-	ApiService *TaskApiService
+	ApiService *TaskAPIService
 	tid        string
 	transition string
 }
@@ -453,7 +453,7 @@ TransitionTask Execute a workflow transition.
 	@param transition
 	@return ApiTransitionTaskRequest
 */
-func (a *TaskApiService) TransitionTask(ctx context.Context, tid string, transition string) ApiTransitionTaskRequest {
+func (a *TaskAPIService) TransitionTask(ctx context.Context, tid string, transition string) ApiTransitionTaskRequest {
 	return ApiTransitionTaskRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -465,7 +465,7 @@ func (a *TaskApiService) TransitionTask(ctx context.Context, tid string, transit
 // Execute executes the request
 //
 //	@return BTTaskInfo
-func (a *TaskApiService) TransitionTaskExecute(r ApiTransitionTaskRequest) (*BTTaskInfo, *http.Response, error) {
+func (a *TaskAPIService) TransitionTaskExecute(r ApiTransitionTaskRequest) (*BTTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -473,7 +473,7 @@ func (a *TaskApiService) TransitionTaskExecute(r ApiTransitionTaskRequest) (*BTT
 		localVarReturnValue *BTTaskInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.TransitionTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.TransitionTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -549,7 +549,7 @@ func (a *TaskApiService) TransitionTaskExecute(r ApiTransitionTaskRequest) (*BTT
 
 type ApiUpdateTaskRequest struct {
 	ctx                context.Context
-	ApiService         *TaskApiService
+	ApiService         *TaskAPIService
 	tid                string
 	bTUpdateTaskParams *BTUpdateTaskParams
 }
@@ -570,7 +570,7 @@ UpdateTask Update the task and its properties.
 	@param tid
 	@return ApiUpdateTaskRequest
 */
-func (a *TaskApiService) UpdateTask(ctx context.Context, tid string) ApiUpdateTaskRequest {
+func (a *TaskAPIService) UpdateTask(ctx context.Context, tid string) ApiUpdateTaskRequest {
 	return ApiUpdateTaskRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -581,7 +581,7 @@ func (a *TaskApiService) UpdateTask(ctx context.Context, tid string) ApiUpdateTa
 // Execute executes the request
 //
 //	@return BTTaskInfo
-func (a *TaskApiService) UpdateTaskExecute(r ApiUpdateTaskRequest) (*BTTaskInfo, *http.Response, error) {
+func (a *TaskAPIService) UpdateTaskExecute(r ApiUpdateTaskRequest) (*BTTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -589,7 +589,7 @@ func (a *TaskApiService) UpdateTaskExecute(r ApiUpdateTaskRequest) (*BTTaskInfo,
 		localVarReturnValue *BTTaskInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.UpdateTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.UpdateTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

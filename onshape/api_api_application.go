@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// APIApplicationApiService APIApplicationApi service
-type APIApplicationApiService service
+// APIApplicationAPIService APIApplicationAPI service
+type APIApplicationAPIService service
 
 type ApiDeleteAppSettingsRequest struct {
 	ctx        context.Context
-	ApiService *APIApplicationApiService
+	ApiService *APIApplicationAPIService
 	uid        string
 	cid        string
 	key        *[]string
@@ -49,7 +49,7 @@ This API is only usable with an OAuth token and only by the current user or admi
 	@param cid
 	@return ApiDeleteAppSettingsRequest
 */
-func (a *APIApplicationApiService) DeleteAppSettings(ctx context.Context, uid string, cid string) ApiDeleteAppSettingsRequest {
+func (a *APIApplicationAPIService) DeleteAppSettings(ctx context.Context, uid string, cid string) ApiDeleteAppSettingsRequest {
 	return ApiDeleteAppSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -59,14 +59,14 @@ func (a *APIApplicationApiService) DeleteAppSettings(ctx context.Context, uid st
 }
 
 // Execute executes the request
-func (a *APIApplicationApiService) DeleteAppSettingsExecute(r ApiDeleteAppSettingsRequest) (*http.Response, error) {
+func (a *APIApplicationAPIService) DeleteAppSettingsExecute(r ApiDeleteAppSettingsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationApiService.DeleteAppSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationAPIService.DeleteAppSettings")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *APIApplicationApiService) DeleteAppSettingsExecute(r ApiDeleteAppSettin
 
 type ApiDeleteCompanyAppSettingsRequest struct {
 	ctx        context.Context
-	ApiService *APIApplicationApiService
+	ApiService *APIApplicationAPIService
 	cpid       string
 	cid        string
 	key        *[]string
@@ -159,7 +159,7 @@ This API is only usable with an OAuth token and only by the current user or admi
 	@param cid
 	@return ApiDeleteCompanyAppSettingsRequest
 */
-func (a *APIApplicationApiService) DeleteCompanyAppSettings(ctx context.Context, cpid string, cid string) ApiDeleteCompanyAppSettingsRequest {
+func (a *APIApplicationAPIService) DeleteCompanyAppSettings(ctx context.Context, cpid string, cid string) ApiDeleteCompanyAppSettingsRequest {
 	return ApiDeleteCompanyAppSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -171,7 +171,7 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettings(ctx context.Context,
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCompanyAppSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *APIApplicationAPIService) DeleteCompanyAppSettingsExecute(r ApiDeleteCompanyAppSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
@@ -179,7 +179,7 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCo
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationApiService.DeleteCompanyAppSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationAPIService.DeleteCompanyAppSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -266,7 +266,7 @@ func (a *APIApplicationApiService) DeleteCompanyAppSettingsExecute(r ApiDeleteCo
 
 type ApiGetApplicableExtensionsForClientRequest struct {
 	ctx            context.Context
-	ApiService     *APIApplicationApiService
+	ApiService     *APIApplicationAPIService
 	uid            string
 	cid            string
 	validPurchases *bool
@@ -289,7 +289,7 @@ GetApplicableExtensionsForClient Get a list of the client extensions the specifi
 	@param cid
 	@return ApiGetApplicableExtensionsForClientRequest
 */
-func (a *APIApplicationApiService) GetApplicableExtensionsForClient(ctx context.Context, uid string, cid string) ApiGetApplicableExtensionsForClientRequest {
+func (a *APIApplicationAPIService) GetApplicableExtensionsForClient(ctx context.Context, uid string, cid string) ApiGetApplicableExtensionsForClientRequest {
 	return ApiGetApplicableExtensionsForClientRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -301,7 +301,7 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClient(ctx context.
 // Execute executes the request
 //
 //	@return []BTAPIApplicationExtensionInfo
-func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r ApiGetApplicableExtensionsForClientRequest) ([]BTAPIApplicationExtensionInfo, *http.Response, error) {
+func (a *APIApplicationAPIService) GetApplicableExtensionsForClientExecute(r ApiGetApplicableExtensionsForClientRequest) ([]BTAPIApplicationExtensionInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -309,7 +309,7 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r Api
 		localVarReturnValue []BTAPIApplicationExtensionInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationApiService.GetApplicableExtensionsForClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationAPIService.GetApplicableExtensionsForClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -388,7 +388,7 @@ func (a *APIApplicationApiService) GetApplicableExtensionsForClientExecute(r Api
 
 type ApiGetCompanyAppSettingsRequest struct {
 	ctx        context.Context
-	ApiService *APIApplicationApiService
+	ApiService *APIApplicationAPIService
 	cpid       string
 	cid        string
 	documentId *string
@@ -420,7 +420,7 @@ This API is only usable with an OAuth token and only by the current user or admi
 	@param cid
 	@return ApiGetCompanyAppSettingsRequest
 */
-func (a *APIApplicationApiService) GetCompanyAppSettings(ctx context.Context, cpid string, cid string) ApiGetCompanyAppSettingsRequest {
+func (a *APIApplicationAPIService) GetCompanyAppSettings(ctx context.Context, cpid string, cid string) ApiGetCompanyAppSettingsRequest {
 	return ApiGetCompanyAppSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -432,7 +432,7 @@ func (a *APIApplicationApiService) GetCompanyAppSettings(ctx context.Context, cp
 // Execute executes the request
 //
 //	@return BTUserAppSettingsInfo
-func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyAppSettingsRequest) (*BTUserAppSettingsInfo, *http.Response, error) {
+func (a *APIApplicationAPIService) GetCompanyAppSettingsExecute(r ApiGetCompanyAppSettingsRequest) (*BTUserAppSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -440,7 +440,7 @@ func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyA
 		localVarReturnValue *BTUserAppSettingsInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationApiService.GetCompanyAppSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationAPIService.GetCompanyAppSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -530,7 +530,7 @@ func (a *APIApplicationApiService) GetCompanyAppSettingsExecute(r ApiGetCompanyA
 
 type ApiGetUserAppSettingsRequest struct {
 	ctx        context.Context
-	ApiService *APIApplicationApiService
+	ApiService *APIApplicationAPIService
 	uid        string
 	cid        string
 	key        *[]string
@@ -555,7 +555,7 @@ This API is only usable with an OAuth token and only by the current user or admi
 	@param cid
 	@return ApiGetUserAppSettingsRequest
 */
-func (a *APIApplicationApiService) GetUserAppSettings(ctx context.Context, uid string, cid string) ApiGetUserAppSettingsRequest {
+func (a *APIApplicationAPIService) GetUserAppSettings(ctx context.Context, uid string, cid string) ApiGetUserAppSettingsRequest {
 	return ApiGetUserAppSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -567,7 +567,7 @@ func (a *APIApplicationApiService) GetUserAppSettings(ctx context.Context, uid s
 // Execute executes the request
 //
 //	@return BTUserAppSettingsInfo
-func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSettingsRequest) (*BTUserAppSettingsInfo, *http.Response, error) {
+func (a *APIApplicationAPIService) GetUserAppSettingsExecute(r ApiGetUserAppSettingsRequest) (*BTUserAppSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -575,7 +575,7 @@ func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSett
 		localVarReturnValue *BTUserAppSettingsInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationApiService.GetUserAppSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationAPIService.GetUserAppSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -662,7 +662,7 @@ func (a *APIApplicationApiService) GetUserAppSettingsExecute(r ApiGetUserAppSett
 
 type ApiUpdateAppCompanySettingsRequest struct {
 	ctx                     context.Context
-	ApiService              *APIApplicationApiService
+	ApiService              *APIApplicationAPIService
 	cpid                    string
 	cid                     string
 	bTUserAppSettingsParams *BTUserAppSettingsParams
@@ -687,7 +687,7 @@ This API is only usable with an OAuth token and only by the current user or admi
 	@param cid
 	@return ApiUpdateAppCompanySettingsRequest
 */
-func (a *APIApplicationApiService) UpdateAppCompanySettings(ctx context.Context, cpid string, cid string) ApiUpdateAppCompanySettingsRequest {
+func (a *APIApplicationAPIService) UpdateAppCompanySettings(ctx context.Context, cpid string, cid string) ApiUpdateAppCompanySettingsRequest {
 	return ApiUpdateAppCompanySettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -699,7 +699,7 @@ func (a *APIApplicationApiService) UpdateAppCompanySettings(ctx context.Context,
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAppCompanySettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *APIApplicationAPIService) UpdateAppCompanySettingsExecute(r ApiUpdateAppCompanySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -707,7 +707,7 @@ func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAp
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationApiService.UpdateAppCompanySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationAPIService.UpdateAppCompanySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -788,7 +788,7 @@ func (a *APIApplicationApiService) UpdateAppCompanySettingsExecute(r ApiUpdateAp
 
 type ApiUpdateAppSettingsRequest struct {
 	ctx                     context.Context
-	ApiService              *APIApplicationApiService
+	ApiService              *APIApplicationAPIService
 	uid                     string
 	cid                     string
 	bTUserAppSettingsParams *BTUserAppSettingsParams
@@ -813,7 +813,7 @@ This API is only usable with an OAuth token and only by the current user or admi
 	@param cid
 	@return ApiUpdateAppSettingsRequest
 */
-func (a *APIApplicationApiService) UpdateAppSettings(ctx context.Context, uid string, cid string) ApiUpdateAppSettingsRequest {
+func (a *APIApplicationAPIService) UpdateAppSettings(ctx context.Context, uid string, cid string) ApiUpdateAppSettingsRequest {
 	return ApiUpdateAppSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -825,7 +825,7 @@ func (a *APIApplicationApiService) UpdateAppSettings(ctx context.Context, uid st
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *APIApplicationApiService) UpdateAppSettingsExecute(r ApiUpdateAppSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *APIApplicationAPIService) UpdateAppSettingsExecute(r ApiUpdateAppSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -833,7 +833,7 @@ func (a *APIApplicationApiService) UpdateAppSettingsExecute(r ApiUpdateAppSettin
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationApiService.UpdateAppSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIApplicationAPIService.UpdateAppSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

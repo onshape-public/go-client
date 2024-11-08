@@ -16,6 +16,7 @@ import (
 
 // BTMArrayParameterItem1843 struct for BTMArrayParameterItem1843
 type BTMArrayParameterItem1843 struct {
+	BTMNode19
 	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
@@ -171,6 +172,14 @@ func (o *BTMArrayParameterItem1843) SetParameters(v []BTMParameter1) {
 
 func (o BTMArrayParameterItem1843) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

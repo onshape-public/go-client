@@ -10,13 +10,17 @@ Name | Type | Description | Notes
 **HasMaximumLimit** | Pointer to **bool** |  | [optional] 
 **HasMinimumLimit** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**IsAnnotationDimension** | Pointer to **bool** |  | [optional] 
 **IsAssociatedWithFlat** | Pointer to **bool** |  | [optional] 
 **IsDriven** | Pointer to **bool** |  | [optional] 
 **IsOverDefined** | Pointer to **bool** |  | [optional] 
+**LowerTolerance** | Pointer to **float64** |  | [optional] 
 **MaximumLimit** | Pointer to **float64** |  | [optional] 
 **MinimumLimit** | Pointer to **float64** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **PlaneMatrix** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
+**ToleranceType** | Pointer to [**GBTToleranceType**](GBTToleranceType.md) |  | [optional] 
+**UpperTolerance** | Pointer to **float64** |  | [optional] 
 **Value** | Pointer to **float64** |  | [optional] 
 
 ## Methods
@@ -188,6 +192,31 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### GetIsAnnotationDimension
+
+`func (o *BTDimensionDisplayData323) GetIsAnnotationDimension() bool`
+
+GetIsAnnotationDimension returns the IsAnnotationDimension field if non-nil, zero value otherwise.
+
+### GetIsAnnotationDimensionOk
+
+`func (o *BTDimensionDisplayData323) GetIsAnnotationDimensionOk() (*bool, bool)`
+
+GetIsAnnotationDimensionOk returns a tuple with the IsAnnotationDimension field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsAnnotationDimension
+
+`func (o *BTDimensionDisplayData323) SetIsAnnotationDimension(v bool)`
+
+SetIsAnnotationDimension sets IsAnnotationDimension field to given value.
+
+### HasIsAnnotationDimension
+
+`func (o *BTDimensionDisplayData323) HasIsAnnotationDimension() bool`
+
+HasIsAnnotationDimension returns a boolean if a field has been set.
+
 ### GetIsAssociatedWithFlat
 
 `func (o *BTDimensionDisplayData323) GetIsAssociatedWithFlat() bool`
@@ -262,6 +291,31 @@ SetIsOverDefined sets IsOverDefined field to given value.
 `func (o *BTDimensionDisplayData323) HasIsOverDefined() bool`
 
 HasIsOverDefined returns a boolean if a field has been set.
+
+### GetLowerTolerance
+
+`func (o *BTDimensionDisplayData323) GetLowerTolerance() float64`
+
+GetLowerTolerance returns the LowerTolerance field if non-nil, zero value otherwise.
+
+### GetLowerToleranceOk
+
+`func (o *BTDimensionDisplayData323) GetLowerToleranceOk() (*float64, bool)`
+
+GetLowerToleranceOk returns a tuple with the LowerTolerance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLowerTolerance
+
+`func (o *BTDimensionDisplayData323) SetLowerTolerance(v float64)`
+
+SetLowerTolerance sets LowerTolerance field to given value.
+
+### HasLowerTolerance
+
+`func (o *BTDimensionDisplayData323) HasLowerTolerance() bool`
+
+HasLowerTolerance returns a boolean if a field has been set.
 
 ### GetMaximumLimit
 
@@ -362,6 +416,56 @@ SetPlaneMatrix sets PlaneMatrix field to given value.
 `func (o *BTDimensionDisplayData323) HasPlaneMatrix() bool`
 
 HasPlaneMatrix returns a boolean if a field has been set.
+
+### GetToleranceType
+
+`func (o *BTDimensionDisplayData323) GetToleranceType() GBTToleranceType`
+
+GetToleranceType returns the ToleranceType field if non-nil, zero value otherwise.
+
+### GetToleranceTypeOk
+
+`func (o *BTDimensionDisplayData323) GetToleranceTypeOk() (*GBTToleranceType, bool)`
+
+GetToleranceTypeOk returns a tuple with the ToleranceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToleranceType
+
+`func (o *BTDimensionDisplayData323) SetToleranceType(v GBTToleranceType)`
+
+SetToleranceType sets ToleranceType field to given value.
+
+### HasToleranceType
+
+`func (o *BTDimensionDisplayData323) HasToleranceType() bool`
+
+HasToleranceType returns a boolean if a field has been set.
+
+### GetUpperTolerance
+
+`func (o *BTDimensionDisplayData323) GetUpperTolerance() float64`
+
+GetUpperTolerance returns the UpperTolerance field if non-nil, zero value otherwise.
+
+### GetUpperToleranceOk
+
+`func (o *BTDimensionDisplayData323) GetUpperToleranceOk() (*float64, bool)`
+
+GetUpperToleranceOk returns a tuple with the UpperTolerance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpperTolerance
+
+`func (o *BTDimensionDisplayData323) SetUpperTolerance(v float64)`
+
+SetUpperTolerance sets UpperTolerance field to given value.
+
+### HasUpperTolerance
+
+`func (o *BTDimensionDisplayData323) HasUpperTolerance() bool`
+
+HasUpperTolerance returns a boolean if a field has been set.
 
 ### GetValue
 

@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// UserApiService UserApi service
-type UserApiService service
+// UserAPIService UserAPI service
+type UserAPIService service
 
 type ApiGetUserSettingsRequest struct {
 	ctx              context.Context
-	ApiService       *UserApiService
+	ApiService       *UserAPIService
 	uid              string
 	includematerials *bool
 }
@@ -50,7 +50,7 @@ GetUserSettings Get the user settings for any user in your organization (admins 
 	@param uid
 	@return ApiGetUserSettingsRequest
 */
-func (a *UserApiService) GetUserSettings(ctx context.Context, uid string) ApiGetUserSettingsRequest {
+func (a *UserAPIService) GetUserSettings(ctx context.Context, uid string) ApiGetUserSettingsRequest {
 	return ApiGetUserSettingsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -61,7 +61,7 @@ func (a *UserApiService) GetUserSettings(ctx context.Context, uid string) ApiGet
 // Execute executes the request
 //
 //	@return BTUserSettingsInfo
-func (a *UserApiService) GetUserSettingsExecute(r ApiGetUserSettingsRequest) (*BTUserSettingsInfo, *http.Response, error) {
+func (a *UserAPIService) GetUserSettingsExecute(r ApiGetUserSettingsRequest) (*BTUserSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -69,7 +69,7 @@ func (a *UserApiService) GetUserSettingsExecute(r ApiGetUserSettingsRequest) (*B
 		localVarReturnValue *BTUserSettingsInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.GetUserSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUserSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -147,7 +147,7 @@ func (a *UserApiService) GetUserSettingsExecute(r ApiGetUserSettingsRequest) (*B
 
 type ApiGetUserSettingsCurrentLoggedInUserRequest struct {
 	ctx              context.Context
-	ApiService       *UserApiService
+	ApiService       *UserAPIService
 	includematerials *bool
 }
 
@@ -173,7 +173,7 @@ GetUserSettingsCurrentLoggedInUser Get the user settings for the signed-in user 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetUserSettingsCurrentLoggedInUserRequest
 */
-func (a *UserApiService) GetUserSettingsCurrentLoggedInUser(ctx context.Context) ApiGetUserSettingsCurrentLoggedInUserRequest {
+func (a *UserAPIService) GetUserSettingsCurrentLoggedInUser(ctx context.Context) ApiGetUserSettingsCurrentLoggedInUserRequest {
 	return ApiGetUserSettingsCurrentLoggedInUserRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -183,7 +183,7 @@ func (a *UserApiService) GetUserSettingsCurrentLoggedInUser(ctx context.Context)
 // Execute executes the request
 //
 //	@return BTUserSettingsInfo
-func (a *UserApiService) GetUserSettingsCurrentLoggedInUserExecute(r ApiGetUserSettingsCurrentLoggedInUserRequest) (*BTUserSettingsInfo, *http.Response, error) {
+func (a *UserAPIService) GetUserSettingsCurrentLoggedInUserExecute(r ApiGetUserSettingsCurrentLoggedInUserRequest) (*BTUserSettingsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -191,7 +191,7 @@ func (a *UserApiService) GetUserSettingsCurrentLoggedInUserExecute(r ApiGetUserS
 		localVarReturnValue *BTUserSettingsInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.GetUserSettingsCurrentLoggedInUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUserSettingsCurrentLoggedInUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -268,7 +268,7 @@ func (a *UserApiService) GetUserSettingsCurrentLoggedInUserExecute(r ApiGetUserS
 
 type ApiSessionRequest struct {
 	ctx           context.Context
-	ApiService    *UserApiService
+	ApiService    *UserAPIService
 	bTLoginParams *BTLoginParams
 }
 
@@ -289,7 +289,7 @@ Returned information depends on caller's `OAuth2ReadPll` scope.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiSessionRequest
 */
-func (a *UserApiService) Session(ctx context.Context) ApiSessionRequest {
+func (a *UserAPIService) Session(ctx context.Context) ApiSessionRequest {
 	return ApiSessionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -299,7 +299,7 @@ func (a *UserApiService) Session(ctx context.Context) ApiSessionRequest {
 // Execute executes the request
 //
 //	@return map[string]interface{}
-func (a *UserApiService) SessionExecute(r ApiSessionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *UserAPIService) SessionExecute(r ApiSessionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -307,7 +307,7 @@ func (a *UserApiService) SessionExecute(r ApiSessionRequest) (map[string]interfa
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.Session")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.Session")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -386,7 +386,7 @@ func (a *UserApiService) SessionExecute(r ApiSessionRequest) (map[string]interfa
 
 type ApiSessionInfoRequest struct {
 	ctx        context.Context
-	ApiService *UserApiService
+	ApiService *UserAPIService
 }
 
 func (r ApiSessionInfoRequest) Execute() (*BTUserOAuth2SummaryInfo, *http.Response, error) {
@@ -401,7 +401,7 @@ Returned information depends on caller's `OAuth2ReadPll` scope.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiSessionInfoRequest
 */
-func (a *UserApiService) SessionInfo(ctx context.Context) ApiSessionInfoRequest {
+func (a *UserAPIService) SessionInfo(ctx context.Context) ApiSessionInfoRequest {
 	return ApiSessionInfoRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -411,7 +411,7 @@ func (a *UserApiService) SessionInfo(ctx context.Context) ApiSessionInfoRequest 
 // Execute executes the request
 //
 //	@return BTUserOAuth2SummaryInfo
-func (a *UserApiService) SessionInfoExecute(r ApiSessionInfoRequest) (*BTUserOAuth2SummaryInfo, *http.Response, error) {
+func (a *UserAPIService) SessionInfoExecute(r ApiSessionInfoRequest) (*BTUserOAuth2SummaryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -419,7 +419,7 @@ func (a *UserApiService) SessionInfoExecute(r ApiSessionInfoRequest) (*BTUserOAu
 		localVarReturnValue *BTUserOAuth2SummaryInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserApiService.SessionInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.SessionInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

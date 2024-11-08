@@ -1,0 +1,2493 @@
+# \DocumentAPI
+
+All URIs are relative to *https://cad.onshape.com/api/v9*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**CopyWorkspace**](DocumentAPI.md#CopyWorkspace) | **Post** /documents/{did}/workspaces/{wid}/copy | Copy workspace by document ID and workspace ID.
+[**CreateDocument**](DocumentAPI.md#CreateDocument) | **Post** /documents | Create and upload a document.
+[**CreateVersion**](DocumentAPI.md#CreateVersion) | **Post** /documents/d/{did}/versions | Create version by document ID.
+[**CreateWorkspace**](DocumentAPI.md#CreateWorkspace) | **Post** /documents/d/{did}/workspaces | Create workspace by document ID.
+[**DeleteDocument**](DocumentAPI.md#DeleteDocument) | **Delete** /documents/{did} | Delete document by document ID.
+[**DeleteWorkspace**](DocumentAPI.md#DeleteWorkspace) | **Delete** /documents/d/{did}/workspaces/{wid} | Delete workspace by document ID and workspace ID.
+[**DownloadExternalData**](DocumentAPI.md#DownloadExternalData) | **Get** /documents/d/{did}/externaldata/{fid} | Download external data file(s) associated with the document.
+[**Export2Json**](DocumentAPI.md#Export2Json) | **Post** /documents/d/{did}/{wv}/{wvid}/e/{eid}/export | Export document by document ID, workspace or version ID, and tab ID.
+[**GetCurrentMicroversion**](DocumentAPI.md#GetCurrentMicroversion) | **Get** /documents/d/{did}/{wv}/{wvid}/currentmicroversion | Retrieve current microversion by document ID and workspace or version ID.
+[**GetDocument**](DocumentAPI.md#GetDocument) | **Get** /documents/{did} | Retrieve document by document ID.
+[**GetDocumentAcl**](DocumentAPI.md#GetDocumentAcl) | **Get** /documents/{did}/acl | Retrieve access control list by document ID.
+[**GetDocumentHistory**](DocumentAPI.md#GetDocumentHistory) | **Get** /documents/d/{did}/{wm}/{wmid}/documenthistory | Retrieve document history by document ID and workspace or microversion ID.
+[**GetDocumentPermissionSet**](DocumentAPI.md#GetDocumentPermissionSet) | **Get** /documents/{did}/permissionset | Retrieve Document permissions by document ID.
+[**GetDocumentVersions**](DocumentAPI.md#GetDocumentVersions) | **Get** /documents/d/{did}/versions | Retrieve versions by document ID.
+[**GetDocumentWorkspaces**](DocumentAPI.md#GetDocumentWorkspaces) | **Get** /documents/d/{did}/workspaces | Retrieve workspaces by document ID.
+[**GetDocuments**](DocumentAPI.md#GetDocuments) | **Get** /documents | Get a list of documents that meet the criteria you specify.
+[**GetElementsInDocument**](DocumentAPI.md#GetElementsInDocument) | **Get** /documents/d/{did}/{wvm}/{wvmid}/elements | Retrieve tabs by document ID and workspace or version or microversion ID.
+[**GetInsertables**](DocumentAPI.md#GetInsertables) | **Get** /documents/d/{did}/{wv}/{wvid}/insertables | Retrieve insertables by document ID and workspace or version ID.
+[**GetUnitInfo**](DocumentAPI.md#GetUnitInfo) | **Get** /documents/d/{did}/{wvm}/{wvmid}/unitinfo | Get the selected units and precision by document ID and workspace or version or microversion ID.
+[**GetVersion**](DocumentAPI.md#GetVersion) | **Get** /documents/d/{did}/versions/{vid} | Retrieve version by document ID and version ID.
+[**MergeIntoWorkspace**](DocumentAPI.md#MergeIntoWorkspace) | **Post** /documents/{did}/workspaces/{wid}/merge | Merge into workspace by document ID and workspace ID.
+[**MergePreview**](DocumentAPI.md#MergePreview) | **Get** /documents/{did}/w/{wid}/mergePreview | Merge preview of changes that will occur based on document ID, workspace ID and source workspace/version ID
+[**MoveElementsToDocument**](DocumentAPI.md#MoveElementsToDocument) | **Post** /documents/d/{did}/w/{wid}/moveelement | Move tab by document ID and workspace ID.
+[**RestoreFromHistory**](DocumentAPI.md#RestoreFromHistory) | **Post** /documents/{did}/w/{wid}/restore/{vm}/{vmid} | Restore version or microversion to workspace by document ID, workspace ID, and version or microversion ID.
+[**RevertUnchangedToRevisions**](DocumentAPI.md#RevertUnchangedToRevisions) | **Post** /documents/d/{did}/w/{wid}/revertunchangedtorevisions | 
+[**Search**](DocumentAPI.md#Search) | **Post** /documents/search | Search document.
+[**ShareDocument**](DocumentAPI.md#ShareDocument) | **Post** /documents/{did}/share | Share document by document ID.
+[**ShareWithSupport**](DocumentAPI.md#ShareWithSupport) | **Post** /documents/{did}/shareWithSupport | Share document by document ID with Onshape support.
+[**SyncAppElements**](DocumentAPI.md#SyncAppElements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
+[**UnShareDocument**](DocumentAPI.md#UnShareDocument) | **Delete** /documents/{did}/share/{eid} | Remove document View permissions from a user or other entity.
+[**UnshareFromSupport**](DocumentAPI.md#UnshareFromSupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
+[**UpdateDocumentAttributes**](DocumentAPI.md#UpdateDocumentAttributes) | **Post** /documents/{did} | Update document attributes by document ID.
+[**UpdateExternalReferencesToLatestDocuments**](DocumentAPI.md#UpdateExternalReferencesToLatestDocuments) | **Post** /documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences | Update external references to latest by document ID, workspace ID, and tab ID.
+
+
+
+## CopyWorkspace
+
+> BTCopyDocumentInfo CopyWorkspace(ctx, did, wid).BTCopyDocumentParams(bTCopyDocumentParams).Execute()
+
+Copy workspace by document ID and workspace ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    bTCopyDocumentParams := *openapiclient.NewBTCopyDocumentParams() // BTCopyDocumentParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.CopyWorkspace(context.Background(), did, wid).BTCopyDocumentParams(bTCopyDocumentParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.CopyWorkspace``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CopyWorkspace`: BTCopyDocumentInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.CopyWorkspace`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCopyWorkspaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **bTCopyDocumentParams** | [**BTCopyDocumentParams**](BTCopyDocumentParams.md) |  | 
+
+### Return type
+
+[**BTCopyDocumentInfo**](BTCopyDocumentInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateDocument
+
+> BTDocumentInfo CreateDocument(ctx).BTDocumentParams(bTDocumentParams).Execute()
+
+Create and upload a document.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.CreateDocument(context.Background()).BTDocumentParams(bTDocumentParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.CreateDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateDocument`: BTDocumentInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.CreateDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bTDocumentParams** | [**BTDocumentParams**](BTDocumentParams.md) |  | 
+
+### Return type
+
+[**BTDocumentInfo**](BTDocumentInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateVersion
+
+> BTVersionInfo CreateVersion(ctx, did).BTVersionOrWorkspaceParams(bTVersionOrWorkspaceParams).Execute()
+
+Create version by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    bTVersionOrWorkspaceParams := *openapiclient.NewBTVersionOrWorkspaceParams() // BTVersionOrWorkspaceParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.CreateVersion(context.Background(), did).BTVersionOrWorkspaceParams(bTVersionOrWorkspaceParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.CreateVersion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateVersion`: BTVersionInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.CreateVersion`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateVersionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **bTVersionOrWorkspaceParams** | [**BTVersionOrWorkspaceParams**](BTVersionOrWorkspaceParams.md) |  | 
+
+### Return type
+
+[**BTVersionInfo**](BTVersionInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateWorkspace
+
+> BTWorkspaceInfo CreateWorkspace(ctx, did).BTVersionOrWorkspaceParams(bTVersionOrWorkspaceParams).Execute()
+
+Create workspace by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    bTVersionOrWorkspaceParams := *openapiclient.NewBTVersionOrWorkspaceParams() // BTVersionOrWorkspaceParams |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.CreateWorkspace(context.Background(), did).BTVersionOrWorkspaceParams(bTVersionOrWorkspaceParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.CreateWorkspace``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateWorkspace`: BTWorkspaceInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.CreateWorkspace`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateWorkspaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **bTVersionOrWorkspaceParams** | [**BTVersionOrWorkspaceParams**](BTVersionOrWorkspaceParams.md) |  | 
+
+### Return type
+
+[**BTWorkspaceInfo**](BTWorkspaceInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteDocument
+
+> map[string]interface{} DeleteDocument(ctx, did).Forever(forever).Execute()
+
+Delete document by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    forever := true // bool |  (optional) (default to false)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.DeleteDocument(context.Background(), did).Forever(forever).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.DeleteDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteDocument`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.DeleteDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **forever** | **bool** |  | [default to false]
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteWorkspace
+
+> map[string]interface{} DeleteWorkspace(ctx, did, wid).Execute()
+
+Delete workspace by document ID and workspace ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.DeleteWorkspace(context.Background(), did, wid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.DeleteWorkspace``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteWorkspace`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.DeleteWorkspace`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteWorkspaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DownloadExternalData
+
+> HttpFile DownloadExternalData(ctx, did, fid).IfNoneMatch(ifNoneMatch).Execute()
+
+Download external data file(s) associated with the document.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    fid := "fid_example" // string | 
+    ifNoneMatch := "ifNoneMatch_example" // string |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.DownloadExternalData(context.Background(), did, fid).IfNoneMatch(ifNoneMatch).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.DownloadExternalData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DownloadExternalData`: HttpFile
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.DownloadExternalData`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**fid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDownloadExternalDataRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **ifNoneMatch** | **string** |  | 
+
+### Return type
+
+[**HttpFile**](HttpFile.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09, application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Export2Json
+
+> map[string]interface{} Export2Json(ctx, did, wv, wvid, eid).LinkDocumentId(linkDocumentId).BTBExportModelParams(bTBExportModelParams).Execute()
+
+Export document by document ID, workspace or version ID, and tab ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
+    wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    bTBExportModelParams := *openapiclient.NewBTBExportModelParams("DocumentId_example", "Format_example") // BTBExportModelParams |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.Export2Json(context.Background(), did, wv, wvid, eid).LinkDocumentId(linkDocumentId).BTBExportModelParams(bTBExportModelParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.Export2Json``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `Export2Json`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.Export2Json`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
+**wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiExport2JsonRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **bTBExportModelParams** | [**BTBExportModelParams**](BTBExportModelParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/octet-stream, application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCurrentMicroversion
+
+> BTMicroversionInfo GetCurrentMicroversion(ctx, did, wv, wvid).Execute()
+
+Retrieve current microversion by document ID and workspace or version ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wv := "wv_example" // string | 
+    wvid := "wvid_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetCurrentMicroversion(context.Background(), did, wv, wvid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetCurrentMicroversion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCurrentMicroversion`: BTMicroversionInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetCurrentMicroversion`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wv** | **string** |  | 
+**wvid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCurrentMicroversionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**BTMicroversionInfo**](BTMicroversionInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDocument
+
+> BTDocumentInfo GetDocument(ctx, did).Execute()
+
+Retrieve document by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetDocument(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocument`: BTDocumentInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**BTDocumentInfo**](BTDocumentInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDocumentAcl
+
+> BTAclInfo GetDocumentAcl(ctx, did).Execute()
+
+Retrieve access control list by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetDocumentAcl(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetDocumentAcl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocumentAcl`: BTAclInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetDocumentAcl`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentAclRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**BTAclInfo**](BTAclInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDocumentHistory
+
+> []BTDocumentHistoryInfo GetDocumentHistory(ctx, did, wm, wmid).Execute()
+
+Retrieve document history by document ID and workspace or microversion ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wm := "wm_example" // string | 
+    wmid := "wmid_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetDocumentHistory(context.Background(), did, wm, wmid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetDocumentHistory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocumentHistory`: []BTDocumentHistoryInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetDocumentHistory`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wm** | **string** |  | 
+**wmid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentHistoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**[]BTDocumentHistoryInfo**](BTDocumentHistoryInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDocumentPermissionSet
+
+> []string GetDocumentPermissionSet(ctx, did).Execute()
+
+Retrieve Document permissions by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetDocumentPermissionSet(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetDocumentPermissionSet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocumentPermissionSet`: []string
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetDocumentPermissionSet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentPermissionSetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**[]string**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDocumentVersions
+
+> []BTVersionInfo GetDocumentVersions(ctx, did).Offset(offset).Limit(limit).Execute()
+
+Retrieve versions by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    offset := int32(56) // int32 |  (optional) (default to 0)
+    limit := int32(56) // int32 |  (optional) (default to 0)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetDocumentVersions(context.Background(), did).Offset(offset).Limit(limit).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetDocumentVersions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocumentVersions`: []BTVersionInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetDocumentVersions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentVersionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **offset** | **int32** |  | [default to 0]
+ **limit** | **int32** |  | [default to 0]
+
+### Return type
+
+[**[]BTVersionInfo**](BTVersionInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDocumentWorkspaces
+
+> []BTWorkspaceInfo GetDocumentWorkspaces(ctx, did).Execute()
+
+Retrieve workspaces by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetDocumentWorkspaces(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetDocumentWorkspaces``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocumentWorkspaces`: []BTWorkspaceInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetDocumentWorkspaces`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentWorkspacesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]BTWorkspaceInfo**](BTWorkspaceInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDocuments
+
+> BTGlobalTreeNodeListResponse GetDocuments(ctx).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Label(label).Project(project).ParentId(parentId).Execute()
+
+Get a list of documents that meet the criteria you specify.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    q := "q_example" // string | Search for documents that contain the given string in the name. Search is not case-sensitive. (optional) (default to "")
+    filter := int32(56) // int32 | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). (optional)
+    owner := "owner_example" // string | Document owner's ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  (optional) (default to "")
+    ownerType := int32(56) // int32 | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. (optional) (default to 1)
+    sortColumn := "sortColumn_example" // string | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. (optional) (default to "createdAt")
+    sortOrder := "sortOrder_example" // string | Sort order. Options are desc (descending, the default), or asc (ascending). (optional) (default to "desc")
+    offset := int32(56) // int32 | Offset. Determines where search results begin. Default value is 0. (optional) (default to 0)
+    limit := int32(56) // int32 | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the `next` URL in the response to fetch the next page. (optional) (default to 20)
+    label := "label_example" // string | Label (optional)
+    project := "project_example" // string | Project (optional)
+    parentId := "parentId_example" // string | Parent Id (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetDocuments(context.Background()).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Label(label).Project(project).ParentId(parentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetDocuments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocuments`: BTGlobalTreeNodeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetDocuments`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **q** | **string** | Search for documents that contain the given string in the name. Search is not case-sensitive. | [default to &quot;&quot;]
+ **filter** | **int32** | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). | 
+ **owner** | **string** | Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  | [default to &quot;&quot;]
+ **ownerType** | **int32** | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. | [default to 1]
+ **sortColumn** | **string** | Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt. | [default to &quot;createdAt&quot;]
+ **sortOrder** | **string** | Sort order. Options are desc (descending, the default), or asc (ascending). | [default to &quot;desc&quot;]
+ **offset** | **int32** | Offset. Determines where search results begin. Default value is 0. | [default to 0]
+ **limit** | **int32** | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the &#x60;next&#x60; URL in the response to fetch the next page. | [default to 20]
+ **label** | **string** | Label | 
+ **project** | **string** | Project | 
+ **parentId** | **string** | Parent Id | 
+
+### Return type
+
+[**BTGlobalTreeNodeListResponse**](BTGlobalTreeNodeListResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetElementsInDocument
+
+> []BTDocumentElementInfo GetElementsInDocument(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).Execute()
+
+Retrieve tabs by document ID and workspace or version or microversion ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    elementType := "elementType_example" // string |  (optional) (default to "")
+    elementId := "elementId_example" // string |  (optional) (default to "")
+    withThumbnails := true // bool |  (optional) (default to false)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetElementsInDocument(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetElementsInDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetElementsInDocument`: []BTDocumentElementInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetElementsInDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetElementsInDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **elementType** | **string** |  | [default to &quot;&quot;]
+ **elementId** | **string** |  | [default to &quot;&quot;]
+ **withThumbnails** | **bool** |  | [default to false]
+
+### Return type
+
+[**[]BTDocumentElementInfo**](BTDocumentElementInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetInsertables
+
+> BTInsertablesListResponse GetInsertables(ctx, did, wv, wvid).ElementId(elementId).Configuration(configuration).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
+
+Retrieve insertables by document ID and workspace or version ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wv := "wv_example" // string | 
+    wvid := "wvid_example" // string | 
+    elementId := "elementId_example" // string |  (optional)
+    configuration := "configuration_example" // string |  (optional)
+    includeParts := true // bool |  (optional) (default to false)
+    includeSurfaces := true // bool |  (optional) (default to false)
+    includeSketches := true // bool |  (optional) (default to false)
+    includeReferenceFeatures := true // bool |  (optional) (default to false)
+    includeAssemblies := true // bool |  (optional) (default to false)
+    includeFeatureStudios := true // bool |  (optional) (default to false)
+    includeBlobs := true // bool |  (optional) (default to false)
+    allowedBlobMimeTypes := "allowedBlobMimeTypes_example" // string |  (optional) (default to "")
+    excludeNewerFSVersions := true // bool |  (optional) (default to false)
+    maxFeatureScriptVersion := int32(56) // int32 |  (optional)
+    includePartStudios := true // bool |  (optional) (default to false)
+    includeFeatures := true // bool |  (optional) (default to false)
+    includeMeshes := true // bool |  (optional) (default to false)
+    includeWires := true // bool |  (optional) (default to false)
+    includeFlattenedBodies := true // bool |  (optional) (default to false)
+    includeApplications := true // bool |  (optional) (default to false)
+    allowedApplicationMimeTypes := "allowedApplicationMimeTypes_example" // string |  (optional) (default to "")
+    includeCompositeParts := true // bool |  (optional) (default to false)
+    includeFSTables := true // bool |  (optional) (default to false)
+    includeFSComputedPartPropertyFunctions := true // bool |  (optional) (default to false)
+    includeVariables := true // bool |  (optional) (default to false)
+    includeVariableStudios := true // bool |  (optional) (default to false)
+    allowedBlobExtensions := "allowedBlobExtensions_example" // string |  (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetInsertables(context.Background(), did, wv, wvid).ElementId(elementId).Configuration(configuration).IncludeParts(includeParts).IncludeSurfaces(includeSurfaces).IncludeSketches(includeSketches).IncludeReferenceFeatures(includeReferenceFeatures).IncludeAssemblies(includeAssemblies).IncludeFeatureStudios(includeFeatureStudios).IncludeBlobs(includeBlobs).AllowedBlobMimeTypes(allowedBlobMimeTypes).ExcludeNewerFSVersions(excludeNewerFSVersions).MaxFeatureScriptVersion(maxFeatureScriptVersion).IncludePartStudios(includePartStudios).IncludeFeatures(includeFeatures).IncludeMeshes(includeMeshes).IncludeWires(includeWires).IncludeFlattenedBodies(includeFlattenedBodies).IncludeApplications(includeApplications).AllowedApplicationMimeTypes(allowedApplicationMimeTypes).IncludeCompositeParts(includeCompositeParts).IncludeFSTables(includeFSTables).IncludeFSComputedPartPropertyFunctions(includeFSComputedPartPropertyFunctions).IncludeVariables(includeVariables).IncludeVariableStudios(includeVariableStudios).AllowedBlobExtensions(allowedBlobExtensions).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetInsertables``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetInsertables`: BTInsertablesListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetInsertables`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wv** | **string** |  | 
+**wvid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetInsertablesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **elementId** | **string** |  | 
+ **configuration** | **string** |  | 
+ **includeParts** | **bool** |  | [default to false]
+ **includeSurfaces** | **bool** |  | [default to false]
+ **includeSketches** | **bool** |  | [default to false]
+ **includeReferenceFeatures** | **bool** |  | [default to false]
+ **includeAssemblies** | **bool** |  | [default to false]
+ **includeFeatureStudios** | **bool** |  | [default to false]
+ **includeBlobs** | **bool** |  | [default to false]
+ **allowedBlobMimeTypes** | **string** |  | [default to &quot;&quot;]
+ **excludeNewerFSVersions** | **bool** |  | [default to false]
+ **maxFeatureScriptVersion** | **int32** |  | 
+ **includePartStudios** | **bool** |  | [default to false]
+ **includeFeatures** | **bool** |  | [default to false]
+ **includeMeshes** | **bool** |  | [default to false]
+ **includeWires** | **bool** |  | [default to false]
+ **includeFlattenedBodies** | **bool** |  | [default to false]
+ **includeApplications** | **bool** |  | [default to false]
+ **allowedApplicationMimeTypes** | **string** |  | [default to &quot;&quot;]
+ **includeCompositeParts** | **bool** |  | [default to false]
+ **includeFSTables** | **bool** |  | [default to false]
+ **includeFSComputedPartPropertyFunctions** | **bool** |  | [default to false]
+ **includeVariables** | **bool** |  | [default to false]
+ **includeVariableStudios** | **bool** |  | [default to false]
+ **allowedBlobExtensions** | **string** |  | [default to &quot;&quot;]
+
+### Return type
+
+[**BTInsertablesListResponse**](BTInsertablesListResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetUnitInfo
+
+> BTUnitInfo GetUnitInfo(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).Execute()
+
+Get the selected units and precision by document ID and workspace or version or microversion ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetUnitInfo(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetUnitInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetUnitInfo`: BTUnitInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetUnitInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetUnitInfoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+[**BTUnitInfo**](BTUnitInfo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVersion
+
+> BTVersionInfo GetVersion(ctx, did, vid).Parents(parents).LinkDocumentId(linkDocumentId).Execute()
+
+Retrieve version by document ID and version ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    vid := "vid_example" // string | 
+    parents := true // bool |  (optional) (default to false)
+    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.GetVersion(context.Background(), did, vid).Parents(parents).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.GetVersion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetVersion`: BTVersionInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.GetVersion`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**vid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVersionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **parents** | **bool** |  | [default to false]
+ **linkDocumentId** | **string** |  | 
+
+### Return type
+
+[**BTVersionInfo**](BTVersionInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MergeIntoWorkspace
+
+> BTDocumentMergeInfo MergeIntoWorkspace(ctx, did, wid).BTVersionOrWorkspaceMergeInfo(bTVersionOrWorkspaceMergeInfo).Execute()
+
+Merge into workspace by document ID and workspace ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    bTVersionOrWorkspaceMergeInfo := *openapiclient.NewBTVersionOrWorkspaceMergeInfo() // BTVersionOrWorkspaceMergeInfo | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.MergeIntoWorkspace(context.Background(), did, wid).BTVersionOrWorkspaceMergeInfo(bTVersionOrWorkspaceMergeInfo).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.MergeIntoWorkspace``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MergeIntoWorkspace`: BTDocumentMergeInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.MergeIntoWorkspace`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMergeIntoWorkspaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **bTVersionOrWorkspaceMergeInfo** | [**BTVersionOrWorkspaceMergeInfo**](BTVersionOrWorkspaceMergeInfo.md) |  | 
+
+### Return type
+
+[**BTDocumentMergeInfo**](BTDocumentMergeInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MergePreview
+
+> BTMergePreviewInfo MergePreview(ctx, did, wid).SourceType(sourceType).SourceId(sourceId).LinkDocumentId(linkDocumentId).Execute()
+
+Merge preview of changes that will occur based on document ID, workspace ID and source workspace/version ID
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    sourceType := "sourceType_example" // string | 
+    sourceId := "sourceId_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.MergePreview(context.Background(), did, wid).SourceType(sourceType).SourceId(sourceId).LinkDocumentId(linkDocumentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.MergePreview``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MergePreview`: BTMergePreviewInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.MergePreview`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMergePreviewRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **sourceType** | **string** |  | 
+ **sourceId** | **string** |  | 
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+
+### Return type
+
+[**BTMergePreviewInfo**](BTMergePreviewInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MoveElementsToDocument
+
+> BTMoveElementInfo MoveElementsToDocument(ctx, did, wid).BTMoveElementParams(bTMoveElementParams).Execute()
+
+Move tab by document ID and workspace ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    bTMoveElementParams := *openapiclient.NewBTMoveElementParams() // BTMoveElementParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.MoveElementsToDocument(context.Background(), did, wid).BTMoveElementParams(bTMoveElementParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.MoveElementsToDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MoveElementsToDocument`: BTMoveElementInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.MoveElementsToDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMoveElementsToDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **bTMoveElementParams** | [**BTMoveElementParams**](BTMoveElementParams.md) |  | 
+
+### Return type
+
+[**BTMoveElementInfo**](BTMoveElementInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RestoreFromHistory
+
+> BTRestoreFromHistoryInfo RestoreFromHistory(ctx, did, wid, vm, vmid).LinkDocumentId(linkDocumentId).BTRestoreInfo(bTRestoreInfo).Execute()
+
+Restore version or microversion to workspace by document ID, workspace ID, and version or microversion ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wid := "wid_example" // string | The id of the workspace in which to perform the operation.
+    vm := "vm_example" // string | 
+    vmid := "vmid_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    bTRestoreInfo := *openapiclient.NewBTRestoreInfo() // BTRestoreInfo |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.RestoreFromHistory(context.Background(), did, wid, vm, vmid).LinkDocumentId(linkDocumentId).BTRestoreInfo(bTRestoreInfo).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.RestoreFromHistory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `RestoreFromHistory`: BTRestoreFromHistoryInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.RestoreFromHistory`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wid** | **string** | The id of the workspace in which to perform the operation. | 
+**vm** | **string** |  | 
+**vmid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRestoreFromHistoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **bTRestoreInfo** | [**BTRestoreInfo**](BTRestoreInfo.md) |  | 
+
+### Return type
+
+[**BTRestoreFromHistoryInfo**](BTRestoreFromHistoryInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RevertUnchangedToRevisions
+
+> []BTUnchangedElementInfo RevertUnchangedToRevisions(ctx, did, wid).BTRevertUnchangedParams(bTRevertUnchangedParams).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    bTRevertUnchangedParams := *openapiclient.NewBTRevertUnchangedParams() // BTRevertUnchangedParams |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.RevertUnchangedToRevisions(context.Background(), did, wid).BTRevertUnchangedParams(bTRevertUnchangedParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.RevertUnchangedToRevisions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `RevertUnchangedToRevisions`: []BTUnchangedElementInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.RevertUnchangedToRevisions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRevertUnchangedToRevisionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **bTRevertUnchangedParams** | [**BTRevertUnchangedParams**](BTRevertUnchangedParams.md) |  | 
+
+### Return type
+
+[**[]BTUnchangedElementInfo**](BTUnchangedElementInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Search
+
+> map[string]interface{} Search(ctx).BTDocumentSearchParams(bTDocumentSearchParams).Execute()
+
+Search document.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    bTDocumentSearchParams := *openapiclient.NewBTDocumentSearchParams() // BTDocumentSearchParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.Search(context.Background()).BTDocumentSearchParams(bTDocumentSearchParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.Search``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `Search`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.Search`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSearchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bTDocumentSearchParams** | [**BTDocumentSearchParams**](BTDocumentSearchParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ShareDocument
+
+> BTAclInfo ShareDocument(ctx, did).BTShareParams(bTShareParams).Execute()
+
+Share document by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    bTShareParams := *openapiclient.NewBTShareParams() // BTShareParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.ShareDocument(context.Background(), did).BTShareParams(bTShareParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.ShareDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ShareDocument`: BTAclInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.ShareDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiShareDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **bTShareParams** | [**BTShareParams**](BTShareParams.md) |  | 
+
+### Return type
+
+[**BTAclInfo**](BTAclInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ShareWithSupport
+
+> map[string]interface{} ShareWithSupport(ctx, did).Execute()
+
+Share document by document ID with Onshape support.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.ShareWithSupport(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.ShareWithSupport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ShareWithSupport`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.ShareWithSupport`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiShareWithSupportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SyncAppElements
+
+> map[string]interface{} SyncAppElements(ctx, did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    bTSyncAppElementParams := *openapiclient.NewBTSyncAppElementParams() // BTSyncAppElementParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.SyncAppElements(context.Background(), did, wid).BTSyncAppElementParams(bTSyncAppElementParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.SyncAppElements``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SyncAppElements`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.SyncAppElements`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSyncAppElementsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **bTSyncAppElementParams** | [**BTSyncAppElementParams**](BTSyncAppElementParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UnShareDocument
+
+> map[string]interface{} UnShareDocument(ctx, did, eid).EntryType(entryType).Execute()
+
+Remove document View permissions from a user or other entity.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | ID of the document to unshare.
+    eid := "eid_example" // string | ID of the entity to remove permissions for. Uses `userId`, `companyId`, `teamId`, `documentId`, or `applicationId`, depending on the `entryType` value.
+    entryType := int32(56) // int32 | `0` (user) | `1` (company) | `2` (team) | `3` (document) | `4` (application) (optional) (default to 0)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.UnShareDocument(context.Background(), did, eid).EntryType(entryType).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.UnShareDocument``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UnShareDocument`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.UnShareDocument`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | ID of the document to unshare. | 
+**eid** | **string** | ID of the entity to remove permissions for. Uses &#x60;userId&#x60;, &#x60;companyId&#x60;, &#x60;teamId&#x60;, &#x60;documentId&#x60;, or &#x60;applicationId&#x60;, depending on the &#x60;entryType&#x60; value. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUnShareDocumentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **entryType** | **int32** | &#x60;0&#x60; (user) | &#x60;1&#x60; (company) | &#x60;2&#x60; (team) | &#x60;3&#x60; (document) | &#x60;4&#x60; (application) | [default to 0]
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UnshareFromSupport
+
+> map[string]interface{} UnshareFromSupport(ctx, did).Execute()
+
+Unshare document with support.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.UnshareFromSupport(context.Background(), did).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.UnshareFromSupport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UnshareFromSupport`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.UnshareFromSupport`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUnshareFromSupportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateDocumentAttributes
+
+> map[string]interface{} UpdateDocumentAttributes(ctx, did).BTDocumentParams(bTDocumentParams).Execute()
+
+Update document attributes by document ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    bTDocumentParams := *openapiclient.NewBTDocumentParams() // BTDocumentParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.UpdateDocumentAttributes(context.Background(), did).BTDocumentParams(bTDocumentParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.UpdateDocumentAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateDocumentAttributes`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.UpdateDocumentAttributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDocumentAttributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **bTDocumentParams** | [**BTDocumentParams**](BTDocumentParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateExternalReferencesToLatestDocuments
+
+> BTLinkToLatestDocumentInfo UpdateExternalReferencesToLatestDocuments(ctx, did, wid, eid).BTLinkToLatestDocumentParams(bTLinkToLatestDocumentParams).Execute()
+
+Update external references to latest by document ID, workspace ID, and tab ID.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    eid := "eid_example" // string | 
+    bTLinkToLatestDocumentParams := *openapiclient.NewBTLinkToLatestDocumentParams() // BTLinkToLatestDocumentParams |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentAPI.UpdateExternalReferencesToLatestDocuments(context.Background(), did, wid, eid).BTLinkToLatestDocumentParams(bTLinkToLatestDocumentParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentAPI.UpdateExternalReferencesToLatestDocuments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateExternalReferencesToLatestDocuments`: BTLinkToLatestDocumentInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentAPI.UpdateExternalReferencesToLatestDocuments`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateExternalReferencesToLatestDocumentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTLinkToLatestDocumentParams** | [**BTLinkToLatestDocumentParams**](BTLinkToLatestDocumentParams.md) |  | 
+
+### Return type
+
+[**BTLinkToLatestDocumentInfo**](BTLinkToLatestDocumentInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

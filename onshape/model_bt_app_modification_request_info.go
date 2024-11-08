@@ -26,6 +26,7 @@ type BTAppModificationRequestInfo struct {
 	// Name of the resource.
 	Name                         *string                        `json:"name,omitempty"`
 	Output                       *string                        `json:"output,omitempty"`
+	OutputStatusCode             *int32                         `json:"outputStatusCode,omitempty"`
 	ParentDocumentMicroversionId *string                        `json:"parentDocumentMicroversionId,omitempty"`
 	ParentElementMicroversionId  *string                        `json:"parentElementMicroversionId,omitempty"`
 	RequestState                 *BTAppModificationRequestState `json:"requestState,omitempty"`
@@ -277,6 +278,38 @@ func (o *BTAppModificationRequestInfo) SetOutput(v string) {
 	o.Output = &v
 }
 
+// GetOutputStatusCode returns the OutputStatusCode field value if set, zero value otherwise.
+func (o *BTAppModificationRequestInfo) GetOutputStatusCode() int32 {
+	if o == nil || o.OutputStatusCode == nil {
+		var ret int32
+		return ret
+	}
+	return *o.OutputStatusCode
+}
+
+// GetOutputStatusCodeOk returns a tuple with the OutputStatusCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAppModificationRequestInfo) GetOutputStatusCodeOk() (*int32, bool) {
+	if o == nil || o.OutputStatusCode == nil {
+		return nil, false
+	}
+	return o.OutputStatusCode, true
+}
+
+// HasOutputStatusCode returns a boolean if a field has been set.
+func (o *BTAppModificationRequestInfo) HasOutputStatusCode() bool {
+	if o != nil && o.OutputStatusCode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOutputStatusCode gets a reference to the given int32 and assigns it to the OutputStatusCode field.
+func (o *BTAppModificationRequestInfo) SetOutputStatusCode(v int32) {
+	o.OutputStatusCode = &v
+}
+
 // GetParentDocumentMicroversionId returns the ParentDocumentMicroversionId field value if set, zero value otherwise.
 func (o *BTAppModificationRequestInfo) GetParentDocumentMicroversionId() string {
 	if o == nil || o.ParentDocumentMicroversionId == nil {
@@ -523,6 +556,9 @@ func (o BTAppModificationRequestInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Output != nil {
 		toSerialize["output"] = o.Output
+	}
+	if o.OutputStatusCode != nil {
+		toSerialize["outputStatusCode"] = o.OutputStatusCode
 	}
 	if o.ParentDocumentMicroversionId != nil {
 		toSerialize["parentDocumentMicroversionId"] = o.ParentDocumentMicroversionId

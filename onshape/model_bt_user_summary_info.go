@@ -25,13 +25,13 @@ func (o *BTCompanyUserSummaryInfo) AsBTUserSummaryInfo() *BTUserSummaryInfo {
 	return &BTUserSummaryInfo{o}
 }
 
-// BTCompanyUserSummaryAdminInfoAsBTUserSummaryInfo is a convenience function that returns BTCompanyUserSummaryAdminInfo wrapped in BTUserSummaryInfo
-func (o *BTCompanyUserSummaryAdminInfo) AsBTUserSummaryInfo() *BTUserSummaryInfo {
+// BTUserOAuth2SummaryInfoAsBTUserSummaryInfo is a convenience function that returns BTUserOAuth2SummaryInfo wrapped in BTUserSummaryInfo
+func (o *BTUserOAuth2SummaryInfo) AsBTUserSummaryInfo() *BTUserSummaryInfo {
 	return &BTUserSummaryInfo{o}
 }
 
-// BTUserOAuth2SummaryInfoAsBTUserSummaryInfo is a convenience function that returns BTUserOAuth2SummaryInfo wrapped in BTUserSummaryInfo
-func (o *BTUserOAuth2SummaryInfo) AsBTUserSummaryInfo() *BTUserSummaryInfo {
+// BTCompanyUserSummaryAdminInfoAsBTUserSummaryInfo is a convenience function that returns BTCompanyUserSummaryAdminInfo wrapped in BTUserSummaryInfo
+func (o *BTCompanyUserSummaryAdminInfo) AsBTUserSummaryInfo() *BTUserSummaryInfo {
 	return &BTUserSummaryInfo{o}
 }
 
@@ -54,8 +54,8 @@ func (o *BTUserAdminInfo) AsBTUserSummaryInfo() *BTUserSummaryInfo {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTUserSummaryInfo() *BTUserSummaryInfo {
-	this := BTUserSummaryInfo{Newbase_BTUserSummaryInfo()}
+func NewBTUserSummaryInfo(jsonType string) *BTUserSummaryInfo {
+	this := BTUserSummaryInfo{Newbase_BTUserSummaryInfo(jsonType)}
 	return &this
 }
 
@@ -65,6 +65,43 @@ func NewBTUserSummaryInfo() *BTUserSummaryInfo {
 func NewBTUserSummaryInfoWithDefaults() *BTUserSummaryInfo {
 	this := BTUserSummaryInfo{Newbase_BTUserSummaryInfoWithDefaults()}
 	return &this
+}
+
+// GetJsonType returns the JsonType field value
+func (o *BTUserSummaryInfo) GetJsonType() string {
+	type getResult interface {
+		GetJsonType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetJsonType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetJsonTypeOk() (*string, bool) {
+	type getResult interface {
+		GetJsonTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetJsonTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// SetJsonType sets field value
+func (o *BTUserSummaryInfo) SetJsonType(v string) {
+	type getResult interface {
+		SetJsonType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetJsonType(v)
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -1077,34 +1114,6 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
-	// check if the discriminator value is 'BTCompanyUserSummaryAdminInfo'
-	if jsonDict["jsonType"] == "BTCompanyUserSummaryAdminInfo" {
-		// try to unmarshal JSON data into BTCompanyUserSummaryAdminInfo
-		var qr *BTCompanyUserSummaryAdminInfo
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTUserSummaryInfo = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTCompanyUserSummaryAdminInfo: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTUserAdminInfo'
-	if jsonDict["jsonType"] == "BTUserAdminInfo" {
-		// try to unmarshal JSON data into BTUserAdminInfo
-		var qr *BTUserAdminInfo
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTUserSummaryInfo = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTUserSummaryInfo = nil
-			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTUserAdminInfo: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTUserAdminSummaryInfo'
 	if jsonDict["jsonType"] == "BTUserAdminSummaryInfo" {
 		// try to unmarshal JSON data into BTUserAdminSummaryInfo
@@ -1158,6 +1167,34 @@ func (dst *BTUserSummaryInfo) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTUserSummaryInfo = nil
 			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTUserInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTCompanyUserSummaryAdminInfo'
+	if jsonDict["jsonType"] == "BTCompanyUserSummaryAdminInfo" {
+		// try to unmarshal JSON data into BTCompanyUserSummaryAdminInfo
+		var qr *BTCompanyUserSummaryAdminInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTUserSummaryInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTUserSummaryInfo = nil
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTCompanyUserSummaryAdminInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTUserAdminInfo'
+	if jsonDict["jsonType"] == "BTUserAdminInfo" {
+		// try to unmarshal JSON data into BTUserAdminInfo
+		var qr *BTUserAdminInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTUserSummaryInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTUserSummaryInfo = nil
+			return fmt.Errorf("failed to unmarshal BTUserSummaryInfo as BTUserAdminInfo: %s", err.Error())
 		}
 	}
 
@@ -1227,6 +1264,7 @@ func (v *NullableBTUserSummaryInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTUserSummaryInfo struct {
+	JsonType string `json:"jsonType"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -1257,8 +1295,9 @@ type base_BTUserSummaryInfo struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func Newbase_BTUserSummaryInfo() *base_BTUserSummaryInfo {
+func Newbase_BTUserSummaryInfo(jsonType string) *base_BTUserSummaryInfo {
 	this := base_BTUserSummaryInfo{}
+	this.JsonType = jsonType
 	return &this
 }
 
@@ -1268,6 +1307,30 @@ func Newbase_BTUserSummaryInfo() *base_BTUserSummaryInfo {
 func Newbase_BTUserSummaryInfoWithDefaults() *base_BTUserSummaryInfo {
 	this := base_BTUserSummaryInfo{}
 	return &this
+}
+
+// GetJsonType returns the JsonType field value
+func (o *base_BTUserSummaryInfo) GetJsonType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.JsonType
+}
+
+// GetJsonTypeOk returns a tuple with the JsonType field value
+// and a boolean to check if the value has been set.
+func (o *base_BTUserSummaryInfo) GetJsonTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JsonType, true
+}
+
+// SetJsonType sets field value
+func (o *base_BTUserSummaryInfo) SetJsonType(v string) {
+	o.JsonType = v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -1912,6 +1975,9 @@ func (o *base_BTUserSummaryInfo) SetSource(v int32) {
 
 func (o base_BTUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["jsonType"] = o.JsonType
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}

@@ -16,6 +16,7 @@ import (
 
 // BTMMateRelation1412 struct for BTMMateRelation1412
 type BTMMateRelation1412 struct {
+	BTMAssemblyFeature887
 	BtType *string `json:"btType,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
 	FeatureId *string `json:"featureId,omitempty"`
@@ -48,6 +49,8 @@ type BTMMateRelation1412 struct {
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMMateRelation1412 instantiates a new BTMMateRelation1412 object
@@ -707,8 +710,48 @@ func (o *BTMMateRelation1412) SetVersion(v int32) {
 	o.Version = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMMateRelation1412) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMMateRelation1412) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMMateRelation1412) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMMateRelation1412) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMMateRelation1412) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMAssemblyFeature887, errBTMAssemblyFeature887 := json.Marshal(o.BTMAssemblyFeature887)
+	if errBTMAssemblyFeature887 != nil {
+		return []byte{}, errBTMAssemblyFeature887
+	}
+	errBTMAssemblyFeature887 = json.Unmarshal([]byte(serializedBTMAssemblyFeature887), &toSerialize)
+	if errBTMAssemblyFeature887 != nil {
+		return []byte{}, errBTMAssemblyFeature887
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -768,6 +811,9 @@ func (o BTMMateRelation1412) MarshalJSON() ([]byte, error) {
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -242,6 +242,56 @@ func (o *BTParameterVisibilityOnEqual180) SetValue(v string) {
 	o.GetActualInstance().(getResult).SetValue(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterVisibilityOnEqual180) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterVisibilityOnEqual180) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterVisibilityOnEqual180) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterVisibilityOnEqual180) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTParameterVisibilityOnEqual180) UnmarshalJSON(data []byte) error {
 	var err error
@@ -332,10 +382,13 @@ func (v *NullableBTParameterVisibilityOnEqual180) UnmarshalJSON(src []byte) erro
 }
 
 type base_BTParameterVisibilityOnEqual180 struct {
+	BTParameterVisibilityCondition177
 	BtType      *string `json:"btType,omitempty"`
 	InArray     *bool   `json:"inArray,omitempty"`
 	ParameterId *string `json:"parameterId,omitempty"`
 	Value       *string `json:"value,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTParameterVisibilityOnEqual180 instantiates a new base_BTParameterVisibilityOnEqual180 object
@@ -483,8 +536,48 @@ func (o *base_BTParameterVisibilityOnEqual180) SetValue(v string) {
 	o.Value = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTParameterVisibilityOnEqual180) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterVisibilityOnEqual180) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTParameterVisibilityOnEqual180) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTParameterVisibilityOnEqual180) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTParameterVisibilityOnEqual180) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityCondition177, errBTParameterVisibilityCondition177 := json.Marshal(o.BTParameterVisibilityCondition177)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
+	errBTParameterVisibilityCondition177 = json.Unmarshal([]byte(serializedBTParameterVisibilityCondition177), &toSerialize)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -496,6 +589,9 @@ func (o base_BTParameterVisibilityOnEqual180) MarshalJSON() ([]byte, error) {
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

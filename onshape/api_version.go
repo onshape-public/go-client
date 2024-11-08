@@ -17,12 +17,12 @@ import (
 	"net/url"
 )
 
-// VersionApiService VersionApi service
-type VersionApiService service
+// VersionAPIService VersionAPI service
+type VersionAPIService service
 
 type ApiGetAllVersionsRequest struct {
 	ctx        context.Context
-	ApiService *VersionApiService
+	ApiService *VersionAPIService
 }
 
 func (r ApiGetAllVersionsRequest) Execute() (*Versions, *http.Response, error) {
@@ -35,7 +35,7 @@ GetAllVersions Get all versions of the Onshape REST APIs.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAllVersionsRequest
 */
-func (a *VersionApiService) GetAllVersions(ctx context.Context) ApiGetAllVersionsRequest {
+func (a *VersionAPIService) GetAllVersions(ctx context.Context) ApiGetAllVersionsRequest {
 	return ApiGetAllVersionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -45,7 +45,7 @@ func (a *VersionApiService) GetAllVersions(ctx context.Context) ApiGetAllVersion
 // Execute executes the request
 //
 //	@return Versions
-func (a *VersionApiService) GetAllVersionsExecute(r ApiGetAllVersionsRequest) (*Versions, *http.Response, error) {
+func (a *VersionAPIService) GetAllVersionsExecute(r ApiGetAllVersionsRequest) (*Versions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (a *VersionApiService) GetAllVersionsExecute(r ApiGetAllVersionsRequest) (*
 		localVarReturnValue *Versions
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionApiService.GetAllVersions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.GetAllVersions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

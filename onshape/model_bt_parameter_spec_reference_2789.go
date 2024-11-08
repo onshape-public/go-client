@@ -20,13 +20,13 @@ type BTParameterSpecReference2789 struct {
 	implBTParameterSpecReference2789 interface{}
 }
 
-// BTParameterSpecReferenceCADImport1792AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferenceCADImport1792 wrapped in BTParameterSpecReference2789
-func (o *BTParameterSpecReferenceCADImport1792) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
+// BTParameterSpecReferencePartStudio1256AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferencePartStudio1256 wrapped in BTParameterSpecReference2789
+func (o *BTParameterSpecReferencePartStudio1256) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
 	return &BTParameterSpecReference2789{o}
 }
 
-// BTParameterSpecReferencePartStudio1256AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferencePartStudio1256 wrapped in BTParameterSpecReference2789
-func (o *BTParameterSpecReferencePartStudio1256) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
+// BTParameterSpecReferenceCADImport1792AsBTParameterSpecReference2789 is a convenience function that returns BTParameterSpecReferenceCADImport1792 wrapped in BTParameterSpecReference2789
+func (o *BTParameterSpecReferenceCADImport1792) AsBTParameterSpecReference2789() *BTParameterSpecReference2789 {
 	return &BTParameterSpecReference2789{o}
 }
 
@@ -932,6 +932,56 @@ func (o *BTParameterSpecReference2789) SetLibraryDefinitionId(v string) {
 	o.GetActualInstance().(getResult).SetLibraryDefinitionId(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecReference2789) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReference2789) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecReference2789) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecReference2789) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 	var err error
@@ -967,6 +1017,34 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceBlob1367: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferencePartStudio-1256'
+	if jsonDict["btType"] == "BTParameterSpecReferencePartStudio-1256" {
+		// try to unmarshal JSON data into BTParameterSpecReferencePartStudio1256
+		var qr *BTParameterSpecReferencePartStudio1256
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReference2789 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReference2789 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecReferenceWithConfiguration-2950'
+	if jsonDict["btType"] == "BTParameterSpecReferenceWithConfiguration-2950" {
+		// try to unmarshal JSON data into BTParameterSpecReferenceWithConfiguration2950
+		var qr *BTParameterSpecReferenceWithConfiguration2950
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpecReference2789 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpecReference2789 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
 		}
 	}
 
@@ -1012,20 +1090,6 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTParameterSpecReferencePartStudio-1256'
-	if jsonDict["btType"] == "BTParameterSpecReferencePartStudio-1256" {
-		// try to unmarshal JSON data into BTParameterSpecReferencePartStudio1256
-		var qr *BTParameterSpecReferencePartStudio1256
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpecReference2789 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferencePartStudio1256: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTParameterSpecReferenceTable-1520'
 	if jsonDict["btType"] == "BTParameterSpecReferenceTable-1520" {
 		// try to unmarshal JSON data into BTParameterSpecReferenceTable1520
@@ -1051,20 +1115,6 @@ func (dst *BTParameterSpecReference2789) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterSpecReference2789 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceText4945: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTParameterSpecReferenceWithConfiguration-2950'
-	if jsonDict["btType"] == "BTParameterSpecReferenceWithConfiguration-2950" {
-		// try to unmarshal JSON data into BTParameterSpecReferenceWithConfiguration2950
-		var qr *BTParameterSpecReferenceWithConfiguration2950
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpecReference2789 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpecReference2789 = nil
-			return fmt.Errorf("failed to unmarshal BTParameterSpecReference2789 as BTParameterSpecReferenceWithConfiguration2950: %s", err.Error())
 		}
 	}
 
@@ -1134,6 +1184,7 @@ func (v *NullableBTParameterSpecReference2789) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTParameterSpecReference2789 struct {
+	BTParameterSpec6
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
@@ -1151,6 +1202,8 @@ type base_BTParameterSpecReference2789 struct {
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 	DefaultPurpose             *BTElementLibraryPurpose3353       `json:"defaultPurpose,omitempty"`
 	LibraryDefinitionId        *string                            `json:"libraryDefinitionId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTParameterSpecReference2789 instantiates a new base_BTParameterSpecReference2789 object
@@ -1714,8 +1767,48 @@ func (o *base_BTParameterSpecReference2789) SetLibraryDefinitionId(v string) {
 	o.LibraryDefinitionId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTParameterSpecReference2789) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterSpecReference2789) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTParameterSpecReference2789) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTParameterSpecReference2789) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTParameterSpecReference2789) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterSpec6, errBTParameterSpec6 := json.Marshal(o.BTParameterSpec6)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
+	errBTParameterSpec6 = json.Unmarshal([]byte(serializedBTParameterSpec6), &toSerialize)
+	if errBTParameterSpec6 != nil {
+		return []byte{}, errBTParameterSpec6
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
@@ -1766,6 +1859,9 @@ func (o base_BTParameterSpecReference2789) MarshalJSON() ([]byte, error) {
 	}
 	if o.LibraryDefinitionId != nil {
 		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
