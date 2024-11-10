@@ -3129,7 +3129,55 @@
 
 * `GBTErrorStringEnumExportNoParts` (value: `"EXPORT_NO_PARTS"`)
 
+* `GBTErrorStringEnumSheetMetalFilletOptionsUseCornerBreak` (value: `"SHEET_METAL_FILLET_OPTIONS_USE_CORNER_BREAK"`)
+
+* `GBTErrorStringEnumSheetMetalChamferOptionsUseCornerBreak` (value: `"SHEET_METAL_CHAMFER_OPTIONS_USE_CORNER_BREAK"`)
+
+* `GBTErrorStringEnumSheetMetalAttributeCornerBreakUnsupportedSelection` (value: `"SHEET_METAL_ATTRIBUTE_CORNER_BREAK_UNSUPPORTED_SELECTION"`)
+
+* `GBTErrorStringEnumSheetMetalUseCornerBreakInfo` (value: `"SHEET_METAL_USE_CORNER_BREAK_INFO"`)
+
+* `GBTErrorStringEnumDrawingViewCorrespondenceFailed` (value: `"DRAWING_VIEW_CORRESPONDENCE_FAILED"`)
+
+* `GBTErrorStringEnumEditCurveSelectPlane` (value: `"EDIT_CURVE_SELECT_PLANE"`)
+
+* `GBTErrorStringEnumEditCurveSelectWire` (value: `"EDIT_CURVE_SELECT_WIRE"`)
+
+* `GBTErrorStringEnumEditCurveMultipleEdges` (value: `"EDIT_CURVE_MULTIPLE_EDGES"`)
+
+* `GBTErrorStringEnumEditCurveDegreeTooHigh` (value: `"EDIT_CURVE_DEGREE_TOO_HIGH"`)
+
+* `GBTErrorStringEnumEditCurveIndexTooLarge` (value: `"EDIT_CURVE_INDEX_TOO_LARGE"`)
+
+* `GBTErrorStringEnumEditCurvePeriodicityChange` (value: `"EDIT_CURVE_PERIODICITY_CHANGE"`)
+
+* `GBTErrorStringEnumEditCurveFailed` (value: `"EDIT_CURVE_FAILED"`)
+
+* `GBTErrorStringEnumEditCurveNotWire` (value: `"EDIT_CURVE_NOT_WIRE"`)
+
+* `GBTErrorStringEnumEditCurveCannotEditSketchWire` (value: `"EDIT_CURVE_CANNOT_EDIT_SKETCH_WIRE"`)
+
+* `GBTErrorStringEnumEditCurveLockEndsPeriodic` (value: `"EDIT_CURVE_LOCK_ENDS_PERIODIC"`)
+
+* `GBTErrorStringEnumEditCurveNoBestFit` (value: `"EDIT_CURVE_NO_BEST_FIT"`)
+
 * `GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarg` (value: `"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG"`)
+
+* `GBTErrorStringEnumAssemblyMirrorInvalidSeed` (value: `"ASSEMBLY_MIRROR_INVALID_SEED"`)
+
+* `GBTErrorStringEnumFlattenCouldNotFlatten` (value: `"FLATTEN_COULD_NOT_FLATTEN"`)
+
+* `GBTErrorStringEnumFlattenSelectContiguousRegion` (value: `"FLATTEN_SELECT_CONTIGUOUS_REGION"`)
+
+* `GBTErrorStringEnumRuledSurfaceBadVertex` (value: `"RULED_SURFACE_BAD_VERTEX"`)
+
+* `GBTErrorStringEnumEditCurveTooManyControlPoints` (value: `"EDIT_CURVE_TOO_MANY_CONTROL_POINTS"`)
+
+* `GBTErrorStringEnumEditCurveNoEndOverlap` (value: `"EDIT_CURVE_NO_END_OVERLAP"`)
+
+* `GBTErrorStringEnumEditCurveApproximationDegreeTooSmall` (value: `"EDIT_CURVE_APPROXIMATION_DEGREE_TOO_SMALL"`)
+
+* `GBTErrorStringEnumEditCurveClosedApproximationNoDerivative` (value: `"EDIT_CURVE_CLOSED_APPROXIMATION_NO_DERIVATIVE"`)
 
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 

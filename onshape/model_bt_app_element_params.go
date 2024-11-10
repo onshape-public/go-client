@@ -21,7 +21,7 @@ type BTAppElementParams struct {
 	// The data type of the application. This string allows an application to distinguish their elements from elements of another application.
 	FormatId string `json:"formatId"`
 	// Initialization data for the new element's json tree.
-	JsonTree *map[string]interface{}  `json:"jsonTree,omitempty"`
+	JsonTree map[string]interface{}   `json:"jsonTree,omitempty"`
 	Location *BTElementLocationParams `json:"location,omitempty"`
 	// The name of the element being created. If blank, a name will be auto-generated.
 	Name *string `json:"name,omitempty"`
@@ -109,12 +109,12 @@ func (o *BTAppElementParams) GetJsonTree() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.JsonTree
+	return o.JsonTree
 }
 
 // GetJsonTreeOk returns a tuple with the JsonTree field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAppElementParams) GetJsonTreeOk() (*map[string]interface{}, bool) {
+func (o *BTAppElementParams) GetJsonTreeOk() (map[string]interface{}, bool) {
 	if o == nil || o.JsonTree == nil {
 		return nil, false
 	}
@@ -132,7 +132,7 @@ func (o *BTAppElementParams) HasJsonTree() bool {
 
 // SetJsonTree gets a reference to the given map[string]interface{} and assigns it to the JsonTree field.
 func (o *BTAppElementParams) SetJsonTree(v map[string]interface{}) {
-	o.JsonTree = &v
+	o.JsonTree = v
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise.

@@ -16,8 +16,9 @@ import (
 
 // BTPLValueBoxDereference251 struct for BTPLValueBoxDereference251
 type BTPLValueBoxDereference251 struct {
-	Atomic              *bool               `json:"atomic,omitempty"`
+	BTPLValue249
 	BtType              *string             `json:"btType,omitempty"`
+	Atomic              *bool               `json:"atomic,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
 	NodeId              *string             `json:"nodeId,omitempty"`
@@ -28,6 +29,8 @@ type BTPLValueBoxDereference251 struct {
 	StartSourceLocation *int32              `json:"startSourceLocation,omitempty"`
 	Box                 *BTPExpression9     `json:"box,omitempty"`
 	SpaceInside         *BTPSpace10         `json:"spaceInside,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPLValueBoxDereference251 instantiates a new BTPLValueBoxDereference251 object
@@ -45,38 +48,6 @@ func NewBTPLValueBoxDereference251() *BTPLValueBoxDereference251 {
 func NewBTPLValueBoxDereference251WithDefaults() *BTPLValueBoxDereference251 {
 	this := BTPLValueBoxDereference251{}
 	return &this
-}
-
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPLValueBoxDereference251) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPLValueBoxDereference251) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPLValueBoxDereference251) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPLValueBoxDereference251) SetAtomic(v bool) {
-	o.Atomic = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -109,6 +80,38 @@ func (o *BTPLValueBoxDereference251) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTPLValueBoxDereference251) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPLValueBoxDereference251) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPLValueBoxDereference251) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPLValueBoxDereference251) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPLValueBoxDereference251) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -431,13 +434,53 @@ func (o *BTPLValueBoxDereference251) SetSpaceInside(v BTPSpace10) {
 	o.SpaceInside = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPLValueBoxDereference251) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPLValueBoxDereference251) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPLValueBoxDereference251) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPLValueBoxDereference251) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPLValueBoxDereference251) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPLValue249, errBTPLValue249 := json.Marshal(o.BTPLValue249)
+	if errBTPLValue249 != nil {
+		return []byte{}, errBTPLValue249
+	}
+	errBTPLValue249 = json.Unmarshal([]byte(serializedBTPLValue249), &toSerialize)
+	if errBTPLValue249 != nil {
+		return []byte{}, errBTPLValue249
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType
@@ -468,6 +511,9 @@ func (o BTPLValueBoxDereference251) MarshalJSON() ([]byte, error) {
 	}
 	if o.SpaceInside != nil {
 		toSerialize["spaceInside"] = o.SpaceInside
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,9 +16,12 @@ import (
 
 // BTEdgeTopologyFilter122 struct for BTEdgeTopologyFilter122
 type BTEdgeTopologyFilter122 struct {
+	BTQueryFilter183
 	BtType         *string          `json:"btType,omitempty"`
 	EdgeTopology   *GBTEdgeTopology `json:"edgeTopology,omitempty"`
 	IsInternalEdge *bool            `json:"isInternalEdge,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTEdgeTopologyFilter122 instantiates a new BTEdgeTopologyFilter122 object
@@ -134,8 +137,48 @@ func (o *BTEdgeTopologyFilter122) SetIsInternalEdge(v bool) {
 	o.IsInternalEdge = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTEdgeTopologyFilter122) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEdgeTopologyFilter122) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTEdgeTopologyFilter122) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTEdgeTopologyFilter122) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTEdgeTopologyFilter122) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -144,6 +187,9 @@ func (o BTEdgeTopologyFilter122) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsInternalEdge != nil {
 		toSerialize["isInternalEdge"] = o.IsInternalEdge
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

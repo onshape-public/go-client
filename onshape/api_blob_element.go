@@ -18,12 +18,12 @@ import (
 	"strings"
 )
 
-// BlobElementApiService BlobElementApi service
-type BlobElementApiService service
+// BlobElementAPIService BlobElementAPI service
+type BlobElementAPIService service
 
 type ApiCreateBlobTranslationRequest struct {
 	ctx                     context.Context
-	ApiService              *BlobElementApiService
+	ApiService              *BlobElementAPIService
 	did                     string
 	wv                      string
 	wvid                    string
@@ -61,7 +61,7 @@ CreateBlobTranslation Export a blob element to another format.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiCreateBlobTranslationRequest
 */
-func (a *BlobElementApiService) CreateBlobTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateBlobTranslationRequest {
+func (a *BlobElementAPIService) CreateBlobTranslation(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateBlobTranslationRequest {
 	return ApiCreateBlobTranslationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -75,7 +75,7 @@ func (a *BlobElementApiService) CreateBlobTranslation(ctx context.Context, did s
 // Execute executes the request
 //
 //	@return BTTranslationRequestInfo
-func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+func (a *BlobElementAPIService) CreateBlobTranslationExecute(r ApiCreateBlobTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -83,7 +83,7 @@ func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTran
 		localVarReturnValue *BTTranslationRequestInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementApiService.CreateBlobTranslation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementAPIService.CreateBlobTranslation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -169,7 +169,7 @@ func (a *BlobElementApiService) CreateBlobTranslationExecute(r ApiCreateBlobTran
 
 type ApiDownloadFileWorkspaceRequest struct {
 	ctx                context.Context
-	ApiService         *BlobElementApiService
+	ApiService         *BlobElementAPIService
 	did                string
 	wid                string
 	eid                string
@@ -211,7 +211,7 @@ See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv
 	@param eid The id of the element in which to perform the operation.
 	@return ApiDownloadFileWorkspaceRequest
 */
-func (a *BlobElementApiService) DownloadFileWorkspace(ctx context.Context, did string, wid string, eid string) ApiDownloadFileWorkspaceRequest {
+func (a *BlobElementAPIService) DownloadFileWorkspace(ctx context.Context, did string, wid string, eid string) ApiDownloadFileWorkspaceRequest {
 	return ApiDownloadFileWorkspaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -224,7 +224,7 @@ func (a *BlobElementApiService) DownloadFileWorkspace(ctx context.Context, did s
 // Execute executes the request
 //
 //	@return HttpFile
-func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWorkspaceRequest) (*HttpFile, *http.Response, error) {
+func (a *BlobElementAPIService) DownloadFileWorkspaceExecute(r ApiDownloadFileWorkspaceRequest) (*HttpFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -232,7 +232,7 @@ func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWo
 		localVarReturnValue *HttpFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementApiService.DownloadFileWorkspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementAPIService.DownloadFileWorkspace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -318,7 +318,7 @@ func (a *BlobElementApiService) DownloadFileWorkspaceExecute(r ApiDownloadFileWo
 
 type ApiUpdateUnitsRequest struct {
 	ctx                     context.Context
-	ApiService              *BlobElementApiService
+	ApiService              *BlobElementAPIService
 	did                     string
 	wid                     string
 	eid                     string
@@ -350,7 +350,7 @@ UpdateUnits Change the measurement units for the blob element.
 	@param eid The id of the element in which to perform the operation.
 	@return ApiUpdateUnitsRequest
 */
-func (a *BlobElementApiService) UpdateUnits(ctx context.Context, did string, wid string, eid string) ApiUpdateUnitsRequest {
+func (a *BlobElementAPIService) UpdateUnits(ctx context.Context, did string, wid string, eid string) ApiUpdateUnitsRequest {
 	return ApiUpdateUnitsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -363,7 +363,7 @@ func (a *BlobElementApiService) UpdateUnits(ctx context.Context, did string, wid
 // Execute executes the request
 //
 //	@return BTDocumentElementProcessingInfo
-func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
+func (a *BlobElementAPIService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -371,7 +371,7 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 		localVarReturnValue *BTDocumentElementProcessingInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementApiService.UpdateUnits")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementAPIService.UpdateUnits")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -456,7 +456,7 @@ func (a *BlobElementApiService) UpdateUnitsExecute(r ApiUpdateUnitsRequest) (*BT
 
 type ApiUploadFileCreateElementRequest struct {
 	ctx                                  context.Context
-	ApiService                           *BlobElementApiService
+	ApiService                           *BlobElementAPIService
 	did                                  string
 	wid                                  string
 	linkDocumentId                       *string
@@ -665,7 +665,7 @@ Request body parameters are multipart fields, so you must use `"Content-Type":"m
 	@param wid The id of the workspace in which to perform the operation.
 	@return ApiUploadFileCreateElementRequest
 */
-func (a *BlobElementApiService) UploadFileCreateElement(ctx context.Context, did string, wid string) ApiUploadFileCreateElementRequest {
+func (a *BlobElementAPIService) UploadFileCreateElement(ctx context.Context, did string, wid string) ApiUploadFileCreateElementRequest {
 	return ApiUploadFileCreateElementRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -677,7 +677,7 @@ func (a *BlobElementApiService) UploadFileCreateElement(ctx context.Context, did
 // Execute executes the request
 //
 //	@return BTDocumentElementProcessingInfo
-func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCreateElementRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
+func (a *BlobElementAPIService) UploadFileCreateElementExecute(r ApiUploadFileCreateElementRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -685,7 +685,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 		localVarReturnValue *BTDocumentElementProcessingInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementApiService.UploadFileCreateElement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementAPIService.UploadFileCreateElement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -719,11 +719,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.file != nil {
-		paramJson, err := parameterToJson(*r.file)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("file", paramJson)
+		localVarFormParams.Add("file", parameterToString(*r.file, ""))
 	}
 	if r.allowFaultyParts != nil {
 		localVarFormParams.Add("allowFaultyParts", parameterToString(*r.allowFaultyParts, ""))
@@ -855,7 +851,7 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 
 type ApiUploadFileUpdateElementRequest struct {
 	ctx                                  context.Context
-	ApiService                           *BlobElementApiService
+	ApiService                           *BlobElementAPIService
 	did                                  string
 	wid                                  string
 	eid                                  string
@@ -1073,7 +1069,7 @@ Request body parameters are multipart fields, so you must use `"Content-Type":"m
 	@param eid The id of the element in which to perform the operation.
 	@return ApiUploadFileUpdateElementRequest
 */
-func (a *BlobElementApiService) UploadFileUpdateElement(ctx context.Context, did string, wid string, eid string) ApiUploadFileUpdateElementRequest {
+func (a *BlobElementAPIService) UploadFileUpdateElement(ctx context.Context, did string, wid string, eid string) ApiUploadFileUpdateElementRequest {
 	return ApiUploadFileUpdateElementRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1086,7 +1082,7 @@ func (a *BlobElementApiService) UploadFileUpdateElement(ctx context.Context, did
 // Execute executes the request
 //
 //	@return BTDocumentElementProcessingInfo
-func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUpdateElementRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
+func (a *BlobElementAPIService) UploadFileUpdateElementExecute(r ApiUploadFileUpdateElementRequest) (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -1094,7 +1090,7 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 		localVarReturnValue *BTDocumentElementProcessingInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementApiService.UploadFileUpdateElement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlobElementAPIService.UploadFileUpdateElement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1132,11 +1128,7 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.file != nil {
-		paramJson, err := parameterToJson(*r.file)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("file", paramJson)
+		localVarFormParams.Add("file", parameterToString(*r.file, ""))
 	}
 	if r.allowFaultyParts != nil {
 		localVarFormParams.Add("allowFaultyParts", parameterToString(*r.allowFaultyParts, ""))

@@ -16,6 +16,7 @@ import (
 
 // BTBodyEntity26 struct for BTBodyEntity26
 type BTBodyEntity26 struct {
+	BTFeatureEntity34
 	BtType                   *string                       `json:"btType,omitempty"`
 	ConstructionPlane        *bool                         `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry      *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
@@ -28,6 +29,8 @@ type BTBodyEntity26 struct {
 	DomainSpecificMetadata   []BTDomainSpecificMetadata961 `json:"domainSpecificMetadata,omitempty"`
 	FirstGeometry            *BTEntityGeometry35           `json:"firstGeometry,omitempty"`
 	DoesNotUseLevelsOfDetail *bool                         `json:"doesNotUseLevelsOfDetail,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTBodyEntity26 instantiates a new BTBodyEntity26 object
@@ -431,8 +434,48 @@ func (o *BTBodyEntity26) SetDoesNotUseLevelsOfDetail(v bool) {
 	o.DoesNotUseLevelsOfDetail = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTBodyEntity26) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBodyEntity26) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTBodyEntity26) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTBodyEntity26) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTBodyEntity26) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureEntity34, errBTFeatureEntity34 := json.Marshal(o.BTFeatureEntity34)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
+	errBTFeatureEntity34 = json.Unmarshal([]byte(serializedBTFeatureEntity34), &toSerialize)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -468,6 +511,9 @@ func (o BTBodyEntity26) MarshalJSON() ([]byte, error) {
 	}
 	if o.DoesNotUseLevelsOfDetail != nil {
 		toSerialize["doesNotUseLevelsOfDetail"] = o.DoesNotUseLevelsOfDetail
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

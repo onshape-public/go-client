@@ -16,6 +16,7 @@ import (
 
 // BTMParameterEnum145 struct for BTMParameterEnum145
 type BTMParameterEnum145 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -26,6 +27,8 @@ type BTMParameterEnum145 struct {
 	EnumName    *string `json:"enumName,omitempty"`
 	Namespace   *string `json:"namespace,omitempty"`
 	Value       *string `json:"value,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMParameterEnum145 instantiates a new BTMParameterEnum145 object
@@ -269,8 +272,48 @@ func (o *BTMParameterEnum145) SetValue(v string) {
 	o.Value = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMParameterEnum145) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterEnum145) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMParameterEnum145) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMParameterEnum145) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMParameterEnum145) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -291,6 +334,9 @@ func (o BTMParameterEnum145) MarshalJSON() ([]byte, error) {
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

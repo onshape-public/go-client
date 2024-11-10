@@ -16,10 +16,13 @@ import (
 
 // BTPlanarImageMapping4398 struct for BTPlanarImageMapping4398
 type BTPlanarImageMapping4398 struct {
+	BTImageMapping3821
 	BtType           *string                `json:"btType,omitempty"`
 	DeterministicIds []string               `json:"deterministicIds,omitempty"`
 	UvTransform      *BTMatrix3x3340        `json:"uvTransform,omitempty"`
 	PlaneSystem      *BTCoordinateSystem387 `json:"planeSystem,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPlanarImageMapping4398 instantiates a new BTPlanarImageMapping4398 object
@@ -167,8 +170,48 @@ func (o *BTPlanarImageMapping4398) SetPlaneSystem(v BTCoordinateSystem387) {
 	o.PlaneSystem = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPlanarImageMapping4398) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPlanarImageMapping4398) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPlanarImageMapping4398) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPlanarImageMapping4398) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPlanarImageMapping4398) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTImageMapping3821, errBTImageMapping3821 := json.Marshal(o.BTImageMapping3821)
+	if errBTImageMapping3821 != nil {
+		return []byte{}, errBTImageMapping3821
+	}
+	errBTImageMapping3821 = json.Unmarshal([]byte(serializedBTImageMapping3821), &toSerialize)
+	if errBTImageMapping3821 != nil {
+		return []byte{}, errBTImageMapping3821
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -180,6 +223,9 @@ func (o BTPlanarImageMapping4398) MarshalJSON() ([]byte, error) {
 	}
 	if o.PlaneSystem != nil {
 		toSerialize["planeSystem"] = o.PlaneSystem
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

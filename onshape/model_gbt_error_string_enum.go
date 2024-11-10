@@ -1583,7 +1583,31 @@ const (
 	GBTErrorStringEnumSketchSplitNoBezier                                         GBTErrorStringEnum = "SKETCH_SPLIT_NO_BEZIER"
 	GBTErrorStringEnumSketchTrimNoBezier                                          GBTErrorStringEnum = "SKETCH_TRIM_NO_BEZIER"
 	GBTErrorStringEnumExportNoParts                                               GBTErrorStringEnum = "EXPORT_NO_PARTS"
+	GBTErrorStringEnumSheetMetalFilletOptionsUseCornerBreak                       GBTErrorStringEnum = "SHEET_METAL_FILLET_OPTIONS_USE_CORNER_BREAK"
+	GBTErrorStringEnumSheetMetalChamferOptionsUseCornerBreak                      GBTErrorStringEnum = "SHEET_METAL_CHAMFER_OPTIONS_USE_CORNER_BREAK"
+	GBTErrorStringEnumSheetMetalAttributeCornerBreakUnsupportedSelection          GBTErrorStringEnum = "SHEET_METAL_ATTRIBUTE_CORNER_BREAK_UNSUPPORTED_SELECTION"
+	GBTErrorStringEnumSheetMetalUseCornerBreakInfo                                GBTErrorStringEnum = "SHEET_METAL_USE_CORNER_BREAK_INFO"
+	GBTErrorStringEnumDrawingViewCorrespondenceFailed                             GBTErrorStringEnum = "DRAWING_VIEW_CORRESPONDENCE_FAILED"
+	GBTErrorStringEnumEditCurveSelectPlane                                        GBTErrorStringEnum = "EDIT_CURVE_SELECT_PLANE"
+	GBTErrorStringEnumEditCurveSelectWire                                         GBTErrorStringEnum = "EDIT_CURVE_SELECT_WIRE"
+	GBTErrorStringEnumEditCurveMultipleEdges                                      GBTErrorStringEnum = "EDIT_CURVE_MULTIPLE_EDGES"
+	GBTErrorStringEnumEditCurveDegreeTooHigh                                      GBTErrorStringEnum = "EDIT_CURVE_DEGREE_TOO_HIGH"
+	GBTErrorStringEnumEditCurveIndexTooLarge                                      GBTErrorStringEnum = "EDIT_CURVE_INDEX_TOO_LARGE"
+	GBTErrorStringEnumEditCurvePeriodicityChange                                  GBTErrorStringEnum = "EDIT_CURVE_PERIODICITY_CHANGE"
+	GBTErrorStringEnumEditCurveFailed                                             GBTErrorStringEnum = "EDIT_CURVE_FAILED"
+	GBTErrorStringEnumEditCurveNotWire                                            GBTErrorStringEnum = "EDIT_CURVE_NOT_WIRE"
+	GBTErrorStringEnumEditCurveCannotEditSketchWire                               GBTErrorStringEnum = "EDIT_CURVE_CANNOT_EDIT_SKETCH_WIRE"
+	GBTErrorStringEnumEditCurveLockEndsPeriodic                                   GBTErrorStringEnum = "EDIT_CURVE_LOCK_ENDS_PERIODIC"
+	GBTErrorStringEnumEditCurveNoBestFit                                          GBTErrorStringEnum = "EDIT_CURVE_NO_BEST_FIT"
 	GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarg                          GBTErrorStringEnum = "PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG"
+	GBTErrorStringEnumAssemblyMirrorInvalidSeed                                   GBTErrorStringEnum = "ASSEMBLY_MIRROR_INVALID_SEED"
+	GBTErrorStringEnumFlattenCouldNotFlatten                                      GBTErrorStringEnum = "FLATTEN_COULD_NOT_FLATTEN"
+	GBTErrorStringEnumFlattenSelectContiguousRegion                               GBTErrorStringEnum = "FLATTEN_SELECT_CONTIGUOUS_REGION"
+	GBTErrorStringEnumRuledSurfaceBadVertex                                       GBTErrorStringEnum = "RULED_SURFACE_BAD_VERTEX"
+	GBTErrorStringEnumEditCurveTooManyControlPoints                               GBTErrorStringEnum = "EDIT_CURVE_TOO_MANY_CONTROL_POINTS"
+	GBTErrorStringEnumEditCurveNoEndOverlap                                       GBTErrorStringEnum = "EDIT_CURVE_NO_END_OVERLAP"
+	GBTErrorStringEnumEditCurveApproximationDegreeTooSmall                        GBTErrorStringEnum = "EDIT_CURVE_APPROXIMATION_DEGREE_TOO_SMALL"
+	GBTErrorStringEnumEditCurveClosedApproximationNoDerivative                    GBTErrorStringEnum = "EDIT_CURVE_CLOSED_APPROXIMATION_NO_DERIVATIVE"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3152,7 +3176,31 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SKETCH_SPLIT_NO_BEZIER",
 	"SKETCH_TRIM_NO_BEZIER",
 	"EXPORT_NO_PARTS",
+	"SHEET_METAL_FILLET_OPTIONS_USE_CORNER_BREAK",
+	"SHEET_METAL_CHAMFER_OPTIONS_USE_CORNER_BREAK",
+	"SHEET_METAL_ATTRIBUTE_CORNER_BREAK_UNSUPPORTED_SELECTION",
+	"SHEET_METAL_USE_CORNER_BREAK_INFO",
+	"DRAWING_VIEW_CORRESPONDENCE_FAILED",
+	"EDIT_CURVE_SELECT_PLANE",
+	"EDIT_CURVE_SELECT_WIRE",
+	"EDIT_CURVE_MULTIPLE_EDGES",
+	"EDIT_CURVE_DEGREE_TOO_HIGH",
+	"EDIT_CURVE_INDEX_TOO_LARGE",
+	"EDIT_CURVE_PERIODICITY_CHANGE",
+	"EDIT_CURVE_FAILED",
+	"EDIT_CURVE_NOT_WIRE",
+	"EDIT_CURVE_CANNOT_EDIT_SKETCH_WIRE",
+	"EDIT_CURVE_LOCK_ENDS_PERIODIC",
+	"EDIT_CURVE_NO_BEST_FIT",
 	"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG",
+	"ASSEMBLY_MIRROR_INVALID_SEED",
+	"FLATTEN_COULD_NOT_FLATTEN",
+	"FLATTEN_SELECT_CONTIGUOUS_REGION",
+	"RULED_SURFACE_BAD_VERTEX",
+	"EDIT_CURVE_TOO_MANY_CONTROL_POINTS",
+	"EDIT_CURVE_NO_END_OVERLAP",
+	"EDIT_CURVE_APPROXIMATION_DEGREE_TOO_SMALL",
+	"EDIT_CURVE_CLOSED_APPROXIMATION_NO_DERIVATIVE",
 	"UNKNOWN",
 }
 

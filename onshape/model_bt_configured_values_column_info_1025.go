@@ -407,6 +407,56 @@ func (o *BTConfiguredValuesColumnInfo1025) SetParentType(v GBTConfiguredParentTy
 	o.GetActualInstance().(getResult).SetParentType(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTConfiguredValuesColumnInfo1025) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTConfiguredValuesColumnInfo1025) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTConfiguredValuesColumnInfo1025) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTConfiguredValuesColumnInfo1025) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTConfiguredValuesColumnInfo1025) UnmarshalJSON(data []byte) error {
 	var err error
@@ -539,6 +589,7 @@ func (v *NullableBTConfiguredValuesColumnInfo1025) UnmarshalJSON(src []byte) err
 }
 
 type base_BTConfiguredValuesColumnInfo1025 struct {
+	BTTableColumnInfo1222
 	BtType        *string                  `json:"btType,omitempty"`
 	Id            *string                  `json:"id,omitempty"`
 	NodeId        *string                  `json:"nodeId,omitempty"`
@@ -546,6 +597,8 @@ type base_BTConfiguredValuesColumnInfo1025 struct {
 	ParentId      *string                  `json:"parentId,omitempty"`
 	ParentName    *string                  `json:"parentName,omitempty"`
 	ParentType    *GBTConfiguredParentType `json:"parentType,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTConfiguredValuesColumnInfo1025 instantiates a new base_BTConfiguredValuesColumnInfo1025 object
@@ -789,8 +842,48 @@ func (o *base_BTConfiguredValuesColumnInfo1025) SetParentType(v GBTConfiguredPar
 	o.ParentType = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTConfiguredValuesColumnInfo1025) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTConfiguredValuesColumnInfo1025) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTConfiguredValuesColumnInfo1025) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTConfiguredValuesColumnInfo1025) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTConfiguredValuesColumnInfo1025) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableColumnInfo1222, errBTTableColumnInfo1222 := json.Marshal(o.BTTableColumnInfo1222)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
+	errBTTableColumnInfo1222 = json.Unmarshal([]byte(serializedBTTableColumnInfo1222), &toSerialize)
+	if errBTTableColumnInfo1222 != nil {
+		return []byte{}, errBTTableColumnInfo1222
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -811,6 +904,9 @@ func (o base_BTConfiguredValuesColumnInfo1025) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParentType != nil {
 		toSerialize["parentType"] = o.ParentType
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

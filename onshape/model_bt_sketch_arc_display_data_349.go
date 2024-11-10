@@ -16,8 +16,11 @@ import (
 
 // BTSketchArcDisplayData349 struct for BTSketchArcDisplayData349
 type BTSketchArcDisplayData349 struct {
+	BTSketchEntityDisplayData354
 	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSketchArcDisplayData349 instantiates a new BTSketchArcDisplayData349 object
@@ -101,13 +104,56 @@ func (o *BTSketchArcDisplayData349) SetPoints(v []float64) {
 	o.Points = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSketchArcDisplayData349) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchArcDisplayData349) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSketchArcDisplayData349) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSketchArcDisplayData349) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSketchArcDisplayData349) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSketchEntityDisplayData354, errBTSketchEntityDisplayData354 := json.Marshal(o.BTSketchEntityDisplayData354)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
+	errBTSketchEntityDisplayData354 = json.Unmarshal([]byte(serializedBTSketchEntityDisplayData354), &toSerialize)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.Points != nil {
 		toSerialize["points"] = o.Points
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

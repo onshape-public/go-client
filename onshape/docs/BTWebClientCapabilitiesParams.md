@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AngleInstancedArrays** | Pointer to **bool** |  | [optional] 
+**ClientBrowserStorageQuota** | Pointer to **float64** |  | [optional] 
+**ClientBrowserStorageUsed** | Pointer to **float64** |  | [optional] 
 **CompressedTextureS3tc** | Pointer to **bool** |  | [optional] 
 **DepthTexture** | Pointer to **bool** |  | [optional] 
 **DevicePixelRatio** | Pointer to **float64** |  | [optional] 
@@ -68,6 +70,56 @@ SetAngleInstancedArrays sets AngleInstancedArrays field to given value.
 `func (o *BTWebClientCapabilitiesParams) HasAngleInstancedArrays() bool`
 
 HasAngleInstancedArrays returns a boolean if a field has been set.
+
+### GetClientBrowserStorageQuota
+
+`func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageQuota() float64`
+
+GetClientBrowserStorageQuota returns the ClientBrowserStorageQuota field if non-nil, zero value otherwise.
+
+### GetClientBrowserStorageQuotaOk
+
+`func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageQuotaOk() (*float64, bool)`
+
+GetClientBrowserStorageQuotaOk returns a tuple with the ClientBrowserStorageQuota field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientBrowserStorageQuota
+
+`func (o *BTWebClientCapabilitiesParams) SetClientBrowserStorageQuota(v float64)`
+
+SetClientBrowserStorageQuota sets ClientBrowserStorageQuota field to given value.
+
+### HasClientBrowserStorageQuota
+
+`func (o *BTWebClientCapabilitiesParams) HasClientBrowserStorageQuota() bool`
+
+HasClientBrowserStorageQuota returns a boolean if a field has been set.
+
+### GetClientBrowserStorageUsed
+
+`func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageUsed() float64`
+
+GetClientBrowserStorageUsed returns the ClientBrowserStorageUsed field if non-nil, zero value otherwise.
+
+### GetClientBrowserStorageUsedOk
+
+`func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageUsedOk() (*float64, bool)`
+
+GetClientBrowserStorageUsedOk returns a tuple with the ClientBrowserStorageUsed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientBrowserStorageUsed
+
+`func (o *BTWebClientCapabilitiesParams) SetClientBrowserStorageUsed(v float64)`
+
+SetClientBrowserStorageUsed sets ClientBrowserStorageUsed field to given value.
+
+### HasClientBrowserStorageUsed
+
+`func (o *BTWebClientCapabilitiesParams) HasClientBrowserStorageUsed() bool`
+
+HasClientBrowserStorageUsed returns a boolean if a field has been set.
 
 ### GetCompressedTextureS3tc
 

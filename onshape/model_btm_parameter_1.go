@@ -607,34 +607,6 @@ func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMParameterNullableQuantity-807'
-	if jsonDict["btType"] == "BTMParameterNullableQuantity-807" {
-		// try to unmarshal JSON data into BTMParameterNullableQuantity807
-		var qr *BTMParameterNullableQuantity807
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameter1 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameter1 = nil
-			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterNullableQuantity807: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMParameterProgress-3232'
-	if jsonDict["btType"] == "BTMParameterProgress-3232" {
-		// try to unmarshal JSON data into BTMParameterProgress3232
-		var qr *BTMParameterProgress3232
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameter1 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameter1 = nil
-			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterProgress3232: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMParameterQuantity-147'
 	if jsonDict["btType"] == "BTMParameterQuantity-147" {
 		// try to unmarshal JSON data into BTMParameterQuantity147
@@ -688,6 +660,62 @@ func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameter1 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterReference2434: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterString-149'
+	if jsonDict["btType"] == "BTMParameterString-149" {
+		// try to unmarshal JSON data into BTMParameterString149
+		var qr *BTMParameterString149
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameter1 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameter1 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterString149: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMReadOnlyParameter-3800'
+	if jsonDict["btType"] == "BTMReadOnlyParameter-3800" {
+		// try to unmarshal JSON data into BTMReadOnlyParameter3800
+		var qr *BTMReadOnlyParameter3800
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameter1 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameter1 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMReadOnlyParameter3800: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterNullableQuantity-807'
+	if jsonDict["btType"] == "BTMParameterNullableQuantity-807" {
+		// try to unmarshal JSON data into BTMParameterNullableQuantity807
+		var qr *BTMParameterNullableQuantity807
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameter1 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameter1 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterNullableQuantity807: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterProgress-3232'
+	if jsonDict["btType"] == "BTMParameterProgress-3232" {
+		// try to unmarshal JSON data into BTMParameterProgress3232
+		var qr *BTMParameterProgress3232
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameter1 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameter1 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterProgress3232: %s", err.Error())
 		}
 	}
 
@@ -761,20 +789,6 @@ func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMParameterString-149'
-	if jsonDict["btType"] == "BTMParameterString-149" {
-		// try to unmarshal JSON data into BTMParameterString149
-		var qr *BTMParameterString149
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameter1 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameter1 = nil
-			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterString149: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMParameterStringWithTolerances-4286'
 	if jsonDict["btType"] == "BTMParameterStringWithTolerances-4286" {
 		// try to unmarshal JSON data into BTMParameterStringWithTolerances4286
@@ -800,20 +814,6 @@ func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameter1 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterTolerantQuantity2579: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMReadOnlyParameter-3800'
-	if jsonDict["btType"] == "BTMReadOnlyParameter-3800" {
-		// try to unmarshal JSON data into BTMReadOnlyParameter3800
-		var qr *BTMReadOnlyParameter3800
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameter1 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameter1 = nil
-			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMReadOnlyParameter3800: %s", err.Error())
 		}
 	}
 

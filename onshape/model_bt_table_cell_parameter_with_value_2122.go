@@ -16,6 +16,7 @@ import (
 
 // BTTableCellParameterWithValue2122 struct for BTTableCellParameterWithValue2122
 type BTTableCellParameterWithValue2122 struct {
+	BTTableCellParameter2399
 	BtType        *string           `json:"btType,omitempty"`
 	IsEverVisible *bool             `json:"isEverVisible,omitempty"`
 	IsReadOnly    *bool             `json:"isReadOnly,omitempty"`
@@ -23,6 +24,8 @@ type BTTableCellParameterWithValue2122 struct {
 	OverrideSpec  *BTParameterSpec6 `json:"overrideSpec,omitempty"`
 	Parameter     *BTMParameter1    `json:"parameter,omitempty"`
 	Value         *BTFSValue1888    `json:"value,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTTableCellParameterWithValue2122 instantiates a new BTTableCellParameterWithValue2122 object
@@ -266,8 +269,48 @@ func (o *BTTableCellParameterWithValue2122) SetValue(v BTFSValue1888) {
 	o.Value = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTTableCellParameterWithValue2122) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellParameterWithValue2122) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTTableCellParameterWithValue2122) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTTableCellParameterWithValue2122) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTTableCellParameterWithValue2122) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableCellParameter2399, errBTTableCellParameter2399 := json.Marshal(o.BTTableCellParameter2399)
+	if errBTTableCellParameter2399 != nil {
+		return []byte{}, errBTTableCellParameter2399
+	}
+	errBTTableCellParameter2399 = json.Unmarshal([]byte(serializedBTTableCellParameter2399), &toSerialize)
+	if errBTTableCellParameter2399 != nil {
+		return []byte{}, errBTTableCellParameter2399
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -288,6 +331,9 @@ func (o BTTableCellParameterWithValue2122) MarshalJSON() ([]byte, error) {
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

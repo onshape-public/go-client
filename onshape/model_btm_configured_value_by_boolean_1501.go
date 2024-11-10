@@ -16,6 +16,7 @@ import (
 
 // BTMConfiguredValueByBoolean1501 struct for BTMConfiguredValueByBoolean1501
 type BTMConfiguredValueByBoolean1501 struct {
+	BTMConfiguredValue1341
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
@@ -23,6 +24,8 @@ type BTMConfiguredValueByBoolean1501 struct {
 	ConfigurationValueString *string        `json:"configurationValueString,omitempty"`
 	Value                    *BTMParameter1 `json:"value,omitempty"`
 	BooleanValue             *bool          `json:"booleanValue,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTMConfiguredValueByBoolean1501 instantiates a new BTMConfiguredValueByBoolean1501 object
@@ -234,8 +237,48 @@ func (o *BTMConfiguredValueByBoolean1501) SetBooleanValue(v bool) {
 	o.BooleanValue = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMConfiguredValueByBoolean1501) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfiguredValueByBoolean1501) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMConfiguredValueByBoolean1501) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMConfiguredValueByBoolean1501) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTMConfiguredValueByBoolean1501) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMConfiguredValue1341, errBTMConfiguredValue1341 := json.Marshal(o.BTMConfiguredValue1341)
+	if errBTMConfiguredValue1341 != nil {
+		return []byte{}, errBTMConfiguredValue1341
+	}
+	errBTMConfiguredValue1341 = json.Unmarshal([]byte(serializedBTMConfiguredValue1341), &toSerialize)
+	if errBTMConfiguredValue1341 != nil {
+		return []byte{}, errBTMConfiguredValue1341
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -253,6 +296,9 @@ func (o BTMConfiguredValueByBoolean1501) MarshalJSON() ([]byte, error) {
 	}
 	if o.BooleanValue != nil {
 		toSerialize["booleanValue"] = o.BooleanValue
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

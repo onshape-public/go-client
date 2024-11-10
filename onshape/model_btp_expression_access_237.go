@@ -16,8 +16,9 @@ import (
 
 // BTPExpressionAccess237 struct for BTPExpressionAccess237
 type BTPExpressionAccess237 struct {
-	Atomic              *bool                  `json:"atomic,omitempty"`
+	BTPExpression9
 	BtType              *string                `json:"btType,omitempty"`
+	Atomic              *bool                  `json:"atomic,omitempty"`
 	DocumentationType   *GBTPDefinitionType    `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32                 `json:"endSourceLocation,omitempty"`
 	NodeId              *string                `json:"nodeId,omitempty"`
@@ -30,6 +31,8 @@ type BTPExpressionAccess237 struct {
 	Base                *BTPExpression9        `json:"base,omitempty"`
 	IsSafeNavigation    *bool                  `json:"isSafeNavigation,omitempty"`
 	SpaceInAccessor     *BTPSpace10            `json:"spaceInAccessor,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTPExpressionAccess237 instantiates a new BTPExpressionAccess237 object
@@ -47,38 +50,6 @@ func NewBTPExpressionAccess237() *BTPExpressionAccess237 {
 func NewBTPExpressionAccess237WithDefaults() *BTPExpressionAccess237 {
 	this := BTPExpressionAccess237{}
 	return &this
-}
-
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPExpressionAccess237) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPExpressionAccess237) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPExpressionAccess237) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPExpressionAccess237) SetAtomic(v bool) {
-	o.Atomic = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -111,6 +82,38 @@ func (o *BTPExpressionAccess237) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTPExpressionAccess237) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPExpressionAccess237) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpressionAccess237) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPExpressionAccess237) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPExpressionAccess237) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -497,13 +500,53 @@ func (o *BTPExpressionAccess237) SetSpaceInAccessor(v BTPSpace10) {
 	o.SpaceInAccessor = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTPExpressionAccess237) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpressionAccess237) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTPExpressionAccess237) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTPExpressionAccess237) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTPExpressionAccess237) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPExpression9, errBTPExpression9 := json.Marshal(o.BTPExpression9)
+	if errBTPExpression9 != nil {
+		return []byte{}, errBTPExpression9
+	}
+	errBTPExpression9 = json.Unmarshal([]byte(serializedBTPExpression9), &toSerialize)
+	if errBTPExpression9 != nil {
+		return []byte{}, errBTPExpression9
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType
@@ -540,6 +583,9 @@ func (o BTPExpressionAccess237) MarshalJSON() ([]byte, error) {
 	}
 	if o.SpaceInAccessor != nil {
 		toSerialize["spaceInAccessor"] = o.SpaceInAccessor
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

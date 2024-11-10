@@ -667,6 +667,56 @@ func (o *BTMParameterReference2434) SetNamespace(v string) {
 	o.GetActualInstance().(getResult).SetNamespace(v)
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMParameterReference2434) GetBtType() string {
+	type getResult interface {
+		GetBtType() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReference2434) GetBtTypeOk() (*string, bool) {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMParameterReference2434) HasBtType() bool {
+	type getResult interface {
+		HasBtType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMParameterReference2434) SetBtType(v string) {
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 	var err error
@@ -688,6 +738,20 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameterReference2434 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceBlob3281: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterReferenceWithConfiguration-3028'
+	if jsonDict["btType"] == "BTMParameterReferenceWithConfiguration-3028" {
+		// try to unmarshal JSON data into BTMParameterReferenceWithConfiguration3028
+		var qr *BTMParameterReferenceWithConfiguration3028
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameterReference2434 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameterReference2434 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceWithConfiguration3028: %s", err.Error())
 		}
 	}
 
@@ -744,20 +808,6 @@ func (dst *BTMParameterReference2434) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameterReference2434 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceText2115: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMParameterReferenceWithConfiguration-3028'
-	if jsonDict["btType"] == "BTMParameterReferenceWithConfiguration-3028" {
-		// try to unmarshal JSON data into BTMParameterReferenceWithConfiguration3028
-		var qr *BTMParameterReferenceWithConfiguration3028
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMParameterReference2434 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMParameterReference2434 = nil
-			return fmt.Errorf("failed to unmarshal BTMParameterReference2434 as BTMParameterReferenceWithConfiguration3028: %s", err.Error())
 		}
 	}
 
@@ -827,6 +877,7 @@ func (v *NullableBTMParameterReference2434) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMParameterReference2434 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -842,6 +893,8 @@ type base_BTMParameterReference2434 struct {
 	Ids                []string                           `json:"ids,omitempty"`
 	MicroversioId      *string                            `json:"microversioId,omitempty"`
 	Namespace          *string                            `json:"namespace,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // Newbase_BTMParameterReference2434 instantiates a new base_BTMParameterReference2434 object
@@ -1245,8 +1298,48 @@ func (o *base_BTMParameterReference2434) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTMParameterReference2434) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMParameterReference2434) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTMParameterReference2434) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTMParameterReference2434) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o base_BTMParameterReference2434) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -1282,6 +1375,9 @@ func (o base_BTMParameterReference2434) MarshalJSON() ([]byte, error) {
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -21,7 +21,7 @@ type Example struct {
 	ExternalValue *string                           `json:"externalValue,omitempty"`
 	Getref        *string                           `json:"get$ref,omitempty"`
 	Summary       *string                           `json:"summary,omitempty"`
-	Value         *map[string]interface{}           `json:"value,omitempty"`
+	Value         map[string]interface{}            `json:"value,omitempty"`
 	ValueSetFlag  *bool                             `json:"valueSetFlag,omitempty"`
 }
 
@@ -208,12 +208,12 @@ func (o *Example) GetValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Value
+	return o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Example) GetValueOk() (*map[string]interface{}, bool) {
+func (o *Example) GetValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.Value == nil {
 		return nil, false
 	}
@@ -231,7 +231,7 @@ func (o *Example) HasValue() bool {
 
 // SetValue gets a reference to the given map[string]interface{} and assigns it to the Value field.
 func (o *Example) SetValue(v map[string]interface{}) {
-	o.Value = &v
+	o.Value = v
 }
 
 // GetValueSetFlag returns the ValueSetFlag field value if set, zero value otherwise.

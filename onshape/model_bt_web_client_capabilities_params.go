@@ -17,6 +17,8 @@ import (
 // BTWebClientCapabilitiesParams struct for BTWebClientCapabilitiesParams
 type BTWebClientCapabilitiesParams struct {
 	AngleInstancedArrays        *bool    `json:"angleInstancedArrays,omitempty"`
+	ClientBrowserStorageQuota   *float64 `json:"clientBrowserStorageQuota,omitempty"`
+	ClientBrowserStorageUsed    *float64 `json:"clientBrowserStorageUsed,omitempty"`
 	CompressedTextureS3tc       *bool    `json:"compressedTextureS3tc,omitempty"`
 	DepthTexture                *bool    `json:"depthTexture,omitempty"`
 	DevicePixelRatio            *float64 `json:"devicePixelRatio,omitempty"`
@@ -85,6 +87,70 @@ func (o *BTWebClientCapabilitiesParams) HasAngleInstancedArrays() bool {
 // SetAngleInstancedArrays gets a reference to the given bool and assigns it to the AngleInstancedArrays field.
 func (o *BTWebClientCapabilitiesParams) SetAngleInstancedArrays(v bool) {
 	o.AngleInstancedArrays = &v
+}
+
+// GetClientBrowserStorageQuota returns the ClientBrowserStorageQuota field value if set, zero value otherwise.
+func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageQuota() float64 {
+	if o == nil || o.ClientBrowserStorageQuota == nil {
+		var ret float64
+		return ret
+	}
+	return *o.ClientBrowserStorageQuota
+}
+
+// GetClientBrowserStorageQuotaOk returns a tuple with the ClientBrowserStorageQuota field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageQuotaOk() (*float64, bool) {
+	if o == nil || o.ClientBrowserStorageQuota == nil {
+		return nil, false
+	}
+	return o.ClientBrowserStorageQuota, true
+}
+
+// HasClientBrowserStorageQuota returns a boolean if a field has been set.
+func (o *BTWebClientCapabilitiesParams) HasClientBrowserStorageQuota() bool {
+	if o != nil && o.ClientBrowserStorageQuota != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetClientBrowserStorageQuota gets a reference to the given float64 and assigns it to the ClientBrowserStorageQuota field.
+func (o *BTWebClientCapabilitiesParams) SetClientBrowserStorageQuota(v float64) {
+	o.ClientBrowserStorageQuota = &v
+}
+
+// GetClientBrowserStorageUsed returns the ClientBrowserStorageUsed field value if set, zero value otherwise.
+func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageUsed() float64 {
+	if o == nil || o.ClientBrowserStorageUsed == nil {
+		var ret float64
+		return ret
+	}
+	return *o.ClientBrowserStorageUsed
+}
+
+// GetClientBrowserStorageUsedOk returns a tuple with the ClientBrowserStorageUsed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWebClientCapabilitiesParams) GetClientBrowserStorageUsedOk() (*float64, bool) {
+	if o == nil || o.ClientBrowserStorageUsed == nil {
+		return nil, false
+	}
+	return o.ClientBrowserStorageUsed, true
+}
+
+// HasClientBrowserStorageUsed returns a boolean if a field has been set.
+func (o *BTWebClientCapabilitiesParams) HasClientBrowserStorageUsed() bool {
+	if o != nil && o.ClientBrowserStorageUsed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetClientBrowserStorageUsed gets a reference to the given float64 and assigns it to the ClientBrowserStorageUsed field.
+func (o *BTWebClientCapabilitiesParams) SetClientBrowserStorageUsed(v float64) {
+	o.ClientBrowserStorageUsed = &v
 }
 
 // GetCompressedTextureS3tc returns the CompressedTextureS3tc field value if set, zero value otherwise.
@@ -699,6 +765,12 @@ func (o BTWebClientCapabilitiesParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AngleInstancedArrays != nil {
 		toSerialize["angleInstancedArrays"] = o.AngleInstancedArrays
+	}
+	if o.ClientBrowserStorageQuota != nil {
+		toSerialize["clientBrowserStorageQuota"] = o.ClientBrowserStorageQuota
+	}
+	if o.ClientBrowserStorageUsed != nil {
+		toSerialize["clientBrowserStorageUsed"] = o.ClientBrowserStorageUsed
 	}
 	if o.CompressedTextureS3tc != nil {
 		toSerialize["compressedTextureS3tc"] = o.CompressedTextureS3tc

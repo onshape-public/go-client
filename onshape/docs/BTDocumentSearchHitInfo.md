@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **HighlightedFields** | Pointer to **map[string][]string** |  | [optional] 
 **Hit** | Pointer to [**BTLegacySearchHit**](BTLegacySearchHit.md) |  | [optional] 
 **HitId** | Pointer to **string** |  | [optional] 
+**MeshState** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **SourceMap** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
@@ -158,6 +159,31 @@ SetHitId sets HitId field to given value.
 `func (o *BTDocumentSearchHitInfo) HasHitId() bool`
 
 HasHitId returns a boolean if a field has been set.
+
+### GetMeshState
+
+`func (o *BTDocumentSearchHitInfo) GetMeshState() int32`
+
+GetMeshState returns the MeshState field if non-nil, zero value otherwise.
+
+### GetMeshStateOk
+
+`func (o *BTDocumentSearchHitInfo) GetMeshStateOk() (*int32, bool)`
+
+GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeshState
+
+`func (o *BTDocumentSearchHitInfo) SetMeshState(v int32)`
+
+SetMeshState sets MeshState field to given value.
+
+### HasMeshState
+
+`func (o *BTDocumentSearchHitInfo) HasMeshState() bool`
+
+HasMeshState returns a boolean if a field has been set.
 
 ### GetName
 

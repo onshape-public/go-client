@@ -16,10 +16,13 @@ import (
 
 // BTSketchConicDisplayData1085 struct for BTSketchConicDisplayData1085
 type BTSketchConicDisplayData1085 struct {
+	BTSketchEntityDisplayData354
 	BtType *string   `json:"btType,omitempty"`
 	Points []float64 `json:"points,omitempty"`
 	Offset *float64  `json:"offset,omitempty"`
 	Rho    *float64  `json:"rho,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSketchConicDisplayData1085 instantiates a new BTSketchConicDisplayData1085 object
@@ -167,8 +170,48 @@ func (o *BTSketchConicDisplayData1085) SetRho(v float64) {
 	o.Rho = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSketchConicDisplayData1085) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchConicDisplayData1085) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSketchConicDisplayData1085) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSketchConicDisplayData1085) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSketchConicDisplayData1085) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTSketchEntityDisplayData354, errBTSketchEntityDisplayData354 := json.Marshal(o.BTSketchEntityDisplayData354)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
+	errBTSketchEntityDisplayData354 = json.Unmarshal([]byte(serializedBTSketchEntityDisplayData354), &toSerialize)
+	if errBTSketchEntityDisplayData354 != nil {
+		return []byte{}, errBTSketchEntityDisplayData354
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -180,6 +223,9 @@ func (o BTSketchConicDisplayData1085) MarshalJSON() ([]byte, error) {
 	}
 	if o.Rho != nil {
 		toSerialize["rho"] = o.Rho
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

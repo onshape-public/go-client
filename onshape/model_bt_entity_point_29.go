@@ -16,6 +16,7 @@ import (
 
 // BTEntityPoint29 struct for BTEntityPoint29
 type BTEntityPoint29 struct {
+	BTTessellatedGeometry2576
 	BtType                      *string             `json:"btType,omitempty"`
 	Compressed                  *bool               `json:"compressed,omitempty"`
 	Decompressed                *BTEntityGeometry35 `json:"decompressed,omitempty"`
@@ -24,6 +25,8 @@ type BTEntityPoint29 struct {
 	HasTessellationError        *bool               `json:"hasTessellationError,omitempty"`
 	SettingIndex                *int32              `json:"settingIndex,omitempty"`
 	Point                       []float32           `json:"point,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTEntityPoint29 instantiates a new BTEntityPoint29 object
@@ -299,8 +302,48 @@ func (o *BTEntityPoint29) SetPoint(v []float32) {
 	o.Point = v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTEntityPoint29) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityPoint29) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTEntityPoint29) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTEntityPoint29) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTEntityPoint29) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTessellatedGeometry2576, errBTTessellatedGeometry2576 := json.Marshal(o.BTTessellatedGeometry2576)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
+	errBTTessellatedGeometry2576 = json.Unmarshal([]byte(serializedBTTessellatedGeometry2576), &toSerialize)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -324,6 +367,9 @@ func (o BTEntityPoint29) MarshalJSON() ([]byte, error) {
 	}
 	if o.Point != nil {
 		toSerialize["point"] = o.Point
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

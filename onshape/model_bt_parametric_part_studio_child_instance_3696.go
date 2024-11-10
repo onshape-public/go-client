@@ -16,6 +16,7 @@ import (
 
 // BTParametricPartStudioChildInstance3696 struct for BTParametricPartStudioChildInstance3696
 type BTParametricPartStudioChildInstance3696 struct {
+	BTParametricOutputInstance2288
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -50,6 +51,8 @@ type BTParametricPartStudioChildInstance3696 struct {
 	PartIdentity           *BTPSOIdentity2741         `json:"partIdentity,omitempty"`
 	SketchFeatureId        *string                    `json:"sketchFeatureId,omitempty"`
 	Type                   *GBTPartStudioInstanceType `json:"type,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParametricPartStudioChildInstance3696 instantiates a new BTParametricPartStudioChildInstance3696 object
@@ -1093,8 +1096,48 @@ func (o *BTParametricPartStudioChildInstance3696) SetType(v GBTPartStudioInstanc
 	o.Type = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParametricPartStudioChildInstance3696) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricPartStudioChildInstance3696) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParametricPartStudioChildInstance3696) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParametricPartStudioChildInstance3696) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParametricPartStudioChildInstance3696) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParametricOutputInstance2288, errBTParametricOutputInstance2288 := json.Marshal(o.BTParametricOutputInstance2288)
+	if errBTParametricOutputInstance2288 != nil {
+		return []byte{}, errBTParametricOutputInstance2288
+	}
+	errBTParametricOutputInstance2288 = json.Unmarshal([]byte(serializedBTParametricOutputInstance2288), &toSerialize)
+	if errBTParametricOutputInstance2288 != nil {
+		return []byte{}, errBTParametricOutputInstance2288
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -1190,6 +1233,9 @@ func (o BTParametricPartStudioChildInstance3696) MarshalJSON() ([]byte, error) {
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
