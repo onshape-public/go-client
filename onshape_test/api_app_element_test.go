@@ -82,7 +82,7 @@ func TestAppElementAPI(t *testing.T) {
 	OpenAPITest{
 		Call: onshape.ApiGetJsonRequest{},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTGetJsonResponse2137) {
-			require.EqualValues(Tester(), r.GetTree().AdditionalProperties, Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
+			require.EqualValues(Tester(), r.GetTree(), Context()["bTAppElementParams"].(*onshape.BTAppElementParams).JsonTree)
 		}),
 	}.Execute()
 
@@ -101,8 +101,7 @@ func TestAppElementAPI(t *testing.T) {
 
 			insert := Context()["bTAppElementUpdateParams"].(*onshape.BTAppElementUpdateParams).JsonTreeEdit.GetActualInstance().(*onshape.BTJEditInsert2523)
 			nm[insert.Path.GetPath()[0].GetActualInstance().(*onshape.BTJPathKey3221).GetKey()] = insert.GetValue()
-
-			require.EqualValues(t, r.GetTree().AdditionalProperties, nm)
+			require.EqualValues(t, r.GetTree(), nm)
 		}),
 	}.Execute()
 
