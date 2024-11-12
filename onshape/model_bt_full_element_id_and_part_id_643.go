@@ -16,6 +16,7 @@ import (
 
 // BTFullElementIdAndPartId643 struct for BTFullElementIdAndPartId643
 type BTFullElementIdAndPartId643 struct {
+	BTFullElementIdWithDocument1729
 	BtType                         *string                               `json:"btType,omitempty"`
 	Configured                     *bool                                 `json:"configured,omitempty"`
 	DocumentId                     *string                               `json:"documentId,omitempty"`
@@ -24,6 +25,8 @@ type BTFullElementIdAndPartId643 struct {
 	MicroversionIdAndConfiguration *BTMicroversionIdAndConfiguration2338 `json:"microversionIdAndConfiguration,omitempty"`
 	Target                         *BTMicroversionIdAndConfiguration2338 `json:"target,omitempty"`
 	PartId                         *string                               `json:"partId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTFullElementIdAndPartId643 instantiates a new BTFullElementIdAndPartId643 object
@@ -299,8 +302,48 @@ func (o *BTFullElementIdAndPartId643) SetPartId(v string) {
 	o.PartId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTFullElementIdAndPartId643) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTFullElementIdAndPartId643) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTFullElementIdAndPartId643) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTFullElementIdAndPartId643) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTFullElementIdAndPartId643) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFullElementIdWithDocument1729, errBTFullElementIdWithDocument1729 := json.Marshal(o.BTFullElementIdWithDocument1729)
+	if errBTFullElementIdWithDocument1729 != nil {
+		return []byte{}, errBTFullElementIdWithDocument1729
+	}
+	errBTFullElementIdWithDocument1729 = json.Unmarshal([]byte(serializedBTFullElementIdWithDocument1729), &toSerialize)
+	if errBTFullElementIdWithDocument1729 != nil {
+		return []byte{}, errBTFullElementIdWithDocument1729
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -324,6 +367,9 @@ func (o BTFullElementIdAndPartId643) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

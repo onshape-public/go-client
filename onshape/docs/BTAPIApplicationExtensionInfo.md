@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **ParentAppPrimaryFormat** | Pointer to **string** |  | [optional] 
 **ShowResponse** | Pointer to **bool** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
+**VisibilityRule** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -465,6 +466,31 @@ SetViewRef sets ViewRef field to given value.
 `func (o *BTAPIApplicationExtensionInfo) HasViewRef() bool`
 
 HasViewRef returns a boolean if a field has been set.
+
+### GetVisibilityRule
+
+`func (o *BTAPIApplicationExtensionInfo) GetVisibilityRule() string`
+
+GetVisibilityRule returns the VisibilityRule field if non-nil, zero value otherwise.
+
+### GetVisibilityRuleOk
+
+`func (o *BTAPIApplicationExtensionInfo) GetVisibilityRuleOk() (*string, bool)`
+
+GetVisibilityRuleOk returns a tuple with the VisibilityRule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVisibilityRule
+
+`func (o *BTAPIApplicationExtensionInfo) SetVisibilityRule(v string)`
+
+SetVisibilityRule sets VisibilityRule field to given value.
+
+### HasVisibilityRule
+
+`func (o *BTAPIApplicationExtensionInfo) HasVisibilityRule() bool`
+
+HasVisibilityRule returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

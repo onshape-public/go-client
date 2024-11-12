@@ -16,6 +16,7 @@ import (
 
 // BTEntityDeletion24 struct for BTEntityDeletion24
 type BTEntityDeletion24 struct {
+	BTBaseEntityData33
 	BtType              *string              `json:"btType,omitempty"`
 	ConstructionPlane   *bool                `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry *BTBaseEntityData33  `json:"copyWithoutGeometry,omitempty"`
@@ -25,6 +26,8 @@ type BTEntityDeletion24 struct {
 	FromSketch          *bool                `json:"fromSketch,omitempty"`
 	Geometries          []BTEntityGeometry35 `json:"geometries,omitempty"`
 	Origin              *bool                `json:"origin,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTEntityDeletion24 instantiates a new BTEntityDeletion24 object
@@ -332,8 +335,48 @@ func (o *BTEntityDeletion24) SetOrigin(v bool) {
 	o.Origin = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTEntityDeletion24) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityDeletion24) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTEntityDeletion24) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTEntityDeletion24) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTEntityDeletion24) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTBaseEntityData33, errBTBaseEntityData33 := json.Marshal(o.BTBaseEntityData33)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
+	errBTBaseEntityData33 = json.Unmarshal([]byte(serializedBTBaseEntityData33), &toSerialize)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -360,6 +403,9 @@ func (o BTEntityDeletion24) MarshalJSON() ([]byte, error) {
 	}
 	if o.Origin != nil {
 		toSerialize["origin"] = o.Origin
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

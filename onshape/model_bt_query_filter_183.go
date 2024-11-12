@@ -318,20 +318,6 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTAllowedMateTypeFilter-1511'
-	if jsonDict["btType"] == "BTAllowedMateTypeFilter-1511" {
-		// try to unmarshal JSON data into BTAllowedMateTypeFilter1511
-		var qr *BTAllowedMateTypeFilter1511
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTQueryFilter183 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTQueryFilter183 = nil
-			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAllowedMateTypeFilter1511: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTAndFilter-110'
 	if jsonDict["btType"] == "BTAndFilter-110" {
 		// try to unmarshal JSON data into BTAndFilter110
@@ -721,6 +707,20 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTQueryFilter183 = nil
 			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTTextStrokeFilter461: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTAllowedMateTypeFilter-1511'
+	if jsonDict["btType"] == "BTAllowedMateTypeFilter-1511" {
+		// try to unmarshal JSON data into BTAllowedMateTypeFilter1511
+		var qr *BTAllowedMateTypeFilter1511
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTQueryFilter183 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTQueryFilter183 = nil
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAllowedMateTypeFilter1511: %s", err.Error())
 		}
 	}
 

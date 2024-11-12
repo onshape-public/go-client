@@ -16,6 +16,7 @@ import (
 
 // BTInsertableSketchDisplayData3775 struct for BTInsertableSketchDisplayData3775
 type BTInsertableSketchDisplayData3775 struct {
+	BTInsertableDisplayData2405
 	BtType                   *string                                     `json:"btType,omitempty"`
 	FullElementId            *BTFullElementId756                         `json:"fullElementId,omitempty"`
 	GraphicsBuffers          *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
@@ -25,6 +26,8 @@ type BTInsertableSketchDisplayData3775 struct {
 	TessellationSettingIndex *int32                                      `json:"tessellationSettingIndex,omitempty"`
 	BodyIdToPartData         *map[string]BTPartData16                    `json:"bodyIdToPartData,omitempty"`
 	SketchFeatureId          *string                                     `json:"sketchFeatureId,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTInsertableSketchDisplayData3775 instantiates a new BTInsertableSketchDisplayData3775 object
@@ -332,8 +335,48 @@ func (o *BTInsertableSketchDisplayData3775) SetSketchFeatureId(v string) {
 	o.SketchFeatureId = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTInsertableSketchDisplayData3775) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableSketchDisplayData3775) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTInsertableSketchDisplayData3775) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTInsertableSketchDisplayData3775) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTInsertableSketchDisplayData3775) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInsertableDisplayData2405, errBTInsertableDisplayData2405 := json.Marshal(o.BTInsertableDisplayData2405)
+	if errBTInsertableDisplayData2405 != nil {
+		return []byte{}, errBTInsertableDisplayData2405
+	}
+	errBTInsertableDisplayData2405 = json.Unmarshal([]byte(serializedBTInsertableDisplayData2405), &toSerialize)
+	if errBTInsertableDisplayData2405 != nil {
+		return []byte{}, errBTInsertableDisplayData2405
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -360,6 +403,9 @@ func (o BTInsertableSketchDisplayData3775) MarshalJSON() ([]byte, error) {
 	}
 	if o.SketchFeatureId != nil {
 		toSerialize["sketchFeatureId"] = o.SketchFeatureId
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

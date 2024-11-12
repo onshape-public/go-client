@@ -81,6 +81,7 @@ Name | Type | Description | Notes
 **TextOption** | Pointer to **string** |  | [optional] 
 **TriggerAutoDownload** | Pointer to **bool** |  | [optional] 
 **Unit** | Pointer to **string** |  | [optional] 
+**UpgradeFeatureScriptVersion** | Pointer to **bool** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
 **UseFileNameToSetSinglePartName** | Pointer to **bool** |  | [optional] 
 **UseGltfCompression** | Pointer to **bool** |  | [optional] 
@@ -2027,6 +2028,31 @@ SetUnit sets Unit field to given value.
 `func (o *BTTranslateFormatParams) HasUnit() bool`
 
 HasUnit returns a boolean if a field has been set.
+
+### GetUpgradeFeatureScriptVersion
+
+`func (o *BTTranslateFormatParams) GetUpgradeFeatureScriptVersion() bool`
+
+GetUpgradeFeatureScriptVersion returns the UpgradeFeatureScriptVersion field if non-nil, zero value otherwise.
+
+### GetUpgradeFeatureScriptVersionOk
+
+`func (o *BTTranslateFormatParams) GetUpgradeFeatureScriptVersionOk() (*bool, bool)`
+
+GetUpgradeFeatureScriptVersionOk returns a tuple with the UpgradeFeatureScriptVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeFeatureScriptVersion
+
+`func (o *BTTranslateFormatParams) SetUpgradeFeatureScriptVersion(v bool)`
+
+SetUpgradeFeatureScriptVersion sets UpgradeFeatureScriptVersion field to given value.
+
+### HasUpgradeFeatureScriptVersion
+
+`func (o *BTTranslateFormatParams) HasUpgradeFeatureScriptVersion() bool`
+
+HasUpgradeFeatureScriptVersion returns a boolean if a field has been set.
 
 ### GetUploadId
 

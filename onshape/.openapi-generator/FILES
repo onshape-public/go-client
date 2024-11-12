@@ -1381,6 +1381,7 @@ docs/Camera.md
 docs/CameraOrthographic.md
 docs/CameraPerspective.md
 docs/Category.md
+docs/CombinedSketchEntityType.md
 docs/CommentApi.md
 docs/CompanyApi.md
 docs/CompanyRole.md
@@ -1470,6 +1471,7 @@ docs/GBTSurfaceTypeEnum.md
 docs/GBTTableColumnWidthUnits.md
 docs/GBTTableTextAlignment.md
 docs/GBTTessellationSettingEnum.md
+docs/GBTToleranceType.md
 docs/GBTUIHint.md
 docs/GBTUiSelectionType.md
 docs/GBTValueUse.md
@@ -2484,6 +2486,7 @@ model_camera.go
 model_camera_orthographic.go
 model_camera_perspective.go
 model_category.go
+model_combined_sketch_entity_type.go
 model_company_role.go
 model_components.go
 model_configuration_entry.go
@@ -2559,6 +2562,7 @@ model_gbt_surface_type_enum.go
 model_gbt_table_column_width_units.go
 model_gbt_table_text_alignment.go
 model_gbt_tessellation_setting_enum.go
+model_gbt_tolerance_type.go
 model_gbt_value_use.go
 model_gbt_variable_type.go
 model_gbtbs_feature_visibility.go

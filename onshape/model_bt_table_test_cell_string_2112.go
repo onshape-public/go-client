@@ -16,10 +16,13 @@ import (
 
 // BTTableTestCellString2112 struct for BTTableTestCellString2112
 type BTTableTestCellString2112 struct {
+	BTTableCell1114
 	BtType        *string `json:"btType,omitempty"`
 	IsEverVisible *bool   `json:"isEverVisible,omitempty"`
 	IsReadOnly    *bool   `json:"isReadOnly,omitempty"`
 	CellValue     *string `json:"cellValue,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTTableTestCellString2112 instantiates a new BTTableTestCellString2112 object
@@ -167,8 +170,48 @@ func (o *BTTableTestCellString2112) SetCellValue(v string) {
 	o.CellValue = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTTableTestCellString2112) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableTestCellString2112) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTTableTestCellString2112) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTTableTestCellString2112) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTTableTestCellString2112) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableCell1114, errBTTableCell1114 := json.Marshal(o.BTTableCell1114)
+	if errBTTableCell1114 != nil {
+		return []byte{}, errBTTableCell1114
+	}
+	errBTTableCell1114 = json.Unmarshal([]byte(serializedBTTableCell1114), &toSerialize)
+	if errBTTableCell1114 != nil {
+		return []byte{}, errBTTableCell1114
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -180,6 +223,9 @@ func (o BTTableTestCellString2112) MarshalJSON() ([]byte, error) {
 	}
 	if o.CellValue != nil {
 		toSerialize["cellValue"] = o.CellValue
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,8 +16,11 @@ import (
 
 // ParameterContent struct for ParameterContent
 type ParameterContent struct {
-	Empty *bool `json:"empty,omitempty"`
+	Empty                *bool `json:"empty,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ParameterContent ParameterContent
 
 // NewParameterContent instantiates a new ParameterContent object
 // This constructor will assign default values to properties that have it defined,
@@ -73,7 +76,29 @@ func (o ParameterContent) MarshalJSON() ([]byte, error) {
 	if o.Empty != nil {
 		toSerialize["empty"] = o.Empty
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return json.Marshal(toSerialize)
+}
+
+func (o *ParameterContent) UnmarshalJSON(bytes []byte) (err error) {
+	varParameterContent := _ParameterContent{}
+
+	if err = json.Unmarshal(bytes, &varParameterContent); err == nil {
+		*o = ParameterContent(varParameterContent)
+	}
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "empty")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableParameterContent struct {

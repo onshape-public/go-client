@@ -16,10 +16,13 @@ import (
 
 // BTStringMinimumLengthPattern895 struct for BTStringMinimumLengthPattern895
 type BTStringMinimumLengthPattern895 struct {
+	BTStringFormatCondition683
 	BtType                        *string `json:"btType,omitempty"`
 	ErrorMessage                  *string `json:"errorMessage,omitempty"`
 	ShouldResetValueWhenConfirmed *bool   `json:"shouldResetValueWhenConfirmed,omitempty"`
 	MinimumLength                 *int32  `json:"minimumLength,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTStringMinimumLengthPattern895 instantiates a new BTStringMinimumLengthPattern895 object
@@ -167,8 +170,48 @@ func (o *BTStringMinimumLengthPattern895) SetMinimumLength(v int32) {
 	o.MinimumLength = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTStringMinimumLengthPattern895) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTStringMinimumLengthPattern895) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTStringMinimumLengthPattern895) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTStringMinimumLengthPattern895) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTStringMinimumLengthPattern895) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTStringFormatCondition683, errBTStringFormatCondition683 := json.Marshal(o.BTStringFormatCondition683)
+	if errBTStringFormatCondition683 != nil {
+		return []byte{}, errBTStringFormatCondition683
+	}
+	errBTStringFormatCondition683 = json.Unmarshal([]byte(serializedBTStringFormatCondition683), &toSerialize)
+	if errBTStringFormatCondition683 != nil {
+		return []byte{}, errBTStringFormatCondition683
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -180,6 +223,9 @@ func (o BTStringMinimumLengthPattern895) MarshalJSON() ([]byte, error) {
 	}
 	if o.MinimumLength != nil {
 		toSerialize["minimumLength"] = o.MinimumLength
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

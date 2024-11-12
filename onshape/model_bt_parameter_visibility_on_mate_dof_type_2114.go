@@ -16,10 +16,13 @@ import (
 
 // BTParameterVisibilityOnMateDOFType2114 struct for BTParameterVisibilityOnMateDOFType2114
 type BTParameterVisibilityOnMateDOFType2114 struct {
+	BTParameterVisibilityOnEqual180
 	BtType      *string `json:"btType,omitempty"`
 	InArray     *bool   `json:"inArray,omitempty"`
 	ParameterId *string `json:"parameterId,omitempty"`
 	Value       *string `json:"value,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterVisibilityOnMateDOFType2114 instantiates a new BTParameterVisibilityOnMateDOFType2114 object
@@ -167,8 +170,48 @@ func (o *BTParameterVisibilityOnMateDOFType2114) SetValue(v string) {
 	o.Value = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterVisibilityOnMateDOFType2114) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterVisibilityOnMateDOFType2114) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterVisibilityOnMateDOFType2114) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterVisibilityOnMateDOFType2114) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterVisibilityOnMateDOFType2114) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityOnEqual180, errBTParameterVisibilityOnEqual180 := json.Marshal(o.BTParameterVisibilityOnEqual180)
+	if errBTParameterVisibilityOnEqual180 != nil {
+		return []byte{}, errBTParameterVisibilityOnEqual180
+	}
+	errBTParameterVisibilityOnEqual180 = json.Unmarshal([]byte(serializedBTParameterVisibilityOnEqual180), &toSerialize)
+	if errBTParameterVisibilityOnEqual180 != nil {
+		return []byte{}, errBTParameterVisibilityOnEqual180
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -180,6 +223,9 @@ func (o BTParameterVisibilityOnMateDOFType2114) MarshalJSON() ([]byte, error) {
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

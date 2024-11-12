@@ -16,6 +16,7 @@ import (
 
 // BTAssemblyFeatureListResponse1174 struct for BTAssemblyFeatureListResponse1174
 type BTAssemblyFeatureListResponse1174 struct {
+	BTFeatureApiBase1430
 	BtType *string `json:"btType,omitempty"`
 	// FeatureScript version used in the Part Studio. Do not modify.
 	LibraryVersion *int32 `json:"libraryVersion,omitempty"`
@@ -30,6 +31,8 @@ type BTAssemblyFeatureListResponse1174 struct {
 	FeatureStates      *map[string]BTFeatureState1688 `json:"featureStates,omitempty"`
 	Features           []BTMAssemblyFeature887        `json:"features,omitempty"`
 	IsComplete         *bool                          `json:"isComplete,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTAssemblyFeatureListResponse1174 instantiates a new BTAssemblyFeatureListResponse1174 object
@@ -337,8 +340,48 @@ func (o *BTAssemblyFeatureListResponse1174) SetIsComplete(v bool) {
 	o.IsComplete = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTAssemblyFeatureListResponse1174) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyFeatureListResponse1174) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTAssemblyFeatureListResponse1174) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTAssemblyFeatureListResponse1174) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTAssemblyFeatureListResponse1174) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureApiBase1430, errBTFeatureApiBase1430 := json.Marshal(o.BTFeatureApiBase1430)
+	if errBTFeatureApiBase1430 != nil {
+		return []byte{}, errBTFeatureApiBase1430
+	}
+	errBTFeatureApiBase1430 = json.Unmarshal([]byte(serializedBTFeatureApiBase1430), &toSerialize)
+	if errBTFeatureApiBase1430 != nil {
+		return []byte{}, errBTFeatureApiBase1430
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -365,6 +408,9 @@ func (o BTAssemblyFeatureListResponse1174) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsComplete != nil {
 		toSerialize["isComplete"] = o.IsComplete
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,8 +16,11 @@ import (
 
 // BTSectionGeometryFilter4161 struct for BTSectionGeometryFilter4161
 type BTSectionGeometryFilter4161 struct {
+	BTQueryFilter183
 	BtType            *string `json:"btType,omitempty"`
 	IsSectionGeometry *bool   `json:"isSectionGeometry,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSectionGeometryFilter4161 instantiates a new BTSectionGeometryFilter4161 object
@@ -101,13 +104,56 @@ func (o *BTSectionGeometryFilter4161) SetIsSectionGeometry(v bool) {
 	o.IsSectionGeometry = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSectionGeometryFilter4161) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSectionGeometryFilter4161) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSectionGeometryFilter4161) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSectionGeometryFilter4161) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSectionGeometryFilter4161) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.IsSectionGeometry != nil {
 		toSerialize["isSectionGeometry"] = o.IsSectionGeometry
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

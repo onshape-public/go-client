@@ -19,7 +19,7 @@ type Node struct {
 	Camera      *int32                            `json:"camera,omitempty"`
 	Children    []int32                           `json:"children,omitempty"`
 	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras      *map[string]interface{}           `json:"extras,omitempty"`
+	Extras      map[string]interface{}            `json:"extras,omitempty"`
 	Matrix      []float32                         `json:"matrix,omitempty"`
 	Mesh        *int32                            `json:"mesh,omitempty"`
 	Name        *string                           `json:"name,omitempty"`
@@ -149,12 +149,12 @@ func (o *Node) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Node) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *Node) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -172,7 +172,7 @@ func (o *Node) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *Node) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetMatrix returns the Matrix field value if set, zero value otherwise.

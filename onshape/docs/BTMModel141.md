@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AllFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndOtherReferences** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndSubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
+**ChildNodeIdToIndex** | Pointer to **map[string]int32** |  | [optional] 
 **ConfigurationData** | Pointer to [**BTMConfigurationData1560**](BTMConfigurationData1560.md) |  | [optional] 
 **Configured** | Pointer to **bool** |  | [optional] 
 **DeepImports** | Pointer to [**map[string][]BTImport**](array.md) |  | [optional] 
@@ -146,6 +147,31 @@ SetAllFeaturesAndSubFeatures sets AllFeaturesAndSubFeatures field to given value
 `func (o *BTMModel141) HasAllFeaturesAndSubFeatures() bool`
 
 HasAllFeaturesAndSubFeatures returns a boolean if a field has been set.
+
+### GetChildNodeIdToIndex
+
+`func (o *BTMModel141) GetChildNodeIdToIndex() map[string]int32`
+
+GetChildNodeIdToIndex returns the ChildNodeIdToIndex field if non-nil, zero value otherwise.
+
+### GetChildNodeIdToIndexOk
+
+`func (o *BTMModel141) GetChildNodeIdToIndexOk() (*map[string]int32, bool)`
+
+GetChildNodeIdToIndexOk returns a tuple with the ChildNodeIdToIndex field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChildNodeIdToIndex
+
+`func (o *BTMModel141) SetChildNodeIdToIndex(v map[string]int32)`
+
+SetChildNodeIdToIndex sets ChildNodeIdToIndex field to given value.
+
+### HasChildNodeIdToIndex
+
+`func (o *BTMModel141) HasChildNodeIdToIndex() bool`
+
+HasChildNodeIdToIndex returns a boolean if a field has been set.
 
 ### GetConfigurationData
 

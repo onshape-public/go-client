@@ -16,8 +16,11 @@ import (
 
 // BTJEditDelete1992 Deletes the specified node.
 type BTJEditDelete1992 struct {
+	BTJEdit3734
 	BtType *string      `json:"btType,omitempty"`
 	Path   *BTJPath3073 `json:"path,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTJEditDelete1992 instantiates a new BTJEditDelete1992 object
@@ -101,13 +104,56 @@ func (o *BTJEditDelete1992) SetPath(v BTJPath3073) {
 	o.Path = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTJEditDelete1992) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTJEditDelete1992) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTJEditDelete1992) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTJEditDelete1992) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTJEditDelete1992) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJEdit3734, errBTJEdit3734 := json.Marshal(o.BTJEdit3734)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
+	errBTJEdit3734 = json.Unmarshal([]byte(serializedBTJEdit3734), &toSerialize)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

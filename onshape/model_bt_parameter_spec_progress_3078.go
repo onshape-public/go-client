@@ -16,8 +16,9 @@ import (
 
 // BTParameterSpecProgress3078 struct for BTParameterSpecProgress3078
 type BTParameterSpecProgress3078 struct {
-	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
+	BTReadOnlyParameterSpec1889
 	BtType                     *string                            `json:"btType,omitempty"`
+	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
 	DefaultValue               *BTMParameter1                     `json:"defaultValue,omitempty"`
 	IconUri                    *string                            `json:"iconUri,omitempty"`
@@ -31,6 +32,8 @@ type BTParameterSpecProgress3078 struct {
 	UiHint                     *string                            `json:"uiHint,omitempty"`
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTParameterSpecProgress3078 instantiates a new BTParameterSpecProgress3078 object
@@ -48,38 +51,6 @@ func NewBTParameterSpecProgress3078() *BTParameterSpecProgress3078 {
 func NewBTParameterSpecProgress3078WithDefaults() *BTParameterSpecProgress3078 {
 	this := BTParameterSpecProgress3078{}
 	return &this
-}
-
-// GetAdditionalLocalizedStrings returns the AdditionalLocalizedStrings field value if set, zero value otherwise.
-func (o *BTParameterSpecProgress3078) GetAdditionalLocalizedStrings() int32 {
-	if o == nil || o.AdditionalLocalizedStrings == nil {
-		var ret int32
-		return ret
-	}
-	return *o.AdditionalLocalizedStrings
-}
-
-// GetAdditionalLocalizedStringsOk returns a tuple with the AdditionalLocalizedStrings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecProgress3078) GetAdditionalLocalizedStringsOk() (*int32, bool) {
-	if o == nil || o.AdditionalLocalizedStrings == nil {
-		return nil, false
-	}
-	return o.AdditionalLocalizedStrings, true
-}
-
-// HasAdditionalLocalizedStrings returns a boolean if a field has been set.
-func (o *BTParameterSpecProgress3078) HasAdditionalLocalizedStrings() bool {
-	if o != nil && o.AdditionalLocalizedStrings != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
-func (o *BTParameterSpecProgress3078) SetAdditionalLocalizedStrings(v int32) {
-	o.AdditionalLocalizedStrings = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -112,6 +83,38 @@ func (o *BTParameterSpecProgress3078) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTParameterSpecProgress3078) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAdditionalLocalizedStrings returns the AdditionalLocalizedStrings field value if set, zero value otherwise.
+func (o *BTParameterSpecProgress3078) GetAdditionalLocalizedStrings() int32 {
+	if o == nil || o.AdditionalLocalizedStrings == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AdditionalLocalizedStrings
+}
+
+// GetAdditionalLocalizedStringsOk returns a tuple with the AdditionalLocalizedStrings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecProgress3078) GetAdditionalLocalizedStringsOk() (*int32, bool) {
+	if o == nil || o.AdditionalLocalizedStrings == nil {
+		return nil, false
+	}
+	return o.AdditionalLocalizedStrings, true
+}
+
+// HasAdditionalLocalizedStrings returns a boolean if a field has been set.
+func (o *BTParameterSpecProgress3078) HasAdditionalLocalizedStrings() bool {
+	if o != nil && o.AdditionalLocalizedStrings != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalLocalizedStrings gets a reference to the given int32 and assigns it to the AdditionalLocalizedStrings field.
+func (o *BTParameterSpecProgress3078) SetAdditionalLocalizedStrings(v int32) {
+	o.AdditionalLocalizedStrings = &v
 }
 
 // GetColumnName returns the ColumnName field value if set, zero value otherwise.
@@ -530,13 +533,53 @@ func (o *BTParameterSpecProgress3078) SetVisibilityCondition(v BTParameterVisibi
 	o.VisibilityCondition = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTParameterSpecProgress3078) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecProgress3078) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTParameterSpecProgress3078) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTParameterSpecProgress3078) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTParameterSpecProgress3078) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AdditionalLocalizedStrings != nil {
-		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
+	serializedBTReadOnlyParameterSpec1889, errBTReadOnlyParameterSpec1889 := json.Marshal(o.BTReadOnlyParameterSpec1889)
+	if errBTReadOnlyParameterSpec1889 != nil {
+		return []byte{}, errBTReadOnlyParameterSpec1889
+	}
+	errBTReadOnlyParameterSpec1889 = json.Unmarshal([]byte(serializedBTReadOnlyParameterSpec1889), &toSerialize)
+	if errBTReadOnlyParameterSpec1889 != nil {
+		return []byte{}, errBTReadOnlyParameterSpec1889
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.AdditionalLocalizedStrings != nil {
+		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}
 	if o.ColumnName != nil {
 		toSerialize["columnName"] = o.ColumnName
@@ -576,6 +619,9 @@ func (o BTParameterSpecProgress3078) MarshalJSON() ([]byte, error) {
 	}
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }

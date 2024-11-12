@@ -24,16 +24,24 @@ type TeamApiService service
 type ApiFindRequest struct {
 	ctx                      context.Context
 	ApiService               *TeamApiService
-	prefix                   *string
+	query                    *string
+	filter                   *int32
 	uid                      *string
 	companyId                *string
 	offset                   *int32
 	limit                    *int32
+	sortColumn               *string
+	sortOrder                *string
 	includeCompanyOwnedTeams *bool
 }
 
-func (r ApiFindRequest) Prefix(prefix string) ApiFindRequest {
-	r.prefix = &prefix
+func (r ApiFindRequest) Query(query string) ApiFindRequest {
+	r.query = &query
+	return r
+}
+
+func (r ApiFindRequest) Filter(filter int32) ApiFindRequest {
+	r.filter = &filter
 	return r
 }
 
@@ -54,6 +62,16 @@ func (r ApiFindRequest) Offset(offset int32) ApiFindRequest {
 
 func (r ApiFindRequest) Limit(limit int32) ApiFindRequest {
 	r.limit = &limit
+	return r
+}
+
+func (r ApiFindRequest) SortColumn(sortColumn string) ApiFindRequest {
+	r.sortColumn = &sortColumn
+	return r
+}
+
+func (r ApiFindRequest) SortOrder(sortOrder string) ApiFindRequest {
+	r.sortOrder = &sortOrder
 	return r
 }
 
@@ -101,8 +119,11 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.prefix != nil {
-		localVarQueryParams.Add("prefix", parameterToString(*r.prefix, ""))
+	if r.query != nil {
+		localVarQueryParams.Add("query", parameterToString(*r.query, ""))
+	}
+	if r.filter != nil {
+		localVarQueryParams.Add("filter", parameterToString(*r.filter, ""))
 	}
 	if r.uid != nil {
 		localVarQueryParams.Add("uid", parameterToString(*r.uid, ""))
@@ -115,6 +136,12 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.sortColumn != nil {
+		localVarQueryParams.Add("sortColumn", parameterToString(*r.sortColumn, ""))
+	}
+	if r.sortOrder != nil {
+		localVarQueryParams.Add("sortOrder", parameterToString(*r.sortOrder, ""))
 	}
 	if r.includeCompanyOwnedTeams != nil {
 		localVarQueryParams.Add("includeCompanyOwnedTeams", parameterToString(*r.includeCompanyOwnedTeams, ""))

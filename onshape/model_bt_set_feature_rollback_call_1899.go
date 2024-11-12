@@ -16,6 +16,7 @@ import (
 
 // BTSetFeatureRollbackCall1899 struct for BTSetFeatureRollbackCall1899
 type BTSetFeatureRollbackCall1899 struct {
+	BTFeatureApiBase1430
 	BtType *string `json:"btType,omitempty"`
 	// FeatureScript version used in the Part Studio. Do not modify.
 	LibraryVersion *int32 `json:"libraryVersion,omitempty"`
@@ -28,6 +29,8 @@ type BTSetFeatureRollbackCall1899 struct {
 	// The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
 	SourceMicroversion *string `json:"sourceMicroversion,omitempty"`
 	RollbackIndex      *int32  `json:"rollbackIndex,omitempty"`
+	// Type of JSON object.
+	BtType *string `json:"btType,omitempty"`
 }
 
 // NewBTSetFeatureRollbackCall1899 instantiates a new BTSetFeatureRollbackCall1899 object
@@ -271,8 +274,48 @@ func (o *BTSetFeatureRollbackCall1899) SetRollbackIndex(v int32) {
 	o.RollbackIndex = &v
 }
 
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTSetFeatureRollbackCall1899) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSetFeatureRollbackCall1899) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *BTSetFeatureRollbackCall1899) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTSetFeatureRollbackCall1899) SetBtType(v string) {
+	o.BtType = &v
+}
+
 func (o BTSetFeatureRollbackCall1899) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureApiBase1430, errBTFeatureApiBase1430 := json.Marshal(o.BTFeatureApiBase1430)
+	if errBTFeatureApiBase1430 != nil {
+		return []byte{}, errBTFeatureApiBase1430
+	}
+	errBTFeatureApiBase1430 = json.Unmarshal([]byte(serializedBTFeatureApiBase1430), &toSerialize)
+	if errBTFeatureApiBase1430 != nil {
+		return []byte{}, errBTFeatureApiBase1430
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -293,6 +336,9 @@ func (o BTSetFeatureRollbackCall1899) MarshalJSON() ([]byte, error) {
 	}
 	if o.RollbackIndex != nil {
 		toSerialize["rollbackIndex"] = o.RollbackIndex
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
