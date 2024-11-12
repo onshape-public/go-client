@@ -30,13 +30,13 @@ func (o *BTParameterSpecReferenceWithConfiguration2950) AsBTParameterSpec6() *BT
 	return &BTParameterSpec6{o}
 }
 
-// BTParameterSpecCategories4083AsBTParameterSpec6 is a convenience function that returns BTParameterSpecCategories4083 wrapped in BTParameterSpec6
-func (o *BTParameterSpecCategories4083) AsBTParameterSpec6() *BTParameterSpec6 {
+// BTParameterSpecQuery174AsBTParameterSpec6 is a convenience function that returns BTParameterSpecQuery174 wrapped in BTParameterSpec6
+func (o *BTParameterSpecQuery174) AsBTParameterSpec6() *BTParameterSpec6 {
 	return &BTParameterSpec6{o}
 }
 
-// BTParameterSpecQuery174AsBTParameterSpec6 is a convenience function that returns BTParameterSpecQuery174 wrapped in BTParameterSpec6
-func (o *BTParameterSpecQuery174) AsBTParameterSpec6() *BTParameterSpec6 {
+// BTParameterSpecCategories4083AsBTParameterSpec6 is a convenience function that returns BTParameterSpecCategories4083 wrapped in BTParameterSpec6
+func (o *BTParameterSpecCategories4083) AsBTParameterSpec6() *BTParameterSpec6 {
 	return &BTParameterSpec6{o}
 }
 
@@ -1003,20 +1003,6 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTParameterSpecCategories-4083'
-	if jsonDict["btType"] == "BTParameterSpecCategories-4083" {
-		// try to unmarshal JSON data into BTParameterSpecCategories4083
-		var qr *BTParameterSpecCategories4083
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpec6 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecCategories4083: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTParameterSpecDatabase-1071'
 	if jsonDict["btType"] == "BTParameterSpecDatabase-1071" {
 		// try to unmarshal JSON data into BTParameterSpecDatabase1071
@@ -1143,20 +1129,6 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTParameterSpecProgress-3078'
-	if jsonDict["btType"] == "BTParameterSpecProgress-3078" {
-		// try to unmarshal JSON data into BTParameterSpecProgress3078
-		var qr *BTParameterSpecProgress3078
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpec6 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecProgress3078: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTParameterSpecQuantity-173'
 	if jsonDict["btType"] == "BTParameterSpecQuantity-173" {
 		// try to unmarshal JSON data into BTParameterSpecQuantity173
@@ -1196,6 +1168,62 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterSpec6 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecReference2789: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecString-175'
+	if jsonDict["btType"] == "BTParameterSpecString-175" {
+		// try to unmarshal JSON data into BTParameterSpecString175
+		var qr *BTParameterSpecString175
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpec6 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpec6 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecString175: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTReadOnlyParameterSpec-1889'
+	if jsonDict["btType"] == "BTReadOnlyParameterSpec-1889" {
+		// try to unmarshal JSON data into BTReadOnlyParameterSpec1889
+		var qr *BTReadOnlyParameterSpec1889
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpec6 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpec6 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTReadOnlyParameterSpec1889: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecCategories-4083'
+	if jsonDict["btType"] == "BTParameterSpecCategories-4083" {
+		// try to unmarshal JSON data into BTParameterSpecCategories4083
+		var qr *BTParameterSpecCategories4083
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpec6 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpec6 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecCategories4083: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecProgress-3078'
+	if jsonDict["btType"] == "BTParameterSpecProgress-3078" {
+		// try to unmarshal JSON data into BTParameterSpecProgress3078
+		var qr *BTParameterSpecProgress3078
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterSpec6 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterSpec6 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecProgress3078: %s", err.Error())
 		}
 	}
 
@@ -1325,20 +1353,6 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTParameterSpecString-175'
-	if jsonDict["btType"] == "BTParameterSpecString-175" {
-		// try to unmarshal JSON data into BTParameterSpecString175
-		var qr *BTParameterSpecString175
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpec6 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecString175: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTParameterSpecStringWithTolerances-2535'
 	if jsonDict["btType"] == "BTParameterSpecStringWithTolerances-2535" {
 		// try to unmarshal JSON data into BTParameterSpecStringWithTolerances2535
@@ -1350,20 +1364,6 @@ func (dst *BTParameterSpec6) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterSpec6 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTParameterSpecStringWithTolerances2535: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTReadOnlyParameterSpec-1889'
-	if jsonDict["btType"] == "BTReadOnlyParameterSpec-1889" {
-		// try to unmarshal JSON data into BTReadOnlyParameterSpec1889
-		var qr *BTReadOnlyParameterSpec1889
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTParameterSpec6 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTParameterSpec6 = nil
-			return fmt.Errorf("failed to unmarshal BTParameterSpec6 as BTReadOnlyParameterSpec1889: %s", err.Error())
 		}
 	}
 

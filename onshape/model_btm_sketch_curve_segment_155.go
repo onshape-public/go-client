@@ -16,29 +16,31 @@ import (
 
 // BTMSketchCurveSegment155 struct for BTMSketchCurveSegment155
 type BTMSketchCurveSegment155 struct {
+	BTMSketchCurve4
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion                  *string              `json:"importMicroversion,omitempty"`
-	NodeId                              *string              `json:"nodeId,omitempty"`
-	EntityId                            *string              `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string              `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Index                               *int32               `json:"index,omitempty"`
-	Namespace                           *string              `json:"namespace,omitempty"`
-	Parameters                          []BTMParameter1      `json:"parameters,omitempty"`
-	ControlBoxIds                       []string             `json:"controlBoxIds,omitempty"`
-	EntityType                          *GBTSketchEntityType `json:"entityType,omitempty"`
-	FunctionName                        *string              `json:"functionName,omitempty"`
-	IsConstruction                      *bool                `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool                `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool                `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool                `json:"isFromSplineHandle,omitempty"`
-	CenterId                            *string              `json:"centerId,omitempty"`
-	InternalIds                         []string             `json:"internalIds,omitempty"`
-	EndParam                            *float64             `json:"endParam,omitempty"`
-	EndPointId                          *string              `json:"endPointId,omitempty"`
-	OffsetCurveExtensions               []float64            `json:"offsetCurveExtensions,omitempty"`
-	StartParam                          *float64             `json:"startParam,omitempty"`
-	StartPointId                        *string              `json:"startPointId,omitempty"`
+	ImportMicroversion                  *string                   `json:"importMicroversion,omitempty"`
+	NodeId                              *string                   `json:"nodeId,omitempty"`
+	CombinedSketchEntityType            *CombinedSketchEntityType `json:"combinedSketchEntityType,omitempty"`
+	EntityId                            *string                   `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string                   `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Index                               *int32                    `json:"index,omitempty"`
+	Namespace                           *string                   `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1           `json:"parameters,omitempty"`
+	ControlBoxIds                       []string                  `json:"controlBoxIds,omitempty"`
+	EntityType                          *GBTSketchEntityType      `json:"entityType,omitempty"`
+	FunctionName                        *string                   `json:"functionName,omitempty"`
+	IsConstruction                      *bool                     `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle          *bool                     `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon          *bool                     `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle                  *bool                     `json:"isFromSplineHandle,omitempty"`
+	CenterId                            *string                   `json:"centerId,omitempty"`
+	InternalIds                         []string                  `json:"internalIds,omitempty"`
+	EndParam                            *float64                  `json:"endParam,omitempty"`
+	EndPointId                          *string                   `json:"endPointId,omitempty"`
+	OffsetCurveExtensions               []float64                 `json:"offsetCurveExtensions,omitempty"`
+	StartParam                          *float64                  `json:"startParam,omitempty"`
+	StartPointId                        *string                   `json:"startPointId,omitempty"`
 }
 
 // NewBTMSketchCurveSegment155 instantiates a new BTMSketchCurveSegment155 object
@@ -152,6 +154,38 @@ func (o *BTMSketchCurveSegment155) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTMSketchCurveSegment155) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetCombinedSketchEntityType returns the CombinedSketchEntityType field value if set, zero value otherwise.
+func (o *BTMSketchCurveSegment155) GetCombinedSketchEntityType() CombinedSketchEntityType {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		var ret CombinedSketchEntityType
+		return ret
+	}
+	return *o.CombinedSketchEntityType
+}
+
+// GetCombinedSketchEntityTypeOk returns a tuple with the CombinedSketchEntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurveSegment155) GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool) {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		return nil, false
+	}
+	return o.CombinedSketchEntityType, true
+}
+
+// HasCombinedSketchEntityType returns a boolean if a field has been set.
+func (o *BTMSketchCurveSegment155) HasCombinedSketchEntityType() bool {
+	if o != nil && o.CombinedSketchEntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCombinedSketchEntityType gets a reference to the given CombinedSketchEntityType and assigns it to the CombinedSketchEntityType field.
+func (o *BTMSketchCurveSegment155) SetCombinedSketchEntityType(v CombinedSketchEntityType) {
+	o.CombinedSketchEntityType = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -764,6 +798,14 @@ func (o *BTMSketchCurveSegment155) SetStartPointId(v string) {
 
 func (o BTMSketchCurveSegment155) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchCurve4, errBTMSketchCurve4 := json.Marshal(o.BTMSketchCurve4)
+	if errBTMSketchCurve4 != nil {
+		return []byte{}, errBTMSketchCurve4
+	}
+	errBTMSketchCurve4 = json.Unmarshal([]byte(serializedBTMSketchCurve4), &toSerialize)
+	if errBTMSketchCurve4 != nil {
+		return []byte{}, errBTMSketchCurve4
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -772,6 +814,9 @@ func (o BTMSketchCurveSegment155) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.CombinedSketchEntityType != nil {
+		toSerialize["combinedSketchEntityType"] = o.CombinedSketchEntityType
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId

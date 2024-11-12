@@ -656,6 +656,20 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTPIdentifier-8'
+	if jsonDict["btType"] == "BTPIdentifier-8" {
+		// try to unmarshal JSON data into BTPIdentifier8
+		var qr *BTPIdentifier8
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPPropertyAccessor23 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPPropertyAccessor23 = nil
+			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPIdentifier8: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTPExpressionAccess-237'
 	if jsonDict["btType"] == "BTPExpressionAccess-237" {
 		// try to unmarshal JSON data into BTPExpressionAccess237
@@ -824,20 +838,6 @@ func (dst *BTPPropertyAccessor23) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTPIdentifier-8'
-	if jsonDict["btType"] == "BTPIdentifier-8" {
-		// try to unmarshal JSON data into BTPIdentifier8
-		var qr *BTPIdentifier8
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPPropertyAccessor23 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPPropertyAccessor23 = nil
-			return fmt.Errorf("failed to unmarshal BTPPropertyAccessor23 as BTPIdentifier8: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTPLiteral-253'
 	if jsonDict["btType"] == "BTPLiteral-253" {
 		// try to unmarshal JSON data into BTPLiteral253
@@ -974,6 +974,7 @@ func (v *NullableBTPPropertyAccessor23) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPPropertyAccessor23 struct {
+	BTPNode7
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -1325,6 +1326,14 @@ func (o *base_BTPPropertyAccessor23) SetStartSourceLocation(v int32) {
 
 func (o base_BTPPropertyAccessor23) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

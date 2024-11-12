@@ -16,6 +16,7 @@ import (
 
 // BTCircleDescription1145 struct for BTCircleDescription1145
 type BTCircleDescription1145 struct {
+	BTCurveDescription1583
 	BtType                    *string           `json:"btType,omitempty"`
 	Direction                 *BTVector3d389    `json:"direction,omitempty"`
 	DirectionOrientedWithFace *BTVector3d389    `json:"directionOrientedWithFace,omitempty"`
@@ -268,6 +269,14 @@ func (o *BTCircleDescription1145) SetRadius(v float64) {
 
 func (o BTCircleDescription1145) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTCurveDescription1583, errBTCurveDescription1583 := json.Marshal(o.BTCurveDescription1583)
+	if errBTCurveDescription1583 != nil {
+		return []byte{}, errBTCurveDescription1583
+	}
+	errBTCurveDescription1583 = json.Unmarshal([]byte(serializedBTCurveDescription1583), &toSerialize)
+	if errBTCurveDescription1583 != nil {
+		return []byte{}, errBTCurveDescription1583
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

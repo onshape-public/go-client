@@ -16,6 +16,7 @@ import (
 
 // BTFSValueWithUnits1817 struct for BTFSValueWithUnits1817
 type BTFSValueWithUnits1817 struct {
+	BTFSValue1888
 	BtType      string            `json:"btType"`
 	TypeTag     *string           `json:"typeTag,omitempty"`
 	UnitToPower *map[string]int32 `json:"unitToPower,omitempty"`
@@ -162,6 +163,14 @@ func (o *BTFSValueWithUnits1817) SetValue(v float64) {
 
 func (o BTFSValueWithUnits1817) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFSValue1888, errBTFSValue1888 := json.Marshal(o.BTFSValue1888)
+	if errBTFSValue1888 != nil {
+		return []byte{}, errBTFSValue1888
+	}
+	errBTFSValue1888 = json.Unmarshal([]byte(serializedBTFSValue1888), &toSerialize)
+	if errBTFSValue1888 != nil {
+		return []byte{}, errBTFSValue1888
+	}
 	if true {
 		toSerialize["btType"] = o.BtType
 	}

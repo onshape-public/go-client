@@ -719,20 +719,6 @@ func (dst *BTMIndividualQueryWithOccurrenceBase904) UnmarshalJSON(data []byte) e
 		}
 	}
 
-	// check if the discriminator value is 'BTMInferenceQueryWithOccurrence-1083'
-	if jsonDict["btType"] == "BTMInferenceQueryWithOccurrence-1083" {
-		// try to unmarshal JSON data into BTMInferenceQueryWithOccurrence1083
-		var qr *BTMInferenceQueryWithOccurrence1083
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryWithOccurrenceBase904 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryWithOccurrenceBase904 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrenceBase904 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMMeshPointQuery-1183'
 	if jsonDict["btType"] == "BTMMeshPointQuery-1183" {
 		// try to unmarshal JSON data into BTMMeshPointQuery1183
@@ -744,6 +730,20 @@ func (dst *BTMIndividualQueryWithOccurrenceBase904) UnmarshalJSON(data []byte) e
 		} else {
 			dst.implBTMIndividualQueryWithOccurrenceBase904 = nil
 			return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrenceBase904 as BTMMeshPointQuery1183: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMInferenceQueryWithOccurrence-1083'
+	if jsonDict["btType"] == "BTMInferenceQueryWithOccurrence-1083" {
+		// try to unmarshal JSON data into BTMInferenceQueryWithOccurrence1083
+		var qr *BTMInferenceQueryWithOccurrence1083
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryWithOccurrenceBase904 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryWithOccurrenceBase904 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryWithOccurrenceBase904 as BTMInferenceQueryWithOccurrence1083: %s", err.Error())
 		}
 	}
 
@@ -827,6 +827,7 @@ func (v *NullableBTMIndividualQueryWithOccurrenceBase904) UnmarshalJSON(src []by
 }
 
 type base_BTMIndividualQueryWithOccurrenceBase904 struct {
+	BTMIndividualQueryBase139
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
@@ -1245,6 +1246,14 @@ func (o *base_BTMIndividualQueryWithOccurrenceBase904) SetPath(v []string) {
 
 func (o base_BTMIndividualQueryWithOccurrenceBase904) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryBase139, errBTMIndividualQueryBase139 := json.Marshal(o.BTMIndividualQueryBase139)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
+	errBTMIndividualQueryBase139 = json.Unmarshal([]byte(serializedBTMIndividualQueryBase139), &toSerialize)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

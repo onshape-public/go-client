@@ -16,6 +16,7 @@ import (
 
 // BTMConfiguredValueByEnum1923 struct for BTMConfiguredValueByEnum1923
 type BTMConfiguredValueByEnum1923 struct {
+	BTMConfiguredValue1341
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
@@ -302,6 +303,14 @@ func (o *BTMConfiguredValueByEnum1923) SetNamespace(v string) {
 
 func (o BTMConfiguredValueByEnum1923) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMConfiguredValue1341, errBTMConfiguredValue1341 := json.Marshal(o.BTMConfiguredValue1341)
+	if errBTMConfiguredValue1341 != nil {
+		return []byte{}, errBTMConfiguredValue1341
+	}
+	errBTMConfiguredValue1341 = json.Unmarshal([]byte(serializedBTMConfiguredValue1341), &toSerialize)
+	if errBTMConfiguredValue1341 != nil {
+		return []byte{}, errBTMConfiguredValue1341
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

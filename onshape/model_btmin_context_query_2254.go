@@ -16,6 +16,7 @@ import (
 
 // BTMInContextQuery2254 struct for BTMInContextQuery2254
 type BTMInContextQuery2254 struct {
+	BTMIndividualQueryBase139
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
@@ -368,6 +369,14 @@ func (o *BTMInContextQuery2254) SetPath(v []string) {
 
 func (o BTMInContextQuery2254) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryBase139, errBTMIndividualQueryBase139 := json.Marshal(o.BTMIndividualQueryBase139)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
+	errBTMIndividualQueryBase139 = json.Unmarshal([]byte(serializedBTMIndividualQueryBase139), &toSerialize)
+	if errBTMIndividualQueryBase139 != nil {
+		return []byte{}, errBTMIndividualQueryBase139
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

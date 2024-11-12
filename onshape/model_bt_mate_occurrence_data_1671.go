@@ -16,6 +16,7 @@ import (
 
 // BTMateOccurrenceData1671 struct for BTMateOccurrenceData1671
 type BTMateOccurrenceData1671 struct {
+	BTFeatureOccurrenceData775
 	BtType     *string                 `json:"btType,omitempty"`
 	Visibility *GBTBSFeatureVisibility `json:"visibility,omitempty"`
 	ValueMap   *map[string]float64     `json:"valueMap,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTMateOccurrenceData1671) SetValues(v []float64) {
 
 func (o BTMateOccurrenceData1671) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureOccurrenceData775, errBTFeatureOccurrenceData775 := json.Marshal(o.BTFeatureOccurrenceData775)
+	if errBTFeatureOccurrenceData775 != nil {
+		return []byte{}, errBTFeatureOccurrenceData775
+	}
+	errBTFeatureOccurrenceData775 = json.Unmarshal([]byte(serializedBTFeatureOccurrenceData775), &toSerialize)
+	if errBTFeatureOccurrenceData775 != nil {
+		return []byte{}, errBTFeatureOccurrenceData775
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -17,11 +17,11 @@ import (
 // BTDiffJsonResponse2725 struct for BTDiffJsonResponse2725
 type BTDiffJsonResponse2725 struct {
 	// Type of JSON object.
-	BtType         *string                      `json:"btType,omitempty"`
-	Change         *BTJEdit3734                 `json:"change,omitempty"`
-	Patch          *BTDiffJsonResponse2725Patch `json:"patch,omitempty"`
-	SourceChangeId *string                      `json:"sourceChangeId,omitempty"`
-	TargetChangeId *string                      `json:"targetChangeId,omitempty"`
+	BtType         *string                 `json:"btType,omitempty"`
+	Change         *BTJEdit3734            `json:"change,omitempty"`
+	Patch          *map[string]interface{} `json:"patch,omitempty"`
+	SourceChangeId *string                 `json:"sourceChangeId,omitempty"`
+	TargetChangeId *string                 `json:"targetChangeId,omitempty"`
 }
 
 // NewBTDiffJsonResponse2725 instantiates a new BTDiffJsonResponse2725 object
@@ -106,9 +106,9 @@ func (o *BTDiffJsonResponse2725) SetChange(v BTJEdit3734) {
 }
 
 // GetPatch returns the Patch field value if set, zero value otherwise.
-func (o *BTDiffJsonResponse2725) GetPatch() BTDiffJsonResponse2725Patch {
+func (o *BTDiffJsonResponse2725) GetPatch() map[string]interface{} {
 	if o == nil || o.Patch == nil {
-		var ret BTDiffJsonResponse2725Patch
+		var ret map[string]interface{}
 		return ret
 	}
 	return *o.Patch
@@ -116,7 +116,7 @@ func (o *BTDiffJsonResponse2725) GetPatch() BTDiffJsonResponse2725Patch {
 
 // GetPatchOk returns a tuple with the Patch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDiffJsonResponse2725) GetPatchOk() (*BTDiffJsonResponse2725Patch, bool) {
+func (o *BTDiffJsonResponse2725) GetPatchOk() (*map[string]interface{}, bool) {
 	if o == nil || o.Patch == nil {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *BTDiffJsonResponse2725) HasPatch() bool {
 	return false
 }
 
-// SetPatch gets a reference to the given BTDiffJsonResponse2725Patch and assigns it to the Patch field.
-func (o *BTDiffJsonResponse2725) SetPatch(v BTDiffJsonResponse2725Patch) {
+// SetPatch gets a reference to the given map[string]interface{} and assigns it to the Patch field.
+func (o *BTDiffJsonResponse2725) SetPatch(v map[string]interface{}) {
 	o.Patch = &v
 }
 

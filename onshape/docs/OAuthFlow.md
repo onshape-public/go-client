@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AuthorizationUrl** | Pointer to **string** |  | [optional] 
 **Extensions** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **RefreshUrl** | Pointer to **string** |  | [optional] 
-**Scopes** | Pointer to [**OAuthFlowScopes**](OAuthFlowScopes.md) |  | [optional] 
+**Scopes** | Pointer to **map[string]string** |  | [optional] 
 **TokenUrl** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasRefreshUrl returns a boolean if a field has been set.
 
 ### GetScopes
 
-`func (o *OAuthFlow) GetScopes() OAuthFlowScopes`
+`func (o *OAuthFlow) GetScopes() map[string]string`
 
 GetScopes returns the Scopes field if non-nil, zero value otherwise.
 
 ### GetScopesOk
 
-`func (o *OAuthFlow) GetScopesOk() (*OAuthFlowScopes, bool)`
+`func (o *OAuthFlow) GetScopesOk() (*map[string]string, bool)`
 
 GetScopesOk returns a tuple with the Scopes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScopes
 
-`func (o *OAuthFlow) SetScopes(v OAuthFlowScopes)`
+`func (o *OAuthFlow) SetScopes(v map[string]string)`
 
 SetScopes sets Scopes field to given value.
 

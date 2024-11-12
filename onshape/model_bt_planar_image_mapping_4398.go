@@ -16,6 +16,7 @@ import (
 
 // BTPlanarImageMapping4398 struct for BTPlanarImageMapping4398
 type BTPlanarImageMapping4398 struct {
+	BTImageMapping3821
 	BtType           *string                `json:"btType,omitempty"`
 	DeterministicIds []string               `json:"deterministicIds,omitempty"`
 	UvTransform      *BTMatrix3x3340        `json:"uvTransform,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTPlanarImageMapping4398) SetPlaneSystem(v BTCoordinateSystem387) {
 
 func (o BTPlanarImageMapping4398) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTImageMapping3821, errBTImageMapping3821 := json.Marshal(o.BTImageMapping3821)
+	if errBTImageMapping3821 != nil {
+		return []byte{}, errBTImageMapping3821
+	}
+	errBTImageMapping3821 = json.Unmarshal([]byte(serializedBTImageMapping3821), &toSerialize)
+	if errBTImageMapping3821 != nil {
+		return []byte{}, errBTImageMapping3821
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

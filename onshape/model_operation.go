@@ -24,7 +24,7 @@ type Operation struct {
 	OperationId  *string                           `json:"operationId,omitempty"`
 	Parameters   []Parameter                       `json:"parameters,omitempty"`
 	RequestBody  *RequestBody                      `json:"requestBody,omitempty"`
-	Responses    *OperationResponses               `json:"responses,omitempty"`
+	Responses    *map[string]ApiResponse           `json:"responses,omitempty"`
 	Security     []SecurityRequirement             `json:"security,omitempty"`
 	Servers      []Server                          `json:"servers,omitempty"`
 	Summary      *string                           `json:"summary,omitempty"`
@@ -305,9 +305,9 @@ func (o *Operation) SetRequestBody(v RequestBody) {
 }
 
 // GetResponses returns the Responses field value if set, zero value otherwise.
-func (o *Operation) GetResponses() OperationResponses {
+func (o *Operation) GetResponses() map[string]ApiResponse {
 	if o == nil || o.Responses == nil {
-		var ret OperationResponses
+		var ret map[string]ApiResponse
 		return ret
 	}
 	return *o.Responses
@@ -315,7 +315,7 @@ func (o *Operation) GetResponses() OperationResponses {
 
 // GetResponsesOk returns a tuple with the Responses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Operation) GetResponsesOk() (*OperationResponses, bool) {
+func (o *Operation) GetResponsesOk() (*map[string]ApiResponse, bool) {
 	if o == nil || o.Responses == nil {
 		return nil, false
 	}
@@ -331,8 +331,8 @@ func (o *Operation) HasResponses() bool {
 	return false
 }
 
-// SetResponses gets a reference to the given OperationResponses and assigns it to the Responses field.
-func (o *Operation) SetResponses(v OperationResponses) {
+// SetResponses gets a reference to the given map[string]ApiResponse and assigns it to the Responses field.
+func (o *Operation) SetResponses(v map[string]ApiResponse) {
 	o.Responses = &v
 }
 

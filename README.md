@@ -39,3 +39,6 @@ Could be found [here](./onshape/README.md)
 ## Breaking Changes
 ### v1.171.24257-687de06de652
 * ServerVariable was renamed to APIServerVariable after OnShape introduced a data structure with the same name
+### v1.189.45939-469a4bd6b788
+* map replaces some BT structure when appropriate for simplicity
+* discriminators are added as embedded structs. Adjustment is needed for successful deserialization

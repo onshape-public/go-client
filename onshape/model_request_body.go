@@ -16,7 +16,7 @@ import (
 
 // RequestBody struct for RequestBody
 type RequestBody struct {
-	Content     *RequestBodyContent               `json:"content,omitempty"`
+	Content     *map[string]MediaType             `json:"content,omitempty"`
 	Description *string                           `json:"description,omitempty"`
 	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
 	Getref      *string                           `json:"get$ref,omitempty"`
@@ -41,9 +41,9 @@ func NewRequestBodyWithDefaults() *RequestBody {
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *RequestBody) GetContent() RequestBodyContent {
+func (o *RequestBody) GetContent() map[string]MediaType {
 	if o == nil || o.Content == nil {
-		var ret RequestBodyContent
+		var ret map[string]MediaType
 		return ret
 	}
 	return *o.Content
@@ -51,7 +51,7 @@ func (o *RequestBody) GetContent() RequestBodyContent {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RequestBody) GetContentOk() (*RequestBodyContent, bool) {
+func (o *RequestBody) GetContentOk() (*map[string]MediaType, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *RequestBody) HasContent() bool {
 	return false
 }
 
-// SetContent gets a reference to the given RequestBodyContent and assigns it to the Content field.
-func (o *RequestBody) SetContent(v RequestBodyContent) {
+// SetContent gets a reference to the given map[string]MediaType and assigns it to the Content field.
+func (o *RequestBody) SetContent(v map[string]MediaType) {
 	o.Content = &v
 }
 

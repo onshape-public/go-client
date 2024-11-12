@@ -17,9 +17,9 @@ import (
 // BTJsonMatch2290 struct for BTJsonMatch2290
 type BTJsonMatch2290 struct {
 	// Type of JSON object.
-	BtType           *string              `json:"btType,omitempty"`
-	DefiniteJsonPath *string              `json:"definiteJsonPath,omitempty"`
-	Node             *BTJsonMatch2290Node `json:"node,omitempty"`
+	BtType           *string                 `json:"btType,omitempty"`
+	DefiniteJsonPath *string                 `json:"definiteJsonPath,omitempty"`
+	Node             *map[string]interface{} `json:"node,omitempty"`
 }
 
 // NewBTJsonMatch2290 instantiates a new BTJsonMatch2290 object
@@ -104,9 +104,9 @@ func (o *BTJsonMatch2290) SetDefiniteJsonPath(v string) {
 }
 
 // GetNode returns the Node field value if set, zero value otherwise.
-func (o *BTJsonMatch2290) GetNode() BTJsonMatch2290Node {
+func (o *BTJsonMatch2290) GetNode() map[string]interface{} {
 	if o == nil || o.Node == nil {
-		var ret BTJsonMatch2290Node
+		var ret map[string]interface{}
 		return ret
 	}
 	return *o.Node
@@ -114,7 +114,7 @@ func (o *BTJsonMatch2290) GetNode() BTJsonMatch2290Node {
 
 // GetNodeOk returns a tuple with the Node field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTJsonMatch2290) GetNodeOk() (*BTJsonMatch2290Node, bool) {
+func (o *BTJsonMatch2290) GetNodeOk() (*map[string]interface{}, bool) {
 	if o == nil || o.Node == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *BTJsonMatch2290) HasNode() bool {
 	return false
 }
 
-// SetNode gets a reference to the given BTJsonMatch2290Node and assigns it to the Node field.
-func (o *BTJsonMatch2290) SetNode(v BTJsonMatch2290Node) {
+// SetNode gets a reference to the given map[string]interface{} and assigns it to the Node field.
+func (o *BTJsonMatch2290) SetNode(v map[string]interface{}) {
 	o.Node = &v
 }
 

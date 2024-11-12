@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BufferModel** | Pointer to [**BufferModel**](BufferModel.md) |  | [optional] 
-**BufferViewData** | Pointer to [**BufferViewModelBufferViewData**](BufferViewModelBufferViewData.md) |  | [optional] 
+**BufferViewData** | Pointer to **map[string]interface{}** |  | [optional] 
 **ByteLength** | Pointer to **int32** |  | [optional] 
 **ByteOffset** | Pointer to **int32** |  | [optional] 
 **ByteStride** | Pointer to **int32** |  | [optional] 
@@ -58,20 +58,20 @@ HasBufferModel returns a boolean if a field has been set.
 
 ### GetBufferViewData
 
-`func (o *BufferViewModel) GetBufferViewData() BufferViewModelBufferViewData`
+`func (o *BufferViewModel) GetBufferViewData() map[string]interface{}`
 
 GetBufferViewData returns the BufferViewData field if non-nil, zero value otherwise.
 
 ### GetBufferViewDataOk
 
-`func (o *BufferViewModel) GetBufferViewDataOk() (*BufferViewModelBufferViewData, bool)`
+`func (o *BufferViewModel) GetBufferViewDataOk() (*map[string]interface{}, bool)`
 
 GetBufferViewDataOk returns a tuple with the BufferViewData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBufferViewData
 
-`func (o *BufferViewModel) SetBufferViewData(v BufferViewModelBufferViewData)`
+`func (o *BufferViewModel) SetBufferViewData(v map[string]interface{})`
 
 SetBufferViewData sets BufferViewData field to given value.
 

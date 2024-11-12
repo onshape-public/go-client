@@ -38,6 +38,7 @@ const (
 	BTSearchEntityTypeGenericTask   BTSearchEntityType = "generic_task"
 	BTSearchEntityTypeReleaseTask   BTSearchEntityType = "release_task"
 	BTSearchEntityTypeAppStoreEntry BTSearchEntityType = "app_store_entry"
+	BTSearchEntityTypeFolder        BTSearchEntityType = "folder"
 )
 
 // All allowed values of BTSearchEntityType enum
@@ -60,6 +61,7 @@ var AllowedBTSearchEntityTypeEnumValues = []BTSearchEntityType{
 	"generic_task",
 	"release_task",
 	"app_store_entry",
+	"folder",
 }
 
 func (v *BTSearchEntityType) UnmarshalJSON(src []byte) error {

@@ -16,6 +16,7 @@ import (
 
 // BTTableCellPropertyParameter2983 struct for BTTableCellPropertyParameter2983
 type BTTableCellPropertyParameter2983 struct {
+	BTTableCellParameter2399
 	BtType                              *string                        `json:"btType,omitempty"`
 	IsEverVisible                       *bool                          `json:"isEverVisible,omitempty"`
 	IsReadOnly                          *bool                          `json:"isReadOnly,omitempty"`
@@ -367,6 +368,14 @@ func (o *BTTableCellPropertyParameter2983) SetPropertySourceType(v GBTMetadataSo
 
 func (o BTTableCellPropertyParameter2983) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableCellParameter2399, errBTTableCellParameter2399 := json.Marshal(o.BTTableCellParameter2399)
+	if errBTTableCellParameter2399 != nil {
+		return []byte{}, errBTTableCellParameter2399
+	}
+	errBTTableCellParameter2399 = json.Unmarshal([]byte(serializedBTTableCellParameter2399), &toSerialize)
+	if errBTTableCellParameter2399 != nil {
+		return []byte{}, errBTTableCellParameter2399
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

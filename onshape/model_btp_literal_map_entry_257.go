@@ -16,6 +16,7 @@ import (
 
 // BTPLiteralMapEntry257 struct for BTPLiteralMapEntry257
 type BTPLiteralMapEntry257 struct {
+	BTPNode7
 	Atomic              *bool                  `json:"atomic,omitempty"`
 	BtType              *string                `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType    `json:"documentationType,omitempty"`
@@ -433,6 +434,14 @@ func (o *BTPLiteralMapEntry257) SetValue(v BTPExpression9) {
 
 func (o BTPLiteralMapEntry257) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

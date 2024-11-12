@@ -16,6 +16,7 @@ import (
 
 // BTGeneratedGraphicsAppearance4159 struct for BTGeneratedGraphicsAppearance4159
 type BTGeneratedGraphicsAppearance4159 struct {
+	BTGraphicsAppearance1152
 	BtType           *string            `json:"btType,omitempty"`
 	Color            []string           `json:"color,omitempty"`
 	NonTrivial       *bool              `json:"nonTrivial,omitempty"`
@@ -301,6 +302,14 @@ func (o *BTGeneratedGraphicsAppearance4159) SetUsableAppearance(v bool) {
 
 func (o BTGeneratedGraphicsAppearance4159) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTGraphicsAppearance1152, errBTGraphicsAppearance1152 := json.Marshal(o.BTGraphicsAppearance1152)
+	if errBTGraphicsAppearance1152 != nil {
+		return []byte{}, errBTGraphicsAppearance1152
+	}
+	errBTGraphicsAppearance1152 = json.Unmarshal([]byte(serializedBTGraphicsAppearance1152), &toSerialize)
+	if errBTGraphicsAppearance1152 != nil {
+		return []byte{}, errBTGraphicsAppearance1152
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

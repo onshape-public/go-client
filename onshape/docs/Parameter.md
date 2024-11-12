@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowEmptyValue** | Pointer to **bool** |  | [optional] 
 **AllowReserved** | Pointer to **bool** |  | [optional] 
-**Content** | Pointer to [**ParameterContent**](ParameterContent.md) |  | [optional] 
+**Content** | Pointer to [**map[string]MediaType**](MediaType.md) |  | [optional] 
 **Deprecated** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Example** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -91,20 +91,20 @@ HasAllowReserved returns a boolean if a field has been set.
 
 ### GetContent
 
-`func (o *Parameter) GetContent() ParameterContent`
+`func (o *Parameter) GetContent() map[string]MediaType`
 
 GetContent returns the Content field if non-nil, zero value otherwise.
 
 ### GetContentOk
 
-`func (o *Parameter) GetContentOk() (*ParameterContent, bool)`
+`func (o *Parameter) GetContentOk() (*map[string]MediaType, bool)`
 
 GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContent
 
-`func (o *Parameter) SetContent(v ParameterContent)`
+`func (o *Parameter) SetContent(v map[string]MediaType)`
 
 SetContent sets Content field to given value.
 

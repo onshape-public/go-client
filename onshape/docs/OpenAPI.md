@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Info** | Pointer to [**Info**](Info.md) |  | [optional] 
 **JsonSchemaDialect** | Pointer to **string** |  | [optional] 
 **Openapi** | Pointer to **string** |  | [optional] 
-**Paths** | Pointer to [**OpenAPIPaths**](OpenAPIPaths.md) |  | [optional] 
+**Paths** | Pointer to [**map[string]PathItem**](PathItem.md) |  | [optional] 
 **Security** | Pointer to [**[]SecurityRequirement**](SecurityRequirement.md) |  | [optional] 
 **Servers** | Pointer to [**[]Server**](Server.md) |  | [optional] 
 **Tags** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
@@ -187,20 +187,20 @@ HasOpenapi returns a boolean if a field has been set.
 
 ### GetPaths
 
-`func (o *OpenAPI) GetPaths() OpenAPIPaths`
+`func (o *OpenAPI) GetPaths() map[string]PathItem`
 
 GetPaths returns the Paths field if non-nil, zero value otherwise.
 
 ### GetPathsOk
 
-`func (o *OpenAPI) GetPathsOk() (*OpenAPIPaths, bool)`
+`func (o *OpenAPI) GetPathsOk() (*map[string]PathItem, bool)`
 
 GetPathsOk returns a tuple with the Paths field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaths
 
-`func (o *OpenAPI) SetPaths(v OpenAPIPaths)`
+`func (o *OpenAPI) SetPaths(v map[string]PathItem)`
 
 SetPaths sets Paths field to given value.
 

@@ -212,6 +212,56 @@ func (o *BTMSketchGeomEntity5) SetNodeId(v string) {
 	o.GetActualInstance().(getResult).SetNodeId(v)
 }
 
+// GetCombinedSketchEntityType returns the CombinedSketchEntityType field value if set, zero value otherwise.
+func (o *BTMSketchGeomEntity5) GetCombinedSketchEntityType() CombinedSketchEntityType {
+	type getResult interface {
+		GetCombinedSketchEntityType() CombinedSketchEntityType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCombinedSketchEntityType()
+	} else {
+		var de CombinedSketchEntityType
+		return de
+	}
+}
+
+// GetCombinedSketchEntityTypeOk returns a tuple with the CombinedSketchEntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchGeomEntity5) GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool) {
+	type getResult interface {
+		GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCombinedSketchEntityTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCombinedSketchEntityType returns a boolean if a field has been set.
+func (o *BTMSketchGeomEntity5) HasCombinedSketchEntityType() bool {
+	type getResult interface {
+		HasCombinedSketchEntityType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCombinedSketchEntityType()
+	} else {
+		return false
+	}
+}
+
+// SetCombinedSketchEntityType gets a reference to the given CombinedSketchEntityType and assigns it to the CombinedSketchEntityType field.
+func (o *BTMSketchGeomEntity5) SetCombinedSketchEntityType(v CombinedSketchEntityType) {
+	type getResult interface {
+		SetCombinedSketchEntityType(v CombinedSketchEntityType)
+	}
+
+	o.GetActualInstance().(getResult).SetCombinedSketchEntityType(v)
+}
+
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
 func (o *BTMSketchGeomEntity5) GetEntityId() string {
 	type getResult interface {
@@ -836,20 +886,6 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMSketchCurveSegment-155'
-	if jsonDict["btType"] == "BTMSketchCurveSegment-155" {
-		// try to unmarshal JSON data into BTMSketchCurveSegment155
-		var qr *BTMSketchCurveSegment155
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMSketchGeomEntity5 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMSketchGeomEntity5 = nil
-			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurveSegment155: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMSketchImageEntity-763'
 	if jsonDict["btType"] == "BTMSketchImageEntity-763" {
 		// try to unmarshal JSON data into BTMSketchImageEntity763
@@ -889,6 +925,20 @@ func (dst *BTMSketchGeomEntity5) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMSketchGeomEntity5 = nil
 			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchTextEntity1761: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSketchCurveSegment-155'
+	if jsonDict["btType"] == "BTMSketchCurveSegment-155" {
+		// try to unmarshal JSON data into BTMSketchCurveSegment155
+		var qr *BTMSketchCurveSegment155
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSketchGeomEntity5 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSketchGeomEntity5 = nil
+			return fmt.Errorf("failed to unmarshal BTMSketchGeomEntity5 as BTMSketchCurveSegment155: %s", err.Error())
 		}
 	}
 
@@ -958,22 +1008,24 @@ func (v *NullableBTMSketchGeomEntity5) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMSketchGeomEntity5 struct {
+	BTMSketchEntity3
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion                  *string              `json:"importMicroversion,omitempty"`
-	NodeId                              *string              `json:"nodeId,omitempty"`
-	EntityId                            *string              `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string              `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Index                               *int32               `json:"index,omitempty"`
-	Namespace                           *string              `json:"namespace,omitempty"`
-	Parameters                          []BTMParameter1      `json:"parameters,omitempty"`
-	ControlBoxIds                       []string             `json:"controlBoxIds,omitempty"`
-	EntityType                          *GBTSketchEntityType `json:"entityType,omitempty"`
-	FunctionName                        *string              `json:"functionName,omitempty"`
-	IsConstruction                      *bool                `json:"isConstruction,omitempty"`
-	IsFromEndpointSplineHandle          *bool                `json:"isFromEndpointSplineHandle,omitempty"`
-	IsFromSplineControlPolygon          *bool                `json:"isFromSplineControlPolygon,omitempty"`
-	IsFromSplineHandle                  *bool                `json:"isFromSplineHandle,omitempty"`
+	ImportMicroversion                  *string                   `json:"importMicroversion,omitempty"`
+	NodeId                              *string                   `json:"nodeId,omitempty"`
+	CombinedSketchEntityType            *CombinedSketchEntityType `json:"combinedSketchEntityType,omitempty"`
+	EntityId                            *string                   `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string                   `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Index                               *int32                    `json:"index,omitempty"`
+	Namespace                           *string                   `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1           `json:"parameters,omitempty"`
+	ControlBoxIds                       []string                  `json:"controlBoxIds,omitempty"`
+	EntityType                          *GBTSketchEntityType      `json:"entityType,omitempty"`
+	FunctionName                        *string                   `json:"functionName,omitempty"`
+	IsConstruction                      *bool                     `json:"isConstruction,omitempty"`
+	IsFromEndpointSplineHandle          *bool                     `json:"isFromEndpointSplineHandle,omitempty"`
+	IsFromSplineControlPolygon          *bool                     `json:"isFromSplineControlPolygon,omitempty"`
+	IsFromSplineHandle                  *bool                     `json:"isFromSplineHandle,omitempty"`
 }
 
 // Newbase_BTMSketchGeomEntity5 instantiates a new base_BTMSketchGeomEntity5 object
@@ -1087,6 +1139,38 @@ func (o *base_BTMSketchGeomEntity5) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *base_BTMSketchGeomEntity5) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetCombinedSketchEntityType returns the CombinedSketchEntityType field value if set, zero value otherwise.
+func (o *base_BTMSketchGeomEntity5) GetCombinedSketchEntityType() CombinedSketchEntityType {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		var ret CombinedSketchEntityType
+		return ret
+	}
+	return *o.CombinedSketchEntityType
+}
+
+// GetCombinedSketchEntityTypeOk returns a tuple with the CombinedSketchEntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchGeomEntity5) GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool) {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		return nil, false
+	}
+	return o.CombinedSketchEntityType, true
+}
+
+// HasCombinedSketchEntityType returns a boolean if a field has been set.
+func (o *base_BTMSketchGeomEntity5) HasCombinedSketchEntityType() bool {
+	if o != nil && o.CombinedSketchEntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCombinedSketchEntityType gets a reference to the given CombinedSketchEntityType and assigns it to the CombinedSketchEntityType field.
+func (o *base_BTMSketchGeomEntity5) SetCombinedSketchEntityType(v CombinedSketchEntityType) {
+	o.CombinedSketchEntityType = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -1475,6 +1559,14 @@ func (o *base_BTMSketchGeomEntity5) SetIsFromSplineHandle(v bool) {
 
 func (o base_BTMSketchGeomEntity5) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchEntity3, errBTMSketchEntity3 := json.Marshal(o.BTMSketchEntity3)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
+	errBTMSketchEntity3 = json.Unmarshal([]byte(serializedBTMSketchEntity3), &toSerialize)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -1483,6 +1575,9 @@ func (o base_BTMSketchGeomEntity5) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.CombinedSketchEntityType != nil {
+		toSerialize["combinedSketchEntityType"] = o.CombinedSketchEntityType
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId

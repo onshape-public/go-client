@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefiniteJsonPath** | Pointer to **string** |  | [optional] 
-**Node** | Pointer to [**BTJsonMatch2290Node**](BTJsonMatch2290Node.md) |  | [optional] 
+**Node** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasDefiniteJsonPath returns a boolean if a field has been set.
 
 ### GetNode
 
-`func (o *BTJsonMatch2290) GetNode() BTJsonMatch2290Node`
+`func (o *BTJsonMatch2290) GetNode() map[string]interface{}`
 
 GetNode returns the Node field if non-nil, zero value otherwise.
 
 ### GetNodeOk
 
-`func (o *BTJsonMatch2290) GetNodeOk() (*BTJsonMatch2290Node, bool)`
+`func (o *BTJsonMatch2290) GetNodeOk() (*map[string]interface{}, bool)`
 
 GetNodeOk returns a tuple with the Node field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNode
 
-`func (o *BTJsonMatch2290) SetNode(v BTJsonMatch2290Node)`
+`func (o *BTJsonMatch2290) SetNode(v map[string]interface{})`
 
 SetNode sets Node field to given value.
 

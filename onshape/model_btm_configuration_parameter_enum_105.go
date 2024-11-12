@@ -16,21 +16,23 @@ import (
 
 // BTMConfigurationParameterEnum105 struct for BTMConfigurationParameterEnum105
 type BTMConfigurationParameterEnum105 struct {
+	BTMConfigurationParameter819
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
-	NodeId               *string                        `json:"nodeId,omitempty"`
-	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
-	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
-	ParameterId          *string                        `json:"parameterId,omitempty"`
-	ParameterName        *string                        `json:"parameterName,omitempty"`
-	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid                *bool                          `json:"valid,omitempty"`
-	DefaultValue         *string                        `json:"defaultValue,omitempty"`
-	EnumName             *string                        `json:"enumName,omitempty"`
-	Namespace            *string                        `json:"namespace,omitempty"`
-	OptionIds            []string                       `json:"optionIds,omitempty"`
-	Options              []BTMEnumOption592             `json:"options,omitempty"`
+	ImportMicroversion   *string                            `json:"importMicroversion,omitempty"`
+	NodeId               *string                            `json:"nodeId,omitempty"`
+	GeneratedParameterId *BTTreeNode20                      `json:"generatedParameterId,omitempty"`
+	IsCosmetic           *bool                              `json:"isCosmetic,omitempty"`
+	ParameterId          *string                            `json:"parameterId,omitempty"`
+	ParameterName        *string                            `json:"parameterName,omitempty"`
+	ParameterType        *GBTConfigurationParameterType     `json:"parameterType,omitempty"`
+	Valid                *bool                              `json:"valid,omitempty"`
+	VisibilityCondition  *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	DefaultValue         *string                            `json:"defaultValue,omitempty"`
+	EnumName             *string                            `json:"enumName,omitempty"`
+	Namespace            *string                            `json:"namespace,omitempty"`
+	OptionIds            []string                           `json:"optionIds,omitempty"`
+	Options              []BTMEnumOption592                 `json:"options,omitempty"`
 }
 
 // NewBTMConfigurationParameterEnum105 instantiates a new BTMConfigurationParameterEnum105 object
@@ -338,6 +340,38 @@ func (o *BTMConfigurationParameterEnum105) SetValid(v bool) {
 	o.Valid = &v
 }
 
+// GetVisibilityCondition returns the VisibilityCondition field value if set, zero value otherwise.
+func (o *BTMConfigurationParameterEnum105) GetVisibilityCondition() BTParameterVisibilityCondition177 {
+	if o == nil || o.VisibilityCondition == nil {
+		var ret BTParameterVisibilityCondition177
+		return ret
+	}
+	return *o.VisibilityCondition
+}
+
+// GetVisibilityConditionOk returns a tuple with the VisibilityCondition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameterEnum105) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool) {
+	if o == nil || o.VisibilityCondition == nil {
+		return nil, false
+	}
+	return o.VisibilityCondition, true
+}
+
+// HasVisibilityCondition returns a boolean if a field has been set.
+func (o *BTMConfigurationParameterEnum105) HasVisibilityCondition() bool {
+	if o != nil && o.VisibilityCondition != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibilityCondition gets a reference to the given BTParameterVisibilityCondition177 and assigns it to the VisibilityCondition field.
+func (o *BTMConfigurationParameterEnum105) SetVisibilityCondition(v BTParameterVisibilityCondition177) {
+	o.VisibilityCondition = &v
+}
+
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
 func (o *BTMConfigurationParameterEnum105) GetDefaultValue() string {
 	if o == nil || o.DefaultValue == nil {
@@ -500,6 +534,14 @@ func (o *BTMConfigurationParameterEnum105) SetOptions(v []BTMEnumOption592) {
 
 func (o BTMConfigurationParameterEnum105) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMConfigurationParameter819, errBTMConfigurationParameter819 := json.Marshal(o.BTMConfigurationParameter819)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
+	errBTMConfigurationParameter819 = json.Unmarshal([]byte(serializedBTMConfigurationParameter819), &toSerialize)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -526,6 +568,9 @@ func (o BTMConfigurationParameterEnum105) MarshalJSON() ([]byte, error) {
 	}
 	if o.Valid != nil {
 		toSerialize["valid"] = o.Valid
+	}
+	if o.VisibilityCondition != nil {
+		toSerialize["visibilityCondition"] = o.VisibilityCondition
 	}
 	if o.DefaultValue != nil {
 		toSerialize["defaultValue"] = o.DefaultValue

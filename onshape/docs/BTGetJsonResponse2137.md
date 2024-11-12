@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ChangeId** | Pointer to **string** |  | [optional] 
-**Tree** | Pointer to [**BTGetJsonResponse2137Tree**](BTGetJsonResponse2137Tree.md) |  | [optional] 
+**Tree** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasChangeId returns a boolean if a field has been set.
 
 ### GetTree
 
-`func (o *BTGetJsonResponse2137) GetTree() BTGetJsonResponse2137Tree`
+`func (o *BTGetJsonResponse2137) GetTree() map[string]interface{}`
 
 GetTree returns the Tree field if non-nil, zero value otherwise.
 
 ### GetTreeOk
 
-`func (o *BTGetJsonResponse2137) GetTreeOk() (*BTGetJsonResponse2137Tree, bool)`
+`func (o *BTGetJsonResponse2137) GetTreeOk() (*map[string]interface{}, bool)`
 
 GetTreeOk returns a tuple with the Tree field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTree
 
-`func (o *BTGetJsonResponse2137) SetTree(v BTGetJsonResponse2137Tree)`
+`func (o *BTGetJsonResponse2137) SetTree(v map[string]interface{})`
 
 SetTree sets Tree field to given value.
 

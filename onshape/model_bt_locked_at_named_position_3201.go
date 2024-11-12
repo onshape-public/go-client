@@ -16,6 +16,7 @@ import (
 
 // BTLockedAtNamedPosition3201 struct for BTLockedAtNamedPosition3201
 type BTLockedAtNamedPosition3201 struct {
+	BTLockedSubAssembly4590
 	BtType                      *string                                   `json:"btType,omitempty"`
 	LockType                    *GBTSubAssemblyLockType                   `json:"lockType,omitempty"`
 	LockedSubAssemblyOutputInfo *BTRigidOrLockedSubAssemblyOutputInfo3860 `json:"lockedSubAssemblyOutputInfo,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTLockedAtNamedPosition3201) SetNamedPositionId(v string) {
 
 func (o BTLockedAtNamedPosition3201) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTLockedSubAssembly4590, errBTLockedSubAssembly4590 := json.Marshal(o.BTLockedSubAssembly4590)
+	if errBTLockedSubAssembly4590 != nil {
+		return []byte{}, errBTLockedSubAssembly4590
+	}
+	errBTLockedSubAssembly4590 = json.Unmarshal([]byte(serializedBTLockedSubAssembly4590), &toSerialize)
+	if errBTLockedSubAssembly4590 != nil {
+		return []byte{}, errBTLockedSubAssembly4590
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

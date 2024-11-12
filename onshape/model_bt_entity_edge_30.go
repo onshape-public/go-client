@@ -16,6 +16,7 @@ import (
 
 // BTEntityEdge30 struct for BTEntityEdge30
 type BTEntityEdge30 struct {
+	BTTessellatedGeometry2576
 	BtType                      *string                        `json:"btType,omitempty"`
 	Compressed                  *bool                          `json:"compressed,omitempty"`
 	Decompressed                *BTEntityGeometry35            `json:"decompressed,omitempty"`
@@ -466,6 +467,14 @@ func (o *BTEntityEdge30) SetPoints(v BTImmutableFloatArray) {
 
 func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTessellatedGeometry2576, errBTTessellatedGeometry2576 := json.Marshal(o.BTTessellatedGeometry2576)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
+	errBTTessellatedGeometry2576 = json.Unmarshal([]byte(serializedBTTessellatedGeometry2576), &toSerialize)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

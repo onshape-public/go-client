@@ -16,6 +16,7 @@ import (
 
 // BTBillOfMaterialsTableRowMetadata1300 struct for BTBillOfMaterialsTableRowMetadata1300
 type BTBillOfMaterialsTableRowMetadata1300 struct {
+	BTTableBaseRowMetadata3181
 	BtType                  *string                                `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableAssemblyCrossHighlightData2675 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData      *BTTableAssemblyCrossHighlightData2675 `json:"crossHighlightData,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTBillOfMaterialsTableRowMetadata1300) SetCrossHighlightData(v BTTableA
 
 func (o BTBillOfMaterialsTableRowMetadata1300) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
+	if errBTTableBaseRowMetadata3181 != nil {
+		return []byte{}, errBTTableBaseRowMetadata3181
+	}
+	errBTTableBaseRowMetadata3181 = json.Unmarshal([]byte(serializedBTTableBaseRowMetadata3181), &toSerialize)
+	if errBTTableBaseRowMetadata3181 != nil {
+		return []byte{}, errBTTableBaseRowMetadata3181
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

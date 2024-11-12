@@ -16,6 +16,7 @@ import (
 
 // BTSplineHandleFilter2971 struct for BTSplineHandleFilter2971
 type BTSplineHandleFilter2971 struct {
+	BTQueryFilter183
 	BtType             *string `json:"btType,omitempty"`
 	AllowsSplineHandle *bool   `json:"allowsSplineHandle,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTSplineHandleFilter2971) SetAllowsSplineHandle(v bool) {
 
 func (o BTSplineHandleFilter2971) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

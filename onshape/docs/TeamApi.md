@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## Find
 
-> BTGlobalTreeNodeListResponseBTTeamInfo Find(ctx).Prefix(prefix).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
+> BTGlobalTreeNodeListResponseBTTeamInfo Find(ctx).Query(query).Filter(filter).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).SortColumn(sortColumn).SortOrder(sortOrder).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
 
 Get a list of all teams the current user belongs to.
 
@@ -29,16 +29,19 @@ import (
 )
 
 func main() {
-    prefix := "prefix_example" // string |  (optional) (default to "")
+    query := "query_example" // string |  (optional) (default to "")
+    filter := int32(56) // int32 |  (optional) (default to 0)
     uid := "uid_example" // string |  (optional)
     companyId := "companyId_example" // string |  (optional)
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
+    sortColumn := "sortColumn_example" // string |  (optional)
+    sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
     includeCompanyOwnedTeams := true // bool |  (optional) (default to true)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.TeamApi.Find(context.Background()).Prefix(prefix).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
+    resp, r, err := apiClient.TeamApi.Find(context.Background()).Query(query).Filter(filter).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).SortColumn(sortColumn).SortOrder(sortOrder).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TeamApi.Find``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,11 +62,14 @@ Other parameters are passed through a pointer to a apiFindRequest struct via the
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prefix** | **string** |  | [default to &quot;&quot;]
+ **query** | **string** |  | [default to &quot;&quot;]
+ **filter** | **int32** |  | [default to 0]
  **uid** | **string** |  | 
  **companyId** | **string** |  | 
  **offset** | **int32** |  | [default to 0]
  **limit** | **int32** |  | [default to 20]
+ **sortColumn** | **string** |  | 
+ **sortOrder** | **string** |  | [default to &quot;asc&quot;]
  **includeCompanyOwnedTeams** | **bool** |  | [default to true]
 
 ### Return type

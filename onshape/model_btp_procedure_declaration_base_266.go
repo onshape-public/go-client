@@ -57,56 +57,6 @@ func NewBTPProcedureDeclarationBase266WithDefaults() *BTPProcedureDeclarationBas
 	return &this
 }
 
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPProcedureDeclarationBase266) GetAtomic() bool {
-	type getResult interface {
-		GetAtomic() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAtomic()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPProcedureDeclarationBase266) GetAtomicOk() (*bool, bool) {
-	type getResult interface {
-		GetAtomicOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAtomicOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPProcedureDeclarationBase266) HasAtomic() bool {
-	type getResult interface {
-		HasAtomic() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasAtomic()
-	} else {
-		return false
-	}
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPProcedureDeclarationBase266) SetAtomic(v bool) {
-	type getResult interface {
-		SetAtomic(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetAtomic(v)
-}
-
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTPProcedureDeclarationBase266) GetBtType() string {
 	type getResult interface {
@@ -155,6 +105,56 @@ func (o *BTPProcedureDeclarationBase266) SetBtType(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPProcedureDeclarationBase266) GetAtomic() bool {
+	type getResult interface {
+		GetAtomic() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAtomic()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPProcedureDeclarationBase266) GetAtomicOk() (*bool, bool) {
+	type getResult interface {
+		GetAtomicOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAtomicOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPProcedureDeclarationBase266) HasAtomic() bool {
+	type getResult interface {
+		HasAtomic() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAtomic()
+	} else {
+		return false
+	}
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPProcedureDeclarationBase266) SetAtomic(v bool) {
+	type getResult interface {
+		SetAtomic(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAtomic(v)
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -1339,8 +1339,9 @@ func (v *NullableBTPProcedureDeclarationBase266) UnmarshalJSON(src []byte) error
 }
 
 type base_BTPProcedureDeclarationBase266 struct {
-	Atomic                *bool                       `json:"atomic,omitempty"`
+	BTPTopLevelNode286
 	BtType                *string                     `json:"btType,omitempty"`
+	Atomic                *bool                       `json:"atomic,omitempty"`
 	DocumentationType     *GBTPDefinitionType         `json:"documentationType,omitempty"`
 	EndSourceLocation     *int32                      `json:"endSourceLocation,omitempty"`
 	NodeId                *string                     `json:"nodeId,omitempty"`
@@ -1381,38 +1382,6 @@ func Newbase_BTPProcedureDeclarationBase266WithDefaults() *base_BTPProcedureDecl
 	return &this
 }
 
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *base_BTPProcedureDeclarationBase266) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTPProcedureDeclarationBase266) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *base_BTPProcedureDeclarationBase266) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *base_BTPProcedureDeclarationBase266) SetAtomic(v bool) {
-	o.Atomic = &v
-}
-
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *base_BTPProcedureDeclarationBase266) GetBtType() string {
 	if o == nil || o.BtType == nil {
@@ -1443,6 +1412,38 @@ func (o *base_BTPProcedureDeclarationBase266) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTPProcedureDeclarationBase266) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *base_BTPProcedureDeclarationBase266) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPProcedureDeclarationBase266) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *base_BTPProcedureDeclarationBase266) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *base_BTPProcedureDeclarationBase266) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -2119,11 +2120,19 @@ func (o *base_BTPProcedureDeclarationBase266) SetSpaceInEmptyList(v BTPSpace10) 
 
 func (o base_BTPProcedureDeclarationBase266) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPTopLevelNode286, errBTPTopLevelNode286 := json.Marshal(o.BTPTopLevelNode286)
+	if errBTPTopLevelNode286 != nil {
+		return []byte{}, errBTPTopLevelNode286
+	}
+	errBTPTopLevelNode286 = json.Unmarshal([]byte(serializedBTPTopLevelNode286), &toSerialize)
+	if errBTPTopLevelNode286 != nil {
+		return []byte{}, errBTPTopLevelNode286
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType

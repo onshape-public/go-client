@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Change** | Pointer to [**BTJEdit3734**](BTJEdit3734.md) |  | [optional] 
-**Patch** | Pointer to [**BTDiffJsonResponse2725Patch**](BTDiffJsonResponse2725Patch.md) |  | [optional] 
+**Patch** | Pointer to **map[string]interface{}** |  | [optional] 
 **SourceChangeId** | Pointer to **string** |  | [optional] 
 **TargetChangeId** | Pointer to **string** |  | [optional] 
 
@@ -81,20 +81,20 @@ HasChange returns a boolean if a field has been set.
 
 ### GetPatch
 
-`func (o *BTDiffJsonResponse2725) GetPatch() BTDiffJsonResponse2725Patch`
+`func (o *BTDiffJsonResponse2725) GetPatch() map[string]interface{}`
 
 GetPatch returns the Patch field if non-nil, zero value otherwise.
 
 ### GetPatchOk
 
-`func (o *BTDiffJsonResponse2725) GetPatchOk() (*BTDiffJsonResponse2725Patch, bool)`
+`func (o *BTDiffJsonResponse2725) GetPatchOk() (*map[string]interface{}, bool)`
 
 GetPatchOk returns a tuple with the Patch field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPatch
 
-`func (o *BTDiffJsonResponse2725) SetPatch(v BTDiffJsonResponse2725Patch)`
+`func (o *BTDiffJsonResponse2725) SetPatch(v map[string]interface{})`
 
 SetPatch sets Patch field to given value.
 

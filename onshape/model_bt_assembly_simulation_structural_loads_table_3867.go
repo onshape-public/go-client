@@ -16,6 +16,7 @@ import (
 
 // BTAssemblySimulationStructuralLoadsTable3867 struct for BTAssemblySimulationStructuralLoadsTable3867
 type BTAssemblySimulationStructuralLoadsTable3867 struct {
+	BTTable1825
 	AllRowValues  [][]string              `json:"allRowValues,omitempty"`
 	BtType        *string                 `json:"btType,omitempty"`
 	ColumnCount   *int32                  `json:"columnCount,omitempty"`
@@ -466,6 +467,14 @@ func (o *BTAssemblySimulationStructuralLoadsTable3867) SetTitle(v string) {
 
 func (o BTAssemblySimulationStructuralLoadsTable3867) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTable1825, errBTTable1825 := json.Marshal(o.BTTable1825)
+	if errBTTable1825 != nil {
+		return []byte{}, errBTTable1825
+	}
+	errBTTable1825 = json.Unmarshal([]byte(serializedBTTable1825), &toSerialize)
+	if errBTTable1825 != nil {
+		return []byte{}, errBTTable1825
+	}
 	if o.AllRowValues != nil {
 		toSerialize["allRowValues"] = o.AllRowValues
 	}

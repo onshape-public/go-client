@@ -16,6 +16,7 @@ import (
 
 // BTMConfiguredValueByBoolean1501 struct for BTMConfiguredValueByBoolean1501
 type BTMConfiguredValueByBoolean1501 struct {
+	BTMConfiguredValue1341
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion       *string        `json:"importMicroversion,omitempty"`
@@ -236,6 +237,14 @@ func (o *BTMConfiguredValueByBoolean1501) SetBooleanValue(v bool) {
 
 func (o BTMConfiguredValueByBoolean1501) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMConfiguredValue1341, errBTMConfiguredValue1341 := json.Marshal(o.BTMConfiguredValue1341)
+	if errBTMConfiguredValue1341 != nil {
+		return []byte{}, errBTMConfiguredValue1341
+	}
+	errBTMConfiguredValue1341 = json.Unmarshal([]byte(serializedBTMConfiguredValue1341), &toSerialize)
+	if errBTMConfiguredValue1341 != nil {
+		return []byte{}, errBTMConfiguredValue1341
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -16,6 +16,7 @@ import (
 
 // BTEntityTypeFilter124 struct for BTEntityTypeFilter124
 type BTEntityTypeFilter124 struct {
+	BTQueryFilter183
 	BtType     *string        `json:"btType,omitempty"`
 	EntityType *GBTEntityType `json:"entityType,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTEntityTypeFilter124) SetEntityType(v GBTEntityType) {
 
 func (o BTEntityTypeFilter124) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

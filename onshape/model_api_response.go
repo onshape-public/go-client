@@ -16,7 +16,7 @@ import (
 
 // ApiResponse struct for ApiResponse
 type ApiResponse struct {
-	Content     *ApiResponseContent               `json:"content,omitempty"`
+	Content     *map[string]MediaType             `json:"content,omitempty"`
 	Description *string                           `json:"description,omitempty"`
 	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
 	Getref      *string                           `json:"get$ref,omitempty"`
@@ -42,9 +42,9 @@ func NewApiResponseWithDefaults() *ApiResponse {
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *ApiResponse) GetContent() ApiResponseContent {
+func (o *ApiResponse) GetContent() map[string]MediaType {
 	if o == nil || o.Content == nil {
-		var ret ApiResponseContent
+		var ret map[string]MediaType
 		return ret
 	}
 	return *o.Content
@@ -52,7 +52,7 @@ func (o *ApiResponse) GetContent() ApiResponseContent {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiResponse) GetContentOk() (*ApiResponseContent, bool) {
+func (o *ApiResponse) GetContentOk() (*map[string]MediaType, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *ApiResponse) HasContent() bool {
 	return false
 }
 
-// SetContent gets a reference to the given ApiResponseContent and assigns it to the Content field.
-func (o *ApiResponse) SetContent(v ApiResponseContent) {
+// SetContent gets a reference to the given map[string]MediaType and assigns it to the Content field.
+func (o *ApiResponse) SetContent(v map[string]MediaType) {
 	o.Content = &v
 }
 

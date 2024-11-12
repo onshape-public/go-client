@@ -16,6 +16,7 @@ import (
 
 // BTExportModelArcEdgeGeometry1257 struct for BTExportModelArcEdgeGeometry1257
 type BTExportModelArcEdgeGeometry1257 struct {
+	BTExportModelEdgeGeometry1125
 	BtType         *string        `json:"btType,omitempty"`
 	EndPoint       *BTVector3d389 `json:"endPoint,omitempty"`
 	EndVector      *BTVector3d389 `json:"endVector,omitempty"`
@@ -367,6 +368,14 @@ func (o *BTExportModelArcEdgeGeometry1257) SetArcSweep(v float64) {
 
 func (o BTExportModelArcEdgeGeometry1257) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTExportModelEdgeGeometry1125, errBTExportModelEdgeGeometry1125 := json.Marshal(o.BTExportModelEdgeGeometry1125)
+	if errBTExportModelEdgeGeometry1125 != nil {
+		return []byte{}, errBTExportModelEdgeGeometry1125
+	}
+	errBTExportModelEdgeGeometry1125 = json.Unmarshal([]byte(serializedBTExportModelEdgeGeometry1125), &toSerialize)
+	if errBTExportModelEdgeGeometry1125 != nil {
+		return []byte{}, errBTExportModelEdgeGeometry1125
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -16,6 +16,7 @@ import (
 
 // BTCylindricalImageMapping1640 struct for BTCylindricalImageMapping1640
 type BTCylindricalImageMapping1640 struct {
+	BTImageMapping3821
 	BtType           *string                `json:"btType,omitempty"`
 	DeterministicIds []string               `json:"deterministicIds,omitempty"`
 	UvTransform      *BTMatrix3x3340        `json:"uvTransform,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTCylindricalImageMapping1640) SetRadius(v float32) {
 
 func (o BTCylindricalImageMapping1640) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTImageMapping3821, errBTImageMapping3821 := json.Marshal(o.BTImageMapping3821)
+	if errBTImageMapping3821 != nil {
+		return []byte{}, errBTImageMapping3821
+	}
+	errBTImageMapping3821 = json.Unmarshal([]byte(serializedBTImageMapping3821), &toSerialize)
+	if errBTImageMapping3821 != nil {
+		return []byte{}, errBTImageMapping3821
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

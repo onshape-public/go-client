@@ -782,6 +782,7 @@ func (v *NullableBTMIndividualQueryWithOccurrence811) UnmarshalJSON(src []byte) 
 }
 
 type base_BTMIndividualQueryWithOccurrence811 struct {
+	BTMIndividualQueryWithOccurrenceBase904
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
@@ -1233,6 +1234,14 @@ func (o *base_BTMIndividualQueryWithOccurrence811) SetEntityQuery(v string) {
 
 func (o base_BTMIndividualQueryWithOccurrence811) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMIndividualQueryWithOccurrenceBase904, errBTMIndividualQueryWithOccurrenceBase904 := json.Marshal(o.BTMIndividualQueryWithOccurrenceBase904)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
+	errBTMIndividualQueryWithOccurrenceBase904 = json.Unmarshal([]byte(serializedBTMIndividualQueryWithOccurrenceBase904), &toSerialize)
+	if errBTMIndividualQueryWithOccurrenceBase904 != nil {
+		return []byte{}, errBTMIndividualQueryWithOccurrenceBase904
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

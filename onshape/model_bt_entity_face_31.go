@@ -1132,6 +1132,7 @@ func (v *NullableBTEntityFace31) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTEntityFace31 struct {
+	BTTessellatedGeometry2576
 	BtType                          *string                 `json:"btType,omitempty"`
 	Compressed                      *bool                   `json:"compressed,omitempty"`
 	Decompressed                    *BTEntityGeometry35     `json:"decompressed,omitempty"`
@@ -1813,6 +1814,14 @@ func (o *base_BTEntityFace31) SetTriangleCount(v int32) {
 
 func (o base_BTEntityFace31) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTTessellatedGeometry2576, errBTTessellatedGeometry2576 := json.Marshal(o.BTTessellatedGeometry2576)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
+	errBTTessellatedGeometry2576 = json.Unmarshal([]byte(serializedBTTessellatedGeometry2576), &toSerialize)
+	if errBTTessellatedGeometry2576 != nil {
+		return []byte{}, errBTTessellatedGeometry2576
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

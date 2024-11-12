@@ -90,13 +90,13 @@ func (o *BTPStatementIf276) AsBTPStatement269() *BTPStatement269 {
 	return &BTPStatement269{o}
 }
 
-// BTPStatementLoopWhile280AsBTPStatement269 is a convenience function that returns BTPStatementLoopWhile280 wrapped in BTPStatement269
-func (o *BTPStatementLoopWhile280) AsBTPStatement269() *BTPStatement269 {
+// BTPStatementTry1523AsBTPStatement269 is a convenience function that returns BTPStatementTry1523 wrapped in BTPStatement269
+func (o *BTPStatementTry1523) AsBTPStatement269() *BTPStatement269 {
 	return &BTPStatement269{o}
 }
 
-// BTPStatementTry1523AsBTPStatement269 is a convenience function that returns BTPStatementTry1523 wrapped in BTPStatement269
-func (o *BTPStatementTry1523) AsBTPStatement269() *BTPStatement269 {
+// BTPStatementLoopWhile280AsBTPStatement269 is a convenience function that returns BTPStatementLoopWhile280 wrapped in BTPStatement269
+func (o *BTPStatementLoopWhile280) AsBTPStatement269() *BTPStatement269 {
 	return &BTPStatement269{o}
 }
 
@@ -803,48 +803,6 @@ func (dst *BTPStatement269) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTPStatementLoopFor3-278'
-	if jsonDict["btType"] == "BTPStatementLoopFor3-278" {
-		// try to unmarshal JSON data into BTPStatementLoopFor3278
-		var qr *BTPStatementLoopFor3278
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPStatement269 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPStatement269 = nil
-			return fmt.Errorf("failed to unmarshal BTPStatement269 as BTPStatementLoopFor3278: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTPStatementLoopForIn-279'
-	if jsonDict["btType"] == "BTPStatementLoopForIn-279" {
-		// try to unmarshal JSON data into BTPStatementLoopForIn279
-		var qr *BTPStatementLoopForIn279
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPStatement269 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPStatement269 = nil
-			return fmt.Errorf("failed to unmarshal BTPStatement269 as BTPStatementLoopForIn279: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTPStatementLoopWhile-280'
-	if jsonDict["btType"] == "BTPStatementLoopWhile-280" {
-		// try to unmarshal JSON data into BTPStatementLoopWhile280
-		var qr *BTPStatementLoopWhile280
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPStatement269 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPStatement269 = nil
-			return fmt.Errorf("failed to unmarshal BTPStatement269 as BTPStatementLoopWhile280: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTPStatementReturn-281'
 	if jsonDict["btType"] == "BTPStatementReturn-281" {
 		// try to unmarshal JSON data into BTPStatementReturn281
@@ -898,6 +856,48 @@ func (dst *BTPStatement269) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPStatement269 = nil
 			return fmt.Errorf("failed to unmarshal BTPStatement269 as BTPStatementVarDeclaration282: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementLoopFor3-278'
+	if jsonDict["btType"] == "BTPStatementLoopFor3-278" {
+		// try to unmarshal JSON data into BTPStatementLoopFor3278
+		var qr *BTPStatementLoopFor3278
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPStatement269 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPStatement269 = nil
+			return fmt.Errorf("failed to unmarshal BTPStatement269 as BTPStatementLoopFor3278: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementLoopForIn-279'
+	if jsonDict["btType"] == "BTPStatementLoopForIn-279" {
+		// try to unmarshal JSON data into BTPStatementLoopForIn279
+		var qr *BTPStatementLoopForIn279
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPStatement269 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPStatement269 = nil
+			return fmt.Errorf("failed to unmarshal BTPStatement269 as BTPStatementLoopForIn279: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPStatementLoopWhile-280'
+	if jsonDict["btType"] == "BTPStatementLoopWhile-280" {
+		// try to unmarshal JSON data into BTPStatementLoopWhile280
+		var qr *BTPStatementLoopWhile280
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPStatement269 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPStatement269 = nil
+			return fmt.Errorf("failed to unmarshal BTPStatement269 as BTPStatementLoopWhile280: %s", err.Error())
 		}
 	}
 
@@ -967,6 +967,7 @@ func (v *NullableBTPStatement269) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPStatement269 struct {
+	BTPNode7
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -1351,6 +1352,14 @@ func (o *base_BTPStatement269) SetAnnotation(v BTPAnnotation231) {
 
 func (o base_BTPStatement269) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

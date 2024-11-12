@@ -16,6 +16,7 @@ import (
 
 // BTPModuleId235 struct for BTPModuleId235
 type BTPModuleId235 struct {
+	BTPNode7
 	Atomic                                  *bool                              `json:"atomic,omitempty"`
 	BtType                                  *string                            `json:"btType,omitempty"`
 	DocumentationType                       *GBTPDefinitionType                `json:"documentationType,omitempty"`
@@ -1225,6 +1226,14 @@ func (o *BTPModuleId235) SetVersionPotentiallyValid(v bool) {
 
 func (o BTPModuleId235) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

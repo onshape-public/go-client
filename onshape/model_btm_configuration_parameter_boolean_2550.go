@@ -16,17 +16,19 @@ import (
 
 // BTMConfigurationParameterBoolean2550 struct for BTMConfigurationParameterBoolean2550
 type BTMConfigurationParameterBoolean2550 struct {
+	BTMConfigurationParameter819
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
-	NodeId               *string                        `json:"nodeId,omitempty"`
-	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
-	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
-	ParameterId          *string                        `json:"parameterId,omitempty"`
-	ParameterName        *string                        `json:"parameterName,omitempty"`
-	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid                *bool                          `json:"valid,omitempty"`
-	DefaultValue         *bool                          `json:"defaultValue,omitempty"`
+	ImportMicroversion   *string                            `json:"importMicroversion,omitempty"`
+	NodeId               *string                            `json:"nodeId,omitempty"`
+	GeneratedParameterId *BTTreeNode20                      `json:"generatedParameterId,omitempty"`
+	IsCosmetic           *bool                              `json:"isCosmetic,omitempty"`
+	ParameterId          *string                            `json:"parameterId,omitempty"`
+	ParameterName        *string                            `json:"parameterName,omitempty"`
+	ParameterType        *GBTConfigurationParameterType     `json:"parameterType,omitempty"`
+	Valid                *bool                              `json:"valid,omitempty"`
+	VisibilityCondition  *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	DefaultValue         *bool                              `json:"defaultValue,omitempty"`
 }
 
 // NewBTMConfigurationParameterBoolean2550 instantiates a new BTMConfigurationParameterBoolean2550 object
@@ -334,6 +336,38 @@ func (o *BTMConfigurationParameterBoolean2550) SetValid(v bool) {
 	o.Valid = &v
 }
 
+// GetVisibilityCondition returns the VisibilityCondition field value if set, zero value otherwise.
+func (o *BTMConfigurationParameterBoolean2550) GetVisibilityCondition() BTParameterVisibilityCondition177 {
+	if o == nil || o.VisibilityCondition == nil {
+		var ret BTParameterVisibilityCondition177
+		return ret
+	}
+	return *o.VisibilityCondition
+}
+
+// GetVisibilityConditionOk returns a tuple with the VisibilityCondition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameterBoolean2550) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool) {
+	if o == nil || o.VisibilityCondition == nil {
+		return nil, false
+	}
+	return o.VisibilityCondition, true
+}
+
+// HasVisibilityCondition returns a boolean if a field has been set.
+func (o *BTMConfigurationParameterBoolean2550) HasVisibilityCondition() bool {
+	if o != nil && o.VisibilityCondition != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibilityCondition gets a reference to the given BTParameterVisibilityCondition177 and assigns it to the VisibilityCondition field.
+func (o *BTMConfigurationParameterBoolean2550) SetVisibilityCondition(v BTParameterVisibilityCondition177) {
+	o.VisibilityCondition = &v
+}
+
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
 func (o *BTMConfigurationParameterBoolean2550) GetDefaultValue() bool {
 	if o == nil || o.DefaultValue == nil {
@@ -368,6 +402,14 @@ func (o *BTMConfigurationParameterBoolean2550) SetDefaultValue(v bool) {
 
 func (o BTMConfigurationParameterBoolean2550) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMConfigurationParameter819, errBTMConfigurationParameter819 := json.Marshal(o.BTMConfigurationParameter819)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
+	errBTMConfigurationParameter819 = json.Unmarshal([]byte(serializedBTMConfigurationParameter819), &toSerialize)
+	if errBTMConfigurationParameter819 != nil {
+		return []byte{}, errBTMConfigurationParameter819
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -394,6 +436,9 @@ func (o BTMConfigurationParameterBoolean2550) MarshalJSON() ([]byte, error) {
 	}
 	if o.Valid != nil {
 		toSerialize["valid"] = o.Valid
+	}
+	if o.VisibilityCondition != nil {
+		toSerialize["visibilityCondition"] = o.VisibilityCondition
 	}
 	if o.DefaultValue != nil {
 		toSerialize["defaultValue"] = o.DefaultValue

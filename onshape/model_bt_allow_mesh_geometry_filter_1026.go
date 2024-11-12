@@ -16,6 +16,7 @@ import (
 
 // BTAllowMeshGeometryFilter1026 struct for BTAllowMeshGeometryFilter1026
 type BTAllowMeshGeometryFilter1026 struct {
+	BTQueryFilter183
 	BtType             *string `json:"btType,omitempty"`
 	AllowsMeshGeometry *bool   `json:"allowsMeshGeometry,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTAllowMeshGeometryFilter1026) SetAllowsMeshGeometry(v bool) {
 
 func (o BTAllowMeshGeometryFilter1026) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

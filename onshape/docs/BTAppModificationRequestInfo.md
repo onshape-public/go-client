@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **Output** | Pointer to **string** |  | [optional] 
+**OutputStatusCode** | Pointer to **int32** |  | [optional] 
 **ParentDocumentMicroversionId** | Pointer to **string** |  | [optional] 
 **ParentElementMicroversionId** | Pointer to **string** |  | [optional] 
 **RequestState** | Pointer to [**BTAppModificationRequestState**](BTAppModificationRequestState.md) |  | [optional] 
@@ -212,6 +213,31 @@ SetOutput sets Output field to given value.
 `func (o *BTAppModificationRequestInfo) HasOutput() bool`
 
 HasOutput returns a boolean if a field has been set.
+
+### GetOutputStatusCode
+
+`func (o *BTAppModificationRequestInfo) GetOutputStatusCode() int32`
+
+GetOutputStatusCode returns the OutputStatusCode field if non-nil, zero value otherwise.
+
+### GetOutputStatusCodeOk
+
+`func (o *BTAppModificationRequestInfo) GetOutputStatusCodeOk() (*int32, bool)`
+
+GetOutputStatusCodeOk returns a tuple with the OutputStatusCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputStatusCode
+
+`func (o *BTAppModificationRequestInfo) SetOutputStatusCode(v int32)`
+
+SetOutputStatusCode sets OutputStatusCode field to given value.
+
+### HasOutputStatusCode
+
+`func (o *BTAppModificationRequestInfo) HasOutputStatusCode() bool`
+
+HasOutputStatusCode returns a boolean if a field has been set.
 
 ### GetParentDocumentMicroversionId
 

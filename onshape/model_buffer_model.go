@@ -16,10 +16,10 @@ import (
 
 // BufferModel struct for BufferModel
 type BufferModel struct {
-	BufferData *BufferModelBufferData `json:"bufferData,omitempty"`
-	ByteLength *int32                 `json:"byteLength,omitempty"`
-	Name       *string                `json:"name,omitempty"`
-	Uri        *string                `json:"uri,omitempty"`
+	BufferData *map[string]interface{} `json:"bufferData,omitempty"`
+	ByteLength *int32                  `json:"byteLength,omitempty"`
+	Name       *string                 `json:"name,omitempty"`
+	Uri        *string                 `json:"uri,omitempty"`
 }
 
 // NewBufferModel instantiates a new BufferModel object
@@ -40,9 +40,9 @@ func NewBufferModelWithDefaults() *BufferModel {
 }
 
 // GetBufferData returns the BufferData field value if set, zero value otherwise.
-func (o *BufferModel) GetBufferData() BufferModelBufferData {
+func (o *BufferModel) GetBufferData() map[string]interface{} {
 	if o == nil || o.BufferData == nil {
-		var ret BufferModelBufferData
+		var ret map[string]interface{}
 		return ret
 	}
 	return *o.BufferData
@@ -50,7 +50,7 @@ func (o *BufferModel) GetBufferData() BufferModelBufferData {
 
 // GetBufferDataOk returns a tuple with the BufferData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BufferModel) GetBufferDataOk() (*BufferModelBufferData, bool) {
+func (o *BufferModel) GetBufferDataOk() (*map[string]interface{}, bool) {
 	if o == nil || o.BufferData == nil {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *BufferModel) HasBufferData() bool {
 	return false
 }
 
-// SetBufferData gets a reference to the given BufferModelBufferData and assigns it to the BufferData field.
-func (o *BufferModel) SetBufferData(v BufferModelBufferData) {
+// SetBufferData gets a reference to the given map[string]interface{} and assigns it to the BufferData field.
+func (o *BufferModel) SetBufferData(v map[string]interface{}) {
 	o.BufferData = &v
 }
 

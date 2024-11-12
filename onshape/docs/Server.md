@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Extensions** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
-**Variables** | Pointer to [**ServerVariables**](ServerVariables.md) |  | [optional] 
+**Variables** | Pointer to [**map[string]ServerVariable**](ServerVariable.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasUrl returns a boolean if a field has been set.
 
 ### GetVariables
 
-`func (o *Server) GetVariables() ServerVariables`
+`func (o *Server) GetVariables() map[string]ServerVariable`
 
 GetVariables returns the Variables field if non-nil, zero value otherwise.
 
 ### GetVariablesOk
 
-`func (o *Server) GetVariablesOk() (*ServerVariables, bool)`
+`func (o *Server) GetVariablesOk() (*map[string]ServerVariable, bool)`
 
 GetVariablesOk returns a tuple with the Variables field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVariables
 
-`func (o *Server) SetVariables(v ServerVariables)`
+`func (o *Server) SetVariables(v map[string]ServerVariable)`
 
 SetVariables sets Variables field to given value.
 

@@ -947,6 +947,62 @@ func (dst *BTPTopLevelNode286) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
+	// check if the discriminator value is 'BTPProcedureDeclarationBase-266'
+	if jsonDict["btType"] == "BTPProcedureDeclarationBase-266" {
+		// try to unmarshal JSON data into BTPProcedureDeclarationBase266
+		var qr *BTPProcedureDeclarationBase266
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPTopLevelNode286 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPTopLevelNode286 = nil
+			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPProcedureDeclarationBase266: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPTopLevelConstantDeclaration-283'
+	if jsonDict["btType"] == "BTPTopLevelConstantDeclaration-283" {
+		// try to unmarshal JSON data into BTPTopLevelConstantDeclaration283
+		var qr *BTPTopLevelConstantDeclaration283
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPTopLevelNode286 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPTopLevelNode286 = nil
+			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPTopLevelConstantDeclaration283: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPTopLevelImport-285'
+	if jsonDict["btType"] == "BTPTopLevelImport-285" {
+		// try to unmarshal JSON data into BTPTopLevelImport285
+		var qr *BTPTopLevelImport285
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPTopLevelNode286 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPTopLevelNode286 = nil
+			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPTopLevelImport285: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTPTopLevelTypeDeclaration-287'
+	if jsonDict["btType"] == "BTPTopLevelTypeDeclaration-287" {
+		// try to unmarshal JSON data into BTPTopLevelTypeDeclaration287
+		var qr *BTPTopLevelTypeDeclaration287
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPTopLevelNode286 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPTopLevelNode286 = nil
+			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPTopLevelTypeDeclaration287: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTPConversionFunction-1362'
 	if jsonDict["btType"] == "BTPConversionFunction-1362" {
 		// try to unmarshal JSON data into BTPConversionFunction1362
@@ -1003,34 +1059,6 @@ func (dst *BTPTopLevelNode286) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTPProcedureDeclarationBase-266'
-	if jsonDict["btType"] == "BTPProcedureDeclarationBase-266" {
-		// try to unmarshal JSON data into BTPProcedureDeclarationBase266
-		var qr *BTPProcedureDeclarationBase266
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPTopLevelNode286 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPTopLevelNode286 = nil
-			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPProcedureDeclarationBase266: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTPTopLevelConstantDeclaration-283'
-	if jsonDict["btType"] == "BTPTopLevelConstantDeclaration-283" {
-		// try to unmarshal JSON data into BTPTopLevelConstantDeclaration283
-		var qr *BTPTopLevelConstantDeclaration283
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPTopLevelNode286 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPTopLevelNode286 = nil
-			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPTopLevelConstantDeclaration283: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTPTopLevelEnumDeclaration-284'
 	if jsonDict["btType"] == "BTPTopLevelEnumDeclaration-284" {
 		// try to unmarshal JSON data into BTPTopLevelEnumDeclaration284
@@ -1042,34 +1070,6 @@ func (dst *BTPTopLevelNode286) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPTopLevelNode286 = nil
 			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPTopLevelEnumDeclaration284: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTPTopLevelImport-285'
-	if jsonDict["btType"] == "BTPTopLevelImport-285" {
-		// try to unmarshal JSON data into BTPTopLevelImport285
-		var qr *BTPTopLevelImport285
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPTopLevelNode286 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPTopLevelNode286 = nil
-			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPTopLevelImport285: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTPTopLevelTypeDeclaration-287'
-	if jsonDict["btType"] == "BTPTopLevelTypeDeclaration-287" {
-		// try to unmarshal JSON data into BTPTopLevelTypeDeclaration287
-		var qr *BTPTopLevelTypeDeclaration287
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTPTopLevelNode286 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTPTopLevelNode286 = nil
-			return fmt.Errorf("failed to unmarshal BTPTopLevelNode286 as BTPTopLevelTypeDeclaration287: %s", err.Error())
 		}
 	}
 
@@ -1153,6 +1153,7 @@ func (v *NullableBTPTopLevelNode286) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPTopLevelNode286 struct {
+	BTPNode7
 	Atomic                *bool                       `json:"atomic,omitempty"`
 	BtType                *string                     `json:"btType,omitempty"`
 	DocumentationType     *GBTPDefinitionType         `json:"documentationType,omitempty"`
@@ -1735,6 +1736,14 @@ func (o *base_BTPTopLevelNode286) SetSymbolName(v BTPIdentifier8) {
 
 func (o base_BTPTopLevelNode286) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

@@ -19,7 +19,7 @@ type Server struct {
 	Description *string                           `json:"description,omitempty"`
 	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
 	Url         *string                           `json:"url,omitempty"`
-	Variables   *ServerVariables                  `json:"variables,omitempty"`
+	Variables   *map[string]ServerVariable        `json:"variables,omitempty"`
 }
 
 // NewServer instantiates a new Server object
@@ -136,9 +136,9 @@ func (o *Server) SetUrl(v string) {
 }
 
 // GetVariables returns the Variables field value if set, zero value otherwise.
-func (o *Server) GetVariables() ServerVariables {
+func (o *Server) GetVariables() map[string]ServerVariable {
 	if o == nil || o.Variables == nil {
-		var ret ServerVariables
+		var ret map[string]ServerVariable
 		return ret
 	}
 	return *o.Variables
@@ -146,7 +146,7 @@ func (o *Server) GetVariables() ServerVariables {
 
 // GetVariablesOk returns a tuple with the Variables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Server) GetVariablesOk() (*ServerVariables, bool) {
+func (o *Server) GetVariablesOk() (*map[string]ServerVariable, bool) {
 	if o == nil || o.Variables == nil {
 		return nil, false
 	}
@@ -162,8 +162,8 @@ func (o *Server) HasVariables() bool {
 	return false
 }
 
-// SetVariables gets a reference to the given ServerVariables and assigns it to the Variables field.
-func (o *Server) SetVariables(v ServerVariables) {
+// SetVariables gets a reference to the given map[string]ServerVariable and assigns it to the Variables field.
+func (o *Server) SetVariables(v map[string]ServerVariable) {
 	o.Variables = &v
 }
 

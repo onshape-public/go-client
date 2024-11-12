@@ -17,9 +17,9 @@ import (
 // BTGetJsonResponse2137 struct for BTGetJsonResponse2137
 type BTGetJsonResponse2137 struct {
 	// Type of JSON object.
-	BtType   *string                    `json:"btType,omitempty"`
-	ChangeId *string                    `json:"changeId,omitempty"`
-	Tree     *BTGetJsonResponse2137Tree `json:"tree,omitempty"`
+	BtType   *string                 `json:"btType,omitempty"`
+	ChangeId *string                 `json:"changeId,omitempty"`
+	Tree     *map[string]interface{} `json:"tree,omitempty"`
 }
 
 // NewBTGetJsonResponse2137 instantiates a new BTGetJsonResponse2137 object
@@ -104,9 +104,9 @@ func (o *BTGetJsonResponse2137) SetChangeId(v string) {
 }
 
 // GetTree returns the Tree field value if set, zero value otherwise.
-func (o *BTGetJsonResponse2137) GetTree() BTGetJsonResponse2137Tree {
+func (o *BTGetJsonResponse2137) GetTree() map[string]interface{} {
 	if o == nil || o.Tree == nil {
-		var ret BTGetJsonResponse2137Tree
+		var ret map[string]interface{}
 		return ret
 	}
 	return *o.Tree
@@ -114,7 +114,7 @@ func (o *BTGetJsonResponse2137) GetTree() BTGetJsonResponse2137Tree {
 
 // GetTreeOk returns a tuple with the Tree field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTGetJsonResponse2137) GetTreeOk() (*BTGetJsonResponse2137Tree, bool) {
+func (o *BTGetJsonResponse2137) GetTreeOk() (*map[string]interface{}, bool) {
 	if o == nil || o.Tree == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *BTGetJsonResponse2137) HasTree() bool {
 	return false
 }
 
-// SetTree gets a reference to the given BTGetJsonResponse2137Tree and assigns it to the Tree field.
-func (o *BTGetJsonResponse2137) SetTree(v BTGetJsonResponse2137Tree) {
+// SetTree gets a reference to the given map[string]interface{} and assigns it to the Tree field.
+func (o *BTGetJsonResponse2137) SetTree(v map[string]interface{}) {
 	o.Tree = &v
 }
 
