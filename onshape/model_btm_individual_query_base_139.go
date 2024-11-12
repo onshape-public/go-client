@@ -542,20 +542,6 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
-	// check if the discriminator value is 'BTMFeatureQueryWithOccurrence-157'
-	if jsonDict["btType"] == "BTMFeatureQueryWithOccurrence-157" {
-		// try to unmarshal JSON data into BTMFeatureQueryWithOccurrence157
-		var qr *BTMFeatureQueryWithOccurrence157
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryBase139 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMFeatureQueryWithOccurrence157: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMInContextQuery-2254'
 	if jsonDict["btType"] == "BTMInContextQuery-2254" {
 		// try to unmarshal JSON data into BTMInContextQuery2254
@@ -567,20 +553,6 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMIndividualQueryBase139 = nil
 			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMInContextQuery2254: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMIndividualOccurrenceQuery-626'
-	if jsonDict["btType"] == "BTMIndividualOccurrenceQuery-626" {
-		// try to unmarshal JSON data into BTMIndividualOccurrenceQuery626
-		var qr *BTMIndividualOccurrenceQuery626
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryBase139 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualOccurrenceQuery626: %s", err.Error())
 		}
 	}
 
@@ -598,20 +570,6 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMIndividualQueryWithOccurrence-811'
-	if jsonDict["btType"] == "BTMIndividualQueryWithOccurrence-811" {
-		// try to unmarshal JSON data into BTMIndividualQueryWithOccurrence811
-		var qr *BTMIndividualQueryWithOccurrence811
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMIndividualQueryBase139 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMIndividualQueryBase139 = nil
-			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualQueryWithOccurrence811: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTMIndividualQueryWithOccurrenceBase-904'
 	if jsonDict["btType"] == "BTMIndividualQueryWithOccurrenceBase-904" {
 		// try to unmarshal JSON data into BTMIndividualQueryWithOccurrenceBase904
@@ -623,6 +581,48 @@ func (dst *BTMIndividualQueryBase139) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMIndividualQueryBase139 = nil
 			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualQueryWithOccurrenceBase904: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMFeatureQueryWithOccurrence-157'
+	if jsonDict["btType"] == "BTMFeatureQueryWithOccurrence-157" {
+		// try to unmarshal JSON data into BTMFeatureQueryWithOccurrence157
+		var qr *BTMFeatureQueryWithOccurrence157
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMFeatureQueryWithOccurrence157: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualOccurrenceQuery-626'
+	if jsonDict["btType"] == "BTMIndividualOccurrenceQuery-626" {
+		// try to unmarshal JSON data into BTMIndividualOccurrenceQuery626
+		var qr *BTMIndividualOccurrenceQuery626
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualOccurrenceQuery626: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualQueryWithOccurrence-811'
+	if jsonDict["btType"] == "BTMIndividualQueryWithOccurrence-811" {
+		// try to unmarshal JSON data into BTMIndividualQueryWithOccurrence811
+		var qr *BTMIndividualQueryWithOccurrence811
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQueryBase139 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQueryBase139 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQueryBase139 as BTMIndividualQueryWithOccurrence811: %s", err.Error())
 		}
 	}
 
@@ -734,6 +734,7 @@ func (v *NullableBTMIndividualQueryBase139) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMIndividualQueryBase139 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion         *string                    `json:"importMicroversion,omitempty"`
@@ -1053,6 +1054,14 @@ func (o *base_BTMIndividualQueryBase139) SetQueryString(v string) {
 
 func (o base_BTMIndividualQueryBase139) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

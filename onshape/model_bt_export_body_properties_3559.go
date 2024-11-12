@@ -16,6 +16,7 @@ import (
 
 // BTExportBodyProperties3559 struct for BTExportBodyProperties3559
 type BTExportBodyProperties3559 struct {
+	BTExportModelProperties3216
 	Appearance *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
 	BtType     *string                   `json:"btType,omitempty"`
 	Name       *string                   `json:"name,omitempty"`
@@ -202,6 +203,14 @@ func (o *BTExportBodyProperties3559) SetVisibility(v GBTPartVisibility) {
 
 func (o BTExportBodyProperties3559) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTExportModelProperties3216, errBTExportModelProperties3216 := json.Marshal(o.BTExportModelProperties3216)
+	if errBTExportModelProperties3216 != nil {
+		return []byte{}, errBTExportModelProperties3216
+	}
+	errBTExportModelProperties3216 = json.Unmarshal([]byte(serializedBTExportModelProperties3216), &toSerialize)
+	if errBTExportModelProperties3216 != nil {
+		return []byte{}, errBTExportModelProperties3216
+	}
 	if o.Appearance != nil {
 		toSerialize["appearance"] = o.Appearance
 	}

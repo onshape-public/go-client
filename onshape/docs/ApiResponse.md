@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Content** | Pointer to [**ApiResponseContent**](ApiResponseContent.md) |  | [optional] 
+**Content** | Pointer to [**map[string]MediaType**](MediaType.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Extensions** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Getref** | Pointer to **string** |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetContent
 
-`func (o *ApiResponse) GetContent() ApiResponseContent`
+`func (o *ApiResponse) GetContent() map[string]MediaType`
 
 GetContent returns the Content field if non-nil, zero value otherwise.
 
 ### GetContentOk
 
-`func (o *ApiResponse) GetContentOk() (*ApiResponseContent, bool)`
+`func (o *ApiResponse) GetContentOk() (*map[string]MediaType, bool)`
 
 GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContent
 
-`func (o *ApiResponse) SetContent(v ApiResponseContent)`
+`func (o *ApiResponse) SetContent(v map[string]MediaType)`
 
 SetContent sets Content field to given value.
 

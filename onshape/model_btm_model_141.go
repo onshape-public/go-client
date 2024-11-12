@@ -16,6 +16,7 @@ import (
 
 // BTMModel141 struct for BTMModel141
 type BTMModel141 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion            *string                          `json:"importMicroversion,omitempty"`
@@ -23,6 +24,7 @@ type BTMModel141 struct {
 	AllFeatures                   []BTMFeature134                  `json:"allFeatures,omitempty"`
 	AllFeaturesAndOtherReferences []BTMFeature134                  `json:"allFeaturesAndOtherReferences,omitempty"`
 	AllFeaturesAndSubFeatures     []BTMFeature134                  `json:"allFeaturesAndSubFeatures,omitempty"`
+	ChildNodeIdToIndex            *map[string]int32                `json:"childNodeIdToIndex,omitempty"`
 	ConfigurationData             *BTMConfigurationData1560        `json:"configurationData,omitempty"`
 	Configured                    *bool                            `json:"configured,omitempty"`
 	DeepImports                   *map[string][]BTImport           `json:"deepImports,omitempty"`
@@ -251,6 +253,38 @@ func (o *BTMModel141) HasAllFeaturesAndSubFeatures() bool {
 // SetAllFeaturesAndSubFeatures gets a reference to the given []BTMFeature134 and assigns it to the AllFeaturesAndSubFeatures field.
 func (o *BTMModel141) SetAllFeaturesAndSubFeatures(v []BTMFeature134) {
 	o.AllFeaturesAndSubFeatures = v
+}
+
+// GetChildNodeIdToIndex returns the ChildNodeIdToIndex field value if set, zero value otherwise.
+func (o *BTMModel141) GetChildNodeIdToIndex() map[string]int32 {
+	if o == nil || o.ChildNodeIdToIndex == nil {
+		var ret map[string]int32
+		return ret
+	}
+	return *o.ChildNodeIdToIndex
+}
+
+// GetChildNodeIdToIndexOk returns a tuple with the ChildNodeIdToIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMModel141) GetChildNodeIdToIndexOk() (*map[string]int32, bool) {
+	if o == nil || o.ChildNodeIdToIndex == nil {
+		return nil, false
+	}
+	return o.ChildNodeIdToIndex, true
+}
+
+// HasChildNodeIdToIndex returns a boolean if a field has been set.
+func (o *BTMModel141) HasChildNodeIdToIndex() bool {
+	if o != nil && o.ChildNodeIdToIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetChildNodeIdToIndex gets a reference to the given map[string]int32 and assigns it to the ChildNodeIdToIndex field.
+func (o *BTMModel141) SetChildNodeIdToIndex(v map[string]int32) {
+	o.ChildNodeIdToIndex = &v
 }
 
 // GetConfigurationData returns the ConfigurationData field value if set, zero value otherwise.
@@ -863,6 +897,14 @@ func (o *BTMModel141) SetVariableStudios(v []BTMVariableStudioReference2764) {
 
 func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -880,6 +922,9 @@ func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	}
 	if o.AllFeaturesAndSubFeatures != nil {
 		toSerialize["allFeaturesAndSubFeatures"] = o.AllFeaturesAndSubFeatures
+	}
+	if o.ChildNodeIdToIndex != nil {
+		toSerialize["childNodeIdToIndex"] = o.ChildNodeIdToIndex
 	}
 	if o.ConfigurationData != nil {
 		toSerialize["configurationData"] = o.ConfigurationData

@@ -16,26 +16,28 @@ import (
 
 // BTMSketchConstraint2 struct for BTMSketchConstraint2
 type BTMSketchConstraint2 struct {
+	BTMSketchEntity3
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion                  *string            `json:"importMicroversion,omitempty"`
-	NodeId                              *string            `json:"nodeId,omitempty"`
-	EntityId                            *string            `json:"entityId,omitempty"`
-	EntityIdAndReplaceInDependentFields *string            `json:"entityIdAndReplaceInDependentFields,omitempty"`
-	Index                               *int32             `json:"index,omitempty"`
-	Namespace                           *string            `json:"namespace,omitempty"`
-	Parameters                          []BTMParameter1    `json:"parameters,omitempty"`
-	ConstraintType                      *GBTConstraintType `json:"constraintType,omitempty"`
-	DrivenDimension                     *bool              `json:"drivenDimension,omitempty"`
-	HasOffsetData1                      *bool              `json:"hasOffsetData1,omitempty"`
-	HasOffsetData2                      *bool              `json:"hasOffsetData2,omitempty"`
-	HasPierceParameter_                 *bool              `json:"hasPierceParameter,omitempty"`
-	HelpParameters                      []float64          `json:"helpParameters,omitempty"`
-	OffsetDistance1                     *float64           `json:"offsetDistance1,omitempty"`
-	OffsetDistance2                     *float64           `json:"offsetDistance2,omitempty"`
-	OffsetOrientation1                  *bool              `json:"offsetOrientation1,omitempty"`
-	OffsetOrientation2                  *bool              `json:"offsetOrientation2,omitempty"`
-	PierceParameter                     *float64           `json:"pierceParameter,omitempty"`
+	ImportMicroversion                  *string                   `json:"importMicroversion,omitempty"`
+	NodeId                              *string                   `json:"nodeId,omitempty"`
+	CombinedSketchEntityType            *CombinedSketchEntityType `json:"combinedSketchEntityType,omitempty"`
+	EntityId                            *string                   `json:"entityId,omitempty"`
+	EntityIdAndReplaceInDependentFields *string                   `json:"entityIdAndReplaceInDependentFields,omitempty"`
+	Index                               *int32                    `json:"index,omitempty"`
+	Namespace                           *string                   `json:"namespace,omitempty"`
+	Parameters                          []BTMParameter1           `json:"parameters,omitempty"`
+	ConstraintType                      *GBTConstraintType        `json:"constraintType,omitempty"`
+	DrivenDimension                     *bool                     `json:"drivenDimension,omitempty"`
+	HasOffsetData1                      *bool                     `json:"hasOffsetData1,omitempty"`
+	HasOffsetData2                      *bool                     `json:"hasOffsetData2,omitempty"`
+	HasPierceParameter_                 *bool                     `json:"hasPierceParameter,omitempty"`
+	HelpParameters                      []float64                 `json:"helpParameters,omitempty"`
+	OffsetDistance1                     *float64                  `json:"offsetDistance1,omitempty"`
+	OffsetDistance2                     *float64                  `json:"offsetDistance2,omitempty"`
+	OffsetOrientation1                  *bool                     `json:"offsetOrientation1,omitempty"`
+	OffsetOrientation2                  *bool                     `json:"offsetOrientation2,omitempty"`
+	PierceParameter                     *float64                  `json:"pierceParameter,omitempty"`
 }
 
 // NewBTMSketchConstraint2 instantiates a new BTMSketchConstraint2 object
@@ -149,6 +151,38 @@ func (o *BTMSketchConstraint2) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTMSketchConstraint2) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetCombinedSketchEntityType returns the CombinedSketchEntityType field value if set, zero value otherwise.
+func (o *BTMSketchConstraint2) GetCombinedSketchEntityType() CombinedSketchEntityType {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		var ret CombinedSketchEntityType
+		return ret
+	}
+	return *o.CombinedSketchEntityType
+}
+
+// GetCombinedSketchEntityTypeOk returns a tuple with the CombinedSketchEntityType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchConstraint2) GetCombinedSketchEntityTypeOk() (*CombinedSketchEntityType, bool) {
+	if o == nil || o.CombinedSketchEntityType == nil {
+		return nil, false
+	}
+	return o.CombinedSketchEntityType, true
+}
+
+// HasCombinedSketchEntityType returns a boolean if a field has been set.
+func (o *BTMSketchConstraint2) HasCombinedSketchEntityType() bool {
+	if o != nil && o.CombinedSketchEntityType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCombinedSketchEntityType gets a reference to the given CombinedSketchEntityType and assigns it to the CombinedSketchEntityType field.
+func (o *BTMSketchConstraint2) SetCombinedSketchEntityType(v CombinedSketchEntityType) {
+	o.CombinedSketchEntityType = &v
 }
 
 // GetEntityId returns the EntityId field value if set, zero value otherwise.
@@ -665,6 +699,14 @@ func (o *BTMSketchConstraint2) SetPierceParameter(v float64) {
 
 func (o BTMSketchConstraint2) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMSketchEntity3, errBTMSketchEntity3 := json.Marshal(o.BTMSketchEntity3)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
+	errBTMSketchEntity3 = json.Unmarshal([]byte(serializedBTMSketchEntity3), &toSerialize)
+	if errBTMSketchEntity3 != nil {
+		return []byte{}, errBTMSketchEntity3
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -673,6 +715,9 @@ func (o BTMSketchConstraint2) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.CombinedSketchEntityType != nil {
+		toSerialize["combinedSketchEntityType"] = o.CombinedSketchEntityType
 	}
 	if o.EntityId != nil {
 		toSerialize["entityId"] = o.EntityId

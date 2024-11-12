@@ -16,6 +16,7 @@ import (
 
 // BTBodyEntity26 struct for BTBodyEntity26
 type BTBodyEntity26 struct {
+	BTFeatureEntity34
 	BtType                   *string                       `json:"btType,omitempty"`
 	ConstructionPlane        *bool                         `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry      *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
@@ -433,6 +434,14 @@ func (o *BTBodyEntity26) SetDoesNotUseLevelsOfDetail(v bool) {
 
 func (o BTBodyEntity26) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureEntity34, errBTFeatureEntity34 := json.Marshal(o.BTFeatureEntity34)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
+	errBTFeatureEntity34 = json.Unmarshal([]byte(serializedBTFeatureEntity34), &toSerialize)
+	if errBTFeatureEntity34 != nil {
+		return []byte{}, errBTFeatureEntity34
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

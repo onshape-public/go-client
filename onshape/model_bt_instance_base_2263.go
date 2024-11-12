@@ -75,13 +75,13 @@ func (o *BTParametricInstance2641) AsBTInstanceBase2263() *BTInstanceBase2263 {
 	return &BTInstanceBase2263{o}
 }
 
-// BTAssemblyReplicate2774AsBTInstanceBase2263 is a convenience function that returns BTAssemblyReplicate2774 wrapped in BTInstanceBase2263
-func (o *BTAssemblyReplicate2774) AsBTInstanceBase2263() *BTInstanceBase2263 {
+// BTInstance642AsBTInstanceBase2263 is a convenience function that returns BTInstance642 wrapped in BTInstanceBase2263
+func (o *BTInstance642) AsBTInstanceBase2263() *BTInstanceBase2263 {
 	return &BTInstanceBase2263{o}
 }
 
-// BTInstance642AsBTInstanceBase2263 is a convenience function that returns BTInstance642 wrapped in BTInstanceBase2263
-func (o *BTInstance642) AsBTInstanceBase2263() *BTInstanceBase2263 {
+// BTAssemblyReplicate2774AsBTInstanceBase2263 is a convenience function that returns BTAssemblyReplicate2774 wrapped in BTInstanceBase2263
+func (o *BTAssemblyReplicate2774) AsBTInstanceBase2263() *BTInstanceBase2263 {
 	return &BTInstanceBase2263{o}
 }
 
@@ -1562,6 +1562,62 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
+	// check if the discriminator value is 'BTInstance-642'
+	if jsonDict["btType"] == "BTInstance-642" {
+		// try to unmarshal JSON data into BTInstance642
+		var qr *BTInstance642
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTInstanceBase2263 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTInstanceBase2263 = nil
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTInstance642: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTInstanceFolder-3627'
+	if jsonDict["btType"] == "BTInstanceFolder-3627" {
+		// try to unmarshal JSON data into BTInstanceFolder3627
+		var qr *BTInstanceFolder3627
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTInstanceBase2263 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTInstanceBase2263 = nil
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTInstanceFolder3627: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParametricInstance-2641'
+	if jsonDict["btType"] == "BTParametricInstance-2641" {
+		// try to unmarshal JSON data into BTParametricInstance2641
+		var qr *BTParametricInstance2641
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTInstanceBase2263 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTInstanceBase2263 = nil
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricInstance2641: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParametricOutputInstance-2288'
+	if jsonDict["btType"] == "BTParametricOutputInstance-2288" {
+		// try to unmarshal JSON data into BTParametricOutputInstance2288
+		var qr *BTParametricOutputInstance2288
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTInstanceBase2263 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTInstanceBase2263 = nil
+			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricOutputInstance2288: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTAssemblyInstance-947'
 	if jsonDict["btType"] == "BTAssemblyInstance-947" {
 		// try to unmarshal JSON data into BTAssemblyInstance947
@@ -1643,62 +1699,6 @@ func (dst *BTInstanceBase2263) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTInstanceBase2263 = nil
 			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTDerivedAssemblyMirror4204: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTInstance-642'
-	if jsonDict["btType"] == "BTInstance-642" {
-		// try to unmarshal JSON data into BTInstance642
-		var qr *BTInstance642
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTInstanceBase2263 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTInstance642: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTInstanceFolder-3627'
-	if jsonDict["btType"] == "BTInstanceFolder-3627" {
-		// try to unmarshal JSON data into BTInstanceFolder3627
-		var qr *BTInstanceFolder3627
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTInstanceBase2263 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTInstanceFolder3627: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTParametricInstance-2641'
-	if jsonDict["btType"] == "BTParametricInstance-2641" {
-		// try to unmarshal JSON data into BTParametricInstance2641
-		var qr *BTParametricInstance2641
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTInstanceBase2263 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricInstance2641: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTParametricOutputInstance-2288'
-	if jsonDict["btType"] == "BTParametricOutputInstance-2288" {
-		// try to unmarshal JSON data into BTParametricOutputInstance2288
-		var qr *BTParametricOutputInstance2288
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTInstanceBase2263 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTInstanceBase2263 = nil
-			return fmt.Errorf("failed to unmarshal BTInstanceBase2263 as BTParametricOutputInstance2288: %s", err.Error())
 		}
 	}
 
@@ -1810,6 +1810,7 @@ func (v *NullableBTInstanceBase2263) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTInstanceBase2263 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -2790,6 +2791,14 @@ func (o *base_BTInstanceBase2263) SetVersion(v int32) {
 
 func (o base_BTInstanceBase2263) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

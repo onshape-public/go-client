@@ -16,6 +16,7 @@ import (
 
 // BTModifiableEntityOnlyFilter1593 struct for BTModifiableEntityOnlyFilter1593
 type BTModifiableEntityOnlyFilter1593 struct {
+	BTQueryFilter183
 	BtType         *string `json:"btType,omitempty"`
 	ModifiableOnly *bool   `json:"modifiableOnly,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTModifiableEntityOnlyFilter1593) SetModifiableOnly(v bool) {
 
 func (o BTModifiableEntityOnlyFilter1593) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

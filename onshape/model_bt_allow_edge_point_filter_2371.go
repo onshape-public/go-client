@@ -16,6 +16,7 @@ import (
 
 // BTAllowEdgePointFilter2371 struct for BTAllowEdgePointFilter2371
 type BTAllowEdgePointFilter2371 struct {
+	BTQueryFilter183
 	BtType          *string `json:"btType,omitempty"`
 	AllowsEdgePoint *bool   `json:"allowsEdgePoint,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTAllowEdgePointFilter2371) SetAllowsEdgePoint(v bool) {
 
 func (o BTAllowEdgePointFilter2371) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

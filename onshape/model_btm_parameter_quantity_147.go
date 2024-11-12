@@ -551,6 +551,7 @@ func (v *NullableBTMParameterQuantity147) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMParameterQuantity147 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -839,6 +840,14 @@ func (o *base_BTMParameterQuantity147) SetValue(v float64) {
 
 func (o base_BTMParameterQuantity147) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

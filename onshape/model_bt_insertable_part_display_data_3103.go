@@ -16,6 +16,7 @@ import (
 
 // BTInsertablePartDisplayData3103 struct for BTInsertablePartDisplayData3103
 type BTInsertablePartDisplayData3103 struct {
+	BTInsertableDisplayData2405
 	BtType                   *string                                     `json:"btType,omitempty"`
 	FullElementId            *BTFullElementId756                         `json:"fullElementId,omitempty"`
 	GraphicsBuffers          *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
@@ -400,6 +401,14 @@ func (o *BTInsertablePartDisplayData3103) SetTessellationSetting(v int32) {
 
 func (o BTInsertablePartDisplayData3103) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInsertableDisplayData2405, errBTInsertableDisplayData2405 := json.Marshal(o.BTInsertableDisplayData2405)
+	if errBTInsertableDisplayData2405 != nil {
+		return []byte{}, errBTInsertableDisplayData2405
+	}
+	errBTInsertableDisplayData2405 = json.Unmarshal([]byte(serializedBTInsertableDisplayData2405), &toSerialize)
+	if errBTInsertableDisplayData2405 != nil {
+		return []byte{}, errBTInsertableDisplayData2405
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

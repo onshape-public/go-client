@@ -27,7 +27,6 @@ type BTUserBasicSummaryInfo struct {
 	Image            *string `json:"image,omitempty"`
 	IsOnshapeSupport *bool   `json:"isOnshapeSupport,omitempty"`
 	State            *int32  `json:"state,omitempty"`
-	JsonType         string  `json:"jsonType"`
 }
 
 // NewBTUserBasicSummaryInfo instantiates a new BTUserBasicSummaryInfo object
@@ -36,7 +35,6 @@ type BTUserBasicSummaryInfo struct {
 // will change when the set of required properties is changed
 func NewBTUserBasicSummaryInfo(jsonType string) *BTUserBasicSummaryInfo {
 	this := BTUserBasicSummaryInfo{}
-	this.JsonType = jsonType
 	return &this
 }
 
@@ -272,30 +270,6 @@ func (o *BTUserBasicSummaryInfo) SetState(v int32) {
 	o.State = &v
 }
 
-// GetJsonType returns the JsonType field value
-func (o *BTUserBasicSummaryInfo) GetJsonType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.JsonType
-}
-
-// GetJsonTypeOk returns a tuple with the JsonType field value
-// and a boolean to check if the value has been set.
-func (o *BTUserBasicSummaryInfo) GetJsonTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.JsonType, true
-}
-
-// SetJsonType sets field value
-func (o *BTUserBasicSummaryInfo) SetJsonType(v string) {
-	o.JsonType = v
-}
-
 func (o BTUserBasicSummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Href != nil {
@@ -318,9 +292,6 @@ func (o BTUserBasicSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State
-	}
-	if true {
-		toSerialize["jsonType"] = o.JsonType
 	}
 	return json.Marshal(toSerialize)
 }

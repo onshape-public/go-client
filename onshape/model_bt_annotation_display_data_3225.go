@@ -242,6 +242,56 @@ func (o *BTAnnotationDisplayData3225) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
+// GetDeterministicId returns the DeterministicId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetDeterministicId() string {
+	type getResult interface {
+		GetDeterministicId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDeterministicId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDeterministicIdOk returns a tuple with the DeterministicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetDeterministicIdOk() (*string, bool) {
+	type getResult interface {
+		GetDeterministicIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDeterministicIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDeterministicId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasDeterministicId() bool {
+	type getResult interface {
+		HasDeterministicId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDeterministicId()
+	} else {
+		return false
+	}
+}
+
+// SetDeterministicId gets a reference to the given string and assigns it to the DeterministicId field.
+func (o *BTAnnotationDisplayData3225) SetDeterministicId(v string) {
+	type getResult interface {
+		SetDeterministicId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDeterministicId(v)
+}
+
 // GetDxdySegments returns the DxdySegments field value if set, zero value otherwise.
 func (o *BTAnnotationDisplayData3225) GetDxdySegments() []float32 {
 	type getResult interface {
@@ -437,6 +487,7 @@ type base_BTAnnotationDisplayData3225 struct {
 	BasePoint       []float32 `json:"basePoint,omitempty"`
 	// Type of JSON object.
 	BtType                  *string   `json:"btType,omitempty"`
+	DeterministicId         *string   `json:"deterministicId,omitempty"`
 	DxdySegments            []float32 `json:"dxdySegments,omitempty"`
 	NumberOfLeaderSegements *int32    `json:"numberOfLeaderSegements,omitempty"`
 }
@@ -586,6 +637,38 @@ func (o *base_BTAnnotationDisplayData3225) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetDeterministicId returns the DeterministicId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetDeterministicId() string {
+	if o == nil || o.DeterministicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DeterministicId
+}
+
+// GetDeterministicIdOk returns a tuple with the DeterministicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetDeterministicIdOk() (*string, bool) {
+	if o == nil || o.DeterministicId == nil {
+		return nil, false
+	}
+	return o.DeterministicId, true
+}
+
+// HasDeterministicId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasDeterministicId() bool {
+	if o != nil && o.DeterministicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDeterministicId gets a reference to the given string and assigns it to the DeterministicId field.
+func (o *base_BTAnnotationDisplayData3225) SetDeterministicId(v string) {
+	o.DeterministicId = &v
+}
+
 // GetDxdySegments returns the DxdySegments field value if set, zero value otherwise.
 func (o *base_BTAnnotationDisplayData3225) GetDxdySegments() []float32 {
 	if o == nil || o.DxdySegments == nil {
@@ -663,6 +746,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.DeterministicId != nil {
+		toSerialize["deterministicId"] = o.DeterministicId
 	}
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments

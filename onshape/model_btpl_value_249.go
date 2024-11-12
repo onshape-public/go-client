@@ -670,6 +670,7 @@ func (v *NullableBTPLValue249) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPLValue249 struct {
+	BTPNode7
 	Atomic              *bool               `json:"atomic,omitempty"`
 	BtType              *string             `json:"btType,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
@@ -1021,6 +1022,14 @@ func (o *base_BTPLValue249) SetStartSourceLocation(v int32) {
 
 func (o base_BTPLValue249) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
+	errBTPNode7 = json.Unmarshal([]byte(serializedBTPNode7), &toSerialize)
+	if errBTPNode7 != nil {
+		return []byte{}, errBTPNode7
+	}
 	if o.Atomic != nil {
 		toSerialize["atomic"] = o.Atomic
 	}

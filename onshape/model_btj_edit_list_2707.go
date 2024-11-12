@@ -16,6 +16,7 @@ import (
 
 // BTJEditList2707 A list of edits that will be applied in order.
 type BTJEditList2707 struct {
+	BTJEdit3734
 	BtType *string       `json:"btType,omitempty"`
 	Edits  []BTJEdit3734 `json:"edits,omitempty"`
 }
@@ -103,6 +104,14 @@ func (o *BTJEditList2707) SetEdits(v []BTJEdit3734) {
 
 func (o BTJEditList2707) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTJEdit3734, errBTJEdit3734 := json.Marshal(o.BTJEdit3734)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
+	errBTJEdit3734 = json.Unmarshal([]byte(serializedBTJEdit3734), &toSerialize)
+	if errBTJEdit3734 != nil {
+		return []byte{}, errBTJEdit3734
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

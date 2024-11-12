@@ -16,12 +16,15 @@ import (
 
 // BTDatumDisplayData3408 struct for BTDatumDisplayData3408
 type BTDatumDisplayData3408 struct {
+	BTAnnotationDisplayData3225
 	AnnotationPlane         []float32 `json:"annotationPlane,omitempty"`
 	BaseNormal              []float32 `json:"baseNormal,omitempty"`
 	BasePoint               []float32 `json:"basePoint,omitempty"`
 	BtType                  *string   `json:"btType,omitempty"`
+	DeterministicId         *string   `json:"deterministicId,omitempty"`
 	DxdySegments            []float32 `json:"dxdySegments,omitempty"`
 	NumberOfLeaderSegements *int32    `json:"numberOfLeaderSegements,omitempty"`
+	Name                    *string   `json:"name,omitempty"`
 }
 
 // NewBTDatumDisplayData3408 instantiates a new BTDatumDisplayData3408 object
@@ -169,6 +172,38 @@ func (o *BTDatumDisplayData3408) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetDeterministicId returns the DeterministicId field value if set, zero value otherwise.
+func (o *BTDatumDisplayData3408) GetDeterministicId() string {
+	if o == nil || o.DeterministicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DeterministicId
+}
+
+// GetDeterministicIdOk returns a tuple with the DeterministicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDatumDisplayData3408) GetDeterministicIdOk() (*string, bool) {
+	if o == nil || o.DeterministicId == nil {
+		return nil, false
+	}
+	return o.DeterministicId, true
+}
+
+// HasDeterministicId returns a boolean if a field has been set.
+func (o *BTDatumDisplayData3408) HasDeterministicId() bool {
+	if o != nil && o.DeterministicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDeterministicId gets a reference to the given string and assigns it to the DeterministicId field.
+func (o *BTDatumDisplayData3408) SetDeterministicId(v string) {
+	o.DeterministicId = &v
+}
+
 // GetDxdySegments returns the DxdySegments field value if set, zero value otherwise.
 func (o *BTDatumDisplayData3408) GetDxdySegments() []float32 {
 	if o == nil || o.DxdySegments == nil {
@@ -233,8 +268,48 @@ func (o *BTDatumDisplayData3408) SetNumberOfLeaderSegements(v int32) {
 	o.NumberOfLeaderSegements = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTDatumDisplayData3408) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDatumDisplayData3408) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTDatumDisplayData3408) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTDatumDisplayData3408) SetName(v string) {
+	o.Name = &v
+}
+
 func (o BTDatumDisplayData3408) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTAnnotationDisplayData3225, errBTAnnotationDisplayData3225 := json.Marshal(o.BTAnnotationDisplayData3225)
+	if errBTAnnotationDisplayData3225 != nil {
+		return []byte{}, errBTAnnotationDisplayData3225
+	}
+	errBTAnnotationDisplayData3225 = json.Unmarshal([]byte(serializedBTAnnotationDisplayData3225), &toSerialize)
+	if errBTAnnotationDisplayData3225 != nil {
+		return []byte{}, errBTAnnotationDisplayData3225
+	}
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
@@ -247,11 +322,17 @@ func (o BTDatumDisplayData3408) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.DeterministicId != nil {
+		toSerialize["deterministicId"] = o.DeterministicId
+	}
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments
 	}
 	if o.NumberOfLeaderSegements != nil {
 		toSerialize["numberOfLeaderSegements"] = o.NumberOfLeaderSegements
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

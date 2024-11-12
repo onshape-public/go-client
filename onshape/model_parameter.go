@@ -18,10 +18,10 @@ import (
 type Parameter struct {
 	AllowEmptyValue *bool                             `json:"allowEmptyValue,omitempty"`
 	AllowReserved   *bool                             `json:"allowReserved,omitempty"`
-	Content         *ParameterContent                 `json:"content,omitempty"`
+	Content         *map[string]MediaType             `json:"content,omitempty"`
 	Deprecated      *bool                             `json:"deprecated,omitempty"`
 	Description     *string                           `json:"description,omitempty"`
-	Example         *map[string]interface{}           `json:"example,omitempty"`
+	Example         map[string]interface{}            `json:"example,omitempty"`
 	Examples        *map[string]Example               `json:"examples,omitempty"`
 	Explode         *bool                             `json:"explode,omitempty"`
 	Extensions      map[string]map[string]interface{} `json:"extensions,omitempty"`
@@ -115,9 +115,9 @@ func (o *Parameter) SetAllowReserved(v bool) {
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *Parameter) GetContent() ParameterContent {
+func (o *Parameter) GetContent() map[string]MediaType {
 	if o == nil || o.Content == nil {
-		var ret ParameterContent
+		var ret map[string]MediaType
 		return ret
 	}
 	return *o.Content
@@ -125,7 +125,7 @@ func (o *Parameter) GetContent() ParameterContent {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Parameter) GetContentOk() (*ParameterContent, bool) {
+func (o *Parameter) GetContentOk() (*map[string]MediaType, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -141,8 +141,8 @@ func (o *Parameter) HasContent() bool {
 	return false
 }
 
-// SetContent gets a reference to the given ParameterContent and assigns it to the Content field.
-func (o *Parameter) SetContent(v ParameterContent) {
+// SetContent gets a reference to the given map[string]MediaType and assigns it to the Content field.
+func (o *Parameter) SetContent(v map[string]MediaType) {
 	o.Content = &v
 }
 
@@ -216,12 +216,12 @@ func (o *Parameter) GetExample() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Example
+	return o.Example
 }
 
 // GetExampleOk returns a tuple with the Example field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Parameter) GetExampleOk() (*map[string]interface{}, bool) {
+func (o *Parameter) GetExampleOk() (map[string]interface{}, bool) {
 	if o == nil || o.Example == nil {
 		return nil, false
 	}
@@ -239,7 +239,7 @@ func (o *Parameter) HasExample() bool {
 
 // SetExample gets a reference to the given map[string]interface{} and assigns it to the Example field.
 func (o *Parameter) SetExample(v map[string]interface{}) {
-	o.Example = &v
+	o.Example = v
 }
 
 // GetExamples returns the Examples field value if set, zero value otherwise.

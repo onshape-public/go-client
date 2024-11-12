@@ -122,56 +122,6 @@ func NewBTPExpression9WithDefaults() *BTPExpression9 {
 	return &this
 }
 
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *BTPExpression9) GetAtomic() bool {
-	type getResult interface {
-		GetAtomic() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAtomic()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTPExpression9) GetAtomicOk() (*bool, bool) {
-	type getResult interface {
-		GetAtomicOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAtomicOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *BTPExpression9) HasAtomic() bool {
-	type getResult interface {
-		HasAtomic() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasAtomic()
-	} else {
-		return false
-	}
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *BTPExpression9) SetAtomic(v bool) {
-	type getResult interface {
-		SetAtomic(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetAtomic(v)
-}
-
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTPExpression9) GetBtType() string {
 	type getResult interface {
@@ -220,6 +170,56 @@ func (o *BTPExpression9) SetBtType(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *BTPExpression9) GetAtomic() bool {
+	type getResult interface {
+		GetAtomic() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAtomic()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpression9) GetAtomicOk() (*bool, bool) {
+	type getResult interface {
+		GetAtomicOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAtomicOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *BTPExpression9) HasAtomic() bool {
+	type getResult interface {
+		HasAtomic() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAtomic()
+	} else {
+		return false
+	}
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *BTPExpression9) SetAtomic(v bool) {
+	type getResult interface {
+		SetAtomic(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAtomic(v)
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -936,8 +936,9 @@ func (v *NullableBTPExpression9) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTPExpression9 struct {
-	Atomic              *bool               `json:"atomic,omitempty"`
+	BTPPropertyAccessor23
 	BtType              *string             `json:"btType,omitempty"`
+	Atomic              *bool               `json:"atomic,omitempty"`
 	DocumentationType   *GBTPDefinitionType `json:"documentationType,omitempty"`
 	EndSourceLocation   *int32              `json:"endSourceLocation,omitempty"`
 	NodeId              *string             `json:"nodeId,omitempty"`
@@ -963,38 +964,6 @@ func Newbase_BTPExpression9() *base_BTPExpression9 {
 func Newbase_BTPExpression9WithDefaults() *base_BTPExpression9 {
 	this := base_BTPExpression9{}
 	return &this
-}
-
-// GetAtomic returns the Atomic field value if set, zero value otherwise.
-func (o *base_BTPExpression9) GetAtomic() bool {
-	if o == nil || o.Atomic == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Atomic
-}
-
-// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTPExpression9) GetAtomicOk() (*bool, bool) {
-	if o == nil || o.Atomic == nil {
-		return nil, false
-	}
-	return o.Atomic, true
-}
-
-// HasAtomic returns a boolean if a field has been set.
-func (o *base_BTPExpression9) HasAtomic() bool {
-	if o != nil && o.Atomic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
-func (o *base_BTPExpression9) SetAtomic(v bool) {
-	o.Atomic = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -1027,6 +996,38 @@ func (o *base_BTPExpression9) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTPExpression9) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetAtomic returns the Atomic field value if set, zero value otherwise.
+func (o *base_BTPExpression9) GetAtomic() bool {
+	if o == nil || o.Atomic == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Atomic
+}
+
+// GetAtomicOk returns a tuple with the Atomic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPExpression9) GetAtomicOk() (*bool, bool) {
+	if o == nil || o.Atomic == nil {
+		return nil, false
+	}
+	return o.Atomic, true
+}
+
+// HasAtomic returns a boolean if a field has been set.
+func (o *base_BTPExpression9) HasAtomic() bool {
+	if o != nil && o.Atomic != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAtomic gets a reference to the given bool and assigns it to the Atomic field.
+func (o *base_BTPExpression9) SetAtomic(v bool) {
+	o.Atomic = &v
 }
 
 // GetDocumentationType returns the DocumentationType field value if set, zero value otherwise.
@@ -1287,11 +1288,19 @@ func (o *base_BTPExpression9) SetStartSourceLocation(v int32) {
 
 func (o base_BTPExpression9) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Atomic != nil {
-		toSerialize["atomic"] = o.Atomic
+	serializedBTPPropertyAccessor23, errBTPPropertyAccessor23 := json.Marshal(o.BTPPropertyAccessor23)
+	if errBTPPropertyAccessor23 != nil {
+		return []byte{}, errBTPPropertyAccessor23
+	}
+	errBTPPropertyAccessor23 = json.Unmarshal([]byte(serializedBTPPropertyAccessor23), &toSerialize)
+	if errBTPPropertyAccessor23 != nil {
+		return []byte{}, errBTPPropertyAccessor23
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Atomic != nil {
+		toSerialize["atomic"] = o.Atomic
 	}
 	if o.DocumentationType != nil {
 		toSerialize["documentationType"] = o.DocumentationType

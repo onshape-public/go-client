@@ -16,13 +16,13 @@ import (
 
 // BufferViewModel struct for BufferViewModel
 type BufferViewModel struct {
-	BufferModel    *BufferModel                   `json:"bufferModel,omitempty"`
-	BufferViewData *BufferViewModelBufferViewData `json:"bufferViewData,omitempty"`
-	ByteLength     *int32                         `json:"byteLength,omitempty"`
-	ByteOffset     *int32                         `json:"byteOffset,omitempty"`
-	ByteStride     *int32                         `json:"byteStride,omitempty"`
-	Name           *string                        `json:"name,omitempty"`
-	Target         *int32                         `json:"target,omitempty"`
+	BufferModel    *BufferModel            `json:"bufferModel,omitempty"`
+	BufferViewData *map[string]interface{} `json:"bufferViewData,omitempty"`
+	ByteLength     *int32                  `json:"byteLength,omitempty"`
+	ByteOffset     *int32                  `json:"byteOffset,omitempty"`
+	ByteStride     *int32                  `json:"byteStride,omitempty"`
+	Name           *string                 `json:"name,omitempty"`
+	Target         *int32                  `json:"target,omitempty"`
 }
 
 // NewBufferViewModel instantiates a new BufferViewModel object
@@ -75,9 +75,9 @@ func (o *BufferViewModel) SetBufferModel(v BufferModel) {
 }
 
 // GetBufferViewData returns the BufferViewData field value if set, zero value otherwise.
-func (o *BufferViewModel) GetBufferViewData() BufferViewModelBufferViewData {
+func (o *BufferViewModel) GetBufferViewData() map[string]interface{} {
 	if o == nil || o.BufferViewData == nil {
-		var ret BufferViewModelBufferViewData
+		var ret map[string]interface{}
 		return ret
 	}
 	return *o.BufferViewData
@@ -85,7 +85,7 @@ func (o *BufferViewModel) GetBufferViewData() BufferViewModelBufferViewData {
 
 // GetBufferViewDataOk returns a tuple with the BufferViewData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BufferViewModel) GetBufferViewDataOk() (*BufferViewModelBufferViewData, bool) {
+func (o *BufferViewModel) GetBufferViewDataOk() (*map[string]interface{}, bool) {
 	if o == nil || o.BufferViewData == nil {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *BufferViewModel) HasBufferViewData() bool {
 	return false
 }
 
-// SetBufferViewData gets a reference to the given BufferViewModelBufferViewData and assigns it to the BufferViewData field.
-func (o *BufferViewModel) SetBufferViewData(v BufferViewModelBufferViewData) {
+// SetBufferViewData gets a reference to the given map[string]interface{} and assigns it to the BufferViewData field.
+func (o *BufferViewModel) SetBufferViewData(v map[string]interface{}) {
 	o.BufferViewData = &v
 }
 

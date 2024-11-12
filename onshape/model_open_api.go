@@ -22,7 +22,7 @@ type OpenAPI struct {
 	Info              *Info                             `json:"info,omitempty"`
 	JsonSchemaDialect *string                           `json:"jsonSchemaDialect,omitempty"`
 	Openapi           *string                           `json:"openapi,omitempty"`
-	Paths             *OpenAPIPaths                     `json:"paths,omitempty"`
+	Paths             *map[string]PathItem              `json:"paths,omitempty"`
 	Security          []SecurityRequirement             `json:"security,omitempty"`
 	Servers           []Server                          `json:"servers,omitempty"`
 	Tags              []Tag                             `json:"tags,omitempty"`
@@ -239,9 +239,9 @@ func (o *OpenAPI) SetOpenapi(v string) {
 }
 
 // GetPaths returns the Paths field value if set, zero value otherwise.
-func (o *OpenAPI) GetPaths() OpenAPIPaths {
+func (o *OpenAPI) GetPaths() map[string]PathItem {
 	if o == nil || o.Paths == nil {
-		var ret OpenAPIPaths
+		var ret map[string]PathItem
 		return ret
 	}
 	return *o.Paths
@@ -249,7 +249,7 @@ func (o *OpenAPI) GetPaths() OpenAPIPaths {
 
 // GetPathsOk returns a tuple with the Paths field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OpenAPI) GetPathsOk() (*OpenAPIPaths, bool) {
+func (o *OpenAPI) GetPathsOk() (*map[string]PathItem, bool) {
 	if o == nil || o.Paths == nil {
 		return nil, false
 	}
@@ -265,8 +265,8 @@ func (o *OpenAPI) HasPaths() bool {
 	return false
 }
 
-// SetPaths gets a reference to the given OpenAPIPaths and assigns it to the Paths field.
-func (o *OpenAPI) SetPaths(v OpenAPIPaths) {
+// SetPaths gets a reference to the given map[string]PathItem and assigns it to the Paths field.
+func (o *OpenAPI) SetPaths(v map[string]PathItem) {
 	o.Paths = &v
 }
 

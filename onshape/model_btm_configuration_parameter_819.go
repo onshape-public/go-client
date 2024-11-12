@@ -507,6 +507,56 @@ func (o *BTMConfigurationParameter819) SetValid(v bool) {
 	o.GetActualInstance().(getResult).SetValid(v)
 }
 
+// GetVisibilityCondition returns the VisibilityCondition field value if set, zero value otherwise.
+func (o *BTMConfigurationParameter819) GetVisibilityCondition() BTParameterVisibilityCondition177 {
+	type getResult interface {
+		GetVisibilityCondition() BTParameterVisibilityCondition177
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetVisibilityCondition()
+	} else {
+		var de BTParameterVisibilityCondition177
+		return de
+	}
+}
+
+// GetVisibilityConditionOk returns a tuple with the VisibilityCondition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameter819) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool) {
+	type getResult interface {
+		GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetVisibilityConditionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasVisibilityCondition returns a boolean if a field has been set.
+func (o *BTMConfigurationParameter819) HasVisibilityCondition() bool {
+	type getResult interface {
+		HasVisibilityCondition() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasVisibilityCondition()
+	} else {
+		return false
+	}
+}
+
+// SetVisibilityCondition gets a reference to the given BTParameterVisibilityCondition177 and assigns it to the VisibilityCondition field.
+func (o *BTMConfigurationParameter819) SetVisibilityCondition(v BTParameterVisibilityCondition177) {
+	type getResult interface {
+		SetVisibilityCondition(v BTParameterVisibilityCondition177)
+	}
+
+	o.GetActualInstance().(getResult).SetVisibilityCondition(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMConfigurationParameter819) UnmarshalJSON(data []byte) error {
 	var err error
@@ -639,16 +689,18 @@ func (v *NullableBTMConfigurationParameter819) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMConfigurationParameter819 struct {
+	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion   *string                        `json:"importMicroversion,omitempty"`
-	NodeId               *string                        `json:"nodeId,omitempty"`
-	GeneratedParameterId *BTTreeNode20                  `json:"generatedParameterId,omitempty"`
-	IsCosmetic           *bool                          `json:"isCosmetic,omitempty"`
-	ParameterId          *string                        `json:"parameterId,omitempty"`
-	ParameterName        *string                        `json:"parameterName,omitempty"`
-	ParameterType        *GBTConfigurationParameterType `json:"parameterType,omitempty"`
-	Valid                *bool                          `json:"valid,omitempty"`
+	ImportMicroversion   *string                            `json:"importMicroversion,omitempty"`
+	NodeId               *string                            `json:"nodeId,omitempty"`
+	GeneratedParameterId *BTTreeNode20                      `json:"generatedParameterId,omitempty"`
+	IsCosmetic           *bool                              `json:"isCosmetic,omitempty"`
+	ParameterId          *string                            `json:"parameterId,omitempty"`
+	ParameterName        *string                            `json:"parameterName,omitempty"`
+	ParameterType        *GBTConfigurationParameterType     `json:"parameterType,omitempty"`
+	Valid                *bool                              `json:"valid,omitempty"`
+	VisibilityCondition  *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
 }
 
 // Newbase_BTMConfigurationParameter819 instantiates a new base_BTMConfigurationParameter819 object
@@ -956,8 +1008,48 @@ func (o *base_BTMConfigurationParameter819) SetValid(v bool) {
 	o.Valid = &v
 }
 
+// GetVisibilityCondition returns the VisibilityCondition field value if set, zero value otherwise.
+func (o *base_BTMConfigurationParameter819) GetVisibilityCondition() BTParameterVisibilityCondition177 {
+	if o == nil || o.VisibilityCondition == nil {
+		var ret BTParameterVisibilityCondition177
+		return ret
+	}
+	return *o.VisibilityCondition
+}
+
+// GetVisibilityConditionOk returns a tuple with the VisibilityCondition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMConfigurationParameter819) GetVisibilityConditionOk() (*BTParameterVisibilityCondition177, bool) {
+	if o == nil || o.VisibilityCondition == nil {
+		return nil, false
+	}
+	return o.VisibilityCondition, true
+}
+
+// HasVisibilityCondition returns a boolean if a field has been set.
+func (o *base_BTMConfigurationParameter819) HasVisibilityCondition() bool {
+	if o != nil && o.VisibilityCondition != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibilityCondition gets a reference to the given BTParameterVisibilityCondition177 and assigns it to the VisibilityCondition field.
+func (o *base_BTMConfigurationParameter819) SetVisibilityCondition(v BTParameterVisibilityCondition177) {
+	o.VisibilityCondition = &v
+}
+
 func (o base_BTMConfigurationParameter819) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
+	errBTMNode19 = json.Unmarshal([]byte(serializedBTMNode19), &toSerialize)
+	if errBTMNode19 != nil {
+		return []byte{}, errBTMNode19
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -984,6 +1076,9 @@ func (o base_BTMConfigurationParameter819) MarshalJSON() ([]byte, error) {
 	}
 	if o.Valid != nil {
 		toSerialize["valid"] = o.Valid
+	}
+	if o.VisibilityCondition != nil {
+		toSerialize["visibilityCondition"] = o.VisibilityCondition
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,6 +16,7 @@ import (
 
 // BTMParameterStringWithTolerances4286 struct for BTMParameterStringWithTolerances4286
 type BTMParameterStringWithTolerances4286 struct {
+	BTMReadOnlyParameter3800
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -205,6 +206,14 @@ func (o *BTMParameterStringWithTolerances4286) SetComponents(v []BTToleranceStri
 
 func (o BTMParameterStringWithTolerances4286) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMReadOnlyParameter3800, errBTMReadOnlyParameter3800 := json.Marshal(o.BTMReadOnlyParameter3800)
+	if errBTMReadOnlyParameter3800 != nil {
+		return []byte{}, errBTMReadOnlyParameter3800
+	}
+	errBTMReadOnlyParameter3800 = json.Unmarshal([]byte(serializedBTMReadOnlyParameter3800), &toSerialize)
+	if errBTMReadOnlyParameter3800 != nil {
+		return []byte{}, errBTMReadOnlyParameter3800
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

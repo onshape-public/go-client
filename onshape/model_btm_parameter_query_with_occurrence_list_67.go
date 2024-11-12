@@ -16,6 +16,7 @@ import (
 
 // BTMParameterQueryWithOccurrenceList67 struct for BTMParameterQueryWithOccurrenceList67
 type BTMParameterQueryWithOccurrenceList67 struct {
+	BTMParameter1
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -238,6 +239,14 @@ func (o *BTMParameterQueryWithOccurrenceList67) SetQueries(v []BTMIndividualQuer
 
 func (o BTMParameterQueryWithOccurrenceList67) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameter1, errBTMParameter1 := json.Marshal(o.BTMParameter1)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
+	errBTMParameter1 = json.Unmarshal([]byte(serializedBTMParameter1), &toSerialize)
+	if errBTMParameter1 != nil {
+		return []byte{}, errBTMParameter1
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

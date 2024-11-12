@@ -25,7 +25,7 @@ type GlTF struct {
 	Extensions         map[string]map[string]interface{} `json:"extensions,omitempty"`
 	ExtensionsRequired []string                          `json:"extensionsRequired,omitempty"`
 	ExtensionsUsed     []string                          `json:"extensionsUsed,omitempty"`
-	Extras             *map[string]interface{}           `json:"extras,omitempty"`
+	Extras             map[string]interface{}            `json:"extras,omitempty"`
 	Images             []Image                           `json:"images,omitempty"`
 	Materials          []Material                        `json:"materials,omitempty"`
 	Meshes             []Mesh                            `json:"meshes,omitempty"`
@@ -348,12 +348,12 @@ func (o *GlTF) GetExtras() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Extras
+	return o.Extras
 }
 
 // GetExtrasOk returns a tuple with the Extras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlTF) GetExtrasOk() (*map[string]interface{}, bool) {
+func (o *GlTF) GetExtrasOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extras == nil {
 		return nil, false
 	}
@@ -371,7 +371,7 @@ func (o *GlTF) HasExtras() bool {
 
 // SetExtras gets a reference to the given map[string]interface{} and assigns it to the Extras field.
 func (o *GlTF) SetExtras(v map[string]interface{}) {
-	o.Extras = &v
+	o.Extras = v
 }
 
 // GetImages returns the Images field value if set, zero value otherwise.

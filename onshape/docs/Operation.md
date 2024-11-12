@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **OperationId** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to [**[]Parameter**](Parameter.md) |  | [optional] 
 **RequestBody** | Pointer to [**RequestBody**](RequestBody.md) |  | [optional] 
-**Responses** | Pointer to [**OperationResponses**](OperationResponses.md) |  | [optional] 
+**Responses** | Pointer to [**map[string]ApiResponse**](ApiResponse.md) |  | [optional] 
 **Security** | Pointer to [**[]SecurityRequirement**](SecurityRequirement.md) |  | [optional] 
 **Servers** | Pointer to [**[]Server**](Server.md) |  | [optional] 
 **Summary** | Pointer to **string** |  | [optional] 
@@ -239,20 +239,20 @@ HasRequestBody returns a boolean if a field has been set.
 
 ### GetResponses
 
-`func (o *Operation) GetResponses() OperationResponses`
+`func (o *Operation) GetResponses() map[string]ApiResponse`
 
 GetResponses returns the Responses field if non-nil, zero value otherwise.
 
 ### GetResponsesOk
 
-`func (o *Operation) GetResponsesOk() (*OperationResponses, bool)`
+`func (o *Operation) GetResponsesOk() (*map[string]ApiResponse, bool)`
 
 GetResponsesOk returns a tuple with the Responses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponses
 
-`func (o *Operation) SetResponses(v OperationResponses)`
+`func (o *Operation) SetResponses(v map[string]ApiResponse)`
 
 SetResponses sets Responses field to given value.
 

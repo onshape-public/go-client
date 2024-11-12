@@ -16,6 +16,7 @@ import (
 
 // BTAllowedMateTypeFilter1511 struct for BTAllowedMateTypeFilter1511
 type BTAllowedMateTypeFilter1511 struct {
+	BTMateFilter162
 	BtType               *string       `json:"btType,omitempty"`
 	RequireMateQueryData *bool         `json:"requireMateQueryData,omitempty"`
 	TopLevelMateOnly     *bool         `json:"topLevelMateOnly,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTAllowedMateTypeFilter1511) SetAllowedMateTypes(v []GBTMateType) {
 
 func (o BTAllowedMateTypeFilter1511) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMateFilter162, errBTMateFilter162 := json.Marshal(o.BTMateFilter162)
+	if errBTMateFilter162 != nil {
+		return []byte{}, errBTMateFilter162
+	}
+	errBTMateFilter162 = json.Unmarshal([]byte(serializedBTMateFilter162), &toSerialize)
+	if errBTMateFilter162 != nil {
+		return []byte{}, errBTMateFilter162
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

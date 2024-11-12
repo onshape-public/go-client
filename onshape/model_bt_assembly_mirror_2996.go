@@ -16,6 +16,7 @@ import (
 
 // BTAssemblyMirror2996 struct for BTAssemblyMirror2996
 type BTAssemblyMirror2996 struct {
+	BTParametricInstance2641
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -1128,6 +1129,14 @@ func (o *BTAssemblyMirror2996) SetMirrorFeature(v BTMAssemblyMirrorFeature3037) 
 
 func (o BTAssemblyMirror2996) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParametricInstance2641, errBTParametricInstance2641 := json.Marshal(o.BTParametricInstance2641)
+	if errBTParametricInstance2641 != nil {
+		return []byte{}, errBTParametricInstance2641
+	}
+	errBTParametricInstance2641 = json.Unmarshal([]byte(serializedBTParametricInstance2641), &toSerialize)
+	if errBTParametricInstance2641 != nil {
+		return []byte{}, errBTParametricInstance2641
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

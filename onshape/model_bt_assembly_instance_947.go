@@ -16,6 +16,7 @@ import (
 
 // BTAssemblyInstance947 struct for BTAssemblyInstance947
 type BTAssemblyInstance947 struct {
+	BTInstance642
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -1458,6 +1459,14 @@ func (o *BTAssemblyInstance947) SetVersionIdIfExternal(v string) {
 
 func (o BTAssemblyInstance947) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInstance642, errBTInstance642 := json.Marshal(o.BTInstance642)
+	if errBTInstance642 != nil {
+		return []byte{}, errBTInstance642
+	}
+	errBTInstance642 = json.Unmarshal([]byte(serializedBTInstance642), &toSerialize)
+	if errBTInstance642 != nil {
+		return []byte{}, errBTInstance642
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

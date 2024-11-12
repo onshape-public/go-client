@@ -16,6 +16,7 @@ import (
 
 // BTTableSpec915 struct for BTTableSpec915
 type BTTableSpec915 struct {
+	BTFeatureSpec129
 	AdditionalLocalizedStrings *int32                       `json:"additionalLocalizedStrings,omitempty"`
 	AllParameters              []BTParameterSpec6           `json:"allParameters,omitempty"`
 	BtType                     *string                      `json:"btType,omitempty"`
@@ -1159,6 +1160,14 @@ func (o *BTTableSpec915) SetIsComputedPropertyTable(v bool) {
 
 func (o BTTableSpec915) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTFeatureSpec129, errBTFeatureSpec129 := json.Marshal(o.BTFeatureSpec129)
+	if errBTFeatureSpec129 != nil {
+		return []byte{}, errBTFeatureSpec129
+	}
+	errBTFeatureSpec129 = json.Unmarshal([]byte(serializedBTFeatureSpec129), &toSerialize)
+	if errBTFeatureSpec129 != nil {
+		return []byte{}, errBTFeatureSpec129
+	}
 	if o.AdditionalLocalizedStrings != nil {
 		toSerialize["additionalLocalizedStrings"] = o.AdditionalLocalizedStrings
 	}

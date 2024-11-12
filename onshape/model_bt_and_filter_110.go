@@ -16,6 +16,7 @@ import (
 
 // BTAndFilter110 struct for BTAndFilter110
 type BTAndFilter110 struct {
+	BTQueryFilter183
 	BtType   *string           `json:"btType,omitempty"`
 	Operand1 *BTQueryFilter183 `json:"operand1,omitempty"`
 	Operand2 *BTQueryFilter183 `json:"operand2,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTAndFilter110) SetOperand2(v BTQueryFilter183) {
 
 func (o BTAndFilter110) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

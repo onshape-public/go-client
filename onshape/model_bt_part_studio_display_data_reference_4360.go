@@ -16,6 +16,7 @@ import (
 
 // BTPartStudioDisplayDataReference4360 struct for BTPartStudioDisplayDataReference4360
 type BTPartStudioDisplayDataReference4360 struct {
+	BTPartStudioDisplayDataBase2751
 	AnnotationsForElement                  *BTAnnotationElementDisplayData894            `json:"annotationsForElement,omitempty"`
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
@@ -565,6 +566,14 @@ func (o *BTPartStudioDisplayDataReference4360) SetTessellationSettings(v map[str
 
 func (o BTPartStudioDisplayDataReference4360) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTPartStudioDisplayDataBase2751, errBTPartStudioDisplayDataBase2751 := json.Marshal(o.BTPartStudioDisplayDataBase2751)
+	if errBTPartStudioDisplayDataBase2751 != nil {
+		return []byte{}, errBTPartStudioDisplayDataBase2751
+	}
+	errBTPartStudioDisplayDataBase2751 = json.Unmarshal([]byte(serializedBTPartStudioDisplayDataBase2751), &toSerialize)
+	if errBTPartStudioDisplayDataBase2751 != nil {
+		return []byte{}, errBTPartStudioDisplayDataBase2751
+	}
 	if o.AnnotationsForElement != nil {
 		toSerialize["annotationsForElement"] = o.AnnotationsForElement
 	}

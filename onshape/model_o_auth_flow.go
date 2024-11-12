@@ -19,7 +19,7 @@ type OAuthFlow struct {
 	AuthorizationUrl *string                           `json:"authorizationUrl,omitempty"`
 	Extensions       map[string]map[string]interface{} `json:"extensions,omitempty"`
 	RefreshUrl       *string                           `json:"refreshUrl,omitempty"`
-	Scopes           *OAuthFlowScopes                  `json:"scopes,omitempty"`
+	Scopes           *map[string]string                `json:"scopes,omitempty"`
 	TokenUrl         *string                           `json:"tokenUrl,omitempty"`
 }
 
@@ -137,9 +137,9 @@ func (o *OAuthFlow) SetRefreshUrl(v string) {
 }
 
 // GetScopes returns the Scopes field value if set, zero value otherwise.
-func (o *OAuthFlow) GetScopes() OAuthFlowScopes {
+func (o *OAuthFlow) GetScopes() map[string]string {
 	if o == nil || o.Scopes == nil {
-		var ret OAuthFlowScopes
+		var ret map[string]string
 		return ret
 	}
 	return *o.Scopes
@@ -147,7 +147,7 @@ func (o *OAuthFlow) GetScopes() OAuthFlowScopes {
 
 // GetScopesOk returns a tuple with the Scopes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OAuthFlow) GetScopesOk() (*OAuthFlowScopes, bool) {
+func (o *OAuthFlow) GetScopesOk() (*map[string]string, bool) {
 	if o == nil || o.Scopes == nil {
 		return nil, false
 	}
@@ -163,8 +163,8 @@ func (o *OAuthFlow) HasScopes() bool {
 	return false
 }
 
-// SetScopes gets a reference to the given OAuthFlowScopes and assigns it to the Scopes field.
-func (o *OAuthFlow) SetScopes(v OAuthFlowScopes) {
+// SetScopes gets a reference to the given map[string]string and assigns it to the Scopes field.
+func (o *OAuthFlow) SetScopes(v map[string]string) {
 	o.Scopes = &v
 }
 

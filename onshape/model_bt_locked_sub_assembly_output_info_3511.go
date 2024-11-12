@@ -16,6 +16,7 @@ import (
 
 // BTLockedSubAssemblyOutputInfo3511 struct for BTLockedSubAssemblyOutputInfo3511
 type BTLockedSubAssemblyOutputInfo3511 struct {
+	BTRigidOrLockedSubAssemblyOutputInfo3860
 	BtType           *string                  `json:"btType,omitempty"`
 	Locked           *bool                    `json:"locked,omitempty"`
 	Rigid            *bool                    `json:"rigid,omitempty"`
@@ -235,6 +236,14 @@ func (o *BTLockedSubAssemblyOutputInfo3511) SetSyncError(v GBTErrorStringEnum) {
 
 func (o BTLockedSubAssemblyOutputInfo3511) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTRigidOrLockedSubAssemblyOutputInfo3860, errBTRigidOrLockedSubAssemblyOutputInfo3860 := json.Marshal(o.BTRigidOrLockedSubAssemblyOutputInfo3860)
+	if errBTRigidOrLockedSubAssemblyOutputInfo3860 != nil {
+		return []byte{}, errBTRigidOrLockedSubAssemblyOutputInfo3860
+	}
+	errBTRigidOrLockedSubAssemblyOutputInfo3860 = json.Unmarshal([]byte(serializedBTRigidOrLockedSubAssemblyOutputInfo3860), &toSerialize)
+	if errBTRigidOrLockedSubAssemblyOutputInfo3860 != nil {
+		return []byte{}, errBTRigidOrLockedSubAssemblyOutputInfo3860
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -777,6 +777,7 @@ func (v *NullableBTFeatureEntity34) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTFeatureEntity34 struct {
+	BTBaseEntityData33
 	BtType                 *string                       `json:"btType,omitempty"`
 	ConstructionPlane      *bool                         `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry    *BTBaseEntityData33           `json:"copyWithoutGeometry,omitempty"`
@@ -1161,6 +1162,14 @@ func (o *base_BTFeatureEntity34) SetFirstGeometry(v BTEntityGeometry35) {
 
 func (o base_BTFeatureEntity34) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTBaseEntityData33, errBTBaseEntityData33 := json.Marshal(o.BTBaseEntityData33)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
+	errBTBaseEntityData33 = json.Unmarshal([]byte(serializedBTBaseEntityData33), &toSerialize)
+	if errBTBaseEntityData33 != nil {
+		return []byte{}, errBTBaseEntityData33
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

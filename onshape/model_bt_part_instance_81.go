@@ -16,6 +16,7 @@ import (
 
 // BTPartInstance81 struct for BTPartInstance81
 type BTPartInstance81 struct {
+	BTInstance642
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -1590,6 +1591,14 @@ func (o *BTPartInstance81) SetType(v GBTPartStudioInstanceType) {
 
 func (o BTPartInstance81) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTInstance642, errBTInstance642 := json.Marshal(o.BTInstance642)
+	if errBTInstance642 != nil {
+		return []byte{}, errBTInstance642
+	}
+	errBTInstance642 = json.Unmarshal([]byte(serializedBTInstance642), &toSerialize)
+	if errBTInstance642 != nil {
+		return []byte{}, errBTInstance642
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

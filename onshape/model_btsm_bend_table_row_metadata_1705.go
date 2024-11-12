@@ -16,6 +16,7 @@ import (
 
 // BTSMBendTableRowMetadata1705 struct for BTSMBendTableRowMetadata1705
 type BTSMBendTableRowMetadata1705 struct {
+	BTBaseSMJointTableRowMetadata2232
 	BtType                  *string                        `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableCrossHighlightData1753 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
@@ -169,6 +170,14 @@ func (o *BTSMBendTableRowMetadata1705) SetIsJointTypeEditable(v bool) {
 
 func (o BTSMBendTableRowMetadata1705) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTBaseSMJointTableRowMetadata2232, errBTBaseSMJointTableRowMetadata2232 := json.Marshal(o.BTBaseSMJointTableRowMetadata2232)
+	if errBTBaseSMJointTableRowMetadata2232 != nil {
+		return []byte{}, errBTBaseSMJointTableRowMetadata2232
+	}
+	errBTBaseSMJointTableRowMetadata2232 = json.Unmarshal([]byte(serializedBTBaseSMJointTableRowMetadata2232), &toSerialize)
+	if errBTBaseSMJointTableRowMetadata2232 != nil {
+		return []byte{}, errBTBaseSMJointTableRowMetadata2232
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

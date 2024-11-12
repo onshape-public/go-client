@@ -808,6 +808,7 @@ func (v *NullableBTMParameterReferenceBlob3281) UnmarshalJSON(src []byte) error 
 }
 
 type base_BTMParameterReferenceBlob3281 struct {
+	BTMParameterReference2434
 	BtType *string `json:"btType,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string `json:"importMicroversion,omitempty"`
@@ -1228,6 +1229,14 @@ func (o *base_BTMParameterReferenceBlob3281) SetNamespace(v string) {
 
 func (o base_BTMParameterReferenceBlob3281) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTMParameterReference2434, errBTMParameterReference2434 := json.Marshal(o.BTMParameterReference2434)
+	if errBTMParameterReference2434 != nil {
+		return []byte{}, errBTMParameterReference2434
+	}
+	errBTMParameterReference2434 = json.Unmarshal([]byte(serializedBTMParameterReference2434), &toSerialize)
+	if errBTMParameterReference2434 != nil {
+		return []byte{}, errBTMParameterReference2434
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

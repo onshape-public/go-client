@@ -16,6 +16,7 @@ import (
 
 // BTParameterVisibilityAlwaysHidden176 struct for BTParameterVisibilityAlwaysHidden176
 type BTParameterVisibilityAlwaysHidden176 struct {
+	BTParameterVisibilityCondition177
 	BtType *string `json:"btType,omitempty"`
 }
 
@@ -70,6 +71,14 @@ func (o *BTParameterVisibilityAlwaysHidden176) SetBtType(v string) {
 
 func (o BTParameterVisibilityAlwaysHidden176) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParameterVisibilityCondition177, errBTParameterVisibilityCondition177 := json.Marshal(o.BTParameterVisibilityCondition177)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
+	errBTParameterVisibilityCondition177 = json.Unmarshal([]byte(serializedBTParameterVisibilityCondition177), &toSerialize)
+	if errBTParameterVisibilityCondition177 != nil {
+		return []byte{}, errBTParameterVisibilityCondition177
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

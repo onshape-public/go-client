@@ -16,6 +16,7 @@ import (
 
 // BTSketchObjectFilter184 struct for BTSketchObjectFilter184
 type BTSketchObjectFilter184 struct {
+	BTQueryFilter183
 	BtType         *string              `json:"btType,omitempty"`
 	IsSketchObject *bool                `json:"isSketchObject,omitempty"`
 	ObjectType     *GBTSketchObjectType `json:"objectType,omitempty"`
@@ -136,6 +137,14 @@ func (o *BTSketchObjectFilter184) SetObjectType(v GBTSketchObjectType) {
 
 func (o BTSketchObjectFilter184) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

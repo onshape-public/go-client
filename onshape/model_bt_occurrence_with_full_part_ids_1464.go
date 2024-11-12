@@ -16,6 +16,7 @@ import (
 
 // BTOccurrenceWithFullPartIds1464 struct for BTOccurrenceWithFullPartIds1464
 type BTOccurrenceWithFullPartIds1464 struct {
+	BTOccurrence74
 	BtType                *string                          `json:"btType,omitempty"`
 	FullPathAsString      *string                          `json:"fullPathAsString,omitempty"`
 	HeadInstanceId        *string                          `json:"headInstanceId,omitempty"`
@@ -433,6 +434,14 @@ func (o *BTOccurrenceWithFullPartIds1464) SetTransform(v BTBSMatrix386) {
 
 func (o BTOccurrenceWithFullPartIds1464) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTOccurrence74, errBTOccurrence74 := json.Marshal(o.BTOccurrence74)
+	if errBTOccurrence74 != nil {
+		return []byte{}, errBTOccurrence74
+	}
+	errBTOccurrence74 = json.Unmarshal([]byte(serializedBTOccurrence74), &toSerialize)
+	if errBTOccurrence74 != nil {
+		return []byte{}, errBTOccurrence74
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

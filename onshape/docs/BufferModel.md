@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BufferData** | Pointer to [**BufferModelBufferData**](BufferModelBufferData.md) |  | [optional] 
+**BufferData** | Pointer to **map[string]interface{}** |  | [optional] 
 **ByteLength** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBufferData
 
-`func (o *BufferModel) GetBufferData() BufferModelBufferData`
+`func (o *BufferModel) GetBufferData() map[string]interface{}`
 
 GetBufferData returns the BufferData field if non-nil, zero value otherwise.
 
 ### GetBufferDataOk
 
-`func (o *BufferModel) GetBufferDataOk() (*BufferModelBufferData, bool)`
+`func (o *BufferModel) GetBufferDataOk() (*map[string]interface{}, bool)`
 
 GetBufferDataOk returns a tuple with the BufferData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBufferData
 
-`func (o *BufferModel) SetBufferData(v BufferModelBufferData)`
+`func (o *BufferModel) SetBufferData(v map[string]interface{})`
 
 SetBufferData sets BufferData field to given value.
 

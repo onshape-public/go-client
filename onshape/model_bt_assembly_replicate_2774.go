@@ -16,6 +16,7 @@ import (
 
 // BTAssemblyReplicate2774 struct for BTAssemblyReplicate2774
 type BTAssemblyReplicate2774 struct {
+	BTParametricInstance2641
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
 	ImportMicroversion                *string                               `json:"importMicroversion,omitempty"`
@@ -1128,6 +1129,14 @@ func (o *BTAssemblyReplicate2774) SetReplicateFeature(v BTMAssemblyReplicateFeat
 
 func (o BTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTParametricInstance2641, errBTParametricInstance2641 := json.Marshal(o.BTParametricInstance2641)
+	if errBTParametricInstance2641 != nil {
+		return []byte{}, errBTParametricInstance2641
+	}
+	errBTParametricInstance2641 = json.Unmarshal([]byte(serializedBTParametricInstance2641), &toSerialize)
+	if errBTParametricInstance2641 != nil {
+		return []byte{}, errBTParametricInstance2641
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

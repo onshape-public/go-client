@@ -16,11 +16,11 @@ import (
 
 // BTPropertyUpdateInfo struct for BTPropertyUpdateInfo
 type BTPropertyUpdateInfo struct {
-	ErrorMessage *string                 `json:"errorMessage,omitempty"`
-	ItemHref     *string                 `json:"itemHref,omitempty"`
-	NewValue     *map[string]interface{} `json:"newValue,omitempty"`
-	OldValue     *map[string]interface{} `json:"oldValue,omitempty"`
-	PropertyId   *string                 `json:"propertyId,omitempty"`
+	ErrorMessage *string                `json:"errorMessage,omitempty"`
+	ItemHref     *string                `json:"itemHref,omitempty"`
+	NewValue     map[string]interface{} `json:"newValue,omitempty"`
+	OldValue     map[string]interface{} `json:"oldValue,omitempty"`
+	PropertyId   *string                `json:"propertyId,omitempty"`
 }
 
 // NewBTPropertyUpdateInfo instantiates a new BTPropertyUpdateInfo object
@@ -110,12 +110,12 @@ func (o *BTPropertyUpdateInfo) GetNewValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.NewValue
+	return o.NewValue
 }
 
 // GetNewValueOk returns a tuple with the NewValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPropertyUpdateInfo) GetNewValueOk() (*map[string]interface{}, bool) {
+func (o *BTPropertyUpdateInfo) GetNewValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.NewValue == nil {
 		return nil, false
 	}
@@ -133,7 +133,7 @@ func (o *BTPropertyUpdateInfo) HasNewValue() bool {
 
 // SetNewValue gets a reference to the given map[string]interface{} and assigns it to the NewValue field.
 func (o *BTPropertyUpdateInfo) SetNewValue(v map[string]interface{}) {
-	o.NewValue = &v
+	o.NewValue = v
 }
 
 // GetOldValue returns the OldValue field value if set, zero value otherwise.
@@ -142,12 +142,12 @@ func (o *BTPropertyUpdateInfo) GetOldValue() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return *o.OldValue
+	return o.OldValue
 }
 
 // GetOldValueOk returns a tuple with the OldValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPropertyUpdateInfo) GetOldValueOk() (*map[string]interface{}, bool) {
+func (o *BTPropertyUpdateInfo) GetOldValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.OldValue == nil {
 		return nil, false
 	}
@@ -165,7 +165,7 @@ func (o *BTPropertyUpdateInfo) HasOldValue() bool {
 
 // SetOldValue gets a reference to the given map[string]interface{} and assigns it to the OldValue field.
 func (o *BTPropertyUpdateInfo) SetOldValue(v map[string]interface{}) {
-	o.OldValue = &v
+	o.OldValue = v
 }
 
 // GetPropertyId returns the PropertyId field value if set, zero value otherwise.

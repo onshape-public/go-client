@@ -25,13 +25,13 @@ func (o *BTDocumentInfo) AsBTDocumentSummaryInfo() *BTDocumentSummaryInfo {
 	return &BTDocumentSummaryInfo{o}
 }
 
-// BTDocumentProcessingInfoAsBTDocumentSummaryInfo is a convenience function that returns BTDocumentProcessingInfo wrapped in BTDocumentSummaryInfo
-func (o *BTDocumentProcessingInfo) AsBTDocumentSummaryInfo() *BTDocumentSummaryInfo {
+// BTDocumentSummarySearchInfoAsBTDocumentSummaryInfo is a convenience function that returns BTDocumentSummarySearchInfo wrapped in BTDocumentSummaryInfo
+func (o *BTDocumentSummarySearchInfo) AsBTDocumentSummaryInfo() *BTDocumentSummaryInfo {
 	return &BTDocumentSummaryInfo{o}
 }
 
-// BTDocumentSummarySearchInfoAsBTDocumentSummaryInfo is a convenience function that returns BTDocumentSummarySearchInfo wrapped in BTDocumentSummaryInfo
-func (o *BTDocumentSummarySearchInfo) AsBTDocumentSummaryInfo() *BTDocumentSummaryInfo {
+// BTDocumentProcessingInfoAsBTDocumentSummaryInfo is a convenience function that returns BTDocumentProcessingInfo wrapped in BTDocumentSummaryInfo
+func (o *BTDocumentProcessingInfo) AsBTDocumentSummaryInfo() *BTDocumentSummaryInfo {
 	return &BTDocumentSummaryInfo{o}
 }
 
@@ -2849,20 +2849,6 @@ func (dst *BTDocumentSummaryInfo) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
-	// check if the discriminator value is 'BTDocumentProcessingInfo'
-	if jsonDict["jsonType"] == "BTDocumentProcessingInfo" {
-		// try to unmarshal JSON data into BTDocumentProcessingInfo
-		var qr *BTDocumentProcessingInfo
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTDocumentSummaryInfo = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTDocumentSummaryInfo = nil
-			return fmt.Errorf("failed to unmarshal BTDocumentSummaryInfo as BTDocumentProcessingInfo: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'document'
 	if jsonDict["jsonType"] == "document" {
 		// try to unmarshal JSON data into BTDocumentInfo
@@ -2888,6 +2874,20 @@ func (dst *BTDocumentSummaryInfo) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTDocumentSummaryInfo = nil
 			return fmt.Errorf("failed to unmarshal BTDocumentSummaryInfo as BTDocumentSummarySearchInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDocumentProcessingInfo'
+	if jsonDict["jsonType"] == "BTDocumentProcessingInfo" {
+		// try to unmarshal JSON data into BTDocumentProcessingInfo
+		var qr *BTDocumentProcessingInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTDocumentSummaryInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTDocumentSummaryInfo = nil
+			return fmt.Errorf("failed to unmarshal BTDocumentSummaryInfo as BTDocumentProcessingInfo: %s", err.Error())
 		}
 	}
 
