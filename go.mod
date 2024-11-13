@@ -5,8 +5,8 @@ go 1.22.0
 require (
 	github.com/google/uuid v1.3.0
 	github.com/stretchr/testify v1.8.1
-	golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c
-	golang.org/x/oauth2 v0.23.0
+	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f
+	golang.org/x/oauth2 v0.24.0
 )
 
 require (
