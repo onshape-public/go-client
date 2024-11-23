@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Field** | Pointer to **string** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
+**Operation** | Pointer to [**BTUserAppSettingOperationType**](BTUserAppSettingOperationType.md) |  | [optional] 
 **Value** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -25,6 +27,31 @@ will change when the set of required properties is changed
 NewBTSettingParamWithDefaults instantiates a new BTSettingParam object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetField
+
+`func (o *BTSettingParam) GetField() string`
+
+GetField returns the Field field if non-nil, zero value otherwise.
+
+### GetFieldOk
+
+`func (o *BTSettingParam) GetFieldOk() (*string, bool)`
+
+GetFieldOk returns a tuple with the Field field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetField
+
+`func (o *BTSettingParam) SetField(v string)`
+
+SetField sets Field field to given value.
+
+### HasField
+
+`func (o *BTSettingParam) HasField() bool`
+
+HasField returns a boolean if a field has been set.
 
 ### GetKey
 
@@ -50,6 +77,31 @@ SetKey sets Key field to given value.
 `func (o *BTSettingParam) HasKey() bool`
 
 HasKey returns a boolean if a field has been set.
+
+### GetOperation
+
+`func (o *BTSettingParam) GetOperation() BTUserAppSettingOperationType`
+
+GetOperation returns the Operation field if non-nil, zero value otherwise.
+
+### GetOperationOk
+
+`func (o *BTSettingParam) GetOperationOk() (*BTUserAppSettingOperationType, bool)`
+
+GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperation
+
+`func (o *BTSettingParam) SetOperation(v BTUserAppSettingOperationType)`
+
+SetOperation sets Operation field to given value.
+
+### HasOperation
+
+`func (o *BTSettingParam) HasOperation() bool`
+
+HasOperation returns a boolean if a field has been set.
 
 ### GetValue
 

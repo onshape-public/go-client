@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,15 +16,16 @@ import (
 
 // BTReleasePackageInfo struct for BTReleasePackageInfo
 type BTReleasePackageInfo struct {
-	ChangeOrderId *string                 `json:"changeOrderId,omitempty"`
-	ColumnNames   *map[string]string      `json:"columnNames,omitempty"`
-	Comments      []BTCommentInfo         `json:"comments,omitempty"`
-	CompanyId     *string                 `json:"companyId,omitempty"`
-	CreatedAt     *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy     *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description   *string                 `json:"description,omitempty"`
-	Detailed      *bool                   `json:"detailed,omitempty"`
-	DocumentId    *string                 `json:"documentId,omitempty"`
+	AddAllDrawingsActive *bool                   `json:"addAllDrawingsActive,omitempty"`
+	ChangeOrderId        *string                 `json:"changeOrderId,omitempty"`
+	ColumnNames          *map[string]string      `json:"columnNames,omitempty"`
+	Comments             []BTCommentInfo         `json:"comments,omitempty"`
+	CompanyId            *string                 `json:"companyId,omitempty"`
+	CreatedAt            *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy            *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description          *string                 `json:"description,omitempty"`
+	Detailed             *bool                   `json:"detailed,omitempty"`
+	DocumentId           *string                 `json:"documentId,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -44,9 +45,11 @@ type BTReleasePackageInfo struct {
 	ParentPackages      []string                   `json:"parentPackages,omitempty"`
 	Properties          []BTWorkflowPropertyInfo   `json:"properties,omitempty"`
 	// Indicates whether the release is still in setup state and saved as a draft.
-	RetainedAsDraft *bool   `json:"retainedAsDraft,omitempty"`
-	RevisionRuleId  *string `json:"revisionRuleId,omitempty"`
-	VersionId       *string `json:"versionId,omitempty"`
+	RetainedAsDraft    *bool    `json:"retainedAsDraft,omitempty"`
+	RevisionRuleId     *string  `json:"revisionRuleId,omitempty"`
+	RootItemsToRebuild []string `json:"rootItemsToRebuild,omitempty"`
+	UpdatedItemIds     []string `json:"updatedItemIds,omitempty"`
+	VersionId          *string  `json:"versionId,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef       *string                 `json:"viewRef,omitempty"`
 	Workflow      *BTWorkflowSnapshotInfo `json:"workflow,omitempty"`
@@ -70,6 +73,38 @@ func NewBTReleasePackageInfo() *BTReleasePackageInfo {
 func NewBTReleasePackageInfoWithDefaults() *BTReleasePackageInfo {
 	this := BTReleasePackageInfo{}
 	return &this
+}
+
+// GetAddAllDrawingsActive returns the AddAllDrawingsActive field value if set, zero value otherwise.
+func (o *BTReleasePackageInfo) GetAddAllDrawingsActive() bool {
+	if o == nil || o.AddAllDrawingsActive == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AddAllDrawingsActive
+}
+
+// GetAddAllDrawingsActiveOk returns a tuple with the AddAllDrawingsActive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageInfo) GetAddAllDrawingsActiveOk() (*bool, bool) {
+	if o == nil || o.AddAllDrawingsActive == nil {
+		return nil, false
+	}
+	return o.AddAllDrawingsActive, true
+}
+
+// HasAddAllDrawingsActive returns a boolean if a field has been set.
+func (o *BTReleasePackageInfo) HasAddAllDrawingsActive() bool {
+	if o != nil && o.AddAllDrawingsActive != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAddAllDrawingsActive gets a reference to the given bool and assigns it to the AddAllDrawingsActive field.
+func (o *BTReleasePackageInfo) SetAddAllDrawingsActive(v bool) {
+	o.AddAllDrawingsActive = &v
 }
 
 // GetChangeOrderId returns the ChangeOrderId field value if set, zero value otherwise.
@@ -872,6 +907,70 @@ func (o *BTReleasePackageInfo) SetRevisionRuleId(v string) {
 	o.RevisionRuleId = &v
 }
 
+// GetRootItemsToRebuild returns the RootItemsToRebuild field value if set, zero value otherwise.
+func (o *BTReleasePackageInfo) GetRootItemsToRebuild() []string {
+	if o == nil || o.RootItemsToRebuild == nil {
+		var ret []string
+		return ret
+	}
+	return o.RootItemsToRebuild
+}
+
+// GetRootItemsToRebuildOk returns a tuple with the RootItemsToRebuild field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageInfo) GetRootItemsToRebuildOk() ([]string, bool) {
+	if o == nil || o.RootItemsToRebuild == nil {
+		return nil, false
+	}
+	return o.RootItemsToRebuild, true
+}
+
+// HasRootItemsToRebuild returns a boolean if a field has been set.
+func (o *BTReleasePackageInfo) HasRootItemsToRebuild() bool {
+	if o != nil && o.RootItemsToRebuild != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRootItemsToRebuild gets a reference to the given []string and assigns it to the RootItemsToRebuild field.
+func (o *BTReleasePackageInfo) SetRootItemsToRebuild(v []string) {
+	o.RootItemsToRebuild = v
+}
+
+// GetUpdatedItemIds returns the UpdatedItemIds field value if set, zero value otherwise.
+func (o *BTReleasePackageInfo) GetUpdatedItemIds() []string {
+	if o == nil || o.UpdatedItemIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.UpdatedItemIds
+}
+
+// GetUpdatedItemIdsOk returns a tuple with the UpdatedItemIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageInfo) GetUpdatedItemIdsOk() ([]string, bool) {
+	if o == nil || o.UpdatedItemIds == nil {
+		return nil, false
+	}
+	return o.UpdatedItemIds, true
+}
+
+// HasUpdatedItemIds returns a boolean if a field has been set.
+func (o *BTReleasePackageInfo) HasUpdatedItemIds() bool {
+	if o != nil && o.UpdatedItemIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedItemIds gets a reference to the given []string and assigns it to the UpdatedItemIds field.
+func (o *BTReleasePackageInfo) SetUpdatedItemIds(v []string) {
+	o.UpdatedItemIds = v
+}
+
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
 func (o *BTReleasePackageInfo) GetVersionId() string {
 	if o == nil || o.VersionId == nil {
@@ -1066,6 +1165,9 @@ func (o *BTReleasePackageInfo) SetWorkspaceId(v string) {
 
 func (o BTReleasePackageInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AddAllDrawingsActive != nil {
+		toSerialize["addAllDrawingsActive"] = o.AddAllDrawingsActive
+	}
 	if o.ChangeOrderId != nil {
 		toSerialize["changeOrderId"] = o.ChangeOrderId
 	}
@@ -1140,6 +1242,12 @@ func (o BTReleasePackageInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.RevisionRuleId != nil {
 		toSerialize["revisionRuleId"] = o.RevisionRuleId
+	}
+	if o.RootItemsToRebuild != nil {
+		toSerialize["rootItemsToRebuild"] = o.RootItemsToRebuild
+	}
+	if o.UpdatedItemIds != nil {
+		toSerialize["updatedItemIds"] = o.UpdatedItemIds
 	}
 	if o.VersionId != nil {
 		toSerialize["versionId"] = o.VersionId

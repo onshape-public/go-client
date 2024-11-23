@@ -3179,6 +3179,12 @@
 
 * `GBTErrorStringEnumEditCurveClosedApproximationNoDerivative` (value: `"EDIT_CURVE_CLOSED_APPROXIMATION_NO_DERIVATIVE"`)
 
+* `GBTErrorStringEnumConfigurationParameterHasBadVisibilityCondition` (value: `"CONFIGURATION_PARAMETER_HAS_BAD_VISIBILITY_CONDITION"`)
+
+* `GBTErrorStringEnumSheetMetalFormedRebuildFailed` (value: `"SHEET_METAL_FORMED_REBUILD_FAILED"`)
+
+* `GBTErrorStringEnumSketchProfileAnalysisFailed` (value: `"SKETCH_PROFILE_ANALYSIS_FAILED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

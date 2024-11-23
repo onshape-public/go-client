@@ -1,6 +1,6 @@
 # \EventApi
 
-All URIs are relative to *https://cad.onshape.com/api/v9*
+All URIs are relative to *https://cad.onshape.com/api/v10*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

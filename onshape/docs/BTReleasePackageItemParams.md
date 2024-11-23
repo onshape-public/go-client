@@ -4,12 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AddedAutomatically** | Pointer to **bool** |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **IsIncluded** | Pointer to **bool** |  | [optional] 
+**ParentId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **PartIdentity** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
@@ -35,6 +37,31 @@ will change when the set of required properties is changed
 NewBTReleasePackageItemParamsWithDefaults instantiates a new BTReleasePackageItemParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddedAutomatically
+
+`func (o *BTReleasePackageItemParams) GetAddedAutomatically() bool`
+
+GetAddedAutomatically returns the AddedAutomatically field if non-nil, zero value otherwise.
+
+### GetAddedAutomaticallyOk
+
+`func (o *BTReleasePackageItemParams) GetAddedAutomaticallyOk() (*bool, bool)`
+
+GetAddedAutomaticallyOk returns a tuple with the AddedAutomatically field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddedAutomatically
+
+`func (o *BTReleasePackageItemParams) SetAddedAutomatically(v bool)`
+
+SetAddedAutomatically sets AddedAutomatically field to given value.
+
+### HasAddedAutomatically
+
+`func (o *BTReleasePackageItemParams) HasAddedAutomatically() bool`
+
+HasAddedAutomatically returns a boolean if a field has been set.
 
 ### GetConfiguration
 
@@ -185,6 +212,31 @@ SetIsIncluded sets IsIncluded field to given value.
 `func (o *BTReleasePackageItemParams) HasIsIncluded() bool`
 
 HasIsIncluded returns a boolean if a field has been set.
+
+### GetParentId
+
+`func (o *BTReleasePackageItemParams) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *BTReleasePackageItemParams) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *BTReleasePackageItemParams) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *BTReleasePackageItemParams) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
 
 ### GetPartId
 

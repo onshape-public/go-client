@@ -1,6 +1,6 @@
 # \TeamApi
 
-All URIs are relative to *https://cad.onshape.com/api/v9*
+All URIs are relative to *https://cad.onshape.com/api/v10*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,7 +34,7 @@ func main() {
     uid := "uid_example" // string |  (optional)
     companyId := "companyId_example" // string |  (optional)
     offset := int32(56) // int32 |  (optional) (default to 0)
-    limit := int32(56) // int32 |  (optional) (default to 20)
+    limit := int32(56) // int32 |  (optional) (default to 100)
     sortColumn := "sortColumn_example" // string |  (optional)
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
     includeCompanyOwnedTeams := true // bool |  (optional) (default to true)
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
  **uid** | **string** |  | 
  **companyId** | **string** |  | 
  **offset** | **int32** |  | [default to 0]
- **limit** | **int32** |  | [default to 20]
+ **limit** | **int32** |  | [default to 100]
  **sortColumn** | **string** |  | 
  **sortOrder** | **string** |  | [default to &quot;asc&quot;]
  **includeCompanyOwnedTeams** | **bool** |  | [default to true]

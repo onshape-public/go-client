@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -20,16 +20,17 @@ type BTApiVersion string
 
 // List of BTApiVersion
 const (
-	BTApiVersionUndefined                                 BTApiVersion = "UNDEFINED"
-	BTApiVersionV1Start                                   BTApiVersion = "V1_START"
-	BTApiVersionV2SerializationUnification                BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
-	BTApiVersionV3NewBomFormat                            BTApiVersion = "V3_NEW_BOM_FORMAT"
-	BTApiVersionV4TransactionsNoNew                       BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
-	BTApiVersionV5BodyDetailsCompositeReference           BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
-	BTApiVersionV6JsonEditResponseBugfix                  BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
-	BTApiVersionV7SketchEndpointIncludesSolveStatus       BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
-	BTApiVersionV8RestoreNoopNoNewMicroversion            BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
-	BTApiVersionV9IncludeDeterministicIdsToQueryResponses BTApiVersion = "V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"
+	BTApiVersionUndefined                                       BTApiVersion = "UNDEFINED"
+	BTApiVersionV1Start                                         BTApiVersion = "V1_START"
+	BTApiVersionV2SerializationUnification                      BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
+	BTApiVersionV3NewBomFormat                                  BTApiVersion = "V3_NEW_BOM_FORMAT"
+	BTApiVersionV4TransactionsNoNew                             BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
+	BTApiVersionV5BodyDetailsCompositeReference                 BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
+	BTApiVersionV6JsonEditResponseBugfix                        BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
+	BTApiVersionV7SketchEndpointIncludesSolveStatus             BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
+	BTApiVersionV8RestoreNoopNoNewMicroversion                  BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
+	BTApiVersionV9IncludeDeterministicIdsToQueryResponses       BTApiVersion = "V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"
+	BTApiVersionV10ValidateVisibiltyConditionsForPsConfigParams BTApiVersion = "V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS"
 )
 
 // All allowed values of BTApiVersion enum
@@ -44,6 +45,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS",
 	"V8_RESTORE_NOOP_NO_NEW_MICROVERSION",
 	"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES",
+	"V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,6 +16,7 @@ import (
 
 // BTReleasePackageItemInfo struct for BTReleasePackageItemInfo
 type BTReleasePackageItemInfo struct {
+	AddedAutomatically            *bool                    `json:"addedAutomatically,omitempty"`
 	CanExport                     *bool                    `json:"canExport,omitempty"`
 	ChangeDetectionStatus         *int32                   `json:"changeDetectionStatus,omitempty"`
 	CompanyId                     *string                  `json:"companyId,omitempty"`
@@ -26,19 +27,22 @@ type BTReleasePackageItemInfo struct {
 	ElementId                     *string                  `json:"elementId,omitempty"`
 	ElementType                   *int32                   `json:"elementType,omitempty"`
 	Errors                        []BTReleaseItemErrorInfo `json:"errors,omitempty"`
+	FlatPartId                    *string                  `json:"flatPartId,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id                *string `json:"id,omitempty"`
-	IsRevisionManaged *bool   `json:"isRevisionManaged,omitempty"`
-	IsRootItem        *bool   `json:"isRootItem,omitempty"`
-	IsTranslatable    *bool   `json:"isTranslatable,omitempty"`
-	MeshState         *int32  `json:"meshState,omitempty"`
-	MimeType          *string `json:"mimeType,omitempty"`
+	Id                         *string  `json:"id,omitempty"`
+	IsRevisionManaged          *bool    `json:"isRevisionManaged,omitempty"`
+	IsRootItem                 *bool    `json:"isRootItem,omitempty"`
+	IsTranslatable             *bool    `json:"isTranslatable,omitempty"`
+	ManuallyRemovedChildrenIds []string `json:"manuallyRemovedChildrenIds,omitempty"`
+	MeshState                  *int32   `json:"meshState,omitempty"`
+	MimeType                   *string  `json:"mimeType,omitempty"`
 	// Name of the resource.
 	Name                              *string                  `json:"name,omitempty"`
 	ObsoletionRevisionId              *string                  `json:"obsoletionRevisionId,omitempty"`
 	OriginalWorkspaceId               *string                  `json:"originalWorkspaceId,omitempty"`
+	ParentId                          *string                  `json:"parentId,omitempty"`
 	PartId                            *string                  `json:"partId,omitempty"`
 	PartIdentity                      *string                  `json:"partIdentity,omitempty"`
 	PartType                          *string                  `json:"partType,omitempty"`
@@ -69,6 +73,38 @@ func NewBTReleasePackageItemInfo() *BTReleasePackageItemInfo {
 func NewBTReleasePackageItemInfoWithDefaults() *BTReleasePackageItemInfo {
 	this := BTReleasePackageItemInfo{}
 	return &this
+}
+
+// GetAddedAutomatically returns the AddedAutomatically field value if set, zero value otherwise.
+func (o *BTReleasePackageItemInfo) GetAddedAutomatically() bool {
+	if o == nil || o.AddedAutomatically == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AddedAutomatically
+}
+
+// GetAddedAutomaticallyOk returns a tuple with the AddedAutomatically field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemInfo) GetAddedAutomaticallyOk() (*bool, bool) {
+	if o == nil || o.AddedAutomatically == nil {
+		return nil, false
+	}
+	return o.AddedAutomatically, true
+}
+
+// HasAddedAutomatically returns a boolean if a field has been set.
+func (o *BTReleasePackageItemInfo) HasAddedAutomatically() bool {
+	if o != nil && o.AddedAutomatically != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAddedAutomatically gets a reference to the given bool and assigns it to the AddedAutomatically field.
+func (o *BTReleasePackageItemInfo) SetAddedAutomatically(v bool) {
+	o.AddedAutomatically = &v
 }
 
 // GetCanExport returns the CanExport field value if set, zero value otherwise.
@@ -391,6 +427,38 @@ func (o *BTReleasePackageItemInfo) SetErrors(v []BTReleaseItemErrorInfo) {
 	o.Errors = v
 }
 
+// GetFlatPartId returns the FlatPartId field value if set, zero value otherwise.
+func (o *BTReleasePackageItemInfo) GetFlatPartId() string {
+	if o == nil || o.FlatPartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.FlatPartId
+}
+
+// GetFlatPartIdOk returns a tuple with the FlatPartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemInfo) GetFlatPartIdOk() (*string, bool) {
+	if o == nil || o.FlatPartId == nil {
+		return nil, false
+	}
+	return o.FlatPartId, true
+}
+
+// HasFlatPartId returns a boolean if a field has been set.
+func (o *BTReleasePackageItemInfo) HasFlatPartId() bool {
+	if o != nil && o.FlatPartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFlatPartId gets a reference to the given string and assigns it to the FlatPartId field.
+func (o *BTReleasePackageItemInfo) SetFlatPartId(v string) {
+	o.FlatPartId = &v
+}
+
 // GetHref returns the Href field value if set, zero value otherwise.
 func (o *BTReleasePackageItemInfo) GetHref() string {
 	if o == nil || o.Href == nil {
@@ -551,6 +619,38 @@ func (o *BTReleasePackageItemInfo) SetIsTranslatable(v bool) {
 	o.IsTranslatable = &v
 }
 
+// GetManuallyRemovedChildrenIds returns the ManuallyRemovedChildrenIds field value if set, zero value otherwise.
+func (o *BTReleasePackageItemInfo) GetManuallyRemovedChildrenIds() []string {
+	if o == nil || o.ManuallyRemovedChildrenIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.ManuallyRemovedChildrenIds
+}
+
+// GetManuallyRemovedChildrenIdsOk returns a tuple with the ManuallyRemovedChildrenIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemInfo) GetManuallyRemovedChildrenIdsOk() ([]string, bool) {
+	if o == nil || o.ManuallyRemovedChildrenIds == nil {
+		return nil, false
+	}
+	return o.ManuallyRemovedChildrenIds, true
+}
+
+// HasManuallyRemovedChildrenIds returns a boolean if a field has been set.
+func (o *BTReleasePackageItemInfo) HasManuallyRemovedChildrenIds() bool {
+	if o != nil && o.ManuallyRemovedChildrenIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetManuallyRemovedChildrenIds gets a reference to the given []string and assigns it to the ManuallyRemovedChildrenIds field.
+func (o *BTReleasePackageItemInfo) SetManuallyRemovedChildrenIds(v []string) {
+	o.ManuallyRemovedChildrenIds = v
+}
+
 // GetMeshState returns the MeshState field value if set, zero value otherwise.
 func (o *BTReleasePackageItemInfo) GetMeshState() int32 {
 	if o == nil || o.MeshState == nil {
@@ -709,6 +809,38 @@ func (o *BTReleasePackageItemInfo) HasOriginalWorkspaceId() bool {
 // SetOriginalWorkspaceId gets a reference to the given string and assigns it to the OriginalWorkspaceId field.
 func (o *BTReleasePackageItemInfo) SetOriginalWorkspaceId(v string) {
 	o.OriginalWorkspaceId = &v
+}
+
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTReleasePackageItemInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTReleasePackageItemInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTReleasePackageItemInfo) SetParentId(v string) {
+	o.ParentId = &v
 }
 
 // GetPartId returns the PartId field value if set, zero value otherwise.
@@ -1097,6 +1229,9 @@ func (o *BTReleasePackageItemInfo) SetWorkspaceId(v string) {
 
 func (o BTReleasePackageItemInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AddedAutomatically != nil {
+		toSerialize["addedAutomatically"] = o.AddedAutomatically
+	}
 	if o.CanExport != nil {
 		toSerialize["canExport"] = o.CanExport
 	}
@@ -1127,6 +1262,9 @@ func (o BTReleasePackageItemInfo) MarshalJSON() ([]byte, error) {
 	if o.Errors != nil {
 		toSerialize["errors"] = o.Errors
 	}
+	if o.FlatPartId != nil {
+		toSerialize["flatPartId"] = o.FlatPartId
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
@@ -1142,6 +1280,9 @@ func (o BTReleasePackageItemInfo) MarshalJSON() ([]byte, error) {
 	if o.IsTranslatable != nil {
 		toSerialize["isTranslatable"] = o.IsTranslatable
 	}
+	if o.ManuallyRemovedChildrenIds != nil {
+		toSerialize["manuallyRemovedChildrenIds"] = o.ManuallyRemovedChildrenIds
+	}
 	if o.MeshState != nil {
 		toSerialize["meshState"] = o.MeshState
 	}
@@ -1156,6 +1297,9 @@ func (o BTReleasePackageItemInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.OriginalWorkspaceId != nil {
 		toSerialize["originalWorkspaceId"] = o.OriginalWorkspaceId
+	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId

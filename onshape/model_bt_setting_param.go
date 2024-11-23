@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,8 +16,10 @@ import (
 
 // BTSettingParam struct for BTSettingParam
 type BTSettingParam struct {
-	Key   *string                `json:"key,omitempty"`
-	Value map[string]interface{} `json:"value,omitempty"`
+	Field     *string                        `json:"field,omitempty"`
+	Key       *string                        `json:"key,omitempty"`
+	Operation *BTUserAppSettingOperationType `json:"operation,omitempty"`
+	Value     map[string]interface{}         `json:"value,omitempty"`
 }
 
 // NewBTSettingParam instantiates a new BTSettingParam object
@@ -35,6 +37,38 @@ func NewBTSettingParam() *BTSettingParam {
 func NewBTSettingParamWithDefaults() *BTSettingParam {
 	this := BTSettingParam{}
 	return &this
+}
+
+// GetField returns the Field field value if set, zero value otherwise.
+func (o *BTSettingParam) GetField() string {
+	if o == nil || o.Field == nil {
+		var ret string
+		return ret
+	}
+	return *o.Field
+}
+
+// GetFieldOk returns a tuple with the Field field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSettingParam) GetFieldOk() (*string, bool) {
+	if o == nil || o.Field == nil {
+		return nil, false
+	}
+	return o.Field, true
+}
+
+// HasField returns a boolean if a field has been set.
+func (o *BTSettingParam) HasField() bool {
+	if o != nil && o.Field != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetField gets a reference to the given string and assigns it to the Field field.
+func (o *BTSettingParam) SetField(v string) {
+	o.Field = &v
 }
 
 // GetKey returns the Key field value if set, zero value otherwise.
@@ -67,6 +101,38 @@ func (o *BTSettingParam) HasKey() bool {
 // SetKey gets a reference to the given string and assigns it to the Key field.
 func (o *BTSettingParam) SetKey(v string) {
 	o.Key = &v
+}
+
+// GetOperation returns the Operation field value if set, zero value otherwise.
+func (o *BTSettingParam) GetOperation() BTUserAppSettingOperationType {
+	if o == nil || o.Operation == nil {
+		var ret BTUserAppSettingOperationType
+		return ret
+	}
+	return *o.Operation
+}
+
+// GetOperationOk returns a tuple with the Operation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSettingParam) GetOperationOk() (*BTUserAppSettingOperationType, bool) {
+	if o == nil || o.Operation == nil {
+		return nil, false
+	}
+	return o.Operation, true
+}
+
+// HasOperation returns a boolean if a field has been set.
+func (o *BTSettingParam) HasOperation() bool {
+	if o != nil && o.Operation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOperation gets a reference to the given BTUserAppSettingOperationType and assigns it to the Operation field.
+func (o *BTSettingParam) SetOperation(v BTUserAppSettingOperationType) {
+	o.Operation = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -103,8 +169,14 @@ func (o *BTSettingParam) SetValue(v map[string]interface{}) {
 
 func (o BTSettingParam) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Field != nil {
+		toSerialize["field"] = o.Field
+	}
 	if o.Key != nil {
 		toSerialize["key"] = o.Key
+	}
+	if o.Operation != nil {
+		toSerialize["operation"] = o.Operation
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value

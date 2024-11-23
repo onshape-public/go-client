@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -27,6 +27,7 @@ type BTBillOfMaterialsTableRow1425 struct {
 	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus   `json:"exclusionStatus,omitempty"`
 	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus   `json:"expansionStatus,omitempty"`
 	IndentLevel            *int32                               `json:"indentLevel,omitempty"`
+	IsComponentsOnly       *bool                                `json:"isComponentsOnly,omitempty"`
 	IsSuppressed           *bool                                `json:"isSuppressed,omitempty"`
 	MetadataObjectType     *int32                               `json:"metadataObjectType,omitempty"`
 	MetadataUpdateHref     *string                              `json:"metadataUpdateHref,omitempty"`
@@ -373,6 +374,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetIndentLevel(v int32) {
 	o.IndentLevel = &v
 }
 
+// GetIsComponentsOnly returns the IsComponentsOnly field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetIsComponentsOnly() bool {
+	if o == nil || o.IsComponentsOnly == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsComponentsOnly
+}
+
+// GetIsComponentsOnlyOk returns a tuple with the IsComponentsOnly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetIsComponentsOnlyOk() (*bool, bool) {
+	if o == nil || o.IsComponentsOnly == nil {
+		return nil, false
+	}
+	return o.IsComponentsOnly, true
+}
+
+// HasIsComponentsOnly returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasIsComponentsOnly() bool {
+	if o != nil && o.IsComponentsOnly != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsComponentsOnly gets a reference to the given bool and assigns it to the IsComponentsOnly field.
+func (o *BTBillOfMaterialsTableRow1425) SetIsComponentsOnly(v bool) {
+	o.IsComponentsOnly = &v
+}
+
 // GetIsSuppressed returns the IsSuppressed field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetIsSuppressed() bool {
 	if o == nil || o.IsSuppressed == nil {
@@ -636,6 +669,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.IndentLevel != nil {
 		toSerialize["indentLevel"] = o.IndentLevel
+	}
+	if o.IsComponentsOnly != nil {
+		toSerialize["isComponentsOnly"] = o.IsComponentsOnly
 	}
 	if o.IsSuppressed != nil {
 		toSerialize["isSuppressed"] = o.IsSuppressed

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AddedAutomatically** | Pointer to **bool** |  | [optional] 
 **CanExport** | Pointer to **bool** |  | [optional] 
 **ChangeDetectionStatus** | Pointer to **int32** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
@@ -14,16 +15,19 @@ Name | Type | Description | Notes
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementType** | Pointer to **int32** |  | [optional] 
 **Errors** | Pointer to [**[]BTReleaseItemErrorInfo**](BTReleaseItemErrorInfo.md) |  | [optional] 
+**FlatPartId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IsRevisionManaged** | Pointer to **bool** |  | [optional] 
 **IsRootItem** | Pointer to **bool** |  | [optional] 
 **IsTranslatable** | Pointer to **bool** |  | [optional] 
+**ManuallyRemovedChildrenIds** | Pointer to **[]string** |  | [optional] 
 **MeshState** | Pointer to **int32** |  | [optional] 
 **MimeType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ObsoletionRevisionId** | Pointer to **string** |  | [optional] 
 **OriginalWorkspaceId** | Pointer to **string** |  | [optional] 
+**ParentId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **PartIdentity** | Pointer to **string** |  | [optional] 
 **PartType** | Pointer to **string** |  | [optional] 
@@ -55,6 +59,31 @@ will change when the set of required properties is changed
 NewBTReleasePackageItemInfoWithDefaults instantiates a new BTReleasePackageItemInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddedAutomatically
+
+`func (o *BTReleasePackageItemInfo) GetAddedAutomatically() bool`
+
+GetAddedAutomatically returns the AddedAutomatically field if non-nil, zero value otherwise.
+
+### GetAddedAutomaticallyOk
+
+`func (o *BTReleasePackageItemInfo) GetAddedAutomaticallyOk() (*bool, bool)`
+
+GetAddedAutomaticallyOk returns a tuple with the AddedAutomatically field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddedAutomatically
+
+`func (o *BTReleasePackageItemInfo) SetAddedAutomatically(v bool)`
+
+SetAddedAutomatically sets AddedAutomatically field to given value.
+
+### HasAddedAutomatically
+
+`func (o *BTReleasePackageItemInfo) HasAddedAutomatically() bool`
+
+HasAddedAutomatically returns a boolean if a field has been set.
 
 ### GetCanExport
 
@@ -306,6 +335,31 @@ SetErrors sets Errors field to given value.
 
 HasErrors returns a boolean if a field has been set.
 
+### GetFlatPartId
+
+`func (o *BTReleasePackageItemInfo) GetFlatPartId() string`
+
+GetFlatPartId returns the FlatPartId field if non-nil, zero value otherwise.
+
+### GetFlatPartIdOk
+
+`func (o *BTReleasePackageItemInfo) GetFlatPartIdOk() (*string, bool)`
+
+GetFlatPartIdOk returns a tuple with the FlatPartId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlatPartId
+
+`func (o *BTReleasePackageItemInfo) SetFlatPartId(v string)`
+
+SetFlatPartId sets FlatPartId field to given value.
+
+### HasFlatPartId
+
+`func (o *BTReleasePackageItemInfo) HasFlatPartId() bool`
+
+HasFlatPartId returns a boolean if a field has been set.
+
 ### GetHref
 
 `func (o *BTReleasePackageItemInfo) GetHref() string`
@@ -431,6 +485,31 @@ SetIsTranslatable sets IsTranslatable field to given value.
 
 HasIsTranslatable returns a boolean if a field has been set.
 
+### GetManuallyRemovedChildrenIds
+
+`func (o *BTReleasePackageItemInfo) GetManuallyRemovedChildrenIds() []string`
+
+GetManuallyRemovedChildrenIds returns the ManuallyRemovedChildrenIds field if non-nil, zero value otherwise.
+
+### GetManuallyRemovedChildrenIdsOk
+
+`func (o *BTReleasePackageItemInfo) GetManuallyRemovedChildrenIdsOk() (*[]string, bool)`
+
+GetManuallyRemovedChildrenIdsOk returns a tuple with the ManuallyRemovedChildrenIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManuallyRemovedChildrenIds
+
+`func (o *BTReleasePackageItemInfo) SetManuallyRemovedChildrenIds(v []string)`
+
+SetManuallyRemovedChildrenIds sets ManuallyRemovedChildrenIds field to given value.
+
+### HasManuallyRemovedChildrenIds
+
+`func (o *BTReleasePackageItemInfo) HasManuallyRemovedChildrenIds() bool`
+
+HasManuallyRemovedChildrenIds returns a boolean if a field has been set.
+
 ### GetMeshState
 
 `func (o *BTReleasePackageItemInfo) GetMeshState() int32`
@@ -555,6 +634,31 @@ SetOriginalWorkspaceId sets OriginalWorkspaceId field to given value.
 `func (o *BTReleasePackageItemInfo) HasOriginalWorkspaceId() bool`
 
 HasOriginalWorkspaceId returns a boolean if a field has been set.
+
+### GetParentId
+
+`func (o *BTReleasePackageItemInfo) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *BTReleasePackageItemInfo) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *BTReleasePackageItemInfo) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *BTReleasePackageItemInfo) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
 
 ### GetPartId
 

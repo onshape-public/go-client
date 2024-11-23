@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ExclusionStatus** | Pointer to [**GBTBillOfMaterialsExclusionStatus**](GBTBillOfMaterialsExclusionStatus.md) |  | [optional] 
 **ExpansionStatus** | Pointer to [**GBTBillOfMaterialsExpansionStatus**](GBTBillOfMaterialsExpansionStatus.md) |  | [optional] 
 **IndentLevel** | Pointer to **int32** |  | [optional] 
+**IsComponentsOnly** | Pointer to **bool** |  | [optional] 
 **IsSuppressed** | Pointer to **bool** |  | [optional] 
 **MetadataObjectType** | Pointer to **int32** |  | [optional] 
 **MetadataUpdateHref** | Pointer to **string** |  | [optional] 
@@ -160,6 +161,31 @@ SetIndentLevel sets IndentLevel field to given value.
 `func (o *BTBillOfMaterialsTableRow1425) HasIndentLevel() bool`
 
 HasIndentLevel returns a boolean if a field has been set.
+
+### GetIsComponentsOnly
+
+`func (o *BTBillOfMaterialsTableRow1425) GetIsComponentsOnly() bool`
+
+GetIsComponentsOnly returns the IsComponentsOnly field if non-nil, zero value otherwise.
+
+### GetIsComponentsOnlyOk
+
+`func (o *BTBillOfMaterialsTableRow1425) GetIsComponentsOnlyOk() (*bool, bool)`
+
+GetIsComponentsOnlyOk returns a tuple with the IsComponentsOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsComponentsOnly
+
+`func (o *BTBillOfMaterialsTableRow1425) SetIsComponentsOnly(v bool)`
+
+SetIsComponentsOnly sets IsComponentsOnly field to given value.
+
+### HasIsComponentsOnly
+
+`func (o *BTBillOfMaterialsTableRow1425) HasIsComponentsOnly() bool`
+
+HasIsComponentsOnly returns a boolean if a field has been set.
 
 ### GetIsSuppressed
 

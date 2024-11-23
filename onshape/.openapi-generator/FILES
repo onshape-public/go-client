@@ -145,6 +145,8 @@ docs/BTAssemblyInstanceType.md
 docs/BTAssemblyItemMetadataInfo.md
 docs/BTAssemblyItemMetadataRequestInfo.md
 docs/BTAssemblyMateConnectorInfo.md
+docs/BTAssemblyMateValueInfo.md
+docs/BTAssemblyMateValuesInfo.md
 docs/BTAssemblyMirror2996.md
 docs/BTAssemblyMirror2996AllOf.md
 docs/BTAssemblyModificationParams.md
@@ -479,6 +481,8 @@ docs/BTInsertablePartDisplayData3103AllOf.md
 docs/BTInsertableSketchDisplayData3775.md
 docs/BTInsertableSketchDisplayData3775AllOf.md
 docs/BTInsertablesListResponse.md
+docs/BTInspectionTableRowMetadata2485.md
+docs/BTInspectionTableRowMetadata2485AllOf.md
 docs/BTInstance642.md
 docs/BTInstance642AllOf.md
 docs/BTInstanceBase2263.md
@@ -1216,6 +1220,7 @@ docs/BTUserAdminInfoAllOf.md
 docs/BTUserAdminSummaryInfo.md
 docs/BTUserAdminSummaryInfoAllOf.md
 docs/BTUserAppMessageBody.md
+docs/BTUserAppSettingOperationType.md
 docs/BTUserAppSettingsInfo.md
 docs/BTUserAppSettingsParams.md
 docs/BTUserBasicSummaryInfo.md
@@ -1544,6 +1549,8 @@ model_bt_assembly_instance_type.go
 model_bt_assembly_item_metadata_info.go
 model_bt_assembly_item_metadata_request_info.go
 model_bt_assembly_mate_connector_info.go
+model_bt_assembly_mate_value_info.go
+model_bt_assembly_mate_values_info.go
 model_bt_assembly_mirror_2996.go
 model_bt_assembly_modification_params.go
 model_bt_assembly_occurrence_info.go
@@ -1781,6 +1788,7 @@ model_bt_insertable_info.go
 model_bt_insertable_part_display_data_3103.go
 model_bt_insertable_sketch_display_data_3775.go
 model_bt_insertables_list_response.go
+model_bt_inspection_table_row_metadata_2485.go
 model_bt_instance_642.go
 model_bt_instance_base_2263.go
 model_bt_instance_control_node_750.go
@@ -2112,6 +2120,7 @@ model_bt_update_task_params.go
 model_bt_user_admin_info.go
 model_bt_user_admin_summary_info.go
 model_bt_user_app_message_body.go
+model_bt_user_app_setting_operation_type.go
 model_bt_user_app_settings_info.go
 model_bt_user_app_settings_params.go
 model_bt_user_basic_summary_info.go
