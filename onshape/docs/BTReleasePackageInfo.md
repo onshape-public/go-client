@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AddAllDrawingsActive** | Pointer to **bool** |  | [optional] 
 **ChangeOrderId** | Pointer to **string** |  | [optional] 
 **ColumnNames** | Pointer to **map[string]string** |  | [optional] 
 **Comments** | Pointer to [**[]BTCommentInfo**](BTCommentInfo.md) |  | [optional] 
@@ -29,6 +30,8 @@ Name | Type | Description | Notes
 **Properties** | Pointer to [**[]BTWorkflowPropertyInfo**](BTWorkflowPropertyInfo.md) |  | [optional] 
 **RetainedAsDraft** | Pointer to **bool** | Indicates whether the release is still in setup state and saved as a draft. | [optional] 
 **RevisionRuleId** | Pointer to **string** |  | [optional] 
+**RootItemsToRebuild** | Pointer to **[]string** |  | [optional] 
+**UpdatedItemIds** | Pointer to **[]string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 **Workflow** | Pointer to [**BTWorkflowSnapshotInfo**](BTWorkflowSnapshotInfo.md) |  | [optional] 
@@ -54,6 +57,31 @@ will change when the set of required properties is changed
 NewBTReleasePackageInfoWithDefaults instantiates a new BTReleasePackageInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddAllDrawingsActive
+
+`func (o *BTReleasePackageInfo) GetAddAllDrawingsActive() bool`
+
+GetAddAllDrawingsActive returns the AddAllDrawingsActive field if non-nil, zero value otherwise.
+
+### GetAddAllDrawingsActiveOk
+
+`func (o *BTReleasePackageInfo) GetAddAllDrawingsActiveOk() (*bool, bool)`
+
+GetAddAllDrawingsActiveOk returns a tuple with the AddAllDrawingsActive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddAllDrawingsActive
+
+`func (o *BTReleasePackageInfo) SetAddAllDrawingsActive(v bool)`
+
+SetAddAllDrawingsActive sets AddAllDrawingsActive field to given value.
+
+### HasAddAllDrawingsActive
+
+`func (o *BTReleasePackageInfo) HasAddAllDrawingsActive() bool`
+
+HasAddAllDrawingsActive returns a boolean if a field has been set.
 
 ### GetChangeOrderId
 
@@ -679,6 +707,56 @@ SetRevisionRuleId sets RevisionRuleId field to given value.
 `func (o *BTReleasePackageInfo) HasRevisionRuleId() bool`
 
 HasRevisionRuleId returns a boolean if a field has been set.
+
+### GetRootItemsToRebuild
+
+`func (o *BTReleasePackageInfo) GetRootItemsToRebuild() []string`
+
+GetRootItemsToRebuild returns the RootItemsToRebuild field if non-nil, zero value otherwise.
+
+### GetRootItemsToRebuildOk
+
+`func (o *BTReleasePackageInfo) GetRootItemsToRebuildOk() (*[]string, bool)`
+
+GetRootItemsToRebuildOk returns a tuple with the RootItemsToRebuild field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRootItemsToRebuild
+
+`func (o *BTReleasePackageInfo) SetRootItemsToRebuild(v []string)`
+
+SetRootItemsToRebuild sets RootItemsToRebuild field to given value.
+
+### HasRootItemsToRebuild
+
+`func (o *BTReleasePackageInfo) HasRootItemsToRebuild() bool`
+
+HasRootItemsToRebuild returns a boolean if a field has been set.
+
+### GetUpdatedItemIds
+
+`func (o *BTReleasePackageInfo) GetUpdatedItemIds() []string`
+
+GetUpdatedItemIds returns the UpdatedItemIds field if non-nil, zero value otherwise.
+
+### GetUpdatedItemIdsOk
+
+`func (o *BTReleasePackageInfo) GetUpdatedItemIdsOk() (*[]string, bool)`
+
+GetUpdatedItemIdsOk returns a tuple with the UpdatedItemIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedItemIds
+
+`func (o *BTReleasePackageInfo) SetUpdatedItemIds(v []string)`
+
+SetUpdatedItemIds sets UpdatedItemIds field to given value.
+
+### HasUpdatedItemIds
+
+`func (o *BTReleasePackageInfo) HasUpdatedItemIds() bool`
+
+HasUpdatedItemIds returns a boolean if a field has been set.
 
 ### GetVersionId
 

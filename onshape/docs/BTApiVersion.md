@@ -23,6 +23,8 @@
 
 * `BTApiVersionV9IncludeDeterministicIdsToQueryResponses` (value: `"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"`)
 
+* `BTApiVersionV10ValidateVisibiltyConditionsForPsConfigParams` (value: `"V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

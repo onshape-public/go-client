@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AddAllDrawingsActive** | Pointer to **bool** |  | [optional] 
 **Empty** | Pointer to **bool** |  | [optional] 
 **ItemIds** | Pointer to **[]string** |  | [optional] 
 **Items** | Pointer to [**[]BTReleasePackageItemParams**](BTReleasePackageItemParams.md) |  | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewBTUpdateReleasePackageParamsWithDefaults instantiates a new BTUpdateReleasePackageParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddAllDrawingsActive
+
+`func (o *BTUpdateReleasePackageParams) GetAddAllDrawingsActive() bool`
+
+GetAddAllDrawingsActive returns the AddAllDrawingsActive field if non-nil, zero value otherwise.
+
+### GetAddAllDrawingsActiveOk
+
+`func (o *BTUpdateReleasePackageParams) GetAddAllDrawingsActiveOk() (*bool, bool)`
+
+GetAddAllDrawingsActiveOk returns a tuple with the AddAllDrawingsActive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddAllDrawingsActive
+
+`func (o *BTUpdateReleasePackageParams) SetAddAllDrawingsActive(v bool)`
+
+SetAddAllDrawingsActive sets AddAllDrawingsActive field to given value.
+
+### HasAddAllDrawingsActive
+
+`func (o *BTUpdateReleasePackageParams) HasAddAllDrawingsActive() bool`
+
+HasAddAllDrawingsActive returns a boolean if a field has been set.
 
 ### GetEmpty
 

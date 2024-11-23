@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,18 +16,20 @@ import (
 
 // BTReleasePackageItemParams struct for BTReleasePackageItemParams
 type BTReleasePackageItemParams struct {
-	Configuration *string                `json:"configuration,omitempty"`
-	DocumentId    *string                `json:"documentId,omitempty"`
-	ElementId     *string                `json:"elementId,omitempty"`
-	Href          *string                `json:"href,omitempty"`
-	Id            *string                `json:"id,omitempty"`
-	IsIncluded    *bool                  `json:"isIncluded,omitempty"`
-	PartId        *string                `json:"partId,omitempty"`
-	PartIdentity  *string                `json:"partIdentity,omitempty"`
-	PartNumber    *string                `json:"partNumber,omitempty"`
-	Properties    []BTPropertyValueParam `json:"properties,omitempty"`
-	VersionId     *string                `json:"versionId,omitempty"`
-	WorkspaceId   *string                `json:"workspaceId,omitempty"`
+	AddedAutomatically *bool                  `json:"addedAutomatically,omitempty"`
+	Configuration      *string                `json:"configuration,omitempty"`
+	DocumentId         *string                `json:"documentId,omitempty"`
+	ElementId          *string                `json:"elementId,omitempty"`
+	Href               *string                `json:"href,omitempty"`
+	Id                 *string                `json:"id,omitempty"`
+	IsIncluded         *bool                  `json:"isIncluded,omitempty"`
+	ParentId           *string                `json:"parentId,omitempty"`
+	PartId             *string                `json:"partId,omitempty"`
+	PartIdentity       *string                `json:"partIdentity,omitempty"`
+	PartNumber         *string                `json:"partNumber,omitempty"`
+	Properties         []BTPropertyValueParam `json:"properties,omitempty"`
+	VersionId          *string                `json:"versionId,omitempty"`
+	WorkspaceId        *string                `json:"workspaceId,omitempty"`
 }
 
 // NewBTReleasePackageItemParams instantiates a new BTReleasePackageItemParams object
@@ -45,6 +47,38 @@ func NewBTReleasePackageItemParams() *BTReleasePackageItemParams {
 func NewBTReleasePackageItemParamsWithDefaults() *BTReleasePackageItemParams {
 	this := BTReleasePackageItemParams{}
 	return &this
+}
+
+// GetAddedAutomatically returns the AddedAutomatically field value if set, zero value otherwise.
+func (o *BTReleasePackageItemParams) GetAddedAutomatically() bool {
+	if o == nil || o.AddedAutomatically == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AddedAutomatically
+}
+
+// GetAddedAutomaticallyOk returns a tuple with the AddedAutomatically field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemParams) GetAddedAutomaticallyOk() (*bool, bool) {
+	if o == nil || o.AddedAutomatically == nil {
+		return nil, false
+	}
+	return o.AddedAutomatically, true
+}
+
+// HasAddedAutomatically returns a boolean if a field has been set.
+func (o *BTReleasePackageItemParams) HasAddedAutomatically() bool {
+	if o != nil && o.AddedAutomatically != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAddedAutomatically gets a reference to the given bool and assigns it to the AddedAutomatically field.
+func (o *BTReleasePackageItemParams) SetAddedAutomatically(v bool) {
+	o.AddedAutomatically = &v
 }
 
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
@@ -237,6 +271,38 @@ func (o *BTReleasePackageItemParams) HasIsIncluded() bool {
 // SetIsIncluded gets a reference to the given bool and assigns it to the IsIncluded field.
 func (o *BTReleasePackageItemParams) SetIsIncluded(v bool) {
 	o.IsIncluded = &v
+}
+
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTReleasePackageItemParams) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemParams) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTReleasePackageItemParams) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTReleasePackageItemParams) SetParentId(v string) {
+	o.ParentId = &v
 }
 
 // GetPartId returns the PartId field value if set, zero value otherwise.
@@ -433,6 +499,9 @@ func (o *BTReleasePackageItemParams) SetWorkspaceId(v string) {
 
 func (o BTReleasePackageItemParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AddedAutomatically != nil {
+		toSerialize["addedAutomatically"] = o.AddedAutomatically
+	}
 	if o.Configuration != nil {
 		toSerialize["configuration"] = o.Configuration
 	}
@@ -450,6 +519,9 @@ func (o BTReleasePackageItemParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsIncluded != nil {
 		toSerialize["isIncluded"] = o.IsIncluded
+	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId

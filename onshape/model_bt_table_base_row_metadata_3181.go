@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -22,6 +22,11 @@ type BTTableBaseRowMetadata3181 struct {
 
 // BTSMOtherJointTableRowMetadata2640AsBTTableBaseRowMetadata3181 is a convenience function that returns BTSMOtherJointTableRowMetadata2640 wrapped in BTTableBaseRowMetadata3181
 func (o *BTSMOtherJointTableRowMetadata2640) AsBTTableBaseRowMetadata3181() *BTTableBaseRowMetadata3181 {
+	return &BTTableBaseRowMetadata3181{o}
+}
+
+// BTInspectionTableRowMetadata2485AsBTTableBaseRowMetadata3181 is a convenience function that returns BTInspectionTableRowMetadata2485 wrapped in BTTableBaseRowMetadata3181
+func (o *BTInspectionTableRowMetadata2485) AsBTTableBaseRowMetadata3181() *BTTableBaseRowMetadata3181 {
 	return &BTTableBaseRowMetadata3181{o}
 }
 
@@ -216,6 +221,20 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
 			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTFSTableRowMetadata2262: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTInspectionTableRowMetadata-2485'
+	if jsonDict["btType"] == "BTInspectionTableRowMetadata-2485" {
+		// try to unmarshal JSON data into BTInspectionTableRowMetadata2485
+		var qr *BTInspectionTableRowMetadata2485
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableBaseRowMetadata3181 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableBaseRowMetadata3181 = nil
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTInspectionTableRowMetadata2485: %s", err.Error())
 		}
 	}
 

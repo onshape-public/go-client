@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -681,11 +681,21 @@ func (r ApiUpdateAppCompanySettingsRequest) Execute() (map[string]interface{}, *
 UpdateAppCompanySettings Update company preference settings for an application.
 
 This API is only usable with an OAuth token and only by the current user or admin.
+* Add or update a setting identified by key with value.
+* Operation and field may optionally be specified when updating Map type settings.
+* Field specifies the key of the setting Map to update.
+* Operation may be one of:
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cpid
-	@param cid
-	@return ApiUpdateAppCompanySettingsRequest
+  - `ADD`: Add or update an existing field of the settings Map.
+
+  - `UPDATE`: Update an existing field of the settings Map and return an error if the field does not exist.
+
+  - `REMOVE`: Remove the field from the settings Map.
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @param cpid
+    @param cid
+    @return ApiUpdateAppCompanySettingsRequest
 */
 func (a *APIApplicationApiService) UpdateAppCompanySettings(ctx context.Context, cpid string, cid string) ApiUpdateAppCompanySettingsRequest {
 	return ApiUpdateAppCompanySettingsRequest{
@@ -807,11 +817,21 @@ func (r ApiUpdateAppSettingsRequest) Execute() (map[string]interface{}, *http.Re
 UpdateAppSettings Update a user's application preference settings.
 
 This API is only usable with an OAuth token and only by the current user or admin.
+* Add or update a setting identified by key with value.
+* Operation and field may optionally be specified when updating Map type settings.
+* Field specifies the key of the setting Map to update.
+* Operation may be one of:
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uid
-	@param cid
-	@return ApiUpdateAppSettingsRequest
+  - `ADD`: Add or update an existing field of the settings Map.
+
+  - `UPDATE`: Update an existing field of the settings Map and return an error if the field does not exist.
+
+  - `REMOVE`: Remove the field from the settings Map.
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @param uid
+    @param cid
+    @return ApiUpdateAppSettingsRequest
 */
 func (a *APIApplicationApiService) UpdateAppSettings(ctx context.Context, uid string, cid string) ApiUpdateAppSettingsRequest {
 	return ApiUpdateAppSettingsRequest{

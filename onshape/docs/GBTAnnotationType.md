@@ -5,6 +5,8 @@
 
 * `GBTAnnotationTypeDatum` (value: `"DATUM"`)
 
+* `GBTAnnotationTypeGtol` (value: `"GTOL"`)
+
 * `GBTAnnotationTypeUnknown` (value: `"UNKNOWN"`)
 
 

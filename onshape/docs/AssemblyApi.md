@@ -1,6 +1,6 @@
 # \AssemblyApi
 
-All URIs are relative to *https://cad.onshape.com/api/v9*
+All URIs are relative to *https://cad.onshape.com/api/v10*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**GetExplodedViews**](AssemblyApi.md#GetExplodedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | Get a list of exploded views for the specified assembly.
 [**GetFeatureSpecs**](AssemblyApi.md#GetFeatureSpecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature spec definitions for an assembly.
 [**GetFeatures**](AssemblyApi.md#GetFeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get the definitions of the specified features in an assembly.
+[**GetMateValues**](AssemblyApi.md#GetMateValues) | **Get** /assemblies/d/{did}/w/{wid}/e/{eid}/matevalues | Get a list of mate values in the specified assembly.
 [**GetNamedPositions**](AssemblyApi.md#GetNamedPositions) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions | Get a list of all named positions for the assembly.
 [**GetNamedViews**](AssemblyApi.md#GetNamedViews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | Get the view data for all named views for the specified element.
 [**GetOrCreateBillOfMaterialsElement**](AssemblyApi.md#GetOrCreateBillOfMaterialsElement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
@@ -26,6 +27,7 @@ Method | HTTP request | Description
 [**TransformOccurrences**](AssemblyApi.md#TransformOccurrences) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/occurrencetransforms | Transform a list of assembly occurrences.
 [**TranslateFormat**](AssemblyApi.md#TranslateFormat) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export the assembly to another format.
 [**UpdateFeature**](AssemblyApi.md#UpdateFeature) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Update an existing feature for an Assembly.
+[**UpdateMateValues**](AssemblyApi.md#UpdateMateValues) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/matevalues | Update mate values for the given mates in the specified assembly.
 
 
 
@@ -1214,6 +1216,82 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetMateValues
+
+> BTAssemblyMateValuesInfo GetMateValues(ctx, did, wid, eid).Execute()
+
+Get a list of mate values in the specified assembly.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    eid := "eid_example" // string | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.AssemblyApi.GetMateValues(context.Background(), did, wid, eid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.GetMateValues``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetMateValues`: BTAssemblyMateValuesInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.GetMateValues`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMateValuesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**BTAssemblyMateValuesInfo**](BTAssemblyMateValuesInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetNamedPositions
 
 > []BTViewFeatureBaseInfo GetNamedPositions(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).ExplodedViewId(explodedViewId).Execute()
@@ -1825,6 +1903,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTFeatureDefinitionResponse1617**](BTFeatureDefinitionResponse1617.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateMateValues
+
+> BTAssemblyMateValuesInfo UpdateMateValues(ctx, did, wid, eid).BTAssemblyMateValuesInfo(bTAssemblyMateValuesInfo).Execute()
+
+Update mate values for the given mates in the specified assembly.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    wid := "wid_example" // string | 
+    eid := "eid_example" // string | 
+    bTAssemblyMateValuesInfo := *openapiclient.NewBTAssemblyMateValuesInfo() // BTAssemblyMateValuesInfo | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.AssemblyApi.UpdateMateValues(context.Background(), did, wid, eid).BTAssemblyMateValuesInfo(bTAssemblyMateValuesInfo).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.UpdateMateValues``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateMateValues`: BTAssemblyMateValuesInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.UpdateMateValues`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+**wid** | **string** |  | 
+**eid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateMateValuesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **bTAssemblyMateValuesInfo** | [**BTAssemblyMateValuesInfo**](BTAssemblyMateValuesInfo.md) |  | 
+
+### Return type
+
+[**BTAssemblyMateValuesInfo**](BTAssemblyMateValuesInfo.md)
 
 ### Authorization
 
