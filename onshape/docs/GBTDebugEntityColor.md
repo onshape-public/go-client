@@ -39,6 +39,8 @@
 
 * `GBTDebugEntityColorTranslucentMagenta` (value: `"TRANSLUCENT_MAGENTA"`)
 
+* `GBTDebugEntityColorOrange` (value: `"ORANGE"`)
+
 * `GBTDebugEntityColorUnknown` (value: `"UNKNOWN"`)
 
 

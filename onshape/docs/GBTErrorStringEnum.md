@@ -3185,6 +3185,22 @@
 
 * `GBTErrorStringEnumSketchProfileAnalysisFailed` (value: `"SKETCH_PROFILE_ANALYSIS_FAILED"`)
 
+* `GBTErrorStringEnumFormedSplitPart` (value: `"FORMED_SPLIT_PART"`)
+
+* `GBTErrorStringEnumLoftNoDirectionForStart` (value: `"LOFT_NO_DIRECTION_FOR_START"`)
+
+* `GBTErrorStringEnumLoftNoDirectionForEnd` (value: `"LOFT_NO_DIRECTION_FOR_END"`)
+
+* `GBTErrorStringEnumTooManySamples` (value: `"TOO_MANY_SAMPLES"`)
+
+* `GBTErrorStringEnumFormedToolNotNormalToFace` (value: `"FORMED_TOOL_NOT_NORMAL_TO_FACE"`)
+
+* `GBTErrorStringEnumSheetMetalActiveModelNeeded` (value: `"SHEET_METAL_ACTIVE_MODEL_NEEDED"`)
+
+* `GBTErrorStringEnumSheetMetalSelectParts` (value: `"SHEET_METAL_SELECT_PARTS"`)
+
+* `GBTErrorStringEnumSheetMetalInactiveModelSelected` (value: `"SHEET_METAL_INACTIVE_MODEL_SELECTED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

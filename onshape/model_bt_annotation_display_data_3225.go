@@ -25,6 +25,11 @@ func (o *BTDatumDisplayData3408) AsBTAnnotationDisplayData3225() *BTAnnotationDi
 	return &BTAnnotationDisplayData3225{o}
 }
 
+// BTAnnotationGTolDisplayData4887AsBTAnnotationDisplayData3225 is a convenience function that returns BTAnnotationGTolDisplayData4887 wrapped in BTAnnotationDisplayData3225
+func (o *BTAnnotationGTolDisplayData4887) AsBTAnnotationDisplayData3225() *BTAnnotationDisplayData3225 {
+	return &BTAnnotationDisplayData3225{o}
+}
+
 // NewBTAnnotationDisplayData3225 instantiates a new BTAnnotationDisplayData3225 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -400,6 +405,20 @@ func (dst *BTAnnotationDisplayData3225) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'BTAnnotationGTolDisplayData-4887'
+	if jsonDict["btType"] == "BTAnnotationGTolDisplayData-4887" {
+		// try to unmarshal JSON data into BTAnnotationGTolDisplayData4887
+		var qr *BTAnnotationGTolDisplayData4887
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTAnnotationDisplayData3225 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTAnnotationDisplayData3225 = nil
+			return fmt.Errorf("failed to unmarshal BTAnnotationDisplayData3225 as BTAnnotationGTolDisplayData4887: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTDatumDisplayData-3408'

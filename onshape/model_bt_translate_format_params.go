@@ -102,7 +102,6 @@ type BTTranslateFormatParams struct {
 	TextOption                           *string                       `json:"textOption,omitempty"`
 	TriggerAutoDownload                  *bool                         `json:"triggerAutoDownload,omitempty"`
 	Unit                                 *string                       `json:"unit,omitempty"`
-	UpgradeFeatureScriptVersion          *bool                         `json:"upgradeFeatureScriptVersion,omitempty"`
 	UploadId                             *string                       `json:"uploadId,omitempty"`
 	UseFileNameToSetSinglePartName       *bool                         `json:"useFileNameToSetSinglePartName,omitempty"`
 	UseGltfCompression                   *bool                         `json:"useGltfCompression,omitempty"`
@@ -2594,38 +2593,6 @@ func (o *BTTranslateFormatParams) SetUnit(v string) {
 	o.Unit = &v
 }
 
-// GetUpgradeFeatureScriptVersion returns the UpgradeFeatureScriptVersion field value if set, zero value otherwise.
-func (o *BTTranslateFormatParams) GetUpgradeFeatureScriptVersion() bool {
-	if o == nil || o.UpgradeFeatureScriptVersion == nil {
-		var ret bool
-		return ret
-	}
-	return *o.UpgradeFeatureScriptVersion
-}
-
-// GetUpgradeFeatureScriptVersionOk returns a tuple with the UpgradeFeatureScriptVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTTranslateFormatParams) GetUpgradeFeatureScriptVersionOk() (*bool, bool) {
-	if o == nil || o.UpgradeFeatureScriptVersion == nil {
-		return nil, false
-	}
-	return o.UpgradeFeatureScriptVersion, true
-}
-
-// HasUpgradeFeatureScriptVersion returns a boolean if a field has been set.
-func (o *BTTranslateFormatParams) HasUpgradeFeatureScriptVersion() bool {
-	if o != nil && o.UpgradeFeatureScriptVersion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUpgradeFeatureScriptVersion gets a reference to the given bool and assigns it to the UpgradeFeatureScriptVersion field.
-func (o *BTTranslateFormatParams) SetUpgradeFeatureScriptVersion(v bool) {
-	o.UpgradeFeatureScriptVersion = &v
-}
-
 // GetUploadId returns the UploadId field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetUploadId() string {
 	if o == nil || o.UploadId == nil {
@@ -3082,9 +3049,6 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Unit != nil {
 		toSerialize["unit"] = o.Unit
-	}
-	if o.UpgradeFeatureScriptVersion != nil {
-		toSerialize["upgradeFeatureScriptVersion"] = o.UpgradeFeatureScriptVersion
 	}
 	if o.UploadId != nil {
 		toSerialize["uploadId"] = o.UploadId

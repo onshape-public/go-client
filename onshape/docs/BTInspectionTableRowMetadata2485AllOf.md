@@ -4,12 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AnnotationId** | Pointer to **string** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **ConstraintId** | Pointer to **string** |  | [optional] 
 **CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
+**Precision** | Pointer to [**GBTTolerancePrecision**](GBTTolerancePrecision.md) |  | [optional] 
 
 ## Methods
 
@@ -29,6 +31,31 @@ will change when the set of required properties is changed
 NewBTInspectionTableRowMetadata2485AllOfWithDefaults instantiates a new BTInspectionTableRowMetadata2485AllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAnnotationId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetAnnotationId() string`
+
+GetAnnotationId returns the AnnotationId field if non-nil, zero value otherwise.
+
+### GetAnnotationIdOk
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetAnnotationIdOk() (*string, bool)`
+
+GetAnnotationIdOk returns a tuple with the AnnotationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) SetAnnotationId(v string)`
+
+SetAnnotationId sets AnnotationId field to given value.
+
+### HasAnnotationId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) HasAnnotationId() bool`
+
+HasAnnotationId returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -179,6 +206,31 @@ SetParameterId sets ParameterId field to given value.
 `func (o *BTInspectionTableRowMetadata2485AllOf) HasParameterId() bool`
 
 HasParameterId returns a boolean if a field has been set.
+
+### GetPrecision
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetPrecision() GBTTolerancePrecision`
+
+GetPrecision returns the Precision field if non-nil, zero value otherwise.
+
+### GetPrecisionOk
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetPrecisionOk() (*GBTTolerancePrecision, bool)`
+
+GetPrecisionOk returns a tuple with the Precision field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrecision
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) SetPrecision(v GBTTolerancePrecision)`
+
+SetPrecision sets Precision field to given value.
+
+### HasPrecision
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) HasPrecision() bool`
+
+HasPrecision returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

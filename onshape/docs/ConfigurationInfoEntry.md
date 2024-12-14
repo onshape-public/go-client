@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Explicit** | Pointer to **bool** |  | [optional] 
 **IsCosmetic** | Pointer to **bool** |  | [optional] 
+**IsVisible** | Pointer to **bool** |  | [optional] 
 **ParameterAbbreviatedDisplayValue** | Pointer to **string** |  | [optional] 
 **ParameterDisplayValue** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
@@ -81,6 +82,31 @@ SetIsCosmetic sets IsCosmetic field to given value.
 `func (o *ConfigurationInfoEntry) HasIsCosmetic() bool`
 
 HasIsCosmetic returns a boolean if a field has been set.
+
+### GetIsVisible
+
+`func (o *ConfigurationInfoEntry) GetIsVisible() bool`
+
+GetIsVisible returns the IsVisible field if non-nil, zero value otherwise.
+
+### GetIsVisibleOk
+
+`func (o *ConfigurationInfoEntry) GetIsVisibleOk() (*bool, bool)`
+
+GetIsVisibleOk returns a tuple with the IsVisible field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsVisible
+
+`func (o *ConfigurationInfoEntry) SetIsVisible(v bool)`
+
+SetIsVisible sets IsVisible field to given value.
+
+### HasIsVisible
+
+`func (o *ConfigurationInfoEntry) HasIsVisible() bool`
+
+HasIsVisible returns a boolean if a field has been set.
 
 ### GetParameterAbbreviatedDisplayValue
 

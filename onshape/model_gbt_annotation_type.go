@@ -20,15 +20,17 @@ type GBTAnnotationType string
 
 // List of GBTAnnotationType
 const (
-	GBTAnnotationTypeDatum   GBTAnnotationType = "DATUM"
-	GBTAnnotationTypeGtol    GBTAnnotationType = "GTOL"
-	GBTAnnotationTypeUnknown GBTAnnotationType = "UNKNOWN"
+	GBTAnnotationTypeDatum             GBTAnnotationType = "DATUM"
+	GBTAnnotationTypeGtol              GBTAnnotationType = "GTOL"
+	GBTAnnotationTypeDimensionPosition GBTAnnotationType = "DIMENSION_POSITION"
+	GBTAnnotationTypeUnknown           GBTAnnotationType = "UNKNOWN"
 )
 
 // All allowed values of GBTAnnotationType enum
 var AllowedGBTAnnotationTypeEnumValues = []GBTAnnotationType{
 	"DATUM",
 	"GTOL",
+	"DIMENSION_POSITION",
 	"UNKNOWN",
 }
 

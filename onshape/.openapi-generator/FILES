@@ -67,6 +67,7 @@ docs/BTAPIApplicationSummaryInfo.md
 docs/BTAPIWorkflowableType.md
 docs/BTAclEntryInfo.md
 docs/BTAclInfo.md
+docs/BTAclParams.md
 docs/BTActiveSheetMetalFilter2944.md
 docs/BTActiveSheetMetalFilter2944AllOf.md
 docs/BTActiveWorkflowInfo.md
@@ -89,6 +90,9 @@ docs/BTAngularDimensionDisplayData320.md
 docs/BTAngularDimensionDisplayData320AllOf.md
 docs/BTAnnotationDisplayData3225.md
 docs/BTAnnotationElementDisplayData894.md
+docs/BTAnnotationGTolDisplayData4887.md
+docs/BTAnnotationGTolDisplayData4887AllOf.md
+docs/BTAnnotationGTolRowDisplayData4397.md
 docs/BTApiConfiguration.md
 docs/BTApiTable2300.md
 docs/BTApiTableColumn3141.md
@@ -278,6 +282,8 @@ docs/BTCylindricalImageMapping1640.md
 docs/BTCylindricalImageMapping1640AllOf.md
 docs/BTDatumDisplayData3408.md
 docs/BTDatumDisplayData3408AllOf.md
+docs/BTDatumTableRowMetadata3060.md
+docs/BTDatumTableRowMetadata3060AllOf.md
 docs/BTDebugGeometry2059.md
 docs/BTDebugGeometry2059AllOf.md
 docs/BTDecal2404.md
@@ -382,6 +388,8 @@ docs/BTExportTessellatedFacesBody1321AllOf.md
 docs/BTExportTessellatedFacesFace1192.md
 docs/BTExportTessellatedFacesFacet1417.md
 docs/BTExportTessellatedFacesResponse898.md
+docs/BTExternalConnectionInfo.md
+docs/BTExternalConnectionInfoAllOf.md
 docs/BTExternalElementReferenceInfo.md
 docs/BTExternalReference1936.md
 docs/BTExternalReference1936AllOf.md
@@ -1346,6 +1354,7 @@ docs/GBTEntityType.md
 docs/GBTErrorStringEnum.md
 docs/GBTFeatureFilterExclusion.md
 docs/GBTFilterFlattenedGeometryOptions.md
+docs/GBTGTolConstraintType.md
 docs/GBTGeometryType.md
 docs/GBTGraphicsBufferTarget.md
 docs/GBTInsertableType.md
@@ -1382,6 +1391,7 @@ docs/GBTSurfaceTypeEnum.md
 docs/GBTTableColumnWidthUnits.md
 docs/GBTTableTextAlignment.md
 docs/GBTTessellationSettingEnum.md
+docs/GBTTolerancePrecision.md
 docs/GBTToleranceType.md
 docs/GBTUIHint.md
 docs/GBTUiSelectionType.md
@@ -1480,6 +1490,7 @@ model_asset.go
 model_blob_item.go
 model_bt_acl_entry_info.go
 model_bt_acl_info.go
+model_bt_acl_params.go
 model_bt_active_sheet_metal_filter_2944.go
 model_bt_active_workflow_info.go
 model_bt_address_info.go
@@ -1495,6 +1506,8 @@ model_bt_and_filter_110.go
 model_bt_angular_dimension_display_data_320.go
 model_bt_annotation_display_data_3225.go
 model_bt_annotation_element_display_data_894.go
+model_bt_annotation_g_tol_display_data_4887.go
+model_bt_annotation_g_tol_row_display_data_4397.go
 model_bt_api_configuration.go
 model_bt_api_table_2300.go
 model_bt_api_table_column_3141.go
@@ -1649,6 +1662,7 @@ model_bt_curve_length_dimension_display_data_322.go
 model_bt_cylinder_description_686.go
 model_bt_cylindrical_image_mapping_1640.go
 model_bt_datum_display_data_3408.go
+model_bt_datum_table_row_metadata_3060.go
 model_bt_debug_geometry_2059.go
 model_bt_decal_2404.go
 model_bt_default_features_119.go
@@ -1732,6 +1746,7 @@ model_bt_export_tessellated_faces_body_1321.go
 model_bt_export_tessellated_faces_face_1192.go
 model_bt_export_tessellated_faces_facet_1417.go
 model_bt_export_tessellated_faces_response_898.go
+model_bt_external_connection_info.go
 model_bt_external_element_reference_info.go
 model_bt_external_reference_1936.go
 model_bt_feature_api_base_1430.go
@@ -2472,10 +2487,12 @@ model_gbt_surface_type_enum.go
 model_gbt_table_column_width_units.go
 model_gbt_table_text_alignment.go
 model_gbt_tessellation_setting_enum.go
+model_gbt_tolerance_precision.go
 model_gbt_tolerance_type.go
 model_gbt_value_use.go
 model_gbt_variable_type.go
 model_gbtbs_feature_visibility.go
+model_gbtg_tol_constraint_type.go
 model_gbtm_geom_status.go
 model_gbtp_definition_type.go
 model_gbtp_operator.go
