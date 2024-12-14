@@ -52,6 +52,7 @@ const (
 	GBTConstraintTypeRho                 GBTConstraintType = "RHO"
 	GBTConstraintTypeEqualCurvature      GBTConstraintType = "EQUAL_CURVATURE"
 	GBTConstraintTypeBezierDegree        GBTConstraintType = "BEZIER_DEGREE"
+	GBTConstraintTypeFreeze              GBTConstraintType = "FREEZE"
 	GBTConstraintTypeUnknown             GBTConstraintType = "UNKNOWN"
 )
 
@@ -89,6 +90,7 @@ var AllowedGBTConstraintTypeEnumValues = []GBTConstraintType{
 	"RHO",
 	"EQUAL_CURVATURE",
 	"BEZIER_DEGREE",
+	"FREEZE",
 	"UNKNOWN",
 }
 

@@ -7,6 +7,8 @@
 
 * `GBTAnnotationTypeGtol` (value: `"GTOL"`)
 
+* `GBTAnnotationTypeDimensionPosition` (value: `"DIMENSION_POSITION"`)
+
 * `GBTAnnotationTypeUnknown` (value: `"UNKNOWN"`)
 
 

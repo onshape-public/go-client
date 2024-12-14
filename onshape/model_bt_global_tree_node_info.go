@@ -55,6 +55,11 @@ func (o *BTClassroomInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
 	return &BTGlobalTreeNodeInfo{o}
 }
 
+// BTExternalConnectionInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTExternalConnectionInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTExternalConnectionInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
 // BTDocumentLabelInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTDocumentLabelInfo wrapped in BTGlobalTreeNodeInfo
 func (o *BTDocumentLabelInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
 	return &BTGlobalTreeNodeInfo{o}
@@ -1088,6 +1093,20 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
 			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTDocumentSummaryInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'external-connection'
+	if jsonDict["jsonType"] == "external-connection" {
+		// try to unmarshal JSON data into BTExternalConnectionInfo
+		var qr *BTExternalConnectionInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTExternalConnectionInfo: %s", err.Error())
 		}
 	}
 

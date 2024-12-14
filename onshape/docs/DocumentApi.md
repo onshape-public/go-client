@@ -35,8 +35,10 @@ Method | HTTP request | Description
 [**SyncAppElements**](DocumentApi.md#SyncAppElements) | **Post** /documents/d/{did}/w/{wid}/syncAppElements | 
 [**UnShareDocument**](DocumentApi.md#UnShareDocument) | **Delete** /documents/{did}/share/{eid} | Remove document View permissions from a user or other entity.
 [**UnshareFromSupport**](DocumentApi.md#UnshareFromSupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
+[**UpdateAnonymousAccess**](DocumentApi.md#UpdateAnonymousAccess) | **Post** /documents/{did}/acl/anonymousAccess | Allow or deny anonymous access to a document or publication.
 [**UpdateDocumentAttributes**](DocumentApi.md#UpdateDocumentAttributes) | **Post** /documents/{did} | Update document attributes by document ID.
 [**UpdateExternalReferencesToLatestDocuments**](DocumentApi.md#UpdateExternalReferencesToLatestDocuments) | **Post** /documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences | Update external references to latest by document ID, workspace ID, and tab ID.
+[**UpdatePublicAccess**](DocumentApi.md#UpdatePublicAccess) | **Post** /documents/{did}/acl/public | Make a document public or private.
 
 
 
@@ -2348,6 +2350,78 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UpdateAnonymousAccess
+
+> map[string]interface{} UpdateAnonymousAccess(ctx, did).BTAclParams(bTAclParams).Execute()
+
+Allow or deny anonymous access to a document or publication.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    bTAclParams := *openapiclient.NewBTAclParams() // BTAclParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentApi.UpdateAnonymousAccess(context.Background(), did).BTAclParams(bTAclParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UpdateAnonymousAccess``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateAnonymousAccess`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.UpdateAnonymousAccess`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAnonymousAccessRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **bTAclParams** | [**BTAclParams**](BTAclParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateDocumentAttributes
 
 > map[string]interface{} UpdateDocumentAttributes(ctx, did).BTDocumentParams(bTDocumentParams).Execute()
@@ -2479,6 +2553,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTLinkToLatestDocumentInfo**](BTLinkToLatestDocumentInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdatePublicAccess
+
+> map[string]interface{} UpdatePublicAccess(ctx, did).BTAclParams(bTAclParams).Execute()
+
+Make a document public or private.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | 
+    bTAclParams := *openapiclient.NewBTAclParams() // BTAclParams |  (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentApi.UpdatePublicAccess(context.Background(), did).BTAclParams(bTAclParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UpdatePublicAccess``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdatePublicAccess`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.UpdatePublicAccess`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdatePublicAccessRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **bTAclParams** | [**BTAclParams**](BTAclParams.md) |  | 
+
+### Return type
+
+**map[string]interface{}**
 
 ### Authorization
 

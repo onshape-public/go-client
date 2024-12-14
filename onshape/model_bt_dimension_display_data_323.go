@@ -837,6 +837,56 @@ func (o *BTDimensionDisplayData323) SetPlaneMatrix(v BTBSMatrix386) {
 	o.GetActualInstance().(getResult).SetPlaneMatrix(v)
 }
 
+// GetPrecision returns the Precision field value if set, zero value otherwise.
+func (o *BTDimensionDisplayData323) GetPrecision() GBTTolerancePrecision {
+	type getResult interface {
+		GetPrecision() GBTTolerancePrecision
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPrecision()
+	} else {
+		var de GBTTolerancePrecision
+		return de
+	}
+}
+
+// GetPrecisionOk returns a tuple with the Precision field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDimensionDisplayData323) GetPrecisionOk() (*GBTTolerancePrecision, bool) {
+	type getResult interface {
+		GetPrecisionOk() (*GBTTolerancePrecision, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPrecisionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasPrecision returns a boolean if a field has been set.
+func (o *BTDimensionDisplayData323) HasPrecision() bool {
+	type getResult interface {
+		HasPrecision() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasPrecision()
+	} else {
+		return false
+	}
+}
+
+// SetPrecision gets a reference to the given GBTTolerancePrecision and assigns it to the Precision field.
+func (o *BTDimensionDisplayData323) SetPrecision(v GBTTolerancePrecision) {
+	type getResult interface {
+		SetPrecision(v GBTTolerancePrecision)
+	}
+
+	o.GetActualInstance().(getResult).SetPrecision(v)
+}
+
 // GetToleranceType returns the ToleranceType field value if set, zero value otherwise.
 func (o *BTDimensionDisplayData323) GetToleranceType() GBTToleranceType {
 	type getResult interface {
@@ -1204,24 +1254,25 @@ func (v *NullableBTDimensionDisplayData323) UnmarshalJSON(src []byte) error {
 
 type base_BTDimensionDisplayData323 struct {
 	// Type of JSON object.
-	BtType                *string           `json:"btType,omitempty"`
-	CoordinateSystem      *BTMatrix3x3340   `json:"coordinateSystem,omitempty"`
-	FeatureId             *string           `json:"featureId,omitempty"`
-	HasMaximumLimit_      *bool             `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_      *bool             `json:"hasMinimumLimit,omitempty"`
-	Id                    *string           `json:"id,omitempty"`
-	IsAnnotationDimension *bool             `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat  *bool             `json:"isAssociatedWithFlat,omitempty"`
-	IsDriven              *bool             `json:"isDriven,omitempty"`
-	IsOverDefined         *bool             `json:"isOverDefined,omitempty"`
-	LowerTolerance        *float64          `json:"lowerTolerance,omitempty"`
-	MaximumLimit          *float64          `json:"maximumLimit,omitempty"`
-	MinimumLimit          *float64          `json:"minimumLimit,omitempty"`
-	ParameterId           *string           `json:"parameterId,omitempty"`
-	PlaneMatrix           *BTBSMatrix386    `json:"planeMatrix,omitempty"`
-	ToleranceType         *GBTToleranceType `json:"toleranceType,omitempty"`
-	UpperTolerance        *float64          `json:"upperTolerance,omitempty"`
-	Value                 *float64          `json:"value,omitempty"`
+	BtType                *string                `json:"btType,omitempty"`
+	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
+	FeatureId             *string                `json:"featureId,omitempty"`
+	HasMaximumLimit_      *bool                  `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_      *bool                  `json:"hasMinimumLimit,omitempty"`
+	Id                    *string                `json:"id,omitempty"`
+	IsAnnotationDimension *bool                  `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat  *bool                  `json:"isAssociatedWithFlat,omitempty"`
+	IsDriven              *bool                  `json:"isDriven,omitempty"`
+	IsOverDefined         *bool                  `json:"isOverDefined,omitempty"`
+	LowerTolerance        *float64               `json:"lowerTolerance,omitempty"`
+	MaximumLimit          *float64               `json:"maximumLimit,omitempty"`
+	MinimumLimit          *float64               `json:"minimumLimit,omitempty"`
+	ParameterId           *string                `json:"parameterId,omitempty"`
+	PlaneMatrix           *BTBSMatrix386         `json:"planeMatrix,omitempty"`
+	Precision             *GBTTolerancePrecision `json:"precision,omitempty"`
+	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
+	UpperTolerance        *float64               `json:"upperTolerance,omitempty"`
+	Value                 *float64               `json:"value,omitempty"`
 }
 
 // Newbase_BTDimensionDisplayData323 instantiates a new base_BTDimensionDisplayData323 object
@@ -1721,6 +1772,38 @@ func (o *base_BTDimensionDisplayData323) SetPlaneMatrix(v BTBSMatrix386) {
 	o.PlaneMatrix = &v
 }
 
+// GetPrecision returns the Precision field value if set, zero value otherwise.
+func (o *base_BTDimensionDisplayData323) GetPrecision() GBTTolerancePrecision {
+	if o == nil || o.Precision == nil {
+		var ret GBTTolerancePrecision
+		return ret
+	}
+	return *o.Precision
+}
+
+// GetPrecisionOk returns a tuple with the Precision field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDimensionDisplayData323) GetPrecisionOk() (*GBTTolerancePrecision, bool) {
+	if o == nil || o.Precision == nil {
+		return nil, false
+	}
+	return o.Precision, true
+}
+
+// HasPrecision returns a boolean if a field has been set.
+func (o *base_BTDimensionDisplayData323) HasPrecision() bool {
+	if o != nil && o.Precision != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrecision gets a reference to the given GBTTolerancePrecision and assigns it to the Precision field.
+func (o *base_BTDimensionDisplayData323) SetPrecision(v GBTTolerancePrecision) {
+	o.Precision = &v
+}
+
 // GetToleranceType returns the ToleranceType field value if set, zero value otherwise.
 func (o *base_BTDimensionDisplayData323) GetToleranceType() GBTToleranceType {
 	if o == nil || o.ToleranceType == nil {
@@ -1863,6 +1946,9 @@ func (o base_BTDimensionDisplayData323) MarshalJSON() ([]byte, error) {
 	}
 	if o.PlaneMatrix != nil {
 		toSerialize["planeMatrix"] = o.PlaneMatrix
+	}
+	if o.Precision != nil {
+		toSerialize["precision"] = o.Precision
 	}
 	if o.ToleranceType != nil {
 		toSerialize["toleranceType"] = o.ToleranceType

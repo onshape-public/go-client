@@ -1,0 +1,134 @@
+# BTAnnotationGTolRowDisplayData4397
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**ConstraintType** | Pointer to [**GBTGTolConstraintType**](GBTGTolConstraintType.md) |  | [optional] 
+**References** | Pointer to **[]string** |  | [optional] 
+**Tolerance** | Pointer to **float64** |  | [optional] 
+
+## Methods
+
+### NewBTAnnotationGTolRowDisplayData4397
+
+`func NewBTAnnotationGTolRowDisplayData4397() *BTAnnotationGTolRowDisplayData4397`
+
+NewBTAnnotationGTolRowDisplayData4397 instantiates a new BTAnnotationGTolRowDisplayData4397 object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewBTAnnotationGTolRowDisplayData4397WithDefaults
+
+`func NewBTAnnotationGTolRowDisplayData4397WithDefaults() *BTAnnotationGTolRowDisplayData4397`
+
+NewBTAnnotationGTolRowDisplayData4397WithDefaults instantiates a new BTAnnotationGTolRowDisplayData4397 object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
+
+### GetConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetConstraintType() GBTGTolConstraintType`
+
+GetConstraintType returns the ConstraintType field if non-nil, zero value otherwise.
+
+### GetConstraintTypeOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetConstraintTypeOk() (*GBTGTolConstraintType, bool)`
+
+GetConstraintTypeOk returns a tuple with the ConstraintType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetConstraintType(v GBTGTolConstraintType)`
+
+SetConstraintType sets ConstraintType field to given value.
+
+### HasConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasConstraintType() bool`
+
+HasConstraintType returns a boolean if a field has been set.
+
+### GetReferences
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetReferences() []string`
+
+GetReferences returns the References field if non-nil, zero value otherwise.
+
+### GetReferencesOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetReferencesOk() (*[]string, bool)`
+
+GetReferencesOk returns a tuple with the References field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferences
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetReferences(v []string)`
+
+SetReferences sets References field to given value.
+
+### HasReferences
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasReferences() bool`
+
+HasReferences returns a boolean if a field has been set.
+
+### GetTolerance
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetTolerance() float64`
+
+GetTolerance returns the Tolerance field if non-nil, zero value otherwise.
+
+### GetToleranceOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceOk() (*float64, bool)`
+
+GetToleranceOk returns a tuple with the Tolerance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTolerance
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetTolerance(v float64)`
+
+SetTolerance sets Tolerance field to given value.
+
+### HasTolerance
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasTolerance() bool`
+
+HasTolerance returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

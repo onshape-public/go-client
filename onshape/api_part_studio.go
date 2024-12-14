@@ -350,6 +350,8 @@ func (r ApiCreatePartStudioRequest) Execute() (*BTDocumentElementInfo, *http.Res
 /*
 CreatePartStudio Create a new Part Studio in a document.
 
+See the [Part Studios API Guide](https://onshape-public.github.io/docs/api-adv/partstudios/) for details and tutorials.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did Document ID.
 	@param wid Workspace ID.
@@ -1908,6 +1910,8 @@ func (r ApiGetPartStudioBodyDetailsRequest) Execute() (*BTExportModelBodiesRespo
 /*
 GetPartStudioBodyDetails Get the body details for a Part Studio.
 
+See the [Part Studios API Guide](https://onshape-public.github.io/docs/api-adv/partstudios/) for details and tutorials.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did The id of the document in which to perform the operation.
 	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
@@ -3119,6 +3123,7 @@ func (r ApiGetPartStudioMassPropertiesRequest) Execute() (*BTMassPropertiesBulkI
 GetPartStudioMassProperties Get the mass properties for a Part Studio.
 
 Parts must have density. The returned schema includes the same information as in the Onshape [Mass Properties Tool](https://cad.onshape.com/help/Content/massprops-ps.htm).
+
 When three values are returned:
 
   - The first is the calculated value.
@@ -3126,6 +3131,8 @@ When three values are returned:
   - The second is the minimum possible value, considering tolerance.
 
   - The third is the maximum possible value, considering tolerance.
+
+    See the [Part Studios API Guide](https://onshape-public.github.io/docs/api-adv/partstudios/) for details and tutorials.
 
     @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
     @param did The id of the document in which to perform the operation.
@@ -3294,7 +3301,7 @@ func (r ApiGetPartStudioNamedViewsRequest) Execute() (*BTNamedViewsInfo, *http.R
 /*
 GetPartStudioNamedViews Get a list of all named views that exist in the Part Studio.
 
-Returns a map from view name to view data for the given element
+Returns a map from view name to view data for the given element. See the [Part Studios API Guide](https://onshape-public.github.io/docs/api-adv/partstudios/) for details and tutorials.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did The id of the document in which to perform the operation.
@@ -4052,7 +4059,15 @@ func (r ApiUpdateRollbackRequest) Execute() (*BTSetFeatureRollbackResponse1042, 
 /*
 UpdateRollback Move the Feature List rollback bar in the Part Studio.
 
-Set to -1 to move the rollback bar to the end of the list.
+Replace `"string"` in the request body with an object that specifies the new location for the rollback bar:
+
+	`{ "rollbackIndex": integer }`
+
+For example: `{ "rollbackIndex": 2 }`
+
+Set to `-1` to move the rollback bar to the end of the list.
+
+See the [Part Studios API Guide](https://onshape-public.github.io/docs/api-adv/partstudios/) for details and tutorials.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did Document ID.

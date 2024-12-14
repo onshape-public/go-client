@@ -19,10 +19,12 @@ type BTInspectionTableRowMetadata2485 struct {
 	BTTableBaseRowMetadata3181
 	BtType                  *string                        `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableCrossHighlightData1753 `json:"crossHighlightDataIfAny,omitempty"`
+	AnnotationId            *string                        `json:"annotationId,omitempty"`
 	ConstraintId            *string                        `json:"constraintId,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
 	FeatureId               *string                        `json:"featureId,omitempty"`
 	ParameterId             *string                        `json:"parameterId,omitempty"`
+	Precision               *GBTTolerancePrecision         `json:"precision,omitempty"`
 }
 
 // NewBTInspectionTableRowMetadata2485 instantiates a new BTInspectionTableRowMetadata2485 object
@@ -104,6 +106,38 @@ func (o *BTInspectionTableRowMetadata2485) HasCrossHighlightDataIfAny() bool {
 // SetCrossHighlightDataIfAny gets a reference to the given BTTableCrossHighlightData1753 and assigns it to the CrossHighlightDataIfAny field.
 func (o *BTInspectionTableRowMetadata2485) SetCrossHighlightDataIfAny(v BTTableCrossHighlightData1753) {
 	o.CrossHighlightDataIfAny = &v
+}
+
+// GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetAnnotationId() string {
+	if o == nil || o.AnnotationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.AnnotationId
+}
+
+// GetAnnotationIdOk returns a tuple with the AnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetAnnotationIdOk() (*string, bool) {
+	if o == nil || o.AnnotationId == nil {
+		return nil, false
+	}
+	return o.AnnotationId, true
+}
+
+// HasAnnotationId returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasAnnotationId() bool {
+	if o != nil && o.AnnotationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
+func (o *BTInspectionTableRowMetadata2485) SetAnnotationId(v string) {
+	o.AnnotationId = &v
 }
 
 // GetConstraintId returns the ConstraintId field value if set, zero value otherwise.
@@ -234,6 +268,38 @@ func (o *BTInspectionTableRowMetadata2485) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetPrecision returns the Precision field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetPrecision() GBTTolerancePrecision {
+	if o == nil || o.Precision == nil {
+		var ret GBTTolerancePrecision
+		return ret
+	}
+	return *o.Precision
+}
+
+// GetPrecisionOk returns a tuple with the Precision field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetPrecisionOk() (*GBTTolerancePrecision, bool) {
+	if o == nil || o.Precision == nil {
+		return nil, false
+	}
+	return o.Precision, true
+}
+
+// HasPrecision returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasPrecision() bool {
+	if o != nil && o.Precision != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrecision gets a reference to the given GBTTolerancePrecision and assigns it to the Precision field.
+func (o *BTInspectionTableRowMetadata2485) SetPrecision(v GBTTolerancePrecision) {
+	o.Precision = &v
+}
+
 func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
@@ -250,6 +316,9 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	if o.CrossHighlightDataIfAny != nil {
 		toSerialize["crossHighlightDataIfAny"] = o.CrossHighlightDataIfAny
 	}
+	if o.AnnotationId != nil {
+		toSerialize["annotationId"] = o.AnnotationId
+	}
 	if o.ConstraintId != nil {
 		toSerialize["constraintId"] = o.ConstraintId
 	}
@@ -261,6 +330,9 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.Precision != nil {
+		toSerialize["precision"] = o.Precision
 	}
 	return json.Marshal(toSerialize)
 }

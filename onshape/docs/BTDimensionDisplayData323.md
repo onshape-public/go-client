@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **MinimumLimit** | Pointer to **float64** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **PlaneMatrix** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
+**Precision** | Pointer to [**GBTTolerancePrecision**](GBTTolerancePrecision.md) |  | [optional] 
 **ToleranceType** | Pointer to [**GBTToleranceType**](GBTToleranceType.md) |  | [optional] 
 **UpperTolerance** | Pointer to **float64** |  | [optional] 
 **Value** | Pointer to **float64** |  | [optional] 
@@ -416,6 +417,31 @@ SetPlaneMatrix sets PlaneMatrix field to given value.
 `func (o *BTDimensionDisplayData323) HasPlaneMatrix() bool`
 
 HasPlaneMatrix returns a boolean if a field has been set.
+
+### GetPrecision
+
+`func (o *BTDimensionDisplayData323) GetPrecision() GBTTolerancePrecision`
+
+GetPrecision returns the Precision field if non-nil, zero value otherwise.
+
+### GetPrecisionOk
+
+`func (o *BTDimensionDisplayData323) GetPrecisionOk() (*GBTTolerancePrecision, bool)`
+
+GetPrecisionOk returns a tuple with the Precision field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrecision
+
+`func (o *BTDimensionDisplayData323) SetPrecision(v GBTTolerancePrecision)`
+
+SetPrecision sets Precision field to given value.
+
+### HasPrecision
+
+`func (o *BTDimensionDisplayData323) HasPrecision() bool`
+
+HasPrecision returns a boolean if a field has been set.
 
 ### GetToleranceType
 

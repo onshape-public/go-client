@@ -67,6 +67,8 @@
 
 * `GBTConstraintTypeBezierDegree` (value: `"BEZIER_DEGREE"`)
 
+* `GBTConstraintTypeFreeze` (value: `"FREEZE"`)
+
 * `GBTConstraintTypeUnknown` (value: `"UNKNOWN"`)
 
 

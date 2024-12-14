@@ -38,6 +38,7 @@ const (
 	GBTDebugEntityColorTranslucentOrange  GBTDebugEntityColor = "TRANSLUCENT_ORANGE"
 	GBTDebugEntityColorTranslucentRed     GBTDebugEntityColor = "TRANSLUCENT_RED"
 	GBTDebugEntityColorTranslucentMagenta GBTDebugEntityColor = "TRANSLUCENT_MAGENTA"
+	GBTDebugEntityColorOrange             GBTDebugEntityColor = "ORANGE"
 	GBTDebugEntityColorUnknown            GBTDebugEntityColor = "UNKNOWN"
 )
 
@@ -61,6 +62,7 @@ var AllowedGBTDebugEntityColorEnumValues = []GBTDebugEntityColor{
 	"TRANSLUCENT_ORANGE",
 	"TRANSLUCENT_RED",
 	"TRANSLUCENT_MAGENTA",
+	"ORANGE",
 	"UNKNOWN",
 }
 

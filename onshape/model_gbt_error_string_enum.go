@@ -1611,6 +1611,14 @@ const (
 	GBTErrorStringEnumConfigurationParameterHasBadVisibilityCondition             GBTErrorStringEnum = "CONFIGURATION_PARAMETER_HAS_BAD_VISIBILITY_CONDITION"
 	GBTErrorStringEnumSheetMetalFormedRebuildFailed                               GBTErrorStringEnum = "SHEET_METAL_FORMED_REBUILD_FAILED"
 	GBTErrorStringEnumSketchProfileAnalysisFailed                                 GBTErrorStringEnum = "SKETCH_PROFILE_ANALYSIS_FAILED"
+	GBTErrorStringEnumFormedSplitPart                                             GBTErrorStringEnum = "FORMED_SPLIT_PART"
+	GBTErrorStringEnumLoftNoDirectionForStart                                     GBTErrorStringEnum = "LOFT_NO_DIRECTION_FOR_START"
+	GBTErrorStringEnumLoftNoDirectionForEnd                                       GBTErrorStringEnum = "LOFT_NO_DIRECTION_FOR_END"
+	GBTErrorStringEnumTooManySamples                                              GBTErrorStringEnum = "TOO_MANY_SAMPLES"
+	GBTErrorStringEnumFormedToolNotNormalToFace                                   GBTErrorStringEnum = "FORMED_TOOL_NOT_NORMAL_TO_FACE"
+	GBTErrorStringEnumSheetMetalActiveModelNeeded                                 GBTErrorStringEnum = "SHEET_METAL_ACTIVE_MODEL_NEEDED"
+	GBTErrorStringEnumSheetMetalSelectParts                                       GBTErrorStringEnum = "SHEET_METAL_SELECT_PARTS"
+	GBTErrorStringEnumSheetMetalInactiveModelSelected                             GBTErrorStringEnum = "SHEET_METAL_INACTIVE_MODEL_SELECTED"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3207,6 +3215,14 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"CONFIGURATION_PARAMETER_HAS_BAD_VISIBILITY_CONDITION",
 	"SHEET_METAL_FORMED_REBUILD_FAILED",
 	"SKETCH_PROFILE_ANALYSIS_FAILED",
+	"FORMED_SPLIT_PART",
+	"LOFT_NO_DIRECTION_FOR_START",
+	"LOFT_NO_DIRECTION_FOR_END",
+	"TOO_MANY_SAMPLES",
+	"FORMED_TOOL_NOT_NORMAL_TO_FACE",
+	"SHEET_METAL_ACTIVE_MODEL_NEEDED",
+	"SHEET_METAL_SELECT_PARTS",
+	"SHEET_METAL_INACTIVE_MODEL_SELECTED",
 	"UNKNOWN",
 }
 

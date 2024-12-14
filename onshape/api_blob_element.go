@@ -489,6 +489,7 @@ type ApiUploadFileCreateElementRequest struct {
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
+	upgradeFeatureScriptVersion          *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -651,6 +652,11 @@ func (r ApiUploadFileCreateElementRequest) UseIGESImportPostProcessing(useIGESIm
 	return r
 }
 
+func (r ApiUploadFileCreateElementRequest) UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion bool) ApiUploadFileCreateElementRequest {
+	r.upgradeFeatureScriptVersion = &upgradeFeatureScriptVersion
+	return r
+}
+
 func (r ApiUploadFileCreateElementRequest) Execute() (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	return r.ApiService.UploadFileCreateElementExecute(r)
 }
@@ -805,6 +811,9 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.useIGESImportPostProcessing != nil {
 		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
 	}
+	if r.upgradeFeatureScriptVersion != nil {
+		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -886,6 +895,7 @@ type ApiUploadFileUpdateElementRequest struct {
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
+	upgradeFeatureScriptVersion          *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -1054,6 +1064,11 @@ func (r ApiUploadFileUpdateElementRequest) UseIGESImportPostProcessing(useIGESIm
 	return r
 }
 
+func (r ApiUploadFileUpdateElementRequest) UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion bool) ApiUploadFileUpdateElementRequest {
+	r.upgradeFeatureScriptVersion = &upgradeFeatureScriptVersion
+	return r
+}
+
 func (r ApiUploadFileUpdateElementRequest) Execute() (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	return r.ApiService.UploadFileUpdateElementExecute(r)
 }
@@ -1213,6 +1228,9 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	}
 	if r.useIGESImportPostProcessing != nil {
 		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
+	}
+	if r.upgradeFeatureScriptVersion != nil {
+		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

@@ -4079,6 +4079,128 @@ func (a *DocumentApiService) UnshareFromSupportExecute(r ApiUnshareFromSupportRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiUpdateAnonymousAccessRequest struct {
+	ctx         context.Context
+	ApiService  *DocumentApiService
+	did         string
+	bTAclParams *BTAclParams
+}
+
+func (r ApiUpdateAnonymousAccessRequest) BTAclParams(bTAclParams BTAclParams) ApiUpdateAnonymousAccessRequest {
+	r.bTAclParams = &bTAclParams
+	return r
+}
+
+func (r ApiUpdateAnonymousAccessRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.UpdateAnonymousAccessExecute(r)
+}
+
+/*
+UpdateAnonymousAccess Allow or deny anonymous access to a document or publication.
+
+If anonymous access is allowed, you can allow or deny anonymous users the ability to export the document or publication. If `anonymousAccessAllowed=false` and `anonymousAllowsExport=true`, the call will throw an error.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did
+	@return ApiUpdateAnonymousAccessRequest
+*/
+func (a *DocumentApiService) UpdateAnonymousAccess(ctx context.Context, did string) ApiUpdateAnonymousAccessRequest {
+	return ApiUpdateAnonymousAccessRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+	}
+}
+
+// Execute executes the request
+//
+//	@return map[string]interface{}
+func (a *DocumentApiService) UpdateAnonymousAccessExecute(r ApiUpdateAnonymousAccessRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UpdateAnonymousAccess")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/documents/{did}/acl/anonymousAccess"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTAclParams == nil {
+		return localVarReturnValue, nil, reportError("bTAclParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTAclParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]interface{}
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdateDocumentAttributesRequest struct {
 	ctx              context.Context
 	ApiService       *DocumentApiService
@@ -4299,6 +4421,127 @@ func (a *DocumentApiService) UpdateExternalReferencesToLatestDocumentsExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdatePublicAccessRequest struct {
+	ctx         context.Context
+	ApiService  *DocumentApiService
+	did         string
+	bTAclParams *BTAclParams
+}
+
+func (r ApiUpdatePublicAccessRequest) BTAclParams(bTAclParams BTAclParams) ApiUpdatePublicAccessRequest {
+	r.bTAclParams = &bTAclParams
+	return r
+}
+
+func (r ApiUpdatePublicAccessRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.UpdatePublicAccessExecute(r)
+}
+
+/*
+UpdatePublicAccess Make a document public or private.
+
+  - Set `public=true` in the request body to make the document public. Set to `false` to make it private. Free users cannot make documents private.
+
+  - The `documentId` provided in the URL must match the one provided in the request body exactly.
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @param did
+    @return ApiUpdatePublicAccessRequest
+*/
+func (a *DocumentApiService) UpdatePublicAccess(ctx context.Context, did string) ApiUpdatePublicAccessRequest {
+	return ApiUpdatePublicAccessRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+	}
+}
+
+// Execute executes the request
+//
+//	@return map[string]interface{}
+func (a *DocumentApiService) UpdatePublicAccessExecute(r ApiUpdatePublicAccessRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UpdatePublicAccess")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/documents/{did}/acl/public"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTAclParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]interface{}
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

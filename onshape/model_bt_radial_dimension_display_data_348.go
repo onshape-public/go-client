@@ -17,32 +17,33 @@ import (
 // BTRadialDimensionDisplayData348 struct for BTRadialDimensionDisplayData348
 type BTRadialDimensionDisplayData348 struct {
 	BTDimensionDisplayData323
-	BtType                *string           `json:"btType,omitempty"`
-	CoordinateSystem      *BTMatrix3x3340   `json:"coordinateSystem,omitempty"`
-	FeatureId             *string           `json:"featureId,omitempty"`
-	HasMaximumLimit_      *bool             `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_      *bool             `json:"hasMinimumLimit,omitempty"`
-	Id                    *string           `json:"id,omitempty"`
-	IsAnnotationDimension *bool             `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat  *bool             `json:"isAssociatedWithFlat,omitempty"`
-	IsDriven              *bool             `json:"isDriven,omitempty"`
-	IsOverDefined         *bool             `json:"isOverDefined,omitempty"`
-	LowerTolerance        *float64          `json:"lowerTolerance,omitempty"`
-	MaximumLimit          *float64          `json:"maximumLimit,omitempty"`
-	MinimumLimit          *float64          `json:"minimumLimit,omitempty"`
-	ParameterId           *string           `json:"parameterId,omitempty"`
-	PlaneMatrix           *BTBSMatrix386    `json:"planeMatrix,omitempty"`
-	ToleranceType         *GBTToleranceType `json:"toleranceType,omitempty"`
-	UpperTolerance        *float64          `json:"upperTolerance,omitempty"`
-	Value                 *float64          `json:"value,omitempty"`
-	PositionR             *float64          `json:"positionR,omitempty"`
-	PositionT             *float64          `json:"positionT,omitempty"`
-	RadiusDisplay         *GBTRadiusDisplay `json:"radiusDisplay,omitempty"`
-	RealDiameter          *bool             `json:"realDiameter,omitempty"`
-	WitnessEndPoint0r     *float64          `json:"witnessEndPoint0r,omitempty"`
-	WitnessEndPoint0t     *float64          `json:"witnessEndPoint0t,omitempty"`
-	WitnessEndPoint1r     *float64          `json:"witnessEndPoint1r,omitempty"`
-	WitnessEndPoint1t     *float64          `json:"witnessEndPoint1t,omitempty"`
+	BtType                *string                `json:"btType,omitempty"`
+	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
+	FeatureId             *string                `json:"featureId,omitempty"`
+	HasMaximumLimit_      *bool                  `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_      *bool                  `json:"hasMinimumLimit,omitempty"`
+	Id                    *string                `json:"id,omitempty"`
+	IsAnnotationDimension *bool                  `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat  *bool                  `json:"isAssociatedWithFlat,omitempty"`
+	IsDriven              *bool                  `json:"isDriven,omitempty"`
+	IsOverDefined         *bool                  `json:"isOverDefined,omitempty"`
+	LowerTolerance        *float64               `json:"lowerTolerance,omitempty"`
+	MaximumLimit          *float64               `json:"maximumLimit,omitempty"`
+	MinimumLimit          *float64               `json:"minimumLimit,omitempty"`
+	ParameterId           *string                `json:"parameterId,omitempty"`
+	PlaneMatrix           *BTBSMatrix386         `json:"planeMatrix,omitempty"`
+	Precision             *GBTTolerancePrecision `json:"precision,omitempty"`
+	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
+	UpperTolerance        *float64               `json:"upperTolerance,omitempty"`
+	Value                 *float64               `json:"value,omitempty"`
+	PositionR             *float64               `json:"positionR,omitempty"`
+	PositionT             *float64               `json:"positionT,omitempty"`
+	RadiusDisplay         *GBTRadiusDisplay      `json:"radiusDisplay,omitempty"`
+	RealDiameter          *bool                  `json:"realDiameter,omitempty"`
+	WitnessEndPoint0r     *float64               `json:"witnessEndPoint0r,omitempty"`
+	WitnessEndPoint0t     *float64               `json:"witnessEndPoint0t,omitempty"`
+	WitnessEndPoint1r     *float64               `json:"witnessEndPoint1r,omitempty"`
+	WitnessEndPoint1t     *float64               `json:"witnessEndPoint1t,omitempty"`
 }
 
 // NewBTRadialDimensionDisplayData348 instantiates a new BTRadialDimensionDisplayData348 object
@@ -542,6 +543,38 @@ func (o *BTRadialDimensionDisplayData348) SetPlaneMatrix(v BTBSMatrix386) {
 	o.PlaneMatrix = &v
 }
 
+// GetPrecision returns the Precision field value if set, zero value otherwise.
+func (o *BTRadialDimensionDisplayData348) GetPrecision() GBTTolerancePrecision {
+	if o == nil || o.Precision == nil {
+		var ret GBTTolerancePrecision
+		return ret
+	}
+	return *o.Precision
+}
+
+// GetPrecisionOk returns a tuple with the Precision field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDimensionDisplayData348) GetPrecisionOk() (*GBTTolerancePrecision, bool) {
+	if o == nil || o.Precision == nil {
+		return nil, false
+	}
+	return o.Precision, true
+}
+
+// HasPrecision returns a boolean if a field has been set.
+func (o *BTRadialDimensionDisplayData348) HasPrecision() bool {
+	if o != nil && o.Precision != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrecision gets a reference to the given GBTTolerancePrecision and assigns it to the Precision field.
+func (o *BTRadialDimensionDisplayData348) SetPrecision(v GBTTolerancePrecision) {
+	o.Precision = &v
+}
+
 // GetToleranceType returns the ToleranceType field value if set, zero value otherwise.
 func (o *BTRadialDimensionDisplayData348) GetToleranceType() GBTToleranceType {
 	if o == nil || o.ToleranceType == nil {
@@ -948,6 +981,9 @@ func (o BTRadialDimensionDisplayData348) MarshalJSON() ([]byte, error) {
 	}
 	if o.PlaneMatrix != nil {
 		toSerialize["planeMatrix"] = o.PlaneMatrix
+	}
+	if o.Precision != nil {
+		toSerialize["precision"] = o.Precision
 	}
 	if o.ToleranceType != nil {
 		toSerialize["toleranceType"] = o.ToleranceType

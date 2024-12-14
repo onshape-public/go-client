@@ -207,6 +207,8 @@ Name | Type | Description  | Notes
 
 Create a new Part Studio in a document.
 
+
+
 ### Example
 
 ```go
@@ -991,6 +993,8 @@ Name | Type | Description  | Notes
 > BTExportModelBodiesResponse734 GetPartStudioBodyDetails(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartIds(partIds).IncludeSurfaces(includeSurfaces).IncludeCompositeParts(includeCompositeParts).IncludeGeometricData(includeGeometricData).Execute()
 
 Get the body details for a Part Studio.
+
+
 
 ### Example
 

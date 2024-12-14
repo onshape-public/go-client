@@ -25,6 +25,11 @@ func (o *BTSMOtherJointTableRowMetadata2640) AsBTTableBaseRowMetadata3181() *BTT
 	return &BTTableBaseRowMetadata3181{o}
 }
 
+// BTDatumTableRowMetadata3060AsBTTableBaseRowMetadata3181 is a convenience function that returns BTDatumTableRowMetadata3060 wrapped in BTTableBaseRowMetadata3181
+func (o *BTDatumTableRowMetadata3060) AsBTTableBaseRowMetadata3181() *BTTableBaseRowMetadata3181 {
+	return &BTTableBaseRowMetadata3181{o}
+}
+
 // BTInspectionTableRowMetadata2485AsBTTableBaseRowMetadata3181 is a convenience function that returns BTInspectionTableRowMetadata2485 wrapped in BTTableBaseRowMetadata3181
 func (o *BTInspectionTableRowMetadata2485) AsBTTableBaseRowMetadata3181() *BTTableBaseRowMetadata3181 {
 	return &BTTableBaseRowMetadata3181{o}
@@ -207,6 +212,20 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
 			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTBillOfMaterialsTableRowMetadata1300: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTDatumTableRowMetadata-3060'
+	if jsonDict["btType"] == "BTDatumTableRowMetadata-3060" {
+		// try to unmarshal JSON data into BTDatumTableRowMetadata3060
+		var qr *BTDatumTableRowMetadata3060
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableBaseRowMetadata3181 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableBaseRowMetadata3181 = nil
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTDatumTableRowMetadata3060: %s", err.Error())
 		}
 	}
 

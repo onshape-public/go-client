@@ -55,6 +55,7 @@ type ApiCreateTranslationRequest struct {
 	yAxisIsUp                            *bool
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
+	upgradeFeatureScriptVersion          *bool
 }
 
 // The file to upload.
@@ -211,6 +212,11 @@ func (r ApiCreateTranslationRequest) UseIGESImportPostProcessing(useIGESImportPo
 	return r
 }
 
+func (r ApiCreateTranslationRequest) UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion bool) ApiCreateTranslationRequest {
+	r.upgradeFeatureScriptVersion = &upgradeFeatureScriptVersion
+	return r
+}
+
 func (r ApiCreateTranslationRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
 	return r.ApiService.CreateTranslationExecute(r)
 }
@@ -361,6 +367,9 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 	}
 	if r.useIGESImportPostProcessing != nil {
 		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
+	}
+	if r.upgradeFeatureScriptVersion != nil {
+		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

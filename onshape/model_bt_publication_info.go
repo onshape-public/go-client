@@ -25,6 +25,11 @@ func (o *BTClassroomInfo) AsBTPublicationInfo() *BTPublicationInfo {
 	return &BTPublicationInfo{o}
 }
 
+// BTExternalConnectionInfoAsBTPublicationInfo is a convenience function that returns BTExternalConnectionInfo wrapped in BTPublicationInfo
+func (o *BTExternalConnectionInfo) AsBTPublicationInfo() *BTPublicationInfo {
+	return &BTPublicationInfo{o}
+}
+
 // BTProjectInfoAsBTPublicationInfo is a convenience function that returns BTProjectInfo wrapped in BTPublicationInfo
 func (o *BTProjectInfo) AsBTPublicationInfo() *BTPublicationInfo {
 	return &BTPublicationInfo{o}
@@ -1268,6 +1273,20 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPublicationInfo = nil
 			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTDocumentSummaryInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'external-connection'
+	if jsonDict["jsonType"] == "external-connection" {
+		// try to unmarshal JSON data into BTExternalConnectionInfo
+		var qr *BTExternalConnectionInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPublicationInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPublicationInfo = nil
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTExternalConnectionInfo: %s", err.Error())
 		}
 	}
 
