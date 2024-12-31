@@ -101,7 +101,7 @@ type APIConfiguration struct {
 func NewAPIConfiguration() *APIConfiguration {
 	cfg := &APIConfiguration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "OpenAPI-Generator/1.191.48202-fd60a039fbc2/go",
+		UserAgent:     "OpenAPI-Generator/1.191.48369-5e6415ff3805/go",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
