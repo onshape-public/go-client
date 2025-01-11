@@ -3201,6 +3201,24 @@
 
 * `GBTErrorStringEnumSheetMetalInactiveModelSelected` (value: `"SHEET_METAL_INACTIVE_MODEL_SELECTED"`)
 
+* `GBTErrorStringEnumFormedNotSameLocation` (value: `"FORMED_NOT_SAME_LOCATION"`)
+
+* `GBTErrorStringEnumSimulationMassOverrideWillBeIgnored` (value: `"SIMULATION_MASS_OVERRIDE_WILL_BE_IGNORED"`)
+
+* `GBTErrorStringEnumSimulationMassOverrideAreIgnored` (value: `"SIMULATION_MASS_OVERRIDE_ARE_IGNORED"`)
+
+* `GBTErrorStringEnumFormedTagFormSelectSketchWithWirePoint` (value: `"FORMED_TAG_FORM_SELECT_SKETCH_WITH_WIRE_POINT"`)
+
+* `GBTErrorStringEnumFormedTagFormBodiesAlreadyTagged` (value: `"FORMED_TAG_FORM_BODIES_ALREADY_TAGGED"`)
+
+* `GBTErrorStringEnumFormedTagFormPositivePartNotSolid` (value: `"FORMED_TAG_FORM_POSITIVE_PART_NOT_SOLID"`)
+
+* `GBTErrorStringEnumFormedTagFormNegativePartNotSolid` (value: `"FORMED_TAG_FORM_NEGATIVE_PART_NOT_SOLID"`)
+
+* `GBTErrorStringEnumFormedTagFormPositivePartConsumed` (value: `"FORMED_TAG_FORM_POSITIVE_PART_CONSUMED"`)
+
+* `GBTErrorStringEnumFormedTagFormNegativePartConsumed` (value: `"FORMED_TAG_FORM_NEGATIVE_PART_CONSUMED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

@@ -44,7 +44,10 @@ type BTBExportModelParams struct {
 	IgnoreExportRulesForContents *bool    `json:"ignoreExportRulesForContents,omitempty"`
 	IncludeBendCenterlines       *bool    `json:"includeBendCenterlines,omitempty"`
 	IncludeBendLines             *bool    `json:"includeBendLines,omitempty"`
+	IncludeCboreCsink            *bool    `json:"includeCboreCsink,omitempty"`
 	IncludeExportIds             *bool    `json:"includeExportIds,omitempty"`
+	IncludeFormedCentermarks     *bool    `json:"includeFormedCentermarks,omitempty"`
+	IncludeFormedOutlines        *bool    `json:"includeFormedOutlines,omitempty"`
 	IncludeSketches              *bool    `json:"includeSketches,omitempty"`
 	IsPartingOut                 *bool    `json:"isPartingOut,omitempty"`
 	LinkDocumentId               *string  `json:"linkDocumentId,omitempty"`
@@ -879,6 +882,38 @@ func (o *BTBExportModelParams) SetIncludeBendLines(v bool) {
 	o.IncludeBendLines = &v
 }
 
+// GetIncludeCboreCsink returns the IncludeCboreCsink field value if set, zero value otherwise.
+func (o *BTBExportModelParams) GetIncludeCboreCsink() bool {
+	if o == nil || o.IncludeCboreCsink == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeCboreCsink
+}
+
+// GetIncludeCboreCsinkOk returns a tuple with the IncludeCboreCsink field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBExportModelParams) GetIncludeCboreCsinkOk() (*bool, bool) {
+	if o == nil || o.IncludeCboreCsink == nil {
+		return nil, false
+	}
+	return o.IncludeCboreCsink, true
+}
+
+// HasIncludeCboreCsink returns a boolean if a field has been set.
+func (o *BTBExportModelParams) HasIncludeCboreCsink() bool {
+	if o != nil && o.IncludeCboreCsink != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeCboreCsink gets a reference to the given bool and assigns it to the IncludeCboreCsink field.
+func (o *BTBExportModelParams) SetIncludeCboreCsink(v bool) {
+	o.IncludeCboreCsink = &v
+}
+
 // GetIncludeExportIds returns the IncludeExportIds field value if set, zero value otherwise.
 func (o *BTBExportModelParams) GetIncludeExportIds() bool {
 	if o == nil || o.IncludeExportIds == nil {
@@ -909,6 +944,70 @@ func (o *BTBExportModelParams) HasIncludeExportIds() bool {
 // SetIncludeExportIds gets a reference to the given bool and assigns it to the IncludeExportIds field.
 func (o *BTBExportModelParams) SetIncludeExportIds(v bool) {
 	o.IncludeExportIds = &v
+}
+
+// GetIncludeFormedCentermarks returns the IncludeFormedCentermarks field value if set, zero value otherwise.
+func (o *BTBExportModelParams) GetIncludeFormedCentermarks() bool {
+	if o == nil || o.IncludeFormedCentermarks == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeFormedCentermarks
+}
+
+// GetIncludeFormedCentermarksOk returns a tuple with the IncludeFormedCentermarks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBExportModelParams) GetIncludeFormedCentermarksOk() (*bool, bool) {
+	if o == nil || o.IncludeFormedCentermarks == nil {
+		return nil, false
+	}
+	return o.IncludeFormedCentermarks, true
+}
+
+// HasIncludeFormedCentermarks returns a boolean if a field has been set.
+func (o *BTBExportModelParams) HasIncludeFormedCentermarks() bool {
+	if o != nil && o.IncludeFormedCentermarks != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeFormedCentermarks gets a reference to the given bool and assigns it to the IncludeFormedCentermarks field.
+func (o *BTBExportModelParams) SetIncludeFormedCentermarks(v bool) {
+	o.IncludeFormedCentermarks = &v
+}
+
+// GetIncludeFormedOutlines returns the IncludeFormedOutlines field value if set, zero value otherwise.
+func (o *BTBExportModelParams) GetIncludeFormedOutlines() bool {
+	if o == nil || o.IncludeFormedOutlines == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeFormedOutlines
+}
+
+// GetIncludeFormedOutlinesOk returns a tuple with the IncludeFormedOutlines field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBExportModelParams) GetIncludeFormedOutlinesOk() (*bool, bool) {
+	if o == nil || o.IncludeFormedOutlines == nil {
+		return nil, false
+	}
+	return o.IncludeFormedOutlines, true
+}
+
+// HasIncludeFormedOutlines returns a boolean if a field has been set.
+func (o *BTBExportModelParams) HasIncludeFormedOutlines() bool {
+	if o != nil && o.IncludeFormedOutlines != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeFormedOutlines gets a reference to the given bool and assigns it to the IncludeFormedOutlines field.
+func (o *BTBExportModelParams) SetIncludeFormedOutlines(v bool) {
+	o.IncludeFormedOutlines = &v
 }
 
 // GetIncludeSketches returns the IncludeSketches field value if set, zero value otherwise.
@@ -1884,8 +1983,17 @@ func (o BTBExportModelParams) MarshalJSON() ([]byte, error) {
 	if o.IncludeBendLines != nil {
 		toSerialize["includeBendLines"] = o.IncludeBendLines
 	}
+	if o.IncludeCboreCsink != nil {
+		toSerialize["includeCboreCsink"] = o.IncludeCboreCsink
+	}
 	if o.IncludeExportIds != nil {
 		toSerialize["includeExportIds"] = o.IncludeExportIds
+	}
+	if o.IncludeFormedCentermarks != nil {
+		toSerialize["includeFormedCentermarks"] = o.IncludeFormedCentermarks
+	}
+	if o.IncludeFormedOutlines != nil {
+		toSerialize["includeFormedOutlines"] = o.IncludeFormedOutlines
 	}
 	if o.IncludeSketches != nil {
 		toSerialize["includeSketches"] = o.IncludeSketches

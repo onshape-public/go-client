@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **EmailTo** | Pointer to **[]string** |  | [optional] 
 **EvaluateExportRule** | Pointer to **bool** | Set to &#x60;true&#x60; to evaluate the export rule for the given &#x60;formatName&#x60; and to include an &#x60;exportRuleFileName&#x60; value in the response. | [optional] [default to false]
 **ExcludeHiddenEntities** | Pointer to **bool** |  | [optional] 
+**ExcludeOffSheetContent** | Pointer to **bool** |  | [optional] 
 **ExtractAssemblyHierarchy** | Pointer to **bool** |  | [optional] 
 **Flatten** | Pointer to **bool** |  | [optional] 
 **FlattenAssemblies** | Pointer to **bool** |  | [optional] 
@@ -632,6 +633,31 @@ SetExcludeHiddenEntities sets ExcludeHiddenEntities field to given value.
 `func (o *BTTranslateFormatParams) HasExcludeHiddenEntities() bool`
 
 HasExcludeHiddenEntities returns a boolean if a field has been set.
+
+### GetExcludeOffSheetContent
+
+`func (o *BTTranslateFormatParams) GetExcludeOffSheetContent() bool`
+
+GetExcludeOffSheetContent returns the ExcludeOffSheetContent field if non-nil, zero value otherwise.
+
+### GetExcludeOffSheetContentOk
+
+`func (o *BTTranslateFormatParams) GetExcludeOffSheetContentOk() (*bool, bool)`
+
+GetExcludeOffSheetContentOk returns a tuple with the ExcludeOffSheetContent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeOffSheetContent
+
+`func (o *BTTranslateFormatParams) SetExcludeOffSheetContent(v bool)`
+
+SetExcludeOffSheetContent sets ExcludeOffSheetContent field to given value.
+
+### HasExcludeOffSheetContent
+
+`func (o *BTTranslateFormatParams) HasExcludeOffSheetContent() bool`
+
+HasExcludeOffSheetContent returns a boolean if a field has been set.
 
 ### GetExtractAssemblyHierarchy
 

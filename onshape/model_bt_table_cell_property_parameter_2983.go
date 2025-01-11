@@ -21,6 +21,7 @@ type BTTableCellPropertyParameter2983 struct {
 	IsEverVisible                       *bool                          `json:"isEverVisible,omitempty"`
 	IsReadOnly                          *bool                          `json:"isReadOnly,omitempty"`
 	Error                               *string                        `json:"error,omitempty"`
+	Info                                *string                        `json:"info,omitempty"`
 	OverrideSpec                        *BTParameterSpec6              `json:"overrideSpec,omitempty"`
 	Parameter                           *BTMParameter1                 `json:"parameter,omitempty"`
 	AggregationSkippedFilteredOutValues *bool                          `json:"aggregationSkippedFilteredOutValues,omitempty"`
@@ -172,6 +173,38 @@ func (o *BTTableCellPropertyParameter2983) HasError() bool {
 // SetError gets a reference to the given string and assigns it to the Error field.
 func (o *BTTableCellPropertyParameter2983) SetError(v string) {
 	o.Error = &v
+}
+
+// GetInfo returns the Info field value if set, zero value otherwise.
+func (o *BTTableCellPropertyParameter2983) GetInfo() string {
+	if o == nil || o.Info == nil {
+		var ret string
+		return ret
+	}
+	return *o.Info
+}
+
+// GetInfoOk returns a tuple with the Info field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellPropertyParameter2983) GetInfoOk() (*string, bool) {
+	if o == nil || o.Info == nil {
+		return nil, false
+	}
+	return o.Info, true
+}
+
+// HasInfo returns a boolean if a field has been set.
+func (o *BTTableCellPropertyParameter2983) HasInfo() bool {
+	if o != nil && o.Info != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInfo gets a reference to the given string and assigns it to the Info field.
+func (o *BTTableCellPropertyParameter2983) SetInfo(v string) {
+	o.Info = &v
 }
 
 // GetOverrideSpec returns the OverrideSpec field value if set, zero value otherwise.
@@ -387,6 +420,9 @@ func (o BTTableCellPropertyParameter2983) MarshalJSON() ([]byte, error) {
 	}
 	if o.Error != nil {
 		toSerialize["error"] = o.Error
+	}
+	if o.Info != nil {
+		toSerialize["info"] = o.Info
 	}
 	if o.OverrideSpec != nil {
 		toSerialize["overrideSpec"] = o.OverrideSpec

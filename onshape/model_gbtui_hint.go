@@ -52,6 +52,8 @@ const (
 	GBTUIHintShowInlineConfigInputs           GBTUIHint = "SHOW_INLINE_CONFIG_INPUTS"
 	GBTUIHintFocusOnVisible                   GBTUIHint = "FOCUS_ON_VISIBLE"
 	GBTUIHintCanBeTolerant                    GBTUIHint = "CAN_BE_TOLERANT"
+	GBTUIHintCanBeTolerantDiameter            GBTUIHint = "CAN_BE_TOLERANT_DIAMETER"
+	GBTUIHintPlusMinus                        GBTUIHint = "PLUS_MINUS"
 	GBTUIHintUnknown                          GBTUIHint = "UNKNOWN"
 )
 
@@ -89,6 +91,8 @@ var AllowedGBTUIHintEnumValues = []GBTUIHint{
 	"SHOW_INLINE_CONFIG_INPUTS",
 	"FOCUS_ON_VISIBLE",
 	"CAN_BE_TOLERANT",
+	"CAN_BE_TOLERANT_DIAMETER",
+	"PLUS_MINUS",
 	"UNKNOWN",
 }
 

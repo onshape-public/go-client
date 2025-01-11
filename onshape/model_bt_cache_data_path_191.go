@@ -25,6 +25,7 @@ type BTCacheDataPath191 struct {
 	IsImmutableContextPath           *bool   `json:"isImmutableContextPath,omitempty"`
 	Key                              *string `json:"key,omitempty"`
 	KeyContainsConfiguration         *bool   `json:"keyContainsConfiguration,omitempty"`
+	Region                           *string `json:"region,omitempty"`
 	UseLocalFileCache                *bool   `json:"useLocalFileCache,omitempty"`
 }
 
@@ -301,6 +302,38 @@ func (o *BTCacheDataPath191) SetKeyContainsConfiguration(v bool) {
 	o.KeyContainsConfiguration = &v
 }
 
+// GetRegion returns the Region field value if set, zero value otherwise.
+func (o *BTCacheDataPath191) GetRegion() string {
+	if o == nil || o.Region == nil {
+		var ret string
+		return ret
+	}
+	return *o.Region
+}
+
+// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCacheDataPath191) GetRegionOk() (*string, bool) {
+	if o == nil || o.Region == nil {
+		return nil, false
+	}
+	return o.Region, true
+}
+
+// HasRegion returns a boolean if a field has been set.
+func (o *BTCacheDataPath191) HasRegion() bool {
+	if o != nil && o.Region != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRegion gets a reference to the given string and assigns it to the Region field.
+func (o *BTCacheDataPath191) SetRegion(v string) {
+	o.Region = &v
+}
+
 // GetUseLocalFileCache returns the UseLocalFileCache field value if set, zero value otherwise.
 func (o *BTCacheDataPath191) GetUseLocalFileCache() bool {
 	if o == nil || o.UseLocalFileCache == nil {
@@ -358,6 +391,9 @@ func (o BTCacheDataPath191) MarshalJSON() ([]byte, error) {
 	}
 	if o.KeyContainsConfiguration != nil {
 		toSerialize["keyContainsConfiguration"] = o.KeyContainsConfiguration
+	}
+	if o.Region != nil {
+		toSerialize["region"] = o.Region
 	}
 	if o.UseLocalFileCache != nil {
 		toSerialize["useLocalFileCache"] = o.UseLocalFileCache

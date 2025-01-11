@@ -142,6 +142,56 @@ func (o *BTTableRow1054) SetColumnIdToCell(v map[string]BTTableCell1114) {
 	o.GetActualInstance().(getResult).SetColumnIdToCell(v)
 }
 
+// GetExpandableState returns the ExpandableState field value if set, zero value otherwise.
+func (o *BTTableRow1054) GetExpandableState() ExpandableState {
+	type getResult interface {
+		GetExpandableState() ExpandableState
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetExpandableState()
+	} else {
+		var de ExpandableState
+		return de
+	}
+}
+
+// GetExpandableStateOk returns a tuple with the ExpandableState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableRow1054) GetExpandableStateOk() (*ExpandableState, bool) {
+	type getResult interface {
+		GetExpandableStateOk() (*ExpandableState, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetExpandableStateOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasExpandableState returns a boolean if a field has been set.
+func (o *BTTableRow1054) HasExpandableState() bool {
+	type getResult interface {
+		HasExpandableState() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasExpandableState()
+	} else {
+		return false
+	}
+}
+
+// SetExpandableState gets a reference to the given ExpandableState and assigns it to the ExpandableState field.
+func (o *BTTableRow1054) SetExpandableState(v ExpandableState) {
+	type getResult interface {
+		SetExpandableState(v ExpandableState)
+	}
+
+	o.GetActualInstance().(getResult).SetExpandableState(v)
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *BTTableRow1054) GetId() string {
 	type getResult interface {
@@ -433,12 +483,13 @@ func (v *NullableBTTableRow1054) UnmarshalJSON(src []byte) error {
 
 type base_BTTableRow1054 struct {
 	// Type of JSON object.
-	BtType         *string                     `json:"btType,omitempty"`
-	ColumnIdToCell *map[string]BTTableCell1114 `json:"columnIdToCell,omitempty"`
-	Id             *string                     `json:"id,omitempty"`
-	MetaData       *BTTreeNode20               `json:"metaData,omitempty"`
-	NodeId         *string                     `json:"nodeId,omitempty"`
-	RowMetadata    *BTTableBaseRowMetadata3181 `json:"rowMetadata,omitempty"`
+	BtType          *string                     `json:"btType,omitempty"`
+	ColumnIdToCell  *map[string]BTTableCell1114 `json:"columnIdToCell,omitempty"`
+	ExpandableState *ExpandableState            `json:"expandableState,omitempty"`
+	Id              *string                     `json:"id,omitempty"`
+	MetaData        *BTTreeNode20               `json:"metaData,omitempty"`
+	NodeId          *string                     `json:"nodeId,omitempty"`
+	RowMetadata     *BTTableBaseRowMetadata3181 `json:"rowMetadata,omitempty"`
 }
 
 // Newbase_BTTableRow1054 instantiates a new base_BTTableRow1054 object
@@ -520,6 +571,38 @@ func (o *base_BTTableRow1054) HasColumnIdToCell() bool {
 // SetColumnIdToCell gets a reference to the given map[string]BTTableCell1114 and assigns it to the ColumnIdToCell field.
 func (o *base_BTTableRow1054) SetColumnIdToCell(v map[string]BTTableCell1114) {
 	o.ColumnIdToCell = &v
+}
+
+// GetExpandableState returns the ExpandableState field value if set, zero value otherwise.
+func (o *base_BTTableRow1054) GetExpandableState() ExpandableState {
+	if o == nil || o.ExpandableState == nil {
+		var ret ExpandableState
+		return ret
+	}
+	return *o.ExpandableState
+}
+
+// GetExpandableStateOk returns a tuple with the ExpandableState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTableRow1054) GetExpandableStateOk() (*ExpandableState, bool) {
+	if o == nil || o.ExpandableState == nil {
+		return nil, false
+	}
+	return o.ExpandableState, true
+}
+
+// HasExpandableState returns a boolean if a field has been set.
+func (o *base_BTTableRow1054) HasExpandableState() bool {
+	if o != nil && o.ExpandableState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExpandableState gets a reference to the given ExpandableState and assigns it to the ExpandableState field.
+func (o *base_BTTableRow1054) SetExpandableState(v ExpandableState) {
+	o.ExpandableState = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -657,6 +740,9 @@ func (o base_BTTableRow1054) MarshalJSON() ([]byte, error) {
 	}
 	if o.ColumnIdToCell != nil {
 		toSerialize["columnIdToCell"] = o.ColumnIdToCell
+	}
+	if o.ExpandableState != nil {
+		toSerialize["expandableState"] = o.ExpandableState
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

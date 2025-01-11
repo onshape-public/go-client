@@ -28,6 +28,7 @@ type BTReleasePackageItemParams struct {
 	PartIdentity       *string                `json:"partIdentity,omitempty"`
 	PartNumber         *string                `json:"partNumber,omitempty"`
 	Properties         []BTPropertyValueParam `json:"properties,omitempty"`
+	RevisionId         *string                `json:"revisionId,omitempty"`
 	VersionId          *string                `json:"versionId,omitempty"`
 	WorkspaceId        *string                `json:"workspaceId,omitempty"`
 }
@@ -433,6 +434,38 @@ func (o *BTReleasePackageItemParams) SetProperties(v []BTPropertyValueParam) {
 	o.Properties = v
 }
 
+// GetRevisionId returns the RevisionId field value if set, zero value otherwise.
+func (o *BTReleasePackageItemParams) GetRevisionId() string {
+	if o == nil || o.RevisionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.RevisionId
+}
+
+// GetRevisionIdOk returns a tuple with the RevisionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemParams) GetRevisionIdOk() (*string, bool) {
+	if o == nil || o.RevisionId == nil {
+		return nil, false
+	}
+	return o.RevisionId, true
+}
+
+// HasRevisionId returns a boolean if a field has been set.
+func (o *BTReleasePackageItemParams) HasRevisionId() bool {
+	if o != nil && o.RevisionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRevisionId gets a reference to the given string and assigns it to the RevisionId field.
+func (o *BTReleasePackageItemParams) SetRevisionId(v string) {
+	o.RevisionId = &v
+}
+
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
 func (o *BTReleasePackageItemParams) GetVersionId() string {
 	if o == nil || o.VersionId == nil {
@@ -534,6 +567,9 @@ func (o BTReleasePackageItemParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Properties != nil {
 		toSerialize["properties"] = o.Properties
+	}
+	if o.RevisionId != nil {
+		toSerialize["revisionId"] = o.RevisionId
 	}
 	if o.VersionId != nil {
 		toSerialize["versionId"] = o.VersionId

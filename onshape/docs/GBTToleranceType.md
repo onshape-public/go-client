@@ -21,6 +21,10 @@
 
 * `GBTToleranceTypeFitToleranceOnly` (value: `"FIT_TOLERANCE_ONLY"`)
 
+* `GBTToleranceTypeDefault` (value: `"DEFAULT"`)
+
+* `GBTToleranceTypeBasic` (value: `"BASIC"`)
+
 * `GBTToleranceTypeUnknown` (value: `"UNKNOWN"`)
 
 

@@ -20,6 +20,7 @@ type BTRadialDimensionDisplayData348 struct {
 	BtType                *string                `json:"btType,omitempty"`
 	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
 	FeatureId             *string                `json:"featureId,omitempty"`
+	FitClass              *string                `json:"fitClass,omitempty"`
 	HasMaximumLimit_      *bool                  `json:"hasMaximumLimit,omitempty"`
 	HasMinimumLimit_      *bool                  `json:"hasMinimumLimit,omitempty"`
 	Id                    *string                `json:"id,omitempty"`
@@ -31,6 +32,7 @@ type BTRadialDimensionDisplayData348 struct {
 	MaximumLimit          *float64               `json:"maximumLimit,omitempty"`
 	MinimumLimit          *float64               `json:"minimumLimit,omitempty"`
 	ParameterId           *string                `json:"parameterId,omitempty"`
+	PartId                *string                `json:"partId,omitempty"`
 	PlaneMatrix           *BTBSMatrix386         `json:"planeMatrix,omitempty"`
 	Precision             *GBTTolerancePrecision `json:"precision,omitempty"`
 	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
@@ -157,6 +159,38 @@ func (o *BTRadialDimensionDisplayData348) HasFeatureId() bool {
 // SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
 func (o *BTRadialDimensionDisplayData348) SetFeatureId(v string) {
 	o.FeatureId = &v
+}
+
+// GetFitClass returns the FitClass field value if set, zero value otherwise.
+func (o *BTRadialDimensionDisplayData348) GetFitClass() string {
+	if o == nil || o.FitClass == nil {
+		var ret string
+		return ret
+	}
+	return *o.FitClass
+}
+
+// GetFitClassOk returns a tuple with the FitClass field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDimensionDisplayData348) GetFitClassOk() (*string, bool) {
+	if o == nil || o.FitClass == nil {
+		return nil, false
+	}
+	return o.FitClass, true
+}
+
+// HasFitClass returns a boolean if a field has been set.
+func (o *BTRadialDimensionDisplayData348) HasFitClass() bool {
+	if o != nil && o.FitClass != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFitClass gets a reference to the given string and assigns it to the FitClass field.
+func (o *BTRadialDimensionDisplayData348) SetFitClass(v string) {
+	o.FitClass = &v
 }
 
 // GetHasMaximumLimit_ returns the HasMaximumLimit_ field value if set, zero value otherwise.
@@ -509,6 +543,38 @@ func (o *BTRadialDimensionDisplayData348) HasParameterId() bool {
 // SetParameterId gets a reference to the given string and assigns it to the ParameterId field.
 func (o *BTRadialDimensionDisplayData348) SetParameterId(v string) {
 	o.ParameterId = &v
+}
+
+// GetPartId returns the PartId field value if set, zero value otherwise.
+func (o *BTRadialDimensionDisplayData348) GetPartId() string {
+	if o == nil || o.PartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.PartId
+}
+
+// GetPartIdOk returns a tuple with the PartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDimensionDisplayData348) GetPartIdOk() (*string, bool) {
+	if o == nil || o.PartId == nil {
+		return nil, false
+	}
+	return o.PartId, true
+}
+
+// HasPartId returns a boolean if a field has been set.
+func (o *BTRadialDimensionDisplayData348) HasPartId() bool {
+	if o != nil && o.PartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartId gets a reference to the given string and assigns it to the PartId field.
+func (o *BTRadialDimensionDisplayData348) SetPartId(v string) {
+	o.PartId = &v
 }
 
 // GetPlaneMatrix returns the PlaneMatrix field value if set, zero value otherwise.
@@ -946,6 +1012,9 @@ func (o BTRadialDimensionDisplayData348) MarshalJSON() ([]byte, error) {
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
 	}
+	if o.FitClass != nil {
+		toSerialize["fitClass"] = o.FitClass
+	}
 	if o.HasMaximumLimit_ != nil {
 		toSerialize["hasMaximumLimit"] = o.HasMaximumLimit_
 	}
@@ -978,6 +1047,9 @@ func (o BTRadialDimensionDisplayData348) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.PartId != nil {
+		toSerialize["partId"] = o.PartId
 	}
 	if o.PlaneMatrix != nil {
 		toSerialize["planeMatrix"] = o.PlaneMatrix

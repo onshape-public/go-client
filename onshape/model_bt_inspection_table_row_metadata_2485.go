@@ -24,6 +24,7 @@ type BTInspectionTableRowMetadata2485 struct {
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
 	FeatureId               *string                        `json:"featureId,omitempty"`
 	ParameterId             *string                        `json:"parameterId,omitempty"`
+	PartId                  *string                        `json:"partId,omitempty"`
 	Precision               *GBTTolerancePrecision         `json:"precision,omitempty"`
 }
 
@@ -268,6 +269,38 @@ func (o *BTInspectionTableRowMetadata2485) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetPartId returns the PartId field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetPartId() string {
+	if o == nil || o.PartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.PartId
+}
+
+// GetPartIdOk returns a tuple with the PartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetPartIdOk() (*string, bool) {
+	if o == nil || o.PartId == nil {
+		return nil, false
+	}
+	return o.PartId, true
+}
+
+// HasPartId returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasPartId() bool {
+	if o != nil && o.PartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartId gets a reference to the given string and assigns it to the PartId field.
+func (o *BTInspectionTableRowMetadata2485) SetPartId(v string) {
+	o.PartId = &v
+}
+
 // GetPrecision returns the Precision field value if set, zero value otherwise.
 func (o *BTInspectionTableRowMetadata2485) GetPrecision() GBTTolerancePrecision {
 	if o == nil || o.Precision == nil {
@@ -330,6 +363,9 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.PartId != nil {
+		toSerialize["partId"] = o.PartId
 	}
 	if o.Precision != nil {
 		toSerialize["precision"] = o.Precision

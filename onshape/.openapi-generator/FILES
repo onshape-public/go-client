@@ -593,7 +593,6 @@ docs/BTMFeatureQueryWithOccurrence157AllOf.md
 docs/BTMFolder3208.md
 docs/BTMFolder3208AllOf.md
 docs/BTMGenerativeDesignFeature3195.md
-docs/BTMGenerativeDesignFeature3195AllOf.md
 docs/BTMGeometryMate1260.md
 docs/BTMImport136.md
 docs/BTMImport136AllOf.md
@@ -1320,6 +1319,7 @@ docs/Encoding.md
 docs/Entry.md
 docs/EventApi.md
 docs/Example.md
+docs/ExpandableState.md
 docs/ExportRuleApi.md
 docs/ExternalDocumentation.md
 docs/FeatureStudioApi.md
@@ -2425,6 +2425,7 @@ model_element_type.go
 model_encoding.go
 model_entry.go
 model_example.go
+model_expandable_state.go
 model_external_documentation.go
 model_gbt_annotation_type.go
 model_gbt_app_element_associative_data_type.go

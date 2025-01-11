@@ -29,6 +29,8 @@ const (
 	GBTToleranceTypeFit              GBTToleranceType = "FIT"
 	GBTToleranceTypeFitWithTolerance GBTToleranceType = "FIT_WITH_TOLERANCE"
 	GBTToleranceTypeFitToleranceOnly GBTToleranceType = "FIT_TOLERANCE_ONLY"
+	GBTToleranceTypeDefault          GBTToleranceType = "DEFAULT"
+	GBTToleranceTypeBasic            GBTToleranceType = "BASIC"
 	GBTToleranceTypeUnknown          GBTToleranceType = "UNKNOWN"
 )
 
@@ -43,6 +45,8 @@ var AllowedGBTToleranceTypeEnumValues = []GBTToleranceType{
 	"FIT",
 	"FIT_WITH_TOLERANCE",
 	"FIT_TOLERANCE_ONLY",
+	"DEFAULT",
+	"BASIC",
 	"UNKNOWN",
 }
 

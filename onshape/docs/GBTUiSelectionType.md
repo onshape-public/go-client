@@ -43,6 +43,8 @@
 
 * `GBTUiSelectionTypeGenerativeDesignItem` (value: `"GENERATIVE_DESIGN_ITEM"`)
 
+* `GBTUiSelectionTypeAnnotation` (value: `"ANNOTATION"`)
+
 * `GBTUiSelectionTypeUnknown` (value: `"UNKNOWN"`)
 
 

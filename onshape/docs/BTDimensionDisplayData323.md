@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CoordinateSystem** | Pointer to [**BTMatrix3x3340**](BTMatrix3x3340.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
+**FitClass** | Pointer to **string** |  | [optional] 
 **HasMaximumLimit** | Pointer to **bool** |  | [optional] 
 **HasMinimumLimit** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **MaximumLimit** | Pointer to **float64** |  | [optional] 
 **MinimumLimit** | Pointer to **float64** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
+**PartId** | Pointer to **string** |  | [optional] 
 **PlaneMatrix** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
 **Precision** | Pointer to [**GBTTolerancePrecision**](GBTTolerancePrecision.md) |  | [optional] 
 **ToleranceType** | Pointer to [**GBTToleranceType**](GBTToleranceType.md) |  | [optional] 
@@ -117,6 +119,31 @@ SetFeatureId sets FeatureId field to given value.
 `func (o *BTDimensionDisplayData323) HasFeatureId() bool`
 
 HasFeatureId returns a boolean if a field has been set.
+
+### GetFitClass
+
+`func (o *BTDimensionDisplayData323) GetFitClass() string`
+
+GetFitClass returns the FitClass field if non-nil, zero value otherwise.
+
+### GetFitClassOk
+
+`func (o *BTDimensionDisplayData323) GetFitClassOk() (*string, bool)`
+
+GetFitClassOk returns a tuple with the FitClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFitClass
+
+`func (o *BTDimensionDisplayData323) SetFitClass(v string)`
+
+SetFitClass sets FitClass field to given value.
+
+### HasFitClass
+
+`func (o *BTDimensionDisplayData323) HasFitClass() bool`
+
+HasFitClass returns a boolean if a field has been set.
 
 ### GetHasMaximumLimit
 
@@ -392,6 +419,31 @@ SetParameterId sets ParameterId field to given value.
 `func (o *BTDimensionDisplayData323) HasParameterId() bool`
 
 HasParameterId returns a boolean if a field has been set.
+
+### GetPartId
+
+`func (o *BTDimensionDisplayData323) GetPartId() string`
+
+GetPartId returns the PartId field if non-nil, zero value otherwise.
+
+### GetPartIdOk
+
+`func (o *BTDimensionDisplayData323) GetPartIdOk() (*string, bool)`
+
+GetPartIdOk returns a tuple with the PartId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartId
+
+`func (o *BTDimensionDisplayData323) SetPartId(v string)`
+
+SetPartId sets PartId field to given value.
+
+### HasPartId
+
+`func (o *BTDimensionDisplayData323) HasPartId() bool`
+
+HasPartId returns a boolean if a field has been set.
 
 ### GetPlaneMatrix
 

@@ -135,6 +135,11 @@ func (o *BTMParameterConfigured2222) AsBTMParameter1() *BTMParameter1 {
 	return &BTMParameter1{o}
 }
 
+// BTMParameterReferenceJSON790AsBTMParameter1 is a convenience function that returns BTMParameterReferenceJSON790 wrapped in BTMParameter1
+func (o *BTMParameterReferenceJSON790) AsBTMParameter1() *BTMParameter1 {
+	return &BTMParameter1{o}
+}
+
 // BTMParameterLookupTablePath1419AsBTMParameter1 is a convenience function that returns BTMParameterLookupTablePath1419 wrapped in BTMParameter1
 func (o *BTMParameterLookupTablePath1419) AsBTMParameter1() *BTMParameter1 {
 	return &BTMParameter1{o}
@@ -758,6 +763,20 @@ func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameter1 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterReferenceImage2014: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterReferenceJSON-790'
+	if jsonDict["btType"] == "BTMParameterReferenceJSON-790" {
+		// try to unmarshal JSON data into BTMParameterReferenceJSON790
+		var qr *BTMParameterReferenceJSON790
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameter1 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameter1 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterReferenceJSON790: %s", err.Error())
 		}
 	}
 

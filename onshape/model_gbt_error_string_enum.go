@@ -1619,6 +1619,15 @@ const (
 	GBTErrorStringEnumSheetMetalActiveModelNeeded                                 GBTErrorStringEnum = "SHEET_METAL_ACTIVE_MODEL_NEEDED"
 	GBTErrorStringEnumSheetMetalSelectParts                                       GBTErrorStringEnum = "SHEET_METAL_SELECT_PARTS"
 	GBTErrorStringEnumSheetMetalInactiveModelSelected                             GBTErrorStringEnum = "SHEET_METAL_INACTIVE_MODEL_SELECTED"
+	GBTErrorStringEnumFormedNotSameLocation                                       GBTErrorStringEnum = "FORMED_NOT_SAME_LOCATION"
+	GBTErrorStringEnumSimulationMassOverrideWillBeIgnored                         GBTErrorStringEnum = "SIMULATION_MASS_OVERRIDE_WILL_BE_IGNORED"
+	GBTErrorStringEnumSimulationMassOverrideAreIgnored                            GBTErrorStringEnum = "SIMULATION_MASS_OVERRIDE_ARE_IGNORED"
+	GBTErrorStringEnumFormedTagFormSelectSketchWithWirePoint                      GBTErrorStringEnum = "FORMED_TAG_FORM_SELECT_SKETCH_WITH_WIRE_POINT"
+	GBTErrorStringEnumFormedTagFormBodiesAlreadyTagged                            GBTErrorStringEnum = "FORMED_TAG_FORM_BODIES_ALREADY_TAGGED"
+	GBTErrorStringEnumFormedTagFormPositivePartNotSolid                           GBTErrorStringEnum = "FORMED_TAG_FORM_POSITIVE_PART_NOT_SOLID"
+	GBTErrorStringEnumFormedTagFormNegativePartNotSolid                           GBTErrorStringEnum = "FORMED_TAG_FORM_NEGATIVE_PART_NOT_SOLID"
+	GBTErrorStringEnumFormedTagFormPositivePartConsumed                           GBTErrorStringEnum = "FORMED_TAG_FORM_POSITIVE_PART_CONSUMED"
+	GBTErrorStringEnumFormedTagFormNegativePartConsumed                           GBTErrorStringEnum = "FORMED_TAG_FORM_NEGATIVE_PART_CONSUMED"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3223,6 +3232,15 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SHEET_METAL_ACTIVE_MODEL_NEEDED",
 	"SHEET_METAL_SELECT_PARTS",
 	"SHEET_METAL_INACTIVE_MODEL_SELECTED",
+	"FORMED_NOT_SAME_LOCATION",
+	"SIMULATION_MASS_OVERRIDE_WILL_BE_IGNORED",
+	"SIMULATION_MASS_OVERRIDE_ARE_IGNORED",
+	"FORMED_TAG_FORM_SELECT_SKETCH_WITH_WIRE_POINT",
+	"FORMED_TAG_FORM_BODIES_ALREADY_TAGGED",
+	"FORMED_TAG_FORM_POSITIVE_PART_NOT_SOLID",
+	"FORMED_TAG_FORM_NEGATIVE_PART_NOT_SOLID",
+	"FORMED_TAG_FORM_POSITIVE_PART_CONSUMED",
+	"FORMED_TAG_FORM_NEGATIVE_PART_CONSUMED",
 	"UNKNOWN",
 }
 

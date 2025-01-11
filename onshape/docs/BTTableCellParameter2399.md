@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Error** | Pointer to **string** |  | [optional] 
+**Info** | Pointer to **string** |  | [optional] 
 **OverrideSpec** | Pointer to [**BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 **Parameter** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
@@ -77,6 +78,31 @@ SetError sets Error field to given value.
 `func (o *BTTableCellParameter2399) HasError() bool`
 
 HasError returns a boolean if a field has been set.
+
+### GetInfo
+
+`func (o *BTTableCellParameter2399) GetInfo() string`
+
+GetInfo returns the Info field if non-nil, zero value otherwise.
+
+### GetInfoOk
+
+`func (o *BTTableCellParameter2399) GetInfoOk() (*string, bool)`
+
+GetInfoOk returns a tuple with the Info field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInfo
+
+`func (o *BTTableCellParameter2399) SetInfo(v string)`
+
+SetInfo sets Info field to given value.
+
+### HasInfo
+
+`func (o *BTTableCellParameter2399) HasInfo() bool`
+
+HasInfo returns a boolean if a field has been set.
 
 ### GetOverrideSpec
 
