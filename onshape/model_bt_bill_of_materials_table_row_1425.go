@@ -19,6 +19,7 @@ type BTBillOfMaterialsTableRow1425 struct {
 	BTTableRow1054
 	BtType                 *string                              `json:"btType,omitempty"`
 	ColumnIdToCell         *map[string]BTTableCell1114          `json:"columnIdToCell,omitempty"`
+	ExpandableState        *ExpandableState                     `json:"expandableState,omitempty"`
 	Id                     *string                              `json:"id,omitempty"`
 	MetaData               *BTTreeNode20                        `json:"metaData,omitempty"`
 	NodeId                 *string                              `json:"nodeId,omitempty"`
@@ -116,6 +117,38 @@ func (o *BTBillOfMaterialsTableRow1425) HasColumnIdToCell() bool {
 // SetColumnIdToCell gets a reference to the given map[string]BTTableCell1114 and assigns it to the ColumnIdToCell field.
 func (o *BTBillOfMaterialsTableRow1425) SetColumnIdToCell(v map[string]BTTableCell1114) {
 	o.ColumnIdToCell = &v
+}
+
+// GetExpandableState returns the ExpandableState field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetExpandableState() ExpandableState {
+	if o == nil || o.ExpandableState == nil {
+		var ret ExpandableState
+		return ret
+	}
+	return *o.ExpandableState
+}
+
+// GetExpandableStateOk returns a tuple with the ExpandableState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetExpandableStateOk() (*ExpandableState, bool) {
+	if o == nil || o.ExpandableState == nil {
+		return nil, false
+	}
+	return o.ExpandableState, true
+}
+
+// HasExpandableState returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasExpandableState() bool {
+	if o != nil && o.ExpandableState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExpandableState gets a reference to the given ExpandableState and assigns it to the ExpandableState field.
+func (o *BTBillOfMaterialsTableRow1425) SetExpandableState(v ExpandableState) {
+	o.ExpandableState = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -645,6 +678,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.ColumnIdToCell != nil {
 		toSerialize["columnIdToCell"] = o.ColumnIdToCell
+	}
+	if o.ExpandableState != nil {
+		toSerialize["expandableState"] = o.ExpandableState
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

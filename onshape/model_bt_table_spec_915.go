@@ -17,40 +17,42 @@ import (
 // BTTableSpec915 struct for BTTableSpec915
 type BTTableSpec915 struct {
 	BTFeatureSpec129
-	AdditionalLocalizedStrings *int32                       `json:"additionalLocalizedStrings,omitempty"`
-	AllParameters              []BTParameterSpec6           `json:"allParameters,omitempty"`
-	BtType                     *string                      `json:"btType,omitempty"`
-	ComputedPartPropertySpec   *bool                        `json:"computedPartPropertySpec,omitempty"`
-	DescriptionImageUri        *string                      `json:"descriptionImageUri,omitempty"`
-	EditingLogic               *BTEditingLogic2350          `json:"editingLogic,omitempty"`
-	FeatureNameTemplate        *string                      `json:"featureNameTemplate,omitempty"`
-	FeatureType                *string                      `json:"featureType,omitempty"`
-	FeatureTypeDescription     *string                      `json:"featureTypeDescription,omitempty"`
-	FeatureTypeName            *string                      `json:"featureTypeName,omitempty"`
-	FilterSelectors            []string                     `json:"filterSelectors,omitempty"`
-	FullFeatureType            *string                      `json:"fullFeatureType,omitempty"`
-	Groups                     []BTParameterGroupSpec3469   `json:"groups,omitempty"`
-	IconUri                    *string                      `json:"iconUri,omitempty"`
-	LanguageVersion            *int32                       `json:"languageVersion,omitempty"`
-	LinkedLocationName         *string                      `json:"linkedLocationName,omitempty"`
-	LocalizableName            *string                      `json:"localizableName,omitempty"`
-	LocalizedName              *string                      `json:"localizedName,omitempty"`
-	LocationInfos              []BTLocationInfo226          `json:"locationInfos,omitempty"`
-	ManipulatorChangeFunction  *string                      `json:"manipulatorChangeFunction,omitempty"`
-	Namespace                  *string                      `json:"namespace,omitempty"`
-	NamespaceIncludingEnums    *string                      `json:"namespaceIncludingEnums,omitempty"`
-	NamespaceTheSource         *bool                        `json:"namespaceTheSource,omitempty"`
-	ParameterIdToSpec          *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
-	Parameters                 []BTParameterSpec6           `json:"parameters,omitempty"`
-	Signature                  *string                      `json:"signature,omitempty"`
-	SourceLocation             *BTLocationInfo226           `json:"sourceLocation,omitempty"`
-	SourceMicroversionId       *string                      `json:"sourceMicroversionId,omitempty"`
-	StringsToLocalize          []string                     `json:"stringsToLocalize,omitempty"`
-	TableSpec                  *bool                        `json:"tableSpec,omitempty"`
-	ToleranceSpec              *bool                        `json:"toleranceSpec,omitempty"`
-	TooltipTemplate            *string                      `json:"tooltipTemplate,omitempty"`
-	UiHints                    []GBTUIHint                  `json:"uiHints,omitempty"`
-	IsComputedPropertyTable    *bool                        `json:"isComputedPropertyTable,omitempty"`
+	AdditionalLocalizedStrings  *int32                       `json:"additionalLocalizedStrings,omitempty"`
+	AllParameters               []BTParameterSpec6           `json:"allParameters,omitempty"`
+	BtType                      *string                      `json:"btType,omitempty"`
+	ComputedPartPropertySpec    *bool                        `json:"computedPartPropertySpec,omitempty"`
+	DescriptionImageUri         *string                      `json:"descriptionImageUri,omitempty"`
+	EditingLogic                *BTEditingLogic2350          `json:"editingLogic,omitempty"`
+	FeatureNameTemplate         *string                      `json:"featureNameTemplate,omitempty"`
+	FeatureType                 *string                      `json:"featureType,omitempty"`
+	FeatureTypeDescription      *string                      `json:"featureTypeDescription,omitempty"`
+	FeatureTypeName             *string                      `json:"featureTypeName,omitempty"`
+	FilterSelectors             []string                     `json:"filterSelectors,omitempty"`
+	FullFeatureType             *string                      `json:"fullFeatureType,omitempty"`
+	Groups                      []BTParameterGroupSpec3469   `json:"groups,omitempty"`
+	IconUri                     *string                      `json:"iconUri,omitempty"`
+	LanguageVersion             *int32                       `json:"languageVersion,omitempty"`
+	LinkedLocationName          *string                      `json:"linkedLocationName,omitempty"`
+	LocalizableName             *string                      `json:"localizableName,omitempty"`
+	LocalizedName               *string                      `json:"localizedName,omitempty"`
+	LocationInfos               []BTLocationInfo226          `json:"locationInfos,omitempty"`
+	ManipulatorChangeFunction   *string                      `json:"manipulatorChangeFunction,omitempty"`
+	Namespace                   *string                      `json:"namespace,omitempty"`
+	NamespaceIncludingEnums     *string                      `json:"namespaceIncludingEnums,omitempty"`
+	NamespaceTheSource          *bool                        `json:"namespaceTheSource,omitempty"`
+	ParameterIdToSpec           *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
+	Parameters                  []BTParameterSpec6           `json:"parameters,omitempty"`
+	Signature                   *string                      `json:"signature,omitempty"`
+	SourceLocation              *BTLocationInfo226           `json:"sourceLocation,omitempty"`
+	SourceMicroversionId        *string                      `json:"sourceMicroversionId,omitempty"`
+	StringsToLocalize           []string                     `json:"stringsToLocalize,omitempty"`
+	TableSpec                   *bool                        `json:"tableSpec,omitempty"`
+	ToleranceSpec               *bool                        `json:"toleranceSpec,omitempty"`
+	TooltipTemplate             *string                      `json:"tooltipTemplate,omitempty"`
+	UiHints                     []GBTUIHint                  `json:"uiHints,omitempty"`
+	ComputedPropertyCategoryIds []string                     `json:"computedPropertyCategoryIds,omitempty"`
+	DefaultPartCategoryId       *string                      `json:"defaultPartCategoryId,omitempty"`
+	IsComputedPropertyTable     *bool                        `json:"isComputedPropertyTable,omitempty"`
 }
 
 // NewBTTableSpec915 instantiates a new BTTableSpec915 object
@@ -1126,6 +1128,70 @@ func (o *BTTableSpec915) SetUiHints(v []GBTUIHint) {
 	o.UiHints = v
 }
 
+// GetComputedPropertyCategoryIds returns the ComputedPropertyCategoryIds field value if set, zero value otherwise.
+func (o *BTTableSpec915) GetComputedPropertyCategoryIds() []string {
+	if o == nil || o.ComputedPropertyCategoryIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.ComputedPropertyCategoryIds
+}
+
+// GetComputedPropertyCategoryIdsOk returns a tuple with the ComputedPropertyCategoryIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableSpec915) GetComputedPropertyCategoryIdsOk() ([]string, bool) {
+	if o == nil || o.ComputedPropertyCategoryIds == nil {
+		return nil, false
+	}
+	return o.ComputedPropertyCategoryIds, true
+}
+
+// HasComputedPropertyCategoryIds returns a boolean if a field has been set.
+func (o *BTTableSpec915) HasComputedPropertyCategoryIds() bool {
+	if o != nil && o.ComputedPropertyCategoryIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputedPropertyCategoryIds gets a reference to the given []string and assigns it to the ComputedPropertyCategoryIds field.
+func (o *BTTableSpec915) SetComputedPropertyCategoryIds(v []string) {
+	o.ComputedPropertyCategoryIds = v
+}
+
+// GetDefaultPartCategoryId returns the DefaultPartCategoryId field value if set, zero value otherwise.
+func (o *BTTableSpec915) GetDefaultPartCategoryId() string {
+	if o == nil || o.DefaultPartCategoryId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DefaultPartCategoryId
+}
+
+// GetDefaultPartCategoryIdOk returns a tuple with the DefaultPartCategoryId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableSpec915) GetDefaultPartCategoryIdOk() (*string, bool) {
+	if o == nil || o.DefaultPartCategoryId == nil {
+		return nil, false
+	}
+	return o.DefaultPartCategoryId, true
+}
+
+// HasDefaultPartCategoryId returns a boolean if a field has been set.
+func (o *BTTableSpec915) HasDefaultPartCategoryId() bool {
+	if o != nil && o.DefaultPartCategoryId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultPartCategoryId gets a reference to the given string and assigns it to the DefaultPartCategoryId field.
+func (o *BTTableSpec915) SetDefaultPartCategoryId(v string) {
+	o.DefaultPartCategoryId = &v
+}
+
 // GetIsComputedPropertyTable returns the IsComputedPropertyTable field value if set, zero value otherwise.
 func (o *BTTableSpec915) GetIsComputedPropertyTable() bool {
 	if o == nil || o.IsComputedPropertyTable == nil {
@@ -1266,6 +1332,12 @@ func (o BTTableSpec915) MarshalJSON() ([]byte, error) {
 	}
 	if o.UiHints != nil {
 		toSerialize["uiHints"] = o.UiHints
+	}
+	if o.ComputedPropertyCategoryIds != nil {
+		toSerialize["computedPropertyCategoryIds"] = o.ComputedPropertyCategoryIds
+	}
+	if o.DefaultPartCategoryId != nil {
+		toSerialize["defaultPartCategoryId"] = o.DefaultPartCategoryId
 	}
 	if o.IsComputedPropertyTable != nil {
 		toSerialize["isComputedPropertyTable"] = o.IsComputedPropertyTable

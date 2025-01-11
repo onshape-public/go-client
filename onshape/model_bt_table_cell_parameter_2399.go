@@ -247,6 +247,56 @@ func (o *BTTableCellParameter2399) SetError(v string) {
 	o.GetActualInstance().(getResult).SetError(v)
 }
 
+// GetInfo returns the Info field value if set, zero value otherwise.
+func (o *BTTableCellParameter2399) GetInfo() string {
+	type getResult interface {
+		GetInfo() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInfo()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetInfoOk returns a tuple with the Info field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellParameter2399) GetInfoOk() (*string, bool) {
+	type getResult interface {
+		GetInfoOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInfoOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasInfo returns a boolean if a field has been set.
+func (o *BTTableCellParameter2399) HasInfo() bool {
+	type getResult interface {
+		HasInfo() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasInfo()
+	} else {
+		return false
+	}
+}
+
+// SetInfo gets a reference to the given string and assigns it to the Info field.
+func (o *BTTableCellParameter2399) SetInfo(v string) {
+	type getResult interface {
+		SetInfo(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetInfo(v)
+}
+
 // GetOverrideSpec returns the OverrideSpec field value if set, zero value otherwise.
 func (o *BTTableCellParameter2399) GetOverrideSpec() BTParameterSpec6 {
 	type getResult interface {
@@ -456,6 +506,7 @@ type base_BTTableCellParameter2399 struct {
 	IsEverVisible *bool             `json:"isEverVisible,omitempty"`
 	IsReadOnly    *bool             `json:"isReadOnly,omitempty"`
 	Error         *string           `json:"error,omitempty"`
+	Info          *string           `json:"info,omitempty"`
 	OverrideSpec  *BTParameterSpec6 `json:"overrideSpec,omitempty"`
 	Parameter     *BTMParameter1    `json:"parameter,omitempty"`
 }
@@ -605,6 +656,38 @@ func (o *base_BTTableCellParameter2399) SetError(v string) {
 	o.Error = &v
 }
 
+// GetInfo returns the Info field value if set, zero value otherwise.
+func (o *base_BTTableCellParameter2399) GetInfo() string {
+	if o == nil || o.Info == nil {
+		var ret string
+		return ret
+	}
+	return *o.Info
+}
+
+// GetInfoOk returns a tuple with the Info field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTableCellParameter2399) GetInfoOk() (*string, bool) {
+	if o == nil || o.Info == nil {
+		return nil, false
+	}
+	return o.Info, true
+}
+
+// HasInfo returns a boolean if a field has been set.
+func (o *base_BTTableCellParameter2399) HasInfo() bool {
+	if o != nil && o.Info != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInfo gets a reference to the given string and assigns it to the Info field.
+func (o *base_BTTableCellParameter2399) SetInfo(v string) {
+	o.Info = &v
+}
+
 // GetOverrideSpec returns the OverrideSpec field value if set, zero value otherwise.
 func (o *base_BTTableCellParameter2399) GetOverrideSpec() BTParameterSpec6 {
 	if o == nil || o.OverrideSpec == nil {
@@ -690,6 +773,9 @@ func (o base_BTTableCellParameter2399) MarshalJSON() ([]byte, error) {
 	}
 	if o.Error != nil {
 		toSerialize["error"] = o.Error
+	}
+	if o.Info != nil {
+		toSerialize["info"] = o.Info
 	}
 	if o.OverrideSpec != nil {
 		toSerialize["overrideSpec"] = o.OverrideSpec

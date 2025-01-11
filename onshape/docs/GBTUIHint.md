@@ -67,6 +67,10 @@
 
 * `GBTUIHintCanBeTolerant` (value: `"CAN_BE_TOLERANT"`)
 
+* `GBTUIHintCanBeTolerantDiameter` (value: `"CAN_BE_TOLERANT_DIAMETER"`)
+
+* `GBTUIHintPlusMinus` (value: `"PLUS_MINUS"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

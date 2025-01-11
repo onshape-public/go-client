@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**ComputedPropertyCategoryIds** | Pointer to **[]string** |  | [optional] 
+**DefaultPartCategoryId** | Pointer to **string** |  | [optional] 
 **IsComputedPropertyTable** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -50,6 +52,56 @@ SetBtType sets BtType field to given value.
 `func (o *BTTableSpec915) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetComputedPropertyCategoryIds
+
+`func (o *BTTableSpec915) GetComputedPropertyCategoryIds() []string`
+
+GetComputedPropertyCategoryIds returns the ComputedPropertyCategoryIds field if non-nil, zero value otherwise.
+
+### GetComputedPropertyCategoryIdsOk
+
+`func (o *BTTableSpec915) GetComputedPropertyCategoryIdsOk() (*[]string, bool)`
+
+GetComputedPropertyCategoryIdsOk returns a tuple with the ComputedPropertyCategoryIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputedPropertyCategoryIds
+
+`func (o *BTTableSpec915) SetComputedPropertyCategoryIds(v []string)`
+
+SetComputedPropertyCategoryIds sets ComputedPropertyCategoryIds field to given value.
+
+### HasComputedPropertyCategoryIds
+
+`func (o *BTTableSpec915) HasComputedPropertyCategoryIds() bool`
+
+HasComputedPropertyCategoryIds returns a boolean if a field has been set.
+
+### GetDefaultPartCategoryId
+
+`func (o *BTTableSpec915) GetDefaultPartCategoryId() string`
+
+GetDefaultPartCategoryId returns the DefaultPartCategoryId field if non-nil, zero value otherwise.
+
+### GetDefaultPartCategoryIdOk
+
+`func (o *BTTableSpec915) GetDefaultPartCategoryIdOk() (*string, bool)`
+
+GetDefaultPartCategoryIdOk returns a tuple with the DefaultPartCategoryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultPartCategoryId
+
+`func (o *BTTableSpec915) SetDefaultPartCategoryId(v string)`
+
+SetDefaultPartCategoryId sets DefaultPartCategoryId field to given value.
+
+### HasDefaultPartCategoryId
+
+`func (o *BTTableSpec915) HasDefaultPartCategoryId() bool`
+
+HasDefaultPartCategoryId returns a boolean if a field has been set.
 
 ### GetIsComputedPropertyTable
 

@@ -42,6 +42,7 @@ type BTTranslateFormatParams struct {
 	// Set to `true` to evaluate the export rule for the given `formatName` and to include an `exportRuleFileName` value in the response.
 	EvaluateExportRule       *bool   `json:"evaluateExportRule,omitempty"`
 	ExcludeHiddenEntities    *bool   `json:"excludeHiddenEntities,omitempty"`
+	ExcludeOffSheetContent   *bool   `json:"excludeOffSheetContent,omitempty"`
 	ExtractAssemblyHierarchy *bool   `json:"extractAssemblyHierarchy,omitempty"`
 	Flatten                  *bool   `json:"flatten,omitempty"`
 	FlattenAssemblies        *bool   `json:"flattenAssemblies,omitempty"`
@@ -807,6 +808,38 @@ func (o *BTTranslateFormatParams) HasExcludeHiddenEntities() bool {
 // SetExcludeHiddenEntities gets a reference to the given bool and assigns it to the ExcludeHiddenEntities field.
 func (o *BTTranslateFormatParams) SetExcludeHiddenEntities(v bool) {
 	o.ExcludeHiddenEntities = &v
+}
+
+// GetExcludeOffSheetContent returns the ExcludeOffSheetContent field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetExcludeOffSheetContent() bool {
+	if o == nil || o.ExcludeOffSheetContent == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeOffSheetContent
+}
+
+// GetExcludeOffSheetContentOk returns a tuple with the ExcludeOffSheetContent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetExcludeOffSheetContentOk() (*bool, bool) {
+	if o == nil || o.ExcludeOffSheetContent == nil {
+		return nil, false
+	}
+	return o.ExcludeOffSheetContent, true
+}
+
+// HasExcludeOffSheetContent returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasExcludeOffSheetContent() bool {
+	if o != nil && o.ExcludeOffSheetContent != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeOffSheetContent gets a reference to the given bool and assigns it to the ExcludeOffSheetContent field.
+func (o *BTTranslateFormatParams) SetExcludeOffSheetContent(v bool) {
+	o.ExcludeOffSheetContent = &v
 }
 
 // GetExtractAssemblyHierarchy returns the ExtractAssemblyHierarchy field value if set, zero value otherwise.
@@ -2881,6 +2914,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExcludeHiddenEntities != nil {
 		toSerialize["excludeHiddenEntities"] = o.ExcludeHiddenEntities
+	}
+	if o.ExcludeOffSheetContent != nil {
+		toSerialize["excludeOffSheetContent"] = o.ExcludeOffSheetContent
 	}
 	if o.ExtractAssemblyHierarchy != nil {
 		toSerialize["extractAssemblyHierarchy"] = o.ExtractAssemblyHierarchy

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
+**PartId** | Pointer to **string** |  | [optional] 
 **Precision** | Pointer to [**GBTTolerancePrecision**](GBTTolerancePrecision.md) |  | [optional] 
 
 ## Methods
@@ -206,6 +207,31 @@ SetParameterId sets ParameterId field to given value.
 `func (o *BTInspectionTableRowMetadata2485AllOf) HasParameterId() bool`
 
 HasParameterId returns a boolean if a field has been set.
+
+### GetPartId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetPartId() string`
+
+GetPartId returns the PartId field if non-nil, zero value otherwise.
+
+### GetPartIdOk
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetPartIdOk() (*string, bool)`
+
+GetPartIdOk returns a tuple with the PartId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) SetPartId(v string)`
+
+SetPartId sets PartId field to given value.
+
+### HasPartId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) HasPartId() bool`
+
+HasPartId returns a boolean if a field has been set.
 
 ### GetPrecision
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ColumnIdToCell** | Pointer to [**map[string]BTTableCell1114**](BTTableCell1114.md) |  | [optional] 
+**ExpandableState** | Pointer to [**ExpandableState**](ExpandableState.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **MetaData** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
@@ -79,6 +80,31 @@ SetColumnIdToCell sets ColumnIdToCell field to given value.
 `func (o *BTTableRow1054) HasColumnIdToCell() bool`
 
 HasColumnIdToCell returns a boolean if a field has been set.
+
+### GetExpandableState
+
+`func (o *BTTableRow1054) GetExpandableState() ExpandableState`
+
+GetExpandableState returns the ExpandableState field if non-nil, zero value otherwise.
+
+### GetExpandableStateOk
+
+`func (o *BTTableRow1054) GetExpandableStateOk() (*ExpandableState, bool)`
+
+GetExpandableStateOk returns a tuple with the ExpandableState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpandableState
+
+`func (o *BTTableRow1054) SetExpandableState(v ExpandableState)`
+
+SetExpandableState sets ExpandableState field to given value.
+
+### HasExpandableState
+
+`func (o *BTTableRow1054) HasExpandableState() bool`
+
+HasExpandableState returns a boolean if a field has been set.
 
 ### GetId
 

@@ -29,7 +29,10 @@ Name | Type | Description | Notes
 **IgnoreExportRulesForContents** | Pointer to **bool** |  | [optional] 
 **IncludeBendCenterlines** | Pointer to **bool** |  | [optional] 
 **IncludeBendLines** | Pointer to **bool** |  | [optional] 
+**IncludeCboreCsink** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** |  | [optional] 
+**IncludeFormedCentermarks** | Pointer to **bool** |  | [optional] 
+**IncludeFormedOutlines** | Pointer to **bool** |  | [optional] 
 **IncludeSketches** | Pointer to **bool** |  | [optional] 
 **IsPartingOut** | Pointer to **bool** |  | [optional] 
 **LinkDocumentId** | Pointer to **string** |  | [optional] 
@@ -693,6 +696,31 @@ SetIncludeBendLines sets IncludeBendLines field to given value.
 
 HasIncludeBendLines returns a boolean if a field has been set.
 
+### GetIncludeCboreCsink
+
+`func (o *BTBExportModelParams) GetIncludeCboreCsink() bool`
+
+GetIncludeCboreCsink returns the IncludeCboreCsink field if non-nil, zero value otherwise.
+
+### GetIncludeCboreCsinkOk
+
+`func (o *BTBExportModelParams) GetIncludeCboreCsinkOk() (*bool, bool)`
+
+GetIncludeCboreCsinkOk returns a tuple with the IncludeCboreCsink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeCboreCsink
+
+`func (o *BTBExportModelParams) SetIncludeCboreCsink(v bool)`
+
+SetIncludeCboreCsink sets IncludeCboreCsink field to given value.
+
+### HasIncludeCboreCsink
+
+`func (o *BTBExportModelParams) HasIncludeCboreCsink() bool`
+
+HasIncludeCboreCsink returns a boolean if a field has been set.
+
 ### GetIncludeExportIds
 
 `func (o *BTBExportModelParams) GetIncludeExportIds() bool`
@@ -717,6 +745,56 @@ SetIncludeExportIds sets IncludeExportIds field to given value.
 `func (o *BTBExportModelParams) HasIncludeExportIds() bool`
 
 HasIncludeExportIds returns a boolean if a field has been set.
+
+### GetIncludeFormedCentermarks
+
+`func (o *BTBExportModelParams) GetIncludeFormedCentermarks() bool`
+
+GetIncludeFormedCentermarks returns the IncludeFormedCentermarks field if non-nil, zero value otherwise.
+
+### GetIncludeFormedCentermarksOk
+
+`func (o *BTBExportModelParams) GetIncludeFormedCentermarksOk() (*bool, bool)`
+
+GetIncludeFormedCentermarksOk returns a tuple with the IncludeFormedCentermarks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeFormedCentermarks
+
+`func (o *BTBExportModelParams) SetIncludeFormedCentermarks(v bool)`
+
+SetIncludeFormedCentermarks sets IncludeFormedCentermarks field to given value.
+
+### HasIncludeFormedCentermarks
+
+`func (o *BTBExportModelParams) HasIncludeFormedCentermarks() bool`
+
+HasIncludeFormedCentermarks returns a boolean if a field has been set.
+
+### GetIncludeFormedOutlines
+
+`func (o *BTBExportModelParams) GetIncludeFormedOutlines() bool`
+
+GetIncludeFormedOutlines returns the IncludeFormedOutlines field if non-nil, zero value otherwise.
+
+### GetIncludeFormedOutlinesOk
+
+`func (o *BTBExportModelParams) GetIncludeFormedOutlinesOk() (*bool, bool)`
+
+GetIncludeFormedOutlinesOk returns a tuple with the IncludeFormedOutlines field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeFormedOutlines
+
+`func (o *BTBExportModelParams) SetIncludeFormedOutlines(v bool)`
+
+SetIncludeFormedOutlines sets IncludeFormedOutlines field to given value.
+
+### HasIncludeFormedOutlines
+
+`func (o *BTBExportModelParams) HasIncludeFormedOutlines() bool`
+
+HasIncludeFormedOutlines returns a boolean if a field has been set.
 
 ### GetIncludeSketches
 

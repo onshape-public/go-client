@@ -192,6 +192,56 @@ func (o *BTAngularDimensionDisplayData320) SetFeatureId(v string) {
 	o.GetActualInstance().(getResult).SetFeatureId(v)
 }
 
+// GetFitClass returns the FitClass field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetFitClass() string {
+	type getResult interface {
+		GetFitClass() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFitClass()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetFitClassOk returns a tuple with the FitClass field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetFitClassOk() (*string, bool) {
+	type getResult interface {
+		GetFitClassOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFitClassOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasFitClass returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasFitClass() bool {
+	type getResult interface {
+		HasFitClass() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasFitClass()
+	} else {
+		return false
+	}
+}
+
+// SetFitClass gets a reference to the given string and assigns it to the FitClass field.
+func (o *BTAngularDimensionDisplayData320) SetFitClass(v string) {
+	type getResult interface {
+		SetFitClass(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetFitClass(v)
+}
+
 // GetHasMaximumLimit_ returns the HasMaximumLimit_ field value if set, zero value otherwise.
 func (o *BTAngularDimensionDisplayData320) GetHasMaximumLimit_() bool {
 	type getResult interface {
@@ -740,6 +790,56 @@ func (o *BTAngularDimensionDisplayData320) SetParameterId(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetParameterId(v)
+}
+
+// GetPartId returns the PartId field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetPartId() string {
+	type getResult interface {
+		GetPartId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPartId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetPartIdOk returns a tuple with the PartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetPartIdOk() (*string, bool) {
+	type getResult interface {
+		GetPartIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPartIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasPartId returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasPartId() bool {
+	type getResult interface {
+		HasPartId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasPartId()
+	} else {
+		return false
+	}
+}
+
+// SetPartId gets a reference to the given string and assigns it to the PartId field.
+func (o *BTAngularDimensionDisplayData320) SetPartId(v string) {
+	type getResult interface {
+		SetPartId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetPartId(v)
 }
 
 // GetPlaneMatrix returns the PlaneMatrix field value if set, zero value otherwise.
@@ -1636,6 +1736,7 @@ type base_BTAngularDimensionDisplayData320 struct {
 	BtType                *string                `json:"btType,omitempty"`
 	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
 	FeatureId             *string                `json:"featureId,omitempty"`
+	FitClass              *string                `json:"fitClass,omitempty"`
 	HasMaximumLimit_      *bool                  `json:"hasMaximumLimit,omitempty"`
 	HasMinimumLimit_      *bool                  `json:"hasMinimumLimit,omitempty"`
 	Id                    *string                `json:"id,omitempty"`
@@ -1647,6 +1748,7 @@ type base_BTAngularDimensionDisplayData320 struct {
 	MaximumLimit          *float64               `json:"maximumLimit,omitempty"`
 	MinimumLimit          *float64               `json:"minimumLimit,omitempty"`
 	ParameterId           *string                `json:"parameterId,omitempty"`
+	PartId                *string                `json:"partId,omitempty"`
 	PlaneMatrix           *BTBSMatrix386         `json:"planeMatrix,omitempty"`
 	Precision             *GBTTolerancePrecision `json:"precision,omitempty"`
 	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
@@ -1776,6 +1878,38 @@ func (o *base_BTAngularDimensionDisplayData320) HasFeatureId() bool {
 // SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
 func (o *base_BTAngularDimensionDisplayData320) SetFeatureId(v string) {
 	o.FeatureId = &v
+}
+
+// GetFitClass returns the FitClass field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetFitClass() string {
+	if o == nil || o.FitClass == nil {
+		var ret string
+		return ret
+	}
+	return *o.FitClass
+}
+
+// GetFitClassOk returns a tuple with the FitClass field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetFitClassOk() (*string, bool) {
+	if o == nil || o.FitClass == nil {
+		return nil, false
+	}
+	return o.FitClass, true
+}
+
+// HasFitClass returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasFitClass() bool {
+	if o != nil && o.FitClass != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFitClass gets a reference to the given string and assigns it to the FitClass field.
+func (o *base_BTAngularDimensionDisplayData320) SetFitClass(v string) {
+	o.FitClass = &v
 }
 
 // GetHasMaximumLimit_ returns the HasMaximumLimit_ field value if set, zero value otherwise.
@@ -2128,6 +2262,38 @@ func (o *base_BTAngularDimensionDisplayData320) HasParameterId() bool {
 // SetParameterId gets a reference to the given string and assigns it to the ParameterId field.
 func (o *base_BTAngularDimensionDisplayData320) SetParameterId(v string) {
 	o.ParameterId = &v
+}
+
+// GetPartId returns the PartId field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetPartId() string {
+	if o == nil || o.PartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.PartId
+}
+
+// GetPartIdOk returns a tuple with the PartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetPartIdOk() (*string, bool) {
+	if o == nil || o.PartId == nil {
+		return nil, false
+	}
+	return o.PartId, true
+}
+
+// HasPartId returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasPartId() bool {
+	if o != nil && o.PartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartId gets a reference to the given string and assigns it to the PartId field.
+func (o *base_BTAngularDimensionDisplayData320) SetPartId(v string) {
+	o.PartId = &v
 }
 
 // GetPlaneMatrix returns the PlaneMatrix field value if set, zero value otherwise.
@@ -2661,6 +2827,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
 	}
+	if o.FitClass != nil {
+		toSerialize["fitClass"] = o.FitClass
+	}
 	if o.HasMaximumLimit_ != nil {
 		toSerialize["hasMaximumLimit"] = o.HasMaximumLimit_
 	}
@@ -2693,6 +2862,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.PartId != nil {
+		toSerialize["partId"] = o.PartId
 	}
 	if o.PlaneMatrix != nil {
 		toSerialize["planeMatrix"] = o.PlaneMatrix

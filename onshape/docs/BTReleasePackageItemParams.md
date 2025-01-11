@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **PartIdentity** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) |  | [optional] 
+**RevisionId** | Pointer to **string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **WorkspaceId** | Pointer to **string** |  | [optional] 
 
@@ -337,6 +338,31 @@ SetProperties sets Properties field to given value.
 `func (o *BTReleasePackageItemParams) HasProperties() bool`
 
 HasProperties returns a boolean if a field has been set.
+
+### GetRevisionId
+
+`func (o *BTReleasePackageItemParams) GetRevisionId() string`
+
+GetRevisionId returns the RevisionId field if non-nil, zero value otherwise.
+
+### GetRevisionIdOk
+
+`func (o *BTReleasePackageItemParams) GetRevisionIdOk() (*string, bool)`
+
+GetRevisionIdOk returns a tuple with the RevisionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRevisionId
+
+`func (o *BTReleasePackageItemParams) SetRevisionId(v string)`
+
+SetRevisionId sets RevisionId field to given value.
+
+### HasRevisionId
+
+`func (o *BTReleasePackageItemParams) HasRevisionId() bool`
+
+HasRevisionId returns a boolean if a field has been set.
 
 ### GetVersionId
 
