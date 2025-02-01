@@ -392,7 +392,6 @@ docs/BTExternalConnectionInfo.md
 docs/BTExternalConnectionInfoAllOf.md
 docs/BTExternalElementReferenceInfo.md
 docs/BTExternalReference1936.md
-docs/BTExternalReference1936AllOf.md
 docs/BTFSTable953.md
 docs/BTFSTable953AllOf.md
 docs/BTFSTableColumnInfo623.md
@@ -719,6 +718,8 @@ docs/BTMUserCode161.md
 docs/BTMUserCode161AllOf.md
 docs/BTMVariableStudioReference2764.md
 docs/BTMVariableStudioReference2764AllOf.md
+docs/BTMWidthMate1011.md
+docs/BTMWidthMate1011AllOf.md
 docs/BTMassPropertiesBulkInfo.md
 docs/BTMassPropertiesInfo.md
 docs/BTMateConnectorCSInfo.md
@@ -762,6 +763,8 @@ docs/BTMicroversionIdAndConfiguration2338.md
 docs/BTMicroversionIdAndConfigurationInterval2364.md
 docs/BTMicroversionIdInterval367.md
 docs/BTMicroversionInfo.md
+docs/BTMirrorTableRowMetaData5463.md
+docs/BTMirrorTableRowMetaData5463AllOf.md
 docs/BTModelAnnotations3945.md
 docs/BTModelAnnotations3945AllOf.md
 docs/BTModelElementParams.md
@@ -965,6 +968,7 @@ docs/BTParameterSpecReferencePartStudio1256.md
 docs/BTParameterSpecReferencePartStudio1256AllOf.md
 docs/BTParameterSpecReferenceTable1520.md
 docs/BTParameterSpecReferenceText4945.md
+docs/BTParameterSpecReferenceVariableStudio1060.md
 docs/BTParameterSpecReferenceWithConfiguration2950.md
 docs/BTParameterSpecReferenceWithConfiguration2950AllOf.md
 docs/BTParameterSpecString175.md
@@ -1248,6 +1252,7 @@ docs/BTVariableInfo.md
 docs/BTVariableParams.md
 docs/BTVariableStudioReferenceInfo.md
 docs/BTVariableStudioReferenceListInfo.md
+docs/BTVariableStudioReferenceSpec5278.md
 docs/BTVariableStudioScopeInfo.md
 docs/BTVariableTableInfo.md
 docs/BTVariableTableRowMetadata3912.md
@@ -1876,6 +1881,7 @@ model_bt_microversion_id_and_configuration_2338.go
 model_bt_microversion_id_and_configuration_interval_2364.go
 model_bt_microversion_id_interval_367.go
 model_bt_microversion_info.go
+model_bt_mirror_table_row_meta_data_5463.go
 model_bt_model_annotations_3945.go
 model_bt_model_element_params.go
 model_bt_model_format_full_info.go
@@ -1942,6 +1948,7 @@ model_bt_parameter_spec_reference_json_1816.go
 model_bt_parameter_spec_reference_part_studio_1256.go
 model_bt_parameter_spec_reference_table_1520.go
 model_bt_parameter_spec_reference_text_4945.go
+model_bt_parameter_spec_reference_variable_studio_1060.go
 model_bt_parameter_spec_reference_with_configuration_2950.go
 model_bt_parameter_spec_string_175.go
 model_bt_parameter_spec_string_with_tolerances_2535.go
@@ -2151,6 +2158,7 @@ model_bt_variable_info.go
 model_bt_variable_params.go
 model_bt_variable_studio_reference_info.go
 model_bt_variable_studio_reference_list_info.go
+model_bt_variable_studio_reference_spec_5278.go
 model_bt_variable_studio_scope_info.go
 model_bt_variable_table_info.go
 model_bt_variable_table_row_metadata_3912.go
@@ -2325,6 +2333,7 @@ model_btm_suppression_state_configured_2598.go
 model_btm_units_default_160.go
 model_btm_user_code_161.go
 model_btm_variable_studio_reference_2764.go
+model_btm_width_mate_1011.go
 model_btmin_context_query_2254.go
 model_btor_filter_167.go
 model_btp_annotation_231.go

@@ -19,6 +19,7 @@ type BTSMSpecificMetadata1315 struct {
 	BTDomainSpecificMetadata961
 	BtType               *string        `json:"btType,omitempty"`
 	DefinitionEntityType *GBTEntityType `json:"definitionEntityType,omitempty"`
+	IsSMFormedOutline    *bool          `json:"isSMFormedOutline,omitempty"`
 }
 
 // NewBTSMSpecificMetadata1315 instantiates a new BTSMSpecificMetadata1315 object
@@ -102,6 +103,38 @@ func (o *BTSMSpecificMetadata1315) SetDefinitionEntityType(v GBTEntityType) {
 	o.DefinitionEntityType = &v
 }
 
+// GetIsSMFormedOutline returns the IsSMFormedOutline field value if set, zero value otherwise.
+func (o *BTSMSpecificMetadata1315) GetIsSMFormedOutline() bool {
+	if o == nil || o.IsSMFormedOutline == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsSMFormedOutline
+}
+
+// GetIsSMFormedOutlineOk returns a tuple with the IsSMFormedOutline field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSMSpecificMetadata1315) GetIsSMFormedOutlineOk() (*bool, bool) {
+	if o == nil || o.IsSMFormedOutline == nil {
+		return nil, false
+	}
+	return o.IsSMFormedOutline, true
+}
+
+// HasIsSMFormedOutline returns a boolean if a field has been set.
+func (o *BTSMSpecificMetadata1315) HasIsSMFormedOutline() bool {
+	if o != nil && o.IsSMFormedOutline != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsSMFormedOutline gets a reference to the given bool and assigns it to the IsSMFormedOutline field.
+func (o *BTSMSpecificMetadata1315) SetIsSMFormedOutline(v bool) {
+	o.IsSMFormedOutline = &v
+}
+
 func (o BTSMSpecificMetadata1315) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTDomainSpecificMetadata961, errBTDomainSpecificMetadata961 := json.Marshal(o.BTDomainSpecificMetadata961)
@@ -117,6 +150,9 @@ func (o BTSMSpecificMetadata1315) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefinitionEntityType != nil {
 		toSerialize["definitionEntityType"] = o.DefinitionEntityType
+	}
+	if o.IsSMFormedOutline != nil {
+		toSerialize["isSMFormedOutline"] = o.IsSMFormedOutline
 	}
 	return json.Marshal(toSerialize)
 }
