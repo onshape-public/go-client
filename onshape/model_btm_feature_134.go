@@ -25,6 +25,11 @@ func (o *BTMSketch151) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
+// BTMWidthMate1011AsBTMFeature134 is a convenience function that returns BTMWidthMate1011 wrapped in BTMFeature134
+func (o *BTMWidthMate1011) AsBTMFeature134() *BTMFeature134 {
+	return &BTMFeature134{o}
+}
+
 // BTMAssemblyFeatureFolder2543AsBTMFeature134 is a convenience function that returns BTMAssemblyFeatureFolder2543 wrapped in BTMFeature134
 func (o *BTMAssemblyFeatureFolder2543) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
@@ -1036,6 +1041,20 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMFeature134 = nil
 			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMNonGeometricItem1864: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMWidthMate-1011'
+	if jsonDict["btType"] == "BTMWidthMate-1011" {
+		// try to unmarshal JSON data into BTMWidthMate1011
+		var qr *BTMWidthMate1011
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMWidthMate1011: %s", err.Error())
 		}
 	}
 

@@ -3219,6 +3219,18 @@
 
 * `GBTErrorStringEnumFormedTagFormNegativePartConsumed` (value: `"FORMED_TAG_FORM_NEGATIVE_PART_CONSUMED"`)
 
+* `GBTErrorStringEnumFormedBooleanUnionNoOp` (value: `"FORMED_BOOLEAN_UNION_NO_OP"`)
+
+* `GBTErrorStringEnumFormedBooleanSubtractNoOp` (value: `"FORMED_BOOLEAN_SUBTRACT_NO_OP"`)
+
+* `GBTErrorStringEnumFormedFailedToDerive` (value: `"FORMED_FAILED_TO_DERIVE"`)
+
+* `GBTErrorStringEnumTwoWidthMateconnectorsNeeded` (value: `"TWO_WIDTH_MATECONNECTORS_NEEDED"`)
+
+* `GBTErrorStringEnumOneTabMateconnectorNeeded` (value: `"ONE_TAB_MATECONNECTOR_NEEDED"`)
+
+* `GBTErrorStringEnumTwoTabMateconnectorsNeeded` (value: `"TWO_TAB_MATECONNECTORS_NEEDED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 
