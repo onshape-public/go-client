@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
-**DocumentVersionId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -50,31 +49,6 @@ SetBtType sets BtType field to given value.
 `func (o *BTExternalReference1936) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
-
-### GetDocumentVersionId
-
-`func (o *BTExternalReference1936) GetDocumentVersionId() string`
-
-GetDocumentVersionId returns the DocumentVersionId field if non-nil, zero value otherwise.
-
-### GetDocumentVersionIdOk
-
-`func (o *BTExternalReference1936) GetDocumentVersionIdOk() (*string, bool)`
-
-GetDocumentVersionIdOk returns a tuple with the DocumentVersionId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDocumentVersionId
-
-`func (o *BTExternalReference1936) SetDocumentVersionId(v string)`
-
-SetDocumentVersionId sets DocumentVersionId field to given value.
-
-### HasDocumentVersionId
-
-`func (o *BTExternalReference1936) HasDocumentVersionId() bool`
-
-HasDocumentVersionId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

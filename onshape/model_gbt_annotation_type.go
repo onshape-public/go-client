@@ -23,6 +23,7 @@ const (
 	GBTAnnotationTypeDatum             GBTAnnotationType = "DATUM"
 	GBTAnnotationTypeGtol              GBTAnnotationType = "GTOL"
 	GBTAnnotationTypeDimensionPosition GBTAnnotationType = "DIMENSION_POSITION"
+	GBTAnnotationTypeDimension         GBTAnnotationType = "DIMENSION"
 	GBTAnnotationTypeUnknown           GBTAnnotationType = "UNKNOWN"
 )
 
@@ -31,6 +32,7 @@ var AllowedGBTAnnotationTypeEnumValues = []GBTAnnotationType{
 	"DATUM",
 	"GTOL",
 	"DIMENSION_POSITION",
+	"DIMENSION",
 	"UNKNOWN",
 }
 

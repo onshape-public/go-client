@@ -45,6 +45,8 @@
 
 * `GBTUiSelectionTypeAnnotation` (value: `"ANNOTATION"`)
 
+* `GBTUiSelectionTypeDimension` (value: `"DIMENSION"`)
+
 * `GBTUiSelectionTypeUnknown` (value: `"UNKNOWN"`)
 
 
