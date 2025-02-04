@@ -9,6 +9,8 @@
 
 * `GBTAnnotationTypeDimensionPosition` (value: `"DIMENSION_POSITION"`)
 
+* `GBTAnnotationTypeDimension` (value: `"DIMENSION"`)
+
 * `GBTAnnotationTypeUnknown` (value: `"UNKNOWN"`)
 
 
