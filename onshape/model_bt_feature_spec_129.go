@@ -35,6 +35,11 @@ func (o *BTToleranceSpec3441) AsBTFeatureSpec129() *BTFeatureSpec129 {
 	return &BTFeatureSpec129{o}
 }
 
+// BTVariableStudioReferenceSpec5278AsBTFeatureSpec129 is a convenience function that returns BTVariableStudioReferenceSpec5278 wrapped in BTFeatureSpec129
+func (o *BTVariableStudioReferenceSpec5278) AsBTFeatureSpec129() *BTFeatureSpec129 {
+	return &BTFeatureSpec129{o}
+}
+
 // NewBTFeatureSpec129 instantiates a new BTFeatureSpec129 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -1702,6 +1707,56 @@ func (o *BTFeatureSpec129) SetUiHints(v []GBTUIHint) {
 	o.GetActualInstance().(getResult).SetUiHints(v)
 }
 
+// GetVariableStudioReferenceSpec returns the VariableStudioReferenceSpec field value if set, zero value otherwise.
+func (o *BTFeatureSpec129) GetVariableStudioReferenceSpec() bool {
+	type getResult interface {
+		GetVariableStudioReferenceSpec() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetVariableStudioReferenceSpec()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetVariableStudioReferenceSpecOk returns a tuple with the VariableStudioReferenceSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTFeatureSpec129) GetVariableStudioReferenceSpecOk() (*bool, bool) {
+	type getResult interface {
+		GetVariableStudioReferenceSpecOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetVariableStudioReferenceSpecOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasVariableStudioReferenceSpec returns a boolean if a field has been set.
+func (o *BTFeatureSpec129) HasVariableStudioReferenceSpec() bool {
+	type getResult interface {
+		HasVariableStudioReferenceSpec() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasVariableStudioReferenceSpec()
+	} else {
+		return false
+	}
+}
+
+// SetVariableStudioReferenceSpec gets a reference to the given bool and assigns it to the VariableStudioReferenceSpec field.
+func (o *BTFeatureSpec129) SetVariableStudioReferenceSpec(v bool) {
+	type getResult interface {
+		SetVariableStudioReferenceSpec(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetVariableStudioReferenceSpec(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTFeatureSpec129) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1751,6 +1806,20 @@ func (dst *BTFeatureSpec129) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTFeatureSpec129 = nil
 			return fmt.Errorf("failed to unmarshal BTFeatureSpec129 as BTToleranceSpec3441: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTVariableStudioReferenceSpec-5278'
+	if jsonDict["btType"] == "BTVariableStudioReferenceSpec-5278" {
+		// try to unmarshal JSON data into BTVariableStudioReferenceSpec5278
+		var qr *BTVariableStudioReferenceSpec5278
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTFeatureSpec129 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTFeatureSpec129 = nil
+			return fmt.Errorf("failed to unmarshal BTFeatureSpec129 as BTVariableStudioReferenceSpec5278: %s", err.Error())
 		}
 	}
 
@@ -1823,37 +1892,38 @@ type base_BTFeatureSpec129 struct {
 	AdditionalLocalizedStrings *int32             `json:"additionalLocalizedStrings,omitempty"`
 	AllParameters              []BTParameterSpec6 `json:"allParameters,omitempty"`
 	// Type of JSON object.
-	BtType                    *string                      `json:"btType,omitempty"`
-	ComputedPartPropertySpec  *bool                        `json:"computedPartPropertySpec,omitempty"`
-	DescriptionImageUri       *string                      `json:"descriptionImageUri,omitempty"`
-	EditingLogic              *BTEditingLogic2350          `json:"editingLogic,omitempty"`
-	FeatureNameTemplate       *string                      `json:"featureNameTemplate,omitempty"`
-	FeatureType               *string                      `json:"featureType,omitempty"`
-	FeatureTypeDescription    *string                      `json:"featureTypeDescription,omitempty"`
-	FeatureTypeName           *string                      `json:"featureTypeName,omitempty"`
-	FilterSelectors           []string                     `json:"filterSelectors,omitempty"`
-	FullFeatureType           *string                      `json:"fullFeatureType,omitempty"`
-	Groups                    []BTParameterGroupSpec3469   `json:"groups,omitempty"`
-	IconUri                   *string                      `json:"iconUri,omitempty"`
-	LanguageVersion           *int32                       `json:"languageVersion,omitempty"`
-	LinkedLocationName        *string                      `json:"linkedLocationName,omitempty"`
-	LocalizableName           *string                      `json:"localizableName,omitempty"`
-	LocalizedName             *string                      `json:"localizedName,omitempty"`
-	LocationInfos             []BTLocationInfo226          `json:"locationInfos,omitempty"`
-	ManipulatorChangeFunction *string                      `json:"manipulatorChangeFunction,omitempty"`
-	Namespace                 *string                      `json:"namespace,omitempty"`
-	NamespaceIncludingEnums   *string                      `json:"namespaceIncludingEnums,omitempty"`
-	NamespaceTheSource        *bool                        `json:"namespaceTheSource,omitempty"`
-	ParameterIdToSpec         *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
-	Parameters                []BTParameterSpec6           `json:"parameters,omitempty"`
-	Signature                 *string                      `json:"signature,omitempty"`
-	SourceLocation            *BTLocationInfo226           `json:"sourceLocation,omitempty"`
-	SourceMicroversionId      *string                      `json:"sourceMicroversionId,omitempty"`
-	StringsToLocalize         []string                     `json:"stringsToLocalize,omitempty"`
-	TableSpec                 *bool                        `json:"tableSpec,omitempty"`
-	ToleranceSpec             *bool                        `json:"toleranceSpec,omitempty"`
-	TooltipTemplate           *string                      `json:"tooltipTemplate,omitempty"`
-	UiHints                   []GBTUIHint                  `json:"uiHints,omitempty"`
+	BtType                      *string                      `json:"btType,omitempty"`
+	ComputedPartPropertySpec    *bool                        `json:"computedPartPropertySpec,omitempty"`
+	DescriptionImageUri         *string                      `json:"descriptionImageUri,omitempty"`
+	EditingLogic                *BTEditingLogic2350          `json:"editingLogic,omitempty"`
+	FeatureNameTemplate         *string                      `json:"featureNameTemplate,omitempty"`
+	FeatureType                 *string                      `json:"featureType,omitempty"`
+	FeatureTypeDescription      *string                      `json:"featureTypeDescription,omitempty"`
+	FeatureTypeName             *string                      `json:"featureTypeName,omitempty"`
+	FilterSelectors             []string                     `json:"filterSelectors,omitempty"`
+	FullFeatureType             *string                      `json:"fullFeatureType,omitempty"`
+	Groups                      []BTParameterGroupSpec3469   `json:"groups,omitempty"`
+	IconUri                     *string                      `json:"iconUri,omitempty"`
+	LanguageVersion             *int32                       `json:"languageVersion,omitempty"`
+	LinkedLocationName          *string                      `json:"linkedLocationName,omitempty"`
+	LocalizableName             *string                      `json:"localizableName,omitempty"`
+	LocalizedName               *string                      `json:"localizedName,omitempty"`
+	LocationInfos               []BTLocationInfo226          `json:"locationInfos,omitempty"`
+	ManipulatorChangeFunction   *string                      `json:"manipulatorChangeFunction,omitempty"`
+	Namespace                   *string                      `json:"namespace,omitempty"`
+	NamespaceIncludingEnums     *string                      `json:"namespaceIncludingEnums,omitempty"`
+	NamespaceTheSource          *bool                        `json:"namespaceTheSource,omitempty"`
+	ParameterIdToSpec           *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
+	Parameters                  []BTParameterSpec6           `json:"parameters,omitempty"`
+	Signature                   *string                      `json:"signature,omitempty"`
+	SourceLocation              *BTLocationInfo226           `json:"sourceLocation,omitempty"`
+	SourceMicroversionId        *string                      `json:"sourceMicroversionId,omitempty"`
+	StringsToLocalize           []string                     `json:"stringsToLocalize,omitempty"`
+	TableSpec                   *bool                        `json:"tableSpec,omitempty"`
+	ToleranceSpec               *bool                        `json:"toleranceSpec,omitempty"`
+	TooltipTemplate             *string                      `json:"tooltipTemplate,omitempty"`
+	UiHints                     []GBTUIHint                  `json:"uiHints,omitempty"`
+	VariableStudioReferenceSpec *bool                        `json:"variableStudioReferenceSpec,omitempty"`
 }
 
 // Newbase_BTFeatureSpec129 instantiates a new base_BTFeatureSpec129 object
@@ -2929,6 +2999,38 @@ func (o *base_BTFeatureSpec129) SetUiHints(v []GBTUIHint) {
 	o.UiHints = v
 }
 
+// GetVariableStudioReferenceSpec returns the VariableStudioReferenceSpec field value if set, zero value otherwise.
+func (o *base_BTFeatureSpec129) GetVariableStudioReferenceSpec() bool {
+	if o == nil || o.VariableStudioReferenceSpec == nil {
+		var ret bool
+		return ret
+	}
+	return *o.VariableStudioReferenceSpec
+}
+
+// GetVariableStudioReferenceSpecOk returns a tuple with the VariableStudioReferenceSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTFeatureSpec129) GetVariableStudioReferenceSpecOk() (*bool, bool) {
+	if o == nil || o.VariableStudioReferenceSpec == nil {
+		return nil, false
+	}
+	return o.VariableStudioReferenceSpec, true
+}
+
+// HasVariableStudioReferenceSpec returns a boolean if a field has been set.
+func (o *base_BTFeatureSpec129) HasVariableStudioReferenceSpec() bool {
+	if o != nil && o.VariableStudioReferenceSpec != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVariableStudioReferenceSpec gets a reference to the given bool and assigns it to the VariableStudioReferenceSpec field.
+func (o *base_BTFeatureSpec129) SetVariableStudioReferenceSpec(v bool) {
+	o.VariableStudioReferenceSpec = &v
+}
+
 func (o base_BTFeatureSpec129) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AdditionalLocalizedStrings != nil {
@@ -3029,6 +3131,9 @@ func (o base_BTFeatureSpec129) MarshalJSON() ([]byte, error) {
 	}
 	if o.UiHints != nil {
 		toSerialize["uiHints"] = o.UiHints
+	}
+	if o.VariableStudioReferenceSpec != nil {
+		toSerialize["variableStudioReferenceSpec"] = o.VariableStudioReferenceSpec
 	}
 	return json.Marshal(toSerialize)
 }

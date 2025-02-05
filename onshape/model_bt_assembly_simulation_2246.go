@@ -49,6 +49,7 @@ type BTAssemblySimulation2246 struct {
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
+	InertialRelief                         *bool                                     `json:"inertialRelief,omitempty"`
 	Modal                                  *bool                                     `json:"modal,omitempty"`
 	NumberOfModes                          *float64                                  `json:"numberOfModes,omitempty"`
 	Type                                   *GBTAssemblySimulationType                `json:"type,omitempty"`
@@ -711,6 +712,38 @@ func (o *BTAssemblySimulation2246) SetVersion(v int32) {
 	o.Version = &v
 }
 
+// GetInertialRelief returns the InertialRelief field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetInertialRelief() bool {
+	if o == nil || o.InertialRelief == nil {
+		var ret bool
+		return ret
+	}
+	return *o.InertialRelief
+}
+
+// GetInertialReliefOk returns a tuple with the InertialRelief field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetInertialReliefOk() (*bool, bool) {
+	if o == nil || o.InertialRelief == nil {
+		return nil, false
+	}
+	return o.InertialRelief, true
+}
+
+// HasInertialRelief returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasInertialRelief() bool {
+	if o != nil && o.InertialRelief != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInertialRelief gets a reference to the given bool and assigns it to the InertialRelief field.
+func (o *BTAssemblySimulation2246) SetInertialRelief(v bool) {
+	o.InertialRelief = &v
+}
+
 // GetModal returns the Modal field value if set, zero value otherwise.
 func (o *BTAssemblySimulation2246) GetModal() bool {
 	if o == nil || o.Modal == nil {
@@ -876,6 +909,9 @@ func (o BTAssemblySimulation2246) MarshalJSON() ([]byte, error) {
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
+	}
+	if o.InertialRelief != nil {
+		toSerialize["inertialRelief"] = o.InertialRelief
 	}
 	if o.Modal != nil {
 		toSerialize["modal"] = o.Modal

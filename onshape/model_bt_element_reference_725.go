@@ -142,6 +142,56 @@ func (o *BTElementReference725) SetConfigured(v bool) {
 	o.GetActualInstance().(getResult).SetConfigured(v)
 }
 
+// GetDocumentVersionId returns the DocumentVersionId field value if set, zero value otherwise.
+func (o *BTElementReference725) GetDocumentVersionId() string {
+	type getResult interface {
+		GetDocumentVersionId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentVersionId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDocumentVersionIdOk returns a tuple with the DocumentVersionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementReference725) GetDocumentVersionIdOk() (*string, bool) {
+	type getResult interface {
+		GetDocumentVersionIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDocumentVersionIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDocumentVersionId returns a boolean if a field has been set.
+func (o *BTElementReference725) HasDocumentVersionId() bool {
+	type getResult interface {
+		HasDocumentVersionId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDocumentVersionId()
+	} else {
+		return false
+	}
+}
+
+// SetDocumentVersionId gets a reference to the given string and assigns it to the DocumentVersionId field.
+func (o *BTElementReference725) SetDocumentVersionId(v string) {
+	type getResult interface {
+		SetDocumentVersionId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDocumentVersionId(v)
+}
+
 // GetElementId returns the ElementId field value if set, zero value otherwise.
 func (o *BTElementReference725) GetElementId() string {
 	type getResult interface {
@@ -585,6 +635,7 @@ type base_BTElementReference725 struct {
 	// Type of JSON object.
 	BtType                                  *string                               `json:"btType,omitempty"`
 	Configured                              *bool                                 `json:"configured,omitempty"`
+	DocumentVersionId                       *string                               `json:"documentVersionId,omitempty"`
 	ElementId                               *string                               `json:"elementId,omitempty"`
 	ExternalDocumentWithVersion             *BTDocumentWithVersionId              `json:"externalDocumentWithVersion,omitempty"`
 	ExternalDocumentWithVersionAndElementId *BTDocumentWithVersionAndElementId    `json:"externalDocumentWithVersionAndElementId,omitempty"`
@@ -673,6 +724,38 @@ func (o *base_BTElementReference725) HasConfigured() bool {
 // SetConfigured gets a reference to the given bool and assigns it to the Configured field.
 func (o *base_BTElementReference725) SetConfigured(v bool) {
 	o.Configured = &v
+}
+
+// GetDocumentVersionId returns the DocumentVersionId field value if set, zero value otherwise.
+func (o *base_BTElementReference725) GetDocumentVersionId() string {
+	if o == nil || o.DocumentVersionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DocumentVersionId
+}
+
+// GetDocumentVersionIdOk returns a tuple with the DocumentVersionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTElementReference725) GetDocumentVersionIdOk() (*string, bool) {
+	if o == nil || o.DocumentVersionId == nil {
+		return nil, false
+	}
+	return o.DocumentVersionId, true
+}
+
+// HasDocumentVersionId returns a boolean if a field has been set.
+func (o *base_BTElementReference725) HasDocumentVersionId() bool {
+	if o != nil && o.DocumentVersionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentVersionId gets a reference to the given string and assigns it to the DocumentVersionId field.
+func (o *base_BTElementReference725) SetDocumentVersionId(v string) {
+	o.DocumentVersionId = &v
 }
 
 // GetElementId returns the ElementId field value if set, zero value otherwise.
@@ -906,6 +989,9 @@ func (o base_BTElementReference725) MarshalJSON() ([]byte, error) {
 	}
 	if o.Configured != nil {
 		toSerialize["configured"] = o.Configured
+	}
+	if o.DocumentVersionId != nil {
+		toSerialize["documentVersionId"] = o.DocumentVersionId
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId

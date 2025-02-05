@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**InertialRelief** | Pointer to **bool** |  | [optional] 
 **Modal** | Pointer to **bool** |  | [optional] 
 **NumberOfModes** | Pointer to **float64** |  | [optional] 
 **Type** | Pointer to [**GBTAssemblySimulationType**](GBTAssemblySimulationType.md) |  | [optional] 
@@ -52,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTAssemblySimulation2246) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetInertialRelief
+
+`func (o *BTAssemblySimulation2246) GetInertialRelief() bool`
+
+GetInertialRelief returns the InertialRelief field if non-nil, zero value otherwise.
+
+### GetInertialReliefOk
+
+`func (o *BTAssemblySimulation2246) GetInertialReliefOk() (*bool, bool)`
+
+GetInertialReliefOk returns a tuple with the InertialRelief field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInertialRelief
+
+`func (o *BTAssemblySimulation2246) SetInertialRelief(v bool)`
+
+SetInertialRelief sets InertialRelief field to given value.
+
+### HasInertialRelief
+
+`func (o *BTAssemblySimulation2246) HasInertialRelief() bool`
+
+HasInertialRelief returns a boolean if a field has been set.
 
 ### GetModal
 
