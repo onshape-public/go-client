@@ -19,6 +19,7 @@ type BTExternalReference1936 struct {
 	BTElementReference725
 	BtType                                  *string                               `json:"btType,omitempty"`
 	Configured                              *bool                                 `json:"configured,omitempty"`
+	DocumentVersionId                       *string                               `json:"documentVersionId,omitempty"`
 	ElementId                               *string                               `json:"elementId,omitempty"`
 	ExternalDocumentWithVersion             *BTDocumentWithVersionId              `json:"externalDocumentWithVersion,omitempty"`
 	ExternalDocumentWithVersionAndElementId *BTDocumentWithVersionAndElementId    `json:"externalDocumentWithVersionAndElementId,omitempty"`
@@ -26,7 +27,6 @@ type BTExternalReference1936 struct {
 	FullElementId                           *BTFullElementId756                   `json:"fullElementId,omitempty"`
 	MicroversionIdAndConfiguration          *BTMicroversionIdAndConfiguration2338 `json:"microversionIdAndConfiguration,omitempty"`
 	NodeId                                  *string                               `json:"nodeId,omitempty"`
-	DocumentVersionId                       *string                               `json:"documentVersionId,omitempty"`
 }
 
 // NewBTExternalReference1936 instantiates a new BTExternalReference1936 object
@@ -108,6 +108,38 @@ func (o *BTExternalReference1936) HasConfigured() bool {
 // SetConfigured gets a reference to the given bool and assigns it to the Configured field.
 func (o *BTExternalReference1936) SetConfigured(v bool) {
 	o.Configured = &v
+}
+
+// GetDocumentVersionId returns the DocumentVersionId field value if set, zero value otherwise.
+func (o *BTExternalReference1936) GetDocumentVersionId() string {
+	if o == nil || o.DocumentVersionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DocumentVersionId
+}
+
+// GetDocumentVersionIdOk returns a tuple with the DocumentVersionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalReference1936) GetDocumentVersionIdOk() (*string, bool) {
+	if o == nil || o.DocumentVersionId == nil {
+		return nil, false
+	}
+	return o.DocumentVersionId, true
+}
+
+// HasDocumentVersionId returns a boolean if a field has been set.
+func (o *BTExternalReference1936) HasDocumentVersionId() bool {
+	if o != nil && o.DocumentVersionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDocumentVersionId gets a reference to the given string and assigns it to the DocumentVersionId field.
+func (o *BTExternalReference1936) SetDocumentVersionId(v string) {
+	o.DocumentVersionId = &v
 }
 
 // GetElementId returns the ElementId field value if set, zero value otherwise.
@@ -334,38 +366,6 @@ func (o *BTExternalReference1936) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetDocumentVersionId returns the DocumentVersionId field value if set, zero value otherwise.
-func (o *BTExternalReference1936) GetDocumentVersionId() string {
-	if o == nil || o.DocumentVersionId == nil {
-		var ret string
-		return ret
-	}
-	return *o.DocumentVersionId
-}
-
-// GetDocumentVersionIdOk returns a tuple with the DocumentVersionId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTExternalReference1936) GetDocumentVersionIdOk() (*string, bool) {
-	if o == nil || o.DocumentVersionId == nil {
-		return nil, false
-	}
-	return o.DocumentVersionId, true
-}
-
-// HasDocumentVersionId returns a boolean if a field has been set.
-func (o *BTExternalReference1936) HasDocumentVersionId() bool {
-	if o != nil && o.DocumentVersionId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDocumentVersionId gets a reference to the given string and assigns it to the DocumentVersionId field.
-func (o *BTExternalReference1936) SetDocumentVersionId(v string) {
-	o.DocumentVersionId = &v
-}
-
 func (o BTExternalReference1936) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTElementReference725, errBTElementReference725 := json.Marshal(o.BTElementReference725)
@@ -381,6 +381,9 @@ func (o BTExternalReference1936) MarshalJSON() ([]byte, error) {
 	}
 	if o.Configured != nil {
 		toSerialize["configured"] = o.Configured
+	}
+	if o.DocumentVersionId != nil {
+		toSerialize["documentVersionId"] = o.DocumentVersionId
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
@@ -402,9 +405,6 @@ func (o BTExternalReference1936) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
-	}
-	if o.DocumentVersionId != nil {
-		toSerialize["documentVersionId"] = o.DocumentVersionId
 	}
 	return json.Marshal(toSerialize)
 }

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **DefinitionEntityType** | Pointer to [**GBTEntityType**](GBTEntityType.md) |  | [optional] 
+**IsSMFormedOutline** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetDefinitionEntityType sets DefinitionEntityType field to given value.
 `func (o *BTSMSpecificMetadata1315AllOf) HasDefinitionEntityType() bool`
 
 HasDefinitionEntityType returns a boolean if a field has been set.
+
+### GetIsSMFormedOutline
+
+`func (o *BTSMSpecificMetadata1315AllOf) GetIsSMFormedOutline() bool`
+
+GetIsSMFormedOutline returns the IsSMFormedOutline field if non-nil, zero value otherwise.
+
+### GetIsSMFormedOutlineOk
+
+`func (o *BTSMSpecificMetadata1315AllOf) GetIsSMFormedOutlineOk() (*bool, bool)`
+
+GetIsSMFormedOutlineOk returns a tuple with the IsSMFormedOutline field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSMFormedOutline
+
+`func (o *BTSMSpecificMetadata1315AllOf) SetIsSMFormedOutline(v bool)`
+
+SetIsSMFormedOutline sets IsSMFormedOutline field to given value.
+
+### HasIsSMFormedOutline
+
+`func (o *BTSMSpecificMetadata1315AllOf) HasIsSMFormedOutline() bool`
+
+HasIsSMFormedOutline returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

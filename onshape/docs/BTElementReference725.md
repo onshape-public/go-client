@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Configured** | Pointer to **bool** |  | [optional] 
+**DocumentVersionId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ExternalDocumentWithVersion** | Pointer to [**BTDocumentWithVersionId**](BTDocumentWithVersionId.md) |  | [optional] 
 **ExternalDocumentWithVersionAndElementId** | Pointer to [**BTDocumentWithVersionAndElementId**](BTDocumentWithVersionAndElementId.md) |  | [optional] 
@@ -82,6 +83,31 @@ SetConfigured sets Configured field to given value.
 `func (o *BTElementReference725) HasConfigured() bool`
 
 HasConfigured returns a boolean if a field has been set.
+
+### GetDocumentVersionId
+
+`func (o *BTElementReference725) GetDocumentVersionId() string`
+
+GetDocumentVersionId returns the DocumentVersionId field if non-nil, zero value otherwise.
+
+### GetDocumentVersionIdOk
+
+`func (o *BTElementReference725) GetDocumentVersionIdOk() (*string, bool)`
+
+GetDocumentVersionIdOk returns a tuple with the DocumentVersionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentVersionId
+
+`func (o *BTElementReference725) SetDocumentVersionId(v string)`
+
+SetDocumentVersionId sets DocumentVersionId field to given value.
+
+### HasDocumentVersionId
+
+`func (o *BTElementReference725) HasDocumentVersionId() bool`
+
+HasDocumentVersionId returns a boolean if a field has been set.
 
 ### GetElementId
 

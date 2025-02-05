@@ -50,6 +50,7 @@ type BTTableSpec915 struct {
 	ToleranceSpec               *bool                        `json:"toleranceSpec,omitempty"`
 	TooltipTemplate             *string                      `json:"tooltipTemplate,omitempty"`
 	UiHints                     []GBTUIHint                  `json:"uiHints,omitempty"`
+	VariableStudioReferenceSpec *bool                        `json:"variableStudioReferenceSpec,omitempty"`
 	ComputedPropertyCategoryIds []string                     `json:"computedPropertyCategoryIds,omitempty"`
 	DefaultPartCategoryId       *string                      `json:"defaultPartCategoryId,omitempty"`
 	IsComputedPropertyTable     *bool                        `json:"isComputedPropertyTable,omitempty"`
@@ -1128,6 +1129,38 @@ func (o *BTTableSpec915) SetUiHints(v []GBTUIHint) {
 	o.UiHints = v
 }
 
+// GetVariableStudioReferenceSpec returns the VariableStudioReferenceSpec field value if set, zero value otherwise.
+func (o *BTTableSpec915) GetVariableStudioReferenceSpec() bool {
+	if o == nil || o.VariableStudioReferenceSpec == nil {
+		var ret bool
+		return ret
+	}
+	return *o.VariableStudioReferenceSpec
+}
+
+// GetVariableStudioReferenceSpecOk returns a tuple with the VariableStudioReferenceSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableSpec915) GetVariableStudioReferenceSpecOk() (*bool, bool) {
+	if o == nil || o.VariableStudioReferenceSpec == nil {
+		return nil, false
+	}
+	return o.VariableStudioReferenceSpec, true
+}
+
+// HasVariableStudioReferenceSpec returns a boolean if a field has been set.
+func (o *BTTableSpec915) HasVariableStudioReferenceSpec() bool {
+	if o != nil && o.VariableStudioReferenceSpec != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVariableStudioReferenceSpec gets a reference to the given bool and assigns it to the VariableStudioReferenceSpec field.
+func (o *BTTableSpec915) SetVariableStudioReferenceSpec(v bool) {
+	o.VariableStudioReferenceSpec = &v
+}
+
 // GetComputedPropertyCategoryIds returns the ComputedPropertyCategoryIds field value if set, zero value otherwise.
 func (o *BTTableSpec915) GetComputedPropertyCategoryIds() []string {
 	if o == nil || o.ComputedPropertyCategoryIds == nil {
@@ -1332,6 +1365,9 @@ func (o BTTableSpec915) MarshalJSON() ([]byte, error) {
 	}
 	if o.UiHints != nil {
 		toSerialize["uiHints"] = o.UiHints
+	}
+	if o.VariableStudioReferenceSpec != nil {
+		toSerialize["variableStudioReferenceSpec"] = o.VariableStudioReferenceSpec
 	}
 	if o.ComputedPropertyCategoryIds != nil {
 		toSerialize["computedPropertyCategoryIds"] = o.ComputedPropertyCategoryIds

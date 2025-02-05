@@ -41,6 +41,7 @@ const (
 	GBTUiSelectionTypePersistentQueryString GBTUiSelectionType = "PERSISTENT_QUERY_STRING"
 	GBTUiSelectionTypeGenerativeDesignItem  GBTUiSelectionType = "GENERATIVE_DESIGN_ITEM"
 	GBTUiSelectionTypeAnnotation            GBTUiSelectionType = "ANNOTATION"
+	GBTUiSelectionTypeDimension             GBTUiSelectionType = "DIMENSION"
 	GBTUiSelectionTypeUnknown               GBTUiSelectionType = "UNKNOWN"
 )
 
@@ -67,6 +68,7 @@ var AllowedGBTUiSelectionTypeEnumValues = []GBTUiSelectionType{
 	"PERSISTENT_QUERY_STRING",
 	"GENERATIVE_DESIGN_ITEM",
 	"ANNOTATION",
+	"DIMENSION",
 	"UNKNOWN",
 }
 

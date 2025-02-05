@@ -1628,6 +1628,12 @@ const (
 	GBTErrorStringEnumFormedTagFormNegativePartNotSolid                           GBTErrorStringEnum = "FORMED_TAG_FORM_NEGATIVE_PART_NOT_SOLID"
 	GBTErrorStringEnumFormedTagFormPositivePartConsumed                           GBTErrorStringEnum = "FORMED_TAG_FORM_POSITIVE_PART_CONSUMED"
 	GBTErrorStringEnumFormedTagFormNegativePartConsumed                           GBTErrorStringEnum = "FORMED_TAG_FORM_NEGATIVE_PART_CONSUMED"
+	GBTErrorStringEnumFormedBooleanUnionNoOp                                      GBTErrorStringEnum = "FORMED_BOOLEAN_UNION_NO_OP"
+	GBTErrorStringEnumFormedBooleanSubtractNoOp                                   GBTErrorStringEnum = "FORMED_BOOLEAN_SUBTRACT_NO_OP"
+	GBTErrorStringEnumFormedFailedToDerive                                        GBTErrorStringEnum = "FORMED_FAILED_TO_DERIVE"
+	GBTErrorStringEnumTwoWidthMateconnectorsNeeded                                GBTErrorStringEnum = "TWO_WIDTH_MATECONNECTORS_NEEDED"
+	GBTErrorStringEnumOneTabMateconnectorNeeded                                   GBTErrorStringEnum = "ONE_TAB_MATECONNECTOR_NEEDED"
+	GBTErrorStringEnumTwoTabMateconnectorsNeeded                                  GBTErrorStringEnum = "TWO_TAB_MATECONNECTORS_NEEDED"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3241,6 +3247,12 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"FORMED_TAG_FORM_NEGATIVE_PART_NOT_SOLID",
 	"FORMED_TAG_FORM_POSITIVE_PART_CONSUMED",
 	"FORMED_TAG_FORM_NEGATIVE_PART_CONSUMED",
+	"FORMED_BOOLEAN_UNION_NO_OP",
+	"FORMED_BOOLEAN_SUBTRACT_NO_OP",
+	"FORMED_FAILED_TO_DERIVE",
+	"TWO_WIDTH_MATECONNECTORS_NEEDED",
+	"ONE_TAB_MATECONNECTOR_NEEDED",
+	"TWO_TAB_MATECONNECTORS_NEEDED",
 	"UNKNOWN",
 }
 
