@@ -32,15 +32,23 @@ func populateDefaultResultMapper() {
 			"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
 		}
 	})).Add(MapFields(func(o *onshape.BTDocumentSummaryInfo) TestingContext {
-		return TestingContext{
-			"did":     o.GetId(),
-			"wid":     *o.GetDefaultWorkspace().Id,
-			"wmid":    *o.GetDefaultWorkspace().Id,
-			"wvid":    *o.GetDefaultWorkspace().Id,
-			"wvmid":   *o.GetDefaultWorkspace().Id,
-			"mv":      *o.GetDefaultWorkspace().Microversion,
-			"owner":   o.GetOwner().Id,
-			"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
+		if dw, ok := o.GetDefaultWorkspaceOk(); ok {
+			return TestingContext{
+				"did":     o.GetId(),
+				"wid":     dw.Id,
+				"wmid":    dw.Id,
+				"wvid":    dw.Id,
+				"wvmid":   dw.Id,
+				"mv":      dw.GetMicroversion(),
+				"owner":   o.GetOwner().Id,
+				"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
+			}
+		} else {
+			return TestingContext{
+				"did":     o.GetId(),
+				"owner":   o.GetOwner().Id,
+				"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
+			}
 		}
 	})).Add(MapFields(func(o *onshape.BTWorkspaceInfo) TestingContext {
 		return TestingContext{

@@ -4213,7 +4213,7 @@ func (r ApiUpdateDocumentAttributesRequest) BTDocumentParams(bTDocumentParams BT
 	return r
 }
 
-func (r ApiUpdateDocumentAttributesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiUpdateDocumentAttributesRequest) Execute() (*BTDocumentSummaryInfo, *http.Response, error) {
 	return r.ApiService.UpdateDocumentAttributesExecute(r)
 }
 
@@ -4234,13 +4234,13 @@ func (a *DocumentApiService) UpdateDocumentAttributes(ctx context.Context, did s
 
 // Execute executes the request
 //
-//	@return map[string]interface{}
-func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocumentAttributesRequest) (map[string]interface{}, *http.Response, error) {
+//	@return BTDocumentSummaryInfo
+func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocumentAttributesRequest) (*BTDocumentSummaryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue map[string]interface{}
+		localVarReturnValue *BTDocumentSummaryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UpdateDocumentAttributes")
@@ -4296,7 +4296,7 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v map[string]interface{}
+		var v BTDocumentSummaryInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

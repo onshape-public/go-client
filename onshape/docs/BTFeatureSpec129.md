@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **ToleranceSpec** | Pointer to **bool** |  | [optional] 
 **TooltipTemplate** | Pointer to **string** |  | [optional] 
 **UiHints** | Pointer to [**[]GBTUIHint**](GBTUIHint.md) |  | [optional] 
+**VariableStudioReferenceSpec** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -881,6 +882,31 @@ SetUiHints sets UiHints field to given value.
 `func (o *BTFeatureSpec129) HasUiHints() bool`
 
 HasUiHints returns a boolean if a field has been set.
+
+### GetVariableStudioReferenceSpec
+
+`func (o *BTFeatureSpec129) GetVariableStudioReferenceSpec() bool`
+
+GetVariableStudioReferenceSpec returns the VariableStudioReferenceSpec field if non-nil, zero value otherwise.
+
+### GetVariableStudioReferenceSpecOk
+
+`func (o *BTFeatureSpec129) GetVariableStudioReferenceSpecOk() (*bool, bool)`
+
+GetVariableStudioReferenceSpecOk returns a tuple with the VariableStudioReferenceSpec field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVariableStudioReferenceSpec
+
+`func (o *BTFeatureSpec129) SetVariableStudioReferenceSpec(v bool)`
+
+SetVariableStudioReferenceSpec sets VariableStudioReferenceSpec field to given value.
+
+### HasVariableStudioReferenceSpec
+
+`func (o *BTFeatureSpec129) HasVariableStudioReferenceSpec() bool`
+
+HasVariableStudioReferenceSpec returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

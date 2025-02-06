@@ -39,9 +39,11 @@ type BTExternalConnectionInfo struct {
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef          *string `json:"viewRef,omitempty"`
+	ApprovedBy       *string `json:"approvedBy,omitempty"`
 	Icon             *string `json:"icon,omitempty"`
 	InvitedCompanyId *string `json:"invitedCompanyId,omitempty"`
 	Member           *bool   `json:"member,omitempty"`
+	State            *int32  `json:"state,omitempty"`
 }
 
 // NewBTExternalConnectionInfo instantiates a new BTExternalConnectionInfo object
@@ -662,6 +664,38 @@ func (o *BTExternalConnectionInfo) SetViewRef(v string) {
 	o.ViewRef = &v
 }
 
+// GetApprovedBy returns the ApprovedBy field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetApprovedBy() string {
+	if o == nil || o.ApprovedBy == nil {
+		var ret string
+		return ret
+	}
+	return *o.ApprovedBy
+}
+
+// GetApprovedByOk returns a tuple with the ApprovedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalConnectionInfo) GetApprovedByOk() (*string, bool) {
+	if o == nil || o.ApprovedBy == nil {
+		return nil, false
+	}
+	return o.ApprovedBy, true
+}
+
+// HasApprovedBy returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasApprovedBy() bool {
+	if o != nil && o.ApprovedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApprovedBy gets a reference to the given string and assigns it to the ApprovedBy field.
+func (o *BTExternalConnectionInfo) SetApprovedBy(v string) {
+	o.ApprovedBy = &v
+}
+
 // GetIcon returns the Icon field value if set, zero value otherwise.
 func (o *BTExternalConnectionInfo) GetIcon() string {
 	if o == nil || o.Icon == nil {
@@ -758,6 +792,38 @@ func (o *BTExternalConnectionInfo) SetMember(v bool) {
 	o.Member = &v
 }
 
+// GetState returns the State field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetState() int32 {
+	if o == nil || o.State == nil {
+		var ret int32
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalConnectionInfo) GetStateOk() (*int32, bool) {
+	if o == nil || o.State == nil {
+		return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasState() bool {
+	if o != nil && o.State != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given int32 and assigns it to the State field.
+func (o *BTExternalConnectionInfo) SetState(v int32) {
+	o.State = &v
+}
+
 func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
@@ -817,6 +883,9 @@ func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef
 	}
+	if o.ApprovedBy != nil {
+		toSerialize["approvedBy"] = o.ApprovedBy
+	}
 	if o.Icon != nil {
 		toSerialize["icon"] = o.Icon
 	}
@@ -825,6 +894,9 @@ func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Member != nil {
 		toSerialize["member"] = o.Member
+	}
+	if o.State != nil {
+		toSerialize["state"] = o.State
 	}
 	return json.Marshal(toSerialize)
 }

@@ -2424,7 +2424,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDocumentAttributes
 
-> map[string]interface{} UpdateDocumentAttributes(ctx, did).BTDocumentParams(bTDocumentParams).Execute()
+> BTDocumentSummaryInfo UpdateDocumentAttributes(ctx, did).BTDocumentParams(bTDocumentParams).Execute()
 
 Update document attributes by document ID.
 
@@ -2451,7 +2451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UpdateDocumentAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateDocumentAttributes`: map[string]interface{}
+    // response from `UpdateDocumentAttributes`: BTDocumentSummaryInfo
     fmt.Fprintf(os.Stdout, "Response from `DocumentApi.UpdateDocumentAttributes`: %v\n", resp)
 }
 ```
@@ -2476,7 +2476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+[**BTDocumentSummaryInfo**](BTDocumentSummaryInfo.md)
 
 ### Authorization
 

@@ -16,11 +16,11 @@ import (
 
 // BTUpdateReleasePackageParams struct for BTUpdateReleasePackageParams
 type BTUpdateReleasePackageParams struct {
-	AddAllDrawingsActive *bool                        `json:"addAllDrawingsActive,omitempty"`
-	Empty                *bool                        `json:"empty,omitempty"`
-	ItemIds              []string                     `json:"itemIds,omitempty"`
-	Items                []BTReleasePackageItemParams `json:"items,omitempty"`
-	Properties           []BTPropertyValueParam       `json:"properties,omitempty"`
+	Empty                  *bool                        `json:"empty,omitempty"`
+	ItemIds                []string                     `json:"itemIds,omitempty"`
+	Items                  []BTReleasePackageItemParams `json:"items,omitempty"`
+	ManuallyRemovedItemIds []string                     `json:"manuallyRemovedItemIds,omitempty"`
+	Properties             []BTPropertyValueParam       `json:"properties,omitempty"`
 }
 
 // NewBTUpdateReleasePackageParams instantiates a new BTUpdateReleasePackageParams object
@@ -38,38 +38,6 @@ func NewBTUpdateReleasePackageParams() *BTUpdateReleasePackageParams {
 func NewBTUpdateReleasePackageParamsWithDefaults() *BTUpdateReleasePackageParams {
 	this := BTUpdateReleasePackageParams{}
 	return &this
-}
-
-// GetAddAllDrawingsActive returns the AddAllDrawingsActive field value if set, zero value otherwise.
-func (o *BTUpdateReleasePackageParams) GetAddAllDrawingsActive() bool {
-	if o == nil || o.AddAllDrawingsActive == nil {
-		var ret bool
-		return ret
-	}
-	return *o.AddAllDrawingsActive
-}
-
-// GetAddAllDrawingsActiveOk returns a tuple with the AddAllDrawingsActive field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTUpdateReleasePackageParams) GetAddAllDrawingsActiveOk() (*bool, bool) {
-	if o == nil || o.AddAllDrawingsActive == nil {
-		return nil, false
-	}
-	return o.AddAllDrawingsActive, true
-}
-
-// HasAddAllDrawingsActive returns a boolean if a field has been set.
-func (o *BTUpdateReleasePackageParams) HasAddAllDrawingsActive() bool {
-	if o != nil && o.AddAllDrawingsActive != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAddAllDrawingsActive gets a reference to the given bool and assigns it to the AddAllDrawingsActive field.
-func (o *BTUpdateReleasePackageParams) SetAddAllDrawingsActive(v bool) {
-	o.AddAllDrawingsActive = &v
 }
 
 // GetEmpty returns the Empty field value if set, zero value otherwise.
@@ -168,6 +136,38 @@ func (o *BTUpdateReleasePackageParams) SetItems(v []BTReleasePackageItemParams) 
 	o.Items = v
 }
 
+// GetManuallyRemovedItemIds returns the ManuallyRemovedItemIds field value if set, zero value otherwise.
+func (o *BTUpdateReleasePackageParams) GetManuallyRemovedItemIds() []string {
+	if o == nil || o.ManuallyRemovedItemIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.ManuallyRemovedItemIds
+}
+
+// GetManuallyRemovedItemIdsOk returns a tuple with the ManuallyRemovedItemIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUpdateReleasePackageParams) GetManuallyRemovedItemIdsOk() ([]string, bool) {
+	if o == nil || o.ManuallyRemovedItemIds == nil {
+		return nil, false
+	}
+	return o.ManuallyRemovedItemIds, true
+}
+
+// HasManuallyRemovedItemIds returns a boolean if a field has been set.
+func (o *BTUpdateReleasePackageParams) HasManuallyRemovedItemIds() bool {
+	if o != nil && o.ManuallyRemovedItemIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetManuallyRemovedItemIds gets a reference to the given []string and assigns it to the ManuallyRemovedItemIds field.
+func (o *BTUpdateReleasePackageParams) SetManuallyRemovedItemIds(v []string) {
+	o.ManuallyRemovedItemIds = v
+}
+
 // GetProperties returns the Properties field value if set, zero value otherwise.
 func (o *BTUpdateReleasePackageParams) GetProperties() []BTPropertyValueParam {
 	if o == nil || o.Properties == nil {
@@ -202,9 +202,6 @@ func (o *BTUpdateReleasePackageParams) SetProperties(v []BTPropertyValueParam) {
 
 func (o BTUpdateReleasePackageParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AddAllDrawingsActive != nil {
-		toSerialize["addAllDrawingsActive"] = o.AddAllDrawingsActive
-	}
 	if o.Empty != nil {
 		toSerialize["empty"] = o.Empty
 	}
@@ -213,6 +210,9 @@ func (o BTUpdateReleasePackageParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Items != nil {
 		toSerialize["items"] = o.Items
+	}
+	if o.ManuallyRemovedItemIds != nil {
+		toSerialize["manuallyRemovedItemIds"] = o.ManuallyRemovedItemIds
 	}
 	if o.Properties != nil {
 		toSerialize["properties"] = o.Properties

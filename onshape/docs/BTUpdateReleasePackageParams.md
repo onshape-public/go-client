@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddAllDrawingsActive** | Pointer to **bool** |  | [optional] 
 **Empty** | Pointer to **bool** |  | [optional] 
 **ItemIds** | Pointer to **[]string** |  | [optional] 
 **Items** | Pointer to [**[]BTReleasePackageItemParams**](BTReleasePackageItemParams.md) |  | [optional] 
+**ManuallyRemovedItemIds** | Pointer to **[]string** |  | [optional] 
 **Properties** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) |  | [optional] 
 
 ## Methods
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewBTUpdateReleasePackageParamsWithDefaults instantiates a new BTUpdateReleasePackageParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAddAllDrawingsActive
-
-`func (o *BTUpdateReleasePackageParams) GetAddAllDrawingsActive() bool`
-
-GetAddAllDrawingsActive returns the AddAllDrawingsActive field if non-nil, zero value otherwise.
-
-### GetAddAllDrawingsActiveOk
-
-`func (o *BTUpdateReleasePackageParams) GetAddAllDrawingsActiveOk() (*bool, bool)`
-
-GetAddAllDrawingsActiveOk returns a tuple with the AddAllDrawingsActive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAddAllDrawingsActive
-
-`func (o *BTUpdateReleasePackageParams) SetAddAllDrawingsActive(v bool)`
-
-SetAddAllDrawingsActive sets AddAllDrawingsActive field to given value.
-
-### HasAddAllDrawingsActive
-
-`func (o *BTUpdateReleasePackageParams) HasAddAllDrawingsActive() bool`
-
-HasAddAllDrawingsActive returns a boolean if a field has been set.
 
 ### GetEmpty
 
@@ -128,6 +103,31 @@ SetItems sets Items field to given value.
 `func (o *BTUpdateReleasePackageParams) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
+
+### GetManuallyRemovedItemIds
+
+`func (o *BTUpdateReleasePackageParams) GetManuallyRemovedItemIds() []string`
+
+GetManuallyRemovedItemIds returns the ManuallyRemovedItemIds field if non-nil, zero value otherwise.
+
+### GetManuallyRemovedItemIdsOk
+
+`func (o *BTUpdateReleasePackageParams) GetManuallyRemovedItemIdsOk() (*[]string, bool)`
+
+GetManuallyRemovedItemIdsOk returns a tuple with the ManuallyRemovedItemIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManuallyRemovedItemIds
+
+`func (o *BTUpdateReleasePackageParams) SetManuallyRemovedItemIds(v []string)`
+
+SetManuallyRemovedItemIds sets ManuallyRemovedItemIds field to given value.
+
+### HasManuallyRemovedItemIds
+
+`func (o *BTUpdateReleasePackageParams) HasManuallyRemovedItemIds() bool`
+
+HasManuallyRemovedItemIds returns a boolean if a field has been set.
 
 ### GetProperties
 

@@ -35,6 +35,11 @@ func (o *BTInspectionTableRowMetadata2485) AsBTTableBaseRowMetadata3181() *BTTab
 	return &BTTableBaseRowMetadata3181{o}
 }
 
+// BTMirrorTableRowMetaData5463AsBTTableBaseRowMetadata3181 is a convenience function that returns BTMirrorTableRowMetaData5463 wrapped in BTTableBaseRowMetadata3181
+func (o *BTMirrorTableRowMetaData5463) AsBTTableBaseRowMetadata3181() *BTTableBaseRowMetadata3181 {
+	return &BTTableBaseRowMetadata3181{o}
+}
+
 // BTSMBendTableRowMetadata1705AsBTTableBaseRowMetadata3181 is a convenience function that returns BTSMBendTableRowMetadata1705 wrapped in BTTableBaseRowMetadata3181
 func (o *BTSMBendTableRowMetadata1705) AsBTTableBaseRowMetadata3181() *BTTableBaseRowMetadata3181 {
 	return &BTTableBaseRowMetadata3181{o}
@@ -254,6 +259,20 @@ func (dst *BTTableBaseRowMetadata3181) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTTableBaseRowMetadata3181 = nil
 			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTInspectionTableRowMetadata2485: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMirrorTableRowMetaData-5463'
+	if jsonDict["btType"] == "BTMirrorTableRowMetaData-5463" {
+		// try to unmarshal JSON data into BTMirrorTableRowMetaData5463
+		var qr *BTMirrorTableRowMetaData5463
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableBaseRowMetadata3181 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableBaseRowMetadata3181 = nil
+			return fmt.Errorf("failed to unmarshal BTTableBaseRowMetadata3181 as BTMirrorTableRowMetaData5463: %s", err.Error())
 		}
 	}
 

@@ -20,6 +20,11 @@ type BTMAssemblyFeature887 struct {
 	implBTMAssemblyFeature887 interface{}
 }
 
+// BTMWidthMate1011AsBTMAssemblyFeature887 is a convenience function that returns BTMWidthMate1011 wrapped in BTMAssemblyFeature887
+func (o *BTMWidthMate1011) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
+	return &BTMAssemblyFeature887{o}
+}
+
 // BTMAssemblyFeatureFolder2543AsBTMAssemblyFeature887 is a convenience function that returns BTMAssemblyFeatureFolder2543 wrapped in BTMAssemblyFeature887
 func (o *BTMAssemblyFeatureFolder2543) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
@@ -1405,6 +1410,20 @@ func (dst *BTMAssemblyFeature887) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMAssemblyFeature887 = nil
 			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMParametricPartStudioFeature3883: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMWidthMate-1011'
+	if jsonDict["btType"] == "BTMWidthMate-1011" {
+		// try to unmarshal JSON data into BTMWidthMate1011
+		var qr *BTMWidthMate1011
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMAssemblyFeature887 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMAssemblyFeature887 = nil
+			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMWidthMate1011: %s", err.Error())
 		}
 	}
 
