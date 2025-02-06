@@ -37,6 +37,8 @@ func main() {
 Could be found [here](./onshape/README.md)
 
 ## Breaking Changes
+### v1.193.50007-3a3fc4483ede
+* UpdateDocumentAttributes now returns BTDocumentSummaryInfo instead of map[string]interface
 ### v1.171.24257-687de06de652
 * ServerVariable was renamed to APIServerVariable after OnShape introduced a data structure with the same name
 ### v1.189.45939-469a4bd6b788
