@@ -29,6 +29,7 @@ type GlobalPermissionInfo struct {
 	CreateReleases                  *bool `json:"createReleases,omitempty"`
 	CreateTasks                     *bool `json:"createTasks,omitempty"`
 	DeletePermanently               *bool `json:"deletePermanently,omitempty"`
+	ImportFiles                     *bool `json:"importFiles,omitempty"`
 	ManageGuestUsers                *bool `json:"manageGuestUsers,omitempty"`
 	ManageNonGeometricItems         *bool `json:"manageNonGeometricItems,omitempty"`
 	ManageRbac                      *bool `json:"manageRbac,omitempty"`
@@ -474,6 +475,38 @@ func (o *GlobalPermissionInfo) SetDeletePermanently(v bool) {
 	o.DeletePermanently = &v
 }
 
+// GetImportFiles returns the ImportFiles field value if set, zero value otherwise.
+func (o *GlobalPermissionInfo) GetImportFiles() bool {
+	if o == nil || o.ImportFiles == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ImportFiles
+}
+
+// GetImportFilesOk returns a tuple with the ImportFiles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalPermissionInfo) GetImportFilesOk() (*bool, bool) {
+	if o == nil || o.ImportFiles == nil {
+		return nil, false
+	}
+	return o.ImportFiles, true
+}
+
+// HasImportFiles returns a boolean if a field has been set.
+func (o *GlobalPermissionInfo) HasImportFiles() bool {
+	if o != nil && o.ImportFiles != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImportFiles gets a reference to the given bool and assigns it to the ImportFiles field.
+func (o *GlobalPermissionInfo) SetImportFiles(v bool) {
+	o.ImportFiles = &v
+}
+
 // GetManageGuestUsers returns the ManageGuestUsers field value if set, zero value otherwise.
 func (o *GlobalPermissionInfo) GetManageGuestUsers() bool {
 	if o == nil || o.ManageGuestUsers == nil {
@@ -834,6 +867,9 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeletePermanently != nil {
 		toSerialize["deletePermanently"] = o.DeletePermanently
+	}
+	if o.ImportFiles != nil {
+		toSerialize["importFiles"] = o.ImportFiles
 	}
 	if o.ManageGuestUsers != nil {
 		toSerialize["manageGuestUsers"] = o.ManageGuestUsers

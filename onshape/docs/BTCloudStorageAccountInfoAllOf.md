@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **ExportFolder** | Pointer to [**BTCloudStorageObjectInfo**](BTCloudStorageObjectInfo.md) |  | [optional] 
 **ImportFolder** | Pointer to [**BTCloudStorageObjectInfo**](BTCloudStorageObjectInfo.md) |  | [optional] 
+**LastAuthenticated** | Pointer to **JSONTime** |  | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetImportFolder sets ImportFolder field to given value.
 `func (o *BTCloudStorageAccountInfoAllOf) HasImportFolder() bool`
 
 HasImportFolder returns a boolean if a field has been set.
+
+### GetLastAuthenticated
+
+`func (o *BTCloudStorageAccountInfoAllOf) GetLastAuthenticated() JSONTime`
+
+GetLastAuthenticated returns the LastAuthenticated field if non-nil, zero value otherwise.
+
+### GetLastAuthenticatedOk
+
+`func (o *BTCloudStorageAccountInfoAllOf) GetLastAuthenticatedOk() (*JSONTime, bool)`
+
+GetLastAuthenticatedOk returns a tuple with the LastAuthenticated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastAuthenticated
+
+`func (o *BTCloudStorageAccountInfoAllOf) SetLastAuthenticated(v JSONTime)`
+
+SetLastAuthenticated sets LastAuthenticated field to given value.
+
+### HasLastAuthenticated
+
+`func (o *BTCloudStorageAccountInfoAllOf) HasLastAuthenticated() bool`
+
+HasLastAuthenticated returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

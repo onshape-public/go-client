@@ -16,7 +16,8 @@ import (
 
 // BTCommentParams struct for BTCommentParams
 type BTCommentParams struct {
-	AssemblyFeature   *string            `json:"assemblyFeature,omitempty"`
+	AssemblyFeature *string `json:"assemblyFeature,omitempty"`
+	// Assign the comment during creation. Comments cannot be reassigned during an update at this time.
 	Assignee          *string            `json:"assignee,omitempty"`
 	Coordinates       *CoordinatesParams `json:"coordinates,omitempty"`
 	DocumentId        *string            `json:"documentId,omitempty"`

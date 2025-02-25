@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ## CommitTransactions
 
-> BTAppElementModifyInfo CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(bTAppElementCommitTransactionParams).LinkDocumentId(linkDocumentId).Execute()
+> BTAppElementBulkModifyInfo CommitTransactions(ctx, did, wid).BTAppElementCommitTransactionParams(bTAppElementCommitTransactionParams).LinkDocumentId(linkDocumentId).Execute()
 
 Merge multiple transactions into one microversion.
 
@@ -224,7 +224,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.CommitTransactions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CommitTransactions`: BTAppElementModifyInfo
+    // response from `CommitTransactions`: BTAppElementBulkModifyInfo
     fmt.Fprintf(os.Stdout, "Response from `AppElementApi.CommitTransactions`: %v\n", resp)
 }
 ```
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BTAppElementModifyInfo**](BTAppElementModifyInfo.md)
+[**BTAppElementBulkModifyInfo**](BTAppElementBulkModifyInfo.md)
 
 ### Authorization
 

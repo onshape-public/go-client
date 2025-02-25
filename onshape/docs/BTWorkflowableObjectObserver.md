@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **CompanyId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
+**CreatorOverride** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **EntryId** | Pointer to **string** |  | [optional] 
 **EntryType** | Pointer to [**BTWorkflowObserverEntryType**](BTWorkflowObserverEntryType.md) |  | [optional] 
@@ -270,6 +271,31 @@ SetCreatedBy sets CreatedBy field to given value.
 `func (o *BTWorkflowableObjectObserver) HasCreatedBy() bool`
 
 HasCreatedBy returns a boolean if a field has been set.
+
+### GetCreatorOverride
+
+`func (o *BTWorkflowableObjectObserver) GetCreatorOverride() bool`
+
+GetCreatorOverride returns the CreatorOverride field if non-nil, zero value otherwise.
+
+### GetCreatorOverrideOk
+
+`func (o *BTWorkflowableObjectObserver) GetCreatorOverrideOk() (*bool, bool)`
+
+GetCreatorOverrideOk returns a tuple with the CreatorOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatorOverride
+
+`func (o *BTWorkflowableObjectObserver) SetCreatorOverride(v bool)`
+
+SetCreatorOverride sets CreatorOverride field to given value.
+
+### HasCreatorOverride
+
+`func (o *BTWorkflowableObjectObserver) HasCreatorOverride() bool`
+
+HasCreatorOverride returns a boolean if a field has been set.
 
 ### GetDescription
 

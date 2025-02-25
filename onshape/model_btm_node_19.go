@@ -70,6 +70,11 @@ func (o *BTMConfiguredValueByEnum1923) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
+// BTMConfigurationParameterList5548AsBTMNode19 is a convenience function that returns BTMConfigurationParameterList5548 wrapped in BTMNode19
+func (o *BTMConfigurationParameterList5548) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
 // BTMRecordMetrics1169AsBTMNode19 is a convenience function that returns BTMRecordMetrics1169 wrapped in BTMNode19
 func (o *BTMRecordMetrics1169) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -602,6 +607,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationParameter819: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMConfigurationParameterList-5548'
+	if jsonDict["btType"] == "BTMConfigurationParameterList-5548" {
+		// try to unmarshal JSON data into BTMConfigurationParameterList5548
+		var qr *BTMConfigurationParameterList5548
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMConfigurationParameterList5548: %s", err.Error())
 		}
 	}
 

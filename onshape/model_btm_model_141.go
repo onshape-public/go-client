@@ -25,6 +25,7 @@ type BTMModel141 struct {
 	AllFeaturesAndOtherReferences []BTMFeature134                  `json:"allFeaturesAndOtherReferences,omitempty"`
 	AllFeaturesAndSubFeatures     []BTMFeature134                  `json:"allFeaturesAndSubFeatures,omitempty"`
 	ChildNodeIdToIndex            *map[string]int32                `json:"childNodeIdToIndex,omitempty"`
+	ConfigurableTreeNodes         []BTConfigurableTreeNode         `json:"configurableTreeNodes,omitempty"`
 	ConfigurationData             *BTMConfigurationData1560        `json:"configurationData,omitempty"`
 	Configured                    *bool                            `json:"configured,omitempty"`
 	DeepImports                   *map[string][]BTImport           `json:"deepImports,omitempty"`
@@ -285,6 +286,38 @@ func (o *BTMModel141) HasChildNodeIdToIndex() bool {
 // SetChildNodeIdToIndex gets a reference to the given map[string]int32 and assigns it to the ChildNodeIdToIndex field.
 func (o *BTMModel141) SetChildNodeIdToIndex(v map[string]int32) {
 	o.ChildNodeIdToIndex = &v
+}
+
+// GetConfigurableTreeNodes returns the ConfigurableTreeNodes field value if set, zero value otherwise.
+func (o *BTMModel141) GetConfigurableTreeNodes() []BTConfigurableTreeNode {
+	if o == nil || o.ConfigurableTreeNodes == nil {
+		var ret []BTConfigurableTreeNode
+		return ret
+	}
+	return o.ConfigurableTreeNodes
+}
+
+// GetConfigurableTreeNodesOk returns a tuple with the ConfigurableTreeNodes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMModel141) GetConfigurableTreeNodesOk() ([]BTConfigurableTreeNode, bool) {
+	if o == nil || o.ConfigurableTreeNodes == nil {
+		return nil, false
+	}
+	return o.ConfigurableTreeNodes, true
+}
+
+// HasConfigurableTreeNodes returns a boolean if a field has been set.
+func (o *BTMModel141) HasConfigurableTreeNodes() bool {
+	if o != nil && o.ConfigurableTreeNodes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigurableTreeNodes gets a reference to the given []BTConfigurableTreeNode and assigns it to the ConfigurableTreeNodes field.
+func (o *BTMModel141) SetConfigurableTreeNodes(v []BTConfigurableTreeNode) {
+	o.ConfigurableTreeNodes = v
 }
 
 // GetConfigurationData returns the ConfigurationData field value if set, zero value otherwise.
@@ -925,6 +958,9 @@ func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	}
 	if o.ChildNodeIdToIndex != nil {
 		toSerialize["childNodeIdToIndex"] = o.ChildNodeIdToIndex
+	}
+	if o.ConfigurableTreeNodes != nil {
+		toSerialize["configurableTreeNodes"] = o.ConfigurableTreeNodes
 	}
 	if o.ConfigurationData != nil {
 		toSerialize["configurationData"] = o.ConfigurationData

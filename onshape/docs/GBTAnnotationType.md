@@ -11,6 +11,8 @@
 
 * `GBTAnnotationTypeDimension` (value: `"DIMENSION"`)
 
+* `GBTAnnotationTypeWeld` (value: `"WELD"`)
+
 * `GBTAnnotationTypeUnknown` (value: `"UNKNOWN"`)
 
 

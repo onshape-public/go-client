@@ -310,7 +310,7 @@ func (r ApiCommitTransactionsRequest) LinkDocumentId(linkDocumentId string) ApiC
 	return r
 }
 
-func (r ApiCommitTransactionsRequest) Execute() (*BTAppElementModifyInfo, *http.Response, error) {
+func (r ApiCommitTransactionsRequest) Execute() (*BTAppElementBulkModifyInfo, *http.Response, error) {
 	return r.ApiService.CommitTransactionsExecute(r)
 }
 
@@ -335,13 +335,13 @@ func (a *AppElementApiService) CommitTransactions(ctx context.Context, did strin
 
 // Execute executes the request
 //
-//	@return BTAppElementModifyInfo
-func (a *AppElementApiService) CommitTransactionsExecute(r ApiCommitTransactionsRequest) (*BTAppElementModifyInfo, *http.Response, error) {
+//	@return BTAppElementBulkModifyInfo
+func (a *AppElementApiService) CommitTransactionsExecute(r ApiCommitTransactionsRequest) (*BTAppElementBulkModifyInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BTAppElementModifyInfo
+		localVarReturnValue *BTAppElementBulkModifyInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppElementApiService.CommitTransactions")
@@ -401,7 +401,7 @@ func (a *AppElementApiService) CommitTransactionsExecute(r ApiCommitTransactions
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v BTAppElementModifyInfo
+		var v BTAppElementBulkModifyInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

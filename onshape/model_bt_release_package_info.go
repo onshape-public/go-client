@@ -29,14 +29,12 @@ type BTReleasePackageInfo struct {
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id *string `json:"id,omitempty"`
-	// Indicates whether CAD and PLM have independent revisions.
-	IndependentCADRevisions *bool                      `json:"independentCADRevisions,omitempty"`
-	IsObsoletion            *bool                      `json:"isObsoletion,omitempty"`
-	Items                   []BTReleasePackageItemInfo `json:"items,omitempty"`
-	LinkedVersionIds        []string                   `json:"linkedVersionIds,omitempty"`
-	ModifiedAt              *JSONTime                  `json:"modifiedAt,omitempty"`
-	ModifiedBy              *BTUserBasicSummaryInfo    `json:"modifiedBy,omitempty"`
+	Id               *string                    `json:"id,omitempty"`
+	IsObsoletion     *bool                      `json:"isObsoletion,omitempty"`
+	Items            []BTReleasePackageItemInfo `json:"items,omitempty"`
+	LinkedVersionIds []string                   `json:"linkedVersionIds,omitempty"`
+	ModifiedAt       *JSONTime                  `json:"modifiedAt,omitempty"`
+	ModifiedBy       *BTUserBasicSummaryInfo    `json:"modifiedBy,omitempty"`
 	// Name of the resource.
 	Name                *string                    `json:"name,omitempty"`
 	OriginalWorkspaceId *string                    `json:"originalWorkspaceId,omitempty"`
@@ -457,38 +455,6 @@ func (o *BTReleasePackageInfo) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *BTReleasePackageInfo) SetId(v string) {
 	o.Id = &v
-}
-
-// GetIndependentCADRevisions returns the IndependentCADRevisions field value if set, zero value otherwise.
-func (o *BTReleasePackageInfo) GetIndependentCADRevisions() bool {
-	if o == nil || o.IndependentCADRevisions == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IndependentCADRevisions
-}
-
-// GetIndependentCADRevisionsOk returns a tuple with the IndependentCADRevisions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTReleasePackageInfo) GetIndependentCADRevisionsOk() (*bool, bool) {
-	if o == nil || o.IndependentCADRevisions == nil {
-		return nil, false
-	}
-	return o.IndependentCADRevisions, true
-}
-
-// HasIndependentCADRevisions returns a boolean if a field has been set.
-func (o *BTReleasePackageInfo) HasIndependentCADRevisions() bool {
-	if o != nil && o.IndependentCADRevisions != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIndependentCADRevisions gets a reference to the given bool and assigns it to the IndependentCADRevisions field.
-func (o *BTReleasePackageInfo) SetIndependentCADRevisions(v bool) {
-	o.IndependentCADRevisions = &v
 }
 
 // GetIsObsoletion returns the IsObsoletion field value if set, zero value otherwise.
@@ -1200,9 +1166,6 @@ func (o BTReleasePackageInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
-	}
-	if o.IndependentCADRevisions != nil {
-		toSerialize["independentCADRevisions"] = o.IndependentCADRevisions
 	}
 	if o.IsObsoletion != nil {
 		toSerialize["isObsoletion"] = o.IsObsoletion

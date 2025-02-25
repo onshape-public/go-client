@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssemblyFeature** | Pointer to **string** |  | [optional] 
-**Assignee** | Pointer to **string** |  | [optional] 
+**Assignee** | Pointer to **string** | Assign the comment during creation. Comments cannot be reassigned during an update at this time. | [optional] 
 **Coordinates** | Pointer to [**CoordinatesParams**](CoordinatesParams.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementFeature** | Pointer to **string** |  | [optional] 

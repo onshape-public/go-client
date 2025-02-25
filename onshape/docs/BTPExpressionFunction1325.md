@@ -7,6 +7,9 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Arguments** | Pointer to [**[]BTPArgumentDeclaration232**](BTPArgumentDeclaration232.md) |  | [optional] 
 **Body** | Pointer to [**BTPStatementBlock271**](BTPStatementBlock271.md) |  | [optional] 
+**Expression** | Pointer to [**BTPExpression9**](BTPExpression9.md) |  | [optional] 
+**IsLambda** | Pointer to **bool** |  | [optional] 
+**IsLambdaWithNoParens** | Pointer to **bool** |  | [optional] 
 **Precondition** | Pointer to [**BTPStatement269**](BTPStatement269.md) |  | [optional] 
 **ReturnType** | Pointer to [**BTPTypeName290**](BTPTypeName290.md) |  | [optional] 
 **SpaceAfterArglist** | Pointer to [**BTPSpace10**](BTPSpace10.md) |  | [optional] 
@@ -106,6 +109,81 @@ SetBody sets Body field to given value.
 `func (o *BTPExpressionFunction1325) HasBody() bool`
 
 HasBody returns a boolean if a field has been set.
+
+### GetExpression
+
+`func (o *BTPExpressionFunction1325) GetExpression() BTPExpression9`
+
+GetExpression returns the Expression field if non-nil, zero value otherwise.
+
+### GetExpressionOk
+
+`func (o *BTPExpressionFunction1325) GetExpressionOk() (*BTPExpression9, bool)`
+
+GetExpressionOk returns a tuple with the Expression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpression
+
+`func (o *BTPExpressionFunction1325) SetExpression(v BTPExpression9)`
+
+SetExpression sets Expression field to given value.
+
+### HasExpression
+
+`func (o *BTPExpressionFunction1325) HasExpression() bool`
+
+HasExpression returns a boolean if a field has been set.
+
+### GetIsLambda
+
+`func (o *BTPExpressionFunction1325) GetIsLambda() bool`
+
+GetIsLambda returns the IsLambda field if non-nil, zero value otherwise.
+
+### GetIsLambdaOk
+
+`func (o *BTPExpressionFunction1325) GetIsLambdaOk() (*bool, bool)`
+
+GetIsLambdaOk returns a tuple with the IsLambda field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsLambda
+
+`func (o *BTPExpressionFunction1325) SetIsLambda(v bool)`
+
+SetIsLambda sets IsLambda field to given value.
+
+### HasIsLambda
+
+`func (o *BTPExpressionFunction1325) HasIsLambda() bool`
+
+HasIsLambda returns a boolean if a field has been set.
+
+### GetIsLambdaWithNoParens
+
+`func (o *BTPExpressionFunction1325) GetIsLambdaWithNoParens() bool`
+
+GetIsLambdaWithNoParens returns the IsLambdaWithNoParens field if non-nil, zero value otherwise.
+
+### GetIsLambdaWithNoParensOk
+
+`func (o *BTPExpressionFunction1325) GetIsLambdaWithNoParensOk() (*bool, bool)`
+
+GetIsLambdaWithNoParensOk returns a tuple with the IsLambdaWithNoParens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsLambdaWithNoParens
+
+`func (o *BTPExpressionFunction1325) SetIsLambdaWithNoParens(v bool)`
+
+SetIsLambdaWithNoParens sets IsLambdaWithNoParens field to given value.
+
+### HasIsLambdaWithNoParens
+
+`func (o *BTPExpressionFunction1325) HasIsLambdaWithNoParens() bool`
+
+HasIsLambdaWithNoParens returns a boolean if a field has been set.
 
 ### GetPrecondition
 
