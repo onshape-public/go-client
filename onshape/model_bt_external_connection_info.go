@@ -38,12 +38,14 @@ type BTExternalConnectionInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef          *string `json:"viewRef,omitempty"`
-	ApprovedBy       *string `json:"approvedBy,omitempty"`
-	Icon             *string `json:"icon,omitempty"`
-	InvitedCompanyId *string `json:"invitedCompanyId,omitempty"`
-	Member           *bool   `json:"member,omitempty"`
-	State            *int32  `json:"state,omitempty"`
+	ViewRef         *string               `json:"viewRef,omitempty"`
+	ApprovedBy      *BTUserSummaryInfo    `json:"approvedBy,omitempty"`
+	ContactUser     *BTUserSummaryInfo    `json:"contactUser,omitempty"`
+	Icon            *string               `json:"icon,omitempty"`
+	InvitedCompany  *BTCompanySummaryInfo `json:"invitedCompany,omitempty"`
+	Member          *bool                 `json:"member,omitempty"`
+	NumberOfMembers *int64                `json:"numberOfMembers,omitempty"`
+	State           *int32                `json:"state,omitempty"`
 }
 
 // NewBTExternalConnectionInfo instantiates a new BTExternalConnectionInfo object
@@ -665,9 +667,9 @@ func (o *BTExternalConnectionInfo) SetViewRef(v string) {
 }
 
 // GetApprovedBy returns the ApprovedBy field value if set, zero value otherwise.
-func (o *BTExternalConnectionInfo) GetApprovedBy() string {
+func (o *BTExternalConnectionInfo) GetApprovedBy() BTUserSummaryInfo {
 	if o == nil || o.ApprovedBy == nil {
-		var ret string
+		var ret BTUserSummaryInfo
 		return ret
 	}
 	return *o.ApprovedBy
@@ -675,7 +677,7 @@ func (o *BTExternalConnectionInfo) GetApprovedBy() string {
 
 // GetApprovedByOk returns a tuple with the ApprovedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTExternalConnectionInfo) GetApprovedByOk() (*string, bool) {
+func (o *BTExternalConnectionInfo) GetApprovedByOk() (*BTUserSummaryInfo, bool) {
 	if o == nil || o.ApprovedBy == nil {
 		return nil, false
 	}
@@ -691,9 +693,41 @@ func (o *BTExternalConnectionInfo) HasApprovedBy() bool {
 	return false
 }
 
-// SetApprovedBy gets a reference to the given string and assigns it to the ApprovedBy field.
-func (o *BTExternalConnectionInfo) SetApprovedBy(v string) {
+// SetApprovedBy gets a reference to the given BTUserSummaryInfo and assigns it to the ApprovedBy field.
+func (o *BTExternalConnectionInfo) SetApprovedBy(v BTUserSummaryInfo) {
 	o.ApprovedBy = &v
+}
+
+// GetContactUser returns the ContactUser field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetContactUser() BTUserSummaryInfo {
+	if o == nil || o.ContactUser == nil {
+		var ret BTUserSummaryInfo
+		return ret
+	}
+	return *o.ContactUser
+}
+
+// GetContactUserOk returns a tuple with the ContactUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalConnectionInfo) GetContactUserOk() (*BTUserSummaryInfo, bool) {
+	if o == nil || o.ContactUser == nil {
+		return nil, false
+	}
+	return o.ContactUser, true
+}
+
+// HasContactUser returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasContactUser() bool {
+	if o != nil && o.ContactUser != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetContactUser gets a reference to the given BTUserSummaryInfo and assigns it to the ContactUser field.
+func (o *BTExternalConnectionInfo) SetContactUser(v BTUserSummaryInfo) {
+	o.ContactUser = &v
 }
 
 // GetIcon returns the Icon field value if set, zero value otherwise.
@@ -728,36 +762,36 @@ func (o *BTExternalConnectionInfo) SetIcon(v string) {
 	o.Icon = &v
 }
 
-// GetInvitedCompanyId returns the InvitedCompanyId field value if set, zero value otherwise.
-func (o *BTExternalConnectionInfo) GetInvitedCompanyId() string {
-	if o == nil || o.InvitedCompanyId == nil {
-		var ret string
+// GetInvitedCompany returns the InvitedCompany field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetInvitedCompany() BTCompanySummaryInfo {
+	if o == nil || o.InvitedCompany == nil {
+		var ret BTCompanySummaryInfo
 		return ret
 	}
-	return *o.InvitedCompanyId
+	return *o.InvitedCompany
 }
 
-// GetInvitedCompanyIdOk returns a tuple with the InvitedCompanyId field value if set, nil otherwise
+// GetInvitedCompanyOk returns a tuple with the InvitedCompany field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTExternalConnectionInfo) GetInvitedCompanyIdOk() (*string, bool) {
-	if o == nil || o.InvitedCompanyId == nil {
+func (o *BTExternalConnectionInfo) GetInvitedCompanyOk() (*BTCompanySummaryInfo, bool) {
+	if o == nil || o.InvitedCompany == nil {
 		return nil, false
 	}
-	return o.InvitedCompanyId, true
+	return o.InvitedCompany, true
 }
 
-// HasInvitedCompanyId returns a boolean if a field has been set.
-func (o *BTExternalConnectionInfo) HasInvitedCompanyId() bool {
-	if o != nil && o.InvitedCompanyId != nil {
+// HasInvitedCompany returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasInvitedCompany() bool {
+	if o != nil && o.InvitedCompany != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetInvitedCompanyId gets a reference to the given string and assigns it to the InvitedCompanyId field.
-func (o *BTExternalConnectionInfo) SetInvitedCompanyId(v string) {
-	o.InvitedCompanyId = &v
+// SetInvitedCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the InvitedCompany field.
+func (o *BTExternalConnectionInfo) SetInvitedCompany(v BTCompanySummaryInfo) {
+	o.InvitedCompany = &v
 }
 
 // GetMember returns the Member field value if set, zero value otherwise.
@@ -790,6 +824,38 @@ func (o *BTExternalConnectionInfo) HasMember() bool {
 // SetMember gets a reference to the given bool and assigns it to the Member field.
 func (o *BTExternalConnectionInfo) SetMember(v bool) {
 	o.Member = &v
+}
+
+// GetNumberOfMembers returns the NumberOfMembers field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetNumberOfMembers() int64 {
+	if o == nil || o.NumberOfMembers == nil {
+		var ret int64
+		return ret
+	}
+	return *o.NumberOfMembers
+}
+
+// GetNumberOfMembersOk returns a tuple with the NumberOfMembers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalConnectionInfo) GetNumberOfMembersOk() (*int64, bool) {
+	if o == nil || o.NumberOfMembers == nil {
+		return nil, false
+	}
+	return o.NumberOfMembers, true
+}
+
+// HasNumberOfMembers returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasNumberOfMembers() bool {
+	if o != nil && o.NumberOfMembers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNumberOfMembers gets a reference to the given int64 and assigns it to the NumberOfMembers field.
+func (o *BTExternalConnectionInfo) SetNumberOfMembers(v int64) {
+	o.NumberOfMembers = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -886,14 +952,20 @@ func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	if o.ApprovedBy != nil {
 		toSerialize["approvedBy"] = o.ApprovedBy
 	}
+	if o.ContactUser != nil {
+		toSerialize["contactUser"] = o.ContactUser
+	}
 	if o.Icon != nil {
 		toSerialize["icon"] = o.Icon
 	}
-	if o.InvitedCompanyId != nil {
-		toSerialize["invitedCompanyId"] = o.InvitedCompanyId
+	if o.InvitedCompany != nil {
+		toSerialize["invitedCompany"] = o.InvitedCompany
 	}
 	if o.Member != nil {
 		toSerialize["member"] = o.Member
+	}
+	if o.NumberOfMembers != nil {
+		toSerialize["numberOfMembers"] = o.NumberOfMembers
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

@@ -1634,6 +1634,10 @@ const (
 	GBTErrorStringEnumTwoWidthMateconnectorsNeeded                                GBTErrorStringEnum = "TWO_WIDTH_MATECONNECTORS_NEEDED"
 	GBTErrorStringEnumOneTabMateconnectorNeeded                                   GBTErrorStringEnum = "ONE_TAB_MATECONNECTOR_NEEDED"
 	GBTErrorStringEnumTwoTabMateconnectorsNeeded                                  GBTErrorStringEnum = "TWO_TAB_MATECONNECTORS_NEEDED"
+	GBTErrorStringEnumFormedTagFormOriginOutsideToolsBbox                         GBTErrorStringEnum = "FORMED_TAG_FORM_ORIGIN_OUTSIDE_TOOLS_BBOX"
+	GBTErrorStringEnumFormedToolsIntersectCannotCut                               GBTErrorStringEnum = "FORMED_TOOLS_INTERSECT_CANNOT_CUT"
+	GBTErrorStringEnumSketchPatternNeedsSeed                                      GBTErrorStringEnum = "SKETCH_PATTERN_NEEDS_SEED"
+	GBTErrorStringEnumWrapNeedsDifferentAnchor                                    GBTErrorStringEnum = "WRAP_NEEDS_DIFFERENT_ANCHOR"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3253,6 +3257,10 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"TWO_WIDTH_MATECONNECTORS_NEEDED",
 	"ONE_TAB_MATECONNECTOR_NEEDED",
 	"TWO_TAB_MATECONNECTORS_NEEDED",
+	"FORMED_TAG_FORM_ORIGIN_OUTSIDE_TOOLS_BBOX",
+	"FORMED_TOOLS_INTERSECT_CANNOT_CUT",
+	"SKETCH_PATTERN_NEEDS_SEED",
+	"WRAP_NEEDS_DIFFERENT_ANCHOR",
 	"UNKNOWN",
 }
 

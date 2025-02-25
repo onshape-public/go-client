@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApprovedBy** | Pointer to **string** |  | [optional] 
+**ApprovedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
+**ContactUser** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Icon** | Pointer to **string** |  | [optional] 
-**InvitedCompanyId** | Pointer to **string** |  | [optional] 
+**InvitedCompany** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
 **Member** | Pointer to **bool** |  | [optional] 
+**NumberOfMembers** | Pointer to **int64** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -31,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApprovedBy
 
-`func (o *BTExternalConnectionInfo) GetApprovedBy() string`
+`func (o *BTExternalConnectionInfo) GetApprovedBy() BTUserSummaryInfo`
 
 GetApprovedBy returns the ApprovedBy field if non-nil, zero value otherwise.
 
 ### GetApprovedByOk
 
-`func (o *BTExternalConnectionInfo) GetApprovedByOk() (*string, bool)`
+`func (o *BTExternalConnectionInfo) GetApprovedByOk() (*BTUserSummaryInfo, bool)`
 
 GetApprovedByOk returns a tuple with the ApprovedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApprovedBy
 
-`func (o *BTExternalConnectionInfo) SetApprovedBy(v string)`
+`func (o *BTExternalConnectionInfo) SetApprovedBy(v BTUserSummaryInfo)`
 
 SetApprovedBy sets ApprovedBy field to given value.
 
@@ -53,6 +55,31 @@ SetApprovedBy sets ApprovedBy field to given value.
 `func (o *BTExternalConnectionInfo) HasApprovedBy() bool`
 
 HasApprovedBy returns a boolean if a field has been set.
+
+### GetContactUser
+
+`func (o *BTExternalConnectionInfo) GetContactUser() BTUserSummaryInfo`
+
+GetContactUser returns the ContactUser field if non-nil, zero value otherwise.
+
+### GetContactUserOk
+
+`func (o *BTExternalConnectionInfo) GetContactUserOk() (*BTUserSummaryInfo, bool)`
+
+GetContactUserOk returns a tuple with the ContactUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContactUser
+
+`func (o *BTExternalConnectionInfo) SetContactUser(v BTUserSummaryInfo)`
+
+SetContactUser sets ContactUser field to given value.
+
+### HasContactUser
+
+`func (o *BTExternalConnectionInfo) HasContactUser() bool`
+
+HasContactUser returns a boolean if a field has been set.
 
 ### GetIcon
 
@@ -79,30 +106,30 @@ SetIcon sets Icon field to given value.
 
 HasIcon returns a boolean if a field has been set.
 
-### GetInvitedCompanyId
+### GetInvitedCompany
 
-`func (o *BTExternalConnectionInfo) GetInvitedCompanyId() string`
+`func (o *BTExternalConnectionInfo) GetInvitedCompany() BTCompanySummaryInfo`
 
-GetInvitedCompanyId returns the InvitedCompanyId field if non-nil, zero value otherwise.
+GetInvitedCompany returns the InvitedCompany field if non-nil, zero value otherwise.
 
-### GetInvitedCompanyIdOk
+### GetInvitedCompanyOk
 
-`func (o *BTExternalConnectionInfo) GetInvitedCompanyIdOk() (*string, bool)`
+`func (o *BTExternalConnectionInfo) GetInvitedCompanyOk() (*BTCompanySummaryInfo, bool)`
 
-GetInvitedCompanyIdOk returns a tuple with the InvitedCompanyId field if it's non-nil, zero value otherwise
+GetInvitedCompanyOk returns a tuple with the InvitedCompany field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInvitedCompanyId
+### SetInvitedCompany
 
-`func (o *BTExternalConnectionInfo) SetInvitedCompanyId(v string)`
+`func (o *BTExternalConnectionInfo) SetInvitedCompany(v BTCompanySummaryInfo)`
 
-SetInvitedCompanyId sets InvitedCompanyId field to given value.
+SetInvitedCompany sets InvitedCompany field to given value.
 
-### HasInvitedCompanyId
+### HasInvitedCompany
 
-`func (o *BTExternalConnectionInfo) HasInvitedCompanyId() bool`
+`func (o *BTExternalConnectionInfo) HasInvitedCompany() bool`
 
-HasInvitedCompanyId returns a boolean if a field has been set.
+HasInvitedCompany returns a boolean if a field has been set.
 
 ### GetMember
 
@@ -128,6 +155,31 @@ SetMember sets Member field to given value.
 `func (o *BTExternalConnectionInfo) HasMember() bool`
 
 HasMember returns a boolean if a field has been set.
+
+### GetNumberOfMembers
+
+`func (o *BTExternalConnectionInfo) GetNumberOfMembers() int64`
+
+GetNumberOfMembers returns the NumberOfMembers field if non-nil, zero value otherwise.
+
+### GetNumberOfMembersOk
+
+`func (o *BTExternalConnectionInfo) GetNumberOfMembersOk() (*int64, bool)`
+
+GetNumberOfMembersOk returns a tuple with the NumberOfMembers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfMembers
+
+`func (o *BTExternalConnectionInfo) SetNumberOfMembers(v int64)`
+
+SetNumberOfMembers sets NumberOfMembers field to given value.
+
+### HasNumberOfMembers
+
+`func (o *BTExternalConnectionInfo) HasNumberOfMembers() bool`
+
+HasNumberOfMembers returns a boolean if a field has been set.
 
 ### GetState
 

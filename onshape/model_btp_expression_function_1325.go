@@ -17,23 +17,26 @@ import (
 // BTPExpressionFunction1325 struct for BTPExpressionFunction1325
 type BTPExpressionFunction1325 struct {
 	BTPExpression9
-	BtType              *string                     `json:"btType,omitempty"`
-	Atomic              *bool                       `json:"atomic,omitempty"`
-	DocumentationType   *GBTPDefinitionType         `json:"documentationType,omitempty"`
-	EndSourceLocation   *int32                      `json:"endSourceLocation,omitempty"`
-	NodeId              *string                     `json:"nodeId,omitempty"`
-	ShortDescriptor     *string                     `json:"shortDescriptor,omitempty"`
-	SpaceAfter          *BTPSpace10                 `json:"spaceAfter,omitempty"`
-	SpaceBefore         *BTPSpace10                 `json:"spaceBefore,omitempty"`
-	SpaceDefault        *bool                       `json:"spaceDefault,omitempty"`
-	StartSourceLocation *int32                      `json:"startSourceLocation,omitempty"`
-	Arguments           []BTPArgumentDeclaration232 `json:"arguments,omitempty"`
-	Body                *BTPStatementBlock271       `json:"body,omitempty"`
-	Precondition        *BTPStatement269            `json:"precondition,omitempty"`
-	ReturnType          *BTPTypeName290             `json:"returnType,omitempty"`
-	SpaceAfterArglist   *BTPSpace10                 `json:"spaceAfterArglist,omitempty"`
-	SpaceAfterFunction  *BTPSpace10                 `json:"spaceAfterFunction,omitempty"`
-	SpaceInEmptyList    *BTPSpace10                 `json:"spaceInEmptyList,omitempty"`
+	BtType               *string                     `json:"btType,omitempty"`
+	Atomic               *bool                       `json:"atomic,omitempty"`
+	DocumentationType    *GBTPDefinitionType         `json:"documentationType,omitempty"`
+	EndSourceLocation    *int32                      `json:"endSourceLocation,omitempty"`
+	NodeId               *string                     `json:"nodeId,omitempty"`
+	ShortDescriptor      *string                     `json:"shortDescriptor,omitempty"`
+	SpaceAfter           *BTPSpace10                 `json:"spaceAfter,omitempty"`
+	SpaceBefore          *BTPSpace10                 `json:"spaceBefore,omitempty"`
+	SpaceDefault         *bool                       `json:"spaceDefault,omitempty"`
+	StartSourceLocation  *int32                      `json:"startSourceLocation,omitempty"`
+	Arguments            []BTPArgumentDeclaration232 `json:"arguments,omitempty"`
+	Body                 *BTPStatementBlock271       `json:"body,omitempty"`
+	Expression           *BTPExpression9             `json:"expression,omitempty"`
+	IsLambda             *bool                       `json:"isLambda,omitempty"`
+	IsLambdaWithNoParens *bool                       `json:"isLambdaWithNoParens,omitempty"`
+	Precondition         *BTPStatement269            `json:"precondition,omitempty"`
+	ReturnType           *BTPTypeName290             `json:"returnType,omitempty"`
+	SpaceAfterArglist    *BTPSpace10                 `json:"spaceAfterArglist,omitempty"`
+	SpaceAfterFunction   *BTPSpace10                 `json:"spaceAfterFunction,omitempty"`
+	SpaceInEmptyList     *BTPSpace10                 `json:"spaceInEmptyList,omitempty"`
 }
 
 // NewBTPExpressionFunction1325 instantiates a new BTPExpressionFunction1325 object
@@ -437,6 +440,102 @@ func (o *BTPExpressionFunction1325) SetBody(v BTPStatementBlock271) {
 	o.Body = &v
 }
 
+// GetExpression returns the Expression field value if set, zero value otherwise.
+func (o *BTPExpressionFunction1325) GetExpression() BTPExpression9 {
+	if o == nil || o.Expression == nil {
+		var ret BTPExpression9
+		return ret
+	}
+	return *o.Expression
+}
+
+// GetExpressionOk returns a tuple with the Expression field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpressionFunction1325) GetExpressionOk() (*BTPExpression9, bool) {
+	if o == nil || o.Expression == nil {
+		return nil, false
+	}
+	return o.Expression, true
+}
+
+// HasExpression returns a boolean if a field has been set.
+func (o *BTPExpressionFunction1325) HasExpression() bool {
+	if o != nil && o.Expression != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExpression gets a reference to the given BTPExpression9 and assigns it to the Expression field.
+func (o *BTPExpressionFunction1325) SetExpression(v BTPExpression9) {
+	o.Expression = &v
+}
+
+// GetIsLambda returns the IsLambda field value if set, zero value otherwise.
+func (o *BTPExpressionFunction1325) GetIsLambda() bool {
+	if o == nil || o.IsLambda == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsLambda
+}
+
+// GetIsLambdaOk returns a tuple with the IsLambda field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpressionFunction1325) GetIsLambdaOk() (*bool, bool) {
+	if o == nil || o.IsLambda == nil {
+		return nil, false
+	}
+	return o.IsLambda, true
+}
+
+// HasIsLambda returns a boolean if a field has been set.
+func (o *BTPExpressionFunction1325) HasIsLambda() bool {
+	if o != nil && o.IsLambda != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsLambda gets a reference to the given bool and assigns it to the IsLambda field.
+func (o *BTPExpressionFunction1325) SetIsLambda(v bool) {
+	o.IsLambda = &v
+}
+
+// GetIsLambdaWithNoParens returns the IsLambdaWithNoParens field value if set, zero value otherwise.
+func (o *BTPExpressionFunction1325) GetIsLambdaWithNoParens() bool {
+	if o == nil || o.IsLambdaWithNoParens == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsLambdaWithNoParens
+}
+
+// GetIsLambdaWithNoParensOk returns a tuple with the IsLambdaWithNoParens field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPExpressionFunction1325) GetIsLambdaWithNoParensOk() (*bool, bool) {
+	if o == nil || o.IsLambdaWithNoParens == nil {
+		return nil, false
+	}
+	return o.IsLambdaWithNoParens, true
+}
+
+// HasIsLambdaWithNoParens returns a boolean if a field has been set.
+func (o *BTPExpressionFunction1325) HasIsLambdaWithNoParens() bool {
+	if o != nil && o.IsLambdaWithNoParens != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsLambdaWithNoParens gets a reference to the given bool and assigns it to the IsLambdaWithNoParens field.
+func (o *BTPExpressionFunction1325) SetIsLambdaWithNoParens(v bool) {
+	o.IsLambdaWithNoParens = &v
+}
+
 // GetPrecondition returns the Precondition field value if set, zero value otherwise.
 func (o *BTPExpressionFunction1325) GetPrecondition() BTPStatement269 {
 	if o == nil || o.Precondition == nil {
@@ -642,6 +741,15 @@ func (o BTPExpressionFunction1325) MarshalJSON() ([]byte, error) {
 	}
 	if o.Body != nil {
 		toSerialize["body"] = o.Body
+	}
+	if o.Expression != nil {
+		toSerialize["expression"] = o.Expression
+	}
+	if o.IsLambda != nil {
+		toSerialize["isLambda"] = o.IsLambda
+	}
+	if o.IsLambdaWithNoParens != nil {
+		toSerialize["isLambdaWithNoParens"] = o.IsLambdaWithNoParens
 	}
 	if o.Precondition != nil {
 		toSerialize["precondition"] = o.Precondition

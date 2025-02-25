@@ -25,6 +25,7 @@ type BTWorkflowableObjectObserver struct {
 	CompanyId        *string                      `json:"companyId,omitempty"`
 	CreatedAt        *JSONTime                    `json:"createdAt,omitempty"`
 	CreatedBy        *string                      `json:"createdBy,omitempty"`
+	CreatorOverride  *bool                        `json:"creatorOverride,omitempty"`
 	Description      *string                      `json:"description,omitempty"`
 	EntryId          *string                      `json:"entryId,omitempty"`
 	EntryType        *BTWorkflowObserverEntryType `json:"entryType,omitempty"`
@@ -343,6 +344,38 @@ func (o *BTWorkflowableObjectObserver) HasCreatedBy() bool {
 // SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
 func (o *BTWorkflowableObjectObserver) SetCreatedBy(v string) {
 	o.CreatedBy = &v
+}
+
+// GetCreatorOverride returns the CreatorOverride field value if set, zero value otherwise.
+func (o *BTWorkflowableObjectObserver) GetCreatorOverride() bool {
+	if o == nil || o.CreatorOverride == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CreatorOverride
+}
+
+// GetCreatorOverrideOk returns a tuple with the CreatorOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowableObjectObserver) GetCreatorOverrideOk() (*bool, bool) {
+	if o == nil || o.CreatorOverride == nil {
+		return nil, false
+	}
+	return o.CreatorOverride, true
+}
+
+// HasCreatorOverride returns a boolean if a field has been set.
+func (o *BTWorkflowableObjectObserver) HasCreatorOverride() bool {
+	if o != nil && o.CreatorOverride != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatorOverride gets a reference to the given bool and assigns it to the CreatorOverride field.
+func (o *BTWorkflowableObjectObserver) SetCreatorOverride(v bool) {
+	o.CreatorOverride = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -789,6 +822,9 @@ func (o BTWorkflowableObjectObserver) MarshalJSON() ([]byte, error) {
 	}
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
+	}
+	if o.CreatorOverride != nil {
+		toSerialize["creatorOverride"] = o.CreatorOverride
 	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description

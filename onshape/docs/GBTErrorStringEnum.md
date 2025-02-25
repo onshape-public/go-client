@@ -3231,6 +3231,14 @@
 
 * `GBTErrorStringEnumTwoTabMateconnectorsNeeded` (value: `"TWO_TAB_MATECONNECTORS_NEEDED"`)
 
+* `GBTErrorStringEnumFormedTagFormOriginOutsideToolsBbox` (value: `"FORMED_TAG_FORM_ORIGIN_OUTSIDE_TOOLS_BBOX"`)
+
+* `GBTErrorStringEnumFormedToolsIntersectCannotCut` (value: `"FORMED_TOOLS_INTERSECT_CANNOT_CUT"`)
+
+* `GBTErrorStringEnumSketchPatternNeedsSeed` (value: `"SKETCH_PATTERN_NEEDS_SEED"`)
+
+* `GBTErrorStringEnumWrapNeedsDifferentAnchor` (value: `"WRAP_NEEDS_DIFFERENT_ANCHOR"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

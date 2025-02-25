@@ -44,6 +44,7 @@ type BTCloudStorageAccountInfo struct {
 	Enabled               *bool                     `json:"enabled,omitempty"`
 	ExportFolder          *BTCloudStorageObjectInfo `json:"exportFolder,omitempty"`
 	ImportFolder          *BTCloudStorageObjectInfo `json:"importFolder,omitempty"`
+	LastAuthenticated     *JSONTime                 `json:"lastAuthenticated,omitempty"`
 }
 
 // NewBTCloudStorageAccountInfo instantiates a new BTCloudStorageAccountInfo object
@@ -824,6 +825,38 @@ func (o *BTCloudStorageAccountInfo) SetImportFolder(v BTCloudStorageObjectInfo) 
 	o.ImportFolder = &v
 }
 
+// GetLastAuthenticated returns the LastAuthenticated field value if set, zero value otherwise.
+func (o *BTCloudStorageAccountInfo) GetLastAuthenticated() JSONTime {
+	if o == nil || o.LastAuthenticated == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.LastAuthenticated
+}
+
+// GetLastAuthenticatedOk returns a tuple with the LastAuthenticated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCloudStorageAccountInfo) GetLastAuthenticatedOk() (*JSONTime, bool) {
+	if o == nil || o.LastAuthenticated == nil {
+		return nil, false
+	}
+	return o.LastAuthenticated, true
+}
+
+// HasLastAuthenticated returns a boolean if a field has been set.
+func (o *BTCloudStorageAccountInfo) HasLastAuthenticated() bool {
+	if o != nil && o.LastAuthenticated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLastAuthenticated gets a reference to the given JSONTime and assigns it to the LastAuthenticated field.
+func (o *BTCloudStorageAccountInfo) SetLastAuthenticated(v JSONTime) {
+	o.LastAuthenticated = &v
+}
+
 func (o BTCloudStorageAccountInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
@@ -897,6 +930,9 @@ func (o BTCloudStorageAccountInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImportFolder != nil {
 		toSerialize["importFolder"] = o.ImportFolder
+	}
+	if o.LastAuthenticated != nil {
+		toSerialize["lastAuthenticated"] = o.LastAuthenticated
 	}
 	return json.Marshal(toSerialize)
 }

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **AllFeaturesAndSubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **ChildNodeIdToIndex** | Pointer to **map[string]int32** |  | [optional] 
+**ConfigurableTreeNodes** | Pointer to [**[]BTConfigurableTreeNode**](BTConfigurableTreeNode.md) |  | [optional] 
 **ConfigurationData** | Pointer to [**BTMConfigurationData1560**](BTMConfigurationData1560.md) |  | [optional] 
 **Configured** | Pointer to **bool** |  | [optional] 
 **DeepImports** | Pointer to [**map[string][]BTImport**](array.md) |  | [optional] 
@@ -172,6 +173,31 @@ SetChildNodeIdToIndex sets ChildNodeIdToIndex field to given value.
 `func (o *BTMModel141AllOf) HasChildNodeIdToIndex() bool`
 
 HasChildNodeIdToIndex returns a boolean if a field has been set.
+
+### GetConfigurableTreeNodes
+
+`func (o *BTMModel141AllOf) GetConfigurableTreeNodes() []BTConfigurableTreeNode`
+
+GetConfigurableTreeNodes returns the ConfigurableTreeNodes field if non-nil, zero value otherwise.
+
+### GetConfigurableTreeNodesOk
+
+`func (o *BTMModel141AllOf) GetConfigurableTreeNodesOk() (*[]BTConfigurableTreeNode, bool)`
+
+GetConfigurableTreeNodesOk returns a tuple with the ConfigurableTreeNodes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigurableTreeNodes
+
+`func (o *BTMModel141AllOf) SetConfigurableTreeNodes(v []BTConfigurableTreeNode)`
+
+SetConfigurableTreeNodes sets ConfigurableTreeNodes field to given value.
+
+### HasConfigurableTreeNodes
+
+`func (o *BTMModel141AllOf) HasConfigurableTreeNodes() bool`
+
+HasConfigurableTreeNodes returns a boolean if a field has been set.
 
 ### GetConfigurationData
 

@@ -25,6 +25,11 @@ func (o *BTSMSpecificMetadata1315) AsBTDomainSpecificMetadata961() *BTDomainSpec
 	return &BTDomainSpecificMetadata961{o}
 }
 
+// BTCosmeticThreadMetadata3248AsBTDomainSpecificMetadata961 is a convenience function that returns BTCosmeticThreadMetadata3248 wrapped in BTDomainSpecificMetadata961
+func (o *BTCosmeticThreadMetadata3248) AsBTDomainSpecificMetadata961() *BTDomainSpecificMetadata961 {
+	return &BTDomainSpecificMetadata961{o}
+}
+
 // NewBTDomainSpecificMetadata961 instantiates a new BTDomainSpecificMetadata961 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -100,6 +105,20 @@ func (dst *BTDomainSpecificMetadata961) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'BTCosmeticThreadMetadata-3248'
+	if jsonDict["btType"] == "BTCosmeticThreadMetadata-3248" {
+		// try to unmarshal JSON data into BTCosmeticThreadMetadata3248
+		var qr *BTCosmeticThreadMetadata3248
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTDomainSpecificMetadata961 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTDomainSpecificMetadata961 = nil
+			return fmt.Errorf("failed to unmarshal BTDomainSpecificMetadata961 as BTCosmeticThreadMetadata3248: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTSMSpecificMetadata-1315'
