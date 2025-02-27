@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.194.51323-fb9fedbbe2b0",
+    "version" : "1.194.51378-ebb720ac4b52",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green.svg",
       "backgroundColor" : "#ffffff",
@@ -43985,6 +43985,9 @@
           "id" : {
             "type" : "string",
             "description" : "Id of the resource."
+          },
+          "independentCADRevisions" : {
+            "type" : "boolean"
           },
           "isObsoletion" : {
             "type" : "boolean"
