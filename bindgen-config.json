@@ -177,6 +177,11 @@
       {
         "key": "components.schemas.BTGlobalTreeNodeListResponseBTTeamInfo.properties.items.properties",
         "type": "remove"
+      },
+      {
+        "key": "components.schemas.GBTStlEncodingType.default",
+        "type": "update",
+        "value": "GBTStlEncodingTypeText"
       }
     ]
   }
