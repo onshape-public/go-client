@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **FeatureFolder** | Pointer to **bool** |  | [optional] 
 **FeatureListFieldIndex** | Pointer to **int32** |  | [optional] 
 **FieldIndexForOwnedMateConnectors** | Pointer to **int32** |  | [optional] 
+**MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
 **ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
@@ -156,6 +157,31 @@ SetFieldIndexForOwnedMateConnectors sets FieldIndexForOwnedMateConnectors field 
 `func (o *BTMAssemblyFeature887) HasFieldIndexForOwnedMateConnectors() bool`
 
 HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+
+### GetMateConnectors
+
+`func (o *BTMAssemblyFeature887) GetMateConnectors() []BTMMateConnector66`
+
+GetMateConnectors returns the MateConnectors field if non-nil, zero value otherwise.
+
+### GetMateConnectorsOk
+
+`func (o *BTMAssemblyFeature887) GetMateConnectorsOk() (*[]BTMMateConnector66, bool)`
+
+GetMateConnectorsOk returns a tuple with the MateConnectors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMateConnectors
+
+`func (o *BTMAssemblyFeature887) SetMateConnectors(v []BTMMateConnector66)`
+
+SetMateConnectors sets MateConnectors field to given value.
+
+### HasMateConnectors
+
+`func (o *BTMAssemblyFeature887) HasMateConnectors() bool`
+
+HasMateConnectors returns a boolean if a field has been set.
 
 ### GetOccurrenceQueriesFromAllConfigurations
 

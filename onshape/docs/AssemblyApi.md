@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**GetExplodedViews**](AssemblyApi.md#GetExplodedViews) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/explodedviews | Get a list of exploded views for the specified assembly.
 [**GetFeatureSpecs**](AssemblyApi.md#GetFeatureSpecs) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/featurespecs | Get the feature spec definitions for an assembly.
 [**GetFeatures**](AssemblyApi.md#GetFeatures) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Get the definitions of the specified features in an assembly.
-[**GetMateValues**](AssemblyApi.md#GetMateValues) | **Get** /assemblies/d/{did}/w/{wid}/e/{eid}/matevalues | Get a list of mate values in the specified assembly.
+[**GetMateValues**](AssemblyApi.md#GetMateValues) | **Get** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/matevalues | Get a list of mate values in the specified assembly.
 [**GetNamedPositions**](AssemblyApi.md#GetNamedPositions) | **Get** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/namedpositions | Get a list of all named positions for the assembly.
 [**GetNamedViews**](AssemblyApi.md#GetNamedViews) | **Get** /assemblies/d/{did}/e/{eid}/namedViews | Get the view data for all named views for the specified element.
 [**GetOrCreateBillOfMaterialsElement**](AssemblyApi.md#GetOrCreateBillOfMaterialsElement) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/bomelement | Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.
@@ -1218,7 +1218,7 @@ Name | Type | Description  | Notes
 
 ## GetMateValues
 
-> BTAssemblyMateValuesInfo GetMateValues(ctx, did, wid, eid).Execute()
+> BTAssemblyMateValuesInfo GetMateValues(ctx, did, wv, wvid, eid).Execute()
 
 Get a list of mate values in the specified assembly.
 
@@ -1238,12 +1238,13 @@ import (
 
 func main() {
     did := "did_example" // string | 
-    wid := "wid_example" // string | 
+    wv := "wv_example" // string | 
+    wvid := "wvid_example" // string | 
     eid := "eid_example" // string | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.AssemblyApi.GetMateValues(context.Background(), did, wid, eid).Execute()
+    resp, r, err := apiClient.AssemblyApi.GetMateValues(context.Background(), did, wv, wvid, eid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.GetMateValues``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1260,7 +1261,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **did** | **string** |  | 
-**wid** | **string** |  | 
+**wv** | **string** |  | 
+**wvid** | **string** |  | 
 **eid** | **string** |  | 
 
 ### Other Parameters
@@ -1270,6 +1272,7 @@ Other parameters are passed through a pointer to a apiGetMateValuesRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
 
 
 

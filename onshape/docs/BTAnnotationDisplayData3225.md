@@ -4,13 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AnnotationPlane** | Pointer to **[]float32** |  | [optional] 
-**BaseNormal** | Pointer to **[]float32** |  | [optional] 
-**BasePoint** | Pointer to **[]float32** |  | [optional] 
+**AnnotationPlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
+**BasePlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DeterministicId** | Pointer to **string** |  | [optional] 
-**DxdySegments** | Pointer to **[]float32** |  | [optional] 
-**NumberOfLeaderSegements** | Pointer to **int32** |  | [optional] 
+**DxdySegments** | Pointer to [**[]BTVector2d1812**](BTVector2d1812.md) |  | [optional] 
 
 ## Methods
 
@@ -33,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAnnotationPlane
 
-`func (o *BTAnnotationDisplayData3225) GetAnnotationPlane() []float32`
+`func (o *BTAnnotationDisplayData3225) GetAnnotationPlane() BTCoordinateSystem387`
 
 GetAnnotationPlane returns the AnnotationPlane field if non-nil, zero value otherwise.
 
 ### GetAnnotationPlaneOk
 
-`func (o *BTAnnotationDisplayData3225) GetAnnotationPlaneOk() (*[]float32, bool)`
+`func (o *BTAnnotationDisplayData3225) GetAnnotationPlaneOk() (*BTCoordinateSystem387, bool)`
 
 GetAnnotationPlaneOk returns a tuple with the AnnotationPlane field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAnnotationPlane
 
-`func (o *BTAnnotationDisplayData3225) SetAnnotationPlane(v []float32)`
+`func (o *BTAnnotationDisplayData3225) SetAnnotationPlane(v BTCoordinateSystem387)`
 
 SetAnnotationPlane sets AnnotationPlane field to given value.
 
@@ -56,55 +54,30 @@ SetAnnotationPlane sets AnnotationPlane field to given value.
 
 HasAnnotationPlane returns a boolean if a field has been set.
 
-### GetBaseNormal
+### GetBasePlane
 
-`func (o *BTAnnotationDisplayData3225) GetBaseNormal() []float32`
+`func (o *BTAnnotationDisplayData3225) GetBasePlane() BTCoordinateSystem387`
 
-GetBaseNormal returns the BaseNormal field if non-nil, zero value otherwise.
+GetBasePlane returns the BasePlane field if non-nil, zero value otherwise.
 
-### GetBaseNormalOk
+### GetBasePlaneOk
 
-`func (o *BTAnnotationDisplayData3225) GetBaseNormalOk() (*[]float32, bool)`
+`func (o *BTAnnotationDisplayData3225) GetBasePlaneOk() (*BTCoordinateSystem387, bool)`
 
-GetBaseNormalOk returns a tuple with the BaseNormal field if it's non-nil, zero value otherwise
+GetBasePlaneOk returns a tuple with the BasePlane field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBaseNormal
+### SetBasePlane
 
-`func (o *BTAnnotationDisplayData3225) SetBaseNormal(v []float32)`
+`func (o *BTAnnotationDisplayData3225) SetBasePlane(v BTCoordinateSystem387)`
 
-SetBaseNormal sets BaseNormal field to given value.
+SetBasePlane sets BasePlane field to given value.
 
-### HasBaseNormal
+### HasBasePlane
 
-`func (o *BTAnnotationDisplayData3225) HasBaseNormal() bool`
+`func (o *BTAnnotationDisplayData3225) HasBasePlane() bool`
 
-HasBaseNormal returns a boolean if a field has been set.
-
-### GetBasePoint
-
-`func (o *BTAnnotationDisplayData3225) GetBasePoint() []float32`
-
-GetBasePoint returns the BasePoint field if non-nil, zero value otherwise.
-
-### GetBasePointOk
-
-`func (o *BTAnnotationDisplayData3225) GetBasePointOk() (*[]float32, bool)`
-
-GetBasePointOk returns a tuple with the BasePoint field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBasePoint
-
-`func (o *BTAnnotationDisplayData3225) SetBasePoint(v []float32)`
-
-SetBasePoint sets BasePoint field to given value.
-
-### HasBasePoint
-
-`func (o *BTAnnotationDisplayData3225) HasBasePoint() bool`
-
-HasBasePoint returns a boolean if a field has been set.
+HasBasePlane returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -158,20 +131,20 @@ HasDeterministicId returns a boolean if a field has been set.
 
 ### GetDxdySegments
 
-`func (o *BTAnnotationDisplayData3225) GetDxdySegments() []float32`
+`func (o *BTAnnotationDisplayData3225) GetDxdySegments() []BTVector2d1812`
 
 GetDxdySegments returns the DxdySegments field if non-nil, zero value otherwise.
 
 ### GetDxdySegmentsOk
 
-`func (o *BTAnnotationDisplayData3225) GetDxdySegmentsOk() (*[]float32, bool)`
+`func (o *BTAnnotationDisplayData3225) GetDxdySegmentsOk() (*[]BTVector2d1812, bool)`
 
 GetDxdySegmentsOk returns a tuple with the DxdySegments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDxdySegments
 
-`func (o *BTAnnotationDisplayData3225) SetDxdySegments(v []float32)`
+`func (o *BTAnnotationDisplayData3225) SetDxdySegments(v []BTVector2d1812)`
 
 SetDxdySegments sets DxdySegments field to given value.
 
@@ -180,31 +153,6 @@ SetDxdySegments sets DxdySegments field to given value.
 `func (o *BTAnnotationDisplayData3225) HasDxdySegments() bool`
 
 HasDxdySegments returns a boolean if a field has been set.
-
-### GetNumberOfLeaderSegements
-
-`func (o *BTAnnotationDisplayData3225) GetNumberOfLeaderSegements() int32`
-
-GetNumberOfLeaderSegements returns the NumberOfLeaderSegements field if non-nil, zero value otherwise.
-
-### GetNumberOfLeaderSegementsOk
-
-`func (o *BTAnnotationDisplayData3225) GetNumberOfLeaderSegementsOk() (*int32, bool)`
-
-GetNumberOfLeaderSegementsOk returns a tuple with the NumberOfLeaderSegements field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNumberOfLeaderSegements
-
-`func (o *BTAnnotationDisplayData3225) SetNumberOfLeaderSegements(v int32)`
-
-SetNumberOfLeaderSegements sets NumberOfLeaderSegements field to given value.
-
-### HasNumberOfLeaderSegements
-
-`func (o *BTAnnotationDisplayData3225) HasNumberOfLeaderSegements() bool`
-
-HasNumberOfLeaderSegements returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

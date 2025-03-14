@@ -242,6 +242,56 @@ func (o *BTParameterSpecMultiEnum3118) SetDefaultValue(v BTMParameter1) {
 	o.GetActualInstance().(getResult).SetDefaultValue(v)
 }
 
+// GetEnumOptions returns the EnumOptions field value if set, zero value otherwise.
+func (o *BTParameterSpecMultiEnum3118) GetEnumOptions() []string {
+	type getResult interface {
+		GetEnumOptions() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnumOptions()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetEnumOptionsOk returns a tuple with the EnumOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecMultiEnum3118) GetEnumOptionsOk() ([]string, bool) {
+	type getResult interface {
+		GetEnumOptionsOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnumOptionsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEnumOptions returns a boolean if a field has been set.
+func (o *BTParameterSpecMultiEnum3118) HasEnumOptions() bool {
+	type getResult interface {
+		HasEnumOptions() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEnumOptions()
+	} else {
+		return false
+	}
+}
+
+// SetEnumOptions gets a reference to the given []string and assigns it to the EnumOptions field.
+func (o *BTParameterSpecMultiEnum3118) SetEnumOptions(v []string) {
+	type getResult interface {
+		SetEnumOptions(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetEnumOptions(v)
+}
+
 // GetIconUri returns the IconUri field value if set, zero value otherwise.
 func (o *BTParameterSpecMultiEnum3118) GetIconUri() string {
 	type getResult interface {
@@ -1187,6 +1237,7 @@ type base_BTParameterSpecMultiEnum3118 struct {
 	BtType                         *string                                       `json:"btType,omitempty"`
 	ColumnName                     *string                                       `json:"columnName,omitempty"`
 	DefaultValue                   *BTMParameter1                                `json:"defaultValue,omitempty"`
+	EnumOptions                    []string                                      `json:"enumOptions,omitempty"`
 	IconUri                        *string                                       `json:"iconUri,omitempty"`
 	LocalizableName                *string                                       `json:"localizableName,omitempty"`
 	LocalizedName                  *string                                       `json:"localizedName,omitempty"`
@@ -1349,6 +1400,38 @@ func (o *base_BTParameterSpecMultiEnum3118) HasDefaultValue() bool {
 // SetDefaultValue gets a reference to the given BTMParameter1 and assigns it to the DefaultValue field.
 func (o *base_BTParameterSpecMultiEnum3118) SetDefaultValue(v BTMParameter1) {
 	o.DefaultValue = &v
+}
+
+// GetEnumOptions returns the EnumOptions field value if set, zero value otherwise.
+func (o *base_BTParameterSpecMultiEnum3118) GetEnumOptions() []string {
+	if o == nil || o.EnumOptions == nil {
+		var ret []string
+		return ret
+	}
+	return o.EnumOptions
+}
+
+// GetEnumOptionsOk returns a tuple with the EnumOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterSpecMultiEnum3118) GetEnumOptionsOk() ([]string, bool) {
+	if o == nil || o.EnumOptions == nil {
+		return nil, false
+	}
+	return o.EnumOptions, true
+}
+
+// HasEnumOptions returns a boolean if a field has been set.
+func (o *base_BTParameterSpecMultiEnum3118) HasEnumOptions() bool {
+	if o != nil && o.EnumOptions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnumOptions gets a reference to the given []string and assigns it to the EnumOptions field.
+func (o *base_BTParameterSpecMultiEnum3118) SetEnumOptions(v []string) {
+	o.EnumOptions = v
 }
 
 // GetIconUri returns the IconUri field value if set, zero value otherwise.
@@ -1916,6 +1999,9 @@ func (o base_BTParameterSpecMultiEnum3118) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultValue != nil {
 		toSerialize["defaultValue"] = o.DefaultValue
+	}
+	if o.EnumOptions != nil {
+		toSerialize["enumOptions"] = o.EnumOptions
 	}
 	if o.IconUri != nil {
 		toSerialize["iconUri"] = o.IconUri

@@ -1,0 +1,108 @@
+# BTMParameterIcon460
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**Icon** | Pointer to **string** |  | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
+
+## Methods
+
+### NewBTMParameterIcon460
+
+`func NewBTMParameterIcon460() *BTMParameterIcon460`
+
+NewBTMParameterIcon460 instantiates a new BTMParameterIcon460 object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewBTMParameterIcon460WithDefaults
+
+`func NewBTMParameterIcon460WithDefaults() *BTMParameterIcon460`
+
+NewBTMParameterIcon460WithDefaults instantiates a new BTMParameterIcon460 object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetBtType
+
+`func (o *BTMParameterIcon460) GetBtType() string`
+
+GetBtType returns the BtType field if non-nil, zero value otherwise.
+
+### GetBtTypeOk
+
+`func (o *BTMParameterIcon460) GetBtTypeOk() (*string, bool)`
+
+GetBtTypeOk returns a tuple with the BtType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBtType
+
+`func (o *BTMParameterIcon460) SetBtType(v string)`
+
+SetBtType sets BtType field to given value.
+
+### HasBtType
+
+`func (o *BTMParameterIcon460) HasBtType() bool`
+
+HasBtType returns a boolean if a field has been set.
+
+### GetIcon
+
+`func (o *BTMParameterIcon460) GetIcon() string`
+
+GetIcon returns the Icon field if non-nil, zero value otherwise.
+
+### GetIconOk
+
+`func (o *BTMParameterIcon460) GetIconOk() (*string, bool)`
+
+GetIconOk returns a tuple with the Icon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIcon
+
+`func (o *BTMParameterIcon460) SetIcon(v string)`
+
+SetIcon sets Icon field to given value.
+
+### HasIcon
+
+`func (o *BTMParameterIcon460) HasIcon() bool`
+
+HasIcon returns a boolean if a field has been set.
+
+### GetLabel
+
+`func (o *BTMParameterIcon460) GetLabel() string`
+
+GetLabel returns the Label field if non-nil, zero value otherwise.
+
+### GetLabelOk
+
+`func (o *BTMParameterIcon460) GetLabelOk() (*string, bool)`
+
+GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLabel
+
+`func (o *BTMParameterIcon460) SetLabel(v string)`
+
+SetLabel sets Label field to given value.
+
+### HasLabel
+
+`func (o *BTMParameterIcon460) HasLabel() bool`
+
+HasLabel returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

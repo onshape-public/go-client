@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**IsoFlip** | Pointer to **bool** |  | [optional] 
 **JointType** | Pointer to [**GBTWeldJointType**](GBTWeldJointType.md) |  | [optional] 
 **LowerGroove** | Pointer to **float64** |  | [optional] 
 **LowerRootOpening** | Pointer to **float64** |  | [optional] 
@@ -65,6 +66,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTAnnotationWeldDisplayData4919AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetIsoFlip
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetIsoFlip() bool`
+
+GetIsoFlip returns the IsoFlip field if non-nil, zero value otherwise.
+
+### GetIsoFlipOk
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetIsoFlipOk() (*bool, bool)`
+
+GetIsoFlipOk returns a tuple with the IsoFlip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsoFlip
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) SetIsoFlip(v bool)`
+
+SetIsoFlip sets IsoFlip field to given value.
+
+### HasIsoFlip
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) HasIsoFlip() bool`
+
+HasIsoFlip returns a boolean if a field has been set.
 
 ### GetJointType
 

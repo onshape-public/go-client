@@ -19,7 +19,9 @@ type BTAnnotationGTolRowDisplayData4397 struct {
 	// Type of JSON object.
 	BtType         *string                `json:"btType,omitempty"`
 	ConstraintType *GBTGTolConstraintType `json:"constraintType,omitempty"`
+	Prefix         *string                `json:"prefix,omitempty"`
 	References     []string               `json:"references,omitempty"`
+	Suffix         *string                `json:"suffix,omitempty"`
 	Tolerance      *float64               `json:"tolerance,omitempty"`
 }
 
@@ -104,6 +106,38 @@ func (o *BTAnnotationGTolRowDisplayData4397) SetConstraintType(v GBTGTolConstrai
 	o.ConstraintType = &v
 }
 
+// GetPrefix returns the Prefix field value if set, zero value otherwise.
+func (o *BTAnnotationGTolRowDisplayData4397) GetPrefix() string {
+	if o == nil || o.Prefix == nil {
+		var ret string
+		return ret
+	}
+	return *o.Prefix
+}
+
+// GetPrefixOk returns a tuple with the Prefix field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) GetPrefixOk() (*string, bool) {
+	if o == nil || o.Prefix == nil {
+		return nil, false
+	}
+	return o.Prefix, true
+}
+
+// HasPrefix returns a boolean if a field has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) HasPrefix() bool {
+	if o != nil && o.Prefix != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrefix gets a reference to the given string and assigns it to the Prefix field.
+func (o *BTAnnotationGTolRowDisplayData4397) SetPrefix(v string) {
+	o.Prefix = &v
+}
+
 // GetReferences returns the References field value if set, zero value otherwise.
 func (o *BTAnnotationGTolRowDisplayData4397) GetReferences() []string {
 	if o == nil || o.References == nil {
@@ -134,6 +168,38 @@ func (o *BTAnnotationGTolRowDisplayData4397) HasReferences() bool {
 // SetReferences gets a reference to the given []string and assigns it to the References field.
 func (o *BTAnnotationGTolRowDisplayData4397) SetReferences(v []string) {
 	o.References = v
+}
+
+// GetSuffix returns the Suffix field value if set, zero value otherwise.
+func (o *BTAnnotationGTolRowDisplayData4397) GetSuffix() string {
+	if o == nil || o.Suffix == nil {
+		var ret string
+		return ret
+	}
+	return *o.Suffix
+}
+
+// GetSuffixOk returns a tuple with the Suffix field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) GetSuffixOk() (*string, bool) {
+	if o == nil || o.Suffix == nil {
+		return nil, false
+	}
+	return o.Suffix, true
+}
+
+// HasSuffix returns a boolean if a field has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) HasSuffix() bool {
+	if o != nil && o.Suffix != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuffix gets a reference to the given string and assigns it to the Suffix field.
+func (o *BTAnnotationGTolRowDisplayData4397) SetSuffix(v string) {
+	o.Suffix = &v
 }
 
 // GetTolerance returns the Tolerance field value if set, zero value otherwise.
@@ -176,8 +242,14 @@ func (o BTAnnotationGTolRowDisplayData4397) MarshalJSON() ([]byte, error) {
 	if o.ConstraintType != nil {
 		toSerialize["constraintType"] = o.ConstraintType
 	}
+	if o.Prefix != nil {
+		toSerialize["prefix"] = o.Prefix
+	}
 	if o.References != nil {
 		toSerialize["references"] = o.References
+	}
+	if o.Suffix != nil {
+		toSerialize["suffix"] = o.Suffix
 	}
 	if o.Tolerance != nil {
 		toSerialize["tolerance"] = o.Tolerance

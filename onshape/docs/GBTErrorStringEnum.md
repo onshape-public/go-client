@@ -3235,9 +3235,45 @@
 
 * `GBTErrorStringEnumFormedToolsIntersectCannotCut` (value: `"FORMED_TOOLS_INTERSECT_CANNOT_CUT"`)
 
+* `GBTErrorStringEnumRoutingCurveAtLeastTwoDistinctPoints` (value: `"ROUTING_CURVE_AT_LEAST_TWO_DISTINCT_POINTS"`)
+
+* `GBTErrorStringEnumRoutingCurveOrthoPathAlreadyAxisAligned` (value: `"ROUTING_CURVE_ORTHO_PATH_ALREADY_AXIS_ALIGNED"`)
+
+* `GBTErrorStringEnumRoutingCurveInvalidPath` (value: `"ROUTING_CURVE_INVALID_PATH"`)
+
+* `GBTErrorStringEnumRoutingCurveCsvInvalidData` (value: `"ROUTING_CURVE_CSV_INVALID_DATA"`)
+
+* `GBTErrorStringEnumRoutingCurveCsvNotEnoughColumns` (value: `"ROUTING_CURVE_CSV_NOT_ENOUGH_COLUMNS"`)
+
+* `GBTErrorStringEnumExtendToPartFailed` (value: `"EXTEND_TO_PART_FAILED"`)
+
+* `GBTErrorStringEnumExtendOffsetFailed` (value: `"EXTEND_OFFSET_FAILED"`)
+
 * `GBTErrorStringEnumSketchPatternNeedsSeed` (value: `"SKETCH_PATTERN_NEEDS_SEED"`)
 
 * `GBTErrorStringEnumWrapNeedsDifferentAnchor` (value: `"WRAP_NEEDS_DIFFERENT_ANCHOR"`)
+
+* `GBTErrorStringEnumCannotResolvePartStudio` (value: `"CANNOT_RESOLVE_PART_STUDIO"`)
+
+* `GBTErrorStringEnumCannotResolveAssembly` (value: `"CANNOT_RESOLVE_ASSEMBLY"`)
+
+* `GBTErrorStringEnumNoMeshFound` (value: `"NO_MESH_FOUND"`)
+
+* `GBTErrorStringEnumConstrainedSurfaceTooFewPoints` (value: `"CONSTRAINED_SURFACE_TOO_FEW_POINTS"`)
+
+* `GBTErrorStringEnumConstrainedSurfaceBadTolerance` (value: `"CONSTRAINED_SURFACE_BAD_TOLERANCE"`)
+
+* `GBTErrorStringEnumConstrainedSurfaceBadPosition` (value: `"CONSTRAINED_SURFACE_BAD_POSITION"`)
+
+* `GBTErrorStringEnumConstrainedSurfaceFailedTolerance` (value: `"CONSTRAINED_SURFACE_FAILED_TOLERANCE"`)
+
+* `GBTErrorStringEnumConstrainedSurfaceFailed` (value: `"CONSTRAINED_SURFACE_FAILED"`)
+
+* `GBTErrorStringEnumConstrainedSurfaceSelectMesh` (value: `"CONSTRAINED_SURFACE_SELECT_MESH"`)
+
+* `GBTErrorStringEnumRoutingCurveSelectCurve` (value: `"ROUTING_CURVE_SELECT_CURVE"`)
+
+* `GBTErrorStringEnumRoutingCurveAtLeastThreeDistinctPoints` (value: `"ROUTING_CURVE_AT_LEAST_THREE_DISTINCT_POINTS"`)
 
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 

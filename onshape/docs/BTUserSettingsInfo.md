@@ -19,7 +19,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **ImportOptions** | Pointer to **string** |  | [optional] 
 **IsolateHideTransparent** | Pointer to **string** |  | [optional] 
+**IsolateTranslucentMode** | Pointer to **string** |  | [optional] 
 **Locale** | Pointer to **string** |  | [optional] 
+**MakeTransparentTranslucentMode** | Pointer to **string** |  | [optional] 
 **MaterialLibrarySettings** | Pointer to [**BTMaterialLibrarySettingsInfo**](BTMaterialLibrarySettingsInfo.md) |  | [optional] 
 **MiniToolbarSettings** | Pointer to **string** |  | [optional] 
 **MouseActions** | Pointer to **string** |  | [optional] 
@@ -431,6 +433,31 @@ SetIsolateHideTransparent sets IsolateHideTransparent field to given value.
 
 HasIsolateHideTransparent returns a boolean if a field has been set.
 
+### GetIsolateTranslucentMode
+
+`func (o *BTUserSettingsInfo) GetIsolateTranslucentMode() string`
+
+GetIsolateTranslucentMode returns the IsolateTranslucentMode field if non-nil, zero value otherwise.
+
+### GetIsolateTranslucentModeOk
+
+`func (o *BTUserSettingsInfo) GetIsolateTranslucentModeOk() (*string, bool)`
+
+GetIsolateTranslucentModeOk returns a tuple with the IsolateTranslucentMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsolateTranslucentMode
+
+`func (o *BTUserSettingsInfo) SetIsolateTranslucentMode(v string)`
+
+SetIsolateTranslucentMode sets IsolateTranslucentMode field to given value.
+
+### HasIsolateTranslucentMode
+
+`func (o *BTUserSettingsInfo) HasIsolateTranslucentMode() bool`
+
+HasIsolateTranslucentMode returns a boolean if a field has been set.
+
 ### GetLocale
 
 `func (o *BTUserSettingsInfo) GetLocale() string`
@@ -455,6 +482,31 @@ SetLocale sets Locale field to given value.
 `func (o *BTUserSettingsInfo) HasLocale() bool`
 
 HasLocale returns a boolean if a field has been set.
+
+### GetMakeTransparentTranslucentMode
+
+`func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentMode() string`
+
+GetMakeTransparentTranslucentMode returns the MakeTransparentTranslucentMode field if non-nil, zero value otherwise.
+
+### GetMakeTransparentTranslucentModeOk
+
+`func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentModeOk() (*string, bool)`
+
+GetMakeTransparentTranslucentModeOk returns a tuple with the MakeTransparentTranslucentMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMakeTransparentTranslucentMode
+
+`func (o *BTUserSettingsInfo) SetMakeTransparentTranslucentMode(v string)`
+
+SetMakeTransparentTranslucentMode sets MakeTransparentTranslucentMode field to given value.
+
+### HasMakeTransparentTranslucentMode
+
+`func (o *BTUserSettingsInfo) HasMakeTransparentTranslucentMode() bool`
+
+HasMakeTransparentTranslucentMode returns a boolean if a field has been set.
 
 ### GetMaterialLibrarySettings
 

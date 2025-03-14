@@ -23,6 +23,7 @@ type BTTableColumnSpec1967 struct {
 	DefaultColumnWidthValue *int32                    `json:"defaultColumnWidthValue,omitempty"`
 	DefaultHeaderName       *string                   `json:"defaultHeaderName,omitempty"`
 	DefaultTextAlignment    *GBTTableTextAlignment    `json:"defaultTextAlignment,omitempty"`
+	IsExpandable            *bool                     `json:"isExpandable,omitempty"`
 	ReadOnly                *bool                     `json:"readOnly,omitempty"`
 }
 
@@ -235,6 +236,38 @@ func (o *BTTableColumnSpec1967) SetDefaultTextAlignment(v GBTTableTextAlignment)
 	o.DefaultTextAlignment = &v
 }
 
+// GetIsExpandable returns the IsExpandable field value if set, zero value otherwise.
+func (o *BTTableColumnSpec1967) GetIsExpandable() bool {
+	if o == nil || o.IsExpandable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsExpandable
+}
+
+// GetIsExpandableOk returns a tuple with the IsExpandable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableColumnSpec1967) GetIsExpandableOk() (*bool, bool) {
+	if o == nil || o.IsExpandable == nil {
+		return nil, false
+	}
+	return o.IsExpandable, true
+}
+
+// HasIsExpandable returns a boolean if a field has been set.
+func (o *BTTableColumnSpec1967) HasIsExpandable() bool {
+	if o != nil && o.IsExpandable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsExpandable gets a reference to the given bool and assigns it to the IsExpandable field.
+func (o *BTTableColumnSpec1967) SetIsExpandable(v bool) {
+	o.IsExpandable = &v
+}
+
 // GetReadOnly returns the ReadOnly field value if set, zero value otherwise.
 func (o *BTTableColumnSpec1967) GetReadOnly() bool {
 	if o == nil || o.ReadOnly == nil {
@@ -286,6 +319,9 @@ func (o BTTableColumnSpec1967) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultTextAlignment != nil {
 		toSerialize["defaultTextAlignment"] = o.DefaultTextAlignment
+	}
+	if o.IsExpandable != nil {
+		toSerialize["isExpandable"] = o.IsExpandable
 	}
 	if o.ReadOnly != nil {
 		toSerialize["readOnly"] = o.ReadOnly

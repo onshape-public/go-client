@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ColumnName** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
+**EnumOptions** | Pointer to **[]string** |  | [optional] 
 **IconUri** | Pointer to **string** |  | [optional] 
 **LocalizableName** | Pointer to **string** |  | [optional] 
 **LocalizedName** | Pointer to **string** |  | [optional] 
@@ -138,6 +139,31 @@ SetDefaultValue sets DefaultValue field to given value.
 `func (o *BTParameterSpec6) HasDefaultValue() bool`
 
 HasDefaultValue returns a boolean if a field has been set.
+
+### GetEnumOptions
+
+`func (o *BTParameterSpec6) GetEnumOptions() []string`
+
+GetEnumOptions returns the EnumOptions field if non-nil, zero value otherwise.
+
+### GetEnumOptionsOk
+
+`func (o *BTParameterSpec6) GetEnumOptionsOk() (*[]string, bool)`
+
+GetEnumOptionsOk returns a tuple with the EnumOptions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnumOptions
+
+`func (o *BTParameterSpec6) SetEnumOptions(v []string)`
+
+SetEnumOptions sets EnumOptions field to given value.
+
+### HasEnumOptions
+
+`func (o *BTParameterSpec6) HasEnumOptions() bool`
+
+HasEnumOptions returns a boolean if a field has been set.
 
 ### GetIconUri
 

@@ -25,6 +25,11 @@ func (o *BTMParameterStringWithTolerances4286) AsBTMReadOnlyParameter3800() *BTM
 	return &BTMReadOnlyParameter3800{o}
 }
 
+// BTMParameterIcon460AsBTMReadOnlyParameter3800 is a convenience function that returns BTMParameterIcon460 wrapped in BTMReadOnlyParameter3800
+func (o *BTMParameterIcon460) AsBTMReadOnlyParameter3800() *BTMReadOnlyParameter3800 {
+	return &BTMReadOnlyParameter3800{o}
+}
+
 // BTMParameterProgress3232AsBTMReadOnlyParameter3800 is a convenience function that returns BTMParameterProgress3232 wrapped in BTMReadOnlyParameter3800
 func (o *BTMParameterProgress3232) AsBTMReadOnlyParameter3800() *BTMReadOnlyParameter3800 {
 	return &BTMReadOnlyParameter3800{o}
@@ -255,6 +260,20 @@ func (dst *BTMReadOnlyParameter3800) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'BTMParameterIcon-460'
+	if jsonDict["btType"] == "BTMParameterIcon-460" {
+		// try to unmarshal JSON data into BTMParameterIcon460
+		var qr *BTMParameterIcon460
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMReadOnlyParameter3800 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMReadOnlyParameter3800 = nil
+			return fmt.Errorf("failed to unmarshal BTMReadOnlyParameter3800 as BTMParameterIcon460: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTMParameterProgress-3232'

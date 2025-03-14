@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **IsSketchOnly** | Pointer to **bool** |  | [optional] 
 **IsSurface** | Pointer to **bool** |  | [optional] 
 **LatestElementMicroversionId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **ReferenceId** | Pointer to **string** |  | [optional] 
 **ReferenceType** | Pointer to **int32** |  | [optional] 
@@ -350,6 +351,31 @@ SetLatestElementMicroversionId sets LatestElementMicroversionId field to given v
 `func (o *BTAppElementReferenceResolveInfo) HasLatestElementMicroversionId() bool`
 
 HasLatestElementMicroversionId returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTAppElementReferenceResolveInfo) GetPartIdentity() string`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTAppElementReferenceResolveInfo) GetPartIdentityOk() (*string, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTAppElementReferenceResolveInfo) SetPartIdentity(v string)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTAppElementReferenceResolveInfo) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetPartNumber
 

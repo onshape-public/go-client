@@ -30,6 +30,7 @@ type BTAppElementReferenceResolveInfo struct {
 	IsSketchOnly                   *bool                  `json:"isSketchOnly,omitempty"`
 	IsSurface                      *bool                  `json:"isSurface,omitempty"`
 	LatestElementMicroversionId    *string                `json:"latestElementMicroversionId,omitempty"`
+	PartIdentity                   *string                `json:"partIdentity,omitempty"`
 	PartNumber                     *string                `json:"partNumber,omitempty"`
 	ReferenceId                    *string                `json:"referenceId,omitempty"`
 	ReferenceType                  *int32                 `json:"referenceType,omitempty"`
@@ -447,6 +448,38 @@ func (o *BTAppElementReferenceResolveInfo) HasLatestElementMicroversionId() bool
 // SetLatestElementMicroversionId gets a reference to the given string and assigns it to the LatestElementMicroversionId field.
 func (o *BTAppElementReferenceResolveInfo) SetLatestElementMicroversionId(v string) {
 	o.LatestElementMicroversionId = &v
+}
+
+// GetPartIdentity returns the PartIdentity field value if set, zero value otherwise.
+func (o *BTAppElementReferenceResolveInfo) GetPartIdentity() string {
+	if o == nil || o.PartIdentity == nil {
+		var ret string
+		return ret
+	}
+	return *o.PartIdentity
+}
+
+// GetPartIdentityOk returns a tuple with the PartIdentity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAppElementReferenceResolveInfo) GetPartIdentityOk() (*string, bool) {
+	if o == nil || o.PartIdentity == nil {
+		return nil, false
+	}
+	return o.PartIdentity, true
+}
+
+// HasPartIdentity returns a boolean if a field has been set.
+func (o *BTAppElementReferenceResolveInfo) HasPartIdentity() bool {
+	if o != nil && o.PartIdentity != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartIdentity gets a reference to the given string and assigns it to the PartIdentity field.
+func (o *BTAppElementReferenceResolveInfo) SetPartIdentity(v string) {
+	o.PartIdentity = &v
 }
 
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
@@ -966,6 +999,9 @@ func (o BTAppElementReferenceResolveInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.LatestElementMicroversionId != nil {
 		toSerialize["latestElementMicroversionId"] = o.LatestElementMicroversionId
+	}
+	if o.PartIdentity != nil {
+		toSerialize["partIdentity"] = o.PartIdentity
 	}
 	if o.PartNumber != nil {
 		toSerialize["partNumber"] = o.PartNumber

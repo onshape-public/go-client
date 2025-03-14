@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApplicationOwnerType** | Pointer to **int32** |  | [optional] 
 **ClientId** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
@@ -30,6 +31,31 @@ will change when the set of required properties is changed
 NewBTAPIApplicationSummaryInfoWithDefaults instantiates a new BTAPIApplicationSummaryInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplicationOwnerType
+
+`func (o *BTAPIApplicationSummaryInfo) GetApplicationOwnerType() int32`
+
+GetApplicationOwnerType returns the ApplicationOwnerType field if non-nil, zero value otherwise.
+
+### GetApplicationOwnerTypeOk
+
+`func (o *BTAPIApplicationSummaryInfo) GetApplicationOwnerTypeOk() (*int32, bool)`
+
+GetApplicationOwnerTypeOk returns a tuple with the ApplicationOwnerType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationOwnerType
+
+`func (o *BTAPIApplicationSummaryInfo) SetApplicationOwnerType(v int32)`
+
+SetApplicationOwnerType sets ApplicationOwnerType field to given value.
+
+### HasApplicationOwnerType
+
+`func (o *BTAPIApplicationSummaryInfo) HasApplicationOwnerType() bool`
+
+HasApplicationOwnerType returns a boolean if a field has been set.
 
 ### GetClientId
 
