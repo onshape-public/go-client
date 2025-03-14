@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FailedMetadataRepresentativeOccurrences** | Pointer to **[]string** |  | [optional] 
 **Indented** | Pointer to **bool** |  | [optional] 
+**IsProtectedWorkspace** | Pointer to **bool** |  | [optional] 
 **IsShowingTopLevelAssemblyRow** | Pointer to **bool** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
@@ -105,6 +106,31 @@ SetIndented sets Indented field to given value.
 `func (o *BTBillOfMaterialsTable1073) HasIndented() bool`
 
 HasIndented returns a boolean if a field has been set.
+
+### GetIsProtectedWorkspace
+
+`func (o *BTBillOfMaterialsTable1073) GetIsProtectedWorkspace() bool`
+
+GetIsProtectedWorkspace returns the IsProtectedWorkspace field if non-nil, zero value otherwise.
+
+### GetIsProtectedWorkspaceOk
+
+`func (o *BTBillOfMaterialsTable1073) GetIsProtectedWorkspaceOk() (*bool, bool)`
+
+GetIsProtectedWorkspaceOk returns a tuple with the IsProtectedWorkspace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsProtectedWorkspace
+
+`func (o *BTBillOfMaterialsTable1073) SetIsProtectedWorkspace(v bool)`
+
+SetIsProtectedWorkspace sets IsProtectedWorkspace field to given value.
+
+### HasIsProtectedWorkspace
+
+`func (o *BTBillOfMaterialsTable1073) HasIsProtectedWorkspace() bool`
+
+HasIsProtectedWorkspace returns a boolean if a field has been set.
 
 ### GetIsShowingTopLevelAssemblyRow
 

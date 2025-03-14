@@ -21,6 +21,7 @@ type BTMConfigurationParameterBoolean2550 struct {
 	// Microversion that resulted from the import.
 	ImportMicroversion   *string                            `json:"importMicroversion,omitempty"`
 	NodeId               *string                            `json:"nodeId,omitempty"`
+	EnumOptionIds        []string                           `json:"enumOptionIds,omitempty"`
 	GeneratedParameterId *BTTreeNode20                      `json:"generatedParameterId,omitempty"`
 	IsCosmetic           *bool                              `json:"isCosmetic,omitempty"`
 	ParameterId          *string                            `json:"parameterId,omitempty"`
@@ -142,6 +143,38 @@ func (o *BTMConfigurationParameterBoolean2550) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTMConfigurationParameterBoolean2550) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetEnumOptionIds returns the EnumOptionIds field value if set, zero value otherwise.
+func (o *BTMConfigurationParameterBoolean2550) GetEnumOptionIds() []string {
+	if o == nil || o.EnumOptionIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.EnumOptionIds
+}
+
+// GetEnumOptionIdsOk returns a tuple with the EnumOptionIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameterBoolean2550) GetEnumOptionIdsOk() ([]string, bool) {
+	if o == nil || o.EnumOptionIds == nil {
+		return nil, false
+	}
+	return o.EnumOptionIds, true
+}
+
+// HasEnumOptionIds returns a boolean if a field has been set.
+func (o *BTMConfigurationParameterBoolean2550) HasEnumOptionIds() bool {
+	if o != nil && o.EnumOptionIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnumOptionIds gets a reference to the given []string and assigns it to the EnumOptionIds field.
+func (o *BTMConfigurationParameterBoolean2550) SetEnumOptionIds(v []string) {
+	o.EnumOptionIds = v
 }
 
 // GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
@@ -418,6 +451,9 @@ func (o BTMConfigurationParameterBoolean2550) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.EnumOptionIds != nil {
+		toSerialize["enumOptionIds"] = o.EnumOptionIds
 	}
 	if o.GeneratedParameterId != nil {
 		toSerialize["generatedParameterId"] = o.GeneratedParameterId

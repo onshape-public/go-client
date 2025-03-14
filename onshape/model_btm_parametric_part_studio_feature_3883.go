@@ -27,7 +27,8 @@ type BTMParametricPartStudioFeature3883 struct {
 	FeatureType                      *string `json:"featureType,omitempty"`
 	FieldIndexForOwnedMateConnectors *int32  `json:"fieldIndexForOwnedMateConnectors,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	ImportMicroversion *string              `json:"importMicroversion,omitempty"`
+	MateConnectors     []BTMMateConnector66 `json:"mateConnectors,omitempty"`
 	// User-visible name of the feature.
 	Name *string `json:"name,omitempty"`
 	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
@@ -321,6 +322,38 @@ func (o *BTMParametricPartStudioFeature3883) HasImportMicroversion() bool {
 // SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
 func (o *BTMParametricPartStudioFeature3883) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
+}
+
+// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
+func (o *BTMParametricPartStudioFeature3883) GetMateConnectors() []BTMMateConnector66 {
+	if o == nil || o.MateConnectors == nil {
+		var ret []BTMMateConnector66
+		return ret
+	}
+	return o.MateConnectors
+}
+
+// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParametricPartStudioFeature3883) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
+	if o == nil || o.MateConnectors == nil {
+		return nil, false
+	}
+	return o.MateConnectors, true
+}
+
+// HasMateConnectors returns a boolean if a field has been set.
+func (o *BTMParametricPartStudioFeature3883) HasMateConnectors() bool {
+	if o != nil && o.MateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
+func (o *BTMParametricPartStudioFeature3883) SetMateConnectors(v []BTMMateConnector66) {
+	o.MateConnectors = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -732,6 +765,9 @@ func (o BTMParametricPartStudioFeature3883) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.MateConnectors != nil {
+		toSerialize["mateConnectors"] = o.MateConnectors
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

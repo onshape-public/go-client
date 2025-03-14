@@ -17,14 +17,12 @@ import (
 // BTDatumDisplayData3408 struct for BTDatumDisplayData3408
 type BTDatumDisplayData3408 struct {
 	BTAnnotationDisplayData3225
-	AnnotationPlane         []float32 `json:"annotationPlane,omitempty"`
-	BaseNormal              []float32 `json:"baseNormal,omitempty"`
-	BasePoint               []float32 `json:"basePoint,omitempty"`
-	BtType                  *string   `json:"btType,omitempty"`
-	DeterministicId         *string   `json:"deterministicId,omitempty"`
-	DxdySegments            []float32 `json:"dxdySegments,omitempty"`
-	NumberOfLeaderSegements *int32    `json:"numberOfLeaderSegements,omitempty"`
-	Name                    *string   `json:"name,omitempty"`
+	AnnotationPlane *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
+	BasePlane       *BTCoordinateSystem387 `json:"basePlane,omitempty"`
+	BtType          *string                `json:"btType,omitempty"`
+	DeterministicId *string                `json:"deterministicId,omitempty"`
+	DxdySegments    []BTVector2d1812       `json:"dxdySegments,omitempty"`
+	Name            *string                `json:"name,omitempty"`
 }
 
 // NewBTDatumDisplayData3408 instantiates a new BTDatumDisplayData3408 object
@@ -45,17 +43,17 @@ func NewBTDatumDisplayData3408WithDefaults() *BTDatumDisplayData3408 {
 }
 
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
-func (o *BTDatumDisplayData3408) GetAnnotationPlane() []float32 {
+func (o *BTDatumDisplayData3408) GetAnnotationPlane() BTCoordinateSystem387 {
 	if o == nil || o.AnnotationPlane == nil {
-		var ret []float32
+		var ret BTCoordinateSystem387
 		return ret
 	}
-	return o.AnnotationPlane
+	return *o.AnnotationPlane
 }
 
 // GetAnnotationPlaneOk returns a tuple with the AnnotationPlane field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDatumDisplayData3408) GetAnnotationPlaneOk() ([]float32, bool) {
+func (o *BTDatumDisplayData3408) GetAnnotationPlaneOk() (*BTCoordinateSystem387, bool) {
 	if o == nil || o.AnnotationPlane == nil {
 		return nil, false
 	}
@@ -71,73 +69,41 @@ func (o *BTDatumDisplayData3408) HasAnnotationPlane() bool {
 	return false
 }
 
-// SetAnnotationPlane gets a reference to the given []float32 and assigns it to the AnnotationPlane field.
-func (o *BTDatumDisplayData3408) SetAnnotationPlane(v []float32) {
-	o.AnnotationPlane = v
+// SetAnnotationPlane gets a reference to the given BTCoordinateSystem387 and assigns it to the AnnotationPlane field.
+func (o *BTDatumDisplayData3408) SetAnnotationPlane(v BTCoordinateSystem387) {
+	o.AnnotationPlane = &v
 }
 
-// GetBaseNormal returns the BaseNormal field value if set, zero value otherwise.
-func (o *BTDatumDisplayData3408) GetBaseNormal() []float32 {
-	if o == nil || o.BaseNormal == nil {
-		var ret []float32
+// GetBasePlane returns the BasePlane field value if set, zero value otherwise.
+func (o *BTDatumDisplayData3408) GetBasePlane() BTCoordinateSystem387 {
+	if o == nil || o.BasePlane == nil {
+		var ret BTCoordinateSystem387
 		return ret
 	}
-	return o.BaseNormal
+	return *o.BasePlane
 }
 
-// GetBaseNormalOk returns a tuple with the BaseNormal field value if set, nil otherwise
+// GetBasePlaneOk returns a tuple with the BasePlane field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDatumDisplayData3408) GetBaseNormalOk() ([]float32, bool) {
-	if o == nil || o.BaseNormal == nil {
+func (o *BTDatumDisplayData3408) GetBasePlaneOk() (*BTCoordinateSystem387, bool) {
+	if o == nil || o.BasePlane == nil {
 		return nil, false
 	}
-	return o.BaseNormal, true
+	return o.BasePlane, true
 }
 
-// HasBaseNormal returns a boolean if a field has been set.
-func (o *BTDatumDisplayData3408) HasBaseNormal() bool {
-	if o != nil && o.BaseNormal != nil {
+// HasBasePlane returns a boolean if a field has been set.
+func (o *BTDatumDisplayData3408) HasBasePlane() bool {
+	if o != nil && o.BasePlane != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetBaseNormal gets a reference to the given []float32 and assigns it to the BaseNormal field.
-func (o *BTDatumDisplayData3408) SetBaseNormal(v []float32) {
-	o.BaseNormal = v
-}
-
-// GetBasePoint returns the BasePoint field value if set, zero value otherwise.
-func (o *BTDatumDisplayData3408) GetBasePoint() []float32 {
-	if o == nil || o.BasePoint == nil {
-		var ret []float32
-		return ret
-	}
-	return o.BasePoint
-}
-
-// GetBasePointOk returns a tuple with the BasePoint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDatumDisplayData3408) GetBasePointOk() ([]float32, bool) {
-	if o == nil || o.BasePoint == nil {
-		return nil, false
-	}
-	return o.BasePoint, true
-}
-
-// HasBasePoint returns a boolean if a field has been set.
-func (o *BTDatumDisplayData3408) HasBasePoint() bool {
-	if o != nil && o.BasePoint != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBasePoint gets a reference to the given []float32 and assigns it to the BasePoint field.
-func (o *BTDatumDisplayData3408) SetBasePoint(v []float32) {
-	o.BasePoint = v
+// SetBasePlane gets a reference to the given BTCoordinateSystem387 and assigns it to the BasePlane field.
+func (o *BTDatumDisplayData3408) SetBasePlane(v BTCoordinateSystem387) {
+	o.BasePlane = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -205,9 +171,9 @@ func (o *BTDatumDisplayData3408) SetDeterministicId(v string) {
 }
 
 // GetDxdySegments returns the DxdySegments field value if set, zero value otherwise.
-func (o *BTDatumDisplayData3408) GetDxdySegments() []float32 {
+func (o *BTDatumDisplayData3408) GetDxdySegments() []BTVector2d1812 {
 	if o == nil || o.DxdySegments == nil {
-		var ret []float32
+		var ret []BTVector2d1812
 		return ret
 	}
 	return o.DxdySegments
@@ -215,7 +181,7 @@ func (o *BTDatumDisplayData3408) GetDxdySegments() []float32 {
 
 // GetDxdySegmentsOk returns a tuple with the DxdySegments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDatumDisplayData3408) GetDxdySegmentsOk() ([]float32, bool) {
+func (o *BTDatumDisplayData3408) GetDxdySegmentsOk() ([]BTVector2d1812, bool) {
 	if o == nil || o.DxdySegments == nil {
 		return nil, false
 	}
@@ -231,41 +197,9 @@ func (o *BTDatumDisplayData3408) HasDxdySegments() bool {
 	return false
 }
 
-// SetDxdySegments gets a reference to the given []float32 and assigns it to the DxdySegments field.
-func (o *BTDatumDisplayData3408) SetDxdySegments(v []float32) {
+// SetDxdySegments gets a reference to the given []BTVector2d1812 and assigns it to the DxdySegments field.
+func (o *BTDatumDisplayData3408) SetDxdySegments(v []BTVector2d1812) {
 	o.DxdySegments = v
-}
-
-// GetNumberOfLeaderSegements returns the NumberOfLeaderSegements field value if set, zero value otherwise.
-func (o *BTDatumDisplayData3408) GetNumberOfLeaderSegements() int32 {
-	if o == nil || o.NumberOfLeaderSegements == nil {
-		var ret int32
-		return ret
-	}
-	return *o.NumberOfLeaderSegements
-}
-
-// GetNumberOfLeaderSegementsOk returns a tuple with the NumberOfLeaderSegements field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDatumDisplayData3408) GetNumberOfLeaderSegementsOk() (*int32, bool) {
-	if o == nil || o.NumberOfLeaderSegements == nil {
-		return nil, false
-	}
-	return o.NumberOfLeaderSegements, true
-}
-
-// HasNumberOfLeaderSegements returns a boolean if a field has been set.
-func (o *BTDatumDisplayData3408) HasNumberOfLeaderSegements() bool {
-	if o != nil && o.NumberOfLeaderSegements != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNumberOfLeaderSegements gets a reference to the given int32 and assigns it to the NumberOfLeaderSegements field.
-func (o *BTDatumDisplayData3408) SetNumberOfLeaderSegements(v int32) {
-	o.NumberOfLeaderSegements = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -313,11 +247,8 @@ func (o BTDatumDisplayData3408) MarshalJSON() ([]byte, error) {
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
-	if o.BaseNormal != nil {
-		toSerialize["baseNormal"] = o.BaseNormal
-	}
-	if o.BasePoint != nil {
-		toSerialize["basePoint"] = o.BasePoint
+	if o.BasePlane != nil {
+		toSerialize["basePlane"] = o.BasePlane
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
@@ -327,9 +258,6 @@ func (o BTDatumDisplayData3408) MarshalJSON() ([]byte, error) {
 	}
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments
-	}
-	if o.NumberOfLeaderSegements != nil {
-		toSerialize["numberOfLeaderSegements"] = o.NumberOfLeaderSegements
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

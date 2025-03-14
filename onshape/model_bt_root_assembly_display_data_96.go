@@ -29,6 +29,7 @@ type BTRootAssemblyDisplayData96 struct {
 	ElementId                              *string                                       `json:"elementId,omitempty"`
 	FromFullElementId                      *BTFullElementId756                           `json:"fromFullElementId,omitempty"`
 	FullElementId                          *BTFullElementId756                           `json:"fullElementId,omitempty"`
+	FullElementIdToReferencedSketchIds     *map[string][]string                          `json:"fullElementIdToReferencedSketchIds,omitempty"`
 	GeometryMates                          []BTGeometryMateDisplayData1050               `json:"geometryMates,omitempty"`
 	Incremental                            *bool                                         `json:"incremental,omitempty"`
 	InstanceCount                          *int32                                        `json:"instanceCount,omitempty"`
@@ -449,6 +450,38 @@ func (o *BTRootAssemblyDisplayData96) HasFullElementId() bool {
 // SetFullElementId gets a reference to the given BTFullElementId756 and assigns it to the FullElementId field.
 func (o *BTRootAssemblyDisplayData96) SetFullElementId(v BTFullElementId756) {
 	o.FullElementId = &v
+}
+
+// GetFullElementIdToReferencedSketchIds returns the FullElementIdToReferencedSketchIds field value if set, zero value otherwise.
+func (o *BTRootAssemblyDisplayData96) GetFullElementIdToReferencedSketchIds() map[string][]string {
+	if o == nil || o.FullElementIdToReferencedSketchIds == nil {
+		var ret map[string][]string
+		return ret
+	}
+	return *o.FullElementIdToReferencedSketchIds
+}
+
+// GetFullElementIdToReferencedSketchIdsOk returns a tuple with the FullElementIdToReferencedSketchIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRootAssemblyDisplayData96) GetFullElementIdToReferencedSketchIdsOk() (*map[string][]string, bool) {
+	if o == nil || o.FullElementIdToReferencedSketchIds == nil {
+		return nil, false
+	}
+	return o.FullElementIdToReferencedSketchIds, true
+}
+
+// HasFullElementIdToReferencedSketchIds returns a boolean if a field has been set.
+func (o *BTRootAssemblyDisplayData96) HasFullElementIdToReferencedSketchIds() bool {
+	if o != nil && o.FullElementIdToReferencedSketchIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFullElementIdToReferencedSketchIds gets a reference to the given map[string][]string and assigns it to the FullElementIdToReferencedSketchIds field.
+func (o *BTRootAssemblyDisplayData96) SetFullElementIdToReferencedSketchIds(v map[string][]string) {
+	o.FullElementIdToReferencedSketchIds = &v
 }
 
 // GetGeometryMates returns the GeometryMates field value if set, zero value otherwise.
@@ -1096,6 +1129,9 @@ func (o BTRootAssemblyDisplayData96) MarshalJSON() ([]byte, error) {
 	}
 	if o.FullElementId != nil {
 		toSerialize["fullElementId"] = o.FullElementId
+	}
+	if o.FullElementIdToReferencedSketchIds != nil {
+		toSerialize["fullElementIdToReferencedSketchIds"] = o.FullElementIdToReferencedSketchIds
 	}
 	if o.GeometryMates != nil {
 		toSerialize["geometryMates"] = o.GeometryMates
