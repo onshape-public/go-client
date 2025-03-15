@@ -31,7 +31,9 @@ type BTUserSettingsInfo struct {
 	Id                              *string                                `json:"id,omitempty"`
 	ImportOptions                   *string                                `json:"importOptions,omitempty"`
 	IsolateHideTransparent          *string                                `json:"isolateHideTransparent,omitempty"`
+	IsolateTranslucentMode          *string                                `json:"isolateTranslucentMode,omitempty"`
 	Locale                          *string                                `json:"locale,omitempty"`
+	MakeTransparentTranslucentMode  *string                                `json:"makeTransparentTranslucentMode,omitempty"`
 	MaterialLibrarySettings         *BTMaterialLibrarySettingsInfo         `json:"materialLibrarySettings,omitempty"`
 	MiniToolbarSettings             *string                                `json:"miniToolbarSettings,omitempty"`
 	MouseActions                    *string                                `json:"mouseActions,omitempty"`
@@ -547,6 +549,38 @@ func (o *BTUserSettingsInfo) SetIsolateHideTransparent(v string) {
 	o.IsolateHideTransparent = &v
 }
 
+// GetIsolateTranslucentMode returns the IsolateTranslucentMode field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetIsolateTranslucentMode() string {
+	if o == nil || o.IsolateTranslucentMode == nil {
+		var ret string
+		return ret
+	}
+	return *o.IsolateTranslucentMode
+}
+
+// GetIsolateTranslucentModeOk returns a tuple with the IsolateTranslucentMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetIsolateTranslucentModeOk() (*string, bool) {
+	if o == nil || o.IsolateTranslucentMode == nil {
+		return nil, false
+	}
+	return o.IsolateTranslucentMode, true
+}
+
+// HasIsolateTranslucentMode returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasIsolateTranslucentMode() bool {
+	if o != nil && o.IsolateTranslucentMode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsolateTranslucentMode gets a reference to the given string and assigns it to the IsolateTranslucentMode field.
+func (o *BTUserSettingsInfo) SetIsolateTranslucentMode(v string) {
+	o.IsolateTranslucentMode = &v
+}
+
 // GetLocale returns the Locale field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetLocale() string {
 	if o == nil || o.Locale == nil {
@@ -577,6 +611,38 @@ func (o *BTUserSettingsInfo) HasLocale() bool {
 // SetLocale gets a reference to the given string and assigns it to the Locale field.
 func (o *BTUserSettingsInfo) SetLocale(v string) {
 	o.Locale = &v
+}
+
+// GetMakeTransparentTranslucentMode returns the MakeTransparentTranslucentMode field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentMode() string {
+	if o == nil || o.MakeTransparentTranslucentMode == nil {
+		var ret string
+		return ret
+	}
+	return *o.MakeTransparentTranslucentMode
+}
+
+// GetMakeTransparentTranslucentModeOk returns a tuple with the MakeTransparentTranslucentMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentModeOk() (*string, bool) {
+	if o == nil || o.MakeTransparentTranslucentMode == nil {
+		return nil, false
+	}
+	return o.MakeTransparentTranslucentMode, true
+}
+
+// HasMakeTransparentTranslucentMode returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasMakeTransparentTranslucentMode() bool {
+	if o != nil && o.MakeTransparentTranslucentMode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMakeTransparentTranslucentMode gets a reference to the given string and assigns it to the MakeTransparentTranslucentMode field.
+func (o *BTUserSettingsInfo) SetMakeTransparentTranslucentMode(v string) {
+	o.MakeTransparentTranslucentMode = &v
 }
 
 // GetMaterialLibrarySettings returns the MaterialLibrarySettings field value if set, zero value otherwise.
@@ -1138,8 +1204,14 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	if o.IsolateHideTransparent != nil {
 		toSerialize["isolateHideTransparent"] = o.IsolateHideTransparent
 	}
+	if o.IsolateTranslucentMode != nil {
+		toSerialize["isolateTranslucentMode"] = o.IsolateTranslucentMode
+	}
 	if o.Locale != nil {
 		toSerialize["locale"] = o.Locale
+	}
+	if o.MakeTransparentTranslucentMode != nil {
+		toSerialize["makeTransparentTranslucentMode"] = o.MakeTransparentTranslucentMode
 	}
 	if o.MaterialLibrarySettings != nil {
 		toSerialize["materialLibrarySettings"] = o.MaterialLibrarySettings

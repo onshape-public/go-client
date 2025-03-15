@@ -17,14 +17,14 @@ import (
 // BTAnnotationGTolDisplayData4887 struct for BTAnnotationGTolDisplayData4887
 type BTAnnotationGTolDisplayData4887 struct {
 	BTAnnotationDisplayData3225
-	AnnotationPlane         []float32                            `json:"annotationPlane,omitempty"`
-	BaseNormal              []float32                            `json:"baseNormal,omitempty"`
-	BasePoint               []float32                            `json:"basePoint,omitempty"`
-	BtType                  *string                              `json:"btType,omitempty"`
-	DeterministicId         *string                              `json:"deterministicId,omitempty"`
-	DxdySegments            []float32                            `json:"dxdySegments,omitempty"`
-	NumberOfLeaderSegements *int32                               `json:"numberOfLeaderSegements,omitempty"`
-	Rows                    []BTAnnotationGTolRowDisplayData4397 `json:"rows,omitempty"`
+	AnnotationPlane *BTCoordinateSystem387               `json:"annotationPlane,omitempty"`
+	BasePlane       *BTCoordinateSystem387               `json:"basePlane,omitempty"`
+	BtType          *string                              `json:"btType,omitempty"`
+	DeterministicId *string                              `json:"deterministicId,omitempty"`
+	DxdySegments    []BTVector2d1812                     `json:"dxdySegments,omitempty"`
+	Lower           *string                              `json:"lower,omitempty"`
+	Rows            []BTAnnotationGTolRowDisplayData4397 `json:"rows,omitempty"`
+	Upper           *string                              `json:"upper,omitempty"`
 }
 
 // NewBTAnnotationGTolDisplayData4887 instantiates a new BTAnnotationGTolDisplayData4887 object
@@ -45,17 +45,17 @@ func NewBTAnnotationGTolDisplayData4887WithDefaults() *BTAnnotationGTolDisplayDa
 }
 
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
-func (o *BTAnnotationGTolDisplayData4887) GetAnnotationPlane() []float32 {
+func (o *BTAnnotationGTolDisplayData4887) GetAnnotationPlane() BTCoordinateSystem387 {
 	if o == nil || o.AnnotationPlane == nil {
-		var ret []float32
+		var ret BTCoordinateSystem387
 		return ret
 	}
-	return o.AnnotationPlane
+	return *o.AnnotationPlane
 }
 
 // GetAnnotationPlaneOk returns a tuple with the AnnotationPlane field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationGTolDisplayData4887) GetAnnotationPlaneOk() ([]float32, bool) {
+func (o *BTAnnotationGTolDisplayData4887) GetAnnotationPlaneOk() (*BTCoordinateSystem387, bool) {
 	if o == nil || o.AnnotationPlane == nil {
 		return nil, false
 	}
@@ -71,73 +71,41 @@ func (o *BTAnnotationGTolDisplayData4887) HasAnnotationPlane() bool {
 	return false
 }
 
-// SetAnnotationPlane gets a reference to the given []float32 and assigns it to the AnnotationPlane field.
-func (o *BTAnnotationGTolDisplayData4887) SetAnnotationPlane(v []float32) {
-	o.AnnotationPlane = v
+// SetAnnotationPlane gets a reference to the given BTCoordinateSystem387 and assigns it to the AnnotationPlane field.
+func (o *BTAnnotationGTolDisplayData4887) SetAnnotationPlane(v BTCoordinateSystem387) {
+	o.AnnotationPlane = &v
 }
 
-// GetBaseNormal returns the BaseNormal field value if set, zero value otherwise.
-func (o *BTAnnotationGTolDisplayData4887) GetBaseNormal() []float32 {
-	if o == nil || o.BaseNormal == nil {
-		var ret []float32
+// GetBasePlane returns the BasePlane field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetBasePlane() BTCoordinateSystem387 {
+	if o == nil || o.BasePlane == nil {
+		var ret BTCoordinateSystem387
 		return ret
 	}
-	return o.BaseNormal
+	return *o.BasePlane
 }
 
-// GetBaseNormalOk returns a tuple with the BaseNormal field value if set, nil otherwise
+// GetBasePlaneOk returns a tuple with the BasePlane field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationGTolDisplayData4887) GetBaseNormalOk() ([]float32, bool) {
-	if o == nil || o.BaseNormal == nil {
+func (o *BTAnnotationGTolDisplayData4887) GetBasePlaneOk() (*BTCoordinateSystem387, bool) {
+	if o == nil || o.BasePlane == nil {
 		return nil, false
 	}
-	return o.BaseNormal, true
+	return o.BasePlane, true
 }
 
-// HasBaseNormal returns a boolean if a field has been set.
-func (o *BTAnnotationGTolDisplayData4887) HasBaseNormal() bool {
-	if o != nil && o.BaseNormal != nil {
+// HasBasePlane returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasBasePlane() bool {
+	if o != nil && o.BasePlane != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetBaseNormal gets a reference to the given []float32 and assigns it to the BaseNormal field.
-func (o *BTAnnotationGTolDisplayData4887) SetBaseNormal(v []float32) {
-	o.BaseNormal = v
-}
-
-// GetBasePoint returns the BasePoint field value if set, zero value otherwise.
-func (o *BTAnnotationGTolDisplayData4887) GetBasePoint() []float32 {
-	if o == nil || o.BasePoint == nil {
-		var ret []float32
-		return ret
-	}
-	return o.BasePoint
-}
-
-// GetBasePointOk returns a tuple with the BasePoint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAnnotationGTolDisplayData4887) GetBasePointOk() ([]float32, bool) {
-	if o == nil || o.BasePoint == nil {
-		return nil, false
-	}
-	return o.BasePoint, true
-}
-
-// HasBasePoint returns a boolean if a field has been set.
-func (o *BTAnnotationGTolDisplayData4887) HasBasePoint() bool {
-	if o != nil && o.BasePoint != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBasePoint gets a reference to the given []float32 and assigns it to the BasePoint field.
-func (o *BTAnnotationGTolDisplayData4887) SetBasePoint(v []float32) {
-	o.BasePoint = v
+// SetBasePlane gets a reference to the given BTCoordinateSystem387 and assigns it to the BasePlane field.
+func (o *BTAnnotationGTolDisplayData4887) SetBasePlane(v BTCoordinateSystem387) {
+	o.BasePlane = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -205,9 +173,9 @@ func (o *BTAnnotationGTolDisplayData4887) SetDeterministicId(v string) {
 }
 
 // GetDxdySegments returns the DxdySegments field value if set, zero value otherwise.
-func (o *BTAnnotationGTolDisplayData4887) GetDxdySegments() []float32 {
+func (o *BTAnnotationGTolDisplayData4887) GetDxdySegments() []BTVector2d1812 {
 	if o == nil || o.DxdySegments == nil {
-		var ret []float32
+		var ret []BTVector2d1812
 		return ret
 	}
 	return o.DxdySegments
@@ -215,7 +183,7 @@ func (o *BTAnnotationGTolDisplayData4887) GetDxdySegments() []float32 {
 
 // GetDxdySegmentsOk returns a tuple with the DxdySegments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationGTolDisplayData4887) GetDxdySegmentsOk() ([]float32, bool) {
+func (o *BTAnnotationGTolDisplayData4887) GetDxdySegmentsOk() ([]BTVector2d1812, bool) {
 	if o == nil || o.DxdySegments == nil {
 		return nil, false
 	}
@@ -231,41 +199,41 @@ func (o *BTAnnotationGTolDisplayData4887) HasDxdySegments() bool {
 	return false
 }
 
-// SetDxdySegments gets a reference to the given []float32 and assigns it to the DxdySegments field.
-func (o *BTAnnotationGTolDisplayData4887) SetDxdySegments(v []float32) {
+// SetDxdySegments gets a reference to the given []BTVector2d1812 and assigns it to the DxdySegments field.
+func (o *BTAnnotationGTolDisplayData4887) SetDxdySegments(v []BTVector2d1812) {
 	o.DxdySegments = v
 }
 
-// GetNumberOfLeaderSegements returns the NumberOfLeaderSegements field value if set, zero value otherwise.
-func (o *BTAnnotationGTolDisplayData4887) GetNumberOfLeaderSegements() int32 {
-	if o == nil || o.NumberOfLeaderSegements == nil {
-		var ret int32
+// GetLower returns the Lower field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetLower() string {
+	if o == nil || o.Lower == nil {
+		var ret string
 		return ret
 	}
-	return *o.NumberOfLeaderSegements
+	return *o.Lower
 }
 
-// GetNumberOfLeaderSegementsOk returns a tuple with the NumberOfLeaderSegements field value if set, nil otherwise
+// GetLowerOk returns a tuple with the Lower field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationGTolDisplayData4887) GetNumberOfLeaderSegementsOk() (*int32, bool) {
-	if o == nil || o.NumberOfLeaderSegements == nil {
+func (o *BTAnnotationGTolDisplayData4887) GetLowerOk() (*string, bool) {
+	if o == nil || o.Lower == nil {
 		return nil, false
 	}
-	return o.NumberOfLeaderSegements, true
+	return o.Lower, true
 }
 
-// HasNumberOfLeaderSegements returns a boolean if a field has been set.
-func (o *BTAnnotationGTolDisplayData4887) HasNumberOfLeaderSegements() bool {
-	if o != nil && o.NumberOfLeaderSegements != nil {
+// HasLower returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasLower() bool {
+	if o != nil && o.Lower != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetNumberOfLeaderSegements gets a reference to the given int32 and assigns it to the NumberOfLeaderSegements field.
-func (o *BTAnnotationGTolDisplayData4887) SetNumberOfLeaderSegements(v int32) {
-	o.NumberOfLeaderSegements = &v
+// SetLower gets a reference to the given string and assigns it to the Lower field.
+func (o *BTAnnotationGTolDisplayData4887) SetLower(v string) {
+	o.Lower = &v
 }
 
 // GetRows returns the Rows field value if set, zero value otherwise.
@@ -300,6 +268,38 @@ func (o *BTAnnotationGTolDisplayData4887) SetRows(v []BTAnnotationGTolRowDisplay
 	o.Rows = v
 }
 
+// GetUpper returns the Upper field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetUpper() string {
+	if o == nil || o.Upper == nil {
+		var ret string
+		return ret
+	}
+	return *o.Upper
+}
+
+// GetUpperOk returns a tuple with the Upper field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolDisplayData4887) GetUpperOk() (*string, bool) {
+	if o == nil || o.Upper == nil {
+		return nil, false
+	}
+	return o.Upper, true
+}
+
+// HasUpper returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasUpper() bool {
+	if o != nil && o.Upper != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpper gets a reference to the given string and assigns it to the Upper field.
+func (o *BTAnnotationGTolDisplayData4887) SetUpper(v string) {
+	o.Upper = &v
+}
+
 func (o BTAnnotationGTolDisplayData4887) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTAnnotationDisplayData3225, errBTAnnotationDisplayData3225 := json.Marshal(o.BTAnnotationDisplayData3225)
@@ -313,11 +313,8 @@ func (o BTAnnotationGTolDisplayData4887) MarshalJSON() ([]byte, error) {
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
-	if o.BaseNormal != nil {
-		toSerialize["baseNormal"] = o.BaseNormal
-	}
-	if o.BasePoint != nil {
-		toSerialize["basePoint"] = o.BasePoint
+	if o.BasePlane != nil {
+		toSerialize["basePlane"] = o.BasePlane
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
@@ -328,11 +325,14 @@ func (o BTAnnotationGTolDisplayData4887) MarshalJSON() ([]byte, error) {
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments
 	}
-	if o.NumberOfLeaderSegements != nil {
-		toSerialize["numberOfLeaderSegements"] = o.NumberOfLeaderSegements
+	if o.Lower != nil {
+		toSerialize["lower"] = o.Lower
 	}
 	if o.Rows != nil {
 		toSerialize["rows"] = o.Rows
+	}
+	if o.Upper != nil {
+		toSerialize["upper"] = o.Upper
 	}
 	return json.Marshal(toSerialize)
 }

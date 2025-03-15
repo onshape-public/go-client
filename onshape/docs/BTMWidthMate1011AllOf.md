@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
+**MateConnectorsNotUsedInQuery** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **TabMateConnectorQueryList** | Pointer to [**BTMParameterQueryWithOccurrenceList67**](BTMParameterQueryWithOccurrenceList67.md) |  | [optional] 
 **WidthMateConnectorQueryList** | Pointer to [**BTMParameterQueryWithOccurrenceList67**](BTMParameterQueryWithOccurrenceList67.md) |  | [optional] 
 
@@ -53,30 +53,30 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
-### GetMateConnectors
+### GetMateConnectorsNotUsedInQuery
 
-`func (o *BTMWidthMate1011AllOf) GetMateConnectors() []BTMMateConnector66`
+`func (o *BTMWidthMate1011AllOf) GetMateConnectorsNotUsedInQuery() []BTMMateConnector66`
 
-GetMateConnectors returns the MateConnectors field if non-nil, zero value otherwise.
+GetMateConnectorsNotUsedInQuery returns the MateConnectorsNotUsedInQuery field if non-nil, zero value otherwise.
 
-### GetMateConnectorsOk
+### GetMateConnectorsNotUsedInQueryOk
 
-`func (o *BTMWidthMate1011AllOf) GetMateConnectorsOk() (*[]BTMMateConnector66, bool)`
+`func (o *BTMWidthMate1011AllOf) GetMateConnectorsNotUsedInQueryOk() (*[]BTMMateConnector66, bool)`
 
-GetMateConnectorsOk returns a tuple with the MateConnectors field if it's non-nil, zero value otherwise
+GetMateConnectorsNotUsedInQueryOk returns a tuple with the MateConnectorsNotUsedInQuery field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMateConnectors
+### SetMateConnectorsNotUsedInQuery
 
-`func (o *BTMWidthMate1011AllOf) SetMateConnectors(v []BTMMateConnector66)`
+`func (o *BTMWidthMate1011AllOf) SetMateConnectorsNotUsedInQuery(v []BTMMateConnector66)`
 
-SetMateConnectors sets MateConnectors field to given value.
+SetMateConnectorsNotUsedInQuery sets MateConnectorsNotUsedInQuery field to given value.
 
-### HasMateConnectors
+### HasMateConnectorsNotUsedInQuery
 
-`func (o *BTMWidthMate1011AllOf) HasMateConnectors() bool`
+`func (o *BTMWidthMate1011AllOf) HasMateConnectorsNotUsedInQuery() bool`
 
-HasMateConnectors returns a boolean if a field has been set.
+HasMateConnectorsNotUsedInQuery returns a boolean if a field has been set.
 
 ### GetTabMateConnectorQueryList
 

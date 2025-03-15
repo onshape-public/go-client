@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **AlwaysAllow** | Pointer to **bool** |  | [optional] 
 **IsAdminOverride** | Pointer to **bool** |  | [optional] 
 **IsApproverAction** | Pointer to **bool** |  | [optional] 
+**IsCreatorOverride** | Pointer to **bool** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **RequiredProperties** | Pointer to **[]string** |  | [optional] 
 **Tooltip** | Pointer to **string** |  | [optional] 
@@ -184,6 +185,31 @@ SetIsApproverAction sets IsApproverAction field to given value.
 `func (o *BTWorkflowActionInfo) HasIsApproverAction() bool`
 
 HasIsApproverAction returns a boolean if a field has been set.
+
+### GetIsCreatorOverride
+
+`func (o *BTWorkflowActionInfo) GetIsCreatorOverride() bool`
+
+GetIsCreatorOverride returns the IsCreatorOverride field if non-nil, zero value otherwise.
+
+### GetIsCreatorOverrideOk
+
+`func (o *BTWorkflowActionInfo) GetIsCreatorOverrideOk() (*bool, bool)`
+
+GetIsCreatorOverrideOk returns a tuple with the IsCreatorOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCreatorOverride
+
+`func (o *BTWorkflowActionInfo) SetIsCreatorOverride(v bool)`
+
+SetIsCreatorOverride sets IsCreatorOverride field to given value.
+
+### HasIsCreatorOverride
+
+`func (o *BTWorkflowActionInfo) HasIsCreatorOverride() bool`
+
+HasIsCreatorOverride returns a boolean if a field has been set.
 
 ### GetLabel
 

@@ -22,6 +22,7 @@ type BTWorkflowActionInfo struct {
 	AlwaysAllow        *bool             `json:"alwaysAllow,omitempty"`
 	IsAdminOverride    *bool             `json:"isAdminOverride,omitempty"`
 	IsApproverAction   *bool             `json:"isApproverAction,omitempty"`
+	IsCreatorOverride  *bool             `json:"isCreatorOverride,omitempty"`
 	Label              *string           `json:"label,omitempty"`
 	RequiredProperties []string          `json:"requiredProperties,omitempty"`
 	Tooltip            *string           `json:"tooltip,omitempty"`
@@ -238,6 +239,38 @@ func (o *BTWorkflowActionInfo) SetIsApproverAction(v bool) {
 	o.IsApproverAction = &v
 }
 
+// GetIsCreatorOverride returns the IsCreatorOverride field value if set, zero value otherwise.
+func (o *BTWorkflowActionInfo) GetIsCreatorOverride() bool {
+	if o == nil || o.IsCreatorOverride == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsCreatorOverride
+}
+
+// GetIsCreatorOverrideOk returns a tuple with the IsCreatorOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowActionInfo) GetIsCreatorOverrideOk() (*bool, bool) {
+	if o == nil || o.IsCreatorOverride == nil {
+		return nil, false
+	}
+	return o.IsCreatorOverride, true
+}
+
+// HasIsCreatorOverride returns a boolean if a field has been set.
+func (o *BTWorkflowActionInfo) HasIsCreatorOverride() bool {
+	if o != nil && o.IsCreatorOverride != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCreatorOverride gets a reference to the given bool and assigns it to the IsCreatorOverride field.
+func (o *BTWorkflowActionInfo) SetIsCreatorOverride(v bool) {
+	o.IsCreatorOverride = &v
+}
+
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *BTWorkflowActionInfo) GetLabel() string {
 	if o == nil || o.Label == nil {
@@ -417,6 +450,9 @@ func (o BTWorkflowActionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsApproverAction != nil {
 		toSerialize["isApproverAction"] = o.IsApproverAction
+	}
+	if o.IsCreatorOverride != nil {
+		toSerialize["isCreatorOverride"] = o.IsCreatorOverride
 	}
 	if o.Label != nil {
 		toSerialize["label"] = o.Label
