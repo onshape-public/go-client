@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DefaultColumnWidthValue** | Pointer to **int32** |  | [optional] 
 **DefaultHeaderName** | Pointer to **string** |  | [optional] 
 **DefaultTextAlignment** | Pointer to [**GBTTableTextAlignment**](GBTTableTextAlignment.md) |  | [optional] 
+**IsExpandable** | Pointer to **bool** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetDefaultTextAlignment sets DefaultTextAlignment field to given value.
 `func (o *BTTableColumnSpec1967) HasDefaultTextAlignment() bool`
 
 HasDefaultTextAlignment returns a boolean if a field has been set.
+
+### GetIsExpandable
+
+`func (o *BTTableColumnSpec1967) GetIsExpandable() bool`
+
+GetIsExpandable returns the IsExpandable field if non-nil, zero value otherwise.
+
+### GetIsExpandableOk
+
+`func (o *BTTableColumnSpec1967) GetIsExpandableOk() (*bool, bool)`
+
+GetIsExpandableOk returns a tuple with the IsExpandable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExpandable
+
+`func (o *BTTableColumnSpec1967) SetIsExpandable(v bool)`
+
+SetIsExpandable sets IsExpandable field to given value.
+
+### HasIsExpandable
+
+`func (o *BTTableColumnSpec1967) HasIsExpandable() bool`
+
+HasIsExpandable returns a boolean if a field has been set.
 
 ### GetReadOnly
 

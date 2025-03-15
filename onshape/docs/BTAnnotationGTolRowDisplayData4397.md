@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConstraintType** | Pointer to [**GBTGTolConstraintType**](GBTGTolConstraintType.md) |  | [optional] 
+**Prefix** | Pointer to **string** |  | [optional] 
 **References** | Pointer to **[]string** |  | [optional] 
+**Suffix** | Pointer to **string** |  | [optional] 
 **Tolerance** | Pointer to **float64** |  | [optional] 
 
 ## Methods
@@ -78,6 +80,31 @@ SetConstraintType sets ConstraintType field to given value.
 
 HasConstraintType returns a boolean if a field has been set.
 
+### GetPrefix
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetPrefix() string`
+
+GetPrefix returns the Prefix field if non-nil, zero value otherwise.
+
+### GetPrefixOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetPrefixOk() (*string, bool)`
+
+GetPrefixOk returns a tuple with the Prefix field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrefix
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetPrefix(v string)`
+
+SetPrefix sets Prefix field to given value.
+
+### HasPrefix
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasPrefix() bool`
+
+HasPrefix returns a boolean if a field has been set.
+
 ### GetReferences
 
 `func (o *BTAnnotationGTolRowDisplayData4397) GetReferences() []string`
@@ -102,6 +129,31 @@ SetReferences sets References field to given value.
 `func (o *BTAnnotationGTolRowDisplayData4397) HasReferences() bool`
 
 HasReferences returns a boolean if a field has been set.
+
+### GetSuffix
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetSuffix() string`
+
+GetSuffix returns the Suffix field if non-nil, zero value otherwise.
+
+### GetSuffixOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetSuffixOk() (*string, bool)`
+
+GetSuffixOk returns a tuple with the Suffix field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuffix
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetSuffix(v string)`
+
+SetSuffix sets Suffix field to given value.
+
+### HasSuffix
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasSuffix() bool`
+
+HasSuffix returns a boolean if a field has been set.
 
 ### GetTolerance
 

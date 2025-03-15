@@ -365,6 +365,13 @@ docs/BTEntityGeometry35.md
 docs/BTEntityPoint29.md
 docs/BTEntityTypeFilter124.md
 docs/BTEntityTypeFilter124AllOf.md
+docs/BTEnumOptionRange3741.md
+docs/BTEnumOptionVisibilityCondition3455.md
+docs/BTEnumOptionVisibilityConditionList2936.md
+docs/BTEnumOptionVisibilityForList1613.md
+docs/BTEnumOptionVisibilityForList1613AllOf.md
+docs/BTEnumOptionVisibilityForRange4297.md
+docs/BTEnumOptionVisibilityForRange4297AllOf.md
 docs/BTEventParams.md
 docs/BTExplosion2754.md
 docs/BTExplosion2754AllOf.md
@@ -657,6 +664,8 @@ docs/BTMParameterFeatureList1749.md
 docs/BTMParameterFeatureList1749AllOf.md
 docs/BTMParameterForeignId146.md
 docs/BTMParameterForeignId146AllOf.md
+docs/BTMParameterIcon460.md
+docs/BTMParameterIcon460AllOf.md
 docs/BTMParameterInvalid1664.md
 docs/BTMParameterLookupTablePath1419.md
 docs/BTMParameterLookupTablePath1419AllOf.md
@@ -952,6 +961,7 @@ docs/BTParameterSpecEnum171.md
 docs/BTParameterSpecEnum171AllOf.md
 docs/BTParameterSpecFeatureList703.md
 docs/BTParameterSpecForeignId172.md
+docs/BTParameterSpecIcon4779.md
 docs/BTParameterSpecLookupTablePath761.md
 docs/BTParameterSpecLookupTablePath761AllOf.md
 docs/BTParameterSpecMaterial2700.md
@@ -983,6 +993,8 @@ docs/BTParameterSpecString175AllOf.md
 docs/BTParameterSpecStringWithTolerances2535.md
 docs/BTParameterVisibilityAlwaysHidden176.md
 docs/BTParameterVisibilityCondition177.md
+docs/BTParameterVisibilityInRange2980.md
+docs/BTParameterVisibilityInRange2980AllOf.md
 docs/BTParameterVisibilityLogical178.md
 docs/BTParameterVisibilityLogical178AllOf.md
 docs/BTParameterVisibilityOnEqual180.md
@@ -1393,10 +1405,12 @@ docs/GBTPatternType.md
 docs/GBTPreProcessParasolidOption.md
 docs/GBTQuantityType.md
 docs/GBTRadiusDisplay.md
+docs/GBTRhinoVersions.md
 docs/GBTSimulationContactBehavior.md
 docs/GBTSketchCurveType.md
 docs/GBTSketchEntityType.md
 docs/GBTSketchObjectType.md
+docs/GBTStlEncodingType.md
 docs/GBTSubAssemblyLockType.md
 docs/GBTSurfaceType.md
 docs/GBTSurfaceTypeEnum.md
@@ -1740,6 +1754,11 @@ model_bt_entity_face_31.go
 model_bt_entity_geometry_35.go
 model_bt_entity_point_29.go
 model_bt_entity_type_filter_124.go
+model_bt_enum_option_range_3741.go
+model_bt_enum_option_visibility_condition_3455.go
+model_bt_enum_option_visibility_condition_list_2936.go
+model_bt_enum_option_visibility_for_list_1613.go
+model_bt_enum_option_visibility_for_range_4297.go
 model_bt_event_params.go
 model_bt_explosion_2754.go
 model_bt_explosion_step_feature_3008.go
@@ -1945,6 +1964,7 @@ model_bt_parameter_spec_derived_736.go
 model_bt_parameter_spec_enum_171.go
 model_bt_parameter_spec_feature_list_703.go
 model_bt_parameter_spec_foreign_id_172.go
+model_bt_parameter_spec_icon_4779.go
 model_bt_parameter_spec_lookup_table_path_761.go
 model_bt_parameter_spec_material_2700.go
 model_bt_parameter_spec_multi_enum_3118.go
@@ -1967,6 +1987,7 @@ model_bt_parameter_spec_string_175.go
 model_bt_parameter_spec_string_with_tolerances_2535.go
 model_bt_parameter_visibility_always_hidden_176.go
 model_bt_parameter_visibility_condition_177.go
+model_bt_parameter_visibility_in_range_2980.go
 model_bt_parameter_visibility_logical_178.go
 model_bt_parameter_visibility_on_equal_180.go
 model_bt_parameter_visibility_on_mate_dof_type_2114.go
@@ -2303,6 +2324,7 @@ model_btm_parameter_derived_864.go
 model_btm_parameter_enum_145.go
 model_btm_parameter_feature_list_1749.go
 model_btm_parameter_foreign_id_146.go
+model_btm_parameter_icon_460.go
 model_btm_parameter_invalid_1664.go
 model_btm_parameter_lookup_table_path_1419.go
 model_btm_parameter_material_1388.go
@@ -2501,10 +2523,12 @@ model_gbt_pattern_type.go
 model_gbt_pre_process_parasolid_option.go
 model_gbt_quantity_type.go
 model_gbt_radius_display.go
+model_gbt_rhino_versions.go
 model_gbt_simulation_contact_behavior.go
 model_gbt_sketch_curve_type.go
 model_gbt_sketch_entity_type.go
 model_gbt_sketch_object_type.go
+model_gbt_stl_encoding_type.go
 model_gbt_sub_assembly_lock_type.go
 model_gbt_surface_type.go
 model_gbt_surface_type_enum.go
